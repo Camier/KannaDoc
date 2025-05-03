@@ -13,7 +13,7 @@ import {
   useRef,
   useState,
 } from "react";
-import ShowFiles from "./ShowFiles";
+import ShowFiles from "../KnowledgeBase/ShowFiles";
 
 interface KnowledgeBaseDetailsProps {
   bases: Base[];

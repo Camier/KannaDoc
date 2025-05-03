@@ -63,7 +63,7 @@ const KnowledgeBase = () => {
   }, [successMessage]);
 
   // 支持的文件类型
-  const supportedExtensions = ["pdf"];
+  const supportedExtensions = ["doc","docx","pdf","ppt","pptx"];
 
   // Wrap fetchAllKnowledgeBase with useCallback
   const fetchAllKnowledgeBase = useCallback(async () => {

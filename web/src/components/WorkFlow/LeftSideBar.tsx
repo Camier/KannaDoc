@@ -1,61 +1,61 @@
-import { Base } from "@/types/types";
+import { Flow } from "@/types/types";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import ConfirmDialog from "../ConfirmDialog";
 
 interface LeftSideBarProps {
-  bases: Base[];
+  flows: Flow[];
   searchTerm: string;
   setShowCreateModal: Dispatch<SetStateAction<boolean>>;
-  selectedBase: string | null;
-  setSelectedBase: Dispatch<SetStateAction<string | null>>;
-  ondeleteBase: (base: Base) => void;
-  onRenameKnowledgeBase: (base: Base, knowledgeBaseName: string) => void;
+  selectedFlow: string | null;
+  setSelectedFlow: Dispatch<SetStateAction<string | null>>;
+  ondeleteFlow: (flow: Flow) => void;
+  onRenameWorkFlow: (flow: Flow, WorkFlowName: string) => void;
 }
 
 const LeftSideBar: React.FC<LeftSideBarProps> = ({
-  bases,
+  flows,
   searchTerm,
   setShowCreateModal,
-  selectedBase,
-  setSelectedBase,
-  ondeleteBase,
-  onRenameKnowledgeBase,
+  selectedFlow,
+  setSelectedFlow,
+  ondeleteFlow,
+  onRenameWorkFlow,
 }) => {
   useEffect(() => {
-    setSettingsOpen(new Array(bases.length).fill(false));
-    setIsEditOpen(new Array(bases.length).fill(false));
-    setInputValues(bases.map((base) => base.name));
-  }, [bases]);
+    setSettingsOpen(new Array(flows.length).fill(false));
+    setIsEditOpen(new Array(flows.length).fill(false));
+    setInputValues(flows.map((flow) => flow.name));
+  }, [flows]);
 
   const [isSettingsOpen, setSettingsOpen] = useState<boolean[]>([]);
   const [inputValues, setInputValues] = useState<string[]>([]);
   const [isEditOpen, setIsEditOpen] = useState<boolean[]>([]);
-  const [showConfirmDeleteBase, setShowConfirmDeleteBase] = useState<{
+  const [showConfirmDeleteFlow, setShowConfirmDeleteFlow] = useState<{
     index: number;
-    base: Base;
+    flow: Flow;
   } | null>(null);
 
   // 过滤知识库
-  const filteredBases = bases.filter((base) =>
-    base.name.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredFlows = flows.filter((flow) =>
+    flow.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const handleDeleteBase = (base: Base, index: number) => {
-    setShowConfirmDeleteBase({ index, base }); // 显示单个对话框
+  const handleDeleteFlow = (flow: Flow, index: number) => {
+    setShowConfirmDeleteFlow({ index, flow }); // 显示单个对话框
   };
 
-  const confirmDeleteBase = () => {
-    if (showConfirmDeleteBase) {
-      ondeleteBase(showConfirmDeleteBase.base);
-      toggleSettings(showConfirmDeleteBase.index); // 关闭设置面板
-      setShowConfirmDeleteBase(null); // 关闭对话框
+  const confirmDeleteFlow = () => {
+    if (showConfirmDeleteFlow) {
+      ondeleteFlow(showConfirmDeleteFlow.flow);
+      toggleSettings(showConfirmDeleteFlow.index); // 关闭设置面板
+      setShowConfirmDeleteFlow(null); // 关闭对话框
     }
   };
 
-  const cancelDeleteBase = () => {
-    if (showConfirmDeleteBase) {
-      toggleSettings(showConfirmDeleteBase.index); // 关闭设置面板
-      setShowConfirmDeleteBase(null); // 关闭对话框
+  const cancelDeleteFlow = () => {
+    if (showConfirmDeleteFlow) {
+      toggleSettings(showConfirmDeleteFlow.index); // 关闭设置面板
+      setShowConfirmDeleteFlow(null); // 关闭对话框
     }
   };
 
@@ -65,21 +65,21 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
     );
   };
 
-  const handleEditBase = (index: number) => {
+  const handleEditFlow = (index: number) => {
     toggleSettings(index);
     setIsEditOpen(
       (prev) => prev.map((item, idx) => (idx === index ? !item : false)) // 只切换当前项
     );
   };
 
-  const handleBlur = (base: Base, index: number) => {
+  const handleBlur = (flow: Flow, index: number) => {
     if (
       inputValues[index].trim() !== "" &&
-      inputValues[index].trim() !== base.name
+      inputValues[index].trim() !== flow.name
     ) {
-      onRenameKnowledgeBase(base, inputValues[index]);
+      onRenameWorkFlow(flow, inputValues[index]);
     } else {
-      inputValues[index] = base.name;
+      inputValues[index] = flow.name;
     }
     setIsEditOpen(
       (prev) => prev.map((item, idx) => (idx === index ? !item : false)) // 只切换当前项
@@ -96,13 +96,13 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
   };
 
   return (
-    <div className="w-[20%] flex-flex-col gap-4 h-full">
+    <div className="w-[15%] flex-flex-col gap-4 h-full">
       <div className="px-4 flex items-center justify-center h-[10%]">
         <button
           onClick={() => setShowCreateModal(true)}
           className="w-full py-2 px-4 bg-indigo-500 text-white hover:bg-indigo-700 transition-colors rounded-full"
         >
-          <div className="flex items-center justify-center gap-2 cursor-pointer">
+          <div className="flex items-center justify-center gap-1 cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -115,35 +115,32 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                 clipRule="evenodd"
               />
             </svg>
-
-            <span>Add Knowledge-Base</span>
+            <span>Add Work-Flow</span>
           </div>
         </button>
       </div>
 
       <div className="bg-white rounded-2xl overflow-scroll min-h-[90%] max-h-[90%] scrollbar-hide p-2">
-        {filteredBases.map((base, index) => (
+        {filteredFlows.map((flow, index) => (
           <div
             key={index}
             className={`py-2 my-2 hover:bg-indigo-200  cursor-pointer rounded-2xl flex justify-between items-start ${
-              selectedBase === base.baseId ? "bg-indigo-500" : ""
+              selectedFlow === flow.flowId ? "bg-indigo-500" : ""
             }`}
           >
             <div
-              className={`flex-1 gap-2 hover:text-white w-full ${
-                base.baseId === "1" ? "cursor-not-allowed" : ""
-              }`}
+              className={`flex-1 gap-2 hover:text-white w-full ${flow.flowId === "1"? "cursor-not-allowed":""}`}
               onClick={() => {
-                if (base.baseId === "1") {
+                if (flow.flowId === "1") {
                   return;
                 }
-                return setSelectedBase(base.baseId);
+                return setSelectedFlow(flow.flowId);
               }}
             >
               <div className="flex relative">
                 <div
                   className={`px-3 flex items-center gap-2 text-gray-900 w-[80%] ${
-                    selectedBase === base.baseId
+                    selectedFlow === flow.flowId
                       ? "text-white text-lg"
                       : "text-base"
                   }`}
@@ -153,7 +150,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                     viewBox="0 0 20 20"
                     fill="currentColor"
                     className={`${
-                      selectedBase === base.baseId ? "size-6" : "size-5"
+                      selectedFlow === flow.flowId ? "size-6" : "size-5"
                     }  shrink-0`}
                   >
                     <path
@@ -165,7 +162,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
 
                   <div
                     className={`${
-                      selectedBase === base.baseId ? "text-lg" : "text-base"
+                      selectedFlow === flow.flowId ? "text-lg" : "text-base"
                     } whitespace-nowrap overflow-hidden`}
                   >
                     {isEditOpen[index] ? (
@@ -173,12 +170,12 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                         type="text"
                         value={inputValues[index]} // 使用状态中的输入值
                         onChange={(e) => handleChange(index, e)} // 更新输入值
-                        onBlur={() => handleBlur(base, index)}
+                        onBlur={() => handleBlur(flow, index)}
                         className="bg-transparent outline-hidden border-none p-0 m-0 w-full"
                         autoFocus
                       />
                     ) : (
-                      base.name
+                      flow.name
                     )}
                   </div>
                 </div>
@@ -192,7 +189,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                     viewBox="0 0 16 16"
                     fill="currentColor"
                     className={`${
-                      selectedBase === base.baseId ? "size-6" : "size-5"
+                      selectedFlow === flow.flowId ? "size-6" : "size-5"
                     }`}
                   >
                     <path d="M2 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM6.5 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM12.5 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" />
@@ -202,7 +199,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                   <div className="absolute right-0 top-full mt-1 bg-white text-black rounded-xl border-2 py-2 px-1 border-slate-200 shadow-lg z-10">
                     <div
                       className="flex gap-2 cursor-pointer hover:bg-indigo-500 hover:text-white px-2 py-1 rounded-lg"
-                      onClick={() => handleEditBase(index)}
+                      onClick={() => handleEditFlow(index)}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -223,7 +220,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                     </div>
                     <div
                       className="flex gap-2 cursor-pointer hover:bg-indigo-500 hover:text-white px-2 py-1 rounded-lg"
-                      onClick={() => handleDeleteBase(base, index)}
+                      onClick={() => handleDeleteFlow(flow, index)}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -246,20 +243,20 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
               </div>
               <p
                 className={`px-4 text-sm text-gray-500 ${
-                  selectedBase === base.baseId ? "text-white" : ""
+                  selectedFlow === flow.flowId ? "text-white" : ""
                 }`}
               >
-                {base.fileNumber} files
+                {flow.fileNumber} files
               </p>
             </div>
           </div>
         ))}
       </div>
-      {showConfirmDeleteBase && (
+      {showConfirmDeleteFlow && (
         <ConfirmDialog
-          message={`Confirm the deletion of knowledge-base "${showConfirmDeleteBase.base.name}"？`}
-          onConfirm={confirmDeleteBase}
-          onCancel={cancelDeleteBase}
+          message={`Confirm the deletion of work-flow "${showConfirmDeleteFlow.flow.name}"？`}
+          onConfirm={confirmDeleteFlow}
+          onCancel={cancelDeleteFlow}
         />
       )}
     </div>

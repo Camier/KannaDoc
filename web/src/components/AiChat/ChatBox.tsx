@@ -66,7 +66,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   const [showConfigModal, setShowConfigModal] = useState(false);
 
   // 支持的文件类型
-  const supportedExtensions = ["pdf"];
+  const supportedExtensions = ["doc","docx","pdf","ppt","pptx"];
 
   const handleSend = () => {
     if (inputMessage.trim()) {
@@ -497,7 +497,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
             ref={fileInputRef}
             className="hidden"
             multiple
-            accept=".pdf"
+            accept=".doc,.docx,.pdf,.ppt,.pptx"
             onChange={handleFileSelected}
           />
           <div

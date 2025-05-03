@@ -103,3 +103,8 @@ code:not(pre code) {
 .hljs-built_in {
   color: #c586c0 !important;
 } /* 内置函数 */
+
+.react-flow {
+  --xy-node-border-default: 0px !important; 
+  --xy-node-border-selected-default: 0px !important;
+}

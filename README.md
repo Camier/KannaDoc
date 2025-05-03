@@ -161,6 +161,15 @@ PDFs are parsed into images and embedded visually via ColQwen2.5, with metadata 
 ### ▶️ Local Development
 
 ```bash
+sudo docker build -t python-sandbox -<<EOF
+FROM python:3.9-slim
+RUN useradd -m restricted_user
+USER restricted_user
+WORKDIR /app
+EOF
+
+sudo usermod -aG docker $USER
+newgrp docker  # 或重新登录
 # Clone the repo
 git clone https://github.com/liweiphys/layra.git
 cd layra

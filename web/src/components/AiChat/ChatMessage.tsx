@@ -45,7 +45,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
 
   return (
     <div
-      className={`rounded-lg max-w-[95%] w-fit break-words flex flex-col 
+      className={`m-1 rounded-3xl max-w-[95%] w-fit break-words flex flex-col 
         ${isUser ? "ml-auto" : "mr-auto"} ${
         isUser && message.type === "text"
           ? "bg-indigo-300 shadow-lg"

@@ -38,7 +38,7 @@ async def process_file(redis, task_id, username, knowledge_db_id, file_meta):
         )
 
         # 解析为图片
-        images_buffer = await convert_file_to_images(file_content)
+        images_buffer = await convert_file_to_images(file_content, file_meta["original_filename"])
 
         # 保存图片并生成嵌入
         image_ids = []

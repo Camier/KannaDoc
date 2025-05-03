@@ -95,3 +95,78 @@ export interface FileUsed {
   file_url: string;
   score: number;
 }
+
+// types.ts
+import { Node, Edge, NodeProps, EdgeProps } from "@xyflow/react";
+
+export type NodeTypeKey =
+  | "start"
+  | "end"
+  | "loop"
+  | "condition"
+  | "vlm"
+  | "code";
+
+// 完整节点类型（继承基础节点属性）
+export type CustomNode = Node<{
+  label: string;
+  nodeType: NodeTypeKey;
+  code?: string;
+  output?: string;
+  conditionCount?: number;
+  conditions?:  {
+    [key: number]: string; // 允许动态属性
+  };
+  loopType?: string;
+  maxCount?: number;
+  condition?: string;
+
+}>;
+
+// 组件 Props 类型
+export type CustomNodeProps = NodeProps<CustomNode>;
+
+// 边类型
+export type CustomEdge = Edge<{
+  conditionLabel?: string;
+  loopType?: string;
+}>;
+
+export type CustomEdgeProps = EdgeProps<CustomEdge>;
+
+export interface sendNode {
+  id: string;
+  type: string;
+  data: {
+    code?: string;
+  };
+}
+
+export interface sendEdges {
+  source: string;
+  target: string;
+  sourceHandle?: string;
+}
+
+// 节点类型配置
+export const nodeTypesInfo: Record<
+  NodeTypeKey,
+  {
+    label: string;
+  }
+> = {
+  start: { label: "Start" },
+  end: { label: "End" },
+  loop: { label: "Loop" },
+  condition: { label: "Condition" },
+  vlm: { label: "VLM" },
+  code: { label: "Code" },
+};
+
+export interface Flow {
+  name: string;
+  flowId: string;
+  lastModityTime: string;
+  createTime: string;
+  fileNumber: number;
+}

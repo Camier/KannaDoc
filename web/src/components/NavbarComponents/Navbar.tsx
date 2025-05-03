@@ -74,13 +74,13 @@ const Navbar = () => {
         </svg>
 
         <Link
-          href="/ai-chat"
-          onClick={() => {
-            window.confirm("coming soon...");
-          }}
+          href="/work-flow"
+          // onClick={() => {
+          //   window.confirm("coming soon...");
+          // }}
           className="font-bold text-sm"
         >
-          Agent
+          Work-Flow
         </Link>
       </div>
 

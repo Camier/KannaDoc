@@ -77,7 +77,7 @@ class KafkaConsumerManager:
                     )
                     continue  # 直接跳过此消息，继续处理下一个消息
 
-                lock = redis_connection.lock(lock_key, timeout=100)  # 创建锁
+                lock = redis_connection.lock(lock_key, timeout=1200)  # 创建锁
 
                 if await lock.acquire(blocking=False):  # 尝试非阻塞获取锁
                     try:
