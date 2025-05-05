@@ -5,6 +5,8 @@ from app.core.logging import logger
 from asyncio import Lock
 from app.db.redis import redis
 from app.rag.utils import process_file, update_task_progress
+from app.utils.timezone import beijing_time_now
+from app.workflow.workflow_engine import WorkflowEngine
 
 KAFKA_TOPIC = settings.kafka_topic
 KAFKA_BOOTSTRAP_SERVERS = settings.kafka_broker_url
@@ -33,26 +35,99 @@ class KafkaConsumerManager:
             await self.consumer.stop()
 
     async def process_message(self, msg: ConsumerRecord):
-        
-
         message = json.loads(msg.value.decode("utf-8"))
+        if message.get("type") == "workflow":
+            await self.process_workflow_task(message)
+        else:
+            task_id = message["task_id"]
+            username = message["username"]
+            knowledge_db_id = message["knowledge_db_id"]
+            file_meta = message["file_meta"]
+            redis_connection = await redis.get_task_connection()
+            # 更新任务状态
+            await update_task_progress(
+                redis_connection,
+                task_id,
+                "processing",
+                f"Processing {file_meta['original_filename']}...",
+            )
+
+            # 处理文件
+            await process_file(
+                redis=redis_connection,
+                task_id=task_id,
+                username=username,
+                knowledge_db_id=knowledge_db_id,
+                file_meta=file_meta,
+            )
+
+    async def process_workflow_task(self, message: dict):
         task_id = message["task_id"]
         username = message["username"]
-        knowledge_db_id = message["knowledge_db_id"]
-        file_meta = message["file_meta"]
-        redis_connection = await redis.get_task_connection()
-        # 更新任务状态
-        await update_task_progress(redis_connection, task_id, "processing", 
-            f"Processing {file_meta['original_filename']}...")
-        
-        # 处理文件
-        await process_file(
-            redis=redis_connection,
-            task_id=task_id,
-            username=username,
-            knowledge_db_id=knowledge_db_id,
-            file_meta=file_meta
-        )
+        workflow_data = message["workflow_data"]
+
+        redis_conn = await redis.get_task_connection()
+        try:
+            # 更新并通知workflow启动
+            await redis_conn.hset(f"workflow:{task_id}", "status", "running")
+            # 发送事件到专用Stream
+            await redis_conn.xadd(
+                f"workflow:events:{task_id}",  # 使用新的事件流键
+                {"type": "workflow", "status": "running", "result": "", "error": ""},
+            )
+            async with WorkflowEngine(
+                nodes=workflow_data["nodes"],
+                edges=workflow_data["edges"],
+                global_variables=workflow_data["global_variables"],
+                start_node=workflow_data["start_node"],
+                task_id=task_id,  # 传递task_id用于状态更新
+            ) as engine:
+                # 验证工作流
+                if not engine.graph[0]:
+                    raise ValueError(engine.graph[-1])
+
+                # 执行工作流
+                await engine.start()
+
+                # 保存结果并通知完成
+                await redis_conn.hset(
+                    f"workflow:{task_id}",
+                    mapping={
+                        "status": "completed",
+                        "result": json.dumps(engine.context),
+                        "end_time": str(beijing_time_now()),
+                    },
+                )
+                # 发送事件到专用Stream
+                # 任务完成时发送事件
+                await redis_conn.xadd(
+                    f"workflow:events:{task_id}",
+                    {
+                        "type": "workflow",
+                        "status": "completed",
+                        "result": json.dumps(engine.context),
+                        "error": "",
+                    },
+                )
+
+        except Exception as e:
+            await redis_conn.hset(
+                name=f"workflow:{task_id}",
+                mapping={
+                    "status": "failed",
+                    "error": str(e),
+                    "end_time": str(beijing_time_now()),
+                },
+            )
+            await redis_conn.xadd(
+                f"workflow:events:{task_id}",
+                {"type": "workflow", "status": "failed", "result": "", "error": str(e)},
+            )
+            logger.error(f"Workflow task failed: {str(e)}")
+        finally:
+            # 设置最终过期时间
+            await redis_conn.expire(f"workflow:{task_id}", 3600)
+            await redis_conn.expire(f"workflow:{task_id}:nodes", 3600)
 
     # @retry(stop=stop_after_attempt(5), wait=wait_fixed(2))
     async def consume_messages(self):

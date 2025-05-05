@@ -5,13 +5,13 @@ import { useGlobalStore } from "@/stores/pythonVariableStore";
 import { CustomNode } from "@/types/types";
 import { Dispatch, SetStateAction, useState } from "react";
 
-interface LoopNodeProps {
+interface ConditionNodeProps {
   node: CustomNode;
   setCodeFullScreenFlow: Dispatch<SetStateAction<boolean>>;
   codeFullScreenFlow: boolean;
 }
 
-const LoopNodeComponent: React.FC<LoopNodeProps> = ({
+const ConditionNodeComponent: React.FC<ConditionNodeProps> = ({
   node,
   setCodeFullScreenFlow,
   codeFullScreenFlow,
@@ -24,27 +24,11 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
     const { name, value } = e.target;
     updateProperty(name, value);
   };
-  const {
-    updateNodeLabel,
-    updateOutput,
-    updateLoopType,
-    updateMaxCount,
-    updateCondition,
-  } = useFlowStore();
-
-  const handleLoopChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const { value } = e.target;
-    updateLoopType(node.id, value);
-  };
-
-  const handleMaxCountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    updateMaxCount(node.id, parseInt(value));
-  };
-
+  const { updateNodeLabel, updateOutput } = useFlowStore();
+  const { updateConditions } = useFlowStore();
   const handleConditionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    updateCondition(node.id, value);
+    const { name, value } = e.target;
+    updateConditions(node.id, parseInt(name), value);
   };
 
   const [runTest, setRunTest] = useState(false);
@@ -138,7 +122,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
           <span className="whitespace-nowrap">Save Node</span>
         </button>
       </div>
-      <details className="group w-full">
+      <details className="group w-full" open>
         <summary className="flex items-center cursor-pointer font-medium w-full">
           <div className="px-2 py-1 flex items-center justify-between w-full mt-1">
             <div className="flex items-center justify-center gap-1">
@@ -306,15 +290,16 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="size-6"
+                className="size-5"
               >
                 <path
                   fillRule="evenodd"
-                  d="M12 5.25c1.213 0 2.415.046 3.605.135a3.256 3.256 0 0 1 3.01 3.01c.044.583.077 1.17.1 1.759L17.03 8.47a.75.75 0 1 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l3-3a.75.75 0 0 0-1.06-1.06l-1.752 1.751c-.023-.65-.06-1.296-.108-1.939a4.756 4.756 0 0 0-4.392-4.392 49.422 49.422 0 0 0-7.436 0A4.756 4.756 0 0 0 3.89 8.282c-.017.224-.033.447-.046.672a.75.75 0 1 0 1.497.092c.013-.217.028-.434.044-.651a3.256 3.256 0 0 1 3.01-3.01c1.19-.09 2.392-.135 3.605-.135Zm-6.97 6.22a.75.75 0 0 0-1.06 0l-3 3a.75.75 0 1 0 1.06 1.06l1.752-1.751c.023.65.06 1.296.108 1.939a4.756 4.756 0 0 0 4.392 4.392 49.413 49.413 0 0 0 7.436 0 4.756 4.756 0 0 0 4.392-4.392c.017-.223.032-.447.046-.672a.75.75 0 0 0-1.497-.092c-.013.217-.028.434-.044.651a3.256 3.256 0 0 1-3.01 3.01 47.953 47.953 0 0 1-7.21 0 3.256 3.256 0 0 1-3.01-3.01 47.759 47.759 0 0 1-.1-1.759L6.97 15.53a.75.75 0 0 0 1.06-1.06l-3-3Z"
+                  d="M2.25 4.125c0-1.036.84-1.875 1.875-1.875h5.25c1.036 0 1.875.84 1.875 1.875V17.25a4.5 4.5 0 1 1-9 0V4.125Zm4.5 14.25a1.125 1.125 0 1 0 0-2.25 1.125 1.125 0 0 0 0 2.25Z"
                   clipRule="evenodd"
                 />
+                <path d="M10.719 21.75h9.156c1.036 0 1.875-.84 1.875-1.875v-5.25c0-1.036-.84-1.875-1.875-1.875h-.14l-8.742 8.743c-.09.089-.18.175-.274.257ZM12.738 17.625l6.474-6.474a1.875 1.875 0 0 0 0-2.651L15.5 4.787a1.875 1.875 0 0 0-2.651 0l-.1.099V17.25c0 .126-.003.251-.01.375Z" />
               </svg>
-              Loop Settings
+              Pass Condition
               <svg
                 className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
                 fill="none"
@@ -356,74 +341,53 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
         <div
           className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 py-2 px-4`}
         >
-          <div className="whitespace-pre-wrap space-y-2 ">
-            <div className="px-2 flex w-full items-center gap-2">
-              <div className="max-w-[50%] overflow-scroll">Loop Type</div>
-              <div>=</div>
-              <select
-                name={"LoopType"}
-                value={node.data.loopType} // 确保这里绑定你的状态变量
-                onChange={handleLoopChange}
-                className="appearance-none flex-1 w-full px-3 py-1 border-2 border-gray-200 rounded-xl
-           focus:outline-none focus:ring-2 focus:ring-indigo-500
-           disabled:opacity-50"
-              >
-                <option value="count">count</option>
-                <option value="condition">condition</option>
-              </select>
+          {!node.data.conditions && (
+            <div className="text-gray-500">
+              Please connect the node before setting the connection conditions.
             </div>
-            <div>
-              {node.data.loopType && (
-                <div className="px-2 flex w-full items-center gap-2">
-                  <div className="max-w-[50%] overflow-scroll">
-                    {node.data.loopType === "count"
-                      ? "Max Count"
-                      : "Break Condition"}
-                  </div>
-                  <div>=</div>
-                  {node.data.loopType === "count" ? (
-                    <input
-                      name={"LoopType"}
-                      value={node.data.maxCount}
-                      onChange={handleMaxCountChange}
-                      type="number"
-                      min="1"
-                      max="100"
-                      step="1"
-                      placeholder="1"
-                      onKeyDown={(e: React.KeyboardEvent<HTMLSpanElement>) => {
-                        if (e.key === "Enter") {
-                          // 按下回车时保存并退出编辑模式
-                          e.preventDefault();
-                          e.currentTarget.blur();
-                        }
-                      }}
-                      className="flex-1 w-full px-3 py-1 border-2 border-gray-200 rounded-xl
+          )}
+          {node.data.conditions && (
+            <div className="whitespace-pre-wrap space-y-2 ">
+              {Object.keys(node.data.conditions).length === 0 ? (
+                <div className="text-gray-500">
+                  Please connect the node before setting the connection
+                  conditions.
+                </div>
+              ) : (
+                Object.entries(node.data.conditions).map(
+                  ([key, expression]) => (
+                    <div
+                      className="px-2 flex w-full items-center gap-2"
+                      key={key}
+                    >
+                      <div className="max-w-[50%] overflow-scroll">
+                        Condition-{key}
+                      </div>
+                      <div>=</div>
+                      <input
+                        name={key}
+                        value={expression}
+                        onChange={handleConditionChange}
+                        placeholder="Support Python expression"
+                        onKeyDown={(
+                          e: React.KeyboardEvent<HTMLSpanElement>
+                        ) => {
+                          if (e.key === "Enter") {
+                            // 按下回车时保存并退出编辑模式
+                            e.preventDefault();
+                            e.currentTarget.blur();
+                          }
+                        }}
+                        className="flex-1 w-full px-3 py-1 border-2 border-gray-200 rounded-xl
               focus:outline-none focus:ring-2 focus:ring-indigo-500
               disabled:opacity-50"
-                    />
-                  ) : (
-                    <input
-                      name={"LoopType"}
-                      value={node.data.condition}
-                      onChange={handleConditionChange}
-                      placeholder="Support Python expression"
-                      onKeyDown={(e: React.KeyboardEvent<HTMLSpanElement>) => {
-                        if (e.key === "Enter") {
-                          // 按下回车时保存并退出编辑模式
-                          e.preventDefault();
-                          e.currentTarget.blur();
-                        }
-                      }}
-                      className="flex-1 w-full px-3 py-1 border-2 border-gray-200 rounded-xl
-            focus:outline-none focus:ring-2 focus:ring-indigo-500
-            disabled:opacity-50"
-                    />
-                  )}
-                </div>
+                      />
+                    </div>
+                  )
+                )
               )}
             </div>
-          </div>
+          )}
         </div>
       </details>
       <details className="group w-full" open>
@@ -469,4 +433,4 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
   );
 };
 
-export default LoopNodeComponent;
+export default ConditionNodeComponent;

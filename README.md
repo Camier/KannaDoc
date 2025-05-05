@@ -167,6 +167,10 @@ RUN useradd -m restricted_user
 USER restricted_user
 WORKDIR /app
 EOF
+#！！！重要！！！
+#开启网络会降低沙箱安全性，建议仅在需要安装依赖时临时开启
+#可以添加网络访问白名单（需要额外配置防火墙规则）
+#如果使用pip install，建议配合可信的镜像源使用：
 
 sudo usermod -aG docker $USER
 newgrp docker  # 或重新登录

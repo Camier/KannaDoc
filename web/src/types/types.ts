@@ -101,7 +101,6 @@ import { Node, Edge, NodeProps, EdgeProps } from "@xyflow/react";
 
 export type NodeTypeKey =
   | "start"
-  | "end"
   | "loop"
   | "condition"
   | "vlm"
@@ -110,17 +109,22 @@ export type NodeTypeKey =
 // 完整节点类型（继承基础节点属性）
 export type CustomNode = Node<{
   label: string;
+  status: string;
   nodeType: NodeTypeKey;
   code?: string;
   output?: string;
   conditionCount?: number;
-  conditions?:  {
+  conditions?: {
     [key: number]: string; // 允许动态属性
   };
+  selectedModelId?: string;
   loopType?: string;
   maxCount?: number;
   condition?: string;
-
+  pip?: {
+    [key: string]: string; // 允许动态属性
+  };
+  imageUrl?: string;
 }>;
 
 // 组件 Props 类型
@@ -156,7 +160,6 @@ export const nodeTypesInfo: Record<
   }
 > = {
   start: { label: "Start" },
-  end: { label: "End" },
   loop: { label: "Loop" },
   condition: { label: "Condition" },
   vlm: { label: "VLM" },
@@ -168,5 +171,20 @@ export interface Flow {
   flowId: string;
   lastModityTime: string;
   createTime: string;
-  fileNumber: number;
+}
+
+export interface WorkflowAll {
+  workflowId: string;
+  workflowName: string;
+  workflowConfig: {
+    [key: string]: string;
+  };
+  nodes: CustomNode[];
+  edges: CustomEdge[];
+  startNode: string;
+  globalVariables: {
+    [key: string]: string;
+  };
+  createTime: string;
+  lastModityTime: string;
 }

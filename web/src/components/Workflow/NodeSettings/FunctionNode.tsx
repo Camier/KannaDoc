@@ -1,4 +1,4 @@
-import PythonEditor from "@/components/WorkFlow/PythonEditor";
+import PythonEditor from "@/components/Workflow/PythonEditor";
 import { runPythonTest } from "@/lib/api/workflowApi";
 import { useAuthStore } from "@/stores/authStore";
 import { useFlowStore } from "@/stores/flowStore";
@@ -25,14 +25,30 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
     reset,
   } = useGlobalStore();
   const [variable, setVariable] = useState("");
+  const [packageName, setPackageName] = useState("");
   const { user } = useAuthStore();
+  const {
+    updateNodeLabel,
+    updateOutput,
+    updatePackageInfos,
+    removePackageInfos,
+    updateImageUrl
+  } = useFlowStore();
+  const [runTest, setRunTest] = useState(false);
+
   const handleVariableChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     updateProperty(name, value);
   };
-  const { updateNodeLabel, updateOutput } = useFlowStore();
-  const [runTest, setRunTest] = useState(false);
 
+  const handleUpdatePackageInfos = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    updatePackageInfos(node.id, name, value);
+  };
+  const  handleUpdateImageUrl = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    updateImageUrl(node.id, value);
+  };
   const handleRunTest = async () => {
     if (user?.name) {
       setRunTest((prev) => true);
@@ -42,10 +58,8 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
         const id = node.id;
         if (response.data.code === 0) {
           updateOutput(node.id, response.data.result[id][0].result);
-          
         } else {
           updateOutput(node.id, response.data.msg);
-         
         }
       } catch (error) {
         console.error("Error connect:", error);
@@ -114,7 +128,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
           <span className="whitespace-nowrap">Save Node</span>
         </button>
       </div>
-      <details className="group w-full">
+      <details className="group w-full" open>
         <summary className="flex items-center cursor-pointer font-medium w-full">
           <div className="px-2 py-1 flex items-center justify-between w-full mt-1">
             <div className="flex items-center justify-center gap-1">
@@ -238,7 +252,9 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
           </div>
           {Object.keys(globalVariables).map((key) => (
             <div className="px-2 flex w-full items-center gap-2" key={key}>
-              <div className="max-w-[50%] whitespace-nowrap overflow-scroll">{key}</div>
+              <div className="max-w-[50%] whitespace-nowrap overflow-scroll">
+                {key}
+              </div>
               <div>=</div>
               <input
                 name={key}
@@ -272,6 +288,172 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
               </svg>
             </div>
           ))}
+        </div>
+      </details>
+      <details className="group w-full" open>
+        <summary className="flex items-center cursor-pointer font-medium w-full">
+          <div className="px-2 py-1 flex items-center justify-between w-full mt-1">
+            <div className="flex items-center justify-center gap-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="size-5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M7.5 5.25a3 3 0 0 1 3-3h3a3 3 0 0 1 3 3v.205c.933.085 1.857.197 2.774.334 1.454.218 2.476 1.483 2.476 2.917v3.033c0 1.211-.734 2.352-1.936 2.752A24.726 24.726 0 0 1 12 15.75c-2.73 0-5.357-.442-7.814-1.259-1.202-.4-1.936-1.541-1.936-2.752V8.706c0-1.434 1.022-2.7 2.476-2.917A48.814 48.814 0 0 1 7.5 5.455V5.25Zm7.5 0v.09a49.488 49.488 0 0 0-6 0v-.09a1.5 1.5 0 0 1 1.5-1.5h3a1.5 1.5 0 0 1 1.5 1.5Zm-3 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
+                  clipRule="evenodd"
+                />
+                <path d="M3 18.4v-2.796a4.3 4.3 0 0 0 .713.31A26.226 26.226 0 0 0 12 17.25c2.892 0 5.68-.468 8.287-1.335.252-.084.49-.189.713-.311V18.4c0 1.452-1.047 2.728-2.523 2.923-2.12.282-4.282.427-6.477.427a49.19 49.19 0 0 1-6.477-.427C4.047 21.128 3 19.852 3 18.4Z" />
+              </svg>
+              Pip Dependencies
+              <svg
+                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+          </div>
+        </summary>
+        <div
+          className={`space-y-2 p-4 rounded-2xl shadow-lg ${
+            codeFullScreenFlow ? "w-full" : "w-full"
+          }`}
+        >
+          <div className="flex items-center w-full px-2 pb-2 gap-6 text-gray-500">
+            Install dependencies once per workflow on a single node – no
+            redundant installations across other nodes needed.
+          </div>
+          <div className="flex items-center w-full px-2 gap-6 border-gray-200">
+            <input
+              name={"addPackage"}
+              value={packageName}
+              placeholder="packgae Name"
+              onChange={(e) => setPackageName(e.target.value)}
+              className="w-full px-3 py-1 border-2 border-gray-200 rounded-xl
+              focus:outline-none focus:ring-2 focus:ring-indigo-500
+              disabled:opacity-50"
+              onKeyDown={(e: React.KeyboardEvent<HTMLSpanElement>) => {
+                if (e.key === "Enter") {
+                  // 按下回车时保存并退出编辑模式
+                  e.preventDefault();
+                  if (packageName === "") {
+                    return;
+                  } else {
+                    if (node?.data.pip?.hasOwnProperty(packageName)) {
+                      alert(`Package ${packageName} already exists`);
+                      return;
+                    }
+                    updatePackageInfos(node.id, packageName, "");
+                    setPackageName("");
+                  }
+                }
+              }}
+            />
+            <div
+              onClick={() => {
+                if (packageName === "") {
+                  return;
+                } else {
+                  if (node?.data.pip?.hasOwnProperty(packageName)) {
+                    alert(`Package ${packageName} already exists`);
+                    return;
+                  }
+                  updatePackageInfos(node.id, packageName, "");
+                  setVariable("");
+                }
+              }}
+              className="whitespace-nowrap cursor-pointer hover:text-indigo-700 pr-2 flex items-center gap-1 text-indigo-500"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="size-5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <span>Add Package</span>
+            </div>
+          </div>
+          <div className="px-2 flex w-full items-center gap-2">
+            <div className="max-w-[50%] whitespace-nowrap overflow-scroll">
+              Mirror Url
+            </div>
+            <div>=</div>
+            <input
+              name={"imageUrl"}
+              value={node.data.imageUrl? node.data.imageUrl : ""}
+              onChange={(handleUpdateImageUrl)}
+              placeholder="Optional"
+              onKeyDown={(e: React.KeyboardEvent<HTMLSpanElement>) => {
+                if (e.key === "Enter") {
+                  // 按下回车时保存并退出编辑模式
+                  e.preventDefault();
+                  e.currentTarget.blur();
+                }
+              }}
+              className="flex-1 w-full px-3 py-1 border-2 border-gray-200 rounded-xl
+              focus:outline-none focus:ring-2 focus:ring-indigo-500
+              disabled:opacity-50"
+            />
+          </div>
+          {node.data.pip && (
+            <div className="space-y-2">
+              {Object.keys(node.data.pip).map((key) => (
+                <div className="px-2 flex w-full items-center gap-2" key={key}>
+                  <div className="max-w-[50%] whitespace-nowrap overflow-scroll">
+                    {key}
+                  </div>
+                  <div>==</div>
+                  <input
+                    name={key}
+                    value={node.data.pip ? node.data.pip[key] : ""}
+                    onChange={handleUpdatePackageInfos}
+                    placeholder="Default Package Version"
+                    onKeyDown={(e: React.KeyboardEvent<HTMLSpanElement>) => {
+                      if (e.key === "Enter") {
+                        // 按下回车时保存并退出编辑模式
+                        e.preventDefault();
+                        e.currentTarget.blur();
+                      }
+                    }}
+                    className="flex-1 w-full px-3 py-1 border-2 border-gray-200 rounded-xl
+              focus:outline-none focus:ring-2 focus:ring-indigo-500
+              disabled:opacity-50"
+                  />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="size-5 text-indigo-500 cursor-pointer shrink-0"
+                    onClick={() => removePackageInfos(node.id, key)}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                    />
+                  </svg>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </details>
       <details className="group w-full" open>

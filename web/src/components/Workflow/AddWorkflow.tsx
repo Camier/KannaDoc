@@ -1,20 +1,20 @@
 import { Dispatch, SetStateAction } from "react";
 
-interface AddWorkFlowProps {
+interface AddWorkflowProps {
   setShowCreateModal: Dispatch<SetStateAction<boolean>>;
   nameError: string | null;
   setNameError: Dispatch<SetStateAction<string | null>>;
-  newWorkFlowName: string;
-  setNewWorkFlowName: Dispatch<SetStateAction<string>>;
+  newWorkflowName: string;
+  setNewWorkflowName: Dispatch<SetStateAction<string>>;
   onCreateConfirm:() => void;
 }
 
-const AddWorkFlow: React.FC<AddWorkFlowProps> = ({
+const AddWorkflow: React.FC<AddWorkflowProps> = ({
   setShowCreateModal,
   nameError,
   setNameError,
-  newWorkFlowName,
-  setNewWorkFlowName,
+  newWorkflowName,
+  setNewWorkflowName,
   onCreateConfirm,
 }) => {
   return (
@@ -38,9 +38,9 @@ const AddWorkFlow: React.FC<AddWorkFlowProps> = ({
             className={`w-full px-4 py-2 mb-2 border border-gray-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 ${
               nameError ? "border-red-500" : "border-gray-300"
             }`}
-            value={newWorkFlowName}
+            value={newWorkflowName}
             onChange={(e) => {
-              setNewWorkFlowName(e.target.value);
+              setNewWorkflowName(e.target.value);
               setNameError(null);
             }}
             onKeyDown = {(e: React.KeyboardEvent) => {
@@ -75,4 +75,4 @@ const AddWorkFlow: React.FC<AddWorkFlowProps> = ({
   );
 };
 
-export default AddWorkFlow;
+export default AddWorkflow;

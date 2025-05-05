@@ -26,19 +26,19 @@ const CustomNodeComponent = ({
             before:h-[10px] before:w-[2px] before:bg-white before:content-['']"
           />
         );
-      case "end":
-        return (
-          <Handle
-            type="target"
-            position={Position.Left}
-            isConnectable={isConnectable}
-            className="!top-[calc(60%+8px)] h-3 w-3 rounded-full !bg-indigo-500 relative 
-            after:absolute after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 
-            after:w-[10px] after:h-[2px] after:bg-white after:content-[''] 
-            before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 
-            before:h-[10px] before:w-[2px] before:bg-white before:content-['']"
-          />
-        );
+      // case "end":
+      //   return (
+      //     <Handle
+      //       type="target"
+      //       position={Position.Left}
+      //       isConnectable={isConnectable}
+      //       className="!top-[calc(60%+8px)] h-3 w-3 rounded-full !bg-indigo-500 relative 
+      //       after:absolute after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 
+      //       after:w-[10px] after:h-[2px] after:bg-white after:content-[''] 
+      //       before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 
+      //       before:h-[10px] before:w-[2px] before:bg-white before:content-['']"
+      //     />
+      //   );
       case "loop":
         return (
           <>
@@ -159,34 +159,34 @@ const CustomNodeComponent = ({
         <span className="whitespace-nowrap text-sm">{data.label}</span>
       </div>
       <div className="h-[calc(60%-8px)] mx-[calc(20%-8px)] mb-2 flex items-center justify-center rounded-3xl bg-gray-100">
+        {data.status === "failed"?
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
-          className="size-6 opacity-30"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"
-          />
-        </svg>
-        {/* <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="1.5"
-          stroke="currentColor"
-          className="size-6"
+          className="size-6 text-red-500"
         >
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
             d="M12 9v3.75m0-10.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.25-8.25-3.286Zm0 13.036h.008v.008H12v-.008Z"
           />
-        </svg> */}
+        </svg> : <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="1.5"
+          stroke="currentColor"
+          className={`size-6 ${data.status === "ok"? "text-indigo-500":"opacity-30"}`}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"
+          />
+        </svg>}
       </div>
     </div>
   );

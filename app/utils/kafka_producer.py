@@ -53,4 +53,24 @@ class KafkaProducerManager:
             logger.error(f"Error sending message to Kafka: {e}")
 
 
+    async def send_workflow_task(
+        self,
+        task_id: str,
+        username: str,
+        workflow_data: dict,
+        priority: str = "normal"
+    ):
+        message = {
+            "type": "workflow",
+            "task_id": task_id,
+            "username": username,
+            "workflow_data": workflow_data
+        }
+        
+        await self.producer.send(
+            KAFKA_TOPIC,
+            json.dumps(message).encode("utf-8"),
+            headers=[(KAFKA_PRIORITY_HEADER, priority.encode("utf-8"))]
+        )
+
 kafka_producer_manager = KafkaProducerManager()

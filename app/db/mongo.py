@@ -54,6 +54,20 @@ class MongoDB:
                 name="user_conversations",
             )
 
+            # workflow索引
+            # 复合唯一索引（用户+工作流ID唯一性）
+            await self.db.workflows.create_index(
+                [("username", 1), ("workflow_id", 1)],
+                unique=True,
+                name="username_workflow_id_unique"
+            )
+
+            # 复合排序索引（按用户和修改时间排序）
+            await self.db.workflows.create_index(
+                [("username", 1), ("last_modify_at", -1)],
+                name="user_workflows"
+            )
+
             logger.info("MongoDB 索引创建完成")
         except Exception as e:
             logger.error(f"索引创建失败: {str(e)}")
@@ -1137,6 +1151,130 @@ class MongoDB:
                 },
             },
         }
+
+    # workflow
+    async def update_workflow(
+        self,
+        username: str,
+        workflow_id: str,
+        workflow_name: str,
+        workflow_config: dict,
+        start_node: str = "node_start",
+        global_variables: dict = None,
+        nodes: list = None,
+        edges: list = None,
+    ):
+        """创建或更新一个工作流"""
+        
+        # 处理可变默认参数
+        global_variables = global_variables if global_variables is not None else {}
+        nodes = nodes if nodes is not None else []
+        edges = edges if edges is not None else []
+
+        current_time = beijing_time_now()
+        query = {
+            "workflow_id": workflow_id,
+            "username": username
+        }
+        update = {
+            "$set": {
+                "workflow_name": workflow_name,
+                "workflow_config": workflow_config,
+                "nodes": nodes,
+                "edges": edges,
+                "start_node": start_node,
+                "global_variables": global_variables,
+                "last_modify_at": current_time,
+                "is_delete": False
+            },
+            "$setOnInsert": {
+                "created_at": current_time
+            }
+        }
+        
+        try:
+            result = await self.db.workflows.update_one(query, update, upsert=True)
+            if result.upserted_id is not None:
+                return {"status": "success", "message": "Workflow created", "id": workflow_id}
+            else:
+                return {"status": "success", "message": "Workflow updated", "id": workflow_id}
+        except DuplicateKeyError:
+            logger.error(f"Workflow ID冲突: {workflow_id}")
+            return {"status": "failed", "message": "Workflow ID已存在，请检查用户名和ID组合"}
+        except Exception as e:
+            logger.error(f"保存workflow失败: {str(e)}")
+            return {"status": "error", "message": f"数据库错误: {str(e)}"}
+
+    async def get_workflow(self, workflow_id: str):
+        """获取指定 workflow_id 的完整记录"""
+        workflow = await self.db.workflows.find_one(
+            {"workflow_id": workflow_id, "is_delete": False}
+        )
+        return workflow if workflow else None
+
+    async def get_workflows_by_user(self, username: str) -> List[Dict[str, Any]]:
+        """按时间降序获取指定用户的所有会话"""
+        cursor = self.db.workflows.find(
+            {"username": username, "is_delete": False}
+        ).sort(
+            "last_modify_at", -1
+        )  # -1 表示降序排列
+        return await cursor.to_list(length=None)  # 返回所有匹配的记录
+
+    async def update_workflow_name(
+        self, workflow_id: str, new_name: str
+    ) -> dict:
+        result = await self.db.workflows.update_one(
+            {"workflow_id": workflow_id, "is_delete": False},
+            {
+                "$set": {
+                    "workflow_name": new_name,
+                    "last_modify_at": beijing_time_now(),
+                }
+            },
+        )
+        if result.modified_count == 0:
+            return {
+                "status": "failed",
+                "message": "Workflow not found or update failed",
+            }
+        return {"status": "success"}
+
+    async def delete_workflow(self, workflow_id: str) -> dict:
+        """根据 workflow_id 删除指定workflow，并删除关联的临时知识库"""
+        # 获取对话文档
+        workflow = await self.db.workflows.find_one(
+            {"workflow_id": workflow_id}
+        )
+        if not workflow:
+            return {"status": "failed", "message": "Workflow not found"}
+
+        # 收集所有关联的临时知识库ID
+        temp_dbs = []
+        for node in workflow.get("nodes", []):
+            if temp_db := node["data"].get("temp_db"):
+                if temp_db.strip():  # 过滤空值
+                    temp_dbs.append(temp_db.strip())
+
+        # 去重并删除临时知识库
+        deletion_results = []
+        for db_id in set(temp_dbs):
+            result = await self.delete_knowledge_base(db_id)
+            deletion_results.append({"knowledge_base_id": db_id, "result": result})
+            milvus_client.delete_collection("colqwen" + db_id.replace("-", "_"))
+
+        # 删除对话文档
+        delete_result = await self.db.workflows.delete_one(
+            {"workflow_id": workflow_id}
+        )
+
+        if delete_result.deleted_count == 1:
+            return {
+                "status": "success",
+                "message": f"Workflow {workflow_id} deleted",
+                "knowledge_base_deletion": deletion_results,
+            }
+        return {"status": "failed", "message": "Workflow not found"}
 
 
 mongodb = MongoDB()

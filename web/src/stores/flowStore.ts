@@ -15,6 +15,8 @@ interface FlowState {
   // Actions
   setNodes: (nodes: CustomNode[]) => void;
   setEdges: (edges: CustomEdge[]) => void;
+  resethistory: (nodes: CustomNode[], edges: CustomEdge[]) => void;
+  resetfuture: () => void;
   setSelectedNodeId: (nodeId: string | null) => void;
   setSelectedEdgeId: (edgeId: string | null) => void;
   setSelectedType: (type: NodeTypeKey) => void;
@@ -26,13 +28,22 @@ interface FlowState {
   updateNodeLabel: (nodeId: string, label: string) => void;
   updateCode: (nodeId: string, code: string) => void;
   updateOutput: (nodeId: string, output: string) => void;
+  updateStatus: (nodeId: string, status: string) => void
   updateConditions: (nodeId: string, key: number, value: string) => void;
   updateLoopType: (nodeId: string, loopType: string) => void;
   updateMaxCount: (nodeId: string, maxCount: number) => void;
+  updateImageUrl: (nodeId: string, imageUrl: string) => void;
   updateCondition: (nodeId: string, condition: string) => void;
+  updateSelectedModelId: (nodeId: string, selectedModelId: string) => void;
   removeCondition: (nodeId: string, key: number) => void;
   updateConditionCount: (nodeId: string, conditionCount: number) => void;
-  getConditionCount: (nodeId: string) => number|undefined;
+  getConditionCount: (nodeId: string) => number | undefined;
+  updatePackageInfos: (
+    nodeId: string,
+    packageName: string,
+    version: string
+  ) => void;
+  removePackageInfos: (nodeId: string, packageName: string) => void;
 }
 
 export const useFlowStore = create<FlowState>((set, get) => ({
@@ -47,6 +58,9 @@ export const useFlowStore = create<FlowState>((set, get) => ({
 
   setNodes: (nodes) => set({ nodes }),
   setEdges: (edges) => set({ edges }),
+  resethistory: (nodes, edges) =>
+    set({ history: [{ nodes: nodes, edges: edges }] }),
+  resetfuture: () => set({ future: [] }),
   setSelectedType: (type) => set({ selectedType: type }),
   setSelectedNodeId: (nodeId) => set({ selectedNodeId: nodeId }),
   setSelectedEdgeId: (edgeId) => set({ selectedEdgeId: edgeId }),
@@ -84,11 +98,14 @@ export const useFlowStore = create<FlowState>((set, get) => ({
   },
 
   deleteEdge: (edgeId) => {
-    const edge = get().edges.find((e) => e.id === edgeId) 
-      if (edge?.data?.conditionLabel) {
-        const conditionNodeId = edge.source;
-        get().removeCondition(conditionNodeId, parseInt(edge.data.conditionLabel));
-      }
+    const edge = get().edges.find((e) => e.id === edgeId);
+    if (edge?.data?.conditionLabel) {
+      const conditionNodeId = edge.source;
+      get().removeCondition(
+        conditionNodeId,
+        parseInt(edge.data.conditionLabel)
+      );
+    }
     set((state) => ({ edges: state.edges.filter((e) => e.id !== edgeId) }));
     get().pushHistory();
   },
@@ -127,11 +144,31 @@ export const useFlowStore = create<FlowState>((set, get) => ({
       ),
     }));
   },
+  updateStatus: (nodeId, status) => {
+    set((state) => ({
+      nodes: state.nodes.map((node) =>
+        node.id === nodeId ? { ...node, data: { ...node.data, status } } : node
+      ),
+    }));
+  },
+  updateSelectedModelId: (nodeId, selectedModelId) => {
+    set((state) => ({
+      nodes: state.nodes.map((node) =>
+        node.id === nodeId ? { ...node, data: { ...node.data, selectedModelId } } : node
+      ),
+    }));
+  },
   updateConditions: (nodeId, key, value) => {
     set((state) => ({
       nodes: state.nodes.map((node) =>
         node.id === nodeId
-          ? { ...node, data: { ...node.data, conditions:{...node.data.conditions, [key]: value} } }
+          ? {
+              ...node,
+              data: {
+                ...node.data,
+                conditions: { ...node.data.conditions, [key]: value },
+              },
+            }
           : node
       ),
     }));
@@ -141,17 +178,18 @@ export const useFlowStore = create<FlowState>((set, get) => ({
       nodes: state.nodes.map((node) => {
         if (node.id === nodeId) {
           // 使用对象解构删除指定 key
-          const { [key]: removed, ...remainingConditions } = node.data.conditions || {};
+          const { [key]: removed, ...remainingConditions } =
+            node.data.conditions || {};
           return {
             ...node,
             data: {
               ...node.data,
-              conditions: remainingConditions
-            }
+              conditions: remainingConditions,
+            },
           };
         }
         return node;
-      })
+      }),
     }));
   },
   updateLoopType: (nodeId, loopType) => {
@@ -181,6 +219,15 @@ export const useFlowStore = create<FlowState>((set, get) => ({
       ),
     }));
   },
+  updateImageUrl: (nodeId, imageUrl) => {
+    set((state) => ({
+      nodes: state.nodes.map((node) =>
+        node.id === nodeId
+          ? { ...node, data: { ...node.data, imageUrl } }
+          : node
+      ),
+    }));
+  },
   updateConditionCount: (nodeId, conditionCount) => {
     set((state) => ({
       nodes: state.nodes.map((node) =>
@@ -193,6 +240,27 @@ export const useFlowStore = create<FlowState>((set, get) => ({
   getConditionCount: (nodeId) => {
     const { nodes } = get();
     const node = nodes.find((node) => node.id === nodeId);
-    return node?.data.conditionCount
+    return node?.data.conditionCount;
+  },
+  updatePackageInfos: (nodeId, packageName, version) => {
+    const node = get().nodes.find((node) => node.id === nodeId);
+    const pip = { ...node?.data.pip, [packageName]: version };
+    set((state) => ({
+      nodes: state.nodes.map((node) =>
+        node.id === nodeId ? { ...node, data: { ...node.data, pip } } : node
+      ),
+    }));
+  },
+  removePackageInfos: (nodeId, packageName) => {
+    const node = get().nodes.find((node) => node.id === nodeId);
+    set((state) => {
+      const pip = { ...node?.data.pip };
+      delete pip[packageName];
+      return {
+        nodes: state.nodes.map((node) =>
+          node.id === nodeId ? { ...node, data: { ...node.data, pip } } : node
+        ),
+      };
+    });
   },
 }));

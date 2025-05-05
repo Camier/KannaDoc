@@ -1,65 +1,48 @@
-import { runConditionTest } from "@/lib/api/workflowApi";
 import { useAuthStore } from "@/stores/authStore";
+import useModelConfigStore from "@/stores/configStore";
 import { useFlowStore } from "@/stores/flowStore";
 import { useGlobalStore } from "@/stores/pythonVariableStore";
-import { CustomNode } from "@/types/types";
+import { CustomNode, ModelConfig } from "@/types/types";
 import { Dispatch, SetStateAction, useState } from "react";
+import { updateModelConfig } from "@/lib/api/configApi";
+import KnowledgeConfigModal from "./KnowledgeConfigModal";
 
-interface ConditionNodeProps {
+interface VlmNodeProps {
   node: CustomNode;
   setCodeFullScreenFlow: Dispatch<SetStateAction<boolean>>;
   codeFullScreenFlow: boolean;
 }
 
-const ConditionNodeComponent: React.FC<ConditionNodeProps> = ({
+const VlmNodeComponent: React.FC<VlmNodeProps> = ({
   node,
   setCodeFullScreenFlow,
   codeFullScreenFlow,
 }) => {
   const { globalVariables, addProperty, removeProperty, updateProperty } =
     useGlobalStore();
-  const { user } = useAuthStore();
   const [variable, setVariable] = useState("");
   const handleVariableChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     updateProperty(name, value);
   };
-  const { updateNodeLabel, updateOutput } = useFlowStore();
-  const { updateConditions } = useFlowStore();
-  const handleConditionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    updateConditions(node.id, parseInt(name), value);
+  const { updateNodeLabel,updateSelectedModelId } = useFlowStore();
+  const [showConfigModal, setShowConfigModal] = useState(false);
+  const { vlmModelConfig, setVlmModelConfig } = useModelConfigStore();
+  const { user } = useAuthStore();
+
+  const configureKnowledgeDB = () => {
+    setShowConfigModal(true);
   };
 
-  const [runTest, setRunTest] = useState(false);
-
-  const handleRunTest = async () => {
+  const handleSaveConfig = async (config: ModelConfig) => {
     if (user?.name) {
-      setRunTest((prev) => true);
-      updateOutput(node.id, "Running...");
-      const conditions = node.data.conditions;
       try {
-        if (conditions) {
-          const response = await runConditionTest(
-            user.name,
-            node,
-            globalVariables,
-            conditions
-          );
-          const id = node.id;
-          if (response.data.code === 0) {
-            updateOutput(node.id, response.data.result[id][0].condition_child);
-          } else {
-            updateOutput(node.id, response.data.msg);
-          }
-        } else {
-          updateOutput(node.id, "No condition found!");
-        }
+        //更新数据库使用
+        setVlmModelConfig(node.id,config);
+        await updateModelConfig(user.name, config);
+        updateSelectedModelId(node.id, config.modelId)
       } catch (error) {
-        console.error("Error connect:", error);
-        updateOutput(node.id, "Error connect:" + error);
-      } finally {
-        setRunTest((prev) => false);
+        console.error("保存配置失败:", error);
       }
     }
   };
@@ -122,7 +105,7 @@ const ConditionNodeComponent: React.FC<ConditionNodeProps> = ({
           <span className="whitespace-nowrap">Save Node</span>
         </button>
       </div>
-      <details className="group w-full">
+      <details className="group w-full" open>
         <summary className="flex items-center cursor-pointer font-medium w-full">
           <div className="px-2 py-1 flex items-center justify-between w-full mt-1">
             <div className="flex items-center justify-center gap-1">
@@ -294,12 +277,11 @@ const ConditionNodeComponent: React.FC<ConditionNodeProps> = ({
               >
                 <path
                   fillRule="evenodd"
-                  d="M2.25 4.125c0-1.036.84-1.875 1.875-1.875h5.25c1.036 0 1.875.84 1.875 1.875V17.25a4.5 4.5 0 1 1-9 0V4.125Zm4.5 14.25a1.125 1.125 0 1 0 0-2.25 1.125 1.125 0 0 0 0 2.25Z"
+                  d="M11.828 2.25c-.916 0-1.699.663-1.85 1.567l-.091.549a.798.798 0 0 1-.517.608 7.45 7.45 0 0 0-.478.198.798.798 0 0 1-.796-.064l-.453-.324a1.875 1.875 0 0 0-2.416.2l-.243.243a1.875 1.875 0 0 0-.2 2.416l.324.453a.798.798 0 0 1 .064.796 7.448 7.448 0 0 0-.198.478.798.798 0 0 1-.608.517l-.55.092a1.875 1.875 0 0 0-1.566 1.849v.344c0 .916.663 1.699 1.567 1.85l.549.091c.281.047.508.25.608.517.06.162.127.321.198.478a.798.798 0 0 1-.064.796l-.324.453a1.875 1.875 0 0 0 .2 2.416l.243.243c.648.648 1.67.733 2.416.2l.453-.324a.798.798 0 0 1 .796-.064c.157.071.316.137.478.198.267.1.47.327.517.608l.092.55c.15.903.932 1.566 1.849 1.566h.344c.916 0 1.699-.663 1.85-1.567l.091-.549a.798.798 0 0 1 .517-.608 7.52 7.52 0 0 0 .478-.198.798.798 0 0 1 .796.064l.453.324a1.875 1.875 0 0 0 2.416-.2l.243-.243c.648-.648.733-1.67.2-2.416l-.324-.453a.798.798 0 0 1-.064-.796c.071-.157.137-.316.198-.478.1-.267.327-.47.608-.517l.55-.091a1.875 1.875 0 0 0 1.566-1.85v-.344c0-.916-.663-1.699-1.567-1.85l-.549-.091a.798.798 0 0 1-.608-.517 7.507 7.507 0 0 0-.198-.478.798.798 0 0 1 .064-.796l.324-.453a1.875 1.875 0 0 0-.2-2.416l-.243-.243a1.875 1.875 0 0 0-2.416-.2l-.453.324a.798.798 0 0 1-.796.064 7.462 7.462 0 0 0-.478-.198.798.798 0 0 1-.517-.608l-.091-.55a1.875 1.875 0 0 0-1.85-1.566h-.344ZM12 15.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5Z"
                   clipRule="evenodd"
                 />
-                <path d="M10.719 21.75h9.156c1.036 0 1.875-.84 1.875-1.875v-5.25c0-1.036-.84-1.875-1.875-1.875h-.14l-8.742 8.743c-.09.089-.18.175-.274.257ZM12.738 17.625l6.474-6.474a1.875 1.875 0 0 0 0-2.651L15.5 4.787a1.875 1.875 0 0 0-2.651 0l-.1.099V17.25c0 .126-.003.251-.01.375Z" />
               </svg>
-              Pass Condition
+              Prompt
               <svg
                 className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
                 fill="none"
@@ -315,79 +297,47 @@ const ConditionNodeComponent: React.FC<ConditionNodeProps> = ({
               </svg>
             </div>
             <button
-              onClick={handleRunTest}
-              disabled={runTest}
-              className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+              className=" hover:bg-indigo-600 rounded-full text-base px-4 py-2 hover:text-white flex gap-1 cursor-pointer"
+              onClick={configureKnowledgeDB}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="size-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="size-5 my-auto"
               >
                 <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm.75-11.25a.75.75 0 0 0-1.5 0v2.5h-2.5a.75.75 0 0 0 0 1.5h2.5v2.5a.75.75 0 0 0 1.5 0v-2.5h2.5a.75.75 0 0 0 0-1.5h-2.5v-2.5Z"
+                  clipRule="evenodd"
                 />
               </svg>
-
-              <span>Run Test</span>
+              <div>More Settings</div>
             </button>
           </div>
         </summary>
         <div
-          className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 py-2 px-4`}
+          className={`rounded-2xl shadow-lg overflow-scroll p-3 w-full mb-2`}
         >
-          {!node.data.conditions && (
-            <div className="text-gray-500">
-              Please connect the node before setting the connection conditions.
-            </div>
-          )}
-          {node.data.conditions && (
-            <div className="whitespace-pre-wrap space-y-2 ">
-              {Object.keys(node.data.conditions).length === 0 ? (
-                <div className="text-gray-500">
-                  Please connect the node before setting the connection
-                  conditions.
-                </div>
-              ) : (
-                Object.entries(node.data.conditions).map(
-                  ([key, expression]) => (
-                    <div
-                      className="px-2 flex w-full items-center gap-2"
-                      key={key}
-                    >
-                      <div className="max-w-[50%] overflow-scroll">
-                        Condition-{key}
-                      </div>
-                      <div>=</div>
-                      <input
-                        name={key}
-                        value={expression}
-                        onChange={handleConditionChange}
-                        placeholder="Support Python expression"
-                        onKeyDown={(
-                          e: React.KeyboardEvent<HTMLSpanElement>
-                        ) => {
-                          if (e.key === "Enter") {
-                            // 按下回车时保存并退出编辑模式
-                            e.preventDefault();
-                            e.currentTarget.blur();
-                          }
-                        }}
-                        className="flex-1 w-full px-3 py-1 border-2 border-gray-200 rounded-xl
-              focus:outline-none focus:ring-2 focus:ring-indigo-500
-              disabled:opacity-50"
-                      />
-                    </div>
-                  )
-                )
-              )}
-            </div>
-          )}
+          <textarea
+            className={`mt-1 w-full px-2 py-2 border border-gray-200 rounded-xl min-h-[10vh] ${codeFullScreenFlow? "max-h-[50vh]":"max-h-[30vh]"} resize-none overflow-y-auto focus:outline-hidden focus:ring-2 focus:ring-indigo-500`}
+            placeholder={vlmModelConfig[node.id].systemPrompt? vlmModelConfig[node.id].systemPrompt:""}
+            rows={1}
+            value={vlmModelConfig[node.id].systemPrompt}
+            onChange={(e) => {
+              e.target.style.height = "auto";
+              e.target.style.height = e.target.scrollHeight + "px";
+              setVlmModelConfig(node.id,(prev) => ({
+                ...prev,
+                systemPrompt: e.target.value,
+              }));
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && e.shiftKey) {
+                e.preventDefault();
+              }
+            }}
+          />
         </div>
       </details>
       <details className="group w-full" open>
@@ -429,8 +379,14 @@ const ConditionNodeComponent: React.FC<ConditionNodeProps> = ({
           <div className="whitespace-pre-wrap">{node.data.output}</div>
         </div>
       </details>
+      <KnowledgeConfigModal
+        node={node}
+        visible={showConfigModal}
+        setVisible={setShowConfigModal}
+        onSave={handleSaveConfig}
+      />
     </div>
   );
 };
 
-export default ConditionNodeComponent;
+export default VlmNodeComponent;

@@ -8,6 +8,7 @@ interface GlobalState {
   addProperty: (key: string, value: string) => void;
   removeProperty: (key: string) => void;
   updateProperty: (key: string, value: string) => void;
+  setglobalVariables: (globalVariables:{[key: string]: string}) => void;
   reset: () => void;
 }
 
@@ -51,7 +52,7 @@ export const useGlobalStore = create<GlobalState>()((set, get) => ({
       globalVariables: { ...state.globalVariables, [key]: value },
     }));
   },
-
+  setglobalVariables: (globalVariables)=>set({ globalVariables: { ...globalVariables } }),
   // 重置到初始状态
   reset: () => set({ globalVariables: { ...initialState } }),
 }));

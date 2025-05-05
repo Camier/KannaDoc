@@ -9,7 +9,7 @@ interface LeftSideBarProps {
   selectedFlow: string | null;
   setSelectedFlow: Dispatch<SetStateAction<string | null>>;
   ondeleteFlow: (flow: Flow) => void;
-  onRenameWorkFlow: (flow: Flow, WorkFlowName: string) => void;
+  onRenameWorkflow: (flow: Flow, WorkflowName: string) => void;
 }
 
 const LeftSideBar: React.FC<LeftSideBarProps> = ({
@@ -19,7 +19,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
   selectedFlow,
   setSelectedFlow,
   ondeleteFlow,
-  onRenameWorkFlow,
+  onRenameWorkflow,
 }) => {
   useEffect(() => {
     setSettingsOpen(new Array(flows.length).fill(false));
@@ -77,7 +77,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
       inputValues[index].trim() !== "" &&
       inputValues[index].trim() !== flow.name
     ) {
-      onRenameWorkFlow(flow, inputValues[index]);
+      onRenameWorkflow(flow, inputValues[index]);
     } else {
       inputValues[index] = flow.name;
     }
@@ -129,7 +129,9 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
             }`}
           >
             <div
-              className={`flex-1 gap-2 hover:text-white w-full ${flow.flowId === "1"? "cursor-not-allowed":""}`}
+              className={`flex-1 gap-2 hover:text-white w-full ${
+                flow.flowId === "1" ? "cursor-not-allowed" : ""
+              }`}
               onClick={() => {
                 if (flow.flowId === "1") {
                   return;
@@ -147,7 +149,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
+                    viewBox="0 0 24 24"
                     fill="currentColor"
                     className={`${
                       selectedFlow === flow.flowId ? "size-6" : "size-5"
@@ -155,7 +157,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                   >
                     <path
                       fillRule="evenodd"
-                      d="M10 1c3.866 0 7 1.79 7 4s-3.134 4-7 4-7-1.79-7-4 3.134-4 7-4Zm5.694 8.13c.464-.264.91-.583 1.306-.952V10c0 2.21-3.134 4-7 4s-7-1.79-7-4V8.178c.396.37.842.688 1.306.953C5.838 10.006 7.854 10.5 10 10.5s4.162-.494 5.694-1.37ZM3 13.179V15c0 2.21 3.134 4 7 4s7-1.79 7-4v-1.822c-.396.37-.842.688-1.306.953-1.532.875-3.548 1.369-5.694 1.369s-4.162-.494-5.694-1.37A7.009 7.009 0 0 1 3 13.179Z"
+                      d="M8.161 2.58a1.875 1.875 0 0 1 1.678 0l4.993 2.498c.106.052.23.052.336 0l3.869-1.935A1.875 1.875 0 0 1 21.75 4.82v12.485c0 .71-.401 1.36-1.037 1.677l-4.875 2.437a1.875 1.875 0 0 1-1.676 0l-4.994-2.497a.375.375 0 0 0-.336 0l-3.868 1.935A1.875 1.875 0 0 1 2.25 19.18V6.695c0-.71.401-1.36 1.036-1.677l4.875-2.437ZM9 6a.75.75 0 0 1 .75.75V15a.75.75 0 0 1-1.5 0V6.75A.75.75 0 0 1 9 6Zm6.75 3a.75.75 0 0 0-1.5 0v8.25a.75.75 0 0 0 1.5 0V9Z"
                       clipRule="evenodd"
                     />
                   </svg>
@@ -246,7 +248,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                   selectedFlow === flow.flowId ? "text-white" : ""
                 }`}
               >
-                {flow.fileNumber} files
+                {flow.lastModityTime}
               </p>
             </div>
           </div>

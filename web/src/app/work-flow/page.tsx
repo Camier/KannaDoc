@@ -1,33 +1,25 @@
 "use client";
 
 import Navbar from "@/components/NavbarComponents/Navbar";
-import AddWorkFlow from "@/components/WorkFlow/AddWorkFlow";
-import FlowEditor from "@/components/WorkFlow/FlowEditor";
-import LeftSideBar from "@/components/WorkFlow/LeftSideBar";
-import TopBar from "@/components/WorkFlow/TopBar";
+import AddWorkflow from "@/components/Workflow/AddWorkflow";
+import FlowEditor from "@/components/Workflow/FlowEditor";
+import LeftSideBar from "@/components/Workflow/LeftSideBar";
+import TopBar from "@/components/Workflow/TopBar";
+import {
+  createWorkflow,
+  deleteWorkflow,
+  getAllWorkflow,
+  getWorkflowDetails,
+  renameWorkflow,
+} from "@/lib/api/workflowApi";
 import withAuth from "@/middlewares/withAuth";
-
-// import FlowWorkDetails from "@/components/FlowWork/FlowWorkDetails";
-// import LeftSideBar from "@/components/WorkFlow/LeftSideBar";
-// import TopBar from "@/components/WorkFlow/TopBar";
-// import Navbar from "@/components/NavbarComponents/Navbar";
-// import {
-//   createFlowWork,
-//   deleteFlowWork,
-//   getAllFlowWork,
-//   renameFlowWork,
-//   uploadFiles,
-// } from "@/lib/api/workFlowApi";
-// import withAuth from "@/middlewares/withAuth";
 import { useAuthStore } from "@/stores/authStore";
-import { Flow, UploadFile } from "@/types/types";
-// import { getFileExtension } from "@/utils/file";
+import { Flow, WorkflowAll } from "@/types/types";
 import { useState, useEffect, useCallback } from "react";
-// import Cookies from "js-cookie";
-// import { EventSourceParserStream } from "eventsource-parser/stream";
-// import AddWorkFlow from "@/components/WorkFlow/AddWorkFlow";
+import { useFlowStore } from "@/stores/flowStore";
+import { useGlobalStore } from "@/stores/pythonVariableStore";
 
-const FlowWork = () => {
+const Workflow = () => {
   const [selectedFlow, setSelectedFlow] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [flows, setFlows] = useState<Flow[]>([]);
@@ -38,30 +30,14 @@ const FlowWork = () => {
   const { user } = useAuthStore();
   const [refresh, setRefresh] = useState<boolean>(false);
   const [fullScreenFlow, setFullScreenFlow] = useState<boolean>(false);
-  // const [uploadProgress, setUploadProgress] = useState<number | null>(0);
-  // const [taskStatus, setTaskStatus] = useState<
-  //   "processing" | "completed" | "failed" | null
-  // >(null);
-  // const [taskProgress, setTaskProgress] = useState<number>(0);
-  // const [uploadFile, setUploadFile] = useState<boolean>(false);
-  // const [load, setLoad] = useState(true);
-
-  // // 修改发送按钮逻辑
-  // const isUploadComplete = uploadProgress === 100;
-  // const isTaskComplete = taskStatus === "completed";
-  // const isSendDisabled = (!isUploadComplete || !isTaskComplete) && uploadFile;
-
-  // let buttonText;
-  // if (!uploadFile) {
-  //   buttonText = "Upload Files";
-  // } else if (!isUploadComplete) {
-  //   buttonText = `Upload:${uploadProgress}%`;
-  // } else if (!isTaskComplete) {
-  //   buttonText =
-  //     taskStatus === "failed" ? "Upload Failed" : `Processing:${taskProgress}%`;
-  // } else {
-  //   buttonText = "Upload Files";
-  // }
+  const [workflowAll, setWorkflowAll] = useState<WorkflowAll|null>(null);
+  const {
+    resethistory,
+    resetfuture,
+    setNodes,
+    setEdges,
+  } = useFlowStore();
+  const { setglobalVariables } = useGlobalStore();
 
   // 成功消息自动消失
   useEffect(() => {
@@ -71,31 +47,60 @@ const FlowWork = () => {
     }
   }, [successMessage]);
 
-  // // 支持的文件类型
-  // const supportedExtensions = ["doc","docx","pdf","ppt","pptx"];
+  // Wrap fetchAllWorkflow with useCallback
+  const fetchAllWorkflow = useCallback(async () => {
+    if (user?.name) {
+      try {
+        const response = await getAllWorkflow(user.name);
+        const flows: Flow[] = response.data.map((item: any) => ({
+          name: item.workflow_name,
+          flowId: item.workflow_id,
+          lastModityTime: item.last_modify_at.split("T")[0],
+          createTime: item.created_at.split("T")[0],
+        }));
+        setFlows(flows);
+      } catch (error) {
+        console.error("Error fetching chat history:", error);
+      }
+    }
+  }, [user?.name]); // Add dependencies
 
-  // // Wrap fetchAllFlowWork with useCallback
-  // const fetchAllFlowWork = useCallback(async () => {
-  //   if (user?.name) {
-  //     try {
-  //       const response = await getAllFlowWork(user.name);
-  //       const Flows: Flow[] = response.data.map((item: any) => ({
-  //         name: item.work_flow_name,
-  //         flowId: item.work_flow_id,
-  //         lastModityTime: item.last_modify_at.split("T")[0],
-  //         createTime: item.created_at.split("T")[0],
-  //         fileNumber: item.file_number,
-  //       }));
-  //       setFlows(flows);
-  //     } catch (error) {
-  //       console.error("Error fetching chat history:", error);
-  //     }
-  //   }
-  // }, [user?.name]); // Add dependencies
+  // Wrap fetchWorkflowDetails with useCallback
+  const fetchWorkflowDetails = useCallback(async () => {
+    if (user?.name && selectedFlow) {
+      try {
+        const response = await getWorkflowDetails(selectedFlow);
+        const item = response.data;
+        const workflowAllData: WorkflowAll = {
+          workflowId: item.workflow_id,
+          workflowName: item.workflow_name,
+          workflowConfig: item.workflow_config,
+          nodes: item.nodes,
+          edges: item.edges,
+          startNode: item.start_node,
+          globalVariables: item.global_variables,
+          createTime: item.created_at,
+          lastModityTime: item.last_modify_at,
+        };
+        setNodes(item.nodes);
+        setEdges(item.edges);
+        setglobalVariables(item.global_variables);
+        setWorkflowAll(workflowAllData);
+        resethistory(item.nodes,item.edges);
+        resetfuture();
+      } catch (error) {
+        console.error("Error fetching chat history:", error);
+      }
+    }
+  },[user?.name, selectedFlow])
 
-  // useEffect(() => {
-  //   fetchAllFlowWork();
-  // }, [user?.name, refresh, fetchAllFlowWork]); // Add fetchAllFlowWork
+  useEffect(() => {
+    fetchAllWorkflow();
+  }, [user?.name, refresh, fetchAllWorkflow]); // Add fetchAllWorkflow
+
+  useEffect(() => {
+    fetchWorkflowDetails();
+  }, [user?.name, selectedFlow]);
 
   // 创建工作流校验
   const handleCreateConfirm = async () => {
@@ -125,7 +130,16 @@ const FlowWork = () => {
         setShowCreateModal(false);
         setNewFlowName("");
         setNameError(null);
-        //const response = await createFlowWork(user.name, newFlowName);
+        const response = await createWorkflow(
+          "",
+          user.name,
+          newFlowName,
+          {},
+          "node_start",
+          {},
+          [],
+          []
+        );
         setSelectedFlow(null);
       } catch (error) {
         console.error("Error fetching chat history:", error);
@@ -141,7 +155,7 @@ const FlowWork = () => {
         setFlows((prevFlow: Flow[]) =>
           prevFlow.filter((c: { flowId: string }) => c.flowId !== flow.flowId)
         );
-        //const response = await deleteFlowWork(flow.flowId);
+        const response = await deleteWorkflow(flow.flowId);
       } catch (error) {
         console.error("Error delete Knowledge Flow:", error);
       }
@@ -150,7 +164,7 @@ const FlowWork = () => {
     }
   };
 
-  const handleRenameWorkFlow = (flow: Flow, inputValue: string) => {
+  const handleRenameWorkflow = (flow: Flow, inputValue: string) => {
     const fetchRenameChat = async () => {
       if (user?.name) {
         try {
@@ -159,7 +173,8 @@ const FlowWork = () => {
               c.flowId === flow.flowId ? { ...c, name: inputValue } : c
             )
           );
-          //await renameFlowWork(flow.flowId, inputValue);
+          await renameWorkflow(flow.flowId, inputValue);
+          setWorkflowAll(prev => {return prev? {...prev, workflowName:inputValue}: prev})
           setRefresh((prev) => !prev);
         } catch (error) {
           console.error("Error fetching rename chat:", error);
@@ -169,100 +184,6 @@ const FlowWork = () => {
     fetchRenameChat(); // 调用获取聊天记录的函数
   };
 
-  // const handleFileUpload = (filelist: FileList) => {
-  //   const files = Array.from(filelist);
-  //   const validFiles = files.filter((file) => {
-  //     const ext = getFileExtension(file.name);
-  //     return supportedExtensions.includes(ext);
-  //   });
-
-  //   const invalidFiles = files.filter((file) => {
-  //     const ext = getFileExtension(file.name);
-  //     return !supportedExtensions.includes(ext);
-  //   });
-
-  //   if (invalidFiles.length > 0) {
-  //     alert(
-  //       `Unsupport file type: \n${invalidFiles.map((f) => f.name).join("\n")}`
-  //     );
-  //   }
-
-  //   if (validFiles.length > 0 && user?.name) {
-  //     setUploadProgress(0); // 重置上传进度
-  //     setTaskStatus(null); // 重置任务状态
-  //     setUploadFile(true);
-
-  //     if (user?.name && selectedFlow) {
-  //       uploadFiles(files, selectedFlow, (percent) => {
-  //         setUploadProgress(percent); // 更新上传进度
-  //       })
-  //         .then(async (response) => {
-  //           // 使用fetch代替EventSource
-  //           const token = Cookies.get("token"); // 确保已引入cookie库
-  //           const taskId = response?.data.task_id;
-
-  //           try {
-  //             const response = await fetch(
-  //               `${process.env.NEXT_PUBLIC_API_BASE_URL}/sse/task/${user.name}/${taskId}`,
-  //               {
-  //                 headers: {
-  //                   Authorization: `Bearer ${token}`,
-  //                 },
-  //               }
-  //             );
-
-  //             if (!response.ok) throw new Error("Request failed");
-  //             if (!response.body) return;
-
-  //             // 使用EventSourceParserStream处理流
-  //             const eventStream = response.body
-  //               ?.pipeThrough(new TextDecoderStream())
-  //               .pipeThrough(new EventSourceParserStream());
-
-  //             const eventReader = eventStream.getReader();
-  //             while (true) {
-  //               const { done, value } = (await eventReader?.read()) || {};
-  //               if (done) break;
-
-  //               const payload = JSON.parse(value.data);
-  //               // 处理事件数据
-  //               if (payload.event === "progress") {
-  //                 const progress = payload.total > 0 ? payload.progress : 0;
-
-  //                 setTaskProgress(progress);
-  //                 setTaskStatus(payload.status);
-
-  //                 if (["completed", "failed"].includes(payload.status)) {
-  //                   eventReader.cancel();
-  //                   break;
-  //                 }
-  //               }
-  //             }
-  //             setFlows((prevFlows) =>
-  //               prevFlows.map((flow) =>
-  //                 flow.flowId === selectedFlow
-  //                   ? {
-  //                       ...flow,
-  //                       fileNumber: flow.fileNumber + validFiles.length,
-  //                     }
-  //                   : flow
-  //               )
-  //             );
-  //             setLoad((prev) => !prev);
-  //           } catch (error) {
-  //             console.error("SSE错误:", error);
-  //             setTaskStatus("failed");
-  //           }finally {
-  //             setSelectedFlow(null);
-  //           }
-  //         })
-  //         .catch((error) => {
-  //           alert("Upload error");
-  //         });
-  //     }
-  //   }
-  // };
-
   return (
     <div className="overflow-hidden flex flex-col">
       <Navbar />
@@ -270,12 +191,12 @@ const FlowWork = () => {
         <div className="w-full top-0 absolute px-6 pb-6 pt-2 h-full">
           {/* 新建工作流弹窗 */}
           {showCreateModal && (
-            <AddWorkFlow
+            <AddWorkflow
               setShowCreateModal={setShowCreateModal}
               nameError={nameError}
               setNameError={setNameError}
-              newWorkFlowName={newFlowName}
-              setNewWorkFlowName={setNewFlowName}
+              newWorkflowName={newFlowName}
+              setNewWorkflowName={setNewFlowName}
               onCreateConfirm={handleCreateConfirm}
             />
           )}
@@ -288,33 +209,42 @@ const FlowWork = () => {
           )}
 
           {/* 顶部导航 */}
-          {!fullScreenFlow && <TopBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />}
+          {!fullScreenFlow && (
+            <TopBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+          )}
 
-          <div className={`mx-auto px-4 pt-4 flex gap-6 ${fullScreenFlow? "h-full":"h-[88%]"}`}>
+          <div
+            className={`mx-auto px-4 pt-4 flex gap-6 ${
+              fullScreenFlow ? "h-full" : "h-[88%]"
+            }`}
+          >
             {/* 左侧边栏 */}
-            {!fullScreenFlow && <LeftSideBar
-              flows={flows}
-              searchTerm={searchTerm}
-              setShowCreateModal={setShowCreateModal}
-              selectedFlow={selectedFlow}
-              setSelectedFlow={setSelectedFlow}
-              ondeleteFlow={handledeleteFlow}
-              onRenameWorkFlow={handleRenameWorkFlow}
-            />}
+            {!fullScreenFlow && (
+              <LeftSideBar
+                flows={flows}
+                searchTerm={searchTerm}
+                setShowCreateModal={setShowCreateModal}
+                selectedFlow={selectedFlow}
+                setSelectedFlow={setSelectedFlow}
+                ondeleteFlow={handledeleteFlow}
+                onRenameWorkflow={handleRenameWorkflow}
+              />
+            )}
 
             {/* 右侧内容区 */}
-            <FlowEditor setFullScreenFlow={setFullScreenFlow} fullScreenFlow={fullScreenFlow}/>
-            {/* <FlowWorkDetails
-              flows={flows}
-              setFlows={setFlows}
-              selectedFlow={selectedFlow}
-              setSelectedFlow={setSelectedFlow}
-              onFileUpload={handleFileUpload}
-              buttonText={buttonText}
-              isSendDisabled={isSendDisabled}
-              load={load}
-              setLoad={setLoad}
-            /> */}
+            {selectedFlow && workflowAll ? (
+              <FlowEditor
+                workFlow={workflowAll}
+                setFullScreenFlow={setFullScreenFlow}
+                fullScreenFlow={fullScreenFlow}
+              />
+            ) : (
+              <div className="flex-1 h-full flex items-center justify-center bg-white rounded-3xl shadow-sm p-6">
+                  <p className="text-gray-500 text-xl">
+                    Please create or choose a workflow to start
+                  </p>
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -322,4 +252,4 @@ const FlowWork = () => {
   );
 };
 
-export default withAuth(FlowWork);
+export default withAuth(Workflow);

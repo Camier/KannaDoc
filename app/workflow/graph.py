@@ -32,7 +32,7 @@ class WorkflowGraph:
         TreeNode.clear_instances()  # 确保实例清理
         self.nodes = {n["id"]: n for n in nodes}
         self.edges = edges
-        self.root = TreeNode(start_node, "start", {})
+        self.root = TreeNode(start_node, "start", {'name':"Start"})
         self._build_graph(self.root, parent=None, current_loop_parent=None)
         self._validate_hierarchy()
         self._check_directed_cycles()
@@ -80,15 +80,15 @@ class WorkflowGraph:
             else:
                 raise ValueError(f"非法边类型: {source_handle}")
         except ValueError as e:
-            raise type(e)(f"节点 {node.node_id} -> {target_id}: {str(e)}") from e
+            raise type(e)(f"节点 {node.data['name']} -> {target_node.data['name']}: {str(e)}") from e
 
     # 校验方法组
     def _validate_normal_edge(self, source: TreeNode, target: TreeNode, 
                              current_loop_parent: TreeNode):
         if target.loop_parent not in {None, current_loop_parent}:
             raise ValueError(
-                f"跨层级连接: {source.node_id}(层级:{self._get_hierarchy_path(source)}) "
-                f"-> {target.node_id}(层级:{self._get_hierarchy_path(target)})"
+                f"跨层级连接: {source.data['name']}(层级:{self._get_hierarchy_path(source)}) "
+                f"-> {target.data['name']}(层级:{self._get_hierarchy_path(target)})"
             )
 
     def _validate_condition_edge(self, source: TreeNode, target: TreeNode, 
@@ -97,8 +97,8 @@ class WorkflowGraph:
             raise ValueError("非条件节点使用condition边")
         if target.loop_parent not in {None, current_loop_parent}:
             raise ValueError(
-                f"跨层级连接: {source.node_id}(层级:{self._get_hierarchy_path(source)}) "
-                f"-> {target.node_id}(层级:{self._get_hierarchy_path(target)})"
+                f"跨层级连接: {source.data['name']}(层级:{self._get_hierarchy_path(source)}) "
+                f"-> {target.data['name']}(层级:{self._get_hierarchy_path(target)})"
             )
         # if len(source.data["conditions"]) <= condition_index:
         #     raise ValueError("条件节点边连接错误")
@@ -121,7 +121,7 @@ class WorkflowGraph:
         path = []
         current = node.loop_parent
         while current:
-            path.append(current.node_id)
+            path.append(current.data['name'])
             current = current.loop_parent
         return "->".join(reversed(path)) if path else "root"
 
@@ -151,7 +151,7 @@ class WorkflowGraph:
             for child in node.children:
                 if child.loop_parent != node.loop_parent:
                     raise ValueError(
-                        f"子节点层级断裂: {node.node_id} -> {child.node_id}\n"
+                        f"子节点层级断裂: {node.data['name']} -> {child.data['name']}\n"
                         f"父层级: {self._get_hierarchy_path(node)}\n"
                         f"子层级: {self._get_hierarchy_path(child)}"
                     )

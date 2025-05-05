@@ -25,35 +25,48 @@ import {
   nodeTypesInfo,
   NodeTypeKey,
   CustomEdge,
+  WorkflowAll,
+  KnowledgeBase,
+  ModelConfig,
 } from "@/types/types";
+import Cookies from "js-cookie";
 import { useFlowStore } from "@/stores/flowStore";
-import CustomEdgeComponent from "@/components/WorkFlow/CustomEdge";
-import CustomNodeComponent from "@/components/WorkFlow/CustomNode";
+import CustomEdgeComponent from "@/components/Workflow/CustomEdge";
+import CustomNodeComponent from "@/components/Workflow/CustomNode";
 import "@xyflow/react/dist/base.css";
-import ConnectionLine from "@/components/WorkFlow/ConnectionLine";
-import FunctionNodeComponent from "@/components/WorkFlow/NodeSettings/FunctionNode";
-import StartNodeComponent from "@/components/WorkFlow/NodeSettings/StartNode";
+import ConnectionLine from "@/components/Workflow/ConnectionLine";
+import FunctionNodeComponent from "@/components/Workflow/NodeSettings/FunctionNode";
+import StartNodeComponent from "@/components/Workflow/NodeSettings/StartNode";
 import { useAuthStore } from "@/stores/authStore";
 import { v4 as uuidv4 } from "uuid";
-import { executeWorkflow } from "@/lib/api/workflowApi";
+import { createWorkflow, executeWorkflow } from "@/lib/api/workflowApi";
 import { useGlobalStore } from "@/stores/pythonVariableStore";
-import ConditionNodeComponent from "@/components/WorkFlow/NodeSettings/ConditionNode";
-import LoopNodeComponent from "./NodeSettings/LoopNode";
+import ConditionNodeComponent from "@/components/Workflow/NodeSettings/ConditionNode";
+import LoopNodeComponent from "@/components/Workflow/NodeSettings/LoopNode";
+import { EventSourceParserStream } from "eventsource-parser/stream";
+import VlmNodeComponent from "@/components/Workflow/NodeSettings/VlmNode";
+import useModelConfigStore from "@/stores/configStore";
+import { getAllKnowledgeBase } from "@/lib/api/knowledgeBaseApi";
+import { getAllModelConfig } from "@/lib/api/configApi";
 
 const getId = (type: string): string => `node_${type}_${uuidv4()}`;
 
 interface NodeTypeSelectorProps {
+  workflowName: string;
   addNode: (key: NodeTypeKey) => void;
 }
 
-const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({ addNode }) => {
+const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({
+  addNode,
+  workflowName,
+}) => {
   const selectedType = useFlowStore((state) => state.selectedType);
   const setSelectedType = useFlowStore((state) => state.setSelectedType);
 
   return (
     <div className="space-y-2">
       <ul className="space-y-2">
-        <div className="flex items-center justify-center px-2 gap-1 pb-2">
+        <div className="flex items-center justify-start px-2 gap-1 pb-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -68,8 +81,11 @@ const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({ addNode }) => {
           </svg>
 
           <span className="whitespace-nowrap overflow-auto text-sm font-semibold">
-            New Work-Flow
+            {workflowName}
           </span>
+        </div>
+        <div className="pt-2 border-b-2 border-gray-200 text-center">
+          Base Node
         </div>
         {Object.entries(nodeTypesInfo).map(([key, type]) => (
           <li
@@ -109,7 +125,7 @@ const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({ addNode }) => {
         <div className="pt-2 border-b-2 border-gray-200 text-center">
           Custom Node
         </div>
-        {Object.entries(nodeTypesInfo).map(([key, type]) => (
+        {/* {Object.entries(nodeTypesInfo).map(([key, type]) => (
           <li
             key={key}
             className={`cursor-pointer p-2 rounded-full text-center hover:bg-indigo-300 hover:text-white ${
@@ -142,18 +158,20 @@ const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({ addNode }) => {
               {type.label}
             </div>
           </li>
-        ))}
+        ))} */}
       </ul>
     </div>
   );
 };
 
 interface FlowEditorProps {
+  workFlow: WorkflowAll;
   setFullScreenFlow: Dispatch<SetStateAction<boolean>>;
   fullScreenFlow: boolean;
 }
 
 const FlowEditor: React.FC<FlowEditorProps> = ({
+  workFlow,
   setFullScreenFlow,
   fullScreenFlow,
 }) => {
@@ -166,7 +184,6 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     edges,
     history,
     future,
-    selectedEdgeId,
     selectedNodeId,
     setSelectedEdgeId,
     setSelectedNodeId,
@@ -181,18 +198,18 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     getConditionCount,
     updateConditions,
     removeCondition,
+    updateOutput,
     updateConditionCount,
+    updateStatus,
   } = useFlowStore();
+  const [taskId, setTaskId] = useState("");
+  const [running, setRunning] = useState(false);
+  const { vlmModelConfig, setVlmModelConfig } = useModelConfigStore();
 
   // 使用 useMemo 优化查找
   const currentNode = useMemo(
     () => nodes.find((n) => n.id === selectedNodeId),
     [nodes, selectedNodeId] // 依赖精准控制
-  );
-
-  const currentEdge = useMemo(
-    () => edges.find((n) => n.id === selectedEdgeId),
-    [edges, selectedEdgeId] // 依赖精准控制
   );
 
   // 初始化历史记录
@@ -201,6 +218,136 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
       pushHistory();
     }
   }, []);
+
+  const splitFirstColon = (str: string) => {
+    const index = str.indexOf(":");
+    if (index === -1) return [str, ""]; // 没有冒号时返回原字符串和空字符串
+    return [str.substring(0, index), str.substring(index + 1)];
+  };
+
+  useEffect(() => {
+    if (taskId !== "") {
+      const workFlowSSE = async () => {
+        if (user?.name) {
+          const token = Cookies.get("token"); // 确保已引入cookie库
+          try {
+            const response = await fetch(
+              `${process.env.NEXT_PUBLIC_API_BASE_URL}/sse/workflow/${user.name}/${taskId}`,
+              {
+                headers: {
+                  Authorization: `Bearer ${token}`,
+                },
+              }
+            );
+
+            if (!response.ok) throw new Error("Request failed");
+            if (!response.body) return;
+
+            // 使用EventSourceParserStream处理流
+            const eventStream = response.body
+              ?.pipeThrough(new TextDecoderStream())
+              .pipeThrough(new EventSourceParserStream());
+
+            const eventReader = eventStream.getReader();
+            while (true) {
+              const { done, value } = (await eventReader?.read()) || {};
+              if (done) break;
+              const payload = JSON.parse(value.data);
+
+              //处理事件数据
+              if (payload.event === "workflow") {
+                if (payload.workflow.status == "failed") {
+                  const errorNode = splitFirstColon(payload.workflow.error);
+                  const errorNodeId = errorNode[0];
+                  const errorNodeMsg = splitFirstColon(errorNode[1])[1];
+                  updateOutput(errorNodeId, errorNodeMsg);
+                  updateStatus(errorNodeId, "failed");
+                }
+                if (["completed", "failed"].includes(payload.workflow.status)) {
+                  eventReader.cancel();
+                  break;
+                }
+              } else if (payload.event === "node") {
+                if (payload.node.status === true) {
+                  if (payload.node.result !== '""') {
+                    const resultList: any[] = JSON.parse(payload.node.result);
+                    let result: string;
+                    if (resultList.length > 1) {
+                      result = resultList
+                        .map(
+                          (item, index) => `Loop ${index + 1}:\n${item.result}`
+                        )
+                        .join("\n");
+                    } else {
+                      result = resultList[0].result;
+                    }
+                    updateOutput(payload.node.id, result);
+                  } else {
+                    updateOutput(payload.node.id, "Node running success!");
+                  }
+                  updateStatus(payload.node.id, "ok");
+                }
+              }
+            }
+          } catch (error) {
+            console.error("SSE错误:", error);
+          } finally {
+            setRunning(false);
+            alert("Running Compelete!");
+          }
+        }
+      };
+      workFlowSSE();
+    }
+  }, [taskId]);
+
+  const fetchModelConfig = 
+    async (nodeId: string) => {
+      if (user?.name) {
+        const responseBase = await getAllKnowledgeBase(user.name);
+        const bases: KnowledgeBase[] = responseBase.data.map((item: any) => ({
+          name: item.knowledge_base_name,
+          id: item.knowledge_base_id,
+          selected: false,
+        }));
+
+        const response = await getAllModelConfig(user.name);
+
+        const modelConfigsResponse: ModelConfig[] = response.data.models.map(
+          (item: any) => ({
+            modelId: item.model_id,
+            modelName: item.model_name,
+            modelURL: item.model_url,
+            apiKey: item.api_key,
+            baseUsed: item.base_used,
+            systemPrompt: item.system_prompt,
+            temperature: item.temperature === -1 ? 0.1 : item.temperature,
+            maxLength: item.max_length === -1 ? 8192 : item.max_length,
+            topP: item.top_P === -1 ? 0.01 : item.top_P,
+            topK: item.top_K === -1 ? 3 : item.top_K,
+            useTemperatureDefault: item.temperature === -1 ? true : false,
+            useMaxLengthDefault: item.max_length === -1 ? true : false,
+            useTopPDefault: item.top_P === -1 ? true : false,
+            useTopKDefault: item.top_K === -1 ? true : false,
+          })
+        );
+
+        const selected = modelConfigsResponse.find(
+          (m) => m.modelId === response.data.selected_model
+        );
+
+        if (selected) {
+          const filter_select = selected.baseUsed.filter((item) =>
+            bases.some((base) => base.id === item.baseId)
+          );
+          setVlmModelConfig(nodeId, (prev) => ({
+            ...prev,
+            ...selected,
+            baseUsed: filter_select,
+          }));
+        }
+      }
+    };
 
   const onNodesChange = useCallback(
     (changes: NodeChange<CustomNode>[]) => {
@@ -241,7 +388,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
 
   const onConnect = useCallback(
     (connection: Connection) => {
-      console.log(edges)
+      console.log(vlmModelConfig);
       let newConnection;
       if (
         edges.find(
@@ -292,6 +439,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     let id;
     if (type === "code") {
       data = {
+        status: "init",
         label: nodeTypesInfo[type].label,
         nodeType: type,
         code: 'def my_func():\n    print("Hello Layra!")\n\nmy_func()\n',
@@ -299,6 +447,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
       };
     } else if (type === "loop") {
       data = {
+        status: "init",
         label: nodeTypesInfo[type].label,
         nodeType: type,
         loopType: "count",
@@ -306,14 +455,27 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         condition: "",
         output: "Output will be show here",
       };
+    } else if (type === "vlm") {
+      data = {
+        status: "init",
+        label: nodeTypesInfo[type].label,
+        nodeType: type,
+        output: "Output will be show here",
+        selectedModelId: "",
+      };
     } else {
       data = {
+        status: "init",
         label: nodeTypesInfo[type].label,
         nodeType: type,
         output: "Output will be show here",
       };
     }
     if (type === "start") {
+      if (nodes.find((node) => node.data.nodeType === "start")) {
+        alert("Start node already exist!");
+        return;
+      }
       id = "node_start";
     } else {
       id = getId(type);
@@ -324,6 +486,9 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
       position: { x: Math.random() * 100, y: Math.random() * 100 },
       data: data,
     };
+    if (type === "vlm") {
+      fetchModelConfig(id);
+    }
     setNodes([...nodes, newNode]);
   };
 
@@ -349,18 +514,26 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     }
   };
 
-  const handleRunWorkFlow = async () => {
+  const handleRunWorkflow = async () => {
     if (user?.name) {
+      setRunning(true);
+      nodes.forEach((node) => {
+        updateOutput(node.id, "Await for running...");
+        updateStatus(node.id, "init");
+      });
       try {
         const sendNodes = nodes.map((node) => ({
           id: node.id,
           type: node.data.nodeType,
           data: {
+            name: node.data.label,
             code: node.data.code,
             conditions: node.data.conditions,
             loopType: node.data.loopType,
             maxCount: node.data.maxCount,
             condition: node.data.condition,
+            pip: node.data.pip,
+            imageUrl: node.data.imageUrl,
           },
         }));
 
@@ -371,20 +544,19 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               target: edge.target,
               sourceHandle: "condition-" + edge.data?.conditionLabel,
             };
-          } else if (edge.sourceHandle==="source") {
+          } else if (edge.sourceHandle === "source") {
             return {
               source: edge.source,
               target: edge.target,
-              sourceHandle: "loop_body"
+              sourceHandle: "loop_body",
             };
-          }else if (edge.targetHandle==="target") {
+          } else if (edge.targetHandle === "target") {
             return {
               source: edge.source,
               target: edge.target,
-              sourceHandle: "loop_next"
+              sourceHandle: "loop_next",
             };
-          }
-           else {
+          } else {
             return {
               source: edge.source,
               target: edge.target,
@@ -398,9 +570,37 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
           "node_start",
           globalVariables
         );
+        if (response.data.code === 0) {
+          setTaskId(response.data.task_id);
+        } else {
+          alert(response.data.msg);
+        }
       } catch (error) {
         console.error("Error connect:", error);
+        setRunning(false);
       } finally {
+      }
+    }
+  };
+
+  const handleSaveWorkFlow = async () => {
+    if (user?.name) {
+      try {
+        const response = await createWorkflow(
+          workFlow.workflowId,
+          user.name,
+          workFlow.workflowName,
+          workFlow.workflowConfig,
+          workFlow.startNode,
+          globalVariables,
+          nodes,
+          edges
+        );
+        if (response.status == 200) {
+          alert("save success!");
+        }
+      } catch (error) {
+        console.error("Error fetching chat history:", error);
       }
     }
   };
@@ -413,7 +613,10 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
       onKeyDown={onKeyDown}
     >
       <div className="w-[15%] bg-white pr-4 h-full overflow-scroll">
-        <NodeTypeSelector addNode={addNode} />
+        <NodeTypeSelector
+          workflowName={workFlow.workflowName}
+          addNode={addNode}
+        />
       </div>
 
       <div className="h-full flex-1 flex flex-col">
@@ -503,8 +706,9 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
           <div className="flex items-center justify-center gap-2">
             <div className="flex items-center justify-center gap-1">
               <button
-                onClick={handleRunWorkFlow}
-                className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+                disabled={running}
+                onClick={handleRunWorkflow}
+                className={`cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -523,7 +727,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
 
                 <span>Run</span>
               </button>
-              <button className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1">
+              {/* <button className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -540,10 +744,13 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 </svg>
 
                 <span>Debug</span>
-              </button>
+              </button> */}
             </div>
             <div className="flex items-center justify-center gap-1">
-              <button className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1">
+              <button
+                onClick={handleSaveWorkFlow}
+                className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -560,7 +767,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 </svg>
                 <span>Save</span>
               </button>
-              <button className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1">
+              {/* <button className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -577,7 +784,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 </svg>
 
                 <span>Clear</span>
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
@@ -606,7 +813,13 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                     setCodeFullScreenFlow={setCodeFullScreenFlow}
                   />
                 ),
-                vlm: <div></div>,
+                vlm: (
+                  <VlmNodeComponent
+                    node={currentNode}
+                    codeFullScreenFlow={codeFullScreenFlow}
+                    setCodeFullScreenFlow={setCodeFullScreenFlow}
+                  />
+                ),
                 condition: (
                   <ConditionNodeComponent
                     node={currentNode}
