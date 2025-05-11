@@ -4,6 +4,7 @@ from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
 from app.core.security import get_current_user, verify_username_match
 from app.db.redis import redis
 from app.models.workflow import (
+    NodesInput,
     TestConditionNode,
     TestFunctionCode,
     Workflow,
@@ -41,10 +42,34 @@ async def execute_workflow(
     except Exception as e:
         return {"code": -3, "msg": f"System Error: {str(e)}"}
 
-    task_id = str(uuid.uuid4())
-
     # 初始化Redis状态
     redis_conn = await redis.get_task_connection()
+
+    if workflow.resume_task_id:
+        task_id = workflow.resume_task_id
+        # 1. 合并更新全局变量
+        state_key = f"workflow:{task_id}:state"
+        state = await redis_conn.get(state_key)
+        if not state:
+            raise {"code": -2, "msg": str("任务过期，请重新执行！")}
+
+        state_data = json.loads(state)
+
+        # 更新全局变量（深合并）
+        def deep_update(target, source):
+            for k, v in source.items():
+                if isinstance(v, dict) and k in target:
+                    deep_update(target[k], v)
+                else:
+                    target[k] = v
+
+        deep_update(state_data["global_variables"], workflow.global_variables)
+
+        # 保存更新后的状态
+        await redis_conn.setex(state_key, 3600, json.dumps(state_data))
+    else:
+        task_id = str(uuid.uuid4())
+
     # 存储任务元数据
     await redis_conn.hset(
         name=f"workflow:{task_id}",
@@ -56,7 +81,6 @@ async def execute_workflow(
             "error": "",
         },
     )
-    await redis_conn.expire(f"workflow:{task_id}", 3600)
 
     # 存储节点状态
     node_mapping = {node["id"]: "0" for node in workflow.nodes}
@@ -65,7 +89,13 @@ async def execute_workflow(
     # 创建独立的事件流（Stream类型）
     await redis_conn.xadd(
         f"workflow:events:{task_id}",  # 使用新的事件流键
-        {"type": "workflow", "status": "initializing", "result": "", "error": ""},
+        {
+            "type": "workflow",
+            "status": "initializing",
+            "result": "",
+            "error": "",
+            "create_time": str(beijing_time_now()),
+        },
     )
 
     pipeline = redis_conn.pipeline()
@@ -79,6 +109,7 @@ async def execute_workflow(
         task_id=task_id,
         workflow_data=workflow.model_dump(),
         username=current_user.username,
+        resume=True if workflow.resume_task_id else False,
     )
 
     return {"code": 0, "task_id": task_id, "msg": "Task queued"}
@@ -97,7 +128,7 @@ async def execute_workflow(
             {
                 "id": "node_start",
                 "type": "start",
-                "data": {"name":"Start"},
+                "data": {"name": "Start"},
             },
             {
                 "id": function_node.node_id,
@@ -150,19 +181,22 @@ async def execute_workflow(
             {
                 "id": "node_start",
                 "type": "start",
-                "data": {"name":"start"},
+                "data": {"name": "start"},
             },
             {
                 "id": condition_node.node_id,
                 "type": "condition",
-                "data": {"name": condition_node.name, "conditions": condition_node.conditions},
+                "data": {
+                    "name": condition_node.name,
+                    "conditions": condition_node.conditions,
+                },
             },
         ],
         "edges": [
             {"source": "node_start", "target": condition_node.node_id},
         ],
     }
-    
+
     try:
         # 使用异步上下文管理器
         async with WorkflowEngine(
@@ -290,6 +324,48 @@ async def delete_workflow(
 ):
     await verify_username_match(current_user, workflow_id.split("_")[0])
     result = await db.delete_workflow(workflow_id)
+    if result["status"] == "failed":
+        raise HTTPException(status_code=404, detail=result["message"])
+    return result
+
+
+# 保存自定义节点
+@router.post("/nodes/{username}", response_model=dict)
+async def delete_workflow(
+    username: str,
+    custom_node: NodesInput,
+    db: MongoDB = Depends(get_mongo),
+    current_user: User = Depends(get_current_user),
+):
+    await verify_username_match(current_user, username)
+    result = await db.update_custom_nodes(
+        username, custom_node.custom_node_name, custom_node.custom_node
+    )
+    if result["status"] == "failed":
+        raise HTTPException(status_code=404, detail=result["message"])
+    return result
+
+
+@router.get("/nodes/{username}", response_model=dict)
+async def delete_workflow(
+    username: str,
+    db: MongoDB = Depends(get_mongo),
+    current_user: User = Depends(get_current_user),
+):
+    await verify_username_match(current_user, username)
+    result = await db.get_custom_nodes(username)
+    return result
+
+# 删除自定义节点
+@router.delete("/nodes/{username}/{custom_node_name}", response_model=dict)
+async def delete_nodes(
+    username: str,
+    custom_node_name: str,
+    db: MongoDB = Depends(get_mongo),
+    current_user: User = Depends(get_current_user),
+):
+    await verify_username_match(current_user, username)
+    result = await db.delete_custom_nodes(username, custom_node_name)
     if result["status"] == "failed":
         raise HTTPException(status_code=404, detail=result["message"])
     return result

@@ -38,6 +38,8 @@ class KafkaConsumerManager:
         message = json.loads(msg.value.decode("utf-8"))
         if message.get("type") == "workflow":
             await self.process_workflow_task(message)
+        elif message.get("type") == "workflow_resume":
+            await self.process_workflow_task(message, resume=True)
         else:
             task_id = message["task_id"]
             username = message["username"]
@@ -61,7 +63,7 @@ class KafkaConsumerManager:
                 file_meta=file_meta,
             )
 
-    async def process_workflow_task(self, message: dict):
+    async def process_workflow_task(self, message: dict, resume=False):
         task_id = message["task_id"]
         username = message["username"]
         workflow_data = message["workflow_data"]
@@ -73,7 +75,13 @@ class KafkaConsumerManager:
             # 发送事件到专用Stream
             await redis_conn.xadd(
                 f"workflow:events:{task_id}",  # 使用新的事件流键
-                {"type": "workflow", "status": "running", "result": "", "error": ""},
+                {
+                    "type": "workflow",
+                    "status": "running",
+                    "result": "",
+                    "error": "",
+                    "create_time": str(beijing_time_now()),
+                },
             )
             async with WorkflowEngine(
                 nodes=workflow_data["nodes"],
@@ -81,7 +89,15 @@ class KafkaConsumerManager:
                 global_variables=workflow_data["global_variables"],
                 start_node=workflow_data["start_node"],
                 task_id=task_id,  # 传递task_id用于状态更新
+                breakpoints=workflow_data["breakpoints"],
             ) as engine:
+
+                # 加载状态（如果是恢复执行）
+                if resume:
+                    if await engine.load_state():
+                        logger.info(f"Resuming workflow {task_id} from saved state")
+                    else:
+                        raise ValueError("Workflow expired!")
                 # 验证工作流
                 if not engine.graph[0]:
                     raise ValueError(engine.graph[-1])
@@ -100,13 +116,15 @@ class KafkaConsumerManager:
                 )
                 # 发送事件到专用Stream
                 # 任务完成时发送事件
+                workflow_status = "pause" if engine.break_workflow else  "completed" 
                 await redis_conn.xadd(
                     f"workflow:events:{task_id}",
                     {
                         "type": "workflow",
-                        "status": "completed",
+                        "status": workflow_status,
                         "result": json.dumps(engine.context),
                         "error": "",
+                        "create_time": str(beijing_time_now()),
                     },
                 )
 
@@ -121,13 +139,16 @@ class KafkaConsumerManager:
             )
             await redis_conn.xadd(
                 f"workflow:events:{task_id}",
-                {"type": "workflow", "status": "failed", "result": "", "error": str(e)},
+                {"type": "workflow", "status": "failed", "result": "", "error": str(e), "create_time": str(beijing_time_now())}
             )
             logger.error(f"Workflow task failed: {str(e)}")
         finally:
-            # 设置最终过期时间
-            await redis_conn.expire(f"workflow:{task_id}", 3600)
-            await redis_conn.expire(f"workflow:{task_id}:nodes", 3600)
+            # 刷新过期时间
+            pipeline = redis_conn.pipeline()
+            pipeline.expire(f"workflow:{task_id}", 3600)
+            pipeline.expire(f"workflow:{task_id}:nodes", 3600)
+            pipeline.expire(f"workflow:events:{task_id}", 3600)
+            await pipeline.execute()
 
     # @retry(stop=stop_after_attempt(5), wait=wait_fixed(2))
     async def consume_messages(self):

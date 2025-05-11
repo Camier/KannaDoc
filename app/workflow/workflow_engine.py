@@ -5,6 +5,7 @@ from typing import Dict, List, Any, Optional
 import docker
 
 from app.db.redis import redis
+from app.utils.timezone import beijing_time_now
 from app.workflow.sandbox import CodeSandbox
 from app.workflow.code_scanner import CodeScanner
 from app.workflow.graph import TreeNode, WorkflowGraph
@@ -18,6 +19,7 @@ class WorkflowEngine:
         global_variables,
         start_node="node_start",
         task_id: str = None,
+        breakpoints=None,
     ):
         self.nodes = nodes
         self.edges = edges
@@ -30,6 +32,9 @@ class WorkflowEngine:
         # 延迟初始化沙箱
         self.sandbox: Optional[CodeSandbox] = None
         self.task_id = task_id  # Kafka任务id
+        self.breakpoints = set(breakpoints or [])
+        self.execution_stack = [self.graph[1]]  # 用栈结构保存执行状态
+        self.break_workflow = False
 
     async def __aenter__(self):
         # 创建并启动沙箱
@@ -42,6 +47,56 @@ class WorkflowEngine:
         if self.sandbox:
             # 清理沙箱
             await self.sandbox.__aexit__(exc_type, exc, tb)
+
+    async def save_state(self):
+        """保存当前执行状态到Redis"""
+        state = {
+            "global_variables": self.global_variables,
+            "execution_status": self.execution_status,
+            "execution_stack": [n.node_id for n in self.execution_stack],
+            "nodes": self.nodes,  # 保存节点定义
+            "edges": self.edges,  # 保存边定义
+        }
+        redis_conn = await redis.get_task_connection()
+        await redis_conn.setex(
+            f"workflow:{self.task_id}:state", 3600, json.dumps(state)
+        )
+
+    async def load_state(self):
+        """从Redis加载执行状态"""
+        redis_conn = await redis.get_task_connection()
+        state = await redis_conn.get(f"workflow:{self.task_id}:state")
+        if state:
+            state = json.loads(state)
+            self.global_variables = state["global_variables"]
+            self.execution_status = state["execution_status"]
+            # 重建执行栈
+            self.execution_stack = [
+                TreeNode.get_node(nid) for nid in state["execution_stack"]
+            ]
+            return True
+        return False
+
+    async def _send_pause_event(self, node: TreeNode):
+        redis_conn = await redis.get_task_connection()
+        await redis_conn.xadd(
+            f"workflow:events:{self.task_id}",
+            {
+                "type": "node",
+                "node": node.node_id,
+                "status": "pause",
+                "result": "",
+                "error": "",
+                "variables": json.dumps(self.global_variables),
+                "create_time": str(beijing_time_now()),
+            },
+        )
+        # 刷新过期时间
+        pipeline = redis_conn.pipeline()
+        pipeline.expire(f"workflow:{self.task_id}", 3600)
+        pipeline.expire(f"workflow:{self.task_id}:nodes", 3600)
+        pipeline.expire(f"workflow:events:{self.task_id}", 3600)
+        await pipeline.execute()
 
     def get_graph(self):
         try:
@@ -83,7 +138,7 @@ class WorkflowEngine:
         child_pass = []
         for idx, cond in conditions.items():
             try:
-                if self.safe_eval(cond, node.data['name'], node.node_id):
+                if self.safe_eval(cond, node.data["name"], node.node_id):
                     matched.append(int(idx))
                     condition_pass.append(str(idx))
             except Exception as e:
@@ -134,41 +189,75 @@ class WorkflowEngine:
         await self._update_node_status(node.node_id, status)
         for child in node.children:
             await self._set_loop_node_execution_status(child, status)
+        # print(self.context, node.loop_parent.loop_index+1)
+        # if not node.node_id in self.context:
+        #     self.context[node.loop_parent.node_id] = [{"result":f"Execution Node Loop {node.loop_parent.loop_index+1} Succeeded"}]
+        # else:
+        #     self.context[node.loop_parent.node_id].append({"result":f"Execution Node Loop {node.loop_parent.loop_index+1} Succeeded"})
+        # print(self.context, node.loop_parent.loop_index+1)
 
     async def handle_loop(self, node: TreeNode):
+        if len(node.loop_last) == 0:
+            raise ValueError(
+                f"{node.node_id}: 节点{node.data['name']}: 循环节点没有loop_next出口"
+            )
         loop_type = node.data["loopType"]
         loop_info = node.loop_info
-        if loop_info:
-            loop_node = loop_info[0]
-            if len(loop_info) > 1:
-                raise ValueError(
-                    f"{node.node_id}: 节点{node.data['name']}: 循环节点只能有一个loop_body入口"
-                )
-            if loop_type == "count":
-                maxCount = node.data["maxCount"]
-                for i in range(maxCount):
-                    # 执行状态设为false保证可以循环
-                    await self._set_loop_node_execution_status(loop_node)
-                    await self.execute_workflow(loop_node)
-            elif loop_type == "condition":
-                condition = node.data["condition"]
-                for i in range(100):
-                    await self._set_loop_node_execution_status(loop_node)
-                    await self.execute_workflow(loop_node, condition)
-                    if self.safe_eval(condition, node.data['name'], node.node_id):
-                        break
-            else:
-                raise ValueError(f"{node.node_id}: 节点{node.data['name']}: 未知的循环类型")
+        if len(loop_info) != 1:
+            raise ValueError(
+                f"{node.node_id}: 节点{node.data['name']}: 循环节点只能有一个loop_body入口"
+            )
 
-    async def execute_workflow(self, node: TreeNode, condition: str = ""):
+        loop_node = loop_info[0]
+        if loop_type == "count":
+            maxCount = node.data["maxCount"]
+            # while node.loop_index < int(maxCount):
+            # 执行状态设为false保证可以循环
+            if node.loop_index < int(maxCount):
+                await self._set_loop_node_execution_status(loop_node)
+                await self.execute_workflow(loop_node)
+            else:
+                self.execution_status[node.node_id] = True
+                await self._update_node_status(node.node_id, True)
+                for child in node.children:
+                    await self.execute_workflow(child)
+                return
+
+        elif loop_type == "condition":
+            condition = node.data["condition"]
+            if condition:
+                if self.safe_eval(condition, node.data["name"], node.node_id):
+                    # print(f"节点 {node.node_id} 通过条件判断终止")
+                    self.execution_status[node.node_id] = True
+                    await self._update_node_status(node.node_id, True)
+                    for child in node.children:
+                        await self.execute_workflow(child)
+                    return
+                
+            if node.loop_index < 100:
+                await self._set_loop_node_execution_status(loop_node)
+                await self.execute_workflow(loop_node)
+                # if self.safe_eval(condition, node.data["name"], node.node_id):
+                #     break
+        else:
+            raise ValueError(f"{node.node_id}: 节点{node.data['name']}: 未知的循环类型")
+
+    async def execute_workflow(self, node: TreeNode):
         """
         递归运行节点
         """
+        # 检查暂停点
+        if node.node_id in self.breakpoints:
+            self.execution_stack.append(node)
+            await self.save_state()
+            await self._send_pause_event(node)
+            self.break_workflow = True
+            return
 
-        if condition:
-            if self.safe_eval(condition, node.data['name'], node.node_id):
-                # print(f"节点 {node.node_id} 通过条件判断终止")
-                return
+        # if condition:
+        #     if self.safe_eval(condition, node.data["name"], node.node_id):
+        #         # print(f"节点 {node.node_id} 通过条件判断终止")
+        #         return
         if self.execution_status[node.node_id]:
             # print(f"节点 {node.node_id} 已经运行过了")
             return
@@ -180,18 +269,24 @@ class WorkflowEngine:
 
         if node.node_type == "loop":
             await self.handle_loop(node)
-            self.execution_status[node.node_id] = True
-            await self._update_node_status(node.node_id, True)
-            for child in node.children:
-                await self.execute_workflow(child, condition)
+            if node.loop_parent:
+                if node in node.loop_parent.loop_last:
+                    if all(
+                        self.execution_status[last_loop_node.node_id]
+                        for last_loop_node in node.loop_parent.loop_last
+                    ):
+                        node.loop_index = 0
+                        node.loop_parent.loop_index += 1
+                        await self.execute_workflow(node.loop_parent)
+
         elif node.node_type == "condition":
             pointer_nodes = await self.handle_condition(node)
             self.execution_status[node.node_id] = True
             await self._update_node_status(node.node_id, True)
             # 异步执行子节点
-            tasks = []
+            # tasks = []
             for child in pointer_nodes:
-                await self.execute_workflow(child, condition)
+                await self.execute_workflow(child)
             #     task = asyncio.create_task(self.execute_workflow(child))
             #     tasks.append(task)
             # await asyncio.wait(tasks)
@@ -200,12 +295,20 @@ class WorkflowEngine:
             self.execution_status[node.node_id] = True
             await self._update_node_status(node.node_id, True)
             # 异步执行子节点
-            tasks = []
+            # tasks = []
             for child in node.children:
-                await self.execute_workflow(child, condition)
+                await self.execute_workflow(child)
             #     task = asyncio.create_task(self.execute_workflow(child))
             #     tasks.append(task)
             # await asyncio.wait(tasks)
+            if node.loop_parent:
+                if node in node.loop_parent.loop_last:
+                    if all(
+                        self.execution_status[last_loop_node.node_id]
+                        for last_loop_node in node.loop_parent.loop_last
+                    ):
+                        node.loop_parent.loop_index += 1
+                        await self.execute_workflow(node.loop_parent)
 
     async def _update_node_status(self, node_id: str, status: bool):
         """更新Redis中节点状态"""
@@ -224,11 +327,16 @@ class WorkflowEngine:
                     "status": str(int(status)),
                     "result": json.dumps(self.context.get(node_id, "")),
                     "error": "",
+                    "variables": json.dumps(self.global_variables),
+                    "create_time": str(beijing_time_now()),
                 },
             )
             # 刷新过期时间
-            await redis_conn.expire(f"workflow:{self.task_id}", 3600)
-            await redis_conn.expire(f"workflow:{self.task_id}:nodes", 3600)
+            pipeline = redis_conn.pipeline()
+            pipeline.expire(f"workflow:{self.task_id}", 3600)
+            pipeline.expire(f"workflow:{self.task_id}:nodes", 3600)
+            pipeline.expire(f"workflow:events:{self.task_id}", 3600)
+            await pipeline.execute()
 
     async def execute_node(self, node: TreeNode):
         if node.node_type == "code":
@@ -272,9 +380,9 @@ class WorkflowEngine:
                     f"{node.node_id}: 节点{node.data['name']}: 输出格式无效,非json格式"
                 )  # HTTPException(status_code=400, detail="输出格式无效")
             if not node.node_id in self.context:
-                self.context[node.node_id] = [result]
+                self.context[node.node_id] = [{"result":code_output}]
             else:
-                self.context[node.node_id].append(result)
+                self.context[node.node_id].append({"result":code_output})
         elif node.node_type == "ai_function":
             result = {"advice": f"模拟调用函数{node.data['function_def']['name']}"}
             # 以节点ID为键存储完整结果
@@ -286,4 +394,6 @@ class WorkflowEngine:
             pass
 
     async def start(self):
-        await self.execute_workflow(self.graph[1])
+        """迭代式执行方法"""
+        current_node = self.execution_stack.pop()
+        await self.execute_workflow(current_node)

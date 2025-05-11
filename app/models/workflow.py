@@ -12,6 +12,7 @@ class TestFunctionCode(BaseModel):
     image_url: str = ""
     global_variables: dict
 
+
 class TestConditionNode(BaseModel):
     username: str
     node_id: str
@@ -19,12 +20,16 @@ class TestConditionNode(BaseModel):
     conditions: dict
     global_variables: dict
 
+
 class Workflow(BaseModel):
     username: str
     nodes: list
     edges: list
     start_node: str
     global_variables: dict
+    resume_task_id: str = ""
+    breakpoints: list = []
+
 
 class WorkflowCreate(BaseModel):
     username: str
@@ -36,6 +41,12 @@ class WorkflowCreate(BaseModel):
     nodes: list
     edges: list
 
+
 class WorkflowRenameInput(BaseModel):
     workflow_id: str
     workflow_new_name: str
+
+class NodesInput(BaseModel):
+    username: str
+    custom_node_name: str
+    custom_node: dict = None

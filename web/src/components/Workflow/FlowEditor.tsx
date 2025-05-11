@@ -39,130 +39,25 @@ import FunctionNodeComponent from "@/components/Workflow/NodeSettings/FunctionNo
 import StartNodeComponent from "@/components/Workflow/NodeSettings/StartNode";
 import { useAuthStore } from "@/stores/authStore";
 import { v4 as uuidv4 } from "uuid";
-import { createWorkflow, executeWorkflow } from "@/lib/api/workflowApi";
+import {
+  createWorkflow,
+  deleteCustomNodes,
+  executeWorkflow,
+  getCustomNodes,
+  saveCustomNodes,
+} from "@/lib/api/workflowApi";
 import { useGlobalStore } from "@/stores/pythonVariableStore";
 import ConditionNodeComponent from "@/components/Workflow/NodeSettings/ConditionNode";
 import LoopNodeComponent from "@/components/Workflow/NodeSettings/LoopNode";
 import { EventSourceParserStream } from "eventsource-parser/stream";
 import VlmNodeComponent from "@/components/Workflow/NodeSettings/VlmNode";
-import useModelConfigStore from "@/stores/configStore";
 import { getAllKnowledgeBase } from "@/lib/api/knowledgeBaseApi";
 import { getAllModelConfig } from "@/lib/api/configApi";
+import ConfirmAlert from "../ConfirmAlert";
+import NodeTypeSelector from "./NodeTypeSelector";
+import SaveCustomNode from "./SaveNode";
 
 const getId = (type: string): string => `node_${type}_${uuidv4()}`;
-
-interface NodeTypeSelectorProps {
-  workflowName: string;
-  addNode: (key: NodeTypeKey) => void;
-}
-
-const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({
-  addNode,
-  workflowName,
-}) => {
-  const selectedType = useFlowStore((state) => state.selectedType);
-  const setSelectedType = useFlowStore((state) => state.setSelectedType);
-
-  return (
-    <div className="space-y-2">
-      <ul className="space-y-2">
-        <div className="flex items-center justify-start px-2 gap-1 pb-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="size-5"
-          >
-            <path
-              fillRule="evenodd"
-              d="M2.25 6a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V6Zm3.97.97a.75.75 0 0 1 1.06 0l2.25 2.25a.75.75 0 0 1 0 1.06l-2.25 2.25a.75.75 0 0 1-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 0 1 0-1.06Zm4.28 4.28a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z"
-              clipRule="evenodd"
-            />
-          </svg>
-
-          <span className="whitespace-nowrap overflow-auto text-sm font-semibold">
-            {workflowName}
-          </span>
-        </div>
-        <div className="pt-2 border-b-2 border-gray-200 text-center">
-          Base Node
-        </div>
-        {Object.entries(nodeTypesInfo).map(([key, type]) => (
-          <li
-            key={key}
-            className={`cursor-pointer p-2 rounded-full text-center hover:bg-indigo-300 hover:text-white ${
-              selectedType === key ? "bg-indigo-500 text-white" : ""
-            }`}
-            onClick={() => {
-              const typeKey = key as NodeTypeKey;
-              if (selectedType === typeKey) {
-                addNode(typeKey);
-              } else {
-                setSelectedType(typeKey);
-                addNode(typeKey);
-              }
-            }}
-          >
-            <div className="flex items-center justify-start gap-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="size-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M4.5 12a7.5 7.5 0 0 0 15 0m-15 0a7.5 7.5 0 1 1 15 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077 1.41-.513m14.095-5.13 1.41-.513M5.106 17.785l1.15-.964m11.49-9.642 1.149-.964M7.501 19.795l.75-1.3m7.5-12.99.75-1.3m-6.063 16.658.26-1.477m2.605-14.772.26-1.477m0 17.726-.26-1.477M10.698 4.614l-.26-1.477M16.5 19.794l-.75-1.299M7.5 4.205 12 12m6.894 5.785-1.149-.964M6.256 7.178l-1.15-.964m15.352 8.864-1.41-.513M4.954 9.435l-1.41-.514M12.002 12l-3.75 6.495"
-                />
-              </svg>
-              {type.label}
-            </div>
-          </li>
-        ))}
-        <div className="pt-2 border-b-2 border-gray-200 text-center">
-          Custom Node
-        </div>
-        {/* {Object.entries(nodeTypesInfo).map(([key, type]) => (
-          <li
-            key={key}
-            className={`cursor-pointer p-2 rounded-full text-center hover:bg-indigo-300 hover:text-white ${
-              selectedType === key ? "bg-indigo-500 text-white" : ""
-            }`}
-            onClick={() => {
-              const typeKey = key as NodeTypeKey;
-              if (selectedType === typeKey) {
-                addNode(typeKey);
-              } else {
-                setSelectedType(typeKey);
-                addNode(typeKey);
-              }
-            }}
-          >
-            <div className="flex items-center justify-start gap-1">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                className="size-6"
-              >
-                <path d="M17.004 10.407c.138.435-.216.842-.672.842h-3.465a.75.75 0 0 1-.65-.375l-1.732-3c-.229-.396-.053-.907.393-1.004a5.252 5.252 0 0 1 6.126 3.537ZM8.12 8.464c.307-.338.838-.235 1.066.16l1.732 3a.75.75 0 0 1 0 .75l-1.732 3c-.229.397-.76.5-1.067.161A5.23 5.23 0 0 1 6.75 12a5.23 5.23 0 0 1 1.37-3.536ZM10.878 17.13c-.447-.098-.623-.608-.394-1.004l1.733-3.002a.75.75 0 0 1 .65-.375h3.465c.457 0 .81.407.672.842a5.252 5.252 0 0 1-6.126 3.539Z" />
-                <path
-                  fillRule="evenodd"
-                  d="M21 12.75a.75.75 0 1 0 0-1.5h-.783a8.22 8.22 0 0 0-.237-1.357l.734-.267a.75.75 0 1 0-.513-1.41l-.735.268a8.24 8.24 0 0 0-.689-1.192l.6-.503a.75.75 0 1 0-.964-1.149l-.6.504a8.3 8.3 0 0 0-1.054-.885l.391-.678a.75.75 0 1 0-1.299-.75l-.39.676a8.188 8.188 0 0 0-1.295-.47l.136-.77a.75.75 0 0 0-1.477-.26l-.136.77a8.36 8.36 0 0 0-1.377 0l-.136-.77a.75.75 0 1 0-1.477.26l.136.77c-.448.121-.88.28-1.294.47l-.39-.676a.75.75 0 0 0-1.3.75l.392.678a8.29 8.29 0 0 0-1.054.885l-.6-.504a.75.75 0 1 0-.965 1.149l.6.503a8.243 8.243 0 0 0-.689 1.192L3.8 8.216a.75.75 0 1 0-.513 1.41l.735.267a8.222 8.222 0 0 0-.238 1.356h-.783a.75.75 0 0 0 0 1.5h.783c.042.464.122.917.238 1.356l-.735.268a.75.75 0 0 0 .513 1.41l.735-.268c.197.417.428.816.69 1.191l-.6.504a.75.75 0 0 0 .963 1.15l.601-.505c.326.323.679.62 1.054.885l-.392.68a.75.75 0 0 0 1.3.75l.39-.679c.414.192.847.35 1.294.471l-.136.77a.75.75 0 0 0 1.477.261l.137-.772a8.332 8.332 0 0 0 1.376 0l.136.772a.75.75 0 1 0 1.477-.26l-.136-.771a8.19 8.19 0 0 0 1.294-.47l.391.677a.75.75 0 0 0 1.3-.75l-.393-.679a8.29 8.29 0 0 0 1.054-.885l.601.504a.75.75 0 0 0 .964-1.15l-.6-.503c.261-.375.492-.774.69-1.191l.735.267a.75.75 0 1 0 .512-1.41l-.734-.267c.115-.439.195-.892.237-1.356h.784Zm-2.657-3.06a6.744 6.744 0 0 0-1.19-2.053 6.784 6.784 0 0 0-1.82-1.51A6.705 6.705 0 0 0 12 5.25a6.8 6.8 0 0 0-1.225.11 6.7 6.7 0 0 0-2.15.793 6.784 6.784 0 0 0-2.952 3.489.76.76 0 0 1-.036.098A6.74 6.74 0 0 0 5.251 12a6.74 6.74 0 0 0 3.366 5.842l.009.005a6.704 6.704 0 0 0 2.18.798l.022.003a6.792 6.792 0 0 0 2.368-.004 6.704 6.704 0 0 0 2.205-.811 6.785 6.785 0 0 0 1.762-1.484l.009-.01.009-.01a6.743 6.743 0 0 0 1.18-2.066c.253-.707.39-1.469.39-2.263a6.74 6.74 0 0 0-.408-2.309Z"
-                  clipRule="evenodd"
-                />
-              </svg>
-              {type.label}
-            </div>
-          </li>
-        ))} */}
-      </ul>
-    </div>
-  );
-};
 
 interface FlowEditorProps {
   workFlow: WorkflowAll;
@@ -178,7 +73,13 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   const reactFlowWrapper = useRef<HTMLDivElement>(null);
   const [codeFullScreenFlow, setCodeFullScreenFlow] = useState<boolean>(false);
   const { user } = useAuthStore();
-  const { globalVariables } = useGlobalStore();
+  const {
+    globalVariables,
+    setGlobalVariables,
+    reset,
+    setGlobalDebugVariables,
+    globalDebugVariables,
+  } = useGlobalStore();
   const {
     nodes,
     edges,
@@ -201,11 +102,23 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     updateOutput,
     updateConditionCount,
     updateStatus,
+    updateVlmModelConfig,
   } = useFlowStore();
   const [taskId, setTaskId] = useState("");
   const [running, setRunning] = useState(false);
-  const { vlmModelConfig, setVlmModelConfig } = useModelConfigStore();
-
+  const [breakpoints, setBreakpoints] = useState<string[]>([]);
+  const [resumetTaskId, setResumetTaskId] = useState("");
+  const [showAlert, setShowAlert] = useState(false);
+  const [workflowMessage, setWorkflowMessage] = useState("");
+  const [workflowStatus, setWorkflowStatus] = useState("");
+  const [customNodes, setCustomNodes] = useState<{ [key: string]: CustomNode }>(
+    {}
+  );
+  const [showAddNode, setShowAddNode] = useState(false);
+  const [nameError, setNameError] = useState<string | null>(null);
+  const [newNodeName, setNewNodeName] = useState("");
+  const [newCustomNode, setNewCustomNode] = useState<CustomNode | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   // 使用 useMemo 优化查找
   const currentNode = useMemo(
     () => nodes.find((n) => n.id === selectedNodeId),
@@ -219,14 +132,43 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     }
   }, []);
 
+  // 初始化自定义节点
+  const fetchAllCustomNodes = useCallback(async () => {
+    if (user?.name) {
+      try {
+        const response = await getCustomNodes(user.name);
+        const reponseNodes: { [key: string]: CustomNode } = response.data;
+        setCustomNodes(reponseNodes);
+      } catch (error) {
+        console.error("Error fetching custom nodes:", error);
+      }
+    }
+  }, [user?.name]); // Add dependencies
+
+  useEffect(() => {
+    fetchAllCustomNodes();
+  }, [user?.name, fetchAllCustomNodes]); // Add fetchAllWorkflow
+
   const splitFirstColon = (str: string) => {
     const index = str.indexOf(":");
     if (index === -1) return [str, ""]; // 没有冒号时返回原字符串和空字符串
     return [str.substring(0, index), str.substring(index + 1)];
   };
 
+  const handelDeleteCustomNode = async (custom_node_name: string) => {
+    if (user?.name) {
+      try {
+        await deleteCustomNodes(user.name, custom_node_name);
+        fetchAllCustomNodes();
+      } catch (error) {
+        console.error("Error fetching custom nodes:", error);
+      }
+    }
+  };
+
   useEffect(() => {
     if (taskId !== "") {
+      setResumetTaskId("");
       const workFlowSSE = async () => {
         if (user?.name) {
           const token = Cookies.get("token"); // 确保已引入cookie库
@@ -253,7 +195,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               const { done, value } = (await eventReader?.read()) || {};
               if (done) break;
               const payload = JSON.parse(value.data);
-
+              console.log(value.data);
               //处理事件数据
               if (payload.event === "workflow") {
                 if (payload.workflow.status == "failed") {
@@ -263,9 +205,23 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                   updateOutput(errorNodeId, errorNodeMsg);
                   updateStatus(errorNodeId, "failed");
                 }
-                if (["completed", "failed"].includes(payload.workflow.status)) {
+                if (
+                  ["completed", "failed", "pause"].includes(
+                    payload.workflow.status
+                  )
+                ) {
+                  if (payload.workflow.status === "completed") {
+                    setWorkflowStatus("success");
+                    setWorkflowMessage("Execution Succeeded");
+                  } else if (payload.workflow.status === "pause") {
+                    setWorkflowMessage("Debug Pause!");
+                    setWorkflowStatus("success");
+                  } else {
+                    setWorkflowMessage("Execution Failed");
+                    setWorkflowStatus("error");
+                  }
                   eventReader.cancel();
-                  break;
+                  //break;
                 }
               } else if (payload.event === "node") {
                 if (payload.node.status === true) {
@@ -275,7 +231,8 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                     if (resultList.length > 1) {
                       result = resultList
                         .map(
-                          (item, index) => `Loop ${index + 1}:\n${item.result}`
+                          (item, index) =>
+                            `Gloabl Loop ${index + 1}:\n${item.result}\n`
                         )
                         .join("\n");
                     } else {
@@ -285,7 +242,14 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                   } else {
                     updateOutput(payload.node.id, "Node running success!");
                   }
+                  if (payload.node.variables !== '""') {
+                    const variables = JSON.parse(payload.node.variables);
+                    setGlobalDebugVariables(variables);
+                  }
                   updateStatus(payload.node.id, "ok");
+                } else if (payload.node.status === "pause") {
+                  setResumetTaskId(taskId);
+                  updateStatus(payload.node.id, "pause");
                 }
               }
             }
@@ -293,7 +257,8 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             console.error("SSE错误:", error);
           } finally {
             setRunning(false);
-            alert("Running Compelete!");
+            setTaskId("");
+            setShowAlert(true);
           }
         }
       };
@@ -301,53 +266,52 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     }
   }, [taskId]);
 
-  const fetchModelConfig = 
-    async (nodeId: string) => {
-      if (user?.name) {
-        const responseBase = await getAllKnowledgeBase(user.name);
-        const bases: KnowledgeBase[] = responseBase.data.map((item: any) => ({
-          name: item.knowledge_base_name,
-          id: item.knowledge_base_id,
-          selected: false,
+  const fetchModelConfig = async (nodeId: string) => {
+    if (user?.name) {
+      const responseBase = await getAllKnowledgeBase(user.name);
+      const bases: KnowledgeBase[] = responseBase.data.map((item: any) => ({
+        name: item.knowledge_base_name,
+        id: item.knowledge_base_id,
+        selected: false,
+      }));
+
+      const response = await getAllModelConfig(user.name);
+
+      const modelConfigsResponse: ModelConfig[] = response.data.models.map(
+        (item: any) => ({
+          modelId: item.model_id,
+          modelName: item.model_name,
+          modelURL: item.model_url,
+          apiKey: item.api_key,
+          baseUsed: item.base_used,
+          systemPrompt: item.system_prompt,
+          temperature: item.temperature === -1 ? 0.1 : item.temperature,
+          maxLength: item.max_length === -1 ? 8192 : item.max_length,
+          topP: item.top_P === -1 ? 0.01 : item.top_P,
+          topK: item.top_K === -1 ? 3 : item.top_K,
+          useTemperatureDefault: item.temperature === -1 ? true : false,
+          useMaxLengthDefault: item.max_length === -1 ? true : false,
+          useTopPDefault: item.top_P === -1 ? true : false,
+          useTopKDefault: item.top_K === -1 ? true : false,
+        })
+      );
+
+      const selected = modelConfigsResponse.find(
+        (m) => m.modelId === response.data.selected_model
+      );
+
+      if (selected) {
+        const filter_select = selected.baseUsed.filter((item) =>
+          bases.some((base) => base.id === item.baseId)
+        );
+        updateVlmModelConfig(nodeId, (prev) => ({
+          ...prev,
+          ...selected,
+          baseUsed: filter_select,
         }));
-
-        const response = await getAllModelConfig(user.name);
-
-        const modelConfigsResponse: ModelConfig[] = response.data.models.map(
-          (item: any) => ({
-            modelId: item.model_id,
-            modelName: item.model_name,
-            modelURL: item.model_url,
-            apiKey: item.api_key,
-            baseUsed: item.base_used,
-            systemPrompt: item.system_prompt,
-            temperature: item.temperature === -1 ? 0.1 : item.temperature,
-            maxLength: item.max_length === -1 ? 8192 : item.max_length,
-            topP: item.top_P === -1 ? 0.01 : item.top_P,
-            topK: item.top_K === -1 ? 3 : item.top_K,
-            useTemperatureDefault: item.temperature === -1 ? true : false,
-            useMaxLengthDefault: item.max_length === -1 ? true : false,
-            useTopPDefault: item.top_P === -1 ? true : false,
-            useTopKDefault: item.top_K === -1 ? true : false,
-          })
-        );
-
-        const selected = modelConfigsResponse.find(
-          (m) => m.modelId === response.data.selected_model
-        );
-
-        if (selected) {
-          const filter_select = selected.baseUsed.filter((item) =>
-            bases.some((base) => base.id === item.baseId)
-          );
-          setVlmModelConfig(nodeId, (prev) => ({
-            ...prev,
-            ...selected,
-            baseUsed: filter_select,
-          }));
-        }
       }
-    };
+    }
+  };
 
   const onNodesChange = useCallback(
     (changes: NodeChange<CustomNode>[]) => {
@@ -388,7 +352,6 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
 
   const onConnect = useCallback(
     (connection: Connection) => {
-      console.log(vlmModelConfig);
       let newConnection;
       if (
         edges.find(
@@ -460,8 +423,11 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         status: "init",
         label: nodeTypesInfo[type].label,
         nodeType: type,
-        output: "Output will be show here",
-        selectedModelId: "",
+        output:
+          "To extract global variables from the output, ensure prompt LLM/VLM to wrap them with double curly braces, e.g., {{variable}}.",
+        prompt: "You are a helpful assistant.",
+        vlmInput: "",
+        isChatStyle: false,
       };
     } else {
       data = {
@@ -473,7 +439,9 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     }
     if (type === "start") {
       if (nodes.find((node) => node.data.nodeType === "start")) {
-        alert("Start node already exist!");
+        setShowAlert(true);
+        setWorkflowStatus("error");
+        setWorkflowMessage("Start node already exist!");
         return;
       }
       id = "node_start";
@@ -483,13 +451,29 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     const newNode: CustomNode = {
       id: id,
       type: "default",
-      position: { x: Math.random() * 100, y: Math.random() * 100 },
+      position: { x: Math.random() * 100 - 100, y: Math.random() * 100 },
       data: data,
     };
+    setNodes([...nodes, newNode]);
     if (type === "vlm") {
       fetchModelConfig(id);
     }
-    setNodes([...nodes, newNode]);
+  };
+
+  const addCustomNode = (name: string) => {
+    const type = customNodes[name].type;
+    if (type) {
+      const id = getId(type);
+      const newNode: CustomNode = {
+        id: id,
+        type: customNodes[name].type,
+        position: { x: Math.random() * 100 - 100, y: Math.random() * 100 },
+        data: { ...customNodes[name].data, label: name },
+      };
+      setNodes([...nodes, newNode]);
+    } else {
+      alert("Node Error");
+    }
   };
 
   const onNodeClick = (_: any, node: CustomNode) => {
@@ -514,13 +498,16 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     }
   };
 
-  const handleRunWorkflow = async () => {
+  const handleRunWorkflow = async (debug: boolean = false) => {
     if (user?.name) {
       setRunning(true);
-      nodes.forEach((node) => {
-        updateOutput(node.id, "Await for running...");
-        updateStatus(node.id, "init");
-      });
+      if (debug === false || resumetTaskId === "") {
+        nodes.forEach((node) => {
+          updateOutput(node.id, "Await for running...");
+          updateStatus(node.id, "init");
+        });
+      }
+
       try {
         const sendNodes = nodes.map((node) => ({
           id: node.id,
@@ -563,17 +550,35 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             };
           }
         });
+        let sendBreakpoints: string[];
+        let sendResumetTaskId: string;
+        let sendGlobalVariables = globalVariables;
+        if (debug) {
+          sendBreakpoints = breakpoints;
+          sendResumetTaskId = resumetTaskId;
+          if (resumetTaskId !== "") {
+            sendGlobalVariables = globalDebugVariables;
+          }
+        } else {
+          sendBreakpoints = [];
+          sendResumetTaskId = "";
+        }
         const response = await executeWorkflow(
           user.name,
           sendNodes,
           sendEdges,
           "node_start",
-          globalVariables
+          sendGlobalVariables,
+          sendResumetTaskId,
+          sendBreakpoints
         );
         if (response.data.code === 0) {
           setTaskId(response.data.task_id);
         } else {
-          alert(response.data.msg);
+          setShowAlert(true);
+          setWorkflowMessage(response.data.msg);
+          setWorkflowStatus("error");
+          setRunning(false);
         }
       } catch (error) {
         console.error("Error connect:", error);
@@ -597,7 +602,9 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
           edges
         );
         if (response.status == 200) {
-          alert("save success!");
+          setShowAlert(true);
+          setWorkflowMessage("Save Success!");
+          setWorkflowStatus("success");
         }
       } catch (error) {
         console.error("Error fetching chat history:", error);
@@ -605,6 +612,114 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     }
   };
 
+  const handleImportWorkflow = async (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = async (e) => {
+      try {
+        const content = e.target?.result as string;
+        const data = JSON.parse(content);
+
+        // 验证数据格式
+        if (!data.nodes || !data.edges || !data.globalVariables) {
+          throw new Error("Invalid workflow file format");
+        }
+
+        // 确认提示
+        const confirm = window.confirm("导入工作流将覆盖当前内容，是否继续？");
+        if (!confirm) return;
+
+        // 更新状态
+        setNodes(data.nodes);
+        setEdges(data.edges);
+        setGlobalVariables(data.globalVariables);
+
+        // 重置相关状态
+        setSelectedNodeId(null);
+        setSelectedEdgeId(null);
+        pushHistory();
+      } catch (error) {
+        console.error("导入失败:", error);
+        setShowAlert(true);
+        setWorkflowStatus("error");
+        setWorkflowMessage("无效的工作流文件格式");
+      }
+    };
+
+    reader.readAsText(file);
+    event.target.value = ""; // 重置input以允许重复选择同一文件
+  };
+
+  const handleExportWorkflow = () => {
+    const exportData = {
+      nodes,
+      edges,
+      globalVariables,
+      metadata: {
+        exportedAt: new Date().toISOString(),
+      },
+    };
+
+    const jsonString = JSON.stringify(exportData, null, 2);
+    const blob = new Blob([jsonString], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `${workFlow.workflowName}_${Date.now()}.layra`;
+    document.body.appendChild(a);
+    a.click();
+
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
+  const handeSaveNodes = (newNode: CustomNode) => {
+    setShowAddNode(true);
+    setNewCustomNode(newNode);
+  };
+
+  const handleCreateConfirm = async () => {
+    if (!newNodeName.trim()) {
+      setNameError("Node name can not be null!");
+      return;
+    }
+    if (
+      Object.entries(customNodes).find(([name, node]) => name === newNodeName)
+    ) {
+      setNameError("Node name already exist!");
+      return;
+    }
+    if (newCustomNode && user?.name) {
+      try {
+        const response = await saveCustomNodes(
+          user?.name,
+          newNodeName,
+          newCustomNode
+        );
+        if (response.data.status === "success") {
+          setCustomNodes((prev) => ({
+            ...prev,
+            [newNodeName]: newCustomNode,
+          }));
+        } else {
+          setShowAlert(true);
+          setWorkflowStatus("error");
+          setWorkflowMessage("保存失败，请导出工作流备份并检查网络！");
+        }
+      } catch (error) {
+        console.error("Error save custom node:", error);
+      }
+    }
+    setShowAddNode(false);
+    setNewNodeName("");
+    setNameError(null);
+  };
   return (
     <div
       className="flex-1 h-full flex items-center justify-center bg-white rounded-3xl shadow-sm p-6"
@@ -614,6 +729,10 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     >
       <div className="w-[15%] bg-white pr-4 h-full overflow-scroll">
         <NodeTypeSelector
+          deleteCustomNode={handelDeleteCustomNode}
+          customNodes={customNodes}
+          setCustomNodes={setCustomNodes}
+          addCustomNode={addCustomNode}
           workflowName={workFlow.workflowName}
           addNode={addNode}
         />
@@ -664,6 +783,57 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 />
               </svg>
             </button>
+            <input
+              type="file"
+              ref={fileInputRef}
+              accept=".layra"
+              onChange={handleImportWorkflow}
+              className="hidden"
+            />
+
+            <button
+              onClick={() => fileInputRef.current?.click()}
+              //disabled={nodes.length > 0}
+              className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75"
+                />
+              </svg>
+
+              <span>Import</span>
+            </button>
+            <button
+              onClick={handleExportWorkflow}
+              disabled={nodes.length === 0}
+              className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
+                />
+              </svg>
+              <span>Export</span>
+            </button>
           </div>
 
           <button
@@ -707,7 +877,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             <div className="flex items-center justify-center gap-1">
               <button
                 disabled={running}
-                onClick={handleRunWorkflow}
+                onClick={() => handleRunWorkflow(false)}
                 className={`cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
               >
                 <svg
@@ -727,24 +897,45 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
 
                 <span>Run</span>
               </button>
-              {/* <button className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="size-5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M12 12.75c1.148 0 2.278.08 3.383.237 1.037.146 1.866.966 1.866 2.013 0 3.728-2.35 6.75-5.25 6.75S6.75 18.728 6.75 15c0-1.046.83-1.867 1.866-2.013A24.204 24.204 0 0 1 12 12.75Zm0 0c2.883 0 5.647.508 8.207 1.44a23.91 23.91 0 0 1-1.152 6.06M12 12.75c-2.883 0-5.647.508-8.208 1.44.125 2.104.52 4.136 1.153 6.06M12 12.75a2.25 2.25 0 0 0 2.248-2.354M12 12.75a2.25 2.25 0 0 1-2.248-2.354M12 8.25c.995 0 1.971-.08 2.922-.236.403-.066.74-.358.795-.762a3.778 3.778 0 0 0-.399-2.25M12 8.25c-.995 0-1.97-.08-2.922-.236-.402-.066-.74-.358-.795-.762a3.734 3.734 0 0 1 .4-2.253M12 8.25a2.25 2.25 0 0 0-2.248 2.146M12 8.25a2.25 2.25 0 0 1 2.248 2.146M8.683 5a6.032 6.032 0 0 1-1.155-1.002c.07-.63.27-1.222.574-1.747m.581 2.749A3.75 3.75 0 0 1 15.318 5m0 0c.427-.283.815-.62 1.155-.999a4.471 4.471 0 0 0-.575-1.752M4.921 6a24.048 24.048 0 0 0-.392 3.314c1.668.546 3.416.914 5.223 1.082M19.08 6c.205 1.08.337 2.187.392 3.314a23.882 23.882 0 0 1-5.223 1.082"
-                  />
-                </svg>
+              <button
+                disabled={running}
+                className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+                onClick={() => handleRunWorkflow(true)}
+              >
+                {resumetTaskId ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M21 7.5V18M15 7.5V18M3 16.811V8.69c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061A1.125 1.125 0 0 1 3 16.811Z"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="size-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 12.75c1.148 0 2.278.08 3.383.237 1.037.146 1.866.966 1.866 2.013 0 3.728-2.35 6.75-5.25 6.75S6.75 18.728 6.75 15c0-1.046.83-1.867 1.866-2.013A24.204 24.204 0 0 1 12 12.75Zm0 0c2.883 0 5.647.508 8.207 1.44a23.91 23.91 0 0 1-1.152 6.06M12 12.75c-2.883 0-5.647.508-8.208 1.44.125 2.104.52 4.136 1.153 6.06M12 12.75a2.25 2.25 0 0 0 2.248-2.354M12 12.75a2.25 2.25 0 0 1-2.248-2.354M12 8.25c.995 0 1.971-.08 2.922-.236.403-.066.74-.358.795-.762a3.778 3.778 0 0 0-.399-2.25M12 8.25c-.995 0-1.97-.08-2.922-.236-.402-.066-.74-.358-.795-.762a3.734 3.734 0 0 1 .4-2.253M12 8.25a2.25 2.25 0 0 0-2.248 2.146M12 8.25a2.25 2.25 0 0 1 2.248 2.146M8.683 5a6.032 6.032 0 0 1-1.155-1.002c.07-.63.27-1.222.574-1.747m.581 2.749A3.75 3.75 0 0 1 15.318 5m0 0c.427-.283.815-.62 1.155-.999a4.471 4.471 0 0 0-.575-1.752M4.921 6a24.048 24.048 0 0 0-.392 3.314c1.668.546 3.416.914 5.223 1.082M19.08 6c.205 1.08.337 2.187.392 3.314a23.882 23.882 0 0 1-5.223 1.082"
+                    />
+                  </svg>
+                )}
 
                 <span>Debug</span>
-              </button> */}
+              </button>
             </div>
             <div className="flex items-center justify-center gap-1">
               <button
@@ -767,7 +958,15 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 </svg>
                 <span>Save</span>
               </button>
-              {/* <button className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1">
+              <button
+                disabled={running}
+                className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+                onClick={() => {
+                  setNodes([]);
+                  setEdges([]);
+                  reset();
+                }}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -784,7 +983,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 </svg>
 
                 <span>Clear</span>
-              </button> */}
+              </button>
             </div>
           </div>
         </div>
@@ -801,13 +1000,18 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               {{
                 code: (
                   <FunctionNodeComponent
+                    saveNode={handeSaveNodes}
+                    isDebugMode={resumetTaskId === "" ? false : true}
                     node={currentNode}
                     codeFullScreenFlow={codeFullScreenFlow}
                     setCodeFullScreenFlow={setCodeFullScreenFlow}
+                    breakpoints={breakpoints}
+                    setBreakpoints={setBreakpoints}
                   />
                 ),
                 start: (
                   <StartNodeComponent
+                    isDebugMode={resumetTaskId === "" ? false : true}
                     node={currentNode}
                     codeFullScreenFlow={codeFullScreenFlow}
                     setCodeFullScreenFlow={setCodeFullScreenFlow}
@@ -815,24 +1019,35 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 ),
                 vlm: (
                   <VlmNodeComponent
+                    saveNode={handeSaveNodes}
+                    isDebugMode={resumetTaskId === "" ? false : true}
                     node={currentNode}
                     codeFullScreenFlow={codeFullScreenFlow}
                     setCodeFullScreenFlow={setCodeFullScreenFlow}
+                    breakpoints={breakpoints}
+                    setBreakpoints={setBreakpoints}
                   />
                 ),
                 condition: (
                   <ConditionNodeComponent
+                    saveNode={handeSaveNodes}
+                    isDebugMode={resumetTaskId === "" ? false : true}
                     node={currentNode}
                     codeFullScreenFlow={codeFullScreenFlow}
                     setCodeFullScreenFlow={setCodeFullScreenFlow}
+                    breakpoints={breakpoints}
+                    setBreakpoints={setBreakpoints}
                   />
                 ),
-                end: <div></div>,
                 loop: (
                   <LoopNodeComponent
+                    saveNode={handeSaveNodes}
+                    isDebugMode={resumetTaskId === "" ? false : true}
                     node={currentNode}
                     codeFullScreenFlow={codeFullScreenFlow}
                     setCodeFullScreenFlow={setCodeFullScreenFlow}
+                    breakpoints={breakpoints}
+                    setBreakpoints={setBreakpoints}
                   />
                 ),
               }[currentNode.data.nodeType] || <div></div>}
@@ -867,6 +1082,23 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
           </ReactFlow>
         </div>
       </div>
+      {showAlert && (
+        <ConfirmAlert
+          type={workflowStatus}
+          message={workflowMessage}
+          onCancel={() => setShowAlert(false)}
+        />
+      )}
+      {showAddNode && (
+        <SaveCustomNode
+          setShowSaveNode={setShowAddNode}
+          nameError={nameError}
+          setNameError={setNameError}
+          newNodeName={newNodeName}
+          setNewNodeName={setNewNodeName}
+          onCreateConfirm={handleCreateConfirm}
+        />
+      )}
     </div>
   );
 };

@@ -4,30 +4,54 @@ import { useFlowStore } from "@/stores/flowStore";
 import { useGlobalStore } from "@/stores/pythonVariableStore";
 import { CustomNode, ModelConfig } from "@/types/types";
 import { Dispatch, SetStateAction, useState } from "react";
-import { updateModelConfig } from "@/lib/api/configApi";
 import KnowledgeConfigModal from "./KnowledgeConfigModal";
+import { updateModelConfig } from "@/lib/api/configApi";
 
 interface VlmNodeProps {
+  saveNode: (node: CustomNode) => void;
+  isDebugMode: boolean;
   node: CustomNode;
   setCodeFullScreenFlow: Dispatch<SetStateAction<boolean>>;
   codeFullScreenFlow: boolean;
+  breakpoints: string[];
+  setBreakpoints: Dispatch<SetStateAction<string[]>>;
 }
 
 const VlmNodeComponent: React.FC<VlmNodeProps> = ({
+  saveNode,
+  isDebugMode,
   node,
   setCodeFullScreenFlow,
   codeFullScreenFlow,
+  breakpoints,
+  setBreakpoints,
 }) => {
-  const { globalVariables, addProperty, removeProperty, updateProperty } =
-    useGlobalStore();
+  const {
+    globalVariables,
+    globalDebugVariables,
+    addProperty,
+    removeProperty,
+    updateProperty,
+    updateDebugProperty,
+  } = useGlobalStore();
   const [variable, setVariable] = useState("");
-  const handleVariableChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleVariableChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    isDebugMode: boolean
+  ) => {
     const { name, value } = e.target;
-    updateProperty(name, value);
+    isDebugMode
+      ? updateDebugProperty(name, value)
+      : updateProperty(name, value);
   };
-  const { updateNodeLabel,updateSelectedModelId } = useFlowStore();
+  const {
+    updateNodeLabel,
+    updateVlmModelConfig,
+    updatePrompt,
+    updateVlmInput,
+    changeChatStyle,
+  } = useFlowStore();
   const [showConfigModal, setShowConfigModal] = useState(false);
-  const { vlmModelConfig, setVlmModelConfig } = useModelConfigStore();
   const { user } = useAuthStore();
 
   const configureKnowledgeDB = () => {
@@ -38,9 +62,8 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
     if (user?.name) {
       try {
         //更新数据库使用
-        setVlmModelConfig(node.id,config);
+        updateVlmModelConfig(node.id, config);
         await updateModelConfig(user.name, config);
-        updateSelectedModelId(node.id, config.modelId)
       } catch (error) {
         console.error("保存配置失败:", error);
       }
@@ -87,7 +110,10 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
             {node.data.label}
           </div>
         </div>
-        <button className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1">
+        <button
+          onClick={() => saveNode(node)}
+          className="cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -227,42 +253,63 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
               <span>Add Variable</span>
             </div>
           </div>
-          {Object.keys(globalVariables).map((key) => (
-            <div className="px-2 flex w-full items-center gap-2" key={key}>
-              <div className="max-w-[50%] overflow-scroll">{key}</div>
-              <div>=</div>
-              <input
-                name={key}
-                value={globalVariables[key]}
-                onChange={handleVariableChange}
-                onKeyDown={(e: React.KeyboardEvent<HTMLSpanElement>) => {
-                  if (e.key === "Enter") {
-                    // 按下回车时保存并退出编辑模式
-                    e.preventDefault();
-                    e.currentTarget.blur();
-                  }
-                }}
-                className="flex-1 w-full px-3 py-1 border-2 border-gray-200 rounded-xl
-              focus:outline-none focus:ring-2 focus:ring-indigo-500
-              disabled:opacity-50"
-              />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="size-5 text-indigo-500 cursor-pointer shrink-0"
-                onClick={() => removeProperty(key)}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
-                />
-              </svg>
-            </div>
-          ))}
+          {Object.keys(
+            isDebugMode ? globalDebugVariables : globalVariables
+          ).map((key) => {
+            // 获取当前值和初始值
+            const currentValue = isDebugMode
+              ? globalDebugVariables[key]
+              : globalVariables[key];
+            const initialValue = globalVariables[key];
+
+            // 判断是否是未修改状态
+            const isUnchanged = isDebugMode && currentValue === initialValue;
+            return (
+              <div className="px-2 flex w-full items-center gap-2" key={key}>
+                <div className="max-w-[50%] whitespace-nowrap overflow-scroll">
+                  {key}
+                </div>
+                <div>=</div>
+                {/* 输入框容器添加相对定位 */}
+                <div className="flex-1 relative">
+                  <input
+                    name={key}
+                    value={currentValue}
+                    onChange={(e) => handleVariableChange(e, isDebugMode)}
+                    className={`w-full px-3 py-1 border-2 rounded-xl border-gray-200
+            focus:outline-none focus:ring-2 focus:ring-indigo-500
+            disabled:opacity-50 ${
+              isUnchanged ? "text-gray-400" : "text-black"
+            }`}
+                    onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
+                      if (e.key === "Enter") e.currentTarget.blur();
+                    }}
+                  />
+                  {/* 初始值提示（仅在调试模式且未修改时显示） */}
+                  {isDebugMode && (
+                    <div className="absolute right-1 top-0 px-3 py-1 pointer-events-none text-gray-400">
+                      Init: {initialValue}
+                    </div>
+                  )}
+                </div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="size-5 text-indigo-500 cursor-pointer shrink-0"
+                  onClick={() => removeProperty(key)}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                  />
+                </svg>
+              </div>
+            );
+          })}
         </div>
       </details>
       <details className="group w-full" open>
@@ -275,9 +322,10 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                 fill="currentColor"
                 className="size-5"
               >
+                <path d="M12 .75a8.25 8.25 0 0 0-4.135 15.39c.686.398 1.115 1.008 1.134 1.623a.75.75 0 0 0 .577.706c.352.083.71.148 1.074.195.323.041.6-.218.6-.544v-4.661a6.714 6.714 0 0 1-.937-.171.75.75 0 1 1 .374-1.453 5.261 5.261 0 0 0 2.626 0 .75.75 0 1 1 .374 1.452 6.712 6.712 0 0 1-.937.172v4.66c0 .327.277.586.6.545.364-.047.722-.112 1.074-.195a.75.75 0 0 0 .577-.706c.02-.615.448-1.225 1.134-1.623A8.25 8.25 0 0 0 12 .75Z" />
                 <path
                   fillRule="evenodd"
-                  d="M11.828 2.25c-.916 0-1.699.663-1.85 1.567l-.091.549a.798.798 0 0 1-.517.608 7.45 7.45 0 0 0-.478.198.798.798 0 0 1-.796-.064l-.453-.324a1.875 1.875 0 0 0-2.416.2l-.243.243a1.875 1.875 0 0 0-.2 2.416l.324.453a.798.798 0 0 1 .064.796 7.448 7.448 0 0 0-.198.478.798.798 0 0 1-.608.517l-.55.092a1.875 1.875 0 0 0-1.566 1.849v.344c0 .916.663 1.699 1.567 1.85l.549.091c.281.047.508.25.608.517.06.162.127.321.198.478a.798.798 0 0 1-.064.796l-.324.453a1.875 1.875 0 0 0 .2 2.416l.243.243c.648.648 1.67.733 2.416.2l.453-.324a.798.798 0 0 1 .796-.064c.157.071.316.137.478.198.267.1.47.327.517.608l.092.55c.15.903.932 1.566 1.849 1.566h.344c.916 0 1.699-.663 1.85-1.567l.091-.549a.798.798 0 0 1 .517-.608 7.52 7.52 0 0 0 .478-.198.798.798 0 0 1 .796.064l.453.324a1.875 1.875 0 0 0 2.416-.2l.243-.243c.648-.648.733-1.67.2-2.416l-.324-.453a.798.798 0 0 1-.064-.796c.071-.157.137-.316.198-.478.1-.267.327-.47.608-.517l.55-.091a1.875 1.875 0 0 0 1.566-1.85v-.344c0-.916-.663-1.699-1.567-1.85l-.549-.091a.798.798 0 0 1-.608-.517 7.507 7.507 0 0 0-.198-.478.798.798 0 0 1 .064-.796l.324-.453a1.875 1.875 0 0 0-.2-2.416l-.243-.243a1.875 1.875 0 0 0-2.416-.2l-.453.324a.798.798 0 0 1-.796.064 7.462 7.462 0 0 0-.478-.198.798.798 0 0 1-.517-.608l-.091-.55a1.875 1.875 0 0 0-1.85-1.566h-.344ZM12 15.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5Z"
+                  d="M9.013 19.9a.75.75 0 0 1 .877-.597 11.319 11.319 0 0 0 4.22 0 .75.75 0 1 1 .28 1.473 12.819 12.819 0 0 1-4.78 0 .75.75 0 0 1-.597-.876ZM9.754 22.344a.75.75 0 0 1 .824-.668 13.682 13.682 0 0 0 2.844 0 .75.75 0 1 1 .156 1.492 15.156 15.156 0 0 1-3.156 0 .75.75 0 0 1-.668-.824Z"
                   clipRule="evenodd"
                 />
               </svg>
@@ -320,17 +368,16 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
           className={`rounded-2xl shadow-lg overflow-scroll p-3 w-full mb-2`}
         >
           <textarea
-            className={`mt-1 w-full px-2 py-2 border border-gray-200 rounded-xl min-h-[10vh] ${codeFullScreenFlow? "max-h-[50vh]":"max-h-[30vh]"} resize-none overflow-y-auto focus:outline-hidden focus:ring-2 focus:ring-indigo-500`}
-            placeholder={vlmModelConfig[node.id].systemPrompt? vlmModelConfig[node.id].systemPrompt:""}
+            className={`mt-1 w-full px-2 py-2 border border-gray-200 rounded-xl min-h-[10vh] ${
+              codeFullScreenFlow ? "max-h-[50vh]" : "max-h-[30vh]"
+            } resize-none overflow-y-auto focus:outline-hidden focus:ring-2 focus:ring-indigo-500`}
+            placeholder={node.data.prompt}
             rows={1}
-            value={vlmModelConfig[node.id].systemPrompt}
+            value={node.data.prompt}
             onChange={(e) => {
               e.target.style.height = "auto";
               e.target.style.height = e.target.scrollHeight + "px";
-              setVlmModelConfig(node.id,(prev) => ({
-                ...prev,
-                systemPrompt: e.target.value,
-              }));
+              updatePrompt(node.id, e.target.value);
             }}
             onKeyDown={(e) => {
               if (e.key === "Enter" && e.shiftKey) {
@@ -338,6 +385,149 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
               }
             }}
           />
+        </div>
+      </details>
+      <details className="group w-full" open>
+        <summary className="flex items-center cursor-pointer font-medium w-full">
+          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full font-medium">
+            <div className="flex items-center justify-start gap-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="size-5 my-auto"
+              >
+                <path d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z" />
+                <path d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z" />
+              </svg>
+              Input
+              <svg
+                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+            <button
+              className=" hover:bg-indigo-600 rounded-full text-base px-3 py-2 hover:text-white flex gap-1 cursor-pointer"
+              onClick={() => changeChatStyle(node.id)}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="size-5 my-auto"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M12 5.25c1.213 0 2.415.046 3.605.135a3.256 3.256 0 0 1 3.01 3.01c.044.583.077 1.17.1 1.759L17.03 8.47a.75.75 0 1 0-1.06 1.06l3 3a.75.75 0 0 0 1.06 0l3-3a.75.75 0 0 0-1.06-1.06l-1.752 1.751c-.023-.65-.06-1.296-.108-1.939a4.756 4.756 0 0 0-4.392-4.392 49.422 49.422 0 0 0-7.436 0A4.756 4.756 0 0 0 3.89 8.282c-.017.224-.033.447-.046.672a.75.75 0 1 0 1.497.092c.013-.217.028-.434.044-.651a3.256 3.256 0 0 1 3.01-3.01c1.19-.09 2.392-.135 3.605-.135Zm-6.97 6.22a.75.75 0 0 0-1.06 0l-3 3a.75.75 0 1 0 1.06 1.06l1.752-1.751c.023.65.06 1.296.108 1.939a4.756 4.756 0 0 0 4.392 4.392 49.413 49.413 0 0 0 7.436 0 4.756 4.756 0 0 0 4.392-4.392c.017-.223.032-.447.046-.672a.75.75 0 0 0-1.497-.092c-.013.217-.028.434-.044.651a3.256 3.256 0 0 1-3.01 3.01 47.953 47.953 0 0 1-7.21 0 3.256 3.256 0 0 1-3.01-3.01 47.759 47.759 0 0 1-.1-1.759L6.97 15.53a.75.75 0 0 0 1.06-1.06l-3-3Z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <div>Change Input Style</div>
+            </button>
+          </div>
+        </summary>
+        {node.data.isChatStyle ? (
+          <div
+            className={`rounded-2xl shadow-lg overflow-scroll p-4 w-full mb-2`}
+          >
+            <div className="mb-1">Use conversational input</div>
+          </div>
+        ) : (
+          <div
+            className={`rounded-2xl shadow-lg overflow-scroll p-3 w-full mb-2`}
+          >
+            <div className="mb-1">Predefined Input:</div>
+            <textarea
+              className={`mt-1 w-full px-2 py-2 border border-gray-200 rounded-xl min-h-[10vh] ${
+                codeFullScreenFlow ? "max-h-[50vh]" : "max-h-[30vh]"
+              } resize-none overflow-y-auto focus:outline-hidden focus:ring-2 focus:ring-indigo-500`}
+              placeholder={
+                "Global variables in the input should be wrapped with double curly braces, e.g., {{variable}}."
+              }
+              rows={1}
+              value={node.data.vlmInput}
+              onChange={(e) => {
+                e.target.style.height = "auto";
+                e.target.style.height = e.target.scrollHeight + "px";
+                updateVlmInput(node.id, e.target.value);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && e.shiftKey) {
+                  e.preventDefault();
+                }
+              }}
+            />
+          </div>
+        )}
+      </details>
+      <details className="group w-full" open>
+        <summary className="flex items-center cursor-pointer font-medium w-full">
+          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full font-medium">
+            <div className="flex items-center justify-start gap-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="size-5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M2.25 5.25a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3V15a3 3 0 0 1-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 0 1-.53 1.28h-9a.75.75 0 0 1-.53-1.28l.621-.622a2.25 2.25 0 0 0 .659-1.59V18h-3a3 3 0 0 1-3-3V5.25Zm1.5 0v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5Z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              Chat
+              <svg
+                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+            <button
+              //onClick={handleRunTest}
+              //disabled={runTest}
+              className="cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"
+                />
+              </svg>
+
+              <span>Run Test</span>
+            </button>
+          </div>
+        </summary>
+        <div
+          className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-gray-100`}
+        >
+          <div className="whitespace-pre-wrap">{node.data.output}</div>
         </div>
       </details>
       <details className="group w-full" open>
@@ -371,6 +561,41 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                 />
               </svg>
             </div>
+            <button
+              onClick={() =>
+                setBreakpoints((prev) => {
+                  if (prev.includes(node.id)) {
+                    // 存在则删除（返回新数组）
+                    return prev.filter((id) => id !== node.id);
+                  } else {
+                    // 不存在则添加（返回新数组）
+                    return [...prev, node.id];
+                  }
+                })
+              }
+              className={`${
+                breakpoints.includes(node.id)
+                  ? "bg-red-500 text-white hover:bg-red-700"
+                  : "hover:bg-indigo-500 hover:text-white"
+              } cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full disabled:opacity-50 flex items-center justify-center gap-1`}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 12.75c1.148 0 2.278.08 3.383.237 1.037.146 1.866.966 1.866 2.013 0 3.728-2.35 6.75-5.25 6.75S6.75 18.728 6.75 15c0-1.046.83-1.867 1.866-2.013A24.204 24.204 0 0 1 12 12.75Zm0 0c2.883 0 5.647.508 8.207 1.44a23.91 23.91 0 0 1-1.152 6.06M12 12.75c-2.883 0-5.647.508-8.208 1.44.125 2.104.52 4.136 1.153 6.06M12 12.75a2.25 2.25 0 0 0 2.248-2.354M12 12.75a2.25 2.25 0 0 1-2.248-2.354M12 8.25c.995 0 1.971-.08 2.922-.236.403-.066.74-.358.795-.762a3.778 3.778 0 0 0-.399-2.25M12 8.25c-.995 0-1.97-.08-2.922-.236-.402-.066-.74-.358-.795-.762a3.734 3.734 0 0 1 .4-2.253M12 8.25a2.25 2.25 0 0 0-2.248 2.146M12 8.25a2.25 2.25 0 0 1 2.248 2.146M8.683 5a6.032 6.032 0 0 1-1.155-1.002c.07-.63.27-1.222.574-1.747m.581 2.749A3.75 3.75 0 0 1 15.318 5m0 0c.427-.283.815-.62 1.155-.999a4.471 4.471 0 0 0-.575-1.752M4.921 6a24.048 24.048 0 0 0-.392 3.314c1.668.546 3.416.914 5.223 1.082M19.08 6c.205 1.08.337 2.187.392 3.314a23.882 23.882 0 0 1-5.223 1.082"
+                />
+              </svg>
+
+              <span>Debug</span>
+            </button>
           </div>
         </summary>
         <div

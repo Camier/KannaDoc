@@ -2,7 +2,7 @@ from collections import defaultdict
 from motor.motor_asyncio import AsyncIOMotorClient
 from pymongo import DeleteMany, UpdateMany
 from app.core.config import settings
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List, Optional, Union
 from app.core.logging import logger
 from app.db.ultils import parse_aggregate_result
 from app.utils.timezone import beijing_time_now
@@ -69,6 +69,10 @@ class MongoDB:
             )
 
             logger.info("MongoDB 索引创建完成")
+
+            # node索引
+            await self.db.nodes.create_index([("username", 1)], unique=True)
+
         except Exception as e:
             logger.error(f"索引创建失败: {str(e)}")
             raise
@@ -1276,6 +1280,72 @@ class MongoDB:
             }
         return {"status": "failed", "message": "Workflow not found"}
 
+    # custom node
+    async def update_custom_nodes(
+        self,
+        username: str,
+        custom_node_name: str,
+        custom_node: dict = None,
+    ):
+        try:
+            # 使用更新操作符实现 upsert
+            update_result = await self.db.nodes.update_one(
+                {"username": username},  # 查询条件
+                {
+                    "$set": {
+                        f"custom_nodes.{custom_node_name}": custom_node  # 动态字段名
+                    },
+                    "$setOnInsert": {"username": username}  # 仅在插入时设置的字段
+                },
+                upsert=True  # 自动创建新文档
+            )
+            return {"status": "success", "message": "Node saved"}
+        except Exception as e:
+            logger.error(f"保存Node失败: {str(e)}")
+            return {"status": "failed", "message": f"数据库错误: {str(e)}"}
+   
+    # 自定义节点查询方法
+    async def get_custom_nodes(self, username: str) -> dict:
+        try:
+            # 根据用户名查询文档
+            result = await self.db.nodes.find_one({"username": username})
+            # 如果文档存在且包含custom_nodes字段则返回，否则返回空字典
+            
+            return result.get("custom_nodes", {}) if result else {}
+        except Exception as e:
+            logger.error(f"获取custom_nodes失败: {str(e)}")
+            return {}
+
+    async def delete_custom_nodes(
+        self,
+        username: str,
+        custom_node_names: Union[str, List[str]]  # 支持字符串或列表类型
+    ) -> dict:
+        try:
+            # 统一转换为列表格式，简化后续处理
+            if isinstance(custom_node_names, str):
+                custom_node_names = [custom_node_names]
+
+            # 构建 $unset 操作的字段字典（MongoDB 要求字段值为空字符串）
+            unset_fields = {
+                f"custom_nodes.{name}": "" for name in custom_node_names
+            }
+
+            # 执行更新操作删除指定字段
+            update_result = await self.db.nodes.update_one(
+                {"username": username},  # 查询条件
+                {"$unset": unset_fields}  # 批量删除字段
+            )
+
+            # 根据是否实际修改返回不同提示
+            if update_result.modified_count > 0:
+                return {"status": "success", "message": "Nodes deleted"}
+            else:
+                return {"status": "info", "message": "No nodes were deleted"}
+                
+        except Exception as e:
+            logger.error(f"删除节点失败: {str(e)}")
+            return {"status": "failed", "message": f"数据库错误: {str(e)}"}
 
 mongodb = MongoDB()
 

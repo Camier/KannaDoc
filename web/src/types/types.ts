@@ -117,7 +117,8 @@ export type CustomNode = Node<{
   conditions?: {
     [key: number]: string; // 允许动态属性
   };
-  selectedModelId?: string;
+  modelConfig?: ModelConfig;
+  prompt?: string;
   loopType?: string;
   maxCount?: number;
   condition?: string;
@@ -125,6 +126,8 @@ export type CustomNode = Node<{
     [key: string]: string; // 允许动态属性
   };
   imageUrl?: string;
+  vlmInput?: string
+  isChatStyle?: boolean
 }>;
 
 // 组件 Props 类型
@@ -162,7 +165,7 @@ export const nodeTypesInfo: Record<
   start: { label: "Start" },
   loop: { label: "Loop" },
   condition: { label: "Condition" },
-  vlm: { label: "VLM" },
+  vlm: { label: "LLM" },
   code: { label: "Code" },
 };
 

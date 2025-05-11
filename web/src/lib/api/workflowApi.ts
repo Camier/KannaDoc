@@ -72,7 +72,9 @@ export const executeWorkflow = async (
   startNode: string,
   globalVariables: {
     [key: string]: string;
-  }
+  },
+  resumetTaskId: string,
+  breakpoints: string[]
 ) => {
   return api.post("/workflow/execute", {
     username: username,
@@ -80,26 +82,26 @@ export const executeWorkflow = async (
     edges: edges,
     start_node: startNode,
     global_variables: globalVariables,
+    resume_task_id: resumetTaskId,
+    breakpoints: breakpoints,
   });
 };
-
 
 export const deleteWorkflow = async (workflowId: string) => {
   return api.delete("/workflow/workflows/" + workflowId);
 };
-
 
 export const createWorkflow = async (
   workflowId: string,
   username: string,
   workflowName: string,
   workflowConfig: {},
-  startNode:string,
-  globalVariables:{
+  startNode: string,
+  globalVariables: {
     [key: string]: string;
   },
-  nodes:CustomNode[],
-  edges:CustomEdge[],
+  nodes: CustomNode[],
+  edges: CustomEdge[]
 ) => {
   return api.post("/workflow/workflows", {
     workflow_id: workflowId,
@@ -117,7 +119,10 @@ export const getAllWorkflow = async (username: string) => {
   return api.get("/workflow/users/" + username + "/workflows");
 };
 
-export const renameWorkflow = async (workflowId: string, workflowName: string) => {
+export const renameWorkflow = async (
+  workflowId: string,
+  workflowName: string
+) => {
   return api.post("/workflow/workflows/rename", {
     workflow_id: workflowId,
     workflow_new_name: workflowName,
@@ -127,3 +132,24 @@ export const renameWorkflow = async (workflowId: string, workflowName: string) =
 export const getWorkflowDetails = async (workflowId: string) => {
   return api.get("/workflow/workflows/" + workflowId);
 };
+
+export const getCustomNodes = async (username: string) => {
+  return api.get("/workflow/nodes/" + username);
+};
+
+export const saveCustomNodes = async (
+  username: string,
+  customNodeName: string,
+  customNode: CustomNode
+) => {
+  return api.post("/workflow/nodes/" + username, {
+    username: username,
+    custom_node_name: customNodeName,
+    custom_node: customNode,
+  });
+};
+
+export const deleteCustomNodes = async (username: string, custom_node_name:string) => {
+  return api.delete(`/workflow/nodes/${username}/${custom_node_name}`);
+};
+

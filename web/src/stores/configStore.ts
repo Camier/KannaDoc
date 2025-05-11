@@ -3,14 +3,7 @@ import { create } from "zustand";
 
 interface ModelConfigStore {
   modelConfig: ModelConfig;
-  vlmModelConfig: {
-    [key: string]: ModelConfig; // 允许动态属性
-  };
   setModelConfig: (
-    updater: ModelConfig | ((prev: ModelConfig) => ModelConfig)
-  ) => void;
-  setVlmModelConfig: (
-    nodeId: string,
     updater: ModelConfig | ((prev: ModelConfig) => ModelConfig)
   ) => void;
 }
@@ -33,16 +26,10 @@ const useModelConfigStore = create<ModelConfigStore>((set) => ({
     useTopPDefault: true,
     useTopKDefault: true,
   },
-  vlmModelConfig: {},
   setModelConfig: (updater) =>
     set((state) => ({
       modelConfig:
         typeof updater === "function" ? updater(state.modelConfig) : updater,
-    })),
-  setVlmModelConfig: (nodeId, updater) =>
-    set((state) => ({
-      vlmModelConfig:
-        {...state.vlmModelConfig, [nodeId]: typeof updater === "function" ? updater(state.vlmModelConfig.nodeId) : updater},
     })),
 }));
 

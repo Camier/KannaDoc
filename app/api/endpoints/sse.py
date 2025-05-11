@@ -78,6 +78,9 @@ async def get_task_progress(
     return EventSourceResponse(event_generator())
 
 
+from fastapi import Depends, Query
+from aioredis import Redis, ResponseError
+
 @router.get("/workflow/{username}/{task_id}")
 async def workflow_sse(
     task_id: str,
@@ -86,76 +89,106 @@ async def workflow_sse(
 ):
     await verify_username_match(current_user, username)
 
+    def _parse_message(parsed_msg: dict) -> dict:
+        if parsed_msg.get("type") == "node":
+            return {
+                "event": "node",
+                "node": {
+                    "id": parsed_msg["node"],
+                    "status": "pause" if parsed_msg["status"] == "pause" else parsed_msg["status"] == "1",
+                    "result": parsed_msg.get("result"),
+                    "error": parsed_msg.get("error"),
+                    "variables": parsed_msg.get("variables"),
+                    "create_time": parsed_msg.get("create_time"),
+                },
+            }
+        elif parsed_msg.get("type") == "workflow":
+            return {
+                "event": "workflow",
+                "workflow": {
+                    "status": parsed_msg["status"],
+                    "result": parsed_msg.get("result"),
+                    "error": parsed_msg.get("error"),
+                    "create_time": parsed_msg.get("create_time"),
+                },
+            }
+
+
     async def event_stream():
-        redis_conn = await redis.get_task_connection()
-        last_id = "0-0"
+        redis_conn: Redis = await redis.get_task_connection()
         event_stream_key = f"workflow:events:{task_id}"
         workflow_key = f"workflow:{task_id}"
-        break_flag = False
+        consumer_group = "workflow_group"
+        consumer_name = "sse_consumer"  # 可固定或动态生成（如客户端ID）
 
-        # 初始状态检查
+        # 初始化 Consumer Group（仅需创建一次）
+        try:
+            await redis_conn.xgroup_create(
+                event_stream_key, consumer_group, id="0", mkstream=True
+            )
+        except ResponseError as e:
+            if "BUSYGROUP" not in str(e):
+                raise
+
+        # 初始状态检查（避免处理已完成的流程）
         workflow_status = await redis_conn.hget(workflow_key, "status")
         if workflow_status and workflow_status in ("completed", "failed"):
             yield {
-                "data": json.dumps(
-                    {
-                        "event": "workflow",
-                        "workflow": {
-                            "status": workflow_status,
-                            "result": await redis_conn.hget(workflow_key, "result"),
-                            "error": await redis_conn.hget(workflow_key, "error"),
-                        },
-                    }
-                )
-            }
+            "data": json.dumps({
+                "event": "workflow",
+                "workflow": {
+                    "status": workflow_status,
+                    "result": await redis_conn.hget(workflow_key, "result"),
+                    "error": await redis_conn.hget(workflow_key, "error"),
+                },
+            })
+        }
             return
 
-        while not break_flag:
-            # 并行操作：同时获取消息和检查状态
-            # messages, current_status = await asyncio.gather(
-            #     redis_conn.xread({event_stream_key: last_id}, count=10, block=1000),
-            #     redis_conn.hget(workflow_key, "status"),
-            # )
-            messages = await redis_conn.xread(
-                {event_stream_key: last_id}, count=10, block=5000
-            )
+        while True:
+            try:
+                # 从 Stream 中读取未确认的消息
+                messages = await redis_conn.xreadgroup(
+                    groupname=consumer_group,
+                    consumername=consumer_name,
+                    streams={event_stream_key: ">"},  # ">" 表示只读新消息
+                    count=10,
+                    block=5000,
+                    noack=False,  # 需要手动确认消息
+                )
+            except ResponseError as e:
+                if "NOGROUP" in str(e):
+                    # 组不存在时重新创建（防止意外删除）
+                    await redis_conn.xgroup_create(
+                        event_stream_key, consumer_group, id="0", mkstream=True
+                    )
+                    continue
+                raise
 
-            # 正常消息处理
-            for stream, stream_messages in messages:
-                if break_flag:
-                    break
+            # 无新消息时继续等待
+            if not messages:
+                continue
+
+            for stream_name, stream_messages in messages:
                 for msg_id, msg_data in stream_messages:
-                    if break_flag:
-                        break
+                    # 解析消息内容
                     parsed_msg = {k: v for k, v in msg_data.items()}
-                    response_data = {}
+                    response_data = _parse_message(parsed_msg)
 
-                    if parsed_msg.get("type") == "node":
-                        response_data = {
-                            "event": "node",
-                            "node": {
-                                "id": parsed_msg["node"],
-                                "status": parsed_msg["status"] == "1",
-                                "result": parsed_msg["result"],
-                                "error": parsed_msg["error"],
-                            },
-                        }
-                    elif parsed_msg.get("type") == "workflow":
-                        response_data = {
-                            "event": "workflow",
-                            "workflow": {
-                                "status": parsed_msg["status"],
-                                "result": parsed_msg.get("result"),
-                                "error": parsed_msg.get("error"),
-                            },
-                        }
-                        if parsed_msg["status"] and parsed_msg["status"] in (
-                            "completed",
-                            "failed",
-                        ):
-                            break_flag = True
+                    # 返回事件数据
                     if response_data:
                         yield {"data": json.dumps(response_data)}
-                    last_id = msg_id
+
+                    # 消息处理完成后确认（ACK）
+                    await redis_conn.xack(
+                        event_stream_key, consumer_group, msg_id
+                    )
+
+                    # 如果工作流终止，结束连接
+                    if response_data.get("event") == "workflow" and parsed_msg["status"] in (
+                        "completed", "failed", "pause"
+                    ):
+                        return
 
     return EventSourceResponse(event_stream())
+

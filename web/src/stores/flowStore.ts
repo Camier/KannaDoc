@@ -1,6 +1,11 @@
 // store/flowStore.ts
 import { create } from "zustand";
-import { CustomNode, CustomEdge, NodeTypeKey } from "@/types/types";
+import {
+  CustomNode,
+  CustomEdge,
+  NodeTypeKey,
+  ModelConfig,
+} from "@/types/types";
 
 interface FlowState {
   nodes: CustomNode[];
@@ -28,15 +33,17 @@ interface FlowState {
   updateNodeLabel: (nodeId: string, label: string) => void;
   updateCode: (nodeId: string, code: string) => void;
   updateOutput: (nodeId: string, output: string) => void;
-  updateStatus: (nodeId: string, status: string) => void
+  updateStatus: (nodeId: string, status: string) => void;
   updateConditions: (nodeId: string, key: number, value: string) => void;
   updateLoopType: (nodeId: string, loopType: string) => void;
   updateMaxCount: (nodeId: string, maxCount: number) => void;
   updateImageUrl: (nodeId: string, imageUrl: string) => void;
   updateCondition: (nodeId: string, condition: string) => void;
-  updateSelectedModelId: (nodeId: string, selectedModelId: string) => void;
   removeCondition: (nodeId: string, key: number) => void;
   updateConditionCount: (nodeId: string, conditionCount: number) => void;
+  updatePrompt: (nodeId: string, Prompt:string) => void;
+  updateVlmInput: (nodeId: string, vlmInput:string) => void;
+  changeChatStyle: (nodeId: string) => void;
   getConditionCount: (nodeId: string) => number | undefined;
   updatePackageInfos: (
     nodeId: string,
@@ -44,6 +51,10 @@ interface FlowState {
     version: string
   ) => void;
   removePackageInfos: (nodeId: string, packageName: string) => void;
+  updateVlmModelConfig: (
+    nodeId: string,
+    updater: ModelConfig | ((prev: ModelConfig) => ModelConfig)
+  ) => void;
 }
 
 export const useFlowStore = create<FlowState>((set, get) => ({
@@ -151,10 +162,24 @@ export const useFlowStore = create<FlowState>((set, get) => ({
       ),
     }));
   },
-  updateSelectedModelId: (nodeId, selectedModelId) => {
+  updatePrompt: (nodeId, prompt) => {
     set((state) => ({
       nodes: state.nodes.map((node) =>
-        node.id === nodeId ? { ...node, data: { ...node.data, selectedModelId } } : node
+        node.id === nodeId ? { ...node, data: { ...node.data, prompt } } : node
+      ),
+    }));
+  },
+  updateVlmInput: (nodeId, vlmInput) => {
+    set((state) => ({
+      nodes: state.nodes.map((node) =>
+        node.id === nodeId ? { ...node, data: { ...node.data, vlmInput } } : node
+      ),
+    }));
+  },
+  changeChatStyle: (nodeId) => {
+    set((state) => ({
+      nodes: state.nodes.map((node) =>
+        node.id === nodeId ? { ...node, data: { ...node.data, isChatStyle: !node.data.isChatStyle} } : node
       ),
     }));
   },
@@ -262,5 +287,45 @@ export const useFlowStore = create<FlowState>((set, get) => ({
         ),
       };
     });
+  },
+
+  updateVlmModelConfig: (nodeId, updater) => {
+    set((state) => ({
+      nodes: state.nodes.map((node) =>
+        node.id === nodeId
+          ? {
+              ...node,
+              data: {
+                ...node.data,
+                modelConfig:
+                  typeof updater === "function"
+                    ? updater(
+                        node.data.modelConfig
+                          ? node.data.modelConfig
+                          : {
+                              baseUsed: [],
+                              modelId: "",
+                              modelName: "qwen2.5-vl-32b-instruct",
+                              modelURL:
+                                "https://dashscope.aliyuncs.com/compatible-mode/v1",
+                              apiKey: "sk-default-xxx",
+                              systemPrompt:
+                                "You are a helpful assistant",
+                              temperature: 0.1,
+                              maxLength: 8096,
+                              topP: 0.01,
+                              topK: 3,
+                              useTemperatureDefault: true,
+                              useMaxLengthDefault: true,
+                              useTopPDefault: true,
+                              useTopKDefault: true,
+                            }
+                      )
+                    : updater,
+              },
+            }
+          : node
+      ),
+    }));
   },
 }));

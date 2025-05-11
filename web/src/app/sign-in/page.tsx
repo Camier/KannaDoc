@@ -52,7 +52,6 @@ const SignInPage = () => {
         router.push(returnUrl || "/"); // 登录成功后跳转到 returnUrl 或者首页
       }
     } catch (err) {
-      console.log(err);
       setError("Invalid credentials");
       setShowAlert({
         show: true,

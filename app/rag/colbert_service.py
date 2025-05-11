@@ -7,7 +7,6 @@ from typing import List, cast
 from transformers.utils.import_utils import is_flash_attn_2_available
 from tqdm import tqdm
 from app.core.config import settings
-import numpy as np
 
 
 class ColBERTService:

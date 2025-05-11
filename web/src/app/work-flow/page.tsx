@@ -37,7 +37,7 @@ const Workflow = () => {
     setNodes,
     setEdges,
   } = useFlowStore();
-  const { setglobalVariables } = useGlobalStore();
+  const { setGlobalVariables } = useGlobalStore();
 
   // 成功消息自动消失
   useEffect(() => {
@@ -84,7 +84,7 @@ const Workflow = () => {
         };
         setNodes(item.nodes);
         setEdges(item.edges);
-        setglobalVariables(item.global_variables);
+        setGlobalVariables(item.global_variables);
         setWorkflowAll(workflowAllData);
         resethistory(item.nodes,item.edges);
         resetfuture();

@@ -29,7 +29,7 @@ import useChatStore from "@/stores/chatStore";
 import { getFileExtension } from "@/utils/file";
 import { EventSourceParserStream } from "eventsource-parser/stream";
 import useModelConfigStore from "@/stores/configStore";
-import { getAllModelConfig, updateModelConfig } from "@/lib/api/configApi";
+import { getAllModelConfig } from "@/lib/api/configApi";
 import { getAllKnowledgeBase } from "@/lib/api/knowledgeBaseApi";
 
 const AIChat: React.FC = () => {

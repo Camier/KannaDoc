@@ -9,7 +9,6 @@ import React, {
 import { useAuthStore } from "@/stores/authStore";
 import { CustomNode, KnowledgeBase, ModelConfig } from "@/types/types";
 import { getAllKnowledgeBase } from "@/lib/api/knowledgeBaseApi";
-import useModelConfigStore from "@/stores/configStore";
 import {
   addModelConfig,
   deleteModelConfig,
@@ -18,6 +17,7 @@ import {
 import { useClickAway } from "react-use";
 import AddLLMEngine from "@/components/AiChat/AddLLMEngine";
 import ConfirmDialog from "@/components/ConfirmDialog";
+import { useFlowStore } from "@/stores/flowStore";
 
 interface ConfigModalProps {
   node: CustomNode;
@@ -33,7 +33,6 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
   onSave,
 }) => {
   const [knowledgeBases, setKnowledgeBases] = useState<KnowledgeBase[]>([]);
-  const { vlmModelConfig, setVlmModelConfig } = useModelConfigStore();
   const [modelConfigs, setModelConfigs] = useState<ModelConfig[]>([]);
   const [showAddLLM, setShowAddLLM] = useState<boolean>(false);
   const [nameError, setNameError] = useState<string | null>(null);
@@ -42,6 +41,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
   const [showConfirmDeleteConfig, setShowConfirmDeleteConfig] = useState<{
     config: ModelConfig;
   } | null>(null);
+  const { updateVlmModelConfig } = useFlowStore();
   const { user } = useAuthStore();
   // 在组件内
   const ref = useRef(null);
@@ -51,7 +51,6 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
 
   const fetchKnowledgeBasesAndAllModelConfig = useCallback(async () => {
     // API调用
-
     if (user?.name) {
       try {
         const responseBase = await getAllKnowledgeBase(user.name);
@@ -81,12 +80,9 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
           })
         );
 
-        const selected = modelConfigsResponse.find((m) =>
-          m.modelId === node.data.selectedModelId
-            ? node.data.selectedModelId
-            : response.data.selected_model
+        const selected = modelConfigsResponse.find(
+          (m) => m.modelId === node.data.modelConfig?.modelId
         );
-
         // 更新knowledgeBases的selected状态
         if (selected) {
           const updatedKnowledgeBases = bases.map((kb) => ({
@@ -99,7 +95,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
         }
 
         setModelConfigs(modelConfigsResponse);
-        setVlmModelConfig(node.id, (prev) => ({
+        updateVlmModelConfig(node.id, (prev) => ({
           ...prev,
           ...selected,
         }));
@@ -110,7 +106,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
         );
       }
     }
-  }, [user]); // Add dependencies used in the function
+  }, [user, node.data.modelConfig?.modelId]); // Add dependencies used in the function
 
   useEffect(() => {
     if (visible) {
@@ -122,7 +118,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
   const handleModelChange = (value: string) => {
     const selected = modelConfigs.find((m) => m.modelId === value);
     if (selected) {
-      setVlmModelConfig(node.id, selected);
+      updateVlmModelConfig(node.id, selected);
       const updatedKnowledgeBases = knowledgeBases.map((kb) => ({
         ...kb,
         selected: selected?.baseUsed.some((bu) => bu.baseId === kb.id),
@@ -140,28 +136,30 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
   };
 
   const handleSubmit = () => {
-    const selectedIds = knowledgeBases
-      .filter((base) => base.selected)
-      .map((base) => base.id);
-    const selectedNames = knowledgeBases
-      .filter((base) => base.selected)
-      .map((base) => base.name);
+    if (node.data.modelConfig) {
+      const selectedIds = knowledgeBases
+        .filter((base) => base.selected)
+        .map((base) => base.id);
+      const selectedNames = knowledgeBases
+        .filter((base) => base.selected)
+        .map((base) => base.name);
 
-    // 直接构造新的 modelConfig
-    const newModelConfig = {
-      ...vlmModelConfig[node.id],
-      baseUsed: selectedIds.map((item, index) => ({
-        name: selectedNames[index],
-        baseId: item,
-      })),
-    };
+      // 直接构造新的 modelConfig
+      const newModelConfig = {
+        ...node.data.modelConfig,
+        baseUsed: selectedIds.map((item, index) => ({
+          name: selectedNames[index],
+          baseId: item,
+        })),
+      };
 
-    // 更新状态
-    setVlmModelConfig(node.id, newModelConfig);
+      // 更新状态
+      updateVlmModelConfig(node.id, newModelConfig);
 
-    // 传递最新计算的值
-    onSave(newModelConfig);
-    setVisible(false);
+      // 传递最新计算的值
+      onSave(newModelConfig);
+      setVisible(false);
+    }
   };
 
   const onClose = () => {
@@ -211,21 +209,21 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
     }
     if (
       modelConfigs.some(
-        (modelConfig) => vlmModelConfig[node.id].modelName === newModelName
+        (modelConfig) => node.data.modelConfig?.modelName === newModelName
       )
     ) {
       setNameError("Model name already exist!");
       return;
     }
 
-    if (user?.name) {
+    if (user?.name && node.data.modelConfig) {
       try {
         const Newmodel: ModelConfig = {
-          ...vlmModelConfig[node.id],
+          ...node.data.modelConfig,
           modelName: newModelName,
         };
         const response = await addModelConfig(user.name, Newmodel);
-        setVlmModelConfig(node.id, {
+        updateVlmModelConfig(node.id, {
           ...Newmodel,
           modelId: response.data.model_id,
         });
@@ -366,7 +364,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                         className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-xl cursor-pointer bg-white flex items-center justify-between hover:border-indigo-500 transition-colors"
                       >
                         <span className="text-gray-700">
-                          {vlmModelConfig[node.id].modelName}
+                          {node.data.modelConfig?.modelName}
                         </span>
                         <svg
                           className={`w-5 h-5 text-gray-400 transform transition-transform ${
@@ -401,7 +399,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                                 <div className="w-full flex gap-1 items-center justify-between">
                                   {model.modelName}
                                   {model.modelId ===
-                                  vlmModelConfig[node.id].modelId ? (
+                                  node.data.modelConfig?.modelId ? (
                                     <svg
                                       xmlns="http://www.w3.org/2000/svg"
                                       viewBox="0 0 24 24"
@@ -447,9 +445,9 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                   <label className="block text-sm font-medium">LLM Url</label>
                   <input
                     type="url"
-                    value={vlmModelConfig[node.id].modelURL}
+                    value={node.data.modelConfig?.modelURL}
                     onChange={(e) =>
-                      setVlmModelConfig(node.id, (prev) => ({
+                      updateVlmModelConfig(node.id, (prev) => ({
                         ...prev,
                         modelURL: e.target.value,
                       }))
@@ -463,9 +461,9 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                   <label className="block text-sm font-medium">API Key</label>
                   <input
                     type="password"
-                    value={vlmModelConfig[node.id].apiKey}
+                    value={node.data.modelConfig?.apiKey}
                     onChange={(e) =>
-                      setVlmModelConfig(node.id, (prev) => ({
+                      updateVlmModelConfig(node.id, (prev) => ({
                         ...prev,
                         apiKey: e.target.value,
                       }))
@@ -541,52 +539,10 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
               </div>
             </details>
           </div>
-          {/* 大模型prompt选项 */}
-          <div className="pt-2">
-            <details className="group">
-              <summary className="flex items-center cursor-pointer text-sm font-medium">
-                System Prompt
-                <svg
-                  className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </summary>
-              <div className="mt-2 space-y-4">
-                <textarea
-                  className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-xl min-h-[10vh] max-h-[20vh] resize-none overflow-y-auto focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
-                  placeholder={vlmModelConfig[node.id].systemPrompt}
-                  rows={1}
-                  value={vlmModelConfig[node.id].systemPrompt}
-                  onChange={(e) => {
-                    e.target.style.height = "auto";
-                    e.target.style.height = e.target.scrollHeight + "px";
-                    setVlmModelConfig(node.id, (prev) => ({
-                      ...prev,
-                      systemPrompt: e.target.value,
-                    }));
-                  }}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" && e.shiftKey) {
-                      e.preventDefault();
-                    }
-                  }}
-                />
-              </div>
-            </details>
-          </div>
 
           {/* 高级选项 */}
           <div className="pt-2">
-            <details className="group">
+            <details className="group" open>
               <summary className="flex items-center cursor-pointer text-sm font-medium">
                 Advanced Settings
                 <svg
@@ -616,9 +572,9 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                     <label className="relative inline-flex items-center group p-2 rounded-xl hover:bg-gray-50 cursor-pointer">
                       <input
                         type="checkbox"
-                        checked={vlmModelConfig[node.id].useTemperatureDefault}
+                        checked={node.data.modelConfig?.useTemperatureDefault}
                         onChange={(e) =>
-                          setVlmModelConfig(node.id, (prev) => ({
+                          updateVlmModelConfig(node.id, (prev) => ({
                             ...prev,
                             useTemperatureDefault: e.target.checked,
                           }))
@@ -648,14 +604,14 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                     min="0"
                     max="1"
                     step="0.1"
-                    value={vlmModelConfig[node.id].temperature}
+                    value={node.data.modelConfig?.temperature}
                     onChange={(e) =>
-                      setVlmModelConfig(node.id, (prev) => ({
+                      updateVlmModelConfig(node.id, (prev) => ({
                         ...prev,
                         temperature: parseFloat(e.target.value),
                       }))
                     }
-                    disabled={vlmModelConfig[node.id].useTemperatureDefault}
+                    disabled={node.data.modelConfig?.useTemperatureDefault}
                     className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
                   />
                 </div>
@@ -672,9 +628,9 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                     <label className="relative inline-flex items-center group p-2 rounded-xl hover:bg-gray-50 cursor-pointer">
                       <input
                         type="checkbox"
-                        checked={vlmModelConfig[node.id].useMaxLengthDefault}
+                        checked={node.data.modelConfig?.useMaxLengthDefault}
                         onChange={(e) =>
-                          setVlmModelConfig(node.id, (prev) => ({
+                          updateVlmModelConfig(node.id, (prev) => ({
                             ...prev,
                             useMaxLengthDefault: e.target.checked,
                           }))
@@ -703,14 +659,14 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                     type="number"
                     min="1024"
                     max="1048576"
-                    value={vlmModelConfig[node.id].maxLength}
+                    value={node.data.modelConfig?.maxLength}
                     onChange={(e) =>
-                      setVlmModelConfig(node.id, (prev) => ({
+                      updateVlmModelConfig(node.id, (prev) => ({
                         ...prev,
                         maxLength: parseInt(e.target.value),
                       }))
                     }
-                    disabled={vlmModelConfig[node.id].useMaxLengthDefault}
+                    disabled={node.data.modelConfig?.useMaxLengthDefault}
                     className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
                   />
                 </div>
@@ -725,9 +681,9 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                     <label className="relative inline-flex items-center group p-2 rounded-xl hover:bg-gray-50 cursor-pointer">
                       <input
                         type="checkbox"
-                        checked={vlmModelConfig[node.id].useTopPDefault}
+                        checked={node.data.modelConfig?.useTopPDefault}
                         onChange={(e) =>
-                          setVlmModelConfig(node.id, (prev) => ({
+                          updateVlmModelConfig(node.id, (prev) => ({
                             ...prev,
                             useTopPDefault: e.target.checked,
                           }))
@@ -757,14 +713,14 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                     min="0"
                     max="1"
                     step="0.1"
-                    value={vlmModelConfig[node.id].topP}
+                    value={node.data.modelConfig?.topP}
                     onChange={(e) =>
-                      setVlmModelConfig(node.id, (prev) => ({
+                      updateVlmModelConfig(node.id, (prev) => ({
                         ...prev,
                         topP: parseFloat(e.target.value),
                       }))
                     }
-                    disabled={vlmModelConfig[node.id].useTopPDefault}
+                    disabled={node.data.modelConfig?.useTopPDefault}
                     className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
                   />
                 </div>
@@ -778,9 +734,9 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                     <label className="relative inline-flex items-center group p-2 rounded-xl hover:bg-gray-50 cursor-pointer">
                       <input
                         type="checkbox"
-                        checked={vlmModelConfig[node.id].useTopKDefault}
+                        checked={node.data.modelConfig?.useTopKDefault}
                         onChange={(e) =>
-                          setVlmModelConfig(node.id, (prev) => ({
+                          updateVlmModelConfig(node.id, (prev) => ({
                             ...prev,
                             useTopKDefault: e.target.checked,
                           }))
@@ -810,14 +766,14 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                     min="1"
                     max="30"
                     step="1"
-                    value={vlmModelConfig[node.id].topK}
+                    value={node.data.modelConfig?.topK}
                     onChange={(e) =>
-                      setVlmModelConfig(node.id, (prev) => ({
+                      updateVlmModelConfig(node.id, (prev) => ({
                         ...prev,
                         topK: parseInt(e.target.value),
                       }))
                     }
-                    disabled={vlmModelConfig[node.id].useTopKDefault}
+                    disabled={node.data.modelConfig?.useTopKDefault}
                     className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
                   />
                 </div>

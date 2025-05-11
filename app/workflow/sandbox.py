@@ -121,6 +121,7 @@ class CodeSandbox:
         packages = []
         
         for package, version in pip.items():
+            package= package.replace(" ","").replace("&","").replace("\\","")
             if remove:
                 packages.append(package)
             else:
