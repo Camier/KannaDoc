@@ -16,22 +16,23 @@ class ChatService:
 
     @staticmethod
     async def create_chat_stream(
-        user_message_content: UserMessage, message_id: str
+        #user_message_content: UserMessage, message_id: str
+        user_message: str, model_config:dict, message_id: str, system_prompt:str
     ) -> AsyncGenerator[str, None]:
         """创建聊天流并处理存储逻辑"""
         db = await get_mongo()
 
-        # 获取system prompt
-        model_config = await db.get_conversation_model_config(
-            user_message_content.conversation_id
-        )
+        # # 获取system prompt
+        # model_config = await db.get_conversation_model_config(
+        #     user_message_content.conversation_id
+        # )
 
         model_name = model_config["model_name"]
         model_url = model_config["model_url"]
         api_key = model_config["api_key"]
         base_used = model_config["base_used"]
 
-        system_prompt = model_config["system_prompt"]
+        # system_prompt = model_config["system_prompt"]
         if len(system_prompt) > 1048576:
             system_prompt = system_prompt[0:1048576]
 
@@ -72,9 +73,9 @@ class ChatService:
         if not system_prompt:
             system_prompt = "All outputs in Markdown format, especially mathematical formulas in Latex format($formula$)."
 
-        logger.info(
-            f"chat '{user_message_content.conversation_id} uses system prompt {system_prompt}'"
-        )
+        # logger.info(
+        #     f"chat '{user_message_content.conversation_id} uses system prompt {system_prompt}'"
+        # )
 
         messages = [
             {
@@ -89,20 +90,20 @@ class ChatService:
             }
         ]
 
-        history_messages = await find_depth_parent_mesage(
-            user_message_content.conversation_id,
-            user_message_content.parent_id,
-            MAX_PARENT_DEPTH=5,
-        )
+        # history_messages = await find_depth_parent_mesage(
+        #     user_message_content.conversation_id,
+        #     user_message_content.parent_id,
+        #     MAX_PARENT_DEPTH=5,
+        # )
 
-        for i in range(len(history_messages), 0, -1):
-            messages.append(history_messages[i - 1])
+        # for i in range(len(history_messages), 0, -1):
+        #     messages.append(history_messages[i - 1])
 
         # 处理用户上传的文件
         content = []
         bases = []
-        if user_message_content.temp_db:
-            bases.append({"baseId": user_message_content.temp_db})
+        # if user_message_content.temp_db:
+        #     bases.append({"baseId": user_message_content.temp_db})
 
         # 搜索知识库匹配内容
 
@@ -111,7 +112,8 @@ class ChatService:
         if bases:
             result_score = []
             query_embedding = await get_embeddings_from_httpx(
-                [user_message_content.user_message], endpoint="embed_text"
+                #[user_message_content.user_message], endpoint="embed_text"
+                [user_message], endpoint="embed_text"
             )
             for base in bases:
                 collection_name = f"colqwen{base['baseId'].replace('-', '_')}"
@@ -158,7 +160,8 @@ class ChatService:
         content.append(
             {
                 "type": "text",
-                "text": user_message_content.user_message,
+                #"text": user_message_content.user_message,
+                "text": user_message,
             },
         )
 
@@ -255,20 +258,20 @@ class ChatService:
 
         await client.close()
 
-        ai_message = {"role": "assistant", "content": "".join(full_response)}
+        # ai_message = {"role": "assistant", "content": "".join(full_response)}
         # 保存AI响应到mongodb
         # await repository.save_ai_message(conversation_id, "".join(full_response))
 
-        await db.add_turn(
-            conversation_id=user_message_content.conversation_id,
-            message_id=message_id,
-            parent_message_id=user_message_content.parent_id,
-            user_message=user_message,
-            temp_db=user_message_content.temp_db,
-            ai_message=ai_message,
-            file_used=file_used,
-            status="",
-            total_token=total_token,
-            completion_tokens=completion_tokens,
-            prompt_tokens=prompt_tokens,
-        )
+        # await db.add_turn(
+        #     conversation_id=user_message_content.conversation_id,
+        #     message_id=message_id,
+        #     parent_message_id=user_message_content.parent_id,
+        #     user_message=user_message,
+        #     temp_db=user_message_content.temp_db,
+        #     ai_message=ai_message,
+        #     file_used=file_used,
+        #     status="",
+        #     total_token=total_token,
+        #     completion_tokens=completion_tokens,
+        #     prompt_tokens=prompt_tokens,
+        # )

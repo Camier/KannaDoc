@@ -13,9 +13,10 @@ class TreeNode:
         "loop_next",
         "loop_parent",
         "condition",
-        "loop_index",
+        #"loop_index",
         "loop_last",
-        "loop_children"
+        "loop_children",
+        "skip"
     ]
     _instances = {}
 
@@ -31,9 +32,10 @@ class TreeNode:
             instance.loop_next = []
             instance.loop_parent = None  # 所属循环节点
             instance.loop_children = []  # 循环的所有子节点
-            instance.loop_index = None  # 当前的循环次数
+            #instance.loop_index = None  # 当前的循环次数
             instance.loop_last = []  # 循环结束需要执行的节点
             instance.condition = None
+            instance.skip = False
             cls._instances[node_id] = instance
         return cls._instances[node_id]
 
@@ -177,7 +179,7 @@ class WorkflowGraph:
     def _add_loop_exit(self, last_child_node: TreeNode, loop_node: TreeNode):
         if last_child_node not in loop_node.loop_last:
             loop_node.loop_last.append(last_child_node)
-            loop_node.loop_index = 0
+            #loop_node.loop_index = 0
 
     # 层级完整性校验
     def _validate_hierarchy(self):

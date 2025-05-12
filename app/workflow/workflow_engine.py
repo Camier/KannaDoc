@@ -35,6 +35,8 @@ class WorkflowEngine:
         self.breakpoints = set(breakpoints or [])
         self.execution_stack = [self.graph[1]]  # 用栈结构保存执行状态
         self.break_workflow = False
+        self.skip_nodes = []
+        self.loop_index = {}
 
     async def __aenter__(self):
         # 创建并启动沙箱
@@ -54,6 +56,9 @@ class WorkflowEngine:
             "global_variables": self.global_variables,
             "execution_status": self.execution_status,
             "execution_stack": [n.node_id for n in self.execution_stack],
+            "loop_index": self.loop_index,
+            "context": self.context,
+            "skip_nodes": self.skip_nodes, 
             "nodes": self.nodes,  # 保存节点定义
             "edges": self.edges,  # 保存边定义
         }
@@ -70,10 +75,13 @@ class WorkflowEngine:
             state = json.loads(state)
             self.global_variables = state["global_variables"]
             self.execution_status = state["execution_status"]
+            self.loop_index = state["loop_index"]
+            self.context = state["context"]
             # 重建执行栈
             self.execution_stack = [
                 TreeNode.get_node(nid) for nid in state["execution_stack"]
             ]
+            self.skip_nodes = state["skip_nodes"]
             return True
         return False
 
@@ -151,10 +159,12 @@ class WorkflowEngine:
             pass
 
         for child in node.children:
-            for m in matched:
-                if child.condition == m:
+                if child.condition in matched:
                     condition_child.append(child)
-                    child_pass.append(str(m))
+                    child_pass.append(str(child.condition))
+                else:
+                    self.skip_nodes.append(child.node_id)
+
         if len(child_pass) == 0:
             result_connection_index = "No Connection Passed!"
         else:
@@ -197,6 +207,8 @@ class WorkflowEngine:
         # print(self.context, node.loop_parent.loop_index+1)
 
     async def handle_loop(self, node: TreeNode):
+        if not node.node_id in self.loop_index:
+            self.loop_index[node.node_id] = 0
         if len(node.loop_last) == 0:
             raise ValueError(
                 f"{node.node_id}: 节点{node.data['name']}: 循环节点没有loop_next出口"
@@ -213,7 +225,7 @@ class WorkflowEngine:
             maxCount = node.data["maxCount"]
             # while node.loop_index < int(maxCount):
             # 执行状态设为false保证可以循环
-            if node.loop_index < int(maxCount):
+            if self.loop_index[node.node_id] < int(maxCount):
                 await self._set_loop_node_execution_status(loop_node)
                 await self.execute_workflow(loop_node)
             else:
@@ -234,7 +246,7 @@ class WorkflowEngine:
                         await self.execute_workflow(child)
                     return
                 
-            if node.loop_index < 100:
+            if self.loop_index[node.node_id] < 100:
                 await self._set_loop_node_execution_status(loop_node)
                 await self.execute_workflow(loop_node)
                 # if self.safe_eval(condition, node.data["name"], node.node_id):
@@ -246,14 +258,6 @@ class WorkflowEngine:
         """
         递归运行节点
         """
-        # 检查暂停点
-        if node.node_id in self.breakpoints:
-            self.execution_stack.append(node)
-            await self.save_state()
-            await self._send_pause_event(node)
-            self.break_workflow = True
-            return
-
         # if condition:
         #     if self.safe_eval(condition, node.data["name"], node.node_id):
         #         # print(f"节点 {node.node_id} 通过条件判断终止")
@@ -266,6 +270,37 @@ class WorkflowEngine:
             if not self.execution_status[parent.node_id]:
                 # print(f"节点 {node.node_id} 的父节点 {parent.node_id} 还未运行")
                 return
+            
+
+        # 检查condition的子节点是否不满足条件跳过
+        if node.node_id in self.skip_nodes:
+            self.execution_status[node.node_id] = True
+            # tasks = []
+            for child in node.children:
+                self.skip_nodes.append(child.node_id)
+                await self.execute_workflow(child)
+            #     task = asyncio.create_task(self.execute_workflow(child))
+            #     tasks.append(task)
+            # await asyncio.wait(tasks)
+            if node.loop_parent:
+                if node in node.loop_parent.loop_last:
+                    if all(
+                        self.execution_status[last_loop_node.node_id]
+                        for last_loop_node in node.loop_parent.loop_last
+                    ):
+                        self.loop_index[node.loop_parent.node_id] += 1
+                        await self.execute_workflow(node.loop_parent)
+            return
+        
+        # 检查暂停点
+        if node.node_id in self.breakpoints:
+            if node.skip:
+                node.skip = False
+            else:   
+                self.execution_stack.append(node)
+                await self._send_pause_event(node)
+                self.break_workflow = True
+                return
 
         if node.node_type == "loop":
             await self.handle_loop(node)
@@ -275,8 +310,8 @@ class WorkflowEngine:
                         self.execution_status[last_loop_node.node_id]
                         for last_loop_node in node.loop_parent.loop_last
                     ):
-                        node.loop_index = 0
-                        node.loop_parent.loop_index += 1
+                        self.loop_index[node.node_id] = 0
+                        self.loop_index[node.loop_parent.node_id] += 1
                         await self.execute_workflow(node.loop_parent)
 
         elif node.node_type == "condition":
@@ -285,7 +320,9 @@ class WorkflowEngine:
             await self._update_node_status(node.node_id, True)
             # 异步执行子节点
             # tasks = []
-            for child in pointer_nodes:
+            # to do check
+            #for child in pointer_nodes:
+            for child in node.children:
                 await self.execute_workflow(child)
             #     task = asyncio.create_task(self.execute_workflow(child))
             #     tasks.append(task)
@@ -307,7 +344,7 @@ class WorkflowEngine:
                         self.execution_status[last_loop_node.node_id]
                         for last_loop_node in node.loop_parent.loop_last
                     ):
-                        node.loop_parent.loop_index += 1
+                        self.loop_index[node.loop_parent.node_id] += 1
                         await self.execute_workflow(node.loop_parent)
 
     async def _update_node_status(self, node_id: str, status: bool):
@@ -393,7 +430,11 @@ class WorkflowEngine:
         else:
             pass
 
-    async def start(self):
+    async def start(self, resume=False):
         """迭代式执行方法"""
-        current_node = self.execution_stack.pop()
-        await self.execute_workflow(current_node)
+        run_times = len(self.execution_stack)
+        for i in range(run_times):
+            current_node = self.execution_stack.pop(0)
+            if resume:
+                current_node.skip = True
+            await self.execute_workflow(current_node)

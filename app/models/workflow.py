@@ -50,3 +50,10 @@ class NodesInput(BaseModel):
     username: str
     custom_node_name: str
     custom_node: dict = None
+
+
+class LLMInputOnce(BaseModel):
+    username: str
+    user_message:str
+    llm_model_config:dict
+    system_prompt:str

@@ -103,7 +103,7 @@ class KafkaConsumerManager:
                     raise ValueError(engine.graph[-1])
 
                 # 执行工作流
-                await engine.start()
+                await engine.start(resume)
 
                 # 保存结果并通知完成
                 await redis_conn.hset(
@@ -116,7 +116,12 @@ class KafkaConsumerManager:
                 )
                 # 发送事件到专用Stream
                 # 任务完成时发送事件
-                workflow_status = "pause" if engine.break_workflow else  "completed" 
+                if engine.break_workflow:
+                    await engine.save_state()
+                    workflow_status = "pause"
+                else:
+                    workflow_status = "completed" 
+
                 await redis_conn.xadd(
                     f"workflow:events:{task_id}",
                     {

@@ -1,11 +1,12 @@
 import { useAuthStore } from "@/stores/authStore";
-import useModelConfigStore from "@/stores/configStore";
 import { useFlowStore } from "@/stores/flowStore";
 import { useGlobalStore } from "@/stores/pythonVariableStore";
 import { CustomNode, ModelConfig } from "@/types/types";
 import { Dispatch, SetStateAction, useState } from "react";
 import KnowledgeConfigModal from "./KnowledgeConfigModal";
 import { updateModelConfig } from "@/lib/api/configApi";
+import Cookies from "js-cookie";
+import { EventSourceParserStream } from "eventsource-parser/stream";
 
 interface VlmNodeProps {
   saveNode: (node: CustomNode) => void;
@@ -66,6 +67,67 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
         await updateModelConfig(user.name, config);
       } catch (error) {
         console.error("保存配置失败:", error);
+      }
+    }
+  };
+
+  const handleRunTest = async () => {
+    if (user?.name) {
+      try {
+        const token = Cookies.get("token");
+        const modelConfig = {
+          model_name: node.data.modelConfig?.modelName,
+          model_url: node.data.modelConfig?.modelURL,
+          api_key: node.data.modelConfig?.apiKey,
+          base_used: node.data.modelConfig?.baseUsed,
+          system_prompt: node.data.modelConfig?.systemPrompt,
+          temperature: node.data.modelConfig?.useTemperatureDefault
+            ? -1
+            : node.data.modelConfig?.temperature,
+          max_length: node.data.modelConfig?.useMaxLengthDefault
+            ? -1
+            : node.data.modelConfig?.maxLength,
+          top_P: node.data.modelConfig?.useTopPDefault
+            ? -1
+            : node.data.modelConfig?.topP,
+          top_K: node.data.modelConfig?.useTopKDefault
+            ? -1
+            : node.data.modelConfig?.topK,
+        };
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/sse/llm/once`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+              username: user.name,
+              user_message: node.data.vlmInput,
+              llm_model_config: modelConfig,
+              system_prompt: node.data.prompt,
+            }),
+          }
+        );
+
+        if (!response.ok) throw new Error("Request failed");
+        if (!response.body) return;
+
+        // 使用EventSourceParserStream处理流
+        const eventStream = response.body
+          ?.pipeThrough(new TextDecoderStream())
+          .pipeThrough(new EventSourceParserStream());
+
+        const eventReader = eventStream.getReader();
+        while (true) {
+          const { done, value } = (await eventReader?.read()) || {};
+          if (done) break;
+          const payload = JSON.parse(value.data);
+          console.log(payload);
+        }
+      } catch (error) {
+        console.error("Error:", error);
       }
     }
   };
@@ -501,7 +563,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
               </svg>
             </div>
             <button
-              //onClick={handleRunTest}
+              onClick={handleRunTest}
               //disabled={runTest}
               className="cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
             >

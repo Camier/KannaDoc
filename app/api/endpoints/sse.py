@@ -8,7 +8,9 @@ from app.core.security import get_current_user, verify_username_match
 from app.db.redis import redis
 from app.models.conversation import UserMessage
 from app.models.user import User
+from app.models.workflow import LLMInputOnce
 from app.rag.llm_service import ChatService
+from app.workflow.llm_service import ChatService as VLMService
 import uuid
 
 router = APIRouter()
@@ -81,6 +83,7 @@ async def get_task_progress(
 from fastapi import Depends, Query
 from aioredis import Redis, ResponseError
 
+
 @router.get("/workflow/{username}/{task_id}")
 async def workflow_sse(
     task_id: str,
@@ -95,7 +98,11 @@ async def workflow_sse(
                 "event": "node",
                 "node": {
                     "id": parsed_msg["node"],
-                    "status": "pause" if parsed_msg["status"] == "pause" else parsed_msg["status"] == "1",
+                    "status": (
+                        "pause"
+                        if parsed_msg["status"] == "pause"
+                        else parsed_msg["status"] == "1"
+                    ),
                     "result": parsed_msg.get("result"),
                     "error": parsed_msg.get("error"),
                     "variables": parsed_msg.get("variables"),
@@ -112,7 +119,6 @@ async def workflow_sse(
                     "create_time": parsed_msg.get("create_time"),
                 },
             }
-
 
     async def event_stream():
         redis_conn: Redis = await redis.get_task_connection()
@@ -134,15 +140,17 @@ async def workflow_sse(
         workflow_status = await redis_conn.hget(workflow_key, "status")
         if workflow_status and workflow_status in ("completed", "failed"):
             yield {
-            "data": json.dumps({
-                "event": "workflow",
-                "workflow": {
-                    "status": workflow_status,
-                    "result": await redis_conn.hget(workflow_key, "result"),
-                    "error": await redis_conn.hget(workflow_key, "error"),
-                },
-            })
-        }
+                "data": json.dumps(
+                    {
+                        "event": "workflow",
+                        "workflow": {
+                            "status": workflow_status,
+                            "result": await redis_conn.hget(workflow_key, "result"),
+                            "error": await redis_conn.hget(workflow_key, "error"),
+                        },
+                    }
+                )
+            }
             return
 
         while True:
@@ -180,15 +188,31 @@ async def workflow_sse(
                         yield {"data": json.dumps(response_data)}
 
                     # 消息处理完成后确认（ACK）
-                    await redis_conn.xack(
-                        event_stream_key, consumer_group, msg_id
-                    )
+                    await redis_conn.xack(event_stream_key, consumer_group, msg_id)
 
                     # 如果工作流终止，结束连接
-                    if response_data.get("event") == "workflow" and parsed_msg["status"] in (
-                        "completed", "failed", "pause"
-                    ):
+                    if response_data.get("event") == "workflow" and parsed_msg[
+                        "status"
+                    ] in ("completed", "failed", "pause"):
                         return
 
     return EventSourceResponse(event_stream())
 
+
+# 创建workflow llm模型
+@router.post("/llm/once", response_model=dict)
+async def chat_stream(
+    llm_input: LLMInputOnce,
+    current_user: User = Depends(get_current_user),
+):
+    await verify_username_match(current_user, llm_input.username)
+
+    message_id = str(uuid.uuid4())  # 生成 UUIDv4
+
+    return StreamingResponse(
+        VLMService.create_chat_stream(
+            llm_input.user_message, llm_input.llm_model_config, message_id, llm_input.system_prompt
+        ),
+        media_type="text/event-stream",
+        headers={"message-id": message_id},
+    )
