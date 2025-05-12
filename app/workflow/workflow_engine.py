@@ -1,7 +1,9 @@
 # workflow/workflow_engine.py
 import asyncio
 import json
+import re
 from typing import Dict, List, Any, Optional
+import uuid
 import docker
 
 from app.db.redis import redis
@@ -9,6 +11,7 @@ from app.utils.timezone import beijing_time_now
 from app.workflow.sandbox import CodeSandbox
 from app.workflow.code_scanner import CodeScanner
 from app.workflow.graph import TreeNode, WorkflowGraph
+from app.workflow.llm_service import ChatService
 
 
 class WorkflowEngine:
@@ -58,7 +61,7 @@ class WorkflowEngine:
             "execution_stack": [n.node_id for n in self.execution_stack],
             "loop_index": self.loop_index,
             "context": self.context,
-            "skip_nodes": self.skip_nodes, 
+            "skip_nodes": self.skip_nodes,
             "nodes": self.nodes,  # 保存节点定义
             "edges": self.edges,  # 保存边定义
         }
@@ -159,11 +162,11 @@ class WorkflowEngine:
             pass
 
         for child in node.children:
-                if child.condition in matched:
-                    condition_child.append(child)
-                    child_pass.append(str(child.condition))
-                else:
-                    self.skip_nodes.append(child.node_id)
+            if child.condition in matched:
+                condition_child.append(child)
+                child_pass.append(str(child.condition))
+            else:
+                self.skip_nodes.append(child.node_id)
 
         if len(child_pass) == 0:
             result_connection_index = "No Connection Passed!"
@@ -245,7 +248,7 @@ class WorkflowEngine:
                     for child in node.children:
                         await self.execute_workflow(child)
                     return
-                
+
             if self.loop_index[node.node_id] < 100:
                 await self._set_loop_node_execution_status(loop_node)
                 await self.execute_workflow(loop_node)
@@ -270,7 +273,6 @@ class WorkflowEngine:
             if not self.execution_status[parent.node_id]:
                 # print(f"节点 {node.node_id} 的父节点 {parent.node_id} 还未运行")
                 return
-            
 
         # 检查condition的子节点是否不满足条件跳过
         if node.node_id in self.skip_nodes:
@@ -291,12 +293,12 @@ class WorkflowEngine:
                         self.loop_index[node.loop_parent.node_id] += 1
                         await self.execute_workflow(node.loop_parent)
             return
-        
+
         # 检查暂停点
         if node.node_id in self.breakpoints:
             if node.skip:
                 node.skip = False
-            else:   
+            else:
                 self.execution_stack.append(node)
                 await self._send_pause_event(node)
                 self.break_workflow = True
@@ -321,7 +323,7 @@ class WorkflowEngine:
             # 异步执行子节点
             # tasks = []
             # to do check
-            #for child in pointer_nodes:
+            # for child in pointer_nodes:
             for child in node.children:
                 await self.execute_workflow(child)
             #     task = asyncio.create_task(self.execute_workflow(child))
@@ -347,7 +349,7 @@ class WorkflowEngine:
                         self.loop_index[node.loop_parent.node_id] += 1
                         await self.execute_workflow(node.loop_parent)
 
-    async def _update_node_status(self, node_id: str, status: bool):
+    async def _update_node_status(self, node_id: str, status: bool, error: str = ""):
         """更新Redis中节点状态"""
         if self.task_id:
             redis_conn = await redis.get_task_connection()
@@ -363,7 +365,7 @@ class WorkflowEngine:
                     "node": node_id,
                     "status": str(int(status)),
                     "result": json.dumps(self.context.get(node_id, "")),
-                    "error": "",
+                    "error": error,
                     "variables": json.dumps(self.global_variables),
                     "create_time": str(beijing_time_now()),
                 },
@@ -374,6 +376,16 @@ class WorkflowEngine:
             pipeline.expire(f"workflow:{self.task_id}:nodes", 3600)
             pipeline.expire(f"workflow:events:{self.task_id}", 3600)
             await pipeline.execute()
+
+    def render_template(self, template: str, data: dict) -> str:
+        """
+        将模板中的 {{ variable }} 替换为字典中对应的字符串值
+        :param template: 包含 {{ 变量 }} 的模板字符串
+        :param data: 包含键值对的字典
+        :return: 替换后的字符串
+        """
+        pattern = re.compile(r'\{\{\s*(.*?)\s*\}\}')  # 自动处理变量名前后空格
+        return pattern.sub(lambda m: str(data.get(m.group(1), '')), template)
 
     async def execute_node(self, node: TreeNode):
         if node.node_type == "code":
@@ -417,18 +429,64 @@ class WorkflowEngine:
                     f"{node.node_id}: 节点{node.data['name']}: 输出格式无效,非json格式"
                 )  # HTTPException(status_code=400, detail="输出格式无效")
             if not node.node_id in self.context:
-                self.context[node.node_id] = [{"result":code_output}]
+                self.context[node.node_id] = [{"result": code_output}]
             else:
-                self.context[node.node_id].append({"result":code_output})
-        elif node.node_type == "ai_function":
-            result = {"advice": f"模拟调用函数{node.data['function_def']['name']}"}
-            # 以节点ID为键存储完整结果
-            if not node.node_id in self.context:
-                self.context[node.node_id] = [result]
-            else:
-                self.context[node.node_id].append(result)
+                self.context[node.node_id].append({"result": code_output})
+        elif node.node_type == "vlm":
+            message_id = str(uuid.uuid4())
+            try:
+                vlm_input = node.data["vlmInput"]
+                vlm_input = self.render_template(vlm_input, self.global_variables)
+
+                # 获取流式生成器（假设返回结构化数据块）
+                stream_generator = ChatService.create_chat_stream(
+                    vlm_input,
+                    node.data["modelConfig"],
+                    message_id,
+                    node.data["prompt"],
+                )
+                full_response = []
+                chunks = []
+                async for chunk in stream_generator:
+                    # 发送每个数据块到Redis
+                    await self._send_ai_chunk_event(node.node_id, message_id, chunk)
+                    # if chunk.get("type") == "text":
+                    chunks.append(json.loads(chunk))
+                for chunk in chunks:
+                    if chunk.get("type") == "text":
+                        full_response.append(chunk.get("data"))
+
+                try:
+                    full_response = json.loads("".join(full_response))
+                    for k,v in full_response.items():
+                        if k in self.global_variables:
+                            self.global_variables[k] = str('"'+v+'"')
+                except Exception as e:
+                    print(e)
+                # 以节点ID为键存储完整结果
+                if not node.node_id in self.context:
+                    self.context[node.node_id] = [{"result": "Message generated!"}]
+                else:
+                    self.context[node.node_id].append(
+                        {"result": "Message generated!"}
+                    )
+            except Exception as e:
+                # 错误处理
+                raise ValueError(f'{node.node_id}:节点{node.data["name"]}: {str(e)}')
         else:
             pass
+
+    async def _send_ai_chunk_event(self, node_id: str, message_id: str, chunk: str):
+        """发送单个AI生成块到Redis事件流"""
+        redis_conn = await redis.get_task_connection()
+        event_data = {
+            "type": "ai_chunk",  # 标识为AI数据块
+            "node_id": node_id,
+            "message_id": message_id,
+            "data": chunk,
+            "create_time": str(beijing_time_now()),
+        }
+        await redis_conn.xadd(f"workflow:events:{self.task_id}", event_data)
 
     async def start(self, resume=False):
         """迭代式执行方法"""

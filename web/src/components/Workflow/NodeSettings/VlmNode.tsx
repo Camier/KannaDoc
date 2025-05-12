@@ -124,7 +124,6 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
           const { done, value } = (await eventReader?.read()) || {};
           if (done) break;
           const payload = JSON.parse(value.data);
-          console.log(payload);
         }
       } catch (error) {
         console.error("Error:", error);
@@ -589,7 +588,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
         <div
           className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-gray-100`}
         >
-          <div className="whitespace-pre-wrap">{node.data.output}</div>
+          <div className="whitespace-pre-wrap">{node.data.chat}</div>
         </div>
       </details>
       <details className="group w-full" open>

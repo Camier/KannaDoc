@@ -100,6 +100,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     updateConditions,
     removeCondition,
     updateOutput,
+    updateChat,
     updateConditionCount,
     updateStatus,
     updateVlmModelConfig,
@@ -191,11 +192,11 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               .pipeThrough(new EventSourceParserStream());
 
             const eventReader = eventStream.getReader();
+            let aiResponse = "";
             while (true) {
               const { done, value } = (await eventReader?.read()) || {};
               if (done) break;
               const payload = JSON.parse(value.data);
-              console.log(value.data);
               //处理事件数据
               if (payload.event === "workflow") {
                 if (payload.workflow.status == "failed") {
@@ -239,7 +240,8 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                       result = resultList[0].result;
                     }
                     updateOutput(payload.node.id, result);
-                  } else {
+                  }
+                  else {
                     updateOutput(payload.node.id, "Node running success!");
                   }
                   if (payload.node.variables !== '""') {
@@ -250,6 +252,15 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 } else if (payload.node.status === "pause") {
                   setResumetTaskId(taskId);
                   updateStatus(payload.node.id, "pause");
+                }
+              } else if (payload.event === "ai_chunk") {
+                const aiChunkResult = JSON.parse(payload.ai_chunk.result);
+                if (aiChunkResult !== '""') {
+                  if (aiChunkResult.type === "text") {
+                    aiResponse += aiChunkResult.data;
+                    updateChat(payload.ai_chunk.id, aiResponse);
+                  } else if (aiChunkResult.type === "token") {
+                  }
                 }
               }
             }
@@ -424,8 +435,8 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         label: nodeTypesInfo[type].label,
         nodeType: type,
         output:
-          "To extract global variables from the output, ensure prompt LLM/VLM to wrap them with double curly braces, e.g., {{variable}}.",
-        prompt: "You are a helpful assistant.",
+          'To extract global variables from the output, ensure prompt LLM/VLM to output them with json format, e.g., {"output":"AIoutput"}.',
+        prompt: '输出以：{"output":AIOutput}的格式输出，不要包含任何其他内容.',
         vlmInput: "",
         isChatStyle: false,
       };
@@ -505,24 +516,49 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         nodes.forEach((node) => {
           updateOutput(node.id, "Await for running...");
           updateStatus(node.id, "init");
+          updateChat(node.id, "Await for running...");
         });
       }
 
       try {
-        const sendNodes = nodes.map((node) => ({
-          id: node.id,
-          type: node.data.nodeType,
-          data: {
-            name: node.data.label,
-            code: node.data.code,
-            conditions: node.data.conditions,
-            loopType: node.data.loopType,
-            maxCount: node.data.maxCount,
-            condition: node.data.condition,
-            pip: node.data.pip,
-            imageUrl: node.data.imageUrl,
-          },
-        }));
+        const sendNodes = nodes.map((node) => {
+          const modelConfig = {
+            model_name: node.data.modelConfig?.modelName,
+            model_url: node.data.modelConfig?.modelURL,
+            api_key: node.data.modelConfig?.apiKey,
+            base_used: node.data.modelConfig?.baseUsed,
+            system_prompt: node.data.modelConfig?.systemPrompt,
+            temperature: node.data.modelConfig?.useTemperatureDefault
+              ? -1
+              : node.data.modelConfig?.temperature,
+            max_length: node.data.modelConfig?.useMaxLengthDefault
+              ? -1
+              : node.data.modelConfig?.maxLength,
+            top_P: node.data.modelConfig?.useTopPDefault
+              ? -1
+              : node.data.modelConfig?.topP,
+            top_K: node.data.modelConfig?.useTopKDefault
+              ? -1
+              : node.data.modelConfig?.topK,
+          };
+          return {
+            id: node.id,
+            type: node.data.nodeType,
+            data: {
+              name: node.data.label,
+              code: node.data.code,
+              conditions: node.data.conditions,
+              loopType: node.data.loopType,
+              maxCount: node.data.maxCount,
+              condition: node.data.condition,
+              pip: node.data.pip,
+              imageUrl: node.data.imageUrl,
+              modelConfig: modelConfig,
+              prompt: node.data.prompt,
+              vlmInput: node.data.vlmInput,
+            },
+          };
+        });
 
         const sendEdges = edges.map((edge) => {
           if (edge.data?.conditionLabel) {

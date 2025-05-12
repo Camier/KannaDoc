@@ -63,8 +63,10 @@ class CodeSandbox:
             if inputs:
                 f.write('print("####Global variable updated####")\n')
                 for k in inputs:
-                    f.write(f'{k} = "\'\'" if {k}=="" else {k}\n')
-                    f.write(f'print("{k} =", {k})\n')
+                    f.write(f'if isinstance({k}, str):')
+                    f.write(f'  print("{k} = ", "\'", {k}, "\'", sep="")\n')
+                    f.write(f'else:')
+                    f.write(f'  print("{k} = ", {k}, sep="")\n')
 
         # 构建完整命令链
         commands = []

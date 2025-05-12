@@ -99,12 +99,7 @@ export interface FileUsed {
 // types.ts
 import { Node, Edge, NodeProps, EdgeProps } from "@xyflow/react";
 
-export type NodeTypeKey =
-  | "start"
-  | "loop"
-  | "condition"
-  | "vlm"
-  | "code";
+export type NodeTypeKey = "start" | "loop" | "condition" | "vlm" | "code";
 
 // 完整节点类型（继承基础节点属性）
 export type CustomNode = Node<{
@@ -126,8 +121,9 @@ export type CustomNode = Node<{
     [key: string]: string; // 允许动态属性
   };
   imageUrl?: string;
-  vlmInput?: string
-  isChatStyle?: boolean
+  vlmInput?: string;
+  chat?: string;
+  isChatStyle?: boolean;
 }>;
 
 // 组件 Props 类型

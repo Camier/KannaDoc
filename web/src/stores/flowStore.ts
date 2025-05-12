@@ -33,6 +33,7 @@ interface FlowState {
   updateNodeLabel: (nodeId: string, label: string) => void;
   updateCode: (nodeId: string, code: string) => void;
   updateOutput: (nodeId: string, output: string) => void;
+  updateChat: (nodeId: string, chat: string) => void;
   updateStatus: (nodeId: string, status: string) => void;
   updateConditions: (nodeId: string, key: number, value: string) => void;
   updateLoopType: (nodeId: string, loopType: string) => void;
@@ -152,6 +153,13 @@ export const useFlowStore = create<FlowState>((set, get) => ({
     set((state) => ({
       nodes: state.nodes.map((node) =>
         node.id === nodeId ? { ...node, data: { ...node.data, output } } : node
+      ),
+    }));
+  },
+  updateChat: (nodeId, chat) => {
+    set((state) => ({
+      nodes: state.nodes.map((node) =>
+        node.id === nodeId ? { ...node, data: { ...node.data, chat } } : node
       ),
     }));
   },

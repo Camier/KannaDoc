@@ -205,7 +205,7 @@ class ChatService:
                 "model_name": model_name,
             }
         )
-        yield f"data: {file_used_payload}\n\n"
+        yield f"{file_used_payload}"
 
         # 处理流响应
         full_response = []
@@ -228,7 +228,7 @@ class ChatService:
                             "message_id": message_id,
                         }
                     )
-                    yield f"data: {payload}\n\n"  # 保持SSE事件标准分隔符
+                    yield f"{payload}"  # 保持SSE事件标准分隔符
                 # 回答
                 content = delta.content if delta else None
                 if content:
@@ -237,7 +237,7 @@ class ChatService:
                         {"type": "text", "data": content, "message_id": message_id}
                     )
                     full_response.append(content)
-                    yield f"data: {payload}\n\n"  # 保持SSE事件标准分隔符
+                    yield f"{payload}"  # 保持SSE事件标准分隔符
             else:
                 # token消耗
                 if hasattr(chunk, "usage") and chunk.usage != None:
@@ -254,7 +254,7 @@ class ChatService:
                             "message_id": message_id,
                         }
                     )
-                    yield f"data: {payload}\n\n"  # 保持SSE事件标准分隔符
+                    yield f"{payload}"  # 保持SSE事件标准分隔符
 
         await client.close()
 

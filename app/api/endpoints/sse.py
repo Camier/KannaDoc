@@ -119,6 +119,16 @@ async def workflow_sse(
                     "create_time": parsed_msg.get("create_time"),
                 },
             }
+        elif parsed_msg.get("type") == "ai_chunk":
+            return {
+                "event": "ai_chunk",
+                "ai_chunk": {
+                    "id": parsed_msg.get("node_id"),
+                    "message_id": parsed_msg.get("message_id"),
+                    "result": parsed_msg.get("data"),
+                    "create_time": parsed_msg.get("create_time"),
+                },
+            }
 
     async def event_stream():
         redis_conn: Redis = await redis.get_task_connection()
@@ -211,7 +221,10 @@ async def chat_stream(
 
     return StreamingResponse(
         VLMService.create_chat_stream(
-            llm_input.user_message, llm_input.llm_model_config, message_id, llm_input.system_prompt
+            llm_input.user_message,
+            llm_input.llm_model_config,
+            message_id,
+            llm_input.system_prompt,
         ),
         media_type="text/event-stream",
         headers={"message-id": message_id},
