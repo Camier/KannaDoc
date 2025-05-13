@@ -12,7 +12,7 @@ from app.workflow.sandbox import CodeSandbox
 from app.workflow.code_scanner import CodeScanner
 from app.workflow.graph import TreeNode, WorkflowGraph
 from app.workflow.llm_service import ChatService
-
+from app.core.logging import logger
 
 class WorkflowEngine:
     def __init__(
@@ -242,7 +242,7 @@ class WorkflowEngine:
             condition = node.data["condition"]
             if condition:
                 if self.safe_eval(condition, node.data["name"], node.node_id):
-                    # print(f"节点 {node.node_id} 通过条件判断终止")
+                    logger.info(f"工作流 {self.task_id} ->节点 {node.node_id} 通过条件判断终止")
                     self.execution_status[node.node_id] = True
                     await self._update_node_status(node.node_id, True)
                     for child in node.children:
@@ -265,8 +265,11 @@ class WorkflowEngine:
         #     if self.safe_eval(condition, node.data["name"], node.node_id):
         #         # print(f"节点 {node.node_id} 通过条件判断终止")
         #         return
+        logger.info(f'工作流 {self.task_id} 执行节点{node.node_id} 开始运行')
+        await self.check_cancellation()
+
         if self.execution_status[node.node_id]:
-            # print(f"节点 {node.node_id} 已经运行过了")
+            logger.info(f"工作流 {self.task_id} 节点 {node.node_id} 已经运行过了")
             return
         # 等待父节点执行完
         for parent in node.parents:
@@ -290,6 +293,14 @@ class WorkflowEngine:
                         self.execution_status[last_loop_node.node_id]
                         for last_loop_node in node.loop_parent.loop_last
                     ):
+                        self.skip_nodes = [
+                            node_id
+                            for node_id in self.skip_nodes
+                            if not any(
+                                node_id == node.node_id
+                                for node in node.loop_parent.loop_children
+                            )
+                        ]
                         self.loop_index[node.loop_parent.node_id] += 1
                         await self.execute_workflow(node.loop_parent)
             return
@@ -314,6 +325,14 @@ class WorkflowEngine:
                     ):
                         self.loop_index[node.node_id] = 0
                         self.loop_index[node.loop_parent.node_id] += 1
+                        self.skip_nodes = [
+                            node_id
+                            for node_id in self.skip_nodes
+                            if not any(
+                                node_id == node.node_id
+                                for node in node.loop_parent.loop_children
+                            )
+                        ]
                         await self.execute_workflow(node.loop_parent)
 
         elif node.node_type == "condition":
@@ -347,6 +366,14 @@ class WorkflowEngine:
                         for last_loop_node in node.loop_parent.loop_last
                     ):
                         self.loop_index[node.loop_parent.node_id] += 1
+                        self.skip_nodes = [
+                            node_id
+                            for node_id in self.skip_nodes
+                            if not any(
+                                node_id == node.node_id
+                                for node in node.loop_parent.loop_children
+                            )
+                        ]
                         await self.execute_workflow(node.loop_parent)
 
     async def _update_node_status(self, node_id: str, status: bool, error: str = ""):
@@ -384,8 +411,8 @@ class WorkflowEngine:
         :param data: 包含键值对的字典
         :return: 替换后的字符串
         """
-        pattern = re.compile(r'\{\{\s*(.*?)\s*\}\}')  # 自动处理变量名前后空格
-        return pattern.sub(lambda m: str(data.get(m.group(1), '')), template)
+        pattern = re.compile(r"\{\{\s*(.*?)\s*\}\}")  # 自动处理变量名前后空格
+        return pattern.sub(lambda m: str(data.get(m.group(1), "")), template)
 
     async def execute_node(self, node: TreeNode):
         if node.node_type == "code":
@@ -458,18 +485,16 @@ class WorkflowEngine:
 
                 try:
                     full_response = json.loads("".join(full_response))
-                    for k,v in full_response.items():
+                    for k, v in full_response.items():
                         if k in self.global_variables:
-                            self.global_variables[k] = str('"'+v+'"')
+                            self.global_variables[k] = str('"' + v + '"')
                 except Exception as e:
-                    print(e)
+                    logger.error(f"工作流{self.task_id}运行出错：{e}")
                 # 以节点ID为键存储完整结果
                 if not node.node_id in self.context:
                     self.context[node.node_id] = [{"result": "Message generated!"}]
                 else:
-                    self.context[node.node_id].append(
-                        {"result": "Message generated!"}
-                    )
+                    self.context[node.node_id].append({"result": "Message generated!"})
             except Exception as e:
                 # 错误处理
                 raise ValueError(f'{node.node_id}:节点{node.data["name"]}: {str(e)}')
@@ -496,3 +521,45 @@ class WorkflowEngine:
             if resume:
                 current_node.skip = True
             await self.execute_workflow(current_node)
+
+    async def check_cancellation(self):
+        """检查取消状态"""
+        redis_conn = await redis.get_task_connection()
+        status = await redis_conn.hget(f"workflow:{self.task_id}:operator", "status")
+        print(status, self.task_id)
+        if status == b"canceling" or status == "canceling":
+            logger.error("Workflow canceled by user！")
+            await self.cleanup()
+            raise asyncio.CancelledError("Workflow canceled")
+
+    async def cleanup(self):
+        """清理资源"""
+        # 1. 停止沙箱容器
+        if self.sandbox:
+            await self.sandbox.close()
+        
+        # 2. 更新Redis状态
+        redis_conn = await redis.get_task_connection()
+        await redis_conn.hset(
+            f"workflow:{self.task_id}",
+            mapping={
+                "status": "canceled",
+                "end_time": str(beijing_time_now())
+            }
+        )
+        
+        # 发送取消事件
+        await redis_conn.xadd(
+            f"workflow:events:{self.task_id}",
+            {
+                "type": "workflow",
+                "status": "canceled",
+                "result": "",
+                "error": "Workflow canceled by user",
+                "create_time": str(beijing_time_now()),
+            },
+        )
+
+        # 3. 清理执行状态
+        self.execution_stack.clear()
+        self.skip_nodes.clear()

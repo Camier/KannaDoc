@@ -71,6 +71,25 @@ class KafkaConsumerManager:
         redis_conn = await redis.get_task_connection()
         try:
             # 更新并通知workflow启动
+            # 检查任务是否已取消
+            redis_conn = await redis.get_task_connection()
+            exists = await redis_conn.exists(f"workflow:{task_id}:operator")
+            if exists:
+                status = await redis_conn.hget(f"workflow:{task_id}:operator", "status")
+                if status in ["canceling", "canceled", b"canceling", b"canceled"]:
+                    await redis_conn.xadd(
+                        f"workflow:events:{task_id}",  # 使用新的事件流键
+                        {
+                            "type": "workflow",
+                            "status": "canceled",
+                            "result": "",
+                            "error": "Workflow canceled by user",
+                            "create_time": str(beijing_time_now()),
+                        },
+                    )
+                    logger.info(f"Skipping canceled task: {task_id}")
+                    return
+
             await redis_conn.hset(f"workflow:{task_id}", "status", "running")
             # 发送事件到专用Stream
             await redis_conn.xadd(
@@ -120,7 +139,7 @@ class KafkaConsumerManager:
                     await engine.save_state()
                     workflow_status = "pause"
                 else:
-                    workflow_status = "completed" 
+                    workflow_status = "completed"
 
                 await redis_conn.xadd(
                     f"workflow:events:{task_id}",
@@ -144,7 +163,13 @@ class KafkaConsumerManager:
             )
             await redis_conn.xadd(
                 f"workflow:events:{task_id}",
-                {"type": "workflow", "status": "failed", "result": "", "error": str(e), "create_time": str(beijing_time_now())}
+                {
+                    "type": "workflow",
+                    "status": "failed",
+                    "result": "",
+                    "error": str(e),
+                    "create_time": str(beijing_time_now()),
+                },
             )
             logger.error(f"Workflow task failed: {str(e)}")
         finally:
@@ -153,6 +178,7 @@ class KafkaConsumerManager:
             pipeline.expire(f"workflow:{task_id}", 3600)
             pipeline.expire(f"workflow:{task_id}:nodes", 3600)
             pipeline.expire(f"workflow:events:{task_id}", 3600)
+            pipeline.expire(f"workflow:{self.task_id}:operator", 3600)
             await pipeline.execute()
 
     # @retry(stop=stop_after_attempt(5), wait=wait_fixed(2))

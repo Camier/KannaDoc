@@ -4,7 +4,7 @@ import tempfile
 import os
 import asyncio
 import uuid
-
+from app.core.logging import logger
 
 class CodeSandbox:
     def __init__(self):
@@ -138,12 +138,16 @@ class CodeSandbox:
 
     async def close(self):
         """清理资源（由上下文管理器自动调用）"""
-        if self.container:
-            loop = asyncio.get_event_loop()
-            await loop.run_in_executor(None, lambda: self.container.remove(force=True))
-            self.container = None
-        if self.tmpdir:
-            self.tmpdir.cleanup()
+        try:
+            if self.container:
+                loop = asyncio.get_event_loop()
+                await loop.run_in_executor(None, lambda: self.container.remove(force=True))
+                self.container = None
+        except (docker.errors.APIError, asyncio.TimeoutError) as e:
+            logger.error(f"强制清理容器时发生错误: {str(e)}")
+        finally:
+            if self.tmpdir:
+                self.tmpdir.cleanup()
 
 
 # async def run():

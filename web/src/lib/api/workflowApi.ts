@@ -149,7 +149,13 @@ export const saveCustomNodes = async (
   });
 };
 
-export const deleteCustomNodes = async (username: string, custom_node_name:string) => {
+export const deleteCustomNodes = async (
+  username: string,
+  custom_node_name: string
+) => {
   return api.delete(`/workflow/nodes/${username}/${custom_node_name}`);
 };
 
+export const cancelWorkflow = async (username: string, taskId: string) => {
+  return api.get(`/workflow/${username}/${taskId}/cancel`)
+};

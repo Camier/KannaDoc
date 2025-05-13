@@ -356,6 +356,7 @@ async def delete_workflow(
     result = await db.get_custom_nodes(username)
     return result
 
+
 # 删除自定义节点
 @router.delete("/nodes/{username}/{custom_node_name}", response_model=dict)
 async def delete_nodes(
@@ -369,3 +370,24 @@ async def delete_nodes(
     if result["status"] == "failed":
         raise HTTPException(status_code=404, detail=result["message"])
     return result
+
+
+@router.get("/{username}/{task_id}/cancel")
+async def cancel_workflow(
+    username: str, task_id: str, current_user: User = Depends(get_current_user)
+):
+    await verify_username_match(current_user, username)
+    redis_conn = await redis.get_task_connection()
+
+    # 检查任务是否存在
+    exists = await redis_conn.exists(f"workflow:{task_id}")
+    if not exists:
+        return {"status": "error", "message": "Task not found"}
+
+    # 更新状态为取消中
+    await redis_conn.hset(
+        f"workflow:{task_id}:operator",
+        mapping={"status": "canceling", "end_time": str(beijing_time_now())},
+    )
+
+    return {"status": "success", "message": "Cancellation requested"}

@@ -40,6 +40,7 @@ import StartNodeComponent from "@/components/Workflow/NodeSettings/StartNode";
 import { useAuthStore } from "@/stores/authStore";
 import { v4 as uuidv4 } from "uuid";
 import {
+  cancelWorkflow,
   createWorkflow,
   deleteCustomNodes,
   executeWorkflow,
@@ -107,7 +108,6 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   } = useFlowStore();
   const [taskId, setTaskId] = useState("");
   const [running, setRunning] = useState(false);
-  const [breakpoints, setBreakpoints] = useState<string[]>([]);
   const [resumetTaskId, setResumetTaskId] = useState("");
   const [showAlert, setShowAlert] = useState(false);
   const [workflowMessage, setWorkflowMessage] = useState("");
@@ -120,6 +120,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   const [newNodeName, setNewNodeName] = useState("");
   const [newCustomNode, setNewCustomNode] = useState<CustomNode | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const [canceling, setCanceling] = useState(false);
   // 使用 useMemo 优化查找
   const currentNode = useMemo(
     () => nodes.find((n) => n.id === selectedNodeId),
@@ -192,7 +193,21 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               .pipeThrough(new EventSourceParserStream());
 
             const eventReader = eventStream.getReader();
-            let aiResponse = "";
+            const aiResponse = new Map<string, string>();
+
+            // 添加或追加值的函数
+            const addOrAppend = (
+              map: Map<string, string>,
+              key: string,
+              value: string
+            ) => {
+              const prevValue = map.get(key);
+              if (prevValue !== undefined) {
+                map.set(key, prevValue + value); // 追加到原值末尾
+              } else {
+                map.set(key, value); // 新建键值对
+              }
+            };
             while (true) {
               const { done, value } = (await eventReader?.read()) || {};
               if (done) break;
@@ -207,7 +222,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                   updateStatus(errorNodeId, "failed");
                 }
                 if (
-                  ["completed", "failed", "pause"].includes(
+                  ["completed", "failed", "pause", "canceled"].includes(
                     payload.workflow.status
                   )
                 ) {
@@ -217,6 +232,9 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                   } else if (payload.workflow.status === "pause") {
                     setWorkflowMessage("Debug Pause!");
                     setWorkflowStatus("success");
+                  } else if (payload.workflow.status === "canceled") {
+                    setWorkflowMessage("Workflow canceled by user!");
+                    setWorkflowStatus("error");
                   } else {
                     setWorkflowMessage("Execution Failed");
                     setWorkflowStatus("error");
@@ -240,8 +258,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                       result = resultList[0].result;
                     }
                     updateOutput(payload.node.id, result);
-                  }
-                  else {
+                  } else {
                     updateOutput(payload.node.id, "Node running success!");
                   }
                   if (payload.node.variables !== '""') {
@@ -257,9 +274,23 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 const aiChunkResult = JSON.parse(payload.ai_chunk.result);
                 if (aiChunkResult !== '""') {
                   if (aiChunkResult.type === "text") {
-                    aiResponse += aiChunkResult.data;
-                    updateChat(payload.ai_chunk.id, aiResponse);
+                    addOrAppend(
+                      aiResponse,
+                      payload.ai_chunk.id,
+                      aiChunkResult.data
+                    );
+                    if (aiResponse.get(payload.ai_chunk.id)) {
+                    }
+                    updateChat(
+                      payload.ai_chunk.id,
+                      aiResponse.get(payload.ai_chunk.id) || ""
+                    );
                   } else if (aiChunkResult.type === "token") {
+                    addOrAppend(aiResponse, payload.ai_chunk.id, "\n\n");
+                    updateChat(
+                      payload.ai_chunk.id,
+                      aiResponse.get(payload.ai_chunk.id) || ""
+                    );
                   }
                 }
               }
@@ -270,6 +301,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             setRunning(false);
             setTaskId("");
             setShowAlert(true);
+            setCanceling(false);
           }
         }
       };
@@ -590,7 +622,9 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         let sendResumetTaskId: string;
         let sendGlobalVariables = globalVariables;
         if (debug) {
-          sendBreakpoints = breakpoints;
+          sendBreakpoints = nodes
+            .filter((node) => node.data.debug === true)
+            .map((node) => node.id);
           sendResumetTaskId = resumetTaskId;
           if (resumetTaskId !== "") {
             sendGlobalVariables = globalDebugVariables;
@@ -718,6 +752,20 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   const handeSaveNodes = (newNode: CustomNode) => {
     setShowAddNode(true);
     setNewCustomNode(newNode);
+  };
+
+  const handelStopWorkflow = async () => {
+    if (user?.name) {
+      try {
+        await cancelWorkflow(user.name, taskId);
+        setCanceling(true);
+      } catch (error) {
+        console.error("取消失败:", error);
+        setShowAlert(true);
+        setWorkflowStatus("error");
+        setWorkflowMessage("取消失败:" + error);
+      }
+    }
   };
 
   const handleCreateConfirm = async () => {
@@ -935,7 +983,9 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               </button>
               <button
                 disabled={running}
-                className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+                className={`${
+                  resumetTaskId ? "text-red-500" : ""
+                } cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
                 onClick={() => handleRunWorkflow(true)}
               >
                 {resumetTaskId ? (
@@ -994,32 +1044,57 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 </svg>
                 <span>Save</span>
               </button>
-              <button
-                disabled={running}
-                className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
-                onClick={() => {
-                  setNodes([]);
-                  setEdges([]);
-                  reset();
-                }}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="size-5"
+              {running ? (
+                <button
+                  disabled={!taskId || canceling}
+                  className="text-red-500 cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+                  onClick={handelStopWorkflow}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
-                  />
-                </svg>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="size-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5.25 7.5A2.25 2.25 0 0 1 7.5 5.25h9a2.25 2.25 0 0 1 2.25 2.25v9a2.25 2.25 0 0 1-2.25 2.25h-9a2.25 2.25 0 0 1-2.25-2.25v-9Z"
+                    />
+                  </svg>
 
-                <span>Clear</span>
-              </button>
+                  <span>Stop</span>
+                </button>
+              ) : (
+                <button
+                  disabled={running || resumetTaskId!==""}
+                  className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+                  onClick={() => {
+                    setNodes([]);
+                    setEdges([]);
+                    reset();
+                  }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="size-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
+                    />
+                  </svg>
+
+                  <span>Clear</span>
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -1041,8 +1116,6 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                     node={currentNode}
                     codeFullScreenFlow={codeFullScreenFlow}
                     setCodeFullScreenFlow={setCodeFullScreenFlow}
-                    breakpoints={breakpoints}
-                    setBreakpoints={setBreakpoints}
                   />
                 ),
                 start: (
@@ -1060,8 +1133,6 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                     node={currentNode}
                     codeFullScreenFlow={codeFullScreenFlow}
                     setCodeFullScreenFlow={setCodeFullScreenFlow}
-                    breakpoints={breakpoints}
-                    setBreakpoints={setBreakpoints}
                   />
                 ),
                 condition: (
@@ -1071,8 +1142,6 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                     node={currentNode}
                     codeFullScreenFlow={codeFullScreenFlow}
                     setCodeFullScreenFlow={setCodeFullScreenFlow}
-                    breakpoints={breakpoints}
-                    setBreakpoints={setBreakpoints}
                   />
                 ),
                 loop: (
@@ -1082,8 +1151,6 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                     node={currentNode}
                     codeFullScreenFlow={codeFullScreenFlow}
                     setCodeFullScreenFlow={setCodeFullScreenFlow}
-                    breakpoints={breakpoints}
-                    setBreakpoints={setBreakpoints}
                   />
                 ),
               }[currentNode.data.nodeType] || <div></div>}

@@ -7,6 +7,7 @@ import KnowledgeConfigModal from "./KnowledgeConfigModal";
 import { updateModelConfig } from "@/lib/api/configApi";
 import Cookies from "js-cookie";
 import { EventSourceParserStream } from "eventsource-parser/stream";
+import MarkdownDisplay from "@/components/AiChat/MarkdownDisplay";
 
 interface VlmNodeProps {
   saveNode: (node: CustomNode) => void;
@@ -14,8 +15,6 @@ interface VlmNodeProps {
   node: CustomNode;
   setCodeFullScreenFlow: Dispatch<SetStateAction<boolean>>;
   codeFullScreenFlow: boolean;
-  breakpoints: string[];
-  setBreakpoints: Dispatch<SetStateAction<string[]>>;
 }
 
 const VlmNodeComponent: React.FC<VlmNodeProps> = ({
@@ -24,8 +23,6 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
   node,
   setCodeFullScreenFlow,
   codeFullScreenFlow,
-  breakpoints,
-  setBreakpoints,
 }) => {
   const {
     globalVariables,
@@ -51,9 +48,11 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
     updatePrompt,
     updateVlmInput,
     changeChatStyle,
+    updateDebug,
   } = useFlowStore();
   const [showConfigModal, setShowConfigModal] = useState(false);
   const { user } = useAuthStore();
+  const [runTest, setRunTest] = useState(false);
 
   const configureKnowledgeDB = () => {
     setShowConfigModal(true);
@@ -546,7 +545,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                   clipRule="evenodd"
                 />
               </svg>
-              Chat
+              LLM Response
               <svg
                 className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
                 fill="none"
@@ -563,7 +562,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
             </div>
             <button
               onClick={handleRunTest}
-              //disabled={runTest}
+              disabled={runTest}
               className="cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
             >
               <svg
@@ -588,7 +587,16 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
         <div
           className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-gray-100`}
         >
-          <div className="whitespace-pre-wrap">{node.data.chat}</div>
+            <MarkdownDisplay
+              md_text={node.data.chat || ""}
+              message={{
+                type: "text",
+                content: node.data.chat || "",
+                from: "ai", // 消息的来源
+              }}
+              showTokenNumber={true}
+              isThinking={false}
+            />
         </div>
       </details>
       <details className="group w-full" open>
@@ -623,19 +631,12 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
               </svg>
             </div>
             <button
-              onClick={() =>
-                setBreakpoints((prev) => {
-                  if (prev.includes(node.id)) {
-                    // 存在则删除（返回新数组）
-                    return prev.filter((id) => id !== node.id);
-                  } else {
-                    // 不存在则添加（返回新数组）
-                    return [...prev, node.id];
-                  }
-                })
-              }
+              onClick={() => {
+                updateDebug(node.id, node.data.debug ? !node.data.debug : true);
+              }}
+              disabled={runTest}
               className={`${
-                breakpoints.includes(node.id)
+                node.data.debug
                   ? "bg-red-500 text-white hover:bg-red-700"
                   : "hover:bg-indigo-500 hover:text-white"
               } cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full disabled:opacity-50 flex items-center justify-center gap-1`}

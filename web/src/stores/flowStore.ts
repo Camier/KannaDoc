@@ -32,6 +32,7 @@ interface FlowState {
   deleteNode: (nodeId: string) => void;
   updateNodeLabel: (nodeId: string, label: string) => void;
   updateCode: (nodeId: string, code: string) => void;
+  updateDebug: (nodeId: string, debug: boolean) => void;
   updateOutput: (nodeId: string, output: string) => void;
   updateChat: (nodeId: string, chat: string) => void;
   updateStatus: (nodeId: string, status: string) => void;
@@ -42,8 +43,8 @@ interface FlowState {
   updateCondition: (nodeId: string, condition: string) => void;
   removeCondition: (nodeId: string, key: number) => void;
   updateConditionCount: (nodeId: string, conditionCount: number) => void;
-  updatePrompt: (nodeId: string, Prompt:string) => void;
-  updateVlmInput: (nodeId: string, vlmInput:string) => void;
+  updatePrompt: (nodeId: string, Prompt: string) => void;
+  updateVlmInput: (nodeId: string, vlmInput: string) => void;
   changeChatStyle: (nodeId: string) => void;
   getConditionCount: (nodeId: string) => number | undefined;
   updatePackageInfos: (
@@ -148,7 +149,13 @@ export const useFlowStore = create<FlowState>((set, get) => ({
       ),
     }));
   },
-
+  updateDebug: (nodeId, debug) => {
+    set((state) => ({
+      nodes: state.nodes.map((node) =>
+        node.id === nodeId ? { ...node, data: { ...node.data, debug } } : node
+      ),
+    }));
+  },
   updateOutput: (nodeId, output) => {
     set((state) => ({
       nodes: state.nodes.map((node) =>
@@ -180,14 +187,21 @@ export const useFlowStore = create<FlowState>((set, get) => ({
   updateVlmInput: (nodeId, vlmInput) => {
     set((state) => ({
       nodes: state.nodes.map((node) =>
-        node.id === nodeId ? { ...node, data: { ...node.data, vlmInput } } : node
+        node.id === nodeId
+          ? { ...node, data: { ...node.data, vlmInput } }
+          : node
       ),
     }));
   },
   changeChatStyle: (nodeId) => {
     set((state) => ({
       nodes: state.nodes.map((node) =>
-        node.id === nodeId ? { ...node, data: { ...node.data, isChatStyle: !node.data.isChatStyle} } : node
+        node.id === nodeId
+          ? {
+              ...node,
+              data: { ...node.data, isChatStyle: !node.data.isChatStyle },
+            }
+          : node
       ),
     }));
   },
@@ -317,8 +331,7 @@ export const useFlowStore = create<FlowState>((set, get) => ({
                               modelURL:
                                 "https://dashscope.aliyuncs.com/compatible-mode/v1",
                               apiKey: "sk-default-xxx",
-                              systemPrompt:
-                                "You are a helpful assistant",
+                              systemPrompt: "You are a helpful assistant",
                               temperature: 0.1,
                               maxLength: 8096,
                               topP: 0.01,

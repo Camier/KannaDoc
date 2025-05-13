@@ -116,7 +116,7 @@ const CustomNodeComponent = ({
   return (
     <div
       className={`w-32 h-32 overflow-auto p-2 shadow-lg rounded-3xl ${
-        selected ? "border-2 border-indigo-700" : "border-1 border-indigo-500"
+        data.debug? selected ? "border-2 border-red-500" : "border-1 border-red-500" : selected ?  "border-2 border-indigo-700" : "border-1 border-indigo-500"
       } bg-white`}
     >
       {getHandles(data.nodeType)}

@@ -12,8 +12,6 @@ interface FunctionNodeProps {
   node: CustomNode;
   setCodeFullScreenFlow: Dispatch<SetStateAction<boolean>>;
   codeFullScreenFlow: boolean;
-  breakpoints: string[];
-  setBreakpoints: Dispatch<SetStateAction<string[]>>;
 }
 
 const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
@@ -22,8 +20,6 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
   node,
   setCodeFullScreenFlow,
   codeFullScreenFlow,
-  breakpoints,
-  setBreakpoints,
 }) => {
   const {
     globalVariables,
@@ -42,6 +38,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
     updatePackageInfos,
     removePackageInfos,
     updateImageUrl,
+    updateDebug,
   } = useFlowStore();
   const [runTest, setRunTest] = useState(false);
 
@@ -585,20 +582,12 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
               </svg>
             </div>
             <button
-              onClick={() =>
-                setBreakpoints((prev) => {
-                  if (prev.includes(node.id)) {
-                    // 存在则删除（返回新数组）
-                    return prev.filter((id) => id !== node.id);
-                  } else {
-                    // 不存在则添加（返回新数组）
-                    return [...prev, node.id];
-                  }
-                })
-              }
+              onClick={() => {
+                updateDebug(node.id, node.data.debug ? !node.data.debug : true);
+              }}
               disabled={runTest}
               className={`${
-                breakpoints.includes(node.id)
+                node.data.debug
                   ? "bg-red-500 text-white hover:bg-red-700"
                   : "hover:bg-indigo-500 hover:text-white"
               } cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full disabled:opacity-50 flex items-center justify-center gap-1`}

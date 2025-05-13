@@ -123,6 +123,7 @@ export type CustomNode = Node<{
   imageUrl?: string;
   vlmInput?: string;
   chat?: string;
+  debug?: boolean;
   isChatStyle?: boolean;
 }>;
 
