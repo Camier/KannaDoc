@@ -219,7 +219,7 @@ async def chat_stream(
 
     message_id = str(uuid.uuid4())  # 生成 UUIDv4
 
-    return StreamingResponse(
+    return EventSourceResponse(
         VLMService.create_chat_stream(
             llm_input.user_message,
             llm_input.llm_model_config,

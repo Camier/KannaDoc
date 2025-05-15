@@ -178,7 +178,7 @@ class KafkaConsumerManager:
             pipeline.expire(f"workflow:{task_id}", 3600)
             pipeline.expire(f"workflow:{task_id}:nodes", 3600)
             pipeline.expire(f"workflow:events:{task_id}", 3600)
-            pipeline.expire(f"workflow:{self.task_id}:operator", 3600)
+            pipeline.expire(f"workflow:{task_id}:operator", 3600)
             await pipeline.execute()
 
     # @retry(stop=stop_after_attempt(5), wait=wait_fixed(2))

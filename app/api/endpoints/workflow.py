@@ -117,7 +117,7 @@ async def execute_workflow(
 
 # 测试python代码
 @router.post("/test_code", response_model=dict)
-async def execute_workflow(
+async def execute_test_code(
     function_node: TestFunctionCode,
     current_user: User = Depends(get_current_user),
 ):
@@ -164,13 +164,13 @@ async def execute_workflow(
 
     except ValueError as e:
         return {"code": -2, "result": "", "msg": str(e)}
-    # except Exception as e:
-    #     return {"code": -3, "result": "", "msg": f"System Error: {str(e)}"}
+    except Exception as e:
+        return {"code": -3, "result": "", "msg": f"System Error: {str(e)}"}
 
 
 # 测试条件节点
 @router.post("/test_condition", response_model=dict)
-async def execute_workflow(
+async def execute_test_condition(
     condition_node: TestConditionNode,
     current_user: User = Depends(get_current_user),
 ):

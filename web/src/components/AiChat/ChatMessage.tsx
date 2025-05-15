@@ -1,21 +1,22 @@
 // components/ChatMessage.tsx
 "use client";
 import React, { Dispatch, useState } from "react";
-import { BaseUsed, Message } from "@/types/types";
+import { BaseUsed, Message, ModelConfig } from "@/types/types";
 import Image from "next/image";
 import { useAuthStore } from "@/stores/authStore";
 import LoadingCircle from "./LoadingCircle";
 import { getFileIcon } from "@/utils/file";
 import MarkdownDisplay from "./MarkdownDisplay";
-import useModelConfigStore from "@/stores/configStore";
 
 interface ChatMessageProps {
+  modelConfig: ModelConfig | undefined;
   message: Message;
   showRefFile: string[];
   setShowRefFile: Dispatch<React.SetStateAction<string[]>>;
 }
 
 const ChatMessage: React.FC<ChatMessageProps> = ({
+  modelConfig,
   message,
   showRefFile,
   setShowRefFile,
@@ -23,7 +24,6 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
   const isUser = message.from === "user"; // 判断是否是用户消息
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
-  const { modelConfig, setModelConfig } = useModelConfigStore();
 
   const handleImageClick = (selctImage: string) => {
     setSelectedImage(selctImage);
@@ -237,7 +237,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
                 </svg>
                 <div className="text-sm font-semibold">
                   {
-                    modelConfig.baseUsed.find(
+                    modelConfig?.baseUsed.find(
                       (item) => item.baseId === message.baseId
                     )?.name
                   }

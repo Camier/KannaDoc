@@ -526,7 +526,6 @@ class WorkflowEngine:
         """检查取消状态"""
         redis_conn = await redis.get_task_connection()
         status = await redis_conn.hget(f"workflow:{self.task_id}:operator", "status")
-        print(status, self.task_id)
         if status == b"canceling" or status == "canceling":
             logger.error("Workflow canceled by user！")
             await self.cleanup()

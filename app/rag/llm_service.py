@@ -70,24 +70,23 @@ class ChatService:
             pass
 
         if not system_prompt:
-            system_prompt = "All outputs in Markdown format, especially mathematical formulas in Latex format($formula$)."
-
-        logger.info(
-            f"chat '{user_message_content.conversation_id} uses system prompt {system_prompt}'"
-        )
-
-        messages = [
-            {
-                "role": "system",
-                "content": [
-                    {
-                        "type": "text",
-                        # "text": "You are LAYRA, developed by Li Wei(李威), a multimodal RAG tool built on ColQwen and Qwen2.5-VL-72B. The retrieval process relies entirely on vision, enabling accurate recognition of tables, images, and documents in various formats. All outputs in Markdown format.",
-                        "text": system_prompt,
-                    }
-                ],
-            }
-        ]
+            messages = []
+        else:
+            messages = [
+                {
+                    "role": "system",
+                    "content": [
+                        {
+                            "type": "text",
+                            # "text": "You are LAYRA, developed by Li Wei(李威), a multimodal RAG tool built on ColQwen and Qwen2.5-VL-72B. The retrieval process relies entirely on vision, enabling accurate recognition of tables, images, and documents in various formats. All outputs in Markdown format.",
+                            "text": system_prompt,
+                        }
+                    ],
+                }
+            ]
+            logger.info(
+                f"chat '{user_message_content.conversation_id} uses system prompt {system_prompt}'"
+            )
 
         history_messages = await find_depth_parent_mesage(
             user_message_content.conversation_id,

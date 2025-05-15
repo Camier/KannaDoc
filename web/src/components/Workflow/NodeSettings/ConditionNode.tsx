@@ -50,7 +50,7 @@ const ConditionNodeComponent: React.FC<ConditionNodeProps> = ({
 
   const handleRunTest = async () => {
     if (user?.name) {
-      setRunTest((prev) => true);
+      setRunTest(true);
       updateOutput(node.id, "Running...");
       const conditions = node.data.conditions;
       try {
@@ -74,7 +74,7 @@ const ConditionNodeComponent: React.FC<ConditionNodeProps> = ({
         console.error("Error connect:", error);
         updateOutput(node.id, "Error connect:" + error);
       } finally {
-        setRunTest((prev) => false);
+        setRunTest(false);
       }
     }
   };

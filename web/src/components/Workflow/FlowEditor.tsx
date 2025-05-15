@@ -28,6 +28,8 @@ import {
   WorkflowAll,
   KnowledgeBase,
   ModelConfig,
+  Message,
+  FileUsed,
 } from "@/types/types";
 import Cookies from "js-cookie";
 import { useFlowStore } from "@/stores/flowStore";
@@ -121,6 +123,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   const [newCustomNode, setNewCustomNode] = useState<CustomNode | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [canceling, setCanceling] = useState(false);
+  const [messages, setMessages] = useState<{ [key: string]: Message[] }>({});
   // 使用 useMemo 优化查找
   const currentNode = useMemo(
     () => nodes.find((n) => n.id === selectedNodeId),
@@ -193,21 +196,35 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               .pipeThrough(new EventSourceParserStream());
 
             const eventReader = eventStream.getReader();
-            const aiResponse = new Map<string, string>();
-
-            // 添加或追加值的函数
-            const addOrAppend = (
-              map: Map<string, string>,
-              key: string,
-              value: string
-            ) => {
-              const prevValue = map.get(key);
-              if (prevValue !== undefined) {
-                map.set(key, prevValue + value); // 追加到原值末尾
-              } else {
-                map.set(key, value); // 新建键值对
+            const nodeStates = new Map<
+              number,
+              {
+                aiMessage: string;
+                aiThinking: string;
+                messageId: string;
+                total_token: number;
+                completion_tokens: number;
+                prompt_tokens: number;
+                file_used: any[];
+                vlmNewLoop: boolean;
               }
-            };
+            >();
+            let count = 1;
+            // const aiResponse = new Map<string, string>();
+
+            // // 添加或追加值的函数
+            // const addOrAppend = (
+            //   map: Map<string, string>,
+            //   key: string,
+            //   value: string
+            // ) => {
+            //   const prevValue = map.get(key);
+            //   if (prevValue !== undefined) {
+            //     map.set(key, prevValue + value); // 追加到原值末尾
+            //   } else {
+            //     map.set(key, value); // 新建键值对
+            //   }
+            // };
             while (true) {
               const { done, value } = (await eventReader?.read()) || {};
               if (done) break;
@@ -271,32 +288,126 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                   updateStatus(payload.node.id, "pause");
                 }
               } else if (payload.event === "ai_chunk") {
+                const nodeId = payload.ai_chunk.id; // 获取节点ID
                 const aiChunkResult = JSON.parse(payload.ai_chunk.result);
+                // 获取或初始化该节点的状态
+                let state = nodeStates.get(count) || {
+                  aiMessage: "",
+                  aiThinking: "",
+                  messageId: "",
+                  total_token: 0,
+                  completion_tokens: 0,
+                  prompt_tokens: 0,
+                  file_used: [],
+                  vlmNewLoop: true,
+                };
+
                 if (aiChunkResult !== '""') {
+                  if (state.vlmNewLoop) {
+                    const newMessage: Message[] = [
+                      //...fileMessages,
+                      {
+                        type: "text",
+                        content:
+                          nodes.find((node) => node.id === nodeId)?.data
+                            .vlmInput || "",
+                        from: "user",
+                      },
+                    ];
+
+                    // 添加生成消息中
+                    const aiLoading: Message = {
+                      type: "text",
+                      content: "Parsing in progress, please wait...",
+                      from: "ai",
+                    };
+
+                    // 一次性添加所有用户消息和AI加载状态
+                    setMessages((prev) => {
+                      const nodeMessages = prev[nodeId] || [];
+                      const newMessages = [
+                        ...nodeMessages,
+                        ...newMessage,
+                        aiLoading,
+                      ];
+                      return { ...prev, [nodeId]: newMessages };
+                    });
+                    state.vlmNewLoop = false;
+                    // 更新状态存储
+                    nodeStates.set(count, state);
+                  }
+
+                  if (aiChunkResult.type === "file_used") {
+                    state.file_used = aiChunkResult.data; // 自动处理原始换行符
+                    state.messageId = aiChunkResult.message_id;
+                  }
+                  if (aiChunkResult.type === "thinking") {
+                    state.aiThinking += aiChunkResult.data; // 自动处理原始换行符
+                    state.messageId = aiChunkResult.message_id;
+                  }
+
                   if (aiChunkResult.type === "text") {
-                    addOrAppend(
-                      aiResponse,
-                      payload.ai_chunk.id,
-                      aiChunkResult.data
-                    );
-                    if (aiResponse.get(payload.ai_chunk.id)) {
-                    }
-                    updateChat(
-                      payload.ai_chunk.id,
-                      aiResponse.get(payload.ai_chunk.id) || ""
-                    );
-                  } else if (aiChunkResult.type === "token") {
-                    addOrAppend(aiResponse, payload.ai_chunk.id, "\n\n");
-                    updateChat(
-                      payload.ai_chunk.id,
-                      aiResponse.get(payload.ai_chunk.id) || ""
-                    );
+                    state.aiMessage += aiChunkResult.data; // 自动处理原始换行符
+                    state.messageId = aiChunkResult.message_id;
+                  }
+
+                  if (aiChunkResult.type === "token") {
+                    state.total_token = aiChunkResult.total_token;
+                    state.completion_tokens = aiChunkResult.completion_tokens;
+                    state.prompt_tokens = aiChunkResult.prompt_tokens;
+                  }
+
+                  // 使用函数式更新确保基于最新状态
+                  setMessages((prev) => {
+                    const nodeMessages = prev[nodeId] || [];
+                    const lastIndex = nodeMessages.length - 1;
+
+                    const updatedMessages = [...nodeMessages];
+                    updatedMessages[lastIndex] = {
+                      ...updatedMessages[lastIndex],
+                      content: state.aiMessage,
+                      thinking: state.aiThinking,
+                      messageId: state.messageId ? state.messageId : "",
+                      token_number: {
+                        total_token: state.total_token,
+                        completion_tokens: state.completion_tokens,
+                        prompt_tokens: state.prompt_tokens,
+                      },
+                    };
+                    return { ...prev, [nodeId]: updatedMessages };
+                  });
+                  // 更新状态存储
+                  nodeStates.set(count, state);
+                  if (aiChunkResult.type === "token") {
+                    setMessages((prev) => {
+                      const nodeMessages = prev[nodeId] || [];
+                      const updatedMessages = [
+                        ...nodeMessages,
+                        ...state.file_used.map((file, index) => ({
+                          type: "baseFile",
+                          content: `image_${index}`,
+                          messageId: state.messageId ? state.messageId : "",
+                          imageMinioUrl: file.image_url,
+                          fileName: file.file_name,
+                          baseId: file.knowledge_db_id,
+                          minioUrl: file.file_url,
+                          score: file.score,
+                          from: "ai",
+                        })),
+                      ];
+
+                      return { ...prev, [nodeId]: updatedMessages };
+                    });
+                    count = count + 1;
                   }
                 }
               }
             }
           } catch (error) {
             console.error("SSE错误:", error);
+            setShowAlert(true);
+            setWorkflowStatus("error");
+            setWorkflowMessage("get!");
           } finally {
             setRunning(false);
             setTaskId("");
@@ -471,6 +582,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         prompt: '输出以：{"output":AIOutput}的格式输出，不要包含任何其他内容.',
         vlmInput: "",
         isChatStyle: false,
+        chat: "This area displays the LLM output during workflow execution. The output from running tests will be shown in the output section.",
       };
     } else {
       data = {
@@ -545,6 +657,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     if (user?.name) {
       setRunning(true);
       if (debug === false || resumetTaskId === "") {
+        setMessages({});
         nodes.forEach((node) => {
           updateOutput(node.id, "Await for running...");
           updateStatus(node.id, "init");
@@ -1069,8 +1182,8 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 </button>
               ) : (
                 <button
-                  disabled={running || resumetTaskId!==""}
-                  className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+                  disabled={running || resumetTaskId !== ""}
+                  className="text-red-500 cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
                   onClick={() => {
                     setNodes([]);
                     setEdges([]);
@@ -1128,6 +1241,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 ),
                 vlm: (
                   <VlmNodeComponent
+                    messages={messages[currentNode.id]}
                     saveNode={handeSaveNodes}
                     isDebugMode={resumetTaskId === "" ? false : true}
                     node={currentNode}

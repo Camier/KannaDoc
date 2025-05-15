@@ -498,19 +498,19 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                 {knowledgeBases.map((base) => (
                   <label
                     key={base.id}
-                    className="relative inline-flex items-center group p-2 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer"
+                    className="overflow-auto relative inline-flex items-center group p-2 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer"
                   >
                     <input
                       type="checkbox"
                       checked={base.selected}
                       onChange={() => handleBaseToggle(base.id)}
-                      className="appearance-none h-5 w-5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
+                      className="shrink-0 appearance-none h-5 w-5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
                     />
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 20 20"
                       fill="currentColor"
-                      className="absolute size-4 text-white"
+                      className="absolute size-4 text-white shrink-0"
                     >
                       <path
                         fillRule="evenodd"
@@ -524,7 +524,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
                         fill="currentColor"
-                        className="size-4"
+                        className="size-4 shrink-0"
                       >
                         <path
                           fillRule="evenodd"

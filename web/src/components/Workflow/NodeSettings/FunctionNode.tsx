@@ -62,7 +62,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
   };
   const handleRunTest = async () => {
     if (user?.name) {
-      setRunTest((prev) => true);
+      setRunTest(true);
       updateOutput(node.id, "Code Running...");
       try {
         const response = await runPythonTest(user.name, node, globalVariables);
@@ -76,7 +76,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
         console.error("Error connect:", error);
         updateOutput(node.id, "Error connect:" + error);
       } finally {
-        setRunTest((prev) => false);
+        setRunTest(false);
       }
     }
   };

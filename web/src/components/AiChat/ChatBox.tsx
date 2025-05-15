@@ -66,7 +66,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   const [showConfigModal, setShowConfigModal] = useState(false);
 
   // 支持的文件类型
-  const supportedExtensions = ["doc","docx","pdf","ppt","pptx"];
+  const supportedExtensions = ["doc", "docx", "pdf", "ppt", "pptx"];
 
   const handleSend = () => {
     if (inputMessage.trim()) {
@@ -412,6 +412,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
             >
               {messages.map((message, index) => (
                 <ChatMessage
+                  modelConfig={modelConfig}
                   key={index}
                   message={message}
                   showRefFile={showRefFile}

@@ -33,8 +33,8 @@ const CustomEdge = (props: CustomEdgeProps) => {
   return (
     <>
       <BaseEdge path={edgePath} markerEnd={markerEnd} style={style} />
-      <circle r="4" fill="oklch(58.5% 0.233 277.117)">
-        <animateMotion dur="3s" repeatCount="indefinite" path={edgePath} />
+      <circle r="4" fill="oklch(58.5% 0.233 277.117)" className="!text-gray-500">
+        <animateMotion dur="4s" repeatCount="indefinite" path={edgePath} />
       </circle>
       <foreignObject
         width={16} // 增大点击区域

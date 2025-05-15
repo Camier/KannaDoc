@@ -492,7 +492,7 @@ const AIChat: React.FC = () => {
       },
     ];
 
-    // 添加图片生成中的消息
+    // 添加生成消息中
     const aiLoading: Message = {
       type: "text",
       content: "Parsing in progress, please wait...",

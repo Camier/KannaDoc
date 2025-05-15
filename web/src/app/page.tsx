@@ -40,15 +40,26 @@ const Homepage = () => {
         </h1> */}
 
         {/* Welcome 副标题 */}
-        <div className="w-full flex flex-col items-center justify-center gap-1">
-         
+        <div className="w-full flex flex-col items-center justify-center gap-4">
+          {/* <h2 className={`text-lg text-gray-900 mb-4`}>
+            (<span className="text-indigo-600 font-bold">LAY</span>OUT-AWA
+            <span className="text-indigo-600 font-bold">R</span>E{" "}
+            <span className="text-indigo-600 font-bold">A</span>GENT)
+          </h2> */}
           <h2 className={`text-xl text-gray-900 mb-4`}>
-            With pure visual embeddings, <span className="text-indigo-700">LAYRA</span> understands documents like a
-            human
+            Endlessly Customizable Agent Worklfow Engine - Code Without Limits, Build Without Boundaries
           </h2>
-          <h2 className={`text-xl text-gray-900 mb-4 font-semibold`}>
-            — page by page, structure and all.
-          </h2>
+          {/* "Agent Workflow Engine – Design, Automate, and Scale with AI-Driven Precision." */}
+          <div className="w-full flex flex-col items-center justify-center gap-2">
+            <h2 className={`text text-gray-700`}>
+              With pure visual embeddings,{" "}
+              <span className="text-indigo-500">LAYRA</span> understands
+              documents like a human
+            </h2>
+            <h2 className={`text text-gray-700 font-semibold`}>
+              — page by page, structure and all.
+            </h2>
+          </div>
         </div>
 
         {/* 登录按钮 */}
@@ -112,9 +123,18 @@ const Homepage = () => {
             className={`flex items-center justify-center text-xs font-sans text-gray-900 mb-3`}
           >
             Feel free to contact me:
-            <span className="text-indigo-700 ml-1 mr-1"> liweixmu@foxmail.com </span>
+            <span className="text-indigo-700 ml-1 mr-1">
+              {" "}
+              liweixmu@foxmail.com{" "}
+            </span>
             <span>|</span>
-            <a href="https://github.com/liweiphys" className="text-indigo-700 ml-1"> GitHub </a>
+            <a
+              href="https://github.com/liweiphys"
+              className="text-indigo-700 ml-1"
+            >
+              {" "}
+              GitHub{" "}
+            </a>
           </h4>
         </div>
       </div>

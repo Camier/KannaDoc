@@ -1,15 +1,16 @@
 import { useAuthStore } from "@/stores/authStore";
 import { useFlowStore } from "@/stores/flowStore";
 import { useGlobalStore } from "@/stores/pythonVariableStore";
-import { CustomNode, ModelConfig } from "@/types/types";
+import { CustomNode, Message, ModelConfig } from "@/types/types";
 import { Dispatch, SetStateAction, useState } from "react";
 import KnowledgeConfigModal from "./KnowledgeConfigModal";
 import { updateModelConfig } from "@/lib/api/configApi";
 import Cookies from "js-cookie";
 import { EventSourceParserStream } from "eventsource-parser/stream";
-import MarkdownDisplay from "@/components/AiChat/MarkdownDisplay";
+import ChatMessage from "@/components/AiChat/ChatMessage";
 
 interface VlmNodeProps {
+  messages: Message[];
   saveNode: (node: CustomNode) => void;
   isDebugMode: boolean;
   node: CustomNode;
@@ -18,6 +19,7 @@ interface VlmNodeProps {
 }
 
 const VlmNodeComponent: React.FC<VlmNodeProps> = ({
+  messages,
   saveNode,
   isDebugMode,
   node,
@@ -49,10 +51,13 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
     updateVlmInput,
     changeChatStyle,
     updateDebug,
+    updateChat,
+    updateOutput,
   } = useFlowStore();
   const [showConfigModal, setShowConfigModal] = useState(false);
   const { user } = useAuthStore();
   const [runTest, setRunTest] = useState(false);
+  const [showRefFile, setShowRefFile] = useState<string[]>([]);
 
   const configureKnowledgeDB = () => {
     setShowConfigModal(true);
@@ -71,7 +76,11 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
   };
 
   const handleRunTest = async () => {
+    if (!node.data.vlmInput) {
+      alert("LLM query not found!")
+    }
     if (user?.name) {
+      setRunTest(true);
       try {
         const token = Cookies.get("token");
         const modelConfig = {
@@ -112,7 +121,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
 
         if (!response.ok) throw new Error("Request failed");
         if (!response.body) return;
-
+        let aiResponse = "";
         // 使用EventSourceParserStream处理流
         const eventStream = response.body
           ?.pipeThrough(new TextDecoderStream())
@@ -123,9 +132,27 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
           const { done, value } = (await eventReader?.read()) || {};
           if (done) break;
           const payload = JSON.parse(value.data);
+
+          if (payload.type === "text") {
+            aiResponse += payload.data;
+            updateOutput(node.id, aiResponse);
+          }
+          if (payload.type === "token") {
+            aiResponse += "\n\n Total token usage: ";
+            aiResponse += payload.total_token;
+            aiResponse += "\n Completion token usage: ";
+            aiResponse += payload.completion_tokens;
+            aiResponse += "\n Prompt token usage: ";
+            aiResponse += payload.prompt_tokens;
+            updateOutput(node.id, aiResponse);
+          }
         }
       } catch (error) {
-        console.error("Error:", error);
+        //console.error("Error connect:", error);
+        updateOutput(node.id, "Error connect:" + error);
+      } finally {
+        //updateOutput(node.id, "Message generated!");
+        setRunTest(false);
       }
     }
   };
@@ -585,18 +612,32 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
           </div>
         </summary>
         <div
-          className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-gray-100`}
+          className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-2`}
         >
-            <MarkdownDisplay
-              md_text={node.data.chat || ""}
-              message={{
-                type: "text",
-                content: node.data.chat || "",
-                from: "ai", // 消息的来源
-              }}
-              showTokenNumber={true}
-              isThinking={false}
-            />
+          {/* <MarkdownDisplay
+            md_text={node.data.chat || ""}
+            message={{
+              type: "text",
+              content: node.data.chat || "",
+              from: "ai", // 消息的来源
+            }}
+            showTokenNumber={true}
+            isThinking={false}
+          /> */}
+          <div
+            className="flex-1 overflow-y-auto scrollbar-hide"
+            style={{ overscrollBehavior: "contain" }}
+          >
+            {messages? messages.map((message, index) => (
+              <ChatMessage
+              modelConfig={node.data.modelConfig}
+                key={index}
+                message={message}
+                showRefFile={showRefFile}
+                setShowRefFile={setShowRefFile}
+              />
+            )) : <div className="whitespace-pre-wrap p-2">{node.data.chat}</div>}
+          </div>
         </div>
       </details>
       <details className="group w-full" open>

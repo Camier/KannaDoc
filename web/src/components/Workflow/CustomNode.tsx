@@ -19,7 +19,7 @@ const CustomNodeComponent = ({
             type="source"
             position={Position.Right}
             isConnectable={isConnectable}
-            className="!top-[calc(60%+8px)] h-3 w-3 rounded-full !bg-indigo-500 relative 
+            className="!top-[calc(50%)] h-3 w-3 rounded-full !bg-indigo-500 relative 
             after:absolute after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 
             after:w-[10px] after:h-[2px] after:bg-white after:content-[''] 
             before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 
@@ -46,7 +46,7 @@ const CustomNodeComponent = ({
               type="target"
               position={Position.Left}
               isConnectable={isConnectable}
-              className="!top-[calc(60%+8px)] h-3 w-3 rounded-full !bg-indigo-500 relative 
+              className="!top-[calc(60%)] h-3 w-3 rounded-full !bg-indigo-500 relative 
             after:absolute after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 
             after:w-[10px] after:h-[2px] after:bg-white after:content-[''] 
             before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 
@@ -56,7 +56,7 @@ const CustomNodeComponent = ({
               type="source"
               position={Position.Right}
               isConnectable={isConnectable}
-              className="!top-[calc(60%+8px)] h-3 w-3 rounded-full !bg-indigo-500 relative 
+              className="!top-[calc(60%)] h-3 w-3 rounded-full !bg-indigo-500 relative 
             after:absolute after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 
             after:w-[10px] after:h-[2px] after:bg-white after:content-[''] 
             before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 
@@ -93,7 +93,7 @@ const CustomNodeComponent = ({
               type="target"
               position={Position.Left}
               isConnectable={isConnectable}
-              className="!top-[calc(60%+8px)] h-3 w-3 rounded-full !bg-indigo-500 relative 
+              className="!top-[calc(50%)] h-3 w-3 rounded-full !bg-indigo-500 relative 
             after:absolute after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 
             after:w-[10px] after:h-[2px] after:bg-white after:content-[''] 
             before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 
@@ -103,7 +103,7 @@ const CustomNodeComponent = ({
               type="source"
               position={Position.Right}
               isConnectable={isConnectable}
-              className="!top-[calc(60%+8px)] h-3 w-3 rounded-full !bg-indigo-500 relative 
+              className="!top-[calc(50%)] h-3 w-3 rounded-full !bg-indigo-500 relative 
             after:absolute after:left-1/2 after:top-1/2 after:-translate-x-1/2 after:-translate-y-1/2 
             after:w-[10px] after:h-[2px] after:bg-white after:content-[''] 
             before:absolute before:left-1/2 before:top-1/2 before:-translate-x-1/2 before:-translate-y-1/2 
@@ -115,8 +115,24 @@ const CustomNodeComponent = ({
   };
   return (
     <div
-      className={`w-32 h-32 overflow-auto p-2 shadow-lg rounded-3xl ${
-        data.debug? selected ? "border-2 border-red-500" : "border-1 border-red-500" : selected ?  "border-2 border-indigo-700" : "border-1 border-indigo-500"
+      className={`${
+        data.nodeType == "start"
+          ? "w-24 h-24 rounded-l-[64px] rounded-r-2xl pl-[32px]"
+          : data.nodeType == "loop"
+          ? "w-32 h-36 rounded-t-[64px] rounded-b-4xl"
+          : data.nodeType == "vlm"
+          ? "w-42 h-32 rounded-4xl"
+          : data.nodeType == "condition"
+          ? "w-32 h-42 rounded-4xl"
+          : "w-32 h-32 rounded-3xl"
+      }   p-2 shadow-lg ${
+        data.debug
+          ? selected
+            ? "border-2 border-red-500"
+            : "border-1 border-red-500"
+          : selected
+          ? "border-2 border-indigo-700"
+          : "border-1 border-indigo-500"
       } bg-white`}
     >
       {getHandles(data.nodeType)}
@@ -125,7 +141,15 @@ const CustomNodeComponent = ({
           e.stopPropagation(); // 阻止事件冒泡
           deleteNode(id);
         }}
-        className="cursor-pointer top-2 right-2 absolute"
+        className={`${
+          data.nodeType == "start"
+            ? "top-1 right-1"
+            : data.nodeType == "loop"
+            ? "top-5 right-5"
+            : data.nodeType == "condition" || data.nodeType == "vlm"
+            ? "top-3 right-3"
+            : "top-2 right-2"
+        } cursor-pointer absolute`}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -140,35 +164,19 @@ const CustomNodeComponent = ({
         // onBlur={(e) =>
         //   useFlowStore.getState().updateNodeLabel(id, e.currentTarget.innerText)
         // }
-        className="h-[20%] flex items-center justify-center gap-1"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="1.5"
-          stroke="currentColor"
-          className="size-4 shrink-0"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"
-          />
-        </svg>
-        <span className="whitespace-nowrap text-sm">{data.label}</span>
-      </div>
-      <div
-        // onBlur={(e) =>
-        //   useFlowStore.getState().updateNodeLabel(id, e.currentTarget.innerText)
-        // }
-        className="h-[20%] flex items-center justify-center gap-1 text-sm text-gray-500"
+        className={`${
+          data.nodeType == "start"
+            ? "h-[36%]  pr-2"
+            : data.nodeType == "loop"
+            ? "h-[36%] pt-[18%]"
+            : "h-[36%] "
+        } h-[40%] flex items-center justify-center gap-1`}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="size-4"
+          className="size-4 shrink-0"
         >
           <path
             fillRule="evenodd"
@@ -176,9 +184,18 @@ const CustomNodeComponent = ({
             clipRule="evenodd"
           />
         </svg>
-        <span className="whitespace-nowrap text-sm">{data.nodeType}</span>
+        <span className="whitespace-nowrap">{data.nodeType}</span>
       </div>
-      <div className="h-[calc(60%-8px)] mx-[calc(20%-8px)] mb-2 flex items-center justify-center rounded-3xl bg-gray-100">
+      <div
+        className={`${
+          data.nodeType == "loop"
+            ? "h-[calc(64%-16px)] mt-1 mb-3"
+            : data.nodeType == "condition"
+            ? "h-[calc(60%-12px)] mt-1 mb-5"
+            : "h-[calc(64%-12px)] mt-1 mb-3"
+        } ${data.nodeType == "start"
+            ? "mx-[calc(10%-8px)] mr-2" : "mx-[calc(20%-8px)]"} flex items-center justify-center rounded-3xl bg-gray-100`}
+      >
         {data.status === "failed" ? (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -228,6 +245,112 @@ const CustomNodeComponent = ({
           </svg>
         )}
       </div>
+      <div
+        // onBlur={(e) =>
+        //   useFlowStore.getState().updateNodeLabel(id, e.currentTarget.innerText)
+        // }
+        className="absolute left-1/2 -translate-x-1/2 -top-1 -translate-y-[100%] flex items-center justify-center gap-1"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="1.5"
+          stroke="currentColor"
+          className="size-4 shrink-0"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"
+          />
+        </svg>
+        <span className="whitespace-nowrap">{data.label}</span>
+      </div>
+      {data.nodeType === "vlm" && data.modelConfig && (
+        <div className="mt-2 absolute left-1/2 -translate-x-1/2 flex items-center justify-center gap-1">
+          <div className="flex flex-col mx-auto">
+            <div className="rounded-xl flex flex-col item-center justify-center gap-1">
+              <div className="w-full text-sm flex items-center justify-center gap-2 text-gray-500 pb-1">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="size-5"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm0 8.625a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25ZM15.375 12a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0ZM7.5 10.875a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                {data.modelConfig.modelName ? (
+                  <div className="text-gray-500 whitespace-nowrap overflow-x-scroll scrollbar-hide ">
+                    {data.modelConfig.modelName}
+                  </div>
+                ) : (
+                  <div className="text-gray-500">No LLM engine was choosed</div>
+                )}
+              </div>
+              {data.modelConfig.baseUsed?.length > 0 ? (
+                <div className="flex flex-col items-center justify-center w-full text-sm text-gray-500 gap-2">
+                  <div className="px-10 flex items-center justify-center gap-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      className="size-5"
+                    >
+                      <path d="M10.75 16.82A7.462 7.462 0 0 1 15 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0 0 18 15.06v-11a.75.75 0 0 0-.546-.721A9.006 9.006 0 0 0 15 3a8.963 8.963 0 0 0-4.25 1.065V16.82ZM9.25 4.065A8.963 8.963 0 0 0 5 3c-.85 0-1.673.118-2.454.339A.75.75 0 0 0 2 4.06v11a.75.75 0 0 0 .954.721A7.506 7.506 0 0 1 5 15.5c1.579 0 3.042.487 4.25 1.32V4.065Z" />
+                    </svg>
+                    <div className="whitespace-nowrap">
+                      Knowledge-Base accessed:
+                    </div>
+                  </div>
+
+                  <div className="flex gap-2 items-center justify-center flex-wrap">
+                    {data.modelConfig.baseUsed.map((base, index) => (
+                      <div
+                        className="flex gap-1 items-center justify-center break-all"
+                        key={index}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          className="size-4 shrink-0"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10 1c3.866 0 7 1.79 7 4s-3.134 4-7 4-7-1.79-7-4 3.134-4 7-4Zm5.694 8.13c.464-.264.91-.583 1.306-.952V10c0 2.21-3.134 4-7 4s-7-1.79-7-4V8.178c.396.37.842.688 1.306.953C5.838 10.006 7.854 10.5 10 10.5s4.162-.494 5.694-1.37ZM3 13.179V15c0 2.21 3.134 4 7 4s7-1.79 7-4v-1.822c-.396.37-.842.688-1.306.953-1.532.875-3.548 1.369-5.694 1.369s-4.162-.494-5.694-1.37A7.009 7.009 0 0 1 3 13.179Z"
+                            clipRule="evenodd"
+                            transform="translate(0, -0.5)"
+                          />
+                        </svg>
+                        <span className="break-words">{base.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div className="flex items-center justify-center w-full text-sm text-gray-500 gap-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="size-5"
+                  >
+                    <path d="M10.75 16.82A7.462 7.462 0 0 1 15 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0 0 18 15.06v-11a.75.75 0 0 0-.546-.721A9.006 9.006 0 0 0 15 3a8.963 8.963 0 0 0-4.25 1.065V16.82ZM9.25 4.065A8.963 8.963 0 0 0 5 3c-.85 0-1.673.118-2.454.339A.75.75 0 0 0 2 4.06v11a.75.75 0 0 0 .954.721A7.506 7.506 0 0 1 5 15.5c1.579 0 3.042.487 4.25 1.32V4.065Z" />
+                  </svg>
+                  <div className="whitespace-nowrap">
+                    No Knowledge-Base was accessed‌
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
