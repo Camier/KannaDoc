@@ -30,6 +30,7 @@ import {
   ModelConfig,
   Message,
   FileUsed,
+  FileRespose,
 } from "@/types/types";
 import Cookies from "js-cookie";
 import { useFlowStore } from "@/stores/flowStore";
@@ -59,9 +60,9 @@ import { getAllModelConfig } from "@/lib/api/configApi";
 import ConfirmAlert from "../ConfirmAlert";
 import NodeTypeSelector from "./NodeTypeSelector";
 import SaveCustomNode from "./SaveNode";
+import WorkflowOutputComponent from "./NodeSettings/WorkflowOutput";
 
 const getId = (type: string): string => `node_${type}_${uuidv4()}`;
-
 interface FlowEditorProps {
   workFlow: WorkflowAll;
   setFullScreenFlow: Dispatch<SetStateAction<boolean>>;
@@ -107,10 +108,11 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     updateConditionCount,
     updateStatus,
     updateVlmModelConfig,
+    updateVlmInput,
   } = useFlowStore();
   const [taskId, setTaskId] = useState("");
   const [running, setRunning] = useState(false);
-  const [resumetTaskId, setResumetTaskId] = useState("");
+  const [resumeTaskId, setResumeTaskId] = useState("");
   const [showAlert, setShowAlert] = useState(false);
   const [workflowMessage, setWorkflowMessage] = useState("");
   const [workflowStatus, setWorkflowStatus] = useState("");
@@ -123,12 +125,40 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   const [newCustomNode, setNewCustomNode] = useState<CustomNode | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const [canceling, setCanceling] = useState(false);
+  const [showOutput, setShowOutput] = useState(false);
   const [messages, setMessages] = useState<{ [key: string]: Message[] }>({});
+  const [sendInputDisabled, setSendInputDisabled] = useState(true);
+  const [tempBaseId, setTempBaseId] = useState<string>(""); //后台用来存放上传文件的临时知识库
+  const [currentInputNodeId, setCurrentInputNodeId] = useState<string>(); //后台用来存放上传文件的临时知识库
+  const [runningChatflowLLMNodes, setRunningChatflowLLMNodes] = useState<
+    CustomNode[]
+  >([]);
+  //这个是按顺序每次收到的消息，而messages是归纳到每个节点里，如messages{a:[1,3],b:[2]}，输出循环顺序a,b,a,则eachMessages[1,2,3]
+  const [eachMessages, setEachMessages] = useState<{
+    [key: string]: Message[];
+  }>({});
+  const countRef = useRef(1);
+  const countListRef = useRef<string[]>([]);
+  const nodeStates = new Map<
+    number,
+    {
+      aiMessage: string;
+      aiThinking: string;
+      messageId: string;
+      total_token: number;
+      completion_tokens: number;
+      prompt_tokens: number;
+      file_used: any[];
+      vlmNewLoop: boolean;
+    }
+  >();
   // 使用 useMemo 优化查找
   const currentNode = useMemo(
     () => nodes.find((n) => n.id === selectedNodeId),
     [nodes, selectedNodeId] // 依赖精准控制
   );
+
+  const eachMessagesRef = useRef(eachMessages);
 
   // 初始化历史记录
   useEffect(() => {
@@ -160,7 +190,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     return [str.substring(0, index), str.substring(index + 1)];
   };
 
-  const handelDeleteCustomNode = async (custom_node_name: string) => {
+  const handleDeleteCustomNode = async (custom_node_name: string) => {
     if (user?.name) {
       try {
         await deleteCustomNodes(user.name, custom_node_name);
@@ -171,9 +201,50 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     }
   };
 
+  const checkChatflowInput = () => {
+    if (countListRef.current.length > 0) {
+      const lastNodeMessages =
+        eachMessagesRef.current[
+          countListRef.current[countListRef.current.length - 1]
+        ];
+      if (lastNodeMessages.length > 0) {
+        if (lastNodeMessages[lastNodeMessages.length - 1].from === "user") {
+          setWorkflowMessage("错误: 连续的输入节点");
+          setWorkflowStatus("error");
+          //eventReader.cancel();
+          return false;
+        }
+      }
+    }
+    return true;
+  };
+
+  const checkChatflowOutput = () => {
+    if (countListRef.current.length > 0) {
+      const lastNodeMessages =
+        eachMessagesRef.current[
+          countListRef.current[countListRef.current.length - 1]
+        ];
+      if (lastNodeMessages.length > 0) {
+        if (lastNodeMessages[lastNodeMessages.length - 1].from === "ai") {
+          setWorkflowMessage("错误: 连续的输出节点");
+          setWorkflowStatus("error");
+          //eventReader.cancel();
+          return false;
+        }
+      }
+    } else {
+      setWorkflowMessage("输出节点之前找不到输入节点！");
+      setWorkflowStatus("error");
+      //   eventReader.cancel();
+      return false;
+    }
+    return true;
+  };
+
   useEffect(() => {
     if (taskId !== "") {
-      setResumetTaskId("");
+      setResumeTaskId("");
       const workFlowSSE = async () => {
         if (user?.name) {
           const token = Cookies.get("token"); // 确保已引入cookie库
@@ -196,35 +267,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               .pipeThrough(new EventSourceParserStream());
 
             const eventReader = eventStream.getReader();
-            const nodeStates = new Map<
-              number,
-              {
-                aiMessage: string;
-                aiThinking: string;
-                messageId: string;
-                total_token: number;
-                completion_tokens: number;
-                prompt_tokens: number;
-                file_used: any[];
-                vlmNewLoop: boolean;
-              }
-            >();
-            let count = 1;
-            // const aiResponse = new Map<string, string>();
 
-            // // 添加或追加值的函数
-            // const addOrAppend = (
-            //   map: Map<string, string>,
-            //   key: string,
-            //   value: string
-            // ) => {
-            //   const prevValue = map.get(key);
-            //   if (prevValue !== undefined) {
-            //     map.set(key, prevValue + value); // 追加到原值末尾
-            //   } else {
-            //     map.set(key, value); // 新建键值对
-            //   }
-            // };
             while (true) {
               const { done, value } = (await eventReader?.read()) || {};
               if (done) break;
@@ -239,9 +282,13 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                   updateStatus(errorNodeId, "failed");
                 }
                 if (
-                  ["completed", "failed", "pause", "canceled"].includes(
-                    payload.workflow.status
-                  )
+                  [
+                    "completed",
+                    "failed",
+                    "pause",
+                    "canceled",
+                    "vlm_input",
+                  ].includes(payload.workflow.status)
                 ) {
                   if (payload.workflow.status === "completed") {
                     setWorkflowStatus("success");
@@ -252,6 +299,17 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                   } else if (payload.workflow.status === "canceled") {
                     setWorkflowMessage("Workflow canceled by user!");
                     setWorkflowStatus("error");
+                  } else if (payload.workflow.status === "vlm_input") {
+                    if (selectedNodeId) {
+                      setShowOutput(true);
+                      setSelectedNodeId(null);
+                      setSelectedEdgeId(null);
+                    } else {
+                      setShowOutput(true);
+                    }
+                    setSendInputDisabled(false);
+                    setWorkflowMessage("Please send question to AI!");
+                    setWorkflowStatus("success");
                   } else {
                     setWorkflowMessage("Execution Failed");
                     setWorkflowStatus("error");
@@ -283,122 +341,353 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                     setGlobalDebugVariables(variables);
                   }
                   updateStatus(payload.node.id, "ok");
+                } else if (payload.node.status === "running") {
+                  updateStatus(payload.node.id, "running");
                 } else if (payload.node.status === "pause") {
-                  setResumetTaskId(taskId);
+                  setResumeTaskId(taskId);
                   updateStatus(payload.node.id, "pause");
+                } else if (payload.node.status === "vlm_input") {
+                  setResumeTaskId(taskId);
+                  updateStatus(payload.node.id, "running");
+                  setCurrentInputNodeId(payload.node.id);
+                } else if (payload.node.status === false) {
+                  updateStatus(payload.node.id, "init");
                 }
               } else if (payload.event === "ai_chunk") {
                 const nodeId = payload.ai_chunk.id; // 获取节点ID
                 const aiChunkResult = JSON.parse(payload.ai_chunk.result);
                 // 获取或初始化该节点的状态
-                let state = nodeStates.get(count) || {
-                  aiMessage: "",
-                  aiThinking: "",
-                  messageId: "",
-                  total_token: 0,
-                  completion_tokens: 0,
-                  prompt_tokens: 0,
-                  file_used: [],
-                  vlmNewLoop: true,
-                };
-
-                if (aiChunkResult !== '""') {
-                  if (state.vlmNewLoop) {
-                    const newMessage: Message[] = [
-                      //...fileMessages,
-                      {
-                        type: "text",
-                        content:
-                          nodes.find((node) => node.id === nodeId)?.data
-                            .vlmInput || "",
-                        from: "user",
-                      },
-                    ];
-
-                    // 添加生成消息中
-                    const aiLoading: Message = {
-                      type: "text",
-                      content: "Parsing in progress, please wait...",
-                      from: "ai",
-                    };
-
-                    // 一次性添加所有用户消息和AI加载状态
-                    setMessages((prev) => {
-                      const nodeMessages = prev[nodeId] || [];
-                      const newMessages = [
-                        ...nodeMessages,
-                        ...newMessage,
-                        aiLoading,
-                      ];
-                      return { ...prev, [nodeId]: newMessages };
-                    });
-                    state.vlmNewLoop = false;
-                    // 更新状态存储
-                    nodeStates.set(count, state);
-                  }
-
-                  if (aiChunkResult.type === "file_used") {
-                    state.file_used = aiChunkResult.data; // 自动处理原始换行符
-                    state.messageId = aiChunkResult.message_id;
-                  }
-                  if (aiChunkResult.type === "thinking") {
-                    state.aiThinking += aiChunkResult.data; // 自动处理原始换行符
-                    state.messageId = aiChunkResult.message_id;
-                  }
-
-                  if (aiChunkResult.type === "text") {
-                    state.aiMessage += aiChunkResult.data; // 自动处理原始换行符
-                    state.messageId = aiChunkResult.message_id;
-                  }
-
-                  if (aiChunkResult.type === "token") {
-                    state.total_token = aiChunkResult.total_token;
-                    state.completion_tokens = aiChunkResult.completion_tokens;
-                    state.prompt_tokens = aiChunkResult.prompt_tokens;
-                  }
-
-                  // 使用函数式更新确保基于最新状态
-                  setMessages((prev) => {
-                    const nodeMessages = prev[nodeId] || [];
-                    const lastIndex = nodeMessages.length - 1;
-
-                    const updatedMessages = [...nodeMessages];
-                    updatedMessages[lastIndex] = {
-                      ...updatedMessages[lastIndex],
-                      content: state.aiMessage,
-                      thinking: state.aiThinking,
-                      messageId: state.messageId ? state.messageId : "",
-                      token_number: {
-                        total_token: state.total_token,
-                        completion_tokens: state.completion_tokens,
-                        prompt_tokens: state.prompt_tokens,
-                      },
-                    };
-                    return { ...prev, [nodeId]: updatedMessages };
+                let state = nodeStates.get(countRef.current);
+                const nodeToAdd = nodes.find((node) => node.id === nodeId);
+                if (!state) {
+                  state = {
+                    aiMessage: "",
+                    aiThinking: "",
+                    messageId: "",
+                    total_token: 0,
+                    completion_tokens: 0,
+                    prompt_tokens: 0,
+                    file_used: [],
+                    vlmNewLoop: true,
+                  };
+                  setRunningChatflowLLMNodes((prev) => {
+                    return nodeToAdd ? [...prev, nodeToAdd] : prev;
                   });
-                  // 更新状态存储
-                  nodeStates.set(count, state);
-                  if (aiChunkResult.type === "token") {
+                }
+
+                if (aiChunkResult.type === "file_used") {
+                  state.file_used = aiChunkResult.data; // 自动处理原始换行符
+                  state.messageId = aiChunkResult.message_id;
+                }
+                if (aiChunkResult.type === "thinking") {
+                  state.aiThinking += aiChunkResult.data; // 自动处理原始换行符
+                  state.messageId = aiChunkResult.message_id;
+                }
+
+                if (aiChunkResult.type === "text") {
+                  state.aiMessage += aiChunkResult.data; // 自动处理原始换行符
+                  state.messageId = aiChunkResult.message_id;
+                }
+
+                if (aiChunkResult.type === "token") {
+                  state.total_token = aiChunkResult.total_token;
+                  state.completion_tokens = aiChunkResult.completion_tokens;
+                  state.prompt_tokens = aiChunkResult.prompt_tokens;
+                }
+
+                const currentCount = countRef.current;
+                if (aiChunkResult !== '""') {
+                  //if （首次循环）
+                  // else （其他循环 if（ai消息正常更新）
+                  //                else （aiChunkResult.type === "token"时额外更新知识库引用 ））
+                  //首次循环
+                  if (state.vlmNewLoop) {
+                    state.vlmNewLoop = false;
+                    const newMessage: Message = {
+                      type: "text" as const,
+                      content:
+                        nodes.find((node) => node.id === nodeId)?.data
+                          .vlmInput || "",
+                      from: "user" as const,
+                    };
+
                     setMessages((prev) => {
                       const nodeMessages = prev[nodeId] || [];
-                      const updatedMessages = [
-                        ...nodeMessages,
-                        ...state.file_used.map((file, index) => ({
-                          type: "baseFile",
-                          content: `image_${index}`,
-                          messageId: state.messageId ? state.messageId : "",
-                          imageMinioUrl: file.image_url,
-                          fileName: file.file_name,
-                          baseId: file.knowledge_db_id,
-                          minioUrl: file.file_url,
-                          score: file.score,
-                          from: "ai",
-                        })),
-                      ];
 
-                      return { ...prev, [nodeId]: updatedMessages };
+                      // 直接创建最终AI消息
+                      const aiMessage: Message = {
+                        type: "text" as const,
+                        content: state.aiMessage, // 直接使用最终内容
+                        from: "ai" as const,
+                        thinking: state.aiThinking,
+                        messageId: state.messageId || "",
+                        token_number: {
+                          total_token: state.total_token,
+                          completion_tokens: state.completion_tokens,
+                          prompt_tokens: state.prompt_tokens,
+                        },
+                      };
+
+                      return {
+                        ...prev,
+                        [nodeId]: [
+                          ...nodeMessages,
+                          newMessage,
+                          aiMessage, // 直接添加完整消息对象
+                        ],
+                      };
                     });
-                    count = count + 1;
+
+                    if (nodeToAdd?.data.isChatflowInput) {
+                      if (!checkChatflowInput()) {
+                        updateStatus(nodeToAdd.id, "failed");
+                        eventReader.cancel();
+                      }
+
+                      if (nodeToAdd?.data.isChatflowOutput) {
+                        setEachMessages((prev) => {
+                          // 直接创建最终AI消息
+                          const aiMessage: Message = {
+                            type: "text" as const,
+                            content: state.aiMessage, // 直接使用最终内容
+                            from: "ai" as const,
+                            thinking: state.aiThinking,
+                            messageId: state.messageId || "",
+                            token_number: {
+                              total_token: state.total_token,
+                              completion_tokens: state.completion_tokens,
+                              prompt_tokens: state.prompt_tokens,
+                            },
+                          };
+                          eachMessagesRef.current = {
+                            ...prev,
+                            [currentCount.toString()]: [
+                              newMessage,
+                              aiMessage, // 直接添加完整消息对象
+                            ],
+                          };
+                          return {
+                            ...prev,
+                            [currentCount.toString()]: [
+                              newMessage,
+                              aiMessage, // 直接添加完整消息对象
+                            ],
+                          };
+                        });
+                      } else {
+                        setEachMessages((prev) => {
+                          eachMessagesRef.current = {
+                            ...prev,
+                            [currentCount.toString()]: [newMessage],
+                          };
+                          return {
+                            ...prev,
+                            [currentCount.toString()]: [newMessage],
+                          };
+                        });
+                      }
+                      if (
+                        !countListRef.current.includes(
+                          countRef.current.toString()
+                        )
+                      ) {
+                        countListRef.current.push(countRef.current.toString());
+                      }
+                    } else {
+                      if (nodeToAdd?.data.isChatflowOutput) {
+                        if (!checkChatflowOutput()) {
+                          updateStatus(nodeToAdd.id, "failed");
+                          eventReader.cancel();
+                        }
+                        setEachMessages((prev) => {
+                          // 直接创建最终AI消息
+                          const aiMessage: Message = {
+                            type: "text" as const,
+                            content: state.aiMessage, // 直接使用最终内容
+                            from: "ai" as const,
+                            thinking: state.aiThinking,
+                            messageId: state.messageId || "",
+                            token_number: {
+                              total_token: state.total_token,
+                              completion_tokens: state.completion_tokens,
+                              prompt_tokens: state.prompt_tokens,
+                            },
+                          };
+                          eachMessagesRef.current = {
+                            ...prev,
+                            [currentCount.toString()]: [
+                              aiMessage, // 直接添加完整消息对象
+                            ],
+                          };
+                          return {
+                            ...prev,
+                            [currentCount.toString()]: [
+                              aiMessage, // 直接添加完整消息对象
+                            ],
+                          };
+                        });
+                        if (
+                          !countListRef.current.includes(
+                            countRef.current.toString()
+                          )
+                        ) {
+                          countListRef.current.push(
+                            countRef.current.toString()
+                          );
+                        }
+                      }
+                    }
+                    // 更新状态存储
+                    nodeStates.set(countRef.current, state);
+                  } else {
+                    //ai消息正常更新
+                    if (aiChunkResult.type !== "token") {
+                      // 使用函数式更新确保基于最新状态
+                      setMessages((prev) => {
+                        const nodeMessages = prev[nodeId] || [];
+                        const lastIndex = nodeMessages.length - 1;
+
+                        const updatedMessages = [...nodeMessages];
+                        updatedMessages[lastIndex] = {
+                          ...updatedMessages[lastIndex],
+                          content: state.aiMessage,
+                          thinking: state.aiThinking,
+                          messageId: state.messageId ? state.messageId : "",
+                          token_number: {
+                            total_token: state.total_token,
+                            completion_tokens: state.completion_tokens,
+                            prompt_tokens: state.prompt_tokens,
+                          },
+                        };
+                        return { ...prev, [nodeId]: updatedMessages };
+                      });
+                      if (nodeToAdd?.data.isChatflowOutput) {
+                        setEachMessages((prev) => {
+                          const nodeMessages = prev[currentCount.toString()];
+                          const lastIndex = nodeMessages.length - 1;
+
+                          const updatedMessages = [...nodeMessages];
+                          updatedMessages[lastIndex] = {
+                            ...updatedMessages[lastIndex],
+                            content: state.aiMessage,
+                            thinking: state.aiThinking,
+                            messageId: state.messageId ? state.messageId : "",
+                            token_number: {
+                              total_token: state.total_token,
+                              completion_tokens: state.completion_tokens,
+                              prompt_tokens: state.prompt_tokens,
+                            },
+                          };
+                          eachMessagesRef.current = {
+                            ...prev,
+                            [currentCount.toString()]: updatedMessages,
+                          };
+                          return {
+                            ...prev,
+                            [currentCount.toString()]: updatedMessages,
+                          };
+                        });
+                        if (
+                          !countListRef.current.includes(
+                            countRef.current.toString()
+                          )
+                        ) {
+                          countListRef.current.push(
+                            countRef.current.toString()
+                          );
+                        }
+                      }
+                    } else {
+                      // 额外更新知识库引用
+                      setMessages((prev) => {
+                        const nodeMessages = prev[nodeId] || [];
+                        const lastIndex = nodeMessages.length - 1;
+
+                        const updatedMessages = [...nodeMessages];
+                        updatedMessages[lastIndex] = {
+                          ...updatedMessages[lastIndex],
+                          content: state.aiMessage,
+                          thinking: state.aiThinking,
+                          messageId: state.messageId ? state.messageId : "",
+                          token_number: {
+                            total_token: state.total_token,
+                            completion_tokens: state.completion_tokens,
+                            prompt_tokens: state.prompt_tokens,
+                          },
+                        };
+
+                        const referenceMessages = [
+                          ...state.file_used.map((file, index) => ({
+                            type: "baseFile" as const,
+                            content: `image_${index}`,
+                            messageId: state.messageId ? state.messageId : "",
+                            imageMinioUrl: file.image_url,
+                            fileName: file.file_name,
+                            baseId: file.knowledge_db_id,
+                            minioUrl: file.file_url,
+                            score: file.score,
+                            from: "ai" as const,
+                          })),
+                        ];
+                        return {
+                          ...prev,
+                          [nodeId]: updatedMessages.concat(referenceMessages),
+                        };
+                      });
+
+                      if (nodeToAdd?.data.isChatflowOutput) {
+                        setEachMessages((prev) => {
+                          const nodeMessages = prev[currentCount.toString()];
+                          const lastIndex = nodeMessages.length - 1;
+
+                          const updatedMessages = [...nodeMessages];
+                          updatedMessages[lastIndex] = {
+                            ...updatedMessages[lastIndex],
+                            content: state.aiMessage,
+                            thinking: state.aiThinking,
+                            messageId: state.messageId ? state.messageId : "",
+                            token_number: {
+                              total_token: state.total_token,
+                              completion_tokens: state.completion_tokens,
+                              prompt_tokens: state.prompt_tokens,
+                            },
+                          };
+                          const referenceMessage = [
+                            ...state.file_used.map((file, index) => ({
+                              type: "baseFile" as const,
+                              content: `image_${index}`,
+                              messageId: state.messageId ? state.messageId : "",
+                              imageMinioUrl: file.image_url,
+                              fileName: file.file_name,
+                              baseId: file.knowledge_db_id,
+                              minioUrl: file.file_url,
+                              score: file.score,
+                              from: "ai" as const,
+                            })),
+                          ];
+                          eachMessagesRef.current = {
+                            ...prev,
+                            [currentCount.toString()]:
+                              updatedMessages.concat(referenceMessage),
+                          };
+                          return {
+                            ...prev,
+                            [currentCount.toString()]:
+                              updatedMessages.concat(referenceMessage),
+                          };
+                        });
+                        if (
+                          !countListRef.current.includes(
+                            countRef.current.toString()
+                          )
+                        ) {
+                          countListRef.current.push(
+                            countRef.current.toString()
+                          );
+                        }
+                      }
+                      countRef.current += 1;
+                    }
                   }
                 }
               }
@@ -581,7 +870,9 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
           'To extract global variables from the output, ensure prompt LLM/VLM to output them with json format, e.g., {"output":"AIoutput"}.',
         prompt: '输出以：{"output":AIOutput}的格式输出，不要包含任何其他内容.',
         vlmInput: "",
-        isChatStyle: false,
+        isChatflowInput: false,
+        isChatflowOutput: false,
+        isAddToChatHistory: false,
         chat: "This area displays the LLM output during workflow execution. The output from running tests will be shown in the output section.",
       };
     } else {
@@ -653,11 +944,21 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     }
   };
 
-  const handleRunWorkflow = async (debug: boolean = false) => {
+  // input_resume:用户通过对话框输入后设置为true
+  const handleRunWorkflow = async (
+    debug: boolean = false,
+    input_resume: boolean = false,
+    userMessage: string = ""
+  ) => {
     if (user?.name) {
       setRunning(true);
-      if (debug === false || resumetTaskId === "") {
+      if ((debug === false && input_resume === false) || resumeTaskId === "") {
         setMessages({});
+        setEachMessages({});
+        countListRef.current = [];
+        setCurrentInputNodeId(undefined);
+        setRunningChatflowLLMNodes([]);
+        countRef.current = 1;
         nodes.forEach((node) => {
           updateOutput(node.id, "Await for running...");
           updateStatus(node.id, "init");
@@ -701,6 +1002,9 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               modelConfig: modelConfig,
               prompt: node.data.prompt,
               vlmInput: node.data.vlmInput,
+              isChatflowInput: node.data.isChatflowInput,
+              isChatflowOutput: node.data.isChatflowOutput,
+              isAddToChatHistory: node.data.isAddToChatHistory,
             },
           };
         });
@@ -732,19 +1036,35 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
           }
         });
         let sendBreakpoints: string[];
-        let sendResumetTaskId: string;
+        let sendDebugResumeTaskId: string;
+        let sendInputResumeTaskId: string;
         let sendGlobalVariables = globalVariables;
-        if (debug) {
+        if (debug && !input_resume) {
           sendBreakpoints = nodes
             .filter((node) => node.data.debug === true)
             .map((node) => node.id);
-          sendResumetTaskId = resumetTaskId;
-          if (resumetTaskId !== "") {
+          sendDebugResumeTaskId = resumeTaskId;
+          if (resumeTaskId !== "") {
             sendGlobalVariables = globalDebugVariables;
           }
+          sendInputResumeTaskId = "";
+        } else if (input_resume && debug) {
+          sendBreakpoints = sendBreakpoints = nodes
+            .filter((node) => node.data.debug === true)
+            .map((node) => node.id);
+          sendDebugResumeTaskId = "";
+          if (resumeTaskId !== "") {
+            sendGlobalVariables = globalDebugVariables;
+          }
+          sendInputResumeTaskId = resumeTaskId;
+        } else if (input_resume && !debug) {
+          sendDebugResumeTaskId = "";
+          sendInputResumeTaskId = resumeTaskId;
+          sendBreakpoints = [];
         } else {
           sendBreakpoints = [];
-          sendResumetTaskId = "";
+          sendDebugResumeTaskId = "";
+          sendInputResumeTaskId = "";
         }
         const response = await executeWorkflow(
           user.name,
@@ -752,8 +1072,10 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
           sendEdges,
           "node_start",
           sendGlobalVariables,
-          sendResumetTaskId,
-          sendBreakpoints
+          sendDebugResumeTaskId,
+          sendInputResumeTaskId,
+          sendBreakpoints,
+          userMessage
         );
         if (response.data.code === 0) {
           setTaskId(response.data.task_id);
@@ -862,12 +1184,12 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     URL.revokeObjectURL(url);
   };
 
-  const handeSaveNodes = (newNode: CustomNode) => {
+  const handleSaveNodes = (newNode: CustomNode) => {
     setShowAddNode(true);
     setNewCustomNode(newNode);
   };
 
-  const handelStopWorkflow = async () => {
+  const handleStopWorkflow = async () => {
     if (user?.name) {
       try {
         await cancelWorkflow(user.name, taskId);
@@ -917,6 +1239,19 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     setNewNodeName("");
     setNameError(null);
   };
+
+  const handleSendMessage = (
+    message: string,
+    files: FileRespose[],
+    tempBaseId: string
+  ) => {
+    setSendInputDisabled(true);
+    if (currentInputNodeId) {
+      updateVlmInput(currentInputNodeId, message);
+      handleRunWorkflow(debug, true, message);
+    }
+  };
+
   return (
     <div
       className="flex-1 h-full flex items-center justify-center bg-white rounded-3xl shadow-sm p-6"
@@ -926,7 +1261,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     >
       <div className="w-[15%] bg-white pr-4 h-full overflow-scroll">
         <NodeTypeSelector
-          deleteCustomNode={handelDeleteCustomNode}
+          deleteCustomNode={handleDeleteCustomNode}
           customNodes={customNodes}
           setCustomNodes={setCustomNodes}
           addCustomNode={addCustomNode}
@@ -999,7 +1334,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-6"
+                className="size-5"
               >
                 <path
                   strokeLinecap="round"
@@ -1021,7 +1356,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-6"
+                className="size-5"
               >
                 <path
                   strokeLinecap="round"
@@ -1030,6 +1365,34 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 />
               </svg>
               <span>Export</span>
+            </button>
+            <button
+              onClick={() => {
+                setShowAlert(true);
+                setWorkflowMessage(
+                  "Publish will be updated in the NEXT VERSION to support deployment as an MCP service or publishing to various websites and applications."
+                );
+                setWorkflowStatus("success");
+              }}
+              //disabled={nodes.length === 0}
+              className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"
+                />
+              </svg>
+
+              <span>Publish</span>
             </button>
           </div>
 
@@ -1073,6 +1436,36 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
           <div className="flex items-center justify-center gap-2">
             <div className="flex items-center justify-center gap-1">
               <button
+                //disabled={running}
+                onClick={() => {
+                  if (selectedNodeId) {
+                    setShowOutput(true);
+                    setSelectedNodeId(null);
+                    setSelectedEdgeId(null);
+                  } else {
+                    setShowOutput((prev) => !prev);
+                  }
+                }}
+                className={`cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="size-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"
+                  />
+                </svg>
+
+                <span>ChatFlow</span>
+              </button>
+              <button
                 disabled={running}
                 onClick={() => handleRunWorkflow(false)}
                 className={`cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
@@ -1097,18 +1490,18 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               <button
                 disabled={running}
                 className={`${
-                  resumetTaskId ? "text-red-500" : ""
+                  resumeTaskId ? "text-red-500" : ""
                 } cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
-                onClick={() => handleRunWorkflow(true)}
+                onClick={() => {handleRunWorkflow(true)}}
               >
-                {resumetTaskId ? (
+                {resumeTaskId ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="size-6"
+                    className="size-5"
                   >
                     <path
                       strokeLinecap="round"
@@ -1161,7 +1554,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 <button
                   disabled={!taskId || canceling}
                   className="text-red-500 cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
-                  onClick={handelStopWorkflow}
+                  onClick={handleStopWorkflow}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -1182,7 +1575,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 </button>
               ) : (
                 <button
-                  disabled={running || resumetTaskId !== ""}
+                  disabled={running || resumeTaskId !== ""}
                   className="text-red-500 cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
                   onClick={() => {
                     setNodes([]);
@@ -1213,7 +1606,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         </div>
 
         <div className="flex-1 rounded-3xl shadow-sm bg-white relative overflow-hidden">
-          {currentNode && (
+          {currentNode ? (
             <div
               className={`p-2 absolute z-10 max-h-[calc(100%-16px)] ${
                 codeFullScreenFlow
@@ -1224,8 +1617,8 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               {{
                 code: (
                   <FunctionNodeComponent
-                    saveNode={handeSaveNodes}
-                    isDebugMode={resumetTaskId === "" ? false : true}
+                    saveNode={handleSaveNodes}
+                    isDebugMode={resumeTaskId === "" ? false : true}
                     node={currentNode}
                     codeFullScreenFlow={codeFullScreenFlow}
                     setCodeFullScreenFlow={setCodeFullScreenFlow}
@@ -1233,7 +1626,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 ),
                 start: (
                   <StartNodeComponent
-                    isDebugMode={resumetTaskId === "" ? false : true}
+                    isDebugMode={resumeTaskId === "" ? false : true}
                     node={currentNode}
                     codeFullScreenFlow={codeFullScreenFlow}
                     setCodeFullScreenFlow={setCodeFullScreenFlow}
@@ -1242,8 +1635,8 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 vlm: (
                   <VlmNodeComponent
                     messages={messages[currentNode.id]}
-                    saveNode={handeSaveNodes}
-                    isDebugMode={resumetTaskId === "" ? false : true}
+                    saveNode={handleSaveNodes}
+                    isDebugMode={resumeTaskId === "" ? false : true}
                     node={currentNode}
                     codeFullScreenFlow={codeFullScreenFlow}
                     setCodeFullScreenFlow={setCodeFullScreenFlow}
@@ -1251,8 +1644,8 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 ),
                 condition: (
                   <ConditionNodeComponent
-                    saveNode={handeSaveNodes}
-                    isDebugMode={resumetTaskId === "" ? false : true}
+                    saveNode={handleSaveNodes}
+                    isDebugMode={resumeTaskId === "" ? false : true}
                     node={currentNode}
                     codeFullScreenFlow={codeFullScreenFlow}
                     setCodeFullScreenFlow={setCodeFullScreenFlow}
@@ -1260,8 +1653,8 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 ),
                 loop: (
                   <LoopNodeComponent
-                    saveNode={handeSaveNodes}
-                    isDebugMode={resumetTaskId === "" ? false : true}
+                    saveNode={handleSaveNodes}
+                    isDebugMode={resumeTaskId === "" ? false : true}
                     node={currentNode}
                     codeFullScreenFlow={codeFullScreenFlow}
                     setCodeFullScreenFlow={setCodeFullScreenFlow}
@@ -1269,6 +1662,28 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 ),
               }[currentNode.data.nodeType] || <div></div>}
             </div>
+          ) : showOutput ? (
+            <div
+              className={`p-2 absolute z-10 max-h-[calc(100%-16px)] ${
+                codeFullScreenFlow
+                  ? "w-[96%] h-[98%] fixed  top-[1%] right-[2%]"
+                  : "w-[40%]  h-[98%] absolute m-2 top-0 right-0"
+              } shadow-lg rounded-3xl bg-white`}
+            >
+              <WorkflowOutputComponent
+                tempBaseId={tempBaseId}
+                setTempBaseId={setTempBaseId}
+                onSendMessage={handleSendMessage}
+                sendDisabled={sendInputDisabled}
+                messagesWithCount={eachMessages}
+                runningLLMNodes={runningChatflowLLMNodes}
+                isDebugMode={resumeTaskId === "" ? false : true}
+                codeFullScreenFlow={codeFullScreenFlow}
+                setCodeFullScreenFlow={setCodeFullScreenFlow}
+              />
+            </div>
+          ) : (
+            ""
           )}
           <ReactFlow
             nodes={nodes}
@@ -1282,6 +1697,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             onPaneClick={() => {
               setSelectedNodeId(null);
               setSelectedEdgeId(null);
+              setShowOutput(false);
             }} // 添加这一行
             nodeTypes={{ default: CustomNodeComponent }}
             edgeTypes={{ default: CustomEdgeComponent }}

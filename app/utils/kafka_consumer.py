@@ -38,8 +38,10 @@ class KafkaConsumerManager:
         message = json.loads(msg.value.decode("utf-8"))
         if message.get("type") == "workflow":
             await self.process_workflow_task(message)
-        elif message.get("type") == "workflow_resume":
-            await self.process_workflow_task(message, resume=True)
+        elif message.get("type") == "debug_resume":
+            await self.process_workflow_task(message, debug_resume=True)
+        elif message.get("type") == "input_resume":
+            await self.process_workflow_task(message, input_resume=True)
         else:
             task_id = message["task_id"]
             username = message["username"]
@@ -63,11 +65,10 @@ class KafkaConsumerManager:
                 file_meta=file_meta,
             )
 
-    async def process_workflow_task(self, message: dict, resume=False):
+    async def process_workflow_task(self, message: dict, debug_resume=False,  input_resume=False):
         task_id = message["task_id"]
         username = message["username"]
         workflow_data = message["workflow_data"]
-
         redis_conn = await redis.get_task_connection()
         try:
             # 更新并通知workflow启动
@@ -109,10 +110,11 @@ class KafkaConsumerManager:
                 start_node=workflow_data["start_node"],
                 task_id=task_id,  # 传递task_id用于状态更新
                 breakpoints=workflow_data["breakpoints"],
+                user_message=workflow_data["user_message"],
             ) as engine:
 
                 # 加载状态（如果是恢复执行）
-                if resume:
+                if debug_resume or input_resume:
                     if await engine.load_state():
                         logger.info(f"Resuming workflow {task_id} from saved state")
                     else:
@@ -122,7 +124,7 @@ class KafkaConsumerManager:
                     raise ValueError(engine.graph[-1])
 
                 # 执行工作流
-                await engine.start(resume)
+                await engine.start(debug_resume, input_resume)
 
                 # 保存结果并通知完成
                 await redis_conn.hset(
@@ -138,6 +140,9 @@ class KafkaConsumerManager:
                 if engine.break_workflow:
                     await engine.save_state()
                     workflow_status = "pause"
+                elif engine.break_workflow_get_input:
+                    await engine.save_state()
+                    workflow_status = "vlm_input"
                 else:
                     workflow_status = "completed"
 

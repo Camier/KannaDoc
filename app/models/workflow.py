@@ -27,9 +27,10 @@ class Workflow(BaseModel):
     edges: list
     start_node: str
     global_variables: dict
-    resume_task_id: str = ""
+    debug_resume_task_id: str = ""
     breakpoints: list = []
-
+    input_resume_task_id: str = ""
+    user_message: str = ""
 
 class WorkflowCreate(BaseModel):
     username: str

@@ -119,20 +119,20 @@ const CustomNodeComponent = ({
         data.nodeType == "start"
           ? "w-24 h-24 rounded-l-[64px] rounded-r-2xl pl-[32px]"
           : data.nodeType == "loop"
-          ? "w-32 h-36 rounded-t-[64px] rounded-b-4xl"
+          ? "w-28 h-36 rounded-t-[64px] rounded-b-3xl"
           : data.nodeType == "vlm"
           ? "w-42 h-32 rounded-4xl"
           : data.nodeType == "condition"
-          ? "w-32 h-42 rounded-4xl"
+          ? "w-28 h-42 rounded-4xl"
           : "w-32 h-32 rounded-3xl"
       }   p-2 shadow-lg ${
-        data.debug
+        data.status === "failed"
           ? selected
-            ? "border-2 border-red-500"
+            ? "border-2 border-red-600"
             : "border-1 border-red-500"
           : selected
-          ? "border-2 border-indigo-700"
-          : "border-1 border-indigo-500"
+          ? "border-2 border-indigo-500"
+          : "border-1 border-white"
       } bg-white`}
     >
       {getHandles(data.nodeType)}
@@ -185,6 +185,7 @@ const CustomNodeComponent = ({
           />
         </svg>
         <span className="whitespace-nowrap">{data.nodeType}</span>
+        {data.debug && <div className="w-3 h-3 rounded-full bg-red-500"></div>}
       </div>
       <div
         className={`${
@@ -193,8 +194,11 @@ const CustomNodeComponent = ({
             : data.nodeType == "condition"
             ? "h-[calc(60%-12px)] mt-1 mb-5"
             : "h-[calc(64%-12px)] mt-1 mb-3"
-        } ${data.nodeType == "start"
-            ? "mx-[calc(10%-8px)] mr-2" : "mx-[calc(20%-8px)]"} flex items-center justify-center rounded-3xl bg-gray-100`}
+        } ${
+          data.nodeType == "start"
+            ? "mx-[calc(10%-8px)] mr-2"
+            : "mx-[calc(20%-8px)]"
+        } flex items-center justify-center rounded-3xl bg-gray-100`}
       >
         {data.status === "failed" ? (
           <svg
@@ -226,6 +230,8 @@ const CustomNodeComponent = ({
               d="M21 7.5V18M15 7.5V18M3 16.811V8.69c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061A1.125 1.125 0 0 1 3 16.811Z"
             />
           </svg>
+        ) : data.status === "running" ? (
+          <div className="animate-spin h-4 w-4 border-3 border-indigo-500 border-t-transparent rounded-full"></div>
         ) : (
           <svg
             xmlns="http://www.w3.org/2000/svg"

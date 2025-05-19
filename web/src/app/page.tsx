@@ -21,7 +21,7 @@ const Homepage = () => {
   return (
     <div className="flex w-full h-screen items-center justify-center gap-[3%]">
       {/* 左侧内容区域 */}
-      <div className="w-[80%] h-[80%] flex flex-col gap-10 items-center justify-center shadow-lg rounded-3xl">
+      <div className="w-[85%] h-[85%] flex flex-col gap-8 items-center justify-center shadow-lg rounded-3xl">
         {/* logo */}
         <div className="w-[80%] h-[80%] flex items-center justify-center">
           <Image
@@ -51,7 +51,7 @@ const Homepage = () => {
           </h2>
           {/* "Agent Workflow Engine – Design, Automate, and Scale with AI-Driven Precision." */}
           <div className="w-full flex flex-col items-center justify-center gap-2">
-            <h2 className={`text text-gray-700`}>
+            <h2 className={`text-gray-700`}>
               With pure visual embeddings,{" "}
               <span className="text-indigo-500">LAYRA</span> understands
               documents like a human

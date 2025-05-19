@@ -99,8 +99,8 @@ async def workflow_sse(
                 "node": {
                     "id": parsed_msg["node"],
                     "status": (
-                        "pause"
-                        if parsed_msg["status"] == "pause"
+                        parsed_msg["status"]
+                        if parsed_msg["status"] in ["pause", "running", "vlm_input"]
                         else parsed_msg["status"] == "1"
                     ),
                     "result": parsed_msg.get("result"),
@@ -148,7 +148,13 @@ async def workflow_sse(
 
         # 初始状态检查（避免处理已完成的流程）
         workflow_status = await redis_conn.hget(workflow_key, "status")
-        if workflow_status and workflow_status in ("completed", "failed", "pause", "canceled"):
+        if workflow_status and workflow_status in (
+            "completed",
+            "failed",
+            "pause",
+            "canceled",
+            "vlm_input",
+        ):
             yield {
                 "data": json.dumps(
                     {
@@ -203,7 +209,7 @@ async def workflow_sse(
                     # 如果工作流终止，结束连接
                     if response_data.get("event") == "workflow" and parsed_msg[
                         "status"
-                    ] in ("completed", "failed", "pause", "canceled"):
+                    ] in ("completed", "failed", "pause", "canceled", "vlm_input"):
                         return
 
     return EventSourceResponse(event_stream())

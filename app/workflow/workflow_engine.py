@@ -14,6 +14,7 @@ from app.workflow.graph import TreeNode, WorkflowGraph
 from app.workflow.llm_service import ChatService
 from app.core.logging import logger
 
+
 class WorkflowEngine:
     def __init__(
         self,
@@ -23,6 +24,7 @@ class WorkflowEngine:
         start_node="node_start",
         task_id: str = None,
         breakpoints=None,
+        user_message="",
     ):
         self.nodes = nodes
         self.edges = edges
@@ -38,8 +40,10 @@ class WorkflowEngine:
         self.breakpoints = set(breakpoints or [])
         self.execution_stack = [self.graph[1]]  # 用栈结构保存执行状态
         self.break_workflow = False
+        self.break_workflow_get_input = False
         self.skip_nodes = []
         self.loop_index = {}
+        self.user_message = user_message
 
     async def __aenter__(self):
         # 创建并启动沙箱
@@ -88,14 +92,18 @@ class WorkflowEngine:
             return True
         return False
 
-    async def _send_pause_event(self, node: TreeNode):
+    async def _send_pause_event(self, node: TreeNode, chatInput: bool = False):
         redis_conn = await redis.get_task_connection()
+        if chatInput:
+            status = "vlm_input"
+        else:
+            status = "pause"
         await redis_conn.xadd(
             f"workflow:events:{self.task_id}",
             {
                 "type": "node",
                 "node": node.node_id,
-                "status": "pause",
+                "status": status,
                 "result": "",
                 "error": "",
                 "variables": json.dumps(self.global_variables),
@@ -242,7 +250,9 @@ class WorkflowEngine:
             condition = node.data["condition"]
             if condition:
                 if self.safe_eval(condition, node.data["name"], node.node_id):
-                    logger.info(f"工作流 {self.task_id} ->节点 {node.node_id} 通过条件判断终止")
+                    logger.info(
+                        f"工作流 {self.task_id} ->节点 {node.node_id} 通过条件判断终止"
+                    )
                     self.execution_status[node.node_id] = True
                     await self._update_node_status(node.node_id, True)
                     for child in node.children:
@@ -265,7 +275,7 @@ class WorkflowEngine:
         #     if self.safe_eval(condition, node.data["name"], node.node_id):
         #         # print(f"节点 {node.node_id} 通过条件判断终止")
         #         return
-        logger.info(f'工作流 {self.task_id} 执行节点{node.node_id} 开始运行')
+        logger.info(f"工作流 {self.task_id} 执行节点{node.node_id} 开始运行")
         await self.check_cancellation()
 
         if self.execution_status[node.node_id]:
@@ -307,13 +317,15 @@ class WorkflowEngine:
 
         # 检查暂停点
         if node.node_id in self.breakpoints:
-            if node.skip:
-                node.skip = False
+            if node.debug_skip:
+                node.debug_skip = False
             else:
                 self.execution_stack.append(node)
                 await self._send_pause_event(node)
                 self.break_workflow = True
                 return
+
+        await self._update_node_status(node.node_id, True, True)
 
         if node.node_type == "loop":
             await self.handle_loop(node)
@@ -349,7 +361,9 @@ class WorkflowEngine:
             #     tasks.append(task)
             # await asyncio.wait(tasks)
         else:
-            await self.execute_node(node)
+            result = await self.execute_node(node)
+            if not result:
+                return
             self.execution_status[node.node_id] = True
             await self._update_node_status(node.node_id, True)
             # 异步执行子节点
@@ -376,7 +390,9 @@ class WorkflowEngine:
                         ]
                         await self.execute_workflow(node.loop_parent)
 
-    async def _update_node_status(self, node_id: str, status: bool, error: str = ""):
+    async def _update_node_status(
+        self, node_id: str, status: bool, running: bool = False, error: str = ""
+    ):
         """更新Redis中节点状态"""
         if self.task_id:
             redis_conn = await redis.get_task_connection()
@@ -385,12 +401,16 @@ class WorkflowEngine:
             )
             # 添加类型标识
             # 发送事件到专用Stream
+            if running:
+                node_status = "running"
+            else:
+                node_status = str(int(status))
             await redis_conn.xadd(
                 f"workflow:events:{self.task_id}",  # 使用新的事件流键
                 {
                     "type": "node",
                     "node": node_id,
-                    "status": str(int(status)),
+                    "status": node_status,
                     "result": json.dumps(self.context.get(node_id, "")),
                     "error": error,
                     "variables": json.dumps(self.global_variables),
@@ -446,6 +466,11 @@ class WorkflowEngine:
                         equation.split(" = ")[0]: equation.split(" = ")[1]
                         for equation in new_global_variables_list.split("\n")[1:]
                     }
+                if not node.node_id in self.context:
+                    self.context[node.node_id] = [{"result": code_output}]
+                else:
+                    self.context[node.node_id].append({"result": code_output})
+                return True
             except docker.errors.ContainerError as e:
                 # logger.error(f"容器执行错误: {e.stderr}")
                 raise ValueError(
@@ -455,14 +480,20 @@ class WorkflowEngine:
                 raise ValueError(
                     f"{node.node_id}: 节点{node.data['name']}: 输出格式无效,非json格式"
                 )  # HTTPException(status_code=400, detail="输出格式无效")
-            if not node.node_id in self.context:
-                self.context[node.node_id] = [{"result": code_output}]
-            else:
-                self.context[node.node_id].append({"result": code_output})
         elif node.node_type == "vlm":
             message_id = str(uuid.uuid4())
             try:
-                vlm_input = node.data["vlmInput"]
+                if node.data["isChatflowInput"]:
+                    if node.input_skip:
+                        node.input_skip = False
+                        vlm_input = self.user_message
+                    else:
+                        self.execution_stack.append(node)
+                        await self._send_pause_event(node, True)
+                        self.break_workflow_get_input = True
+                        return False
+                else:
+                    vlm_input = node.data["vlmInput"]
                 vlm_input = self.render_template(vlm_input, self.global_variables)
 
                 # 获取流式生成器（假设返回结构化数据块）
@@ -495,11 +526,12 @@ class WorkflowEngine:
                     self.context[node.node_id] = [{"result": "Message generated!"}]
                 else:
                     self.context[node.node_id].append({"result": "Message generated!"})
+                return True
             except Exception as e:
                 # 错误处理
                 raise ValueError(f'{node.node_id}:节点{node.data["name"]}: {str(e)}')
         else:
-            pass
+            return True
 
     async def _send_ai_chunk_event(self, node_id: str, message_id: str, chunk: str):
         """发送单个AI生成块到Redis事件流"""
@@ -513,13 +545,17 @@ class WorkflowEngine:
         }
         await redis_conn.xadd(f"workflow:events:{self.task_id}", event_data)
 
-    async def start(self, resume=False):
+    async def start(self, debug_resume=False, input_resume=False):
         """迭代式执行方法"""
         run_times = len(self.execution_stack)
         for i in range(run_times):
             current_node = self.execution_stack.pop(0)
-            if resume:
-                current_node.skip = True
+            if debug_resume:
+                current_node.debug_skip = True
+            if input_resume:
+                if current_node.node_id in self.breakpoints:
+                    current_node.debug_skip = True
+                current_node.input_skip = True
             await self.execute_workflow(current_node)
 
     async def check_cancellation(self):
@@ -529,24 +565,21 @@ class WorkflowEngine:
         if status == b"canceling" or status == "canceling":
             logger.error("Workflow canceled by user！")
             await self.cleanup()
-            raise asyncio.CancelledError("Workflow canceled")
+            raise ValueError("Workflow canceled")
 
     async def cleanup(self):
         """清理资源"""
         # 1. 停止沙箱容器
         if self.sandbox:
             await self.sandbox.close()
-        
+
         # 2. 更新Redis状态
         redis_conn = await redis.get_task_connection()
         await redis_conn.hset(
             f"workflow:{self.task_id}",
-            mapping={
-                "status": "canceled",
-                "end_time": str(beijing_time_now())
-            }
+            mapping={"status": "canceled", "end_time": str(beijing_time_now())},
         )
-        
+
         # 发送取消事件
         await redis_conn.xadd(
             f"workflow:events:{self.task_id}",

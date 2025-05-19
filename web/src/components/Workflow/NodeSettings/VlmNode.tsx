@@ -49,9 +49,10 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
     updateVlmModelConfig,
     updatePrompt,
     updateVlmInput,
-    changeChatStyle,
+    changeChatflowInput,
+    changeChatflowOutput,
+    changeAddToChatHistory,
     updateDebug,
-    updateChat,
     updateOutput,
   } = useFlowStore();
   const [showConfigModal, setShowConfigModal] = useState(false);
@@ -77,7 +78,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
 
   const handleRunTest = async () => {
     if (!node.data.vlmInput) {
-      alert("LLM query not found!")
+      alert("LLM query not found!");
     }
     if (user?.name) {
       setRunTest(true);
@@ -504,7 +505,9 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
             </div>
             <button
               className=" hover:bg-indigo-600 rounded-full text-base px-3 py-2 hover:text-white flex gap-1 cursor-pointer"
-              onClick={() => changeChatStyle(node.id)}
+              onClick={() =>
+                changeChatflowInput(node.id, !node.data.isChatflowInput)
+              }
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -522,11 +525,11 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
             </button>
           </div>
         </summary>
-        {node.data.isChatStyle ? (
+        {node.data.isChatflowInput ? (
           <div
             className={`rounded-2xl shadow-lg overflow-scroll p-4 w-full mb-2`}
           >
-            <div className="mb-1">Use conversational input</div>
+            <div className="mb-1">Use Chatflow User Input</div>
           </div>
         ) : (
           <div
@@ -568,7 +571,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
               >
                 <path
                   fillRule="evenodd"
-                  d="M2.25 5.25a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3V15a3 3 0 0 1-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 0 1-.53 1.28h-9a.75.75 0 0 1-.53-1.28l.621-.622a2.25 2.25 0 0 0 .659-1.59V18h-3a3 3 0 0 1-3-3V5.25Zm1.5 0v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5Z"
+                  d="M4.848 2.771A49.144 49.144 0 0 1 12 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 0 1-3.476.383.39.39 0 0 0-.297.17l-2.755 4.133a.75.75 0 0 1-1.248 0l-2.755-4.133a.39.39 0 0 0-.297-.17 48.9 48.9 0 0 1-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97ZM6.75 8.25a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 0 1.5h-9a.75.75 0 0 1-.75-.75Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H7.5Z"
                   clipRule="evenodd"
                 />
               </svg>
@@ -628,15 +631,19 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
             className="flex-1 overflow-y-auto scrollbar-hide"
             style={{ overscrollBehavior: "contain" }}
           >
-            {messages? messages.map((message, index) => (
-              <ChatMessage
-              modelConfig={node.data.modelConfig}
-                key={index}
-                message={message}
-                showRefFile={showRefFile}
-                setShowRefFile={setShowRefFile}
-              />
-            )) : <div className="whitespace-pre-wrap p-2">{node.data.chat}</div>}
+            {messages ? (
+              messages.map((message, index) => (
+                <ChatMessage
+                  modelConfig={node.data.modelConfig}
+                  key={index}
+                  message={message}
+                  showRefFile={showRefFile}
+                  setShowRefFile={setShowRefFile}
+                />
+              ))
+            ) : (
+              <div className="whitespace-pre-wrap p-2">{node.data.chat}</div>
+            )}
           </div>
         </div>
       </details>
@@ -705,6 +712,158 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
           className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-gray-100`}
         >
           <div className="whitespace-pre-wrap">{node.data.output}</div>
+        </div>
+      </details>
+      <details className="group w-full" open>
+        <summary className="flex items-center cursor-pointer font-medium w-full">
+          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full font-medium">
+            <div className="flex items-center justify-start gap-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="size-5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M4.804 21.644A6.707 6.707 0 0 0 6 21.75a6.721 6.721 0 0 0 3.583-1.029c.774.182 1.584.279 2.417.279 5.322 0 9.75-3.97 9.75-9 0-5.03-4.428-9-9.75-9s-9.75 3.97-9.75 9c0 2.409 1.025 4.587 2.674 6.192.232.226.277.428.254.543a3.73 3.73 0 0 1-.814 1.686.75.75 0 0 0 .44 1.223ZM8.25 10.875a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25ZM10.875 12a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875-1.125a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              ChatFlow
+              <svg
+                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+          </div>
+        </summary>
+        <div
+          className={`rounded-2xl shadow-lg overflow-scroll p-3 w-full mb-2`}
+        >
+          <div className="relative flex flex-col items-start justify-center gap-2">
+            {" "}
+            <label className="w-full overflow-auto relative inline-flex items-center group p-2 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={node.data.isChatflowInput}
+                onChange={() =>
+                  changeChatflowInput(node.id, !node.data.isChatflowInput)
+                }
+                className="shrink-0 appearance-none h-5 w-5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="absolute size-4 text-white shrink-0"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clipRule="evenodd"
+                  transform="translate(2, 0.2)"
+                />
+              </svg>
+              <div className="ml-2 flex gap-1 items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="size-4 shrink-0 my-auto"
+                >
+                  <path d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z" />
+                  <path d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z" />
+                </svg>
+                <span>Set As Chatflow User Input</span>
+              </div>
+            </label>
+            <label className="w-full overflow-auto relative inline-flex items-center group p-2 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={node.data.isChatflowOutput}
+                onChange={() =>
+                  changeChatflowOutput(node.id, !node.data.isChatflowOutput)
+                }
+                className="shrink-0 appearance-none h-5 w-5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="absolute size-4 text-white shrink-0"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clipRule="evenodd"
+                  transform="translate(2, 0.2)"
+                />
+              </svg>
+              <div className="ml-2 flex gap-1 items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  className="size-4"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M4.804 21.644A6.707 6.707 0 0 0 6 21.75a6.721 6.721 0 0 0 3.583-1.029c.774.182 1.584.279 2.417.279 5.322 0 9.75-3.97 9.75-9 0-5.03-4.428-9-9.75-9s-9.75 3.97-9.75 9c0 2.409 1.025 4.587 2.674 6.192.232.226.277.428.254.543a3.73 3.73 0 0 1-.814 1.686.75.75 0 0 0 .44 1.223ZM8.25 10.875a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25ZM10.875 12a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875-1.125a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <span>Set As Chatflow AI Response</span>
+              </div>
+            </label>
+            <label className="w-full overflow-auto relative inline-flex items-center group p-2 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
+              <input
+                type="checkbox"
+                checked={node.data.isAddToChatHistory}
+                onChange={() =>
+                  changeAddToChatHistory(node.id, !node.data.isAddToChatHistory)
+                }
+                className="shrink-0 appearance-none h-5 w-5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                className="absolute size-4 text-white shrink-0"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                  clipRule="evenodd"
+                  transform="translate(2, 0.2)"
+                />
+              </svg>
+              <div className="ml-2 flex gap-1 items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  className="size-4 shrink-0"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 1c3.866 0 7 1.79 7 4s-3.134 4-7 4-7-1.79-7-4 3.134-4 7-4Zm5.694 8.13c.464-.264.91-.583 1.306-.952V10c0 2.21-3.134 4-7 4s-7-1.79-7-4V8.178c.396.37.842.688 1.306.953C5.838 10.006 7.854 10.5 10 10.5s4.162-.494 5.694-1.37ZM3 13.179V15c0 2.21 3.134 4 7 4s7-1.79 7-4v-1.822c-.396.37-.842.688-1.306.953-1.532.875-3.548 1.369-5.694 1.369s-4.162-.494-5.694-1.37A7.009 7.009 0 0 1 3 13.179Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+                <span>Add To Conversation Memory</span>
+              </div>
+            </label>
+          </div>
         </div>
       </details>
       <KnowledgeConfigModal

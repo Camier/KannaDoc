@@ -73,8 +73,10 @@ export const executeWorkflow = async (
   globalVariables: {
     [key: string]: string;
   },
-  resumetTaskId: string,
-  breakpoints: string[]
+  debugResumetTaskId: string,
+  inputResumetTaskId: string,
+  breakpoints: string[],
+  userMessage: string,
 ) => {
   return api.post("/workflow/execute", {
     username: username,
@@ -82,8 +84,10 @@ export const executeWorkflow = async (
     edges: edges,
     start_node: startNode,
     global_variables: globalVariables,
-    resume_task_id: resumetTaskId,
     breakpoints: breakpoints,
+    debug_resume_task_id: debugResumetTaskId,
+    input_resume_task_id: inputResumetTaskId,
+    user_message: userMessage
   });
 };
 
@@ -157,5 +161,5 @@ export const deleteCustomNodes = async (
 };
 
 export const cancelWorkflow = async (username: string, taskId: string) => {
-  return api.get(`/workflow/${username}/${taskId}/cancel`)
+  return api.get(`/workflow/${username}/${taskId}/cancel`);
 };

@@ -124,7 +124,9 @@ export type CustomNode = Node<{
   vlmInput?: string;
   chat?: string;
   debug?: boolean;
-  isChatStyle?: boolean;
+  isChatflowInput?: boolean;
+  isChatflowOutput?: boolean;
+  isAddToChatHistory?: boolean;
 }>;
 
 // 组件 Props 类型

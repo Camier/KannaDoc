@@ -45,7 +45,9 @@ interface FlowState {
   updateConditionCount: (nodeId: string, conditionCount: number) => void;
   updatePrompt: (nodeId: string, Prompt: string) => void;
   updateVlmInput: (nodeId: string, vlmInput: string) => void;
-  changeChatStyle: (nodeId: string) => void;
+  changeChatflowInput: (nodeId: string, isChatflowInput: boolean) => void;
+  changeChatflowOutput: (nodeId: string, isChatflowOutput: boolean) => void;
+  changeAddToChatHistory: (nodeId: string, isAddToChatHistory: boolean) => void;
   getConditionCount: (nodeId: string) => number | undefined;
   updatePackageInfos: (
     nodeId: string,
@@ -193,13 +195,37 @@ export const useFlowStore = create<FlowState>((set, get) => ({
       ),
     }));
   },
-  changeChatStyle: (nodeId) => {
+  changeChatflowInput: (nodeId: string, isChatflowInput: boolean) => {
     set((state) => ({
       nodes: state.nodes.map((node) =>
         node.id === nodeId
           ? {
               ...node,
-              data: { ...node.data, isChatStyle: !node.data.isChatStyle },
+              data: { ...node.data, isChatflowInput },
+            }
+          : node
+      ),
+    }));
+  },
+  changeChatflowOutput: (nodeId: string, isChatflowOutput: boolean) => {
+    set((state) => ({
+      nodes: state.nodes.map((node) =>
+        node.id === nodeId
+          ? {
+              ...node,
+              data: { ...node.data, isChatflowOutput },
+            }
+          : node
+      ),
+    }));
+  },
+  changeAddToChatHistory: (nodeId: string, isAddToChatHistory: boolean) => {
+    set((state) => ({
+      nodes: state.nodes.map((node) =>
+        node.id === nodeId
+          ? {
+              ...node,
+              data: { ...node.data, isAddToChatHistory },
             }
           : node
       ),

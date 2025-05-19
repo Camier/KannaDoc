@@ -16,6 +16,7 @@ from app.workflow.workflow_engine import WorkflowEngine
 from app.models.user import User
 from app.db.mongo import MongoDB, get_mongo
 from app.utils.kafka_producer import kafka_producer_manager
+from app.core.logging import logger
 
 router = APIRouter()
 
@@ -45,8 +46,8 @@ async def execute_workflow(
     # 初始化Redis状态
     redis_conn = await redis.get_task_connection()
 
-    if workflow.resume_task_id:
-        task_id = workflow.resume_task_id
+    if workflow.debug_resume_task_id or workflow.input_resume_task_id:
+        task_id = workflow.debug_resume_task_id if workflow.debug_resume_task_id else workflow.input_resume_task_id
         # 1. 合并更新全局变量
         state_key = f"workflow:{task_id}:state"
         state = await redis_conn.get(state_key)
@@ -109,8 +110,11 @@ async def execute_workflow(
         task_id=task_id,
         workflow_data=workflow.model_dump(),
         username=current_user.username,
-        resume=True if workflow.resume_task_id else False,
+        debug_resume=True if workflow.debug_resume_task_id else False,
+        input_resume=True if workflow.input_resume_task_id else False,
     )
+
+    logger.info(f"kafka produce workflow:{task_id}")
 
     return {"code": 0, "task_id": task_id, "msg": "Task queued"}
 
@@ -347,7 +351,7 @@ async def delete_workflow(
 
 
 @router.get("/nodes/{username}", response_model=dict)
-async def delete_workflow(
+async def get_custom_nodes(
     username: str,
     db: MongoDB = Depends(get_mongo),
     current_user: User = Depends(get_current_user),

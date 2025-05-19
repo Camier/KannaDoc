@@ -58,11 +58,18 @@ class KafkaProducerManager:
         task_id: str,
         username: str,
         workflow_data: dict,
-        resume: bool = False,
+        debug_resume: bool = False,
+        input_resume: bool = False,
         priority: str = "normal"
     ):
+        if debug_resume:
+            workflow_type = "debug_resume"
+        elif input_resume:
+            workflow_type = "input_resume"
+        else:
+            workflow_type = "workflow"
         message = {
-            "type": "workflow_resume" if resume else "workflow",
+            "type": workflow_type,
             "task_id": task_id,
             "username": username,
             "workflow_data": workflow_data
