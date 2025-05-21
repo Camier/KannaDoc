@@ -431,7 +431,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
           <div className="flex justify-center items-center h-full">
             <textarea
               ref={textareaRef}
-              className="pl-11 pr-8 w-full py-3 min-h-[40%] max-h-[100%] border-indigo-500 border-2 rounded-xl text-base focus:outline-hidden focus:border-indigo-600 focus:border-[2.5px] resize-none overflow-y-auto"
+              className="pl-11 pr-8 w-full py-3 min-h-[40%] max-h-[100%] border-indigo-500 border-2 rounded-3xl text-base focus:outline-hidden focus:border-indigo-600 focus:border-[2.5px] resize-none overflow-y-auto"
               placeholder="Press Shift+Enter to send..."
               value={inputMessage}
               rows={1}

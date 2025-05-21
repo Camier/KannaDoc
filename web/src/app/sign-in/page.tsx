@@ -81,7 +81,7 @@ const SignInPage = () => {
     <div className="absolute w-full h-full top-0 left-0 min-h-screen flex items-center justify-center opacity-100 scrollbar-hide">
       {showAlert.show && <Alert showAlert={showAlert} />}
       <div
-        className={`w-full max-w-[30%] space-y-8 p-10 bg-white rounded-xl shadow-lg z-10  opacity-80`}
+        className={`w-full max-w-[30%] space-y-8 p-10 bg-white rounded-3xl shadow-lg z-10  opacity-80`}
       >
         <h1
           className={`text-center text-3xl font-extrabold text-transparent bg-clip-text
@@ -110,7 +110,7 @@ const SignInPage = () => {
               onChange={(e) => setName(e.target.value)}
               autoComplete="name"
               required
-              className={`mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-xs focus:outline-hidden focus:border-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
+              className={`mt-1 w-full px-3 py-2 border border-gray-300 rounded-xl shadow-xs focus:outline-hidden focus:border-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
             />
           </div>
 
@@ -130,7 +130,7 @@ const SignInPage = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 autoComplete="email"
                 required
-                className={`mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-xs focus:outline-hidden focus:border-2 focus:ring-indigo-500 focus:border-indigo-500
+                className={`mt-1 w-full px-3 py-2 border border-gray-300 rounded-xl shadow-xs focus:outline-hidden focus:border-2 focus:ring-indigo-500 focus:border-indigo-500
                      sm:text-sm`}
               />
             </div>
@@ -151,7 +151,7 @@ const SignInPage = () => {
               onChange={(e) => setPassword(e.target.value)}
               autoComplete="current-password"
               required
-              className={`mt-1 w-full px-3 py-2 border border-gray-300 rounded-md shadow-xs focus:outline-hidden focus:border-2 "focus:ring-indigo-500 focus:border-indigo-500"
+              className={`mt-1 w-full px-3 py-2 border border-gray-300 rounded-xl shadow-xs focus:outline-hidden focus:border-2 "focus:ring-indigo-500 focus:border-indigo-500"
                   focus:ring-slate-600 focus:border-slate-600 sm:text-sm`}
             />
           </div>
@@ -159,7 +159,7 @@ const SignInPage = () => {
           <div>
             <button
               type="submit"
-              className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-xs text-sm font-medium text-white
+              className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-xl shadow-xs text-sm font-medium text-white
                 bg-indigo-600 hover:bg-indigo-700 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer disabled:cursor-not-allowed`}
               disabled={pending}
             >

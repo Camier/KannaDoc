@@ -14,7 +14,7 @@ const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
 }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/50">
-      <div className="bg-white rounded-2xl shadow-lg p-6 w-[30%]">
+      <div className="bg-white rounded-3xl shadow-lg p-6 w-[30%]">
         <div className="flex gap-1 items-center text-red-500 mb-6">
           <svg
             xmlns="http://www.w3.org/2000/svg"

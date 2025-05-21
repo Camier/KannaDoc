@@ -256,8 +256,6 @@ class ChatService:
 
         ai_message = {"role": "assistant", "content": "".join(full_response)}
         # 保存AI响应到mongodb
-        # await repository.save_ai_message(conversation_id, "".join(full_response))
-
         await db.add_turn(
             conversation_id=user_message_content.conversation_id,
             message_id=message_id,

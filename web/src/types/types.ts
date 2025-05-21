@@ -22,7 +22,7 @@ export interface Message {
 export interface Chat {
   name: string;
   conversationId: string;
-  lastModityTime: string;
+  lastModifyTime: string;
   isRead: boolean;
   createTime: string;
   messages: Message[];
@@ -31,7 +31,7 @@ export interface Chat {
 export interface Base {
   name: string;
   baseId: string;
-  lastModityTime: string;
+  lastModifyTime: string;
   createTime: string;
   fileNumber: number;
 }
@@ -126,7 +126,7 @@ export type CustomNode = Node<{
   debug?: boolean;
   isChatflowInput?: boolean;
   isChatflowOutput?: boolean;
-  isAddToChatHistory?: boolean;
+  useChatHistory?: boolean;
 }>;
 
 // 组件 Props 类型
@@ -171,7 +171,7 @@ export const nodeTypesInfo: Record<
 export interface Flow {
   name: string;
   flowId: string;
-  lastModityTime: string;
+  lastModifyTime: string;
   createTime: string;
 }
 
@@ -188,5 +188,14 @@ export interface WorkflowAll {
     [key: string]: string;
   };
   createTime: string;
-  lastModityTime: string;
+  lastModifyTime: string;
+}
+
+export interface Chatflow {
+  name: string;
+  chatflowId: string;
+  lastModifyTime: string;
+  isRead: boolean;
+  createTime: string;
+  messages: Message[];
 }

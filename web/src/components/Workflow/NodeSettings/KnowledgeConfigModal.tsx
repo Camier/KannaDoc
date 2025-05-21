@@ -361,7 +361,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                       {/* 自定义触发按钮 */}
                       <div
                         onClick={() => setShowDropdown(!showDropdown)}
-                        className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-xl cursor-pointer bg-white flex items-center justify-between hover:border-indigo-500 transition-colors"
+                        className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-3xl cursor-pointer bg-white flex items-center justify-between hover:border-indigo-500 transition-colors"
                       >
                         <span className="text-gray-700">
                           {node.data.modelConfig?.modelName}
@@ -385,7 +385,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
 
                       {/* 自定义下拉框 */}
                       {showDropdown && (
-                        <div className="p-1 absolute w-full mt-1 bg-white border border-gray-200 rounded-xl shadow-lg z-50 overflow-hidden">
+                        <div className="p-1 absolute w-full mt-1 bg-white border border-gray-200 rounded-3xl shadow-lg z-50 overflow-hidden">
                           <div className="max-h-60 overflow-y-auto">
                             {modelConfigs.map((model) => (
                               <div
@@ -394,7 +394,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                                   handleModelChange(model.modelId);
                                   setShowDropdown(false);
                                 }}
-                                className="px-4 py-2 cursor-pointer rounded-xl transition-colors hover:bg-gray-200"
+                                className="px-4 py-2 cursor-pointer rounded-3xl transition-colors hover:bg-gray-200"
                               >
                                 <div className="w-full flex gap-1 items-center justify-between">
                                   {model.modelName}
@@ -452,7 +452,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                         modelURL: e.target.value,
                       }))
                     }
-                    className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
+                    className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
                     placeholder="https://api.example.com/v1"
                   />
                 </div>
@@ -468,7 +468,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                         apiKey: e.target.value,
                       }))
                     }
-                    className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
+                    className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
                     placeholder="sk-xxxxxxxx"
                   />
                 </div>
@@ -498,13 +498,13 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                 {knowledgeBases.map((base) => (
                   <label
                     key={base.id}
-                    className="overflow-auto relative inline-flex items-center group p-2 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer"
+                    className="overflow-auto relative inline-flex items-center group p-2 border border-gray-200 rounded-3xl hover:bg-gray-50 cursor-pointer"
                   >
                     <input
                       type="checkbox"
                       checked={base.selected}
                       onChange={() => handleBaseToggle(base.id)}
-                      className="shrink-0 appearance-none h-5 w-5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
+                      className="shrink-0 appearance-none h-5 w-5 border-2 border-gray-300 rounded-3xl transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
                     />
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -569,7 +569,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                       Temperature
                       <span className="text-xs text-gray-500 ml-1">(0-1)</span>
                     </label>
-                    <label className="relative inline-flex items-center group p-2 rounded-xl hover:bg-gray-50 cursor-pointer">
+                    <label className="relative inline-flex items-center group p-2 rounded-3xl hover:bg-gray-50 cursor-pointer">
                       <input
                         type="checkbox"
                         checked={node.data.modelConfig?.useTemperatureDefault}
@@ -579,7 +579,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                             useTemperatureDefault: e.target.checked,
                           }))
                         }
-                        className="appearance-none h-5 w-5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
+                        className="appearance-none h-5 w-5 border-2 border-gray-300 rounded-3xl transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
                       />
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -612,7 +612,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                       }))
                     }
                     disabled={node.data.modelConfig?.useTemperatureDefault}
-                    className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+                    className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
                   />
                 </div>
 
@@ -625,7 +625,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                         (1024-1048576)
                       </span>
                     </label>
-                    <label className="relative inline-flex items-center group p-2 rounded-xl hover:bg-gray-50 cursor-pointer">
+                    <label className="relative inline-flex items-center group p-2 rounded-3xl hover:bg-gray-50 cursor-pointer">
                       <input
                         type="checkbox"
                         checked={node.data.modelConfig?.useMaxLengthDefault}
@@ -635,7 +635,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                             useMaxLengthDefault: e.target.checked,
                           }))
                         }
-                        className="appearance-none h-5 w-5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
+                        className="appearance-none h-5 w-5 border-2 border-gray-300 rounded-3xl transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
                       />
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -667,7 +667,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                       }))
                     }
                     disabled={node.data.modelConfig?.useMaxLengthDefault}
-                    className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+                    className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
                   />
                 </div>
 
@@ -678,7 +678,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                       Top-P
                       <span className="text-xs text-gray-500 ml-1">(0-1)</span>
                     </label>
-                    <label className="relative inline-flex items-center group p-2 rounded-xl hover:bg-gray-50 cursor-pointer">
+                    <label className="relative inline-flex items-center group p-2 rounded-3xl hover:bg-gray-50 cursor-pointer">
                       <input
                         type="checkbox"
                         checked={node.data.modelConfig?.useTopPDefault}
@@ -688,7 +688,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                             useTopPDefault: e.target.checked,
                           }))
                         }
-                        className="appearance-none h-5 w-5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
+                        className="appearance-none h-5 w-5 border-2 border-gray-300 rounded-3xl transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
                       />
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -721,7 +721,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                       }))
                     }
                     disabled={node.data.modelConfig?.useTopPDefault}
-                    className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+                    className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
                   />
                 </div>
                 {/* Knowledge-Base Top-K */}
@@ -731,7 +731,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                       Knowledge-Base Top-K
                       <span className="text-xs text-gray-500 ml-1">(1-30)</span>
                     </label>
-                    <label className="relative inline-flex items-center group p-2 rounded-xl hover:bg-gray-50 cursor-pointer">
+                    <label className="relative inline-flex items-center group p-2 rounded-3xl hover:bg-gray-50 cursor-pointer">
                       <input
                         type="checkbox"
                         checked={node.data.modelConfig?.useTopKDefault}
@@ -741,7 +741,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                             useTopKDefault: e.target.checked,
                           }))
                         }
-                        className="appearance-none h-5 w-5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
+                        className="appearance-none h-5 w-5 border-2 border-gray-300 rounded-3xl transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
                       />
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -774,7 +774,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                       }))
                     }
                     disabled={node.data.modelConfig?.useTopKDefault}
-                    className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+                    className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
                   />
                 </div>
               </div>

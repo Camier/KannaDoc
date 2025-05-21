@@ -5,6 +5,7 @@ from app.api.endpoints import chat
 from app.api.endpoints import config
 from app.api.endpoints import base
 from app.api.endpoints import workflow
+from app.api.endpoints import chatflow
 from app.core.config import settings
 
 api_router = APIRouter(prefix=settings.api_version_url)
@@ -14,3 +15,4 @@ api_router.include_router(base.router, prefix="/base", tags=["base"])
 api_router.include_router(sse.router, prefix="/sse", tags=["chat"])
 api_router.include_router(config.router, prefix="/config", tags=["config"])
 api_router.include_router(workflow.router, prefix="/workflow", tags=["workflow"])
+api_router.include_router(chatflow.router, prefix="/chatflow", tags=["chatflow"])

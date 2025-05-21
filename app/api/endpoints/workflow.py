@@ -277,11 +277,6 @@ async def get_workflow(
     if not workflow:
         raise HTTPException(status_code=404, detail="Workflow not found")
 
-    user_files = []
-    for node in workflow["nodes"]:
-        if temp_db := node["data"].get("temp_db"):
-            user_files.append(await db.get_files_by_knowledge_base_id(temp_db))
-
     return {
         "workflow_id": workflow["workflow_id"],
         "workflow_name": workflow["workflow_name"],

@@ -111,6 +111,9 @@ class KafkaConsumerManager:
                 task_id=task_id,  # 传递task_id用于状态更新
                 breakpoints=workflow_data["breakpoints"],
                 user_message=workflow_data["user_message"],
+                parent_id=workflow_data["parent_id"],
+                temp_db_id=workflow_data["temp_db_id"],
+                chatflow_id=workflow_data["chatflow_id"],
             ) as engine:
 
                 # 加载状态（如果是恢复执行）

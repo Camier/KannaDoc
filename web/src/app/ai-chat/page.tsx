@@ -101,7 +101,7 @@ const AIChat: React.FC = () => {
           name: item.conversation_name,
           conversationId: item.conversation_id,
           isRead: item.is_read,
-          lastModityTime: item.last_modify_at,
+          lastModifyTime: item.last_modify_at,
           createTime: item.created_at,
           messages: [],
         }));

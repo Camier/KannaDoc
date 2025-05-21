@@ -124,7 +124,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
         {filteredFlows.map((flow, index) => (
           <div
             key={index}
-            className={`py-2 my-2 hover:bg-indigo-200  cursor-pointer rounded-2xl flex justify-between items-start ${
+            className={`py-2 my-2 hover:bg-indigo-200  cursor-pointer rounded-3xl flex justify-between items-start ${
               selectedFlow === flow.flowId ? "bg-indigo-500" : ""
             }`}
           >
@@ -248,7 +248,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                   selectedFlow === flow.flowId ? "text-white" : ""
                 }`}
               >
-                {flow.lastModityTime}
+                {flow.lastModifyTime}
               </p>
             </div>
           </div>

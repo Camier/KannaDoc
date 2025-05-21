@@ -25,3 +25,11 @@ export const getTimeLabel = (lastModifyAt: string): string => {
       return "Earlier";
   }
 };
+
+export  const parseToBeijingTime = (timeString: string) => {
+    // 创建Date对象（假设输入时间是UTC时间）
+    const date = new Date(timeString);
+
+    // 转换为北京时间（UTC+8）
+    return new Date(date.getTime() + 8 * 60 * 60 * 1000);
+  };

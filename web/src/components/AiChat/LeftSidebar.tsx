@@ -187,11 +187,11 @@ const LeftSidebar: React.FC<SidebarProps> = ({
       <div className="border-b-2 border-gray-200 h-[1%] w-[80%]"></div>
       <div className="px-2 w-full flex-1 overflow-auto scrollbar-hide mt-2">
         {chatHistory.map((chat, index) => {
-          const timeLabel = getTimeLabel(chat.lastModityTime);
+          const timeLabel = getTimeLabel(chat.lastModifyTime);
           const lastTimeLabel = getTimeLabel(
             index === 0
-              ? chat.lastModityTime
-              : chatHistory[index - 1].lastModityTime
+              ? chat.lastModifyTime
+              : chatHistory[index - 1].lastModifyTime
           );
           const isFirstInGroup = index === 0 || timeLabel !== lastTimeLabel;
           return (
@@ -205,7 +205,7 @@ const LeftSidebar: React.FC<SidebarProps> = ({
                   chatId === chat.conversationId
                     ? "bg-indigo-500 text-white"
                     : ""
-                } hover:bg-indigo-300 hover:text-white rounded-xl`}
+                } hover:bg-indigo-300 hover:text-white rounded-2xl`}
               >
                 <div
                   key={index}

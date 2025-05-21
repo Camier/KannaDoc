@@ -19,7 +19,7 @@ const SaveCustomNode: React.FC<SaveCustomNodeProps> = ({
 }) => {
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-2xl p-6 w-[35%]">
+      <div className="bg-white rounded-3xl p-6 w-[35%]">
         <div className="flex items-center gap-2 mb-6">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -29,13 +29,13 @@ const SaveCustomNode: React.FC<SaveCustomNodeProps> = ({
           >
             <path d="M10.75 16.82A7.462 7.462 0 0 1 15 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0 0 18 15.06v-11a.75.75 0 0 0-.546-.721A9.006 9.006 0 0 0 15 3a8.963 8.963 0 0 0-4.25 1.065V16.82ZM9.25 4.065A8.963 8.963 0 0 0 5 3c-.85 0-1.673.118-2.454.339A.75.75 0 0 0 2 4.06v11a.75.75 0 0 0 .954.721A7.506 7.506 0 0 1 5 15.5c1.579 0 3.042.487 4.25 1.32V4.065Z" />
           </svg>
-          <h3 className="text-lg font-medium">New Work-Flow</h3>
+          <h3 className="text-lg font-medium">New Custom-Node</h3>
         </div>
         <div className="px-4 w-full">
           <input
             type="text"
-            placeholder="Write your Work-Flow name..."
-            className={`w-full px-4 py-2 mb-2 border border-gray-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 ${
+            placeholder="Write your Custom-Node name..."
+            className={`w-full px-4 py-2 mb-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 ${
               nameError ? "border-red-500" : "border-gray-300"
             }`}
             value={newNodeName}

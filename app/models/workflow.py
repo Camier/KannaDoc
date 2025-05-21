@@ -31,6 +31,10 @@ class Workflow(BaseModel):
     breakpoints: list = []
     input_resume_task_id: str = ""
     user_message: str = ""
+    parent_id: str = ""
+    temp_db_id: str = ""
+    chatflow_id: str = ""
+
 
 class WorkflowCreate(BaseModel):
     username: str
@@ -47,6 +51,7 @@ class WorkflowRenameInput(BaseModel):
     workflow_id: str
     workflow_new_name: str
 
+
 class NodesInput(BaseModel):
     username: str
     custom_node_name: str
@@ -55,6 +60,12 @@ class NodesInput(BaseModel):
 
 class LLMInputOnce(BaseModel):
     username: str
-    user_message:str
-    llm_model_config:dict
-    system_prompt:str
+    user_message: str
+    llm_model_config: dict
+    system_prompt: str
+
+class UserMessage(BaseModel):
+    conversation_id: str
+    parent_id: str
+    user_message: str
+    temp_db_id: str

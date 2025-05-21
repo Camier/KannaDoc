@@ -142,7 +142,7 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
   return (
     <div className="flex-1 h-full">
       {selectedBase ? (
-        <div className="bg-white p-6 rounded-xl shadow-sm h-full  flex flex-col">
+        <div className="bg-white p-6 rounded-3xl shadow-sm h-full  flex flex-col">
           <div className="h-[15%]">
             <div className="flex items-center gap-2 mb-2 justify-between">
               <div className="flex items-center gap-2 max-w-[70%] overflow-scroll scrollbar-hide">
@@ -225,7 +225,7 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
 
           {/* 上传区域 */}
           <div
-            className={`h-[25%] mb-6 flex flex-col items-center justify-center border-2 border-dashed rounded-2xl p-8 text-center transition-all
+            className={`h-[25%] mb-6 flex flex-col items-center justify-center border-2 border-dashed rounded-3xl p-8 text-center transition-all
                   ${
                     dragActive
                       ? "border-indigo-500 bg-indigo-50 scale-[1.02]"
@@ -291,13 +291,13 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
           </div>
         </div>
       ) : (
-        <div className="h-full flex items-center justify-center bg-white rounded-xl shadow-sm flex-col pb-6">
+        <div className="h-full flex items-center justify-center bg-white rounded-3xl shadow-sm flex-col pb-6">
           <div className="flex items-center justify-center h-[10%] w-full">
             <p className="text-gray-500 text-xl">
               Please choose a Knowledge-Base to upload
             </p>
           </div>
-          <div className="h-[90%] flex flex-col bg-white rounded-xl shadow-sm p-6 w-[90%]">
+          <div className="h-[90%] flex flex-col bg-white rounded-3xl shadow-sm p-6 w-[90%]">
             <div className="mb-6 flex items-center justify-between h-[10%]">
               <h2 className="text-2xl font-bold flex items-center gap-2">
                 <svg

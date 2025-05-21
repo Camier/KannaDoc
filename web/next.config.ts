@@ -11,6 +11,8 @@ const nextConfig: NextConfig = {
         pathname: '/ai-chat/**', // 允许所有路径
       },
     ], // 允许加载来自 minio 的图片
+        // 允许 data URLs
+    domains: ['data:'],
   },
 };
 

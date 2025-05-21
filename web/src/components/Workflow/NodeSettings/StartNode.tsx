@@ -1,3 +1,4 @@
+import MarkdownDisplay from "@/components/AiChat/MarkdownDisplay";
 import { useFlowStore } from "@/stores/flowStore";
 import { useGlobalStore } from "@/stores/pythonVariableStore";
 import { CustomNode } from "@/types/types";
@@ -196,7 +197,7 @@ const StartNodeComponent: React.FC<StartNodeProps> = ({
                   clipRule="evenodd"
                 />
               </svg>
-              <span>Add Variable</span>
+              <span>Click to Add</span>
             </div>
           </div>
           {Object.keys(
@@ -294,7 +295,16 @@ const StartNodeComponent: React.FC<StartNodeProps> = ({
         <div
           className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-gray-100`}
         >
-          <div className="whitespace-pre-wrap">{node.data.output}</div>
+          <MarkdownDisplay
+            md_text={node.data.output || ""}
+            message={{
+              type: "text",
+              content: node.data.output || "",
+              from: "ai", // 消息的来源
+            }}
+            showTokenNumber={true}
+            isThinking={false}
+          />
         </div>
       </details>
     </div>

@@ -54,18 +54,28 @@ class MongoDB:
                 name="user_conversations",
             )
 
+            # chatflow集合索引
+            await self.db.chatflow.create_index(
+                [("chatflow_id", 1)],
+                unique=True,  # 唯一索引
+                name="unique_chatflow_id",
+            )
+            await self.db.chatflow.create_index(
+                [("workflow", 1), ("last_modify_at", -1)],  # 复合排序索引
+                name="workflow_chatflows",
+            )
+
             # workflow索引
             # 复合唯一索引（用户+工作流ID唯一性）
             await self.db.workflows.create_index(
                 [("username", 1), ("workflow_id", 1)],
                 unique=True,
-                name="username_workflow_id_unique"
+                name="username_workflow_id_unique",
             )
 
             # 复合排序索引（按用户和修改时间排序）
             await self.db.workflows.create_index(
-                [("username", 1), ("last_modify_at", -1)],
-                name="user_workflows"
+                [("username", 1), ("last_modify_at", -1)], name="user_workflows"
             )
 
             logger.info("MongoDB 索引创建完成")
@@ -550,6 +560,173 @@ class MongoDB:
                 "knowledge_base_deletion": deletion_results,
             }
         return {"status": "failed", "message": "No conversations found"}
+
+    # chatflow
+    async def create_chatflow(
+        self, chatflow_id: str, chatflow_name: str, username: str, workflow_id: str
+    ):
+        """创建一个新的会话"""
+
+        chatflow = {
+            "chatflow_id": chatflow_id,
+            "workflow_id": workflow_id,
+            "chatflow_name": chatflow_name,
+            "username": username,
+            "turns": [],  # 初始时为空列表，后续添加对话轮次
+            "created_at": beijing_time_now(),
+            "last_modify_at": beijing_time_now(),
+            "is_read": False,
+            "is_delete": False,
+        }
+        try:
+            existing = await self.db.chatflows.find_one({"chatflow_id": chatflow_id})
+            if existing:
+                return {"status": "success", "message": "chatflow已存在，跳过创建"}  
+              
+            await self.db.chatflows.insert_one(chatflow)
+            return {"status": "success", "id": chatflow_id}
+        except DuplicateKeyError:
+            logger.warning(f"chatflowID冲突: {chatflow_id}")
+            return {"status": "failed", "message": "chatflowID已存在，请勿重复创建"}
+        except Exception as e:
+            logger.error(f"创建chatflow失败: {str(e)}")
+            return {"status": "error", "message": f"数据库错误: {str(e)}"}
+
+    async def get_chatflow(self, chatflow_id: str):
+        """获取指定 chatflow_id 的完整会话记录"""
+        chatflow = await self.db.chatflows.find_one(
+            {"chatflow_id": chatflow_id, "is_delete": False}
+        )
+        return chatflow if chatflow else None
+
+    async def get_chatflows_by_workflow_id(self, workflow_id: str) -> List[Dict[str, Any]]:
+        """按时间降序获取指定用户的所有会话"""
+        cursor = self.db.chatflows.find(
+            {"workflow_id": workflow_id, "is_delete": False}
+        ).sort(
+            "last_modify_at", -1
+        )  # -1 表示降序排列
+        return await cursor.to_list(length=None)  # 返回所有匹配的记录
+
+    async def update_chatflow_name(self, chatflow_id: str, new_name: str) -> dict:
+        result = await self.db.chatflows.update_one(
+            {"chatflow_id": chatflow_id, "is_delete": False},
+            {
+                "$set": {
+                    "chatflow_name": new_name,
+                    "last_modify_at": beijing_time_now(),
+                }
+            },
+        )
+        if result.modified_count == 0:
+            return {
+                "status": "failed",
+                "message": "chatflow not found or update failed",
+            }
+        return {"status": "success"}
+
+    async def chatflow_add_turn(
+        self,
+        chatflow_id: str,
+        message_id: str,
+        parent_message_id: str,
+        user_message: str = "",
+        ai_message: str = "",
+        file_used: list = [],
+        temp_db: str = "",
+        status: str = "",
+        total_token: int = 0,
+        completion_tokens: int = 0,
+        prompt_tokens: int = 0,
+    ) -> Dict[str, Any]:
+        """向指定的 chatflow_id 中添加一轮chatflow"""
+        turn = {
+            "message_id": message_id,
+            "parent_message_id": parent_message_id,
+            "user_message": user_message,
+            "temp_db": temp_db,
+            "ai_message": ai_message,
+            "file_used": file_used,
+            "status": status,
+            "timestamp": beijing_time_now(),
+            "total_token": total_token,
+            "completion_tokens": completion_tokens,
+            "prompt_tokens": prompt_tokens,
+        }
+        result = await self.db.chatflows.update_one(
+            {"chatflow_id": chatflow_id, "is_delete": False},
+            {
+                "$push": {
+                    "turns": turn,
+                },
+                "$set": {"last_modify_at": beijing_time_now()},
+            },
+        )
+        return {"status": "success" if result.modified_count > 0 else "failed"}
+
+    async def delete_chatflow(self, chatflow_id: str) -> dict:
+        """根据 chatflow_id 删除指定会话，并删除关联的临时知识库"""
+        # 获取chatflow文档
+        chatflow = await self.db.chatflows.find_one({"chatflow_id": chatflow_id})
+        if not chatflow:
+            return {"status": "failed", "message": "chatflow not found"}
+
+        # 收集所有关联的临时知识库ID
+        temp_dbs = []
+        for turn in chatflow.get("turns", []):
+            if temp_db := turn.get("temp_db"):
+                if temp_db.strip():  # 过滤空值
+                    temp_dbs.append(temp_db.strip())
+
+        # 去重并删除临时知识库
+        deletion_results = []
+        for db_id in set(temp_dbs):
+            result = await self.delete_knowledge_base(db_id)
+            deletion_results.append({"knowledge_base_id": db_id, "result": result})
+            milvus_client.delete_collection("colqwen" + db_id.replace("-", "_"))
+
+        # 删除chatflow文档
+        delete_result = await self.db.chatflows.delete_one({"chatflow_id": chatflow_id})
+
+        if delete_result.deleted_count == 1:
+            return {
+                "status": "success",
+                "message": f"chatflow {chatflow_id} deleted",
+                "knowledge_base_deletion": deletion_results,
+            }
+        return {"status": "failed", "message": "chatflow not found"}
+
+    async def delete_workflow_all_chatflow(self, workflow_id: str) -> dict:
+        """删除指定用户的所有会话及关联的临时知识库"""
+        # 获取用户所有chatflow
+        chatflows = await self.db.chatflows.find({"workflow_id":  workflow_id}).to_list(
+            length=None
+        )
+        # 收集所有临时知识库ID
+        temp_dbs = []
+        for conv in chatflows:
+            for turn in conv.get("turns", []):
+                if temp_db := turn.get("temp_db"):
+                    if temp_db.strip():
+                        temp_dbs.append(temp_db.strip())
+
+        # 去重并删除临时知识库
+        deletion_results = []
+        for db_id in set(temp_dbs):
+            result = await self.delete_knowledge_base(db_id)
+            deletion_results.append({"knowledge_base_id": db_id, "result": result})
+            milvus_client.delete_collection("colqwen" + db_id.replace("-", "_"))
+
+        # 删除所有chatflow文档
+        delete_result = await self.db.chatflows.delete_many({"workflow_id":  workflow_id})
+
+        if delete_result.deleted_count > 0:
+            return {
+                "status": "success",
+                "deleted_count": delete_result.deleted_count,
+                "knowledge_base_deletion": deletion_results,
+            }
+        return {"status": "failed", "message": "No chatflows found"}
 
     # knowledge base
     async def create_knowledge_base(
@@ -1169,17 +1346,14 @@ class MongoDB:
         edges: list = None,
     ):
         """创建或更新一个工作流"""
-        
+
         # 处理可变默认参数
         global_variables = global_variables if global_variables is not None else {}
         nodes = nodes if nodes is not None else []
         edges = edges if edges is not None else []
 
         current_time = beijing_time_now()
-        query = {
-            "workflow_id": workflow_id,
-            "username": username
-        }
+        query = {"workflow_id": workflow_id, "username": username}
         update = {
             "$set": {
                 "workflow_name": workflow_name,
@@ -1189,22 +1363,31 @@ class MongoDB:
                 "start_node": start_node,
                 "global_variables": global_variables,
                 "last_modify_at": current_time,
-                "is_delete": False
+                "is_delete": False,
             },
-            "$setOnInsert": {
-                "created_at": current_time
-            }
+            "$setOnInsert": {"created_at": current_time},
         }
-        
+
         try:
             result = await self.db.workflows.update_one(query, update, upsert=True)
             if result.upserted_id is not None:
-                return {"status": "success", "message": "Workflow created", "id": workflow_id}
+                return {
+                    "status": "success",
+                    "message": "Workflow created",
+                    "id": workflow_id,
+                }
             else:
-                return {"status": "success", "message": "Workflow updated", "id": workflow_id}
+                return {
+                    "status": "success",
+                    "message": "Workflow updated",
+                    "id": workflow_id,
+                }
         except DuplicateKeyError:
             logger.error(f"Workflow ID冲突: {workflow_id}")
-            return {"status": "failed", "message": "Workflow ID已存在，请检查用户名和ID组合"}
+            return {
+                "status": "failed",
+                "message": "Workflow ID已存在，请检查用户名和ID组合",
+            }
         except Exception as e:
             logger.error(f"保存workflow失败: {str(e)}")
             return {"status": "error", "message": f"数据库错误: {str(e)}"}
@@ -1225,9 +1408,7 @@ class MongoDB:
         )  # -1 表示降序排列
         return await cursor.to_list(length=None)  # 返回所有匹配的记录
 
-    async def update_workflow_name(
-        self, workflow_id: str, new_name: str
-    ) -> dict:
+    async def update_workflow_name(self, workflow_id: str, new_name: str) -> dict:
         result = await self.db.workflows.update_one(
             {"workflow_id": workflow_id, "is_delete": False},
             {
@@ -1247,36 +1428,23 @@ class MongoDB:
     async def delete_workflow(self, workflow_id: str) -> dict:
         """根据 workflow_id 删除指定workflow，并删除关联的临时知识库"""
         # 获取对话文档
-        workflow = await self.db.workflows.find_one(
-            {"workflow_id": workflow_id}
-        )
+        workflow = await self.db.workflows.find_one({"workflow_id": workflow_id})
         if not workflow:
             return {"status": "failed", "message": "Workflow not found"}
 
-        # 收集所有关联的临时知识库ID
-        temp_dbs = []
-        for node in workflow.get("nodes", []):
-            if temp_db := node["data"].get("temp_db"):
-                if temp_db.strip():  # 过滤空值
-                    temp_dbs.append(temp_db.strip())
-
         # 去重并删除临时知识库
         deletion_results = []
-        for db_id in set(temp_dbs):
-            result = await self.delete_knowledge_base(db_id)
-            deletion_results.append({"knowledge_base_id": db_id, "result": result})
-            milvus_client.delete_collection("colqwen" + db_id.replace("-", "_"))
+        result = await self.delete_workflow_all_chatflow(workflow_id)
+        deletion_results.append({"chatflow_delete_count": result.get("deleted_count","0")})
 
-        # 删除对话文档
-        delete_result = await self.db.workflows.delete_one(
-            {"workflow_id": workflow_id}
-        )
+        # 删除workflow
+        delete_result = await self.db.workflows.delete_one({"workflow_id": workflow_id})
 
         if delete_result.deleted_count == 1:
             return {
                 "status": "success",
                 "message": f"Workflow {workflow_id} deleted",
-                "knowledge_base_deletion": deletion_results,
+                "chatflow_deletion": deletion_results,
             }
         return {"status": "failed", "message": "Workflow not found"}
 
@@ -1295,22 +1463,22 @@ class MongoDB:
                     "$set": {
                         f"custom_nodes.{custom_node_name}": custom_node  # 动态字段名
                     },
-                    "$setOnInsert": {"username": username}  # 仅在插入时设置的字段
+                    "$setOnInsert": {"username": username},  # 仅在插入时设置的字段
                 },
-                upsert=True  # 自动创建新文档
+                upsert=True,  # 自动创建新文档
             )
             return {"status": "success", "message": "Node saved"}
         except Exception as e:
             logger.error(f"保存Node失败: {str(e)}")
             return {"status": "failed", "message": f"数据库错误: {str(e)}"}
-   
+
     # 自定义节点查询方法
     async def get_custom_nodes(self, username: str) -> dict:
         try:
             # 根据用户名查询文档
             result = await self.db.nodes.find_one({"username": username})
             # 如果文档存在且包含custom_nodes字段则返回，否则返回空字典
-            
+
             return result.get("custom_nodes", {}) if result else {}
         except Exception as e:
             logger.error(f"获取custom_nodes失败: {str(e)}")
@@ -1319,7 +1487,7 @@ class MongoDB:
     async def delete_custom_nodes(
         self,
         username: str,
-        custom_node_names: Union[str, List[str]]  # 支持字符串或列表类型
+        custom_node_names: Union[str, List[str]],  # 支持字符串或列表类型
     ) -> dict:
         try:
             # 统一转换为列表格式，简化后续处理
@@ -1327,14 +1495,12 @@ class MongoDB:
                 custom_node_names = [custom_node_names]
 
             # 构建 $unset 操作的字段字典（MongoDB 要求字段值为空字符串）
-            unset_fields = {
-                f"custom_nodes.{name}": "" for name in custom_node_names
-            }
+            unset_fields = {f"custom_nodes.{name}": "" for name in custom_node_names}
 
             # 执行更新操作删除指定字段
             update_result = await self.db.nodes.update_one(
                 {"username": username},  # 查询条件
-                {"$unset": unset_fields}  # 批量删除字段
+                {"$unset": unset_fields},  # 批量删除字段
             )
 
             # 根据是否实际修改返回不同提示
@@ -1342,10 +1508,11 @@ class MongoDB:
                 return {"status": "success", "message": "Nodes deleted"}
             else:
                 return {"status": "info", "message": "No nodes were deleted"}
-                
+
         except Exception as e:
             logger.error(f"删除节点失败: {str(e)}")
             return {"status": "failed", "message": f"数据库错误: {str(e)}"}
+
 
 mongodb = MongoDB()
 

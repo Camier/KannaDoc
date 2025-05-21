@@ -1,6 +1,8 @@
 import { useFlowStore } from "@/stores/flowStore";
 import { CustomNode, NodeTypeKey, nodeTypesInfo } from "@/types/types";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
+import ConfirmDialog from "../ConfirmDialog";
+import { parseToBeijingTime } from "@/utils/date";
 
 interface NodeTypeSelectorProps {
   deleteCustomNode: (custom_node_name: string) => Promise<void>;
@@ -15,6 +17,7 @@ interface NodeTypeSelectorProps {
       [key: string]: CustomNode;
     }>
   >;
+  lastModifyTime: string;
 }
 
 const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({
@@ -24,29 +27,62 @@ const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({
   customNodes,
   setCustomNodes,
   workflowName,
+  lastModifyTime,
 }) => {
   const selectedType = useFlowStore((state) => state.selectedType);
   const setSelectedType = useFlowStore((state) => state.setSelectedType);
+  const [showConfirmDeleteNode, setShowConfirmDeleteNode] = useState<
+    string | null>(null);
+
+
+
+  const confirmDeleteNode = () => {
+    if (showConfirmDeleteNode) {
+      deleteCustomNode(showConfirmDeleteNode);
+      setShowConfirmDeleteNode(null); // 关闭对话框
+    }
+  };
+
+  const cancelDeleteNode = () => {
+    if (showConfirmDeleteNode) {
+      setShowConfirmDeleteNode(null); // 关闭对话框
+    }
+  };
 
   return (
     <div className="space-y-2">
       <ul className="space-y-2">
-        <div className="flex items-center justify-start px-2 gap-1 pb-2">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="size-5 shrink-0"
-          >
-            <path
-              fillRule="evenodd"
-              d="M2.25 6a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V6Zm3.97.97a.75.75 0 0 1 1.06 0l2.25 2.25a.75.75 0 0 1 0 1.06l-2.25 2.25a.75.75 0 0 1-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 0 1 0-1.06Zm4.28 4.28a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z"
-              clipRule="evenodd"
-            />
-          </svg>
+        <div className="flex flex-col items-start justify-center px-2 gap-1">
+          <div className="flex items-center justify-start px-2 gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="size-5 shrink-0"
+            >
+              <path
+                fillRule="evenodd"
+                d="M2.25 6a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V6Zm3.97.97a.75.75 0 0 1 1.06 0l2.25 2.25a.75.75 0 0 1 0 1.06l-2.25 2.25a.75.75 0 0 1-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 0 1 0-1.06Zm4.28 4.28a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z"
+                clipRule="evenodd"
+              />
+            </svg>
 
-          <span className="whitespace-nowrap overflow-auto font-semibold">
-            {workflowName}
+            <span className="whitespace-nowrap overflow-auto font-semibold">
+              {workflowName}
+            </span>
+          </div>
+          <span className="whitespace-nowrap overflow-auto text-xs font-semibold">
+            {
+              parseToBeijingTime(lastModifyTime + "Z")
+                .toISOString()
+                .split("T")[0]
+            }{" "}
+            {
+              parseToBeijingTime(lastModifyTime + "Z")
+                .toISOString()
+                .split("T")[1]
+                .split(".")[0]
+            }
           </span>
         </div>
         <details className="group w-full space-y-2" open>
@@ -121,10 +157,10 @@ const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="size-5 shrink-0 text-indigo-500 hover:text-indigo-700"
+                  className="size-5 shrink-0 hover:text-indigo-700"
                   onClick={(e) => {
                     e.stopPropagation();
-                    deleteCustomNode(name);
+                    setShowConfirmDeleteNode(name);
                   }}
                 >
                   <path
@@ -138,6 +174,13 @@ const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({
           ))}
         </details>
       </ul>
+      {showConfirmDeleteNode && (
+        <ConfirmDialog
+          message={`Confirm the deletion of Custom Node "${showConfirmDeleteNode}"？`}
+          onConfirm={confirmDeleteNode}
+          onCancel={cancelDeleteNode}
+        />
+      )}
     </div>
   );
 };

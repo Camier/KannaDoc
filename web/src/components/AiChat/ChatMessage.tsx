@@ -145,11 +145,11 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
                 <path d="M19.5 21a3 3 0 0 0 3-3v-4.5a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3V18a3 3 0 0 0 3 3h15ZM1.5 10.146V6a3 3 0 0 1 3-3h5.379a2.25 2.25 0 0 1 1.59.659l2.122 2.121c.14.141.331.22.53.22H19.5a3 3 0 0 1 3 3v1.146A4.483 4.483 0 0 0 19.5 9h-15a4.483 4.483 0 0 0-3 1.146Z" />
               </svg>
 
-              <p>
+              <div>
                 {showRefFile.includes(message.messageId)
                   ? "Close References"
                   : "View References"}
-              </p>
+              </div>
               {showRefFile.includes(message.messageId) ? (
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -248,7 +248,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
         {/* 大图弹窗 */}
         {isOpen && (
           <div
-            className="top-0 left-0 w-[100vw] h-[100vh] flex items-center justify-center fixed z-50 bg-black/80"
+            className="overflow-visible top-0 left-0 w-[100vw] h-[100vh] flex items-center justify-center fixed !z-[50000] bg-black/80"
             onClick={handleCloseModal}
           >
             <Image

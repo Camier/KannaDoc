@@ -19,7 +19,7 @@ const AddWorkflow: React.FC<AddWorkflowProps> = ({
 }) => {
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-2xl p-6 w-[35%]">
+      <div className="bg-white rounded-3xl p-6 w-[35%]">
         <div className="flex items-center gap-2 mb-6">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +35,7 @@ const AddWorkflow: React.FC<AddWorkflowProps> = ({
           <input
             type="text"
             placeholder="Write your Work-Flow name..."
-            className={`w-full px-4 py-2 mb-2 border border-gray-200 rounded-xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 ${
+            className={`w-full px-4 py-2 mb-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 ${
               nameError ? "border-red-500" : "border-gray-300"
             }`}
             value={newWorkflowName}

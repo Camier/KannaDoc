@@ -55,7 +55,7 @@ const Workflow = () => {
         const flows: Flow[] = response.data.map((item: any) => ({
           name: item.workflow_name,
           flowId: item.workflow_id,
-          lastModityTime: item.last_modify_at.split("T")[0],
+          lastModifyTime: item.last_modify_at.split("T")[0],
           createTime: item.created_at.split("T")[0],
         }));
         setFlows(flows);
@@ -80,7 +80,7 @@ const Workflow = () => {
           startNode: item.start_node,
           globalVariables: item.global_variables,
           createTime: item.created_at,
-          lastModityTime: item.last_modify_at,
+          lastModifyTime: item.last_modify_at,
         };
         setNodes(item.nodes);
         setEdges(item.edges);
@@ -120,7 +120,7 @@ const Workflow = () => {
             {
               name: "加载中...",
               flowId: "1",
-              lastModityTime: "加载中...",
+              lastModifyTime: "加载中...",
               createTime: "加载中...",
               fileNumber: 0,
             },

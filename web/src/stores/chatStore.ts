@@ -6,6 +6,10 @@ interface ChatState {
   setChatId: (id: string) => void;
   chatName: string;
   setChatName: (name: string) => void;
+  chatflowId: string;
+  setChatflowId: (id: string) => void;
+  chatflowName: string;
+  setChatflowName: (name: string) => void;
 }
 
 const useChatStore = create<ChatState>()(
@@ -14,6 +18,10 @@ const useChatStore = create<ChatState>()(
       setChatId: (id) => set({ chatId: id }),
       chatName: "",
       setChatName: (name) => set({ chatName: name }),
+      chatflowId: "",
+      setChatflowId: (id) => set({ chatflowId: id }),
+      chatflowName: "",
+      setChatflowName: (name) => set({ chatflowName: name }),
     }),
 );
 

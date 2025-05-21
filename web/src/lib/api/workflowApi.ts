@@ -77,6 +77,9 @@ export const executeWorkflow = async (
   inputResumetTaskId: string,
   breakpoints: string[],
   userMessage: string,
+  parentId: string,
+  tempBaseId: string,
+  chatflowId: string
 ) => {
   return api.post("/workflow/execute", {
     username: username,
@@ -87,7 +90,10 @@ export const executeWorkflow = async (
     breakpoints: breakpoints,
     debug_resume_task_id: debugResumetTaskId,
     input_resume_task_id: inputResumetTaskId,
-    user_message: userMessage
+    user_message: userMessage,
+    parent_id: parentId,
+    temp_db_id: tempBaseId,
+    chatflow_id: chatflowId,
   });
 };
 

@@ -6,6 +6,7 @@ import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
 import { FC, useState } from "react";
 import { Message } from "@/types/types";
+import rehypeRaw from "rehype-raw"; // 新增：用于解析原始HTML
 
 interface MarkdownDisplayProps {
   md_text: string;
@@ -103,7 +104,7 @@ const CodeBlock: FC<{
       <div className="absolute right-2 top-0 opacity-0 group-hover:opacity-100 transition-opacity">
         <button
           onClick={handleCopy}
-          className="flex items-center gap-1 text-sm bg-gray-700 rounded-xs px-2 py-1 text-gray-100 hover:bg-gray-600"
+          className="flex items-center gap-1 text-sm bg-gray-700 rounded-xl px-2 py-1 text-gray-100 hover:bg-gray-600"
           aria-label="Copy"
         >
           {!copied ? (
@@ -146,7 +147,7 @@ const CodeBlock: FC<{
         </button>
       </div>
       <code
-        className={`${className} block p-4 rounded-sm overflow-x-auto`}
+        className={`${className} block p-4 rounded-3xl overflow-x-auto`}
         {...props}
       >
         {children}
@@ -154,7 +155,7 @@ const CodeBlock: FC<{
       {/* </pre> */}
     </div>
   ) : (
-    <code className="px-1 py-0.5 rounded-sm" {...props}>
+    <code className="px-1 py-0.5 rounded-3xl" {...props}>
       {children}
     </code>
   );
@@ -172,6 +173,7 @@ const MarkdownDisplay: React.FC<MarkdownDisplayProps> = ({
         <ReactMarkdown
           remarkPlugins={[remarkMath, remarkGfm]} // 必须 math 在前
           rehypePlugins={[
+            rehypeRaw,
             [
               rehypeKatex,
               {
@@ -197,6 +199,36 @@ const MarkdownDisplay: React.FC<MarkdownDisplayProps> = ({
                 >
                   {children}
                 </a>
+              );
+            },
+            // 添加图片处理组件
+            // 修改img组件处理逻辑
+            img({ node, src, alt, title, style, width, height, ...props }) {
+              return (
+                <div className="my-4 relative group">
+                  <div className="overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
+                    <img
+                      src={src}
+                      alt={alt}
+                      title={title}
+                      className="mx-auto object-contain"
+                      style={{
+                        maxWidth: "min(100%, 800px)",
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                      }}
+                      loading="lazy"
+                      decoding="async"
+                      // 传递原生属性
+                      {...props}
+                    />
+                  </div>
+                  {alt && (
+                    <div className="text-center text-sm text-gray-500 dark:text-gray-400 mt-2">
+                      {alt}
+                    </div>
+                  )}
+                </div>
               );
             },
           }}

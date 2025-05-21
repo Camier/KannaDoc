@@ -125,7 +125,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
         {filteredBases.map((base, index) => (
           <div
             key={index}
-            className={`py-2 my-2 hover:bg-indigo-200  cursor-pointer rounded-2xl flex justify-between items-start ${
+            className={`py-2 my-2 hover:bg-indigo-200  cursor-pointer rounded-3xl flex justify-between items-start ${
               selectedBase === base.baseId ? "bg-indigo-500" : ""
             }`}
           >

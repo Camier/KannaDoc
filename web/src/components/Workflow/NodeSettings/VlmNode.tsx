@@ -1,13 +1,14 @@
 import { useAuthStore } from "@/stores/authStore";
 import { useFlowStore } from "@/stores/flowStore";
 import { useGlobalStore } from "@/stores/pythonVariableStore";
-import { CustomNode, Message, ModelConfig } from "@/types/types";
+import { CustomNode, Message, ModelConfig, WorkflowAll } from "@/types/types";
 import { Dispatch, SetStateAction, useState } from "react";
 import KnowledgeConfigModal from "./KnowledgeConfigModal";
 import { updateModelConfig } from "@/lib/api/configApi";
 import Cookies from "js-cookie";
 import { EventSourceParserStream } from "eventsource-parser/stream";
 import ChatMessage from "@/components/AiChat/ChatMessage";
+import MarkdownDisplay from "@/components/AiChat/MarkdownDisplay";
 
 interface VlmNodeProps {
   messages: Message[];
@@ -51,7 +52,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
     updateVlmInput,
     changeChatflowInput,
     changeChatflowOutput,
-    changeAddToChatHistory,
+    changeUseChatHistory,
     updateDebug,
     updateOutput,
   } = useFlowStore();
@@ -338,7 +339,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                   clipRule="evenodd"
                 />
               </svg>
-              <span>Add Variable</span>
+              <span>Click to Add</span>
             </div>
           </div>
           {Object.keys(
@@ -617,16 +618,6 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
         <div
           className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-2`}
         >
-          {/* <MarkdownDisplay
-            md_text={node.data.chat || ""}
-            message={{
-              type: "text",
-              content: node.data.chat || "",
-              from: "ai", // 消息的来源
-            }}
-            showTokenNumber={true}
-            isThinking={false}
-          /> */}
           <div
             className="flex-1 overflow-y-auto scrollbar-hide"
             style={{ overscrollBehavior: "contain" }}
@@ -711,7 +702,16 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
         <div
           className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-gray-100`}
         >
-          <div className="whitespace-pre-wrap">{node.data.output}</div>
+          <MarkdownDisplay
+            md_text={node.data.output || ""}
+            message={{
+              type: "text",
+              content: node.data.output || "",
+              from: "ai", // 消息的来源
+            }}
+            showTokenNumber={true}
+            isThinking={false}
+          />
         </div>
       </details>
       <details className="group w-full" open>
@@ -791,9 +791,12 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
               <input
                 type="checkbox"
                 checked={node.data.isChatflowOutput}
-                onChange={() =>
-                  changeChatflowOutput(node.id, !node.data.isChatflowOutput)
-                }
+                onChange={() => {
+                  if (node.data.isChatflowOutput) {
+                    changeUseChatHistory(node.id, false);
+                  }
+                  changeChatflowOutput(node.id, !node.data.isChatflowOutput);
+                }}
                 className="shrink-0 appearance-none h-5 w-5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
               />
               <svg
@@ -825,44 +828,46 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                 <span>Set As Chatflow AI Response</span>
               </div>
             </label>
-            <label className="w-full overflow-auto relative inline-flex items-center group p-2 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
-              <input
-                type="checkbox"
-                checked={node.data.isAddToChatHistory}
-                onChange={() =>
-                  changeAddToChatHistory(node.id, !node.data.isAddToChatHistory)
-                }
-                className="shrink-0 appearance-none h-5 w-5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
-              />
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="absolute size-4 text-white shrink-0"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
-                  clipRule="evenodd"
-                  transform="translate(2, 0.2)"
+            {node.data.isChatflowOutput && (
+              <label className="w-full overflow-auto relative inline-flex items-center group p-2 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={node.data.useChatHistory}
+                  onChange={() =>
+                    changeUseChatHistory(node.id, !node.data.useChatHistory)
+                  }
+                  className="shrink-0 appearance-none h-5 w-5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
                 />
-              </svg>
-              <div className="ml-2 flex gap-1 items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  className="size-4 shrink-0"
+                  className="absolute size-4 text-white shrink-0"
                 >
                   <path
                     fillRule="evenodd"
-                    d="M10 1c3.866 0 7 1.79 7 4s-3.134 4-7 4-7-1.79-7-4 3.134-4 7-4Zm5.694 8.13c.464-.264.91-.583 1.306-.952V10c0 2.21-3.134 4-7 4s-7-1.79-7-4V8.178c.396.37.842.688 1.306.953C5.838 10.006 7.854 10.5 10 10.5s4.162-.494 5.694-1.37ZM3 13.179V15c0 2.21 3.134 4 7 4s7-1.79 7-4v-1.822c-.396.37-.842.688-1.306.953-1.532.875-3.548 1.369-5.694 1.369s-4.162-.494-5.694-1.37A7.009 7.009 0 0 1 3 13.179Z"
+                    d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                     clipRule="evenodd"
+                    transform="translate(2, 0.2)"
                   />
                 </svg>
-                <span>Add To Conversation Memory</span>
-              </div>
-            </label>
+                <div className="ml-2 flex gap-1 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    className="size-4 shrink-0"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 1c3.866 0 7 1.79 7 4s-3.134 4-7 4-7-1.79-7-4 3.134-4 7-4Zm5.694 8.13c.464-.264.91-.583 1.306-.952V10c0 2.21-3.134 4-7 4s-7-1.79-7-4V8.178c.396.37.842.688 1.306.953C5.838 10.006 7.854 10.5 10 10.5s4.162-.494 5.694-1.37ZM3 13.179V15c0 2.21 3.134 4 7 4s7-1.79 7-4v-1.822c-.396.37-.842.688-1.306.953-1.532.875-3.548 1.369-5.694 1.369s-4.162-.494-5.694-1.37A7.009 7.009 0 0 1 3 13.179Z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span>Use Conversation Memory</span>
+                </div>
+              </label>
+            )}
           </div>
         </div>
       </details>

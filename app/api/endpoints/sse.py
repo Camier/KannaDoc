@@ -7,6 +7,7 @@ from sse_starlette.sse import EventSourceResponse
 from app.core.security import get_current_user, verify_username_match
 from app.db.redis import redis
 from app.models.conversation import UserMessage
+from app.models.workflow import UserMessage as WorkflowMessage
 from app.models.user import User
 from app.models.workflow import LLMInputOnce
 from app.rag.llm_service import ChatService
@@ -100,7 +101,8 @@ async def workflow_sse(
                     "id": parsed_msg["node"],
                     "status": (
                         parsed_msg["status"]
-                        if parsed_msg["status"] in ["pause", "running", "vlm_input"]
+                        if parsed_msg["status"]
+                        in ["pause", "running", "vlm_input", "vlm_input_debug"]
                         else parsed_msg["status"] == "1"
                     ),
                     "result": parsed_msg.get("result"),
@@ -224,10 +226,15 @@ async def chat_stream(
     await verify_username_match(current_user, llm_input.username)
 
     message_id = str(uuid.uuid4())  # 生成 UUIDv4
-
+    user_message = WorkflowMessage(
+        conversation_id="",
+        parent_id="",
+        user_message=llm_input.user_message,
+        temp_db_id="",
+    )
     return EventSourceResponse(
         VLMService.create_chat_stream(
-            llm_input.user_message,
+            user_message,
             llm_input.llm_model_config,
             message_id,
             llm_input.system_prompt,

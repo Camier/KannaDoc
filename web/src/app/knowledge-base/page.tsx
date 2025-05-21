@@ -73,7 +73,7 @@ const KnowledgeBase = () => {
         const bases: Base[] = response.data.map((item: any) => ({
           name: item.knowledge_base_name,
           baseId: item.knowledge_base_id,
-          lastModityTime: item.last_modify_at.split("T")[0],
+          lastModifyTime: item.last_modify_at.split("T")[0],
           createTime: item.created_at.split("T")[0],
           fileNumber: item.file_number,
         }));
@@ -106,7 +106,7 @@ const KnowledgeBase = () => {
             {
               name: "加载中...",
               baseId: "1",
-              lastModityTime: "加载中...",
+              lastModifyTime: "加载中...",
               createTime: "加载中...",
               fileNumber: 0,
             },
@@ -273,7 +273,7 @@ const KnowledgeBase = () => {
 
           {/* 成功提示 */}
           {successMessage && (
-            <div className="w-[20%] text-center fixed top-[40%] left-[40%] bg-indigo-500 text-white px-4 py-2 rounded-lg shadow-lg animate-bounce">
+            <div className="w-[20%] text-center fixed top-[40%] left-[40%] bg-indigo-500 text-white px-4 py-2 rounded-3xl shadow-lg animate-bounce">
               {successMessage}
             </div>
           )}

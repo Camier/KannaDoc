@@ -29,7 +29,7 @@ const Homepage = () => {
             alt="Image 1"
             width={250}
             height={250}
-            className="object-cover rounded-lg"
+            className="object-cover rounded-3xl"
           />
         </div>
         {/* Li Website 标题 */}

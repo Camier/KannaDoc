@@ -7,6 +7,7 @@ import uuid
 import docker
 
 from app.db.redis import redis
+from app.models.workflow import UserMessage
 from app.utils.timezone import beijing_time_now
 from app.workflow.sandbox import CodeSandbox
 from app.workflow.code_scanner import CodeScanner
@@ -25,6 +26,9 @@ class WorkflowEngine:
         task_id: str = None,
         breakpoints=None,
         user_message="",
+        parent_id="",
+        temp_db_id="",
+        chatflow_id="",
     ):
         self.nodes = nodes
         self.edges = edges
@@ -44,6 +48,10 @@ class WorkflowEngine:
         self.skip_nodes = []
         self.loop_index = {}
         self.user_message = user_message
+        self.parent_id = parent_id
+        self.temp_db_id = temp_db_id
+        self.chatflow_id = chatflow_id
+        self.user_image_urls = []
 
     async def __aenter__(self):
         # 创建并启动沙箱
@@ -94,8 +102,11 @@ class WorkflowEngine:
 
     async def _send_pause_event(self, node: TreeNode, chatInput: bool = False):
         redis_conn = await redis.get_task_connection()
-        if chatInput:
+        if chatInput and not self.breakpoints:
             status = "vlm_input"
+        # input中断同时处于调试模式
+        elif chatInput and self.breakpoints:
+            status = "vlm_input_debug"
         else:
             status = "pause"
         await redis_conn.xadd(
@@ -210,12 +221,6 @@ class WorkflowEngine:
         await self._update_node_status(node.node_id, status)
         for child in node.children:
             await self._set_loop_node_execution_status(child, status)
-        # print(self.context, node.loop_parent.loop_index+1)
-        # if not node.node_id in self.context:
-        #     self.context[node.loop_parent.node_id] = [{"result":f"Execution Node Loop {node.loop_parent.loop_index+1} Succeeded"}]
-        # else:
-        #     self.context[node.loop_parent.node_id].append({"result":f"Execution Node Loop {node.loop_parent.loop_index+1} Succeeded"})
-        # print(self.context, node.loop_parent.loop_index+1)
 
     async def handle_loop(self, node: TreeNode):
         if not node.node_id in self.loop_index:
@@ -271,10 +276,6 @@ class WorkflowEngine:
         """
         递归运行节点
         """
-        # if condition:
-        #     if self.safe_eval(condition, node.data["name"], node.node_id):
-        #         # print(f"节点 {node.node_id} 通过条件判断终止")
-        #         return
         logger.info(f"工作流 {self.task_id} 执行节点{node.node_id} 开始运行")
         await self.check_cancellation()
 
@@ -284,7 +285,6 @@ class WorkflowEngine:
         # 等待父节点执行完
         for parent in node.parents:
             if not self.execution_status[parent.node_id]:
-                # print(f"节点 {node.node_id} 的父节点 {parent.node_id} 还未运行")
                 return
 
         # 检查condition的子节点是否不满足条件跳过
@@ -487,6 +487,7 @@ class WorkflowEngine:
                     if node.input_skip:
                         node.input_skip = False
                         vlm_input = self.user_message
+                        temp_db_id = self.temp_db_id
                     else:
                         self.execution_stack.append(node)
                         await self._send_pause_event(node, True)
@@ -494,14 +495,23 @@ class WorkflowEngine:
                         return False
                 else:
                     vlm_input = node.data["vlmInput"]
+                    temp_db_id = ""
                 vlm_input = self.render_template(vlm_input, self.global_variables)
 
+                user_message = UserMessage(
+                    conversation_id=self.chatflow_id,
+                    parent_id=self.parent_id if node.data["useChatHistory"] else "",
+                    user_message=vlm_input,
+                    temp_db_id=temp_db_id,
+                )
                 # 获取流式生成器（假设返回结构化数据块）
                 stream_generator = ChatService.create_chat_stream(
-                    vlm_input,
-                    node.data["modelConfig"],
-                    message_id,
-                    node.data["prompt"],
+                    user_message_content=user_message,
+                    model_config=node.data["modelConfig"],
+                    message_id=message_id,
+                    system_prompt=node.data["prompt"],
+                    save_to_db=True if node.data["isChatflowOutput"] else False,
+                    user_image_urls = self.user_image_urls
                 )
                 full_response = []
                 chunks = []
@@ -513,14 +523,16 @@ class WorkflowEngine:
                 for chunk in chunks:
                     if chunk.get("type") == "text":
                         full_response.append(chunk.get("data"))
-
+                    if chunk.get("type") == "user_images":
+                        if node.data["isChatflowInput"]:
+                            self.user_image_urls = chunk.get("data")
                 try:
                     full_response = json.loads("".join(full_response))
                     for k, v in full_response.items():
                         if k in self.global_variables:
                             self.global_variables[k] = str('"' + v + '"')
                 except Exception as e:
-                    logger.error(f"工作流{self.task_id}运行出错：{e}")
+                    logger.info(f"工作流{self.task_id}未解析到json输出：{e}")
                 # 以节点ID为键存储完整结果
                 if not node.node_id in self.context:
                     self.context[node.node_id] = [{"result": "Message generated!"}]

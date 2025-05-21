@@ -1,3 +1,4 @@
+import MarkdownDisplay from "@/components/AiChat/MarkdownDisplay";
 import PythonEditor from "@/components/Workflow/PythonEditor";
 import { runPythonTest } from "@/lib/api/workflowApi";
 import { useAuthStore } from "@/stores/authStore";
@@ -263,7 +264,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                   clipRule="evenodd"
                 />
               </svg>
-              <span>Add Variable</span>
+              <span>Click to Add</span>
             </div>
           </div>
           {Object.keys(
@@ -421,7 +422,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                   clipRule="evenodd"
                 />
               </svg>
-              <span>Add Package</span>
+              <span>Click to Add</span>
             </div>
           </div>
           <div className="px-2 flex w-full items-center gap-2">
@@ -614,7 +615,16 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
         <div
           className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-gray-100`}
         >
-          <div className="whitespace-pre-wrap">{node.data.output}</div>
+          <MarkdownDisplay
+            md_text={node.data.output || ""}
+            message={{
+              type: "text",
+              content: node.data.output || "",
+              from: "ai", // 消息的来源
+            }}
+            showTokenNumber={true}
+            isThinking={false}
+          />
         </div>
       </details>
     </div>

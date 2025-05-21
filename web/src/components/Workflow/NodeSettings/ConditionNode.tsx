@@ -1,3 +1,4 @@
+import MarkdownDisplay from "@/components/AiChat/MarkdownDisplay";
 import { runConditionTest } from "@/lib/api/workflowApi";
 import { useAuthStore } from "@/stores/authStore";
 import { useFlowStore } from "@/stores/flowStore";
@@ -259,7 +260,7 @@ const ConditionNodeComponent: React.FC<ConditionNodeProps> = ({
                   clipRule="evenodd"
                 />
               </svg>
-              <span>Add Variable</span>
+              <span>Click to Add</span>
             </div>
           </div>
           {Object.keys(
@@ -493,7 +494,16 @@ const ConditionNodeComponent: React.FC<ConditionNodeProps> = ({
         <div
           className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-gray-100`}
         >
-          <div className="whitespace-pre-wrap">{node.data.output}</div>
+      <MarkdownDisplay
+            md_text={node.data.output || ""}
+            message={{
+              type: "text",
+              content: node.data.output || "",
+              from: "ai", // 消息的来源
+            }}
+            showTokenNumber={true}
+            isThinking={false}
+          />
         </div>
       </details>
     </div>

@@ -1,12 +1,14 @@
 from app.db.mongo import get_mongo
 
 
-async def find_parent_mesage(conversation_id, message_id):
+async def find_parent_mesage(conversation_id, message_id, chatflow=False):
 
     db = await get_mongo()
-
     message = None
-    conversation = await db.get_conversation(conversation_id)
+    if chatflow:
+        conversation = await db.get_chatflow(conversation_id)
+    else:
+        conversation = await db.get_conversation(conversation_id)
     if not conversation:
         return message
 
@@ -27,12 +29,12 @@ async def find_parent_mesage(conversation_id, message_id):
     return messages
 
 
-async def find_depth_parent_mesage(conversation_id, message_id, MAX_PARENT_DEPTH=5):
+async def find_depth_parent_mesage(conversation_id, message_id, MAX_PARENT_DEPTH=5, chatflow=False):
     
     parent_stack = []
 
     while message_id and len(parent_stack) < MAX_PARENT_DEPTH:
-        parent_messages = await find_parent_mesage(conversation_id, message_id)
+        parent_messages = await find_parent_mesage(conversation_id, message_id, chatflow=chatflow)
         message_id = parent_messages.get("parent_message_id","")
         parent_stack.append(parent_messages.get("ai_message"))
         parent_stack.append(parent_messages.get("user_message"))

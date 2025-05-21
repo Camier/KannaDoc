@@ -7,7 +7,7 @@ type ShowAlert = {
 const Alert = ({showAlert}: {showAlert: ShowAlert}) => {
   return (
     <div
-      className={`w-1/5 z-50 fixed top-20 left-1/2 transform -translate-x-1/2 p-4 rounded-lg text-white text-center shadow-lg transition-opacity duration-300 ease-in-out ${
+      className={`w-1/5 z-50 fixed top-20 left-1/2 transform -translate-x-1/2 p-4 rounded-3xl text-white text-center shadow-lg transition-opacity duration-300 ease-in-out ${
         showAlert.show ? "opacity-100" : "opacity-0"
       } ${
         showAlert.type === "success"
