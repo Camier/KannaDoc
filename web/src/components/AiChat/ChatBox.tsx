@@ -2,7 +2,7 @@
 import React, { use, useEffect, useRef, useState } from "react";
 import { BaseUsed, FileRespose, Message, ModelConfig } from "@/types/types";
 import ChatMessage from "./ChatMessage";
-import { getFileExtension, getFileIcon } from "@/utils/file";
+import { getFileExtension, getFileIcon, SupportFileFormat, SupportUploadFormat } from "@/utils/file";
 import { uploadFiles } from "@/lib/api/chatApi";
 import { useAuthStore } from "@/stores/authStore";
 import KnowledgeConfigModal from "./KnowledgeConfigModal";
@@ -66,7 +66,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   const [showConfigModal, setShowConfigModal] = useState(false);
 
   // 支持的文件类型
-  const supportedExtensions = ["doc", "docx", "pdf", "ppt", "pptx"];
+  const supportedExtensions = SupportFileFormat;
 
   const handleSend = () => {
     if (inputMessage.trim()) {
@@ -130,7 +130,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
       const ext = getFileExtension(file.name);
       return supportedExtensions.includes(ext);
     });
-
+    
     const invalidFiles = files.filter((file) => {
       const ext = getFileExtension(file.name);
       return !supportedExtensions.includes(ext);
@@ -498,7 +498,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
             ref={fileInputRef}
             className="hidden"
             multiple
-            accept=".doc,.docx,.pdf,.ppt,.pptx"
+            accept={SupportUploadFormat}
             onChange={handleFileSelected}
           />
           <div

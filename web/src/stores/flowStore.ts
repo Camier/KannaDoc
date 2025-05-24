@@ -34,6 +34,7 @@ interface FlowState {
   updateCode: (nodeId: string, code: string) => void;
   updateDebug: (nodeId: string, debug: boolean) => void;
   updateOutput: (nodeId: string, output: string) => void;
+  updateDescription: (nodeId: string, description: string) => void;
   updateChat: (nodeId: string, chat: string) => void;
   updateStatus: (nodeId: string, status: string) => void;
   updateConditions: (nodeId: string, key: number, value: string) => void;
@@ -46,6 +47,10 @@ interface FlowState {
   updatePrompt: (nodeId: string, Prompt: string) => void;
   updateVlmInput: (nodeId: string, vlmInput: string) => void;
   changeChatflowInput: (nodeId: string, isChatflowInput: boolean) => void;
+  changeChatflowOutputVariable: (
+    nodeId: string,
+    chatflowOutputVariable: string
+  ) => void;
   changeChatflowOutput: (nodeId: string, isChatflowOutput: boolean) => void;
   changeUseChatHistory: (nodeId: string, useChatHistory: boolean) => void;
   getConditionCount: (nodeId: string) => number | undefined;
@@ -126,6 +131,14 @@ export const useFlowStore = create<FlowState>((set, get) => ({
   },
 
   deleteNode: (nodeId) => {
+    const edge = get().edges.find((e) => e.target === nodeId);
+    if (edge?.data?.conditionLabel) {
+      const conditionNodeId = edge.source;
+      get().removeCondition(
+        conditionNodeId,
+        parseInt(edge.data.conditionLabel)
+      );
+    }
     set((state) => ({
       nodes: state.nodes.filter((n) => n.id !== nodeId),
       edges: state.edges.filter(
@@ -162,6 +175,15 @@ export const useFlowStore = create<FlowState>((set, get) => ({
     set((state) => ({
       nodes: state.nodes.map((node) =>
         node.id === nodeId ? { ...node, data: { ...node.data, output } } : node
+      ),
+    }));
+  },
+  updateDescription: (nodeId, description) => {
+    set((state) => ({
+      nodes: state.nodes.map((node) =>
+        node.id === nodeId
+          ? { ...node, data: { ...node.data, description } }
+          : node
       ),
     }));
   },
@@ -202,6 +224,21 @@ export const useFlowStore = create<FlowState>((set, get) => ({
           ? {
               ...node,
               data: { ...node.data, isChatflowInput },
+            }
+          : node
+      ),
+    }));
+  },
+  changeChatflowOutputVariable: (
+    nodeId: string,
+    chatflowOutputVariable: string
+  ) => {
+    set((state) => ({
+      nodes: state.nodes.map((node) =>
+        node.id === nodeId
+          ? {
+              ...node,
+              data: { ...node.data, chatflowOutputVariable },
             }
           : node
       ),

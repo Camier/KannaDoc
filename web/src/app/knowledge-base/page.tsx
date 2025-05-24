@@ -14,7 +14,7 @@ import {
 import withAuth from "@/middlewares/withAuth";
 import { useAuthStore } from "@/stores/authStore";
 import { Base, UploadFile } from "@/types/types";
-import { getFileExtension } from "@/utils/file";
+import { getFileExtension, SupportFileFormat } from "@/utils/file";
 import { useState, useEffect, useCallback } from "react";
 import Cookies from "js-cookie";
 import { EventSourceParserStream } from "eventsource-parser/stream";
@@ -63,7 +63,7 @@ const KnowledgeBase = () => {
   }, [successMessage]);
 
   // 支持的文件类型
-  const supportedExtensions = ["doc","docx","pdf","ppt","pptx"];
+  const supportedExtensions = SupportFileFormat;
 
   // Wrap fetchAllKnowledgeBase with useCallback
   const fetchAllKnowledgeBase = useCallback(async () => {

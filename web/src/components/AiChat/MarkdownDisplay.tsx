@@ -7,6 +7,7 @@ import "katex/dist/katex.min.css";
 import { FC, useState } from "react";
 import { Message } from "@/types/types";
 import rehypeRaw from "rehype-raw"; // 新增：用于解析原始HTML
+import { base64Processor } from "@/utils/file";
 
 interface MarkdownDisplayProps {
   md_text: string;
@@ -173,7 +174,7 @@ const MarkdownDisplay: React.FC<MarkdownDisplayProps> = ({
         <ReactMarkdown
           remarkPlugins={[remarkMath, remarkGfm]} // 必须 math 在前
           rehypePlugins={[
-            rehypeRaw,
+            //rehypeRaw, //防止注入攻击，暂不启用
             [
               rehypeKatex,
               {
@@ -204,43 +205,39 @@ const MarkdownDisplay: React.FC<MarkdownDisplayProps> = ({
             // 添加图片处理组件
             // 修改img组件处理逻辑
             img({ node, src, alt, title, style, width, height, ...props }) {
-              return (
-                <div className="my-4 relative group">
-                  <div className="overflow-hidden rounded-lg bg-gray-100 dark:bg-gray-800">
-                    <img
-                      src={src}
-                      alt={alt}
-                      title={title}
-                      className="mx-auto object-contain"
-                      style={{
-                        maxWidth: "min(100%, 800px)",
-                        marginLeft: "auto",
-                        marginRight: "auto",
-                      }}
-                      loading="lazy"
-                      decoding="async"
-                      // 传递原生属性
-                      {...props}
-                    />
-                  </div>
-                  {alt && (
-                    <div className="text-center text-sm text-gray-500 dark:text-gray-400 mt-2">
-                      {alt}
-                    </div>
-                  )}
-                </div>
-              );
+              if (!src) {
+                return;
+              } else {
+                const newsrc = base64Processor.decode(src);
+                return (
+                  <img
+                    src={newsrc}
+                    alt={alt}
+                    title={title}
+                    className="mx-auto object-contain"
+                    style={{
+                      maxWidth: "min(100%, 800px)",
+                      marginLeft: "auto",
+                      marginRight: "auto",
+                    }}
+                    loading="lazy"
+                    decoding="async"
+                    // 传递原生属性
+                    {...props}
+                  />
+                );
+              }
             },
           }}
         >
-          {
+          {base64Processor.encode(
             md_text
               .replace(/\\\[/g, "$$$$") // 匹配 \\[ → $$
               .replace(/\\\]/g, "$$$$") // 匹配 \\] → $$
               // 行内公式替换
               .replace(/\\\(/g, "$") // 匹配 \\( → $
               .replace(/\\\)/g, "$") // 匹配 \\) → $
-          }
+          )}
         </ReactMarkdown>
       </div>
       {message.token_number !== undefined &&

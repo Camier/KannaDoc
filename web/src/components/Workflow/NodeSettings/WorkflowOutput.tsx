@@ -10,7 +10,7 @@ import {
   Message,
   WorkflowAll,
 } from "@/types/types";
-import { getFileExtension, getFileIcon } from "@/utils/file";
+import { getFileExtension, getFileIcon, SupportFileFormat, SupportUploadFormat } from "@/utils/file";
 import {
   Dispatch,
   SetStateAction,
@@ -122,7 +122,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
 
   const { chatflowId, setChatflowId } = useChatStore();
   // 支持的文件类型
-  const supportedExtensions = ["doc", "docx", "pdf", "ppt", "pptx"];
+  const supportedExtensions = SupportFileFormat;
 
   const handleSend = () => {
     if (inputMessage.trim()) {
@@ -778,7 +778,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                   ref={fileInputRef}
                   className="hidden"
                   multiple
-                  accept=".doc,.docx,.pdf,.ppt,.pptx"
+                  accept={SupportUploadFormat}
                   onChange={handleFileSelected}
                 />
                 <div

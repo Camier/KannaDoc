@@ -108,6 +108,7 @@ export type CustomNode = Node<{
   nodeType: NodeTypeKey;
   code?: string;
   output?: string;
+  description?: string;
   conditionCount?: number;
   conditions?: {
     [key: number]: string; // 允许动态属性
@@ -127,6 +128,7 @@ export type CustomNode = Node<{
   isChatflowInput?: boolean;
   isChatflowOutput?: boolean;
   useChatHistory?: boolean;
+  chatflowOutputVariable?: string;
 }>;
 
 // 组件 Props 类型

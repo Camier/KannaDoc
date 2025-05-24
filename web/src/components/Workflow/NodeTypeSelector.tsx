@@ -31,10 +31,10 @@ const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({
 }) => {
   const selectedType = useFlowStore((state) => state.selectedType);
   const setSelectedType = useFlowStore((state) => state.setSelectedType);
+  const [searchTerm, setSearchTerm] = useState("")
   const [showConfirmDeleteNode, setShowConfirmDeleteNode] = useState<
-    string | null>(null);
-
-
+    string | null
+  >(null);
 
   const confirmDeleteNode = () => {
     if (showConfirmDeleteNode) {
@@ -48,6 +48,11 @@ const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({
       setShowConfirmDeleteNode(null); // 关闭对话框
     }
   };
+
+  // 过滤知识库
+  const filteredNodes = Object.entries(customNodes).filter(([name,node]) =>
+    name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="space-y-2">
@@ -85,14 +90,14 @@ const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({
             }
           </span>
         </div>
-        <details className="group w-full space-y-2" open>
-          <summary className="pt-2 border-b-2 border-gray-200 text-center">
+        <details className="group w-full space-y-1" open>
+          <summary className="py-1 border-b-2 border-gray-200 text-center">
             Base Node
           </summary>
           {Object.entries(nodeTypesInfo).map(([key, type]) => (
             <li
               key={key}
-              className={`cursor-pointer p-2 rounded-full text-center hover:bg-indigo-300 hover:text-white
+              className={`cursor-pointer p-2 rounded-full text-center hover:bg-indigo-500 hover:text-white
               }`}
               onClick={() => {
                 const typeKey = key as NodeTypeKey;
@@ -122,14 +127,35 @@ const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({
             </li>
           ))}
         </details>
-        <details className="group w-full space-y-2" open>
-          <summary className="pt-2 border-b-2 border-gray-200 text-center">
+        <details className="group w-full space-y-1" open>
+          <summary className="py-1 border-b-2 border-gray-200 text-center">
             Custom Node
           </summary>
-          {Object.entries(customNodes).map(([name, node]) => (
+          <div className="py-1 relative w-[90%] mx-auto text-xs">
+            <input
+              type="text"
+              placeholder="Search Nodes..."
+              className="w-full pl-3 pr-6 py-1 rounded-full border border-gray-300 focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="size-4 absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400"
+            >
+              <path
+                fillRule="evenodd"
+                d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </div>
+          {filteredNodes.map(([name, node]) => (
             <li
               key={name}
-              className={`cursor-pointer p-2 rounded-full text-center hover:bg-indigo-300 hover:text-white
+              className={`cursor-pointer p-2 rounded-full text-center hover:bg-indigo-500 hover:text-white
               }`}
               onClick={() => {
                 addCustomNode(name);

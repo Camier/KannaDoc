@@ -184,14 +184,17 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     }
   };
 
-  // 初始化历史记录
-  useEffect(() => {
+  //刷新页面
+  const refreshWorkflow = () => {
     if (history.length === 0) {
       pushHistory();
     }
     handleNewChatflow();
     setMessages({});
     setEachMessages({});
+    setSendInputDisabled(true);
+    setResumeDebugTaskId("");
+    setResumeInputTaskId("");
     countListRef.current = [];
     setCurrentInputNodeId(undefined);
     setRunningChatflowLLMNodes([]);
@@ -200,7 +203,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
       if (node.data.nodeType == "vlm") {
         updateOutput(
           node.id,
-          'To extract global variables from the output, ensure prompt LLM/VLM to output them with json format, e.g., {"output":"AIoutput"}.'
+          "This area displays the Node output during workflow execution."
         );
       } else {
         updateOutput(node.id, "Await for running...");
@@ -209,12 +212,17 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
       if (node.data.nodeType == "vlm") {
         updateChat(
           node.id,
-          "This area displays the LLM output during workflow execution. The output from running tests will be shown in the output section."
+          'To extract global variables from the output, ensure prompt LLM/VLM to output them with json format, e.g.,\n {"output":"AIoutput"}.\n\nAdditionally, you can directly assign the LLM response to a global variable below:'
         );
       } else {
         updateChat(node.id, "Await for running...");
       }
     });
+  };
+
+  // 初始化历史记录
+  useEffect(() => {
+    refreshWorkflow();
   }, [workFlow]);
 
   useEffect(() => {
@@ -967,14 +975,14 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         status: "init",
         label: nodeTypesInfo[type].label,
         nodeType: type,
-        output:
-          'To extract global variables from the output, ensure prompt LLM/VLM to output them with json format, e.g., {"output":"AIoutput"}.',
+        output: "This area displays the Node output during workflow execution.",
         prompt: '输出以：{"output":AIOutput}的格式输出，不要包含任何其他内容.',
         vlmInput: "",
+        chatflowOutputVariable: "",
         isChatflowInput: false,
         isChatflowOutput: false,
         useChatHistory: false,
-        chat: "This area displays the LLM output during workflow execution. The output from running tests will be shown in the output section.",
+        chat: 'To extract global variables from the output, ensure prompt LLM/VLM to output them with json format, e.g.,\n {"output":"AIoutput"}.\n\nAdditionally, you can directly assign the LLM response to a global variable below:',
       };
     } else {
       data = {
@@ -1053,6 +1061,22 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     files: FileRespose[] = [],
     tempBaseId: string = ""
   ) => {
+    for (let node of nodes) {
+      if (
+        node.data.nodeType === "vlm" &&
+        node.data.isChatflowInput === false &&
+        node.data.vlmInput === ""
+      ) {
+        setShowAlert(true);
+        setWorkflowMessage(
+          'Please write your question to AI for node "' +
+            node.data.label +
+            '" before running LLM node!'
+        );
+        setWorkflowStatus("error");
+        return;
+      }
+    }
     if (user?.name) {
       setRunning(true);
       if (
@@ -1136,6 +1160,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               modelConfig: modelConfig,
               prompt: node.data.prompt,
               vlmInput: node.data.vlmInput,
+              chatflowOutputVariable: node.data.chatflowOutputVariable,
               isChatflowInput: node.data.isChatflowInput,
               isChatflowOutput: node.data.isChatflowOutput,
               useChatHistory: node.data.useChatHistory,
@@ -1522,10 +1547,9 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             </button>
             <button
               onClick={() => {
+                refreshWorkflow();
                 setShowAlert(true);
-                setWorkflowMessage(
-                  "Publish will be updated in the NEXT VERSION to support deployment as an MCP service or publishing to various websites and applications."
-                );
+                setWorkflowMessage("Refesh workflow!");
                 setWorkflowStatus("success");
               }}
               //disabled={nodes.length === 0}
@@ -1546,7 +1570,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 />
               </svg>
 
-              <span>Publish</span>
+              <span>Refresh</span>
             </button>
           </div>
 
@@ -1600,7 +1624,9 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                     setShowOutput((prev) => !prev);
                   }
                 }}
-                className={`cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
+                className={`${
+                  !sendInputDisabled && !showOutput ? "text-indigo-500" : ""
+                } cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1617,7 +1643,11 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                   />
                 </svg>
 
-                <span>ChatFlow</span>
+                <span>
+                  {!sendInputDisabled && !showOutput
+                    ? "Click Here"
+                    : "ChatFlow"}
+                </span>
               </button>
               <button
                 disabled={running}
@@ -1788,6 +1818,11 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 ),
                 vlm: (
                   <VlmNodeComponent
+                    showError={(error) => {
+                      setShowAlert(true);
+                      setWorkflowStatus("error");
+                      setWorkflowMessage(error);
+                    }}
                     messages={messages[currentNode.id]}
                     saveNode={handleSaveNodes}
                     isDebugMode={resumeDebugTaskId === "" ? false : true}
@@ -1846,6 +1881,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             onNodesChange={onNodesChange}
             onEdgesChange={onEdgesChange}
             onEdgesDelete={onEdgesDelete}
+            deleteKeyCode={[]}
             onConnect={onConnect}
             onNodeClick={onNodeClick}
             onEdgeClick={onEdgeClick}

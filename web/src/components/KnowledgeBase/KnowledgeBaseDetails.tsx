@@ -14,6 +14,7 @@ import {
   useState,
 } from "react";
 import ShowFiles from "./ShowFiles";
+import { SupportUploadFormat } from "@/utils/file";
 
 interface KnowledgeBaseDetailsProps {
   bases: Base[];
@@ -243,7 +244,7 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
               id="file-upload"
               multiple
               onChange={(e) => e.target.files && onFileUpload(e.target.files)}
-              accept=".doc,.docx,.pdf,.ppt,.pptx"
+              accept={SupportUploadFormat}
             />
             <label
               htmlFor="file-upload"

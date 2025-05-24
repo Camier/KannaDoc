@@ -50,9 +50,18 @@ The first test version is now available for trial, with support for **PDF docume
 
 ---
 
-## 🚀 Latest Updates
+## 🚀 Latest Updates  
 
-- **(2025.4.6) First Trial Version Now Available**:  
+ **(May 23, 2025) Workflow Engine Now Available**:  
+  - **Breakpoint Debugging**: Debug workflows interactively with pause/resume functionality.  
+  - **Unrestricted Python Customization**: Execute arbitrary Python code, including external `pip` dependency installation, HTTP requests via `requests`, and advanced logic.  
+  - **Nested Loops & Python-Powered Conditions**: Build complex workflows with loop nesting and Python-based conditional logic.  
+  - **LLM Integration**:  
+    - Automatic JSON output parsing for structured responses.  
+    - Persistent conversation memory across nodes.  
+    - File uploads and knowledge-base retrieve with **multi-modal RAG** supporting 50+ formats (PDF, DOCX, XLSX, PPTX, etc.).  
+
+ **(2025.4.6) First Trial Version Now Available**:  
   The first testable version of LAYRA has been released! Users can now upload PDF documents, ask questions, and receive layout-aware answers. We’re excited to see how this feature can help with real-world document understanding.
 
 - **Current Features**:  
@@ -125,6 +134,27 @@ PDFs are parsed into images and embedded visually via ColQwen2.5, with metadata 
 
 ![Upload Architecture](./assets/upload.png)
 
+### 📤 Execute Workflow (Chatflow)  
+The workflow execution follows an **event-driven**, **stateful debugging** pattern with granular control:   
+
+#### 🔄 Execution Flow  
+1. **Trigger & Debug Control**  
+   - Web UI submits workflow with **configurable breakpoints** for real-time inspection  
+   - Backend validates workflow DAG before executing codes
+
+2. **Asynchronous Orchestration**  
+   - Kafka checks **predefined breakpoints** and triggers pause notifications  
+   - Scanner performs **AST-based code analysis** with vulnerability detection  
+
+3. **Secure Execution**  
+   - Sandbox spins up ephemeral containers with file system isolation  
+   - Runtime state snapshots persisted to *Redis/MongoDB* for recovery  
+
+4. **Observability**  
+   - Execution metrics streamed via Server-Sent Events (SSE)  
+   - Users inject test inputs/resume execution through debug consoles  
+
+![Upload Architecture](./assets/workflow.png)
 
 ---
 
@@ -174,6 +204,7 @@ EOF
 
 sudo usermod -aG docker $USER
 newgrp docker  # 或重新登录
+
 # Clone the repo
 git clone https://github.com/liweiphys/layra.git
 cd layra
@@ -199,9 +230,9 @@ conda activate layra
 
 # Install system dependencies
 # For Ubuntu/Debian:
-sudo apt-get update && sudo apt-get install -y poppler-utils
+sudo apt-get update && sudo apt-get install -y poppler-utils libreoffice
 # For Fedora/CentOS:
-# sudo dnf install -y poppler-utils
+# sudo dnf install -y poppler-utils libreoffice
 
 # Install dependencies
 pip install -r requirements.txt
@@ -275,9 +306,12 @@ In the future, we will support multiple deployment methods including Docker, Kub
 
 ## 📦 Roadmap
 
+- **completed**
 - [x] Knowledge Base PDF batch upload and parsing functionality
 - [x] RAG-based dialogue system for querying and answering
-- [x] Support openai-compatible API interface（ollama、sglang、vllm）  
+- [x] Support openai-compatible API interface（ollama、sglang、vllm） 
+
+- **developing** 
 - [ ] Code architecture and modular optimization for scalability  
 - [ ] Support for additional large models
 - [ ] Expanded document format support (e.g., Word, PPT, Excel)  

@@ -527,12 +527,14 @@ class WorkflowEngine:
                         if node.data["isChatflowInput"]:
                             self.user_image_urls = chunk.get("data")
                 try:
-                    full_response = json.loads("".join(full_response))
-                    for k, v in full_response.items():
+                    full_response_json = json.loads("".join(full_response))
+                    for k, v in full_response_json.items():
                         if k in self.global_variables:
-                            self.global_variables[k] = str('"' + v + '"')
+                            self.global_variables[k] = repr('"' + v + '"')
                 except Exception as e:
                     logger.info(f"工作流{self.task_id}未解析到json输出：{e}")
+                if node.data["chatflowOutputVariable"]:
+                    self.global_variables[node.data["chatflowOutputVariable"]] = repr('"' + "".join(full_response) + '"')
                 # 以节点ID为键存储完整结果
                 if not node.node_id in self.context:
                     self.context[node.node_id] = [{"result": "Message generated!"}]

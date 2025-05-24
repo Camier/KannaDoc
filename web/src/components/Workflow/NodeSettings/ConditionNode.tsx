@@ -4,7 +4,7 @@ import { useAuthStore } from "@/stores/authStore";
 import { useFlowStore } from "@/stores/flowStore";
 import { useGlobalStore } from "@/stores/pythonVariableStore";
 import { CustomNode } from "@/types/types";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 interface ConditionNodeProps {
   saveNode: (node: CustomNode) => void;
@@ -40,13 +40,14 @@ const ConditionNodeComponent: React.FC<ConditionNodeProps> = ({
       ? updateDebugProperty(name, value)
       : updateProperty(name, value);
   };
-  const { updateNodeLabel, updateOutput, updateDebug } = useFlowStore();
+  const { updateNodeLabel, updateOutput, updateDebug, updateDescription } =
+    useFlowStore();
   const { updateConditions } = useFlowStore();
   const handleConditionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     updateConditions(node.id, parseInt(name), value);
   };
-
+  const [isEditing, setIsEditing] = useState(false);
   const [runTest, setRunTest] = useState(false);
 
   const handleRunTest = async () => {
@@ -141,6 +142,115 @@ const ConditionNodeComponent: React.FC<ConditionNodeProps> = ({
           <span className="whitespace-nowrap">Save Node</span>
         </button>
       </div>
+      <details className="group w-full" open>
+        <summary className="flex items-center cursor-pointer font-medium w-full">
+          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full font-medium">
+            <div className="flex items-center justify-start gap-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="size-5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M2.25 5.25a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3V15a3 3 0 0 1-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 0 1-.53 1.28h-9a.75.75 0 0 1-.53-1.28l.621-.622a2.25 2.25 0 0 0 .659-1.59V18h-3a3 3 0 0 1-3-3V5.25Zm1.5 0v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5Z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              Description
+              <svg
+                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                setIsEditing(!isEditing);
+              }}
+              className="hover:bg-indigo-500 hover:text-white cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full disabled:opacity-50"
+            >
+              {isEditing ? (
+                <div className="flex items-center justify-center gap-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="size-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z"
+                    />
+                  </svg>
+                  <span>Preview</span>
+                </div>
+              ) : (
+                <div className="flex items-center justify-center gap-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="size-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                    />
+                  </svg>
+                  <span>Edit</span>
+                </div>
+              )}
+            </button>
+          </div>
+        </summary>
+
+        {isEditing ? (
+          <div
+            className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-white`}
+          >
+            <textarea
+              className={`mt-1 w-full px-2 py-2 border border-gray-200 rounded-xl min-h-[10vh] ${
+                codeFullScreenFlow ? "max-h-[50vh]" : "max-h-[30vh]"
+              } resize-none overflow-y-auto focus:outline-hidden focus:ring-2 focus:ring-indigo-500`}
+              value={node.data.description || ""}
+              onChange={(e) => updateDescription(node.id, e.target.value)}
+              placeholder="Enter Markdown content here..."
+            />
+          </div>
+        ) : (
+          <div
+            className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-gray-100`}
+          >
+            <MarkdownDisplay
+              md_text={node.data.description || "No decription found"}
+              message={{
+                type: "text",
+                content: node.data.description || "",
+                from: "ai",
+              }}
+              showTokenNumber={true}
+              isThinking={false}
+            />
+          </div>
+        )}
+      </details>
       <details className="group w-full" open>
         <summary className="flex items-center cursor-pointer font-medium w-full">
           <div className="px-2 py-1 flex items-center justify-between w-full mt-1">
@@ -463,7 +573,7 @@ const ConditionNodeComponent: React.FC<ConditionNodeProps> = ({
             </div>
             <button
               onClick={() => {
-                updateDebug(node.id, node.data.debug? !node.data.debug : true);
+                updateDebug(node.id, node.data.debug ? !node.data.debug : true);
               }}
               disabled={runTest}
               className={`${
@@ -494,7 +604,7 @@ const ConditionNodeComponent: React.FC<ConditionNodeProps> = ({
         <div
           className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-gray-100`}
         >
-      <MarkdownDisplay
+          <MarkdownDisplay
             md_text={node.data.output || ""}
             message={{
               type: "text",

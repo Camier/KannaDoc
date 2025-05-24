@@ -17,6 +17,7 @@ interface VlmNodeProps {
   node: CustomNode;
   setCodeFullScreenFlow: Dispatch<SetStateAction<boolean>>;
   codeFullScreenFlow: boolean;
+  showError: (error: string) => void;
 }
 
 const VlmNodeComponent: React.FC<VlmNodeProps> = ({
@@ -26,6 +27,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
   node,
   setCodeFullScreenFlow,
   codeFullScreenFlow,
+  showError,
 }) => {
   const {
     globalVariables,
@@ -36,6 +38,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
     updateDebugProperty,
   } = useGlobalStore();
   const [variable, setVariable] = useState("");
+  const [outputVariable, setOutputVariable] = useState("");
   const handleVariableChange = (
     e: React.ChangeEvent<HTMLInputElement>,
     isDebugMode: boolean
@@ -53,13 +56,16 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
     changeChatflowInput,
     changeChatflowOutput,
     changeUseChatHistory,
+    changeChatflowOutputVariable,
     updateDebug,
-    updateOutput,
+    updateChat,
+    updateDescription,
   } = useFlowStore();
   const [showConfigModal, setShowConfigModal] = useState(false);
   const { user } = useAuthStore();
   const [runTest, setRunTest] = useState(false);
   const [showRefFile, setShowRefFile] = useState<string[]>([]);
+  const [isEditing, setIsEditing] = useState(false);
 
   const configureKnowledgeDB = () => {
     setShowConfigModal(true);
@@ -79,7 +85,8 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
 
   const handleRunTest = async () => {
     if (!node.data.vlmInput) {
-      alert("LLM query not found!");
+      showError("Please write your question to AI before running LLM node!");
+      return;
     }
     if (user?.name) {
       setRunTest(true);
@@ -137,7 +144,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
 
           if (payload.type === "text") {
             aiResponse += payload.data;
-            updateOutput(node.id, aiResponse);
+            updateChat(node.id, aiResponse);
           }
           if (payload.type === "token") {
             aiResponse += "\n\n Total token usage: ";
@@ -146,12 +153,12 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
             aiResponse += payload.completion_tokens;
             aiResponse += "\n Prompt token usage: ";
             aiResponse += payload.prompt_tokens;
-            updateOutput(node.id, aiResponse);
+            updateChat(node.id, aiResponse);
           }
         }
       } catch (error) {
         //console.error("Error connect:", error);
-        updateOutput(node.id, "Error connect:" + error);
+        updateChat(node.id, "Error connect:" + error);
       } finally {
         //updateOutput(node.id, "Message generated!");
         setRunTest(false);
@@ -220,6 +227,115 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
           <span className="whitespace-nowrap">Save Node</span>
         </button>
       </div>
+      <details className="group w-full" open>
+        <summary className="flex items-center cursor-pointer font-medium w-full">
+          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full font-medium">
+            <div className="flex items-center justify-start gap-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="size-5"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M2.25 5.25a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3V15a3 3 0 0 1-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 0 1-.53 1.28h-9a.75.75 0 0 1-.53-1.28l.621-.622a2.25 2.25 0 0 0 .659-1.59V18h-3a3 3 0 0 1-3-3V5.25Zm1.5 0v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5Z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              Description
+              <svg
+                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+                setIsEditing(!isEditing);
+              }}
+              className="hover:bg-indigo-500 hover:text-white cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full disabled:opacity-50"
+            >
+              {isEditing ? (
+                <div className="flex items-center justify-center gap-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="size-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z"
+                    />
+                  </svg>
+                  <span>Preview</span>
+                </div>
+              ) : (
+                <div className="flex items-center justify-center gap-1">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="size-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                    />
+                  </svg>
+                  <span>Edit</span>
+                </div>
+              )}
+            </button>
+          </div>
+        </summary>
+
+        {isEditing ? (
+          <div
+            className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-white`}
+          >
+            <textarea
+              className={`mt-1 w-full px-2 py-2 border border-gray-200 rounded-xl min-h-[10vh] ${
+                codeFullScreenFlow ? "max-h-[50vh]" : "max-h-[30vh]"
+              } resize-none overflow-y-auto focus:outline-hidden focus:ring-2 focus:ring-indigo-500`}
+              value={node.data.description || ""}
+              onChange={(e) => updateDescription(node.id, e.target.value)}
+              placeholder="Enter Markdown content here..."
+            />
+          </div>
+        ) : (
+          <div
+            className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-gray-100`}
+          >
+            <MarkdownDisplay
+              md_text={node.data.description || "No decription found"}
+              message={{
+                type: "text",
+                content: node.data.description || "",
+                from: "ai",
+              }}
+              showTokenNumber={true}
+              isThinking={false}
+            />
+          </div>
+        )}
+      </details>
       <details className="group w-full" open>
         <summary className="flex items-center cursor-pointer font-medium w-full">
           <div className="px-2 py-1 flex items-center justify-between w-full mt-1">
@@ -635,6 +751,31 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
             ) : (
               <div className="whitespace-pre-wrap p-2">{node.data.chat}</div>
             )}
+          </div>
+        </div>
+        <div className="w-full flex items-center justify-between p-2 gap-2">
+          <span className="whitespace-nowrap">LLM Reponse =</span>
+          <div className="flex-1">
+            <select
+              name="addVariable"
+              value={node.data.chatflowOutputVariable || ""}
+              onChange={(e) =>
+                changeChatflowOutputVariable(node.id, e.target.value)
+              }
+              className="w-full px-3 py-1 border-2 border-gray-200 rounded-xl
+                focus:outline-none focus:ring-2 focus:ring-indigo-500
+                disabled:opacity-50 appearance-none"
+            >
+              {/* 遍历 globalVariables 的 key */}
+              {Object.keys(globalVariables).map((key) => (
+                <option key={key} value={key}>
+                  {key}
+                </option>
+              ))}
+              <option value={""}>
+                --
+              </option>
+            </select>
           </div>
         </div>
       </details>

@@ -190,8 +190,8 @@ const CustomNodeComponent = ({
             />
           </svg>
           <span className="whitespace-nowrap">{data.nodeType}</span>
+          {data.debug && <div className="w-3 h-3 rounded-full bg-red-500"></div>}
         </div>
-        {data.debug && <div className="w-3 h-3 rounded-full bg-red-500"></div>}
         <div className="flex items-center justify-center gap-1">
           {data.isChatflowInput && (
             <div className="flex items-center justify-center w-full text-xs text-gray-500 gap-2">

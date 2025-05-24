@@ -57,16 +57,16 @@ class CodeSandbox:
         with open(script_path, "w") as f:
             if inputs:
                 for k, v in inputs.items():
-                    v = "''" if v == "" else v
+                    v = repr(v) if v=="" else v
                     f.write(f"{k} = {v}\n")
             f.write(code + "\n")
             if inputs:
                 f.write('print("####Global variable updated####")\n')
                 for k in inputs:
-                    f.write(f'if isinstance({k}, str):')
-                    f.write(f'  print("{k} = ", "\'", {k}, "\'", sep="")\n')
-                    f.write(f'else:')
-                    f.write(f'  print("{k} = ", {k}, sep="")\n')
+                    f.write(f'if isinstance({k}, str):\n')
+                    f.write(f'    print("{k} = ", repr({k}), sep="")\n')
+                    f.write(f'else:\n')
+                    f.write(f'    print("{k} = ", {k}, sep="")\n')
 
         # 构建完整命令链
         commands = []
