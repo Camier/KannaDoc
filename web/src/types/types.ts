@@ -72,6 +72,13 @@ export interface ModelConfig {
   useTopKDefault: boolean;
 }
 
+export interface McpConfig {
+  mcpServerUrl: string;
+  mcpTools: {
+    [key: string]: string; // 允许动态属性
+  }[];
+}
+
 export interface UploadFile {
   id: string;
   name: string;
@@ -129,6 +136,12 @@ export type CustomNode = Node<{
   isChatflowOutput?: boolean;
   useChatHistory?: boolean;
   chatflowOutputVariable?: string;
+  mcpConfig?: {
+    [key: string]: McpConfig; // 允许动态属性
+  };
+  mcpUse?: {
+    [key: string]: string[]; // 允许动态属性
+  };
 }>;
 
 // 组件 Props 类型

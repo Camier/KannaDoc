@@ -34,6 +34,8 @@ class Workflow(BaseModel):
     parent_id: str = ""
     temp_db_id: str = ""
     chatflow_id: str = ""
+    docker_image_use: str = ""
+    need_save_image: str = ""
 
 
 class WorkflowCreate(BaseModel):
@@ -69,3 +71,7 @@ class UserMessage(BaseModel):
     parent_id: str
     user_message: str
     temp_db_id: str
+
+class GetTools(BaseModel):
+    username: str
+    mcp_url: str

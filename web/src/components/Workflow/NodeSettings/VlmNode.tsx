@@ -1,6 +1,6 @@
 import { useAuthStore } from "@/stores/authStore";
 import { useFlowStore } from "@/stores/flowStore";
-import { useGlobalStore } from "@/stores/pythonVariableStore";
+import { useGlobalStore } from "@/stores/WorkflowVariableStore";
 import { CustomNode, Message, ModelConfig, WorkflowAll } from "@/types/types";
 import { Dispatch, SetStateAction, useState } from "react";
 import KnowledgeConfigModal from "./KnowledgeConfigModal";
@@ -9,6 +9,7 @@ import Cookies from "js-cookie";
 import { EventSourceParserStream } from "eventsource-parser/stream";
 import ChatMessage from "@/components/AiChat/ChatMessage";
 import MarkdownDisplay from "@/components/AiChat/MarkdownDisplay";
+import McpConfigComponent from "./McpConfig";
 
 interface VlmNodeProps {
   messages: Message[];
@@ -62,6 +63,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
     updateDescription,
   } = useFlowStore();
   const [showConfigModal, setShowConfigModal] = useState(false);
+  const [showMcpConfig, setShowMcpConfig] = useState(false);
   const { user } = useAuthStore();
   const [runTest, setRunTest] = useState(false);
   const [showRefFile, setShowRefFile] = useState<string[]>([]);
@@ -458,6 +460,12 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
               <span>Click to Add</span>
             </div>
           </div>
+          {Object.keys(isDebugMode ? globalDebugVariables : globalVariables)
+            .length === 0 && (
+            <div className="px-2 flex w-full items-center gap-2 text-gray-500">
+              No variable found.
+            </div>
+          )}
           {Object.keys(
             isDebugMode ? globalDebugVariables : globalVariables
           ).map((key) => {
@@ -772,9 +780,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                   {key}
                 </option>
               ))}
-              <option value={""}>
-                --
-              </option>
+              <option value={""}>--</option>
             </select>
           </div>
         </div>
@@ -886,6 +892,31 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                 />
               </svg>
             </div>
+            <button
+              onClick={() => {
+                setShowMcpConfig(true);
+              }}
+              disabled={runTest}
+              className={`
+                 hover:bg-indigo-500 hover:text-white
+              } cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full disabled:opacity-50 flex items-center justify-center gap-1`}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-5"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z"
+                />
+              </svg>
+              <span>MCP Tools</span>
+            </button>
           </div>
         </summary>
         <div
@@ -912,7 +943,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                   fillRule="evenodd"
                   d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                   clipRule="evenodd"
-                  transform="translate(2, 0.2)"
+                  transform="translate(2.8, 0.2)"
                 />
               </svg>
               <div className="ml-2 flex gap-1 items-center">
@@ -950,7 +981,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                   fillRule="evenodd"
                   d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                   clipRule="evenodd"
-                  transform="translate(2, 0.2)"
+                  transform="translate(2.8, 0.2)"
                 />
               </svg>
               <div className="ml-2 flex gap-1 items-center">
@@ -989,7 +1020,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                     fillRule="evenodd"
                     d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                     clipRule="evenodd"
-                    transform="translate(2, 0.2)"
+                    transform="translate(2.8, 0.2)"
                   />
                 </svg>
                 <div className="ml-2 flex gap-1 items-center">
@@ -1012,6 +1043,11 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
           </div>
         </div>
       </details>
+      <McpConfigComponent
+        node={node}
+        visible={showMcpConfig}
+        setVisible={setShowMcpConfig}
+      />
       <KnowledgeConfigModal
         node={node}
         visible={showConfigModal}

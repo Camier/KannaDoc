@@ -29,6 +29,8 @@ class WorkflowEngine:
         parent_id="",
         temp_db_id="",
         chatflow_id="",
+        docker_image_use = "python-sandbox:latest",
+        need_save_image="",
     ):
         self.nodes = nodes
         self.edges = edges
@@ -52,17 +54,32 @@ class WorkflowEngine:
         self.temp_db_id = temp_db_id
         self.chatflow_id = chatflow_id
         self.user_image_urls = []
+        self.docker_image_use = docker_image_use if docker_image_use else "python-sandbox:latest"
+        self.need_save_image = "python-sandbox-" + need_save_image if need_save_image else ""
 
     async def __aenter__(self):
         # 创建并启动沙箱
-        self.sandbox = CodeSandbox()
+        self.sandbox = CodeSandbox(self.docker_image_use)
         await self.sandbox.__aenter__()
         return self
 
     async def __aexit__(self, exc_type, exc, tb):
         # 退出上下文时清理资源
         if self.sandbox:
-            # 清理沙箱
+            if self.need_save_image:
+                new_image = await self.sandbox.commit(self.need_save_image.split(":")[0], self.need_save_image.split(":")[1])
+                redis_conn = await redis.get_task_connection()
+                await redis_conn.xadd(
+                    f"workflow:events:{self.task_id}",  # 使用新的事件流键
+                    {
+                        "type": "workflow",
+                        "status": "dockering",
+                        "result": new_image,
+                        "error": "",
+                        "create_time": str(beijing_time_now()),
+                    },
+                )
+                # 清理沙箱
             await self.sandbox.__aexit__(exc_type, exc, tb)
 
     async def save_state(self):

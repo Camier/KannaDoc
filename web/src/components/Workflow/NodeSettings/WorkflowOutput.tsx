@@ -2,7 +2,7 @@ import ChatMessage from "@/components/AiChat/ChatMessage";
 import { deleteFile } from "@/lib/api/knowledgeBaseApi";
 import { uploadFiles } from "@/lib/api/chatApi";
 import { useAuthStore } from "@/stores/authStore";
-import { useGlobalStore } from "@/stores/pythonVariableStore";
+import { useGlobalStore } from "@/stores/WorkflowVariableStore";
 import {
   Chatflow,
   CustomNode,
@@ -10,7 +10,12 @@ import {
   Message,
   WorkflowAll,
 } from "@/types/types";
-import { getFileExtension, getFileIcon, SupportFileFormat, SupportUploadFormat } from "@/utils/file";
+import {
+  getFileExtension,
+  getFileIcon,
+  SupportFileFormat,
+  SupportUploadFormat,
+} from "@/utils/file";
 import {
   Dispatch,
   SetStateAction,
@@ -444,7 +449,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
         </button>
       </div>
       {!showHistory && (
-        <details className="group w-full">
+        <details className="group w-full open">
           <summary className="flex items-center cursor-pointer font-medium w-full">
             <div className="px-2 py-1 flex items-center justify-between w-full mt-1">
               <div className="flex items-center justify-center gap-1">
@@ -566,6 +571,12 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                 <span>Click to Add</span>
               </div>
             </div>
+            {Object.keys(isDebugMode ? globalDebugVariables : globalVariables)
+              .length === 0 && (
+              <div className="px-2 flex w-full items-center gap-2 text-gray-500">
+                No variable found.
+              </div>
+            )}
             {Object.keys(
               isDebugMode ? globalDebugVariables : globalVariables
             ).map((key) => {

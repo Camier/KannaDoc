@@ -50,7 +50,7 @@ import {
   getCustomNodes,
   saveCustomNodes,
 } from "@/lib/api/workflowApi";
-import { useGlobalStore } from "@/stores/pythonVariableStore";
+import { useGlobalStore } from "@/stores/WorkflowVariableStore";
 import ConditionNodeComponent from "@/components/Workflow/NodeSettings/ConditionNode";
 import LoopNodeComponent from "@/components/Workflow/NodeSettings/LoopNode";
 import { EventSourceParserStream } from "eventsource-parser/stream";
@@ -65,6 +65,7 @@ import useChatStore from "@/stores/chatStore";
 import { getFileExtension } from "@/utils/file";
 import { createChatflow } from "@/lib/api/chatflowApi";
 import ConfirmDialog from "../ConfirmDialog";
+import { BlockList } from "net";
 
 const getId = (type: string): string => `node_${type}_${uuidv4()}`;
 interface FlowEditorProps {
@@ -87,6 +88,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     reset,
     setGlobalDebugVariables,
     globalDebugVariables,
+    DockerImageUse,
   } = useGlobalStore();
   const {
     nodes,
@@ -138,6 +140,11 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   const [fileMessages, setFileMessages] = useState<Message[]>([]); //后台用来存放上传文件的临时知识库
   const { chatflowId, setChatflowId } = useChatStore();
   const [showConfirmClear, setShowConfirmClear] = useState(false);
+  const [saveImage, setSaveImage] = useState<boolean>(false);
+  const [saveImageName, setSaveImageName] = useState<string>("");
+  const [saveImageTag, setSaveImageTag] = useState<string>("");
+  const [refreshDockerImages, setRefreshDockerImages] =
+    useState<boolean>(false);
 
   const [runningChatflowLLMNodes, setRunningChatflowLLMNodes] = useState<
     CustomNode[]
@@ -351,6 +358,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               const { done, value } = (await eventReader?.read()) || {};
               if (done) break;
               const payload = JSON.parse(value.data);
+              console.log(payload);
               //处理事件数据
               if (payload.event === "workflow") {
                 if (payload.workflow.status == "failed") {
@@ -416,7 +424,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                       result = resultList
                         .map(
                           (item, index) =>
-                            `#### Globall Loop ${index + 1}:\n${item.result}\n`
+                            `#### Global Loop ${index + 1}:\n${item.result}\n`
                         )
                         .join("\n");
                     } else {
@@ -811,6 +819,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             setRunning(false);
             setTaskId("");
             setCanceling(false);
+            setRefreshDockerImages((prev) => !prev);
           }
         }
       };
@@ -1061,6 +1070,19 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     files: FileRespose[] = [],
     tempBaseId: string = ""
   ) => {
+    if (saveImage) {
+      if (saveImageName === "" || saveImageTag === "") {
+        setShowAlert(true);
+        setWorkflowMessage(
+          'Please write your Image Name and Image Version or close "Commit Runtime Environment" checkbox before running LLM node!'
+        );
+        setWorkflowStatus("error");
+        return;
+      }
+    }
+
+    const sendSaveImage = saveImage ? saveImageName + ":" + saveImageTag : "";
+
     for (let node of nodes) {
       if (
         node.data.nodeType === "vlm" &&
@@ -1164,6 +1186,8 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               isChatflowInput: node.data.isChatflowInput,
               isChatflowOutput: node.data.isChatflowOutput,
               useChatHistory: node.data.useChatHistory,
+              mcpConfig: node.data.mcpConfig,
+              mcpUse: node.data.mcpUse,
             },
           };
         });
@@ -1252,7 +1276,9 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
           userMessage,
           parentId,
           tempBaseId,
-          chatflowId
+          chatflowId,
+          sendSaveImage,
+          DockerImageUse
         );
         if (response.data.code === 0) {
           setTaskId(response.data.task_id);
@@ -1277,7 +1303,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
           workFlow.workflowId,
           user.name,
           workFlow.workflowName,
-          workFlow.workflowConfig,
+          { docker_image_use: DockerImageUse },
           workFlow.startNode,
           globalVariables,
           nodes,
@@ -1547,10 +1573,11 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             </button>
             <button
               onClick={() => {
+                handleSaveWorkFlow();
                 refreshWorkflow();
-                setShowAlert(true);
-                setWorkflowMessage("Refesh workflow!");
-                setWorkflowStatus("success");
+                // setShowAlert(true);
+                // setWorkflowMessage("Refesh workflow!");
+                // setWorkflowStatus("success");
               }}
               //disabled={nodes.length === 0}
               className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
@@ -1718,7 +1745,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             <div className="flex items-center justify-center gap-1">
               <button
                 onClick={handleSaveWorkFlow}
-                className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+                className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full text-indigo-500 hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1762,7 +1789,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               ) : (
                 <button
                   disabled={running || resumeDebugTaskId !== ""}
-                  className="text-indigo-500 cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+                  className="text-red-500 cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
                   onClick={() => {
                     setShowConfirmClear(true);
                   }}
@@ -1801,6 +1828,13 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               {{
                 code: (
                   <FunctionNodeComponent
+                    refreshDockerImages={refreshDockerImages}
+                    saveImage={saveImage}
+                    setSaveImage={setSaveImage}
+                    saveImageName={saveImageName}
+                    setSaveImageName={setSaveImageName}
+                    saveImageTag={saveImageTag}
+                    setSaveImageTag={setSaveImageTag}
                     saveNode={handleSaveNodes}
                     isDebugMode={resumeDebugTaskId === "" ? false : true}
                     node={currentNode}

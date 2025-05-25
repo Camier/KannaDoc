@@ -17,7 +17,7 @@ import { useAuthStore } from "@/stores/authStore";
 import { Flow, WorkflowAll } from "@/types/types";
 import { useState, useEffect, useCallback } from "react";
 import { useFlowStore } from "@/stores/flowStore";
-import { useGlobalStore } from "@/stores/pythonVariableStore";
+import { useGlobalStore } from "@/stores/WorkflowVariableStore";
 
 const Workflow = () => {
   const [selectedFlow, setSelectedFlow] = useState<string | null>(null);
@@ -37,7 +37,7 @@ const Workflow = () => {
     setNodes,
     setEdges,
   } = useFlowStore();
-  const { setGlobalVariables } = useGlobalStore();
+  const { setGlobalVariables,updateDockerImageUse } = useGlobalStore();
 
   // 成功消息自动消失
   useEffect(() => {
@@ -86,6 +86,7 @@ const Workflow = () => {
         setEdges(item.edges);
         setGlobalVariables(item.global_variables);
         setWorkflowAll(workflowAllData);
+        updateDockerImageUse(item.workflow_config.docker_image_use)
         resethistory(item.nodes,item.edges);
         resetfuture();
       } catch (error) {
@@ -134,7 +135,7 @@ const Workflow = () => {
           "",
           user.name,
           newFlowName,
-          {},
+          {"docker_image_use":"python-sandbox:latest"},
           "node_start",
           {},
           [],

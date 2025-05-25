@@ -4,6 +4,7 @@ from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
 from app.core.security import get_current_user, verify_username_match
 from app.db.redis import redis
 from app.models.workflow import (
+    GetTools,
     NodesInput,
     TestConditionNode,
     TestFunctionCode,
@@ -12,6 +13,8 @@ from app.models.workflow import (
     WorkflowRenameInput,
 )
 from app.utils.timezone import beijing_time_now
+from app.workflow.mcp_tools import mcp_list_tools
+from app.workflow.sandbox import CodeSandbox
 from app.workflow.workflow_engine import WorkflowEngine
 from app.models.user import User
 from app.db.mongo import MongoDB, get_mongo
@@ -47,7 +50,11 @@ async def execute_workflow(
     redis_conn = await redis.get_task_connection()
 
     if workflow.debug_resume_task_id or workflow.input_resume_task_id:
-        task_id = workflow.debug_resume_task_id if workflow.debug_resume_task_id else workflow.input_resume_task_id
+        task_id = (
+            workflow.debug_resume_task_id
+            if workflow.debug_resume_task_id
+            else workflow.input_resume_task_id
+        )
         # 1. 合并更新全局变量
         state_key = f"workflow:{task_id}:state"
         state = await redis_conn.get(state_key)
@@ -390,3 +397,35 @@ async def cancel_workflow(
     )
 
     return {"status": "success", "message": "Cancellation requested"}
+
+
+@router.post("/mcp_tool_list")
+async def mcp_tool_list(
+    get_tools: GetTools, current_user: User = Depends(get_current_user)
+):
+    await verify_username_match(current_user, get_tools.username)
+    result = await mcp_list_tools(get_tools.mcp_url)
+
+    return {"status": "success", "tools": result}
+
+
+@router.get("/docker_image_list/{username}")
+async def docker_image_list(
+    username: str, current_user: User = Depends(get_current_user)
+):
+    await verify_username_match(current_user, username)
+    images = await CodeSandbox.get_all_images()
+    sandbox_images = []
+    for image in images:
+        if image.startswith("python-sandbox"):
+            sandbox_images.append(image)
+    return {"status": "success", "images": sandbox_images}
+
+
+@router.delete("/{username}/{image_name}/docker_image/")
+async def docker_image_list(
+    username: str, image_name: str, current_user: User = Depends(get_current_user)
+):
+    await verify_username_match(current_user, username)
+    result = await CodeSandbox.delete_image(image_name,True)
+    return result

@@ -2,7 +2,7 @@ import MarkdownDisplay from "@/components/AiChat/MarkdownDisplay";
 import { runConditionTest } from "@/lib/api/workflowApi";
 import { useAuthStore } from "@/stores/authStore";
 import { useFlowStore } from "@/stores/flowStore";
-import { useGlobalStore } from "@/stores/pythonVariableStore";
+import { useGlobalStore } from "@/stores/WorkflowVariableStore";
 import { CustomNode } from "@/types/types";
 import { Dispatch, SetStateAction, useState } from "react";
 
@@ -357,6 +357,12 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
               <span>Click to Add</span>
             </div>
           </div>
+          {Object.keys(isDebugMode ? globalDebugVariables : globalVariables)
+            .length === 0 && (
+            <div className="px-2 flex w-full items-center gap-2 text-gray-500">
+              No variable found.
+            </div>
+          )}
           {Object.keys(
             isDebugMode ? globalDebugVariables : globalVariables
           ).map((key) => {

@@ -79,7 +79,9 @@ export const executeWorkflow = async (
   userMessage: string,
   parentId: string,
   tempBaseId: string,
-  chatflowId: string
+  chatflowId: string,
+  saveImage: string,
+  DockerImageUse: string
 ) => {
   return api.post("/workflow/execute", {
     username: username,
@@ -94,6 +96,8 @@ export const executeWorkflow = async (
     parent_id: parentId,
     temp_db_id: tempBaseId,
     chatflow_id: chatflowId,
+    docker_image_use: DockerImageUse,
+    need_save_image: saveImage,
   });
 };
 
@@ -168,4 +172,19 @@ export const deleteCustomNodes = async (
 
 export const cancelWorkflow = async (username: string, taskId: string) => {
   return api.get(`/workflow/${username}/${taskId}/cancel`);
+};
+
+export const getMcpToolList = async (username: string, mcpUrl: string) => {
+  return api.post(`/workflow/mcp_tool_list`, {
+    username: username,
+    mcp_url: mcpUrl,
+  });
+};
+
+export const getDockerImages = async (username: string) => {
+  return api.get(`/workflow/docker_image_list/${username}`);
+};
+
+export const deleteDockerImages = async (username: string, imageName:string) => {
+  return api.delete(`/workflow/${username}/${imageName}/docker_image/`);
 };

@@ -65,9 +65,10 @@ class KafkaConsumerManager:
                 file_meta=file_meta,
             )
 
-    async def process_workflow_task(self, message: dict, debug_resume=False,  input_resume=False):
+    async def process_workflow_task(
+        self, message: dict, debug_resume=False, input_resume=False
+    ):
         task_id = message["task_id"]
-        username = message["username"]
         workflow_data = message["workflow_data"]
         redis_conn = await redis.get_task_connection()
         try:
@@ -114,6 +115,8 @@ class KafkaConsumerManager:
                 parent_id=workflow_data["parent_id"],
                 temp_db_id=workflow_data["temp_db_id"],
                 chatflow_id=workflow_data["chatflow_id"],
+                docker_image_use=workflow_data["docker_image_use"],
+                need_save_image=workflow_data["need_save_image"],
             ) as engine:
 
                 # 加载状态（如果是恢复执行）
@@ -149,16 +152,16 @@ class KafkaConsumerManager:
                 else:
                     workflow_status = "completed"
 
-                await redis_conn.xadd(
-                    f"workflow:events:{task_id}",
-                    {
-                        "type": "workflow",
-                        "status": workflow_status,
-                        "result": json.dumps(engine.context),
-                        "error": "",
-                        "create_time": str(beijing_time_now()),
-                    },
-                )
+            await redis_conn.xadd(
+                f"workflow:events:{task_id}",
+                {
+                    "type": "workflow",
+                    "status": workflow_status,
+                    "result": json.dumps(engine.context),
+                    "error": "",
+                    "create_time": str(beijing_time_now()),
+                },
+            )
 
         except Exception as e:
             await redis_conn.hset(
