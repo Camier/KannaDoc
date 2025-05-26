@@ -1,13 +1,16 @@
+"use client";
 import Link from "next/link";
 import UserMenuExpand from "./UserMenuExpand";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
-  const navbarButtonStyle = `bg-clip-text h-8 flex items-center justify-center gap-1 cursor-pointer transition duration-300 ease-in-out cursor-point
-   border-indigo-500 text-indigo-500 hover:border-indigo-600 hover:text-indigo-600
+  const pathname = usePathname(); // 直接获取当前路径（如 "/about"）
+  const navbarButtonStyle = `transform transition-transform duration-300  hover:scale-110 h-8 flex items-center justify-center gap-1 cursor-pointer cursor-point
+   border-indigo-500 text-indigo-500 hover:text-white hover:bg-indigo-700
   `;
   return (
     <div className="z-10 fixed left-[2%] w-[96%] px-[10%] bg-white/10 h-[5%] my-1 rounded-3xl flex gap-[18%] items-center shadow-2xl">
-      <div className={navbarButtonStyle}>
+      <div className={navbarButtonStyle+`rounded-3xl px-4`}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
@@ -22,12 +25,19 @@ const Navbar = () => {
           />
         </svg>
 
-        <Link href="/" className="font-bold text-sm">
+        <Link href="/" className="font-semibold text-sm">
           LAYRA
         </Link>
       </div>
 
-      <div className={navbarButtonStyle}>
+      <div
+        className={
+          navbarButtonStyle +
+          `${
+            pathname === "/ai-chat" ? "bg-indigo-500 text-white" : ""
+          }  rounded-3xl px-4`
+        }
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
@@ -40,26 +50,19 @@ const Navbar = () => {
             clipRule="evenodd"
           />
         </svg>
-        <Link href="/ai-chat" className="font-bold text-sm">
+        <Link href="/ai-chat" className="font-semibold text-sm">
           RAG-Chat
         </Link>
       </div>
 
-      <div className={navbarButtonStyle}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          className="size-5"
-        >
-          <path d="M10.75 16.82A7.462 7.462 0 0 1 15 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0 0 18 15.06v-11a.75.75 0 0 0-.546-.721A9.006 9.006 0 0 0 15 3a8.963 8.963 0 0 0-4.25 1.065V16.82ZM9.25 4.065A8.963 8.963 0 0 0 5 3c-.85 0-1.673.118-2.454.339A.75.75 0 0 0 2 4.06v11a.75.75 0 0 0 .954.721A7.506 7.506 0 0 1 5 15.5c1.579 0 3.042.487 4.25 1.32V4.065Z" />
-        </svg>
-        <Link href="/knowledge-base" className="font-bold text-sm">
-          Knowledge-Base
-        </Link>
-      </div>
-
-      <div className={navbarButtonStyle}>
+      <div
+        className={
+          navbarButtonStyle +
+          `${
+            pathname === "/work-flow" ? "bg-indigo-500 text-white" : ""
+          }  rounded-3xl px-4`
+        }
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
@@ -78,9 +81,30 @@ const Navbar = () => {
           // onClick={() => {
           //   window.confirm("coming soon...");
           // }}
-          className="font-bold text-sm"
+          className="font-semibold text-sm"
         >
           Work-Flow
+        </Link>
+      </div>
+
+      <div
+        className={
+          navbarButtonStyle +
+          `${
+            pathname === "/knowledge-base" ? "bg-indigo-500 text-white" : ""
+          } rounded-3xl px-4`
+        }
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          className="size-5"
+        >
+          <path d="M10.75 16.82A7.462 7.462 0 0 1 15 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0 0 18 15.06v-11a.75.75 0 0 0-.546-.721A9.006 9.006 0 0 0 15 3a8.963 8.963 0 0 0-4.25 1.065V16.82ZM9.25 4.065A8.963 8.963 0 0 0 5 3c-.85 0-1.673.118-2.454.339A.75.75 0 0 0 2 4.06v11a.75.75 0 0 0 .954.721A7.506 7.506 0 0 1 5 15.5c1.579 0 3.042.487 4.25 1.32V4.065Z" />
+        </svg>
+        <Link href="/knowledge-base" className="font-semibold text-sm">
+          Knowledge-Base
         </Link>
       </div>
 

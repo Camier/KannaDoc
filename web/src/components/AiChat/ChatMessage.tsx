@@ -59,7 +59,6 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
       }`}
     >
       <div>
-        <div className="border-l-2 pl-2 border-gray-200 text-sm">
           {message.type === "text" && message.thinking && (
             <MarkdownDisplay
               md_text={message.thinking}
@@ -68,7 +67,6 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
               isThinking={true}
             />
           )}
-        </div>
         {message.type === "text" && message.content && (
           <MarkdownDisplay
             md_text={message.content}

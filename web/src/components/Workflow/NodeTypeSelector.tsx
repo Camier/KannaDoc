@@ -183,7 +183,7 @@ const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="size-5 shrink-0 hover:text-indigo-700 text-indigo-500"
+                  className="size-5 shrink-0"
                   onClick={(e) => {
                     e.stopPropagation();
                     setShowConfirmDeleteNode(name);

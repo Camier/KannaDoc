@@ -31,6 +31,7 @@ import {
   Message,
   FileUsed,
   FileRespose,
+  McpConfig,
 } from "@/types/types";
 import Cookies from "js-cookie";
 import { useFlowStore } from "@/stores/flowStore";
@@ -358,7 +359,6 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               const { done, value } = (await eventReader?.read()) || {};
               if (done) break;
               const payload = JSON.parse(value.data);
-              console.log(payload);
               //处理事件数据
               if (payload.event === "workflow") {
                 if (payload.workflow.status == "failed") {
@@ -457,7 +457,10 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 } else if (payload.node.status === false) {
                   updateStatus(payload.node.id, "init");
                 }
-              } else if (payload.event === "ai_chunk") {
+              } else if (
+                payload.event === "ai_chunk" ||
+                payload.event === "mcp"
+              ) {
                 const nodeId = payload.ai_chunk.id; // 获取节点ID
                 const aiChunkResult = JSON.parse(payload.ai_chunk.result);
                 // 获取或初始化该节点的状态
@@ -480,8 +483,10 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 }
 
                 if (aiChunkResult.type === "file_used") {
-                  state.file_used = aiChunkResult.data; // 自动处理原始换行符
-                  state.messageId = aiChunkResult.message_id;
+                  if (payload.event === "ai_chunk") {
+                    state.file_used = aiChunkResult.data; // 自动处理原始换行符
+                    state.messageId = aiChunkResult.message_id;
+                  }
                 }
                 if (aiChunkResult.type === "thinking") {
                   state.aiThinking += aiChunkResult.data; // 自动处理原始换行符
@@ -489,14 +494,19 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 }
 
                 if (aiChunkResult.type === "text") {
-                  state.aiMessage += aiChunkResult.data; // 自动处理原始换行符
-                  state.messageId = aiChunkResult.message_id;
+                  if (payload.event === "mcp") {
+                    state.aiThinking += aiChunkResult.data; // 自动处理原始换行符
+                    state.messageId = aiChunkResult.message_id;
+                  } else {
+                    state.aiMessage += aiChunkResult.data; // 自动处理原始换行符
+                    state.messageId = aiChunkResult.message_id;
+                  }
                 }
 
                 if (aiChunkResult.type === "token") {
-                  state.total_token = aiChunkResult.total_token;
-                  state.completion_tokens = aiChunkResult.completion_tokens;
-                  state.prompt_tokens = aiChunkResult.prompt_tokens;
+                  state.total_token += aiChunkResult.total_token;
+                  state.completion_tokens += aiChunkResult.completion_tokens;
+                  state.prompt_tokens += aiChunkResult.prompt_tokens;
                 }
 
                 const currentCount = countRef.current;
@@ -715,7 +725,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                           );
                         }
                       }
-                    } else {
+                    } else if (payload.event === "ai_chunk") {
                       // 额外更新知识库引用
                       setMessages((prev) => {
                         const nodeMessages = prev[nodeId] || [];
@@ -805,6 +815,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                         }
                       }
                       countRef.current += 1;
+                    } else {
                     }
                   }
                 }
@@ -1167,6 +1178,44 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               ? -1
               : node.data.modelConfig?.topK,
           };
+
+          const filterMcpConfig = (
+            mcpConfig: {
+              [key: string]: McpConfig;
+            },
+            mcpUse: {
+              [key: string]: string[];
+            }
+          ) => {
+            const filteredConfig: {
+              [key: string]: McpConfig;
+            } = {};
+            // 遍历 mcpUse 中的所有配置键（如 mcp1）
+            for (const key of Object.keys(mcpUse)) {
+              if (mcpConfig[key]) {
+                // 获取原始配置
+                const originalConfig = mcpConfig[key];
+                // 过滤工具列表，仅保留在 mcpUse 中声明的工具
+                const filteredTools = originalConfig.mcpTools.filter((tool) =>
+                  mcpUse[key].includes(tool.name)
+                );
+                // 构造新的配置项（保留 mcpServerUrl 等属性）
+                filteredConfig[key] = {
+                  ...originalConfig,
+                  mcpTools: filteredTools,
+                };
+              }
+            }
+            return filteredConfig;
+          };
+
+          let mcpUse: { [key: string]: McpConfig };
+          if (node.data.mcpConfig && node.data.mcpUse) {
+            mcpUse = filterMcpConfig(node.data.mcpConfig, node.data.mcpUse);
+          } else {
+            mcpUse = {};
+          }
+
           return {
             id: node.id,
             type: node.data.nodeType,
@@ -1186,8 +1235,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               isChatflowInput: node.data.isChatflowInput,
               isChatflowOutput: node.data.isChatflowOutput,
               useChatHistory: node.data.useChatHistory,
-              mcpConfig: node.data.mcpConfig,
-              mcpUse: node.data.mcpUse,
+              mcpUse: mcpUse,
             },
           };
         });

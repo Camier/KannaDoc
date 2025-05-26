@@ -24,8 +24,6 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
   const {
     addMcpConfig,
     removeMcpConfig,
-    addMcpUse,
-    removeMcpUse,
     updateMcpUse,
     updateMcpConfig,
   } = useFlowStore();

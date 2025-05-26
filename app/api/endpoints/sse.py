@@ -131,6 +131,16 @@ async def workflow_sse(
                     "create_time": parsed_msg.get("create_time"),
                 },
             }
+        elif parsed_msg.get("type") == "mcp":
+            return {
+                "event": "mcp",
+                "ai_chunk": {
+                    "id": parsed_msg.get("node_id"),
+                    "message_id": parsed_msg.get("message_id"),
+                    "result": parsed_msg.get("data"),
+                    "create_time": parsed_msg.get("create_time"),
+                },
+            }
 
     async def event_stream():
         redis_conn: Redis = await redis.get_task_connection()

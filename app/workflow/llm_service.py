@@ -23,6 +23,7 @@ class ChatService:
         history_depth: int = 5,
         save_to_db: bool = False,
         user_image_urls: list = [],
+        supply_info: str = ""
     ) -> AsyncGenerator[str, None]:
         """创建聊天流并处理存储逻辑"""
         db = await get_mongo()
@@ -166,7 +167,7 @@ class ChatService:
         content.append(
             {
                 "type": "text",
-                "text": user_message_content.user_message,
+                "text": user_message_content.user_message + supply_info,
             },
         )
 

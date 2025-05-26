@@ -170,7 +170,7 @@ const MarkdownDisplay: React.FC<MarkdownDisplayProps> = ({
 }) => {
   return (
     <div className="flex flex-col w-full gap-2">
-      <div className="prose dark:prose-invert max-w-full">
+      <div className={`prose dark:prose-invert max-w-full ${isThinking? "border-l-2 pl-2 border-gray-200 text-sm":"text-base"}`}>
         <ReactMarkdown
           remarkPlugins={[remarkMath, remarkGfm]} // 必须 math 在前
           rehypePlugins={[
@@ -243,7 +243,7 @@ const MarkdownDisplay: React.FC<MarkdownDisplayProps> = ({
       {message.token_number !== undefined &&
         message.token_number.total_token > 0 &&
         showTokenNumber && (
-          <div className="text-gray-600 text-sm flex gap-4">
+          <div className={`text-gray-600 flex gap-4 ${isThinking? "border-l-2 pl-2 border-gray-200 text-xs":"text-sm"}`}>
             <span>Total token usage: {message.token_number?.total_token}</span>
             <span>
               Completion token usage: {message.token_number?.completion_tokens}

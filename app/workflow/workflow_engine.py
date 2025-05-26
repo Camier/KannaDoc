@@ -9,6 +9,7 @@ import docker
 from app.db.redis import redis
 from app.models.workflow import UserMessage
 from app.utils.timezone import beijing_time_now
+from app.workflow.mcp_tools import mcp_call_tools
 from app.workflow.sandbox import CodeSandbox
 from app.workflow.code_scanner import CodeScanner
 from app.workflow.graph import TreeNode, WorkflowGraph
@@ -29,7 +30,7 @@ class WorkflowEngine:
         parent_id="",
         temp_db_id="",
         chatflow_id="",
-        docker_image_use = "python-sandbox:latest",
+        docker_image_use="python-sandbox:latest",
         need_save_image="",
     ):
         self.nodes = nodes
@@ -54,8 +55,13 @@ class WorkflowEngine:
         self.temp_db_id = temp_db_id
         self.chatflow_id = chatflow_id
         self.user_image_urls = []
-        self.docker_image_use = docker_image_use if docker_image_use else "python-sandbox:latest"
-        self.need_save_image = "python-sandbox-" + need_save_image if need_save_image else ""
+        self.supply_info = ""  # mcp等工具调用产生的额外的llm输入信息
+        self.docker_image_use = (
+            docker_image_use if docker_image_use else "python-sandbox:latest"
+        )
+        self.need_save_image = (
+            "python-sandbox-" + need_save_image if need_save_image else ""
+        )
 
     async def __aenter__(self):
         # 创建并启动沙箱
@@ -67,7 +73,10 @@ class WorkflowEngine:
         # 退出上下文时清理资源
         if self.sandbox:
             if self.need_save_image:
-                new_image = await self.sandbox.commit(self.need_save_image.split(":")[0], self.need_save_image.split(":")[1])
+                new_image = await self.sandbox.commit(
+                    self.need_save_image.split(":")[0],
+                    self.need_save_image.split(":")[1],
+                )
                 redis_conn = await redis.get_task_connection()
                 await redis_conn.xadd(
                     f"workflow:events:{self.task_id}",  # 使用新的事件流键
@@ -515,6 +524,128 @@ class WorkflowEngine:
                     temp_db_id = ""
                 vlm_input = self.render_template(vlm_input, self.global_variables)
 
+                ##### mcp section #####
+                mcp_tools_for_call = {}
+                mcp_servers: dict = node.data["mcpUse"]
+                if mcp_servers:
+                    load_ai_messgae = json.dumps(
+                        {
+                            "type": "text",
+                            "data": "#### 开始mcp调用,大模型正在选择工具...  \n`",
+                            "message_id": message_id,
+                        }
+                    )
+                    await self._send_ai_chunk_event(
+                        node.node_id, message_id, load_ai_messgae, "mcp"
+                    )
+                    logger.info("MCP:工作流{self.task_id}开始mcp调用")
+                    for mcp_server_name, mcp_server_tools in mcp_servers.items():
+                        mcp_server_url = mcp_server_tools.get("mcpServerUrl")
+                        mcp_tools = mcp_server_tools.get("mcpTools")
+                        for mcp_tool in mcp_tools:
+                            mcp_tool["url"] = mcp_server_url
+                            mcp_tools_for_call[mcp_tool["name"]] = mcp_tool
+                    mcp_prompt = f"""
+你是一个选择函数调用的专家，请根据用户提问帮用户选择最合适的一个函数调用，并给出函数所需的参数，以{{"function_name":函数名，"params":参数}}的json格式输出，如果用户提问与函数无关，请输出{{"function_name":""}}
+这是json格式的函数列表：{json.dumps(mcp_tools_for_call)}"""
+                    mcp_user_message = UserMessage(
+                        conversation_id=self.chatflow_id,
+                        parent_id="",
+                        user_message=vlm_input,
+                        temp_db_id=self.temp_db_id,
+                    )
+                    # 获取流式生成器（假设返回结构化数据块）
+                    mcp_stream_generator = ChatService.create_chat_stream(
+                        user_message_content=mcp_user_message,
+                        model_config=node.data["modelConfig"],
+                        message_id=message_id,
+                        system_prompt=mcp_prompt,
+                        save_to_db=False,
+                        user_image_urls=[],
+                    )
+                    mcp_full_response = []
+                    mcp_chunks = []
+                    async for chunk in mcp_stream_generator:
+                        await self._send_ai_chunk_event(
+                            node.node_id, message_id, chunk, "mcp"
+                        )
+                        mcp_chunks.append(json.loads(chunk))
+                    for chunk in mcp_chunks:
+                        if chunk.get("type") == "text":
+                            mcp_full_response.append(chunk.get("data"))
+                    try:
+                        mcp_full_response_json = json.loads("".join(mcp_full_response))
+                        function_name = mcp_full_response_json.get("function_name")
+                        if function_name:
+                            params = mcp_full_response_json.get("params")
+                            try:
+                                result = await mcp_call_tools(
+                                    mcp_tools_for_call[function_name]["url"],
+                                    function_name,
+                                    params,
+                                )
+                                self.supply_info = f"\n请根据这些结果回答问题{result}"
+                                logger.info("MCP:工作流{self.task_id}mcp调用成功")
+                                load_ai_messgae = json.dumps(
+                                    {
+                                        "type": "text",
+                                        "data": f"`  \n#### mcp调用成功,返回结果：  \n`{result}`",
+                                        "message_id": message_id,
+                                    }
+                                )
+                                await self._send_ai_chunk_event(
+                                    node.node_id, message_id, load_ai_messgae, "mcp"
+                                )
+                            except Exception as e:
+                                load_ai_messgae = json.dumps(
+                                    {
+                                        "type": "text",
+                                        "data": f"`  \n#### 函数{function_name},参数：{params}的MCP调用失败",
+                                        "message_id": message_id,
+                                    }
+                                )
+                                await self._send_ai_chunk_event(
+                                    node.node_id, message_id, load_ai_messgae, "mcp"
+                                )
+                                logger.error(
+                                    f"MCP:工作流{self.task_id}函数{function_name},参数：{params}的MCP调用失败：{e}"
+                                )
+                        else:
+                            load_ai_messgae = json.dumps(
+                                {
+                                    "type": "text",
+                                    "data": f"`  \n#### 未找到合适的MCP调用工具。",
+                                    "message_id": message_id,
+                                }
+                            )
+                            await self._send_ai_chunk_event(
+                                node.node_id, message_id, load_ai_messgae, "mcp"
+                            )
+                            logger.info(
+                                f"MCP:工作流{self.task_id}未找到合适的MCP调用工具。"
+                            )
+                    except Exception as e:
+                        load_ai_messgae = json.dumps(
+                            {
+                                "type": "text",
+                                "data": f"`  \n未解析到有效的json输出，请优化后端mcp的prompt。",
+                                "message_id": message_id,
+                            }
+                        )
+                        await self._send_ai_chunk_event(
+                            node.node_id, message_id, load_ai_messgae, "mcp"
+                        )
+                        logger.info(
+                            f"MCP:工作流{self.task_id}的MCP调用未解析到json输出：{e}"
+                        )
+                ##### mcp section #####
+
+                load_ai_messgae = json.dumps(
+                    {"type": "text", "data": "", "message_id": message_id}
+                )
+                await self._send_ai_chunk_event(
+                    node.node_id, message_id, load_ai_messgae
+                )
                 user_message = UserMessage(
                     conversation_id=self.chatflow_id,
                     parent_id=self.parent_id if node.data["useChatHistory"] else "",
@@ -528,7 +659,8 @@ class WorkflowEngine:
                     message_id=message_id,
                     system_prompt=node.data["prompt"],
                     save_to_db=True if node.data["isChatflowOutput"] else False,
-                    user_image_urls = self.user_image_urls
+                    user_image_urls=self.user_image_urls,
+                    supply_info=self.supply_info,
                 )
                 full_response = []
                 chunks = []
@@ -549,9 +681,11 @@ class WorkflowEngine:
                         if k in self.global_variables:
                             self.global_variables[k] = repr('"' + v + '"')
                 except Exception as e:
-                    logger.info(f"工作流{self.task_id}未解析到json输出：{e}")
+                    logger.info(f"LLM:工作流{self.task_id}未解析到json输出：{e}")
                 if node.data["chatflowOutputVariable"]:
-                    self.global_variables[node.data["chatflowOutputVariable"]] = repr('"' + "".join(full_response) + '"')
+                    self.global_variables[node.data["chatflowOutputVariable"]] = repr(
+                        '"' + "".join(full_response) + '"'
+                    )
                 # 以节点ID为键存储完整结果
                 if not node.node_id in self.context:
                     self.context[node.node_id] = [{"result": "Message generated!"}]
@@ -564,11 +698,17 @@ class WorkflowEngine:
         else:
             return True
 
-    async def _send_ai_chunk_event(self, node_id: str, message_id: str, chunk: str):
+    async def _send_ai_chunk_event(
+        self, node_id: str, message_id: str, chunk: str, tool: str = ""
+    ):
         """发送单个AI生成块到Redis事件流"""
+        if tool:
+            messgae_type = tool
+        else:
+            messgae_type = "ai_chunk"
         redis_conn = await redis.get_task_connection()
         event_data = {
-            "type": "ai_chunk",  # 标识为AI数据块
+            "type": messgae_type,  # 标识为AI数据块
             "node_id": node_id,
             "message_id": message_id,
             "data": chunk,
