@@ -55,10 +55,10 @@ const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({
   );
 
   return (
-    <div className="space-y-2">
-      <ul className="space-y-2">
+    <div className="space-y-1">
+      <div className="space-y-1">
         <div className="flex flex-col items-start justify-center px-2 gap-1">
-          <div className="flex items-center justify-start px-2 gap-1">
+          <div className="flex items-center justify-start px-2 gap-1 w-full">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -72,7 +72,7 @@ const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({
               />
             </svg>
 
-            <span className="whitespace-nowrap overflow-auto font-semibold">
+            <span className="whitespace-nowrap w-[90%] overflow-scroll font-semibold">
               {workflowName}
             </span>
           </div>
@@ -95,9 +95,9 @@ const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({
             Base Node
           </summary>
           {Object.entries(nodeTypesInfo).map(([key, type]) => (
-            <li
+            <div
               key={key}
-              className={`cursor-pointer p-2 rounded-full text-center hover:bg-indigo-500 hover:text-white
+              className={`cursor-pointer py-2 px-3 rounded-full text-center hover:bg-indigo-500 hover:text-white
               }`}
               onClick={() => {
                 const typeKey = key as NodeTypeKey;
@@ -124,7 +124,7 @@ const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({
                 </svg>
                 {type.label}
               </div>
-            </li>
+            </div>
           ))}
         </details>
         <details className="group w-full space-y-1" open>
@@ -153,9 +153,9 @@ const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({
             </svg>
           </div>
           {filteredNodes.map(([name, node]) => (
-            <li
+            <div
               key={name}
-              className={`cursor-pointer p-2 rounded-full text-center hover:bg-indigo-500 hover:text-white
+              className={`cursor-pointer py-2 px-3 rounded-full text-center hover:bg-indigo-500 hover:text-white
               }`}
               onClick={() => {
                 addCustomNode(name);
@@ -196,10 +196,10 @@ const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({
                   />
                 </svg>
               </div>
-            </li>
+            </div>
           ))}
         </details>
-      </ul>
+      </div>
       {showConfirmDeleteNode && (
         <ConfirmDialog
           message={`Confirm the deletion of Custom Node "${showConfirmDeleteNode}"？`}

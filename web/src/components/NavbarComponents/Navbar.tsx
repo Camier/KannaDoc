@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 const Navbar = () => {
   const pathname = usePathname(); // 直接获取当前路径（如 "/about"）
   const navbarButtonStyle = `transform transition-transform duration-300  hover:scale-110 h-8 flex items-center justify-center gap-1 cursor-pointer cursor-point
-   border-indigo-500 text-indigo-500 hover:text-white hover:bg-indigo-700
+   border-indigo-500 text-indigo-500 hover:text-white hover:bg-indigo-600
   `;
   return (
     <div className="z-10 fixed left-[2%] w-[96%] px-[10%] bg-white/10 h-[5%] my-1 rounded-3xl flex gap-[18%] items-center shadow-2xl">

@@ -1458,6 +1458,10 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
       setNameError("Node name can not be null!");
       return;
     }
+    if (newNodeName.includes(" ")) {
+      setNameError("Spaces are not allowed in node names!");
+      return;
+    }
     if (
       Object.entries(customNodes).find(([name, node]) => name === newNodeName)
     ) {
@@ -1506,12 +1510,12 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
 
   return (
     <div
-      className="flex-1 h-full flex items-center justify-center bg-white rounded-3xl shadow-sm p-6"
+      className="h-full w-full flex bg-white rounded-3xl shadow-sm p-6"
       ref={reactFlowWrapper}
       tabIndex={0}
       onKeyDown={onKeyDown}
     >
-      <div className="w-[15%] bg-white pr-4 h-full overflow-scroll">
+      <div className="w-[15%] flex-none bg-white pr-4 h-full overflow-scroll">
         <NodeTypeSelector
           deleteCustomNode={handleDeleteCustomNode}
           customNodes={customNodes}
@@ -1529,7 +1533,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             <button
               onClick={undo}
               disabled={history.length <= 1}
-              className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+              className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1550,7 +1554,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             <button
               onClick={redo}
               disabled={future.length === 0}
-              className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+              className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
             >
               <span>({Math.min(future.length, 50)})</span>
               <svg
@@ -1579,7 +1583,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             <button
               onClick={() => fileInputRef.current?.click()}
               //disabled={nodes.length > 0}
-              className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+              className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1601,7 +1605,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             <button
               onClick={handleExportWorkflow}
               disabled={nodes.length === 0}
-              className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+              className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1628,7 +1632,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 // setWorkflowStatus("success");
               }}
               //disabled={nodes.length === 0}
-              className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+              className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1650,7 +1654,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
           </div>
 
           <button
-            className="cursor-pointer disabled:cursor-not-allowed px-4 py-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+            className="cursor-pointer disabled:cursor-not-allowed px-4 py-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
             onClick={() => setFullScreenFlow((prev: boolean) => !prev)}
           >
             {fullScreenFlow ? (
@@ -1701,7 +1705,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 }}
                 className={`${
                   !sendInputDisabled && !showOutput ? "text-indigo-500" : ""
-                } cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
+                } cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1727,7 +1731,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               <button
                 disabled={running}
                 onClick={() => handleRunWorkflow(false)}
-                className={`cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
+                className={`cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1750,7 +1754,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 disabled={running}
                 className={`${
                   resumeDebugTaskId ? "text-red-500" : ""
-                } cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
+                } cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
                 onClick={() => {
                   handleRunWorkflow(true);
                 }}
@@ -1793,7 +1797,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             <div className="flex items-center justify-center gap-1">
               <button
                 onClick={handleSaveWorkFlow}
-                className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full text-indigo-500 hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+                className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full text-indigo-500 hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1814,7 +1818,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               {running ? (
                 <button
                   disabled={!taskId || canceling}
-                  className="text-red-500 cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+                  className="text-red-500 cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
                   onClick={handleStopWorkflow}
                 >
                   <svg
@@ -1837,7 +1841,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               ) : (
                 <button
                   disabled={running || resumeDebugTaskId !== ""}
-                  className="text-red-500 cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+                  className="text-red-500 cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
                   onClick={() => {
                     setShowConfirmClear(true);
                   }}

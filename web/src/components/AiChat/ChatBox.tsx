@@ -226,7 +226,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   }, [inputMessage]); // 这个 effect 只在组件挂载时运行一次
 
   return (
-    <div className="w-[85%] h-full rounded-3xl p-4 flex flex-col">
+    <div className="w-[80%] flex-none h-full rounded-3xl p-4 flex flex-col">
       <div className="flex-1 min-h-0 overflow-hidden">
         {messages.length === 0 ? (
           <div className="h-full w-[90%] flex flex-col items-center gap-4 bg-white/30 rounded-xl">

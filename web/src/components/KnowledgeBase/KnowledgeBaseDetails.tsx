@@ -174,7 +174,7 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
                   <path d="M12 16.5c2.685 0 5.19-.586 7.078-1.609a8.282 8.282 0 0 0 1.897-1.384c.016.121.025.244.025.368 0 2.692-4.03 4.875-9 4.875s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.284 8.284 0 0 0 1.897 1.384C6.809 15.914 9.315 16.5 12 16.5Z" />
                   <path d="M12 20.25c2.685 0 5.19-.586 7.078-1.609a8.282 8.282 0 0 0 1.897-1.384c.016.121.025.244.025.368 0 2.692-4.03 4.875-9 4.875s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.284 8.284 0 0 0 1.897 1.384C6.809 19.664 9.315 20.25 12 20.25Z" />
                 </svg>
-                <h2 className="text-2xl font-bold">
+                <h2 className="text-2xl font-bold overflow-x-scroll whitespace-nowrap">
                   {bases.find((r) => r.baseId === selectedBase)?.name}
                 </h2>
               </div>

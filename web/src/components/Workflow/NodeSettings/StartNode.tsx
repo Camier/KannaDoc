@@ -115,7 +115,7 @@ const StartNodeComponent: React.FC<StartNodeProps> = ({
                 e.preventDefault();
                 setIsEditing(!isEditing);
               }}
-              className="hover:bg-indigo-500 hover:text-white cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full disabled:opacity-50"
+              className="hover:bg-indigo-600 hover:text-white cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full disabled:opacity-50"
             >
               {isEditing ? (
                 <div className="flex items-center justify-center gap-1">
@@ -220,7 +220,7 @@ const StartNodeComponent: React.FC<StartNodeProps> = ({
               </svg>
             </div>
             <button
-              className="cursor-pointer disabled:cursor-not-allowed px-4 py-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+              className="cursor-pointer disabled:cursor-not-allowed px-4 py-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
               onClick={() => setCodeFullScreenFlow((prev: boolean) => !prev)}
             >
               {codeFullScreenFlow ? (

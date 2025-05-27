@@ -11,8 +11,8 @@ const Alert = ({showAlert}: {showAlert: ShowAlert}) => {
         showAlert.show ? "opacity-100" : "opacity-0"
       } ${
         showAlert.type === "success"
-          ? "bg-gradient-to-r from-indigo-400 to-indigo-500"
-          : "bg-gradient-to-r from-red-400 to-red-500"
+          ? "bg-gradient-to-r from-indigo-500 to-indigo-600"
+          : "bg-gradient-to-r from-red-500 to-red-600"
       } 
             shadow-xl border border-gray-200 animate-bounce`}
     >

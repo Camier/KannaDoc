@@ -210,7 +210,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
         </div>
         <button
           onClick={() => saveNode(node)}
-          className="cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+          className="cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -265,7 +265,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                 e.preventDefault();
                 setIsEditing(!isEditing);
               }}
-              className="hover:bg-indigo-500 hover:text-white cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full disabled:opacity-50"
+              className="hover:bg-indigo-600 hover:text-white cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full disabled:opacity-50"
             >
               {isEditing ? (
                 <div className="flex items-center justify-center gap-1">
@@ -370,7 +370,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
               </svg>
             </div>
             <button
-              className="cursor-pointer disabled:cursor-not-allowed px-4 py-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+              className="cursor-pointer disabled:cursor-not-allowed px-4 py-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
               onClick={() => setCodeFullScreenFlow((prev: boolean) => !prev)}
             >
               {codeFullScreenFlow ? (
@@ -718,7 +718,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
             <button
               onClick={handleRunTest}
               disabled={runTest}
-              className="cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+              className="cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -824,7 +824,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
               className={`${
                 node.data.debug
                   ? "bg-red-500 text-white hover:bg-red-700"
-                  : "hover:bg-indigo-500 hover:text-white"
+                  : "hover:bg-indigo-600 hover:text-white"
               } cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full disabled:opacity-50 flex items-center justify-center gap-1`}
             >
               <svg
@@ -898,7 +898,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
               }}
               disabled={runTest}
               className={`
-                 hover:bg-indigo-500 hover:text-white
+                 hover:bg-indigo-600 hover:text-white
               } cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full disabled:opacity-50 flex items-center justify-center gap-1`}
             >
               <svg

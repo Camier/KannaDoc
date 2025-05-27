@@ -120,7 +120,8 @@ const LeftSidebar: React.FC<SidebarProps> = ({
   };
 
   return (
-    <div className="bg-white/90 w-[20%] h-full rounded-3xl flex flex-col items-center p-2">
+    <div className="bg-white/90 flex-none w-[20%] h-full rounded-3xl flex flex-col items-center p-2">
+      <div></div>
       {/* 新会话按钮 */}
       <div
         className="my-2 rounded-xl flex items-center justify-center w-full h-[8%] cursor-pointer"
@@ -205,7 +206,7 @@ const LeftSidebar: React.FC<SidebarProps> = ({
                   chatId === chat.conversationId
                     ? "bg-indigo-500 text-white"
                     : ""
-                } hover:bg-indigo-300 hover:text-white rounded-2xl`}
+                } hover:bg-indigo-600 hover:text-white rounded-2xl`}
               >
                 <div
                   key={index}
@@ -264,10 +265,10 @@ const LeftSidebar: React.FC<SidebarProps> = ({
                 {isSettingsOpen[index] && ( // 根据数组状态显示悬浮框
                   <div
                     ref={ref}
-                    className="absolute right-0 top-full mt-1 bg-white text-black rounded-xl border-2 py-2 px-1 border-slate-200 shadow-lg z-10"
+                    className="absolute right-0 top-full mt-1 bg-white text-black rounded-2xl border-2 py-2 px-1 border-slate-200 shadow-lg z-10"
                   >
                     <div
-                      className="flex gap-2 cursor-pointer hover:bg-indigo-500 hover:text-white px-2 py-1 rounded-lg"
+                      className="flex gap-2 cursor-pointer hover:bg-indigo-600 hover:text-white px-2 py-1 rounded-xl"
                       onClick={() => handleEditChat(index)}
                     >
                       <svg
@@ -288,7 +289,7 @@ const LeftSidebar: React.FC<SidebarProps> = ({
                       <div className="text-sm">Rename</div>
                     </div>
                     <div
-                      className="flex gap-2 cursor-pointer hover:bg-indigo-500 hover:text-white px-2 py-1 rounded-lg"
+                      className="flex gap-2 cursor-pointer hover:bg-indigo-600 hover:text-white px-2 py-1 rounded-xl"
                       onClick={() => handleDeleteChat(chat, index)}
                     >
                       <svg

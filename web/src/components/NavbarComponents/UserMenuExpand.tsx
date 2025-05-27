@@ -17,7 +17,7 @@ const UserMenuExpand = () => {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="currentColor"
-        className="size-8 text-indigo-500 cursor-pointer"
+        className="size-8 text-indigo-500 hover:text-indigo-600 cursor-pointer transform transition-transform duration-300  hover:scale-110"
         onClick={() => setIsUserInfoOpen((prev) => !prev)}
       >
         <path
@@ -36,21 +36,21 @@ const UserMenuExpand = () => {
         onClick={() => setIsUserInfoOpen((prev) => !prev)}
       /> */}
       <div
-        className="flex flex-col gap-[4.5px] cursor-pointer"
+        className="group flex flex-col gap-[4.5px] cursor-pointer transform transition-transform duration-300  hover:scale-110"
         onClick={() => setIsMenuOpen((prev) => !prev)}
       >
         <div
-          className={`w-6 h-1 bg-indigo-500 rounded-xs ${
+          className={`w-6 h-1 bg-indigo-500 group-hover:bg-indigo-600 rounded-xs ${
             isMenuOpen ? "rotate-45" : ""
           } origin-left ease-in-out duration-500`}
         />
         <div
-          className={`w-6 h-1 bg-indigo-500 rounded-xs ${
+          className={`w-6 h-1 bg-indigo-500 group-hover:bg-indigo-600 rounded-xs ${
             isMenuOpen ? "opacity-0" : ""
           } ease-in-out duration-500`}
         />
         <div
-          className={`w-6 h-1 bg-indigo-500 rounded-xs ${
+          className={`w-6 h-1 bg-indigo-500 group-hover:bg-indigo-600 rounded-xs ${
             isMenuOpen ? "-rotate-45" : ""
           } origin-left ease-in-out duration-500`}
         />

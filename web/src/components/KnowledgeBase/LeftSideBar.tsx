@@ -96,7 +96,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
   };
 
   return (
-    <div className="w-[20%] flex-flex-col gap-4 h-full">
+    <div className="w-[20%] flex-none flex flex-col gap-4 h-full">
       <div className="px-4 flex items-center justify-center h-[10%]">
         <button
           onClick={() => setShowCreateModal(true)}
@@ -125,7 +125,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
         {filteredBases.map((base, index) => (
           <div
             key={index}
-            className={`py-2 my-2 hover:bg-indigo-200  cursor-pointer rounded-3xl flex justify-between items-start ${
+            className={`py-2 my-2 hover:bg-indigo-600 group cursor-pointer rounded-3xl flex justify-between items-start ${
               selectedBase === base.baseId ? "bg-indigo-500" : ""
             }`}
           >
@@ -145,7 +145,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                   className={`px-3 flex items-center gap-2 text-gray-900 w-[80%] ${
                     selectedBase === base.baseId
                       ? "text-white text-lg"
-                      : "text-base"
+                      : "text-base group-hover:text-white"
                   }`}
                 >
                   <svg
@@ -199,9 +199,9 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                   </svg>
                 </div>
                 {isSettingsOpen[index] && ( // 根据数组状态显示悬浮框
-                  <div className="absolute right-0 top-full mt-1 bg-white text-black rounded-xl border-2 py-2 px-1 border-slate-200 shadow-lg z-10">
+                  <div className="absolute right-0 top-full mt-1 bg-white text-black rounded-2xl border-2 py-2 px-1 border-slate-200 shadow-lg z-10">
                     <div
-                      className="flex gap-2 cursor-pointer hover:bg-indigo-500 hover:text-white px-2 py-1 rounded-lg"
+                      className="flex gap-2 cursor-pointer hover:bg-indigo-600 hover:text-white px-2 py-1 rounded-xl"
                       onClick={() => handleEditBase(index)}
                     >
                       <svg
@@ -222,7 +222,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                       <div className="text-sm">Rename</div>
                     </div>
                     <div
-                      className="flex gap-2 cursor-pointer hover:bg-indigo-500 hover:text-white px-2 py-1 rounded-lg"
+                      className="flex gap-2 cursor-pointer hover:bg-indigo-600 hover:text-white px-2 py-1 rounded-xl"
                       onClick={() => handleDeleteBase(base, index)}
                     >
                       <svg
@@ -246,7 +246,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
               </div>
               <p
                 className={`px-4 text-sm text-gray-500 ${
-                  selectedBase === base.baseId ? "text-white" : ""
+                  selectedBase === base.baseId ? "text-white" : "group-hover:text-white"
                 }`}
               >
                 {base.fileNumber} files

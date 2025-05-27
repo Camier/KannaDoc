@@ -369,7 +369,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
         </div>
         {showHistory && (
           <button
-            className="cursor-pointer disabled:cursor-not-allowed px-4 py-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+            className="cursor-pointer disabled:cursor-not-allowed px-4 py-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
             onClick={() => setCodeFullScreenFlow((prev: boolean) => !prev)}
           >
             {codeFullScreenFlow ? (
@@ -409,7 +409,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
           onClick={() => {
             setShowHistory((prev) => !prev);
           }}
-          className="text-indigo-500 cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+          className="text-indigo-500 cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
         >
           {showHistory ? (
             <svg
@@ -481,7 +481,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                 </svg>
               </div>
               <button
-                className="cursor-pointer disabled:cursor-not-allowed px-4 py-2 rounded-full hover:bg-indigo-500 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+                className="cursor-pointer disabled:cursor-not-allowed px-4 py-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
                 onClick={() => setCodeFullScreenFlow((prev: boolean) => !prev)}
               >
                 {codeFullScreenFlow ? (
