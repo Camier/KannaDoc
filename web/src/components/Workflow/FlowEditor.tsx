@@ -67,6 +67,7 @@ import { getFileExtension } from "@/utils/file";
 import { createChatflow } from "@/lib/api/chatflowApi";
 import ConfirmDialog from "../ConfirmDialog";
 import { BlockList } from "net";
+import { replaceTemplate } from "@/utils/convert";
 
 const getId = (type: string): string => `node_${type}_${uuidv4()}`;
 interface FlowEditorProps {
@@ -176,6 +177,9 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   );
 
   const eachMessagesRef = useRef(eachMessages);
+  const variableReturn = useRef<{
+    [key: string]: Message[];
+  }>({});
 
   const confirmClear = () => {
     if (showConfirmClear) {
@@ -437,6 +441,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                   if (payload.node.variables !== '""') {
                     const variables = JSON.parse(payload.node.variables);
                     setGlobalDebugVariables(variables);
+                    variableReturn.current = variables;
                   }
                   updateStatus(payload.node.id, "ok");
                 } else if (payload.node.status === "running") {
@@ -499,6 +504,12 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                     state.messageId = aiChunkResult.message_id;
                   } else {
                     state.aiMessage += aiChunkResult.data; // 自动处理原始换行符
+                    if (Object.entries(globalDebugVariables).length > 0) {
+                      state.aiMessage = replaceTemplate(
+                        state.aiMessage,
+                        variableReturn.current
+                      );
+                    }
                     state.messageId = aiChunkResult.message_id;
                   }
                 }
@@ -1054,6 +1065,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   const onNodeClick = (_: any, node: CustomNode) => {
     setSelectedType(node.data.nodeType);
     setSelectedNodeId(node.id);
+    setShowOutput(false);
   };
 
   const onEdgeClick = (_: any, edge: CustomEdge) => {
@@ -1510,12 +1522,12 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
 
   return (
     <div
-      className="h-full w-full flex bg-white rounded-3xl shadow-sm p-6"
+      className="grid grid-cols-[15%_1fr] h-full w-full bg-white rounded-3xl shadow-sm p-6"
       ref={reactFlowWrapper}
       tabIndex={0}
       onKeyDown={onKeyDown}
     >
-      <div className="w-[15%] flex-none bg-white pr-4 h-full overflow-scroll">
+      <div className=" bg-white pr-4 h-full overflow-auto">
         <NodeTypeSelector
           deleteCustomNode={handleDeleteCustomNode}
           customNodes={customNodes}
@@ -1527,9 +1539,9 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         />
       </div>
 
-      <div className="h-full flex-1 flex flex-col">
+      <div className="h-full flex flex-col">
         <div className="flex items-center justify-between mb-1">
-          <div className="flex items-center justify-center gap-1">
+          <div className="flex items-center justify-center gap-[2px]">
             <button
               onClick={undo}
               disabled={history.length <= 1}
@@ -1704,7 +1716,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                   }
                 }}
                 className={`${
-                  !sendInputDisabled && !showOutput ? "text-indigo-500" : ""
+                  !sendInputDisabled && !showOutput ? "text-indigo-700" : ""
                 } cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
               >
                 <svg
@@ -1871,7 +1883,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         <div className="flex-1 rounded-3xl shadow-sm bg-white relative overflow-hidden">
           {currentNode ? (
             <div
-              className={`p-2 absolute z-10 max-h-[calc(100%-16px)] ${
+              className={`p-2 z-10 max-h-[calc(100%-16px)] ${
                 codeFullScreenFlow
                   ? "w-[96%] h-[98%] fixed  top-[1%] right-[2%]"
                   : "w-[40%]  h-[98%] absolute m-2 top-0 right-0"
@@ -1910,6 +1922,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                       setWorkflowMessage(error);
                     }}
                     messages={messages[currentNode.id]}
+                    setMessages={setMessages}
                     saveNode={handleSaveNodes}
                     isDebugMode={resumeDebugTaskId === "" ? false : true}
                     node={currentNode}
@@ -1939,7 +1952,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             </div>
           ) : showOutput ? (
             <div
-              className={`p-2 absolute z-10 max-h-[calc(100%-16px)] ${
+              className={`p-2 z-10 max-h-[calc(100%-16px)] ${
                 codeFullScreenFlow
                   ? "w-[96%] h-[98%] fixed  top-[1%] right-[2%]"
                   : "w-[40%]  h-[98%] absolute m-2 top-0 right-0"

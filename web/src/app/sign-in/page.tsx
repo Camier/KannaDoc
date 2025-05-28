@@ -29,6 +29,14 @@ const SignInPage = () => {
     setPending(true);
     setError("");
     try {
+      if (name.includes("-")) {
+        setShowAlert({
+          show: true,
+          message: "'-' is a illegal character",
+          type: "error",
+        });
+        return
+      }
       if (isLogin) {
         await loginUser(name, password);
         setShowAlert({
@@ -55,7 +63,7 @@ const SignInPage = () => {
       setError("Invalid credentials");
       setShowAlert({
         show: true,
-        message: "Login/Sign-in Failed!",
+        message: "Login/Sign-in Failed",
         type: "error",
       });
     } finally {

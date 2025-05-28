@@ -186,7 +186,7 @@ const LeftSidebar: React.FC<SidebarProps> = ({
       </div>
       {/* 聊天列表 */}
       <div className="border-b-2 border-gray-200 h-[1%] w-[80%]"></div>
-      <div className="px-2 w-full flex-1 overflow-auto scrollbar-hide mt-2">
+      <div className="px-2 w-full flex-1 overflow-scroll scrollbar-hide mt-2">
         {chatHistory.map((chat, index) => {
           const timeLabel = getTimeLabel(chat.lastModifyTime);
           const lastTimeLabel = getTimeLabel(

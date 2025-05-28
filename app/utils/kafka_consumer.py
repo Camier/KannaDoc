@@ -105,6 +105,7 @@ class KafkaConsumerManager:
                 },
             )
             async with WorkflowEngine(
+                username=message["username"],
                 nodes=workflow_data["nodes"],
                 edges=workflow_data["edges"],
                 global_variables=workflow_data["global_variables"],

@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "LAYRA: LAYout-awaRe Agent",
+  title: "LAYRA: Build Without Boundaries",
   description: "LAYRA: Towards Visual-Driven Intelligent RAG Agent",
 };
 

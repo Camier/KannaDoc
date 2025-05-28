@@ -66,7 +66,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
   };
 
   return (
-    <div className="overflow-scroll h-full flex flex-col items-start justify-start gap-1">
+    <div className="overflow-auto h-full flex flex-col items-start justify-start gap-1">
       <div className="px-2 py-1 flex items-center justify-between w-full mt-1 font-medium">
         <div className="text-xl flex items-center justify-start max-w-[60%] gap-1">
           <svg
@@ -207,7 +207,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
 
         {isEditing ? (
           <div
-            className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-white`}
+            className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 p-4 bg-white`}
           >
             <textarea
               className={`mt-1 w-full px-2 py-2 border border-gray-200 rounded-xl min-h-[10vh] ${
@@ -220,7 +220,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
           </div>
         ) : (
           <div
-            className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-gray-100`}
+            className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 p-4 bg-gray-100`}
           >
             <MarkdownDisplay
               md_text={node.data.description || "No decription found"}
@@ -376,7 +376,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
             const isUnchanged = isDebugMode && currentValue === initialValue;
             return (
               <div className="px-2 flex w-full items-center gap-2" key={key}>
-                <div className="max-w-[50%] whitespace-nowrap overflow-scroll">
+                <div className="max-w-[50%] whitespace-nowrap overflow-auto">
                   {key}
                 </div>
                 <div>=</div>
@@ -456,11 +456,11 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
           </div>
         </summary>
         <div
-          className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 py-2 px-4`}
+          className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 py-2 px-4`}
         >
           <div className="whitespace-pre-wrap space-y-2 ">
             <div className="px-2 flex w-full items-center gap-2">
-              <div className="max-w-[50%] overflow-scroll">Loop Type</div>
+              <div className="max-w-[50%] overflow-auto">Loop Type</div>
               <div>=</div>
               <select
                 name={"LoopType"}
@@ -477,7 +477,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
             <div>
               {node.data.loopType && (
                 <div className="px-2 flex w-full items-center gap-2">
-                  <div className="max-w-[50%] overflow-scroll">
+                  <div className="max-w-[50%] overflow-auto">
                     {node.data.loopType === "count"
                       ? "Max Count"
                       : "Break Condition"}
@@ -589,7 +589,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
           </div>
         </summary>
         <div
-          className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-gray-100`}
+          className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 p-4 bg-gray-100`}
         >
           <MarkdownDisplay
             md_text={node.data.output || ""}

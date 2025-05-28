@@ -1,6 +1,7 @@
 import { Flow } from "@/types/types";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import ConfirmDialog from "../ConfirmDialog";
+import { useClickAway } from "react-use";
 
 interface LeftSideBarProps {
   flows: Flow[];
@@ -21,6 +22,11 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
   ondeleteFlow,
   onRenameWorkflow,
 }) => {
+  const ref = useRef(null);
+  useClickAway(ref, () => {
+    setSettingsOpen((prev) => prev.map(() => false));
+  });
+
   useEffect(() => {
     setSettingsOpen(new Array(flows.length).fill(false));
     setIsEditOpen(new Array(flows.length).fill(false));
@@ -141,7 +147,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
             >
               <div className="flex relative">
                 <div
-                  className={`px-3 flex items-center gap-2 text-gray-900 w-[80%] ${
+                  className={`pl-3 flex items-center gap-2 text-gray-900 w-[80%] ${
                     selectedFlow === flow.flowId
                       ? "text-white text-lg"
                       : "text-base group-hover:text-white"
@@ -198,7 +204,10 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                   </svg>
                 </div>
                 {isSettingsOpen[index] && ( // 根据数组状态显示悬浮框
-                  <div className="absolute right-0 top-full mt-1 bg-white text-black rounded-2xl border-2 py-2 px-1 border-slate-200 shadow-lg z-10">
+                  <div
+                    ref={ref}
+                    className="absolute right-0 top-full mt-1 bg-white text-black rounded-2xl border-2 py-2 px-1 border-slate-200 shadow-lg z-10"
+                  >
                     <div
                       className="flex gap-2 cursor-pointer hover:bg-indigo-600 hover:text-white px-2 py-1 rounded-xl"
                       onClick={() => handleEditFlow(index)}
@@ -245,7 +254,9 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
               </div>
               <p
                 className={`px-4 text-sm text-gray-500 ${
-                  selectedFlow === flow.flowId ? "text-white" : "group-hover:text-white"
+                  selectedFlow === flow.flowId
+                    ? "text-white"
+                    : "group-hover:text-white"
                 }`}
               >
                 {flow.lastModifyTime}

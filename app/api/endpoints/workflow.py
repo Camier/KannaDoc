@@ -33,6 +33,7 @@ async def execute_workflow(
     try:
         # 使用异步上下文管理器
         async with WorkflowEngine(
+            username=workflow.username,
             nodes=workflow.nodes,
             edges=workflow.edges,
             global_variables=workflow.global_variables,
@@ -160,9 +161,12 @@ async def execute_test_code(
     try:
         # 使用异步上下文管理器
         async with WorkflowEngine(
+            username=function_node.username,
             nodes=test_workflow["nodes"],
             edges=test_workflow["edges"],
             global_variables=test_workflow["global_variables"],
+            docker_image_use=function_node.docker_image_use,
+            need_save_image=function_node.send_save_image,
         ) as engine:
 
             # 验证工作流结构
@@ -211,6 +215,7 @@ async def execute_test_condition(
     try:
         # 使用异步上下文管理器
         async with WorkflowEngine(
+            username=condition_node.username,
             nodes=test_workflow["nodes"],
             edges=test_workflow["edges"],
             global_variables=test_workflow["global_variables"],
@@ -415,10 +420,10 @@ async def docker_image_list(
 ):
     await verify_username_match(current_user, username)
     images = await CodeSandbox.get_all_images()
-    sandbox_images = []
+    sandbox_images = ["python-sandbox:latest"]
     for image in images:
-        if image.startswith("python-sandbox"):
-            sandbox_images.append(image)
+        if image.startswith("sandbox-"+username+"-"):
+            sandbox_images.append("-".join(image.split("-")[2:]))
     return {"status": "success", "images": sandbox_images}
 
 
@@ -427,5 +432,6 @@ async def docker_image_list(
     username: str, image_name: str, current_user: User = Depends(get_current_user)
 ):
     await verify_username_match(current_user, username)
-    result = await CodeSandbox.delete_image(image_name,True)
+    processed_image_name = "sandbox-"+username+"-" + image_name
+    result = await CodeSandbox.delete_image(processed_image_name,True)
     return result

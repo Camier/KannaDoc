@@ -68,6 +68,11 @@ async def register(
     db: AsyncSession = Depends(get_mysql_session),
     mongo: MongoDB = Depends(get_mongo),
 ):
+    if "-" in user.username:
+        raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="'-' is a illegal character",
+            )
     # Check if username or email already exists
     existing_user = await db.execute(select(User).where(User.username == user.username))
     if existing_user.scalars().first():

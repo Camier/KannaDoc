@@ -1,7 +1,13 @@
 import { useAuthStore } from "@/stores/authStore";
 import { useFlowStore } from "@/stores/flowStore";
 import { useGlobalStore } from "@/stores/WorkflowVariableStore";
-import { CustomNode, Message, ModelConfig, WorkflowAll } from "@/types/types";
+import {
+  CustomNode,
+  McpConfig,
+  Message,
+  ModelConfig,
+  WorkflowAll,
+} from "@/types/types";
 import { Dispatch, SetStateAction, useState } from "react";
 import KnowledgeConfigModal from "./KnowledgeConfigModal";
 import { updateModelConfig } from "@/lib/api/configApi";
@@ -10,9 +16,16 @@ import { EventSourceParserStream } from "eventsource-parser/stream";
 import ChatMessage from "@/components/AiChat/ChatMessage";
 import MarkdownDisplay from "@/components/AiChat/MarkdownDisplay";
 import McpConfigComponent from "./McpConfig";
+import { createPortal } from "react-dom";
+import { replaceTemplate } from "@/utils/convert";
 
 interface VlmNodeProps {
   messages: Message[];
+  setMessages: Dispatch<
+    SetStateAction<{
+      [key: string]: Message[];
+    }>
+  >;
   saveNode: (node: CustomNode) => void;
   isDebugMode: boolean;
   node: CustomNode;
@@ -23,6 +36,7 @@ interface VlmNodeProps {
 
 const VlmNodeComponent: React.FC<VlmNodeProps> = ({
   messages,
+  setMessages,
   saveNode,
   isDebugMode,
   node,
@@ -90,6 +104,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
       showError("Please write your question to AI before running LLM node!");
       return;
     }
+    setMessages((prev) => ({...prev,[node.id]: [],}));
     if (user?.name) {
       setRunTest(true);
       try {
@@ -113,6 +128,44 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
             ? -1
             : node.data.modelConfig?.topK,
         };
+
+        const filterMcpConfig = (
+          mcpConfig: {
+            [key: string]: McpConfig;
+          },
+          mcpUse: {
+            [key: string]: string[];
+          }
+        ) => {
+          const filteredConfig: {
+            [key: string]: McpConfig;
+          } = {};
+          // 遍历 mcpUse 中的所有配置键（如 mcp1）
+          for (const key of Object.keys(mcpUse)) {
+            if (mcpConfig[key]) {
+              // 获取原始配置
+              const originalConfig = mcpConfig[key];
+              // 过滤工具列表，仅保留在 mcpUse 中声明的工具
+              const filteredTools = originalConfig.mcpTools.filter((tool) =>
+                mcpUse[key].includes(tool.name)
+              );
+              // 构造新的配置项（保留 mcpServerUrl 等属性）
+              filteredConfig[key] = {
+                ...originalConfig,
+                mcpTools: filteredTools,
+              };
+            }
+          }
+          return filteredConfig;
+        };
+
+        let mcpUse: { [key: string]: McpConfig };
+        if (node.data.mcpConfig && node.data.mcpUse) {
+          mcpUse = filterMcpConfig(node.data.mcpConfig, node.data.mcpUse);
+        } else {
+          mcpUse = {};
+        }
+
         const response = await fetch(
           `${process.env.NEXT_PUBLIC_API_BASE_URL}/sse/llm/once`,
           {
@@ -126,6 +179,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
               user_message: node.data.vlmInput,
               llm_model_config: modelConfig,
               system_prompt: node.data.prompt,
+              mcp_use: mcpUse,
             }),
           }
         );
@@ -143,9 +197,11 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
           const { done, value } = (await eventReader?.read()) || {};
           if (done) break;
           const payload = JSON.parse(value.data);
-
           if (payload.type === "text") {
             aiResponse += payload.data;
+            if (Object.entries(globalVariables).length > 0) {
+              aiResponse = replaceTemplate(aiResponse, globalVariables);
+            }
             updateChat(node.id, aiResponse);
           }
           if (payload.type === "token") {
@@ -169,7 +225,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
   };
 
   return (
-    <div className="overflow-scroll h-full flex flex-col items-start justify-start gap-1">
+    <div className="overflow-auto h-full flex flex-col items-start justify-start gap-1">
       <div className="px-2 py-1 flex items-center justify-between w-full mt-1 font-medium">
         <div className="text-xl flex items-center justify-start max-w-[60%] gap-1">
           <svg
@@ -310,7 +366,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
 
         {isEditing ? (
           <div
-            className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-white`}
+            className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 p-4 bg-white`}
           >
             <textarea
               className={`mt-1 w-full px-2 py-2 border border-gray-200 rounded-xl min-h-[10vh] ${
@@ -323,7 +379,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
           </div>
         ) : (
           <div
-            className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-gray-100`}
+            className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 p-4 bg-gray-100`}
           >
             <MarkdownDisplay
               md_text={node.data.description || "No decription found"}
@@ -479,7 +535,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
             const isUnchanged = isDebugMode && currentValue === initialValue;
             return (
               <div className="px-2 flex w-full items-center gap-2" key={key}>
-                <div className="max-w-[50%] whitespace-nowrap overflow-scroll">
+                <div className="max-w-[50%] whitespace-nowrap overflow-auto">
                   {key}
                 </div>
                 <div>=</div>
@@ -577,9 +633,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
             </button>
           </div>
         </summary>
-        <div
-          className={`rounded-2xl shadow-lg overflow-scroll p-3 w-full mb-2`}
-        >
+        <div className={`rounded-2xl shadow-lg overflow-auto p-3 w-full mb-2`}>
           <textarea
             className={`mt-1 w-full px-2 py-2 border border-gray-200 rounded-xl min-h-[10vh] ${
               codeFullScreenFlow ? "max-h-[50vh]" : "max-h-[30vh]"
@@ -652,13 +706,13 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
         </summary>
         {node.data.isChatflowInput ? (
           <div
-            className={`rounded-2xl shadow-lg overflow-scroll p-4 w-full mb-2`}
+            className={`rounded-2xl shadow-lg overflow-auto p-4 w-full mb-2`}
           >
             <div className="mb-1">Use Chatflow User Input</div>
           </div>
         ) : (
           <div
-            className={`rounded-2xl shadow-lg overflow-scroll p-3 w-full mb-2`}
+            className={`rounded-2xl shadow-lg overflow-auto p-3 w-full mb-2`}
           >
             <div className="mb-1">Predefined Input:</div>
             <textarea
@@ -739,14 +793,12 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
             </button>
           </div>
         </summary>
-        <div
-          className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-2`}
-        >
+        <div className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 p-2`}>
           <div
-            className="flex-1 overflow-y-auto scrollbar-hide"
+            className="flex-1 overflow-y-scroll scrollbar-hide"
             style={{ overscrollBehavior: "contain" }}
           >
-            {messages ? (
+            {messages && messages.length>0 ? (
               messages.map((message, index) => (
                 <ChatMessage
                   modelConfig={node.data.modelConfig}
@@ -757,7 +809,16 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                 />
               ))
             ) : (
-              <div className="whitespace-pre-wrap p-2">{node.data.chat}</div>
+              <MarkdownDisplay
+                md_text={node.data.chat || ""}
+                message={{
+                  type: "text",
+                  content: node.data.chat || "",
+                  from: "ai", // 消息的来源
+                }}
+                showTokenNumber={true}
+                isThinking={false}
+              />
             )}
           </div>
         </div>
@@ -847,7 +908,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
           </div>
         </summary>
         <div
-          className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-gray-100`}
+          className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 p-4 bg-gray-100`}
         >
           <MarkdownDisplay
             md_text={node.data.output || ""}
@@ -919,9 +980,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
             </button>
           </div>
         </summary>
-        <div
-          className={`rounded-2xl shadow-lg overflow-scroll p-3 w-full mb-2`}
-        >
+        <div className={`rounded-2xl shadow-lg overflow-auto p-3 w-full mb-2`}>
           <div className="relative flex flex-col items-start justify-center gap-2">
             {" "}
             <label className="w-full overflow-auto relative inline-flex items-center group p-2 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
@@ -1043,17 +1102,23 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
           </div>
         </div>
       </details>
-      <McpConfigComponent
-        node={node}
-        visible={showMcpConfig}
-        setVisible={setShowMcpConfig}
-      />
-      <KnowledgeConfigModal
-        node={node}
-        visible={showConfigModal}
-        setVisible={setShowConfigModal}
-        onSave={handleSaveConfig}
-      />
+      {createPortal(
+        <McpConfigComponent
+          node={node}
+          visible={showMcpConfig}
+          setVisible={setShowMcpConfig}
+        />,
+        document.body
+      )}
+      {createPortal(
+        <KnowledgeConfigModal
+          node={node}
+          visible={showConfigModal}
+          setVisible={setShowConfigModal}
+          onSave={handleSaveConfig}
+        />,
+        document.body
+      )}
     </div>
   );
 };

@@ -10,6 +10,7 @@ from app.core.logging import logger
 from app.db.milvus import milvus_client
 from app.rag.get_embedding import get_embeddings_from_httpx
 from app.rag.utils import replace_image_content, sort_and_filter
+from app.workflow.utils import replace_template
 
 
 class ChatService:
@@ -23,7 +24,8 @@ class ChatService:
         history_depth: int = 5,
         save_to_db: bool = False,
         user_image_urls: list = [],
-        supply_info: str = ""
+        supply_info: str = "",
+        quote_variables: dict = {},
     ) -> AsyncGenerator[str, None]:
         """创建聊天流并处理存储逻辑"""
         db = await get_mongo()
@@ -280,7 +282,10 @@ class ChatService:
         await client.close()
 
         if save_to_db:
-            ai_message = {"role": "assistant", "content": "".join(full_response)}
+            ai_response = "".join(full_response)
+            if quote_variables:
+                ai_response = replace_template(ai_response, quote_variables)
+            ai_message = {"role": "assistant", "content": ai_response}
             # 保存AI响应到mongodb
             if user_image_urls == []:
                 user_image_urls = user_images

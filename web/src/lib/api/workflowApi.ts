@@ -33,7 +33,9 @@ export const runPythonTest = async (
   node: CustomNode,
   globalVariables: {
     [key: string]: string;
-  }
+  },
+  sendSaveImage: string,
+  DockerImageUse: string
 ) => {
   return api.post("/workflow/test_code", {
     username: username,
@@ -43,6 +45,8 @@ export const runPythonTest = async (
     pip: node.data.pip,
     image_url: node.data.imageUrl,
     global_variables: globalVariables,
+    send_save_image: sendSaveImage,
+    docker_image_use: DockerImageUse,
   });
 };
 
@@ -185,6 +189,9 @@ export const getDockerImages = async (username: string) => {
   return api.get(`/workflow/docker_image_list/${username}`);
 };
 
-export const deleteDockerImages = async (username: string, imageName:string) => {
+export const deleteDockerImages = async (
+  username: string,
+  imageName: string
+) => {
   return api.delete(`/workflow/${username}/${imageName}/docker_image/`);
 };

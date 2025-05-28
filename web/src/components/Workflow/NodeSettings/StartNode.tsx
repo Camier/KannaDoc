@@ -39,7 +39,7 @@ const StartNodeComponent: React.FC<StartNodeProps> = ({
   const [isEditing, setIsEditing] = useState(false);
 
   return (
-    <div className="overflow-scroll h-full flex flex-col items-start justify-start gap-1">
+    <div className="overflow-auto h-full flex flex-col items-start justify-start gap-1">
       <div className="px-2 py-1 flex items-center justify-between w-full mt-1 font-medium">
         <div className="text-xl flex items-center justify-start max-w-[60%] gap-1">
           <svg
@@ -160,7 +160,7 @@ const StartNodeComponent: React.FC<StartNodeProps> = ({
 
         {isEditing ? (
           <div
-            className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-white`}
+            className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 p-4 bg-white`}
           >
             <textarea
               className={`mt-1 w-full px-2 py-2 border border-gray-200 rounded-xl min-h-[10vh] ${
@@ -173,7 +173,7 @@ const StartNodeComponent: React.FC<StartNodeProps> = ({
           </div>
         ) : (
           <div
-            className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-gray-100`}
+            className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 p-4 bg-gray-100`}
           >
             <MarkdownDisplay
               md_text={node.data.description || "No decription found"}
@@ -329,7 +329,7 @@ const StartNodeComponent: React.FC<StartNodeProps> = ({
             const isUnchanged = isDebugMode && currentValue === initialValue;
             return (
               <div className="px-2 flex w-full items-center gap-2" key={key}>
-                <div className="max-w-[50%] whitespace-nowrap overflow-scroll">
+                <div className="max-w-[50%] whitespace-nowrap overflow-auto">
                   {key}
                 </div>
                 <div>=</div>
@@ -409,7 +409,7 @@ const StartNodeComponent: React.FC<StartNodeProps> = ({
           </div>
         </summary>
         <div
-          className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-gray-100`}
+          className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 p-4 bg-gray-100`}
         >
           <MarkdownDisplay
             md_text={node.data.output || ""}

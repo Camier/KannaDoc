@@ -204,7 +204,7 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
                       className="flex w-full items-center gap-2"
                       key={mcpName}
                     >
-                      <div className="max-w-[50%] whitespace-nowrap overflow-scroll">
+                      <div className="max-w-[50%] whitespace-nowrap overflow-auto">
                         MCP Server Url
                       </div>
                       <div>=</div>
@@ -279,12 +279,12 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
                       </svg>
                       Refresh Tools
                     </div>
-                    <div className="flex-1 overflow-scroll w-full">
+                    <div className="flex-1 overflow-auto w-full">
                       {node.data.mcpConfig &&
                         node.data.mcpConfig[mcpName].mcpTools.map((tool) => (
                           <div
                             key={tool.name}
-                            className={`rounded-2xl overflow-scroll mb-2 p-2 m-1 bg-gray-100 relative`}
+                            className={`rounded-2xl overflow-auto mb-2 p-2 m-1 bg-gray-100 relative`}
                           >
                             <details className="group/inner px-2">
                               <summary className="px-2 py-1 flex items-center cursor-pointer font-medium gap-1">

@@ -13,6 +13,7 @@ import { parseToBeijingTime } from "@/utils/date";
 import { getFileExtension } from "@/utils/file";
 import { useState } from "react";
 import ConfirmDialog from "../ConfirmDialog";
+import { createPortal } from "react-dom";
 
 interface ChatflowHistoryProps {
   chatflowId: string;
@@ -196,11 +197,9 @@ const ChatflowHistoryComponent: React.FC<ChatflowHistoryProps> = ({
             </div>
           </div>
         </summary>
-        <div
-          className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-2`}
-        >
+        <div className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 p-2`}>
           <div
-            className="flex-1 overflow-y-auto scrollbar-hide"
+            className="flex-1 overflow-y-scroll scrollbar-hide"
             style={{ overscrollBehavior: "contain" }}
           >
             {messages.length > 0 ? (
@@ -248,13 +247,15 @@ const ChatflowHistoryComponent: React.FC<ChatflowHistoryProps> = ({
           />
         </svg>
       </div>
-      {showConfirmDeleteChatflow && (
-        <ConfirmDialog
-          message={`Confirm the deletion of this Chatflow？`}
-          onConfirm={confirmDeleteChatflow}
-          onCancel={cancelDeleteChatflow}
-        />
-      )}
+      {showConfirmDeleteChatflow &&
+        createPortal(
+          <ConfirmDialog
+            message={`Confirm the deletion of this Chatflow？`}
+            onConfirm={confirmDeleteChatflow}
+            onCancel={cancelDeleteChatflow}
+          />,
+          document.body
+        )}
     </div>
   );
 };

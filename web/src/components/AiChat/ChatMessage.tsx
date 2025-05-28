@@ -7,6 +7,7 @@ import { useAuthStore } from "@/stores/authStore";
 import LoadingCircle from "./LoadingCircle";
 import { getFileIcon } from "@/utils/file";
 import MarkdownDisplay from "./MarkdownDisplay";
+import { createPortal } from "react-dom";
 
 interface ChatMessageProps {
   modelConfig: ModelConfig | undefined;
@@ -59,14 +60,14 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
       }`}
     >
       <div>
-          {message.type === "text" && message.thinking && (
-            <MarkdownDisplay
-              md_text={message.thinking}
-              message={message}
-              showTokenNumber={false}
-              isThinking={true}
-            />
-          )}
+        {message.type === "text" && message.thinking && (
+          <MarkdownDisplay
+            md_text={message.thinking}
+            message={message}
+            showTokenNumber={false}
+            isThinking={true}
+          />
+        )}
         {message.type === "text" && message.content && (
           <MarkdownDisplay
             md_text={message.content}
@@ -244,20 +245,22 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
             </div>
           )}
         {/* 大图弹窗 */}
-        {isOpen && (
-          <div
-            className="overflow-visible top-0 left-0 w-[100vw] h-[100vh] flex items-center justify-center fixed !z-[50000] bg-black/80"
-            onClick={handleCloseModal}
-          >
-            <Image
-              src={selectedImage}
-              alt="Selected large"
-              fill // 使用 fill 布局
-              style={{ objectFit: "contain" }} // 使用 style 来设置 objectFitobjectFit="contain" // 保持图像比例
-              className="max-h-[90%] m-auto"
-            />
-          </div>
-        )}
+        {isOpen &&
+          createPortal(
+            <div
+              className="overflow-visible top-0 left-0 w-[100vw] h-[100vh] flex items-center justify-center fixed !z-[50000] bg-black/80"
+              onClick={handleCloseModal}
+            >
+              <Image
+                src={selectedImage}
+                alt="Selected large"
+                fill // 使用 fill 布局
+                style={{ objectFit: "contain" }} // 使用 style 来设置 objectFitobjectFit="contain" // 保持图像比例
+                className="max-h-[90%] m-auto"
+              />
+            </div>,
+            document.body
+          )}
       </div>
     </div>
   );

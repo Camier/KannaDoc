@@ -11,6 +11,8 @@ class TestFunctionCode(BaseModel):
     pip: dict = {}
     image_url: str = ""
     global_variables: dict
+    send_save_image: str = ""
+    docker_image_use: str = ""
 
 
 class TestConditionNode(BaseModel):
@@ -65,12 +67,15 @@ class LLMInputOnce(BaseModel):
     user_message: str
     llm_model_config: dict
     system_prompt: str
+    mcp_use: dict
+
 
 class UserMessage(BaseModel):
     conversation_id: str
     parent_id: str
     user_message: str
     temp_db_id: str
+
 
 class GetTools(BaseModel):
     username: str

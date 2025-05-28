@@ -14,6 +14,8 @@ from app.rag.llm_service import ChatService
 from app.workflow.llm_service import ChatService as VLMService
 import uuid
 
+from app.workflow.mcp_tools import mcp_call_tools
+
 router = APIRouter()
 
 
@@ -234,14 +236,71 @@ async def chat_stream(
     current_user: User = Depends(get_current_user),
 ):
     await verify_username_match(current_user, llm_input.username)
-
+    supply_info = ""
     message_id = str(uuid.uuid4())  # 生成 UUIDv4
+
+    ##### mcp section #####
+    mcp_tools_for_call = {}
+    mcp_servers: dict = llm_input.mcp_use
+    if mcp_servers:
+        for mcp_server_name, mcp_server_tools in mcp_servers.items():
+            mcp_server_url = mcp_server_tools.get("mcpServerUrl")
+            mcp_tools = mcp_server_tools.get("mcpTools")
+            for mcp_tool in mcp_tools:
+                mcp_tool["url"] = mcp_server_url
+                mcp_tools_for_call[mcp_tool["name"]] = mcp_tool
+        mcp_prompt = f"""
+你是一个选择函数调用的专家，请根据用户提问帮用户选择最合适的一个函数调用，并给出函数所需的参数，以{{"function_name":函数名，"params":参数}}的json格式输出，如果用户提问与函数无关，请输出{{"function_name":""}}
+这是json格式的函数列表：{json.dumps(mcp_tools_for_call)}"""
+        mcp_user_message = WorkflowMessage(
+            conversation_id="",
+            parent_id="",
+            user_message=llm_input.user_message,
+            temp_db_id="",
+        )
+        # 获取流式生成器（假设返回结构化数据块）
+        mcp_stream_generator = VLMService.create_chat_stream(
+            user_message_content=mcp_user_message,
+            model_config=llm_input.llm_model_config,
+            message_id=message_id,
+            system_prompt=mcp_prompt,
+            save_to_db=False,
+            user_image_urls=[],
+        )
+        mcp_full_response = []
+        mcp_chunks = []
+        async for chunk in mcp_stream_generator:
+            mcp_chunks.append(json.loads(chunk))
+        for chunk in mcp_chunks:
+            if chunk.get("type") == "text":
+                mcp_full_response.append(chunk.get("data"))
+        try:
+            mcp_full_response_json = json.loads("".join(mcp_full_response))
+            function_name = mcp_full_response_json.get("function_name")
+            if function_name:
+                params = mcp_full_response_json.get("params")
+                try:
+                    result = await mcp_call_tools(
+                        mcp_tools_for_call[function_name]["url"],
+                        function_name,
+                        params,
+                    )
+                    supply_info = f"\n请根据这些结果回答问题{result}"
+                except Exception as e:
+                    pass
+            else:
+                pass
+        except Exception as e:
+            pass
+    ##### mcp section #####
+
     user_message = WorkflowMessage(
         conversation_id="",
         parent_id="",
-        user_message=llm_input.user_message,
+        user_message=llm_input.user_message + supply_info,
         temp_db_id="",
     )
+
     return EventSourceResponse(
         VLMService.create_chat_stream(
             user_message,

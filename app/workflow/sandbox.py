@@ -14,6 +14,7 @@ class CodeSandbox:
         self.image = image
         self.container = None
         self.tmpdir = None  # 延迟初始化
+        self.failed = False
 
     @classmethod
     async def get_all_images(cls) -> List[str]:
@@ -86,6 +87,9 @@ class CodeSandbox:
         """启动长期运行的容器"""
         if self.container:
             return
+        if self.image not in await self.get_all_images():
+            logger.warning(f"找不到镜像{self.image},使用默认镜像")
+            self.image = "python-sandbox:latest"
 
         loop = asyncio.get_event_loop()
         self.container = await loop.run_in_executor(
@@ -107,6 +111,7 @@ class CodeSandbox:
     async def commit(self, repository: str, tag: str = "latest") -> str:
         """将当前容器提交为新的Docker镜像"""
         if not self.container:
+            self.failed = True
             raise RuntimeError("No container to commit")
 
         loop = asyncio.get_event_loop()
@@ -132,6 +137,7 @@ class CodeSandbox:
     ) -> dict:
         """在持久化容器中执行代码"""
         if not self.container:
+            self.failed = True
             raise RuntimeError("No container running")
 
         # 生成唯一脚本文件名
@@ -167,6 +173,7 @@ class CodeSandbox:
                 " && ".join(commands), timeout
             )
             if exit_code != 0:
+                self.failed = True
                 raise docker.errors.ContainerError(
                     self.container,
                     exit_code,
@@ -176,6 +183,7 @@ class CodeSandbox:
                 )
             return {"result": output.strip()}
         except asyncio.TimeoutError:
+            self.failed = True
             raise ValueError("Run timed out")
 
     async def _exec_container(self, command: str, timeout: int):

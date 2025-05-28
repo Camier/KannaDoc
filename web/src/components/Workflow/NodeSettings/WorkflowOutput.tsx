@@ -34,6 +34,7 @@ import {
   getChatflowHistory,
 } from "@/lib/api/chatflowApi";
 import ConfirmDialog from "@/components/ConfirmDialog";
+import { createPortal } from "react-dom";
 
 interface WorkflowOutputProps {
   workflow: WorkflowAll;
@@ -346,7 +347,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
   };
 
   return (
-    <div className="overflow-scroll h-full flex flex-col items-start justify-start gap-1">
+    <div className="overflow-auto h-full flex flex-col items-start justify-start gap-1">
       <div className="px-2 py-1 flex items-center justify-between w-full mt-1 font-medium">
         <div className="text-xl flex items-center justify-start max-w-[80%] gap-1">
           <svg
@@ -590,7 +591,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
               const isUnchanged = isDebugMode && currentValue === initialValue;
               return (
                 <div className="px-2 flex w-full items-center gap-2" key={key}>
-                  <div className="max-w-[50%] whitespace-nowrap overflow-scroll">
+                  <div className="max-w-[50%] whitespace-nowrap overflow-auto">
                     {key}
                   </div>
                   <div>=</div>
@@ -672,10 +673,10 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
             </div>
           </summary>
           <div
-            className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-2`}
+            className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 p-2`}
           >
             <div
-              className="flex-1 overflow-y-auto scrollbar-hide"
+              className="flex-1 overflow-y-scroll scrollbar-hide"
               style={{ overscrollBehavior: "contain" }}
             >
               {messagesWithCount && runningLLMNodes.length > 0 ? (
@@ -718,7 +719,11 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                 <div className="flex justify-center items-center h-full">
                   <textarea
                     ref={textareaRef}
-                    className="pl-11 pr-8 w-full py-3 min-h-[40%] max-h-[100%] border-indigo-500 border-2 rounded-xl text-base focus:outline-hidden focus:border-indigo-600 focus:border-[2.5px] resize-none overflow-y-auto"
+                    className={`pl-11 pr-8 w-full py-3 min-h-[40%] max-h-[100%] ${
+                      !isSendDisabled && !sendDisabled
+                        ? "border-indigo-700"
+                        : "border-indigo-500"
+                    } border-2 rounded-xl text-base focus:outline-hidden focus:border-indigo-600 focus:border-[2.5px] resize-none overflow-y-auto`}
                     placeholder={
                       codeFullScreenFlow
                         ? "Press Shift+Enter to send..."
@@ -734,7 +739,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                     onKeyDown={(e) => {
                       if (e.key === "Enter" && e.shiftKey) {
                         e.preventDefault();
-                        if (!isSendDisabled || !sendDisabled) {
+                        if (!isSendDisabled && !sendDisabled) {
                           handleSend();
                         }
                       }
@@ -898,13 +903,15 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
             lastModifyTime={chatflow.lastModifyTime}
           />
         ))}
-      {showConfirmDeleteAllChatflow && (
-        <ConfirmDialog
-          message={`Confirm the deletion of All Chatflow？`}
-          onConfirm={confirmDeleteAllChatflow}
-          onCancel={cancelDeleteAllChatflow}
-        />
-      )}
+      {showConfirmDeleteAllChatflow &&
+        createPortal(
+          <ConfirmDialog
+            message={`Confirm the deletion of All Chatflow？`}
+            onConfirm={confirmDeleteAllChatflow}
+            onCancel={cancelDeleteAllChatflow}
+          />,
+          document.body
+        )}
     </div>
   );
 };

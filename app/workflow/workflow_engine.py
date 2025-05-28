@@ -20,6 +20,7 @@ from app.core.logging import logger
 class WorkflowEngine:
     def __init__(
         self,
+        username: str,
         nodes: List[Dict],
         edges: List[Dict],
         global_variables,
@@ -57,22 +58,29 @@ class WorkflowEngine:
         self.user_image_urls = []
         self.supply_info = ""  # mcp等工具调用产生的额外的llm输入信息
         self.docker_image_use = (
-            docker_image_use if docker_image_use else "python-sandbox:latest"
+            "sandbox-" + username + "-" + docker_image_use
+            if (docker_image_use and not docker_image_use == "python-sandbox:latest")
+            else "python-sandbox:latest"
         )
         self.need_save_image = (
-            "python-sandbox-" + need_save_image if need_save_image else ""
+            "sandbox-" + username + "-" + need_save_image if need_save_image else ""
         )
 
     async def __aenter__(self):
         # 创建并启动沙箱
         self.sandbox = CodeSandbox(self.docker_image_use)
+
         await self.sandbox.__aenter__()
+        if not self.sandbox:
+            raise ValueError(
+                f"镜像'{'-'.join(self.docker_image_use.split('-')[2:])}'启动失败，请检查镜像是否存在"
+            )
         return self
 
     async def __aexit__(self, exc_type, exc, tb):
         # 退出上下文时清理资源
         if self.sandbox:
-            if self.need_save_image:
+            if self.need_save_image and not self.sandbox.failed:
                 new_image = await self.sandbox.commit(
                     self.need_save_image.split(":")[0],
                     self.need_save_image.split(":")[1],
@@ -562,6 +570,7 @@ class WorkflowEngine:
                         system_prompt=mcp_prompt,
                         save_to_db=False,
                         user_image_urls=[],
+                        quote_variables=self.global_variables,
                     )
                     mcp_full_response = []
                     mcp_chunks = []
@@ -661,6 +670,7 @@ class WorkflowEngine:
                     save_to_db=True if node.data["isChatflowOutput"] else False,
                     user_image_urls=self.user_image_urls,
                     supply_info=self.supply_info,
+                    quote_variables=self.global_variables,
                 )
                 full_response = []
                 chunks = []
@@ -679,12 +689,12 @@ class WorkflowEngine:
                     full_response_json = json.loads("".join(full_response))
                     for k, v in full_response_json.items():
                         if k in self.global_variables:
-                            self.global_variables[k] = repr('"' + v + '"')
+                            self.global_variables[k] = repr(v)
                 except Exception as e:
                     logger.info(f"LLM:工作流{self.task_id}未解析到json输出：{e}")
                 if node.data["chatflowOutputVariable"]:
                     self.global_variables[node.data["chatflowOutputVariable"]] = repr(
-                        '"' + "".join(full_response) + '"'
+                        "".join(full_response)
                     )
                 # 以节点ID为键存储完整结果
                 if not node.node_id in self.context:

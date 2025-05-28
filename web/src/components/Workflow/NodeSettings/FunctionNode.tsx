@@ -11,6 +11,7 @@ import { useFlowStore } from "@/stores/flowStore";
 import { useGlobalStore } from "@/stores/WorkflowVariableStore";
 import { CustomNode } from "@/types/types";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 interface FunctionNodeProps {
   refreshDockerImages: boolean;
@@ -111,7 +112,24 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
       setRunTest(true);
       updateOutput(node.id, "Code Running...");
       try {
-        const response = await runPythonTest(user.name, node, globalVariables);
+        if (saveImage) {
+          if (saveImageName === "" || saveImageTag === "") {
+            alert(
+              'Please write your Image Name and Image Version or close "Commit Runtime Environment" checkbox before running LLM node!'
+            );
+            return;
+          }
+        }
+        const sendSaveImage = saveImage
+          ? saveImageName + ":" + saveImageTag
+          : "";
+        const response = await runPythonTest(
+          user.name,
+          node,
+          globalVariables,
+          sendSaveImage,
+          DockerImageUse
+        );
         const id = node.id;
         if (response.data.code === 0) {
           updateOutput(node.id, response.data.result[id][0].result);
@@ -122,6 +140,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
         console.error("Error connect:", error);
         updateOutput(node.id, "Error connect:" + error);
       } finally {
+        fetchDockerImages();
         setRunTest(false);
       }
     }
@@ -163,7 +182,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
 
   return (
     <div
-      className={`overflow-scroll h-full flex flex-col items-start justify-start gap-1`}
+      className={`overflow-auto h-full flex flex-col items-start justify-start gap-1`}
     >
       <div className="px-2 py-1 flex items-center justify-between w-full mt-1 font-medium">
         <div className="text-xl flex items-center justify-start max-w-[60%] gap-1">
@@ -305,7 +324,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
 
         {isEditing ? (
           <div
-            className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-white`}
+            className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 p-4 bg-white`}
           >
             <textarea
               className={`mt-1 w-full px-2 py-2 border border-gray-200 rounded-xl min-h-[10vh] ${
@@ -318,7 +337,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
           </div>
         ) : (
           <div
-            className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-gray-100`}
+            className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 p-4 bg-gray-100`}
           >
             <MarkdownDisplay
               md_text={node.data.description || "No decription found"}
@@ -458,7 +477,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
           {Object.keys(isDebugMode ? globalDebugVariables : globalVariables)
             .length === 0 && (
             <div className="px-2 flex w-full items-center gap-2 text-gray-500">
-              No variable found.
+              No variables detected. Please add one if required for your workflow.
             </div>
           )}
           {Object.keys(
@@ -474,7 +493,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
             const isUnchanged = isDebugMode && currentValue === initialValue;
             return (
               <div className="px-2 flex w-full items-center gap-2" key={key}>
-                <div className="max-w-[50%] whitespace-nowrap overflow-scroll">
+                <div className="max-w-[50%] whitespace-nowrap overflow-auto">
                   {key}
                 </div>
                 <div>=</div>
@@ -590,7 +609,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                   {/* 遍历 globalVariables 的 key */}
                   {systemDockerImages.map((key) => (
                     <option key={key} value={key}>
-                      {key === "python-sandbox:latest" ? key : key.slice(15)}
+                      {key}
                     </option>
                   ))}
                 </select>
@@ -600,7 +619,11 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className={`size-5 ${DockerImageUse === "python-sandbox:latest"? "cursor-not-allowed opacity-50":"cursor-pointer"} text-indigo-500 shrink-0`}
+                  className={`size-5 ${
+                    DockerImageUse === "python-sandbox:latest"
+                      ? "cursor-not-allowed opacity-50"
+                      : "cursor-pointer"
+                  } text-indigo-500 shrink-0`}
                   onClick={() => {
                     if (DockerImageUse !== "python-sandbox:latest") {
                       setShowConfirmDeleteImage(DockerImageUse);
@@ -747,7 +770,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
             </div>
           </div>
           <div className="px-2 flex w-full items-center gap-2">
-            <div className="max-w-[50%] whitespace-nowrap overflow-scroll">
+            <div className="max-w-[50%] whitespace-nowrap overflow-auto">
               Mirror Url
             </div>
             <div>=</div>
@@ -770,9 +793,14 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
           </div>
           {node.data.pip && (
             <div className="space-y-2">
+              {Object.keys(node.data.pip).length == 0 && (
+                <div className="px-2 flex w-full items-center gap-2 text-gray-500">
+                    No packages detected. Please install dependencies if needed for execution.
+                </div>
+              )}
               {Object.keys(node.data.pip).map((key) => (
                 <div className="px-2 flex w-full items-center gap-2" key={key}>
-                  <div className="max-w-[50%] whitespace-nowrap overflow-scroll">
+                  <div className="max-w-[50%] whitespace-nowrap overflow-auto">
                     {key}
                   </div>
                   <div>==</div>
@@ -868,7 +896,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
             </button>
           </div>
         </summary>
-        <div className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2`}>
+        <div className={`rounded-2xl shadow-lg overflow-auto w-full mb-2`}>
           <PythonEditor node={node} />
         </div>
       </details>
@@ -934,7 +962,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
           </div>
         </summary>
         <div
-          className={`rounded-2xl shadow-lg overflow-scroll w-full mb-2 p-4 bg-gray-100`}
+          className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 p-4 bg-gray-100`}
         >
           <MarkdownDisplay
             md_text={node.data.output || ""}
@@ -948,13 +976,17 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
           />
         </div>
       </details>
-      {showConfirmDeleteImage && (
-        <ConfirmDialog
-          message={`Confirm the deletion of Image "${showConfirmDeleteImage.slice(15)}"？`}
-          onConfirm={confirmDeleteImage}
-          onCancel={cancelDeleteImage}
-        />
-      )}
+      {showConfirmDeleteImage &&
+        createPortal(
+          <ConfirmDialog
+            message={`Confirm the deletion of Image "${showConfirmDeleteImage.slice(
+              15
+            )}"？`}
+            onConfirm={confirmDeleteImage}
+            onCancel={cancelDeleteImage}
+          />,
+          document.body
+        )}
     </div>
   );
 };
