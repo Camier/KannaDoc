@@ -108,3 +108,14 @@ code:not(pre code) {
   --xy-node-border-default: 0px !important; 
   --xy-node-border-selected-default: 0px !important;
 }
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+.animate-fade-in-out {
+  animation: fadeInOut 3s ease-in-out forwards;
+}

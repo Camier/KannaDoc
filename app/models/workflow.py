@@ -68,6 +68,7 @@ class LLMInputOnce(BaseModel):
     llm_model_config: dict
     system_prompt: str
     mcp_use: dict
+    global_variables: dict
 
 
 class UserMessage(BaseModel):

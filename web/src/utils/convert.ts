@@ -8,7 +8,6 @@ export function replaceTemplate(str: string, obj: Record<string, any>): string {
     return String(processedValue);
   });
 
-  // 再处理整个字符串最外层的引号（如果存在）
   return replaced;
 }
 

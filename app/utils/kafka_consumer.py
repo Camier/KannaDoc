@@ -1,4 +1,5 @@
 import json
+import traceback
 from aiokafka import AIOKafkaConsumer, ConsumerRecord
 from app.core.config import settings
 from app.core.logging import logger
@@ -183,7 +184,9 @@ class KafkaConsumerManager:
                     "create_time": str(beijing_time_now()),
                 },
             )
-            logger.error(f"Workflow task failed: {str(e)}")
+            logger.exception(
+                f"Workflow task failed: : {str(e)}"
+            )  # exception自动记录异常
         finally:
             # 刷新过期时间
             pipeline = redis_conn.pipeline()

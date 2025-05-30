@@ -15,6 +15,7 @@ from app.workflow.code_scanner import CodeScanner
 from app.workflow.graph import TreeNode, WorkflowGraph
 from app.workflow.llm_service import ChatService
 from app.core.logging import logger
+from app.workflow.utils import find_outermost_braces
 
 
 class WorkflowEngine:
@@ -312,6 +313,10 @@ class WorkflowEngine:
         """
         logger.info(f"工作流 {self.task_id} 执行节点{node.node_id} 开始运行")
         await self.check_cancellation()
+
+        if node.node_id not in self.execution_status:
+            logger.error(f"工作流 {self.task_id} 找不到开始节点！")
+            raise ValueError("'Start Node' no found!")
 
         if self.execution_status[node.node_id]:
             logger.info(f"工作流 {self.task_id} 节点 {node.node_id} 已经运行过了")
@@ -685,13 +690,16 @@ class WorkflowEngine:
                     if chunk.get("type") == "user_images":
                         if node.data["isChatflowInput"]:
                             self.user_image_urls = chunk.get("data")
-                try:
-                    full_response_json = json.loads("".join(full_response))
-                    for k, v in full_response_json.items():
-                        if k in self.global_variables:
-                            self.global_variables[k] = repr(v)
-                except Exception as e:
-                    logger.info(f"LLM:工作流{self.task_id}未解析到json输出：{e}")
+                full_response_json = "".join(full_response)
+                outermost_braces_string_list = find_outermost_braces(full_response_json)
+                for outermost_braces_string in outermost_braces_string_list:
+                    try:
+                        outermost_braces_dict = json.loads(outermost_braces_string)
+                        for k, v in outermost_braces_dict.items():
+                            if k in self.global_variables:
+                                self.global_variables[k] = repr(v)
+                    except Exception as e:
+                        logger.info(f"LLM:工作流{self.task_id}未解析到json输出：{e}")
                 if node.data["chatflowOutputVariable"]:
                     self.global_variables[node.data["chatflowOutputVariable"]] = repr(
                         "".join(full_response)

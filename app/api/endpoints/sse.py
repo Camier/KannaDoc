@@ -1,5 +1,6 @@
 import asyncio
 import json
+import re
 import aioredis
 from fastapi import APIRouter, Depends, Request
 from fastapi.responses import StreamingResponse
@@ -238,6 +239,16 @@ async def chat_stream(
     await verify_username_match(current_user, llm_input.username)
     supply_info = ""
     message_id = str(uuid.uuid4())  # 生成 UUIDv4
+    def render_template(template: str, data: dict) -> str:
+        """
+        将模板中的 {{ variable }} 替换为字典中对应的字符串值
+        :param template: 包含 {{ 变量 }} 的模板字符串
+        :param data: 包含键值对的字典
+        :return: 替换后的字符串
+        """
+        pattern = re.compile(r"\{\{\s*(.*?)\s*\}\}")  # 自动处理变量名前后空格
+        return pattern.sub(lambda m: str(data.get(m.group(1), "")), template)
+    vlm_input = render_template(llm_input.user_message, llm_input.global_variables)
 
     ##### mcp section #####
     mcp_tools_for_call = {}
@@ -255,7 +266,7 @@ async def chat_stream(
         mcp_user_message = WorkflowMessage(
             conversation_id="",
             parent_id="",
-            user_message=llm_input.user_message,
+            user_message=vlm_input,
             temp_db_id="",
         )
         # 获取流式生成器（假设返回结构化数据块）
@@ -297,7 +308,7 @@ async def chat_stream(
     user_message = WorkflowMessage(
         conversation_id="",
         parent_id="",
-        user_message=llm_input.user_message + supply_info,
+        user_message=vlm_input + supply_info,
         temp_db_id="",
     )
 

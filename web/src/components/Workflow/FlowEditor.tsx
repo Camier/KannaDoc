@@ -145,6 +145,11 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   const [saveImage, setSaveImage] = useState<boolean>(false);
   const [saveImageName, setSaveImageName] = useState<string>("");
   const [saveImageTag, setSaveImageTag] = useState<string>("");
+  const [saveStatus, setSaveStatus] = useState<{
+    visible: boolean;
+    message: string;
+    type: "success" | "error";
+  }>({ visible: false, message: "", type: "success" });
   const [refreshDockerImages, setRefreshDockerImages] =
     useState<boolean>(false);
 
@@ -230,6 +235,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         updateChat(node.id, "Await for running...");
       }
     });
+    setSendInputDisabled(false);
   };
 
   // 初始化历史记录
@@ -412,7 +418,8 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                     // setWorkflowMessage("Please send question to AI!");
                     // setWorkflowStatus("success");
                   } else {
-                    setWorkflowMessage("Execution Failed");
+                    const errorMessage = payload.workflow.error;
+                    setWorkflowMessage(errorMessage);
                     setWorkflowStatus("error");
                     setShowAlert(true);
                   }
@@ -535,9 +542,11 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
 
                     const newMessage: Message = {
                       type: "text" as const,
-                      content:
+                      content: replaceTemplate(
                         nodes.find((node) => node.id === nodeId)?.data
                           .vlmInput || "",
+                        variableReturn.current
+                      ),
                       from: "user" as const,
                     };
 
@@ -1375,9 +1384,75 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
           setWorkflowStatus("success");
         }
       } catch (error) {
-        console.error("Error fetching chat history:", error);
+        console.error("Auto-save failed:", error);
+        setShowAlert(true);
+        setWorkflowMessage("Save Failed!");
+        setWorkflowStatus("error");
       }
     }
+  };
+
+  const handleAutoSaveWorkFlow = async (
+    DockerImageUse: string,
+    globalVariables: {
+      [key: string]: string;
+    },
+    nodes: CustomNode[],
+    edges: CustomEdge[]
+  ) => {
+    if (user?.name) {
+      try {
+        const response = await createWorkflow(
+          workFlow.workflowId,
+          user.name,
+          workFlow.workflowName,
+          { docker_image_use: DockerImageUse },
+          workFlow.startNode,
+          globalVariables,
+          nodes,
+          edges
+        );
+        if (response.status == 200) {
+          showTemporaryAlert(
+            `Workflow "${workFlow.workflowName}" auto-saved successfully`,
+            "success"
+          );
+        }
+      } catch (error) {
+        console.error("Auto-save failed:", error);
+        showTemporaryAlert(
+          `Workflow "${workFlow.workflowName}" auto-saved failed`,
+          "error"
+        );
+      }
+    }
+  };
+
+  // 固定1分钟保存一次
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      // ✅ 每次执行时直接从 store 读取最新状态
+      const currentDockerImageUse = useGlobalStore.getState().DockerImageUse;
+      const currentGlobalVariables = useGlobalStore.getState().globalVariables;
+      const currentNodes = useFlowStore.getState().nodes;
+      const currentEdges = useFlowStore.getState().edges;
+      handleAutoSaveWorkFlow(
+        currentDockerImageUse,
+        currentGlobalVariables,
+        currentNodes,
+        currentEdges
+      );
+    }, 60000);
+    return () => clearInterval(intervalId);
+  }, [workFlow, user?.name]); // 无需依赖项
+
+  const showTemporaryAlert = (message: string, type: "success" | "error") => {
+    setSaveStatus({ visible: true, message, type });
+
+    // 3秒后自动隐藏
+    setTimeout(() => {
+      setSaveStatus((prev) => ({ ...prev, visible: false }));
+    }, 5000);
   };
 
   const handleImportWorkflow = async (
@@ -2028,6 +2103,22 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
           onConfirm={confirmClear}
           onCancel={cancelClear}
         />
+      )}
+      {saveStatus.visible && (
+        <div
+          className={`
+          fixed top-16 left-1/2 transform -translate-x-1/2 px-4 py-2 rounded-lg shadow-lg text-sm
+          transition-opacity duration-500
+          ${
+            saveStatus.type === "success"
+              ? "bg-indigo-100 text-indigo-700"
+              : "bg-red-100 text-red-700"
+          }
+          animate-fade-in-out
+        `}
+        >
+          {saveStatus.message}
+        </div>
       )}
     </div>
   );

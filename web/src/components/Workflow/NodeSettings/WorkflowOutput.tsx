@@ -713,9 +713,9 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
             <div
               className={`relative ${
                 codeFullScreenFlow ? "w-[80%] mt-1 mb-1" : "w-[100%] mt-4 mb-4"
-              } mt-4 mb-4 max-h-[25%] flex items-center justify-center gap-4 mx-auto`}
+              } mt-4 mb-4 max-h-[25%] flex items-center justify-center ${codeFullScreenFlow ? "gap-10" : "gap-2"}  mx-auto`}
             >
-              <div className="relative min-w-[75%] h-[100%]">
+              <div className="relative flex-1 h-[100%]">
                 <div className="flex justify-center items-center h-full">
                   <textarea
                     ref={textareaRef}
@@ -846,11 +846,13 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                 </div>
               </div>
               <button
-                className={`min-w-[14%] flex gap-1 ${
+                className={`flex gap-1 ${
                   isSendDisabled || sendDisabled
                     ? "bg-indigo-300 cursor-not-allowed"
                     : "bg-indigo-500 hover:bg-indigo-600"
-                } rounded-full text-base item-center justify-center px-5 py-2 text-white`}
+                } rounded-full text-base item-center justify-center ${
+                  codeFullScreenFlow ? "px-6" : "px-3"
+                } py-2 text-white`}
                 onClick={handleSend}
                 disabled={isSendDisabled || sendDisabled}
               >
@@ -858,7 +860,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="size-6"
+                  className="size-5 shrink-0 my-auto"
                 >
                   <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" />
                 </svg>

@@ -180,6 +180,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
               llm_model_config: modelConfig,
               system_prompt: node.data.prompt,
               mcp_use: mcpUse,
+              global_variables: globalVariables
             }),
           }
         );
@@ -809,6 +810,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                 />
               ))
             ) : (
+              <div className="px-2">
               <MarkdownDisplay
                 md_text={node.data.chat || ""}
                 message={{
@@ -819,6 +821,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                 showTokenNumber={true}
                 isThinking={false}
               />
+              </div>
             )}
           </div>
         </div>
