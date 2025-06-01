@@ -17,13 +17,13 @@ async def get_embeddings_from_httpx(
         try:
             if "text" in endpoint:
                 response = await client.post(
-                    f"http://localhost:8005/{endpoint}",
+                    f"http://model-server:8005/{endpoint}",
                     json={"queries": data}, 
                     timeout=1200.0  # 根据文件大小调整超时
                 )
             else:
                 response = await client.post(
-                    f"http://localhost:8005/{endpoint}",
+                    f"http://model-server:8005/{endpoint}",
                     #json={payload_key: data}  # 动态字段名
                     files=data,
                     timeout=1200.0  # 根据文件大小调整超时

@@ -191,6 +191,9 @@ The workflow execution follows an **event-driven**, **stateful debugging** patte
 ### ▶️ Local Development
 
 ```bash
+
+确保本机按装 nvidia-container-toolkit 以便docker容器能调用gpu资源
+
 sudo docker build -t python-sandbox -<<EOF
 FROM python:3.9-slim
 RUN useradd -m restricted_user

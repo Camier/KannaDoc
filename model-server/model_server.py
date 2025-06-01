@@ -1,7 +1,8 @@
 # 新建文件 app/core/model_server.py
 from io import BytesIO
 from typing import List
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, File, UploadFile, status
+from fastapi.responses import JSONResponse
 from colbert_service import colbert
 import uvicorn
 from pydantic import BaseModel
@@ -30,6 +31,13 @@ async def embed_image(images: List[UploadFile] = File(...)):
         await image_file.close()
     return {"embeddings": service.process_image(pil_images)}
 
+# 创建新会话
+@app.get("/healthy-check", response_model=dict)
+async def healthy_check():
+    return JSONResponse(
+        status_code=status.HTTP_200_OK,
+        content={"status": "UP", "details": "All systems operational"},
+    )
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8005)

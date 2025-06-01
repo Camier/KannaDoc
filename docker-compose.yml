@@ -134,6 +134,8 @@ services:
   milvus-standalone:
     image: milvusdb/milvus:v2.5.6
     command: ["milvus", "run", "standalone"]
+    security_opt:
+      - seccomp:unconfined
     environment:
       - ETCD_ENDPOINTS=milvus-etcd:2379
       - MINIO_ADDRESS=milvus-minio:9000
@@ -189,6 +191,8 @@ services:
       minio:
         condition: service_healthy
       milvus-standalone:
+        condition: service_healthy
+      model-server:
         condition: service_healthy
       model-weights-init:
         condition: service_completed_successfully
@@ -248,8 +252,23 @@ services:
       - model_weights:/model_weights
     environment:
       - COLBERT_MODEL_PATH=${COLBERT_MODEL_PATH}
+      - NVIDIA_VISIBLE_DEVICES=all  # 暴露所有 GPU
     networks:
       - layra-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8005/healthy-check"]
+      interval: 30s
+      start_period: 30s
+      timeout: 5s
+      retries: 10
+      # 添加 GPU 支持配置
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1  # 使用 1 块 GPU
+              capabilities: [gpu]
 
   frontend:
     build:
