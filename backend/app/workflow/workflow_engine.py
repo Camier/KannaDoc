@@ -559,7 +559,7 @@ class WorkflowEngine:
                             mcp_tool["url"] = mcp_server_url
                             mcp_tools_for_call[mcp_tool["name"]] = mcp_tool
                     mcp_prompt = f"""
-你是一个选择函数调用的专家，请根据用户提问帮用户选择最合适的一个函数调用，并给出函数所需的参数，以{{"function_name":函数名，"params":参数}}的json格式输出，如果用户提问与函数无关，请输出{{"function_name":""}}
+你是一个选择函数调用的专家，请根据用户提问帮用户选择最合适的一个函数调用，并给出函数所需的参数，以{{"function_name":函数名，"params":参数}}的json格式输出，不要包含其他内容，如果用户提问与函数无关，请输出{{"function_name":""}}
 这是json格式的函数列表：{json.dumps(mcp_tools_for_call)}"""
                     mcp_user_message = UserMessage(
                         conversation_id=self.chatflow_id,
@@ -587,11 +587,14 @@ class WorkflowEngine:
                     for chunk in mcp_chunks:
                         if chunk.get("type") == "text":
                             mcp_full_response.append(chunk.get("data"))
+                    mcp_full_response_json = "".join(mcp_full_response)
+                    mcp_outermost_braces_string_list = find_outermost_braces(mcp_full_response_json)
                     try:
-                        mcp_full_response_json = json.loads("".join(mcp_full_response))
-                        function_name = mcp_full_response_json.get("function_name")
+                        mcp_outermost_braces_string = mcp_outermost_braces_string_list[0]
+                        mcp_outermost_braces_dict = json.loads(mcp_outermost_braces_string)
+                        function_name = mcp_outermost_braces_dict.get("function_name")
                         if function_name:
-                            params = mcp_full_response_json.get("params")
+                            params = mcp_outermost_braces_dict.get("params")
                             try:
                                 result = await mcp_call_tools(
                                     mcp_tools_for_call[function_name]["url"],

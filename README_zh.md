@@ -1,306 +1,359 @@
 <div align="center">
-  <img src="./assets/logo.png" width="300" height="300" />
+  <img src="./assets/logo.png" width="300" height="300" alt="LAYRA Logo" />
+  <h1>🌌 LAYRA：视觉优先的Agent工作流引擎：构建无限可能！</h1>
+  <p>
+    <a href="https://github.com/liweiphys/layra/stargazers">
+      <img src="https://img.shields.io/github/stars/liweiphys/layra?style=social" alt="GitHub Stars" />
+    </a>
+    <a href="https://github.com/liweiphys/layra/blob/main/LICENSE">
+      <img src="https://img.shields.io/github/license/liweiphys/layra" alt="License: Apache 2.0" />
+    </a>
+    <a href="https://github.com/liweiphys/layra/issues">
+    <img src="https://img.shields.io/github/issues/liweiphys/layra" alt="Issues" />
+  </a>
+  </p>
+  <p>
+    <a href="./README.md">English</a> |
+    <a href="./README_zh.md">简体中文</a>
+  </p>
 </div>
 
-<p align="center">
-  <a href="./README.md">English</a> |
-  <a href="./README_zh.md">简体中文</a> 
-</p>
+---
 
-# 🌌 LAYRA：超越传统OCR的视觉驱动RAG系统
-
-> **忘记切片，忘记排版丢失。**  
-> 通过纯视觉嵌入，LAYRA像人类一样理解文档 ——逐页，按结构阅读。
-
-**LAYRA** 是一款基于**纯视觉嵌入**的下一代检索增强生成（RAG）系统。它将文档视为具有视觉结构的对象，而不是单纯的文本token序列——保留布局、语义和图形元素，如表格、图形和图表。
-
-LAYRA 适用于研究探索和企业部署，具备以下特点：
-
-- 🧑‍💻 **现代前端技术栈**：基于 TypeScript 的 [Next.js 15](https://nextjs.org/blog/next-15) 和 [TailwindCSS 4.0](https://tailwindcss.com)，提供快速、响应式且开发者友好的界面。
-- ⚙️ **全异步后端架构**：基于 [FastAPI](https://github.com/fastapi/fastapi)，无缝集成全异步组件，包括 **Redis**、**MySQL**、**MongoDB** 和 **MinIO**，优化高性能数据流和可扩展性。
-- 🧠 **视觉驱动的多模态基础**：使用 [Qwen2.5-VL](https://github.com/QwenLM/Qwen2.5-VL) 系列作为当前默认的大语言模型，未来将支持 **GPT-4o**、**Claude**、**Gemini** 和其他多模态模型。
-- 🎯 **图像级嵌入**：文档解析和视觉嵌入通过 [Colpali](https://github.com/illuin-tech/colpali) 项目实现，使用 [colqwen2.5](https://huggingface.co/vidore/colqwen2.5-v0.2) 将页面转换为丰富的语义向量，存储在 [Milvus](https://milvus.io/) 中。
-
-> LAYRA 致力于成为**企业级的开箱即用视觉 RAG 平台**，连接非结构化文档理解和多模态 AI。
-
-🚧 **当前加速开发中**:  
-首个测试版本现已开放试用，仅支持**PDF文档**。
-📚 后续版本将陆续新增对更多文档类型的支持（如Word、PPT、Excel、图片、Markdown等）。  
-📈 详见[路线图](#-路线图).
+**LAYRA** 是全球首个“视觉原生”的AI自动化引擎。它能**像人类一样阅读文档**，保留布局和图形元素，并通过完整的Python控制执行**任意复杂的工作流**。从视觉驱动的检索增强生成（RAG）到多步骤智能体编排，LAYRA助您构建下一代智能系统——无限制，无妥协。
 
 ---
 
 ## 📚 目录
 
-- [最新更新](#-最新更新)
-- [为什么选择 LAYRA？](#-为什么选择-layra)
-- [首个可用测试版本](#-首个可用测试版本)
-- [系统架构](#-系统架构)
-- [查询流程](#-查询流程)
-- [上传与索引流程](#-上传与索引流程)
-- [主要特性](#-主要特性)
-- [技术栈](#-技术栈)
-- [部署](#-部署)
-- [应用场景](#-应用场景)
-- [路线图](#-路线图)
-- [贡献](#-贡献)
-- [联系方式](#-联系方式)
-- [Star History](#-star-history)
-- [许可证](#-许可证)
+- [🚀 快速开始](#快速开始)
+- [❓ 为什么选择LAYRA？](#为什么选择layra)
+- [⚡️ 核心超能力](#核心超能力)
+- [🚀 最新更新](#最新更新)
+- [🖼️ LAYRA截图](#截图)
+- [🧠 系统架构](#系统架构)
+- [🧰 技术栈](#技术栈)
+- [⚙️ 部署指南](#部署指南)
+- [📦 Roadmap](#Roadmap)
+- [🤝 贡献指南](#贡献指南)
+- [📫 联系我们](#联系我们)
+- [🌟 Star History](#Star-History)
+- [📄 许可证](#许可证)
 
 ---
 
-## 🚀 最新更新
+<h2 id="快速开始">🚀 快速开始</h2>
 
-- **(2025.4.6) 首个试用版本现已发布**:  
-  LAYRA 的第一个可测试版本已经上线！用户可以上传 PDF 文档，提出问题，并获得保留排版信息的答案。我们很高兴看到这个功能在实际文档理解中的应用。
+#### 📋 前置条件
 
-- **当前功能**:  
-  - 支持 PDF 批量上传和解析功能
-  - 基于视觉的检索增强生成 (RAG) 系统，支持查询文档内容
-  - 后端已全面优化，支持高效的数据流动，采用 **FastAPI**、**Milvus**、**Redis**、**MongoDB** 和 **MinIO**
+开始前请确保系统满足：
+1. 已安装 **Docker** 和 **Docker Compose**
+2. 已配置 **NVIDIA Container Toolkit**（GPU加速所需）
 
-- **即将推出的功能**:  
-  - 更多文档格式的支持（例如 Word、PPT、Excel 和图像）
-  - 支持更多的大型模型，包括 **GPT-4o** 和 **Claude**
-  - 引入智能 Agent 进行多跳推理与高级文档分析
+#### ⚙️ 安装步骤
 
-敬请关注未来更新和功能发布！
-
----
-
-## ❓ 为什么选择 LAYRA？
-
-大多数 RAG 系统依赖 OCR 或基于文本的解析来处理文档，但这些方法存在以下问题：
-
-- ❌ **失去文档布局排版**（列、表格、层级结构崩溃）
-- ❌ **无法处理非文本视觉元素**（图表、图形、图片等）
-- ❌ **OCR 分割导致语义断裂**
-
-**LAYRA 改变了这一切。**
-
-> 🔍 它像人类一样，从整体上理解文档的每一页。
-
-通过使用**纯视觉嵌入**，LAYRA 保留了：
-- ✅ 布局结构（标题、列表、段落）
-- ✅ 表格完整性（行、列、合并单元格）
-- ✅ 视觉元素（图形、图表、手写）
-- ✅ 布局与内容之间的一致性
-
----
-
-## 🧪 首个可用测试版本
-
-> ✅ **LAYRA 的首个可用版本现已发布！**  
-> 上传您的 PDF 文档，提问并接收保留布局的答案。
-
-您现在可以探索首个版本，该版本支持 PDF 上传，并基于文档的视觉布局返回问题答案。
-
-### 截图：
-
-1. **首页 — 获取开始**
-   ![Demo Screenshot](./assets/homepage.png)
-
-2. **知识库 — 上传文档并查看文件**
-   ![Demo Screenshot](./assets/knowledgebase.png)
-
-3. **互动对话 — 提问并获得布局保留的答案**
-   ![Demo Screenshot](./assets/dialog1.png)
-   ![Demo Screenshot](./assets/dialog.png)
-
----
-
-## 🧠 系统架构
-
-LAYRA 的管道设计为 **异步优先**，**视觉驱动** 和 **可扩展的文档检索与生成**。
-
-### 🔍 查询流程
-查询经过嵌入 → 向量检索 → 答案生成：
-
-![Query Architecture](./assets/query.png)
-
-### 📤 上传与索引流程
-PDF 被解析为图像，并通过 ColQwen2.5 进行视觉嵌入，元数据和文件存储在适当的数据库中：
-
-![Upload Architecture](./assets/upload.png)
-
----
-
-## ✨ 主要特性
-
-| 特性 | 描述 |
-|--------|-------------|
-| 🧠 **视觉驱动的 RAG** | 无需依赖 OCR，直接嵌入原始文档图像 |
-| 🧾 **布局保留的问答** | 理解表格、标题和多列布局 |
-| 📊 **支持视觉内容** | 解析并处理图表、图形等非文本内容 |
-| ⚙️ **异步文档解析** | 通过 Kafka 进行后台文档处理 |
-| 🔍 **快速向量检索** | 使用 Milvus 提供可扩展的密集向量检索 |
-| 🤖 **灵活的大语言模型后端** | 支持 Qwen2.5-VL 系列，并可扩展至 GPT-4o、Claude 3 等 |
-| 🌐 **现代 Web UI** | 基于 Next.js + TypeScript + TailwindCSS + Zustand 构建 |
-
----
-
-## 🧰 技术栈
-
-**前端**:  
-- `Next.js`, `TypeScript`, `TailwindCSS`, `Zustand`
-
-**后端**:  
-- `FastAPI`, `Kafka`, `Redis`, `MySQL`, `MongoDB`, `MinIO`, `Milvus`
-
-**模型底座**:  
-- Embedding: `colqwen2.5-v0.2`  
-- LLM Serving: `VLM  (Qwen2.5-VL series)`
-
----
-
-## 🚀 部署
-
-### ▶️ 本地开发
-
+##### 1. 配置环境变量
 ```bash
 # 克隆仓库
 git clone https://github.com/liweiphys/layra.git
 cd layra
 
-# 设置数据库连接参数与 FastAPI 配置
+# 编辑配置文件（按需修改服务器IP/参数）
 vim .env
-vim web/.env.local 
-vim gunicorn_config.py
-# 或者直接使用默认设置
 
-# 使用 Docker Compose 启动 Milvus、Redis、MongoDB、Kafka 和 MinIO。
-cd docker
-sudo docker-compose -f milvus-standalone-docker-compose.yml -f docker-compose.yml up -d
-
-# 返回项目根目录
-cd ../
-
-# 安装 Python 3.10.6 并设置虚拟环境（可选）
-# python -m venv venv && source venv/bin/activate
-# 或使用 conda 安装
-conda create --name layra python=3.10
-conda activate layra
-
-# 安装系统依赖
-# Ubuntu/Debian系统:
-sudo apt-get update && sudo apt-get install -y poppler-utils
-# Fedora/CentOS系统:
-# sudo dnf install -y poppler-utils
-
-# 安装依赖
-pip install -r requirements.txt
-
-# 下载大模型权重
-# ⚠️ 若未安装 Git LFS，请先执行：
-git lfs install
-
-# 下载原始权重 
-# git clone https://huggingface.co/vidore/colqwen2.5-base
-# 中国用户可使用镜像：
-git clone https://hf-mirror.com/vidore/colqwen2.5-base
-
-# 下载微调权重
-# git clone https://huggingface.co/vidore/colqwen2.5-v0.2
-# 中国用户可使用镜像:
-git clone https://hf-mirror.com/vidore/colqwen2.5-v0.2
-
-# 修改 adapter_config.json 中的 base_model_name_or_path 路径
-base_model_name_or_path="colqwen2.5-base下载路径"
-# 设置为 colqwen2.5-base 下载路径
-
-# 修改 .env 文件，修改以下配置项
-COLBERT_MODEL_PATH="colqwen2.5-v0.2下载路径"
-
-# Mysql 数据库初始化
-alembic init migrations
-cp env.py migrations
-alembic revision --autogenerate -m "Init Mysql"
-alembic upgrade head
-
-# 使用 Gunicorn 启动后端服务
-gunicorn -c gunicorn_config.py app.main:app
-# 访问地址：http://localhost:8000
-
-# 启动 ColBERT 服务（向量化模型服务器）
-python model_server.py
-
-# 开发前端
-cd web
-npm install
-npm run dev 
-# http://localhost:3000
-
-# 或者构建前端（推荐）
-# cd web
-# npm install
-# npm run build
-# npm start  # http://localhost:3000
+# 关键配置项包括：
+# - SERVER_IP（服务器IP）
+# - MODEL_BASE_URL（模型下载源）
 ```
 
-> 🧪 注意：Milvus、Redis、MongoDB、Kafka 和 MinIO 需要本地运行或通过 Docker 启动。
+##### 2. 构建并启动服务
+```bash
+# 首次启动将下载约15GB模型（请耐心等待）
+docker-compose up -d --build
 
-#### 🎉 尽情享受吧！
-现在一切都已启动并运行，尽情享受使用 Layra 的过程吧！🚀
+# 实时监控日志（将<container_name>替换为实际容器名）
+docker-compose logs -f <container_name>
+```
 
-### ▶️ 未来部署选项
-
-未来，我们将支持包括 Docker、Kubernetes (K8s) 和其他容器化环境在内的多种部署方式。详细信息将在这些部署选项可用时提供。
-
----
-
-## 📚 应用场景
-
-- 🧾 **智能文档问答**: 合同、发票、扫描版报告
-- 🏛 **政策/法律文件**: 结构复杂的PDF文档解析
-- 🏭 **工业手册**: 不便于OCR处理的版式/表格/流程图
-- 📈 **可视化分析**: 基于图表数据的趋势挖掘
+#### 🎉 开始使用！
+所有服务运行正常后，即可使用LAYRA进行开发！🚀✨  
+*详细选项请参阅[部署指南](#部署指南)*
 
 ---
 
-## 📦 路线图
+<h2 id="为什么选择layra">❓ 为什么选择LAYRA？</h2>
 
-- [x] 知识库 PDF 批量上传和解析功能
-- [x] 基于 RAG 的对话系统，支持查询和回答
-- [x] OpenAI 兼容接口接入（ollama、sglang、vllm） 
-- [ ] 代码架构和模块化优化，以实现更好的可扩展性
-- [ ] 支持更多视觉或多模态大模型
-- [ ] 扩展文档格式支持（如 Word、PPT、Excel）
-- [ ] 集成智能 Agent，用于多跳推理
-- [ ] 接入知识图谱体系  
-- [ ] 支持 Docker Compose 快速部署    
-- [ ] 开放知识库 API 接口  
+### 🚀 超越RAG：视觉优先工作流的力量
+
+LAYRA的**视觉RAG引擎**革新了文档理解能力，但其真正威力在于**智能体工作流引擎**—一个视觉原生平台，用于构建能看、能推理、能行动的复杂AI智能体。与传统RAG/Workflow系统不同，LAYRA通过以下特性实现全栈自动化：
+
+### ⚙️ 高级工作流能力
+- **🔄 循环与嵌套结构**  
+  构建包含嵌套循环、条件分支等Python自定义逻辑的工作流——无结构限制
+- **🐞 节点级调试**  
+  通过可视化断点调试检查变量、暂停/恢复执行、修改状态
+- **👤 人机协同集成**  
+  在关键节点注入人工审批实现AI-人类协作决策
+- **🧠 会话记忆与MCP集成**  
+  通过会话记忆保持跨节点上下文，通过模型上下文协议（MCP）访问外部信息
+- **🐍 完整Python执行**  
+  在沙箱环境中运行任意Python代码（支持`pip`安装、HTTP请求等）
+- **🎭 多模态I/O编排**  
+  工作流支持文本/图像混合的多模态输入输出
+
+### 🔍 视觉RAG：视觉感知引擎
+传统RAG系统的缺陷：
+- ❌ **丢失布局信息**（列、表格、层级结构）
+- ❌ **无法处理非文本视觉元素**（图表、图示、图形）
+- ❌ **因OCR分割问题破坏语义连续性**
+
+**LAYRA通过纯视觉嵌入彻底改变这一现状：**
+> 🔍 它像人类一样整体阅读页面，完整保留：
+> - ✅ 布局结构（标题、列表、章节）
+> - ✅ 表格完整性（行、列、合并单元格）
+> - ✅ 嵌入式视觉元素（图表、图形、印章、手写体）
+> - ✅ 布局与内容的多模态一致性
+
+**两大引擎共同构成首个完整的视觉原生智能体平台——AI不仅能检索信息，更能端到端执行复杂的视觉驱动工作流。**
 
 ---
 
-## 🤝 贡献
+<h2 id="核心超能力">⚡️ 核心超能力</h2>
 
-欢迎贡献！如果您想帮助我们，请随时提交问题或拉取请求。
-我们正在创建 CONTRIBUTING.md 文件，其中将提供代码贡献、问题报告和最佳实践的指导，敬请期待！
+### 🔥 **智能体工作流引擎：无限执行智能**
+> **无限制编码，无边界构建**  
+> 我们的引擎用LLM思考，用视觉感知，用Python构建逻辑——无限制，纯智能。
+
+- **🔄 无限工作流创建**  
+  通过直观界面设计复杂自定义工作流，**无结构约束**处理业务逻辑、分支、循环和条件
+- **⚡ 实时流式执行（SSE）**  
+  **实时观察**执行结果流，彻底消除等待时间
+- **👥 人机协同集成**  
+  在关键决策点**集成人工输入**进行审查、调整或引导模型推理
+- **👁️ 视觉优先多模态RAG**  
+  采用LAYRA专利**纯视觉嵌入系统**，在**50+格式**（PDF/DOCX/XLSX/PPTX等）中实现无损文档理解
+- **🧠 会话记忆与MCP集成**
+  - **MCP集成** 访问超越原生上下文窗口的实时动态信息
+  - **会话记忆** 通过会话记忆保持上下文连续性
+- **🐍 全栈Python控制**
+  - 用**任意Python表达式**驱动逻辑（条件、循环等）
+  - 在节点中执行**无限制Python代码**（HTTP请求/AI调用/绘图等）
+  - 支持安全`pip`安装的**沙箱环境**，并对环境持久化
+- **🎨 灵活多模态I/O**  
+  处理和生成文本/图像/混合的多模态输出
+- **🔧 高级开发套件**
+  - **断点调试**：执行中检查工作流状态
+  - **可复用组件**：导入/导出工作流
+  - **嵌套逻辑**：构建深度动态任务链
+- **🧩 智能数据工具**
+  - 从LLM输出提取变量
+  - 动态解析LLM的JSON格式
+  - 模板渲染引擎
+
+### 👁️ 视觉RAG引擎：超越文本，超越OCR
+> **忘记分词，忘记布局丢失**  
+> 通过纯视觉嵌入，LAYRA像人类一样理解文档——逐页保留完整结构。
+
+**LAYRA**采用新一代**纯视觉嵌入技术**驱动的检索增强生成（RAG）系统。它将文档视为视觉结构化产物而非字符序列——完整保留布局、语义及表格/图形/图表等视觉元素。
 
 ---
 
-## 📫 联系方式
+<h2 id="最新更新">🚀 最新更新</h2>
+
+**(2025.6.2) 工作流引擎正式发布**：
+- **断点调试**：通过暂停/恢复功能交互式调试工作流
+- **无限制Python定制**：执行任意Python代码（包括`pip`依赖安装,`requests`获取外部`http`请求）
+- **嵌套循环与Python条件**：构建含循环嵌套和Python条件逻辑的复杂工作流
+- **LLM集成**：
+  - 自动JSON解析输出结构化响应
+  - 跨节点会话记忆
+  - 支持**50+格式**的多模态RAG文件上传与知识库检索
+
+**(2025.4.6) 首个试用版发布**：  
+ LAYRA首个可测试版本上线！用户可上传PDF文档、提问并获取保留布局的答案。
+- **当前功能**：
+  - PDF批量上传与解析
+  - 视觉优先的检索增强生成（RAG）文档查询
+  - 后端采用**FastAPI/Milvus/Redis/MongoDB/MinIO**全栈优化
+
+敬请期待更多更新！
+
+---
+
+<h2 id="截图">🖼️ LAYRA截图</h2>
+
+- ##### LAYRA的网页设计始终秉持简约理念，使其更易于新用户上手。
+
+通过以下这些截图展示，探索LAYRA简约的界面和功能
+
+1. **首页 - LAYRA入口**  
+   ![首页截图](./assets/homepage.png)
+
+2. **知识库 - 集中式文档中心**  
+   ![知识库截图](./assets/knowledgebase.png)
+
+3. **交互对话 - 保留布局的答案**  
+   ![对话截图](./assets/dialog.png)
+
+4. **工作流构建器 - 拖拽式智能体创建**  
+   ![工作流截图](./assets/workflow1.png)
+
+5. **工作流构建器 - MCP获取天气案例**  
+   ![mcp Screenshot](./assets/mcp.png)
+   ![mcp Screenshot](./assets/mcp2.png)
+
+---
+
+<h2 id="系统架构">🧠 系统架构</h2>
+
+LAYRA的管道设计遵循**异步优先**、**视觉原生**和**可扩展的文档检索与生成**原则。
+
+### 🔍 查询流程
+查询经嵌入→向量检索→答案生成：
+![查询架构](./assets/query.png)
+
+### 📤 上传与索引流程
+PDF解析为图像→ColQwen2.5视觉嵌入→元数据/文件存储：
+![上传架构](./assets/upload.png)
+
+### 📤 工作流执行（Chatflow）
+**事件驱动**的**有状态调试**流程：
+1. **触发与调试控制**
+   - Web UI提交含**可配置断点**的工作流
+   - 后端执行前验证工作流DAG
+2. **异步编排**
+   - Kafka检查**预定义断点**并触发暂停通知
+   - 扫描器执行**AST代码分析**与漏洞检测
+3. **安全执行**
+   - 沙箱启动带文件隔离的临时容器
+   - 运行时状态快照持久化至_Redis/MongoDB_
+4. **可观测性**
+   - 执行指标通过SSE实时流式传输
+   - 用户通过调试控制台注入测试输入
+![工作流架构](./assets/workflow.png)
+
+---
+
+<h2 id="技术栈">🧰 技术栈</h2>
+
+**前端**：
+`Next.js`, `TypeScript`, `TailwindCSS`, `Zustand`, `xyflow`
+
+**后端与基础设施**：
+`FastAPI`, `Kafka`, `Redis`, `MySQL`, `MongoDB`, `MinIO`, `Milvus`, `Docker`
+
+**模型与RAG**：
+- 嵌入模型：`colqwen2.5-v0.2`
+- LLM服务：`Qwen2.5-VL系列（或任意OpenAI兼容模型）`
+
+---
+
+<h2 id="部署指南">⚙️ 部署指南</h2>
+
+#### 📋 前提条件
+1. 已安装 **Docker** 和 **Docker Compose**
+2. 已配置 **NVIDIA Container Toolkit**
+
+#### ⚙️ 安装步骤
+##### 1. 配置环境变量
+```bash
+git clone https://github.com/liweiphys/layra.git
+cd layra
+vim .env  # 修改SERVER_IP等参数
+```
+
+##### 2. 构建并启动
+```bash
+docker-compose up -d --build  # 首次下载约15GB模型
+docker-compose logs -f <容器名>  # 实时日志
+```
+
+#### 🛠️ 服务管理命令
+```bash
+docker-compose down      # 停止服务（保留数据）
+docker-compose down -v   # 彻底清理（删除数据库和模型权重）
+docker-compose start     # 重启服务
+```
+
+#### ⚠️ 重要提示
+1. **首次模型下载**耗时较长，监控进度：
+   ```bash
+   docker-compose logs -f model-weights-init
+   ```
+
+2. **验证NVIDIA工具包**：
+   ```bash
+   nvidia-container-toolkit --version
+   ```
+
+3. **手动下载模型**时需：
+   - 将权重文件放入Docker卷（通常位于`/var/lib/docker/volumes/layra_model_weights/_data/`）
+   - 在以下文件夹创建空文件`complete.layra`：
+     - **`colqwen2.5-base`**
+     - **`colqwen2.5-v0.2`**
+    - 🚨 **重要**:请务必检查模型权重文件完整性
+
+
+#### 🔑 关键细节
+- `docker-compose down` **`-v` 标志警告**：永久删除所有数据库和模型。
+- 修改`.env`后需重建：`docker-compose up --build`
+- **GPU要求**：
+  - 最新NVIDIA驱动
+  - 正常运行的`nvidia-container-toolkit`
+- **监控工具**：
+  ```bash
+  docker-compose ps -a  # 容器状态
+  docker stats          # 资源使用
+  ```
+
+> 🧪 **技术说明**：所有组件均通过Docker容器运行。
+
+#### 🎉 开始使用！
+所有服务运行正常后，即可使用LAYRA进行开发！🚀✨  
+
+#### ▶️ 未来部署选项
+未来将支持Kubernetes（K8s）等多种部署方案。
+
+---
+
+<h2 id="Roadmap">📦 Roadmap</h2>
+
+**短期计划**：
+- 新增中文支持（即将推出）
+
+**长期计划**：
+- 根据用户需求和AI技术突破持续迭代Roadmap
+
+---
+
+<h2 id="贡献指南">🤝 贡献指南</h2>
+
+欢迎贡献！如需参与请提交issue或PR。  
+我们正在制定CONTRIBUTING.md文件，将包含代码贡献指南、问题报告规范和最佳实践。
+
+---
+
+<h2 id="联系我们">📫 联系我们</h2>
 
 **liweiphys**  
 📧 liweixmu@foxmail.com  
 🐙 [github.com/liweiphys/layra](https://github.com/liweiphys/layra)  
-📺 [bilibili: LAYRA视频介绍](https://www.bilibili.com/video/BV17BRUYCEGt?vd_source=8a1b7271cd2e9a7f6a1ae7a781b2e688)  
-🔍 微信公众号：LAYRA项目  
-💼 *目前开放求职中，欢迎HR联系！*
+📺 [哔哩哔哩：Biggestbiaoge](https://www.bilibili.com/video/BV17BRUYCEGt?vd_source=8a1b7271cd2e9a7f6a1ae7a781b2e688)  
+🔍 微信公众号：LAYRA 项目  
+💼 开放合作计划 — 欢迎联系！
 
 ---
 
-## 🌟 Star History
+<h2 id="Star-History">🌟 Star History</h2>
 
 [![Star History Chart](https://api.star-history.com/svg?repos=liweiphys/layra&type=Date)](https://www.star-history.com/#liweiphys/layra&Date)
 
 ---
 
-## 📄 许可证
+<h2 id="许可证">📄 许可证</h2> 
 
-本项目采用 **Apache 2.0** 许可证。更多详情请查看 [LICENSE](./LICENSE) 文件。
+本项目采用 **Apache 2.0 许可证**，详见 [LICENSE](./LICENSE) 文件。
 
 ---
 
-> _LAYRA 看到 OCR 无法识别的内容，它像我们一样理解文档——从视觉、结构到整体理解。_
+> _无限定制的智能体工作流引擎——无限制编码，无边界构建。_

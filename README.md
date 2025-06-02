@@ -1,358 +1,442 @@
 <div align="center">
-  <img src="./assets/logo.png" width="300" height="300" />
+  <img src="./assets/logo.png" width="300" height="300" alt="LAYRA Logo" />
+  <h1>🌌 LAYRA: The Visual-First AI Agent Engine That Sees, Understands & Acts</h1>
+  <p>
+    <a href="https://github.com/liweiphys/layra/stargazers">
+      <img src="https://img.shields.io/github/stars/liweiphys/layra?style=social" alt="GitHub Stars" />
+    </a>
+    <a href="https://github.com/liweiphys/layra/blob/main/LICENSE">
+      <img src="https://img.shields.io/github/license/liweiphys/layra" alt="License: Apache 2.0" />
+    </a>
+    <a href="https://github.com/liweiphys/layra/issues">
+    <img src="https://img.shields.io/github/issues/liweiphys/layra" alt="Issues" />
+  </a>
+  </p>
+  <p>
+    <a href="./README.md">English</a> |
+    <a href="./README_zh.md">简体中文</a>
+  </p>
 </div>
 
-<p align="center">
-  <a href="./README.md">English</a> |
-  <a href="./README_zh.md">简体中文</a> 
-</p>
+---
 
-# 🌌 LAYRA: A Visual-First Retrieval Agent Beyond OCR
-
-> **Forget tokenization. Forget layout loss.**  
-> With pure visual embeddings, LAYRA understands documents like a human — page by page, structure and all.
-
-**LAYRA** is a next-generation Retrieval-Augmented Generation (RAG) system powered by **pure visual embeddings**. It treats documents not as sequences of tokens but as visually structured artifacts — preserving layout, semantics, and graphical elements like tables, figures, and charts.
-
-Built for both research exploration and enterprise deployment, LAYRA features:
-
-- 🧑‍💻 **Modern frontend stack**: TypeScript-based [Next.js 15](https://nextjs.org/blog/next-15) and [TailwindCSS 4.0](https://tailwindcss.com) — delivering a snappy, responsive, and developer-friendly interface.
-- ⚙️ **Async-first backend architecture**: Built on [FastAPI](https://github.com/fastapi/fastapi), seamlessly integrated with fully asynchronous components including **Redis**, **MySQL**, **MongoDB**, and **MinIO**, optimized for high-performance data flow and scalability.
-- 🧠 **Visual-first multimodal foundation**: Uses [Qwen2.5-VL](https://github.com/QwenLM/Qwen2.5-VL) series  as the current default large language model, with plans to support **GPT-4o**, **Claude**, **Gemini**, and other multimodal models in future releases.
-- 🎯 **Image-level embedding**: Document parsing and visual embedding is powered by the [Colpali](https://github.com/illuin-tech/colpali) project — using the [colqwen2.5](https://huggingface.co/vidore/colqwen2.5-v0.2) to convert pages into rich semantic vectors stored in [Milvus](https://milvus.io/).
-
-> LAYRA aims to be an **enterprise-ready, plug-and-play visual RAG platform**, bridging unstructured document understanding with multimodal AI.
-
-🚧 **Currently in active development**:  
-The first test version is now available for trial, with support for **PDF documents only**.  
-📚 Future releases will add support for more document types (e.g., Word, PPT, Excel, images, Markdown).  
-📈 For details, see the [Roadmap](#-roadmap).
+**LAYRA** is the world’s first “visual-native” AI automation engine. It **sees documents like a human**, preserves layout and graphical elements, and executes **arbitrarily complex workflows** with full Python control. From vision-driven Retrieval-Augmented Generation (RAG) to multi-step agent orchestration, LAYRA empowers you to build next-generation intelligent systems—no limits, no compromises.
 
 ---
 
 ## 📚 Table of Contents
 
-- [Latest Updates](#-latest-updates)
-- [Why LAYRA?](#-why-layra)
-- [First Trial Version Available](#-first-trial-version-available)
-- [System Architecture](#-system-architecture)
-- [Query Flow](#-query-flow)
-- [Upload & Indexing Flow](#-upload--indexing-flow)
-- [Key Features](#-key-features)
-- [Tech Stack](#-tech-stack)
-- [Deployment](#-deployment)
-- [Use Cases](#-use-cases)
-- [Roadmap](#-roadmap)
-- [Contributing](#-contributing)
-- [Contact](#-contact)
-- [Star History](#-star-history)
-- [License](#-license)
+- [🚀 Quick Start](#quick-start)
+- [❓ Why LAYRA?](#why-layra)
+- [⚡️ Core Superpowers](#core-superpowers)
+- [🚀 Latest Updates](#latest-updates)
+- [🖼️ Screenshots](#screenshots)
+- [🧠 System Architecture](#system-architecture)
+- [🧰 Tech Stack](#tech-stack)
+- [⚙️ Deployment](#deployment)
+- [📦 Roadmap](#roadmap)
+- [🤝 Contributing](#contributing)
+- [📫 Contact](#contact)
+- [🌟 Star History](#star-history)
+- [📄 License](#license)
 
 ---
 
-## 🚀 Latest Updates  
+<h2 id="quick-start">🚀 Quick Start</h2>
 
- **(May 23, 2025) Workflow Engine Now Available**:  
-  - **Breakpoint Debugging**: Debug workflows interactively with pause/resume functionality.  
-  - **Unrestricted Python Customization**: Execute arbitrary Python code, including external `pip` dependency installation, HTTP requests via `requests`, and advanced logic.  
-  - **Nested Loops & Python-Powered Conditions**: Build complex workflows with loop nesting and Python-based conditional logic.  
-  - **LLM Integration**:  
-    - Automatic JSON output parsing for structured responses.  
-    - Persistent conversation memory across nodes.  
-    - File uploads and knowledge-base retrieve with **multi-modal RAG** supporting 50+ formats (PDF, DOCX, XLSX, PPTX, etc.).  
+#### 📋 Prerequisites
 
- **(2025.4.6) First Trial Version Now Available**:  
-  The first testable version of LAYRA has been released! Users can now upload PDF documents, ask questions, and receive layout-aware answers. We’re excited to see how this feature can help with real-world document understanding.
+Before starting, ensure your system meets these requirements:
 
-- **Current Features**:  
-  - PDF batch upload and parsing functionality
-  - Visual-first retrieval-augmented generation (RAG) for querying document content
-  - Backend fully optimized for scalable data flow with **FastAPI**, **Milvus**, **Redis**, **MongoDB**, and **MinIO**
+1. **Docker** and **Docker Compose** installed
+2. **NVIDIA Container Toolkit** configured (for GPU acceleration)
 
-- **Upcoming Features**:  
-  - Expanded document format support (Word, PPT, Excel, and images)
-  - Support for additional large models, including **GPT-4o** and **Claude**
-  - Integration of intelligent agent for multi-hop reasoning and advanced document analysis
+#### ⚙️ Installation Steps
 
-Stay tuned for future updates and feature releases!
+##### 1. Configure Environment Variables
+
+```bash
+# Clone the repository
+git clone https://github.com/liweiphys/layra.git
+cd layra
+
+# Edit configuration file (modify server IP/parameters as needed)
+vim .env
+
+# Key configuration options include:
+# - SERVER_IP (server IP)
+# - MODEL_BASE_URL (model download source)
+```
+
+##### 2. Build and Start Service
+
+```bash
+# Initial startup will download ~15GB model weights (be patient)
+docker-compose up -d --build
+
+# Monitor logs in real-time (replace <container_name> with actual name)
+docker-compose logs -f <container_name>
+```
+
+#### 🎉 Enjoy Your Deployment!
+
+Now that everything is running smoothly, happy building with Layra! 🚀✨
+*For detailed options, see the [Deployment section](#deployment).*
+
 ---
 
+<h2 id="why-layra">❓ Why LAYRA?</h2>
 
-## ❓ Why LAYRA?
+### 🚀 Beyond RAG: The Power of Visual-First Workflows
 
-Most RAG systems rely on OCR or text-based parsing to process documents. But these approaches:
+While LAYRA's **Visual RAG Engine** revolutionizes document understanding, its true power lies in the **Agent Workflow Engine** - a visual-native platform for building complex AI agents that see, reason, and act. Unlike traditional RAG/Workflow systems limited to retrieval, LAYRA enables full-stack automation through:
+
+### ⚙️ Advanced Workflow Capabilities
+
+- **🔄 Cyclic & Nested Structures**  
+  Build recursive workflows with loop nesting, conditional branching, and custom Python logic - no structural limitations.
+
+- **🐞 Node-Level Debugging**  
+  Inspect variables, pause/resume execution, and modify state mid-workflow with visual breakpoint debugging.
+
+- **👤 Human-in-the-Loop Integration**  
+  Inject user approvals at critical nodes for collaborative AI-human decision making.
+
+- **🧠 Chat Memory & MCP Integration**  
+  Maintain context across nodes with chat memory and access live information via Model Context Protocol (MCP).
+
+- **🐍 Full Python Execution**  
+  Run arbitrary Python code with `pip` installs, HTTP requests, and custom libraries in sandboxed environments.
+
+- **🎭 Multimodal I/O Orchestration**  
+  Process and generate hybrid text/image outputs across workflow stages.
+
+### 🔍 Visual RAG: The Seeing Engine
+
+Traditional RAG systems fail because they:
 
 - ❌ **Lose layout fidelity** (columns, tables, hierarchy collapse)
 - ❌ **Struggle with non-text visuals** (charts, diagrams, figures)
 - ❌ **Break semantic continuity** due to poor OCR segmentation
 
-**LAYRA changes this.**
+**LAYRA changes this with pure visual embeddings:**
 
-> 🔍 It sees each page of the document as a whole — just like a human reader.
+> 🔍 It sees each page as a whole - just like a human reader - preserving:
+>
+> - ✅ Layout structure (headers, lists, sections)
+> - ✅ Tabular integrity (rows, columns, merged cells)
+> - ✅ Embedded visuals (plots, graphs, stamps, handwriting)
+> - ✅ Multi-modal consistency between layout and content
 
-By using **pure visual embeddings**, LAYRA preserves:
-- ✅ Layout structure (headers, lists, sections)
-- ✅ Tabular integrity (rows, columns, merged cells)
-- ✅ Embedded visuals (plots, graphs, stamps, handwriting)
-- ✅ Multi-modal consistency between layout and content
-
----
-
-## 🧪 First Trial Version Available
-
-> ✅ **The first testable version of LAYRA is now available!**  
-> Upload your own PDF documents, ask questions, and receive layout-aware answers.
-
-You can now explore the first version, which supports PDF uploads and returns questions about your documents with visual layout context.
-
-### Screenshots:
-
-1. **Homepage — Get start**
-   ![Demo Screenshot](./assets/homepage.png)
-
-2. **Knowledge Base — Upload your document and view files**
-   ![Demo Screenshot](./assets/knowledgebase.png)
-
-3. **Interactive Dialogue — Ask and get layout-preserving answers**
-   ![Demo Screenshot](./assets/dialog1.png)
-   ![Demo Screenshot](./assets/dialog.png)
+**Together, these engines form the first complete visual-native agent platform - where AI doesn't just retrieve information, but executes complex vision-driven workflows end-to-end.**
 
 ---
 
+<h2 id="core-superpowers">⚡️ Core Superpowers</h2>
 
-## 🧠 System Architecture
+### 🔥 **The Agent Workflow Engine: Infinite Execution Intelligence**
+
+> **Code Without Limits, Build Without Boundaries**
+> Our Agent Workflow Engine thinks in LLM, sees in visuals, and builds your logic in Python — no limits, just intelligence.
+
+- **🔄 Unlimited Workflow Creation**  
+  Design complex custom workflows **without structural constraints**. Handle unique business logic, branching, loops, and conditions through an intuitive interface.
+
+- **⚡ Real-Time Streaming Execution (SSE)**  
+  Observe execution results streamed **live** – eliminate waiting times entirely.
+
+- **👥 Human-in-the-Loop Integration**  
+  **Integrate user input** at critical decision points to review, adjust, or direct model reasoning. Enables collaborative AI workflows with dynamic human oversight.
+
+- **👁️ Visual-First Multimodal RAG**  
+  Features LAYRA’s proprietary **pure visual embedding system**, delivering lossless document understanding across **50+ formats** (PDF, DOCX, XLSX, PPTX, etc.). The AI actively "sees" your content.
+
+- **🧠 Chat Memory & MCP Integration**
+
+  - **MCP Integration** Access and interact with live, evolving information beyond native context windows – enhancing adaptability for long-term tasks.
+  - **ChatFlow Memory** Maintain contextual continuity through chat memory, enabling personalized interactions and intelligent workflow evolution.
+
+- **🐍 Full-Stack Python Control**
+
+  - Drive logic with **arbitrary Python expressions** – conditions, loops, and more
+  - Execute **unrestricted Python code** in nodes (HTTP, AI calls, math, etc.)
+  - **Sandboxed environments** with secure pip installs and persistent runtime snapshots
+
+- **🎨 Flexible Multimodal I/O**  
+  Process and generate text, images, or hybrid outputs – ideal for cross-modal applications.
+
+- **🔧 Advanced Development Suite**
+
+  - **Breakpoint Debugging**: Inspect workflow states mid-execution
+  - **Reusable Components**: Import/export workflows and save custom nodes
+  - **Nested Logic**: Construct deeply dynamic task chains with loops and conditionals
+
+- **🧩 Intelligent Data Utilities**
+  - Extract variables from LLM outputs
+  - Parse JSON dynamically
+  - Template rendering engine  
+    Essential tools for advanced AI reasoning and automation.
+
+### 👁️ Visual RAG Engine: Beyond Text, Beyond OCR
+
+> **Forget tokenization. Forget layout loss.**  
+> With pure visual embeddings, LAYRA understands documents like a human — page by page, structure and all.
+
+**LAYRA** uses next-generation Retrieval-Augmented Generation (RAG) technology powered by **pure visual embeddings**. It treats documents not as sequences of tokens but as visually structured artifacts — preserving layout, semantics, and graphical elements like tables, figures, and charts.
+
+---
+
+<h2 id="latest-updates">🚀 Latest Updates</h2>
+
+**(2025.6.2) Workflow Engine Now Available**:
+
+- **Breakpoint Debugging**: Debug workflows interactively with pause/resume functionality.
+- **Unrestricted Python Customization**: Execute arbitrary Python code, including external `pip` dependency installation, HTTP requests via `requests`, and advanced logic.
+- **Nested Loops & Python-Powered Conditions**: Build complex workflows with loop nesting and Python-based conditional logic.
+- **LLM Integration**:
+  - Automatic JSON output parsing for structured responses.
+  - Persistent conversation memory across nodes.
+  - File uploads and knowledge-base retrieve with **multi-modal RAG** supporting 50+ formats (PDF, DOCX, XLSX, PPTX, etc.).
+
+**(2025.4.6) First Trial Version Now Available**:  
+ The first testable version of LAYRA has been released! Users can now upload PDF documents, ask questions, and receive layout-aware answers. We’re excited to see how this feature can help with real-world document understanding.
+
+- **Current Features**:
+  - PDF batch upload and parsing functionality
+  - Visual-first retrieval-augmented generation (RAG) for querying document content
+  - Backend fully optimized for scalable data flow with **FastAPI**, **Milvus**, **Redis**, **MongoDB**, and **MinIO**
+
+Stay tuned for future updates and feature releases!
+
+---
+
+<h2 id="screenshots">🖼️ Screenshots</h2>
+
+- ##### LAYRA's web design consistently adheres to a minimalist philosophy, making it more accessible to new users.
+
+Explore LAYRA's powerful interface and capabilities through these visuals:
+
+1. **Homepage - Your Gateway to LAYRA**  
+   ![Homepage Screenshot](./assets/homepage.png)
+
+2. **Knowledge Base - Centralized Document Hub**  
+   ![Knowledge Base Screenshot](./assets/knowledgebase.png)
+
+3. **Interactive Dialogue - Layout-Preserving Answers**
+   ![Layout-Preserving Answers](./assets/dialog.png)
+
+4. **Workflow Builder - Drag-and-Drop Agent Creation**  
+   ![Workflow Screenshot](./assets/workflow1.png)
+
+5. **Workflow Builder - MCP Example**  
+   ![mcp Screenshot](./assets/mcp.png)
+   ![mcp Screenshot](./assets/mcp2.png)
+
+---
+
+<h2 id="system-architecture">🧠 System Architecture</h2>
 
 LAYRA’s pipeline is designed for **async-first**, **visual-native**, and **scalable document retrieval and generation**.
 
 ### 🔍 Query Flow
+
 The query goes through embedding → vector retrieval → anser generation:
 
 ![Query Architecture](./assets/query.png)
 
 ### 📤 Upload & Indexing Flow
+
 PDFs are parsed into images and embedded visually via ColQwen2.5, with metadata and files stored in appropriate databases:
 
 ![Upload Architecture](./assets/upload.png)
 
-### 📤 Execute Workflow (Chatflow)  
-The workflow execution follows an **event-driven**, **stateful debugging** pattern with granular control:   
+### 📤 Execute Workflow (Chatflow)
 
-#### 🔄 Execution Flow  
-1. **Trigger & Debug Control**  
-   - Web UI submits workflow with **configurable breakpoints** for real-time inspection  
+The workflow execution follows an **event-driven**, **stateful debugging** pattern with granular control:
+
+#### 🔄 Execution Flow
+
+1. **Trigger & Debug Control**
+
+   - Web UI submits workflow with **configurable breakpoints** for real-time inspection
    - Backend validates workflow DAG before executing codes
 
-2. **Asynchronous Orchestration**  
-   - Kafka checks **predefined breakpoints** and triggers pause notifications  
-   - Scanner performs **AST-based code analysis** with vulnerability detection  
+2. **Asynchronous Orchestration**
 
-3. **Secure Execution**  
-   - Sandbox spins up ephemeral containers with file system isolation  
-   - Runtime state snapshots persisted to *Redis/MongoDB* for recovery  
+   - Kafka checks **predefined breakpoints** and triggers pause notifications
+   - Scanner performs **AST-based code analysis** with vulnerability detection
 
-4. **Observability**  
-   - Execution metrics streamed via Server-Sent Events (SSE)  
-   - Users inject test inputs/resume execution through debug consoles  
+3. **Secure Execution**
+
+   - Sandbox spins up ephemeral containers with file system isolation
+   - Runtime state snapshots persisted to _Redis/MongoDB_ for recovery
+
+4. **Observability**
+   - Execution metrics streamed via Server-Sent Events (SSE)
+   - Users inject test inputs/resume execution through debug consoles
 
 ![Upload Architecture](./assets/workflow.png)
 
 ---
 
-## ✨ Key Features
+<h2 id="tech-stack">🧰 Tech Stack</h2>
 
-| Feature | Description |
-|--------|-------------|
-| 🧠 **Visual-First RAG** | Embeds raw document images without relying on OCR |
-| 🧾 **Layout-Preserving QA** | Understands tables, headers, and multi-column layouts |
-| 📊 **Visual Content Support** | Parses and reasons over plots, diagrams, and charts |
-| ⚙️ **Async Document Parsing** | Background document processing via Kafka |
-| 🔍 **Fast Vector Search** | Powered by Milvus for scalable dense retrieval |
-| 🤖 **Flexible LLM Backend** | Supports Qwen2.5-VL series, and extensible to GPT-4o, Claude 3, etc. |
-| 🌐 **Modern Web UI** | Built with Next.js + Typescript + TailwindCSS + Zustand |
+**Frontend**:
 
----
+- `Next.js`, `TypeScript`, `TailwindCSS`, `Zustand`, `xyflow`
 
-## 🧰 Tech Stack
+**Backend & Infrastructure**:
 
-**Frontend**:  
-- `Next.js`, `TypeScript`, `TailwindCSS`, `Zustand`
+- `FastAPI`, `Kafka`, `Redis`, `MySQL`, `MongoDB`, `MinIO`, `Milvus`, `Docker`
 
-**Backend & Infrastructure**:  
-- `FastAPI`, `Kafka`, `Redis`, `MySQL`, `MongoDB`, `MinIO`, `Milvus`
+**Models & RAG**:
 
-**Models & RAG**:  
-- Embedding: `colqwen2.5-v0.2`  
-- LLM Serving: `VLM  (Qwen2.5-VL series)`
+- Embedding: `colqwen2.5-v0.2`
+- LLM Serving: `Qwen2.5-VL series (or any OpenAI-compatible model)`
 
 ---
 
-## 🚀 Deployment
+<h2 id="deployment">⚙️ Deployment</h2>
 
-### ▶️ Local Development
+#### 📋 Prerequisites
+
+Before starting, ensure your system meets these requirements:
+
+1. **Docker** and **Docker Compose** installed
+2. **NVIDIA Container Toolkit** configured (for GPU acceleration)
+
+#### ⚙️ Installation Steps
+
+##### 1. Configure Environment Variables
 
 ```bash
-
-确保本机按装 nvidia-container-toolkit 以便docker容器能调用gpu资源
-
-sudo docker build -t python-sandbox -<<EOF
-FROM python:3.9-slim
-RUN useradd -m restricted_user
-USER restricted_user
-WORKDIR /app
-EOF
-#！！！重要！！！
-#开启网络会降低沙箱安全性，建议仅在需要安装依赖时临时开启
-#可以添加网络访问白名单（需要额外配置防火墙规则）
-#如果使用pip install，建议配合可信的镜像源使用：
-
-sudo usermod -aG docker $USER
-newgrp docker  # 或重新登录
-
-# Clone the repo
+# Clone the repository
 git clone https://github.com/liweiphys/layra.git
 cd layra
 
-# Set up database and FastAPI environment configuration
+# Edit configuration file (modify server IP/parameters as needed)
 vim .env
-vim web/.env.local 
-vim gunicorn_config.py
-# Or use default settings
 
-# Launch Milvus, Redis, MongoDB, Kafka, and MinIO via Docker Compose.
-cd docker
-sudo docker-compose -f milvus-standalone-docker-compose.yml -f docker-compose.yml up -d
-
-# Back to project root
-cd ../
-
-# Install Python 3.10.6 and create virtual environment (optional)
-# python -m venv venv && source venv/bin/activate
-# Or install with conda
-conda create --name layra python=3.10
-conda activate layra
-
-# Install system dependencies
-# For Ubuntu/Debian:
-sudo apt-get update && sudo apt-get install -y poppler-utils libreoffice
-# For Fedora/CentOS:
-# sudo dnf install -y poppler-utils libreoffice
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Download ColQwen2.5 model weights
-# ⚠️ If Git LFS not installed, run:
-git lfs install
-
-# Download base model weights
-git clone https://huggingface.co/vidore/colqwen2.5-base
-# For users in China:
-# git clone https://hf-mirror.com/vidore/colqwen2.5-base
-
-# Download LoRA fine-tuned weights
-git clone https://huggingface.co/vidore/colqwen2.5-v0.2
-# For users in China:
-# git clone https://hf-mirror.com/vidore/colqwen2.5-v0.2
-
-# Modify the `base_model_name_or_path` field in `colqwen2.5-v0.2/adapter_config.json`
-base_model_name_or_path="/absolute/path/to/colqwen2.5-base"
-# Set it to local path of colqwen2.5-base
-
-# Set the following in your .env file
-COLBERT_MODEL_PATH="/absolute/path/to/colqwen2.5-v0.2"
-
-# Initialize MySQL database
-alembic init migrations
-cp env.py migrations
-alembic revision --autogenerate -m "Init Mysql"
-alembic upgrade head
-
-# Start backend with Gunicorn
-gunicorn -c gunicorn_config.py app.main:app
-# http://localhost:8000
-
-# Start ColBERT embedding model server
-python model_server.py
-
-# Frontend development
-cd web
-npm install
-npm run dev  
-# http://localhost:3000
-
-# Or build frontend (recommended)
-# cd web
-# npm install
-# npm run build
-# npm start  # http://localhost:3000
+# Key configuration options include:
+# - SERVER_IP (public server IP)
+# - MODEL_BASE_URL (model download source)
 ```
 
-> 🧪 Note: Milvus, Redis, MongoDB, Kafka, and MinIO are expected to run locally or via Docker.
+##### 2. Build and Start Service
 
-#### 🎉 Enjoy!
-Now that everything is up and running, enjoy exploring and building with Layra! 🚀
+```bash
+# Initial startup will download ~15GB model weights (be patient)
+docker-compose up -d --build
 
-### ▶️ Future Deployment Options
+# Monitor logs in real-time (replace <container_name> with actual name)
+docker-compose logs -f <container_name>
+```
 
-In the future, we will support multiple deployment methods including Docker, Kubernetes (K8s), and other containerized environments. More details will be provided when these deployment options are available.
+#### 🛠️ Service Management Commands
+
+```bash
+# Stop services (preserves data and configurations)
+docker-compose down
+
+# Full cleanup (deletes databases, model weights and persistent data)
+docker-compose down -v
+
+# Restart services
+docker-compose start
+```
+
+#### ⚠️ Important Notes
+
+1. **Initial model download** may take significant time (~15GB). Monitor progress:
+
+   ```bash
+   docker-compose logs -f model-weights-init
+   ```
+
+2. **Verify NVIDIA toolkit** installation:
+
+   ```bash
+   nvidia-container-toolkit --version
+   ```
+
+3. **For network issues**:
+   - Manually download model weights
+   - Copy to Docker volume: （typically at） `/var/lib/docker/volumes/layra_model_weights/_data/`
+   - Create empty `complete.layra` file in both:
+     - **`colqwen2.5-base`** folder
+     - **`colqwen2.5-v0.2`** folder
+   - 🚨 **Critical**: Verify downloaded weights integrity!
+
+#### 🔑 Key Details
+
+- `docker-compose down` **`-v` flag warning**: Permanently deletes all databases and models
+- **After modifying `.env`**: Rebuild with `docker-compose up --build`
+- **GPU requirements**:
+  - Latest NVIDIA drivers
+  - Working `nvidia-container-toolkit`
+- **Monitoring tools**:
+
+  ```bash
+  # Container status
+  docker-compose ps -a
+
+  # Resource usage
+  docker stats
+  ```
+
+> 🧪 **Technical Note**: All components run exclusively via Docker containers.
+
+
+#### 🎉 Enjoy Your Deployment!
+
+Now that everything is running smoothly, happy building with Layra! 🚀✨
+
+#### ▶️ Future Deployment Options
+
+In the future, we will support multiple deployment methods including Kubernetes (K8s), and other environments. More details will be provided when these deployment options are available.
 
 ---
 
-## 📚 Use Cases
+<h2 id="roadmap">📦 Roadmap</h2>
 
-- 🧾 **Intelligent document QA**: Contracts, invoices, scanned reports  
-- 🏛 **Policy/legal documents**: Structure-rich PDF understanding  
-- 🏭 **Industrial manuals**: OCR-unfriendly layouts, tables, flowcharts  
-- 📈 **Visual analytics**: Trend analysis from plots and charts  
+**Short-term:**
 
----
+- Add Chinese Language Support (coming soon)
 
-## 📦 Roadmap
+**Long-term:**
 
-- **completed**
-- [x] Knowledge Base PDF batch upload and parsing functionality
-- [x] RAG-based dialogue system for querying and answering
-- [x] Support openai-compatible API interface（ollama、sglang、vllm） 
-
-- **developing** 
-- [ ] Code architecture and modular optimization for scalability  
-- [ ] Support for additional large models
-- [ ] Expanded document format support (e.g., Word, PPT, Excel)  
-- [ ] Integration of intelligent Agent for multi-hop reasoning  
-- [ ] Integration with knowledge graph  
-- [ ] Deployment with Docker Compose  
-- [ ] Public Knowledge Base API access  
+- Our evolving roadmap adapts to user needs and AI breakthroughs. New technologies and features will be deployed continuously.
 
 ---
 
-## 🤝 Contributing
+<h2 id="contributing">🤝 Contributing</h2>
 
 Contributions are welcome! Feel free to open an issue or pull request if you’d like to contribute.  
 We are in the process of creating a CONTRIBUTING.md file, which will provide guidelines for code contributions, issue reporting, and best practices. Stay tuned!
 
 ---
 
-## 📫 Contact
+<h2 id="contact">📫 Contact</h2>
 
 **liweiphys**  
 📧 liweixmu@foxmail.com  
 🐙 [github.com/liweiphys/layra](https://github.com/liweiphys/layra)  
 📺 [bilibili: Biggestbiaoge](https://www.bilibili.com/video/BV17BRUYCEGt?vd_source=8a1b7271cd2e9a7f6a1ae7a781b2e688)  
-🔍 微信公众号：LAYRA项目  
-💼 *Available for hire — open to new opportunities!*
+🔍 微信公众号：LAYRA 项目  
+💼 Exploring Impactful Opportunities - Feel Free To Contact Me!
 
 ---
 
-## 🌟 Star History
+<h2 id="star-history">🌟 Star History</h2>
 
 [![Star History Chart](https://api.star-history.com/svg?repos=liweiphys/layra&type=Date)](https://www.star-history.com/#liweiphys/layra&Date)
 
 ---
 
-## 📄 License
+<h2 id="license">📄 License</h2> 
 
 This project is licensed under the **Apache License 2.0**. See the [LICENSE](./LICENSE) file for more details.
 
 ---
 
-> _LAYRA sees what OCR cannot. It reads documents like we do — visually, structurally, holistically._
+> _Endlessly Customizable Agent Workflow Engine - Code Without Limits, Build Without Boundaries._

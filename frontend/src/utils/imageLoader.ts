@@ -1,7 +1,7 @@
 // src/utils/imageLoader.ts
 
 // 环境变量配置
-const MINIO_INTERNAL_URL = "http://minio:9000";
+const MINIO_INTERNAL_URL = `${process.env.MINIO_URL}`;
 const PUBLIC_MINIO_URL_PREFIX = `${process.env.MINO_IMAGE_URL_PREFIX}`;
 
 const imageLoader = ({

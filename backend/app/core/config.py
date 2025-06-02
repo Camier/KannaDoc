@@ -35,7 +35,7 @@ class Settings(BaseSettings):
     milvus_uri:str ="http://127.0.0.1:19530"
     colbert_model_path:str = "/home/liwei/ai/colqwen2.5-v0.2"
     sandbox_shared_volume:str = "/app/sandbox_workspace"
-    hostname:str = "http://localhost"
+    server_ip:str = "http://localhost"
 
     class Config:
         env_file = "../.env"

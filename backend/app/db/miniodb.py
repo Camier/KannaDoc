@@ -116,7 +116,7 @@ class AsyncMinIOManager:
         """生成预签名 URL 以供文件下载"""
         async with self.session.client(
             "s3",
-            endpoint_url=settings.hostname,
+            endpoint_url=settings.server_ip,
             aws_access_key_id=settings.minio_access_key,
             aws_secret_access_key=settings.minio_secret_key,
             use_ssl=False,

@@ -1,5 +1,8 @@
 FROM alpine:latest
 
+# 设置阿里云镜像源
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
+
 RUN apk add --no-cache git git-lfs jq
 
 WORKDIR /model_weights

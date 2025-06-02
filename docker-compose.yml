@@ -232,13 +232,13 @@ services:
       - MILVUS_URI=${MILVUS_URI}
       - COLBERT_MODEL_PATH=${COLBERT_MODEL_PATH}
       - SANDBOX_SHARED_VOLUME=${SANDBOX_SHARED_VOLUME}
-      - HOSTNAME=${HOSTNAME}
+      - SERVER_IP=${SERVER_IP}
     networks:
       - layra-net
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health/check"]
       interval: 30s
-      start_period: 30s
+      start_period: 10s
       timeout: 5s
       retries: 10
 
@@ -276,6 +276,7 @@ services:
       args:
         - NEXT_PUBLIC_API_BASE_URL=${NEXT_PUBLIC_API_BASE_URL}
         - MINO_IMAGE_URL_PREFIX=${MINO_IMAGE_URL_PREFIX}
+        - MINIO_URL=${MINIO_URL}
     depends_on:
       backend:
         condition: service_healthy
