@@ -551,7 +551,7 @@ class WorkflowEngine:
                     await self._send_ai_chunk_event(
                         node.node_id, message_id, load_ai_messgae, "mcp"
                     )
-                    logger.info("MCP:工作流{self.task_id}开始mcp调用")
+                    logger.info(f"MCP:工作流{self.task_id}开始mcp调用")
                     for mcp_server_name, mcp_server_tools in mcp_servers.items():
                         mcp_server_url = mcp_server_tools.get("mcpServerUrl")
                         mcp_tools = mcp_server_tools.get("mcpTools")

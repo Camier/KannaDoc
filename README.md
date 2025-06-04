@@ -72,11 +72,13 @@ vim .env
 
 ```bash
 # Initial startup will download ~15GB model weights (be patient)
-docker-compose up -d --build
+docker compose up -d --build
 
 # Monitor logs in real-time (replace <container_name> with actual name)
-docker-compose logs -f <container_name>
+docker compose logs -f <container_name>
 ```
+
+> **Note**: If you encounter issues with `docker compose`, try using `docker-compose` (with the dash) instead. Also, ensure that you're using Docker Compose v2, as older versions may not support all features. You can check your version with `docker compose version` or `docker-compose version`.
 
 #### 🎉 Enjoy Your Deployment!
 
@@ -326,23 +328,25 @@ vim .env
 
 ```bash
 # Initial startup will download ~15GB model weights (be patient)
-docker-compose up -d --build
+docker compose up -d --build
 
 # Monitor logs in real-time (replace <container_name> with actual name)
-docker-compose logs -f <container_name>
+docker compose logs -f <container_name>
 ```
+
+> **Note**: If you encounter issues with `docker compose`, try using `docker-compose` (with the dash) instead. Also, ensure that you're using Docker Compose v2, as older versions may not support all features. You can check your version with `docker compose version` or `docker-compose version`.
 
 #### 🛠️ Service Management Commands
 
 ```bash
 # Stop services (preserves data and configurations)
-docker-compose down
+docker compose down
 
 # Full cleanup (deletes databases, model weights and persistent data)
-docker-compose down -v
+docker compose down -v
 
 # Restart services
-docker-compose start
+docker compose start
 ```
 
 #### ⚠️ Important Notes
@@ -350,7 +354,7 @@ docker-compose start
 1. **Initial model download** may take significant time (~15GB). Monitor progress:
 
    ```bash
-   docker-compose logs -f model-weights-init
+   docker compose logs -f model-weights-init
    ```
 
 2. **Verify NVIDIA toolkit** installation:
@@ -369,8 +373,8 @@ docker-compose start
 
 #### 🔑 Key Details
 
-- `docker-compose down` **`-v` flag warning**: Permanently deletes all databases and models
-- **After modifying `.env`**: Rebuild with `docker-compose up --build`
+- `docker compose down` **`-v` flag warning**: Permanently deletes all databases and models
+- **After modifying `.env`**: Rebuild with `docker compose up --build`
 - **GPU requirements**:
   - Latest NVIDIA drivers
   - Working `nvidia-container-toolkit`
@@ -378,7 +382,7 @@ docker-compose start
 
   ```bash
   # Container status
-  docker-compose ps -a
+  docker compose ps -a
 
   # Resource usage
   docker stats

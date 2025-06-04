@@ -69,11 +69,13 @@ vim .env
 ##### 2. 构建并启动服务
 ```bash
 # 首次启动将下载约15GB模型（请耐心等待）
-docker-compose up -d --build
+docker compose up -d --build
 
 # 实时监控日志（将<container_name>替换为实际容器名）
-docker-compose logs -f <container_name>
+docker compose logs -f <container_name>
 ```
+
+> **注意**：如果 `docker compose` 遇到问题，尝试使用 `docker-compose`。同时，确保你使用的是 Docker Compose v2，旧版本不被LAYRA支持。你可以通过 `docker compose version` 或 `docker-compose version` 来检查当前版本。
 
 #### 🎉 开始使用！
 所有服务运行正常后，即可使用LAYRA进行开发！🚀✨  
@@ -264,21 +266,23 @@ vim .env  # 修改SERVER_IP等参数
 
 ##### 2. 构建并启动
 ```bash
-docker-compose up -d --build  # 首次下载约15GB模型
-docker-compose logs -f <容器名>  # 实时日志
+docker compose up -d --build  # 首次下载约15GB模型
+docker compose logs -f <容器名>  # 实时日志
 ```
+
+> **注意**：如果 `docker compose` 遇到问题，尝试使用 `docker-compose`。同时，确保你使用的是 Docker Compose v2，旧版本不被LAYRA支持。你可以通过 `docker compose version` 或 `docker-compose version` 来检查当前版本。
 
 #### 🛠️ 服务管理命令
 ```bash
-docker-compose down      # 停止服务（保留数据）
-docker-compose down -v   # 彻底清理（删除数据库和模型权重）
-docker-compose start     # 重启服务
+docker compose down      # 停止服务（保留数据）
+docker compose down -v   # 彻底清理（删除数据库和模型权重）
+docker compose start     # 重启服务
 ```
 
 #### ⚠️ 重要提示
 1. **首次模型下载**耗时较长，监控进度：
    ```bash
-   docker-compose logs -f model-weights-init
+   docker compose logs -f model-weights-init
    ```
 
 2. **验证NVIDIA工具包**：
@@ -295,14 +299,14 @@ docker-compose start     # 重启服务
 
 
 #### 🔑 关键细节
-- `docker-compose down` **`-v` 标志警告**：永久删除所有数据库和模型。
-- 修改`.env`后需重建：`docker-compose up --build`
+- `docker compose down` **`-v` 标志警告**：永久删除所有数据库和模型。
+- 修改`.env`后需重建：`docker compose up --build`
 - **GPU要求**：
   - 最新NVIDIA驱动
   - 正常运行的`nvidia-container-toolkit`
 - **监控工具**：
   ```bash
-  docker-compose ps -a  # 容器状态
+  docker compose ps -a  # 容器状态
   docker stats          # 资源使用
   ```
 

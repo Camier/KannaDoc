@@ -13,6 +13,19 @@ volumes:
 
 services:
   # --- 基础设施服务 ---
+  kafka-init:
+    build:
+      context: ./init-kafka  # 指向包含 Dockerfile 和脚本的目录
+    depends_on:
+      kafka:
+        condition: service_healthy
+    environment:
+      - KAFKA_TOPIC=${KAFKA_TOPIC}
+      - KAFKA_PARTITIONS_NUMBER=${KAFKA_PARTITIONS_NUMBER}
+      - KAFKA_REPLICATION_FACTOR=${KAFKA_REPLICATION_FACTOR:-1}
+    networks:
+      - layra-net
+
   kafka:
     image: bitnami/kafka:3.8.0
     environment:
@@ -26,6 +39,7 @@ services:
       - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=PLAINTEXT
       - KAFKA_MAX_MESSAGE_SIZE=2097152000
       - KAFKA_MESSAGE_MAX_BYTES=2097152000
+      - KAFKA_CFG_NUM_PARTITIONS=${KAFKA_PARTITIONS_NUMBER:-10}  # 添加分区数配置
     volumes:
       - kafka_data:/bitnami/kafka/data
     networks:
@@ -180,6 +194,8 @@ services:
     build:
       context: ./backend
     depends_on:
+      kafka-init:
+        condition: service_completed_successfully
       mysql:
         condition: service_healthy
       redis:

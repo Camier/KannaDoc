@@ -39,15 +39,29 @@ app.add_middleware(
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # 启动事件处理代码可以放在这里
-    # logger.info("FastAPI Started")
+    logger.info("FastAPI Started")
     await mongodb.connect()  # 连接 MongoDB
     await kafka_producer_manager.start()  # 启动Kafka生产者
     await async_minio_manager.init_minio()
     # await kafka_consumer_manager.start()  # 启动Kafka消费者
-    asyncio.create_task(kafka_consumer_manager.consume_messages())  # 启动Kafka消费者
+    consumer_task = asyncio.create_task(kafka_consumer_manager.consume_messages())  # 启动Kafka消费者
+
+    # 添加关闭钩子
+    async def shutdown_hook():
+        logger.info("Stopping Kafka consumer...")
+        await kafka_consumer_manager.stop()
+        consumer_task.cancel()
+        try:
+            await consumer_task
+        except asyncio.CancelledError:
+            pass
+
+    app.state.shutdown_hook = shutdown_hook
 
     yield
-    # 关闭事件处理代码可以放在这里
+    # 关闭事件处理
+    logger.info("Shutting down application services...")
+    await shutdown_hook()
     await kafka_producer_manager.stop()  # 停止Kafka生产者
     # await kafka_consumer_manager.stop()  # 停止Kafka消费者
     await mysql.close()  # 关闭 MySQL 连接

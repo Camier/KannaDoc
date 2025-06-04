@@ -26,6 +26,7 @@ class Settings(BaseSettings):
     debug_mode: bool = False
     kafka_broker_url: str = "localhost:9094"
     kafka_topic: str = "task_generation"
+    kafka_partitions_number: int = 10
     kafka_group_id: str = "task_consumer_group"
     # kafka_priority_levels: int = 5  # 定义优先级的级别（0为最高）
     minio_url: str = "http://localhost:9110"  # MinIO 服务的URL
