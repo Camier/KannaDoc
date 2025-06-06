@@ -40,29 +40,9 @@ async def process_file(redis, task_id, username, knowledge_db_id, file_meta):
         # 解析为图片
         images_buffer = await convert_file_to_images(file_content, file_meta["original_filename"])
 
+        db = await get_mongo()
         # 保存图片并生成嵌入
-        image_ids = []
-        for i, image_buffer in enumerate(images_buffer):
-            # 保存图片到MinIO
-            minio_imagename, image_url = await save_image_to_minio(
-                username, file_meta["original_filename"], image_buffer
-            )
-
-            # 保存图片元数据
-            image_id = f"{username}_{uuid.uuid4()}"
-            db = await get_mongo()
-            await db.add_images(
-                file_id=file_meta["file_id"],
-                images_id=image_id,
-                minio_filename=minio_imagename,
-                minio_url=image_url,
-                page_number=i + 1,
-            )
-            image_ids.append(image_id)
-        logger.info(
-            f"task:{task_id}: save images of {file_meta['original_filename']} to minio and mongodb"
-        )
-
+        image_ids = [f"{username}_{uuid.uuid4()}" for _ in range(len(images_buffer))]
         # 生成嵌入向量
         embeddings = await generate_embeddings(
             images_buffer, file_meta["original_filename"]
@@ -78,6 +58,44 @@ async def process_file(redis, task_id, username, knowledge_db_id, file_meta):
         )
         logger.info(
             f"task:{task_id}: images of {file_meta['original_filename']} insert to milvus {collection_name}!"
+        )
+
+        await db.create_files(
+            file_id=file_meta["file_id"],
+            username=username,
+            filename=file_meta["original_filename"],
+            minio_filename=file_meta["minio_filename"],
+            minio_url=file_meta["minio_url"],
+            knowledge_db_id=knowledge_db_id,
+        )
+        await db.knowledge_base_add_file(
+            knowledge_base_id=knowledge_db_id,
+            file_id=file_meta["file_id"],
+            original_filename=file_meta["original_filename"],
+            minio_filename=file_meta["minio_filename"],
+            minio_url=file_meta["minio_url"],
+        )
+
+        logger.info(
+            f"task:{task_id}: save file of {file_meta['original_filename']} to mongodb"
+        )
+
+        for i, (image_buffer, image_id) in enumerate(zip(images_buffer, image_ids)):
+            # 保存图片到MinIO
+            minio_imagename, image_url = await save_image_to_minio(
+                username, file_meta["original_filename"], image_buffer
+            )
+
+            # 保存图片元数据
+            await db.add_images(
+                file_id=file_meta["file_id"],
+                images_id=image_id,
+                minio_filename=minio_imagename,
+                minio_url=image_url,
+                page_number=i + 1,
+            )
+        logger.info(
+            f"task:{task_id}: save images of {file_meta['original_filename']} to minio and mongodb"
         )
 
         # 更新处理进度
@@ -136,17 +154,24 @@ async def replace_image_content(messages):
     for message in new_messages:
         if "content" not in message:
             continue
-
+        
+        new_content = []  # 创建新的内容列表
         # 遍历content中的每个内容项
         for item in message["content"]:
-            if isinstance(item, dict):
-                # 检查类型是否为image_url
-                if item.get("type") == "image_url":
-                    image_base64 = (
-                        await async_minio_manager.download_image_and_convert_to_base64(
-                            item["image_url"]
-                        )
+            if isinstance(item, dict) and item.get("type") == "image_url":
+                image_base64 = (
+                    await async_minio_manager.download_image_and_convert_to_base64(
+                        item["image_url"]
                     )
-                    item["image_url"] = {"url": f"data:image/png;base64,{image_base64}"}
+                )
+                if image_base64:
+                    new_item = copy.deepcopy(item)
+                    new_item["image_url"] = {
+                        "url": f"data:image/png;base64,{image_base64}"
+                    }
+                    new_content.append(new_item)
+            else:
+                new_content.append(item)
+        message["content"] = new_content
 
     return new_messages

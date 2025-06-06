@@ -342,7 +342,7 @@ docker compose start     # 重启服务
 **liweiphys**  
 📧 liweixmu@foxmail.com  
 🐙 [github.com/liweiphys/layra](https://github.com/liweiphys/layra)  
-📺 [哔哩哔哩：Biggestbiaoge](https://www.bilibili.com/video/BV17BRUYCEGt?vd_source=8a1b7271cd2e9a7f6a1ae7a781b2e688)  
+📺 [哔哩哔哩：Biggestbiaoge](https://www.bilibili.com/video/BV1sd7QzmEUg/?share_source=copy_web)  
 🔍 微信公众号：LAYRA 项目  
 💼 开放合作计划 — 欢迎联系！
 

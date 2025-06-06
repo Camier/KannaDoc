@@ -55,12 +55,12 @@ class MongoDB:
             )
 
             # chatflow集合索引
-            await self.db.chatflow.create_index(
+            await self.db.chatflows.create_index(
                 [("chatflow_id", 1)],
                 unique=True,  # 唯一索引
                 name="unique_chatflow_id",
             )
-            await self.db.chatflow.create_index(
+            await self.db.chatflows.create_index(
                 [("workflow", 1), ("last_modify_at", -1)],  # 复合排序索引
                 name="workflow_chatflows",
             )

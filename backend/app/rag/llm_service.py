@@ -118,6 +118,8 @@ class ChatService:
                     scores = milvus_client.search(
                         collection_name, data=query_embedding[0], topk=top_K
                     )
+                    for score in scores:
+                        score.update({"collection_name": collection_name})
                     result_score.extend(scores)
             sorted_score = sort_and_filter(result_score, min_score=10)
             if len(sorted_score) >= top_K:
@@ -137,21 +139,29 @@ class ChatService:
                 file_and_image_info = await db.get_file_and_image_info(
                     score["file_id"], score["image_id"]
                 )
-                file_used.append(
-                    {
-                        "score": score["score"],
-                        "knowledge_db_id": file_and_image_info["knowledge_db_id"],
-                        "file_name": file_and_image_info["file_name"],
-                        "image_url": file_and_image_info["image_minio_url"],
-                        "file_url": file_and_image_info["file_minio_url"],
-                    }
-                )
-                content.append(
-                    {
-                        "type": "image_url",
-                        "image_url": file_and_image_info["image_minio_filename"],
-                    }
-                )
+                if not file_and_image_info["status"] == "success":
+                    milvus_client.delete_files(
+                        score["collection_name"], [score["file_id"]]
+                    )
+                    logger.warning(
+                        f"file_id: {score['file_id']} not found or corresponding image does not exist; deleting Milvus vectors"
+                    )
+                else: 
+                    file_used.append(
+                        {
+                            "score": score["score"],
+                            "knowledge_db_id": file_and_image_info["knowledge_db_id"],
+                            "file_name": file_and_image_info["file_name"],
+                            "image_url": file_and_image_info["image_minio_url"],
+                            "file_url": file_and_image_info["file_minio_url"],
+                        }
+                    )
+                    content.append(
+                        {
+                            "type": "image_url",
+                            "image_url": file_and_image_info["image_minio_filename"],
+                        }
+                    )
 
         # 用户输入
         content.append(

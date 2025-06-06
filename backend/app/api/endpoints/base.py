@@ -195,7 +195,9 @@ async def delete_file(
         username = knowledge_base_id.split("_")[0]
     await verify_username_match(current_user, username)
     result = await db.delete_file_from_knowledge_base(knowledge_base_id, file_id)
-    milvus_client.delete_files("colqwen" + knowledge_base_id.replace("-", "_"), [file_id])
+    milvus_client.delete_files(
+        "colqwen" + knowledge_base_id.replace("-", "_"), [file_id]
+    )
     if result["status"] == "failed":
         raise HTTPException(status_code=404, detail=result["message"])
     return result
@@ -284,7 +286,6 @@ async def download_file(
 async def upload_multiple_files(
     files: List[UploadFile],
     knowledge_db_id: str,
-    db: MongoDB = Depends(get_mongo),
     current_user: User = Depends(get_current_user),
 ):
 
@@ -316,26 +317,12 @@ async def upload_multiple_files(
 
         # 生成文件ID并保存元数据
         file_id = f"{username}_{uuid.uuid4()}"
-        await db.create_files(
-            file_id=file_id,
-            username=username,
-            filename=file.filename,
-            minio_filename=minio_filename,
-            minio_url=minio_url,
-            knowledge_db_id=knowledge_db_id,
-        )
-        await db.knowledge_base_add_file(
-            knowledge_base_id=knowledge_db_id,
-            file_id=file_id,
-            original_filename=file.filename,
-            minio_filename=minio_filename,
-            minio_url=minio_url,
-        )
         file_meta_list.append(
             {
                 "file_id": file_id,
                 "minio_filename": minio_filename,
                 "original_filename": file.filename,
+                "minio_url": minio_url,
             }
         )
         return_files.append(
@@ -350,7 +337,7 @@ async def upload_multiple_files(
     # 发送Kafka消息（每个文件一个消息）
     for meta in file_meta_list:
         logger.info(
-            "send {task_id} to kafka, file name {file.filename}, knowledge id {knowledge_db_id}."
+            f"send {task_id} to kafka, file name {file.filename}, knowledge id {knowledge_db_id}."
         )
         await kafka_producer_manager.send_embedding_task(
             task_id=task_id,

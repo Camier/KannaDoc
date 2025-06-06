@@ -225,27 +225,13 @@ async def upload_multiple_files(
 
         # 生成文件ID并保存元数据
         file_id = f"{username}_{uuid.uuid4()}"
-        await db.create_files(
-            file_id=file_id,
-            username=username,
-            filename=file.filename,
-            minio_filename=minio_filename,
-            minio_url=minio_url,
-            knowledge_db_id=knowledge_db_id,
-        )
-        res = await db.knowledge_base_add_file(
-            knowledge_base_id=knowledge_db_id,
-            file_id=file_id,
-            original_filename=file.filename,
-            minio_filename=minio_filename,
-            minio_url=minio_url,
-        )
 
         file_meta_list.append(
             {
                 "file_id": file_id,
                 "minio_filename": minio_filename,
                 "original_filename": file.filename,
+                "minio_url": minio_url,
             }
         )
         return_files.append(
@@ -260,7 +246,7 @@ async def upload_multiple_files(
     # 发送Kafka消息（每个文件一个消息）
     for meta in file_meta_list:
         logger.info(
-            "send {task_id} to kafka, file name {file.filename}, knowledge id {knowledge_db_id}."
+            f"send {task_id} to kafka, file name {file.filename}, knowledge id {knowledge_db_id}."
         )
         await kafka_producer_manager.send_embedding_task(
             task_id=task_id,

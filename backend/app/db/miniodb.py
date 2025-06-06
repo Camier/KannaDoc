@@ -105,12 +105,13 @@ class AsyncMinIOManager:
                 response = await client.get_object(
                     Bucket=self.bucket_name, Key=file_name
                 )
-                image_data = await response["Body"].read()  # 读取图像数据
+                image_data = await response["Body"].read()
                 base64_image = base64.b64encode(image_data).decode("utf-8")
                 return base64_image
+                
             except Exception as e:
-                logger.exception(f"Error downloading image: {e}")
-                raise e
+                logger.warning(f"Error downloading image: {e}")
+                return False
 
     async def create_presigned_url(self, file_name: str, expires: int = 3153600000):
         """生成预签名 URL 以供文件下载"""

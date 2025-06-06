@@ -425,7 +425,7 @@ We are in the process of creating a CONTRIBUTING.md file, which will provide gui
 **liweiphys**  
 📧 liweixmu@foxmail.com  
 🐙 [github.com/liweiphys/layra](https://github.com/liweiphys/layra)  
-📺 [bilibili: Biggestbiaoge](https://www.bilibili.com/video/BV17BRUYCEGt?vd_source=8a1b7271cd2e9a7f6a1ae7a781b2e688)  
+📺 [bilibili: Biggestbiaoge](https://www.bilibili.com/video/BV1sd7QzmEUg/?share_source=copy_web)  
 🔍 微信公众号：LAYRA 项目  
 💼 Exploring Impactful Opportunities - Feel Free To Contact Me!
 

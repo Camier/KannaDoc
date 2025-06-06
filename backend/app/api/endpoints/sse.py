@@ -1,8 +1,7 @@
 import asyncio
 import json
 import re
-import aioredis
-from fastapi import APIRouter, Depends, Request
+from fastapi import APIRouter, Depends
 from fastapi.responses import StreamingResponse
 from sse_starlette.sse import EventSourceResponse
 from app.core.security import get_current_user, verify_username_match
@@ -14,6 +13,8 @@ from app.models.workflow import LLMInputOnce
 from app.rag.llm_service import ChatService
 from app.workflow.llm_service import ChatService as VLMService
 import uuid
+
+from redis.asyncio import Redis, ResponseError
 
 from app.workflow.mcp_tools import mcp_call_tools
 from app.workflow.utils import find_outermost_braces
@@ -83,10 +84,6 @@ async def get_task_progress(
             await asyncio.sleep(1)
 
     return EventSourceResponse(event_generator())
-
-
-from fastapi import Depends, Query
-from aioredis import Redis, ResponseError
 
 
 @router.get("/workflow/{username}/{task_id}")

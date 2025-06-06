@@ -2,7 +2,6 @@ import json
 from aiokafka import AIOKafkaConsumer, ConsumerRecord
 from app.core.config import settings
 from app.core.logging import logger
-from asyncio import Lock
 from app.db.redis import redis
 from app.rag.utils import process_file, update_task_progress
 from app.utils.timezone import beijing_time_now
