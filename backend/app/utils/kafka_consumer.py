@@ -23,7 +23,9 @@ class KafkaConsumerManager:
                 KAFKA_TOPIC,
                 bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS,
                 group_id=KAFKA_GROUP_ID,
-                enable_auto_commit=False,  # 手动提交消息、
+                enable_auto_commit=False,  # 手动提交消息
+                max_poll_interval_ms=7200000,  # 2小时
+
             )
             await self.consumer.start()
 

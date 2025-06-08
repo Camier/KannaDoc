@@ -1,6 +1,6 @@
 <div align="center">
   <img src="./assets/logo.png" width="300" height="300" alt="LAYRA Logo" />
-  <h1>🌌 LAYRA: The Visual-First AI Agent Engine That Sees, Understands & Acts</h1>
+  <h1>🌌 LAYRA: Next Generation AI Agent Engine That Sees, Understands & Acts</h1>
   <p>
     <a href="https://github.com/liweiphys/layra/stargazers">
       <img src="https://img.shields.io/github/stars/liweiphys/layra?style=social" alt="GitHub Stars" />
@@ -11,6 +11,9 @@
     <a href="https://github.com/liweiphys/layra/issues">
     <img src="https://img.shields.io/github/issues/liweiphys/layra" alt="Issues" />
   </a>
+    <a href="https://liweiphys.github.io/layra">
+      <img src="https://img.shields.io/badge/Tutorial-GitHub_Pages-blue" alt="Tutorial" />
+    </a>
   </p>
   <p>
     <a href="./README.md">English</a> |
@@ -27,6 +30,7 @@
 ## 📚 Table of Contents
 
 - [🚀 Quick Start](#quick-start)
+- [📖 Tutorial Guide](#tutorial-guide)
 - [❓ Why LAYRA?](#why-layra)
 - [⚡️ Core Superpowers](#core-superpowers)
 - [🚀 Latest Updates](#latest-updates)
@@ -84,6 +88,16 @@ docker compose logs -f <container_name>
 
 Now that everything is running smoothly, happy building with Layra! 🚀✨
 *For detailed options, see the [Deployment section](#deployment).*
+
+---
+
+## <h2 id="tutorial-guide">📖 Tutorial Guide</h2>
+For step-by-step instructions and visual guides, visit our tutorial on GitHub Pages:  
+[Tutorial Guide](https://liweiphys.github.io/layra)  
+
+> **🚀 Just Updated!**  
+> Our tutorial is currently evolving rapidly with new examples and guides!  
+> **Bookmark this page** and check back frequently for the latest content.
 
 ---
 

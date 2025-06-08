@@ -11,6 +11,9 @@
     <a href="https://github.com/liweiphys/layra/issues">
     <img src="https://img.shields.io/github/issues/liweiphys/layra" alt="Issues" />
   </a>
+      <a href="https://liweiphys.github.io/layra">
+      <img src="https://img.shields.io/badge/Tutorial-GitHub_Pages-blue" alt="Tutorial" />
+    </a>
   </p>
   <p>
     <a href="./README.md">English</a> |
@@ -27,6 +30,7 @@
 ## 📚 目录
 
 - [🚀 快速开始](#快速开始)
+- [📖 教程](#教程)
 - [❓ 为什么选择LAYRA？](#为什么选择layra)
 - [⚡️ 核心超能力](#核心超能力)
 - [🚀 最新更新](#最新更新)
@@ -83,6 +87,16 @@ docker compose logs -f <container_name>
 
 ---
 
+<h2 id="教程">📖 教程</h2>
+官方的详细教程请访问我们的 GitHub Pages:  
+
+[官方教程](https://liweiphys.github.io/layra)
+
+> **🚀 快速更新!**  
+> 我们的教程在快速更新中!  
+
+---
+
 <h2 id="为什么选择layra">❓ 为什么选择LAYRA？</h2>
 
 ### 🚀 超越RAG：视觉优先工作流的力量
@@ -122,11 +136,11 @@ LAYRA的**视觉RAG引擎**革新了文档理解能力，但其真正威力在�
 
 <h2 id="核心超能力">⚡️ 核心超能力</h2>
 
-### 🔥 **智能体工作流引擎：无限执行智能**
+### 🔥 **智能体工作流引擎：无限制执行智能**
 > **无限制编码，无边界构建**  
 > 我们的引擎用LLM思考，用视觉感知，用Python构建逻辑——无限制，纯智能。
 
-- **🔄 无限工作流创建**  
+- **🔄 无限制工作流创建**  
   通过直观界面设计复杂自定义工作流，**无结构约束**处理业务逻辑、分支、循环和条件
 - **⚡ 实时流式执行（SSE）**  
   **实时观察**执行结果流，彻底消除等待时间
