@@ -113,6 +113,7 @@ async def register(
         max_length=-1,
         top_P=-1,
         top_K=-1,
+        score_threshold=-1,
     )
 
     return UserResponse.model_validate(db_user)

@@ -126,6 +126,7 @@ export const createConversation = async (
     max_length: modelConfig.useMaxLengthDefault ? -1 : modelConfig.maxLength,
     top_P: modelConfig.useTopPDefault ? -1 : modelConfig.topP,
     top_K: modelConfig.useTopKDefault ? -1 : modelConfig.topK,
+    score_threshold: modelConfig.useScoreThresholdDefault ? -1 : modelConfig.scoreThreshold,
   };
 
   return api.post("/chat/conversations", {
@@ -152,6 +153,7 @@ export const updateChatModelConfig = async (
     max_length: modelConfig.useMaxLengthDefault ? -1 : modelConfig.maxLength,
     top_P: modelConfig.useTopPDefault ? -1 : modelConfig.topP,
     top_K: modelConfig.useTopKDefault ? -1 : modelConfig.topK,
+    score_threshold: modelConfig.useScoreThresholdDefault ? -1 : modelConfig.scoreThreshold,
   };
 
   return api.post("/chat/conversations/config", {

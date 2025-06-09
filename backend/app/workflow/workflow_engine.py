@@ -15,7 +15,7 @@ from app.workflow.code_scanner import CodeScanner
 from app.workflow.graph import TreeNode, WorkflowGraph
 from app.workflow.llm_service import ChatService
 from app.core.logging import logger
-from app.workflow.utils import find_outermost_braces
+from app.workflow.utils import find_outermost_braces, replace_template
 
 
 class WorkflowEngine:
@@ -463,16 +463,6 @@ class WorkflowEngine:
             pipeline.expire(f"workflow:events:{self.task_id}", 3600)
             await pipeline.execute()
 
-    def render_template(self, template: str, data: dict) -> str:
-        """
-        将模板中的 {{ variable }} 替换为字典中对应的字符串值
-        :param template: 包含 {{ 变量 }} 的模板字符串
-        :param data: 包含键值对的字典
-        :return: 替换后的字符串
-        """
-        pattern = re.compile(r"\{\{\s*(.*?)\s*\}\}")  # 自动处理变量名前后空格
-        return pattern.sub(lambda m: str(data.get(m.group(1), "")), template)
-
     async def execute_node(self, node: TreeNode):
         if node.node_type == "code":
             # 执行代码节点
@@ -535,7 +525,7 @@ class WorkflowEngine:
                 else:
                     vlm_input = node.data["vlmInput"]
                     temp_db_id = ""
-                vlm_input = self.render_template(vlm_input, self.global_variables)
+                vlm_input = replace_template(vlm_input, self.global_variables)
 
                 ##### mcp section #####
                 mcp_tools_for_call = {}

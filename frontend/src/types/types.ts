@@ -66,10 +66,12 @@ export interface ModelConfig {
   maxLength: number;
   topP: number;
   topK: number;
+  scoreThreshold: number;
   useTemperatureDefault: boolean;
   useMaxLengthDefault: boolean;
   useTopPDefault: boolean;
   useTopKDefault: boolean;
+  useScoreThresholdDefault: boolean;
 }
 
 export interface McpConfig {

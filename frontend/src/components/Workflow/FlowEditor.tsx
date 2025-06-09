@@ -880,10 +880,13 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
           maxLength: item.max_length === -1 ? 8192 : item.max_length,
           topP: item.top_P === -1 ? 0.01 : item.top_P,
           topK: item.top_K === -1 ? 3 : item.top_K,
+          scoreThreshold:
+            item.score_threshold === -1 ? 10 : item.score_threshold,
           useTemperatureDefault: item.temperature === -1 ? true : false,
           useMaxLengthDefault: item.max_length === -1 ? true : false,
           useTopPDefault: item.top_P === -1 ? true : false,
           useTopKDefault: item.top_K === -1 ? true : false,
+          useScoreThresholdDefault: item.score_threshold === -1 ? true : false,
         })
       );
 
@@ -1197,6 +1200,9 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             top_K: node.data.modelConfig?.useTopKDefault
               ? -1
               : node.data.modelConfig?.topK,
+            score_threshold: node.data.modelConfig?.useScoreThresholdDefault
+              ? -1
+              : node.data.modelConfig?.scoreThreshold,
           };
 
           const filterMcpConfig = (

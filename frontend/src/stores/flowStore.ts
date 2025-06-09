@@ -542,10 +542,12 @@ export const useFlowStore = create<FlowState>((set, get) => ({
                               maxLength: 8096,
                               topP: 0.01,
                               topK: 3,
+                              scoreThreshold: 10,
                               useTemperatureDefault: true,
                               useMaxLengthDefault: true,
                               useTopPDefault: true,
                               useTopKDefault: true,
+                              useScoreThresholdDefault: true,
                             }
                       )
                     : updater,

@@ -72,6 +72,16 @@ class ChatService:
         else:
             pass
 
+        score_threshold = model_config["score_threshold"]
+        if score_threshold == -1:
+            score_threshold = 10
+        elif score_threshold < 0:
+            score_threshold = 0
+        elif score_threshold > 20:
+            score_threshold = 20
+        else:
+            pass
+
         if not system_prompt:
             messages = []
         else:
@@ -127,7 +137,7 @@ class ChatService:
                     for score in scores:
                         score.update({"collection_name": collection_name})
                     result_score.extend(scores)
-            sorted_score = sort_and_filter(result_score, min_score=10)
+            sorted_score = sort_and_filter(result_score, min_score=score_threshold)
             if len(sorted_score) >= top_K:
                 cut_score = sorted_score[:top_K]
             else:

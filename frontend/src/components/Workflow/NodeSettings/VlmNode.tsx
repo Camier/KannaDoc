@@ -104,7 +104,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
       showError("Please write your question to AI before running LLM node!");
       return;
     }
-    setMessages((prev) => ({...prev,[node.id]: [],}));
+    setMessages((prev) => ({ ...prev, [node.id]: [] }));
     if (user?.name) {
       setRunTest(true);
       try {
@@ -127,6 +127,9 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
           top_K: node.data.modelConfig?.useTopKDefault
             ? -1
             : node.data.modelConfig?.topK,
+          score_threshold: node.data.modelConfig?.useScoreThresholdDefault
+            ? -1
+            : node.data.modelConfig?.scoreThreshold,
         };
 
         const filterMcpConfig = (
@@ -180,7 +183,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
               llm_model_config: modelConfig,
               system_prompt: node.data.prompt,
               mcp_use: mcpUse,
-              global_variables: globalVariables
+              global_variables: globalVariables,
             }),
           }
         );
@@ -799,7 +802,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
             className="flex-1 overflow-y-scroll scrollbar-hide"
             style={{ overscrollBehavior: "contain" }}
           >
-            {messages && messages.length>0 ? (
+            {messages && messages.length > 0 ? (
               messages.map((message, index) => (
                 <ChatMessage
                   modelConfig={node.data.modelConfig}
@@ -811,16 +814,16 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
               ))
             ) : (
               <div className="px-2">
-              <MarkdownDisplay
-                md_text={node.data.chat || ""}
-                message={{
-                  type: "text",
-                  content: node.data.chat || "",
-                  from: "ai", // 消息的来源
-                }}
-                showTokenNumber={true}
-                isThinking={false}
-              />
+                <MarkdownDisplay
+                  md_text={node.data.chat || ""}
+                  message={{
+                    type: "text",
+                    content: node.data.chat || "",
+                    from: "ai", // 消息的来源
+                  }}
+                  showTokenNumber={true}
+                  isThinking={false}
+                />
               </div>
             )}
           </div>

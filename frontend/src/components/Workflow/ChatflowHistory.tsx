@@ -67,10 +67,12 @@ const ChatflowHistoryComponent: React.FC<ChatflowHistoryProps> = ({
             maxLength: 0,
             topP: 0,
             topK: 0,
+            scoreThreshold: 0,
             useTemperatureDefault: false,
             useMaxLengthDefault: false,
             useTopPDefault: false,
             useTopKDefault: false,
+            useScoreThresholdDefault: false,
           });
 
           const response = await getChatflowContent(chatflowId);

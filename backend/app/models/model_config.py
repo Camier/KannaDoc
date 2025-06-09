@@ -11,6 +11,7 @@ class ModelConfigBase(BaseModel):
     max_length: int
     top_P: float
     top_K: int
+    score_threshold: int
 
 class ModelCreate(ModelConfigBase):
     pass
@@ -25,6 +26,7 @@ class ModelUpdate(BaseModel):
     max_length: Optional[int] = None
     top_P: Optional[float] = None
     top_K: Optional[int] = None
+    score_threshold: Optional[int] = None
 
 class SelectedModelResponse(BaseModel):
     status: str

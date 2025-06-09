@@ -73,10 +73,12 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
             maxLength: item.max_length === -1 ? 8192 : item.max_length,
             topP: item.top_P === -1 ? 0.01 : item.top_P,
             topK: item.top_K === -1 ? 3 : item.top_K,
+            scoreThreshold: item.score_threshold === -1 ? 10 : item.score_threshold,
             useTemperatureDefault: item.temperature === -1 ? true : false,
             useMaxLengthDefault: item.max_length === -1 ? true : false,
             useTopPDefault: item.top_P === -1 ? true : false,
             useTopKDefault: item.top_K === -1 ? true : false,
+            useScoreThresholdDefault: item.score_threshold === -1 ? true : false,
           })
         );
 
@@ -774,6 +776,59 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                       }))
                     }
                     disabled={node.data.modelConfig?.useTopKDefault}
+                    className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+                  />
+                </div>
+                {/* Retrieval Score Threshold */}
+                <div>
+                  <div className="flex items-center justify-between">
+                    <label className="block text-sm font-medium">
+                      Retrieval Score Threshold
+                      <span className="text-xs text-gray-500 ml-1">(0-20)</span>
+                    </label>
+                    <label className="relative inline-flex items-center group p-2 rounded-3xl hover:bg-gray-50 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={node.data.modelConfig?.useScoreThresholdDefault}
+                        onChange={(e) =>
+                          updateVlmModelConfig(node.id, (prev) => ({
+                            ...prev,
+                            useScoreThresholdDefault: e.target.checked,
+                          }))
+                        }
+                        className="appearance-none h-5 w-5 border-2 border-gray-300 rounded-3xl transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
+                      />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        className="absolute size-4 text-white"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
+                          clipRule="evenodd"
+                          transform="translate(2.8, 1)"
+                        />
+                      </svg>
+                      <span className="text-sm text-gray-600 ml-2">
+                        Use Model Default
+                      </span>
+                    </label>
+                  </div>
+                  <input
+                    type="number"
+                    min="0"
+                    max="20"
+                    step="1"
+                    value={node.data.modelConfig?.scoreThreshold}
+                    onChange={(e) =>
+                      updateVlmModelConfig(node.id, (prev) => ({
+                        ...prev,
+                        scoreThreshold: parseInt(e.target.value),
+                      }))
+                    }
+                    disabled={node.data.modelConfig?.useScoreThresholdDefault}
                     className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
                   />
                 </div>
