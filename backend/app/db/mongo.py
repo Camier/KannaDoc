@@ -594,9 +594,6 @@ class MongoDB:
               
             await self.db.chatflows.insert_one(chatflow)
             return {"status": "success", "id": chatflow_id}
-        except DuplicateKeyError:
-            logger.warning(f"chatflowID冲突: {chatflow_id}")
-            return {"status": "failed", "message": "chatflowID已存在，请勿重复创建"}
         except Exception as e:
             logger.error(f"创建chatflow失败: {str(e)}")
             return {"status": "error", "message": f"数据库错误: {str(e)}"}
@@ -607,6 +604,15 @@ class MongoDB:
             {"chatflow_id": chatflow_id, "is_delete": False}
         )
         return chatflow if chatflow else None
+    
+    async def get_chatflows_by_user(self, username: str) -> List[Dict[str, Any]]:
+        """按时间降序获取指定用户的所有会话"""
+        cursor = self.db.chatflows.find(
+            {"username": username, "is_delete": False}
+        ).sort(
+            "last_modify_at", -1
+        )  # -1 表示降序排列
+        return await cursor.to_list(length=None)  # 返回所有匹配的记录
 
     async def get_chatflows_by_workflow_id(self, workflow_id: str) -> List[Dict[str, Any]]:
         """按时间降序获取指定用户的所有会话"""
@@ -783,6 +789,13 @@ class MongoDB:
         ).sort(
             "last_modify_at", -1
         )  # -1 表示降序排列
+        return await cursor.to_list(length=None)  # 返回所有匹配的记录
+
+    async def get_all_knowledge_bases_by_user(self, username: str) -> List[Dict[str, Any]]:
+        """按时间降序获取指定用户的所有会话"""
+        cursor = self.db.knowledge_bases.find(
+            {"username": username}
+        )
         return await cursor.to_list(length=None)  # 返回所有匹配的记录
 
     async def delete_knowledge_base(self, knowledge_base_id: str) -> dict:

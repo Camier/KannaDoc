@@ -218,6 +218,57 @@ async def delete_knowledge_base(
     return result
 
 
+# 清空未被对话引用的临时数据库
+@router.delete("/temp_knowledge_base/{username}", response_model=dict)
+async def delete_knowledge_base(
+    username: str,
+    db: MongoDB = Depends(get_mongo),
+    current_user: User = Depends(get_current_user),
+):
+    await verify_username_match(current_user, username)
+    knowledge_bases = await db.get_all_knowledge_bases_by_user(username)
+
+    if not knowledge_bases:
+        return {
+            "status": "success",
+            "message": "用户知识库数量为0，无需清除",
+        }
+    failed_count = 0
+    success_count = 0
+
+    conversations = await db.get_conversations_by_user(username)
+    if not conversations:
+        chat_chatflow_id = []
+    else:
+        chat_chatflow_id = [
+            conversation["conversation_id"] for conversation in conversations
+        ]
+
+    chatflows = await db.get_chatflows_by_user(username)
+    if not chatflows:
+        pass
+    else:
+        chat_chatflow_id.extend([chatflow["chatflow_id"] for chatflow in chatflows])
+
+    for knowledge_base in knowledge_bases:
+        if knowledge_base["knowledge_base_id"].startswith("temp_"):
+            temp_knowledge_base_id = knowledge_base["knowledge_base_id"]
+            if temp_knowledge_base_id[5:] not in chat_chatflow_id:
+                result = await db.delete_knowledge_base(temp_knowledge_base_id)
+                milvus_client.delete_collection(
+                    "colqwen" + temp_knowledge_base_id.replace("-", "_")
+                )
+                if result["status"] == "failed":
+                    failed_count += 1
+                else:
+                    success_count += 1
+
+    return {
+        "status": "success",
+        "message": f"成功删除 {success_count} 个知识库， 删除失败 {failed_count} 个",
+    }
+
+
 @router.post("/knowledge_bases/{knowledge_base_id}/files", response_model=PageResponse)
 async def get_knowledge_base_files(
     knowledge_base_id: str,

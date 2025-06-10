@@ -44,6 +44,7 @@ interface WorkflowOutputProps {
   setCodeFullScreenFlow: Dispatch<SetStateAction<boolean>>;
   codeFullScreenFlow: boolean;
   sendDisabled: boolean;
+  uploadDisabled: boolean;
   onSendMessage: (
     message: string,
     files: FileRespose[],
@@ -51,6 +52,9 @@ interface WorkflowOutputProps {
   ) => void;
   tempBaseId: string;
   setTempBaseId: Dispatch<SetStateAction<string>>;
+  sendingFiles: FileRespose[];
+  setSendingFiles: Dispatch<SetStateAction<FileRespose[]>>;
+  cleanTempBase: boolean;
 }
 
 const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
@@ -62,8 +66,12 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
   codeFullScreenFlow,
   onSendMessage,
   sendDisabled,
+  uploadDisabled,
   tempBaseId,
   setTempBaseId,
+  sendingFiles,
+  setSendingFiles,
+  cleanTempBase,
 }) => {
   const {
     globalVariables,
@@ -88,7 +96,6 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
   const messagesEndRef = useRef<HTMLDivElement | null>(null); // 创建引用
   const fileInputRef = useRef<HTMLInputElement>(null); // 新增文件输入引用
   const textareaRef = useRef<HTMLTextAreaElement>(null);
-  const [sendingFiles, setSendingFiles] = useState<FileRespose[]>([]);
   const [fileDivStyle, setFileDivStyle] = useState({});
   const { user } = useAuthStore();
   const [uploadProgress, setUploadProgress] = useState<number | null>(0);
@@ -726,13 +733,15 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                     ref={textareaRef}
                     className={`pl-11 pr-8 w-full py-3 min-h-[40%] max-h-[100%] ${
                       !isSendDisabled && !sendDisabled
-                        ? "border-indigo-700"
-                        : "border-indigo-500"
-                    } border-2 rounded-xl text-base focus:outline-hidden focus:border-indigo-600 focus:border-[2.5px] resize-none overflow-y-auto`}
+                        ? "border-indigo-500 focus:border-indigo-700"
+                        : "border-indigo-200 focus:border-indigo-400"
+                    } border-2 rounded-xl $ text-base focus:outline-hidden focus:border-[2.5px] resize-none overflow-y-auto`}
                     placeholder={
-                      codeFullScreenFlow
+                      isSendDisabled || sendDisabled
+                        ? "Waiting for 'Run'"
+                        : codeFullScreenFlow
                         ? "Press Shift+Enter to send..."
-                        : "Send key: Shift+Enter"
+                        : "Send: Shift+Enter"
                     }
                     value={inputMessage}
                     rows={1}
@@ -776,10 +785,12 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                   viewBox="0 0 24 24"
                   fill="currentColor"
                   className={`size-6 absolute left-3 top-1/2 transform -translate-y-1/2 ${
-                    isSendDisabled ? "cursor-not-allowed" : "cursor-pointer"
+                    isSendDisabled || sendDisabled || cleanTempBase
+                      ? "cursor-not-allowed"
+                      : "cursor-pointer"
                   }`}
                   onClick={() => {
-                    if (!isSendDisabled) {
+                    if (!isSendDisabled && !sendDisabled && !cleanTempBase) {
                       return triggerFileInput();
                     }
                   }} // 点击时清空输入框内容
@@ -809,7 +820,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                   {sendingFiles &&
                     sendingFiles.map((file, index) => (
                       <div
-                        className="w-full overflow-hidden flex gap-1 mt-1 text-xs bg-white rounded-xl"
+                        className="w-full overflow-hidden flex gap-1 mt-1 text-xs bg-white"
                         key={index}
                       >
                         <span>
@@ -830,12 +841,12 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                           strokeWidth="1.5"
                           stroke="currentColor"
                           className={`size-4 text-indigo-500 hover:text-indigo-700 ${
-                            isSendDisabled
+                            isSendDisabled || sendDisabled || cleanTempBase
                               ? "cursor-not-allowed"
                               : "cursor-pointer"
                           }`}
                           onClick={() => {
-                            if (!isSendDisabled) {
+                            if (!isSendDisabled && !sendDisabled && !cleanTempBase) {
                               return handleDeleteFile(file.id);
                             }
                           }}

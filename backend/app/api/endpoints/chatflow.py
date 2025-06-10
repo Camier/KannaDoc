@@ -18,13 +18,13 @@ async def create_chatflow(
     await verify_username_match(
         current_user, chatflow.chatflow_id.split("_")[0]
     )
-    await db.create_chatflow(
+    result = await db.create_chatflow(
         chatflow_id=chatflow.chatflow_id,
         username=chatflow.username,
         chatflow_name=chatflow.chatflow_name,
         workflow_id=chatflow.workflow_id,
     )
-    return {"status": "success"}
+    return result
 
 
 # 修改chatflow名称

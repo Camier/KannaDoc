@@ -45,6 +45,10 @@ export const deleteKnowledgeBase = async (BaseId: string) => {
   return api.delete("/base/knowledge_base/" + BaseId);
 };
 
+export const deleteTempKnowledgeBase = async (username: string) => {
+  return api.delete("/base/temp_knowledge_base/" + username);
+};
+
 export const deleteFile = async (BaseId: string, file_id: string) => {
   return api.delete(`/base/file/${BaseId}/${file_id}`);
 };

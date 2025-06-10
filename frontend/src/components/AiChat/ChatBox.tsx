@@ -15,7 +15,10 @@ import useModelConfigStore from "@/stores/configStore";
 import useChatStore from "@/stores/chatStore";
 import Cookies from "js-cookie";
 import { EventSourceParserStream } from "eventsource-parser/stream";
-import { deleteFile } from "@/lib/api/knowledgeBaseApi";
+import {
+  deleteFile,
+  deleteTempKnowledgeBase,
+} from "@/lib/api/knowledgeBaseApi";
 import { updateModelConfig } from "@/lib/api/configApi";
 
 interface ChatBoxProps {
@@ -49,6 +52,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   const [taskProgress, setTaskProgress] = useState<number>(0);
   const [uploadFile, setUploadFile] = useState<boolean>(false);
   const [showRefFile, setShowRefFile] = useState<string[]>([]);
+  const [cleanTempBase, setCleanTempBase] = useState<boolean>(false);
 
   // 修改发送按钮逻辑
   const isUploadComplete = uploadProgress === 100;
@@ -69,6 +73,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
 
   // 在ChatBox组件内新增状态
   const [showConfigModal, setShowConfigModal] = useState(false);
+  const { chatId, setChatId } = useChatStore();
 
   // 支持的文件类型
   const supportedExtensions = SupportFileFormat;
@@ -88,13 +93,36 @@ const ChatBox: React.FC<ChatBoxProps> = ({
     }
   };
 
+  const cleanTempKnowledgeBase = async () => {
+    if (user?.name) {
+      try {
+        setCleanTempBase(true);
+        const response = await deleteTempKnowledgeBase(user.name);
+      } catch (error) {
+        console.error("Error clean temp knowledge base:", error);
+      } finally {
+        setCleanTempBase(false);
+      }
+    }
+  };
+
+  // 清理悬空临时知识库
+  useEffect(() => {
+    cleanTempKnowledgeBase();
+  }, []);
+
   // 使用 useEffect 监测 messages 的变化
   useEffect(() => {
     if (messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" }); // 平滑滚动到底部
     }
   }, [messages]);
-  const { chatId, setChatId } = useChatStore();
+
+  useEffect(() => {
+    setSendingFiles([]);
+    setTempBaseId("");
+    setUploadFile(false);
+  }, [chatId]);
 
   const configureKnowledgeDB = () => {
     setShowConfigModal(true);
@@ -483,10 +511,12 @@ const ChatBox: React.FC<ChatBoxProps> = ({
             viewBox="0 0 24 24"
             fill="currentColor"
             className={`size-6 absolute left-3 top-1/2 transform -translate-y-1/2 ${
-              isSendDisabled ? "cursor-not-allowed" : "cursor-pointer"
+              isSendDisabled || cleanTempBase
+                ? "cursor-not-allowed"
+                : "cursor-pointer"
             }`}
             onClick={() => {
-              if (!isSendDisabled) {
+              if (!isSendDisabled && !cleanTempBase) {
                 return triggerFileInput();
               }
             }} // 点击时清空输入框内容
@@ -516,7 +546,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
             {sendingFiles &&
               sendingFiles.map((file, index) => (
                 <div
-                  className="w-full overflow-hidden flex gap-1 mt-1 text-xs bg-white rounded-xl"
+                  className="w-full overflow-hidden flex gap-1 mt-1 text-xs bg-white"
                   key={index}
                 >
                   <span>{getFileIcon(getFileExtension(file.filename))}</span>
@@ -533,10 +563,12 @@ const ChatBox: React.FC<ChatBoxProps> = ({
                     strokeWidth="1.5"
                     stroke="currentColor"
                     className={`size-4 text-indigo-500 hover:text-indigo-700 ${
-                      isSendDisabled ? "cursor-not-allowed" : "cursor-pointer"
+                      isSendDisabled || cleanTempBase
+                        ? "cursor-not-allowed"
+                        : "cursor-pointer"
                     }`}
                     onClick={() => {
-                      if (!isSendDisabled) {
+                      if (!isSendDisabled && !cleanTempBase) {
                         return handleDeleteFile(file.id);
                       }
                     }}

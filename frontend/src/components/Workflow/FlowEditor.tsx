@@ -56,7 +56,7 @@ import ConditionNodeComponent from "@/components/Workflow/NodeSettings/Condition
 import LoopNodeComponent from "@/components/Workflow/NodeSettings/LoopNode";
 import { EventSourceParserStream } from "eventsource-parser/stream";
 import VlmNodeComponent from "@/components/Workflow/NodeSettings/VlmNode";
-import { getAllKnowledgeBase } from "@/lib/api/knowledgeBaseApi";
+import { deleteTempKnowledgeBase, getAllKnowledgeBase } from "@/lib/api/knowledgeBaseApi";
 import { getAllModelConfig } from "@/lib/api/configApi";
 import ConfirmAlert from "../ConfirmAlert";
 import NodeTypeSelector from "./NodeTypeSelector";
@@ -137,7 +137,10 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   const [showOutput, setShowOutput] = useState(false);
   const [messages, setMessages] = useState<{ [key: string]: Message[] }>({});
   const [sendInputDisabled, setSendInputDisabled] = useState(true);
+  const [sendingFiles, setSendingFiles] = useState<FileRespose[]>([]);
+  const [uploadFileDisabled, setUploadFileDisabled] = useState(true);
   const [tempBaseId, setTempBaseId] = useState<string>(""); //后台用来存放上传文件的临时知识库
+  const [cleanTempBase, setCleanTempBase] = useState<boolean>(false);
   const [currentInputNodeId, setCurrentInputNodeId] = useState<string>(); //后台用来存放上传文件的临时知识库
   const [fileMessages, setFileMessages] = useState<Message[]>([]); //后台用来存放上传文件的临时知识库
   const { chatflowId, setChatflowId } = useChatStore();
@@ -201,6 +204,30 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     }
   };
 
+  const cleanTempKnowledgeBase = async () => {
+    if (user?.name) {
+      try {
+        setCleanTempBase(true);
+        const response = await deleteTempKnowledgeBase(user.name);
+      } catch (error) {
+        console.error("Error clean temp knowledge base:", error);
+      } finally {
+        setCleanTempBase(false);
+      }
+    }
+  };
+
+  // 清理悬空临时知识库
+  useEffect(() => {
+    cleanTempKnowledgeBase();
+  }, []);
+
+  useEffect(() => {
+    setSendingFiles([]);
+    setTempBaseId("");
+    console.log("chatflowId",chatflowId)
+  }, [chatflowId]);
+
   //刷新页面
   const refreshWorkflow = () => {
     if (history.length === 0) {
@@ -210,6 +237,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     setMessages({});
     setEachMessages({});
     setSendInputDisabled(true);
+    setUploadFileDisabled(true);
     setResumeDebugTaskId("");
     setResumeInputTaskId("");
     countListRef.current = [];
@@ -414,6 +442,9 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                       setShowOutput(true);
                     }
                     setSendInputDisabled(false);
+                    if (uploadFileDisabled) {
+                      setUploadFileDisabled(false);
+                    }
                     // setWorkflowMessage("Please send question to AI!");
                     // setWorkflowStatus("success");
                   } else {
@@ -2042,8 +2073,12 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 workflow={workFlow}
                 tempBaseId={tempBaseId}
                 setTempBaseId={setTempBaseId}
+                sendingFiles={sendingFiles}
+                setSendingFiles={setSendingFiles}
+                cleanTempBase={cleanTempBase}
                 onSendMessage={handleSendMessage}
                 sendDisabled={sendInputDisabled}
+                uploadDisabled={uploadFileDisabled}
                 messagesWithCount={eachMessages}
                 runningLLMNodes={runningChatflowLLMNodes}
                 isDebugMode={resumeDebugTaskId === "" ? false : true}
