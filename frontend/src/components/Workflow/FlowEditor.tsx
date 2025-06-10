@@ -56,7 +56,10 @@ import ConditionNodeComponent from "@/components/Workflow/NodeSettings/Condition
 import LoopNodeComponent from "@/components/Workflow/NodeSettings/LoopNode";
 import { EventSourceParserStream } from "eventsource-parser/stream";
 import VlmNodeComponent from "@/components/Workflow/NodeSettings/VlmNode";
-import { deleteTempKnowledgeBase, getAllKnowledgeBase } from "@/lib/api/knowledgeBaseApi";
+import {
+  deleteTempKnowledgeBase,
+  getAllKnowledgeBase,
+} from "@/lib/api/knowledgeBaseApi";
 import { getAllModelConfig } from "@/lib/api/configApi";
 import ConfirmAlert from "../ConfirmAlert";
 import NodeTypeSelector from "./NodeTypeSelector";
@@ -225,7 +228,6 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   useEffect(() => {
     setSendingFiles([]);
     setTempBaseId("");
-    console.log("chatflowId",chatflowId)
   }, [chatflowId]);
 
   //刷新页面
@@ -428,12 +430,6 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                     setWorkflowStatus("error");
                     setShowAlert(true);
                   } else if (payload.workflow.status === "vlm_input") {
-                    await createChatflow(
-                      chatflowId,
-                      user?.name,
-                      "chatflow",
-                      workFlow.workflowId
-                    );
                     if (selectedNodeId) {
                       setShowOutput(true);
                       setSelectedNodeId(null);
@@ -1617,7 +1613,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     setNameError(null);
   };
 
-  const handleSendMessage = (
+  const handleSendMessage = async (
     message: string,
     files: FileRespose[],
     tempBaseId: string
@@ -1625,6 +1621,18 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     setSendInputDisabled(true);
     if (currentInputNodeId) {
       updateVlmInput(currentInputNodeId, message);
+      if (user?.name) {
+        try {
+          await createChatflow(
+            chatflowId,
+            user?.name,
+            "chatflow",
+            workFlow.workflowId
+          );
+        } catch (error) {
+          console.error("Error delete file:", error);
+        }
+      }
       resumeDebugTaskId
         ? handleRunWorkflow(true, true, message, files, tempBaseId)
         : handleRunWorkflow(false, true, message, files, tempBaseId);
