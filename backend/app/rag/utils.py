@@ -154,6 +154,9 @@ async def replace_image_content(messages):
     for message in new_messages:
         if "content" not in message:
             continue
+
+        if not isinstance(message['content'], list):
+            continue
         
         new_content = []  # 创建新的内容列表
         # 遍历content中的每个内容项
