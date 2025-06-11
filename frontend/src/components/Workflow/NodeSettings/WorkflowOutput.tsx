@@ -44,7 +44,6 @@ interface WorkflowOutputProps {
   setCodeFullScreenFlow: Dispatch<SetStateAction<boolean>>;
   codeFullScreenFlow: boolean;
   sendDisabled: boolean;
-  uploadDisabled: boolean;
   onSendMessage: (
     message: string,
     files: FileRespose[],
@@ -66,7 +65,6 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
   codeFullScreenFlow,
   onSendMessage,
   sendDisabled,
-  uploadDisabled,
   tempBaseId,
   setTempBaseId,
   sendingFiles,

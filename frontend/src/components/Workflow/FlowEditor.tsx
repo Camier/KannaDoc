@@ -141,7 +141,6 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   const [messages, setMessages] = useState<{ [key: string]: Message[] }>({});
   const [sendInputDisabled, setSendInputDisabled] = useState(true);
   const [sendingFiles, setSendingFiles] = useState<FileRespose[]>([]);
-  const [uploadFileDisabled, setUploadFileDisabled] = useState(true);
   const [tempBaseId, setTempBaseId] = useState<string>(""); //后台用来存放上传文件的临时知识库
   const [cleanTempBase, setCleanTempBase] = useState<boolean>(false);
   const [currentInputNodeId, setCurrentInputNodeId] = useState<string>(); //后台用来存放上传文件的临时知识库
@@ -239,7 +238,6 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     setMessages({});
     setEachMessages({});
     setSendInputDisabled(true);
-    setUploadFileDisabled(true);
     setResumeDebugTaskId("");
     setResumeInputTaskId("");
     countListRef.current = [];
@@ -438,9 +436,6 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                       setShowOutput(true);
                     }
                     setSendInputDisabled(false);
-                    if (uploadFileDisabled) {
-                      setUploadFileDisabled(false);
-                    }
                     // setWorkflowMessage("Please send question to AI!");
                     // setWorkflowStatus("success");
                   } else {
@@ -2086,7 +2081,6 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 cleanTempBase={cleanTempBase}
                 onSendMessage={handleSendMessage}
                 sendDisabled={sendInputDisabled}
-                uploadDisabled={uploadFileDisabled}
                 messagesWithCount={eachMessages}
                 runningLLMNodes={runningChatflowLLMNodes}
                 isDebugMode={resumeDebugTaskId === "" ? false : true}

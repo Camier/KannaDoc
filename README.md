@@ -86,7 +86,7 @@ docker compose logs -f <container_name>
 
 #### 🎉 Enjoy Your Deployment!
 
-Now that everything is running smoothly, happy building with Layra! 🚀✨
+Now that everything is running smoothly, happy building with Layra! 🚀✨  
 *For detailed options, see the [Deployment section](#deployment).*
 
 ---
