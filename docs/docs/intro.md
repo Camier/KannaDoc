@@ -32,7 +32,7 @@ vim .env  # Edit key parameters (SERVER_IP, MODEL_BASE_URL)
 docker compose up -d --build
 ```
 
-:::tip NOTE
+:::caution CAUTION
 
 If you encounter issues with `docker compose`, try using `docker-compose` (with the dash) instead. Also, ensure that you're using Docker Compose v2, as older versions may not support all features. You can check your version with `docker compose version` or `docker-compose version`.
 
@@ -42,7 +42,7 @@ If you encounter issues with `docker compose`, try using `docker-compose` (with 
 ```bash
 docker compose logs -f model-weights-init
 ```
-> **Be patient** - Initial model download takes 15-25 mins depending on network speed. Grab a coffee!
+> **Be patient** - Initial model download takes 20-40 mins depending on network speed. Grab a coffee!
 
 ---
 

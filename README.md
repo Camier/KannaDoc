@@ -21,6 +21,23 @@
   </p>
 </div>
 
+<div align="center">
+  <!-- Collapsible Group Panel -->
+  <details>
+    <summary>📢 Click to Expand WeChat Groups</summary>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 10px;">
+      <div style="text-align: center;">
+        <p>🚀 User Discussion Group 1</p>
+        <img src="./assets/Wechat-group1.jpg" width="160" alt="User Discussion Group"/>
+      </div>
+      <div style="text-align: center;">
+        <p>💡 Official WeChat Account</p>
+        <img src="./assets/WechatOfficialAccount.jpg" width="200" alt="Official WeChat Account"/>
+      </div>
+    </div>
+  </details>
+</div>
+
 ---
 
 **LAYRA** is the world’s first “visual-native” AI automation engine. It **sees documents like a human**, preserves layout and graphical elements, and executes **arbitrarily complex workflows** with full Python control. From vision-driven Retrieval-Augmented Generation (RAG) to multi-step agent orchestration, LAYRA empowers you to build next-generation intelligent systems—no limits, no compromises.
@@ -84,16 +101,19 @@ docker compose logs -f <container_name>
 
 > **Note**: If you encounter issues with `docker compose`, try using `docker-compose` (with the dash) instead. Also, ensure that you're using Docker Compose v2, as older versions may not support all features. You can check your version with `docker compose version` or `docker-compose version`.
 
-#### 🎉 Enjoy Your Deployment!
+#### 🎉 Enjoy LAYRA!
 
-Now that everything is running smoothly, happy building with Layra! 🚀✨  
-*For detailed options, see the [Deployment section](#deployment).*
+Your deployment is complete! Start creating with Layra now. 🚀✨    
+_For detailed options, see the [Deployment section](#deployment)._
+
+> **📘 Essential Learning:** We strongly recommend spending just 10 minutes with the [tutorial](https://liweiphys.github.io/layra) before starting with LAYRA - **this small investment will help you master its full potential** and unlock advanced capabilities.
 
 ---
 
 ## <h2 id="tutorial-guide">📖 Tutorial Guide</h2>
+
 For step-by-step instructions and visual guides, visit our tutorial on GitHub Pages:  
-[Tutorial Guide](https://liweiphys.github.io/layra)  
+[Tutorial Guide](https://liweiphys.github.io/layra)
 
 > **🚀 Just Updated!**  
 > Our tutorial is currently evolving rapidly with new examples and guides!  
@@ -404,7 +424,6 @@ docker compose start
 
 > 🧪 **Technical Note**: All components run exclusively via Docker containers.
 
-
 #### 🎉 Enjoy Your Deployment!
 
 Now that everything is running smoothly, happy building with Layra! 🚀✨
@@ -440,7 +459,8 @@ We are in the process of creating a CONTRIBUTING.md file, which will provide gui
 📧 liweixmu@foxmail.com  
 🐙 [github.com/liweiphys/layra](https://github.com/liweiphys/layra)  
 📺 [bilibili: Biggestbiaoge](https://www.bilibili.com/video/BV1sd7QzmEUg/?share_source=copy_web)  
-🔍 微信公众号：LAYRA 项目  
+🔍 Wechat Official Account：LAYRA 项目  
+💡 Wechat group: see below the title at the top
 💼 Exploring Impactful Opportunities - Feel Free To Contact Me!
 
 ---
@@ -451,7 +471,7 @@ We are in the process of creating a CONTRIBUTING.md file, which will provide gui
 
 ---
 
-<h2 id="license">📄 License</h2> 
+<h2 id="license">📄 License</h2>
 
 This project is licensed under the **Apache License 2.0**. See the [LICENSE](./LICENSE) file for more details.
 
