@@ -40,7 +40,14 @@
 
 ---
 
-**LAYRA** is the world’s first “visual-native” AI automation engine. It **sees documents like a human**, preserves layout and graphical elements, and executes **arbitrarily complex workflows** with full Python control. From vision-driven Retrieval-Augmented Generation (RAG) to multi-step agent orchestration, LAYRA empowers you to build next-generation intelligent systems—no limits, no compromises.
+**LAYRA** is the world’s first “visual-native” AI automation engine. It **sees documents like a human**, preserves layout and graphical elements, and executes **arbitrarily complex workflows** with full Python control. From vision-driven Retrieval-Augmented Generation (RAG) to multi-step agent workflow orchestration, LAYRA empowers you to build next-generation intelligent systems—no limits, no compromises.
+
+Built for **Enterprise-Grade** deployment, LAYRA features:
+
+- **🧑‍💻 Modern Frontend:** Built with Next.js 15 (TypeScript) & TailwindCSS 4.0 for a snappy, developer-friendly UI.
+- **⚡ High-Performance Backend:** FastAPI-powered with async integration for Redis, MySQL, MongoDB, Kafka & MinIO – engineered for high concurrency.
+- **🎯 Visual-Native Document Understanding:** Leverages ColQwen 2.5 to transform documents into semantic vectors stored in Milvus.
+- **🚀 Powerful Workflow Engine:** Construct complex, loop-nested, and debuggable workflows with full Python execution and human-in-the-loop capabilities.
 
 ---
 
@@ -103,7 +110,7 @@ docker compose logs -f <container_name>
 
 #### 🎉 Enjoy LAYRA!
 
-Your deployment is complete! Start creating with Layra now. 🚀✨    
+Your deployment is complete! Start creating with Layra now. 🚀✨  
 _For detailed options, see the [Deployment section](#deployment)._
 
 > **📘 Essential Learning:** We strongly recommend spending just 10 minutes with the [tutorial](https://liweiphys.github.io/layra) before starting with LAYRA - **this small investment will help you master its full potential** and unlock advanced capabilities.
