@@ -334,13 +334,31 @@ docker compose logs -f <容器名>  # 实时日志
 
 > **注意**：如果 `docker compose` 遇到问题，尝试使用 `docker-compose`。同时，确保你使用的是 Docker Compose v2，旧版本不被 LAYRA 支持。你可以通过 `docker compose version` 或 `docker-compose version` 来检查当前版本。
 
+#### 🔧 故障排除指南  
+若服务启动失败：  
+```bash
+# 查看容器日志：
+docker compose logs <容器名称>
+```
+
+常用修复方案：
+```bash
+nvidia-smi  # 验证GPU识别状态
+docker compose down && docker compose up --build  # 保留数据重建
+docker compose down -v && docker compose up --build  # ⚠️ 删除所有数据完全重建，谨慎操作
+```
+
 #### 🛠️ 服务管理命令
 
-```bash
-docker compose down      # 停止服务（保留数据）
-docker compose down -v   # 彻底清理（删除数据库和模型权重）
-docker compose start     # 重启服务
-```
+**按需选择操作：**
+
+| **场景** | **命令** | **效果** |
+|--------------|-------------|------------|
+| **停止服务**<br>(保留数据) | `docker compose stop` | 停止容器但保持容器完整 |
+| **停止后重启** | `docker compose start` | 重启已停止的容器 |
+| **代码更新后重建** | `docker compose up -d --build` | 重新构建镜像并创建容器 |
+| **重建容器**<br>(保留数据) | `docker compose down`<br>`docker compose up -d` | 销毁后重新创建容器 |
+| **彻底清理**<br>(删除所有数据) | `docker compose down -v` | ⚠️ 销毁容器并删除数据卷 |
 
 #### ⚠️ 重要提示
 
@@ -350,13 +368,18 @@ docker compose start     # 重启服务
    docker compose logs -f model-weights-init
    ```
 
-2. **验证 NVIDIA 工具包**：
+2. **修改 `.env` 或代码后**，必须重新构建：
+   ```bash
+   docker compose up -d --build
+   ```
+
+3. **验证 NVIDIA 工具包**：
 
    ```bash
    nvidia-container-toolkit --version
    ```
 
-3. **手动下载模型**时需：
+4. **手动下载模型**时需：
    - 将权重文件放入 Docker 卷（通常位于`/var/lib/docker/volumes/layra_model_weights/_data/`）
    - 在以下文件夹创建空文件`complete.layra`：
      - **`colqwen2.5-base`**
@@ -365,8 +388,8 @@ docker compose start     # 重启服务
 
 #### 🔑 关键细节
 
-- `docker compose down` **`-v` 标志警告**：永久删除所有数据库和模型。
-- 修改`.env`后需重建：`docker compose up --build`
+- `docker compose down` **`-v` 标志警告**：永久删除所有数据库和模型权重。
+- **修改配置或代码后**：务必使用 `--build` 标志
 - **GPU 要求**：
   - 最新 NVIDIA 驱动
   - 正常运行的`nvidia-container-toolkit`

@@ -377,18 +377,31 @@ docker compose logs -f <container_name>
 
 > **Note**: If you encounter issues with `docker compose`, try using `docker-compose` (with the dash) instead. Also, ensure that you're using Docker Compose v2, as older versions may not support all features. You can check your version with `docker compose version` or `docker-compose version`.
 
+#### 🔧 Troubleshooting Tips  
+If services fail to start:  
+```bash
+# Check container logs:
+docker compose logs <container name>
+```
+
+Common fixes:
+```bash
+nvidia-smi  # Verify GPU detection
+docker compose down && docker compose up --build  # preserve data to rebuild
+docker compose down -v && docker compose up --build  # ⚠️ Caution: delete all data to full rebuild
+```
+
 #### 🛠️ Service Management Commands
 
-```bash
-# Stop services (preserves data and configurations)
-docker compose down
+Choose the operation you need:
 
-# Full cleanup (deletes databases, model weights and persistent data)
-docker compose down -v
-
-# Restart services
-docker compose start
-```
+| **Scenario**                               | **Command**                                     | **Effect**                               |
+| ------------------------------------------ | ----------------------------------------------- | ---------------------------------------- |
+| **Stop services**<br>(preserve data)       | `docker compose stop`                           | Stops containers but keeps them intact   |
+| **Restart after stop**                     | `docker compose start`                          | Restarts stopped containers              |
+| **Rebuild after code changes**             | `docker compose up -d --build`                  | Rebuilds images and recreates containers |
+| **Recreate containers**<br>(preserve data) | `docker compose down`<br>`docker compose up -d` | Destroys then recreates containers       |
+| **Full cleanup**<br>(delete all data)   | `docker compose down -v`                        | ⚠️ Destroys containers and deletes volumes  |
 
 #### ⚠️ Important Notes
 
@@ -398,15 +411,21 @@ docker compose start
    docker compose logs -f model-weights-init
    ```
 
-2. **Verify NVIDIA toolkit** installation:
+2. **After modifying `.env` or code**, always rebuild:
+
+   ```bash
+   docker compose up -d --build
+   ```
+
+3. **Verify NVIDIA toolkit** installation:
 
    ```bash
    nvidia-container-toolkit --version
    ```
 
-3. **For network issues**:
+4. **For network issues**:
    - Manually download model weights
-   - Copy to Docker volume: （typically at） `/var/lib/docker/volumes/layra_model_weights/_data/`
+   - Copy to Docker volume: (typically at) `/var/lib/docker/volumes/layra_model_weights/_data/`
    - Create empty `complete.layra` file in both:
      - **`colqwen2.5-base`** folder
      - **`colqwen2.5-v0.2`** folder
@@ -414,8 +433,8 @@ docker compose start
 
 #### 🔑 Key Details
 
-- `docker compose down` **`-v` flag warning**: Permanently deletes all databases and models
-- **After modifying `.env`**: Rebuild with `docker compose up --build`
+- `docker compose down -v` **permanently deletes** databases and model weights
+- **After code/config changes**, always use `--build` flag
 - **GPU requirements**:
   - Latest NVIDIA drivers
   - Working `nvidia-container-toolkit`

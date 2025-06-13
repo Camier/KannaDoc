@@ -103,7 +103,8 @@ docker compose logs <container name>
 Common fixes:
 ```bash
 nvidia-smi  # Verify GPU detection
-docker compose down -v && docker compose up --build  # Full rebuild
+docker compose down && docker compose up --build  # preserve data to rebuild
+docker compose down -v && docker compose up --build  # ⚠️ delete all data to full rebuild 
 ```
 
 :::danger Take care
@@ -111,6 +112,16 @@ docker compose down -v && docker compose up --build  # Full rebuild
  **`-v` flag**: Permanently delete all databases and model weights.
 
 :::
+
+### Choose the operation you need:
+
+| **Scenario**                               | **Command**                                     | **Effect**                               |
+| ------------------------------------------ | ----------------------------------------------- | ---------------------------------------- |
+| **Stop services** (preserve data)       | `docker compose stop`                           | Stops containers but keeps them intact   |
+| **Restart after stop**                     | `docker compose start`                          | Restarts stopped containers              |
+| **Rebuild after code changes**             | `docker compose up -d --build`                  | Rebuilds images and recreates containers |
+| **Recreate containers** (preserve data) | `docker compose down` `docker compose up -d` | Destroys then recreates containers       |
+| **Full cleanup** (delete all data)   | `docker compose down -v`                        | ⚠️ Destroys containers and deletes volumes  |
 
 :::tip Pro Tip
  For faster subsequent launches, run `docker compose stop` instead of `down` to preserve models.
