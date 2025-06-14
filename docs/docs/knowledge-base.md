@@ -40,15 +40,16 @@ LAYRA supports **50+ file formats** including PDF, DOCX, PPTX, DOC, etc. To uplo
 2. Upload files in batches by either:
    - Clicking the **Upload Files** button (supports multi-file selection), or
    - Dragging-and-dropping multiple files into the upload zone
-3. The system will process all files sequentially, with progress displayed as a percentage
 
-![Document Upload](./img/Document-Upload.png)
+:::important NOTE
+The system will process all files **in parallel**, with the **maximum number of concurrent instances** determined by the `UNOSERVER_INSTANCES` setting in the `.env` file **and** the available GPU resources. Progress will be displayed as a percentage.
 
-:::tip NOTE
-The progress percentage is calculated by file count. For example:
-- 4 documents: 0% → 25% → 50% → 75% → 100% 
+The progress percentage is calculated by **file count**. For example:
+- 4 documents: 0% → 25% → 50% → 75% → 100%
 - 1 document: 0% → 100%
 :::
+
+![Document Upload](./img/Document-Upload.png)
 
 :::tip NOTE
 You can search for documents within the current knowledge base using the search box, which supports fuzzy search.

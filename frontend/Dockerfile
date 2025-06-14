@@ -21,7 +21,5 @@ COPY --from=builder /app/node_modules ./node_modules
 
 
 # 注意：API 基础 URL 通过 Nginx 设置
-EXPOSE 3000
-
 # 启动命令
 CMD ["npm", "start"]

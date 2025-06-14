@@ -33,6 +33,7 @@ wait_for_db() {
     wait_for_service kafka 9092
     wait_for_service minio 9000
     wait_for_service milvus-standalone 19530
+    wait_for_service unoserver 2003
 
     # 设置日志环境变量
     export LOG_FILE=${LOG_FILE:-/proc/1/fd/1}  # 重定向到容器主进程的stdout

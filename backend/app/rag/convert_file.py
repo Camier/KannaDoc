@@ -8,6 +8,8 @@ from app.db.miniodb import async_minio_manager
 from bson.objectid import ObjectId
 import time
 from app.core.logging import logger
+from app.utils.unoconverter import unoconverter
+import asyncio
 
 
 async def convert_file_to_images(file_content, file_name: str = None):
@@ -20,68 +22,32 @@ async def convert_file_to_images(file_content, file_name: str = None):
     Returns:
         List[BytesIO]: 包含图片数据的字节流列表
     """
+    start_time = time.time()
     file_extension = file_name.split(".")[-1]
     # 检查文件类型决定是否需要转换
     if file_extension and file_extension.lower() != "pdf":
-        logger.info(f"开始转换 {file_extension} 文件到PDF")
-        tmp_input_path = None
+        # 其他格式通过 unoserver 转换
+        logger.info(f"Converting {file_extension} file via unoserver")
         try:
-            # 创建临时输入文件
-            with tempfile.NamedTemporaryFile(
-                suffix=file_extension, delete=False, prefix="convert_input_"
-            ) as tmp_input:
-                tmp_input.write(file_content)
-                tmp_input_path = tmp_input.name
-
-            # 创建临时输出目录
-            with tempfile.TemporaryDirectory(prefix="libreoffice_") as tmp_output:
-                # 执行LibreOffice转换命令
-                cmd = [
-                    "libreoffice",
-                    "--headless",
-                    "--nologo",
-                    "--nofirststartwizard",
-                    "--convert-to",
-                    "pdf",
-                    "--outdir",
-                    tmp_output,
-                    tmp_input_path,
-                ]
-
-                # 异步执行转换命令
-                process = await asyncio.create_subprocess_exec(
-                    *cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
-                )
-
-                stdout, stderr = await process.communicate()
-
-                if process.returncode != 0:
-                    raise RuntimeError(f"文件转换失败: {stderr.decode()}")
-
-                # 查找生成的PDF文件
-                pdf_files = [f for f in os.listdir(tmp_output) if f.endswith(".pdf")]
-                if not pdf_files:
-                    raise RuntimeError("未生成PDF文件")
-
-                # 读取转换后的PDF内容
-                with open(os.path.join(tmp_output, pdf_files[0]), "rb") as f:
-                    pdf_content = f.read()
-
-                # 转换PDF为图片
-                images = convert_from_bytes(pdf_content)
-        finally:
-            # 确保删除临时输入文件
-            if tmp_input_path and os.path.exists(tmp_input_path):
-                os.unlink(tmp_input_path)
-                logger.debug(f"已清理临时输入文件: {tmp_input_path}")
+            # 异步调用转换 (添加输入格式提示)
+            pdf_content = await unoconverter.async_convert(
+                file_content,
+                output_format="pdf",
+                input_format=file_extension
+            )
+            images = convert_from_bytes(pdf_content)
+            logger.debug(f"Converted {len(images)} pages from {file_extension} to PDF")
+        except Exception as e:
+            logger.error(f"Conversion error: {str(e)}")
+            raise RuntimeError(f"Document conversion failed: {str(e)}")
     else:
         # 直接处理PDF文件
-        logger.info("直接处理PDF文件")
+        logger.info("Processing PDF directly")
         images = convert_from_bytes(file_content)
 
     # 处理图片到内存缓冲区
     images_buffer = []
-    time_start = time.time()
+    processing_start = time.time()
 
     try:
         for i, image in enumerate(images):
@@ -93,8 +59,12 @@ async def convert_file_to_images(file_content, file_name: str = None):
             # 及时清理PIL Image对象
             del image
 
+            # 每处理10页记录一次
+            if (i + 1) % 10 == 0:
+                logger.debug(f"Processed {i+1} pages so far")
+
     except Exception as e:
-        logger.error(f"图片处理失败: {str(e)}")
+        logger.error(f"Image processing failed: {str(e)}")
         # 清理已创建的缓冲区
         for buf in images_buffer:
             buf.close()
@@ -104,8 +74,11 @@ async def convert_file_to_images(file_content, file_name: str = None):
         # 显式清理PIL Images列表
         del images
 
+    total_time = time.time() - start_time
+    processing_time = time.time() - processing_start
     logger.info(
-        f"成功转换文件为 {len(images_buffer)} 张图片，耗时 {time.time() - time_start:.2f}s"
+        f"Successfully converted file to {len(images_buffer)} images | "
+        f"Total: {total_time:.2f}s | Processing: {processing_time:.2f}s"
     )
     return images_buffer
 

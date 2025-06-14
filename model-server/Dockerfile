@@ -49,5 +49,4 @@ RUN python -c "import torch; print(f'PyTorch version: {torch.__version__}, CUDA:
 # 复制项目文件
 COPY . .
 
-EXPOSE 8005
 CMD ["python", "model_server.py"]

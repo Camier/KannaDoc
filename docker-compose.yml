@@ -190,6 +190,23 @@ services:
     networks:
       - layra-net
 
+  # 新增 unoserver 服务
+  unoserver:
+    build:
+      context: ./unoserver
+    environment:
+      - UNOSERVER_INSTANCES=${UNOSERVER_INSTANCES:-1}  # 实例数=CPU核心数
+      - BASE_PORT=${UNOSERVER_BASE_PORT}
+      - BASE_UNO_PORT=${UNOSERVER_BASE_UNO_PORT}
+    networks:
+      - layra-net
+    healthcheck:
+      test: ["CMD", "nc", "-z", "localhost", "2003"]  # 检查第一个实例
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+      
   backend:
     build:
       context: ./backend
@@ -209,6 +226,8 @@ services:
       milvus-standalone:
         condition: service_healthy
       model-server:
+        condition: service_healthy
+      unoserver:
         condition: service_healthy
       model-weights-init:
         condition: service_completed_successfully
@@ -249,6 +268,9 @@ services:
       - COLBERT_MODEL_PATH=${COLBERT_MODEL_PATH}
       - SANDBOX_SHARED_VOLUME=${SANDBOX_SHARED_VOLUME}
       - SERVER_IP=${SERVER_IP}
+      - UNOSERVER_INSTANCES=${UNOSERVER_INSTANCES}
+      - UNOSERVER_HOST=${UNOSERVER_HOST}
+      - UNOSERVER_BASE_PORTS=${UNOSERVER_BASE_PORT}
     networks:
       - layra-net
     healthcheck:

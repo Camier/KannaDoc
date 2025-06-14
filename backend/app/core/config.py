@@ -33,10 +33,13 @@ class Settings(BaseSettings):
     minio_access_key: str = "your_access_key"  # MinIO 的访问密钥
     minio_secret_key: str = "your_secret_key"  # MinIO 的密钥
     minio_bucket_name: str = "minio-file"  # 需要上传的桶的名称
-    milvus_uri:str ="http://127.0.0.1:19530"
-    colbert_model_path:str = "/home/liwei/ai/colqwen2.5-v0.2"
-    sandbox_shared_volume:str = "/app/sandbox_workspace"
-    server_ip:str = "http://localhost"
+    milvus_uri: str = "http://127.0.0.1:19530"
+    colbert_model_path: str = "/home/liwei/ai/colqwen2.5-v0.2"
+    sandbox_shared_volume: str = "/app/sandbox_workspace"
+    server_ip: str = "http://localhost"
+    unoserver_instances: int = 3  # 建议等于CPU核心数
+    unoserver_host: str = "unoserver"
+    unoserver_base_port: int = 2003
 
     class Config:
         env_file = "../.env"
