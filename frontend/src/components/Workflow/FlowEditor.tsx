@@ -69,7 +69,6 @@ import useChatStore from "@/stores/chatStore";
 import { getFileExtension } from "@/utils/file";
 import { createChatflow } from "@/lib/api/chatflowApi";
 import ConfirmDialog from "../ConfirmDialog";
-import { BlockList } from "net";
 import { replaceTemplate } from "@/utils/convert";
 
 const getId = (type: string): string => `node_${type}_${uuidv4()}`;
@@ -78,6 +77,12 @@ interface FlowEditorProps {
   setFullScreenFlow: Dispatch<SetStateAction<boolean>>;
   fullScreenFlow: boolean;
 }
+
+const splitFirstColon = (str: string) => {
+  const index = str.indexOf(":");
+  if (index === -1) return [str, ""]; // 没有冒号时返回原字符串和空字符串
+  return [str.substring(0, index), str.substring(index + 1)];
+};
 
 const FlowEditor: React.FC<FlowEditorProps> = ({
   workFlow,
@@ -167,19 +172,6 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   }>({});
   const countRef = useRef(1);
   const countListRef = useRef<string[]>([]);
-  const nodeStates = new Map<
-    number,
-    {
-      aiMessage: string;
-      aiThinking: string;
-      messageId: string;
-      total_token: number;
-      completion_tokens: number;
-      prompt_tokens: number;
-      file_used: any[];
-      vlmNewLoop: boolean;
-    }
-  >();
   // 使用 useMemo 优化查找
   const currentNode = useMemo(
     () => nodes.find((n) => n.id === selectedNodeId),
@@ -206,31 +198,36 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     }
   };
 
-  const cleanTempKnowledgeBase = async () => {
-    if (user?.name) {
-      try {
-        setCleanTempBase(true);
-        const response = await deleteTempKnowledgeBase(user.name);
-      } catch (error) {
-        console.error("Error clean temp knowledge base:", error);
-      } finally {
-        setCleanTempBase(false);
-      }
-    }
-  };
-
-  // 清理悬空临时知识库
   useEffect(() => {
+    const cleanTempKnowledgeBase = async () => {
+      if (user?.name) {
+        try {
+          setCleanTempBase(true);
+          const response = await deleteTempKnowledgeBase(user.name);
+        } catch (error) {
+          console.error("Error clean temp knowledge base:", error);
+        } finally {
+          setCleanTempBase(false);
+        }
+      }
+    };
     cleanTempKnowledgeBase();
-  }, []);
+  }, [user?.name]); // 添加 user?.name 作为依赖
 
   useEffect(() => {
     setSendingFiles([]);
     setTempBaseId("");
   }, [chatflowId]);
 
+  const handleNewChatflow = useCallback(() => {
+    setChatflowId("");
+  }, [setChatflowId]);
+
   //刷新页面
-  const refreshWorkflow = () => {
+  useEffect(() => {
+    // 从 store 获取最新状态
+    const { history, nodes } = useFlowStore.getState();
+
     if (history.length === 0) {
       pushHistory();
     }
@@ -263,12 +260,48 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         updateChat(node.id, "Await for running...");
       }
     });
-  };
+  }, [workFlow, handleNewChatflow, pushHistory, updateChat, updateOutput, updateStatus]); // 只需要依赖 workFlow
 
-  // 初始化历史记录
-  useEffect(() => {
-    refreshWorkflow();
-  }, [workFlow]);
+  // 刷新按钮的处理函数
+  const handleRefresh = () => {
+    // 与上面相同的刷新逻辑
+    if (history.length === 0) {
+      pushHistory();
+    }
+    handleNewChatflow();
+    setMessages({});
+    setEachMessages({});
+    setSendInputDisabled(true);
+    setResumeDebugTaskId("");
+    setResumeInputTaskId("");
+    countListRef.current = [];
+    setCurrentInputNodeId(undefined);
+    setRunningChatflowLLMNodes([]);
+    countRef.current = 1;
+    nodes.forEach((node) => {
+      if (node.data.nodeType == "vlm") {
+        updateOutput(
+          node.id,
+          "This area displays the Node output during workflow execution."
+        );
+      } else {
+        updateOutput(node.id, "Await for running...");
+      }
+      updateStatus(node.id, "init");
+      if (node.data.nodeType == "vlm") {
+        updateChat(
+          node.id,
+          'To extract global variables from the output, ensure prompt LLM/VLM to output them with json format, e.g.,\n {"output":"AIoutput"}.\n\nAdditionally, you can directly assign the LLM response to a global variable below:'
+        );
+      } else {
+        updateChat(node.id, "Await for running...");
+      }
+    });
+    // // 可选：显示成功消息
+    // setShowAlert(true);
+    // setWorkflowMessage("Workflow refreshed!");
+    // setWorkflowStatus("success");
+  };
 
   useEffect(() => {
     //fetchChatflowHistory();
@@ -277,10 +310,6 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
       setChatflowId(user?.name + "_" + uniqueId);
     }
   }, [user?.name, chatflowId, setChatflowId]); // Added fetchChatHistory fetchChatHistory
-
-  const handleNewChatflow = async () => {
-    setChatflowId("");
-  };
 
   useEffect(() => {
     //fetchChatflowHistory();
@@ -303,12 +332,6 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   useEffect(() => {
     fetchAllCustomNodes();
   }, [user?.name, fetchAllCustomNodes]); // Add fetchAllWorkflow
-
-  const splitFirstColon = (str: string) => {
-    const index = str.indexOf(":");
-    if (index === -1) return [str, ""]; // 没有冒号时返回原字符串和空字符串
-    return [str.substring(0, index), str.substring(index + 1)];
-  };
 
   const handleDeleteCustomNode = async (custom_node_name: string) => {
     if (user?.name) {
@@ -365,10 +388,49 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     return true;
   };
 
+  const nodeStatesRef = useRef(
+    new Map<
+      number,
+      {
+        aiMessage: string;
+        aiThinking: string;
+        messageId: string;
+        total_token: number;
+        completion_tokens: number;
+        prompt_tokens: number;
+        file_used: any[];
+        vlmNewLoop: boolean;
+      }
+    >()
+  );
+
+  // 只将不稳定的值放入 ref
+  const unstableDependenciesRef = useRef({
+    fileMessages,
+    globalDebugVariables,
+    nodes,
+    selectedNodeId,
+  });
+
+  // 更新不稳定的依赖项
+  useEffect(() => {
+    unstableDependenciesRef.current = {
+      fileMessages,
+      globalDebugVariables,
+      nodes,
+      selectedNodeId,
+    };
+  });
+
   useEffect(() => {
     if (taskId !== "") {
       setResumeDebugTaskId("");
       setResumeInputTaskId("");
+
+      // 从 ref 中获取不稳定的最新值
+      const { fileMessages, globalDebugVariables, nodes, selectedNodeId } =
+        unstableDependenciesRef.current;
+
       const workFlowSSE = async () => {
         if (user?.name) {
           const token = Cookies.get("token"); // 确保已引入cookie库
@@ -497,7 +559,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 const nodeId = payload.ai_chunk.id; // 获取节点ID
                 const aiChunkResult = JSON.parse(payload.ai_chunk.result);
                 // 获取或初始化该节点的状态
-                let state = nodeStates.get(countRef.current);
+                let state = nodeStatesRef.current.get(countRef.current);
                 const nodeToAdd = nodes.find((node) => node.id === nodeId);
                 if (!state) {
                   state = {
@@ -707,7 +769,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                       }
                     }
                     // 更新状态存储
-                    nodeStates.set(countRef.current, state);
+                    nodeStatesRef.current.set(countRef.current, state);
                   } else {
                     //ai消息正常更新
                     if (aiChunkResult.type !== "token") {
@@ -877,7 +939,15 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
       };
       workFlowSSE();
     }
-  }, [taskId]);
+  }, [
+    taskId,
+    setGlobalDebugVariables,
+    setSelectedEdgeId,
+    setSelectedNodeId,
+    updateOutput,
+    updateStatus,
+    user?.name,
+  ]);
 
   const fetchModelConfig = async (nodeId: string) => {
     if (user?.name) {
@@ -1010,7 +1080,14 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
       }
       pushHistory();
     },
-    [edges, setEdges, pushHistory]
+    [
+      edges,
+      setEdges,
+      pushHistory,
+      getConditionCount,
+      updateConditionCount,
+      updateConditions,
+    ]
   );
 
   const addNode = (type: NodeTypeKey) => {
@@ -1162,6 +1239,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         (resumeDebugTaskId === "" && resumeInputTaskId === "")
       ) {
         handleNewChatflow();
+        nodeStatesRef.current = new Map();
         setMessages({});
         setEachMessages({});
         countListRef.current = [];
@@ -1419,41 +1497,44 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     }
   };
 
-  const handleAutoSaveWorkFlow = async (
-    DockerImageUse: string,
-    globalVariables: {
-      [key: string]: string;
-    },
-    nodes: CustomNode[],
-    edges: CustomEdge[]
-  ) => {
-    if (user?.name) {
-      try {
-        const response = await createWorkflow(
-          workFlow.workflowId,
-          user.name,
-          workFlow.workflowName,
-          { docker_image_use: DockerImageUse },
-          workFlow.startNode,
-          globalVariables,
-          nodes,
-          edges
-        );
-        if (response.status == 200) {
+  const handleAutoSaveWorkFlow = useCallback(
+    async (
+      DockerImageUse: string,
+      globalVariables: {
+        [key: string]: string;
+      },
+      nodes: CustomNode[],
+      edges: CustomEdge[]
+    ) => {
+      if (user?.name) {
+        try {
+          const response = await createWorkflow(
+            workFlow.workflowId,
+            user.name,
+            workFlow.workflowName,
+            { docker_image_use: DockerImageUse },
+            workFlow.startNode,
+            globalVariables,
+            nodes,
+            edges
+          );
+          if (response.status == 200) {
+            showTemporaryAlert(
+              `Workflow "${workFlow.workflowName}" auto-saved successfully`,
+              "success"
+            );
+          }
+        } catch (error) {
+          console.error("Auto-save failed:", error);
           showTemporaryAlert(
-            `Workflow "${workFlow.workflowName}" auto-saved successfully`,
-            "success"
+            `Workflow "${workFlow.workflowName}" auto-saved failed`,
+            "error"
           );
         }
-      } catch (error) {
-        console.error("Auto-save failed:", error);
-        showTemporaryAlert(
-          `Workflow "${workFlow.workflowName}" auto-saved failed`,
-          "error"
-        );
       }
-    }
-  };
+    },
+    [workFlow, user?.name]
+  );
 
   // 固定1分钟保存一次
   useEffect(() => {
@@ -1471,7 +1552,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
       );
     }, 60000);
     return () => clearInterval(intervalId);
-  }, [workFlow, user?.name]); // 无需依赖项
+  }, [workFlow, user?.name, handleAutoSaveWorkFlow]); // 无需依赖项
 
   const showTemporaryAlert = (message: string, type: "success" | "error") => {
     setSaveStatus({ visible: true, message, type });
@@ -1752,12 +1833,8 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             <button
               onClick={() => {
                 handleSaveWorkFlow();
-                refreshWorkflow();
-                // setShowAlert(true);
-                // setWorkflowMessage("Refesh workflow!");
-                // setWorkflowStatus("success");
+                handleRefresh();
               }}
-              //disabled={nodes.length === 0}
               className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
             >
               <svg

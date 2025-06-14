@@ -294,7 +294,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
         console.error("Error fetching chat history:", error);
       }
     }
-  }, [user?.name]); // Dependency added
+  }, [user?.name, workflow.workflowId]); // Dependency added
 
   useEffect(() => {
     fetchChatHistory();

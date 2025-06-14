@@ -10,7 +10,7 @@ import { useAuthStore } from "@/stores/authStore";
 import { useFlowStore } from "@/stores/flowStore";
 import { useGlobalStore } from "@/stores/WorkflowVariableStore";
 import { CustomNode } from "@/types/types";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 interface FunctionNodeProps {
@@ -71,23 +71,31 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
     string | null
   >(null);
 
-  const fetchDockerImages = async () => {
+  const dockerImageUseRef = useRef(DockerImageUse);
+
+  // 当 DockerImageUse 变化时更新 ref
+  useEffect(() => {
+    dockerImageUseRef.current = DockerImageUse;
+  }, [DockerImageUse]);
+
+  const fetchDockerImages = useCallback(async () => {
     try {
       if (user?.name) {
         const response = await getDockerImages(user.name);
         setSystemDockerImages(response.data.images);
-        if (!(response.data.images as string[]).includes(DockerImageUse)) {
+        // 使用 ref 获取当前值而不是依赖
+        if (!(response.data.images as string[]).includes(dockerImageUseRef.current)) {
           updateDockerImageUse("python-sandbox:latest");
         }
       }
     } catch (error) {
       console.error("Get Docker Images Error:", error);
     }
-  };
+  }, [user?.name, setSystemDockerImages, updateDockerImageUse]); 
 
   useEffect(() => {
     fetchDockerImages();
-  }, [refreshDockerImages]);
+  }, [refreshDockerImages, fetchDockerImages]);
 
   const handleVariableChange = (
     e: React.ChangeEvent<HTMLInputElement>,

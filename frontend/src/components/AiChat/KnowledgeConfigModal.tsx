@@ -72,12 +72,14 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
             maxLength: item.max_length === -1 ? 8192 : item.max_length,
             topP: item.top_P === -1 ? 0.01 : item.top_P,
             topK: item.top_K === -1 ? 3 : item.top_K,
-            scoreThreshold: item.score_threshold === -1 ? 10 : item.score_threshold,
+            scoreThreshold:
+              item.score_threshold === -1 ? 10 : item.score_threshold,
             useTemperatureDefault: item.temperature === -1 ? true : false,
             useMaxLengthDefault: item.max_length === -1 ? true : false,
             useTopPDefault: item.top_P === -1 ? true : false,
             useTopKDefault: item.top_K === -1 ? true : false,
-            useScoreThresholdDefault: item.score_threshold === -1 ? true : false,
+            useScoreThresholdDefault:
+              item.score_threshold === -1 ? true : false,
           })
         );
 
@@ -108,7 +110,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
         );
       }
     }
-  }, [user]); // Add dependencies used in the function
+  }, [user, setModelConfig]); // Add dependencies used in the function
 
   useEffect(() => {
     if (visible) {

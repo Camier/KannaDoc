@@ -24,8 +24,6 @@ interface KnowledgeBaseDetailsProps {
   onFileUpload: (files: FileList) => void;
   buttonText: string;
   isSendDisabled: boolean;
-  load: boolean;
-  setLoad: Dispatch<SetStateAction<boolean>>;
 }
 
 const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
@@ -36,8 +34,6 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
   onFileUpload,
   buttonText,
   isSendDisabled,
-  load,
-  setLoad,
 }) => {
   // 拖放处理
   const [dragActive, setDragActive] = useState(false);
@@ -82,14 +78,9 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
   }, [loadFiles]);
 
   useEffect(() => {
-    if (searchKeyword === "") {
-      setLoad((prev) => !prev);
-      setCurrentPage(1);
-    } else {
-      setSearchKeyword("");
-      setCurrentPage(1);
-    }
-  }, [selectedBase, setLoad]);
+    setSearchKeyword("");
+    setCurrentPage(1);
+  }, [selectedBase]); // Only selectedBase as dependency
 
   const handleSearch = (value: string) => {
     setSearchKeyword(value);

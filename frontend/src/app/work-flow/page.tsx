@@ -30,14 +30,9 @@ const Workflow = () => {
   const { user } = useAuthStore();
   const [refresh, setRefresh] = useState<boolean>(false);
   const [fullScreenFlow, setFullScreenFlow] = useState<boolean>(false);
-  const [workflowAll, setWorkflowAll] = useState<WorkflowAll|null>(null);
-  const {
-    resethistory,
-    resetfuture,
-    setNodes,
-    setEdges,
-  } = useFlowStore();
-  const { setGlobalVariables,updateDockerImageUse } = useGlobalStore();
+  const [workflowAll, setWorkflowAll] = useState<WorkflowAll | null>(null);
+  const { resethistory, resetfuture, setNodes, setEdges } = useFlowStore();
+  const { setGlobalVariables, updateDockerImageUse } = useGlobalStore();
 
   // 成功消息自动消失
   useEffect(() => {
@@ -86,14 +81,23 @@ const Workflow = () => {
         setEdges(item.edges);
         setGlobalVariables(item.global_variables);
         setWorkflowAll(workflowAllData);
-        updateDockerImageUse(item.workflow_config.docker_image_use)
-        resethistory(item.nodes,item.edges);
+        updateDockerImageUse(item.workflow_config.docker_image_use);
+        resethistory(item.nodes, item.edges);
         resetfuture();
       } catch (error) {
         console.error("Error fetching chat history:", error);
       }
     }
-  },[user?.name, selectedFlow])
+  }, [
+    user?.name,
+    selectedFlow,
+    resetfuture,
+    resethistory,
+    setEdges,
+    setGlobalVariables,
+    setNodes,
+    updateDockerImageUse,
+  ]);
 
   useEffect(() => {
     fetchAllWorkflow();
@@ -101,7 +105,7 @@ const Workflow = () => {
 
   useEffect(() => {
     fetchWorkflowDetails();
-  }, [user?.name, selectedFlow]);
+  }, [user?.name, selectedFlow, fetchWorkflowDetails]);
 
   // 创建工作流校验
   const handleCreateConfirm = async () => {
@@ -135,7 +139,7 @@ const Workflow = () => {
           "",
           user.name,
           newFlowName,
-          {"docker_image_use":"python-sandbox:latest"},
+          { docker_image_use: "python-sandbox:latest" },
           "node_start",
           {},
           [],
@@ -175,7 +179,9 @@ const Workflow = () => {
             )
           );
           await renameWorkflow(flow.flowId, inputValue);
-          setWorkflowAll(prev => {return prev? {...prev, workflowName:inputValue}: prev})
+          setWorkflowAll((prev) => {
+            return prev ? { ...prev, workflowName: inputValue } : prev;
+          });
           setRefresh((prev) => !prev);
         } catch (error) {
           console.error("Error fetching rename chat:", error);
@@ -241,9 +247,9 @@ const Workflow = () => {
               />
             ) : (
               <div className="flex-1 h-full flex items-center justify-center bg-white rounded-3xl shadow-sm p-6">
-                  <p className="text-gray-500 text-xl">
-                    Please create or choose a workflow to start
-                  </p>
+                <p className="text-gray-500 text-xl">
+                  Please create or choose a workflow to start
+                </p>
               </div>
             )}
           </div>

@@ -93,23 +93,22 @@ const ChatBox: React.FC<ChatBoxProps> = ({
     }
   };
 
-  const cleanTempKnowledgeBase = async () => {
-    if (user?.name) {
-      try {
-        setCleanTempBase(true);
-        const response = await deleteTempKnowledgeBase(user.name);
-      } catch (error) {
-        console.error("Error clean temp knowledge base:", error);
-      } finally {
-        setCleanTempBase(false);
-      }
-    }
-  };
-
   // 清理悬空临时知识库
   useEffect(() => {
+    const cleanTempKnowledgeBase = async () => {
+      if (user?.name) {
+        try {
+          setCleanTempBase(true);
+          const response = await deleteTempKnowledgeBase(user.name);
+        } catch (error) {
+          console.error("Error clean temp knowledge base:", error);
+        } finally {
+          setCleanTempBase(false);
+        }
+      }
+    };
     cleanTempKnowledgeBase();
-  }, []);
+  }, [user?.name]); // 添加 user?.name 作为依赖
 
   // 使用 useEffect 监测 messages 的变化
   useEffect(() => {

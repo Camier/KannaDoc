@@ -486,7 +486,7 @@ We are in the process of creating a CONTRIBUTING.md file, which will provide gui
 🐙 [github.com/liweiphys/layra](https://github.com/liweiphys/layra)  
 📺 [bilibili: Biggestbiaoge](https://www.bilibili.com/video/BV1sd7QzmEUg/?share_source=copy_web)  
 🔍 Wechat Official Account：LAYRA 项目  
-💡 Wechat group: see below the title at the top
+💡 Wechat group: see below the title at the top  
 💼 Exploring Impactful Opportunities - Feel Free To Contact Me!
 
 ---

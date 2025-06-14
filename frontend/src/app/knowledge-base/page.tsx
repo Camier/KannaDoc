@@ -35,7 +35,6 @@ const KnowledgeBase = () => {
   >(null);
   const [taskProgress, setTaskProgress] = useState<number>(0);
   const [uploadFile, setUploadFile] = useState<boolean>(false);
-  const [load, setLoad] = useState(true);
 
   // 修改发送按钮逻辑
   const isUploadComplete = uploadProgress === 100;
@@ -242,7 +241,6 @@ const KnowledgeBase = () => {
                     : base
                 )
               );
-              setLoad((prev) => !prev);
             } catch (error) {
               console.error("SSE错误:", error);
               setTaskStatus("failed");
@@ -305,8 +303,6 @@ const KnowledgeBase = () => {
               onFileUpload={handleFileUpload}
               buttonText={buttonText}
               isSendDisabled={isSendDisabled}
-              load={load}
-              setLoad={setLoad}
             />
           </div>
         </div>

@@ -108,7 +108,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
         );
       }
     }
-  }, [user, node.data.modelConfig?.modelId]); // Add dependencies used in the function
+  }, [user, node.data.modelConfig?.modelId, updateVlmModelConfig, node.id]); // Add dependencies used in the function
 
   useEffect(() => {
     if (visible) {
