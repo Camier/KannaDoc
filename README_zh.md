@@ -305,6 +305,8 @@ PDF 解析为图像 →ColQwen2.5 视觉嵌入 → 元数据/文件存储：
 
 - 嵌入模型：`colqwen2.5-v0.2`
 - LLM 服务：`Qwen2.5-VL系列（或任意OpenAI兼容模型）`
+[本地部署注意事项](https://liweiphys.github.io/layra/docs/RAG-Chat)
+
 
 ---
 

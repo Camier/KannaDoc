@@ -336,6 +336,7 @@ The workflow execution follows an **event-driven**, **stateful debugging** patte
 
 - Embedding: `colqwen2.5-v0.2`
 - LLM Serving: `Qwen2.5-VL series (or any OpenAI-compatible model)`
+[LOCAL DEPLOYMENT NOTE](https://liweiphys.github.io/layra/docs/RAG-Chat)
 
 ---
 
