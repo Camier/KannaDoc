@@ -20,7 +20,65 @@ Unlike RAG systems, workflows handle **stateful operations** where outputs from 
 
 ---
 
+## LAYRA's Workflow Design Philosophy
+
+LAYRA maintains a minimalist design ethos **that features:**
+
+- **Clean UI** with minimal visual clutter
+- Only **5** core node types for rapid onboarding
+- Fully **customizable** foundational components
+
+Unlike alternatives with complex interfaces and dozens of node types, LAYRA provides just:
+
+1. Start Node
+2. Four functional primitives (LLM, Code, Condition, Loop)
+
+These building blocks enable you to construct sophisticated agent "machines" through creative combinations. When mastered, they form **agent-era Turing-complete systems** capable of orchestrating any computable operation - including **reasoning, decision-making, and real-world action execution**.
+
+:::tip Key capabilities
+
+- **Cognitive Automation**: LLM-powered reasoning chains
+- **Action Orchestration**: Real-world task execution
+- **Dynamic Adaptation**: Context-aware operation flows
+  :::
+
+### Variables: The Workflow Lifeblood
+
+Consider workflows as factories:
+
+- **Nodes** = Assembly machines
+- **Variables** = Materials/products moving through production lines
+
+LAYRA implements **global variables** with shared access across all nodes. This eliminates artificial input/output distinctions and aligns with standard programming paradigms:
+
+```python
+# 1. Define global variables
+sum = []
+a_1 = 1
+b_1 = 1
+b_2 = 2
+
+# 2. First calculation
+sum.append(a_1 + b_1)  # Node 1 operation
+
+# 3. Second calculation
+sum.append(a_1 + b_2)  # Node 2 operation
+
+# 4. Output: [2, 3]
+print(sum)
+```
+
+This approach avoids cumbersome input/output definitions required in other node-based systems.
+
+:::tip For example
+**Other node-based workflow systems** require you to define inputs like `a_1 = 1` and `b_1 = 1` for the first node to output `sum_1 = 2`, then define `a_1 = 1` and `b_2 = 2` for a second node to output `sum2 = 3`, and finally needing a separate merge node to combine `sum1` and `sum2` into `sum = [2, 3]`.
+:::
+
+---
+
 ## Essential Components
+
+With this understanding of LAYRA's design philosophy, let's explore the core concepts: **Nodes**, **Connections**, and **Global Variables**.
 
 ### 1. Nodes
 
@@ -67,16 +125,24 @@ animals = {"species": ["dog", "cat", "bird"]}  # dictionary
 ...
 ```
 
+![Global Variable](./img/global-variable.png)
+
+---
+
 ## Create Your First LAYRA Workflow
+
+Now that you understand these core concepts, let's build your first LAYRA workflow!
+
+### Hello LAYRA
 
 Just as every programmer begins with "Hello World", your LAYRA journey starts with printing "Hello LAYRA". Follow these three simple steps:
 
 1. **Build the Flow**  
    From the left node panel:
 
-   - Drag a `start` node onto the canvas
-   - Add a `code` node  
-     Connect the `start` node's output port to the `code` node's input port
+   - **Click** the `start` node to add it to the canvas.
+   - **Then, add** a code node.
+   - **Finally, connect** the `start` node's output port to the `code` node's input port.
 
 2. **Implement Your Logic**  
    Select the `code` node and navigate to the `Code Editor` tab:
@@ -92,4 +158,7 @@ Just as every programmer begins with "Hello World", your LAYRA journey starts wi
    ```
    Hello LAYRA!
    ```
-   🎉 **Congratulations!** You've built your first LAYRA workflow!
+
+![Hello LAYRA](./img/hello-layra.png)
+
+🎉 **Congratulations!** You've built your first LAYRA workflow!

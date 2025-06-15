@@ -2,5 +2,5 @@
 sidebar_position: 2
 ---
 
-# Nodes
+# Loop Node
 comming soon...
