@@ -27,7 +27,7 @@ cd layra
 vim .env  # Edit key parameters (SERVER_IP, MODEL_BASE_URL)
 ```
 
-##### 2. Launch Services (First run downloads ~15GB models)  
+##### 2. Launch Services (First run downloads ~15GB models, be patient)  
 ```bash
 docker compose up -d --build
 ```
