@@ -68,11 +68,14 @@ async def register(
     db: AsyncSession = Depends(get_mysql_session),
     mongo: MongoDB = Depends(get_mongo),
 ):
-    if "-" in user.username:
+    # 定义非法字符集合（元组不可变更安全）
+    illegal_chars = ("-", "_", " ")
+    # 使用 any() + 生成器表达式高效检查
+    if any(char in user.username for char in illegal_chars):
         raise HTTPException(
-                status_code=status.HTTP_400_BAD_REQUEST,
-                detail="'-' is a illegal character",
-            )
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Characters {', '.join(repr(c) for c in illegal_chars)} are illegal"
+        )
     # Check if username or email already exists
     existing_user = await db.execute(select(User).where(User.username == user.username))
     if existing_user.scalars().first():

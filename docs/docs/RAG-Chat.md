@@ -74,7 +74,7 @@ LAYRA's vision-based multimodal RAG system requires your LLM to support visual i
 - **Temperature** (0-1): Controls response creativity
 - **Max Token** (1024-1048576): Response length limit
 - **Top-P** (0-1): Probability mass sampling parameter
-- **Knowledge-Base Top-K** (1-30): Retrieved passages quantity
+- **Knowledge-Base Top-K** (1-30): Quantity of retrieved images
 - **Retrieval Score Threshold** (0-20): Minimum relevance score
 
 :::tip RECOMMENDATIONS  

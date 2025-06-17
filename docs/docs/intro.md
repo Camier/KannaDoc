@@ -128,9 +128,9 @@ docker compose down -v && docker compose up --build  # ⚠️ delete all data to
 :::
 ---
 
-## Next Steps  
-1. Upload documents in **Knowledge Base**  
-2. Try visual Q&A in **Chat**  
-3. Build agents in **Workflow**  
-
 > **Congratulations!** You're now running the world's first visual-native AI agent engine. 🚀  
+
+## Next Steps  
+1. Upload documents in **[Knowledge Base](./knowledge-base)**  
+2. Try visual Q&A in **[Chat](./RAG-Chat)**  
+3. Build agents in **[Workflow](./category/workflow)**  

@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Node Introduction
 
-Nodes are the core components of workflows. Before starting this chapter, ensure you've mastered the previous chapter: **Basic Concepts**.
+Nodes are the core components of workflows. Before starting this chapter, ensure you've mastered the previous chapter: **[Basic Concepts](../basic-concept)**.
 
 ---
 
@@ -53,7 +53,7 @@ We recommend:
 
 ## Global Variable
 
-Global Variables are shared across all nodes in a workflow and can be modified anywhere. For details, refer to the **Basic Concepts** chapter. The interface includes:
+Global Variables are shared across all nodes in a workflow and can be modified anywhere. For details, refer to the **[Basic Concepts](../basic-concept)** chapter. The interface includes:
 
 - A **full-screen icon** (right side): Expands **Configuration Interface**
 - Particularly useful for code/LLM node development

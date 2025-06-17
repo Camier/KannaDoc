@@ -162,3 +162,6 @@ Just as every programmer begins with "Hello World", your LAYRA journey starts wi
 ![Hello LAYRA](./img/hello-layra.png)
 
 🎉 **Congratulations!** You've built your first LAYRA workflow!
+
+## Next Steps  
+Next, let's dive deeper into the functionality of nodes!
