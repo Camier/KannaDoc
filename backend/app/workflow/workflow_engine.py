@@ -534,7 +534,7 @@ class WorkflowEngine:
                     load_ai_messgae = json.dumps(
                         {
                             "type": "text",
-                            "data": "#### 开始mcp调用,大模型正在选择工具...  \n`",
+                            "data": "#### Starting MCP call, LLM is selecting tools...  \n",
                             "message_id": message_id,
                         }
                     )
@@ -549,8 +549,8 @@ class WorkflowEngine:
                             mcp_tool["url"] = mcp_server_url
                             mcp_tools_for_call[mcp_tool["name"]] = mcp_tool
                     mcp_prompt = f"""
-你是一个选择函数调用的专家，请根据用户提问帮用户选择最合适的一个函数调用，并给出函数所需的参数，以{{"function_name":函数名，"params":参数}}的json格式输出，不要包含其他内容，如果用户提问与函数无关，请输出{{"function_name":""}}
-这是json格式的函数列表：{json.dumps(mcp_tools_for_call)}"""
+You are an expert in selecting function calls. Please choose the most appropriate function call based on the user's question and provide the required parameters. Output in JSON format: {{"function_name": function name, "params": parameters}}. Do not include any other content. If the user's question is unrelated to functions, output {{"function_name":""}}.
+Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
                     mcp_user_message = UserMessage(
                         conversation_id=self.chatflow_id,
                         parent_id="",
@@ -591,12 +591,12 @@ class WorkflowEngine:
                                     function_name,
                                     params,
                                 )
-                                self.supply_info = f"\n请根据这些结果回答问题{result}"
+                                self.supply_info = f"\nPlease answer the question based on these results: {result}"
                                 logger.info("MCP:工作流{self.task_id}mcp调用成功")
                                 load_ai_messgae = json.dumps(
                                     {
                                         "type": "text",
-                                        "data": f"`  \n#### mcp调用成功,返回结果：  \n`{result}`",
+                                        "data": f"  \n#### MCP call succeeded, returned result:  \n{result}",
                                         "message_id": message_id,
                                     }
                                 )
@@ -607,7 +607,7 @@ class WorkflowEngine:
                                 load_ai_messgae = json.dumps(
                                     {
                                         "type": "text",
-                                        "data": f"`  \n#### 函数{function_name},参数：{params}的MCP调用失败",
+                                        "data": f"  \n#### MCP call for function {function_name} with parameters: {params} failed",
                                         "message_id": message_id,
                                     }
                                 )
@@ -621,7 +621,7 @@ class WorkflowEngine:
                             load_ai_messgae = json.dumps(
                                 {
                                     "type": "text",
-                                    "data": f"`  \n#### 未找到合适的MCP调用工具。",
+                                    "data": f"  \n#### No suitable MCP call tool found.",
                                     "message_id": message_id,
                                 }
                             )
@@ -635,7 +635,7 @@ class WorkflowEngine:
                         load_ai_messgae = json.dumps(
                             {
                                 "type": "text",
-                                "data": f"`  \n未解析到有效的json输出，请优化后端mcp的prompt。",
+                                "data": f"  \nNo valid JSON output parsed, please optimize the backend MCP prompt.",
                                 "message_id": message_id,
                             }
                         )
