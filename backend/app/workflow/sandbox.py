@@ -146,7 +146,7 @@ class CodeSandbox:
         pip: dict = None,
         image_url: str = "",
         remove: bool = False,
-        timeout: int = 60,
+        timeout: int = 3600,
     ) -> dict:
         """在持久化容器中执行代码"""
         if not self.container:

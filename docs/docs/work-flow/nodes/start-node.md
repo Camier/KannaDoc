@@ -25,5 +25,7 @@ Clicking the Start node reveals its configuration panel on the right canvas area
 
 These configurations have been discussed in the **[Node Introduction](./node-intro)** chapter and will not be repeated here.
 
+---
+
 ## Next Steps
 Now that you understand the Start node, dive into exploring other functional nodes!

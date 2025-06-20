@@ -49,8 +49,6 @@ Passed Condition Index: 1 2
 ```
 This indicates only branches 1 and 2 activate since `count_3=3 > max_count=2`.
 
----
-
 ### Workflow Execution
 Click the canvas **Run** button to execute the workflow. Only Code nodes connected to branches 1 and 2 turn **blue**, confirming successful conditional execution.
 

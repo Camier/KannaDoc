@@ -485,7 +485,7 @@ class WorkflowEngine:
                     pip=node.data.get("pip", None),
                     image_url=node.data.get("imageUrl", ""),
                     remove=node.data.get("remove", False),
-                    timeout=node.data.get("timeout", 60),
+                    timeout=node.data.get("timeout", 3600),
                 )
                 output = result["result"].split("####Global variable updated####")
                 code_output = output[0]
@@ -596,7 +596,7 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
                                 load_ai_messgae = json.dumps(
                                     {
                                         "type": "text",
-                                        "data": f"  \n#### MCP call succeeded, returned result:  \n{result}",
+                                        "data": f"  \n#### MCP call succeeded, returned result:  \n{result}  \n",
                                         "message_id": message_id,
                                     }
                                 )
@@ -607,7 +607,7 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
                                 load_ai_messgae = json.dumps(
                                     {
                                         "type": "text",
-                                        "data": f"  \n#### MCP call for function {function_name} with parameters: {params} failed",
+                                        "data": f"  \n#### MCP call for function {function_name} with parameters: {params} failed  \n",
                                         "message_id": message_id,
                                     }
                                 )
@@ -621,7 +621,7 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
                             load_ai_messgae = json.dumps(
                                 {
                                     "type": "text",
-                                    "data": f"  \n#### No suitable MCP call tool found.",
+                                    "data": f"  \n#### No suitable MCP call tool found.  \n",
                                     "message_id": message_id,
                                 }
                             )
@@ -635,7 +635,7 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
                         load_ai_messgae = json.dumps(
                             {
                                 "type": "text",
-                                "data": f"  \nNo valid JSON output parsed, please optimize the backend MCP prompt.",
+                                "data": f"  \n#### No valid JSON output parsed, please optimize the backend MCP prompt.  \n",
                                 "message_id": message_id,
                             }
                         )

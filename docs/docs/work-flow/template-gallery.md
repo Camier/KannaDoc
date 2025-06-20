@@ -2,5 +2,5 @@
 sidebar_position: 4
 ---
 
-# Workflow Examples
+# Template Gallery
 comming soon...

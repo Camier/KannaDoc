@@ -15,16 +15,12 @@ Our advanced **vision-based multimodal RAG-Chat system** enables **AI-powered co
 
 Before proceeding, ensure you've configured your preferred LLM and knowledge base by clicking the **Config Now** button in the center-right section.
 
----
-
 ## Configuring Knowledge Base and LLM
 
 Click the **Config Now** button (center-right section) to access the Knowledge Base Configuration panel.  
 ![Knowledge Base Configuration - Config Now](./img/Knowledge-Base-Config-Now.png)
 
----
-
-### Configuration Panel - Upper Section
+### 1. Configuration Panel - Upper Section
 
 ![Knowledge Base Configuration - Upper Section](./img/Knowledge-Base-Configuration-Upper-Section.png)
 
@@ -56,9 +52,7 @@ Click the **Config Now** button (center-right section) to access the Knowledge B
 LAYRA's vision-based multimodal RAG system requires your LLM to support visual inputs (VLM capability) for full RAG functionality.  
 :::
 
----
-
-### Configuration Panel - Lower Section
+### 2. Configuration Panel - Lower Section
 
 ![Knowledge Base Configuration - Lower Section](./img/Knowledge-Base-Configuration-Lower-Section.png)
 
@@ -106,6 +100,8 @@ When no files are uploaded and no knowledge bases selected:
 - Pure LLM conversation
 - No knowledge base integration
 - Fastest response time
+
+![Standard Chat](./img/standard-chat.png)
 
 ### RAG Mode
 
@@ -160,6 +156,8 @@ To analyze complete documents:
 1. Set score threshold to 0
 2. Ensure Top-K exceeds document page count
    :::
+
+---
 
 ## Conversation History
 
