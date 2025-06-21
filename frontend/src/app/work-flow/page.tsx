@@ -246,9 +246,12 @@ const Workflow = () => {
                 fullScreenFlow={fullScreenFlow}
               />
             ) : (
-              <div className="flex-1 h-full flex items-center justify-center bg-white rounded-3xl shadow-sm p-6">
-                <p className="text-gray-500 text-xl">
+              <div className="flex-1 h-full flex items-center flex-col justify-center gap-2 bg-white rounded-3xl shadow-sm p-6">
+                <p className="text-gray-500 text-2xl">
                   Please create or choose a workflow to start
+                </p>
+                <p className="text-gray-500 text-lg">
+                  Access tutorials via top-right hamburger menu
                 </p>
               </div>
             )}

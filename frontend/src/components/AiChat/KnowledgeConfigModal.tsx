@@ -252,7 +252,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
       <div className="bg-white rounded-3xl px-10 py-6 w-[40%]">
-        <div className="mb-4 flex items-center justify-between">
+        <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -298,6 +298,39 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
             Add Knowledge-Base
           </a>
         </div>
+
+        <p className="text-gray-500 text-sm mb-2 flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="size-4 mr-[2px] my-auto"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+            />
+          </svg>
+          Tutorials: Click top-right
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="mx-1 size-5 my-auto"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+          icon
+        </p>
 
         {/* 可滚动内容区域 */}
         <div className="flex-1 overflow-y-auto px-2  max-h-[50vh]">

@@ -109,16 +109,16 @@ const config: Config = {
           title: 'Community',
           items: [
             {
-              label: 'Bilibili',
+              label: 'B站视频介绍',
               href: 'https://www.bilibili.com/video/BV1sd7QzmEUg/?share_source=copy_web',
             },
             {
-              label: 'ZhiHu',
-              href: 'https://zhuanlan.zhihu.com/p/1913381456694219363',
+              label: '微信公众号',
+              href: 'https://github.com/liweiphys/layra/blob/main/assets/WechatOfficialAccount.jpg',
             },
             {
-              label: 'Wechat',
-              href: 'https://mp.weixin.qq.com/s/xey3jujBZbstbQjPLSa2uA',
+              label: '微信群',
+              href: 'https://github.com/liweiphys/layra/blob/main/assets/Wechat-group1.jpg',
             },
           ],
         },
