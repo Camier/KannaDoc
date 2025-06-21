@@ -9,8 +9,8 @@
       <img src="https://img.shields.io/github/license/liweiphys/layra" alt="License: Apache 2.0" />
     </a>
     <a href="https://github.com/liweiphys/layra/issues">
-    <img src="https://img.shields.io/github/issues/liweiphys/layra" alt="Issues" />
-  </a>
+      <img src="https://img.shields.io/github/issues-closed/liweiphys/layra" alt="Closed Issues" />
+    </a>
     <a href="https://liweiphys.github.io/layra">
       <img src="https://img.shields.io/badge/Tutorial-GitHub_Pages-blue" alt="Tutorial" />
     </a>
@@ -336,7 +336,7 @@ The workflow execution follows an **event-driven**, **stateful debugging** patte
 
 - Embedding: `colqwen2.5-v0.2`
 - LLM Serving: `Qwen2.5-VL series (or any OpenAI-compatible model)`
-[LOCAL DEPLOYMENT NOTE](https://liweiphys.github.io/layra/docs/RAG-Chat)
+  [LOCAL DEPLOYMENT NOTE](https://liweiphys.github.io/layra/docs/RAG-Chat)
 
 ---
 
@@ -378,14 +378,17 @@ docker compose logs -f <container_name>
 
 > **Note**: If you encounter issues with `docker compose`, try using `docker-compose` (with the dash) instead. Also, ensure that you're using Docker Compose v2, as older versions may not support all features. You can check your version with `docker compose version` or `docker-compose version`.
 
-#### 🔧 Troubleshooting Tips  
-If services fail to start:  
+#### 🔧 Troubleshooting Tips
+
+If services fail to start:
+
 ```bash
 # Check container logs:
 docker compose logs <container name>
 ```
 
 Common fixes:
+
 ```bash
 nvidia-smi  # Verify GPU detection
 docker compose down && docker compose up --build  # preserve data to rebuild
@@ -396,13 +399,13 @@ docker compose down -v && docker compose up --build  # ⚠️ Caution: delete al
 
 Choose the operation you need:
 
-| **Scenario**                               | **Command**                                     | **Effect**                               |
-| ------------------------------------------ | ----------------------------------------------- | ---------------------------------------- |
-| **Stop services**<br>(preserve data)       | `docker compose stop`                           | Stops containers but keeps them intact   |
-| **Restart after stop**                     | `docker compose start`                          | Restarts stopped containers              |
-| **Rebuild after code changes**             | `docker compose up -d --build`                  | Rebuilds images and recreates containers |
-| **Recreate containers**<br>(preserve data) | `docker compose down`<br>`docker compose up -d` | Destroys then recreates containers       |
-| **Full cleanup**<br>(delete all data)   | `docker compose down -v`                        | ⚠️ Destroys containers and deletes volumes  |
+| **Scenario**                               | **Command**                                     | **Effect**                                 |
+| ------------------------------------------ | ----------------------------------------------- | ------------------------------------------ |
+| **Stop services**<br>(preserve data)       | `docker compose stop`                           | Stops containers but keeps them intact     |
+| **Restart after stop**                     | `docker compose start`                          | Restarts stopped containers                |
+| **Rebuild after code changes**             | `docker compose up -d --build`                  | Rebuilds images and recreates containers   |
+| **Recreate containers**<br>(preserve data) | `docker compose down`<br>`docker compose up -d` | Destroys then recreates containers         |
+| **Full cleanup**<br>(delete all data)      | `docker compose down -v`                        | ⚠️ Destroys containers and deletes volumes |
 
 #### ⚠️ Important Notes
 

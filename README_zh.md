@@ -9,9 +9,9 @@
       <img src="https://img.shields.io/github/license/liweiphys/layra" alt="License: Apache 2.0" />
     </a>
     <a href="https://github.com/liweiphys/layra/issues">
-    <img src="https://img.shields.io/github/issues/liweiphys/layra" alt="Issues" />
-  </a>
-      <a href="https://liweiphys.github.io/layra">
+      <img src="https://img.shields.io/github/issues-closed/liweiphys/layra" alt="Closed Issues" />
+    </a>
+    <a href="https://liweiphys.github.io/layra">
       <img src="https://img.shields.io/badge/Tutorial-GitHub_Pages-blue" alt="Tutorial" />
     </a>
   </p>
@@ -305,8 +305,7 @@ PDF 解析为图像 →ColQwen2.5 视觉嵌入 → 元数据/文件存储：
 
 - 嵌入模型：`colqwen2.5-v0.2`
 - LLM 服务：`Qwen2.5-VL系列（或任意OpenAI兼容模型）`
-[本地部署注意事项](https://liweiphys.github.io/layra/docs/RAG-Chat)
-
+  [本地部署注意事项](https://liweiphys.github.io/layra/docs/RAG-Chat)
 
 ---
 
@@ -336,14 +335,17 @@ docker compose logs -f <容器名>  # 实时日志
 
 > **注意**：如果 `docker compose` 遇到问题，尝试使用 `docker-compose`。同时，确保你使用的是 Docker Compose v2，旧版本不被 LAYRA 支持。你可以通过 `docker compose version` 或 `docker-compose version` 来检查当前版本。
 
-#### 🔧 故障排除指南  
-若服务启动失败：  
+#### 🔧 故障排除指南
+
+若服务启动失败：
+
 ```bash
 # 查看容器日志：
 docker compose logs <容器名称>
 ```
 
 常用修复方案：
+
 ```bash
 nvidia-smi  # 验证GPU识别状态
 docker compose down && docker compose up --build  # 保留数据重建
@@ -354,13 +356,13 @@ docker compose down -v && docker compose up --build  # ⚠️ 删除所有数据
 
 **按需选择操作：**
 
-| **场景** | **命令** | **效果** |
-|--------------|-------------|------------|
-| **停止服务**<br>(保留数据) | `docker compose stop` | 停止容器但保持容器完整 |
-| **停止后重启** | `docker compose start` | 重启已停止的容器 |
-| **代码更新后重建** | `docker compose up -d --build` | 重新构建镜像并创建容器 |
-| **重建容器**<br>(保留数据) | `docker compose down`<br>`docker compose up -d` | 销毁后重新创建容器 |
-| **彻底清理**<br>(删除所有数据) | `docker compose down -v` | ⚠️ 销毁容器并删除数据卷 |
+| **场景**                       | **命令**                                        | **效果**                |
+| ------------------------------ | ----------------------------------------------- | ----------------------- |
+| **停止服务**<br>(保留数据)     | `docker compose stop`                           | 停止容器但保持容器完整  |
+| **停止后重启**                 | `docker compose start`                          | 重启已停止的容器        |
+| **代码更新后重建**             | `docker compose up -d --build`                  | 重新构建镜像并创建容器  |
+| **重建容器**<br>(保留数据)     | `docker compose down`<br>`docker compose up -d` | 销毁后重新创建容器      |
+| **彻底清理**<br>(删除所有数据) | `docker compose down -v`                        | ⚠️ 销毁容器并删除数据卷 |
 
 #### ⚠️ 重要提示
 
@@ -371,6 +373,7 @@ docker compose down -v && docker compose up --build  # ⚠️ 删除所有数据
    ```
 
 2. **修改 `.env` 或代码后**，必须重新构建：
+
    ```bash
    docker compose up -d --build
    ```

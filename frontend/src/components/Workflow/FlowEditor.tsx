@@ -1117,7 +1117,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         label: nodeTypesInfo[type].label,
         nodeType: type,
         output: "This area displays the Node output during workflow execution.",
-        prompt: '输出以：{"output":AIOutput}的格式输出，不要包含任何其他内容.',
+        prompt: 'Your are a helpful assistant.',
         vlmInput: "",
         chatflowOutputVariable: "",
         isChatflowInput: false,

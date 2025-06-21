@@ -526,6 +526,7 @@ class WorkflowEngine:
                     vlm_input = node.data["vlmInput"]
                     temp_db_id = ""
                 vlm_input = replace_template(vlm_input, self.global_variables)
+                system_prompt = replace_template(node.data["prompt"], self.global_variables)
 
                 ##### mcp section #####
                 mcp_tools_for_call = {}
@@ -664,7 +665,7 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
                     user_message_content=user_message,
                     model_config=node.data["modelConfig"],
                     message_id=message_id,
-                    system_prompt=node.data["prompt"],
+                    system_prompt=system_prompt,
                     save_to_db=True if node.data["isChatflowOutput"] else False,
                     user_image_urls=self.user_image_urls,
                     supply_info=self.supply_info,

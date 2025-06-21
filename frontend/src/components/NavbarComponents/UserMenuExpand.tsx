@@ -26,15 +26,6 @@ const UserMenuExpand = () => {
           clipRule="evenodd"
         />
       </svg>
-
-      {/* <Image
-        src={"/noAvatar.png"}
-        alt=""
-        width={24}
-        height={24}
-        className="cursor-pointer w-6 h-6 object-cover rounded-xs"
-        onClick={() => setIsUserInfoOpen((prev) => !prev)}
-      /> */}
       <div
         className="group flex flex-col gap-[4.5px] cursor-pointer transform transition-transform duration-300  hover:scale-110"
         onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -56,19 +47,89 @@ const UserMenuExpand = () => {
         />
       </div>
       {isMenuOpen && (
-        <div className="z-20 bg-white/100 shadow-2xl absolute left-0 top-10 w-full h-[calc(20vh-98px)] flex flex-col items-center justify-center gap-[10%] font-medium text-sm rounded-3xl">
+        <div className="z-20 p-4 bg-white/100 shadow-2xl absolute right-0 top-10 flex flex-col items-center justify-center gap-2 rounded-3xl">
+          <a
+            href="https://liweiphys.github.io/layra/" // 配置页面的路由路径
+            className="px-3 text-indigo-500 hover:text-indigo-700 flex items-center cursor-pointer"
+            target="_blank" // 新窗口打开
+            rel="noopener noreferrer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="size-5 mr-1"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+              />
+            </svg>
+            Tutorial
+          </a>
+
           <div
-            className="cursor-pointer text-red-400 font-semibold"
+            className="cursor-pointer text-red-400 hover:text-red-600 flex items-center "
             onClick={logoutUser}
           >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="size-5 mr-1"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9"
+              />
+            </svg>
             Log out
           </div>
         </div>
       )}
       {isUserInfoOpen && (
-        <div className="p-6 z-20 bg-white/100 shadow-2xl absolute right-0 top-10 flex flex-col items-start justify-center gap-4 font-medium text-sm rounded-3xl">
-          <div className="whitespace-nowrap">Username: {user?.name}</div>
-          <div className="whitespace-nowrap">Email: {user?.email}</div>
+        <div className="z-20 p-4 bg-white/100 shadow-2xl absolute right-0 top-10 flex flex-col items-start justify-center gap-2 rounded-3xl">
+          <div className="whitespace-nowrap px-3 flex items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="size-5 mr-1"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+              />
+            </svg>
+
+            {user?.name}
+          </div>
+          <div className="whitespace-nowrap px-3 flex items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="size-5 mr-1"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+              />
+            </svg>
+            {user?.email}
+          </div>
         </div>
       )}
     </div>
