@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Quick Start
 
-Let's discover **LAYRA in under 10 minutes** - the visual-native AI agent engine that sees, understands, and acts.
+Let's discover **LAYRA in under 60 minutes** - the visual-native AI agent engine that sees, understands, and acts.
 
 > Want to save time and effort? Join our WeChat group by scanning the [QR code](https://github.com/liweiphys/layra/blob/main/assets/Wechat-group1.jpg) and get direct help from our developers!
 >

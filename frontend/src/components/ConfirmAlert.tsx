@@ -49,7 +49,7 @@ const ConfirmAlert: React.FC<ConfirmAlertProps> = ({
             <h2 className="text-lg font-semibold">ERROR</h2>
           </div>
         )}
-        <p className="mb-6 p-2 overflow-scroll">{message}</p>
+        <p className="mb-6 p-2 overflow-auto">{message}</p>
         <div className="flex justify-end gap-2">
           <button
             onClick={onCancel}

@@ -113,7 +113,7 @@ docker compose logs -f <container_name>
 Your deployment is complete! Start creating with Layra now. 🚀✨  
 _For detailed options, see the [Deployment section](#deployment)._
 
-> **📘 Essential Learning:** We strongly recommend spending just 10 minutes with the [tutorial](https://liweiphys.github.io/layra) before starting with LAYRA - **this small investment will help you master its full potential** and unlock advanced capabilities.
+> **📘 Essential Learning:** We strongly recommend spending just 60 minutes with the [tutorial](https://liweiphys.github.io/layra) before starting with LAYRA - **this small investment will help you master its full potential** and unlock advanced capabilities.
 
 ---
 

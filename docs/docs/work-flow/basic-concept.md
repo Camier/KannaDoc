@@ -127,6 +127,15 @@ animals = {"species": ["dog", "cat", "bird"]}  # dictionary
 
 ![Global Variable](./img/global-variable.png)
 
+:::important Variable Declaration Requirement
+
+All variables must be defined in `Global Variables` before use, including:
+
+- Variables updated by LLM node JSON outputs
+- Template variables for rendering (`{{variable}}`)
+- Any referenced data objects in workflows  
+:::
+
 ---
 
 ## Create Your First LAYRA Workflow
@@ -163,5 +172,6 @@ Just as every programmer begins with "Hello World", your LAYRA journey starts wi
 
 🎉 **Congratulations!** You've built your first LAYRA workflow!
 
-## Next Steps  
+## Next Steps
+
 Next, let's dive deeper into the functionality of nodes!

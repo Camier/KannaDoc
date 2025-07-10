@@ -23,7 +23,7 @@
 
 <div align="center">
   <!-- 折叠式群组面板 -->
-  <details>
+  <details open>
     <summary>📢 点击展开微信交流群</summary>
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 10px;">
       <div style="text-align: center;">

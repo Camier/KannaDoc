@@ -56,26 +56,28 @@ async def execute_workflow(
             if workflow.debug_resume_task_id
             else workflow.input_resume_task_id
         )
-        # 1. 合并更新全局变量
+
         state_key = f"workflow:{task_id}:state"
         state = await redis_conn.get(state_key)
         if not state:
             raise {"code": -2, "msg": str("任务过期，请重新执行！")}
 
-        state_data = json.loads(state)
+        # 调试阶段合并更新全局变量
+        if workflow.debug_resume_task_id:
+            state_data = json.loads(state)
 
-        # 更新全局变量（深合并）
-        def deep_update(target, source):
-            for k, v in source.items():
-                if isinstance(v, dict) and k in target:
-                    deep_update(target[k], v)
-                else:
-                    target[k] = v
+            # 更新全局变量（深合并）
+            def deep_update(target, source):
+                for k, v in source.items():
+                    if isinstance(v, dict) and k in target:
+                        deep_update(target[k], v)
+                    else:
+                        target[k] = v
 
-        deep_update(state_data["global_variables"], workflow.global_variables)
+            deep_update(state_data["global_variables"], workflow.global_variables)
 
-        # 保存更新后的状态
-        await redis_conn.setex(state_key, 3600, json.dumps(state_data))
+            # 保存更新后的状态
+            await redis_conn.setex(state_key, 3600, json.dumps(state_data))
     else:
         task_id = str(uuid.uuid4())
 
@@ -422,7 +424,7 @@ async def docker_image_list(
     images = await CodeSandbox.get_all_images()
     sandbox_images = ["python-sandbox:latest"]
     for image in images:
-        if image.startswith("sandbox-"+username+"-"):
+        if image.startswith("sandbox-" + username + "-"):
             sandbox_images.append("-".join(image.split("-")[2:]))
     return {"status": "success", "images": sandbox_images}
 
@@ -432,6 +434,6 @@ async def docker_image_list(
     username: str, image_name: str, current_user: User = Depends(get_current_user)
 ):
     await verify_username_match(current_user, username)
-    processed_image_name = "sandbox-"+username+"-" + image_name
-    result = await CodeSandbox.delete_image(processed_image_name,True)
+    processed_image_name = "sandbox-" + username + "-" + image_name
+    result = await CodeSandbox.delete_image(processed_image_name, True)
     return result

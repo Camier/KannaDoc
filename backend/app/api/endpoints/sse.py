@@ -17,7 +17,7 @@ import uuid
 from redis.asyncio import Redis, ResponseError
 
 from app.workflow.mcp_tools import mcp_call_tools
-from app.workflow.utils import find_outermost_braces
+from app.workflow.utils import find_outermost_braces, replace_template
 
 router = APIRouter()
 
@@ -237,16 +237,8 @@ async def chat_stream(
     await verify_username_match(current_user, llm_input.username)
     supply_info = ""
     message_id = str(uuid.uuid4())  # 生成 UUIDv4
-    def render_template(template: str, data: dict) -> str:
-        """
-        将模板中的 {{ variable }} 替换为字典中对应的字符串值
-        :param template: 包含 {{ 变量 }} 的模板字符串
-        :param data: 包含键值对的字典
-        :return: 替换后的字符串
-        """
-        pattern = re.compile(r"\{\{\s*(.*?)\s*\}\}")  # 自动处理变量名前后空格
-        return pattern.sub(lambda m: str(data.get(m.group(1), "")), template)
-    vlm_input = render_template(llm_input.user_message, llm_input.global_variables)
+    vlm_input = replace_template(llm_input.user_message, llm_input.global_variables)
+    system_prompt = replace_template(llm_input.system_prompt, llm_input.global_variables)
 
     ##### mcp section #####
     mcp_tools_for_call = {}
@@ -286,7 +278,7 @@ async def chat_stream(
         mcp_full_response_json = "".join(mcp_full_response)
         mcp_outermost_braces_string_list = find_outermost_braces(mcp_full_response_json)
         try:
-            mcp_outermost_braces_string = mcp_outermost_braces_string_list[0]
+            mcp_outermost_braces_string = mcp_outermost_braces_string_list[-1]
             mcp_outermost_braces_dict = json.loads(mcp_outermost_braces_string)
             function_name = mcp_outermost_braces_dict.get("function_name")
             if function_name:
@@ -318,7 +310,7 @@ async def chat_stream(
             user_message,
             llm_input.llm_model_config,
             message_id,
-            llm_input.system_prompt,
+            system_prompt,
         ),
         media_type="text/event-stream",
         headers={"message-id": message_id},

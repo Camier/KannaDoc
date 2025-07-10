@@ -581,7 +581,7 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
                     mcp_full_response_json = "".join(mcp_full_response)
                     mcp_outermost_braces_string_list = find_outermost_braces(mcp_full_response_json)
                     try:
-                        mcp_outermost_braces_string = mcp_outermost_braces_string_list[0]
+                        mcp_outermost_braces_string = mcp_outermost_braces_string_list[-1]
                         mcp_outermost_braces_dict = json.loads(mcp_outermost_braces_string)
                         function_name = mcp_outermost_braces_dict.get("function_name")
                         if function_name:

@@ -260,7 +260,14 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         updateChat(node.id, "Await for running...");
       }
     });
-  }, [workFlow, handleNewChatflow, pushHistory, updateChat, updateOutput, updateStatus]); // 只需要依赖 workFlow
+  }, [
+    workFlow,
+    handleNewChatflow,
+    pushHistory,
+    updateChat,
+    updateOutput,
+    updateStatus,
+  ]); // 只需要依赖 workFlow
 
   // 刷新按钮的处理函数
   const handleRefresh = () => {
@@ -1117,7 +1124,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         label: nodeTypesInfo[type].label,
         nodeType: type,
         output: "This area displays the Node output during workflow execution.",
-        prompt: 'Your are a helpful assistant.',
+        prompt: "Your are a helpful assistant.",
         vlmInput: "",
         chatflowOutputVariable: "",
         isChatflowInput: false,
@@ -1406,7 +1413,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
           }
           sendInputResumeTaskId = "";
         } else if (input_resume && debug) {
-          sendBreakpoints = sendBreakpoints = nodes
+          sendBreakpoints = nodes
             .filter((node) => node.data.debug === true)
             .map((node) => node.id);
           sendDebugResumeTaskId = "";
@@ -1606,8 +1613,26 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   };
 
   const handleExportWorkflow = () => {
+    const outputNodes = nodes.map((node) => {
+      // 不满足条件的节点直接返回原节点（不修改）
+      if (node.data.nodeType !== "vlm" || !node.data.modelConfig) {
+        return node;
+      }
+
+      // 创建新对象避免修改原节点
+      return {
+        ...node, // 浅拷贝节点属性
+        data: {
+          ...node.data, // 浅拷贝data属性
+          modelConfig: {
+            ...node.data.modelConfig, // 浅拷贝modelConfig属性
+            apiKey: "", // 仅修改apiKey字段
+          },
+        },
+      };
+    });
     const exportData = {
-      nodes,
+      nodes: outputNodes,
       edges,
       globalVariables,
       metadata: {
@@ -1621,7 +1646,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
 
     const a = document.createElement("a");
     a.href = url;
-    a.download = `${workFlow.workflowName}_${Date.now()}.layra`;
+    a.download = `${workFlow.workflowName}_${Date.now()}_layra.json`;
     document.body.appendChild(a);
     a.click();
 
@@ -1782,7 +1807,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             <input
               type="file"
               ref={fileInputRef}
-              accept=".layra"
+              accept=".json"
               onChange={handleImportWorkflow}
               className="hidden"
             />

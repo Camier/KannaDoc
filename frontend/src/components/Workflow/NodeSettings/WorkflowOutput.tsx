@@ -863,7 +863,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                 className={`flex gap-1 ${
                   isSendDisabled || sendDisabled
                     ? "bg-indigo-300 cursor-not-allowed"
-                    : "bg-indigo-500 hover:bg-indigo-600"
+                    : "bg-indigo-500 hover:bg-indigo-600 cursor-pointer "
                 } rounded-full text-base item-center justify-center ${
                   codeFullScreenFlow ? "px-6" : "px-3"
                 } py-2 text-white`}
