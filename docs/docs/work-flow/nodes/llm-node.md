@@ -22,7 +22,7 @@ Defines the system prompt guiding the LLM's behavior. Supports dynamic variable 
   - Model selection
   - LLM parameters (temperature, max tokens, top-P, etc.)
   - Knowledge base RAG integration  
-    _Refer to [RAG-Chat](../../rag-chat) for implementation details._
+    _Refer to [RAG-Chat](../../RAG-Chat) for implementation details._
 
 ### 2. Input Configuration
 

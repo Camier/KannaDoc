@@ -1,6 +1,6 @@
 <div align="center">
   <img src="./assets/logo.png" width="300" height="300" alt="LAYRA Logo" />
-  <h1>🌌 LAYRA：视觉优先的Agent工作流引擎：构建无限可能！</h1>
+  <h1>🌌 LAYRA：视觉优先的下一代Agent工作流引擎：构建无限可能！</h1>
   <p>
     <a href="https://github.com/liweiphys/layra/stargazers">
       <img src="https://img.shields.io/github/stars/liweiphys/layra?style=social" alt="GitHub Stars" />
@@ -46,6 +46,7 @@
 
 - **🧑‍💻 现代化前端：** 基于 Next.js 15 (TypeScript) 和 TailwindCSS 4.0 构建，提供响应迅捷、开发者友好的用户界面。
 - **⚡ 高性能后端：** 基于 FastAPI， 集成全异步 Redis、MySQL、MongoDB、Kafka 和 MinIO——专为高并发设计。
+- **🔩 服务解耦架构：** 各服务独立部署在专用容器中，支持按需扩展与故障隔离。
 - **🎯 视觉原生文档理解：** 利用 ColQwen2.5 将文档转换为语义向量，并存储于 Milvus 向量数据库中。
 - **🚀 强大的工作流引擎：** 可构建复杂、循环嵌套且可调试的工作流，具备完整的 Python 执行能力和人机协同（Human-in-the-loop）功能。
 
@@ -113,7 +114,7 @@ docker compose logs -f <container_name>
 所有服务运行正常后，即可使用 LAYRA 进行开发！🚀✨  
 _详细选项请参阅[部署指南](#部署指南)_
 
-> **📘 重要提示：** 我们强烈建议在开始使用 LAYRA 前花 10 分钟学习[教程](https://liweiphys.github.io/layra) - **这小小的投入将帮助您掌握 LAYRA 的全部潜力**，解锁各项高级功能。
+> **📘 重要提示：** 我们强烈建议在开始使用 LAYRA 前花 60 分钟学习[教程](https://liweiphys.github.io/layra) - **这小小的投入将帮助您掌握 LAYRA 的全部潜力**，解锁各项高级功能。
 
 ---
 
@@ -121,9 +122,6 @@ _详细选项请参阅[部署指南](#部署指南)_
 官方的详细教程请访问我们的 GitHub Pages:
 
 [官方教程](https://liweiphys.github.io/layra)
-
-> **🚀 快速更新!**  
-> 我们的教程在快速更新中!
 
 ---
 

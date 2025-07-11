@@ -172,6 +172,8 @@ Just as every programmer begins with "Hello World", your LAYRA journey starts wi
 
 🎉 **Congratulations!** You've built your first LAYRA workflow!
 
+---
+
 ## Next Steps
 
 Next, let's dive deeper into the functionality of nodes!

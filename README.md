@@ -46,6 +46,7 @@ Built for **Enterprise-Grade** deployment, LAYRA features:
 
 - **🧑‍💻 Modern Frontend:** Built with Next.js 15 (TypeScript) & TailwindCSS 4.0 for a snappy, developer-friendly UI.
 - **⚡ High-Performance Backend:** FastAPI-powered with async integration for Redis, MySQL, MongoDB, Kafka & MinIO – engineered for high concurrency.
+- **🔩 Decoupled Service Architecture**: Independent services deployed in dedicated containers, enabling scaling on demand and fault isolation.
 - **🎯 Visual-Native Document Understanding:** Leverages ColQwen 2.5 to transform documents into semantic vectors stored in Milvus.
 - **🚀 Powerful Workflow Engine:** Construct complex, loop-nested, and debuggable workflows with full Python execution and human-in-the-loop capabilities.
 
@@ -121,10 +122,6 @@ _For detailed options, see the [Deployment section](#deployment)._
 
 For step-by-step instructions and visual guides, visit our tutorial on GitHub Pages:  
 [Tutorial Guide](https://liweiphys.github.io/layra)
-
-> **🚀 Just Updated!**  
-> Our tutorial is currently evolving rapidly with new examples and guides!  
-> **Bookmark this page** and check back frequently for the latest content.
 
 ---
 
