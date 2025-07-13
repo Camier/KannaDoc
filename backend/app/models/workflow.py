@@ -81,3 +81,7 @@ class UserMessage(BaseModel):
 class GetTools(BaseModel):
     username: str
     mcp_url: str
+    mcp_headers: dict
+    mcp_timeout: float
+    mcp_sse_read_timeout: float
+

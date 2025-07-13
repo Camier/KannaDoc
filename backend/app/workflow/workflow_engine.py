@@ -526,7 +526,9 @@ class WorkflowEngine:
                     vlm_input = node.data["vlmInput"]
                     temp_db_id = ""
                 vlm_input = replace_template(vlm_input, self.global_variables)
-                system_prompt = replace_template(node.data["prompt"], self.global_variables)
+                system_prompt = replace_template(
+                    node.data["prompt"], self.global_variables
+                )
 
                 ##### mcp section #####
                 mcp_tools_for_call = {}
@@ -546,6 +548,11 @@ class WorkflowEngine:
                     for mcp_server_name, mcp_server_tools in mcp_servers.items():
                         mcp_server_url = mcp_server_tools.get("mcpServerUrl")
                         mcp_tools = mcp_server_tools.get("mcpTools")
+                        mcp_headers = mcp_server_tools.get("headers", None)
+                        mcp_timeout = mcp_server_tools.get("timeout", 5)
+                        mcp_sse_read_timeout = mcp_server_tools.get(
+                            "sseReadTimeout", 60 * 5
+                        )
                         for mcp_tool in mcp_tools:
                             mcp_tool["url"] = mcp_server_url
                             mcp_tools_for_call[mcp_tool["name"]] = mcp_tool
@@ -579,10 +586,16 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
                         if chunk.get("type") == "text":
                             mcp_full_response.append(chunk.get("data"))
                     mcp_full_response_json = "".join(mcp_full_response)
-                    mcp_outermost_braces_string_list = find_outermost_braces(mcp_full_response_json)
+                    mcp_outermost_braces_string_list = find_outermost_braces(
+                        mcp_full_response_json
+                    )
                     try:
-                        mcp_outermost_braces_string = mcp_outermost_braces_string_list[-1]
-                        mcp_outermost_braces_dict = json.loads(mcp_outermost_braces_string)
+                        mcp_outermost_braces_string = mcp_outermost_braces_string_list[
+                            -1
+                        ]
+                        mcp_outermost_braces_dict = json.loads(
+                            mcp_outermost_braces_string
+                        )
                         function_name = mcp_outermost_braces_dict.get("function_name")
                         if function_name:
                             params = mcp_outermost_braces_dict.get("params")
@@ -591,6 +604,9 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
                                     mcp_tools_for_call[function_name]["url"],
                                     function_name,
                                     params,
+                                    headers=mcp_headers,
+                                    timeout=mcp_timeout,
+                                    sse_read_timeout=mcp_sse_read_timeout,
                                 )
                                 self.supply_info = f"\nPlease answer the question based on these results: {result}"
                                 logger.info("MCP:工作流{self.task_id}mcp调用成功")

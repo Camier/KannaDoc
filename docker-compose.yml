@@ -313,7 +313,7 @@ services:
       context: ./frontend
       args:
         - NEXT_PUBLIC_API_BASE_URL=${NEXT_PUBLIC_API_BASE_URL}
-        - MINO_IMAGE_URL_PREFIX=${MINO_IMAGE_URL_PREFIX}
+        - MINIO_IMAGE_URL_PREFIX=${MINIO_IMAGE_URL_PREFIX}
         - MINIO_URL=${MINIO_URL}
     depends_on:
       backend:

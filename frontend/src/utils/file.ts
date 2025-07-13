@@ -1,28 +1,82 @@
-export const getFileIcon = (fileType?: string) => {
-  if (!fileType) return "📁";
-  const type = fileType.split("/")[0];
-  const subtype = fileType.split("/")[1];
+export const getFileIcon = (fileExtension?: string) => {
+  if (!fileExtension) return "📁";
+  
+  // 统一处理：移除开头的点，转换为小写
+  const ext = fileExtension.replace(/^\./, '').toLowerCase();
 
-  switch (type) {
-    case "image":
+  switch (ext) {
+    // 图片类型
+    case 'jpg':
+    case 'jpeg':
+    case 'png':
+    case 'gif':
+    case 'bmp':
+    case 'webp':
+    case 'svg':
+    case 'ico':
       return "🖼️";
-    case "application":
-      switch (subtype) {
-        case "pdf":
-          return "📄";
-        case "vnd.openxmlformats-officedocument.wordprocessingml.document":
-          return "📝";
-        case "vnd.ms-powerpoint":
-        case "vnd.openxmlformats-officedocument.presentationml.presentation":
-          return "📊";
-        case "vnd.ms-excel":
-        case "vnd.openxmlformats-officedocument.spreadsheetml.sheet":
-          return "📈";
-        default:
-          return "📁";
-      }
+
+    // PDF文档
+    case 'pdf':
+      return "📄";
+
+    // Word文档
+    case 'doc':
+    case 'docx':
+      return "📝";
+
+    // PowerPoint文档
+    case 'ppt':
+    case 'pptx':
+      return "📊";
+
+    // Excel文档
+    case 'xls':
+    case 'xlsx':
+      return "📈";
+
+    // 文本文件
+    case 'txt':
+    case 'md':
+    case 'rtf':
+      return "📃";
+
+    // 压缩文件
+    case 'zip':
+    case 'rar':
+    case '7z':
+    case 'tar':
+    case 'gz':
+      return "📦";
+
+    // 代码文件
+    case 'js':
+    case 'ts':
+    case 'jsx':
+    case 'tsx':
+      return "📜";
+    case 'html':
+    case 'htm':
+      return "🌐";
+    case 'css':
+      return "🎨";
+    case 'json':
+      return "📋";
+
+    // 音视频文件
+    case 'mp3':
+    case 'wav':
+    case 'flac':
+      return "🎵";
+    case 'mp4':
+    case 'mov':
+    case 'avi':
+    case 'mkv':
+      return "🎬";
+
+    // 默认文件图标
     default:
-      return "📁";
+      return "📄";
   }
 };
 
@@ -57,7 +111,7 @@ export const base64Processor = {
 };
 
 export const SupportUploadFormat = 
-  ".odm,.sgl,.odt,.ott,.sxw,.stw,.fodt,.xml,.docx,.docm,.dotx,.dotm,.doc,.dot,.wps,.pdb,.pdf,.hwp,.html,.htm,.lwp,.psw,.rft,.sdw,.vor,.txt,.wpd,.oth,.ods,.ots,.sxc,.stc,.fods,.xml,.xlsx,.xlsm,.xltm,.xltx,.xlsb,.xls,.xlc,.xlm,.xlw,.xlk,.sdc,.vor,.dif,.wk1,.wks,.123,.pxl,.wb2,.csv,.odp,.otp,.sti,.sxd,.fodp,.xml,.pptx,.pptm,.ppsx,.potm,.potx,.ppt,.pps,.pot,.sdd,.vor,.sdp,.odg,.otg,.sxd,.std,.sgv,.sda,.vor,.sdd,.cdr,.svg,.vsd,.vst,.html,.htm,.stw,.sxg,.odf,.sxm,.smf,.mml,.odb";
+  ".jpg,.jpeg,.png,.gif,.bmp,.webp,.ico,.png,.odm,.sgl,.odt,.ott,.sxw,.stw,.fodt,.xml,.docx,.docm,.dotx,.dotm,.doc,.dot,.wps,.pdb,.pdf,.hwp,.html,.htm,.lwp,.psw,.rft,.sdw,.vor,.txt,.wpd,.oth,.ods,.ots,.sxc,.stc,.fods,.xml,.xlsx,.xlsm,.xltm,.xltx,.xlsb,.xls,.xlc,.xlm,.xlw,.xlk,.sdc,.vor,.dif,.wk1,.wks,.123,.pxl,.wb2,.csv,.odp,.otp,.sti,.sxd,.fodp,.xml,.pptx,.pptm,.ppsx,.potm,.potx,.ppt,.pps,.pot,.sdd,.vor,.sdp,.odg,.otg,.sxd,.std,.sgv,.sda,.vor,.sdd,.cdr,.svg,.vsd,.vst,.html,.htm,.stw,.sxg,.odf,.sxm,.smf,.mml,.odb";
 
   export const SupportFileFormat = 
-  ["odm","sgl","odt","ott","sxw","stw","fodt","xml","docx","docm","dotx","dotm","doc","dot","wps","pdb","pdf","hwp","html","htm","lwp","psw","rft","sdw","vor","txt","wpd","oth","ods","ots","sxc","stc","fods","xml","xlsx","xlsm","xltm","xltx","xlsb","xls","xlc","xlm","xlw","xlk","sdc","vor","dif","wk1","wks","123","pxl","wb2","csv","odp","otp","sti","sxd","fodp","xml","pptx","pptm","ppsx","potm","potx","ppt","pps","pot","sdd","vor","sdp","odg","otg","sxd","std","sgv","sda","vor","sdd","cdr","svg","vsd","vst","html","htm","stw","sxg","odf","sxm","smf","mml","odb"]
+  ["jpg","jpeg","png","gif","bmp","webp","ico","png","odm","sgl","odt","ott","sxw","stw","fodt","xml","docx","docm","dotx","dotm","doc","dot","wps","pdb","pdf","hwp","html","htm","lwp","psw","rft","sdw","vor","txt","wpd","oth","ods","ots","sxc","stc","fods","xml","xlsx","xlsm","xltm","xltx","xlsb","xls","xlc","xlm","xlw","xlk","sdc","vor","dif","wk1","wks","123","pxl","wb2","csv","odp","otp","sti","sxd","fodp","xml","pptx","pptm","ppsx","potm","potx","ppt","pps","pot","sdd","vor","sdp","odg","otg","sxd","std","sgv","sda","vor","sdd","cdr","svg","vsd","vst","html","htm","stw","sxg","odf","sxm","smf","mml","odb"]

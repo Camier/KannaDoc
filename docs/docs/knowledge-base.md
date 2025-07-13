@@ -6,6 +6,10 @@ sidebar_position: 2
 
 LAYRA's RAG system provides **visual-native document understanding** with layout-aware retrieval and processing. To enable RAG functionality, you need to create a knowledge base and upload documents before starting conversations in the RAG-CHAT module. This guide covers how to create and manage your knowledge base.
 
+:::tip Use External Knowledge Bases
+LAYRA also supports calling **external knowledge bases** via the MCP protocol or Python-based web requests. For instance, the **RAGFLOW** knowledge base can be accessed using the MCP protocol. However, this retrieval method is only available within *[Workflows](./work-flow/nodes/llm-node)* and cannot be used in the RAG-CHAT.
+:::
+
 ---
 
 ## Create a Knowledge Base

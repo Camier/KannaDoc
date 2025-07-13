@@ -178,10 +178,19 @@ export const cancelWorkflow = async (username: string, taskId: string) => {
   return api.get(`/workflow/${username}/${taskId}/cancel`);
 };
 
-export const getMcpToolList = async (username: string, mcpUrl: string) => {
+export const getMcpToolList = async (
+  username:string,
+  mcpUrl:string,
+  headers:{[key: string]: string},
+  timeout:number,
+  sseReadTimeout:number
+) => {
   return api.post(`/workflow/mcp_tool_list`, {
     username: username,
     mcp_url: mcpUrl,
+    mcp_headers: headers,
+    mcp_timeout: timeout,
+    mcp_sse_read_timeout: sseReadTimeout,
   });
 };
 

@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "http",
-        hostname: `${process.env.MINO_IMAGE_URL_PREFIX}`,
+        hostname: `${process.env.MINIO_IMAGE_URL_PREFIX}`,
         port: "80",
         pathname: "/minio-file/**",
       },

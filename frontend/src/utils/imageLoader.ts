@@ -2,7 +2,7 @@
 
 // 环境变量配置
 const MINIO_INTERNAL_URL = `${process.env.MINIO_URL}`;
-const PUBLIC_MINIO_URL_PREFIX = `${process.env.MINO_IMAGE_URL_PREFIX}`;
+const PUBLIC_MINIO_URL_PREFIX = `${process.env.MINIO_IMAGE_URL_PREFIX}`;
 
 const imageLoader = ({
   src,

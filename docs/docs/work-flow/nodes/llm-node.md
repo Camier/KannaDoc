@@ -127,6 +127,14 @@ We recommend disabling the LLM's `thinking mode` when using MCP, as the backend 
 
 ---
 
+### 6. MCP Advanced Settings
+
+You can also configure `Headers` and `Timeout Settings` in **Advanced Settings**. For instance, enabling LLM nodes to access **RAGFLOW**'s external knowledge base requires configuring the `api_key` in the headers.
+
+![LLM Node MCP Advanced Settings](./img/llm-mcp-advanced.png)
+
+---
+
 ## ChatFlow Mechanics
 
 We demonstrate ChatFlow Mechanics through a simple workflow containing three LLM nodes:

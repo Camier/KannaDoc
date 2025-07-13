@@ -76,6 +76,11 @@ export interface ModelConfig {
 
 export interface McpConfig {
   mcpServerUrl: string;
+  headers?: {
+    [key: string]: string; // 允许动态属性
+  };
+  timeout?: number;
+  sseReadTimeout?: number;
   mcpTools: {
     [key: string]: string; // 允许动态属性
   }[];

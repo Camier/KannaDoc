@@ -238,7 +238,9 @@ async def chat_stream(
     supply_info = ""
     message_id = str(uuid.uuid4())  # 生成 UUIDv4
     vlm_input = replace_template(llm_input.user_message, llm_input.global_variables)
-    system_prompt = replace_template(llm_input.system_prompt, llm_input.global_variables)
+    system_prompt = replace_template(
+        llm_input.system_prompt, llm_input.global_variables
+    )
 
     ##### mcp section #####
     mcp_tools_for_call = {}
@@ -247,12 +249,18 @@ async def chat_stream(
         for mcp_server_name, mcp_server_tools in mcp_servers.items():
             mcp_server_url = mcp_server_tools.get("mcpServerUrl")
             mcp_tools = mcp_server_tools.get("mcpTools")
+            mcp_headers = mcp_server_tools.get("headers", None)
+            mcp_timeout = mcp_server_tools.get("timeout", 5)
+            mcp_sse_read_timeout = mcp_server_tools.get("sseReadTimeout", 60 * 5)
+            if not mcp_server_url or not mcp_tools:
+                continue
+            # 获取工具列表
             for mcp_tool in mcp_tools:
                 mcp_tool["url"] = mcp_server_url
                 mcp_tools_for_call[mcp_tool["name"]] = mcp_tool
         mcp_prompt = f"""
-你是一个选择函数调用的专家，请根据用户提问帮用户选择最合适的一个函数调用，并给出函数所需的参数，以{{"function_name":函数名，"params":参数}}的json格式输出，不要包含其他内容，如果用户提问与函数无关，请输出{{"function_name":""}}
-这是json格式的函数列表：{json.dumps(mcp_tools_for_call)}"""
+You are an expert in selecting function calls. Please choose the most appropriate function call based on the user's question and provide the required parameters. Output in JSON format: {{"function_name": function name, "params": parameters}}. Do not include any other content. If the user's question is unrelated to functions, output {{"function_name":""}}.
+Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
         mcp_user_message = WorkflowMessage(
             conversation_id="",
             parent_id="",
@@ -288,8 +296,13 @@ async def chat_stream(
                         mcp_tools_for_call[function_name]["url"],
                         function_name,
                         params,
+                        headers=mcp_headers,
+                        timeout=mcp_timeout,
+                        sse_read_timeout=mcp_sse_read_timeout,
                     )
-                    supply_info = f"\n请根据这些结果回答问题{result}"
+                    supply_info = (
+                        f"\nPlease answer the question based on these results: {result}"
+                    )
                 except Exception as e:
                     pass
             else:

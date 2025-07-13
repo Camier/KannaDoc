@@ -411,7 +411,12 @@ async def mcp_tool_list(
     get_tools: GetTools, current_user: User = Depends(get_current_user)
 ):
     await verify_username_match(current_user, get_tools.username)
-    result = await mcp_list_tools(get_tools.mcp_url)
+    result = await mcp_list_tools(
+        get_tools.mcp_url,
+        get_tools.mcp_headers,
+        get_tools.mcp_timeout,
+        get_tools.mcp_sse_read_timeout,
+    )
 
     return {"status": "success", "tools": result}
 

@@ -89,7 +89,7 @@ const SignInPage = () => {
     <div className="absolute w-full h-full top-0 left-0 min-h-screen flex items-center justify-center opacity-100 scrollbar-hide">
       {showAlert.show && <Alert showAlert={showAlert} />}
       <div
-        className={`w-full max-w-[30%] space-y-8 p-10 bg-white rounded-3xl shadow-lg z-10  opacity-80`}
+        className={`w-full max-w-[30%] space-y-6 p-10 bg-white rounded-3xl shadow-lg z-10  opacity-80`}
       >
         <h1
           className={`text-center text-3xl font-extrabold text-transparent bg-clip-text
@@ -164,7 +164,7 @@ const SignInPage = () => {
             />
           </div>
 
-          <div>
+          <div className="mt-8">
             <button
               type="submit"
               className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-xl shadow-xs text-sm font-medium text-white
