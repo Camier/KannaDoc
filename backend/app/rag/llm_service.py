@@ -68,7 +68,7 @@ class ChatService:
             top_K = 30
         else:
             pass
-        
+
         score_threshold = model_config["score_threshold"]
         if score_threshold == -1:
             score_threshold = 10
@@ -78,7 +78,6 @@ class ChatService:
             score_threshold = 20
         else:
             pass
-        
 
         if not system_prompt:
             messages = []
@@ -157,7 +156,7 @@ class ChatService:
                     logger.warning(
                         f"file_id: {score['file_id']} not found or corresponding image does not exist; deleting Milvus vectors"
                     )
-                else: 
+                else:
                     file_used.append(
                         {
                             "score": score["score"],
@@ -225,6 +224,7 @@ class ChatService:
         yield f"data: {file_used_payload}\n\n"
 
         # 处理流响应
+        thinking_content = []
         full_response = []
         total_token = 0
         completion_tokens = 0
@@ -237,6 +237,8 @@ class ChatService:
                     hasattr(delta, "reasoning_content")
                     and delta.reasoning_content != None
                 ):
+                    if not thinking_content:
+                        thinking_content.append("<think>")
                     # 用JSON封装内容，自动处理换行符等特殊字符
                     payload = json.dumps(
                         {
@@ -245,10 +247,14 @@ class ChatService:
                             "message_id": message_id,
                         }
                     )
+                    thinking_content.append(delta.reasoning_content)
                     yield f"data: {payload}\n\n"  # 保持SSE事件标准分隔符
                 # 回答
                 content = delta.content if delta else None
                 if content:
+                    if not full_response and thinking_content:
+                        thinking_content.append("</think>")
+                        full_response.extend(thinking_content)
                     # 用JSON封装内容，自动处理换行符等特殊字符
                     payload = json.dumps(
                         {"type": "text", "data": content, "message_id": message_id}

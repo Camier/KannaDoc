@@ -173,7 +173,7 @@ const MarkdownDisplay: React.FC<MarkdownDisplayProps> = ({
       <div
         className={`prose dark:prose-invert max-w-full ${
           isThinking
-            ? "p-4 bg-gray-100 rounded-3xl text-sm mb-4"
+            ? "p-4 bg-gray-100 text-gray-800 rounded-3xl text-sm mb-4"
             : "text-base"
         }`}
       >

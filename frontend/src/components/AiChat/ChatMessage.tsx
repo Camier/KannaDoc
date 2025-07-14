@@ -1,6 +1,6 @@
 // components/ChatMessage.tsx
 "use client";
-import React, { Dispatch, useState } from "react";
+import React, { Dispatch, useMemo, useState } from "react";
 import { BaseUsed, Message, ModelConfig } from "@/types/types";
 import Image from "next/image";
 import { useAuthStore } from "@/stores/authStore";
@@ -25,6 +25,36 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
   const isUser = message.from === "user"; // 判断是否是用户消息
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
+
+  // 提取thinking内容和剩余内容
+  const { thinkingContent, displayContent } = useMemo(() => {
+    let thinkingContent = "";
+    let displayContent = message.content || "";
+    
+    // 仅处理文本类型的消息
+    if (message.type === "text" && displayContent) {
+      // 检查是否有<think>开头
+      if (displayContent.startsWith("<think>")) {
+        const endTagIndex = displayContent.indexOf("</think>");
+        
+        if (endTagIndex !== -1) {
+          // 有闭合标签：提取思考内容
+          thinkingContent = displayContent.substring(
+            7, // "<think>" 长度
+            endTagIndex
+          );
+          displayContent = displayContent.substring(endTagIndex + 8).trim(); // "</think>" 长度
+        } else {
+          // 没有闭合标签：整个内容作为思考内容
+          thinkingContent = displayContent.substring(7);
+          displayContent = "";
+        }
+      }
+    }
+    
+    return { thinkingContent, displayContent };
+  }, [message.content, message.type]);
+
 
   const handleImageClick = (selctImage: string) => {
     setSelectedImage(selctImage);
@@ -68,9 +98,17 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
             isThinking={true}
           />
         )}
-        {message.type === "text" && message.content && (
+        {message.type === "text" && thinkingContent && (
           <MarkdownDisplay
-            md_text={message.content}
+            md_text={thinkingContent}
+            message={message}
+            showTokenNumber={false}
+            isThinking={true}
+          />
+        )}
+        {message.type === "text" && displayContent && (
+          <MarkdownDisplay
+            md_text={displayContent}
             message={message}
             showTokenNumber={true}
             isThinking={false}
