@@ -76,8 +76,8 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
 
   return (
     <div
-      className={`m-1 rounded-3xl max-w-[95%] w-fit break-words flex flex-col 
-        ${isUser ? "ml-auto" : "mr-auto"} ${
+      className={`m-1 rounded-3xl w-fit break-words flex flex-col 
+        ${isUser ? "ml-auto max-w-[90%]" : "mr-auto max-w-[98%]"} ${
         isUser && message.type === "text"
           ? "" //"bg-indigo-300 shadow-lg"
           : message.type === "image"

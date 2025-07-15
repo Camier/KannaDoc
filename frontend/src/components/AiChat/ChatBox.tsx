@@ -362,7 +362,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
             )}
           </div>
         ) : (
-          <div className="h-[100%] w-[70%] flex flex-col mx-auto">
+          <div className="h-[100%] w-[75%] flex flex-col mx-auto">
             <div className="shadow-xs rounded-xl pb-2 mb-2 flex flex-col item-center justify-center gap-1">
               <div className="w-full px-10 text-sm flex items-center justify-center gap-2 text-indigo-500 font-semibold">
                 <svg
@@ -461,7 +461,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
         )}
       </div>
       {/* 新增定位容器 */}
-      <div className="relative w-[70%] mt-4 mb-4 max-h-[25%] flex items-center justify-center gap-4 mx-auto">
+      <div className="relative w-[75%] mt-4 mb-4 max-h-[40%] flex items-center justify-center gap-4 mx-auto">
         <div className="relative min-w-[75%] h-[100%]">
           <div className="flex justify-center items-center h-full">
             <textarea
@@ -583,7 +583,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
           </div>
         </div>
         <button
-          className={`min-w-[14%] flex gap-1 ${
+          className={`min-w-[13%] flex gap-1 ${
             isSendDisabled || sendDisabled
               ? "bg-indigo-300 cursor-not-allowed"
               : "bg-indigo-500 hover:bg-indigo-600 cursor-pointer"

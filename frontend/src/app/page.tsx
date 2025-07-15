@@ -21,7 +21,7 @@ const Homepage = () => {
   return (
     <div className="flex w-full h-screen items-center justify-center gap-[3%]">
       {/* 左侧内容区域 */}
-      <div className="w-[85%] h-[85%] flex flex-col gap-8 items-center justify-center shadow-lg rounded-3xl">
+      <div className="relative w-[85%] h-[85%] flex flex-col gap-8 items-center justify-center shadow-lg rounded-3xl">
         {/* logo */}
         <div className="w-[80%] h-[80%] flex items-center justify-center transform transition-transform duration-300  hover:scale-105">
           <Image
@@ -139,6 +139,36 @@ const Homepage = () => {
               GitHub{" "}
             </a>
           </h4>
+        </div>
+        <div className="absolute top-6 right-10 text-sm">
+          <a
+            href="https://github.com/liweiphys/layra"
+            className="text-indigo-700 ml-1"
+            target="_blank"
+          >
+            {" "}
+            GitHub{" "}
+          </a>
+          <span>|</span>
+          <a
+            href="https://github.com/liweiphys/layra/blob/main/assets/Wechat-group1.jpg"
+            className="text-indigo-700 ml-1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            Wechat Group (微信群) {" "}
+          </a>
+          <span>|</span>
+          <a
+            href="https://liweiphys.github.io/layra/"
+            className="text-indigo-700 ml-1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            Tutorial{" "}
+          </a>
         </div>
       </div>
     </div>
