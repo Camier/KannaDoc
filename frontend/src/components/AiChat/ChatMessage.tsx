@@ -79,7 +79,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
       className={`m-1 rounded-3xl max-w-[95%] w-fit break-words flex flex-col 
         ${isUser ? "ml-auto" : "mr-auto"} ${
         isUser && message.type === "text"
-          ? "bg-indigo-300 shadow-lg"
+          ? "" //"bg-indigo-300 shadow-lg"
           : message.type === "image"
           ? "bg-white mb-3 shadow-lg"
           : "bg-white mb-0.5"

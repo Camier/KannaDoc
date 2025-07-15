@@ -50,7 +50,7 @@
 }
 
 /* 在全局 CSS 中添加 */
-pre code.hljs {
+pre code {
   display: block;
   overflow-x: auto;
   padding: 1em;
@@ -61,48 +61,57 @@ pre code.hljs {
 pre {
   font-size: 14px;
   position: relative;
-  background: #1f2937;
-  border-radius: 0.5rem;
+  background: #e5e7eb; /* 浅灰色背景 */
+  border-radius: 14px;
   margin: 1rem 0;
-  padding: 1rem;
+  padding: 0.2rem;
+  color: #111827; /* 深灰色文字 */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* 添加柔和阴影 */
 }
 
 /* 控制行内代码 */
 code:not(pre code) {
-  font-size: 14px;
-  background: #f3f4f6;
+  font-size: 12px;
+  background: #e5e7eb; /* 更浅的行内代码背景 */
   padding: 0.2em 0.4em;
   border-radius: 0.25em;
+  color: #111827; /* 深灰色文字 */
 }
 
 /* 覆盖 highlight.js 样式 */
 .hljs {
-  background: #2d2d2d !important; /* 代码块背景色 */
-  color: #d3d3d3 !important; /* 默认文本颜色 */
-  font-size: 14px; /* 字体大小 */
-  border-radius: 8px; /* 圆角 */
+  background: #ffffff !important; /* 纯白背景 */
+  color: #1f2937 !important; /* 深灰文字 */
+  font-size: 14px;
+  border-radius: 12px;
   padding: 1.2rem !important;
 }
 
 /* 语法元素颜色控制 */
 .hljs-keyword {
-  color: #569cd6 !important;
-} /* 关键字 (if/else/return) */
+  color: #3b82f6 !important; /* 亮蓝色关键字 */
+} 
 .hljs-title {
-  color: #4ec9b0 !important;
-} /* 类名/函数名 */
+  color: #0ea5e9 !important; /* 蓝绿色类名/函数名 */
+} 
 .hljs-string {
-  color: #ce9178 !important;
-} /* 字符串 */
+  color: #f472b6 !important; /* 粉红色字符串 */
+} 
 .hljs-comment {
-  color: #6a9955 !important;
-} /* 注释 */
+  color: #48bb78 !important; /* 绿色注释 */
+} 
 .hljs-number {
-  color: #b5cea8 !important;
-} /* 数字 */
+  color: #f59e0b !important; /* 橙色数字 */
+} 
 .hljs-built_in {
-  color: #c586c0 !important;
-} /* 内置函数 */
+  color: #a855f7 !important; /* 紫色内置函数 */
+} 
+.hljs-attr {
+  color: #db2777 !important; /* 属性名颜色 */
+}
+.hljs-variable {
+  color: #fbbf24 !important; /* 变量名颜色 */
+}
 
 .react-flow {
   --xy-node-border-default: 0px !important; 

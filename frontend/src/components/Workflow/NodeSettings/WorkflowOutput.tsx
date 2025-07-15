@@ -733,7 +733,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                       !isSendDisabled && !sendDisabled
                         ? "border-indigo-500 focus:border-indigo-700"
                         : "border-indigo-200 focus:border-indigo-400"
-                    } border-2 rounded-xl $ text-base focus:outline-hidden focus:border-[2.5px] resize-none overflow-y-auto`}
+                    } border-2 rounded-3xl $ text-base focus:outline-hidden focus:border-[2.5px] resize-none overflow-y-auto`}
                     placeholder={
                       isSendDisabled || sendDisabled
                         ? "Waiting for 'Run'"
