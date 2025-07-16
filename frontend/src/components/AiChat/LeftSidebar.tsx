@@ -120,7 +120,7 @@ const LeftSidebar: React.FC<SidebarProps> = ({
   };
 
   return (
-    <div className="bg-white/90 flex-none w-[20%] h-full rounded-3xl flex flex-col items-center p-2">
+    <div className="bg-white/90 flex-none w-[20%] h-full rounded-3xl flex flex-col items-center p-5">
       <div></div>
       {/* 新会话按钮 */}
       <div
@@ -186,7 +186,7 @@ const LeftSidebar: React.FC<SidebarProps> = ({
       </div>
       {/* 聊天列表 */}
       <div className="border-b-2 border-gray-200 h-[1%] w-[80%]"></div>
-      <div className="px-2 w-full flex-1 overflow-scroll scrollbar-hide mt-2">
+      <div className="px-2 w-full flex-1 overflow-scroll scrollbar-hide mt-4">
         {chatHistory.map((chat, index) => {
           const timeLabel = getTimeLabel(chat.lastModifyTime);
           const lastTimeLabel = getTimeLabel(
@@ -210,10 +210,9 @@ const LeftSidebar: React.FC<SidebarProps> = ({
               >
                 <div
                   key={index}
-                  className="py-2 pl-2 pr-0 flex items-center gap-1 w-[80%] cursor-pointer text-md"
+                  className="py-2 pl-2 pr-0 flex items-center gap-1 w-[85%] cursor-pointer text-md"
                   onClick={() => handleSelectChat(chat)}
                 >
-
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -249,14 +248,16 @@ const LeftSidebar: React.FC<SidebarProps> = ({
                   </div>
                 </div>
                 <div
-                  className="w-[20%] flex items-center justify-center font-semibold cursor-pointer text-white"
+                  className="w-[15%] flex items-center justify-center font-semibold cursor-pointer text-white"
                   onClick={() => toggleSettings(index)}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 16 16"
                     fill="currentColor"
-                    className="size-4"
+                    className={`${
+                      chatId === chat.conversationId ? "size-6" : "size-5"
+                    }  shrink-0`}
                   >
                     <path d="M2 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM6.5 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM12.5 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" />
                   </svg>

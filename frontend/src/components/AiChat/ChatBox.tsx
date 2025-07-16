@@ -442,7 +442,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
               )}
             </div>
             <div
-              className="flex-1 overflow-y-auto scrollbar-hide"
+              className="flex-1 overflow-y-auto scrollbar-auto"
               style={{ overscrollBehavior: "contain" }}
             >
               {messages.map((message, index) => (

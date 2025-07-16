@@ -209,10 +209,10 @@ const MarkdownDisplay: React.FC<MarkdownDisplayProps> = ({
       >
         {isThinking && (
           <div
-            className="flex items-center justify-start gap-1 cursor-pointer"
+            className="flex items-center justify-start gap-1 cursor-pointer text-gray-800"
             onClick={() => setHideThinking((prev) => !prev)}
           >
-            <div className="font-semibold text-gray-800">💡 Deep Thinking</div>
+            <div className="font-semibold">💡 Deep Thinking</div>
             <svg
               className={`ml-1 w-4 h-4 transition-transform ${
                 hideThinking ? "" : "rotate-180"
@@ -224,14 +224,14 @@ const MarkdownDisplay: React.FC<MarkdownDisplayProps> = ({
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={2}
+                strokeWidth={3}
                 d="M19 9l-7 7-7-7"
               />
             </svg>
           </div>
         )}
         {!hideThinking &&
-          (message.from === "ai" ? (
+          ((message.from === "ai" && !isThinking) ? (
             <ReactMarkdown
               remarkPlugins={[remarkMath, remarkGfm]} // 必须 math 在前
               rehypePlugins={[
@@ -292,7 +292,7 @@ const MarkdownDisplay: React.FC<MarkdownDisplayProps> = ({
               }}
             >
               {base64Processor.encode(
-                md_text
+                md_text.trimStart()
                   .replace(/\\\[/g, "$$$$") // 匹配 \\[ → $$
                   .replace(/\\\]/g, "$$$$") // 匹配 \\] → $$
                   // 行内公式替换
@@ -301,7 +301,7 @@ const MarkdownDisplay: React.FC<MarkdownDisplayProps> = ({
               )}
             </ReactMarkdown>
           ) : (
-            <div className="whitespace-pre-wrap">{md_text}</div>
+            <div className={`whitespace-pre-wrap ${isThinking? "mt-3 text-gray-600" : ""}`}>{md_text.trimStart()}</div>
           ))}
       </div>
       {message.token_number !== undefined &&
