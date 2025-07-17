@@ -199,7 +199,7 @@ const MarkdownDisplay: React.FC<MarkdownDisplayProps> = ({
       <div
         className={`${
           message.from === "user"
-            ? "bg-indigo-300 shadow-lg px-5 py-3 text-gray-800 rounded-3xl "
+            ? "bg-indigo-200 shadow-lg px-5 py-3 text-gray-800 rounded-3xl "
             : ""
         } prose dark:prose-invert max-w-full ${
           isThinking

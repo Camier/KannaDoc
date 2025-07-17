@@ -23,7 +23,7 @@ const Homepage = () => {
       {/* 左侧内容区域 */}
       <div className="relative w-[85%] h-[85%] flex flex-col gap-8 items-center justify-center shadow-lg rounded-3xl">
         {/* logo */}
-        <div className="w-[80%] h-[80%] flex items-center justify-center transform transition-transform duration-300  hover:scale-105">
+        <div className="w-[80%] h-[80%] flex items-center justify-center">
           <Image
             src="/pictures/logo.png"
             alt="Image 1"
@@ -47,13 +47,13 @@ const Homepage = () => {
             <span className="text-indigo-600 font-bold">A</span>GENT)
           </h2> */}
           <h2
-            className={` font-light text-xl text-gray-900 mb-4  transform transition-transform duration-300  hover:scale-110`}
+            className={` font-light text-xl text-gray-900 mb-4`}
           >
             Endlessly Customizable Agent Worklfow Engine - Code Without Limits,
             Build Without Boundaries
           </h2>
           {/* "Agent Workflow Engine – Design, Automate, and Scale with AI-Driven Precision." */}
-          <div className="w-full flex flex-col items-center justify-center gap-2 transform transition-transform duration-300  hover:scale-105">
+          <div className="w-full flex flex-col items-center justify-center gap-2">
             <h2 className={`text-gray-500`}>
               With pure visual embeddings,{" "}
               <span className="text-indigo-500">LAYRA</span> understands
@@ -72,7 +72,7 @@ const Homepage = () => {
             onClick={() => {
               router.push("/sign-in");
             }}
-            className={`text-lg bg-indigo-500 hover:bg-indigo-600 text-white py-2 pl-5 pr-4 rounded-full cursor-pointer flex items-center justify-center transform transition-transform duration-300  hover:scale-110`}
+            className={`text-lg bg-indigo-500 hover:bg-indigo-600 text-white py-2 pl-5 pr-4 rounded-full cursor-pointer flex items-center justify-center`}
           >
             <div>Join us</div>
             <svg
@@ -89,7 +89,7 @@ const Homepage = () => {
             </svg>
           </div>
         ) : (
-          <div className="flex items-center justify-center gap-[5%] w-[50%]  transform transition-transform duration-300  hover:scale-110">
+          <div className="flex items-center justify-center gap-[5%] w-[50%]">
             <div
               onClick={() => {
                 window.location.href = "/work-flow";
@@ -118,12 +118,12 @@ const Homepage = () => {
 
         <div className="flex-col items-center justify-center font-light">
           <h4
-            className={`flex items-center justify-center text-sm font-sans text-gray-900 mb-4  transform transition-transform duration-300  hover:scale-105`}
+            className={`flex items-center justify-center text-sm font-sans text-gray-900 mb-4`}
           >
             Forget tokenization. Forget layout loss.
           </h4>
           <h4
-            className={`flex items-center justify-center text-xs font-sans text-gray-900 mb-3  transform transition-transform duration-300  hover:scale-105`}
+            className={`flex items-center justify-center text-xs font-sans text-gray-900 mb-3`}
           >
             Feel free to contact me:
             <span className="text-indigo-700 ml-1 mr-1">

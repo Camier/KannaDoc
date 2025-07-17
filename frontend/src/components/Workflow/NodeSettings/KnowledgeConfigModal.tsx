@@ -398,7 +398,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                       {/* 自定义触发按钮 */}
                       <div
                         onClick={() => setShowDropdown(!showDropdown)}
-                        className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-3xl cursor-pointer bg-white flex items-center justify-between hover:border-indigo-500 transition-colors"
+                        className="mt-1 w-full px-4 py-2 border border-gray-200 rounded-3xl cursor-pointer bg-white flex items-center justify-between hover:border-indigo-500 transition-colors"
                       >
                         <span className="text-gray-700">
                           {node.data.modelConfig?.modelName}
@@ -489,7 +489,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                         modelURL: e.target.value,
                       }))
                     }
-                    className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
+                    className="mt-1 w-full px-4 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
                     placeholder="https://api.example.com/v1"
                   />
                 </div>
@@ -505,7 +505,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                         apiKey: e.target.value,
                       }))
                     }
-                    className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
+                    className="mt-1 w-full px-4 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
                     placeholder="sk-xxxxxxxx"
                   />
                 </div>
@@ -535,7 +535,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                 {knowledgeBases.map((base) => (
                   <label
                     key={base.id}
-                    className="overflow-auto relative inline-flex items-center group p-2 border border-gray-200 rounded-3xl hover:bg-gray-50 cursor-pointer"
+                    className="overflow-auto relative inline-flex items-center group px-3 py-2 border border-gray-200 rounded-3xl hover:bg-gray-50 cursor-pointer"
                   >
                     <input
                       type="checkbox"
@@ -649,7 +649,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                       }))
                     }
                     disabled={node.data.modelConfig?.useTemperatureDefault}
-                    className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+                    className="mt-1 w-full px-4 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
                   />
                 </div>
 
@@ -704,7 +704,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                       }))
                     }
                     disabled={node.data.modelConfig?.useMaxLengthDefault}
-                    className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+                    className="mt-1 w-full px-4 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
                   />
                 </div>
 
@@ -758,7 +758,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                       }))
                     }
                     disabled={node.data.modelConfig?.useTopPDefault}
-                    className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+                    className="mt-1 w-full px-4 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
                   />
                 </div>
                 {/* Knowledge-Base Top-K */}
@@ -811,7 +811,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                       }))
                     }
                     disabled={node.data.modelConfig?.useTopKDefault}
-                    className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+                    className="mt-1 w-full px-4 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
                   />
                 </div>
                 {/* Retrieval Score Threshold */}
@@ -866,7 +866,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                       }))
                     }
                     disabled={node.data.modelConfig?.useScoreThresholdDefault}
-                    className="mt-1 w-full px-3 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+                    className="mt-1 w-full px-4 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
                   />
                 </div>
               </div>

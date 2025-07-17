@@ -120,7 +120,7 @@ const LeftSidebar: React.FC<SidebarProps> = ({
   };
 
   return (
-    <div className="bg-white/90 flex-none w-[20%] h-full rounded-3xl flex flex-col items-center p-5">
+    <div className="bg-white/90 flex-none w-[20%] h-full rounded-3xl flex flex-col items-center py-5 pl-5">
       <div></div>
       {/* 新会话按钮 */}
       <div
@@ -145,7 +145,7 @@ const LeftSidebar: React.FC<SidebarProps> = ({
       <h2 className="text-sm mb-2 text-center font-bold">History Chat</h2>
       <div className="flex gap-2">
         <div
-          className="text-indigo-500 cursor-pointer flex gap-1 items-center"
+          className="text-indigo-500 cursor-pointer flex gap-1 items-center hover:text-indigo-700"
           onClick={handleDeleteAllChats} // 修正这里
         >
           <svg
@@ -165,7 +165,7 @@ const LeftSidebar: React.FC<SidebarProps> = ({
           <div>Clear</div>
         </div>
         <div
-          className="text-gray-500 cursor-pointer flex items-center gap-1"
+          className="text-gray-500 cursor-pointer flex items-center gap-1 hover:text-gray-700"
           onClick={onNewChat} // 修正这里
         >
           <svg
@@ -186,7 +186,7 @@ const LeftSidebar: React.FC<SidebarProps> = ({
       </div>
       {/* 聊天列表 */}
       <div className="border-b-2 border-gray-200 h-[1%] w-[80%]"></div>
-      <div className="px-2 w-full flex-1 overflow-scroll scrollbar-hide mt-4">
+      <div className="px-2 w-full flex-1 overflow-scroll scrollbar-hide mt-3">
         {chatHistory.map((chat, index) => {
           const timeLabel = getTimeLabel(chat.lastModifyTime);
           const lastTimeLabel = getTimeLabel(
@@ -198,7 +198,9 @@ const LeftSidebar: React.FC<SidebarProps> = ({
           return (
             <div key={index} className="flex flex-col gap-1">
               {isFirstInGroup && (
-                <div className="pl-2 py-2 font-bold text-sm">{timeLabel} </div>
+                <div className="pl-2 py-1 text-sm font-medium text-indigo-500">
+                  {timeLabel}{" "}
+                </div>
               )}
               <div
                 key={index}

@@ -113,7 +113,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   // 使用 useEffect 监测 messages 的变化
   useEffect(() => {
     if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: "smooth" }); // 平滑滚动到底部
+      messagesEndRef.current.scrollIntoView({ behavior: "auto" }); // 平滑滚动到底部
     }
   }, [messages]);
 
@@ -264,7 +264,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
     <div className="w-[80%] flex-none h-full rounded-3xl p-4 flex flex-col">
       <div className="flex-1 min-h-0 overflow-hidden">
         {messages.length === 0 ? (
-          <div className="h-full w-[90%] flex flex-col items-center gap-4 bg-white/30 rounded-xl">
+          <div className="h-full w-full flex flex-col items-center gap-4 bg-white/30 rounded-xl">
             <div className="h-[30vh]"></div>
             <p className="text-lg">
               Please remember to choose which knowledge database you will use
@@ -362,8 +362,8 @@ const ChatBox: React.FC<ChatBoxProps> = ({
             )}
           </div>
         ) : (
-          <div className="h-[100%] w-[75%] flex flex-col mx-auto">
-            <div className="shadow-xs rounded-xl pb-2 mb-2 flex flex-col item-center justify-center gap-1">
+          <div className="h-[100%] w-full flex flex-col mx-auto">
+            <div className="shadow-xs rounded-xl pb-2 mx-[12%] mb-2 flex flex-col item-center justify-center gap-1">
               <div className="w-full px-10 text-sm flex items-center justify-center gap-2 text-indigo-500 font-semibold">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -442,7 +442,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
               )}
             </div>
             <div
-              className="flex-1 overflow-y-auto scrollbar-auto"
+              className="flex-1 overflow-y-auto scrollbar-auto px-[12%]"
               style={{ overscrollBehavior: "contain" }}
             >
               {messages.map((message, index) => (
