@@ -38,6 +38,7 @@ const AIChat: React.FC = () => {
   const { user } = useAuthStore();
   const [conversationName, setConversationName] = useState<string>("");
   const [sendDisabled, setSendDisabled] = useState(false);
+  const [recieveMessage, setRecieveMessage] = useState(false);
   const { chatId, setChatId } = useChatStore();
   const { modelConfig, setModelConfig } = useModelConfigStore();
 
@@ -65,7 +66,8 @@ const AIChat: React.FC = () => {
           maxLength: item.max_length === -1 ? 8192 : item.max_length,
           topP: item.top_P === -1 ? 0.01 : item.top_P,
           topK: item.top_K === -1 ? 3 : item.top_K,
-          scoreThreshold: item.score_threshold === -1 ? 10 : item.score_threshold,
+          scoreThreshold:
+            item.score_threshold === -1 ? 10 : item.score_threshold,
           useTemperatureDefault: item.temperature === -1 ? true : false,
           useMaxLengthDefault: item.max_length === -1 ? true : false,
           useTopPDefault: item.top_P === -1 ? true : false,
@@ -145,12 +147,14 @@ const AIChat: React.FC = () => {
             maxLength: item.max_length === -1 ? 8192 : item.max_length,
             topP: item.top_P === -1 ? 0.01 : item.top_P,
             topK: item.top_K === -1 ? 3 : item.top_K,
-            scoreThreshold: item.score_threshold === -1 ? 10 : item.score_threshold,
+            scoreThreshold:
+              item.score_threshold === -1 ? 10 : item.score_threshold,
             useTemperatureDefault: item.temperature === -1 ? true : false,
             useMaxLengthDefault: item.max_length === -1 ? true : false,
             useTopPDefault: item.top_P === -1 ? true : false,
             useTopKDefault: item.top_K === -1 ? true : false,
-            useScoreThresholdDefault: item.score_threshold === -1 ? true : false,
+            useScoreThresholdDefault:
+              item.score_threshold === -1 ? true : false,
           });
           const messages: Message[] = response.data.turns
             .map((item: any) => {
@@ -291,6 +295,9 @@ const AIChat: React.FC = () => {
     fetchRenameChat(); // 调用获取聊天记录的函数
   };
 
+  // 添加 AbortController 引用
+  const abortControllerRef = useRef<AbortController | null>(null);
+
   const sseConnection = async (
     conversationId: string,
     parentId: string,
@@ -300,20 +307,28 @@ const AIChat: React.FC = () => {
     try {
       const token = Cookies.get("token");
 
+      // 创建新的 AbortController
+      const controller = new AbortController();
+      abortControllerRef.current = controller;
+
       //const response = await fetch("http://192.168.1.5:8000/api/v1/sse/chat", {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/sse/chat`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          conversation_id: conversationId,
-          parent_id: parentId,
-          user_message: message,
-          temp_db: tempBaseId,
-        }),
-      });
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_BASE_URL}/sse/chat`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            conversation_id: conversationId,
+            parent_id: parentId,
+            user_message: message,
+            temp_db: tempBaseId,
+          }),
+          signal: controller.signal, // 添加 signal
+        }
+      );
 
       if (!response.ok) throw new Error("Request failed");
       if (!response.body) return;
@@ -335,7 +350,10 @@ const AIChat: React.FC = () => {
         const { done, value } = (await eventReader?.read()) || {};
         if (done) break;
 
+        setRecieveMessage(true);
+
         const payload = JSON.parse(value.data);
+
         if (payload.type === "file_used") {
           file_used = payload.data; // 自动处理原始换行符
           messageId = payload.message_id;
@@ -411,31 +429,78 @@ const AIChat: React.FC = () => {
         ];
       });
     } catch (error) {
-      console.error("Error:", error);
-      // 错误时更新最后一条AI消息内容
-      setMessages((prev: string | any[]) => {
-        const lastIndex = prev.length - 1;
-        if (lastIndex >= 0 && prev[lastIndex].from === "ai") {
-          const updated = [...prev];
-          updated[lastIndex] = {
-            ...updated[lastIndex],
-            content: "Error occurred. Please try again.",
-          };
-          return updated;
-        }
-        return [
-          ...prev,
-          {
-            type: "text",
-            content: "Error occurred. Please try again.",
-            from: "ai",
-          },
-        ];
-      });
+      // 处理中断错误 - 添加类型检查
+      if (error instanceof Error && error.name === "AbortError") {
+        console.log("SSE connection aborted by user");
+        // 可选的：添加用户中断的视觉反馈
+        setMessages((prev) => {
+          const lastIndex = prev.length - 1;
+          if (lastIndex >= 0 && prev[lastIndex].from === "ai") {
+            if (prev[lastIndex].content === "") {
+              const updated = [...prev];
+              updated[lastIndex] = {
+                ...updated[lastIndex],
+                thinking: updated[lastIndex].thinking + " ⚠️ Abort By User",
+              };
+              return updated;
+            } else {
+              const updated = [...prev];
+              updated[lastIndex] = {
+                ...updated[lastIndex],
+                content: updated[lastIndex].content + " ⚠️ Abort By User",
+              };
+              return updated;
+            }
+          }
+          return prev;
+        });
+      } else {
+        console.error("Error:", error);
+        // 错误时更新最后一条AI消息内容
+        handleSelectChat(chatId, true);
+        // setMessages((prev: string | any[]) => {
+        //   const lastIndex = prev.length - 1;
+        //   if (lastIndex >= 0 && prev[lastIndex].from === "ai") {
+        //     const updated = [...prev];
+        //     updated[lastIndex] = {
+        //       ...updated[lastIndex],
+        //       content: " ⚠️ Error occurred: " + (error instanceof Error).toString(),
+        //     };
+        //     return updated;
+        //   }
+        //   return [
+        //     ...prev,
+        //     {
+        //       type: "text",
+        //       content: " ⚠️ Error occurred: " + (error instanceof Error).toString(),
+        //       from: "ai",
+        //     },
+        //   ];
+        // });
+      }
     } finally {
       setSendDisabled(false);
+      setRecieveMessage(false)
     }
   };
+
+  // 添加中断处理函数
+  const handleAbort = useCallback(() => {
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort();
+      setSendDisabled(false);
+      setRecieveMessage(false);
+    }
+  }, []);
+
+  // 组件卸载时中断请求
+  useEffect(() => {
+    return () => {
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
+      }
+    };
+  }, []);
 
   const handleSendMessage = async (
     message: string,
@@ -539,6 +604,8 @@ const AIChat: React.FC = () => {
           messages={messages}
           onSendMessage={handleSendMessage}
           sendDisabled={sendDisabled}
+          onAbort={handleAbort}
+          recieveMessage={recieveMessage}
         />
       </div>
     </div>

@@ -1,4 +1,5 @@
 # services/chat_service.py
+import asyncio
 import json
 from typing import AsyncGenerator
 from app.db.mongo import get_mongo
@@ -188,111 +189,153 @@ class ChatService:
         messages.append(user_message)
         send_messages = await replace_image_content(messages)
 
-        client = AsyncOpenAI(
-            # 若没有配置环境变量，请用百炼API Key将下行替换为：api_key="sk-xxx",
-            api_key=api_key,
-            base_url=model_url,
-        )
-
-        # 调用OpenAI API
-        # 动态构建参数字典
-        optional_args = {}
-        if temperature != -1:
-            optional_args["temperature"] = temperature
-        if max_length != -1:
-            optional_args["max_tokens"] = max_length  # 注意官方API参数名为max_tokens
-        if top_P != -1:
-            optional_args["top_p"] = top_P  # 注意官方API参数名为top_p（小写p）
-
-        # 带条件参数的API调用
-        response = await client.chat.completions.create(
-            model=model_name,
-            messages=send_messages,
-            stream=True,
-            stream_options={"include_usage": True},
-            **optional_args,  # 展开条件参数
-        )
-
-        file_used_payload = json.dumps(
-            {
-                "type": "file_used",
-                "data": file_used,  # 这里直接使用已构建的 file_used 列表
-                "message_id": message_id,
-                "model_name": model_name,
-            }
-        )
-        yield f"data: {file_used_payload}\n\n"
-
-        # 处理流响应
+        is_aborted = False  # 标记是否中断
         thinking_content = []
         full_response = []
         total_token = 0
         completion_tokens = 0
         prompt_tokens = 0
-        async for chunk in response:  # 直接迭代异步生成器
-            if chunk.choices:
-                delta = chunk.choices[0].delta
-                # 思考
-                if (
-                    hasattr(delta, "reasoning_content")
-                    and delta.reasoning_content != None
-                ):
-                    if not thinking_content:
-                        thinking_content.append("<think>")
-                    # 用JSON封装内容，自动处理换行符等特殊字符
-                    payload = json.dumps(
-                        {
-                            "type": "thinking",
-                            "data": delta.reasoning_content,
-                            "message_id": message_id,
-                        }
-                    )
-                    thinking_content.append(delta.reasoning_content)
-                    yield f"data: {payload}\n\n"  # 保持SSE事件标准分隔符
-                # 回答
-                content = delta.content if delta else None
-                if content:
-                    if not full_response and thinking_content:
-                        thinking_content.append("</think>")
-                        full_response.extend(thinking_content)
-                    # 用JSON封装内容，自动处理换行符等特殊字符
-                    payload = json.dumps(
-                        {"type": "text", "data": content, "message_id": message_id}
-                    )
-                    full_response.append(content)
-                    yield f"data: {payload}\n\n"  # 保持SSE事件标准分隔符
-            else:
-                # token消耗
-                if hasattr(chunk, "usage") and chunk.usage != None:
-                    total_token = chunk.usage.total_tokens
-                    completion_tokens = chunk.usage.completion_tokens
-                    prompt_tokens = chunk.usage.prompt_tokens
-                    # 用JSON封装内容，自动处理换行符等特殊字符
-                    payload = json.dumps(
-                        {
-                            "type": "token",
-                            "total_token": total_token,
-                            "completion_tokens": completion_tokens,
-                            "prompt_tokens": prompt_tokens,
-                            "message_id": message_id,
-                        }
-                    )
-                    yield f"data: {payload}\n\n"  # 保持SSE事件标准分隔符
+        try:
+            client = AsyncOpenAI(
+                # 若没有配置环境变量，请用百炼API Key将下行替换为：api_key="sk-xxx",
+                api_key=api_key,
+                base_url=model_url,
+            )
 
-        await client.close()
+            # 调用OpenAI API
+            # 动态构建参数字典
+            optional_args = {}
+            if temperature != -1:
+                optional_args["temperature"] = temperature
+            if max_length != -1:
+                optional_args["max_tokens"] = (
+                    max_length  # 注意官方API参数名为max_tokens
+                )
+            if top_P != -1:
+                optional_args["top_p"] = top_P  # 注意官方API参数名为top_p（小写p）
 
-        ai_message = {"role": "assistant", "content": "".join(full_response)}
-        # 保存AI响应到mongodb
-        await db.add_turn(
-            conversation_id=user_message_content.conversation_id,
-            message_id=message_id,
-            parent_message_id=user_message_content.parent_id,
-            user_message=user_message,
-            temp_db=user_message_content.temp_db,
-            ai_message=ai_message,
-            file_used=file_used,
-            status="",
-            total_token=total_token,
-            completion_tokens=completion_tokens,
-            prompt_tokens=prompt_tokens,
-        )
+            # 带条件参数的API调用
+            response = await client.chat.completions.create(
+                model=model_name,
+                messages=send_messages,
+                stream=True,
+                stream_options={"include_usage": True},
+                **optional_args,  # 展开条件参数
+            )
+
+            file_used_payload = json.dumps(
+                {
+                    "type": "file_used",
+                    "data": file_used,  # 这里直接使用已构建的 file_used 列表
+                    "message_id": message_id,
+                    "model_name": model_name,
+                }
+            )
+            yield f"data: {file_used_payload}\n\n"
+
+            # 处理流响应
+            async for chunk in response:  # 直接迭代异步生成器
+                if chunk.choices:
+                    delta = chunk.choices[0].delta
+                    # 思考
+                    if (
+                        hasattr(delta, "reasoning_content")
+                        and delta.reasoning_content != None
+                    ):
+                        if not thinking_content:
+                            thinking_content.append("<think>")
+                        # 用JSON封装内容，自动处理换行符等特殊字符
+                        payload = json.dumps(
+                            {
+                                "type": "thinking",
+                                "data": delta.reasoning_content,
+                                "message_id": message_id,
+                            }
+                        )
+                        thinking_content.append(delta.reasoning_content)
+                        yield f"data: {payload}\n\n"  # 保持SSE事件标准分隔符
+                    # 回答
+                    content = delta.content if delta else None
+                    if content:
+                        if not full_response and thinking_content:
+                            thinking_content.append("</think>")
+                            full_response.extend(thinking_content)
+                        # 用JSON封装内容，自动处理换行符等特殊字符
+                        payload = json.dumps(
+                            {"type": "text", "data": content, "message_id": message_id}
+                        )
+                        full_response.append(content)
+                        yield f"data: {payload}\n\n"  # 保持SSE事件标准分隔符
+                else:
+                    # token消耗
+                    if hasattr(chunk, "usage") and chunk.usage != None:
+                        total_token = chunk.usage.total_tokens
+                        completion_tokens = chunk.usage.completion_tokens
+                        prompt_tokens = chunk.usage.prompt_tokens
+                        # 用JSON封装内容，自动处理换行符等特殊字符
+                        payload = json.dumps(
+                            {
+                                "type": "token",
+                                "total_token": total_token,
+                                "completion_tokens": completion_tokens,
+                                "prompt_tokens": prompt_tokens,
+                                "message_id": message_id,
+                            }
+                        )
+                        yield f"data: {payload}\n\n"  # 保持SSE事件标准分隔符
+        except asyncio.CancelledError:
+            logger.info("Request was cancelled by client")
+            # 标记为中断状态
+            is_aborted = True
+            # 构建中断提示信息
+            if not full_response and thinking_content:
+                full_response.extend(thinking_content)
+            full_response.append(" ⚠️ Abort By User")
+            raise e  # 重新抛出异常以便上层处理
+        except Exception as e:
+            logger.error(f"Error during OpenAI API call: {str(e)}")
+            # 构建错误提示信息
+            if not full_response and thinking_content:
+                full_response.extend(thinking_content)
+            full_response.append(
+                f"""⚠️ **Error occurred**:
+ ```LLM_Error
+{str(e)}
+ ```"""
+            )
+            raise e  # 重新抛出异常以便上层处理
+        finally:
+            logger.info(
+                f"Closing OpenAI client for conversation {user_message_content.conversation_id}"
+            )
+            await client.close()
+
+            # 只有在有响应内容时才保存
+            if not full_response:
+                full_response.append(
+                    f"""⚠️ **Error occurred**:
+ ```LLM_Error
+ No message received from AI
+ ```"""
+                )
+            ai_message = {"role": "assistant", "content": "".join(full_response)}
+
+            # 保存AI响应到mongodb
+            asyncio.create_task(
+                db.add_turn(
+                    conversation_id=user_message_content.conversation_id,
+                    message_id=message_id,
+                    parent_message_id=user_message_content.parent_id,
+                    user_message=user_message,
+                    temp_db=user_message_content.temp_db,
+                    ai_message=ai_message,
+                    file_used=file_used,
+                    status="aborted" if is_aborted else "completed",
+                    total_token=total_token,
+                    completion_tokens=completion_tokens,
+                    prompt_tokens=prompt_tokens,
+                )
+            )
+            logger.info(
+                f"Save conversation {user_message_content.conversation_id} to mongodb"
+            )

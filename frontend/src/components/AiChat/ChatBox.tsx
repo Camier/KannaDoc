@@ -24,17 +24,21 @@ import { updateModelConfig } from "@/lib/api/configApi";
 interface ChatBoxProps {
   messages: Message[];
   sendDisabled: boolean;
+  recieveMessage: boolean; // 新增的接收消息状态
   onSendMessage: (
     message: string,
     files: FileRespose[],
     tempBaseId: string
   ) => void;
+  onAbort: () => void; // 新增的中断回调
 }
 
 const ChatBox: React.FC<ChatBoxProps> = ({
   messages,
+  recieveMessage,
   onSendMessage,
   sendDisabled,
+  onAbort,
 }) => {
   const [inputMessage, setInputMessage] = useState("");
   const messagesEndRef = useRef<HTMLDivElement | null>(null); // 创建引用
@@ -582,25 +586,53 @@ const ChatBox: React.FC<ChatBoxProps> = ({
               ))}
           </div>
         </div>
-        <button
-          className={`min-w-[13%] flex gap-1 ${
-            isSendDisabled || sendDisabled
-              ? "bg-indigo-300 cursor-not-allowed"
-              : "bg-indigo-500 hover:bg-indigo-600 cursor-pointer"
-          } rounded-full text-base item-center justify-center px-5 py-2 text-white`}
-          onClick={handleSend}
-          disabled={isSendDisabled || sendDisabled}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="size-6 shrink-0"
+        {(!sendDisabled  || !recieveMessage) &&  (
+          <button
+            className={`min-w-[13%] flex gap-1 ${
+              isSendDisabled || sendDisabled
+                ? "bg-indigo-300 cursor-not-allowed"
+                : "bg-indigo-500 hover:bg-indigo-600 cursor-pointer"
+            } rounded-full text-base item-center justify-center px-5 py-2 text-white`}
+            onClick={handleSend}
+            disabled={isSendDisabled || sendDisabled}
           >
-            <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" />
-          </svg>
-          {buttonText}
-        </button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="size-6 shrink-0"
+            >
+              <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" />
+            </svg>
+            {buttonText}
+          </button>
+        )}
+        {/* 添加中断按钮 */}
+        {sendDisabled && recieveMessage && (
+          <button
+            className={`min-w-[13%] flex gap-1 ${
+              sendDisabled
+                ? "bg-indigo-500 hover:bg-indigo-600 cursor-pointer"
+                : "bg-indigo-300 cursor-not-allowed"
+            } rounded-full text-base item-center justify-center px-5 py-2 text-white`}
+            onClick={onAbort}
+            disabled={!sendDisabled}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="size-6 shrink-0"
+            >
+              <path
+                fillRule="evenodd"
+                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm6-2.438c0-.724.588-1.312 1.313-1.312h4.874c.725 0 1.313.588 1.313 1.313v4.874c0 .725-.588 1.313-1.313 1.313H9.564a1.312 1.312 0 0 1-1.313-1.313V9.564Z"
+                clipRule="evenodd"
+              />
+            </svg>
+            Stop
+          </button>
+        )}
       </div>
       <KnowledgeConfigModal
         visible={showConfigModal}
