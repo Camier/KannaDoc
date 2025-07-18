@@ -283,7 +283,7 @@ class ChatService:
                             }
                         )
                         yield f"data: {payload}\n\n"  # 保持SSE事件标准分隔符
-        except asyncio.CancelledError:
+        except asyncio.CancelledError as e:
             logger.info("Request was cancelled by client")
             # 标记为中断状态
             is_aborted = True

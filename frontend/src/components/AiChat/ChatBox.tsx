@@ -24,7 +24,7 @@ import { updateModelConfig } from "@/lib/api/configApi";
 interface ChatBoxProps {
   messages: Message[];
   sendDisabled: boolean;
-  recieveMessage: boolean; // 新增的接收消息状态
+  receivingMessage: boolean; // 新增的接收消息状态
   onSendMessage: (
     message: string,
     files: FileRespose[],
@@ -35,7 +35,7 @@ interface ChatBoxProps {
 
 const ChatBox: React.FC<ChatBoxProps> = ({
   messages,
-  recieveMessage,
+  receivingMessage,
   onSendMessage,
   sendDisabled,
   onAbort,
@@ -586,7 +586,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
               ))}
           </div>
         </div>
-        {(!sendDisabled  || !recieveMessage) &&  (
+        {(!sendDisabled  || !receivingMessage) &&  (
           <button
             className={`min-w-[13%] flex gap-1 ${
               isSendDisabled || sendDisabled
@@ -608,7 +608,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
           </button>
         )}
         {/* 添加中断按钮 */}
-        {sendDisabled && recieveMessage && (
+        {sendDisabled && receivingMessage && (
           <button
             className={`min-w-[13%] flex gap-1 ${
               sendDisabled

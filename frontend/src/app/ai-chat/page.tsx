@@ -38,7 +38,7 @@ const AIChat: React.FC = () => {
   const { user } = useAuthStore();
   const [conversationName, setConversationName] = useState<string>("");
   const [sendDisabled, setSendDisabled] = useState(false);
-  const [recieveMessage, setRecieveMessage] = useState(false);
+  const [receivingMessage, setReceivingMessage] = useState(false);
   const { chatId, setChatId } = useChatStore();
   const { modelConfig, setModelConfig } = useModelConfigStore();
 
@@ -350,7 +350,7 @@ const AIChat: React.FC = () => {
         const { done, value } = (await eventReader?.read()) || {};
         if (done) break;
 
-        setRecieveMessage(true);
+        setReceivingMessage(true);
 
         const payload = JSON.parse(value.data);
 
@@ -480,7 +480,7 @@ const AIChat: React.FC = () => {
       }
     } finally {
       setSendDisabled(false);
-      setRecieveMessage(false)
+      setReceivingMessage(false)
     }
   };
 
@@ -489,7 +489,7 @@ const AIChat: React.FC = () => {
     if (abortControllerRef.current) {
       abortControllerRef.current.abort();
       setSendDisabled(false);
-      setRecieveMessage(false);
+      setReceivingMessage(false);
     }
   }, []);
 
@@ -605,7 +605,7 @@ const AIChat: React.FC = () => {
           onSendMessage={handleSendMessage}
           sendDisabled={sendDisabled}
           onAbort={handleAbort}
-          recieveMessage={recieveMessage}
+          receivingMessage={receivingMessage}
         />
       </div>
     </div>
