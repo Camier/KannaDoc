@@ -1,6 +1,6 @@
 // components/ChatMessage.tsx
 "use client";
-import React, { Dispatch, useMemo, useState } from "react";
+import React, { Dispatch, useEffect, useMemo, useState } from "react";
 import { FileRespose, Message, ModelConfig } from "@/types/types";
 import Image from "next/image";
 import LoadingCircle from "./LoadingCircle";
@@ -26,7 +26,7 @@ interface ChatMessageProps {
   branchIndex?: number; // 当前分支
   branchCount?: number; // 分支数量
   parentId?: string; // 父消息ID，用于分支切换
-  isLastMessage?: boolean // 判断是否为最后一条消息
+  isLastMessage?: boolean; // 判断是否为最后一条消息
 }
 
 const ChatMessage: React.FC<ChatMessageProps> = ({
@@ -42,7 +42,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
   branchIndex = 1, // 当前分支索引
   branchCount = 5, // 分支总数
   parentId = "root", // 父消息ID，用于分支切换
-  isLastMessage = false
+  isLastMessage = false,
 }) => {
   const isUser = message.from === "user"; // 判断是否是用户消息
   const [isOpen, setIsOpen] = useState(false);
@@ -119,6 +119,11 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
       setTimeout(() => setCopiedAll(false), 2000);
     }
   };
+
+  useEffect(() => {
+    setInputMessage(message.content || "");
+    setMessageEditing(false);
+  }, [message.content]);
 
   return (
     <div className="w-full group">
@@ -300,7 +305,9 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
               (message.from === "user" && !messageEditing)) && (
               <button
                 onClick={() => handleCopyAll(displayContent)}
-                className={`${isLastMessage? "":"group-hover:opacity-100 opacity-0"} cursor-pointer flex items-center gap-0.5 hover:text-gray-800 transition-colors`}
+                className={`${
+                  isLastMessage ? "" : "group-hover:opacity-100 opacity-0"
+                } cursor-pointer flex items-center gap-0.5 hover:text-gray-800 transition-colors`}
                 aria-label="Copy all content"
               >
                 {copiedAll ? (
@@ -352,8 +359,12 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
                 }}
                 className={`${
                   sendDisabled
-                    ? isLastMessage? "cursor-not-allowed opacity-50" : "cursor-not-allowed group-hover:opacity-50 opacity-0"
-                    : isLastMessage? "cursor-pointer" : "cursor-pointer group-hover:opacity-100 opacity-0"
+                    ? isLastMessage
+                      ? "cursor-not-allowed opacity-50"
+                      : "cursor-not-allowed group-hover:opacity-50 opacity-0"
+                    : isLastMessage
+                    ? "cursor-pointer"
+                    : "cursor-pointer group-hover:opacity-100 opacity-0"
                 } flex items-center gap-0.5 hover:text-gray-800 transition-colors`}
               >
                 <svg
@@ -376,7 +387,9 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
             {message.from === "user" && enableOperation && !messageEditing && (
               <div
                 onClick={() => setMessageEditing(true)}
-                className={`${isLastMessage? "":"group-hover:opacity-100 opacity-0"} cursor-pointer flex items-center gap-0.5 hover:text-gray-800 transition-colors`}
+                className={`${
+                  isLastMessage ? "" : "group-hover:opacity-100 opacity-0"
+                } cursor-pointer flex items-center gap-0.5 hover:text-gray-800 transition-colors`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
