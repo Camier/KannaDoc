@@ -159,8 +159,8 @@ const SignInPage = () => {
               onChange={(e) => setPassword(e.target.value)}
               autoComplete="current-password"
               required
-              className={`mt-1 w-full px-3 py-2 border border-gray-300 rounded-xl shadow-xs focus:outline-hidden focus:border-2 "focus:ring-indigo-500 focus:border-indigo-500"
-                  focus:ring-slate-600 focus:border-slate-600 sm:text-sm`}
+              className={`mt-1 w-full px-3 py-2 border border-gray-300 rounded-xl shadow-xs focus:outline-hidden focus:border-2 focus:ring-indigo-500 focus:border-indigo-500
+                  sm:text-sm`}
             />
           </div>
 

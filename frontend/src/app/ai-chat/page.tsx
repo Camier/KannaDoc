@@ -38,9 +38,19 @@ const AIChat: React.FC = () => {
   const { user } = useAuthStore();
   const [conversationName, setConversationName] = useState<string>("");
   const [sendDisabled, setSendDisabled] = useState(false);
-  const [receivingMessage, setReceivingMessage] = useState(false);
+  const [receivingMessageId, setReceivingMessageId] = useState<string | null>(
+    null
+  );
+  const chatIdRef = useRef<string | null>(null);
+  const [receivingMessages, setReceivingMessages] = useState<Message[]>([]);
   const { chatId, setChatId } = useChatStore();
   const { modelConfig, setModelConfig } = useModelConfigStore();
+
+  useEffect(() => {
+    if (chatId !== "") {
+      chatIdRef.current = chatId;
+    }
+  }, [chatId]);
 
   // Wrap fetchModelConfig with useCallback
   const fetchModelConfig = useCallback(async () => {
@@ -193,12 +203,20 @@ const AIChat: React.FC = () => {
                 {
                   type: "text",
                   content: `${text.text}`,
+                  parentMessageId:
+                    item.parent_message_id === ""
+                      ? "root"
+                      : item.parent_message_id,
                   from: "user",
                 },
                 {
                   type: "text",
                   content: `${item.ai_message.content}`,
                   messageId: `${item.message_id}`,
+                  parentMessageId:
+                    item.parent_message_id === ""
+                      ? "root"
+                      : item.parent_message_id,
                   from: "ai",
                   token_number: {
                     total_token: `${item.total_token}`,
@@ -302,8 +320,18 @@ const AIChat: React.FC = () => {
     conversationId: string,
     parentId: string,
     message: string,
-    tempBaseId: string
+    tempBaseId: string,
+    userMessages: Message[] // 新增参数
   ) => {
+    let aiMessage = "";
+    let aiThinking = "";
+    let messageId = "";
+    let total_token: number = 0;
+    let completion_tokens: number = 0;
+    let prompt_tokens: number = 0;
+    let file_used: FileUsed[] = [];
+    setReceivingMessageId(conversationId);
+
     try {
       const token = Cookies.get("token");
 
@@ -322,7 +350,7 @@ const AIChat: React.FC = () => {
           },
           body: JSON.stringify({
             conversation_id: conversationId,
-            parent_id: parentId,
+            parent_id: parentId === "root" ? "" : parentId,
             user_message: message,
             temp_db: tempBaseId,
           }),
@@ -339,18 +367,9 @@ const AIChat: React.FC = () => {
         .pipeThrough(new EventSourceParserStream());
 
       const eventReader = eventStream.getReader();
-      let aiMessage = "";
-      let aiThinking = "";
-      let messageId = "";
-      let total_token: number = 0;
-      let completion_tokens: number = 0;
-      let prompt_tokens: number = 0;
-      let file_used: FileUsed[];
       while (true) {
         const { done, value } = (await eventReader?.read()) || {};
         if (done) break;
-
-        setReceivingMessage(true);
 
         const payload = JSON.parse(value.data);
 
@@ -374,9 +393,8 @@ const AIChat: React.FC = () => {
           completion_tokens = payload.completion_tokens;
           prompt_tokens = payload.prompt_tokens;
         }
-
         // 使用函数式更新确保基于最新状态
-        setMessages((prevMessages: string | any[]) => {
+        setReceivingMessages((prevMessages: string | any[]) => {
           // 查找最后一个AI消息（即加载占位符）
           const lastIndex = prevMessages.length - 1;
           if (lastIndex >= 0 && prevMessages[lastIndex].from === "ai") {
@@ -386,6 +404,8 @@ const AIChat: React.FC = () => {
               content: aiMessage,
               thinking: aiThinking,
               messageId: messageId ? messageId : "",
+              parentMessageId:
+                userMessages[userMessages.length - 1].parentMessageId,
               token_number: {
                 total_token: total_token,
                 completion_tokens: completion_tokens,
@@ -412,7 +432,7 @@ const AIChat: React.FC = () => {
           ];
         });
       }
-      setMessages((prevMessages: string | any[]) => {
+      setReceivingMessages((prevMessages: string | any[]) => {
         return [
           ...prevMessages,
           ...file_used.map((file, index) => ({
@@ -433,54 +453,61 @@ const AIChat: React.FC = () => {
       if (error instanceof Error && error.name === "AbortError") {
         console.log("SSE connection aborted by user");
         // 可选的：添加用户中断的视觉反馈
-        setMessages((prev) => {
-          const lastIndex = prev.length - 1;
-          if (lastIndex >= 0 && prev[lastIndex].from === "ai") {
-            if (prev[lastIndex].content === "") {
-              const updated = [...prev];
-              updated[lastIndex] = {
-                ...updated[lastIndex],
-                thinking: updated[lastIndex].thinking + " ⚠️ Abort By User",
-              };
-              return updated;
-            } else {
-              const updated = [...prev];
-              updated[lastIndex] = {
-                ...updated[lastIndex],
-                content: updated[lastIndex].content + " ⚠️ Abort By User",
-              };
-              return updated;
-            }
-          }
-          return prev;
-        });
+        if (aiMessage) {
+          aiMessage += " ⚠️ Abort By User";
+        } else {
+          aiThinking += " ⚠️ Abort By User";
+        }
       } else {
         console.error("Error:", error);
         // 错误时更新最后一条AI消息内容
-        handleSelectChat(chatId, true);
-        // setMessages((prev: string | any[]) => {
-        //   const lastIndex = prev.length - 1;
-        //   if (lastIndex >= 0 && prev[lastIndex].from === "ai") {
-        //     const updated = [...prev];
-        //     updated[lastIndex] = {
-        //       ...updated[lastIndex],
-        //       content: " ⚠️ Error occurred: " + (error instanceof Error).toString(),
-        //     };
-        //     return updated;
-        //   }
-        //   return [
-        //     ...prev,
-        //     {
-        //       type: "text",
-        //       content: " ⚠️ Error occurred: " + (error instanceof Error).toString(),
-        //       from: "ai",
-        //     },
-        //   ];
-        // });
+        handleSelectChat(conversationId, true);
       }
     } finally {
+      // 直接使用局部变量构建最终消息
+      const finalMessages: Message[] = [
+        {
+          type: "text",
+          content: aiMessage,
+          thinking: aiThinking,
+          messageId: messageId ? messageId : "",
+          parentMessageId:
+            userMessages[userMessages.length - 1].parentMessageId,
+          token_number: {
+            total_token: total_token,
+            completion_tokens: completion_tokens,
+            prompt_tokens: prompt_tokens,
+          },
+          from: "ai",
+        },
+        ...file_used.map(
+          (file, index) =>
+            ({
+              type: "baseFile",
+              content: `image_${index}`,
+              messageId: messageId || "",
+              imageMinioUrl: file.image_url,
+              fileName: file.file_name,
+              baseId: file.knowledge_db_id,
+              minioUrl: file.file_url,
+              score: file.score,
+              from: "ai",
+            } as Message)
+        ),
+      ];
+
+      // sse传输结束，receivingMessage切换回messages，
+      // 保证receivingMessage和receivingMessageId只在sse传输过程生效
+      // 后续可提过receivingMessageId===chatId来判断该选择对话是否在进行sse传输
+      if (chatIdRef.current === conversationId) {
+        setMessages((prevMessages: Message[]) => {
+          return [...prevMessages, ...userMessages, ...finalMessages];
+        });
+      }
+      // 清理状态
+      setReceivingMessageId(null);
+      setReceivingMessages([]);
       setSendDisabled(false);
-      setReceivingMessage(false)
     }
   };
 
@@ -489,7 +516,8 @@ const AIChat: React.FC = () => {
     if (abortControllerRef.current) {
       abortControllerRef.current.abort();
       setSendDisabled(false);
-      setReceivingMessage(false);
+      setReceivingMessageId(null);
+      setReceivingMessages([]);
     }
   }, []);
 
@@ -505,7 +533,8 @@ const AIChat: React.FC = () => {
   const handleSendMessage = async (
     message: string,
     files: FileRespose[],
-    tempBaseId: string
+    tempBaseId: string,
+    parentMessageId: string
   ) => {
     setSendDisabled(true);
     const handleCreateConversation = async () => {
@@ -552,40 +581,29 @@ const AIChat: React.FC = () => {
       }
     });
 
-    const newMessage: Message[] = [
+    const userMessages: Message[] = [
       ...fileMessages,
       {
         type: "text",
         content: message,
+        parentMessageId: parentMessageId === "" ? "root" : parentMessageId,
         from: "user",
       },
     ];
-
     // 添加生成消息中
     const aiLoading: Message = {
       type: "text",
       content: "Parsing in progress, please wait...",
+      messageId: "newMessageId",
+      parentMessageId: parentMessageId === "" ? "root" : parentMessageId,
       from: "ai",
     };
 
     // 一次性添加所有用户消息和AI加载状态
-    setMessages((prevMessages: any) => [
-      ...prevMessages,
-      ...newMessage,
-      aiLoading,
-    ]);
-
-    let lastAIMessageId: string = "";
-    for (let i = messages.length - 1; i >= 0; i--) {
-      const msg = messages[i];
-      if (msg.from === "ai" && msg.messageId) {
-        lastAIMessageId = msg.messageId;
-        break;
-      }
-    }
+    setReceivingMessages([...messages, ...userMessages, aiLoading]);
 
     // 调用 AI 接口并接收 AI 响应
-    sseConnection(chatId, lastAIMessageId, message, tempBaseId);
+    sseConnection(chatId, parentMessageId, message, tempBaseId, userMessages);
   };
 
   return (
@@ -605,7 +623,8 @@ const AIChat: React.FC = () => {
           onSendMessage={handleSendMessage}
           sendDisabled={sendDisabled}
           onAbort={handleAbort}
-          receivingMessage={receivingMessage}
+          receivingMessageId={receivingMessageId}
+          receivingMessages={receivingMessages} // 传递接收消息状态
         />
       </div>
     </div>

@@ -1,6 +1,17 @@
 // components/ChatBox.tsx
-import React, { use, useEffect, useRef, useState } from "react";
-import { BaseUsed, FileRespose, Message, ModelConfig } from "@/types/types";
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import {
+  ConversationBlock,
+  FileRespose,
+  Message,
+  ModelConfig,
+} from "@/types/types";
 import ChatMessage from "./ChatMessage";
 import {
   getFileExtension,
@@ -20,22 +31,30 @@ import {
   deleteTempKnowledgeBase,
 } from "@/lib/api/knowledgeBaseApi";
 import { updateModelConfig } from "@/lib/api/configApi";
+import {
+  buildConversationBlocks,
+  calculateCurrentPath,
+  calculateDefaultBranches,
+} from "@/utils/message";
 
 interface ChatBoxProps {
-  messages: Message[];
+  messages: Message[]; //常规历史消息，后台数据库读取
   sendDisabled: boolean;
-  receivingMessage: boolean; // 新增的接收消息状态
+  receivingMessageId: string | null; // sse实时传输消息会话ID
+  receivingMessages: Message[]; // sse实时传输消息
   onSendMessage: (
     message: string,
     files: FileRespose[],
-    tempBaseId: string
+    tempBaseId: string,
+    parentMessageId: string
   ) => void;
   onAbort: () => void; // 新增的中断回调
 }
 
 const ChatBox: React.FC<ChatBoxProps> = ({
   messages,
-  receivingMessage,
+  receivingMessageId,
+  receivingMessages,
   onSendMessage,
   sendDisabled,
   onAbort,
@@ -57,6 +76,8 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   const [uploadFile, setUploadFile] = useState<boolean>(false);
   const [showRefFile, setShowRefFile] = useState<string[]>([]);
   const [cleanTempBase, setCleanTempBase] = useState<boolean>(false);
+  const [isAtBottom, setIsAtBottom] = useState(true);
+  const scrollContainerRef = useRef<HTMLDivElement>(null); // 消息容器的ref
 
   // 修改发送按钮逻辑
   const isUploadComplete = uploadProgress === 100;
@@ -77,15 +98,157 @@ const ChatBox: React.FC<ChatBoxProps> = ({
 
   // 在ChatBox组件内新增状态
   const [showConfigModal, setShowConfigModal] = useState(false);
-  const { chatId, setChatId } = useChatStore();
+  const { chatId } = useChatStore();
+
+  /////////////////////////////////////////////////
+  // 树结构转换代码，转换前端对话数据格式为树结构以支持切换不同分支的历史消息，实现消息回溯功能
+  // sse新AI消息更新时，只更新树结构对应该消息的最后的节点，以减少计算量
+  // 树结构转换代码start
+  const [selectedBranches, setSelectedBranches] = useState<
+    Record<string, number>
+  >({});
+  const [currentPath, setCurrentPath] = useState<ConversationBlock[]>([]);
+  // 缓存上一次的 blocks
+  const prevBlocksRef = useRef<ConversationBlock[]>([]);
+  const prevPathRef = useRef<ConversationBlock[]>([]);
+  const prevReceivingLengthRef = useRef(receivingMessages.length);
+  const prevDefaultSelectIdRef = useRef<Record<string, number>>({});
+
+  useEffect(() => {
+    if (receivingMessages.length === 0) {
+      prevReceivingLengthRef.current = 0;
+    }
+  }, [receivingMessages.length]);
+
+  // 构建对话块Tree结构
+  const conversationBlocks = useMemo(() => {
+    // 初始化rawMessages
+    let rawMessages: Message[] = [];
+    const isReceiving = chatId === receivingMessageId;
+    if (!isReceiving) {
+      rawMessages = messages;
+      //重置prevReceivingLengthRef长度，使得prevBlocksRef.current从历史消息切回sse消息，正确更新
+      prevReceivingLengthRef.current = 0;
+    } else {
+      rawMessages = receivingMessages;
+    }
+
+    // 使用工具函数构建 blocks
+    const newBlocks = buildConversationBlocks(
+      rawMessages,
+      prevBlocksRef.current,
+      prevReceivingLengthRef.current,
+      isReceiving
+    );
+
+    prevBlocksRef.current = newBlocks;
+    return newBlocks;
+  }, [chatId, receivingMessageId, messages, receivingMessages]);
+
+  const [refreshPath, setRefreshPath] = useState(false);
+  // 计算并设置默认分支 1
+  // recMsg.len从0变为有限，开始接收消息，需重新计算默认分支index，并更新path
+  // recMsg.len变回0为接收完毕清空recMsg，此时无需计算默认分支index,但path需更新
+  useEffect(() => {
+    if (receivingMessages.length === 0) {
+      setRefreshPath((prev) => !prev);
+      return;
+    }
+
+    const defaultBranches = calculateDefaultBranches(prevBlocksRef.current);
+    prevDefaultSelectIdRef.current = defaultBranches;
+    setSelectedBranches(defaultBranches);
+  }, [receivingMessages.length]);
+
+  // 计算并设置默认分支 2
+  // 切换对话需重新计算
+  useEffect(() => {
+    const defaultBranches = calculateDefaultBranches(prevBlocksRef.current);
+    prevDefaultSelectIdRef.current = defaultBranches;
+    setSelectedBranches(defaultBranches);
+  }, [chatId]);
+
+  // 响应分支变化重新计算路径 1
+  // 特殊处理：接收消息时保持路径稳定性,以节省计算量
+  useEffect(() => {
+    const hasChanged =
+      Object.keys(prevDefaultSelectIdRef.current).some(
+        (key) => selectedBranches[key] !== prevDefaultSelectIdRef.current[key]
+      ) ||
+      Object.keys(selectedBranches).length !==
+        Object.keys(prevDefaultSelectIdRef.current).length;
+
+    if (hasChanged) {
+      return;
+    }
+
+    if (
+      chatId === receivingMessageId &&
+      prevReceivingLengthRef.current === receivingMessages.length &&
+      prevPathRef.current.length > 0 &&
+      prevBlocksRef.current.length > 0
+    ) {
+      const newPath = [...prevPathRef.current];
+      const lastBlockIndex = newPath.length - 1;
+      newPath[lastBlockIndex] = {
+        ...prevBlocksRef.current[prevBlocksRef.current.length - 1],
+      };
+      setCurrentPath(newPath);
+      // 更新 refs 以便下一次计算使用
+      prevPathRef.current = newPath;
+    }
+  }, [chatId, receivingMessageId, receivingMessages, selectedBranches]);
+
+  // 响应分支变化重新计算路径 2
+  // 正常路径需重新计算
+  useEffect(() => {
+    const newPath = calculateCurrentPath(
+      prevBlocksRef.current,
+      selectedBranches
+    );
+    setCurrentPath(newPath);
+
+    // 更新 refs 以便下一次计算使用
+    prevPathRef.current = newPath;
+    if (receivingMessages.length !== 0) {
+      prevReceivingLengthRef.current = receivingMessages.length;
+    }
+  }, [selectedBranches]);
+
+  // 响应分支变化重新计算路径 3
+  // sse接收完毕,path需更新为messages
+  useEffect(() => {
+    const newPath = calculateCurrentPath(
+      prevBlocksRef.current,
+      selectedBranches
+    );
+    setCurrentPath(newPath);
+
+    // 更新 refs 以便下一次计算使用
+    prevPathRef.current = newPath;
+  }, [refreshPath]);
+
+  // 处理分支切换
+  const handleBranchChange = useCallback(
+    (parentId: string, newIndex: number) => {
+      setSelectedBranches((prev) => ({
+        ...prev,
+        [parentId]: newIndex,
+      }));
+    },
+    []
+  );
+
+  // 树结构转换end
+  /////////////////////////////////////////////////
 
   // 支持的文件类型
   const supportedExtensions = SupportFileFormat;
 
-  const handleSend = () => {
+  const handleSend = (lastAIMessageId: string) => {
     if (inputMessage.trim()) {
       // 发送用户消息
-      onSendMessage(inputMessage, sendingFiles, tempBaseId);
+      onSendMessage(inputMessage, sendingFiles, tempBaseId, lastAIMessageId);
       setInputMessage("");
       setSendingFiles([]);
       setTempBaseId("");
@@ -94,6 +257,18 @@ const ChatBox: React.FC<ChatBoxProps> = ({
       if (textareaRef.current) {
         textareaRef.current.style.height = "auto";
       }
+    }
+  };
+
+  const handleSendEditingMessage = (
+    inputMessage: string,
+    sendingFiles: FileRespose[],
+    tempBaseId: string,
+    parentMessageId: string
+  ) => {
+    if (inputMessage.trim()) {
+      // 发送用户消息
+      onSendMessage(inputMessage, sendingFiles, tempBaseId, parentMessageId);
     }
   };
 
@@ -114,12 +289,57 @@ const ChatBox: React.FC<ChatBoxProps> = ({
     cleanTempKnowledgeBase();
   }, [user?.name]); // 添加 user?.name 作为依赖
 
-  // 使用 useEffect 监测 messages 的变化
+  // 监听滚动事件
   useEffect(() => {
-    if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: "auto" }); // 平滑滚动到底部
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      const threshold = 100; // 距离底部的阈值
+      const isBottom =
+        container.scrollHeight - container.scrollTop <=
+        container.clientHeight + threshold;
+      setIsAtBottom(isBottom);
+    };
+
+    container.addEventListener("scroll", handleScroll);
+    return () => container.removeEventListener("scroll", handleScroll);
+  }, [receivingMessages]);
+
+  // 消息更新时的滚动逻辑
+  useEffect(() => {
+    const hasChanged =
+      Object.keys(prevDefaultSelectIdRef.current).some(
+        (key) => selectedBranches[key] !== prevDefaultSelectIdRef.current[key]
+      ) ||
+      Object.keys(selectedBranches).length !==
+        Object.keys(prevDefaultSelectIdRef.current).length;
+
+    if (
+      !hasChanged &&
+      messagesEndRef.current &&
+      isAtBottom &&
+      chatId === receivingMessageId
+    ) {
+      messagesEndRef.current.scrollIntoView({ behavior: "auto" });
     }
-  }, [messages]);
+  }, [isAtBottom, chatId, receivingMessageId, currentPath, selectedBranches]);
+
+  // 在组件内部定义
+  const shouldScrollOnPathReady = useRef(false); // 标记是否为新对话
+
+  // 切换对话时重置标记
+  useEffect(() => {
+    shouldScrollOnPathReady.current = true;
+  }, [chatId]);
+
+  // 切换对话时滚动
+  useEffect(() => {
+    if (shouldScrollOnPathReady.current && messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "auto" });
+      shouldScrollOnPathReady.current = false;
+    }
+  }, [currentPath]);
 
   useEffect(() => {
     setSendingFiles([]);
@@ -267,7 +487,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   return (
     <div className="w-[80%] flex-none h-full rounded-3xl p-4 flex flex-col">
       <div className="flex-1 min-h-0 overflow-hidden">
-        {messages.length === 0 ? (
+        {currentPath.length === 0 ? (
           <div className="h-full w-full flex flex-col items-center gap-4 bg-white/30 rounded-xl">
             <div className="h-[30vh]"></div>
             <p className="text-lg">
@@ -448,16 +668,62 @@ const ChatBox: React.FC<ChatBoxProps> = ({
             <div
               className="flex-1 overflow-y-auto scrollbar-auto px-[12%]"
               style={{ overscrollBehavior: "contain" }}
+              ref={scrollContainerRef} // 添加滚动容器的引用
             >
-              {messages.map((message, index) => (
-                <ChatMessage
-                  modelConfig={modelConfig}
-                  key={index}
-                  message={message}
-                  showRefFile={showRefFile}
-                  setShowRefFile={setShowRefFile}
-                />
-              ))}
+              {
+                // 渲染对话块
+                currentPath.map((block, blockIndex) => (
+                  <div key={blockIndex}>
+                    {block.otherUserMessage.map((msg, index) => (
+                      <ChatMessage
+                        modelConfig={modelConfig}
+                        key={index}
+                        message={msg}
+                        showRefFile={showRefFile}
+                        setShowRefFile={setShowRefFile}
+                        onSendEditingMessage={handleSendEditingMessage}
+                        sendDisabled={sendDisabled}
+                        enableOperation={true}
+                        lastUserMessage={() => ""}
+                        isLastMessage={blockIndex === currentPath.length - 1}
+                      />
+                    ))}
+                    <ChatMessage
+                      modelConfig={modelConfig}
+                      message={block.userMessage}
+                      showRefFile={showRefFile}
+                      setShowRefFile={setShowRefFile}
+                      onSendEditingMessage={handleSendEditingMessage}
+                      sendDisabled={sendDisabled}
+                      enableOperation={true}
+                      lastUserMessage={() => ""}
+                      handleBranchChange={handleBranchChange} // 处理分支切换
+                      branchIndex={block.branchIndex} // 当前分支索引
+                      branchCount={block.branchCount} // 分支总数
+                      parentId={block.parentId} // 父节点 ID
+                      isLastMessage={blockIndex === currentPath.length - 1}
+                    />
+                    {block.aiMessages.map((aiMsg, aiIndex) => (
+                      <ChatMessage
+                        modelConfig={modelConfig}
+                        key={aiIndex}
+                        message={aiMsg}
+                        showRefFile={showRefFile}
+                        setShowRefFile={setShowRefFile}
+                        onSendEditingMessage={handleSendEditingMessage}
+                        sendDisabled={sendDisabled}
+                        enableOperation={true}
+                        lastUserMessage={() => block.userMessage.content || ""}
+                        handleBranchChange={handleBranchChange} // 处理分支切换
+                        branchIndex={block.branchIndex} // 当前分支索引
+                        branchCount={block.branchCount} // 分支总数
+                        parentId={block.parentId} // 父节点 ID
+                        isLastMessage={blockIndex === currentPath.length - 1}
+                      />
+                    ))}
+                  </div>
+                ))
+              }
               {/* 这个 div 用于滚动到底部 */}
               <div ref={messagesEndRef} />
             </div>
@@ -482,8 +748,15 @@ const ChatBox: React.FC<ChatBoxProps> = ({
               onKeyDown={(e) => {
                 if (e.key === "Enter" && e.shiftKey) {
                   e.preventDefault();
-                  if (!isSendDisabled || !sendDisabled) {
-                    handleSend();
+                  if (!isSendDisabled && !sendDisabled) {
+                    let lastAIMessageId: string = "";
+                    // 如果没有提供 parentMessageId，则查找最后一条 AI 消息的 ID
+                    if (currentPath.length > 0) {
+                      lastAIMessageId =
+                        currentPath[currentPath.length - 1].aiMessages[0]
+                          .messageId || "";
+                    }
+                    handleSend(lastAIMessageId);
                   }
                 }
               }}
@@ -586,14 +859,23 @@ const ChatBox: React.FC<ChatBoxProps> = ({
               ))}
           </div>
         </div>
-        {(!sendDisabled  || !receivingMessage) &&  (
+        {(!sendDisabled || !receivingMessageId) && (
           <button
             className={`min-w-[13%] flex gap-1 ${
               isSendDisabled || sendDisabled
                 ? "bg-indigo-300 cursor-not-allowed"
                 : "bg-indigo-500 hover:bg-indigo-600 cursor-pointer"
             } rounded-full text-base item-center justify-center px-5 py-2 text-white`}
-            onClick={handleSend}
+            onClick={() => {
+              let lastAIMessageId: string = "";
+              // 如果没有提供 parentMessageId，则查找最后一条 AI 消息的 ID
+              if (currentPath.length > 0) {
+                lastAIMessageId =
+                  currentPath[currentPath.length - 1].aiMessages[0].messageId ||
+                  "";
+              }
+              handleSend(lastAIMessageId);
+            }}
             disabled={isSendDisabled || sendDisabled}
           >
             <svg
@@ -608,7 +890,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
           </button>
         )}
         {/* 添加中断按钮 */}
-        {sendDisabled && receivingMessage && (
+        {sendDisabled && receivingMessageId && (
           <button
             className={`min-w-[13%] flex gap-1 ${
               sendDisabled

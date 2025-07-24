@@ -8,6 +8,7 @@ export interface Message {
   fileType?: string; // 新增文件类型字段
   minioUrl?: string;
   messageId?: string;
+  parentMessageId?: string; // 父消息ID，用于回复
   baseId?: string;
   score?: number;
   imageMinioUrl?: string;
@@ -17,6 +18,16 @@ export interface Message {
     prompt_tokens: number;
   };
   from: "user" | "ai"; // 消息的来源
+}
+
+// 对话块结构
+export interface ConversationBlock {
+  userMessage: Message;
+  otherUserMessage: Message[];
+  aiMessages: Message[];
+  parentId: string;
+  branchIndex: number;
+  branchCount: number;
 }
 
 export interface Chat {
@@ -220,4 +231,14 @@ export interface Chatflow {
   isRead: boolean;
   createTime: string;
   messages: Message[];
+}
+
+export interface PathCalculationContext {
+  prevPathRef: React.RefObject<ConversationBlock[]>;
+  prevBlocksRef: React.RefObject<ConversationBlock[]>;
+  prevReceivingLengthRef: React.RefObject<number>;
+  prevSelectIdRef:React.RefObject<Record<string, number>>;
+  chatId: string;
+  receivingMessageId: string | null;
+  receivingMessages: any[];
 }

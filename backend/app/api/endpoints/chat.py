@@ -190,10 +190,11 @@ async def upload_multiple_files(
     # 验证当前用户是否与要删除的用户名匹配
     await verify_username_match(current_user, username)
     return_files = []
-    knowledge_db_id = "temp_" + conversation_id
+    id = str(uuid.uuid4())
+    knowledge_db_id = "temp_" + conversation_id + "_" + id
     await db.create_knowledge_base(
         username,
-        f"temp_base_{username}",
+        f"temp_base_{username}_{id}",
         knowledge_db_id,
         True,
     )

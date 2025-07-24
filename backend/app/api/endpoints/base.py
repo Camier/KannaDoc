@@ -253,7 +253,7 @@ async def delete_knowledge_base(
     for knowledge_base in knowledge_bases:
         if knowledge_base["knowledge_base_id"].startswith("temp_"):
             temp_knowledge_base_id = knowledge_base["knowledge_base_id"]
-            if temp_knowledge_base_id[5:] not in chat_chatflow_id:
+            if "_".join(temp_knowledge_base_id[5:].split("_")[0:2]) not in chat_chatflow_id:
                 result = await db.delete_knowledge_base(temp_knowledge_base_id)
                 milvus_client.delete_collection(
                     "colqwen" + temp_knowledge_base_id.replace("-", "_")

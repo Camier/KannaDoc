@@ -1,9 +1,8 @@
 // components/ChatMessage.tsx
 "use client";
 import React, { Dispatch, useMemo, useState } from "react";
-import { BaseUsed, Message, ModelConfig } from "@/types/types";
+import { FileRespose, Message, ModelConfig } from "@/types/types";
 import Image from "next/image";
-import { useAuthStore } from "@/stores/authStore";
 import LoadingCircle from "./LoadingCircle";
 import { getFileIcon } from "@/utils/file";
 import MarkdownDisplay from "./MarkdownDisplay";
@@ -14,6 +13,20 @@ interface ChatMessageProps {
   message: Message;
   showRefFile: string[];
   setShowRefFile: Dispatch<React.SetStateAction<string[]>>;
+  onSendEditingMessage?: (
+    inputMessage: string,
+    sendingFiles: FileRespose[],
+    tempBaseId: string,
+    parentMessageId: string
+  ) => void;
+  lastUserMessage?: () => string; // 最后一条用户消息
+  sendDisabled?: boolean; // 是否禁用发送按钮
+  enableOperation?: boolean; // 是否启用操作栏
+  handleBranchChange?: (parentId: string, newIndex: number) => void;
+  branchIndex?: number; // 当前分支
+  branchCount?: number; // 分支数量
+  parentId?: string; // 父消息ID，用于分支切换
+  isLastMessage?: boolean // 判断是否为最后一条消息
 }
 
 const ChatMessage: React.FC<ChatMessageProps> = ({
@@ -21,22 +34,36 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
   message,
   showRefFile,
   setShowRefFile,
+  lastUserMessage = () => "",
+  sendDisabled = false,
+  onSendEditingMessage = () => {},
+  enableOperation = false,
+  handleBranchChange = () => {},
+  branchIndex = 1, // 当前分支索引
+  branchCount = 5, // 分支总数
+  parentId = "root", // 父消息ID，用于分支切换
+  isLastMessage = false
 }) => {
   const isUser = message.from === "user"; // 判断是否是用户消息
   const [isOpen, setIsOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
+  const [copiedAll, setCopiedAll] = useState(false);
+  const [messageEditing, setMessageEditing] = useState<boolean>(false);
+  const [inputMessage, setInputMessage] = useState<string>(
+    message.content || ""
+  );
 
   // 提取thinking内容和剩余内容
   const { thinkingContent, displayContent } = useMemo(() => {
     let thinkingContent = "";
     let displayContent = message.content || "";
-    
+
     // 仅处理文本类型的消息
     if (message.type === "text" && displayContent) {
       // 检查是否有<think>开头
       if (displayContent.startsWith("<think>")) {
         const endTagIndex = displayContent.indexOf("</think>");
-        
+
         if (endTagIndex !== -1) {
           // 有闭合标签：提取思考内容
           thinkingContent = displayContent.substring(
@@ -51,10 +78,9 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
         }
       }
     }
-    
+
     return { thinkingContent, displayContent };
   }, [message.content, message.type]);
-
 
   const handleImageClick = (selctImage: string) => {
     setSelectedImage(selctImage);
@@ -74,22 +100,113 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
     }
   };
 
+  // 复制全部内容的处理函数
+  const handleCopyAll = async (md_text: string) => {
+    // 直接使用原始的md_text（base64编码之前的内容）
+    try {
+      await navigator.clipboard.writeText(md_text);
+      setCopiedAll(true);
+      setTimeout(() => setCopiedAll(false), 2000);
+    } catch (err) {
+      // 降级方案：使用textarea
+      const textArea = document.createElement("textarea");
+      textArea.value = md_text;
+      document.body.appendChild(textArea);
+      textArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textArea);
+      setCopiedAll(true);
+      setTimeout(() => setCopiedAll(false), 2000);
+    }
+  };
+
   return (
-    <div
-      className={`m-1 rounded-3xl w-fit break-words flex flex-col 
+    <div className="w-full group">
+      <div
+        className={`m-1 rounded-3xl w-fit break-words flex flex-col 
         ${isUser ? "ml-auto max-w-[90%]" : "mr-auto max-w-[98%]"} ${
-        isUser && message.type === "text"
-          ? "" //"bg-indigo-300 shadow-lg"
-          : message.type === "image"
-          ? "bg-white mb-3 shadow-lg"
-          : "bg-white mb-0.5"
-      } ${
-        message.type === "text"
-          ? "px-4 py-3 mb-2 text-gray-800"
-          : "overflow-hidden"
-      }`}
-    >
-      <div>
+          isUser && message.type === "text"
+            ? "" //"bg-indigo-300 shadow-lg"
+            : message.type === "image"
+            ? "bg-white mb-3 shadow-lg"
+            : "bg-white mb-0.5"
+        } ${
+          message.type === "text"
+            ? "px-4 py-3 mb-2 text-gray-800"
+            : "overflow-hidden"
+        }`}
+      >
+        {/* user message */}
+        {message.type === "text" &&
+          message.from === "user" &&
+          message.content &&
+          (messageEditing ? (
+            <div className="flex flex-col gap-2">
+              <div className="flex justify-center items-center h-full">
+                <textarea
+                  className="px-4 py-2 w-[50vw] min-h-[10vh] max-h-[20vh] border-indigo-500 border-2 rounded-3xl text-base focus:outline-hidden focus:border-indigo-600 focus:border-[2.5px] resize-none overflow-y-auto"
+                  placeholder=""
+                  value={inputMessage}
+                  rows={1}
+                  onChange={(e) => {
+                    setInputMessage(e.target.value);
+                    e.target.style.height = "auto";
+                    e.target.style.height = e.target.scrollHeight + "px";
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && e.shiftKey) {
+                      e.preventDefault();
+                      if (!sendDisabled) {
+                        onSendEditingMessage(
+                          inputMessage,
+                          [],
+                          "",
+                          message.parentMessageId || ""
+                        );
+                        setMessageEditing(false);
+                      }
+                    }
+                  }}
+                />
+              </div>
+              <div className="flex justify-end gap-2">
+                <button
+                  onClick={() => {
+                    setMessageEditing(false);
+                    setInputMessage(message.content || "");
+                  }}
+                  className="border border-gray-200 hover:bg-gray-100 cursor-pointer px-4 py-2 rounded-3xl"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={() => {
+                    if (!sendDisabled) {
+                      onSendEditingMessage(
+                        inputMessage,
+                        [],
+                        "",
+                        message.parentMessageId || ""
+                      );
+                      setMessageEditing(false);
+                    }
+                  }}
+                  disabled={sendDisabled || inputMessage.trim() === ""}
+                  className="bg-indigo-500 disabled:cursor-not-allowed disabled:opacity-50 px-4 py-2 hover:bg-indigo-700 cursor-pointer text-white rounded-3xl"
+                >
+                  Send
+                </button>
+              </div>
+            </div>
+          ) : (
+            <MarkdownDisplay
+              md_text={message.content}
+              message={message}
+              showTokenNumber={false}
+              isThinking={false}
+            />
+          ))}
+        {/* AI thinking 1 */}
         {message.type === "text" && message.thinking && (
           <MarkdownDisplay
             md_text={message.thinking}
@@ -98,21 +215,240 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
             isThinking={true}
           />
         )}
-        {message.type === "text" && thinkingContent && (
-          <MarkdownDisplay
-            md_text={thinkingContent}
-            message={message}
-            showTokenNumber={false}
-            isThinking={true}
-          />
-        )}
-        {message.type === "text" && displayContent && (
+        {/* AI thinking 2 */}
+        {message.type === "text" &&
+          message.from === "ai" &&
+          thinkingContent && (
+            <MarkdownDisplay
+              md_text={thinkingContent}
+              message={message}
+              showTokenNumber={false}
+              isThinking={true}
+            />
+          )}
+        {/* AI message */}
+        {message.type === "text" && message.from === "ai" && displayContent && (
           <MarkdownDisplay
             md_text={displayContent}
             message={message}
             showTokenNumber={true}
             isThinking={false}
           />
+        )}
+
+        {/* 消息操作栏--复制、重试、切换等 */}
+        {message.type === "text" && (
+          <div
+            className={`flex gap-2 items-center mt-3 text-sm text-gray-600 ${
+              message.from === "user" ? "pr-2 justify-end" : "justify-start"
+            }`}
+          >
+            {message.from === "ai" &&
+              enableOperation &&
+              !messageEditing &&
+              branchCount > 1 && (
+                <div className="flex gap-0.5 font-medium">
+                  <button
+                    className="cursor-pointer hover:text-gray-800 transition-colors disabled:cursor-not-allowed disabled:hover:text-gray-600  disabled:opacity-50"
+                    onClick={() =>
+                      handleBranchChange(parentId ?? "root", branchIndex - 1)
+                    }
+                    disabled={branchIndex === 0}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="2"
+                      stroke="currentColor"
+                      className="size-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15.75 19.5 8.25 12l7.5-7.5"
+                      />
+                    </svg>
+                  </button>
+                  <span>{branchIndex + 1}</span>/<span>{branchCount}</span>
+                  <button
+                    className="cursor-pointer hover:text-gray-800 transition-colors disabled:cursor-not-allowed disabled:hover:text-gray-600  disabled:opacity-50"
+                    onClick={() =>
+                      handleBranchChange(parentId ?? "root", branchIndex + 1)
+                    }
+                    disabled={branchIndex === branchCount - 1}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="2"
+                      stroke="currentColor"
+                      className="size-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              )}
+            {/* 复制全部按钮 - 只在非思考状态下显示 */}
+            {(message.from === "ai" ||
+              (message.from === "user" && !messageEditing)) && (
+              <button
+                onClick={() => handleCopyAll(displayContent)}
+                className={`${isLastMessage? "":"group-hover:opacity-100 opacity-0"} cursor-pointer flex items-center gap-0.5 hover:text-gray-800 transition-colors`}
+                aria-label="Copy all content"
+              >
+                {copiedAll ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="w-5 h-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0 1 18 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3 1.5 1.5 3-3.75"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="w-5 h-5"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z"
+                    />
+                  </svg>
+                )}
+                <span>{copiedAll ? "Copied!" : "Copy"}</span>
+              </button>
+            )}
+            {message.from === "ai" && enableOperation && (
+              <div
+                onClick={() => {
+                  if (!sendDisabled) {
+                    onSendEditingMessage(
+                      lastUserMessage(),
+                      [],
+                      "",
+                      message.parentMessageId || ""
+                    );
+                    setMessageEditing(false);
+                  }
+                }}
+                className={`${
+                  sendDisabled
+                    ? isLastMessage? "cursor-not-allowed opacity-50" : "group-hover:opacity-50 opacity-0"
+                    : isLastMessage? "cursor-pointer" : "cursor-pointer group-hover:opacity-100 opacity-0"
+                } flex items-center gap-0.5 hover:text-gray-800 transition-colors`}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="size-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99"
+                  />
+                </svg>
+                <span>Regenerate</span>
+              </div>
+            )}
+            {message.from === "user" && enableOperation && !messageEditing && (
+              <div
+                onClick={() => setMessageEditing(true)}
+                className={`${isLastMessage? "":"group-hover:opacity-100 opacity-0"} cursor-pointer flex items-center gap-0.5 hover:text-gray-800 transition-colors`}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="size-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                  />
+                </svg>
+                <span>Edit</span>
+              </div>
+            )}
+            {/* 分支选择器 */}
+            {message.from === "user" &&
+              enableOperation &&
+              !messageEditing &&
+              branchCount > 1 && (
+                <div className="flex gap-0.5 font-medium">
+                  <button
+                    className="cursor-pointer hover:text-gray-800 transition-colors disabled:cursor-not-allowed disabled:hover:text-gray-600  disabled:opacity-50"
+                    onClick={() =>
+                      handleBranchChange(parentId ?? "root", branchIndex - 1)
+                    }
+                    disabled={branchIndex === 0}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="2"
+                      stroke="currentColor"
+                      className="size-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15.75 19.5 8.25 12l7.5-7.5"
+                      />
+                    </svg>
+                  </button>
+                  <span>{branchIndex + 1}</span>/<span>{branchCount}</span>
+                  <button
+                    className="cursor-pointer hover:text-gray-800 transition-colors disabled:cursor-not-allowed disabled:hover:text-gray-600  disabled:opacity-50"
+                    onClick={() =>
+                      handleBranchChange(parentId ?? "root", branchIndex + 1)
+                    }
+                    disabled={branchIndex === branchCount - 1}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth="2"
+                      stroke="currentColor"
+                      className="size-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              )}
+          </div>
         )}
 
         {message.type === "file" && (
@@ -273,11 +609,9 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
                   />
                 </svg>
                 <div className="text-sm font-semibold">
-                  {
-                    modelConfig?.baseUsed.find(
-                      (item) => item.baseId === message.baseId
-                    )?.name
-                  }
+                  {modelConfig?.baseUsed.find(
+                    (item) => item.baseId === message.baseId
+                  )?.name || "User Upload"}
                 </div>
               </div>
             </div>

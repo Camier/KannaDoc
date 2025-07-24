@@ -97,7 +97,7 @@ const Homepage = () => {
                   /*router.push("/chem-ketcher");*/
                 }
               }}
-              className={`text-lg bg-indigo-500 hover:bg-indigo-600 text-white py-2 pl-5 pr-4 rounded-full cursor-pointer flex items-center justify-center`}
+              className={`text-lg bg-indigo-500 hover:bg-indigo-600 text-white py-2 pl-6 pr-5 rounded-full cursor-pointer flex items-center justify-center`}
             >
               <div>Start now</div>
               <svg
