@@ -451,15 +451,15 @@ const AIChat: React.FC = () => {
     } catch (error) {
       // 处理中断错误 - 添加类型检查
       if (error instanceof Error && error.name === "AbortError") {
-        console.log("SSE connection aborted by user");
         // 可选的：添加用户中断的视觉反馈
         if (aiMessage) {
           aiMessage += " ⚠️ Abort By User";
         } else {
           aiThinking += " ⚠️ Abort By User";
         }
-      } else {
-        console.error("Error:", error);
+      } else {        
+        // 可选的：添加用户中断的视觉反馈
+          aiMessage += "```LLM_ERROR\n  ⚠️ The LLM/VLM failed to generate a response...\n  ⚠️ Please refresh to check the backend feedback for the reason\n  ```";
         // 错误时更新最后一条AI消息内容
         handleSelectChat(conversationId, true);
       }

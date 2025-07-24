@@ -153,7 +153,7 @@ const ChatflowHistoryComponent: React.FC<ChatflowHistoryProps> = ({
 
   return (
     <div className="relative w-full">
-      <details className="group w-full">
+      <details className="group/outer w-full">
         <summary
           className="flex items-center cursor-pointer font-medium w-full"
           onClick={handleSelectChatflow}
@@ -184,7 +184,7 @@ const ChatflowHistoryComponent: React.FC<ChatflowHistoryProps> = ({
                   .split(".")[0]
               }
               <svg
-                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                className="ml-1 w-4 h-4 transition-transform group-open/outer:rotate-180"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -212,6 +212,7 @@ const ChatflowHistoryComponent: React.FC<ChatflowHistoryProps> = ({
                   message={message}
                   showRefFile={showRefFile}
                   setShowRefFile={setShowRefFile}
+                  isLastMessage={message.from === "user"? index >= messages.length - 3 : index >= messages.length - 2}
                 />
               ))
             ) : (

@@ -151,7 +151,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   // recMsg.len变回0为接收完毕清空recMsg，此时无需计算默认分支index,但path需更新
   useEffect(() => {
     if (receivingMessages.length === 0) {
-      setRefreshPath((prev) => !prev);
+      setRefreshPath(true);
       return;
     }
 
@@ -201,6 +201,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
 
   // 响应分支变化重新计算路径 2
   // 正常路径需重新计算
+  const [updatePrevLen, setUpdatePrevLen] = useState(false);
   useEffect(() => {
     const newPath = calculateCurrentPath(
       prevBlocksRef.current,
@@ -210,23 +211,30 @@ const ChatBox: React.FC<ChatBoxProps> = ({
 
     // 更新 refs 以便下一次计算使用
     prevPathRef.current = newPath;
-    if (receivingMessages.length !== 0) {
-      prevReceivingLengthRef.current = receivingMessages.length;
-    }
+    setUpdatePrevLen(true);
   }, [selectedBranches]);
+
+  useEffect(() => {
+    if (updatePrevLen && receivingMessages.length !== 0) {
+      prevReceivingLengthRef.current = receivingMessages.length;
+      setUpdatePrevLen(false);
+    }
+  }, [updatePrevLen, receivingMessages.length]);
 
   // 响应分支变化重新计算路径 3
   // sse接收完毕,path需更新为messages
   useEffect(() => {
-    const newPath = calculateCurrentPath(
-      prevBlocksRef.current,
-      selectedBranches
-    );
-    setCurrentPath(newPath);
-
-    // 更新 refs 以便下一次计算使用
-    prevPathRef.current = newPath;
-  }, [refreshPath]);
+    if (refreshPath) {
+      setRefreshPath(false);
+      const newPath = calculateCurrentPath(
+        prevBlocksRef.current,
+        selectedBranches
+      );
+      setCurrentPath(newPath);
+      // 更新 refs 以便下一次计算使用
+      prevPathRef.current = newPath;
+    }
+  }, [refreshPath, setRefreshPath, selectedBranches]);
 
   // 处理分支切换
   const handleBranchChange = useCallback(

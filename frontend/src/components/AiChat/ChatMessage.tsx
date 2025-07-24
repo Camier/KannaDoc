@@ -132,7 +132,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
             : "bg-white mb-0.5"
         } ${
           message.type === "text"
-            ? "px-4 py-3 mb-2 text-gray-800"
+            ? "px-4 py-2 mb-2 text-gray-800"
             : "overflow-hidden"
         }`}
       >
@@ -352,7 +352,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
                 }}
                 className={`${
                   sendDisabled
-                    ? isLastMessage? "cursor-not-allowed opacity-50" : "group-hover:opacity-50 opacity-0"
+                    ? isLastMessage? "cursor-not-allowed opacity-50" : "cursor-not-allowed group-hover:opacity-50 opacity-0"
                     : isLastMessage? "cursor-pointer" : "cursor-pointer group-hover:opacity-100 opacity-0"
                 } flex items-center gap-0.5 hover:text-gray-800 transition-colors`}
               >
