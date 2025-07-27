@@ -330,6 +330,11 @@ const AIChat: React.FC = () => {
     let completion_tokens: number = 0;
     let prompt_tokens: number = 0;
     let file_used: FileUsed[] = [];
+
+    // 节流控制
+    let throttleTimeout: NodeJS.Timeout | null = null;
+    let shouldUpdate = true;
+
     setReceivingMessageId(conversationId);
 
     try {
@@ -394,43 +399,49 @@ const AIChat: React.FC = () => {
           prompt_tokens = payload.prompt_tokens;
         }
         // 使用函数式更新确保基于最新状态
-        setReceivingMessages((prevMessages: string | any[]) => {
-          // 查找最后一个AI消息（即加载占位符）
-          const lastIndex = prevMessages.length - 1;
-          if (lastIndex >= 0 && prevMessages[lastIndex].from === "ai") {
-            const updatedMessages = [...prevMessages];
-            updatedMessages[lastIndex] = {
-              ...updatedMessages[lastIndex],
-              content: aiMessage,
-              thinking: aiThinking,
-              messageId: messageId ? messageId : "",
-              parentMessageId:
-                userMessages[userMessages.length - 1].parentMessageId,
-              token_number: {
-                total_token: total_token,
-                completion_tokens: completion_tokens,
-                prompt_tokens: prompt_tokens,
+        if (shouldUpdate) {
+          shouldUpdate = false;
+          setReceivingMessages((prevMessages: string | any[]) => {
+            // 查找最后一个AI消息（即加载占位符）
+            const lastIndex = prevMessages.length - 1;
+            if (lastIndex >= 0 && prevMessages[lastIndex].from === "ai") {
+              const updatedMessages = [...prevMessages];
+              updatedMessages[lastIndex] = {
+                ...updatedMessages[lastIndex],
+                content: aiMessage,
+                thinking: aiThinking,
+                messageId: messageId ? messageId : "",
+                parentMessageId:
+                  userMessages[userMessages.length - 1].parentMessageId,
+                token_number: {
+                  total_token: total_token,
+                  completion_tokens: completion_tokens,
+                  prompt_tokens: prompt_tokens,
+                },
+              };
+              return updatedMessages;
+            }
+            // 如果没有找到AI消息，添加新条目（理论上不会发生）
+            return [
+              ...prevMessages,
+              {
+                type: "thinking",
+                content: aiThinking,
+                messageId: messageId ? messageId : "",
+                from: "ai",
               },
-            };
-            return updatedMessages;
-          }
-          // 如果没有找到AI消息，添加新条目（理论上不会发生）
-          return [
-            ...prevMessages,
-            {
-              type: "thinking",
-              content: aiThinking,
-              messageId: messageId ? messageId : "",
-              from: "ai",
-            },
-            {
-              type: "text",
-              content: aiMessage,
-              messageId: messageId ? messageId : "",
-              from: "ai",
-            },
-          ];
-        });
+              {
+                type: "text",
+                content: aiMessage,
+                messageId: messageId ? messageId : "",
+                from: "ai",
+              },
+            ];
+          });
+          throttleTimeout = setTimeout(() => {
+            shouldUpdate = true;
+          }, 100); // 100ms秒节流
+        }
       }
       setReceivingMessages((prevMessages: string | any[]) => {
         return [
@@ -457,9 +468,10 @@ const AIChat: React.FC = () => {
         } else {
           aiThinking += " ⚠️ Abort By User";
         }
-      } else {        
+      } else {
         // 可选的：添加用户中断的视觉反馈
-          aiMessage += "```LLM_ERROR\n  ⚠️ The LLM/VLM failed to generate a response...\n  ⚠️ Please refresh to check the backend feedback for the reason\n  ```";
+        aiMessage +=
+          "```LLM_ERROR\n  ⚠️ The LLM/VLM failed to generate a response...\n  ⚠️ Please refresh to check the backend feedback for the reason\n  ```";
         // 错误时更新最后一条AI消息内容
         handleSelectChat(conversationId, true);
       }

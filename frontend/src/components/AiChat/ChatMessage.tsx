@@ -7,6 +7,7 @@ import LoadingCircle from "./LoadingCircle";
 import { getFileIcon } from "@/utils/file";
 import MarkdownDisplay from "./MarkdownDisplay";
 import { createPortal } from "react-dom";
+import { userAgent } from "next/server";
 
 interface ChatMessageProps {
   modelConfig: ModelConfig | undefined;
@@ -121,8 +122,10 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
   };
 
   useEffect(() => {
-    setInputMessage(message.content || "");
-    setMessageEditing(false);
+    if (message.from == "user") {
+      setInputMessage(message.content || "");
+      setMessageEditing(false);
+    }
   }, [message.content]);
 
   return (
