@@ -1,3 +1,4 @@
+import { AxiosError } from "axios";
 import { useAuthStore } from "../stores/authStore";
 import { login, refreshToken, register } from "./api/chatApi";
 import { removeToken, setToken } from "@/utils/cookie";
@@ -9,10 +10,18 @@ export const loginUser = async (name: string, password: string) => {
     // Set token securely in cookies
     setToken(data.access_token);
     // Store only non-sensitive user info in Zustand
-    useAuthStore.getState().setUser({ name: data.user.username, email: data.user.email });
+    useAuthStore
+      .getState()
+      .setUser({ name: data.user.username, email: data.user.email });
     return data;
   } catch (error) {
-    throw new Error("Login failed");
+    const errorMessage =
+      error instanceof AxiosError
+        ? error.response?.data.message
+          ? error.response?.data.message
+          : error.response?.data.detail[0].msg
+        : "Unknown error";
+    throw new Error(errorMessage);
   }
 };
 
@@ -34,11 +43,21 @@ export const refreshUser = async () => {
   }
 };
 
-export const registerUser = async (name:string, email: string, password: string) => {
+export const registerUser = async (
+  name: string,
+  email: string,
+  password: string
+) => {
   try {
     const { data } = await register(name, email, password);
     return data;
   } catch (error) {
-    throw new Error("Register failed");
+    const errorMessage =
+      error instanceof AxiosError
+        ? error.response?.data.message
+          ? error.response?.data.message
+          : error.response?.data.detail[0].msg
+        : "Unknown error";
+    throw new Error(errorMessage);
   }
 };

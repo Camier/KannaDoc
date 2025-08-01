@@ -2,12 +2,14 @@
 import { useAuthStore } from "../stores/authStore";
 import { verifyToken } from "../lib/api/chatApi";
 import Cookies from "js-cookie";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Alert from "@/components/Alert";
+import { useTranslations } from "next-intl";
 
 const withAuth = (WrappedComponent: any) => {
   const AuthComponent = (props: any) => {
+    const t = useTranslations("WithAuth");
     const router = useRouter();
     const { user, clearUser } = useAuthStore();
     const [isCheckingAuth, setIsCheckingAuth] = useState(true); // 用于跟踪身份验证状态
@@ -53,7 +55,7 @@ const withAuth = (WrappedComponent: any) => {
           <Alert
             showAlert={{
               show: true,
-              message: "check login state...",
+              message: t("checkMessage"),
               type: "success",
             }}
           />

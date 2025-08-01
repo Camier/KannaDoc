@@ -4,6 +4,7 @@ import { useAuthStore } from "@/stores/authStore";
 import { useFlowStore } from "@/stores/flowStore";
 import { useGlobalStore } from "@/stores/WorkflowVariableStore";
 import { CustomNode } from "@/types/types";
+import { useTranslations } from "next-intl";
 import { Dispatch, SetStateAction, useState } from "react";
 
 interface LoopNodeProps {
@@ -21,6 +22,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
   setCodeFullScreenFlow,
   codeFullScreenFlow,
 }) => {
+  const t = useTranslations("LoopNode");
   const {
     globalVariables,
     globalDebugVariables,
@@ -66,16 +68,16 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
   };
 
   return (
-    <div className="overflow-auto h-full flex flex-col items-start justify-start gap-1">
-      <div className="px-2 py-1 flex items-center justify-between w-full mt-1 font-medium">
-        <div className="text-xl flex items-center justify-start max-w-[60%] gap-1">
+    <div className="overflow-auto h-full flex flex-col items-start justify-start gap-1 text-[15px]">
+      <div className="px-2 py-1 flex items-center justify-between w-full mt-1">
+        <div className="flex items-center justify-start max-w-[60%] gap-1 font-medium text-base">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            strokeWidth="1.5"
+            strokeWidth="2"
             stroke="currentColor"
-            className="size-6 shrink-0"
+            className="size-5 shrink-0"
           >
             <path
               strokeLinecap="round"
@@ -107,7 +109,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
         </div>
         <button
           onClick={() => saveNode(node)}
-          className="cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+          className="cursor-pointer disabled:cursor-not-allowed py-1 px-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +117,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-5"
+            className="size-4"
           >
             <path
               strokeLinecap="round"
@@ -123,28 +125,30 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
               d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
             />
           </svg>
-          <span className="whitespace-nowrap">Save Node</span>
+          <span className="whitespace-nowrap">{t("saveNode")}</span>
         </button>
       </div>
       <details className="group w-full" open>
-        <summary className="flex items-center cursor-pointer font-medium w-full">
-          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full font-medium">
+        <summary className="flex items-center cursor-pointer w-full">
+          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full">
             <div className="flex items-center justify-start gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
+                fill="none"
                 viewBox="0 0 24 24"
-                fill="currentColor"
-                className="size-5"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-4"
               >
                 <path
-                  fillRule="evenodd"
-                  d="M2.25 5.25a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3V15a3 3 0 0 1-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 0 1-.53 1.28h-9a.75.75 0 0 1-.53-1.28l.621-.622a2.25 2.25 0 0 0 .659-1.59V18h-3a3 3 0 0 1-3-3V5.25Zm1.5 0v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5Z"
-                  clipRule="evenodd"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25"
                 />
               </svg>
-              Description
+              {t("description")}
               <svg
-                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                className="w-4 h-4 transition-transform group-open:rotate-180"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -162,7 +166,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
                 e.preventDefault();
                 setIsEditing(!isEditing);
               }}
-              className="hover:bg-indigo-600 hover:text-white cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full disabled:opacity-50"
+              className="hover:bg-indigo-600 hover:text-white cursor-pointer disabled:cursor-not-allowed py-1 px-2 rounded-full disabled:opacity-50"
             >
               {isEditing ? (
                 <div className="flex items-center justify-center gap-1">
@@ -172,7 +176,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="size-5"
+                    className="size-4"
                   >
                     <path
                       strokeLinecap="round"
@@ -180,7 +184,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
                       d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z"
                     />
                   </svg>
-                  <span>Preview</span>
+                  <span>{t("preview")}</span>
                 </div>
               ) : (
                 <div className="flex items-center justify-center gap-1">
@@ -190,7 +194,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="size-5"
+                    className="size-4"
                   >
                     <path
                       strokeLinecap="round"
@@ -198,7 +202,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
                       d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
                     />
                   </svg>
-                  <span>Edit</span>
+                  <span>{t("edit")}</span>
                 </div>
               )}
             </button>
@@ -207,7 +211,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
 
         {isEditing ? (
           <div
-            className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 p-4 bg-white`}
+            className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 px-4 pb-4 pt-2 bg-white`}
           >
             <textarea
               className={`mt-1 w-full px-2 py-2 border border-gray-200 rounded-xl min-h-[10vh] ${
@@ -215,7 +219,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
               } resize-none overflow-y-auto focus:outline-hidden focus:ring-2 focus:ring-indigo-500`}
               value={node.data.description || ""}
               onChange={(e) => updateDescription(node.id, e.target.value)}
-              placeholder="Enter Markdown content here..."
+              placeholder={t("descriptionPlaceholder")}
             />
           </div>
         ) : (
@@ -223,7 +227,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
             className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 p-4 bg-gray-100`}
           >
             <MarkdownDisplay
-              md_text={node.data.description || "No decription found"}
+              md_text={node.data.description || t("noDescription")}
               message={{
                 type: "text",
                 content: node.data.description || "",
@@ -236,14 +240,14 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
         )}
       </details>
       <details className="group w-full" open>
-        <summary className="flex items-center cursor-pointer font-medium w-full">
+        <summary className="flex items-center cursor-pointer w-full">
           <div className="px-2 py-1 flex items-center justify-between w-full mt-1">
             <div className="flex items-center justify-center gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="size-5"
+                className="size-4"
               >
                 <path
                   fillRule="evenodd"
@@ -251,9 +255,9 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
                   clipRule="evenodd"
                 />
               </svg>
-              Global Variable
+              {t("globalVariable")}
               <svg
-                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                className="w-4 h-4 transition-transform group-open:rotate-180"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -267,7 +271,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
               </svg>
             </div>
             <button
-              className="cursor-pointer disabled:cursor-not-allowed px-4 py-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+              className="cursor-pointer disabled:cursor-not-allowed px-2 py-1 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
               onClick={() => setCodeFullScreenFlow((prev: boolean) => !prev)}
             >
               {codeFullScreenFlow ? (
@@ -277,7 +281,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="size-6"
+                  className="size-4.5"
                 >
                   <path
                     strokeLinecap="round"
@@ -292,7 +296,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="size-6"
+                  className="size-4.5"
                 >
                   <path
                     strokeLinecap="round"
@@ -305,7 +309,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
           </div>
         </summary>
         <div
-          className={`space-y-2 p-4 rounded-2xl shadow-lg ${
+          className={`space-y-2 px-4 pb-4 pt-2 rounded-2xl shadow-lg ${
             codeFullScreenFlow ? "w-full" : "w-full"
           }`}
         >
@@ -313,7 +317,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
             <input
               name={"addVariable"}
               value={variable}
-              placeholder="Variable Name"
+              placeholder={t("variableNamePlaceholder")}
               onChange={(e) => setVariable(e.target.value)}
               className="w-full px-3 py-1 border-2 border-gray-200 rounded-xl
               focus:outline-none focus:ring-2 focus:ring-indigo-500
@@ -346,7 +350,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="size-5"
+                className="size-4"
               >
                 <path
                   fillRule="evenodd"
@@ -354,13 +358,13 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
                   clipRule="evenodd"
                 />
               </svg>
-              <span>Click to Add</span>
+              <span>{t("clickToAdd")}</span>
             </div>
           </div>
           {Object.keys(isDebugMode ? globalDebugVariables : globalVariables)
             .length === 0 && (
             <div className="px-2 flex w-full items-center gap-2 text-gray-500">
-              No variable found.
+              {t("noVariableFound")}
             </div>
           )}
           {Object.keys(
@@ -385,6 +389,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
                   <input
                     name={key}
                     value={currentValue}
+                    placeholder={t("variableValuePlaceholder")}
                     onChange={(e) => handleVariableChange(e, isDebugMode)}
                     className={`w-full px-3 py-1 border-2 rounded-xl border-gray-200
             focus:outline-none focus:ring-2 focus:ring-indigo-500
@@ -398,7 +403,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
                   {/* 初始值提示（仅在调试模式且未修改时显示） */}
                   {isDebugMode && (
                     <div className="absolute right-1 top-0 px-3 py-1 pointer-events-none text-gray-400">
-                      Init: {initialValue}
+                     {t("initPrefix")}{initialValue}
                     </div>
                   )}
                 </div>
@@ -408,7 +413,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="size-5 text-indigo-500 cursor-pointer shrink-0"
+                  className="size-4 text-indigo-500 cursor-pointer shrink-0"
                   onClick={() => removeProperty(key)}
                 >
                   <path
@@ -423,14 +428,14 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
         </div>
       </details>
       <details className="group w-full" open>
-        <summary className="flex items-center cursor-pointer font-medium w-full">
-          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full font-medium">
+        <summary className="flex items-center cursor-pointer w-full">
+          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full">
             <div className="flex items-center justify-start gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="size-6"
+                className="size-4"
               >
                 <path
                   fillRule="evenodd"
@@ -438,9 +443,9 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
                   clipRule="evenodd"
                 />
               </svg>
-              Loop Settings
+              {t("loopSettings")}
               <svg
-                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                className="w-4 h-4 transition-transform group-open:rotate-180"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -460,7 +465,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
         >
           <div className="whitespace-pre-wrap space-y-2 ">
             <div className="px-2 flex w-full items-center gap-2">
-              <div className="max-w-[50%] overflow-auto">Loop Type</div>
+              <div className="max-w-[50%] overflow-auto">{t("loopType")}</div>
               <div>=</div>
               <select
                 name={"LoopType"}
@@ -470,8 +475,8 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
            focus:outline-none focus:ring-2 focus:ring-indigo-500
            disabled:opacity-50"
               >
-                <option value="count">count</option>
-                <option value="condition">condition</option>
+                <option value="count">{t("countOption")}</option>
+                <option value="condition">{t("conditionOption")}</option>
               </select>
             </div>
             <div>
@@ -479,8 +484,8 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
                 <div className="px-2 flex w-full items-center gap-2">
                   <div className="max-w-[50%] overflow-auto">
                     {node.data.loopType === "count"
-                      ? "Max Count"
-                      : "Break Condition"}
+                      ? t("maxCountLabel")
+                      : t("breakConditionLabel")}
                   </div>
                   <div>=</div>
                   {node.data.loopType === "count" ? (
@@ -509,7 +514,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
                       name={"LoopType"}
                       value={node.data.condition}
                       onChange={handleConditionChange}
-                      placeholder="Support Python expression"
+                      placeholder={t("conditionPlaceholder")}
                       onKeyDown={(e: React.KeyboardEvent<HTMLSpanElement>) => {
                         if (e.key === "Enter") {
                           // 按下回车时保存并退出编辑模式
@@ -529,24 +534,26 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
         </div>
       </details>
       <details className="group w-full" open>
-        <summary className="flex items-center cursor-pointer font-medium w-full">
-          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full font-medium">
+        <summary className="flex items-center cursor-pointer w-full">
+          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full">
             <div className="flex items-center justify-start gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
+                fill="none"
                 viewBox="0 0 24 24"
-                fill="currentColor"
-                className="size-5"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-4"
               >
                 <path
-                  fillRule="evenodd"
-                  d="M2.25 5.25a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3V15a3 3 0 0 1-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 0 1-.53 1.28h-9a.75.75 0 0 1-.53-1.28l.621-.622a2.25 2.25 0 0 0 .659-1.59V18h-3a3 3 0 0 1-3-3V5.25Zm1.5 0v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5Z"
-                  clipRule="evenodd"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25"
                 />
               </svg>
-              Output
+              {t("output")}
               <svg
-                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                className="w-4 h-4 transition-transform group-open:rotate-180"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -567,7 +574,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
                 node.data.debug
                   ? "bg-red-500 text-white hover:bg-red-700"
                   : "hover:bg-indigo-600 hover:text-white"
-              } cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full disabled:opacity-50 flex items-center justify-center gap-1`}
+              } cursor-pointer disabled:cursor-not-allowed px-3 py-1 rounded-full disabled:opacity-50 flex items-center justify-center gap-1`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -575,7 +582,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-5"
+                className="size-4"
               >
                 <path
                   strokeLinecap="round"
@@ -584,7 +591,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
                 />
               </svg>
 
-              <span>Debug</span>
+              <span>{t("debug")}</span>
             </button>
           </div>
         </summary>

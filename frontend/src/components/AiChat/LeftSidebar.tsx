@@ -5,6 +5,7 @@ import useChatStore from "@/stores/chatStore";
 import { getTimeLabel } from "@/utils/date";
 import ConfirmDialog from "../ConfirmDialog";
 import { useClickAway } from "react-use";
+import { useTranslations } from "next-intl";
 
 interface SidebarProps {
   onNewChat: () => void;
@@ -23,6 +24,8 @@ const LeftSidebar: React.FC<SidebarProps> = ({
   ondeleteChat,
   onRenameChat,
 }) => {
+  const t = useTranslations("ChatLeftSidebar");
+  const [searchTerm, setSearchTerm] = useState("");
   const [isSettingsOpen, setSettingsOpen] = useState<boolean[]>([]);
   const [isEditOpen, setIsEditOpen] = useState<boolean[]>([]);
   const [inputValues, setInputValues] = useState<string[]>([]);
@@ -119,9 +122,13 @@ const LeftSidebar: React.FC<SidebarProps> = ({
     onSelectChat(chat.conversationId, chat.isRead);
   };
 
+  // 过滤对话
+  const filteredChatHistory = chatHistory.filter(chat =>
+    chat.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <div className="bg-white/90 flex-none w-[20%] h-full rounded-3xl flex flex-col items-center py-5 pl-5">
-      <div></div>
+    <div className="bg-white flex-none w-[20%] h-full rounded-l-3xl flex flex-col items-center py-5 pl-5">
       {/* 新会话按钮 */}
       <div
         className="my-2 rounded-xl flex items-center justify-center w-full h-[8%] cursor-pointer"
@@ -130,39 +137,70 @@ const LeftSidebar: React.FC<SidebarProps> = ({
         <div className="gap-2 text-white px-5 py-2 bg-indigo-500 hover:bg-indigo-600 rounded-full flex items-center justify-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
             className="size-5"
           >
-            <path d="M3.505 2.365A41.369 41.369 0 0 1 9 2c1.863 0 3.697.124 5.495.365 1.247.167 2.18 1.108 2.435 2.268a4.45 4.45 0 0 0-.577-.069 43.141 43.141 0 0 0-4.706 0C9.229 4.696 7.5 6.727 7.5 8.998v2.24c0 1.413.67 2.735 1.76 3.562l-2.98 2.98A.75.75 0 0 1 5 17.25v-3.443c-.501-.048-1-.106-1.495-.172C2.033 13.438 1 12.162 1 10.72V5.28c0-1.441 1.033-2.717 2.505-2.914Z" />
-            <path d="M14 6c-.762 0-1.52.02-2.271.062C10.157 6.148 9 7.472 9 8.998v2.24c0 1.519 1.147 2.839 2.71 2.935.214.013.428.024.642.034.2.009.385.09.518.224l2.35 2.35a.75.75 0 0 0 1.28-.531v-2.07c1.453-.195 2.5-1.463 2.5-2.915V8.998c0-1.526-1.157-2.85-2.729-2.936A41.645 41.645 0 0 0 14 6Z" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
+            />
           </svg>
-          <div className=" text-sm">New Chat</div>
+          <div className=" text-sm">{t("newChat")}</div>
         </div>
       </div>
 
       {/* 历史生成标题和清空按钮 */}
-      <h2 className="text-sm mb-2 text-center font-bold">History Chat</h2>
-      <div className="flex gap-2">
+      <h2 className="text-sm text-center font-medium">
+        {t("historyChat")}
+      </h2>
+
+      <div className="relative flex w-[75%] text-xs my-3">
+        <input
+          type="text"
+          placeholder={t("searchPlaceholder")}
+          className="w-full pl-3 pr-6 py-1 rounded-full border border-gray-300 focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="size-4 absolute right-2.5 top-1/2 transform -translate-y-1/2 text-gray-400"
+        >
+          <path
+            fillRule="evenodd"
+            d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </div>
+
+      <div className="flex gap-4 mb-2">
         <div
           className="text-indigo-500 cursor-pointer flex gap-1 items-center hover:text-indigo-700"
           onClick={handleDeleteAllChats} // 修正这里
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
             className="size-5"
           >
-            <path d="M2 3a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1H2Z" />
             <path
-              fillRule="evenodd"
-              d="M2 7.5h16l-.811 7.71a2 2 0 0 1-1.99 1.79H4.802a2 2 0 0 1-1.99-1.79L2 7.5Zm5.22 1.72a.75.75 0 0 1 1.06 0L10 10.94l1.72-1.72a.75.75 0 1 1 1.06 1.06L11.06 12l1.72 1.72a.75.75 0 1 1-1.06 1.06L10 13.06l-1.72 1.72a.75.75 0 0 1-1.06-1.06L8.94 12l-1.72-1.72a.75.75 0 0 1 0-1.06Z"
-              clipRule="evenodd"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5m6 4.125 2.25 2.25m0 0 2.25 2.25M12 13.875l2.25-2.25M12 13.875l-2.25 2.25M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z"
             />
           </svg>
 
-          <div>Clear</div>
+          <div className="text-sm">{t("clear")}</div>
         </div>
         <div
           className="text-gray-500 cursor-pointer flex items-center gap-1 hover:text-gray-700"
@@ -181,25 +219,25 @@ const LeftSidebar: React.FC<SidebarProps> = ({
             />
           </svg>
 
-          <div>Refresh</div>
+          <div className="text-sm">{t("refresh")}</div>
         </div>
       </div>
       {/* 聊天列表 */}
-      <div className="border-b-2 border-gray-200 h-[1%] w-[80%]"></div>
+      <div className="border-b-2 border-gray-200 w-[95%]"></div>
       <div className="px-2 w-full flex-1 overflow-scroll scrollbar-hide mt-3">
-        {chatHistory.map((chat, index) => {
+        {filteredChatHistory.map((chat, index) => {
           const timeLabel = getTimeLabel(chat.lastModifyTime);
           const lastTimeLabel = getTimeLabel(
             index === 0
               ? chat.lastModifyTime
-              : chatHistory[index - 1].lastModifyTime
+              : filteredChatHistory[index - 1].lastModifyTime
           );
           const isFirstInGroup = index === 0 || timeLabel !== lastTimeLabel;
           return (
             <div key={index} className="flex flex-col gap-1">
               {isFirstInGroup && (
-                <div className="pl-2 py-1 text-sm font-medium text-indigo-500">
-                  {timeLabel}{" "}
+                <div className="pl-2.5 py-1 text-sm font-medium text-gray-600 mt-3">
+                  {t("timeLabel." + timeLabel)}{" "}
                 </div>
               )}
               <div
@@ -207,32 +245,37 @@ const LeftSidebar: React.FC<SidebarProps> = ({
                 className={`relative flex ${
                   chatId === chat.conversationId
                     ? "bg-indigo-500 text-white"
-                    : ""
-                } hover:bg-indigo-600 hover:text-white rounded-2xl mb-1`}
+                    : "text-gray-800"
+                } hover:bg-indigo-600 hover:text-white rounded-2xl mb-0.5`}
               >
                 <div
                   key={index}
-                  className="py-2 pl-2 pr-0 flex items-center gap-1 w-[85%] cursor-pointer text-md"
+                  className="py-1.5 pl-2.5 pr-0 flex items-center gap-1 w-[85%] cursor-pointer text-md"
                   onClick={() => handleSelectChat(chat)}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
                     viewBox="0 0 24 24"
-                    fill="currentColor"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
                     className={`${
-                      chatId === chat.conversationId ? "size-6" : "size-5"
+                      chatId === chat.conversationId ? "size-5" : "size-4.5"
                     } shrink-0`}
                   >
                     <path
-                      fillRule="evenodd"
-                      d="M4.848 2.771A49.144 49.144 0 0 1 12 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 0 1-3.476.383.39.39 0 0 0-.297.17l-2.755 4.133a.75.75 0 0 1-1.248 0l-2.755-4.133a.39.39 0 0 0-.297-.17 48.9 48.9 0 0 1-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97ZM6.75 8.25a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 0 1.5h-9a.75.75 0 0 1-.75-.75Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H7.5Z"
-                      clipRule="evenodd"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"
+                      transform="translate(0, 0.3)"
                     />
                   </svg>
 
                   <div
                     className={`${
-                      chatId === chat.conversationId ? "text-lg" : "text-base"
+                      chatId === chat.conversationId
+                        ? "text-base"
+                        : "text-[15px]"
                     } whitespace-nowrap overflow-hidden `}
                   >
                     {isEditOpen[index] ? (
@@ -250,7 +293,7 @@ const LeftSidebar: React.FC<SidebarProps> = ({
                   </div>
                 </div>
                 <div
-                  className="w-[15%] flex items-center justify-center font-semibold cursor-pointer text-white"
+                  className="w-[15%] flex items-center justify-center cursor-pointer text-white"
                   onClick={() => toggleSettings(index)}
                 >
                   <svg
@@ -258,7 +301,7 @@ const LeftSidebar: React.FC<SidebarProps> = ({
                     viewBox="0 0 16 16"
                     fill="currentColor"
                     className={`${
-                      chatId === chat.conversationId ? "size-6" : "size-5"
+                      chatId === chat.conversationId ? "size-5" : "size-5"
                     }  shrink-0`}
                   >
                     <path d="M2 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM6.5 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM12.5 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" />
@@ -288,7 +331,7 @@ const LeftSidebar: React.FC<SidebarProps> = ({
                         />
                       </svg>
 
-                      <div className="text-sm">Rename</div>
+                      <div className="text-sm">{t("rename")}</div>
                     </div>
                     <div
                       className="flex gap-2 cursor-pointer hover:bg-indigo-600 hover:text-white px-2 py-1 rounded-xl"
@@ -308,7 +351,7 @@ const LeftSidebar: React.FC<SidebarProps> = ({
                           d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
                         />
                       </svg>
-                      <div className="text-sm">Delete</div>
+                      <div className="text-sm">{t("delete")}</div>
                     </div>
                   </div>
                 )}
@@ -321,7 +364,7 @@ const LeftSidebar: React.FC<SidebarProps> = ({
       {/* 确认删除所有聊天 */}
       {showConfirmDeleteAll && (
         <ConfirmDialog
-          message="Confirm the deletion of all chat records?"
+          message={t("deleteAllConfirm")}
           onConfirm={confirmDeleteAll}
           onCancel={cancelDeleteAll}
         />
@@ -330,10 +373,9 @@ const LeftSidebar: React.FC<SidebarProps> = ({
       {/* 确认删除单个聊天 */}
       {showConfirmDeleteChat && (
         <ConfirmDialog
-          message={`Confirm the deletion of chat record "${showConfirmDeleteChat.chat.name.slice(
-            0,
-            30
-          )}"？`}
+          message={`${t(
+            "deleteSingleConfirm"
+          )}"${showConfirmDeleteChat.chat.name.slice(0, 30)}"？`}
           onConfirm={confirmDeleteChat}
           onCancel={cancelDeleteChat}
         />

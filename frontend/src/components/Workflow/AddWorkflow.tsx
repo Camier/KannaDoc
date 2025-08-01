@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { Dispatch, SetStateAction } from "react";
 
 interface AddWorkflowProps {
@@ -6,7 +7,7 @@ interface AddWorkflowProps {
   setNameError: Dispatch<SetStateAction<string | null>>;
   newWorkflowName: string;
   setNewWorkflowName: Dispatch<SetStateAction<string>>;
-  onCreateConfirm:() => void;
+  onCreateConfirm: () => void;
 }
 
 const AddWorkflow: React.FC<AddWorkflowProps> = ({
@@ -17,24 +18,32 @@ const AddWorkflow: React.FC<AddWorkflowProps> = ({
   setNewWorkflowName,
   onCreateConfirm,
 }) => {
+  const t = useTranslations("AddWorkflow");
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
       <div className="bg-white rounded-3xl p-6 w-[35%]">
         <div className="flex items-center gap-2 mb-6">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 20 20"
-            fill="currentColor"
-            className="size-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="2"
+            stroke="currentColor"
+            className="size-6"
           >
-            <path d="M10.75 16.82A7.462 7.462 0 0 1 15 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0 0 18 15.06v-11a.75.75 0 0 0-.546-.721A9.006 9.006 0 0 0 15 3a8.963 8.963 0 0 0-4.25 1.065V16.82ZM9.25 4.065A8.963 8.963 0 0 0 5 3c-.85 0-1.673.118-2.454.339A.75.75 0 0 0 2 4.06v11a.75.75 0 0 0 .954.721A7.506 7.506 0 0 1 5 15.5c1.579 0 3.042.487 4.25 1.32V4.065Z" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z"
+            />
           </svg>
-          <h3 className="text-lg font-medium">New Work-Flow</h3>
+
+          <h3 className="text-lg font-medium">{t("newWorkflow")}</h3>
         </div>
         <div className="px-4 w-full">
           <input
             type="text"
-            placeholder="Write your Work-Flow name..."
+            placeholder={t("placeholder")}
             className={`w-full px-4 py-2 mb-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 ${
               nameError ? "border-red-500" : "border-gray-300"
             }`}
@@ -43,7 +52,7 @@ const AddWorkflow: React.FC<AddWorkflowProps> = ({
               setNewWorkflowName(e.target.value);
               setNameError(null);
             }}
-            onKeyDown = {(e: React.KeyboardEvent) => {
+            onKeyDown={(e: React.KeyboardEvent) => {
               if (e.key === "Enter") {
                 e.preventDefault(); // 防止默认回车行为
                 onCreateConfirm();
@@ -61,13 +70,13 @@ const AddWorkflow: React.FC<AddWorkflowProps> = ({
             onClick={() => setShowCreateModal(false)}
             className="px-4 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-100 cursor-pointer"
           >
-            Cancel
+            {t("cancel")}
           </button>
           <button
             onClick={onCreateConfirm}
             className="px-4 py-2 text-white bg-indigo-500 rounded-full hover:bg-indigo-700 cursor-pointer"
           >
-            Yes
+            {t("confirm")}
           </button>
         </div>
       </div>

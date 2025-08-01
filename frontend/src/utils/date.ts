@@ -14,15 +14,15 @@ export const getTimeLabel = (lastModifyAt: string): string => {
   const timeDiff = lastModifyDate.getTime() + 8 * 60 * 60 * 1000; // 获取最后修改时间的毫秒数
 
   if (timeDiff >= todayStart.getTime()) {
-      return "Today";
+      return "today";
   } else if (timeDiff >= yesterdayStart.getTime()) {
-      return "Yesterday";
+      return "yesterday";
   } else if (timeDiff >= todayStart.getTime() - 7 * 24 * 60 * 60 * 1000) {
-      return "Within 7 days";
+      return "within_7_days";
   } else if (timeDiff >= todayStart.getTime() - 30 * 24 * 60 * 60 * 1000) {
-      return "Within 30 days";
+      return "within_30_days";
   } else {
-      return "Earlier";
+      return "earlier";
   }
 };
 

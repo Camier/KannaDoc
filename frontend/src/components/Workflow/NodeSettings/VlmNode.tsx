@@ -18,6 +18,7 @@ import MarkdownDisplay from "@/components/AiChat/MarkdownDisplay";
 import McpConfigComponent from "./McpConfig";
 import { createPortal } from "react-dom";
 import { replaceTemplate } from "@/utils/convert";
+import { useTranslations } from "next-intl";
 
 interface VlmNodeProps {
   messages: Message[];
@@ -44,6 +45,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
   codeFullScreenFlow,
   showError,
 }) => {
+  const t = useTranslations("VlmNode")
   const {
     globalVariables,
     globalDebugVariables,
@@ -53,7 +55,6 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
     updateDebugProperty,
   } = useGlobalStore();
   const [variable, setVariable] = useState("");
-  const [outputVariable, setOutputVariable] = useState("");
   const handleVariableChange = (
     e: React.ChangeEvent<HTMLInputElement>,
     isDebugMode: boolean
@@ -101,7 +102,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
 
   const handleRunTest = async () => {
     if (!node.data.vlmInput) {
-      showError("Please write your question to AI before running LLM node!");
+      showError(t("testError"));
       return;
     }
     setMessages((prev) => ({ ...prev, [node.id]: [] }));
@@ -229,16 +230,16 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
   };
 
   return (
-    <div className="overflow-auto h-full flex flex-col items-start justify-start gap-1">
-      <div className="px-2 py-1 flex items-center justify-between w-full mt-1 font-medium">
-        <div className="text-xl flex items-center justify-start max-w-[60%] gap-1">
+    <div className="overflow-auto h-full flex flex-col items-start justify-start gap-1 text-[15px]">
+      <div className="px-2 py-1 flex items-center justify-between w-full mt-1">
+        <div className="flex items-center justify-start max-w-[60%] gap-1 font-medium text-base">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            strokeWidth="1.5"
+            strokeWidth="2"
             stroke="currentColor"
-            className="size-6 shrink-0"
+            className="size-5 shrink-0"
           >
             <path
               strokeLinecap="round"
@@ -270,7 +271,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
         </div>
         <button
           onClick={() => saveNode(node)}
-          className="cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+          className="cursor-pointer disabled:cursor-not-allowed py-1 px-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -278,7 +279,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-5"
+            className="size-4"
           >
             <path
               strokeLinecap="round"
@@ -286,28 +287,30 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
               d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
             />
           </svg>
-          <span className="whitespace-nowrap">Save Node</span>
+          <span className="whitespace-nowrap">{t("saveNode")}</span>
         </button>
       </div>
       <details className="group w-full" open>
-        <summary className="flex items-center cursor-pointer font-medium w-full">
-          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full font-medium">
+        <summary className="flex items-center cursor-pointer w-full">
+          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full">
             <div className="flex items-center justify-start gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
+                fill="none"
                 viewBox="0 0 24 24"
-                fill="currentColor"
-                className="size-5"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-4"
               >
                 <path
-                  fillRule="evenodd"
-                  d="M2.25 5.25a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3V15a3 3 0 0 1-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 0 1-.53 1.28h-9a.75.75 0 0 1-.53-1.28l.621-.622a2.25 2.25 0 0 0 .659-1.59V18h-3a3 3 0 0 1-3-3V5.25Zm1.5 0v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5Z"
-                  clipRule="evenodd"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25"
                 />
               </svg>
-              Description
+              {t("description")}
               <svg
-                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                className="w-4 h-4 transition-transform group-open:rotate-180"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -325,7 +328,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                 e.preventDefault();
                 setIsEditing(!isEditing);
               }}
-              className="hover:bg-indigo-600 hover:text-white cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full disabled:opacity-50"
+              className="hover:bg-indigo-600 hover:text-white cursor-pointer disabled:cursor-not-allowed py-1 px-2 rounded-full disabled:opacity-50"
             >
               {isEditing ? (
                 <div className="flex items-center justify-center gap-1">
@@ -335,7 +338,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="size-5"
+                    className="size-4"
                   >
                     <path
                       strokeLinecap="round"
@@ -343,7 +346,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                       d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z"
                     />
                   </svg>
-                  <span>Preview</span>
+                  <span>{t("preview")}</span>
                 </div>
               ) : (
                 <div className="flex items-center justify-center gap-1">
@@ -353,7 +356,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="size-5"
+                    className="size-4"
                   >
                     <path
                       strokeLinecap="round"
@@ -361,7 +364,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                       d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
                     />
                   </svg>
-                  <span>Edit</span>
+                  <span>{t("edit")}</span>
                 </div>
               )}
             </button>
@@ -370,7 +373,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
 
         {isEditing ? (
           <div
-            className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 p-4 bg-white`}
+            className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 px-4 pb-4 pt-2 bg-white`}
           >
             <textarea
               className={`mt-1 w-full px-2 py-2 border border-gray-200 rounded-xl min-h-[10vh] ${
@@ -378,7 +381,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
               } resize-none overflow-y-auto focus:outline-hidden focus:ring-2 focus:ring-indigo-500`}
               value={node.data.description || ""}
               onChange={(e) => updateDescription(node.id, e.target.value)}
-              placeholder="Enter Markdown content here..."
+              placeholder={t("editingPlaceholder")}
             />
           </div>
         ) : (
@@ -386,7 +389,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
             className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 p-4 bg-gray-100`}
           >
             <MarkdownDisplay
-              md_text={node.data.description || "No decription found"}
+              md_text={node.data.description || t("noDescription")}
               message={{
                 type: "text",
                 content: node.data.description || "",
@@ -399,14 +402,14 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
         )}
       </details>
       <details className="group w-full" open>
-        <summary className="flex items-center cursor-pointer font-medium w-full">
+        <summary className="flex items-center cursor-pointer w-full">
           <div className="px-2 py-1 flex items-center justify-between w-full mt-1">
             <div className="flex items-center justify-center gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="size-5"
+                className="size-4"
               >
                 <path
                   fillRule="evenodd"
@@ -414,9 +417,9 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                   clipRule="evenodd"
                 />
               </svg>
-              Global Variable
+              {t("globalVariable")}
               <svg
-                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                className="w-4 h-4 transition-transform group-open:rotate-180"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -430,7 +433,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
               </svg>
             </div>
             <button
-              className="cursor-pointer disabled:cursor-not-allowed px-4 py-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+              className="cursor-pointer disabled:cursor-not-allowed px-2 py-1 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
               onClick={() => setCodeFullScreenFlow((prev: boolean) => !prev)}
             >
               {codeFullScreenFlow ? (
@@ -440,7 +443,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="size-6"
+                  className="size-5"
                 >
                   <path
                     strokeLinecap="round"
@@ -455,7 +458,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="size-6"
+                  className="size-5"
                 >
                   <path
                     strokeLinecap="round"
@@ -468,7 +471,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
           </div>
         </summary>
         <div
-          className={`space-y-2 p-4 rounded-2xl shadow-lg ${
+          className={`space-y-2 px-4 pb-4 pt-2 rounded-2xl shadow-lg ${
             codeFullScreenFlow ? "w-full" : "w-full"
           }`}
         >
@@ -476,7 +479,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
             <input
               name={"addVariable"}
               value={variable}
-              placeholder="Variable Name"
+              placeholder={t("variableName")}
               onChange={(e) => setVariable(e.target.value)}
               className="w-full px-3 py-1 border-2 border-gray-200 rounded-xl
               focus:outline-none focus:ring-2 focus:ring-indigo-500
@@ -509,7 +512,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="size-5"
+                className="size-4"
               >
                 <path
                   fillRule="evenodd"
@@ -517,13 +520,13 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                   clipRule="evenodd"
                 />
               </svg>
-              <span>Click to Add</span>
+              <span>{t("clickToAdd")}</span>
             </div>
           </div>
           {Object.keys(isDebugMode ? globalDebugVariables : globalVariables)
             .length === 0 && (
             <div className="px-2 flex w-full items-center gap-2 text-gray-500">
-              No variable found.
+              {t("noVariableFound")}
             </div>
           )}
           {Object.keys(
@@ -548,6 +551,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                   <input
                     name={key}
                     value={currentValue}
+                    placeholder={t("variableValuePlaceholder")}
                     onChange={(e) => handleVariableChange(e, isDebugMode)}
                     className={`w-full px-3 py-1 border-2 rounded-xl border-gray-200
             focus:outline-none focus:ring-2 focus:ring-indigo-500
@@ -561,7 +565,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                   {/* 初始值提示（仅在调试模式且未修改时显示） */}
                   {isDebugMode && (
                     <div className="absolute right-1 top-0 px-3 py-1 pointer-events-none text-gray-400">
-                      Init: {initialValue}
+                      {t("init")}{initialValue}
                     </div>
                   )}
                 </div>
@@ -571,7 +575,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="size-5 text-indigo-500 cursor-pointer shrink-0"
+                  className="size-4.5 text-indigo-500 cursor-pointer shrink-0"
                   onClick={() => removeProperty(key)}
                 >
                   <path
@@ -586,25 +590,26 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
         </div>
       </details>
       <details className="group w-full" open>
-        <summary className="flex items-center cursor-pointer font-medium w-full">
-          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full font-medium">
+        <summary className="flex items-center cursor-pointer w-full">
+          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full">
             <div className="flex items-center justify-start gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
+                fill="none"
                 viewBox="0 0 24 24"
-                fill="currentColor"
-                className="size-5"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-4"
               >
-                <path d="M12 .75a8.25 8.25 0 0 0-4.135 15.39c.686.398 1.115 1.008 1.134 1.623a.75.75 0 0 0 .577.706c.352.083.71.148 1.074.195.323.041.6-.218.6-.544v-4.661a6.714 6.714 0 0 1-.937-.171.75.75 0 1 1 .374-1.453 5.261 5.261 0 0 0 2.626 0 .75.75 0 1 1 .374 1.452 6.712 6.712 0 0 1-.937.172v4.66c0 .327.277.586.6.545.364-.047.722-.112 1.074-.195a.75.75 0 0 0 .577-.706c.02-.615.448-1.225 1.134-1.623A8.25 8.25 0 0 0 12 .75Z" />
                 <path
-                  fillRule="evenodd"
-                  d="M9.013 19.9a.75.75 0 0 1 .877-.597 11.319 11.319 0 0 0 4.22 0 .75.75 0 1 1 .28 1.473 12.819 12.819 0 0 1-4.78 0 .75.75 0 0 1-.597-.876ZM9.754 22.344a.75.75 0 0 1 .824-.668 13.682 13.682 0 0 0 2.844 0 .75.75 0 1 1 .156 1.492 15.156 15.156 0 0 1-3.156 0 .75.75 0 0 1-.668-.824Z"
-                  clipRule="evenodd"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"
                 />
               </svg>
-              Prompt
+              {t("prompt")}
               <svg
-                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                className="w-4 h-4 transition-transform group-open:rotate-180"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -618,28 +623,31 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
               </svg>
             </div>
             <button
-              className=" hover:bg-indigo-600 rounded-full text-base px-4 py-2 hover:text-white flex gap-1 cursor-pointer"
+              className=" hover:bg-indigo-600 rounded-full px-2 py-1 hover:text-white flex gap-1 cursor-pointer"
               onClick={configureKnowledgeDB}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="size-5 my-auto"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-4 my-auto"
               >
                 <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm.75-11.25a.75.75 0 0 0-1.5 0v2.5h-2.5a.75.75 0 0 0 0 1.5h2.5v2.5a.75.75 0 0 0 1.5 0v-2.5h2.5a.75.75 0 0 0 0-1.5h-2.5v-2.5Z"
-                  clipRule="evenodd"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M12 9v6m3-3H9m12 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                 />
               </svg>
-              <div>More Settings</div>
+
+              <div>{t("moreSettings")}</div>
             </button>
           </div>
         </summary>
         <div className={`rounded-2xl shadow-lg overflow-auto p-3 w-full mb-2`}>
           <textarea
-            className={`mt-1 w-full px-2 py-2 border border-gray-200 rounded-xl min-h-[10vh] ${
+            className={`mt-1 w-full px-3 py-2 border border-gray-200 rounded-xl min-h-[10vh] ${
               codeFullScreenFlow ? "max-h-[50vh]" : "max-h-[30vh]"
             } resize-none overflow-y-auto focus:outline-hidden focus:ring-2 focus:ring-indigo-500`}
             placeholder={node.data.prompt}
@@ -659,21 +667,26 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
         </div>
       </details>
       <details className="group w-full" open>
-        <summary className="flex items-center cursor-pointer font-medium w-full">
-          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full font-medium">
+        <summary className="flex items-center cursor-pointer w-full">
+          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full">
             <div className="flex items-center justify-start gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
+                fill="none"
                 viewBox="0 0 24 24"
-                fill="currentColor"
-                className="size-5 my-auto"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-4 my-auto"
               >
-                <path d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z" />
-                <path d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                />
               </svg>
-              Input
+              {t("input")}
               <svg
-                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                className="w-4 h-4 transition-transform group-open:rotate-180"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -687,7 +700,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
               </svg>
             </div>
             <button
-              className=" hover:bg-indigo-600 rounded-full text-base px-3 py-2 hover:text-white flex gap-1 cursor-pointer"
+              className=" hover:bg-indigo-600 rounded-full px-2 py-1 hover:text-white flex gap-1 cursor-pointer"
               onClick={() =>
                 changeChatflowInput(node.id, !node.data.isChatflowInput)
               }
@@ -696,7 +709,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="size-5 my-auto"
+                className="size-4 my-auto"
               >
                 <path
                   fillRule="evenodd"
@@ -704,7 +717,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                   clipRule="evenodd"
                 />
               </svg>
-              <div>Change Input Style</div>
+              <div>{t("changeInputStyle")}</div>
             </button>
           </div>
         </summary>
@@ -712,19 +725,19 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
           <div
             className={`rounded-2xl shadow-lg overflow-auto p-4 w-full mb-2`}
           >
-            <div className="mb-1">Use Chatflow User Input</div>
+            <div className="mb-1">{t("useChatflowUserInput")}</div>
           </div>
         ) : (
           <div
             className={`rounded-2xl shadow-lg overflow-auto p-3 w-full mb-2`}
           >
-            <div className="mb-1">Predefined Input:</div>
+            <div className="mb-1">{t("predefinedInput")}</div>
             <textarea
               className={`mt-1 w-full px-2 py-2 border border-gray-200 rounded-xl min-h-[10vh] ${
                 codeFullScreenFlow ? "max-h-[50vh]" : "max-h-[30vh]"
               } resize-none overflow-y-auto focus:outline-hidden focus:ring-2 focus:ring-indigo-500`}
               placeholder={
-                "Global variables in the input should be wrapped with double curly braces, e.g., {{variable}}."
+                t("inputPlaceholder")
               }
               rows={1}
               value={node.data.vlmInput}
@@ -743,24 +756,26 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
         )}
       </details>
       <details className="group w-full" open>
-        <summary className="flex items-center cursor-pointer font-medium w-full">
-          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full font-medium">
+        <summary className="flex items-center cursor-pointer w-full">
+          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full">
             <div className="flex items-center justify-start gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
+                fill="none"
                 viewBox="0 0 24 24"
-                fill="currentColor"
-                className="size-5"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-4"
               >
                 <path
-                  fillRule="evenodd"
-                  d="M4.848 2.771A49.144 49.144 0 0 1 12 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 0 1-3.476.383.39.39 0 0 0-.297.17l-2.755 4.133a.75.75 0 0 1-1.248 0l-2.755-4.133a.39.39 0 0 0-.297-.17 48.9 48.9 0 0 1-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97ZM6.75 8.25a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 0 1.5h-9a.75.75 0 0 1-.75-.75Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H7.5Z"
-                  clipRule="evenodd"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"
                 />
               </svg>
-              LLM Response
+              {t("llmResponse")}
               <svg
-                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                className="w-4 h-4 transition-transform group-open:rotate-180"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -776,7 +791,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
             <button
               onClick={handleRunTest}
               disabled={runTest}
-              className="cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+              className="cursor-pointer disabled:cursor-not-allowed px-2 py-1 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -784,7 +799,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-5"
+                className="size-4"
               >
                 <path
                   strokeLinecap="round"
@@ -793,7 +808,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                 />
               </svg>
 
-              <span>Run Test</span>
+              <span>{t("runTest")}</span>
             </button>
           </div>
         </summary>
@@ -829,7 +844,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
           </div>
         </div>
         <div className="w-full flex items-center justify-between p-2 gap-2">
-          <span className="whitespace-nowrap">LLM Reponse =</span>
+          <span className="whitespace-nowrap">{t("llmResponsePlaceholder")}</span>
           <div className="flex-1">
             <select
               name="addVariable"
@@ -853,24 +868,26 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
         </div>
       </details>
       <details className="group w-full" open>
-        <summary className="flex items-center cursor-pointer font-medium w-full">
-          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full font-medium">
+        <summary className="flex items-center cursor-pointer w-full">
+          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full">
             <div className="flex items-center justify-start gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
+                fill="none"
                 viewBox="0 0 24 24"
-                fill="currentColor"
-                className="size-5"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-4"
               >
                 <path
-                  fillRule="evenodd"
-                  d="M2.25 5.25a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3V15a3 3 0 0 1-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 0 1-.53 1.28h-9a.75.75 0 0 1-.53-1.28l.621-.622a2.25 2.25 0 0 0 .659-1.59V18h-3a3 3 0 0 1-3-3V5.25Zm1.5 0v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5Z"
-                  clipRule="evenodd"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25"
                 />
               </svg>
-              Output
+              {t("output")}
               <svg
-                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                className="w-4 h-4 transition-transform group-open:rotate-180"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -892,7 +909,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                 node.data.debug
                   ? "bg-red-500 text-white hover:bg-red-700"
                   : "hover:bg-indigo-600 hover:text-white"
-              } cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full disabled:opacity-50 flex items-center justify-center gap-1`}
+              } cursor-pointer disabled:cursor-not-allowed px-2 py-1 rounded-full disabled:opacity-50 flex items-center justify-center gap-1`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -900,7 +917,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-5"
+                className="size-4"
               >
                 <path
                   strokeLinecap="round"
@@ -909,7 +926,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                 />
               </svg>
 
-              <span>Debug</span>
+              <span>{t("debug")}</span>
             </button>
           </div>
         </summary>
@@ -929,24 +946,26 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
         </div>
       </details>
       <details className="group w-full" open>
-        <summary className="flex items-center cursor-pointer font-medium w-full">
-          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full font-medium">
+        <summary className="flex items-center cursor-pointer w-full">
+          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full">
             <div className="flex items-center justify-start gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
+                fill="none"
                 viewBox="0 0 24 24"
-                fill="currentColor"
-                className="size-5"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-4"
               >
                 <path
-                  fillRule="evenodd"
-                  d="M4.804 21.644A6.707 6.707 0 0 0 6 21.75a6.721 6.721 0 0 0 3.583-1.029c.774.182 1.584.279 2.417.279 5.322 0 9.75-3.97 9.75-9 0-5.03-4.428-9-9.75-9s-9.75 3.97-9.75 9c0 2.409 1.025 4.587 2.674 6.192.232.226.277.428.254.543a3.73 3.73 0 0 1-.814 1.686.75.75 0 0 0 .44 1.223ZM8.25 10.875a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25ZM10.875 12a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875-1.125a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z"
-                  clipRule="evenodd"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"
                 />
               </svg>
-              ChatFlow
+              {t("chatflow")}
               <svg
-                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                className="w-4 h-4 transition-transform group-open:rotate-180"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -966,7 +985,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
               disabled={runTest}
               className={`
                  hover:bg-indigo-600 hover:text-white
-              } cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full disabled:opacity-50 flex items-center justify-center gap-1`}
+              } cursor-pointer disabled:cursor-not-allowed px-2 py-1 rounded-full disabled:opacity-50 flex items-center justify-center gap-1`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -974,7 +993,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-5"
+                className="size-4"
               >
                 <path
                   strokeLinecap="round"
@@ -982,7 +1001,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                   d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z"
                 />
               </svg>
-              <span>MCP Tools</span>
+              <span>{t("mcpTools")}</span>
             </button>
           </div>
         </summary>
@@ -996,7 +1015,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                 onChange={() =>
                   changeChatflowInput(node.id, !node.data.isChatflowInput)
                 }
-                className="shrink-0 appearance-none h-5 w-5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
+                className="shrink-0 appearance-none h-4.5 w-4.5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1008,20 +1027,25 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                   fillRule="evenodd"
                   d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                   clipRule="evenodd"
-                  transform="translate(2.8, 0.2)"
+                  transform="translate(2, 0.2)"
                 />
               </svg>
               <div className="ml-2 flex gap-1 items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
                   viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="size-4 shrink-0 my-auto"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="size-4"
                 >
-                  <path d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z" />
-                  <path d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                  />
                 </svg>
-                <span>Set As Chatflow User Input</span>
+                <span>{t("setAsChatflowUserInput")}</span>
               </div>
             </label>
             <label className="w-full overflow-auto relative inline-flex items-center group p-2 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
@@ -1034,7 +1058,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                   }
                   changeChatflowOutput(node.id, !node.data.isChatflowOutput);
                 }}
-                className="shrink-0 appearance-none h-5 w-5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
+                className="shrink-0 appearance-none h-4.5 w-4.5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1046,23 +1070,25 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                   fillRule="evenodd"
                   d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                   clipRule="evenodd"
-                  transform="translate(2.8, 0.2)"
+                  transform="translate(2, 0.2)"
                 />
               </svg>
               <div className="ml-2 flex gap-1 items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
                   viewBox="0 0 24 24"
-                  fill="currentColor"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
                   className="size-4"
                 >
                   <path
-                    fillRule="evenodd"
-                    d="M4.804 21.644A6.707 6.707 0 0 0 6 21.75a6.721 6.721 0 0 0 3.583-1.029c.774.182 1.584.279 2.417.279 5.322 0 9.75-3.97 9.75-9 0-5.03-4.428-9-9.75-9s-9.75 3.97-9.75 9c0 2.409 1.025 4.587 2.674 6.192.232.226.277.428.254.543a3.73 3.73 0 0 1-.814 1.686.75.75 0 0 0 .44 1.223ZM8.25 10.875a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25ZM10.875 12a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Zm4.875-1.125a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z"
-                    clipRule="evenodd"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25Z"
                   />
                 </svg>
-                <span>Set As Chatflow AI Response</span>
+                <span>{t("setAsChatflowAIResponse")}</span>
               </div>
             </label>
             {node.data.isChatflowOutput && (
@@ -1073,7 +1099,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                   onChange={() =>
                     changeUseChatHistory(node.id, !node.data.useChatHistory)
                   }
-                  className="shrink-0 appearance-none h-5 w-5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
+                  className="shrink-0 appearance-none h-4.5 w-4.5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
                 />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1085,23 +1111,25 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                     fillRule="evenodd"
                     d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                     clipRule="evenodd"
-                    transform="translate(2.8, 0.2)"
+                    transform="translate(2, 0.2)"
                   />
                 </svg>
                 <div className="ml-2 flex gap-1 items-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    className="size-4 shrink-0"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="size-4"
                   >
                     <path
-                      fillRule="evenodd"
-                      d="M10 1c3.866 0 7 1.79 7 4s-3.134 4-7 4-7-1.79-7-4 3.134-4 7-4Zm5.694 8.13c.464-.264.91-.583 1.306-.952V10c0 2.21-3.134 4-7 4s-7-1.79-7-4V8.178c.396.37.842.688 1.306.953C5.838 10.006 7.854 10.5 10 10.5s4.162-.494 5.694-1.37ZM3 13.179V15c0 2.21 3.134 4 7 4s7-1.79 7-4v-1.822c-.396.37-.842.688-1.306.953-1.532.875-3.548 1.369-5.694 1.369s-4.162-.494-5.694-1.37A7.009 7.009 0 0 1 3 13.179Z"
-                      clipRule="evenodd"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"
                     />
                   </svg>
-                  <span>Use Conversation Memory</span>
+                  <span>{t("useConversationMemory")}</span>
                 </div>
               </label>
             )}

@@ -2,8 +2,10 @@
 import { useFlowStore } from "@/stores/flowStore";
 import { CustomEdgeProps } from "@/types/types";
 import { BaseEdge, getBezierPath } from "@xyflow/react";
+import { useTranslations } from "next-intl";
 
 const CustomEdge = (props: CustomEdgeProps) => {
+  const t = useTranslations("CustomEdge");
   const {
     id,
     data,
@@ -44,10 +46,7 @@ const CustomEdge = (props: CustomEdgeProps) => {
       >
         <path d="M 0 0 L 10 5 L 0 10 z" fill="oklch(70% 0.233 277)" />
       </marker>
-      <circle
-        r="4"
-        fill="oklch(90% 0.233 277.117)"
-      >
+      <circle r="4" fill="oklch(90% 0.233 277.117)">
         <animateMotion dur="3s" repeatCount="indefinite" path={edgePath} />
       </circle>
       <foreignObject
@@ -100,7 +99,7 @@ const CustomEdge = (props: CustomEdgeProps) => {
           requiredExtensions="http://www.w3.org/1999/xhtml"
         >
           <div className="w-24 h-4 flex items-center justify-center whitespace-nowrap text-sm text-gray-500">
-            {data?.loopType === "next" ? "loop next" : "loop body"}
+            {data?.loopType === "next" ? t("loopNext") : t("loopBody")}
           </div>
         </foreignObject>
       )}

@@ -2,6 +2,7 @@ import { Base } from "@/types/types";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import ConfirmDialog from "../ConfirmDialog";
 import { useClickAway } from "react-use";
+import { useTranslations } from "next-intl";
 
 interface LeftSideBarProps {
   bases: Base[];
@@ -22,6 +23,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
   ondeleteBase,
   onRenameKnowledgeBase,
 }) => {
+  const t = useTranslations("KnowledgeBaseLeftSideBar");
   const ref = useRef(null);
   useClickAway(ref, () => {
     setSettingsOpen((prev) => prev.map(() => false));
@@ -103,17 +105,17 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
 
   return (
     <div className="w-[20%] flex-none flex flex-col gap-4 h-full">
-      <div className="px-4 flex items-center justify-center h-[10%]">
+      <div className="px-6 flex items-center justify-center h-[10%]">
         <button
           onClick={() => setShowCreateModal(true)}
-          className="w-full py-2 px-4 bg-indigo-500 text-white hover:bg-indigo-700 transition-colors rounded-full"
+          className="w-full py-2 bg-indigo-500 text-white hover:bg-indigo-600 transition-colors rounded-full"
         >
-          <div className="flex items-center justify-center gap-2 cursor-pointer">
+          <div className="flex items-center justify-center gap-1 cursor-pointer text-[15px]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="size-5"
+              className="size-4.5"
             >
               <path
                 fillRule="evenodd"
@@ -122,7 +124,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
               />
             </svg>
 
-            <span>Add Knowledge-Base</span>
+            <span>{t("addKnowledgeBase")}</span>
           </div>
         </button>
       </div>
@@ -131,7 +133,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
         {filteredBases.map((base, index) => (
           <div
             key={index}
-            className={`py-2 my-2 hover:bg-indigo-600 group cursor-pointer rounded-3xl flex justify-between items-start ${
+            className={`py-1.5 my-0.5 hover:bg-indigo-600 group cursor-pointer rounded-3xl flex justify-between items-start ${
               selectedBase === base.baseId ? "bg-indigo-500" : ""
             }`}
           >
@@ -148,7 +150,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
             >
               <div className="flex relative">
                 <div
-                  className={`pl-3 flex items-center gap-2 text-gray-900 w-[80%] ${
+                  className={`pl-3 flex items-center gap-1 text-gray-900 w-[80%] ${
                     selectedBase === base.baseId
                       ? "text-white text-lg"
                       : "text-base group-hover:text-white"
@@ -156,22 +158,24 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
                     className={`${
-                      selectedBase === base.baseId ? "size-6" : "size-5"
+                      selectedBase === base.baseId ? "size-5" : "size-4.5"
                     }  shrink-0`}
                   >
                     <path
-                      fillRule="evenodd"
-                      d="M10 1c3.866 0 7 1.79 7 4s-3.134 4-7 4-7-1.79-7-4 3.134-4 7-4Zm5.694 8.13c.464-.264.91-.583 1.306-.952V10c0 2.21-3.134 4-7 4s-7-1.79-7-4V8.178c.396.37.842.688 1.306.953C5.838 10.006 7.854 10.5 10 10.5s4.162-.494 5.694-1.37ZM3 13.179V15c0 2.21 3.134 4 7 4s7-1.79 7-4v-1.822c-.396.37-.842.688-1.306.953-1.532.875-3.548 1.369-5.694 1.369s-4.162-.494-5.694-1.37A7.009 7.009 0 0 1 3 13.179Z"
-                      clipRule="evenodd"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"
                     />
                   </svg>
 
                   <div
                     className={`${
-                      selectedBase === base.baseId ? "text-lg" : "text-base"
+                      selectedBase === base.baseId ? "text-base" : "text-[15px]"
                     } whitespace-nowrap overflow-hidden`}
                   >
                     {isEditOpen[index] ? (
@@ -190,7 +194,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                 </div>
                 {/* 重命名和删除 */}
                 <div
-                  className="w-[20%] flex items-center justify-center font-semibold cursor-pointer text-white"
+                  className="w-[20%] flex items-center justify-center cursor-pointer text-white"
                   onClick={() => toggleSettings(index)}
                 >
                   <svg
@@ -198,7 +202,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                     viewBox="0 0 16 16"
                     fill="currentColor"
                     className={`${
-                      selectedBase === base.baseId ? "size-6" : "size-5"
+                      selectedBase === base.baseId ? "size-5" : "size-5"
                     }`}
                   >
                     <path d="M2 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM6.5 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM12.5 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" />
@@ -228,7 +232,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                         />
                       </svg>
 
-                      <div className="text-sm">Rename</div>
+                      <div className="text-sm">{t("rename")}</div>
                     </div>
                     <div
                       className="flex gap-2 cursor-pointer hover:bg-indigo-600 hover:text-white px-2 py-1 rounded-xl"
@@ -248,19 +252,19 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                           d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
                         />
                       </svg>
-                      <div className="text-sm">Delete</div>
+                      <div className="text-sm">{t("delete")}</div>
                     </div>
                   </div>
                 )}
               </div>
               <p
-                className={`px-4 text-sm text-gray-500 ${
+                className={`px-4 text-gray-500 ${
                   selectedBase === base.baseId
-                    ? "text-white"
-                    : "group-hover:text-white"
+                    ? "text-white text-[13px]"
+                    : "group-hover:text-white text-xs"
                 }`}
               >
-                {base.fileNumber} files
+                {base.fileNumber} {t("files")}
               </p>
             </div>
           </div>
@@ -268,7 +272,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
       </div>
       {showConfirmDeleteBase && (
         <ConfirmDialog
-          message={`Confirm the deletion of knowledge-base "${showConfirmDeleteBase.base.name}"？`}
+          message={`${t("deleteConfirm")}"${showConfirmDeleteBase.base.name}"？`}
           onConfirm={confirmDeleteBase}
           onCancel={cancelDeleteBase}
         />

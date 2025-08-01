@@ -1,5 +1,6 @@
 import { useFlowStore } from "@/stores/flowStore";
 import { CustomNode, McpConfig } from "@/types/types";
+import { useTranslations } from "next-intl";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 interface McpConfigProps {
@@ -15,6 +16,7 @@ const McpAdvancedSettingsComponent: React.FC<McpConfigProps> = ({
   mcpName,
   setVisible,
 }) => {
+  const t = useTranslations("McpAdvancedSettings");
   const { updateMcpConfig } = useFlowStore();
   const [timeoutValue, setTimeoutValue] = useState<string>("");
   const [sseReadTimeoutValue, setSseReadTimeoutValue] = useState<string>("");
@@ -70,9 +72,8 @@ const McpAdvancedSettingsComponent: React.FC<McpConfigProps> = ({
           : 300,
       };
       updateMcpConfig(node.id, mcpName, newMcpConfig);
-      console.log("Updated MCP Config:", newMcpConfig);
     } else {
-      alert("MCP configuration not found for this node.");
+      alert(t("mcpConfigNotFound"));
     }
     setVisible(false);
   };
@@ -117,7 +118,7 @@ const McpAdvancedSettingsComponent: React.FC<McpConfigProps> = ({
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              strokeWidth="1.5"
+              strokeWidth="2"
               stroke="currentColor"
               className="size-6 my-auto"
             >
@@ -132,13 +133,13 @@ const McpAdvancedSettingsComponent: React.FC<McpConfigProps> = ({
                 d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
               />
             </svg>
-            <span className="text-lg font-semibold">Config MCP Tools</span>
+            <span className="text-lg font-medium">{t("title")}</span>
           </div>
         </div>
 
         {/* Header 配置区域 */}
         <div className="mb-6">
-          <h3 className="text-md font-medium mb-3">Headers</h3>
+          <h3 className="text-md font-medium mb-3">{t("headers")}</h3>
           <div className="space-y-3">
             {headerPairs.map((pair, index) => (
               <div key={index} className="flex gap-3 items-center">
@@ -148,7 +149,7 @@ const McpAdvancedSettingsComponent: React.FC<McpConfigProps> = ({
                   onChange={(e) =>
                     updateHeaderPair(index, "key", e.target.value)
                   }
-                  placeholder="Key"
+                  placeholder={t("keyPlaceholder")}
                   className="flex-1 border-2 border-gray-200 rounded-xl px-4 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 />
                 <span className="font-medium">:</span>
@@ -158,7 +159,7 @@ const McpAdvancedSettingsComponent: React.FC<McpConfigProps> = ({
                   onChange={(e) =>
                     updateHeaderPair(index, "value", e.target.value)
                   }
-                  placeholder="Value"
+                  placeholder={t("valuePlaceholder")}
                   className="flex-1 border-2 border-gray-200 rounded-xl px-4 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 />
                 <button
@@ -188,7 +189,7 @@ const McpAdvancedSettingsComponent: React.FC<McpConfigProps> = ({
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 mr-1"
+                className="h-5 w-5"
                 viewBox="0 0 20 20"
                 fill="currentColor"
               >
@@ -198,18 +199,18 @@ const McpAdvancedSettingsComponent: React.FC<McpConfigProps> = ({
                   clipRule="evenodd"
                 />
               </svg>
-              Add Headers
+              {t("addHeaders")}
             </button>
           </div>
         </div>
 
         {/* Timeout 配置区域 */}
         <div className="mb-6">
-          <h3 className="text-md font-medium mb-3">Timeout Settings</h3>
+          <h3 className="text-md font-medium mb-3">{t("timeoutSettings")}</h3>
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-sm text-gray-700 mb-1">
-                Timeout (s)
+                {t("timeout")}
               </label>
               <input
                 type="number"
@@ -217,12 +218,12 @@ const McpAdvancedSettingsComponent: React.FC<McpConfigProps> = ({
                 value={timeoutValue}
                 onChange={(e) => setTimeoutValue(e.target.value)}
                 className="w-full border-2 border-gray-200 rounded-xl px-4 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                placeholder="Default: 5s"
+                placeholder={t("timeoutPlaceholder")}
               />
             </div>
             <div>
               <label className="block text-sm text-gray-700 mb-1">
-                SSE Read Timeout (s)
+                {("sseReadTimeout")}
               </label>
               <input
                 type="number"
@@ -230,7 +231,7 @@ const McpAdvancedSettingsComponent: React.FC<McpConfigProps> = ({
                 value={sseReadTimeoutValue}
                 onChange={(e) => setSseReadTimeoutValue(e.target.value)}
                 className="w-full border-2 border-gray-200 rounded-xl px-4 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                placeholder="Default: 300s"
+                placeholder={t("sseTimeoutPlaceholder")}
               />
             </div>
           </div>
@@ -242,13 +243,13 @@ const McpAdvancedSettingsComponent: React.FC<McpConfigProps> = ({
             onClick={onClose}
             className="px-4 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-100 cursor-pointer"
           >
-            Cancel
+            {t("cancel")}
           </button>
           <button
             onClick={handleSubmit}
             className="px-4 py-2 bg-indigo-500 text-white rounded-full hover:bg-indigo-700 cursor-pointer"
           >
-            Save
+            {t("save")}
           </button>
         </div>
       </div>

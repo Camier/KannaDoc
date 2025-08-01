@@ -29,7 +29,6 @@ import {
   KnowledgeBase,
   ModelConfig,
   Message,
-  FileUsed,
   FileRespose,
   McpConfig,
 } from "@/types/types";
@@ -70,6 +69,7 @@ import { getFileExtension } from "@/utils/file";
 import { createChatflow } from "@/lib/api/chatflowApi";
 import ConfirmDialog from "../ConfirmDialog";
 import { replaceTemplate } from "@/utils/convert";
+import { useTranslations } from "next-intl";
 
 const getId = (type: string): string => `node_${type}_${uuidv4()}`;
 interface FlowEditorProps {
@@ -89,6 +89,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   setFullScreenFlow,
   fullScreenFlow,
 }) => {
+  const t = useTranslations("FlowEditor");
   const reactFlowWrapper = useRef<HTMLDivElement>(null);
   const [codeFullScreenFlow, setCodeFullScreenFlow] = useState<boolean>(false);
   const { user } = useAuthStore();
@@ -243,21 +244,15 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     countRef.current = 1;
     nodes.forEach((node) => {
       if (node.data.nodeType == "vlm") {
-        updateOutput(
-          node.id,
-          "This area displays the Node output during workflow execution."
-        );
+        updateOutput(node.id, t("vlmOutputPlaceholder"));
       } else {
-        updateOutput(node.id, "Await for running...");
+        updateOutput(node.id, t("awaitRunning"));
       }
       updateStatus(node.id, "init");
       if (node.data.nodeType == "vlm") {
-        updateChat(
-          node.id,
-          'To extract global variables from the output, ensure prompt LLM/VLM to output them with json format, e.g.,\n {"output":"AIoutput"}.\n\nAdditionally, you can directly assign the LLM response to a global variable below:'
-        );
+        updateChat(node.id, t("vlmChatPlaceholder"));
       } else {
-        updateChat(node.id, "Await for running...");
+        updateChat(node.id, t("awaitRunning"));
       }
     });
   }, [
@@ -287,27 +282,17 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     countRef.current = 1;
     nodes.forEach((node) => {
       if (node.data.nodeType == "vlm") {
-        updateOutput(
-          node.id,
-          "This area displays the Node output during workflow execution."
-        );
+        updateOutput(node.id, t("vlmOutputPlaceholder"));
       } else {
-        updateOutput(node.id, "Await for running...");
+        updateOutput(node.id, t("awaitRunning"));
       }
       updateStatus(node.id, "init");
       if (node.data.nodeType == "vlm") {
-        updateChat(
-          node.id,
-          'To extract global variables from the output, ensure prompt LLM/VLM to output them with json format, e.g.,\n {"output":"AIoutput"}.\n\nAdditionally, you can directly assign the LLM response to a global variable below:'
-        );
+        updateChat(node.id, t("vlmChatPlaceholder"));
       } else {
-        updateChat(node.id, "Await for running...");
+        updateChat(node.id, t("awaitRunning"));
       }
     });
-    // // 可选：显示成功消息
-    // setShowAlert(true);
-    // setWorkflowMessage("Workflow refreshed!");
-    // setWorkflowStatus("success");
   };
 
   useEffect(() => {
@@ -359,7 +344,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         ];
       if (lastNodeMessages.length > 0) {
         if (lastNodeMessages[lastNodeMessages.length - 1].from === "user") {
-          setWorkflowMessage("错误: 连续的输入节点");
+          setWorkflowMessage(t("consecutiveInputNodes"));
           setWorkflowStatus("error");
           setShowAlert(true);
           //eventReader.cancel();
@@ -378,7 +363,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         ];
       if (lastNodeMessages.length > 0) {
         if (lastNodeMessages[lastNodeMessages.length - 1].from === "ai") {
-          setWorkflowMessage("错误: 连续的输出节点");
+          setWorkflowMessage(t("consecutiveOutputNodes"));
           setWorkflowStatus("error");
           setShowAlert(true);
           //eventReader.cancel();
@@ -386,7 +371,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         }
       }
     } else {
-      setWorkflowMessage("输出节点之前找不到输入节点！");
+      setWorkflowMessage(t("noInputBeforeOutput"));
       setWorkflowStatus("error");
       setShowAlert(true);
       //   eventReader.cancel();
@@ -486,14 +471,14 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 ) {
                   if (payload.workflow.status === "completed") {
                     setWorkflowStatus("success");
-                    setWorkflowMessage("Execution Succeeded");
+                    setWorkflowMessage(t("executionSuccess"));
                     setShowAlert(true);
                   } else if (payload.workflow.status === "pause") {
-                    setWorkflowMessage("Debug Pause!");
+                    setWorkflowMessage(t("debugPause"));
                     setWorkflowStatus("success");
                     setShowAlert(true);
                   } else if (payload.workflow.status === "canceled") {
-                    setWorkflowMessage("Workflow canceled by user!");
+                    setWorkflowMessage(t("workflowCanceled"));
                     setWorkflowStatus("error");
                     setShowAlert(true);
                   } else if (payload.workflow.status === "vlm_input") {
@@ -505,8 +490,6 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                       setShowOutput(true);
                     }
                     setSendInputDisabled(false);
-                    // setWorkflowMessage("Please send question to AI!");
-                    // setWorkflowStatus("success");
                   } else {
                     const errorMessage = payload.workflow.error;
                     setWorkflowMessage(errorMessage);
@@ -533,7 +516,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                     }
                     updateOutput(payload.node.id, result);
                   } else {
-                    updateOutput(payload.node.id, "Node running success!");
+                    updateOutput(payload.node.id, t("nodeExecutionSuccess"));
                   }
                   if (payload.node.variables !== '""') {
                     const variables = JSON.parse(payload.node.variables);
@@ -932,10 +915,10 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               }
             }
           } catch (error) {
-            console.error("SSE错误:", error);
+            console.error("SSE Error:", error);
             setShowAlert(true);
             setWorkflowStatus("error");
-            setWorkflowMessage("sse连接失败，请重试");
+            setWorkflowMessage(t("sseError"));
           } finally {
             setRunning(false);
             setTaskId("");
@@ -1103,48 +1086,57 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     if (type === "code") {
       data = {
         status: "init",
-        label: nodeTypesInfo[type].label,
+        label: t("label." + type),
         nodeType: type,
         code: 'def my_func():\n    print("Hello Layra!")\n\nmy_func()\n',
-        output: "Output will be show here",
+        output: t("defaultOutput"),
+        pip: {},
       };
     } else if (type === "loop") {
       data = {
         status: "init",
-        label: nodeTypesInfo[type].label,
+        label: t("label." + type),
         nodeType: type,
         loopType: "count",
         maxCount: 1,
         condition: "",
-        output: "Output will be show here",
+        output: t("defaultOutput"),
       };
     } else if (type === "vlm") {
       data = {
         status: "init",
-        label: nodeTypesInfo[type].label,
+        label: t("label." + type),
         nodeType: type,
-        output: "This area displays the Node output during workflow execution.",
+        output: t("vlmOutputPlaceholder"),
         prompt: "Your are a helpful assistant.",
         vlmInput: "",
         chatflowOutputVariable: "",
         isChatflowInput: false,
         isChatflowOutput: false,
         useChatHistory: false,
-        chat: 'To extract global variables from the output, ensure prompt LLM/VLM to output them with json format, e.g.,\n {"output":"AIoutput"}.\n\nAdditionally, you can directly assign the LLM response to a global variable below:',
+        chat: t("vlmChatPlaceholder"),
+      };
+    } else if (type === "condition") {
+      data = {
+        status: "init",
+        label: t("label." + type),
+        nodeType: type,
+        output: t("defaultOutput"),
+        conditions: {}
       };
     } else {
       data = {
         status: "init",
-        label: nodeTypesInfo[type].label,
+        label: t("label." + type),
         nodeType: type,
-        output: "Output will be show here",
+        output: t("defaultOutput"),
       };
     }
     if (type === "start") {
       if (nodes.find((node) => node.data.nodeType === "start")) {
         setShowAlert(true);
         setWorkflowStatus("error");
-        setWorkflowMessage("Start node already exist!");
+        setWorkflowMessage(t("startNodeExist"));
         return;
       }
       id = "node_start";
@@ -1213,9 +1205,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     if (saveImage) {
       if (saveImageName === "" || saveImageTag === "") {
         setShowAlert(true);
-        setWorkflowMessage(
-          'Please write your Image Name and Image Version or close "Commit Runtime Environment" checkbox before running LLM node!'
-        );
+        setWorkflowMessage(t("imageNameVersionRequired"));
         setWorkflowStatus("error");
         return;
       }
@@ -1231,9 +1221,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
       ) {
         setShowAlert(true);
         setWorkflowMessage(
-          'Please write your question to AI for node "' +
-            node.data.label +
-            '" before running LLM node!'
+          t("questionRequiredForNode", { nodeName: node.data.label })
         );
         setWorkflowStatus("error");
         return;
@@ -1254,9 +1242,9 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         setRunningChatflowLLMNodes([]);
         countRef.current = 1;
         nodes.forEach((node) => {
-          updateOutput(node.id, "Await for running...");
+          updateOutput(node.id, t("awaitRunning"));
           updateStatus(node.id, "init");
-          updateChat(node.id, "Await for running...");
+          updateChat(node.id, t("awaitRunning"));
         });
       }
       if (files.length > 0) {
@@ -1492,13 +1480,13 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         );
         if (response.status == 200) {
           setShowAlert(true);
-          setWorkflowMessage("Save Success!");
+          setWorkflowMessage(t("saveSuccess"));
           setWorkflowStatus("success");
         }
       } catch (error) {
         console.error("Auto-save failed:", error);
         setShowAlert(true);
-        setWorkflowMessage("Save Failed!");
+        setWorkflowMessage(t("saveFailure"));
         setWorkflowStatus("error");
       }
     }
@@ -1527,14 +1515,14 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
           );
           if (response.status == 200) {
             showTemporaryAlert(
-              `Workflow "${workFlow.workflowName}" auto-saved successfully`,
+              t("autoSaveSuccess", { workflowName: workFlow.workflowName }),
               "success"
             );
           }
         } catch (error) {
           console.error("Auto-save failed:", error);
           showTemporaryAlert(
-            `Workflow "${workFlow.workflowName}" auto-saved failed`,
+            t("autoSaveFailure", { workflowName: workFlow.workflowName }),
             "error"
           );
         }
@@ -1589,7 +1577,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         }
 
         // 确认提示
-        const confirm = window.confirm("导入工作流将覆盖当前内容，是否继续？");
+        const confirm = window.confirm(t("importWorkflowAlert"));
         if (!confirm) return;
         // 更新状态
         setNodes(data.nodes);
@@ -1604,7 +1592,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         console.error("导入失败:", error);
         setShowAlert(true);
         setWorkflowStatus("error");
-        setWorkflowMessage("无效的工作流文件格式");
+        setWorkflowMessage(t("invalidWorkflowFile"));
       }
     };
 
@@ -1665,27 +1653,27 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         await cancelWorkflow(user.name, taskId);
         setCanceling(true);
       } catch (error) {
-        console.error("取消失败:", error);
+        console.error("Cancel failed: ", error);
         setShowAlert(true);
         setWorkflowStatus("error");
-        setWorkflowMessage("取消失败:" + error);
+        setWorkflowMessage(t("cancelFailed") + error);
       }
     }
   };
 
   const handleCreateConfirm = async () => {
     if (!newNodeName.trim()) {
-      setNameError("Node name can not be null!");
+      setNameError(t("emptyNodeName"));
       return;
     }
     if (newNodeName.includes(" ")) {
-      setNameError("Spaces are not allowed in node names!");
+      setNameError(t("spaceNodeName"));
       return;
     }
     if (
       Object.entries(customNodes).find(([name, node]) => name === newNodeName)
     ) {
-      setNameError("Node name already exist!");
+      setNameError(t("duplicateNodeName"));
       return;
     }
     if (newCustomNode && user?.name) {
@@ -1703,7 +1691,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         } else {
           setShowAlert(true);
           setWorkflowStatus("error");
-          setWorkflowMessage("保存失败，请导出工作流备份并检查网络！");
+          setWorkflowMessage(t("saveCustomNodeFailed"));
         }
       } catch (error) {
         console.error("Error save custom node:", error);
@@ -1760,12 +1748,12 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
       </div>
 
       <div className="h-full flex flex-col">
-        <div className="flex items-center justify-between mb-1">
-          <div className="flex items-center justify-center gap-[2px]">
+        <div className="flex items-center justify-between mb-1 text-[15px]">
+          <div className="flex items-center justify-center">
             <button
               onClick={undo}
               disabled={history.length <= 1}
-              className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+              className="cursor-pointer disabled:cursor-not-allowed px-2 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1773,7 +1761,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-5"
+                className="size-4.5"
               >
                 <path
                   strokeLinecap="round"
@@ -1786,7 +1774,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             <button
               onClick={redo}
               disabled={future.length === 0}
-              className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+              className="cursor-pointer disabled:cursor-not-allowed px-2 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
             >
               <span>({Math.min(future.length, 50)})</span>
               <svg
@@ -1795,7 +1783,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-5"
+                className="size-4.5"
               >
                 <path
                   strokeLinecap="round"
@@ -1815,7 +1803,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             <button
               onClick={() => fileInputRef.current?.click()}
               //disabled={nodes.length > 0}
-              className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+              className="cursor-pointer disabled:cursor-not-allowed px-2 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1823,7 +1811,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-5"
+                className="size-4.5"
               >
                 <path
                   strokeLinecap="round"
@@ -1832,12 +1820,12 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 />
               </svg>
 
-              <span>Import</span>
+              <span>{t("import")}</span>
             </button>
             <button
               onClick={handleExportWorkflow}
               disabled={nodes.length === 0}
-              className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+              className="cursor-pointer disabled:cursor-not-allowed px-2 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1845,7 +1833,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-5"
+                className="size-4.5"
               >
                 <path
                   strokeLinecap="round"
@@ -1853,14 +1841,14 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                   d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
                 />
               </svg>
-              <span>Export</span>
+              <span>{t("export")}</span>
             </button>
             <button
               onClick={() => {
                 handleSaveWorkFlow();
                 handleRefresh();
               }}
-              className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+              className="cursor-pointer disabled:cursor-not-allowed px-2 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1868,7 +1856,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-5"
+                className="size-4.5"
               >
                 <path
                   strokeLinecap="round"
@@ -1877,12 +1865,12 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 />
               </svg>
 
-              <span>Refresh</span>
+              <span>{t("refresh")}</span>
             </button>
           </div>
 
           <button
-            className="cursor-pointer disabled:cursor-not-allowed px-4 py-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+            className="cursor-pointer disabled:cursor-not-allowed px-4 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
             onClick={() => setFullScreenFlow((prev: boolean) => !prev)}
           >
             {fullScreenFlow ? (
@@ -1892,7 +1880,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-6"
+                className="size-5"
               >
                 <path
                   strokeLinecap="round"
@@ -1907,7 +1895,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-6"
+                className="size-5"
               >
                 <path
                   strokeLinecap="round"
@@ -1918,8 +1906,8 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             )}
           </button>
 
-          <div className="flex items-center justify-center gap-2">
-            <div className="flex items-center justify-center gap-1">
+          <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center">
               <button
                 //disabled={running}
                 onClick={() => {
@@ -1933,7 +1921,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                 }}
                 className={`${
                   !sendInputDisabled && !showOutput ? "text-indigo-700" : ""
-                } cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
+                } cursor-pointer disabled:cursor-not-allowed px-2 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1941,7 +1929,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="size-5"
+                  className="size-4.5"
                 >
                   <path
                     strokeLinecap="round"
@@ -1952,14 +1940,14 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
 
                 <span>
                   {!sendInputDisabled && !showOutput
-                    ? "Click Here"
-                    : "ChatFlow"}
+                    ? t("clickHere")
+                    : t("chatFlow")}
                 </span>
               </button>
               <button
                 disabled={running}
                 onClick={() => handleRunWorkflow(false)}
-                className={`cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
+                className={`cursor-pointer disabled:cursor-not-allowed px-2 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -1967,7 +1955,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="size-5"
+                  className="size-4.5"
                 >
                   <path
                     strokeLinecap="round"
@@ -1976,13 +1964,13 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                   />
                 </svg>
 
-                <span>Run</span>
+                <span>{t("run")}</span>
               </button>
               <button
                 disabled={running}
                 className={`${
                   resumeDebugTaskId ? "text-red-500" : ""
-                } cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
+                } cursor-pointer disabled:cursor-not-allowed px-2 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
                 onClick={() => {
                   handleRunWorkflow(true);
                 }}
@@ -1994,7 +1982,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="size-5"
+                    className="size-4.5"
                   >
                     <path
                       strokeLinecap="round"
@@ -2009,7 +1997,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="size-5"
+                    className="size-4.5"
                   >
                     <path
                       strokeLinecap="round"
@@ -2019,13 +2007,13 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                   </svg>
                 )}
 
-                <span>Debug</span>
+                <span>{t("debug")}</span>
               </button>
             </div>
-            <div className="flex items-center justify-center gap-1">
+            <div className="flex items-center justify-center">
               <button
                 onClick={handleSaveWorkFlow}
-                className="cursor-pointer disabled:cursor-not-allowed p-2 rounded-full text-indigo-500 hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+                className="cursor-pointer disabled:cursor-not-allowed px-2 py-1.5 rounded-full text-indigo-500 hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -2033,7 +2021,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="size-5"
+                  className="size-4.5"
                 >
                   <path
                     strokeLinecap="round"
@@ -2041,12 +2029,12 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                     d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
                   />
                 </svg>
-                <span>Save</span>
+                <span>{t("save")}</span>
               </button>
               {running ? (
                 <button
                   disabled={!taskId || canceling}
-                  className="text-red-500 cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+                  className="text-red-500 cursor-pointer disabled:cursor-not-allowed px-2 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
                   onClick={handleStopWorkflow}
                 >
                   <svg
@@ -2055,7 +2043,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="size-5"
+                    className="size-4.5"
                   >
                     <path
                       strokeLinecap="round"
@@ -2064,12 +2052,12 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                     />
                   </svg>
 
-                  <span>Stop</span>
+                  <span>{t("stop")}</span>
                 </button>
               ) : (
                 <button
                   disabled={running || resumeDebugTaskId !== ""}
-                  className="text-red-500 cursor-pointer disabled:cursor-not-allowed p-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+                  className="text-red-500 cursor-pointer disabled:cursor-not-allowed px-2 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
                   onClick={() => {
                     setShowConfirmClear(true);
                   }}
@@ -2080,7 +2068,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="size-5"
+                    className="size-4.5"
                   >
                     <path
                       strokeLinecap="round"
@@ -2089,7 +2077,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
                     />
                   </svg>
 
-                  <span>Clear</span>
+                  <span>{t("clear")}</span>
                 </button>
               )}
             </div>
@@ -2243,7 +2231,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
       )}
       {showConfirmClear && (
         <ConfirmDialog
-          message={`Confirm clear this Chatflow？`}
+          message={t("confirmClearChatflow")}
           onConfirm={confirmClear}
           onCancel={cancelClear}
         />

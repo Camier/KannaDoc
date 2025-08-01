@@ -18,8 +18,10 @@ import { getFileExtension, SupportFileFormat } from "@/utils/file";
 import { useState, useEffect, useCallback } from "react";
 import Cookies from "js-cookie";
 import { EventSourceParserStream } from "eventsource-parser/stream";
+import { useTranslations } from "next-intl"; // 添加多语言支持
 
 const KnowledgeBase = () => {
+  const t = useTranslations("KnowledgeBase");
   const [selectedBase, setSelectedBase] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [bases, setBases] = useState<Base[]>([]);
@@ -43,14 +45,14 @@ const KnowledgeBase = () => {
 
   let buttonText;
   if (!uploadFile) {
-    buttonText = "Upload Files";
+    buttonText = t("UploadButton.initial");
   } else if (!isUploadComplete) {
-    buttonText = `Upload:${uploadProgress}%`;
+    buttonText = `${t("UploadButton.uploading")}${uploadProgress}%`;
   } else if (!isTaskComplete) {
     buttonText =
-      taskStatus === "failed" ? "Upload Failed" : `Processing:${taskProgress}%`;
+      taskStatus === "failed" ? t("UploadButton.failed") : `${t("UploadButton.processing")}${taskProgress}%`;
   } else {
-    buttonText = "Upload Files";
+    buttonText = t("UploadButton.initial");
   }
 
   // 成功消息自动消失
@@ -90,11 +92,11 @@ const KnowledgeBase = () => {
   // 创建知识库校验
   const handleCreateConfirm = async () => {
     if (!newBaseName.trim()) {
-      setNameError("Knowledge-Base name can not be null!");
+      setNameError(t("Errors.emptyName"));
       return;
     }
     if (bases.some((base) => base.name === newBaseName)) {
-      setNameError("Knowledge-Base name already exist!");
+      setNameError(t("Errors.duplicateName"));
       return;
     }
 
@@ -103,10 +105,10 @@ const KnowledgeBase = () => {
         setBases((prevBase: Base[]) => {
           return [
             {
-              name: "加载中...",
+              name: t("LoadingPlaceholder"),
               baseId: "1",
-              lastModifyTime: "加载中...",
-              createTime: "加载中...",
+              lastModifyTime: t("LoadingPlaceholder"),
+              createTime: t("LoadingPlaceholder"),
               fileNumber: 0,
             },
             ...prevBase,
@@ -173,7 +175,7 @@ const KnowledgeBase = () => {
 
     if (invalidFiles.length > 0) {
       alert(
-        `Unsupport file type: \n${invalidFiles.map((f) => f.name).join("\n")}`
+        `${t("Errors.unsupportedFileType")}\n${invalidFiles.map((f) => f.name).join("\n")}`
       );
     }
 
@@ -224,7 +226,7 @@ const KnowledgeBase = () => {
 
                   if (["completed", "failed"].includes(payload.status)) {
                     if (payload.status === "failed") {
-                      alert("Embedding error!");
+                      alert(t("Errors.embeddingError"));
                     }
                     eventReader.cancel();
                     break;
@@ -249,7 +251,7 @@ const KnowledgeBase = () => {
             }
           })
           .catch((error) => {
-            alert("Upload error");
+            alert(t("Errors.uploadError"));
           });
       }
     }

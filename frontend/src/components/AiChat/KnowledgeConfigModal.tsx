@@ -18,6 +18,7 @@ import {
 import AddLLMEngine from "./AddLLMEngine";
 import { useClickAway } from "react-use";
 import ConfirmDialog from "../ConfirmDialog";
+import { useTranslations } from "next-intl";
 
 interface ConfigModalProps {
   visible: boolean;
@@ -30,6 +31,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
   setVisible,
   onSave,
 }) => {
+  const t = useTranslations("ChatKnowledgeConfigModal");
   const [knowledgeBases, setKnowledgeBases] = useState<KnowledgeBase[]>([]);
   const { modelConfig, setModelConfig } = useModelConfigStore();
   const [modelConfigs, setModelConfigs] = useState<ModelConfig[]>([]);
@@ -256,18 +258,19 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
           <div className="flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2.5"
+              stroke="currentColor"
               className="size-5"
             >
               <path
-                fillRule="evenodd"
-                d="M10 1c3.866 0 7 1.79 7 4s-3.134 4-7 4-7-1.79-7-4 3.134-4 7-4Zm5.694 8.13c.464-.264.91-.583 1.306-.952V10c0 2.21-3.134 4-7 4s-7-1.79-7-4V8.178c.396.37.842.688 1.306.953C5.838 10.006 7.854 10.5 10 10.5s4.162-.494 5.694-1.37ZM3 13.179V15c0 2.21 3.134 4 7 4s7-1.79 7-4v-1.822c-.396.37-.842.688-1.306.953-1.532.875-3.548 1.369-5.694 1.369s-4.162-.494-5.694-1.37A7.009 7.009 0 0 1 3 13.179Z"
-                clipRule="evenodd"
-                transform="translate(0, -0.5)"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"
               />
             </svg>
-            <span className="text-lg font-semibold">Config Knowledge Base</span>
+            <span className="text-lg font-medium">{t("title")}</span>
           </div>
           <a
             href="/knowledge-base" // 配置页面的路由路径
@@ -277,7 +280,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 mr-1"
+              className="h-5 w-5 mr-1"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -295,7 +298,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                 d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
               />
             </svg>
-            Add Knowledge-Base
+            {t("addKnowledgeBase")}
           </a>
         </div>
 
@@ -304,7 +307,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            strokeWidth="1.5"
+            strokeWidth="2"
             stroke="currentColor"
             className="size-4 mr-[2px] my-auto"
           >
@@ -314,7 +317,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
               d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
             />
           </svg>
-          Tutorials: Click top-right
+          {t("tutorials")}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -329,7 +332,6 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
               d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
             />
           </svg>
-          icon
         </p>
 
         {/* 可滚动内容区域 */}
@@ -339,7 +341,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
           <div className="pt-2">
             <details className="group" open>
               <summary className="flex items-center cursor-pointer text-sm font-medium">
-                LLM Settings
+                {t("llmSettings")}
                 <svg
                   className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
                   fill="none"
@@ -360,7 +362,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                 <div>
                   <div className="flex items-center justify-between">
                     <label className="block text-sm font-medium mb-2">
-                      LLM Engine
+                      {t("llmEngine")}
                     </label>
                     <div
                       onClick={() => setShowAddLLM(true)}
@@ -386,7 +388,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                           d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
                         />
                       </svg>
-                      Add New Configuration
+                      {t("addNewConfiguration")}
                     </div>
                   </div>
                   <div className="flex gap-2">
@@ -474,7 +476,9 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
 
                 {/* 新增模型地址和API Key */}
                 <div>
-                  <label className="block text-sm font-medium">LLM Url</label>
+                  <label className="block text-sm font-medium">
+                    {t("llmUrl")}
+                  </label>
                   <input
                     type="url"
                     value={modelConfig.modelURL}
@@ -490,7 +494,9 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium">API Key</label>
+                  <label className="block text-sm font-medium">
+                    {t("apiKey")}
+                  </label>
                   <input
                     type="password"
                     value={modelConfig.apiKey}
@@ -510,7 +516,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
           <div className="pt-2">
             <details className="group" open>
               <summary className="flex items-center cursor-pointer text-sm font-medium">
-                Choose DB
+                {t("chooseDB")}
                 <svg
                   className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
                   fill="none"
@@ -554,14 +560,16 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                     <div className="ml-2 flex gap-1 items-center">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        className="size-4 shrink-0"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="size-5 shrink-0"
                       >
                         <path
-                          fillRule="evenodd"
-                          d="M10 1c3.866 0 7 1.79 7 4s-3.134 4-7 4-7-1.79-7-4 3.134-4 7-4Zm5.694 8.13c.464-.264.91-.583 1.306-.952V10c0 2.21-3.134 4-7 4s-7-1.79-7-4V8.178c.396.37.842.688 1.306.953C5.838 10.006 7.854 10.5 10 10.5s4.162-.494 5.694-1.37ZM3 13.179V15c0 2.21 3.134 4 7 4s7-1.79 7-4v-1.822c-.396.37-.842.688-1.306.953-1.532.875-3.548 1.369-5.694 1.369s-4.162-.494-5.694-1.37A7.009 7.009 0 0 1 3 13.179Z"
-                          clipRule="evenodd"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"
                         />
                       </svg>
                       <span>{base.name}</span>
@@ -575,7 +583,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
           <div className="pt-2">
             <details className="group">
               <summary className="flex items-center cursor-pointer text-sm font-medium">
-                System Prompt
+                {t("systemPrompt")}
                 <svg
                   className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
                   fill="none"
@@ -618,7 +626,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
           <div className="pt-2">
             <details className="group">
               <summary className="flex items-center cursor-pointer text-sm font-medium">
-                Advanced Settings
+                {t("advancedSettings")}
                 <svg
                   className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
                   fill="none"
@@ -640,8 +648,10 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                 <div>
                   <div className="flex items-center justify-between">
                     <label className="block text-sm font-medium">
-                      Temperature
-                      <span className="text-xs text-gray-500 ml-1">(0-1)</span>
+                      {t("temperature")}
+                      <span className="text-xs text-gray-500 ml-1">
+                        {t("range_0_1")}
+                      </span>
                     </label>
                     <label className="relative inline-flex items-center group p-2 rounded-3xl hover:bg-gray-50 cursor-pointer">
                       <input
@@ -669,7 +679,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                         />
                       </svg>
                       <span className="text-sm text-gray-600 ml-2">
-                        Use Model Default
+                        {t("useModelDefault")}
                       </span>
                     </label>
                   </div>
@@ -694,9 +704,9 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                 <div>
                   <div className="flex items-center justify-between">
                     <label className="block text-sm font-medium">
-                      Max Token
+                      {t("maxToken")}
                       <span className="text-xs text-gray-500 ml-1">
-                        (1024-1048576)
+                        {t("range_1024_1048576")}
                       </span>
                     </label>
                     <label className="relative inline-flex items-center group p-2 rounded-3xl hover:bg-gray-50 cursor-pointer">
@@ -725,7 +735,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                         />
                       </svg>
                       <span className="text-sm text-gray-600 ml-2">
-                        Use Model Default
+                        {t("useModelDefault")}
                       </span>
                     </label>
                   </div>
@@ -749,8 +759,10 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                 <div>
                   <div className="flex items-center justify-between">
                     <label className="block text-sm font-medium">
-                      Top-P
-                      <span className="text-xs text-gray-500 ml-1">(0-1)</span>
+                      {t("topP")}
+                      <span className="text-xs text-gray-500 ml-1">
+                        {t("range_0_1")}
+                      </span>
                     </label>
                     <label className="relative inline-flex items-center group p-2 rounded-3xl hover:bg-gray-50 cursor-pointer">
                       <input
@@ -778,7 +790,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                         />
                       </svg>
                       <span className="text-sm text-gray-600 ml-2">
-                        Use Model Default
+                        {t("useModelDefault")}
                       </span>
                     </label>
                   </div>
@@ -802,8 +814,10 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                 <div>
                   <div className="flex items-center justify-between">
                     <label className="block text-sm font-medium">
-                      Knowledge-Base Top-K
-                      <span className="text-xs text-gray-500 ml-1">(1-30)</span>
+                      {t("knowledgeBaseTopK")}
+                      <span className="text-xs text-gray-500 ml-1">
+                        {t("range_1_30")}
+                      </span>
                     </label>
                     <label className="relative inline-flex items-center group p-2 rounded-3xl hover:bg-gray-50 cursor-pointer">
                       <input
@@ -831,7 +845,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                         />
                       </svg>
                       <span className="text-sm text-gray-600 ml-2">
-                        Use Model Default
+                        {t("useModelDefault")}
                       </span>
                     </label>
                   </div>
@@ -855,8 +869,10 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                 <div>
                   <div className="flex items-center justify-between">
                     <label className="block text-sm font-medium">
-                      Retrieval Score Threshold
-                      <span className="text-xs text-gray-500 ml-1">(0-20)</span>
+                      {t("retrievalScoreThreshold")}
+                      <span className="text-xs text-gray-500 ml-1">
+                        {t("range_0_20")}
+                      </span>
                     </label>
                     <label className="relative inline-flex items-center group p-2 rounded-3xl hover:bg-gray-50 cursor-pointer">
                       <input
@@ -884,7 +900,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                         />
                       </svg>
                       <span className="text-sm text-gray-600 ml-2">
-                        Use Model Default
+                        {t("useModelDefault")}
                       </span>
                     </label>
                   </div>
@@ -915,13 +931,13 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
             onClick={onClose}
             className="px-4 py-2  text-gray-700 border border-gray-300 rounded-full hover:bg-gray-100 cursor-pointer"
           >
-            Cancel
+            {t("cancel")}
           </button>
           <button
             onClick={handleSubmit}
             className="px-4 py-2 bg-indigo-500 text-white rounded-full hover:bg-indigo-700 cursor-pointer"
           >
-            Save
+            {t("save")}
           </button>
         </div>
       </div>
@@ -938,10 +954,9 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
       {/* 确认删除单个模型配置 */}
       {showConfirmDeleteConfig && (
         <ConfirmDialog
-          message={`Confirm the deletion of model config "${showConfirmDeleteConfig.config.modelName.slice(
-            0,
-            30
-          )}"`}
+          message={`${t(
+            "deleteModelConfigConfirmation"
+          )}"${showConfirmDeleteConfig.config.modelName.slice(0, 30)}"`}
           onConfirm={confirmDeleteConfig}
           onCancel={cancelDeleteConfig}
         />

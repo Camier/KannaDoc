@@ -18,8 +18,10 @@ import { Flow, WorkflowAll } from "@/types/types";
 import { useState, useEffect, useCallback } from "react";
 import { useFlowStore } from "@/stores/flowStore";
 import { useGlobalStore } from "@/stores/WorkflowVariableStore";
+import { useTranslations } from "next-intl";
 
 const Workflow = () => {
+  const t=useTranslations("WorkflowPage")
   const [selectedFlow, setSelectedFlow] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [flows, setFlows] = useState<Flow[]>([]);
@@ -110,11 +112,11 @@ const Workflow = () => {
   // 创建工作流校验
   const handleCreateConfirm = async () => {
     if (!newFlowName.trim()) {
-      setNameError("Work-Flow name can not be null!");
+      setNameError(t("createError.nameRequired"));
       return;
     }
     if (flows.some((flow) => flow.name === newFlowName)) {
-      setNameError("Work-Flow name already exist!");
+      setNameError(t("createError.nameExists"));
       return;
     }
 
@@ -123,10 +125,10 @@ const Workflow = () => {
         setFlows((prevFlow: Flow[]) => {
           return [
             {
-              name: "加载中...",
+              name: t("loadingText"),
               flowId: "1",
-              lastModifyTime: "加载中...",
-              createTime: "加载中...",
+              lastModifyTime: t("loadingText"),
+              createTime: t("loadingText"),
               fileNumber: 0,
             },
             ...prevFlow,
@@ -248,10 +250,10 @@ const Workflow = () => {
             ) : (
               <div className="flex-1 h-full flex items-center flex-col justify-center gap-2 bg-white rounded-3xl shadow-sm p-6">
                 <p className="text-gray-500 text-2xl">
-                  Please create or choose a workflow to start
+                  {t("emptyPrompt.createOrChoose")}
                 </p>
                 <p className="text-gray-500 text-lg">
-                  Access tutorials via top-right hamburger menu
+                  {t("emptyPrompt.accessTutorials")}
                 </p>
               </div>
             )}

@@ -1,5 +1,6 @@
 // components/ConfirmAlert.tsx
 import React from "react";
+import { useTranslations } from "next-intl";
 
 interface ConfirmAlertProps {
   type: string;
@@ -12,6 +13,7 @@ const ConfirmAlert: React.FC<ConfirmAlertProps> = ({
   message,
   onCancel,
 }) => {
+  const t = useTranslations("ConfirmAlert");
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/50">
       <div className="bg-white rounded-3xl shadow-lg p-6 w-[30%] max-h-[50vh] flex flex-col">
@@ -19,34 +21,37 @@ const ConfirmAlert: React.FC<ConfirmAlertProps> = ({
           <div className="flex gap-1 items-center text-indigo-500 mb-6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
+              fill="none"
               viewBox="0 0 24 24"
-              fill="currentColor"
-              className="size-5"
+              strokeWidth="2"
+              stroke="currentColor"
+              className="size-5.5"
             >
               <path
-                fillRule="evenodd"
-                d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 0 1 .67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 1 1-.671-1.34l.041-.022ZM12 9a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
-                clipRule="evenodd"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
               />
             </svg>
-            <h2 className="text-lg font-semibold">NOTICE</h2>
+            <h2 className="text-lg font-medium">{t("notice")}</h2>
           </div>
         ) : (
           <div className="flex gap-1 items-center text-red-500 mb-6">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              className="size-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              className="size-5.5"
             >
               <path
-                fillRule="evenodd"
-                d="M8.485 2.495c.673-1.167 2.357-1.167 3.03 0l6.28 10.875c.673 1.167-.17 2.625-1.516 2.625H3.72c-1.347 0-2.189-1.458-1.515-2.625L8.485 2.495ZM10 5a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 10 5Zm0 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
-                clipRule="evenodd"
-                transform="translate(0, 0)"
-              /> 
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"
+              />
             </svg>
-            <h2 className="text-lg font-semibold">ERROR</h2>
+            <h2 className="text-lg font-medium">{t("error")}</h2>
           </div>
         )}
         <p className="mb-6 p-2 overflow-auto">{message}</p>
@@ -55,7 +60,7 @@ const ConfirmAlert: React.FC<ConfirmAlertProps> = ({
             onClick={onCancel}
             className="px-4 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-100 cursor-pointer"
           >
-            Cancel
+            {t("cancel")}
           </button>
         </div>
       </div>

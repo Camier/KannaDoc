@@ -36,6 +36,7 @@ import {
   calculateCurrentPath,
   calculateDefaultBranches,
 } from "@/utils/message";
+import { useTranslations } from "next-intl";
 
 interface ChatBoxProps {
   messages: Message[]; //常规历史消息，后台数据库读取
@@ -59,6 +60,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   sendDisabled,
   onAbort,
 }) => {
+  const t = useTranslations("ChatBox");
   const [inputMessage, setInputMessage] = useState("");
   const messagesEndRef = useRef<HTMLDivElement | null>(null); // 创建引用
   const fileInputRef = useRef<HTMLInputElement>(null); // 新增文件输入引用
@@ -86,14 +88,14 @@ const ChatBox: React.FC<ChatBoxProps> = ({
 
   let buttonText;
   if (!uploadFile) {
-    buttonText = "Send";
+    buttonText = t("sendButton");
   } else if (!isUploadComplete) {
-    buttonText = `Upload:${uploadProgress}%`;
+    buttonText = `${t('uploadStatus.uploading')}:${uploadProgress}%`;
   } else if (!isTaskComplete) {
     buttonText =
-      taskStatus === "failed" ? "Upload Failed" : `Processing:${taskProgress}%`;
+      taskStatus === "failed" ? t('uploadStatus.failed') : `${t('uploadStatus.processing')}:${taskProgress}%`;
   } else {
-    buttonText = "Send";
+    buttonText = t("sendButton");
   }
 
   // 在ChatBox组件内新增状态
@@ -402,7 +404,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
 
     if (invalidFiles.length > 0) {
       alert(
-        `Unsupport file type: \n${invalidFiles.map((f) => f.name).join("\n")}`
+        `${t("unsupportedFileType")} \n${invalidFiles.map((f) => f.name).join("\n")}`
       );
     }
 
@@ -455,7 +457,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
 
                 if (["completed", "failed"].includes(payload.status)) {
                   if (payload.status === "failed") {
-                    alert("Embedding error!");
+                    alert(t("embeddingError"));
                   }
                   eventReader.cancel();
                   break;
@@ -468,7 +470,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
           }
         })
         .catch((error) => {
-          alert("Upload error");
+          alert(t("uploadError"));
         });
     }
 
@@ -479,8 +481,8 @@ const ChatBox: React.FC<ChatBoxProps> = ({
     try {
       window.open(url, "_blank");
     } catch (error) {
-      console.error("Download failed:", error);
-      alert("Download failed!");
+      console.error(t("downloadError"), error);
+      alert(t("downloadError"));
     }
   };
 
@@ -496,64 +498,77 @@ const ChatBox: React.FC<ChatBoxProps> = ({
     <div className="w-[80%] flex-none h-full rounded-3xl p-4 flex flex-col">
       <div className="flex-1 min-h-0 overflow-hidden">
         {currentPath.length === 0 ? (
-          <div className="h-full w-full flex flex-col items-center gap-4 bg-white/30 rounded-xl">
+          <div className="h-full w-[95%] flex flex-col items-center gap-4 bg-white/30 rounded-xl">
             <div className="h-[30vh]"></div>
-            <p className="text-lg">
-              Please remember to choose which knowledge database you will use
-              for this chat.
+            <p className="text-lg text-gray-500">
+              {t("initialPrompt")}
             </p>
             <button
-              className="bg-indigo-500 hover:bg-indigo-600 rounded-full text-base px-4 py-2 text-white flex gap-1 cursor-pointer"
+              className="bg-indigo-500 hover:bg-indigo-600 rounded-full text-base px-4 py-2 text-white flex gap-2 cursor-pointer"
               onClick={configureKnowledgeDB}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="size-5 my-auto"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-4 my-auto"
               >
                 <path
-                  fillRule="evenodd"
-                  d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm.75-11.25a.75.75 0 0 0-1.5 0v2.5h-2.5a.75.75 0 0 0 0 1.5h2.5v2.5a.75.75 0 0 0 1.5 0v-2.5h2.5a.75.75 0 0 0 0-1.5h-2.5v-2.5Z"
-                  clipRule="evenodd"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z"
                 />
               </svg>
-              <div>Configure Now</div>
+
+              <div>{t("configureButton")}</div>
             </button>
-            <div className="flex items-center justify-center gap-2 text-indigo-500 font-semibold">
+            <div className="flex items-center justify-center gap-1 text-indigo-500">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
+                fill="none"
                 viewBox="0 0 24 24"
-                fill="currentColor"
-                className="size-5"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-5 "
               >
                 <path
-                  fillRule="evenodd"
-                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm0 8.625a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25ZM15.375 12a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0ZM7.5 10.875a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z"
-                  clipRule="evenodd"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                 />
               </svg>
               {modelConfig.modelName ? (
-                <div className="text-indigo-500">{modelConfig.modelName}</div>
+                <div className="text-indigo-500 text-sm">
+                  {modelConfig.modelName}
+                </div>
               ) : (
-                <div className="text-indigo-500">No LLM engine was choosed</div>
+                <div className="text-indigo-500 text-sm">
+                  {t("noEngine")}
+                </div>
               )}
             </div>
             {modelConfig.baseUsed.length > 0 ? (
-              <div className="flex items-center justify-center w-full text-sm text-indigo-500 font-semibold gap-2">
+              <div className="flex items-center justify-center w-full text-sm text-indigo-500 gap-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
                   className="size-5"
                 >
-                  <path d="M10.75 16.82A7.462 7.462 0 0 1 15 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0 0 18 15.06v-11a.75.75 0 0 0-.546-.721A9.006 9.006 0 0 0 15 3a8.963 8.963 0 0 0-4.25 1.065V16.82ZM9.25 4.065A8.963 8.963 0 0 0 5 3c-.85 0-1.673.118-2.454.339A.75.75 0 0 0 2 4.06v11a.75.75 0 0 0 .954.721A7.506 7.506 0 0 1 5 15.5c1.579 0 3.042.487 4.25 1.32V4.065Z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+                  />
                 </svg>
                 <div className="whitespace-nowrap">
-                  {" "}
-                  Knowledge-Base accessed:
+                  {t("knowledgeBaseAccessed")}
                 </div>
-                <div className="whitespace-nowrap overflow-x-scroll scrollbar-hide flex gap-2">
+                <div className="whitespace-nowrap overflow-x-scroll scrollbar-hide flex gap-1">
                   {modelConfig.baseUsed.map((base, index) => (
                     <div
                       className="flex gap-1 items-center justify-center"
@@ -561,15 +576,17 @@ const ChatBox: React.FC<ChatBoxProps> = ({
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                        className="size-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="size-4.5"
                       >
                         <path
-                          fillRule="evenodd"
-                          d="M10 1c3.866 0 7 1.79 7 4s-3.134 4-7 4-7-1.79-7-4 3.134-4 7-4Zm5.694 8.13c.464-.264.91-.583 1.306-.952V10c0 2.21-3.134 4-7 4s-7-1.79-7-4V8.178c.396.37.842.688 1.306.953C5.838 10.006 7.854 10.5 10 10.5s4.162-.494 5.694-1.37ZM3 13.179V15c0 2.21 3.134 4 7 4s7-1.79 7-4v-1.822c-.396.37-.842.688-1.306.953-1.532.875-3.548 1.369-5.694 1.369s-4.162-.494-5.694-1.37A7.009 7.009 0 0 1 3 13.179Z"
-                          clipRule="evenodd"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                           transform="translate(0, -0.5)"
+                          d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"
                         />
                       </svg>
                       <span>{base.name}</span>
@@ -578,17 +595,23 @@ const ChatBox: React.FC<ChatBoxProps> = ({
                 </div>
               </div>
             ) : (
-              <div className="flex items-center justify-center w-full text-sm text-indigo-500 font-semibold gap-2">
+              <div className="flex items-center justify-center w-full text-sm text-indigo-500 gap-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
                   className="size-5"
                 >
-                  <path d="M10.75 16.82A7.462 7.462 0 0 1 15 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0 0 18 15.06v-11a.75.75 0 0 0-.546-.721A9.006 9.006 0 0 0 15 3a8.963 8.963 0 0 0-4.25 1.065V16.82ZM9.25 4.065A8.963 8.963 0 0 0 5 3c-.85 0-1.673.118-2.454.339A.75.75 0 0 0 2 4.06v11a.75.75 0 0 0 .954.721A7.506 7.506 0 0 1 5 15.5c1.579 0 3.042.487 4.25 1.32V4.065Z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+                  />
                 </svg>
                 <div className="whitespace-nowrap">
-                  No Knowledge-Base was accessed‌
+                  {t("noKnowledgeBase")}
                 </div>
               </div>
             )}
@@ -596,17 +619,19 @@ const ChatBox: React.FC<ChatBoxProps> = ({
         ) : (
           <div className="h-[100%] w-full flex flex-col mx-auto">
             <div className="shadow-xs rounded-xl pb-2 mx-[12%] mb-2 flex flex-col item-center justify-center gap-1">
-              <div className="w-full px-10 text-sm flex items-center justify-center gap-2 text-indigo-500 font-semibold">
+              <div className="w-full px-10 text-sm flex items-center justify-center gap-1 text-indigo-500">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
                   viewBox="0 0 24 24"
-                  fill="currentColor"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
                   className="size-5"
                 >
                   <path
-                    fillRule="evenodd"
-                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm0 8.625a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25ZM15.375 12a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0ZM7.5 10.875a1.125 1.125 0 1 0 0 2.25 1.125 1.125 0 0 0 0-2.25Z"
-                    clipRule="evenodd"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                   />
                 </svg>
                 {modelConfig.modelName ? (
@@ -615,25 +640,30 @@ const ChatBox: React.FC<ChatBoxProps> = ({
                   </div>
                 ) : (
                   <div className="text-indigo-500">
-                    No LLM engine was choosed
+                    {t("noEngine")}
                   </div>
                 )}
               </div>
               {modelConfig.baseUsed.length > 0 ? (
-                <div className="px-10 flex items-center justify-center w-full text-sm text-indigo-500 font-semibold gap-2">
+                <div className="px-10 flex items-center justify-center w-full text-sm text-indigo-500 gap-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
                     className="size-5"
                   >
-                    <path d="M10.75 16.82A7.462 7.462 0 0 1 15 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0 0 18 15.06v-11a.75.75 0 0 0-.546-.721A9.006 9.006 0 0 0 15 3a8.963 8.963 0 0 0-4.25 1.065V16.82ZM9.25 4.065A8.963 8.963 0 0 0 5 3c-.85 0-1.673.118-2.454.339A.75.75 0 0 0 2 4.06v11a.75.75 0 0 0 .954.721A7.506 7.506 0 0 1 5 15.5c1.579 0 3.042.487 4.25 1.32V4.065Z" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+                    />
                   </svg>
                   <div className="whitespace-nowrap">
-                    {" "}
-                    Knowledge-Base accessed:
+                    {t("knowledgeBaseAccessed")}
                   </div>
-                  <div className="whitespace-nowrap overflow-x-scroll scrollbar-hide flex gap-2">
+                  <div className="whitespace-nowrap overflow-x-scroll scrollbar-hide flex gap-1">
                     {modelConfig.baseUsed.map((base, index) => (
                       <div
                         className="flex gap-1 items-center justify-center"
@@ -641,15 +671,17 @@ const ChatBox: React.FC<ChatBoxProps> = ({
                       >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          className="size-4"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          strokeWidth="1.5"
+                          stroke="currentColor"
+                          className="size-4.5"
                         >
                           <path
-                            fillRule="evenodd"
-                            d="M10 1c3.866 0 7 1.79 7 4s-3.134 4-7 4-7-1.79-7-4 3.134-4 7-4Zm5.694 8.13c.464-.264.91-.583 1.306-.952V10c0 2.21-3.134 4-7 4s-7-1.79-7-4V8.178c.396.37.842.688 1.306.953C5.838 10.006 7.854 10.5 10 10.5s4.162-.494 5.694-1.37ZM3 13.179V15c0 2.21 3.134 4 7 4s7-1.79 7-4v-1.822c-.396.37-.842.688-1.306.953-1.532.875-3.548 1.369-5.694 1.369s-4.162-.494-5.694-1.37A7.009 7.009 0 0 1 3 13.179Z"
-                            clipRule="evenodd"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
                             transform="translate(0, -0.5)"
+                            d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"
                           />
                         </svg>
                         <span>{base.name}</span>
@@ -658,17 +690,23 @@ const ChatBox: React.FC<ChatBoxProps> = ({
                   </div>
                 </div>
               ) : (
-                <div className="px-10 flex items-center justify-center w-full text-sm text-indigo-500 font-semibold gap-2">
+                <div className="px-10 flex items-center justify-center w-full text-sm text-indigo-500 gap-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
                     className="size-5"
                   >
-                    <path d="M10.75 16.82A7.462 7.462 0 0 1 15 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0 0 18 15.06v-11a.75.75 0 0 0-.546-.721A9.006 9.006 0 0 0 15 3a8.963 8.963 0 0 0-4.25 1.065V16.82ZM9.25 4.065A8.963 8.963 0 0 0 5 3c-.85 0-1.673.118-2.454.339A.75.75 0 0 0 2 4.06v11a.75.75 0 0 0 .954.721A7.506 7.506 0 0 1 5 15.5c1.579 0 3.042.487 4.25 1.32V4.065Z" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
+                    />
                   </svg>
                   <div className="whitespace-nowrap">
-                    No Knowledge-Base was accessed‌
+                    {t("noKnowledgeBase")}
                   </div>
                 </div>
               )}
@@ -711,24 +749,45 @@ const ChatBox: React.FC<ChatBoxProps> = ({
                       parentId={block.parentId} // 父节点 ID
                       isLastMessage={blockIndex === currentPath.length - 1}
                     />
-                    {block.aiMessages.map((aiMsg, aiIndex) => (
-                      <ChatMessage
-                        modelConfig={modelConfig}
-                        key={aiIndex}
-                        message={aiMsg}
-                        showRefFile={showRefFile}
-                        setShowRefFile={setShowRefFile}
-                        onSendEditingMessage={handleSendEditingMessage}
-                        sendDisabled={sendDisabled}
-                        enableOperation={true}
-                        lastUserMessage={() => block.userMessage.content || ""}
-                        handleBranchChange={handleBranchChange} // 处理分支切换
-                        branchIndex={block.branchIndex} // 当前分支索引
-                        branchCount={block.branchCount} // 分支总数
-                        parentId={block.parentId} // 父节点 ID
-                        isLastMessage={blockIndex === currentPath.length - 1}
-                      />
-                    ))}
+                    {block.aiMessages.map((aiMsg, aiIndex) => {
+                      if (
+                        aiMsg.content === t("parsingMessage")
+                      ) {
+                        return (
+                          <div
+                            key={aiIndex}
+                            className="flex items-center space-x-1.5 m-1 rounded-3xl w-fit mr-auto px-4 py-2 mb-2"
+                          >
+                            <div className="w-2 h-2 rounded-full bg-indigo-500 animate-bounce" />
+                            <div className="w-2 h-2 rounded-full bg-indigo-500 animate-bounce [animation-delay:0.2s]" />
+                            <div className="w-2 h-2 rounded-full bg-indigo-500 animate-bounce [animation-delay:0.4s]" />
+                          </div>
+                        );
+                      } else {
+                        return (
+                          <ChatMessage
+                            modelConfig={modelConfig}
+                            key={aiIndex}
+                            message={aiMsg}
+                            showRefFile={showRefFile}
+                            setShowRefFile={setShowRefFile}
+                            onSendEditingMessage={handleSendEditingMessage}
+                            sendDisabled={sendDisabled}
+                            enableOperation={true}
+                            lastUserMessage={() =>
+                              block.userMessage.content || ""
+                            }
+                            handleBranchChange={handleBranchChange} // 处理分支切换
+                            branchIndex={block.branchIndex} // 当前分支索引
+                            branchCount={block.branchCount} // 分支总数
+                            parentId={block.parentId} // 父节点 ID
+                            isLastMessage={
+                              blockIndex === currentPath.length - 1
+                            }
+                          />
+                        );
+                      }
+                    })}
                   </div>
                 ))
               }
@@ -744,8 +803,8 @@ const ChatBox: React.FC<ChatBoxProps> = ({
           <div className="flex justify-center items-center h-full">
             <textarea
               ref={textareaRef}
-              className="pl-11 pr-8 w-full py-3 min-h-[40%] max-h-[100%] border-indigo-500 border-2 rounded-3xl text-base focus:outline-hidden focus:border-indigo-600 focus:border-[2.5px] resize-none overflow-y-auto"
-              placeholder="Press Shift+Enter to send..."
+              className="pl-11 pr-8 w-full py-3 min-h-[40%] max-h-[100%] border-indigo-500 border-2 rounded-3xl text-base focus:outline-hidden focus:border-indigo-600 resize-none overflow-y-auto"
+              placeholder={t("placeholder")}
               value={inputMessage}
               rows={1}
               onChange={(e) => {
@@ -888,12 +947,19 @@ const ChatBox: React.FC<ChatBoxProps> = ({
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
+              fill="none"
               viewBox="0 0 24 24"
-              fill="currentColor"
+              strokeWidth="1.5"
+              stroke="currentColor"
               className="size-6 shrink-0"
             >
-              <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
+              />
             </svg>
+
             {buttonText}
           </button>
         )}
@@ -920,7 +986,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
                 clipRule="evenodd"
               />
             </svg>
-            Stop
+            {t("stopButton")}
           </button>
         )}
       </div>

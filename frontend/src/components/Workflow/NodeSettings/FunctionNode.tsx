@@ -10,7 +10,15 @@ import { useAuthStore } from "@/stores/authStore";
 import { useFlowStore } from "@/stores/flowStore";
 import { useGlobalStore } from "@/stores/WorkflowVariableStore";
 import { CustomNode } from "@/types/types";
-import { Dispatch, SetStateAction, useCallback, useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
+import {
+  Dispatch,
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { createPortal } from "react-dom";
 
 interface FunctionNodeProps {
@@ -52,6 +60,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
     DockerImageUse,
     updateDockerImageUse,
   } = useGlobalStore();
+  const t = useTranslations("FunctionNode");
   const [variable, setVariable] = useState("");
   const [packageName, setPackageName] = useState("");
   const { user } = useAuthStore();
@@ -84,14 +93,18 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
         const response = await getDockerImages(user.name);
         setSystemDockerImages(response.data.images);
         // 使用 ref 获取当前值而不是依赖
-        if (!(response.data.images as string[]).includes(dockerImageUseRef.current)) {
+        if (
+          !(response.data.images as string[]).includes(
+            dockerImageUseRef.current
+          )
+        ) {
           updateDockerImageUse("python-sandbox:latest");
         }
       }
     } catch (error) {
       console.error("Get Docker Images Error:", error);
     }
-  }, [user?.name, setSystemDockerImages, updateDockerImageUse]); 
+  }, [user?.name, setSystemDockerImages, updateDockerImageUse]);
 
   useEffect(() => {
     fetchDockerImages();
@@ -118,13 +131,11 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
   const handleRunTest = async () => {
     if (user?.name) {
       setRunTest(true);
-      updateOutput(node.id, "Code Running...");
+      updateOutput(node.id, t("output.running"));
       try {
         if (saveImage) {
           if (saveImageName === "" || saveImageTag === "") {
-            alert(
-              'Please write your Image Name and Image Version or close "Commit Runtime Environment" checkbox before running LLM node!'
-            );
+            alert(t("alert.imageNameVersionRequired"));
             return;
           }
         }
@@ -146,7 +157,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
         }
       } catch (error) {
         console.error("Error connect:", error);
-        updateOutput(node.id, "Error connect:" + error);
+        updateOutput(node.id, t("output.running") + error);
       } finally {
         fetchDockerImages();
         setRunTest(false);
@@ -167,7 +178,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
           );
           updateDockerImageUse("python-sandbox:latest");
         } else {
-          alert("Can not delete image, image may have dependent child images!");
+          alert(t("alert.cannotDeleteImage"));
         }
       }
     } catch (error) {
@@ -190,17 +201,17 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
 
   return (
     <div
-      className={`overflow-auto h-full flex flex-col items-start justify-start gap-1`}
+      className={`overflow-auto h-full flex flex-col items-start justify-start gap-1 text-[15px]`}
     >
-      <div className="px-2 py-1 flex items-center justify-between w-full mt-1 font-medium">
-        <div className="text-xl flex items-center justify-start max-w-[60%] gap-1">
+      <div className="px-2 py-1 flex items-center justify-between w-full mt-1">
+        <div className="flex items-center justify-start max-w-[60%] gap-1 font-medium text-base">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            strokeWidth="1.5"
+            strokeWidth="2"
             stroke="currentColor"
-            className="size-6 shrink-0"
+            className="size-5 shrink-0"
           >
             <path
               strokeLinecap="round"
@@ -232,7 +243,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
         </div>
         <button
           onClick={() => saveNode(node)}
-          className="cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+          className="cursor-pointer disabled:cursor-not-allowed py-1 px-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -240,7 +251,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="size-5"
+            className="size-4"
           >
             <path
               strokeLinecap="round"
@@ -248,28 +259,30 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
               d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
             />
           </svg>
-          <span className="whitespace-nowrap">Save Node</span>
+          <span className="whitespace-nowrap">{t("saveNode")}</span>
         </button>
       </div>
       <details className="group w-full" open>
-        <summary className="flex items-center cursor-pointer font-medium w-full">
-          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full font-medium">
+        <summary className="flex items-center cursor-pointer w-full">
+          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full">
             <div className="flex items-center justify-start gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
+                fill="none"
                 viewBox="0 0 24 24"
-                fill="currentColor"
-                className="size-5"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-4"
               >
                 <path
-                  fillRule="evenodd"
-                  d="M2.25 5.25a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3V15a3 3 0 0 1-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 0 1-.53 1.28h-9a.75.75 0 0 1-.53-1.28l.621-.622a2.25 2.25 0 0 0 .659-1.59V18h-3a3 3 0 0 1-3-3V5.25Zm1.5 0v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5Z"
-                  clipRule="evenodd"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25"
                 />
               </svg>
-              Description
+              {t("description.title")}
               <svg
-                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                className="w-4 h-4 transition-transform group-open:rotate-180"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -287,7 +300,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                 e.preventDefault();
                 setIsEditing(!isEditing);
               }}
-              className="hover:bg-indigo-600 hover:text-white cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full disabled:opacity-50"
+              className="hover:bg-indigo-600 hover:text-white cursor-pointer disabled:cursor-not-allowed py-1 px-2 rounded-full disabled:opacity-50"
             >
               {isEditing ? (
                 <div className="flex items-center justify-center gap-1">
@@ -297,7 +310,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="size-5"
+                    className="size-4"
                   >
                     <path
                       strokeLinecap="round"
@@ -305,7 +318,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                       d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3Z"
                     />
                   </svg>
-                  <span>Preview</span>
+                  <span>{t("description.preview")}</span>
                 </div>
               ) : (
                 <div className="flex items-center justify-center gap-1">
@@ -315,7 +328,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="size-5"
+                    className="size-4"
                   >
                     <path
                       strokeLinecap="round"
@@ -323,7 +336,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                       d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
                     />
                   </svg>
-                  <span>Edit</span>
+                  <span>{t("description.edit")}</span>
                 </div>
               )}
             </button>
@@ -332,7 +345,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
 
         {isEditing ? (
           <div
-            className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 p-4 bg-white`}
+            className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 px-4 pb-4 pt-2 bg-white`}
           >
             <textarea
               className={`mt-1 w-full px-2 py-2 border border-gray-200 rounded-xl min-h-[10vh] ${
@@ -340,7 +353,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
               } resize-none overflow-y-auto focus:outline-hidden focus:ring-2 focus:ring-indigo-500`}
               value={node.data.description || ""}
               onChange={(e) => updateDescription(node.id, e.target.value)}
-              placeholder="Enter Markdown content here..."
+              placeholder={t("description.placeholder")}
             />
           </div>
         ) : (
@@ -348,7 +361,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
             className={`rounded-2xl shadow-lg overflow-auto w-full mb-2 p-4 bg-gray-100`}
           >
             <MarkdownDisplay
-              md_text={node.data.description || "No decription found"}
+              md_text={node.data.description || t("description.noDescription")}
               message={{
                 type: "text",
                 content: node.data.description || "",
@@ -361,14 +374,14 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
         )}
       </details>
       <details className="group w-full" open>
-        <summary className="flex items-center cursor-pointer font-medium w-full">
+        <summary className="flex items-center cursor-pointer w-full">
           <div className="px-2 py-1 flex items-center justify-between w-full mt-1">
             <div className="flex items-center justify-center gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="size-5"
+                className="size-4"
               >
                 <path
                   fillRule="evenodd"
@@ -376,9 +389,9 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                   clipRule="evenodd"
                 />
               </svg>
-              Global Variable
+              {t("globalVariable.title")}
               <svg
-                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                className="w-4 h-4 transition-transform group-open:rotate-180"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -392,7 +405,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
               </svg>
             </div>
             <button
-              className="cursor-pointer disabled:cursor-not-allowed px-4 py-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+              className="cursor-pointer disabled:cursor-not-allowed px-2 py-1 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
               onClick={() => setCodeFullScreenFlow((prev: boolean) => !prev)}
             >
               {codeFullScreenFlow ? (
@@ -402,7 +415,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="size-6"
+                  className="size-5"
                 >
                   <path
                     strokeLinecap="round"
@@ -417,7 +430,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="size-6"
+                  className="size-5"
                 >
                   <path
                     strokeLinecap="round"
@@ -430,7 +443,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
           </div>
         </summary>
         <div
-          className={`space-y-2 p-4 rounded-2xl shadow-lg ${
+          className={`space-y-2 px-4 pb-4 pt-2 rounded-2xl shadow-lg ${
             codeFullScreenFlow ? "w-full" : "w-full"
           }`}
         >
@@ -438,7 +451,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
             <input
               name={"addVariable"}
               value={variable}
-              placeholder="Variable Name"
+              placeholder={t("globalVariable.variableNamePlaceholder")}
               onChange={(e) => setVariable(e.target.value)}
               className="w-full px-3 py-1 border-2 border-gray-200 rounded-xl
               focus:outline-none focus:ring-2 focus:ring-indigo-500
@@ -471,7 +484,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="size-5"
+                className="size-4"
               >
                 <path
                   fillRule="evenodd"
@@ -479,13 +492,13 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                   clipRule="evenodd"
                 />
               </svg>
-              <span>Click to Add</span>
+              <span>{t("globalVariable.clickToAdd")}</span>
             </div>
           </div>
           {Object.keys(isDebugMode ? globalDebugVariables : globalVariables)
             .length === 0 && (
             <div className="px-2 flex w-full items-center gap-2 text-gray-500">
-              No variables detected. Please add one if required for your workflow.
+              {t("globalVariable.noVariables")}
             </div>
           )}
           {Object.keys(
@@ -510,6 +523,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                   <input
                     name={key}
                     value={currentValue}
+                    placeholder={t("globalVariable.variableValuePlaceholder")}
                     onChange={(e) => handleVariableChange(e, isDebugMode)}
                     className={`w-full px-3 py-1 border-2 rounded-xl border-gray-200
             focus:outline-none focus:ring-2 focus:ring-indigo-500
@@ -523,7 +537,8 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                   {/* 初始值提示（仅在调试模式且未修改时显示） */}
                   {isDebugMode && (
                     <div className="absolute right-1 top-0 px-3 py-1 pointer-events-none text-gray-400">
-                      Init: {initialValue}
+                      {t("globalVariable.initPrefix")}
+                      {initialValue}
                     </div>
                   )}
                 </div>
@@ -533,7 +548,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="size-5 text-indigo-500 cursor-pointer shrink-0"
+                  className="size-4.5 text-indigo-500 cursor-pointer shrink-0"
                   onClick={() => removeProperty(key)}
                 >
                   <path
@@ -548,25 +563,26 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
         </div>
       </details>
       <details className="group w-full" open>
-        <summary className="flex items-center cursor-pointer font-medium w-full">
+        <summary className="flex items-center cursor-pointer w-full">
           <div className="px-2 py-1 flex items-center justify-between w-full mt-1">
             <div className="flex items-center justify-center gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
+                fill="none"
                 viewBox="0 0 24 24"
-                fill="currentColor"
-                className="size-5"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-4"
               >
                 <path
-                  fillRule="evenodd"
-                  d="M7.5 5.25a3 3 0 0 1 3-3h3a3 3 0 0 1 3 3v.205c.933.085 1.857.197 2.774.334 1.454.218 2.476 1.483 2.476 2.917v3.033c0 1.211-.734 2.352-1.936 2.752A24.726 24.726 0 0 1 12 15.75c-2.73 0-5.357-.442-7.814-1.259-1.202-.4-1.936-1.541-1.936-2.752V8.706c0-1.434 1.022-2.7 2.476-2.917A48.814 48.814 0 0 1 7.5 5.455V5.25Zm7.5 0v.09a49.488 49.488 0 0 0-6 0v-.09a1.5 1.5 0 0 1 1.5-1.5h3a1.5 1.5 0 0 1 1.5 1.5Zm-3 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z"
-                  clipRule="evenodd"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z"
                 />
-                <path d="M3 18.4v-2.796a4.3 4.3 0 0 0 .713.31A26.226 26.226 0 0 0 12 17.25c2.892 0 5.68-.468 8.287-1.335.252-.084.49-.189.713-.311V18.4c0 1.452-1.047 2.728-2.523 2.923-2.12.282-4.282.427-6.477.427a49.19 49.19 0 0 1-6.477-.427C4.047 21.128 3 19.852 3 18.4Z" />
               </svg>
-              Pip Dependencies
+              {t("pipDependencies.title")}
               <svg
-                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                className="w-4 h-4 transition-transform group-open:rotate-180"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -593,7 +609,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="size-5"
+              className="size-4"
             >
               <path
                 strokeLinecap="round"
@@ -601,7 +617,9 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                 d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"
               />
             </svg>
-            <span className="whitespace-nowrap pr-2">Sandbox Image:</span>
+            <span className="whitespace-nowrap pr-2">
+              {t("pipDependencies.sandboxImage")}
+            </span>
             <div className="flex-1">
               <div className="flex items-center justify-center gap-1">
                 <select
@@ -627,7 +645,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className={`size-5 ${
+                  className={`size-4.5 ${
                     DockerImageUse === "python-sandbox:latest"
                       ? "cursor-not-allowed opacity-50"
                       : "cursor-pointer"
@@ -652,7 +670,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
               type="checkbox"
               checked={saveImage}
               onChange={() => setSaveImage((prev) => !prev)}
-              className="shrink-0 appearance-none h-5 w-5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
+              className="shrink-0 appearance-none h-4.5 w-4.5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -664,7 +682,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                 fillRule="evenodd"
                 d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z"
                 clipRule="evenodd"
-                transform="translate(2.8, 0.2)"
+                transform="translate(2, 0.2)"
               />
             </svg>
             <div className="ml-2 flex gap-1 items-center">
@@ -674,7 +692,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                 viewBox="0 0 24 24"
                 strokeWidth={1.5}
                 stroke="currentColor"
-                className="size-5"
+                className="size-4"
               >
                 <path
                   strokeLinecap="round"
@@ -682,18 +700,20 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                   d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
                 />
               </svg>
-              <span>Commit Runtime Environment</span>
+              <span>{t("pipDependencies.commitEnvironment")}</span>
             </div>
           </label>
           {saveImage && (
             <div className="bg-gray-100 rounded-2xl p-2">
               <div className="w-full flex items-center justify-between px-2 py-1 gap-1 rounded-2xl">
-                <span className="whitespace-nowrap pr-2">Image Name:</span>
+                <span className="whitespace-nowrap pr-2">
+                  {t("pipDependencies.imageName")}
+                </span>
                 <div className="flex-1">
                   <input
                     name={"addImageName"}
                     value={saveImageName}
-                    placeholder="eg. python-sandbox"
+                    placeholder={t("pipDependencies.imageNamePlaceholder")}
                     onChange={(e) => setSaveImageName(e.target.value)}
                     className="w-full px-3 py-1 border-2 border-gray-200 rounded-xl
               focus:outline-none focus:ring-2 focus:ring-indigo-500
@@ -702,12 +722,14 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                 </div>
               </div>
               <div className="w-full flex items-center justify-between px-2 py-1 gap-1 rounded-2xl">
-                <span className="whitespace-nowrap pr-2">Image Version:</span>
+                <span className="whitespace-nowrap pr-2">
+                  {t("pipDependencies.imageVersion")}
+                </span>
                 <div className="flex-1">
                   <input
                     name={"addImageTag"}
                     value={saveImageTag}
-                    placeholder="eg. 1.0"
+                    placeholder={t("pipDependencies.imageVersionPlaceholder")}
                     onChange={(e) => setSaveImageTag(e.target.value)}
                     className="w-full px-3 py-1 border-2 border-gray-200 rounded-xl
               focus:outline-none focus:ring-2 focus:ring-indigo-500
@@ -718,14 +740,13 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
             </div>
           )}
           <div className="flex items-center w-full px-2 pb-2 gap-6 text-gray-500">
-            Install dependencies once per workflow on a single node – no
-            redundant installations across other nodes needed.
+            {t("pipDependencies.instruction")}
           </div>
           <div className="flex items-center w-full px-2 gap-6 border-gray-200">
             <input
               name={"addPackage"}
               value={packageName}
-              placeholder="Package Name"
+              placeholder={t("pipDependencies.packageNamePlaceholder")}
               onChange={(e) => setPackageName(e.target.value)}
               className="w-full px-3 py-1 border-2 border-gray-200 rounded-xl
               focus:outline-none focus:ring-2 focus:ring-indigo-500
@@ -738,7 +759,9 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                     return;
                   } else {
                     if (node?.data.pip?.hasOwnProperty(packageName)) {
-                      alert(`Package ${packageName} already exists`);
+                      alert(
+                        t("alert.packageExists", { packageName: packageName })
+                      );
                       return;
                     }
                     updatePackageInfos(node.id, packageName, "");
@@ -753,7 +776,9 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                   return;
                 } else {
                   if (node?.data.pip?.hasOwnProperty(packageName)) {
-                    alert(`Package ${packageName} already exists`);
+                    alert(
+                      t("alert.packageExists", { packageName: packageName })
+                    );
                     return;
                   }
                   updatePackageInfos(node.id, packageName, "");
@@ -766,7 +791,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="size-5"
+                className="size-4"
               >
                 <path
                   fillRule="evenodd"
@@ -774,36 +799,14 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                   clipRule="evenodd"
                 />
               </svg>
-              <span>Click to Add</span>
+              <span>{t("pipDependencies.clickToAdd")}</span>
             </div>
-          </div>
-          <div className="px-2 flex w-full items-center gap-2">
-            <div className="max-w-[50%] whitespace-nowrap overflow-auto">
-              Mirror Url
-            </div>
-            <div>=</div>
-            <input
-              name={"imageUrl"}
-              value={node.data.imageUrl ? node.data.imageUrl : ""}
-              onChange={handleUpdateImageUrl}
-              placeholder="Optional"
-              onKeyDown={(e: React.KeyboardEvent<HTMLSpanElement>) => {
-                if (e.key === "Enter") {
-                  // 按下回车时保存并退出编辑模式
-                  e.preventDefault();
-                  e.currentTarget.blur();
-                }
-              }}
-              className="flex-1 w-full px-3 py-1 border-2 border-gray-200 rounded-xl
-              focus:outline-none focus:ring-2 focus:ring-indigo-500
-              disabled:opacity-50"
-            />
           </div>
           {node.data.pip && (
             <div className="space-y-2">
               {Object.keys(node.data.pip).length == 0 && (
                 <div className="px-2 flex w-full items-center gap-2 text-gray-500">
-                    No packages detected. Please install dependencies if needed for execution.
+                  {t("pipDependencies.noPackages")}
                 </div>
               )}
               {Object.keys(node.data.pip).map((key) => (
@@ -816,7 +819,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                     name={key}
                     value={node.data.pip ? node.data.pip[key] : ""}
                     onChange={handleUpdatePackageInfos}
-                    placeholder="Default Package Version"
+                    placeholder={t("pipDependencies.packageVersionPlaceholder")}
                     onKeyDown={(e: React.KeyboardEvent<HTMLSpanElement>) => {
                       if (e.key === "Enter") {
                         // 按下回车时保存并退出编辑模式
@@ -834,7 +837,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="size-5 text-indigo-500 cursor-pointer shrink-0"
+                    className="size-4 text-indigo-500 cursor-pointer shrink-0"
                     onClick={() => removePackageInfos(node.id, key)}
                   >
                     <path
@@ -847,27 +850,51 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
               ))}
             </div>
           )}
+          <div className="px-2 flex w-full items-center gap-2">
+            <div className="max-w-[50%] whitespace-nowrap overflow-auto">
+              {t("pipDependencies.mirrorUrl")}
+            </div>
+            <div>=</div>
+            <input
+              name={"imageUrl"}
+              value={node.data.imageUrl ? node.data.imageUrl : ""}
+              onChange={handleUpdateImageUrl}
+              placeholder={t("pipDependencies.mirrorUrlPlaceholder")}
+              onKeyDown={(e: React.KeyboardEvent<HTMLSpanElement>) => {
+                if (e.key === "Enter") {
+                  // 按下回车时保存并退出编辑模式
+                  e.preventDefault();
+                  e.currentTarget.blur();
+                }
+              }}
+              className="flex-1 w-full px-3 py-1 border-2 border-gray-200 rounded-xl
+              focus:outline-none focus:ring-2 focus:ring-indigo-500
+              disabled:opacity-50"
+            />
+          </div>
         </div>
       </details>
       <details className="group w-full" open>
-        <summary className="flex items-center cursor-pointer font-medium w-full">
-          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full font-medium">
+        <summary className="flex items-center cursor-pointer w-full">
+          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full">
             <div className="flex items-center justify-start gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
+                fill="none"
                 viewBox="0 0 24 24"
-                fill="currentColor"
-                className="size-5"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-4"
               >
                 <path
-                  fillRule="evenodd"
-                  d="M2.25 6a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3V6Zm3.97.97a.75.75 0 0 1 1.06 0l2.25 2.25a.75.75 0 0 1 0 1.06l-2.25 2.25a.75.75 0 0 1-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 0 1 0-1.06Zm4.28 4.28a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z"
-                  clipRule="evenodd"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="m6.75 7.5 3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z"
                 />
               </svg>
-              Code Editor{" "}
+              {t("codeEditor.title")}
               <svg
-                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                className="w-4 h-4 transition-transform group-open:rotate-180"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -883,7 +910,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
             <button
               onClick={handleRunTest}
               disabled={runTest}
-              className="cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+              className="cursor-pointer disabled:cursor-not-allowed px-2 py-1 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -891,7 +918,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-5"
+                className="size-4"
               >
                 <path
                   strokeLinecap="round"
@@ -900,7 +927,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                 />
               </svg>
 
-              <span>Run Test</span>
+              <span>{t("codeEditor.runTest")}</span>
             </button>
           </div>
         </summary>
@@ -909,24 +936,26 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
         </div>
       </details>
       <details className="group w-full" open>
-        <summary className="flex items-center cursor-pointer font-medium w-full">
-          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full font-medium">
+        <summary className="flex items-center cursor-pointer w-full">
+          <div className="py-1 px-2 flex mt-1 items-center justify-between w-full">
             <div className="flex items-center justify-start gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
+                fill="none"
                 viewBox="0 0 24 24"
-                fill="currentColor"
-                className="size-5"
+                strokeWidth="1.5"
+                stroke="currentColor"
+                className="size-4"
               >
                 <path
-                  fillRule="evenodd"
-                  d="M2.25 5.25a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3V15a3 3 0 0 1-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 0 1-.53 1.28h-9a.75.75 0 0 1-.53-1.28l.621-.622a2.25 2.25 0 0 0 .659-1.59V18h-3a3 3 0 0 1-3-3V5.25Zm1.5 0v7.5a1.5 1.5 0 0 0 1.5 1.5h13.5a1.5 1.5 0 0 0 1.5-1.5v-7.5a1.5 1.5 0 0 0-1.5-1.5H5.25a1.5 1.5 0 0 0-1.5 1.5Z"
-                  clipRule="evenodd"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25"
                 />
               </svg>
-              Output
+              {t("output.title")}
               <svg
-                className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                className="w-4 h-4 transition-transform group-open:rotate-180"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -948,7 +977,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                 node.data.debug
                   ? "bg-red-500 text-white hover:bg-red-700"
                   : "hover:bg-indigo-600 hover:text-white"
-              } cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full disabled:opacity-50 flex items-center justify-center gap-1`}
+              } cursor-pointer disabled:cursor-not-allowed px-2 py-1 rounded-full disabled:opacity-50 flex items-center justify-center gap-1`}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -956,7 +985,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-5"
+                className="size-4"
               >
                 <path
                   strokeLinecap="round"
@@ -965,7 +994,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                 />
               </svg>
 
-              <span>Debug</span>
+              <span>{t("output.debug")}</span>
             </button>
           </div>
         </summary>
@@ -987,9 +1016,9 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
       {showConfirmDeleteImage &&
         createPortal(
           <ConfirmDialog
-            message={`Confirm the deletion of Image "${showConfirmDeleteImage.slice(
-              15
-            )}"？`}
+            message={t("deleteImage.confirmMessage", {
+              imageName: showConfirmDeleteImage,
+            })}
             onConfirm={confirmDeleteImage}
             onCancel={cancelDeleteImage}
           />,

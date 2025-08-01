@@ -2,6 +2,7 @@ import { Flow } from "@/types/types";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import ConfirmDialog from "../ConfirmDialog";
 import { useClickAway } from "react-use";
+import { useTranslations } from "next-intl";
 
 interface LeftSideBarProps {
   flows: Flow[];
@@ -22,6 +23,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
   ondeleteFlow,
   onRenameWorkflow,
 }) => {
+  const t = useTranslations("WorkflowLeftSideBar");
   const ref = useRef(null);
   useClickAway(ref, () => {
     setSettingsOpen((prev) => prev.map(() => false));
@@ -108,12 +110,12 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
           onClick={() => setShowCreateModal(true)}
           className="w-full py-2 px-4 bg-indigo-500 text-white hover:bg-indigo-700 transition-colors rounded-full"
         >
-          <div className="flex items-center justify-center gap-1 cursor-pointer">
+          <div className="flex items-center justify-center gap-1 cursor-pointer text-[15px]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="currentColor"
-              className="size-5"
+              className="size-4.5"
             >
               <path
                 fillRule="evenodd"
@@ -121,7 +123,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                 clipRule="evenodd"
               />
             </svg>
-            <span>Add Work-Flow</span>
+            <span>{t("addWorkflow")}</span>
           </div>
         </button>
       </div>
@@ -130,7 +132,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
         {filteredFlows.map((flow, index) => (
           <div
             key={index}
-            className={`py-2 my-2 hover:bg-indigo-600 group cursor-pointer rounded-3xl flex justify-between items-start ${
+            className={`py-1.5 my-0.5 hover:bg-indigo-600 group cursor-pointer rounded-3xl flex justify-between items-start ${
               selectedFlow === flow.flowId ? "bg-indigo-500" : ""
             }`}
           >
@@ -147,7 +149,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
             >
               <div className="flex relative">
                 <div
-                  className={`pl-3 flex items-center gap-2 text-gray-900 w-[80%] ${
+                  className={`pl-3 flex items-center gap-1 text-gray-900 w-[78%] ${
                     selectedFlow === flow.flowId
                       ? "text-white text-lg"
                       : "text-base group-hover:text-white"
@@ -155,23 +157,25 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
                     viewBox="0 0 24 24"
-                    fill="currentColor"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
                     className={`${
-                      selectedFlow === flow.flowId ? "size-6" : "size-5"
+                      selectedFlow === flow.flowId ? "size-5" : "size-4.5"
                     }  shrink-0`}
                   >
                     <path
-                      fillRule="evenodd"
-                      d="M8.161 2.58a1.875 1.875 0 0 1 1.678 0l4.993 2.498c.106.052.23.052.336 0l3.869-1.935A1.875 1.875 0 0 1 21.75 4.82v12.485c0 .71-.401 1.36-1.037 1.677l-4.875 2.437a1.875 1.875 0 0 1-1.676 0l-4.994-2.497a.375.375 0 0 0-.336 0l-3.868 1.935A1.875 1.875 0 0 1 2.25 19.18V6.695c0-.71.401-1.36 1.036-1.677l4.875-2.437ZM9 6a.75.75 0 0 1 .75.75V15a.75.75 0 0 1-1.5 0V6.75A.75.75 0 0 1 9 6Zm6.75 3a.75.75 0 0 0-1.5 0v8.25a.75.75 0 0 0 1.5 0V9Z"
-                      clipRule="evenodd"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M9 6.75V15m6-6v8.25m.503 3.498 4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 0 0-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0Z"
                     />
                   </svg>
 
                   <div
                     className={`${
-                      selectedFlow === flow.flowId ? "text-lg" : "text-base"
-                    } whitespace-nowrap overflow-hidden`}
+                      selectedFlow === flow.flowId ? "text-base" : "text-[15px]"
+                    } whitespace-nowrap overflow-auto`}
                   >
                     {isEditOpen[index] ? (
                       <input
@@ -189,7 +193,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                 </div>
                 {/* 重命名和删除 */}
                 <div
-                  className="w-[20%] flex items-center justify-center font-semibold cursor-pointer text-white"
+                  className="w-[22%] flex items-center justify-center cursor-pointer text-white"
                   onClick={() => toggleSettings(index)}
                 >
                   <svg
@@ -197,7 +201,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                     viewBox="0 0 16 16"
                     fill="currentColor"
                     className={`${
-                      selectedFlow === flow.flowId ? "size-6" : "size-5"
+                      selectedFlow === flow.flowId ? "size-5" : "size-5"
                     }`}
                   >
                     <path d="M2 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM6.5 8a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM12.5 6.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" />
@@ -227,7 +231,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                         />
                       </svg>
 
-                      <div className="text-sm">Rename</div>
+                      <div className="text-sm">{t("rename")}</div>
                     </div>
                     <div
                       className="flex gap-2 cursor-pointer hover:bg-indigo-600 hover:text-white px-2 py-1 rounded-xl"
@@ -247,16 +251,16 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                           d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
                         />
                       </svg>
-                      <div className="text-sm">Delete</div>
+                      <div className="text-sm">{t("delete")}</div>
                     </div>
                   </div>
                 )}
               </div>
               <p
-                className={`px-4 text-sm text-gray-500 ${
+                className={`px-4 text-gray-500 ${
                   selectedFlow === flow.flowId
-                    ? "text-white"
-                    : "group-hover:text-white"
+                    ? "text-white text-[13px]"
+                    : "group-hover:text-white text-xs"
                 }`}
               >
                 {flow.lastModifyTime}
@@ -267,7 +271,9 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
       </div>
       {showConfirmDeleteFlow && (
         <ConfirmDialog
-          message={`Confirm the deletion of work-flow "${showConfirmDeleteFlow.flow.name}"？`}
+          message={t("confirmDelete", {
+            flowName: showConfirmDeleteFlow.flow.name,
+          })}
           onConfirm={confirmDeleteFlow}
           onCancel={cancelDeleteFlow}
         />

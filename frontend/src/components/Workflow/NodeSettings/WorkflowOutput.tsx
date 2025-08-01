@@ -476,7 +476,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                 </svg>
                 Global Variable
                 <svg
-                  className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                  className="w-4 h-4 transition-transform group-open:rotate-180"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -665,7 +665,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                 </svg>
                 LLM Response
                 <svg
-                  className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
+                  className="w-4 h-4 transition-transform group-open:rotate-180"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"

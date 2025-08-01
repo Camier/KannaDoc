@@ -1,6 +1,7 @@
 import { Base, KnowledgeFile } from "@/types/types";
 import { Dispatch, SetStateAction, useState } from "react";
 import ConfirmDialog from "../ConfirmDialog";
+import { useTranslations } from "next-intl";
 
 interface ShowFilesProps {
   files: KnowledgeFile[];
@@ -25,6 +26,7 @@ const ShowFiles: React.FC<ShowFilesProps> = ({
   totalFiles,
   ondeleteFile,
 }) => {
+  const t = useTranslations("ShowFiles");
   const [showConfirmDeleteFile, setShowConfirmDeleteFile] = useState<{
     index: number;
     file: KnowledgeFile;
@@ -54,7 +56,7 @@ const ShowFiles: React.FC<ShowFilesProps> = ({
         {files.map((file, index) => (
           <div
             key={index}
-            className="flex items-center justify-between p-3 hover:bg-gray-50 cursor-pointer border-b border-gray-200"
+            className="flex items-center justify-between px-3 py-2 hover:bg-gray-50 cursor-pointer border-b border-gray-200"
           >
             <div
               className="flex items-center justify-between w-[calc(100%-24px)]"
@@ -62,10 +64,10 @@ const ShowFiles: React.FC<ShowFilesProps> = ({
             >
               <div className="flex-1">
                 <div className="font-medium text-sm">{file.filename}</div>
-                <div className="text-sm text-gray-500">
+                <div className="text-[13px] text-gray-500">
                   {new Date(file.upload_time).toLocaleDateString()}
                   {file.kb_id &&
-                    ` · Knowledge-Base: ${
+                    `${t("knowledgeBasePrefix")}${
                       bases.find((b) => b.baseId === file.kb_id)?.name
                     }`}
                 </div>
@@ -101,13 +103,13 @@ const ShowFiles: React.FC<ShowFilesProps> = ({
           </div>
         ))}
         {files.length === 0 && (
-          <div className="text-center text-gray-500 py-8">No Files</div>
+          <div className="text-center text-gray-500 py-8">{t("noFiles")}</div>
         )}
       </div>
       {/* 分页控件 */}
       <div className="flex justify-between items-center mt-auto">
         <div className="flex items-center gap-2">
-          <span className="text-sm text-gray-600">Display Per Page</span>
+          <span className="text-sm text-gray-600">{t("displayPerPage")}</span>
           <select
             value={pageSize}
             onChange={(e) => {
@@ -130,24 +132,27 @@ const ShowFiles: React.FC<ShowFilesProps> = ({
             disabled={currentPage === 1}
             className="cursor-pointer disabled:cursor-not-allowed px-3 py-1 border border-gray-200 disabled:opacity-50 bg-indigo-500 text-white hover:bg-indigo-700 rounded-full"
           >
-            Previous
+            {t("previous")}
           </button>
           <span className="text-sm">
-            Page {currentPage} of {Math.ceil(totalFiles / pageSize)}
+            {t("pageInfo", {
+              current: currentPage,
+              total: Math.ceil(totalFiles / pageSize),
+            })}
           </span>
           <button
             onClick={() => setCurrentPage(currentPage + 1)}
             disabled={currentPage >= Math.ceil(totalFiles / pageSize)}
             className="cursor-pointer disabled:cursor-not-allowed px-6 py-1 border border-gray-200 disabled:opacity-50 bg-indigo-500 text-white hover:bg-indigo-700 rounded-full"
           >
-            Next
+            {t("next")}
           </button>
         </div>
       </div>
       {/* 确认删除单个文件 */}
       {showConfirmDeleteFile && (
         <ConfirmDialog
-          message={`Confirm the deletion of file "${showConfirmDeleteFile.file.filename.slice(
+          message={`${t("deleteConfirm")}"${showConfirmDeleteFile.file.filename.slice(
             0,
             30
           )}"？`}

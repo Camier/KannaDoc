@@ -4,7 +4,7 @@ import {
   getUserFiles,
 } from "@/lib/api/knowledgeBaseApi";
 import { useAuthStore } from "@/stores/authStore";
-import { Base, KnowledgeFile, UploadFile } from "@/types/types";
+import { Base, KnowledgeFile } from "@/types/types";
 import {
   Dispatch,
   SetStateAction,
@@ -15,6 +15,7 @@ import {
 } from "react";
 import ShowFiles from "./ShowFiles";
 import { SupportUploadFormat } from "@/utils/file";
+import { useTranslations } from "next-intl"; // 添加多语言支持
 
 interface KnowledgeBaseDetailsProps {
   bases: Base[];
@@ -35,6 +36,7 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
   buttonText,
   isSendDisabled,
 }) => {
+  const t = useTranslations("KnowledgeBaseDetails");
   // 拖放处理
   const [dragActive, setDragActive] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
@@ -110,7 +112,7 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
       window.open(file.url, "_blank");
     } catch (error) {
       console.error("Download failed:", error);
-      alert("Download failed!");
+      alert(t("downloadFailed"));
     }
   };
 
@@ -156,16 +158,20 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
 
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
                   viewBox="0 0 24 24"
-                  fill="currentColor"
+                  strokeWidth="2"
+                  stroke="currentColor"
                   className="size-6"
                 >
-                  <path d="M21 6.375c0 2.692-4.03 4.875-9 4.875S3 9.067 3 6.375 7.03 1.5 12 1.5s9 2.183 9 4.875Z" />
-                  <path d="M12 12.75c2.685 0 5.19-.586 7.078-1.609a8.283 8.283 0 0 0 1.897-1.384c.016.121.025.244.025.368C21 12.817 16.97 15 12 15s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.285 8.285 0 0 0 1.897 1.384C6.809 12.164 9.315 12.75 12 12.75Z" />
-                  <path d="M12 16.5c2.685 0 5.19-.586 7.078-1.609a8.282 8.282 0 0 0 1.897-1.384c.016.121.025.244.025.368 0 2.692-4.03 4.875-9 4.875s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.284 8.284 0 0 0 1.897 1.384C6.809 15.914 9.315 16.5 12 16.5Z" />
-                  <path d="M12 20.25c2.685 0 5.19-.586 7.078-1.609a8.282 8.282 0 0 0 1.897-1.384c.016.121.025.244.025.368 0 2.692-4.03 4.875-9 4.875s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.284 8.284 0 0 0 1.897 1.384C6.809 19.664 9.315 20.25 12 20.25Z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"
+                  />
                 </svg>
-                <h2 className="text-2xl font-bold overflow-x-auto whitespace-nowrap">
+
+                <h2 className="text-xl font-medium overflow-x-auto whitespace-nowrap">
                   {bases.find((r) => r.baseId === selectedBase)?.name}
                 </h2>
               </div>
@@ -173,7 +179,7 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
                 <input
                   ref={search1Ref}
                   type="text"
-                  placeholder="Search File..."
+                  placeholder={t("searchPlaceholder")}
                   className="w-full pl-6 pr-10 py-1 rounded-full border border-gray-300 focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
@@ -186,7 +192,7 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="size-6 absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:cursor-pointer"
+                  className="size-5 absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:cursor-pointer"
                   onClick={() => {
                     if (search1Ref.current) {
                       handleSearch(search1Ref.current.value || "");
@@ -205,11 +211,11 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
 
             <div className="flex gap-4 text-sm text-gray-500">
               <span>
-                File Number:{" "}
+                {t("fileNumber")}
                 {bases.find((r) => r.baseId === selectedBase)?.fileNumber}
               </span>
               <span>
-                Creat Time:{" "}
+                {t("createTime")}
                 {bases.find((r) => r.baseId === selectedBase)?.createTime}
               </span>
             </div>
@@ -246,26 +252,31 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
                         : "bg-indigo-500 hover:bg-indigo-700"
                     } text-white`}
             >
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2 text-[15px]">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
                   viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="size-6"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="size-5"
                 >
                   <path
-                    fillRule="evenodd"
-                    d="M19.5 21a3 3 0 0 0 3-3V9a3 3 0 0 0-3-3h-5.379a.75.75 0 0 1-.53-.22L11.47 3.66A2.25 2.25 0 0 0 9.879 3H4.5a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h15Zm-6.75-10.5a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25v2.25a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V10.5Z"
-                    clipRule="evenodd"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 10.5v6m3-3H9m4.06-7.19-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
+                    transform="translate(0,0.5)"
                   />
                 </svg>
                 <span>{buttonText}</span>
               </div>
             </label>
             <p className="mt-4 text-gray-600">
-              Drag files here or click to select
+              {t("dragPrompt")}
             </p>
-            <p className="mt-2 text-sm text-gray-500">Support PDF, DOC, DOCX...</p>
+            <p className="mt-2 text-sm text-gray-500">
+              {t("supportedFormats")}
+            </p>
           </div>
 
           <div className="w-full h-[calc(60%-24px)]">
@@ -285,28 +296,34 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
       ) : (
         <div className="h-full flex items-center justify-center bg-white rounded-3xl shadow-sm flex-col pb-6">
           <div className="flex items-center justify-center h-[10%] w-full">
-            <p className="text-gray-500 text-xl">
-              Please choose a Knowledge-Base to upload
+            <p className="text-gray-500 text-lg">
+             {t("choosePrompt")}
             </p>
           </div>
           <div className="h-[90%] flex flex-col bg-white rounded-3xl shadow-sm p-6 w-[90%]">
             <div className="mb-6 flex items-center justify-between h-[10%]">
-              <h2 className="text-2xl font-bold flex items-center gap-2">
+              <h2 className="text-xl font-medium flex items-center gap-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
                   viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="w-6 h-6"
+                  strokeWidth="2"
+                  stroke="currentColor"
+                  className="size-6"
                 >
-                  <path d="M19.5 21a3 3 0 003-3v-4.5a3 3 0 00-3-3h-15a3 3 0 00-3 3V18a3 3 0 003 3h15zM1.5 10.146V6a3 3 0 013-3h5.379a2.25 2.25 0 011.59.659l2.122 2.121c.14.141.331.22.53.22H19.5a3 3 0 013 3v1.146A4.483 4.483 0 0019.5 9h-15a4.483 4.483 0 00-3 1.146z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z"
+                  />
                 </svg>
-                All Files
+                {t("allFilesTitle")}
               </h2>
               <div className="relative w-[25%]">
                 <input
                   ref={search2Ref}
                   type="text"
-                  placeholder="Search File..."
+                  placeholder={t("searchPlaceholder")}
                   className="w-full pl-6 pr-10 py-1 rounded-full border border-gray-300 focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
@@ -319,7 +336,7 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="currentColor"
-                  className="size-6 absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:cursor-pointer"
+                  className="size-5 absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:cursor-pointer"
                 >
                   <path
                     fillRule="evenodd"

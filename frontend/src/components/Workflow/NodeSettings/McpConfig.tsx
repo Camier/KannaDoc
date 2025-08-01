@@ -6,6 +6,7 @@ import { useFlowStore } from "@/stores/flowStore";
 import { CustomNode } from "@/types/types";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import McpAdvancedSettingsComponent from "./McpAdvancedSettings";
+import { useTranslations } from "next-intl";
 
 interface McpConfigProps {
   node: CustomNode;
@@ -18,6 +19,7 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
   visible,
   setVisible,
 }) => {
+  const t = useTranslations("McpConfig");
   const [mcpUse, setMcpUse] = useState<{
     [key: string]: string[]; // 允许动态属性
   }>({});
@@ -63,10 +65,22 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
 
   if (!visible) return null;
 
-  const handelGetTools = async (url: string, headers:{}, timeout:number, sseReadTimeout:number, name: string) => {
+  const handelGetTools = async (
+    url: string,
+    headers: {},
+    timeout: number,
+    sseReadTimeout: number,
+    name: string
+  ) => {
     try {
       if (user?.name) {
-        const response = await getMcpToolList(user.name, url, headers, timeout, sseReadTimeout);
+        const response = await getMcpToolList(
+          user.name,
+          url,
+          headers,
+          timeout,
+          sseReadTimeout
+        );
         const tools = response.data.tools;
         if (node.data.mcpConfig) {
           const newMcpConfig = {
@@ -93,7 +107,7 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              strokeWidth="1.5"
+              strokeWidth="2"
               stroke="currentColor"
               className="size-5"
             >
@@ -103,14 +117,14 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
                 d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437 1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008Z"
               />
             </svg>
-            <span className="text-lg font-semibold">Config MCP Tools</span>
+            <span className="text-lg font-medium">{t("title")}</span>
           </div>
         </div>
         <div className="flex items-center w-full px-2 gap-6 border-gray-200 mb-4">
           <input
             name={"addMcpConfig"}
             value={mcpName}
-            placeholder="Mcp Name"
+            placeholder={t("mcpNamePlaceholder")}
             onChange={(e) => setMcpName(e.target.value)}
             className="w-full px-4 py-1 border-2 border-gray-200 rounded-xl
               focus:outline-none focus:ring-2 focus:ring-indigo-500
@@ -157,33 +171,39 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
                 clipRule="evenodd"
               />
             </svg>
-            <span>Click to Add</span>
+            <span>{t("addButton")}</span>
           </div>
         </div>
         <div className="flex-1 overflow-y-auto">
           <div className="space-y-2">
             {(!node.data.mcpConfig ||
               Object.keys(node.data.mcpConfig).length === 0) && (
-              <div className="text-gray-500 px-3 py-2">No MCP Tools Found.</div>
+              <div className="text-gray-500 px-3 py-2">{t("noToolsFound")}</div>
             )}
             {Object.keys(node.data.mcpConfig || {}).map((mcpName) => (
               <div
-                className="px-2 flex w-full flex-col items-start gap-2 relative my-2 pb-2 border-b-2 border-gray-200"
+                className="px-2 flex w-full flex-col items-start gap-2 relative my-2 pb-1 border-b-2 border-gray-200"
                 key={mcpName}
               >
                 <details className="group w-full space-y-2">
                   <summary className="px-2 py-1 flex items-center cursor-pointer font-medium w-full gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
                       viewBox="0 0 24 24"
-                      fill="currentColor"
-                      className="size-4"
+                      strokeWidth="1.5"
+                      stroke="currentColor"
+                      className="size-4.5"
                     >
-                      <path d="M21.721 12.752a9.711 9.711 0 0 0-.945-5.003 12.754 12.754 0 0 1-4.339 2.708 18.991 18.991 0 0 1-.214 4.772 17.165 17.165 0 0 0 5.498-2.477ZM14.634 15.55a17.324 17.324 0 0 0 .332-4.647c-.952.227-1.945.347-2.966.347-1.021 0-2.014-.12-2.966-.347a17.515 17.515 0 0 0 .332 4.647 17.385 17.385 0 0 0 5.268 0ZM9.772 17.119a18.963 18.963 0 0 0 4.456 0A17.182 17.182 0 0 1 12 21.724a17.18 17.18 0 0 1-2.228-4.605ZM7.777 15.23a18.87 18.87 0 0 1-.214-4.774 12.753 12.753 0 0 1-4.34-2.708 9.711 9.711 0 0 0-.944 5.004 17.165 17.165 0 0 0 5.498 2.477ZM21.356 14.752a9.765 9.765 0 0 1-7.478 6.817 18.64 18.64 0 0 0 1.988-4.718 18.627 18.627 0 0 0 5.49-2.098ZM2.644 14.752c1.682.971 3.53 1.688 5.49 2.099a18.64 18.64 0 0 0 1.988 4.718 9.765 9.765 0 0 1-7.478-6.816ZM13.878 2.43a9.755 9.755 0 0 1 6.116 3.986 11.267 11.267 0 0 1-3.746 2.504 18.63 18.63 0 0 0-2.37-6.49ZM12 2.276a17.152 17.152 0 0 1 2.805 7.121c-.897.23-1.837.353-2.805.353-.968 0-1.908-.122-2.805-.353A17.151 17.151 0 0 1 12 2.276ZM10.122 2.43a18.629 18.629 0 0 0-2.37 6.49 11.266 11.266 0 0 1-3.746-2.504 9.754 9.754 0 0 1 6.116-3.985Z" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"
+                      />
                     </svg>
                     <div className="overflow-auto whitespace-nowrap max-w-[60%]">
                       {mcpName}
-                    </div>{" "}
+                    </div>
                     <svg
                       className="w-4 h-4 transition-transform group-open:rotate-180"
                       fill="none"
@@ -204,7 +224,7 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
                       key={mcpName}
                     >
                       <div className="max-w-[50%] whitespace-nowrap overflow-auto">
-                        MCP Server Url
+                        {t("mcpServerUrl")}
                       </div>
                       <div>=</div>
                       {/* 输入框容器添加相对定位 */}
@@ -252,7 +272,7 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
                         />
                       </svg>
                     </div>
-                    <div className="px-2 flex justify-between items-center w-full">
+                    <div className="text-[15px] px-2 flex justify-between items-center w-full">
                       <div
                         className="flex items-start justify-center gap-1 text-indigo-500 hover:text-indigo-700 cursor-pointer"
                         onClick={() => {
@@ -261,7 +281,8 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
                               node.data.mcpConfig[mcpName].mcpServerUrl,
                               node.data.mcpConfig[mcpName].headers || {},
                               node.data.mcpConfig[mcpName].timeout || 5,
-                              node.data.mcpConfig[mcpName].sseReadTimeout || 300,
+                              node.data.mcpConfig[mcpName].sseReadTimeout ||
+                                300,
                               mcpName
                             );
                           }
@@ -279,7 +300,7 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
                             clipRule="evenodd"
                           />
                         </svg>
-                        Refresh Tools
+                        {t("refreshTools")}
                       </div>
                       <div
                         className="flex items-start justify-center gap-1 text-indigo-500 hover:text-indigo-700 cursor-pointer"
@@ -307,32 +328,34 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
                             d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
                           />
                         </svg>
-                        Advanced Settings
+                        {t("advancedSettings")}
                       </div>
                     </div>
-                    <div className="flex-1 overflow-auto w-full">
+                    <div className="flex-1 w-full">
                       {node.data.mcpConfig &&
                         node.data.mcpConfig[mcpName].mcpTools.map((tool) => (
                           <div
                             key={tool.name}
-                            className={`rounded-2xl overflow-auto mb-2 p-2 m-1 bg-gray-100 relative`}
+                            className={`bg-gray-50 px-2 p-2 rounded-2xl m-1 relative text-[15px]`}
                           >
-                            <details className="group/inner px-2">
+                            <details className="group/inner">
                               <summary className="px-2 py-1 flex items-center cursor-pointer font-medium gap-1">
                                 <div className="flex items-center justify-start gap-1">
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
                                     viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                    className="size-4"
+                                    strokeWidth="1.5"
+                                    stroke="currentColor"
+                                    className="size-4.5"
                                   >
                                     <path
-                                      fillRule="evenodd"
-                                      d="M9 4.5a.75.75 0 0 1 .721.544l.813 2.846a3.75 3.75 0 0 0 2.576 2.576l2.846.813a.75.75 0 0 1 0 1.442l-2.846.813a3.75 3.75 0 0 0-2.576 2.576l-.813 2.846a.75.75 0 0 1-1.442 0l-.813-2.846a3.75 3.75 0 0 0-2.576-2.576l-2.846-.813a.75.75 0 0 1 0-1.442l2.846-.813A3.75 3.75 0 0 0 7.466 7.89l.813-2.846A.75.75 0 0 1 9 4.5ZM18 1.5a.75.75 0 0 1 .728.568l.258 1.036c.236.94.97 1.674 1.91 1.91l1.036.258a.75.75 0 0 1 0 1.456l-1.036.258c-.94.236-1.674.97-1.91 1.91l-.258 1.036a.75.75 0 0 1-1.456 0l-.258-1.036a2.625 2.625 0 0 0-1.91-1.91l-1.036-.258a.75.75 0 0 1 0-1.456l1.036-.258a2.625 2.625 0 0 0 1.91-1.91l.258-1.036A.75.75 0 0 1 18 1.5ZM16.5 15a.75.75 0 0 1 .712.513l.394 1.183c.15.447.5.799.948.948l1.183.395a.75.75 0 0 1 0 1.422l-1.183.395c-.447.15-.799.5-.948.948l-.395 1.183a.75.75 0 0 1-1.422 0l-.395-1.183a1.5 1.5 0 0 0-.948-.948l-1.183-.395a.75.75 0 0 1 0-1.422l1.183-.395c.447-.15.799-.5.948-.948l.395-1.183A.75.75 0 0 1 16.5 15Z"
-                                      clipRule="evenodd"
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"
                                     />
                                   </svg>
-                                  <div className="">{tool.name}</div>
+                                  <div>{tool.name}</div>
                                   <svg
                                     className="w-4 h-4 transition-transform group-open/inner:rotate-180"
                                     fill="none"
@@ -353,7 +376,7 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
                                 md_text={
                                   "```json\n" +
                                     JSON.stringify(tool, null, " ") ||
-                                  "No decription found"
+                                  t("noToolDescriptionFound")
                                 }
                                 message={{
                                   type: "text",
@@ -364,7 +387,7 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
                                 isThinking={false}
                               />
                             </details>
-                            <div className="z-10 absolute right-0 top-1 p-3">
+                            <div className="z-10 absolute right-0 top-1 p-2">
                               <label className="text-sm w-full overflow-auto inline-flex items-center group px-2 rounded-xl hover:bg-gray-50 cursor-pointer">
                                 <input
                                   type="checkbox"
@@ -414,7 +437,7 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
                                   />
                                 </svg>
                                 <div className="ml-2 flex gap-1 items-center">
-                                  <span>Use Function Tool</span>
+                                  <span>{t("useFunctionTool")}</span>
                                 </div>
                               </label>
                             </div>
@@ -423,8 +446,8 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
                     </div>
                   </div>
                 </details>
-                <div className="z-10 absolute right-0 top-1 p-1">
-                  <label className="text-sm w-full overflow-auto inline-flex items-center group px-2 rounded-xl hover:bg-gray-50 cursor-pointer">
+                <div className="z-10 absolute right-0 top-1 px-1 pb-1">
+                  <label className="text-[15px] w-full overflow-auto inline-flex items-center group px-2 rounded-xl hover:bg-gray-50 cursor-pointer">
                     <input
                       type="checkbox"
                       checked={mcpUse.hasOwnProperty(mcpName)}
@@ -461,7 +484,7 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
                       />
                     </svg>
                     <div className="ml-2 flex gap-1 items-center">
-                      <span>Use This MCP Tools</span>
+                      <span>{t("useThisMCPTools")}</span>
                     </div>
                   </label>
                 </div>
@@ -475,23 +498,22 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
             onClick={onClose}
             className="px-4 py-2  text-gray-700 border border-gray-300 rounded-full hover:bg-gray-100 cursor-pointer"
           >
-            Cancel
+            {t("cancelButton")}
           </button>
           <button
             onClick={handleSubmit}
             className="px-4 py-2 bg-indigo-500 text-white rounded-full hover:bg-indigo-700 cursor-pointer"
           >
-            Save
+            {t("saveButton")}
           </button>
         </div>
       </div>
       {/* 确认删除单个mcp配置 */}
       {showConfirmDeleteConfig && (
         <ConfirmDialog
-          message={`Confirm the deletion of mcp config "${showConfirmDeleteConfig.slice(
-            0,
-            30
-          )}"`}
+          message={t("confirmDeleteMcpConfig", {
+            name: showConfirmDeleteConfig.slice(0, 30),
+          })}
           onConfirm={confirmDeleteConfig}
           onCancel={cancelDeleteConfig}
         />

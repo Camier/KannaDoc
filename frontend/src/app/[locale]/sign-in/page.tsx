@@ -1,16 +1,18 @@
 "use client";
 import Alert from "@/components/Alert";
 import { loginUser, registerUser } from "@/lib/auth";
+import { useTranslations } from "next-intl";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
+import { transferableAbortSignal } from "util";
 
 const SignInPage = () => {
+  const t = useTranslations("SignInPage");
   const [isLogin, setIsLogin] = useState(true);
   const [pending, setPending] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
   const [showAlert, setShowAlert] = useState({
     show: false,
     message: "",
@@ -27,21 +29,20 @@ const SignInPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setPending(true);
-    setError("");
     try {
-      if (name.includes("-")) {
+      if (name.includes("-") || name.includes("_") || name.includes(" ")) {
         setShowAlert({
           show: true,
-          message: "'-' is a illegal character",
+          message: t("illegalCharError"),
           type: "error",
         });
-        return
+        return;
       }
       if (isLogin) {
         await loginUser(name, password);
         setShowAlert({
           show: true,
-          message: "Login Success!",
+          message: t("loginSuccess"),
           type: "success",
         });
         // 获取 returnUrl 参数
@@ -51,7 +52,7 @@ const SignInPage = () => {
         await registerUser(name, email, password);
         setShowAlert({
           show: true,
-          message: "Sign-in Success!",
+          message: t("registerSuccess"),
           type: "success",
         });
         setIsLogin(true);
@@ -59,16 +60,17 @@ const SignInPage = () => {
         const returnUrl = searchParams.get("returnUrl");
         router.push(returnUrl || "/"); // 登录成功后跳转到 returnUrl 或者首页
       }
-    } catch (err) {
-      setError("Invalid credentials");
+    } catch (error) {
+      const errorMessage =
+        error instanceof Error ? error.message : "Unknown error";
       setShowAlert({
         show: true,
-        message: "Login/Sign-in Failed",
+        message: isLogin
+          ? t("loginFailed") + errorMessage
+          : t("registerFailed") + errorMessage,
         type: "error",
       });
     } finally {
-      setName("");
-      setEmail("");
       setPassword("");
       setPending(false);
     }
@@ -95,11 +97,11 @@ const SignInPage = () => {
           className={`text-center text-3xl font-extrabold text-transparent bg-clip-text
             bg-gradient-to-r from-indigo-500 to-indigo-700`}
         >
-          LAYRA
+          {t("brand")}
         </h1>
 
         <h2 className="text-2xl font-bold text-center text-gray-700">
-          {isLogin ? "Login" : "Register"}
+          {isLogin ? t("loginTitle") : t("registerTitle")}
         </h2>
 
         <form className="space-y-6" onSubmit={handleSubmit}>
@@ -108,7 +110,7 @@ const SignInPage = () => {
               htmlFor="name"
               className="block text-sm font-medium text-gray-700"
             >
-              Name
+              {t("nameLabel")}
             </label>
             <input
               id="name"
@@ -128,7 +130,7 @@ const SignInPage = () => {
                 htmlFor="email"
                 className="block text-sm font-medium text-gray-700"
               >
-                Email address
+                {t("emailLabel")}
               </label>
               <input
                 id="email"
@@ -149,7 +151,7 @@ const SignInPage = () => {
               htmlFor="password"
               className="block text-sm font-medium text-gray-700"
             >
-              Password
+              {t("passwordLabel")}
             </label>
             <input
               id="password"
@@ -171,7 +173,11 @@ const SignInPage = () => {
                 bg-indigo-600 hover:bg-indigo-700 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 cursor-pointer disabled:cursor-not-allowed`}
               disabled={pending}
             >
-              {pending ? "Sending" : isLogin ? "Sign In" : "Sign Up"}
+              {pending
+                ? t("sendingButton")
+                : isLogin
+                ? t("signInButton")
+                : t("signUpButton")}
             </button>
           </div>
         </form>
@@ -179,25 +185,25 @@ const SignInPage = () => {
         <div className="text-sm text-center">
           {isLogin ? (
             <p>
-              Don’t have an account?{" "}
+              {t("noAccount")}
               <button
                 onClick={toggleAuthMode}
                 className={`font-medium text-indigo-600 hover:text-indigo-500
                      cursor-pointer disabled:cursor-not-allowed`}
                 disabled={pending}
               >
-                {pending ? "Sending" : "Sign Up"}
+                {pending ? t("sendingButton") : t("signUpButton")}
               </button>
             </p>
           ) : (
             <p>
-              Already have an account?{" "}
+              {t("haveAccount")}
               <button
                 onClick={toggleAuthMode}
                 className={`font-medium text-indigo-600 hover:text-indigo-500 cursor-pointer disabled:cursor-not-allowed`}
                 disabled={pending}
               >
-                {pending ? "Sending" : "Sign In"}
+                {pending ? t("sendingButton") : t("signInButton")}
               </button>
             </p>
           )}
@@ -208,10 +214,13 @@ const SignInPage = () => {
 };
 
 // 使用 Suspense 包裹整个页面组件
-const Page = () => (
-  <Suspense fallback={<div>Loading...</div>}>
-    <SignInPage />
-  </Suspense>
-);
+const Page = () => {
+  const t = useTranslations("SignInPage");
+  return (
+    <Suspense fallback={<div>{t("loadingFallback")}</div>}>
+      <SignInPage />
+    </Suspense>
+  );
+};
 
 export default Page;

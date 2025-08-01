@@ -1,5 +1,5 @@
 import React from 'react';
-import { ConnectionLineComponentProps, useConnection } from '@xyflow/react';
+import { ConnectionLineComponentProps } from '@xyflow/react';
 
 const ConnectionLineComponent = ({ fromX, fromY, toX, toY }: ConnectionLineComponentProps) => {
 

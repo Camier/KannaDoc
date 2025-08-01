@@ -31,8 +31,11 @@ import { EventSourceParserStream } from "eventsource-parser/stream";
 import useModelConfigStore from "@/stores/configStore";
 import { getAllModelConfig } from "@/lib/api/configApi";
 import { getAllKnowledgeBase } from "@/lib/api/knowledgeBaseApi";
+import { useTranslations } from "next-intl"; // 添加多语言支持
 
 const AIChat: React.FC = () => {
+  const t = useTranslations("AIChat");
+
   const [messages, setMessages] = useState<Message[]>([]);
   const [chatHistory, setChatHistory] = useState<Chat[]>([]);
   const { user } = useAuthStore();
@@ -440,7 +443,7 @@ const AIChat: React.FC = () => {
           });
           throttleTimeout = setTimeout(() => {
             shouldUpdate = true;
-          }, 100); // 100ms秒节流
+          }, 50); // 50ms秒节流
         }
       }
       setReceivingMessages((prevMessages: string | any[]) => {
@@ -470,8 +473,7 @@ const AIChat: React.FC = () => {
         }
       } else {
         // 可选的：添加用户中断的视觉反馈
-        aiMessage +=
-          "```LLM_ERROR\n  ⚠️ The LLM/VLM failed to generate a response...\n  ⚠️ Please refresh to check the backend feedback for the reason\n  ```";
+        aiMessage += t("llmError")
         // 错误时更新最后一条AI消息内容
         handleSelectChat(conversationId, true);
       }
@@ -605,7 +607,7 @@ const AIChat: React.FC = () => {
     // 添加生成消息中
     const aiLoading: Message = {
       type: "text",
-      content: "Parsing in progress, please wait...",
+      content: t("parsingMessage"),
       messageId: "newMessageId",
       parentMessageId: parentMessageId === "" ? "root" : parentMessageId,
       from: "ai",

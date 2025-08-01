@@ -169,7 +169,7 @@ const PythonEditor: React.FC<PythonEditorProps> = ({node}) => {
     <CodeMirror
       value={node.data.code}
       height="100%"
-      className="text-base"
+      className="text-[15px]"
       extensions={[
         python(),
         autocompletion({

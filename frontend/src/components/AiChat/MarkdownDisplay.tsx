@@ -8,6 +8,7 @@ import { FC, useState } from "react";
 import { Message } from "@/types/types";
 import rehypeRaw from "rehype-raw"; // 新增：用于解析原始HTML
 import { base64Processor } from "@/utils/file";
+import { useTranslations } from "next-intl";
 
 interface MarkdownDisplayProps {
   md_text: string;
@@ -23,6 +24,7 @@ const CodeBlock: FC<{
   children?: any;
   [key: string]: any;
 }> = ({ node, className, children, ...props }) => {
+  const t = useTranslations("MarkdownDisplay");
   const match = /language-(\w+)/.exec(className || "");
   const language = match ? match[1] : null;
 
@@ -93,7 +95,7 @@ const CodeBlock: FC<{
       selection?.removeAllRanges();
       selection?.addRange(range);
 
-      alert("无法自动复制，请按 Ctrl+C 复制选中内容");
+      alert(t("copyFallback"));
       setTimeout(() => {
         document.body.removeChild(fallbackText);
       }, 100);
@@ -142,9 +144,9 @@ const CodeBlock: FC<{
           )}
 
           {copied ? (
-            <span className="text-xs">Copied!</span>
+            <span className="text-xs">{t("copied")}</span>
           ) : (
-            <span className="text-xs">Copy</span>
+            <span className="text-xs">{t("copy")}</span>
           )}
         </button>
       </div>
@@ -169,6 +171,7 @@ const MarkdownDisplay: React.FC<MarkdownDisplayProps> = ({
   showTokenNumber,
   isThinking,
 }) => {
+  const t = useTranslations("MarkdownDisplay");
   const [hideThinking, setHideThinking] = useState(false);
 
   return (
@@ -193,7 +196,7 @@ const MarkdownDisplay: React.FC<MarkdownDisplayProps> = ({
             className="flex items-center justify-start gap-1 cursor-pointer text-gray-800"
             onClick={() => setHideThinking((prev) => !prev)}
           >
-            <div className="font-semibold">💡 Deep Thinking</div>
+            <div className="font-medium">{t("deepThinking")}</div>
             <svg
               className={`ml-1 w-4 h-4 transition-transform ${
                 hideThinking ? "" : "rotate-180"
@@ -300,12 +303,12 @@ const MarkdownDisplay: React.FC<MarkdownDisplayProps> = ({
               isThinking ? "border-l-2 pl-2 border-gray-200 text-xs" : "text-sm"
             }`}
           >
-            <span>Total token usage: {message.token_number?.total_token}</span>
+            <span>{t("totalTokenUsage")}{message.token_number?.total_token}</span>
             <span>
-              Completion token usage: {message.token_number?.completion_tokens}
+              {t("completionTokenUsage")}{message.token_number?.completion_tokens}
             </span>
             <span>
-              Prompt token usage: {message.token_number?.prompt_tokens}
+              {t("promptTokenUsage")}{message.token_number?.prompt_tokens}
             </span>
           </div>
         )}
