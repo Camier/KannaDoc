@@ -1,8 +1,8 @@
 "use client";
-import Link from "next/link";
 import UserMenuExpand from "./UserMenuExpand";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 const Navbar = () => {
   const t = useTranslations("Navbar");

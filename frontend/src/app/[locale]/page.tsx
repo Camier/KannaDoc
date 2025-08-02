@@ -83,9 +83,6 @@ const Homepage = () => {
             <div
               onClick={() => {
                 window.location.href = "/work-flow";
-                {
-                  /*router.push("/chem-ketcher");*/
-                }
               }}
               className={`text-lg bg-indigo-500 hover:bg-indigo-600 text-white py-2 pl-6 pr-5 rounded-full cursor-pointer flex items-center justify-center`}
             >
