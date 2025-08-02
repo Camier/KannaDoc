@@ -29,7 +29,7 @@ import {
   KnowledgeBase,
   ModelConfig,
   Message,
-  FileRespose,
+  FileResponse,
   McpConfig,
 } from "@/types/types";
 import Cookies from "js-cookie";
@@ -146,7 +146,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   const [showOutput, setShowOutput] = useState(false);
   const [messages, setMessages] = useState<{ [key: string]: Message[] }>({});
   const [sendInputDisabled, setSendInputDisabled] = useState(true);
-  const [sendingFiles, setSendingFiles] = useState<FileRespose[]>([]);
+  const [sendingFiles, setSendingFiles] = useState<FileResponse[]>([]);
   const [tempBaseId, setTempBaseId] = useState<string>(""); //后台用来存放上传文件的临时知识库
   const [cleanTempBase, setCleanTempBase] = useState<boolean>(false);
   const [currentInputNodeId, setCurrentInputNodeId] = useState<string>(); //后台用来存放上传文件的临时知识库
@@ -1199,7 +1199,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     debug: boolean = false,
     input_resume: boolean = false,
     userMessage: string = "",
-    files: FileRespose[] = [],
+    files: FileResponse[] = [],
     tempBaseId: string = ""
   ) => {
     if (saveImage) {
@@ -1704,7 +1704,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
 
   const handleSendMessage = async (
     message: string,
-    files: FileRespose[],
+    files: FileResponse[],
     tempBaseId: string
   ) => {
     setSendInputDisabled(true);

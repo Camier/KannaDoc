@@ -8,7 +8,7 @@ import React, {
 } from "react";
 import {
   ConversationBlock,
-  FileRespose,
+  FileResponse,
   Message,
   ModelConfig,
 } from "@/types/types";
@@ -45,7 +45,7 @@ interface ChatBoxProps {
   receivingMessages: Message[]; // sse实时传输消息
   onSendMessage: (
     message: string,
-    files: FileRespose[],
+    files: FileResponse[],
     tempBaseId: string,
     parentMessageId: string
   ) => void;
@@ -65,7 +65,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   const messagesEndRef = useRef<HTMLDivElement | null>(null); // 创建引用
   const fileInputRef = useRef<HTMLInputElement>(null); // 新增文件输入引用
   const textareaRef = useRef<HTMLTextAreaElement>(null);
-  const [sendingFiles, setSendingFiles] = useState<FileRespose[]>([]);
+  const [sendingFiles, setSendingFiles] = useState<FileResponse[]>([]);
   const [tempBaseId, setTempBaseId] = useState<string>(""); //后台用来存放上传文件的临时知识库
   const [fileDivStyle, setFileDivStyle] = useState({});
   const { user } = useAuthStore();
@@ -272,7 +272,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
 
   const handleSendEditingMessage = (
     inputMessage: string,
-    sendingFiles: FileRespose[],
+    sendingFiles: FileResponse[],
     tempBaseId: string,
     parentMessageId: string
   ) => {

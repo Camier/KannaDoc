@@ -418,7 +418,7 @@ docker compose down -v && docker compose up --build  # ⚠️ 删除所有数据
 
 **短期计划**：
 
-- 新增中文支持（即将推出）
+- 新增API接口
 
 **长期计划**：
 

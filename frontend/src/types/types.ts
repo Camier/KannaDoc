@@ -58,7 +58,7 @@ export interface BaseUsed {
   baseId: string;
 }
 
-export interface FileRespose {
+export interface FileResponse {
   id: string;
   minio_filename: string;
   filename: string;

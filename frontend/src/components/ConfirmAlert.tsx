@@ -60,7 +60,7 @@ const ConfirmAlert: React.FC<ConfirmAlertProps> = ({
             onClick={onCancel}
             className="px-4 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-100 cursor-pointer"
           >
-            {t("cancel")}
+            {t("close")}
           </button>
         </div>
       </div>

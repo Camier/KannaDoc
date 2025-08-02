@@ -49,20 +49,19 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
   );
 
   const handleDeleteFlow = (flow: Flow, index: number) => {
+    toggleSettings(index); // 关闭设置面板
     setShowConfirmDeleteFlow({ index, flow }); // 显示单个对话框
   };
 
   const confirmDeleteFlow = () => {
     if (showConfirmDeleteFlow) {
       ondeleteFlow(showConfirmDeleteFlow.flow);
-      toggleSettings(showConfirmDeleteFlow.index); // 关闭设置面板
       setShowConfirmDeleteFlow(null); // 关闭对话框
     }
   };
 
   const cancelDeleteFlow = () => {
     if (showConfirmDeleteFlow) {
-      toggleSettings(showConfirmDeleteFlow.index); // 关闭设置面板
       setShowConfirmDeleteFlow(null); // 关闭对话框
     }
   };

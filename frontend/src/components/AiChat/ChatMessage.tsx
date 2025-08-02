@@ -1,7 +1,7 @@
 // components/ChatMessage.tsx
 "use client";
 import React, { Dispatch, useEffect, useMemo, useState } from "react";
-import { FileRespose, Message, ModelConfig } from "@/types/types";
+import { FileResponse, Message, ModelConfig } from "@/types/types";
 import Image from "next/image";
 import LoadingCircle from "./LoadingCircle";
 import { getFileIcon } from "@/utils/file";
@@ -16,7 +16,7 @@ interface ChatMessageProps {
   setShowRefFile: Dispatch<React.SetStateAction<string[]>>;
   onSendEditingMessage?: (
     inputMessage: string,
-    sendingFiles: FileRespose[],
+    sendingFiles: FileResponse[],
     tempBaseId: string,
     parentMessageId: string
   ) => void;

@@ -54,6 +54,7 @@ const LeftSidebar: React.FC<SidebarProps> = ({
   };
 
   const handleDeleteChat = (chat: Chat, index: number) => {
+    toggleSettings(index); // 关闭设置面板
     setShowConfirmDeleteChat({ index, chat }); // 显示单个对话框
   };
 
@@ -69,14 +70,12 @@ const LeftSidebar: React.FC<SidebarProps> = ({
   const confirmDeleteChat = () => {
     if (showConfirmDeleteChat) {
       ondeleteChat(showConfirmDeleteChat.chat);
-      toggleSettings(showConfirmDeleteChat.index); // 关闭设置面板
       setShowConfirmDeleteChat(null); // 关闭对话框
     }
   };
 
   const cancelDeleteChat = () => {
     if (showConfirmDeleteChat) {
-      toggleSettings(showConfirmDeleteChat.index); // 关闭设置面板
       setShowConfirmDeleteChat(null); // 关闭对话框
     }
   };
@@ -123,7 +122,7 @@ const LeftSidebar: React.FC<SidebarProps> = ({
   };
 
   // 过滤对话
-  const filteredChatHistory = chatHistory.filter(chat =>
+  const filteredChatHistory = chatHistory.filter((chat) =>
     chat.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -154,9 +153,7 @@ const LeftSidebar: React.FC<SidebarProps> = ({
       </div>
 
       {/* 历史生成标题和清空按钮 */}
-      <h2 className="text-sm text-center font-medium">
-        {t("historyChat")}
-      </h2>
+      <h2 className="text-sm text-center font-medium">{t("historyChat")}</h2>
 
       <div className="relative flex w-[75%] text-xs my-3">
         <input

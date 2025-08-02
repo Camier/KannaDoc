@@ -9,7 +9,7 @@ import ChatBox from "@/components/AiChat/ChatBox";
 import {
   Message,
   Chat,
-  FileRespose,
+  FileResponse,
   FileUsed,
   ModelConfig,
   KnowledgeBase,
@@ -546,7 +546,7 @@ const AIChat: React.FC = () => {
 
   const handleSendMessage = async (
     message: string,
-    files: FileRespose[],
+    files: FileResponse[],
     tempBaseId: string,
     parentMessageId: string
   ) => {

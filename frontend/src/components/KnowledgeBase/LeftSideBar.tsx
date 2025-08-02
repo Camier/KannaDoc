@@ -49,20 +49,19 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
   );
 
   const handleDeleteBase = (base: Base, index: number) => {
+    toggleSettings(index); // 关闭设置面板
     setShowConfirmDeleteBase({ index, base }); // 显示单个对话框
   };
 
   const confirmDeleteBase = () => {
     if (showConfirmDeleteBase) {
       ondeleteBase(showConfirmDeleteBase.base);
-      toggleSettings(showConfirmDeleteBase.index); // 关闭设置面板
       setShowConfirmDeleteBase(null); // 关闭对话框
     }
   };
 
   const cancelDeleteBase = () => {
     if (showConfirmDeleteBase) {
-      toggleSettings(showConfirmDeleteBase.index); // 关闭设置面板
       setShowConfirmDeleteBase(null); // 关闭对话框
     }
   };
@@ -272,7 +271,9 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
       </div>
       {showConfirmDeleteBase && (
         <ConfirmDialog
-          message={`${t("deleteConfirm")}"${showConfirmDeleteBase.base.name}"？`}
+          message={`${t("deleteConfirm")}"${
+            showConfirmDeleteBase.base.name
+          }"？`}
           onConfirm={confirmDeleteBase}
           onCancel={cancelDeleteBase}
         />

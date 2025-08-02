@@ -465,7 +465,7 @@ In the future, we will support multiple deployment methods including Kubernetes 
 
 **Short-term:**
 
-- Add Chinese Language Support (coming soon)
+- Add API Support (coming soon)
 
 **Long-term:**
 

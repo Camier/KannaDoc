@@ -6,7 +6,7 @@ import { useGlobalStore } from "@/stores/WorkflowVariableStore";
 import {
   Chatflow,
   CustomNode,
-  FileRespose,
+  FileResponse,
   Message,
   WorkflowAll,
 } from "@/types/types";
@@ -35,6 +35,7 @@ import {
 } from "@/lib/api/chatflowApi";
 import ConfirmDialog from "@/components/ConfirmDialog";
 import { createPortal } from "react-dom";
+import { useTranslations } from "next-intl";
 
 interface WorkflowOutputProps {
   workflow: WorkflowAll;
@@ -46,13 +47,13 @@ interface WorkflowOutputProps {
   sendDisabled: boolean;
   onSendMessage: (
     message: string,
-    files: FileRespose[],
+    files: FileResponse[],
     tempBaseId: string
   ) => void;
   tempBaseId: string;
   setTempBaseId: Dispatch<SetStateAction<string>>;
-  sendingFiles: FileRespose[];
-  setSendingFiles: Dispatch<SetStateAction<FileRespose[]>>;
+  sendingFiles: FileResponse[];
+  setSendingFiles: Dispatch<SetStateAction<FileResponse[]>>;
   cleanTempBase: boolean;
 }
 
@@ -71,6 +72,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
   setSendingFiles,
   cleanTempBase,
 }) => {
+  const t = useTranslations("WorkflowOutput");
   const {
     globalVariables,
     globalDebugVariables,
@@ -117,18 +119,21 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
   let buttonText;
   let buttonTextFullScreen;
   if (!uploadFile) {
-    buttonText = "Send";
-    buttonTextFullScreen = "Send";
+    buttonText = t("uploadButton.send");
+    buttonTextFullScreen = t("uploadButton.send");
   } else if (!isUploadComplete) {
-    buttonText = `Upload:${uploadProgress}%`;
-    buttonTextFullScreen = `Upload:${uploadProgress}%`;
+    buttonText = `${"uploadButton.uploading"}:${uploadProgress}%`;
+    buttonTextFullScreen = `${"uploadButton.uploading"}:${uploadProgress}%`;
   } else if (!isTaskComplete) {
-    buttonText = taskStatus === "failed" ? "Failed" : `${taskProgress}%`;
+    buttonText =
+      taskStatus === "failed" ? t("uploadButton.failed") : `${taskProgress}%`;
     buttonTextFullScreen =
-      taskStatus === "failed" ? "Upload Failed" : `Processing:${taskProgress}%`;
+      taskStatus === "failed"
+        ? t("uploadButton.uploadFailed")
+        : `${t("uploadButton.processing")}:${taskProgress}%`;
   } else {
-    buttonText = "Send";
-    buttonTextFullScreen = "Send";
+    buttonText = t("uploadButton.send");
+    buttonTextFullScreen = t("uploadButton.send");
   }
 
   const { chatflowId, setChatflowId } = useChatStore();
@@ -187,7 +192,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
 
     if (invalidFiles.length > 0) {
       alert(
-        `Unsupport file type: \n${invalidFiles.map((f) => f.name).join("\n")}`
+        `${t("unsupportedFile")}\n${invalidFiles.map((f) => f.name).join("\n")}`
       );
     }
 
@@ -240,7 +245,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
 
                 if (["completed", "failed"].includes(payload.status)) {
                   if (payload.status === "failed") {
-                    alert("Embedding error!");
+                    alert(t("embeddingError"));
                   }
                   eventReader.cancel();
                   break;
@@ -253,7 +258,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
           }
         })
         .catch((error) => {
-          alert("Upload error");
+          alert(t("uploadError"));
         });
     }
 
@@ -265,7 +270,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
       window.open(url, "_blank");
     } catch (error) {
       console.error("Download failed:", error);
-      alert("Download failed!");
+      alert(t("downloadFailed"));
     }
   };
 
@@ -355,30 +360,31 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
   };
 
   return (
-    <div className="overflow-auto h-full flex flex-col items-start justify-start gap-1">
-      <div className="px-2 py-1 flex items-center justify-between w-full mt-1 font-medium">
-        <div className="text-xl flex items-center justify-start max-w-[80%] gap-1">
+    <div className="overflow-auto h-full flex flex-col items-start justify-start gap-1 text-[15px]">
+      <div className="px-2 py-1 flex items-center justify-between w-full mt-1">
+        <div className="flex items-center justify-start max-w-[80%] gap-1 font-medium text-[17px]">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            strokeWidth="1.5"
+            strokeWidth="2"
             stroke="currentColor"
-            className="size-6 shrink-0"
+            className="size-5.5 shrink-0"
           >
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
-              d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z"
+              d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 0 1-.825-.242m9.345-8.334a2.126 2.126 0 0 0-.476-.095 48.64 48.64 0 0 0-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0 0 11.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
             />
           </svg>
+
           <div className="focus:outline-none cursor-text overflow-auto whitespace-nowrap">
-            Chatflow
+            {t("chatflow")}
           </div>
         </div>
         {showHistory && (
           <button
-            className="cursor-pointer disabled:cursor-not-allowed px-4 py-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+            className="cursor-pointer disabled:cursor-not-allowed px-3 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
             onClick={() => setCodeFullScreenFlow((prev: boolean) => !prev)}
           >
             {codeFullScreenFlow ? (
@@ -388,7 +394,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-6"
+                className="size-5.5"
               >
                 <path
                   strokeLinecap="round"
@@ -403,7 +409,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                 viewBox="0 0 24 24"
                 strokeWidth="1.5"
                 stroke="currentColor"
-                className="size-6"
+                className="size-5.5"
               >
                 <path
                   strokeLinecap="round"
@@ -418,7 +424,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
           onClick={() => {
             setShowHistory((prev) => !prev);
           }}
-          className="text-indigo-500 cursor-pointer disabled:cursor-not-allowed py-2 px-3 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+          className="text-base text-indigo-500 cursor-pointer disabled:cursor-not-allowed px-3 py-[5px] rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
         >
           {showHistory ? (
             <svg
@@ -453,13 +459,13 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
           )}
 
           <span className="whitespace-nowrap">
-            {showHistory ? "Return" : "Chatflow History"}
+            {showHistory ? t("return") : t("chatflowHistory")}
           </span>
         </button>
       </div>
       {!showHistory && (
         <details className="group w-full open">
-          <summary className="flex items-center cursor-pointer font-medium w-full">
+          <summary className="flex items-center cursor-pointer w-full">
             <div className="px-2 py-1 flex items-center justify-between w-full mt-1">
               <div className="flex items-center justify-center gap-1">
                 <svg
@@ -474,7 +480,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                     clipRule="evenodd"
                   />
                 </svg>
-                Global Variable
+                {t("globalVariable")}
                 <svg
                   className="w-4 h-4 transition-transform group-open:rotate-180"
                   fill="none"
@@ -490,7 +496,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                 </svg>
               </div>
               <button
-                className="cursor-pointer disabled:cursor-not-allowed px-4 py-2 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
+                className="cursor-pointer disabled:cursor-not-allowed px-3 py-1 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
                 onClick={() => setCodeFullScreenFlow((prev: boolean) => !prev)}
               >
                 {codeFullScreenFlow ? (
@@ -500,7 +506,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="size-6"
+                    className="size-5.5"
                   >
                     <path
                       strokeLinecap="round"
@@ -515,7 +521,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                     viewBox="0 0 24 24"
                     strokeWidth="1.5"
                     stroke="currentColor"
-                    className="size-6"
+                    className="size-5.5"
                   >
                     <path
                       strokeLinecap="round"
@@ -536,7 +542,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
               <input
                 name={"addVariable"}
                 value={variable}
-                placeholder="Variable Name"
+                placeholder={t("variableName")}
                 onChange={(e) => setVariable(e.target.value)}
                 className="w-full px-3 py-1 border-2 border-gray-200 rounded-xl
               focus:outline-none focus:ring-2 focus:ring-indigo-500
@@ -577,13 +583,13 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                     clipRule="evenodd"
                   />
                 </svg>
-                <span>Click to Add</span>
+                <span>{t("clickToAdd")}</span>
               </div>
             </div>
             {Object.keys(isDebugMode ? globalDebugVariables : globalVariables)
               .length === 0 && (
               <div className="px-2 flex w-full items-center gap-2 text-gray-500">
-                No variable found.
+                {t("noVariable")}
               </div>
             )}
             {Object.keys(
@@ -609,6 +615,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                       name={key}
                       value={currentValue}
                       onChange={(e) => handleVariableChange(e, isDebugMode)}
+                      placeholder={t("variableValuePlaceholder")}
                       className={`w-full px-3 py-1 border-2 rounded-xl border-gray-200
             focus:outline-none focus:ring-2 focus:ring-indigo-500
             disabled:opacity-50 ${
@@ -621,7 +628,8 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                     {/* 初始值提示（仅在调试模式且未修改时显示） */}
                     {isDebugMode && (
                       <div className="absolute right-1 top-0 px-3 py-1 pointer-events-none text-gray-400">
-                        Init: {initialValue}
+                        {t("initValue")}
+                        {initialValue}
                       </div>
                     )}
                   </div>
@@ -648,22 +656,24 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
       )}
       {!showHistory && (
         <details className="group w-full" open>
-          <summary className="flex items-center cursor-pointer font-medium w-full">
-            <div className="py-1 px-2 flex mt-1 items-center justify-between w-full font-medium">
+          <summary className="flex items-center cursor-pointer w-full">
+            <div className="py-1 px-2 flex mt-1 items-center justify-between w-full">
               <div className="flex items-center justify-start gap-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
                   viewBox="0 0 24 24"
-                  fill="currentColor"
-                  className="size-5"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="size-4.5"
                 >
                   <path
-                    fillRule="evenodd"
-                    d="M4.848 2.771A49.144 49.144 0 0 1 12 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 0 1-3.476.383.39.39 0 0 0-.297.17l-2.755 4.133a.75.75 0 0 1-1.248 0l-2.755-4.133a.39.39 0 0 0-.297-.17 48.9 48.9 0 0 1-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97ZM6.75 8.25a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 0 1.5h-9a.75.75 0 0 1-.75-.75Zm.75 2.25a.75.75 0 0 0 0 1.5H12a.75.75 0 0 0 0-1.5H7.5Z"
-                    clipRule="evenodd"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z"
                   />
                 </svg>
-                LLM Response
+                {t("llmResponse")}
                 <svg
                   className="w-4 h-4 transition-transform group-open:rotate-180"
                   fill="none"
@@ -707,8 +717,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                   modelConfig={undefined}
                   message={{
                     type: "text" as const,
-                    content:
-                      'The send button becomes active when reaching an LM/VLM node with the "Set As Chatflow User Input" checkbox selected. To enable user input, check the "Set As Chatflow User Input" option in the LLM/VLM node.',
+                    content: t("llmHint"),
                     from: "ai" as const,
                   }}
                   showRefFile={showRefFile}
@@ -733,13 +742,13 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                       !isSendDisabled && !sendDisabled
                         ? "border-indigo-500 focus:border-indigo-700"
                         : "border-indigo-200 focus:border-indigo-400"
-                    } border-2 rounded-3xl $ text-base focus:outline-hidden focus:border-[2.5px] resize-none overflow-y-auto`}
+                    } border-2 rounded-3xl focus:outline-hidden focus:border-[2.5px] resize-none overflow-y-auto`}
                     placeholder={
                       isSendDisabled || sendDisabled
-                        ? "Waiting for 'Run'"
+                        ? t("waitingRun")
                         : codeFullScreenFlow
-                        ? "Press Shift+Enter to send..."
-                        : "Send: Shift+Enter"
+                        ? t("shiftEnterFullScreen")
+                        : t("shiftEnter")
                     }
                     value={inputMessage}
                     rows={1}
@@ -844,7 +853,11 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                               : "cursor-pointer"
                           }`}
                           onClick={() => {
-                            if (!isSendDisabled && !sendDisabled && !cleanTempBase) {
+                            if (
+                              !isSendDisabled &&
+                              !sendDisabled &&
+                              !cleanTempBase
+                            ) {
                               return handleDeleteFile(file.id);
                             }
                           }}
@@ -864,7 +877,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
                   isSendDisabled || sendDisabled
                     ? "bg-indigo-300 cursor-not-allowed"
                     : "bg-indigo-500 hover:bg-indigo-600 cursor-pointer "
-                } rounded-full text-base item-center justify-center ${
+                } rounded-full item-center justify-center ${
                   codeFullScreenFlow ? "px-6" : "px-3"
                 } py-2 text-white`}
                 onClick={handleSend}
@@ -907,7 +920,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
               d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
             />
           </svg>
-          <span>Clear History</span>
+          <span>{t("clearHistory")}</span>
         </div>
       )}
       {showHistory &&
@@ -922,7 +935,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
       {showConfirmDeleteAllChatflow &&
         createPortal(
           <ConfirmDialog
-            message={`Confirm the deletion of All Chatflow？`}
+            message={t("confirmDelete")}
             onConfirm={confirmDeleteAllChatflow}
             onCancel={cancelDeleteAllChatflow}
           />,

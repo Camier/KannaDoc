@@ -1,7 +1,7 @@
 {
   "HomePage": {
     "title": "Endlessly Customizable Agent Workflow Engine - Code Without Limits, Build Without Boundaries",
-    "subtitle1": "With pure visual embeddings, <brand>LAYRA</brand> understands documents like a human",
+    "subtitle1": "With pure visual parsing, <brand>LAYRA</brand> understands documents like a human",
     "subtitle2": "— page by page, structure and all.",
     "joinButton": "Join us",
     "startButton": "Start now",
@@ -23,14 +23,15 @@
     "knowledgeBase": "Knowledge-Base"
   },
   "UserMenu": {
-    "logOut": "Log out",
+    "logOut": "Logout",
     "tutorial": "Tutorial",
-    "contact": "Contact"
+    "support": "Support",
+    "about": "About us"
   },
   "ConfirmAlert": {
     "notice": "NOTICE",
     "error": "ERROR",
-    "cancel": "Cancel"
+    "close": "Close"
   },
   "ConfirmDialog": {
     "title": "CONFIRM",
@@ -38,13 +39,13 @@
     "cancel": "Cancel"
   },
   "AddLLMEngine": {
-    "title": "New LLM Engine",
+    "title": "New LLM Configuration",
     "placeholder": "Write your new model name...",
     "cancel": "Cancel",
     "confirm": "Yes"
   },
   "ChatBox": {
-    "initialPrompt": "Please remember to choose which knowledge database you will use for this chat.",
+    "initialPrompt": "Select a language model and knowledge bases to start",
     "configureButton": "Configure Now",
     "noEngine": "No LLM engine was chosen",
     "knowledgeBaseAccessed": "Knowledge-Base accessed:",
@@ -77,7 +78,7 @@
     "defaultBaseName": "User Upload"
   },
   "ChatKnowledgeConfigModal": {
-    "title": "Config Knowledge Base",
+    "title": "Configure Knowledge Base",
     "addKnowledgeBase": "Add Knowledge-Base",
     "tutorials": "Tutorials: Click top-right menu icon",
     "llmSettings": "LLM Settings",
@@ -100,11 +101,11 @@
     "range_0_20": "(0-20)",
     "cancel": "Cancel",
     "save": "Save",
-    "deleteModelConfigConfirmation": "Confirm the deletion of model config "
+    "deleteModelConfigConfirmation": "Confirm the deletion of model configuration "
   },
   "ChatLeftSidebar": {
     "newChat": "New Chat",
-    "historyChat": "History Chat",
+    "historyChat": "Chat History",
     "searchPlaceholder": "Search Chat...",
     "clear": "Clear",
     "refresh": "Refresh",
@@ -154,9 +155,9 @@
   "KnowledgeBaseDetails": {
     "searchPlaceholder": "Search File...",
     "fileNumber": "File Number: ",
-    "createTime": "Create Time: ",
+    "createTime": "Creation Time: ",
     "dragPrompt": "Drag files here or click to select",
-    "supportedFormats": " Supports 100+ formats, including PDF, DOC, DOCX, and PPT...",
+    "supportedFormats": "Supports 100+ formats: PDF, Word, PPT, etc.",
     "choosePrompt": "Please choose a Knowledge-Base to upload",
     "allFilesTitle": "All Files",
     "downloadFailed": "Download failed!"
@@ -196,7 +197,7 @@
     "sendingButton": "Sending",
     "noAccount": "Don’t have an account?",
     "haveAccount": "Already have an account?",
-    "illegalCharError": "'-', '_' and ' '  are illegal characters",
+    "illegalCharError": "Username cannot contain '-', '_', or space.",
     "loginSuccess": "Login Success!",
     "loginFailed": "Login Failed: ",
     "registerSuccess": "Sign-up Success!",
@@ -206,7 +207,7 @@
   "WorkflowPage": {
     "createError": {
       "nameRequired": "Work-Flow name can not be null!",
-      "nameExists": "Work-Flow name already exist!"
+      "nameExists": "Work-Flow name already exists!"
     },
     "loadingText": "Loading...",
     "emptyPrompt": {
@@ -258,8 +259,8 @@
     "stop": "Stop",
     "clear": "Clear",
     "clickHere": "Click Here",
-    "startNodeExist": "Start node already exist!",
-    "saveSuccess": "Save Success!",
+    "startNodeExist": "Start node already exists!",
+    "saveSuccess": "Save Succeeded!",
     "saveFailure": "Save Failed!",
     "executionSuccess": "Execution Succeeded",
     "debugPause": "Debug Pause!",
@@ -278,19 +279,19 @@
     "vlmOutputPlaceholder": "This area displays the Node output during workflow execution.",
     "vlmChatPlaceholder": "To extract global variables from the output, ensure prompt LLM/VLM to output them with json format, e.g.,\n '{\"output\":\"AIoutput\"'}.\n\nAdditionally, you can directly assign the LLM response to a global variable below:",
     "awaitRunning": "Awaiting execution...",
-    "autoSaveSuccess": "Workflow {workflowName} auto-saved successfully",
-    "autoSaveFailure": "Workflow {workflowName} auto-saved failed",
+    "autoSaveSuccess": "Workflow {workflowName} auto-save successfully",
+    "autoSaveFailure": "Workflow {workflowName} auto-save failed",
     "importWorkflowAlert": "Importing the workflow will overwrite the current content. Do you want to continue?",
     "emptyNodeName": "Node name cannot be empty!",
     "spaceNodeName": "Spaces are not allowed in node names!",
-    "duplicateNodeName": "Node name name already exists!",
+    "duplicateNodeName": "Node name already exists!",
     "nodeExecutionSuccess": "Node execution success!"
   },
   "WorkflowLeftSideBar": {
-    "addWorkflow": "Add Work-Flow",
+    "addWorkflow": "Add Workflow",
     "rename": "Rename",
     "delete": "Delete",
-    "confirmDelete": "Confirm the deletion of work-flow \"{flowName}\"?"
+    "confirmDelete": "Confirm the deletion of workflow \"{flowName}\"?"
   },
   "NodeTypeSelector": {
     "baseNodeSection": "Base Node",
@@ -306,8 +307,8 @@
     }
   },
   "SaveCustomNode": {
-    "title": "New Custom-Node",
-    "placeholder": "Write your Custom-Node name...",
+    "title": "New Custom Node",
+    "placeholder": "Write your Custom Node name...",
     "cancel": "Cancel",
     "confirm": "Yes"
   },
@@ -320,7 +321,7 @@
       "title": "Description",
       "editButton": "Edit",
       "previewButton": "Preview",
-      "description": "No decription found",
+      "description": "No description found",
       "editingPlaceholder": "Enter Markdown content here..."
     },
     "globalVariable": {
@@ -340,7 +341,7 @@
     "description": "Description",
     "edit": "Edit",
     "preview": "Preview",
-    "noDescription": "No decription found",
+    "noDescription": "No description found",
     "editingPlaceholder": "Enter Markdown content here...",
     "globalVariable": "Global Variable",
     "variableName": "Variable Name",
@@ -472,7 +473,7 @@
     }
   },
   "WorkflowKnowledgeConfigModal": {
-    "title": "Config Knowledge Base",
+    "title": "Configure Knowledge Base",
     "addKnowledgeBase": "Add Knowledge-Base",
     "tutorials": "Tutorials: Click top-right menu icon",
     "llmSettings": "LLM Settings",
@@ -494,14 +495,14 @@
     "range_0_20": "(0-20)",
     "cancel": "Cancel",
     "save": "Save",
-    "deleteModelConfigConfirmation": "Confirm the deletion of model config "
+    "deleteModelConfigConfirmation": "Confirm the deletion of model configuration "
   },
   "McpConfig": {
-    "title": "Config MCP Tools",
-    "mcpNamePlaceholder": "Mcp Name",
+    "title": "Configure MCP Tools",
+    "mcpNamePlaceholder": "MCP Name",
     "addButton": "Click to Add",
     "noToolsFound": "No MCP Tools Found.",
-    "noToolDescriptionFound": "No function decription found",
+    "noToolDescriptionFound": "No function description found",
     "mcpServerUrl": "MCP Server Url",
     "refreshTools": "Refresh Tools",
     "advancedSettings": "Advanced Settings",
@@ -509,10 +510,10 @@
     "useThisMCPTools": "Use This MCP Tools",
     "cancelButton": "Cancel",
     "saveButton": "Save",
-    "confirmDeleteMcpConfig": "Confirm the deletion of mcp config \"{name}\""
+    "confirmDeleteMcpConfig": "Confirm the deletion of MCP configuration \"{name}\""
   },
   "McpAdvancedSettings": {
-    "title": "Config MCP Tools",
+    "title": "Configure MCP Tools",
     "headers": "Headers",
     "addHeaders": "Add Headers",
     "timeoutSettings": "Timeout Settings",
@@ -525,5 +526,64 @@
     "cancel": "Cancel",
     "save": "Save",
     "mcpConfigNotFound": "MCP configuration not found for this node."
+  },
+  "WorkflowOutput": {
+    "chatflow": "Chatflow",
+    "return": "Return",
+    "chatflowHistory": "Chatflow History",
+    "globalVariable": "Global Variable",
+    "variableName": "Variable Name",
+    "clickToAdd": "Click to Add",
+    "variableValuePlaceholder": "Support Python variable types",
+    "noVariable": "No variables detected. Please add one if required for your workflow.",
+    "initValue": "Init: ",
+    "llmResponse": "LLM Response",
+    "llmHint": "The send button becomes active when reaching an LM/VLM node with the \"Set As Chatflow User Input\" checkbox selected. To enable user input, check the \"Set As Chatflow User Input\" option in the LLM/VLM node.",
+    "waitingRun": "Waiting for 'Run'",
+    "shiftEnter": "Send: Shift+Enter",
+    "shiftEnterFullScreen": "Press Shift+Enter to send...",
+    "unsupportedFile": "Unsupport file type: ",
+    "uploadError": "Upload error",
+    "embeddingError": "Embedding error!",
+    "downloadFailed": "Download failed!",
+    "clearHistory": "Clear History",
+    "confirmDelete": "Confirm the deletion of All Chatflow？",
+    "uploadButton": {
+      "send": "Send",
+      "uploading": "Upload",
+      "processing": "Processing",
+      "failed": "Failed",
+      "uploadFailed": "Upload Failed"
+    }
+  },
+  "About": {
+    "title": "About",
+    "acknowledgements": "Acknowledgements",
+    "version": "Version",
+    "repository": "Repository",
+    "author": "Author",
+    "license": "License",
+    "thankYouContent": "Thank you for choosing LAYRA to accelerate your AI application development. We admire your pursuit of cutting-edge AI technologies and wish you success in your projects.",
+    "versionText": "LAYAR v2025.8.2",
+    "authorName": "Wei Li(李威)",
+    "locationLabel": "Location",
+    "location": "China",
+    "githubProfile": "GitHub Profile",
+    "email": "Email",
+    "close": "Close"
+  },
+  "Support": {
+    "title": "Support",
+    "version": "Version",
+    "versionText": "LAYAR v2025.8.2",
+    "bugReport": "Report an Issue",
+    "community": "Community Support",
+    "wechatGroup": "1. Official WeChat Group",
+    "wechatOfficialAccount": "2. WeChat Official Account",
+    "bilibili": "3. Bilibili Introduction",
+    "zhihu": "4. Zhihu Profile",
+    "githubRepo": "5. GitHub Repository",
+    "authorEmail": "6. Contact Developer: {email}",
+    "close": "Close"
   }
 }
