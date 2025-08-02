@@ -1,4 +1,6 @@
 import { useTranslations } from "next-intl";
+import { useRef } from "react";
+import { useClickAway } from "react-use";
 
 interface SupportProps {
   onCancel: () => void;
@@ -6,10 +8,14 @@ interface SupportProps {
 
 const Support: React.FC<SupportProps> = ({ onCancel }) => {
   const t = useTranslations("Support");
+  const ref = useRef(null);
+  useClickAway(ref, () => {
+    onCancel();
+  });
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/50">
-      <div className="bg-white rounded-3xl shadow-lg p-6 w-[55%] max-h-[70vh] flex flex-col">
+    <div className="fixed inset-0 flex items-center justify-center z-5000 bg-black/50">
+      <div ref={ref} className="bg-white rounded-3xl shadow-lg p-6 w-[55%] max-h-[70vh] flex flex-col">
         {/* 标题部分 */}
         <div className="flex gap-1 items-center text-indigo-500 mb-2">
           <svg
