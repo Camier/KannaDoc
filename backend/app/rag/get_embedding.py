@@ -20,7 +20,7 @@ async def get_embeddings_from_httpx(
     ],
     endpoint: Literal["embed_text", "embed_image"],
     embedding_model: Literal[
-        "local_colqwen", "jina_embedding_v4"
+        "local_colqwen", "jina_embeddings_v4"
     ] = settings.embedding_model,
     jina_api_key: Optional[str] = settings.jina_api_key,
     jina_task: Optional[str] = None,
@@ -31,12 +31,12 @@ async def get_embeddings_from_httpx(
     Args:
         data: 输入数据 - 文本时为list[str]，图片时为list[BytesIO]或本地请求格式
         endpoint: 端点类型（embed_text/embed_image）
-        embedding_method: 嵌入方法（local/jina_embedding_v4）
+        embedding_method: 嵌入方法（local_colqwen/jina_embeddings_v4）
         jina_api_key: Jina API密钥（使用Jina时必需）
         jina_task: 覆盖默认的Jina任务类型（可选）
     """
     try:
-        if embedding_model == "jina_embedding_v4":
+        if embedding_model == "jina_embeddings_v4":
             return await _get_jina_embeddings(
                 data=data,
                 endpoint=endpoint,
@@ -180,10 +180,10 @@ async def _get_jina_embeddings(
     async with httpx.AsyncClient() as client:
         try:
             logger.info(
-                f"Sending request to Jina API | URL: {settings.jina_embedding_v4_url} | Embedding Type: {endpoint}"
+                f"Sending request to Jina API | URL: {settings.jina_embeddings_v4_url} | Embedding Type: {endpoint}"
             )
             response = await client.post(
-                settings.jina_embedding_v4_url,
+                settings.jina_embeddings_v4_url,
                 headers=headers,
                 json=payload,
                 timeout=600.0,  # Jina API通常响应更快

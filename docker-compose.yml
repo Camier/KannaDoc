@@ -274,7 +274,7 @@ services:
       - EMBEDDING_IMAGE_DPI=${EMBEDDING_IMAGE_DPI}
       - EMBEDDING_MODEL=${EMBEDDING_MODEL}
       - JINA_API_KEY=${JINA_API_KEY}
-      - JINA_EMBEDDING_V4_URL=${JINA_EMBEDDING_V4_URL}
+      - JINA_EMBEDDINGS_V4_URL=${JINA_EMBEDDINGS_V4_URL}
     networks:
       - layra-net
     healthcheck:

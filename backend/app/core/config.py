@@ -41,9 +41,9 @@ class Settings(BaseSettings):
     unoserver_host: str = "unoserver"
     unoserver_base_port: int = 2003
     embedding_image_dpi: int = 200
-    embedding_model: str = "local_colqwen" # "local_colqwen" or "jina_embedding_v4",
-    jina_api_key: str = "" # embedding_model = "jina_embedding_v4" 时生效
-    jina_embedding_v4_url:str = "https://api.jina.ai/v1/embeddings" # embedding_model = "jina_embedding_v4" 时生效
+    embedding_model: str = "local_colqwen" # "local_colqwen" or "jina_embeddings_v4",
+    jina_api_key: str = "" # embedding_model = "jina_embeddings_v4" 时生效
+    jina_embeddings_v4_url:str = "https://api.jina.ai/v1/embeddings" # embedding_model = "jina_embeddings_v4" 时生效
 
     class Config:
         env_file = "../.env"

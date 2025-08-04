@@ -40,6 +40,8 @@
 
 ---
 
+> **🚀 New Jina-Embeddings-v4 API support eliminates local GPU requirements**
+
 **LAYRA** is the world’s first “visual-native” AI automation engine. It **sees documents like a human**, preserves layout and graphical elements, and executes **arbitrarily complex workflows** with full Python control. From vision-driven Retrieval-Augmented Generation (RAG) to multi-step agent workflow orchestration, LAYRA empowers you to build next-generation intelligent systems—no limits, no compromises.
 
 Built for **Enterprise-Grade** deployment, LAYRA features:
@@ -47,19 +49,19 @@ Built for **Enterprise-Grade** deployment, LAYRA features:
 - **🧑‍💻 Modern Frontend:** Built with Next.js 15 (TypeScript) & TailwindCSS 4.0 for a snappy, developer-friendly UI.
 - **⚡ High-Performance Backend:** FastAPI-powered with async integration for Redis, MySQL, MongoDB, Kafka & MinIO – engineered for high concurrency.
 - **🔩 Decoupled Service Architecture**: Independent services deployed in dedicated containers, enabling scaling on demand and fault isolation.
-- **🎯 Visual-Native Document Understanding:** Leverages ColQwen 2.5 to transform documents into semantic vectors stored in Milvus.
+- **🎯 Visual-Native Multimodal Document Understanding:** Leverages ColQwen 2.5/Jina-Embeddings-v4 to transform documents into semantic vectors stored in Milvus.
 - **🚀 Powerful Workflow Engine:** Construct complex, loop-nested, and debuggable workflows with full Python execution and human-in-the-loop capabilities.
 
 ---
 
 ## 📚 Table of Contents
 
+- [🖼️ Screenshots](#screenshots)
 - [🚀 Quick Start](#quick-start)
 - [📖 Tutorial Guide](#tutorial-guide)
 - [❓ Why LAYRA?](#why-layra)
 - [⚡️ Core Superpowers](#core-superpowers)
 - [🚀 Latest Updates](#latest-updates)
-- [🖼️ Screenshots](#screenshots)
 - [🧠 System Architecture](#system-architecture)
 - [🧰 Tech Stack](#tech-stack)
 - [⚙️ Deployment](#deployment)
@@ -71,6 +73,30 @@ Built for **Enterprise-Grade** deployment, LAYRA features:
 
 ---
 
+<h2 id="screenshots">🖼️ Screenshots</h2>
+
+- ##### LAYRA's web design consistently adheres to a minimalist philosophy, making it more accessible to new users.
+
+Explore LAYRA's powerful interface and capabilities through these visuals:
+
+1. **Homepage - Your Gateway to LAYRA**  
+   ![Homepage Screenshot](./assets/homepage.png)
+
+2. **Knowledge Base - Centralized Document Hub**  
+   ![Knowledge Base Screenshot](./assets/knowledgebase.png)
+
+3. **Interactive Dialogue - Layout-Preserving Answers**
+   ![Layout-Preserving Answers](./assets/dialog.png)
+
+4. **Workflow Builder - Drag-and-Drop Agent Creation**  
+   ![Workflow Screenshot](./assets/workflow1.png)
+
+5. **Workflow Builder - MCP Example**  
+   ![mcp Screenshot](./assets/mcp.png)
+   ![mcp Screenshot](./assets/mcp2.png)
+
+---
+
 <h2 id="quick-start">🚀 Quick Start</h2>
 
 #### 📋 Prerequisites
@@ -78,7 +104,7 @@ Built for **Enterprise-Grade** deployment, LAYRA features:
 Before starting, ensure your system meets these requirements:
 
 1. **Docker** and **Docker Compose** installed
-2. **NVIDIA Container Toolkit** configured (for GPU acceleration)
+2. **NVIDIA Container Toolkit** configured (Ignore if not deploying ColQwen locally)
 
 #### ⚙️ Installation Steps
 
@@ -97,11 +123,35 @@ vim .env
 # - MODEL_BASE_URL (model download source)
 ```
 
+**For Jina (cloud API) Embeddings v4 users:**
+
+```bash
+vim .env
+EMBEDDING_IMAGE_DPI=100 # DPI for document-to-image conversion. Recommended: 100 - 200 (12.5k - 50k tokens/img)  
+EMBEDDING_MODEL=jina_embeddings_v4
+JINA_API_KEY=your_jina_api_key
+JINA_EMBEDDINGS_V4_URL=https://api.jina.ai/v1/embeddings 
+```
+
+> ⚠️ Important: If using `Jina-embeddings-v4`, you must enable the **Output multi-vector embeddings** option on the Jina official website.
+
 ##### 2. Build and Start Service
+
+**Option A**: Local ColQwen deployment (recommended for GPUs with >16GB VRAM)
 
 ```bash
 # Initial startup will download ~15GB model weights (be patient)
 docker compose up -d --build
+
+# Monitor logs in real-time (replace <container_name> with actual name)
+docker compose logs -f <container_name>
+```
+
+**Option B**: Jina-embeddings-v4 API service (for limited/no GPU resources)
+
+```bash
+# Initial startup will not download any model weights (fast!)
+docker compose  -f docker-compose-no-local-model.yml up -d --build
 
 # Monitor logs in real-time (replace <container_name> with actual name)
 docker compose logs -f <container_name>
@@ -189,7 +239,7 @@ Traditional RAG systems fail because they:
   **Integrate user input** at critical decision points to review, adjust, or direct model reasoning. Enables collaborative AI workflows with dynamic human oversight.
 
 - **👁️ Visual-First Multimodal RAG**  
-  Features LAYRA’s proprietary **pure visual embedding system**, delivering lossless document understanding across **50+ formats** (PDF, DOCX, XLSX, PPTX, etc.). The AI actively "sees" your content.
+  Features LAYRA’s proprietary **pure visual embedding system**, delivering lossless document understanding across **100+ formats** (PDF, DOCX, XLSX, PPTX, etc.). The AI actively "sees" your content.
 
 - **🧠 Chat Memory & MCP Integration**
 
@@ -228,6 +278,13 @@ Traditional RAG systems fail because they:
 
 <h2 id="latest-updates">🚀 Latest Updates</h2>
 
+**(2025.8.4) ✨ Expanded Embedding Model Support**:
+
+- **More Embedding Model Support**:
+  - `colqwen` (Local GPU - high performance)
+  - `jina-embeddings-v4` (Cloud API - zero GPU requirements)
+- **New Chinese language support**
+
 **(2025.6.2) Workflow Engine Now Available**:
 
 - **Breakpoint Debugging**: Debug workflows interactively with pause/resume functionality.
@@ -236,7 +293,7 @@ Traditional RAG systems fail because they:
 - **LLM Integration**:
   - Automatic JSON output parsing for structured responses.
   - Persistent conversation memory across nodes.
-  - File uploads and knowledge-base retrieve with **multi-modal RAG** supporting 50+ formats (PDF, DOCX, XLSX, PPTX, etc.).
+  - File uploads and knowledge-base retrieve with **multi-modal RAG** supporting 100+ formats (PDF, DOCX, XLSX, PPTX, etc.).
 
 **(2025.4.6) First Trial Version Now Available**:  
  The first testable version of LAYRA has been released! Users can now upload PDF documents, ask questions, and receive layout-aware answers. We’re excited to see how this feature can help with real-world document understanding.
@@ -247,30 +304,6 @@ Traditional RAG systems fail because they:
   - Backend fully optimized for scalable data flow with **FastAPI**, **Milvus**, **Redis**, **MongoDB**, and **MinIO**
 
 Stay tuned for future updates and feature releases!
-
----
-
-<h2 id="screenshots">🖼️ Screenshots</h2>
-
-- ##### LAYRA's web design consistently adheres to a minimalist philosophy, making it more accessible to new users.
-
-Explore LAYRA's powerful interface and capabilities through these visuals:
-
-1. **Homepage - Your Gateway to LAYRA**  
-   ![Homepage Screenshot](./assets/homepage.png)
-
-2. **Knowledge Base - Centralized Document Hub**  
-   ![Knowledge Base Screenshot](./assets/knowledgebase.png)
-
-3. **Interactive Dialogue - Layout-Preserving Answers**
-   ![Layout-Preserving Answers](./assets/dialog.png)
-
-4. **Workflow Builder - Drag-and-Drop Agent Creation**  
-   ![Workflow Screenshot](./assets/workflow1.png)
-
-5. **Workflow Builder - MCP Example**  
-   ![mcp Screenshot](./assets/mcp.png)
-   ![mcp Screenshot](./assets/mcp2.png)
 
 ---
 
@@ -286,7 +319,7 @@ The query goes through embedding → vector retrieval → anser generation:
 
 ### 📤 Upload & Indexing Flow
 
-PDFs are parsed into images and embedded visually via ColQwen2.5, with metadata and files stored in appropriate databases:
+PDFs are parsed into images and embedded visually via ColQwen2.5/Jina-Embeddings-v4, with metadata and files stored in appropriate databases:
 
 ![Upload Architecture](./assets/upload.png)
 
@@ -331,7 +364,7 @@ The workflow execution follows an **event-driven**, **stateful debugging** patte
 
 **Models & RAG**:
 
-- Embedding: `colqwen2.5-v0.2`
+- Embedding: `colqwen2.5-v0.2` `jina-embeddings-v4`
 - LLM Serving: `Qwen2.5-VL series (or any OpenAI-compatible model)`
   [LOCAL DEPLOYMENT NOTE](https://liweiphys.github.io/layra/docs/RAG-Chat)
 
@@ -344,7 +377,7 @@ The workflow execution follows an **event-driven**, **stateful debugging** patte
 Before starting, ensure your system meets these requirements:
 
 1. **Docker** and **Docker Compose** installed
-2. **NVIDIA Container Toolkit** configured (for GPU acceleration)
+2. **NVIDIA Container Toolkit** configured (Ignore if not deploying ColQwen locally)
 
 #### ⚙️ Installation Steps
 
@@ -363,11 +396,35 @@ vim .env
 # - MODEL_BASE_URL (model download source)
 ```
 
+**For Jina (cloud API) Embeddings v4 users:**
+
+```bash
+vim .env
+EMBEDDING_IMAGE_DPI=100 # DPI for document-to-image conversion. Recommended: 100 - 200 (12.5k - 50k tokens/img)  
+EMBEDDING_MODEL=jina_embeddings_v4
+JINA_API_KEY=your_jina_api_key
+JINA_EMBEDDINGS_V4_URL=https://api.jina.ai/v1/embeddings 
+```
+
+> ⚠️ Important: If using Jina-embeddings-v4, you must enable the **Output multi-vector embeddings** option on the Jina official website.
+
 ##### 2. Build and Start Service
+
+**Option A**: Local ColQwen deployment (recommended for GPUs with >16GB VRAM)
 
 ```bash
 # Initial startup will download ~15GB model weights (be patient)
 docker compose up -d --build
+
+# Monitor logs in real-time (replace <container_name> with actual name)
+docker compose logs -f <container_name>
+```
+
+**Option B**: Jina-embeddings-v4 API service (for limited/no GPU resources)
+
+```bash
+# Initial startup will download ~15GB model weights (be patient)
+docker compose  -f docker-compose-no-local-model.yml up -d --build
 
 # Monitor logs in real-time (replace <container_name> with actual name)
 docker compose logs -f <container_name>

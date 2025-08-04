@@ -40,6 +40,8 @@
 
 ---
 
+> **🚀 新增Jina-Embeddings-v4官方API支持，彻底消除部署LAYRA的GPU门槛**
+
 **LAYRA** 是全球首个“视觉原生”的 AI 自动化引擎。它能**像人类一样阅读文档**，保留布局和图形元素，并通过完整的 Python 控制执行**任意复杂的工作流**。从视觉驱动的检索增强生成（RAG）到多步骤智能体工作流编排，LAYRA 助您构建下一代智能系统——无限制，无妥协。
 
 专为**企业级部署**而构建，LAYRA 具备以下特性：
@@ -47,19 +49,19 @@
 - **🧑‍💻 现代化前端：** 基于 Next.js 15 (TypeScript) 和 TailwindCSS 4.0 构建，提供响应迅捷、开发者友好的用户界面。
 - **⚡ 高性能后端：** 基于 FastAPI， 集成全异步 Redis、MySQL、MongoDB、Kafka 和 MinIO——专为高并发设计。
 - **🔩 服务解耦架构：** 各服务独立部署在专用容器中，支持按需扩展与故障隔离。
-- **🎯 视觉原生文档理解：** 利用 ColQwen2.5 将文档转换为语义向量，并存储于 Milvus 向量数据库中。
+- **🎯 视觉原生文档理解：** 利用 ColQwen2.5/Jina-Embeddings-v4 将文档转换为语义向量，并存储于 Milvus 向量数据库中。
 - **🚀 强大的工作流引擎：** 可构建复杂、循环嵌套且可调试的工作流，具备完整的 Python 执行能力和人机协同（Human-in-the-loop）功能。
 
 ---
 
 ## 📚 目录
 
+- [🖼️ LAYRA 截图](#截图)
 - [🚀 快速开始](#快速开始)
 - [📖 教程](#教程)
 - [❓ 为什么选择 LAYRA？](#为什么选择layra)
 - [⚡️ 核心超能力](#核心超能力)
 - [🚀 最新更新](#最新更新)
-- [🖼️ LAYRA 截图](#截图)
 - [🧠 系统架构](#系统架构)
 - [🧰 技术栈](#技术栈)
 - [⚙️ 部署指南](#部署指南)
@@ -71,6 +73,30 @@
 
 ---
 
+<h2 id="截图">🖼️ LAYRA截图</h2>
+
+- ##### LAYRA 的网页设计始终秉持简约理念，使其更易于新用户上手。
+
+通过以下这些截图展示，探索 LAYRA 简约的界面和功能
+
+1. **首页 - LAYRA 入口**  
+   ![首页截图](./assets/homepage.png)
+
+2. **知识库 - 集中式文档中心**  
+   ![知识库截图](./assets/knowledgebase.png)
+
+3. **交互对话 - 保留布局的答案**  
+   ![对话截图](./assets/dialog.png)
+
+4. **工作流构建器 - 拖拽式智能体创建**  
+   ![工作流截图](./assets/workflow1.png)
+
+5. **工作流构建器 - MCP 获取天气案例**  
+   ![mcp Screenshot](./assets/mcp.png)
+   ![mcp Screenshot](./assets/mcp2.png)
+
+---
+
 <h2 id="快速开始">🚀 快速开始</h2>
 
 #### 📋 前置条件
@@ -78,7 +104,7 @@
 开始前请确保系统满足：
 
 1. 已安装 **Docker** 和 **Docker Compose**
-2. 已配置 **NVIDIA Container Toolkit**（GPU 加速所需）
+2. 已配置 **NVIDIA Container Toolkit**（选择jina-embeddings-v4模型，并且不在本地部署ColQwen，可忽略）
 
 #### ⚙️ 安装步骤
 
@@ -97,11 +123,35 @@ vim .env
 # - MODEL_BASE_URL（模型下载源）
 ```
 
+**对于选择`Jina-Embeddings-v4`API的用户:**
+
+```bash
+vim .env
+EMBEDDING_IMAGE_DPI=100 # DPI for document-to-image conversion. Recommended: 100 - 200 (12.5k - 50k tokens/img)  
+EMBEDDING_MODEL=jina_embeddings_v4
+JINA_API_KEY=your_jina_api_key
+JINA_EMBEDDINGS_V4_URL=https://api.jina.ai/v1/embeddings 
+```
+
+> ⚠️ 重要: 如果使用`Jina-embeddings-v4`,你必须在jina官网勾选 **输出多向量**选项.
+
 ##### 2. 构建并启动服务
+
+**选项A**: 本地部署ColQwen2.5 (推荐GPUs >16GB VRAM)
 
 ```bash
 # 首次启动将下载约15GB模型（请耐心等待）
 docker compose up -d --build
+
+# 实时监控日志（将<container_name>替换为实际容器名）
+docker compose logs -f <container_name>
+```
+
+**选项B**: Jina-embeddings-v4 API service (for limited/no GPU resources)
+
+```bash
+# 首次启动不会下载任何模型权重（快速启动！）
+docker compose  -f docker-compose-no-local-model.yml up -d --build
 
 # 实时监控日志（将<container_name>替换为实际容器名）
 docker compose logs -f <container_name>
@@ -181,7 +231,7 @@ LAYRA 的**视觉 RAG 引擎**革新了文档理解能力，但其真正威力�
 - **👥 人机协同集成**  
   在关键决策点**集成人工输入**进行审查、调整或引导模型推理
 - **👁️ 视觉优先多模态 RAG**  
-  采用 LAYRA 专利**纯视觉嵌入系统**，在**50+格式**（PDF/DOCX/XLSX/PPTX 等）中实现无损文档理解
+  采用 LAYRA 专利**纯视觉嵌入系统**，在**100+格式**（PDF/DOCX/XLSX/PPTX 等）中实现无损文档理解
 - **🧠 会话记忆与 MCP 集成**
   - **MCP 集成** 访问超越原生上下文窗口的实时动态信息
   - **会话记忆** 通过会话记忆保持上下文连续性
@@ -211,6 +261,13 @@ LAYRA 的**视觉 RAG 引擎**革新了文档理解能力，但其真正威力�
 
 <h2 id="最新更新">🚀 最新更新</h2>
 
+**(2025.8.4) ✨ 多种embedding模型支持**:
+
+- **多种embedding模型支持**:
+  - `colqwen` (本地GPU-高性能)
+  - `jina-embeddings-v4` (官方API-无GPU需求)
+- **新增高质量官方中文支持**
+
 **(2025.6.2) 工作流引擎正式发布**：
 
 - **断点调试**：通过暂停/恢复功能交互式调试工作流
@@ -219,7 +276,7 @@ LAYRA 的**视觉 RAG 引擎**革新了文档理解能力，但其真正威力�
 - **LLM 集成**：
   - 自动 JSON 解析输出结构化响应
   - 跨节点会话记忆
-  - 支持**50+格式**的多模态 RAG 文件上传与知识库检索
+  - 支持**100+格式**的多模态 RAG 文件上传与知识库检索
 
 **(2025.4.6) 首个试用版发布**：  
  LAYRA 首个可测试版本上线！用户可上传 PDF 文档、提问并获取保留布局的答案。
@@ -230,30 +287,6 @@ LAYRA 的**视觉 RAG 引擎**革新了文档理解能力，但其真正威力�
   - 后端采用**FastAPI/Milvus/Redis/MongoDB/MinIO**全栈优化
 
 敬请期待更多更新！
-
----
-
-<h2 id="截图">🖼️ LAYRA截图</h2>
-
-- ##### LAYRA 的网页设计始终秉持简约理念，使其更易于新用户上手。
-
-通过以下这些截图展示，探索 LAYRA 简约的界面和功能
-
-1. **首页 - LAYRA 入口**  
-   ![首页截图](./assets/homepage.png)
-
-2. **知识库 - 集中式文档中心**  
-   ![知识库截图](./assets/knowledgebase.png)
-
-3. **交互对话 - 保留布局的答案**  
-   ![对话截图](./assets/dialog.png)
-
-4. **工作流构建器 - 拖拽式智能体创建**  
-   ![工作流截图](./assets/workflow1.png)
-
-5. **工作流构建器 - MCP 获取天气案例**  
-   ![mcp Screenshot](./assets/mcp.png)
-   ![mcp Screenshot](./assets/mcp2.png)
 
 ---
 
@@ -268,7 +301,7 @@ LAYRA 的管道设计遵循**异步优先**、**视觉原生**和**可扩展的�
 
 ### 📤 上传与索引流程
 
-PDF 解析为图像 →ColQwen2.5 视觉嵌入 → 元数据/文件存储：
+PDF 解析为图像 →ColQwen2.5/Jina-Embeddings-v4 视觉嵌入 → 元数据/文件存储：
 ![上传架构](./assets/upload.png)
 
 ### 📤 工作流执行（Chatflow）
@@ -301,7 +334,7 @@ PDF 解析为图像 →ColQwen2.5 视觉嵌入 → 元数据/文件存储：
 
 **模型与 RAG**：
 
-- 嵌入模型：`colqwen2.5-v0.2`
+- 嵌入模型：`colqwen2.5-v0.2` `jina-embeddings-v4`
 - LLM 服务：`Qwen2.5-VL系列（或任意OpenAI兼容模型）`
   [本地部署注意事项](https://liweiphys.github.io/layra/docs/RAG-Chat)
 
@@ -312,7 +345,7 @@ PDF 解析为图像 →ColQwen2.5 视觉嵌入 → 元数据/文件存储：
 #### 📋 前提条件
 
 1. 已安装 **Docker** 和 **Docker Compose**
-2. 已配置 **NVIDIA Container Toolkit**
+2. 已配置 **NVIDIA Container Toolkit**（选择jina-embeddings-v4模型，并且不在本地部署ColQwen，可忽略）
 
 #### ⚙️ 安装步骤
 
@@ -324,11 +357,38 @@ cd layra
 vim .env  # 修改SERVER_IP等参数
 ```
 
-##### 2. 构建并启动
+**对于选择 `Jina-Embeddings-v4` API的用户:**
 
 ```bash
-docker compose up -d --build  # 首次下载约15GB模型
-docker compose logs -f <容器名>  # 实时日志
+vim .env
+EMBEDDING_IMAGE_DPI=100 # 文档转图片的DPI，推荐: 100 - 200 (12.5k - 50k tokens/img)  
+EMBEDDING_MODEL=jina_embeddings_v4
+JINA_API_KEY=your_jina_api_key
+JINA_EMBEDDINGS_V4_URL=https://api.jina.ai/v1/embeddings 
+```
+
+> ⚠️ 重要: 如果使用`Jina-embeddings-v4`,你必须在jina官网勾选 `输出多向量` 选项.
+
+##### 2. 构建并启动服务
+
+**选项A**: 本地部署ColQwen2.5 (推荐GPUs >16GB VRAM)
+
+```bash
+# 首次启动将下载约15GB模型（请耐心等待）
+docker compose up -d --build
+
+# 实时监控日志（将<container_name>替换为实际容器名）
+docker compose logs -f <container_name>
+```
+
+**选项B**: Jina-embeddings-v4 API service (for limited/no GPU resources)
+
+```bash
+# 首次启动不会下载任何模型权重（快速启动！）
+docker compose  -f docker-compose-no-local-model.yml up -d --build
+
+# 实时监控日志（将<container_name>替换为实际容器名）
+docker compose logs -f <container_name>
 ```
 
 > **注意**：如果 `docker compose` 遇到问题，尝试使用 `docker-compose`。同时，确保你使用的是 Docker Compose v2，旧版本不被 LAYRA 支持。你可以通过 `docker compose version` 或 `docker-compose version` 来检查当前版本。
