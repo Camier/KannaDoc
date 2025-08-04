@@ -133,8 +133,6 @@ JINA_API_KEY=your_jina_api_key
 JINA_EMBEDDINGS_V4_URL=https://api.jina.ai/v1/embeddings 
 ```
 
-> ⚠️ 重要: 如果使用`Jina-embeddings-v4`,你必须在jina官网勾选 **输出多向量**选项.
-
 ##### 2. 构建并启动服务
 
 **选项A**: 本地部署ColQwen2.5 (推荐GPUs >16GB VRAM)
@@ -151,7 +149,7 @@ docker compose logs -f <container_name>
 
 ```bash
 # 首次启动不会下载任何模型权重（快速启动！）
-docker compose  -f docker-compose-no-local-model.yml up -d --build
+docker compose -f docker-compose-no-local-embedding.yml up -d --build
 
 # 实时监控日志（将<container_name>替换为实际容器名）
 docker compose logs -f <container_name>
@@ -367,8 +365,6 @@ JINA_API_KEY=your_jina_api_key
 JINA_EMBEDDINGS_V4_URL=https://api.jina.ai/v1/embeddings 
 ```
 
-> ⚠️ 重要: 如果使用`Jina-embeddings-v4`,你必须在jina官网勾选 `输出多向量` 选项.
-
 ##### 2. 构建并启动服务
 
 **选项A**: 本地部署ColQwen2.5 (推荐GPUs >16GB VRAM)
@@ -385,7 +381,7 @@ docker compose logs -f <container_name>
 
 ```bash
 # 首次启动不会下载任何模型权重（快速启动！）
-docker compose  -f docker-compose-no-local-model.yml up -d --build
+docker compose -f docker-compose-no-local-embedding.yml up -d --build
 
 # 实时监控日志（将<container_name>替换为实际容器名）
 docker compose logs -f <container_name>

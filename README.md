@@ -133,8 +133,6 @@ JINA_API_KEY=your_jina_api_key
 JINA_EMBEDDINGS_V4_URL=https://api.jina.ai/v1/embeddings 
 ```
 
-> ⚠️ Important: If using `Jina-embeddings-v4`, you must enable the **Output multi-vector embeddings** option on the Jina official website.
-
 ##### 2. Build and Start Service
 
 **Option A**: Local ColQwen deployment (recommended for GPUs with >16GB VRAM)
@@ -151,7 +149,7 @@ docker compose logs -f <container_name>
 
 ```bash
 # Initial startup will not download any model weights (fast!)
-docker compose  -f docker-compose-no-local-model.yml up -d --build
+docker compose -f docker-compose-no-local-embedding.yml up -d --build
 
 # Monitor logs in real-time (replace <container_name> with actual name)
 docker compose logs -f <container_name>
@@ -406,8 +404,6 @@ JINA_API_KEY=your_jina_api_key
 JINA_EMBEDDINGS_V4_URL=https://api.jina.ai/v1/embeddings 
 ```
 
-> ⚠️ Important: If using Jina-embeddings-v4, you must enable the **Output multi-vector embeddings** option on the Jina official website.
-
 ##### 2. Build and Start Service
 
 **Option A**: Local ColQwen deployment (recommended for GPUs with >16GB VRAM)
@@ -424,7 +420,7 @@ docker compose logs -f <container_name>
 
 ```bash
 # Initial startup will download ~15GB model weights (be patient)
-docker compose  -f docker-compose-no-local-model.yml up -d --build
+docker compose -f docker-compose-no-local-embedding.yml up -d --build
 
 # Monitor logs in real-time (replace <container_name> with actual name)
 docker compose logs -f <container_name>
