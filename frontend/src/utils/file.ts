@@ -14,6 +14,12 @@ export const getFileIcon = (fileExtension?: string) => {
     case 'webp':
     case 'svg':
     case 'ico':
+    case 'tiff':
+    case 'tif':
+    case 'dib':
+    case 'jfif':
+    case 'pjpeg':
+    case 'pjp':
       return "🖼️";
 
     // PDF文档
@@ -111,7 +117,6 @@ export const base64Processor = {
 };
 
 export const SupportUploadFormat = 
-  ".jpg,.jpeg,.png,.gif,.bmp,.webp,.ico,.png,.odm,.sgl,.odt,.ott,.sxw,.stw,.fodt,.xml,.docx,.docm,.dotx,.dotm,.doc,.dot,.wps,.pdb,.pdf,.hwp,.html,.htm,.lwp,.psw,.rft,.sdw,.vor,.txt,.wpd,.oth,.ods,.ots,.sxc,.stc,.fods,.xml,.xlsx,.xlsm,.xltm,.xltx,.xlsb,.xls,.xlc,.xlm,.xlw,.xlk,.sdc,.vor,.dif,.wk1,.wks,.123,.pxl,.wb2,.csv,.odp,.otp,.sti,.sxd,.fodp,.xml,.pptx,.pptm,.ppsx,.potm,.potx,.ppt,.pps,.pot,.sdd,.vor,.sdp,.odg,.otg,.sxd,.std,.sgv,.sda,.vor,.sdd,.cdr,.svg,.vsd,.vst,.html,.htm,.stw,.sxg,.odf,.sxm,.smf,.mml,.odb";
-
+  ".jpg,.jpeg,.png,.gif,.bmp,.webp,.ico,.tiff,.tif,.dib,.jfif,.pjpeg,.pjp,.odm,.sgl,.odt,.ott,.sxw,.stw,.fodt,.xml,.docx,.docm,.dotx,.dotm,.doc,.dot,.wps,.pdb,.pdf,.hwp,.html,.htm,.lwp,.psw,.rft,.sdw,.vor,.txt,.wpd,.oth,.ods,.ots,.sxc,.stc,.fods,.xml,.xlsx,.xlsm,.xltm,.xltx,.xlsb,.xls,.xlc,.xlm,.xlw,.xlk,.sdc,.vor,.dif,.wk1,.wks,.123,.pxl,.wb2,.csv,.odp,.otp,.sti,.sxd,.fodp,.xml,.pptx,.pptm,.ppsx,.potm,.potx,.ppt,.pps,.pot,.sdd,.vor,.sdp,.odg,.otg,.sxd,.std,.sgv,.sda,.vor,.sdd,.cdr,.svg,.vsd,.vst,.html,.htm,.stw,.sxg,.odf,.sxm,.smf,.mml,.odb";
   export const SupportFileFormat = 
-  ["jpg","jpeg","png","gif","bmp","webp","ico","png","odm","sgl","odt","ott","sxw","stw","fodt","xml","docx","docm","dotx","dotm","doc","dot","wps","pdb","pdf","hwp","html","htm","lwp","psw","rft","sdw","vor","txt","wpd","oth","ods","ots","sxc","stc","fods","xml","xlsx","xlsm","xltm","xltx","xlsb","xls","xlc","xlm","xlw","xlk","sdc","vor","dif","wk1","wks","123","pxl","wb2","csv","odp","otp","sti","sxd","fodp","xml","pptx","pptm","ppsx","potm","potx","ppt","pps","pot","sdd","vor","sdp","odg","otg","sxd","std","sgv","sda","vor","sdd","cdr","svg","vsd","vst","html","htm","stw","sxg","odf","sxm","smf","mml","odb"]
+  ["jpg","jpeg","png","gif","bmp","webp","ico","tiff", "tif", "dib", "jfif", "pjpeg", "pjp","odm","sgl","odt","ott","sxw","stw","fodt","xml","docx","docm","dotx","dotm","doc","dot","wps","pdb","pdf","hwp","html","htm","lwp","psw","rft","sdw","vor","txt","wpd","oth","ods","ots","sxc","stc","fods","xml","xlsx","xlsm","xltm","xltx","xlsb","xls","xlc","xlm","xlw","xlk","sdc","vor","dif","wk1","wks","123","pxl","wb2","csv","odp","otp","sti","sxd","fodp","xml","pptx","pptm","ppsx","potm","potx","ppt","pps","pot","sdd","vor","sdp","odg","otg","sxd","std","sgv","sda","vor","sdd","cdr","svg","vsd","vst","html","htm","stw","sxg","odf","sxm","smf","mml","odb"]

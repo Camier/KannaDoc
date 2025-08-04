@@ -655,7 +655,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                     onChange={(e) =>
                       updateVlmModelConfig(node.id, (prev) => ({
                         ...prev,
-                        temperature: parseFloat(e.target.value),
+                        temperature: parseFloat(e.target.value) || 0,
                       }))
                     }
                     disabled={node.data.modelConfig?.useTemperatureDefault}
@@ -710,7 +710,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                     onChange={(e) =>
                       updateVlmModelConfig(node.id, (prev) => ({
                         ...prev,
-                        maxLength: parseInt(e.target.value),
+                        maxLength: parseInt(e.target.value) || 1024,
                       }))
                     }
                     disabled={node.data.modelConfig?.useMaxLengthDefault}
@@ -766,7 +766,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                     onChange={(e) =>
                       updateVlmModelConfig(node.id, (prev) => ({
                         ...prev,
-                        topP: parseFloat(e.target.value),
+                        topP: parseFloat(e.target.value) || 0,
                       }))
                     }
                     disabled={node.data.modelConfig?.useTopPDefault}
@@ -821,7 +821,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                     onChange={(e) =>
                       updateVlmModelConfig(node.id, (prev) => ({
                         ...prev,
-                        topK: parseInt(e.target.value),
+                        topK: parseInt(e.target.value) || 1,
                       }))
                     }
                     disabled={node.data.modelConfig?.useTopKDefault}
@@ -869,6 +869,9 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                       </span>
                     </label>
                   </div>
+                  <p className="block text-[13px] p-2">
+                    {t("suggestedRetrievalScoreThreshold")}
+                  </p>
                   <input
                     type="number"
                     min="0"
@@ -878,7 +881,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                     onChange={(e) =>
                       updateVlmModelConfig(node.id, (prev) => ({
                         ...prev,
-                        scoreThreshold: parseInt(e.target.value),
+                        scoreThreshold: parseInt(e.target.value) || 0,
                       }))
                     }
                     disabled={node.data.modelConfig?.useScoreThresholdDefault}

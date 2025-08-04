@@ -179,17 +179,6 @@ services:
     networks:
       - layra-net
 
-  model-weights-init:
-    build:
-      context: ./init-db
-      dockerfile: Dockerfile
-    volumes:
-      - model_weights:/model_weights
-    environment:
-      - MODEL_BASE_URL=${MODEL_BASE_URL}
-    networks:
-      - layra-net
-
   # 新增 unoserver 服务
   unoserver:
     build:
@@ -225,12 +214,8 @@ services:
         condition: service_healthy
       milvus-standalone:
         condition: service_healthy
-      model-server:
-        condition: service_healthy
       unoserver:
         condition: service_healthy
-      model-weights-init:
-        condition: service_completed_successfully
     volumes:
       - model_weights:/model_weights
       - /var/run/docker.sock:/var/run/docker.sock
@@ -283,34 +268,6 @@ services:
       start_period: 10s
       timeout: 5s
       retries: 10
-
-  model-server:
-    build:
-      context: ./model-server
-    depends_on:
-      model-weights-init:
-        condition: service_completed_successfully
-    volumes:
-      - model_weights:/model_weights
-    environment:
-      - COLBERT_MODEL_PATH=${COLBERT_MODEL_PATH}
-      - NVIDIA_VISIBLE_DEVICES=all  # 暴露所有 GPU
-    networks:
-      - layra-net
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8005/healthy-check"]
-      interval: 30s
-      start_period: 30s
-      timeout: 5s
-      retries: 10
-      # 添加 GPU 支持配置
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1  # 使用 1 块 GPU
-              capabilities: [gpu]
 
   frontend:
     build:

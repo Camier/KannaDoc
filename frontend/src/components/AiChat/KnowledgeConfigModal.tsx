@@ -692,7 +692,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                     onChange={(e) =>
                       setModelConfig((prev) => ({
                         ...prev,
-                        temperature: parseFloat(e.target.value),
+                        temperature: parseFloat(e.target.value) || 0,
                       }))
                     }
                     disabled={modelConfig.useTemperatureDefault}
@@ -747,7 +747,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                     onChange={(e) =>
                       setModelConfig((prev) => ({
                         ...prev,
-                        maxLength: parseInt(e.target.value),
+                        maxLength: parseInt(e.target.value) || 1024,
                       }))
                     }
                     disabled={modelConfig.useMaxLengthDefault}
@@ -803,7 +803,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                     onChange={(e) =>
                       setModelConfig((prev) => ({
                         ...prev,
-                        topP: parseFloat(e.target.value),
+                        topP: parseFloat(e.target.value) || 0,
                       }))
                     }
                     disabled={modelConfig.useTopPDefault}
@@ -858,7 +858,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                     onChange={(e) =>
                       setModelConfig((prev) => ({
                         ...prev,
-                        topK: parseInt(e.target.value),
+                        topK: parseInt(e.target.value) || 1,
                       }))
                     }
                     disabled={modelConfig.useTopKDefault}
@@ -904,6 +904,9 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                       </span>
                     </label>
                   </div>
+                  <p className="block text-[13px] px-1 text-gray-600">
+                    {t("suggestedRetrievalScoreThreshold")}
+                  </p>
                   <input
                     type="number"
                     min="0"
@@ -913,7 +916,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
                     onChange={(e) =>
                       setModelConfig((prev) => ({
                         ...prev,
-                        scoreThreshold: parseInt(e.target.value),
+                        scoreThreshold: parseInt(e.target.value) || 0,
                       }))
                     }
                     disabled={modelConfig.useScoreThresholdDefault}
