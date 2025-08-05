@@ -3,6 +3,7 @@ import UserMenuExpand from "./UserMenuExpand";
 import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { useEffect } from "react";
 
 const Navbar = () => {
   const t = useTranslations("Navbar");
@@ -37,8 +38,7 @@ const Navbar = () => {
       <div
         className={
           navbarButtonStyle +
-          `${
-            pathname === "/ai-chat" ? "bg-indigo-500 text-white" : ""
+          `${pathname.includes("/ai-chat") ? "bg-indigo-500 text-white" : ""
           }  rounded-3xl px-4`
         }
       >
@@ -65,8 +65,7 @@ const Navbar = () => {
       <div
         className={
           navbarButtonStyle +
-          `${
-            pathname === "/work-flow" ? "bg-indigo-500 text-white" : ""
+          `${pathname.includes("/work-flow") ? "bg-indigo-500 text-white" : ""
           }  rounded-3xl px-4`
         }
       >
@@ -99,8 +98,7 @@ const Navbar = () => {
       <div
         className={
           navbarButtonStyle +
-          `${
-            pathname === "/knowledge-base" ? "bg-indigo-500 text-white" : ""
+          `${pathname.includes("/knowledge-base") ? "bg-indigo-500 text-white" : ""
           } rounded-3xl px-4`
         }
       >

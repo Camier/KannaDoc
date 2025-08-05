@@ -55,6 +55,10 @@ const AIChat: React.FC = () => {
     }
   }, [chatId]);
 
+  useEffect(() => {
+    setChatId("")
+  }, [setChatId]);
+
   // Wrap fetchModelConfig with useCallback
   const fetchModelConfig = useCallback(async () => {
     if (user?.name) {
