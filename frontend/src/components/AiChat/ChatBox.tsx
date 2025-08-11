@@ -305,7 +305,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
     if (!container) return;
 
     const handleScroll = () => {
-      const threshold = 100; // 距离底部的阈值
+      const threshold = 20; // 距离底部的阈值
       const isBottom =
         container.scrollHeight - container.scrollTop <=
         container.clientHeight + threshold;
