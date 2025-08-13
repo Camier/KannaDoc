@@ -54,7 +54,7 @@ async def convert_file_to_images(
                     if img.mode in ('RGBA', 'P', 'LA', 'CMYK'):
                         img = img.convert('RGB')
                     img = resize_image_to_a4(img)
-                    images.append(img)
+                    images.append(img.copy())
             
             logger.debug(f"Processed {len(images)} frames from image")
 
