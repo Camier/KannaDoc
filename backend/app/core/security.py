@@ -1,3 +1,14 @@
+"""
+Security utilities for authentication and password hashing.
+
+SECURITY NOTICE: This module previously used a hardcoded password salt.
+The vulnerability has been fixed. The verify_password_legacy() function
+exists ONLY for migrating existing passwords and should be removed
+after all users have migrated.
+
+TODO: Remove verify_password_legacy() after migration complete.
+"""
+
 from fastapi import HTTPException, Depends
 from passlib.context import CryptContext
 from jose import JWTError, jwt
