@@ -97,6 +97,7 @@ async def register(
         username=user.username,
         email=user.email,
         hashed_password=hashed_password,
+        password_migration_required=False,  # New users don't need migration
     )
     db.add(db_user)
     await db.commit()
