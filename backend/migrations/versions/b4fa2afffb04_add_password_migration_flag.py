@@ -4,6 +4,10 @@ Revision ID: b4fa2afffb04
 Revises:
 Create Date: 2026-01-18 14:37:24.307031
 
+This is the first Alembic migration for the project. The users table already
+exists in the database from prior schema setup, so this migration adds the
+password_migration_required column to the existing table.
+
 """
 from typing import Sequence, Union
 

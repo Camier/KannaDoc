@@ -6,7 +6,6 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
 from app.db.mysql_base import Base
 from app.models.user import User
-import os
 
 
 # Use an in-memory SQLite database for testing

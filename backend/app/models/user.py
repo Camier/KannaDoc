@@ -6,15 +6,16 @@ from app.utils.timezone import beijing_time_now
 
 
 class User(Base):
+    """User model for authentication and profile data"""
+
     __tablename__ = "users"
 
-    """注册信息"""
-    id = Column(Integer, primary_key=True, index=True)  # 用户ID，主键
+    id = Column(Integer, primary_key=True, index=True)  # User ID, primary key
     username = Column(
         String(50), unique=True, index=True, nullable=False
-    )  # 用户名，唯一
-    email = Column(String(100), unique=True, index=True, nullable=False)  # 邮箱，唯一
-    hashed_password = Column(String(100), nullable=False)  # 哈希密码
+    )  # Username, unique
+    email = Column(String(100), unique=True, index=True, nullable=False)  # Email, unique
+    hashed_password = Column(String(100), nullable=False)  # Hashed password
     password_migration_required = Column(Boolean, default=True, nullable=False)  # Password migration flag
 
 
