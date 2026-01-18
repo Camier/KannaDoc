@@ -16,7 +16,11 @@ from app.models.user import User
 
 async def main():
     """Check how many users still need migration"""
-    engine = create_async_engine(settings.db_url)
+    try:
+        engine = create_async_engine(settings.db_url)
+    except Exception as e:
+        print(f"[ERROR] Could not connect to database: {e}")
+        sys.exit(1)
 
     async with engine.begin() as conn:
         result = await conn.execute(
@@ -29,7 +33,7 @@ async def main():
 
     await engine.dispose()
 
-    percentage = (legacy_count / total_count * 100) if total_count > 0 else 0
+    percentage = round(legacy_count / total_count * 100, 1) if total_count else 0
 
     print(f"Password Migration Status:")
     print(f"  Total users: {total_count}")
@@ -38,11 +42,11 @@ async def main():
     print(f"  Remaining: {legacy_count} ({percentage:.1f}%)")
 
     if legacy_count == 0:
-        print("\n✅ Migration complete! You can now remove verify_password_legacy()")
+        print("\n[OK] Migration complete! You can now remove verify_password_legacy()")
     elif percentage < 5:
-        print(f"\n⚠️  Almost complete! {legacy_count} users still need to log in.")
+        print(f"\n[WARN] Almost complete! {legacy_count} users still need to log in.")
     else:
-        print(f"\n🔄 Migration in progress. {percentage:.1f}% of users still need to log in.")
+        print(f"\n[INFO] Migration in progress. {percentage:.1f}% of users still need to log in.")
 
 
 if __name__ == "__main__":
