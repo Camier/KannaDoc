@@ -61,3 +61,114 @@ def test_verify_password_legacy_function_exists():
         assert 'def verify_password_legacy' in content
         assert 'Legacy password verification' in content
         assert 'mynameisliwei,nicetomeetyou!' in content
+
+
+# Task 3: Tests for authenticate_user migration logic
+import pytest
+from unittest.mock import Mock, AsyncMock
+from app.core.security import authenticate_user
+
+
+@pytest.mark.asyncio
+async def test_authenticate_user_migrates_legacy_password():
+    """Test that authenticate_user migrates legacy passwords on successful login"""
+    # Generate a proper legacy hash
+    import bcrypt
+    password = "testpassword"
+    salt = "mynameisliwei,nicetomeetyou!"
+    legacy_hash = bcrypt.hashpw((password + salt).encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+
+    # Create mock user with legacy hash
+    mock_user = Mock()
+    mock_user.hashed_password = legacy_hash
+    mock_user.password_migration_required = True
+    mock_user.username = "testuser"
+
+    # Mock database session - properly chain the async calls
+    mock_db = AsyncMock()
+
+    # Create mock for scalars().first()
+    mock_scalars_instance = Mock()
+    mock_scalars_instance.first.return_value = mock_user
+
+    # result.scalars() is NOT async, returns mock_scalars_instance
+    mock_result = Mock()  # Regular Mock, not AsyncMock!
+    mock_result.scalars.return_value = mock_scalars_instance
+
+    # db.execute() IS async, returns mock_result when awaited
+    mock_db.execute.return_value = mock_result
+
+    # Store original hash for comparison
+    original_hash = mock_user.hashed_password
+
+    # Authenticate with correct password
+    result = await authenticate_user(mock_db, "testuser", "testpassword")
+
+    # Should return user
+    assert result is not None
+    assert result.username == "testuser"
+
+    # Password should be rehashed (different from original)
+    assert result.hashed_password != original_hash
+
+    # Migration flag should be cleared
+    assert result.password_migration_required is False
+
+    # Database should be updated
+    assert mock_db.commit.called
+
+
+@pytest.mark.asyncio
+async def test_authenticate_user_fails_with_wrong_legacy_password():
+    """Test that authenticate_user fails with wrong password"""
+    # Generate a proper legacy hash
+    import bcrypt
+    password = "testpassword"
+    salt = "mynameisliwei,nicetomeetyou!"
+    legacy_hash = bcrypt.hashpw((password + salt).encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+
+    mock_user = Mock()
+    mock_user.hashed_password = legacy_hash
+    mock_user.password_migration_required = True
+
+    mock_db = AsyncMock()
+    mock_scalars_instance = Mock()
+    mock_scalars_instance.first.return_value = mock_user
+    mock_result = Mock()  # Regular Mock, not AsyncMock!
+    mock_result.scalars.return_value = mock_scalars_instance
+    mock_db.execute.return_value = mock_result
+
+    # Authenticate with wrong password
+    result = await authenticate_user(mock_db, "testuser", "wrongpassword")
+
+    # Should return None
+    assert result is None
+
+
+@pytest.mark.asyncio
+async def test_authenticate_user_works_with_new_passwords():
+    """Test that authenticate_user works with already-migrated passwords"""
+    # Create a proper new-style hash (bcrypt without custom salt)
+    import bcrypt
+    new_hash = bcrypt.hashpw(b"newpassword", bcrypt.gensalt()).decode('utf-8')
+
+    mock_user = Mock()
+    mock_user.hashed_password = new_hash
+    mock_user.password_migration_required = False
+    mock_user.username = "testuser"
+
+    mock_db = AsyncMock()
+    mock_scalars_instance = Mock()
+    mock_scalars_instance.first.return_value = mock_user
+    mock_result = Mock()  # Regular Mock, not AsyncMock!
+    mock_result.scalars.return_value = mock_scalars_instance
+    mock_db.execute.return_value = mock_result
+
+    # Authenticate with correct password
+    result = await authenticate_user(mock_db, "testuser", "newpassword")
+
+    # Should return user
+    assert result is not None
+
+    # Password should NOT be updated (already migrated)
+    assert result.hashed_password == new_hash

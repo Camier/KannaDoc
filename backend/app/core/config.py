@@ -45,10 +45,7 @@ class Settings(BaseSettings):
     jina_api_key: str = "" # embedding_model = "jina_embeddings_v4" 时生效
     jina_embeddings_v4_url:str = "https://api.jina.ai/v1/embeddings" # embedding_model = "jina_embeddings_v4" 时生效
 
-    model_config = {"extra": "ignore"}
-
-    class Config:
-        env_file = "../.env"
+    model_config = {"extra": "ignore", "env_file": "../.env"}
 
 
 settings = Settings()

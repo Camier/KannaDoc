@@ -19,11 +19,13 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 
 def verify_password(plain_password, hashed_password):
-    return pwd_context.verify(plain_password + salt, hashed_password)
+    """Verify password using proper bcrypt without custom salt (NEW method)"""
+    return pwd_context.verify(plain_password, hashed_password)
 
 
 def get_password_hash(password):
-    return pwd_context.hash(password + salt)
+    """Hash password using proper bcrypt without custom salt (NEW method)"""
+    return pwd_context.hash(password)
 
 
 # TODO: Remove verify_password_legacy() after password migration complete (Day 90+)
@@ -100,8 +102,38 @@ async def get_current_user(
 
 
 async def authenticate_user(db: AsyncSession, username: str, password: str):
+    """
+    Authenticate a user and migrate legacy passwords if needed.
+
+    Legacy passwords (created with hardcoded salt) will be rehashed
+    using proper bcrypt without custom salt on successful authentication.
+
+    Args:
+        db: Database session
+        username: Username to authenticate
+        password: Plain text password
+
+    Returns:
+        User object if authenticated, None otherwise
+    """
     result = await db.execute(select(User).where(User.username == username))
     user = result.scalars().first()
-    if user and verify_password(password, user.hashed_password):
+
+    if not user:
+        return None
+
+    # Try NEW method first (proper bcrypt without custom salt)
+    if verify_password(password, user.hashed_password):
         return user
+
+    # Try LEGACY method (with hardcoded salt) for migration
+    if hasattr(user, 'password_migration_required') and user.password_migration_required:
+        if verify_password_legacy(password, user.hashed_password):
+            # Migration: Rehash with proper bcrypt and update database
+            user.hashed_password = get_password_hash(password)
+            user.password_migration_required = False
+            await db.commit()
+
+            return user
+
     return None
