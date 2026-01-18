@@ -26,6 +26,25 @@ def get_password_hash(password):
     return pwd_context.hash(password + salt)
 
 
+def verify_password_legacy(plain_password: str, hashed_password: str) -> bool:
+    """
+    Legacy password verification for passwords hashed with custom salt.
+
+    This function exists ONLY for migrating existing passwords that were
+    created using the insecure hardcoded salt. After migration, this
+    function should be removed.
+
+    Args:
+        plain_password: The plain text password to verify
+        hashed_password: The hash created with the old salt method
+
+    Returns:
+        True if password matches, False otherwise
+    """
+    salt = "mynameisliwei,nicetomeetyou!"  # Legacy salt for migration only
+    return pwd_context.verify(plain_password + salt, hashed_password)
+
+
 def create_access_token(data: dict, expires_delta: timedelta = None):
     to_encode = data.copy()
     if expires_delta:
