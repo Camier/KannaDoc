@@ -124,3 +124,7 @@ async def client(db: AsyncSession):
         redis_module.redis = original_redis
         mongo_module.mongodb = original_mongo
         minio_module.async_minio_manager = original_minio
+
+
+# Alias for consistency - both names work the same way
+async_client = client
