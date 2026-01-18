@@ -12,7 +12,6 @@ from app.models.user import User
 from app.utils.timezone import beijing_time_now
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-salt = "mynameisliwei,nicetomeetyou!"
 
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
