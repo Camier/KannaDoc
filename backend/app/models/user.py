@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, Boolean
 from app.db.mysql_base import Base
 import enum
 
@@ -15,6 +15,7 @@ class User(Base):
     )  # 用户名，唯一
     email = Column(String(100), unique=True, index=True, nullable=False)  # 邮箱，唯一
     hashed_password = Column(String(100), nullable=False)  # 哈希密码
+    password_migration_required = Column(Boolean, default=True, nullable=False)  # Password migration flag
 
 
     def __repr__(self):
