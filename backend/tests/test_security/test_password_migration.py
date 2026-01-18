@@ -7,13 +7,17 @@ import os
 from app.core.security import verify_password_legacy, verify_password
 
 
-def test_legacy_verification_with_known_salt():
-    """Test that legacy verification works with the old hardcoded salt"""
-    # This hash was created with: bcrypt.hash("testpassword" + "mynameisliwei,nicetomeetyou!")
-    # Note: Bcrypt uses random salts, so this hash differs from the spec example.
-    # The important thing is that it verifies correctly with the legacy salt.
-    legacy_hash = "$2b$12$Q6uBMW695xzHSnmKiJCfreyXX3/vnkh13LtvGrs/ucOy0Bc1pPOyO"
+@pytest.fixture
+def legacy_hash():
+    """Generate a legacy hash for testing"""
+    import bcrypt
+    password = "testpassword"
+    salt = "mynameisliwei,nicetomeetyou!"
+    return bcrypt.hashpw((password + salt).encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
 
+
+def test_legacy_verification_with_known_salt(legacy_hash):
+    """Test that legacy verification works with the old hardcoded salt"""
     # Legacy verification should work
     assert verify_password_legacy("testpassword", legacy_hash) is True
     assert verify_password_legacy("wrongpassword", legacy_hash) is False

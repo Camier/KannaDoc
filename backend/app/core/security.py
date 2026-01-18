@@ -26,6 +26,7 @@ def get_password_hash(password):
     return pwd_context.hash(password + salt)
 
 
+# TODO: Remove verify_password_legacy() after password migration complete (Day 90+)
 def verify_password_legacy(plain_password: str, hashed_password: str) -> bool:
     """
     Legacy password verification for passwords hashed with custom salt.
@@ -41,8 +42,8 @@ def verify_password_legacy(plain_password: str, hashed_password: str) -> bool:
     Returns:
         True if password matches, False otherwise
     """
-    salt = "mynameisliwei,nicetomeetyou!"  # Legacy salt for migration only
-    return pwd_context.verify(plain_password + salt, hashed_password)
+    legacy_salt = "mynameisliwei,nicetomeetyou!"  # Legacy salt for migration only
+    return pwd_context.verify(plain_password + legacy_salt, hashed_password)
 
 
 def create_access_token(data: dict, expires_delta: timedelta = None):
