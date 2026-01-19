@@ -209,6 +209,74 @@ EMBEDDING_IMAGE_DPI=300  # Higher quality
 MAX_WORKERS=10
 EMBEDDING_IMAGE_DPI=300
 ```
+## 🔍 Deployment Audit & Verification
+
+### Quick Health Check
+```bash
+# Verify all services are running
+docker compose -f docker-compose.thesis.yml ps
+
+# Check backend API health
+curl -s -o /dev/null -w "%{http_code}" http://localhost:8090/api/v1/health/check
+# Should return: 200
+
+# Verify Neo4j accessibility
+curl -s http://localhost:7474 | grep -q "Neo4j" && echo "Neo4j OK"
+```
+
+### Service Status Verification
+```bash
+# Check healthy containers
+docker ps --filter "health=healthy" --format "table {{.Names}}\t{{.Status}}"
+
+# Expected services (all healthy):
+# - layra-backend, layra-mysql, layra-redis, layra-mongodb
+# - layra-milvus-standalone, layra-model-server, layra-neo4j
+# - layra-minio, layra-unoserver, layra-kafka
+```
+
+### Credential Verification
+```bash
+# Extract credentials from backend container
+docker exec layra-backend env | grep -E '(SIMPLE|NEO4J|MINIO|MYSQL|MONGODB|REDIS)' | grep -v PATH
+
+# Verify application login
+curl -X POST http://localhost:8090/api/v1/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"thesis","password":"YOUR_PASSWORD"}' \
+  -s | grep -q "access_token" && echo "Auth OK"
+```
+
+### Resource Monitoring
+```bash
+# Check resource usage
+docker stats --no-stream --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}" \
+  $(docker ps --filter "name=layra-" --format "{{.Names}}")
+
+# Check GPU utilization (if available)
+docker exec layra-model-server nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader
+```
+
+### Log Inspection
+```bash
+# Recent backend logs (last 20 lines)
+docker compose -f docker-compose.thesis.yml logs --tail=20 backend
+
+# Check for Kafka connectivity issues
+docker compose -f docker-compose.thesis.yml logs backend | grep -i kafka | tail -10
+
+# Monitor real-time logs
+docker compose -f docker-compose.thesis.yml logs -f --tail=50
+```
+
+### Comprehensive Audit Script
+A complete deployment audit can be performed with:
+```bash
+cd /LAB/@thesis/layra
+./scripts/snapshot_data.sh audit
+```
+*(Requires `scripts/snapshot_data.sh` to be executable)*
+
 
 ## 🐛 Troubleshooting
 
