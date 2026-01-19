@@ -14,6 +14,7 @@ from app.core.security import (
     create_access_token,
     authenticate_user,
     oauth2_scheme,
+    api_key_header,
 )
 from app.db.redis import redis
 from app.core.config import settings
@@ -23,15 +24,16 @@ router = APIRouter()
 
 
 @router.get("/verify-token", response_model=TokenData)
-async def login_for_access_token(token: str = Depends(oauth2_scheme)):
+async def verify_token(token: str = Depends(oauth2_scheme)):
     return decode_access_token(token)
 
 
 @router.post("/login", response_model=TokenSchema)
-async def login_for_access_token(
+async def login(
     form_data: OAuth2PasswordRequestForm = Depends(),
     db: AsyncSession = Depends(get_mysql_session),
 ):
+    """Standard login using database authentication"""
     user = await authenticate_user(db, form_data.username, form_data.password)
     if not user:
         raise HTTPException(
@@ -44,7 +46,7 @@ async def login_for_access_token(
         data={"sub": user.username},
         expires_delta=access_token_expires,
     )
-    redis_connection = await redis.get_token_connection()  # 获取 Redis 连接实例
+    redis_connection = await redis.get_token_connection()
     await redis_connection.set(
         f"token:{access_token}",
         user.username,
@@ -62,6 +64,21 @@ async def login_for_access_token(
     }
 
 
+@router.post("/login/apikey", response_model=TokenSchema)
+async def login_with_api_key(
+    api_key: str = Depends(api_key_header),
+    db: AsyncSession = Depends(get_mysql_session),
+):
+    """API key login - validates key and returns user token"""
+    # For API key auth, we need a way to map API keys to users
+    # This would require an api_keys table, but for now we'll return 404
+    # as this endpoint needs proper implementation
+    raise HTTPException(
+        status_code=status.HTTP_501_NOT_IMPLEMENTED,
+        detail="API key login requires API keys table implementation",
+    )
+
+
 @router.post("/register", response_model=UserResponse)
 async def register(
     user: UserCreate,
@@ -74,7 +91,7 @@ async def register(
     if any(char in user.username for char in illegal_chars):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Characters {', '.join(repr(c) for c in illegal_chars)} are illegal"
+            detail=f"Characters {', '.join(repr(c) for c in illegal_chars)} are illegal",
         )
     # Check if username or email already exists
     existing_user = await db.execute(select(User).where(User.username == user.username))
@@ -89,7 +106,6 @@ async def register(
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST, detail="Email already registered"
         )
-    
 
     # Create new user
     hashed_password = get_password_hash(user.password)
@@ -103,7 +119,7 @@ async def register(
     await db.commit()
     await db.refresh(db_user)
 
-    model_id=user.username + "_" + str(uuid.uuid4())
+    model_id = user.username + "_" + str(uuid.uuid4())
     await mongo.create_model_config(
         username=user.username,
         selected_model=model_id,
@@ -128,6 +144,6 @@ async def logout(token: str = Depends(oauth2_scheme)):
     token_data = decode_access_token(token)
     if not token_data:
         raise HTTPException(status_code=401, detail="Invalid token")
-    redis_connection = await redis.get_token_connection()  # 获取 Redis 连接实例
+    redis_connection = await redis.get_token_connection()
     await redis_connection.delete(f"user:{token_data.username}")
     return {"message": "Logged out successfully"}

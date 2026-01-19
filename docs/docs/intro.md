@@ -33,6 +33,7 @@ Deploy LAYRA with Docker to unlock its full visual-first RAG and Workflow capabi
 ```bash
 git clone https://github.com/liweiphys/layra.git
 cd layra
+cp .env.example .env
 vim .env  # Edit key parameters (SERVER_IP, MODEL_BASE_URL)
 ```
 
@@ -41,6 +42,14 @@ vim .env  # Edit key parameters (SERVER_IP, MODEL_BASE_URL)
 ```bash
 docker compose up -d --build
 ```
+
+:::tip Optional GPU (Mode A)
+Enable GPU for the model server:
+
+```bash
+docker compose -f docker-compose.yml -f docker-compose.gpu.yml up -d --build
+```
+:::
 
 :::caution CAUTION
 

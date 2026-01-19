@@ -1,4 +1,4 @@
-from typing import Dict, List, Optional, Set
+from typing import Dict, List, Optional
 from collections import defaultdict, deque
 
 
@@ -13,7 +13,6 @@ class TreeNode:
         "loop_next",
         "loop_parent",
         "condition",
-        # "loop_index",
         "loop_last",
         "loop_children",
         "debug_skip",
@@ -31,10 +30,9 @@ class TreeNode:
             instance.loop_info = []
             instance.parents = []
             instance.loop_next = []
-            instance.loop_parent = None  # 所属循环节点
-            instance.loop_children = []  # 循环的所有子节点
-            # instance.loop_index = None  # 当前的循环次数
-            instance.loop_last = []  # 循环结束需要执行的节点
+            instance.loop_parent = None
+            instance.loop_children = []
+            instance.loop_last = []
             instance.condition = None
             instance.debug_skip = False
             instance.input_skip = False
@@ -51,8 +49,8 @@ class TreeNode:
 
 
 class WorkflowGraph:
-    def __init__(self, nodes: List[Dict], edges: List[Dict], start_node):
-        TreeNode.clear_instances()  # 确保实例清理
+    def __init__(self, nodes: List[Dict], edges: List[Dict], start_node: str):
+        TreeNode.clear_instances()
         self.nodes = {n["id"]: n for n in nodes}
         self.edges = edges
         self.root = TreeNode(start_node, "start", {"name": "Start"})
@@ -79,7 +77,9 @@ class WorkflowGraph:
         for edge in self._find_edges(node.node_id):
             self._process_edge(node, edge, current_loop_parent)
 
-    def _process_edge(self, node: TreeNode, edge: Dict, current_loop_parent: TreeNode):
+    def _process_edge(
+        self, node: TreeNode, edge: Dict, current_loop_parent: Optional[TreeNode]
+    ):
         source_handle = edge.get("sourceHandle", "")
         target_id = edge["target"]
         target_node = TreeNode(
@@ -93,8 +93,8 @@ class WorkflowGraph:
             elif source_handle.startswith("condition"):
                 try:
                     condition_index = int(source_handle.split("-")[-1])
-                except:
-                    raise ValueError(f"非法condition类型: {source_handle}")
+                except (ValueError, TypeError):
+                    raise ValueError(f"Invalid condition type: {source_handle}")
                 self._validate_condition_edge(
                     node, target_node, current_loop_parent, condition_index
                 )
@@ -107,54 +107,53 @@ class WorkflowGraph:
                 self._validate_loop_next_edge(node, target_node)
                 self._add_loop_exit(node, target_node)
             else:
-                raise ValueError(f"非法边类型: {source_handle}")
+                raise ValueError(f"Invalid edge type: {source_handle}")
         except ValueError as e:
             raise type(e)(
-                f"节点 {node.data['name']} -> {target_node.data['name']}: {str(e)}"
+                f"Node {node.data['name']} -> {target_node.data['name']}: {str(e)}"
             ) from e
 
-    # 校验方法组
     def _validate_normal_edge(
-        self, source: TreeNode, target: TreeNode, current_loop_parent: TreeNode
+        self,
+        source: TreeNode,
+        target: TreeNode,
+        current_loop_parent: Optional[TreeNode],
     ):
         if target.loop_parent not in {None, current_loop_parent}:
             raise ValueError(
-                f"跨层级连接: {source.data['name']}(层级:{self._get_hierarchy_path(source)}) "
-                f"-> {target.data['name']}(层级:{self._get_hierarchy_path(target)})"
+                f"Cross-hierarchy connection: {source.data['name']} "
+                f"-> {target.data['name']}"
             )
 
     def _validate_condition_edge(
         self,
         source: TreeNode,
         target: TreeNode,
-        current_loop_parent: TreeNode,
+        current_loop_parent: Optional[TreeNode],
         condition_index: int,
     ):
         if source.node_type != "condition":
-            raise ValueError("非条件节点使用condition边")
+            raise ValueError("Condition edge used on non-condition node")
         if target.loop_parent not in {None, current_loop_parent}:
             raise ValueError(
-                f"跨层级连接: {source.data['name']}(层级:{self._get_hierarchy_path(source)}) "
-                f"-> {target.data['name']}(层级:{self._get_hierarchy_path(target)})"
+                f"Cross-hierarchy connection: {source.data['name']} "
+                f"-> {target.data['name']}"
             )
-        # if len(source.data["conditions"]) <= condition_index:
-        #     raise ValueError("条件节点边连接错误")
 
     def _validate_loop_body_edge(self, node: TreeNode):
         if node.node_type != "loop":
-            raise ValueError("非循环节点使用loop_body边")
+            raise ValueError("loop_body edge used on non-loop node")
 
     def _validate_loop_next_edge(self, node: TreeNode, target_node: TreeNode):
         if node.loop_parent != target_node:
-            raise ValueError("循环节点的loop_next边出口不是原loop节点")
+            raise ValueError("loop_next edge does not point back to loop node")
         if node.node_type == "condition":
-            raise ValueError("循环节点的loop_next出口不能是condition节点")
+            raise ValueError("loop_next exit cannot be a condition node")
         if target_node.node_type != "loop":
-            raise ValueError("非循环节点使用loop_next边")
+            raise ValueError("loop_next edge used on non-loop node")
         if len(target_node.loop_next) >= 1:
-            raise ValueError("循环节点只能有一个loop_next出口")
+            raise ValueError("Loop node can only have one loop_next exit")
 
-    # 层级路径显示方法
     def _get_hierarchy_path(self, node: TreeNode) -> str:
         path = []
         current = node.loop_parent
@@ -163,9 +162,11 @@ class WorkflowGraph:
             current = current.loop_parent
         return "->".join(reversed(path)) if path else "root"
 
-    # 添加关系方法组
     def _add_child(
-        self, parent: TreeNode, child: TreeNode, current_loop_parent: TreeNode
+        self,
+        parent: TreeNode,
+        child: TreeNode,
+        current_loop_parent: Optional[TreeNode],
     ):
         if child not in parent.children:
             parent.children.append(child)
@@ -175,26 +176,21 @@ class WorkflowGraph:
         if child not in loop_node.loop_info:
             loop_node.loop_info.append(child)
             if len(loop_node.loop_info) > 1:
-                raise ValueError("循环节点只能有一个loop_body入口")
-            self._build_graph(child, [], loop_node)
+                raise ValueError("Loop node can only have one loop_body entry")
+            self._build_graph(child, None, loop_node)
 
     def _add_loop_exit(self, last_child_node: TreeNode, loop_node: TreeNode):
         if last_child_node not in loop_node.loop_last:
             loop_node.loop_last.append(last_child_node)
-            # loop_node.loop_index = 0
 
-    # 层级完整性校验
     def _validate_hierarchy(self):
         for node in TreeNode._instances.values():
             for child in node.children:
                 if child.loop_parent != node.loop_parent:
                     raise ValueError(
-                        f"子节点层级断裂: {node.data['name']} -> {child.data['name']}\n"
-                        f"父层级: {self._get_hierarchy_path(node)}\n"
-                        f"子层级: {self._get_hierarchy_path(child)}"
+                        f"Hierarchy break: {node.data['name']} -> {child.data['name']}"
                     )
 
-    # 有向环检测
     def _check_directed_cycles(self):
         visited = defaultdict(int)
         path = deque()
@@ -227,52 +223,9 @@ class WorkflowGraph:
                 if visited[node.node_id] == 0:
                     dfs(node)
         except ValueError:
-            cycle_str = " -> ".join(cycle_name)
-            raise ValueError(
-                f"检测到有向环: {cycle_str}\n循环请使用loop节点包裹！"
-            ) from None
-
-    # 调试用
-    def print_tree(
-        self, node: TreeNode = None, visited: Dict[str, bool] = None, loop: str = ""
-    ):
-        if not node:
-            node = self.root
-        if visited is None:
-            visited = {}
-
-        # 检查是否已经访问过该节点，避免循环
-        if node.node_id in visited and visited[node.node_id]:
-            return
-
-        # 标记当前节点为已访问
-        visited[node.node_id] = True
-
-        # 打印节点信息
-        if loop:
-            print(f"{loop}, Node ID: {node.node_id}")
-            # print(f"{loop}, Node Type: {node.node_type}")
-        else:
-            print(f"Node ID: {node.node_id}")
-            # print(f"Node Type: {node.node_type}")
-
-        # 如果有 loop_info，打印
-        if node.loop_info:
-            print(f"{loop}  Loop Info:")
-            for loop_node in node.loop_info:
-                if loop:
-                    self.print_tree(
-                        loop_node,
-                        visited,
-                        loop=f"   {loop},  - Loop Node ID: {loop_node.node_id}",
-                    )
-                else:
-                    self.print_tree(
-                        loop_node,
-                        visited,
-                        loop=f"      - Loop Node ID: {loop_node.node_id}",
-                    )
-
-        # 递归打印子节点
-        for child in node.children:
-            self.print_tree(child, visited, loop)
+            if cycle_name:
+                cycle_str = " -> ".join(cycle_name)
+                raise ValueError(
+                    f"Detected directed cycle: {cycle_str}. "
+                    "Use loop nodes for iteration."
+                )

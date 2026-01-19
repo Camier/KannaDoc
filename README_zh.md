@@ -115,6 +115,9 @@
 git clone https://github.com/liweiphys/layra.git
 cd layra
 
+# 提示：从模板开始
+cp .env.example .env
+
 # 编辑配置文件（按需修改服务器IP/参数）
 vim .env
 
@@ -340,6 +343,28 @@ PDF 解析为图像 →ColQwen2.5/Jina-Embeddings-v4 视觉嵌入 → 元数据/
 
 <h2 id="部署指南">⚙️ 部署指南</h2>
 
+### 🎯 部署模式
+
+LAYRA 支持多种部署配置，适用于不同使用场景：
+
+| 模式 | Compose 文件 | 描述 | 适用场景 |
+|------|--------------|------|----------|
+| **标准 (GPU)** | `docker-compose.yml` | 完整部署，包含本地 ColQwen2.5 嵌入模型 | 生产环境、研究、开发（需 NVIDIA GPU） |
+| **Jina API (无 GPU)** | `docker-compose-no-local-embedding.yml` | 使用 Jina API 云端嵌入模型 | 无 GPU 资源、快速测试 |
+| **论文/单用户** | `docker-compose.thesis.yml` | 简化单用户部署，包含 Neo4j 图数据库 | 论文演示、个人研究、简化认证 |
+| **GPU 优化** | `docker-compose.gpu.yml` | GPU 优化配置 | 最大 GPU 性能 |
+| **开发** | `docker-compose.override.yml` | 开发环境覆盖配置（扩展基础配置） | 本地开发，自定义设置 |
+
+#### 主要区别：
+
+- **标准模式**：完整功能集，需要 16GB+ GPU 显存运行 ColQwen2.5
+- **Jina API 模式**：无需本地 GPU，使用云端 API（需要 Jina API 密钥）
+- **论文模式**：简化单用户部署，包含 Neo4j 图数据库（基础设施就绪，应用集成待实现），简单认证
+- **GPU 优化模式**：针对 NVIDIA GPU 性能优化
+- **开发模式**：本地开发环境覆盖（热重载、调试设置）
+
+> **注意**：所有模式使用相同的 `.env` 配置文件。将 `.env.example` 复制为 `.env` 并根据您的部署调整配置值。
+
 #### 📋 前提条件
 
 1. 已安装 **Docker** 和 **Docker Compose**
@@ -367,27 +392,45 @@ JINA_EMBEDDINGS_V4_URL=https://api.jina.ai/v1/embeddings
 
 ##### 2. 构建并启动服务
 
-**选项A**: 本地部署ColQwen2.5 (推荐GPUs >16GB VRAM)
+**选项A**: 标准 GPU 部署 (推荐 GPUs >16GB VRAM)
 
 ```bash
 # 首次启动将下载约15GB模型（请耐心等待）
-docker compose up -d --build
+./compose-clean up -d --build  # 使用 docker-compose.yml（默认）
 
 # 实时监控日志（将<container_name>替换为实际容器名）
-docker compose logs -f <container_name>
+./compose-clean logs -f <container_name>
 ```
 
-**选项B**: Jina-embeddings-v4 API service (for limited/no GPU resources)
+**选项B**: Jina API 部署 (无需本地 GPU)
 
 ```bash
-# 首次启动不会下载任何模型权重（快速启动！）
-docker compose -f docker-compose-no-local-embedding.yml up -d --build
+# 使用 Jina API 云端嵌入模型（无需下载本地模型）
+./compose-clean -f docker-compose-no-local-embedding.yml up -d --build
 
-# 实时监控日志（将<container_name>替换为实际容器名）
-docker compose logs -f <container_name>
+# 实时监控日志
+./compose-clean logs -f <container_name>
 ```
 
-> **注意**：如果 `docker compose` 遇到问题，尝试使用 `docker-compose`。同时，确保你使用的是 Docker Compose v2，旧版本不被 LAYRA 支持。你可以通过 `docker compose version` 或 `docker-compose version` 来检查当前版本。
+**选项C**: 论文/单用户部署 (简化单用户)
+
+```bash
+# 适用于论文演示或个人研究，包含 Neo4j（基础设施就绪，应用集成待实现）
+./deploy-thesis.sh  # 自动化部署脚本
+
+# 或手动部署：
+# cp .env.thesis .env
+# docker compose -f docker-compose.thesis.yml up -d --build
+```
+
+**选项D**: GPU 优化部署
+
+```bash
+# 最大 GPU 性能配置
+./compose-clean -f docker-compose.gpu.yml up -d --build
+```
+
+> **注意**：在本仓库中，始终通过 `./compose-clean` 运行 Compose 命令（它使用净化的环境 + `--env-file .env`）。这样可以防止主机 shell 环境变量在变量插值时覆盖 `.env` 值。详见 `docs/RUNBOOK_COMPOSE_CLEAN.md`。
 
 #### 🔧 故障排除指南
 
@@ -470,11 +513,52 @@ docker compose down -v && docker compose up --build  # ⚠️ 删除所有数据
 
 ---
 
+<h2 id="api-documentation">📘 API 文档</h2>
+
+LAYRA 提供完整的交互式 API 文档，通过 FastAPI 内置的 Swagger UI 和 ReDoc。
+
+### 访问地址
+
+| 文档类型 | URL | 描述 |
+|----------|-----|------|
+| **Swagger UI** | `http://localhost:8090/api/docs` | 交互式 API 探索器，支持在线测试 |
+| **ReDoc** | `http://localhost:8090/api/redoc` | 替代文档界面，提供详细规范 |
+
+### 主要接口端点
+
+| 类别 | 基础路径 | 描述 |
+|------|----------|------|
+| **认证** | `/api/v1/auth/*` | 登录、注销、令牌验证 |
+| **工作流** | `/api/v1/workflow/*` | 创建、执行、列出工作流 |
+| **聊天** | `/api/v1/chat/*` | 实时 SSE 聊天与 RAG |
+| **知识库** | `/api/v1/knowledge-base/*` | 创建、列出、管理知识库 |
+| **健康检查** | `/api/v1/health/*` | 系统健康检查与指标 |
+
+### 配置说明
+
+生产环境部署时，请配置 CORS 允许的来源：
+
+```bash
+# 在 .env 或 .env.thesis 中配置
+ALLOWED_ORIGINS=http://localhost:3000,https://your-domain.com
+```
+
+**⚠️ 安全注意**：当 `ALLOWED_ORIGINS` 为空（开发模式）时，API 允许所有来源但**禁用基于凭证的认证**以确保安全。生产环境务必设置 `ALLOWED_ORIGINS`。
+
+### 开发者资源
+
+- **API 根地址**: `http://localhost:8090/api/v1`
+- **OpenAPI 规范**: `http://localhost:8090/api/v1/openapi.json`
+- **ReDoc 规范**: `http://localhost:8090/api/redoc`
+
+---
+
 <h2 id="Roadmap">📦 Roadmap</h2>
 
 **短期计划**：
 
-- 新增API接口
+- ~~新增API接口~~ ✓ 已完成：OpenAPI/Swagger 文档已可用
+- 增强安全性（CORS 可配置，.env 跟踪已修复）
 
 **长期计划**：
 

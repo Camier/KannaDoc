@@ -13,6 +13,11 @@ if [ -f "$MODEL_DIR/$BASE_MODEL/complete.layra" ] && [ -f "$MODEL_DIR/$BASE_MODE
     echo "基础模型已存在，跳过下载: $BASE_MODEL"
 else
     echo "下载基础模型: $BASE_MODEL"
+    # 清理可能存在的不完整目录
+    if [ -d "$MODEL_DIR/$BASE_MODEL" ]; then
+        echo "清理不完整的基础模型目录..."
+        rm -rf "$MODEL_DIR/$BASE_MODEL"
+    fi
     # 明确指定克隆到当前目录的子目录
     git clone ${MODEL_BASE_URL}/$BASE_MODEL "$MODEL_DIR/$BASE_MODEL"
     touch "$MODEL_DIR/$BASE_MODEL/complete.layra"  # 使用相对路径
@@ -23,6 +28,11 @@ if [ -f "$MODEL_DIR/$ADAPTER_MODEL/complete.layra" ] && [ -f "$MODEL_DIR/$ADAPTE
     echo "适配器模型已存在，跳过下载: $ADAPTER_MODEL"
 else
     echo "下载适配器模型: $ADAPTER_MODEL"
+    # 清理可能存在的不完整目录
+    if [ -d "$MODEL_DIR/$ADAPTER_MODEL" ]; then
+        echo "清理不完整的适配器模型目录..."
+        rm -rf "$MODEL_DIR/$ADAPTER_MODEL"
+    fi
     git clone ${MODEL_BASE_URL}/$ADAPTER_MODEL "$MODEL_DIR/$ADAPTER_MODEL"
     touch "$MODEL_DIR/$ADAPTER_MODEL/complete.layra"
 fi

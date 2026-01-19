@@ -722,21 +722,20 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
                 return True
             except Exception as e:
                 # 错误处理
-                raise ValueError(f'{node.node_id}:节点{node.data["name"]}: {str(e)}')
+                raise ValueError(f"{node.node_id}:节点{node.data['name']}: {str(e)}")
         else:
             return True
 
     async def _send_ai_chunk_event(
         self, node_id: str, message_id: str, chunk: str, tool: str = ""
     ):
-        """发送单个AI生成块到Redis事件流"""
         if tool:
-            messgae_type = tool
+            message_type = tool
         else:
-            messgae_type = "ai_chunk"
+            message_type = "ai_chunk"
         redis_conn = await redis.get_task_connection()
         event_data = {
-            "type": messgae_type,  # 标识为AI数据块
+            "type": message_type,
             "node_id": node_id,
             "message_id": message_id,
             "data": chunk,

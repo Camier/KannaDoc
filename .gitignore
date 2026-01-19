@@ -135,7 +135,10 @@ migrations/
 docker/volumes/
 
 # Environments
-#.env
+.env
+.env.local
+.env.*.local
+.envrc
 .venv
 env/
 venv/
@@ -191,3 +194,15 @@ cython_debug/
 Makefile
 
 logging_dev.yaml
+
+# Layra local artifacts / transcripts / quarantine (do not commit)
+artifacts/
+session-ses_*.md
+DEPLOYMENT_ROBUST*.md
+fix_kafka_coordinator.py
+start_layra_fixed.sh
+
+# Archive / reference only (excluded from runtime review)
+driftedlayra/
+.env
+.env.thesis

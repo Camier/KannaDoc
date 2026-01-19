@@ -1,0 +1,86 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+# ------------------------------------------------------------------------------
+# compose-clean
+#
+# Purpose:
+#   Run Docker Compose with a sanitized environment so that host shell exports
+#   (e.g. MILVUS_URI, DB_URL, etc.) cannot override values from `.env`.
+#
+# Usage:
+#   ./compose-clean ps
+#   ./compose-clean up -d --build
+#   ./compose-clean up -d --force-recreate backend nginx
+#   ./compose-clean logs -f --tail=200 backend
+#
+# Why:
+#   Compose variable interpolation prefers the parent process environment over
+#   `.env`. If your shell has exported variables, they can silently break the
+#   deployment (e.g. MILVUS_URI=http://127.0.0.1:19530 inside containers).
+# ------------------------------------------------------------------------------
+
+script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
+cd "$script_dir"
+
+if [[ "${1:-}" == "-h" || "${1:-}" == "--help" || "${1:-}" == "help" ]]; then
+  cat <<'EOF'
+compose-clean: run docker compose with a sanitized env
+
+Examples:
+  ./compose-clean ps
+  ./compose-clean up -d --build
+  ./compose-clean up -d --force-recreate backend nginx
+  ./compose-clean logs -f --tail=200 backend
+  ./compose-clean exec -T backend python -V
+  
+  # For different deployment modes, use -f flag:
+  ./compose-clean -f docker-compose-no-local-embedding.yml up -d --build  # Jina API mode
+  ./compose-clean -f docker-compose.gpu.yml up -d --build                 # GPU optimized mode
+
+Notes:
+  - Always runs from repo root (the directory containing this script).
+  - Always uses: --env-file .env (ensure .env is configured for your deployment mode)
+  - Preserves only "safe" host vars needed for Docker (PATH/HOME/DOCKER_* etc.)
+  - Default compose file: docker-compose.yml (Standard GPU mode)
+  - Thesis/Solo mode: Use ./deploy-thesis.sh or docker compose -f docker-compose.thesis.yml
+EOF
+  exit 0
+fi
+
+if [[ ! -f .env ]]; then
+  echo "❌ .env not found in repo root: $script_dir" >&2
+  echo "   Create it from template: cp .env.template .env" >&2
+  exit 1
+fi
+
+compose_cmd=()
+if docker compose version >/dev/null 2>&1; then
+  compose_cmd=(docker compose)
+elif command -v docker-compose >/dev/null 2>&1; then
+  compose_cmd=(docker-compose)
+else
+  echo "❌ Docker Compose not found (tried: 'docker compose' and 'docker-compose')." >&2
+  exit 1
+fi
+
+# Build a minimal allowlist for the host environment.
+# We intentionally do NOT forward app/service vars like MILVUS_URI, DB_URL, etc.
+env_cmd=(env -i "PATH=${PATH}")
+
+allow_vars=(
+  HOME USER LOGNAME SHELL TERM LANG LC_ALL LC_CTYPE TZ
+  DOCKER_HOST DOCKER_CONTEXT DOCKER_CONFIG DOCKER_TLS_VERIFY DOCKER_CERT_PATH
+  SSH_AUTH_SOCK XDG_RUNTIME_DIR
+  HTTP_PROXY HTTPS_PROXY NO_PROXY http_proxy https_proxy no_proxy
+)
+
+for var in "${allow_vars[@]}"; do
+  if [[ -n "${!var-}" ]]; then
+    env_cmd+=("${var}=${!var}")
+  fi
+done
+
+exec "${env_cmd[@]}" "${compose_cmd[@]}" --env-file .env "$@"
+

@@ -60,7 +60,7 @@ async def execute_workflow(
         state_key = f"workflow:{task_id}:state"
         state = await redis_conn.get(state_key)
         if not state:
-            raise {"code": -2, "msg": str("任务过期，请重新执行！")}
+            raise HTTPException(status_code=408, detail="任务过期，请重新执行！")
 
         # 调试阶段合并更新全局变量
         if workflow.debug_resume_task_id:

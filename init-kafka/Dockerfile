@@ -1,4 +1,4 @@
-FROM bitnami/kafka:3.8.0
+FROM apache/kafka:3.8.0
 
 # 复制初始化脚本
 COPY init-kafka.sh /init-kafka.sh

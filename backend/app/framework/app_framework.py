@@ -15,7 +15,14 @@ from app.core.config import settings
 
 class FastAPIFramework:
     def __init__(self, debug_mode: bool):
-        self.app = FastAPI(debug=debug_mode)
+        self.app = FastAPI(
+            debug=debug_mode,
+            title="LAYRA API",
+            description="Visual-native AI agent engine with workflow orchestration, RAG pipeline, and knowledge base management",
+            version="2.0.0",
+            docs_url="/api/docs",
+            redoc_url="/api/redoc"
+        )
         #self.app.add_middleware(LoggingMiddleware)
         self.executor = ThreadPoolExecutor(max_workers=settings.max_workers)
         self.app.add_exception_handler(HTTPException, http_exception_handler)

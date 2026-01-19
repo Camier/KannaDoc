@@ -16,7 +16,7 @@ from datetime import timedelta
 from app.core.config import settings
 from app.schemas.auth import TokenData
 from app.db.redis import redis
-from fastapi.security import OAuth2PasswordBearer
+from fastapi.security import OAuth2PasswordBearer, APIKeyHeader
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.models.user import User
@@ -26,6 +26,7 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+api_key_header = APIKeyHeader(name="X-API-Key", auto_error=False)
 
 
 def verify_password(plain_password, hashed_password):
@@ -90,7 +91,6 @@ async def verify_username_match(
     token_data: str,
     username: str,
 ) -> None:
-
     if token_data.username != username:
         raise HTTPException(status_code=403, detail="Username mismatch")
 
@@ -98,7 +98,6 @@ async def verify_username_match(
 async def get_current_user(
     token: str = Depends(oauth2_scheme),
 ):
-
     redis_connection = await redis.get_token_connection()  # 获取 Redis 连接实例
     token_status = await redis_connection.get(f"token:{token}")
 
@@ -137,7 +136,10 @@ async def authenticate_user(db: AsyncSession, username: str, password: str):
         return user
 
     # Try LEGACY method (with hardcoded salt) for migration
-    if hasattr(user, 'password_migration_required') and user.password_migration_required:
+    if (
+        hasattr(user, "password_migration_required")
+        and user.password_migration_required
+    ):
         if verify_password_legacy(password, user.hashed_password):
             # Migration: Rehash with proper bcrypt and update database
             user.hashed_password = get_password_hash(password)

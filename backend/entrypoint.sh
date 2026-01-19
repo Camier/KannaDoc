@@ -45,6 +45,8 @@ check_migration_needed() {
     # 检查migrations目录是否存在
     if [ ! -f "migrations_previous/env.py" ]; then
         echo "初始化Alembic迁移环境..."
+        # Remove existing migrations directory if it exists (from source code)
+        rm -rf migrations
         alembic init migrations
         cp env.py migrations
         return 0
@@ -62,16 +64,45 @@ check_migration_needed() {
 
 main() {
     wait_for_db
-    
+
     if check_migration_needed; then
         echo "执行数据库迁移..."
+
+        # Check if database has stale alembic_version entry (version exists in DB but not in migrations)
+        if alembic current 2>&1 | grep -q "Can't locate revision"; then
+            echo "检测到过时的数据库迁移版本，清理中..."
+            # Drop the stale alembic_version table
+            python -c "
+import asyncio
+from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import text
+
+async def clean_stale_migration():
+    engine = create_async_engine('${DB_URL}')
+    async_session = sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
+
+    async with async_session() as session:
+        # Check if alembic_version table exists
+        result = await session.execute(text(\"SHOW TABLES LIKE 'alembic_version'\"))
+        if result.fetchone():
+            await session.execute(text('DROP TABLE IF EXISTS alembic_version'))
+            await session.commit()
+            print('已清理过时的迁移版本')
+
+    await engine.dispose()
+
+asyncio.run(clean_stale_migration())
+"
+        fi
+
         alembic revision --autogenerate -m "Init Mysql"
         alembic upgrade head
         cp -r migrations/* migrations_previous/
     else
         echo "数据库已是最新，无需迁移"
     fi
-    
+
     exec gunicorn -c gunicorn_config.py app.main:app
 }
 

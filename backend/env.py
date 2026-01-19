@@ -90,8 +90,14 @@ async def run_migrations_online():
     and associate a connection with the context.
 
     """
+    from app.core.config import settings
+    
+    # Override sqlalchemy.url with the one from settings (env vars)
+    configuration = config.get_section(config.config_ini_section)
+    configuration["sqlalchemy.url"] = settings.db_url
+    
     connectable = create_async_engine(
-        config.get_main_option("sqlalchemy.url"),
+        settings.db_url,
         poolclass=pool.NullPool,
     )
 

@@ -115,6 +115,11 @@ Before starting, ensure your system meets these requirements:
 git clone https://github.com/liweiphys/layra.git
 cd layra
 
+# Tip: start from the template
+cp .env.example .env
+
+# Security note: `.env` contains secrets and must stay local (it is gitignored).
+
 # Edit configuration file (modify server IP/parameters as needed)
 vim .env
 
@@ -139,23 +144,26 @@ JINA_EMBEDDINGS_V4_URL=https://api.jina.ai/v1/embeddings
 
 ```bash
 # Initial startup will download ~15GB model weights (be patient)
-docker compose up -d --build
+./compose-clean up -d --build
 
-# Monitor logs in real-time (replace <container_name> with actual name)
-docker compose logs -f <container_name>
+# Optional: enable GPU for model-server
+# ./compose-clean -f docker-compose.yml -f docker-compose.gpu.yml up -d --build
+
+# Monitor logs in real-time (replace <service_name> with actual service name)
+./compose-clean logs -f <service_name>
 ```
 
 **Option B**: Jina-embeddings-v4 API service (for limited/no GPU resources)
 
 ```bash
 # Initial startup will not download any model weights (fast!)
-docker compose -f docker-compose-no-local-embedding.yml up -d --build
+./compose-clean -f docker-compose-no-local-embedding.yml up -d --build
 
-# Monitor logs in real-time (replace <container_name> with actual name)
-docker compose logs -f <container_name>
+# Monitor logs in real-time (replace <service_name> with actual service name)
+./compose-clean logs -f <service_name>
 ```
 
-> **Note**: If you encounter issues with `docker compose`, try using `docker-compose` (with the dash) instead. Also, ensure that you're using Docker Compose v2, as older versions may not support all features. You can check your version with `docker compose version` or `docker-compose version`.
+> **Important**: In this repo, always run Compose via `./compose-clean` (it uses a sanitized environment + `--env-file .env`). This prevents a polluted host shell from overriding `.env` values during variable interpolation. See `docs/RUNBOOK_COMPOSE_CLEAN.md`.
 
 #### 🎉 Enjoy LAYRA!
 
@@ -370,6 +378,28 @@ The workflow execution follows an **event-driven**, **stateful debugging** patte
 
 <h2 id="deployment">⚙️ Deployment</h2>
 
+### 🎯 Deployment Modes
+
+LAYRA supports multiple deployment configurations for different use cases:
+
+| Mode | Compose File | Description | Use Case |
+|------|--------------|-------------|----------|
+| **Standard (GPU)** | `docker-compose.yml` | Full deployment with local ColQwen2.5 embeddings | Production, research, development with NVIDIA GPU |
+| **Jina API (No GPU)** | `docker-compose-no-local-embedding.yml` | Cloud embeddings via Jina API | Limited/no GPU resources, quick testing |
+| **Thesis/Solo** | `docker-compose.thesis.yml` | Simplified single-user deployment with Neo4j | Thesis demonstrations, solo research, simplified auth |
+| **GPU Optimized** | `docker-compose.gpu.yml` | GPU-optimized configuration | Maximum GPU performance |
+| **Development** | `docker-compose.override.yml` | Development overrides (extends base) | Local development with custom settings |
+
+#### Key Differences:
+
+- **Standard**: Full feature set, requires 16GB+ GPU VRAM for ColQwen2.5
+- **Jina API**: No local GPU needed, uses cloud API (requires Jina API key)
+- **Thesis**: Simplified for single-user, includes Neo4j graph database (infrastructure-ready, application integration pending), simple auth
+- **GPU Optimized**: Performance-tuned for NVIDIA GPUs
+- **Development**: Local development overrides (hot reload, debug settings)
+
+> **Note**: All modes use the same `.env` configuration. Copy `.env.example` to `.env` and adjust values for your deployment.
+
 #### 📋 Prerequisites
 
 Before starting, ensure your system meets these requirements:
@@ -406,27 +436,45 @@ JINA_EMBEDDINGS_V4_URL=https://api.jina.ai/v1/embeddings
 
 ##### 2. Build and Start Service
 
-**Option A**: Local ColQwen deployment (recommended for GPUs with >16GB VRAM)
+**Option A**: Standard GPU Deployment (recommended for GPUs with >16GB VRAM)
 
 ```bash
 # Initial startup will download ~15GB model weights (be patient)
-docker compose up -d --build
+./compose-clean up -d --build  # Uses docker-compose.yml (default)
 
-# Monitor logs in real-time (replace <container_name> with actual name)
-docker compose logs -f <container_name>
+# Monitor logs in real-time (replace <service_name> with actual service name)
+./compose-clean logs -f <service_name>
 ```
 
-**Option B**: Jina-embeddings-v4 API service (for limited/no GPU resources)
+**Option B**: Jina API Deployment (no local GPU required)
 
 ```bash
-# Initial startup will download ~15GB model weights (be patient)
-docker compose -f docker-compose-no-local-embedding.yml up -d --build
+# Uses cloud embeddings via Jina API (no local model download)
+./compose-clean -f docker-compose-no-local-embedding.yml up -d --build
 
-# Monitor logs in real-time (replace <container_name> with actual name)
-docker compose logs -f <container_name>
+# Monitor logs in real-time
+./compose-clean logs -f <service_name>
 ```
 
-> **Note**: If you encounter issues with `docker compose`, try using `docker-compose` (with the dash) instead. Also, ensure that you're using Docker Compose v2, as older versions may not support all features. You can check your version with `docker compose version` or `docker-compose version`.
+**Option C**: Thesis/Solo Deployment (simplified single-user)
+
+```bash
+# For thesis demonstrations or single-user research with Neo4j (infrastructure-ready, application integration pending)
+./deploy-thesis.sh  # Automated deployment script
+
+# Or manually:
+# cp .env.thesis .env
+# docker compose -f docker-compose.thesis.yml up -d --build
+```
+
+**Option D**: GPU Optimized Deployment
+
+```bash
+# For maximum GPU performance
+./compose-clean -f docker-compose.gpu.yml up -d --build
+```
+
+> **Important**: In this repo, always run Compose via `./compose-clean` (it uses a sanitized environment + `--env-file .env`). This prevents a polluted host shell from overriding `.env` values during variable interpolation. See `docs/RUNBOOK_COMPOSE_CLEAN.md`.
 
 #### 🔧 Troubleshooting Tips
 
@@ -434,15 +482,15 @@ If services fail to start:
 
 ```bash
 # Check container logs:
-docker compose logs <container name>
+./compose-clean logs <service_name>
 ```
 
 Common fixes:
 
 ```bash
 nvidia-smi  # Verify GPU detection
-docker compose down && docker compose up --build  # preserve data to rebuild
-docker compose down -v && docker compose up --build  # ⚠️ Caution: delete all data to full rebuild
+./compose-clean down && ./compose-clean up -d --build  # preserve data to rebuild
+./compose-clean down -v && ./compose-clean up -d --build  # ⚠️ Caution: delete all data to full rebuild
 ```
 
 #### 🛠️ Service Management Commands
@@ -451,25 +499,25 @@ Choose the operation you need:
 
 | **Scenario**                               | **Command**                                     | **Effect**                                 |
 | ------------------------------------------ | ----------------------------------------------- | ------------------------------------------ |
-| **Stop services**<br>(preserve data)       | `docker compose stop`                           | Stops containers but keeps them intact     |
-| **Restart after stop**                     | `docker compose start`                          | Restarts stopped containers                |
-| **Rebuild after code changes**             | `docker compose up -d --build`                  | Rebuilds images and recreates containers   |
-| **Recreate containers**<br>(preserve data) | `docker compose down`<br>`docker compose up -d` | Destroys then recreates containers         |
-| **Full cleanup**<br>(delete all data)      | `docker compose down -v`                        | ⚠️ Destroys containers and deletes volumes |
+| **Stop services**<br>(preserve data)       | `./compose-clean stop`                          | Stops containers but keeps them intact     |
+| **Restart after stop**                     | `./compose-clean start`                         | Restarts stopped containers                |
+| **Rebuild after code changes**             | `./compose-clean up -d --build`                 | Rebuilds images and recreates containers   |
+| **Recreate containers**<br>(preserve data) | `./compose-clean down`<br>`./compose-clean up -d` | Destroys then recreates containers         |
+| **Full cleanup**<br>(delete all data)      | `./compose-clean down -v`                       | ⚠️ Destroys containers and deletes volumes |
 
 #### ⚠️ Important Notes
 
 1. **Initial model download** may take significant time (~15GB). Monitor progress:
 
-   ```bash
-   docker compose logs -f model-weights-init
-   ```
+	   ```bash
+	   ./compose-clean logs -f model-weights-init
+	   ```
 
 2. **After modifying `.env` or code**, always rebuild:
 
-   ```bash
-   docker compose up -d --build
-   ```
+	   ```bash
+	   ./compose-clean up -d --build
+	   ```
 
 3. **Verify NVIDIA toolkit** installation:
 
@@ -487,20 +535,20 @@ Choose the operation you need:
 
 #### 🔑 Key Details
 
-- `docker compose down -v` **permanently deletes** databases and model weights
+- `./compose-clean down -v` **permanently deletes** databases and model weights
 - **After code/config changes**, always use `--build` flag
 - **GPU requirements**:
   - Latest NVIDIA drivers
   - Working `nvidia-container-toolkit`
 - **Monitoring tools**:
 
-  ```bash
-  # Container status
-  docker compose ps -a
+	  ```bash
+	  # Container status
+	  ./compose-clean ps -a
 
-  # Resource usage
-  docker stats
-  ```
+	  # Resource usage
+	  docker stats
+	  ```
 
 > 🧪 **Technical Note**: All components run exclusively via Docker containers.
 
@@ -514,11 +562,52 @@ In the future, we will support multiple deployment methods including Kubernetes 
 
 ---
 
+<h2 id="api-documentation">📘 API Documentation</h2>
+
+LAYRA provides comprehensive interactive API documentation through FastAPI's built-in Swagger UI and ReDoc.
+
+### Access Points
+
+| Documentation | URL | Description |
+|--------------|-----|-------------|
+| **Swagger UI** | `http://localhost:8090/api/docs` | Interactive API explorer with try-it-out functionality |
+| **ReDoc** | `http://localhost:8090/api/redoc` | Alternative documentation with detailed specs |
+
+### Key Endpoints
+
+| Category | Base Path | Description |
+|----------|-----------|-------------|
+| **Authentication** | `/api/v1/auth/*` | Login, logout, token verification |
+| **Workflows** | `/api/v1/workflow/*` | Create, execute, list workflows |
+| **Chat** | `/api/v1/chat/*` | Real-time SSE chat with RAG |
+| **Knowledge Base** | `/api/v1/knowledge-base/*` | Create, list, manage knowledge bases |
+| **Health** | `/api/v1/health/*` | System health checks and metrics |
+
+### Configuration
+
+For production deployments, configure CORS origins:
+
+```bash
+# In .env or .env.thesis
+ALLOWED_ORIGINS=http://localhost:3000,https://your-domain.com
+```
+
+**⚠️ Security Note:** When `ALLOWED_ORIGINS` is empty (development mode), the API allows all origins but **disables credential-based authentication** for security. Always set `ALLOWED_ORIGINS` in production.
+
+### For Developers
+
+- **API Root**: `http://localhost:8090/api/v1`
+- **OpenAPI Spec**: `http://localhost:8090/api/v1/openapi.json`
+- **ReDoc Spec**: `http://localhost:8090/api/redoc`
+
+---
+
 <h2 id="roadmap">📦 Roadmap</h2>
 
 **Short-term:**
 
-- Add API Support (coming soon)
+- ~~Add API Support (completed)~~ ✓ OpenAPI/Swagger documentation available
+- Enhanced security (CORS configurable, .env tracking fixed)
 
 **Long-term:**
 
