@@ -4,7 +4,7 @@ import time
 from typing import Optional
 from functools import wraps
 from pydantic import BaseModel, ValidationError
-from aiokafka import AIOKafkaConsumer, ConsumerRecord
+from aiokafka import AIOKafkaConsumer, AIOKafkaProducer, ConsumerRecord
 from app.core.config import settings
 from app.core.logging import logger
 from app.db.redis import redis
@@ -121,13 +121,16 @@ class KafkaConsumerManager:
             logger.info(f"Kafka consumer started for topic: {KAFKA_TOPIC}")
 
         if not self.producer:
-            self.producer = AIOKafkaProducer(
-                bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS,
-                acks="all",
-                retries=3,
-            )
-            await self.producer.start()
-            logger.info("Kafka producer started for DLQ")
+            try:
+                self.producer = AIOKafkaProducer(
+                    bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS,
+                    acks="all",
+                )
+                await self.producer.start()
+                logger.info("Kafka producer started for DLQ")
+            except Exception as e:
+                logger.error(f"Failed to start Kafka producer: {e}")
+                raise
 
     async def stop(self):
         """Gracefully stop consumer and producer."""

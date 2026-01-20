@@ -125,6 +125,19 @@ async def authenticate_user(db: AsyncSession, username: str, password: str):
     Returns:
         User object if authenticated, None otherwise
     """
+    # Simple Auth Mode (Bypass hash check if credentials match env config)
+    if settings.simple_auth_mode:
+        if (
+            username == settings.simple_username
+            and password == settings.simple_password
+        ):
+            # Fetch user from DB to ensure we return a valid User object
+            # The user must exist in DB even for simple auth (created via init scripts)
+            result = await db.execute(select(User).where(User.username == username))
+            user = result.scalars().first()
+            if user:
+                return user
+
     result = await db.execute(select(User).where(User.username == username))
     user = result.scalars().first()
 

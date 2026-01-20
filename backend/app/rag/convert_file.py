@@ -1,4 +1,7 @@
 import os
+import asyncio
+import subprocess
+import tempfile
 from typing import List
 from fastapi import UploadFile
 from pdf2image import convert_from_bytes
@@ -10,6 +13,32 @@ from app.core.config import settings
 from app.utils.unoconverter import unoconverter
 from PIL import Image, ImageSequence
 import io
+
+def get_pdf_page_count(pdf_bytes: bytes) -> int:
+    """使用pdfinfo获取PDF页数"""
+    with tempfile.NamedTemporaryFile(suffix='.pdf', delete=False) as tmp:
+        tmp.write(pdf_bytes)
+        tmp_path = tmp.name
+    try:
+        result = subprocess.run(
+            ['pdfinfo', tmp_path],
+            capture_output=True,
+            text=True,
+            timeout=10
+        )
+        if result.returncode == 0:
+            for line in result.stdout.split('\n'):
+                if line.startswith('Pages:'):
+                    return int(line.split(':')[1].strip())
+        # 如果pdfinfo失败，返回默认值（例如1）
+        logger.warning(f"pdfinfo failed: {result.stderr}")
+        return 1
+    except Exception as e:
+        logger.error(f"Error getting PDF page count: {e}")
+        return 1
+    finally:
+        os.unlink(tmp_path)
+
 
 async def convert_file_to_images(
     file_content: bytes,
@@ -27,6 +56,8 @@ async def convert_file_to_images(
         List[BytesIO]: 包含图片数据的字节流列表
     """
     start_time = time.time()
+    # PDF转换超时设置（秒）- 大型PDF可能需要更长时间
+    pdf_conversion_timeout = 300  # 5分钟
     file_extension = file_name.split(".")[-1].lower() if file_name else ""
     
     # 定义支持的图片格式（不包括svg）
@@ -65,7 +96,41 @@ async def convert_file_to_images(
     elif file_extension == "pdf":
         # 直接处理PDF文件
         logger.info("Processing PDF directly")
-        images = convert_from_bytes(file_content, dpi=int(settings.embedding_image_dpi))
+        # PDF转换超时设置（秒）- 大型PDF可能需要更长时间
+        # pdf_conversion_timeout已经在函数开头定义
+        
+        # 根据PDF页数自适应调整DPI，避免内存不足
+        try:
+            page_count = get_pdf_page_count(file_content)
+            logger.info(f"PDF page count: {page_count}")
+            # 自适应DPI调整策略
+            base_dpi = int(settings.embedding_image_dpi)
+            if page_count > 100:
+                effective_dpi = min(base_dpi, 100)
+            elif page_count > 50:
+                effective_dpi = min(base_dpi, 150)
+            else:
+                effective_dpi = base_dpi
+            logger.info(f"Using DPI: {effective_dpi} (base: {base_dpi}) for {page_count} pages")
+        except Exception as e:
+            logger.warning(f"Failed to get PDF page count, using default DPI: {e}")
+            effective_dpi = int(settings.embedding_image_dpi)
+        
+        try:
+            # 在单独的线程中运行convert_from_bytes以避免阻塞事件循环
+            images = await asyncio.wait_for(
+                asyncio.to_thread(
+                    convert_from_bytes, 
+                    file_content, 
+                    dpi=effective_dpi,
+                    timeout=pdf_conversion_timeout,  # 传递给pdf2image的内部超时
+                    thread_count=1  # 限制线程数，减少内存使用
+                ),
+                timeout=pdf_conversion_timeout
+            )
+        except asyncio.TimeoutError:
+            logger.error(f"PDF conversion timed out after {pdf_conversion_timeout} seconds")
+            raise RuntimeError(f"PDF conversion timed out after {pdf_conversion_timeout} seconds")
     
     elif file_extension:  # 其他格式（含svg）
         # 通过 unoserver 转换
@@ -76,7 +141,38 @@ async def convert_file_to_images(
                 output_format="pdf",
                 input_format=file_extension
             )
-            images = convert_from_bytes(pdf_content, dpi=int(settings.embedding_image_dpi))
+            # 根据PDF页数自适应调整DPI，避免内存不足
+            try:
+                page_count = get_pdf_page_count(pdf_content)
+                logger.info(f"Converted PDF page count: {page_count}")
+                # 自适应DPI调整策略
+                base_dpi = int(settings.embedding_image_dpi)
+                if page_count > 100:
+                    effective_dpi = min(base_dpi, 100)
+                elif page_count > 50:
+                    effective_dpi = min(base_dpi, 150)
+                else:
+                    effective_dpi = base_dpi
+                logger.info(f"Using DPI: {effective_dpi} (base: {base_dpi}) for {page_count} pages")
+            except Exception as e:
+                logger.warning(f"Failed to get PDF page count, using default DPI: {e}")
+                effective_dpi = int(settings.embedding_image_dpi)
+            
+            try:
+                # 在单独的线程中运行convert_from_bytes以避免阻塞事件循环
+                images = await asyncio.wait_for(
+                    asyncio.to_thread(
+                        convert_from_bytes, 
+                        pdf_content, 
+                        dpi=effective_dpi,
+                        timeout=pdf_conversion_timeout,  # 传递给pdf2image的内部超时
+                        thread_count=1  # 限制线程数，减少内存使用
+                    ),
+                    timeout=pdf_conversion_timeout
+                )
+            except asyncio.TimeoutError:
+                logger.error(f"PDF conversion timed out after {pdf_conversion_timeout} seconds")
+                raise RuntimeError(f"PDF conversion timed out after {pdf_conversion_timeout} seconds")
             logger.debug(f"Converted {len(images)} pages from {file_extension} to PDF")
         except Exception as e:
             logger.error(f"Conversion error: {str(e)}")

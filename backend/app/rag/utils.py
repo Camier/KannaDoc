@@ -32,9 +32,17 @@ async def handle_processing_error(redis, task_id, error_msg):
 
 async def process_file(redis, task_id, username, knowledge_db_id, file_meta):
     try:
+        minio_filename = file_meta["minio_filename"]
+        
+        # Verify file exists in MinIO before attempting download
+        if not await async_minio_manager.validate_file_existence(minio_filename):
+            error_msg = f"File not found in MinIO: {minio_filename} (Original: {file_meta.get('original_filename')})"
+            logger.error(f"task:{task_id}: {error_msg}")
+            raise FileNotFoundError(error_msg)
+
         # 从MinIO获取文件内容
         file_content = await async_minio_manager.get_file_from_minio(
-            file_meta["minio_filename"]
+            minio_filename
         )
 
         # 解析为图片
