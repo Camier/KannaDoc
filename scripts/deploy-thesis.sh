@@ -6,6 +6,11 @@
 
 set -e
 
+# Resolve project root (assuming script is in scripts/ directory)
+script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
+project_root="$(dirname "$script_dir")"
+cd "$project_root"
+
 # Colors
 RED='\033[0;31m'
 GREEN='\033[0;32m'

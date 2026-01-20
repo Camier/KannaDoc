@@ -4,25 +4,19 @@ set -euo pipefail
 # ==============================================================================
 # LAYRA Startup Script (clean-compose wrapper)
 # ==============================================================================
-# Root cause we want to eliminate:
-#   - Docker Compose variable interpolation prefers exported host env vars over
-#     values in `.env`, so a "polluted shell" can silently break the deployment.
-#
-# Solution:
-#   - Always run Compose via `./compose-clean` (env -i allowlist + --env-file .env)
-# ==============================================================================
 
+# Resolve project root (assuming script is in scripts/ directory)
 script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
-cd "$script_dir"
+project_root="$(dirname "$script_dir")"
+cd "$project_root"
 
-if [[ ! -x ./compose-clean ]]; then
-  echo "❌ Missing executable ./compose-clean in repo root." >&2
-  echo "   Fix: chmod +x ./compose-clean" >&2
-  echo "   Then run: ./compose-clean up -d --build" >&2
+if [[ ! -x ./scripts/compose-clean ]]; then
+  echo "❌ Missing executable ./scripts/compose-clean in repo root." >&2
+  echo "   Fix: chmod +x ./scripts/compose-clean" >&2
   exit 1
 fi
 
-echo "✅ Using ./compose-clean (sanitized env) to start LAYRA."
+echo "✅ Using ./scripts/compose-clean (sanitized env) to start LAYRA."
 
 # 2. Check for .env
 if [ ! -f .env ]; then
@@ -32,9 +26,7 @@ fi
 
 # 3. Start Services (Clean Slate)
 echo "🚀 Starting LAYRA services..."
-# --force-recreate ensures containers are recreated with the clean env vars
-# --remove-orphans cleans up any old containers from previous configs
-./compose-clean up -d --build --force-recreate --remove-orphans
+./scripts/compose-clean up -d --build --force-recreate --remove-orphans
 
 echo ""
 echo "=============================================================================="
@@ -53,11 +45,11 @@ echo "👉 Backend:  http://${server_host}:8090/api/v1/health/check"
 echo ""
 echo "🛠️  Verification:"
 echo "   Checking backend configuration..."
-BACKEND_MODEL="$(./compose-clean exec -T backend printenv EMBEDDING_MODEL 2>/dev/null || echo 'Error reading env')"
+BACKEND_MODEL="$(./scripts/compose-clean exec -T backend printenv EMBEDDING_MODEL 2>/dev/null || echo 'Error reading env')"
 echo "   - Backend Model: $BACKEND_MODEL (Should be 'local_colqwen')"
 echo ""
 echo "Useful commands:"
-echo "  - Logs:    ./compose-clean logs -f backend"
-echo "  - Stop:    ./compose-clean stop"
-echo "  - Restart: ./start_layra.sh"
+echo "  - Logs:    ./scripts/compose-clean logs -f backend"
+echo "  - Stop:    ./scripts/compose-clean stop"
+echo "  - Restart: ./scripts/start_layra.sh"
 echo "=============================================================================="
