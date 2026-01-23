@@ -16,7 +16,7 @@ from datetime import timedelta
 from app.core.config import settings
 from app.schemas.auth import TokenData
 from app.db.redis import redis
-from fastapi.security import OAuth2PasswordBearer, APIKeyHeader
+from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.models.user import User
@@ -26,7 +26,6 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
-api_key_header = APIKeyHeader(name="X-API-Key", auto_error=False)
 
 
 def verify_password(plain_password, hashed_password):
@@ -125,19 +124,6 @@ async def authenticate_user(db: AsyncSession, username: str, password: str):
     Returns:
         User object if authenticated, None otherwise
     """
-    # Simple Auth Mode (Bypass hash check if credentials match env config)
-    if settings.simple_auth_mode:
-        if (
-            username == settings.simple_username
-            and password == settings.simple_password
-        ):
-            # Fetch user from DB to ensure we return a valid User object
-            # The user must exist in DB even for simple auth (created via init scripts)
-            result = await db.execute(select(User).where(User.username == username))
-            user = result.scalars().first()
-            if user:
-                return user
-
     result = await db.execute(select(User).where(User.username == username))
     user = result.scalars().first()
 

@@ -16,12 +16,18 @@ from app.rag.convert_file import save_file_to_minio
 from app.utils.kafka_producer import kafka_producer_manager
 from app.core.logging import logger
 from app.db.milvus import milvus_client
+from app.schemas.chat_responses import (
+    ConversationCreateResponse,
+    ConversationRenameResponse,
+    ConversationUploadResponse,
+    MessageResponse,
+)
 
 router = APIRouter()
 
 
 # 创建新会话
-@router.post("/conversations", response_model=dict)
+@router.post("/conversations", response_model=ConversationCreateResponse)
 async def create_conversation(
     conversation: ConversationCreate,
     db: MongoDB = Depends(get_mongo),
@@ -36,11 +42,14 @@ async def create_conversation(
         conversation_name=conversation.conversation_name,
         model_config=conversation.chat_model_config,
     )
-    return {"status": "success"}
+    return ConversationCreateResponse(
+        status="success",
+        conversation_id=conversation.conversation_id
+    )
 
 
 # 修改会话名称
-@router.post("/conversations/rename", response_model=dict)
+@router.post("/conversations/rename", response_model=ConversationRenameResponse)
 async def re_name(
     renameInput: ConversationRenameInput,
     db: MongoDB = Depends(get_mongo),
@@ -53,11 +62,14 @@ async def re_name(
     )
     if result["status"] == "failed":
         raise HTTPException(status_code=404, detail="Conversation not found")
-    return result
+    return ConversationRenameResponse(
+        status=result.get("status", "success"),
+        message=result.get("message", "Conversation renamed")
+    )
 
 
 # 修改会话数据库使用
-@router.post("/conversations/config", response_model=dict)
+@router.post("/conversations/config", response_model=MessageResponse)
 async def select_bases(
     basesInput: ConversationUpdateModelConfig,
     db: MongoDB = Depends(get_mongo),
@@ -70,7 +82,10 @@ async def select_bases(
     )
     if result["status"] == "failed":
         raise HTTPException(status_code=404, detail="Conversation not found")
-    return result
+    return MessageResponse(
+        status=result.get("status", "success"),
+        message=result.get("message")
+    )
 
 
 # 获取指定 conversation_id 的完整会话记录
@@ -178,7 +193,7 @@ async def delete_all_conversations_by_user(
 
 
 # 上传文件
-@router.post("/upload/{username}/{conversation_id}", response_model=dict)
+@router.post("/upload/{username}/{conversation_id}", response_model=ConversationUploadResponse)
 async def upload_multiple_files(
     files: List[UploadFile],
     username: str,
@@ -247,7 +262,7 @@ async def upload_multiple_files(
     # 发送Kafka消息（每个文件一个消息）
     for meta in file_meta_list:
         logger.info(
-            f"send {task_id} to kafka, file name {file.filename}, knowledge id {knowledge_db_id}."
+            f"send {task_id} to kafka, file name {meta['original_filename']}, knowledge id {knowledge_db_id}."
         )
         await kafka_producer_manager.send_embedding_task(
             task_id=task_id,
@@ -257,8 +272,8 @@ async def upload_multiple_files(
             priority=1,
         )
 
-    return {
-        "task_id": task_id,
-        "knowledge_db_id": knowledge_db_id,
-        "files": return_files,
-    }
+    return ConversationUploadResponse(
+        task_id=task_id,
+        knowledge_db_id=knowledge_db_id,
+        files=return_files
+    )
