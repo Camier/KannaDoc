@@ -14,9 +14,13 @@ from app.db.redis import redis
 from app.db.miniodb import async_minio_manager
 from app.utils.kafka_producer import kafka_producer_manager
 from app.utils.kafka_consumer import kafka_consumer_manager
+from app.utils.prometheus_metrics import PrometheusMiddleware
 
 framework = FastAPIFramework(debug_mode=settings.debug_mode)
 app = framework.get_app()
+
+# Instrument with Prometheus
+app.middleware("http")(PrometheusMiddleware())
 
 # Parse ALLOWED_ORIGINS from environment (comma-separated)
 # Example: "http://localhost:3000,https://example.com"
@@ -51,7 +55,7 @@ async def lifespan(app: FastAPI):
         try:
             await consumer_task
         except asyncio.CancelledError:
-            pass
+            logger.debug("Kafka consumer task cancelled during shutdown")
 
     app.state.shutdown_hook = shutdown_hook
 

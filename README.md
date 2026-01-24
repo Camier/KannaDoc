@@ -63,8 +63,9 @@ Built for **Enterprise-Grade** deployment, LAYRA features:
 - [⚡️ Core Superpowers](#core-superpowers)
 - [🚀 Latest Updates](#latest-updates)
 - [🧠 System Architecture](#system-architecture)
-- [🧰 Tech Stack](#tech-stack)
-- [⚙️ Deployment](#deployment)
+- [Tech Stack](#tech-stack)
+- [📘 API Documentation](#api-documentation)
+- [📖 Technical Documentation](#technical-documentation)
 - [📦 Roadmap](#roadmap)
 - [🤝 Contributing](#contributing)
 - [📫 Contact](#contact)
@@ -394,7 +395,7 @@ LAYRA supports multiple deployment configurations for different use cases:
 
 - **Standard**: Full feature set, requires 16GB+ GPU VRAM for ColQwen2.5
 - **Jina API**: No local GPU needed, uses cloud API (requires Jina API key)
-- **Thesis**: Simplified for single-user, includes Neo4j graph database (infrastructure-ready, application integration pending), simple auth
+- **Thesis**: Simplified for single-user, includes Neo4j graph database (infrastructure-ready, application integration verified)
 - **GPU Optimized**: Performance-tuned for NVIDIA GPUs
 - **Development**: Local development overrides (hot reload, debug settings)
 
@@ -459,13 +460,27 @@ JINA_EMBEDDINGS_V4_URL=https://api.jina.ai/v1/embeddings
 **Option C**: Thesis/Solo Deployment (simplified single-user)
 
 ```bash
-# For thesis demonstrations or single-user research with Neo4j (infrastructure-ready, application integration pending)
+# For thesis demonstrations or single-user research with Neo4j (infrastructure-ready, application integration verified)
 ./deploy-thesis.sh  # Automated deployment script
 
 # Or manually:
 # cp .env.thesis .env
 # docker compose -f docker-compose.thesis.yml up -d --build
 ```
+
+**📚 Thesis Deployment Guide**: See [`docs/THESIS_QUICKSTART.md`](docs/THESIS_QUICKSTART.md) for detailed instructions, verification steps, and Milvus connectivity notes.
+
+**✅ Current Verification (2026-01-22)**:
+- 26 PDFs ingested (ethnopharmacology focus: Sceletium tortuosum, PDE4 inhibitors, monoamine oxidase, etc.)
+- 180,208 vector embeddings stored in Milvus (ColQwen image embeddings)
+- GPU embeddings operational via ColQwen2.5 (model-server GPU)
+- Neo4j accessible at http://localhost:7474 (password: from NEO4J_PASSWORD)
+- Frontend: http://localhost:8090 (user: `thesis`, password: `thesis_deploy_b20f1508a2a983f6`)
+- Knowledge Base ID: `thesis_34f1ab7f-5fbe-4a7a-bf73-6561f8ce1dd7`
+- Workflow deployed: `thesis_74a550b6-1746-4e4f-b9c0-881ac8717341` (Thesis Blueprint Minutieux V1)
+- Workflow execution started: Task ID `a12ae5c9-f051-4c2e-b26a-39d5ab6cbe7d`
+- API accessible with JWT token (see quickstart for examples)
+- Milvus internal connectivity confirmed (port 19530 not exposed to host)
 
 **Option D**: GPU Optimized Deployment
 
@@ -533,6 +548,14 @@ Choose the operation you need:
      - **`colqwen2.5-v0.2`** folder
    - 🚨 **Critical**: Verify downloaded weights integrity!
 
+5. **Milvus Vector Database Access**:
+   - Milvus port 19530 is **not exposed to host** for security
+   - Services access internally via `milvus-standalone:19530`
+   - Diagnostic scripts must run inside containers:
+     ```bash
+     docker exec layra-backend python3 -c "from pymilvus import MilvusClient; client = MilvusClient('http://milvus-standalone:19530'); print(client.list_collections())"
+     ```
+
 #### 🔑 Key Details
 
 - `./compose-clean down -v` **permanently deletes** databases and model weights
@@ -582,23 +605,23 @@ LAYRA provides comprehensive interactive API documentation through FastAPI's bui
 | **Chat** | `/api/v1/chat/*` | Real-time SSE chat with RAG |
 | **Knowledge Base** | `/api/v1/knowledge-base/*` | Create, list, manage knowledge bases |
 | **Health** | `/api/v1/health/*` | System health checks and metrics |
+| **Configuration** | `/api/v1/config/*` | Model and system configuration |
 
-### Configuration
+### Detailed References
 
-For production deployments, configure CORS origins:
+For in-depth technical details, please refer to:
 
-```bash
-# In .env or .env.thesis
-ALLOWED_ORIGINS=http://localhost:3000,https://your-domain.com
-```
+- [**API Reference**](docs/API.md) - Full list of endpoints, request/response formats, and examples.
+- [**Database Schema**](docs/DATABASE.md) - Comprehensive overview of MySQL, MongoDB, Milvus, and Redis structures.
+- [**Configuration Guide**](docs/CONFIGURATION.md) - Reference for all environment variables and system settings.
 
-**⚠️ Security Note:** When `ALLOWED_ORIGINS` is empty (development mode), the API allows all origins but **disables credential-based authentication** for security. Always set `ALLOWED_ORIGINS` in production.
+<h2 id="technical-documentation">📖 Technical Documentation</h2>
 
-### For Developers
+Additional technical guides and analysis:
 
-- **API Root**: `http://localhost:8090/api/v1`
-- **OpenAPI Spec**: `http://localhost:8090/api/v1/openapi.json`
-- **ReDoc Spec**: `http://localhost:8090/api/redoc`
+- [**LAYRA Deep Analysis**](docs/LAYRA_DEEP_ANALYSIS.md) - Architectural deep-dive and design principles.
+- [**Milvus Ingestion Plan**](docs/MILVUS_INGESTION_PLAN.md) - Optimization strategy for high-performance vector storage.
+- [**GPU Optimization**](docs/GPU_OPTIMIZATION_INSIGHTS.md) - Insights on maximizing ColQwen2.5 performance.
 
 ---
 

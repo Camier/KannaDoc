@@ -9,6 +9,12 @@ from app.models.conversation import (
     ConversationSummary,
     ConversationUpdateModelConfig,
 )
+from app.schemas.chat_responses import (
+    ConversationCreateResponse,
+    ConversationRenameResponse,
+    ConversationUploadResponse,
+    StatusResponse,
+)
 from app.models.user import User
 from app.db.mongo import MongoDB, get_mongo
 from app.core.security import get_current_user, verify_username_match
@@ -16,12 +22,6 @@ from app.rag.convert_file import save_file_to_minio
 from app.utils.kafka_producer import kafka_producer_manager
 from app.core.logging import logger
 from app.db.milvus import milvus_client
-from app.schemas.chat_responses import (
-    ConversationCreateResponse,
-    ConversationRenameResponse,
-    ConversationUploadResponse,
-    MessageResponse,
-)
 
 router = APIRouter()
 
@@ -62,14 +62,11 @@ async def re_name(
     )
     if result["status"] == "failed":
         raise HTTPException(status_code=404, detail="Conversation not found")
-    return ConversationRenameResponse(
-        status=result.get("status", "success"),
-        message=result.get("message", "Conversation renamed")
-    )
+    return ConversationRenameResponse(status=result["status"], message=result.get("message"))
 
 
 # 修改会话数据库使用
-@router.post("/conversations/config", response_model=MessageResponse)
+@router.post("/conversations/config", response_model=StatusResponse)
 async def select_bases(
     basesInput: ConversationUpdateModelConfig,
     db: MongoDB = Depends(get_mongo),
@@ -82,10 +79,7 @@ async def select_bases(
     )
     if result["status"] == "failed":
         raise HTTPException(status_code=404, detail="Conversation not found")
-    return MessageResponse(
-        status=result.get("status", "success"),
-        message=result.get("message")
-    )
+    return StatusResponse(status=result["status"], message=result.get("message"))
 
 
 # 获取指定 conversation_id 的完整会话记录
@@ -156,7 +150,7 @@ async def get_conversations_by_user(
 
 
 # 删除指定会话
-@router.delete("/conversations/{conversation_id}", response_model=dict)
+@router.delete("/conversations/{conversation_id}", response_model=StatusResponse)
 async def delete_conversation(
     conversation_id: str,
     db: MongoDB = Depends(get_mongo),
@@ -166,11 +160,11 @@ async def delete_conversation(
     result = await db.delete_conversation(conversation_id)
     if result["status"] == "failed":
         raise HTTPException(status_code=404, detail=result["message"])
-    return result
+    return StatusResponse(status=result["status"], message=result.get("message"))
 
 
 # 删除指定用户的所有会话
-@router.delete("/users/{username}/conversations", response_model=dict)
+@router.delete("/users/{username}/conversations", response_model=StatusResponse)
 async def delete_all_conversations_by_user(
     username: str,
     db: MongoDB = Depends(get_mongo),
@@ -189,7 +183,7 @@ async def delete_all_conversations_by_user(
             detail="No conversations found for this user or already deleted",
         )"""
 
-    return result
+    return StatusResponse(status="success", message=f"Deleted {result.deleted_count} conversations")
 
 
 # 上传文件
@@ -275,5 +269,5 @@ async def upload_multiple_files(
     return ConversationUploadResponse(
         task_id=task_id,
         knowledge_db_id=knowledge_db_id,
-        files=return_files
+        files=return_files,
     )

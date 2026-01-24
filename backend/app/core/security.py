@@ -38,7 +38,8 @@ def get_password_hash(password):
     return pwd_context.hash(password)
 
 
-# TODO: Remove verify_password_legacy() after password migration complete (Day 90+)
+# DEADLINE: 2026-02-23
+# TODO: Remove verify_password_legacy() after password migration complete
 def verify_password_legacy(plain_password: str, hashed_password: str) -> bool:
     """
     Legacy password verification for passwords hashed with custom salt.

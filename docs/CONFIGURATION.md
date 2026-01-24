@@ -16,31 +16,6 @@ cp .env.example .env
 
 ---
 
-## Quick Start Templates
-
-### Development Mode
-```bash
-DEBUG_MODE=true
-SIMPLE_AUTH_MODE=true
-LOG_LEVEL=DEBUG
-```
-
-### Production Mode
-```bash
-DEBUG_MODE=false
-LOG_LEVEL=INFO
-SIMPLE_AUTH_MODE=false
-```
-
-### Solo/Thesis Mode
-```bash
-SIMPLE_AUTH_MODE=true
-EMBEDDING_MODEL=local_colqwen
-COLBERT_MODEL_PATH=/model_weights/colqwen2.5-v0.2
-```
-
----
-
 ## Configuration Variables
 
 ### Server Configuration
@@ -81,35 +56,6 @@ COLBERT_MODEL_PATH=/model_weights/colqwen2.5-v0.2
 ---
 
 ### Authentication
-
-#### SIMPLE_AUTH_MODE
-- **Type**: Boolean
-- **Default**: `false`
-- **Purpose**: Simplified authentication (no database login)
-- **Use Case**: Local/thesis mode, development
-- **When Enabled**:
-  - Users don't need login
-  - All requests use static API key
-  - Simplest deployment (no auth DB needed)
-
-#### SIMPLE_API_KEY
-- **Type**: String
-- **Default**: Generated random
-- **Purpose**: Static API key for Simple Auth Mode
-- **Format**: `32+ alphanumeric characters`
-- **Example**: `thesis-key-2412d62f0b22dfd6c6c4b70f11e1b53b`
-
-#### SIMPLE_USERNAME
-- **Type**: String
-- **Default**: `thesis`
-- **Purpose**: Default username for Simple Auth Mode
-- **Example**: `SIMPLE_USERNAME=research_user`
-
-#### SIMPLE_PASSWORD
-- **Type**: String
-- **Default**: Generated random
-- **Purpose**: Password for Simple Auth Mode (rarely used)
-- **Recommendation**: Keep auto-generated
 
 #### SECRET_KEY
 - **Type**: String

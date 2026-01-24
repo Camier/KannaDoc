@@ -53,21 +53,6 @@ class Settings(BaseSettings):
     jina_api_key: str = ""
     jina_embeddings_v4_url: str = "https://api.jina.ai/v1/embeddings"
 
-    # Simple Auth Settings (for solo/development use)
-    simple_auth_mode: bool = Field(
-        default=False,
-        description="Enable simple API key auth (no registration, single user)",
-    )
-    simple_api_key: str = Field(
-        default="layra-dev-key-2024", description="API key for simple auth mode"
-    )
-    simple_username: str = Field(
-        default="layra", description="Username for simple auth mode"
-    )
-    simple_password: str = Field(
-        default="layra123", description="Password for simple auth mode"
-    )
-
     model_config = {"extra": "ignore", "env_file": "../.env"}
 
 

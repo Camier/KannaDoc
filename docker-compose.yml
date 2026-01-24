@@ -163,7 +163,7 @@ services:
 
   milvus-standalone:
     container_name: layra-milvus-standalone
-    image: milvusdb/milvus:v2.5.6
+    image: milvusdb/milvus:v2.6.9
     command: ["milvus", "run", "standalone"]
     security_opt:
       - seccomp:unconfined
@@ -302,10 +302,6 @@ services:
       - EMBEDDING_MODEL=${EMBEDDING_MODEL}
       - JINA_API_KEY=${JINA_API_KEY}
       - JINA_EMBEDDINGS_V4_URL=${JINA_EMBEDDINGS_V4_URL}
-      - SIMPLE_AUTH_MODE=${SIMPLE_AUTH_MODE:-false}
-      - SIMPLE_API_KEY=${SIMPLE_API_KEY:-layra-dev-key-2024}
-      - SIMPLE_USERNAME=${SIMPLE_USERNAME:-layra}
-      - SIMPLE_PASSWORD=${SIMPLE_PASSWORD:-layra123}
     networks:
       - layra-net
     healthcheck:
@@ -326,7 +322,17 @@ services:
       - model_weights:/model_weights
     environment:
       - COLBERT_MODEL_PATH=${COLBERT_MODEL_PATH}
-      - CUDA_VISIBLE_DEVICES=
+      - CUDA_VISIBLE_DEVICES=0
+      - PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True,garbage_collection_threshold:0.9,max_split_size_mb:32
+      - PYTORCH_NO_CUDA_MEMORY_CACHING=1
+      - PYTORCH_CUDA_MEMORY_FRACTION=0.9
+      - TOKENIZERS_PARALLELISM=false
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=${REDIS_PASSWORD}
+      - HF_TOKEN=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
+      - HUGGINGFACE_HUB_CACHE=/root/.cache/huggingface
+    shm_size: 8gb
     networks:
       - layra-net
     healthcheck:
@@ -365,6 +371,50 @@ services:
     networks:
       - layra-net
 
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: layra-prometheus
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./monitoring/alerts.yml:/etc/prometheus/alerts.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    networks:
+      - layra-net
+    ports:
+      - "9090:9090"
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: layra-grafana
+    depends_on:
+      - prometheus
+    ports:
+      - "3001:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:-admin}
+    volumes:
+      - grafana_data:/var/lib/grafana
+    networks:
+      - layra-net
+
 networks:
   layra-net:
     driver: bridge
+
+volumes:
+  kafka_data:
+  minio_data:
+  redis_data:
+  mysql_data:
+  mongo_data:
+  milvus_etcd:
+  milvus_minio:
+  milvus_data:
+  model_weights:
+  layra_sandbox_volume:
+  mysql_migrations:
+  prometheus_data:
+  grafana_data:

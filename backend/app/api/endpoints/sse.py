@@ -304,11 +304,11 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
                         f"\nPlease answer the question based on these results: {result}"
                     )
                 except Exception as e:
-                    pass
+                    logger.error(f"Error executing MCP tool {function_name}: {e}", exc_info=True)
             else:
                 pass
         except Exception as e:
-            pass
+            logger.error(f"Error parsing MCP response or executing tool: {e}", exc_info=True)
     ##### mcp section #####
 
     user_message = WorkflowMessage(

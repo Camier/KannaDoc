@@ -1,0 +1,20 @@
+groups:
+  - name: layra_alerts
+    rules:
+      - alert: HighApiErrorRate
+        expr: rate(layra_api_requests_total{http_status=~"5.."}[5m]) / rate(layra_api_requests_total[5m]) > 0.1
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High API Error Rate on {{ $labels.endpoint }}"
+          description: "Error rate is above 10% for the last 5 minutes."
+
+      - alert: LatencyHigh
+        expr: rate(layra_api_request_duration_seconds_sum[5m]) / rate(layra_api_request_duration_seconds_count[5m]) > 2
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "High latency on {{ $labels.endpoint }}"
+          description: "Average latency is above 2s for the last 5 minutes."
