@@ -1,0 +1,398 @@
+# ============================================================================
+# LiteLLM Proxy Configuration (UNIFIED & STATIC)
+# ============================================================================
+# This configuration is the SINGLE SOURCE OF TRUTH for the LiteLLM Proxy.
+# It replaces the dynamic generation pipeline.
+#
+# USAGE:
+#   litellm --config litellm.yaml
+#
+# ENVIRONMENT VARIABLES:
+#   Secrets are referenced as os.environ/ENV_VAR and must be loaded before starting.
+# ============================================================================
+
+general_settings:
+  health_check_details: false
+  database_url: os.environ/DATABASE_URL
+  master_key: os.environ/LITELLM_MASTER_KEY
+
+  # Dev solo: keep off (enable for 1000+ RPS)
+  use_redis_transaction_buffer: false
+  
+  # Production Best Practice: Batch write spend updates every 60s (reduces DB load)
+  proxy_batch_write_at: 60
+  
+  # Production Best Practice: Connection pool limit per worker process
+  database_connection_pool_limit: 10
+  
+  # Production Best Practice: Disable error logs to reduce DB writes
+  disable_error_logs: true
+  
+  # Security Hardening: Disable returning master key in UI/API
+  disable_master_key_return: true
+  disable_adding_master_key_hash_to_db: true
+  
+  # Data Retention: Clean up old spend logs to control DB growth
+  maximum_spend_logs_retention_period: "7d"
+  maximum_spend_logs_retention_interval: "1d"
+
+  forward_client_headers_to_llm_api: false
+  store_prompts_in_spend_logs: false
+  
+  ui_access_mode: admin_only
+  enable_metrics: true
+  
+  # Production Best Practice: Setup Slack alerting
+  alerting: ["slack"]
+  # Tuned: 300s (5min) to match typical operational timeouts (Request Timeout is 600s)
+  alerting_threshold: 300
+
+  # Enterprise Features - Public Routes
+  public_routes:
+    - "LiteLLMRoutes.public_routes"
+    - /healthz
+    - /readyz
+    - /health/liveliness
+    - /health/readiness
+
+  # Production Best Practice: Only enable if running on VPC
+  allow_requests_on_db_unavailable: false
+  
+  # STATIC CONFIGURATION ONLY
+  store_model_in_db: false
+
+litellm_settings:
+  num_retries: 3
+  
+  # Production Best Practice: Increase timeout for large models
+  request_timeout: 600
+  
+  ssl_ecdh_curve: X25519
+  drop_params: true
+  
+  # Production Best Practice: Disable verbose logging
+  set_verbose: false
+  
+  cache: true
+  
+  # Production Best Practice: Enable JSON logs for structured logging
+  json_logs: true
+  
+  # Security: Redact PII/Prompts from exception logs
+  redact_messages_in_exceptions: true
+  
+  # Reliability: Validate requests against schema early
+  enable_json_schema_validation: true
+  
+  # Governance: Restrict key generation to Admins
+  key_generation_settings:
+    team_key_generation:
+      allowed_team_member_roles: ["admin"]
+      required_params: ["tags"]
+    personal_key_generation:
+      allowed_user_roles: ["proxy_admin"]
+
+  # Production Best Practice: Use host/port/password (NOT redis_url)
+  cache_params:
+    type: redis
+    host: os.environ/REDIS_HOST
+    port: os.environ/REDIS_PORT
+    password: os.environ/REDIS_PASSWORD
+    ttl: 600
+    namespace: litellm
+
+router_settings:
+  # Production Best Practice: simple-shuffle is RECOMMENDED for best performance
+  routing_strategy: simple-shuffle
+  
+  # Redis Settings for Router
+  redis_host: os.environ/REDIS_HOST
+  redis_port: os.environ/REDIS_PORT
+  redis_password: os.environ/REDIS_PASSWORD
+  redis_connection_pool_limit: 50
+  redis_connection_pool_timeout: 5
+  
+  # Safety Net: Fallback models if specific group fails
+  default_fallbacks:
+    - gpt-oss-120b-cloud
+    - kimi-k2-1t-cloud
+
+  # Model Group Aliases
+  model_group_alias:
+    # Chat aliases
+    defaultchat: gpt-oss-20b-cloud
+    default-chat: gpt-oss-20b-cloud
+    chat-default: gpt-oss-20b-cloud
+    codex-default: gpt-oss-20b-cloud
+    llama3.1-test: ministral-3-8b-cloud  # Consolidating duplicates
+    
+    # Embedding aliases
+    default-embed: embed-arctic-l-v2
+    embeddings-default: embed-arctic-l-v2
+    text-embedding-3-large: embed-arctic-l-v2
+    arctic-embed-l-v2-gguf: embed-arctic-l-v2
+    local-embeddings: embed-arctic-l-v2
+    hf-bge-small-en-v1.5: embed-arctic-l-v2
+
+  # Fallbacks
+  context_window_fallbacks:
+    - gpt-oss-20b-cloud:
+        - gpt-oss-120b-cloud
+    - ministral-3-8b-cloud:
+        - ministral-3-14b-cloud
+
+  fallbacks:
+    - gpt-oss-120b-cloud:
+        - gpt-oss-20b-cloud
+        - ministral-3-8b-cloud
+    - deepseek-v3-1-671b-cloud:
+        - kimi-k2-1t-cloud
+    - gemini-2.5-pro:
+        - gemini-2.5-flash
+    - ministral-3-8b-cloud:
+        - ministral-3-14b-cloud
+
+  # Reliability Settings
+  enable_pre_call_checks: true
+  allowed_fails: 3
+  cooldown_time: 30
+
+  # Production Best Practice: Granular retry policy
+  retry_policy:
+    AuthenticationErrorRetries: 0        # Permanent failure
+    TimeoutErrorRetries: 3               # Transient
+    RateLimitErrorRetries: 3             # Transient
+    ContentPolicyViolationErrorRetries: 0  # Permanent failure
+    InternalServerErrorRetries: 3        # Transient
+
+  # Production Best Practice: Granular allowed fails
+  allowed_fails_policy:
+    BadRequestErrorAllowedFails: 1000
+    AuthenticationErrorAllowedFails: 10
+    TimeoutErrorAllowedFails: 12
+    RateLimitErrorAllowedFails: 10000
+    ContentPolicyViolationErrorAllowedFails: 15
+    InternalServerErrorAllowedFails: 20
+
+# ============================================================================
+# MODEL DEFINITIONS (Static)
+# ============================================================================
+model_list:
+  # ==========================================================================
+  # OLLAMA CLOUD - ULTRA-LARGE MODELS (500B+ parameters)
+  # ==========================================================================
+
+  # Kimi K2 1T (Moonshot AI)
+  - model_name: kimi-k2-1t-cloud
+    litellm_params:
+      model: ollama_chat/kimi-k2:1t-cloud
+      api_base: https://ollama.com
+      api_key: os.environ/OLLAMA_API_KEY
+      timeout: 300 
+    model_info:
+      mode: chat
+      base_model: kimi-k2
+      supports_function_calling: true
+      input_cost_per_token: 0
+      output_cost_per_token: 0
+
+  # Kimi K2 Thinking (Moonshot AI)
+  - model_name: kimi-k2-thinking-cloud
+    litellm_params:
+      model: ollama_chat/kimi-k2-thinking:cloud
+      api_base: https://ollama.com
+      api_key: os.environ/OLLAMA_API_KEY
+      temperature: 0.6
+      timeout: 300
+    model_info:
+      mode: chat
+      base_model: kimi-k2-thinking
+      supports_function_calling: true
+      supports_agentic_tool_use: true
+      supports_reasoning: true
+      input_cost_per_token: 0
+      output_cost_per_token: 0
+
+  # DeepSeek V3.1
+  - model_name: deepseek-v3-1-671b-cloud
+    litellm_params:
+      model: ollama_chat/deepseek-v3.1:671b-cloud
+      api_base: https://ollama.com
+      api_key: os.environ/OLLAMA_API_KEY
+      temperature: 0.6
+      reasoning_effort: medium
+    model_info:
+      mode: chat
+      base_model: deepseek-v3
+      supports_function_calling: true
+      supports_reasoning: true
+      input_cost_per_token: 0
+      output_cost_per_token: 0
+
+  # Mistral Large 3
+  - model_name: mistral-large-3-675b-cloud
+    litellm_params:
+      model: ollama_chat/mistral-large-3:675b-cloud
+      api_base: https://ollama.com
+      api_key: os.environ/OLLAMA_API_KEY
+    model_info:
+      mode: chat
+      base_model: mistral-large
+      supports_function_calling: true
+      supports_vision: true
+      input_cost_per_token: 0
+      output_cost_per_token: 0
+
+  # Cogito 2.1
+  - model_name: cogito-2-1-671b-cloud
+    litellm_params:
+      model: ollama_chat/cogito-2.1:671b-cloud
+      api_base: https://ollama.com
+      api_key: os.environ/OLLAMA_API_KEY
+    model_info:
+      mode: chat
+      base_model: cogito-v2.1
+      supports_function_calling: true
+      input_cost_per_token: 0
+      output_cost_per_token: 0
+
+  # ==========================================================================
+  # DEEPSEEK REASONER (Direct API)
+  # Requires DEEPSEEK_API_KEY in .env
+  # ==========================================================================
+  - model_name: deepseek-reasoner
+    litellm_params:
+      model: deepseek/deepseek-reasoner
+      api_key: os.environ/DEEPSEEK_API_KEY
+      drop_params: true  # CRITICAL: DeepSeek Reasoner rejects temp/top_p
+    model_info:
+      mode: chat
+      supports_reasoning: true
+      input_cost_per_token: 0
+      output_cost_per_token: 0
+
+  # ==========================================================================
+  # OLLAMA CLOUD - LARGE MODELS (100B-500B parameters)
+  # ==========================================================================
+
+  # GPT-OSS 120B
+  - model_name: gpt-oss-120b-cloud
+    litellm_params:
+      model: ollama_chat/gpt-oss:120b
+      api_base: https://ollama.com
+      api_key: os.environ/OLLAMA_API_KEY
+    model_info:
+      mode: chat
+      base_model: gpt-oss
+      supports_function_calling: true
+      input_cost_per_token: 0
+      output_cost_per_token: 0
+
+  # ==========================================================================
+  # OLLAMA CLOUD - MEDIUM MODELS
+  # ==========================================================================
+
+  # GPT-OSS 20B
+  - model_name: gpt-oss-20b-cloud
+    litellm_params:
+      model: ollama_chat/gpt-oss:20b
+      api_base: https://ollama.com
+      api_key: os.environ/OLLAMA_API_KEY
+    model_info:
+      mode: chat
+      base_model: gpt-oss
+      supports_function_calling: true
+      input_cost_per_token: 0
+      output_cost_per_token: 0
+
+  # Ministral 3 8B
+  - model_name: ministral-3-8b-cloud
+    litellm_params:
+      model: ollama_chat/ministral-3:8b
+      api_base: https://ollama.com
+      api_key: os.environ/OLLAMA_API_KEY
+    model_info:
+      mode: chat
+      base_model: ministral-3
+      supports_function_calling: true
+      supports_vision: true
+      input_cost_per_token: 0
+      output_cost_per_token: 0
+
+  # Ministral 3 14B
+  - model_name: ministral-3-14b-cloud
+    litellm_params:
+      model: ollama_chat/ministral-3:14b
+      api_base: https://ollama.com
+      api_key: os.environ/OLLAMA_API_KEY
+    model_info:
+      mode: chat
+      base_model: ministral-3
+      supports_function_calling: true
+      supports_vision: true
+      input_cost_per_token: 0
+      output_cost_per_token: 0
+
+  # ==========================================================================
+  # GOOGLE GEMINI (AI Studio)
+  # ==========================================================================
+  - model_name: gemini-2.5-flash
+    litellm_params:
+      model: gemini/gemini-2.5-flash
+      api_base: https://generativelanguage.googleapis.com
+      api_key: os.environ/GEMINI_API_KEY
+    model_info:
+      mode: chat
+      supports_vision: true
+
+  - model_name: gemini-2.5-pro
+    litellm_params:
+      model: gemini/gemini-2.5-pro
+      api_base: https://generativelanguage.googleapis.com
+      api_key: os.environ/GEMINI_API_KEY
+    model_info:
+      mode: chat
+      supports_vision: true
+
+  # ==========================================================================
+  # VOYAGE AI (Cloud)
+  # ==========================================================================
+  - model_name: voyage-3
+    litellm_params:
+      model: voyage/voyage-3
+      api_key: os.environ/VOYAGE_API_KEY
+    model_info:
+      mode: embedding
+
+  - model_name: rerank-voyage-2
+    litellm_params:
+      model: voyage/rerank-2
+      api_key: os.environ/VOYAGE_API_KEY
+    model_info:
+      mode: rerank
+
+  # ==========================================================================
+  # LOCAL EMBEDDING MOCK (Voyage masquerading as Local)
+  # WARNING: This uses Cloud Voyage, not local compute.
+  # Configured for testing workflows that expect 0-cost local embeddings.
+  # ==========================================================================
+  - model_name: embed-arctic-l-v2
+    litellm_params:
+      model: voyage/voyage-3
+      api_key: os.environ/VOYAGE_API_KEY
+    model_info:
+      mode: embedding
+      input_cost_per_token: 0
+      output_cost_per_token: 0
+
+  # ==========================================================================
+  # RERANKING MODELS
+  # ==========================================================================
+  
+  # Cohere Rerank 3
+  - model_name: rerank-english-v3.0
+    litellm_params:
+      model: cohere/rerank-english-v3.0
+      api_key: os.environ/COHERE_API_KEY
+    model_info:
+      mode: rerank
