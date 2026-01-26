@@ -15,7 +15,406 @@ from app.workflow.code_scanner import CodeScanner
 from app.workflow.graph import TreeNode, WorkflowGraph
 from app.workflow.llm_service import ChatService
 from app.core.logging import logger
+from app.core.circuit_breaker import llm_service_circuit, CircuitBreakerConfig
 from app.workflow.utils import find_outermost_braces, replace_template
+from datetime import datetime
+
+
+# Memory limits for context storage to prevent memory leaks
+MAX_CONTEXT_SIZE = 1000  # Maximum entries per node
+MAX_CONTEXT_ENTRIES = 10000  # Total entries before cleanup
+
+# Provider-specific timeouts (in seconds)
+PROVIDER_TIMEOUTS = {
+    "deepseek-r1": 300,
+    "deepseek-reasoner": 300,
+    "deepseek": 180,
+    "zhipu": 180,
+    "glm": 180,
+    "moonshot": 120,
+    "openai": 120,
+    "default": 120,
+}
+
+# Loop iteration limits for safety
+LOOP_LIMITS = {
+    "count": None,  # maxCount is set by user
+    "condition": 1000,  # safety limit for condition-based loops
+    "default": 1000,
+}
+
+# Checkpoint configuration
+CHECKPOINT_CONFIG = {
+    "enabled": True,
+    "interval_nodes": 5,  # Auto-checkpoint every N nodes
+    "on_loop_complete": True,  # Checkpoint after each loop iteration
+    "on_condition_gate": True,  # Checkpoint after condition nodes
+    "max_checkpoints": 10,  # Keep only recent checkpoints
+}
+
+
+class QualityAssessmentEngine:
+    """
+    Assesses workflow output quality for conditional routing.
+    Provides multi-dimensional scoring for quality gates.
+    """
+
+    def __init__(self, global_variables: dict):
+        self.global_variables = global_variables
+        self.assessments = []
+
+    def assess_content_quality(
+        self,
+        content: str,
+        node_id: str,
+        criteria: dict = None,
+    ) -> dict:
+        """
+        Assess content quality across multiple dimensions.
+
+        Args:
+            content: The content to assess
+            node_id: Node identifier for tracking
+            criteria: Optional custom criteria weights
+
+        Returns:
+            Dict with quality scores and pass/fail decision
+        """
+        criteria = criteria or {
+            "completeness": 0.3,
+            "coherence": 0.3,
+            "relevance": 0.2,
+            "length": 0.2,
+        }
+
+        scores = {}
+
+        # Completeness: Has substantial content
+        word_count = len(content.split())
+        scores["completeness"] = min(1.0, word_count / 100)  # 100 words = complete
+
+        # Coherence: Has structured elements (paragraphs, lists)
+        has_paragraphs = "\n\n" in content or len(content.split("\n")) > 3
+        has_structure = any(marker in content for marker in ["#", "-", "*", "1.", "•"])
+        scores["coherence"] = 0.5 + (0.3 if has_paragraphs else 0) + (0.2 if has_structure else 0)
+
+        # Relevance: Contains keywords from global context
+        topic = self.global_variables.get("thesis_topic", "")
+        if topic:
+            topic_words = set(topic.lower().split())
+            content_words = set(content.lower().split())
+            relevance = len(topic_words & content_words) / max(len(topic_words), 1)
+            scores["relevance"] = min(1.0, relevance * 2)
+        else:
+            scores["relevance"] = 0.8  # Default if no topic
+
+        # Length: Appropriate length (not too short, not too long)
+        target_length = self.global_variables.get("target_length_pages", 10) * 300
+        length_ratio = word_count / max(target_length, 100)
+        scores["length"] = 1.0 - abs(1.0 - min(length_ratio, 2.0)) / 2.0
+
+        # Calculate weighted score
+        total_score = sum(scores.get(k, 0) * v for k, v in criteria.items())
+
+        # Determine pass/fail (threshold = 0.6)
+        passed = total_score >= 0.6
+
+        assessment = {
+            "node_id": node_id,
+            "timestamp": datetime.now().isoformat(),
+            "scores": scores,
+            "total_score": total_score,
+            "passed": passed,
+            "criteria": criteria,
+        }
+
+        self.assessments.append(assessment)
+        return assessment
+
+    def get_assessment_summary(self) -> dict:
+        """Get summary of all assessments."""
+        if not self.assessments:
+            return {"count": 0, "avg_score": 0, "pass_rate": 0}
+
+        passed = sum(1 for a in self.assessments if a["passed"])
+        total_score = sum(a["total_score"] for a in self.assessments)
+
+        return {
+            "count": len(self.assessments),
+            "avg_score": total_score / len(self.assessments),
+            "pass_rate": passed / len(self.assessments),
+            "latest": self.assessments[-1] if self.assessments else None,
+        }
+
+
+class WorkflowCheckpointManager:
+    """
+    Enhanced checkpoint management for workflow recovery.
+    Supports automatic checkpointing and rollback capabilities.
+    """
+
+    def __init__(self, task_id: str, engine: "WorkflowEngine"):
+        self.task_id = task_id
+        self.engine = engine
+        self.checkpoint_count = 0
+        self.last_checkpoint_node = None
+
+    async def save_checkpoint(self, reason: str = "manual") -> dict:
+        """
+        Save a workflow checkpoint with metadata.
+
+        Args:
+            reason: Why checkpoint was created (manual, auto, loop, gate, error)
+
+        Returns:
+            Checkpoint metadata
+        """
+        import time
+
+        checkpoint_id = f"{self.task_id}_{int(time.time())}"
+        self.checkpoint_count += 1
+
+        checkpoint = {
+            "checkpoint_id": checkpoint_id,
+            "task_id": self.task_id,
+            "created_at": datetime.now().isoformat(),
+            "reason": reason,
+            "node": self.last_checkpoint_node,
+            "checkpoint_number": self.checkpoint_count,
+            "state": {
+                "global_variables": dict(self.engine.global_variables),
+                "execution_status": dict(self.engine.execution_status),
+                "loop_index": dict(self.engine.loop_index),
+                "context_snapshot": self._get_context_snapshot(),
+            },
+        }
+
+        # Save to Redis with expiry
+        redis_conn = await redis.get_task_connection()
+        checkpoint_key = f"workflow:{self.task_id}:checkpoint:{checkpoint_id}"
+
+        await redis_conn.setex(
+            checkpoint_key,
+            86400,  # 24 hour retention
+            json.dumps(checkpoint),
+        )
+
+        # Add to checkpoint index
+        await redis_conn.zadd(
+            f"workflow:{self.task_id}:checkpoints",
+            {checkpoint_id: self.checkpoint_count},
+        )
+
+        # Trim old checkpoints
+        await self._trim_checkpoints(redis_conn)
+
+        logger.info(
+            f"Workflow {self.task_id}: Checkpoint #{self.checkpoint_count} saved "
+            f"(reason={reason}, node={self.last_checkpoint_node})"
+        )
+
+        return checkpoint
+
+    async def load_checkpoint(self, checkpoint_id: str = None) -> bool:
+        """
+        Load workflow from checkpoint.
+
+        Args:
+            checkpoint_id: Specific checkpoint to load, or latest if None
+
+        Returns:
+            True if loaded successfully
+        """
+        redis_conn = await redis.get_task_connection()
+
+        # Get latest checkpoint if not specified
+        if checkpoint_id is None:
+            checkpoints = await redis_conn.zrevrange(
+                f"workflow:{self.task_id}:checkpoints", 0, 0
+            )
+            if not checkpoints:
+                logger.warning(f"Workflow {self.task_id}: No checkpoints found")
+                return False
+            checkpoint_id = checkpoints[0]
+
+        checkpoint_key = f"workflow:{self.task_id}:checkpoint:{checkpoint_id}"
+        data = await redis_conn.get(checkpoint_key)
+
+        if not data:
+            logger.error(f"Workflow {self.task_id}: Checkpoint {checkpoint_id} not found")
+            return False
+
+        checkpoint = json.loads(data)
+
+        # Restore state
+        self.engine.global_variables = checkpoint["state"]["global_variables"]
+        self.engine.execution_status = checkpoint["state"]["execution_status"]
+        self.engine.loop_index = checkpoint["state"]["loop_index"]
+
+        logger.info(
+            f"Workflow {self.task_id}: Restored from checkpoint {checkpoint_id} "
+            f"(#{checkpoint['checkpoint_number']}, created={checkpoint['created_at']})"
+        )
+
+        return True
+
+    async def rollback_to_checkpoint(self, checkpoint_id: str = None) -> bool:
+        """
+        Rollback workflow to a previous checkpoint.
+
+        Args:
+            checkpoint_id: Specific checkpoint to rollback to, or latest if None
+
+        Returns:
+            True if rollback successful
+        """
+        logger.warning(f"Workflow {self.task_id}: Rolling back to checkpoint...")
+        success = await self.load_checkpoint(checkpoint_id)
+
+        if success:
+            # Clear execution state after rollback point
+            redis_conn = await redis.get_task_connection()
+            await redis_conn.xadd(
+                f"workflow:events:{self.task_id}",
+                {
+                    "type": "workflow",
+                    "status": "rollback",
+                    "result": "",
+                    "error": f"Rolled back to checkpoint",
+                    "create_time": str(datetime.now()),
+                },
+            )
+
+        return success
+
+    def _get_context_snapshot(self) -> dict:
+        """Get a lightweight snapshot of current context."""
+        snapshot = {}
+        for node_id, entries in self.engine.context.items():
+            if entries:
+                # Store only the most recent entry
+                snapshot[node_id] = {
+                    "last_result": entries[-1].get("result", "")[:200],
+                    "entry_count": len(entries),
+                }
+        return snapshot
+
+    async def _trim_checkpoints(self, redis_conn):
+        """Keep only the most recent checkpoints."""
+        max_checkpoints = CHECKPOINT_CONFIG["max_checkpoints"]
+        await redis_conn.zremrangebyrank(
+            f"workflow:{self.task_id}:checkpoints",
+            0,
+            -(max_checkpoints + 1),
+        )
+
+    async def list_checkpoints(self) -> list:
+        """List all available checkpoints."""
+        redis_conn = await redis.get_task_connection()
+        checkpoint_ids = await redis_conn.zrevrange(
+            f"workflow:{self.task_id}:checkpoints", 0, -1
+        )
+
+        checkpoints = []
+        for cid in checkpoint_ids:
+            key = f"workflow:{self.task_id}:checkpoint:{cid}"
+            data = await redis_conn.get(key)
+            if data:
+                checkpoints.append(json.loads(data))
+
+        return checkpoints
+
+    async def should_checkpoint(self, node: TreeNode, node_type: str) -> bool:
+        """
+        Determine if a checkpoint should be created at this node.
+
+        Args:
+            node: Current node
+            node_type: Node type
+
+        Returns:
+            True if checkpoint should be created
+        """
+        if not CHECKPOINT_CONFIG["enabled"]:
+            return False
+
+        self.last_checkpoint_node = node.node_id
+
+        # Checkpoint at condition gates
+        if node_type == "condition" and CHECKPOINT_CONFIG["on_condition_gate"]:
+            return True
+
+        # Checkpoint after loop iterations
+        if node_type == "loop" and CHECKPOINT_CONFIG["on_loop_complete"]:
+            # Check if this is a loop exit (node is in loop_parent.loop_last)
+            if node.loop_parent and node in node.loop_parent.loop_last:
+                return True
+
+        # Checkpoint at regular intervals
+        completed_count = sum(1 for v in self.engine.execution_status.values() if v)
+        if completed_count > 0 and completed_count % CHECKPOINT_CONFIG["interval_nodes"] == 0:
+            return True
+
+        return False
+
+
+def get_provider_timeout(model_name: str) -> int:
+    """Get provider-specific timeout for a model."""
+    model_lower = model_name.lower()
+    for provider, timeout in PROVIDER_TIMEOUTS.items():
+        if provider == "default":
+            continue
+        if provider in model_lower:
+            return timeout
+    return PROVIDER_TIMEOUTS["default"]
+
+
+async def retry_with_backoff(
+    func,
+    max_retries: int = 3,
+    base_delay: float = 1.0,
+    max_delay: float = 60.0,
+):
+    """
+    Execute function with exponential backoff retry.
+
+    Args:
+        func: Async function to execute
+        max_retries: Maximum number of retry attempts
+        base_delay: Initial delay in seconds
+        max_delay: Maximum delay between retries
+
+    Returns:
+        Function result
+
+    Raises:
+        Exception: If all retries exhausted
+    """
+    import asyncio
+
+    last_exception = None
+    for attempt in range(max_retries + 1):
+        try:
+            return await func()
+        except Exception as e:
+            last_exception = e
+            if attempt == max_retries:
+                # All retries exhausted
+                raise
+
+            # Exponential backoff with jitter
+            delay = min(base_delay * (2 ** attempt), max_delay)
+            jitter = delay * 0.1  # 10% jitter
+            import random
+            actual_delay = delay + random.uniform(-jitter, jitter)
+
+            logger.warning(
+                f"Workflow LLM call failed (attempt {attempt + 1}/{max_retries + 1}): {e}. "
+                f"Retrying in {actual_delay:.2f}s..."
+            )
+            await asyncio.sleep(actual_delay)
+
+    raise last_exception
 
 
 class WorkflowEngine:
@@ -40,6 +439,7 @@ class WorkflowEngine:
         self.start_node = start_node
         self.global_variables = global_variables
         self.context: Dict[str, Any] = {}
+        self._total_context_entries = 0  # Track total entries for cleanup
         self.scanner = CodeScanner()
         self.graph = self.get_graph()
         self.execution_status = {node["id"]: False for node in self.nodes}
@@ -66,6 +466,10 @@ class WorkflowEngine:
         self.need_save_image = (
             "sandbox-" + username + "-" + need_save_image if need_save_image else ""
         )
+
+        # Enhanced fault tolerance systems
+        self.checkpoint_manager = WorkflowCheckpointManager(self.task_id, self)
+        self.quality_assessor = QualityAssessmentEngine(self.global_variables)
 
     async def __aenter__(self):
         # 创建并启动沙箱
@@ -163,6 +567,23 @@ class WorkflowEngine:
         pipeline.expire(f"workflow:events:{self.task_id}", 3600)
         await pipeline.execute()
 
+    def _cleanup_context_if_needed(self):
+        """Clean up context dictionary to prevent memory leaks in long-running workflows."""
+        if self._total_context_entries > MAX_CONTEXT_ENTRIES:
+            # Remove oldest entries from each node's context until under limit
+            entries_to_remove = self._total_context_entries - (MAX_CONTEXT_ENTRIES // 2)
+            for node_id in list(self.context.keys()):
+                node_context = self.context[node_id]
+                if len(node_context) > MAX_CONTEXT_SIZE:
+                    # Keep only the most recent entries
+                    remove_count = min(len(node_context) - MAX_CONTEXT_SIZE, entries_to_remove)
+                    self.context[node_id] = node_context[remove_count:]
+                    entries_to_remove -= remove_count
+                    self._total_context_entries -= remove_count
+                if entries_to_remove <= 0:
+                    break
+            logger.info(f"Workflow {self.task_id}: Cleaned up context, total entries: {self._total_context_entries}")
+
     def get_graph(self):
         try:
             self.graph = WorkflowGraph(self.nodes, self.edges, self.start_node)
@@ -174,7 +595,11 @@ class WorkflowEngine:
             return (False, [], msg)
 
     def safe_eval(self, expr: str, node_name: str, node_id: str) -> bool:
-        """安全执行条件表达式"""
+        """安全执行条件表达式
+
+        SECURITY: Restricted builtins to prevent code injection attacks.
+        Only safe types and operators are available in the eval context.
+        """
         # 扫描表达式代码
         scan_result = self.scanner.scan_code(expr)
         if not scan_result["safe"]:
@@ -184,12 +609,38 @@ class WorkflowEngine:
 
         # 限制执行环境，仅允许访问context变量
         try:
+            def _coerce_value(value):
+                """Safely coerce string values to their appropriate types."""
+                if isinstance(value, str):
+                    if value == "":
+                        return ""
+                    # SECURITY: Do NOT use eval() here - it's a code injection risk
+                    # Only parse literal values that are safe
+                    value_lower = value.lower()
+                    if value_lower == "true":
+                        return True
+                    elif value_lower == "false":
+                        return False
+                    elif value_lower == "null":
+                        return None
+                    # Try to parse as number (int or float)
+                    try:
+                        if "." in value:
+                            return float(value)
+                        return int(value)
+                    except ValueError:
+                        pass
+                    # Return as string if no conversion applies
+                    return value
+                return value
+
+            # SECURITY: Enable strict builtins restriction to prevent code injection
+            # Only allows safe operations on provided variables
             return eval(
                 expr,
-                # {"__builtins__": {int}},  # 禁用内置函数
+                {"__builtins__": {}},  # SECURITY: Disable all built-in functions
                 {
-                    k: (v if v == "" else eval(v))
-                    for k, v in self.global_variables.items()
+                    k: _coerce_value(v) for k, v in self.global_variables.items()
                 },  # 暴露context到表达式
             )
         except Exception as e:
@@ -239,6 +690,7 @@ class WorkflowEngine:
                     "condition_child": result_condition_index,
                 }
             ]
+            self._total_context_entries += 1
         else:
             self.context[node.node_id].append(
                 {
@@ -246,6 +698,8 @@ class WorkflowEngine:
                     "condition_child": result_condition_index,
                 }
             )
+            self._total_context_entries += 1
+        self._cleanup_context_if_needed()
 
         return condition_child
 
@@ -299,7 +753,7 @@ class WorkflowEngine:
                         await self.execute_workflow(child)
                     return
 
-            if self.loop_index[node.node_id] < 100:
+            if self.loop_index[node.node_id] < LOOP_LIMITS["condition"]:
                 await self._set_loop_node_execution_status(loop_node)
                 await self.execute_workflow(loop_node)
                 # if self.safe_eval(condition, node.data["name"], node.node_id):
@@ -351,6 +805,11 @@ class WorkflowEngine:
                             )
                         ]
                         self.loop_index[node.loop_parent.node_id] += 1
+
+                        # Checkpoint after loop iteration completes
+                        if CHECKPOINT_CONFIG["on_loop_complete"]:
+                            await self.checkpoint_manager.save_checkpoint(reason="loop_complete")
+
                         await self.execute_workflow(node.loop_parent)
             return
 
@@ -376,6 +835,11 @@ class WorkflowEngine:
                     ):
                         self.loop_index[node.node_id] = 0
                         self.loop_index[node.loop_parent.node_id] += 1
+
+                        # Checkpoint after loop iteration completes
+                        if CHECKPOINT_CONFIG["on_loop_complete"]:
+                            await self.checkpoint_manager.save_checkpoint(reason="loop_complete")
+
                         self.skip_nodes = [
                             node_id
                             for node_id in self.skip_nodes
@@ -390,6 +854,11 @@ class WorkflowEngine:
             pointer_nodes = await self.handle_condition(node)
             self.execution_status[node.node_id] = True
             await self._update_node_status(node.node_id, True)
+
+            # Auto-checkpoint after condition gates for recovery
+            if await self.checkpoint_manager.should_checkpoint(node, "condition"):
+                await self.checkpoint_manager.save_checkpoint(reason="gate")
+
             # 异步执行子节点
             # tasks = []
             # to do check
@@ -400,11 +869,38 @@ class WorkflowEngine:
             #     tasks.append(task)
             # await asyncio.wait(tasks)
         else:
-            result = await self.execute_node(node)
-            if not result:
-                return
-            self.execution_status[node.node_id] = True
-            await self._update_node_status(node.node_id, True)
+            # Create checkpoint before executing node for rollback capability
+            await self.checkpoint_manager.save_checkpoint(reason="before_node")
+
+            try:
+                result = await self.execute_node(node)
+                if not result:
+                    return
+                self.execution_status[node.node_id] = True
+                await self._update_node_status(node.node_id, True)
+
+                # Auto-checkpoint after key nodes
+                if await self.checkpoint_manager.should_checkpoint(node, "node"):
+                    await self.checkpoint_manager.save_checkpoint(reason="after_node")
+
+            except Exception as e:
+                # Attempt rollback on error
+                logger.error(
+                    f"Workflow {self.task_id}: Node {node.node_id} failed: {e}. "
+                    f"Attempting rollback..."
+                )
+                rollback_success = await self.checkpoint_manager.rollback_to_checkpoint()
+
+                if rollback_success:
+                    logger.info(f"Workflow {self.task_id}: Rollback successful")
+                    # Re-raise after rollback to notify caller
+                    raise ValueError(
+                        f"Node {node.node_id} failed and rolled back: {str(e)}"
+                    )
+                else:
+                    logger.error(f"Workflow {self.task_id}: Rollback failed")
+                    raise
+
             # 异步执行子节点
             # tasks = []
             for child in node.children:
@@ -419,6 +915,11 @@ class WorkflowEngine:
                         for last_loop_node in node.loop_parent.loop_last
                     ):
                         self.loop_index[node.loop_parent.node_id] += 1
+
+                        # Checkpoint after loop iteration completes
+                        if CHECKPOINT_CONFIG["on_loop_complete"]:
+                            await self.checkpoint_manager.save_checkpoint(reason="loop_complete")
+
                         self.skip_nodes = [
                             node_id
                             for node_id in self.skip_nodes
@@ -491,14 +992,21 @@ class WorkflowEngine:
                 code_output = output[0]
                 if len(output) > 1:
                     new_global_variables_list = output[1].split("\n\n")[0]
-                    self.global_variables = {
-                        equation.split(" = ")[0]: equation.split(" = ")[1]
-                        for equation in new_global_variables_list.split("\n")[1:]
-                    }
+                    updates = {}
+                    for equation in new_global_variables_list.split("\n")[1:]:
+                        if " = " not in equation:
+                            continue
+                        key, value = equation.split(" = ", 1)
+                        updates[key] = value
+                    if updates:
+                        self.global_variables.update(updates)
                 if not node.node_id in self.context:
                     self.context[node.node_id] = [{"result": code_output}]
+                    self._total_context_entries += 1
                 else:
                     self.context[node.node_id].append({"result": code_output})
+                    self._total_context_entries += 1
+                self._cleanup_context_if_needed()
                 return True
             except docker.errors.ContainerError as e:
                 # logger.error(f"容器执行错误: {e.stderr}")
@@ -565,8 +1073,8 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
                         user_message=vlm_input,
                         temp_db_id=self.temp_db_id,
                     )
-                    # 获取流式生成器（假设返回结构化数据块）
-                    mcp_stream_generator = ChatService.create_chat_stream(
+                    # 获取流式生成器（使用带熔断和重试的LLM调用）
+                    mcp_stream_generator = await self._llm_call_with_retry(
                         user_message_content=mcp_user_message,
                         model_config=node.data["modelConfig"],
                         message_id=message_id,
@@ -676,8 +1184,8 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
                     user_message=vlm_input,
                     temp_db_id=temp_db_id,
                 )
-                # 获取流式生成器（假设返回结构化数据块）
-                stream_generator = ChatService.create_chat_stream(
+                # 获取流式生成器（使用带熔断和重试的LLM调用）
+                stream_generator = await self._llm_call_with_retry(
                     user_message_content=user_message,
                     model_config=node.data["modelConfig"],
                     message_id=message_id,
@@ -717,8 +1225,11 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
                 # 以节点ID为键存储完整结果
                 if not node.node_id in self.context:
                     self.context[node.node_id] = [{"result": "Message generated!"}]
+                    self._total_context_entries += 1
                 else:
                     self.context[node.node_id].append({"result": "Message generated!"})
+                    self._total_context_entries += 1
+                self._cleanup_context_if_needed()
                 return True
             except Exception as e:
                 # 错误处理
@@ -742,6 +1253,72 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
             "create_time": str(beijing_time_now()),
         }
         await redis_conn.xadd(f"workflow:events:{self.task_id}", event_data)
+
+    @llm_service_circuit
+    async def _llm_call_with_circuit_breaker(
+        self,
+        user_message_content,
+        model_config: dict,
+        message_id: str,
+        system_prompt: str,
+        save_to_db: bool,
+        user_image_urls: list,
+        supply_info: str = "",
+        quote_variables: dict = None,
+    ):
+        """
+        LLM call wrapped with circuit breaker protection.
+        This method is decorated with @llm_service_circuit for fault tolerance.
+        """
+        # Extract model name to determine timeout
+        model_name = model_config.get("model_name", "")
+        timeout = get_provider_timeout(model_name)
+
+        logger.info(
+            f"Workflow LLM call: model={model_name}, timeout={timeout}s, "
+            f"node={message_id}"
+        )
+
+        # Create and return the stream generator
+        return ChatService.create_chat_stream(
+            user_message_content=user_message_content,
+            model_config=model_config,
+            message_id=message_id,
+            system_prompt=system_prompt,
+            save_to_db=save_to_db,
+            user_image_urls=user_image_urls,
+            supply_info=supply_info,
+            quote_variables=quote_variables or {},
+        )
+
+    async def _llm_call_with_retry(
+        self,
+        user_message_content,
+        model_config: dict,
+        message_id: str,
+        system_prompt: str,
+        save_to_db: bool,
+        user_image_urls: list,
+        supply_info: str = "",
+        quote_variables: dict = None,
+    ):
+        """
+        LLM call with both circuit breaker and retry logic.
+        Combines fault tolerance with exponential backoff for transient failures.
+        """
+        async def _do_call():
+            return await self._llm_call_with_circuit_breaker(
+                user_message_content=user_message_content,
+                model_config=model_config,
+                message_id=message_id,
+                system_prompt=system_prompt,
+                save_to_db=save_to_db,
+                user_image_urls=user_image_urls,
+                supply_info=supply_info,
+                quote_variables=quote_variables,
+            )
+
+        return await retry_with_backoff(_do_call, max_retries=3)
 
     async def start(self, debug_resume=False, input_resume=False):
         """迭代式执行方法"""

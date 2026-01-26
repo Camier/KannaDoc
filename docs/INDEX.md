@@ -53,6 +53,7 @@ One-page cheat sheet for:
 | [DATABASE](core/DATABASE.md) | Database schemas (MongoDB, MySQL, Milvus, Redis) |
 | [EMBEDDINGS](core/EMBEDDINGS.md) | Embedding pipeline (ColQwen/Jina) |
 | [Vector DB Overview](core/vector_db/OVERVIEW.md) | Vector DB abstraction (Milvus/Qdrant) |
+| [WORKFLOW ENGINE](core/WORKFLOW_ENGINE.md) | Workflow execution, fault tolerance, recovery |
 
 ### Architecture
 | Document | Description |
@@ -252,8 +253,8 @@ grep "endpoint" /LAB/@thesis/layra/docs/core/API.md
 
 | Metric | Count |
 |--------|-------|
-| **Total Markdown Files** | 155 → 45 |
-| **Core Docs** | 5 |
+| **Total Markdown Files** | 155 → 46 |
+| **Core Docs** | 6 |
 | **Getting Started** | 4 |
 | **Architecture** | 3 |
 | **Operations** | 3 |

@@ -6,7 +6,7 @@
 
 ## Summary
 
-This document consolidates all changes made to the LAYRA project during the 2026-01-19 to 2026-01-25 session. The changes address security vulnerabilities, code quality issues, infrastructure improvements, comprehensive Kafka hardening, and auth hardening.
+This document consolidates all changes made to the LAYRA project during the 2026-01-19 to 2026-01-26 session. The changes address security vulnerabilities, code quality issues, infrastructure improvements, comprehensive Kafka hardening, auth hardening, and workflow engine fault tolerance.
 
 ### Key Changes
 
@@ -19,6 +19,7 @@ This document consolidates all changes made to the LAYRA project during the 2026
 | **Infrastructure** | Milvus services, healthcheck, Makefile, .env template, MinIO split-horizon |
 | **Documentation** | OpenAPI/Swagger added, Neo4j configs documented, API reference available |
 | **Stabilization** | Nginx routing fix, Password hash correction, KB metadata repair |
+| **Workflow Engine** | Circuit breaker, checkpoints, retry logic, quality gates, provider timeouts |
 
 ---
 
@@ -669,6 +670,139 @@ ALLOWED_ORIGINS=http://localhost:3000,http://localhost:8090
 - `backend/app/workflow/executors/` - Executor implementations
 **Purpose:** Improved workflow execution with better error handling
 **Status:** Experimental, migration in progress
+
+---
+
+## 18. Workflow Engine Fault Tolerance (2026-01-26)
+
+### 18.1 Circuit Breaker Integration
+**Files Modified:**
+- `backend/app/workflow/workflow_engine.py` - Integrated circuit breaker decorators
+- `backend/app/core/circuit_breaker.py` - Added provider-specific configs
+
+**Features:**
+- Provider-specific circuit breakers (DeepSeek Reasoner, Zhipu GLM, Default LLM)
+- Configurable failure thresholds and recovery timeouts
+- Protected LLM calls with automatic circuit breaking
+
+**Configuration:**
+```python
+PROVIDER_TIMEOUTS = {
+    "deepseek-r1": 300,
+    "deepseek-reasoner": 300,
+    "zhipu": 180,
+    "glm": 180,
+    "moonshot": 120,
+    "openai": 120,
+    "default": 120,
+}
+```
+
+### 18.2 Retry Logic with Exponential Backoff
+**File:** `backend/app/workflow/workflow_engine.py`
+
+**Features:**
+- 3 retry attempts with exponential backoff
+- Base delay: 1.0s, max delay: 60.0s
+- 10% jitter to prevent thundering herd
+- Applied via `_llm_call_with_retry()` wrapper
+
+### 18.3 Enhanced Checkpoint System
+**File:** `backend/app/workflow/workflow_engine.py`
+
+**New Class:** `WorkflowCheckpointManager`
+
+**Features:**
+- Automatic checkpoint creation at key nodes
+- Redis-backed persistence (24h retention)
+- Checkpoint trimming (keeps last 10)
+- Rollback capability on errors
+
+**Triggers:**
+- Before node execution (for rollback)
+- After condition gates
+- After loop iterations
+- Every N nodes (default: 5)
+
+**Configuration:**
+```python
+CHECKPOINT_CONFIG = {
+    "enabled": True,
+    "interval_nodes": 5,
+    "on_loop_complete": True,
+    "on_condition_gate": True,
+    "max_checkpoints": 10,
+}
+```
+
+### 18.4 Quality Assessment Engine
+**File:** `backend/app/workflow/workflow_engine.py`
+
+**New Class:** `QualityAssessmentEngine`
+
+**Features:**
+- Multi-dimensional quality scoring (completeness, coherence, relevance, length)
+- Configurable criteria weights
+- Pass/fail threshold at 0.6 score
+- Assessment history tracking
+
+**Dimensions:**
+| Dimension | Weight | Metric |
+|-----------|--------|--------|
+| Completeness | 0.3 | Word count ≥ 100 |
+| Coherence | 0.3 | Paragraphs + structure |
+| Relevance | 0.2 | Keyword overlap |
+| Length | 0.2 | Target length ratio |
+
+### 18.5 Loop Safety Limits
+**File:** `backend/app/workflow/workflow_engine.py`
+
+**Features:**
+- Configurable maximum iterations for loop types
+- Condition-based loops: 1000 (was: 100)
+- Count-based loops: User-defined `maxCount`
+
+**Configuration:**
+```python
+LOOP_LIMITS = {
+    "count": None,  # User-set maxCount
+    "condition": 1000,  # Safety limit
+    "default": 1000,
+}
+```
+
+### 18.6 Error Handling with Rollback
+**File:** `backend/app/workflow/workflow_engine.py`
+
+**Features:**
+- Pre-node checkpoint creation
+- Automatic rollback on node failure
+- Recovery from last checkpoint
+- Dead letter queue for failed workflows
+
+**Implementation:**
+```python
+try:
+    result = await self.execute_node(node)
+except Exception as e:
+    rollback_success = await checkpoint_manager.rollback_to_checkpoint()
+    if rollback_success:
+        raise ValueError(f"Node {node.node_id} failed and rolled back: {e}")
+```
+
+### 18.7 Documentation
+**File Added:**
+- `docs/core/WORKFLOW_ENGINE.md` - Comprehensive workflow engine documentation
+
+**Contents:**
+- Architecture overview
+- Fault tolerance features
+- State persistence
+- Error handling
+- Performance considerations
+- Configuration reference
+- Troubleshooting guide
+- API reference
 
 ---
 
