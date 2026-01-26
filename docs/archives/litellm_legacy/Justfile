@@ -1,0 +1,64 @@
+# LiteLLM Proxy Gateway (Docker - Standard Tools Only)
+
+set dotenv-load := true
+
+# Default task: Run the proxy
+default: run
+
+# --- Core Lifecycle ---
+
+# Start the LiteLLM Proxy gateway (Docker)
+run:
+    @echo "--- Starting LiteLLM Proxy (Docker) ---"
+    @docker compose up -d --remove-orphans
+
+# Stop the proxy
+stop:
+    @docker compose down
+
+# Full system restart
+restart:
+    @docker compose restart
+    @echo "Service restarted. Use 'just logs' to monitor."
+
+# --- Observability & Health ---
+
+# Tail the service logs (JSON formatted)
+logs:
+    @docker compose logs -f litellm
+
+# Quick readiness check (Standard Curl)
+check:
+    @echo "--- Checking Readiness ---"
+    @curl -s http://127.0.0.1:4001/health/readiness | jq .
+
+# Quick liveliness check (Standard Curl)
+ping:
+    @echo "--- Checking Liveliness ---"
+    @curl -s http://127.0.0.1:4001/health/liveliness | jq .
+
+# List all active models defined in config.yaml
+models:
+    @echo "--- Active Models ---"
+    @curl -s http://127.0.0.1:4000/v1/models | jq '.data[].id'
+
+# --- Maintenance ---
+
+# Backup the PostgreSQL database using standard pg_dump
+backup:
+    @echo "--- Backing up Database (litellm_backup.sql) ---"
+    @docker compose exec postgres pg_dump -U ${POSTGRES_USER:-litellm} ${POSTGRES_DB:-litellm} > litellm_backup.sql
+
+# --- Database & Schema ---
+
+# Validate Docker configuration
+validate:
+    @docker compose config
+
+# Check for database schema status
+db-status:
+    @docker compose exec litellm prisma migrate status
+
+# Check for database drift (Prisma)
+db-diff:
+    @docker compose exec litellm prisma migrate diff --from-schema-datamodel /app/schema.prisma --to-migrations /app/migrations
