@@ -20,8 +20,11 @@ class AsyncMinIOManager:
         """在应用启动时调用，用于检查并创建桶"""
         try:
             await self.create_bucket()
+        except (ConnectionError, TimeoutError) as e:
+            logger.error(f"Connection error initializing MinIO: {e}")
         except Exception as e:
-            logger.error(f"Error initializing MinIO: {e}")
+            logger.exception(f"Unexpected error initializing MinIO")
+            raise
 
     async def create_bucket(self):
         """检查并创建桶"""
@@ -42,9 +45,15 @@ class AsyncMinIOManager:
                     logger.info(f"Bucket '{self.bucket_name}' created.")
                 else:
                     logger.info(f"Bucket '{self.bucket_name}' already exists.")
+            except (ConnectionError, TimeoutError) as e:
+                logger.error(f"Connection error checking or creating bucket: {e}")
+                raise
+            except ClientError as e:
+                logger.error(f"MinIO client error checking or creating bucket: {e}")
+                raise
             except Exception as e:
-                logger.error(f"Error checking or creating bucket: {e}")
-                raise e
+                logger.exception(f"Unexpected error checking or creating bucket")
+                raise
 
     async def upload_image(self, file_name: str, image_stream: BytesIO):
         """将图像流上传到 MinIO"""
@@ -64,9 +73,18 @@ class AsyncMinIOManager:
                     Body=image_stream,
                     ContentType="image/png",
                 )
+            except (ConnectionError, TimeoutError) as e:
+                logger.error(f"Connection error uploading image: {e}")
+                raise
+            except ClientError as e:
+                logger.error(f"MinIO client error uploading image: {e}")
+                raise
+            except (ValueError, IOError) as e:
+                logger.error(f"Invalid input or stream error uploading image: {e}")
+                raise
             except Exception as e:
-                logger.exception(f"MinIO error upload_image: {e}")
-                raise e
+                logger.exception(f"Unexpected error uploading image")
+                raise
 
     async def upload_file(self, file_name: str, upload_file: UploadFile):
         """将文件流上传到 MinIO"""
@@ -88,9 +106,18 @@ class AsyncMinIOManager:
                     Body=file_data,
                     ContentType=upload_file.content_type,
                 )
+            except (ConnectionError, TimeoutError) as e:
+                logger.error(f"Connection error uploading file: {e}")
+                raise
+            except ClientError as e:
+                logger.error(f"MinIO client error uploading file: {e}")
+                raise
+            except (ValueError, IOError) as e:
+                logger.error(f"Invalid input or stream error uploading file: {e}")
+                raise
             except Exception as e:
-                logger.exception(f"MinIO error upload_file: {e}")
-                raise e
+                logger.exception(f"Unexpected error uploading file")
+                raise
 
     async def download_image_and_convert_to_base64(self, file_name: str):
         """下载图像并转换为Base64编码"""
@@ -108,16 +135,40 @@ class AsyncMinIOManager:
                 image_data = await response["Body"].read()
                 base64_image = base64.b64encode(image_data).decode("utf-8")
                 return base64_image
-                
+
+            except (ConnectionError, TimeoutError) as e:
+                logger.warning(f"Connection error downloading image: {e}")
+                return False
+            except ClientError as e:
+                if e.response["Error"]["Code"] == "404":
+                    logger.warning(f"Image not found: {file_name}")
+                    return False
+                logger.warning(f"MinIO client error downloading image: {e}")
+                return False
+            except (ValueError, IOError) as e:
+                logger.warning(f"Invalid input or stream error downloading image: {e}")
+                return False
             except Exception as e:
-                logger.warning(f"Error downloading image: {e}")
+                logger.exception(f"Unexpected error downloading image")
                 return False
 
     async def create_presigned_url(self, file_name: str, expires: int = 3153600000):
         """生成预签名 URL 以供文件下载"""
+        # Determine the public endpoint for presigned URLs
+        public_url = settings.minio_public_url
+        if not public_url:
+            # Fallback to server_ip + ':9000' for Docker/internal use
+            # WARNING: This only works for localhost access! For production,
+            # set MINIO_PUBLIC_URL environment variable to your public server IP
+            public_url = f"{settings.server_ip}:9000"
+            logger.warning(
+                f"MINIO_PUBLIC_URL not set, using fallback: {public_url}. "
+                "For external access, set MINIO_PUBLIC_URL environment variable."
+            )
+
         async with self.session.client(
             "s3",
-            endpoint_url=settings.minio_url,
+            endpoint_url=public_url,
             aws_access_key_id=settings.minio_access_key,
             aws_secret_access_key=settings.minio_secret_key,
             use_ssl=False,
@@ -130,9 +181,18 @@ class AsyncMinIOManager:
                 )
                 logger.info(f"Generated presigned URL: {url}")
                 return url
+            except (ConnectionError, TimeoutError) as e:
+                logger.error(f"Connection error generating presigned URL: {e}")
+                raise
+            except ClientError as e:
+                logger.error(f"MinIO client error generating presigned URL: {e}")
+                raise
+            except (ValueError, TypeError) as e:
+                logger.error(f"Invalid input generating presigned URL: {e}")
+                raise
             except Exception as e:
-                logger.exception(f"Error generating presigned URL: {e}")
-                raise e
+                logger.exception(f"Unexpected error generating presigned URL")
+                raise
 
     async def get_file_from_minio(self, minio_filename):
         async with self.session.client(
@@ -149,9 +209,18 @@ class AsyncMinIOManager:
                 file_data = await response["Body"].read()  # 读取图像数据
                 logger.info(f"Get minio object: {minio_filename}")
                 return file_data
+            except (ConnectionError, TimeoutError) as e:
+                logger.error(f"Connection error getting minio object: {e}")
+                raise
+            except ClientError as e:
+                logger.error(f"MinIO client error getting object: {e}")
+                raise
+            except (ValueError, IOError) as e:
+                logger.error(f"Invalid input or stream error getting minio object: {e}")
+                raise
             except Exception as e:
-                logger.exception(f"Error getting minio object: {e}")
-                raise e
+                logger.exception(f"Unexpected error getting minio object")
+                raise
 
     # 批量删除
     async def bulk_delete(self, keys: List[str]):
@@ -182,10 +251,19 @@ class AsyncMinIOManager:
                                 f"MinIO删除失败 | Key: {err['Key']} "
                                 f"| Code: {err['Code']} | Message: {err['Message']}"
                             )
-                            raise
+                            raise RuntimeError(f"Failed to delete objects: {errors}")
 
+            except (ConnectionError, TimeoutError) as e:
+                logger.error(f"Connection error in bulk delete: {e}")
+                raise
+            except ClientError as e:
+                logger.error(f"MinIO client error in bulk delete: {e}")
+                raise
+            except (ValueError, KeyError) as e:
+                logger.error(f"Invalid input in bulk delete: {e}")
+                raise
             except Exception as e:
-                logger.exception(f"MinIO 批量删除异常: {str(e)}")
+                logger.exception(f"Unexpected error in bulk delete")
                 raise
 
     async def validate_file_existence(self, filename: str) -> bool:
