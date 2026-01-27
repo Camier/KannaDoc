@@ -8,12 +8,47 @@ from openai import AsyncOpenAI
 
 from app.rag.mesage import find_depth_parent_mesage
 from app.core.logging import logger
-from app.db.milvus import milvus_client
+from app.db.vector_db import vector_db_client
 from app.rag.get_embedding import get_embeddings_from_httpx
 from app.rag.utils import replace_image_content, sort_and_filter
+from app.rag.provider_client import get_llm_client
+from app.core.circuit_breaker import llm_service_circuit
 
 
 class ChatService:
+    @staticmethod
+    def _normalize_multivector(emb):
+        """
+        Returns List[List[float]] shaped (n_tokens, dim)
+        Accepts:
+          - List[List[float]]                     -> as-is
+          - List[ List[List[float]] ] with len=1  -> emb[0]
+          - List[float]                           -> [emb]
+        """
+        if not isinstance(emb, list):
+            raise TypeError(f"Unexpected embedding type: {type(emb)}")
+
+        if len(emb) == 0:
+            return []
+
+        # Case: list-of-embeddings for each input text, single input
+        if (
+            len(emb) == 1
+            and isinstance(emb[0], list)
+            and emb[0]
+            and isinstance(emb[0][0], list)
+        ):
+            emb = emb[0]
+
+        # Case: single vector
+        if emb and isinstance(emb[0], (float, int)):
+            return [[float(x) for x in emb]]
+
+        # Case: multivector
+        if emb and isinstance(emb[0], list):
+            return [[float(x) for x in v] for v in emb]
+
+        raise TypeError("Unexpected embedding structure")
 
     @staticmethod
     async def create_chat_stream(
@@ -123,15 +158,19 @@ class ChatService:
             query_embedding = await get_embeddings_from_httpx(
                 [user_message_content.user_message], endpoint="embed_text"
             )
+            query_vecs = ChatService._normalize_multivector(query_embedding)
             for base in bases:
                 collection_name = f"colqwen{base['baseId'].replace('-', '_')}"
-                if milvus_client.check_collection(collection_name):
-                    scores = milvus_client.search(
-                        collection_name, data=query_embedding[0], topk=top_K
+                # Remove redundant check_collection - search will fail gracefully if collection doesn't exist
+                try:
+                    scores = vector_db_client.search(
+                        collection_name, data=query_vecs, topk=top_K
                     )
                     for score in scores:
                         score.update({"collection_name": collection_name})
                     result_score.extend(scores)
+                except Exception as e:
+                    logger.debug(f"Collection {collection_name} not accessible or empty: {e}")
             sorted_score = sort_and_filter(result_score, min_score=score_threshold)
             if len(sorted_score) >= top_K:
                 cut_score = sorted_score[:top_K]
@@ -151,7 +190,7 @@ class ChatService:
                     score["file_id"], score["image_id"]
                 )
                 if not file_and_image_info["status"] == "success":
-                    milvus_client.delete_files(
+                    vector_db_client.delete_files(
                         score["collection_name"], [score["file_id"]]
                     )
                     logger.warning(
@@ -189,30 +228,67 @@ class ChatService:
         messages.append(user_message)
         send_messages = await replace_image_content(messages)
 
+        # DeepSeek Safety: Strip images if model is text-only
+        if "deepseek" in model_name.lower():
+            logger.info(
+                f"Model {model_name} detected as DeepSeek. Stripping image content for compatibility."
+            )
+            for msg in send_messages:
+                if isinstance(msg.get("content"), list):
+                    msg["content"] = [
+                        item
+                        for item in msg["content"]
+                        if item.get("type") != "image_url"
+                    ]
+
         is_aborted = False  # 标记是否中断
         thinking_content = []
         full_response = []
         total_token = 0
         completion_tokens = 0
         prompt_tokens = 0
+        client = None
         try:
-            client = AsyncOpenAI(
-                # 若没有配置环境变量，请用百炼API Key将下行替换为：api_key="sk-xxx",
-                api_key=api_key,
-                base_url=model_url,
-            )
+            # Use provider client for direct API access (no LiteLLM proxy)
+            # If model_url is provided (legacy), use it; otherwise auto-detect provider
+            if model_url and model_url.startswith("http"):
+                # Legacy: explicit URL provided (could be LiteLLM or direct)
+                client = AsyncOpenAI(
+                    api_key=api_key,
+                    base_url=model_url,
+                )
+            else:
+                # New: auto-detect provider from model name
+                client = get_llm_client(model_name, api_key=api_key)
 
             # 调用OpenAI API
             # 动态构建参数字典
             optional_args = {}
-            if temperature != -1:
-                optional_args["temperature"] = temperature
-            if max_length != -1:
-                optional_args["max_tokens"] = (
-                    max_length  # 注意官方API参数名为max_tokens
+
+            # Provider-specific parameter handling
+            # DeepSeek reasoning models don't support temperature/top_p
+            is_deepseek_reasoner = (
+                "deepseek" in model_name.lower() and
+                ("reasoner" in model_name.lower() or "r1" in model_name.lower())
+            )
+
+            if is_deepseek_reasoner:
+                # DeepSeek reasoning mode: remove unsupported parameters
+                logger.info(
+                    f"DeepSeek reasoning model detected ({model_name}). "
+                    f"Temperature and top_p are not supported in reasoning mode."
                 )
-            if top_P != -1:
-                optional_args["top_p"] = top_P  # 注意官方API参数名为top_p（小写p）
+                # Use max_completion_tokens instead of max_tokens for reasoning models
+                if max_length != -1:
+                    optional_args["max_completion_tokens"] = max_length
+            else:
+                # Standard parameters for non-reasoning models
+                if temperature != -1:
+                    optional_args["temperature"] = temperature
+                if max_length != -1:
+                    optional_args["max_tokens"] = max_length
+                if top_P != -1:
+                    optional_args["top_p"] = top_P
 
             # 带条件参数的API调用
             response = await client.chat.completions.create(
@@ -308,7 +384,8 @@ class ChatService:
             logger.info(
                 f"Closing OpenAI client for conversation {user_message_content.conversation_id}"
             )
-            await client.close()
+            if client:
+                await client.close()
 
             # 只有在有响应内容时才保存
             if not full_response:
@@ -320,21 +397,20 @@ class ChatService:
                 )
             ai_message = {"role": "assistant", "content": "".join(full_response)}
 
-            # 保存AI响应到mongodb
-            asyncio.create_task(
-                db.add_turn(
-                    conversation_id=user_message_content.conversation_id,
-                    message_id=message_id,
-                    parent_message_id=user_message_content.parent_id,
-                    user_message=user_message,
-                    temp_db=user_message_content.temp_db,
-                    ai_message=ai_message,
-                    file_used=file_used,
-                    status="aborted" if is_aborted else "completed",
-                    total_token=total_token,
-                    completion_tokens=completion_tokens,
-                    prompt_tokens=prompt_tokens,
-                )
+            # SECURITY FIX: Properly await database operation instead of fire-and-forget
+            # Fire-and-forget tasks can cause silent failures and data loss
+            await db.add_turn(
+                conversation_id=user_message_content.conversation_id,
+                message_id=message_id,
+                parent_message_id=user_message_content.parent_id,
+                user_message=user_message,
+                temp_db=user_message_content.temp_db,
+                ai_message=ai_message,
+                file_used=file_used,
+                status="aborted" if is_aborted else "completed",
+                total_token=total_token,
+                completion_tokens=completion_tokens,
+                prompt_tokens=prompt_tokens,
             )
             logger.info(
                 f"Save conversation {user_message_content.conversation_id} to mongodb"

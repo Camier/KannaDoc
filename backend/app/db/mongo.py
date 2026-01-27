@@ -7,9 +7,13 @@ from app.core.logging import logger
 from app.db.ultils import parse_aggregate_result
 from app.utils.timezone import beijing_time_now
 from app.db.miniodb import async_minio_manager
-from app.db.milvus import milvus_client
+from app.db.vector_db import vector_db_client
 from pymongo.errors import DuplicateKeyError, BulkWriteError
+import asyncio
 
+
+# TODO: This file is 1,566 lines and needs to be split into repositories.
+# See docs/REFACTORING_PLAN.md for the planned structure.
 
 class MongoDB:
     def __init__(self):
@@ -21,11 +25,17 @@ class MongoDB:
         try:
             # 知识库集合索引
             await self.db.knowledge_bases.create_index(
-                [("knowledge_base_id", 1)], unique=True, name="unique_kb_id"  # 唯一索引
+                [("knowledge_base_id", 1)],
+                unique=True,
+                name="unique_kb_id",  # 唯一索引
             )
             await self.db.knowledge_bases.create_index(
                 [("username", 1), ("is_delete", 1)],  # 复合普通索引
                 name="user_kb_query",
+            )
+            await self.db.knowledge_bases.create_index(
+                [("files.filename", 1)],
+                name="kb_files_filename",  # 用于知识库内文件名搜索
             )
 
             # 模型配置索引
@@ -37,10 +47,17 @@ class MongoDB:
 
             # 文件集合索引
             await self.db.files.create_index(
-                [("file_id", 1)], unique=True, name="unique_file_id"  # 唯一索引
+                [("file_id", 1)],
+                unique=True,
+                name="unique_file_id",  # 唯一索引
             )
             await self.db.files.create_index(
-                [("knowledge_db_id", 1)], name="kb_file_query"  # 普通索引
+                [("knowledge_db_id", 1)],
+                name="kb_file_query",  # 普通索引
+            )
+            await self.db.files.create_index(
+                [("filename", 1)],
+                name="filename_search",  # 用于文件名搜索
             )
 
             # 对话集合索引
@@ -98,8 +115,11 @@ class MongoDB:
         await self._create_indexes()
 
     async def close(self):
+        """Close MongoDB connection using executor to avoid blocking event loop."""
         if self.client:
-            self.client.close()  # 使用 await 调用 close
+            import asyncio
+            loop = asyncio.get_event_loop()
+            await loop.run_in_executor(None, self.client.close)
 
     # config
     async def create_model_config(
@@ -173,7 +193,7 @@ class MongoDB:
             "max_length": max_length,
             "top_P": top_P,
             "top_K": top_K,
-            "score_threshold":score_threshold,
+            "score_threshold": score_threshold,
         }
 
     async def update_selected_model(self, username: str, model_id: str):
@@ -401,9 +421,7 @@ class MongoDB:
         """按时间降序获取指定用户的所有会话"""
         cursor = self.db.conversations.find(
             {"username": username, "is_delete": False}
-        ).sort(
-            "last_modify_at", -1
-        )  # -1 表示降序排列
+        ).sort("last_modify_at", -1)  # -1 表示降序排列
         return await cursor.to_list(length=None)  # 返回所有匹配的记录
 
     async def update_conversation_name(
@@ -522,7 +540,7 @@ class MongoDB:
         for db_id in set(temp_dbs):
             result = await self.delete_knowledge_base(db_id)
             deletion_results.append({"knowledge_base_id": db_id, "result": result})
-            milvus_client.delete_collection("colqwen" + db_id.replace("-", "_"))
+            vector_db_client.delete_collection("colqwen" + db_id.replace("-", "_"))
 
         # 删除对话文档
         delete_result = await self.db.conversations.delete_one(
@@ -557,7 +575,7 @@ class MongoDB:
         for db_id in set(temp_dbs):
             result = await self.delete_knowledge_base(db_id)
             deletion_results.append({"knowledge_base_id": db_id, "result": result})
-            milvus_client.delete_collection("colqwen" + db_id.replace("-", "_"))
+            vector_db_client.delete_collection("colqwen" + db_id.replace("-", "_"))
 
         # 删除所有对话文档
         delete_result = await self.db.conversations.delete_many({"username": username})
@@ -590,8 +608,8 @@ class MongoDB:
         try:
             existing = await self.db.chatflows.find_one({"chatflow_id": chatflow_id})
             if existing:
-                return {"status": "success", "message": "chatflow已存在，跳过创建"}  
-              
+                return {"status": "success", "message": "chatflow已存在，跳过创建"}
+
             await self.db.chatflows.insert_one(chatflow)
             return {"status": "success", "id": chatflow_id}
         except Exception as e:
@@ -604,23 +622,21 @@ class MongoDB:
             {"chatflow_id": chatflow_id, "is_delete": False}
         )
         return chatflow if chatflow else None
-    
+
     async def get_chatflows_by_user(self, username: str) -> List[Dict[str, Any]]:
         """按时间降序获取指定用户的所有会话"""
         cursor = self.db.chatflows.find(
             {"username": username, "is_delete": False}
-        ).sort(
-            "last_modify_at", -1
-        )  # -1 表示降序排列
+        ).sort("last_modify_at", -1)  # -1 表示降序排列
         return await cursor.to_list(length=None)  # 返回所有匹配的记录
 
-    async def get_chatflows_by_workflow_id(self, workflow_id: str) -> List[Dict[str, Any]]:
+    async def get_chatflows_by_workflow_id(
+        self, workflow_id: str
+    ) -> List[Dict[str, Any]]:
         """按时间降序获取指定用户的所有会话"""
         cursor = self.db.chatflows.find(
             {"workflow_id": workflow_id, "is_delete": False}
-        ).sort(
-            "last_modify_at", -1
-        )  # -1 表示降序排列
+        ).sort("last_modify_at", -1)  # -1 表示降序排列
         return await cursor.to_list(length=None)  # 返回所有匹配的记录
 
     async def update_chatflow_name(self, chatflow_id: str, new_name: str) -> dict:
@@ -698,7 +714,7 @@ class MongoDB:
         for db_id in set(temp_dbs):
             result = await self.delete_knowledge_base(db_id)
             deletion_results.append({"knowledge_base_id": db_id, "result": result})
-            milvus_client.delete_collection("colqwen" + db_id.replace("-", "_"))
+            vector_db_client.delete_collection("colqwen" + db_id.replace("-", "_"))
 
         # 删除chatflow文档
         delete_result = await self.db.chatflows.delete_one({"chatflow_id": chatflow_id})
@@ -714,7 +730,7 @@ class MongoDB:
     async def delete_workflow_all_chatflow(self, workflow_id: str) -> dict:
         """删除指定用户的所有会话及关联的临时知识库"""
         # 获取用户所有chatflow
-        chatflows = await self.db.chatflows.find({"workflow_id":  workflow_id}).to_list(
+        chatflows = await self.db.chatflows.find({"workflow_id": workflow_id}).to_list(
             length=None
         )
         # 收集所有临时知识库ID
@@ -730,10 +746,12 @@ class MongoDB:
         for db_id in set(temp_dbs):
             result = await self.delete_knowledge_base(db_id)
             deletion_results.append({"knowledge_base_id": db_id, "result": result})
-            milvus_client.delete_collection("colqwen" + db_id.replace("-", "_"))
+            vector_db_client.delete_collection("colqwen" + db_id.replace("-", "_"))
 
         # 删除所有chatflow文档
-        delete_result = await self.db.chatflows.delete_many({"workflow_id":  workflow_id})
+        delete_result = await self.db.chatflows.delete_many(
+            {"workflow_id": workflow_id}
+        )
 
         if delete_result.deleted_count > 0:
             return {
@@ -786,17 +804,24 @@ class MongoDB:
         """按时间降序获取指定用户的所有会话"""
         cursor = self.db.knowledge_bases.find(
             {"username": username, "is_delete": False}
-        ).sort(
-            "last_modify_at", -1
-        )  # -1 表示降序排列
+        ).sort("last_modify_at", -1)  # -1 表示降序排列
         return await cursor.to_list(length=None)  # 返回所有匹配的记录
 
-    async def get_all_knowledge_bases_by_user(self, username: str) -> List[Dict[str, Any]]:
+    async def get_all_knowledge_bases_by_user(
+        self, username: str
+    ) -> List[Dict[str, Any]]:
         """按时间降序获取指定用户的所有会话"""
-        cursor = self.db.knowledge_bases.find(
-            {"username": username}
-        )
+        cursor = self.db.knowledge_bases.find({"username": username})
         return await cursor.to_list(length=None)  # 返回所有匹配的记录
+
+    async def get_knowledge_base_by_id(
+        self, knowledge_base_id: str, include_deleted: bool = False
+    ) -> Optional[Dict[str, Any]]:
+        """Get a knowledge base by id."""
+        query = {"knowledge_base_id": knowledge_base_id}
+        if not include_deleted:
+            query["is_delete"] = False
+        return await self.db.knowledge_bases.find_one(query)
 
     async def delete_knowledge_base(self, knowledge_base_id: str) -> dict:
         """删除知识库及关联的所有文件"""
@@ -858,6 +883,71 @@ class MongoDB:
 
         return response
 
+    async def delete_knowledge_bases_bulk(self, knowledge_base_ids: List[str]) -> dict:
+        """
+        Batch delete multiple knowledge bases with optimized single query.
+
+        Args:
+            knowledge_base_ids: List of knowledge base IDs to delete
+
+        Returns:
+            Dict with deletion statistics
+        """
+        unique_ids = list(set(knowledge_base_ids))
+        if not unique_ids:
+            return {"status": "success", "message": "Empty list, no knowledge bases to delete"}
+
+        logger.info(f"Batch deleting {len(unique_ids)} knowledge bases")
+
+        # Single query to fetch all knowledge bases
+        cursor = self.db.knowledge_bases.find(
+            {"knowledge_base_id": {"$in": unique_ids}}
+        )
+        knowledge_bases = await cursor.to_list(length=None)
+
+        if not knowledge_bases:
+            return {"status": "success", "message": "No matching knowledge bases found", "deleted_count": 0}
+
+        # Collect all unique file IDs across all knowledge bases
+        all_file_ids = set()
+        kb_id_to_files = {}
+
+        for kb in knowledge_bases:
+            kb_id = kb["knowledge_base_id"]
+            file_ids = {f["file_id"] for f in kb.get("files", [])}
+            all_file_ids.update(file_ids)
+            kb_id_to_files[kb_id] = list(file_ids)
+
+        # Bulk delete all files in one operation
+        file_deletion_result = (
+            await self.delete_files_bulk(list(all_file_ids))
+            if all_file_ids
+            else {"status": "success", "message": "No associated files to delete", "detail": {}}
+        )
+
+        # Bulk delete all knowledge base documents
+        try:
+            delete_result = await self.db.knowledge_bases.delete_many(
+                {"knowledge_base_id": {"$in": unique_ids}}
+            )
+        except Exception as e:
+            logger.error(f"Bulk knowledge base deletion failed: {str(e)}")
+            return {
+                "status": "failed",
+                "message": f"Database bulk deletion failed: {str(e)}",
+                "file_deletion": file_deletion_result,
+            }
+
+        return {
+            "status": "success",
+            "message": f"Bulk deleted {delete_result.deleted_count} knowledge bases",
+            "detail": {
+                "deleted_count": delete_result.deleted_count,
+                "requested_count": len(unique_ids),
+                "file_deletion": file_deletion_result,
+            },
+        }
+
     async def update_knowledge_base_name(
         self, knowledge_base_id: str, new_name: str
     ) -> dict:
@@ -894,7 +984,10 @@ class MongoDB:
             "created_at": beijing_time_now(),
         }
         result = await self.db.knowledge_bases.update_one(
-            {"knowledge_base_id": knowledge_base_id},
+            {
+                "knowledge_base_id": knowledge_base_id,
+                "files.file_id": {"$ne": file_id},
+            },
             {
                 "$push": {
                     "files": file,
@@ -902,7 +995,15 @@ class MongoDB:
                 "$set": {"last_modify_at": beijing_time_now()},
             },
         )
-        return {"status": "success" if result.modified_count > 0 else "failed"}
+        if result.modified_count > 0:
+            return {"status": "success"}
+
+        existing = await self.db.knowledge_bases.find_one(
+            {"knowledge_base_id": knowledge_base_id}, projection={"_id": 1}
+        )
+        if not existing:
+            return {"status": "failed", "message": "knowledge_base_not_found"}
+        return {"status": "failed", "message": "file_already_exists"}
 
     async def get_files_by_knowledge_base_id(
         self, knowledge_base_id: str
@@ -1425,9 +1526,7 @@ class MongoDB:
         """按时间降序获取指定用户的所有会话"""
         cursor = self.db.workflows.find(
             {"username": username, "is_delete": False}
-        ).sort(
-            "last_modify_at", -1
-        )  # -1 表示降序排列
+        ).sort("last_modify_at", -1)  # -1 表示降序排列
         return await cursor.to_list(length=None)  # 返回所有匹配的记录
 
     async def update_workflow_name(self, workflow_id: str, new_name: str) -> dict:
@@ -1457,7 +1556,9 @@ class MongoDB:
         # 去重并删除临时知识库
         deletion_results = []
         result = await self.delete_workflow_all_chatflow(workflow_id)
-        deletion_results.append({"chatflow_delete_count": result.get("deleted_count","0")})
+        deletion_results.append(
+            {"chatflow_delete_count": result.get("deleted_count", "0")}
+        )
 
         # 删除workflow
         delete_result = await self.db.workflows.delete_one({"workflow_id": workflow_id})

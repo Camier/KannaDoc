@@ -21,7 +21,7 @@ from app.core.security import get_current_user, verify_username_match
 from app.rag.convert_file import save_file_to_minio
 from app.utils.kafka_producer import kafka_producer_manager
 from app.core.logging import logger
-from app.db.milvus import milvus_client
+from app.db.vector_db import vector_db_client
 
 router = APIRouter()
 
@@ -43,8 +43,7 @@ async def create_conversation(
         model_config=conversation.chat_model_config,
     )
     return ConversationCreateResponse(
-        status="success",
-        conversation_id=conversation.conversation_id
+        status="success", conversation_id=conversation.conversation_id
     )
 
 
@@ -62,7 +61,9 @@ async def re_name(
     )
     if result["status"] == "failed":
         raise HTTPException(status_code=404, detail="Conversation not found")
-    return ConversationRenameResponse(status=result["status"], message=result.get("message"))
+    return ConversationRenameResponse(
+        status=result["status"], message=result.get("message")
+    )
 
 
 # 修改会话数据库使用
@@ -94,9 +95,28 @@ async def get_conversation(
     if not conversation:
         raise HTTPException(status_code=404, detail="Conversation not found")
 
-    user_files = []
-    for turn in conversation["turns"]:
-        user_files.append(await db.get_files_by_knowledge_base_id(turn["temp_db"]))
+    # Fix N+1: Collect all unique temp_db IDs and fetch in single query
+    temp_db_ids = list({turn["temp_db"] for turn in conversation["turns"] if turn.get("temp_db")})
+    kb_files_map = {}
+
+    if temp_db_ids:
+        # Single query to fetch all knowledge bases
+        cursor = db.db.knowledge_bases.find(
+            {"knowledge_base_id": {"$in": temp_db_ids}},
+            {"knowledge_base_id": 1, "files": 1}
+        )
+        knowledge_bases = await cursor.to_list(length=None)
+
+        # Build mapping: knowledge_base_id -> files
+        for kb in knowledge_bases:
+            kb_id = kb["knowledge_base_id"]
+            kb_files_map[kb_id] = [
+                {"url": file.get("minio_url", ""), "filename": file.get("filename", "")}
+                for file in kb.get("files", [])
+            ]
+
+    # Use mapping to populate user_files in order
+    user_files = [kb_files_map.get(turn["temp_db"], []) for turn in conversation["turns"]]
 
     return {
         "conversation_id": conversation["conversation_id"],
@@ -183,11 +203,15 @@ async def delete_all_conversations_by_user(
             detail="No conversations found for this user or already deleted",
         )"""
 
-    return StatusResponse(status="success", message=f"Deleted {result.deleted_count} conversations")
+    return StatusResponse(
+        status="success", message=f"Deleted {result.deleted_count} conversations"
+    )
 
 
 # 上传文件
-@router.post("/upload/{username}/{conversation_id}", response_model=ConversationUploadResponse)
+@router.post(
+    "/upload/{username}/{conversation_id}", response_model=ConversationUploadResponse
+)
 async def upload_multiple_files(
     files: List[UploadFile],
     username: str,
@@ -195,7 +219,6 @@ async def upload_multiple_files(
     db: MongoDB = Depends(get_mongo),
     current_user: User = Depends(get_current_user),
 ):
-
     # 验证当前用户是否与要删除的用户名匹配
     await verify_username_match(current_user, username)
     return_files = []
@@ -207,10 +230,12 @@ async def upload_multiple_files(
         knowledge_db_id,
         True,
     )
-    if not milvus_client.check_collection(
+    if not vector_db_client.check_collection(
         "colqwen" + knowledge_db_id.replace("-", "_")
     ):
-        milvus_client.create_collection("colqwen" + knowledge_db_id.replace("-", "_"))
+        vector_db_client.create_collection(
+            "colqwen" + knowledge_db_id.replace("-", "_")
+        )
     # 生成任务ID
     task_id = username + "_" + str(uuid.uuid4())
     total_files = len(files)
