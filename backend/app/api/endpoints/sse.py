@@ -10,8 +10,7 @@ from app.models.conversation import UserMessage
 from app.models.workflow import UserMessage as WorkflowMessage
 from app.models.user import User
 from app.models.workflow import LLMInputOnce
-from app.rag.llm_service import ChatService
-from app.workflow.llm_service import ChatService as VLMService
+from app.core.llm import ChatService
 import uuid
 
 from redis.asyncio import Redis, ResponseError
@@ -268,13 +267,14 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
             temp_db_id="",
         )
         # 获取流式生成器（假设返回结构化数据块）
-        mcp_stream_generator = VLMService.create_chat_stream(
+        mcp_stream_generator = ChatService.create_chat_stream(
             user_message_content=mcp_user_message,
             model_config=llm_input.llm_model_config,
             message_id=message_id,
             system_prompt=mcp_prompt,
             save_to_db=False,
             user_image_urls=[],
+            is_workflow=True,
         )
         mcp_full_response = []
         mcp_chunks = []
@@ -319,11 +319,12 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
     )
 
     return EventSourceResponse(
-        VLMService.create_chat_stream(
+        ChatService.create_chat_stream(
             user_message,
             llm_input.llm_model_config,
             message_id,
             system_prompt,
+            is_workflow=True,
         ),
         media_type="text/event-stream",
         headers={"message-id": message_id},
