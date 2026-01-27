@@ -157,10 +157,10 @@ class AsyncMinIOManager:
         # Determine the public endpoint for presigned URLs
         public_url = settings.minio_public_url
         if not public_url:
-            # Fallback to server_ip + ':9000' for Docker/internal use
+            # Fallback to server_ip + minio_port for Docker/internal use
             # WARNING: This only works for localhost access! For production,
             # set MINIO_PUBLIC_URL environment variable to your public server IP
-            public_url = f"{settings.server_ip}:9000"
+            public_url = f"{settings.server_ip}:{settings.minio_public_port}"
             logger.warning(
                 f"MINIO_PUBLIC_URL not set, using fallback: {public_url}. "
                 "For external access, set MINIO_PUBLIC_URL environment variable."

@@ -5,6 +5,7 @@ import httpx
 from typing import Literal, Optional, List, Union, Tuple
 from app.core.config import settings
 from app.core.logging import logger
+from app.core.circuit_breaker import embedding_service_circuit
 
 
 # from tenacity import retry, stop_after_attempt, wait_exponential
@@ -12,6 +13,7 @@ from app.core.logging import logger
 #     stop=stop_after_attempt(3),
 #     wait=wait_exponential(multiplier=1, min=4, max=10)
 # )
+@embedding_service_circuit
 async def get_embeddings_from_httpx(
     data: Union[
         List[str],  # 文本输入
@@ -35,6 +37,12 @@ async def get_embeddings_from_httpx(
         jina_api_key: Jina API密钥（使用Jina时必需）
         jina_task: 覆盖默认的Jina任务类型（可选）
     """
+    # Guard: callers sometimes pass an empty list (e.g., optional retrieval paths).
+    # Downstream helpers access data[0], so we short-circuit here.
+    if not data:
+        logger.info(f"Embedding request skipped (0 items) | Endpoint: {endpoint}")
+        return []
+
     try:
         if embedding_model == "jina_embeddings_v4":
             return await _get_jina_embeddings(
@@ -73,7 +81,7 @@ async def _get_local_embeddings(
                     raise TypeError(error_msg)
 
                 response = await client.post(
-                    f"http://model-server:8005/{endpoint}",
+                    f"{settings.model_server_url}/{endpoint}",
                     json={"queries": data},
                     timeout=1200.0,
                 )
@@ -94,7 +102,7 @@ async def _get_local_embeddings(
                     raise TypeError(error_msg)
 
                 response = await client.post(
-                    f"http://model-server:8005/{endpoint}", files=files, timeout=1200.0
+                    f"{settings.model_server_url}/{endpoint}", files=files, timeout=1200.0
                 )
 
             response.raise_for_status()
