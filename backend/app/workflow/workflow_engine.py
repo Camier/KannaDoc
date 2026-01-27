@@ -13,7 +13,7 @@ from app.workflow.mcp_tools import mcp_call_tools
 from app.workflow.sandbox import CodeSandbox
 from app.workflow.code_scanner import CodeScanner
 from app.workflow.graph import TreeNode, WorkflowGraph
-from app.workflow.llm_service import ChatService
+from app.core.llm import ChatService
 from app.core.logging import logger
 from app.core.circuit_breaker import llm_service_circuit, CircuitBreakerConfig
 from app.workflow.utils import find_outermost_braces, replace_template
@@ -1173,6 +1173,7 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
             user_image_urls=user_image_urls,
             supply_info=supply_info,
             quote_variables=quote_variables or {},
+            is_workflow=True,
         )
 
     async def _llm_call_with_retry(
