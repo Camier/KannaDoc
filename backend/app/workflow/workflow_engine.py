@@ -19,132 +19,16 @@ from app.core.circuit_breaker import llm_service_circuit, CircuitBreakerConfig
 from app.workflow.utils import find_outermost_braces, replace_template
 from datetime import datetime
 
-
-# Memory limits for context storage to prevent memory leaks
-MAX_CONTEXT_SIZE = 1000  # Maximum entries per node
-MAX_CONTEXT_ENTRIES = 10000  # Total entries before cleanup
-
-# Provider-specific timeouts (in seconds)
-PROVIDER_TIMEOUTS = {
-    "deepseek-r1": 300,
-    "deepseek-reasoner": 300,
-    "deepseek": 180,
-    "zhipu": 180,
-    "glm": 180,
-    "moonshot": 120,
-    "openai": 120,
-    "default": 120,
-}
-
-# Loop iteration limits for safety
-LOOP_LIMITS = {
-    "count": None,  # maxCount is set by user
-    "condition": 1000,  # safety limit for condition-based loops
-    "default": 1000,
-}
-
-# Checkpoint configuration
-CHECKPOINT_CONFIG = {
-    "enabled": True,
-    "interval_nodes": 5,  # Auto-checkpoint every N nodes
-    "on_loop_complete": True,  # Checkpoint after each loop iteration
-    "on_condition_gate": True,  # Checkpoint after condition nodes
-    "max_checkpoints": 10,  # Keep only recent checkpoints
-}
-
-
-class QualityAssessmentEngine:
-    """
-    Assesses workflow output quality for conditional routing.
-    Provides multi-dimensional scoring for quality gates.
-    """
-
-    def __init__(self, global_variables: dict):
-        self.global_variables = global_variables
-        self.assessments = []
-
-    def assess_content_quality(
-        self,
-        content: str,
-        node_id: str,
-        criteria: dict = None,
-    ) -> dict:
-        """
-        Assess content quality across multiple dimensions.
-
-        Args:
-            content: The content to assess
-            node_id: Node identifier for tracking
-            criteria: Optional custom criteria weights
-
-        Returns:
-            Dict with quality scores and pass/fail decision
-        """
-        criteria = criteria or {
-            "completeness": 0.3,
-            "coherence": 0.3,
-            "relevance": 0.2,
-            "length": 0.2,
-        }
-
-        scores = {}
-
-        # Completeness: Has substantial content
-        word_count = len(content.split())
-        scores["completeness"] = min(1.0, word_count / 100)  # 100 words = complete
-
-        # Coherence: Has structured elements (paragraphs, lists)
-        has_paragraphs = "\n\n" in content or len(content.split("\n")) > 3
-        has_structure = any(marker in content for marker in ["#", "-", "*", "1.", "•"])
-        scores["coherence"] = 0.5 + (0.3 if has_paragraphs else 0) + (0.2 if has_structure else 0)
-
-        # Relevance: Contains keywords from global context
-        topic = self.global_variables.get("thesis_topic", "")
-        if topic:
-            topic_words = set(topic.lower().split())
-            content_words = set(content.lower().split())
-            relevance = len(topic_words & content_words) / max(len(topic_words), 1)
-            scores["relevance"] = min(1.0, relevance * 2)
-        else:
-            scores["relevance"] = 0.8  # Default if no topic
-
-        # Length: Appropriate length (not too short, not too long)
-        target_length = self.global_variables.get("target_length_pages", 10) * 300
-        length_ratio = word_count / max(target_length, 100)
-        scores["length"] = 1.0 - abs(1.0 - min(length_ratio, 2.0)) / 2.0
-
-        # Calculate weighted score
-        total_score = sum(scores.get(k, 0) * v for k, v in criteria.items())
-
-        # Determine pass/fail (threshold = 0.6)
-        passed = total_score >= 0.6
-
-        assessment = {
-            "node_id": node_id,
-            "timestamp": datetime.now().isoformat(),
-            "scores": scores,
-            "total_score": total_score,
-            "passed": passed,
-            "criteria": criteria,
-        }
-
-        self.assessments.append(assessment)
-        return assessment
-
-    def get_assessment_summary(self) -> dict:
-        """Get summary of all assessments."""
-        if not self.assessments:
-            return {"count": 0, "avg_score": 0, "pass_rate": 0}
-
-        passed = sum(1 for a in self.assessments if a["passed"])
-        total_score = sum(a["total_score"] for a in self.assessments)
-
-        return {
-            "count": len(self.assessments),
-            "avg_score": total_score / len(self.assessments),
-            "pass_rate": passed / len(self.assessments),
-            "latest": self.assessments[-1] if self.assessments else None,
-        }
+# Import extracted components
+from app.workflow.components import (
+    MAX_CONTEXT_SIZE,
+    MAX_CONTEXT_ENTRIES,
+    PROVIDER_TIMEOUTS,
+    LOOP_LIMITS,
+    CHECKPOINT_CONFIG,
+    WorkflowCheckpointManager,
+    LLMClient,
+)
 
 
 class WorkflowCheckpointManager:
@@ -469,7 +353,7 @@ class WorkflowEngine:
 
         # Enhanced fault tolerance systems
         self.checkpoint_manager = WorkflowCheckpointManager(self.task_id, self)
-        self.quality_assessor = QualityAssessmentEngine(self.global_variables)
+        # QualityAssessmentEngine removed - unused, see scripts/archive/quality_assessment/
 
     async def __aenter__(self):
         # 创建并启动沙箱
