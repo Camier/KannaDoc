@@ -1,9 +1,11 @@
 "use client";
 
 import Navbar from "@/components/NavbarComponents/Navbar";
+import { logger } from "@/lib/logger";
 import AddWorkflow from "@/components/Workflow/AddWorkflow";
 import FlowEditor from "@/components/Workflow/FlowEditor";
-import LeftSideBar from "@/components/Workflow/LeftSideBar";
+import UnifiedSideBar from "@/components/shared/UnifiedSideBar";
+import { workflowSideBarConfig } from "@/components/shared/SideBarConfigs";
 import TopBar from "@/components/Workflow/TopBar";
 import {
   createWorkflow,
@@ -57,7 +59,7 @@ const Workflow = () => {
         }));
         setFlows(flows);
       } catch (error) {
-        console.error("Error fetching chat history:", error);
+        logger.error("Error fetching chat history:", error);
       }
     }
   }, [user?.name]); // Add dependencies
@@ -87,7 +89,7 @@ const Workflow = () => {
         resethistory(item.nodes, item.edges);
         resetfuture();
       } catch (error) {
-        console.error("Error fetching chat history:", error);
+        logger.error("Error fetching chat history:", error);
       }
     }
   }, [
@@ -149,7 +151,7 @@ const Workflow = () => {
         );
         setSelectedFlow(null);
       } catch (error) {
-        console.error("Error fetching chat history:", error);
+        logger.error("Error fetching chat history:", error);
       }
     }
     setRefresh((pre) => !pre);
@@ -164,7 +166,7 @@ const Workflow = () => {
         );
         const response = await deleteWorkflow(flow.flowId);
       } catch (error) {
-        console.error("Error delete Knowledge Flow:", error);
+        logger.error("Error delete Knowledge Flow:", error);
       }
       setSelectedFlow(null);
       setRefresh((pre) => !pre);
@@ -186,7 +188,7 @@ const Workflow = () => {
           });
           setRefresh((prev) => !prev);
         } catch (error) {
-          console.error("Error fetching rename chat:", error);
+          logger.error("Error fetching rename chat:", error);
         }
       }
     };
@@ -229,14 +231,15 @@ const Workflow = () => {
           >
             {/* 左侧边栏 */}
             {!fullScreenFlow && (
-              <LeftSideBar
-                flows={flows}
+              <UnifiedSideBar
+                items={flows}
                 searchTerm={searchTerm}
                 setShowCreateModal={setShowCreateModal}
-                selectedFlow={selectedFlow}
-                setSelectedFlow={setSelectedFlow}
-                ondeleteFlow={handledeleteFlow}
-                onRenameWorkflow={handleRenameWorkflow}
+                selectedItem={selectedFlow}
+                setSelectedItem={setSelectedFlow}
+                onDelete={handledeleteFlow}
+                onRename={handleRenameWorkflow}
+                config={workflowSideBarConfig}
               />
             )}
 

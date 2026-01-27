@@ -1,10 +1,12 @@
 "use client";
 import Cookies from "js-cookie";
+import { logger } from "@/lib/logger";
 import { useCallback, useEffect, useRef, useState } from "react";
 import React from "react";
 import Navbar from "@/components/NavbarComponents/Navbar";
 import withAuth from "@/middlewares/withAuth";
-import LeftSidebar from "@/components/AiChat/LeftSidebar";
+import UnifiedSideBar from "@/components/shared/UnifiedSideBar";
+import { chatSideBarConfig } from "@/components/shared/SideBarConfigs";
 import ChatBox from "@/components/AiChat/ChatBox";
 import {
   Message,
@@ -38,6 +40,7 @@ const AIChat: React.FC = () => {
 
   const [messages, setMessages] = useState<Message[]>([]);
   const [chatHistory, setChatHistory] = useState<Chat[]>([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const { user } = useAuthStore();
   const [conversationName, setConversationName] = useState<string>("");
   const [sendDisabled, setSendDisabled] = useState(false);
@@ -128,7 +131,7 @@ const AIChat: React.FC = () => {
         }));
         setChatHistory(chats);
       } catch (error) {
-        console.error("Error fetching chat history:", error);
+        logger.error("Error fetching chat history:", error);
       }
     }
   }, [user?.name]); // Dependency added
@@ -249,7 +252,7 @@ const AIChat: React.FC = () => {
           setMessages(messages);
           setChatId(inputChatId);
         } catch (error) {
-          console.error("Error fetching chat history:", error);
+          logger.error("Error fetching chat history:", error);
         }
       }
     };
@@ -264,7 +267,7 @@ const AIChat: React.FC = () => {
           await deleteAllConversations(user.name);
           handleNewChat();
         } catch (error) {
-          console.error("Error fetching chat history:", error);
+          logger.error("Error fetching chat history:", error);
         }
       }
     };
@@ -289,7 +292,7 @@ const AIChat: React.FC = () => {
             handleNewChat();
           }
         } catch (error) {
-          console.error("Error fetching chat history:", error);
+          logger.error("Error fetching chat history:", error);
         }
       }
     };
@@ -312,7 +315,7 @@ const AIChat: React.FC = () => {
           await renameChat(chat.conversationId, inputValue);
           setConversationName(inputValue);
         } catch (error) {
-          console.error("Error fetching rename chat:", error);
+          logger.error("Error fetching rename chat:", error);
         }
       }
     };
@@ -569,7 +572,7 @@ const AIChat: React.FC = () => {
         try {
           await updateChatModelConfig(chatId, modelConfig);
         } catch (error) {
-          console.error("Error fetching chat history:", error);
+          logger.error("Error fetching chat history:", error);
         }
       }
     };
@@ -628,13 +631,20 @@ const AIChat: React.FC = () => {
     <div className="overflow-hidden">
       <Navbar />
       <div className="absolute w-[96%] h-[91%] top-[7%] bg-white/10 left-[2%] rounded-3xl flex items-center justify-between shadow-2xl">
-        <LeftSidebar
+        <UnifiedSideBar
+          items={chatHistory}
+          searchTerm=""
+          setShowCreateModal={() => {}}
+          selectedItem={chatId}
+          setSelectedItem={(id) => setChatId(id as string)}
+          onDelete={handledeleteChat}
+          onRename={handleRenameChat}
+          config={chatSideBarConfig}
           onNewChat={handleNewChat}
-          chatHistory={chatHistory}
+          onDeleteAll={handledeleteAllChat}
           onSelectChat={handleSelectChat}
-          ondeleteAllChat={handledeleteAllChat}
-          ondeleteChat={handledeleteChat}
-          onRenameChat={handleRenameChat}
+          searchInput={searchTerm}
+          setSearchInput={setSearchTerm}
         />
         <ChatBox
           messages={messages}
