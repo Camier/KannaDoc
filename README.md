@@ -145,26 +145,24 @@ JINA_EMBEDDINGS_V4_URL=https://api.jina.ai/v1/embeddings
 
 ```bash
 # Initial startup will download ~15GB model weights (be patient)
-./compose-clean up -d --build
-
-# Optional: enable GPU for model-server
-# ./compose-clean -f docker-compose.yml -f docker-compose.gpu.yml up -d --build
+./scripts/compose-clean up -d --build
 
 # Monitor logs in real-time (replace <service_name> with actual service name)
-./compose-clean logs -f <service_name>
+./scripts/compose-clean logs -f <service_name>
 ```
 
 **Option B**: Jina-embeddings-v4 API service (for limited/no GPU resources)
 
 ```bash
+# Set EMBEDDING_MODEL to jina_embeddings_v4 in .env first
 # Initial startup will not download any model weights (fast!)
-./compose-clean -f docker-compose-no-local-embedding.yml up -d --build
+./scripts/compose-clean up -d --build
 
 # Monitor logs in real-time (replace <service_name> with actual service name)
-./compose-clean logs -f <service_name>
+./scripts/compose-clean logs -f <service_name>
 ```
 
-> **Important**: In this repo, always run Compose via `./compose-clean` (it uses a sanitized environment + `--env-file .env`). This prevents a polluted host shell from overriding `.env` values during variable interpolation. See `docs/RUNBOOK_COMPOSE_CLEAN.md`.
+> **Important**: In this repo, always run Compose via `./scripts/compose-clean` (it uses a sanitized environment + `--env-file .env`). This prevents a polluted host shell from overriding `.env` values during variable interpolation. See `docs/RUNBOOK_COMPOSE_CLEAN.md`.
 
 #### 🎉 Enjoy LAYRA!
 
@@ -386,17 +384,15 @@ LAYRA supports multiple deployment configurations for different use cases:
 | Mode | Compose File | Description | Use Case |
 |------|--------------|-------------|----------|
 | **Standard (GPU)** | `docker-compose.yml` | Full deployment with local ColQwen2.5 embeddings | Production, research, development with NVIDIA GPU |
-| **Jina API (No GPU)** | `docker-compose-no-local-embedding.yml` | Cloud embeddings via Jina API | Limited/no GPU resources, quick testing |
-| **Thesis/Solo** | `docker-compose.thesis.yml` | Simplified single-user deployment with Neo4j | Thesis demonstrations, solo research, simplified auth |
-| **GPU Optimized** | `docker-compose.gpu.yml` | GPU-optimized configuration | Maximum GPU performance |
+| **Jina API (No GPU)** | `docker-compose.yml` (set `EMBEDDING_MODEL=jina_embeddings_v4`) | Cloud embeddings via Jina API | Limited/no GPU resources, quick testing |
+| **Thesis/Solo** | `deploy/docker-compose.thesis.yml` | Simplified single-user deployment with Neo4j | Thesis demonstrations, solo research, simplified auth |
 | **Development** | `docker-compose.override.yml` | Development overrides (extends base) | Local development with custom settings |
 
 #### Key Differences:
 
 - **Standard**: Full feature set, requires 16GB+ GPU VRAM for ColQwen2.5
-- **Jina API**: No local GPU needed, uses cloud API (requires Jina API key)
+- **Jina API**: No local GPU needed, uses cloud API (requires Jina API key) - same compose file, different env config
 - **Thesis**: Simplified for single-user, includes Neo4j graph database (infrastructure-ready, application integration verified)
-- **GPU Optimized**: Performance-tuned for NVIDIA GPUs
 - **Development**: Local development overrides (hot reload, debug settings)
 
 > **Note**: All modes use the same `.env` configuration. Copy `.env.example` to `.env` and adjust values for your deployment.
@@ -441,31 +437,32 @@ JINA_EMBEDDINGS_V4_URL=https://api.jina.ai/v1/embeddings
 
 ```bash
 # Initial startup will download ~15GB model weights (be patient)
-./compose-clean up -d --build  # Uses docker-compose.yml (default)
+./scripts/compose-clean up -d --build  # Uses docker-compose.yml (default)
 
 # Monitor logs in real-time (replace <service_name> with actual service name)
-./compose-clean logs -f <service_name>
+./scripts/compose-clean logs -f <service_name>
 ```
 
 **Option B**: Jina API Deployment (no local GPU required)
 
 ```bash
+# First, set EMBEDDING_MODEL=jina_embeddings_v4 and JINA_API_KEY in .env
 # Uses cloud embeddings via Jina API (no local model download)
-./compose-clean -f docker-compose-no-local-embedding.yml up -d --build
+./scripts/compose-clean up -d --build
 
 # Monitor logs in real-time
-./compose-clean logs -f <service_name>
+./scripts/compose-clean logs -f <service_name>
 ```
 
 **Option C**: Thesis/Solo Deployment (simplified single-user)
 
 ```bash
 # For thesis demonstrations or single-user research with Neo4j (infrastructure-ready, application integration verified)
-./deploy-thesis.sh  # Automated deployment script
+./scripts/deploy-thesis.sh  # Automated deployment script
 
 # Or manually:
-# cp .env.thesis .env
-# docker compose -f docker-compose.thesis.yml up -d --build
+# cp .env.example .env (then edit for your setup)
+# docker compose -f deploy/docker-compose.thesis.yml --env-file .env up -d --build
 ```
 
 **📚 Thesis Deployment Guide**: See [`docs/THESIS_QUICKSTART.md`](docs/THESIS_QUICKSTART.md) for detailed instructions, verification steps, and Milvus connectivity notes.
@@ -482,14 +479,7 @@ JINA_EMBEDDINGS_V4_URL=https://api.jina.ai/v1/embeddings
 - API accessible with JWT token (see quickstart for examples)
 - Milvus internal connectivity confirmed (port 19530 not exposed to host)
 
-**Option D**: GPU Optimized Deployment
-
-```bash
-# For maximum GPU performance
-./compose-clean -f docker-compose.gpu.yml up -d --build
-```
-
-> **Important**: In this repo, always run Compose via `./compose-clean` (it uses a sanitized environment + `--env-file .env`). This prevents a polluted host shell from overriding `.env` values during variable interpolation. See `docs/RUNBOOK_COMPOSE_CLEAN.md`.
+> **Important**: In this repo, always run Compose via `./scripts/compose-clean` (it uses a sanitized environment + `--env-file .env`). This prevents a polluted host shell from overriding `.env` values during variable interpolation. See `docs/RUNBOOK_COMPOSE_CLEAN.md`.
 
 #### 🔧 Troubleshooting Tips
 
@@ -497,15 +487,15 @@ If services fail to start:
 
 ```bash
 # Check container logs:
-./compose-clean logs <service_name>
+./scripts/compose-clean logs <service_name>
 ```
 
 Common fixes:
 
 ```bash
 nvidia-smi  # Verify GPU detection
-./compose-clean down && ./compose-clean up -d --build  # preserve data to rebuild
-./compose-clean down -v && ./compose-clean up -d --build  # ⚠️ Caution: delete all data to full rebuild
+./scripts/compose-clean down && ./scripts/compose-clean up -d --build  # preserve data to rebuild
+./scripts/compose-clean down -v && ./scripts/compose-clean up -d --build  # ⚠️ Caution: delete all data to full rebuild
 ```
 
 #### 🛠️ Service Management Commands
@@ -514,24 +504,24 @@ Choose the operation you need:
 
 | **Scenario**                               | **Command**                                     | **Effect**                                 |
 | ------------------------------------------ | ----------------------------------------------- | ------------------------------------------ |
-| **Stop services**<br>(preserve data)       | `./compose-clean stop`                          | Stops containers but keeps them intact     |
-| **Restart after stop**                     | `./compose-clean start`                         | Restarts stopped containers                |
-| **Rebuild after code changes**             | `./compose-clean up -d --build`                 | Rebuilds images and recreates containers   |
-| **Recreate containers**<br>(preserve data) | `./compose-clean down`<br>`./compose-clean up -d` | Destroys then recreates containers         |
-| **Full cleanup**<br>(delete all data)      | `./compose-clean down -v`                       | ⚠️ Destroys containers and deletes volumes |
+| **Stop services**<br>(preserve data)       | `./scripts/compose-clean stop`                          | Stops containers but keeps them intact     |
+| **Restart after stop**                     | `./scripts/compose-clean start`                         | Restarts stopped containers                |
+| **Rebuild after code changes**             | `./scripts/compose-clean up -d --build`                 | Rebuilds images and recreates containers   |
+| **Recreate containers**<br>(preserve data) | `./scripts/compose-clean down`<br>`./scripts/compose-clean up -d` | Destroys then recreates containers         |
+| **Full cleanup**<br>(delete all data)      | `./scripts/compose-clean down -v`                       | ⚠️ Destroys containers and deletes volumes |
 
 #### ⚠️ Important Notes
 
 1. **Initial model download** may take significant time (~15GB). Monitor progress:
 
 	   ```bash
-	   ./compose-clean logs -f model-weights-init
+	   ./scripts/compose-clean logs -f model-weights-init
 	   ```
 
 2. **After modifying `.env` or code**, always rebuild:
 
 	   ```bash
-	   ./compose-clean up -d --build
+	   ./scripts/compose-clean up -d --build
 	   ```
 
 3. **Verify NVIDIA toolkit** installation:
@@ -558,7 +548,7 @@ Choose the operation you need:
 
 #### 🔑 Key Details
 
-- `./compose-clean down -v` **permanently deletes** databases and model weights
+- `./scripts/compose-clean down -v` **permanently deletes** databases and model weights
 - **After code/config changes**, always use `--build` flag
 - **GPU requirements**:
   - Latest NVIDIA drivers
@@ -567,7 +557,7 @@ Choose the operation you need:
 
 	  ```bash
 	  # Container status
-	  ./compose-clean ps -a
+	  ./scripts/compose-clean ps -a
 
 	  # Resource usage
 	  docker stats
