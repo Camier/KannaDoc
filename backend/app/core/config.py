@@ -47,11 +47,15 @@ class Settings(BaseSettings):
     )
     # minio_public_url is for EXTERNAL browser-to-minio traffic (e.g., http://your-ip:9000)
     # CRITICAL: For external downloads, must be set to actual server IP/domain
-    # Falls back to server_ip + ':9000' if not set (Docker/internal use only)
+    # Falls back to server_ip + minio_public_port if not set (Docker/internal use only)
     # For production: Set MINIO_PUBLIC_URL environment variable to your public server address
     minio_public_url: str = Field(
-        default="",  # Will use server_ip + ':9000' as fallback
+        default="",  # Will use server_ip + minio_public_port as fallback
         description="MinIO public endpoint for user downloads (set MINIO_PUBLIC_URL env var for production)",
+    )
+    minio_public_port: int = Field(
+        default=9000,
+        description="MinIO public port (used if MINIO_PUBLIC_URL not set)",
     )
     # SECURITY: Removed hardcoded credentials - must be set via environment variables
     minio_access_key: str = ""
@@ -73,6 +77,12 @@ class Settings(BaseSettings):
     # Models & Sandbox
     colbert_model_path: str = "/model_weights/colqwen2.5-v0.2"
     sandbox_shared_volume: str = "/app/sandbox_workspace"
+
+    # Model Server Configuration
+    model_server_url: str = Field(
+        default="http://model-server:8005",
+        description="Model server URL for embeddings and inference",
+    )
 
     # Server & Networking
     # server_ip is the base URL for the application server

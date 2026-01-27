@@ -1,0 +1,1458 @@
+version: 1
+metadata:
+  name: layra-stack
+  description: LAYRA RAG and Workflow Engine - Complete Service Registry
+  last_updated: "2026-01-26"
+  ssot_version: "3.0.0"
+  deployment_mode: docker-primary
+
+# ============================================================================
+# RUN MODES - Layering and Deployment Options
+# ============================================================================
+run_modes:
+  - id: docker-dev
+    name: Docker Development
+    description: Full stack via Docker Compose with all services
+    prerequisites:
+      - docker >= 20.10
+      - docker-compose >= 2.0
+      - nvidia-container-toolkit (for GPU embeddings)
+    start_command: "./scripts/compose-clean up -d --build"
+    stop_command: "./scripts/compose-clean down"
+    services:
+      included: all
+      excluded: []
+    entrypoints:
+      frontend: http://localhost:8090
+      backend_api: http://localhost:8090/api/v1
+      backend_docs: http://localhost:8090/api/docs
+      minio_console: http://localhost:9000
+      grafana: http://localhost:3001
+      prometheus: http://localhost:9090
+    healthchecks:
+      - curl -f http://localhost:8090/api/v1/health/check
+
+  - id: docker-thesis
+    name: Thesis/Solo Deployment
+    description: Simplified single-user deployment with GPU support
+    compose_file: deploy/docker-compose.thesis.yml
+    prerequisites:
+      - docker >= 20.10
+      - docker-compose >= 2.0
+      - 8GB RAM minimum
+      - NVIDIA GPU (optional but recommended)
+    start_command: "docker-compose -f deploy/docker-compose.thesis.yml --env-file .env up -d"
+    services:
+      included:
+        - backend
+        - frontend
+        - nginx
+        - mysql
+        - mongodb
+        - redis
+        - minio
+        - milvus-standalone
+        - milvus-etcd
+        - milvus-minio
+        - kafka
+        - kafka-init
+        - unoserver
+        - python-sandbox
+      excluded:
+        - qdrant
+        - model-weights-init
+        - model-server
+        - prometheus
+        - grafana
+        - dozzle
+    entrypoints:
+      frontend: http://localhost:8090
+      backend_api: http://localhost:8090/api/v1
+
+  - id: docker-no-gpu
+    name: Cloud Embeddings (No GPU)
+    description: Full stack using Jina Embeddings API instead of local GPU. Uses same docker-compose.yml with environment variable configuration.
+    compose_file: docker-compose.yml
+    prerequisites:
+      - docker >= 20.10
+      - docker-compose >= 2.0
+      - Jina API key
+    env_requirements:
+      - EMBEDDING_MODEL=jina_embeddings_v4
+      - JINA_API_KEY
+    services:
+      excluded:
+        - model-server (inactive when EMBEDDING_MODEL=jina_embeddings_v4)
+        - model-weights-init (inactive when EMBEDDING_MODEL=jina_embeddings_v4)
+
+# ============================================================================
+# SERVICES - Complete Registry
+# ============================================================================
+services:
+  # ==========================================================================
+  # APPLICATION SERVICES (Could potentially run native)
+  # ==========================================================================
+  - id: backend
+    name: Backend API
+    type: internal
+    layers:
+      - docker
+      # - native  # POTENTIAL: Could run natively
+    role: FastAPI application serving REST API, WebSocket, business logic
+    entrypoint:
+      docker:
+        compose_service: backend
+        image: layra-backend
+        port: 8000
+      native:
+        command: "cd backend && gunicorn -c gunicorn_config.py app.main:app"
+        working_dir: /LAB/@thesis/layra/backend
+    dependencies:
+      hard:
+        - mysql
+        - redis
+        - mongodb
+        - kafka
+        - minio
+        - milvus-standalone
+      soft:
+        - unoserver
+    ports:
+      internal: 8000
+      external: null  # Exposed via nginx
+    environment:
+      required:
+        - DB_URL
+        - REDIS_URL
+        - REDIS_PASSWORD
+        - MONGODB_URL
+        - MONGODB_ROOT_USERNAME
+        - MONGODB_ROOT_PASSWORD
+        - KAFKA_BROKER_URL
+        - MINIO_URL
+        - MINIO_ACCESS_KEY
+        - MINIO_SECRET_KEY
+        - SECRET_KEY
+      optional:
+        - DEBUG_MODE
+        - LOG_LEVEL
+        - MAX_WORKERS
+    healthcheck:
+      docker: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health/check"]
+      native_command: 'curl -f http://localhost:8000/api/v1/health/check'
+    native_feasibility: possible
+    native_requirements:
+      - python:3.10+
+      - System packages: poppler-utils, git, curl, netcat-openbsd, fonts-noto-cjk
+      - Python packages: see backend/requirements.txt
+      - External services: All dependencies must be accessible
+    blocking_issues:
+      - Docker socket access (/var/run/docker.sock) for sandbox execution
+      - Hardcoded container hostnames in config (e.g., mysql:3306)
+    evidence:
+      - docker-compose.yml:242-323
+      - backend/Dockerfile
+      - backend/requirements.txt
+      - backend/app/main.py
+
+  - id: frontend
+    name: Frontend UI
+    type: internal
+    layers:
+      - docker
+      # - native  # POTENTIAL: Could run natively
+    role: Next.js 15 web application for user interface
+    entrypoint:
+      docker:
+        compose_service: frontend
+        image: layra-frontend
+        port: 3000
+      native:
+        command: "cd frontend && npm install && npm run build && npm start"
+        working_dir: /LAB/@thesis/layra/frontend
+    dependencies:
+      hard:
+        - backend
+      soft: []
+    ports:
+      internal: 3000
+      external: null  # Exposed via nginx
+    environment:
+      required:
+        - NEXT_PUBLIC_API_BASE_URL
+      optional:
+        - NODE_ENV
+    healthcheck:
+      native_command: 'curl -f http://localhost:3000'
+    native_feasibility: highly_feasible
+    native_requirements:
+      - node:20+
+      - npm
+    blocking_issues:
+      - API_BASE_URL needs to point to backend location
+    evidence:
+      - docker-compose.yml:357-371
+      - frontend/Dockerfile
+      - frontend/package.json
+
+  - id: nginx
+    name: Reverse Proxy
+    type: internal
+    layers:
+      - docker
+      # - native  # POTENTIAL: Could run natively
+    role: Nginx reverse proxy routing traffic to frontend/backend
+    entrypoint:
+      docker:
+        compose_service: nginx
+        image: nginx:alpine
+      native:
+        command: "nginx -c /LAB/@thesis/layra/frontend/nginx.conf"
+        working_dir: /LAB/@thesis/layra
+    dependencies:
+      hard:
+        - frontend
+        - backend
+      soft:
+        - minio
+    ports:
+      internal: 80
+      external: 8090
+    environment: []
+    healthcheck:
+      native_command: 'curl -f http://localhost:8090'
+    native_feasibility: highly_feasible
+    native_requirements:
+      - nginx package
+    blocking_issues:
+      - Upstream addresses need to be updated (frontend:3000 -> localhost:3000)
+    evidence:
+      - docker-compose.yml:373-384
+      - frontend/nginx.conf
+
+  # ==========================================================================
+  # DATA STORAGE SERVICES (Docker-required or External)
+  # ==========================================================================
+  - id: mysql
+    name: MySQL Database
+    type: container
+    layers:
+      - docker
+      # - native  # POTENTIAL: Could run natively OR use external
+    role: Relational database for users, authentication, metadata
+    entrypoint:
+      docker:
+        compose_service: mysql
+        image: mysql:8.0
+        port: 3306
+      native:
+        command: "mysqld --defaults-file=/etc/mysql/my.cnf"
+      external:
+        type: managed
+        examples:
+          - AWS RDS
+          - Google Cloud SQL
+          - Azure Database for MySQL
+    dependencies: []
+    ports:
+      internal: 3306
+      external: null
+    persistence:
+      volumes:
+        - mysql_data:/var/lib/mysql
+      backup_importance: critical
+    environment:
+      required:
+        - MYSQL_ROOT_PASSWORD
+        - MYSQL_DATABASE
+        - MYSQL_USER
+        - MYSQL_PASSWORD
+    healthcheck:
+      docker: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+    native_feasibility: feasible
+    native_requirements:
+      - mysql-server package
+      - Data migration from volume
+    blocking_issues:
+      - Data migration complexity
+      - Port conflicts if local MySQL exists
+    evidence:
+      - docker-compose.yml:96-112
+
+  - id: mongodb
+    name: MongoDB Database
+    type: container
+    layers:
+      - docker
+      # - native  # POTENTIAL: Could run natively OR use external
+    role: NoSQL database for chat history, workflow state
+    entrypoint:
+      docker:
+        compose_service: mongodb
+        image: mongo:7.0.12
+        port: 27017
+      native:
+        command: "mongod --config /etc/mongod.conf"
+      external:
+        type: managed
+        examples:
+          - AWS DocumentDB
+          - MongoDB Atlas
+          - Azure Cosmos DB
+    dependencies: []
+    ports:
+      internal: 27017
+      external: null
+    persistence:
+      volumes:
+        - mongo_data:/data/db
+      backup_importance: critical
+    environment:
+      required:
+        - MONGO_INITDB_ROOT_USERNAME
+        - MONGO_INITDB_ROOT_PASSWORD
+    healthcheck:
+      docker: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+    native_feasibility: feasible
+    native_requirements:
+      - mongodb package
+      - Data migration from volume
+    evidence:
+      - docker-compose.yml:66-80
+
+  - id: redis
+    name: Redis Cache
+    type: container
+    layers:
+      - docker
+      # - native  # POTENTIAL: Could run natively OR use external
+    role: Cache, task queue, distributed locks, session storage
+    entrypoint:
+      docker:
+        compose_service: redis
+        image: redis:7.2.5
+        port: 6379
+      native:
+        command: "redis-server --requirepass ${REDIS_PASSWORD}"
+      external:
+        type: managed
+        examples:
+          - AWS ElastiCache
+          - Google Cloud Memorystore
+          - Azure Cache for Redis
+    dependencies: []
+    ports:
+      internal: 6379
+      external: null
+    persistence:
+      volumes:
+        - redis_data:/data
+      backup_importance: low  # Cache, can be rebuilt
+    environment:
+      required:
+        - REDIS_PASSWORD
+    healthcheck:
+      docker: ["CMD-SHELL", "redis-cli -a \"${REDIS_PASSWORD}\" ping | grep -q PONG"]
+    native_feasibility: highly_feasible
+    native_requirements:
+      - redis-server package
+    blocking_issues: []
+    evidence:
+      - docker-compose.yml:82-94
+
+  - id: minio
+    name: MinIO Object Storage
+    type: container
+    layers:
+      - docker
+      # - native  # POTENTIAL: Could run natively OR use S3-compatible
+    role: S3-compatible object storage for documents, images
+    entrypoint:
+      docker:
+        compose_service: minio
+        image: minio/minio:RELEASE.2024-10-13T13-34-11Z
+        port: 9000
+      native:
+        command: "minio server /data --console-address :9001"
+      external:
+        type: managed
+        examples:
+          - AWS S3
+          - Google Cloud Storage
+          - Azure Blob Storage
+          - MinIO hosted
+    dependencies: []
+    ports:
+      internal: 9000
+      external: null  # Console at 9001 via nginx
+    persistence:
+      volumes:
+        - minio_data:/data
+      backup_importance: critical
+    environment:
+      required:
+        - MINIO_ROOT_USER
+        - MINIO_ROOT_PASSWORD
+    healthcheck:
+      docker: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+    native_feasibility: feasible
+    native_requirements:
+      - minio package
+      - Data migration from volume
+    blocking_issues:
+      - Console port (9001) configuration
+    evidence:
+      - docker-compose.yml:49-64
+
+  - id: milvus-standalone
+    name: Milvus Vector Database
+    type: container
+    layers:
+      - docker
+      # - native  # DIFFICULT: Complex dependencies
+    role: Vector database for visual embeddings (ColQwen2.5)
+    entrypoint:
+      docker:
+        compose_service: milvus-standalone
+        image: milvusdb/milvus:v2.6.9
+        port: 19530
+      external:
+        type: managed
+        examples:
+          - Zilliz Cloud (managed Milvus)
+          - Self-hosted Milvus cluster
+    dependencies:
+      hard:
+        - milvus-etcd
+        - milvus-minio
+    ports:
+      internal: 19530
+      external: null  # Not exposed for security
+    persistence:
+      volumes:
+        - milvus_data:/var/lib/milvus
+      backup_importance: medium  # Can re-ingest documents
+    environment:
+      required:
+        - ETCD_ENDPOINTS
+        - MINIO_ADDRESS
+    healthcheck:
+      docker: ["CMD", "curl", "-f", "http://localhost:9091/healthz"]
+    native_feasibility: difficult
+    native_requirements:
+      - Milvus standalone compilation
+      - etcd service
+      - MinIO service
+    blocking_issues:
+      - Complex dependency chain (etcd + minio)
+      - No official native install packages
+      - Requires coordination service
+    evidence:
+      - docker-compose.yml:171-194
+
+  - id: milvus-etcd
+    name: Milvus Etcd
+    type: container
+    layers:
+      - docker
+    role: Service discovery for Milvus (coordination)
+    entrypoint:
+      docker:
+        compose_service: milvus-etcd
+        image: quay.io/coreos/etcd:v3.5.18
+        port: 2379
+    dependencies: []
+    persistence:
+      volumes:
+        - milvus_etcd:/etcd
+      backup_importance: low
+    environment:
+      required: []
+    healthcheck:
+      docker: ["CMD", "etcdctl", "endpoint", "health"]
+    native_feasibility: difficult
+    native_requirements:
+      - etcd compilation
+    blocking_issues:
+      - Only needed for Milvus
+    evidence:
+      - docker-compose.yml:135-152
+
+  - id: milvus-minio
+    name: Milvus MinIO
+    type: container
+    layers:
+      - docker
+    role: Internal object storage for Milvus
+    entrypoint:
+      docker:
+        compose_service: milvus-minio
+        image: minio/minio:RELEASE.2023-03-20T20-16-18Z
+        port: 9000
+    dependencies: []
+    persistence:
+      volumes:
+        - milvus_minio:/minio_data
+      backup_importance: low
+    environment:
+      required:
+        - MINIO_ROOT_USER
+        - MINIO_ROOT_PASSWORD
+    healthcheck:
+      docker: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+    native_feasibility: not_recommended
+    native_requirements:
+      - Separate MinIO instance
+    blocking_issues:
+      - Duplicate of main MinIO
+      - Could consolidate with main MinIO
+    evidence:
+      - docker-compose.yml:154-169
+
+  - id: qdrant
+    name: Qdrant Vector Database
+    type: container
+    layers:
+      - docker
+      # - native  # POSSIBLE: Has native binary
+    role: Alternative vector database (not active in default config)
+    entrypoint:
+      docker:
+        compose_service: qdrant
+        image: qdrant/qdrant:v1.16.2
+        port: 6333
+      native:
+        command: "qdrant --config-path /path/to/config.yaml"
+        download_url: https://github.com/qdrant/qdrant/releases
+    dependencies: []
+    ports:
+      internal: 6333
+      external:
+        - "6333:6333"
+        - "6334:6334"
+    persistence:
+      volumes:
+        - qdrant_data:/qdrant/storage
+      backup_importance: medium
+    environment:
+      required:
+        - QDRANT__SERVICE__HTTP_PORT
+        - QDRANT__SERVICE__METRICS_PORT
+    healthcheck:
+      docker: ["CMD-SHELL", "curl", "-f", "http://localhost:6333/healthz"]
+    native_feasibility: feasible
+    native_requirements:
+      - Download qdrant binary
+      - Systemd service setup
+    blocking_issues:
+      - Not active (VECTOR_DB=milvus by default)
+    evidence:
+      - docker-compose.yml:114-132
+
+  # ==========================================================================
+  # MESSAGING & EVENT BUS
+  # ==========================================================================
+  - id: kafka
+    name: Apache Kafka
+    type: container
+    layers:
+      - docker
+      # - native  # POSSIBLE: But complex setup
+    role: Event bus for async task processing
+    entrypoint:
+      docker:
+        compose_service: kafka
+        image: apache/kafka:3.8.0
+        port: 9094
+      native:
+        command: "kafka-server-start /etc/kafka/server.properties"
+      external:
+        type: managed
+        examples:
+          - AWS MSK
+          - Google Cloud Pub/Sub
+          - Azure Event Hubs
+          - Confluent Cloud
+    dependencies: []
+    ports:
+      internal: 9094
+      external: null
+    persistence:
+      volumes:
+        - kafka_data:/var/lib/kafka/data
+      backup_importance: low
+    environment:
+      required:
+        - KAFKA_NODE_ID
+        - KAFKA_PROCESS_ROLES
+        - KAFKA_CONTROLLER_QUORUM_VOTERS
+    healthcheck:
+      docker: ["CMD", "sh", "-c", "/opt/kafka/bin/kafka-topics.sh --bootstrap-server localhost:9092 --list"]
+    native_feasibility: complex
+    native_requirements:
+      - Java runtime
+      - Kafka installation
+      - ZooKeeper (or KRaft mode)
+    blocking_issues:
+      - Complex configuration
+      - Requires Java/ZooKeeper
+    evidence:
+      - docker-compose.yml:17-47
+
+  - id: kafka-init
+    name: Kafka Topic Init
+    type: internal
+    layers:
+      - docker
+      # - native  # Could be one-time script
+    role: Initialize Kafka topics on startup
+    entrypoint:
+      docker:
+        compose_service: kafka-init
+        image: layra-kafka-init
+        one_shot: true
+      native:
+        command: "bash init-kafka/init-kafka.sh"
+    dependencies:
+      hard:
+        - kafka
+    environment:
+      required:
+        - KAFKA_TOPIC
+        - KAFKA_PARTITIONS_NUMBER
+        - KAFKA_REPLICATION_FACTOR
+    native_feasibility: highly_feasible
+    native_requirements:
+      - kafka-topics.sh access
+    blocking_issues: []
+    evidence:
+      - docker-compose.yml:3-15
+      - init-kafka/init-kafka.sh
+
+  # ==========================================================================
+  # MODEL & INFERENCE SERVICES
+  # ==========================================================================
+  - id: model-server
+    name: ColQwen Model Server
+    type: internal
+    layers:
+      - docker
+      # - native  # POSSIBLE: But requires CUDA setup
+    role: Local visual embedding server (ColQwen2.5)
+    entrypoint:
+      docker:
+        compose_service: model-server
+        image: layra-model-server
+        port: 8005
+      native:
+        command: "cd model-server && python model_server.py"
+        working_dir: /LAB/@thesis/layra/model-server
+    dependencies:
+      hard:
+        - model-weights-init
+      soft:
+        - redis
+    ports:
+      internal: 8005
+      external: null
+    environment:
+      required:
+        - CUDA_VISIBLE_DEVICES
+        - COLBERT_MODEL_PATH
+        - REDIS_HOST
+        - REDIS_PASSWORD
+      optional:
+        - PYTORCH_CUDA_ALLOC_CONF
+    healthcheck:
+      docker: ["CMD", "curl", "-f", "http://localhost:8005/healthy-check"]
+    native_feasibility: possible_with_gpu
+    native_requirements:
+      - NVIDIA GPU with CUDA
+      - CUDA Toolkit 12.4
+      - Python 3.10 with PyTorch
+      - Model weights (~15GB)
+    blocking_issues:
+      - Requires NVIDIA GPU + CUDA
+      - Large model download
+      - GPU memory management
+    evidence:
+      - docker-compose.yml:325-355
+      - model-server/Dockerfile
+      - model-server/requirements.txt
+
+  - id: model-weights-init
+    name: Model Weights Downloader
+    type: internal
+    layers:
+      - docker
+      # - native  # EASIER: Could be simple script
+    role: Download ML model weights on first startup
+    entrypoint:
+      docker:
+        compose_service: model-weights-init
+        image: layra-model-weights-init
+        one_shot: true
+      native:
+        command: "bash init-db/init_models.sh"
+        working_dir: /LAB/@thesis/layra
+    dependencies: []
+    persistence:
+      volumes:
+        - model_weights:/model_weights
+    environment:
+      required:
+        - MODEL_BASE_URL
+    native_feasibility: highly_feasible
+    native_requirements:
+      - git
+      - git-lfs
+      - jq
+    blocking_issues:
+      - Large download (~15GB)
+    evidence:
+      - docker-compose.yml:207-223
+      - init-db/init_models.sh
+
+  # ==========================================================================
+  # DOCUMENT PROCESSING
+  # ==========================================================================
+  - id: unoserver
+    name: LibreOffice Server
+    type: container
+    layers:
+      - docker
+      # - native  # POSSIBLE: But complex setup
+    role: Document conversion (DOCX, XLSX, PPTX -> PDF)
+    entrypoint:
+      docker:
+        compose_service: unoserver
+        image: layra-unoserver
+        port: 2003
+      native:
+        command: "python3 -m unoserver.server --port=2003"
+    dependencies: []
+    ports:
+      internal: 2003
+      external: null
+    environment:
+      required:
+        - UNOSERVER_INSTANCES
+        - BASE_PORT
+        - BASE_UNO_PORT
+    healthcheck:
+      docker: ["CMD", "nc", "-z", "localhost", "2003"]
+    native_feasibility: possible
+    native_requirements:
+      - LibreOffice suite
+      - Python unoserver package
+      - X11 display (headless)
+    blocking_issues:
+      - Requires full LibreOffice installation
+      - Headless X11 setup
+      - Font dependencies
+    evidence:
+      - docker-compose.yml:225-240
+      - unoserver/Dockerfile
+      - unoserver/start_unoservers.sh
+
+  # ==========================================================================
+  # WORKFLOW EXECUTION
+  # ==========================================================================
+  - id: python-sandbox
+    name: Python Sandbox
+    type: internal
+    layers:
+      - docker
+      # - native  # NOT RECOMMENDED: Security risk
+    role: Isolated Python code execution for workflows
+    entrypoint:
+      docker:
+        compose_service: python-sandbox
+        image: python-sandbox
+      native:
+        command: "python3"
+    dependencies: []
+    persistence:
+      volumes:
+        - layra_sandbox_volume:/shared
+    environment: []
+    native_feasibility: not_recommended
+    native_requirements:
+      - Python 3.12
+    blocking_issues:
+      - SECURITY: Running user code on host
+      - No isolation
+      - File system access
+    evidence:
+      - docker-compose.yml:197-205
+      - sandbox/Dockerfile
+
+  # ==========================================================================
+  # MONITORING & OBSERVABILITY
+  # ==========================================================================
+  - id: prometheus
+    name: Prometheus Metrics
+    type: container
+    layers:
+      - docker
+      # - native  # POSSIBLE
+    role: Metrics collection and monitoring
+    entrypoint:
+      docker:
+        compose_service: prometheus
+        image: prom/prometheus:latest
+        port: 9090
+      native:
+        command: "prometheus --config.file=/etc/prometheus/prometheus.yml"
+    dependencies: []
+    ports:
+      internal: 9090
+      external: "9090:9090"
+    persistence:
+      volumes:
+        - prometheus_data:/prometheus
+      backup_importance: low
+    environment: []
+    healthcheck: {}
+    native_feasibility: feasible
+    native_requirements:
+      - prometheus package
+    blocking_issues: []
+    evidence:
+      - docker-compose.yml:386-399
+      - monitoring/prometheus.yml
+
+  - id: grafana
+    name: Grafana Dashboards
+    type: container
+    layers:
+      - docker
+      # - native  # POSSIBLE
+    role: Visualization dashboards for metrics
+    entrypoint:
+      docker:
+        compose_service: grafana
+        image: grafana/grafana:latest
+        port: 3000
+      native:
+        command: "grafana-server --config=/etc/grafana/grafana.ini"
+    dependencies:
+      soft:
+        - prometheus
+    ports:
+      internal: 3000
+      external: "3001:3000"
+    persistence:
+      volumes:
+        - grafana_data:/var/lib/grafana
+      backup_importance: low
+    environment:
+      optional:
+        - GF_SECURITY_ADMIN_PASSWORD
+    healthcheck: {}
+    native_feasibility: feasible
+    native_requirements:
+      - grafana package
+    blocking_issues: []
+    evidence:
+      - docker-compose.yml:401-413
+
+  - id: dozzle
+    name: Dozzle Log Viewer
+    type: container
+    layers:
+      - docker
+    role: Real-time container log viewer (development only)
+    entrypoint:
+      docker:
+        compose_service: dozzle
+        image: amir20/dozzle:latest
+        port: 8080
+    dependencies:
+      hard:
+        - /var/run/docker.sock  # Docker socket mount
+    ports:
+      internal: 8080
+      external: "8888:8080"
+    persistence:
+      volumes: []
+    environment: []
+    native_feasibility: not_applicable
+    native_requirements: []
+    blocking_issues:
+      - Requires Docker socket
+      - Docker-specific tool
+    evidence:
+      - docker-compose.override.yml:18-26
+
+# ============================================================================
+# CRITICAL PATHS - E2E Flows
+# ============================================================================
+critical_paths:
+  - id: query-path
+    name: Query Flow (RAG)
+    description: User asks question → retrieval → generation → response
+    steps:
+      - user: Frontend sends query
+        service: frontend
+        endpoint: POST /api/v1/chat
+      - service: backend
+        component: app/api/endpoints/chat.py
+      - database: MongoDB
+        operation: Fetch chat history
+      - vector_db: Milvus
+        operation: Semantic search with query embedding
+        embedding_source: model-server (local) OR Jina API (remote)
+      - storage: MinIO
+        operation: Retrieve stored document images
+      - llm: Provider API
+        operation: Generate response with context
+        providers:
+          - openai
+          - deepseek
+          - moonshot
+          - zhipu
+          - minimax
+          - cohere
+          - ollama
+      - response: Backend streams response via SSE
+        service: backend
+        component: sse_starlette
+      - display: Frontend renders markdown response
+        service: frontend
+    dependencies:
+      required:
+        - frontend
+        - backend
+        - mongodb
+        - milvus
+        - minio
+      optional:
+        - model-server  # Only if EMBEDDING_MODEL=local_colqwen
+      external:
+        - llm_provider  # API call to provider
+
+  - id: ingest-path
+    name: Document Ingestion Path
+    description: User uploads document → processing → embedding → indexing
+    steps:
+      - upload: Frontend uploads file
+        service: frontend
+        endpoint: POST /api/v1/knowledge-base/upload
+      - service: backend
+        component: app/api/endpoints/knowledge-base.py
+      - storage: MinIO
+        operation: Store original file
+      - convert: Unoserver converts to PDF
+        service: unoserver
+        input: DOCX/XLSX/PPTX
+        output: PDF
+      - raster: PDF converted to images
+        service: backend
+        component: app/rag/convert_file.py
+        tool: pdf2image
+      - embed: Visual embedding generation
+        option_local:
+          service: model-server
+          model: colqwen2.5-v0.2
+        option_remote:
+          service: Jina API
+          endpoint: https://api.jina.ai/v1/embeddings
+      - vector_db: Store embeddings
+        service: milvus-standalone
+        operation: Insert vectors with metadata
+      - metadata: Store document metadata
+        service: mysql
+        operation: Insert into knowledge_bases table
+      - queue: Async processing notification
+        service: kafka
+        topic: task_generation
+    dependencies:
+      required:
+        - backend
+        - minio
+        - unoserver
+        - milvus
+        - mysql
+        - kafka
+      optional:
+        - model-server  # Only if EMBEDDING_MODEL=local_colqwen
+      external:
+        - jina_api  # Only if EMBEDDING_MODEL=jina_embeddings_v4
+
+  - id: workflow-path
+    name: Workflow Execution Path
+    description: User creates workflow → execution → results
+    steps:
+      - create: Frontend workflow builder
+        service: frontend
+        component: @xyflow/react
+      - submit: Workflow submission
+        service: backend
+        endpoint: POST /api/v1/workflow/execute
+      - validate: DAG validation
+        service: backend
+        component: app/workflow/workflow_engine.py
+      - orchestrate: Kafka-based orchestration
+        service: kafka
+        topic: task_generation
+      - execute: Node execution
+        service: backend
+        component: app/workflow/executors/
+        types:
+          - llm: LLM calls
+          - code: Python code execution
+          - condition: Branching logic
+          - loop: Iteration
+      - sandbox: Code execution
+        service: python-sandbox
+        isolation: Docker container
+      - state: State persistence
+        service: mongodb
+        component: chat_mongodb.workflow_states
+      - stream: Real-time updates
+        service: backend
+        protocol: Server-Sent Events (SSE)
+      - display: Frontend shows execution progress
+        service: frontend
+    dependencies:
+      required:
+        - frontend
+        - backend
+        - mongodb
+        - kafka
+        - python-sandbox
+      external:
+        - llm_provider  # For LLM nodes
+
+  - id: deploy-path
+    name: Deployment Path
+    description: From clean checkout to running system
+    steps:
+      - checkout: git clone repository
+      - configure: cp .env.example .env
+        action: Edit credentials
+      - network: docker network create layra-net
+        condition: external: true
+      - build: docker-compose build
+        services_built:
+          - backend
+          - frontend
+          - unoserver
+          - model-server
+          - python-sandbox
+      - weights: model-weights-init runs
+        action: Download ~15GB models
+        duration: 10-30 minutes
+      - infrastructure: Start data services
+        services:
+          - mysql
+          - mongodb
+          - redis
+          - minio
+          - milvus-standalone
+          - kafka
+        healthchecks: Wait for healthy
+      - init: kafka-init runs
+        action: Create topics
+      - application: Start app services
+        services:
+          - unoserver
+          - backend
+          - frontend
+          - nginx
+      - verify: curl http://localhost:8090/api/v1/health/check
+    dependencies:
+      required:
+        - docker
+        - docker-compose
+      optional:
+        - nvidia-container-toolkit  # For GPU
+      external:
+        - huggingface  # Model download
+        - llm_provider  # API keys
+
+# ============================================================================
+# EXTERNAL DEPENDENCIES
+# ============================================================================
+external_dependencies:
+  - id: llm-providers
+    name: LLM Provider APIs
+    description: Direct API integration for LLM calls
+    providers:
+      - name: OpenAI
+        base_url: https://api.openai.com/v1
+        env_key: OPENAI_API_KEY
+        status: required
+        models:
+          - gpt-4o
+          - gpt-4o-mini
+      - name: DeepSeek
+        base_url: https://api.deepseek.com
+        env_key: DEEPSEEK_API_KEY
+        status: required
+        models:
+          - deepseek-chat
+          - deepseek-coder
+      - name: Moonshot (Kimi)
+        base_url: https://api.moonshot.cn/v1
+        env_key: MOONSHOT_API_KEY
+        status: optional
+        models:
+          - moonshot-v1-8k
+          - moonshot-v1-32k
+          - kimi-k2-thinking
+      - name: Zhipu (GLM)
+        base_url: https://open.bigmodel.cn/api/paas/v4
+        env_key: ZHIPUAI_API_KEY
+        status: optional
+        models:
+          - glm-4.7
+          - glm-4-plus
+      - name: MiniMax
+        base_url: https://api.minimax.chat/v1
+        env_key: MINIMAX_API_KEY
+        status: optional
+      - name: Cohere
+        base_url: https://api.cohere.ai/v1
+        env_key: COHERE_API_KEY
+        status: optional
+      - name: Ollama
+        base_url: https://api.ollama.ai/v1
+        env_key: OLLAMA_API_KEY
+        status: optional
+      - name: Anthropic
+        base_url: https://api.anthropic.com/v1
+        env_key: ANTHROPIC_API_KEY
+        status: optional
+        models:
+          - claude-3-opus
+          - claude-3-sonnet
+      - name: Google Gemini
+        base_url: https://generativelanguage.googleapis.com/v1
+        env_key: GEMINI_API_KEY
+        status: optional
+        models:
+          - gemini-pro
+    integration_code: backend/app/rag/provider_client.py
+
+  - id: jina-embeddings
+    name: Jina Embeddings API
+    description: Cloud-based visual embeddings (alternative to local GPU)
+    base_url: https://api.jina.ai/v1/embeddings
+    env_key: JINA_API_KEY
+    status: optional
+    used_when: EMBEDDING_MODEL=jina_embeddings_v4
+    benefit: No local GPU required
+
+  - id: huggingface
+    name: Hugging Face Model Hub
+    description: Source for ColQwen2.5 model weights
+    base_url: https://huggingface.co
+    mirror_available: true
+    env_key: MODEL_BASE_URL
+    default: https://huggingface.co/vidore
+    models:
+      - colqwen2.5-base
+      - colqwen2.5-v0.2
+    download_size: ~15GB
+
+# ============================================================================
+# DRIFT CHECKS - Known Gaps
+# ============================================================================
+drift_checks:
+  - check: docker-compose vs .env.example
+    status: verified
+    last_checked: "2026-01-26"
+    notes: All environment variables in compose are defined in .env.example
+
+  - check: backend config vs .env.example
+    status: drift_detected
+    details:
+      - config.py defines: milvus_uri, qdrant_url, vector_db
+      - .env.example has: MILVUS_URI, QDRANT_URL, VECTOR_DB
+      - Issue: Case mismatch (milvus_uri vs MILVUS_URI)
+      - impact: Pydantic auto-lowercases env vars, but docs inconsistent
+    evidence:
+      - backend/app/core/config.py:56-65
+      - .env.example:58, 127
+
+  - check: frontend vs backend API
+    status: verified
+    notes: frontend/src/types/types.ts matches backend response schemas
+
+  - check: README vs actual compose files
+    status: resolved
+    details:
+      - docker-compose.gpu.yml moved to deploy/docker-compose.gpu.yml
+      - docker-compose-no-local-embedding.yml archived to scripts/archive/docker-compose/
+      - docker-compose.backup.yml archived to scripts/archive/docker-compose/
+      - Actual active: deploy/docker-compose.thesis.yml
+      - Impact: None - documentation correctly references active files
+    evidence:
+      - README.md:386-389 (correct)
+      - deploy/DOCKER_COMPOSE_GUIDE.md (created)
+      - scripts/archive/docker-compose/README.md (archive history)
+
+  - check: SSOT vs reality
+    status: updated
+    action: This YAML now matches actual deployment
+    notes: SSOT was outdated, now refreshed
+
+# ============================================================================
+# NATIVE DEPLOYMENT ASSESSMENT
+# ============================================================================
+native_deployment:
+  overall_feasibility: partial
+  summary: "Some services can run natively, but Docker remains recommended for most services"
+
+  highly_feasible:
+    - service: frontend
+      effort: low
+      command: "cd frontend && npm install && npm run build && npm start"
+      port: 3000
+      notes: Standard Next.js deployment
+
+    - service: nginx
+      effort: low
+      command: "nginx -c frontend/nginx.conf"
+      notes: Standard systemd service
+
+    - service: redis
+      effort: low
+      command: "redis-server --requirepass $REDIS_PASSWORD"
+      notes: Standard package install
+
+    - service: model-weights-init
+      effort: low
+      command: "bash init-db/init_models.sh"
+      notes: Simple script, run once
+
+    - service: kafka-init
+      effort: low
+      command: "bash init-kafka/init-kafka.sh"
+      notes: Simple script, run once
+
+  feasible_with_effort:
+    - service: backend
+      effort: medium
+      blockers:
+        - Docker socket access for sandbox
+        - Container hostnames in config
+      fixes:
+        - Replace Docker SDK with subprocess for sandbox
+        - Update all hostnames to localhost
+        - Install system deps: poppler-utils, fonts-noto-cjk
+      command: "cd backend && python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt && gunicorn -c gunicorn_config.py app.main:app"
+
+    - service: mysql
+      effort: medium
+      blockers:
+        - Data migration from Docker volume
+        - Port conflicts
+      fixes:
+        - Dump data from container: docker exec mysql mysqldump
+        - Restore to native: mysql < backup.sql
+      command: "systemctl start mysql"
+
+    - service: mongodb
+      effort: medium
+      blockers:
+        - Data migration from volume
+      fixes:
+        - Dump: docker exec mongodb mongodump
+        - Restore: mongorestore
+      command: "systemctl start mongod"
+
+    - service: minio
+      effort: medium
+      blockers:
+        - Data migration
+      fixes:
+        - Sync data: mc mirror
+      command: "minio server /data --console-address :9001"
+
+    - service: qdrant
+      effort: medium
+      blockers:
+        - Not active (VECTOR_DB=milvus)
+      notes: "Has native binary, easy to deploy if chosen"
+
+  possible_with_gpu:
+    - service: model-server
+      effort: high
+      requirements:
+        - NVIDIA GPU
+        - CUDA Toolkit 12.4
+        - PyTorch with CUDA
+      blockers:
+        - Large model download (15GB)
+        - GPU memory management
+      command: "cd model-server && python model_server.py"
+      notes: "Feasible if GPU available, but Docker simplifies CUDA setup"
+
+    - service: unoserver
+      effort: high
+      requirements:
+        - LibreOffice suite
+        - Python unoserver
+        - Headless X11
+      blockers:
+        - Font dependencies
+        - X11 setup complexity
+      command: "python3 -m unoserver.server --port=2003"
+      notes: "Possible but Docker much simpler"
+
+  difficult_not_recommended:
+    - service: milvus-standalone
+      effort: very_high
+      blockers:
+        - Complex dependency chain (etcd + MinIO)
+        - No native packages
+        - Compilation required
+      alternatives:
+        - Use Zilliz Cloud (managed)
+        - Keep in Docker
+        - Switch to Qdrant (has native binary)
+
+    - service: kafka
+      effort: high
+      blockers:
+        - Java runtime required
+        - Complex configuration
+        - ZooKeeper or KRaft setup
+      alternatives:
+        - Use managed Kafka (AWS MSK, Confluent Cloud)
+        - Keep in Docker
+        - Replace with Redis streams
+
+    - service: python-sandbox
+      effort: very_high
+      blockers:
+        - SECURITY: Running user code on host
+        - No isolation
+        - File system access
+      alternatives:
+        - Keep in Docker (essential)
+        - Use firecracker VMs
+        - Use gvisor
+
+    - service: dozzle
+      effort: not_applicable
+      blockers:
+        - Docker-specific tool
+        - Requires Docker socket
+      alternatives:
+        - journalctl
+        - tail -f
+        - lnav
+
+  recommended_hybrid_approach:
+    description: "Run infrastructure in Docker, applications native (or vice versa)"
+    option_1:
+      name: Docker infrastructure, native apps
+      services_in_docker:
+        - mysql
+        - mongodb
+        - redis
+        - minio
+        - milvus-standalone
+        - kafka
+        - unoserver
+        - python-sandbox
+      services_native:
+        - frontend
+        - backend
+        - nginx
+      benefits:
+        - Simplified app development
+        - Hot reload for frontend
+        - Direct debugging for backend
+      complexity: medium
+
+    option_2:
+      name: Native infrastructure, Docker apps
+      services_native:
+        - mysql
+        - mongodb
+        - redis
+        - minio
+        - qdrant
+      services_in_docker:
+        - backend
+        - frontend
+        - milvus-standalone
+        - kafka
+        - unoserver
+        - python-sandbox
+      benefits:
+        - Managed databases
+        - Standard app containers
+      complexity: low
+
+    option_3:
+      name: External services, local apps
+      services_external:
+        - AWS RDS (MySQL)
+        - MongoDB Atlas
+        - ElastiCache (Redis)
+        - AWS S3 (MinIO replacement)
+        - Zilliz Cloud (Milvus)
+        - Confluent Cloud (Kafka)
+      services_native:
+        - frontend
+        - backend
+        - nginx
+      services_in_docker:
+        - unoserver
+        - python-sandbox
+        - model-server (if GPU)
+      benefits:
+        - Managed infrastructure
+        - Scalability
+        - Less maintenance
+      complexity: low
+      cost: monthly fees
+
+# ============================================================================
+# UPDATE PROTOCOL
+# ============================================================================
+update_protocol:
+  triggers:
+    - "Adding or removing a service"
+    - "Changing service versions"
+    - "Modifying ports or network topology"
+    - "Adding new environment variables"
+    - "Changing data flow between services"
+    - "Switching vector database (milvus <-> qdrant)"
+    - "Changing embedding mode (local <-> jina)"
+
+  pr_checklist:
+    - "SSOT updated (this file)"
+    - "docker-compose.yml updated"
+    - ".env.example updated"
+    - "README.md verified"
+    - "Migration guide provided (if breaking change)"
+
+  verification_steps:
+    - "Compare this YAML with docker-compose.yml"
+    - "Verify all env vars in .env.example"
+    - "Check services count matches 'docker ps'"
+    - "Test critical paths (query, ingest, workflow)"
+    - "Update version number"
+
+  version_history:
+    - version: "3.0.0"
+      date: "2026-01-26"
+      changes:
+        - Complete restructure with layering analysis
+        - Added native deployment feasibility assessment
+        - Added critical paths documentation
+        - Added drift detection section
+        - Categorized services by deployment complexity
+    - version: "2.0.0"
+      date: "2026-01-25"
+      changes:
+        - Initial YAML SSOT
+        - Documented 13 services
+        - Added environment variables
