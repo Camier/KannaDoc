@@ -19,7 +19,7 @@ export const knowledgeBaseSideBarConfig: UnifiedSideBarConfig = {
   buttonPadding: "px-4",
   icon: "knowledge",
   subtitleField: "fileNumber",
-  subtitleFormatFn: (item) => `${item.fileNumber} files`,
+  subtitleFormatFn: (item: any) => `${item.fileNumber} files`,
   disableFirstItem: true,
   emptyItemId: "1",
 };
@@ -31,4 +31,6 @@ export const chatSideBarConfig: UnifiedSideBarConfig = {
   icon: "chat",
   subtitleField: "lastModifyTime",
   truncateName: 30,
+  showSearch: true,
+  showClearAll: true,
 };

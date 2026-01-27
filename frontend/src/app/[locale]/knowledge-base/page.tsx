@@ -1,7 +1,9 @@
 "use client";
 import AddKnowledgeBase from "@/components/KnowledgeBase/AddKnowledgeBase";
+import { logger } from "@/lib/logger";
 import KnowledgeBaseDetails from "@/components/KnowledgeBase/KnowledgeBaseDetails";
-import LeftSideBar from "@/components/KnowledgeBase/LeftSideBar";
+import UnifiedSideBar from "@/components/shared/UnifiedSideBar";
+import { knowledgeBaseSideBarConfig } from "@/components/shared/SideBarConfigs";
 import TopBar from "@/components/KnowledgeBase/TopBar";
 import Navbar from "@/components/NavbarComponents/Navbar";
 import {
@@ -80,7 +82,7 @@ const KnowledgeBase = () => {
         }));
         setBases(bases);
       } catch (error) {
-        console.error("Error fetching chat history:", error);
+        logger.error("Error fetching chat history:", error);
       }
     }
   }, [user?.name]); // Add dependencies
@@ -120,7 +122,7 @@ const KnowledgeBase = () => {
         const response = await createKnowledgeBase(user.name, newBaseName);
         setSelectedBase(null);
       } catch (error) {
-        console.error("Error fetching chat history:", error);
+        logger.error("Error fetching chat history:", error);
       }
     }
     setRefresh((pre) => !pre);
@@ -135,7 +137,7 @@ const KnowledgeBase = () => {
         );
         const response = await deleteKnowledgeBase(base.baseId);
       } catch (error) {
-        console.error("Error delete Knowledge Base:", error);
+        logger.error("Error delete Knowledge Base:", error);
       }
       setSelectedBase(null);
       setRefresh((pre) => !pre);
@@ -154,7 +156,7 @@ const KnowledgeBase = () => {
           await renameKnowledgeBase(base.baseId, inputValue);
           setRefresh((prev) => !prev);
         } catch (error) {
-          console.error("Error fetching rename chat:", error);
+          logger.error("Error fetching rename chat:", error);
         }
       }
     };
@@ -244,7 +246,7 @@ const KnowledgeBase = () => {
                 )
               );
             } catch (error) {
-              console.error("SSE错误:", error);
+              logger.error("SSE错误:", error);
               setTaskStatus("failed");
             } finally {
               setSelectedBase(null);
@@ -286,14 +288,15 @@ const KnowledgeBase = () => {
 
           <div className="mx-auto px-4 pt-4 flex gap-6 h-[88%]">
             {/* 左侧边栏 */}
-            <LeftSideBar
-              bases={bases}
+            <UnifiedSideBar
+              items={bases}
               searchTerm={searchTerm}
               setShowCreateModal={setShowCreateModal}
-              selectedBase={selectedBase}
-              setSelectedBase={setSelectedBase}
-              ondeleteBase={handledeleteBase}
-              onRenameKnowledgeBase={handleRenameKnowledgeBase}
+              selectedItem={selectedBase}
+              setSelectedItem={setSelectedBase}
+              onDelete={handledeleteBase}
+              onRename={handleRenameKnowledgeBase}
+              config={knowledgeBaseSideBarConfig}
             />
 
             {/* 右侧内容区 */}
