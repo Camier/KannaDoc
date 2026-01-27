@@ -1,26 +1,28 @@
 """
-MongoDB Repository Pattern
+MongoDB Repository Pattern - NOT IMPLEMENTED
 
-This package implements the repository pattern for MongoDB operations,
-splitting the large mongo.py file into focused, single-responsibility repositories.
+This repository pattern migration was started but NOT completed.
+
+STATUS: The repository files were deleted and the migration was rolled back.
+All endpoints continue to use the legacy MongoDB class directly from app.db.mongo
+
+DO NOT USE: The imports below are broken and will cause ImportError.
+
+Current Data Access Pattern:
+    from app.db.mongo import get_mongo
+
+    async def endpoint(db: MongoDB = Depends(get_mongo)):
+        return await db.get_something(...)
+
+Migration History:
+- 2026-01-26: Repository files deleted (see git status: backend/app/db/repositories/*.py)
+- Migration was rolled back due to incomplete implementation
+- All 20+ endpoints use legacy MongoDB class directly
+
+To Complete Repository Migration:
+1. Decide whether to implement repository pattern or remove this directory
+2. If implementing: Restore/create repository files, update all 20+ endpoints
+3. If removing: Delete this __init__.py file and repositories directory
+
+See docs/plans/2026-01-28-codebase-remediation.md for context.
 """
-
-from .base_repository import BaseRepository
-from .model_config_repository import ModelConfigRepository
-from .conversation_repository import ConversationRepository
-from .knowledge_base_repository import KnowledgeBaseRepository
-from .file_repository import FileRepository
-from .chatflow_repository import ChatflowRepository
-from .workflow_repository import WorkflowRepository
-from .node_repository import NodeRepository
-
-__all__ = [
-    "BaseRepository",
-    "ModelConfigRepository",
-    "ConversationRepository",
-    "KnowledgeBaseRepository",
-    "FileRepository",
-    "ChatflowRepository",
-    "WorkflowRepository",
-    "NodeRepository",
-]
