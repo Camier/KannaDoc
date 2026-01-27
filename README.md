@@ -465,7 +465,7 @@ JINA_EMBEDDINGS_V4_URL=https://api.jina.ai/v1/embeddings
 # docker compose -f deploy/docker-compose.thesis.yml --env-file .env up -d --build
 ```
 
-**📚 Thesis Deployment Guide**: See [`docs/THESIS_QUICKSTART.md`](docs/THESIS_QUICKSTART.md) for detailed instructions, verification steps, and Milvus connectivity notes.
+**📚 Thesis Deployment Guide**: See [`docs/docs/RAG-Chat.md`](docs/docs/RAG-Chat.md) for detailed RAG chat instructions and [`docs/ssot/stack.md`](docs/ssot/stack.md) for system architecture details.
 
 **✅ Current Verification (2026-01-22)**:
 - 26 PDFs ingested (ethnopharmacology focus: Sceletium tortuosum, PDE4 inhibitors, monoamine oxidase, etc.)
@@ -601,17 +601,19 @@ LAYRA provides comprehensive interactive API documentation through FastAPI's bui
 
 For in-depth technical details, please refer to:
 
-- [**API Reference**](docs/API.md) - Full list of endpoints, request/response formats, and examples.
-- [**Database Schema**](docs/DATABASE.md) - Comprehensive overview of MySQL, MongoDB, Milvus, and Redis structures.
-- [**Configuration Guide**](docs/CONFIGURATION.md) - Reference for all environment variables and system settings.
+- [**API Reference**](docs/core/API.md) - Full list of endpoints, request/response formats, and examples.
+- [**System Stack**](docs/ssot/stack.md) - Comprehensive overview of services, databases, and infrastructure.
+- [**Configuration Guide**](docs/core/CONFIGURATION.md) - Reference for all environment variables and system settings.
+- [**Environment Variables**](docs/reference/ENVIRONMENT_VARIABLES.md) - Complete .env variable reference.
 
 <h2 id="technical-documentation">📖 Technical Documentation</h2>
 
-Additional technical guides and analysis:
+Additional technical guides and documentation:
 
-- [**LAYRA Deep Analysis**](docs/LAYRA_DEEP_ANALYSIS.md) - Architectural deep-dive and design principles.
-- [**Milvus Ingestion Plan**](docs/MILVUS_INGESTION_PLAN.md) - Optimization strategy for high-performance vector storage.
-- [**GPU Optimization**](docs/GPU_OPTIMIZATION_INSIGHTS.md) - Insights on maximizing ColQwen2.5 performance.
+- [**System Stack**](docs/ssot/stack.md) - Complete system architecture and service dependencies.
+- [**Quick Reference**](docs/ssot/QUICK_REF.md) - Quick reference for common operations and troubleshooting.
+- [**RAG Chat Guide**](docs/docs/RAG-Chat.md) - Visual RAG chat system documentation.
+- [**Workflow Guide**](docs/docs/work-flow/workflow.md) - Agent workflow engine documentation.
 
 ---
 
