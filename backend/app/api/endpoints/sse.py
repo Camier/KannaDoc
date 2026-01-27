@@ -6,8 +6,7 @@ from fastapi.responses import StreamingResponse
 from sse_starlette.sse import EventSourceResponse
 from app.core.security import get_current_user, verify_username_match
 from app.db.redis import redis
-from app.models.conversation import UserMessage
-from app.models.workflow import UserMessage as WorkflowMessage
+from app.models.shared import UserMessage
 from app.models.user import User
 from app.models.workflow import LLMInputOnce
 from app.core.llm import ChatService
@@ -260,7 +259,7 @@ async def chat_stream(
         mcp_prompt = f"""
 You are an expert in selecting function calls. Please choose the most appropriate function call based on the user's question and provide the required parameters. Output in JSON format: {{"function_name": function name, "params": parameters}}. Do not include any other content. If the user's question is unrelated to functions, output {{"function_name":""}}.
 Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
-        mcp_user_message = WorkflowMessage(
+        mcp_user_message = UserMessage(
             conversation_id="",
             parent_id="",
             user_message=vlm_input,
@@ -311,7 +310,7 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
             logger.error(f"Error parsing MCP response or executing tool: {e}", exc_info=True)
     ##### mcp section #####
 
-    user_message = WorkflowMessage(
+    user_message = UserMessage(
         conversation_id="",
         parent_id="",
         user_message=vlm_input + supply_info,

@@ -7,7 +7,7 @@ import uuid
 import docker
 
 from app.db.redis import redis
-from app.models.workflow import UserMessage
+from app.models.shared import UserMessage
 from app.utils.timezone import beijing_time_now
 from app.workflow.mcp_tools import mcp_call_tools
 from app.workflow.sandbox import CodeSandbox

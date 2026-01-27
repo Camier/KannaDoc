@@ -223,12 +223,8 @@ class ChatService:
         bases = []
         user_images = []
 
-        # Handle temp_db parameter name differences
-        temp_db_id = (
-            user_message_content.temp_db_id
-            if is_workflow
-            else user_message_content.temp_db
-        )
+        # Handle temp_db_id (standardized field name)
+        temp_db_id = user_message_content.temp_db_id
         if temp_db_id:
             bases.append({"baseId": temp_db_id})
 
@@ -579,7 +575,7 @@ class ChatService:
                         message_id=message_id,
                         parent_message_id=user_message_content.parent_id,
                         user_message=user_message,
-                        temp_db=user_message_content.temp_db,
+                        temp_db=user_message_content.temp_db_id,
                         ai_message=ai_message,
                         file_used=file_used,
                         status=(
