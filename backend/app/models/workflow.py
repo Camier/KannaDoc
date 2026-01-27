@@ -1,6 +1,7 @@
 # Pydantic 模型，用于输入数据验证
 from typing import Any, Dict, List
 from pydantic import BaseModel
+from app.models.shared import UserMessage
 
 
 class TestFunctionCode(BaseModel):
@@ -69,13 +70,6 @@ class LLMInputOnce(BaseModel):
     system_prompt: str
     mcp_use: dict
     global_variables: dict
-
-
-class UserMessage(BaseModel):
-    conversation_id: str
-    parent_id: str
-    user_message: str
-    temp_db_id: str
 
 
 class GetTools(BaseModel):

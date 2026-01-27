@@ -1,6 +1,7 @@
 # Pydantic 模型，用于输入数据验证
 from typing import List
 from pydantic import BaseModel
+from app.models.shared import TurnOutput, UserMessage
 
 
 class ConversationCreate(BaseModel):
@@ -21,6 +22,7 @@ class ConversationUpdateModelConfig(BaseModel):
 
 
 class TurnInput(BaseModel):
+    """Input model for creating a conversation turn."""
     conversation_id: str
     message_id: str
     parent_message_id: str
@@ -29,21 +31,6 @@ class TurnInput(BaseModel):
     ai_message: dict
     file_used: list
     status: str
-    total_token: int
-    completion_tokens: int
-    prompt_tokens: int
-
-
-class TurnOutput(BaseModel):
-    message_id: str
-    parent_message_id: str
-    user_message: dict
-    temp_db: str
-    ai_message: dict
-    file_used: list
-    user_file: list
-    status: str
-    timestamp: str
     total_token: int
     completion_tokens: int
     prompt_tokens: int
@@ -66,13 +53,6 @@ class ConversationSummary(BaseModel):
     chat_model_config: dict
     is_read: bool
     last_modify_at: str
-
-
-class UserMessage(BaseModel):
-    conversation_id: str
-    parent_id: str
-    user_message: str
-    temp_db: str
 
 
 class GetUserFiles(BaseModel):

@@ -8,7 +8,7 @@ from unittest.mock import Mock, AsyncMock, MagicMock, patch
 from app.core.llm import ChatService
 from app.db.vector_db import VectorDBClientWrapper
 from app.db.mongo import MongoDB
-from app.models.conversation import UserMessage
+from app.models.shared import UserMessage
 
 
 class TestEmbeddingGeneration:
@@ -375,7 +375,7 @@ class TestChatService:
             conversation_id="conv_123",
             parent_id="",
             user_message="What is in this document?",
-            temp_db=""
+            temp_db_id=""
         )
 
         # Mock LLM stream response
