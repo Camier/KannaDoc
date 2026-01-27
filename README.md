@@ -606,6 +606,195 @@ For in-depth technical details, please refer to:
 - [**Configuration Guide**](docs/core/CONFIGURATION.md) - Reference for all environment variables and system settings.
 - [**Environment Variables**](docs/reference/ENVIRONMENT_VARIABLES.md) - Complete .env variable reference.
 
+---
+
+<h2 id="monitoring">📊 Monitoring & Observability</h2>
+
+LAYRA provides comprehensive monitoring through Prometheus and Grafana dashboards for real-time insights into system performance, health, and operational metrics.
+
+### Monitoring Stack
+
+| Component | URL | Credentials | Description |
+|-----------|-----|-------------|-------------|
+| **Grafana** | `http://localhost:3001` | admin / `${GRAFANA_PASSWORD:-admin}` | Visualization dashboards |
+| **Prometheus** | `http://localhost:9090` | N/A | Metrics collection and storage |
+| **Alerts** | `http://localhost:9090/alerts` | N/A | Active alerts and firing rules |
+
+### Available Dashboards
+
+#### 1. System Overview
+**UID:** `layra-system-overview`
+
+- **CPU Usage** - Per-container and system-wide CPU utilization
+- **Memory Usage** - Container memory consumption vs limits
+- **Network I/O** - Transmit/receive rates by container
+- **Disk Usage** - Filesystem usage percentage
+- **Disk I/O** - Read/write operations per second
+- **Service Status** - Up/down status for all services
+
+#### 2. API Performance
+**UID:** `layra-api-performance`
+
+- **Request Latency** - p50, p95, p99 percentiles by endpoint
+- **Request Rate** - Requests per second by endpoint
+- **Error Rate** - 4xx and 5xx error percentages
+- **Request Count** - Total requests by status code
+- **Connection Pool Usage** - Database connection pool utilization
+- **Circuit Breaker Status** - Active circuit breakers
+- **Top Endpoints** - Request volume by endpoint
+
+#### 3. Database Metrics
+**UID:** `layra-database-metrics`
+
+**MySQL:**
+- Connection pool utilization
+- Query latency (p95)
+- Query rate
+
+**MongoDB:**
+- Query latency (p95)
+- Operation rate
+
+**Redis:**
+- Command latency (p95)
+- Operations rate
+
+**Milvus (Vector DB):**
+- Query/insert latency (p95)
+- Collection statistics
+
+#### 4. Kafka Metrics
+**UID:** `layra-kafka-metrics`
+
+- **Consumer Lag** - Messages behind by topic/group
+- **Message Throughput** - Produce/fetch rates
+- **Network I/O** - Bytes per second
+- **Request Latency** - p95 produce/fetch latency
+- **Request Errors** - Error rates
+- **Consumer Rebalances** - Rebalance events
+- **Broker Status** - Kafka broker health
+
+#### 5. RAG Pipeline
+**UID:** `layra-rag-pipeline`
+
+- **Embedding Latency** - p50/p95 embedding generation time
+- **Vector DB Query Latency** - p50/p95 query time
+- **RAG Operation Rate** - Embeddings and queries per second
+- **RAG Error Rate** - Failure percentages
+- **Retrieved Documents** - Average docs per query
+- **File Processing Rate** - Files processed/failed per second
+- **LLM Request Latency** - p50/p95 LLM response time
+- **LLM Error Rate** - LLM failure percentage
+- **End-to-End RAG Latency** - p95 full pipeline time
+
+### Alert Rules
+
+Active monitoring rules are defined in [`monitoring/alerts.yml`](monitoring/alerts.yml):
+
+**Critical Alerts (Immediate Action Required):**
+- High API Error Rate (>50% for 1 minute)
+- Health Check Failure (backend down for 2 minutes)
+- Database Connection Pool Exhausted (>95%)
+- Authentication Failure Rate (>90%)
+- Memory Exhausted (>95% for 2 minutes)
+- Disk Space Critical (<5% available)
+
+**Warning Alerts (Investigate Within 5 Minutes):**
+- Elevated API Error Rate (>10% for 5 minutes)
+- High Latency (p95 > 5 seconds)
+- Multiple Circuit Breakers Open (3+ breakers)
+- High Kafka Consumer Lag (>1000 messages)
+- LLM Service Failure Rate (>15%)
+
+**Info Alerts (Monitor):**
+- Embedding Service Slowdown (3x above baseline)
+- Vector DB Query Slowdown (>3x normal)
+- File Processing Failures (>10%)
+
+### Accessing Metrics Programmatically
+
+```bash
+# Query Prometheus metrics directly
+curl http://localhost:9090/api/v1/query?query=up
+
+# Get specific metric
+curl 'http://localhost:9090/api/v1/query?query=layra_api_requests_total'
+
+# Get rate of requests
+curl 'http://localhost:9090/api/v1/query?query=rate(layra_api_requests_total[5m])'
+```
+
+### Dashboard Management
+
+**Export Dashboard:**
+```bash
+# Via Grafana UI: Share > Export > Save to JSON
+# Or via API:
+curl -u admin:admin \
+  'http://localhost:3001/api/dashboards/uid/layra-system-overview' \
+  -o dashboard-export.json
+```
+
+**Import Dashboard:**
+1. Navigate to Grafana UI
+2. Dashboards > Import
+3. Upload JSON file or paste content
+4. Select Prometheus datasource
+5. Click Import
+
+### Metrics Reference
+
+All available metrics are exposed by the backend at `/metrics` endpoint:
+```
+http://localhost:8090/api/v1/health/metrics
+```
+
+**Key Metric Categories:**
+- `layra_api_*` - API request metrics
+- `layra_db_*` - Database operations
+- `layra_kafka_*` - Messaging metrics
+- `layra_embedding_*` - Embedding generation
+- `layra_vectordb_*` - Vector database operations
+- `layra_llm_*` - LLM request metrics
+- `layra_file_processing_*` - File ingestion metrics
+
+### Troubleshooting
+
+**Grafana dashboards not loading:**
+```bash
+# Check Grafana logs
+docker logs layra-grafana
+
+# Verify Prometheus is accessible
+docker exec layra-grafana wget -O- http://prometheus:9090/api/v1/status/config
+
+# Restart Grafana
+docker restart layra-grafana
+```
+
+**No data in dashboards:**
+```bash
+# Verify Prometheus scraping targets
+curl http://localhost:9090/api/v1/targets
+
+# Check backend metrics endpoint
+curl http://localhost:8090/api/v1/health/metrics
+
+# Verify Prometheus configuration
+docker exec layra-prometheus cat /etc/prometheus/prometheus.yml
+```
+
+**Alerts not firing:**
+```bash
+# Check Prometheus alert rules
+curl http://localhost:9090/api/v1/rules
+
+# View alert configuration
+cat monitoring/alerts.yml
+```
+
+---
+
 <h2 id="technical-documentation">📖 Technical Documentation</h2>
 
 Additional technical guides and documentation:
