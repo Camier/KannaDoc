@@ -553,7 +553,8 @@ const NodeSettingsBase: React.FC<NodeSettingsBaseProps> = ({
   translationNamespace,
   children,
 }) => {
-  const t = (key: string) => useTranslations(translationNamespace)(key);
+  const translations = useTranslations(translationNamespace);
+  const t = (key: string) => translations(key);
   const [isEditing, setIsEditing] = useState(false);
 
   const {
