@@ -10,9 +10,8 @@ Supported Providers (January 2026):
 - ZhipuAI (GLM-4 series)
 - ZhipuAI Coding (GLM-4.5/4.6/4.7)
 - Moonshot (Kimi K2)
-- Qwen (Qwen VL models via DashScope)
 - Ollama Cloud (Llama, Mistral, Mixtral)
-- Antigravity (Claude/Gemini proxy via opencode auth)
+- Antigravity via CLIProxyAPI (OpenAI-compatible proxy)
 - MiniMax, Cohere
 """
 
@@ -239,9 +238,9 @@ class ProviderClient:
             ],
             "vision": True,
         },
-        "antigravity": {
-            "base_url": "https://api.antigravity.dev/v1",
-            "env_key": "ANTIGRAVITY_API_KEY",
+        "cliproxyapi": {
+            "base_url": "",
+            "env_key": "CLIPROXYAPI_API_KEY",
             "models": [
                 "antigravity-claude-opus-4-5-thinking",
                 "antigravity-claude-sonnet-4-5-thinking",
@@ -303,7 +302,7 @@ class ProviderClient:
                     return provider
 
         if "antigravity" in model_lower:
-            return "antigravity"
+            return "cliproxyapi"
         elif (
             "gpt" in model_lower
             or "openai" in model_lower
@@ -322,8 +321,6 @@ class ProviderClient:
             return "zhipu-coding"
         elif "glm" in model_lower or "zhipu" in model_lower:
             return "zhipu"
-        elif "qwen" in model_lower:
-            return "qwen"
         elif "abab" in model_lower or "minimax" in model_lower:
             return "minimax"
         elif "command" in model_lower or "cohere" in model_lower:
@@ -384,6 +381,8 @@ class ProviderClient:
         # Detect provider if not specified
         if not provider:
             provider = cls.get_provider_for_model(model_name)
+        if not provider:
+            raise ValueError(f"Cannot detect provider for model: {model_name}")
 
         # Get provider config
         provider_config = cls.PROVIDERS.get(provider)
@@ -405,7 +404,15 @@ class ProviderClient:
 
         # Get base URL (priority: parameter > provider default)
         if not base_url:
-            base_url = provider_config["base_url"]
+            if provider == "cliproxyapi":
+                base_url = os.getenv("CLIPROXYAPI_BASE_URL")
+                if not base_url:
+                    raise ValueError(
+                        "CLIProxyAPI base URL not configured. "
+                        "Set CLIPROXYAPI_BASE_URL (e.g. http://host.docker.internal:8088/v1)."
+                    )
+            else:
+                base_url = provider_config["base_url"]
 
         logger.info(
             f"Creating {provider} client for model '{model_name}' "
