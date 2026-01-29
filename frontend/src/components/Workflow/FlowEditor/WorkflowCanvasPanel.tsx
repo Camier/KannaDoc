@@ -24,19 +24,19 @@ interface WorkflowCanvasPanelProps {
   currentNode: CustomNode | undefined;
   showOutput: boolean;
   codeFullScreenFlow: boolean;
-  setCodeFullScreenFlow: (full: boolean) => void;
+  setCodeFullScreenFlow: React.Dispatch<React.SetStateAction<boolean>>;
   resumeDebugTaskId: string;
   // VLM Node props
-  messages: Message[];
-  setMessages: (messages: { [key: string]: Message[] }) => void;
+  messages: { [key: string]: Message[] };
+  setMessages: React.Dispatch<React.SetStateAction<{ [key: string]: Message[] }>>;
   onSaveNode: (node: CustomNode) => void;
   showError: (error: string) => void;
   // Output props
   workFlow: any;
   tempBaseId: string;
-  setTempBaseId: (id: string) => void;
+  setTempBaseId: React.Dispatch<React.SetStateAction<string>>;
   sendingFiles: FileResponse[];
-  setSendingFiles: (files: FileResponse[]) => void;
+  setSendingFiles: React.Dispatch<React.SetStateAction<FileResponse[]>>;
   cleanTempBase: boolean;
   onSendMessage: (message: string, files: FileResponse[], tempBaseId: string) => void;
   sendDisabled: boolean;
@@ -45,11 +45,11 @@ interface WorkflowCanvasPanelProps {
   // Docker image props
   refreshDockerImages: boolean;
   saveImage: boolean;
-  setSaveImage: (save: boolean) => void;
+  setSaveImage: React.Dispatch<React.SetStateAction<boolean>>;
   saveImageName: string;
-  setSaveImageName: (name: string) => void;
+  setSaveImageName: React.Dispatch<React.SetStateAction<string>>;
   saveImageTag: string;
-  setSaveImageTag: (tag: string) => void;
+  setSaveImageTag: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const WorkflowCanvasPanel: React.FC<WorkflowCanvasPanelProps> = ({
@@ -182,7 +182,7 @@ export const WorkflowCanvasPanel: React.FC<WorkflowCanvasPanelProps> = ({
         codeFullScreenFlow
           ? "w-[96%] h-[98%] fixed top-[1%] right-[2%]"
           : "w-[40%] h-[98%] absolute m-2 top-0 right-0"
-      } shadow-lg rounded-3xl bg-white`}
+      } shadow-lg rounded-3xl bg-gray-800`}
     >
       {getPanelContent()}
     </div>

@@ -1,6 +1,7 @@
 // components/ChatMessage.tsx
 "use client";
 import React, { Dispatch, useEffect, useMemo, useState } from "react";
+import { logger } from "@/lib/logger";
 import { FileResponse, Message, ModelConfig } from "@/types/types";
 import Image from "next/image";
 import LoadingCircle from "./LoadingCircle";
@@ -97,7 +98,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
     try {
       window.open(url, "_blank");
     } catch (error) {
-      console.error("Download failed:", error);
+      logger.error("Download failed:", error);
       alert("Download failed!");
     }
   };
@@ -137,8 +138,8 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
           isUser && message.type === "text"
             ? "" //"bg-indigo-300 shadow-lg"
             : message.type === "image"
-            ? "bg-white mb-3 shadow-lg"
-            : "bg-white mb-0.5"
+            ? "bg-gray-800 mb-3 shadow-lg"
+            : "bg-gray-800 mb-0.5"
         } ${
           message.type === "text"
             ? "px-4 py-2 mb-2 text-gray-800"

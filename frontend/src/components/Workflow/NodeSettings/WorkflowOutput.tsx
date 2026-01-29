@@ -631,7 +631,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
               {sendingFiles &&
                 sendingFiles.map((file, index) => (
                   <div
-                    className="w-full overflow-hidden flex gap-1 mt-1 text-xs bg-white"
+                    className="w-full overflow-hidden flex gap-1 mt-1 text-xs bg-gray-700"
                     key={index}
                   >
                     <span>

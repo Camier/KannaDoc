@@ -373,7 +373,7 @@ const UnifiedSideBar = <T extends SidebarItem>({
     <div
       className={`${
         config.translationNamespace === "ChatLeftSidebar"
-          ? "bg-white rounded-l-3xl flex flex-col items-center py-5 pl-5"
+          ? "bg-gray-800 rounded-l-3xl flex flex-col items-center py-5 pl-5"
           : `flex-none flex flex-col gap-4 h-full`
       } ${config.width}`}
     >
@@ -393,7 +393,7 @@ const UnifiedSideBar = <T extends SidebarItem>({
         className={`${
           config.translationNamespace === "ChatLeftSidebar"
             ? "px-2 w-full flex-1 overflow-scroll scrollbar-hide mt-3"
-            : "bg-white rounded-2xl overflow-scroll min-h-[90%] max-h-[90%] scrollbar-hide p-2"
+            : "bg-gray-800 rounded-2xl overflow-scroll min-h-[90%] max-h-[90%] scrollbar-hide p-2"
         }`}
       >
         {filteredItems.map((item, index) => {
@@ -474,7 +474,7 @@ const UnifiedSideBar = <T extends SidebarItem>({
                   {isSettingsOpen[index] && (
                     <div
                       ref={ref}
-                      className="absolute right-0 top-full mt-1 bg-white text-black rounded-2xl border-2 py-2 px-1 border-slate-200 shadow-lg z-10"
+                      className="absolute right-0 top-full mt-1 bg-gray-800 text-white rounded-2xl border-2 py-2 px-1 border-gray-700 shadow-lg z-10"
                     >
                       <div
                         className="flex gap-2 cursor-pointer hover:bg-indigo-600 hover:text-white px-2 py-1 rounded-xl"

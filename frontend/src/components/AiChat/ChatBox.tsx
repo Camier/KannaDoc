@@ -13,6 +13,7 @@ import {
   ModelConfig,
 } from "@/types/types";
 import ChatMessage from "./ChatMessage";
+import { logger } from "@/lib/logger";
 import {
   getFileExtension,
   getFileIcon,
@@ -290,7 +291,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
           setCleanTempBase(true);
           const response = await deleteTempKnowledgeBase(user.name);
         } catch (error) {
-          console.error("Error clean temp knowledge base:", error);
+          logger.error("Error clean temp knowledge base:", error);
         } finally {
           setCleanTempBase(false);
         }
@@ -369,7 +370,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
         setModelConfig(config);
         await updateModelConfig(user.name, config);
       } catch (error) {
-        console.error("保存配置失败:", error);
+        logger.error("保存配置失败:", error);
       }
     }
   };
@@ -386,7 +387,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
       );
       await deleteFile(tempBaseId, id);
     } catch (error) {
-      console.error("Error delete file:", error);
+      logger.error("Error delete file:", error);
     }
   };
 
@@ -465,7 +466,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
               }
             }
           } catch (error) {
-            console.error("SSE错误:", error);
+            logger.error("SSE错误:", error);
             setTaskStatus("failed");
           }
         })
@@ -481,7 +482,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
     try {
       window.open(url, "_blank");
     } catch (error) {
-      console.error(t("downloadError"), error);
+      logger.error(t("downloadError"), error);
       alert(t("downloadError"));
     }
   };
@@ -498,7 +499,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
     <div className="w-[80%] flex-none h-full rounded-3xl p-4 flex flex-col">
       <div className="flex-1 min-h-0 overflow-hidden">
         {currentPath.length === 0 ? (
-          <div className="h-full w-[95%] flex flex-col items-center gap-4 bg-white/30 rounded-xl">
+          <div className="h-full w-[95%] flex flex-col items-center gap-4 bg-gray-800/50 rounded-xl">
             <div className="h-[30vh]"></div>
             <p className="text-lg text-gray-500">
               {t("initialPrompt")}
@@ -889,7 +890,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
             {sendingFiles &&
               sendingFiles.map((file, index) => (
                 <div
-                  className="w-full overflow-hidden flex gap-1 mt-1 text-xs bg-white"
+                  className="w-full overflow-hidden flex gap-1 mt-1 text-xs bg-gray-700"
                   key={index}
                 >
                   <span>{getFileIcon(getFileExtension(file.filename))}</span>

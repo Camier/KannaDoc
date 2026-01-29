@@ -367,7 +367,7 @@ const AIChat: React.FC = () => {
             conversation_id: conversationId,
             parent_id: parentId === "root" ? "" : parentId,
             user_message: message,
-            temp_db: tempBaseId,
+            temp_db_id: tempBaseId,
           }),
           signal: controller.signal, // 添加 signal
         }
@@ -630,7 +630,7 @@ const AIChat: React.FC = () => {
   return (
     <div className="overflow-hidden">
       <Navbar />
-      <div className="absolute w-[96%] h-[91%] top-[7%] bg-white/10 left-[2%] rounded-3xl flex items-center justify-between shadow-2xl">
+      <div className="absolute w-[96%] h-[91%] top-[7%] bg-gray-900/80 left-[2%] rounded-3xl flex items-center justify-between shadow-2xl">
         <UnifiedSideBar
           items={chatHistory}
           searchTerm=""

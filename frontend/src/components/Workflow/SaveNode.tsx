@@ -21,7 +21,7 @@ const SaveCustomNode: React.FC<SaveCustomNodeProps> = ({
   const t = useTranslations("SaveCustomNode");
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-3xl p-6 w-[35%]">
+      <div className="bg-gray-800 rounded-3xl p-6 w-[35%]">
         <div className="flex items-center gap-1 mb-6">
           <svg
             xmlns="http://www.w3.org/2000/svg"

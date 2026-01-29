@@ -79,7 +79,7 @@ const UserMenuExpand = () => {
       {isMenuOpen && (
         <div
           ref={popupMenuRef}
-          className="z-20 p-4 bg-white/100 shadow-2xl absolute right-0 top-10 flex flex-col items-start justify-center gap-2 rounded-3xl"
+          className="z-20 p-4 bg-gray-900/800 shadow-2xl absolute right-0 top-10 flex flex-col items-start justify-center gap-2 rounded-3xl"
         >
           <div className="px-3 text-indigo-500 hover:text-indigo-700 flex items-center cursor-pointer">
             <svg
@@ -195,7 +195,7 @@ const UserMenuExpand = () => {
       {isUserInfoOpen && (
         <div
           ref={popupUserInfoRef}
-          className="z-20 p-4 bg-white/100 shadow-2xl absolute right-0 top-10 flex flex-col items-start justify-center gap-2 rounded-3xl"
+          className="z-20 p-4 bg-gray-900/800 shadow-2xl absolute right-0 top-10 flex flex-col items-start justify-center gap-2 rounded-3xl"
         >
           <div className="whitespace-nowrap px-3 flex items-center">
             <svg
