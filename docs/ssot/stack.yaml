@@ -2,8 +2,8 @@ version: 1
 metadata:
   name: layra-stack
   description: LAYRA RAG and Workflow Engine - Complete Service Registry
-  last_updated: "2026-01-26"
-  ssot_version: "3.0.0"
+  last_updated: "2026-01-28"
+  ssot_version: "3.1.1"
   deployment_mode: docker-primary
 
 # ============================================================================
@@ -32,39 +32,19 @@ run_modes:
     healthchecks:
       - curl -f http://localhost:8090/api/v1/health/check
 
-  - id: docker-thesis
-    name: Thesis/Solo Deployment
-    description: Simplified single-user deployment with GPU support
-    compose_file: deploy/docker-compose.thesis.yml
+  - id: docker-gpu
+    name: Docker GPU Override
+    description: Full stack with explicit GPU override file for model-server
+    compose_file: docker-compose.yml
+    overlay_file: deploy/docker-compose.gpu.yml
     prerequisites:
       - docker >= 20.10
       - docker-compose >= 2.0
-      - 8GB RAM minimum
-      - NVIDIA GPU (optional but recommended)
-    start_command: "docker-compose -f deploy/docker-compose.thesis.yml --env-file .env up -d"
+      - NVIDIA GPU driver + nvidia-container-toolkit
+    start_command: "./scripts/compose-clean -f docker-compose.yml -f deploy/docker-compose.gpu.yml up -d --build"
     services:
-      included:
-        - backend
-        - frontend
-        - nginx
-        - mysql
-        - mongodb
-        - redis
-        - minio
-        - milvus-standalone
-        - milvus-etcd
-        - milvus-minio
-        - kafka
-        - kafka-init
-        - unoserver
-        - python-sandbox
-      excluded:
-        - qdrant
-        - model-weights-init
-        - model-server
-        - prometheus
-        - grafana
-        - dozzle
+      included: all
+      excluded: []
     entrypoints:
       frontend: http://localhost:8090
       backend_api: http://localhost:8090/api/v1
@@ -1187,10 +1167,10 @@ drift_checks:
       - docker-compose.gpu.yml moved to deploy/docker-compose.gpu.yml
       - docker-compose-no-local-embedding.yml archived to scripts/archive/docker-compose/
       - docker-compose.backup.yml archived to scripts/archive/docker-compose/
-      - Actual active: deploy/docker-compose.thesis.yml
+      - Actual active: docker-compose.yml (base), deploy/docker-compose.gpu.yml (optional override)
       - Impact: None - documentation correctly references active files
     evidence:
-      - README.md:386-389 (correct)
+      - README.md (compose-clean usage and compose file list)
       - deploy/DOCKER_COMPOSE_GUIDE.md (created)
       - scripts/archive/docker-compose/README.md (archive history)
 

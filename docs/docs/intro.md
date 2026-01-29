@@ -40,27 +40,27 @@ vim .env  # Edit key parameters (SERVER_IP, MODEL_BASE_URL)
 ##### 2. Launch Services (First run downloads ~15GB models, be patient)
 
 ```bash
-docker compose up -d --build
+./scripts/compose-clean up -d --build
 ```
 
 :::tip Optional GPU (Mode A)
 Enable GPU for the model server:
 
 ```bash
-docker compose -f docker-compose.yml -f docker-compose.gpu.yml up -d --build
+./scripts/compose-clean -f docker-compose.yml -f deploy/docker-compose.gpu.yml up -d --build
 ```
 :::
 
 :::caution CAUTION
 
-If you encounter issues with `docker compose`, try using `docker-compose` (with the dash) instead. Also, ensure that you're using Docker Compose v2, as older versions may not support all features. You can check your version with `docker compose version` or `docker-compose version`.
+If `./scripts/compose-clean` fails, ensure Docker Compose v2 is installed. You can check your version with `docker compose version` or `docker-compose version`.
 
 :::
 
 ##### 3. Monitor Model Weight Initialization
 
 ```bash
-docker compose logs -f model-weights-init
+./scripts/compose-clean logs -f model-weights-init
 ```
 
 > **Be patient** - Initial model download takes 20-40 mins depending on network speed. Grab a coffee!
@@ -71,10 +71,10 @@ docker compose logs -f model-weights-init
 
 1. Check running services:
 
-After running `docker compose up -d --build`, check container status with:
+After running `./scripts/compose-clean up -d --build`, check container status with:
 
 ```bash
-docker compose ps -a
+./scripts/compose-clean ps -a
 ```
 
 **Successful installation will show:**
@@ -111,7 +111,7 @@ layra-redis-1                redis:7.2.5                                Up (heal
 ### Access Your LAYRA Instance
 
 Open your browser and visit:  
-`http://<your-server-ip>` (Default port 80)
+`http://<your-server-ip>:8090` (Default port 8090)
 
 You should see:
 
@@ -125,15 +125,15 @@ If services fail to start:
 
 ```bash
 # Check container logs:
-docker compose logs <container name>
+./scripts/compose-clean logs <container name>
 ```
 
 Common fixes:
 
 ```bash
 nvidia-smi  # Verify GPU detection
-docker compose down && docker compose up --build  # preserve data to rebuild
-docker compose down -v && docker compose up --build  # ⚠️ delete all data to full rebuild
+./scripts/compose-clean down && ./scripts/compose-clean up --build  # preserve data to rebuild
+./scripts/compose-clean down -v && ./scripts/compose-clean up --build  # ⚠️ delete all data to full rebuild
 ```
 
 :::danger Take care
@@ -146,14 +146,14 @@ docker compose down -v && docker compose up --build  # ⚠️ delete all data to
 
 | **Scenario**                            | **Command**                                  | **Effect**                                 |
 | --------------------------------------- | -------------------------------------------- | ------------------------------------------ |
-| **Stop services** (preserve data)       | `docker compose stop`                        | Stops containers but keeps them intact     |
-| **Restart after stop**                  | `docker compose start`                       | Restarts stopped containers                |
-| **Rebuild after code changes**          | `docker compose up -d --build`               | Rebuilds images and recreates containers   |
-| **Recreate containers** (preserve data) | `docker compose down` `docker compose up -d` | Destroys then recreates containers         |
-| **Full cleanup** (delete all data)      | `docker compose down -v`                     | ⚠️ Destroys containers and deletes volumes |
+| **Stop services** (preserve data)       | `./scripts/compose-clean stop`                        | Stops containers but keeps them intact     |
+| **Restart after stop**                  | `./scripts/compose-clean start`                       | Restarts stopped containers                |
+| **Rebuild after code changes**          | `./scripts/compose-clean up -d --build`               | Rebuilds images and recreates containers   |
+| **Recreate containers** (preserve data) | `./scripts/compose-clean down` `./scripts/compose-clean up -d` | Destroys then recreates containers         |
+| **Full cleanup** (delete all data)      | `./scripts/compose-clean down -v`                     | ⚠️ Destroys containers and deletes volumes |
 
 :::tip Pro Tip
-For faster subsequent launches, run `docker compose stop` instead of `down` to preserve models.
+For faster subsequent launches, run `./scripts/compose-clean stop` instead of `down` to preserve models.
 :::
 
 ---

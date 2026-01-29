@@ -39,7 +39,7 @@ Similarity Search + MaxSim Reranking
 
 ### Option A: Docker Compose (Recommended)
 
-**File**: `docker-compose.thesis.yml` (thesis mode with GPU)
+**Files**: `docker-compose.yml` + `deploy/docker-compose.gpu.yml` (GPU override)
 
 ```yaml
 model-server:
@@ -67,11 +67,11 @@ model-server:
 
 **Start**:
 ```bash
-# Thesis mode with GPU (recommended for production)
-docker-compose -f docker-compose.thesis.yml up -d model-server
+# GPU override (recommended for production)
+./scripts/compose-clean -f docker-compose.yml -f deploy/docker-compose.gpu.yml up -d model-server
 
-# Standard mode (if GPU unavailable)
-docker-compose -f docker-compose.yml up -d model-server
+# Standard stack (CPU fallback for testing)
+./scripts/compose-clean up -d model-server
 
 # Check logs
 docker logs layra-model-server -f
@@ -107,7 +107,7 @@ python model_server.py
 
 ### Environment Variables
 
-**File**: `.env` or `docker-compose.thesis.yml`
+**File**: `.env` or `deploy/docker-compose.gpu.yml`
 
 ```bash
 # Model Path (local cache)
@@ -428,8 +428,8 @@ docker logs layra-backend | grep "task:" | grep "Computing embeddings"
 EMBED_BATCH_SIZE = 2  # from 4
 
 # Solution 2: Enable memory optimization
-docker-compose -f docker-compose.thesis.yml up model-server -e \
-  PYTORCH_CUDA_ALLOC_CONF=max_split_size_mb:256
+# Set PYTORCH_CUDA_ALLOC_CONF in .env, then restart:
+./scripts/compose-clean -f docker-compose.yml -f deploy/docker-compose.gpu.yml up -d model-server
 
 # Solution 3: Kill other GPU processes
 nvidia-smi | grep python
@@ -456,7 +456,7 @@ endpoint_url=settings.minio_url  # NOT settings.server_ip
 
 ```bash
 # Verify Redis is running
-docker-compose -f docker-compose.thesis.yml ps redis
+./scripts/compose-clean ps redis
 # Should show: running
 
 # Check Redis password
@@ -553,7 +553,7 @@ redis-cli -a $REDIS_PASSWORD INFO stats | grep hits
 
 ### Deployment
 - [ ] Build Docker image: `docker build -t layra/model-server:latest ./model-server`
-- [ ] Start container: `docker-compose -f docker-compose.thesis.yml up -d model-server`
+- [ ] Start container: `./scripts/compose-clean -f docker-compose.yml -f deploy/docker-compose.gpu.yml up -d model-server`
 - [ ] Wait for health check: `curl http://localhost:8005/health/ready`
 - [ ] Test embeddings: curl text and image endpoints (see Verification)
 
@@ -594,4 +594,3 @@ redis-cli -a $REDIS_PASSWORD INFO stats | grep hits
 5. **Plan Optimization**: Consider multi-GPU or vLLM for scaling
 
 ---
-

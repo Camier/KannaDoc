@@ -11,7 +11,7 @@
 
 ### Getting Started
 - **[../README.md](../README.md)** - Project overview
-- **[THESIS_QUICKSTART.md](THESIS_QUICKSTART.md)** - 5-minute setup
+- **[QUICKSTART.md](QUICKSTART.md)** - 5-minute setup
 - **[CONFIGURATION.md](CONFIGURATION.md)** - Environment variables
 
 ### Recent Changes (2026-01-25)

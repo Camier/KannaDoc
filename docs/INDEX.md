@@ -1,9 +1,19 @@
 # Layra Documentation Index
 
-**Last Updated:** 2026-01-26
-**Version:** 2.1.0 (Consolidated)
+**Last Updated:** 2026-01-29
+**Version:** 2.2.0 (Post-Consolidation)
 
 > 🎯 **START HERE** if you're new to Layra
+> 📉 **Reduced from 207 to ~50 essential documents**
+
+---
+
+## 📍 Latest Updates (2026-01-29)
+
+**Session Remediation Report:** [REMEDIATION_SESSION_2026-01-29.md](REMEDIATION_SESSION_2026-01-29.md)
+- Fixed MongoDB schema drift (model_config collection)
+- Fixed SSE endpoint bug (message_id parameter)
+- Added ZhipuAI Coding Plan provider (glm-4.5, glm-4.6, glm-4.7)
 
 ---
 
@@ -37,6 +47,8 @@ One-page cheat sheet for:
 
 ## 📍 Quick Navigation
 
+**Current KB State (miko):** See [RUNBOOK](operations/RUNBOOK.md#kb-state-miko) → "Etat reel".
+
 ### Getting Started
 | Document | Description |
 |----------|-------------|
@@ -48,7 +60,8 @@ One-page cheat sheet for:
 ### Core Documentation
 | Document | Description |
 |----------|-------------|
-| [CONFIGURATION](core/CONFIGURATION.md) | Environment variables reference |
+| [CONFIGURATION](core/CONFIGURATION.md) | Configuration guide and deployment scenarios |
+| [ENVIRONMENT VARIABLES](reference/ENVIRONMENT_VARIABLES.md) | Complete .env reference (all variables) |
 | [API](core/API.md) | REST API reference |
 | [DATABASE](core/DATABASE.md) | Database schemas (MongoDB, MySQL, Milvus, Redis) |
 | [EMBEDDINGS](core/EMBEDDINGS.md) | Embedding pipeline (ColQwen/Jina) |
@@ -66,6 +79,7 @@ One-page cheat sheet for:
 | Document | Description |
 |----------|-------------|
 | [RUNBOOK](operations/RUNBOOK.md) | Clean restart procedures |
+| [DEPLOYMENT_DIAGRAM](operations/DEPLOYMENT_DIAGRAM.md) | Minimal deployment topology (Mermaid) |
 | [CHANGE_LOG](operations/CHANGE_LOG.md) | Version history & changes |
 | [TROUBLESHOOTING](operations/TROUBLESHOOTING.md) | Troubleshooting guide & incident reports |
 
@@ -149,6 +163,9 @@ docs/
 │   ├── EMBEDDINGS.md
 │   └── vector_db/OVERVIEW.md
 │
+├── 📋 reference/                ← Detailed references
+│   └── ENVIRONMENT_VARIABLES.md ← Complete .env reference
+│
 ├── 🏗️ architecture/             ← System design
 │   ├── DEEP_ANALYSIS.md
 │   ├── REPO_MAP.md
@@ -156,6 +173,7 @@ docs/
 │
 ├── 🔧 operations/               ← Running & maintaining
 │   ├── RUNBOOK.md
+│   ├── DEPLOYMENT_DIAGRAM.md
 │   ├── CHANGE_LOG.md
 │   └── TROUBLESHOOTING.md
 │
@@ -253,15 +271,22 @@ grep "endpoint" /LAB/@thesis/layra/docs/core/API.md
 
 | Metric | Count |
 |--------|-------|
-| **Total Markdown Files** | 155 → 46 |
-| **Core Docs** | 6 |
+| **Total Markdown Files** | 207 → ~50 (75% reduction) |
+| **Root Level** | 4 |
+| **SSOT** | 4 |
+| **Core Docs** | 7 |
 | **Getting Started** | 4 |
 | **Architecture** | 3 |
-| **Operations** | 3 |
-| **Guides** | 4 |
-| **Reports** | 4 |
-| **Archives** | 11+ |
-| **Health** | 🟢 **Good** |
+| **Operations** | 4 |
+| **Guides** | 5 |
+| **Reports (Active)** | 3 |
+| **Archives** | 122+ |
+| **Health** | 🟢 **Excellent** |
+
+**Consolidation Summary:**
+- Moved 35+ old reports to `archives/reports/2026-01/`
+- Consolidated database/data flow docs into `core/`
+- Kept only essential docs in root level
 
 ---
 

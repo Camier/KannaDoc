@@ -1,0 +1,223 @@
+# Entity-Relationship Diagram (Text-Based)
+
+## Legend
+```
+[PK] = Primary Key
+[FK] = Foreign Key
+[UK] = Unique Key
+[IX] = Index
+ {*} = Array field
+```
+
+## Complete System ERD
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              MONGODB DATABASE                                 │
+│                         (Primary Data Store)                                  │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+┌──────────────────────────┐       ┌──────────────────────────┐
+│   knowledge_bases        │       │        model_config      │
+│                          │       │                          │
+│ [PK] knowledge_base_id   │       │ [PK] username            │
+│      knowledge_base_name │       │      selected_model      │
+│ [IX] username            │◄──────┤      models {*}          │
+│      is_delete           │       │        ├─ model_id       │
+│      created_at          │       │        ├─ model_name     │
+│      last_modify_at      │       │        ├─ api_key        │
+│      files {*}           │       │        ├─ temperature    │
+│        ├─ file_id [FK]   │       │        └─ system_prompt  │
+│        ├─ filename       │       └──────────────────────────┘
+│        └─ minio_url      │
+│      used_chat {*}       │              │
+│                          │              │ 1:1
+└──────────────────────────┘              │
+         │                                │
+         │ 1:N                           │
+         │                                │
+         v                                v
+┌──────────────────────────┐       ┌──────────────────────────┐
+│        files             │       │         nodes            │
+│                          │       │                          │
+│ [PK] file_id             │       │ [PK] username            │
+│      filename            │       │      custom_nodes {      │
+│ [IX] knowledge_db_id [FK]│       │        └─ node_name: {} │
+│      username            │       │      }                  │
+│      is_delete           │       └──────────────────────────┘
+│      created_at          │
+│      images {*}          │              │
+│        ├─ images_id      │              │ 1:1
+│        ├─ page_number    │              │ (per user)
+│        └─ minio_url      │              │
+└──────────────────────────┘              │
+         │                                │
+         │ 1:N                           │
+         │                                │
+         v                                v
+┌──────────────────────────┐       ┌──────────────────────────┐
+│     conversations        │       │       workflows          │
+│                          │       │                          │
+│ [PK] conversation_id     │       │ [PK] workflow_id         │
+│      conversation_name   │       │ [PK] username (composite)│
+│ [IX] username            │       │      workflow_name       │
+│      is_delete           │       │      nodes {*}           │
+│      created_at          │       │        ├─ id             │
+│      last_modify_at      │       │        ├─ type           │
+│      turns {*}           │       │        └─ data           │
+│        ├─ message_id     │       │      edges {*}           │
+│        ├─ temp_db [FK]   │       │        ├─ source         │
+│        ├─ file_used {*}  │       │        └─ target         │
+│        ├─ status         │       │      start_node          │
+│        ├─ total_token    │       │      global_variables    │
+│        └─ timestamp      │       │      created_at          │
+└──────────────────────────┘       └──────────────────────────┘
+         │                                      │
+         │ N:1                                  │ 1:N
+         │ (temp KB reference)                  │
+         │                                      │
+         └──────────────────┐                   │
+                            │                   │
+                            v                   v
+                    ┌──────────────────────────────────────┐
+                    │          chatflows                    │
+                    │                                      │
+                    │ [PK] chatflow_id                     │
+                    │ [FK] workflow_id                     │
+                    │      chatflow_name                   │
+                    │ [IX] username                        │
+                    │      is_delete                       │
+                    │      turns {*} (same as convs)       │
+                    └──────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              MILVUS DATABASE                                 │
+│                         (Vector Store)                                        │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+                           ┌───────────────────────────────────────┐
+                           │    colqwen{knowledge_base_id}          │
+                           │   (One collection per knowledge base)   │
+                           │                                       │
+                           │ [PK] pk (auto-generated INT64)        │
+                           │      vector (FLOAT_VECTOR, dim=128)   │
+                           │      image_id (VARCHAR)               │
+                           │      file_id (VARCHAR)                │
+                           │      page_number (INT64)              │
+                           │                                       │
+                           │ [HNSW Index on vector]                │
+                           │   - M: 32                             │
+                           │   - efConstruction: 500               │
+                           │   - metric: IP (Inner Product)        │
+                           └───────────────────────────────────────┘
+
+         ▲                                  │
+         │                                  │
+         │ .images[].images_id              │ .image_id, .file_id
+         │                                  │
+         │                                  │
+┌──────────────────────────┐       ┌──────────────────────────┐
+│        files             │       │     conversations        │
+│    (MongoDB)             │       │    (MongoDB)             │
+│                          │       │                          │
+│ images[{                │       │ turns[{                  │
+│   images_id,            │       │   temp_db: "kb_id"       │
+│   page_number,          │       │ }]                       │
+│   minio_url             │       │                          │
+│ }]                      │       │                          │
+└──────────────────────────┘       └──────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              REDIS DATABASES                                 │
+│                    (Cache, Session, Task Tracking)                            │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+DB: 0 (Token Store)              DB: 1 (Task Tracking)          DB: 3 (Cache)
+┌───────────────────────┐      ┌───────────────────────┐      ┌───────────────────────┐
+│ token:{jwt_token}     │      │ task:{task_id}        │      │ model_config:{user}   │
+│ Type: String          │      │ Type: Hash            │      │ Type: String (JSON)   │
+│ Value: "valid"        │      │ Fields:               │      │ TTL: 1800s            │
+│ TTL: 7 days            │      │   status: "progress"  │      │                       │
+└───────────────────────┘      │   message: "..."       │      │ user:{username}       │
+                               │   processed: 3         │      │ Type: String (JSON)   │
+                               │   total: 10            │      │ TTL: 3600s            │
+                               │ TTL: 3600s             │      │                       │
+                               └───────────────────────┘      │ kb:{kb_id}            │
+                                                            │ Type: String (JSON)   │
+                                                            │ TTL: 1800s            │
+                                                            │                       │
+                                                            │ search:{query_hash}   │
+                                                            │ Type: String (JSON)   │
+                                                            │ TTL: 600s             │
+                                                            └───────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              MINIO OBJECT STORE                               │
+│                         (File Storage)                                         │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+                            ┌─────────────────────────────────┐
+                            │  Bucket: layra-bucket            │
+                            │                                   │
+                            │  Objects:                         │
+                            │  ─────────────────────────────   │
+                            │  {filename}_{uuid}.pdf           │
+                            │    (Original uploaded files)     │
+                            │                                   │
+                            │  page_{n}_{uuid}.png             │
+                            │    (Extracted page images)       │
+                            │                                   │
+                            │  Presigned URL Expiry: 100 years │
+                            │    (Security concern!)           │
+                            └─────────────────────────────────┘
+
+         ▲                                 ▲
+         │ .minio_url                     │ .minio_url
+         │                                 │
+┌──────────────────────────┐    ┌──────────────────────────┐
+│        files             │    │ knowledge_bases.files[]  │
+│    (MongoDB)             │    │    (MongoDB)             │
+│                          │    │                          │
+│ minio_filename           │    │ files[{                 │
+│ minio_url                │    │   minio_filename,        │
+│ images[{                 │    │   minio_url              │
+│   minio_filename,        │    │ }]                      │
+│   minio_url              │    │                          │
+│ }]                       │    │                          │
+└──────────────────────────┘    └──────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                              MYSQL DATABASE                                   │
+│                    (Session Logging - Not Implemented)                        │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+                    ┌─────────────────────────────────────┐
+                    │    Alembic Migrations               │
+                    │                                     │
+                    │  Current Revision: 3c4c5bdddb2c     │
+                    │  Status: EMPTY (no tables defined)  │
+                    │                                     │
+                    │  Planned (not implemented):          │
+                    │  - sessions                         │
+                    │  - audit_logs                       │
+                    └─────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                            QDRANT (Optional)                                  │
+│                  (Alternative Vector Database)                                │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+                    ┌─────────────────────────────────────┐
+                    │  VectorDBClientWrapper              │
+                    │                                     │
+                    │  if VECTOR_DB == "qdrant":          │
+                    │    - Uses Qdrant client             │
+                    │  else:                              │
+                    │    - Uses Milvus client             │
+                    │                                     │
+                    │  Unified interface:                 │
+                    │  - create_collection()              │
+                    │  - insert()                         │
+                    │  - search()                         │
+                    │  - delete_collection()              │
+                    └─────────────────────────────────────┘
