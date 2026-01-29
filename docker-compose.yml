@@ -53,6 +53,11 @@ services:
       - MINIO_ROOT_USER=${MINIO_ACCESS_KEY}
       - MINIO_ROOT_PASSWORD=${MINIO_SECRET_KEY}
     command: server /data --console-address ":9001"
+    # Local thesis dev: expose MinIO for browser-accessible presigned URLs.
+    # Host port 9080 maps to container port 9000 (system minio uses 9000)
+    ports:
+      - "127.0.0.1:9080:9000"
+      - "127.0.0.1:9081:9001"
     volumes:
       - minio_data:/data
     networks:
@@ -111,25 +116,7 @@ services:
       timeout: 5s
       retries: 10
 
-  qdrant:
-    container_name: layra-qdrant
-    image: qdrant/qdrant:v1.16.2
-    restart: unless-stopped
-    ports:
-      - "6333:6333"
-      - "6334:6334"
-    environment:
-      - QDRANT__SERVICE__HTTP_PORT=6333
-      - QDRANT__SERVICE__METRICS_PORT=6334
-    volumes:
-      - qdrant_data:/qdrant/storage
-    networks:
-      - layra-net
-    healthcheck:
-      test: ["CMD-SHELL", "curl", "-f", "http://localhost:6333/healthz"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+
 
   # --- Milvus Vector Database Services ---
   milvus-etcd:
@@ -177,6 +164,10 @@ services:
     environment:
       - ETCD_ENDPOINTS=milvus-etcd:2379
       - MINIO_ADDRESS=milvus-minio:9000
+      - MINIO_ACCESS_KEY=${MILVUS_MINIO_ACCESS_KEY:-minioadmin}
+      - MINIO_SECRET_KEY=${MILVUS_MINIO_SECRET_KEY:-minioadmin}
+      - MINIO_ACCESS_KEY_ID=${MILVUS_MINIO_ACCESS_KEY:-minioadmin}
+      - MINIO_SECRET_ACCESS_KEY=${MILVUS_MINIO_SECRET_KEY:-minioadmin}
     volumes:
       - milvus_data:/var/lib/milvus
     depends_on:
@@ -317,6 +308,18 @@ services:
       - EMBEDDING_MODEL=${EMBEDDING_MODEL}
       - JINA_API_KEY=${JINA_API_KEY}
       - JINA_EMBEDDINGS_V4_URL=${JINA_EMBEDDINGS_V4_URL}
+      # LLM Provider Keys
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+      - ZHIPUAI_API_KEY=${ZHIPUAI_API_KEY}
+      - MOONSHOT_API_KEY=${MOONSHOT_API_KEY}
+      - MINIMAX_API_KEY=${MINIMAX_API_KEY}
+      - COHERE_API_KEY=${COHERE_API_KEY}
+      - OLLAMA_API_KEY=${OLLAMA_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - DEFAULT_LLM_PROVIDER=${DEFAULT_LLM_PROVIDER:-openai}
+      - DEFAULT_LLM_MODEL=${DEFAULT_LLM_MODEL:-gpt-4o-mini}
     networks:
       - layra-net
     healthcheck:
@@ -348,6 +351,13 @@ services:
       - REDIS_PASSWORD=${REDIS_PASSWORD}
       - HF_TOKEN=${HF_TOKEN:-}
       - HUGGINGFACE_HUB_CACHE=/root/.cache/huggingface
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
     shm_size: 8gb
     networks:
       - layra-net
@@ -435,7 +445,7 @@ volumes:
   milvus_etcd:
   milvus_minio:
   milvus_data:
-  qdrant_data:
+
   model_weights:
   layra_sandbox_volume:
   mysql_migrations:
