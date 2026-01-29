@@ -46,7 +46,7 @@ export const ModelSelector: React.FC<ModelSelectorProps> = ({
     <div className="relative w-full" ref={ref}>
       <div
         onClick={() => setShowDropdown(!showDropdown)}
-        className="mt-1 w-full px-4 py-2 border border-gray-600 rounded-3xl cursor-pointer bg-gray-700 text-gray-100 flex items-center justify-between hover:border-indigo-500 transition-colors"
+        className="mt-1 w-full px-4 py-2 border border-gray-700 rounded-3xl cursor-pointer bg-gray-800 text-gray-100 flex items-center justify-between hover:border-indigo-500 transition-colors"
       >
         <span className="text-gray-700">{modelName}</span>
         <svg
@@ -67,7 +67,7 @@ export const ModelSelector: React.FC<ModelSelectorProps> = ({
       </div>
 
       {showDropdown && (
-        <div className="p-1 absolute w-full mt-1 bg-gray-800 border border-gray-700 rounded-3xl shadow-lg z-50 overflow-hidden">
+        <div className="p-1 absolute w-full mt-1 bg-gray-900 border border-gray-700 rounded-3xl shadow-lg z-50 overflow-hidden">
           <div className="max-h-60 overflow-y-auto">
             {modelConfigs.map((model) => (
               <div

@@ -17,7 +17,7 @@ from app.workflow.mcp_tools import mcp_list_tools
 from app.workflow.sandbox import CodeSandbox
 from app.workflow.workflow_engine import WorkflowEngine
 from app.models.user import User
-from app.db.mongo import MongoDB, get_mongo
+from app.db.repositories.repository_manager import RepositoryManager, get_repository_manager
 from app.utils.kafka_producer import kafka_producer_manager
 from app.core.logging import logger
 
@@ -241,7 +241,7 @@ async def execute_test_condition(
 @router.post("/workflows", response_model=dict)
 async def create_workflow(
     workflow: WorkflowCreate,
-    db: MongoDB = Depends(get_mongo),
+    repo_manager: RepositoryManager = Depends(get_repository_manager),
     current_user: User = Depends(get_current_user),
 ):
     await verify_username_match(current_user, workflow.username)
@@ -249,7 +249,7 @@ async def create_workflow(
         workflow_id = workflow.username + "_" + str(uuid.uuid4())  # 生成 UUIDv4,
     else:
         workflow_id = workflow.workflow_id
-    await db.update_workflow(
+    await repo_manager.workflow.update_workflow(
         workflow_id=workflow_id,
         username=workflow.username,
         workflow_name=workflow.workflow_name,
@@ -266,12 +266,12 @@ async def create_workflow(
 @router.post("/workflows/rename", response_model=dict)
 async def re_name(
     renameInput: WorkflowRenameInput,
-    db: MongoDB = Depends(get_mongo),
+    repo_manager: RepositoryManager = Depends(get_repository_manager),
     current_user: User = Depends(get_current_user),
 ):
     await verify_username_match(current_user, renameInput.workflow_id.split("_")[0])
 
-    result = await db.update_workflow_name(
+    result = await repo_manager.workflow.update_workflow_name(
         renameInput.workflow_id, renameInput.workflow_new_name
     )
     if result["status"] == "failed":
@@ -283,11 +283,11 @@ async def re_name(
 @router.get("/workflows/{workflow_id}", response_model=dict)
 async def get_workflow(
     workflow_id: str,
-    db: MongoDB = Depends(get_mongo),
+    repo_manager: RepositoryManager = Depends(get_repository_manager),
     current_user: User = Depends(get_current_user),
 ):
     await verify_username_match(current_user, workflow_id.split("_")[0])
-    workflow = await db.get_workflow(workflow_id)
+    workflow = await repo_manager.workflow.get_workflow(workflow_id)
     if not workflow:
         raise HTTPException(status_code=404, detail="Workflow not found")
 
@@ -309,11 +309,11 @@ async def get_workflow(
 @router.get("/users/{username}/workflows", response_model=list)
 async def get_workflows_by_user(
     username: str,
-    db: MongoDB = Depends(get_mongo),
+    repo_manager: RepositoryManager = Depends(get_repository_manager),
     current_user: User = Depends(get_current_user),
 ):
     await verify_username_match(current_user, username)
-    workflows = await db.get_workflows_by_user(username)
+    workflows = await repo_manager.workflow.get_workflows_by_user(username)
     if not workflows:
         return []
     return [
@@ -332,11 +332,11 @@ async def get_workflows_by_user(
 @router.delete("/workflows/{workflow_id}", response_model=dict)
 async def delete_workflow(
     workflow_id: str,
-    db: MongoDB = Depends(get_mongo),
+    repo_manager: RepositoryManager = Depends(get_repository_manager),
     current_user: User = Depends(get_current_user),
 ):
     await verify_username_match(current_user, workflow_id.split("_")[0])
-    result = await db.delete_workflow(workflow_id)
+    result = await repo_manager.workflow.delete_workflow(workflow_id)
     if result["status"] == "failed":
         raise HTTPException(status_code=404, detail=result["message"])
     return result
@@ -347,11 +347,11 @@ async def delete_workflow(
 async def delete_workflow(
     username: str,
     custom_node: NodesInput,
-    db: MongoDB = Depends(get_mongo),
+    repo_manager: RepositoryManager = Depends(get_repository_manager),
     current_user: User = Depends(get_current_user),
 ):
     await verify_username_match(current_user, username)
-    result = await db.update_custom_nodes(
+    result = await repo_manager.node.update_custom_nodes(
         username, custom_node.custom_node_name, custom_node.custom_node
     )
     if result["status"] == "failed":
@@ -362,11 +362,11 @@ async def delete_workflow(
 @router.get("/nodes/{username}", response_model=dict)
 async def get_custom_nodes(
     username: str,
-    db: MongoDB = Depends(get_mongo),
+    repo_manager: RepositoryManager = Depends(get_repository_manager),
     current_user: User = Depends(get_current_user),
 ):
     await verify_username_match(current_user, username)
-    result = await db.get_custom_nodes(username)
+    result = await repo_manager.node.get_custom_nodes(username)
     return result
 
 
@@ -375,11 +375,11 @@ async def get_custom_nodes(
 async def delete_nodes(
     username: str,
     custom_node_name: str,
-    db: MongoDB = Depends(get_mongo),
+    repo_manager: RepositoryManager = Depends(get_repository_manager),
     current_user: User = Depends(get_current_user),
 ):
     await verify_username_match(current_user, username)
-    result = await db.delete_custom_nodes(username, custom_node_name)
+    result = await repo_manager.node.delete_custom_nodes(username, custom_node_name)
     if result["status"] == "failed":
         raise HTTPException(status_code=404, detail=result["message"])
     return result

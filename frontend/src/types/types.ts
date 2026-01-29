@@ -70,8 +70,8 @@ export interface ModelConfig {
   modelId: string;
   baseUsed: BaseUsed[];
   modelName: string;
-  modelURL: string;
-  apiKey: string;
+  modelURL: string | null;
+  apiKey: string | null;
   systemPrompt: string;
   temperature: number;
   maxLength: number;

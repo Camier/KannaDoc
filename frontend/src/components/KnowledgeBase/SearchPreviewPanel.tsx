@@ -47,7 +47,7 @@ const SearchPreviewPanel: React.FC<SearchPreviewPanelProps> = ({
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-      <div className="bg-gray-800 rounded-3xl p-6 w-[80%] max-h-[90vh] flex flex-col">
+      <div className="bg-gray-900 rounded-3xl p-6 w-[80%] max-h-[90vh] flex flex-col">
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-2">
@@ -98,12 +98,12 @@ const SearchPreviewPanel: React.FC<SearchPreviewPanelProps> = ({
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyPress={handleKeyPress}
-            className="flex-1 px-4 py-2 border border-gray-600 rounded-3xl bg-gray-700 text-gray-100 focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
+            className="flex-1 px-4 py-2 border border-gray-700 rounded-3xl bg-gray-800 text-gray-100 focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
           />
           <select
             value={topK}
             onChange={(e) => setTopK(Number(e.target.value))}
-            className="px-4 py-2 border border-gray-600 rounded-3xl bg-gray-700 text-gray-100 focus:outline-hidden"
+            className="px-4 py-2 border border-gray-700 rounded-3xl bg-gray-800 text-gray-100 focus:outline-hidden"
           >
             <option value={5}>Top 5</option>
             <option value={10}>Top 10</option>
@@ -129,7 +129,7 @@ const SearchPreviewPanel: React.FC<SearchPreviewPanelProps> = ({
         <div className="flex-1 overflow-auto">
           {results.length > 0 ? (
             <table className="w-full">
-              <thead className="sticky top-0 bg-gray-700">
+              <thead className="sticky top-0 bg-gray-800">
                 <tr>
                   <th className="px-4 py-2 text-left text-gray-300">Rank</th>
                   <th className="px-4 py-2 text-left text-gray-300">Score</th>
@@ -142,7 +142,7 @@ const SearchPreviewPanel: React.FC<SearchPreviewPanelProps> = ({
                 {results.map((result, index) => (
                   <tr
                     key={index}
-                    className="border-b border-gray-700 hover:bg-gray-700/50 transition-colors"
+                    className="border-b border-gray-700 hover:bg-gray-800/50 transition-colors"
                   >
                     <td className="px-4 py-3 text-gray-300">#{index + 1}</td>
                     <td className="px-4 py-3 text-gray-300">
@@ -199,7 +199,7 @@ const SearchPreviewPanel: React.FC<SearchPreviewPanelProps> = ({
           <div className="relative max-w-4xl max-h-[90vh] overflow-auto">
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute top-2 right-2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700 transition-colors"
+              className="absolute top-2 right-2 bg-gray-900 text-white p-2 rounded-full hover:bg-gray-800 transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

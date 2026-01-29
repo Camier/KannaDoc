@@ -12,9 +12,9 @@ const useModelConfigStore = create<ModelConfigStore>((set) => ({
   modelConfig: {
     baseUsed: [],
     modelId: "",
-    modelName: "qwen2.5-vl-32b-instruct",
-    modelURL: "https://dashscope.aliyuncs.com/compatible-mode/v1",
-    apiKey: "sk-default-xxx",
+    modelName: "",
+    modelURL: null,
+    apiKey: null,
     systemPrompt:
       "All outputs in Markdown format, especially mathematical formulas in Latex format($formula$).",
     temperature: 0.1,

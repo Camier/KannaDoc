@@ -499,7 +499,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
     <div className="w-[80%] flex-none h-full rounded-3xl p-4 flex flex-col">
       <div className="flex-1 min-h-0 overflow-hidden">
         {currentPath.length === 0 ? (
-          <div className="h-full w-[95%] flex flex-col items-center gap-4 bg-gray-800/50 rounded-xl">
+          <div className="h-full w-[95%] flex flex-col items-center gap-4 bg-gray-900/50 rounded-xl">
             <div className="h-[30vh]"></div>
             <p className="text-lg text-gray-500">
               {t("initialPrompt")}
@@ -890,7 +890,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
             {sendingFiles &&
               sendingFiles.map((file, index) => (
                 <div
-                  className="w-full overflow-hidden flex gap-1 mt-1 text-xs bg-gray-700"
+                  className="w-full overflow-hidden flex gap-1 mt-1 text-xs bg-gray-800"
                   key={index}
                 >
                   <span>{getFileIcon(getFileExtension(file.filename))}</span>

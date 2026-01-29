@@ -6,10 +6,11 @@ This guide explains the different Docker Compose configurations available for La
 
 | Deployment Mode | File(s) | GPU Required | Use Case |
 |----------------|---------|--------------|----------|
-| **Standard** | `docker-compose.yml` | Yes | Production, research, development with NVIDIA GPU |
-| **Jina API (No GPU)** | `docker-compose.yml` with `EMBEDDING_MODEL=jina_embeddings_v4` | No | Limited/no GPU resources, quick testing |
-| **Thesis/Solo** | `deploy/docker-compose.thesis.yml` | Yes | Single-user thesis demonstrations, simplified auth |
+| **Standard** | `docker-compose.yml` | Optional | Production, research, development with local or cloud embeddings |
+| **Jina API (No GPU)** | `docker-compose.yml` + `EMBEDDING_MODEL=jina_embeddings_v4` | No | Limited/no GPU resources, quick testing |
 | **Development** | `docker-compose.override.yml` (auto-applied) | Optional | Local development with custom settings |
+
+**Note:** The legacy thesis compose file has been removed. For single-user demos, use the standard stack and set `SINGLE_TENANT_MODE=true`.
 
 ## Deployment Files
 
@@ -31,11 +32,12 @@ This guide explains the different Docker Compose configurations available for La
 
 **Usage:**
 ```bash
-# Standard deployment with GPU
-docker compose up -d
+# Standard deployment
+./scripts/compose-clean up -d
 
 # With Jina API embeddings (no GPU needed)
-EMBEDDING_MODEL=jina_embeddings_v4 docker compose up -d
+# Set EMBEDDING_MODEL=jina_embeddings_v4 in .env, then:
+./scripts/compose-clean up -d
 ```
 
 **When to Use:**
@@ -53,44 +55,6 @@ See `.env.example` for required configuration. Key variables:
 
 ---
 
-### deploy/docker-compose.thesis.yml
-
-**Purpose:** Simplified single-user deployment for thesis demonstrations
-
-**Key Differences:**
-- Neo4j graph database included (can be disabled)
-- Pre-configured for single-user access (username: `thesis`)
-- Simplified authentication
-- GPU-enabled by default
-- Uses external named volumes (persists across deployments)
-
-**Usage:**
-```bash
-# Using the deployment script (recommended)
-./scripts/deploy-thesis.sh
-
-# Manual deployment
-docker compose -f deploy/docker-compose.thesis.yml up -d --build
-```
-
-**When to Use:**
-- Thesis presentations and demonstrations
-- Solo research environments
-- Testing Neo4j knowledge graph features
-- Situations requiring simplified single-user access
-
-**Access:**
-- Application: `http://localhost:8090`
-- Username: `thesis`
-- Password: Check `.env.thesis` file (change before production use!)
-
-**Notes:**
-- Requires NVIDIA GPU and nvidia-container-toolkit
-- Expects `.env.thesis` configuration file
-- Neo4j browser available at `http://localhost:7474`
-
----
-
 ### deploy/docker-compose.gpu.yml
 
 **Purpose:** GPU override configuration for enabling NVIDIA GPU support
@@ -103,7 +67,7 @@ docker compose -f deploy/docker-compose.thesis.yml up -d --build
 **Usage:**
 ```bash
 # Combine with base configuration
-docker compose -f docker-compose.yml -f deploy/docker-compose.gpu.yml up -d --build
+./scripts/compose-clean -f docker-compose.yml -f deploy/docker-compose.gpu.yml up -d --build
 ```
 
 **When to Use:**
@@ -125,15 +89,15 @@ docker compose -f docker-compose.yml -f deploy/docker-compose.gpu.yml up -d --bu
 **What it Does:**
 - Enables GPU support for model-server in development
 - Adds Dozzle log viewer UI (port 8888)
-- Automatically applied when running `docker compose up` from project root
+- Automatically applied when running `./scripts/compose-clean up` from project root
 
 **Usage:**
 ```bash
 # Automatically applied in development
-docker compose up
+./scripts/compose-clean up
 
 # To skip overrides temporarily
-docker compose up --no-deps --build
+./scripts/compose-clean up --no-deps --build
 ```
 
 **When to Use:**
@@ -153,13 +117,13 @@ Docker Compose supports multiple compose files using the `-f` flag. Files are me
 
 ```bash
 # Standard deployment with explicit GPU override
-docker compose -f docker-compose.yml -f deploy/docker-compose.gpu.yml up -d
+./scripts/compose-clean -f docker-compose.yml -f deploy/docker-compose.gpu.yml up -d
 
 # Base configuration without auto-loading overrides
-docker compose -f docker-compose.yml --no-override up -d
+./scripts/compose-clean -f docker-compose.yml --no-override up -d
 
 # Custom deployment directory
-docker compose -f /path/to/docker-compose.yml -f /path/to/deploy/docker-compose.gpu.yml up -d
+./scripts/compose-clean -f /path/to/docker-compose.yml -f /path/to/deploy/docker-compose.gpu.yml up -d
 ```
 
 ## GPU Setup
@@ -201,13 +165,6 @@ docker compose -f /path/to/docker-compose.yml -f /path/to/deploy/docker-compose.
    # Edit .env with your values
    ```
 
-2. **`.env.thesis`** - For thesis deployment (optional)
-   ```bash
-   # Create from .env.example or .env
-   cp .env .env.thesis
-   # Adjust for thesis mode
-   ```
-
 ### Critical Variables
 
 | Variable | Required | Default | Description |
@@ -233,11 +190,11 @@ cp .env.example .env
 nano .env  # Set MINIO_PUBLIC_URL, API keys, etc.
 
 # Start services
-docker compose up -d
+./scripts/compose-clean up -d
 
 # Check status
-docker compose ps
-docker compose logs -f backend
+./scripts/compose-clean ps
+./scripts/compose-clean logs -f backend
 ```
 
 ### Update and Restart
@@ -246,16 +203,16 @@ docker compose logs -f backend
 git pull
 
 # Rebuild and restart
-docker compose up -d --build
+./scripts/compose-clean up -d --build
 
 # View logs
-docker compose logs -f
+./scripts/compose-clean logs -f
 ```
 
 ### Complete Reset (WARNING: Destroys Data)
 ```bash
 # Stop and remove all containers
-docker compose down -v
+./scripts/compose-clean down -v
 
 # Remove all volumes (deletes all data!)
 docker volume rm layra_kafka_data layra_mongo_data layra_minio_data \
@@ -263,17 +220,13 @@ docker volume rm layra_kafka_data layra_mongo_data layra_minio_data \
                  layra_milvus_etcd
 
 # Start fresh
-docker compose up -d
+./scripts/compose-clean up -d
 ```
 
-### Thesis Deployment
+### Single-Tenant Demo (Optional)
 ```bash
-# Quick deployment with script
-./scripts/deploy-thesis.sh
-
-# Or manually
-cp .env.thesis .env
-docker compose -f deploy/docker-compose.thesis.yml up -d --build
+# Set SINGLE_TENANT_MODE=true in .env, then:
+./scripts/compose-clean up -d --build
 ```
 
 ### Access Service Containers
@@ -296,14 +249,14 @@ docker exec -it layra-minio mc alias set local http://localhost:9000 minioadmin 
 ### View Logs
 ```bash
 # All services
-docker compose logs -f
+./scripts/compose-clean logs -f
 
 # Specific service
-docker compose logs -f backend
-docker compose logs -f model-server
+./scripts/compose-clean logs -f backend
+./scripts/compose-clean logs -f model-server
 
 # Last 100 lines
-docker compose logs --tail=100 backend
+./scripts/compose-clean logs --tail=100 backend
 ```
 
 ### Resource Usage
@@ -324,7 +277,7 @@ docker system df -v
 curl http://localhost:8000/api/v1/health/check
 
 # Service status
-docker compose ps
+./scripts/compose-clean ps
 ```
 
 ## Network Architecture
@@ -398,15 +351,15 @@ sudo lsof -i :8000
 **Permission Denied on Volumes**
 ```bash
 # Fix volume permissions
-docker compose down
+./scripts/compose-clean down
 sudo chown -R $USER:$USER /var/lib/docker/volumes/layra_*
-docker compose up -d
+./scripts/compose-clean up -d
 ```
 
 **Container Keeps Restarting**
 ```bash
 # Check logs
-docker compose logs service-name
+./scripts/compose-clean logs service-name
 
 # Inspect the container
 docker inspect layra-service-name
@@ -423,8 +376,8 @@ docker system df -v
 
 ### Getting Help
 
-1. Check logs: `docker compose logs -f [service]`
-2. Check service status: `docker compose ps`
+1. Check logs: `./scripts/compose-clean logs -f [service]`
+2. Check service status: `./scripts/compose-clean ps`
 3. Review this guide
 4. Check archived configurations in `scripts/archive/docker-compose/`
 5. Open an issue with:

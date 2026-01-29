@@ -138,8 +138,8 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
           isUser && message.type === "text"
             ? "" //"bg-indigo-300 shadow-lg"
             : message.type === "image"
-            ? "bg-gray-800 mb-3 shadow-lg"
-            : "bg-gray-800 mb-0.5"
+            ? "bg-gray-900 mb-3 shadow-lg"
+            : "bg-gray-900 mb-0.5"
         } ${
           message.type === "text"
             ? "px-4 py-2 mb-2 text-gray-800"

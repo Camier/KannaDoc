@@ -91,7 +91,7 @@ const SignInPage = () => {
     <div className="absolute w-full h-full top-0 left-0 min-h-screen flex items-center justify-center opacity-100 scrollbar-hide">
       {showAlert.show && <Alert showAlert={showAlert} />}
       <div
-        className={`w-full max-w-[30%] space-y-6 p-10 bg-gray-800 rounded-3xl shadow-lg z-10  opacity-90`}
+        className={`w-full max-w-[30%] space-y-6 p-10 bg-gray-900 rounded-3xl shadow-lg z-10  opacity-90`}
       >
         <h1
           className={`text-center text-3xl font-extrabold text-transparent bg-clip-text

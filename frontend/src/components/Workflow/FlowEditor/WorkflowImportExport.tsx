@@ -1,7 +1,7 @@
 /**
- * WorkflowImportExport
+ * useWorkflowImportExport
  *
- * Handles workflow import and export functionality.
+ * Hook that handles workflow import and export functionality.
  * Validates file format and manages workflow state transfer.
  *
  * Responsibilities:
@@ -9,13 +9,20 @@
  * - Import workflow from JSON file
  * - Validate imported data format
  * - Strip sensitive data (API keys) on export
+ *
+ * Returns:
+ * - fileInputRef: Ref for the hidden file input element
+ * - handleExportWorkflow: Function to export current workflow
+ * - handleImportWorkflow: Function to handle file input change
+ * - triggerImport: Function to trigger the file input click
  */
 
-import React, { useRef } from "react";
+import { useRef, useCallback } from "react";
+import { logger } from "@/lib/logger";
 import { CustomNode, CustomEdge } from "@/types/types";
 import { useTranslations } from "next-intl";
 
-interface WorkflowImportExportProps {
+interface UseWorkflowImportExportProps {
   workflowName: string;
   nodes: CustomNode[];
   edges: CustomEdge[];
@@ -24,18 +31,18 @@ interface WorkflowImportExportProps {
   onError: (message: string) => void;
 }
 
-export const WorkflowImportExport: React.FC<WorkflowImportExportProps> = ({
+export const useWorkflowImportExport = ({
   workflowName,
   nodes,
   edges,
   globalVariables,
   onImport,
   onError,
-}) => {
+}: UseWorkflowImportExportProps) => {
   const t = useTranslations("FlowEditor");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const handleExportWorkflow = () => {
+  const handleExportWorkflow = useCallback(() => {
     // Remove API keys from exported nodes
     const outputNodes = nodes.map((node) => {
       if (node.data.nodeType !== "vlm" || !node.data.modelConfig) {
@@ -75,9 +82,9 @@ export const WorkflowImportExport: React.FC<WorkflowImportExportProps> = ({
 
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-  };
+  }, [workflowName, nodes, edges, globalVariables]);
 
-  const handleImportWorkflow = async (
+  const handleImportWorkflow = useCallback((
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     const file = event.target.files?.[0];
@@ -102,18 +109,18 @@ export const WorkflowImportExport: React.FC<WorkflowImportExportProps> = ({
         // Update parent state
         onImport(data.nodes, data.edges, data.globalVariables);
       } catch (error) {
-        console.error("Import failed:", error);
+        logger.error("Import failed:", error);
         onError(t("invalidWorkflowFile"));
       }
     };
 
     reader.readAsText(file);
     event.target.value = ""; // Reset input to allow re-selecting same file
-  };
+  }, [onImport, onError, t]);
 
-  const triggerImport = () => {
+  const triggerImport = useCallback(() => {
     fileInputRef.current?.click();
-  };
+  }, []);
 
   return {
     fileInputRef,
@@ -121,11 +128,4 @@ export const WorkflowImportExport: React.FC<WorkflowImportExportProps> = ({
     handleImportWorkflow,
     triggerImport,
   };
-};
-
-/**
- * Hook version for easier integration
- */
-export const useWorkflowImportExport = (props: WorkflowImportExportProps) => {
-  return WorkflowImportExport(props);
 };

@@ -171,7 +171,7 @@ describe('SaveCustomNode Component', () => {
   it('modal content has rounded corners', () => {
     const { container } = render(<SaveCustomNode {...defaultProps} />);
 
-    const modalContent = container.querySelector('.bg-white');
+    const modalContent = container.querySelector('.bg-gray-800');
     expect(modalContent).toHaveClass('rounded-3xl');
   });
 

@@ -12,6 +12,7 @@
  */
 
 import { useEffect, useCallback } from "react";
+import { logger } from "@/lib/logger";
 import { CustomNode, CustomEdge } from "@/types/types";
 import { createWorkflow } from "@/lib/api/workflowApi";
 import { useTranslations } from "next-intl";
@@ -25,7 +26,7 @@ interface WorkflowSaveHandlerProps {
   globalVariables: { [key: string]: string };
   nodes: CustomNode[];
   edges: CustomEdge[];
-  onSaveStatusChange: (status: { visible: boolean; message: string; type: "success" | "error" }) => void;
+  onSaveStatusChange: React.Dispatch<React.SetStateAction<{ visible: boolean; message: string; type: "success" | "error" }>>;
   enabled?: boolean;
 }
 
@@ -70,7 +71,7 @@ export const useWorkflowSaveHandler = ({
           showTemporaryAlert(t("saveSuccess"), "success");
         }
       } catch (error) {
-        console.error("Save failed:", error);
+        logger.error("Save failed:", error);
         showTemporaryAlert(t("saveFailure"), "error");
       }
     }
@@ -111,7 +112,7 @@ export const useWorkflowSaveHandler = ({
             );
           }
         } catch (error) {
-          console.error("Auto-save failed:", error);
+          logger.error("Auto-save failed:", error);
           showTemporaryAlert(
             t("autoSaveFailure", { workflowName }),
             "error"

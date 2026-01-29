@@ -179,7 +179,11 @@ class AsyncMinIOManager:
                     Params={"Bucket": self.bucket_name, "Key": file_name},
                     ExpiresIn=expires,
                 )
-                logger.info(f"Generated presigned URL: {url}")
+                # Do not log the full presigned URL (treat it like a credential).
+                logger.info(
+                    "Generated presigned URL "
+                    f"bucket={self.bucket_name} key={file_name} expires_s={expires}"
+                )
                 return url
             except (ConnectionError, TimeoutError) as e:
                 logger.error(f"Connection error generating presigned URL: {e}")
@@ -281,5 +285,6 @@ class AsyncMinIOManager:
             if e.response["Error"]["Code"] == "404":
                 return False
             raise
+
 
 async_minio_manager = AsyncMinIOManager()

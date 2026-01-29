@@ -33,7 +33,7 @@ async def chat_stream(
     message_id = str(uuid.uuid4())  # 生成 UUIDv4
 
     return StreamingResponse(
-        ChatService.create_chat_stream(user_message, message_id),
+        ChatService.create_chat_stream(user_message, message_id=message_id),
         media_type="text/event-stream",
         headers={"conversation-id": user_message.conversation_id},
     )

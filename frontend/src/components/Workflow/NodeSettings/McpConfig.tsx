@@ -101,7 +101,7 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-gray-800 rounded-3xl px-10 py-6 min-w-[40%] max-w-[60%] max-h-[80vh] flex flex-col">
+      <div className="bg-gray-900 rounded-3xl px-10 py-6 min-w-[40%] max-w-[60%] max-h-[80vh] flex flex-col">
         <div className="mb-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <svg

@@ -43,7 +43,7 @@ echo "--------------------------------"
 echo "📦 Backing up MinIO & Milvus Volumes (Knowledge Base)..."
 
 # Define volumes to backup
-VOLUMES=("layra_minio_data" "layra_milvus_data" "layra_milvus_etcd" "layra_milvus_minio")
+VOLUMES=("layra_minio_data" "layra_milvus_data" "layra_milvus_etcd" "layra_milvus_minio" "layra_qdrant_data")
 
 for VOL in "${VOLUMES[@]}"; do
     echo "   - Archiving volume: ${VOL}..."

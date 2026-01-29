@@ -1,20 +1,187 @@
 groups:
   - name: layra_alerts
     rules:
+      # Critical alerts - trigger immediate investigation/rollback
       - alert: HighApiErrorRate
+        expr: rate(layra_api_requests_total{http_status=~"5.."}[5m]) / rate(layra_api_requests_total[5m]) > 0.5
+        for: 1m
+        labels:
+          severity: critical
+          rollback: immediate
+        annotations:
+          summary: "Critical API Error Rate on {{ $labels.endpoint }}"
+          description: "Error rate is above 50% for the last 1 minute. INITIATE ROLLBACK."
+          runbook: "https://docs.layra.dev/runbooks/high-error-rate"
+          rollback_command: "./deploy/rollback/emergency_rollback.sh $(git rev-parse HEAD~1)"
+
+      - alert: HealthCheckFailure
+        expr: up{job="layra-backend"} == 0
+        for: 2m
+        labels:
+          severity: critical
+          rollback: immediate
+        annotations:
+          summary: "Backend health check failing"
+          description: "Backend has been down for 2 minutes. INITIATE ROLLBACK."
+
+      - alert: DatabaseConnectionExhausted
+        expr: layra_db_connections_active / layra_db_connections_max > 0.95
+        for: 30s
+        labels:
+          severity: critical
+          rollback: immediate
+        annotations:
+          summary: "Database connection pool exhausted"
+          description: "Database connections at 95% capacity. Service may be unavailable."
+
+      - alert: AuthenticationFailureRate
+        expr: rate(layra_auth_failures_total[5m]) / rate(layra_auth_attempts_total[5m]) > 0.9
+        for: 1m
+        labels:
+          severity: critical
+          rollback: immediate
+        annotations:
+          summary: "Critical authentication failure rate"
+          description: "90%+ of authentication attempts are failing."
+
+      - alert: MemoryExhausted
+        expr: container_memory_usage_bytes{container="layra-backend"} / container_spec_memory_limit_bytes{container="layra-backend"} > 0.95
+        for: 2m
+        labels:
+          severity: critical
+          rollback: immediate
+        annotations:
+          summary: "Container memory exhausted"
+          description: "Backend container using > 95% of memory limit."
+
+      - alert: DiskSpaceCritical
+        expr: (node_filesystem_avail_bytes{mountpoint="/"} / node_filesystem_size_bytes{mountpoint="/"}) < 0.05
+        labels:
+          severity: critical
+          rollback: immediate
+        annotations:
+          summary: "Critical disk space"
+          description: "Less than 5% disk space available. System may fail."
+
+      # Warning alerts - investigate within 5 minutes
+      - alert: ElevatedApiErrorRate
         expr: rate(layra_api_requests_total{http_status=~"5.."}[5m]) / rate(layra_api_requests_total[5m]) > 0.1
         for: 5m
         labels:
-          severity: critical
+          severity: warning
+          rollback: assess
         annotations:
-          summary: "High API Error Rate on {{ $labels.endpoint }}"
-          description: "Error rate is above 10% for the last 5 minutes."
+          summary: "Elevated API Error Rate on {{ $labels.endpoint }}"
+          description: "Error rate is above 10% for the last 5 minutes. Investigate or rollback."
+          investigation: "Check backend logs: docker compose logs backend --tail=100"
 
-      - alert: LatencyHigh
-        expr: rate(layra_api_request_duration_seconds_sum[5m]) / rate(layra_api_request_duration_seconds_count[5m]) > 2
+      - alert: HighLatency
+        expr: histogram_quantile(0.95, rate(layra_api_request_duration_seconds_bucket[5m])) > 5
         for: 5m
         labels:
           severity: warning
+          rollback: assess
         annotations:
           summary: "High latency on {{ $labels.endpoint }}"
-          description: "Average latency is above 2s for the last 5 minutes."
+          description: "P95 latency is above 5 seconds for the last 5 minutes."
+          impact: "Users experiencing slow response times"
+
+      - alert: MultipleCircuitBreakersOpen
+        expr: count(circuit_breaker_open == 1) > 3
+        for: 2m
+        labels:
+          severity: warning
+          rollback: assess
+        annotations:
+          summary: "Multiple circuit breakers open"
+          description: "3 or more circuit breakers have tripped. Services may be degraded."
+
+      - alert: HighQueueDepth
+        expr: layra_kafka_consumer_lag > 1000
+        for: 5m
+        labels:
+          severity: warning
+          rollback: monitor
+        annotations:
+          summary: "Kafka consumer lag high"
+          description: "Consumer is lagging behind by 1000+ messages. Processing may be delayed."
+
+      # Performance degradation - monitor
+      - alert: EmbeddingServiceSlowdown
+        expr: rate(layra_embedding_request_duration_seconds_sum[5m]) / rate(layra_embedding_request_duration_seconds_count[5m]) > 3 * layra_embedding_latency_baseline
+        for: 5m
+        labels:
+          severity: info
+          rollback: monitor
+        annotations:
+          summary: "Embedding service slowdown"
+          description: "Embedding latency is 3x above baseline."
+
+      - alert: VectorDBQuerySlowdown
+        expr: rate(layra_vectordb_request_duration_seconds_sum[5m]) / rate(layra_vectordb_request_duration_seconds_count[5m]) > 3
+        for: 5m
+        labels:
+          severity: info
+          rollback: monitor
+        annotations:
+          summary: "Vector database query slowdown"
+          description: "Vector DB queries taking > 3x normal time."
+
+      - alert: LLMServiceFailureRate
+        expr: rate(layra_llm_requests_failed_total[5m]) / rate(layra_llm_requests_total[5m]) > 0.15
+        for: 5m
+        labels:
+          severity: warning
+          rollback: assess
+        annotations:
+          summary: "High LLM service failure rate"
+          description: "15%+ of LLM requests are failing. Check provider status."
+
+      - alert: FileProcessingFailureRate
+        expr: rate(layra_file_processing_failed_total[5m]) / rate(layra_file_processing_total[5m]) > 0.1
+        for: 5m
+        labels:
+          severity: info
+          rollback: monitor
+        annotations:
+          summary: "Elevated file processing failures"
+          description: "10%+ of file processing operations failing."
+
+      # Rollback-specific alerts
+      - alert: RollbackInitiated
+        expr: increase(layra_rollback_initiated_total[1m]) > 0
+        labels:
+          severity: critical
+        annotations:
+          summary: "Rollback has been initiated"
+          description: "A rollback operation is in progress. Monitor for completion."
+          command: "watch -n 2 './deploy/rollback/verify_rollback.sh'"
+
+      - alert: RollbackFailed
+        expr: increase(layra_rollback_failed_total[5m]) > 0
+        labels:
+          severity: critical
+        annotations:
+          summary: "Rollback operation failed"
+          description: "Rollback did not complete successfully. Manual intervention required."
+          action: "Check rollback logs and verify system state manually"
+
+      # System health
+      - alert: ContainerRestartLoop
+        expr: rate(container_last_seen{name=~"layra-.*"}[5m]) > 0.1
+        for: 5m
+        labels:
+          severity: critical
+          rollback: immediate
+        annotations:
+          summary: "Container {{ $labels.name }} is restarting frequently"
+          description: "Container restart loop detected. Rollback may be required."
+
+      - alert: DataCorruptionDetected
+        expr: increase(layra_data_corruption_events_total[1m]) > 0
+        labels:
+          severity: critical
+          rollback: immediate
+        annotations:
+          summary: "Data corruption detected"
+          description: "Data integrity checks failed. IMMEDIATE ROLLBACK REQUIRED."

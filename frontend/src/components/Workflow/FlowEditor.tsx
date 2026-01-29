@@ -806,12 +806,12 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
 
   return (
     <div
-      className="grid grid-cols-[15%_1fr] h-full w-full bg-gray-800 rounded-3xl shadow-sm p-6"
+      className="grid grid-cols-[15%_1fr] h-full w-full bg-gray-900 rounded-3xl shadow-sm p-6"
       ref={reactFlowWrapper}
       tabIndex={0}
       onKeyDown={onKeyDown}
     >
-      <div className="bg-gray-800 pr-4 h-full overflow-auto">
+      <div className="bg-gray-900 pr-4 h-full overflow-auto">
         <NodeTypeSelector
           deleteCustomNode={handleDeleteCustomNode}
           customNodes={customNodes}
@@ -858,7 +858,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
           onClear={() => setShowConfirmClear(true)}
         />
 
-        <div className="flex-1 rounded-3xl shadow-sm bg-gray-800 relative overflow-hidden">
+        <div className="flex-1 rounded-3xl shadow-sm bg-gray-900 relative overflow-hidden">
           <WorkflowCanvasPanel
             currentNode={currentNode}
             showOutput={showOutput}

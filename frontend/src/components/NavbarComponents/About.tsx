@@ -15,7 +15,7 @@ const About: React.FC<AboutProps> = ({ onCancel }) => {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center z-5000 bg-black/50">
-      <div ref={ref} className="bg-gray-800 rounded-3xl shadow-lg p-6 w-[55%] max-h-[70vh] flex flex-col">
+      <div ref={ref} className="bg-gray-900 rounded-3xl shadow-lg p-6 w-[55%] max-h-[70vh] flex flex-col">
         {/* 标题部分 */}
         <div className="flex gap-1 items-center text-indigo-500 mb-2">
           <svg

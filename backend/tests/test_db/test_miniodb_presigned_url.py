@@ -20,6 +20,7 @@ async def test_presigned_url_uses_minio_url_not_server_ip():
     # Mock the settings to verify the correct endpoint is used
     with patch('app.db.miniodb.settings') as mock_settings:
         mock_settings.minio_url = 'http://minio:9000'
+        mock_settings.minio_public_url = 'http://localhost:9000'
         mock_settings.minio_bucket_name = 'test-bucket'
         mock_settings.minio_access_key = 'test-key'
         mock_settings.minio_secret_key = 'test-secret'
@@ -28,7 +29,7 @@ async def test_presigned_url_uses_minio_url_not_server_ip():
         # Mock the S3 client
         mock_client = AsyncMock()
         mock_client.generate_presigned_url = AsyncMock(
-            return_value='http://minio:9000/test-bucket/test-file.pdf?...'
+            return_value='http://localhost:9000/test-bucket/test-file.pdf?...'
         )
         
         with patch.object(manager.session, 'client') as mock_session_client:
@@ -45,9 +46,9 @@ async def test_presigned_url_uses_minio_url_not_server_ip():
             # Extract endpoint_url from kwargs
             endpoint_url = call_args.kwargs.get('endpoint_url')
             
-            # VERIFY FIX: endpoint_url should be minio_url, not server_ip
-            assert endpoint_url == 'http://minio:9000', \
-                f"Expected minio_url (http://minio:9000) but got {endpoint_url}"
+            # VERIFY FIX: endpoint_url should be minio_public_url, not server_ip
+            assert endpoint_url == 'http://localhost:9000', \
+                f"Expected minio_public_url (http://localhost:9000) but got {endpoint_url}"
             assert endpoint_url != 'http://localhost:8090', \
                 "Should NOT use server_ip for presigned URLs"
 

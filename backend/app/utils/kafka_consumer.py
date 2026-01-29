@@ -17,7 +17,7 @@ KAFKA_BOOTSTRAP_SERVERS = settings.kafka_broker_url
 KAFKA_GROUP_ID = settings.kafka_group_id
 DLQ_TOPIC = "task_generation_dlq"
 IDEMPOTENCY_TTL = 86400  # 24 hours
-MAX_CONCURRENT = 5
+MAX_CONCURRENT = 10  # Increased from 5 to 10 for higher throughput
 MAX_RETRIES = 3
 INITIAL_DELAY = 1  # seconds
 BACKOFF = 2  # exponential backoff multiplier
@@ -175,15 +175,30 @@ class KafkaConsumerManager:
             traceback.format_exception(type(error), error, error.__traceback__)
         )
 
-    async def is_duplicate(self, task_id: str) -> bool:
-        """Check if task_id has already been processed (idempotency)."""
-        redis_conn = await redis.get_task_connection()
-        return await redis_conn.exists(f"processed:{task_id}")
+    def _get_idempotency_key(self, message: dict) -> str:
+        msg_type = message.get("type")
+        task_id = message.get("task_id", "unknown")
+        if msg_type in ("workflow", "debug_resume", "input_resume"):
+            return task_id
 
-    async def mark_processed(self, task_id: str):
-        """Mark task_id as processed (idempotency)."""
+        file_meta = message.get("file_meta") or {}
+        file_id = file_meta.get("file_id")
+        if file_id:
+            return f"file:{file_id}"
+        minio_filename = file_meta.get("minio_filename")
+        if minio_filename:
+            return f"file:{minio_filename}"
+        return f"file_task:{task_id}"
+
+    async def is_duplicate(self, idempotency_key: str) -> bool:
+        """Check if idempotency key has already been processed."""
         redis_conn = await redis.get_task_connection()
-        await redis_conn.set(f"processed:{task_id}", "1", ex=IDEMPOTENCY_TTL)
+        return await redis_conn.exists(f"processed:{idempotency_key}")
+
+    async def mark_processed(self, idempotency_key: str):
+        """Mark idempotency key as processed."""
+        redis_conn = await redis.get_task_connection()
+        await redis_conn.set(f"processed:{idempotency_key}", "1", ex=IDEMPOTENCY_TTL)
 
     async def validate_message(self, message: dict) -> tuple[bool, Optional[BaseModel]]:
         """Validate message against schemas. Returns (is_valid, validated_model)."""
@@ -359,10 +374,11 @@ class KafkaConsumerManager:
             # Decode message
             message = json.loads(msg.value.decode("utf-8"))
             task_id = message.get("task_id", "unknown")
+            idempotency_key = self._get_idempotency_key(message)
 
             # Check idempotency
-            if await self.is_duplicate(task_id):
-                logger.info(f"Skipping duplicate task: {task_id}")
+            if await self.is_duplicate(idempotency_key):
+                logger.info(f"Skipping duplicate task: {idempotency_key}")
                 return True  # Treat as success
 
             # Validate message
@@ -384,7 +400,7 @@ class KafkaConsumerManager:
                 await self.process_file_task(message)
 
             # Mark as processed
-            await self.mark_processed(task_id)
+            await self.mark_processed(idempotency_key)
 
             # Update metrics
             self.metrics["processed"] += 1
