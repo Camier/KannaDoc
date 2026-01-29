@@ -1,3 +1,7 @@
+networks:
+  layra-net:
+    external: true
+
 services:
   model-server:
     # Enable GPU support for Quadro RTX 5000
@@ -14,3 +18,14 @@ services:
             - driver: nvidia
               count: all
               capabilities: [gpu]
+      
+  dozzle:
+    container_name: layra-dozzle
+    image: amir20/dozzle:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - "8890:8080"
+    networks:
+      - layra-net
+    

@@ -4,7 +4,7 @@ from contextlib import asynccontextmanager
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api import api_router
-from app.core.config import settings
+from app.core.config import settings, validate_settings
 from app.core.logging import logger
 from app.framework.app_framework import FastAPIFramework
 
@@ -42,6 +42,7 @@ app.add_middleware(
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    validate_settings()
     logger.info("FastAPI Started")
     await mongodb.connect()
     await kafka_producer_manager.start()
