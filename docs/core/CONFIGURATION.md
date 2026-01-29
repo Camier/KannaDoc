@@ -535,20 +535,21 @@ NEXT_PUBLIC_API_BASE_URL=http://localhost:8090/api/v1
 
 **Launch**:
 ```bash
-docker-compose -f docker-compose.yml up
+./scripts/compose-clean up
 ```
 
 ---
 
-### Thesis/Solo Mode (GPU)
+### Single-User Demo (Optional, GPU)
 
 ```bash
-# .env.thesis
+# .env
 
 
 DEBUG_MODE=false
 LOG_LEVEL=INFO
 
+SINGLE_TENANT_MODE=true
 EMBEDDING_MODEL=local_colqwen
 COLBERT_MODEL_PATH=/model_weights/colqwen2.5-v0.2
 EMBEDDING_IMAGE_DPI=200
@@ -557,14 +558,14 @@ MINIO_URL=http://minio:9000
 MILVUS_URI=http://milvus-standalone:19530
 MONGODB_URL=mongodb:27017
 REDIS_URL=redis:6379
-DB_URL=mysql+asyncmy://thesis:thesis_mysql_a1b2c3d4e5f6@mysql:3306/layra_db
+DB_URL=mysql+asyncmy://<db_user>:<db_password>@mysql:3306/layra_db
 
 NEXT_PUBLIC_API_BASE_URL=http://localhost:8090/api/v1
 ```
 
 **Launch**:
 ```bash
-docker-compose -f docker-compose.thesis.yml up
+./scripts/compose-clean -f docker-compose.yml -f deploy/docker-compose.gpu.yml up -d --build
 ```
 
 ---
@@ -603,7 +604,7 @@ MAX_WORKERS=8
 
 **Launch**:
 ```bash
-docker-compose -f docker-compose.yml up -d
+./scripts/compose-clean up -d
 ```
 
 ---

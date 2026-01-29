@@ -1,0 +1,294 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    LAYRA CODEBASE - UNUSED CODE ANALYSIS                     ║
+║                              SUMMARY REPORT                                  ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+Generated: 2025-01-27
+Scope: backend/app/ (86 files), frontend/src/ (77 files)
+Total Issues: 459
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                         EXECUTIVE SUMMARY                                    │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+CATEGORY                   COUNT    SEVERITY    SAFE TO REMOVE
+─────────────────────────────────────────────────────────────────────────────
+Unused Python Imports       125      MEDIUM         Review
+Unused TS Imports            47      LOW            Yes (mostly)
+Unused Functions            223      MEDIUM         Review
+Unused Classes               61      HIGH           Review
+Commented Code                3      LOW            Yes
+TODO/FIXME Comments           0      N/A            N/A
+─────────────────────────────────────────────────────────────────────────────
+TOTAL                       459      -              -
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                         TOP 20 FILES BY UNUSED CODE                          │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+RANK  FILE                                                 ISSUES  SEVERITY
+────  ─────────────────────────────────────────────────  ──────  ──────────
+ 1    db/repositories/__init__.py                           20    HIGH
+ 2    workflow/workflow_engine_new.py                       23    MEDIUM
+ 3    api/endpoints/base.py                                 13    MEDIUM
+ 4    api/endpoints/workflow.py                             12    MEDIUM
+ 5    workflow/components/__init__.py                        8    MEDIUM
+ 6    api/endpoints/chat.py                                  9    MEDIUM
+ 7    api/endpoints/config.py                                8    MEDIUM
+ 8    db/cache.py                                           17    HIGH
+ 9    workflow/executors/__init__.py                         7    MEDIUM
+10    db/qdrant.py                                          10    HIGH
+11    db/vector_db.py                                        9    HIGH
+12    utils/kafka_consumer.py                               10    MEDIUM
+13    workflow/sandbox.py                                    7    MEDIUM
+14    models/conversation.py                                 7    HIGH
+15    models/workflow.py                                     8    HIGH
+16    workflow/components/checkpoint_manager.py              5    MEDIUM
+17    workflow/components/llm_client.py                      4    MEDIUM
+18    db/redis.py                                            7    HIGH
+19    db/repositories/BEFORE_AFTER_CHAT.py                   9    CRITICAL
+20    utils/kafka_producer.py                                 5    MEDIUM
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                    CRITICAL ISSUES - IMMEDIATE ACTION                         │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+[CRITICAL] Entire Unused Files
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+File: backend/app/db/repositories/BEFORE_AFTER_CHAT.py
+Lines: 369
+Type: Documentation/Example file
+Action: DELETE ENTIRE FILE (Safe)
+Command: rm backend/app/db/repositories/BEFORE_AFTER_CHAT.py
+
+Reason: This file contains only commented examples showing migration patterns.
+        It is not imported or used anywhere in the codebase.
+
+Impact: -369 lines, zero risk
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                    HIGH SEVERITY - REQUIRES TESTING                           │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+[HIGH] Unused Classes (61 total)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Most Affected Files:
+  • models/conversation.py        7 unused classes
+  • models/workflow.py            8 unused classes
+  • models/knowledge_base.py      5 unused classes
+  • workflow/executors/*.py       7 unused executor classes
+  • schemas/auth.py              4 unused classes
+  • schemas/chat_responses.py    4 unused classes
+
+Note: Many Pydantic models may be used in FastAPI endpoints or type hints.
+      Verify with: grep -r "ClassName" --include="*.py"
+
+[HIGH] Unused Database Functions (36 total)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Most Affected Files:
+  • db/cache.py                  17 unused functions
+  • db/qdrant.py                 10 unused functions
+  • db/vector_db.py               9 unused functions
+  • db/redis.py                   7 unused functions
+
+Action: These may be from refactoring to repository pattern.
+        Verify new implementation is in use before removing.
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                    MEDIUM SEVERITY - CAREFUL REVIEW                           │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+[MEDIUM] Unused Functions (223 total)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Categories:
+  • API Endpoints            50+ unused handler functions
+  • Utilities                30+ unused helper functions
+  • Workflow Components      20+ unused component functions
+
+Note: Many endpoint handlers may be:
+        - Planned for future use
+        - Used dynamically via routing
+        - Used in tests
+        - Used in other branches
+
+Action: Add # noqa: planned comments for future features
+        Remove truly dead code after testing
+
+[MEDIUM] Unused Imports (172 total)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Python:        125 unused imports
+TypeScript:     47 unused imports
+
+Most Affected:
+  • workflow/workflow_engine_new.py      23 imports
+  • db/repositories/__init__.py          20 imports
+  • workflow/components/__init__.py       8 imports
+
+Action: Generally safe to remove, but verify each file compiles after removal
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                    LOW SEVERITY - MINOR CLEANUP                               │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+[LOW] Commented Code (3 instances)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Files:
+  1. frontend/src/app/[locale]/ai-chat/page.tsx:354
+  2. frontend/src/components/AiChat/KnowledgeConfigModal.tsx:244
+  3. frontend/src/components/Workflow/NodeSettings/KnowledgeConfigModal.tsx:248
+
+Action: Safe to remove (old commented-out code)
+
+[LOW] TODO/FIXME Comments
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Count: 0
+
+Status: EXCELLENT - No technical debt markers found
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                         ACTION PLAN                                           │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+PHASE 1: Safe Deletes (Do This Week)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. Delete BEFORE_AFTER_CHAT.py
+     └─ Impact: -369 lines, zero risk
+     
+  2. Remove 3 commented code lines
+     └─ Impact: -3 lines, zero risk
+     
+  3. Review and clean TS imports (47)
+     └─ Impact: ~-50 lines, low risk
+     
+  Estimated: ~400 lines removed, negligible risk
+
+PHASE 2: Medium Risk (Do This Month)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. Clean unused database functions (36)
+     └─ Test: Verify repository pattern is active
+     └─ Impact: ~-500 lines
+     
+  2. Remove unused executor classes (7)
+     └─ Test: Verify workflow engine works
+     └─ Impact: ~-300 lines
+     
+  3. Clean utility functions (50+)
+     └─ Test: Run full test suite
+     └─ Impact: ~-400 lines
+     
+  Estimated: ~1,200 lines removed, medium risk
+
+PHASE 3: High Risk (Team Review Required)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  1. Review endpoint functions (200+)
+     └─ Document planned features
+     └─ Add # noqa: planned where appropriate
+     
+  2. Review model classes (61)
+     └─ Verify not used in type hints
+     └─ Check FastAPI docs
+     
+  3. Infrastructure classes
+     └─ Architecture review
+     └─ Update documentation
+     
+  Estimated: Many false positives, careful review required
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                         ESTIMATED TOTAL IMPACT                                │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+If all safe and medium-risk items removed:
+  Lines Removed:        ~1,600
+  Files Affected:       ~50
+  Risk Level:           LOW to MEDIUM
+  Performance Impact:   NONE (runtime unchanged)
+  Maintenance Benefit:  SIGNIFICANT
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                         FILES GENERATED                                        │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+1. UNUSED_CODE_ANALYSIS_REPORT.md
+   └─ Comprehensive analysis with recommendations
+   
+2. unused_code_details_by_file.md
+   └─ Exact line numbers and code references
+   
+3. cleanup_unused_code.sh
+   └─ Automated cleanup script with safety checks
+   
+4. ANALYSIS_SUMMARY.txt
+   └─ This file - quick reference guide
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                         VERIFICATION COMMANDS                                 │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+Before cleanup:
+  grep -r "FunctionName" --include="*.py" backend/
+  grep -r "FunctionName" tests/
+  git log -S "FunctionName" --oneline
+
+After cleanup:
+  python -m pytest backend/tests/ -v
+  npm test -- frontend/
+  ruff check backend/app/
+  eslint frontend/src/
+  git diff --stat
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                         RECOMMENDATIONS                                       │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+Short Term:
+  ✓ Delete documentation file (safe)
+  ✓ Remove commented code (safe)
+  ✓ Clean unused imports (low risk)
+
+Medium Term:
+  ✓ Review with team before deleting functions
+  ✓ Add pre-commit hooks for unused imports
+  ✓ Schedule monthly dead code scans
+
+Long Term:
+  ✓ Document architecture decisions
+  ✓ Add # noqa: planned for future features
+  ✓ Update coding standards
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                         CONCLUSION                                            │
+└──────────────────────────────────────────────────────────────────────────────┘
+
+The Layra codebase has accumulated unused code primarily from:
+  1. Refactoring to repository pattern (old database methods)
+  2. Workflow engine migration (old executors)
+  3. Feature development (planned but unused endpoints)
+  4. Import cleanup not performed
+
+Overall code quality: GOOD
+  - No TODO/FIXME comments
+  - Minimal commented code
+  - Unused code from refactoring (normal)
+
+Recommended action: Incremental cleanup with testing
+Start with: Phase 1 (safe deletes)
+Timeline: 1-2 weeks for Phases 1-2
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                         END OF SUMMARY                                        ║
+║                                                                              ║
+║  For detailed analysis, see: UNUSED_CODE_ANALYSIS_REPORT.md                 ║
+║  For specific line numbers, see: unused_code_details_by_file.md              ║
+║  For automated cleanup, run: bash cleanup_unused_code.sh                     ║
+╚══════════════════════════════════════════════════════════════════════════════╝

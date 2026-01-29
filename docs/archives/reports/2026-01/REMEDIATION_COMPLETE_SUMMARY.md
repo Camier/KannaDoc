@@ -123,7 +123,7 @@ Successfully completed comprehensive technical debt remediation across **31.6% c
 ### 4. Docker-Compose Cleanup
 - **Archived**: `docker-compose.gpu.yml`, `docker-compose.thesis.yml`, `docker-compose-no-local-embedding.yml`
 - **Location**: `scripts/archive/docker-compose/`
-- **Active**: `docker-compose.yml` (standard), `deploy/docker-compose.thesis.yml` (thesis), `docker-compose.override.yml` (dev)
+- **Active**: `docker-compose.yml` (standard), `deploy/docker-compose.gpu.yml` (GPU override), `docker-compose.override.yml` (dev)
 
 ### 5. FlowEditor Decomposition
 - **Before**: 2,259 lines (monolithic)

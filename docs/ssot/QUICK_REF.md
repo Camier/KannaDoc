@@ -1,17 +1,17 @@
 # LAYRA Quick Reference Card
 
-> **One-page reference for common tasks**  
-> **Version:** 2.0.0  
-> **Last Updated:** 2026-01-25
+> **One-page reference for common tasks**
+> **Version:** 2.2.0
+> **Last Updated:** 2026-01-29
 
 ---
 
 ## 🚀 Access
 
 **URL:** http://localhost:8090  
-**User:** `thesis`  
-**Password:** `thesis_deploy_b20f1508a2a983f6`  
-**API Key:** `thesis-key-2412d62f0b22dfd6c6c4b70f11e1b53b`
+**User:** `<username>`  
+**Password:** `<password>`  
+**API Key:** `<api_key>`
 
 ---
 
@@ -20,12 +20,12 @@
 ### Start System
 ```bash
 cd /LAB/@thesis/layra
-docker-compose -f deploy/docker-compose.thesis.yml --env-file .env up -d
+./scripts/compose-clean up -d --build
 ```
 
 ### Stop System
 ```bash
-docker-compose -f deploy/docker-compose.thesis.yml --env-file .env down
+./scripts/compose-clean down
 ```
 
 ### View Logs
@@ -60,7 +60,7 @@ curl http://localhost:8090/api/v1/health/check
 | **MinIO** | 9000 (internal) | Files |
 | **Milvus** | 19530 (internal) | Vectors |
 
-**Total:** 13 containers (12 running + 1 init)
+**Total:** 18 services (base compose) + optional dev-only tools via `docker-compose.override.yml`
 
 ---
 
@@ -72,17 +72,17 @@ curl http://localhost:8090/api/v1/health/check
 # Server
 SERVER_IP=http://localhost:8090
 
-
-
-# LLM Providers (NEW in v2.0)
+# LLM Providers
 OPENAI_API_KEY=sk-proj-...
 DEEPSEEK_API_KEY=sk-...
+ZHIPUAI_API_KEY=id.secret  # JWT format for GLM models
 DEFAULT_LLM_PROVIDER=openai
 DEFAULT_LLM_MODEL=gpt-4o-mini
 
 # Database
-DB_URL=mysql+asyncmy://thesis:${MYSQL_PASSWORD}@mysql:3306/layra_db
+DB_URL=mysql+asyncmy://<db_user>:<db_password>@mysql:3306/layra_db
 MONGODB_URL=mongodb:27017
+MONGODB_DB=chat_mongodb  # Model config database
 REDIS_URL=redis:6379
 
 # Storage
@@ -92,6 +92,23 @@ MILVUS_URI=http://milvus-standalone:19530
 # Messaging
 KAFKA_BROKER_URL=kafka:9094
 ```
+
+---
+
+## 🤖 LLM Providers
+
+| Provider | Models | Endpoint | Notes |
+|----------|--------|----------|-------|
+| DeepSeek | deepseek-chat, deepseek-r1 | https://api.deepseek.com | Working |
+| Zhipu | glm-4, glm-4-flash | https://open.bigmodel.cn/api/paas/v4 | Regular |
+| **Zhipu Coding** | glm-4.5, glm-4.6, glm-4.7 | https://open.bigmodel.cn/api/coding/paas/v4 | Requires subscription |
+| OpenAI | gpt-4o, gpt-4o-mini | https://api.openai.com | Default |
+
+**Provider Auto-Detection:**
+- `glm-4.5*`, `glm-4.6*`, `glm-4.7*` → Zhipu Coding Plan
+- `glm-*` → Zhipu Regular
+- `deepseek-*` → DeepSeek
+- `gpt-*` → OpenAI
 
 ---
 
@@ -114,11 +131,11 @@ docker exec -it layra-backend alembic upgrade head
 
 ### Clean Milvus (Reset Vectors)
 ```bash
-docker-compose -f deploy/docker-compose.thesis.yml down
+./scripts/compose-clean down
 docker volume rm layra_milvus_data layra_milvus_etcd
 docker volume create layra_milvus_data
 docker volume create layra_milvus_etcd
-docker-compose -f deploy/docker-compose.thesis.yml --env-file .env up -d
+./scripts/compose-clean up -d
 ```
 
 ### View Backend Config
@@ -146,10 +163,10 @@ docker exec layra-backend env | grep -E "DB_|REDIS_|MONGO|MINIO|KAFKA|MILVUS"
 ### Milvus Won't Start
 **Symptom:** `panic: dirty recovery info`
 ```bash
-docker-compose down
+./scripts/compose-clean down
 docker volume rm layra_milvus_data layra_milvus_etcd
 docker volume create layra_milvus_data layra_milvus_etcd
-docker-compose up -d
+./scripts/compose-clean up -d
 ```
 
 ### Backend Connection Error
@@ -170,6 +187,24 @@ docker logs layra-nginx
 docker logs layra-frontend
 ```
 
+### Models Not Appearing in Dropdown
+```bash
+# Check MongoDB model_config schema
+docker exec layra-mongodb mongosh \
+  "mongodb://thesis:thesis_mongo_3a2572a198fa78362d6d8e9b31a98bac@localhost:27017/chat_mongodb?authSource=admin" \
+  --eval "db.model_config.findOne({username: 'your_username'})"
+
+# Expected schema has "models" array
+# If old format, migrate to new schema
+```
+
+### GLM-4.7 Returns "余额不足" (Insufficient Balance)
+**Solution:** Use ZhipuAI Coding Plan endpoint
+```bash
+# Update model_url to coding plan endpoint
+# https://open.bigmodel.cn/api/coding/paas/v4
+```
+
 ---
 
 ## 📚 Documentation
@@ -177,8 +212,8 @@ docker logs layra-frontend
 | Document | Purpose |
 |----------|---------|
 | **[ssot/stack.md](stack.md)** | ⭐ **Primary Reference** |
-| **[START_HERE.md](../START_HERE.md)** | Quick onboarding |
-| **[THESIS_QUICKSTART.md](../THESIS_QUICKSTART.md)** | Deployment guide |
+| **[START_HERE.md](../getting-started/START_HERE.md)** | Quick onboarding |
+| **[QUICKSTART.md](../getting-started/QUICKSTART.md)** | Deployment guide |
 | **[ANTI_COMPLEXITY.md](../ANTI_COMPLEXITY.md)** | Complexity prevention |
 | **[CHANGES_20260125.md](../CHANGES_20260125.md)** | v2.0.0 changelog |
 
@@ -186,12 +221,12 @@ docker logs layra-frontend
 
 ## 🔍 System Info
 
-**Version:** 2.0.0  
-**Mode:** Thesis (Solo)  
-**Containers:** 13  
-**Networks:** 1 (deploy_layra-net)  
-**LLM:** Direct provider APIs  
-**Embedding:** Local ColQwen (if GPU available)
+**Version:** 2.2.0
+**Mode:** Standard (single-tenant optional)
+**Services:** 18
+**Networks:** 1 (layra-net)
+**LLM:** Direct provider APIs (OpenAI, DeepSeek, Zhipu, Zhipu Coding)
+**Embedding:** Local ColQwen or Jina (no-GPU)
 
 ---
 
@@ -200,7 +235,7 @@ docker logs layra-frontend
 **System broken?**
 1. Check logs: `docker logs layra-backend --tail 100`
 2. Check health: `curl localhost:8090/api/v1/health/check`
-3. Full restart: `docker-compose down && docker-compose up -d`
+3. Full restart: `./scripts/compose-clean down && ./scripts/compose-clean up -d`
 4. Consult: [CONSOLIDATED_REPORT.md](../CONSOLIDATED_REPORT.md)
 
 **Data lost?**

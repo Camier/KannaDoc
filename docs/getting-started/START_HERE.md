@@ -13,23 +13,21 @@ nano .env
 #      DEEPSEEK_API_KEY=sk-...
 
 # 2. Deploy
-cd deploy
-docker-compose -f docker-compose.thesis.yml up -d
+./scripts/start_layra.sh
 
 # 3. Access
 # http://localhost:8090
-# User: thesis
-# Pass: thesis_deploy_b20f1508a2a983f6
+# Create a user in the UI (or use an existing demo user if preseeded)
 ```
 
-**Full Guide:** [THESIS_QUICKSTART.md](THESIS_QUICKSTART.md)
+**Full Guide:** [QUICKSTART.md](QUICKSTART.md)
 
 ---
 
 ## 2. What Changed Recently? (2026-01-25)
 
 ✅ **LiteLLM Removed** - Now using direct OpenAI/DeepSeek APIs  
-✅ **Neo4j Removed** (thesis mode) - Saves 500MB RAM  
+✅ **Neo4j Removed** (default stack) - Saves 500MB RAM  
 ✅ **KB Corruption Fixed** - 0 duplicates, validated  
 ✅ **Documentation Reorganized** - See INDEX.md  
 
@@ -60,4 +58,4 @@ docker-compose -f docker-compose.thesis.yml up -d
 
 ---
 
-**Ready?** Start with [THESIS_QUICKSTART.md](THESIS_QUICKSTART.md)
+**Ready?** Start with [QUICKSTART.md](QUICKSTART.md)

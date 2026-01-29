@@ -955,7 +955,7 @@ cd backend
 python -m app.utils.kafka_consumer
 
 # Docker (production)
-docker-compose -f docker-compose.thesis.yml up -d layra-backend
+./scripts/compose-clean up -d layra-backend
 
 # Verify health
 curl http://localhost:8090/api/v1/health/live
@@ -1066,4 +1066,3 @@ docker exec layra-mongodb mongorestore \
 
 Created: 2026-01-23  
 Last Updated: 2026-01-23
-
