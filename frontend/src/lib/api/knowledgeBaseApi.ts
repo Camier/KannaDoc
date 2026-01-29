@@ -96,7 +96,7 @@ export const generateDownloadUrl = async (
   username: string,
   minioFilename: string
 ) => {
-  return await axios.post(`/base/files/download`, {
+  return await api.post(`/base/files/download`, {
     username: username,
     minio_filename: minioFilename,
   });
@@ -128,4 +128,34 @@ export const uploadFiles = async (
       }
     },
   });
+};
+
+export interface SearchPreviewResult {
+  image_id: string;
+  file_id: string;
+  page_number: number;
+  score: number;
+  filename: string;
+  minio_url: string;
+}
+
+export interface SearchPreviewResponse {
+  query: string;
+  results: SearchPreviewResult[];
+  total_results: number;
+  collection_name: string;
+}
+
+export const searchPreview = async (
+  kbId: string,
+  query: string,
+  topK: number = 10,
+  minScore?: number
+): Promise<SearchPreviewResponse> => {
+  const response = await api.post(`/kb/knowledge-base/${kbId}/search-preview`, {
+    query,
+    top_k: topK,
+    min_score: minScore,
+  });
+  return response.data;
 };
