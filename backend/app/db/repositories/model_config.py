@@ -2,9 +2,10 @@ from typing import Optional, Dict, Any, List
 from app.core.logging import logger
 from pymongo.errors import DuplicateKeyError
 from .base import BaseRepository
+from app.db.cache import cache_service
+
 
 class ModelConfigRepository(BaseRepository):
-    
     def _build_model_dict(
         self,
         model_id: str,
@@ -103,6 +104,7 @@ class ModelConfigRepository(BaseRepository):
         if result.matched_count == 0:
             return {"status": "error", "message": "User not found"}
 
+        await cache_service.invalidate_model_config(username)
         return {"status": "success", "username": username, "selected_model": model_id}
 
     async def add_model_config(
@@ -153,6 +155,7 @@ class ModelConfigRepository(BaseRepository):
         )
 
         if result.modified_count == 1:
+            await cache_service.invalidate_model_config(username)
             return {"status": "success", "username": username, "model_id": model_id}
         else:
             return {"status": "error", "message": "Failed to add model"}
@@ -169,6 +172,7 @@ class ModelConfigRepository(BaseRepository):
         elif result.modified_count == 0:
             return {"status": "error", "message": "Model ID not found"}
         else:
+            await cache_service.invalidate_model_config(username)
             return {"status": "success", "username": username, "model_id": model_id}
 
     async def update_model_config(
@@ -221,10 +225,11 @@ class ModelConfigRepository(BaseRepository):
             elif result.modified_count == 0:
                 return {"status": "success", "message": "No changes detected"}
             else:
+                await cache_service.invalidate_model_config(username)
                 return {"status": "success", "username": username, "model_id": model_id}
         except Exception as e:
             logger.error(f"Update failed: {str(e)}")
-        return {"status": "error", "message": str(e)}
+            return {"status": "error", "message": str(e)}
 
     async def get_selected_model_config(self, username: str):
         user_config = await self.db.model_config.find_one({"username": username})

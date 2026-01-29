@@ -1,20 +1,91 @@
 from typing import List, Optional
-from pydantic import BaseModel
+from pydantic import BaseModel, field_validator
+from app.rag.provider_client import ProviderClient
+
 
 class ModelConfigBase(BaseModel):
     model_name: str
-    model_url: str
+    model_url: str = ""
     api_key: str
-    base_used: List[dict]
-    system_prompt: str
-    temperature: float
-    max_length: int
-    top_P: float
-    top_K: int
-    score_threshold: int
+    base_used: List[dict] = []
+    system_prompt: str = ""
+    temperature: float = 0.7
+    max_length: int = 4096
+    top_P: float = 0.9
+    top_K: int = 3
+    score_threshold: int = 10
+
+    @field_validator("model_name")
+    @classmethod
+    def validate_model_name(cls, v: str) -> str:
+        if not v or len(v.strip()) < 2:
+            raise ValueError("model_name must be at least 2 characters")
+        provider = ProviderClient.get_provider_for_model(v)
+        if not provider:
+            raise ValueError(f"Unknown model: {v}. Cannot detect provider.")
+        return v.strip()
+
+    @field_validator("api_key")
+    @classmethod
+    def validate_api_key(cls, v: str) -> str:
+        if not v or len(v.strip()) < 10:
+            raise ValueError("api_key must be at least 10 characters")
+        v = v.strip()
+        if v.startswith("sk-") or v.startswith("hf_") or "." in v:
+            return v
+        if len(v) < 20:
+            raise ValueError("api_key appears too short to be valid")
+        return v
+
+    @field_validator("temperature")
+    @classmethod
+    def validate_temperature(cls, v: float) -> float:
+        if v < 0:
+            return 0.0
+        if v > 2:
+            return 2.0
+        return v
+
+    @field_validator("max_length")
+    @classmethod
+    def validate_max_length(cls, v: int) -> int:
+        if v < 256:
+            return 256
+        if v > 1048576:
+            return 1048576
+        return v
+
+    @field_validator("top_P")
+    @classmethod
+    def validate_top_p(cls, v: float) -> float:
+        if v < 0:
+            return 0.0
+        if v > 1:
+            return 1.0
+        return v
+
+    @field_validator("top_K")
+    @classmethod
+    def validate_top_k(cls, v: int) -> int:
+        if v < 1:
+            return 1
+        if v > 50:
+            return 50
+        return v
+
+    @field_validator("score_threshold")
+    @classmethod
+    def validate_score_threshold(cls, v: int) -> int:
+        if v < 0:
+            return 0
+        if v > 100:
+            return 100
+        return v
+
 
 class ModelCreate(ModelConfigBase):
     pass
+
 
 class ModelUpdate(BaseModel):
     model_name: Optional[str] = None
@@ -28,10 +99,30 @@ class ModelUpdate(BaseModel):
     top_K: Optional[int] = None
     score_threshold: Optional[int] = None
 
+    @field_validator("model_name")
+    @classmethod
+    def validate_model_name(cls, v: Optional[str]) -> Optional[str]:
+        if v is None:
+            return v
+        if len(v.strip()) < 2:
+            raise ValueError("model_name must be at least 2 characters")
+        return v.strip()
+
+    @field_validator("api_key")
+    @classmethod
+    def validate_api_key(cls, v: Optional[str]) -> Optional[str]:
+        if v is None:
+            return v
+        if len(v.strip()) < 10:
+            raise ValueError("api_key must be at least 10 characters")
+        return v.strip()
+
+
 class SelectedModelResponse(BaseModel):
     status: str
     select_model_config: Optional[dict] = None
     message: Optional[str] = None
+
 
 class UpdateSelectedModelRequest(BaseModel):
     model_id: str
