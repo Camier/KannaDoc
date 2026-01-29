@@ -5,8 +5,8 @@ from pymongo import DeleteMany
 from app.db.miniodb import async_minio_manager
 from .base import BaseRepository
 
+
 class FileRepository(BaseRepository):
-    
     async def create_files(
         self,
         file_id: str,
@@ -212,3 +212,19 @@ class FileRepository(BaseRepository):
             response["message"] = "所有请求的文件 ID 均未找到"
 
         return response
+
+    async def get_files_by_ids(self, file_ids: List[str]) -> List[Dict[str, Any]]:
+        """
+        Batch fetch files by their IDs.
+
+        Args:
+            file_ids: List of file IDs to fetch
+
+        Returns:
+            List of file documents
+        """
+        if not file_ids:
+            return []
+
+        cursor = self.db.files.find({"file_id": {"$in": file_ids}, "is_delete": False})
+        return await cursor.to_list(length=len(file_ids))
