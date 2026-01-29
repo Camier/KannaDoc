@@ -322,48 +322,56 @@ class ChatService:
                 sorted_score = sort_and_filter(result_score, min_score=score_threshold)
                 cut_score = sorted_score[:top_K]
 
-                # Get minio names and convert to base64
-                for score in cut_score:
+                # Batch fetch metadata (eliminates N+1 query pattern)
+                if cut_score:
                     t_start = time.perf_counter()
-                    file_and_image_info = (
-                        await repo_manager.file.get_file_and_image_info(
-                            score["file_id"], score["image_id"]
-                        )
+                    file_image_pairs = [
+                        (score["file_id"], score["image_id"]) for score in cut_score
+                    ]
+                    file_infos = await repo_manager.file.get_files_and_images_batch(
+                        file_image_pairs
                     )
                     t_meta_s += time.perf_counter() - t_start
-                    if not file_and_image_info["status"] == "success":
-                        logger.warning(
-                            "RAG hit skipped (metadata mismatch): "
-                            f"collection={score.get('collection_name')} "
-                            f"file_id={score.get('file_id')} "
-                            f"image_id={score.get('image_id')} "
-                            f"page_number={score.get('page_number')}"
-                        )
-                        continue
 
-                    file_used.append(
-                        {
-                            "score": score["score"],
-                            "knowledge_db_id": file_and_image_info["knowledge_db_id"],
-                            "file_name": file_and_image_info["file_name"],
-                            "image_url": file_and_image_info["image_minio_url"],
-                            "file_url": file_and_image_info["file_minio_url"],
-                        }
-                    )
-                    content.append(
-                        {
-                            "type": "image_url",
-                            "image_url": file_and_image_info["image_minio_filename"],
-                        }
-                    )
-                    # Track images for workflow mode
-                    user_images.append(
-                        {
-                            "type": "image_url",
-                            "image_url": file_and_image_info["image_minio_filename"],
-                        }
-                    )
-                    rag_hits += 1
+                    for score, file_and_image_info in zip(cut_score, file_infos):
+                        if file_and_image_info.get("status") != "success":
+                            logger.warning(
+                                "RAG hit skipped (metadata mismatch): "
+                                f"collection={score.get('collection_name')} "
+                                f"file_id={score.get('file_id')} "
+                                f"image_id={score.get('image_id')} "
+                                f"page_number={score.get('page_number')}"
+                            )
+                            continue
+
+                        file_used.append(
+                            {
+                                "score": score["score"],
+                                "knowledge_db_id": file_and_image_info[
+                                    "knowledge_db_id"
+                                ],
+                                "file_name": file_and_image_info["file_name"],
+                                "image_url": file_and_image_info["image_minio_url"],
+                                "file_url": file_and_image_info["file_minio_url"],
+                            }
+                        )
+                        content.append(
+                            {
+                                "type": "image_url",
+                                "image_url": file_and_image_info[
+                                    "image_minio_filename"
+                                ],
+                            }
+                        )
+                        user_images.append(
+                            {
+                                "type": "image_url",
+                                "image_url": file_and_image_info[
+                                    "image_minio_filename"
+                                ],
+                            }
+                        )
+                        rag_hits += 1
 
         # Build user message content
         user_text = user_message_content.user_message
