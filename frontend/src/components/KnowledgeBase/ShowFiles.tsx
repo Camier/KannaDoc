@@ -116,7 +116,7 @@ const ShowFiles: React.FC<ShowFilesProps> = ({
               setPageSize(Number(e.target.value));
               setCurrentPage(1);
             }}
-            className="cursor-pointer border border-gray-600 px-2 py-1 text-sm rounded-xl appearance-none text-gray-300 bg-gray-700 focus:outline-hidden"
+            className="cursor-pointer border border-gray-700 px-2 py-1 text-sm rounded-xl appearance-none text-gray-300 bg-gray-800 focus:outline-hidden"
           >
             {[5, 10, 20, 50].map((size) => (
               <option key={size} value={size}>

@@ -27,7 +27,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <body className={`${inter.className}`}>
+      <body className={`${inter.className} bg-gray-900`}>
         <NextIntlClientProvider>
           <div className="absolute w-full h-full top-0 left-0">{children}</div>
         </NextIntlClientProvider>

@@ -31,65 +31,6 @@ from app.workflow.components import (
 )
 
 
-def get_provider_timeout(model_name: str) -> int:
-    """Get provider-specific timeout for a model."""
-    model_lower = model_name.lower()
-    for provider, timeout in PROVIDER_TIMEOUTS.items():
-        if provider == "default":
-            continue
-        if provider in model_lower:
-            return timeout
-    return PROVIDER_TIMEOUTS["default"]
-
-
-async def retry_with_backoff(
-    func,
-    max_retries: int = 3,
-    base_delay: float = 1.0,
-    max_delay: float = 60.0,
-):
-    """
-    Execute function with exponential backoff retry.
-
-    Args:
-        func: Async function to execute
-        max_retries: Maximum number of retry attempts
-        base_delay: Initial delay in seconds
-        max_delay: Maximum delay between retries
-
-    Returns:
-        Function result
-
-    Raises:
-        Exception: If all retries exhausted
-    """
-    import asyncio
-
-    last_exception = None
-    for attempt in range(max_retries + 1):
-        try:
-            return await func()
-        except Exception as e:
-            last_exception = e
-            if attempt == max_retries:
-                # All retries exhausted
-                raise
-
-            # Exponential backoff with jitter
-            delay = min(base_delay * (2 ** attempt), max_delay)
-            jitter = delay * 0.1  # 10% jitter
-            import random
-            actual_delay = delay + random.uniform(-jitter, jitter)
-
-            logger.warning(
-                f"Workflow LLM call failed (attempt {attempt + 1}/{max_retries + 1}): {e}. "
-                f"Retrying in {actual_delay:.2f}s..."
-            )
-            await asyncio.sleep(actual_delay)
-
-    raise last_exception
-
-
 class WorkflowEngine:
     def __init__(
         self,
@@ -249,13 +190,17 @@ class WorkflowEngine:
                 node_context = self.context[node_id]
                 if len(node_context) > MAX_CONTEXT_SIZE:
                     # Keep only the most recent entries
-                    remove_count = min(len(node_context) - MAX_CONTEXT_SIZE, entries_to_remove)
+                    remove_count = min(
+                        len(node_context) - MAX_CONTEXT_SIZE, entries_to_remove
+                    )
                     self.context[node_id] = node_context[remove_count:]
                     entries_to_remove -= remove_count
                     self._total_context_entries -= remove_count
                 if entries_to_remove <= 0:
                     break
-            logger.info(f"Workflow {self.task_id}: Cleaned up context, total entries: {self._total_context_entries}")
+            logger.info(
+                f"Workflow {self.task_id}: Cleaned up context, total entries: {self._total_context_entries}"
+            )
 
     def get_graph(self):
         try:
@@ -282,6 +227,7 @@ class WorkflowEngine:
 
         # 限制执行环境，仅允许访问context变量
         try:
+
             def _coerce_value(value):
                 """Safely coerce string values to their appropriate types."""
                 if isinstance(value, str):
@@ -481,7 +427,9 @@ class WorkflowEngine:
 
                         # Checkpoint after loop iteration completes
                         if CHECKPOINT_CONFIG["on_loop_complete"]:
-                            await self.checkpoint_manager.save_checkpoint(reason="loop_complete")
+                            await self.checkpoint_manager.save_checkpoint(
+                                reason="loop_complete"
+                            )
 
                         await self.execute_workflow(node.loop_parent)
             return
@@ -511,7 +459,9 @@ class WorkflowEngine:
 
                         # Checkpoint after loop iteration completes
                         if CHECKPOINT_CONFIG["on_loop_complete"]:
-                            await self.checkpoint_manager.save_checkpoint(reason="loop_complete")
+                            await self.checkpoint_manager.save_checkpoint(
+                                reason="loop_complete"
+                            )
 
                         self.skip_nodes = [
                             node_id
@@ -562,7 +512,9 @@ class WorkflowEngine:
                     f"Workflow {self.task_id}: Node {node.node_id} failed: {e}. "
                     f"Attempting rollback..."
                 )
-                rollback_success = await self.checkpoint_manager.rollback_to_checkpoint()
+                rollback_success = (
+                    await self.checkpoint_manager.rollback_to_checkpoint()
+                )
 
                 if rollback_success:
                     logger.info(f"Workflow {self.task_id}: Rollback successful")
@@ -591,7 +543,9 @@ class WorkflowEngine:
 
                         # Checkpoint after loop iteration completes
                         if CHECKPOINT_CONFIG["on_loop_complete"]:
-                            await self.checkpoint_manager.save_checkpoint(reason="loop_complete")
+                            await self.checkpoint_manager.save_checkpoint(
+                                reason="loop_complete"
+                            )
 
                         self.skip_nodes = [
                             node_id
@@ -980,6 +934,7 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
         LLM call with both circuit breaker and retry logic.
         Combines fault tolerance with exponential backoff for transient failures.
         """
+
         async def _do_call():
             return await self._llm_call_with_circuit_breaker(
                 user_message_content=user_message_content,

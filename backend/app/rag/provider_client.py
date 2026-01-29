@@ -9,6 +9,56 @@ from openai import AsyncOpenAI
 from app.core.logging import logger
 
 
+def _generate_zhipu_jwt(api_key: str) -> str:
+    """Generate JWT token for ZhipuAI API authentication.
+
+    ZhipuAI API keys are in format: id.secret
+    This function generates a JWT token with HMAC-SHA256 signature.
+    """
+    import hashlib
+    import hmac
+    import base64
+    import json
+    import time
+
+    if '.' not in api_key:
+        raise ValueError(f"Invalid ZhipuAI API key format: {api_key}")
+
+    api_id, api_secret = api_key.split('.', 1)
+
+    # JWT Header
+    header = {"alg": "HS256", "sign_type": "SIGN"}
+
+    # JWT Payload
+    timestamp = int(time.time())
+    payload = {
+        "api_key": api_id,
+        "exp": timestamp + 3600,
+        "timestamp": timestamp
+    }
+
+    # Encode
+    header_encoded = base64.urlsafe_b64encode(
+        json.dumps(header, separators=(',', ':')).encode()
+    ).rstrip(b'=').decode()
+
+    payload_encoded = base64.urlsafe_b64encode(
+        json.dumps(payload, separators=(',', ':')).encode()
+    ).rstrip(b'=').decode()
+
+    # Sign
+    message = f"{header_encoded}.{payload_encoded}"
+    signature = hmac.new(
+        api_secret.encode(),
+        message.encode(),
+        hashlib.sha256
+    ).digest()
+
+    signature_encoded = base64.urlsafe_b64encode(signature).rstrip(b'=').decode()
+
+    return f"{message}.{signature_encoded}"
+
+
 class ProviderClient:
     """Factory for creating provider-specific OpenAI-compatible clients"""
 
@@ -33,10 +83,11 @@ class ProviderClient:
         "deepseek": {
             "base_url": "https://api.deepseek.com/v1",
             "env_key": "DEEPSEEK_API_KEY",
-            # Updated: Added V3.2 models (Dec 2025) - outperforms GPT-5 on reasoning
+            # DeepSeek models: V3 and R1 series
+            # deepseek-r1: Reasoning model
+            # deepseek-chat: General purpose chat
+            # deepseek-reasoner: Advanced reasoning
             "models": [
-                "deepseek-v3.2",
-                "deepseek-v3.2-speciale",
                 "deepseek-r1",
                 "deepseek-chat",
                 "deepseek-reasoner",
@@ -70,16 +121,36 @@ class ProviderClient:
         "zhipu": {
             "base_url": "https://open.bigmodel.cn/api/paas/v4",
             "env_key": "ZHIPUAI_API_KEY",
-            # Updated: Added GLM-4.7 models (Jan 2026) - 358B params, 200K context
-            # GLM-4.7: 90.1% MMLU, 95.7% AIME - beats GPT-OSS-20B
-            # GLM-4.7-Flash: Optimized for speed with MoE architecture
+            # GLM-4 family: Latest models from Zhipu AI
+            # glm-4: Flagship model
+            # glm-4-flash: Optimized for speed
+            # glm-4-plus: Enhanced capabilities
+            # glm-4v: Vision model
+            # glm-4-alltools: Function calling capabilities
             "models": [
-                "glm-4.7",
-                "glm-4.7-flash",
-                "glm-4-plus",
-                "glm-4-air",
+                "glm-4",
                 "glm-4-flash",
-                "glm-4-0520",
+                "glm-4-plus",
+                "glm-4v",
+                "glm-4-alltools",
+            ],
+        },
+        # ZhipuAI Coding Plan - Special endpoint for coding tasks
+        # Requires JWT authentication and coding plan subscription
+        "zhipu-coding": {
+            "base_url": "https://open.bigmodel.cn/api/coding/paas/v4",
+            "env_key": "ZHIPUAI_API_KEY",
+            # Coding Plan models: glm-4.5, glm-4.6, glm-4.7
+            # These models are optimized for coding tasks
+            "models": [
+                "glm-4.5",
+                "glm-4.5-air",
+                "glm-4.5-flash",
+                "glm-4.5v",
+                "glm-4.6",
+                "glm-4.6v",
+                "glm-4.6v-flash",
+                "glm-4.7",
             ],
         },
         "minimax": {
@@ -122,6 +193,8 @@ class ProviderClient:
             return "gemini"
         elif "moonshot" in model_lower or "kimi" in model_lower or "k2" in model_lower:
             return "moonshot"
+        elif any(x in model_lower for x in ["glm-4.5", "glm-4.6", "glm-4.7"]):
+            return "zhipu-coding"
         elif "glm" in model_lower or "zhipu" in model_lower:
             return "zhipu"
         elif "abab" in model_lower or "minimax" in model_lower:
@@ -185,6 +258,10 @@ class ProviderClient:
                     f"API key for {provider} not found. "
                     f"Set {provider_config['env_key']} environment variable."
                 )
+
+        # Generate JWT token for ZhipuAI
+        if provider == "zhipu":
+            api_key = _generate_zhipu_jwt(api_key)
 
         # Get base URL (priority: parameter > provider default)
         if not base_url:

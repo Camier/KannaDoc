@@ -32,10 +32,18 @@
  * ```
  */
 
-export { default } from './FlowEditor';
+// Main component (in parent directory)
+export { default } from '../FlowEditor';
+
+// Named export for convenience
+export { default as FlowEditor } from '../FlowEditor';
+
+// Sub-components (in this directory)
 export { WorkflowExecutionHandler } from './WorkflowExecutionHandler';
 export { WorkflowToolbar } from './WorkflowToolbar';
 export { WorkflowCanvasPanel } from './WorkflowCanvasPanel';
+
+// Hooks (in this directory)
 export { useWorkflowImportExport } from './WorkflowImportExport';
 export { useWorkflowSaveHandler } from './WorkflowSaveHandler';
 export { useWorkflowNodeOperations } from './WorkflowNodeOperations';

@@ -66,12 +66,8 @@ class Settings(BaseSettings):
     milvus_uri: str = Field(
         ..., description="Milvus connection URI, e.g., http://localhost:19530"
     )
-    qdrant_url: str = Field(
-        default="http://qdrant:6333",
-        description="Qdrant connection URI for multi-vector support",
-    )
     vector_db: str = Field(
-        default="milvus", description="Vector database backend: milvus or qdrant"
+        default="milvus", description="Vector database backend: milvus"
     )
 
     # Models & Sandbox

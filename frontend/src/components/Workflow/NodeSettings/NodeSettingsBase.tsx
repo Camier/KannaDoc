@@ -212,7 +212,7 @@ export const DescriptionSection: React.FC<DescriptionSectionProps> = ({
     </summary>
 
     {isEditing ? (
-      <div className="rounded-2xl shadow-lg overflow-auto w-full mb-2 px-4 pb-4 pt-2 bg-gray-800">
+      <div className="rounded-2xl shadow-lg overflow-auto w-full mb-2 px-4 pb-4 pt-2 bg-gray-900">
         <textarea
           className={`mt-1 w-full px-2 py-2 border border-gray-200 rounded-xl min-h-[10vh] ${
             codeFullScreenFlow ? "max-h-[50vh]" : "max-h-[30vh]"

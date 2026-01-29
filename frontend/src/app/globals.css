@@ -61,21 +61,21 @@ pre code {
 pre {
   font-size: 14px;
   position: relative;
-  background: #e5e7eb; /* 浅灰色背景 */
+  background: #374151; /* 深灰色背景 */
   border-radius: 14px;
   margin: 1rem 0;
   padding: 0.2rem;
-  color: #111827; /* 深灰色文字 */
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* 添加柔和阴影 */
+  color: #f3f4f6; /* 浅灰色文字 */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.3); /* 添加阴影 */
 }
 
 /* 控制行内代码 */
 code:not(pre code) {
   font-size: 14px;
-  background: #e5e7eb; /* 更浅的行内代码背景 */
+  background: #4b5563; /* 深灰行内代码背景 */
   padding: 0.3em 0.6em;
   border-radius: 0.5em;
-  color: #111827; /* 深灰色文字 */
+  color: #f3f4f6; /* 浅灰色文字 */
   font-family: "Fira Code", Menlo, Monaco, Consolas, monospace; /* 使用等宽字体 */
   letter-spacing: -0.05em; /* 紧凑字距 */
   font-weight: 100 !important;
@@ -88,8 +88,8 @@ code:not(pre code) {
 
 /* 覆盖 highlight.js 样式 */
 .hljs {
-  background: #ffffff !important; /* 纯白背景 */
-  color: #1f2937 !important; /* 深灰文字 */
+  background: #1f2937 !important; /* 深灰背景 */
+  color: #e5e7eb !important; /* 浅灰文字 */
   font-size: 14px;
   border-radius: 12px;
   padding: 1.2rem !important;

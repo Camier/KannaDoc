@@ -15,7 +15,7 @@ const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
 }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/50">
-      <div className="bg-white rounded-3xl shadow-lg p-6 w-[30%] max-h-[50vh] flex flex-col">
+      <div className="bg-gray-800 rounded-3xl shadow-lg p-6 w-[30%] max-h-[50vh] flex flex-col">
         <p className="mb-6 p-2 overflow-auto">{message}</p>
         <div className="flex justify-end gap-2">
           <button
@@ -206,7 +206,7 @@ describe('ConfirmDialog Component', () => {
       />
     );
 
-    const modalContent = container.querySelector('.bg-white');
+    const modalContent = container.querySelector('.bg-gray-800');
     expect(modalContent).toHaveClass('rounded-3xl');
   });
 

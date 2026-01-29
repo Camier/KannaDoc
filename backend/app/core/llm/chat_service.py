@@ -13,13 +13,16 @@ Key differences merged:
 
 Common utilities are shared via app.core.embeddings (normalize_multivector).
 """
+
 import asyncio
 import json
+import time
 from typing import AsyncGenerator, Optional, Dict, Any, List
 from openai import AsyncOpenAI
 
-from app.db.mongo import get_mongo
+from app.db.repositories.repository_manager import get_repository_manager
 from app.core.logging import logger
+from app.core.circuit_breaker import llm_service_circuit, CircuitBreakerError
 from app.db.vector_db import vector_db_client
 from app.rag.get_embedding import get_embeddings_from_httpx
 from app.rag.utils import replace_image_content, sort_and_filter
@@ -92,6 +95,7 @@ class ChatService:
         return score_threshold
 
     @staticmethod
+    @llm_service_circuit
     async def create_chat_stream(
         user_message_content,  # Union[UserMessage from conversation or workflow]
         model_config: Optional[Dict[str, Any]] = None,
@@ -99,9 +103,9 @@ class ChatService:
         system_prompt: Optional[str] = None,
         history_depth: int = 5,
         save_to_db: bool = False,
-        user_image_urls: List = [],
+        user_image_urls: Optional[List] = None,
         supply_info: str = "",
-        quote_variables: Dict = {},
+        quote_variables: Optional[Dict] = None,
         is_workflow: bool = False,
     ) -> AsyncGenerator[str, None]:
         """
@@ -122,7 +126,18 @@ class ChatService:
         Yields:
             str: SSE-formatted JSON chunks with type markers (text, thinking, file_used, token)
         """
-        db = await get_mongo()
+        repo_manager = await get_repository_manager()
+
+        # Avoid mutable default argument pitfalls.
+        user_image_urls = user_image_urls or []
+        quote_variables = quote_variables or {}
+
+        t0 = time.perf_counter()
+        t_embed_s = 0.0
+        t_search_s = 0.0
+        t_meta_s = 0.0
+        t_minio_s = 0.0
+        rag_hits = 0
 
         # Stream/session state
         is_aborted = False
@@ -156,8 +171,10 @@ class ChatService:
             if not message_id:
                 raise ValueError("RAG mode requires message_id parameter")
 
-            model_config = await db.get_conversation_model_config(
-                user_message_content.conversation_id
+            model_config = (
+                await repo_manager.conversation.get_conversation_model_config(
+                    user_message_content.conversation_id
+                )
             )
             if not model_config:
                 raise ValueError(
@@ -179,11 +196,27 @@ class ChatService:
             system_prompt = system_prompt[0:1048576]
 
         # Normalize and validate parameters
-        temperature = ChatService._normalize_temperature(model_config.get("temperature", -1) if not is_workflow else model_config["temperature"])
-        max_length = ChatService._normalize_max_length(model_config.get("max_length", -1) if not is_workflow else model_config["max_length"])
-        top_P = ChatService._normalize_top_p(model_config.get("top_P", -1) if not is_workflow else model_config["top_P"])
-        top_K = ChatService._normalize_top_k(model_config.get("top_K", -1) if not is_workflow else model_config["top_K"])
-        score_threshold = ChatService._normalize_score_threshold(model_config.get("score_threshold", -1) if not is_workflow else model_config["score_threshold"])
+        temperature = ChatService._normalize_temperature(
+            model_config.get("temperature", -1)
+            if not is_workflow
+            else model_config["temperature"]
+        )
+        max_length = ChatService._normalize_max_length(
+            model_config.get("max_length", -1)
+            if not is_workflow
+            else model_config["max_length"]
+        )
+        top_P = ChatService._normalize_top_p(
+            model_config.get("top_P", -1) if not is_workflow else model_config["top_P"]
+        )
+        top_K = ChatService._normalize_top_k(
+            model_config.get("top_K", -1) if not is_workflow else model_config["top_K"]
+        )
+        score_threshold = ChatService._normalize_score_threshold(
+            model_config.get("score_threshold", -1)
+            if not is_workflow
+            else model_config["score_threshold"]
+        )
 
         # Build messages array
         if not system_prompt:
@@ -195,11 +228,15 @@ class ChatService:
                     "content": [{"type": "text", "text": system_prompt}],
                 }
             ]
-            logger.info(f"chat '{user_message_content.conversation_id if not is_workflow else message_id} uses system prompt'")
+            logger.info(
+                f"chat '{user_message_content.conversation_id if not is_workflow else message_id} uses system prompt'"
+            )
 
         # Handle history based on mode
         if is_workflow and user_message_content.parent_id:
-            logger.info(f"{user_message_content.conversation_id} chatflow memory enabled, fetching parent nodes...")
+            logger.info(
+                f"{user_message_content.conversation_id} chatflow memory enabled, fetching parent nodes..."
+            )
             history_messages = await find_depth_parent_mesage(
                 user_message_content.conversation_id,
                 user_message_content.parent_id,
@@ -224,7 +261,9 @@ class ChatService:
         user_images = []
 
         # Handle temp_db_id (standardized field name)
-        temp_db_id = user_message_content.temp_db_id
+        temp_db_id = getattr(user_message_content, "temp_db_id", "") or getattr(
+            user_message_content, "temp_db", ""
+        )
         if temp_db_id:
             bases.append({"baseId": temp_db_id})
 
@@ -236,10 +275,12 @@ class ChatService:
             # Retrieval is best-effort: if embedding/search fails, continue without RAG context
             query_vecs = []
             try:
+                t_start = time.perf_counter()
                 query_embedding = await get_embeddings_from_httpx(
                     [user_message_content.user_message], endpoint="embed_text"
                 )
                 query_vecs = normalize_multivector(query_embedding)
+                t_embed_s += time.perf_counter() - t_start
             except Exception as e:
                 logger.warning(f"RAG retrieval skipped (embedding failed): {e}")
 
@@ -247,6 +288,7 @@ class ChatService:
                 for base in bases:
                     collection_name = f"colqwen{base['baseId'].replace('-', '_')}"
                     try:
+                        t_start = time.perf_counter()
                         if is_workflow:
                             # Workflow mode: check collection first
                             if vector_db_client.check_collection(collection_name):
@@ -264,10 +306,13 @@ class ChatService:
                             for score in scores:
                                 score.update({"collection_name": collection_name})
                             result_score.extend(scores)
+                        t_search_s += time.perf_counter() - t_start
                     except Exception as e:
                         if is_workflow:
                             # Workflow mode logs but doesn't add to results
-                            logger.debug(f"Collection {collection_name} check failed: {e}")
+                            logger.debug(
+                                f"Collection {collection_name} check failed: {e}"
+                            )
                         else:
                             # RAG mode logs and continues
                             logger.debug(
@@ -279,27 +324,21 @@ class ChatService:
 
                 # Get minio names and convert to base64
                 for score in cut_score:
-                    file_and_image_info = await db.get_file_and_image_info(
-                        score["file_id"], score["image_id"]
+                    t_start = time.perf_counter()
+                    file_and_image_info = (
+                        await repo_manager.file.get_file_and_image_info(
+                            score["file_id"], score["image_id"]
+                        )
                     )
+                    t_meta_s += time.perf_counter() - t_start
                     if not file_and_image_info["status"] == "success":
-                        if is_workflow:
-                            # Workflow mode: delete orphaned vectors
-                            vector_db_client.delete_files(
-                                score["collection_name"], [score["file_id"]]
-                            )
-                            logger.warning(
-                                f"file_id: {score['file_id']} not found or corresponding image does not exist; deleting Milvus vectors"
-                            )
-                        else:
-                            # RAG mode: just log warning
-                            logger.warning(
-                                "RAG hit skipped (metadata mismatch): "
-                                f"collection={score.get('collection_name')} "
-                                f"file_id={score.get('file_id')} "
-                                f"image_id={score.get('image_id')} "
-                                f"page_number={score.get('page_number')}"
-                            )
+                        logger.warning(
+                            "RAG hit skipped (metadata mismatch): "
+                            f"collection={score.get('collection_name')} "
+                            f"file_id={score.get('file_id')} "
+                            f"image_id={score.get('image_id')} "
+                            f"page_number={score.get('page_number')}"
+                        )
                         continue
 
                     file_used.append(
@@ -324,6 +363,7 @@ class ChatService:
                             "image_url": file_and_image_info["image_minio_filename"],
                         }
                     )
+                    rag_hits += 1
 
         # Build user message content
         user_text = user_message_content.user_message
@@ -334,13 +374,13 @@ class ChatService:
         user_message = {"role": "user", "content": content}
         messages.append(user_message)
 
-        send_messages = await replace_image_content(messages)
-
-        # DeepSeek Safety: Strip images if model is text-only
+        # DeepSeek Safety: Strip images if model is text-only.
+        # Also avoid expensive MinIO->base64 conversion when images will be removed anyway.
         if "deepseek" in model_name.lower():
             logger.info(
                 f"Model {model_name} detected as DeepSeek. Stripping image content for compatibility."
             )
+            send_messages = messages
             for msg in send_messages:
                 if isinstance(msg.get("content"), list):
                     msg["content"] = [
@@ -348,6 +388,23 @@ class ChatService:
                         for item in msg["content"]
                         if item.get("type") != "image_url"
                     ]
+        else:
+            t_start = time.perf_counter()
+            send_messages = await replace_image_content(messages)
+            t_minio_s += time.perf_counter() - t_start
+
+        # One-line timing log for retrieval stages (best-effort).
+        if bases:
+            logger.info(
+                "RAG timings "
+                f"embed_s={t_embed_s:.3f} "
+                f"search_s={t_search_s:.3f} "
+                f"meta_s={t_meta_s:.3f} "
+                f"minio_s={t_minio_s:.3f} "
+                f"hits={rag_hits} "
+                f"total_s={(time.perf_counter() - t0):.3f} "
+                f"mode={'workflow' if is_workflow else 'rag'}"
+            )
 
         # Use provider client for direct API access (no LiteLLM proxy)
         # If model_url is provided (legacy), use it; otherwise auto-detect provider
@@ -366,9 +423,8 @@ class ChatService:
 
         # Provider-specific parameter handling
         # DeepSeek reasoning models don't support temperature/top_p
-        is_deepseek_reasoner = (
-            "deepseek" in model_name.lower() and
-            ("reasoner" in model_name.lower() or "r1" in model_name.lower())
+        is_deepseek_reasoner = "deepseek" in model_name.lower() and (
+            "reasoner" in model_name.lower() or "r1" in model_name.lower()
         )
 
         if is_deepseek_reasoner:
@@ -433,7 +489,10 @@ class ChatService:
                     delta = chunk.choices[0].delta
 
                     # Handle reasoning content (thinking)
-                    if hasattr(delta, "reasoning_content") and delta.reasoning_content is not None:
+                    if (
+                        hasattr(delta, "reasoning_content")
+                        and delta.reasoning_content is not None
+                    ):
                         if not thinking_content:
                             thinking_content.append("</think>")
                         payload = json.dumps(
@@ -522,7 +581,9 @@ class ChatService:
                 try:
                     await client.close()
                 except Exception as close_error:
-                    logger.debug(f"Failed to close OpenAI client cleanly: {close_error}")
+                    logger.debug(
+                        f"Failed to close OpenAI client cleanly: {close_error}"
+                    )
 
             # Handle empty response
             if not full_response:
@@ -553,7 +614,7 @@ class ChatService:
                 logger.info(
                     f"chatflow {user_message_content.conversation_id} saving to mongodb..."
                 )
-                await db.chatflow_add_turn(
+                await repo_manager.chatflow.chatflow_add_turn(
                     chatflow_id=user_message_content.conversation_id,
                     message_id=message_id,
                     parent_message_id=user_message_content.parent_id,
@@ -570,7 +631,7 @@ class ChatService:
                 # RAG mode: always save
                 ai_message = {"role": "assistant", "content": "".join(full_response)}
                 try:
-                    await db.add_turn(
+                    await repo_manager.conversation.add_turn(
                         conversation_id=user_message_content.conversation_id,
                         message_id=message_id,
                         parent_message_id=user_message_content.parent_id,

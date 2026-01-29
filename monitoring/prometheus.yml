@@ -9,3 +9,6 @@ scrape_configs:
   - job_name: "layra-backend"
     static_configs:
       - targets: ["backend:8000"]
+  - job_name: "qdrant"
+    static_configs:
+      - targets: ["qdrant:6333"]

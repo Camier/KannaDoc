@@ -29,8 +29,7 @@ Examples:
   ./scripts/compose-clean logs -f --tail=200 backend
   
   # For different deployment modes, use -f flag:
-  ./scripts/compose-clean -f docker-compose-no-local-embedding.yml up -d --build
-  ./scripts/compose-clean -f docker-compose.gpu.yml up -d --build
+  ./scripts/compose-clean -f docker-compose.yml -f deploy/docker-compose.gpu.yml up -d --build
 
 Notes:
   - Runs from repo root.

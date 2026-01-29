@@ -18,6 +18,8 @@ class CodeSandbox:
         self.workspace_dir: Optional[str] = None
         self.failed = False
         self.shared_volume = settings.sandbox_shared_volume
+        self.shared_volume_source = None
+        self.sandbox_volume_name = os.environ.get("SANDBOX_VOLUME_NAME", "")
         os.makedirs(self.shared_volume, exist_ok=True)
 
     @classmethod
@@ -64,12 +66,23 @@ class CodeSandbox:
                 "error_type": "APIError",
             }
 
-        except Exception as e:
+        except (docker.errors.ImageNotFound, docker.errors.APIError) as e:
+            # Already handled above, but keep as fallback
             return {
                 "status": "error",
-                "message": f"Error: {str(e)}",
-                "error_type": "UnexpectedError",
+                "message": str(e),
+                "error_type": type(e).__name__,
             }
+        except (ValueError, TypeError) as e:
+            logger.error(f"Invalid input in delete_image: {e}")
+            return {
+                "status": "error",
+                "message": f"Invalid input: {str(e)}",
+                "error_type": type(e).__name__,
+            }
+        except Exception as e:
+            logger.exception(f"Unexpected error in delete_image")
+            raise
 
     async def __aenter__(self):
         session_id = uuid.uuid4().hex
@@ -88,6 +101,16 @@ class CodeSandbox:
             logger.warning(f"Image {self.image} not found, using default")
             self.image = "python-sandbox:latest"
 
+        if not self.sandbox_volume_name and not self.shared_volume_source:
+            self._detect_shared_volume_source()
+
+        volume_source = self.shared_volume_source or self.sandbox_volume_name
+        if not volume_source:
+            volume_source = "layra_sandbox_volume"
+            logger.warning(
+                "Sandbox volume source not detected; falling back to layra_sandbox_volume"
+            )
+
         loop = asyncio.get_event_loop()
         self.container = await loop.run_in_executor(
             None,
@@ -98,11 +121,33 @@ class CodeSandbox:
                 mem_limit="100m",
                 cpu_period=100000,
                 cpu_quota=50000,
-                volumes={"layra_sandbox_volume": {"bind": "/shared", "mode": "rw"}},
+                volumes={volume_source: {"bind": "/shared", "mode": "rw"}},
                 security_opt=["no-new-privileges"],
                 user="1000:1000",
             ),
         )
+
+    def _detect_shared_volume_source(self):
+        try:
+            container_id = os.environ.get("HOSTNAME")
+            if not container_id:
+                return
+            current = self.client.containers.get(container_id)
+            mounts = current.attrs.get("Mounts", [])
+            for mount in mounts:
+                if mount.get("Destination") != self.shared_volume:
+                    continue
+                if mount.get("Type") == "volume":
+                    self.shared_volume_source = mount.get("Name")
+                    return
+                if mount.get("Type") == "bind":
+                    self.shared_volume_source = mount.get("Source")
+                    return
+        except (docker.errors.APIError, docker.errors.NotFound, KeyError, AttributeError) as e:
+            logger.warning(f"Failed to detect sandbox volume source: {e}")
+        except Exception as e:
+            logger.exception(f"Unexpected error in _detect_shared_volume_source")
+            # Don't raise - this is a non-critical operation
 
     async def commit(self, repository: str, tag: str = "latest") -> str:
         if not self.container:
@@ -138,9 +183,13 @@ class CodeSandbox:
         with open(script_path, "w") as f:
             if inputs:
                 for k, v in inputs.items():
-                    v = repr(v) if v == "" else v
-                    f.write(f"{k} = {v}\n")
+                    if isinstance(v, str):
+                        f.write(f"{k} = {v!r}\n")
+                    else:
+                        f.write(f"{k} = {v}\n")
+            f.write("inputs = locals().copy()\n")
             f.write(code + "\n")
+            f.write("\nif 'main' in globals() and callable(main):\n    main(inputs)\n")
 
         container_script_path = (
             f"/shared/{os.path.basename(self.workspace_dir)}/{script_name}"

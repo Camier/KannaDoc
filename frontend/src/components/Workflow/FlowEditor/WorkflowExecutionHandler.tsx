@@ -13,6 +13,7 @@
  */
 
 import { useEffect, useRef } from "react";
+import { logger } from "@/lib/logger";
 import Cookies from "js-cookie";
 import { EventSourceParserStream } from "eventsource-parser/stream";
 import { CustomNode, Message } from "@/types/types";
@@ -34,14 +35,14 @@ interface WorkflowExecutionHandlerProps {
   onSetSelectedNodeId: (nodeId: string | null) => void;
   onSetSelectedEdgeId: (edgeId: string | null) => void;
   onSetGlobalDebugVariables: (vars: { [key: string]: string }) => void;
-  onSetMessages: (messages: { [key: string]: Message[] }) => void;
-  onSetEachMessages: (messages: { [key: string]: Message[] }) => void;
+  onSetMessages: React.Dispatch<React.SetStateAction<{ [key: string]: Message[] }>>;
+  onSetEachMessages: React.Dispatch<React.SetStateAction<{ [key: string]: Message[] }>>;
   onSetResumeDebugTaskId: (taskId: string) => void;
   onSetResumeInputTaskId: (taskId: string) => void;
   onSetCurrentInputNodeId: (nodeId: string | undefined) => void;
   onSetShowOutput: (show: boolean) => void;
   onSetSendInputDisabled: (disabled: boolean) => void;
-  onSetRunningChatflowLLMNodes: (nodes: CustomNode[]) => void;
+  onSetRunningChatflowLLMNodes: React.Dispatch<React.SetStateAction<CustomNode[]>>;
   onShowAlert: (message: string, status: string) => void;
   countRef: React.MutableRefObject<number>;
   countListRef: React.MutableRefObject<string[]>;
@@ -555,7 +556,7 @@ export const WorkflowExecutionHandler: React.FC<WorkflowExecutionHandlerProps> =
               }
             }
           } catch (error) {
-            console.error("SSE Error:", error);
+            logger.error("SSE Error:", error);
             onShowAlert(t("sseError"), "error");
           } finally {
             onRunningChange(false);

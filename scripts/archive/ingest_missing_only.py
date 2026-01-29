@@ -1,0 +1,202 @@
+import os
+import sys
+import requests
+import time
+
+# Configuration
+API_BASE = os.environ.get("LAYRA_API_BASE", "http://localhost:8090/api")
+USERNAME = os.environ.get("THESIS_USERNAME", "thesis")
+PASSWORD = os.environ.get("THESIS_PASSWORD")
+KB_ID = os.environ.get("KB_ID", "thesis_e763055d-f707-42bb-86b4-afb373c5f03a")
+CORPUS_DIR = os.environ.get("CORPUS_DIR", "/LAB/@thesis/layra/literature/corpus")
+REQUEST_TIMEOUT = int(os.environ.get("INGEST_HTTP_TIMEOUT", "60"))
+BATCH_SIZE = int(os.environ.get("INGEST_BATCH_SIZE", "2"))
+PAUSE = float(os.environ.get("INGEST_BATCH_PAUSE", "2"))
+MAX_RETRIES = int(os.environ.get("INGEST_HTTP_RETRIES", "1"))
+
+if not PASSWORD:
+    print("Error: THESIS_PASSWORD must be set.")
+    sys.exit(1)
+if not os.path.isdir(CORPUS_DIR):
+    print(f"Error: CORPUS_DIR not found or not a directory: {CORPUS_DIR}")
+    sys.exit(1)
+
+# The specific list of 103 missing files identified by audit
+MISSING_FILES = [
+"2004 - World Bank - Indigenous knowledge local pathways to global development.pdf",
+"2005 - Digby - Self-Medication and the Trade in Medicine within a Multi-Ethnic Context A Case Study of South Africa.pdf",
+"2007 - Low - Different Histories of Buchu Euro-American Appropriation of San and Khoekhoe Knowledge of Buchu Plants.pdf",
+"2007 - Martorell - Ezcurra - The narrow-leaf syndrome a functional and evolutionary approach to the form of f.pdf",
+"2007 - Stafford - Monoamine oxidase inhibition by southern African traditional medicinal plants.pdf",
+"2008 - Laird - Access and Benefit-Sharing in Practice Trends in Partnerships across Sectors.pdf",
+"2008 - Rothman - Dopamineserotonin releasers as medications for stimulant addictions.pdf",
+"2008 - Wyk - A broad review of commercially important southern African medicinal plants.pdf",
+"2008 - Wyk - A review of Khoi-San and Cape Dutch medical ethnobotany.pdf",
+"2011 - Shikanga - In Vitro Permeation of Mesembrine Alkaloids from Sceletium tortuosum across Porcine Buccal Sublingua.pdf",
+"2011 - Spina - PDE4-inhibitors A novel targeted therapy for obstructive airways disease.pdf",
+"2011 - Wyk - The potential of South African plants in the development of new medicinal products.pdf",
+"2012 - Shikanga - The chemotypic variation of Sceletium tortuosum alkaloids and commercial product formulations.pdf",
+"2013 - Street - Commercially Important Medicinal Plants of South Africa A Review.pdf",
+"2013 - Torregrossa - Learning to forget manipulating extinction and reconsolidation processes to treat addiction.pdf",
+"2014 - Dimpfel - Electropharmacogram of Sceletium tortuosum extract based on spectral local field power in conscious.pdf",
+"2014 - Eiden - VMAT2 a dynamic regulator of brain monoaminergic neuronal function interacting with drugs of abuse.pdf",
+"2014 - Loria - Effects of Sceletium tortuosum in rats.pdf",
+"2014 - Maurer - GC-MS LC-MSn LC-high resolution-MSn and NMR studies on the metabolism and toxicological detection of.pdf",
+"2014 - Naoi - Modulation of monoamine oxidase MAO expression in neuropsychiatric disorders genetic and environment.pdf",
+"2014 - Schell - Sceletium tortuosum and Mesembrine A Potential Alternative Treatment for Depression.pdf",
+"2014 - Sobiecki - Psychoactive Plants A Neglected Area of Ethnobotanical Research in Southern Africa.pdf",
+"2014 - Valente - Correlates of hyperdiversity in southern African ice plants Aizoaceae.pdf",
+"2015 - Pickard - Alternative models of addiction.pdf",
+"2015 - Schifano - Novel psychoactive substances of interest for psychiatry.pdf",
+"2015 - wemyss - Exploring Zembrin Extract Derived from South African Plant Sceletium tortuosum in Targeting cAMP-dri.pdf",
+"2016 - Carpenter - The effects of Sceletium tortuosum L. N.E. Br. extract fraction in the chick anxiety-depression mode.pdf",
+"2016 - Coetzee - High-mesembrine Sceletium extract Trimesemine is a monoamine releasing agent rather than only a sele.pdf",
+"2016 - Fajemiroye - Treatment of anxiety and depression medicinal plants in retrospect.pdf",
+"2016 - Kapewangolo - Sceletium tortuosum demonstrates in vitro anti-HIV and free radical scavenging activity.pdf",
+"2016 - Liu - Phosphodiesterase 4 inhibitors and drugs of abuse current knowledge and therapeutic opportunities.pdf",
+"2016 - Morris - Royal pharmaceuticals Bioprospecting rights and traditional authority in South Africa.pdf",
+"2017 - Bolger - The PDE4 cAMP-Specific Phosphodiesterases Targets for Drugs with Antidepressant and Memory-Enhancing.pdf",
+"2017 - Khan - Quantification of mesembrine and mesembrenone in mouse plasma using UHPLCQToFMS Application to a pha.pdf",
+"2017 - Klak - Out of southern Africa Origin biogeography and age of the Aizooideae Aizoaceae.pdf",
+"2017 - Krstenansky - Mesembrine alkaloids - Review of their occurrence chemistry and pharmacology.pdf",
+"2017 - Lewis - Addiction and the Brain Development Not Disease.pdf",
+"2017 - Patnala - Sceletium Plant Species Alkaloidal Components Chemistry and Ethnopharmacology.pdf",
+"2018 - Bennett - Immunomodulatory effects of Sceletium tortuosum TrimesemineTM elucidated in vitro_ Implications for.pdf",
+"2018 - Bennett - Sceletium tortuosum may delay chronic disease progression via alkaloid-dependent antioxidant or anti.pdf",
+"2018 - Dimpfel - Effect of Zembrin and four of its alkaloid constituents on electric excitability of the rat hippocam.pdf",
+"2018 - Gericke - Kabbos Kwain The Past Present and Possible Future of Kanna.pdf",
+"2018 - Gericke - SCELETIUM EXTRACT AND USES THEREOF - EP 2408460 B1.pdf",
+"2018 - Manganyi - Phylogenetic analysis and diversity of novel endophytic fungi isolated from medicinal plant Sceletiu.pdf",
+"2018 - Nordling - How decolonization could reshape South African science.pdf",
+"2018 - Sandasi - Non-destructive quality assessment of herbal tea blends using hyperspectral imaging.pdf",
+"2018 - Veale - NMR structural elucidation of channaine an unusual alkaloid from Sceletium tortuosum.pdf",
+"2018 - Volkow - Neurobiology of addiction a neurocircuitry analysis.pdf",
+"2019 - Chen - To ferment or not to ferment Sceletium tortuosum - Do our ancestors hold the answer.pdf",
+"2019 - Druart - Emerging Roles of Complement in Psychiatric Disorders.pdf",
+"2019 - JAPR - JAPR Galley Proof.pdf",
+"2019 - Kiraly - Neuroimmune mechanisms of psychostimulant and opioid use disorders.pdf",
+"2019 - Koob - Neurocircuitry of Addiction.pdf",
+"2019 - Makolo - Mesembrine - The archetypal psycho-active Sceletium alkaloid.pdf",
+"2019 - Manganyi - Antibacterial activity of endophytic fungi isolated from Sceletium tortuosum L. Kougoed.pdf",
+"2019 - Mintah - Medicinal Plants for Treatment of Prevalent Diseases.pdf",
+"2019 - Sanchez - Anxiety in obesity - Is neuroinflammation the critical link.pdf",
+"2019 - Wyk - Ethnobotanical research in sub-Saharan Africa - documenting and analysing indigenous knowledge about.pdf",
+"2019 - Yin - Sceletorines A and B two minor novel dimeric alkaloids of Mesembryanthemum tortuosum synonym Sceleti.pdf",
+"2020 - Akinyede - Review Ethnopharmacology Therapeutic Properties and Nutritional Potentials of Carpobrotus edulis.pdf",
+"2020 - Badmaev3 - Sceletium tortuosum Zembrin ameliorates experimentally induced anxiety in healthy volunteers.pdf",
+"2020 - Bhat - Phosphodiesterase-4 enzyme as a therapeutic target in neurological disorders.pdf",
+"2020 - Carlier - Pharmacology of Herbal Sexual Enhancers A Review of Psychiatric and Neurological Adverse Effects.pdf",
+"2020 - El-Raouf - Taxonomic significance of leaves in family Aizoaceae.pdf",
+"2020 - Faber - Variabilities in alkaloid concentration of Sceletium tortuosum L. N.E. Br in response to different s.pdf",
+"2020 - MD - Prevalence of symptoms of anxiety and depression in patients with inflammatory bowel disease a syste.pdf",
+"2020 - Maphanga - Screening selected medicinal plants for potential anxiolytic activity using an in vivo zebrafish mod.pdf",
+"2020 - Said - Antidepressant potential of Mesembryanthemum cordifolium roots assisted by metabolomic analysis.pdf",
+"2020 - Unknown - Journal of Medical Research and Practice.pdf",
+"2020 - al. - Ergogenic Effects of 8 Days of Sceletium tortuosum Supplementation on Mood Visual Tracking and React.pdf",
+"2021 - Amit - In Silico Docking Analysis of Antidepressant Phytoconstituents of Sceletium tortuosum.pdf",
+"2021 - Ateba - A Chewable Cure Kanna Biological and Pharmaceutical Properties of Sceletium tortuosum.pdf",
+"2021 - Berk - Plant-based Medicines Phytoceuticals in the Treatment of Psychiatric Disorders A Meta-review of Meta.pdf",
+"2021 - Gericke - An acute dose-ranging evaluation of the antidepressant properties of Sceletium tortuosum Zembrin ver.pdf",
+"2021 - Luo - Asymmetric total synthesis and antidepressant activity of sila-mesembranol bearing a silicon stereocenter.pdf",
+"2021 - Mandyam - Plasticity in the Hippocampus Neurogenesis and Drugs of Abuse.pdf",
+"2021 - Namba - Neuroimmune Mechanisms as Novel Treatment Targets for Substance Use Disorders and Associated Comorbi.pdf",
+"2021 - Olatunji - Sceletium tortuosum A review on its phytochemistry pharmacokinetics biological and clinical activiti.pdf",
+"2021 - Rombaut - Rombaut - PDE inhibition in distinct cell types to reclaim the balance of synaptic plastic.pdf",
+"2021 - Sreekissoon - In vitro and ex vivo vegetative propagation and cytokinin profiles of Sceletium tortuosum L. N. E. B.pdf",
+"2021 - al - Conceptual framework for psychosocial health management using KhoiSan health dialogues.pdf",
+"2021 - al. - Sceletium for Managing Anxiety Depression and Cognitive Impairment A Traditional Herbal Medicine in.pdf",
+"2022 - Jun - A network pharmacology-based approach to explore the therapeutic potential of Sceletium tortuosum in.pdf",
+"2022 - Kalicharan - Ethnopharmacology and biological activities of the Aizoaceae.pdf",
+"2022 - Maphanga - Mesembryanthemum tortuosum L. alkaloids modify anxiety-like behaviour in a zebrafish model.pdf",
+"2022 - PI - Psychological Effects of 8 Weeks Supplementation With Sceletium Tortuosum Extract Zembrin.pdf",
+"2022 - Smith - First People The Lost History of the Khoisan.pdf",
+"2022 - al. - Antidepressant Effects of South African Plants An Appraisal of Ethnobotanical Surveys Ethnopharmacol.pdf",
+"2023 - ESSM - KH-001 alkaloid delays ejaculation in PCA rat model.pdf",
+"2023 - Gericke - Sceletium tortuosum -derived mesembrine significantly contributes to the anxiolytic effect of Zembri.pdf",
+"2023 - Plant - The Importance of Sceletium tortuosum L. N.E. Brown and Its Viability as a Traditional African Medic.pdf",
+"2023 - Sibeko - Traditional perinatal plant knowledge in Sub-Saharan Africa Comprehensive compilation and secondary.pdf",
+"2023 - Viljoen - The South African Herbal Pharmacopoeia Monographs of Medicinal and Aromatic Plants.pdf",
+"2023 - Wynberg - Biopiracy Crying wolf or a lever for equity and conservation.pdf",
+"2023 - Yates - Determinants of Addiction Neurobiological Behavioral Cognitive and Sociocultural Factors.pdf",
+"2024 - Kang - The Glucose-Lowering Effect of Mesembryanthemum crystallinum and D-Pinitol Studies on Insulin Secret.pdf",
+"2024 - Stafford - Skeletons in the closet Using a bibliometric lens to visualise phytochemical and pharmacological act.pdf",
+"2025 - Cuomo - Inflammatory and Immune Biomarkers in Mood Disorders From Mechanistic Pathways to Clinical Translati.pdf",
+"2025 - Hammam - Comparative study of the bioactivities of Mesembryanthemum crystallinum polysaccharides and their co.pdf",
+"2025 - Harvey - Neuro-Inflammatory and Behavioral Changes Are Selectively Reversed by Sceletium tortuosum Zembrin an.pdf",
+"2025 - Kaschula - Differential impact of extracts from distinct Sceletium tortuosum chemotypes on central neurotransmi.pdf",
+"2025 - Lepule - Neuroprotective and neurorestorative properties of Mesembryanthemum tortuosum in a Parkinsons diseas.pdf",
+"2025 - ed. - The Indigenous World.pdf"
+]
+
+def get_token(session):
+    url = f"{API_BASE}/auth/login"
+    data = {
+        "username": USERNAME,
+        "password": PASSWORD
+    }
+    try:
+        response = session.post(url, data=data, timeout=REQUEST_TIMEOUT)
+        response.raise_for_status()
+        return response.json()["access_token"]
+    except Exception as e:
+        print(f"Error logging in: {e}")
+        sys.exit(1)
+
+def upload_files(session, token, kb_id, directory):
+    headers = {"Authorization": f"Bearer {token}"}
+    upload_url = f"{API_BASE}/base/upload/{kb_id}"
+    
+    files_to_upload = [os.path.join(directory, f) for f in MISSING_FILES]
+    files_to_upload.sort()
+    
+    total = len(files_to_upload)
+    
+    print(f"🚀 UPLOADING MISSING FILES ONLY: {total} files")
+    
+    for i in range(0, total, BATCH_SIZE):
+        batch = files_to_upload[i:i + BATCH_SIZE]
+        files_payload = []
+        opened_files = []
+        
+        batch_names = ", ".join([os.path.basename(f) for f in batch])
+        print(f"[{i+len(batch)}/{total}] Uploading: {batch_names}...")
+        
+        try:
+            for file_path in batch:
+                if not os.path.exists(file_path):
+                    print(f"  ⚠️ Warning: File not found: {file_path}")
+                    continue
+                    
+                f = open(file_path, "rb")
+                opened_files.append(f)
+                files_payload.append(("files", (os.path.basename(file_path), f, "application/pdf")))
+            
+            if not files_payload:
+                continue
+
+            response = None
+            for attempt in range(1, MAX_RETRIES + 1):
+                response = session.post(
+                    upload_url, headers=headers, files=files_payload, timeout=REQUEST_TIMEOUT
+                )
+                if response.status_code == 200:
+                    print("  ✅ Success")
+                    break
+                if attempt == MAX_RETRIES:
+                    print(f"  ❌ Failed ({response.status_code}): {response.text}")
+                else:
+                    time.sleep(PAUSE)
+                
+        except Exception as e:
+            print(f"  ⚠️ Error: {e}")
+        finally:
+            for f in opened_files:
+                f.close()
+        
+        time.sleep(PAUSE)
+
+if __name__ == "__main__":
+    session = requests.Session()
+    token = get_token(session)
+    upload_files(session, token, KB_ID, CORPUS_DIR)
+    print("\n🎉 Targeted ingestion completed. Check backend logs for processing progress.")

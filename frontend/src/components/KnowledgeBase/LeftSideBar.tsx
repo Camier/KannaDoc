@@ -128,7 +128,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
         </button>
       </div>
 
-      <div className="bg-gray-800 rounded-2xl overflow-scroll min-h-[90%] max-h-[90%] scrollbar-hide p-2">
+      <div className="bg-gray-900 rounded-2xl overflow-scroll min-h-[90%] max-h-[90%] scrollbar-hide p-2">
         {filteredBases.map((base, index) => (
           <div
             key={index}
@@ -210,7 +210,7 @@ const LeftSideBar: React.FC<LeftSideBarProps> = ({
                 {isSettingsOpen[index] && ( // 根据数组状态显示悬浮框
                   <div
                     ref={ref}
-                    className="absolute right-0 top-full mt-1 bg-gray-800 text-white rounded-2xl border-2 py-2 px-1 border-gray-700 shadow-lg z-10"
+                    className="absolute right-0 top-full mt-1 bg-gray-900 text-white rounded-2xl border-2 py-2 px-1 border-gray-700 shadow-lg z-10"
                   >
                     <div
                       className="flex gap-2 cursor-pointer hover:bg-indigo-600 hover:text-white px-2 py-1 rounded-xl"

@@ -283,6 +283,14 @@ Traditional RAG systems fail because they:
 
 <h2 id="latest-updates">🚀 Latest Updates</h2>
 
+**(2026.1.29) 🐛 Critical Fixes & ZhipuAI Coding Plan Support**:
+
+- **Fixed MongoDB Schema Drift**: Migrated model_config collection to new schema format with `models` array
+- **Fixed SSE Endpoint Bug**: Corrected `message_id` parameter passing in `/api/v1/sse/chat`
+- **Added ZhipuAI Coding Plan Provider**: GLM-4.5, GLM-4.6, GLM-4.7 now supported via coding plan endpoint
+- **Database Documentation**: Updated docs to reflect `MONGODB_DB=chat_mongodb` (not `layra`)
+- **See**: [docs/REMEDIATION_SESSION_2026-01-29.md](docs/REMEDIATION_SESSION_2026-01-29.md)
+
 **(2025.8.4) ✨ Expanded Embedding Model Support**:
 
 - **More Embedding Model Support**:
@@ -385,14 +393,14 @@ LAYRA supports multiple deployment configurations for different use cases:
 |------|--------------|-------------|----------|
 | **Standard (GPU)** | `docker-compose.yml` | Full deployment with local ColQwen2.5 embeddings | Production, research, development with NVIDIA GPU |
 | **Jina API (No GPU)** | `docker-compose.yml` (set `EMBEDDING_MODEL=jina_embeddings_v4`) | Cloud embeddings via Jina API | Limited/no GPU resources, quick testing |
-| **Thesis/Solo** | `deploy/docker-compose.thesis.yml` | Simplified single-user deployment with Neo4j | Thesis demonstrations, solo research, simplified auth |
 | **Development** | `docker-compose.override.yml` | Development overrides (extends base) | Local development with custom settings |
+
+> **Note:** The legacy thesis compose file was removed. For single-user demos, use the standard stack and set `SINGLE_TENANT_MODE=true`.
 
 #### Key Differences:
 
 - **Standard**: Full feature set, requires 16GB+ GPU VRAM for ColQwen2.5
 - **Jina API**: No local GPU needed, uses cloud API (requires Jina API key) - same compose file, different env config
-- **Thesis**: Simplified for single-user, includes Neo4j graph database (infrastructure-ready, application integration verified)
 - **Development**: Local development overrides (hot reload, debug settings)
 
 > **Note**: All modes use the same `.env` configuration. Copy `.env.example` to `.env` and adjust values for your deployment.
@@ -433,51 +441,33 @@ JINA_EMBEDDINGS_V4_URL=https://api.jina.ai/v1/embeddings
 
 ##### 2. Build and Start Service
 
-**Option A**: Standard GPU Deployment (recommended for GPUs with >16GB VRAM)
+**Standard Deployment** (Unified & Optimized)
 
 ```bash
 # Initial startup will download ~15GB model weights (be patient)
-./scripts/compose-clean up -d --build  # Uses docker-compose.yml (default)
-
-# Monitor logs in real-time (replace <service_name> with actual service name)
-./scripts/compose-clean logs -f <service_name>
-```
-
-**Option B**: Jina API Deployment (no local GPU required)
-
-```bash
-# First, set EMBEDDING_MODEL=jina_embeddings_v4 and JINA_API_KEY in .env
-# Uses cloud embeddings via Jina API (no local model download)
 ./scripts/compose-clean up -d --build
+```
 
-# Monitor logs in real-time
+**Shared Access Mode**:
+To allow all users to access shared knowledge bases (useful for demos or single-user scenarios), set this in your `.env`:
+```bash
+SINGLE_TENANT_MODE=true
+```
+
+**Monitor Logs**:
+```bash
 ./scripts/compose-clean logs -f <service_name>
 ```
 
-**Option C**: Thesis/Solo Deployment (simplified single-user)
+**Deployment Features**:
+- **GPU Optimized**: Automatically configures PyTorch for available NVIDIA GPUs.
+- **Multi-LLM Support**: Configure keys for OpenAI, DeepSeek, Anthropic, and more in `.env`.
+- **Full Stack**: Includes Milvus, MinIO, Redis, MySQL, MongoDB, and Kafka.
 
-```bash
-# For thesis demonstrations or single-user research with Neo4j (infrastructure-ready, application integration verified)
-./scripts/deploy-thesis.sh  # Automated deployment script
-
-# Or manually:
-# cp .env.example .env (then edit for your setup)
-# docker compose -f deploy/docker-compose.thesis.yml --env-file .env up -d --build
-```
-
-**📚 Thesis Deployment Guide**: See [`docs/docs/RAG-Chat.md`](docs/docs/RAG-Chat.md) for detailed RAG chat instructions and [`docs/ssot/stack.md`](docs/ssot/stack.md) for system architecture details.
-
-**✅ Current Verification (2026-01-22)**:
-- 26 PDFs ingested (ethnopharmacology focus: Sceletium tortuosum, PDE4 inhibitors, monoamine oxidase, etc.)
-- 180,208 vector embeddings stored in Milvus (ColQwen image embeddings)
-- GPU embeddings operational via ColQwen2.5 (model-server GPU)
-- Neo4j accessible at http://localhost:7474 (password: from NEO4J_PASSWORD)
-- Frontend: http://localhost:8090 (user: `thesis`, password: `thesis_deploy_b20f1508a2a983f6`)
-- Knowledge Base ID: `thesis_34f1ab7f-5fbe-4a7a-bf73-6561f8ce1dd7`
-- Workflow deployed: `thesis_74a550b6-1746-4e4f-b9c0-881ac8717341` (Thesis Blueprint Minutieux V1)
-- Workflow execution started: Task ID `a12ae5c9-f051-4c2e-b26a-39d5ab6cbe7d`
-- API accessible with JWT token (see quickstart for examples)
-- Milvus internal connectivity confirmed (port 19530 not exposed to host)
+**📚 Thesis Verification**:
+This unified deployment fully supports the "Thesis Blueprint" workflows originally designed for the specialized thesis stack.
+- **Knowledge Base**: `Thesis Corpus` (129 files) is preserved and accessible.
+- **Graph Features**: Neo4j support is built-in (reserved for future roadmap).
 
 > **Important**: In this repo, always run Compose via `./scripts/compose-clean` (it uses a sanitized environment + `--env-file .env`). This prevents a polluted host shell from overriding `.env` values during variable interpolation. See `docs/RUNBOOK_COMPOSE_CLEAN.md`.
 

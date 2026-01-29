@@ -152,7 +152,8 @@ docker compose logs -f <container_name>
 
 ```bash
 # 首次启动不会下载任何模型权重（快速启动！）
-docker compose -f docker-compose-no-local-embedding.yml up -d --build
+# 设置 EMBEDDING_MODEL=jina_embeddings_v4 和 JINA_API_KEY
+docker compose up -d --build
 
 # 实时监控日志（将<container_name>替换为实际容器名）
 docker compose logs -f <container_name>
@@ -350,16 +351,16 @@ LAYRA 支持多种部署配置，适用于不同使用场景：
 | 模式 | Compose 文件 | 描述 | 适用场景 |
 |------|--------------|------|----------|
 | **标准 (GPU)** | `docker-compose.yml` | 完整部署，包含本地 ColQwen2.5 嵌入模型 | 生产环境、研究、开发（需 NVIDIA GPU） |
-| **Jina API (无 GPU)** | `docker-compose-no-local-embedding.yml` | 使用 Jina API 云端嵌入模型 | 无 GPU 资源、快速测试 |
-| **论文/单用户** | `docker-compose.thesis.yml` | 简化单用户部署，包含 Neo4j 图数据库 | 论文演示、个人研究、简化认证 |
-| **GPU 优化** | `docker-compose.gpu.yml` | GPU 优化配置 | 最大 GPU 性能 |
+| **Jina API (无 GPU)** | `docker-compose.yml` (设置 `EMBEDDING_MODEL=jina_embeddings_v4`) | 使用 Jina API 云端嵌入模型 | 无 GPU 资源、快速测试 |
+| **GPU 优化** | `deploy/docker-compose.gpu.yml` | GPU 优化配置 | 最大 GPU 性能 |
 | **开发** | `docker-compose.override.yml` | 开发环境覆盖配置（扩展基础配置） | 本地开发，自定义设置 |
+
+> **注意**：旧的论文专用 compose 文件已移除。单用户演示请使用标准模式并设置 `SINGLE_TENANT_MODE=true`。
 
 #### 主要区别：
 
 - **标准模式**：完整功能集，需要 16GB+ GPU 显存运行 ColQwen2.5
 - **Jina API 模式**：无需本地 GPU，使用云端 API（需要 Jina API 密钥）
-- **论文模式**：简化单用户部署，包含 Neo4j 图数据库（基础设施就绪，应用集成待实现），简单认证
 - **GPU 优化模式**：针对 NVIDIA GPU 性能优化
 - **开发模式**：本地开发环境覆盖（热重载、调试设置）
 
@@ -396,41 +397,31 @@ JINA_EMBEDDINGS_V4_URL=https://api.jina.ai/v1/embeddings
 
 ```bash
 # 首次启动将下载约15GB模型（请耐心等待）
-./compose-clean up -d --build  # 使用 docker-compose.yml（默认）
+./scripts/compose-clean up -d --build  # 使用 docker-compose.yml（默认）
 
 # 实时监控日志（将<container_name>替换为实际容器名）
-./compose-clean logs -f <container_name>
+./scripts/compose-clean logs -f <container_name>
 ```
 
 **选项B**: Jina API 部署 (无需本地 GPU)
 
 ```bash
+# 首先在 .env 中设置 EMBEDDING_MODEL=jina_embeddings_v4 和 JINA_API_KEY
 # 使用 Jina API 云端嵌入模型（无需下载本地模型）
-./compose-clean -f docker-compose-no-local-embedding.yml up -d --build
+./scripts/compose-clean up -d --build
 
 # 实时监控日志
-./compose-clean logs -f <container_name>
+./scripts/compose-clean logs -f <container_name>
 ```
 
-**选项C**: 论文/单用户部署 (简化单用户)
-
-```bash
-# 适用于论文演示或个人研究，包含 Neo4j（基础设施就绪，应用集成待实现）
-./deploy-thesis.sh  # 自动化部署脚本
-
-# 或手动部署：
-# cp .env.thesis .env
-# docker compose -f docker-compose.thesis.yml up -d --build
-```
-
-**选项D**: GPU 优化部署
+**选项C**: GPU 优化部署
 
 ```bash
 # 最大 GPU 性能配置
-./compose-clean -f docker-compose.gpu.yml up -d --build
+./scripts/compose-clean -f docker-compose.yml -f deploy/docker-compose.gpu.yml up -d --build
 ```
 
-> **注意**：在本仓库中，始终通过 `./compose-clean` 运行 Compose 命令（它使用净化的环境 + `--env-file .env`）。这样可以防止主机 shell 环境变量在变量插值时覆盖 `.env` 值。详见 `docs/RUNBOOK_COMPOSE_CLEAN.md`。
+> **注意**：在本仓库中，始终通过 `./scripts/compose-clean` 运行 Compose 命令（它使用净化的环境 + `--env-file .env`）。这样可以防止主机 shell 环境变量在变量插值时覆盖 `.env` 值。详见 `docs/RUNBOOK_COMPOSE_CLEAN.md`。
 
 #### 🔧 故障排除指南
 
@@ -438,15 +429,15 @@ JINA_EMBEDDINGS_V4_URL=https://api.jina.ai/v1/embeddings
 
 ```bash
 # 查看容器日志：
-docker compose logs <容器名称>
+./scripts/compose-clean logs <容器名称>
 ```
 
 常用修复方案：
 
 ```bash
 nvidia-smi  # 验证GPU识别状态
-docker compose down && docker compose up --build  # 保留数据重建
-docker compose down -v && docker compose up --build  # ⚠️ 删除所有数据完全重建，谨慎操作
+./scripts/compose-clean down && ./scripts/compose-clean up -d --build  # 保留数据重建
+./scripts/compose-clean down -v && ./scripts/compose-clean up -d --build  # ⚠️ 删除所有数据完全重建，谨慎操作
 ```
 
 #### 🛠️ 服务管理命令
@@ -455,7 +446,7 @@ docker compose down -v && docker compose up --build  # ⚠️ 删除所有数据
 
 | **场景**                       | **命令**                                        | **效果**                |
 | ------------------------------ | ----------------------------------------------- | ----------------------- |
-| **停止服务**<br>(保留数据)     | `docker compose stop`                           | 停止容器但保持容器完整  |
+| **停止服务**<br>(保留数据)     | `./scripts/compose-clean stop`                  | 停止容器但保持容器完整  |
 | **停止后重启**                 | `docker compose start`                          | 重启已停止的容器        |
 | **代码更新后重建**             | `docker compose up -d --build`                  | 重新构建镜像并创建容器  |
 | **重建容器**<br>(保留数据)     | `docker compose down`<br>`docker compose up -d` | 销毁后重新创建容器      |
@@ -539,7 +530,7 @@ LAYRA 提供完整的交互式 API 文档，通过 FastAPI 内置的 Swagger UI 
 生产环境部署时，请配置 CORS 允许的来源：
 
 ```bash
-# 在 .env 或 .env.thesis 中配置
+# 在 .env 中配置
 ALLOWED_ORIGINS=http://localhost:3000,https://your-domain.com
 ```
 

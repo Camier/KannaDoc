@@ -32,7 +32,14 @@ wait_for_db() {
     wait_for_service mongodb 27017
     wait_for_service kafka 9092
     wait_for_service minio 9000
-    wait_for_service milvus-standalone 19530
+
+    # Wait for Milvus only if VECTOR_DB=milvus
+    if [ "${VECTOR_DB:-milvus}" = "milvus" ]; then
+        wait_for_service milvus-standalone 19530
+    else
+        echo "跳过 Milvus 等待 (VECTOR_DB=${VECTOR_DB:-qdrant})"
+    fi
+
     wait_for_service unoserver 2003
 
     # 设置日志环境变量
@@ -96,8 +103,43 @@ asyncio.run(clean_stale_migration())
 "
         fi
 
+        set +e
         alembic revision --autogenerate -m "Init Mysql"
-        alembic upgrade head
+        REV_STATUS=$?
+        set -e
+
+        if [ $REV_STATUS -ne 0 ]; then
+            echo "自动生成迁移失败，创建空的初始迁移以继续启动..."
+        fi
+
+        if ! ls migrations/versions/*.py >/dev/null 2>&1; then
+            alembic revision -m "Init Mysql" --empty
+        fi
+
+        HAS_USERS_TABLE=$(python - <<'PY'
+import asyncio
+import os
+from sqlalchemy import text
+from sqlalchemy.ext.asyncio import create_async_engine
+
+async def main() -> None:
+    engine = create_async_engine(os.environ["DB_URL"])
+    async with engine.connect() as conn:
+        result = await conn.execute(text("SHOW TABLES LIKE 'users'"))
+        print("1" if result.fetchone() else "0")
+    await engine.dispose()
+
+asyncio.run(main())
+PY
+)
+
+        if [ "$HAS_USERS_TABLE" = "1" ]; then
+            echo "检测到现有表，使用 stamp head 跳过建表"
+            alembic stamp head
+        else
+            alembic upgrade head
+        fi
+        mkdir -p migrations_previous
         cp -r migrations/* migrations_previous/
     else
         echo "数据库已是最新，无需迁移"

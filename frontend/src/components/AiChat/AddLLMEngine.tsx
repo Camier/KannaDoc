@@ -21,7 +21,7 @@ const AddLLMEngine: React.FC<AddLLMEngineProps> = ({
   const t = useTranslations("AddLLMEngine");
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-      <div className="bg-gray-800 rounded-3xl p-6 w-[35%]">
+      <div className="bg-gray-900 rounded-3xl p-6 w-[35%]">
         <div className="flex items-center gap-2 mb-6 px-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -44,8 +44,8 @@ const AddLLMEngine: React.FC<AddLLMEngineProps> = ({
           <input
             type="text"
             placeholder={t("placeholder")}
-            className={`w-full px-4 py-2 mb-2 border bg-gray-700 text-gray-100 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 ${
-              nameError ? "border-red-500" : "border-gray-600"
+            className={`w-full px-4 py-2 mb-2 border bg-gray-800 text-gray-100 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 ${
+              nameError ? "border-red-500" : "border-gray-700"
             }`}
             value={newModelName}
             onChange={(e) => {
@@ -68,7 +68,7 @@ const AddLLMEngine: React.FC<AddLLMEngineProps> = ({
         <div className="flex justify-end gap-2 mt-6">
           <button
             onClick={() => setShowAddLLM(false)}
-            className="px-4 py-2 text-gray-300 border border-gray-600 rounded-full hover:bg-gray-700 cursor-pointer"
+            className="px-4 py-2 text-gray-300 border border-gray-700 rounded-full hover:bg-gray-800 cursor-pointer"
           >
             {t("cancel")}
           </button>

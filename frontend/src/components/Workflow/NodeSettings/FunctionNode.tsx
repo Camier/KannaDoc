@@ -67,7 +67,6 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
     updatePackageInfos,
     removePackageInfos,
     updateImageUrl,
-    updateDockerImageUse,
   } = useFlowStore();
 
   const {
@@ -93,19 +92,18 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
       if (user?.name) {
         const response = await getDockerImages(user.name);
         setSystemDockerImages(response.data.images);
-        if (
-          !(response.data.images as string[]).includes(
-            dockerImageUseRef.current
-          )
-        ) {
-          updateDockerImageUse("python-sandbox:latest");
-        }
-      }
-    } catch (error) {
-      logger.error("Get Docker Images Error:", error);
-    }
-  }, [user?.name, setSystemDockerImages, updateDockerImageUse]);
-
+                  if (
+                    !(response.data.images as string[]).includes(
+                      dockerImageUseRef.current
+                    )
+                  ) {
+                    updateGlobalDockerImageUse("python-sandbox:latest");
+                  }
+                }
+              } catch (error) {
+                logger.error("Get Docker Images Error:", error);
+              }
+            }, [user?.name, setSystemDockerImages, updateGlobalDockerImageUse]);
   useEffect(() => {
     fetchDockerImages();
   }, [refreshDockerImages, fetchDockerImages]);
@@ -168,7 +166,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
           setSystemDockerImages((prev) =>
             prev.filter((image) => image != showConfirmDeleteNImage)
           );
-          updateDockerImageUse("python-sandbox:latest");
+          updateGlobalDockerImageUse("python-sandbox:latest");
         } else {
           alert(t("alert.cannotDeleteImage"));
         }
@@ -254,10 +252,10 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
           <div className="flex-1">
             <div className="flex items-center justify-center gap-1">
               <select
-                name="updateDockerImageUse"
+                name="updateGlobalDockerImageUse"
                 value={DockerImageUse}
                 onChange={(e) => {
-                  updateDockerImageUse(e.target.value);
+                  updateGlobalDockerImageUse(e.target.value);
                 }}
                 className="w-full px-2 py-1 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50 appearance-none"
               >

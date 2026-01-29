@@ -14,7 +14,8 @@ from app.models.knowledge_base import (
     PageResponse,
 )
 from app.models.user import User
-from app.db.mongo import MongoDB, get_mongo
+from app.db.repositories.repository_manager import RepositoryManager, get_repository_manager
+from app.core.config import settings
 from app.core.security import get_current_user, verify_username_match
 from app.rag.convert_file import (
     save_file_to_minio,
@@ -33,11 +34,11 @@ milvus_client = MilvusManager()
 )
 async def get_knowledge_bases_by_user(
     username: str,
-    db: MongoDB = Depends(get_mongo),
+    repo_manager: RepositoryManager = Depends(get_repository_manager),
     current_user: User = Depends(get_current_user),
 ):
     await verify_username_match(current_user, username)
-    knowledge_bases = await db.get_knowledge_bases_by_user(username)
+    knowledge_bases = await repo_manager.knowledge_base.get_knowledge_bases_by_user(username)
     if not knowledge_bases:
         return []
 
@@ -57,14 +58,14 @@ async def get_knowledge_bases_by_user(
 @router.post("/knowledge_base", response_model=dict)
 async def create_knowledge_base(
     knowledge_base: KnowledgeBaseCreate,
-    db: MongoDB = Depends(get_mongo),
+    repo_manager: RepositoryManager = Depends(get_repository_manager),
     current_user: User = Depends(get_current_user),
 ):
     await verify_username_match(current_user, knowledge_base.username)
     knowledge_base_id = (
         knowledge_base.username + "_" + str(uuid.uuid4())
     )  # 生成 UUIDv4,
-    await db.create_knowledge_base(
+    await repo_manager.knowledge_base.create_knowledge_base(
         username=knowledge_base.username,
         knowledge_base_name=knowledge_base.knowledge_base_name,
         knowledge_base_id=knowledge_base_id,
@@ -78,14 +79,14 @@ async def create_knowledge_base(
 @router.post("/knowledge_base/rename", response_model=dict)
 async def re_name(
     renameInput: KnowledgeBaseRenameInput,
-    db: MongoDB = Depends(get_mongo),
+    repo_manager: RepositoryManager = Depends(get_repository_manager),
     current_user: User = Depends(get_current_user),
 ):
     await verify_username_match(
         current_user, renameInput.knowledge_base_id.split("_")[0]
     )
 
-    result = await db.update_knowledge_base_name(
+    result = await repo_manager.knowledge_base.update_knowledge_base_name(
         renameInput.knowledge_base_id, renameInput.knowledge_base_new_name
     )
     if result["status"] == "failed":
@@ -97,7 +98,7 @@ async def re_name(
 @router.delete("/files/bulk-delete", response_model=dict)
 async def bulk_delete_files(
     delete_list: List[BulkDeleteRequestItem],
-    db: MongoDB = Depends(get_mongo),
+    repo_manager: RepositoryManager = Depends(get_repository_manager),
     current_user: User = Depends(get_current_user),
 ):
     """
@@ -120,7 +121,7 @@ async def bulk_delete_files(
                 username = item.knowledge_id.split("_")[0]
 
             # 验证用户权限
-            if username != current_user.username:
+            if (not settings.single_tenant_mode) and username != current_user.username:
                 invalid_items.append(
                     {
                         "knowledge_id": item.knowledge_id,
@@ -142,7 +143,7 @@ async def bulk_delete_files(
             )
 
     # 执行批量删除
-    deletion_result = await db.bulk_delete_files_from_knowledge(valid_operations)
+    deletion_result = await repo_manager.knowledge_base.bulk_delete_files_from_knowledge(valid_operations)
 
     # 处理 Milvus 删除
     if deletion_result.get("status") in ["success", "partial_success"]:
@@ -172,7 +173,7 @@ async def bulk_delete_files(
         },
     }
 
-    # 处理部分成功的情况
+    # 处理部分成功情况
     if invalid_items or deletion_result["status"] != "success":
         response["status"] = "partial_success"
         if deletion_result["status"] == "error":
@@ -186,7 +187,7 @@ async def bulk_delete_files(
 async def delete_file(
     knowledge_base_id: str,
     file_id: str,
-    db: MongoDB = Depends(get_mongo),
+    repo_manager: RepositoryManager = Depends(get_repository_manager),
     current_user: User = Depends(get_current_user),
 ):
     if "temp" in knowledge_base_id:
@@ -194,7 +195,7 @@ async def delete_file(
     else:
         username = knowledge_base_id.split("_")[0]
     await verify_username_match(current_user, username)
-    result = await db.delete_file_from_knowledge_base(knowledge_base_id, file_id)
+    result = await repo_manager.knowledge_base.delete_file_from_knowledge_base(knowledge_base_id, file_id)
     milvus_client.delete_files(
         "colqwen" + knowledge_base_id.replace("-", "_"), [file_id]
     )
@@ -207,11 +208,11 @@ async def delete_file(
 @router.delete("/knowledge_base/{knowledge_base_id}", response_model=dict)
 async def delete_knowledge_base(
     knowledge_base_id: str,
-    db: MongoDB = Depends(get_mongo),
+    repo_manager: RepositoryManager = Depends(get_repository_manager),
     current_user: User = Depends(get_current_user),
 ):
     await verify_username_match(current_user, knowledge_base_id.split("_")[0])
-    result = await db.delete_knowledge_base(knowledge_base_id)
+    result = await repo_manager.knowledge_base.delete_knowledge_base(knowledge_base_id)
     milvus_client.delete_collection("colqwen" + knowledge_base_id.replace("-", "_"))
     if result["status"] == "failed":
         raise HTTPException(status_code=404, detail=result["message"])
@@ -220,13 +221,13 @@ async def delete_knowledge_base(
 
 # 清空未被对话引用的临时数据库
 @router.delete("/temp_knowledge_base/{username}", response_model=dict)
-async def delete_knowledge_base(
+async def clear_temp_knowledge_bases(
     username: str,
-    db: MongoDB = Depends(get_mongo),
+    repo_manager: RepositoryManager = Depends(get_repository_manager),
     current_user: User = Depends(get_current_user),
 ):
     await verify_username_match(current_user, username)
-    knowledge_bases = await db.get_all_knowledge_bases_by_user(username)
+    knowledge_bases = await repo_manager.knowledge_base.get_all_knowledge_bases_by_user(username)
 
     if not knowledge_bases:
         return {
@@ -236,7 +237,7 @@ async def delete_knowledge_base(
     failed_count = 0
     success_count = 0
 
-    conversations = await db.get_conversations_by_user(username)
+    conversations = await repo_manager.conversation.get_conversations_by_user(username)
     if not conversations:
         chat_chatflow_id = []
     else:
@@ -244,7 +245,7 @@ async def delete_knowledge_base(
             conversation["conversation_id"] for conversation in conversations
         ]
 
-    chatflows = await db.get_chatflows_by_user(username)
+    chatflows = await repo_manager.chatflow.get_chatflows_by_user(username)
     if not chatflows:
         pass
     else:
@@ -254,7 +255,7 @@ async def delete_knowledge_base(
         if knowledge_base["knowledge_base_id"].startswith("temp_"):
             temp_knowledge_base_id = knowledge_base["knowledge_base_id"]
             if "_".join(temp_knowledge_base_id[5:].split("_")[0:2]) not in chat_chatflow_id:
-                result = await db.delete_knowledge_base(temp_knowledge_base_id)
+                result = await repo_manager.knowledge_base.delete_knowledge_base(temp_knowledge_base_id)
                 milvus_client.delete_collection(
                     "colqwen" + temp_knowledge_base_id.replace("-", "_")
                 )
@@ -274,14 +275,14 @@ async def get_knowledge_base_files(
     knowledge_base_id: str,
     get_files: GetUserFiles,
     current_user: User = Depends(get_current_user),
-    db: MongoDB = Depends(get_mongo),
+    repo_manager: RepositoryManager = Depends(get_repository_manager),
 ):
     """
     获取指定知识库的文件列表（分页+搜索）
     """
     await verify_username_match(current_user, knowledge_base_id.split("_")[0])
     skip = (get_files.page - 1) * get_files.page_size
-    result = await db.get_kb_files_with_pagination(
+    result = await repo_manager.knowledge_base.get_kb_files_with_pagination(
         knowledge_base_id=knowledge_base_id,
         keyword=get_files.keyword,
         skip=skip,
@@ -295,14 +296,14 @@ async def get_user_all_files(
     username: str,
     get_files: GetUserFiles,
     current_user: User = Depends(get_current_user),
-    db: MongoDB = Depends(get_mongo),
+    repo_manager: RepositoryManager = Depends(get_repository_manager),
 ):
     """
     获取用户所有知识库文件（分页+搜索）
     """
     await verify_username_match(current_user, username)
     skip = (get_files.page - 1) * get_files.page_size
-    result = await db.get_user_files_with_pagination(
+    result = await repo_manager.knowledge_base.get_user_files_with_pagination(
         username=username,
         keyword=get_files.keyword,
         skip=skip,
@@ -332,11 +333,14 @@ async def download_file(
         raise HTTPException(status_code=404, detail="File not found")
 
 
+import hashlib
+
 # 上传文件
 @router.post("/upload/{knowledge_db_id}", response_model=dict)
 async def upload_multiple_files(
     files: List[UploadFile],
     knowledge_db_id: str,
+    repo_manager: RepositoryManager = Depends(get_repository_manager),
     current_user: User = Depends(get_current_user),
 ):
 
@@ -348,21 +352,34 @@ async def upload_multiple_files(
     task_id = username + "_" + str(uuid.uuid4())
     total_files = len(files)
     redis_connection = await redis.get_task_connection()
-    # 初始化任务状态
-    await redis_connection.hset(
-        f"task:{task_id}",
-        mapping={
-            "status": "processing",
-            "total": total_files,
-            "processed": 0,
-            "message": "Initializing file processing...",
-        },
-    )
-    await redis_connection.expire(f"task:{task_id}", 3600)  # 1小时过期
-
+    
     # 保存文件元数据并准备Kafka消息
     file_meta_list = []
+    skipped_count = 0
+    
     for file in files:
+        # 读取文件内容以计算哈希 (用于去重)
+        content = await file.read()
+        file_hash = hashlib.sha256(content).hexdigest()
+        await file.seek(0) # 重置指针以便后续保存
+        
+        # 检查是否已存在相同内容的文件
+        existing_file = await repo_manager.file.get_file_by_hash(file_hash, username, knowledge_db_id)
+        if existing_file:
+            logger.info(f"File {file.filename} already exists in knowledge base {knowledge_db_id} (hash match). Skipping.")
+            return_files.append(
+                {
+                    "id": existing_file["file_id"],
+                    "minio_filename": existing_file["minio_filename"],
+                    "filename": existing_file["filename"],
+                    "url": existing_file["minio_url"],
+                    "status": "skipped",
+                    "message": "Duplicate content detected"
+                }
+            )
+            skipped_count += 1
+            continue
+
         # 保存文件到MinIO
         minio_filename, minio_url = await save_file_to_minio(username, file)
 
@@ -374,6 +391,7 @@ async def upload_multiple_files(
                 "minio_filename": minio_filename,
                 "original_filename": file.filename,
                 "minio_url": minio_url,
+                "file_hash": file_hash
             }
         )
         return_files.append(
@@ -385,10 +403,31 @@ async def upload_multiple_files(
             }
         )
 
+    # 如果所有文件都被跳过
+    if not file_meta_list:
+        return {
+            "task_id": "none",
+            "knowledge_db_id": knowledge_db_id,
+            "files": return_files,
+            "message": f"All {total_files} files were already indexed."
+        }
+
+    # 初始化任务状态
+    await redis_connection.hset(
+        f"task:{task_id}",
+        mapping={
+            "status": "processing",
+            "total": len(file_meta_list),
+            "processed": 0,
+            "message": f"Processing {len(file_meta_list)} new files...",
+        },
+    )
+    await redis_connection.expire(f"task:{task_id}", 3600)  # 1小时过期
+
     # 发送Kafka消息（每个文件一个消息）
     for meta in file_meta_list:
         logger.info(
-            f"send {task_id} to kafka, file name {file.filename}, knowledge id {knowledge_db_id}."
+            f"send {task_id} to kafka, file name {meta['original_filename']}, knowledge id {knowledge_db_id}."
         )
         await kafka_producer_manager.send_embedding_task(
             task_id=task_id,

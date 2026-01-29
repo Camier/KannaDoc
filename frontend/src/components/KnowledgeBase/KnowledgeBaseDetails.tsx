@@ -139,7 +139,7 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
   return (
     <div className="flex-1 h-full">
       {selectedBase ? (
-        <div className="bg-gray-800 p-6 rounded-3xl shadow-sm h-full  flex flex-col">
+        <div className="bg-gray-900 p-6 rounded-3xl shadow-sm h-full  flex flex-col">
           <div className="h-[15%]">
             <div className="flex items-center gap-2 mb-2 justify-between">
               <div className="flex items-center gap-2 max-w-[70%] overflow-scroll scrollbar-hide">
@@ -318,13 +318,13 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
           </div>
         </div>
       ) : (
-        <div className="h-full flex items-center justify-center bg-gray-800 rounded-3xl shadow-sm flex-col pb-6">
+        <div className="h-full flex items-center justify-center bg-gray-900 rounded-3xl shadow-sm flex-col pb-6">
           <div className="flex items-center justify-center h-[10%] w-full">
             <p className="text-gray-500 text-lg">
              {t("choosePrompt")}
             </p>
           </div>
-          <div className="h-[90%] flex flex-col bg-gray-800 rounded-3xl shadow-sm p-6 w-[90%]">
+          <div className="h-[90%] flex flex-col bg-gray-900 rounded-3xl shadow-sm p-6 w-[90%]">
             <div className="mb-6 flex items-center justify-between h-[10%]">
               <h2 className="text-xl font-medium flex items-center gap-2">
                 <svg

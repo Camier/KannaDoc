@@ -1,4 +1,5 @@
 import ChatMessage from "@/components/AiChat/ChatMessage";
+import { logger } from "@/lib/logger";
 import { getChatflowContent } from "@/lib/api/chatflowApi";
 import { getAllKnowledgeBase } from "@/lib/api/knowledgeBaseApi";
 import { useAuthStore } from "@/stores/authStore";
@@ -145,7 +146,7 @@ const ChatflowHistoryComponent: React.FC<ChatflowHistoryProps> = ({
             .flat(); // 使用 flat 将嵌套数组平铺
           setMessages(messages);
         } catch (error) {
-          console.error("Error fetching chat history:", error);
+          logger.error("Error fetching chat history:", error);
         }
       }
     };

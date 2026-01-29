@@ -251,7 +251,7 @@ const Workflow = () => {
                 fullScreenFlow={fullScreenFlow}
               />
             ) : (
-              <div className="flex-1 h-full flex items-center flex-col justify-center gap-2 bg-gray-800 rounded-3xl shadow-sm p-6">
+              <div className="flex-1 h-full flex items-center flex-col justify-center gap-2 bg-gray-900 rounded-3xl shadow-sm p-6">
                 <p className="text-gray-400 text-2xl">
                   {t("emptyPrompt.createOrChoose")}
                 </p>

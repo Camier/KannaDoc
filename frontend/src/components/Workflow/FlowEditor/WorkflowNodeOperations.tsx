@@ -13,6 +13,7 @@
  */
 
 import { useCallback } from "react";
+import { logger } from "@/lib/logger";
 import { v4 as uuidv4 } from "uuid";
 import { CustomNode, NodeTypeKey, KnowledgeBase, ModelConfig } from "@/types/types";
 import { getCustomNodes, deleteCustomNodes } from "@/lib/api/workflowApi";
@@ -204,7 +205,7 @@ export const useWorkflowNodeOperations = ({
         const reponseNodes: { [key: string]: CustomNode } = response.data;
         setCustomNodes(reponseNodes);
       } catch (error) {
-        console.error("Error fetching custom nodes:", error);
+        logger.error("Error fetching custom nodes:", error);
       }
     }
   }, [user?.name, setCustomNodes]);
@@ -215,7 +216,7 @@ export const useWorkflowNodeOperations = ({
         await deleteCustomNodes(user.name, custom_node_name);
         fetchAllCustomNodes();
       } catch (error) {
-        console.error("Error deleting custom node:", error);
+        logger.error("Error deleting custom node:", error);
       }
     }
   };

@@ -33,8 +33,17 @@ def get_pdf_page_count(pdf_bytes: bytes) -> int:
         # 如果pdfinfo失败，返回默认值（例如1）
         logger.warning(f"pdfinfo failed: {result.stderr}")
         return 1
+    except (ValueError, IndexError) as e:
+        logger.error(f"Error parsing PDF page count: {e}")
+        return 1
+    except (subprocess.TimeoutExpired, FileNotFoundError) as e:
+        logger.error(f"PDF info command failed: {e}")
+        return 1
+    except (OSError, IOError) as e:
+        logger.error(f"File system error getting PDF page count: {e}")
+        return 1
     except Exception as e:
-        logger.error(f"Error getting PDF page count: {e}")
+        logger.exception(f"Unexpected error getting PDF page count")
         return 1
     finally:
         os.unlink(tmp_path)
@@ -57,7 +66,7 @@ async def convert_file_to_images(
     """
     start_time = time.time()
     # PDF转换超时设置（秒）- 大型PDF可能需要更长时间
-    pdf_conversion_timeout = 300  # 5分钟
+    pdf_conversion_timeout = 600  # 10分钟
     file_extension = file_name.split(".")[-1].lower() if file_name else ""
     
     # 定义支持的图片格式（不包括svg）
@@ -86,12 +95,15 @@ async def convert_file_to_images(
                         img = img.convert('RGB')
                     img = resize_image_to_a4(img)
                     images.append(img.copy())
-            
+
             logger.debug(f"Processed {len(images)} frames from image")
 
-        except Exception as e:
+        except (ValueError, IOError, OSError) as e:
             logger.error(f"Image processing error: {str(e)}")
             raise RuntimeError(f"Image processing failed: {str(e)}")
+        except Exception as e:
+            logger.exception(f"Unexpected error processing image")
+            raise RuntimeError(f"Unexpected image processing error: {str(e)}")
     
     elif file_extension == "pdf":
         # 直接处理PDF文件
@@ -99,38 +111,57 @@ async def convert_file_to_images(
         # PDF转换超时设置（秒）- 大型PDF可能需要更长时间
         # pdf_conversion_timeout已经在函数开头定义
         
-        # 根据PDF页数自适应调整DPI，避免内存不足
+        # 根据PDF页数自适应调整DPI，避免内存不足，但确保不低于150 DPI
         try:
             page_count = get_pdf_page_count(file_content)
             logger.info(f"PDF page count: {page_count}")
-            # 自适应DPI调整策略
-            base_dpi = int(settings.embedding_image_dpi)
-            if page_count > 100:
-                effective_dpi = min(base_dpi, 100)
-            elif page_count > 50:
-                effective_dpi = min(base_dpi, 150)
+            # 自适应DPI调整策略 - 确保不低于150 DPI
+            base_dpi = int(settings.embedding_image_dpi)  # 默认200
+            if page_count > 50:
+                effective_dpi = 150  # 50页以上使用150 DPI (最低限制)
             else:
-                effective_dpi = base_dpi
+                effective_dpi = base_dpi  # 50页以下使用默认DPI (200)
             logger.info(f"Using DPI: {effective_dpi} (base: {base_dpi}) for {page_count} pages")
+        except (ValueError, TypeError) as e:
+            logger.warning(f"Failed to parse PDF page count, using default DPI: {e}")
+            effective_dpi = max(150, int(settings.embedding_image_dpi))
         except Exception as e:
-            logger.warning(f"Failed to get PDF page count, using default DPI: {e}")
-            effective_dpi = int(settings.embedding_image_dpi)
+            logger.warning(f"Unexpected error getting PDF page count, using default DPI: {e}")
+            effective_dpi = max(150, int(settings.embedding_image_dpi))
         
         try:
             # 在单独的线程中运行convert_from_bytes以避免阻塞事件循环
             images = await asyncio.wait_for(
                 asyncio.to_thread(
-                    convert_from_bytes, 
-                    file_content, 
+                    convert_from_bytes,
+                    file_content,
                     dpi=effective_dpi,
                     timeout=pdf_conversion_timeout,  # 传递给pdf2image的内部超时
                     thread_count=1  # 限制线程数，减少内存使用
                 ),
                 timeout=pdf_conversion_timeout
             )
+            # 记录转换后的图像信息
+            if images:
+                total_pixels_sum = 0
+                for i, img in enumerate(images[:3]):  # 只记录前3页避免日志过多
+                    w, h = img.size
+                    total_pixels = w * h
+                    total_pixels_sum += total_pixels
+                    logger.info(f"Page {i+1}: {w}x{h} ({total_pixels} pixels, {total_pixels/1e6:.2f}MP)")
+                if len(images) > 3:
+                    logger.info(f"... and {len(images)-3} more pages")
+                avg_pixels = total_pixels_sum / min(3, len(images))
+                logger.info(f"Average pixels per page: {avg_pixels:.0f} ({avg_pixels/1e6:.2f}MP)")
         except asyncio.TimeoutError:
             logger.error(f"PDF conversion timed out after {pdf_conversion_timeout} seconds")
             raise RuntimeError(f"PDF conversion timed out after {pdf_conversion_timeout} seconds")
+        except (ValueError, IOError, OSError) as e:
+            logger.error(f"PDF conversion error: {e}")
+            raise RuntimeError(f"PDF conversion failed: {e}")
+        except Exception as e:
+            logger.exception(f"Unexpected error in PDF conversion")
+            raise RuntimeError(f"Unexpected PDF conversion error: {e}")
     
     elif file_extension:  # 其他格式（含svg）
         # 通过 unoserver 转换
@@ -141,42 +172,65 @@ async def convert_file_to_images(
                 output_format="pdf",
                 input_format=file_extension
             )
-            # 根据PDF页数自适应调整DPI，避免内存不足
+            # 根据PDF页数自适应调整DPI，避免内存不足，但确保不低于150 DPI
             try:
                 page_count = get_pdf_page_count(pdf_content)
                 logger.info(f"Converted PDF page count: {page_count}")
-                # 自适应DPI调整策略
-                base_dpi = int(settings.embedding_image_dpi)
-                if page_count > 100:
-                    effective_dpi = min(base_dpi, 100)
-                elif page_count > 50:
-                    effective_dpi = min(base_dpi, 150)
+                # 自适应DPI调整策略 - 确保不低于150 DPI
+                base_dpi = int(settings.embedding_image_dpi)  # 默认200
+                if page_count > 50:
+                    effective_dpi = 150  # 50页以上使用150 DPI (最低限制)
                 else:
-                    effective_dpi = base_dpi
+                    effective_dpi = base_dpi  # 50页以下使用默认DPI (200)
                 logger.info(f"Using DPI: {effective_dpi} (base: {base_dpi}) for {page_count} pages")
+            except (ValueError, TypeError) as e:
+                logger.warning(f"Failed to parse converted PDF page count, using default DPI: {e}")
+                effective_dpi = max(150, int(settings.embedding_image_dpi))
             except Exception as e:
-                logger.warning(f"Failed to get PDF page count, using default DPI: {e}")
-                effective_dpi = int(settings.embedding_image_dpi)
+                logger.warning(f"Unexpected error getting converted PDF page count, using default DPI: {e}")
+                effective_dpi = max(150, int(settings.embedding_image_dpi))
             
             try:
                 # 在单独的线程中运行convert_from_bytes以避免阻塞事件循环
                 images = await asyncio.wait_for(
                     asyncio.to_thread(
-                        convert_from_bytes, 
-                        pdf_content, 
+                        convert_from_bytes,
+                        pdf_content,
                         dpi=effective_dpi,
                         timeout=pdf_conversion_timeout,  # 传递给pdf2image的内部超时
                         thread_count=1  # 限制线程数，减少内存使用
                     ),
                     timeout=pdf_conversion_timeout
                 )
+                # 记录转换后的图像信息
+                if images:
+                    total_pixels_sum = 0
+                    for i, img in enumerate(images[:3]):  # 只记录前3页避免日志过多
+                        w, h = img.size
+                        total_pixels = w * h
+                        total_pixels_sum += total_pixels
+                        logger.info(f"Converted page {i+1}: {w}x{h} ({total_pixels} pixels, {total_pixels/1e6:.2f}MP)")
+                    if len(images) > 3:
+                        logger.info(f"... and {len(images)-3} more pages")
+                    avg_pixels = total_pixels_sum / min(3, len(images))
+                    logger.info(f"Average pixels per converted page: {avg_pixels:.0f} ({avg_pixels/1e6:.2f}MP)")
             except asyncio.TimeoutError:
                 logger.error(f"PDF conversion timed out after {pdf_conversion_timeout} seconds")
                 raise RuntimeError(f"PDF conversion timed out after {pdf_conversion_timeout} seconds")
+            except (ValueError, IOError, OSError) as e:
+                logger.error(f"Converted PDF conversion error: {e}")
+                raise RuntimeError(f"Converted PDF conversion failed: {e}")
+            except Exception as e:
+                logger.exception(f"Unexpected error in converted PDF conversion")
+                raise RuntimeError(f"Unexpected converted PDF conversion error: {e}")
             logger.debug(f"Converted {len(images)} pages from {file_extension} to PDF")
+        except (ValueError, RuntimeError) as e:
+            # Re-raise RuntimeError and ValueError as-is
+            logger.error(f"Document conversion failed: {str(e)}")
+            raise
         except Exception as e:
-            logger.error(f"Conversion error: {str(e)}")
-            raise RuntimeError(f"Document conversion failed: {str(e)}")
+            logger.exception(f"Unexpected error in document conversion")
+            raise RuntimeError(f"Unexpected document conversion error: {e}")
     
     else:
         raise ValueError("Unsupported file type")
@@ -200,8 +254,13 @@ async def convert_file_to_images(
     
     except Exception as e:
         logger.error(f"Image processing failed: {str(e)}")
+        # Use asyncio to close buffers without blocking event loop
+        loop = asyncio.get_event_loop()
         for buf in images_buffer:
-            buf.close()
+            try:
+                await loop.run_in_executor(None, buf.close)
+            except Exception as close_error:
+                logger.warning(f"Error closing buffer: {close_error}")
         raise
     
     finally:
@@ -216,24 +275,49 @@ async def convert_file_to_images(
     return images_buffer
 
 def resize_image_to_a4(image: Image.Image) -> Image.Image:
-    """调整图片尺寸，长边不超过A4长度（100dpi下1169像素）"""
+    """调整图片尺寸，长边不超过A4长度（100dpi下1169像素）且不超过处理器最大像素限制"""
     # 计算A4尺寸（100dpi: 8.27x11.69英寸）
-    max_pixels = int(11.69*int(settings.embedding_image_dpi))  # 100dpi: 11.69*100 ≈ 1169
+    base_dpi = int(settings.embedding_image_dpi)
+    max_dimension = int(11.69 * base_dpi)  # 100dpi: 11.69*100 ≈ 1169
+    
+    # 处理器最大像素限制 (来自ColQwen2.5处理器配置)
+    PROCESSOR_MAX_PIXELS = 602112  # 来自preprocessor_config.json的max_pixels
     
     # 获取原始尺寸
     width, height = image.size
+    total_pixels = width * height
     
-    # 检查是否需要调整
-    if max(width, height) <= max_pixels:
+    # 记录原始尺寸
+    logger.debug(f"Image before resize: {width}x{height} ({total_pixels} pixels, {total_pixels/1e6:.2f}MP)")
+    
+    # 首先检查是否超过处理器最大像素限制
+    if total_pixels > PROCESSOR_MAX_PIXELS:
+        logger.info(f"Image exceeds processor max pixels ({total_pixels} > {PROCESSOR_MAX_PIXELS}), resizing...")
+        # 计算缩放比例以匹配最大像素数
+        scale_factor = (PROCESSOR_MAX_PIXELS / total_pixels) ** 0.5
+        new_width = int(width * scale_factor)
+        new_height = int(height * scale_factor)
+        new_total_pixels = new_width * new_height
+        logger.info(f"Resized to fit processor limits: {new_width}x{new_height} ({new_total_pixels} pixels, {new_total_pixels/1e6:.2f}MP)")
+        image = image.resize((new_width, new_height), Image.LANCZOS)
+        width, height = image.size
+        total_pixels = width * height
+    
+    # 检查是否需要根据A4尺寸调整
+    if max(width, height) <= max_dimension:
+        logger.debug(f"Image within A4 limits: max dimension {max(width, height)} <= {max_dimension}")
         return image
     
     # 计算新尺寸（保持宽高比）
     if width > height:
-        new_width = max_pixels
-        new_height = int(height * (max_pixels / width))
+        new_width = max_dimension
+        new_height = int(height * (max_dimension / width))
     else:
-        new_height = max_pixels
-        new_width = int(width * (max_pixels / height))
+        new_height = max_dimension
+        new_width = int(width * (max_dimension / height))
+    
+    new_total_pixels = new_width * new_height
+    logger.info(f"Resizing image to A4 limits: {new_width}x{new_height} ({new_total_pixels} pixels, {new_total_pixels/1e6:.2f}MP)")
     
     # 使用高质量滤波器调整大小
     return image.resize((new_width, new_height), Image.LANCZOS)

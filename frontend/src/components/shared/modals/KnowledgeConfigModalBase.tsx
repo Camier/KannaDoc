@@ -299,7 +299,7 @@ export const KnowledgeConfigModalBase: React.FC<KnowledgeConfigModalBaseProps> =
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-gray-800 rounded-3xl px-10 py-6 w-[40%]">
+      <div className="bg-gray-900 rounded-3xl px-10 py-6 w-[40%]">
         <ModalHeader
           title={translations.title}
           addKnowledgeBaseLabel={translations.addKnowledgeBase}

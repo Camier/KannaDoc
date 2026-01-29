@@ -184,7 +184,7 @@ const MarkdownDisplay: React.FC<MarkdownDisplayProps> = ({
         className={`${
           message.from === "user"
             ? "bg-indigo-200 shadow-lg px-5 py-3 text-gray-800 rounded-3xl "
-            : ""
+            : "text-gray-900 "
         } prose dark:prose-invert max-w-full ${
           isThinking
             ? "border-l-2 border-gray-200 p-4 bg-gray-100 text-gray-800 rounded-3xl text-sm mb-4"
@@ -251,9 +251,9 @@ const MarkdownDisplay: React.FC<MarkdownDisplayProps> = ({
                 // 修改img组件处理逻辑
                 img({ node, src, alt, title, style, width, height, ...props }) {
                   if (!src) {
-                    return;
+                    return null;
                   } else {
-                    const newsrc = base64Processor.decode(src);
+                    const newsrc = base64Processor.decode(src as string);
                     return (
                       <img
                         src={newsrc}

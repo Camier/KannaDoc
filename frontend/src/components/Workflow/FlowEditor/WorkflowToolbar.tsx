@@ -24,7 +24,8 @@ interface WorkflowToolbarProps {
   sendInputDisabled: boolean;
   showOutput: boolean;
   fullScreenFlow: boolean;
-  fileInputRef: React.RefObject<HTMLInputElement>;
+  fileInputRef: React.RefObject<HTMLInputElement | null>;
+  handleImportWorkflow: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onUndo: () => void;
   onRedo: () => void;
   onImport: () => void;
@@ -50,6 +51,7 @@ export const WorkflowToolbar: React.FC<WorkflowToolbarProps> = ({
   showOutput,
   fullScreenFlow,
   fileInputRef,
+  handleImportWorkflow,
   onUndo,
   onRedo,
   onImport,
@@ -116,9 +118,7 @@ export const WorkflowToolbar: React.FC<WorkflowToolbarProps> = ({
           type="file"
           ref={fileInputRef}
           accept=".json"
-          onChange={(e) => {
-            /* Import handling delegated to parent */
-          }}
+          onChange={handleImportWorkflow}
           className="hidden"
         />
         <button
