@@ -34,7 +34,9 @@ class MilvusManager:
                     self.client.drop_collection(collection_name)
                     deleted_count += 1
             except Exception as e:
-                failed_collections.append({"collection": collection_name, "error": str(e)})
+                failed_collections.append(
+                    {"collection": collection_name, "error": str(e)}
+                )
 
         return {
             "deleted_count": deleted_count,
@@ -97,7 +99,7 @@ class MilvusManager:
         self.client.drop_index(
             collection_name=collection_name, index_name="sparse_vector"
         )
-        
+
         # Dense vector index
         index_params = self.client.prepare_index_params()
         index_params.add_index(
@@ -110,7 +112,7 @@ class MilvusManager:
                 "efConstruction": 1024,
             },  # Optimized for ethnopharmacology medical content
         )
-        
+
         # Sparse vector index
         index_params.add_index(
             field_name="sparse_vector",
@@ -118,6 +120,18 @@ class MilvusManager:
             index_type="SPARSE_INVERTED_INDEX",
             metric_type="IP",
             params={"drop_ratio_build": 0.2},
+        )
+
+        # Scalar indexes for fast filtering and deletion
+        index_params.add_index(
+            field_name="file_id",
+            index_name="file_id_index",
+            index_type="INVERTED",
+        )
+        index_params.add_index(
+            field_name="image_id",
+            index_name="image_id_index",
+            index_type="INVERTED",
         )
 
         self.client.create_index(
@@ -281,7 +295,7 @@ class MilvusManager:
         # If input doesn't have sparse vectors, we might insert empty sparse vectors or handle separately.
         # For now, we assume if the collection has the field, we insert it.
         # Note: sparse vector format in pymilvus is usually dict {index: value}
-        
+
         insert_data = []
         for i in range(seq_length):
             row = {
@@ -290,17 +304,17 @@ class MilvusManager:
                 "page_number": data["page_number"],
                 "file_id": data["file_id"],
             }
-            # Add sparse vector if available for this token (unlikely for ColBERT) 
-            # or if provided at page level. 
-            # Assuming sparse_vecs matches colqwen_vecs length if provided, 
+            # Add sparse vector if available for this token (unlikely for ColBERT)
+            # or if provided at page level.
+            # Assuming sparse_vecs matches colqwen_vecs length if provided,
             # OR we insert a dummy sparse vector if strict schema.
             # However, inserting "None" might fail if field is not nullable.
             # Best practice: Insert empty sparse vector {} if not present.
             if sparse_vecs and i < len(sparse_vecs):
                 row["sparse_vector"] = sparse_vecs[i]
             else:
-                row["sparse_vector"] = {} # Empty sparse vector
-            
+                row["sparse_vector"] = {}  # Empty sparse vector
+
             insert_data.append(row)
 
         self.client.insert(

@@ -259,33 +259,47 @@ async def insert_to_milvus(
 
 
 async def replace_image_content(messages):
-    # 创建深拷贝以保证原始数据不变
     new_messages = copy.deepcopy(messages)
-    # 遍历每条消息
-    for message in new_messages:
-        if "content" not in message:
-            continue
 
-        if not isinstance(message["content"], list):
-            continue
+    download_tasks = []
+    task_locations = []
 
-        new_content = []  # 创建新的内容列表
-        # 遍历content中的每个内容项
-        for item in message["content"]:
+    for msg_idx, message in enumerate(new_messages):
+        if "content" not in message or not isinstance(message["content"], list):
+            continue
+        for item_idx, item in enumerate(message["content"]):
             if isinstance(item, dict) and item.get("type") == "image_url":
-                image_base64 = (
-                    await async_minio_manager.download_image_and_convert_to_base64(
-                        item["image_url"]
+                minio_filename = item["image_url"]
+                download_tasks.append(
+                    async_minio_manager.download_image_and_convert_to_base64(
+                        minio_filename
                     )
                 )
-                if image_base64:
-                    new_item = copy.deepcopy(item)
-                    new_item["image_url"] = {
-                        "url": f"data:image/png;base64,{image_base64}"
-                    }
-                    new_content.append(new_item)
-            else:
-                new_content.append(item)
-        message["content"] = new_content
+                task_locations.append((msg_idx, item_idx))
+
+    if not download_tasks:
+        return new_messages
+
+    results = await asyncio.gather(*download_tasks, return_exceptions=True)
+
+    for (msg_idx, item_idx), result in zip(task_locations, results):
+        if isinstance(result, Exception):
+            logger.warning(f"Failed to download image: {result}")
+            continue
+        if result:
+            item = new_messages[msg_idx]["content"][item_idx]
+            item["image_url"] = {"url": f"data:image/png;base64,{result}"}
+
+    for message in new_messages:
+        if isinstance(message.get("content"), list):
+            message["content"] = [
+                item
+                for item in message["content"]
+                if not (
+                    isinstance(item, dict)
+                    and item.get("type") == "image_url"
+                    and isinstance(item.get("image_url"), str)
+                )
+            ]
 
     return new_messages

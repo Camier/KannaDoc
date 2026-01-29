@@ -228,3 +228,85 @@ class FileRepository(BaseRepository):
 
         cursor = self.db.files.find({"file_id": {"$in": file_ids}, "is_delete": False})
         return await cursor.to_list(length=len(file_ids))
+
+    async def get_files_and_images_batch(
+        self, file_image_pairs: List[tuple]
+    ) -> List[Dict[str, Any]]:
+        """
+        Batch fetch file and image info for multiple (file_id, image_id) pairs.
+
+        This eliminates N+1 query pattern by fetching all files in a single query
+        and then matching images in memory.
+
+        Args:
+            file_image_pairs: List of (file_id, image_id) tuples
+
+        Returns:
+            List of info dicts in the same order as input pairs.
+            Each dict has same structure as get_file_and_image_info().
+        """
+        if not file_image_pairs:
+            return []
+
+        # Extract unique file_ids for batch query
+        unique_file_ids = list(set(pair[0] for pair in file_image_pairs))
+
+        # Single query to fetch all files with their images
+        cursor = self.db.files.find(
+            {"file_id": {"$in": unique_file_ids}, "is_delete": False},
+            projection={
+                "file_id": 1,
+                "knowledge_db_id": 1,
+                "filename": 1,
+                "minio_filename": 1,
+                "minio_url": 1,
+                "images": 1,
+            },
+        )
+        files = await cursor.to_list(length=len(unique_file_ids))
+
+        # Build lookup: file_id -> file_doc
+        file_map = {f["file_id"]: f for f in files}
+
+        # Build lookup: (file_id, image_id) -> image_info
+        image_map = {}
+        for file_doc in files:
+            file_id = file_doc["file_id"]
+            for img in file_doc.get("images", []):
+                image_id = img.get("images_id")
+                if image_id:
+                    image_map[(file_id, image_id)] = {
+                        "file_doc": file_doc,
+                        "image_info": img,
+                    }
+
+        # Build results in order of input pairs
+        results = []
+        for file_id, image_id in file_image_pairs:
+            key = (file_id, image_id)
+            if key not in image_map:
+                results.append(
+                    {
+                        "status": "failed",
+                        "message": "file_id or image_id not found",
+                    }
+                )
+                continue
+
+            data = image_map[key]
+            file_doc = data["file_doc"]
+            image_info = data["image_info"]
+
+            results.append(
+                {
+                    "status": "success",
+                    "knowledge_db_id": file_doc.get("knowledge_db_id"),
+                    "file_name": file_doc.get("filename"),
+                    "file_minio_filename": file_doc.get("minio_filename"),
+                    "file_minio_url": file_doc.get("minio_url"),
+                    "image_minio_filename": image_info.get("minio_filename"),
+                    "image_minio_url": image_info.get("minio_url"),
+                }
+            )
+
+        return results
