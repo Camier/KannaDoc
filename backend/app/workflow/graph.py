@@ -20,7 +20,7 @@ class TreeNode:
     ]
     _instances = {}
 
-    def __new__(cls, node_id: str, node_type: str, data: Dict):
+    def __new__(cls, node_id: str, node_type: str, data: Dict, condition=None):
         if node_id not in cls._instances:
             instance = super().__new__(cls)
             instance.node_id = node_id
@@ -33,7 +33,7 @@ class TreeNode:
             instance.loop_parent = None
             instance.loop_children = []
             instance.loop_last = []
-            instance.condition = None
+            instance.condition = condition
             instance.debug_skip = False
             instance.input_skip = False
             cls._instances[node_id] = instance
