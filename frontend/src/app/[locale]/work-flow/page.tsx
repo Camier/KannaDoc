@@ -85,7 +85,7 @@ const Workflow = () => {
         setEdges(item.edges);
         setGlobalVariables(item.global_variables);
         setWorkflowAll(workflowAllData);
-        updateDockerImageUse(item.workflow_config.docker_image_use);
+        updateDockerImageUse(item.workflow_config?.docker_image_use || "python-sandbox:latest");
         resethistory(item.nodes, item.edges);
         resetfuture();
       } catch (error) {
@@ -198,7 +198,7 @@ const Workflow = () => {
   return (
     <div className="overflow-hidden flex flex-col">
       <Navbar />
-      <div className="absolute w-[96%] h-[91%] top-[7%] bg-white/10 left-[2%] rounded-3xl flex items-center justify-between shadow-2xl">
+      <div className="absolute w-[96%] h-[91%] top-[7%] bg-gray-900/80 left-[2%] rounded-3xl flex items-center justify-between shadow-2xl">
         <div className="w-full top-0 absolute px-6 pb-6 pt-2 h-full">
           {/* 新建工作流弹窗 */}
           {showCreateModal && (
@@ -251,8 +251,8 @@ const Workflow = () => {
                 fullScreenFlow={fullScreenFlow}
               />
             ) : (
-              <div className="flex-1 h-full flex items-center flex-col justify-center gap-2 bg-white rounded-3xl shadow-sm p-6">
-                <p className="text-gray-500 text-2xl">
+              <div className="flex-1 h-full flex items-center flex-col justify-center gap-2 bg-gray-800 rounded-3xl shadow-sm p-6">
+                <p className="text-gray-400 text-2xl">
                   {t("emptyPrompt.createOrChoose")}
                 </p>
                 <p className="text-gray-500 text-lg">

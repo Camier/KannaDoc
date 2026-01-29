@@ -262,7 +262,7 @@ const KnowledgeBase = () => {
   return (
     <div className="overflow-hidden flex flex-col">
       <Navbar />
-      <div className="absolute w-[96%] h-[91%] top-[7%] bg-white/10 left-[2%] rounded-3xl flex items-center justify-between shadow-2xl">
+      <div className="absolute w-[96%] h-[91%] top-[7%] bg-gray-900/80 left-[2%] rounded-3xl flex items-center justify-between shadow-2xl">
         <div className="w-full top-0 absolute px-6 pb-6 pt-2 h-full">
           {/* 新建知识库弹窗 */}
           {showCreateModal && (

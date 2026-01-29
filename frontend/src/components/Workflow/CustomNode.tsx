@@ -126,7 +126,7 @@ const CustomNodeComponent = ({
           : selected
           ? "border-2 border-indigo-500"
           : "border-1 border-white"
-      } bg-white`}
+      } bg-gray-800`}
     >
       {getHandles(data.nodeType)}
       <button

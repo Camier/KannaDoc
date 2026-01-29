@@ -9,7 +9,7 @@ interface TopBarProps {
 const TopBar: React.FC<TopBarProps> = ({ searchTerm, setSearchTerm }) => {
   const t = useTranslations("KnowledgeBaseTopBar");
   return (
-    <div className="bg-white shadow-xs rounded-3xl flex items-center px-6 justify-between w-full h-[12%]">
+    <div className="bg-gray-800 shadow-xs rounded-3xl flex items-center px-6 justify-between w-full h-[12%]">
       <div className="flex items-center gap-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"

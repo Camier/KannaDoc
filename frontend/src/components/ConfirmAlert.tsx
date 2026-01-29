@@ -16,7 +16,7 @@ const ConfirmAlert: React.FC<ConfirmAlertProps> = ({
   const t = useTranslations("ConfirmAlert");
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/50">
-      <div className="bg-white rounded-3xl shadow-lg p-6 w-[30%] max-h-[50vh] flex flex-col">
+      <div className="bg-gray-800 rounded-3xl shadow-lg p-6 w-[30%] max-h-[50vh] flex flex-col">
         {type == "success" ? (
           <div className="flex gap-1 items-center text-indigo-500 mb-6">
             <svg
@@ -54,11 +54,11 @@ const ConfirmAlert: React.FC<ConfirmAlertProps> = ({
             <h2 className="text-lg font-medium">{t("error")}</h2>
           </div>
         )}
-        <p className="mb-6 p-2 overflow-auto">{message}</p>
+        <p className="mb-6 p-2 overflow-auto text-gray-300">{message}</p>
         <div className="flex justify-end gap-2">
           <button
             onClick={onCancel}
-            className="px-4 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-100 cursor-pointer"
+            className="px-4 py-2 text-gray-300 border border-gray-600 rounded-full hover:bg-gray-700 cursor-pointer"
           >
             {t("close")}
           </button>

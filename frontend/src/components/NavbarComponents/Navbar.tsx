@@ -12,7 +12,7 @@ const Navbar = () => {
    border-indigo-500 text-indigo-500 hover:text-white hover:bg-indigo-600
   `;
   return (
-    <div className="z-10 fixed left-[2%] w-[96%] pl-[10%] pr-[15%] bg-white/10 h-[5%] my-1 rounded-3xl flex justify-between items-center shadow-2xl">
+    <div className="z-10 fixed left-[2%] w-[96%] pl-[10%] pr-[15%] bg-gray-900/80 h-[5%] my-1 rounded-3xl flex justify-between items-center shadow-2xl">
       <div className={navbarButtonStyle + `rounded-3xl px-4`}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

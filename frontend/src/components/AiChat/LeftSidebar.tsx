@@ -127,7 +127,7 @@ const LeftSidebar: React.FC<SidebarProps> = ({
   );
 
   return (
-    <div className="bg-white flex-none w-[20%] h-full rounded-l-3xl flex flex-col items-center py-5 pl-5">
+    <div className="bg-gray-800 flex-none w-[20%] h-full rounded-l-3xl flex flex-col items-center py-5 pl-5">
       {/* 新会话按钮 */}
       <div
         className="my-2 rounded-xl flex items-center justify-center w-full h-[8%] cursor-pointer"
@@ -307,7 +307,7 @@ const LeftSidebar: React.FC<SidebarProps> = ({
                 {isSettingsOpen[index] && ( // 根据数组状态显示悬浮框
                   <div
                     ref={ref}
-                    className="absolute right-0 top-full mt-1 bg-white text-black rounded-2xl border-2 py-2 px-1 border-slate-200 shadow-lg z-10"
+                    className="absolute right-0 top-full mt-1 bg-gray-800 text-white rounded-2xl border-2 py-2 px-1 border-gray-700 shadow-lg z-10"
                   >
                     <div
                       className="flex gap-2 cursor-pointer hover:bg-indigo-600 hover:text-white px-2 py-1 rounded-xl"

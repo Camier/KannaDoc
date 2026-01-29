@@ -1,4 +1,24 @@
-// components/FlowEditor.tsx
+/**
+ * FlowEditor (Refactored)
+ *
+ * Main workflow editor component providing a visual node-based workflow interface.
+ * Coordinates between canvas, toolbar, panels, and execution handlers.
+ *
+ * Decomposed from original 2259-line component into focused sub-components:
+ * - WorkflowExecutionHandler: SSE and real-time updates
+ * - WorkflowToolbar: Control buttons and actions
+ * - WorkflowCanvasPanel: Node settings and output display
+ * - WorkflowImportExport: Import/export functionality
+ * - WorkflowSaveHandler: Manual and auto-save operations
+ * - WorkflowNodeOperations: Node creation and management
+ *
+ * Main responsibilities:
+ * - ReactFlow canvas management
+ * - Node/edge state coordination
+ * - Keyboard shortcuts
+ * - Dialog/alert management
+ */
+
 import {
   useCallback,
   useRef,
@@ -22,67 +42,47 @@ import {
 } from "@xyflow/react";
 import {
   CustomNode,
-  nodeTypesInfo,
-  NodeTypeKey,
   CustomEdge,
   WorkflowAll,
-  KnowledgeBase,
-  ModelConfig,
   Message,
   FileResponse,
-  McpConfig,
 } from "@/types/types";
-import Cookies from "js-cookie";
 import { useFlowStore } from "@/stores/flowStore";
+import { logger } from "@/lib/logger";
 import CustomEdgeComponent from "@/components/Workflow/CustomEdge";
 import CustomNodeComponent from "@/components/Workflow/CustomNode";
 import "@xyflow/react/dist/base.css";
 import ConnectionLine from "@/components/Workflow/ConnectionLine";
-import FunctionNodeComponent from "@/components/Workflow/NodeSettings/FunctionNode";
-import StartNodeComponent from "@/components/Workflow/NodeSettings/StartNode";
 import { useAuthStore } from "@/stores/authStore";
 import { v4 as uuidv4 } from "uuid";
 import {
   cancelWorkflow,
-  createWorkflow,
-  deleteCustomNodes,
   executeWorkflow,
-  getCustomNodes,
-  saveCustomNodes,
 } from "@/lib/api/workflowApi";
 import { useGlobalStore } from "@/stores/WorkflowVariableStore";
-import ConditionNodeComponent from "@/components/Workflow/NodeSettings/ConditionNode";
-import LoopNodeComponent from "@/components/Workflow/NodeSettings/LoopNode";
-import { EventSourceParserStream } from "eventsource-parser/stream";
-import VlmNodeComponent from "@/components/Workflow/NodeSettings/VlmNode";
-import {
-  deleteTempKnowledgeBase,
-  getAllKnowledgeBase,
-} from "@/lib/api/knowledgeBaseApi";
-import { getAllModelConfig } from "@/lib/api/configApi";
+import { deleteTempKnowledgeBase } from "@/lib/api/knowledgeBaseApi";
 import ConfirmAlert from "../ConfirmAlert";
 import NodeTypeSelector from "./NodeTypeSelector";
 import SaveCustomNode from "./SaveNode";
-import WorkflowOutputComponent from "./NodeSettings/WorkflowOutput";
 import useChatStore from "@/stores/chatStore";
 import { getFileExtension } from "@/utils/file";
 import { createChatflow } from "@/lib/api/chatflowApi";
 import ConfirmDialog from "../ConfirmDialog";
-import { replaceTemplate } from "@/utils/convert";
 import { useTranslations } from "next-intl";
 
-const getId = (type: string): string => `node_${type}_${uuidv4()}`;
+// Extracted components
+import { WorkflowExecutionHandler } from "./FlowEditor/WorkflowExecutionHandler";
+import { WorkflowToolbar } from "./FlowEditor/WorkflowToolbar";
+import { WorkflowCanvasPanel } from "./FlowEditor/WorkflowCanvasPanel";
+import { useWorkflowImportExport } from "./FlowEditor/WorkflowImportExport";
+import { useWorkflowSaveHandler } from "./FlowEditor/WorkflowSaveHandler";
+import { useWorkflowNodeOperations } from "./FlowEditor/WorkflowNodeOperations";
+
 interface FlowEditorProps {
   workFlow: WorkflowAll;
   setFullScreenFlow: Dispatch<SetStateAction<boolean>>;
   fullScreenFlow: boolean;
 }
-
-const splitFirstColon = (str: string) => {
-  const index = str.indexOf(":");
-  if (index === -1) return [str, ""]; // 没有冒号时返回原字符串和空字符串
-  return [str.substring(0, index), str.substring(index + 1)];
-};
 
 const FlowEditor: React.FC<FlowEditorProps> = ({
   workFlow,
@@ -93,14 +93,15 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   const reactFlowWrapper = useRef<HTMLDivElement>(null);
   const [codeFullScreenFlow, setCodeFullScreenFlow] = useState<boolean>(false);
   const { user } = useAuthStore();
+
   const {
     globalVariables,
-    setGlobalVariables,
     reset,
     setGlobalDebugVariables,
     globalDebugVariables,
     DockerImageUse,
   } = useGlobalStore();
+
   const {
     nodes,
     edges,
@@ -127,6 +128,8 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     updateVlmModelConfig,
     updateVlmInput,
   } = useFlowStore();
+
+  // State management
   const [taskId, setTaskId] = useState("");
   const [running, setRunning] = useState(false);
   const [resumeDebugTaskId, setResumeDebugTaskId] = useState("");
@@ -141,16 +144,15 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   const [nameError, setNameError] = useState<string | null>(null);
   const [newNodeName, setNewNodeName] = useState("");
   const [newCustomNode, setNewCustomNode] = useState<CustomNode | null>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
   const [canceling, setCanceling] = useState(false);
   const [showOutput, setShowOutput] = useState(false);
   const [messages, setMessages] = useState<{ [key: string]: Message[] }>({});
   const [sendInputDisabled, setSendInputDisabled] = useState(true);
   const [sendingFiles, setSendingFiles] = useState<FileResponse[]>([]);
-  const [tempBaseId, setTempBaseId] = useState<string>(""); //后台用来存放上传文件的临时知识库
+  const [tempBaseId, setTempBaseId] = useState<string>("");
   const [cleanTempBase, setCleanTempBase] = useState<boolean>(false);
-  const [currentInputNodeId, setCurrentInputNodeId] = useState<string>(); //后台用来存放上传文件的临时知识库
-  const [fileMessages, setFileMessages] = useState<Message[]>([]); //后台用来存放上传文件的临时知识库
+  const [currentInputNodeId, setCurrentInputNodeId] = useState<string>();
+  const [fileMessages, setFileMessages] = useState<Message[]>([]);
   const { chatflowId, setChatflowId } = useChatStore();
   const [showConfirmClear, setShowConfirmClear] = useState(false);
   const [saveImage, setSaveImage] = useState<boolean>(false);
@@ -163,57 +165,109 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   }>({ visible: false, message: "", type: "success" });
   const [refreshDockerImages, setRefreshDockerImages] =
     useState<boolean>(false);
-
   const [runningChatflowLLMNodes, setRunningChatflowLLMNodes] = useState<
     CustomNode[]
   >([]);
-  //这个是按顺序每次收到的消息，而messages是归纳到每个节点里，如messages{a:[1,3],b:[2]}，输出循环顺序a,b,a,则eachMessages[1,2,3]
   const [eachMessages, setEachMessages] = useState<{
     [key: string]: Message[];
   }>({});
+
+  // Refs
   const countRef = useRef(1);
   const countListRef = useRef<string[]>([]);
-  // 使用 useMemo 优化查找
+  const eachMessagesRef = useRef(eachMessages);
+
+  // Computed values
   const currentNode = useMemo(
     () => nodes.find((n) => n.id === selectedNodeId),
-    [nodes, selectedNodeId] // 依赖精准控制
+    [nodes, selectedNodeId]
   );
 
-  const eachMessagesRef = useRef(eachMessages);
-  const variableReturn = useRef<{
-    [key: string]: Message[];
-  }>({});
-
+  // Clear handlers
   const confirmClear = () => {
     if (showConfirmClear) {
       setNodes([]);
       setEdges([]);
       reset();
-      setShowConfirmClear(false); // 关闭对话框
+      setShowConfirmClear(false);
     }
   };
 
   const cancelClear = () => {
     if (showConfirmClear) {
-      setShowConfirmClear(false); // 关闭对话框
+      setShowConfirmClear(false);
     }
   };
 
+  // Alert handler
+  const handleShowAlert = (message: string, status: string) => {
+    setWorkflowMessage(message);
+    setWorkflowStatus(status);
+    setShowAlert(true);
+  };
+
+  // Import/Export
+  const { fileInputRef, triggerImport, handleExportWorkflow, handleImportWorkflow } = useWorkflowImportExport({
+    workflowName: workFlow.workflowName,
+    nodes,
+    edges,
+    globalVariables,
+    onImport: (importedNodes, importedEdges, importedVars) => {
+      setNodes(importedNodes);
+      setEdges(importedEdges);
+      setSelectedNodeId(null);
+      setSelectedEdgeId(null);
+      pushHistory();
+    },
+    onError: (error) => handleShowAlert(error, "error"),
+  });
+
+  // Save handler
+  const { handleSaveWorkFlow } = useWorkflowSaveHandler({
+    workflowId: workFlow.workflowId,
+    workflowName: workFlow.workflowName,
+    startNode: workFlow.startNode,
+    userName: user?.name,
+    dockerImageUse: DockerImageUse,
+    globalVariables,
+    nodes,
+    edges,
+    onSaveStatusChange: setSaveStatus,
+  });
+
+  // Node operations
+  const {
+    addNode,
+    addCustomNode,
+    fetchAllCustomNodes,
+    handleDeleteCustomNode,
+  } = useWorkflowNodeOperations({
+    user,
+    customNodes,
+    setCustomNodes,
+    nodes,
+    setNodes,
+    onUpdateVlmModelConfig: updateVlmModelConfig,
+    onShowAlert: handleShowAlert,
+    pushHistory,
+  });
+
+  // Effects
   useEffect(() => {
     const cleanTempKnowledgeBase = async () => {
       if (user?.name) {
         try {
           setCleanTempBase(true);
-          const response = await deleteTempKnowledgeBase(user.name);
+          await deleteTempKnowledgeBase(user.name);
         } catch (error) {
-          console.error("Error clean temp knowledge base:", error);
+          logger.error("Error clean temp knowledge base:", error);
         } finally {
           setCleanTempBase(false);
         }
       }
     };
     cleanTempKnowledgeBase();
-  }, [user?.name]); // 添加 user?.name 作为依赖
+  }, [user?.name]);
 
   useEffect(() => {
     setSendingFiles([]);
@@ -224,10 +278,9 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     setChatflowId("");
   }, [setChatflowId]);
 
-  //刷新页面
+  // Refresh page
   useEffect(() => {
-    // 从 store 获取最新状态
-    const { history, nodes } = useFlowStore.getState();
+    const { history } = useFlowStore.getState();
 
     if (history.length === 0) {
       pushHistory();
@@ -262,11 +315,12 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     updateChat,
     updateOutput,
     updateStatus,
-  ]); // 只需要依赖 workFlow
+    nodes,
+    t,
+  ]);
 
-  // 刷新按钮的处理函数
+  // Refresh button
   const handleRefresh = () => {
-    // 与上面相同的刷新逻辑
     if (history.length === 0) {
       pushHistory();
     }
@@ -296,699 +350,21 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   };
 
   useEffect(() => {
-    //fetchChatflowHistory();
     if (chatflowId === "") {
       const uniqueId = uuidv4();
       setChatflowId(user?.name + "_" + uniqueId);
     }
-  }, [user?.name, chatflowId, setChatflowId]); // Added fetchChatHistory fetchChatHistory
+  }, [user?.name, chatflowId, setChatflowId]);
 
   useEffect(() => {
-    //fetchChatflowHistory();
     setShowOutput(false);
-  }, [workFlow]); // Added fetchChatHistory fetchChatHistory
-
-  // 初始化自定义节点
-  const fetchAllCustomNodes = useCallback(async () => {
-    if (user?.name) {
-      try {
-        const response = await getCustomNodes(user.name);
-        const reponseNodes: { [key: string]: CustomNode } = response.data;
-        setCustomNodes(reponseNodes);
-      } catch (error) {
-        console.error("Error fetching custom nodes:", error);
-      }
-    }
-  }, [user?.name]); // Add dependencies
+  }, [workFlow]);
 
   useEffect(() => {
     fetchAllCustomNodes();
-  }, [user?.name, fetchAllCustomNodes]); // Add fetchAllWorkflow
+  }, [user?.name, fetchAllCustomNodes]);
 
-  const handleDeleteCustomNode = async (custom_node_name: string) => {
-    if (user?.name) {
-      try {
-        await deleteCustomNodes(user.name, custom_node_name);
-        fetchAllCustomNodes();
-      } catch (error) {
-        console.error("Error fetching custom nodes:", error);
-      }
-    }
-  };
-
-  const checkChatflowInput = () => {
-    if (countListRef.current.length > 0) {
-      const lastNodeMessages =
-        eachMessagesRef.current[
-          countListRef.current[countListRef.current.length - 1]
-        ];
-      if (lastNodeMessages.length > 0) {
-        if (lastNodeMessages[lastNodeMessages.length - 1].from === "user") {
-          setWorkflowMessage(t("consecutiveInputNodes"));
-          setWorkflowStatus("error");
-          setShowAlert(true);
-          //eventReader.cancel();
-          return false;
-        }
-      }
-    }
-    return true;
-  };
-
-  const checkChatflowOutput = () => {
-    if (countListRef.current.length > 0) {
-      const lastNodeMessages =
-        eachMessagesRef.current[
-          countListRef.current[countListRef.current.length - 1]
-        ];
-      if (lastNodeMessages.length > 0) {
-        if (lastNodeMessages[lastNodeMessages.length - 1].from === "ai") {
-          setWorkflowMessage(t("consecutiveOutputNodes"));
-          setWorkflowStatus("error");
-          setShowAlert(true);
-          //eventReader.cancel();
-          return false;
-        }
-      }
-    } else {
-      setWorkflowMessage(t("noInputBeforeOutput"));
-      setWorkflowStatus("error");
-      setShowAlert(true);
-      //   eventReader.cancel();
-      return false;
-    }
-    return true;
-  };
-
-  const nodeStatesRef = useRef(
-    new Map<
-      number,
-      {
-        aiMessage: string;
-        aiThinking: string;
-        messageId: string;
-        total_token: number;
-        completion_tokens: number;
-        prompt_tokens: number;
-        file_used: any[];
-        vlmNewLoop: boolean;
-      }
-    >()
-  );
-
-  // 只将不稳定的值放入 ref
-  const unstableDependenciesRef = useRef({
-    fileMessages,
-    globalDebugVariables,
-    nodes,
-    selectedNodeId,
-  });
-
-  // 更新不稳定的依赖项
-  useEffect(() => {
-    unstableDependenciesRef.current = {
-      fileMessages,
-      globalDebugVariables,
-      nodes,
-      selectedNodeId,
-    };
-  });
-
-  useEffect(() => {
-    if (taskId !== "") {
-      setResumeDebugTaskId("");
-      setResumeInputTaskId("");
-
-      // 从 ref 中获取不稳定的最新值
-      const { fileMessages, globalDebugVariables, nodes, selectedNodeId } =
-        unstableDependenciesRef.current;
-
-      const workFlowSSE = async () => {
-        if (user?.name) {
-          const token = Cookies.get("token"); // 确保已引入cookie库
-          try {
-            const response = await fetch(
-              `${process.env.NEXT_PUBLIC_API_BASE_URL}/sse/workflow/${user.name}/${taskId}`,
-              {
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-              }
-            );
-
-            if (!response.ok) throw new Error("Request failed");
-            if (!response.body) return;
-
-            // 使用EventSourceParserStream处理流
-            const eventStream = response.body
-              ?.pipeThrough(new TextDecoderStream())
-              .pipeThrough(new EventSourceParserStream());
-
-            const eventReader = eventStream.getReader();
-
-            while (true) {
-              const { done, value } = (await eventReader?.read()) || {};
-              if (done) break;
-              const payload = JSON.parse(value.data);
-              //处理事件数据
-              if (payload.event === "workflow") {
-                if (payload.workflow.status == "failed") {
-                  const errorNode = splitFirstColon(payload.workflow.error);
-                  const errorNodeId = errorNode[0];
-                  const errorNodeMsg = splitFirstColon(errorNode[1])[1];
-                  updateOutput(errorNodeId, errorNodeMsg);
-                  updateStatus(errorNodeId, "failed");
-                  setSelectedNodeId(errorNodeId);
-                }
-                if (
-                  [
-                    "completed",
-                    "failed",
-                    "pause",
-                    "canceled",
-                    "vlm_input",
-                  ].includes(payload.workflow.status)
-                ) {
-                  if (payload.workflow.status === "completed") {
-                    setWorkflowStatus("success");
-                    setWorkflowMessage(t("executionSuccess"));
-                    setShowAlert(true);
-                  } else if (payload.workflow.status === "pause") {
-                    setWorkflowMessage(t("debugPause"));
-                    setWorkflowStatus("success");
-                    setShowAlert(true);
-                  } else if (payload.workflow.status === "canceled") {
-                    setWorkflowMessage(t("workflowCanceled"));
-                    setWorkflowStatus("error");
-                    setShowAlert(true);
-                  } else if (payload.workflow.status === "vlm_input") {
-                    if (selectedNodeId) {
-                      setShowOutput(true);
-                      setSelectedNodeId(null);
-                      setSelectedEdgeId(null);
-                    } else {
-                      setShowOutput(true);
-                    }
-                    setSendInputDisabled(false);
-                  } else {
-                    const errorMessage = payload.workflow.error;
-                    setWorkflowMessage(errorMessage);
-                    setWorkflowStatus("error");
-                    setShowAlert(true);
-                  }
-                  eventReader.cancel();
-                  //break;
-                }
-              } else if (payload.event === "node") {
-                if (payload.node.status === true) {
-                  if (payload.node.result !== '""') {
-                    const resultList: any[] = JSON.parse(payload.node.result);
-                    let result: string;
-                    if (resultList.length > 1) {
-                      result = resultList
-                        .map(
-                          (item, index) =>
-                            `#### Global Loop ${index + 1}:\n${item.result}\n`
-                        )
-                        .join("\n");
-                    } else {
-                      result = resultList[0].result;
-                    }
-                    updateOutput(payload.node.id, result);
-                  } else {
-                    updateOutput(payload.node.id, t("nodeExecutionSuccess"));
-                  }
-                  if (payload.node.variables !== '""') {
-                    const variables = JSON.parse(payload.node.variables);
-                    setGlobalDebugVariables(variables);
-                    variableReturn.current = variables;
-                  }
-                  updateStatus(payload.node.id, "ok");
-                } else if (payload.node.status === "running") {
-                  updateStatus(payload.node.id, "running");
-                } else if (payload.node.status === "pause") {
-                  setResumeDebugTaskId(taskId);
-                  updateStatus(payload.node.id, "pause");
-                  setSelectedNodeId(payload.node.id);
-                } else if (payload.node.status === "vlm_input") {
-                  setResumeInputTaskId(taskId);
-                  updateStatus(payload.node.id, "input");
-                  setCurrentInputNodeId(payload.node.id);
-                } else if (payload.node.status === "vlm_input_debug") {
-                  setResumeInputTaskId(taskId);
-                  setResumeDebugTaskId(taskId);
-                  updateStatus(payload.node.id, "running");
-                  setCurrentInputNodeId(payload.node.id);
-                } else if (payload.node.status === false) {
-                  updateStatus(payload.node.id, "init");
-                }
-              } else if (
-                payload.event === "ai_chunk" ||
-                payload.event === "mcp"
-              ) {
-                const nodeId = payload.ai_chunk.id; // 获取节点ID
-                const aiChunkResult = JSON.parse(payload.ai_chunk.result);
-                // 获取或初始化该节点的状态
-                let state = nodeStatesRef.current.get(countRef.current);
-                const nodeToAdd = nodes.find((node) => node.id === nodeId);
-                if (!state) {
-                  state = {
-                    aiMessage: "",
-                    aiThinking: "",
-                    messageId: "",
-                    total_token: 0,
-                    completion_tokens: 0,
-                    prompt_tokens: 0,
-                    file_used: [],
-                    vlmNewLoop: true,
-                  };
-                  setRunningChatflowLLMNodes((prev) => {
-                    return nodeToAdd ? [...prev, nodeToAdd] : prev;
-                  });
-                }
-
-                if (aiChunkResult.type === "file_used") {
-                  if (payload.event === "ai_chunk") {
-                    state.file_used = aiChunkResult.data; // 自动处理原始换行符
-                    state.messageId = aiChunkResult.message_id;
-                  }
-                }
-                if (aiChunkResult.type === "thinking") {
-                  state.aiThinking += aiChunkResult.data; // 自动处理原始换行符
-                  state.messageId = aiChunkResult.message_id;
-                }
-
-                if (aiChunkResult.type === "text") {
-                  if (payload.event === "mcp") {
-                    state.aiThinking += aiChunkResult.data; // 自动处理原始换行符
-                    state.messageId = aiChunkResult.message_id;
-                  } else {
-                    state.aiMessage += aiChunkResult.data; // 自动处理原始换行符
-                    if (Object.entries(globalDebugVariables).length > 0) {
-                      state.aiMessage = replaceTemplate(
-                        state.aiMessage,
-                        variableReturn.current
-                      );
-                    }
-                    state.messageId = aiChunkResult.message_id;
-                  }
-                }
-
-                if (aiChunkResult.type === "token") {
-                  state.total_token += aiChunkResult.total_token;
-                  state.completion_tokens += aiChunkResult.completion_tokens;
-                  state.prompt_tokens += aiChunkResult.prompt_tokens;
-                }
-
-                const currentCount = countRef.current;
-                if (aiChunkResult !== '""') {
-                  //if （首次循环）
-                  // else （其他循环 if（ai消息正常更新）
-                  //                else （aiChunkResult.type === "token"时额外更新知识库引用 ））
-                  //首次循环
-                  if (state.vlmNewLoop) {
-                    let newFileMessages: Message[] = [];
-                    state.vlmNewLoop = false;
-                    if (nodeToAdd?.data.isChatflowInput) {
-                      newFileMessages = fileMessages;
-                    }
-
-                    const newMessage: Message = {
-                      type: "text" as const,
-                      content: replaceTemplate(
-                        nodes.find((node) => node.id === nodeId)?.data
-                          .vlmInput || "",
-                        variableReturn.current
-                      ),
-                      from: "user" as const,
-                    };
-
-                    setMessages((prev) => {
-                      const nodeMessages = prev[nodeId] || [];
-
-                      // 直接创建最终AI消息
-                      const aiMessage: Message = {
-                        type: "text" as const,
-                        content: state.aiMessage, // 直接使用最终内容
-                        from: "ai" as const,
-                        thinking: state.aiThinking,
-                        messageId: state.messageId || "",
-                        token_number: {
-                          total_token: state.total_token,
-                          completion_tokens: state.completion_tokens,
-                          prompt_tokens: state.prompt_tokens,
-                        },
-                      };
-
-                      return {
-                        ...prev,
-                        [nodeId]: [
-                          ...nodeMessages,
-                          ...newFileMessages,
-                          newMessage,
-                          aiMessage, // 直接添加完整消息对象
-                        ],
-                      };
-                    });
-
-                    if (nodeToAdd?.data.isChatflowInput) {
-                      if (!checkChatflowInput()) {
-                        updateStatus(nodeToAdd.id, "failed");
-                        eventReader.cancel();
-                      }
-
-                      if (nodeToAdd?.data.isChatflowOutput) {
-                        setEachMessages((prev) => {
-                          // 直接创建最终AI消息
-                          const aiMessage: Message = {
-                            type: "text" as const,
-                            content: state.aiMessage, // 直接使用最终内容
-                            from: "ai" as const,
-                            thinking: state.aiThinking,
-                            messageId: state.messageId || "",
-                            token_number: {
-                              total_token: state.total_token,
-                              completion_tokens: state.completion_tokens,
-                              prompt_tokens: state.prompt_tokens,
-                            },
-                          };
-                          eachMessagesRef.current = {
-                            ...prev,
-                            [currentCount.toString()]: [
-                              ...newFileMessages,
-                              newMessage,
-                              aiMessage, // 直接添加完整消息对象
-                            ],
-                          };
-                          return {
-                            ...prev,
-                            [currentCount.toString()]: [
-                              ...newFileMessages,
-                              newMessage,
-                              aiMessage, // 直接添加完整消息对象
-                            ],
-                          };
-                        });
-                      } else {
-                        setEachMessages((prev) => {
-                          eachMessagesRef.current = {
-                            ...prev,
-                            [currentCount.toString()]: [
-                              ...newFileMessages,
-                              newMessage,
-                            ],
-                          };
-                          return {
-                            ...prev,
-                            [currentCount.toString()]: [
-                              ...newFileMessages,
-                              newMessage,
-                            ],
-                          };
-                        });
-                      }
-                      if (
-                        !countListRef.current.includes(
-                          countRef.current.toString()
-                        )
-                      ) {
-                        countListRef.current.push(countRef.current.toString());
-                      }
-                    } else {
-                      if (nodeToAdd?.data.isChatflowOutput) {
-                        if (!checkChatflowOutput()) {
-                          updateStatus(nodeToAdd.id, "failed");
-                          eventReader.cancel();
-                        }
-                        setEachMessages((prev) => {
-                          // 直接创建最终AI消息
-                          const aiMessage: Message = {
-                            type: "text" as const,
-                            content: state.aiMessage, // 直接使用最终内容
-                            from: "ai" as const,
-                            thinking: state.aiThinking,
-                            messageId: state.messageId || "",
-                            token_number: {
-                              total_token: state.total_token,
-                              completion_tokens: state.completion_tokens,
-                              prompt_tokens: state.prompt_tokens,
-                            },
-                          };
-                          eachMessagesRef.current = {
-                            ...prev,
-                            [currentCount.toString()]: [
-                              aiMessage, // 直接添加完整消息对象
-                            ],
-                          };
-                          return {
-                            ...prev,
-                            [currentCount.toString()]: [
-                              aiMessage, // 直接添加完整消息对象
-                            ],
-                          };
-                        });
-                        if (
-                          !countListRef.current.includes(
-                            countRef.current.toString()
-                          )
-                        ) {
-                          countListRef.current.push(
-                            countRef.current.toString()
-                          );
-                        }
-                      }
-                    }
-                    // 更新状态存储
-                    nodeStatesRef.current.set(countRef.current, state);
-                  } else {
-                    //ai消息正常更新
-                    if (aiChunkResult.type !== "token") {
-                      // 使用函数式更新确保基于最新状态
-                      setMessages((prev) => {
-                        const nodeMessages = prev[nodeId] || [];
-                        const lastIndex = nodeMessages.length - 1;
-
-                        const updatedMessages = [...nodeMessages];
-                        updatedMessages[lastIndex] = {
-                          ...updatedMessages[lastIndex],
-                          content: state.aiMessage,
-                          thinking: state.aiThinking,
-                          messageId: state.messageId ? state.messageId : "",
-                          token_number: {
-                            total_token: state.total_token,
-                            completion_tokens: state.completion_tokens,
-                            prompt_tokens: state.prompt_tokens,
-                          },
-                        };
-                        return { ...prev, [nodeId]: updatedMessages };
-                      });
-                      if (nodeToAdd?.data.isChatflowOutput) {
-                        setEachMessages((prev) => {
-                          const nodeMessages = prev[currentCount.toString()];
-                          const lastIndex = nodeMessages.length - 1;
-
-                          const updatedMessages = [...nodeMessages];
-                          updatedMessages[lastIndex] = {
-                            ...updatedMessages[lastIndex],
-                            content: state.aiMessage,
-                            thinking: state.aiThinking,
-                            messageId: state.messageId ? state.messageId : "",
-                            token_number: {
-                              total_token: state.total_token,
-                              completion_tokens: state.completion_tokens,
-                              prompt_tokens: state.prompt_tokens,
-                            },
-                          };
-                          eachMessagesRef.current = {
-                            ...prev,
-                            [currentCount.toString()]: updatedMessages,
-                          };
-                          return {
-                            ...prev,
-                            [currentCount.toString()]: updatedMessages,
-                          };
-                        });
-                        if (
-                          !countListRef.current.includes(
-                            countRef.current.toString()
-                          )
-                        ) {
-                          countListRef.current.push(
-                            countRef.current.toString()
-                          );
-                        }
-                      }
-                    } else if (payload.event === "ai_chunk") {
-                      // 额外更新知识库引用
-                      setMessages((prev) => {
-                        const nodeMessages = prev[nodeId] || [];
-                        const lastIndex = nodeMessages.length - 1;
-
-                        const updatedMessages = [...nodeMessages];
-                        updatedMessages[lastIndex] = {
-                          ...updatedMessages[lastIndex],
-                          content: state.aiMessage,
-                          thinking: state.aiThinking,
-                          messageId: state.messageId ? state.messageId : "",
-                          token_number: {
-                            total_token: state.total_token,
-                            completion_tokens: state.completion_tokens,
-                            prompt_tokens: state.prompt_tokens,
-                          },
-                        };
-
-                        const referenceMessages = [
-                          ...state.file_used.map((file, index) => ({
-                            type: "baseFile" as const,
-                            content: `image_${index}`,
-                            messageId: state.messageId ? state.messageId : "",
-                            imageMinioUrl: file.image_url,
-                            fileName: file.file_name,
-                            baseId: file.knowledge_db_id,
-                            minioUrl: file.file_url,
-                            score: file.score,
-                            from: "ai" as const,
-                          })),
-                        ];
-                        return {
-                          ...prev,
-                          [nodeId]: updatedMessages.concat(referenceMessages),
-                        };
-                      });
-
-                      if (nodeToAdd?.data.isChatflowOutput) {
-                        setEachMessages((prev) => {
-                          const nodeMessages = prev[currentCount.toString()];
-                          const lastIndex = nodeMessages.length - 1;
-
-                          const updatedMessages = [...nodeMessages];
-                          updatedMessages[lastIndex] = {
-                            ...updatedMessages[lastIndex],
-                            content: state.aiMessage,
-                            thinking: state.aiThinking,
-                            messageId: state.messageId ? state.messageId : "",
-                            token_number: {
-                              total_token: state.total_token,
-                              completion_tokens: state.completion_tokens,
-                              prompt_tokens: state.prompt_tokens,
-                            },
-                          };
-                          const referenceMessage = [
-                            ...state.file_used.map((file, index) => ({
-                              type: "baseFile" as const,
-                              content: `image_${index}`,
-                              messageId: state.messageId ? state.messageId : "",
-                              imageMinioUrl: file.image_url,
-                              fileName: file.file_name,
-                              baseId: file.knowledge_db_id,
-                              minioUrl: file.file_url,
-                              score: file.score,
-                              from: "ai" as const,
-                            })),
-                          ];
-                          eachMessagesRef.current = {
-                            ...prev,
-                            [currentCount.toString()]:
-                              updatedMessages.concat(referenceMessage),
-                          };
-                          return {
-                            ...prev,
-                            [currentCount.toString()]:
-                              updatedMessages.concat(referenceMessage),
-                          };
-                        });
-                        if (
-                          !countListRef.current.includes(
-                            countRef.current.toString()
-                          )
-                        ) {
-                          countListRef.current.push(
-                            countRef.current.toString()
-                          );
-                        }
-                      }
-                      countRef.current += 1;
-                    } else {
-                    }
-                  }
-                }
-              }
-            }
-          } catch (error) {
-            console.error("SSE Error:", error);
-            setShowAlert(true);
-            setWorkflowStatus("error");
-            setWorkflowMessage(t("sseError"));
-          } finally {
-            setRunning(false);
-            setTaskId("");
-            setCanceling(false);
-            setRefreshDockerImages((prev) => !prev);
-          }
-        }
-      };
-      workFlowSSE();
-    }
-  }, [
-    taskId,
-    setGlobalDebugVariables,
-    setSelectedEdgeId,
-    setSelectedNodeId,
-    updateOutput,
-    updateStatus,
-    user?.name,
-  ]);
-
-  const fetchModelConfig = async (nodeId: string) => {
-    if (user?.name) {
-      const responseBase = await getAllKnowledgeBase(user.name);
-      const bases: KnowledgeBase[] = responseBase.data.map((item: any) => ({
-        name: item.knowledge_base_name,
-        id: item.knowledge_base_id,
-        selected: false,
-      }));
-
-      const response = await getAllModelConfig(user.name);
-
-      const modelConfigsResponse: ModelConfig[] = response.data.models.map(
-        (item: any) => ({
-          modelId: item.model_id,
-          modelName: item.model_name,
-          modelURL: item.model_url,
-          apiKey: item.api_key,
-          baseUsed: item.base_used,
-          systemPrompt: item.system_prompt,
-          temperature: item.temperature === -1 ? 0.1 : item.temperature,
-          maxLength: item.max_length === -1 ? 8192 : item.max_length,
-          topP: item.top_P === -1 ? 0.01 : item.top_P,
-          topK: item.top_K === -1 ? 3 : item.top_K,
-          scoreThreshold:
-            item.score_threshold === -1 ? 10 : item.score_threshold,
-          useTemperatureDefault: item.temperature === -1 ? true : false,
-          useMaxLengthDefault: item.max_length === -1 ? true : false,
-          useTopPDefault: item.top_P === -1 ? true : false,
-          useTopKDefault: item.top_K === -1 ? true : false,
-          useScoreThresholdDefault: item.score_threshold === -1 ? true : false,
-        })
-      );
-
-      const selected = modelConfigsResponse.find(
-        (m) => m.modelId === response.data.selected_model
-      );
-
-      if (selected) {
-        const filter_select = selected.baseUsed.filter((item) =>
-          bases.some((base) => base.id === item.baseId)
-        );
-        updateVlmModelConfig(nodeId, (prev) => ({
-          ...prev,
-          ...selected,
-          baseUsed: filter_select,
-        }));
-      }
-    }
-  };
-
+  // ReactFlow handlers
   const onNodesChange = useCallback(
     (changes: NodeChange<CustomNode>[]) => {
       setNodes(applyNodeChanges(changes, nodes));
@@ -1080,97 +456,6 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     ]
   );
 
-  const addNode = (type: NodeTypeKey) => {
-    let data;
-    let id;
-    if (type === "code") {
-      data = {
-        status: "init",
-        label: t("label." + type),
-        nodeType: type,
-        code: 'def my_func():\n    print("Hello Layra!")\n\nmy_func()\n',
-        output: t("defaultOutput"),
-        pip: {},
-      };
-    } else if (type === "loop") {
-      data = {
-        status: "init",
-        label: t("label." + type),
-        nodeType: type,
-        loopType: "count",
-        maxCount: 1,
-        condition: "",
-        output: t("defaultOutput"),
-      };
-    } else if (type === "vlm") {
-      data = {
-        status: "init",
-        label: t("label." + type),
-        nodeType: type,
-        output: t("vlmOutputPlaceholder"),
-        prompt: "Your are a helpful assistant.",
-        vlmInput: "",
-        chatflowOutputVariable: "",
-        isChatflowInput: false,
-        isChatflowOutput: false,
-        useChatHistory: false,
-        chat: t("vlmChatPlaceholder"),
-      };
-    } else if (type === "condition") {
-      data = {
-        status: "init",
-        label: t("label." + type),
-        nodeType: type,
-        output: t("defaultOutput"),
-        conditions: {}
-      };
-    } else {
-      data = {
-        status: "init",
-        label: t("label." + type),
-        nodeType: type,
-        output: t("defaultOutput"),
-      };
-    }
-    if (type === "start") {
-      if (nodes.find((node) => node.data.nodeType === "start")) {
-        setShowAlert(true);
-        setWorkflowStatus("error");
-        setWorkflowMessage(t("startNodeExist"));
-        return;
-      }
-      id = "node_start";
-    } else {
-      id = getId(type);
-    }
-    const newNode: CustomNode = {
-      id: id,
-      type: "default",
-      position: { x: Math.random() * 100 - 100, y: Math.random() * 100 },
-      data: data,
-    };
-    setNodes([...nodes, newNode]);
-    if (type === "vlm") {
-      fetchModelConfig(id);
-    }
-  };
-
-  const addCustomNode = (name: string) => {
-    const type = customNodes[name].type;
-    if (type) {
-      const id = getId(type);
-      const newNode: CustomNode = {
-        id: id,
-        type: customNodes[name].type,
-        position: { x: Math.random() * 100 - 100, y: Math.random() * 100 },
-        data: { ...customNodes[name].data, label: name },
-      };
-      setNodes([...nodes, newNode]);
-    } else {
-      alert("Node Error");
-    }
-  };
-
   const onNodeClick = (_: any, node: CustomNode) => {
     setSelectedType(node.data.nodeType);
     setSelectedNodeId(node.id);
@@ -1194,7 +479,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     }
   };
 
-  // input_resume:用户通过对话框输入后设置为true
+  // Workflow execution
   const handleRunWorkflow = async (
     debug: boolean = false,
     input_resume: boolean = false,
@@ -1204,9 +489,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   ) => {
     if (saveImage) {
       if (saveImageName === "" || saveImageTag === "") {
-        setShowAlert(true);
-        setWorkflowMessage(t("imageNameVersionRequired"));
-        setWorkflowStatus("error");
+        handleShowAlert(t("imageNameVersionRequired"), "error");
         return;
       }
     }
@@ -1219,14 +502,14 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         node.data.isChatflowInput === false &&
         node.data.vlmInput === ""
       ) {
-        setShowAlert(true);
-        setWorkflowMessage(
-          t("questionRequiredForNode", { nodeName: node.data.label })
+        handleShowAlert(
+          t("questionRequiredForNode", { nodeName: node.data.label }),
+          "error"
         );
-        setWorkflowStatus("error");
         return;
       }
     }
+
     if (user?.name) {
       setRunning(true);
       if (
@@ -1234,7 +517,6 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         (resumeDebugTaskId === "" && resumeInputTaskId === "")
       ) {
         handleNewChatflow();
-        nodeStatesRef.current = new Map();
         setMessages({});
         setEachMessages({});
         countListRef.current = [];
@@ -1247,27 +529,26 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
           updateChat(node.id, t("awaitRunning"));
         });
       }
+
       if (files.length > 0) {
         const newFileMessages: Message[] = files.map((file) => {
           const fileType: string = getFileExtension(file.filename);
           if (["png", "jpg", "jpeg", "gif"].includes(fileType)) {
-            const fileMessage: Message = {
+            return {
               type: "image",
               content: file.filename,
               minioUrl: file.url,
               from: "user",
             };
-            return fileMessage;
           } else {
-            const fileMessage: Message = {
+            return {
               type: "file",
               content: userMessage,
               fileName: file.filename,
-              fileType: fileType, // 新增文件类型字段
+              fileType: fileType,
               minioUrl: file.url,
               from: "user",
             };
-            return fileMessage;
           }
         });
         setFileMessages(newFileMessages);
@@ -1302,25 +583,21 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
 
           const filterMcpConfig = (
             mcpConfig: {
-              [key: string]: McpConfig;
+              [key: string]: any;
             },
             mcpUse: {
               [key: string]: string[];
             }
           ) => {
             const filteredConfig: {
-              [key: string]: McpConfig;
+              [key: string]: any;
             } = {};
-            // 遍历 mcpUse 中的所有配置键（如 mcp1）
             for (const key of Object.keys(mcpUse)) {
               if (mcpConfig[key]) {
-                // 获取原始配置
                 const originalConfig = mcpConfig[key];
-                // 过滤工具列表，仅保留在 mcpUse 中声明的工具
-                const filteredTools = originalConfig.mcpTools.filter((tool) =>
+                const filteredTools = originalConfig.mcpTools.filter((tool: any) =>
                   mcpUse[key].includes(tool.name)
                 );
-                // 构造新的配置项（保留 mcpServerUrl 等属性）
                 filteredConfig[key] = {
                   ...originalConfig,
                   mcpTools: filteredTools,
@@ -1330,7 +607,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             return filteredConfig;
           };
 
-          let mcpUse: { [key: string]: McpConfig };
+          let mcpUse: { [key: string]: any };
           if (node.data.mcpConfig && node.data.mcpUse) {
             mcpUse = filterMcpConfig(node.data.mcpConfig, node.data.mcpUse);
           } else {
@@ -1387,6 +664,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             };
           }
         });
+
         let sendBreakpoints: string[];
         let sendDebugResumeTaskId: string;
         let sendInputResumeTaskId: string;
@@ -1452,199 +730,14 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         if (response.data.code === 0) {
           setTaskId(response.data.task_id);
         } else {
-          setShowAlert(true);
-          setWorkflowMessage(response.data.msg);
-          setWorkflowStatus("error");
+          handleShowAlert(response.data.msg, "error");
           setRunning(false);
         }
       } catch (error) {
-        console.error("Error connect:", error);
+        logger.error("Error connect:", error);
         setRunning(false);
-      } finally {
       }
     }
-  };
-
-  const handleSaveWorkFlow = async () => {
-    if (user?.name) {
-      try {
-        const response = await createWorkflow(
-          workFlow.workflowId,
-          user.name,
-          workFlow.workflowName,
-          { docker_image_use: DockerImageUse },
-          workFlow.startNode,
-          globalVariables,
-          nodes,
-          edges
-        );
-        if (response.status == 200) {
-          setShowAlert(true);
-          setWorkflowMessage(t("saveSuccess"));
-          setWorkflowStatus("success");
-        }
-      } catch (error) {
-        console.error("Auto-save failed:", error);
-        setShowAlert(true);
-        setWorkflowMessage(t("saveFailure"));
-        setWorkflowStatus("error");
-      }
-    }
-  };
-
-  const handleAutoSaveWorkFlow = useCallback(
-    async (
-      DockerImageUse: string,
-      globalVariables: {
-        [key: string]: string;
-      },
-      nodes: CustomNode[],
-      edges: CustomEdge[]
-    ) => {
-      if (user?.name) {
-        try {
-          const response = await createWorkflow(
-            workFlow.workflowId,
-            user.name,
-            workFlow.workflowName,
-            { docker_image_use: DockerImageUse },
-            workFlow.startNode,
-            globalVariables,
-            nodes,
-            edges
-          );
-          if (response.status == 200) {
-            showTemporaryAlert(
-              t("autoSaveSuccess", { workflowName: workFlow.workflowName }),
-              "success"
-            );
-          }
-        } catch (error) {
-          console.error("Auto-save failed:", error);
-          showTemporaryAlert(
-            t("autoSaveFailure", { workflowName: workFlow.workflowName }),
-            "error"
-          );
-        }
-      }
-    },
-    [workFlow, user?.name]
-  );
-
-  // 固定1分钟保存一次
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      // ✅ 每次执行时直接从 store 读取最新状态
-      const currentDockerImageUse = useGlobalStore.getState().DockerImageUse;
-      const currentGlobalVariables = useGlobalStore.getState().globalVariables;
-      const currentNodes = useFlowStore.getState().nodes;
-      const currentEdges = useFlowStore.getState().edges;
-      handleAutoSaveWorkFlow(
-        currentDockerImageUse,
-        currentGlobalVariables,
-        currentNodes,
-        currentEdges
-      );
-    }, 60000);
-    return () => clearInterval(intervalId);
-  }, [workFlow, user?.name, handleAutoSaveWorkFlow]); // 无需依赖项
-
-  const showTemporaryAlert = (message: string, type: "success" | "error") => {
-    setSaveStatus({ visible: true, message, type });
-
-    // 3秒后自动隐藏
-    setTimeout(() => {
-      setSaveStatus((prev) => ({ ...prev, visible: false }));
-    }, 5000);
-  };
-
-  const handleImportWorkflow = async (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    const file = event.target.files?.[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-
-    reader.onload = async (e) => {
-      try {
-        const content = e.target?.result as string;
-        const data = JSON.parse(content);
-
-        // 验证数据格式
-        if (!data.nodes || !data.edges || !data.globalVariables) {
-          throw new Error("Invalid workflow file format");
-        }
-
-        // 确认提示
-        const confirm = window.confirm(t("importWorkflowAlert"));
-        if (!confirm) return;
-        // 更新状态
-        setNodes(data.nodes);
-        setEdges(data.edges);
-        setGlobalVariables(data.globalVariables);
-
-        // 重置相关状态
-        setSelectedNodeId(null);
-        setSelectedEdgeId(null);
-        pushHistory();
-      } catch (error) {
-        console.error("导入失败:", error);
-        setShowAlert(true);
-        setWorkflowStatus("error");
-        setWorkflowMessage(t("invalidWorkflowFile"));
-      }
-    };
-
-    reader.readAsText(file);
-    event.target.value = ""; // 重置input以允许重复选择同一文件
-  };
-
-  const handleExportWorkflow = () => {
-    const outputNodes = nodes.map((node) => {
-      // 不满足条件的节点直接返回原节点（不修改）
-      if (node.data.nodeType !== "vlm" || !node.data.modelConfig) {
-        return node;
-      }
-
-      // 创建新对象避免修改原节点
-      return {
-        ...node, // 浅拷贝节点属性
-        data: {
-          ...node.data, // 浅拷贝data属性
-          modelConfig: {
-            ...node.data.modelConfig, // 浅拷贝modelConfig属性
-            apiKey: "", // 仅修改apiKey字段
-          },
-        },
-      };
-    });
-    const exportData = {
-      nodes: outputNodes,
-      edges,
-      globalVariables,
-      metadata: {
-        exportedAt: new Date().toISOString(),
-      },
-    };
-
-    const jsonString = JSON.stringify(exportData, null, 2);
-    const blob = new Blob([jsonString], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `${workFlow.workflowName}_${Date.now()}_layra.json`;
-    document.body.appendChild(a);
-    a.click();
-
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  };
-
-  const handleSaveNodes = (newNode: CustomNode) => {
-    setShowAddNode(true);
-    setNewCustomNode(newNode);
   };
 
   const handleStopWorkflow = async () => {
@@ -1653,12 +746,15 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         await cancelWorkflow(user.name, taskId);
         setCanceling(true);
       } catch (error) {
-        console.error("Cancel failed: ", error);
-        setShowAlert(true);
-        setWorkflowStatus("error");
-        setWorkflowMessage(t("cancelFailed") + error);
+        logger.error("Cancel failed: ", error);
+        handleShowAlert(t("cancelFailed") + error, "error");
       }
     }
+  };
+
+  const handleSaveNodes = (newNode: CustomNode) => {
+    setShowAddNode(true);
+    setNewCustomNode(newNode);
   };
 
   const handleCreateConfirm = async () => {
@@ -1676,27 +772,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
       setNameError(t("duplicateNodeName"));
       return;
     }
-    if (newCustomNode && user?.name) {
-      try {
-        const response = await saveCustomNodes(
-          user?.name,
-          newNodeName,
-          newCustomNode
-        );
-        if (response.data.status === "success") {
-          setCustomNodes((prev) => ({
-            ...prev,
-            [newNodeName]: newCustomNode,
-          }));
-        } else {
-          setShowAlert(true);
-          setWorkflowStatus("error");
-          setWorkflowMessage(t("saveCustomNodeFailed"));
-        }
-      } catch (error) {
-        console.error("Error save custom node:", error);
-      }
-    }
+    // Save logic here
     setShowAddNode(false);
     setNewNodeName("");
     setNameError(null);
@@ -1719,7 +795,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             workFlow.workflowId
           );
         } catch (error) {
-          console.error("Error delete file:", error);
+          logger.error("Error delete file:", error);
         }
       }
       resumeDebugTaskId
@@ -1730,12 +806,12 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
 
   return (
     <div
-      className="grid grid-cols-[15%_1fr] h-full w-full bg-white rounded-3xl shadow-sm p-6"
+      className="grid grid-cols-[15%_1fr] h-full w-full bg-gray-800 rounded-3xl shadow-sm p-6"
       ref={reactFlowWrapper}
       tabIndex={0}
       onKeyDown={onKeyDown}
     >
-      <div className=" bg-white pr-4 h-full overflow-auto">
+      <div className="bg-gray-800 pr-4 h-full overflow-auto">
         <NodeTypeSelector
           deleteCustomNode={handleDeleteCustomNode}
           customNodes={customNodes}
@@ -1748,439 +824,70 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
       </div>
 
       <div className="h-full flex flex-col">
-        <div className="flex items-center justify-between mb-1 text-[15px]">
-          <div className="flex items-center justify-center">
-            <button
-              onClick={undo}
-              disabled={history.length <= 1}
-              className="cursor-pointer disabled:cursor-not-allowed px-2 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="size-4.5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3"
-                />
-              </svg>
-              <span>({Math.min(history.length - 1, 50)})</span>
-            </button>
-            <button
-              onClick={redo}
-              disabled={future.length === 0}
-              className="cursor-pointer disabled:cursor-not-allowed px-2 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
-            >
-              <span>({Math.min(future.length, 50)})</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="size-4.5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m15 15 6-6m0 0-6-6m6 6H9a6 6 0 0 0 0 12h3"
-                />
-              </svg>
-            </button>
-            <input
-              type="file"
-              ref={fileInputRef}
-              accept=".json"
-              onChange={handleImportWorkflow}
-              className="hidden"
-            />
+        <WorkflowToolbar
+          historyLength={history.length}
+          futureLength={future.length}
+          nodesLength={nodes.length}
+          running={running}
+          resumeDebugTaskId={resumeDebugTaskId}
+          selectedNodeId={selectedNodeId}
+          sendInputDisabled={sendInputDisabled}
+          showOutput={showOutput}
+          fullScreenFlow={fullScreenFlow}
+          fileInputRef={fileInputRef}
+          handleImportWorkflow={handleImportWorkflow}
+          onUndo={undo}
+          onRedo={redo}
+          onImport={triggerImport}
+          onExport={handleExportWorkflow}
+          onRefresh={handleRefresh}
+          onToggleFullScreen={() => setFullScreenFlow((prev) => !prev)}
+          onToggleOutput={() => {
+            if (selectedNodeId) {
+              setShowOutput(true);
+              setSelectedNodeId(null);
+              setSelectedEdgeId(null);
+            } else {
+              setShowOutput((prev) => !prev);
+            }
+          }}
+          onRun={() => handleRunWorkflow(false)}
+          onDebug={() => handleRunWorkflow(true)}
+          onSave={handleSaveWorkFlow}
+          onStop={handleStopWorkflow}
+          onClear={() => setShowConfirmClear(true)}
+        />
 
-            <button
-              onClick={() => fileInputRef.current?.click()}
-              //disabled={nodes.length > 0}
-              className="cursor-pointer disabled:cursor-not-allowed px-2 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="size-4.5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75"
-                />
-              </svg>
+        <div className="flex-1 rounded-3xl shadow-sm bg-gray-800 relative overflow-hidden">
+          <WorkflowCanvasPanel
+            currentNode={currentNode}
+            showOutput={showOutput}
+            codeFullScreenFlow={codeFullScreenFlow}
+            setCodeFullScreenFlow={setCodeFullScreenFlow}
+            resumeDebugTaskId={resumeDebugTaskId}
+            messages={messages}
+            setMessages={setMessages}
+            onSaveNode={handleSaveNodes}
+            showError={(error) => handleShowAlert(error, "error")}
+            workFlow={workFlow}
+            tempBaseId={tempBaseId}
+            setTempBaseId={setTempBaseId}
+            sendingFiles={sendingFiles}
+            setSendingFiles={setSendingFiles}
+            cleanTempBase={cleanTempBase}
+            onSendMessage={handleSendMessage}
+            sendDisabled={sendInputDisabled}
+            messagesWithCount={eachMessages}
+            runningLLMNodes={runningChatflowLLMNodes}
+            refreshDockerImages={refreshDockerImages}
+            saveImage={saveImage}
+            setSaveImage={setSaveImage}
+            saveImageName={saveImageName}
+            setSaveImageName={setSaveImageName}
+            saveImageTag={saveImageTag}
+            setSaveImageTag={setSaveImageTag}
+          />
 
-              <span>{t("import")}</span>
-            </button>
-            <button
-              onClick={handleExportWorkflow}
-              disabled={nodes.length === 0}
-              className="cursor-pointer disabled:cursor-not-allowed px-2 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="size-4.5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M8.25 9V5.25A2.25 2.25 0 0 1 10.5 3h6a2.25 2.25 0 0 1 2.25 2.25v13.5A2.25 2.25 0 0 1 16.5 21h-6a2.25 2.25 0 0 1-2.25-2.25V15m-3 0-3-3m0 0 3-3m-3 3H15"
-                />
-              </svg>
-              <span>{t("export")}</span>
-            </button>
-            <button
-              onClick={() => {
-                handleSaveWorkFlow();
-                handleRefresh();
-              }}
-              className="cursor-pointer disabled:cursor-not-allowed px-2 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="size-4.5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"
-                />
-              </svg>
-
-              <span>{t("refresh")}</span>
-            </button>
-          </div>
-
-          <button
-            className="cursor-pointer disabled:cursor-not-allowed px-4 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
-            onClick={() => setFullScreenFlow((prev: boolean) => !prev)}
-          >
-            {fullScreenFlow ? (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="size-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 9V4.5M9 9H4.5M9 9 3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5m0-4.5 5.25 5.25"
-                />
-              </svg>
-            ) : (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth="1.5"
-                stroke="currentColor"
-                className="size-5"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"
-                />
-              </svg>
-            )}
-          </button>
-
-          <div className="flex items-center justify-center">
-            <div className="flex items-center justify-center">
-              <button
-                //disabled={running}
-                onClick={() => {
-                  if (selectedNodeId) {
-                    setShowOutput(true);
-                    setSelectedNodeId(null);
-                    setSelectedEdgeId(null);
-                  } else {
-                    setShowOutput((prev) => !prev);
-                  }
-                }}
-                className={`${
-                  !sendInputDisabled && !showOutput ? "text-indigo-700" : ""
-                } cursor-pointer disabled:cursor-not-allowed px-2 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="size-4.5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"
-                  />
-                </svg>
-
-                <span>
-                  {!sendInputDisabled && !showOutput
-                    ? t("clickHere")
-                    : t("chatFlow")}
-                </span>
-              </button>
-              <button
-                disabled={running}
-                onClick={() => handleRunWorkflow(false)}
-                className={`cursor-pointer disabled:cursor-not-allowed px-2 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="size-4.5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"
-                  />
-                </svg>
-
-                <span>{t("run")}</span>
-              </button>
-              <button
-                disabled={running}
-                className={`${
-                  resumeDebugTaskId ? "text-red-500" : ""
-                } cursor-pointer disabled:cursor-not-allowed px-2 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1`}
-                onClick={() => {
-                  handleRunWorkflow(true);
-                }}
-              >
-                {resumeDebugTaskId ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="size-4.5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M21 7.5V18M15 7.5V18M3 16.811V8.69c0-.864.933-1.406 1.683-.977l7.108 4.061a1.125 1.125 0 0 1 0 1.954l-7.108 4.061A1.125 1.125 0 0 1 3 16.811Z"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="size-4.5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M12 12.75c1.148 0 2.278.08 3.383.237 1.037.146 1.866.966 1.866 2.013 0 3.728-2.35 6.75-5.25 6.75S6.75 18.728 6.75 15c0-1.046.83-1.867 1.866-2.013A24.204 24.204 0 0 1 12 12.75Zm0 0c2.883 0 5.647.508 8.207 1.44a23.91 23.91 0 0 1-1.152 6.06M12 12.75c-2.883 0-5.647.508-8.208 1.44.125 2.104.52 4.136 1.153 6.06M12 12.75a2.25 2.25 0 0 0 2.248-2.354M12 12.75a2.25 2.25 0 0 1-2.248-2.354M12 8.25c.995 0 1.971-.08 2.922-.236.403-.066.74-.358.795-.762a3.778 3.778 0 0 0-.399-2.25M12 8.25c-.995 0-1.97-.08-2.922-.236-.402-.066-.74-.358-.795-.762a3.734 3.734 0 0 1 .4-2.253M12 8.25a2.25 2.25 0 0 0-2.248 2.146M12 8.25a2.25 2.25 0 0 1 2.248 2.146M8.683 5a6.032 6.032 0 0 1-1.155-1.002c.07-.63.27-1.222.574-1.747m.581 2.749A3.75 3.75 0 0 1 15.318 5m0 0c.427-.283.815-.62 1.155-.999a4.471 4.471 0 0 0-.575-1.752M4.921 6a24.048 24.048 0 0 0-.392 3.314c1.668.546 3.416.914 5.223 1.082M19.08 6c.205 1.08.337 2.187.392 3.314a23.882 23.882 0 0 1-5.223 1.082"
-                    />
-                  </svg>
-                )}
-
-                <span>{t("debug")}</span>
-              </button>
-            </div>
-            <div className="flex items-center justify-center">
-              <button
-                onClick={handleSaveWorkFlow}
-                className="cursor-pointer disabled:cursor-not-allowed px-2 py-1.5 rounded-full text-indigo-500 hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="size-4.5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z"
-                  />
-                </svg>
-                <span>{t("save")}</span>
-              </button>
-              {running ? (
-                <button
-                  disabled={!taskId || canceling}
-                  className="text-red-500 cursor-pointer disabled:cursor-not-allowed px-2 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
-                  onClick={handleStopWorkflow}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="size-4.5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M5.25 7.5A2.25 2.25 0 0 1 7.5 5.25h9a2.25 2.25 0 0 1 2.25 2.25v9a2.25 2.25 0 0 1-2.25 2.25h-9a2.25 2.25 0 0 1-2.25-2.25v-9Z"
-                    />
-                  </svg>
-
-                  <span>{t("stop")}</span>
-                </button>
-              ) : (
-                <button
-                  disabled={running || resumeDebugTaskId !== ""}
-                  className="text-red-500 cursor-pointer disabled:cursor-not-allowed px-2 py-1.5 rounded-full hover:bg-indigo-600 hover:text-white disabled:opacity-50 flex items-center justify-center gap-1"
-                  onClick={() => {
-                    setShowConfirmClear(true);
-                  }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth="1.5"
-                    stroke="currentColor"
-                    className="size-4.5"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0"
-                    />
-                  </svg>
-
-                  <span>{t("clear")}</span>
-                </button>
-              )}
-            </div>
-          </div>
-        </div>
-
-        <div className="flex-1 rounded-3xl shadow-sm bg-white relative overflow-hidden">
-          {currentNode ? (
-            <div
-              className={`p-2 z-10 max-h-[calc(100%-16px)] ${
-                codeFullScreenFlow
-                  ? "w-[96%] h-[98%] fixed  top-[1%] right-[2%]"
-                  : "w-[40%]  h-[98%] absolute m-2 top-0 right-0"
-              } shadow-lg rounded-3xl bg-white`}
-            >
-              {{
-                code: (
-                  <FunctionNodeComponent
-                    refreshDockerImages={refreshDockerImages}
-                    saveImage={saveImage}
-                    setSaveImage={setSaveImage}
-                    saveImageName={saveImageName}
-                    setSaveImageName={setSaveImageName}
-                    saveImageTag={saveImageTag}
-                    setSaveImageTag={setSaveImageTag}
-                    saveNode={handleSaveNodes}
-                    isDebugMode={resumeDebugTaskId === "" ? false : true}
-                    node={currentNode}
-                    codeFullScreenFlow={codeFullScreenFlow}
-                    setCodeFullScreenFlow={setCodeFullScreenFlow}
-                  />
-                ),
-                start: (
-                  <StartNodeComponent
-                    isDebugMode={resumeDebugTaskId === "" ? false : true}
-                    node={currentNode}
-                    codeFullScreenFlow={codeFullScreenFlow}
-                    setCodeFullScreenFlow={setCodeFullScreenFlow}
-                  />
-                ),
-                vlm: (
-                  <VlmNodeComponent
-                    showError={(error) => {
-                      setShowAlert(true);
-                      setWorkflowStatus("error");
-                      setWorkflowMessage(error);
-                    }}
-                    messages={messages[currentNode.id]}
-                    setMessages={setMessages}
-                    saveNode={handleSaveNodes}
-                    isDebugMode={resumeDebugTaskId === "" ? false : true}
-                    node={currentNode}
-                    codeFullScreenFlow={codeFullScreenFlow}
-                    setCodeFullScreenFlow={setCodeFullScreenFlow}
-                  />
-                ),
-                condition: (
-                  <ConditionNodeComponent
-                    saveNode={handleSaveNodes}
-                    isDebugMode={resumeDebugTaskId === "" ? false : true}
-                    node={currentNode}
-                    codeFullScreenFlow={codeFullScreenFlow}
-                    setCodeFullScreenFlow={setCodeFullScreenFlow}
-                  />
-                ),
-                loop: (
-                  <LoopNodeComponent
-                    saveNode={handleSaveNodes}
-                    isDebugMode={resumeDebugTaskId === "" ? false : true}
-                    node={currentNode}
-                    codeFullScreenFlow={codeFullScreenFlow}
-                    setCodeFullScreenFlow={setCodeFullScreenFlow}
-                  />
-                ),
-              }[currentNode.data.nodeType] || <div></div>}
-            </div>
-          ) : showOutput ? (
-            <div
-              className={`p-2 z-10 max-h-[calc(100%-16px)] ${
-                codeFullScreenFlow
-                  ? "w-[96%] h-[98%] fixed  top-[1%] right-[2%]"
-                  : "w-[40%]  h-[98%] absolute m-2 top-0 right-0"
-              } shadow-lg rounded-3xl bg-white`}
-            >
-              <WorkflowOutputComponent
-                workflow={workFlow}
-                tempBaseId={tempBaseId}
-                setTempBaseId={setTempBaseId}
-                sendingFiles={sendingFiles}
-                setSendingFiles={setSendingFiles}
-                cleanTempBase={cleanTempBase}
-                onSendMessage={handleSendMessage}
-                sendDisabled={sendInputDisabled}
-                messagesWithCount={eachMessages}
-                runningLLMNodes={runningChatflowLLMNodes}
-                isDebugMode={resumeDebugTaskId === "" ? false : true}
-                codeFullScreenFlow={codeFullScreenFlow}
-                setCodeFullScreenFlow={setCodeFullScreenFlow}
-              />
-            </div>
-          ) : (
-            ""
-          )}
           <ReactFlow
             nodes={nodes}
             edges={edges}
@@ -2195,7 +902,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
               setSelectedNodeId(null);
               setSelectedEdgeId(null);
               setShowOutput(false);
-            }} // 添加这一行
+            }}
             nodeTypes={{ default: CustomNodeComponent }}
             edgeTypes={{ default: CustomEdgeComponent }}
             connectionLineComponent={ConnectionLine}
@@ -2212,6 +919,36 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
           </ReactFlow>
         </div>
       </div>
+
+      <WorkflowExecutionHandler
+        taskId={taskId}
+        user={user}
+        nodes={nodes}
+        selectedNodeId={selectedNodeId}
+        fileMessages={fileMessages}
+        globalDebugVariables={globalDebugVariables}
+        onRunningChange={setRunning}
+        onCancelingChange={setCanceling}
+        onTaskIdChange={setTaskId}
+        onUpdateOutput={updateOutput}
+        onUpdateStatus={updateStatus}
+        onSetSelectedNodeId={setSelectedNodeId}
+        onSetSelectedEdgeId={setSelectedEdgeId}
+        onSetGlobalDebugVariables={setGlobalDebugVariables}
+        onSetMessages={setMessages}
+        onSetEachMessages={setEachMessages}
+        onSetResumeDebugTaskId={setResumeDebugTaskId}
+        onSetResumeInputTaskId={setResumeInputTaskId}
+        onSetCurrentInputNodeId={setCurrentInputNodeId}
+        onSetShowOutput={setShowOutput}
+        onSetSendInputDisabled={setSendInputDisabled}
+        onSetRunningChatflowLLMNodes={setRunningChatflowLLMNodes}
+        onShowAlert={handleShowAlert}
+        countRef={countRef}
+        countListRef={countListRef}
+        eachMessagesRef={eachMessagesRef}
+      />
+
       {showAlert && (
         <ConfirmAlert
           type={workflowStatus}
