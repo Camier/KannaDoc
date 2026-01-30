@@ -206,3 +206,26 @@ start_layra_fixed.sh
 driftedlayra/
 .env
 .env.thesis
+
+# Agent/IDE workspace
+.sisyphus/
+.opencode/
+
+# Model weights (too large for git)
+model_weights/
+
+# Debug outputs
+embeddings_output/
+tmp/
+
+# Test scripts
+test_*.py
+verify_*.py
+
+# Editor configs
+pyrightconfig.json
+
+# Generated files
+openapi.json
+*.analysis.md
+*_ANALYSIS.md
