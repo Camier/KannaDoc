@@ -645,6 +645,7 @@ class WorkflowEngine:
                     f"{node.node_id}: 节点{node.data['name']}: 输出格式无效,非json格式"
                 )  # HTTPException(status_code=400, detail="输出格式无效")
         elif node.node_type == "vlm":
+            self.supply_info = ""
             message_id = str(uuid.uuid4())
             try:
                 if node.data["isChatflowInput"]:
@@ -683,13 +684,20 @@ class WorkflowEngine:
                     for mcp_server_name, mcp_server_tools in mcp_servers.items():
                         mcp_server_url = mcp_server_tools.get("mcpServerUrl")
                         mcp_tools = mcp_server_tools.get("mcpTools")
-                        mcp_headers = mcp_server_tools.get("headers", None)
-                        mcp_timeout = mcp_server_tools.get("timeout", 5)
-                        mcp_sse_read_timeout = mcp_server_tools.get(
+                        # Store per-server config to use with each tool
+                        server_headers = mcp_server_tools.get("headers", None)
+                        server_timeout = mcp_server_tools.get("timeout", 5)
+                        server_sse_read_timeout = mcp_server_tools.get(
                             "sseReadTimeout", 60 * 5
                         )
                         for mcp_tool in mcp_tools:
                             mcp_tool["url"] = mcp_server_url
+                            # Store server config per-tool to fix multi-server bug
+                            mcp_tool["_server_headers"] = server_headers
+                            mcp_tool["_server_timeout"] = server_timeout
+                            mcp_tool["_server_sse_read_timeout"] = (
+                                server_sse_read_timeout
+                            )
                             mcp_tools_for_call[mcp_tool["name"]] = mcp_tool
                     mcp_prompt = f"""
 You are an expert in selecting function calls. Please choose the most appropriate function call based on the user's question and provide the required parameters. Output in JSON format: {{"function_name": function name, "params": parameters}}. Do not include any other content. If the user's question is unrelated to functions, output {{"function_name":""}}.
@@ -735,13 +743,16 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
                         if function_name:
                             params = mcp_outermost_braces_dict.get("params")
                             try:
+                                tool_config = mcp_tools_for_call[function_name]
                                 result = await mcp_call_tools(
-                                    mcp_tools_for_call[function_name]["url"],
+                                    tool_config["url"],
                                     function_name,
                                     params,
-                                    headers=mcp_headers,
-                                    timeout=mcp_timeout,
-                                    sse_read_timeout=mcp_sse_read_timeout,
+                                    headers=tool_config.get("_server_headers"),
+                                    timeout=tool_config.get("_server_timeout", 5),
+                                    sse_read_timeout=tool_config.get(
+                                        "_server_sse_read_timeout", 60 * 5
+                                    ),
                                 )
                                 self.supply_info = f"\nPlease answer the question based on these results: {result}"
                                 logger.info("MCP:工作流{self.task_id}mcp调用成功")
