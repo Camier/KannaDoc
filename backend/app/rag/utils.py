@@ -2,6 +2,7 @@ import asyncio
 import copy
 import os
 import uuid
+import httpx
 from app.db.vector_db import vector_db_client
 from app.db.repositories.repository_manager import get_repository_manager
 from app.rag.convert_file import convert_file_to_images, save_image_to_minio
@@ -121,12 +122,17 @@ async def process_file(redis, task_id, username, knowledge_db_id, file_meta):
                     f"Embedding count mismatch: expected {len(batch_buffers)}, got {len(batch_embeddings)}"
                 )
 
+            page_texts = file_meta.get("page_texts")
+            if isinstance(page_texts, list):
+                page_texts = page_texts[batch_start:batch_end]
+
             await insert_to_milvus(
                 collection_name,
                 batch_embeddings,
                 batch_image_ids,
                 file_meta["file_id"],
                 page_offset=batch_start,
+                page_texts=page_texts,
             )
 
             for offset, (image_buffer, image_id) in enumerate(
@@ -237,9 +243,83 @@ async def generate_embeddings(images_buffer, filename, start_index=0):
     return await get_embeddings_from_httpx(images_request, endpoint="embed_image")
 
 
+def _fallback_sparse_text(image_ids, file_id, page_offset, index):
+    parts = []
+    if file_id:
+        parts.append(str(file_id))
+    if index < len(image_ids) and image_ids[index]:
+        parts.append(str(image_ids[index]))
+    parts.append(f"page {page_offset + index}")
+    return " ".join(parts).strip()
+
+
+def _build_sparse_texts(embeddings, image_ids, file_id, page_offset, page_texts=None):
+    if isinstance(page_texts, str) and page_texts.strip():
+        return [page_texts] * len(embeddings)
+    if isinstance(page_texts, list) and page_texts:
+        texts = []
+        for i in range(len(embeddings)):
+            text = page_texts[i] if i < len(page_texts) else None
+            if isinstance(text, str) and text.strip():
+                texts.append(text)
+            else:
+                texts.append(_fallback_sparse_text(image_ids, file_id, page_offset, i))
+        return texts
+    return [
+        _fallback_sparse_text(image_ids, file_id, page_offset, i)
+        for i in range(len(embeddings))
+    ]
+
+
+async def _fetch_sparse_embeddings(texts):
+    if not texts:
+        return []
+    try:
+        async with httpx.AsyncClient() as client:
+            response = await client.post(
+                "http://model-server:8005/embed_sparse",
+                json={"texts": texts},
+                timeout=60.0,
+            )
+            response.raise_for_status()
+            payload = response.json()
+            embeddings = payload.get("embeddings", [])
+            if not isinstance(embeddings, list):
+                logger.warning("Sparse embedding response missing embeddings list")
+                return []
+            return embeddings
+    except (httpx.TimeoutException, httpx.HTTPError, ValueError) as exc:
+        logger.warning(f"Sparse embedding request failed: {exc}")
+        return []
+    except Exception as exc:
+        logger.warning(f"Unexpected sparse embedding failure: {exc}")
+        return []
+
+
 async def insert_to_milvus(
-    collection_name, embeddings, image_ids, file_id, page_offset=0
+    collection_name,
+    embeddings,
+    image_ids,
+    file_id,
+    page_offset=0,
+    page_texts=None,
 ):
+    page_texts = _build_sparse_texts(
+        embeddings, image_ids, file_id, page_offset, page_texts
+    )
+    sparse_page_vecs = await _fetch_sparse_embeddings(page_texts)
+    if len(sparse_page_vecs) != len(embeddings):
+        if sparse_page_vecs:
+            logger.warning(
+                "Sparse embedding count mismatch: expected %s, got %s",
+                len(embeddings),
+                len(sparse_page_vecs),
+            )
+        sparse_page_vecs = [{} for _ in range(len(embeddings))]
+    else:
+        sparse_page_vecs = [
+            vec if isinstance(vec, dict) else {} for vec in sparse_page_vecs
+        ]
     loop = asyncio.get_event_loop()
     await loop.run_in_executor(
         None,
@@ -250,6 +330,9 @@ async def insert_to_milvus(
                     "page_number": page_offset + i,
                     "image_id": image_ids[i],
                     "file_id": file_id,
+                    "sparse_vecs": [dict(sparse_page_vecs[i]) for _ in range(len(emb))]
+                    if emb
+                    else [],
                 },
                 collection_name,
             )
