@@ -184,16 +184,16 @@ const MarkdownDisplay: React.FC<MarkdownDisplayProps> = ({
         className={`${
           message.from === "user"
             ? "bg-indigo-200 shadow-lg px-5 py-3 text-gray-800 rounded-3xl "
-            : "text-gray-900 "
+            : "text-gray-900 dark:text-gray-100 "
         } prose dark:prose-invert max-w-full ${
           isThinking
-            ? "border-l-2 border-gray-200 p-4 bg-gray-100 text-gray-800 rounded-3xl text-sm mb-4"
+            ? "border-l-2 border-gray-200 dark:border-gray-700 p-4 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 rounded-3xl text-sm mb-4"
             : "text-base"
         }`}
       >
         {isThinking && (
           <div
-            className="flex items-center justify-start gap-1 cursor-pointer text-gray-800"
+            className="flex items-center justify-start gap-1 cursor-pointer text-gray-800 dark:text-gray-200"
             onClick={() => setHideThinking((prev) => !prev)}
           >
             <div className="font-medium">{t("deepThinking")}</div>
@@ -241,7 +241,7 @@ const MarkdownDisplay: React.FC<MarkdownDisplayProps> = ({
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-indigo-600 hover:text-indigo-800"
+                      className="text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300"
                     >
                       {children}
                     </a>

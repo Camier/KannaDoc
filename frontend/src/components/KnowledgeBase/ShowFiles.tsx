@@ -56,15 +56,15 @@ const ShowFiles: React.FC<ShowFilesProps> = ({
         {files.map((file, index) => (
           <div
             key={index}
-            className="flex items-center justify-between px-3 py-2 hover:bg-gray-50 cursor-pointer border-b border-gray-200"
+            className="flex items-center justify-between px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer border-b border-gray-200 dark:border-gray-700"
           >
             <div
               className="flex items-center justify-between w-[calc(100%-24px)]"
               onClick={() => onDownload(file)}
             >
               <div className="flex-1">
-                <div className="font-medium text-sm">{file.filename}</div>
-                <div className="text-[13px] text-gray-500">
+                <div className="font-medium text-sm text-gray-900 dark:text-gray-100">{file.filename}</div>
+                <div className="text-[13px] text-gray-500 dark:text-gray-400">
                   {new Date(file.upload_time).toLocaleDateString()}
                   {file.kb_id &&
                     `${t("knowledgeBasePrefix")}${
@@ -76,7 +76,7 @@ const ShowFiles: React.FC<ShowFilesProps> = ({
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="w-5 h-5 text-indigo-500 hover:text-indigo-700"
+                className="w-5 h-5 text-indigo-500 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300"
               >
                 <path
                   fillRule="evenodd"
@@ -91,7 +91,7 @@ const ShowFiles: React.FC<ShowFilesProps> = ({
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="size-5 text-indigo-500 hover:text-indigo-700"
+              className="size-5 text-indigo-500 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300"
               onClick={() => handleDeleteFile(file, index)}
             >
               <path
@@ -103,20 +103,20 @@ const ShowFiles: React.FC<ShowFilesProps> = ({
           </div>
         ))}
         {files.length === 0 && (
-          <div className="text-center text-gray-500 py-8">{t("noFiles")}</div>
+          <div className="text-center text-gray-500 dark:text-gray-400 py-8">{t("noFiles")}</div>
         )}
       </div>
       {/* 分页控件 */}
       <div className="flex justify-between items-center mt-auto">
         <div className="flex items-center gap-2">
-          <span className="text-sm text-gray-600">{t("displayPerPage")}</span>
+          <span className="text-sm text-gray-600 dark:text-gray-400">{t("displayPerPage")}</span>
           <select
             value={pageSize}
             onChange={(e) => {
               setPageSize(Number(e.target.value));
               setCurrentPage(1);
             }}
-            className="cursor-pointer border border-gray-700 px-2 py-1 text-sm rounded-xl appearance-none text-gray-300 bg-gray-800 focus:outline-hidden"
+            className="cursor-pointer border border-gray-300 dark:border-gray-700 px-2 py-1 text-sm rounded-xl appearance-none text-gray-900 dark:text-gray-300 bg-white dark:bg-gray-800 focus:outline-hidden"
           >
             {[5, 10, 20, 50].map((size) => (
               <option key={size} value={size}>
@@ -130,11 +130,11 @@ const ShowFiles: React.FC<ShowFilesProps> = ({
           <button
             onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
             disabled={currentPage === 1}
-            className="cursor-pointer disabled:cursor-not-allowed px-3 py-1 border border-gray-200 disabled:opacity-50 bg-indigo-500 text-white hover:bg-indigo-700 rounded-full"
+            className="cursor-pointer disabled:cursor-not-allowed px-3 py-1 border border-gray-200 dark:border-gray-700 disabled:opacity-50 bg-indigo-500 text-white hover:bg-indigo-700 dark:hover:bg-indigo-600 rounded-full"
           >
             {t("previous")}
           </button>
-          <span className="text-sm">
+          <span className="text-sm text-gray-900 dark:text-gray-100">
             {t("pageInfo", {
               current: currentPage,
               total: Math.ceil(totalFiles / pageSize),
@@ -143,7 +143,7 @@ const ShowFiles: React.FC<ShowFilesProps> = ({
           <button
             onClick={() => setCurrentPage(currentPage + 1)}
             disabled={currentPage >= Math.ceil(totalFiles / pageSize)}
-            className="cursor-pointer disabled:cursor-not-allowed px-6 py-1 border border-gray-200 disabled:opacity-50 bg-indigo-500 text-white hover:bg-indigo-700 rounded-full"
+            className="cursor-pointer disabled:cursor-not-allowed px-6 py-1 border border-gray-200 dark:border-gray-700 disabled:opacity-50 bg-indigo-500 text-white hover:bg-indigo-700 dark:hover:bg-indigo-600 rounded-full"
           >
             {t("next")}
           </button>

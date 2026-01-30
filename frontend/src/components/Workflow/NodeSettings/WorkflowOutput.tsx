@@ -725,7 +725,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
       {showHistory && (
         <div
           onClick={() => setShowConfirmDeleteAllChatflow(true)}
-          className="border-b border-gray-200 cursor-pointer px-auto py-1 w-full flex items-center justify-center gap-1 text-indigo-500 hover:text-indigo-700"
+          className="border-b border-gray-200 dark:border-gray-700 cursor-pointer px-auto py-1 w-full flex items-center justify-center gap-1 text-indigo-500 hover:text-indigo-700"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -94,7 +94,7 @@ const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({
         </span>
       </div>
       <details className="group w-full space-y-1" open>
-        <summary className="py-1 border-b-2 mb-1 border-gray-200 text-center text-sm">
+        <summary className="py-1 border-b-2 mb-1 border-gray-200 dark:border-gray-700 text-center text-sm">
           {t("baseNodeSection")}
         </summary>
         {Object.entries(nodeTypesInfo).map(([key, type]) => (
@@ -138,14 +138,14 @@ const NodeTypeSelector: React.FC<NodeTypeSelectorProps> = ({
         ))}
       </details>
       <details className="group w-full space-y-1" open>
-        <summary className="py-1 border-b-2 border-gray-200 text-center text-sm">
+        <summary className="py-1 border-b-2 border-gray-200 dark:border-gray-700 text-center text-sm">
           {t("customNodeSection")}
         </summary>
         <div className="relative w-[90%] mx-auto text-xs mt-1.5">
           <input
             type="text"
             placeholder={t("searchPlaceholder")}
-            className="w-full pl-3 pr-6 py-1 rounded-full border border-gray-300 focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
+            className="w-full pl-3 pr-6 py-1 rounded-full border border-gray-300 dark:border-gray-600 focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />

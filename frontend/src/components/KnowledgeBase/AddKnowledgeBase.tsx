@@ -21,8 +21,8 @@ const AddKnowledgeBase: React.FC<AddKnowledgeBaseProps> = ({
   const t = useTranslations("AddKnowledgeBase");
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-      <div className="bg-gray-900 rounded-3xl p-6 w-[35%]">
-        <div className="flex items-center gap-2 mb-6">
+      <div className="bg-white dark:bg-gray-900 rounded-3xl p-6 w-[35%]">
+        <div className="flex items-center gap-2 mb-6 text-gray-900 dark:text-gray-100">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -44,8 +44,10 @@ const AddKnowledgeBase: React.FC<AddKnowledgeBaseProps> = ({
           <input
             type="text"
             placeholder={t("placeholder")}
-            className={`w-full px-4 py-2 mb-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 ${
-              nameError ? "border-red-500" : "border-gray-300"
+            className={`w-full px-4 py-2 mb-2 border rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 bg-white dark:bg-gray-800 text-gray-900 dark:text-white ${
+              nameError
+                ? "border-red-500"
+                : "border-gray-300 dark:border-gray-700"
             }`}
             value={newBaseName}
             onChange={(e) => {
@@ -68,13 +70,13 @@ const AddKnowledgeBase: React.FC<AddKnowledgeBaseProps> = ({
         <div className="flex justify-end gap-2 mt-6">
           <button
             onClick={() => setShowCreateModal(false)}
-            className="px-4 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-100 cursor-pointer"
+            className="px-4 py-2 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"
           >
             {t("cancel")}
           </button>
           <button
             onClick={onCreateConfirm}
-            className="px-4 py-2 text-white bg-indigo-500 rounded-full hover:bg-indigo-700 cursor-pointer"
+            className="px-4 py-2 text-white bg-indigo-500 rounded-full hover:bg-indigo-700 dark:hover:bg-indigo-600 cursor-pointer"
           >
             {t("confirm")}
           </button>

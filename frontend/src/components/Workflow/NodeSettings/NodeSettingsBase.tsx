@@ -212,18 +212,18 @@ export const DescriptionSection: React.FC<DescriptionSectionProps> = ({
     </summary>
 
     {isEditing ? (
-      <div className="rounded-2xl shadow-lg overflow-auto w-full mb-2 px-4 pb-4 pt-2 bg-gray-900">
+      <div className="rounded-2xl shadow-lg overflow-auto w-full mb-2 px-4 pb-4 pt-2 bg-gray-50 dark:bg-gray-800">
         <textarea
-          className={`mt-1 w-full px-2 py-2 border border-gray-200 rounded-xl min-h-[10vh] ${
+          className={`mt-1 w-full px-2 py-2 border border-gray-200 dark:border-gray-700 rounded-xl min-h-[10vh] ${
             codeFullScreenFlow ? "max-h-[50vh]" : "max-h-[30vh]"
-          } resize-none overflow-y-auto focus:outline-hidden focus:ring-2 focus:ring-indigo-500`}
+          } resize-none overflow-y-auto focus:outline-hidden focus:ring-2 focus:ring-indigo-500 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100`}
           value={node.data.description || ""}
           onChange={(e) => updateDescription(node.id, e.target.value)}
           placeholder={t("description.editingPlaceholder")}
         />
       </div>
     ) : (
-      <div className="rounded-2xl shadow-lg overflow-auto w-full mb-2 p-4 bg-gray-100">
+      <div className="rounded-2xl shadow-lg overflow-auto w-full mb-2 p-4 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100">
         <MarkdownDisplay
           md_text={node.data.description || t("description.description")}
           message={{
@@ -348,7 +348,7 @@ export const GlobalVariablesSection: React.FC<GlobalVariablesSectionProps> = ({
             value={variable}
             placeholder={t("globalVariable.placeholder")}
             onChange={(e) => setVariable(e.target.value)}
-            className="w-full px-3 py-1 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+            className="w-full px-3 py-1 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
             onKeyDown={(e: React.KeyboardEvent<HTMLSpanElement>) => {
               if (e.key === "Enter") {
                 e.preventDefault();
@@ -414,15 +414,15 @@ export const GlobalVariablesSection: React.FC<GlobalVariablesSectionProps> = ({
                   value={currentValue}
                   placeholder={t("globalVariable.variableValuePlaceholder")}
                   onChange={(e) => handleVariableChange(e, isDebugMode)}
-                  className={`w-full px-3 py-1 border-2 rounded-xl border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50 ${
-                    isUnchanged ? "text-gray-400" : "text-black"
+                  className={`w-full px-3 py-1 border-2 rounded-xl border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50 ${
+                    isUnchanged ? "text-gray-400 dark:text-gray-500" : "text-gray-900 dark:text-gray-100"
                   }`}
                   onKeyDown={(e: React.KeyboardEvent<HTMLInputElement>) => {
                     if (e.key === "Enter") e.currentTarget.blur();
                   }}
                 />
                 {isDebugMode && (
-                  <div className="absolute right-1 top-0 px-3 py-1 pointer-events-none text-gray-400">
+                  <div className="absolute right-1 top-0 px-3 py-1 pointer-events-none text-gray-400 dark:text-gray-500">
                     {t("globalVariable.initPrefix")}
                     {initialValue}
                   </div>
@@ -526,7 +526,7 @@ export const OutputSection: React.FC<OutputSectionProps> = ({
         </button>
       </div>
     </summary>
-    <div className="rounded-2xl shadow-lg overflow-auto w-full mb-2 p-4 bg-gray-100">
+    <div className="rounded-2xl shadow-lg overflow-auto w-full mb-2 p-4 bg-gray-50 dark:bg-gray-800 text-gray-900 dark:text-gray-100">
       <MarkdownDisplay
         md_text={node.data.output || ""}
         message={{

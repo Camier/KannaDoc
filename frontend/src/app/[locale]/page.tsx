@@ -23,9 +23,9 @@ const Homepage = () => {
   }
 
   return (
-    <div className="flex w-full h-screen items-center justify-center gap-[3%]">
+    <div className="flex w-full h-screen items-center justify-center gap-[3%] bg-gray-50 dark:bg-gray-900">
       {/* 左侧内容区域 */}
-      <div className="relative w-[85%] h-[85%] flex flex-col gap-8 items-center justify-center shadow-lg rounded-3xl">
+      <div className="relative w-[85%] h-[85%] flex flex-col gap-8 items-center justify-center shadow-lg rounded-3xl bg-white dark:bg-gray-800">
         {/* logo */}
         <div className="w-[80%] h-[80%] flex items-center justify-center">
           <Image
@@ -39,19 +39,19 @@ const Homepage = () => {
 
         {/* Welcome 标题 */}
         <div className="w-full flex flex-col items-center justify-center gap-4">
-          <h2 className={` font-light text-xl text-gray-900 mb-4`}>
+          <h2 className={` font-light text-xl text-gray-900 dark:text-gray-100 mb-4`}>
             {t("title")}
           </h2>
           {/* "Agent Workflow Engine – Design, Automate, and Scale with AI-Driven Precision." */}
           <div className="w-full flex flex-col items-center justify-center gap-2">
-            <h2 className={`text-gray-500`}>
+            <h2 className={`text-gray-500 dark:text-gray-400`}>
               {t.rich("subtitle1", {
                 brand: (chunks) => (
-                  <span className="text-indigo-500">{chunks}</span>
+                  <span className="text-indigo-500 dark:text-indigo-400">{chunks}</span>
                 ),
               })}
             </h2>
-            <h2 className={`text text-gray-700`}>{t("subtitle2")}</h2>
+            <h2 className={`text text-gray-700 dark:text-gray-300`}>{t("subtitle2")}</h2>
           </div>
         </div>
 
@@ -105,29 +105,29 @@ const Homepage = () => {
 
         <div className="flex-col items-center justify-center font-light">
           <h4
-            className={`flex items-center justify-center text-sm font-sans text-gray-900 mb-4`}
+            className={`flex items-center justify-center text-sm font-sans text-gray-900 dark:text-gray-100 mb-4`}
           >
             {t("forgetTokenization")}
           </h4>
           <h4
-            className={`flex items-center justify-center text-xs font-sans text-gray-900 mb-3`}
+            className={`flex items-center justify-center text-xs font-sans text-gray-900 dark:text-gray-100 mb-3`}
           >
             {t("contactPrefix")}
-            <span className="text-indigo-700 ml-1 mr-1">
+            <span className="text-indigo-700 dark:text-indigo-400 ml-1 mr-1">
               {" "}
               liweixmu@foxmail.com{" "}
             </span>
             <span>|</span>
             <Link
               href="https://github.com/liweiphys"
-              className="text-indigo-700 ml-1"
+              className="text-indigo-700 dark:text-indigo-400 ml-1"
             >
               {t("githubLink")}
             </Link>
           </h4>
         </div>
         <div className="absolute top-6 right-6 text-sm">
-          <div className="px-3 text-indigo-500 hover:text-indigo-700 flex items-center cursor-pointer">
+          <div className="px-3 text-indigo-500 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 flex items-center cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

@@ -134,15 +134,15 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
     <div className="w-full group">
       <div
         className={`m-1 rounded-3xl w-fit break-words flex flex-col 
-        ${isUser ? "ml-auto max-w-[90%]" : "mr-auto max-w-[98%]"} ${
+        ${isUser ? "ml-auto max-w-[90%]" : "mr-auto max-w-[98%]"}         ${
           isUser && message.type === "text"
             ? "" //"bg-indigo-300 shadow-lg"
             : message.type === "image"
-            ? "bg-gray-900 mb-3 shadow-lg"
-            : "bg-gray-900 mb-0.5"
+            ? "bg-gray-100 dark:bg-gray-900 mb-3 shadow-lg"
+            : "bg-gray-100 dark:bg-gray-900 mb-0.5"
         } ${
           message.type === "text"
-            ? "px-4 py-2 mb-2 text-gray-800"
+            ? "px-4 py-2 mb-2 text-gray-800 dark:text-gray-200"
             : "overflow-hidden"
         }`}
       >
@@ -249,7 +249,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
         {/* 消息操作栏--复制、重试、切换等 */}
         {message.type === "text" && (
           <div
-            className={`flex gap-2 items-center mt-3 text-sm text-gray-600 ${
+            className={`flex gap-2 items-center mt-3 text-sm text-gray-600 dark:text-gray-400 ${
               message.from === "user" ? "pr-2 justify-end" : "justify-start"
             }`}
           >
@@ -597,7 +597,7 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
                     d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z"
                   />
                 </svg>
-                <div className="text-gray-600 text-sm">
+                <div className="text-gray-600 dark:text-gray-400 text-sm">
                   {t("score")}{message.score}
                 </div>
               </div>
@@ -617,11 +617,11 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
                     message.minioUrl ? message.minioUrl : ""
                   );
                 }}
-                className="text-gray-600 text-sm hover:text-indigo-700 cursor-pointer"
+                className="text-gray-600 dark:text-gray-400 text-sm hover:text-indigo-700 dark:hover:text-indigo-300 cursor-pointer"
               >
                 {message.fileName}
               </div>
-              <div className="flex items-center justify-start gap-1 text-gray-600 pb-2 border-b-2 border-gray-200 w-full">
+              <div className="flex items-center justify-start gap-1 text-gray-600 dark:text-gray-400 pb-2 border-b-2 border-gray-200 dark:border-gray-700 w-full">
                 <div className="text-sm font-medium">{t("fromLabel")}</div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

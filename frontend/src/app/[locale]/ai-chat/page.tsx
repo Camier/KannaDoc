@@ -578,6 +578,17 @@ const AIChat: React.FC = () => {
     };
     if (messages.length === 0) {
       await handleCreateConversation();
+    } else {
+      // Sync model config for existing conversations before sending
+      if (user?.name && chatId) {
+        try {
+          await updateChatModelConfig(chatId, modelConfig);
+        } catch (error) {
+          console.error("Error syncing model config:", error);
+          setSendDisabled(false);
+          return; // Block message send on failure
+        }
+      }
     }
     const fileMessages: Message[] = files.map((file) => {
       const fileType: string = getFileExtension(file.filename);
@@ -630,7 +641,7 @@ const AIChat: React.FC = () => {
   return (
     <div className="overflow-hidden">
       <Navbar />
-      <div className="absolute w-[96%] h-[91%] top-[7%] bg-gray-900/80 left-[2%] rounded-3xl flex items-center justify-between shadow-2xl">
+      <div className="absolute w-[96%] h-[91%] top-[7%] bg-white/90 dark:bg-gray-900/80 left-[2%] rounded-3xl flex items-center justify-between shadow-2xl">
         <UnifiedSideBar
           items={chatHistory}
           searchTerm=""

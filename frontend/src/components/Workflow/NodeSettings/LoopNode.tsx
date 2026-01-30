@@ -90,7 +90,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
               name="LoopType"
               value={node.data.loopType}
               onChange={handleLoopChange}
-              className="appearance-none flex-1 w-full px-3 py-1 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+              className="appearance-none flex-1 w-full px-3 py-1 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
             >
               <option value="count">Count</option>
               <option value="condition">Condition</option>
@@ -118,7 +118,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
                       e.currentTarget.blur();
                     }
                   }}
-                  className="flex-1 w-full px-3 py-1 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+                  className="flex-1 w-full px-3 py-1 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
                 />
               ) : (
                 <input
@@ -132,7 +132,7 @@ const LoopNodeComponent: React.FC<LoopNodeProps> = ({
                       e.currentTarget.blur();
                     }
                   }}
-                  className="flex-1 w-full px-3 py-1 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+                  className="flex-1 w-full px-3 py-1 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
                 />
               )}
             </div>

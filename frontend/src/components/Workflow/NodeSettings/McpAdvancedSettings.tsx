@@ -150,7 +150,7 @@ const McpAdvancedSettingsComponent: React.FC<McpConfigProps> = ({
                     updateHeaderPair(index, "key", e.target.value)
                   }
                   placeholder={t("keyPlaceholder")}
-                  className="flex-1 border-2 border-gray-200 rounded-xl px-4 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="flex-1 border-2 border-gray-200 dark:border-gray-700 rounded-xl px-4 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 />
                 <span className="font-medium">:</span>
                 <input
@@ -160,7 +160,7 @@ const McpAdvancedSettingsComponent: React.FC<McpConfigProps> = ({
                     updateHeaderPair(index, "value", e.target.value)
                   }
                   placeholder={t("valuePlaceholder")}
-                  className="flex-1 border-2 border-gray-200 rounded-xl px-4 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  className="flex-1 border-2 border-gray-200 dark:border-gray-700 rounded-xl px-4 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 />
                 <button
                   onClick={() => removeHeaderPair(index)}
@@ -217,7 +217,7 @@ const McpAdvancedSettingsComponent: React.FC<McpConfigProps> = ({
                 min="0"
                 value={timeoutValue}
                 onChange={(e) => setTimeoutValue(e.target.value)}
-                className="w-full border-2 border-gray-200 rounded-xl px-4 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full border-2 border-gray-200 dark:border-gray-700 rounded-xl px-4 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 placeholder={t("timeoutPlaceholder")}
               />
             </div>
@@ -230,7 +230,7 @@ const McpAdvancedSettingsComponent: React.FC<McpConfigProps> = ({
                 min="0"
                 value={sseReadTimeoutValue}
                 onChange={(e) => setSseReadTimeoutValue(e.target.value)}
-                className="w-full border-2 border-gray-200 rounded-xl px-4 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                className="w-full border-2 border-gray-200 dark:border-gray-700 rounded-xl px-4 py-1 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 placeholder={t("sseTimeoutPlaceholder")}
               />
             </div>
@@ -238,10 +238,10 @@ const McpAdvancedSettingsComponent: React.FC<McpConfigProps> = ({
         </div>
 
         {/* 操作按钮 */}
-        <div className="mt-auto pt-4 flex justify-end gap-2 border-gray-200">
+        <div className="mt-auto pt-4 flex justify-end gap-2 border-gray-200 dark:border-gray-700">
           <button
             onClick={onClose}
-            className="px-4 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-100 cursor-pointer"
+            className="px-4 py-2 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
           >
             {t("cancel")}
           </button>

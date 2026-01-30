@@ -501,7 +501,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
         {currentPath.length === 0 ? (
           <div className="h-full w-[95%] flex flex-col items-center gap-4 bg-gray-900/50 rounded-xl">
             <div className="h-[30vh]"></div>
-            <p className="text-lg text-gray-500">
+            <p className="text-lg text-gray-500 dark:text-gray-400">
               {t("initialPrompt")}
             </p>
             <button
@@ -525,7 +525,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
 
               <div>{t("configureButton")}</div>
             </button>
-            <div className="flex items-center justify-center gap-1 text-indigo-500">
+            <div className="flex items-center justify-center gap-1 text-indigo-500 dark:text-indigo-400">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -541,17 +541,17 @@ const ChatBox: React.FC<ChatBoxProps> = ({
                 />
               </svg>
               {modelConfig.modelName ? (
-                <div className="text-indigo-500 text-sm">
+                <div className="text-indigo-500 dark:text-indigo-400 text-sm">
                   {modelConfig.modelName}
                 </div>
               ) : (
-                <div className="text-indigo-500 text-sm">
+                <div className="text-indigo-500 dark:text-indigo-400 text-sm">
                   {t("noEngine")}
                 </div>
               )}
             </div>
             {modelConfig.baseUsed.length > 0 ? (
-              <div className="flex items-center justify-center w-full text-sm text-indigo-500 gap-1">
+              <div className="flex items-center justify-center w-full text-sm text-indigo-500 dark:text-indigo-400 gap-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -596,7 +596,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
                 </div>
               </div>
             ) : (
-              <div className="flex items-center justify-center w-full text-sm text-indigo-500 gap-1">
+              <div className="flex items-center justify-center w-full text-sm text-indigo-500 dark:text-indigo-400 gap-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -620,7 +620,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
         ) : (
           <div className="h-[100%] w-full flex flex-col mx-auto">
             <div className="shadow-xs rounded-xl pb-2 mx-[12%] mb-2 flex flex-col item-center justify-center gap-1">
-              <div className="w-full px-10 text-sm flex items-center justify-center gap-1 text-indigo-500">
+              <div className="w-full px-10 text-sm flex items-center justify-center gap-1 text-indigo-500 dark:text-indigo-400">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -636,17 +636,17 @@ const ChatBox: React.FC<ChatBoxProps> = ({
                   />
                 </svg>
                 {modelConfig.modelName ? (
-                  <div className="text-indigo-500 whitespace-nowrap overflow-x-scroll scrollbar-hide ">
+                  <div className="text-indigo-500 dark:text-indigo-400 whitespace-nowrap overflow-x-scroll scrollbar-hide ">
                     {modelConfig.modelName}
                   </div>
                 ) : (
-                  <div className="text-indigo-500">
+                  <div className="text-indigo-500 dark:text-indigo-400">
                     {t("noEngine")}
                   </div>
                 )}
               </div>
               {modelConfig.baseUsed.length > 0 ? (
-                <div className="px-10 flex items-center justify-center w-full text-sm text-indigo-500 gap-1">
+                <div className="px-10 flex items-center justify-center w-full text-sm text-indigo-500 dark:text-indigo-400 gap-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -691,7 +691,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
                   </div>
                 </div>
               ) : (
-                <div className="px-10 flex items-center justify-center w-full text-sm text-indigo-500 gap-1">
+                <div className="px-10 flex items-center justify-center w-full text-sm text-indigo-500 dark:text-indigo-400 gap-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -804,7 +804,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
           <div className="flex justify-center items-center h-full">
             <textarea
               ref={textareaRef}
-              className="pl-11 pr-8 w-full py-3 min-h-[40%] max-h-[100%] border-indigo-500 border-2 rounded-3xl text-base focus:outline-hidden focus:border-indigo-600 resize-none overflow-y-auto"
+              className="pl-11 pr-8 w-full py-3 min-h-[40%] max-h-[100%] bg-white dark:bg-gray-800 text-gray-900 dark:text-white border-indigo-500 dark:border-indigo-400 border-2 rounded-3xl text-base focus:outline-hidden focus:border-indigo-600 dark:focus:border-indigo-500 resize-none overflow-y-auto placeholder-gray-500 dark:placeholder-gray-400"
               placeholder={t("placeholder")}
               value={inputMessage}
               rows={1}
@@ -835,7 +835,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 20 20"
             fill="currentColor"
-            className="size-5 absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-400"
+            className="size-5 absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-400 dark:text-gray-500"
             onClick={() => {
               setInputMessage("");
               // 重置高度
@@ -854,7 +854,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="currentColor"
-            className={`size-6 absolute left-3 top-1/2 transform -translate-y-1/2 ${
+            className={`size-6 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 dark:text-gray-400 ${
               isSendDisabled || cleanTempBase
                 ? "cursor-not-allowed"
                 : "cursor-pointer"

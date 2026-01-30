@@ -82,7 +82,7 @@ export const ModalHeader: React.FC<ModalHeaderProps> = ({
 }) => (
   <>
     <div className="flex items-center justify-between">
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 text-gray-900 dark:text-gray-100">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -101,7 +101,7 @@ export const ModalHeader: React.FC<ModalHeaderProps> = ({
       </div>
       <a
         href="/knowledge-base"
-        className="px-3 py-2 text-indigo-500 hover:text-indigo-700 text-base flex items-center cursor-pointer"
+        className="px-3 py-2 text-indigo-500 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300 text-base flex items-center cursor-pointer"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -129,7 +129,7 @@ export const ModalHeader: React.FC<ModalHeaderProps> = ({
       </a>
     </div>
 
-    <p className="text-gray-500 text-sm mb-2 flex">
+    <p className="text-gray-500 dark:text-gray-400 text-sm mb-2 flex">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -172,13 +172,13 @@ export const ModalActions: React.FC<ModalActionsProps> = ({
   <div className="mt-2 flex justify-end gap-2 pt-2">
     <button
       onClick={onCancel}
-      className="px-4 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-100 cursor-pointer"
+      className="px-4 py-2 text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"
     >
       {cancelLabel}
     </button>
     <button
       onClick={onSave}
-      className="px-4 py-2 bg-indigo-500 text-white rounded-full hover:bg-indigo-700 cursor-pointer"
+      className="px-4 py-2 bg-indigo-500 text-white rounded-full hover:bg-indigo-700 dark:hover:bg-indigo-600 cursor-pointer"
     >
       {saveLabel}
     </button>
@@ -299,7 +299,7 @@ export const KnowledgeConfigModalBase: React.FC<KnowledgeConfigModalBaseProps> =
 
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-gray-900 rounded-3xl px-10 py-6 w-[40%]">
+      <div className="bg-white dark:bg-gray-900 rounded-3xl px-10 py-6 w-[40%] text-gray-900 dark:text-gray-100">
         <ModalHeader
           title={translations.title}
           addKnowledgeBaseLabel={translations.addKnowledgeBase}
@@ -322,7 +322,7 @@ export const KnowledgeConfigModalBase: React.FC<KnowledgeConfigModalBaseProps> =
 
           <div className="pt-2">
             <details className="group" open>
-              <summary className="flex items-center cursor-pointer text-sm font-medium">
+              <summary className="flex items-center cursor-pointer text-sm font-medium text-gray-900 dark:text-gray-100">
                 {translations.chooseDB}
                 <svg
                   className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
@@ -348,7 +348,7 @@ export const KnowledgeConfigModalBase: React.FC<KnowledgeConfigModalBaseProps> =
           {showSystemPrompt && translations.systemPrompt && (
             <div className="pt-2">
               <details className="group">
-                <summary className="flex items-center cursor-pointer text-sm font-medium">
+                <summary className="flex items-center cursor-pointer text-sm font-medium text-gray-900 dark:text-gray-100">
                   {translations.systemPrompt}
                   <svg
                     className="ml-1 w-4 h-4 transition-transform group-open:rotate-180"
@@ -366,7 +366,7 @@ export const KnowledgeConfigModalBase: React.FC<KnowledgeConfigModalBaseProps> =
                 </summary>
                 <div className="mt-2 space-y-4">
                   <textarea
-                    className="mt-1 w-full px-4 py-2 border border-gray-200 rounded-3xl min-h-[10vh] max-h-[20vh] resize-none overflow-y-auto focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
+                    className="mt-1 w-full px-4 py-2 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-3xl min-h-[10vh] max-h-[20vh] resize-none overflow-y-auto focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
                     placeholder={currentModelConfig.systemPrompt}
                     rows={1}
                     value={currentModelConfig.systemPrompt}

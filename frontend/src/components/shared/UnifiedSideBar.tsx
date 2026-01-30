@@ -294,14 +294,14 @@ const UnifiedSideBar = <T extends SidebarItem>({
 
     return (
       <>
-        <h2 className="text-sm text-center font-medium">{t("historyChat")}</h2>
+        <h2 className="text-sm text-center font-medium text-gray-900 dark:text-gray-100">{t("historyChat")}</h2>
 
         {config.showSearch && (
           <div className="relative flex w-[75%] text-xs my-3">
             <input
               type="text"
               placeholder={t("searchPlaceholder")}
-              className="w-full pl-3 pr-6 py-1 rounded-full border border-gray-300 focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
+              className="w-full pl-3 pr-6 py-1 rounded-full border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
               value={searchInput}
               onChange={(e) => setSearchInput?.(e.target.value)}
             />
@@ -324,7 +324,7 @@ const UnifiedSideBar = <T extends SidebarItem>({
           <>
             <div className="flex gap-4 mb-2">
               <div
-                className="text-indigo-500 cursor-pointer flex gap-1 items-center hover:text-indigo-700"
+                className="text-indigo-500 dark:text-indigo-400 cursor-pointer flex gap-1 items-center hover:text-indigo-700 dark:hover:text-indigo-300"
                 onClick={() => setShowConfirmDeleteAll(true)}
               >
                 <svg
@@ -344,7 +344,7 @@ const UnifiedSideBar = <T extends SidebarItem>({
                 <div className="text-sm">{t("clear")}</div>
               </div>
               <div
-                className="text-gray-500 cursor-pointer flex items-center gap-1 hover:text-gray-700"
+                className="text-gray-500 dark:text-gray-400 cursor-pointer flex items-center gap-1 hover:text-gray-700 dark:hover:text-gray-300"
                 onClick={onNewChat}
               >
                 <svg
@@ -362,7 +362,7 @@ const UnifiedSideBar = <T extends SidebarItem>({
                 <div className="text-sm">{t("refresh")}</div>
               </div>
             </div>
-            <div className="border-b-2 border-gray-200 w-[95%]"></div>
+            <div className="border-b-2 border-gray-200 dark:border-gray-700 w-[95%]"></div>
           </>
         )}
       </>
@@ -373,7 +373,7 @@ const UnifiedSideBar = <T extends SidebarItem>({
     <div
       className={`${
         config.translationNamespace === "ChatLeftSidebar"
-          ? "bg-gray-900 rounded-l-3xl flex flex-col items-center py-5 pl-5"
+          ? "bg-white dark:bg-gray-900 rounded-l-3xl flex flex-col items-center py-5 pl-5"
           : `flex-none flex flex-col gap-4 h-full`
       } ${config.width}`}
     >
@@ -393,7 +393,7 @@ const UnifiedSideBar = <T extends SidebarItem>({
         className={`${
           config.translationNamespace === "ChatLeftSidebar"
             ? "px-2 w-full flex-1 overflow-scroll scrollbar-hide mt-3"
-            : "bg-gray-900 rounded-2xl overflow-scroll min-h-[90%] max-h-[90%] scrollbar-hide p-2"
+            : "bg-white dark:bg-gray-900 rounded-2xl overflow-scroll min-h-[90%] max-h-[90%] scrollbar-hide p-2"
         }`}
       >
         {filteredItems.map((item, index) => {
@@ -408,7 +408,7 @@ const UnifiedSideBar = <T extends SidebarItem>({
                 config.translationNamespace === "ChatLeftSidebar"
                   ? "relative flex"
                   : "py-1.5 my-0.5 hover:bg-indigo-600 group cursor-pointer rounded-3xl flex justify-between items-start"
-              } ${isSelected ? "bg-indigo-500 text-white" : "text-gray-800"} hover:bg-indigo-600 hover:text-white rounded-2xl mb-0.5`}
+              } ${isSelected ? "bg-indigo-500 text-white" : "text-gray-700 dark:text-gray-200"} hover:bg-indigo-600 hover:text-white rounded-2xl mb-0.5`}
             >
               <div
                 className={`flex-1 gap-2 hover:text-white w-full ${
@@ -422,7 +422,7 @@ const UnifiedSideBar = <T extends SidebarItem>({
                       config.translationNamespace === "ChatLeftSidebar"
                         ? "py-1.5 pl-2.5 pr-0"
                         : "pl-3"
-                    } flex items-center gap-1 text-gray-900 ${
+                    } flex items-center gap-1 text-gray-900 dark:text-gray-100 ${
                       config.translationNamespace === "ChatLeftSidebar"
                         ? "w-[85%]"
                         : config.icon === "workflow"
@@ -474,7 +474,7 @@ const UnifiedSideBar = <T extends SidebarItem>({
                   {isSettingsOpen[index] && (
                     <div
                       ref={ref}
-                      className="absolute right-0 top-full mt-1 bg-gray-900 text-white rounded-2xl border-2 py-2 px-1 border-gray-700 shadow-lg z-10"
+                      className="absolute right-0 top-full mt-1 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded-2xl border-2 py-2 px-1 border-gray-200 dark:border-gray-700 shadow-lg z-10"
                     >
                       <div
                         className="flex gap-2 cursor-pointer hover:bg-indigo-600 hover:text-white px-2 py-1 rounded-xl"
@@ -520,7 +520,7 @@ const UnifiedSideBar = <T extends SidebarItem>({
                   )}
                 </div>
                 <p
-                  className={`px-4 text-gray-500 ${
+                  className={`px-4 text-gray-500 dark:text-gray-400 ${
                     isSelected
                       ? "text-white text-[13px]"
                       : "group-hover:text-white text-xs"

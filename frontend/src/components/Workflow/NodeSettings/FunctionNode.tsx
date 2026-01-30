@@ -231,7 +231,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
           codeFullScreenFlow ? "w-full" : "w-full"
         }`}
       >
-        <div className="w-full flex items-center justify-between p-2 gap-1 bg-gray-100 rounded-2xl">
+        <div className="w-full flex items-center justify-between p-2 gap-1 bg-gray-100 dark:bg-gray-800 rounded-2xl">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -257,7 +257,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                 onChange={(e) => {
                   updateGlobalDockerImageUse(e.target.value);
                 }}
-                className="w-full px-2 py-1 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50 appearance-none"
+                className="w-full px-2 py-1 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50 appearance-none"
               >
                 {systemDockerImages.map((key) => (
                   <option key={key} value={key}>
@@ -291,12 +291,12 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
             </div>
           </div>
         </div>
-        <label className="w-full overflow-auto relative inline-flex items-center group p-2 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
+        <label className="w-full overflow-auto relative inline-flex items-center group p-2 border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
           <input
             type="checkbox"
             checked={saveImage}
             onChange={() => setSaveImage((prev) => !prev)}
-            className="shrink-0 appearance-none h-4.5 w-4.5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
+            className="shrink-0 appearance-none h-4.5 w-4.5 border-2 border-gray-300 dark:border-gray-600 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
           />
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -330,7 +330,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
           </div>
         </label>
         {saveImage && (
-          <div className="bg-gray-100 rounded-2xl p-2">
+          <div className="bg-gray-100 dark:bg-gray-800 rounded-2xl p-2">
             <div className="w-full flex items-center justify-between px-2 py-1 gap-1 rounded-2xl">
               <span className="whitespace-nowrap pr-2">
                 {t("pipDependencies.imageName")}
@@ -341,7 +341,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                   value={saveImageName}
                   placeholder={t("pipDependencies.imageNamePlaceholder")}
                   onChange={(e) => setSaveImageName(e.target.value)}
-                  className="w-full px-3 py-1 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+                  className="w-full px-3 py-1 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
                 />
               </div>
             </div>
@@ -355,7 +355,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                   value={saveImageTag}
                   placeholder={t("pipDependencies.imageVersionPlaceholder")}
                   onChange={(e) => setSaveImageTag(e.target.value)}
-                  className="w-full px-3 py-1 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+                  className="w-full px-3 py-1 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
                 />
               </div>
             </div>
@@ -364,13 +364,13 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
         <div className="flex items-center w-full px-2 pb-2 gap-6 text-gray-500">
           {t("pipDependencies.instruction")}
         </div>
-        <div className="flex items-center w-full px-2 gap-6 border-gray-200">
+        <div className="flex items-center w-full px-2 gap-6 border-gray-200 dark:border-gray-700">
           <input
             name={"addPackage"}
             value={packageName}
             placeholder={t("pipDependencies.packageNamePlaceholder")}
             onChange={(e) => setPackageName(e.target.value)}
-            className="w-full px-3 py-1 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+            className="w-full px-3 py-1 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
             onKeyDown={(e: React.KeyboardEvent<HTMLSpanElement>) => {
               if (e.key === "Enter") {
                 e.preventDefault();
@@ -445,7 +445,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                       e.currentTarget.blur();
                     }
                   }}
-                  className="flex-1 w-full px-3 py-1 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+                  className="flex-1 w-full px-3 py-1 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
                 />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -482,7 +482,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
                 e.currentTarget.blur();
               }
             }}
-            className="flex-1 w-full px-3 py-1 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+            className="flex-1 w-full px-3 py-1 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
           />
         </div>
       </div>
