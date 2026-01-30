@@ -1,12 +1,15 @@
 """Application settings and environment configuration."""
 
 import importlib
+import logging
 
 _pydantic = importlib.import_module("pydantic")
 _pydantic_settings = importlib.import_module("pydantic_settings")
 
 Field = _pydantic.Field
 BaseSettings = _pydantic_settings.BaseSettings
+
+logger = logging.getLogger(__name__)
 
 
 class Settings(BaseSettings):
@@ -114,6 +117,17 @@ class Settings(BaseSettings):
     rag_ef_min: int = 100
     rag_load_collection_once: bool = True
 
+    # Hybrid Search Configuration
+    rag_hybrid_enabled: bool = False
+    rag_hybrid_ranker: str = (
+        "rrf"  # "rrf" | "weighted" - RRF is default (score-invariant)
+    )
+    rag_hybrid_rrf_k: int = (
+        60  # RRF smoothing constant (default: 60, lower = emphasize top ranks)
+    )
+    rag_hybrid_dense_weight: float = 0.7  # Only used if ranker="weighted"
+    rag_hybrid_sparse_weight: float = 0.3  # Only used if ranker="weighted"
+
     model_config = {"extra": "ignore", "env_file": "../.env"}
 
 
@@ -138,6 +152,45 @@ def validate_settings() -> None:
         raise ValueError(
             f"SECURITY ERROR: Required settings not configured: {', '.join(missing)}. "
             "Please set these via environment variables before starting the server."
+        )
+
+    if settings.rag_hybrid_enabled:
+        if not (0.0 <= settings.rag_hybrid_dense_weight <= 1.0):
+            raise ValueError(
+                f"rag_hybrid_dense_weight must be between 0.0 and 1.0, got {settings.rag_hybrid_dense_weight}"
+            )
+        if not (0.0 <= settings.rag_hybrid_sparse_weight <= 1.0):
+            raise ValueError(
+                f"rag_hybrid_sparse_weight must be between 0.0 and 1.0, got {settings.rag_hybrid_sparse_weight}"
+            )
+        if settings.rag_hybrid_ranker not in ["rrf", "weighted"]:
+            raise ValueError(
+                f"rag_hybrid_ranker must be 'rrf' or 'weighted', got {settings.rag_hybrid_ranker}"
+            )
+        if settings.rag_hybrid_rrf_k <= 0:
+            raise ValueError(
+                f"rag_hybrid_rrf_k must be a positive integer, got {settings.rag_hybrid_rrf_k}"
+            )
+
+        if not (10 <= settings.rag_hybrid_rrf_k <= 100):
+            logger.warning(
+                f"Unusual rag_hybrid_rrf_k value: {settings.rag_hybrid_rrf_k}. Recommended range is [10, 100]."
+            )
+
+        if (
+            abs(
+                (settings.rag_hybrid_dense_weight + settings.rag_hybrid_sparse_weight)
+                - 1.0
+            )
+            > 1e-6
+        ):
+            logger.warning(
+                f"Hybrid weights (dense={settings.rag_hybrid_dense_weight}, sparse={settings.rag_hybrid_sparse_weight}) "
+                f"sum to {settings.rag_hybrid_dense_weight + settings.rag_hybrid_sparse_weight}, not 1.0."
+            )
+
+        logger.info(
+            f"Hybrid search: ranker={settings.rag_hybrid_ranker}, rrf_k={settings.rag_hybrid_rrf_k}"
         )
 
 
