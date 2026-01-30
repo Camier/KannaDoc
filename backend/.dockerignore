@@ -1,0 +1,28 @@
+# Large debug/output directories
+embeddings_output/
+model_weights/
+tmp/
+sandbox_workspace/
+
+# Test files
+tests/
+*.test.py
+test_*.py
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Dev files
+.env
+.env.*
+*.md
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+pyrightconfig.json
