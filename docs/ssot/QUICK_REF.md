@@ -209,6 +209,32 @@ docker logs layra-backend --tail 50
 docker restart layra-backend
 ```
 
+### API 502 / Can't Login
+**Symptom:** Frontend loads, but `/api/*` returns 502 (login fails) even though backend is healthy.
+
+**Cause:** Nginx can cache upstream container IPs; after `backend` restarts, the old IP may be stale.
+
+```bash
+# Verify backend health
+curl -i http://localhost:8090/api/v1/health/check
+
+# Restart nginx (forces upstream refresh)
+./scripts/compose-clean restart nginx
+```
+
+**Config:** `frontend/nginx.conf` uses Docker DNS (`resolver 127.0.0.11`) and variable-based `proxy_pass` to re-resolve upstreams.
+
+### RAG Retrieval Returns 0 Hits
+**Symptom:** Queries embed successfully, but retrieval returns 0 hits and backend logs show Milvus errors.
+
+**Common Milvus errors:**
+- `multiple anns_fields exist` (collection has multiple vector fields)
+- `invalid max query result window` (offset + limit > 16384)
+
+**Fix references:**
+- `backend/app/db/milvus.py` uses `anns_field="vector"` for search.
+- `backend/app/db/milvus.py` uses `query_iterator` (avoid offset window limits).
+
 ### Frontend Not Loading
 ```bash
 # Check nginx
