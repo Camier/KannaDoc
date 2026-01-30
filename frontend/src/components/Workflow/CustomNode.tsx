@@ -125,8 +125,8 @@ const CustomNodeComponent = ({
             : "border-1 border-red-500"
           : selected
           ? "border-2 border-indigo-500"
-          : "border-1 border-white"
-      } bg-gray-900`}
+          : "border-1 border-gray-200 dark:border-white"
+      } bg-white dark:bg-gray-900`}
     >
       {getHandles(data.nodeType)}
       <button
@@ -279,7 +279,7 @@ const CustomNodeComponent = ({
           data.nodeType == "start"
             ? "mx-[calc(10%-8px)] mr-2"
             : "mx-[calc(20%-8px)]"
-        } flex items-center justify-center rounded-3xl bg-gray-100`}
+        } flex items-center justify-center rounded-3xl bg-gray-50 dark:bg-gray-800`}
       >
         {data.status === "failed" ? (
           <svg
@@ -373,7 +373,7 @@ const CustomNodeComponent = ({
         <div className="mt-2 absolute left-1/2 -translate-x-1/2 flex items-center justify-center gap-1">
           <div className="flex flex-col mx-auto">
             <div className="rounded-xl flex flex-col item-center justify-center gap-1">
-              <div className="w-full text-sm flex items-center justify-center gap-2 text-gray-500 pb-1">
+              <div className="w-full text-sm flex items-center justify-center gap-2 text-gray-500 dark:text-gray-400 pb-1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -389,15 +389,15 @@ const CustomNodeComponent = ({
                   />
                 </svg>
                 {data.modelConfig.modelName ? (
-                  <div className="text-gray-500 whitespace-nowrap overflow-x-scroll scrollbar-hide ">
+                  <div className="text-gray-500 dark:text-gray-400 whitespace-nowrap overflow-x-scroll scrollbar-hide ">
                     {data.modelConfig.modelName}
                   </div>
                 ) : (
-                  <div className="text-gray-500">{t("noModelChosen")}</div>
+                  <div className="text-gray-500 dark:text-gray-400">{t("noModelChosen")}</div>
                 )}
               </div>
               {data.modelConfig.baseUsed?.length > 0 ? (
-                <div className="flex flex-col items-center justify-center w-full text-sm text-gray-500 gap-2">
+                <div className="flex flex-col items-center justify-center w-full text-sm text-gray-500 dark:text-gray-400 gap-2">
                   <div className="px-10 flex items-center justify-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -445,7 +445,7 @@ const CustomNodeComponent = ({
                   </div>
                 </div>
               ) : (
-                <div className="flex items-center justify-center w-full text-sm text-gray-500 gap-1">
+                <div className="flex items-center justify-center w-full text-sm text-gray-500 dark:text-gray-400 gap-1">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"

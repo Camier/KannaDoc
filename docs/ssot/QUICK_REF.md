@@ -2,7 +2,7 @@
 
 > **One-page reference for common tasks**
 > **Version:** 2.2.0
-> **Last Updated:** 2026-01-29
+> **Last Updated:** 2026-01-30
 
 ---
 
@@ -145,6 +145,37 @@ docker exec layra-backend env | grep -E "DB_|REDIS_|MONGO|MINIO|KAFKA|MILVUS"
 
 ---
 
+## 💻 Frontend Development
+
+### Rebuild Frontend After Changes
+```bash
+# Quick rebuild (uses Docker cache)
+./scripts/compose-clean up -d --build frontend && ./scripts/compose-clean restart nginx
+
+# Full rebuild (no cache - use when changes don't appear)
+./scripts/compose-clean build --no-cache frontend && ./scripts/compose-clean up -d frontend && ./scripts/compose-clean restart nginx
+```
+
+### Dark Mode
+- Config: `frontend/tailwind.config.ts` → `darkMode: "class"`
+- Activation: `frontend/src/app/[locale]/layout.tsx` → `<html className="dark">`
+- See: `docs/FRONTEND_THEMING.md` for patterns
+
+### Key Directories
+| Path | Purpose |
+|------|---------|
+| `frontend/src/app/[locale]/` | Page routes |
+| `frontend/src/components/` | React components |
+| `frontend/src/stores/` | Zustand state stores |
+| `frontend/tailwind.config.ts` | Tailwind config |
+
+### Troubleshooting
+- **Changes not visible**: Use `--no-cache` build, then Ctrl+Shift+R
+- **Style issues**: Check for missing `dark:` variants
+- **Build fails**: Check `./scripts/compose-clean logs frontend`
+
+---
+
 ## 📊 Resource Usage
 
 | Component | RAM | Notes |
@@ -245,5 +276,5 @@ docker exec layra-mongodb mongosh \
 
 ---
 
-**Last Updated:** 2026-01-25  
+**Last Updated:** 2026-01-30  
 **For detailed info:** See [stack.md](stack.md)

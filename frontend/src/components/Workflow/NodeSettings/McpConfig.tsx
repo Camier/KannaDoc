@@ -121,13 +121,13 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
             <span className="text-lg font-medium">{t("title")}</span>
           </div>
         </div>
-        <div className="flex items-center w-full px-2 gap-6 border-gray-200 mb-4">
+        <div className="flex items-center w-full px-2 gap-6 border-gray-200 dark:border-gray-700 mb-4">
           <input
             name={"addMcpConfig"}
             value={mcpName}
             placeholder={t("mcpNamePlaceholder")}
             onChange={(e) => setMcpName(e.target.value)}
-            className="w-full px-4 py-1 border-2 border-gray-200 rounded-xl
+            className="w-full px-4 py-1 border-2 border-gray-200 dark:border-gray-700 rounded-xl
               focus:outline-none focus:ring-2 focus:ring-indigo-500
               disabled:opacity-50"
             onKeyDown={(e: React.KeyboardEvent<HTMLSpanElement>) => {
@@ -183,7 +183,7 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
             )}
             {Object.keys(node.data.mcpConfig || {}).map((mcpName) => (
               <div
-                className="px-2 flex w-full flex-col items-start gap-2 relative my-2 pb-1 border-b-2 border-gray-200"
+                className="px-2 flex w-full flex-col items-start gap-2 relative my-2 pb-1 border-b-2 border-gray-200 dark:border-gray-700"
                 key={mcpName}
               >
                 <details className="group w-full space-y-2">
@@ -246,9 +246,9 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
                               updateMcpConfig(node.id, mcpName, newMcpConfig);
                             }
                           }}
-                          className={`w-full px-3 py-1 border-2 rounded-xl border-gray-200
+                          className={`w-full px-3 py-1 border-2 rounded-xl border-gray-200 dark:border-gray-700
             focus:outline-none focus:ring-2 focus:ring-indigo-500
-            disabled:opacity-50  text-black
+            disabled:opacity-50  text-black dark:text-white
             }`}
                           onKeyDown={(
                             e: React.KeyboardEvent<HTMLInputElement>
@@ -337,7 +337,7 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
                         node.data.mcpConfig[mcpName].mcpTools.map((tool) => (
                           <div
                             key={tool.name}
-                            className={`bg-gray-50 px-2 p-2 rounded-2xl m-1 relative text-[15px]`}
+                            className={`bg-gray-50 dark:bg-gray-800 px-2 p-2 rounded-2xl m-1 relative text-[15px]`}
                           >
                             <details className="group/inner">
                               <summary className="px-2 py-1 flex items-center cursor-pointer font-medium gap-1">
@@ -389,7 +389,7 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
                               />
                             </details>
                             <div className="z-10 absolute right-0 top-1 p-2">
-                              <label className="text-sm w-full overflow-auto inline-flex items-center group px-2 rounded-xl hover:bg-gray-50 cursor-pointer">
+                              <label className="text-sm w-full overflow-auto inline-flex items-center group px-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
                                 <input
                                   type="checkbox"
                                   checked={
@@ -422,7 +422,7 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
                                       };
                                     });
                                   }}
-                                  className="shrink-0 appearance-none h-4 w-4 border-1 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
+                                  className="shrink-0 appearance-none h-4 w-4 border-1 border-gray-300 dark:border-gray-600 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
                                 />
                                 <svg
                                   xmlns="http://www.w3.org/2000/svg"
@@ -448,7 +448,7 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
                   </div>
                 </details>
                 <div className="z-10 absolute right-0 top-1 px-1 pb-1">
-                  <label className="text-[15px] w-full overflow-auto inline-flex items-center group px-2 rounded-xl hover:bg-gray-50 cursor-pointer">
+                  <label className="text-[15px] w-full overflow-auto inline-flex items-center group px-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
                     <input
                       type="checkbox"
                       checked={mcpUse.hasOwnProperty(mcpName)}
@@ -469,7 +469,7 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
                           }
                         });
                       }}
-                      className="shrink-0 appearance-none h-4 w-4 border-1 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
+                      className="shrink-0 appearance-none h-4 w-4 border-1 border-gray-300 dark:border-gray-600 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
                     />
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -494,10 +494,10 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
           </div>
         </div>
         {/* 操作按钮 */}
-        <div className="mt-4 pt-4 flex justify-end gap-2 border-t border-gray-200">
+        <div className="mt-4 pt-4 flex justify-end gap-2 border-t border-gray-200 dark:border-gray-700">
           <button
             onClick={onClose}
-            className="px-4 py-2  text-gray-700 border border-gray-300 rounded-full hover:bg-gray-100 cursor-pointer"
+            className="px-4 py-2  text-gray-700 dark:text-gray-300 border border-gray-300 dark:border-gray-600 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
           >
             {t("cancelButton")}
           </button>

@@ -274,7 +274,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
       </summary>
       <div className="rounded-2xl shadow-lg overflow-auto p-3 w-full mb-2">
         <textarea
-          className={`mt-1 w-full px-3 py-2 border border-gray-200 rounded-xl min-h-[10vh] ${
+          className={`mt-1 w-full px-3 py-2 border border-gray-200 dark:border-gray-700 rounded-xl min-h-[10vh] ${
             codeFullScreenFlow ? "max-h-[50vh]" : "max-h-[30vh]"
           } resize-none overflow-y-auto focus:outline-hidden focus:ring-2 focus:ring-indigo-500`}
           placeholder={node.data.prompt}
@@ -359,7 +359,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
         <div className="rounded-2xl shadow-lg overflow-auto p-3 w-full mb-2">
           <div className="mb-1">{t("predefinedInput")}</div>
           <textarea
-            className={`mt-1 w-full px-2 py-2 border border-gray-200 rounded-xl min-h-[10vh] ${
+            className={`mt-1 w-full px-2 py-2 border border-gray-200 dark:border-gray-700 rounded-xl min-h-[10vh] ${
               codeFullScreenFlow ? "max-h-[50vh]" : "max-h-[30vh]"
             } resize-none overflow-y-auto focus:outline-hidden focus:ring-2 focus:ring-indigo-500`}
             placeholder={t("inputPlaceholder")}
@@ -478,7 +478,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
             onChange={(e) =>
               changeChatflowOutputVariable(node.id, e.target.value)
             }
-            className="w-full px-3 py-1 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50 appearance-none"
+            className="w-full px-3 py-1 border-2 border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50 appearance-none"
           >
             {Object.keys(globalVariables).map((key) => (
               <option key={key} value={key}>
@@ -553,14 +553,14 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
       </summary>
       <div className="rounded-2xl shadow-lg overflow-auto p-3 w-full mb-2">
         <div className="relative flex flex-col items-start justify-center gap-2">
-          <label className="w-full overflow-auto relative inline-flex items-center group p-2 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
+          <label className="w-full overflow-auto relative inline-flex items-center group p-2 border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
             <input
               type="checkbox"
               checked={node.data.isChatflowInput}
               onChange={() =>
                 changeChatflowInput(node.id, !node.data.isChatflowInput)
               }
-              className="shrink-0 appearance-none h-4.5 w-4.5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
+              className="shrink-0 appearance-none h-4.5 w-4.5 border-2 border-gray-300 dark:border-gray-600 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -593,7 +593,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
               <span>{t("setAsChatflowUserInput")}</span>
             </div>
           </label>
-          <label className="w-full overflow-auto relative inline-flex items-center group p-2 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
+          <label className="w-full overflow-auto relative inline-flex items-center group p-2 border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
             <input
               type="checkbox"
               checked={node.data.isChatflowOutput}
@@ -603,7 +603,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
                 }
                 changeChatflowOutput(node.id, !node.data.isChatflowOutput);
               }}
-              className="shrink-0 appearance-none h-4.5 w-4.5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
+              className="shrink-0 appearance-none h-4.5 w-4.5 border-2 border-gray-300 dark:border-gray-600 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -637,14 +637,14 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
             </div>
           </label>
           {node.data.isChatflowOutput && (
-            <label className="w-full overflow-auto relative inline-flex items-center group p-2 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer">
+            <label className="w-full overflow-auto relative inline-flex items-center group p-2 border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer">
               <input
                 type="checkbox"
                 checked={node.data.useChatHistory}
                 onChange={() =>
                   changeUseChatHistory(node.id, !node.data.useChatHistory)
                 }
-                className="shrink-0 appearance-none h-4.5 w-4.5 border-2 border-gray-300 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
+                className="shrink-0 appearance-none h-4.5 w-4.5 border-2 border-gray-300 dark:border-gray-600 rounded-lg transition-colors checked:bg-indigo-500 checked:border-indigo-500 focus:outline-hidden focus:ring-2 focus:ring-indigo-200"
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"

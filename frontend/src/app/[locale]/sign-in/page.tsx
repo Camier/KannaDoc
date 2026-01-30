@@ -88,10 +88,10 @@ const SignInPage = () => {
   }, [showAlert]);
 
   return (
-    <div className="absolute w-full h-full top-0 left-0 min-h-screen flex items-center justify-center opacity-100 scrollbar-hide">
+    <div className="absolute w-full h-full top-0 left-0 min-h-screen flex items-center justify-center opacity-100 scrollbar-hide bg-gray-50 dark:bg-black">
       {showAlert.show && <Alert showAlert={showAlert} />}
       <div
-        className={`w-full max-w-[30%] space-y-6 p-10 bg-gray-900 rounded-3xl shadow-lg z-10  opacity-90`}
+        className={`w-full max-w-[30%] space-y-6 p-10 bg-white dark:bg-gray-900 rounded-3xl shadow-lg z-10 opacity-90`}
       >
         <h1
           className={`text-center text-3xl font-extrabold text-transparent bg-clip-text
@@ -100,7 +100,7 @@ const SignInPage = () => {
           {t("brand")}
         </h1>
 
-        <h2 className="text-2xl font-bold text-center text-gray-700">
+        <h2 className="text-2xl font-bold text-center text-gray-900 dark:text-white">
           {isLogin ? t("loginTitle") : t("registerTitle")}
         </h2>
 
@@ -108,7 +108,7 @@ const SignInPage = () => {
           <div>
             <label
               htmlFor="name"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300"
             >
               {t("nameLabel")}
             </label>
@@ -120,7 +120,7 @@ const SignInPage = () => {
               onChange={(e) => setName(e.target.value)}
               autoComplete="name"
               required
-              className={`mt-1 w-full px-3 py-2 border border-gray-300 rounded-xl shadow-xs focus:outline-hidden focus:border-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm`}
+              className={`mt-1 w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-xl shadow-xs focus:outline-hidden focus:border-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-white`}
             />
           </div>
 
@@ -128,7 +128,7 @@ const SignInPage = () => {
             <div>
               <label
                 htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300"
               >
                 {t("emailLabel")}
               </label>
@@ -140,8 +140,8 @@ const SignInPage = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 autoComplete="email"
                 required
-                className={`mt-1 w-full px-3 py-2 border border-gray-300 rounded-xl shadow-xs focus:outline-hidden focus:border-2 focus:ring-indigo-500 focus:border-indigo-500
-                     sm:text-sm`}
+                className={`mt-1 w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-xl shadow-xs focus:outline-hidden focus:border-2 focus:ring-indigo-500 focus:border-indigo-500
+                     sm:text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-white`}
               />
             </div>
           )}
@@ -149,7 +149,7 @@ const SignInPage = () => {
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-gray-700"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300"
             >
               {t("passwordLabel")}
             </label>
@@ -161,8 +161,8 @@ const SignInPage = () => {
               onChange={(e) => setPassword(e.target.value)}
               autoComplete="current-password"
               required
-              className={`mt-1 w-full px-3 py-2 border border-gray-300 rounded-xl shadow-xs focus:outline-hidden focus:border-2 focus:ring-indigo-500 focus:border-indigo-500
-                  sm:text-sm`}
+              className={`mt-1 w-full px-3 py-2 border border-gray-300 dark:border-gray-700 rounded-xl shadow-xs focus:outline-hidden focus:border-2 focus:ring-indigo-500 focus:border-indigo-500
+                  sm:text-sm bg-white dark:bg-gray-800 text-gray-900 dark:text-white`}
             />
           </div>
 
@@ -182,13 +182,13 @@ const SignInPage = () => {
           </div>
         </form>
 
-        <div className="text-sm text-center">
+        <div className="text-sm text-center text-gray-600 dark:text-gray-400">
           {isLogin ? (
             <p>
               {t("noAccount")}
               <button
                 onClick={toggleAuthMode}
-                className={`font-medium text-indigo-600 hover:text-indigo-500
+                className={`font-medium text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300
                      cursor-pointer disabled:cursor-not-allowed`}
                 disabled={pending}
               >
@@ -200,7 +200,7 @@ const SignInPage = () => {
               {t("haveAccount")}
               <button
                 onClick={toggleAuthMode}
-                className={`font-medium text-indigo-600 hover:text-indigo-500 cursor-pointer disabled:cursor-not-allowed`}
+                className={`font-medium text-indigo-600 hover:text-indigo-500 dark:text-indigo-400 dark:hover:text-indigo-300 cursor-pointer disabled:cursor-not-allowed`}
                 disabled={pending}
               >
                 {pending ? t("sendingButton") : t("signInButton")}

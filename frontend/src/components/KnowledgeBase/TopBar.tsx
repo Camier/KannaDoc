@@ -9,7 +9,7 @@ interface TopBarProps {
 const TopBar: React.FC<TopBarProps> = ({ searchTerm, setSearchTerm }) => {
   const t = useTranslations("KnowledgeBaseTopBar");
   return (
-    <div className="bg-gray-900 shadow-xs rounded-3xl flex items-center px-6 justify-between w-full h-[12%]">
+    <div className="bg-white dark:bg-gray-900 shadow-xs rounded-3xl flex items-center px-6 justify-between w-full h-[12%] text-gray-900 dark:text-gray-100">
       <div className="flex items-center gap-2">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -27,13 +27,13 @@ const TopBar: React.FC<TopBarProps> = ({ searchTerm, setSearchTerm }) => {
           />
         </svg>
 
-        <h1 className="text-xl font-medium text-gray-800">{t("title")}</h1>
+        <h1 className="text-xl font-medium text-gray-800 dark:text-gray-100">{t("title")}</h1>
       </div>
       <div className="relative w-[22%]">
         <input
           type="text"
           placeholder={t("searchPlaceholder")}
-          className="w-full pl-6 pr-10 py-1.5 rounded-full border border-gray-300 focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
+          className="w-full pl-6 pr-10 py-1.5 rounded-full border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />

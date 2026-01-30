@@ -182,7 +182,7 @@ export const WorkflowCanvasPanel: React.FC<WorkflowCanvasPanelProps> = ({
         codeFullScreenFlow
           ? "w-[96%] h-[98%] fixed top-[1%] right-[2%]"
           : "w-[40%] h-[98%] absolute m-2 top-0 right-0"
-      } shadow-lg rounded-3xl bg-gray-900`}
+      } shadow-lg rounded-3xl bg-white dark:bg-gray-900`}
     >
       {getPanelContent()}
     </div>

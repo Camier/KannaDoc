@@ -176,6 +176,16 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   const countRef = useRef(1);
   const countListRef = useRef<string[]>([]);
   const eachMessagesRef = useRef(eachMessages);
+  const nodesRef = useRef(nodes);
+  const edgesRef = useRef(edges);
+
+  useEffect(() => {
+    nodesRef.current = nodes;
+  }, [nodes]);
+
+  useEffect(() => {
+    edgesRef.current = edges;
+  }, [edges]);
 
   // Computed values
   const currentNode = useMemo(
@@ -364,24 +374,9 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     fetchAllCustomNodes();
   }, [user?.name, fetchAllCustomNodes]);
 
-  // ReactFlow handlers
   const onNodesChange = useCallback(
     (changes: NodeChange<CustomNode>[]) => {
-      setNodes(applyNodeChanges(changes, nodes));
-      if (
-        changes.find((change) =>
-          ["dimensions", "remove", "replace", "add"].includes(change.type)
-        )
-      ) {
-        pushHistory();
-      }
-    },
-    [nodes, setNodes, pushHistory]
-  );
-
-  const onEdgesChange = useCallback(
-    (changes: EdgeChange<CustomEdge>[]) => {
-      setEdges(applyEdgeChanges(changes, edges));
+      setNodes(applyNodeChanges(changes, nodesRef.current));
       if (
         changes.find((change) =>
           ["remove", "replace", "add"].includes(change.type)
@@ -390,7 +385,21 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         pushHistory();
       }
     },
-    [edges, setEdges, pushHistory]
+    [setNodes, pushHistory]
+  );
+
+  const onEdgesChange = useCallback(
+    (changes: EdgeChange<CustomEdge>[]) => {
+      setEdges(applyEdgeChanges(changes, edgesRef.current));
+      if (
+        changes.find((change) =>
+          ["remove", "replace", "add"].includes(change.type)
+        )
+      ) {
+        pushHistory();
+      }
+    },
+    [setEdges, pushHistory]
   );
 
   const onEdgesDelete = (edges: CustomEdge[]) => {
@@ -806,12 +815,12 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
 
   return (
     <div
-      className="grid grid-cols-[15%_1fr] h-full w-full bg-gray-900 rounded-3xl shadow-sm p-6"
+      className="grid grid-cols-[15%_1fr] h-full w-full bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded-3xl shadow-sm p-6"
       ref={reactFlowWrapper}
       tabIndex={0}
       onKeyDown={onKeyDown}
     >
-      <div className="bg-gray-900 pr-4 h-full overflow-auto">
+      <div className="bg-white dark:bg-gray-900 pr-4 h-full overflow-auto">
         <NodeTypeSelector
           deleteCustomNode={handleDeleteCustomNode}
           customNodes={customNodes}
@@ -858,7 +867,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
           onClear={() => setShowConfirmClear(true)}
         />
 
-        <div className="flex-1 rounded-3xl shadow-sm bg-gray-900 relative overflow-hidden">
+        <div className="flex-1 rounded-3xl shadow-sm bg-gray-50 dark:bg-gray-900 relative overflow-hidden">
           <WorkflowCanvasPanel
             currentNode={currentNode}
             showOutput={showOutput}
@@ -911,7 +920,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
             fitViewOptions={{
               padding: 0.2,
             }}
-            className="!border-0 !bg-gray-50"
+            className="!border-0 !bg-gray-50 dark:!bg-gray-900"
           >
             <MiniMap />
             <Controls />

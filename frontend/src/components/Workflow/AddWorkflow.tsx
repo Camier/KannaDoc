@@ -44,8 +44,8 @@ const AddWorkflow: React.FC<AddWorkflowProps> = ({
           <input
             type="text"
             placeholder={t("placeholder")}
-            className={`w-full px-4 py-2 mb-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 ${
-              nameError ? "border-red-500" : "border-gray-300"
+            className={`w-full px-4 py-2 mb-2 border border-gray-200 dark:border-gray-700 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 ${
+              nameError ? "border-red-500" : "border-gray-300 dark:border-gray-600"
             }`}
             value={newWorkflowName}
             onChange={(e) => {
@@ -68,7 +68,7 @@ const AddWorkflow: React.FC<AddWorkflowProps> = ({
         <div className="flex justify-end gap-2 mt-6">
           <button
             onClick={() => setShowCreateModal(false)}
-            className="px-4 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-100 cursor-pointer"
+            className="px-4 py-2 text-gray-700 dark:text-gray-300 border border-gray-300 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
           >
             {t("cancel")}
           </button>

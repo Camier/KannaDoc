@@ -139,7 +139,7 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
   return (
     <div className="flex-1 h-full">
       {selectedBase ? (
-        <div className="bg-gray-900 p-6 rounded-3xl shadow-sm h-full  flex flex-col">
+        <div className="bg-white dark:bg-gray-900 p-6 rounded-3xl shadow-sm h-full  flex flex-col text-gray-900 dark:text-gray-100">
           <div className="h-[15%]">
             <div className="flex items-center gap-2 mb-2 justify-between">
               <div className="flex items-center gap-2 max-w-[70%] overflow-scroll scrollbar-hide">
@@ -149,7 +149,7 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
                   stroke="currentColor"
-                  className="size-6 mr-2 hover:cursor-pointer text-indigo-500 hover:text-indigo-700"
+                  className="size-6 mr-2 hover:cursor-pointer text-indigo-500 hover:text-indigo-700 dark:text-indigo-400 dark:hover:text-indigo-300"
                   onClick={() => setSelectedBase(null)}
                 >
                   <path
@@ -174,14 +174,14 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
                   />
                 </svg>
 
-                <h2 className="text-xl font-medium overflow-x-auto whitespace-nowrap">
+                <h2 className="text-xl font-medium overflow-x-auto whitespace-nowrap text-gray-900 dark:text-gray-100">
                   {bases.find((r) => r.baseId === selectedBase)?.name}
                 </h2>
               </div>
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => setShowSearchPreview(true)}
-                  className="px-4 py-1 bg-indigo-500 text-white rounded-full hover:bg-indigo-600 text-sm transition-colors flex items-center gap-1"
+                  className="px-4 py-1 bg-indigo-500 text-white rounded-full hover:bg-indigo-600 dark:hover:bg-indigo-400 text-sm transition-colors flex items-center gap-1"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -204,7 +204,7 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
                   ref={search1Ref}
                   type="text"
                   placeholder={t("searchPlaceholder")}
-                  className="w-full pl-6 pr-10 py-1 rounded-full border border-gray-300 focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
+                  className="w-full pl-6 pr-10 py-1 rounded-full border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
                       handleSearch(search1Ref.current?.value || "");
@@ -233,7 +233,7 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
               </div>
             </div>
 
-            <div className="flex gap-4 text-sm text-gray-500">
+            <div className="flex gap-4 text-sm text-gray-500 dark:text-gray-400">
               <span>
                 {t("fileNumber")}
                 {bases.find((r) => r.baseId === selectedBase)?.fileNumber}
@@ -250,8 +250,8 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
             className={`h-[25%] mb-6 flex flex-col items-center justify-center border-2 border-dashed rounded-3xl p-8 text-center transition-all
                   ${
                     dragActive
-                      ? "border-indigo-500 bg-indigo-50 scale-[1.02]"
-                      : "border-gray-300"
+                      ? "border-indigo-500 bg-indigo-50 dark:bg-indigo-900/20 scale-[1.02]"
+                      : "border-gray-300 dark:border-gray-700"
                   }
                   ${isSendDisabled ? "pointer-events-none opacity-75" : ""}`}
             onDragEnter={handleDrag}
@@ -273,7 +273,7 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
                     ${
                       dragActive
                         ? "bg-indigo-700"
-                        : "bg-indigo-500 hover:bg-indigo-700"
+                        : "bg-indigo-500 hover:bg-indigo-700 dark:hover:bg-indigo-600"
                     } text-white`}
             >
               <div className="flex items-center gap-2 text-[15px]">
@@ -295,10 +295,10 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
                 <span>{buttonText}</span>
               </div>
             </label>
-            <p className="mt-4 text-gray-600">
+            <p className="mt-4 text-gray-600 dark:text-gray-400">
               {t("dragPrompt")}
             </p>
-            <p className="mt-2 text-sm text-gray-500">
+            <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">
               {t("supportedFormats")}
             </p>
           </div>
@@ -317,16 +317,17 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
             />
           </div>
         </div>
+      </div>
       ) : (
-        <div className="h-full flex items-center justify-center bg-gray-900 rounded-3xl shadow-sm flex-col pb-6">
+        <div className="h-full flex items-center justify-center bg-white dark:bg-gray-900 rounded-3xl shadow-sm flex-col pb-6">
           <div className="flex items-center justify-center h-[10%] w-full">
-            <p className="text-gray-500 text-lg">
+            <p className="text-gray-500 dark:text-gray-400 text-lg">
              {t("choosePrompt")}
             </p>
           </div>
-          <div className="h-[90%] flex flex-col bg-gray-900 rounded-3xl shadow-sm p-6 w-[90%]">
+          <div className="h-[90%] flex flex-col bg-white dark:bg-gray-900 rounded-3xl shadow-sm p-6 w-[90%]">
             <div className="mb-6 flex items-center justify-between h-[10%]">
-              <h2 className="text-xl font-medium flex items-center gap-2">
+              <h2 className="text-xl font-medium flex items-center gap-2 text-gray-900 dark:text-gray-100">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -348,7 +349,7 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
                   ref={search2Ref}
                   type="text"
                   placeholder={t("searchPlaceholder")}
-                  className="w-full pl-6 pr-10 py-1 rounded-full border border-gray-300 focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
+                  className="w-full pl-6 pr-10 py-1 rounded-full border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
                   onKeyDown={(e) => {
                     if (e.key === "Enter") {
                       handleSearch(search2Ref.current?.value || "");
@@ -392,9 +393,8 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
           </div>
         </div>
       )}
-    </div>
 
-    {/* Search Preview Modal */}
+      {/* Search Preview Modal */}
     {showSearchPreview && selectedBase && (
       <SearchPreviewPanel
         kbId={selectedBase}
