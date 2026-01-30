@@ -7,7 +7,7 @@ for specified users in MongoDB.
 
 Models configured:
 - DeepSeek: deepseek-chat, deepseek-r1
-- GLM: glm-4, glm-4-plus, glm-4-flash
+- GLM: glm-4.7, glm-4.7-flash
 """
 
 import asyncio
@@ -25,7 +25,9 @@ load_dotenv(env_path)
 # Database configuration
 MONGODB_URL = os.getenv("MONGODB_URL", "localhost:27017")
 MONGODB_USERNAME = os.getenv("MONGODB_ROOT_USERNAME", "thesis")
-MONGODB_PASSWORD = os.getenv("MONGODB_ROOT_PASSWORD", "thesis_mongo_3a2572a198fa78362d6d8e9b31a98bac")
+MONGODB_PASSWORD = os.getenv(
+    "MONGODB_ROOT_PASSWORD", "thesis_mongo_3a2572a198fa78362d6d8e9b31a98bac"
+)
 MONGODB_DB = os.getenv("MONGODB_DB", "chat_mongodb")
 
 # API Keys
@@ -49,7 +51,7 @@ MODELS = {
             "top_P": 0.9,
             "top_K": 50,
             "score_threshold": 0.7,
-        }
+        },
     },
     "deepseek-r1": {
         "model_name": "deepseek-r1",
@@ -63,49 +65,35 @@ MODELS = {
             "top_P": 0.9,
             "top_K": 50,
             "score_threshold": 0.7,
-        }
+        },
     },
-    "glm-4": {
-        "model_name": "glm-4",
+    "glm-4.7": {
+        "model_name": "glm-4.7",
         "model_url": "https://open.bigmodel.cn/api/paas/v4",
         "api_key_env": "ZHIPUAI_API_KEY",
         "provider": "zhipu",
-        "description": "Zhipu GLM-4 (Main Model)",
+        "description": "Zhipu GLM-4.7 (Latest)",
         "default_params": {
             "temperature": 0.7,
             "max_length": 8192,
             "top_P": 0.9,
             "top_K": 50,
             "score_threshold": 0.7,
-        }
+        },
     },
-    "glm-4-plus": {
-        "model_name": "glm-4-plus",
+    "glm-4.7-flash": {
+        "model_name": "glm-4.7-flash",
         "model_url": "https://open.bigmodel.cn/api/paas/v4",
         "api_key_env": "ZHIPUAI_API_KEY",
         "provider": "zhipu",
-        "description": "Zhipu GLM-4 Plus (Enhanced)",
-        "default_params": {
-            "temperature": 0.7,
-            "max_length": 8192,
-            "top_P": 0.9,
-            "top_K": 50,
-            "score_threshold": 0.7,
-        }
-    },
-    "glm-4-flash": {
-        "model_name": "glm-4-flash",
-        "model_url": "https://open.bigmodel.cn/api/paas/v4",
-        "api_key_env": "ZHIPUAI_API_KEY",
-        "provider": "zhipu",
-        "description": "Zhipu GLM-4 Flash (Fast)",
+        "description": "Zhipu GLM-4.7 Flash (Fast)",
         "default_params": {
             "temperature": 0.7,
             "max_length": 4096,
             "top_P": 0.9,
             "top_K": 50,
             "score_threshold": 0.7,
-        }
+        },
     },
 }
 
@@ -134,7 +122,7 @@ async def configure_models_for_user(db, username: str) -> dict:
         "username": username,
         "models_added": [],
         "models_updated": [],
-        "errors": []
+        "errors": [],
     }
 
     # Check if user config exists
@@ -157,7 +145,7 @@ async def configure_models_for_user(db, username: str) -> dict:
                 "api_key": api_key,
                 "base_used": ["chat", "workflow"],
                 "system_prompt": "",
-                **model_config["default_params"]
+                **model_config["default_params"],
             }
             models_list.append(model_dict)
             results["models_added"].append(model_key)
@@ -168,7 +156,7 @@ async def configure_models_for_user(db, username: str) -> dict:
         new_config = {
             "username": username,
             "selected_model": default_model_id,
-            "models": models_list
+            "models": models_list,
         }
 
         try:
@@ -204,7 +192,7 @@ async def configure_models_for_user(db, username: str) -> dict:
                 try:
                     await db.model_config.update_one(
                         {"username": username, "models.model_id": model_id},
-                        {"$set": update_data}
+                        {"$set": update_data},
                     )
                     results["models_updated"].append(model_key)
                     log(f"Updated model: {model_key} for {username}")
@@ -221,13 +209,12 @@ async def configure_models_for_user(db, username: str) -> dict:
                     "api_key": api_key,
                     "base_used": ["chat", "workflow"],
                     "system_prompt": "",
-                    **model_config["default_params"]
+                    **model_config["default_params"],
                 }
 
                 try:
                     await db.model_config.update_one(
-                        {"username": username},
-                        {"$push": {"models": model_dict}}
+                        {"username": username}, {"$push": {"models": model_dict}}
                     )
                     results["models_added"].append(model_key)
                     log(f"Added model: {model_key} for {username}")
@@ -240,8 +227,7 @@ async def configure_models_for_user(db, username: str) -> dict:
         default_model_id = f"{username}_{DEFAULT_MODEL}"
         try:
             await db.model_config.update_one(
-                {"username": username},
-                {"$set": {"selected_model": default_model_id}}
+                {"username": username}, {"$set": {"selected_model": default_model_id}}
             )
             log(f"Set default model to {DEFAULT_MODEL} for {username}")
         except Exception as e:
@@ -255,10 +241,7 @@ async def configure_models_for_user(db, username: str) -> dict:
 async def verify_api_keys() -> dict:
     """Verify that all required API keys are present."""
     log("Verifying API keys...")
-    verification = {
-        "deepseek": bool(DEEPSEEK_API_KEY),
-        "zhipu": bool(ZHIPUAI_API_KEY)
-    }
+    verification = {"deepseek": bool(DEEPSEEK_API_KEY), "zhipu": bool(ZHIPUAI_API_KEY)}
 
     for provider, status in verification.items():
         if status:
@@ -271,9 +254,9 @@ async def verify_api_keys() -> dict:
 
 async def main():
     """Main execution function."""
-    log("="*80)
+    log("=" * 80)
     log("DeepSeek and GLM Model Configuration Script")
-    log("="*80)
+    log("=" * 80)
 
     # Verify API keys
     key_verification = await verify_api_keys()
@@ -290,7 +273,7 @@ async def main():
     try:
         client = AsyncIOMotorClient(
             f"mongodb://{MONGODB_USERNAME}:{MONGODB_PASSWORD}@{MONGODB_URL}",
-            serverSelectionTimeoutMS=5000
+            serverSelectionTimeoutMS=5000,
         )
         db = client[MONGODB_DB]
 
@@ -303,7 +286,7 @@ async def main():
 
     # Configure models for each user
     log(f"\nConfiguring models for users: {', '.join(USERS)}")
-    log("-"*80)
+    log("-" * 80)
 
     all_results = []
     for user in USERS:
@@ -317,21 +300,21 @@ async def main():
         log(f"    Models updated: {len(result['models_updated'])}")
         log(f"    Errors: {len(result['errors'])}")
 
-        if result['models_added']:
+        if result["models_added"]:
             log(f"    Added: {', '.join(result['models_added'])}")
-        if result['models_updated']:
+        if result["models_updated"]:
             log(f"    Updated: {', '.join(result['models_updated'])}")
-        if result['errors']:
+        if result["errors"]:
             log(f"    Errors: {', '.join(result['errors'])}", "WARNING")
 
     # Final summary
-    log("\n" + "="*80)
+    log("\n" + "=" * 80)
     log("Configuration Complete")
-    log("="*80)
+    log("=" * 80)
 
-    total_added = sum(len(r['models_added']) for r in all_results)
-    total_updated = sum(len(r['models_updated']) for r in all_results)
-    total_errors = sum(len(r['errors']) for r in all_results)
+    total_added = sum(len(r["models_added"]) for r in all_results)
+    total_updated = sum(len(r["models_updated"]) for r in all_results)
+    total_errors = sum(len(r["errors"]) for r in all_results)
 
     log(f"\nTotal models added: {total_added}")
     log(f"Total models updated: {total_updated}")
@@ -358,5 +341,6 @@ if __name__ == "__main__":
     except Exception as e:
         log(f"\n\nUnexpected error: {str(e)}", "ERROR")
         import traceback
+
         traceback.print_exc()
         sys.exit(1)

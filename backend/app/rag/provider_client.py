@@ -159,6 +159,7 @@ class ProviderClient:
                 "glm-4.6v",
                 "glm-4.6v-flash",
                 "glm-4.7",
+                "glm-4.7-flash",
             ],
             "vision": True,
         },
