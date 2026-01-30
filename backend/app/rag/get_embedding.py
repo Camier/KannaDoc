@@ -2,7 +2,7 @@ import base64
 from io import BytesIO
 import json
 import httpx
-from typing import Literal, Optional, List, Union, Tuple
+from typing import Literal, Optional, List, Union, Tuple, Dict
 from app.core.config import settings
 from app.core.logging import logger
 from app.core.circuit_breaker import embedding_service_circuit
@@ -102,13 +102,13 @@ async def _get_local_embeddings(
                     raise TypeError(error_msg)
 
                 response = await client.post(
-                    f"{settings.model_server_url}/{endpoint}", files=files, timeout=1200.0
+                    f"{settings.model_server_url}/{endpoint}",
+                    files=files,
+                    timeout=1200.0,
                 )
 
             response.raise_for_status()
-            logger.info(
-                f"Successfully processed embeddings from local embedding model"
-            )
+            logger.info(f"Successfully processed embeddings from local embedding model")
             return response.json()["embeddings"]
 
         except httpx.HTTPStatusError as e:
@@ -221,3 +221,37 @@ async def _get_jina_embeddings(
         except Exception as e:
             logger.error(f"Unexpected error in Jina embeddings: {str(e)}")
             raise
+
+
+async def get_sparse_embeddings(texts: List[str]) -> List[Dict[int, float]]:
+    """Get sparse embeddings from BGE-M3 model for hybrid search.
+
+    Args:
+        texts: List of text strings to embed
+
+    Returns:
+        List of sparse vectors as {token_id: weight} dicts.
+        Returns empty list on failure (graceful degradation).
+    """
+    if not texts:
+        return []
+    try:
+        async with httpx.AsyncClient() as client:
+            response = await client.post(
+                f"{settings.model_server_url}/embed_sparse",
+                json={"texts": texts},
+                timeout=60.0,
+            )
+            response.raise_for_status()
+            payload = response.json()
+            embeddings = payload.get("embeddings", [])
+            if not isinstance(embeddings, list):
+                logger.warning("Sparse embedding response missing embeddings list")
+                return []
+            return embeddings
+    except (httpx.TimeoutException, httpx.HTTPError, ValueError) as exc:
+        logger.warning(f"Sparse embedding request failed: {exc}")
+        return []
+    except Exception as exc:
+        logger.warning(f"Unexpected sparse embedding failure: {exc}")
+        return []
