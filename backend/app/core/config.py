@@ -1,5 +1,12 @@
-from pydantic import Field
-from pydantic_settings import BaseSettings
+"""Application settings and environment configuration."""
+
+import importlib
+
+_pydantic = importlib.import_module("pydantic")
+_pydantic_settings = importlib.import_module("pydantic_settings")
+
+Field = _pydantic.Field
+BaseSettings = _pydantic_settings.BaseSettings
 
 
 class Settings(BaseSettings):
@@ -100,6 +107,12 @@ class Settings(BaseSettings):
     embedding_model: str = "local_colqwen"
     jina_api_key: str = ""
     jina_embeddings_v4_url: str = "https://api.jina.ai/v1/embeddings"
+    rag_max_query_vecs: int = 48
+    rag_search_limit_cap: int = 120
+    rag_candidate_images_cap: int = 120
+    rag_search_limit_min: int = 50
+    rag_ef_min: int = 100
+    rag_load_collection_once: bool = True
 
     model_config = {"extra": "ignore", "env_file": "../.env"}
 

@@ -17,18 +17,19 @@ Common utilities are shared via app.core.embeddings (normalize_multivector).
 import asyncio
 import json
 import time
-from typing import AsyncGenerator, Optional, Dict, Any, List
-from openai import AsyncOpenAI
+from typing import AsyncGenerator, Optional, Dict, Any, List, cast
+from openai import AsyncOpenAI  # type: ignore[import-not-found]
 
 from app.db.repositories.repository_manager import get_repository_manager
 from app.core.logging import logger
-from app.core.circuit_breaker import llm_service_circuit, CircuitBreakerError
+from app.core.circuit_breaker import llm_service_circuit
 from app.db.vector_db import vector_db_client
 from app.rag.get_embedding import get_embeddings_from_httpx
 from app.rag.utils import replace_image_content, sort_and_filter
 from app.rag.mesage import find_depth_parent_mesage
 from app.rag.provider_client import get_llm_client
-from app.core.embeddings import normalize_multivector
+from app.core.config import settings
+from app.core.embeddings import normalize_multivector, downsample_multivector
 
 
 class ChatService:
@@ -259,6 +260,8 @@ class ChatService:
         content = []
         bases = []
         user_images = []
+        nq_before = 0
+        nq_after = 0
 
         # Handle temp_db_id (standardized field name)
         temp_db_id = getattr(user_message_content, "temp_db_id", "") or getattr(
@@ -280,6 +283,11 @@ class ChatService:
                     [user_message_content.user_message], endpoint="embed_text"
                 )
                 query_vecs = normalize_multivector(query_embedding)
+                nq_before = len(query_vecs)
+                query_vecs = downsample_multivector(
+                    query_vecs, settings.rag_max_query_vecs
+                )
+                nq_after = len(query_vecs)
                 t_embed_s += time.perf_counter() - t_start
             except Exception as e:
                 logger.warning(f"RAG retrieval skipped (embedding failed): {e}")
@@ -409,6 +417,8 @@ class ChatService:
                 f"search_s={t_search_s:.3f} "
                 f"meta_s={t_meta_s:.3f} "
                 f"minio_s={t_minio_s:.3f} "
+                f"nq_before={nq_before} "
+                f"nq_after={nq_after} "
                 f"hits={rag_hits} "
                 f"total_s={(time.perf_counter() - t0):.3f} "
                 f"mode={'workflow' if is_workflow else 'rag'}"
@@ -453,12 +463,21 @@ class ChatService:
             if top_P != -1:
                 optional_args["top_p"] = top_P
 
+        # Zhipu API doesn't support stream_options parameter
+        is_zhipu = (
+            "glm" in model_name.lower() or "zhipu" in model_url.lower()
+            if model_url
+            else False
+        )
+        stream_kwargs: Dict[str, Any] = {"stream": True}
+        if not is_zhipu:
+            stream_kwargs["stream_options"] = {"include_usage": True}
+
         # Call API with streaming
         response = await client.chat.completions.create(
             model=model_name,
             messages=send_messages,
-            stream=True,
-            stream_options={"include_usage": True},
+            **stream_kwargs,
             **optional_args,
         )
 
@@ -626,9 +645,9 @@ class ChatService:
                     chatflow_id=user_message_content.conversation_id,
                     message_id=message_id,
                     parent_message_id=user_message_content.parent_id,
-                    user_message=user_chatflow_input,
+                    user_message=cast(Any, user_chatflow_input),
                     temp_db=user_message_content.temp_db_id,
-                    ai_message=ai_message,
+                    ai_message=cast(Any, ai_message),
                     file_used=file_used,
                     status="",
                     total_token=total_token,
@@ -643,9 +662,9 @@ class ChatService:
                         conversation_id=user_message_content.conversation_id,
                         message_id=message_id,
                         parent_message_id=user_message_content.parent_id,
-                        user_message=user_message,
+                        user_message=cast(Any, user_message),
                         temp_db=user_message_content.temp_db_id,
-                        ai_message=ai_message,
+                        ai_message=cast(Any, ai_message),
                         file_used=file_used,
                         status=(
                             "aborted"

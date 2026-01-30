@@ -1,12 +1,15 @@
 from pymilvus import MilvusClient, DataType
 import numpy as np
 import concurrent.futures
+import threading
 from app.core.config import settings
 
 
 class MilvusManager:
     def __init__(self):
         self.client = MilvusClient(uri=settings.milvus_uri)
+        self._loaded_collections = set()
+        self._load_lock = threading.Lock()
 
     def delete_collection(self, collection_name: str):
         if self.client.has_collection(collection_name):
@@ -65,7 +68,18 @@ class MilvusManager:
 
     def load_collection(self, collection_name: str):
         """Load collection into memory for search."""
-        self.client.load_collection(collection_name)
+        if not settings.rag_load_collection_once:
+            self.client.load_collection(collection_name)
+            return
+
+        if collection_name in self._loaded_collections:
+            return
+
+        with self._load_lock:
+            if collection_name in self._loaded_collections:
+                return
+            self.client.load_collection(collection_name)
+            self._loaded_collections.add(collection_name)
 
     def create_collection(self, collection_name: str, dim: int = 128) -> None:
         if self.client.has_collection(collection_name):
@@ -137,7 +151,7 @@ class MilvusManager:
         self.client.create_index(
             collection_name=collection_name, index_params=index_params, sync=True
         )
-        self.client.load_collection(collection_name)
+        self.load_collection(collection_name)
 
     def search(self, collection_name, data, topk):
         """
@@ -155,7 +169,7 @@ class MilvusManager:
             List of top-k search results with metadata
         """
         # Load collection if not already loaded
-        self.client.load_collection(collection_name)
+        self.load_collection(collection_name)
 
         # Guard: empty queries can happen if embedding service fails or caller sends empty input.
         if not data:
@@ -163,10 +177,15 @@ class MilvusManager:
 
         # Buffer for candidate generation (per query token vector).
         # Larger -> better recall, slower.
-        search_limit = min(max(int(topk) * 10, 50), 200)
+        search_limit = min(
+            max(int(topk) * 10, settings.rag_search_limit_min),
+            settings.rag_search_limit_cap,
+        )
 
         # Perform a vector search on the collection to find the top-k most similar documents.
-        search_params = {"metric_type": "IP", "params": {"ef": 100}}
+        # HNSW constraint: ef must be >= limit (k), so set ef = max(search_limit, 100)
+        ef_value = max(search_limit, settings.rag_ef_min)
+        search_params = {"metric_type": "IP", "params": {"ef": ef_value}}
         results = self.client.search(
             collection_name,
             data,
@@ -203,7 +222,10 @@ class MilvusManager:
             return []
 
         # 2) Keep only top-N candidate pages for exact reranking.
-        candidate_images_limit = min(max(int(topk) * 20, 50), 200)
+        candidate_images_limit = min(
+            max(int(topk) * 20, settings.rag_search_limit_min),
+            settings.rag_candidate_images_cap,
+        )
         candidate_image_ids = [
             img_id
             for img_id, _score in sorted(

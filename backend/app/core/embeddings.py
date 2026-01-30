@@ -4,6 +4,7 @@ Embedding utilities for vector normalization.
 This module provides common utilities for handling multi-vector embeddings
 from ColQwen and similar visual embedding models.
 """
+
 from typing import List, Union
 
 
@@ -63,4 +64,25 @@ def normalize_multivector(emb) -> List[List[float]]:
     raise TypeError("Unexpected embedding structure")
 
 
-__all__ = ["normalize_multivector"]
+def downsample_multivector(vecs: List[List[float]], max_vecs: int) -> List[List[float]]:
+    """
+    Downsample a multi-vector list to at most max_vecs, evenly spaced.
+
+    Keeps original order and avoids heavy dependencies.
+    """
+    if max_vecs <= 0:
+        return []
+
+    total = len(vecs)
+    if total <= max_vecs:
+        return vecs
+
+    if max_vecs == 1:
+        return [vecs[0]]
+
+    step = (total - 1) / (max_vecs - 1)
+    indices = [int(round(i * step)) for i in range(max_vecs)]
+    return [vecs[i] for i in indices]
+
+
+__all__ = ["normalize_multivector", "downsample_multivector"]
