@@ -24,7 +24,7 @@ from app.db.repositories.repository_manager import get_repository_manager
 from app.core.logging import logger
 from app.core.circuit_breaker import llm_service_circuit
 from app.db.vector_db import vector_db_client
-from app.rag.get_embedding import get_embeddings_from_httpx
+from app.rag.get_embedding import get_embeddings_from_httpx, get_sparse_embeddings
 from app.rag.utils import replace_image_content, sort_and_filter
 from app.rag.mesage import find_depth_parent_mesage
 from app.rag.provider_client import get_llm_client
@@ -292,7 +292,28 @@ class ChatService:
             except Exception as e:
                 logger.warning(f"RAG retrieval skipped (embedding failed): {e}")
 
+            # Generate sparse embeddings for hybrid search
+            sparse_vecs = []
+            if settings.rag_hybrid_enabled and query_vecs:
+                try:
+                    sparse_result = await get_sparse_embeddings(
+                        [user_message_content.user_message]
+                    )
+                    if sparse_result and len(sparse_result) > 0:
+                        # Replicate single sparse vector to match dense vector count
+                        sparse_vecs = [sparse_result[0]] * len(query_vecs)
+                except Exception as e:
+                    logger.warning(
+                        f"Sparse embedding failed, falling back to dense-only: {e}"
+                    )
+
             if query_vecs:
+                # Prepare search data - use hybrid format if sparse vectors available
+                search_data = (
+                    {"dense_vecs": query_vecs, "sparse_vecs": sparse_vecs}
+                    if sparse_vecs
+                    else query_vecs
+                )
                 for base in bases:
                     collection_name = f"colqwen{base['baseId'].replace('-', '_')}"
                     try:
@@ -301,7 +322,7 @@ class ChatService:
                             # Workflow mode: check collection first
                             if vector_db_client.check_collection(collection_name):
                                 scores = vector_db_client.search(
-                                    collection_name, data=query_vecs, topk=top_K
+                                    collection_name, data=search_data, topk=top_K
                                 )
                                 for score in scores:
                                     score.update({"collection_name": collection_name})
@@ -309,7 +330,7 @@ class ChatService:
                         else:
                             # RAG mode: direct search with exception handling
                             scores = vector_db_client.search(
-                                collection_name, data=query_vecs, topk=top_K
+                                collection_name, data=search_data, topk=top_K
                             )
                             for score in scores:
                                 score.update({"collection_name": collection_name})
