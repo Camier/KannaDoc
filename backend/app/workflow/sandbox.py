@@ -9,6 +9,8 @@ import uuid
 from app.core.logging import logger
 from app.core.config import settings
 
+SANDBOX_MEMORY_LIMIT = os.getenv("SANDBOX_MEMORY_LIMIT", "256m")
+
 
 class CodeSandbox:
     def __init__(self, image: str = "python-sandbox:latest"):
@@ -118,7 +120,7 @@ class CodeSandbox:
                 image=self.image,
                 command="tail -f /dev/null",
                 detach=True,
-                mem_limit="100m",
+                mem_limit=SANDBOX_MEMORY_LIMIT,
                 cpu_period=100000,
                 cpu_quota=50000,
                 volumes={volume_source: {"bind": "/shared", "mode": "rw"}},
@@ -143,7 +145,12 @@ class CodeSandbox:
                 if mount.get("Type") == "bind":
                     self.shared_volume_source = mount.get("Source")
                     return
-        except (docker.errors.APIError, docker.errors.NotFound, KeyError, AttributeError) as e:
+        except (
+            docker.errors.APIError,
+            docker.errors.NotFound,
+            KeyError,
+            AttributeError,
+        ) as e:
             logger.warning(f"Failed to detect sandbox volume source: {e}")
         except Exception as e:
             logger.exception(f"Unexpected error in _detect_shared_volume_source")

@@ -25,6 +25,7 @@ def replace_template(s: str, obj: Dict[str, Any]) -> str:
     :param obj: 包含键值对的字典
     :return: 替换后的字符串
     """
+
     def replacer(match: re.Match) -> str:
         key = match.group(1)
         if key not in obj:
@@ -42,20 +43,38 @@ def replace_template(s: str, obj: Dict[str, Any]) -> str:
 
 
 def find_outermost_braces(s):
-    '''找到最外层括号报告的变量'''
-    start = -1
-    brace_count = 0
+    """Extract outermost JSON objects, handling braces inside strings."""
     result = []
-    
-    for i, char in enumerate(s):
-        if char == '{':
-            brace_count += 1
-            if brace_count == 1:
-                start = i
-        elif char == '}':
-            if brace_count == 1 and start != -1:
-                result.append(s[start:i+1])
-            brace_count -= 1
+    i = 0
+    n = len(s)
+
+    while i < n:
+        if s[i] == "{":
+            start = i
+            brace_count = 1
+            in_string = False
+            i += 1
+
+            while i < n and brace_count > 0:
+                char = s[i]
+
+                if char == "\\" and in_string and i + 1 < n:
+                    i += 2
+                    continue
+
+                if char == '"':
+                    in_string = not in_string
+                elif not in_string:
+                    if char == "{":
+                        brace_count += 1
+                    elif char == "}":
+                        brace_count -= 1
+
+                i += 1
+
             if brace_count == 0:
-                start = -1
+                result.append(s[start:i])
+        else:
+            i += 1
+
     return result
