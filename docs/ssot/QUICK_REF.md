@@ -1,7 +1,7 @@
 # LAYRA Quick Reference Card
 
 > **One-page reference for common tasks**
-> **Version:** 2.2.0
+> **Version:** 2.3.0
 > **Last Updated:** 2026-01-30
 
 ---
@@ -261,6 +261,32 @@ docker exec layra-mongodb mongosh \
 # Update model_url to coding plan endpoint
 # https://open.bigmodel.cn/api/coding/paas/v4
 ```
+
+### RAG Search Too Slow (>10s)
+**Symptom:** `search_s` in logs shows 10-15+ seconds.
+
+**Cause:** Too many query vectors sent to Milvus ANN search.
+
+**Fix:** Tune RAG parameters in `.env` or docker-compose:
+```bash
+RAG_MAX_QUERY_VECS=48        # Max query vectors (default: 48)
+RAG_SEARCH_LIMIT_CAP=120     # Max ANN results per vector (default: 120)
+RAG_CANDIDATE_IMAGES_CAP=120 # Max candidates for rerank (default: 120)
+RAG_EF_MIN=100               # Min HNSW ef param (default: 100)
+```
+
+**Verify:** Check logs after query:
+```bash
+docker logs layra-backend 2>&1 | grep "RAG timings" | tail -5
+# Look for: nq_before=X nq_after=48 search_s=<should be lower>
+```
+
+### Milvus HNSW ef Error
+**Symptom:** `ef(100) should be larger than k(200)`
+
+**Cause:** HNSW search param `ef` must be >= `limit` (k).
+
+**Fix:** Already handled in code - `ef_value = max(search_limit, settings.rag_ef_min)`.
 
 ---
 
