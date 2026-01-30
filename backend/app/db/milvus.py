@@ -1,8 +1,35 @@
-from pymilvus import MilvusClient, DataType
+from pymilvus import (
+    MilvusClient,
+    DataType,
+    AnnSearchRequest,
+    RRFRanker,
+    WeightedRanker,
+)
 import numpy as np
 import concurrent.futures
 import threading
 from app.core.config import settings
+
+
+def get_ranker(settings):
+    if settings.rag_hybrid_ranker == "rrf":
+        return RRFRanker(k=settings.rag_hybrid_rrf_k)
+    return WeightedRanker(
+        settings.rag_hybrid_dense_weight,
+        settings.rag_hybrid_sparse_weight,
+    )
+
+
+def _has_sparse_vectors(sparse_vecs):
+    if not sparse_vecs:
+        return False
+    for vec in sparse_vecs:
+        if isinstance(vec, dict):
+            if vec:
+                return True
+        elif vec:
+            return True
+    return False
 
 
 class MilvusManager:
@@ -175,6 +202,15 @@ class MilvusManager:
         if not data:
             return []
 
+        dense_vecs = data
+        sparse_vecs = []
+        if isinstance(data, dict):
+            dense_vecs = data.get("dense_vecs") or data.get("data") or []
+            sparse_vecs = data.get("sparse_vecs") or []
+
+        if not dense_vecs:
+            return []
+
         # Buffer for candidate generation (per query token vector).
         # Larger -> better recall, slower.
         search_limit = min(
@@ -186,18 +222,49 @@ class MilvusManager:
         # HNSW constraint: ef must be >= limit (k), so set ef = max(search_limit, 100)
         ef_value = max(search_limit, settings.rag_ef_min)
         search_params = {"metric_type": "IP", "params": {"ef": ef_value}}
-        results = self.client.search(
-            collection_name,
-            data,
-            anns_field="vector",  # Required when collection has multiple vector fields
-            limit=int(search_limit),
-            output_fields=[
-                "image_id",
-                "page_number",
-                "file_id",
-            ],  # Remove 'vector' - fetched during reranking only
-            search_params=search_params,
+        use_hybrid = (
+            settings.rag_hybrid_enabled
+            and _has_sparse_vectors(sparse_vecs)
+            and len(sparse_vecs) == len(dense_vecs)
         )
+
+        if use_hybrid:
+            dense_req = AnnSearchRequest(
+                data=dense_vecs,
+                anns_field="vector",
+                param=search_params,
+                limit=int(search_limit),
+            )
+            sparse_req = AnnSearchRequest(
+                data=sparse_vecs,
+                anns_field="sparse_vector",
+                param={"metric_type": "IP", "params": {"drop_ratio_search": 0.0}},
+                limit=int(search_limit),
+            )
+            results = self.client.hybrid_search(
+                collection_name,
+                [dense_req, sparse_req],
+                get_ranker(settings),
+                limit=int(search_limit),
+                output_fields=[
+                    "image_id",
+                    "page_number",
+                    "file_id",
+                ],
+            )
+        else:
+            results = self.client.search(
+                collection_name,
+                dense_vecs,
+                anns_field="vector",  # Required when collection has multiple vector fields
+                limit=int(search_limit),
+                output_fields=[
+                    "image_id",
+                    "page_number",
+                    "file_id",
+                ],  # Remove 'vector' - fetched during reranking only
+                search_params=search_params,
+            )
 
         # 1) Build approximate MaxSim scores to pick a bounded set of candidate pages.
         # results is a list per query token vector.
@@ -282,7 +349,7 @@ class MilvusManager:
                 docs_map[img_id] = entry
             entry["vectors"].append(row["vector"])
 
-        query_vecs = np.asarray(data, dtype=np.float32)
+        query_vecs = np.asarray(dense_vecs, dtype=np.float32)
 
         # 5) Exact MaxSim reranking on candidates.
         scores = []
