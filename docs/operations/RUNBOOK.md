@@ -16,38 +16,55 @@ Diagramme de déploiement (vue minimale): [DEPLOYMENT_DIAGRAM](DEPLOYMENT_DIAGRA
 Etat reel (KB miko): voir la section "Etat reel — Thesis Corpus (2026-01-29)" plus bas.
 
 <a id="kb-state-miko"></a>
-## Etat reel — Thesis Corpus (2026-01-29)
+## Etat reel — Thesis Corpus (2026-01-30) ✅ CONSOLIDATED
 
 Ce qui est vrai **maintenant** (verifie sur la stack locale):
 
 - Corpus PDF: 129/129 fichiers dans `/app/literature/corpus`.
 - Embeddings: 129/129 JSON dans `/app/embeddings_output`.
 - Milvus:
-  - **Collection active (miko)** `colqwenmiko_e6643365_8b03_4bea_a69b_7a1df00ec653`
-    - `row_count`: **3,562,057** (apres flush)
+  - **Collection active (unique)** `colqwenmiko_e6643365_8b03_4bea_a69b_7a1df00ec653`
+    - `row_count`: **3,562,057** vectors
     - `file_id` prefix: `miko_`
-  - Collection legacy **non liee**: `colqwenthesis_fbd5d3a6_3911_4be0_a4b3_864ec91bc3c1` (prefix `thesis_`)
+    - Fields: `pk`, `vector`, `sparse_vector`, `image_id`, `page_number`, `file_id`
+    - Index: HNSW M=48, efConstruction=1024
+  - ~~Collection legacy `thesis_fbd5d3a6...`~~ **DELETED** (2026-01-30)
 - MongoDB `knowledge_bases`:
-  - `knowledge_base_id`: `miko_e6643365-8b03_4bea-a69b_7a1df00ec653` (129 fichiers, `miko_`)
-  - `knowledge_base_id`: `thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1` (legacy)
+  - `knowledge_base_id`: `miko_e6643365-8b03_4bea-a69b_7a1df00ec653` (129 fichiers, active)
+  - `knowledge_base_id`: `miko_0ecb4105-9d53-4214-9884-1a17b0743b47` (empty smoke test)
+  - ~~`thesis_fbd5d3a6...`~~ **DELETED** (was duplicate with schema drift)
 - MongoDB `files` (KB miko):
   - 129 docs `miko_`
   - images totales: **5,732**
   - `minio_url` manquant: **0** (toutes presignees)
   - `minio_filename` manquant: **0**
 - MinIO (bucket `minio-file`):
-  - objets totaux: **5,990**
+  - objets totaux: **5,862** (129 PDFs + 5,733 images)
   - images miko verifiees: **5,732/5,732** presentes
+  - ~~`thesis/` prefix~~ **DELETED** (129 duplicate PDFs removed)
 - Utilisateurs (MySQL): **existant** (au moins `miko`, `thesis`, + users de test).
-  UI login possible si mot de passe connu; sinon reset requis.
+  UI login: `thesis` / `thesis123` (password reset 2026-01-30).
 
 Qualite des donnees (important):
 
 - **Mismatch resolu**: 129/129 `file_id` du KB actif (`miko_...`) ont des embeddings dans Milvus.
+- **Vectors per image**: ~621 (ColQwen multi-vector embeddings).
 - Embeddings: dim mismatch **0**; NaN/Inf **sanitize 482** vecteurs (PDF `2025 - ed. - The Indigenous World.pdf`).
 - `files` `miko_`: images totales = **5,732**; `minio_url` manquant **0**.
 - MinIO: tous les `minio_filename` des images miko existent.
-- `files` `thesis_`: collection legacy, non utilisee par le KB actif.
+- **Sparse vectors**: present in collection, ready for hybrid search.
+
+### Consolidation effectuee (2026-01-30)
+
+| Action | Details |
+|--------|---------|
+| Soft deleted thesis_fbd KB | `is_delete: true` in MongoDB |
+| Hard deleted thesis_fbd KB | MongoDB KB doc + 396 file docs removed |
+| Dropped thesis Milvus collection | 4.3M vectors removed |
+| Dropped empty miko_0ecb collection | 0 vectors, smoke test artifact |
+| Deleted MinIO thesis/ prefix | 129 duplicate PDFs removed |
+| Preserved shared images | 5,732 images kept (used by miko KB) |
+| Verified RAG pipeline | embed: 0.64s, search: 7.4s, LLM: 200 OK |
 
 Note Milvus:
 
@@ -65,16 +82,12 @@ import json, os
 from pymilvus import MilvusClient
 
 COLLECTION = "colqwenmiko_e6643365_8b03_4bea_a69b_7a1df00ec653"
-emb_dir = "/app/embeddings_output"
-first = next(f for f in os.listdir(emb_dir) if f.endswith(".json"))
-data = json.load(open(os.path.join(emb_dir, first)))
-vec = data[0]["embedding"][0]
 
 client = MilvusClient(uri="http://milvus-standalone:19530")
-res = client.search(collection_name=COLLECTION, data=[vec], limit=1,
-                    output_fields=["file_id", "page_number"])
-print("search_hits:", len(res[0]) if res else 0)
-print(res[0][0] if res else None)
+stats = client.get_collection_stats(COLLECTION)
+print("collection:", COLLECTION)
+print("row_count:", stats["row_count"])
+print("collections:", client.list_collections())
 client.close()
 PY
 
@@ -90,8 +103,8 @@ mc = MongoClient(uri)
 db = mc.chat_mongodb
 
 print("knowledge_bases:")
-for kb in db.knowledge_bases.find({"knowledge_base_name": "Thesis Corpus"}, {"knowledge_base_id": 1, "username": 1, "files": 1}):
-    print(" -", kb.get("knowledge_base_id"), kb.get("username"), "files", len(kb.get("files", [])))
+for kb in db.knowledge_bases.find({}, {"knowledge_base_id": 1, "username": 1, "is_delete": 1}):
+    print(" -", kb.get("knowledge_base_id"), "is_delete:", kb.get("is_delete", False))
 
 kb_id = "miko_e6643365-8b03_4bea-a69b_7a1df00ec653"
 stats = {"files": 0, "images_total": 0, "missing_minio_url": 0}
