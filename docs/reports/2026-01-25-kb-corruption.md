@@ -168,24 +168,27 @@ The Layra Knowledge Base experienced **metadata corruption and duplication** cau
 
 ## Current System State
 
-### **Data Integrity Verification (as of Jan 25, 2026):**
+### **Data Integrity Verification (as of Jan 30, 2026 - CONSOLIDATED):**
 
 ✅ **MongoDB:**
-- Knowledge Base: `thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1` ("Thesis Corpus")
+- Knowledge Base: `miko_e6643365-8b03_4bea-a69b_7a1df00ec653` ("Thesis Corpus")
 - Files: 129 documents
-- All records have `last_modify_at` field
+- All records have required fields
 - **0 duplicates**
+- ~~thesis_fbd5d3a6... KB~~ **DELETED** (2026-01-30 consolidation)
 
 ✅ **Milvus:**
-- Collection: `colqwenthesis_fbd5d3a6_3911_4be0_a4b3_864ec91bc3c1`
-- Vectors: 3,500,000+ (768-dimensional)
-- Index: IVF_FLAT (nlist=1024)
-- Status: Indexed and loaded
+- Collection: `colqwenmiko_e6643365_8b03_4bea_a69b_7a1df00ec653`
+- Vectors: 3,562,057 (128-dimensional ColQwen multi-vector)
+- Index: HNSW (M=48, efConstruction=1024)
+- Sparse vectors: Present (hybrid search ready)
+- ~~thesis collection~~ **DELETED** (4.3M vectors removed)
 
 ✅ **MinIO:**
 - Bucket: `minio-file`
-- Files: 129 PDFs
-- Presigned URLs: Working (split-horizon fix applied)
+- Files: 129 PDFs (miko/ prefix)
+- Images: 5,733 PNGs
+- ~~thesis/ prefix~~ **DELETED** (duplicates removed)
 
 ✅ **Redis:**
 - Idempotency keys: Active (24h TTL)
@@ -195,14 +198,14 @@ The Layra Knowledge Base experienced **metadata corruption and duplication** cau
 
 | Service | Last Known State | Notes |
 |---------|------------------|-------|
-| Backend | Healthy | Fixed password hash, Nginx routing |
-| MongoDB | Healthy | Data verified Jan 25 |
-| Milvus | Healthy | Full re-ingestion complete |
+| Backend | Healthy | RAG pipeline verified |
+| MongoDB | Healthy | Data consolidated Jan 30 |
+| Milvus | Healthy | Single collection, optimized index |
 | Kafka | Healthy | No stuck tasks |
-| MinIO | Healthy | Split-horizon networking active |
+| MinIO | Healthy | Duplicate PDFs removed |
 | Redis | Healthy | Idempotency keys functional |
 
-**Note:** System currently stopped (containers not running) but data persisted in volumes.
+**Note:** System running and verified operational (2026-01-30).
 
 ---
 

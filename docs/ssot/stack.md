@@ -1,10 +1,11 @@
 # Stack SSOT - LAYRA Architecture
 
-> **Version:** 3.2.0
-> **Last Updated:** 2026-01-29
+> **Version:** 3.3.0
+> **Last Updated:** 2026-01-30
 > **Status:** ✅ Active
 > **Focus:** RAG Chat & Models Configuration + ZhipuAI Coding Plan
 > **Changes:**
+> - **KB Consolidation Complete** (2026-01-30): Single active KB, legacy duplicates removed
 > - Added ZhipuAI Coding Plan provider (glm-4.5, glm-4.6, glm-4.7)
 > - Fixed MongoDB schema drift (model_config collection)
 > - Fixed SSE endpoint bug (message_id parameter)
@@ -467,38 +468,10 @@ docker exec layra-milvus-standalone curl http://localhost:9091/healthz
 **ID:** `qdrant`
 **Type:** container
 **Layers:** docker (native: ✅ feasible)
-**Role:** Alternative vector database (inactive, VECTOR_DB=milvus by default)
+**Role:** Alternative vector database (**REMOVED** - Milvus is sole backend)
 
-**Entrypoint:**
-- Docker: `qdrant/qdrant:v1.16.2` image, port 6333
-- Native: Download binary from GitHub releases
-
-**Dependencies:** None
-
-**Persistence:** `qdrant_data` volume
-
-**Environment (Required):**
-```bash
-QDRANT__SERVICE__HTTP_PORT=6333
-QDRANT__SERVICE__METRICS_PORT=6334
-```
-
-**Health Check:**
-```bash
-curl http://localhost:6333/healthz
-```
-
-**Native Feasibility:** ✅ **Feasible**
-
-**Requirements:**
-- Download qdrant binary
-- Systemd service setup
-
-**Blockers:**
-- Not active in default config
-
-**Evidence:**
-- `docker-compose.yml:114-132`
+> **Note:** Qdrant was removed from the stack in 2026-01-28. Milvus is now the only vector database.
+> This section is kept for historical reference only.
 
 ---
 
