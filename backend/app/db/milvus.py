@@ -170,6 +170,7 @@ class MilvusManager:
         results = self.client.search(
             collection_name,
             data,
+            anns_field="vector",  # Required when collection has multiple vector fields
             limit=int(search_limit),
             output_fields=[
                 "image_id",
@@ -210,34 +211,32 @@ class MilvusManager:
             )[:candidate_images_limit]
         ]
 
-        # 3) Fetch ALL vectors for candidate pages, using pagination to avoid truncation.
-        # We query in chunks to keep filter expressions small and to page reliably using offset.
+        # 3) Fetch ALL vectors for candidate pages.
         def _chunks(seq, size):
             for i in range(0, len(seq), size):
                 yield seq[i : i + size]
 
-        page_size = 8192
+        page_size = 1024
         all_rows = []
 
         for chunk_ids in _chunks(candidate_image_ids, 50):
             escaped = [str(x).replace("'", "\\'") for x in chunk_ids]
             filter_expr = "image_id in [" + ", ".join([f"'{x}'" for x in escaped]) + "]"
 
-            offset = 0
-            while True:
-                batch = self.client.query(
-                    collection_name=collection_name,
-                    filter=filter_expr,
-                    output_fields=["vector", "image_id", "page_number", "file_id"],
-                    limit=page_size,
-                    offset=offset,
-                )
-                if not batch:
-                    break
-                all_rows.extend(batch)
-                if len(batch) < page_size:
-                    break
-                offset += page_size
+            it = self.client.query_iterator(
+                collection_name=collection_name,
+                filter=filter_expr,
+                output_fields=["vector", "image_id", "page_number", "file_id"],
+                batch_size=page_size,
+            )
+            try:
+                while True:
+                    batch = it.next()
+                    if not batch:
+                        break
+                    all_rows.extend(batch)
+            finally:
+                it.close()
 
         if not all_rows:
             return []
@@ -326,7 +325,7 @@ class MilvusManager:
         """Check Milvus connection health."""
         try:
             # Simple check: list collections
-            self.client.list_collections()
+            _ = self.client.list_collections()
             return True
         except Exception:
             return False
