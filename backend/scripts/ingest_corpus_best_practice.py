@@ -66,15 +66,31 @@ logger = logging.getLogger(__name__)
 class Config:
     """Configuration for ingestion pipeline."""
 
-    # Database connections
-    mongo_url: str = os.getenv(
-        "MONGODB_URL",
-        "mongodb://thesis:thesis_mongo_3a2572a198fa78362d6d8e9b31a98bac@mongodb:27017",
-    )
+    # Database connections (must be set via environment variables)
+    @property
+    def mongo_url(self) -> str:
+        url = os.getenv("MONGODB_URL")
+        if not url:
+            raise ValueError("MONGODB_URL environment variable is required")
+        return url
+
     milvus_uri: str = os.getenv("MILVUS_URI", "http://milvus-standalone:19530")
     minio_url: str = os.getenv("MINIO_URL", "http://minio:9000")
-    minio_access_key: str = os.getenv("MINIO_ACCESS_KEY", "thesis_minio")
-    minio_secret_key: str = os.getenv("MINIO_SECRET_KEY", "minio_sec_6p7q8r")
+
+    @property
+    def minio_access_key(self) -> str:
+        key = os.getenv("MINIO_ACCESS_KEY")
+        if not key:
+            raise ValueError("MINIO_ACCESS_KEY environment variable is required")
+        return key
+
+    @property
+    def minio_secret_key(self) -> str:
+        key = os.getenv("MINIO_SECRET_KEY")
+        if not key:
+            raise ValueError("MINIO_SECRET_KEY environment variable is required")
+        return key
+
     minio_bucket: str = os.getenv("MINIO_BUCKET_NAME", "minio-file")
 
     # Paths (inside container)
