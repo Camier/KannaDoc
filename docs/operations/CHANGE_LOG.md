@@ -1,17 +1,18 @@
 # LAYRA Project - Complete Change Log
 
-**Last Updated:** 2026-01-26
+**Last Updated:** 2026-01-31
 
 ---
 
 ## Summary
 
-This document consolidates all changes made to the LAYRA project during the 2026-01-19 to 2026-01-26 session. The changes address security vulnerabilities, code quality issues, infrastructure improvements, comprehensive Kafka hardening, auth hardening, and workflow engine fault tolerance.
+This document consolidates all changes made to the LAYRA project during the 2026-01-19 to 2026-01-31 session. The changes address security vulnerabilities, code quality issues, infrastructure improvements, comprehensive Kafka hardening, auth hardening, workflow engine fault tolerance, and system model persistence.
 
 ### Key Changes
 
 | Category | Changes |
 |----------|---------|
+| **System Models** | **Persistence fix for CLIProxyAPI models (system prompt, temperature, etc.)** |
 | **Security Fixes** | Sandbox user fix, code scanner enhancement, await fix, .env removed from git, CORS security fix |
 | **Code Quality** | Debug prints removed, config fixes, Chinese → English |
 | **Kafka Hardening** | Commit order fix, retry, DLQ, idempotency, validation |
@@ -20,6 +21,26 @@ This document consolidates all changes made to the LAYRA project during the 2026
 | **Documentation** | OpenAPI/Swagger added, Neo4j configs documented, API reference available |
 | **Stabilization** | Nginx routing fix, Password hash correction, KB metadata repair |
 | **Workflow Engine** | Circuit breaker, checkpoints, retry logic, quality gates, provider timeouts |
+
+---
+
+## 19. System Model Persistence Fix (2026-01-31)
+
+### 19.1 Persistent Configuration for System Models
+**Files:**
+- `backend/app/db/repositories/model_config.py`
+- `frontend/src/components/AiChat/ChatBox.tsx`
+
+**Problem:** System models (CLIProxyAPI) were "virtual" and didn't persist settings like system prompts or temperature after a page refresh. The frontend selection flow only activated the model without triggering a configuration save, and the backend lacked logic to save settings for models not already in the database.
+
+**Solution:**
+- **Unified Frontend Flow:** Refactored `ChatBox.tsx` to ensure `updateModelConfig()` is called before `selectModel()` for all model types, unifying the persistence and activation logic.
+- **Backend Upsert Pattern:** Implemented `_upsert_system_model_config()` in `model_config.py`. This uses a "virtual-to-persistent" pattern where system models are pushed to the user's persistent model list upon the first save and updated subsequently.
+- **Commit:** `0cd2479`
+
+**Impact:** User settings for system models (e.g., Gemini 3 Flash via CLIProxyAPI) now persist across sessions, enabling stable custom prompts and parameters.
+
+**Cross-reference:** See [CLIPROXYAPI_SETUP.md](../guides/CLIPROXYAPI_SETUP.md) for full technical implementation details.
 
 ---
 
