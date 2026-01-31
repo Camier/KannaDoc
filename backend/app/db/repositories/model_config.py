@@ -214,6 +214,23 @@ class ModelConfigRepository(BaseRepository):
         top_K: Optional[int] = None,
         score_threshold: Optional[int] = None,
     ):
+        # For system models, upsert into the models array
+        if model_id.startswith("system_"):
+            return await self._upsert_system_model_config(
+                username=username,
+                model_id=model_id,
+                model_name=model_name,
+                model_url=model_url,
+                api_key=api_key,
+                base_used=base_used,
+                system_prompt=system_prompt,
+                temperature=temperature,
+                max_length=max_length,
+                top_P=top_P,
+                top_K=top_K,
+                score_threshold=score_threshold,
+            )
+
         # 构建更新字段
         update_fields = {}
         if model_name is not None:
@@ -255,17 +272,101 @@ class ModelConfigRepository(BaseRepository):
             logger.error(f"Update failed: {str(e)}")
             return {"status": "error", "message": str(e)}
 
+    async def _upsert_system_model_config(
+        self,
+        username: str,
+        model_id: str,
+        model_name: Optional[str] = None,
+        model_url: Optional[str] = None,
+        api_key: Optional[str] = None,
+        base_used: Optional[list] = None,
+        system_prompt: Optional[str] = None,
+        temperature: Optional[float] = None,
+        max_length: Optional[int] = None,
+        top_P: Optional[float] = None,
+        top_K: Optional[int] = None,
+        score_threshold: Optional[int] = None,
+    ):
+        """Upsert system model config - add if not exists, update if exists."""
+        try:
+            model_exists = await self.db.model_config.find_one(
+                {"username": username, "models.model_id": model_id}
+            )
+
+            if model_exists:
+                update_fields = {}
+                if model_name is not None:
+                    update_fields["models.$[elem].model_name"] = model_name
+                if model_url is not None:
+                    update_fields["models.$[elem].model_url"] = model_url
+                if api_key is not None:
+                    update_fields["models.$[elem].api_key"] = api_key
+                if base_used is not None:
+                    update_fields["models.$[elem].base_used"] = base_used
+                if system_prompt is not None:
+                    update_fields["models.$[elem].system_prompt"] = system_prompt
+                if temperature is not None:
+                    update_fields["models.$[elem].temperature"] = temperature
+                if max_length is not None:
+                    update_fields["models.$[elem].max_length"] = max_length
+                if top_P is not None:
+                    update_fields["models.$[elem].top_P"] = top_P
+                if top_K is not None:
+                    update_fields["models.$[elem].top_K"] = top_K
+                if score_threshold is not None:
+                    update_fields["models.$[elem].score_threshold"] = score_threshold
+
+                if update_fields:
+                    await self.db.model_config.update_one(
+                        {"username": username},
+                        {"$set": update_fields},
+                        array_filters=[{"elem.model_id": model_id}],
+                    )
+            else:
+                cliproxyapi_url = os.getenv("CLIPROXYAPI_BASE_URL", "")
+                cliproxyapi_key = os.getenv("CLIPROXYAPI_API_KEY", "")
+                actual_model_name = (
+                    model_id[7:] if model_id.startswith("system_") else model_id
+                )
+
+                new_model = self._build_model_dict(
+                    model_id=model_id,
+                    model_name=model_name if model_name else actual_model_name,
+                    model_url=model_url if model_url else cliproxyapi_url,
+                    api_key=api_key if api_key else cliproxyapi_key,
+                    base_used=base_used if base_used is not None else [],
+                    system_prompt=system_prompt if system_prompt is not None else "",
+                    temperature=temperature if temperature is not None else -1,
+                    max_length=max_length if max_length is not None else -1,
+                    top_P=top_P if top_P is not None else -1,
+                    top_K=top_K if top_K is not None else -1,
+                    score_threshold=score_threshold
+                    if score_threshold is not None
+                    else -1,
+                )
+                await self.db.model_config.update_one(
+                    {"username": username}, {"$push": {"models": new_model}}
+                )
+
+            await cache_service.invalidate_model_config(username)
+            return {"status": "success", "username": username, "model_id": model_id}
+        except Exception as e:
+            logger.error(f"Upsert system model failed: {str(e)}")
+            return {"status": "error", "message": str(e)}
+
     async def get_selected_model_config(self, username: str):
         user_config = await self.db.model_config.find_one({"username": username})
         if not user_config:
             return {"status": "error", "message": "User not found"}
 
-        # 提取选中的 model_id
         selected_id = user_config.get("selected_model")
         if not selected_id:
             return {"status": "error", "message": "No selected model"}
 
-        # Check if it's a CLIProxyAPI system model
+        for model in user_config.get("models", []):
+            if model.get("model_id") == selected_id:
+                return {"status": "success", "select_model_config": model}
+
         if selected_id.startswith("system_"):
             cliproxyapi_url = os.getenv("CLIPROXYAPI_BASE_URL")
             if cliproxyapi_url:
@@ -293,11 +394,6 @@ class ModelConfigRepository(BaseRepository):
                         },
                     }
 
-        # 遍历 models 数组查找
-        for model in user_config.get("models", []):
-            if model.get("model_id") == selected_id:
-                return {"status": "success", "select_model_config": model}
-
         return {"status": "error", "message": "Selected model not found"}
 
     async def get_all_models_config(self, username: str):
@@ -307,8 +403,8 @@ class ModelConfigRepository(BaseRepository):
             return {"status": "error", "message": "User not found"}
 
         user_models = user_config.get("models", [])
+        persisted_model_ids = {m.get("model_id") for m in user_models}
 
-        # Auto-add CLIProxyAPI system models if env configured
         cliproxyapi_url = os.getenv("CLIPROXYAPI_BASE_URL")
         if cliproxyapi_url:
             from app.rag.provider_client import ProviderClient
@@ -317,20 +413,22 @@ class ModelConfigRepository(BaseRepository):
                 "models", []
             )
             for model_name in cliproxyapi_models:
-                system_model = {
-                    "model_id": f"system_{model_name}",
-                    "model_name": model_name,
-                    "model_url": cliproxyapi_url,
-                    "api_key": os.getenv("CLIPROXYAPI_API_KEY"),
-                    "base_used": [],
-                    "system_prompt": "",
-                    "temperature": -1,
-                    "max_length": -1,
-                    "top_P": -1,
-                    "top_K": -1,
-                    "score_threshold": -1,
-                }
-                user_models.append(system_model)
+                system_model_id = f"system_{model_name}"
+                if system_model_id not in persisted_model_ids:
+                    system_model = {
+                        "model_id": system_model_id,
+                        "model_name": model_name,
+                        "model_url": cliproxyapi_url,
+                        "api_key": os.getenv("CLIPROXYAPI_API_KEY"),
+                        "base_used": [],
+                        "system_prompt": "",
+                        "temperature": -1,
+                        "max_length": -1,
+                        "top_P": -1,
+                        "top_K": -1,
+                        "score_threshold": -1,
+                    }
+                    user_models.append(system_model)
 
         return {
             "status": "success",

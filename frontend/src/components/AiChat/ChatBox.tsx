@@ -366,14 +366,9 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   const handleSaveConfig = async (config: ModelConfig) => {
     if (user?.name) {
       try {
-        //更新数据库使用
         setModelConfig(config);
-        if (config.modelId.startsWith("system_")) {
-          await selectModel(user.name, config.modelId);
-        } else {
-          await updateModelConfig(user.name, config);
-        }
-        await fetchModelConfig();
+        await updateModelConfig(user.name, config);
+        await selectModel(user.name, config.modelId);
       } catch (error) {
         logger.error("保存配置失败:", error);
       }
