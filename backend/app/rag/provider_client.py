@@ -266,38 +266,22 @@ class ProviderClient:
             "base_url": "",
             "env_key": "CLIPROXYAPI_API_KEY",
             "models": [
-                # Antigravity (Official)
-                "antigravity-claude-opus-4-5-thinking",
-                "antigravity-claude-sonnet-4-5-thinking",
-                "antigravity-claude-sonnet-4-5",
-                "antigravity-gemini-3-pro",
-                "antigravity-gemini-3-flash",
-                # Gemini CLI
+                # Antigravity (Claude via Google Cloud)
+                "claude-opus-4-5-thinking",
+                "claude-sonnet-4-5-thinking",
+                "claude-sonnet-4-5",
+                # Gemini CLI (via OAuth)
                 "gemini-2.5-pro",
                 "gemini-2.5-flash",
+                "gemini-2.5-flash-lite",
                 "gemini-3-pro-preview",
+                "gemini-3-pro-high",
+                "gemini-3-pro-image",
+                "gemini-3-flash",
                 "gemini-3-flash-preview",
-                "gemini-1.5-pro",
-                "gemini-1.5-flash",
-                # OpenAI Codex
-                "gpt-5",
-                "gpt-5.2",
-                "gpt-4.5",
-                "o1",
-                "o1-pro",
-                "gpt-4o",
-                "gpt-4o-mini",
-                # Claude Code
-                "claude-opus-4",
-                "claude-sonnet-4",
-                "claude-opus-4.5",
-                "claude-sonnet-4.5",
-                "claude-3.5-sonnet",
-                "claude-3.5-haiku",
-                "claude-3-opus",
-                # Qwen Code
-                "qwen3-coder",
-                "qwen3-coder-plus",
+                "tab_flash_lite_preview",
+                # OpenAI OSS
+                "gpt-oss-120b-medium",
             ],
             "vision": True,
         },

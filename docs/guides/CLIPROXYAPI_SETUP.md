@@ -53,11 +53,13 @@ CLIProxyAPI provides access to the following premium models:
 
 | Provider | Model Name | Description |
 |----------|------------|-------------|
-| **Antigravity** | `antigravity-gemini-3-flash` | Google's advanced agentic coding model |
-| **Gemini CLI** | `gemini-2.0-flash-exp` | High-speed multimodal Gemini model |
-| **Codex** | `gpt-4o-mini-codex` | ChatGPT Codex for coding tasks |
-| **Claude Code** | `claude-3-7-sonnet-code` | Anthropic's Claude Code specialized model |
-| **Qwen Code** | `qwen-2.5-coder-32b` | Alibaba's powerful open-source coder |
+| **Antigravity** | `claude-opus-4-5-thinking` | Claude Opus 4.5 with extended thinking |
+| **Antigravity** | `claude-sonnet-4-5-thinking` | Claude Sonnet 4.5 with extended thinking |
+| **Antigravity** | `claude-sonnet-4-5` | Claude Sonnet 4.5 standard |
+| **Gemini CLI** | `gemini-3-flash` | Latest Gemini 3 Flash model |
+| **Gemini CLI** | `gemini-3-pro-preview` | Gemini 3 Pro preview |
+| **Gemini CLI** | `gemini-2.5-pro` | Gemini 2.5 Pro (production) |
+| **Gemini CLI** | `gemini-2.5-flash` | Gemini 2.5 Flash (fast) |
 
 ---
 
