@@ -86,6 +86,29 @@ class ModelConfigRepository(BaseRepository):
         更新用户选定的模型 (selected_model 字段)
         同时验证目标 model_id 是否存在于该用户的 models 数组中
         """
+        # Check if it's a CLIProxyAPI system model (not stored in DB, but valid)
+        if model_id.startswith("system_"):
+            cliproxyapi_url = os.getenv("CLIPROXYAPI_BASE_URL")
+            if cliproxyapi_url:
+                model_name = model_id[7:]
+                from app.rag.provider_client import ProviderClient
+
+                cliproxyapi_models = ProviderClient.PROVIDERS.get(
+                    "cliproxyapi", {}
+                ).get("models", [])
+                if model_name in cliproxyapi_models:
+                    result = await self.db.model_config.update_one(
+                        {"username": username}, {"$set": {"selected_model": model_id}}
+                    )
+                    if result.matched_count == 0:
+                        return {"status": "error", "message": "User not found"}
+                    await cache_service.invalidate_model_config(username)
+                    return {
+                        "status": "success",
+                        "username": username,
+                        "selected_model": model_id,
+                    }
+
         # 验证 model_id 是否存在
         model_exists = await self.db.model_config.find_one(
             {"username": username, "models.model_id": model_id}
@@ -258,8 +281,8 @@ class ModelConfigRepository(BaseRepository):
                         "select_model_config": {
                             "model_id": selected_id,
                             "model_name": model_name,
-                            "model_url": None,
-                            "api_key": None,
+                            "model_url": cliproxyapi_url,
+                            "api_key": os.getenv("CLIPROXYAPI_API_KEY"),
                             "base_used": [],
                             "system_prompt": "",
                             "temperature": -1,
@@ -297,8 +320,8 @@ class ModelConfigRepository(BaseRepository):
                 system_model = {
                     "model_id": f"system_{model_name}",
                     "model_name": model_name,
-                    "model_url": None,
-                    "api_key": None,
+                    "model_url": cliproxyapi_url,
+                    "api_key": os.getenv("CLIPROXYAPI_API_KEY"),
                     "base_used": [],
                     "system_prompt": "",
                     "temperature": -1,

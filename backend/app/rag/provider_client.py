@@ -275,8 +275,8 @@ class ProviderClient:
                 # Gemini CLI
                 "gemini-2.5-pro",
                 "gemini-2.5-flash",
-                "gemini-3-pro",
-                "gemini-3-flash",
+                "gemini-3-pro-preview",
+                "gemini-3-flash-preview",
                 "gemini-1.5-pro",
                 "gemini-1.5-flash",
                 # OpenAI Codex
@@ -352,6 +352,18 @@ class ProviderClient:
     def get_provider_for_model(cls, model_name: str) -> Optional[str]:
         """Detect provider from model name"""
         model_lower = model_name.lower()
+
+        # CLIProxyAPI: Check FIRST when env is configured
+        # This allows CLIProxyAPI models (gemini-*, claude-*, gpt-*, etc.) to route correctly
+        # instead of falling through to native provider detection
+        if os.getenv("CLIPROXYAPI_BASE_URL"):
+            cliproxyapi_models = cls.PROVIDERS.get("cliproxyapi", {}).get("models", [])
+            for model_pattern in cliproxyapi_models:
+                if (
+                    model_pattern.lower() == model_lower
+                    or model_pattern.lower() in model_lower
+                ):
+                    return "cliproxyapi"
 
         # Check specific providers first before generic loop
         if any(
@@ -501,6 +513,25 @@ class ProviderClient:
         default_model = os.getenv("DEFAULT_LLM_MODEL", "gpt-4o-mini")
 
         return cls.create_client(model_name=default_model, provider=default_provider)
+
+    @classmethod
+    def get_cliproxyapi_models_with_defaults(cls) -> List[dict]:
+        """Get CLIProxyAPI models with group, base_url and vision defaults"""
+        config = cls.PROVIDERS.get("cliproxyapi", {})
+        models = config.get("models", [])
+        base_url = os.getenv("CLIPROXYAPI_BASE_URL", "")
+
+        result = []
+        for model_name in models:
+            result.append(
+                {
+                    "name": model_name,
+                    "group": "CLIProxyAPI",
+                    "base_url": base_url,
+                    "vision": cls.is_vision_model(model_name),
+                }
+            )
+        return result
 
 
 # Convenience function for backward compatibility
