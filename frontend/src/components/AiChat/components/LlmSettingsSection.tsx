@@ -114,8 +114,13 @@ export const LlmSettingsSection: React.FC<LlmSettingsSectionProps> = ({
             type="url"
             value={modelConfig.modelURL || ""}
             onChange={(e) => onConfigChange({ modelURL: e.target.value })}
-            className="mt-1 w-full px-4 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
+            className={`mt-1 w-full px-4 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 ${
+              modelConfig.modelId.startsWith("system_")
+                ? "bg-gray-100 dark:bg-gray-700 cursor-not-allowed text-gray-500"
+                : ""
+            }`}
             placeholder="https://api.example.com/v1"
+            disabled={modelConfig.modelId.startsWith("system_")}
           />
         </div>
 
@@ -125,8 +130,13 @@ export const LlmSettingsSection: React.FC<LlmSettingsSectionProps> = ({
             type="password"
             value={modelConfig.apiKey || ""}
             onChange={(e) => onConfigChange({ apiKey: e.target.value })}
-            className="mt-1 w-full px-4 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500"
+            className={`mt-1 w-full px-4 py-2 border border-gray-200 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 ${
+              modelConfig.modelId.startsWith("system_")
+                ? "bg-gray-100 dark:bg-gray-700 cursor-not-allowed text-gray-500"
+                : ""
+            }`}
             placeholder="sk-xxxxxxxx"
+            disabled={modelConfig.modelId.startsWith("system_")}
           />
         </div>
       </div>
