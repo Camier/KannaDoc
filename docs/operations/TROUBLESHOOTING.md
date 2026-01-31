@@ -223,6 +223,25 @@ hash = pwd_context.hash("thesis_deploy_b20f1508a2a983f6")
 
 ---
 
+### Fix 6: Empty Chat / Z.ai Key Mismatch
+
+**Symptoms:**
+- Chat interface returns empty responses immediately
+- Backend logs show `ZhipuAI API key format` errors
+
+**Problem:**
+Using a Z.ai API key (no dots) with the ZhipuAI provider (expects `id.secret` format), or vice versa.
+This happens when `ZAI_API_KEY` is not set, causing auto-detection to fallback to `zhipu-coding`.
+
+**Solution:**
+1. Ensure `ZAI_API_KEY` is set in `.env` for Z.ai models (`glm-4.7`, etc.)
+2. Use `ZHIPUAI_API_KEY` only for ZhipuAI models (`glm-4-plus`, etc.)
+3. Restart backend to pick up new variables
+
+**Status:** ✅ Fixed in v2.1.1 (Auto-detection + Safety Checks)
+
+---
+
 ## Health Check Procedures
 
 Run these checks after system restart or major changes:
