@@ -743,6 +743,13 @@ data: {"status":"completed","result":{"summary":"Done"}}
 
 ## Model Configuration
 
+**Note on System Model Persistence**:
+Models prefixed with `system_` (e.g., `system_gemini-2.5-pro`) support full persistence like user-defined models. These models follow a unified flow:
+- `POST /config/{username}` (update) → `PUT /config/{username}/select-model` (activate)
+- Persistence applies to system prompts, temperature, and other parameters.
+
+See [CLIPROXYAPI_SETUP.md](../guides/CLIPROXYAPI_SETUP.md) for detailed CLIProxyAPI system model setup and persistence behavior.
+
 ### Create Model Config
 
 **Endpoint**: `POST /config/{username}`
