@@ -1,3 +1,4 @@
+import os
 from typing import Optional, Dict, Any, List
 from app.core.logging import logger
 from pymongo.errors import DuplicateKeyError
@@ -241,6 +242,34 @@ class ModelConfigRepository(BaseRepository):
         if not selected_id:
             return {"status": "error", "message": "No selected model"}
 
+        # Check if it's a CLIProxyAPI system model
+        if selected_id.startswith("system_"):
+            cliproxyapi_url = os.getenv("CLIPROXYAPI_BASE_URL")
+            if cliproxyapi_url:
+                model_name = selected_id[7:]
+                from app.rag.provider_client import ProviderClient
+
+                cliproxyapi_models = ProviderClient.PROVIDERS.get(
+                    "cliproxyapi", {}
+                ).get("models", [])
+                if model_name in cliproxyapi_models:
+                    return {
+                        "status": "success",
+                        "select_model_config": {
+                            "model_id": selected_id,
+                            "model_name": model_name,
+                            "model_url": None,
+                            "api_key": None,
+                            "base_used": [],
+                            "system_prompt": "",
+                            "temperature": -1,
+                            "max_length": -1,
+                            "top_P": -1,
+                            "top_K": -1,
+                            "score_threshold": -1,
+                        },
+                    }
+
         # 遍历 models 数组查找
         for model in user_config.get("models", []):
             if model.get("model_id") == selected_id:
@@ -253,8 +282,35 @@ class ModelConfigRepository(BaseRepository):
         user_config = await self.db.model_config.find_one({"username": username})
         if not user_config:
             return {"status": "error", "message": "User not found"}
+
+        user_models = user_config.get("models", [])
+
+        # Auto-add CLIProxyAPI system models if env configured
+        cliproxyapi_url = os.getenv("CLIPROXYAPI_BASE_URL")
+        if cliproxyapi_url:
+            from app.rag.provider_client import ProviderClient
+
+            cliproxyapi_models = ProviderClient.PROVIDERS.get("cliproxyapi", {}).get(
+                "models", []
+            )
+            for model_name in cliproxyapi_models:
+                system_model = {
+                    "model_id": f"system_{model_name}",
+                    "model_name": model_name,
+                    "model_url": None,
+                    "api_key": None,
+                    "base_used": [],
+                    "system_prompt": "",
+                    "temperature": -1,
+                    "max_length": -1,
+                    "top_P": -1,
+                    "top_K": -1,
+                    "score_threshold": -1,
+                }
+                user_models.append(system_model)
+
         return {
             "status": "success",
-            "models": user_config.get("models", []),
+            "models": user_models,
             "selected_model": user_config.get("selected_model", ""),
         }
