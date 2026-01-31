@@ -1,19 +1,21 @@
 # Layra Documentation Index
 
-**Last Updated:** 2026-01-29
-**Version:** 2.2.0 (Post-Consolidation)
+**Last Updated:** 2026-01-31
+**Version:** 2.3.0 (Post-Consolidation + Workflow Fixes)
 
 > 🎯 **START HERE** if you're new to Layra
 > 📉 **Reduced from 207 to ~50 essential documents**
 
 ---
 
-## 📍 Latest Updates (2026-01-29)
+## 📍 Latest Updates (2026-01-31)
 
-**Session Remediation Report:** [REMEDIATION_SESSION_2026-01-29.md](REMEDIATION_SESSION_2026-01-29.md)
-- Fixed MongoDB schema drift (model_config collection)
-- Fixed SSE endpoint bug (message_id parameter)
-- Added ZhipuAI Coding Plan provider (glm-4.5, glm-4.6, glm-4.7)
+**Workflow Editor Stability Fixes:** See [CHANGE_LOG Entry #20](operations/CHANGE_LOG.md)
+- Fixed React #185 infinite render loop (complex workflows now load)
+- Fixed node label mapping (names display correctly)
+- System model persistence for CLIProxyAPI
+
+**Previous:** [Archived session reports](archives/)
 
 ---
 
@@ -86,6 +88,8 @@ One-page cheat sheet for:
 ### Guides
 | Document | Description |
 |----------|-------------|
+| [CLIPROXYAPI_SETUP](guides/CLIPROXYAPI_SETUP.md) | CLIProxyAPI integration guide |
+| [FRONTEND_THEMING](guides/FRONTEND_THEMING.md) | Frontend theming and dark mode |
 | [COLQWEN_SETUP](guides/COLQWEN_SETUP.md) | ColQwen embedding model setup |
 | [GPU_OPTIMIZATION](guides/GPU_OPTIMIZATION.md) | GPU performance tuning |
 | [MILVUS_OPTIMIZATION](guides/MILVUS_OPTIMIZATION.md) | Vector DB optimization |
