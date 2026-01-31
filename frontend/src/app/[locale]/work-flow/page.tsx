@@ -70,18 +70,26 @@ const Workflow = () => {
       try {
         const response = await getWorkflowDetails(selectedFlow);
         const item = response.data;
+        // Transform nodes: map data.name back to data.label (backend stores as 'name', frontend uses 'label')
+        const transformedNodes = item.nodes.map((node: any) => ({
+          ...node,
+          data: {
+            ...node.data,
+            label: node.data.label || node.data.name,
+          },
+        }));
         const workflowAllData: WorkflowAll = {
           workflowId: item.workflow_id,
           workflowName: item.workflow_name,
           workflowConfig: item.workflow_config,
-          nodes: item.nodes,
+          nodes: transformedNodes,
           edges: item.edges,
           startNode: item.start_node,
           globalVariables: item.global_variables,
           createTime: item.created_at,
           lastModifyTime: item.last_modify_at,
         };
-        setNodes(item.nodes);
+        setNodes(transformedNodes);
         setEdges(item.edges);
         setGlobalVariables(item.global_variables);
         setWorkflowAll(workflowAllData);
