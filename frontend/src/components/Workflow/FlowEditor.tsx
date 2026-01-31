@@ -725,7 +725,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
           user.name,
           sendNodes,
           sendEdges,
-          "node_start",
+          workFlow.startNode || "node_start",
           sendGlobalVariables,
           sendDebugResumeTaskId,
           sendInputResumeTaskId,
