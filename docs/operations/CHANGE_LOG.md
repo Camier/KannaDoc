@@ -21,6 +21,88 @@ This document consolidates all changes made to the LAYRA project during the 2026
 | **Documentation** | OpenAPI/Swagger added, Neo4j configs documented, API reference available |
 | **Stabilization** | Nginx routing fix, Password hash correction, KB metadata repair |
 | **Workflow Engine** | Circuit breaker, checkpoints, retry logic, quality gates, provider timeouts |
+| **UI Stability** | React #185 infinite loop fix, node label mapping fix |
+
+---
+
+## 20. Workflow Editor Stability Fixes (2026-01-31)
+
+### 20.1 React Error #185 - Infinite Render Loop Fix
+**File:** `frontend/src/components/Workflow/FlowEditor.tsx`
+
+**Problem:** Complex workflows (24+ nodes) crashed the UI with "Maximum update depth exceeded" (React Error #185). The Minutieux workflow (33 nodes) was completely unusable.
+
+**Root Cause:** The useEffect at lines 291-330 had `nodes` in its dependency array, but the effect body called `updateOutput()`, `updateStatus()`, and `updateChat()` which modified `nodes` in the Zustand store - creating an infinite loop.
+
+**Solution:**
+```typescript
+// Pattern: Use ref to read state without triggering effect
+const nodesRef = useRef(nodes);
+useEffect(() => { nodesRef.current = nodes; }, [nodes]);
+
+useEffect(() => {
+  // Read from ref (no reactivity) instead of nodes (reactive)
+  nodesRef.current.forEach((node) => {
+    updateOutput(node.id, outputResults[node.id]);
+  });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [outputResults]); // nodes NOT in deps
+```
+
+**Commit:** `a33f61b`
+
+**Impact:** All workflow sizes now load without crashing. The Minutieux workflow (33 nodes) opens instantly.
+
+### 20.2 Node Label Mapping Fix
+**File:** `frontend/src/app/[locale]/work-flow/page.tsx`
+
+**Problem:** After fixing React #185, all nodes displayed "Node" instead of their actual names (e.g., "Requirements Builder", "KB Deep Analysis").
+
+**Root Cause:** Data mapping asymmetry:
+- **Saving** (FlowEditor.tsx): `name: node.data.label` - maps label → name
+- **Loading** (page.tsx): Used raw `data.name` without mapping back to `data.label`
+- **Display** (CustomNode.tsx): Renders `data.label`
+
+**Solution:**
+```typescript
+// Transform nodes: map data.name back to data.label
+const transformedNodes = item.nodes.map((node: any) => ({
+  ...node,
+  data: {
+    ...node.data,
+    label: node.data.label || node.data.name,
+  },
+}));
+```
+
+**Commit:** `9a28d20`
+
+**Impact:** Node labels now display correctly after loading saved workflows.
+
+### Technical Pattern: nodesRef for Zustand + React
+
+When a useEffect needs to iterate over Zustand state but also modifies that state:
+
+```typescript
+// 1. Create ref synchronized with state
+const nodesRef = useRef(nodes);
+useEffect(() => { nodesRef.current = nodes; }, [nodes]);
+
+// 2. In the problematic effect, read from ref
+useEffect(() => {
+  nodesRef.current.forEach((node) => {
+    // This calls Zustand actions that modify `nodes`
+    // But since we read from ref, not `nodes`, no infinite loop
+    updateSomething(node.id);
+  });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [otherDeps]); // nodes deliberately excluded
+```
+
+**When to use this pattern:**
+- useEffect reads from state AND triggers state updates
+- Dependency array includes the state being modified
+- React Error #185 occurs
 
 ---
 
