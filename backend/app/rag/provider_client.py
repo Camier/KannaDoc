@@ -354,6 +354,12 @@ class ProviderClient:
         model_lower = model_name.lower()
 
         # Check specific providers first before generic loop
+        if any(
+            model_lower.startswith(prefix)
+            for prefix in ["gemini-cli-", "codex-", "qwen-cli-"]
+        ):
+            return "cliproxyapi"
+
         # GLM coding models (4.5/4.6/4.7) - prefer Z.ai if ZAI_API_KEY is set
         # Z.ai is the GLM Coding Plan provider (https://z.ai)
         if any(x in model_lower for x in ["glm-4.5", "glm-4.6", "glm-4.7"]):
