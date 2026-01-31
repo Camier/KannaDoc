@@ -38,7 +38,7 @@ if not PASSWORD:
 
 def get_token():
     """Authenticate and get JWT token."""
-    url = f"{API_BASE}/auth/login".replace("/v1/auth", "/auth")
+    url = f"{API_BASE}/auth/login"
     data = {"username": USERNAME, "password": PASSWORD}
     try:
         response = requests.post(url, data=data)
@@ -523,7 +523,7 @@ return {"status": "final_changes_applied"}
     print(f"  - Workflow ID: {workflow_id}")
 
     # Deploy via API
-    url = f"{API_BASE.replace('/v1', '')}/workflow/workflows"
+    url = f"{API_BASE}/workflow/workflows"
     response = requests.post(url, json=payload, headers=headers)
 
     if response.status_code == 200:
