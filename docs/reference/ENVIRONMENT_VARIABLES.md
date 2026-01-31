@@ -1516,6 +1516,7 @@ Layra supports multiple LLM providers. At least one provider API key is REQUIRED
 **Purpose:**
 - Zhipu AI (GLM) API key
 - Optimized for Chinese language
+- **Note:** For Z.ai (GLM Coding Plan), use `ZAI_API_KEY` instead.
 
 **Supported Models:**
 - `glm-4-plus` - Most capable
@@ -1529,6 +1530,34 @@ Layra supports multiple LLM providers. At least one provider API key is REQUIRED
 **Related Variables:**
 - `CHINESE_LLM_PROVIDER` - Set to `zhipu` for Chinese text
 - `CODING_LLM_PROVIDER` - Can use zhipu for code
+
+---
+
+### `ZAI_API_KEY`
+
+**Variable Name:** `ZAI_API_KEY`
+**Type:** String (API key)
+**Default Value:** Not set (optional)
+**Required:** No
+**Example Values:** `your-zai-api-key-here`
+
+**Purpose:**
+- Z.ai (GLM Coding Plan) API key
+- Dedicated provider for Z.ai platform (https://z.ai)
+- Supports GLM coding models with specific casing requirements (handled automatically)
+
+**Supported Models:**
+- `glm-4.7` - Coding optimized
+- `glm-4.7-flash` - Fast coding
+- `glm-4.5-air` - Lightweight coding
+
+**Security Notes:**
+- Distinct from ZhipuAI keys (different format)
+- **CRITICAL:** Do not mix with `ZHIPUAI_API_KEY`
+- Protect from unauthorized access
+
+**Related Variables:**
+- `CODING_LLM_PROVIDER` - Set to `zai`
 
 ---
 
