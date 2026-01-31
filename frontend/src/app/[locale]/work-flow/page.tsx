@@ -70,12 +70,15 @@ const Workflow = () => {
       try {
         const response = await getWorkflowDetails(selectedFlow);
         const item = response.data;
-        // Transform nodes: map data.name back to data.label (backend stores as 'name', frontend uses 'label')
+        // Transform nodes: map backend fields to frontend expectations
+        // - data.name → data.label (backend stores as 'name', frontend uses 'label')
+        // - node.type → data.nodeType (backend stores type at node level, frontend expects in data)
         const transformedNodes = item.nodes.map((node: any) => ({
           ...node,
           data: {
             ...node.data,
             label: node.data.label || node.data.name,
+            nodeType: node.data.nodeType || node.type,
           },
         }));
         const workflowAllData: WorkflowAll = {
