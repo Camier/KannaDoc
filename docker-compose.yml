@@ -230,6 +230,24 @@ services:
       retries: 10
       start_period: 10s
       
+  cliproxyapi:
+    container_name: layra-cliproxyapi
+    image: eceasy/cli-proxy-api:latest
+    ports:
+      - "8085:8085"
+      - "8317:8317"
+    volumes:
+      - ${HOME}/.cli-proxy-api/config.yaml:/CLIProxyAPI/config.yaml:ro
+      - cliproxyapi_auth:/root/.cli-proxy-api
+    networks:
+      - layra-net
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8317/v1/models"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+
   backend:
     container_name: layra-backend
     build:
@@ -256,6 +274,8 @@ services:
         condition: service_healthy
       model-weights-init:
         condition: service_completed_successfully
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - layra_sandbox_volume:${SANDBOX_SHARED_VOLUME}
@@ -332,6 +352,8 @@ services:
       - OLLAMA_API_KEY=${OLLAMA_API_KEY}
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
       - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - CLIPROXYAPI_BASE_URL=${CLIPROXYAPI_BASE_URL:-}
+      - CLIPROXYAPI_API_KEY=${CLIPROXYAPI_API_KEY:-}
       - DEFAULT_LLM_PROVIDER=${DEFAULT_LLM_PROVIDER:-openai}
       - DEFAULT_LLM_MODEL=${DEFAULT_LLM_MODEL:-gpt-4o-mini}
     networks:
@@ -465,3 +487,4 @@ volumes:
   mysql_migrations:
   prometheus_data:
   grafana_data:
+  cliproxyapi_auth:

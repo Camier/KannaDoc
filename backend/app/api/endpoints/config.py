@@ -11,9 +11,20 @@ from app.core.security import (
     get_current_user,
     verify_username_match,
 )
-from app.db.repositories.repository_manager import RepositoryManager, get_repository_manager
+from app.db.repositories.repository_manager import (
+    RepositoryManager,
+    get_repository_manager,
+)
+from app.rag.provider_client import ProviderClient
 
 router = APIRouter()
+
+
+@router.get("/cliproxyapi-models")
+async def get_cliproxyapi_models():
+    """获取 CLIProxyAPI 默认模型列表 (Public)"""
+    models = ProviderClient.get_cliproxyapi_models_with_defaults()
+    return models
 
 
 @router.post("/{username}", status_code=201)
@@ -25,8 +36,10 @@ async def add_model_config(
 ):
     await verify_username_match(current_user, username)
     """添加新的模型配置"""
-    model_id = username + "_" +str(uuid.uuid4())
-    result = await repo_manager.model_config.add_model_config(username=username,model_id=model_id, **model_data.model_dump())
+    model_id = username + "_" + str(uuid.uuid4())
+    result = await repo_manager.model_config.add_model_config(
+        username=username, model_id=model_id, **model_data.model_dump()
+    )
 
     if result["status"] == "error":
         if "already exists" in result["message"]:
@@ -70,11 +83,13 @@ async def update_model_config(
     await verify_username_match(current_user, username)
     """更新模型配置（部分更新）"""
     result = await repo_manager.model_config.update_model_config(
-        username=username, model_id=model_id, **update_data.model_dump(exclude_unset=True)
+        username=username,
+        model_id=model_id,
+        **update_data.model_dump(exclude_unset=True),
     )
     await repo_manager.model_config.update_selected_model(
-            username=username, model_id=model_id
-        )
+        username=username, model_id=model_id
+    )
     if result["status"] == "error":
         if "User not found" in result["message"]:
             raise HTTPException(status_code=404, detail=result["message"])
