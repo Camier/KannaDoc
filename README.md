@@ -283,6 +283,12 @@ Traditional RAG systems fail because they:
 
 <h2 id="latest-updates">🚀 Latest Updates</h2>
 
+**(2026.1.31) 🔧 System Model Persistence for CLIProxyAPI**:
+
+- **Persistent Model Settings**: Custom system prompts and parameters (temperature, etc.) for CLIProxyAPI models now persist across sessions.
+- **Improved UX**: Unified configuration flow ensures your model settings are saved and restored automatically, even after a page refresh.
+- **See**: [CHANGE_LOG](docs/operations/CHANGE_LOG.md)
+
 **(2026.1.29) 🐛 Critical Fixes & ZhipuAI Coding Plan Support**:
 
 - **Fixed MongoDB Schema Drift**: Migrated model_config collection to new schema format with `models` array
