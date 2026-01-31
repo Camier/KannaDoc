@@ -10,6 +10,7 @@ from app.models.shared import UserMessage
 from app.models.user import User
 from app.models.workflow import LLMInputOnce
 from app.core.llm import ChatService
+from app.core.logging import logger
 import uuid
 
 from redis.asyncio import Redis, ResponseError
@@ -46,7 +47,6 @@ async def get_task_progress(
     username: str,
     current_user: User = Depends(get_current_user),
 ):
-
     # 验证当前用户是否与要删除的用户名匹配
     await verify_username_match(current_user, username)
     redis_connection = await redis.get_task_connection()
@@ -69,7 +69,7 @@ async def get_task_progress(
                 {
                     "event": "progress",
                     "status": status,
-                    "progress": f"{(processed/total)*100:.1f}" if total > 0 else 0,
+                    "progress": f"{(processed / total) * 100:.1f}" if total > 0 else 0,
                     "processed": processed,
                     "total": total,
                     "message": message,
@@ -228,7 +228,7 @@ async def workflow_sse(
 
 # 创建workflow llm模型
 @router.post("/llm/once", response_model=dict)
-async def chat_stream(
+async def workflow_llm_stream(
     llm_input: LLMInputOnce,
     current_user: User = Depends(get_current_user),
 ):
@@ -240,6 +240,83 @@ async def chat_stream(
         llm_input.system_prompt, llm_input.global_variables
     )
 
+    ##### mcp section #####
+    mcp_tools_for_call = {}
+    mcp_servers: dict = llm_input.mcp_use
+    if mcp_servers:
+        for mcp_server_name, mcp_server_tools in mcp_servers.items():
+            mcp_server_url = mcp_server_tools.get("mcpServerUrl")
+            mcp_tools = mcp_server_tools.get("mcpTools")
+            mcp_headers = mcp_server_tools.get("headers", None)
+            mcp_timeout = mcp_server_tools.get("timeout", 5)
+            mcp_sse_read_timeout = mcp_server_tools.get("sseReadTimeout", 60 * 5)
+            if not mcp_server_url or not mcp_tools:
+                continue
+            # 获取工具列表
+            for mcp_tool in mcp_tools:
+                mcp_tool["url"] = mcp_server_url
+                # Store config per tool to avoid scope issues
+                mcp_tool["_config_headers"] = mcp_headers
+                mcp_tool["_config_timeout"] = mcp_timeout
+                mcp_tool["_config_sse_timeout"] = mcp_sse_read_timeout
+                mcp_tools_for_call[mcp_tool["name"]] = mcp_tool
+        mcp_prompt = f"""
+You are an expert in selecting function calls. Please choose the most appropriate function call based on the user's question and provide the required parameters. Output in JSON format: {{"function_name": function name, "params": parameters}}. Do not include any other content. If the user's question is unrelated to functions, output {{"function_name":""}}.
+Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
+        mcp_user_message = UserMessage(
+            conversation_id="",
+            parent_id="",
+            user_message=vlm_input,
+            temp_db_id="",
+        )
+        # 获取流式生成器（假设返回结构化数据块）
+        mcp_stream_generator = ChatService.create_chat_stream(
+            user_message_content=mcp_user_message,
+            model_config=llm_input.llm_model_config,
+            message_id=message_id,
+            system_prompt=mcp_prompt,
+            save_to_db=False,
+            user_image_urls=[],
+            is_workflow=True,
+        )
+        mcp_full_response = []
+        mcp_chunks = []
+        async for chunk in mcp_stream_generator:
+            mcp_chunks.append(json.loads(chunk))
+        for chunk in mcp_chunks:
+            if chunk.get("type") == "text":
+                mcp_full_response.append(chunk.get("data"))
+        mcp_full_response_json = "".join(mcp_full_response)
+        mcp_outermost_braces_string_list = find_outermost_braces(mcp_full_response_json)
+        try:
+            mcp_outermost_braces_string = mcp_outermost_braces_string_list[-1]
+            mcp_outermost_braces_dict = json.loads(mcp_outermost_braces_string)
+            function_name = mcp_outermost_braces_dict.get("function_name")
+            if function_name and function_name in mcp_tools_for_call:
+                params = mcp_outermost_braces_dict.get("params")
+                tool_info = mcp_tools_for_call[function_name]
+                try:
+                    result = await mcp_call_tools(
+                        tool_info["url"],
+                        function_name,
+                        params,
+                        headers=tool_info.get("_config_headers"),
+                        timeout=tool_info.get("_config_timeout", 5),
+                        sse_read_timeout=tool_info.get("_config_sse_timeout", 300),
+                    )
+                    supply_info = (
+                        f"\nPlease answer the question based on these results: {result}"
+                    )
+                except Exception as e:
+                    logger.error(
+                        f"Error executing MCP tool {function_name}: {e}", exc_info=True
+                    )
+            else:
+                pass
+        except Exception as e:
+            logger.error(
+                f"Error parsing MCP response or executing tool: {e}", exc_info=True
+            )
     ##### mcp section #####
     mcp_tools_for_call = {}
     mcp_servers: dict = llm_input.mcp_use
@@ -288,26 +365,31 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
             mcp_outermost_braces_string = mcp_outermost_braces_string_list[-1]
             mcp_outermost_braces_dict = json.loads(mcp_outermost_braces_string)
             function_name = mcp_outermost_braces_dict.get("function_name")
-            if function_name:
+            if function_name and function_name in mcp_tools_for_call:
                 params = mcp_outermost_braces_dict.get("params")
+                tool_info = mcp_tools_for_call[function_name]
                 try:
                     result = await mcp_call_tools(
-                        mcp_tools_for_call[function_name]["url"],
+                        tool_info["url"],
                         function_name,
                         params,
-                        headers=mcp_headers,
-                        timeout=mcp_timeout,
-                        sse_read_timeout=mcp_sse_read_timeout,
+                        headers=tool_info.get("_config_headers"),
+                        timeout=tool_info.get("_config_timeout", 5),
+                        sse_read_timeout=tool_info.get("_config_sse_timeout", 300),
                     )
                     supply_info = (
                         f"\nPlease answer the question based on these results: {result}"
                     )
                 except Exception as e:
-                    logger.error(f"Error executing MCP tool {function_name}: {e}", exc_info=True)
+                    logger.error(
+                        f"Error executing MCP tool {function_name}: {e}", exc_info=True
+                    )
             else:
                 pass
         except Exception as e:
-            logger.error(f"Error parsing MCP response or executing tool: {e}", exc_info=True)
+            logger.error(
+                f"Error parsing MCP response or executing tool: {e}", exc_info=True
+            )
     ##### mcp section #####
 
     user_message = UserMessage(
