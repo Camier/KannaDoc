@@ -7,8 +7,9 @@ Supported Providers (January 2026):
 - DeepSeek (R1, Chat, Reasoner)
 - Anthropic (Claude 3/4 series)
 - Google (Gemini 2.5/3 series)
-- ZhipuAI (GLM-4 series)
-- ZhipuAI Coding (GLM-4.5/4.6/4.7)
+- ZhipuAI (GLM-4 series) - direct ZhipuAI API
+- ZhipuAI Coding (GLM-4.5/4.6/4.7) - direct ZhipuAI coding endpoint
+- Z.ai (GLM-4.5/4.6/4.7) - Z.ai GLM Coding Plan (https://z.ai)
 - Moonshot (Kimi K2)
 - Ollama Cloud (Llama, Mistral, Mixtral)
 - Antigravity via CLIProxyAPI (OpenAI-compatible proxy)
@@ -34,7 +35,13 @@ def _generate_zhipu_jwt(api_key: str) -> str:
     import time
 
     if "." not in api_key:
-        raise ValueError(f"Invalid ZhipuAI API key format: {api_key}")
+        # Z.ai keys don't have dots, but Zhipu keys do.
+        # If we routed to Zhipu but have a Z.ai key, this is a misconfiguration.
+        raise ValueError(
+            f"Invalid ZhipuAI API key format: {api_key[:8]}... "
+            "ZhipuAI keys must be in 'id.secret' format. "
+            "If this is a Z.ai key, ensure ZAI_API_KEY is set in environment."
+        )
 
     api_id, api_secret = api_key.split(".", 1)
 
@@ -163,6 +170,22 @@ class ProviderClient:
             ],
             "vision": True,
         },
+        "zai": {
+            "base_url": "https://api.z.ai/api/coding/paas/v4",
+            "env_key": "ZAI_API_KEY",
+            "models": [
+                "glm-4.5",
+                "glm-4.5-air",
+                "glm-4.5-flash",
+                "glm-4.5v",
+                "glm-4.6",
+                "glm-4.6v",
+                "glm-4.6v-flash",
+                "glm-4.7",
+                "glm-4.7-flash",
+            ],
+            "vision": True,
+        },
         "ollama-cloud": {
             "base_url": "https://api.ollama.com/v1",
             "env_key": "OLLAMA_CLOUD_API_KEY",
@@ -243,11 +266,38 @@ class ProviderClient:
             "base_url": "",
             "env_key": "CLIPROXYAPI_API_KEY",
             "models": [
+                # Antigravity (Official)
                 "antigravity-claude-opus-4-5-thinking",
                 "antigravity-claude-sonnet-4-5-thinking",
                 "antigravity-claude-sonnet-4-5",
                 "antigravity-gemini-3-pro",
                 "antigravity-gemini-3-flash",
+                # Gemini CLI
+                "gemini-2.5-pro",
+                "gemini-2.5-flash",
+                "gemini-3-pro",
+                "gemini-3-flash",
+                "gemini-1.5-pro",
+                "gemini-1.5-flash",
+                # OpenAI Codex
+                "gpt-5",
+                "gpt-5.2",
+                "gpt-4.5",
+                "o1",
+                "o1-pro",
+                "gpt-4o",
+                "gpt-4o-mini",
+                # Claude Code
+                "claude-opus-4",
+                "claude-sonnet-4",
+                "claude-opus-4.5",
+                "claude-sonnet-4.5",
+                "claude-3.5-sonnet",
+                "claude-3.5-haiku",
+                "claude-3-opus",
+                # Qwen Code
+                "qwen3-coder",
+                "qwen3-coder-plus",
             ],
             "vision": True,
         },
@@ -269,11 +319,17 @@ class ProviderClient:
         "gpt-4o",
         "gpt-4.1",
         "gpt-4.5",
+        "gpt-5",
         "gpt-5.2",
         "o1",
         "claude-3-opus",
         "claude-3-sonnet",
+        "claude-3.5-sonnet",
         "claude-4",
+        "claude-opus-4",
+        "claude-sonnet-4",
+        "claude-opus-4.5",
+        "claude-sonnet-4.5",
         "gemini-2.5-pro",
         "gemini-3-pro",
         "gemini-3-flash",
@@ -297,6 +353,14 @@ class ProviderClient:
         """Detect provider from model name"""
         model_lower = model_name.lower()
 
+        # Check specific providers first before generic loop
+        # GLM coding models (4.5/4.6/4.7) - prefer Z.ai if ZAI_API_KEY is set
+        # Z.ai is the GLM Coding Plan provider (https://z.ai)
+        if any(x in model_lower for x in ["glm-4.5", "glm-4.6", "glm-4.7"]):
+            if os.getenv("ZAI_API_KEY"):
+                return "zai"
+            return "zhipu-coding"
+
         for provider, config in cls.PROVIDERS.items():
             for model_pattern in config["models"]:
                 if model_pattern.lower() in model_lower:
@@ -318,8 +382,6 @@ class ProviderClient:
             return "gemini"
         elif "moonshot" in model_lower or "kimi" in model_lower or "k2" in model_lower:
             return "moonshot"
-        elif any(x in model_lower for x in ["glm-4.5", "glm-4.6", "glm-4.7"]):
-            return "zhipu-coding"
         elif "glm" in model_lower or "zhipu" in model_lower:
             return "zhipu"
         elif "abab" in model_lower or "minimax" in model_lower:
@@ -410,7 +472,7 @@ class ProviderClient:
                 if not base_url:
                     raise ValueError(
                         "CLIProxyAPI base URL not configured. "
-                        "Set CLIPROXYAPI_BASE_URL (e.g. http://host.docker.internal:8088/v1)."
+                        "Set CLIPROXYAPI_BASE_URL (e.g. http://host.docker.internal:8317/v1)."
                     )
             else:
                 base_url = provider_config["base_url"]

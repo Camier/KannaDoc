@@ -27,7 +27,7 @@ from app.db.vector_db import vector_db_client
 from app.rag.get_embedding import get_embeddings_from_httpx, get_sparse_embeddings
 from app.rag.utils import replace_image_content, sort_and_filter
 from app.rag.mesage import find_depth_parent_mesage
-from app.rag.provider_client import get_llm_client
+from app.rag.provider_client import get_llm_client, ProviderClient
 from app.core.config import settings
 from app.core.embeddings import normalize_multivector, downsample_multivector
 
@@ -275,132 +275,144 @@ class ChatService:
         if bases:
             result_score = []
 
-            # Retrieval is best-effort: if embedding/search fails, continue without RAG context
-            query_vecs = []
+            # Safeguard RAG block to ensure chat continues even if retrieval fails
             try:
-                t_start = time.perf_counter()
-                query_embedding = await get_embeddings_from_httpx(
-                    [user_message_content.user_message], endpoint="embed_text"
-                )
-                query_vecs = normalize_multivector(query_embedding)
-                nq_before = len(query_vecs)
-                query_vecs = downsample_multivector(
-                    query_vecs, settings.rag_max_query_vecs
-                )
-                nq_after = len(query_vecs)
-                t_embed_s += time.perf_counter() - t_start
-            except Exception as e:
-                logger.warning(f"RAG retrieval skipped (embedding failed): {e}")
-
-            # Generate sparse embeddings for hybrid search
-            sparse_vecs = []
-            if settings.rag_hybrid_enabled and query_vecs:
+                # Retrieval is best-effort: if embedding/search fails, continue without RAG context
+                query_vecs = []
                 try:
-                    sparse_result = await get_sparse_embeddings(
-                        [user_message_content.user_message]
+                    t_start = time.perf_counter()
+                    query_embedding = await get_embeddings_from_httpx(
+                        [user_message_content.user_message], endpoint="embed_text"
                     )
-                    if sparse_result and len(sparse_result) > 0:
-                        # Replicate single sparse vector to match dense vector count
-                        sparse_vecs = [sparse_result[0]] * len(query_vecs)
+                    query_vecs = normalize_multivector(query_embedding)
+                    nq_before = len(query_vecs)
+                    query_vecs = downsample_multivector(
+                        query_vecs, settings.rag_max_query_vecs
+                    )
+                    nq_after = len(query_vecs)
+                    t_embed_s += time.perf_counter() - t_start
                 except Exception as e:
-                    logger.warning(
-                        f"Sparse embedding failed, falling back to dense-only: {e}"
-                    )
+                    logger.warning(f"RAG retrieval skipped (embedding failed): {e}")
 
-            if query_vecs:
-                # Prepare search data - use hybrid format if sparse vectors available
-                search_data = (
-                    {"dense_vecs": query_vecs, "sparse_vecs": sparse_vecs}
-                    if sparse_vecs
-                    else query_vecs
-                )
-                for base in bases:
-                    collection_name = f"colqwen{base['baseId'].replace('-', '_')}"
+                # Generate sparse embeddings for hybrid search
+                sparse_vecs = []
+                if settings.rag_hybrid_enabled and query_vecs:
                     try:
-                        t_start = time.perf_counter()
-                        if is_workflow:
-                            # Workflow mode: check collection first
-                            if vector_db_client.check_collection(collection_name):
+                        sparse_result = await get_sparse_embeddings(
+                            [user_message_content.user_message]
+                        )
+                        if sparse_result and len(sparse_result) > 0:
+                            # Replicate single sparse vector to match dense vector count
+                            sparse_vecs = [sparse_result[0]] * len(query_vecs)
+                    except Exception as e:
+                        logger.warning(
+                            f"Sparse embedding failed, falling back to dense-only: {e}"
+                        )
+
+                if query_vecs:
+                    # Prepare search data - use hybrid format if sparse vectors available
+                    search_data = (
+                        {"dense_vecs": query_vecs, "sparse_vecs": sparse_vecs}
+                        if sparse_vecs
+                        else query_vecs
+                    )
+                    for base in bases:
+                        collection_name = f"colqwen{base['baseId'].replace('-', '_')}"
+                        try:
+                            t_start = time.perf_counter()
+                            if is_workflow:
+                                # Workflow mode: check collection first
+                                if vector_db_client.check_collection(collection_name):
+                                    scores = vector_db_client.search(
+                                        collection_name, data=search_data, topk=top_K
+                                    )
+                                    for score in scores:
+                                        score.update(
+                                            {"collection_name": collection_name}
+                                        )
+                                    result_score.extend(scores)
+                            else:
+                                # RAG mode: direct search with exception handling
                                 scores = vector_db_client.search(
                                     collection_name, data=search_data, topk=top_K
                                 )
                                 for score in scores:
                                     score.update({"collection_name": collection_name})
                                 result_score.extend(scores)
-                        else:
-                            # RAG mode: direct search with exception handling
-                            scores = vector_db_client.search(
-                                collection_name, data=search_data, topk=top_K
-                            )
-                            for score in scores:
-                                score.update({"collection_name": collection_name})
-                            result_score.extend(scores)
-                        t_search_s += time.perf_counter() - t_start
-                    except Exception as e:
-                        if is_workflow:
-                            # Workflow mode logs but doesn't add to results
-                            logger.debug(
-                                f"Collection {collection_name} check failed: {e}"
-                            )
-                        else:
-                            # RAG mode logs and continues
-                            logger.debug(
-                                f"Collection {collection_name} not accessible or empty: {e}"
-                            )
+                            t_search_s += time.perf_counter() - t_start
+                        except Exception as e:
+                            if is_workflow:
+                                # Workflow mode logs but doesn't add to results
+                                logger.debug(
+                                    f"Collection {collection_name} check failed: {e}"
+                                )
+                            else:
+                                # RAG mode logs and continues
+                                logger.debug(
+                                    f"Collection {collection_name} not accessible or empty: {e}"
+                                )
 
-                sorted_score = sort_and_filter(result_score, min_score=score_threshold)
-                cut_score = sorted_score[:top_K]
-
-                # Batch fetch metadata (eliminates N+1 query pattern)
-                if cut_score:
-                    t_start = time.perf_counter()
-                    file_image_pairs = [
-                        (score["file_id"], score["image_id"]) for score in cut_score
-                    ]
-                    file_infos = await repo_manager.file.get_files_and_images_batch(
-                        file_image_pairs
+                    sorted_score = sort_and_filter(
+                        result_score, min_score=score_threshold
                     )
-                    t_meta_s += time.perf_counter() - t_start
+                    cut_score = sorted_score[:top_K]
 
-                    for score, file_and_image_info in zip(cut_score, file_infos):
-                        if file_and_image_info.get("status") != "success":
-                            logger.warning(
-                                "RAG hit skipped (metadata mismatch): "
-                                f"collection={score.get('collection_name')} "
-                                f"file_id={score.get('file_id')} "
-                                f"image_id={score.get('image_id')} "
-                                f"page_number={score.get('page_number')}"
+                    # Batch fetch metadata (eliminates N+1 query pattern)
+                    if cut_score:
+                        t_start = time.perf_counter()
+                        file_image_pairs = [
+                            (score["file_id"], score["image_id"]) for score in cut_score
+                        ]
+                        file_infos = await repo_manager.file.get_files_and_images_batch(
+                            file_image_pairs
+                        )
+                        t_meta_s += time.perf_counter() - t_start
+
+                        for score, file_and_image_info in zip(cut_score, file_infos):
+                            if file_and_image_info.get("status") != "success":
+                                logger.warning(
+                                    "RAG hit skipped (metadata mismatch): "
+                                    f"collection={score.get('collection_name')} "
+                                    f"file_id={score.get('file_id')} "
+                                    f"image_id={score.get('image_id')} "
+                                    f"page_number={score.get('page_number')}"
+                                )
+                                continue
+
+                            file_used.append(
+                                {
+                                    "score": score["score"],
+                                    "knowledge_db_id": file_and_image_info[
+                                        "knowledge_db_id"
+                                    ],
+                                    "file_name": file_and_image_info["file_name"],
+                                    "image_url": file_and_image_info["image_minio_url"],
+                                    "file_url": file_and_image_info["file_minio_url"],
+                                }
                             )
-                            continue
-
-                        file_used.append(
-                            {
-                                "score": score["score"],
-                                "knowledge_db_id": file_and_image_info[
-                                    "knowledge_db_id"
-                                ],
-                                "file_name": file_and_image_info["file_name"],
-                                "image_url": file_and_image_info["image_minio_url"],
-                                "file_url": file_and_image_info["file_minio_url"],
-                            }
-                        )
-                        content.append(
-                            {
-                                "type": "image_url",
-                                "image_url": file_and_image_info[
-                                    "image_minio_filename"
-                                ],
-                            }
-                        )
-                        user_images.append(
-                            {
-                                "type": "image_url",
-                                "image_url": file_and_image_info[
-                                    "image_minio_filename"
-                                ],
-                            }
-                        )
-                        rag_hits += 1
+                            content.append(
+                                {
+                                    "type": "image_url",
+                                    "image_url": file_and_image_info[
+                                        "image_minio_filename"
+                                    ],
+                                }
+                            )
+                            user_images.append(
+                                {
+                                    "type": "image_url",
+                                    "image_url": file_and_image_info[
+                                        "image_minio_filename"
+                                    ],
+                                }
+                            )
+                            rag_hits += 1
+            except Exception as e:
+                logger.error(
+                    f"Critical error in RAG retrieval block: {e}", exc_info=True
+                )
+                # Continue chat execution without RAG context instead of crashing
+                pass
 
         # Build user message content
         user_text = user_message_content.user_message
@@ -447,15 +459,30 @@ class ChatService:
 
         # Use provider client for direct API access (no LiteLLM proxy)
         # If model_url is provided (legacy), use it; otherwise auto-detect provider
-        if model_url and model_url.startswith("http"):
-            # Legacy: explicit URL provided (could be LiteLLM or direct)
-            client = AsyncOpenAI(
-                api_key=api_key,
-                base_url=model_url,
+        try:
+            if model_url and model_url.startswith("http"):
+                # Legacy: explicit URL provided (could be LiteLLM or direct)
+                client = AsyncOpenAI(
+                    api_key=api_key,
+                    base_url=model_url,
+                )
+            else:
+                # New: auto-detect provider from model name
+                client = get_llm_client(model_name, api_key=api_key)
+        except Exception as e:
+            logger.error(f"Error creating LLM client: {str(e)}")
+            err_msg = f"""⚠️ **Configuration Error**:
+```LLM_Error
+{str(e)}
+```"""
+            payload = json.dumps(
+                {"type": "text", "data": err_msg, "message_id": message_id}
             )
-        else:
-            # New: auto-detect provider from model name
-            client = get_llm_client(model_name, api_key=api_key)
+            if is_workflow:
+                yield f"{payload}"
+            else:
+                yield f"data: {payload}\n\n"
+            return
 
         # Build API call parameters
         optional_args = {}
@@ -484,23 +511,73 @@ class ChatService:
             if top_P != -1:
                 optional_args["top_p"] = top_P
 
-        # Zhipu API doesn't support stream_options parameter
-        is_zhipu = (
-            "glm" in model_name.lower() or "zhipu" in model_url.lower()
-            if model_url
-            else False
+        # Detect provider to handle auto-detection cases (where model_url is None)
+        detected_provider = ProviderClient.get_provider_for_model(model_name)
+
+        logger.info(
+            f"DEBUG: model_name={model_name}, detected_provider={detected_provider}, model_url={model_url}"
         )
+
+        # Zhipu API doesn't support stream_options parameter
+        if model_url:
+            is_zhipu = "glm" in model_name.lower() or "zhipu" in model_url.lower()
+        else:
+            # Strictly identify Zhipu/Z.ai providers to suppress stream_options
+            # Sending stream_options to Zhipu causes API errors/empty responses
+            is_zhipu = detected_provider in ("zhipu", "zhipu-coding", "zai")
+
+        # Z.ai requires uppercase model names (GLM-4.7, not glm-4.7)
+        if model_url:
+            is_zai = "z.ai" in model_url.lower()
+        else:
+            is_zai = detected_provider == "zai"
+
+        api_model_name = model_name
+        if is_zai and model_name.lower().startswith("glm"):
+            # Convert glm-4.7 -> GLM-4.7, glm-4.7-flash -> GLM-4.7-Flash
+            parts = model_name.split("-")
+            api_model_name = parts[0].upper()  # GLM
+            if len(parts) > 1:
+                api_model_name += "-" + parts[1]  # GLM-4.7
+            if len(parts) > 2:
+                api_model_name += "-" + parts[2].capitalize()  # GLM-4.7-Flash
+
+        logger.info(
+            f"DEBUG: is_zhipu={is_zhipu}, is_zai={is_zai}, api_model_name={api_model_name}"
+        )
+
+        stream_kwargs: Dict[str, Any] = {"stream": True}
+        if not is_zhipu:
+            stream_kwargs["stream_options"] = {"include_usage": True}
+
+        logger.info(f"DEBUG: stream_kwargs={stream_kwargs}")
+
         stream_kwargs: Dict[str, Any] = {"stream": True}
         if not is_zhipu:
             stream_kwargs["stream_options"] = {"include_usage": True}
 
         # Call API with streaming
-        response = await client.chat.completions.create(
-            model=model_name,
-            messages=send_messages,
-            **stream_kwargs,
-            **optional_args,
-        )
+        try:
+            response = await client.chat.completions.create(
+                model=api_model_name,
+                messages=send_messages,
+                **stream_kwargs,
+                **optional_args,
+            )
+        except Exception as e:
+            logger.error(f"Error initializing chat stream: {str(e)}")
+            err_msg = f"""⚠️ **Error occurred during initialization**:
+```LLM_Error
+{str(e)}
+```"""
+            payload = json.dumps(
+                {"type": "text", "data": err_msg, "message_id": message_id}
+            )
+            if is_workflow:
+                yield f"{payload}"
+            else:
+                yield f"data: {payload}\n\n"
+            return
 
         # Send file_used payload
         file_used_payload = json.dumps(
