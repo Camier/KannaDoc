@@ -31,7 +31,7 @@ import {
   deleteFile,
   deleteTempKnowledgeBase,
 } from "@/lib/api/knowledgeBaseApi";
-import { updateModelConfig } from "@/lib/api/configApi";
+import { updateModelConfig, selectModel } from "@/lib/api/configApi";
 import {
   buildConversationBlocks,
   calculateCurrentPath,
@@ -368,7 +368,12 @@ const ChatBox: React.FC<ChatBoxProps> = ({
       try {
         //更新数据库使用
         setModelConfig(config);
-        await updateModelConfig(user.name, config);
+        if (config.modelId.startsWith("system_")) {
+          await selectModel(user.name, config.modelId);
+        } else {
+          await updateModelConfig(user.name, config);
+        }
+        await fetchModelConfig();
       } catch (error) {
         logger.error("保存配置失败:", error);
       }

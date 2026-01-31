@@ -1,5 +1,7 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
+import { useClickAway } from "react-use";
+import { getCliproxyapiModels, CliproxyapiModel } from "@/lib/api/configApi";
 
 interface AddLLMEngineProps {
   setShowAddLLM: Dispatch<SetStateAction<boolean>>;
@@ -8,6 +10,7 @@ interface AddLLMEngineProps {
   newModelName: string;
   setNewModelName: Dispatch<SetStateAction<string>>;
   onCreateConfirm: () => void;
+  setNewModelUrl?: Dispatch<SetStateAction<string>>;
 }
 
 const AddLLMEngine: React.FC<AddLLMEngineProps> = ({
@@ -17,8 +20,52 @@ const AddLLMEngine: React.FC<AddLLMEngineProps> = ({
   newModelName,
   setNewModelName,
   onCreateConfirm,
+  setNewModelUrl,
 }) => {
   const t = useTranslations("AddLLMEngine");
+  const [availableModels, setAvailableModels] = useState<CliproxyapiModel[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const dropdownRef = useRef(null);
+
+  useClickAway(dropdownRef, () => {
+    setShowDropdown(false);
+  });
+
+  useEffect(() => {
+    const fetchModels = async () => {
+      setIsLoading(true);
+      try {
+        const models = await getCliproxyapiModels();
+        setAvailableModels(models);
+      } catch (error) {
+        console.error("Failed to fetch models", error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchModels();
+  }, []);
+
+  const filteredModels = availableModels.filter((model) =>
+    model.name.toLowerCase().includes(newModelName.toLowerCase())
+  );
+
+  const groupedModels = filteredModels.reduce((acc, model) => {
+    (acc[model.group] = acc[model.group] || []).push(model);
+    return acc;
+  }, {} as Record<string, CliproxyapiModel[]>);
+
+  const handleModelSelect = (model: CliproxyapiModel) => {
+    setNewModelName(model.name);
+    if (setNewModelUrl) {
+      setNewModelUrl(model.base_url);
+    }
+    setNameError(null);
+    setShowDropdown(false);
+  };
+
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
       <div className="bg-gray-900 rounded-3xl p-6 w-[35%]">
@@ -41,25 +88,63 @@ const AddLLMEngine: React.FC<AddLLMEngineProps> = ({
           <h3 className="text-lg font-medium text-gray-100">{t("title")}</h3>
         </div>
         <div className="px-4 w-full">
-          <input
-            type="text"
-            placeholder={t("placeholder")}
-            className={`w-full px-4 py-2 mb-2 border bg-gray-800 text-gray-100 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 ${
-              nameError ? "border-red-500" : "border-gray-700"
-            }`}
-            value={newModelName}
-            onChange={(e) => {
-              setNewModelName(e.target.value);
-              setNameError(null);
-            }}
-            onKeyDown={(e: React.KeyboardEvent) => {
-              if (e.key === "Enter") {
-                e.preventDefault(); // 防止默认回车行为
-                onCreateConfirm();
-              }
-            }}
-            autoFocus
-          />
+          <div className="relative w-full" ref={dropdownRef}>
+            <input
+              type="text"
+              placeholder={t("placeholder")}
+              className={`w-full px-4 py-2 mb-2 border bg-gray-800 text-gray-100 rounded-3xl focus:outline-hidden focus:ring-2 focus:ring-indigo-500 ${
+                nameError ? "border-red-500" : "border-gray-700"
+              }`}
+              value={newModelName}
+              onChange={(e) => {
+                setNewModelName(e.target.value);
+                setNameError(null);
+                setShowDropdown(true);
+              }}
+              onFocus={() => setShowDropdown(true)}
+              onKeyDown={(e: React.KeyboardEvent) => {
+                if (e.key === "Enter") {
+                  e.preventDefault();
+                  onCreateConfirm();
+                }
+              }}
+              autoFocus
+            />
+
+            {showDropdown && (availableModels.length > 0 || isLoading) && (
+              <div className="absolute w-full mt-1 bg-gray-900 border border-gray-700 rounded-3xl shadow-lg z-50 overflow-hidden">
+                <div className="max-h-60 overflow-y-auto">
+                  {isLoading ? (
+                    <div className="px-4 py-2 text-gray-400 text-sm">
+                      Loading models...
+                    </div>
+                  ) : Object.keys(groupedModels).length > 0 ? (
+                    Object.entries(groupedModels).map(([group, models]) => (
+                      <div key={group}>
+                        <div className="text-gray-500 text-xs px-4 py-1 font-semibold bg-gray-800/90 uppercase tracking-wider sticky top-0 backdrop-blur-sm">
+                          {group}
+                        </div>
+                        {models.map((model) => (
+                          <div
+                            key={model.name}
+                            onClick={() => handleModelSelect(model)}
+                            className="px-4 py-2 cursor-pointer transition-colors hover:bg-gray-800 text-gray-200 flex justify-between items-center"
+                          >
+                            <span>{model.name}</span>
+                          </div>
+                        ))}
+                      </div>
+                    ))
+                  ) : (
+                    <div className="px-4 py-2 text-gray-500 text-sm">
+                      No matching models found
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+
           {nameError && (
             <p className="text-red-500 text-sm mb-2 px-2">{nameError}</p>
           )}
