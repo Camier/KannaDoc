@@ -129,19 +129,29 @@ When `CLIPROXYAPI_BASE_URL` is set, the backend automatically:
 
 - **`frontend/src/lib/api/configApi.tsx`**: Added `selectModel()` API call
 - **`frontend/src/components/AiChat/ChatBox.tsx`**: 
-  - `handleSaveConfig()`: Calls `selectModel` for system models instead of `updateModelConfig`
-  - Refreshes data after selection to load real URL/key
+  - `handleSaveConfig()`: Calls `updateModelConfig()` THEN `selectModel()` for ALL models (unified flow)
+  - Refreshes local state after selection to ensure persistence
 - **`frontend/src/components/AiChat/components/LlmSettingsSection.tsx`**: 
   - Disables URL/API key inputs for system models (read-only)
   - Shows grayed-out styling
 - **`frontend/src/components/AiChat/components/ModelSelector.tsx`**: 
   - Hides delete button for system models
 
+### Backend Persistence (Upsert Pattern)
+
+System models use a "virtual-to-persistent" upsert pattern in `backend/app/db/repositories/model_config.py` via `_upsert_system_model_config()`:
+
+- **First Save**: If the system model doesn't exist in the user's `models` array, it is inserted (`$push`). This persists the "virtual" model for the first time.
+- **Subsequent Saves**: If the model already exists, it is updated in place (`$set` with `array_filters`).
+- **Defaults**: Automatically uses `CLIPROXYAPI_BASE_URL` and `CLIPROXYAPI_API_KEY` from environment variables if fields are not provided.
+
+This ensures that system model settings (system prompt, temperature, etc.) persist across sessions. For more details, see the [CHANGE_LOG](../operations/CHANGE_LOG.md) entry for commit `0cd2479`.
+
 ## User Flow
 
 1. **Open Config Modal** → System models appear in dropdown (e.g., `system_gemini-2.5-pro`)
 2. **Select Model** → URL and API key fields show the actual values (read-only)
-3. **Save** → Backend calls `select-model` endpoint (not `update-model-config`)
+3. **Save** → Frontend calls `update-model-config` (persists settings) THEN `select-model` (activates model)
 4. **Chat** → Messages route through CLIProxyAPI to Gemini CLI
 
 ## Troubleshooting
