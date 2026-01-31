@@ -528,7 +528,6 @@ openssl rand -hex 32
 
 **Related Variables:**
 - `REDIS_URL` - Connection string (may include password)
-- **Known Issue:** Hardcoded in `model-server/config.py` (needs fixing)
 
 ---
 
