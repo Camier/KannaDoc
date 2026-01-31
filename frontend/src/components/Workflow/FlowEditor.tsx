@@ -305,7 +305,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
     setCurrentInputNodeId(undefined);
     setRunningChatflowLLMNodes([]);
     countRef.current = 1;
-    nodes.forEach((node) => {
+    nodesRef.current.forEach((node) => {
       if (node.data.nodeType == "vlm") {
         updateOutput(node.id, t("vlmOutputPlaceholder"));
       } else {
@@ -318,14 +318,15 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
         updateChat(node.id, t("awaitRunning"));
       }
     });
-  }, [
+  }, 
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- Using nodesRef.current to prevent infinite render loop (React #185)
+  [
     workFlow,
     handleNewChatflow,
     pushHistory,
     updateChat,
     updateOutput,
     updateStatus,
-    nodes,
     t,
   ]);
 
