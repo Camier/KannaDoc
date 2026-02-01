@@ -17,7 +17,10 @@ from app.workflow.mcp_tools import mcp_list_tools
 from app.workflow.sandbox import CodeSandbox
 from app.workflow.workflow_engine import WorkflowEngine
 from app.models.user import User
-from app.db.repositories.repository_manager import RepositoryManager, get_repository_manager
+from app.db.repositories.repository_manager import (
+    RepositoryManager,
+    get_repository_manager,
+)
 from app.utils.kafka_producer import kafka_producer_manager
 from app.core.logging import logger
 
@@ -170,7 +173,6 @@ async def execute_test_code(
             docker_image_use=function_node.docker_image_use,
             need_save_image=function_node.send_save_image,
         ) as engine:
-
             # 验证工作流结构
             if not engine.graph[0]:
                 return {"code": -1, "result": "", "msg": engine.graph[-1]}
@@ -222,7 +224,6 @@ async def execute_test_condition(
             edges=test_workflow["edges"],
             global_variables=test_workflow["global_variables"],
         ) as engine:
-
             # 验证工作流结构
             if not engine.graph[0]:
                 return {"code": -1, "result": "", "msg": engine.graph[-1]}
@@ -344,7 +345,7 @@ async def delete_workflow(
 
 # 保存自定义节点
 @router.post("/nodes/{username}", response_model=dict)
-async def delete_workflow(
+async def save_custom_nodes(
     username: str,
     custom_node: NodesInput,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
