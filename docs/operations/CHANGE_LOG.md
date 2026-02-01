@@ -18,7 +18,7 @@ This document consolidates all changes made to the LAYRA project during the 2026
 | **Kafka Hardening** | Commit order fix, retry, DLQ, idempotency, validation |
 | **Auth Hardening** | Removed deprecated simple auth references and unsafe defaults |
 | **Infrastructure** | Milvus services, healthcheck, Makefile, .env template, MinIO split-horizon |
-| **Documentation** | OpenAPI/Swagger added, Neo4j configs documented, API reference available |
+| **Documentation** | OpenAPI/Swagger added, API reference available |
 | **Stabilization** | Nginx routing fix, Password hash correction, KB metadata repair |
 | **Workflow Engine** | Circuit breaker, checkpoints, retry logic, quality gates, provider timeouts |
 | **UI Stability** | React #185 infinite loop fix, node label mapping fix |
@@ -594,33 +594,6 @@ allowed_origins: str = Field(
 **Impact**: Prevents CSRF attacks when specific origins are configured
 
 ### 12.3 OpenAPI/Swagger Documentation
-**File:** `backend/app/framework/app_framework.py`
-**Changes:**
-```python
-FastAPI(
-    title="LAYRA API",
-    description="Visual-native AI agent engine with workflow orchestration, RAG pipeline, and knowledge base management",
-    version="2.0.0",
-    docs_url="/api/docs",      # Swagger UI
-    redoc_url="/api/redoc"   # ReDoc
-)
-```
-**Impact**: Interactive API documentation available at `/api/docs` and `/api/redoc`
-
-### 12.4 Neo4j Configuration Documentation
-**File:** `.env.example`
-**Added:**
-```bash
-# ========================
-# NEO4J CONFIGURATION
-# ========================
-NEO4J_URI=bolt://neo4j:7687
-NEO4J_USER=neo4j
-NEO4J_PASSWORD=your_secure_neo4j_password_here
-```
-**Impact**: Neo4j configuration documented for thesis deployment
-
-### 12.5 Added ALLOWED_ORIGINS to .env.example
 **File:** `.env.example`
 **Added:**
 ```bash
@@ -651,12 +624,7 @@ ALLOWED_ORIGINS=http://localhost:3000,http://localhost:8090
 **Fix:** Created and ran `scripts/deduplicate_kb.py` to identify and remove 30+ duplicate entries, keeping only the latest version.
 **Impact:** Clean, consistent Knowledge Base state.
 
-### 13.4 Neo4j Hostname Resolution Fix
-**Issue:** Neo4j container failed to start with `UnknownHostException`.
-**Fix:** Added `extra_hosts: ["neo4j:127.0.0.1"]` to `docker-compose.thesis.yml`.
-**Impact:** Resolved startup failure, ensuring graph database availability.
-
-### 13.5 Bulk Ingestion Optimization
+### 13.4 Bulk Ingestion Optimization
 **Action:** Implemented `scripts/ingest_missing_files_optimized.py`.
 **Features:**
 - Checks existing files in KB before uploading.
@@ -682,7 +650,6 @@ ALLOWED_ORIGINS=http://localhost:3000,http://localhost:8090
 
 ### 14.3 Documentation Expansion
 **Actions:**
-- Created `docs/NEO4J_SETUP.md` detailing the roadmap for Knowledge Graph integration (Q2 2026).
 - Enhanced `backend/app/core/config.py` with detailed comments clarifying network configuration (`server_ip` vs `minio_url`).
 **Impact:** Improved developer onboarding and clear architectural roadmap.
 

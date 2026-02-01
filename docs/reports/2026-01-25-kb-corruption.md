@@ -147,13 +147,10 @@ The Layra Knowledge Base experienced **metadata corruption and duplication** cau
 
 | File | Purpose | Status |
 |------|---------|--------|
-| `docs/archives/backup_analysis/delete_list.json` | List of 114 duplicates | Archived |
 | `scripts/deduplicate_kb.py` | Selective cleanup script | Archived (unused) |
 | `scripts/sync_kb_metadata.py` | Manual metadata sync | Archived (replaced) |
 | `scripts/ingest_sync.py` | Atomic re-ingestion | ✅ **Active** (recovery tool) |
 | `scripts/archive/reingest_corpus.py` | Failed retry script | Archived |
-| `docs/archives/backup_analysis/kb_files.json` | Pre-corruption state | Archived (106KB) |
-| `docs/archives/backup_analysis/complete_pdf_list.txt` | Expected file list | Archived |
 | `docs/CONSOLIDATED_REPORT.md` | Recovery documentation | Active |
 | `docs/DISCREPANCIES_FIXES.md` | Fix tracking | Active |
 
