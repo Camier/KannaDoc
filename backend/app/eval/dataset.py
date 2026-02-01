@@ -14,6 +14,8 @@ from app.db.repositories.eval import EvalRepository, EvalDataset, EvalQuery
 from app.utils.timezone import beijing_time_now
 from app.utils.ids import to_milvus_collection_name
 from pymongo.errors import DuplicateKeyError
+from app.rag.get_embedding import get_embeddings_from_httpx
+from app.eval.labeler import label_relevance
 
 
 async def create_dataset(
@@ -73,19 +75,82 @@ async def create_dataset(
                 f"Retrieving documents for query: '{query_text}' from '{kb_id}'"
             )
 
-            relevant_docs = []
-            # TODO: Integrate embedding service + Milvus search
-            # query_embedding = await model_server.embed_query(query_text)
-            # search_results = vector_db_client.search(collection_name, query_embedding, topk)
-            # relevant_docs = format_search_results(search_results)
+            query_embeddings = await get_embeddings_from_httpx(
+                data=[query_text],
+                endpoint="embed_text",
+            )
 
-            if label_with_llm:
-                # TODO: Integrate labeler.py (Task 3)
-                # from app.eval.labeler import label_relevance
-                # relevant_docs = await label_relevance(query_text, relevant_docs)
-                logger.warning(
-                    f"LLM labeling skipped for '{query_text[:50]}...' - labeler.py pending"
-                )
+            if not query_embeddings or not query_embeddings[0]:
+                logger.warning(f"Empty embedding for query: '{query_text[:50]}...'")
+                eval_queries.append(EvalQuery(query_text=query_text, relevant_docs=[]))
+                continue
+
+            search_results = vector_db_client.search(
+                collection_name,
+                data=query_embeddings[0],
+                topk=topk,
+            )
+
+            if not search_results:
+                logger.info(f"No search results for query: '{query_text[:50]}...'")
+                eval_queries.append(EvalQuery(query_text=query_text, relevant_docs=[]))
+                continue
+
+            relevant_docs = []
+
+            llm_config = {
+                "model_name": "glm-4-flash",
+                "temperature": 0.0,
+                "max_length": 10,
+            }
+
+            for result in search_results:
+                file_id = result.get("file_id")
+                image_id = result.get("image_id")
+                page_number = result.get("page_number")
+
+                filename = "Unknown"
+                if file_id:
+                    file_doc = await db.files.find_one(
+                        {"file_id": file_id, "is_delete": False},
+                        projection={"filename": 1},
+                    )
+                    if file_doc:
+                        filename = file_doc.get("filename", "Unknown")
+
+                doc_repr = f"Document: {filename}, Page {page_number}"
+
+                relevance_score = 0
+                if label_with_llm:
+                    for attempt in range(3):
+                        try:
+                            relevance_score = await label_relevance(
+                                query=query_text,
+                                document=doc_repr,
+                                llm_config=llm_config,
+                            )
+                            break
+                        except Exception as e:
+                            if attempt < 2:
+                                logger.warning(
+                                    f"Labeling retry {attempt + 1} for '{query_text[:30]}...' - {e}"
+                                )
+                            else:
+                                logger.warning(
+                                    f"Labeling failed after 3 attempts for '{query_text[:30]}...' - skipping"
+                                )
+                                relevance_score = 0
+
+                if relevance_score >= 2:
+                    relevant_docs.append(
+                        {
+                            "doc_id": image_id,  # CRITICAL: image_id required for runner.py ID matching
+                            "file_id": file_id,
+                            "image_id": image_id,
+                            "page_number": page_number,
+                            "relevance_score": relevance_score,
+                        }
+                    )
 
             eval_queries.append(
                 EvalQuery(query_text=query_text, relevant_docs=relevant_docs)
