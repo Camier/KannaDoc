@@ -1,4 +1,7 @@
 <div align="center">
+
+> **🎓 THESIS FORK** — This is an academic research fork of [LAYRA](https://github.com/liweiphys/layra) with thesis-specific workflows, extended tooling, and experimental features. For the original project, please visit [liweiphys/layra](https://github.com/liweiphys/layra).
+
   <img src="./assets/logo.png" width="300" height="300" alt="LAYRA Logo" />
   <h1>🌌 LAYRA: Next Generation AI Agent Engine That Sees, Understands & Acts</h1>
   <p>
