@@ -243,34 +243,6 @@ async def generate_embeddings(images_buffer, filename, start_index=0):
     return await get_embeddings_from_httpx(images_request, endpoint="embed_image")
 
 
-def _fallback_sparse_text(image_ids, file_id, page_offset, index):
-    parts = []
-    if file_id:
-        parts.append(str(file_id))
-    if index < len(image_ids) and image_ids[index]:
-        parts.append(str(image_ids[index]))
-    parts.append(f"page {page_offset + index}")
-    return " ".join(parts).strip()
-
-
-def _build_sparse_texts(embeddings, image_ids, file_id, page_offset, page_texts=None):
-    if isinstance(page_texts, str) and page_texts.strip():
-        return [page_texts] * len(embeddings)
-    if isinstance(page_texts, list) and page_texts:
-        texts = []
-        for i in range(len(embeddings)):
-            text = page_texts[i] if i < len(page_texts) else None
-            if isinstance(text, str) and text.strip():
-                texts.append(text)
-            else:
-                texts.append(_fallback_sparse_text(image_ids, file_id, page_offset, i))
-        return texts
-    return [
-        _fallback_sparse_text(image_ids, file_id, page_offset, i)
-        for i in range(len(embeddings))
-    ]
-
-
 async def _fetch_sparse_embeddings(texts):
     if not texts:
         return []
