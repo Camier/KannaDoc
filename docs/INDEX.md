@@ -107,8 +107,6 @@ One-page cheat sheet for:
 
 | Category | Contents |
 |----------|----------|
-| **[Neo4j](archives/neo4j/)** | Graph database docs (removed in v2.0.0) |
-| **[LiteLLM](archives/litellm/)** | Proxy migration docs (v2.0.0) |
 | **[Checklists](archives/checklists/)** | Historical implementation checklists |
 | **[Session Transcripts](archives/session-transcripts/)** | AI session logs (LIKESPEED.md) |
 | **[Strategy Docs](archives/)** | Model configuration, workflow refactoring |
@@ -186,8 +184,6 @@ docs/
 │   └── 2026-01-25-*.md
 │
 ├── 📦 archives/                 ← Superseded/obsolete
-│   ├── neo4j/
-│   ├── litellm/
 │   ├── checklists/
 │   ├── session-transcripts/
 │   └── *.md (historical)

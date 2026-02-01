@@ -33,14 +33,8 @@
 | LLM_PROVIDER_CONFIGURATION_SUMMARY.md | LLM provider configuration | 2026-01-27 |
 | REFACTORING_MASTER_PLAN.md | Refactoring plan | 2026-01-27 |
 
-### litellm_legacy/
-**LiteLLM proxy removal documentation (v2.0.0 migration)**
-
 ### litellm/
 **Additional LiteLLM migration documentation**
-
-### neo4j/
-**Neo4j integration documentation (removed in v2.0.0)**
 
 ### checklists/
 **Historical implementation checklists**
@@ -68,7 +62,6 @@ find /LAB/@thesis/layra/docs/archives -name "*.md" | wc -l
 ## 📋 Archive Retention Policy
 
 **Keep Permanent:**
-- Migration documentation (litellm, neo4j removal)
 - Major incident reports with lessons learned
 - Architecture decisions (ADRs)
 
@@ -88,13 +81,12 @@ find /LAB/@thesis/layra/docs/archives -name "*.md" | wc -l
 
 | Category | Count |
 |----------|-------|
-| **Total Archived Files** | 122+ |
-| **2026-01 Reports** | 35 |
-| **LiteLLM Docs** | 30+ |
-| **Neo4j Docs** | 2 |
+| **Total Archived Files** | 67 |
+| **2026-01 Reports** | 30 |
+| **LiteLLM Docs** | 3 |
 | **Checklists** | 2 |
-| **Session Transcripts** | 1 |
-| **Other** | 50+ |
+| **Session Transcripts** | 0 |
+| **Other** | 32 |
 
 ---
 
