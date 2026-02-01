@@ -354,7 +354,6 @@ const AIChat: React.FC = () => {
       const controller = new AbortController();
       abortControllerRef.current = controller;
 
-      //const response = await fetch("http://192.168.1.5:8000/api/v1/sse/chat", {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_API_BASE_URL}/sse/chat`,
         {

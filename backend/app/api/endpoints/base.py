@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query, UploadFile
 from fastapi.responses import RedirectResponse
 from app.db.redis import redis
 from app.db.milvus import MilvusManager
-from app.db.ultils import format_page_response
+from app.db.db_utils import format_page_response
 from app.models.conversation import GetUserFiles
 from app.models.knowledge_base import (
     BulkDeleteRequestItem,
@@ -14,7 +14,10 @@ from app.models.knowledge_base import (
     PageResponse,
 )
 from app.models.user import User
-from app.db.repositories.repository_manager import RepositoryManager, get_repository_manager
+from app.db.repositories.repository_manager import (
+    RepositoryManager,
+    get_repository_manager,
+)
 from app.core.config import settings
 from app.core.security import get_current_user, verify_username_match
 from app.rag.convert_file import (
@@ -38,7 +41,9 @@ async def get_knowledge_bases_by_user(
     current_user: User = Depends(get_current_user),
 ):
     await verify_username_match(current_user, username)
-    knowledge_bases = await repo_manager.knowledge_base.get_knowledge_bases_by_user(username)
+    knowledge_bases = await repo_manager.knowledge_base.get_knowledge_bases_by_user(
+        username
+    )
     if not knowledge_bases:
         return []
 
@@ -143,7 +148,11 @@ async def bulk_delete_files(
             )
 
     # 执行批量删除
-    deletion_result = await repo_manager.knowledge_base.bulk_delete_files_from_knowledge(valid_operations)
+    deletion_result = (
+        await repo_manager.knowledge_base.bulk_delete_files_from_knowledge(
+            valid_operations
+        )
+    )
 
     # 处理 Milvus 删除
     if deletion_result.get("status") in ["success", "partial_success"]:
@@ -195,7 +204,9 @@ async def delete_file(
     else:
         username = knowledge_base_id.split("_")[0]
     await verify_username_match(current_user, username)
-    result = await repo_manager.knowledge_base.delete_file_from_knowledge_base(knowledge_base_id, file_id)
+    result = await repo_manager.knowledge_base.delete_file_from_knowledge_base(
+        knowledge_base_id, file_id
+    )
     milvus_client.delete_files(
         "colqwen" + knowledge_base_id.replace("-", "_"), [file_id]
     )
@@ -227,7 +238,9 @@ async def clear_temp_knowledge_bases(
     current_user: User = Depends(get_current_user),
 ):
     await verify_username_match(current_user, username)
-    knowledge_bases = await repo_manager.knowledge_base.get_all_knowledge_bases_by_user(username)
+    knowledge_bases = await repo_manager.knowledge_base.get_all_knowledge_bases_by_user(
+        username
+    )
 
     if not knowledge_bases:
         return {
@@ -254,8 +267,13 @@ async def clear_temp_knowledge_bases(
     for knowledge_base in knowledge_bases:
         if knowledge_base["knowledge_base_id"].startswith("temp_"):
             temp_knowledge_base_id = knowledge_base["knowledge_base_id"]
-            if "_".join(temp_knowledge_base_id[5:].split("_")[0:2]) not in chat_chatflow_id:
-                result = await repo_manager.knowledge_base.delete_knowledge_base(temp_knowledge_base_id)
+            if (
+                "_".join(temp_knowledge_base_id[5:].split("_")[0:2])
+                not in chat_chatflow_id
+            ):
+                result = await repo_manager.knowledge_base.delete_knowledge_base(
+                    temp_knowledge_base_id
+                )
                 milvus_client.delete_collection(
                     "colqwen" + temp_knowledge_base_id.replace("-", "_")
                 )
@@ -335,6 +353,7 @@ async def download_file(
 
 import hashlib
 
+
 # 上传文件
 @router.post("/upload/{knowledge_db_id}", response_model=dict)
 async def upload_multiple_files(
@@ -343,7 +362,6 @@ async def upload_multiple_files(
     repo_manager: RepositoryManager = Depends(get_repository_manager),
     current_user: User = Depends(get_current_user),
 ):
-
     # 验证当前用户是否与要删除的用户名匹配
     username = knowledge_db_id.split("_")[0]
     await verify_username_match(current_user, username)
@@ -352,21 +370,25 @@ async def upload_multiple_files(
     task_id = username + "_" + str(uuid.uuid4())
     total_files = len(files)
     redis_connection = await redis.get_task_connection()
-    
+
     # 保存文件元数据并准备Kafka消息
     file_meta_list = []
     skipped_count = 0
-    
+
     for file in files:
         # 读取文件内容以计算哈希 (用于去重)
         content = await file.read()
         file_hash = hashlib.sha256(content).hexdigest()
-        await file.seek(0) # 重置指针以便后续保存
-        
+        await file.seek(0)  # 重置指针以便后续保存
+
         # 检查是否已存在相同内容的文件
-        existing_file = await repo_manager.file.get_file_by_hash(file_hash, username, knowledge_db_id)
+        existing_file = await repo_manager.file.get_file_by_hash(
+            file_hash, username, knowledge_db_id
+        )
         if existing_file:
-            logger.info(f"File {file.filename} already exists in knowledge base {knowledge_db_id} (hash match). Skipping.")
+            logger.info(
+                f"File {file.filename} already exists in knowledge base {knowledge_db_id} (hash match). Skipping."
+            )
             return_files.append(
                 {
                     "id": existing_file["file_id"],
@@ -374,7 +396,7 @@ async def upload_multiple_files(
                     "filename": existing_file["filename"],
                     "url": existing_file["minio_url"],
                     "status": "skipped",
-                    "message": "Duplicate content detected"
+                    "message": "Duplicate content detected",
                 }
             )
             skipped_count += 1
@@ -391,7 +413,7 @@ async def upload_multiple_files(
                 "minio_filename": minio_filename,
                 "original_filename": file.filename,
                 "minio_url": minio_url,
-                "file_hash": file_hash
+                "file_hash": file_hash,
             }
         )
         return_files.append(
@@ -409,7 +431,7 @@ async def upload_multiple_files(
             "task_id": "none",
             "knowledge_db_id": knowledge_db_id,
             "files": return_files,
-            "message": f"All {total_files} files were already indexed."
+            "message": f"All {total_files} files were already indexed.",
         }
 
     # 初始化任务状态

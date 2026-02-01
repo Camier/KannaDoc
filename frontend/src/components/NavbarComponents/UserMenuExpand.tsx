@@ -4,7 +4,7 @@ import { logoutUser } from "@/lib/auth";
 import { useAuthStore } from "@/stores/authStore";
 import { LocaleSelect } from "../LocaleSwitcher";
 import { useTranslations } from "next-intl";
-import useClickAway from "@/utils/hook";
+import { useClickAway } from "react-use";
 import Support from "./Support";
 import About from "./About";
 
@@ -20,17 +20,19 @@ const UserMenuExpand = () => {
   const popupMenuRef = useRef<HTMLDivElement>(null);
   const buttonMenuRef = useRef<HTMLButtonElement>(null);
 
-  useClickAway(
-    popupUserInfoRef,
-    () => setIsUserInfoOpen(false),
-    buttonUserInfoRef // 排除按钮元素
-  );
+  useClickAway(popupUserInfoRef, (event) => {
+    if (buttonUserInfoRef.current?.contains(event.target as Node)) {
+      return;
+    }
+    setIsUserInfoOpen(false);
+  });
 
-  useClickAway(
-    popupMenuRef,
-    () => setIsMenuOpen(false),
-    buttonMenuRef // 排除按钮元素
-  );
+  useClickAway(popupMenuRef, (event) => {
+    if (buttonMenuRef.current?.contains(event.target as Node)) {
+      return;
+    }
+    setIsMenuOpen(false);
+  });
 
   return (
     <div className="fixed right-[2%] gap-3 h-8 flex items-center justify-between px-6 border-indigo-500 text-[15px]">

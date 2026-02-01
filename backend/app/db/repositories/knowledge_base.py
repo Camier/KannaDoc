@@ -3,14 +3,14 @@ from collections import defaultdict
 from app.core.logging import logger
 from app.utils.timezone import beijing_time_now
 from app.core.config import settings
-from app.db.ultils import parse_aggregate_result
+from app.db.db_utils import parse_aggregate_result
 from pymongo import UpdateMany
 from pymongo.errors import BulkWriteError, DuplicateKeyError
 from .base import BaseRepository
 from .file import FileRepository
 
+
 class KnowledgeBaseRepository(BaseRepository):
-    
     def __init__(self, db, file_repo: Optional[FileRepository] = None):
         super().__init__(db)
         self.file_repo = file_repo or FileRepository(db)

@@ -26,7 +26,7 @@ from app.core.circuit_breaker import llm_service_circuit
 from app.db.vector_db import vector_db_client
 from app.rag.get_embedding import get_embeddings_from_httpx, get_sparse_embeddings
 from app.rag.utils import replace_image_content, sort_and_filter
-from app.rag.mesage import find_depth_parent_mesage
+from app.rag.message import find_depth_parent_mesage
 from app.rag.provider_client import get_llm_client, ProviderClient
 from app.core.config import settings
 from app.core.embeddings import normalize_multivector, downsample_multivector
