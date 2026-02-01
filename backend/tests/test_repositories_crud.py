@@ -2,6 +2,7 @@
 Database Repository Tests
 Tests CRUD operations for conversations, knowledge bases, bulk operations, and N+1 prevention
 """
+
 import pytest
 from unittest.mock import Mock, AsyncMock, MagicMock, patch
 from datetime import datetime
@@ -10,7 +11,7 @@ from app.models.conversation import (
     ConversationCreate,
     TurnInput,
     UserMessage,
-    ConversationOutput
+    ConversationOutput,
 )
 
 
@@ -32,24 +33,25 @@ class TestConversationRepository:
             conversation_id="conv_123",
             username="testuser",
             conversation_name="Test Conversation",
-            chat_model_config={
-                "model_name": "gpt-4",
-                "temperature": 0.7
-            }
+            chat_model_config={"model_name": "gpt-4", "temperature": 0.7},
         )
 
-        with patch.object(mock_db.db.conversations, 'insert_one', new=AsyncMock()) as mock_insert:
+        with patch.object(
+            mock_db.db.conversations, "insert_one", new=AsyncMock()
+        ) as mock_insert:
             mock_insert.return_value.acknowledged = True
 
-            result = await mock_db.db.conversations.insert_one({
-                "conversation_id": conversation_data.conversation_id,
-                "username": conversation_data.username,
-                "conversation_name": conversation_data.conversation_name,
-                "chat_model_config": conversation_data.chat_model_config,
-                "turns": [],
-                "created_at": datetime.now().isoformat(),
-                "last_modify_at": datetime.now().isoformat()
-            })
+            result = await mock_db.db.conversations.insert_one(
+                {
+                    "conversation_id": conversation_data.conversation_id,
+                    "username": conversation_data.username,
+                    "conversation_name": conversation_data.conversation_name,
+                    "chat_model_config": conversation_data.chat_model_config,
+                    "turns": [],
+                    "created_at": datetime.now().isoformat(),
+                    "last_modify_at": datetime.now().isoformat(),
+                }
+            )
 
             assert result.acknowledged is True
             mock_insert.assert_called_once()
@@ -65,11 +67,15 @@ class TestConversationRepository:
             "conversation_name": "Test Conversation",
             "turns": [],
             "created_at": "2024-01-01T00:00:00",
-            "last_modify_at": "2024-01-01T00:00:00"
+            "last_modify_at": "2024-01-01T00:00:00",
         }
 
-        with patch.object(mock_db.db.conversations, 'find_one', new=AsyncMock(return_value=mock_doc)) as mock_find:
-            result = await mock_db.db.conversations.find_one({"conversation_id": conversation_id})
+        with patch.object(
+            mock_db.db.conversations, "find_one", new=AsyncMock(return_value=mock_doc)
+        ) as mock_find:
+            result = await mock_db.db.conversations.find_one(
+                {"conversation_id": conversation_id}
+            )
 
             assert result is not None
             assert result["conversation_id"] == conversation_id
@@ -82,10 +88,19 @@ class TestConversationRepository:
         conversation_id = "conv_123"
         new_name = "Updated Conversation Name"
 
-        with patch.object(mock_db.db.conversations, 'update_one', new=AsyncMock(return_value=MagicMock(matched_count=1))) as mock_update:
+        with patch.object(
+            mock_db.db.conversations,
+            "update_one",
+            new=AsyncMock(return_value=MagicMock(matched_count=1)),
+        ) as mock_update:
             result = await mock_db.db.conversations.update_one(
                 {"conversation_id": conversation_id},
-                {"$set": {"conversation_name": new_name, "last_modify_at": datetime.now().isoformat()}}
+                {
+                    "$set": {
+                        "conversation_name": new_name,
+                        "last_modify_at": datetime.now().isoformat(),
+                    }
+                },
             )
 
             assert result.matched_count == 1
@@ -96,8 +111,14 @@ class TestConversationRepository:
         """Test deleting a conversation"""
         conversation_id = "conv_123"
 
-        with patch.object(mock_db.db.conversations, 'delete_one', new=AsyncMock(return_value=MagicMock(deleted_count=1))) as mock_delete:
-            result = await mock_db.db.conversations.delete_one({"conversation_id": conversation_id})
+        with patch.object(
+            mock_db.db.conversations,
+            "delete_one",
+            new=AsyncMock(return_value=MagicMock(deleted_count=1)),
+        ) as mock_delete:
+            result = await mock_db.db.conversations.delete_one(
+                {"conversation_id": conversation_id}
+            )
 
             assert result.deleted_count == 1
             mock_delete.assert_called_once_with({"conversation_id": conversation_id})
@@ -108,23 +129,29 @@ class TestConversationRepository:
         username = "testuser"
 
         mock_cursor = Mock()
-        mock_cursor.to_list = AsyncMock(return_value=[
-            {
-                "conversation_id": "conv_1",
-                "username": username,
-                "conversation_name": "Conversation 1",
-                "created_at": "2024-01-01T00:00:00"
-            },
-            {
-                "conversation_id": "conv_2",
-                "username": username,
-                "conversation_name": "Conversation 2",
-                "created_at": "2024-01-02T00:00:00"
-            }
-        ])
+        mock_cursor.to_list = AsyncMock(
+            return_value=[
+                {
+                    "conversation_id": "conv_1",
+                    "username": username,
+                    "conversation_name": "Conversation 1",
+                    "created_at": "2024-01-01T00:00:00",
+                },
+                {
+                    "conversation_id": "conv_2",
+                    "username": username,
+                    "conversation_name": "Conversation 2",
+                    "created_at": "2024-01-02T00:00:00",
+                },
+            ]
+        )
 
-        with patch.object(mock_db.db.conversations, 'find', new=Mock(return_value=mock_cursor)) as mock_find:
-            result = await mock_cursor.to_list(length=100)
+        with patch.object(
+            mock_db.db.conversations, "find", new=Mock(return_value=mock_cursor)
+        ) as mock_find:
+            result = await mock_db.db.conversations.find(
+                {"username": username}
+            ).to_list(length=100)
 
             assert len(result) == 2
             assert all(conv["username"] == username for conv in result)
@@ -145,7 +172,7 @@ class TestConversationRepository:
             status="completed",
             total_token=100,
             completion_tokens=50,
-            prompt_tokens=50
+            prompt_tokens=50,
         )
 
         turn_doc = {
@@ -160,16 +187,20 @@ class TestConversationRepository:
             "timestamp": datetime.now().isoformat(),
             "total_token": turn_data.total_token,
             "completion_tokens": turn_data.completion_tokens,
-            "prompt_tokens": turn_data.prompt_tokens
+            "prompt_tokens": turn_data.prompt_tokens,
         }
 
-        with patch.object(mock_db.db.conversations, 'update_one', new=AsyncMock(return_value=MagicMock(matched_count=1))) as mock_update:
+        with patch.object(
+            mock_db.db.conversations,
+            "update_one",
+            new=AsyncMock(return_value=MagicMock(matched_count=1)),
+        ) as mock_update:
             result = await mock_db.db.conversations.update_one(
                 {"conversation_id": conversation_id},
                 {
                     "$push": {"turns": turn_doc},
-                    "$set": {"last_modify_at": datetime.now().isoformat()}
-                }
+                    "$set": {"last_modify_at": datetime.now().isoformat()},
+                },
             )
 
             assert result.matched_count == 1
@@ -196,10 +227,14 @@ class TestKnowledgeBaseRepository:
             "knowledge_base_name": "Test KB",
             "is_delete": False,
             "created_at": datetime.now().isoformat(),
-            "last_modify_at": datetime.now().isoformat()
+            "last_modify_at": datetime.now().isoformat(),
         }
 
-        with patch.object(mock_db.db.knowledge_bases, 'insert_one', new=AsyncMock(return_value=MagicMock(acknowledged=True))) as mock_insert:
+        with patch.object(
+            mock_db.db.knowledge_bases,
+            "insert_one",
+            new=AsyncMock(return_value=MagicMock(acknowledged=True)),
+        ) as mock_insert:
             result = await mock_db.db.knowledge_bases.insert_one(kb_data)
 
             assert result.acknowledged is True
@@ -214,11 +249,15 @@ class TestKnowledgeBaseRepository:
             "knowledge_base_id": kb_id,
             "username": "testuser",
             "knowledge_base_name": "Test KB",
-            "is_delete": False
+            "is_delete": False,
         }
 
-        with patch.object(mock_db.db.knowledge_bases, 'find_one', new=AsyncMock(return_value=mock_doc)) as mock_find:
-            result = await mock_db.db.knowledge_bases.find_one({"knowledge_base_id": kb_id})
+        with patch.object(
+            mock_db.db.knowledge_bases, "find_one", new=AsyncMock(return_value=mock_doc)
+        ) as mock_find:
+            result = await mock_db.db.knowledge_bases.find_one(
+                {"knowledge_base_id": kb_id}
+            )
 
             assert result is not None
             assert result["knowledge_base_id"] == kb_id
@@ -230,22 +269,26 @@ class TestKnowledgeBaseRepository:
         username = "testuser"
 
         mock_cursor = Mock()
-        mock_cursor.to_list = AsyncMock(return_value=[
-            {
-                "knowledge_base_id": "kb_1",
-                "username": username,
-                "knowledge_base_name": "KB 1",
-                "is_delete": False
-            },
-            {
-                "knowledge_base_id": "kb_2",
-                "username": username,
-                "knowledge_base_name": "KB 2",
-                "is_delete": False
-            }
-        ])
+        mock_cursor.to_list = AsyncMock(
+            return_value=[
+                {
+                    "knowledge_base_id": "kb_1",
+                    "username": username,
+                    "knowledge_base_name": "KB 1",
+                    "is_delete": False,
+                },
+                {
+                    "knowledge_base_id": "kb_2",
+                    "username": username,
+                    "knowledge_base_name": "KB 2",
+                    "is_delete": False,
+                },
+            ]
+        )
 
-        with patch.object(mock_db.db.knowledge_bases, 'find', new=Mock(return_value=mock_cursor)) as mock_find:
+        with patch.object(
+            mock_db.db.knowledge_bases, "find", new=Mock(return_value=mock_cursor)
+        ) as mock_find:
             result = await mock_cursor.to_list(length=100)
 
             assert len(result) == 2
@@ -257,10 +300,19 @@ class TestKnowledgeBaseRepository:
         """Test soft deleting a knowledge base"""
         kb_id = "kb_123"
 
-        with patch.object(mock_db.db.knowledge_bases, 'update_one', new=AsyncMock(return_value=MagicMock(matched_count=1))) as mock_update:
+        with patch.object(
+            mock_db.db.knowledge_bases,
+            "update_one",
+            new=AsyncMock(return_value=MagicMock(matched_count=1)),
+        ) as mock_update:
             result = await mock_db.db.knowledge_bases.update_one(
                 {"knowledge_base_id": kb_id},
-                {"$set": {"is_delete": True, "last_modify_at": datetime.now().isoformat()}}
+                {
+                    "$set": {
+                        "is_delete": True,
+                        "last_modify_at": datetime.now().isoformat(),
+                    }
+                },
             )
 
             assert result.matched_count == 1
@@ -271,8 +323,14 @@ class TestKnowledgeBaseRepository:
         """Test hard deleting a knowledge base"""
         kb_id = "kb_123"
 
-        with patch.object(mock_db.db.knowledge_bases, 'delete_one', new=AsyncMock(return_value=MagicMock(deleted_count=1))) as mock_delete:
-            result = await mock_db.db.knowledge_bases.delete_one({"knowledge_base_id": kb_id})
+        with patch.object(
+            mock_db.db.knowledge_bases,
+            "delete_one",
+            new=AsyncMock(return_value=MagicMock(deleted_count=1)),
+        ) as mock_delete:
+            result = await mock_db.db.knowledge_bases.delete_one(
+                {"knowledge_base_id": kb_id}
+            )
 
             assert result.deleted_count == 1
             mock_delete.assert_called_once()
@@ -301,10 +359,14 @@ class TestFileRepository:
             "upload_time": datetime.now().isoformat(),
             "minio_filename": "test_file_bucket",
             "minio_url": "http://minio:9000/bucket/test.pdf",
-            "is_delete": False
+            "is_delete": False,
         }
 
-        with patch.object(mock_db.db.files, 'insert_one', new=AsyncMock(return_value=MagicMock(acknowledged=True))) as mock_insert:
+        with patch.object(
+            mock_db.db.files,
+            "insert_one",
+            new=AsyncMock(return_value=MagicMock(acknowledged=True)),
+        ) as mock_insert:
             result = await mock_db.db.files.insert_one(file_data)
 
             assert result.acknowledged is True
@@ -316,22 +378,26 @@ class TestFileRepository:
         kb_id = "kb_123"
 
         mock_cursor = Mock()
-        mock_cursor.to_list = AsyncMock(return_value=[
-            {
-                "file_id": "file_1",
-                "knowledge_db_id": kb_id,
-                "file_name": "test1.pdf",
-                "is_delete": False
-            },
-            {
-                "file_id": "file_2",
-                "knowledge_db_id": kb_id,
-                "file_name": "test2.pdf",
-                "is_delete": False
-            }
-        ])
+        mock_cursor.to_list = AsyncMock(
+            return_value=[
+                {
+                    "file_id": "file_1",
+                    "knowledge_db_id": kb_id,
+                    "file_name": "test1.pdf",
+                    "is_delete": False,
+                },
+                {
+                    "file_id": "file_2",
+                    "knowledge_db_id": kb_id,
+                    "file_name": "test2.pdf",
+                    "is_delete": False,
+                },
+            ]
+        )
 
-        with patch.object(mock_db.db.files, 'find', new=Mock(return_value=mock_cursor)) as mock_find:
+        with patch.object(
+            mock_db.db.files, "find", new=Mock(return_value=mock_cursor)
+        ) as mock_find:
             result = await mock_cursor.to_list(length=100)
 
             assert len(result) == 2
@@ -342,7 +408,11 @@ class TestFileRepository:
         """Test deleting a file"""
         file_id = "file_123"
 
-        with patch.object(mock_db.db.files, 'delete_one', new=AsyncMock(return_value=MagicMock(deleted_count=1))) as mock_delete:
+        with patch.object(
+            mock_db.db.files,
+            "delete_one",
+            new=AsyncMock(return_value=MagicMock(deleted_count=1)),
+        ) as mock_delete:
             result = await mock_db.db.files.delete_one({"file_id": file_id})
 
             assert result.deleted_count == 1
@@ -365,7 +435,11 @@ class TestBulkOperations:
         """Test bulk deleting files (N+1 prevention)"""
         file_ids = ["file_1", "file_2", "file_3", "file_4", "file_5"]
 
-        with patch.object(mock_db.db.files, 'delete_many', new=AsyncMock(return_value=MagicMock(deleted_count=5))) as mock_delete:
+        with patch.object(
+            mock_db.db.files,
+            "delete_many",
+            new=AsyncMock(return_value=MagicMock(deleted_count=5)),
+        ) as mock_delete:
             result = await mock_db.db.files.delete_many({"file_id": {"$in": file_ids}})
 
             # Single query instead of N queries
@@ -379,10 +453,14 @@ class TestBulkOperations:
         """Test bulk updating conversations"""
         conversation_ids = ["conv_1", "conv_2", "conv_3"]
 
-        with patch.object(mock_db.db.conversations, 'update_many', new=AsyncMock(return_value=MagicMock(matched_count=3))) as mock_update:
+        with patch.object(
+            mock_db.db.conversations,
+            "update_many",
+            new=AsyncMock(return_value=MagicMock(matched_count=3)),
+        ) as mock_update:
             result = await mock_db.db.conversations.update_many(
                 {"conversation_id": {"$in": conversation_ids}},
-                {"$set": {"last_modify_at": datetime.now().isoformat()}}
+                {"$set": {"last_modify_at": datetime.now().isoformat()}},
             )
 
             # Single query instead of N queries
@@ -393,11 +471,19 @@ class TestBulkOperations:
     async def test_bulk_insert_files(self, mock_db):
         """Test bulk inserting files"""
         files_data = [
-            {"file_id": f"file_{i}", "knowledge_db_id": "kb_123", "file_name": f"test{i}.pdf"}
+            {
+                "file_id": f"file_{i}",
+                "knowledge_db_id": "kb_123",
+                "file_name": f"test{i}.pdf",
+            }
             for i in range(1, 6)
         ]
 
-        with patch.object(mock_db.db.files, 'insert_many', new=AsyncMock(return_value=MagicMock(inserted_count=5, acknowledged=True))) as mock_insert:
+        with patch.object(
+            mock_db.db.files,
+            "insert_many",
+            new=AsyncMock(return_value=MagicMock(inserted_count=5, acknowledged=True)),
+        ) as mock_insert:
             result = await mock_db.db.files.insert_many(files_data)
 
             # Single bulk insert instead of N individual inserts
@@ -412,23 +498,39 @@ class TestBulkOperations:
 
         mock_pipeline = [
             {"$match": {"username": username, "is_delete": False}},
-            {"$project": {
-                "conversation_id": 1,
-                "conversation_name": 1,
-                "turn_count": {"$size": "$turns"},
-                "created_at": 1,
-                "last_modify_at": 1
-            }}
+            {
+                "$project": {
+                    "conversation_id": 1,
+                    "conversation_name": 1,
+                    "turn_count": {"$size": "$turns"},
+                    "created_at": 1,
+                    "last_modify_at": 1,
+                }
+            },
         ]
 
         mock_cursor = Mock()
-        mock_cursor.to_list = AsyncMock(return_value=[
-            {"conversation_id": "conv_1", "conversation_name": "Conv 1", "turn_count": 5},
-            {"conversation_id": "conv_2", "conversation_name": "Conv 2", "turn_count": 10}
-        ])
+        mock_cursor.to_list = AsyncMock(
+            return_value=[
+                {
+                    "conversation_id": "conv_1",
+                    "conversation_name": "Conv 1",
+                    "turn_count": 5,
+                },
+                {
+                    "conversation_id": "conv_2",
+                    "conversation_name": "Conv 2",
+                    "turn_count": 10,
+                },
+            ]
+        )
 
-        with patch.object(mock_db.db.conversations, 'aggregate', new=Mock(return_value=mock_cursor)) as mock_aggregate:
-            result = await mock_cursor.to_list(length=100)
+        with patch.object(
+            mock_db.db.conversations, "aggregate", new=Mock(return_value=mock_cursor)
+        ) as mock_aggregate:
+            result = await mock_db.db.conversations.aggregate(mock_pipeline).to_list(
+                length=100
+            )
 
             # Single aggregation query instead of N+1 queries
             assert len(result) == 2
@@ -442,27 +544,41 @@ class TestBulkOperations:
 
         mock_pipeline = [
             {"$match": {"file_id": {"$in": file_ids}}},
-            {"$lookup": {
-                "from": "images",
-                "localField": "file_id",
-                "foreignField": "file_id",
-                "as": "images"
-            }}
+            {
+                "$lookup": {
+                    "from": "images",
+                    "localField": "file_id",
+                    "foreignField": "file_id",
+                    "as": "images",
+                }
+            },
         ]
 
         mock_cursor = Mock()
-        mock_cursor.to_list = AsyncMock(return_value=[
-            {"file_id": "file_1", "file_name": "test1.pdf", "images": [{"image_id": "img_1"}]},
-            {"file_id": "file_2", "file_name": "test2.pdf", "images": [{"image_id": "img_2"}]}
-        ])
+        mock_cursor.to_list = AsyncMock(
+            return_value=[
+                {
+                    "file_id": "file_1",
+                    "file_name": "test1.pdf",
+                    "images": [{"image_id": "img_1"}],
+                },
+                {
+                    "file_id": "file_2",
+                    "file_name": "test2.pdf",
+                    "images": [{"image_id": "img_2"}],
+                },
+            ]
+        )
 
-        with patch.object(mock_db.db.files, 'aggregate', new=Mock(return_value=mock_cursor)) as mock_aggregate:
-            result = await mock_cursor.to_list(length=100)
+        with patch.object(
+            mock_db.db.files, "aggregate", new=Mock(return_value=mock_cursor)
+        ) as mock_aggregate:
+            result = await mock_db.db.files.aggregate(mock_pipeline).to_list(length=100)
 
             # Single aggregation with lookup instead of N queries
             assert len(result) == 2
             assert all("images" in file for file in result)
-            mock_aggregate.assert_called_once()
+            mock_aggregate.assert_called_once_with(mock_pipeline)
 
 
 class TestTransactionHandling:
@@ -481,7 +597,7 @@ class TestTransactionHandling:
     @pytest.mark.asyncio
     async def test_transaction_commit_on_success(self, mock_db):
         """Test that transaction commits on successful operations"""
-        with patch.object(mock_db.client, 'start_session') as mock_session:
+        with patch.object(mock_db.client, "start_session") as mock_session:
             session = MagicMock()
             mock_session.return_value.__aenter__ = AsyncMock(return_value=session)
             mock_session.return_value.__aexit__ = AsyncMock()
@@ -506,7 +622,7 @@ class TestTransactionHandling:
     @pytest.mark.asyncio
     async def test_transaction_rollback_on_error(self, mock_db):
         """Test that transaction rolls back on error"""
-        with patch.object(mock_db.client, 'start_session') as mock_session:
+        with patch.object(mock_db.client, "start_session") as mock_session:
             session = MagicMock()
             mock_session.return_value.__aenter__ = AsyncMock(return_value=session)
             mock_session.return_value.__aexit__ = AsyncMock()
@@ -542,12 +658,18 @@ class TestIndexOptimization:
     @pytest.mark.asyncio
     async def test_create_indexes(self, mock_db):
         """Test that indexes are created correctly"""
-        with patch.object(mock_db.db.conversations, 'create_index', new=AsyncMock()) as mock_create_index:
+        with patch.object(
+            mock_db.db.conversations, "create_index", new=AsyncMock()
+        ) as mock_create_index:
             # Create index on conversation_id
-            await mock_db.db.conversations.create_index([("conversation_id", 1)], unique=True)
+            await mock_db.db.conversations.create_index(
+                [("conversation_id", 1)], unique=True
+            )
 
             # Create compound index on username and last_modify_at
-            await mock_db.db.conversations.create_index([("username", 1), ("last_modify_at", -1)])
+            await mock_db.db.conversations.create_index(
+                [("username", 1), ("last_modify_at", -1)]
+            )
 
             assert mock_create_index.call_count == 2
 
@@ -555,7 +677,9 @@ class TestIndexOptimization:
     async def test_query_uses_index(self, mock_db):
         """Test that queries use indexed fields"""
         # Query using indexed field conversation_id
-        with patch.object(mock_db.db.conversations, 'find_one', new=AsyncMock()) as mock_find:
+        with patch.object(
+            mock_db.db.conversations, "find_one", new=AsyncMock()
+        ) as mock_find:
             await mock_db.db.conversations.find_one({"conversation_id": "conv_123"})
 
             # Verify query uses indexed field
@@ -564,10 +688,17 @@ class TestIndexOptimization:
 
         # Query using compound index (username, last_modify_at)
         mock_cursor = Mock()
+        mock_cursor.sort = Mock(return_value=mock_cursor)
         mock_cursor.to_list = AsyncMock(return_value=[])
 
-        with patch.object(mock_db.db.conversations, 'find', new=Mock(return_value=mock_cursor)) as mock_find:
-            await mock_db.db.conversations.find({"username": "testuser"}).sort("last_modify_at", -1).to_list(100)
+        with patch.object(
+            mock_db.db.conversations, "find", new=Mock(return_value=mock_cursor)
+        ) as mock_find:
+            await (
+                mock_db.db.conversations.find({"username": "testuser"})
+                .sort("last_modify_at", -1)
+                .to_list(100)
+            )
 
             # Verify query and sort use indexed fields
             call_args = mock_find.call_args[0][0]
@@ -586,14 +717,14 @@ class TestConnectionManagement:
     @pytest.mark.asyncio
     async def test_connect_to_database(self, mock_db):
         """Test connecting to MongoDB"""
-        with patch('motor.motor_asyncio.AsyncIOMotorClient') as mock_client:
+        with patch("motor.motor_asyncio.AsyncIOMotorClient") as mock_client:
             mock_client_instance = MagicMock()
             mock_client.return_value = mock_client_instance
 
             mock_db.client = mock_client_instance
             mock_db.db = mock_client_instance["layra_db"]
 
-            with patch.object(mock_db, '_create_indexes', new=AsyncMock()):
+            with patch.object(mock_db, "_create_indexes", new=AsyncMock()):
                 await mock_db.connect()
 
             assert mock_db.client is not None

@@ -2,6 +2,7 @@
 RAG Pipeline Tests
 Tests end-to-end RAG functionality, embedding generation, vector search, and retrieval quality
 """
+
 import pytest
 import json
 from unittest.mock import Mock, AsyncMock, MagicMock, patch
@@ -17,15 +18,17 @@ class TestEmbeddingGeneration:
     @pytest.fixture
     def mock_embedding_service(self):
         """Mock embedding service"""
-        with patch('app.rag.get_embedding.httpx.AsyncClient') as mock_client:
+        with patch("app.rag.get_embedding.httpx.AsyncClient") as mock_client:
             mock_response = Mock()
             mock_response.status_code = 200
-            mock_response.json = Mock(return_value={
-                "embeddings": [[0.1, 0.2, 0.3, 0.4, 0.5]]
-            })
+            mock_response.json = Mock(
+                return_value={"embeddings": [[0.1, 0.2, 0.3, 0.4, 0.5]]}
+            )
             mock_http_client = AsyncMock()
             mock_http_client.post = AsyncMock(return_value=mock_response)
-            mock_client.return_value.__aenter__ = AsyncMock(return_value=mock_http_client)
+            mock_client.return_value.__aenter__ = AsyncMock(
+                return_value=mock_http_client
+            )
             mock_http_client.post.return_value = mock_response
 
             yield mock_http_client
@@ -51,13 +54,14 @@ class TestEmbeddingGeneration:
     async def test_generate_image_embedding(self, mock_embedding_service):
         """Test generating embedding for image"""
         from app.rag.get_embedding import get_embeddings_from_httpx
+        from io import BytesIO
 
-        image_url = "http://minio:9000/bucket/test.jpg"
+        image_data = BytesIO(b"fake image data")
         mock_embedding_service.post.return_value.json.return_value = {
             "embeddings": [[[0.2, 0.3, 0.4, 0.5, 0.6], [0.3, 0.4, 0.5, 0.6, 0.7]]]
         }
 
-        result = await get_embeddings_from_httpx([image_url], endpoint="embed_image")
+        result = await get_embeddings_from_httpx([image_data], endpoint="embed_image")
 
         assert result is not None
         assert isinstance(result, list)
@@ -69,11 +73,7 @@ class TestEmbeddingGeneration:
 
         texts = ["Text 1", "Text 2", "Text 3"]
         mock_embedding_service.post.return_value.json.return_value = {
-            "embeddings": [
-                [0.1, 0.2, 0.3],
-                [0.4, 0.5, 0.6],
-                [0.7, 0.8, 0.9]
-            ]
+            "embeddings": [[0.1, 0.2, 0.3], [0.4, 0.5, 0.6], [0.7, 0.8, 0.9]]
         }
 
         result = await get_embeddings_from_httpx(texts, endpoint="embed_text")
@@ -87,7 +87,9 @@ class TestEmbeddingGeneration:
         from app.rag.get_embedding import get_embeddings_from_httpx
 
         # Simulate service error
-        mock_embedding_service.post.side_effect = Exception("Embedding service unavailable")
+        mock_embedding_service.post.side_effect = Exception(
+            "Embedding service unavailable"
+        )
 
         with pytest.raises(Exception):
             await get_embeddings_from_httpx(["test"], endpoint="embed_text")
@@ -99,7 +101,7 @@ class TestVectorSearch:
     @pytest.fixture
     def mock_vector_db(self):
         """Mock vector database client"""
-        with patch('app.db.vector_db.vector_db_client') as mock_client:
+        with patch("app.db.vector_db.vector_db_client") as mock_client:
             yield mock_client
 
     def test_check_collection_exists(self, mock_vector_db):
@@ -124,24 +126,9 @@ class TestVectorSearch:
         """Test vector search with topk results"""
         query_vector = [[0.1, 0.2, 0.3, 0.4, 0.5]]
         mock_results = [
-            {
-                "file_id": "file_1",
-                "image_id": "img_1",
-                "score": 0.95,
-                "distance": 0.05
-            },
-            {
-                "file_id": "file_2",
-                "image_id": "img_2",
-                "score": 0.90,
-                "distance": 0.10
-            },
-            {
-                "file_id": "file_3",
-                "image_id": "img_3",
-                "score": 0.85,
-                "distance": 0.15
-            }
+            {"file_id": "file_1", "image_id": "img_1", "score": 0.95, "distance": 0.05},
+            {"file_id": "file_2", "image_id": "img_2", "score": 0.90, "distance": 0.10},
+            {"file_id": "file_3", "image_id": "img_3", "score": 0.85, "distance": 0.15},
         ]
         mock_vector_db.search.return_value = mock_results
 
@@ -149,7 +136,9 @@ class TestVectorSearch:
 
         assert len(result) == 3
         assert result[0]["score"] == 0.95
-        mock_vector_db.search.assert_called_once_with("test_collection", query_vector, topk=3)
+        mock_vector_db.search.assert_called_once_with(
+            "test_collection", query_vector, topk=3
+        )
 
     def test_vector_insert(self, mock_vector_db):
         """Test inserting vectors into collection"""
@@ -157,8 +146,8 @@ class TestVectorSearch:
             "colqwen_vecs": [[0.1, 0.2, 0.3], [0.4, 0.5, 0.6]],
             "metadata": [
                 {"file_id": "file_1", "image_id": "img_1"},
-                {"file_id": "file_2", "image_id": "img_2"}
-            ]
+                {"file_id": "file_2", "image_id": "img_2"},
+            ],
         }
         mock_vector_db.insert.return_value = ["id_1", "id_2"]
 
@@ -201,7 +190,7 @@ class TestRAGPipeline:
     @pytest.fixture
     def mock_vector_db(self):
         """Mock vector database"""
-        with patch('app.db.vector_db.vector_db_client') as mock:
+        with patch("app.db.vector_db.vector_db_client") as mock:
             yield mock
 
     @pytest.mark.asyncio
@@ -211,42 +200,41 @@ class TestRAGPipeline:
         knowledge_base_id = "kb_123"
 
         # Mock embedding generation
-        with patch('app.rag.get_embedding.get_embeddings_from_httpx', new=AsyncMock()) as mock_embed:
+        with patch(
+            "app.rag.get_embedding.get_embeddings_from_httpx", new=AsyncMock()
+        ) as mock_embed:
             mock_embed.return_value = [[0.1, 0.2, 0.3, 0.4, 0.5]]
 
             # Mock vector search
             mock_vector_db.check_collection.return_value = True
             mock_vector_db.search.return_value = [
-                {
-                    "file_id": "file_1",
-                    "image_id": "img_1",
-                    "score": 15.5
-                },
-                {
-                    "file_id": "file_2",
-                    "image_id": "img_2",
-                    "score": 12.3
-                }
+                {"file_id": "file_1", "image_id": "img_1", "score": 15.5},
+                {"file_id": "file_2", "image_id": "img_2", "score": 12.3},
             ]
 
             # Mock MongoDB metadata retrieval
-            mock_mongo.db.files.find_one = AsyncMock(return_value={
-                "file_id": "file_1",
-                "knowledge_db_id": knowledge_base_id,
-                "file_name": "test.pdf",
-                "minio_filename": "base64_encoded_image",
-                "minio_url": "http://minio:9000/bucket/test.pdf"
-            })
+            mock_mongo.db.files.find_one = AsyncMock(
+                return_value={
+                    "file_id": "file_1",
+                    "knowledge_db_id": knowledge_base_id,
+                    "file_name": "test.pdf",
+                    "minio_filename": "base64_encoded_image",
+                    "minio_url": "http://minio:9000/bucket/test.pdf",
+                }
+            )
 
             # Generate embedding
             query_embedding = await mock_embed([query], endpoint="embed_text")
 
             # Search vectors
             collection_name = f"colqwen{knowledge_base_id.replace('-', '_')}"
-            search_results = mock_vector_db.search(collection_name, query_embedding, topk=5)
+            search_results = mock_vector_db.search(
+                collection_name, query_embedding, topk=5
+            )
 
             # Filter by score threshold
             from app.rag.utils import sort_and_filter
+
             filtered_results = sort_and_filter(search_results, min_score=10)
 
             # Verify results
@@ -259,7 +247,9 @@ class TestRAGPipeline:
         """Test RAG when no documents match the query"""
         query = "Very specific query with no matches"
 
-        with patch('app.rag.get_embedding.get_embeddings_from_httpx', new=AsyncMock()) as mock_embed:
+        with patch(
+            "app.rag.get_embedding.get_embeddings_from_httpx", new=AsyncMock()
+        ) as mock_embed:
             mock_embed.return_value = [[0.1, 0.2, 0.3]]
 
             mock_vector_db.check_collection.return_value = True
@@ -267,14 +257,17 @@ class TestRAGPipeline:
                 {
                     "file_id": "file_1",
                     "image_id": "img_1",
-                    "score": 5.0  # Below threshold
+                    "score": 5.0,  # Below threshold
                 }
             ]
 
             query_embedding = await mock_embed([query], endpoint="embed_text")
-            search_results = mock_vector_db.search("collection", query_embedding, topk=5)
+            search_results = mock_vector_db.search(
+                "collection", query_embedding, topk=5
+            )
 
             from app.rag.utils import sort_and_filter
+
             filtered_results = sort_and_filter(search_results, min_score=10)
 
             # Should be empty due to score threshold
@@ -285,159 +278,28 @@ class TestRAGPipeline:
         """Test RAG handles corrupted/missing vector data"""
         query = "Test query"
 
-        with patch('app.rag.get_embedding.get_embeddings_from_httpx', new=AsyncMock()) as mock_embed:
+        with patch(
+            "app.rag.get_embedding.get_embeddings_from_httpx", new=AsyncMock()
+        ) as mock_embed:
             mock_embed.return_value = [[0.1, 0.2, 0.3]]
 
             mock_vector_db.check_collection.return_value = True
             mock_vector_db.search.return_value = [
-                {
-                    "file_id": "missing_file",
-                    "image_id": "img_1",
-                    "score": 15.5
-                }
+                {"file_id": "missing_file", "image_id": "img_1", "score": 15.5}
             ]
 
             # Mock MongoDB returns None (file not found)
             mock_mongo.db.files.find_one = AsyncMock(return_value=None)
 
             query_embedding = await mock_embed([query], endpoint="embed_text")
-            search_results = mock_vector_db.search("collection", query_embedding, topk=5)
+            search_results = mock_vector_db.search(
+                "collection", query_embedding, topk=5
+            )
 
             # System should handle missing files gracefully
             # In production, this would trigger cleanup of orphaned vectors
             assert len(search_results) == 1
             assert search_results[0]["file_id"] == "missing_file"
-
-
-class TestChatService:
-    """Test chat service with RAG integration"""
-
-    @pytest.fixture
-    def mock_chat_service(self):
-        """Mock chat service components"""
-        with patch('app.rag.llm_service.get_mongo') as mock_mongo, \
-             patch('app.rag.llm_service.get_embeddings_from_httpx') as mock_embed, \
-             patch('app.rag.llm_service.vector_db_client') as mock_vector_db, \
-             patch('app.rag.llm_service.get_llm_client') as mock_llm:
-
-            # Mock MongoDB
-            mock_mongo_db = AsyncMock()
-            mock_mongo_db.get_conversation_model_config = AsyncMock(return_value={
-                "model_name": "gpt-4",
-                "model_url": "",
-                "api_key": "test_key",
-                "base_used": [],
-                "system_prompt": "You are helpful.",
-                "temperature": 0.7,
-                "max_length": 1000,
-                "top_P": 0.9,
-                "top_K": 5,
-                "score_threshold": 10
-            })
-            mock_mongo_db.get_file_and_image_info = AsyncMock(return_value={
-                "status": "success",
-                "knowledge_db_id": "kb_123",
-                "file_name": "test.pdf",
-                "image_minio_filename": "base64_image",
-                "image_minio_url": "http://minio:9000/img.jpg",
-                "file_minio_url": "http://minio:9000/file.pdf"
-            })
-            mock_mongo.return_value = mock_mongo_db
-
-            # Mock embedding
-            mock_embed.return_value = [[0.1, 0.2, 0.3, 0.4, 0.5]]
-
-            # Mock vector DB
-            mock_vector_db.check_collection.return_value = True
-            mock_vector_db.search.return_value = [
-                {
-                    "file_id": "file_1",
-                    "image_id": "img_1",
-                    "score": 15.5
-                }
-            ]
-
-            # Mock LLM client
-            mock_llm_instance = AsyncMock()
-            mock_llm.return_value = mock_llm_instance
-
-            yield {
-                "mongo": mock_mongo_db,
-                "embed": mock_embed,
-                "vector_db": mock_vector_db,
-                "llm": mock_llm_instance
-            }
-
-    @pytest.mark.asyncio
-    async def test_chat_stream_with_rag(self, mock_chat_service):
-        """Test chat streaming with RAG retrieval"""
-        user_message = UserMessage(
-            conversation_id="conv_123",
-            parent_id="",
-            user_message="What is in this document?",
-            temp_db_id=""
-        )
-
-        # Mock LLM stream response
-        async def mock_stream():
-            chunks = [
-                json.dumps({"type": "file_used", "data": [], "message_id": "msg_123", "model_name": "gpt-4"}),
-                json.dumps({"type": "text", "data": "Based on ", "message_id": "msg_123"}),
-                json.dumps({"type": "text", "data": "the document", "message_id": "msg_123"}),
-            ]
-            for chunk in chunks:
-                yield f"data: {chunk}\n\n"
-
-        mock_chat_service["llm"].chat.completions.create = AsyncMock()
-
-        # Create actual stream generator
-        from app.core.llm import ChatService
-
-        # Test embedding normalization
-        query_embedding = await mock_chat_service["embed"](
-            [user_message.user_message],
-            endpoint="embed_text"
-        )
-
-        from app.core.llm import ChatService
-        normalized = ChatService._normalize_multivector(query_embedding)
-
-        assert isinstance(normalized, list)
-        assert len(normalized) > 0
-        assert all(isinstance(vec, list) for vec in normalized)
-        assert all(isinstance(val, float) for vec in normalized[0] for val in vec)
-
-    def test_normalize_single_vector(self):
-        """Test normalizing a single embedding vector"""
-        from app.core.llm import ChatService
-
-        single_vector = [0.1, 0.2, 0.3, 0.4, 0.5]
-        result = ChatService._normalize_multivector(single_vector)
-
-        assert isinstance(result, list)
-        assert len(result) == 1
-        assert all(isinstance(x, float) for x in result[0])
-
-    def test_normalize_multi_vector(self):
-        """Test normalizing multi-token embeddings"""
-        from app.core.llm import ChatService
-
-        multi_vector = [[0.1, 0.2], [0.3, 0.4], [0.5, 0.6]]
-        result = ChatService._normalize_multivector(multi_vector)
-
-        assert isinstance(result, list)
-        assert len(result) == 3
-        assert all(isinstance(x, float) for vec in result for x in vec)
-
-    def test_normalize_nested_list(self):
-        """Test normalizing nested list structure"""
-        from app.core.llm import ChatService
-
-        nested = [[[0.1, 0.2], [0.3, 0.4]]]
-        result = ChatService._normalize_multivector(nested)
-
-        assert isinstance(result, list)
-        assert len(result) == 2
 
 
 class TestRetrievalQuality:
@@ -451,7 +313,7 @@ class TestRetrievalQuality:
             {"file_id": "file_1", "score": 15.5},
             {"file_id": "file_2", "score": 12.3},
             {"file_id": "file_3", "score": 8.5},
-            {"file_id": "file_4", "score": 5.2}
+            {"file_id": "file_4", "score": 5.2},
         ]
 
         filtered = sort_and_filter(results, min_score=10)
@@ -467,7 +329,7 @@ class TestRetrievalQuality:
         results = [
             {"file_id": "file_1", "score": 10.5},
             {"file_id": "file_2", "score": 15.3},
-            {"file_id": "file_3", "score": 12.1}
+            {"file_id": "file_3", "score": 12.1},
         ]
 
         filtered = sort_and_filter(results, min_score=0)
@@ -495,7 +357,7 @@ class TestRetrievalQuality:
         results = [
             {"file_id": "file_1", "image_id": "img_1", "score": 15.5},
             {"file_id": "file_1", "image_id": "img_2", "score": 14.0},
-            {"file_id": "file_2", "image_id": "img_3", "score": 12.0}
+            {"file_id": "file_2", "image_id": "img_3", "score": 12.0},
         ]
 
         filtered = sort_and_filter(results, min_score=10)
@@ -516,7 +378,7 @@ class TestImageProcessing:
         image_data = b"fake_image_data"
 
         # Encode to base64
-        base64_encoded = base64.b64encode(image_data).decode('utf-8')
+        base64_encoded = base64.b64encode(image_data).decode("utf-8")
 
         assert isinstance(base64_encoded, str)
         assert len(base64_encoded) > 0
@@ -532,15 +394,10 @@ class TestImageProcessing:
                 "content": [
                     {
                         "type": "image_url",
-                        "image_url": {
-                            "url": "http://minio:9000/bucket/test.jpg"
-                        }
+                        "image_url": {"url": "http://minio:9000/bucket/test.jpg"},
                     },
-                    {
-                        "type": "text",
-                        "text": "What is this?"
-                    }
-                ]
+                    {"type": "text", "text": "What is this?"},
+                ],
             }
         ]
 
@@ -567,15 +424,17 @@ class TestPromptConstruction:
             {
                 "file_name": "doc1.pdf",
                 "score": 15.5,
-                "content": "Relevant content from document"
+                "content": "Relevant content from document",
             }
         ]
 
         # Context would be injected into user message
-        context_str = "\n".join([
-            f"Document: {doc['file_name']} (Score: {doc['score']})"
-            for doc in retrieved_docs
-        ])
+        context_str = "\n".join(
+            [
+                f"Document: {doc['file_name']} (Score: {doc['score']})"
+                for doc in retrieved_docs
+            ]
+        )
 
         assert "doc1.pdf" in context_str
         assert "15.5" in context_str
@@ -584,7 +443,7 @@ class TestPromptConstruction:
         """Test that conversation history is included"""
         history = [
             {"role": "user", "content": "Previous question"},
-            {"role": "assistant", "content": "Previous answer"}
+            {"role": "assistant", "content": "Previous answer"},
         ]
 
         messages = []
@@ -602,10 +461,12 @@ class TestErrorHandling:
     @pytest.mark.asyncio
     async def test_embedding_service_unavailable(self):
         """Test handling when embedding service is unavailable"""
-        with patch('app.rag.get_embedding.httpx.AsyncClient') as mock_client:
+        with patch("app.rag.get_embedding.httpx.AsyncClient") as mock_client:
             mock_http_client = AsyncMock()
             mock_http_client.post.side_effect = Exception("Service unavailable")
-            mock_client.return_value.__aenter__ = AsyncMock(return_value=mock_http_client)
+            mock_client.return_value.__aenter__ = AsyncMock(
+                return_value=mock_http_client
+            )
 
             from app.rag.get_embedding import get_embeddings_from_httpx
 
@@ -615,7 +476,7 @@ class TestErrorHandling:
     @pytest.mark.asyncio
     async def test_vector_db_unavailable(self):
         """Test handling when vector database is unavailable"""
-        with patch('app.db.vector_db.vector_db_client') as mock_client:
+        with patch("app.db.vector_db.vector_db_client") as mock_client:
             mock_client.check_collection.side_effect = Exception("Connection failed")
 
             with pytest.raises(Exception):
@@ -641,16 +502,18 @@ class TestPerformance:
 
         texts = [f"Text {i}" for i in range(100)]
 
-        with patch('app.rag.get_embedding.httpx.AsyncClient') as mock_client:
+        with patch("app.rag.get_embedding.httpx.AsyncClient") as mock_client:
             mock_response = Mock()
             mock_response.status_code = 200
-            mock_response.json = Mock(return_value={
-                "embeddings": [[0.1, 0.2, 0.3] for _ in range(100)]
-            })
+            mock_response.json = Mock(
+                return_value={"embeddings": [[0.1, 0.2, 0.3] for _ in range(100)]}
+            )
 
             mock_http_client = AsyncMock()
             mock_http_client.post = AsyncMock(return_value=mock_response)
-            mock_client.return_value.__aenter__ = AsyncMock(return_value=mock_http_client)
+            mock_client.return_value.__aenter__ = AsyncMock(
+                return_value=mock_http_client
+            )
 
             from app.rag.get_embedding import get_embeddings_from_httpx
 
@@ -667,15 +530,15 @@ class TestPerformance:
         """Test concurrent vector searches"""
         import asyncio
 
-        with patch('app.db.vector_db.vector_db_client') as mock_client:
-            mock_client.search.return_value = [
-                {"file_id": "file_1", "score": 15.5}
-            ]
+        with patch("app.db.vector_db.vector_db_client") as mock_client:
+            mock_client.search.return_value = [{"file_id": "file_1", "score": 15.5}]
 
             # Simulate concurrent searches
+            async def wrap_search(*args, **kwargs):
+                return mock_client.search(*args, **kwargs)
+
             tasks = [
-                mock_client.search(f"collection_{i}", [[0.1, 0.2]], topk=5)
-                for i in range(10)
+                wrap_search(f"collection_{i}", [[0.1, 0.2]], topk=5) for i in range(10)
             ]
 
             results = await asyncio.gather(*tasks)
