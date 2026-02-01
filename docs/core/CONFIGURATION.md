@@ -415,22 +415,6 @@ cp .env.example .env
 
 ---
 
-### Neo4j Configuration (Future - Removed in v2.0.0)
-
-**Status**: Removed from thesis deployment (2026-01-25)
-**Reason**: Unused knowledge graph feature, saves 500MB RAM
-**Migration**: No data migration needed (feature was unused)
-**Future**: May re-add for graph RAG features in Q2 2026
-
-Legacy variables (kept in .env.example for reference):
-```
-NEO4J_URI=bolt://neo4j:7687
-NEO4J_USER=neo4j
-NEO4J_PASSWORD=your_secure_neo4j_password_here
-```
-
----
-
 ### Circuit Breaker Configuration
 
 **Purpose**: Prevents cascading failures when external services are unavailable

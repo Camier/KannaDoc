@@ -16,7 +16,6 @@ LAYRA uses **6 databases** optimized for different data access patterns:
 | **Milvus** | Vector | Embeddings for semantic search | pymilvus |
 | **Redis** | Cache/KV | Sessions, task progress | redis-py async |
 | **MinIO** | Object Storage | Files, documents, images | aioboto3 |
-| **Neo4j** | Graph | Entity relationships, knowledge graph | neomodel |
 
 ---
 
@@ -465,44 +464,6 @@ base64_data = await async_minio_manager.download_image_and_convert_to_base64(
     "images/img_file1_001.png"
 )
 ```
-
----
-
-## Neo4j Graph Database
-
-**Purpose**: Entity relationships, knowledge graph (Q2 2026)  
-**Connection**: `bolt://neo4j:7687`  
-**Username**: `neo4j`  
-**Password**: Configured in `.env`  
-
-### Graph Schema (Future)
-
-```cypher
-// Users
-CREATE (u:User {
-  username: "john_doe",
-  email: "john@example.com"
-})
-
-// Documents
-CREATE (d:Document {
-  file_id: "file_1",
-  filename: "project_scope.pdf"
-})
-
-// Entities (from document extraction)
-CREATE (e:Entity {
-  name: "Project Q",
-  type: "PROJECT"
-})
-
-// Relationships
-CREATE (u)-[:OWNS]->(d)
-CREATE (d)-[:CONTAINS]->(e)
-CREATE (e)-[:RELATED_TO]->(e2)
-```
-
-**Note**: Neo4j integration is configured but not actively used until Q2 2026.
 
 ---
 
