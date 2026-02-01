@@ -28,6 +28,7 @@ from app.db.repositories import (
 # Database Mock Fixtures
 # ==============================================================================
 
+
 @pytest.fixture
 def mock_db() -> AsyncMock:
     """
@@ -89,28 +90,6 @@ def mock_collection():
 # Repository Factory Fixtures
 # ==============================================================================
 
-# NOTE: Commented out - depends on factory.py which doesn't exist
-# @pytest.fixture
-# def repository_factory(mock_db: AsyncMock) -> RepositoryFactory:
-#     """
-#     Create a RepositoryFactory with a mocked database.
-#
-#     This is the primary fixture for testing repositories in isolation.
-#
-#     Args:
-#         mock_db: Mock database from fixture
-#
-#     Returns:
-#         RepositoryFactory: Factory instance with mocked DB
-#
-#     Example:
-#         def test_conversation_repository(repository_factory):
-#             repo = repository_factory.conversation()
-#             result = await repo.get_conversation("conv_123")
-#             assert result is not None
-#     """
-#     return RepositoryFactory(db=mock_db)
-
 
 @pytest.fixture
 def conversation_repo(mock_db: AsyncMock) -> ConversationRepository:
@@ -153,6 +132,7 @@ def file_repo(mock_db: AsyncMock) -> FileRepository:
 # ==============================================================================
 # Sample Data Fixtures
 # ==============================================================================
+
 
 @pytest.fixture
 def sample_conversation() -> Dict[str, Any]:
@@ -272,6 +252,7 @@ def sample_model_config() -> Dict[str, Any]:
 # FastAPI Test Client Fixtures
 # ==============================================================================
 
+
 @pytest.fixture
 def override_get_db(mock_db: AsyncMock):
     """
@@ -307,44 +288,10 @@ def override_get_db(mock_db: AsyncMock):
     # get_database = original
 
 
-# NOTE: Commented out - depends on factory.py which doesn't exist
-# @pytest.fixture
-# def override_get_factory(repository_factory: RepositoryFactory):
-#     """
-#     Override the get_factory dependency for testing FastAPI endpoints.
-#
-#     Similar to override_get_db but provides the full factory.
-#
-#     Args:
-#         repository_factory: Factory with mocked DB
-#
-#     Yields:
-#         None (applies override, then cleans up)
-#
-#     Example:
-#         def test_create_conversation_endpoint(override_get_factory, client):
-#             response = await client.post(
-#                 "/api/v1/conversations",
-#                 json={...}
-#             )
-#             assert response.status_code == 201
-#     """
-#     from app.db.repositories.factory import get_factory
-#
-#     async def override_get_factory():
-#         return repository_factory
-#
-#     original = get_factory
-#     get_factory = override_get_factory
-#
-#     yield
-#
-#     get_factory = original
-
-
 # ==============================================================================
 # Integration Test Fixtures (Optional - for real DB testing)
 # ==============================================================================
+
 
 @pytest.fixture(scope="session")
 def real_db_connection():

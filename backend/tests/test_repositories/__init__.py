@@ -9,7 +9,6 @@ from .fixtures import (
     mock_db,
     mock_collection,
     # Repository fixtures
-    repository_factory,
     conversation_repo,
     knowledge_base_repo,
     file_repo,
@@ -20,7 +19,6 @@ from .fixtures import (
     sample_model_config,
     # FastAPI overrides
     override_get_db,
-    override_get_factory,
     # Integration test fixtures
     real_db_connection,
     clean_test_db,
@@ -29,7 +27,6 @@ from .fixtures import (
 __all__ = [
     "mock_db",
     "mock_collection",
-    "repository_factory",
     "conversation_repo",
     "knowledge_base_repo",
     "file_repo",
@@ -38,7 +35,6 @@ __all__ = [
     "sample_file",
     "sample_model_config",
     "override_get_db",
-    "override_get_factory",
     "real_db_connection",
     "clean_test_db",
 ]

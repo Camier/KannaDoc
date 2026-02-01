@@ -5,88 +5,16 @@ Tests concurrent operations, caching, and performance benchmarks
 NOTE: Tests requiring UserRepository have been commented out as UserRepository
 does not exist in the current codebase. User management is handled differently.
 """
+
 import pytest
 import asyncio
 import time
 from unittest.mock import Mock, AsyncMock, MagicMock, patch
 from app.workflow.workflow_engine import WorkflowEngine
-from app.core.redis import redis
 
 
 class TestConcurrencyPerformance:
     """Test concurrent database operations"""
-
-    # NOTE: Commented out - UserRepository does not exist
-    # @pytest.mark.asyncio
-    # async def test_concurrent_user_operations(self, db):
-    #     """Test concurrent user creation and retrieval"""
-    #     from app.db.repositories import UserRepository
-    #     from app.models.user import UserCreate
-    #
-    #     user_repo = UserRepository(db)
-    #
-    #     async def create_user(index):
-    #         user_data = UserCreate(
-    #             username=f"perf_test_user_{index}",
-    #             email=f"perf_test_{index}@example.com",
-    #             password="password123",
-    #             role="user"
-    #         )
-    #         return await user_repo.create_user(user_data)
-    #
-    #     # Create 10 users concurrently
-    #     start_time = time.time()
-    #     tasks = [create_user(i) for i in range(10)]
-    #     results = await asyncio.gather(*tasks, return_exceptions=True)
-    #     elapsed_time = time.time() - start_time
-    #
-    #     # Verify all users were created
-    #     successful_creates = [r for r in results if not isinstance(r, Exception)]
-    #     assert len(successful_creates) >= 8  # Allow for some failures
-    #     assert elapsed_time < 5.0  # Should complete within 5 seconds
-
-    # NOTE: Commented out - requires UserRepository which does not exist
-    # @pytest.mark.asyncio
-    # async def test_concurrent_kb_operations(self, db):
-    #     """Test concurrent knowledge base operations"""
-    #     from app.db.repositories import KnowledgeBaseRepository
-    #     from app.models.knowledge_base import KnowledgeBaseCreate
-    #     from app.models.user import User
-    #
-    #     # First create a user
-    #     user_repo = UserRepository(db)
-    #     user_data = {
-    #         "username": "perf_kb_user",
-    #         "email": "perf_kb@example.com",
-    #         "hashed_password": "hashed",
-    #         "role": "user"
-    #     }
-    #     user = User(**user_data)
-    #     db.add(user)
-    #     await db.commit()
-    #     await db.refresh(user)
-    #
-    #     kb_repo = KnowledgeBaseRepository(db)
-    #
-    #     async def create_kb(index):
-    #         kb_data = KnowledgeBaseCreate(
-    #             name=f"Performance Test KB {index}",
-    #             description="Test KB for performance testing",
-    #             user_id=user.id,
-    #             chunk_size=512,
-    #             chunk_overlap=50
-    #         )
-    #         return await kb_repo.create_knowledge_base(kb_data)
-    #
-    #     # Create 5 knowledge bases concurrently
-    #     start_time = time.time()
-    #     tasks = [create_kb(i) for i in range(5)]
-    #     results = await asyncio.gather(*tasks, return_exceptions=True)
-    #     elapsed_time = time.time() - start_time
-    #
-    #     successful_creates = [r for r in results if not isinstance(r, Exception)]
-    #     assert len(successful_creates) >= 4  # Allow for some failures
-    #     assert elapsed_time < 3.0  # Should complete within 3 seconds
 
 
 class TestCachePerformance:
@@ -101,7 +29,7 @@ class TestCachePerformance:
         mock_redis.set = AsyncMock()
         mock_redis.expire = AsyncMock()
 
-        with patch('app.db.redis.redis.get_task_connection', return_value=mock_redis):
+        with patch("app.db.redis.redis.get_task_connection", return_value=mock_redis):
             # First call - cache miss
             start_time = time.time()
             await mock_redis.get("test_key")
@@ -160,27 +88,22 @@ class TestWorkflowPerformance:
             {
                 "id": "node_code_1",
                 "type": "code",
-                "data": {
-                    "name": "Simple Code",
-                    "code": "result = 1 + 1"
-                }
-            }
+                "data": {"name": "Simple Code", "code": "result = 1 + 1"},
+            },
         ]
-        edges = [
-            {"source": "node_start", "target": "node_code_1"}
-        ]
+        edges = [{"source": "node_start", "target": "node_code_1"}]
 
         # Mock the workflow engine dependencies
-        with patch('app.workflow.workflow_engine.CodeSandbox'):
-            with patch('app.workflow.workflow_engine.ChatService'):
-                with patch('app.db.redis.redis.get_task_connection'):
+        with patch("app.workflow.workflow_engine.CodeSandbox"):
+            with patch("app.workflow.workflow_engine.ChatService"):
+                with patch("app.db.redis.redis.get_task_connection"):
                     engine = WorkflowEngine(
                         username="test_user",
                         nodes=nodes,
                         edges=edges,
                         global_variables={},
                         task_id="test_task",
-                        user_message="test"
+                        user_message="test",
                     )
 
                     # Verify graph creation is fast
@@ -201,23 +124,21 @@ class TestWorkflowPerformance:
                 "type": "code",
                 "data": {
                     "name": "Code Node",
-                    "code": "result = 'x' * 1000"  # Create large output
-                }
-            }
+                    "code": "result = 'x' * 1000",  # Create large output
+                },
+            },
         ]
-        edges = [
-            {"source": "node_start", "target": "node_code_1"}
-        ]
+        edges = [{"source": "node_start", "target": "node_code_1"}]
 
-        with patch('app.workflow.workflow_engine.CodeSandbox'):
-            with patch('app.workflow.workflow_engine.ChatService'):
-                with patch('app.db.redis.redis.get_task_connection'):
+        with patch("app.workflow.workflow_engine.CodeSandbox"):
+            with patch("app.workflow.workflow_engine.ChatService"):
+                with patch("app.db.redis.redis.get_task_connection"):
                     engine = WorkflowEngine(
                         username="test_user",
                         nodes=nodes,
                         edges=edges,
                         global_variables={},
-                        task_id="test_task"
+                        task_id="test_task",
                     )
 
                     # Simulate adding context
@@ -229,73 +150,13 @@ class TestWorkflowPerformance:
                     assert len(engine.context) == 10
 
 
-# NOTE: Commented out - TestDatabasePerformance requires UserRepository which does not exist
-# class TestDatabasePerformance:
-#     """Test database query performance"""
-#
-#     @pytest.mark.asyncio
-#     async def test_query_optimization(self, db):
-#         """Test that queries use indexes effectively"""
-#         from app.db.repositories import UserRepository
-#
-#         user_repo = UserRepository(db)
-#
-#         # Create test users
-#         for i in range(5):
-#             user_data = {
-#                 "username": f"query_test_{i}",
-#                 "email": f"query_test_{i}@example.com",
-#                 "hashed_password": "hashed",
-#                 "role": "user"
-#             }
-#             from app.models.user import User
-#             user = User(**user_data)
-#             db.add(user)
-#         await db.commit()
-#
-#         # Query by indexed field should be fast
-#         start_time = time.time()
-#         user = await user_repo.get_user_by_username("query_test_0")
-#         elapsed = time.time() - start_time
-#
-#         assert user is not None
-#         assert elapsed < 1.0  # Should be fast with proper indexing
-#
-#     @pytest.mark.asyncio
-#     async def test_batch_operations(self, db):
-#         """Test batch operations are faster than individual ones"""
-#         from app.models.user import User
-#
-#         # Batch insert
-#         start_time = time.time()
-#         for i in range(10):
-#             user = User(
-#                 username=f"batch_test_{i}",
-#                 email=f"batch_{i}@example.com",
-#                 hashed_password="hashed",
-#                 role="user"
-#             )
-#             db.add(user)
-#         await db.commit()
-#         batch_time = time.time() - start_time
-#
-#         # Verify all users were created
-#         from app.db.repositories import UserRepository
-#         user_repo = UserRepository(db)
-#         user = await user_repo.get_user_by_username("batch_test_5")
-#         assert user is not None
-#
-#         # Batch operation should complete reasonably fast
-#         assert batch_time < 2.0
-
-
 class TestAPIPerformance:
     """Test API endpoint performance"""
 
     @pytest.mark.asyncio
     async def test_health_check_performance(self, client):
         """Test health check endpoint is fast"""
-        response = await client.get("/health")
+        response = await client.get("/api/v1/health/check")
         assert response.status_code == 200
 
         # Health check should be very fast
@@ -304,8 +165,9 @@ class TestAPIPerformance:
     @pytest.mark.asyncio
     async def test_concurrent_api_requests(self, client):
         """Test API can handle concurrent requests"""
+
         async def make_request():
-            return await client.get("/health")
+            return await client.get("/api/v1/health/check")
 
         # Make 10 concurrent requests
         tasks = [make_request() for _ in range(10)]
@@ -313,48 +175,3 @@ class TestAPIPerformance:
 
         # All should succeed
         assert all(r.status_code == 200 for r in responses)
-
-
-# NOTE: Commented out - TestPerformanceBenchmarks requires UserRepository which does not exist
-# @pytest.mark.performance
-# class TestPerformanceBenchmarks:
-#     """Performance benchmarks with specific thresholds"""
-#
-#     @pytest.mark.asyncio
-#     async def test_user_retrieval_benchmark(self, db):
-#         """Benchmark user retrieval performance"""
-#         from app.db.repositories import UserRepository
-#         from app.models.user import User
-#
-#         # Setup
-#         user_repo = UserRepository(db)
-#         user = User(
-#             username="bench_user",
-#             email="bench@example.com",
-#             hashed_password="hashed",
-#             role="user"
-#         )
-#         db.add(user)
-#         await db.commit()
-#         await db.refresh(user)
-#
-#         # Benchmark
-#         start_time = time.time()
-#         retrieved_user = await user_repo.get_user_by_id(user.id)
-#         elapsed = time.time() - start_time
-#
-#         assert retrieved_user is not None
-#         assert elapsed < 0.5  # Should retrieve within 500ms
-#
-#     @pytest.mark.asyncio
-#     async def test_redis_connection_benchmark(self):
-#         """Benchmark Redis connection performance"""
-#         mock_redis = AsyncMock()
-#         mock_redis.ping = AsyncMock(return_value=True)
-#
-#         with patch('app.db.redis.redis.get_task_connection', return_value=mock_redis):
-#             start_time = time.time()
-#             await mock_redis.ping()
-#             elapsed = time.time() - start_time
-#
-#             assert elapsed < 0.5  # Should ping within 500ms
