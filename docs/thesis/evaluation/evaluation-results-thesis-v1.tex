@@ -1,0 +1,88 @@
+\section{Retrieval Evaluation Results: thesis-v1}
+
+\subsection{Metadata}
+\begin{itemize}
+  \item \textbf{Dataset}: thesis-v1
+  \item \textbf{Queries}: 50
+  \item \textbf{Corpus}: 218 documents
+  \item \textbf{Evaluation Date}: 2026-02-01
+  \item \textbf{Configuration}: top\_k = 5
+\end{itemize}
+
+\subsection{Executive Summary}
+\begin{itemize}
+  \item \textbf{Exceptional Top-1 Retrieval}: MRR = 0.99 demonstrates consistent identification of the primary relevant document as the first result.
+  \item \textbf{Strong Ranking Precision}: NDCG@5 = 0.98 and Precision@5 = 0.96 indicate excellent alignment between retrieved results and ground‑truth relevance labels.
+  \item \textbf{Limited Coverage at Low K}: Recall@5 = 0.52 suggests that top\_k = 5 captures roughly half of the relevant documents, indicating a trade‑off between precision and breadth.
+  \item \textbf{System Readiness}: Results validate the current embedding and indexing strategy for high‑accuracy retrieval within the thesis corpus.
+\end{itemize}
+
+\subsection{Methodology}
+\subsubsection{Dataset Creation}
+The evaluation utilized the \texttt{thesis‑v1} dataset comprising 50 synthetic queries targeting specific technical aspects of the corpus. Relevance labels were generated using an LLM‑based automated labeling process, where document segments were scored against queries on a multi‑point scale to establish a robust ground‑truth for ranking evaluation.
+
+\subsubsection{Retrieval Configuration}
+\begin{itemize}
+  \item \textbf{Top‑K}: 5
+  \item \textbf{Embedding Model}: Default project‑specific transformer model
+  \item \textbf{Vector Database}: Milvus
+  \item \textbf{Distance Metric}: Inner Product (IP)
+\end{itemize}
+
+\subsubsection{Metrics}
+The following Information Retrieval (IR) metrics were employed:
+\begin{itemize}
+  \item \textbf{MRR (Mean Reciprocal Rank)}: Measures how early the first relevant document appears.
+  \item \textbf{NDCG@K (Normalized Discounted Cumulative Gain)}: Evaluates ranking quality based on graded relevance.
+  \item \textbf{Precision@K}: Proportion of retrieved documents that are relevant.
+  \item \textbf{Recall@K}: Proportion of all relevant documents that were successfully retrieved.
+\end{itemize}
+
+\subsection{Results}
+\subsubsection{Aggregate Metrics}
+\begin{tabular}{l c}
+  \toprule
+  Metric & Score \\
+  \midrule
+  MRR & 0.99 \\
+  NDCG@5 & 0.98 \\
+  Precision@5 & 0.96 \\
+  Recall@5 & 0.52 \\
+  \bottomrule
+\end{tabular}
+
+\subsubsection{Visualisations}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/fig-metrics-summary.png}
+  \caption{Aggregate retrieval metrics for the thesis‑v1 evaluation.}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/fig-metrics-distribution.png}
+  \caption{Distribution of per‑query metrics across all 50 queries.}
+\end{figure}
+
+\subsection{Analysis}
+The evaluation results demonstrate highly effective retrieval performance. An MRR of 0.99 is particularly noteworthy, indicating that for almost all 50 queries, the highest‑ranked document was indeed relevant. This high "hit rate" at the first position is critical for Retrieval‑Augmented Generation (RAG) systems where the most prominent context often carries the most weight in the generation phase.
+
+The strong NDCG@5 (0.98) and Precision@5 (0.96) further support the system's ability to filter out noise and present highly relevant content to the user (or LLM). The system shows a clear ability to distinguish between highly relevant "gold" documents and peripherally related content within the top‑5 window.
+
+However, the Recall@5 of 0.52 reveals a significant drop‑off. Given that several queries in the ground truth have 8–10 relevant documents, a top\_k of 5 inherently limits the maximum possible recall. This suggests that while the system is highly precise, users requiring a comprehensive survey of all available evidence for a query should consider increasing the retrieval window (e.g., top\_k=10 or top\_k=20). For the primary goal of providing concise, accurate context for RAG, the current configuration is optimal.
+
+\subsection{Appendix}
+\subsubsection{Sample Queries}
+\begin{itemize}
+  \item \textbf{Query 1}: "How do the concentrations of mesembrine, mesembrenone, and $\Delta$7‑mesembrenone vary across the identified chemotypes of *Sceletium tortuosum"?\\
+    Ground Truth Count: 9, Relevant Retrieved: 5, MRR: 1.0, NDCG@5: 0.93
+  \item \textbf{Query 2}: "What was the determined No‑Observed‑Adverse‑Effect Level (NOAEL) for Zembrin in the subchronic 90‑day oral toxicity study in rats?"\\
+    Ground Truth Count: 10, Relevant Retrieved: 5, MRR: 1.0, NDCG@5: 1.0
+  \item \textbf{Query 3}: "What specific structural features were identified to establish the absolute stereochemistry of mesembrane?"\\
+    Ground Truth Count: 10, Relevant Retrieved: 5, MRR: 1.0, NDCG@5: 0.99
+  \item \textbf{Query 4}: "What are the primary downstream signaling pathways that mediate the antidepressant‑like effects of PDE4 inhibitors in the hippocampus?"\\
+    Ground Truth Count: 9, Relevant Retrieved: 5, MRR: 1.0, NDCG@5: 1.0
+\end{itemize}
+
+\subsubsection{Full Results}
+Complete per‑query results are available in the JSON data export: \texttt{data/eval-run-full.json}.
