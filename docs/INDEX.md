@@ -57,11 +57,6 @@ One-page cheat sheet for:
 | [QUICKSTART](getting-started/QUICKSTART.md) | Deploy Layra in 5 minutes |
 | [START_HERE](getting-started/START_HERE.md) | New user onboarding guide |
 | [README](getting-started/README.md) | Project overview |
-| [README_zh](getting-started/README_zh.md) | Chinese overview |
-
-### Core Documentation
-| Document | Description |
-|----------|-------------|
 | [CONFIGURATION](core/CONFIGURATION.md) | Configuration guide and deployment scenarios |
 | [ENVIRONMENT VARIABLES](reference/ENVIRONMENT_VARIABLES.md) | Complete .env reference (all variables) |
 | [API](core/API.md) | REST API reference |
@@ -157,8 +152,7 @@ docs/
 ├── 📖 getting-started/          ← Start here
 │   ├── QUICKSTART.md
 │   ├── START_HERE.md
-│   ├── README.md
-│   └── README_zh.md
+│   └── README.md
 │
 ├── 📘 core/                     ← Essential reference
 │   ├── API.md

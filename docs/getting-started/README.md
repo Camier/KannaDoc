@@ -12,21 +12,16 @@
 ### Getting Started
 - **[../README.md](../README.md)** - Project overview
 - **[QUICKSTART.md](QUICKSTART.md)** - 5-minute setup
-- **[CONFIGURATION.md](CONFIGURATION.md)** - Environment variables
-
-### Recent Changes (2026-01-25)
-- **[CHANGES_20260125.md](CHANGES_20260125.md)** - What changed today
-- **[LITELLM_REMOVAL_GUIDE.md](LITELLM_REMOVAL_GUIDE.md)** - LiteLLM → Direct APIs
-- **[DRIFT_FORENSICS_20260125.md](DRIFT_FORENSICS_20260125.md)** - KB corruption analysis
+- **[../core/CONFIGURATION.md](../core/CONFIGURATION.md)** - Environment variables
 
 ### Essential Docs
-- **[API.md](API.md)** - REST API reference
-- **[DATABASE.md](DATABASE.md)** - Database schemas
-- **[EMBEDDINGS.md](EMBEDDINGS.md)** - Embedding pipeline
+- **[../core/API.md](../core/API.md)** - REST API reference
+- **[../core/DATABASE.md](../core/DATABASE.md)** - Database schemas
+- **[../core/EMBEDDINGS.md](../core/EMBEDDINGS.md)** - Embedding pipeline
 
 ### Guidelines
-- **[ANTI_COMPLEXITY.md](ANTI_COMPLEXITY.md)** - How to prevent complexity creep
-- **[INDEX.md](INDEX.md)** - Full documentation map
+- **[../architecture/ANTI_COMPLEXITY.md](../architecture/ANTI_COMPLEXITY.md)** - How to prevent complexity creep
+- **[../INDEX.md](../INDEX.md)** - Full documentation map
 
 ---
 
