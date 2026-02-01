@@ -910,7 +910,7 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
         """
         # Extract model name to determine timeout
         model_name = model_config.get("model_name", "")
-        timeout = get_provider_timeout(model_name)
+        timeout = LLMClient.get_provider_timeout(model_name)
 
         logger.info(
             f"Workflow LLM call: model={model_name}, timeout={timeout}s, "
@@ -958,7 +958,7 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
                 quote_variables=quote_variables,
             )
 
-        return await retry_with_backoff(_do_call, max_retries=3)
+        return await LLMClient.retry_with_backoff(_do_call, max_retries=3)
 
     async def start(self, debug_resume=False, input_resume=False):
         """迭代式执行方法"""
