@@ -560,7 +560,7 @@ class ChatService:
         try:
             response = await client.chat.completions.create(
                 model=api_model_name,
-                messages=send_messages,
+                messages=cast(Any, send_messages),  # type: ignore[arg-type]
                 **stream_kwargs,
                 **optional_args,
             )

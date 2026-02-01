@@ -84,7 +84,9 @@ class LLMClient:
                 )
                 await asyncio.sleep(actual_delay)
 
-        raise last_exception
+        if last_exception is not None:
+            raise last_exception
+        raise RuntimeError("No exception captured but all retries exhausted")
 
     @llm_service_circuit
     async def call_with_circuit_breaker(
@@ -96,7 +98,7 @@ class LLMClient:
         save_to_db: bool,
         user_image_urls: list,
         supply_info: str = "",
-        quote_variables: dict = None,
+        quote_variables: Optional[dict] = None,
     ):
         """
         LLM call wrapped with circuit breaker protection.
@@ -141,7 +143,7 @@ class LLMClient:
         save_to_db: bool,
         user_image_urls: list,
         supply_info: str = "",
-        quote_variables: dict = None,
+        quote_variables: Optional[dict] = None,
     ):
         """
         LLM call with both circuit breaker and retry logic.

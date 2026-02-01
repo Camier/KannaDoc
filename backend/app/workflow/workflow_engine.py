@@ -39,7 +39,7 @@ class WorkflowEngine:
         edges: List[Dict],
         global_variables,
         start_node="node_start",
-        task_id: str = None,
+        task_id: Optional[str] = None,
         breakpoints=None,
         user_message="",
         parent_id="",
@@ -61,7 +61,11 @@ class WorkflowEngine:
         self.sandbox: Optional[CodeSandbox] = None
         self.task_id = task_id  # Kafka任务id
         self.breakpoints = set(breakpoints or [])
-        self.execution_stack = [self.graph[1]]  # 用栈结构保存执行状态
+        # 用栈结构保存执行状态 - graph[1] is root TreeNode on success, empty list on failure
+        root_node = self.graph[1]
+        self.execution_stack: List[TreeNode] = (
+            [root_node] if isinstance(root_node, TreeNode) else []
+        )
         self.break_workflow = False
         self.break_workflow_get_input = False
         self.skip_nodes = []
@@ -82,7 +86,7 @@ class WorkflowEngine:
         )
 
         # Enhanced fault tolerance systems
-        self.checkpoint_manager = WorkflowCheckpointManager(self.task_id, self)
+        self.checkpoint_manager = WorkflowCheckpointManager(self.task_id or "", self)
         # QualityAssessmentEngine removed - unused, see scripts/archive/quality_assessment/
 
     async def __aenter__(self):
@@ -146,9 +150,8 @@ class WorkflowEngine:
             self.loop_index = state["loop_index"]
             self.context = state["context"]
             # 重建执行栈
-            self.execution_stack = [
-                TreeNode.get_node(nid) for nid in state["execution_stack"]
-            ]
+            nodes = [TreeNode.get_node(nid) for nid in state["execution_stack"]]
+            self.execution_stack = [n for n in nodes if n is not None]
             self.skip_nodes = state["skip_nodes"]
             return True
         return False
@@ -265,7 +268,7 @@ class WorkflowEngine:
         except Exception as e:
             raise ValueError(f"节点{node_name}: 表达式执行错误: {expr}, 错误: {str(e)}")
 
-    async def handle_condition(self, node: TreeNode) -> TreeNode:
+    async def handle_condition(self, node: TreeNode) -> List[TreeNode]:
         conditions = node.data.get("conditions", [])
         matched = []
         condition_child = []
@@ -607,6 +610,7 @@ class WorkflowEngine:
                     )
 
                 # 2. 沙箱执行
+                assert self.sandbox is not None, "Sandbox not initialized"
                 result = await self.sandbox.execute(
                     code=code,
                     inputs=inputs,
@@ -635,7 +639,7 @@ class WorkflowEngine:
                     self._total_context_entries += 1
                 self._cleanup_context_if_needed()
                 return True
-            except docker.errors.ContainerError as e:
+            except docker.errors.ContainerError as e:  # type: ignore[attr-defined]
                 # logger.error(f"容器执行错误: {e.stderr}")
                 raise ValueError(
                     f"{node.node_id}: 节点{node.data['name']}: 容器执行错误: {e.stderr}"
@@ -902,7 +906,7 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
         save_to_db: bool,
         user_image_urls: list,
         supply_info: str = "",
-        quote_variables: dict = None,
+        quote_variables: Optional[dict] = None,
     ):
         """
         LLM call wrapped with circuit breaker protection.
@@ -939,7 +943,7 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
         save_to_db: bool,
         user_image_urls: list,
         supply_info: str = "",
-        quote_variables: dict = None,
+        quote_variables: Optional[dict] = None,
     ):
         """
         LLM call with both circuit breaker and retry logic.
@@ -965,6 +969,8 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
         run_times = len(self.execution_stack)
         for i in range(run_times):
             current_node = self.execution_stack.pop(0)
+            if not isinstance(current_node, TreeNode):
+                continue
             if debug_resume:
                 current_node.debug_skip = True
             if input_resume:

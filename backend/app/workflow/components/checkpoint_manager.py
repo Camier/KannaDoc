@@ -89,7 +89,7 @@ class WorkflowCheckpointManager:
 
         return checkpoint
 
-    async def load_checkpoint(self, checkpoint_id: str = None) -> bool:
+    async def load_checkpoint(self, checkpoint_id: Optional[str] = None) -> bool:
         """
         Load workflow from checkpoint.
 
@@ -134,7 +134,7 @@ class WorkflowCheckpointManager:
 
         return True
 
-    async def rollback_to_checkpoint(self, checkpoint_id: str = None) -> bool:
+    async def rollback_to_checkpoint(self, checkpoint_id: Optional[str] = None) -> bool:
         """
         Rollback workflow to a previous checkpoint.
 

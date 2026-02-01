@@ -1,7 +1,10 @@
 # workflow/sandbox.py
 import shutil
-from typing import List, Optional, Dict
+from typing import List, Optional, Dict, TYPE_CHECKING
 import docker
+
+if TYPE_CHECKING:
+    from docker.models.containers import Container  # type: ignore[import-not-found]
 import tempfile
 import os
 import asyncio
@@ -16,7 +19,7 @@ class CodeSandbox:
     def __init__(self, image: str = "python-sandbox:latest"):
         self.client = docker.from_env()
         self.image = image
-        self.container: Optional[docker.Container] = None
+        self.container: Optional["Container"] = None
         self.workspace_dir: Optional[str] = None
         self.failed = False
         self.shared_volume = settings.sandbox_shared_volume
@@ -54,21 +57,21 @@ class CodeSandbox:
             )
             return {"status": "success", "deleted": image_ref, "details": remove_result}
 
-        except docker.errors.ImageNotFound:
+        except docker.errors.ImageNotFound:  # type: ignore[attr-defined]
             return {
                 "status": "error",
                 "message": f"Image not found: {image_ref}",
                 "error_type": "ImageNotFound",
             }
 
-        except docker.errors.APIError as e:
+        except docker.errors.APIError as e:  # type: ignore[attr-defined]
             return {
                 "status": "error",
                 "message": f"Docker API Error: {str(e)}",
                 "error_type": "APIError",
             }
 
-        except (docker.errors.ImageNotFound, docker.errors.APIError) as e:
+        except (docker.errors.ImageNotFound, docker.errors.APIError) as e:  # type: ignore[attr-defined]
             # Already handled above, but keep as fallback
             return {
                 "status": "error",
@@ -146,8 +149,8 @@ class CodeSandbox:
                     self.shared_volume_source = mount.get("Source")
                     return
         except (
-            docker.errors.APIError,
-            docker.errors.NotFound,
+            docker.errors.APIError,  # type: ignore[attr-defined]
+            docker.errors.NotFound,  # type: ignore[attr-defined]
             KeyError,
             AttributeError,
         ) as e:
@@ -162,9 +165,10 @@ class CodeSandbox:
             raise RuntimeError("No container to commit")
 
         loop = asyncio.get_event_loop()
+        assert self.container is not None
         image = await loop.run_in_executor(
             None,
-            lambda: self.container.commit(
+            lambda: self.container.commit(  # type: ignore[union-attr]
                 repository=repository,
                 tag=tag,
             ),
@@ -185,6 +189,7 @@ class CodeSandbox:
             raise RuntimeError("No container running")
 
         script_name = f"script_{uuid.uuid4().hex}.py"
+        assert self.workspace_dir is not None, "workspace_dir not set"
         script_path = os.path.join(self.workspace_dir, script_name)
 
         with open(script_path, "w") as f:
@@ -198,8 +203,9 @@ class CodeSandbox:
             f.write(code + "\n")
             f.write("\nif 'main' in globals() and callable(main):\n    main(inputs)\n")
 
+        workspace_dir = self.workspace_dir
         container_script_path = (
-            f"/shared/{os.path.basename(self.workspace_dir)}/{script_name}"
+            f"/shared/{os.path.basename(workspace_dir)}/{script_name}"
         )
 
         commands = []
@@ -215,7 +221,7 @@ class CodeSandbox:
             )
             if exit_code != 0:
                 self.failed = True
-                raise docker.errors.ContainerError(
+                raise docker.errors.ContainerError(  # type: ignore[attr-defined]
                     self.container,
                     exit_code,
                     command=commands,
@@ -231,6 +237,7 @@ class CodeSandbox:
         loop = asyncio.get_event_loop()
 
         def _sync_exec():
+            assert self.container is not None
             exec_id = self.container.exec_run(cmd=f"sh -c '{command}'", demux=True)
             return exec_id
 
@@ -277,9 +284,8 @@ class CodeSandbox:
         try:
             if self.container:
                 loop = asyncio.get_event_loop()
-                await loop.run_in_executor(
-                    None, lambda: self.container.remove(force=True)
-                )
+                container = self.container
+                await loop.run_in_executor(None, lambda: container.remove(force=True))
                 self.container = None
-        except (docker.errors.APIError, asyncio.TimeoutError) as e:
+        except (docker.errors.APIError, asyncio.TimeoutError) as e:  # type: ignore[attr-defined]
             logger.error(f"Error during container cleanup: {str(e)}")
