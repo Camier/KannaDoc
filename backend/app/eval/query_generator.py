@@ -69,7 +69,7 @@ async def generate_queries_from_corpus(kb_id: str, count: int = 50) -> List[str]
             all_queries.extend(doc_queries)
 
             if idx < docs_needed - 1:
-                await asyncio.sleep(0.1)
+                await asyncio.sleep(10.0)
 
         logger.info(f"Generated {len(all_queries)} total queries")
         return all_queries[:count]
@@ -106,38 +106,73 @@ Generate questions that:
 
 Return ONLY the questions, one per line, without numbering or bullets."""
 
-    try:
-        async with httpx.AsyncClient() as client:
-            response = await client.post(
-                f"{settings.model_server_url}/generate_text",
-                json={
-                    "prompt": prompt,
-                    "max_tokens": 300,
-                    "temperature": 0.8,
-                },
-                timeout=30.0,
-            )
-            response.raise_for_status()
+    max_retries = 5
+    for attempt in range(max_retries):
+        try:
+            from app.core.llm.chat_service import ChatService
 
-            result = response.json()
-            generated_text = result.get("text", "")
+            class MockMessage:
+                def __init__(self, content):
+                    self.user_message = content
+                    self.conversation_id = "eval_query_gen"
+                    self.parent_id = None
+                    self.temp_db_id = ""
+
+            llm_config = {
+                "model_name": "gemini-3-flash",
+                "model_url": "",
+                "api_key": "",
+                "base_used": [],
+                "temperature": 0.8,
+                "max_length": 300,
+                "top_P": -1,
+                "top_K": -1,
+                "score_threshold": -1,
+            }
+
+            response_chunks = []
+            async for chunk in ChatService.create_chat_stream(
+                user_message_content=MockMessage(prompt),
+                model_config=llm_config,
+                message_id=f"query_gen_{hash(title)}_{attempt}",
+                system_prompt="",
+                is_workflow=True,
+            ):
+                import json
+
+                try:
+                    data = json.loads(chunk)
+                    if data.get("type") == "text":
+                        response_chunks.append(data.get("data", ""))
+                except json.JSONDecodeError:
+                    continue
+
+            generated_text = "".join(response_chunks).strip()
+
+            if "LLM_Error" in generated_text or "Error occurred" in generated_text:
+                raise ValueError(f"LLM returned error: {generated_text[:100]}")
 
             queries = [
                 q.strip()
                 for q in generated_text.split("\n")
-                if q.strip() and len(q.strip()) > 10
+                if q.strip() and len(q.strip()) > 10 and not q.strip().startswith("⚠️")
             ]
+
+            if not queries:
+                raise ValueError("No queries generated")
 
             logger.info(f"Generated {len(queries)} queries for: {title[:50]}...")
             return queries[:count]
 
-    except httpx.HTTPStatusError as e:
-        logger.error(f"LLM request failed: {e.response.text if e.response else str(e)}")
-        return _fallback_generate_queries(title, count)
-
-    except Exception as e:
-        logger.error(f"Query generation error: {str(e)}")
-        return _fallback_generate_queries(title, count)
+        except Exception as e:
+            logger.warning(
+                f"Query generation attempt {attempt + 1} failed for {title[:30]}: {str(e)}"
+            )
+            if attempt < max_retries - 1:
+                await asyncio.sleep(10 * (attempt + 1))
+            else:
+                logger.error(f"All query generation attempts failed for {title[:30]}")
+                return _fallback_generate_queries(title, count)
 
 
 def _extract_title_from_filename(filename: str) -> str:

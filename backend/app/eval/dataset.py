@@ -99,7 +99,7 @@ async def create_dataset(
             relevant_docs = []
 
             llm_config = {
-                "model_name": "glm-4-flash",
+                "model_name": "gemini-3-flash",
                 "temperature": 0.0,
                 "max_length": 10,
             }
