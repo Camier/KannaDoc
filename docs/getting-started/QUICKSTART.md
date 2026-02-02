@@ -7,73 +7,14 @@
 
 ## 🚀 5-Minute Setup
 
-### Prerequisites
+## 🆕 Recent Significant Changes (2026-01-25)
 
-```bash
-# Check GPU
-nvidia-smi
+- ✅ **LiteLLM Removed** - Now using direct OpenAI/DeepSeek APIs
+- ✅ **Neo4j Removed** (default stack) - Saves 500MB RAM
+- ✅ **KB Corruption Fixed** - 0 duplicates, validated
+- ✅ **Documentation Reorganized** - See [INDEX.md](../INDEX.md)
 
-# Check Docker
-docker --version
-docker compose version
-
-# Check NVIDIA Container Toolkit
-docker run --rm --gpus all nvidia/cuda:12.4.0-base-ubuntu22.04 nvidia-smi
-```
-
-### Step 1: Configure Environment
-
-```bash
-cd /LAB/@thesis/layra
-
-# Copy example env (if starting fresh)
-cp .env.example .env
-
-# Edit configuration
-nano .env
-```
-
-**Required Configuration:**
-
-**A. LLM Provider API Keys** (NEW in v2.0)
-```bash
-# Add your provider API keys
-OPENAI_API_KEY=sk-proj-...
-DEEPSEEK_API_KEY=sk-...
-
-# Default provider for new users
-DEFAULT_LLM_PROVIDER=openai
-DEFAULT_LLM_MODEL=gpt-4o-mini
-```
-
-**Get API keys:**
-- OpenAI: https://platform.openai.com/api-keys
-- DeepSeek: https://platform.deepseek.com/api_keys
-
-**B. Critical Passwords to Change:**
-- `REDIS_PASSWORD` - Redis cache
-- `MONGODB_ROOT_PASSWORD` - MongoDB
-- `MYSQL_PASSWORD` - MySQL database
-- `MINIO_SECRET_KEY` - Object storage
-
-### Step 2: Deploy
-
-```bash
-# Recommended startup (sanitized env + build)
-./scripts/start_layra.sh
-```
-
-**Expected timeline:**
-- First run: 5-10 minutes (downloading 15GB models)
-- Subsequent runs: 1-2 minutes
-
-### Step 3: Access
-
-```bash
-# Layra Application
-URL: http://localhost:8090
-# Create a user in the UI or log in with an existing demo user if preseeded
-```
+*Details: [CHANGES_20260125.md](CHANGES_20260125.md)*
 
 ## 📊 Service Architecture
 
@@ -335,6 +276,12 @@ sudo systemctl restart docker
 # Verify health check
 curl http://localhost:8090/api/v1/health/check
 ```
+
+### Deep Forensics & Migration
+
+- **System-wide issues?** See [CONSOLIDATED_REPORT.md](CONSOLIDATED_REPORT.md)
+- **KB issues?** See [DRIFT_FORENSICS_20260125.md](DRIFT_FORENSICS_20260125.md)
+- **Migration from v1.x?** See [LITELLM_REMOVAL_GUIDE.md](LITELLM_REMOVAL_GUIDE.md)
 
 ## 💾 Data Management
 

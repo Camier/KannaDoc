@@ -3,7 +3,7 @@
 **Last Updated:** 2026-01-31
 **Version:** 2.3.0 (Post-Consolidation + Workflow Fixes)
 
-> 🎯 **START HERE** if you're new to Layra
+> 🎯 **QUICKSTART** if you're new to Layra
 > 📉 **Reduced from 207 to ~50 essential documents**
 
 ---
@@ -55,7 +55,6 @@ One-page cheat sheet for:
 | Document | Description |
 |----------|-------------|
 | [QUICKSTART](getting-started/QUICKSTART.md) | Deploy Layra in 5 minutes |
-| [START_HERE](getting-started/START_HERE.md) | New user onboarding guide |
 | [README](getting-started/README.md) | Project overview |
 | [CONFIGURATION](core/CONFIGURATION.md) | Configuration guide and deployment scenarios |
 | [ENVIRONMENT VARIABLES](reference/ENVIRONMENT_VARIABLES.md) | Complete .env reference (all variables) |
@@ -149,7 +148,6 @@ docs/
 │
 ├── 📖 getting-started/          ← Start here
 │   ├── QUICKSTART.md
-│   ├── START_HERE.md
 │   └── README.md
 │
 ├── 📘 core/                     ← Essential reference
