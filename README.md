@@ -13,7 +13,7 @@ This is a **private research fork** used for academic thesis work. It extends th
 - **Thesis-specific Corpus** - 129 academic documents indexed for research
 - **Extended API** - Evaluation endpoints under `/api/v1/eval/`
 - **Entity Extraction V2** - 15-type ontology with MiniMax M2.1 API
-- **Self-Contained Corpus** - 131 PDFs + 129 extractions consolidated from DataLab
+- **Self-Contained Corpus** - 129 PDFs + 129 extractions consolidated from DataLab
 
 ## Repository Structure
 
@@ -77,11 +77,11 @@ backend/
 │   └── datalab/            # Ingestion & extraction scripts
 │       ├── extract_entities_v2.py
 │       ├── milvus_ingest.py
-│       ├── neo4j_ingest.py
+│       ├── neo4j_ingest.py  # (Neo4j disabled in current deployment)
 │       └── ...
 │
 └── data/
-    ├── pdfs/               # 131 source PDFs (corpus)
+    ├── pdfs/               # 129 source PDFs (corpus)
     ├── extractions/        # 129 docs with V2 entities
     ├── id_mapping.json     # doc_id ↔ file_id mapping
     ├── .minimax_api_key    # MiniMax API key
