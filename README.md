@@ -11,6 +11,7 @@ This is a **private research fork** used for academic thesis work. It extends th
 - **Retrieval Evaluation System** - Batch evaluation with IR metrics (MRR, NDCG, Precision@K, Recall@K)
 - **LLM-based Relevance Labeling** - Automated ground truth generation for evaluation datasets
 - **Thesis-specific Corpus** - 129 academic documents indexed for research
+- **Neo4j Status** - Knowledge graph storage is currently **DISABLED** (not deployed)
 - **Extended API** - Evaluation endpoints under `/api/v1/eval/`
 - **Entity Extraction V2** - 15-type ontology with MiniMax M2.1 API
 - **Self-Contained Corpus** - 129 PDFs + 129 extractions consolidated from DataLab
