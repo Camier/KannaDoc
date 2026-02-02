@@ -235,6 +235,7 @@ These artifacts are essential for maintaining the state of the knowledge base an
 | 2026-02-02 | Created entity_extraction module using MiniMax M2.1 |
 | 2026-02-02 | Fully merged DataLab into LAYRA repository |
 | 2026-02-02 | Consolidated 129 PDFs and extractions into backend/data/ |
+| 2026-02-02 | Docker Compose best practices: pinned monitoring images, fixed healthchecks |
 
 ## 10. CROSS-REFERENCES
 

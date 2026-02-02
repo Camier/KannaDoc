@@ -1,7 +1,7 @@
 # Stack SSOT - LAYRA Architecture
 
-> **Version:** 3.3.0
-> **Last Updated:** 2026-01-30
+> **Version:** 3.4.0
+> **Last Updated:** 2026-02-02
 > **Status:** ✅ Active
 > **Focus:** RAG Chat & Models Configuration + ZhipuAI Coding Plan
 > **Changes:**
@@ -200,7 +200,7 @@ curl http://localhost:3000
 
 **Ports:** 80 (internal), 8090 (external)
 
-**Environment:** None
+**Environment:** Uses `MINIO_ROOT_USER` and `MINIO_ROOT_PASSWORD` (updated 2026-02-02)
 
 **Health Check:**
 ```bash
@@ -777,7 +777,7 @@ MODEL_BASE_URL=https://huggingface.co/vidore
 **Role:** Metrics collection and monitoring
 
 **Entrypoint:**
-- Docker: `prom/prometheus:latest` image, port 9090
+- Docker: `prom/prometheus:v3.5.1` image, port 9090
 - Native: `prometheus --config.file=/etc/prometheus/prometheus.yml`
 
 **Dependencies:** None
@@ -800,7 +800,7 @@ MODEL_BASE_URL=https://huggingface.co/vidore
 **Role:** Visualization dashboards for metrics
 
 **Entrypoint:**
-- Docker: `grafana/grafana:latest` image, port 3000
+- Docker: `grafana/grafana:12.3.2` image, port 3000
 - Native: `grafana-server --config=/etc/grafana/grafana.ini`
 
 **Dependencies:**
@@ -1240,6 +1240,18 @@ After updating SSOT:
 
 ## Changelog
 
+### Version 3.4.0 (2026-02-02)
+
+**Docker Compose Best Practices:**
+- Pinned prometheus image to `v3.5.1` (was `:latest`)
+- Pinned grafana image to `12.3.2` (was `:latest`)
+- Fixed MySQL healthcheck to use `CMD-SHELL` for variable expansion
+- Fixed etcd advertise URL to use service name `milvus-etcd`
+- Updated milvus-minio to use `MINIO_ROOT_USER/ROOT_PASSWORD`
+- Updated milvus-standalone to use `MINIO_ROOT_USER/ROOT_PASSWORD`
+- Fixed nginx depends_on with condition form
+- Removed invalid `driver: bridge` from external network
+
 ### Version 3.0.0 (2026-01-26)
 
 **Major Restructure:**
@@ -1303,5 +1315,5 @@ After updating SSOT:
 **END OF SSOT v3.0.0**
 
 *Maintained by: System*
-*Last Updated: 2026-01-26*
-*Next Review: 2026-02-02*
+*Last Updated: 2026-02-02*
+*Next Review: 2026-02-09*
