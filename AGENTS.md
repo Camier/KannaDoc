@@ -236,6 +236,7 @@ These artifacts are essential for maintaining the state of the knowledge base an
 | 2026-02-02 | Fully merged DataLab into LAYRA repository |
 | 2026-02-02 | Consolidated 129 PDFs and extractions into backend/data/ |
 | 2026-02-02 | Docker Compose best practices: pinned monitoring images, fixed healthchecks |
+| 2026-02-02 | Fixed Prometheus metrics_path, removed Qdrant target |
 
 ## 10. CROSS-REFERENCES
 
