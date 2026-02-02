@@ -1,131 +1,15 @@
-# LLM Provider Configuration
-# Single source of truth for all provider definitions
-# 
-# Structure per provider:
-#   base_url: API endpoint (empty string = env-configured)
-#   env_key: Environment variable for API key
-#   vision: Whether provider supports vision/image input
-#   models: List of supported model identifiers
-#
-# Routing Priority:
-#   1. cliproxyapi (if CLIPROXYAPI_BASE_URL set) - catches gemini-*, claude-*, gpt-*
-#   2. zai (if ZAI_API_KEY set) - GLM 4.5/4.6/4.7 models
-#   3. zhipu-coding (fallback for GLM coding models)
-#   4. First matching provider from iteration
+# LLM Provider Configuration - Clean Version
+# ONLY 5 providers: DeepSeek, Z.ai, Antigravity, Ollama Cloud, MiniMax
 
 providers:
-  # ============================================================================
-  # OpenAI - GPT family (https://platform.openai.com)
-  # ============================================================================
-  openai:
-    base_url: "https://api.openai.com/v1"
-    env_key: "OPENAI_API_KEY"
-    vision: true
-    models:
-      - gpt-5.2
-      - gpt-4.1
-      - gpt-4.5
-      - gpt-4o
-      - gpt-4
-      - gpt-4o-mini
-      - gpt-3.5-turbo
-      - o1
-      - o1-mini
-      - o1-preview
-
-  # ============================================================================
-  # DeepSeek - R1 and Chat models (https://api.deepseek.com)
-  # ============================================================================
   deepseek:
     base_url: "https://api.deepseek.com/v1"
     env_key: "DEEPSEEK_API_KEY"
     vision: false
     models:
-      - deepseek-r1
       - deepseek-chat
       - deepseek-reasoner
 
-  # ============================================================================
-  # Anthropic - Claude family (https://www.anthropic.com)
-  # ============================================================================
-  anthropic:
-    base_url: "https://api.anthropic.com/v1"
-    env_key: "ANTHROPIC_API_KEY"
-    vision: true
-    models:
-      - claude-3-opus
-      - claude-3-sonnet
-      - claude-3-haiku
-      - claude-3.5-sonnet
-      - claude-4-opus
-      - claude-4-sonnet
-
-  # ============================================================================
-  # Google Gemini - Native API (https://ai.google.dev)
-  # ============================================================================
-  gemini:
-    base_url: "https://generativelanguage.googleapis.com/v1beta"
-    env_key: "GEMINI_API_KEY"
-    vision: true
-    models:
-      - gemini-pro
-      - gemini-2.5-pro
-      - gemini-2.5-flash
-      - gemini-3-pro
-      - gemini-3-flash
-
-  # ============================================================================
-  # Moonshot - Kimi models (https://www.moonshot.cn)
-  # ============================================================================
-  moonshot:
-    base_url: "https://api.moonshot.cn/v1"
-    env_key: "MOONSHOT_API_KEY"
-    vision: false
-    models:
-      - kimi-k2-thinking
-      - kimi-k2-thinking-turbo
-      - moonshot-v1-8k
-      - moonshot-v1-32k
-      - moonshot-v1-128k
-
-  # ============================================================================
-  # Zhipu AI - GLM-4 base models (https://open.bigmodel.cn)
-  # For GLM 4.5+ coding models, see zai/zhipu-coding below
-  # ============================================================================
-  zhipu:
-    base_url: "https://open.bigmodel.cn/api/paas/v4"
-    env_key: "ZHIPUAI_API_KEY"
-    vision: true
-    models:
-      - glm-4
-      - glm-4-flash
-      - glm-4-plus
-      - glm-4v
-      - glm-4-alltools
-
-  # ============================================================================
-  # Zhipu Coding - GLM 4.5+ coding models via official API
-  # Used when ZAI_API_KEY is not available
-  # ============================================================================
-  zhipu-coding:
-    base_url: "https://open.bigmodel.cn/api/coding/paas/v4"
-    env_key: "ZHIPUAI_API_KEY"
-    vision: true
-    models:
-      - glm-4.5
-      - glm-4.5-air
-      - glm-4.5-flash
-      - glm-4.5v
-      - glm-4.6
-      - glm-4.6v
-      - glm-4.6v-flash
-      - glm-4.7
-      - glm-4.7-flash
-
-  # ============================================================================
-  # Z.ai - GLM Coding Plan provider (https://z.ai)
-  # Preferred for GLM 4.5+ when ZAI_API_KEY is available
-  # ============================================================================
   zai:
     base_url: "https://api.z.ai/api/coding/paas/v4"
     env_key: "ZAI_API_KEY"
@@ -136,175 +20,73 @@ providers:
       - glm-4.5-flash
       - glm-4.5v
       - glm-4.6
+      - glm-4.6-flash
       - glm-4.6v
       - glm-4.6v-flash
       - glm-4.7
       - glm-4.7-flash
 
-  # ============================================================================
-  # Ollama Cloud - Hosted Ollama service (https://ollama.com)
-  # ============================================================================
-  ollama-cloud:
-    base_url: "https://api.ollama.com/v1"
-    env_key: "OLLAMA_CLOUD_API_KEY"
-    vision: true
-    models:
-      # Llama family
-      - llama3.3
-      - llama3.3:70b
-      - llama3.2
-      - llama3.2:1b
-      - llama3.2:3b
-      - llama3.1
-      - llama3.1:8b
-      - llama3.1:70b
-      - llama3.1:405b
-      - llama3
-      # Mistral family
-      - mistral
-      - mistral-nemo
-      - mistral-large
-      - mixtral
-      - mixtral:8x22b
-      # Qwen family
-      - qwen2.5
-      - qwen2.5:7b
-      - qwen2.5:14b
-      - qwen2.5:32b
-      - qwen2.5:72b
-      - qwen2.5-coder
-      - qwen2.5-coder:7b
-      - qwen2.5-coder:14b
-      - qwen2.5-coder:32b
-      # DeepSeek family
-      - deepseek-r1
-      - deepseek-r1:7b
-      - deepseek-r1:8b
-      - deepseek-r1:14b
-      - deepseek-r1:32b
-      - deepseek-r1:70b
-      - deepseek-v3
-      # Other models
-      - phi4
-      - phi4:14b
-      - gemma2
-      - gemma2:2b
-      - gemma2:9b
-      - gemma2:27b
-      - codellama
-      - codellama:7b
-      - codellama:13b
-      - codellama:34b
-      # Vision models
-      - llama3.2-vision
-      - llama3.2-vision:11b
-      - llama3.2-vision:90b
-      - llava
-      - llava:7b
-      - llava:13b
-      - llava:34b
-
-  # ============================================================================
-  # Ollama Local - Self-hosted Ollama (http://localhost:11434)
-  # ============================================================================
-  ollama-local:
-    base_url: "http://127.0.0.1:11434/v1"
-    env_key: "OLLAMA_API_KEY"
-    vision: true
-    models:
-      - llama3.3
-      - llama3.2
-      - llama3.1
-      - llama3
-      - mistral
-      - mixtral
-      - qwen2.5
-      - qwen2.5-coder
-      - deepseek-r1
-      - phi4
-      - gemma2
-      - codellama
-      - llama3.2-vision
-      - llava
-
-  # ============================================================================
-  # CLIProxyAPI - Multi-provider proxy (Antigravity, Gemini CLI, etc.)
-  # Base URL configured via CLIPROXYAPI_BASE_URL env var
-  # Routes models to appropriate backends based on prefix
-  # ============================================================================
   cliproxyapi:
     base_url: ""  # Configured via CLIPROXYAPI_BASE_URL
     env_key: "CLIPROXYAPI_API_KEY"
     vision: true
     models:
-      # Antigravity (Claude via Google Cloud)
+      # Antigravity Claude
       - claude-opus-4-5-thinking
       - claude-sonnet-4-5-thinking
       - claude-sonnet-4-5
-      # Gemini CLI (via OAuth)
+      - claude-sonnet-4-20250514
+      - claude-3.5-sonnet
+      # Antigravity Gemini
       - gemini-2.5-pro
       - gemini-2.5-flash
       - gemini-2.5-flash-lite
       - gemini-3-pro-preview
-      - gemini-3-pro-high
-      - gemini-3-pro-image
       - gemini-3-flash
-      - gemini-3-flash-preview
-      - tab_flash_lite_preview
-      # OpenAI OSS
+      # Antigravity GPT
+      - gpt-4o
+      - gpt-4o-mini
       - gpt-oss-120b-medium
 
-  # ============================================================================
-  # MiniMax - ABAB models (https://www.minimaxi.com)
-  # ============================================================================
+  ollama-cloud:
+    base_url: "https://api.ollama.com/v1"
+    env_key: "OLLAMA_CLOUD_API_KEY"
+    vision: true
+    models:
+      - llama3.3
+      - llama3.2
+      - llama3.1
+      - llama3
+      - qwen2.5
+      - qwen2.5-coder
+      - mistral
+      - mixtral
+      - deepseek-r1
+      - deepseek-v3
+      - phi4
+      - gemma2
+      - codellama
+      - llama3.2-vision
+      - llava
+
   minimax:
-    base_url: "https://api.minimax.chat/v1"
+    base_url: "https://api.minimax.io/v1"
     env_key: "MINIMAX_API_KEY"
     vision: false
     models:
-      - abab6.5s-chat
-      - abab6.5g-chat
-      - abab6.5t-chat
+      - MiniMax-M2.1
 
-  # ============================================================================
-  # Cohere - Command models (https://cohere.com)
-  # ============================================================================
-  cohere:
-    base_url: "https://api.cohere.ai/v1"
-    env_key: "COHERE_API_KEY"
-    vision: false
-    models:
-      - command-r-plus
-      - command-r
-      - command
-
-# ============================================================================
-# Vision Model Patterns
-# Models containing these substrings are considered vision-capable
-# Used by is_vision_model() for detection beyond provider-level flags
-# ============================================================================
 vision_patterns:
   - gpt-4o
-  - gpt-4.1
-  - gpt-4.5
-  - gpt-5
-  - gpt-5.2
-  - o1
   - claude-3-opus
   - claude-3-sonnet
   - claude-3.5-sonnet
   - claude-4
-  - claude-opus-4
   - claude-sonnet-4
-  - claude-opus-4.5
-  - claude-sonnet-4.5
   - gemini-2.5-pro
   - gemini-3-pro
   - gemini-3-flash
-  - glm-4v
   - glm-4.5v
   - glm-4.6v
-  - qwen-vl
-  - qwen2.5-vl
-  - antigravity-claude
-  - antigravity-gemini
+  - llama3.2-vision
+  - llava
