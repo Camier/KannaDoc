@@ -5,6 +5,7 @@ Diagnose LayRA RAG pipeline issues.
 
 import asyncio
 import json
+import os
 import sys
 from motor.motor_asyncio import AsyncIOMotorClient
 from pymilvus import MilvusClient
@@ -14,9 +15,10 @@ async def test_mongodb():
     """Test MongoDB connection and data"""
     print("🧪 Testing MongoDB...")
     try:
-        client = AsyncIOMotorClient(
-            "mongodb://thesis:thesis_mongo_3a2572a198fa78362d6d8e9b31a98bac@mongodb:27017/chat_mongodb?authSource=admin"
-        )
+        mongodb_url = os.getenv("MONGODB_URL", "mongodb://mongodb:27017")
+        if "://" not in mongodb_url:
+            mongodb_url = f"mongodb://{mongodb_url}"
+        client = AsyncIOMotorClient(mongodb_url)
 
         # Test connection
         await client.admin.command("ping")
@@ -96,7 +98,7 @@ def test_deepseek_api():
     try:
         import requests
 
-        api_key = "sk-29537d2ba74445f0894e53e48ca1d9ef"
+        api_key = os.getenv("DEEPSEEK_API_KEY", "")
         headers = {
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
