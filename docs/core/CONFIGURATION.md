@@ -394,6 +394,49 @@ cp .env.example .env
 
 ---
 
+### LLM Configuration
+
+LLM provider definitions are stored in `backend/app/core/llm/providers.yaml`.
+
+#### Provider Configuration File
+
+The `providers.yaml` file contains:
+- **providers**: Dict of provider configurations (base_url, env_key, models, vision flag)
+- **vision_patterns**: List of model substrings that indicate vision capability
+
+To add a new provider, edit `providers.yaml` and restart the backend.
+
+#### API Keys
+
+| Variable | Provider | Models |
+|----------|----------|--------|
+| `DEEPSEEK_API_KEY` | DeepSeek | deepseek-chat, deepseek-r1, deepseek-reasoner |
+| `ZHIPUAI_API_KEY` | Zhipu + Z.ai | glm-4, glm-4.5/4.6/4.7 |
+| `OPENAI_API_KEY` | OpenAI | gpt-4o, o1 |
+| `ANTHROPIC_API_KEY` | Anthropic | claude-3.5-sonnet, claude-4 |
+| `GEMINI_API_KEY` | Google | gemini-2.5-pro/flash |
+| `MOONSHOT_API_KEY` | Moonshot | kimi-k2, moonshot-v1 |
+| `OLLAMA_CLOUD_API_KEY` | Ollama Cloud | llama3, qwen2.5, etc. |
+| `CLIPROXYAPI_API_KEY` | CLIProxyAPI | Proxy for Claude/Gemini/GPT |
+
+#### Model Role Configuration
+
+| Variable | Purpose | Example |
+|----------|---------|---------|
+| `DEFAULT_LLM_MODEL` | Primary chat model | `deepseek-chat` |
+| `DEFAULT_LLM_PROVIDER` | Must match model routing | `deepseek` |
+| `REASONING_LLM_MODEL` | Complex reasoning | `deepseek-reasoner` |
+| `CODING_LLM_MODEL` | Code generation | `glm-4.7` |
+| `ECONOMY_LLM_MODEL` | Cost-efficient tasks | `glm-4.7-flash` |
+
+**Note**: Provider must match the model's routing. Check routing with:
+```python
+from app.rag.provider_client import ProviderClient
+ProviderClient.get_provider_for_model("your-model-name")
+```
+
+---
+
 ### Document Processing
 
 #### UNOSERVER_INSTANCES
