@@ -1,21 +1,17 @@
 # RAG Pipeline Audit Report — 2026-02-02
 
-This is the full audit content to be saved to `backend/docs/PIPELINE_AUDIT_2026-02-02.md`.
-
----
+Verified, evidence-based audit of the LAYRA (KannaDoc) RAG pipeline.
 
 ## Verified Counts
 
 | Asset | Count | Evidence |
 |-------|-------|----------|
-| **Source PDFs** | 129 | `ls /data/pdfs/*.pdf \| wc -l` |
+| **Source PDFs** | 129 | `ls /data/pdfs/*.pdf | wc -l` |
 | **Extraction folders** | 129 | `ls -d /data/extractions/*/` |
 | **normalized.json files** | 129 | `find ... -name "normalized.json"` |
 | **entities.json files** | 129 | `find ... -name "entities.json"` |
 | **Milvus vectors** | 3,561,575 | `colpali_kanna_128` collection |
 | **Unique files in Milvus** | 129 | Iterated all vectors |
-
----
 
 ## Link 1: PDF Source
 
@@ -25,8 +21,6 @@ This is the full audit content to be saved to `backend/docs/PIPELINE_AUDIT_2026-
 | **Count** | **129 PDFs** |
 | **Date range** | 1857–2025 |
 | **Status** | HEALTHY |
-
----
 
 ## Link 2: PDF Parsing (DataLab Marker API)
 
@@ -40,8 +34,6 @@ This is the full audit content to be saved to `backend/docs/PIPELINE_AUDIT_2026-
 
 **Note**: PDF text extraction uses the **DataLab SaaS API** (external dependency). Visual RAG (PDF to images) is handled locally by `pdf2image`.
 
----
-
 ## Link 3: Normalization
 
 | Aspect | Evidence |
@@ -51,8 +43,6 @@ This is the full audit content to be saved to `backend/docs/PIPELINE_AUDIT_2026-
 | **Chunks per doc** | ~200-300 (varies by doc) |
 | **Chunk schema** | `chunk_id`, `doc_id`, `text`, `html`, `page_refs`, `block_ids` |
 | **Status** | HEALTHY — 129/129 normalized |
-
----
 
 ## Link 4: Entity Extraction
 
@@ -67,8 +57,6 @@ This is the full audit content to be saved to `backend/docs/PIPELINE_AUDIT_2026-
 
 **Issue**: Current entities are **migrated V1 data**, not fresh MiniMax M2.1 extractions. Relationships are not populated.
 
----
-
 ## Link 5: Milvus Vector Storage
 
 | Aspect | Evidence |
@@ -81,8 +69,6 @@ This is the full audit content to be saved to `backend/docs/PIPELINE_AUDIT_2026-
 | **Unique files indexed** | 129 |
 | **Status** | HEALTHY |
 
----
-
 ## Link 6: Neo4j Graph Storage
 
 | Aspect | Evidence |
@@ -92,8 +78,6 @@ This is the full audit content to be saved to `backend/docs/PIPELINE_AUDIT_2026-
 | **Container** | Not deployed |
 | **Script** | `neo4j_ingest.py` exists but unused |
 | **Status** | DISABLED |
-
----
 
 ## Link 7: Retrieval
 
@@ -106,8 +90,6 @@ This is the full audit content to be saved to `backend/docs/PIPELINE_AUDIT_2026-
 | **Hybrid search** | Available but disabled by default |
 | **Status** | CODE READY — Runtime depends on backend |
 
----
-
 ## Link 8: Evaluation System
 
 | Aspect | Evidence |
@@ -118,8 +100,6 @@ This is the full audit content to be saved to `backend/docs/PIPELINE_AUDIT_2026-
 | **Thresholds** | `recall>=0.70`, `mrr>=0.65`, `p95<=2500ms` |
 | **Status** | CODE READY |
 
----
-
 ## External Dependencies
 
 | Service | Purpose | Required |
@@ -128,16 +108,12 @@ This is the full audit content to be saved to `backend/docs/PIPELINE_AUDIT_2026-
 | **MiniMax M2.1 API** | Entity extraction | Yes (for fresh extraction) |
 | **Jina API** | Text embeddings (optional) | No (ColQwen is local) |
 
----
-
 ## Known Issues
 
 1. **Entity relationships empty** — V1 migration didn't preserve relationships
 2. **Neo4j disabled** — Graph storage not integrated into retrieval
 3. **External API dependency** — DataLab required for text extraction
 4. **Legacy entities** — Need re-extraction with MiniMax M2.1
-
----
 
 ## Recommendations
 
