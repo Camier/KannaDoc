@@ -79,6 +79,12 @@ class Settings(BaseSettings):
     vector_db: str = Field(
         default="milvus", description="Vector database backend: milvus"
     )
+    hnsw_m: int = Field(
+        default=48, ge=4, le=64, description="HNSW M parameter for Milvus index"
+    )
+    hnsw_ef_construction: int = Field(
+        default=1024, ge=8, description="HNSW efConstruction for Milvus index"
+    )
 
     # Models & Sandbox
     colbert_model_path: str = "/model_weights/colqwen2.5-v0.2"

@@ -185,8 +185,8 @@ class MilvusManager:
             index_type="HNSW",  # or any other index type you want
             metric_type="IP",  # or the appropriate metric type
             params={
-                "M": 48,
-                "efConstruction": 1024,
+                "M": settings.hnsw_m,
+                "efConstruction": settings.hnsw_ef_construction,
             },  # Optimized for ethnopharmacology medical content
         )
 
