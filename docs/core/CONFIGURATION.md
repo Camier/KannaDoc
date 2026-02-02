@@ -213,6 +213,22 @@ cp .env.example .env
 - **Production**: `http://milvus.internal:19530`
 - **Example**: `MILVUS_URI=http://milvus.example.com:19530`
 
+#### HNSW_M
+- **Type**: Integer
+- **Default**: `48`
+- **Range**: 4-64
+- **Purpose**: HNSW M parameter for Milvus index construction
+- **Note**: Higher values improve recall but increase memory and build time
+- **Added**: v2.1.0 (2026-02-02)
+
+#### HNSW_EF_CONSTRUCTION
+- **Type**: Integer
+- **Default**: `1024`
+- **Minimum**: 8
+- **Purpose**: HNSW efConstruction parameter for index build quality
+- **Note**: Higher values improve index quality but increase build time
+- **Added**: v2.1.0 (2026-02-02)
+
 ---
 
 ### Vector DB Configuration
@@ -549,7 +565,7 @@ NEXT_PUBLIC_API_BASE_URL=http://localhost:8090/api/v1
 
 **Launch**:
 ```bash
-./scripts/compose-clean -f docker-compose.yml -f deploy/docker-compose.gpu.yml up -d --build
+./scripts/compose-clean up -d --build
 ```
 
 ---

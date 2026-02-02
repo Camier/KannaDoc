@@ -46,10 +46,29 @@ backend/app/eval/
 ├── labeler.py          # LLM relevance scoring
 ├── query_generator.py  # Query synthesis
 ├── dataset.py          # Dataset management
-└── runner.py           # Evaluation orchestration
+├── runner.py           # Evaluation orchestration + p95 latency
+└── config/
+    └── thresholds.yaml # Quality thresholds (recall, MRR, latency)
 
 backend/app/api/endpoints/
 └── eval.py             # REST API endpoints
+```
+
+### RAG Pipeline Improvements (2026-02)
+
+Recent enhancements to the RAG pipeline for thesis evaluation:
+
+| Feature | Description |
+|---------|-------------|
+| **Retry Logic** | Tenacity-based retry on Milvus search (3 attempts, exponential backoff 2-30s) |
+| **Configurable HNSW** | `HNSW_M` and `HNSW_EF_CONSTRUCTION` now configurable via environment |
+| **p95 Latency Tracking** | Evaluation runs now include p95 latency metrics in milliseconds |
+| **Quality Thresholds** | `thresholds.yaml` with pass/fail targets (recall≥0.70, MRR≥0.65, p95≤2500ms) |
+
+**Configuration** (add to `.env`):
+```bash
+HNSW_M=48                    # HNSW M parameter (4-64, default: 48)
+HNSW_EF_CONSTRUCTION=1024    # HNSW efConstruction (≥8, default: 1024)
 ```
 
 ## Original Project
