@@ -8,7 +8,7 @@ Academic research fork for thesis work on retrieval evaluation and visual RAG op
 |--------|---------|
 | **Purpose** | Ethnopharmacology RAG system with evaluation framework |
 | **Corpus** | 129 PDFs with legacy-migrated V2 entities (re-extraction recommended) |
-| **Stack** | FastAPI + Milvus + Neo4j + MiniMax M2.1 |
+| **Stack** | FastAPI + Milvus + MiniMax M2.1 (Neo4j disabled) |
 | **Upstream** | [liweiphys/layra](https://github.com/liweiphys/layra) |
 
 ## 2. DIRECTORY STRUCTURE
