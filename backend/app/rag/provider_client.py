@@ -17,9 +17,22 @@ Supported Providers (January 2026):
 """
 
 import os
-from typing import Optional, List
+from pathlib import Path
+from typing import Optional, List, Dict, Any
+
+import yaml
 from openai import AsyncOpenAI
 from app.core.logging import logger
+
+
+def _load_providers_config() -> Dict[str, Any]:
+    """Load provider configuration from YAML file.
+
+    Returns the full config dict with 'providers' and 'vision_patterns' keys.
+    """
+    config_path = Path(__file__).parent.parent / "core/llm/providers.yaml"
+    with open(config_path) as f:
+        return yaml.safe_load(f)
 
 
 def _generate_zhipu_jwt(api_key: str) -> str:
@@ -77,254 +90,9 @@ def _generate_zhipu_jwt(api_key: str) -> str:
 class ProviderClient:
     """Factory for creating provider-specific OpenAI-compatible clients"""
 
-    PROVIDERS = {
-        "openai": {
-            "base_url": "https://api.openai.com/v1",
-            "env_key": "OPENAI_API_KEY",
-            "models": [
-                "gpt-5.2",
-                "gpt-4.1",
-                "gpt-4.5",
-                "gpt-4o",
-                "gpt-4",
-                "gpt-4o-mini",
-                "gpt-3.5-turbo",
-                "o1",
-                "o1-mini",
-                "o1-preview",
-            ],
-            "vision": True,
-        },
-        "deepseek": {
-            "base_url": "https://api.deepseek.com/v1",
-            "env_key": "DEEPSEEK_API_KEY",
-            "models": [
-                "deepseek-r1",
-                "deepseek-chat",
-                "deepseek-reasoner",
-            ],
-            "vision": False,
-        },
-        "anthropic": {
-            "base_url": "https://api.anthropic.com/v1",
-            "env_key": "ANTHROPIC_API_KEY",
-            "models": [
-                "claude-3-opus",
-                "claude-3-sonnet",
-                "claude-3-haiku",
-                "claude-3.5-sonnet",
-                "claude-4-opus",
-                "claude-4-sonnet",
-            ],
-            "vision": True,
-        },
-        "gemini": {
-            "base_url": "https://generativelanguage.googleapis.com/v1beta",
-            "env_key": "GEMINI_API_KEY",
-            "models": [
-                "gemini-pro",
-                "gemini-2.5-pro",
-                "gemini-2.5-flash",
-                "gemini-3-pro",
-                "gemini-3-flash",
-            ],
-            "vision": True,
-        },
-        "moonshot": {
-            "base_url": "https://api.moonshot.cn/v1",
-            "env_key": "MOONSHOT_API_KEY",
-            "models": [
-                "kimi-k2-thinking",
-                "kimi-k2-thinking-turbo",
-                "moonshot-v1-8k",
-                "moonshot-v1-32k",
-                "moonshot-v1-128k",
-            ],
-            "vision": False,
-        },
-        "zhipu": {
-            "base_url": "https://open.bigmodel.cn/api/paas/v4",
-            "env_key": "ZHIPUAI_API_KEY",
-            "models": [
-                "glm-4",
-                "glm-4-flash",
-                "glm-4-plus",
-                "glm-4v",
-                "glm-4-alltools",
-            ],
-            "vision": True,
-        },
-        "zhipu-coding": {
-            "base_url": "https://open.bigmodel.cn/api/coding/paas/v4",
-            "env_key": "ZHIPUAI_API_KEY",
-            "models": [
-                "glm-4.5",
-                "glm-4.5-air",
-                "glm-4.5-flash",
-                "glm-4.5v",
-                "glm-4.6",
-                "glm-4.6v",
-                "glm-4.6v-flash",
-                "glm-4.7",
-                "glm-4.7-flash",
-            ],
-            "vision": True,
-        },
-        "zai": {
-            "base_url": "https://api.z.ai/api/coding/paas/v4",
-            "env_key": "ZAI_API_KEY",
-            "models": [
-                "glm-4.5",
-                "glm-4.5-air",
-                "glm-4.5-flash",
-                "glm-4.5v",
-                "glm-4.6",
-                "glm-4.6v",
-                "glm-4.6v-flash",
-                "glm-4.7",
-                "glm-4.7-flash",
-            ],
-            "vision": True,
-        },
-        "ollama-cloud": {
-            "base_url": "https://api.ollama.com/v1",
-            "env_key": "OLLAMA_CLOUD_API_KEY",
-            "models": [
-                "llama3.3",
-                "llama3.3:70b",
-                "llama3.2",
-                "llama3.2:1b",
-                "llama3.2:3b",
-                "llama3.1",
-                "llama3.1:8b",
-                "llama3.1:70b",
-                "llama3.1:405b",
-                "llama3",
-                "mistral",
-                "mistral-nemo",
-                "mistral-large",
-                "mixtral",
-                "mixtral:8x22b",
-                "qwen2.5",
-                "qwen2.5:7b",
-                "qwen2.5:14b",
-                "qwen2.5:32b",
-                "qwen2.5:72b",
-                "qwen2.5-coder",
-                "qwen2.5-coder:7b",
-                "qwen2.5-coder:14b",
-                "qwen2.5-coder:32b",
-                "deepseek-r1",
-                "deepseek-r1:7b",
-                "deepseek-r1:8b",
-                "deepseek-r1:14b",
-                "deepseek-r1:32b",
-                "deepseek-r1:70b",
-                "deepseek-v3",
-                "phi4",
-                "phi4:14b",
-                "gemma2",
-                "gemma2:2b",
-                "gemma2:9b",
-                "gemma2:27b",
-                "codellama",
-                "codellama:7b",
-                "codellama:13b",
-                "codellama:34b",
-                "llama3.2-vision",
-                "llama3.2-vision:11b",
-                "llama3.2-vision:90b",
-                "llava",
-                "llava:7b",
-                "llava:13b",
-                "llava:34b",
-            ],
-            "vision": True,
-        },
-        "ollama-local": {
-            "base_url": "http://127.0.0.1:11434/v1",
-            "env_key": "OLLAMA_API_KEY",
-            "models": [
-                "llama3.3",
-                "llama3.2",
-                "llama3.1",
-                "llama3",
-                "mistral",
-                "mixtral",
-                "qwen2.5",
-                "qwen2.5-coder",
-                "deepseek-r1",
-                "phi4",
-                "gemma2",
-                "codellama",
-                "llama3.2-vision",
-                "llava",
-            ],
-            "vision": True,
-        },
-        "cliproxyapi": {
-            "base_url": "",
-            "env_key": "CLIPROXYAPI_API_KEY",
-            "models": [
-                # Antigravity (Claude via Google Cloud)
-                "claude-opus-4-5-thinking",
-                "claude-sonnet-4-5-thinking",
-                "claude-sonnet-4-5",
-                # Gemini CLI (via OAuth)
-                "gemini-2.5-pro",
-                "gemini-2.5-flash",
-                "gemini-2.5-flash-lite",
-                "gemini-3-pro-preview",
-                "gemini-3-pro-high",
-                "gemini-3-pro-image",
-                "gemini-3-flash",
-                "gemini-3-flash-preview",
-                "tab_flash_lite_preview",
-                # OpenAI OSS
-                "gpt-oss-120b-medium",
-            ],
-            "vision": True,
-        },
-        "minimax": {
-            "base_url": "https://api.minimax.chat/v1",
-            "env_key": "MINIMAX_API_KEY",
-            "models": ["abab6.5s-chat", "abab6.5g-chat", "abab6.5t-chat"],
-            "vision": False,
-        },
-        "cohere": {
-            "base_url": "https://api.cohere.ai/v1",
-            "env_key": "COHERE_API_KEY",
-            "models": ["command-r-plus", "command-r", "command"],
-            "vision": False,
-        },
-    }
-
-    VISION_MODELS = [
-        "gpt-4o",
-        "gpt-4.1",
-        "gpt-4.5",
-        "gpt-5",
-        "gpt-5.2",
-        "o1",
-        "claude-3-opus",
-        "claude-3-sonnet",
-        "claude-3.5-sonnet",
-        "claude-4",
-        "claude-opus-4",
-        "claude-sonnet-4",
-        "claude-opus-4.5",
-        "claude-sonnet-4.5",
-        "gemini-2.5-pro",
-        "gemini-3-pro",
-        "gemini-3-flash",
-        "glm-4v",
-        "glm-4.5v",
-        "glm-4.6v",
-        "qwen-vl",
-        "qwen2.5-vl",
-        "antigravity-claude",
-        "antigravity-gemini",
-    ]
+    _config = _load_providers_config()
+    PROVIDERS = _config["providers"]
+    VISION_MODELS = _config["vision_patterns"]
 
     @classmethod
     def is_vision_model(cls, model_name: str) -> bool:
