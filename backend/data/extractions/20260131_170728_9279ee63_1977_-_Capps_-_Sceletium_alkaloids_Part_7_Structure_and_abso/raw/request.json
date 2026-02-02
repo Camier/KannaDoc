@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-01-31T16:07:28.385337Z",
+  "doc_id": "729c0735dac33f261702afba004c6c1af012a6c4d27bac15d4f0e5f584c148d6",
+  "input": "/LAB/@thesis/datalab/ALL_FLAT/1977 - Capps - Sceletium alkaloids Part 7 Structure and absolute stereochemistry of mesembrane.pdf",
+  "is_file_url": false,
+  "page_range": null,
+  "payload": {
+    "mode": "accurate",
+    "output_format": "json,html,markdown,chunks",
+    "paginate": "true",
+    "add_block_ids": "true",
+    "disable_image_extraction": "false",
+    "disable_image_captions": "false",
+    "skip_cache": "false",
+    "page_schema": "{\"$schema\": \"http://json-schema.org/draft-07/schema#\", \"$id\": \"biblio\", \"title\": \"Bibliographic Metadata Schema\", \"description\": \"Minimal join keys for dedup and graph linking. Run on pages 0-2 only via page_range parameter.\", \"type\": \"object\", \"properties\": {\"title\": {\"type\": \"string\", \"description\": \"Document title as it appears on the first page\"}, \"authors\": {\"type\": \"array\", \"description\": \"Author names in document order\", \"items\": {\"type\": \"string\"}, \"maxItems\": 20}, \"publication_year\": {\"type\": \"integer\", \"description\": \"Year of publication (4-digit)\", \"minimum\": 1500, \"maximum\": 2100}, \"doi\": {\"type\": \"string\", \"description\": \"Digital Object Identifier (e.g. 10.1234/example)\"}, \"venue\": {\"type\": \"string\", \"description\": \"Journal, conference, publisher, or institutional source\"}}, \"required\": [], \"additionalProperties\": false}",
+    "extras": "extract_links"
+  },
+  "schema_path": "/LAB/@thesis/datalab/data/notes/schemas/biblio.json",
+  "no_schema": false
+}

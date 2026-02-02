@@ -1,0 +1,409 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "85bfd77c6fffbfa150b23bbb9942a79527d689fa58e5cb6481cf4ea821d0f9ec",
+  "extracted_at": "2026-02-01T08:53:37.261033+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "Taxon",
+      "name": "plants",
+      "attributes": {
+        "context": "Inventories of plants"
+      },
+      "source_chunk_ids": [
+        "de9687ef2773ca3a61ebba84dd243aec"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Indication",
+      "name": "ailments",
+      "attributes": {
+        "context": "particular ailments"
+      },
+      "source_chunk_ids": [
+        "de9687ef2773ca3a61ebba84dd243aec"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "Taxon",
+      "name": "sub-Saharan plants",
+      "attributes": {
+        "context": "sub-Saharan plants used as aphrodisiacs"
+      },
+      "source_chunk_ids": [
+        "1615683ff14bb5ce5efacd86e2c39073"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "PharmEffect",
+      "name": "aphrodisiacs",
+      "attributes": {
+        "context": "used as aphrodisiacs"
+      },
+      "source_chunk_ids": [
+        "1615683ff14bb5ce5efacd86e2c39073"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "Indication",
+      "name": "sexual dysfunction",
+      "attributes": {
+        "context": "for sexual dysfunction"
+      },
+      "source_chunk_ids": [
+        "1615683ff14bb5ce5efacd86e2c39073"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "Taxon",
+      "name": "plants",
+      "attributes": {
+        "context": "a survey of plants used for cancer"
+      },
+      "source_chunk_ids": [
+        "1615683ff14bb5ce5efacd86e2c39073"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "Indication",
+      "name": "cancer",
+      "attributes": {
+        "context": "used for cancer"
+      },
+      "source_chunk_ids": [
+        "1615683ff14bb5ce5efacd86e2c39073"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Indication",
+      "name": "related ailments",
+      "attributes": {
+        "context": "cancer and related ailments"
+      },
+      "source_chunk_ids": [
+        "1615683ff14bb5ce5efacd86e2c39073"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "Taxon",
+      "name": "plants",
+      "attributes": {
+        "context": "plants used by traditional healers to treat"
+      },
+      "source_chunk_ids": [
+        "1615683ff14bb5ce5efacd86e2c39073"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "Indication",
+      "name": "HIV/AIDS-related diseases",
+      "attributes": {
+        "context": "HIV/AIDS-related diseases in Lusaka"
+      },
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "Indication",
+      "name": "sexually transmitted diseases",
+      "attributes": {
+        "context": "treat sexually transmitted diseases"
+      },
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "Indication",
+      "name": "tuberculosis",
+      "attributes": {
+        "context": "treat tuberculosis and infections"
+      },
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "Indication",
+      "name": "infections",
+      "attributes": {
+        "context": "treat tuberculosis and infections"
+      },
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "Indication",
+      "name": "gastrointestinal disorders",
+      "attributes": {
+        "context": "treat gastrointestinal disorders of cattle"
+      },
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "PharmEffect",
+      "name": "Antimicrobial",
+      "attributes": {
+        "context": "Antimicrobial studies"
+      },
+      "source_chunk_ids": [
+        "f65627d24cecc197721e20ac50008476"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "Taxon",
+      "name": "plants",
+      "attributes": {
+        "context": "traditional uses of plants"
+      },
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "PharmEffect",
+      "name": "antimicrobial",
+      "attributes": {
+        "context": "antimicrobial and other bioactivity tests"
+      },
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "PharmEffect",
+      "name": "bioactivity",
+      "attributes": {
+        "context": "antimicrobial and other bioactivity tests"
+      },
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "PharmEffect",
+      "name": "antimicrobial",
+      "attributes": {
+        "context": "antimicrobial and acaricidal activities"
+      },
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "PharmEffect",
+      "name": "acaricidal",
+      "attributes": {
+        "context": "antimicrobial and acaricidal activities"
+      },
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "Taxon",
+      "name": "plants from Reunion",
+      "attributes": {
+        "context": "activities of plants from Reunion"
+      },
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "PharmEffect",
+      "name": "antimicrobial",
+      "attributes": {
+        "context": "antimicrobial activities of plants"
+      },
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "Taxon",
+      "name": "plants",
+      "attributes": {
+        "context": "activities of plants used to treat sexually transmitted diseases"
+      },
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "Indication",
+      "name": "sexually transmitted diseases",
+      "attributes": {
+        "context": "treat sexually transmitted diseases"
+      },
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "PharmEffect",
+      "name": "antibacterial",
+      "attributes": {
+        "context": "antibacterial activity of medicinal grasses"
+      },
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "Taxon",
+      "name": "medicinal grasses",
+      "attributes": {
+        "context": "antibacterial activity of medicinal grasses"
+      },
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "PharmEffect",
+      "name": "antimicrobial",
+      "attributes": {
+        "context": "antimicrobial, antioxidant, photo-protective and anti-tyrosinase activities"
+      },
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "PharmEffect",
+      "name": "antioxidant",
+      "attributes": {
+        "context": "antimicrobial, antioxidant, photo-protective and anti-tyrosinase activities"
+      },
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "PharmEffect",
+      "name": "photo-protective",
+      "attributes": {
+        "context": "antimicrobial, antioxidant, photo-protective and anti-tyrosinase activities"
+      },
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "PharmEffect",
+      "name": "anti-tyrosinase",
+      "attributes": {
+        "context": "antimicrobial, antioxidant, photo-protective and anti-tyrosinase activities"
+      },
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "Taxon",
+      "name": "plants",
+      "attributes": {
+        "context": "activities of plants used in traditional skin care"
+      },
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "Indication",
+      "name": "skin care",
+      "attributes": {
+        "context": "traditional skin care"
+      },
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "PharmEffect",
+      "name": "antimicrobial",
+      "attributes": {
+        "context": "antimicrobial and anti-quorum sensing activities"
+      },
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "PharmEffect",
+      "name": "anti-quorum sensing",
+      "attributes": {
+        "context": "antimicrobial and anti-quorum sensing activities"
+      },
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "Taxon",
+      "name": "several plants",
+      "attributes": {
+        "context": "activities of several plants used in treating urinary tract infections"
+      },
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Indication",
+      "name": "urinary tract infections",
+      "attributes": {
+        "context": "treating urinary tract infections"
+      },
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:04.072639+00:00",
+    "original_file": "entities.json"
+  }
+}

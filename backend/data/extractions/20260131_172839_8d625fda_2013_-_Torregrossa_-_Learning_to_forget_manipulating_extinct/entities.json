@@ -1,0 +1,4809 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "f420943d9704a1041abd37cf43f4c35abc25c2f8189a13144a5aa492fa511a64",
+  "extracted_at": "2026-02-01T08:30:22.864555+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "treat addiction"
+      },
+      "source_chunk_ids": [
+        "dcbc3b1dc9737d6b54f2463abcdc073c"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Indication",
+      "name": "drug addiction",
+      "attributes": {
+        "context": "treatments for drug addiction"
+      },
+      "source_chunk_ids": [
+        "bb826dc0864f7471ba0c0a4e548fcaa3"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "Indication",
+      "name": "relapse",
+      "attributes": {
+        "context": "relapse after abstinence"
+      },
+      "source_chunk_ids": [
+        "bb826dc0864f7471ba0c0a4e548fcaa3"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "Indication",
+      "name": "craving",
+      "attributes": {
+        "context": "induce craving"
+      },
+      "source_chunk_ids": [
+        "bb826dc0864f7471ba0c0a4e548fcaa3"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "treatment of addiction"
+      },
+      "source_chunk_ids": [
+        "bb826dc0864f7471ba0c0a4e548fcaa3"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "Indication",
+      "name": "relapse",
+      "attributes": {
+        "context": "induce craving and relapse"
+      },
+      "source_chunk_ids": [
+        "bb826dc0864f7471ba0c0a4e548fcaa3"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "to treat addiction"
+      },
+      "source_chunk_ids": [
+        "bb826dc0864f7471ba0c0a4e548fcaa3"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "increase dopamine release"
+      },
+      "source_chunk_ids": [
+        "2d8c9028225747ee84578c857233fef6"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "PharmEffect",
+      "name": "learning and memory consolidation",
+      "attributes": {
+        "context": "enhancing learning and memory consolidation"
+      },
+      "source_chunk_ids": [
+        "2d8c9028225747ee84578c857233fef6"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "PharmEffect",
+      "name": "consolidation",
+      "attributes": {
+        "context": "enhanced consolidation of drug-associated cues"
+      },
+      "source_chunk_ids": [
+        "2d8c9028225747ee84578c857233fef6"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "PharmEffect",
+      "name": "weaken the strength of memories",
+      "attributes": {
+        "context": "manipulations to weaken the strength of memories"
+      },
+      "source_chunk_ids": [
+        "91592f04b556679e7a7508ef70aa9977"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "PharmEffect",
+      "name": "transient mnemonic effects",
+      "attributes": {
+        "context": "produce only transient mnemonic effects"
+      },
+      "source_chunk_ids": [
+        "91592f04b556679e7a7508ef70aa9977"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "PharmEffect",
+      "name": "craving",
+      "attributes": {
+        "context": "drug-associated cues play in craving and relapse"
+      },
+      "source_chunk_ids": [
+        "91592f04b556679e7a7508ef70aa9977"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "PharmEffect",
+      "name": "relapse",
+      "attributes": {
+        "context": "drug-associated cues play in craving and relapse"
+      },
+      "source_chunk_ids": [
+        "91592f04b556679e7a7508ef70aa9977"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "treatment of addiction"
+      },
+      "source_chunk_ids": [
+        "91592f04b556679e7a7508ef70aa9977"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "PharmEffect",
+      "name": "reduce the effects of persistent, maladaptive memories",
+      "attributes": {
+        "context": "reconsolidation to reduce the effects of persistent, maladaptive memories"
+      },
+      "source_chunk_ids": [
+        "91592f04b556679e7a7508ef70aa9977"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "PharmEffect",
+      "name": "extinction of drug-associated memories",
+      "attributes": {
+        "context": "Mechanisms of extinction of drug-associated memories"
+      },
+      "source_chunk_ids": [
+        "82aa73c8094c61f9352b64c0d104f6ad"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "Indication",
+      "name": "relapse",
+      "attributes": {
+        "context": "a long-lasting reduction in relapse"
+      },
+      "source_chunk_ids": [
+        "575d8722b2f3e0d96b9ad32428143ade"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "treatment of addiction"
+      },
+      "source_chunk_ids": [
+        "575d8722b2f3e0d96b9ad32428143ade"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "Compound",
+      "name": "D-cycloserine",
+      "attributes": {
+        "context": "NMDA partial agonist D-cycloserine (DCS)"
+      },
+      "source_chunk_ids": [
+        "f7d342f515f359a7fb1593641a79e0dd"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "Compound",
+      "name": "DCS",
+      "attributes": {
+        "context": "DCS is a promising potential therapeutic"
+      },
+      "source_chunk_ids": [
+        "f7d342f515f359a7fb1593641a79e0dd"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "PharmEffect",
+      "name": "facilitate extinction of drug memories",
+      "attributes": {
+        "context": "to facilitate extinction of drug memories"
+      },
+      "source_chunk_ids": [
+        "f7d342f515f359a7fb1593641a79e0dd"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "PharmEffect",
+      "name": "facilitate extinction of fear",
+      "attributes": {
+        "context": "shown to facilitate extinction of fear"
+      },
+      "source_chunk_ids": [
+        "f7d342f515f359a7fb1593641a79e0dd"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "PharmEffect",
+      "name": "reduce reinstatement",
+      "attributes": {
+        "context": "reduce reinstatement in animal models"
+      },
+      "source_chunk_ids": [
+        "f7d342f515f359a7fb1593641a79e0dd"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "Compound",
+      "name": "DCS",
+      "attributes": {
+        "context": "DCS given post-session"
+      },
+      "source_chunk_ids": [
+        "f7d342f515f359a7fb1593641a79e0dd"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "extinction of a cocaine CPP"
+      },
+      "source_chunk_ids": [
+        "f7d342f515f359a7fb1593641a79e0dd"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "PharmEffect",
+      "name": "facilitates extinction of a cocaine CPP",
+      "attributes": {
+        "context": "facilitates extinction of a cocaine CPP"
+      },
+      "source_chunk_ids": [
+        "f7d342f515f359a7fb1593641a79e0dd"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "PharmEffect",
+      "name": "less spontaneous recovery",
+      "attributes": {
+        "context": "indicating less spontaneous recovery"
+      },
+      "source_chunk_ids": [
+        "f7d342f515f359a7fb1593641a79e0dd"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "PharmEffect",
+      "name": "resistant to reinstatement",
+      "attributes": {
+        "context": "is resistant to reinstatement"
+      },
+      "source_chunk_ids": [
+        "f7d342f515f359a7fb1593641a79e0dd"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "Compound",
+      "name": "DCS",
+      "attributes": {
+        "context": "DCS also facilitates extinction"
+      },
+      "source_chunk_ids": [
+        "f7d342f515f359a7fb1593641a79e0dd"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "PharmEffect",
+      "name": "facilitates extinction of responding for self-administered cocaine",
+      "attributes": {
+        "context": "facilitates extinction of responding for self-administered cocaine"
+      },
+      "source_chunk_ids": [
+        "f7d342f515f359a7fb1593641a79e0dd"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "self-administered cocaine"
+      },
+      "source_chunk_ids": [
+        "f7d342f515f359a7fb1593641a79e0dd"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "PharmEffect",
+      "name": "reduces re-acquisition of cocaine self-administration",
+      "attributes": {
+        "context": "reduces re-acquisition of cocaine self-administration"
+      },
+      "source_chunk_ids": [
+        "f7d342f515f359a7fb1593641a79e0dd"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "Compound",
+      "name": "D-serine",
+      "attributes": {
+        "context": "NMDA receptor, D-serine"
+      },
+      "source_chunk_ids": [
+        "f7d342f515f359a7fb1593641a79e0dd"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "PharmEffect",
+      "name": "neuroplasticity",
+      "attributes": {
+        "context": "results in neuroplasticity"
+      },
+      "source_chunk_ids": [
+        "06d4767a4b5cfee310cf28748c42fcdc"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "renewal of cocaine-seeking behavior"
+      },
+      "source_chunk_ids": [
+        "825cc1fd080abcc668021c02174e8af5"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "PharmEffect",
+      "name": "cocaine-seeking behavior",
+      "attributes": {
+        "context": "renewal of cocaine-seeking behavior"
+      },
+      "source_chunk_ids": [
+        "825cc1fd080abcc668021c02174e8af5"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "when extinction would be expected to occur"
+      },
+      "source_chunk_ids": [
+        "825cc1fd080abcc668021c02174e8af5"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "PharmEffect",
+      "name": "motivating effects",
+      "attributes": {
+        "context": "behaviorally motivating effects of cues"
+      },
+      "source_chunk_ids": [
+        "825cc1fd080abcc668021c02174e8af5"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "PharmEffect",
+      "name": "extinguish",
+      "attributes": {
+        "context": "difficult to extinguish"
+      },
+      "source_chunk_ids": [
+        "825cc1fd080abcc668021c02174e8af5"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "consolidation of extinction of drug-associated cues"
+      },
+      "source_chunk_ids": [
+        "825cc1fd080abcc668021c02174e8af5"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "extinction of a cocaine CPP"
+      },
+      "source_chunk_ids": [
+        "825cc1fd080abcc668021c02174e8af5"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "extinction of a cocaine CPP"
+      },
+      "source_chunk_ids": [
+        "825cc1fd080abcc668021c02174e8af5"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "Compound",
+      "name": "DCS",
+      "attributes": {
+        "context": "enhanced by DCS"
+      },
+      "source_chunk_ids": [
+        "825cc1fd080abcc668021c02174e8af5"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "PharmEffect",
+      "name": "reinstatement",
+      "attributes": {
+        "context": "no reinstatement of preference"
+      },
+      "source_chunk_ids": [
+        "825cc1fd080abcc668021c02174e8af5"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "last extinction session"
+      },
+      "source_chunk_ids": [
+        "825cc1fd080abcc668021c02174e8af5"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "PharmEffect",
+      "name": "extinction augmentation",
+      "attributes": {
+        "context": "extinction augmentation studies"
+      },
+      "source_chunk_ids": [
+        "825cc1fd080abcc668021c02174e8af5"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "PharmEffect",
+      "name": "reinstatement",
+      "attributes": {
+        "context": "all types of reinstatement"
+      },
+      "source_chunk_ids": [
+        "825cc1fd080abcc668021c02174e8af5"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "PharmEffect",
+      "name": "relapse",
+      "attributes": {
+        "context": "reinstatement (relapse)"
+      },
+      "source_chunk_ids": [
+        "825cc1fd080abcc668021c02174e8af5"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "PharmEffect",
+      "name": "stress",
+      "attributes": {
+        "context": "reinstatement induced by stress"
+      },
+      "source_chunk_ids": [
+        "825cc1fd080abcc668021c02174e8af5"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "Compound",
+      "name": "DCS",
+      "attributes": {
+        "context": "DCS has been successful in reducing reinstatement"
+      },
+      "source_chunk_ids": [
+        "825cc1fd080abcc668021c02174e8af5"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "PharmEffect",
+      "name": "reinstatement",
+      "attributes": {
+        "context": "reducing reinstatement to cues"
+      },
+      "source_chunk_ids": [
+        "825cc1fd080abcc668021c02174e8af5"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "PharmEffect",
+      "name": "stress",
+      "attributes": {
+        "context": "all forms of reinstatement, including stress"
+      },
+      "source_chunk_ids": [
+        "825cc1fd080abcc668021c02174e8af5"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "Compound",
+      "name": "DCS",
+      "attributes": {
+        "context": "using DCS to facilitate extinction"
+      },
+      "source_chunk_ids": [
+        "9938e0bf860690c7e5b935b9732f8600"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "Indication",
+      "name": "drug addicts",
+      "attributes": {
+        "context": "extinction in drug addicts"
+      },
+      "source_chunk_ids": [
+        "9938e0bf860690c7e5b935b9732f8600"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "30 cocaine cue presentations"
+      },
+      "source_chunk_ids": [
+        "9938e0bf860690c7e5b935b9732f8600"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "PharmEffect",
+      "name": "reinstatement",
+      "attributes": {
+        "context": "increase in cue-induced reinstatement"
+      },
+      "source_chunk_ids": [
+        "9938e0bf860690c7e5b935b9732f8600"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "enhancement in reconsolidation"
+      },
+      "source_chunk_ids": [
+        "9938e0bf860690c7e5b935b9732f8600"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "facilitation of extinction"
+      },
+      "source_chunk_ids": [
+        "9938e0bf860690c7e5b935b9732f8600"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "PharmEffect",
+      "name": "extinction learning",
+      "attributes": {
+        "context": "induce extinction learning"
+      },
+      "source_chunk_ids": [
+        "9938e0bf860690c7e5b935b9732f8600"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "reconsolidation could be facilitated"
+      },
+      "source_chunk_ids": [
+        "9938e0bf860690c7e5b935b9732f8600"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "Compound",
+      "name": "DCS",
+      "attributes": {
+        "context": "using DCS in combination with extinction"
+      },
+      "source_chunk_ids": [
+        "9938e0bf860690c7e5b935b9732f8600"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "in combination with extinction"
+      },
+      "source_chunk_ids": [
+        "9938e0bf860690c7e5b935b9732f8600"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "Indication",
+      "name": "addicts",
+      "attributes": {
+        "context": "extinction in addicts"
+      },
+      "source_chunk_ids": [
+        "9938e0bf860690c7e5b935b9732f8600"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "PharmEffect",
+      "name": "reconsolidation effects",
+      "attributes": {
+        "context": "due in part to reconsolidation effects"
+      },
+      "source_chunk_ids": [
+        "9938e0bf860690c7e5b935b9732f8600"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "PharmEffect",
+      "name": "extinguish",
+      "attributes": {
+        "context": "difficult to extinguish"
+      },
+      "source_chunk_ids": [
+        "9938e0bf860690c7e5b935b9732f8600"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "ensure extinction occurs"
+      },
+      "source_chunk_ids": [
+        "9938e0bf860690c7e5b935b9732f8600"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "PharmEffect",
+      "name": "cognitive enhancer",
+      "attributes": {
+        "context": "administering a cognitive enhancer"
+      },
+      "source_chunk_ids": [
+        "9938e0bf860690c7e5b935b9732f8600"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "Compound",
+      "name": "DCS",
+      "attributes": {
+        "context": "cognitive enhancer such as DCS"
+      },
+      "source_chunk_ids": [
+        "9938e0bf860690c7e5b935b9732f8600"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "cocaine cues"
+      },
+      "source_chunk_ids": [
+        "a18db9cf54fa59d9644924aa308b436b"
+      ]
+    },
+    {
+      "id": "ent_071",
+      "type": "Compound",
+      "name": "NMDA",
+      "attributes": {
+        "context": "NMDA antagonism"
+      },
+      "source_chunk_ids": [
+        "a18db9cf54fa59d9644924aa308b436b"
+      ]
+    },
+    {
+      "id": "ent_072",
+      "type": "PharmEffect",
+      "name": "antagonism",
+      "attributes": {
+        "context": "NMDA antagonism"
+      },
+      "source_chunk_ids": [
+        "a18db9cf54fa59d9644924aa308b436b"
+      ]
+    },
+    {
+      "id": "ent_073",
+      "type": "PharmEffect",
+      "name": "preventing reconsolidation",
+      "attributes": {
+        "context": "preventing reconsolidation of alcohol cue memories"
+      },
+      "source_chunk_ids": [
+        "a18db9cf54fa59d9644924aa308b436b"
+      ]
+    },
+    {
+      "id": "ent_074",
+      "type": "Compound",
+      "name": "alcohol",
+      "attributes": {
+        "context": "alcohol cue memories"
+      },
+      "source_chunk_ids": [
+        "a18db9cf54fa59d9644924aa308b436b"
+      ]
+    },
+    {
+      "id": "ent_075",
+      "type": "Compound",
+      "name": "NMDA",
+      "attributes": {
+        "context": "NMDA antagonism"
+      },
+      "source_chunk_ids": [
+        "a18db9cf54fa59d9644924aa308b436b"
+      ]
+    },
+    {
+      "id": "ent_076",
+      "type": "PharmEffect",
+      "name": "antagonism",
+      "attributes": {
+        "context": "NMDA antagonism"
+      },
+      "source_chunk_ids": [
+        "a18db9cf54fa59d9644924aa308b436b"
+      ]
+    },
+    {
+      "id": "ent_077",
+      "type": "PharmEffect",
+      "name": "blocks reconsolidation",
+      "attributes": {
+        "context": "blocks reconsolidation to prevent cocaine-primed reinstatement"
+      },
+      "source_chunk_ids": [
+        "a18db9cf54fa59d9644924aa308b436b"
+      ]
+    },
+    {
+      "id": "ent_078",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "cocaine-primed reinstatement"
+      },
+      "source_chunk_ids": [
+        "a18db9cf54fa59d9644924aa308b436b"
+      ]
+    },
+    {
+      "id": "ent_079",
+      "type": "Compound",
+      "name": "protein",
+      "attributes": {
+        "context": "protein synthesis"
+      },
+      "source_chunk_ids": [
+        "4faf7e68d47d8b1841a5cea3bd418040"
+      ]
+    },
+    {
+      "id": "ent_080",
+      "type": "Compound",
+      "name": "NMDA",
+      "attributes": {
+        "context": "NMDA signaling"
+      },
+      "source_chunk_ids": [
+        "4faf7e68d47d8b1841a5cea3bd418040"
+      ]
+    },
+    {
+      "id": "ent_081",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "associated with cocaine"
+      },
+      "source_chunk_ids": [
+        "4faf7e68d47d8b1841a5cea3bd418040"
+      ]
+    },
+    {
+      "id": "ent_082",
+      "type": "Compound",
+      "name": "PKA",
+      "attributes": {
+        "context": "PKA activation"
+      },
+      "source_chunk_ids": [
+        "4faf7e68d47d8b1841a5cea3bd418040"
+      ]
+    },
+    {
+      "id": "ent_083",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "chronic cocaine exposure"
+      },
+      "source_chunk_ids": [
+        "4faf7e68d47d8b1841a5cea3bd418040"
+      ]
+    },
+    {
+      "id": "ent_084",
+      "type": "PharmEffect",
+      "name": "increases PKA activity",
+      "attributes": {
+        "context": "persistently increases PKA activity"
+      },
+      "source_chunk_ids": [
+        "4faf7e68d47d8b1841a5cea3bd418040"
+      ]
+    },
+    {
+      "id": "ent_085",
+      "type": "Compound",
+      "name": "PKA",
+      "attributes": {
+        "context": "increases PKA activity"
+      },
+      "source_chunk_ids": [
+        "4faf7e68d47d8b1841a5cea3bd418040"
+      ]
+    },
+    {
+      "id": "ent_086",
+      "type": "PharmEffect",
+      "name": "memory strengthening",
+      "attributes": {
+        "context": "memory strengthening"
+      },
+      "source_chunk_ids": [
+        "4faf7e68d47d8b1841a5cea3bd418040"
+      ]
+    },
+    {
+      "id": "ent_087",
+      "type": "PharmEffect",
+      "name": "enhanced reconsolidation",
+      "attributes": {
+        "context": "enhanced reconsolidation"
+      },
+      "source_chunk_ids": [
+        "4faf7e68d47d8b1841a5cea3bd418040"
+      ]
+    },
+    {
+      "id": "ent_088",
+      "type": "Compound",
+      "name": "propranolol",
+      "attributes": {
+        "context": "systemic propranolol can disrupt"
+      },
+      "source_chunk_ids": [
+        "0e2717937836dee0cb333e7e1a450b27"
+      ]
+    },
+    {
+      "id": "ent_089",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "cocaine- and food-paired cues"
+      },
+      "source_chunk_ids": [
+        "0e2717937836dee0cb333e7e1a450b27"
+      ]
+    },
+    {
+      "id": "ent_090",
+      "type": "PharmEffect",
+      "name": "disrupt reconsolidation",
+      "attributes": {
+        "context": "can disrupt reconsolidation"
+      },
+      "source_chunk_ids": [
+        "0e2717937836dee0cb333e7e1a450b27"
+      ]
+    },
+    {
+      "id": "ent_091",
+      "type": "PharmEffect",
+      "name": "disrupt the ability ... to act as conditioned reinforcers",
+      "attributes": {
+        "context": "can disrupt the ability of both cocaine- and food-paired cues to act as conditioned reinforcers"
+      },
+      "source_chunk_ids": [
+        "0e2717937836dee0cb333e7e1a450b27"
+      ]
+    },
+    {
+      "id": "ent_092",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "treatments for addiction"
+      },
+      "source_chunk_ids": [
+        "0e2717937836dee0cb333e7e1a450b27"
+      ]
+    },
+    {
+      "id": "ent_093",
+      "type": "Compound",
+      "name": "propranolol",
+      "attributes": {
+        "context": "propranolol has been shown to block"
+      },
+      "source_chunk_ids": [
+        "0e2717937836dee0cb333e7e1a450b27"
+      ]
+    },
+    {
+      "id": "ent_094",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "both cocaine and morphine"
+      },
+      "source_chunk_ids": [
+        "0e2717937836dee0cb333e7e1a450b27"
+      ]
+    },
+    {
+      "id": "ent_095",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "both cocaine and morphine"
+      },
+      "source_chunk_ids": [
+        "0e2717937836dee0cb333e7e1a450b27"
+      ]
+    },
+    {
+      "id": "ent_096",
+      "type": "PharmEffect",
+      "name": "block reconsolidation",
+      "attributes": {
+        "context": "block reconsolidation of both cocaine and morphine"
+      },
+      "source_chunk_ids": [
+        "0e2717937836dee0cb333e7e1a450b27"
+      ]
+    },
+    {
+      "id": "ent_097",
+      "type": "PharmEffect",
+      "name": "reconsolidation of appetitive memories",
+      "attributes": {
+        "context": "important for reconsolidation of appetitive memories"
+      },
+      "source_chunk_ids": [
+        "0e2717937836dee0cb333e7e1a450b27"
+      ]
+    },
+    {
+      "id": "ent_098",
+      "type": "PharmEffect",
+      "name": "fear reconsolidation",
+      "attributes": {
+        "context": "shown for fear reconsolidation"
+      },
+      "source_chunk_ids": [
+        "0e2717937836dee0cb333e7e1a450b27"
+      ]
+    },
+    {
+      "id": "ent_099",
+      "type": "Compound",
+      "name": "propranolol",
+      "attributes": {
+        "context": "propranolol given 20 min prior"
+      },
+      "source_chunk_ids": [
+        "0e2717937836dee0cb333e7e1a450b27"
+      ]
+    },
+    {
+      "id": "ent_100",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "a cocaine CPP test"
+      },
+      "source_chunk_ids": [
+        "0e2717937836dee0cb333e7e1a450b27"
+      ]
+    },
+    {
+      "id": "ent_101",
+      "type": "PharmEffect",
+      "name": "inhibited retrieval of the CPP memory",
+      "attributes": {
+        "context": "inhibited retrieval of the CPP memory"
+      },
+      "source_chunk_ids": [
+        "0e2717937836dee0cb333e7e1a450b27"
+      ]
+    },
+    {
+      "id": "ent_102",
+      "type": "Compound",
+      "name": "propranolol",
+      "attributes": {
+        "context": "The effect of propranolol in this study"
+      },
+      "source_chunk_ids": [
+        "0e2717937836dee0cb333e7e1a450b27"
+      ]
+    },
+    {
+      "id": "ent_103",
+      "type": "PharmEffect",
+      "name": "reconsolidation effect",
+      "attributes": {
+        "context": "explained as a reconsolidation effect"
+      },
+      "source_chunk_ids": [
+        "0e2717937836dee0cb333e7e1a450b27"
+      ]
+    },
+    {
+      "id": "ent_104",
+      "type": "Compound",
+      "name": "propranolol",
+      "attributes": {
+        "context": "the propranolol had worn off"
+      },
+      "source_chunk_ids": [
+        "0e2717937836dee0cb333e7e1a450b27"
+      ]
+    },
+    {
+      "id": "ent_105",
+      "type": "PharmEffect",
+      "name": "disrupted retrieval of the CPP memory",
+      "attributes": {
+        "context": "retrieval of the CPP memory would be disrupted"
+      },
+      "source_chunk_ids": [
+        "0e2717937836dee0cb333e7e1a450b27"
+      ]
+    },
+    {
+      "id": "ent_106",
+      "type": "Compound",
+      "name": "neuronal nitric oxide synthase",
+      "attributes": {
+        "context": "neuronal nitric oxide synthase (Itzhak and Anderson 2007) have all been shown to be necessary"
+      },
+      "source_chunk_ids": [
+        "a0dd4f29961925d49e787d5b4c7f5192"
+      ]
+    },
+    {
+      "id": "ent_107",
+      "type": "Indication",
+      "name": "drugs of abuse",
+      "attributes": {
+        "context": "reconsolidation of CPP memories using multiple drugs of abuse."
+      },
+      "source_chunk_ids": [
+        "a0dd4f29961925d49e787d5b4c7f5192"
+      ]
+    },
+    {
+      "id": "ent_108",
+      "type": "Compound",
+      "name": "extracellular regulated protein kinase",
+      "attributes": {
+        "context": "activate extracellular regulated protein kinase (ERK) in the nucleus accumbens core"
+      },
+      "source_chunk_ids": [
+        "a0dd4f29961925d49e787d5b4c7f5192"
+      ]
+    },
+    {
+      "id": "ent_109",
+      "type": "Compound",
+      "name": "ERK",
+      "attributes": {
+        "context": "inhibition of ERK after reactivation persistently reduces the expression of CPP"
+      },
+      "source_chunk_ids": [
+        "a0dd4f29961925d49e787d5b4c7f5192"
+      ]
+    },
+    {
+      "id": "ent_110",
+      "type": "Compound",
+      "name": "protein synthesis",
+      "attributes": {
+        "context": "systemic inhibition of ERK or protein synthesis after cocaine or morphine CPP reactivation"
+      },
+      "source_chunk_ids": [
+        "a0dd4f29961925d49e787d5b4c7f5192"
+      ]
+    },
+    {
+      "id": "ent_111",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "protein synthesis after cocaine or morphine CPP reactivation"
+      },
+      "source_chunk_ids": [
+        "a0dd4f29961925d49e787d5b4c7f5192"
+      ]
+    },
+    {
+      "id": "ent_112",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "cocaine or morphine CPP reactivation is sufficient to reduce subsequent expression of CPP"
+      },
+      "source_chunk_ids": [
+        "a0dd4f29961925d49e787d5b4c7f5192"
+      ]
+    },
+    {
+      "id": "ent_113",
+      "type": "Compound",
+      "name": "cyclin-dependent kinase 5",
+      "attributes": {
+        "context": "an inhibitor of the cyclin-dependent kinase 5 (CDK5) specifically in the BLA"
+      },
+      "source_chunk_ids": [
+        "a0dd4f29961925d49e787d5b4c7f5192"
+      ]
+    },
+    {
+      "id": "ent_114",
+      "type": "Compound",
+      "name": "CDK5",
+      "attributes": {
+        "context": "an inhibitor of the cyclin-dependent kinase 5 (CDK5) specifically in the BLA"
+      },
+      "source_chunk_ids": [
+        "a0dd4f29961925d49e787d5b4c7f5192"
+      ]
+    },
+    {
+      "id": "ent_115",
+      "type": "Compound",
+      "name": "glycogen synthase kinase 3\u03b2",
+      "attributes": {
+        "context": "reported for glycogen synthase kinase 3\u03b2 (GSK3\u03b2) inhibitors"
+      },
+      "source_chunk_ids": [
+        "a0dd4f29961925d49e787d5b4c7f5192"
+      ]
+    },
+    {
+      "id": "ent_116",
+      "type": "Compound",
+      "name": "GSK3\u03b2",
+      "attributes": {
+        "context": "glycogen synthase kinase 3\u03b2 (GSK3\u03b2) inhibitors"
+      },
+      "source_chunk_ids": [
+        "a0dd4f29961925d49e787d5b4c7f5192"
+      ]
+    },
+    {
+      "id": "ent_117",
+      "type": "Compound",
+      "name": "glucocorticoid receptors",
+      "attributes": {
+        "context": "via actions at glucocorticoid receptors in the BLA"
+      },
+      "source_chunk_ids": [
+        "a0dd4f29961925d49e787d5b4c7f5192"
+      ]
+    },
+    {
+      "id": "ent_118",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "reconsolidation processes to treat addiction."
+      },
+      "source_chunk_ids": [
+        "a0dd4f29961925d49e787d5b4c7f5192"
+      ]
+    },
+    {
+      "id": "ent_119",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "treatments for addiction"
+      },
+      "source_chunk_ids": [
+        "aeb87a56fe7ecbebc03ef2af4a0a822d"
+      ]
+    },
+    {
+      "id": "ent_120",
+      "type": "Compound",
+      "name": "DCS",
+      "attributes": {
+        "context": "DCS did not facilitate extinction"
+      },
+      "source_chunk_ids": [
+        "e9a6aec809de5149da111d320f700965"
+      ]
+    },
+    {
+      "id": "ent_121",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "reduce drug use for cocaine"
+      },
+      "source_chunk_ids": [
+        "e9a6aec809de5149da111d320f700965"
+      ]
+    },
+    {
+      "id": "ent_122",
+      "type": "Compound",
+      "name": "alcohol",
+      "attributes": {
+        "context": "or alcohol"
+      },
+      "source_chunk_ids": [
+        "e9a6aec809de5149da111d320f700965"
+      ]
+    },
+    {
+      "id": "ent_123",
+      "type": "PharmEffect",
+      "name": "craving",
+      "attributes": {
+        "context": "craving and other physiological measures"
+      },
+      "source_chunk_ids": [
+        "e9a6aec809de5149da111d320f700965"
+      ]
+    },
+    {
+      "id": "ent_124",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "facilitate extinction"
+      },
+      "source_chunk_ids": [
+        "e9a6aec809de5149da111d320f700965"
+      ]
+    },
+    {
+      "id": "ent_125",
+      "type": "PharmEffect",
+      "name": "drug use",
+      "attributes": {
+        "context": "reduce drug use"
+      },
+      "source_chunk_ids": [
+        "e9a6aec809de5149da111d320f700965"
+      ]
+    },
+    {
+      "id": "ent_126",
+      "type": "PharmEffect",
+      "name": "smoking cue reactivity",
+      "attributes": {
+        "context": "DCS reduced smoking cue reactivity"
+      },
+      "source_chunk_ids": [
+        "e9a6aec809de5149da111d320f700965"
+      ]
+    },
+    {
+      "id": "ent_127",
+      "type": "PharmEffect",
+      "name": "emotionality",
+      "attributes": {
+        "context": "DCS reduced emotionality"
+      },
+      "source_chunk_ids": [
+        "e9a6aec809de5149da111d320f700965"
+      ]
+    },
+    {
+      "id": "ent_128",
+      "type": "PharmEffect",
+      "name": "stimulant effects",
+      "attributes": {
+        "context": "producing stimulant effects"
+      },
+      "source_chunk_ids": [
+        "e9a6aec809de5149da111d320f700965"
+      ]
+    },
+    {
+      "id": "ent_129",
+      "type": "PharmEffect",
+      "name": "extinction learning",
+      "attributes": {
+        "context": "extinction learning has occurred"
+      },
+      "source_chunk_ids": [
+        "e9a6aec809de5149da111d320f700965"
+      ]
+    },
+    {
+      "id": "ent_130",
+      "type": "PharmEffect",
+      "name": "consolidation of extinction",
+      "attributes": {
+        "context": "facilitate the consolidation of extinction"
+      },
+      "source_chunk_ids": [
+        "e9a6aec809de5149da111d320f700965"
+      ]
+    },
+    {
+      "id": "ent_131",
+      "type": "Indication",
+      "name": "anxiety disorders",
+      "attributes": {
+        "context": "treating anxiety disorders"
+      },
+      "source_chunk_ids": [
+        "e9a6aec809de5149da111d320f700965"
+      ]
+    },
+    {
+      "id": "ent_132",
+      "type": "Indication",
+      "name": "heroin addicts",
+      "attributes": {
+        "context": "that heroin addicts exposed to a stressor"
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_133",
+      "type": "Compound",
+      "name": "propranolol",
+      "attributes": {
+        "context": "or propranolol (Zhao et al. 2011)"
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_134",
+      "type": "PharmEffect",
+      "name": "reduced word recall",
+      "attributes": {
+        "context": "had reduced word recall the following day."
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_135",
+      "type": "PharmEffect",
+      "name": "inhibition of reconsolidation",
+      "attributes": {
+        "context": "this apparent inhibition of reconsolidation"
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_136",
+      "type": "Indication",
+      "name": "heroin craving",
+      "attributes": {
+        "context": "on heroin craving or other treatment outcomes."
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_137",
+      "type": "Indication",
+      "name": "anxiety disorders",
+      "attributes": {
+        "context": "for treating anxiety disorders such as post-traumatic stress disorder (PTSD)"
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_138",
+      "type": "Indication",
+      "name": "post-traumatic stress disorder",
+      "attributes": {
+        "context": "such as post-traumatic stress disorder (PTSD) and phobias"
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_139",
+      "type": "Indication",
+      "name": "phobias",
+      "attributes": {
+        "context": "and phobias (McCleery and Harvey 2004)"
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_140",
+      "type": "Indication",
+      "name": "PTSD",
+      "attributes": {
+        "context": "Patients with PTSD often have extreme symptoms of anxiety"
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_141",
+      "type": "PharmEffect",
+      "name": "symptoms of anxiety",
+      "attributes": {
+        "context": "often have extreme symptoms of anxiety when exposed to stimuli"
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_142",
+      "type": "PharmEffect",
+      "name": "induce fear",
+      "attributes": {
+        "context": "to induce fear, the reconsolidation process can be inhibited"
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_143",
+      "type": "Compound",
+      "name": "glucocorticoid",
+      "attributes": {
+        "context": "inhibited by glucocorticoid exposure"
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_144",
+      "type": "PharmEffect",
+      "name": "stress-induced inhibition of reconsolidation",
+      "attributes": {
+        "context": "similar to the stress-induced inhibition of reconsolidation described above"
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_145",
+      "type": "Compound",
+      "name": "propranolol",
+      "attributes": {
+        "context": "and by propranolol."
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_146",
+      "type": "Compound",
+      "name": "Glucocorticoid",
+      "attributes": {
+        "context": "Glucocorticoid treated PTSD and phobic patients"
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_147",
+      "type": "Indication",
+      "name": "PTSD",
+      "attributes": {
+        "context": "Glucocorticoid treated PTSD and phobic patients"
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_148",
+      "type": "Indication",
+      "name": "phobic patients",
+      "attributes": {
+        "context": "and phobic patients have reported reduced severity of fear"
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_149",
+      "type": "PharmEffect",
+      "name": "reduced severity of fear",
+      "attributes": {
+        "context": "reported reduced severity of fear and anxiety"
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_150",
+      "type": "PharmEffect",
+      "name": "reduced severity of anxiety",
+      "attributes": {
+        "context": "and anxiety in response to these stimuli"
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_151",
+      "type": "Compound",
+      "name": "propranolol",
+      "attributes": {
+        "context": "and propranolol-treated subjects have decreased physiological fear responses"
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_152",
+      "type": "PharmEffect",
+      "name": "decreased physiological fear responses",
+      "attributes": {
+        "context": "have decreased physiological fear responses when later asked to recall"
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_153",
+      "type": "Compound",
+      "name": "propranolol",
+      "attributes": {
+        "context": "In addition, propranolol given with repeated memory reactivations"
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_154",
+      "type": "PharmEffect",
+      "name": "reduction in PTSD symptoms",
+      "attributes": {
+        "context": "more persistent reduction in PTSD symptoms"
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_155",
+      "type": "Indication",
+      "name": "PTSD",
+      "attributes": {
+        "context": "no longer meeting diagnostic criteria for PTSD"
+      },
+      "source_chunk_ids": [
+        "7772e667aad3ce6205f2d82304f44b02"
+      ]
+    },
+    {
+      "id": "ent_156",
+      "type": "Compound",
+      "name": "NMDA receptors",
+      "attributes": {
+        "context": "require the activity of certain molecules (e.g., NMDA receptors)"
+      },
+      "source_chunk_ids": [
+        "8088698c082f5469bacbe8643287a3e5"
+      ]
+    },
+    {
+      "id": "ent_157",
+      "type": "Compound",
+      "name": "NFkB",
+      "attributes": {
+        "context": "regulated by extinction and reconsolidation (e.g., NFkB)"
+      },
+      "source_chunk_ids": [
+        "8088698c082f5469bacbe8643287a3e5"
+      ]
+    },
+    {
+      "id": "ent_158",
+      "type": "Compound",
+      "name": "NFkB",
+      "attributes": {
+        "context": "reconsolidation regulate NFkB"
+      },
+      "source_chunk_ids": [
+        "8088698c082f5469bacbe8643287a3e5"
+      ]
+    },
+    {
+      "id": "ent_159",
+      "type": "Compound",
+      "name": "nuclear factor of activated T cells (NFAT)",
+      "attributes": {
+        "context": "activity of the transcription factor, nuclear factor of activated T cells (NFAT)"
+      },
+      "source_chunk_ids": [
+        "8088698c082f5469bacbe8643287a3e5"
+      ]
+    },
+    {
+      "id": "ent_160",
+      "type": "Compound",
+      "name": "NFAT",
+      "attributes": {
+        "context": "manipulations of NFAT only affect extinction"
+      },
+      "source_chunk_ids": [
+        "8088698c082f5469bacbe8643287a3e5"
+      ]
+    },
+    {
+      "id": "ent_161",
+      "type": "Indication",
+      "name": "Drug addiction",
+      "attributes": {
+        "context": "Drug addiction is a chronic, relapsing disorder"
+      },
+      "source_chunk_ids": [
+        "421c1473cdf8d1808339b743d4b38ce2"
+      ]
+    },
+    {
+      "id": "ent_162",
+      "type": "Indication",
+      "name": "disorder",
+      "attributes": {
+        "context": "Drug addiction is a chronic, relapsing disorder"
+      },
+      "source_chunk_ids": [
+        "421c1473cdf8d1808339b743d4b38ce2"
+      ]
+    },
+    {
+      "id": "ent_163",
+      "type": "PharmEffect",
+      "name": "relapse",
+      "attributes": {
+        "context": "continued use and relapse after abstinence"
+      },
+      "source_chunk_ids": [
+        "421c1473cdf8d1808339b743d4b38ce2"
+      ]
+    },
+    {
+      "id": "ent_164",
+      "type": "PharmEffect",
+      "name": "abstinence",
+      "attributes": {
+        "context": "relapse after abstinence"
+      },
+      "source_chunk_ids": [
+        "421c1473cdf8d1808339b743d4b38ce2"
+      ]
+    },
+    {
+      "id": "ent_165",
+      "type": "Compound",
+      "name": "drugs",
+      "attributes": {
+        "context": "because drugs increase the activity"
+      },
+      "source_chunk_ids": [
+        "421c1473cdf8d1808339b743d4b38ce2"
+      ]
+    },
+    {
+      "id": "ent_166",
+      "type": "PharmEffect",
+      "name": "reward-related learning",
+      "attributes": {
+        "context": "sub-serving normal reward-related learning"
+      },
+      "source_chunk_ids": [
+        "421c1473cdf8d1808339b743d4b38ce2"
+      ]
+    },
+    {
+      "id": "ent_167",
+      "type": "PharmEffect",
+      "name": "extinction learning",
+      "attributes": {
+        "context": "through enhanced extinction learning"
+      },
+      "source_chunk_ids": [
+        "421c1473cdf8d1808339b743d4b38ce2"
+      ]
+    },
+    {
+      "id": "ent_168",
+      "type": "PharmEffect",
+      "name": "inhibition of reconsolidation",
+      "attributes": {
+        "context": "and/or inhibition of reconsolidation"
+      },
+      "source_chunk_ids": [
+        "421c1473cdf8d1808339b743d4b38ce2"
+      ]
+    },
+    {
+      "id": "ent_169",
+      "type": "Indication",
+      "name": "addictive disorders",
+      "attributes": {
+        "context": "treatment of addictive disorders"
+      },
+      "source_chunk_ids": [
+        "421c1473cdf8d1808339b743d4b38ce2"
+      ]
+    },
+    {
+      "id": "ent_170",
+      "type": "PharmEffect",
+      "name": "drug memory manipulations",
+      "attributes": {
+        "context": "employing drug memory manipulations"
+      },
+      "source_chunk_ids": [
+        "421c1473cdf8d1808339b743d4b38ce2"
+      ]
+    },
+    {
+      "id": "ent_171",
+      "type": "Indication",
+      "name": "addicts",
+      "attributes": {
+        "context": "extinguish memories in addicts"
+      },
+      "source_chunk_ids": [
+        "421c1473cdf8d1808339b743d4b38ce2"
+      ]
+    },
+    {
+      "id": "ent_172",
+      "type": "PharmEffect",
+      "name": "inhibiting reconsolidation",
+      "attributes": {
+        "context": "inhibiting the reconsolidation of drug-associated memories"
+      },
+      "source_chunk_ids": [
+        "421c1473cdf8d1808339b743d4b38ce2"
+      ]
+    },
+    {
+      "id": "ent_173",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "preclinical addiction studies"
+      },
+      "source_chunk_ids": [
+        "421c1473cdf8d1808339b743d4b38ce2"
+      ]
+    },
+    {
+      "id": "ent_174",
+      "type": "Indication",
+      "name": "PTSD",
+      "attributes": {
+        "context": "clinical studies of PTSD"
+      },
+      "source_chunk_ids": [
+        "421c1473cdf8d1808339b743d4b38ce2"
+      ]
+    },
+    {
+      "id": "ent_175",
+      "type": "PharmEffect",
+      "name": "addiction treatment strategy",
+      "attributes": {
+        "context": "a successful addiction treatment strategy"
+      },
+      "source_chunk_ids": [
+        "421c1473cdf8d1808339b743d4b38ce2"
+      ]
+    },
+    {
+      "id": "ent_176",
+      "type": "PharmEffect",
+      "name": "memory retrieval",
+      "attributes": {
+        "context": "combining memory retrieval with extinction learning"
+      },
+      "source_chunk_ids": [
+        "421c1473cdf8d1808339b743d4b38ce2"
+      ]
+    },
+    {
+      "id": "ent_177",
+      "type": "PharmEffect",
+      "name": "extinction learning",
+      "attributes": {
+        "context": "with extinction learning might be an effective"
+      },
+      "source_chunk_ids": [
+        "421c1473cdf8d1808339b743d4b38ce2"
+      ]
+    },
+    {
+      "id": "ent_178",
+      "type": "PharmEffect",
+      "name": "relapse",
+      "attributes": {
+        "context": "to prevent relapse"
+      },
+      "source_chunk_ids": [
+        "421c1473cdf8d1808339b743d4b38ce2"
+      ]
+    },
+    {
+      "id": "ent_179",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "treatment of addiction"
+      },
+      "source_chunk_ids": [
+        "421c1473cdf8d1808339b743d4b38ce2"
+      ]
+    },
+    {
+      "id": "ent_180",
+      "type": "Compound",
+      "name": "pharmacological agents",
+      "attributes": {
+        "context": "and pharmacological agents to safely and effectively treat"
+      },
+      "source_chunk_ids": [
+        "421c1473cdf8d1808339b743d4b38ce2"
+      ]
+    },
+    {
+      "id": "ent_181",
+      "type": "Indication",
+      "name": "addicts",
+      "attributes": {
+        "context": "treat human addicts"
+      },
+      "source_chunk_ids": [
+        "421c1473cdf8d1808339b743d4b38ce2"
+      ]
+    },
+    {
+      "id": "ent_182",
+      "type": "PharmEffect",
+      "name": "fear memories",
+      "attributes": {
+        "context": "reactivated fear memories"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_183",
+      "type": "PharmEffect",
+      "name": "fear conditioning",
+      "attributes": {
+        "context": "human fear conditioning study"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_184",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "test of extinction as updating mechanism"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_185",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "Beyond extinction"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_186",
+      "type": "PharmEffect",
+      "name": "fear responses",
+      "attributes": {
+        "context": "erasing human fear responses"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_187",
+      "type": "PharmEffect",
+      "name": "return of fear",
+      "attributes": {
+        "context": "preventing the return of fear"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_188",
+      "type": "PharmEffect",
+      "name": "cocaine craving",
+      "attributes": {
+        "context": "incubation of cocaine craving"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_189",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "incubation of cocaine craving"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_190",
+      "type": "PharmEffect",
+      "name": "cue exposure",
+      "attributes": {
+        "context": "virtual environments in cue exposure"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_191",
+      "type": "Compound",
+      "name": "D-cycloserine",
+      "attributes": {
+        "context": "Effects of D-cycloserine"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_192",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "extinction of conditioned freezing"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_193",
+      "type": "PharmEffect",
+      "name": "conditioned freezing",
+      "attributes": {
+        "context": "extinction of conditioned freezing"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_194",
+      "type": "Compound",
+      "name": "D-cycloserine",
+      "attributes": {
+        "context": "D-cycloserine and the facilitation"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_195",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "facilitation of extinction of conditioned fear"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_196",
+      "type": "PharmEffect",
+      "name": "conditioned fear",
+      "attributes": {
+        "context": "extinction of conditioned fear"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_197",
+      "type": "PharmEffect",
+      "name": "reinstatement",
+      "attributes": {
+        "context": "consequences for reinstatement"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_198",
+      "type": "PharmEffect",
+      "name": "Memory reconsolidation",
+      "attributes": {
+        "context": "Memory reconsolidation mediates the strengthening"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_199",
+      "type": "PharmEffect",
+      "name": "reconsolidation of drug memories",
+      "attributes": {
+        "context": "Disrupting reconsolidation of drug memories"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_200",
+      "type": "PharmEffect",
+      "name": "cocaine-seeking behavior",
+      "attributes": {
+        "context": "reduces cocaine-seeking behavior"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_201",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "cocaine-seeking behavior"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_202",
+      "type": "PharmEffect",
+      "name": "cocaine seeking",
+      "attributes": {
+        "context": "Cue-induced cocaine seeking"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_203",
+      "type": "PharmEffect",
+      "name": "relapse",
+      "attributes": {
+        "context": "relapse are reduced"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_204",
+      "type": "PharmEffect",
+      "name": "drug memory reconsolidation",
+      "attributes": {
+        "context": "disruption of drug memory reconsolidation"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_205",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "Cue-induced cocaine seeking"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_206",
+      "type": "PharmEffect",
+      "name": "Cue-exposure therapy",
+      "attributes": {
+        "context": "Cue-exposure therapy to decrease alcohol craving"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_207",
+      "type": "PharmEffect",
+      "name": "alcohol craving",
+      "attributes": {
+        "context": "decrease alcohol craving"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_208",
+      "type": "Compound",
+      "name": "alcohol",
+      "attributes": {
+        "context": "decrease alcohol craving"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_209",
+      "type": "Compound",
+      "name": "D-cycloserine",
+      "attributes": {
+        "context": "D-cycloserine potentiates the reconsolidation"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_210",
+      "type": "PharmEffect",
+      "name": "reconsolidation of cocaine-associated memories",
+      "attributes": {
+        "context": "potentiates the reconsolidation of cocaine-associated memories"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_211",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "cocaine-associated memories"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_212",
+      "type": "PharmEffect",
+      "name": "relapse",
+      "attributes": {
+        "context": "relapse to heroin seeking"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_213",
+      "type": "PharmEffect",
+      "name": "heroin seeking",
+      "attributes": {
+        "context": "relapse to heroin seeking"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_214",
+      "type": "Compound",
+      "name": "heroin",
+      "attributes": {
+        "context": "relapse to heroin seeking"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_215",
+      "type": "Compound",
+      "name": "cdk5",
+      "attributes": {
+        "context": "Basolateral amygdala cdk5 activity"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_216",
+      "type": "PharmEffect",
+      "name": "consolidation",
+      "attributes": {
+        "context": "mediates consolidation and reconsolidation"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_217",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "mediates consolidation and reconsolidation"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_218",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "memories for cocaine cues"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_219",
+      "type": "Compound",
+      "name": "PKMzeta",
+      "attributes": {
+        "context": "Inhibition of PKMzeta"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_220",
+      "type": "PharmEffect",
+      "name": "drug reward memory",
+      "attributes": {
+        "context": "abolishes long-term drug reward memory"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_221",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "impair extinction of CS motivational value"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_222",
+      "type": "PharmEffect",
+      "name": "conditioned responses",
+      "attributes": {
+        "context": "explicit conditioned responses"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_223",
+      "type": "PharmEffect",
+      "name": "conditioning",
+      "attributes": {
+        "context": "second-order conditioning"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_224",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "self-administer cocaine"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_225",
+      "type": "Compound",
+      "name": "cyclic AMP-dependent kinase A (PKA)",
+      "attributes": {
+        "context": "modulation of cyclic AMP-dependent kinase A (PKA) activity"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_226",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "Post-retrieval extinction training"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_227",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "hinders the extinction of morphine-induced"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_228",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "morphine-induced conditioned place preference"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_229",
+      "type": "PharmEffect",
+      "name": "conditioned place preference",
+      "attributes": {
+        "context": "morphine-induced conditioned place preference"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_230",
+      "type": "PharmEffect",
+      "name": "Cue exposure therapy",
+      "attributes": {
+        "context": "Cue exposure therapy for the treatment of opiate addiction"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_231",
+      "type": "Indication",
+      "name": "opiate addiction",
+      "attributes": {
+        "context": "treatment of opiate addiction"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_232",
+      "type": "Compound",
+      "name": "opiate",
+      "attributes": {
+        "context": "opiate addiction"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_233",
+      "type": "Indication",
+      "name": "PTSD",
+      "attributes": {
+        "context": "prevention of PTSD"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_234",
+      "type": "PharmEffect",
+      "name": "reinstatement",
+      "attributes": {
+        "context": "conditioned-cued reinstatement"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_235",
+      "type": "PharmEffect",
+      "name": "cocaine-seeking behavior",
+      "attributes": {
+        "context": "extinguished cocaine-seeking behavior"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_236",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "cocaine-seeking behavior"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_237",
+      "type": "PharmEffect",
+      "name": "reinstate responding",
+      "attributes": {
+        "context": "cues to reinstate responding"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_238",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "self-administered cocaine"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_239",
+      "type": "PharmEffect",
+      "name": "Memory extinction",
+      "attributes": {
+        "context": "Memory extinction entails the inhibition"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_240",
+      "type": "Compound",
+      "name": "NF-kappaB",
+      "attributes": {
+        "context": "transcription factor NF-kappaB"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_241",
+      "type": "Compound",
+      "name": "NF-kappaB",
+      "attributes": {
+        "context": "transcription factor NF-kappaB"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_242",
+      "type": "PharmEffect",
+      "name": "memory reconsolidation",
+      "attributes": {
+        "context": "long-term memory reconsolidation"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_243",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "cocaine exposure therapy"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_244",
+      "type": "PharmEffect",
+      "name": "cocaine exposure therapy",
+      "attributes": {
+        "context": "novel cocaine exposure therapy"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_245",
+      "type": "PharmEffect",
+      "name": "relapse prevention",
+      "attributes": {
+        "context": "relapse prevention"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_246",
+      "type": "PharmEffect",
+      "name": "reconsolidation of cocaine-associated contextual memory",
+      "attributes": {
+        "context": "reconsolidation of cocaine-associated contextual memory"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_247",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "cocaine-associated contextual memory"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_248",
+      "type": "Compound",
+      "name": "NMDA receptors",
+      "attributes": {
+        "context": "antagonism of NMDA receptors"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_249",
+      "type": "PharmEffect",
+      "name": "reconsolidation of drug-associated memory",
+      "attributes": {
+        "context": "prevents the reconsolidation of drug-associated memory"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_250",
+      "type": "PharmEffect",
+      "name": "drug-seeking behaviors",
+      "attributes": {
+        "context": "acquired drug-seeking behaviors"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_251",
+      "type": "PharmEffect",
+      "name": "Reconsolidation of appetitive memories",
+      "attributes": {
+        "context": "Reconsolidation of appetitive memories"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_252",
+      "type": "Compound",
+      "name": "B-adrenergic receptors",
+      "attributes": {
+        "context": "dependent on B-adrenergic receptors"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_253",
+      "type": "Compound",
+      "name": "NMDA receptors",
+      "attributes": {
+        "context": "Antagonism at NMDA receptors"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_254",
+      "type": "Compound",
+      "name": "beta-adrenergic receptors",
+      "attributes": {
+        "context": "not beta-adrenergic receptors"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_255",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "disrupts the reconsolidation"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_256",
+      "type": "Compound",
+      "name": "ethanol",
+      "attributes": {
+        "context": "ethanol-associated conditioned stimuli"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_257",
+      "type": "PharmEffect",
+      "name": "Extinction\u2013reconsolidation",
+      "attributes": {
+        "context": "Extinction\u2013reconsolidation boundaries"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_258",
+      "type": "PharmEffect",
+      "name": "attenuation of fear memories",
+      "attributes": {
+        "context": "persistent attenuation of fear memories"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_259",
+      "type": "PharmEffect",
+      "name": "fear memories",
+      "attributes": {
+        "context": "attenuation of fear memories"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_260",
+      "type": "Compound",
+      "name": "muscimol",
+      "attributes": {
+        "context": "amygdala by muscimol infusion"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_261",
+      "type": "PharmEffect",
+      "name": "fear conditioning",
+      "attributes": {
+        "context": "prevents fear conditioning"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_262",
+      "type": "Compound",
+      "name": "propranolol",
+      "attributes": {
+        "context": "efficacy of propranolol"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_263",
+      "type": "PharmEffect",
+      "name": "reconsolidation of fear memories",
+      "attributes": {
+        "context": "reconsolidation of fear memories"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_264",
+      "type": "PharmEffect",
+      "name": "fear memories",
+      "attributes": {
+        "context": "reconsolidation of fear memories"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_265",
+      "type": "PharmEffect",
+      "name": "Fear memories",
+      "attributes": {
+        "context": "Fear memories require protein synthesis"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_266",
+      "type": "Compound",
+      "name": "protein",
+      "attributes": {
+        "context": "require protein synthesis"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_267",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "for reconsolidation after retrieval"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_268",
+      "type": "Indication",
+      "name": "drug addiction",
+      "attributes": {
+        "context": "mechanisms of drug addiction"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_269",
+      "type": "Compound",
+      "name": "D-cycloserine",
+      "attributes": {
+        "context": "D-cycloserine deters reacquisition"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_270",
+      "type": "PharmEffect",
+      "name": "reacquisition of cocaine self-administration",
+      "attributes": {
+        "context": "deters reacquisition of cocaine self-administration"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_271",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "cocaine self-administration"
+      },
+      "source_chunk_ids": [
+        "152da94b9b9dfd1bea880eedc09e08ea"
+      ]
+    },
+    {
+      "id": "ent_272",
+      "type": "PharmEffect",
+      "name": "extinction learning",
+      "attributes": {
+        "context": "extinction learning"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_273",
+      "type": "Indication",
+      "name": "drug dependent patients",
+      "attributes": {
+        "context": "recovering drug dependent patients"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_274",
+      "type": "Compound",
+      "name": "beta-adrenergic receptors",
+      "attributes": {
+        "context": "Inhibition of beta-adrenergic receptors"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_275",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "retrieval of a cocaine-associated memory"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_276",
+      "type": "PharmEffect",
+      "name": "reinstatement",
+      "attributes": {
+        "context": "protection against reinstatement"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_277",
+      "type": "Compound",
+      "name": "D-cycloserine",
+      "attributes": {
+        "context": "effects of D-cycloserine on extinction"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_278",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "extinction of a cocaine-induced conditioned place preference"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_279",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "cocaine-induced conditioned place preference"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_280",
+      "type": "PharmEffect",
+      "name": "conditioned place preference",
+      "attributes": {
+        "context": "cocaine-induced conditioned place preference"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_281",
+      "type": "PharmEffect",
+      "name": "reinstatement",
+      "attributes": {
+        "context": "resistant to reinstatement"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_282",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "context-dependent extinction of a cocaine"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_283",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "extinction of a cocaine- and a morphine-induced"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_284",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "a morphine-induced conditioned floor preference"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_285",
+      "type": "PharmEffect",
+      "name": "conditioned floor preference",
+      "attributes": {
+        "context": "morphine-induced conditioned floor preference"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_286",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "reconsolidation or extinction depending on reminder duration"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_287",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "reconsolidation or extinction depending on reminder duration"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_288",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "inhibiting cocaine seeking"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_289",
+      "type": "PharmEffect",
+      "name": "Extinction",
+      "attributes": {
+        "context": "Extinction circuits for fear and addiction"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_290",
+      "type": "Indication",
+      "name": "fear",
+      "attributes": {
+        "context": "Extinction circuits for fear and addiction"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_291",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "fear and addiction overlap"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_292",
+      "type": "PharmEffect",
+      "name": "fear extinction",
+      "attributes": {
+        "context": "Induction of fear extinction"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_293",
+      "type": "Compound",
+      "name": "BDNF",
+      "attributes": {
+        "context": "hippocampal\u2013infralimbic BDNF"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_294",
+      "type": "Compound",
+      "name": "Cocaine",
+      "attributes": {
+        "context": "Cocaine withdrawal enhances long-term potentiation"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_295",
+      "type": "PharmEffect",
+      "name": "withdrawal",
+      "attributes": {
+        "context": "Cocaine withdrawal enhances long-term potentiation"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_296",
+      "type": "PharmEffect",
+      "name": "long-term potentiation",
+      "attributes": {
+        "context": "enhances long-term potentiation induced by corticotropin-releasing factor"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_297",
+      "type": "Compound",
+      "name": "corticotropin-releasing factor",
+      "attributes": {
+        "context": "induced by corticotropin-releasing factor"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_298",
+      "type": "Compound",
+      "name": "CRF",
+      "attributes": {
+        "context": "via CRF, NMDA receptors and PKA"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_299",
+      "type": "Compound",
+      "name": "NMDA receptors",
+      "attributes": {
+        "context": "via CRF, NMDA receptors and PKA"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_300",
+      "type": "Compound",
+      "name": "PKA",
+      "attributes": {
+        "context": "via CRF, NMDA receptors and PKA"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_301",
+      "type": "Compound",
+      "name": "Anisomycin",
+      "attributes": {
+        "context": "Anisomycin infused into the hippocampus"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_302",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "block \"reconsolidation\" but impairs extinction"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_303",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "but impairs extinction"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_304",
+      "type": "Compound",
+      "name": "d-cycloserine",
+      "attributes": {
+        "context": "effects of d-cycloserine on craving"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_305",
+      "type": "PharmEffect",
+      "name": "craving",
+      "attributes": {
+        "context": "on craving in cocaine-dependent individuals"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_306",
+      "type": "Indication",
+      "name": "cocaine-dependent individuals",
+      "attributes": {
+        "context": "craving in cocaine-dependent individuals"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_307",
+      "type": "PharmEffect",
+      "name": "memory reconsolidation",
+      "attributes": {
+        "context": "regulation of memory reconsolidation processes"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_308",
+      "type": "PharmEffect",
+      "name": "cocaine-seeking behavior",
+      "attributes": {
+        "context": "facilitate drug context-induced cocaine-seeking behavior"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_309",
+      "type": "PharmEffect",
+      "name": "Cognitive enhancers",
+      "attributes": {
+        "context": "Cognitive enhancers as adjuncts to psychotherapy"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_310",
+      "type": "Compound",
+      "name": "D-cycloserine",
+      "attributes": {
+        "context": "use of D-cycloserine in phobic individuals"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_311",
+      "type": "Indication",
+      "name": "phobic individuals",
+      "attributes": {
+        "context": "D-cycloserine in phobic individuals"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_312",
+      "type": "PharmEffect",
+      "name": "extinction of fear",
+      "attributes": {
+        "context": "facilitate extinction of fear"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_313",
+      "type": "Indication",
+      "name": "drug addiction",
+      "attributes": {
+        "context": "memory systems and drug addiction"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_314",
+      "type": "PharmEffect",
+      "name": "beta-adrenergic antagonism",
+      "attributes": {
+        "context": "peripheral beta-adrenergic antagonism blocks reconsolidation"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_315",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "blocks reconsolidation for a morphine place preference"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_316",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "for a morphine place preference"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_317",
+      "type": "PharmEffect",
+      "name": "place preference",
+      "attributes": {
+        "context": "a morphine place preference"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_318",
+      "type": "PharmEffect",
+      "name": "Reconsolidation",
+      "attributes": {
+        "context": "Reconsolidation of a morphine place preference"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_319",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "Reconsolidation of a morphine place preference"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_320",
+      "type": "PharmEffect",
+      "name": "place preference",
+      "attributes": {
+        "context": "a morphine place preference"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_321",
+      "type": "Compound",
+      "name": "propranolol",
+      "attributes": {
+        "context": "disruption by propranolol and midazolam"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_322",
+      "type": "Compound",
+      "name": "midazolam",
+      "attributes": {
+        "context": "propranolol and midazolam"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_323",
+      "type": "Compound",
+      "name": "propranolol",
+      "attributes": {
+        "context": "effect of propranolol dose"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_324",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "reconsolidation of a morphine place preference"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_325",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "a morphine place preference"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_326",
+      "type": "PharmEffect",
+      "name": "place preference",
+      "attributes": {
+        "context": "a morphine place preference"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_327",
+      "type": "Compound",
+      "name": "propranolol",
+      "attributes": {
+        "context": "effect of propranolol and midazolam"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_328",
+      "type": "Compound",
+      "name": "midazolam",
+      "attributes": {
+        "context": "propranolol and midazolam on the reconsolidation"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_329",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "reconsolidation of a morphine place preference"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_330",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "a morphine place preference"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_331",
+      "type": "PharmEffect",
+      "name": "place preference",
+      "attributes": {
+        "context": "a morphine place preference"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_332",
+      "type": "PharmEffect",
+      "name": "NMDA antagonist",
+      "attributes": {
+        "context": "the NMDA antagonist MK-801"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_333",
+      "type": "Compound",
+      "name": "MK-801",
+      "attributes": {
+        "context": "NMDA antagonist MK-801 disrupts reconsolidation"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_334",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "disrupts reconsolidation of memory for amphetamine-conditioned place preference"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_335",
+      "type": "Compound",
+      "name": "amphetamine",
+      "attributes": {
+        "context": "memory for amphetamine-conditioned place preference"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_336",
+      "type": "PharmEffect",
+      "name": "conditioned place preference",
+      "attributes": {
+        "context": "amphetamine-conditioned place preference"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_337",
+      "type": "Compound",
+      "name": "N-methyl-D-aspartate receptors",
+      "attributes": {
+        "context": "hippocampal N-methyl-D-aspartate receptors"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_338",
+      "type": "Compound",
+      "name": "calcium/calmodulin-dependent protein kinase II",
+      "attributes": {
+        "context": "calcium/calmodulin-dependent protein kinase II in amphetamine-produced"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_339",
+      "type": "Compound",
+      "name": "amphetamine",
+      "attributes": {
+        "context": "in amphetamine-produced conditioned place preference"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_340",
+      "type": "PharmEffect",
+      "name": "conditioned place preference",
+      "attributes": {
+        "context": "amphetamine-produced conditioned place preference"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_341",
+      "type": "PharmEffect",
+      "name": "Reconsolidation",
+      "attributes": {
+        "context": "Reconsolidation of a cocaine-paired stimulus"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_342",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "a cocaine-paired stimulus requires amygdalar protein kinase A"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_343",
+      "type": "Compound",
+      "name": "protein kinase A",
+      "attributes": {
+        "context": "requires amygdalar protein kinase A"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_344",
+      "type": "Compound",
+      "name": "D-cycloserine",
+      "attributes": {
+        "context": "D-cycloserine attenuates reactivity to smoking cues"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_345",
+      "type": "Compound",
+      "name": "nicotine",
+      "attributes": {
+        "context": "smoking cues in nicotine dependent smokers"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_346",
+      "type": "Indication",
+      "name": "nicotine dependent smokers",
+      "attributes": {
+        "context": "in nicotine dependent smokers"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_347",
+      "type": "Indication",
+      "name": "fear",
+      "attributes": {
+        "context": "Preventing the return of fear in humans"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_348",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "using reconsolidation update mechanisms"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_349",
+      "type": "Compound",
+      "name": "glucose",
+      "attributes": {
+        "context": "injections of glucose facilitate memory consolidation"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_350",
+      "type": "PharmEffect",
+      "name": "memory consolidation",
+      "attributes": {
+        "context": "facilitate memory consolidation for extinction"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_351",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "extinction of drug-induced conditioned reward"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_352",
+      "type": "PharmEffect",
+      "name": "conditioned reward",
+      "attributes": {
+        "context": "drug-induced conditioned reward"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_353",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "extinction of drug-induced conditioned reward"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_354",
+      "type": "PharmEffect",
+      "name": "conditioned reward",
+      "attributes": {
+        "context": "drug-induced conditioned reward"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_355",
+      "type": "Compound",
+      "name": "acetylcholine",
+      "attributes": {
+        "context": "amygdala and acetylcholine"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_356",
+      "type": "PharmEffect",
+      "name": "relapse",
+      "attributes": {
+        "context": "relapse to drug-seeking behavior"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_357",
+      "type": "PharmEffect",
+      "name": "drug-seeking behavior",
+      "attributes": {
+        "context": "relapse to drug-seeking behavior"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_358",
+      "type": "PharmEffect",
+      "name": "Extinction-induced neuroplasticity",
+      "attributes": {
+        "context": "Extinction-induced neuroplasticity attenuates stress-induced cocaine seeking"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_359",
+      "type": "PharmEffect",
+      "name": "cocaine seeking",
+      "attributes": {
+        "context": "stress-induced cocaine seeking"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_360",
+      "type": "Compound",
+      "name": "PKMzeta",
+      "attributes": {
+        "context": "Inactivation of PKMzeta in the NAc shell"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_361",
+      "type": "PharmEffect",
+      "name": "cocaine-conditioned reward",
+      "attributes": {
+        "context": "abolished cocaine-conditioned reward"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_362",
+      "type": "PharmEffect",
+      "name": "reinstatement",
+      "attributes": {
+        "context": "The reinstatement model of drug relapse"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_363",
+      "type": "PharmEffect",
+      "name": "drug relapse",
+      "attributes": {
+        "context": "reinstatement model of drug relapse"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_364",
+      "type": "PharmEffect",
+      "name": "relapse",
+      "attributes": {
+        "context": "Neurobiology of relapse to heroin and cocaine seeking"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_365",
+      "type": "Compound",
+      "name": "heroin",
+      "attributes": {
+        "context": "relapse to heroin and cocaine seeking"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_366",
+      "type": "PharmEffect",
+      "name": "cocaine seeking",
+      "attributes": {
+        "context": "heroin and cocaine seeking"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_367",
+      "type": "Compound",
+      "name": "PKM zeta",
+      "attributes": {
+        "context": "inhibitor of PKM zeta"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_368",
+      "type": "PharmEffect",
+      "name": "Reconsolidation",
+      "attributes": {
+        "context": "Reconsolidation of drug memories"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_369",
+      "type": "PharmEffect",
+      "name": "Extinction-induced upregulation",
+      "attributes": {
+        "context": "Extinction-induced upregulation in AMPA receptors"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_370",
+      "type": "Compound",
+      "name": "AMPA receptors",
+      "attributes": {
+        "context": "upregulation in AMPA receptors reduces cocaine-seeking behaviour"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_371",
+      "type": "PharmEffect",
+      "name": "cocaine-seeking behaviour",
+      "attributes": {
+        "context": "reduces cocaine-seeking behaviour"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_372",
+      "type": "PharmEffect",
+      "name": "Memory reconsolidation",
+      "attributes": {
+        "context": "Memory reconsolidation and extinction have distinct temporal"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_373",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "reconsolidation and extinction have distinct temporal and biochemical signatures"
+      },
+      "source_chunk_ids": [
+        "4626416b04a5b60d26b1d295491b74f3"
+      ]
+    },
+    {
+      "id": "ent_374",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "Targeting extinction and reconsolidation mechanisms"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_375",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "Targeting extinction and reconsolidation mechanisms"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_376",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "impact of drug cues on addiction"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_377",
+      "type": "Compound",
+      "name": "G-proteins",
+      "attributes": {
+        "context": "adaptations in G-proteins"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_378",
+      "type": "Compound",
+      "name": "cyclic AMP",
+      "attributes": {
+        "context": "the cyclic AMP system"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_379",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "actions of morphine"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_380",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "morphine and cocaine on neuronal function"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_381",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "neurochemistry of addiction"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_382",
+      "type": "Compound",
+      "name": "D-cycloserine",
+      "attributes": {
+        "context": "D-cycloserine reduces the context specificity"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_383",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "Pavlovian extinction of cocaine cues"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_384",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "extinction of cocaine cues"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_385",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "memory in addiction"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_386",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "during extinction and reassociation learning"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_387",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "mechanisms of memory reconsolidation"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_388",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "plasticity of memory reconsolidation"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_389",
+      "type": "Compound",
+      "name": "protein kinase A",
+      "attributes": {
+        "context": "amygdalar protein kinase A"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_390",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "Disruption of memory reconsolidation"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_391",
+      "type": "Compound",
+      "name": "ERK",
+      "attributes": {
+        "context": "Inhibition of ERK pathway"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_392",
+      "type": "Compound",
+      "name": "protein",
+      "attributes": {
+        "context": "protein synthesis"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_393",
+      "type": "Indication",
+      "name": "fear",
+      "attributes": {
+        "context": "renewal of fear"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_394",
+      "type": "Indication",
+      "name": "anxiety",
+      "attributes": {
+        "context": "spider-anxious students"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_395",
+      "type": "Compound",
+      "name": "alcohol",
+      "attributes": {
+        "context": "Cue-induced alcohol-seeking behavior"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_396",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "disrupting the reconsolidation of alcohol-related memories"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_397",
+      "type": "Compound",
+      "name": "D-cycloserine",
+      "attributes": {
+        "context": "Effects of D-cycloserine on the extinction"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_398",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "extinction of appetitive operant learning"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_399",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "impairs reconsolidation of drug memory"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_400",
+      "type": "Compound",
+      "name": "glucocorticoid receptors",
+      "attributes": {
+        "context": "via glucocorticoid receptors"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_401",
+      "type": "Compound",
+      "name": "d-cycloserine",
+      "attributes": {
+        "context": "effectiveness of d-cycloserine"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_402",
+      "type": "Compound",
+      "name": "alcohol",
+      "attributes": {
+        "context": "abstinent alcohol-dependent subjects"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_403",
+      "type": "Indication",
+      "name": "alcohol dependence",
+      "attributes": {
+        "context": "alcohol-dependent subjects"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_404",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "resistance to extinction of cocaine-seeking behavior"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_405",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "extinction of cocaine-seeking behavior"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_406",
+      "type": "Indication",
+      "name": "fear",
+      "attributes": {
+        "context": "Pavlovian fear conditioning"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_407",
+      "type": "PharmEffect",
+      "name": "consolidation",
+      "attributes": {
+        "context": "acquisition, consolidation, and expression"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_408",
+      "type": "Compound",
+      "name": "D-cycloserine",
+      "attributes": {
+        "context": "D-cycloserine facilitates extinction"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_409",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "D-cycloserine facilitates extinction"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_410",
+      "type": "Compound",
+      "name": "alcohol",
+      "attributes": {
+        "context": "long-term alcohol-related memory"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_411",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "memory reconsolidation"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_412",
+      "type": "Compound",
+      "name": "beta-adrenoceptors",
+      "attributes": {
+        "context": "role of beta-adrenoceptors"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_413",
+      "type": "Compound",
+      "name": "NMDA receptors",
+      "attributes": {
+        "context": "NMDA receptors"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_414",
+      "type": "Compound",
+      "name": "Glycogen synthase kinase 3B",
+      "attributes": {
+        "context": "Glycogen synthase kinase 3B in the basolateral amygdala"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_415",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "reconsolidation of cocaine reward memory"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_416",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "reconsolidation of cocaine reward memory"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_417",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "memory retrieval\u2013extinction procedure"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_418",
+      "type": "Indication",
+      "name": "drug craving",
+      "attributes": {
+        "context": "prevent drug craving and relapse"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_419",
+      "type": "Indication",
+      "name": "relapse",
+      "attributes": {
+        "context": "prevent drug craving and relapse"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_420",
+      "type": "Compound",
+      "name": "scopolamine",
+      "attributes": {
+        "context": "Effects of scopolamine and ketamine"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_421",
+      "type": "Compound",
+      "name": "ketamine",
+      "attributes": {
+        "context": "scopolamine and ketamine on reconsolidation"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_422",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "reconsolidation of morphine conditioned place preference"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_423",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "reconsolidation of morphine conditioned place preference"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_424",
+      "type": "Compound",
+      "name": "heroin",
+      "attributes": {
+        "context": "abstinent heroin addicts"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_425",
+      "type": "Indication",
+      "name": "heroin addiction",
+      "attributes": {
+        "context": "abstinent heroin addicts"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_426",
+      "type": "Compound",
+      "name": "beta-adrenergic receptor",
+      "attributes": {
+        "context": "beta-adrenergic receptor blockade"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_427",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "memory reconsolidation in abstinent heroin addicts"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_428",
+      "type": "Compound",
+      "name": "heroin",
+      "attributes": {
+        "context": "abstinent heroin addicts"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_429",
+      "type": "Indication",
+      "name": "heroin addiction",
+      "attributes": {
+        "context": "abstinent heroin addicts"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_430",
+      "type": "Compound",
+      "name": "N-acetylcysteine",
+      "attributes": {
+        "context": "N-acetylcysteine reduces extinction responding"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_431",
+      "type": "PharmEffect",
+      "name": "extinction",
+      "attributes": {
+        "context": "reduces extinction responding"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_432",
+      "type": "Compound",
+      "name": "heroin",
+      "attributes": {
+        "context": "heroin-induced drug-seeking"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_433",
+      "type": "Compound",
+      "name": "NMDA receptor",
+      "attributes": {
+        "context": "NMDA receptor glycine modulatory site"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_434",
+      "type": "Compound",
+      "name": "glycine",
+      "attributes": {
+        "context": "NMDA receptor glycine modulatory site"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_435",
+      "type": "PharmEffect",
+      "name": "reconsolidation",
+      "attributes": {
+        "context": "reconsolidation of cocaine reward memory"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    },
+    {
+      "id": "ent_436",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "reconsolidation of cocaine reward memory"
+      },
+      "source_chunk_ids": [
+        "83b47fb9346e7523e1c7d68c60e2734e"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:03.890471+00:00",
+    "original_file": "entities.json"
+  }
+}

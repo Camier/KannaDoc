@@ -1,0 +1,1091 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "62393cb3428c3b722c1f88bf89ed2f17df4d54f17ac6260cf192353363687cf1",
+  "extracted_at": "2026-02-01T08:32:55.066426+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "PharmEffect",
+      "name": "reducing age-related cognitive decline",
+      "attributes": {
+        "context": "reducing age-related cognitive decline"
+      },
+      "source_chunk_ids": [
+        "9fbc5fcb33450bad16a7047adae8a8fd"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Indication",
+      "name": "age-related cognitive decline",
+      "attributes": {
+        "context": "reducing age-related cognitive decline"
+      },
+      "source_chunk_ids": [
+        "9fbc5fcb33450bad16a7047adae8a8fd"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "PharmEffect",
+      "name": "preventing Alzheimer's dementia",
+      "attributes": {
+        "context": "preventing Alzheimer's dementia"
+      },
+      "source_chunk_ids": [
+        "9fbc5fcb33450bad16a7047adae8a8fd"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "Indication",
+      "name": "Alzheimer's dementia",
+      "attributes": {
+        "context": "preventing Alzheimer's dementia"
+      },
+      "source_chunk_ids": [
+        "9fbc5fcb33450bad16a7047adae8a8fd"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "PharmEffect",
+      "name": "boost cognitive reserve",
+      "attributes": {
+        "context": "boost \"cognitive reserve\""
+      },
+      "source_chunk_ids": [
+        "9fbc5fcb33450bad16a7047adae8a8fd"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "PharmEffect",
+      "name": "consolidate cognitive maintenance",
+      "attributes": {
+        "context": "consolidate \"cognitive maintenance\""
+      },
+      "source_chunk_ids": [
+        "9fbc5fcb33450bad16a7047adae8a8fd"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "Compound",
+      "name": "alkaloids",
+      "attributes": {
+        "context": "four alkaloids"
+      },
+      "source_chunk_ids": [
+        "ce40ac6522397fc3eb6f4d372fcba280"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Compound",
+      "name": "Mesembrenol",
+      "attributes": {
+        "context": "alkaloids: Mesembrenol"
+      },
+      "source_chunk_ids": [
+        "ce40ac6522397fc3eb6f4d372fcba280"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "Compound",
+      "name": "Mesembrenone",
+      "attributes": {
+        "context": "Mesembrenol, Mesembrenone"
+      },
+      "source_chunk_ids": [
+        "ce40ac6522397fc3eb6f4d372fcba280"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "Compound",
+      "name": "Mesembrine",
+      "attributes": {
+        "context": "Mesembrenone, Mesembrine"
+      },
+      "source_chunk_ids": [
+        "ce40ac6522397fc3eb6f4d372fcba280"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "Compound",
+      "name": "Mesembranol",
+      "attributes": {
+        "context": "Mesembrine, and Mesembranol"
+      },
+      "source_chunk_ids": [
+        "ce40ac6522397fc3eb6f4d372fcba280"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "Compound",
+      "name": "piperidine ring",
+      "attributes": {
+        "context": "a piperidine ring"
+      },
+      "source_chunk_ids": [
+        "ce40ac6522397fc3eb6f4d372fcba280"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "Compound",
+      "name": "cyclohexene ring",
+      "attributes": {
+        "context": "a cyclohexene ring"
+      },
+      "source_chunk_ids": [
+        "ce40ac6522397fc3eb6f4d372fcba280"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "Compound",
+      "name": "benzene ring",
+      "attributes": {
+        "context": "a benzene ring"
+      },
+      "source_chunk_ids": [
+        "ce40ac6522397fc3eb6f4d372fcba280"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "Compound",
+      "name": "methoxy groups",
+      "attributes": {
+        "context": "two methoxy groups"
+      },
+      "source_chunk_ids": [
+        "ce40ac6522397fc3eb6f4d372fcba280"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "Compound",
+      "name": "OCH3",
+      "attributes": {
+        "context": "methoxy groups (OCH3)"
+      },
+      "source_chunk_ids": [
+        "ce40ac6522397fc3eb6f4d372fcba280"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "Compound",
+      "name": "hydroxyl group",
+      "attributes": {
+        "context": "a hydroxyl group"
+      },
+      "source_chunk_ids": [
+        "ce40ac6522397fc3eb6f4d372fcba280"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "Compound",
+      "name": "OH",
+      "attributes": {
+        "context": "hydroxyl group (OH)"
+      },
+      "source_chunk_ids": [
+        "ce40ac6522397fc3eb6f4d372fcba280"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "Compound",
+      "name": "ketone group",
+      "attributes": {
+        "context": "a ketone group"
+      },
+      "source_chunk_ids": [
+        "ce40ac6522397fc3eb6f4d372fcba280"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "Compound",
+      "name": "=O",
+      "attributes": {
+        "context": "ketone group (=O)"
+      },
+      "source_chunk_ids": [
+        "ce40ac6522397fc3eb6f4d372fcba280"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "Compound",
+      "name": "methyl group",
+      "attributes": {
+        "context": "a methyl group"
+      },
+      "source_chunk_ids": [
+        "ce40ac6522397fc3eb6f4d372fcba280"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "Compound",
+      "name": "CH3",
+      "attributes": {
+        "context": "methyl group (CH3)"
+      },
+      "source_chunk_ids": [
+        "ce40ac6522397fc3eb6f4d372fcba280"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "Indication",
+      "name": "psychiatric disorders",
+      "attributes": {
+        "context": "structured clinical interview for psychiatric disorders"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "Indication",
+      "name": "DSM IV-R psychiatric disorders",
+      "attributes": {
+        "context": "any DSM IV-R psychiatric disorders"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "Indication",
+      "name": "medical disorders",
+      "attributes": {
+        "context": "any significant and untreated medical disorders"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "Indication",
+      "name": "severe uncontrolled or marginal glycemic controlled diabetes mellitus",
+      "attributes": {
+        "context": "marginal glycemic controlled diabetes mellitus"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "Indication",
+      "name": "myocardial ischemia",
+      "attributes": {
+        "context": "recent myocardial ischemia"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "Indication",
+      "name": "infarction",
+      "attributes": {
+        "context": "myocardial ischemia or infarction"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "Indication",
+      "name": "unstable angina",
+      "attributes": {
+        "context": "unstable angina"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "Indication",
+      "name": "uncontrolled hypertension",
+      "attributes": {
+        "context": "uncontrolled hypertension"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "Indication",
+      "name": "renal failure",
+      "attributes": {
+        "context": "renal failure"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "Indication",
+      "name": "serious renal diseases",
+      "attributes": {
+        "context": "serious renal diseases"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "Indication",
+      "name": "chronic active hepatitis",
+      "attributes": {
+        "context": "chronic active hepatitis"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "Indication",
+      "name": "acute hepatitis",
+      "attributes": {
+        "context": "acute hepatitis"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "Indication",
+      "name": "cirrhosis of liver",
+      "attributes": {
+        "context": "cirrhosis of liver"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Indication",
+      "name": "AIDS",
+      "attributes": {
+        "context": "AIDS"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "Indication",
+      "name": "malignancy",
+      "attributes": {
+        "context": "malignancy"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "Indication",
+      "name": "neurological disorders",
+      "attributes": {
+        "context": "neurological disorders"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "Indication",
+      "name": "epilepsy",
+      "attributes": {
+        "context": "epilepsy"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "Indication",
+      "name": "recent cerebrovascular disease",
+      "attributes": {
+        "context": "recent cerebrovascular disease"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "Indication",
+      "name": "recent traumatic brain injury",
+      "attributes": {
+        "context": "recent traumatic brain injury"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "Indication",
+      "name": "active suicidal risk",
+      "attributes": {
+        "context": "active suicidal risk were also excluded"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "Indication",
+      "name": "Hamilton depression",
+      "attributes": {
+        "context": "HAM-D (Hamilton depression)"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "Concentration",
+      "name": "score >/-8",
+      "attributes": {
+        "context": "HAM-D (Hamilton depression) [23] score >/-8"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "Concentration",
+      "name": "BMI >/-30.0",
+      "attributes": {
+        "context": "body mass index BMI >/-30.0"
+      },
+      "source_chunk_ids": [
+        "d981bf87f408e0552307dd93d8634b3f"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "received extract Sceletium tortuosum (Zembrin)"
+      },
+      "source_chunk_ids": [
+        "c18e2b191204c88ad0ec11f1f20bfd6e"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "extract Sceletium tortuosum (Zembrin)"
+      },
+      "source_chunk_ids": [
+        "c18e2b191204c88ad0ec11f1f20bfd6e"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "Concentration",
+      "name": "25 mg capsule",
+      "attributes": {
+        "context": "received extract Sceletium tortuosum (Zembrin) 25 mg capsule"
+      },
+      "source_chunk_ids": [
+        "c18e2b191204c88ad0ec11f1f20bfd6e"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "Concentration",
+      "name": "25 mg capsule of Zembrin once daily orally",
+      "attributes": {
+        "context": "took a 25 mg capsule of Zembrin once daily orally"
+      },
+      "source_chunk_ids": [
+        "c18e2b191204c88ad0ec11f1f20bfd6e"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "Concentration",
+      "name": "25 mg Zembrin capsule once daily orally",
+      "attributes": {
+        "context": "took the 25 mg Zembrin capsule once daily orally"
+      },
+      "source_chunk_ids": [
+        "c18e2b191204c88ad0ec11f1f20bfd6e"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "Zembrin significantly improved cognitive flexibility"
+      },
+      "source_chunk_ids": [
+        "e8077507c2b383de0f6cb2444a8eb49f"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "PharmEffect",
+      "name": "cognitive flexibility",
+      "attributes": {
+        "context": "improved cognitive flexibility"
+      },
+      "source_chunk_ids": [
+        "e8077507c2b383de0f6cb2444a8eb49f"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "PharmEffect",
+      "name": "executive function",
+      "attributes": {
+        "context": "improved ... executive function"
+      },
+      "source_chunk_ids": [
+        "e8077507c2b383de0f6cb2444a8eb49f"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "Zembrin improved processing speed"
+      },
+      "source_chunk_ids": [
+        "e8077507c2b383de0f6cb2444a8eb49f"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "PharmEffect",
+      "name": "processing speed",
+      "attributes": {
+        "context": "improved processing speed"
+      },
+      "source_chunk_ids": [
+        "e8077507c2b383de0f6cb2444a8eb49f"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "PharmEffect",
+      "name": "psychomotor speed",
+      "attributes": {
+        "context": "improved ... psychomotor speed"
+      },
+      "source_chunk_ids": [
+        "e8077507c2b383de0f6cb2444a8eb49f"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "PharmEffect",
+      "name": "complex attention",
+      "attributes": {
+        "context": "improved ... complex attention"
+      },
+      "source_chunk_ids": [
+        "e8077507c2b383de0f6cb2444a8eb49f"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "PharmEffect",
+      "name": "composite memory",
+      "attributes": {
+        "context": "in composite memory"
+      },
+      "source_chunk_ids": [
+        "e8077507c2b383de0f6cb2444a8eb49f"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "PharmEffect",
+      "name": "verbal memory",
+      "attributes": {
+        "context": "in ... verbal memory"
+      },
+      "source_chunk_ids": [
+        "e8077507c2b383de0f6cb2444a8eb49f"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "PharmEffect",
+      "name": "visual memory",
+      "attributes": {
+        "context": "in ... visual memory"
+      },
+      "source_chunk_ids": [
+        "e8077507c2b383de0f6cb2444a8eb49f"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "Zembrin groups showed negative change"
+      },
+      "source_chunk_ids": [
+        "e8077507c2b383de0f6cb2444a8eb49f"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "PharmEffect",
+      "name": "visual memory",
+      "attributes": {
+        "context": "in the domain of visual memory"
+      },
+      "source_chunk_ids": [
+        "e8077507c2b383de0f6cb2444a8eb49f"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "PharmEffect",
+      "name": "visual memory",
+      "attributes": {
+        "context": "the final visual memory score"
+      },
+      "source_chunk_ids": [
+        "e8077507c2b383de0f6cb2444a8eb49f"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "PharmEffect",
+      "name": "visual memory",
+      "attributes": {
+        "context": "the baseline visual memory score"
+      },
+      "source_chunk_ids": [
+        "e8077507c2b383de0f6cb2444a8eb49f"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "extract Sceletium tortuosum (Zembrin)"
+      },
+      "source_chunk_ids": [
+        "55b913dbb84580adba238c03874c6123"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "PharmEffect",
+      "name": "generalized well-being",
+      "attributes": {
+        "context": "subjective ratings of generalized well-being"
+      },
+      "source_chunk_ids": [
+        "55b913dbb84580adba238c03874c6123"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "PharmEffect",
+      "name": "positive mood states",
+      "attributes": {
+        "context": "positive mood states in our study"
+      },
+      "source_chunk_ids": [
+        "55b913dbb84580adba238c03874c6123"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "PharmEffect",
+      "name": "uplifted spirits",
+      "attributes": {
+        "context": "reported \"uplifted spirits\""
+      },
+      "source_chunk_ids": [
+        "55b913dbb84580adba238c03874c6123"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "Indication",
+      "name": "stress",
+      "attributes": {
+        "context": "coping with stress"
+      },
+      "source_chunk_ids": [
+        "ba8d906a3ee8586d6014cac3390d6e02"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "Indication",
+      "name": "depressing events",
+      "attributes": {
+        "context": "depressing events"
+      },
+      "source_chunk_ids": [
+        "ba8d906a3ee8586d6014cac3390d6e02"
+      ]
+    },
+    {
+      "id": "ent_071",
+      "type": "Indication",
+      "name": "HAM-D",
+      "attributes": {
+        "context": "baseline HAM-D scores"
+      },
+      "source_chunk_ids": [
+        "ba8d906a3ee8586d6014cac3390d6e02"
+      ]
+    },
+    {
+      "id": "ent_072",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "for the Zembrin group"
+      },
+      "source_chunk_ids": [
+        "ba8d906a3ee8586d6014cac3390d6e02"
+      ]
+    },
+    {
+      "id": "ent_073",
+      "type": "PharmEffect",
+      "name": "decrease in HAM-D",
+      "attributes": {
+        "context": "a 13.8% decrease in HAM-D"
+      },
+      "source_chunk_ids": [
+        "ba8d906a3ee8586d6014cac3390d6e02"
+      ]
+    },
+    {
+      "id": "ent_074",
+      "type": "Compound",
+      "name": "Zembrin extract",
+      "attributes": {
+        "context": "Zembrin extract effect"
+      },
+      "source_chunk_ids": [
+        "be6c39ce7dfcb463612a8f17a4cd748e"
+      ]
+    },
+    {
+      "id": "ent_075",
+      "type": "Indication",
+      "name": "HAM-D",
+      "attributes": {
+        "context": "effect on HAM-D"
+      },
+      "source_chunk_ids": [
+        "be6c39ce7dfcb463612a8f17a4cd748e"
+      ]
+    },
+    {
+      "id": "ent_076",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "Before Zembrin"
+      },
+      "source_chunk_ids": [
+        "d84abe23a67ed1d8c37053a7182ebf71"
+      ]
+    },
+    {
+      "id": "ent_077",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "After Zembrin"
+      },
+      "source_chunk_ids": [
+        "d84abe23a67ed1d8c37053a7182ebf71"
+      ]
+    },
+    {
+      "id": "ent_078",
+      "type": "Indication",
+      "name": "Depression",
+      "attributes": {
+        "context": "decrease on HAM-D"
+      },
+      "source_chunk_ids": [
+        "d84abe23a67ed1d8c37053a7182ebf71"
+      ]
+    },
+    {
+      "id": "ent_079",
+      "type": "PharmEffect",
+      "name": "Decrease in depression symptoms",
+      "attributes": {
+        "context": "decrease on HAM-D"
+      },
+      "source_chunk_ids": [
+        "d84abe23a67ed1d8c37053a7182ebf71"
+      ]
+    },
+    {
+      "id": "ent_080",
+      "type": "Compound",
+      "name": "placebo",
+      "attributes": {
+        "context": "Before placebo"
+      },
+      "source_chunk_ids": [
+        "d84abe23a67ed1d8c37053a7182ebf71"
+      ]
+    },
+    {
+      "id": "ent_081",
+      "type": "Compound",
+      "name": "placebo",
+      "attributes": {
+        "context": "After placebo"
+      },
+      "source_chunk_ids": [
+        "d84abe23a67ed1d8c37053a7182ebf71"
+      ]
+    },
+    {
+      "id": "ent_082",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "The cognitive effects of Zembrin are consistent"
+      },
+      "source_chunk_ids": [
+        "3b75ebc2f5df59b8d6c3808b4978eb27"
+      ]
+    },
+    {
+      "id": "ent_083",
+      "type": "Compound",
+      "name": "PDE-4D3",
+      "attributes": {
+        "context": "long isoform of PDE-4D3"
+      },
+      "source_chunk_ids": [
+        "3b75ebc2f5df59b8d6c3808b4978eb27"
+      ]
+    },
+    {
+      "id": "ent_084",
+      "type": "Compound",
+      "name": "PDE-4B",
+      "attributes": {
+        "context": "human recombinant PDE-4B"
+      },
+      "source_chunk_ids": [
+        "3b75ebc2f5df59b8d6c3808b4978eb27"
+      ]
+    },
+    {
+      "id": "ent_085",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {
+        "context": "mesembrenone was 17 times more potent"
+      },
+      "source_chunk_ids": [
+        "3b75ebc2f5df59b8d6c3808b4978eb27"
+      ]
+    },
+    {
+      "id": "ent_086",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {
+        "context": "more potent than mesembrine"
+      },
+      "source_chunk_ids": [
+        "3b75ebc2f5df59b8d6c3808b4978eb27"
+      ]
+    },
+    {
+      "id": "ent_087",
+      "type": "Compound",
+      "name": "mesembrenol",
+      "attributes": {
+        "context": "34 times more active than mesembrenol"
+      },
+      "source_chunk_ids": [
+        "3b75ebc2f5df59b8d6c3808b4978eb27"
+      ]
+    },
+    {
+      "id": "ent_088",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "rolipram, the prototypical PDE-4 antagonist"
+      },
+      "source_chunk_ids": [
+        "3b75ebc2f5df59b8d6c3808b4978eb27"
+      ]
+    },
+    {
+      "id": "ent_089",
+      "type": "Compound",
+      "name": "PDE-4",
+      "attributes": {
+        "context": "prototypical PDE-4 antagonist"
+      },
+      "source_chunk_ids": [
+        "3b75ebc2f5df59b8d6c3808b4978eb27"
+      ]
+    },
+    {
+      "id": "ent_090",
+      "type": "PharmEffect",
+      "name": "cognition",
+      "attributes": {
+        "context": "cognition is selectively mediated"
+      },
+      "source_chunk_ids": [
+        "3b75ebc2f5df59b8d6c3808b4978eb27"
+      ]
+    },
+    {
+      "id": "ent_091",
+      "type": "PharmEffect",
+      "name": "inhibiting PDE-4B binding",
+      "attributes": {
+        "context": "inhibiting PDE-4B binding"
+      },
+      "source_chunk_ids": [
+        "3b75ebc2f5df59b8d6c3808b4978eb27"
+      ]
+    },
+    {
+      "id": "ent_092",
+      "type": "Concentration",
+      "name": "470 nM",
+      "attributes": {
+        "context": "mesembrenone were 470 nM"
+      },
+      "source_chunk_ids": [
+        "3b75ebc2f5df59b8d6c3808b4978eb27"
+      ]
+    },
+    {
+      "id": "ent_093",
+      "type": "Concentration",
+      "name": "7800 nM",
+      "attributes": {
+        "context": "mesembrine 7800 nM"
+      },
+      "source_chunk_ids": [
+        "3b75ebc2f5df59b8d6c3808b4978eb27"
+      ]
+    },
+    {
+      "id": "ent_094",
+      "type": "Concentration",
+      "name": "10,000 nM",
+      "attributes": {
+        "context": "mesembrenol 10,000 nM"
+      },
+      "source_chunk_ids": [
+        "3b75ebc2f5df59b8d6c3808b4978eb27"
+      ]
+    },
+    {
+      "id": "ent_095",
+      "type": "PharmEffect",
+      "name": "improve object retrieval performance",
+      "attributes": {
+        "context": "improve object retrieval performance"
+      },
+      "source_chunk_ids": [
+        "3b75ebc2f5df59b8d6c3808b4978eb27"
+      ]
+    },
+    {
+      "id": "ent_096",
+      "type": "Indication",
+      "name": "gastrointestinal side effects",
+      "attributes": {
+        "context": "absence of gastrointestinal side effects"
+      },
+      "source_chunk_ids": [
+        "3b75ebc2f5df59b8d6c3808b4978eb27"
+      ]
+    },
+    {
+      "id": "ent_097",
+      "type": "PharmEffect",
+      "name": "adverse events",
+      "attributes": {
+        "context": "Frequency of adverse events"
+      },
+      "source_chunk_ids": [
+        "a7394bdf768b84b4c0669f0a69d4ca37"
+      ]
+    },
+    {
+      "id": "ent_098",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "Z: Zembrin treated group"
+      },
+      "source_chunk_ids": [
+        "a7394bdf768b84b4c0669f0a69d4ca37"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:03.912133+00:00",
+    "original_file": "entities.json"
+  }
+}

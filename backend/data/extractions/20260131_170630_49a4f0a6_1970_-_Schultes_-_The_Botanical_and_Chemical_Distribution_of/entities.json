@@ -1,0 +1,5293 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "6d49903670e540f3696aeafb7052b713c6263889f8ea0240742d20ec7961daf5",
+  "extracted_at": "2026-02-01T08:17:00.384836+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "Compound",
+      "name": "Hallucinogens",
+      "attributes": {
+        "context": "Chemical Distributionof Hallucinogens"
+      },
+      "source_chunk_ids": [
+        "069d028e6ed9ca41d9fd1f5dd571eba1"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "While psychoactive species are widely scattered"
+      },
+      "source_chunk_ids": [
+        "f6b6de1228530518ea976549ba013b50"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "Taxon",
+      "name": "fungi",
+      "attributes": {
+        "context": "amongst the fungi and angiosperms"
+      },
+      "source_chunk_ids": [
+        "f6b6de1228530518ea976549ba013b50"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "Taxon",
+      "name": "angiosperms",
+      "attributes": {
+        "context": "amongst the fungi and angiosperms"
+      },
+      "source_chunk_ids": [
+        "f6b6de1228530518ea976549ba013b50"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "Taxon",
+      "name": "bacteria",
+      "attributes": {
+        "context": "The bacteria, algae, lichens, bryophytes, ferns, and gymnosperms"
+      },
+      "source_chunk_ids": [
+        "f6b6de1228530518ea976549ba013b50"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "Taxon",
+      "name": "algae",
+      "attributes": {
+        "context": "The bacteria, algae, lichens, bryophytes, ferns, and gymnosperms"
+      },
+      "source_chunk_ids": [
+        "f6b6de1228530518ea976549ba013b50"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "Taxon",
+      "name": "lichens",
+      "attributes": {
+        "context": "The bacteria, algae, lichens, bryophytes, ferns, and gymnosperms"
+      },
+      "source_chunk_ids": [
+        "f6b6de1228530518ea976549ba013b50"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Taxon",
+      "name": "bryophytes",
+      "attributes": {
+        "context": "The bacteria, algae, lichens, bryophytes, ferns, and gymnosperms"
+      },
+      "source_chunk_ids": [
+        "f6b6de1228530518ea976549ba013b50"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "Taxon",
+      "name": "ferns",
+      "attributes": {
+        "context": "The bacteria, algae, lichens, bryophytes, ferns, and gymnosperms"
+      },
+      "source_chunk_ids": [
+        "f6b6de1228530518ea976549ba013b50"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "Taxon",
+      "name": "gymnosperms",
+      "attributes": {
+        "context": "The bacteria, algae, lichens, bryophytes, ferns, and gymnosperms"
+      },
+      "source_chunk_ids": [
+        "f6b6de1228530518ea976549ba013b50"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "PharmEffect",
+      "name": "hallucinogenic properties",
+      "attributes": {
+        "context": "species with hallucinogenic properties"
+      },
+      "source_chunk_ids": [
+        "f6b6de1228530518ea976549ba013b50"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "Compound",
+      "name": "organic constituents",
+      "attributes": {
+        "context": "only a few kinds of organic constituents"
+      },
+      "source_chunk_ids": [
+        "f6b6de1228530518ea976549ba013b50"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "Compound",
+      "name": "nitrogenous compounds",
+      "attributes": {
+        "context": "nitrogenous and non-nitrogenous compounds"
+      },
+      "source_chunk_ids": [
+        "f6b6de1228530518ea976549ba013b50"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "Compound",
+      "name": "non-nitrogenous compounds",
+      "attributes": {
+        "context": "nitrogenous and non-nitrogenous compounds"
+      },
+      "source_chunk_ids": [
+        "f6b6de1228530518ea976549ba013b50"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "Taxon",
+      "name": "Cannabis",
+      "attributes": {
+        "context": "Cannabis.\u2014The most important of the non-nitrogenous hallucinogens"
+      },
+      "source_chunk_ids": [
+        "a894af299bf259f8469b7a4b2e2c5816"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "PharmEffect",
+      "name": "hallucinogens",
+      "attributes": {
+        "context": "non-nitrogenous hallucinogens are the dibenzopyrans"
+      },
+      "source_chunk_ids": [
+        "a894af299bf259f8469b7a4b2e2c5816"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "Compound",
+      "name": "dibenzopyrans",
+      "attributes": {
+        "context": "hallucinogens are the dibenzopyrans in Cannabis sativa"
+      },
+      "source_chunk_ids": [
+        "a894af299bf259f8469b7a4b2e2c5816"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "Taxon",
+      "name": "Cannabis sativa",
+      "attributes": {
+        "context": "dibenzopyrans in Cannabis sativa, source of marijuana"
+      },
+      "source_chunk_ids": [
+        "a894af299bf259f8469b7a4b2e2c5816"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "Taxon",
+      "name": "marijuana",
+      "attributes": {
+        "context": "source of marijuana, hashish, bhang, ganja"
+      },
+      "source_chunk_ids": [
+        "a894af299bf259f8469b7a4b2e2c5816"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "Taxon",
+      "name": "hashish",
+      "attributes": {
+        "context": "marijuana, hashish, bhang, ganja"
+      },
+      "source_chunk_ids": [
+        "a894af299bf259f8469b7a4b2e2c5816"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "Taxon",
+      "name": "bhang",
+      "attributes": {
+        "context": "hashish, bhang, ganja"
+      },
+      "source_chunk_ids": [
+        "a894af299bf259f8469b7a4b2e2c5816"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "Taxon",
+      "name": "ganja",
+      "attributes": {
+        "context": "bhang, ganja, and other narcotic products"
+      },
+      "source_chunk_ids": [
+        "a894af299bf259f8469b7a4b2e2c5816"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "PharmEffect",
+      "name": "narcotic",
+      "attributes": {
+        "context": "other narcotic products"
+      },
+      "source_chunk_ids": [
+        "a894af299bf259f8469b7a4b2e2c5816"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "Taxon",
+      "name": "Cannabis",
+      "attributes": {
+        "context": "Cannabis, a monotypic genus sometimes placed in the Moraceae"
+      },
+      "source_chunk_ids": [
+        "a894af299bf259f8469b7a4b2e2c5816"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "Compound",
+      "name": "Isoquinolines",
+      "attributes": {
+        "context": "Chemical structure of Isoquinolines"
+      },
+      "source_chunk_ids": [
+        "7d8dce39a527c02c87929580bec1ca41"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "Compound",
+      "name": "benzene ring",
+      "attributes": {
+        "context": "consisting of a benzene ring"
+      },
+      "source_chunk_ids": [
+        "7d8dce39a527c02c87929580bec1ca41"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "Compound",
+      "name": "pyridine ring",
+      "attributes": {
+        "context": "and a pyridine ring"
+      },
+      "source_chunk_ids": [
+        "7d8dce39a527c02c87929580bec1ca41"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "Compound",
+      "name": "Tryptamines",
+      "attributes": {
+        "context": "Chemical structure of Tryptamines"
+      },
+      "source_chunk_ids": [
+        "499e6f25a7106d25507e0d446e9521f4"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "Compound",
+      "name": "indole ring system",
+      "attributes": {
+        "context": "An indole ring system"
+      },
+      "source_chunk_ids": [
+        "499e6f25a7106d25507e0d446e9521f4"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "Compound",
+      "name": "NR2 group",
+      "attributes": {
+        "context": "attached to an NR2 group"
+      },
+      "source_chunk_ids": [
+        "499e6f25a7106d25507e0d446e9521f4"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "Compound",
+      "name": "Iboga-indoles",
+      "attributes": {
+        "context": "Chemical structure of Iboga-indoles"
+      },
+      "source_chunk_ids": [
+        "d5a0872d3f01b2cb714271e4e2199773"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "Compound",
+      "name": "indole ring",
+      "attributes": {
+        "context": "an indole ring"
+      },
+      "source_chunk_ids": [
+        "d5a0872d3f01b2cb714271e4e2199773"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "Compound",
+      "name": "piperidine ring",
+      "attributes": {
+        "context": "a piperidine ring"
+      },
+      "source_chunk_ids": [
+        "d5a0872d3f01b2cb714271e4e2199773"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "Taxon",
+      "name": "Peganum Harmala",
+      "attributes": {
+        "context": "The seeds of Peganum Harmala"
+      },
+      "source_chunk_ids": [
+        "9754ad27c2eff2e00adfbe22bc0716d5"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "Compound",
+      "name": "harmine",
+      "attributes": {
+        "context": "contain harmine"
+      },
+      "source_chunk_ids": [
+        "9754ad27c2eff2e00adfbe22bc0716d5"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Compound",
+      "name": "harmaline",
+      "attributes": {
+        "context": "harmaline"
+      },
+      "source_chunk_ids": [
+        "9754ad27c2eff2e00adfbe22bc0716d5"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "Compound",
+      "name": "harmalol",
+      "attributes": {
+        "context": "harmalol"
+      },
+      "source_chunk_ids": [
+        "9754ad27c2eff2e00adfbe22bc0716d5"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "Compound",
+      "name": "harman",
+      "attributes": {
+        "context": "and harman"
+      },
+      "source_chunk_ids": [
+        "9754ad27c2eff2e00adfbe22bc0716d5"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "Compound",
+      "name": "\\beta-carboline",
+      "attributes": {
+        "context": "a typical \\beta-carboline structure"
+      },
+      "source_chunk_ids": [
+        "9754ad27c2eff2e00adfbe22bc0716d5"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "Taxon",
+      "name": "Banisteriopsis",
+      "attributes": {
+        "context": "several species of Banisteriopsis"
+      },
+      "source_chunk_ids": [
+        "ca2e00ba6824abfc502dea5c2fbaec54"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "PharmEffect",
+      "name": "hallucinogens",
+      "attributes": {
+        "context": "use as hallucinogens"
+      },
+      "source_chunk_ids": [
+        "ca2e00ba6824abfc502dea5c2fbaec54"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "Compound",
+      "name": "harmala alkaloids",
+      "attributes": {
+        "context": "containing harmala alkaloids"
+      },
+      "source_chunk_ids": [
+        "ca2e00ba6824abfc502dea5c2fbaec54"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "Taxon",
+      "name": "Banisteriopsis caapi",
+      "attributes": {
+        "context": "B. Cappi"
+      },
+      "source_chunk_ids": [
+        "ca2e00ba6824abfc502dea5c2fbaec54"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "Taxon",
+      "name": "Banisteriopsis inebrians",
+      "attributes": {
+        "context": "B. inebrians"
+      },
+      "source_chunk_ids": [
+        "ca2e00ba6824abfc502dea5c2fbaec54"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "PharmEffect",
+      "name": "intoxicating",
+      "attributes": {
+        "context": "An intoxicating drink"
+      },
+      "source_chunk_ids": [
+        "ca2e00ba6824abfc502dea5c2fbaec54"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "Taxon",
+      "name": "ayahuasca",
+      "attributes": {
+        "context": "known variously as ayahuasca"
+      },
+      "source_chunk_ids": [
+        "ca2e00ba6824abfc502dea5c2fbaec54"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "Taxon",
+      "name": "caapi",
+      "attributes": {
+        "context": "ayahuasca, caapi"
+      },
+      "source_chunk_ids": [
+        "ca2e00ba6824abfc502dea5c2fbaec54"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "Taxon",
+      "name": "yaj\u00e9",
+      "attributes": {
+        "context": "caapi, yaj\u00e9"
+      },
+      "source_chunk_ids": [
+        "ca2e00ba6824abfc502dea5c2fbaec54"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "Taxon",
+      "name": "natema",
+      "attributes": {
+        "context": "yaj\u00e9, natema"
+      },
+      "source_chunk_ids": [
+        "ca2e00ba6824abfc502dea5c2fbaec54"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "Taxon",
+      "name": "pinde",
+      "attributes": {
+        "context": "natema, pinde"
+      },
+      "source_chunk_ids": [
+        "ca2e00ba6824abfc502dea5c2fbaec54"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "Taxon",
+      "name": "dapa",
+      "attributes": {
+        "context": "pinde, or dapa"
+      },
+      "source_chunk_ids": [
+        "ca2e00ba6824abfc502dea5c2fbaec54"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "Taxon",
+      "name": "Banisteriopsis",
+      "attributes": {
+        "context": "Banisteriopsis is taxonomically still rather poorly understood"
+      },
+      "source_chunk_ids": [
+        "dfcd86e4a58698f92bd0e980f0597186"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "Taxon",
+      "name": "Banisteriopsis caapi",
+      "attributes": {
+        "context": "especially of B. Caapi and B. inebrians"
+      },
+      "source_chunk_ids": [
+        "dfcd86e4a58698f92bd0e980f0597186"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "Taxon",
+      "name": "Banisteriopsis inebrians",
+      "attributes": {
+        "context": "especially of B. Caapi and B. inebrians"
+      },
+      "source_chunk_ids": [
+        "dfcd86e4a58698f92bd0e980f0597186"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "Taxon",
+      "name": "jungle lianas",
+      "attributes": {
+        "context": "infrequently flowering jungle lianas"
+      },
+      "source_chunk_ids": [
+        "dfcd86e4a58698f92bd0e980f0597186"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "Taxon",
+      "name": "drug plant",
+      "attributes": {
+        "context": "attention to this drug plant"
+      },
+      "source_chunk_ids": [
+        "dfcd86e4a58698f92bd0e980f0597186"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "PharmEffect",
+      "name": "hallucinogenic",
+      "attributes": {
+        "context": "hallucinogenic species"
+      },
+      "source_chunk_ids": [
+        "5dcf19a097e90993bd0cc060a6c24fc7"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "Taxon",
+      "name": "Banisteriopsis",
+      "attributes": {
+        "context": "species of Banisteriopsis"
+      },
+      "source_chunk_ids": [
+        "5dcf19a097e90993bd0cc060a6c24fc7"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "Taxon",
+      "name": "Banisteriopsis caapi",
+      "attributes": {
+        "context": "referable to B. Caapi"
+      },
+      "source_chunk_ids": [
+        "dc1fc990f4525773d0d95e25516dbbc1"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "Compound",
+      "name": "telepathine",
+      "attributes": {
+        "context": "named telepathine"
+      },
+      "source_chunk_ids": [
+        "dc1fc990f4525773d0d95e25516dbbc1"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "Compound",
+      "name": "yageine",
+      "attributes": {
+        "context": "named yageine"
+      },
+      "source_chunk_ids": [
+        "dc1fc990f4525773d0d95e25516dbbc1"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "Compound",
+      "name": "banisterine",
+      "attributes": {
+        "context": "named banisterine"
+      },
+      "source_chunk_ids": [
+        "dc1fc990f4525773d0d95e25516dbbc1"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "Compound",
+      "name": "harmine",
+      "attributes": {
+        "context": "identified as harmine"
+      },
+      "source_chunk_ids": [
+        "dc1fc990f4525773d0d95e25516dbbc1"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "Compound",
+      "name": "harmine",
+      "attributes": {
+        "context": "of harmine as well as occasional lesser amounts"
+      },
+      "source_chunk_ids": [
+        "dc1fc990f4525773d0d95e25516dbbc1"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "Compound",
+      "name": "harmaline",
+      "attributes": {
+        "context": "amounts of harmaline"
+      },
+      "source_chunk_ids": [
+        "dc1fc990f4525773d0d95e25516dbbc1"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "Compound",
+      "name": "Delta-tetrahydroharmine",
+      "attributes": {
+        "context": "and \\Delta-tetrahydroharmine"
+      },
+      "source_chunk_ids": [
+        "dc1fc990f4525773d0d95e25516dbbc1"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "Taxon",
+      "name": "Banisteriopsis inebrians",
+      "attributes": {
+        "context": "investigations of B. inebrians"
+      },
+      "source_chunk_ids": [
+        "dc1fc990f4525773d0d95e25516dbbc1"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "Compound",
+      "name": "harmine",
+      "attributes": {
+        "context": "isolated harmine from the stems"
+      },
+      "source_chunk_ids": [
+        "dc1fc990f4525773d0d95e25516dbbc1"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "Compound",
+      "name": "harmaline",
+      "attributes": {
+        "context": "appears to be harmaline"
+      },
+      "source_chunk_ids": [
+        "dc1fc990f4525773d0d95e25516dbbc1"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "Taxon",
+      "name": "Banisteriopsis caapi",
+      "attributes": {
+        "context": "collection of B. Caapi"
+      },
+      "source_chunk_ids": [
+        "dc1fc990f4525773d0d95e25516dbbc1"
+      ]
+    },
+    {
+      "id": "ent_071",
+      "type": "Compound",
+      "name": "harmine",
+      "attributes": {
+        "context": "the presence of harmine in concentrations"
+      },
+      "source_chunk_ids": [
+        "dc1fc990f4525773d0d95e25516dbbc1"
+      ]
+    },
+    {
+      "id": "ent_072",
+      "type": "Taxon",
+      "name": "Banisteriopsis Caapi",
+      "attributes": {
+        "context": "While Banisteriopsis Caapi is normally employed as a drink"
+      },
+      "source_chunk_ids": [
+        "0865fe1a5f30111da9bee611b140caaa"
+      ]
+    },
+    {
+      "id": "ent_073",
+      "type": "Taxon",
+      "name": "Banisteriopsis Caapi",
+      "attributes": {
+        "context": "it may also be used as a snuff"
+      },
+      "source_chunk_ids": [
+        "0865fe1a5f30111da9bee611b140caaa"
+      ]
+    },
+    {
+      "id": "ent_074",
+      "type": "Compound",
+      "name": "Harmala alkaloids",
+      "attributes": {
+        "context": "Harmala alkaloids have been reported from snuff powders"
+      },
+      "source_chunk_ids": [
+        "0865fe1a5f30111da9bee611b140caaa"
+      ]
+    },
+    {
+      "id": "ent_075",
+      "type": "Taxon",
+      "name": "vine",
+      "attributes": {
+        "context": "snuff powders prepared from a vine"
+      },
+      "source_chunk_ids": [
+        "0865fe1a5f30111da9bee611b140caaa"
+      ]
+    },
+    {
+      "id": "ent_076",
+      "type": "PharmEffect",
+      "name": "intoxicating",
+      "attributes": {
+        "context": "source of an intoxicating drink"
+      },
+      "source_chunk_ids": [
+        "0865fe1a5f30111da9bee611b140caaa"
+      ]
+    },
+    {
+      "id": "ent_077",
+      "type": "Taxon",
+      "name": "coatl-xoxoubigui",
+      "attributes": {
+        "context": "Known as coatl-xoxoubigui"
+      },
+      "source_chunk_ids": [
+        "12d15916845df3aed4177e2b31269dfc"
+      ]
+    },
+    {
+      "id": "ent_078",
+      "type": "Taxon",
+      "name": "morning glory",
+      "attributes": {
+        "context": "illustrated as a morning glory"
+      },
+      "source_chunk_ids": [
+        "12d15916845df3aed4177e2b31269dfc"
+      ]
+    },
+    {
+      "id": "ent_079",
+      "type": "Taxon",
+      "name": "convolvulaceous plant",
+      "attributes": {
+        "context": "a convolvulaceous plant"
+      },
+      "source_chunk_ids": [
+        "12d15916845df3aed4177e2b31269dfc"
+      ]
+    },
+    {
+      "id": "ent_080",
+      "type": "PharmEffect",
+      "name": "divinatory hallucinogen",
+      "attributes": {
+        "context": "employed as a divinatory hallucinogen"
+      },
+      "source_chunk_ids": [
+        "12d15916845df3aed4177e2b31269dfc"
+      ]
+    },
+    {
+      "id": "ent_081",
+      "type": "Taxon",
+      "name": "Rivea corymbosa",
+      "attributes": {
+        "context": "determined as Rivea corymbosa"
+      },
+      "source_chunk_ids": [
+        "12d15916845df3aed4177e2b31269dfc"
+      ]
+    },
+    {
+      "id": "ent_082",
+      "type": "Taxon",
+      "name": "morning glory",
+      "attributes": {
+        "context": "another morning glory"
+      },
+      "source_chunk_ids": [
+        "12d15916845df3aed4177e2b31269dfc"
+      ]
+    },
+    {
+      "id": "ent_083",
+      "type": "Taxon",
+      "name": "Ipomoea violacea",
+      "attributes": {
+        "context": "Ipomoea violacea amongst the Zapotecs"
+      },
+      "source_chunk_ids": [
+        "12d15916845df3aed4177e2b31269dfc"
+      ]
+    },
+    {
+      "id": "ent_084",
+      "type": "PharmEffect",
+      "name": "narcotic",
+      "attributes": {
+        "context": "possibly the narcotic tlitlizin"
+      },
+      "source_chunk_ids": [
+        "12d15916845df3aed4177e2b31269dfc"
+      ]
+    },
+    {
+      "id": "ent_085",
+      "type": "Taxon",
+      "name": "tlitlizin",
+      "attributes": {
+        "context": "the narcotic tlitlizin"
+      },
+      "source_chunk_ids": [
+        "12d15916845df3aed4177e2b31269dfc"
+      ]
+    },
+    {
+      "id": "ent_086",
+      "type": "Compound",
+      "name": "ergot alkaloids",
+      "attributes": {
+        "context": "The discovery of ergot alkaloids"
+      },
+      "source_chunk_ids": [
+        "8d617a4320d650a979670f587cccf3f3"
+      ]
+    },
+    {
+      "id": "ent_087",
+      "type": "Taxon",
+      "name": "Claviceps purpurea",
+      "attributes": {
+        "context": "constituents of Claviceps purpurea"
+      },
+      "source_chunk_ids": [
+        "8d617a4320d650a979670f587cccf3f3"
+      ]
+    },
+    {
+      "id": "ent_088",
+      "type": "Compound",
+      "name": "alkaloids",
+      "attributes": {
+        "context": "the discovery of these alkaloids"
+      },
+      "source_chunk_ids": [
+        "8d617a4320d650a979670f587cccf3f3"
+      ]
+    },
+    {
+      "id": "ent_089",
+      "type": "Taxon",
+      "name": "Ipomoea violacea",
+      "attributes": {
+        "context": "roots of I. violacea"
+      },
+      "source_chunk_ids": [
+        "8d617a4320d650a979670f587cccf3f3"
+      ]
+    },
+    {
+      "id": "ent_090",
+      "type": "Taxon",
+      "name": "Rivea corymbosa",
+      "attributes": {
+        "context": "in leaves of R. corymbosa"
+      },
+      "source_chunk_ids": [
+        "8d617a4320d650a979670f587cccf3f3"
+      ]
+    },
+    {
+      "id": "ent_091",
+      "type": "Taxon",
+      "name": "morning glories",
+      "attributes": {
+        "context": "tissue of the morning glories"
+      },
+      "source_chunk_ids": [
+        "8d617a4320d650a979670f587cccf3f3"
+      ]
+    },
+    {
+      "id": "ent_092",
+      "type": "Taxon",
+      "name": "Convolvulaceae",
+      "attributes": {
+        "context": "taxonomy of the Convolvulaceae"
+      },
+      "source_chunk_ids": [
+        "c4534e86138911e27570fbd8b7e90186"
+      ]
+    },
+    {
+      "id": "ent_093",
+      "type": "Taxon",
+      "name": "Rivea",
+      "attributes": {
+        "context": "Rivea, primarily an Asiatic species"
+      },
+      "source_chunk_ids": [
+        "c4534e86138911e27570fbd8b7e90186"
+      ]
+    },
+    {
+      "id": "ent_094",
+      "type": "Taxon",
+      "name": "Rivea corymbosa",
+      "attributes": {
+        "context": "one, R. corymbosa, in the western hemisphere"
+      },
+      "source_chunk_ids": [
+        "c4534e86138911e27570fbd8b7e90186"
+      ]
+    },
+    {
+      "id": "ent_095",
+      "type": "Taxon",
+      "name": "Ipomoea sidaeifolia",
+      "attributes": {
+        "context": "synonyms, of which Ipomoea sidaeifolia"
+      },
+      "source_chunk_ids": [
+        "c4534e86138911e27570fbd8b7e90186"
+      ]
+    },
+    {
+      "id": "ent_096",
+      "type": "Taxon",
+      "name": "Turbina corymbosa",
+      "attributes": {
+        "context": "and Turbina corymbosa are most frequently employed"
+      },
+      "source_chunk_ids": [
+        "c4534e86138911e27570fbd8b7e90186"
+      ]
+    },
+    {
+      "id": "ent_097",
+      "type": "Taxon",
+      "name": "Ipomoea",
+      "attributes": {
+        "context": "Ipomoea, comprising upwards of 500 species"
+      },
+      "source_chunk_ids": [
+        "c4534e86138911e27570fbd8b7e90186"
+      ]
+    },
+    {
+      "id": "ent_098",
+      "type": "Taxon",
+      "name": "Ipomoea violacea",
+      "attributes": {
+        "context": "I. violacea, often referred to by its synonyms"
+      },
+      "source_chunk_ids": [
+        "c4534e86138911e27570fbd8b7e90186"
+      ]
+    },
+    {
+      "id": "ent_099",
+      "type": "Taxon",
+      "name": "Ipomoea rubro-caerulea",
+      "attributes": {
+        "context": "synonyms I. rubro-caerulea and I. tricolor"
+      },
+      "source_chunk_ids": [
+        "c4534e86138911e27570fbd8b7e90186"
+      ]
+    },
+    {
+      "id": "ent_100",
+      "type": "Taxon",
+      "name": "Ipomoea tricolor",
+      "attributes": {
+        "context": "I. rubro-caerulea and I. tricolor"
+      },
+      "source_chunk_ids": [
+        "c4534e86138911e27570fbd8b7e90186"
+      ]
+    },
+    {
+      "id": "ent_101",
+      "type": "Taxon",
+      "name": "Heavenly Blue",
+      "attributes": {
+        "context": "such as Heavenly Blue"
+      },
+      "source_chunk_ids": [
+        "c4534e86138911e27570fbd8b7e90186"
+      ]
+    },
+    {
+      "id": "ent_102",
+      "type": "Taxon",
+      "name": "Pearly Gates",
+      "attributes": {
+        "context": "Pearly Gates, Flying Saucers"
+      },
+      "source_chunk_ids": [
+        "c4534e86138911e27570fbd8b7e90186"
+      ]
+    },
+    {
+      "id": "ent_103",
+      "type": "Taxon",
+      "name": "Flying Saucers",
+      "attributes": {
+        "context": "Flying Saucers, Wedding Bells"
+      },
+      "source_chunk_ids": [
+        "c4534e86138911e27570fbd8b7e90186"
+      ]
+    },
+    {
+      "id": "ent_104",
+      "type": "Taxon",
+      "name": "Wedding Bells",
+      "attributes": {
+        "context": "Wedding Bells, Summer Skies"
+      },
+      "source_chunk_ids": [
+        "c4534e86138911e27570fbd8b7e90186"
+      ]
+    },
+    {
+      "id": "ent_105",
+      "type": "Taxon",
+      "name": "Summer Skies",
+      "attributes": {
+        "context": "Summer Skies, and Blue Stars"
+      },
+      "source_chunk_ids": [
+        "c4534e86138911e27570fbd8b7e90186"
+      ]
+    },
+    {
+      "id": "ent_106",
+      "type": "Taxon",
+      "name": "Blue Stars",
+      "attributes": {
+        "context": "and Blue Stars \u2014 all of which"
+      },
+      "source_chunk_ids": [
+        "c4534e86138911e27570fbd8b7e90186"
+      ]
+    },
+    {
+      "id": "ent_107",
+      "type": "PharmEffect",
+      "name": "hallucinogenic",
+      "attributes": {
+        "context": "contain the hallucinogenic ergot alkaloids"
+      },
+      "source_chunk_ids": [
+        "c4534e86138911e27570fbd8b7e90186"
+      ]
+    },
+    {
+      "id": "ent_108",
+      "type": "Compound",
+      "name": "ergot alkaloids",
+      "attributes": {
+        "context": "the hallucinogenic ergot alkaloids"
+      },
+      "source_chunk_ids": [
+        "c4534e86138911e27570fbd8b7e90186"
+      ]
+    },
+    {
+      "id": "ent_109",
+      "type": "Taxon",
+      "name": "Tabernanthe iboga",
+      "attributes": {
+        "context": "taken with iboga"
+      },
+      "source_chunk_ids": [
+        "c005ae4c5066fd7085d90a8a9491dc1c"
+      ]
+    },
+    {
+      "id": "ent_110",
+      "type": "Taxon",
+      "name": "euphor",
+      "attributes": {
+        "context": "the euphor"
+      },
+      "source_chunk_ids": [
+        "c005ae4c5066fd7085d90a8a9491dc1c"
+      ]
+    },
+    {
+      "id": "ent_111",
+      "type": "Taxon",
+      "name": "Alchornea floribunda",
+      "attributes": {
+        "context": "Alchornea floribunda, is employed"
+      },
+      "source_chunk_ids": [
+        "0b32ca99e5e93b72b4368cca827219fa"
+      ]
+    },
+    {
+      "id": "ent_112",
+      "type": "Taxon",
+      "name": "Tabernanthe iboga",
+      "attributes": {
+        "context": "same way as iboga"
+      },
+      "source_chunk_ids": [
+        "0b32ca99e5e93b72b4368cca827219fa"
+      ]
+    },
+    {
+      "id": "ent_113",
+      "type": "PharmEffect",
+      "name": "hallucinogenic",
+      "attributes": {
+        "context": "apparently not hallucinogenic"
+      },
+      "source_chunk_ids": [
+        "0b32ca99e5e93b72b4368cca827219fa"
+      ]
+    },
+    {
+      "id": "ent_114",
+      "type": "Compound",
+      "name": "yohimbine",
+      "attributes": {
+        "context": "the indole yohimbine"
+      },
+      "source_chunk_ids": [
+        "0b32ca99e5e93b72b4368cca827219fa"
+      ]
+    },
+    {
+      "id": "ent_115",
+      "type": "Taxon",
+      "name": "Lophophora Williamsii",
+      "attributes": {
+        "context": "Lophophora Williamsii, the peyote cactus"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_116",
+      "type": "Taxon",
+      "name": "peyote cactus",
+      "attributes": {
+        "context": "Lophophora Williamsii, the peyote cactus"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_117",
+      "type": "Compound",
+      "name": "bases",
+      "attributes": {
+        "context": "more than 30 bases belonging to the phenylethylamines"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_118",
+      "type": "Compound",
+      "name": "phenylethylamines",
+      "attributes": {
+        "context": "belonging to the phenylethylamines"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_119",
+      "type": "Compound",
+      "name": "isoquinolines",
+      "attributes": {
+        "context": "and the simple isoquinolines"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_120",
+      "type": "PharmEffect",
+      "name": "visual hallucinations",
+      "attributes": {
+        "context": "The visual hallucinations are due to the phenylethylamine mescaline"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_121",
+      "type": "Compound",
+      "name": "phenylethylamine",
+      "attributes": {
+        "context": "the phenylethylamine mescaline"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_122",
+      "type": "Compound",
+      "name": "mescaline",
+      "attributes": {
+        "context": "the phenylethylamine mescaline"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_123",
+      "type": "PharmEffect",
+      "name": "intoxication",
+      "attributes": {
+        "context": "complex peyote \u2014 intoxication"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_124",
+      "type": "PharmEffect",
+      "name": "auditory hallucinations",
+      "attributes": {
+        "context": "auditory, tactile, and taste hallucinations"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_125",
+      "type": "PharmEffect",
+      "name": "tactile hallucinations",
+      "attributes": {
+        "context": "auditory, tactile, and taste hallucinations"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_126",
+      "type": "PharmEffect",
+      "name": "taste hallucinations",
+      "attributes": {
+        "context": "auditory, tactile, and taste hallucinations"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_127",
+      "type": "Compound",
+      "name": "isoquinolines",
+      "attributes": {
+        "context": "due in part at least to the isoquinolines"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_128",
+      "type": "Compound",
+      "name": "isoquinolines",
+      "attributes": {
+        "context": "Among the important isoquinolines present are"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_129",
+      "type": "Compound",
+      "name": "anhalamine",
+      "attributes": {
+        "context": "present are anhalamine"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_130",
+      "type": "Compound",
+      "name": "anhalidine",
+      "attributes": {
+        "context": "anhalamine, anhalidine"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_131",
+      "type": "Compound",
+      "name": "anhalinine",
+      "attributes": {
+        "context": "anhalidine, anhalinine"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_132",
+      "type": "Compound",
+      "name": "anhalonidine",
+      "attributes": {
+        "context": "anhalinine, anhalonidine"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_133",
+      "type": "Compound",
+      "name": "pellotine",
+      "attributes": {
+        "context": "anhalonidine, pellotine"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_134",
+      "type": "Compound",
+      "name": "lophophorine",
+      "attributes": {
+        "context": "pellotine, lophophorine"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_135",
+      "type": "Compound",
+      "name": "peyoglutam",
+      "attributes": {
+        "context": "lophophorine, peyoglutam"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_136",
+      "type": "Compound",
+      "name": "mescalotam",
+      "attributes": {
+        "context": "peyoglutam, mescalotam"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_137",
+      "type": "Compound",
+      "name": "bases",
+      "attributes": {
+        "context": "several as yet unnamed bases"
+      },
+      "source_chunk_ids": [
+        "a536f3d4dc29420a8d4c4e0acf854e2b"
+      ]
+    },
+    {
+      "id": "ent_138",
+      "type": "Taxon",
+      "name": "soma",
+      "attributes": {
+        "context": "worshipped a plant, the god-narcotic soma"
+      },
+      "source_chunk_ids": [
+        "c88b002ebd816a187ca5273ad8bad43a"
+      ]
+    },
+    {
+      "id": "ent_139",
+      "type": "PharmEffect",
+      "name": "inebriating",
+      "attributes": {
+        "context": "the inebriating juice was ceremonially drunk"
+      },
+      "source_chunk_ids": [
+        "c88b002ebd816a187ca5273ad8bad43a"
+      ]
+    },
+    {
+      "id": "ent_140",
+      "type": "Taxon",
+      "name": "Amanita muscaria",
+      "attributes": {
+        "context": "identification of soma as Amanita muscaria"
+      },
+      "source_chunk_ids": [
+        "c88b002ebd816a187ca5273ad8bad43a"
+      ]
+    },
+    {
+      "id": "ent_141",
+      "type": "PharmEffect",
+      "name": "narcotic",
+      "attributes": {
+        "context": "discovered the narcotic use of Amanita muscaria"
+      },
+      "source_chunk_ids": [
+        "afffb70bc7617cb90b7549b923dee0b8"
+      ]
+    },
+    {
+      "id": "ent_142",
+      "type": "Taxon",
+      "name": "Amanita muscaria",
+      "attributes": {
+        "context": "use of Amanita muscaria among the primitive tribesmen"
+      },
+      "source_chunk_ids": [
+        "afffb70bc7617cb90b7549b923dee0b8"
+      ]
+    },
+    {
+      "id": "ent_143",
+      "type": "PharmEffect",
+      "name": "orgiastic",
+      "attributes": {
+        "context": "employed as an orgiastic or shamanistic inebriate"
+      },
+      "source_chunk_ids": [
+        "afffb70bc7617cb90b7549b923dee0b8"
+      ]
+    },
+    {
+      "id": "ent_144",
+      "type": "PharmEffect",
+      "name": "shamanistic inebriate",
+      "attributes": {
+        "context": "employed as an orgiastic or shamanistic inebriate"
+      },
+      "source_chunk_ids": [
+        "afffb70bc7617cb90b7549b923dee0b8"
+      ]
+    },
+    {
+      "id": "ent_145",
+      "type": "Compound",
+      "name": "muscimole",
+      "attributes": {
+        "context": "constituents appear to be muscimole"
+      },
+      "source_chunk_ids": [
+        "376fc49d20bf49c28c1de9692e8705f5"
+      ]
+    },
+    {
+      "id": "ent_146",
+      "type": "Compound",
+      "name": "enolbetaine of 5-amino-ethyl-3-hydroxy-isoxazole",
+      "attributes": {
+        "context": "muscimole, the enolbetaine of 5-amino-ethyl-3-hydroxy-isoxazole"
+      },
+      "source_chunk_ids": [
+        "376fc49d20bf49c28c1de9692e8705f5"
+      ]
+    },
+    {
+      "id": "ent_147",
+      "type": "Compound",
+      "name": "unsaturated cyclic hydroxamic acid",
+      "attributes": {
+        "context": "isoxazole \u2014 an unsaturated cyclic hydroxamic acid"
+      },
+      "source_chunk_ids": [
+        "376fc49d20bf49c28c1de9692e8705f5"
+      ]
+    },
+    {
+      "id": "ent_148",
+      "type": "Compound",
+      "name": "ibotenic acid",
+      "attributes": {
+        "context": "and ibotenic acid"
+      },
+      "source_chunk_ids": [
+        "376fc49d20bf49c28c1de9692e8705f5"
+      ]
+    },
+    {
+      "id": "ent_149",
+      "type": "Compound",
+      "name": "zwitterion of \\alpha-amino-\\alpha-[3-hydroxy-isoxazoyl-5]-acid monohydrate",
+      "attributes": {
+        "context": "ibotenic acid, the zwitterion of \\alpha-amino-\\alpha-[3-hydroxy-isoxazoyl-5]-acid monohydrate"
+      },
+      "source_chunk_ids": [
+        "376fc49d20bf49c28c1de9692e8705f5"
+      ]
+    },
+    {
+      "id": "ent_150",
+      "type": "Compound",
+      "name": "musoazone",
+      "attributes": {
+        "context": "The less active musoazone"
+      },
+      "source_chunk_ids": [
+        "376fc49d20bf49c28c1de9692e8705f5"
+      ]
+    },
+    {
+      "id": "ent_151",
+      "type": "Compound",
+      "name": "amino acid",
+      "attributes": {
+        "context": "musoazone, likewise an amino acid"
+      },
+      "source_chunk_ids": [
+        "376fc49d20bf49c28c1de9692e8705f5"
+      ]
+    },
+    {
+      "id": "ent_152",
+      "type": "Compound",
+      "name": "\\alpha-amino-\\alpha[2(3H)-oxazolonyl-(5)]-acetic acid",
+      "attributes": {
+        "context": "amino acid, \\alpha-amino-\\alpha[2(3H)-oxazolonyl-(5)]-acetic acid"
+      },
+      "source_chunk_ids": [
+        "376fc49d20bf49c28c1de9692e8705f5"
+      ]
+    },
+    {
+      "id": "ent_153",
+      "type": "Compound",
+      "name": "isoxazoles",
+      "attributes": {
+        "context": "related to these isoxazoles"
+      },
+      "source_chunk_ids": [
+        "376fc49d20bf49c28c1de9692e8705f5"
+      ]
+    },
+    {
+      "id": "ent_154",
+      "type": "Compound",
+      "name": "oxamycine",
+      "attributes": {
+        "context": "the antibiotic oxamycine"
+      },
+      "source_chunk_ids": [
+        "376fc49d20bf49c28c1de9692e8705f5"
+      ]
+    },
+    {
+      "id": "ent_155",
+      "type": "PharmEffect",
+      "name": "psychoactive effects",
+      "attributes": {
+        "context": "often has psychoactive effects"
+      },
+      "source_chunk_ids": [
+        "376fc49d20bf49c28c1de9692e8705f5"
+      ]
+    },
+    {
+      "id": "ent_156",
+      "type": "PharmEffect",
+      "name": "mental confusion",
+      "attributes": {
+        "context": "psychoactive effects \u2014 mental confusion"
+      },
+      "source_chunk_ids": [
+        "376fc49d20bf49c28c1de9692e8705f5"
+      ]
+    },
+    {
+      "id": "ent_157",
+      "type": "Indication",
+      "name": "psychotic depression",
+      "attributes": {
+        "context": "mental confusion, psychotic depression"
+      },
+      "source_chunk_ids": [
+        "376fc49d20bf49c28c1de9692e8705f5"
+      ]
+    },
+    {
+      "id": "ent_158",
+      "type": "PharmEffect",
+      "name": "abnormal behavior",
+      "attributes": {
+        "context": "psychotic depression, abnormal behavior"
+      },
+      "source_chunk_ids": [
+        "376fc49d20bf49c28c1de9692e8705f5"
+      ]
+    },
+    {
+      "id": "ent_159",
+      "type": "Taxon",
+      "name": "Amanita muscaria",
+      "attributes": {
+        "context": "A. muscaria results probably from varying ratios"
+      },
+      "source_chunk_ids": [
+        "f55fa8cd3889ac794e99e8aacfa9b65e"
+      ]
+    },
+    {
+      "id": "ent_160",
+      "type": "PharmEffect",
+      "name": "psychoactivity",
+      "attributes": {
+        "context": "variability in psychoactivity of A. muscaria"
+      },
+      "source_chunk_ids": [
+        "f55fa8cd3889ac794e99e8aacfa9b65e"
+      ]
+    },
+    {
+      "id": "ent_161",
+      "type": "Compound",
+      "name": "ibotenic acid",
+      "attributes": {
+        "context": "ratios of ibotenic acid and muscimole"
+      },
+      "source_chunk_ids": [
+        "f55fa8cd3889ac794e99e8aacfa9b65e"
+      ]
+    },
+    {
+      "id": "ent_162",
+      "type": "Compound",
+      "name": "muscimole",
+      "attributes": {
+        "context": "ibotenic acid and muscimole in the carpophores"
+      },
+      "source_chunk_ids": [
+        "f55fa8cd3889ac794e99e8aacfa9b65e"
+      ]
+    },
+    {
+      "id": "ent_163",
+      "type": "PharmEffect",
+      "name": "twitching of the limbs",
+      "attributes": {
+        "context": "characteristic: twitching of the limbs"
+      },
+      "source_chunk_ids": [
+        "f55fa8cd3889ac794e99e8aacfa9b65e"
+      ]
+    },
+    {
+      "id": "ent_164",
+      "type": "PharmEffect",
+      "name": "good humor",
+      "attributes": {
+        "context": "a period of good humor and euphoria"
+      },
+      "source_chunk_ids": [
+        "f55fa8cd3889ac794e99e8aacfa9b65e"
+      ]
+    },
+    {
+      "id": "ent_165",
+      "type": "PharmEffect",
+      "name": "euphoria",
+      "attributes": {
+        "context": "good humor and euphoria, macroscopia"
+      },
+      "source_chunk_ids": [
+        "f55fa8cd3889ac794e99e8aacfa9b65e"
+      ]
+    },
+    {
+      "id": "ent_166",
+      "type": "PharmEffect",
+      "name": "macroscopia",
+      "attributes": {
+        "context": "euphoria, macroscopia, occasionally colored visions"
+      },
+      "source_chunk_ids": [
+        "f55fa8cd3889ac794e99e8aacfa9b65e"
+      ]
+    },
+    {
+      "id": "ent_167",
+      "type": "PharmEffect",
+      "name": "colored visions of the supernatural",
+      "attributes": {
+        "context": "occasionally colored visions of the supernatural"
+      },
+      "source_chunk_ids": [
+        "f55fa8cd3889ac794e99e8aacfa9b65e"
+      ]
+    },
+    {
+      "id": "ent_168",
+      "type": "PharmEffect",
+      "name": "illusions of grandeur",
+      "attributes": {
+        "context": "supernatural and illusions of grandeur"
+      },
+      "source_chunk_ids": [
+        "f55fa8cd3889ac794e99e8aacfa9b65e"
+      ]
+    },
+    {
+      "id": "ent_169",
+      "type": "PharmEffect",
+      "name": "Religious overtones",
+      "attributes": {
+        "context": "Religious overtones frequently occur"
+      },
+      "source_chunk_ids": [
+        "f55fa8cd3889ac794e99e8aacfa9b65e"
+      ]
+    },
+    {
+      "id": "ent_170",
+      "type": "PharmEffect",
+      "name": "violent",
+      "attributes": {
+        "context": "partaker may become violent, dashing madly about"
+      },
+      "source_chunk_ids": [
+        "f55fa8cd3889ac794e99e8aacfa9b65e"
+      ]
+    },
+    {
+      "id": "ent_171",
+      "type": "PharmEffect",
+      "name": "dashing madly about",
+      "attributes": {
+        "context": "violent, dashing madly about, until exhaustion"
+      },
+      "source_chunk_ids": [
+        "f55fa8cd3889ac794e99e8aacfa9b65e"
+      ]
+    },
+    {
+      "id": "ent_172",
+      "type": "PharmEffect",
+      "name": "exhaustion",
+      "attributes": {
+        "context": "until exhaustion and deep sleep overtake him"
+      },
+      "source_chunk_ids": [
+        "f55fa8cd3889ac794e99e8aacfa9b65e"
+      ]
+    },
+    {
+      "id": "ent_173",
+      "type": "PharmEffect",
+      "name": "deep sleep",
+      "attributes": {
+        "context": "exhaustion and deep sleep overtake him"
+      },
+      "source_chunk_ids": [
+        "f55fa8cd3889ac794e99e8aacfa9b65e"
+      ]
+    },
+    {
+      "id": "ent_174",
+      "type": "Taxon",
+      "name": "Amanita",
+      "attributes": {
+        "context": "The genus Amanita"
+      },
+      "source_chunk_ids": [
+        "db30280642aba4c8adca6e165740068e"
+      ]
+    },
+    {
+      "id": "ent_175",
+      "type": "Taxon",
+      "name": "Lophophora",
+      "attributes": {
+        "context": "Lophophora."
+      },
+      "source_chunk_ids": [
+        "78b7c9219041e1a94380da6a5a5634e4"
+      ]
+    },
+    {
+      "id": "ent_176",
+      "type": "PharmEffect",
+      "name": "hallucinogens",
+      "attributes": {
+        "context": "sacred hallucinogens"
+      },
+      "source_chunk_ids": [
+        "78b7c9219041e1a94380da6a5a5634e4"
+      ]
+    },
+    {
+      "id": "ent_177",
+      "type": "Taxon",
+      "name": "Lophophora williamsii",
+      "attributes": {
+        "context": "cactus peyote"
+      },
+      "source_chunk_ids": [
+        "78b7c9219041e1a94380da6a5a5634e4"
+      ]
+    },
+    {
+      "id": "ent_178",
+      "type": "Taxon",
+      "name": "Lophophora williamsii",
+      "attributes": {
+        "context": "Lophophora Williamsii"
+      },
+      "source_chunk_ids": [
+        "78b7c9219041e1a94380da6a5a5634e4"
+      ]
+    },
+    {
+      "id": "ent_179",
+      "type": "PharmEffect",
+      "name": "hallucinogens",
+      "attributes": {
+        "context": "prototype\" of hallucinogens"
+      },
+      "source_chunk_ids": [
+        "78b7c9219041e1a94380da6a5a5634e4"
+      ]
+    },
+    {
+      "id": "ent_180",
+      "type": "PharmEffect",
+      "name": "psychotomimetics",
+      "attributes": {
+        "context": "spectacular psychotomimetics"
+      },
+      "source_chunk_ids": [
+        "78b7c9219041e1a94380da6a5a5634e4"
+      ]
+    },
+    {
+      "id": "ent_181",
+      "type": "Taxon",
+      "name": "Lophophora williamsii",
+      "attributes": {
+        "context": "story of peyote"
+      },
+      "source_chunk_ids": [
+        "78b7c9219041e1a94380da6a5a5634e4"
+      ]
+    },
+    {
+      "id": "ent_182",
+      "type": "Taxon",
+      "name": "Lophophora williamsii",
+      "attributes": {
+        "context": "Peyote rites"
+      },
+      "source_chunk_ids": [
+        "78b7c9219041e1a94380da6a5a5634e4"
+      ]
+    },
+    {
+      "id": "ent_183",
+      "type": "Taxon",
+      "name": "Lophophora williamsii",
+      "attributes": {
+        "context": "the peyote cult"
+      },
+      "source_chunk_ids": [
+        "78b7c9219041e1a94380da6a5a5634e4"
+      ]
+    },
+    {
+      "id": "ent_184",
+      "type": "Taxon",
+      "name": "Lophophora williamsii",
+      "attributes": {
+        "context": "crown of the cactus"
+      },
+      "source_chunk_ids": [
+        "78b7c9219041e1a94380da6a5a5634e4"
+      ]
+    },
+    {
+      "id": "ent_185",
+      "type": "Taxon",
+      "name": "Lophophora williamsii",
+      "attributes": {
+        "context": "discoidal \"mescal buttons\""
+      },
+      "source_chunk_ids": [
+        "78b7c9219041e1a94380da6a5a5634e4"
+      ]
+    },
+    {
+      "id": "ent_186",
+      "type": "Taxon",
+      "name": "peyote cactus",
+      "attributes": {
+        "context": "The peyote cactus was first botanically described"
+      },
+      "source_chunk_ids": [
+        "c083475719c404082d4ab8ad8d6c9027"
+      ]
+    },
+    {
+      "id": "ent_187",
+      "type": "Taxon",
+      "name": "Echinocactus Williamsii",
+      "attributes": {
+        "context": "described as Echinocactus Williamsii"
+      },
+      "source_chunk_ids": [
+        "c083475719c404082d4ab8ad8d6c9027"
+      ]
+    },
+    {
+      "id": "ent_188",
+      "type": "Taxon",
+      "name": "Anbalonium",
+      "attributes": {
+        "context": "referred to this genus and to Anbalonium"
+      },
+      "source_chunk_ids": [
+        "c083475719c404082d4ab8ad8d6c9027"
+      ]
+    },
+    {
+      "id": "ent_189",
+      "type": "Taxon",
+      "name": "Lophophora",
+      "attributes": {
+        "context": "placed in the monotypic genus Lophophora"
+      },
+      "source_chunk_ids": [
+        "c083475719c404082d4ab8ad8d6c9027"
+      ]
+    },
+    {
+      "id": "ent_190",
+      "type": "Taxon",
+      "name": "Lophophora Williamsii",
+      "attributes": {
+        "context": "L. Williamsii has more than 25 binomial synonyms"
+      },
+      "source_chunk_ids": [
+        "c083475719c404082d4ab8ad8d6c9027"
+      ]
+    },
+    {
+      "id": "ent_191",
+      "type": "Compound",
+      "name": "mescaline",
+      "attributes": {
+        "context": "have yielded mescaline"
+      },
+      "source_chunk_ids": [
+        "8aa96c3063f81b9c8a62ed5c40dc47f8"
+      ]
+    },
+    {
+      "id": "ent_192",
+      "type": "Taxon",
+      "name": "Trichocereus",
+      "attributes": {
+        "context": "genus Trichocereus"
+      },
+      "source_chunk_ids": [
+        "8aa96c3063f81b9c8a62ed5c40dc47f8"
+      ]
+    },
+    {
+      "id": "ent_193",
+      "type": "Taxon",
+      "name": "Trichocereus macrogonus",
+      "attributes": {
+        "context": "T. macrogonus"
+      },
+      "source_chunk_ids": [
+        "8aa96c3063f81b9c8a62ed5c40dc47f8"
+      ]
+    },
+    {
+      "id": "ent_194",
+      "type": "Taxon",
+      "name": "Trichocereus pachanoi",
+      "attributes": {
+        "context": "T. Pachanoi"
+      },
+      "source_chunk_ids": [
+        "8aa96c3063f81b9c8a62ed5c40dc47f8"
+      ]
+    },
+    {
+      "id": "ent_195",
+      "type": "Taxon",
+      "name": "Trichocereus terscheckii",
+      "attributes": {
+        "context": "T. Terscheckii"
+      },
+      "source_chunk_ids": [
+        "8aa96c3063f81b9c8a62ed5c40dc47f8"
+      ]
+    },
+    {
+      "id": "ent_196",
+      "type": "Taxon",
+      "name": "Trichocereus werdermannianus",
+      "attributes": {
+        "context": "T. Werdermannianus"
+      },
+      "source_chunk_ids": [
+        "8aa96c3063f81b9c8a62ed5c40dc47f8"
+      ]
+    },
+    {
+      "id": "ent_197",
+      "type": "Taxon",
+      "name": "San Pedro",
+      "attributes": {
+        "context": "called San Pedro in Peru"
+      },
+      "source_chunk_ids": [
+        "8aa96c3063f81b9c8a62ed5c40dc47f8"
+      ]
+    },
+    {
+      "id": "ent_198",
+      "type": "Taxon",
+      "name": "aguacolla",
+      "attributes": {
+        "context": "aguacolla in Ecuador"
+      },
+      "source_chunk_ids": [
+        "8aa96c3063f81b9c8a62ed5c40dc47f8"
+      ]
+    },
+    {
+      "id": "ent_199",
+      "type": "Taxon",
+      "name": "Neoraimundia macrostibas",
+      "attributes": {
+        "context": "Neoraimundia macrostibas"
+      },
+      "source_chunk_ids": [
+        "8aa96c3063f81b9c8a62ed5c40dc47f8"
+      ]
+    },
+    {
+      "id": "ent_200",
+      "type": "Taxon",
+      "name": "Isotoma longiflora",
+      "attributes": {
+        "context": "Isotoma longiflora"
+      },
+      "source_chunk_ids": [
+        "8aa96c3063f81b9c8a62ed5c40dc47f8"
+      ]
+    },
+    {
+      "id": "ent_201",
+      "type": "Taxon",
+      "name": "Pedilanthus titimaloides",
+      "attributes": {
+        "context": "Pedilanthus titimaloides"
+      },
+      "source_chunk_ids": [
+        "8aa96c3063f81b9c8a62ed5c40dc47f8"
+      ]
+    },
+    {
+      "id": "ent_202",
+      "type": "Taxon",
+      "name": "Datura",
+      "attributes": {
+        "context": "species of Datura"
+      },
+      "source_chunk_ids": [
+        "8aa96c3063f81b9c8a62ed5c40dc47f8"
+      ]
+    },
+    {
+      "id": "ent_203",
+      "type": "PharmEffect",
+      "name": "hallucinogenic",
+      "attributes": {
+        "context": "a hallucinogenic drink"
+      },
+      "source_chunk_ids": [
+        "8aa96c3063f81b9c8a62ed5c40dc47f8"
+      ]
+    },
+    {
+      "id": "ent_204",
+      "type": "Taxon",
+      "name": "Cytisus",
+      "attributes": {
+        "context": "Cytisus (Genista)."
+      },
+      "source_chunk_ids": [
+        "57699747598969ad8c70323d13180b7a"
+      ]
+    },
+    {
+      "id": "ent_205",
+      "type": "Taxon",
+      "name": "Genista",
+      "attributes": {
+        "context": "Cytisus (Genista)."
+      },
+      "source_chunk_ids": [
+        "57699747598969ad8c70323d13180b7a"
+      ]
+    },
+    {
+      "id": "ent_206",
+      "type": "Taxon",
+      "name": "Cytisus canariensis",
+      "attributes": {
+        "context": "Cytisus (Genista) canariensis, a shrub"
+      },
+      "source_chunk_ids": [
+        "57699747598969ad8c70323d13180b7a"
+      ]
+    },
+    {
+      "id": "ent_207",
+      "type": "PharmEffect",
+      "name": "hallucinogenic",
+      "attributes": {
+        "context": "The hallucinogenic use"
+      },
+      "source_chunk_ids": [
+        "57699747598969ad8c70323d13180b7a"
+      ]
+    },
+    {
+      "id": "ent_208",
+      "type": "Compound",
+      "name": "cystisine",
+      "attributes": {
+        "context": "the toxic alkaloid cystisine"
+      },
+      "source_chunk_ids": [
+        "57699747598969ad8c70323d13180b7a"
+      ]
+    },
+    {
+      "id": "ent_209",
+      "type": "Compound",
+      "name": "ulexine",
+      "attributes": {
+        "context": "cystisine (ulexine, baptitoxine, sophorine)"
+      },
+      "source_chunk_ids": [
+        "57699747598969ad8c70323d13180b7a"
+      ]
+    },
+    {
+      "id": "ent_210",
+      "type": "Compound",
+      "name": "baptitoxine",
+      "attributes": {
+        "context": "cystisine (ulexine, baptitoxine, sophorine)"
+      },
+      "source_chunk_ids": [
+        "57699747598969ad8c70323d13180b7a"
+      ]
+    },
+    {
+      "id": "ent_211",
+      "type": "Compound",
+      "name": "sophorine",
+      "attributes": {
+        "context": "cystisine (ulexine, baptitoxine, sophorine)"
+      },
+      "source_chunk_ids": [
+        "57699747598969ad8c70323d13180b7a"
+      ]
+    },
+    {
+      "id": "ent_212",
+      "type": "Taxon",
+      "name": "Leguminosae",
+      "attributes": {
+        "context": "commonly in the Leguminosae"
+      },
+      "source_chunk_ids": [
+        "57699747598969ad8c70323d13180b7a"
+      ]
+    },
+    {
+      "id": "ent_213",
+      "type": "PharmEffect",
+      "name": "toxic",
+      "attributes": {
+        "context": "the toxic alkaloid cystisine"
+      },
+      "source_chunk_ids": [
+        "57699747598969ad8c70323d13180b7a"
+      ]
+    },
+    {
+      "id": "ent_214",
+      "type": "Taxon",
+      "name": "Cytisus",
+      "attributes": {
+        "context": "25 species of Cytisus"
+      },
+      "source_chunk_ids": [
+        "57699747598969ad8c70323d13180b7a"
+      ]
+    },
+    {
+      "id": "ent_215",
+      "type": "PharmEffect",
+      "name": "toxic",
+      "attributes": {
+        "context": "a number of the species are toxic"
+      },
+      "source_chunk_ids": [
+        "57699747598969ad8c70323d13180b7a"
+      ]
+    },
+    {
+      "id": "ent_216",
+      "type": "Taxon",
+      "name": "Heimia",
+      "attributes": {
+        "context": "Heimia."
+      },
+      "source_chunk_ids": [
+        "474ef9c0266ab8e2e83e084100ddfad0"
+      ]
+    },
+    {
+      "id": "ent_217",
+      "type": "Taxon",
+      "name": "Heimia salicifolia",
+      "attributes": {
+        "context": "Heimia salicifolia has been valued"
+      },
+      "source_chunk_ids": [
+        "474ef9c0266ab8e2e83e084100ddfad0"
+      ]
+    },
+    {
+      "id": "ent_218",
+      "type": "Taxon",
+      "name": "sinicuichi",
+      "attributes": {
+        "context": "Known as sinicuichi"
+      },
+      "source_chunk_ids": [
+        "474ef9c0266ab8e2e83e084100ddfad0"
+      ]
+    },
+    {
+      "id": "ent_219",
+      "type": "PharmEffect",
+      "name": "mildly intoxicating",
+      "attributes": {
+        "context": "The resulting drink is mildly intoxicating"
+      },
+      "source_chunk_ids": [
+        "474ef9c0266ab8e2e83e084100ddfad0"
+      ]
+    },
+    {
+      "id": "ent_220",
+      "type": "Compound",
+      "name": "Alkaloids",
+      "attributes": {
+        "context": "Alkaloids were first reported"
+      },
+      "source_chunk_ids": [
+        "5c859497f06099ac1535138466ac1770"
+      ]
+    },
+    {
+      "id": "ent_221",
+      "type": "Taxon",
+      "name": "Heimia salicifolia",
+      "attributes": {
+        "context": "from H. salicifolia"
+      },
+      "source_chunk_ids": [
+        "5c859497f06099ac1535138466ac1770"
+      ]
+    },
+    {
+      "id": "ent_222",
+      "type": "Compound",
+      "name": "cryogenine",
+      "attributes": {
+        "context": "appears to be cryogenine"
+      },
+      "source_chunk_ids": [
+        "5c859497f06099ac1535138466ac1770"
+      ]
+    },
+    {
+      "id": "ent_223",
+      "type": "Compound",
+      "name": "vertine",
+      "attributes": {
+        "context": "cryogenine (vertine)"
+      },
+      "source_chunk_ids": [
+        "5c859497f06099ac1535138466ac1770"
+      ]
+    },
+    {
+      "id": "ent_224",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "major psychoactive one"
+      },
+      "source_chunk_ids": [
+        "5c859497f06099ac1535138466ac1770"
+      ]
+    },
+    {
+      "id": "ent_225",
+      "type": "Compound",
+      "name": "quinolizidines",
+      "attributes": {
+        "context": "from the usual quinolizidines"
+      },
+      "source_chunk_ids": [
+        "5c859497f06099ac1535138466ac1770"
+      ]
+    },
+    {
+      "id": "ent_226",
+      "type": "Compound",
+      "name": "quinolizidine",
+      "attributes": {
+        "context": "having the quinolizidine as part of a larger and complex system"
+      },
+      "source_chunk_ids": [
+        "5c859497f06099ac1535138466ac1770"
+      ]
+    },
+    {
+      "id": "ent_227",
+      "type": "Taxon",
+      "name": "Lythraceae",
+      "attributes": {
+        "context": "only in the Lythraceae"
+      },
+      "source_chunk_ids": [
+        "5c859497f06099ac1535138466ac1770"
+      ]
+    },
+    {
+      "id": "ent_228",
+      "type": "Taxon",
+      "name": "Heimia",
+      "attributes": {
+        "context": "The genus Heimia"
+      },
+      "source_chunk_ids": [
+        "5c859497f06099ac1535138466ac1770"
+      ]
+    },
+    {
+      "id": "ent_229",
+      "type": "Taxon",
+      "name": "Atropa",
+      "attributes": {
+        "context": "Atropa."
+      },
+      "source_chunk_ids": [
+        "9a39f1cd9f22d0d4de95b3f10ff4b50c"
+      ]
+    },
+    {
+      "id": "ent_230",
+      "type": "Taxon",
+      "name": "belladonna plant",
+      "attributes": {
+        "context": "The belladonna plant"
+      },
+      "source_chunk_ids": [
+        "9a39f1cd9f22d0d4de95b3f10ff4b50c"
+      ]
+    },
+    {
+      "id": "ent_231",
+      "type": "Taxon",
+      "name": "Atropa Belladonna",
+      "attributes": {
+        "context": "Atropa Belladonna, was utilized"
+      },
+      "source_chunk_ids": [
+        "9a39f1cd9f22d0d4de95b3f10ff4b50c"
+      ]
+    },
+    {
+      "id": "ent_232",
+      "type": "PharmEffect",
+      "name": "hallucinogen",
+      "attributes": {
+        "context": "utilized as an hallucinogen"
+      },
+      "source_chunk_ids": [
+        "9a39f1cd9f22d0d4de95b3f10ff4b50c"
+      ]
+    },
+    {
+      "id": "ent_233",
+      "type": "Compound",
+      "name": "scopolamine",
+      "attributes": {
+        "context": "known to be scopolamine"
+      },
+      "source_chunk_ids": [
+        "9a39f1cd9f22d0d4de95b3f10ff4b50c"
+      ]
+    },
+    {
+      "id": "ent_234",
+      "type": "Compound",
+      "name": "tropane alkaloids",
+      "attributes": {
+        "context": "minor tropane alkaloids are also present"
+      },
+      "source_chunk_ids": [
+        "9a39f1cd9f22d0d4de95b3f10ff4b50c"
+      ]
+    },
+    {
+      "id": "ent_235",
+      "type": "Taxon",
+      "name": "Atropa",
+      "attributes": {
+        "context": "species of Atropa"
+      },
+      "source_chunk_ids": [
+        "9a39f1cd9f22d0d4de95b3f10ff4b50c"
+      ]
+    },
+    {
+      "id": "ent_236",
+      "type": "Taxon",
+      "name": "Datura",
+      "attributes": {
+        "context": "indeterminate species of tree-Datura"
+      },
+      "source_chunk_ids": [
+        "b338509e000d624cc527a0da946473dc"
+      ]
+    },
+    {
+      "id": "ent_237",
+      "type": "Taxon",
+      "name": "Methysticodendron Amesianum",
+      "attributes": {
+        "context": "distinct genus: Methysticodendron Amesianum"
+      },
+      "source_chunk_ids": [
+        "b338509e000d624cc527a0da946473dc"
+      ]
+    },
+    {
+      "id": "ent_238",
+      "type": "PharmEffect",
+      "name": "hallucinogen",
+      "attributes": {
+        "context": "as an hallucinogen"
+      },
+      "source_chunk_ids": [
+        "b338509e000d624cc527a0da946473dc"
+      ]
+    },
+    {
+      "id": "ent_239",
+      "type": "PharmEffect",
+      "name": "medicine",
+      "attributes": {
+        "context": "and as medicine"
+      },
+      "source_chunk_ids": [
+        "b338509e000d624cc527a0da946473dc"
+      ]
+    },
+    {
+      "id": "ent_240",
+      "type": "Taxon",
+      "name": "Hyoscyamus",
+      "attributes": {
+        "context": "Hyoscyamus."
+      },
+      "source_chunk_ids": [
+        "34d1627e475bcc10987d49e05da7bd28"
+      ]
+    },
+    {
+      "id": "ent_241",
+      "type": "Taxon",
+      "name": "Hyoscyamus niger",
+      "attributes": {
+        "context": "Henbane, a toxic species of the genus, is Hyoscyamus niger"
+      },
+      "source_chunk_ids": [
+        "34d1627e475bcc10987d49e05da7bd28"
+      ]
+    },
+    {
+      "id": "ent_242",
+      "type": "PharmEffect",
+      "name": "toxic",
+      "attributes": {
+        "context": "a toxic species"
+      },
+      "source_chunk_ids": [
+        "34d1627e475bcc10987d49e05da7bd28"
+      ]
+    },
+    {
+      "id": "ent_243",
+      "type": "PharmEffect",
+      "name": "narcotic",
+      "attributes": {
+        "context": "cultivated in Europe as a narcotic"
+      },
+      "source_chunk_ids": [
+        "34d1627e475bcc10987d49e05da7bd28"
+      ]
+    },
+    {
+      "id": "ent_244",
+      "type": "PharmEffect",
+      "name": "hallucinogenic",
+      "attributes": {
+        "context": "as an hallucinogenic ingredient"
+      },
+      "source_chunk_ids": [
+        "34d1627e475bcc10987d49e05da7bd28"
+      ]
+    },
+    {
+      "id": "ent_245",
+      "type": "PharmEffect",
+      "name": "psychoactive effects",
+      "attributes": {
+        "context": "The psychoactive effects of henbane"
+      },
+      "source_chunk_ids": [
+        "34d1627e475bcc10987d49e05da7bd28"
+      ]
+    },
+    {
+      "id": "ent_246",
+      "type": "Compound",
+      "name": "scopolamine",
+      "attributes": {
+        "context": "attributed mainly to scopolamine"
+      },
+      "source_chunk_ids": [
+        "34d1627e475bcc10987d49e05da7bd28"
+      ]
+    },
+    {
+      "id": "ent_247",
+      "type": "Taxon",
+      "name": "Hyoscyamus",
+      "attributes": {
+        "context": "Hyoscyamus comprises about 20 species"
+      },
+      "source_chunk_ids": [
+        "34d1627e475bcc10987d49e05da7bd28"
+      ]
+    },
+    {
+      "id": "ent_248",
+      "type": "Taxon",
+      "name": "Latua pubiflora",
+      "attributes": {
+        "context": "now called Latua pubiflora"
+      },
+      "source_chunk_ids": [
+        "e72791d656c7e480385fa6e78bd948a3"
+      ]
+    },
+    {
+      "id": "ent_249",
+      "type": "PharmEffect",
+      "name": "virulent poison",
+      "attributes": {
+        "context": "identified as a virulent poison"
+      },
+      "source_chunk_ids": [
+        "e72791d656c7e480385fa6e78bd948a3"
+      ]
+    },
+    {
+      "id": "ent_250",
+      "type": "PharmEffect",
+      "name": "delirium",
+      "attributes": {
+        "context": "inducing delirium"
+      },
+      "source_chunk_ids": [
+        "e72791d656c7e480385fa6e78bd948a3"
+      ]
+    },
+    {
+      "id": "ent_251",
+      "type": "PharmEffect",
+      "name": "visual hallucinations",
+      "attributes": {
+        "context": "inducing delirium and visual hallucinations"
+      },
+      "source_chunk_ids": [
+        "e72791d656c7e480385fa6e78bd948a3"
+      ]
+    },
+    {
+      "id": "ent_252",
+      "type": "Taxon",
+      "name": "latu\u00e9",
+      "attributes": {
+        "context": "knew the shrub as latu\u00e9"
+      },
+      "source_chunk_ids": [
+        "e72791d656c7e480385fa6e78bd948a3"
+      ]
+    },
+    {
+      "id": "ent_253",
+      "type": "Taxon",
+      "name": "arbol de los brujos",
+      "attributes": {
+        "context": "knew the shrub as latu\u00e9 or arbol de los brujos"
+      },
+      "source_chunk_ids": [
+        "e72791d656c7e480385fa6e78bd948a3"
+      ]
+    },
+    {
+      "id": "ent_254",
+      "type": "Indication",
+      "name": "permanent insanity",
+      "attributes": {
+        "context": "to cause permanent insanity"
+      },
+      "source_chunk_ids": [
+        "e72791d656c7e480385fa6e78bd948a3"
+      ]
+    },
+    {
+      "id": "ent_255",
+      "type": "Compound",
+      "name": "atropine",
+      "attributes": {
+        "context": "presence of atropine"
+      },
+      "source_chunk_ids": [
+        "e72791d656c7e480385fa6e78bd948a3"
+      ]
+    },
+    {
+      "id": "ent_256",
+      "type": "Compound",
+      "name": "scopolamine",
+      "attributes": {
+        "context": "presence of atropine and scopolamine"
+      },
+      "source_chunk_ids": [
+        "e72791d656c7e480385fa6e78bd948a3"
+      ]
+    },
+    {
+      "id": "ent_257",
+      "type": "Taxon",
+      "name": "Mandragora",
+      "attributes": {
+        "context": "Mandragora."
+      },
+      "source_chunk_ids": [
+        "96b404bef13a6d299ca653d580d257b3"
+      ]
+    },
+    {
+      "id": "ent_258",
+      "type": "Taxon",
+      "name": "mandrake",
+      "attributes": {
+        "context": "The famed mandrake of Europe"
+      },
+      "source_chunk_ids": [
+        "96b404bef13a6d299ca653d580d257b3"
+      ]
+    },
+    {
+      "id": "ent_259",
+      "type": "Taxon",
+      "name": "Mandragora officinarum",
+      "attributes": {
+        "context": "Mandragora officinarum, owes its renown"
+      },
+      "source_chunk_ids": [
+        "96b404bef13a6d299ca653d580d257b3"
+      ]
+    },
+    {
+      "id": "ent_260",
+      "type": "PharmEffect",
+      "name": "hallucinogenic",
+      "attributes": {
+        "context": "its hallucinogenic toxicity"
+      },
+      "source_chunk_ids": [
+        "96b404bef13a6d299ca653d580d257b3"
+      ]
+    },
+    {
+      "id": "ent_261",
+      "type": "Compound",
+      "name": "tropane alkaloids",
+      "attributes": {
+        "context": "active principles are tropane alkaloids"
+      },
+      "source_chunk_ids": [
+        "96b404bef13a6d299ca653d580d257b3"
+      ]
+    },
+    {
+      "id": "ent_262",
+      "type": "Compound",
+      "name": "hyoscyamine",
+      "attributes": {
+        "context": "primarily hyoscyamine"
+      },
+      "source_chunk_ids": [
+        "96b404bef13a6d299ca653d580d257b3"
+      ]
+    },
+    {
+      "id": "ent_263",
+      "type": "Compound",
+      "name": "scopolamine",
+      "attributes": {
+        "context": "scopolamine"
+      },
+      "source_chunk_ids": [
+        "96b404bef13a6d299ca653d580d257b3"
+      ]
+    },
+    {
+      "id": "ent_264",
+      "type": "Compound",
+      "name": "mandragorine",
+      "attributes": {
+        "context": "and mandragorine"
+      },
+      "source_chunk_ids": [
+        "96b404bef13a6d299ca653d580d257b3"
+      ]
+    },
+    {
+      "id": "ent_265",
+      "type": "Taxon",
+      "name": "Mandragora",
+      "attributes": {
+        "context": "Six species of Mandragora are known"
+      },
+      "source_chunk_ids": [
+        "96b404bef13a6d299ca653d580d257b3"
+      ]
+    },
+    {
+      "id": "ent_266",
+      "type": "Taxon",
+      "name": "Conocybe",
+      "attributes": {
+        "context": "Conocybe, Panaeolus, Psilocybe, Stropharia."
+      },
+      "source_chunk_ids": [
+        "09c5e8fda196d134fd767dd4e1d6ddd6"
+      ]
+    },
+    {
+      "id": "ent_267",
+      "type": "Taxon",
+      "name": "Panaeolus",
+      "attributes": {
+        "context": "Conocybe, Panaeolus, Psilocybe, Stropharia."
+      },
+      "source_chunk_ids": [
+        "09c5e8fda196d134fd767dd4e1d6ddd6"
+      ]
+    },
+    {
+      "id": "ent_268",
+      "type": "Taxon",
+      "name": "Psilocybe",
+      "attributes": {
+        "context": "Conocybe, Panaeolus, Psilocybe, Stropharia."
+      },
+      "source_chunk_ids": [
+        "09c5e8fda196d134fd767dd4e1d6ddd6"
+      ]
+    },
+    {
+      "id": "ent_269",
+      "type": "Taxon",
+      "name": "Stropharia",
+      "attributes": {
+        "context": "Conocybe, Panaeolus, Psilocybe, Stropharia."
+      },
+      "source_chunk_ids": [
+        "09c5e8fda196d134fd767dd4e1d6ddd6"
+      ]
+    },
+    {
+      "id": "ent_270",
+      "type": "Taxon",
+      "name": "mushrooms",
+      "attributes": {
+        "context": "in which mushrooms were ingested"
+      },
+      "source_chunk_ids": [
+        "09c5e8fda196d134fd767dd4e1d6ddd6"
+      ]
+    },
+    {
+      "id": "ent_271",
+      "type": "PharmEffect",
+      "name": "hallucinations",
+      "attributes": {
+        "context": "commune through hallucinations with the spirit world"
+      },
+      "source_chunk_ids": [
+        "09c5e8fda196d134fd767dd4e1d6ddd6"
+      ]
+    },
+    {
+      "id": "ent_272",
+      "type": "Taxon",
+      "name": "sacred mushrooms",
+      "attributes": {
+        "context": "knew these \"sacred\" mushrooms as teonanacatl"
+      },
+      "source_chunk_ids": [
+        "09c5e8fda196d134fd767dd4e1d6ddd6"
+      ]
+    },
+    {
+      "id": "ent_273",
+      "type": "Taxon",
+      "name": "teonanacatl",
+      "attributes": {
+        "context": "as teonanacatl (\"food of the gods\")"
+      },
+      "source_chunk_ids": [
+        "09c5e8fda196d134fd767dd4e1d6ddd6"
+      ]
+    },
+    {
+      "id": "ent_274",
+      "type": "PharmEffect",
+      "name": "narcotic",
+      "attributes": {
+        "context": "narcotic use of mushrooms"
+      },
+      "source_chunk_ids": [
+        "1b84d431808c932395973ea9a5c47693"
+      ]
+    },
+    {
+      "id": "ent_275",
+      "type": "Taxon",
+      "name": "mushrooms",
+      "attributes": {
+        "context": "narcotic use of mushrooms"
+      },
+      "source_chunk_ids": [
+        "1b84d431808c932395973ea9a5c47693"
+      ]
+    },
+    {
+      "id": "ent_276",
+      "type": "Taxon",
+      "name": "teonanacatl",
+      "attributes": {
+        "context": "teonanacatl was the same plant as peyote"
+      },
+      "source_chunk_ids": [
+        "1b84d431808c932395973ea9a5c47693"
+      ]
+    },
+    {
+      "id": "ent_277",
+      "type": "Taxon",
+      "name": "peyote",
+      "attributes": {
+        "context": "plant as peyote"
+      },
+      "source_chunk_ids": [
+        "1b84d431808c932395973ea9a5c47693"
+      ]
+    },
+    {
+      "id": "ent_278",
+      "type": "Taxon",
+      "name": "cactus",
+      "attributes": {
+        "context": "crown of the cactus"
+      },
+      "source_chunk_ids": [
+        "1b84d431808c932395973ea9a5c47693"
+      ]
+    },
+    {
+      "id": "ent_279",
+      "type": "Taxon",
+      "name": "mushroom",
+      "attributes": {
+        "context": "resembled a dried mushroom"
+      },
+      "source_chunk_ids": [
+        "1b84d431808c932395973ea9a5c47693"
+      ]
+    },
+    {
+      "id": "ent_280",
+      "type": "PharmEffect",
+      "name": "hallucinogenic",
+      "attributes": {
+        "context": "hallucinogenic fungi"
+      },
+      "source_chunk_ids": [
+        "1b84d431808c932395973ea9a5c47693"
+      ]
+    },
+    {
+      "id": "ent_281",
+      "type": "Taxon",
+      "name": "fungi",
+      "attributes": {
+        "context": "hallucinogenic fungi"
+      },
+      "source_chunk_ids": [
+        "1b84d431808c932395973ea9a5c47693"
+      ]
+    },
+    {
+      "id": "ent_282",
+      "type": "Taxon",
+      "name": "Panaeolus sphinctrinus",
+      "attributes": {
+        "context": "Panaeolus sphinctrinus and Stropharia cubensis"
+      },
+      "source_chunk_ids": [
+        "1b84d431808c932395973ea9a5c47693"
+      ]
+    },
+    {
+      "id": "ent_283",
+      "type": "Taxon",
+      "name": "Stropharia cubensis",
+      "attributes": {
+        "context": "Panaeolus sphinctrinus and Stropharia cubensis"
+      },
+      "source_chunk_ids": [
+        "1b84d431808c932395973ea9a5c47693"
+      ]
+    },
+    {
+      "id": "ent_284",
+      "type": "Taxon",
+      "name": "basidiomycetes",
+      "attributes": {
+        "context": "number of basidiomycetes employed"
+      },
+      "source_chunk_ids": [
+        "1b84d431808c932395973ea9a5c47693"
+      ]
+    },
+    {
+      "id": "ent_285",
+      "type": "Compound",
+      "name": "indole compound",
+      "attributes": {
+        "context": "indole compound with a phosphoric acid radical"
+      },
+      "source_chunk_ids": [
+        "43fb1f4478bc04214fc76a2dad9b945e"
+      ]
+    },
+    {
+      "id": "ent_286",
+      "type": "Compound",
+      "name": "phosphoric acid radical",
+      "attributes": {
+        "context": "indole compound with a phosphoric acid radical"
+      },
+      "source_chunk_ids": [
+        "43fb1f4478bc04214fc76a2dad9b945e"
+      ]
+    },
+    {
+      "id": "ent_287",
+      "type": "Compound",
+      "name": "psilocybine",
+      "attributes": {
+        "context": "both psilocybine and psilocine are novel indoles"
+      },
+      "source_chunk_ids": [
+        "43fb1f4478bc04214fc76a2dad9b945e"
+      ]
+    },
+    {
+      "id": "ent_288",
+      "type": "Compound",
+      "name": "psilocine",
+      "attributes": {
+        "context": "both psilocybine and psilocine are novel indoles"
+      },
+      "source_chunk_ids": [
+        "43fb1f4478bc04214fc76a2dad9b945e"
+      ]
+    },
+    {
+      "id": "ent_289",
+      "type": "Compound",
+      "name": "indoles",
+      "attributes": {
+        "context": "both psilocybine and psilocine are novel indoles"
+      },
+      "source_chunk_ids": [
+        "43fb1f4478bc04214fc76a2dad9b945e"
+      ]
+    },
+    {
+      "id": "ent_290",
+      "type": "Compound",
+      "name": "hydroxy radical",
+      "attributes": {
+        "context": "having the hydroxy radical substituted in the 4-position"
+      },
+      "source_chunk_ids": [
+        "43fb1f4478bc04214fc76a2dad9b945e"
+      ]
+    },
+    {
+      "id": "ent_291",
+      "type": "Compound",
+      "name": "Tryptophan",
+      "attributes": {
+        "context": "Tryptophan is probably the biogenetic precursor of psilocybine"
+      },
+      "source_chunk_ids": [
+        "43fb1f4478bc04214fc76a2dad9b945e"
+      ]
+    },
+    {
+      "id": "ent_292",
+      "type": "Compound",
+      "name": "psilocybine",
+      "attributes": {
+        "context": "biogenetic precursor of psilocybine"
+      },
+      "source_chunk_ids": [
+        "43fb1f4478bc04214fc76a2dad9b945e"
+      ]
+    },
+    {
+      "id": "ent_293",
+      "type": "Compound",
+      "name": "indoles",
+      "attributes": {
+        "context": "Five indoles have been isolated"
+      },
+      "source_chunk_ids": [
+        "c80a759ab193d418bfd14cfb584a6e57"
+      ]
+    },
+    {
+      "id": "ent_294",
+      "type": "Taxon",
+      "name": "Anadenanthera peregrina",
+      "attributes": {
+        "context": "isolated from A. peregrina"
+      },
+      "source_chunk_ids": [
+        "c80a759ab193d418bfd14cfb584a6e57"
+      ]
+    },
+    {
+      "id": "ent_295",
+      "type": "Compound",
+      "name": "N,N-dimethyltryptamine",
+      "attributes": {
+        "context": "chief of which are N,N-dimethyltryptamine"
+      },
+      "source_chunk_ids": [
+        "c80a759ab193d418bfd14cfb584a6e57"
+      ]
+    },
+    {
+      "id": "ent_296",
+      "type": "Compound",
+      "name": "bufotenine",
+      "attributes": {
+        "context": "and bufotenine"
+      },
+      "source_chunk_ids": [
+        "c80a759ab193d418bfd14cfb584a6e57"
+      ]
+    },
+    {
+      "id": "ent_297",
+      "type": "Compound",
+      "name": "5-hydroxy-N,N-dimethyltryptamine",
+      "attributes": {
+        "context": "bufotenine (5-hydroxy-N,N-dimethyltryptamine)"
+      },
+      "source_chunk_ids": [
+        "c80a759ab193d418bfd14cfb584a6e57"
+      ]
+    },
+    {
+      "id": "ent_298",
+      "type": "Compound",
+      "name": "N,N-dimethyltryptamine",
+      "attributes": {
+        "context": "main constituent N,N-dimethyltryptamine"
+      },
+      "source_chunk_ids": [
+        "c80a759ab193d418bfd14cfb584a6e57"
+      ]
+    },
+    {
+      "id": "ent_299",
+      "type": "Compound",
+      "name": "bufotenine",
+      "attributes": {
+        "context": "or bufotenine"
+      },
+      "source_chunk_ids": [
+        "c80a759ab193d418bfd14cfb584a6e57"
+      ]
+    },
+    {
+      "id": "ent_300",
+      "type": "Compound",
+      "name": "indoles",
+      "attributes": {
+        "context": "Other indoles found in this species"
+      },
+      "source_chunk_ids": [
+        "c80a759ab193d418bfd14cfb584a6e57"
+      ]
+    },
+    {
+      "id": "ent_301",
+      "type": "Compound",
+      "name": "5-methoxy-N,N-dimethyltryptamine",
+      "attributes": {
+        "context": "are 5-methoxy-N,N-dimethyltryptamine"
+      },
+      "source_chunk_ids": [
+        "c80a759ab193d418bfd14cfb584a6e57"
+      ]
+    },
+    {
+      "id": "ent_302",
+      "type": "Compound",
+      "name": "N-monomethyltryptamine",
+      "attributes": {
+        "context": "N-monomethyltryptamine"
+      },
+      "source_chunk_ids": [
+        "c80a759ab193d418bfd14cfb584a6e57"
+      ]
+    },
+    {
+      "id": "ent_303",
+      "type": "Compound",
+      "name": "5-methoxy-N-monomethyltryptamine",
+      "attributes": {
+        "context": "and 5-methoxy-N-monomethyltryptamine"
+      },
+      "source_chunk_ids": [
+        "c80a759ab193d418bfd14cfb584a6e57"
+      ]
+    },
+    {
+      "id": "ent_304",
+      "type": "Taxon",
+      "name": "Anadenanthera colubrina",
+      "attributes": {
+        "context": "another species, A. colubrina"
+      },
+      "source_chunk_ids": [
+        "8b8c88f30f6cdb36f8859fe2be17e056"
+      ]
+    },
+    {
+      "id": "ent_305",
+      "type": "PharmEffect",
+      "name": "narcotic",
+      "attributes": {
+        "context": "narcotic snuffs"
+      },
+      "source_chunk_ids": [
+        "8b8c88f30f6cdb36f8859fe2be17e056"
+      ]
+    },
+    {
+      "id": "ent_306",
+      "type": "Taxon",
+      "name": "vilca",
+      "attributes": {
+        "context": "known in southern Peru and Bolivia as vilca"
+      },
+      "source_chunk_ids": [
+        "8b8c88f30f6cdb36f8859fe2be17e056"
+      ]
+    },
+    {
+      "id": "ent_307",
+      "type": "Taxon",
+      "name": "bulca",
+      "attributes": {
+        "context": "known in southern Peru and Bolivia as vilca or bulca"
+      },
+      "source_chunk_ids": [
+        "8b8c88f30f6cdb36f8859fe2be17e056"
+      ]
+    },
+    {
+      "id": "ent_308",
+      "type": "Taxon",
+      "name": "ceb\u00edl",
+      "attributes": {
+        "context": "in northern Argentina as ceb\u00edl"
+      },
+      "source_chunk_ids": [
+        "8b8c88f30f6cdb36f8859fe2be17e056"
+      ]
+    },
+    {
+      "id": "ent_309",
+      "type": "Taxon",
+      "name": "Anadenanthera peregrina",
+      "attributes": {
+        "context": "related to the more northern A. peregrina"
+      },
+      "source_chunk_ids": [
+        "8b8c88f30f6cdb36f8859fe2be17e056"
+      ]
+    },
+    {
+      "id": "ent_310",
+      "type": "PharmEffect",
+      "name": "hallucinogen",
+      "attributes": {
+        "context": "valued aboriginally as an hallucinogen"
+      },
+      "source_chunk_ids": [
+        "8b8c88f30f6cdb36f8859fe2be17e056"
+      ]
+    },
+    {
+      "id": "ent_311",
+      "type": "Taxon",
+      "name": "Virola",
+      "attributes": {
+        "context": "resin of a Virola"
+      },
+      "source_chunk_ids": [
+        "638b493220eba5ed4f8d9ec701445db5"
+      ]
+    },
+    {
+      "id": "ent_312",
+      "type": "Taxon",
+      "name": "Virola theiodora",
+      "attributes": {
+        "context": "possibly V. theiodora"
+      },
+      "source_chunk_ids": [
+        "638b493220eba5ed4f8d9ec701445db5"
+      ]
+    },
+    {
+      "id": "ent_313",
+      "type": "PharmEffect",
+      "name": "hallucinogen",
+      "attributes": {
+        "context": "orally as an hallucinogen"
+      },
+      "source_chunk_ids": [
+        "638b493220eba5ed4f8d9ec701445db5"
+      ]
+    },
+    {
+      "id": "ent_314",
+      "type": "Concentration",
+      "name": "orally",
+      "attributes": {
+        "context": "orally as an hallucinogen"
+      },
+      "source_chunk_ids": [
+        "638b493220eba5ed4f8d9ec701445db5"
+      ]
+    },
+    {
+      "id": "ent_315",
+      "type": "Concentration",
+      "name": "Small pellets",
+      "attributes": {
+        "context": "Small pellets of the boiled resin"
+      },
+      "source_chunk_ids": [
+        "638b493220eba5ed4f8d9ec701445db5"
+      ]
+    },
+    {
+      "id": "ent_316",
+      "type": "Taxon",
+      "name": "Gustavia poeppigiana",
+      "attributes": {
+        "context": "bark ashes of Gustavia Poeppigiana"
+      },
+      "source_chunk_ids": [
+        "638b493220eba5ed4f8d9ec701445db5"
+      ]
+    },
+    {
+      "id": "ent_317",
+      "type": "Concentration",
+      "name": "ingested",
+      "attributes": {
+        "context": "ingested to bring on a rapid intoxication"
+      },
+      "source_chunk_ids": [
+        "638b493220eba5ed4f8d9ec701445db5"
+      ]
+    },
+    {
+      "id": "ent_318",
+      "type": "PharmEffect",
+      "name": "intoxication",
+      "attributes": {
+        "context": "rapid intoxication"
+      },
+      "source_chunk_ids": [
+        "638b493220eba5ed4f8d9ec701445db5"
+      ]
+    },
+    {
+      "id": "ent_319",
+      "type": "Taxon",
+      "name": "Virola sebifera",
+      "attributes": {
+        "context": "smoke V. sebifera"
+      },
+      "source_chunk_ids": [
+        "638b493220eba5ed4f8d9ec701445db5"
+      ]
+    },
+    {
+      "id": "ent_320",
+      "type": "Concentration",
+      "name": "smoke",
+      "attributes": {
+        "context": "may smoke V. sebifera"
+      },
+      "source_chunk_ids": [
+        "638b493220eba5ed4f8d9ec701445db5"
+      ]
+    },
+    {
+      "id": "ent_321",
+      "type": "PharmEffect",
+      "name": "intoxicant",
+      "attributes": {
+        "context": "as an intoxicant"
+      },
+      "source_chunk_ids": [
+        "638b493220eba5ed4f8d9ec701445db5"
+      ]
+    },
+    {
+      "id": "ent_322",
+      "type": "Taxon",
+      "name": "Pancratium",
+      "attributes": {
+        "context": "Pancratium."
+      },
+      "source_chunk_ids": [
+        "09d61c8bf25838816e639c7008508b72"
+      ]
+    },
+    {
+      "id": "ent_323",
+      "type": "Taxon",
+      "name": "Pancratium trianthum",
+      "attributes": {
+        "context": "Pancratium trianthum, a bulbous perennial"
+      },
+      "source_chunk_ids": [
+        "09d61c8bf25838816e639c7008508b72"
+      ]
+    },
+    {
+      "id": "ent_324",
+      "type": "Taxon",
+      "name": "kwashi",
+      "attributes": {
+        "context": "known locally as kwashi"
+      },
+      "source_chunk_ids": [
+        "09d61c8bf25838816e639c7008508b72"
+      ]
+    },
+    {
+      "id": "ent_325",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "to be psychoactive"
+      },
+      "source_chunk_ids": [
+        "09d61c8bf25838816e639c7008508b72"
+      ]
+    },
+    {
+      "id": "ent_326",
+      "type": "PharmEffect",
+      "name": "visual hallucinations",
+      "attributes": {
+        "context": "induce visual hallucinations"
+      },
+      "source_chunk_ids": [
+        "09d61c8bf25838816e639c7008508b72"
+      ]
+    },
+    {
+      "id": "ent_327",
+      "type": "PharmEffect",
+      "name": "psychotomimetic",
+      "attributes": {
+        "context": "possible psychotomimetic constituents"
+      },
+      "source_chunk_ids": [
+        "09d61c8bf25838816e639c7008508b72"
+      ]
+    },
+    {
+      "id": "ent_328",
+      "type": "Taxon",
+      "name": "Pancratium",
+      "attributes": {
+        "context": "Other species of Pancratium"
+      },
+      "source_chunk_ids": [
+        "09d61c8bf25838816e639c7008508b72"
+      ]
+    },
+    {
+      "id": "ent_329",
+      "type": "Compound",
+      "name": "toxic principles",
+      "attributes": {
+        "context": "possess toxic principles"
+      },
+      "source_chunk_ids": [
+        "09d61c8bf25838816e639c7008508b72"
+      ]
+    },
+    {
+      "id": "ent_330",
+      "type": "Compound",
+      "name": "alkaloids",
+      "attributes": {
+        "context": "chiefly alkaloids"
+      },
+      "source_chunk_ids": [
+        "09d61c8bf25838816e639c7008508b72"
+      ]
+    },
+    {
+      "id": "ent_331",
+      "type": "PharmEffect",
+      "name": "cardiac poisons",
+      "attributes": {
+        "context": "potent cardiac poisons"
+      },
+      "source_chunk_ids": [
+        "09d61c8bf25838816e639c7008508b72"
+      ]
+    },
+    {
+      "id": "ent_332",
+      "type": "Taxon",
+      "name": "Olmedioperebea sclerophylla",
+      "attributes": {
+        "context": "An Amazon jungle tree, Olmedioperebea sclerophylla, represents one of the most poorly understood hallucinogens."
+      },
+      "source_chunk_ids": [
+        "f529c5684d1d439c8c7c3575f46adeb2"
+      ]
+    },
+    {
+      "id": "ent_333",
+      "type": "PharmEffect",
+      "name": "hallucinogens",
+      "attributes": {
+        "context": "represents one of the most poorly understood hallucinogens."
+      },
+      "source_chunk_ids": [
+        "f529c5684d1d439c8c7c3575f46adeb2"
+      ]
+    },
+    {
+      "id": "ent_334",
+      "type": "PharmEffect",
+      "name": "intoxicating",
+      "attributes": {
+        "context": "are the source of an intoxicating snuff"
+      },
+      "source_chunk_ids": [
+        "f529c5684d1d439c8c7c3575f46adeb2"
+      ]
+    },
+    {
+      "id": "ent_335",
+      "type": "Taxon",
+      "name": "Olmedioperebea",
+      "attributes": {
+        "context": "Two species of Olmedioperebea, both Amazonian, have been described."
+      },
+      "source_chunk_ids": [
+        "f529c5684d1d439c8c7c3575f46adeb2"
+      ]
+    },
+    {
+      "id": "ent_336",
+      "type": "Taxon",
+      "name": "Erythrina",
+      "attributes": {
+        "context": "Erythrina. \u2014 The reddish beans of Erythrina"
+      },
+      "source_chunk_ids": [
+        "c8ae3ce05326da802af8203899a0f935"
+      ]
+    },
+    {
+      "id": "ent_337",
+      "type": "PharmEffect",
+      "name": "hallucinogens",
+      "attributes": {
+        "context": "valued as hallucinogens"
+      },
+      "source_chunk_ids": [
+        "c8ae3ce05326da802af8203899a0f935"
+      ]
+    },
+    {
+      "id": "ent_338",
+      "type": "Taxon",
+      "name": "Sophora secundiflora",
+      "attributes": {
+        "context": "seeds of Sophora secundiflora"
+      },
+      "source_chunk_ids": [
+        "c8ae3ce05326da802af8203899a0f935"
+      ]
+    },
+    {
+      "id": "ent_339",
+      "type": "Taxon",
+      "name": "colorines",
+      "attributes": {
+        "context": "under the name colorines"
+      },
+      "source_chunk_ids": [
+        "c8ae3ce05326da802af8203899a0f935"
+      ]
+    },
+    {
+      "id": "ent_340",
+      "type": "Compound",
+      "name": "indole",
+      "attributes": {
+        "context": "contain indole"
+      },
+      "source_chunk_ids": [
+        "c8ae3ce05326da802af8203899a0f935"
+      ]
+    },
+    {
+      "id": "ent_341",
+      "type": "Compound",
+      "name": "isoquinoline derivatives",
+      "attributes": {
+        "context": "isoquinoline derivatives"
+      },
+      "source_chunk_ids": [
+        "c8ae3ce05326da802af8203899a0f935"
+      ]
+    },
+    {
+      "id": "ent_342",
+      "type": "PharmEffect",
+      "name": "hallucinogenic",
+      "attributes": {
+        "context": "could be hallucinogenic"
+      },
+      "source_chunk_ids": [
+        "c8ae3ce05326da802af8203899a0f935"
+      ]
+    },
+    {
+      "id": "ent_343",
+      "type": "Taxon",
+      "name": "Rhynchosia",
+      "attributes": {
+        "context": "Rhynchosia."
+      },
+      "source_chunk_ids": [
+        "509c655fdafe6058cbf0cbcbe687cc84"
+      ]
+    },
+    {
+      "id": "ent_344",
+      "type": "Taxon",
+      "name": "Rhynchosia species",
+      "attributes": {
+        "context": "several species of Rhynchosia"
+      },
+      "source_chunk_ids": [
+        "509c655fdafe6058cbf0cbcbe687cc84"
+      ]
+    },
+    {
+      "id": "ent_345",
+      "type": "PharmEffect",
+      "name": "narcotic",
+      "attributes": {
+        "context": "as a narcotic"
+      },
+      "source_chunk_ids": [
+        "509c655fdafe6058cbf0cbcbe687cc84"
+      ]
+    },
+    {
+      "id": "ent_346",
+      "type": "PharmEffect",
+      "name": "toxic",
+      "attributes": {
+        "context": "the toxic seeds"
+      },
+      "source_chunk_ids": [
+        "509c655fdafe6058cbf0cbcbe687cc84"
+      ]
+    },
+    {
+      "id": "ent_347",
+      "type": "Taxon",
+      "name": "Rhynchosia",
+      "attributes": {
+        "context": "seeds of R."
+      },
+      "source_chunk_ids": [
+        "509c655fdafe6058cbf0cbcbe687cc84"
+      ]
+    },
+    {
+      "id": "ent_348",
+      "type": "Taxon",
+      "name": "Rhynchosia pyramidalis",
+      "attributes": {
+        "context": "pyramidalis and R. longeracemosa"
+      },
+      "source_chunk_ids": [
+        "7c8c9c373911bdd64964e14ed998675a"
+      ]
+    },
+    {
+      "id": "ent_349",
+      "type": "Taxon",
+      "name": "Rhynchosia longeracemosa",
+      "attributes": {
+        "context": "R. longeracemosa by the same name"
+      },
+      "source_chunk_ids": [
+        "7c8c9c373911bdd64964e14ed998675a"
+      ]
+    },
+    {
+      "id": "ent_350",
+      "type": "Taxon",
+      "name": "piule",
+      "attributes": {
+        "context": "same name, piule"
+      },
+      "source_chunk_ids": [
+        "7c8c9c373911bdd64964e14ed998675a"
+      ]
+    },
+    {
+      "id": "ent_351",
+      "type": "PharmEffect",
+      "name": "hallucinogenic",
+      "attributes": {
+        "context": "hallucinogenic morning glories"
+      },
+      "source_chunk_ids": [
+        "7c8c9c373911bdd64964e14ed998675a"
+      ]
+    },
+    {
+      "id": "ent_352",
+      "type": "Taxon",
+      "name": "morning glories",
+      "attributes": {
+        "context": "seeds of hallucinogenic morning glories"
+      },
+      "source_chunk_ids": [
+        "7c8c9c373911bdd64964e14ed998675a"
+      ]
+    },
+    {
+      "id": "ent_353",
+      "type": "Taxon",
+      "name": "Rhynchosia",
+      "attributes": {
+        "context": "black and red Rhynchosia beans"
+      },
+      "source_chunk_ids": [
+        "7c8c9c373911bdd64964e14ed998675a"
+      ]
+    },
+    {
+      "id": "ent_354",
+      "type": "Taxon",
+      "name": "mushrooms",
+      "attributes": {
+        "context": "pictured together with mushrooms"
+      },
+      "source_chunk_ids": [
+        "7c8c9c373911bdd64964e14ed998675a"
+      ]
+    },
+    {
+      "id": "ent_355",
+      "type": "PharmEffect",
+      "name": "hallucinogenic use",
+      "attributes": {
+        "context": "suggesting hallucinogenic use"
+      },
+      "source_chunk_ids": [
+        "7c8c9c373911bdd64964e14ed998675a"
+      ]
+    },
+    {
+      "id": "ent_356",
+      "type": "Compound",
+      "name": "alkaloid",
+      "attributes": {
+        "context": "An as yet uncharacterized alkaloid"
+      },
+      "source_chunk_ids": [
+        "7c8c9c373911bdd64964e14ed998675a"
+      ]
+    },
+    {
+      "id": "ent_357",
+      "type": "Taxon",
+      "name": "Rhynchosia",
+      "attributes": {
+        "context": "isolated from this genus"
+      },
+      "source_chunk_ids": [
+        "7c8c9c373911bdd64964e14ed998675a"
+      ]
+    },
+    {
+      "id": "ent_358",
+      "type": "Taxon",
+      "name": "Tetrapteris",
+      "attributes": {
+        "context": "Tetrapteris."
+      },
+      "source_chunk_ids": [
+        "986a76edf0726ea8b3c17ac812ce1bed"
+      ]
+    },
+    {
+      "id": "ent_359",
+      "type": "PharmEffect",
+      "name": "narcotic",
+      "attributes": {
+        "context": "prepare a narcotic drink"
+      },
+      "source_chunk_ids": [
+        "986a76edf0726ea8b3c17ac812ce1bed"
+      ]
+    },
+    {
+      "id": "ent_360",
+      "type": "Taxon",
+      "name": "Tetrapteris methystica",
+      "attributes": {
+        "context": "bark of Tetrapteris methystica"
+      },
+      "source_chunk_ids": [
+        "986a76edf0726ea8b3c17ac812ce1bed"
+      ]
+    },
+    {
+      "id": "ent_361",
+      "type": "PharmEffect",
+      "name": "intoxication",
+      "attributes": {
+        "context": "induces an intoxication"
+      },
+      "source_chunk_ids": [
+        "986a76edf0726ea8b3c17ac812ce1bed"
+      ]
+    },
+    {
+      "id": "ent_362",
+      "type": "PharmEffect",
+      "name": "visual hallucinations",
+      "attributes": {
+        "context": "with visual hallucinations"
+      },
+      "source_chunk_ids": [
+        "986a76edf0726ea8b3c17ac812ce1bed"
+      ]
+    },
+    {
+      "id": "ent_363",
+      "type": "Taxon",
+      "name": "Banisteriopsis",
+      "attributes": {
+        "context": "related genus Banisteriopsis"
+      },
+      "source_chunk_ids": [
+        "986a76edf0726ea8b3c17ac812ce1bed"
+      ]
+    },
+    {
+      "id": "ent_364",
+      "type": "Taxon",
+      "name": "Tetrapteris",
+      "attributes": {
+        "context": "species of Tetrapteris"
+      },
+      "source_chunk_ids": [
+        "668f7a0b7d70ab55f3f4cf084065c873"
+      ]
+    },
+    {
+      "id": "ent_365",
+      "type": "Taxon",
+      "name": "Banisteriopsis",
+      "attributes": {
+        "context": "close to Banisteriopsis"
+      },
+      "source_chunk_ids": [
+        "668f7a0b7d70ab55f3f4cf084065c873"
+      ]
+    },
+    {
+      "id": "ent_366",
+      "type": "Compound",
+      "name": "beta-carbolines",
+      "attributes": {
+        "context": "\\beta-carbolines are the active constituents"
+      },
+      "source_chunk_ids": [
+        "668f7a0b7d70ab55f3f4cf084065c873"
+      ]
+    },
+    {
+      "id": "ent_367",
+      "type": "Taxon",
+      "name": "Tetrapteris",
+      "attributes": {
+        "context": "Tetrapteris comprises some 80 species"
+      },
+      "source_chunk_ids": [
+        "668f7a0b7d70ab55f3f4cf084065c873"
+      ]
+    },
+    {
+      "id": "ent_368",
+      "type": "Taxon",
+      "name": "Ariocarpus",
+      "attributes": {
+        "context": "Ariocarpus."
+      },
+      "source_chunk_ids": [
+        "a36ed1235cbad6da267bc436d36d6ef9"
+      ]
+    },
+    {
+      "id": "ent_369",
+      "type": "Taxon",
+      "name": "Ariocarpus fissuratus",
+      "attributes": {
+        "context": "employ Ariocarpus fissuratus"
+      },
+      "source_chunk_ids": [
+        "a36ed1235cbad6da267bc436d36d6ef9"
+      ]
+    },
+    {
+      "id": "ent_370",
+      "type": "Taxon",
+      "name": "sunami",
+      "attributes": {
+        "context": "called sunami"
+      },
+      "source_chunk_ids": [
+        "a36ed1235cbad6da267bc436d36d6ef9"
+      ]
+    },
+    {
+      "id": "ent_371",
+      "type": "Taxon",
+      "name": "peyote cimmar\u00f3n",
+      "attributes": {
+        "context": "and peyote cimmar\u00f3n"
+      },
+      "source_chunk_ids": [
+        "a36ed1235cbad6da267bc436d36d6ef9"
+      ]
+    },
+    {
+      "id": "ent_372",
+      "type": "PharmEffect",
+      "name": "narcotic",
+      "attributes": {
+        "context": "as a narcotic"
+      },
+      "source_chunk_ids": [
+        "a36ed1235cbad6da267bc436d36d6ef9"
+      ]
+    },
+    {
+      "id": "ent_373",
+      "type": "Taxon",
+      "name": "peyote",
+      "attributes": {
+        "context": "than true peyote"
+      },
+      "source_chunk_ids": [
+        "a36ed1235cbad6da267bc436d36d6ef9"
+      ]
+    },
+    {
+      "id": "ent_374",
+      "type": "Taxon",
+      "name": "Lophophora",
+      "attributes": {
+        "context": "(Lophophora)"
+      },
+      "source_chunk_ids": [
+        "a36ed1235cbad6da267bc436d36d6ef9"
+      ]
+    },
+    {
+      "id": "ent_375",
+      "type": "Compound",
+      "name": "Anhalonine",
+      "attributes": {
+        "context": "Anhalonine has been isolated"
+      },
+      "source_chunk_ids": [
+        "a36ed1235cbad6da267bc436d36d6ef9"
+      ]
+    },
+    {
+      "id": "ent_376",
+      "type": "Taxon",
+      "name": "Ariocarpus",
+      "attributes": {
+        "context": "species of Ariocarpus"
+      },
+      "source_chunk_ids": [
+        "a36ed1235cbad6da267bc436d36d6ef9"
+      ]
+    },
+    {
+      "id": "ent_377",
+      "type": "Taxon",
+      "name": "Epithelantha",
+      "attributes": {
+        "context": "Epithelantha. \u2014 The Tarahumare"
+      },
+      "source_chunk_ids": [
+        "44acd8a110981e35a9b0116f0311e362"
+      ]
+    },
+    {
+      "id": "ent_378",
+      "type": "Taxon",
+      "name": "Epithelantha micromeris",
+      "attributes": {
+        "context": "use Epithelantha micromeris as a narcotic"
+      },
+      "source_chunk_ids": [
+        "44acd8a110981e35a9b0116f0311e362"
+      ]
+    },
+    {
+      "id": "ent_379",
+      "type": "PharmEffect",
+      "name": "narcotic",
+      "attributes": {
+        "context": "use Epithelantha micromeris as a narcotic"
+      },
+      "source_chunk_ids": [
+        "44acd8a110981e35a9b0116f0311e362"
+      ]
+    },
+    {
+      "id": "ent_380",
+      "type": "Taxon",
+      "name": "Pachycereus",
+      "attributes": {
+        "context": "Pachycereus. \u2014 Another cactus"
+      },
+      "source_chunk_ids": [
+        "e7698bb8bed6d6d4ded35cee979d80b7"
+      ]
+    },
+    {
+      "id": "ent_381",
+      "type": "PharmEffect",
+      "name": "narcotic",
+      "attributes": {
+        "context": "utilized as a narcotic by the Tarahumare"
+      },
+      "source_chunk_ids": [
+        "e7698bb8bed6d6d4ded35cee979d80b7"
+      ]
+    },
+    {
+      "id": "ent_382",
+      "type": "Taxon",
+      "name": "Pachycereus pecten-aboriginum",
+      "attributes": {
+        "context": "gigantic Pachycereus pecten-aboriginum"
+      },
+      "source_chunk_ids": [
+        "e7698bb8bed6d6d4ded35cee979d80b7"
+      ]
+    },
+    {
+      "id": "ent_383",
+      "type": "Taxon",
+      "name": "caw\u00e9",
+      "attributes": {
+        "context": "which they call caw\u00e9"
+      },
+      "source_chunk_ids": [
+        "e7698bb8bed6d6d4ded35cee979d80b7"
+      ]
+    },
+    {
+      "id": "ent_384",
+      "type": "Compound",
+      "name": "Carnegine",
+      "attributes": {
+        "context": "Carnegine has been reported from this species"
+      },
+      "source_chunk_ids": [
+        "e7698bb8bed6d6d4ded35cee979d80b7"
+      ]
+    },
+    {
+      "id": "ent_385",
+      "type": "Taxon",
+      "name": "Pachycereus pecten-aboriginum",
+      "attributes": {
+        "context": "(as Cereus pecten-aboriginum)"
+      },
+      "source_chunk_ids": [
+        "e7698bb8bed6d6d4ded35cee979d80b7"
+      ]
+    },
+    {
+      "id": "ent_386",
+      "type": "Taxon",
+      "name": "Pachycereus marginatus",
+      "attributes": {
+        "context": "Another species, P. marginatus"
+      },
+      "source_chunk_ids": [
+        "e7698bb8bed6d6d4ded35cee979d80b7"
+      ]
+    },
+    {
+      "id": "ent_387",
+      "type": "Compound",
+      "name": "pilocereine",
+      "attributes": {
+        "context": "is said to contain pilocereine"
+      },
+      "source_chunk_ids": [
+        "e7698bb8bed6d6d4ded35cee979d80b7"
+      ]
+    },
+    {
+      "id": "ent_388",
+      "type": "Taxon",
+      "name": "Pachycereus",
+      "attributes": {
+        "context": "five species of Pachycereus"
+      },
+      "source_chunk_ids": [
+        "e7698bb8bed6d6d4ded35cee979d80b7"
+      ]
+    },
+    {
+      "id": "ent_389",
+      "type": "Taxon",
+      "name": "Pernettya",
+      "attributes": {
+        "context": "Pernettya."
+      },
+      "source_chunk_ids": [
+        "5c04aaa2326d54ee8c85794638e1b05b"
+      ]
+    },
+    {
+      "id": "ent_390",
+      "type": "Taxon",
+      "name": "Pernettya furiens",
+      "attributes": {
+        "context": "Pernettya furiens, known in Chile"
+      },
+      "source_chunk_ids": [
+        "5c04aaa2326d54ee8c85794638e1b05b"
+      ]
+    },
+    {
+      "id": "ent_391",
+      "type": "Taxon",
+      "name": "buedbued",
+      "attributes": {
+        "context": "known in Chile as buedbued"
+      },
+      "source_chunk_ids": [
+        "5c04aaa2326d54ee8c85794638e1b05b"
+      ]
+    },
+    {
+      "id": "ent_392",
+      "type": "Taxon",
+      "name": "bierba loca",
+      "attributes": {
+        "context": "or bierba loca, is toxic"
+      },
+      "source_chunk_ids": [
+        "5c04aaa2326d54ee8c85794638e1b05b"
+      ]
+    },
+    {
+      "id": "ent_393",
+      "type": "PharmEffect",
+      "name": "toxic",
+      "attributes": {
+        "context": "bierba loca, is toxic."
+      },
+      "source_chunk_ids": [
+        "5c04aaa2326d54ee8c85794638e1b05b"
+      ]
+    },
+    {
+      "id": "ent_394",
+      "type": "Concentration",
+      "name": "in quantity",
+      "attributes": {
+        "context": "When consumed in quantity"
+      },
+      "source_chunk_ids": [
+        "5c04aaa2326d54ee8c85794638e1b05b"
+      ]
+    },
+    {
+      "id": "ent_395",
+      "type": "PharmEffect",
+      "name": "mental confusion",
+      "attributes": {
+        "context": "induce mental confusion"
+      },
+      "source_chunk_ids": [
+        "5c04aaa2326d54ee8c85794638e1b05b"
+      ]
+    },
+    {
+      "id": "ent_396",
+      "type": "Indication",
+      "name": "madness",
+      "attributes": {
+        "context": "and madness"
+      },
+      "source_chunk_ids": [
+        "5c04aaa2326d54ee8c85794638e1b05b"
+      ]
+    },
+    {
+      "id": "ent_397",
+      "type": "Indication",
+      "name": "permanent insanity",
+      "attributes": {
+        "context": "or permanent insanity"
+      },
+      "source_chunk_ids": [
+        "5c04aaa2326d54ee8c85794638e1b05b"
+      ]
+    },
+    {
+      "id": "ent_398",
+      "type": "PharmEffect",
+      "name": "narcotic effect",
+      "attributes": {
+        "context": "exercise a narcotic effect"
+      },
+      "source_chunk_ids": [
+        "5c04aaa2326d54ee8c85794638e1b05b"
+      ]
+    },
+    {
+      "id": "ent_399",
+      "type": "Taxon",
+      "name": "Datura",
+      "attributes": {
+        "context": "similar to that of Datura"
+      },
+      "source_chunk_ids": [
+        "5c04aaa2326d54ee8c85794638e1b05b"
+      ]
+    },
+    {
+      "id": "ent_400",
+      "type": "Compound",
+      "name": "andromedotoxine",
+      "attributes": {
+        "context": "due to andromedotoxine, a resinoid"
+      },
+      "source_chunk_ids": [
+        "5c04aaa2326d54ee8c85794638e1b05b"
+      ]
+    },
+    {
+      "id": "ent_401",
+      "type": "Compound",
+      "name": "arbutin",
+      "attributes": {
+        "context": "or to arbutin, a glycoside"
+      },
+      "source_chunk_ids": [
+        "5c04aaa2326d54ee8c85794638e1b05b"
+      ]
+    },
+    {
+      "id": "ent_402",
+      "type": "Compound",
+      "name": "hydroquinone",
+      "attributes": {
+        "context": "or hydroquinone"
+      },
+      "source_chunk_ids": [
+        "5c04aaa2326d54ee8c85794638e1b05b"
+      ]
+    },
+    {
+      "id": "ent_403",
+      "type": "Taxon",
+      "name": "Pernettya parvifolia",
+      "attributes": {
+        "context": "P. parvifolia, called taglli"
+      },
+      "source_chunk_ids": [
+        "5c04aaa2326d54ee8c85794638e1b05b"
+      ]
+    },
+    {
+      "id": "ent_404",
+      "type": "Taxon",
+      "name": "taglli",
+      "attributes": {
+        "context": "called taglli in Ecuador"
+      },
+      "source_chunk_ids": [
+        "5c04aaa2326d54ee8c85794638e1b05b"
+      ]
+    },
+    {
+      "id": "ent_405",
+      "type": "PharmEffect",
+      "name": "toxic",
+      "attributes": {
+        "context": "noted as a toxic plant"
+      },
+      "source_chunk_ids": [
+        "5c04aaa2326d54ee8c85794638e1b05b"
+      ]
+    },
+    {
+      "id": "ent_406",
+      "type": "Compound",
+      "name": "andromedotoxine",
+      "attributes": {
+        "context": "containing andromedotoxine"
+      },
+      "source_chunk_ids": [
+        "5c04aaa2326d54ee8c85794638e1b05b"
+      ]
+    },
+    {
+      "id": "ent_407",
+      "type": "PharmEffect",
+      "name": "hallucinations",
+      "attributes": {
+        "context": "causes hallucinations"
+      },
+      "source_chunk_ids": [
+        "5c04aaa2326d54ee8c85794638e1b05b"
+      ]
+    },
+    {
+      "id": "ent_408",
+      "type": "PharmEffect",
+      "name": "psychic alterations",
+      "attributes": {
+        "context": "other psychic and motor alterations"
+      },
+      "source_chunk_ids": [
+        "5c04aaa2326d54ee8c85794638e1b05b"
+      ]
+    },
+    {
+      "id": "ent_409",
+      "type": "PharmEffect",
+      "name": "motor alterations",
+      "attributes": {
+        "context": "and motor alterations"
+      },
+      "source_chunk_ids": [
+        "5c04aaa2326d54ee8c85794638e1b05b"
+      ]
+    },
+    {
+      "id": "ent_410",
+      "type": "Taxon",
+      "name": "Pernettya",
+      "attributes": {
+        "context": "25 species of Pernettya"
+      },
+      "source_chunk_ids": [
+        "5c04aaa2326d54ee8c85794638e1b05b"
+      ]
+    },
+    {
+      "id": "ent_411",
+      "type": "Taxon",
+      "name": "Desfontainia spinosa var. Hookeri",
+      "attributes": {
+        "context": "the leaves of Desfontainia spinosa var. Hookeri are employed"
+      },
+      "source_chunk_ids": [
+        "fafa47f5b9e7075bd16a2d41429787c2"
+      ]
+    },
+    {
+      "id": "ent_412",
+      "type": "PharmEffect",
+      "name": "narcotic",
+      "attributes": {
+        "context": "employed in southern Chile as a narcotic"
+      },
+      "source_chunk_ids": [
+        "fafa47f5b9e7075bd16a2d41429787c2"
+      ]
+    },
+    {
+      "id": "ent_413",
+      "type": "PharmEffect",
+      "name": "medicinally",
+      "attributes": {
+        "context": "as a narcotic as well as medicinally"
+      },
+      "source_chunk_ids": [
+        "fafa47f5b9e7075bd16a2d41429787c2"
+      ]
+    },
+    {
+      "id": "ent_414",
+      "type": "Taxon",
+      "name": "Loganiaceae",
+      "attributes": {
+        "context": "related to the Loganiaceae"
+      },
+      "source_chunk_ids": [
+        "fafa47f5b9e7075bd16a2d41429787c2"
+      ]
+    },
+    {
+      "id": "ent_415",
+      "type": "Taxon",
+      "name": "Potaliaceae",
+      "attributes": {
+        "context": "placed in the Potaliaceae"
+      },
+      "source_chunk_ids": [
+        "fafa47f5b9e7075bd16a2d41429787c2"
+      ]
+    },
+    {
+      "id": "ent_416",
+      "type": "Taxon",
+      "name": "Prestonia",
+      "attributes": {
+        "context": "Prestonia."
+      },
+      "source_chunk_ids": [
+        "c808012c70170a53240d368a201693f5"
+      ]
+    },
+    {
+      "id": "ent_417",
+      "type": "PharmEffect",
+      "name": "hallucinogenic",
+      "attributes": {
+        "context": "hallucinogenic yaj\u00e9"
+      },
+      "source_chunk_ids": [
+        "c808012c70170a53240d368a201693f5"
+      ]
+    },
+    {
+      "id": "ent_418",
+      "type": "Taxon",
+      "name": "yaj\u00e9",
+      "attributes": {
+        "context": "hallucinogenic yaj\u00e9"
+      },
+      "source_chunk_ids": [
+        "c808012c70170a53240d368a201693f5"
+      ]
+    },
+    {
+      "id": "ent_419",
+      "type": "Taxon",
+      "name": "Prestonia amazonica",
+      "attributes": {
+        "context": "reported as Prestonia (Haemadictyon) amazonica"
+      },
+      "source_chunk_ids": [
+        "c808012c70170a53240d368a201693f5"
+      ]
+    },
+    {
+      "id": "ent_420",
+      "type": "Compound",
+      "name": "N,N-dimethyltryptamine",
+      "attributes": {
+        "context": "report of N,N-dimethyltryptamine"
+      },
+      "source_chunk_ids": [
+        "c808012c70170a53240d368a201693f5"
+      ]
+    },
+    {
+      "id": "ent_421",
+      "type": "Taxon",
+      "name": "Prestonia amazonica",
+      "attributes": {
+        "context": "in P. amazonica"
+      },
+      "source_chunk_ids": [
+        "c808012c70170a53240d368a201693f5"
+      ]
+    },
+    {
+      "id": "ent_422",
+      "type": "Taxon",
+      "name": "Banisteriopsis Rusbyana",
+      "attributes": {
+        "context": "may have been Banisteriopsis Rusbyana"
+      },
+      "source_chunk_ids": [
+        "c808012c70170a53240d368a201693f5"
+      ]
+    },
+    {
+      "id": "ent_423",
+      "type": "Taxon",
+      "name": "Lobelia Tupa",
+      "attributes": {
+        "context": "Lobelia Tupa, a tall, polymorphic herb"
+      },
+      "source_chunk_ids": [
+        "54e53aac42e84000dd8c3e741a1c71ab"
+      ]
+    },
+    {
+      "id": "ent_424",
+      "type": "Taxon",
+      "name": "tupa",
+      "attributes": {
+        "context": "known as tupa or tabaco del diablo"
+      },
+      "source_chunk_ids": [
+        "54e53aac42e84000dd8c3e741a1c71ab"
+      ]
+    },
+    {
+      "id": "ent_425",
+      "type": "Taxon",
+      "name": "tabaco del diablo",
+      "attributes": {
+        "context": "known as tupa or tabaco del diablo"
+      },
+      "source_chunk_ids": [
+        "54e53aac42e84000dd8c3e741a1c71ab"
+      ]
+    },
+    {
+      "id": "ent_426",
+      "type": "PharmEffect",
+      "name": "poison",
+      "attributes": {
+        "context": "is a widely recognized poison"
+      },
+      "source_chunk_ids": [
+        "54e53aac42e84000dd8c3e741a1c71ab"
+      ]
+    },
+    {
+      "id": "ent_427",
+      "type": "Indication",
+      "name": "toothache",
+      "attributes": {
+        "context": "to relieve toothache"
+      },
+      "source_chunk_ids": [
+        "54e53aac42e84000dd8c3e741a1c71ab"
+      ]
+    },
+    {
+      "id": "ent_428",
+      "type": "PharmEffect",
+      "name": "relieve toothache",
+      "attributes": {
+        "context": "to relieve toothache"
+      },
+      "source_chunk_ids": [
+        "54e53aac42e84000dd8c3e741a1c71ab"
+      ]
+    },
+    {
+      "id": "ent_429",
+      "type": "PharmEffect",
+      "name": "narcotic effect",
+      "attributes": {
+        "context": "for their narcotic effect"
+      },
+      "source_chunk_ids": [
+        "54e53aac42e84000dd8c3e741a1c71ab"
+      ]
+    },
+    {
+      "id": "ent_430",
+      "type": "PharmEffect",
+      "name": "hallucinogenic",
+      "attributes": {
+        "context": "this effect is hallucinogenic"
+      },
+      "source_chunk_ids": [
+        "54e53aac42e84000dd8c3e741a1c71ab"
+      ]
+    },
+    {
+      "id": "ent_431",
+      "type": "Taxon",
+      "name": "Lobelia",
+      "attributes": {
+        "context": "species of Lobelia"
+      },
+      "source_chunk_ids": [
+        "4cdb919527bd9543f749888e376e9be3"
+      ]
+    },
+    {
+      "id": "ent_432",
+      "type": "Taxon",
+      "name": "Lobelioidae",
+      "attributes": {
+        "context": "subfamily, Lobelioidae"
+      },
+      "source_chunk_ids": [
+        "4cdb919527bd9543f749888e376e9be3"
+      ]
+    },
+    {
+      "id": "ent_433",
+      "type": "Taxon",
+      "name": "Campanulaceae",
+      "attributes": {
+        "context": "of the Campanulaceae"
+      },
+      "source_chunk_ids": [
+        "4cdb919527bd9543f749888e376e9be3"
+      ]
+    },
+    {
+      "id": "ent_434",
+      "type": "Taxon",
+      "name": "Lobeliaceae",
+      "attributes": {
+        "context": "distinct family, Lobeliaceae"
+      },
+      "source_chunk_ids": [
+        "4cdb919527bd9543f749888e376e9be3"
+      ]
+    },
+    {
+      "id": "ent_435",
+      "type": "Taxon",
+      "name": "Calea Zacatechichi",
+      "attributes": {
+        "context": "A common Mexican shrub, Calea Zacatechichi"
+      },
+      "source_chunk_ids": [
+        "df4dbe4935d28d768e73f202eee6c962"
+      ]
+    },
+    {
+      "id": "ent_436",
+      "type": "Taxon",
+      "name": "Calea",
+      "attributes": {
+        "context": "Calea. \u2014 A common Mexican shrub, Calea Zacatechichi, belonging to a tropical American genus"
+      },
+      "source_chunk_ids": [
+        "df4dbe4935d28d768e73f202eee6c962"
+      ]
+    },
+    {
+      "id": "ent_437",
+      "type": "PharmEffect",
+      "name": "hallucinogens",
+      "attributes": {
+        "context": "represents one of the most recently discovered hallucinogens"
+      },
+      "source_chunk_ids": [
+        "df4dbe4935d28d768e73f202eee6c962"
+      ]
+    },
+    {
+      "id": "ent_438",
+      "type": "PharmEffect",
+      "name": "divination",
+      "attributes": {
+        "context": "take the leaves in infusion for divination"
+      },
+      "source_chunk_ids": [
+        "df4dbe4935d28d768e73f202eee6c962"
+      ]
+    },
+    {
+      "id": "ent_439",
+      "type": "PharmEffect",
+      "name": "clarify the senses",
+      "attributes": {
+        "context": "believing them to clarify the senses"
+      },
+      "source_chunk_ids": [
+        "df4dbe4935d28d768e73f202eee6c962"
+      ]
+    },
+    {
+      "id": "ent_440",
+      "type": "Compound",
+      "name": "alkaloid",
+      "attributes": {
+        "context": "indicated the presence of a possible new alkaloid"
+      },
+      "source_chunk_ids": [
+        "df4dbe4935d28d768e73f202eee6c962"
+      ]
+    },
+    {
+      "id": "ent_441",
+      "type": "PharmEffect",
+      "name": "Psychoactive",
+      "attributes": {
+        "context": "Ethnopharmacologic Search for Psychoactive Drugs"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_442",
+      "type": "PharmEffect",
+      "name": "Psychoactive",
+      "attributes": {
+        "context": "Ethnopharmacologic Search for Psychoactive Drugs"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_443",
+      "type": "PharmEffect",
+      "name": "Narcotic",
+      "attributes": {
+        "context": "Bull. Narcotics"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_444",
+      "type": "Taxon",
+      "name": "Plant",
+      "attributes": {
+        "context": "Chemotaxonomie der Pflanzen"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_445",
+      "type": "PharmEffect",
+      "name": "Toxic",
+      "attributes": {
+        "context": "Les Champignons Toxiques et Hallucinog\u00e8nes"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_446",
+      "type": "PharmEffect",
+      "name": "Hallucinogenic",
+      "attributes": {
+        "context": "Les Champignons Toxiques et Hallucinog\u00e8nes"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_447",
+      "type": "Taxon",
+      "name": "Mushroom",
+      "attributes": {
+        "context": "Les Champignons Toxiques et Hallucinog\u00e8nes"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_448",
+      "type": "PharmEffect",
+      "name": "Hallucinogenic",
+      "attributes": {
+        "context": "Champignons Hallucinog\u00e8nes"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_449",
+      "type": "Taxon",
+      "name": "Mushroom",
+      "attributes": {
+        "context": "Champignons Hallucinog\u00e8nes"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_450",
+      "type": "PharmEffect",
+      "name": "Hallucinogenic",
+      "attributes": {
+        "context": "Champignons Hallucinog\u00e8nes"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_451",
+      "type": "Taxon",
+      "name": "Mushroom",
+      "attributes": {
+        "context": "Champignons Hallucinog\u00e8nes"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_452",
+      "type": "Compound",
+      "name": "Alkaloid",
+      "attributes": {
+        "context": "The Plant Alkaloids"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_453",
+      "type": "Taxon",
+      "name": "Plant",
+      "attributes": {
+        "context": "The Plant Alkaloids"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_454",
+      "type": "PharmEffect",
+      "name": "Hallucinogenic",
+      "attributes": {
+        "context": "The Hallucinogens"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_455",
+      "type": "Taxon",
+      "name": "Datura",
+      "attributes": {
+        "context": "Datura: Its Use among Indian Tribes"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_456",
+      "type": "PharmEffect",
+      "name": "Pharmacodynamic",
+      "attributes": {
+        "context": "Pharmacodynamic Action"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_457",
+      "type": "PharmEffect",
+      "name": "Pharmacodynamic",
+      "attributes": {
+        "context": "Pharmacodyn. Ther."
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_458",
+      "type": "PharmEffect",
+      "name": "Psychoactive",
+      "attributes": {
+        "context": "Ethnopharmacologic Search for Psychoactive Drugs"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_459",
+      "type": "Compound",
+      "name": "Hashish",
+      "attributes": {
+        "context": "Hashish: Its Chemistry and Pharmacology"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_460",
+      "type": "PharmEffect",
+      "name": "Pharmacological",
+      "attributes": {
+        "context": "Hashish: Its Chemistry and Pharmacology"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_461",
+      "type": "Taxon",
+      "name": "Peyote",
+      "attributes": {
+        "context": "The Peyote Cult"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_462",
+      "type": "Taxon",
+      "name": "Datura",
+      "attributes": {
+        "context": "the genus Datura"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_463",
+      "type": "PharmEffect",
+      "name": "Narcotic",
+      "attributes": {
+        "context": "Narcotic and Stimulating Drugs"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_464",
+      "type": "PharmEffect",
+      "name": "Stimulating",
+      "attributes": {
+        "context": "Narcotic and Stimulating Drugs"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_465",
+      "type": "Taxon",
+      "name": "Medicinal Plant",
+      "attributes": {
+        "context": "Plantes m\u00e9dicinales du Chili"
+      },
+      "source_chunk_ids": [
+        "14aae88a2e338b09409e89ad5dfec13f"
+      ]
+    },
+    {
+      "id": "ent_466",
+      "type": "Compound",
+      "name": "Alkaloids",
+      "attributes": {
+        "context": "in The Alkaloids"
+      },
+      "source_chunk_ids": [
+        "b05f7f99fc8f5a2ebcee0b66e3007b18"
+      ]
+    },
+    {
+      "id": "ent_467",
+      "type": "Compound",
+      "name": "Indole Alkaloids",
+      "attributes": {
+        "context": "Indole Alkaloids"
+      },
+      "source_chunk_ids": [
+        "b05f7f99fc8f5a2ebcee0b66e3007b18"
+      ]
+    },
+    {
+      "id": "ent_468",
+      "type": "Compound",
+      "name": "Alkaloids",
+      "attributes": {
+        "context": "their Contained Alkaloids"
+      },
+      "source_chunk_ids": [
+        "b05f7f99fc8f5a2ebcee0b66e3007b18"
+      ]
+    },
+    {
+      "id": "ent_469",
+      "type": "Taxon",
+      "name": "Peganum",
+      "attributes": {
+        "context": "uses of Peganum"
+      },
+      "source_chunk_ids": [
+        "b05f7f99fc8f5a2ebcee0b66e3007b18"
+      ]
+    },
+    {
+      "id": "ent_470",
+      "type": "Taxon",
+      "name": "Zygophyllaceae",
+      "attributes": {
+        "context": "Peganum (Zygophyllaceae)"
+      },
+      "source_chunk_ids": [
+        "b05f7f99fc8f5a2ebcee0b66e3007b18"
+      ]
+    },
+    {
+      "id": "ent_471",
+      "type": "Taxon",
+      "name": "Lophophora williamsii",
+      "attributes": {
+        "context": "Peyote [Lophophora Williamsii (Lemaire) Coulter]"
+      },
+      "source_chunk_ids": [
+        "b05f7f99fc8f5a2ebcee0b66e3007b18"
+      ]
+    },
+    {
+      "id": "ent_472",
+      "type": "Taxon",
+      "name": "Peyote",
+      "attributes": {
+        "context": "Peyote [Lophophora Williamsii (Lemaire) Coulter]"
+      },
+      "source_chunk_ids": [
+        "b05f7f99fc8f5a2ebcee0b66e3007b18"
+      ]
+    },
+    {
+      "id": "ent_473",
+      "type": "Taxon",
+      "name": "Rivea corymbosa",
+      "attributes": {
+        "context": "Knowledge of Rivea Corymbosa"
+      },
+      "source_chunk_ids": [
+        "b05f7f99fc8f5a2ebcee0b66e3007b18"
+      ]
+    },
+    {
+      "id": "ent_474",
+      "type": "Taxon",
+      "name": "Datura",
+      "attributes": {
+        "context": "the genus Datura"
+      },
+      "source_chunk_ids": [
+        "b05f7f99fc8f5a2ebcee0b66e3007b18"
+      ]
+    },
+    {
+      "id": "ent_475",
+      "type": "Taxon",
+      "name": "Mushrooms",
+      "attributes": {
+        "context": "Mushrooms, Russia and History"
+      },
+      "source_chunk_ids": [
+        "b05f7f99fc8f5a2ebcee0b66e3007b18"
+      ]
+    },
+    {
+      "id": "ent_476",
+      "type": "Taxon",
+      "name": "Mushroom",
+      "attributes": {
+        "context": "Divine Mushroom of Immortality"
+      },
+      "source_chunk_ids": [
+        "b05f7f99fc8f5a2ebcee0b66e3007b18"
+      ]
+    },
+    {
+      "id": "ent_477",
+      "type": "PharmEffect",
+      "name": "Psychoactive",
+      "attributes": {
+        "context": "Search for Psychoactive Drugs"
+      },
+      "source_chunk_ids": [
+        "b05f7f99fc8f5a2ebcee0b66e3007b18"
+      ]
+    },
+    {
+      "id": "ent_478",
+      "type": "PharmEffect",
+      "name": "Narcotic",
+      "attributes": {
+        "context": "the Narcotic Ololiuqui"
+      },
+      "source_chunk_ids": [
+        "b05f7f99fc8f5a2ebcee0b66e3007b18"
+      ]
+    },
+    {
+      "id": "ent_479",
+      "type": "PharmEffect",
+      "name": "Psychotropic",
+      "attributes": {
+        "context": "Psychotropic Drugs and Related Compounds"
+      },
+      "source_chunk_ids": [
+        "b05f7f99fc8f5a2ebcee0b66e3007b18"
+      ]
+    },
+    {
+      "id": "ent_480",
+      "type": "PharmEffect",
+      "name": "Rauschgift",
+      "attributes": {
+        "context": "Rauschgift-Drogen"
+      },
+      "source_chunk_ids": [
+        "b05f7f99fc8f5a2ebcee0b66e3007b18"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:03.725354+00:00",
+    "original_file": "entities.json"
+  }
+}

@@ -1,0 +1,259 @@
+"""MinimaxM2.1 entity extractor for ethnopharmacology documents."""
+
+import json
+import logging
+import os
+import re
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any, Dict, List, Optional
+
+from lib.entity_extraction.prompt import build_prompt
+from lib.entity_extraction.schemas import (
+    Entity,
+    ExtractionResultV2,
+    Relationship,
+)
+
+logger = logging.getLogger(__name__)
+
+# Optimized system prompt following MiniMax best practices:
+# - Be clear and specific with instructions
+# - Explain intent ("why") to improve performance
+# - Focus on single task (entity extraction only)
+SYSTEM_PROMPT = """You are an expert ethnopharmacology knowledge extractor for building a biomedical knowledge graph.
+
+Your task is to extract structured entities and relationships from scientific text about medicinal plants.
+
+CRITICAL REQUIREMENTS:
+1. Return ONLY valid JSON - no markdown, no explanation, no preamble
+2. Extract ALL relevant entities mentioned in the text
+3. Create relationships ONLY when the text explicitly supports them
+4. Use the exact entity types and relationship types specified in the user prompt
+5. Generate unique IDs: ent_001, ent_002, ... for entities; rel_001, rel_002, ... for relationships
+6. Do NOT include <think> tags or any hidden reasoning
+
+Your output will be parsed programmatically, so JSON validity is essential."""
+
+
+def _load_api_key() -> str:
+    """Load API key from file or environment variable."""
+    key_file = Path("data/.minimax_api_key")
+    if key_file.exists():
+        return key_file.read_text().strip()
+    key = os.getenv("MINIMAX_API_KEY")
+    if key:
+        return key
+    raise ValueError(
+        "MINIMAX_API_KEY not found. Set env var or create data/.minimax_api_key"
+    )
+
+
+class MinimaxExtractor:
+    """Entity extractor using MiniMax-M2.1 API.
+
+    Optimized based on MiniMax official documentation:
+    - temperature=1.0 (required for M2.1)
+    - top_p=0.95 (recommended for reasoning models)
+    - max_completion_tokens=4096 (prevent truncation)
+    - Uses 'lightning' variant for 67% faster processing when available
+    """
+
+    # Model variants
+    MODEL_STANDARD = "MiniMax-M2.1"  # ~60 tps, best reasoning
+    MODEL_LIGHTNING = "MiniMax-M2.1-lightning"  # ~100 tps, faster
+
+    def __init__(
+        self,
+        api_key: Optional[str] = None,
+        model: str = "MiniMax-M2.1",
+        use_lightning: bool = False,
+    ):
+        import openai
+
+        self.api_key = api_key or _load_api_key()
+        self.model = self.MODEL_LIGHTNING if use_lightning else model
+        self.client = openai.OpenAI(
+            base_url="https://api.minimax.io/v1",
+            api_key=self.api_key,
+            timeout=120.0,  # Increased for longer extractions
+        )
+
+    def extract_chunk(
+        self,
+        text: str,
+        doc_id: str = "",
+        chunk_id: str = "",
+    ) -> ExtractionResultV2:
+        if not text or len(text.strip()) < 20:
+            return self._empty_result(doc_id)
+        prompt = build_prompt(text)
+        delays = [1, 2, 4]
+        last_error = None
+        for attempt, delay in enumerate(delays):
+            try:
+                response = self.client.chat.completions.create(
+                    model=self.model,
+                    messages=[
+                        {
+                            "role": "system",
+                            "content": SYSTEM_PROMPT,
+                        },
+                        {"role": "user", "content": prompt},
+                    ],
+                    temperature=1.0,  # Required: range (0.0, 1.0]
+                    top_p=0.95,  # Recommended for M2 reasoning models
+                    max_completion_tokens=4096,  # Prevent truncation on complex extractions
+                    extra_body={"reasoning_split": True},
+                )
+                content = (response.choices[0].message.content or "").strip()
+                return self._parse_response(content, doc_id, chunk_id)
+            except Exception as e:
+                last_error = e
+                error_str = str(e).lower()
+                if "rate" in error_str or "429" in error_str or "timeout" in error_str:
+                    if attempt < len(delays) - 1:
+                        logger.warning(
+                            f"Attempt {attempt + 1} failed, retrying in {delay}s: {e}"
+                        )
+                        time.sleep(delay)
+                        continue
+                logger.warning(f"Extraction failed for chunk {chunk_id}: {e}")
+                break
+        logger.warning(f"All retries exhausted for chunk {chunk_id}: {last_error}")
+        return self._empty_result(doc_id)
+
+    def extract_document(
+        self,
+        chunks: List[Dict[str, Any]],
+        doc_id: str,
+        max_workers: int = 4,
+    ) -> ExtractionResultV2:
+        all_entities: List[Entity] = []
+        all_relationships: List[Relationship] = []
+        chunks_to_process = []
+        for i, chunk in enumerate(chunks):
+            text = chunk.get("text") or chunk.get("content", "")
+            if not text or len(text.strip()) < 50:
+                continue
+            chunk_id = chunk.get("id") or chunk.get("chunk_id") or f"chunk_{i:04d}"
+            chunks_to_process.append({"text": text, "chunk_id": chunk_id})
+        if not chunks_to_process:
+            return self._empty_result(doc_id)
+        logger.info(f"Processing {len(chunks_to_process)} chunks for {doc_id}")
+
+        def process_chunk(item: Dict[str, str]) -> ExtractionResultV2:
+            return self.extract_chunk(item["text"], doc_id, item["chunk_id"])
+
+        with ThreadPoolExecutor(max_workers=max_workers) as executor:
+            futures = {
+                executor.submit(process_chunk, item): item for item in chunks_to_process
+            }
+            completed = 0
+            for future in as_completed(futures):
+                completed += 1
+                try:
+                    result = future.result()
+                    chunk_id = futures[future]["chunk_id"]
+                    for entity in result.entities:
+                        if chunk_id not in entity.source_chunk_ids:
+                            entity.source_chunk_ids.append(chunk_id)
+                    all_entities.extend(result.entities)
+                    all_relationships.extend(result.relationships)
+                    if completed % 10 == 0:
+                        logger.info(
+                            f"  Processed {completed}/{len(chunks_to_process)} chunks"
+                        )
+                except Exception as e:
+                    logger.warning(f"Chunk processing failed: {e}")
+        logger.info(
+            f"Extracted {len(all_entities)} entities, {len(all_relationships)} relationships"
+        )
+        return ExtractionResultV2(
+            doc_id=doc_id,
+            extracted_at=datetime.now(timezone.utc).isoformat(),
+            extractor=f"minimax:{self.model}",
+            entities=all_entities,
+            relationships=all_relationships,
+            metadata={"chunks_processed": len(chunks_to_process)},
+        )
+
+    def _parse_response(
+        self, content: str, doc_id: str, chunk_id: str
+    ) -> ExtractionResultV2:
+        parsed = self._extract_json(content)
+        if not parsed:
+            logger.warning(f"Failed to parse JSON for chunk {chunk_id}")
+            return self._empty_result(doc_id)
+        entities = []
+        for ent_data in parsed.get("entities", []):
+            try:
+                entities.append(
+                    Entity(
+                        id=ent_data.get("id", f"ent_{len(entities):03d}"),
+                        type=ent_data.get("type", "Unknown"),
+                        name=ent_data.get("name", ""),
+                        attributes=ent_data.get("attributes", {}),
+                        source_chunk_ids=[chunk_id] if chunk_id else [],
+                    )
+                )
+            except Exception as e:
+                logger.warning(f"Failed to parse entity: {e}")
+        relationships = []
+        for rel_data in parsed.get("relationships", []):
+            try:
+                relationships.append(
+                    Relationship(
+                        id=rel_data.get("id", f"rel_{len(relationships):03d}"),
+                        type=rel_data.get("type", "SUGGESTS"),
+                        source_entity_id=rel_data.get("source_entity_id", ""),
+                        target_entity_id=rel_data.get("target_entity_id", ""),
+                        attributes=rel_data.get("attributes", {}),
+                    )
+                )
+            except Exception as e:
+                logger.warning(f"Failed to parse relationship: {e}")
+        return ExtractionResultV2(
+            doc_id=doc_id,
+            extracted_at=datetime.now(timezone.utc).isoformat(),
+            extractor=f"minimax:{self.model}",
+            entities=entities,
+            relationships=relationships,
+        )
+
+    def _extract_json(self, content: str) -> Optional[Dict[str, Any]]:
+        content = re.sub(r"<think>[\s\S]*?</think>", "", content).strip()
+        try:
+            result = json.loads(content)
+            if isinstance(result, dict):
+                return result
+        except json.JSONDecodeError:
+            pass
+        json_match = re.search(r"```(?:json)?\s*([\s\S]*?)```", content)
+        if json_match:
+            try:
+                result = json.loads(json_match.group(1))
+                if isinstance(result, dict):
+                    return result
+            except json.JSONDecodeError:
+                pass
+        obj_match = re.search(r"\{[\s\S]*\}", content)
+        if obj_match:
+            try:
+                result = json.loads(obj_match.group(0))
+                if isinstance(result, dict):
+                    return result
+            except json.JSONDecodeError:
+                pass
+        return None
+
+    def _empty_result(self, doc_id: str) -> ExtractionResultV2:
+        return ExtractionResultV2(
+            doc_id=doc_id,
+            extracted_at=datetime.now(timezone.utc).isoformat(),
+            extractor=f"minimax:{self.model}",
+            entities=[],
+            relationships=[],
+        )

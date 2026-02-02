@@ -1,0 +1,783 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "6936d07003e4749dfe04caca9911537528b3235c10770fe874e5a20d24c88f2f",
+  "extracted_at": "2026-02-01T08:13:21.218326+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "Taxon",
+      "name": "medicinal plants",
+      "attributes": {
+        "context": "medicinal plants were sold by itinerant traders"
+      },
+      "source_chunk_ids": [
+        "a4fe8a301a6dcf10fe865cf9eb08d0eb"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Taxon",
+      "name": "herbal medicines",
+      "attributes": {
+        "context": "herbal and manufactured medicines attracted black and white customers"
+      },
+      "source_chunk_ids": [
+        "a4fe8a301a6dcf10fe865cf9eb08d0eb"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "Indication",
+      "name": "sickness",
+      "attributes": {
+        "context": "explicit duty to treat sickness"
+      },
+      "source_chunk_ids": [
+        "a749b9c64ba04698526b3a4a96c023aa"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "Compound",
+      "name": "red ochre",
+      "attributes": {
+        "context": "used a mixture of red ochre and animal fat"
+      },
+      "source_chunk_ids": [
+        "fb5b8f4e19ff93e5eb395b7e0440e249"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "Compound",
+      "name": "animal fat",
+      "attributes": {
+        "context": "used a mixture of red ochre and animal fat"
+      },
+      "source_chunk_ids": [
+        "fb5b8f4e19ff93e5eb395b7e0440e249"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "PharmEffect",
+      "name": "protect against the cold",
+      "attributes": {
+        "context": "to protect against the cold and sunburn"
+      },
+      "source_chunk_ids": [
+        "fb5b8f4e19ff93e5eb395b7e0440e249"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "Indication",
+      "name": "sunburn",
+      "attributes": {
+        "context": "protect against the cold and sunburn"
+      },
+      "source_chunk_ids": [
+        "fb5b8f4e19ff93e5eb395b7e0440e249"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Indication",
+      "name": "impotence",
+      "attributes": {
+        "context": "remedies' for impotence"
+      },
+      "source_chunk_ids": [
+        "a56b1ff54f2412cd0e99e0ce7b14cb09"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "PharmEffect",
+      "name": "procure women's miscarriages",
+      "attributes": {
+        "context": "promising to procure women's miscarriages"
+      },
+      "source_chunk_ids": [
+        "a56b1ff54f2412cd0e99e0ce7b14cb09"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "Indication",
+      "name": "tuberculosis",
+      "attributes": {
+        "context": "treat tuberculosis"
+      },
+      "source_chunk_ids": [
+        "a56b1ff54f2412cd0e99e0ce7b14cb09"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "Indication",
+      "name": "sexually-transmitted diseases",
+      "attributes": {
+        "context": "cure sexually-transmitted diseases"
+      },
+      "source_chunk_ids": [
+        "a56b1ff54f2412cd0e99e0ce7b14cb09"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "Compound",
+      "name": "iron",
+      "attributes": {
+        "context": "iron mixtures for men"
+      },
+      "source_chunk_ids": [
+        "63ad42e21c59891209db22e5bcbf2289"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "PharmEffect",
+      "name": "tonic effect (lungs)",
+      "attributes": {
+        "context": "promoted lung tonics"
+      },
+      "source_chunk_ids": [
+        "63ad42e21c59891209db22e5bcbf2289"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "PharmEffect",
+      "name": "healing effect",
+      "attributes": {
+        "context": "healing ointment"
+      },
+      "source_chunk_ids": [
+        "63ad42e21c59891209db22e5bcbf2289"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "PharmEffect",
+      "name": "vermifuge effect",
+      "attributes": {
+        "context": "vermifuges"
+      },
+      "source_chunk_ids": [
+        "63ad42e21c59891209db22e5bcbf2289"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "Compound",
+      "name": "treacle",
+      "attributes": {
+        "context": "ingredients were treacle"
+      },
+      "source_chunk_ids": [
+        "63ad42e21c59891209db22e5bcbf2289"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "Compound",
+      "name": "castor oil",
+      "attributes": {
+        "context": "and castor oil"
+      },
+      "source_chunk_ids": [
+        "63ad42e21c59891209db22e5bcbf2289"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "PharmEffect",
+      "name": "laxative effect",
+      "attributes": {
+        "context": "its laxative effects"
+      },
+      "source_chunk_ids": [
+        "63ad42e21c59891209db22e5bcbf2289"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "Taxon",
+      "name": "Herbs",
+      "attributes": {
+        "context": "Herbs were employed"
+      },
+      "source_chunk_ids": [
+        "2582c0cd7be53793adeef16026841479"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "Taxon",
+      "name": "a plant",
+      "attributes": {
+        "context": "usage of a plant"
+      },
+      "source_chunk_ids": [
+        "2582c0cd7be53793adeef16026841479"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "Indication",
+      "name": "ailments",
+      "attributes": {
+        "context": "for similar ailments"
+      },
+      "source_chunk_ids": [
+        "2582c0cd7be53793adeef16026841479"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "Taxon",
+      "name": "herbal remedies",
+      "attributes": {
+        "context": "dependent on herbal remedies"
+      },
+      "source_chunk_ids": [
+        "2582c0cd7be53793adeef16026841479"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "Indication",
+      "name": "obstetric needs",
+      "attributes": {
+        "context": "deal not only with obstetric needs"
+      },
+      "source_chunk_ids": [
+        "c51ec63547fcd7a1075f63a14b230f04"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "Indication",
+      "name": "common ailments",
+      "attributes": {
+        "context": "but common ailments as well"
+      },
+      "source_chunk_ids": [
+        "c51ec63547fcd7a1075f63a14b230f04"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "Taxon",
+      "name": "Monsonia",
+      "attributes": {
+        "context": "sales of monsonia as a cure"
+      },
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "PharmEffect",
+      "name": "specific for fevers",
+      "attributes": {
+        "context": "as a specific for fevers"
+      },
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "PharmEffect",
+      "name": "remedy for blood disorders",
+      "attributes": {
+        "context": "a remedy for blood disorders"
+      },
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "PharmEffect",
+      "name": "unrivalled for female diseases",
+      "attributes": {
+        "context": "as unrivalled for female diseases"
+      },
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "PharmEffect",
+      "name": "cure for dysentery",
+      "attributes": {
+        "context": "as a cure for dysentery"
+      },
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "PharmEffect",
+      "name": "drives away evil spirits",
+      "attributes": {
+        "context": "drives away evil spirits"
+      },
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "Indication",
+      "name": "fevers",
+      "attributes": {
+        "context": "specific for fevers"
+      },
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "Indication",
+      "name": "blood disorders",
+      "attributes": {
+        "context": "remedy for blood disorders"
+      },
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "Indication",
+      "name": "female diseases",
+      "attributes": {
+        "context": "unrivalled for female diseases"
+      },
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "Indication",
+      "name": "dyspepsia",
+      "attributes": {
+        "context": "ailments from dyspepsia"
+      },
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "Indication",
+      "name": "syphilis",
+      "attributes": {
+        "context": "dyspepsia to syphilis"
+      },
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Indication",
+      "name": "dysentery",
+      "attributes": {
+        "context": "cure for dysentery"
+      },
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "Indication",
+      "name": "lumbago",
+      "attributes": {
+        "context": "afflicted by lumbago"
+      },
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "Indication",
+      "name": "stomach-ache",
+      "attributes": {
+        "context": "cure for a stomach-ache"
+      },
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "PharmEffect",
+      "name": "headache cure",
+      "attributes": {
+        "context": "Mamba bones are considered an excellent headache cure"
+      },
+      "source_chunk_ids": [
+        "ef33bcef82ff22bd783f31effbd23d42"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "Indication",
+      "name": "headache",
+      "attributes": {
+        "context": "Mamba bones are considered an excellent headache cure"
+      },
+      "source_chunk_ids": [
+        "ef33bcef82ff22bd783f31effbd23d42"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "PharmEffect",
+      "name": "chase away nightmares",
+      "attributes": {
+        "context": "smelling a piece of grated and burnt elephant skin will chase away nightmares"
+      },
+      "source_chunk_ids": [
+        "ef33bcef82ff22bd783f31effbd23d42"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "Indication",
+      "name": "nightmares",
+      "attributes": {
+        "context": "smelling a piece of grated and burnt elephant skin will chase away nightmares"
+      },
+      "source_chunk_ids": [
+        "ef33bcef82ff22bd783f31effbd23d42"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "Taxon",
+      "name": "herbs",
+      "attributes": {
+        "context": "herbs were harvested from the local bush"
+      },
+      "source_chunk_ids": [
+        "133d9a2dc37437eb8dbcc3bf371b9311"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "Taxon",
+      "name": "medicinal plant",
+      "attributes": {
+        "context": "potency of the medicinal plant needed"
+      },
+      "source_chunk_ids": [
+        "133d9a2dc37437eb8dbcc3bf371b9311"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "PharmEffect",
+      "name": "potency",
+      "attributes": {
+        "context": "related to the chemistry and potency of the medicinal plant"
+      },
+      "source_chunk_ids": [
+        "133d9a2dc37437eb8dbcc3bf371b9311"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "PharmEffect",
+      "name": "therapeutic implications",
+      "attributes": {
+        "context": "The therapeutic implications of this commercialization are unclear"
+      },
+      "source_chunk_ids": [
+        "133d9a2dc37437eb8dbcc3bf371b9311"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "Taxon",
+      "name": "herbs",
+      "attributes": {
+        "context": "drawbacks of stored herbs"
+      },
+      "source_chunk_ids": [
+        "133d9a2dc37437eb8dbcc3bf371b9311"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "Taxon",
+      "name": "herbal plots",
+      "attributes": {
+        "context": "self-sustaining herbal plots"
+      },
+      "source_chunk_ids": [
+        "133d9a2dc37437eb8dbcc3bf371b9311"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "Compound",
+      "name": "opiate",
+      "attributes": {
+        "context": "some opiate or alcohol-based patent medicines"
+      },
+      "source_chunk_ids": [
+        "79f1316f7203d9fba8312b8a57d4caf0"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "Compound",
+      "name": "alcohol",
+      "attributes": {
+        "context": "some opiate or alcohol-based patent medicines"
+      },
+      "source_chunk_ids": [
+        "79f1316f7203d9fba8312b8a57d4caf0"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "PharmEffect",
+      "name": "harmful side effects",
+      "attributes": {
+        "context": "harmful side effects (as occurred with some opiate or alcohol-based patent medicines)"
+      },
+      "source_chunk_ids": [
+        "79f1316f7203d9fba8312b8a57d4caf0"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "PharmEffect",
+      "name": "toxic side effects",
+      "attributes": {
+        "context": "Some herbal medicines had toxic side effects"
+      },
+      "source_chunk_ids": [
+        "79f1316f7203d9fba8312b8a57d4caf0"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "PharmEffect",
+      "name": "placebo effect",
+      "attributes": {
+        "context": "the positive placebo effect of even inert mixtures"
+      },
+      "source_chunk_ids": [
+        "79f1316f7203d9fba8312b8a57d4caf0"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "PharmEffect",
+      "name": "psychologically better",
+      "attributes": {
+        "context": "a medicine that made a sufferer feel psychologically better"
+      },
+      "source_chunk_ids": [
+        "79f1316f7203d9fba8312b8a57d4caf0"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "PharmEffect",
+      "name": "physical recovery",
+      "attributes": {
+        "context": "aided a natural process of physical recovery"
+      },
+      "source_chunk_ids": [
+        "79f1316f7203d9fba8312b8a57d4caf0"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "Indication",
+      "name": "sickness",
+      "attributes": {
+        "context": "beyond real sickness"
+      },
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "Indication",
+      "name": "impure blood",
+      "attributes": {
+        "context": "such as impure blood"
+      },
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "Indication",
+      "name": "biliousness",
+      "attributes": {
+        "context": "or biliousness"
+      },
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "Indication",
+      "name": "nervous exhaustion",
+      "attributes": {
+        "context": "or nervous exhaustion"
+      },
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "PharmEffect",
+      "name": "listless",
+      "attributes": {
+        "context": "the listless and afflicted"
+      },
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "PharmEffect",
+      "name": "vital",
+      "attributes": {
+        "context": "transformed into the vital"
+      },
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "PharmEffect",
+      "name": "vigorous",
+      "attributes": {
+        "context": "vital, vigorous, and virile"
+      },
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "PharmEffect",
+      "name": "virile",
+      "attributes": {
+        "context": "vigorous, and virile"
+      },
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "Indication",
+      "name": "anxieties",
+      "attributes": {
+        "context": "reader\u2019s anxieties"
+      },
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "Indication",
+      "name": "low self-worth",
+      "attributes": {
+        "context": "or low self-worth"
+      },
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "PharmEffect",
+      "name": "beauty",
+      "attributes": {
+        "context": "ideals of \u2018beauty\u2019"
+      },
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "PharmEffect",
+      "name": "straighten hair",
+      "attributes": {
+        "context": "Products to straighten hair"
+      },
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "PharmEffect",
+      "name": "lighten skin",
+      "attributes": {
+        "context": "or lighten skin"
+      },
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "PharmEffect",
+      "name": "harmful",
+      "attributes": {
+        "context": "dismissed as harmful"
+      },
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "PharmEffect",
+      "name": "vitality",
+      "attributes": {
+        "context": "quality such as vitality"
+      },
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:03.756259+00:00",
+    "original_file": "entities.json"
+  }
+}

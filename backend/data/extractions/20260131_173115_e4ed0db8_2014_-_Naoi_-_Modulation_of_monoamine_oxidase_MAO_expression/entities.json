@@ -1,0 +1,4864 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "603c4e536952d737cd7b84008a9dfac1c2d2a8414117b6ae441f4a359c15f033",
+  "extracted_at": "2026-02-01T08:37:31.673963+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "PharmEffect",
+      "name": "Modulation",
+      "attributes": {
+        "context": "Modulation of monoamine oxidase"
+      },
+      "source_chunk_ids": [
+        "5048dcec91ea008051b55e8d8bfc1ab7"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Compound",
+      "name": "monoamine oxidase",
+      "attributes": {
+        "context": "Modulation of monoamine oxidase (MAO) expression"
+      },
+      "source_chunk_ids": [
+        "5048dcec91ea008051b55e8d8bfc1ab7"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "Compound",
+      "name": "MAO",
+      "attributes": {
+        "context": "monoamine oxidase (MAO) expression"
+      },
+      "source_chunk_ids": [
+        "5048dcec91ea008051b55e8d8bfc1ab7"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "Indication",
+      "name": "neuropsychiatric disorders",
+      "attributes": {
+        "context": "expression in neuropsychiatric disorders"
+      },
+      "source_chunk_ids": [
+        "5048dcec91ea008051b55e8d8bfc1ab7"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "Compound",
+      "name": "type A MAO",
+      "attributes": {
+        "context": "involved in type A MAO expression"
+      },
+      "source_chunk_ids": [
+        "5048dcec91ea008051b55e8d8bfc1ab7"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "Compound",
+      "name": "Monoamine oxidase types A",
+      "attributes": {
+        "context": "Monoamine oxidase types A and B (MAO-A, MAO-B)"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "Compound",
+      "name": "Monoamine oxidase types B",
+      "attributes": {
+        "context": "Monoamine oxidase types A and B (MAO-A, MAO-B)"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "(MAO-A, MAO-B) regulate"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "(MAO-A, MAO-B) regulate"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "Compound",
+      "name": "monoamine neurotransmitters",
+      "attributes": {
+        "context": "levels of monoamine neurotransmitters in the brain"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "Indication",
+      "name": "neuropsychiatric disorders",
+      "attributes": {
+        "context": "phenotypes of neuropsychiatric disorders"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "PharmEffect",
+      "name": "Reversible MAO-A inhibitors",
+      "attributes": {
+        "context": "Reversible MAO-A inhibitors, such as moclobemide"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "Reversible MAO-A inhibitors"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "Compound",
+      "name": "moclobemide",
+      "attributes": {
+        "context": "such as moclobemide and befloxatone"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "Compound",
+      "name": "befloxatone",
+      "attributes": {
+        "context": "moclobemide and befloxatone"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "Indication",
+      "name": "emotional disorders",
+      "attributes": {
+        "context": "treatment of emotional disorders"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "PharmEffect",
+      "name": "inhibiting the enzymatic degradation",
+      "attributes": {
+        "context": "by inhibiting the enzymatic degradation of dopamine"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "degradation of dopamine, serotonin and norepinephrine"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "dopamine, serotonin and norepinephrine"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "Compound",
+      "name": "norepinephrine",
+      "attributes": {
+        "context": "dopamine, serotonin and norepinephrine"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "PharmEffect",
+      "name": "irreversible MAO-B inhibitors",
+      "attributes": {
+        "context": "the irreversible MAO-B inhibitors selegiline"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "irreversible MAO-B inhibitors"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "Compound",
+      "name": "selegiline",
+      "attributes": {
+        "context": "inhibitors selegiline and rasagiline"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "Compound",
+      "name": "rasagiline",
+      "attributes": {
+        "context": "selegiline and rasagiline exert"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "PharmEffect",
+      "name": "neuroprotective effect",
+      "attributes": {
+        "context": "exert a neuroprotective effect in Parkinson's"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "Indication",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "context": "in Parkinson's and Alzheimer's diseases"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "Indication",
+      "name": "Alzheimer's disease",
+      "attributes": {
+        "context": "Parkinson's and Alzheimer's diseases"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "PharmEffect",
+      "name": "inhibition of MAO activity",
+      "attributes": {
+        "context": "their inhibition of MAO activity"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "Compound",
+      "name": "selegiline",
+      "attributes": {
+        "context": "selegiline and rasagiline protect neuronal cells"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "Compound",
+      "name": "rasagiline",
+      "attributes": {
+        "context": "selegiline and rasagiline protect neuronal cells"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "PharmEffect",
+      "name": "protect neuronal cells",
+      "attributes": {
+        "context": "selegiline and rasagiline protect neuronal cells"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "PharmEffect",
+      "name": "anti-apoptotic activity",
+      "attributes": {
+        "context": "through their anti-apoptotic activity"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "PharmEffect",
+      "name": "induction of pro-survival genes",
+      "attributes": {
+        "context": "and induction of pro-survival genes"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "MAO-A activity, but not that of MAO-B"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "that of MAO-B, is implicated"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Indication",
+      "name": "neurodegenerative disorders",
+      "attributes": {
+        "context": "pathophysiology of neurodegenerative disorders"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "PharmEffect",
+      "name": "gene induction",
+      "attributes": {
+        "context": "in gene induction by MAO-B inhibitors"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "gene induction by MAO-B inhibitors"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "Compound",
+      "name": "selegiline",
+      "attributes": {
+        "context": "selegiline and rasagiline increase MAO-"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "Compound",
+      "name": "rasagiline",
+      "attributes": {
+        "context": "selegiline and rasagiline increase MAO-"
+      },
+      "source_chunk_ids": [
+        "01cb44bd0d4949513c8a72d4b1a8f176"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "Compound",
+      "name": "mRNA",
+      "attributes": {
+        "context": "A mRNA, protein, and enzyme activity levels."
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "Compound",
+      "name": "protein",
+      "attributes": {
+        "context": "A mRNA, protein, and enzyme activity levels."
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "Compound",
+      "name": "enzyme",
+      "attributes": {
+        "context": "A mRNA, protein, and enzyme activity levels."
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "Compound",
+      "name": "MAO",
+      "attributes": {
+        "context": "each MAO subtype exerts effects"
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "Compound",
+      "name": "isoenzyme",
+      "attributes": {
+        "context": "activity of the other isoenzyme."
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "The roles of MAO-A and -B"
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "The roles of MAO-A and -B"
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "Compound",
+      "name": "inhibitors",
+      "attributes": {
+        "context": "type-specificity\" of their inhibitors"
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "Compound",
+      "name": "Mao-a",
+      "attributes": {
+        "context": "Mao-a expression, in particular,"
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "Indication",
+      "name": "pathogenesis",
+      "attributes": {
+        "context": "may be implicated in pathogenesis"
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "Indication",
+      "name": "neuropsychiatric disorders",
+      "attributes": {
+        "context": "phenotypes in neuropsychiatric disorders."
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "MAO-A expression is modified"
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "Compound",
+      "name": "mao polymorphisms",
+      "attributes": {
+        "context": "modified by mao polymorphisms"
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "PharmEffect",
+      "name": "transcriptional efficiency",
+      "attributes": {
+        "context": "affecting its transcriptional efficiency"
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "Compound",
+      "name": "parkin",
+      "attributes": {
+        "context": "polymorphism of parkin"
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "Compound",
+      "name": "Sirt1",
+      "attributes": {
+        "context": "polymorphism of parkin, Sirt1"
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "Compound",
+      "name": "FOXO",
+      "attributes": {
+        "context": "Sirt1, FOXO"
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "Compound",
+      "name": "microRNA",
+      "attributes": {
+        "context": "FOXO, microRNA"
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "Compound",
+      "name": "presenilin-1",
+      "attributes": {
+        "context": "microRNA, presenilin-1, and other regulatory proteins."
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "Compound",
+      "name": "regulatory proteins",
+      "attributes": {
+        "context": "other regulatory proteins."
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "Compound",
+      "name": "mao-a polymorphisms",
+      "attributes": {
+        "context": "children with mao-a polymorphisms"
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "Low MAO-A activity may increase"
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "increase the levels of serotonin and norepinephrine"
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "Compound",
+      "name": "norepinephrine",
+      "attributes": {
+        "context": "serotonin and norepinephrine, resulting in disturbed neurotransmitter system development"
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "Compound",
+      "name": "neurotransmitter",
+      "attributes": {
+        "context": "disturbed neurotransmitter system development"
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "Indication",
+      "name": "disturbed neurotransmitter system development",
+      "attributes": {
+        "context": "disturbed neurotransmitter system development and behavior."
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "regulation of MAO-A expression"
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "PharmEffect",
+      "name": "neuronal survival",
+      "attributes": {
+        "context": "regulation of neuronal survival and death."
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "PharmEffect",
+      "name": "neuronal death",
+      "attributes": {
+        "context": "neuronal survival and death."
+      },
+      "source_chunk_ids": [
+        "a2aca55a54c81444d8e0aa4e11b2af3a"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "Indication",
+      "name": "Alzheimer's disease",
+      "attributes": {
+        "context": "ADAlzheimer's disease"
+      },
+      "source_chunk_ids": [
+        "6246d5095f68adaec8749492d1115a02"
+      ]
+    },
+    {
+      "id": "ent_071",
+      "type": "Compound",
+      "name": "Brain-derived neurotrophic factor",
+      "attributes": {
+        "context": "BDNFBrain-derived neurotrophic factor"
+      },
+      "source_chunk_ids": [
+        "6246d5095f68adaec8749492d1115a02"
+      ]
+    },
+    {
+      "id": "ent_072",
+      "type": "Compound",
+      "name": "Dopamine",
+      "attributes": {
+        "context": "DADopamine"
+      },
+      "source_chunk_ids": [
+        "6246d5095f68adaec8749492d1115a02"
+      ]
+    },
+    {
+      "id": "ent_073",
+      "type": "Compound",
+      "name": "Disrupted-in-schizophrenia 1",
+      "attributes": {
+        "context": "DISC1Disrupted-in-schizophrenia 1"
+      },
+      "source_chunk_ids": [
+        "6246d5095f68adaec8749492d1115a02"
+      ]
+    },
+    {
+      "id": "ent_074",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "characteristics of both MAO-A and -B"
+      },
+      "source_chunk_ids": [
+        "95ca29924c0669cd11da666946d978dd"
+      ]
+    },
+    {
+      "id": "ent_075",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "characteristics of both MAO-A and -B"
+      },
+      "source_chunk_ids": [
+        "95ca29924c0669cd11da666946d978dd"
+      ]
+    },
+    {
+      "id": "ent_076",
+      "type": "Compound",
+      "name": "proteins",
+      "attributes": {
+        "context": "composed of different proteins"
+      },
+      "source_chunk_ids": [
+        "95ca29924c0669cd11da666946d978dd"
+      ]
+    },
+    {
+      "id": "ent_077",
+      "type": "Compound",
+      "name": "amino acid sequences",
+      "attributes": {
+        "context": "70 % identical amino acid sequences"
+      },
+      "source_chunk_ids": [
+        "95ca29924c0669cd11da666946d978dd"
+      ]
+    },
+    {
+      "id": "ent_078",
+      "type": "Compound",
+      "name": "FAD",
+      "attributes": {
+        "context": "same coenzyme, FAD, is bound"
+      },
+      "source_chunk_ids": [
+        "95ca29924c0669cd11da666946d978dd"
+      ]
+    },
+    {
+      "id": "ent_079",
+      "type": "Compound",
+      "name": "cysteine",
+      "attributes": {
+        "context": "bound to the cysteine of a pentapeptide sequence"
+      },
+      "source_chunk_ids": [
+        "95ca29924c0669cd11da666946d978dd"
+      ]
+    },
+    {
+      "id": "ent_080",
+      "type": "Compound",
+      "name": "pentapeptide sequence",
+      "attributes": {
+        "context": "cysteine of a pentapeptide sequence, Ser-Gly-Gly-Cys-Tyr"
+      },
+      "source_chunk_ids": [
+        "95ca29924c0669cd11da666946d978dd"
+      ]
+    },
+    {
+      "id": "ent_081",
+      "type": "Compound",
+      "name": "Ser-Gly-Gly-Cys-Tyr",
+      "attributes": {
+        "context": "pentapeptide sequence, Ser-Gly-Gly-Cys-Tyr"
+      },
+      "source_chunk_ids": [
+        "95ca29924c0669cd11da666946d978dd"
+      ]
+    },
+    {
+      "id": "ent_082",
+      "type": "Compound",
+      "name": "thioester linkage",
+      "attributes": {
+        "context": "via a covalent thioester linkage"
+      },
+      "source_chunk_ids": [
+        "95ca29924c0669cd11da666946d978dd"
+      ]
+    },
+    {
+      "id": "ent_083",
+      "type": "Compound",
+      "name": "hydrogen peroxide",
+      "attributes": {
+        "context": "increased hydrogen peroxide levels"
+      },
+      "source_chunk_ids": [
+        "c9c0fd206a290df383eab2202e5029eb"
+      ]
+    },
+    {
+      "id": "ent_084",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "enhanced MAO-B activity"
+      },
+      "source_chunk_ids": [
+        "c9c0fd206a290df383eab2202e5029eb"
+      ]
+    },
+    {
+      "id": "ent_085",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "not that of MAO-A"
+      },
+      "source_chunk_ids": [
+        "c9c0fd206a290df383eab2202e5029eb"
+      ]
+    },
+    {
+      "id": "ent_086",
+      "type": "Indication",
+      "name": "Parkinson's Disease",
+      "attributes": {
+        "context": "pathogenic factor in PD"
+      },
+      "source_chunk_ids": [
+        "c9c0fd206a290df383eab2202e5029eb"
+      ]
+    },
+    {
+      "id": "ent_087",
+      "type": "Compound",
+      "name": "MAO-B inhibitors",
+      "attributes": {
+        "context": "development of MAO-B inhibitors"
+      },
+      "source_chunk_ids": [
+        "c9c0fd206a290df383eab2202e5029eb"
+      ]
+    },
+    {
+      "id": "ent_088",
+      "type": "PharmEffect",
+      "name": "disease-modifying",
+      "attributes": {
+        "context": "disease-modifying agents"
+      },
+      "source_chunk_ids": [
+        "c9c0fd206a290df383eab2202e5029eb"
+      ]
+    },
+    {
+      "id": "ent_089",
+      "type": "Compound",
+      "name": "selegiline",
+      "attributes": {
+        "context": "selegiline and rasagiline"
+      },
+      "source_chunk_ids": [
+        "c9c0fd206a290df383eab2202e5029eb"
+      ]
+    },
+    {
+      "id": "ent_090",
+      "type": "Compound",
+      "name": "rasagiline",
+      "attributes": {
+        "context": "selegiline and rasagiline"
+      },
+      "source_chunk_ids": [
+        "c9c0fd206a290df383eab2202e5029eb"
+      ]
+    },
+    {
+      "id": "ent_091",
+      "type": "Compound",
+      "name": "(1R)-N-prop-2-ynyl-2,3-dihydro-1H-amine",
+      "attributes": {
+        "context": "rasagiline [(1R)-N-prop-2-ynyl-2,3-dihydro-1H-amine]"
+      },
+      "source_chunk_ids": [
+        "c9c0fd206a290df383eab2202e5029eb"
+      ]
+    },
+    {
+      "id": "ent_092",
+      "type": "PharmEffect",
+      "name": "neuroprotection",
+      "attributes": {
+        "context": "protect neuronal cells"
+      },
+      "source_chunk_ids": [
+        "c9c0fd206a290df383eab2202e5029eb"
+      ]
+    },
+    {
+      "id": "ent_093",
+      "type": "Compound",
+      "name": "MAO (Monoamine Oxidase)",
+      "attributes": {
+        "context": "The role of MAO itself"
+      },
+      "source_chunk_ids": [
+        "318b211536ce9958c5437db13b3d16b3"
+      ]
+    },
+    {
+      "id": "ent_094",
+      "type": "PharmEffect",
+      "name": "neuronal death",
+      "attributes": {
+        "context": "MAO itself in neuronal death"
+      },
+      "source_chunk_ids": [
+        "318b211536ce9958c5437db13b3d16b3"
+      ]
+    },
+    {
+      "id": "ent_095",
+      "type": "Compound",
+      "name": "MAO (Monoamine Oxidase)",
+      "attributes": {
+        "context": "role of MAO isomers"
+      },
+      "source_chunk_ids": [
+        "318b211536ce9958c5437db13b3d16b3"
+      ]
+    },
+    {
+      "id": "ent_096",
+      "type": "PharmEffect",
+      "name": "neuronal death",
+      "attributes": {
+        "context": "regulation of neuronal death"
+      },
+      "source_chunk_ids": [
+        "318b211536ce9958c5437db13b3d16b3"
+      ]
+    },
+    {
+      "id": "ent_097",
+      "type": "PharmEffect",
+      "name": "survival",
+      "attributes": {
+        "context": "neuronal death and survival"
+      },
+      "source_chunk_ids": [
+        "318b211536ce9958c5437db13b3d16b3"
+      ]
+    },
+    {
+      "id": "ent_098",
+      "type": "Compound",
+      "name": "MAO (Monoamine Oxidase)",
+      "attributes": {
+        "context": "involvement of MAO in neuroprotection"
+      },
+      "source_chunk_ids": [
+        "318b211536ce9958c5437db13b3d16b3"
+      ]
+    },
+    {
+      "id": "ent_099",
+      "type": "PharmEffect",
+      "name": "neuroprotection",
+      "attributes": {
+        "context": "MAO in neuroprotection"
+      },
+      "source_chunk_ids": [
+        "318b211536ce9958c5437db13b3d16b3"
+      ]
+    },
+    {
+      "id": "ent_100",
+      "type": "Compound",
+      "name": "MAO-B inhibitors",
+      "attributes": {
+        "context": "neuroprotection by MAO-B inhibitors"
+      },
+      "source_chunk_ids": [
+        "318b211536ce9958c5437db13b3d16b3"
+      ]
+    },
+    {
+      "id": "ent_101",
+      "type": "PharmEffect",
+      "name": "anti-apoptotic",
+      "attributes": {
+        "context": "induction of anti-apoptotic"
+      },
+      "source_chunk_ids": [
+        "318b211536ce9958c5437db13b3d16b3"
+      ]
+    },
+    {
+      "id": "ent_102",
+      "type": "PharmEffect",
+      "name": "pro-survival",
+      "attributes": {
+        "context": "pro-survival genes"
+      },
+      "source_chunk_ids": [
+        "318b211536ce9958c5437db13b3d16b3"
+      ]
+    },
+    {
+      "id": "ent_103",
+      "type": "Compound",
+      "name": "MAO-B inhibitors",
+      "attributes": {
+        "context": "The MAO-B inhibitors rasagiline and selegiline"
+      },
+      "source_chunk_ids": [
+        "318b211536ce9958c5437db13b3d16b3"
+      ]
+    },
+    {
+      "id": "ent_104",
+      "type": "Compound",
+      "name": "rasagiline",
+      "attributes": {
+        "context": "MAO-B inhibitors rasagiline"
+      },
+      "source_chunk_ids": [
+        "318b211536ce9958c5437db13b3d16b3"
+      ]
+    },
+    {
+      "id": "ent_105",
+      "type": "Compound",
+      "name": "selegiline",
+      "attributes": {
+        "context": "rasagiline and selegiline"
+      },
+      "source_chunk_ids": [
+        "318b211536ce9958c5437db13b3d16b3"
+      ]
+    },
+    {
+      "id": "ent_106",
+      "type": "Compound",
+      "name": "PEA (Phenethylamine)",
+      "attributes": {
+        "context": "preferential MAO-B substrate PEA"
+      },
+      "source_chunk_ids": [
+        "318b211536ce9958c5437db13b3d16b3"
+      ]
+    },
+    {
+      "id": "ent_107",
+      "type": "PharmEffect",
+      "name": "mao-a expression",
+      "attributes": {
+        "context": "induce mao-a expression"
+      },
+      "source_chunk_ids": [
+        "318b211536ce9958c5437db13b3d16b3"
+      ]
+    },
+    {
+      "id": "ent_108",
+      "type": "Compound",
+      "name": "MAO-B (Monoamine Oxidase B)",
+      "attributes": {
+        "context": "MAO-B activity may modify"
+      },
+      "source_chunk_ids": [
+        "318b211536ce9958c5437db13b3d16b3"
+      ]
+    },
+    {
+      "id": "ent_109",
+      "type": "Compound",
+      "name": "MAO-A (Monoamine Oxidase A)",
+      "attributes": {
+        "context": "function of MAO-A"
+      },
+      "source_chunk_ids": [
+        "318b211536ce9958c5437db13b3d16b3"
+      ]
+    },
+    {
+      "id": "ent_110",
+      "type": "Compound",
+      "name": "MAO (Monoamine Oxidase)",
+      "attributes": {
+        "context": "deficient MAO expression"
+      },
+      "source_chunk_ids": [
+        "318b211536ce9958c5437db13b3d16b3"
+      ]
+    },
+    {
+      "id": "ent_111",
+      "type": "Indication",
+      "name": "antisocial behaviors",
+      "attributes": {
+        "context": "risk for antisocial behaviors"
+      },
+      "source_chunk_ids": [
+        "318b211536ce9958c5437db13b3d16b3"
+      ]
+    },
+    {
+      "id": "ent_112",
+      "type": "Indication",
+      "name": "neuropsychiatric disorders",
+      "attributes": {
+        "context": "phenotypes of neuropsychiatric disorders"
+      },
+      "source_chunk_ids": [
+        "318b211536ce9958c5437db13b3d16b3"
+      ]
+    },
+    {
+      "id": "ent_113",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "CNS MAO-B activity"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_114",
+      "type": "Indication",
+      "name": "neurodegeneration",
+      "attributes": {
+        "context": "role in neurodegeneration"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_115",
+      "type": "Compound",
+      "name": "ROS",
+      "attributes": {
+        "context": "ROS production"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_116",
+      "type": "Compound",
+      "name": "neurotoxins",
+      "attributes": {
+        "context": "and neurotoxins"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_117",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "MAO-B-deficient mice"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_118",
+      "type": "Compound",
+      "name": "MPTP",
+      "attributes": {
+        "context": "resistant to MPTP toxicity"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_119",
+      "type": "PharmEffect",
+      "name": "resistant to toxicity",
+      "attributes": {
+        "context": "resistant to MPTP toxicity"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_120",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "MAO-B expression"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_121",
+      "type": "PharmEffect",
+      "name": "increased sensitivity",
+      "attributes": {
+        "context": "increased the sensitivity"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_122",
+      "type": "Compound",
+      "name": "MPTP",
+      "attributes": {
+        "context": "sensitivity to MPTP"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_123",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "express only MAO-A"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_124",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "role of MAO-B"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_125",
+      "type": "PharmEffect",
+      "name": "cytotoxicity",
+      "attributes": {
+        "context": "in the cytotoxicity"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_126",
+      "type": "Compound",
+      "name": "NE",
+      "attributes": {
+        "context": "a NE toxin"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_127",
+      "type": "Compound",
+      "name": "N-(2-chloroethyl)-N-ethyl-2-bromobenzylamine",
+      "attributes": {
+        "context": "N-(2-chloroethyl)-N-ethyl-2-bromobenzylamine (DSP-4)"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_128",
+      "type": "Compound",
+      "name": "DSP-4",
+      "attributes": {
+        "context": "N-(2-chloroethyl)-N-ethyl-2-bromobenzylamine (DSP-4)"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_129",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "a 5-HT toxin"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_130",
+      "type": "Compound",
+      "name": "3,4-methylenedioxyamphetamine",
+      "attributes": {
+        "context": "3,4-methylenedioxyamphetamine (MDMA, \u201cecstasy\u201d)"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_131",
+      "type": "Compound",
+      "name": "MDMA",
+      "attributes": {
+        "context": "3,4-methylenedioxyamphetamine (MDMA, \u201cecstasy\u201d)"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_132",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "MAO-B deficient mice"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_133",
+      "type": "Compound",
+      "name": "DSP-4",
+      "attributes": {
+        "context": "while DSP-4 markedly depleted NE"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_134",
+      "type": "PharmEffect",
+      "name": "depleted",
+      "attributes": {
+        "context": "markedly depleted NE"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_135",
+      "type": "Compound",
+      "name": "NE",
+      "attributes": {
+        "context": "depleted NE"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_136",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "MAO-B knockout mice"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_137",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "MAO-B was not involved"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_138",
+      "type": "Compound",
+      "name": "MDMA",
+      "attributes": {
+        "context": "MDMA caused massive loss"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_139",
+      "type": "PharmEffect",
+      "name": "massive loss",
+      "attributes": {
+        "context": "caused massive loss"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_140",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "loss of both 5-HT"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_141",
+      "type": "Compound",
+      "name": "DA",
+      "attributes": {
+        "context": "and DA"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_142",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "MAO-B deficient mice"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_143",
+      "type": "Compound",
+      "name": "DA",
+      "attributes": {
+        "context": "DA depletion"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_144",
+      "type": "PharmEffect",
+      "name": "depletion",
+      "attributes": {
+        "context": "DA depletion"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_145",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "MAO-B may also be involved"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_146",
+      "type": "Compound",
+      "name": "MDMA",
+      "attributes": {
+        "context": "MDMA-induced loss"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_147",
+      "type": "PharmEffect",
+      "name": "loss",
+      "attributes": {
+        "context": "MDMA-induced loss"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_148",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "loss of 5-HT"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_149",
+      "type": "PharmEffect",
+      "name": "prevented",
+      "attributes": {
+        "context": "can be prevented"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_150",
+      "type": "Compound",
+      "name": "selegiline",
+      "attributes": {
+        "context": "prevented by selegiline"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_151",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "MAO-B knockdown"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_152",
+      "type": "PharmEffect",
+      "name": "knockdown",
+      "attributes": {
+        "context": "MAO-B knockdown"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_153",
+      "type": "Compound",
+      "name": "antisense oligonucleotide",
+      "attributes": {
+        "context": "an antisense oligonucleotide"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_154",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "role of MAO-B"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_155",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "5-HT depletion"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_156",
+      "type": "PharmEffect",
+      "name": "depletion",
+      "attributes": {
+        "context": "5-HT depletion"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_157",
+      "type": "Compound",
+      "name": "MDMA",
+      "attributes": {
+        "context": "MDMA is a potent MAO-A inhibitor"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_158",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "potent MAO-A inhibitor"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_159",
+      "type": "PharmEffect",
+      "name": "inhibitor",
+      "attributes": {
+        "context": "MAO-A inhibitor"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_160",
+      "type": "Compound",
+      "name": "[^{3}\text{H}-methyl]-L-deprenyl",
+      "attributes": {
+        "context": "binding of [^{3}\text{H}-methyl]-L-deprenyl"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_161",
+      "type": "PharmEffect",
+      "name": "abolished",
+      "attributes": {
+        "context": "was abolished"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_162",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "MAO-B knockout mice"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_163",
+      "type": "PharmEffect",
+      "name": "protection",
+      "attributes": {
+        "context": "the protection afforded"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_164",
+      "type": "Compound",
+      "name": "selegiline",
+      "attributes": {
+        "context": "afforded by selegiline"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_165",
+      "type": "Indication",
+      "name": "ischemic infarction",
+      "attributes": {
+        "context": "in ischemic infarction"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_166",
+      "type": "Indication",
+      "name": "cerebral edema",
+      "attributes": {
+        "context": "cerebral edema"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_167",
+      "type": "Indication",
+      "name": "neurological impairment",
+      "attributes": {
+        "context": "and neurological impairment"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_168",
+      "type": "Compound",
+      "name": "MAO isoenzymes",
+      "attributes": {
+        "context": "role of MAO isoenzymes"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_169",
+      "type": "Indication",
+      "name": "neuronal death",
+      "attributes": {
+        "context": "in neuronal death"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_170",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "MAO-A knockout animals"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_171",
+      "type": "Indication",
+      "name": "neurological insults",
+      "attributes": {
+        "context": "other neurological and neurotoxic insults"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_172",
+      "type": "Indication",
+      "name": "neurotoxic insults",
+      "attributes": {
+        "context": "and neurotoxic insults"
+      },
+      "source_chunk_ids": [
+        "fde0a9ff3e2bebda7e149952ff29503e"
+      ]
+    },
+    {
+      "id": "ent_173",
+      "type": "Compound",
+      "name": "\\alpha-synuclein",
+      "attributes": {
+        "context": "encoding \\alpha-synuclein (PARK1)"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_174",
+      "type": "Compound",
+      "name": "parkin",
+      "attributes": {
+        "context": "encoding ... parkin (PARK2)"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_175",
+      "type": "Compound",
+      "name": "ubiquitin-C-hydrolase-L1",
+      "attributes": {
+        "context": "ubiquitin-C-hydrolase-L1 (Uch-L1, PARK5)"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_176",
+      "type": "Compound",
+      "name": "PINK-1",
+      "attributes": {
+        "context": "PINK-1 (PARK6)"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_177",
+      "type": "Compound",
+      "name": "DJ-1",
+      "attributes": {
+        "context": "DJ-1 (PARK7)"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_178",
+      "type": "Compound",
+      "name": "LRRK2",
+      "attributes": {
+        "context": "and LRRK2"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_179",
+      "type": "Indication",
+      "name": "PD",
+      "attributes": {
+        "context": "familial form of PD"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_180",
+      "type": "Indication",
+      "name": "nigrostriatal DA neuronal degeneration",
+      "attributes": {
+        "context": "nigrostriatal DA neuronal degeneration in idiopathic PD"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_181",
+      "type": "Indication",
+      "name": "idiopathic PD",
+      "attributes": {
+        "context": "neuronal degeneration in idiopathic PD"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_182",
+      "type": "Compound",
+      "name": "Parkin",
+      "attributes": {
+        "context": "Parkin, a protein-ubiquitin-E3 ligase"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_183",
+      "type": "Compound",
+      "name": "protein-ubiquitin-E3 ligase",
+      "attributes": {
+        "context": "Parkin, a protein-ubiquitin-E3 ligase"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_184",
+      "type": "Compound",
+      "name": "ubiquitin-proteasome system (UPS)",
+      "attributes": {
+        "context": "for the ubiquitin-proteasome system (UPS)"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_185",
+      "type": "PharmEffect",
+      "name": "degeneration of DA neurons",
+      "attributes": {
+        "context": "causes selective degeneration of DA neurons"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_186",
+      "type": "PharmEffect",
+      "name": "accumulation of \\alpha-synuclein",
+      "attributes": {
+        "context": "accumulation of \\alpha-synuclein"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_187",
+      "type": "Compound",
+      "name": "\\alpha-synuclein",
+      "attributes": {
+        "context": "accumulation of \\alpha-synuclein"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_188",
+      "type": "Indication",
+      "name": "Lewy bodies",
+      "attributes": {
+        "context": "component of Lewy bodies"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_189",
+      "type": "Compound",
+      "name": "MAO",
+      "attributes": {
+        "context": "MAO transcription is down-regulated"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_190",
+      "type": "PharmEffect",
+      "name": "down-regulated",
+      "attributes": {
+        "context": "MAO transcription is down-regulated by parkin"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_191",
+      "type": "Compound",
+      "name": "parkin",
+      "attributes": {
+        "context": "down-regulated by parkin"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_192",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "MAO-B activity in parkin-knockout mice is increased"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_193",
+      "type": "PharmEffect",
+      "name": "increased",
+      "attributes": {
+        "context": "MAO-B activity ... is increased"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_194",
+      "type": "Compound",
+      "name": "DOPAC",
+      "attributes": {
+        "context": "elevated DOPAC levels"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_195",
+      "type": "PharmEffect",
+      "name": "elevated",
+      "attributes": {
+        "context": "elevated DOPAC levels"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_196",
+      "type": "Compound",
+      "name": "parkin",
+      "attributes": {
+        "context": "parkin transfection decreased the MAO-B mRNA"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_197",
+      "type": "PharmEffect",
+      "name": "decreased",
+      "attributes": {
+        "context": "parkin transfection decreased the MAO-B mRNA"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_198",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "decreased the MAO-B mRNA"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_199",
+      "type": "PharmEffect",
+      "name": "ubiquitination",
+      "attributes": {
+        "context": "increase the ubiquitination and degradation of MAO-A"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_200",
+      "type": "PharmEffect",
+      "name": "degradation",
+      "attributes": {
+        "context": "ubiquitination and degradation of MAO-A"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_201",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "degradation of MAO-A"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_202",
+      "type": "Compound",
+      "name": "MAO",
+      "attributes": {
+        "context": "MAO expression was increased significantly"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_203",
+      "type": "PharmEffect",
+      "name": "increased",
+      "attributes": {
+        "context": "MAO expression was increased significantly"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_204",
+      "type": "Indication",
+      "name": "PD",
+      "attributes": {
+        "context": "derived from PD patients"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_205",
+      "type": "Compound",
+      "name": "parkin",
+      "attributes": {
+        "context": "exon 4 in parkin"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_206",
+      "type": "Compound",
+      "name": "parkin",
+      "attributes": {
+        "context": "parkin suppresses MAO expression"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_207",
+      "type": "PharmEffect",
+      "name": "suppresses",
+      "attributes": {
+        "context": "parkin suppresses MAO expression"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_208",
+      "type": "Compound",
+      "name": "MAO",
+      "attributes": {
+        "context": "suppresses MAO expression"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_209",
+      "type": "PharmEffect",
+      "name": "impairs",
+      "attributes": {
+        "context": "impairs the UPS"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_210",
+      "type": "Compound",
+      "name": "UPS",
+      "attributes": {
+        "context": "impairs the UPS"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_211",
+      "type": "PharmEffect",
+      "name": "up-regulates",
+      "attributes": {
+        "context": "up-regulates MAO levels"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_212",
+      "type": "Compound",
+      "name": "MAO",
+      "attributes": {
+        "context": "up-regulates MAO levels"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_213",
+      "type": "PharmEffect",
+      "name": "DA oxidation",
+      "attributes": {
+        "context": "increasing DA oxidation"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_214",
+      "type": "PharmEffect",
+      "name": "cell death",
+      "attributes": {
+        "context": "inducing cell death"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_215",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "elevated MAO-B levels decreased the ability"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_216",
+      "type": "PharmEffect",
+      "name": "decreased",
+      "attributes": {
+        "context": "MAO-B levels decreased the ability"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_217",
+      "type": "Compound",
+      "name": "parkin",
+      "attributes": {
+        "context": "ability of parkin to clear damaged mitochondria"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_218",
+      "type": "PharmEffect",
+      "name": "clear damaged mitochondria",
+      "attributes": {
+        "context": "parkin to clear damaged mitochondria"
+      },
+      "source_chunk_ids": [
+        "9f91335a2e5b6a7ba972c0d0e163329c"
+      ]
+    },
+    {
+      "id": "ent_219",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "role of MAO-B in neuronal death"
+      },
+      "source_chunk_ids": [
+        "4b1b9542b0a6d77eaeeba301f9725ec9"
+      ]
+    },
+    {
+      "id": "ent_220",
+      "type": "PharmEffect",
+      "name": "neuronal death",
+      "attributes": {
+        "context": "role of MAO-B in neuronal death"
+      },
+      "source_chunk_ids": [
+        "4b1b9542b0a6d77eaeeba301f9725ec9"
+      ]
+    },
+    {
+      "id": "ent_221",
+      "type": "Compound",
+      "name": "Selegiline",
+      "attributes": {
+        "context": "labeled 'Selegiline, rasagiline'"
+      },
+      "source_chunk_ids": [
+        "4b1b9542b0a6d77eaeeba301f9725ec9"
+      ]
+    },
+    {
+      "id": "ent_222",
+      "type": "Compound",
+      "name": "rasagiline",
+      "attributes": {
+        "context": "labeled 'Selegiline, rasagiline'"
+      },
+      "source_chunk_ids": [
+        "4b1b9542b0a6d77eaeeba301f9725ec9"
+      ]
+    },
+    {
+      "id": "ent_223",
+      "type": "PharmEffect",
+      "name": "inhibition",
+      "attributes": {
+        "context": "indicating inhibition"
+      },
+      "source_chunk_ids": [
+        "4b1b9542b0a6d77eaeeba301f9725ec9"
+      ]
+    },
+    {
+      "id": "ent_224",
+      "type": "Compound",
+      "name": "Monoamine",
+      "attributes": {
+        "context": "boxes for 'Monoamine'"
+      },
+      "source_chunk_ids": [
+        "4b1b9542b0a6d77eaeeba301f9725ec9"
+      ]
+    },
+    {
+      "id": "ent_225",
+      "type": "Compound",
+      "name": "MPTP",
+      "attributes": {
+        "context": "boxes for 'Monoamine' and 'MPTP'"
+      },
+      "source_chunk_ids": [
+        "4b1b9542b0a6d77eaeeba301f9725ec9"
+      ]
+    },
+    {
+      "id": "ent_226",
+      "type": "Compound",
+      "name": "H2O2",
+      "attributes": {
+        "context": "box for 'H2O2'"
+      },
+      "source_chunk_ids": [
+        "4b1b9542b0a6d77eaeeba301f9725ec9"
+      ]
+    },
+    {
+      "id": "ent_227",
+      "type": "PharmEffect",
+      "name": "Oxidative stress",
+      "attributes": {
+        "context": "labeled 'Oxidative stress'"
+      },
+      "source_chunk_ids": [
+        "4b1b9542b0a6d77eaeeba301f9725ec9"
+      ]
+    },
+    {
+      "id": "ent_228",
+      "type": "PharmEffect",
+      "name": "Cell death",
+      "attributes": {
+        "context": "pointing to 'Cell death'"
+      },
+      "source_chunk_ids": [
+        "4b1b9542b0a6d77eaeeba301f9725ec9"
+      ]
+    },
+    {
+      "id": "ent_229",
+      "type": "Compound",
+      "name": "Parkin",
+      "attributes": {
+        "context": "box for 'Parkin'"
+      },
+      "source_chunk_ids": [
+        "4b1b9542b0a6d77eaeeba301f9725ec9"
+      ]
+    },
+    {
+      "id": "ent_230",
+      "type": "Compound",
+      "name": "ERRs",
+      "attributes": {
+        "context": "box for 'ERRs'"
+      },
+      "source_chunk_ids": [
+        "4b1b9542b0a6d77eaeeba301f9725ec9"
+      ]
+    },
+    {
+      "id": "ent_231",
+      "type": "PharmEffect",
+      "name": "mutation",
+      "attributes": {
+        "context": "'Parkin KO, mutation'"
+      },
+      "source_chunk_ids": [
+        "4b1b9542b0a6d77eaeeba301f9725ec9"
+      ]
+    },
+    {
+      "id": "ent_232",
+      "type": "Compound",
+      "name": "MPP+",
+      "attributes": {
+        "context": "box for 'MPP+'"
+      },
+      "source_chunk_ids": [
+        "4b1b9542b0a6d77eaeeba301f9725ec9"
+      ]
+    },
+    {
+      "id": "ent_233",
+      "type": "PharmEffect",
+      "name": "Apoptosis",
+      "attributes": {
+        "context": "labeled 'Apoptosis'"
+      },
+      "source_chunk_ids": [
+        "4b1b9542b0a6d77eaeeba301f9725ec9"
+      ]
+    },
+    {
+      "id": "ent_234",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "role of MAO-B in neuronal function"
+      },
+      "source_chunk_ids": [
+        "9b546c4efee228346b716b41e7264cb9"
+      ]
+    },
+    {
+      "id": "ent_235",
+      "type": "Compound",
+      "name": "MAO-B inhibitors",
+      "attributes": {
+        "context": "whether MAO-B inhibitors are truly type-specific"
+      },
+      "source_chunk_ids": [
+        "9b546c4efee228346b716b41e7264cb9"
+      ]
+    },
+    {
+      "id": "ent_236",
+      "type": "PharmEffect",
+      "name": "neuronal function",
+      "attributes": {
+        "context": "role of MAO-B in neuronal function"
+      },
+      "source_chunk_ids": [
+        "9b546c4efee228346b716b41e7264cb9"
+      ]
+    },
+    {
+      "id": "ent_237",
+      "type": "PharmEffect",
+      "name": "death",
+      "attributes": {
+        "context": "neuronal function and death"
+      },
+      "source_chunk_ids": [
+        "9b546c4efee228346b716b41e7264cb9"
+      ]
+    },
+    {
+      "id": "ent_238",
+      "type": "Compound",
+      "name": "MAO inhibitors",
+      "attributes": {
+        "context": "Type-specificity of MAO inhibitors"
+      },
+      "source_chunk_ids": [
+        "9b546c4efee228346b716b41e7264cb9"
+      ]
+    },
+    {
+      "id": "ent_239",
+      "type": "Compound",
+      "name": "rasagiline",
+      "attributes": {
+        "context": "rasagiline, for instance, also binds to MAO-A"
+      },
+      "source_chunk_ids": [
+        "9b546c4efee228346b716b41e7264cb9"
+      ]
+    },
+    {
+      "id": "ent_240",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "binds to MAO-A and inhibits its enzymatic activity"
+      },
+      "source_chunk_ids": [
+        "9b546c4efee228346b716b41e7264cb9"
+      ]
+    },
+    {
+      "id": "ent_241",
+      "type": "PharmEffect",
+      "name": "inhibits its enzymatic activity",
+      "attributes": {
+        "context": "inhibits its enzymatic activity in vitro"
+      },
+      "source_chunk_ids": [
+        "9b546c4efee228346b716b41e7264cb9"
+      ]
+    },
+    {
+      "id": "ent_242",
+      "type": "Concentration",
+      "name": "9.7 \u00b5M",
+      "attributes": {
+        "context": "inhibitor constant (K_i) = 9.7 \u00b5M"
+      },
+      "source_chunk_ids": [
+        "9b546c4efee228346b716b41e7264cb9"
+      ]
+    },
+    {
+      "id": "ent_243",
+      "type": "Concentration",
+      "name": "0.7 \u00b5M",
+      "attributes": {
+        "context": "for MAO-B (K_i = 0.7 \u00b5M)"
+      },
+      "source_chunk_ids": [
+        "9b546c4efee228346b716b41e7264cb9"
+      ]
+    },
+    {
+      "id": "ent_244",
+      "type": "PharmEffect",
+      "name": "irreversibly inactivates",
+      "attributes": {
+        "context": "rasagiline irreversibly inactivates both MAO-A and MAO-B"
+      },
+      "source_chunk_ids": [
+        "9b546c4efee228346b716b41e7264cb9"
+      ]
+    },
+    {
+      "id": "ent_245",
+      "type": "Compound",
+      "name": "flavin cofactor",
+      "attributes": {
+        "context": "covalent adduct with the flavin cofactor"
+      },
+      "source_chunk_ids": [
+        "9b546c4efee228346b716b41e7264cb9"
+      ]
+    },
+    {
+      "id": "ent_246",
+      "type": "Compound",
+      "name": "aminoindan",
+      "attributes": {
+        "context": "aminoindan, a rasagiline metabolite"
+      },
+      "source_chunk_ids": [
+        "9b546c4efee228346b716b41e7264cb9"
+      ]
+    },
+    {
+      "id": "ent_247",
+      "type": "PharmEffect",
+      "name": "inhibits both isoenzymes",
+      "attributes": {
+        "context": "inhibits both isoenzymes, but does not covalently bind the cofactor"
+      },
+      "source_chunk_ids": [
+        "9b546c4efee228346b716b41e7264cb9"
+      ]
+    },
+    {
+      "id": "ent_248",
+      "type": "Compound",
+      "name": "MAO-B inhibitors",
+      "attributes": {
+        "context": "Specific MAO-B inhibitors also suppress MAO-A activity"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_249",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "Specific MAO-B inhibitors also suppress MAO-A activity"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_250",
+      "type": "PharmEffect",
+      "name": "suppress MAO-A activity",
+      "attributes": {
+        "context": "MAO-B inhibitors also suppress MAO-A activity"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_251",
+      "type": "Concentration",
+      "name": "higher doses",
+      "attributes": {
+        "context": "at the higher doses in vivo"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_252",
+      "type": "PharmEffect",
+      "name": "inhibition of MAO-A and -B",
+      "attributes": {
+        "context": "The inhibition of MAO-A and -B in the brain"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_253",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "The inhibition of MAO-A and -B in the brain"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_254",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "either 5-HT (MAO-A) or PEA (MAO-B)"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_255",
+      "type": "Compound",
+      "name": "PEA",
+      "attributes": {
+        "context": "either 5-HT (MAO-A) or PEA (MAO-B)"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_256",
+      "type": "PharmEffect",
+      "name": "reduced MAO-B activity",
+      "attributes": {
+        "context": "MAO-B activity in the rat striatum was reduced by more than 90 %"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_257",
+      "type": "Compound",
+      "name": "selegiline",
+      "attributes": {
+        "context": "single administration of selegiline (2.5 mg/kg body weight)"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_258",
+      "type": "Concentration",
+      "name": "2.5 mg/kg body weight",
+      "attributes": {
+        "context": "selegiline (2.5 mg/kg body weight)"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_259",
+      "type": "Compound",
+      "name": "rasagiline",
+      "attributes": {
+        "context": "or rasagiline (1 mg/kg)"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_260",
+      "type": "Concentration",
+      "name": "1 mg/kg",
+      "attributes": {
+        "context": "rasagiline (1 mg/kg)"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_261",
+      "type": "PharmEffect",
+      "name": "lower MAO-A activity",
+      "attributes": {
+        "context": "MAO-A activity was also 40 % lower"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_262",
+      "type": "Concentration",
+      "name": "5 mg/kg",
+      "attributes": {
+        "context": "higher dose of selegiline (5 mg/kg)"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_263",
+      "type": "PharmEffect",
+      "name": "inhibited MAO-A activity",
+      "attributes": {
+        "context": "inhibited MAO-A activity in the rat brain by 85"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_264",
+      "type": "PharmEffect",
+      "name": "inhibited MAO-B activity",
+      "attributes": {
+        "context": "MAO-B by 99.9 %"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_265",
+      "type": "Concentration",
+      "name": "0.25 mg/kg",
+      "attributes": {
+        "context": "selegiline (0.25 mg/kg)"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_266",
+      "type": "Concentration",
+      "name": "0.05 mg/kg",
+      "attributes": {
+        "context": "rasagiline (0.05 mg/kg)"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_267",
+      "type": "PharmEffect",
+      "name": "reduced MAO-A activity",
+      "attributes": {
+        "context": "MAO-A activity was reduced by 40 and 15 %"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_268",
+      "type": "PharmEffect",
+      "name": "abolished MAO-B activity",
+      "attributes": {
+        "context": "MAO-B activity was almost totally abolished"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_269",
+      "type": "Compound",
+      "name": "clorgyline",
+      "attributes": {
+        "context": "clorgyline (0.2 mg/kg) inhibited MAO-A activity"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_270",
+      "type": "Concentration",
+      "name": "0.2 mg/kg",
+      "attributes": {
+        "context": "clorgyline (0.2 mg/kg)"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_271",
+      "type": "Concentration",
+      "name": "0.1 mg/kg",
+      "attributes": {
+        "context": "rasagiline (0.1 mg/kg, 7 days)"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_272",
+      "type": "PharmEffect",
+      "name": "selectively inhibited brain MAO-B activity",
+      "attributes": {
+        "context": "selectively inhibited brain MAO-B activity by 80 %"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_273",
+      "type": "Concentration",
+      "name": "0.5 mg/kg",
+      "attributes": {
+        "context": "at 0.5 mg/kg also inhibited MAO-A"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_274",
+      "type": "PharmEffect",
+      "name": "MAO type-specificity",
+      "attributes": {
+        "context": "influence the ... MAO type-specificity"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_275",
+      "type": "Compound",
+      "name": "Zydis Selegiline",
+      "attributes": {
+        "context": "confirmed for 'Zydis Selegiline' (buccal absorption)"
+      },
+      "source_chunk_ids": [
+        "5f8a64223e11d75b1ed65dddec0a9b2f"
+      ]
+    },
+    {
+      "id": "ent_276",
+      "type": "PharmEffect",
+      "name": "neuroprotection",
+      "attributes": {
+        "context": "underlying neuroprotection"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_277",
+      "type": "Compound",
+      "name": "Selegiline",
+      "attributes": {
+        "context": "Selegiline and rasagiline suppress"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_278",
+      "type": "Compound",
+      "name": "rasagiline",
+      "attributes": {
+        "context": "Selegiline and rasagiline suppress"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_279",
+      "type": "PharmEffect",
+      "name": "suppress mitochondrial death signal pathways",
+      "attributes": {
+        "context": "rasagiline suppress mitochondrial death signal pathways"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_280",
+      "type": "PharmEffect",
+      "name": "induce pro-survival genes",
+      "attributes": {
+        "context": "induce pro-survival genes"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_281",
+      "type": "PharmEffect",
+      "name": "anti-apoptotic",
+      "attributes": {
+        "context": "anti-apoptotic Bcl-2 protein family"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_282",
+      "type": "Compound",
+      "name": "Bcl-2",
+      "attributes": {
+        "context": "anti-apoptotic Bcl-2 protein family"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_283",
+      "type": "PharmEffect",
+      "name": "neurotrophic factors",
+      "attributes": {
+        "context": "of neurotrophic factors"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_284",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "MAO-A mediated Bcl-2 induction"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_285",
+      "type": "PharmEffect",
+      "name": "Bcl-2 induction",
+      "attributes": {
+        "context": "MAO-A mediated Bcl-2 induction"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_286",
+      "type": "Compound",
+      "name": "rasagiline",
+      "attributes": {
+        "context": "Bcl-2 induction by rasagiline"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_287",
+      "type": "PharmEffect",
+      "name": "suppressed by knockdown of MAO-A expression",
+      "attributes": {
+        "context": "an effect suppressed by knockdown of MAO-A expression"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_288",
+      "type": "Compound",
+      "name": "siRNA",
+      "attributes": {
+        "context": "expression with siRNA"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_289",
+      "type": "Compound",
+      "name": "Rasagiline",
+      "attributes": {
+        "context": "Rasagiline neither induce Bcl-2"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_290",
+      "type": "Compound",
+      "name": "Bcl-2",
+      "attributes": {
+        "context": "induce Bcl-2 in MAO-B"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_291",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "MAO-B overexpressed SH-SY5Y cells"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_292",
+      "type": "Indication",
+      "name": "human colon carcinoma",
+      "attributes": {
+        "context": "human colon carcinoma Caco-2 cells"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_293",
+      "type": "PharmEffect",
+      "name": "inhibitor",
+      "attributes": {
+        "context": "by this inhibitor"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_294",
+      "type": "Compound",
+      "name": "rasagiline",
+      "attributes": {
+        "context": "concentration of rasagiline that induces"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_295",
+      "type": "PharmEffect",
+      "name": "induces Bcl-2",
+      "attributes": {
+        "context": "rasagiline that induces Bcl-2"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_296",
+      "type": "PharmEffect",
+      "name": "inhibits MAO-A",
+      "attributes": {
+        "context": "than that inhibits MAO-A"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_297",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "inhibits MAO-A"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_298",
+      "type": "Concentration",
+      "name": "picomolar",
+      "attributes": {
+        "context": "(picomolar rather than micromolar"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_299",
+      "type": "Concentration",
+      "name": "micromolar",
+      "attributes": {
+        "context": "rather than micromolar"
+      },
+      "source_chunk_ids": [
+        "00c401e57adb7ae34c3ed6f8519e8476"
+      ]
+    },
+    {
+      "id": "ent_300",
+      "type": "Compound",
+      "name": "rasagiline",
+      "attributes": {
+        "context": "rasagiline and selegiline"
+      },
+      "source_chunk_ids": [
+        "705b7fbe2e6a2602d4a117b3f03d0ee4"
+      ]
+    },
+    {
+      "id": "ent_301",
+      "type": "Compound",
+      "name": "selegiline",
+      "attributes": {
+        "context": "rasagiline and selegiline"
+      },
+      "source_chunk_ids": [
+        "705b7fbe2e6a2602d4a117b3f03d0ee4"
+      ]
+    },
+    {
+      "id": "ent_302",
+      "type": "PharmEffect",
+      "name": "Induction of pro-survival genes",
+      "attributes": {
+        "context": "Induction of pro-survival genes by rasagiline"
+      },
+      "source_chunk_ids": [
+        "705b7fbe2e6a2602d4a117b3f03d0ee4"
+      ]
+    },
+    {
+      "id": "ent_303",
+      "type": "Compound",
+      "name": "rasagiline",
+      "attributes": {
+        "context": "administration of rasagiline to Japanese monkeys"
+      },
+      "source_chunk_ids": [
+        "705b7fbe2e6a2602d4a117b3f03d0ee4"
+      ]
+    },
+    {
+      "id": "ent_304",
+      "type": "Compound",
+      "name": "glial cell-derived neurotrophic factor (GDNF)",
+      "attributes": {
+        "context": "glial cell-derived neurotrophic factor (GDNF)"
+      },
+      "source_chunk_ids": [
+        "705b7fbe2e6a2602d4a117b3f03d0ee4"
+      ]
+    },
+    {
+      "id": "ent_305",
+      "type": "Compound",
+      "name": "brain-derived neurotrophic factor (BDNF)",
+      "attributes": {
+        "context": "brain-derived neurotrophic factor (BDNF)"
+      },
+      "source_chunk_ids": [
+        "705b7fbe2e6a2602d4a117b3f03d0ee4"
+      ]
+    },
+    {
+      "id": "ent_306",
+      "type": "Compound",
+      "name": "neurotrophic factor-3 (NT-3)",
+      "attributes": {
+        "context": "neurotrophic factor-3 (NT-3)"
+      },
+      "source_chunk_ids": [
+        "705b7fbe2e6a2602d4a117b3f03d0ee4"
+      ]
+    },
+    {
+      "id": "ent_307",
+      "type": "Compound",
+      "name": "nerve-growth factor (NGF)",
+      "attributes": {
+        "context": "nerve-growth factor (NGF)"
+      },
+      "source_chunk_ids": [
+        "705b7fbe2e6a2602d4a117b3f03d0ee4"
+      ]
+    },
+    {
+      "id": "ent_308",
+      "type": "PharmEffect",
+      "name": "increased the cerebrospinal fluid (CSF) levels of the neurotrophins",
+      "attributes": {
+        "context": "increased the cerebrospinal fluid (CSF) levels of the neurotrophins"
+      },
+      "source_chunk_ids": [
+        "705b7fbe2e6a2602d4a117b3f03d0ee4"
+      ]
+    },
+    {
+      "id": "ent_309",
+      "type": "Compound",
+      "name": "selegiline",
+      "attributes": {
+        "context": "Clinical trials of selegiline and rasagiline"
+      },
+      "source_chunk_ids": [
+        "7f54260337db3b81665e79e587b93f55"
+      ]
+    },
+    {
+      "id": "ent_310",
+      "type": "Compound",
+      "name": "rasagiline",
+      "attributes": {
+        "context": "selegiline and rasagiline in PD patients"
+      },
+      "source_chunk_ids": [
+        "7f54260337db3b81665e79e587b93f55"
+      ]
+    },
+    {
+      "id": "ent_311",
+      "type": "Indication",
+      "name": "PD",
+      "attributes": {
+        "context": "in PD patients"
+      },
+      "source_chunk_ids": [
+        "7f54260337db3b81665e79e587b93f55"
+      ]
+    },
+    {
+      "id": "ent_312",
+      "type": "PharmEffect",
+      "name": "symptomatic results",
+      "attributes": {
+        "context": "achieved beneficial symptomatic results"
+      },
+      "source_chunk_ids": [
+        "7f54260337db3b81665e79e587b93f55"
+      ]
+    },
+    {
+      "id": "ent_313",
+      "type": "PharmEffect",
+      "name": "disease progression",
+      "attributes": {
+        "context": "reverse disease progression"
+      },
+      "source_chunk_ids": [
+        "7f54260337db3b81665e79e587b93f55"
+      ]
+    },
+    {
+      "id": "ent_314",
+      "type": "PharmEffect",
+      "name": "MAO inhibition",
+      "attributes": {
+        "context": "contribution of MAO inhibition to improvement"
+      },
+      "source_chunk_ids": [
+        "7f54260337db3b81665e79e587b93f55"
+      ]
+    },
+    {
+      "id": "ent_315",
+      "type": "PharmEffect",
+      "name": "enzyme activity",
+      "attributes": {
+        "context": "comparing the enzyme activity"
+      },
+      "source_chunk_ids": [
+        "7f54260337db3b81665e79e587b93f55"
+      ]
+    },
+    {
+      "id": "ent_316",
+      "type": "PharmEffect",
+      "name": "clinical benefit",
+      "attributes": {
+        "context": "degree of clinical benefit"
+      },
+      "source_chunk_ids": [
+        "7f54260337db3b81665e79e587b93f55"
+      ]
+    },
+    {
+      "id": "ent_317",
+      "type": "Compound",
+      "name": "Rasagiline",
+      "attributes": {
+        "context": "Rasagiline and selegiline may bind to MAO"
+      },
+      "source_chunk_ids": [
+        "c942913f715d65e1b33841011f70f44f"
+      ]
+    },
+    {
+      "id": "ent_318",
+      "type": "Compound",
+      "name": "selegiline",
+      "attributes": {
+        "context": "Rasagiline and selegiline may bind to MAO"
+      },
+      "source_chunk_ids": [
+        "c942913f715d65e1b33841011f70f44f"
+      ]
+    },
+    {
+      "id": "ent_319",
+      "type": "Compound",
+      "name": "MAO",
+      "attributes": {
+        "context": "may bind to MAO at the sites"
+      },
+      "source_chunk_ids": [
+        "c942913f715d65e1b33841011f70f44f"
+      ]
+    },
+    {
+      "id": "ent_320",
+      "type": "Compound",
+      "name": "imidazoline",
+      "attributes": {
+        "context": "binding site for imidazoline has been identified"
+      },
+      "source_chunk_ids": [
+        "c942913f715d65e1b33841011f70f44f"
+      ]
+    },
+    {
+      "id": "ent_321",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "identified on MAO-B"
+      },
+      "source_chunk_ids": [
+        "c942913f715d65e1b33841011f70f44f"
+      ]
+    },
+    {
+      "id": "ent_322",
+      "type": "Compound",
+      "name": "I_2 ligands",
+      "attributes": {
+        "context": "I_2 ligands bind and inhibit MAO-A and -B"
+      },
+      "source_chunk_ids": [
+        "c942913f715d65e1b33841011f70f44f"
+      ]
+    },
+    {
+      "id": "ent_323",
+      "type": "PharmEffect",
+      "name": "inhibit",
+      "attributes": {
+        "context": "I_2 ligands bind and inhibit MAO-A and -B"
+      },
+      "source_chunk_ids": [
+        "c942913f715d65e1b33841011f70f44f"
+      ]
+    },
+    {
+      "id": "ent_324",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "inhibit MAO-A and -B"
+      },
+      "source_chunk_ids": [
+        "c942913f715d65e1b33841011f70f44f"
+      ]
+    },
+    {
+      "id": "ent_325",
+      "type": "Compound",
+      "name": "I_1 receptor",
+      "attributes": {
+        "context": "The I_1 receptor was identified as a target"
+      },
+      "source_chunk_ids": [
+        "c942913f715d65e1b33841011f70f44f"
+      ]
+    },
+    {
+      "id": "ent_326",
+      "type": "Compound",
+      "name": "S-enantiomer of rasagiline",
+      "attributes": {
+        "context": "target for the S-enantiomer of rasagiline"
+      },
+      "source_chunk_ids": [
+        "c942913f715d65e1b33841011f70f44f"
+      ]
+    },
+    {
+      "id": "ent_327",
+      "type": "Compound",
+      "name": "TV1022",
+      "attributes": {
+        "context": "rasagiline, TV1022, via which the inhibitor"
+      },
+      "source_chunk_ids": [
+        "c942913f715d65e1b33841011f70f44f"
+      ]
+    },
+    {
+      "id": "ent_328",
+      "type": "PharmEffect",
+      "name": "increased the levels of phosphorylated p42 and p44 MAPK",
+      "attributes": {
+        "context": "inhibitor increased the levels of phosphorylated p42 and p44 MAPK"
+      },
+      "source_chunk_ids": [
+        "c942913f715d65e1b33841011f70f44f"
+      ]
+    },
+    {
+      "id": "ent_329",
+      "type": "Compound",
+      "name": "phosphorylated p42 MAPK",
+      "attributes": {
+        "context": "levels of phosphorylated p42 and p44 MAPK"
+      },
+      "source_chunk_ids": [
+        "c942913f715d65e1b33841011f70f44f"
+      ]
+    },
+    {
+      "id": "ent_330",
+      "type": "Compound",
+      "name": "p44 MAPK",
+      "attributes": {
+        "context": "levels of phosphorylated p42 and p44 MAPK"
+      },
+      "source_chunk_ids": [
+        "c942913f715d65e1b33841011f70f44f"
+      ]
+    },
+    {
+      "id": "ent_331",
+      "type": "PharmEffect",
+      "name": "protected",
+      "attributes": {
+        "context": "and protected the cells from serum deprivation-induced apoptosis"
+      },
+      "source_chunk_ids": [
+        "c942913f715d65e1b33841011f70f44f"
+      ]
+    },
+    {
+      "id": "ent_332",
+      "type": "Indication",
+      "name": "serum deprivation-induced apoptosis",
+      "attributes": {
+        "context": "protected the cells from serum deprivation-induced apoptosis"
+      },
+      "source_chunk_ids": [
+        "c942913f715d65e1b33841011f70f44f"
+      ]
+    },
+    {
+      "id": "ent_333",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "5-HT inhibited the specific binding of TV1022"
+      },
+      "source_chunk_ids": [
+        "c942913f715d65e1b33841011f70f44f"
+      ]
+    },
+    {
+      "id": "ent_334",
+      "type": "PharmEffect",
+      "name": "inhibited",
+      "attributes": {
+        "context": "5-HT inhibited the specific binding of TV1022"
+      },
+      "source_chunk_ids": [
+        "c942913f715d65e1b33841011f70f44f"
+      ]
+    },
+    {
+      "id": "ent_335",
+      "type": "PharmEffect",
+      "name": "increases pro-survival Bcl-2",
+      "attributes": {
+        "context": "increases pro-survival Bcl-2 and neurotrophic factor levels"
+      },
+      "source_chunk_ids": [
+        "c942913f715d65e1b33841011f70f44f"
+      ]
+    },
+    {
+      "id": "ent_336",
+      "type": "Compound",
+      "name": "Bcl-2",
+      "attributes": {
+        "context": "pro-survival Bcl-2 and neurotrophic factor levels"
+      },
+      "source_chunk_ids": [
+        "c942913f715d65e1b33841011f70f44f"
+      ]
+    },
+    {
+      "id": "ent_337",
+      "type": "Compound",
+      "name": "neurotrophic factor",
+      "attributes": {
+        "context": "and neurotrophic factor levels"
+      },
+      "source_chunk_ids": [
+        "c942913f715d65e1b33841011f70f44f"
+      ]
+    },
+    {
+      "id": "ent_338",
+      "type": "PharmEffect",
+      "name": "Induction of MAO-A expression",
+      "attributes": {
+        "context": "Induction of MAO-A expression by MAO-B inhibitors"
+      },
+      "source_chunk_ids": [
+        "258a1f7693b7e91340a8a04afb0dfb79"
+      ]
+    },
+    {
+      "id": "ent_339",
+      "type": "Compound",
+      "name": "MAO-B inhibitors",
+      "attributes": {
+        "context": "MAO-A expression by MAO-B inhibitors plus substrate"
+      },
+      "source_chunk_ids": [
+        "258a1f7693b7e91340a8a04afb0dfb79"
+      ]
+    },
+    {
+      "id": "ent_340",
+      "type": "Compound",
+      "name": "substrate",
+      "attributes": {
+        "context": "MAO-B inhibitors plus substrate"
+      },
+      "source_chunk_ids": [
+        "258a1f7693b7e91340a8a04afb0dfb79"
+      ]
+    },
+    {
+      "id": "ent_341",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "MAO-A expression"
+      },
+      "source_chunk_ids": [
+        "533b3d5d9977ea702d692d07fc3f6351"
+      ]
+    },
+    {
+      "id": "ent_342",
+      "type": "Compound",
+      "name": "Sp1",
+      "attributes": {
+        "context": "transcription factor Sp1"
+      },
+      "source_chunk_ids": [
+        "533b3d5d9977ea702d692d07fc3f6351"
+      ]
+    },
+    {
+      "id": "ent_343",
+      "type": "Compound",
+      "name": "R1",
+      "attributes": {
+        "context": "transcription repressor R1"
+      },
+      "source_chunk_ids": [
+        "533b3d5d9977ea702d692d07fc3f6351"
+      ]
+    },
+    {
+      "id": "ent_344",
+      "type": "Compound",
+      "name": "RAM2",
+      "attributes": {
+        "context": "R1 (RAM2/CDCA7L/JPO2)"
+      },
+      "source_chunk_ids": [
+        "533b3d5d9977ea702d692d07fc3f6351"
+      ]
+    },
+    {
+      "id": "ent_345",
+      "type": "Compound",
+      "name": "CDCA7L",
+      "attributes": {
+        "context": "R1 (RAM2/CDCA7L/JPO2)"
+      },
+      "source_chunk_ids": [
+        "533b3d5d9977ea702d692d07fc3f6351"
+      ]
+    },
+    {
+      "id": "ent_346",
+      "type": "Compound",
+      "name": "JPO2",
+      "attributes": {
+        "context": "R1 (RAM2/CDCA7L/JPO2)"
+      },
+      "source_chunk_ids": [
+        "533b3d5d9977ea702d692d07fc3f6351"
+      ]
+    },
+    {
+      "id": "ent_347",
+      "type": "Compound",
+      "name": "alcohol",
+      "attributes": {
+        "context": "blood alcohol content was positively correlated"
+      },
+      "source_chunk_ids": [
+        "ca68592d53d2ad98151fad086dc93a1f"
+      ]
+    },
+    {
+      "id": "ent_348",
+      "type": "PharmEffect",
+      "name": "neuronal dysfunction",
+      "attributes": {
+        "context": "involved in neuronal dysfunction and death"
+      },
+      "source_chunk_ids": [
+        "ca68592d53d2ad98151fad086dc93a1f"
+      ]
+    },
+    {
+      "id": "ent_349",
+      "type": "PharmEffect",
+      "name": "death",
+      "attributes": {
+        "context": "neuronal dysfunction and death in alcoholism"
+      },
+      "source_chunk_ids": [
+        "ca68592d53d2ad98151fad086dc93a1f"
+      ]
+    },
+    {
+      "id": "ent_350",
+      "type": "Indication",
+      "name": "alcoholism",
+      "attributes": {
+        "context": "death in alcoholism"
+      },
+      "source_chunk_ids": [
+        "ca68592d53d2ad98151fad086dc93a1f"
+      ]
+    },
+    {
+      "id": "ent_351",
+      "type": "Compound",
+      "name": "Ethanol",
+      "attributes": {
+        "context": "Ethanol also induced the nuclear translocation"
+      },
+      "source_chunk_ids": [
+        "ca68592d53d2ad98151fad086dc93a1f"
+      ]
+    },
+    {
+      "id": "ent_352",
+      "type": "PharmEffect",
+      "name": "cell death",
+      "attributes": {
+        "context": "leading to cell death that could be prevented"
+      },
+      "source_chunk_ids": [
+        "ca68592d53d2ad98151fad086dc93a1f"
+      ]
+    },
+    {
+      "id": "ent_353",
+      "type": "Compound",
+      "name": "rasagiline",
+      "attributes": {
+        "context": "prevented by rasagiline and selegiline"
+      },
+      "source_chunk_ids": [
+        "ca68592d53d2ad98151fad086dc93a1f"
+      ]
+    },
+    {
+      "id": "ent_354",
+      "type": "Compound",
+      "name": "selegiline",
+      "attributes": {
+        "context": "prevented by rasagiline and selegiline"
+      },
+      "source_chunk_ids": [
+        "ca68592d53d2ad98151fad086dc93a1f"
+      ]
+    },
+    {
+      "id": "ent_355",
+      "type": "Compound",
+      "name": "glucocorticoid",
+      "attributes": {
+        "context": "response elements for glucocorticoid"
+      },
+      "source_chunk_ids": [
+        "ca68592d53d2ad98151fad086dc93a1f"
+      ]
+    },
+    {
+      "id": "ent_356",
+      "type": "Compound",
+      "name": "retinoic acid",
+      "attributes": {
+        "context": "retinoic acid, and estrogen-related receptors"
+      },
+      "source_chunk_ids": [
+        "ca68592d53d2ad98151fad086dc93a1f"
+      ]
+    },
+    {
+      "id": "ent_357",
+      "type": "Compound",
+      "name": "estrogen",
+      "attributes": {
+        "context": "estrogen-related receptors"
+      },
+      "source_chunk_ids": [
+        "ca68592d53d2ad98151fad086dc93a1f"
+      ]
+    },
+    {
+      "id": "ent_358",
+      "type": "Compound",
+      "name": "MAO-B inhibitors",
+      "attributes": {
+        "context": "including MAO-B inhibitors"
+      },
+      "source_chunk_ids": [
+        "f8827a5be1922ae284df7420ee7df3bf"
+      ]
+    },
+    {
+      "id": "ent_359",
+      "type": "Compound",
+      "name": "MAO substrates",
+      "attributes": {
+        "context": "and the MAO substrates PEA and DA"
+      },
+      "source_chunk_ids": [
+        "f8827a5be1922ae284df7420ee7df3bf"
+      ]
+    },
+    {
+      "id": "ent_360",
+      "type": "Compound",
+      "name": "PEA",
+      "attributes": {
+        "context": "the MAO substrates PEA"
+      },
+      "source_chunk_ids": [
+        "f8827a5be1922ae284df7420ee7df3bf"
+      ]
+    },
+    {
+      "id": "ent_361",
+      "type": "Compound",
+      "name": "DA",
+      "attributes": {
+        "context": "and DA"
+      },
+      "source_chunk_ids": [
+        "f8827a5be1922ae284df7420ee7df3bf"
+      ]
+    },
+    {
+      "id": "ent_362",
+      "type": "Indication",
+      "name": "neuropsychiatric disorders",
+      "attributes": {
+        "context": "phenotypes of neuropsychiatric disorders"
+      },
+      "source_chunk_ids": [
+        "f8827a5be1922ae284df7420ee7df3bf"
+      ]
+    },
+    {
+      "id": "ent_363",
+      "type": "Compound",
+      "name": "MAO",
+      "attributes": {
+        "context": "Modification of MAO expression"
+      },
+      "source_chunk_ids": [
+        "0c20e5394d74690d25026b86002eaa0c"
+      ]
+    },
+    {
+      "id": "ent_364",
+      "type": "PharmEffect",
+      "name": "stress response",
+      "attributes": {
+        "context": "associated with stress response"
+      },
+      "source_chunk_ids": [
+        "8d9cc0fc7426db2dd41f38ec08f3b309"
+      ]
+    },
+    {
+      "id": "ent_365",
+      "type": "PharmEffect",
+      "name": "cell-cycle arrest",
+      "attributes": {
+        "context": "cell-cycle arrest"
+      },
+      "source_chunk_ids": [
+        "8d9cc0fc7426db2dd41f38ec08f3b309"
+      ]
+    },
+    {
+      "id": "ent_366",
+      "type": "PharmEffect",
+      "name": "cell survival",
+      "attributes": {
+        "context": "and cell survival"
+      },
+      "source_chunk_ids": [
+        "8d9cc0fc7426db2dd41f38ec08f3b309"
+      ]
+    },
+    {
+      "id": "ent_367",
+      "type": "PharmEffect",
+      "name": "anti-oxidative",
+      "attributes": {
+        "context": "involved in anti-oxidative"
+      },
+      "source_chunk_ids": [
+        "8d9cc0fc7426db2dd41f38ec08f3b309"
+      ]
+    },
+    {
+      "id": "ent_368",
+      "type": "PharmEffect",
+      "name": "pro-survival",
+      "attributes": {
+        "context": "and pro-survival functions"
+      },
+      "source_chunk_ids": [
+        "8d9cc0fc7426db2dd41f38ec08f3b309"
+      ]
+    },
+    {
+      "id": "ent_369",
+      "type": "Compound",
+      "name": "valproic acid",
+      "attributes": {
+        "context": "by valproic acid"
+      },
+      "source_chunk_ids": [
+        "8d9cc0fc7426db2dd41f38ec08f3b309"
+      ]
+    },
+    {
+      "id": "ent_370",
+      "type": "Compound",
+      "name": "VPA",
+      "attributes": {
+        "context": "VPA, 2-propylpentanoic acid"
+      },
+      "source_chunk_ids": [
+        "8d9cc0fc7426db2dd41f38ec08f3b309"
+      ]
+    },
+    {
+      "id": "ent_371",
+      "type": "Compound",
+      "name": "2-propylpentanoic acid",
+      "attributes": {
+        "context": "VPA, 2-propylpentanoic acid"
+      },
+      "source_chunk_ids": [
+        "8d9cc0fc7426db2dd41f38ec08f3b309"
+      ]
+    },
+    {
+      "id": "ent_372",
+      "type": "Compound",
+      "name": "miRNAs",
+      "attributes": {
+        "context": "miRNAs regulate gene expression"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_373",
+      "type": "Compound",
+      "name": "mRNAs",
+      "attributes": {
+        "context": "target mRNAs"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_374",
+      "type": "PharmEffect",
+      "name": "down-regulate expression",
+      "attributes": {
+        "context": "down-regulate expression by binding"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_375",
+      "type": "Compound",
+      "name": "precursor miRNAs",
+      "attributes": {
+        "context": "longer precursor miRNAs"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_376",
+      "type": "Compound",
+      "name": "Drosa",
+      "attributes": {
+        "context": "enzymes, Drosa and Dicer"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_377",
+      "type": "Compound",
+      "name": "Dicer",
+      "attributes": {
+        "context": "enzymes, Drosa and Dicer"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_378",
+      "type": "Compound",
+      "name": "RNAs",
+      "attributes": {
+        "context": "functional RNAs of ~22 nucleotides"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_379",
+      "type": "Compound",
+      "name": "RNA-inducing silencing complex",
+      "attributes": {
+        "context": "an RNA-inducing silencing complex"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_380",
+      "type": "PharmEffect",
+      "name": "suppresses translation",
+      "attributes": {
+        "context": "complex that suppresses translation"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_381",
+      "type": "Compound",
+      "name": "miR-9",
+      "attributes": {
+        "context": "brain-specific miRNAs, miR-9"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_382",
+      "type": "Compound",
+      "name": "miR-124",
+      "attributes": {
+        "context": "miR-9, -124 and -134"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_383",
+      "type": "Compound",
+      "name": "miR-134",
+      "attributes": {
+        "context": "miR-9, -124 and -134"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_384",
+      "type": "Compound",
+      "name": "miR-133b",
+      "attributes": {
+        "context": "miRNA, miR-133b"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_385",
+      "type": "PharmEffect",
+      "name": "reduced miR-133b levels",
+      "attributes": {
+        "context": "Dicer knockdown reduced miR-133b levels"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_386",
+      "type": "Indication",
+      "name": "PD-like phenotype",
+      "attributes": {
+        "context": "development of a PD-like phenotype"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_387",
+      "type": "PharmEffect",
+      "name": "down-regulated",
+      "attributes": {
+        "context": "miR-133b expression was down-regulated"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_388",
+      "type": "Indication",
+      "name": "PD",
+      "attributes": {
+        "context": "down-regulated in PD brains"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_389",
+      "type": "Indication",
+      "name": "neurodegenerative disorders",
+      "attributes": {
+        "context": "other neurodegenerative disorders"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_390",
+      "type": "Indication",
+      "name": "panic disorder",
+      "attributes": {
+        "context": "respect to panic disorder"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_391",
+      "type": "Indication",
+      "name": "anxiety",
+      "attributes": {
+        "context": "in anxiety patients"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_392",
+      "type": "Compound",
+      "name": "miR-22",
+      "attributes": {
+        "context": "anxiety patients, miR-22"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_393",
+      "type": "Compound",
+      "name": "miR-138-2",
+      "attributes": {
+        "context": "miR-22, -138-2, -148a and -488"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_394",
+      "type": "Compound",
+      "name": "miR-148a",
+      "attributes": {
+        "context": "miR-22, -138-2, -148a and -488"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_395",
+      "type": "Compound",
+      "name": "miR-488",
+      "attributes": {
+        "context": "miR-22, -138-2, -148a and -488"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_396",
+      "type": "PharmEffect",
+      "name": "regulate several candidate anxiety genes",
+      "attributes": {
+        "context": "found to regulate several candidate anxiety genes"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_397",
+      "type": "Compound",
+      "name": "mao-a",
+      "attributes": {
+        "context": "regulated mao-a gene expression"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_398",
+      "type": "PharmEffect",
+      "name": "regulated mao-a gene expression",
+      "attributes": {
+        "context": "miR-22 regulated mao-a gene expression"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_399",
+      "type": "Indication",
+      "name": "HIV encephalitis",
+      "attributes": {
+        "context": "human HIV encephalitis"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_400",
+      "type": "Compound",
+      "name": "miR-142",
+      "attributes": {
+        "context": "neuronal species miR-142"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_401",
+      "type": "PharmEffect",
+      "name": "increased",
+      "attributes": {
+        "context": "miR-142 were increased"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_402",
+      "type": "PharmEffect",
+      "name": "overexpression",
+      "attributes": {
+        "context": "Its overexpression in a human neuron cell line"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_403",
+      "type": "PharmEffect",
+      "name": "down-regulated",
+      "attributes": {
+        "context": "cell line down-regulated"
+      },
+      "source_chunk_ids": [
+        "5ccd440e44c5b4b599d041dafa0bc08c"
+      ]
+    },
+    {
+      "id": "ent_404",
+      "type": "Compound",
+      "name": "Sirt1",
+      "attributes": {
+        "context": "Sirt1, and also decreased MAO-A mRNA"
+      },
+      "source_chunk_ids": [
+        "03797b614ace9baf8ac009ef89cfbf59"
+      ]
+    },
+    {
+      "id": "ent_405",
+      "type": "Compound",
+      "name": "MAO-A mRNA",
+      "attributes": {
+        "context": "decreased MAO-A mRNA, protein and enzyme activity levels"
+      },
+      "source_chunk_ids": [
+        "03797b614ace9baf8ac009ef89cfbf59"
+      ]
+    },
+    {
+      "id": "ent_406",
+      "type": "Compound",
+      "name": "protein",
+      "attributes": {
+        "context": "MAO-A mRNA, protein and enzyme activity levels"
+      },
+      "source_chunk_ids": [
+        "03797b614ace9baf8ac009ef89cfbf59"
+      ]
+    },
+    {
+      "id": "ent_407",
+      "type": "Compound",
+      "name": "enzyme",
+      "attributes": {
+        "context": "protein and enzyme activity levels"
+      },
+      "source_chunk_ids": [
+        "03797b614ace9baf8ac009ef89cfbf59"
+      ]
+    },
+    {
+      "id": "ent_408",
+      "type": "PharmEffect",
+      "name": "decreased ... activity levels",
+      "attributes": {
+        "context": "decreased MAO-A mRNA, protein and enzyme activity levels"
+      },
+      "source_chunk_ids": [
+        "03797b614ace9baf8ac009ef89cfbf59"
+      ]
+    },
+    {
+      "id": "ent_409",
+      "type": "Compound",
+      "name": "miR-142",
+      "attributes": {
+        "context": "regulation of MAO-A expression by the miR-142-Sirt1-MAO-A pathway"
+      },
+      "source_chunk_ids": [
+        "03797b614ace9baf8ac009ef89cfbf59"
+      ]
+    },
+    {
+      "id": "ent_410",
+      "type": "PharmEffect",
+      "name": "regulation of ... expression",
+      "attributes": {
+        "context": "regulation of MAO-A expression by the miR-142-Sirt1-MAO-A pathway"
+      },
+      "source_chunk_ids": [
+        "03797b614ace9baf8ac009ef89cfbf59"
+      ]
+    },
+    {
+      "id": "ent_411",
+      "type": "Compound",
+      "name": "DA",
+      "attributes": {
+        "context": "changes in DA transmission"
+      },
+      "source_chunk_ids": [
+        "03797b614ace9baf8ac009ef89cfbf59"
+      ]
+    },
+    {
+      "id": "ent_412",
+      "type": "PharmEffect",
+      "name": "changes in ... transmission",
+      "attributes": {
+        "context": "changes in DA transmission"
+      },
+      "source_chunk_ids": [
+        "03797b614ace9baf8ac009ef89cfbf59"
+      ]
+    },
+    {
+      "id": "ent_413",
+      "type": "Indication",
+      "name": "HIV-associated neurocognitive disorders",
+      "attributes": {
+        "context": "in HIV-associated neurocognitive disorders"
+      },
+      "source_chunk_ids": [
+        "03797b614ace9baf8ac009ef89cfbf59"
+      ]
+    },
+    {
+      "id": "ent_414",
+      "type": "Compound",
+      "name": "Monoamine oxidase",
+      "attributes": {
+        "context": "Monoamine oxidase plays a major role"
+      },
+      "source_chunk_ids": [
+        "b3b0887b79eb97b0356749a59bc179c5"
+      ]
+    },
+    {
+      "id": "ent_415",
+      "type": "Compound",
+      "name": "monoamine transmitters",
+      "attributes": {
+        "context": "metabolism of monoamine transmitters"
+      },
+      "source_chunk_ids": [
+        "b3b0887b79eb97b0356749a59bc179c5"
+      ]
+    },
+    {
+      "id": "ent_416",
+      "type": "PharmEffect",
+      "name": "metabolism",
+      "attributes": {
+        "context": "role in the metabolism"
+      },
+      "source_chunk_ids": [
+        "b3b0887b79eb97b0356749a59bc179c5"
+      ]
+    },
+    {
+      "id": "ent_417",
+      "type": "Compound",
+      "name": "ROS",
+      "attributes": {
+        "context": "generation of ROS"
+      },
+      "source_chunk_ids": [
+        "b3b0887b79eb97b0356749a59bc179c5"
+      ]
+    },
+    {
+      "id": "ent_418",
+      "type": "Compound",
+      "name": "neurotoxins",
+      "attributes": {
+        "context": "generation of ROS and neurotoxins"
+      },
+      "source_chunk_ids": [
+        "b3b0887b79eb97b0356749a59bc179c5"
+      ]
+    },
+    {
+      "id": "ent_419",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "MAO-A expression and activity"
+      },
+      "source_chunk_ids": [
+        "b3b0887b79eb97b0356749a59bc179c5"
+      ]
+    },
+    {
+      "id": "ent_420",
+      "type": "Indication",
+      "name": "apoptosis",
+      "attributes": {
+        "context": "increased in apoptosis"
+      },
+      "source_chunk_ids": [
+        "b3b0887b79eb97b0356749a59bc179c5"
+      ]
+    },
+    {
+      "id": "ent_421",
+      "type": "PharmEffect",
+      "name": "oxidative stress",
+      "attributes": {
+        "context": "via oxidative stress"
+      },
+      "source_chunk_ids": [
+        "b3b0887b79eb97b0356749a59bc179c5"
+      ]
+    },
+    {
+      "id": "ent_422",
+      "type": "PharmEffect",
+      "name": "mitochondrial dysfunction",
+      "attributes": {
+        "context": "and mitochondrial dysfunction"
+      },
+      "source_chunk_ids": [
+        "b3b0887b79eb97b0356749a59bc179c5"
+      ]
+    },
+    {
+      "id": "ent_423",
+      "type": "PharmEffect",
+      "name": "pro-survival genes",
+      "attributes": {
+        "context": "induction of pro-survival genes"
+      },
+      "source_chunk_ids": [
+        "b3b0887b79eb97b0356749a59bc179c5"
+      ]
+    },
+    {
+      "id": "ent_424",
+      "type": "Compound",
+      "name": "MPP+",
+      "attributes": {
+        "context": "neurotoxins, such as MPP+"
+      },
+      "source_chunk_ids": [
+        "b3b0887b79eb97b0356749a59bc179c5"
+      ]
+    },
+    {
+      "id": "ent_425",
+      "type": "Compound",
+      "name": "N-methyl(R)salinol",
+      "attributes": {
+        "context": "and N-methyl(R)salinol"
+      },
+      "source_chunk_ids": [
+        "b3b0887b79eb97b0356749a59bc179c5"
+      ]
+    },
+    {
+      "id": "ent_426",
+      "type": "PharmEffect",
+      "name": "mitochondrial permeability",
+      "attributes": {
+        "context": "increases mitochondrial permeability"
+      },
+      "source_chunk_ids": [
+        "b3b0887b79eb97b0356749a59bc179c5"
+      ]
+    },
+    {
+      "id": "ent_427",
+      "type": "PharmEffect",
+      "name": "anti-apoptotic",
+      "attributes": {
+        "context": "the anti-apoptotic Bcl-2 protein family"
+      },
+      "source_chunk_ids": [
+        "b3b0887b79eb97b0356749a59bc179c5"
+      ]
+    },
+    {
+      "id": "ent_428",
+      "type": "Compound",
+      "name": "Bcl-2 protein family",
+      "attributes": {
+        "context": "anti-apoptotic Bcl-2 protein family"
+      },
+      "source_chunk_ids": [
+        "b3b0887b79eb97b0356749a59bc179c5"
+      ]
+    },
+    {
+      "id": "ent_429",
+      "type": "Compound",
+      "name": "rasagiline",
+      "attributes": {
+        "context": "by rasagiline is mediated by MAO-A"
+      },
+      "source_chunk_ids": [
+        "b3b0887b79eb97b0356749a59bc179c5"
+      ]
+    },
+    {
+      "id": "ent_430",
+      "type": "PharmEffect",
+      "name": "knockdown",
+      "attributes": {
+        "context": "consequences of MAO-A knockdown"
+      },
+      "source_chunk_ids": [
+        "b3b0887b79eb97b0356749a59bc179c5"
+      ]
+    },
+    {
+      "id": "ent_431",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "in MAO-B-expressing Caco-2"
+      },
+      "source_chunk_ids": [
+        "b3b0887b79eb97b0356749a59bc179c5"
+      ]
+    },
+    {
+      "id": "ent_432",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "induction of MAO-A expression"
+      },
+      "source_chunk_ids": [
+        "87d6ab7bf2b37cefc4bbbcae31b6d7c3"
+      ]
+    },
+    {
+      "id": "ent_433",
+      "type": "PharmEffect",
+      "name": "neuronal survival",
+      "attributes": {
+        "context": "determining neuronal survival"
+      },
+      "source_chunk_ids": [
+        "87d6ab7bf2b37cefc4bbbcae31b6d7c3"
+      ]
+    },
+    {
+      "id": "ent_434",
+      "type": "PharmEffect",
+      "name": "pro-survival genes",
+      "attributes": {
+        "context": "induction of pro-survival genes"
+      },
+      "source_chunk_ids": [
+        "87d6ab7bf2b37cefc4bbbcae31b6d7c3"
+      ]
+    },
+    {
+      "id": "ent_435",
+      "type": "Compound",
+      "name": "MAO-B inhibitors",
+      "attributes": {
+        "context": "genes by MAO-B inhibitors"
+      },
+      "source_chunk_ids": [
+        "87d6ab7bf2b37cefc4bbbcae31b6d7c3"
+      ]
+    },
+    {
+      "id": "ent_436",
+      "type": "Compound",
+      "name": "selegiline",
+      "attributes": {
+        "context": "binding site(s) of selegiline"
+      },
+      "source_chunk_ids": [
+        "87d6ab7bf2b37cefc4bbbcae31b6d7c3"
+      ]
+    },
+    {
+      "id": "ent_437",
+      "type": "Compound",
+      "name": "rasagiline",
+      "attributes": {
+        "context": "and rasagiline on MAO-A"
+      },
+      "source_chunk_ids": [
+        "87d6ab7bf2b37cefc4bbbcae31b6d7c3"
+      ]
+    },
+    {
+      "id": "ent_438",
+      "type": "PharmEffect",
+      "name": "gene induction",
+      "attributes": {
+        "context": "respect to gene induction"
+      },
+      "source_chunk_ids": [
+        "87d6ab7bf2b37cefc4bbbcae31b6d7c3"
+      ]
+    },
+    {
+      "id": "ent_439",
+      "type": "PharmEffect",
+      "name": "neuronal death signal pathways",
+      "attributes": {
+        "context": "modulate neuronal death signal pathways"
+      },
+      "source_chunk_ids": [
+        "87d6ab7bf2b37cefc4bbbcae31b6d7c3"
+      ]
+    },
+    {
+      "id": "ent_440",
+      "type": "PharmEffect",
+      "name": "CNS function",
+      "attributes": {
+        "context": "sustaining CNS function"
+      },
+      "source_chunk_ids": [
+        "87d6ab7bf2b37cefc4bbbcae31b6d7c3"
+      ]
+    },
+    {
+      "id": "ent_441",
+      "type": "Indication",
+      "name": "Neurodegeneration",
+      "attributes": {
+        "context": "Verein zur Erforschung von Neurodegeneration, Neuroprotektion, Neuroregeneration und Therapie e. V."
+      },
+      "source_chunk_ids": [
+        "4215ed5dbcef2e19e90a70aec6da81df"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:03.918181+00:00",
+    "original_file": "entities.json"
+  }
+}

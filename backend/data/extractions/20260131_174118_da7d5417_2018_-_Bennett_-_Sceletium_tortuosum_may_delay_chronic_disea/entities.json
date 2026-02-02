@@ -1,0 +1,1168 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "acbdb9b99b36827b85fe51c4c31f5cc80d6f75d08aa09d556f5d65c13b0edff1",
+  "extracted_at": "2026-02-01T08:46:19.508554+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "Compound",
+      "name": "cytokine",
+      "attributes": {
+        "context": "Quantification of cytokine concentrations"
+      },
+      "source_chunk_ids": [
+        "c180e9f7a41331eb112d6b8e1303d581"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Compound",
+      "name": "IL-6",
+      "attributes": {
+        "context": "0.9 pg/ml for IL-6"
+      },
+      "source_chunk_ids": [
+        "c180e9f7a41331eb112d6b8e1303d581"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "Compound",
+      "name": "MCP-1",
+      "attributes": {
+        "context": "1.6 pg/ml for MCP-1"
+      },
+      "source_chunk_ids": [
+        "c180e9f7a41331eb112d6b8e1303d581"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "Concentration",
+      "name": "0.9 pg/ml",
+      "attributes": {
+        "context": "detection limit was 0.9 pg/ml"
+      },
+      "source_chunk_ids": [
+        "c180e9f7a41331eb112d6b8e1303d581"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "Concentration",
+      "name": "1.6 pg/ml",
+      "attributes": {
+        "context": "1.6 pg/ml for MCP-1"
+      },
+      "source_chunk_ids": [
+        "c180e9f7a41331eb112d6b8e1303d581"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "PharmEffect",
+      "name": "Antioxidant capacity",
+      "attributes": {
+        "context": "Antioxidant capacity of both extracts"
+      },
+      "source_chunk_ids": [
+        "8307a63ea165b4a9d427b4e616d9cfef"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "Compound",
+      "name": "2,2-diphenyl-1-picrylhydrazyl",
+      "attributes": {
+        "context": "using the 2,2-diphenyl-1-picrylhydrazyl (DPPH) inhibition assay"
+      },
+      "source_chunk_ids": [
+        "8307a63ea165b4a9d427b4e616d9cfef"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Compound",
+      "name": "DPPH",
+      "attributes": {
+        "context": "against DPPH radicals"
+      },
+      "source_chunk_ids": [
+        "8307a63ea165b4a9d427b4e616d9cfef"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "PharmEffect",
+      "name": "radical scavenging capacity",
+      "attributes": {
+        "context": "assesses radical scavenging capacity against DPPH radicals"
+      },
+      "source_chunk_ids": [
+        "8307a63ea165b4a9d427b4e616d9cfef"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "Compound",
+      "name": "ascorbic acid",
+      "attributes": {
+        "context": "with ascorbic acid as the reference standard"
+      },
+      "source_chunk_ids": [
+        "8307a63ea165b4a9d427b4e616d9cfef"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "Compound",
+      "name": "polyphenol",
+      "attributes": {
+        "context": "Total polyphenol content was determined"
+      },
+      "source_chunk_ids": [
+        "8307a63ea165b4a9d427b4e616d9cfef"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "Compound",
+      "name": "gallic acid",
+      "attributes": {
+        "context": "using gallic acid as standard"
+      },
+      "source_chunk_ids": [
+        "8307a63ea165b4a9d427b4e616d9cfef"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "Compound",
+      "name": "gallic acid",
+      "attributes": {
+        "context": "GAE (gallic acid equivalents)"
+      },
+      "source_chunk_ids": [
+        "bfe369da530d39d37d4920f2e638ca28"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "Concentration",
+      "name": "milligramme",
+      "attributes": {
+        "context": "per milligramme"
+      },
+      "source_chunk_ids": [
+        "bfe369da530d39d37d4920f2e638ca28"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "Compound",
+      "name": "propidium iodide",
+      "attributes": {
+        "context": "Cell viability determined by propidium iodide assay."
+      },
+      "source_chunk_ids": [
+        "7ac27fdf4d0fc003b84ffce9f87e9f3d"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "Compound",
+      "name": "PI",
+      "attributes": {
+        "context": "% PI negative cells"
+      },
+      "source_chunk_ids": [
+        "7ac27fdf4d0fc003b84ffce9f87e9f3d"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "Compound",
+      "name": "LPS",
+      "attributes": {
+        "context": "Without LPS (%)"
+      },
+      "source_chunk_ids": [
+        "7ac27fdf4d0fc003b84ffce9f87e9f3d"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "Compound",
+      "name": "LPS",
+      "attributes": {
+        "context": "With LPS (%)"
+      },
+      "source_chunk_ids": [
+        "7ac27fdf4d0fc003b84ffce9f87e9f3d"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "Compound",
+      "name": "LPS",
+      "attributes": {
+        "context": "LPS stimulation"
+      },
+      "source_chunk_ids": [
+        "7ac27fdf4d0fc003b84ffce9f87e9f3d"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "PharmEffect",
+      "name": "Cell viability",
+      "attributes": {
+        "context": "Cell viability determined by propidium iodide assay."
+      },
+      "source_chunk_ids": [
+        "7ac27fdf4d0fc003b84ffce9f87e9f3d"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "PharmEffect",
+      "name": "LPS stimulation",
+      "attributes": {
+        "context": "with and without LPS stimulation."
+      },
+      "source_chunk_ids": [
+        "7ac27fdf4d0fc003b84ffce9f87e9f3d"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "PharmEffect",
+      "name": "reducing viability",
+      "attributes": {
+        "context": "LPS stimulation further reducing viability."
+      },
+      "source_chunk_ids": [
+        "7ac27fdf4d0fc003b84ffce9f87e9f3d"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "PharmEffect",
+      "name": "decrease in viability",
+      "attributes": {
+        "context": "Extracts generally show a slight decrease in viability"
+      },
+      "source_chunk_ids": [
+        "7ac27fdf4d0fc003b84ffce9f87e9f3d"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "Concentration",
+      "name": "0 mg/ml",
+      "attributes": {
+        "context": "Extract Concentration (mg/ml) A 0"
+      },
+      "source_chunk_ids": [
+        "7ac27fdf4d0fc003b84ffce9f87e9f3d"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "Concentration",
+      "name": "0.01 mg/ml",
+      "attributes": {
+        "context": "Extract A (0, 0.01, 1 mg/ml)"
+      },
+      "source_chunk_ids": [
+        "7ac27fdf4d0fc003b84ffce9f87e9f3d"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "Concentration",
+      "name": "1 mg/ml",
+      "attributes": {
+        "context": "Extract A (0, 0.01, 1 mg/ml)"
+      },
+      "source_chunk_ids": [
+        "7ac27fdf4d0fc003b84ffce9f87e9f3d"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "Concentration",
+      "name": "0.037 mg/ml",
+      "attributes": {
+        "context": "Extract B (0, 0.037, 0.37, 3.7 mg/ml)"
+      },
+      "source_chunk_ids": [
+        "7ac27fdf4d0fc003b84ffce9f87e9f3d"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "Concentration",
+      "name": "0.37 mg/ml",
+      "attributes": {
+        "context": "Extract B (0, 0.037, 0.37, 3.7 mg/ml)"
+      },
+      "source_chunk_ids": [
+        "7ac27fdf4d0fc003b84ffce9f87e9f3d"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "Concentration",
+      "name": "3.7 mg/ml",
+      "attributes": {
+        "context": "Extract B (0, 0.037, 0.37, 3.7 mg/ml)"
+      },
+      "source_chunk_ids": [
+        "7ac27fdf4d0fc003b84ffce9f87e9f3d"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "PharmEffect",
+      "name": "tyrosinase inhibition",
+      "attributes": {
+        "context": "tyrosinase inhibition"
+      },
+      "source_chunk_ids": [
+        "c0f439b5f3f7155aa8a0a14da5ee683a"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "PharmEffect",
+      "name": "neuroprotection",
+      "attributes": {
+        "context": "some degree of neuroprotection"
+      },
+      "source_chunk_ids": [
+        "c0f439b5f3f7155aa8a0a14da5ee683a"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "Compound",
+      "name": "Lipopolysaccharide",
+      "attributes": {
+        "context": "with/without LPS stimulation"
+      },
+      "source_chunk_ids": [
+        "149f7c11c050eb136ec584810fbccc22"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "Compound",
+      "name": "cytokine",
+      "attributes": {
+        "context": "pro-inflammatory cytokine production"
+      },
+      "source_chunk_ids": [
+        "149f7c11c050eb136ec584810fbccc22"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "PharmEffect",
+      "name": "LPS stimulation",
+      "attributes": {
+        "context": "with/without LPS stimulation"
+      },
+      "source_chunk_ids": [
+        "149f7c11c050eb136ec584810fbccc22"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "PharmEffect",
+      "name": "pro-inflammatory cytokine production",
+      "attributes": {
+        "context": "on pro-inflammatory cytokine production"
+      },
+      "source_chunk_ids": [
+        "149f7c11c050eb136ec584810fbccc22"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Compound",
+      "name": "Acetylcholinesterase",
+      "attributes": {
+        "context": "% AChE Inhibition"
+      },
+      "source_chunk_ids": [
+        "f502f1af5432b678fe2abb92022111dd"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "Compound",
+      "name": "Galantamine",
+      "attributes": {
+        "context": "Galantamine (%)"
+      },
+      "source_chunk_ids": [
+        "f502f1af5432b678fe2abb92022111dd"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "Compound",
+      "name": "Tyrosinase",
+      "attributes": {
+        "context": "% TYR Inhibition"
+      },
+      "source_chunk_ids": [
+        "f502f1af5432b678fe2abb92022111dd"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "Compound",
+      "name": "Kojic Acid",
+      "attributes": {
+        "context": "Kojic Acid (%)"
+      },
+      "source_chunk_ids": [
+        "f502f1af5432b678fe2abb92022111dd"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "Compound",
+      "name": "Acetylcholinesterase",
+      "attributes": {
+        "context": "Inhibition of Acetylcholinesterase"
+      },
+      "source_chunk_ids": [
+        "f502f1af5432b678fe2abb92022111dd"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "Compound",
+      "name": "Tyrosinase",
+      "attributes": {
+        "context": "and Tyrosinase (b)"
+      },
+      "source_chunk_ids": [
+        "f502f1af5432b678fe2abb92022111dd"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "context": "by Sceletium extracts"
+      },
+      "source_chunk_ids": [
+        "f502f1af5432b678fe2abb92022111dd"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "PharmEffect",
+      "name": "Acetylcholinesterase Inhibition",
+      "attributes": {
+        "context": "% AChE Inhibition"
+      },
+      "source_chunk_ids": [
+        "f502f1af5432b678fe2abb92022111dd"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "PharmEffect",
+      "name": "Tyrosinase Inhibition",
+      "attributes": {
+        "context": "% TYR Inhibition"
+      },
+      "source_chunk_ids": [
+        "f502f1af5432b678fe2abb92022111dd"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "PharmEffect",
+      "name": "Inhibition of Acetylcholinesterase",
+      "attributes": {
+        "context": "Inhibition of Acetylcholinesterase"
+      },
+      "source_chunk_ids": [
+        "f502f1af5432b678fe2abb92022111dd"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "PharmEffect",
+      "name": "Inhibition of Tyrosinase",
+      "attributes": {
+        "context": "Inhibition of Tyrosinase"
+      },
+      "source_chunk_ids": [
+        "f502f1af5432b678fe2abb92022111dd"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "Concentration",
+      "name": "mg/ml",
+      "attributes": {
+        "context": "Log concentration (mg/ml)"
+      },
+      "source_chunk_ids": [
+        "f502f1af5432b678fe2abb92022111dd"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "Indication",
+      "name": "brain injury",
+      "attributes": {
+        "context": "respond vigorously to brain injury"
+      },
+      "source_chunk_ids": [
+        "4e35c989e1826ee9ec9b5de775b87549"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "Indication",
+      "name": "inflammation",
+      "attributes": {
+        "context": "in the context of inflammation"
+      },
+      "source_chunk_ids": [
+        "66677cce409c7d5cf64a033591478a05"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "Compound",
+      "name": "extract A",
+      "attributes": {
+        "context": "extract A clearly limited"
+      },
+      "source_chunk_ids": [
+        "66677cce409c7d5cf64a033591478a05"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "Compound",
+      "name": "endotoxin",
+      "attributes": {
+        "context": "endotoxin-induced cytokine production"
+      },
+      "source_chunk_ids": [
+        "66677cce409c7d5cf64a033591478a05"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "PharmEffect",
+      "name": "limited cytokine production",
+      "attributes": {
+        "context": "clearly limited endotoxin-induced cytokine production"
+      },
+      "source_chunk_ids": [
+        "66677cce409c7d5cf64a033591478a05"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "PharmEffect",
+      "name": "cytoprotective effects",
+      "attributes": {
+        "context": "observed cytoprotective effects of extract A"
+      },
+      "source_chunk_ids": [
+        "66677cce409c7d5cf64a033591478a05"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "PharmEffect",
+      "name": "antioxidant capacity",
+      "attributes": {
+        "context": "Assessment of antioxidant capacity"
+      },
+      "source_chunk_ids": [
+        "252f4130ee08a06d03a215ccafeacb99"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "Compound",
+      "name": "polyphenol",
+      "attributes": {
+        "context": "total polyphenol content"
+      },
+      "source_chunk_ids": [
+        "252f4130ee08a06d03a215ccafeacb99"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "Compound",
+      "name": "Gallic Acid",
+      "attributes": {
+        "context": "mg GA equivalents"
+      },
+      "source_chunk_ids": [
+        "252f4130ee08a06d03a215ccafeacb99"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "Concentration",
+      "name": "~0.01 mg GA equivalents/mg extract",
+      "attributes": {
+        "context": "Extract A (~0.01)"
+      },
+      "source_chunk_ids": [
+        "252f4130ee08a06d03a215ccafeacb99"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "Concentration",
+      "name": "~0.21 mg GA equivalents/mg extract",
+      "attributes": {
+        "context": "Extract B (~0.21)"
+      },
+      "source_chunk_ids": [
+        "252f4130ee08a06d03a215ccafeacb99"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "Compound",
+      "name": "DPPH",
+      "attributes": {
+        "context": "% DPPH inhibition"
+      },
+      "source_chunk_ids": [
+        "252f4130ee08a06d03a215ccafeacb99"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "PharmEffect",
+      "name": "DPPH inhibition",
+      "attributes": {
+        "context": "% DPPH inhibition"
+      },
+      "source_chunk_ids": [
+        "252f4130ee08a06d03a215ccafeacb99"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "Compound",
+      "name": "Ascorbic acid",
+      "attributes": {
+        "context": "and Ascorbic acid"
+      },
+      "source_chunk_ids": [
+        "252f4130ee08a06d03a215ccafeacb99"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "PharmEffect",
+      "name": "mitochondrial reductive capacity",
+      "attributes": {
+        "context": "mitochondrial reductive capacity"
+      },
+      "source_chunk_ids": [
+        "252f4130ee08a06d03a215ccafeacb99"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "Concentration",
+      "name": "0 mg/ml",
+      "attributes": {
+        "context": "Extract A (0, 0.01, 1 mg/ml)"
+      },
+      "source_chunk_ids": [
+        "252f4130ee08a06d03a215ccafeacb99"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "Concentration",
+      "name": "0.01 mg/ml",
+      "attributes": {
+        "context": "Extract A (0, 0.01, 1 mg/ml)"
+      },
+      "source_chunk_ids": [
+        "252f4130ee08a06d03a215ccafeacb99"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "Concentration",
+      "name": "1 mg/ml",
+      "attributes": {
+        "context": "Extract A (0, 0.01, 1 mg/ml)"
+      },
+      "source_chunk_ids": [
+        "252f4130ee08a06d03a215ccafeacb99"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "Compound",
+      "name": "LPS",
+      "attributes": {
+        "context": "with and without LPS"
+      },
+      "source_chunk_ids": [
+        "252f4130ee08a06d03a215ccafeacb99"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "Concentration",
+      "name": "0.037 mg/ml",
+      "attributes": {
+        "context": "Extract B (0, 0.037, 0.37, 3.7 mg/ml)"
+      },
+      "source_chunk_ids": [
+        "252f4130ee08a06d03a215ccafeacb99"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "Concentration",
+      "name": "0.37 mg/ml",
+      "attributes": {
+        "context": "Extract B (0, 0.037, 0.37, 3.7 mg/ml)"
+      },
+      "source_chunk_ids": [
+        "252f4130ee08a06d03a215ccafeacb99"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "Concentration",
+      "name": "3.7 mg/ml",
+      "attributes": {
+        "context": "Extract B (0, 0.037, 0.37, 3.7 mg/ml)"
+      },
+      "source_chunk_ids": [
+        "252f4130ee08a06d03a215ccafeacb99"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "PharmEffect",
+      "name": "antioxidant capacity",
+      "attributes": {
+        "context": "Assessment of antioxidant capacity"
+      },
+      "source_chunk_ids": [
+        "a64f98d096b2fbefb9f0a3eebef030d7"
+      ]
+    },
+    {
+      "id": "ent_071",
+      "type": "Compound",
+      "name": "polyphenol",
+      "attributes": {
+        "context": "Total polyphenol content"
+      },
+      "source_chunk_ids": [
+        "a64f98d096b2fbefb9f0a3eebef030d7"
+      ]
+    },
+    {
+      "id": "ent_072",
+      "type": "Compound",
+      "name": "gallic acid",
+      "attributes": {
+        "context": "expressed as gallic acid (GA) equivalents"
+      },
+      "source_chunk_ids": [
+        "a64f98d096b2fbefb9f0a3eebef030d7"
+      ]
+    },
+    {
+      "id": "ent_073",
+      "type": "PharmEffect",
+      "name": "Antioxidant capacity",
+      "attributes": {
+        "context": "Antioxidant capacity of extracts"
+      },
+      "source_chunk_ids": [
+        "a64f98d096b2fbefb9f0a3eebef030d7"
+      ]
+    },
+    {
+      "id": "ent_074",
+      "type": "Compound",
+      "name": "ascorbic acid",
+      "attributes": {
+        "context": "compared to ascorbic acid"
+      },
+      "source_chunk_ids": [
+        "a64f98d096b2fbefb9f0a3eebef030d7"
+      ]
+    },
+    {
+      "id": "ent_075",
+      "type": "PharmEffect",
+      "name": "reductive capacity",
+      "attributes": {
+        "context": "mitochondrial reductive capacity"
+      },
+      "source_chunk_ids": [
+        "a64f98d096b2fbefb9f0a3eebef030d7"
+      ]
+    },
+    {
+      "id": "ent_076",
+      "type": "Compound",
+      "name": "extract B",
+      "attributes": {
+        "context": "extract B treatment"
+      },
+      "source_chunk_ids": [
+        "5800da6f01efc1b8a463261dfd66d2c9"
+      ]
+    },
+    {
+      "id": "ent_077",
+      "type": "PharmEffect",
+      "name": "cytotoxicity",
+      "attributes": {
+        "context": "contributed to cytotoxicity"
+      },
+      "source_chunk_ids": [
+        "5800da6f01efc1b8a463261dfd66d2c9"
+      ]
+    },
+    {
+      "id": "ent_078",
+      "type": "Indication",
+      "name": "inflammatory stressor",
+      "attributes": {
+        "context": "in the presence of an inflammatory stressor"
+      },
+      "source_chunk_ids": [
+        "5800da6f01efc1b8a463261dfd66d2c9"
+      ]
+    },
+    {
+      "id": "ent_079",
+      "type": "Concentration",
+      "name": "higher doses",
+      "attributes": {
+        "context": "the higher doses of this extract"
+      },
+      "source_chunk_ids": [
+        "5800da6f01efc1b8a463261dfd66d2c9"
+      ]
+    },
+    {
+      "id": "ent_080",
+      "type": "PharmEffect",
+      "name": "antioxidant properties",
+      "attributes": {
+        "context": "indicated antioxidant properties of extract B"
+      },
+      "source_chunk_ids": [
+        "7cb88a889bf138c42347787a55ab64e6"
+      ]
+    },
+    {
+      "id": "ent_081",
+      "type": "Concentration",
+      "name": "highest dose",
+      "attributes": {
+        "context": "exposure to the highest dose of this extract"
+      },
+      "source_chunk_ids": [
+        "7cb88a889bf138c42347787a55ab64e6"
+      ]
+    },
+    {
+      "id": "ent_082",
+      "type": "Compound",
+      "name": "Bacterial LPS",
+      "attributes": {
+        "context": "Bacterial LPS exposure caused significant mitotoxicity"
+      },
+      "source_chunk_ids": [
+        "7cb88a889bf138c42347787a55ab64e6"
+      ]
+    },
+    {
+      "id": "ent_083",
+      "type": "PharmEffect",
+      "name": "mitotoxicity",
+      "attributes": {
+        "context": "caused significant mitotoxicity"
+      },
+      "source_chunk_ids": [
+        "7cb88a889bf138c42347787a55ab64e6"
+      ]
+    },
+    {
+      "id": "ent_084",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "context": "addition of either Sceletium extract"
+      },
+      "source_chunk_ids": [
+        "7cb88a889bf138c42347787a55ab64e6"
+      ]
+    },
+    {
+      "id": "ent_085",
+      "type": "Indication",
+      "name": "low-grade inflammation",
+      "attributes": {
+        "context": "settings of low-grade inflammation"
+      },
+      "source_chunk_ids": [
+        "7cb88a889bf138c42347787a55ab64e6"
+      ]
+    },
+    {
+      "id": "ent_086",
+      "type": "Indication",
+      "name": "chronic disease",
+      "attributes": {
+        "context": "such as chronic disease"
+      },
+      "source_chunk_ids": [
+        "7cb88a889bf138c42347787a55ab64e6"
+      ]
+    },
+    {
+      "id": "ent_087",
+      "type": "Indication",
+      "name": "high-grade inflammation",
+      "attributes": {
+        "context": "acute bout of high-grade inflammation"
+      },
+      "source_chunk_ids": [
+        "7cb88a889bf138c42347787a55ab64e6"
+      ]
+    },
+    {
+      "id": "ent_088",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "Sceletium tortuosum extract"
+      },
+      "source_chunk_ids": [
+        "4ca6102d74ead5450c184510828a72a1"
+      ]
+    },
+    {
+      "id": "ent_089",
+      "type": "PharmEffect",
+      "name": "beneficial effects",
+      "attributes": {
+        "context": "exert more beneficial effects"
+      },
+      "source_chunk_ids": [
+        "4ca6102d74ead5450c184510828a72a1"
+      ]
+    },
+    {
+      "id": "ent_090",
+      "type": "Concentration",
+      "name": "broad range of doses",
+      "attributes": {
+        "context": "at a broad range of doses"
+      },
+      "source_chunk_ids": [
+        "4ca6102d74ead5450c184510828a72a1"
+      ]
+    },
+    {
+      "id": "ent_091",
+      "type": "Indication",
+      "name": "chronic disease",
+      "attributes": {
+        "context": "setting of chronic disease"
+      },
+      "source_chunk_ids": [
+        "4ca6102d74ead5450c184510828a72a1"
+      ]
+    },
+    {
+      "id": "ent_092",
+      "type": "Indication",
+      "name": "chronic disease-associated neurodegeneration",
+      "attributes": {
+        "context": "prevention of chronic disease-associated neurodegeneration"
+      },
+      "source_chunk_ids": [
+        "4ca6102d74ead5450c184510828a72a1"
+      ]
+    },
+    {
+      "id": "ent_093",
+      "type": "Indication",
+      "name": "oxidative stress",
+      "attributes": {
+        "context": "where oxidative stress is both an etiological and comorbid factor"
+      },
+      "source_chunk_ids": [
+        "4ca6102d74ead5450c184510828a72a1"
+      ]
+    },
+    {
+      "id": "ent_094",
+      "type": "PharmEffect",
+      "name": "antioxidant",
+      "attributes": {
+        "context": "much more potent antioxidant product"
+      },
+      "source_chunk_ids": [
+        "4ca6102d74ead5450c184510828a72a1"
+      ]
+    },
+    {
+      "id": "ent_095",
+      "type": "Concentration",
+      "name": "specific, low doses",
+      "attributes": {
+        "context": "administered at specific, low doses"
+      },
+      "source_chunk_ids": [
+        "4ca6102d74ead5450c184510828a72a1"
+      ]
+    },
+    {
+      "id": "ent_096",
+      "type": "PharmEffect",
+      "name": "pro-oxidant damage",
+      "attributes": {
+        "context": "minimising undesired pro-oxidant damage"
+      },
+      "source_chunk_ids": [
+        "4ca6102d74ead5450c184510828a72a1"
+      ]
+    },
+    {
+      "id": "ent_097",
+      "type": "PharmEffect",
+      "name": "inflammation limitation",
+      "attributes": {
+        "context": "limiting inflammation"
+      },
+      "source_chunk_ids": [
+        "9687d152d9df0565049721731cdf629c"
+      ]
+    },
+    {
+      "id": "ent_098",
+      "type": "PharmEffect",
+      "name": "oxidative stress reduction",
+      "attributes": {
+        "context": "limiting ... oxidative stress"
+      },
+      "source_chunk_ids": [
+        "9687d152d9df0565049721731cdf629c"
+      ]
+    },
+    {
+      "id": "ent_099",
+      "type": "PharmEffect",
+      "name": "rate-limiting effect",
+      "attributes": {
+        "context": "achieve a rate-limiting effect"
+      },
+      "source_chunk_ids": [
+        "9687d152d9df0565049721731cdf629c"
+      ]
+    },
+    {
+      "id": "ent_100",
+      "type": "Indication",
+      "name": "chronic disease",
+      "attributes": {
+        "context": "effect on chronic disease"
+      },
+      "source_chunk_ids": [
+        "9687d152d9df0565049721731cdf629c"
+      ]
+    },
+    {
+      "id": "ent_101",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "context": "effects of Sceletium extracts"
+      },
+      "source_chunk_ids": [
+        "586560bdaca19c12c589752a90d4ee5b"
+      ]
+    },
+    {
+      "id": "ent_102",
+      "type": "Compound",
+      "name": "alkaloids",
+      "attributes": {
+        "context": "its isolated pure alkaloids"
+      },
+      "source_chunk_ids": [
+        "586560bdaca19c12c589752a90d4ee5b"
+      ]
+    },
+    {
+      "id": "ent_103",
+      "type": "Indication",
+      "name": "chronic lifestyle diseases",
+      "attributes": {
+        "context": "setting of chronic lifestyle diseases"
+      },
+      "source_chunk_ids": [
+        "586560bdaca19c12c589752a90d4ee5b"
+      ]
+    },
+    {
+      "id": "ent_104",
+      "type": "Indication",
+      "name": "type 2 diabetes",
+      "attributes": {
+        "context": "such as type 2 and type 3 diabetes"
+      },
+      "source_chunk_ids": [
+        "586560bdaca19c12c589752a90d4ee5b"
+      ]
+    },
+    {
+      "id": "ent_105",
+      "type": "Indication",
+      "name": "type 3 diabetes",
+      "attributes": {
+        "context": "such as type 2 and type 3 diabetes"
+      },
+      "source_chunk_ids": [
+        "586560bdaca19c12c589752a90d4ee5b"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:04.004892+00:00",
+    "original_file": "entities.json"
+  }
+}

@@ -1,0 +1,860 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "b37eda82c60338ce2d8608f191718bf94465d938d1dc7acfea9b59676375ea42",
+  "extracted_at": "2026-02-01T08:32:45.276645+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "PharmEffect",
+      "name": "Psychoactive",
+      "attributes": {
+        "context": "Psychoactive Plants"
+      },
+      "source_chunk_ids": [
+        "89b3baa710c2dd99d12844d46d7d09b7"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Compound",
+      "name": "narcotics",
+      "attributes": {
+        "context": "seventeen plant narcotics and their potential psychoactive chemistries"
+      },
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "potential psychoactive chemistries"
+      },
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "Taxon",
+      "name": "plant narcotics",
+      "attributes": {
+        "context": "seventeen plant narcotics"
+      },
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "Compound",
+      "name": "narcotic",
+      "attributes": {
+        "context": "thirty narcotic plants"
+      },
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "Taxon",
+      "name": "narcotic plants",
+      "attributes": {
+        "context": "thirty narcotic plants"
+      },
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "PharmEffect",
+      "name": "psychopharmacological",
+      "attributes": {
+        "context": "beginnings of psychopharmacological research"
+      },
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "psychopharmacological research on psychoactive plants"
+      },
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "Taxon",
+      "name": "psychoactive plants",
+      "attributes": {
+        "context": "psychopharmacological research on psychoactive plants"
+      },
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "Compound",
+      "name": "mescaline",
+      "attributes": {
+        "context": "identified mescaline from the peyote cactus"
+      },
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "Taxon",
+      "name": "Lophophora williamsii",
+      "attributes": {
+        "context": "peyote cactus Lophophora williamsii"
+      },
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "PharmEffect",
+      "name": "psychedelic",
+      "attributes": {
+        "context": "naturally occurring psychedelic substance"
+      },
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "Compound",
+      "name": "psychedelic substance",
+      "attributes": {
+        "context": "naturally occurring psychedelic substance in pure form"
+      },
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "PharmEffect",
+      "name": "pharmacological",
+      "attributes": {
+        "context": "advancement of the pharmacological study"
+      },
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "pharmacological study of psychoactive plants"
+      },
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "Taxon",
+      "name": "psychoactive plants",
+      "attributes": {
+        "context": "pharmacological study of psychoactive plants"
+      },
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "Compound",
+      "name": "mescaline",
+      "attributes": {
+        "context": "mechanisms of mescaline"
+      },
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "PharmEffect",
+      "name": "visions",
+      "attributes": {
+        "context": "duced visions"
+      },
+      "source_chunk_ids": [
+        "38a6fb0c3d59c19373484e90cc345177"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "New World psychoactive plants"
+      },
+      "source_chunk_ids": [
+        "38a6fb0c3d59c19373484e90cc345177"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "South American psychoactive plants"
+      },
+      "source_chunk_ids": [
+        "38a6fb0c3d59c19373484e90cc345177"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "chemistry of psychoactive plants"
+      },
+      "source_chunk_ids": [
+        "38a6fb0c3d59c19373484e90cc345177"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "psychoactive plant use research"
+      },
+      "source_chunk_ids": [
+        "38a6fb0c3d59c19373484e90cc345177"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "Taxon",
+      "name": "psychoactive plants",
+      "attributes": {
+        "context": "relatively few psychoactive plants of cultural importance"
+      },
+      "source_chunk_ids": [
+        "744acd97c8852f5f26d0c1d4eff07767"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "relatively few psychoactive plants of cultural importance"
+      },
+      "source_chunk_ids": [
+        "744acd97c8852f5f26d0c1d4eff07767"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "focusing on psychoactive plant use"
+      },
+      "source_chunk_ids": [
+        "744acd97c8852f5f26d0c1d4eff07767"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "Taxon",
+      "name": "psychoactive flora",
+      "attributes": {
+        "context": "region's psychoactive flora"
+      },
+      "source_chunk_ids": [
+        "744acd97c8852f5f26d0c1d4eff07767"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "region's psychoactive flora"
+      },
+      "source_chunk_ids": [
+        "744acd97c8852f5f26d0c1d4eff07767"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "PharmEffect",
+      "name": "psychoactive effects",
+      "attributes": {
+        "context": "more subtle psychoactive effects of traditional plants medicines"
+      },
+      "source_chunk_ids": [
+        "744acd97c8852f5f26d0c1d4eff07767"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "Taxon",
+      "name": "traditional plants medicines",
+      "attributes": {
+        "context": "subtle psychoactive effects of traditional plants medicines"
+      },
+      "source_chunk_ids": [
+        "744acd97c8852f5f26d0c1d4eff07767"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "PharmEffect",
+      "name": "psychoactive plant use",
+      "attributes": {
+        "context": "concerning psychoactive plant use"
+      },
+      "source_chunk_ids": [
+        "744acd97c8852f5f26d0c1d4eff07767"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "Taxon",
+      "name": "traditional medicine",
+      "attributes": {
+        "context": "African traditional medicine concepts"
+      },
+      "source_chunk_ids": [
+        "744acd97c8852f5f26d0c1d4eff07767"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "Taxon",
+      "name": "medicinal plants",
+      "attributes": {
+        "context": "focused on medicinal plants (16 %)"
+      },
+      "source_chunk_ids": [
+        "744acd97c8852f5f26d0c1d4eff07767"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "Concentration",
+      "name": "16 %",
+      "attributes": {
+        "context": "medicinal plants (16 %)"
+      },
+      "source_chunk_ids": [
+        "744acd97c8852f5f26d0c1d4eff07767"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "Taxon",
+      "name": "food plants",
+      "attributes": {
+        "context": "and food plants (20 %)"
+      },
+      "source_chunk_ids": [
+        "744acd97c8852f5f26d0c1d4eff07767"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "Concentration",
+      "name": "20 %",
+      "attributes": {
+        "context": "food plants (20 %)"
+      },
+      "source_chunk_ids": [
+        "744acd97c8852f5f26d0c1d4eff07767"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Concentration",
+      "name": "7 %",
+      "attributes": {
+        "context": "only a few (7 %) relating to the category 'Magic, ritual and customs'"
+      },
+      "source_chunk_ids": [
+        "744acd97c8852f5f26d0c1d4eff07767"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "Taxon",
+      "name": "plant species",
+      "attributes": {
+        "context": "rich in plant species with reported psychoactive uses and effects"
+      },
+      "source_chunk_ids": [
+        "744acd97c8852f5f26d0c1d4eff07767"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "PharmEffect",
+      "name": "psychoactive uses and effects",
+      "attributes": {
+        "context": "reported psychoactive uses and effects"
+      },
+      "source_chunk_ids": [
+        "744acd97c8852f5f26d0c1d4eff07767"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "Taxon",
+      "name": "species of plants",
+      "attributes": {
+        "context": "300 species of plants that are reported as having psychoactive uses"
+      },
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "PharmEffect",
+      "name": "psychoactive uses",
+      "attributes": {
+        "context": "reported as having psychoactive uses in traditional southern African healing practices"
+      },
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "Indication",
+      "name": "insomnia",
+      "attributes": {
+        "context": "treating conditions such as insomnia"
+      },
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "Indication",
+      "name": "epilepsy",
+      "attributes": {
+        "context": "to convulsive conditions such as epilepsy"
+      },
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "Taxon",
+      "name": "psychoactive plants",
+      "attributes": {
+        "context": "role that psychoactive plants have in the traditional spiritual practices"
+      },
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "role that psychoactive plants have"
+      },
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "Taxon",
+      "name": "plants",
+      "attributes": {
+        "context": "southern Africa is poor in plants with psychoactive uses and properties"
+      },
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "PharmEffect",
+      "name": "psychoactive uses and properties",
+      "attributes": {
+        "context": "plants with psychoactive uses and properties"
+      },
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "Taxon",
+      "name": "psychoactive plants",
+      "attributes": {
+        "context": "role of psychoactive plants in San rock art"
+      },
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "role of psychoactive plants in San rock art"
+      },
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "classification of psychoactive plants"
+      },
+      "source_chunk_ids": [
+        "c096276440d9895881a7119e0fdc4754"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "PharmEffect",
+      "name": "toxic",
+      "attributes": {
+        "context": "difficult to distinguish between toxic and non-toxic psychoactive plants."
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "PharmEffect",
+      "name": "non-toxic",
+      "attributes": {
+        "context": "difficult to distinguish between toxic and non-toxic psychoactive plants."
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "toxic and non-toxic psychoactive plants."
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "Taxon",
+      "name": "plants",
+      "attributes": {
+        "context": "toxic and non-toxic psychoactive plants."
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "the psychoactive pharmacology of medicinal plants"
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "Taxon",
+      "name": "medicinal plants",
+      "attributes": {
+        "context": "the psychoactive pharmacology of medicinal plants"
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "Taxon",
+      "name": "African plants",
+      "attributes": {
+        "context": "review paper on African plants potentially useful for mental health."
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "Indication",
+      "name": "mental health",
+      "attributes": {
+        "context": "useful for mental health."
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "research on psychoactive plants from southern Africa"
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "Taxon",
+      "name": "psychoactive plants",
+      "attributes": {
+        "context": "research on psychoactive plants from southern Africa"
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "scarcity of studies on southern African psychoactive plants"
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "Taxon",
+      "name": "southern African psychoactive plants",
+      "attributes": {
+        "context": "scarcity of studies on southern African psychoactive plants"
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "a popular southern African psychoactive plant, Sceletium tortuosum"
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum (L.) N.E.Br.",
+      "attributes": {
+        "context": "southern African psychoactive plant, Sceletium tortuosum (L.) N.E.Br."
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "this important Southern African psychoactive plant"
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "Taxon",
+      "name": "Southern African psychoactive plant",
+      "attributes": {
+        "context": "this important Southern African psychoactive plant"
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "Taxon",
+      "name": "psychoactive plants",
+      "attributes": {
+        "context": "studies on psychoactive plants from southern Africa"
+      },
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "PharmEffect",
+      "name": "psychoactive drugs",
+      "attributes": {
+        "context": "developing new classes of psychoactive drugs from these plants"
+      },
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "Taxon",
+      "name": "psychoactive plant medicines",
+      "attributes": {
+        "context": "use of psychoactive plant medicines in southern Africa"
+      },
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "Indication",
+      "name": "mental illness",
+      "attributes": {
+        "context": "contemporary treatment of mental illness"
+      },
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "Taxon",
+      "name": "psychoactive traditional medicines",
+      "attributes": {
+        "context": "ritual uses of psychoactive traditional medicines"
+      },
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ]
+    },
+    {
+      "id": "ent_071",
+      "type": "Indication",
+      "name": "mental illness",
+      "attributes": {
+        "context": "indigenous cultural understandings of mental illness"
+      },
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ]
+    },
+    {
+      "id": "ent_072",
+      "type": "Taxon",
+      "name": "psychoactive medicines",
+      "attributes": {
+        "context": "understandings of mental illness and psychoactive medicines"
+      },
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ]
+    },
+    {
+      "id": "ent_073",
+      "type": "Taxon",
+      "name": "psychoactive plant species",
+      "attributes": {
+        "context": "effects of various psychoactive plant species used in traditional formulas"
+      },
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ]
+    },
+    {
+      "id": "ent_074",
+      "type": "Taxon",
+      "name": "psychoactive plants",
+      "attributes": {
+        "context": "role of psychoactive plants in facilitating trance states"
+      },
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ]
+    },
+    {
+      "id": "ent_075",
+      "type": "PharmEffect",
+      "name": "trance states",
+      "attributes": {
+        "context": "facilitating trance states and divination"
+      },
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ]
+    },
+    {
+      "id": "ent_076",
+      "type": "Taxon",
+      "name": "southern African psychoactive plants",
+      "attributes": {
+        "context": "folklore and mythology surrounding southern African psychoactive plants"
+      },
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ]
+    },
+    {
+      "id": "ent_077",
+      "type": "Taxon",
+      "name": "African medicinal plants",
+      "attributes": {
+        "context": "literature available on African medicinal plants"
+      },
+      "source_chunk_ids": [
+        "6e839a764058437f4f5eafbf509ff8b3"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:03.933533+00:00",
+    "original_file": "entities.json"
+  }
+}

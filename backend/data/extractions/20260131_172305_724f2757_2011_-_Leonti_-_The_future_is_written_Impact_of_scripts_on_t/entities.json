@@ -1,0 +1,1531 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "57592faf6d7c193945b54872e1eaa321680b95918edb2c6c249d69eb7246a5cc",
+  "extracted_at": "2026-02-01T08:22:48.992375+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "Taxon",
+      "name": "tree",
+      "attributes": {
+        "context": "showing a green background with a tree"
+      },
+      "source_chunk_ids": [
+        "8e20f1b61ca24e9edfa32d0e0d54a2e4"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "PharmEffect",
+      "name": "psychotherapy",
+      "attributes": {
+        "context": "homeopathy is just a larvate form of psychotherapy"
+      },
+      "source_chunk_ids": [
+        "4af14a34e5af123192444e0c1415d51e"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "PharmEffect",
+      "name": "therapeutic effect",
+      "attributes": {
+        "context": "the only therapeutic effect is that of the \u201cmeaning response\u201d"
+      },
+      "source_chunk_ids": [
+        "4af14a34e5af123192444e0c1415d51e"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "PharmEffect",
+      "name": "meaning response",
+      "attributes": {
+        "context": "effect is that of the \u201cmeaning response\u201d"
+      },
+      "source_chunk_ids": [
+        "4af14a34e5af123192444e0c1415d51e"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "PharmEffect",
+      "name": "placebo effect",
+      "attributes": {
+        "context": "or \u201cplacebo effect\u201d"
+      },
+      "source_chunk_ids": [
+        "4af14a34e5af123192444e0c1415d51e"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "Taxon",
+      "name": "immunostimulating plants",
+      "attributes": {
+        "context": "apparently immunostimulating plants"
+      },
+      "source_chunk_ids": [
+        "4af14a34e5af123192444e0c1415d51e"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "PharmEffect",
+      "name": "immunostimulating",
+      "attributes": {
+        "context": "apparently immunostimulating plants"
+      },
+      "source_chunk_ids": [
+        "4af14a34e5af123192444e0c1415d51e"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Indication",
+      "name": "under nourishment",
+      "attributes": {
+        "context": "problems like under nourishment"
+      },
+      "source_chunk_ids": [
+        "25b0d08570b4090db4d8992e5d23a3e8"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "Indication",
+      "name": "diabetes",
+      "attributes": {
+        "context": "unreliable water supply, diabetes"
+      },
+      "source_chunk_ids": [
+        "25b0d08570b4090db4d8992e5d23a3e8"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "Indication",
+      "name": "tuberculosis",
+      "attributes": {
+        "context": "diabetes, tuberculosis, AIDS"
+      },
+      "source_chunk_ids": [
+        "25b0d08570b4090db4d8992e5d23a3e8"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "Indication",
+      "name": "AIDS",
+      "attributes": {
+        "context": "tuberculosis, AIDS and drug abuse"
+      },
+      "source_chunk_ids": [
+        "25b0d08570b4090db4d8992e5d23a3e8"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "Indication",
+      "name": "drug abuse",
+      "attributes": {
+        "context": "AIDS and drug abuse"
+      },
+      "source_chunk_ids": [
+        "25b0d08570b4090db4d8992e5d23a3e8"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "PharmEffect",
+      "name": "curative properties",
+      "attributes": {
+        "context": "recognition of the curative properties of medicinal plants"
+      },
+      "source_chunk_ids": [
+        "9a3e8e5e94ca0fd4a5d3e7de1d0b07af"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "Indication",
+      "name": "illness",
+      "attributes": {
+        "context": "a specific illness struck"
+      },
+      "source_chunk_ids": [
+        "be5577904657c34de9032ef539691a44"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "Indication",
+      "name": "disease",
+      "attributes": {
+        "context": "gives rise to disease theory systems"
+      },
+      "source_chunk_ids": [
+        "be5577904657c34de9032ef539691a44"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "Indication",
+      "name": "Fever",
+      "attributes": {
+        "context": "FEV7"
+      },
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "Indication",
+      "name": "Fever",
+      "attributes": {
+        "context": "FEV5"
+      },
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "Indication",
+      "name": "fever",
+      "attributes": {
+        "context": "less frequent use categories ... \u201cfever\u201d receive proportionally more importance"
+      },
+      "source_chunk_ids": [
+        "026d38e42901358a47e64ef793df4c69"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "Taxon",
+      "name": "Ruta spp.",
+      "attributes": {
+        "context": "e.g. Ruta spp. and Plantago spp."
+      },
+      "source_chunk_ids": [
+        "b35f24258d55b1f33b296ee891e254da"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "Taxon",
+      "name": "Plantago spp.",
+      "attributes": {
+        "context": "e.g. Ruta spp. and Plantago spp."
+      },
+      "source_chunk_ids": [
+        "b35f24258d55b1f33b296ee891e254da"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "Indication",
+      "name": "diseases",
+      "attributes": {
+        "context": "whole range of diseases and symptoms"
+      },
+      "source_chunk_ids": [
+        "b35f24258d55b1f33b296ee891e254da"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "Indication",
+      "name": "symptoms",
+      "attributes": {
+        "context": "whole range of diseases and symptoms"
+      },
+      "source_chunk_ids": [
+        "b35f24258d55b1f33b296ee891e254da"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "PharmEffect",
+      "name": "pharmacological mechanisms",
+      "attributes": {
+        "context": "information on pharmacological mechanisms"
+      },
+      "source_chunk_ids": [
+        "b35f24258d55b1f33b296ee891e254da"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "PharmEffect",
+      "name": "phytopharmaceutic potentials",
+      "attributes": {
+        "context": "phytopharmaceutic potentials"
+      },
+      "source_chunk_ids": [
+        "b35f24258d55b1f33b296ee891e254da"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "Indication",
+      "name": "ailment groups",
+      "attributes": {
+        "context": "corresponding to ailment groups"
+      },
+      "source_chunk_ids": [
+        "b35f24258d55b1f33b296ee891e254da"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "Taxon",
+      "name": "medicinal plants",
+      "attributes": {
+        "context": "importance of medicinal plants"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "Indication",
+      "name": "fever",
+      "attributes": {
+        "context": "use categories \u201cnose\u201d, \u201ceye\u201d, \u201cear\u201d as well as \u201cfever\u201d"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "Indication",
+      "name": "ailments",
+      "attributes": {
+        "context": "connected with more common ailments"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "Indication",
+      "name": "diseases",
+      "attributes": {
+        "context": "prevalence and virulence of diseases"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "Taxon",
+      "name": "Dipsacus fullonum L.",
+      "attributes": {
+        "context": "Dipsacus fullonum L. (Dipsacaceae)) against malaria"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "Indication",
+      "name": "malaria",
+      "attributes": {
+        "context": "against malaria and intermittent fever"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "Indication",
+      "name": "intermittent fever",
+      "attributes": {
+        "context": "against malaria and intermittent fever"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "Indication",
+      "name": "malaria",
+      "attributes": {
+        "context": "indicated against malaria in the German herbals"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "Compound",
+      "name": "oil of Anethum graveolens L.",
+      "attributes": {
+        "context": "exception of the oil of Anethum graveolens L. (Apiaceae)"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "Taxon",
+      "name": "Anethum graveolens L.",
+      "attributes": {
+        "context": "oil of Anethum graveolens L. (Apiaceae)"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Taxon",
+      "name": "Portulaca oleracea L.",
+      "attributes": {
+        "context": "Portulaca oleracea L. (Portulacaceae)"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "Taxon",
+      "name": "Portulaca oleracea L.",
+      "attributes": {
+        "context": "While Portulaca oleracea, is indicated against malaria"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "Indication",
+      "name": "malaria",
+      "attributes": {
+        "context": "Portulaca oleracea, is indicated against malaria"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "Indication",
+      "name": "fevers",
+      "attributes": {
+        "context": "indicated against all kind of fevers"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "Taxon",
+      "name": "Portulaca oleracea L.",
+      "attributes": {
+        "context": "Portulaca oleracea is indicated against fever"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "Indication",
+      "name": "fever",
+      "attributes": {
+        "context": "indicated against fever and fervid afflictions"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "Indication",
+      "name": "fervid afflictions",
+      "attributes": {
+        "context": "against fever and fervid afflictions"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "Indication",
+      "name": "fever",
+      "attributes": {
+        "context": "indicated against fever by Dioscorides"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "Taxon",
+      "name": "Anethum graveolens L.",
+      "attributes": {
+        "context": "only Anethum graveolens, Bupleurum sp."
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "Taxon",
+      "name": "Bupleurum sp.",
+      "attributes": {
+        "context": "Bupleurum sp., Opopanax chironium W.D.J. Koch"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "Taxon",
+      "name": "Opopanax chironium W.D.J. Koch",
+      "attributes": {
+        "context": "Opopanax chironium W.D.J. Koch (all Apiaceae)"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "Taxon",
+      "name": "Phoenix dactylifera L.",
+      "attributes": {
+        "context": "Phoenix dactylifera L. (Arecaceae)"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "Taxon",
+      "name": "Aristolochia spp.",
+      "attributes": {
+        "context": "Aristolochia spp. (Aristolochiaceae)"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "Taxon",
+      "name": "Cucurbita pepo L.",
+      "attributes": {
+        "context": "Cucurbita pepo L. (Cucurbitaceae)"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "Taxon",
+      "name": "Portulaca oleracea L.",
+      "attributes": {
+        "context": "Cucurbita pepo L. (Cucurbitaceae) and Portulaca oleracea"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "Indication",
+      "name": "malaria",
+      "attributes": {
+        "context": "indicated against malaria in the German herbals"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "Indication",
+      "name": "fever",
+      "attributes": {
+        "context": "indications against fever for 15 taxa"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "Indication",
+      "name": "malaria",
+      "attributes": {
+        "context": "treatment of malaria in the German Renaissance herbals"
+      },
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "Taxon",
+      "name": "Aristolochia species",
+      "attributes": {
+        "context": "Different native Aristolochia species"
+      },
+      "source_chunk_ids": [
+        "d9adfe1b3806b90b7f5b92ced09dda9d"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "Taxon",
+      "name": "snake-root",
+      "attributes": {
+        "context": "Aristolochia species (snake-root)"
+      },
+      "source_chunk_ids": [
+        "d9adfe1b3806b90b7f5b92ced09dda9d"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "Indication",
+      "name": "snake-bites",
+      "attributes": {
+        "context": "to treat snake-bites"
+      },
+      "source_chunk_ids": [
+        "d9adfe1b3806b90b7f5b92ced09dda9d"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "Indication",
+      "name": "stomach-ache",
+      "attributes": {
+        "context": "and stomach-ache"
+      },
+      "source_chunk_ids": [
+        "d9adfe1b3806b90b7f5b92ced09dda9d"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "Taxon",
+      "name": "Aristolochia asclepiadifolia Brandegee",
+      "attributes": {
+        "context": "Aristolochia asclepiadifolia Brandegee"
+      },
+      "source_chunk_ids": [
+        "d9adfe1b3806b90b7f5b92ced09dda9d"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "Taxon",
+      "name": "Aristolochia ovalifolia Duch.",
+      "attributes": {
+        "context": "and Aristolochia ovalifolia Duch."
+      },
+      "source_chunk_ids": [
+        "d9adfe1b3806b90b7f5b92ced09dda9d"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "Taxon",
+      "name": "Aristolochia spp.",
+      "attributes": {
+        "context": "properties of Aristolochia spp."
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "PharmEffect",
+      "name": "bitter",
+      "attributes": {
+        "context": "perceived as bitter"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "PharmEffect",
+      "name": "hot",
+      "attributes": {
+        "context": "therefore \u201chot\u201d"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "Taxon",
+      "name": "Aristolochia spp.",
+      "attributes": {
+        "context": "three Aristolochia spp."
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "Indication",
+      "name": "pregnant women",
+      "attributes": {
+        "context": "for pregnant women"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "Indication",
+      "name": "menstrual problems",
+      "attributes": {
+        "context": "and menstrual problems"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "Indication",
+      "name": "venoms",
+      "attributes": {
+        "context": "against all kind of venoms"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "Indication",
+      "name": "snakes",
+      "attributes": {
+        "context": "species against snakes"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "Taxon",
+      "name": "Aristolochia spp.",
+      "attributes": {
+        "context": "indicates Aristolochia spp."
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "Indication",
+      "name": "respiratory problems",
+      "attributes": {
+        "context": "against respiratory problems"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "Indication",
+      "name": "hiccup",
+      "attributes": {
+        "context": "and hiccup"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_071",
+      "type": "Indication",
+      "name": "fevers",
+      "attributes": {
+        "context": "before fevers"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_072",
+      "type": "Indication",
+      "name": "spleen",
+      "attributes": {
+        "context": "the spleen"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_073",
+      "type": "Indication",
+      "name": "spasms",
+      "attributes": {
+        "context": "spasms"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_074",
+      "type": "Indication",
+      "name": "cutaneous ulcers",
+      "attributes": {
+        "context": "against cutaneous ulcers"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_075",
+      "type": "PharmEffect",
+      "name": "hot",
+      "attributes": {
+        "context": "the \u201chot\u201d properties of Aristolochia spp."
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_076",
+      "type": "Taxon",
+      "name": "Aristolochia spp.",
+      "attributes": {
+        "context": "properties of Aristolochia spp."
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_077",
+      "type": "Indication",
+      "name": "venoms",
+      "attributes": {
+        "context": "against venoms of any kind"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_078",
+      "type": "Taxon",
+      "name": "Aristolochia spp.",
+      "attributes": {
+        "context": "Aristolochia spp. are of worldwide importance"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_079",
+      "type": "Indication",
+      "name": "gastrointestinal problems",
+      "attributes": {
+        "context": "related to gastrointestinal problems"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_080",
+      "type": "Indication",
+      "name": "snakebites",
+      "attributes": {
+        "context": "and snakebites"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_081",
+      "type": "Taxon",
+      "name": "Aristolochia cf. consimilis Mast.",
+      "attributes": {
+        "context": "wood of Aristolochia cf. consimilis Mast."
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_082",
+      "type": "Indication",
+      "name": "menstrual pain",
+      "attributes": {
+        "context": "against menstrual pain"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_083",
+      "type": "PharmEffect",
+      "name": "bitter tonic",
+      "attributes": {
+        "context": "as a bitter tonic"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_084",
+      "type": "PharmEffect",
+      "name": "pharmacologic properties",
+      "attributes": {
+        "context": "specific pharmacologic properties"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_085",
+      "type": "Taxon",
+      "name": "Aristolochia genus",
+      "attributes": {
+        "context": "the Aristolochia genus"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_086",
+      "type": "PharmEffect",
+      "name": "nephrotoxic",
+      "attributes": {
+        "context": "nephrotoxic aristolochic acids"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_087",
+      "type": "Compound",
+      "name": "aristolochic acids",
+      "attributes": {
+        "context": "presence of nephrotoxic aristolochic acids"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_088",
+      "type": "PharmEffect",
+      "name": "toxicity",
+      "attributes": {
+        "context": "their toxicity remains undetected"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_089",
+      "type": "Taxon",
+      "name": "Aristolochia species",
+      "attributes": {
+        "context": "using Aristolochia species in herbal medicine"
+      },
+      "source_chunk_ids": [
+        "4a6b5089f17c77307b794db8132ac90a"
+      ]
+    },
+    {
+      "id": "ent_090",
+      "type": "Taxon",
+      "name": "Capsella bursa-pastoris",
+      "attributes": {
+        "context": "Capsella bursa-pastoris (L.) Medik. (shepherd's purse)"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_091",
+      "type": "Taxon",
+      "name": "Thlaspi",
+      "attributes": {
+        "context": "chapter on Thlaspi (Book II, Chapter 145)"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_092",
+      "type": "Taxon",
+      "name": "Capsella bursa-pastoris",
+      "attributes": {
+        "context": "Shepherd's purse is mentioned by Fuchs (1543)"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_093",
+      "type": "Indication",
+      "name": "nosebleed",
+      "attributes": {
+        "context": "indication that is nosebleed (Chapter 233)"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_094",
+      "type": "Taxon",
+      "name": "Capsella bursa-pastoris",
+      "attributes": {
+        "context": "Matthioli (1568) mention Capsella bursa-pastoris against blood fluxes"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_095",
+      "type": "Indication",
+      "name": "blood fluxes",
+      "attributes": {
+        "context": "against blood fluxes of all kinds"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_096",
+      "type": "Indication",
+      "name": "nosebleed",
+      "attributes": {
+        "context": "specific indication against nosebleed"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_097",
+      "type": "Indication",
+      "name": "bleeding",
+      "attributes": {
+        "context": "general indication against bleeding of all kinds"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_098",
+      "type": "Taxon",
+      "name": "medicinal plants",
+      "attributes": {
+        "context": "collect medicinal plants including Capsella bursa-pastoris"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_099",
+      "type": "Taxon",
+      "name": "Capsella bursa-pastoris",
+      "attributes": {
+        "context": "medicinal plants including Capsella bursa-pastoris"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_100",
+      "type": "Indication",
+      "name": "nosebleed",
+      "attributes": {
+        "context": "recommended by their teacher against nosebleed"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_101",
+      "type": "Taxon",
+      "name": "Capsella bursa-pastoris",
+      "attributes": {
+        "context": "Today shepherd's purse is considered a folkloristic element"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_102",
+      "type": "PharmEffect",
+      "name": "medicinal",
+      "attributes": {
+        "context": "obsolete medicinal herb"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_103",
+      "type": "PharmEffect",
+      "name": "cardiovascular",
+      "attributes": {
+        "context": "cardiovascular uses of garlic"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_104",
+      "type": "Taxon",
+      "name": "Allium sativum",
+      "attributes": {
+        "context": "cardiovascular uses of garlic as an example"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_105",
+      "type": "PharmEffect",
+      "name": "anti-depressive",
+      "attributes": {
+        "context": "anti-depressive indication of Hypericum spp."
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_106",
+      "type": "Taxon",
+      "name": "Hypericum spp.",
+      "attributes": {
+        "context": "anti-depressive indication of Hypericum spp. (St. Johns wort)"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_107",
+      "type": "Indication",
+      "name": "Melancholy",
+      "attributes": {
+        "context": "Melancholy as an indication for Hypericum spp."
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_108",
+      "type": "Taxon",
+      "name": "Hypericum spp.",
+      "attributes": {
+        "context": "Melancholy as an indication for Hypericum spp."
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_109",
+      "type": "Taxon",
+      "name": "Hypericum perforatum",
+      "attributes": {
+        "context": "M\u00fcller (1873, p. 292) mentions Hypericum perforatum L."
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_110",
+      "type": "Indication",
+      "name": "depressive moods",
+      "attributes": {
+        "context": "against depressive moods in the masculine gender"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_111",
+      "type": "Indication",
+      "name": "neurological disorders",
+      "attributes": {
+        "context": "uses related to neurological disorders for Hypericum spp."
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_112",
+      "type": "Taxon",
+      "name": "Hypericum spp.",
+      "attributes": {
+        "context": "neurological disorders for Hypericum spp."
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_113",
+      "type": "Indication",
+      "name": "epilepsy",
+      "attributes": {
+        "context": "epilepsy as an indication"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_114",
+      "type": "Taxon",
+      "name": "Hypericum spp.",
+      "attributes": {
+        "context": "16th century Hypericum spp. gained importance"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_115",
+      "type": "PharmEffect",
+      "name": "apotropaic",
+      "attributes": {
+        "context": "gained importance as an apotropaic (Czygan, 2003)"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_116",
+      "type": "PharmEffect",
+      "name": "antidepressant",
+      "attributes": {
+        "context": "antidepressant uses of Hypericum spp."
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_117",
+      "type": "Taxon",
+      "name": "Hypericum spp.",
+      "attributes": {
+        "context": "antidepressant uses of Hypericum spp."
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_118",
+      "type": "Indication",
+      "name": "depressive states",
+      "attributes": {
+        "context": "treatment of depressive states with hypericin"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_119",
+      "type": "Compound",
+      "name": "hypericin",
+      "attributes": {
+        "context": "depressive states with hypericin"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_120",
+      "type": "PharmEffect",
+      "name": "antidepressive",
+      "attributes": {
+        "context": "antidepressive effect of a standardized Hypericum extract"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_121",
+      "type": "Taxon",
+      "name": "Hypericum spp.",
+      "attributes": {
+        "context": "standardized Hypericum extract"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_122",
+      "type": "Taxon",
+      "name": "medicinal plants",
+      "attributes": {
+        "context": "ancient uses of medicinal plants"
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_123",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "surveying depression related uses of Hypericum spp."
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_124",
+      "type": "Taxon",
+      "name": "Hypericum spp.",
+      "attributes": {
+        "context": "depression related uses of Hypericum spp."
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ]
+    },
+    {
+      "id": "ent_125",
+      "type": "Taxon",
+      "name": "medicinal plants",
+      "attributes": {
+        "context": "The use of medicinal plants and natural product drugs"
+      },
+      "source_chunk_ids": [
+        "0682750cc00727d0b190206718f5fef4"
+      ]
+    },
+    {
+      "id": "ent_126",
+      "type": "Compound",
+      "name": "natural product drugs",
+      "attributes": {
+        "context": "natural product drugs is embedded"
+      },
+      "source_chunk_ids": [
+        "0682750cc00727d0b190206718f5fef4"
+      ]
+    },
+    {
+      "id": "ent_127",
+      "type": "PharmEffect",
+      "name": "pharmacological properties",
+      "attributes": {
+        "context": "pharmacological properties, the selection of medicinal plants"
+      },
+      "source_chunk_ids": [
+        "0682750cc00727d0b190206718f5fef4"
+      ]
+    },
+    {
+      "id": "ent_128",
+      "type": "Taxon",
+      "name": "plant",
+      "attributes": {
+        "context": "plant knowledge by text"
+      },
+      "source_chunk_ids": [
+        "0682750cc00727d0b190206718f5fef4"
+      ]
+    },
+    {
+      "id": "ent_129",
+      "type": "Compound",
+      "name": "materia medica",
+      "attributes": {
+        "context": "use of the materia medica in Dioscorides' work"
+      },
+      "source_chunk_ids": [
+        "0682750cc00727d0b190206718f5fef4"
+      ]
+    },
+    {
+      "id": "ent_130",
+      "type": "Taxon",
+      "name": "medicinal plant",
+      "attributes": {
+        "context": "on local medicinal plant use"
+      },
+      "source_chunk_ids": [
+        "0682750cc00727d0b190206718f5fef4"
+      ]
+    },
+    {
+      "id": "ent_131",
+      "type": "Taxon",
+      "name": "taxa",
+      "attributes": {
+        "context": "the analyzed taxa exert pharmacological activities"
+      },
+      "source_chunk_ids": [
+        "0682750cc00727d0b190206718f5fef4"
+      ]
+    },
+    {
+      "id": "ent_132",
+      "type": "PharmEffect",
+      "name": "pharmacological activities",
+      "attributes": {
+        "context": "exert pharmacological activities beyond the placebo effect"
+      },
+      "source_chunk_ids": [
+        "0682750cc00727d0b190206718f5fef4"
+      ]
+    },
+    {
+      "id": "ent_133",
+      "type": "PharmEffect",
+      "name": "placebo effect",
+      "attributes": {
+        "context": "activities beyond the placebo effect"
+      },
+      "source_chunk_ids": [
+        "0682750cc00727d0b190206718f5fef4"
+      ]
+    },
+    {
+      "id": "ent_134",
+      "type": "Taxon",
+      "name": "herbal pharmacopoeia",
+      "attributes": {
+        "context": "the Mediterranean herbal pharmacopoeia was conditioned"
+      },
+      "source_chunk_ids": [
+        "0682750cc00727d0b190206718f5fef4"
+      ]
+    },
+    {
+      "id": "ent_135",
+      "type": "Indication",
+      "name": "Malaria",
+      "attributes": {
+        "context": "Malaria in the renaissance"
+      },
+      "source_chunk_ids": [
+        "f326d66b6a9eefed841be978708f8d25"
+      ]
+    },
+    {
+      "id": "ent_136",
+      "type": "Taxon",
+      "name": "European herbs",
+      "attributes": {
+        "context": "Remedies from European herbs"
+      },
+      "source_chunk_ids": [
+        "f326d66b6a9eefed841be978708f8d25"
+      ]
+    },
+    {
+      "id": "ent_137",
+      "type": "Taxon",
+      "name": "Q'eqchi' Maya Medicinal Plants",
+      "attributes": {
+        "context": "Q'eqchi' Maya Medicinal Plants from Southern Belize"
+      },
+      "source_chunk_ids": [
+        "f326d66b6a9eefed841be978708f8d25"
+      ]
+    },
+    {
+      "id": "ent_138",
+      "type": "Taxon",
+      "name": "medicinal plant",
+      "attributes": {
+        "context": "The medicinal plant trade in Suriname"
+      },
+      "source_chunk_ids": [
+        "f326d66b6a9eefed841be978708f8d25"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:03.846709+00:00",
+    "original_file": "entities.json"
+  }
+}

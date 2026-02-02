@@ -1,0 +1,1806 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "0c02c901066f553ff48cbb0a6d75952358157d7eaea27ad992e46c93343d2681",
+  "extracted_at": "2026-02-01T08:11:46.966527+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "Indication",
+      "name": "Anxiety disorder",
+      "attributes": {
+        "context": "Keywords: Anxiety disorder"
+      },
+      "source_chunk_ids": [
+        "db6e8a21b1f5648058ca7262adc82957"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Indication",
+      "name": "Depression",
+      "attributes": {
+        "context": "Depression;"
+      },
+      "source_chunk_ids": [
+        "db6e8a21b1f5648058ca7262adc82957"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "Compound",
+      "name": "Monoamine oxidase",
+      "attributes": {
+        "context": "Monoamine oxidase;"
+      },
+      "source_chunk_ids": [
+        "db6e8a21b1f5648058ca7262adc82957"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "Indication",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "context": "Parkinson's disease;"
+      },
+      "source_chunk_ids": [
+        "db6e8a21b1f5648058ca7262adc82957"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "Taxon",
+      "name": "plant species",
+      "attributes": {
+        "context": "1020 plant species"
+      },
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "Concentration",
+      "name": "1020 plant species",
+      "attributes": {
+        "context": "from as many as 1020 plant species"
+      },
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "Indication",
+      "name": "mental health problems",
+      "attributes": {
+        "context": "treatment for mental health problems"
+      },
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Indication",
+      "name": "mental disease",
+      "attributes": {
+        "context": "treatment of mental disease"
+      },
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "Indication",
+      "name": "diseases",
+      "attributes": {
+        "context": "because these diseases"
+      },
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "Indication",
+      "name": "mental illnesses",
+      "attributes": {
+        "context": "numerous mental illnesses"
+      },
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "Indication",
+      "name": "disorders of the central nervous system",
+      "attributes": {
+        "context": "disorders of the central nervous system"
+      },
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "Indication",
+      "name": "anxiety",
+      "attributes": {
+        "context": "including anxiety"
+      },
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "Indication",
+      "name": "fits",
+      "attributes": {
+        "context": "anxiety, fits"
+      },
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "Indication",
+      "name": "convulsions",
+      "attributes": {
+        "context": "fits, convulsions"
+      },
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "Indication",
+      "name": "epilepsy",
+      "attributes": {
+        "context": "convulsions, epilepsy"
+      },
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "Indication",
+      "name": "hysteria",
+      "attributes": {
+        "context": "epilepsy, hysteria"
+      },
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "Indication",
+      "name": "nightmares",
+      "attributes": {
+        "context": "hysteria, nightmares"
+      },
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "Indication",
+      "name": "mental distur-",
+      "attributes": {
+        "context": "nightmares and mental distur-"
+      },
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "Taxon",
+      "name": "flowering plants",
+      "attributes": {
+        "context": "30,000 species of flowering plants"
+      },
+      "source_chunk_ids": [
+        "09f0b00da3d97e216166abcad590350a"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "Taxon",
+      "name": "higher plants",
+      "attributes": {
+        "context": "one tenth of the world's higher plants"
+      },
+      "source_chunk_ids": [
+        "09f0b00da3d97e216166abcad590350a"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "Compound",
+      "name": "Monoamine oxidase",
+      "attributes": {
+        "context": "Monoamine oxidase (MAO) is an enzyme"
+      },
+      "source_chunk_ids": [
+        "9f4df41d8090ac1961844f13ef78e5b0"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "Compound",
+      "name": "MAO",
+      "attributes": {
+        "context": "Monoamine oxidase (MAO) is an enzyme"
+      },
+      "source_chunk_ids": [
+        "9f4df41d8090ac1961844f13ef78e5b0"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "referred to as MAO-A and MAO-B"
+      },
+      "source_chunk_ids": [
+        "9f4df41d8090ac1961844f13ef78e5b0"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "referred to as MAO-A and MAO-B"
+      },
+      "source_chunk_ids": [
+        "9f4df41d8090ac1961844f13ef78e5b0"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "PharmEffect",
+      "name": "oxidative deamination",
+      "attributes": {
+        "context": "for the oxidative deamination of endogenous"
+      },
+      "source_chunk_ids": [
+        "9f4df41d8090ac1961844f13ef78e5b0"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "Compound",
+      "name": "amines",
+      "attributes": {
+        "context": "xenobiotic amines"
+      },
+      "source_chunk_ids": [
+        "9f4df41d8090ac1961844f13ef78e5b0"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "Compound",
+      "name": "inhibitor",
+      "attributes": {
+        "context": "inhibitor specificity"
+      },
+      "source_chunk_ids": [
+        "9f4df41d8090ac1961844f13ef78e5b0"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "deaminates serotonin, noradrenaline, and adrenaline"
+      },
+      "source_chunk_ids": [
+        "9f4df41d8090ac1961844f13ef78e5b0"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "Compound",
+      "name": "noradrenaline",
+      "attributes": {
+        "context": "deaminates serotonin, noradrenaline, and adrenaline"
+      },
+      "source_chunk_ids": [
+        "9f4df41d8090ac1961844f13ef78e5b0"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "Compound",
+      "name": "adrenaline",
+      "attributes": {
+        "context": "deaminates serotonin, noradrenaline, and adrenaline"
+      },
+      "source_chunk_ids": [
+        "9f4df41d8090ac1961844f13ef78e5b0"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "MAO-B deaminates dopamine, \\beta-phenylethylamine"
+      },
+      "source_chunk_ids": [
+        "9f4df41d8090ac1961844f13ef78e5b0"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "Compound",
+      "name": "\\beta-phenylethylamine",
+      "attributes": {
+        "context": "dopamine, \\beta-phenylethylamine (PEA)"
+      },
+      "source_chunk_ids": [
+        "9f4df41d8090ac1961844f13ef78e5b0"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "Compound",
+      "name": "PEA",
+      "attributes": {
+        "context": "\\beta-phenylethylamine (PEA)"
+      },
+      "source_chunk_ids": [
+        "9f4df41d8090ac1961844f13ef78e5b0"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "Compound",
+      "name": "benzylamine",
+      "attributes": {
+        "context": "PEA), and benzylamine"
+      },
+      "source_chunk_ids": [
+        "9f4df41d8090ac1961844f13ef78e5b0"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "Compound",
+      "name": "Inhibitors",
+      "attributes": {
+        "context": "Inhibitors of MAO"
+      },
+      "source_chunk_ids": [
+        "9f4df41d8090ac1961844f13ef78e5b0"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "traditionally used for psychoactive purposes"
+      },
+      "source_chunk_ids": [
+        "70086abebe781227d2c02b9a9ac04c19"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "Taxon",
+      "name": "Datura ferox L.",
+      "attributes": {
+        "context": "Solanaceae Datura ferox L."
+      },
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "PharmEffect",
+      "name": "sedate",
+      "attributes": {
+        "context": "Leaves used to sedate hysterical"
+      },
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "Indication",
+      "name": "hysterical",
+      "attributes": {
+        "context": "sedate hysterical and psychotic patients"
+      },
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "Indication",
+      "name": "psychotic",
+      "attributes": {
+        "context": "sedate hysterical and psychotic patients"
+      },
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "PharmEffect",
+      "name": "treat",
+      "attributes": {
+        "context": "also to treat insomnia"
+      },
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "Indication",
+      "name": "insomnia",
+      "attributes": {
+        "context": "to treat insomnia"
+      },
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "Taxon",
+      "name": "Datura stramonium L.",
+      "attributes": {
+        "context": "Datura stramonium L."
+      },
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "PharmEffect",
+      "name": "sedate",
+      "attributes": {
+        "context": "Leaves used to sedate hysterical"
+      },
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "Indication",
+      "name": "hysterical",
+      "attributes": {
+        "context": "sedate hysterical and psychotic patients"
+      },
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "Indication",
+      "name": "psychotic",
+      "attributes": {
+        "context": "sedate hysterical and psychotic patients"
+      },
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "PharmEffect",
+      "name": "treat",
+      "attributes": {
+        "context": "also to treat insomnia"
+      },
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "Indication",
+      "name": "insomnia",
+      "attributes": {
+        "context": "to treat insomnia"
+      },
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "Compound",
+      "name": "amines",
+      "attributes": {
+        "context": "amount of these amines stored"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "PharmEffect",
+      "name": "monoaminergic activity",
+      "attributes": {
+        "context": "increasing the monoaminergic activity"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "Inhibition of MAO-A"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "Compound",
+      "name": "neurotransmitters",
+      "attributes": {
+        "context": "affects neurotransmitters considered"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "important in depression"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "Indication",
+      "name": "anxiety disorders",
+      "attributes": {
+        "context": "and anxiety disorders"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "Compound",
+      "name": "MAO-B inhibitors",
+      "attributes": {
+        "context": "MAO-B inhibitors would increase"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "basal dopamine levels"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "Compound",
+      "name": "Selegiline",
+      "attributes": {
+        "context": "Selegiline is the only selective"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "Compound",
+      "name": "MAO-B inhibitor",
+      "attributes": {
+        "context": "irreversible MAO-B inhibitor"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "Indication",
+      "name": "Alzheimer's disease (AD)",
+      "attributes": {
+        "context": "and Alzheimer's disease (AD)"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "catalyzed by MAO-B"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "PharmEffect",
+      "name": "neuroprotective effects",
+      "attributes": {
+        "context": "has neuroprotective effects"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "Compound",
+      "name": "hydrogen peroxide",
+      "attributes": {
+        "context": "yields reactive hydrogen peroxide"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "Compound",
+      "name": "reactive oxygen species",
+      "attributes": {
+        "context": "other reactive oxygen species"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "PharmEffect",
+      "name": "neuronal death",
+      "attributes": {
+        "context": "lead to neuronal death"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "Concentration",
+      "name": "Two grams",
+      "attributes": {
+        "context": "Two grams of material was extracted"
+      },
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "Concentration",
+      "name": "20 ml",
+      "attributes": {
+        "context": "with 20 ml solvent"
+      },
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "Compound",
+      "name": "water",
+      "attributes": {
+        "context": "solvent (water, 70% ethanol, ethyl acetate and petroleum ether)"
+      },
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "Compound",
+      "name": "ethanol",
+      "attributes": {
+        "context": "solvent (water, 70% ethanol, ethyl acetate and petroleum ether)"
+      },
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "Compound",
+      "name": "ethyl acetate",
+      "attributes": {
+        "context": "solvent (water, 70% ethanol, ethyl acetate and petroleum ether)"
+      },
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "Compound",
+      "name": "petroleum ether",
+      "attributes": {
+        "context": "solvent (water, 70% ethanol, ethyl acetate and petroleum ether)"
+      },
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ]
+    },
+    {
+      "id": "ent_071",
+      "type": "Concentration",
+      "name": "60 min",
+      "attributes": {
+        "context": "for 60 min on an ultrasound bath"
+      },
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ]
+    },
+    {
+      "id": "ent_072",
+      "type": "Compound",
+      "name": "DMSO",
+      "attributes": {
+        "context": "re-dissolved in DMSO respectively"
+      },
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ]
+    },
+    {
+      "id": "ent_073",
+      "type": "Concentration",
+      "name": "36 mg/ml",
+      "attributes": {
+        "context": "at 36 mg/ml when required"
+      },
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ]
+    },
+    {
+      "id": "ent_074",
+      "type": "Compound",
+      "name": "potassium phosphate buffer",
+      "attributes": {
+        "context": "with potassium phosphate buffer"
+      },
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ]
+    },
+    {
+      "id": "ent_075",
+      "type": "Concentration",
+      "name": "0.2 M",
+      "attributes": {
+        "context": "buffer (0.2 M, pH 7.6)"
+      },
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ]
+    },
+    {
+      "id": "ent_076",
+      "type": "Concentration",
+      "name": "pH 7.6",
+      "attributes": {
+        "context": "buffer (0.2 M, pH 7.6)"
+      },
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ]
+    },
+    {
+      "id": "ent_077",
+      "type": "Concentration",
+      "name": "1 mg/ml",
+      "attributes": {
+        "context": "concentrations of 1, 0.5, 0.25, 0.1, 0.01, 0.001 and 0.0001 mg/ml"
+      },
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ]
+    },
+    {
+      "id": "ent_078",
+      "type": "Concentration",
+      "name": "0.5 mg/ml",
+      "attributes": {
+        "context": "concentrations of 1, 0.5, 0.25, 0.1, 0.01, 0.001 and 0.0001 mg/ml"
+      },
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ]
+    },
+    {
+      "id": "ent_079",
+      "type": "Concentration",
+      "name": "0.25 mg/ml",
+      "attributes": {
+        "context": "concentrations of 1, 0.5, 0.25, 0.1, 0.01, 0.001 and 0.0001 mg/ml"
+      },
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ]
+    },
+    {
+      "id": "ent_080",
+      "type": "Concentration",
+      "name": "0.1 mg/ml",
+      "attributes": {
+        "context": "concentrations of 1, 0.5, 0.25, 0.1, 0.01, 0.001 and 0.0001 mg/ml"
+      },
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ]
+    },
+    {
+      "id": "ent_081",
+      "type": "Concentration",
+      "name": "0.01 mg/ml",
+      "attributes": {
+        "context": "concentrations of 1, 0.5, 0.25, 0.1, 0.01, 0.001 and 0.0001 mg/ml"
+      },
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ]
+    },
+    {
+      "id": "ent_082",
+      "type": "Concentration",
+      "name": "0.001 mg/ml",
+      "attributes": {
+        "context": "concentrations of 1, 0.5, 0.25, 0.1, 0.01, 0.001 and 0.0001 mg/ml"
+      },
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ]
+    },
+    {
+      "id": "ent_083",
+      "type": "Concentration",
+      "name": "0.0001 mg/ml",
+      "attributes": {
+        "context": "concentrations of 1, 0.5, 0.25, 0.1, 0.01, 0.001 and 0.0001 mg/ml"
+      },
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ]
+    },
+    {
+      "id": "ent_084",
+      "type": "PharmEffect",
+      "name": "MAO inhibitory",
+      "attributes": {
+        "context": "MAO inhibitory activity"
+      },
+      "source_chunk_ids": [
+        "065b9015af84f712259c7d7636f25cf0"
+      ]
+    },
+    {
+      "id": "ent_085",
+      "type": "Compound",
+      "name": "protein",
+      "attributes": {
+        "context": "0.2 mg protein per ml"
+      },
+      "source_chunk_ids": [
+        "c843497e8f39f0e94741ccab3933f2bb"
+      ]
+    },
+    {
+      "id": "ent_086",
+      "type": "Concentration",
+      "name": "0.2 mg protein per ml",
+      "attributes": {
+        "context": "0.2 mg protein per ml"
+      },
+      "source_chunk_ids": [
+        "c843497e8f39f0e94741ccab3933f2bb"
+      ]
+    },
+    {
+      "id": "ent_087",
+      "type": "Concentration",
+      "name": "1 ml",
+      "attributes": {
+        "context": "aliquots of 1 ml"
+      },
+      "source_chunk_ids": [
+        "c843497e8f39f0e94741ccab3933f2bb"
+      ]
+    },
+    {
+      "id": "ent_088",
+      "type": "Compound",
+      "name": "Monoamine oxidase",
+      "attributes": {
+        "context": "MAO converting an aminosubstrate"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_089",
+      "type": "Compound",
+      "name": "aminosubstrate",
+      "attributes": {
+        "context": "converting an aminosubstrate (e.g., tyramine)"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_090",
+      "type": "Compound",
+      "name": "tyramine",
+      "attributes": {
+        "context": "aminosubstrate (e.g., tyramine)"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_091",
+      "type": "Compound",
+      "name": "H2O",
+      "attributes": {
+        "context": "with H2O and O2"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_092",
+      "type": "Compound",
+      "name": "O2",
+      "attributes": {
+        "context": "with H2O and O2"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_093",
+      "type": "Compound",
+      "name": "aldehyde",
+      "attributes": {
+        "context": "into an aldehyde"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_094",
+      "type": "Compound",
+      "name": "NH3",
+      "attributes": {
+        "context": "into NH3"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_095",
+      "type": "Compound",
+      "name": "H2O2",
+      "attributes": {
+        "context": "into H2O2"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_096",
+      "type": "Compound",
+      "name": "FADH2",
+      "attributes": {
+        "context": "into FADH2"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_097",
+      "type": "Compound",
+      "name": "Horseradish peroxidase",
+      "attributes": {
+        "context": "Horseradish peroxidase (HRP) oxidizing"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_098",
+      "type": "Compound",
+      "name": "4-aminoantipyrine",
+      "attributes": {
+        "context": "oxidizing 4-aminoantipyrine (3)"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_099",
+      "type": "Compound",
+      "name": "oxidised 4-aminoantipyrine",
+      "attributes": {
+        "context": "to oxidised 4-aminoantipyrine"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_100",
+      "type": "Compound",
+      "name": "H2O2",
+      "attributes": {
+        "context": "using H2O2 to produce"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_101",
+      "type": "Compound",
+      "name": "H2O",
+      "attributes": {
+        "context": "produce 2 H2O"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_102",
+      "type": "Compound",
+      "name": "pyrimidine ring",
+      "attributes": {
+        "context": "a pyrimidine ring with a phenyl group"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_103",
+      "type": "Compound",
+      "name": "phenyl group",
+      "attributes": {
+        "context": "a pyrimidine ring with a phenyl group"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_104",
+      "type": "Compound",
+      "name": "methyl group",
+      "attributes": {
+        "context": "a methyl group, and an amino group"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_105",
+      "type": "Compound",
+      "name": "amino group",
+      "attributes": {
+        "context": "and an amino group"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_106",
+      "type": "Compound",
+      "name": "nitro group",
+      "attributes": {
+        "context": "and a nitro group"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_107",
+      "type": "Compound",
+      "name": "quinoneimine dye",
+      "attributes": {
+        "context": "chemical structure of the quinoneimine dye"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_108",
+      "type": "Compound",
+      "name": "quinone ring",
+      "attributes": {
+        "context": "a quinone ring, an imine group"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_109",
+      "type": "Compound",
+      "name": "imine group",
+      "attributes": {
+        "context": "an imine group, and a phenyl group"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_110",
+      "type": "Compound",
+      "name": "vanillic acid",
+      "attributes": {
+        "context": "chemical structure of vanillic acid"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_111",
+      "type": "Compound",
+      "name": "benzene ring",
+      "attributes": {
+        "context": "a benzene ring with a carboxylic acid group"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_112",
+      "type": "Compound",
+      "name": "carboxylic acid group",
+      "attributes": {
+        "context": "a carboxylic acid group"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_113",
+      "type": "Compound",
+      "name": "methoxy group",
+      "attributes": {
+        "context": "a methoxy group"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_114",
+      "type": "Compound",
+      "name": "hydroxyl group",
+      "attributes": {
+        "context": "and a hydroxyl group"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_115",
+      "type": "PharmEffect",
+      "name": "inhibitor",
+      "attributes": {
+        "context": "monoamine oxidase (MAO) inhibitor bioassay"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_116",
+      "type": "Compound",
+      "name": "Monoamine oxidase",
+      "attributes": {
+        "context": "MAO catalyzes the oxidative deamination"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_117",
+      "type": "Compound",
+      "name": "aminosubstrate",
+      "attributes": {
+        "context": "deamination of an aminosubstrate (e.g., tyramine)"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_118",
+      "type": "Compound",
+      "name": "tyramine",
+      "attributes": {
+        "context": "aminosubstrate (e.g., tyramine)"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_119",
+      "type": "Compound",
+      "name": "H2O",
+      "attributes": {
+        "context": "with H2O and O2 to produce"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_120",
+      "type": "Compound",
+      "name": "O2",
+      "attributes": {
+        "context": "with H2O and O2 to produce"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_121",
+      "type": "Compound",
+      "name": "aldehyde",
+      "attributes": {
+        "context": "to produce an aldehyde"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_122",
+      "type": "Compound",
+      "name": "NH3",
+      "attributes": {
+        "context": "to produce NH3"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_123",
+      "type": "Compound",
+      "name": "H2O2",
+      "attributes": {
+        "context": "to produce H2O2"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_124",
+      "type": "Compound",
+      "name": "FADH2",
+      "attributes": {
+        "context": "to produce FADH2"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_125",
+      "type": "Compound",
+      "name": "Horseradish peroxidase",
+      "attributes": {
+        "context": "Horseradish peroxidase (HRP) catalyzes"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_126",
+      "type": "Compound",
+      "name": "4-aminoantipyrine",
+      "attributes": {
+        "context": "oxidation of 4-aminoantipyrine (3)"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_127",
+      "type": "Compound",
+      "name": "oxidised 4-aminoantipyrine",
+      "attributes": {
+        "context": "to oxidised 4-aminoantipyrine using H2O2"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_128",
+      "type": "Compound",
+      "name": "H2O2",
+      "attributes": {
+        "context": "using H2O2"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_129",
+      "type": "Compound",
+      "name": "oxidised 4-aminoantipyrine",
+      "attributes": {
+        "context": "Oxidised 4-aminoantipyrine reacts with vanillic acid"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_130",
+      "type": "Compound",
+      "name": "vanillic acid",
+      "attributes": {
+        "context": "reacts with vanillic acid (4)"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_131",
+      "type": "Compound",
+      "name": "quinoneimine dye",
+      "attributes": {
+        "context": "form a red quinoneimine dye (5)"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_132",
+      "type": "Compound",
+      "name": "quinoneimine dye",
+      "attributes": {
+        "context": "The quinoneimine dye (5) is detected"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_133",
+      "type": "Compound",
+      "name": "4-aminoantipyrine",
+      "attributes": {
+        "context": "Chemical structures for 4-aminoantipyrine"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_134",
+      "type": "Compound",
+      "name": "oxidised 4-aminoantipyrine",
+      "attributes": {
+        "context": "oxidised 4-aminoantipyrine, vanillic acid"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_135",
+      "type": "Compound",
+      "name": "vanillic acid",
+      "attributes": {
+        "context": "vanillic acid, and the quinoneimine dye"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_136",
+      "type": "Compound",
+      "name": "quinoneimine dye",
+      "attributes": {
+        "context": "and the quinoneimine dye are shown"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ]
+    },
+    {
+      "id": "ent_137",
+      "type": "PharmEffect",
+      "name": "Monoamine oxidase B (MAO-B) inhibition",
+      "attributes": {
+        "context": "Monoamine oxidase B (MAO-B) inhibition by active principles"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_138",
+      "type": "Taxon",
+      "name": "Uncaria rhynchophylla",
+      "attributes": {
+        "context": "active principles from Uncaria rhynchophylla"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_139",
+      "type": "PharmEffect",
+      "name": "Monoamine oxidase inhibitors",
+      "attributes": {
+        "context": "Monoamine oxidase inhibitors from Aquilaria agallocha"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_140",
+      "type": "Taxon",
+      "name": "Aquilaria agallocha",
+      "attributes": {
+        "context": "Monoamine oxidase inhibitors from Aquilaria agallocha"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_141",
+      "type": "Indication",
+      "name": "stress-related ailments",
+      "attributes": {
+        "context": "Plants used for stress-related ailments"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_142",
+      "type": "Indication",
+      "name": "headaches",
+      "attributes": {
+        "context": "Plants used for headaches"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_143",
+      "type": "PharmEffect",
+      "name": "Antimicrobial activity",
+      "attributes": {
+        "context": "Antimicrobial and cytotoxic activity of Ruta graveolens"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_144",
+      "type": "PharmEffect",
+      "name": "cytotoxic activity",
+      "attributes": {
+        "context": "Antimicrobial and cytotoxic activity of Ruta graveolens"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_145",
+      "type": "Taxon",
+      "name": "Ruta graveolens",
+      "attributes": {
+        "context": "cytotoxic activity of Ruta graveolens"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_146",
+      "type": "PharmEffect",
+      "name": "Monoamine oxidase inhibitory",
+      "attributes": {
+        "context": "Monoamine oxidase inhibitory coumarin from Zanthoxylum schinifolium"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_147",
+      "type": "Compound",
+      "name": "coumarin",
+      "attributes": {
+        "context": "Monoamine oxidase inhibitory coumarin from Zanthoxylum schinifolium"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_148",
+      "type": "Taxon",
+      "name": "Zanthoxylum schinifolium",
+      "attributes": {
+        "context": "coumarin from Zanthoxylum schinifolium"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_149",
+      "type": "PharmEffect",
+      "name": "Inhibition of monoamine oxidase B (MAO-B)",
+      "attributes": {
+        "context": "Inhibition of monoamine oxidase B (MAO-B) by Chinese herbal medicines"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_150",
+      "type": "PharmEffect",
+      "name": "affinity to the serotonin reuptake transport protein",
+      "attributes": {
+        "context": "for affinity to the serotonin reuptake transport protein"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_151",
+      "type": "Compound",
+      "name": "Alkaloids",
+      "attributes": {
+        "context": "Alkaloids from Boophane disticha"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_152",
+      "type": "Taxon",
+      "name": "Boophane disticha",
+      "attributes": {
+        "context": "Alkaloids from Boophane disticha"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_153",
+      "type": "PharmEffect",
+      "name": "affinity to the serotonin transporter",
+      "attributes": {
+        "context": "with affinity to the serotonin transporter in rat brain"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_154",
+      "type": "Taxon",
+      "name": "Ruta",
+      "attributes": {
+        "context": "Rue (Ruta L., Rutaceae) in traditional Spain"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_155",
+      "type": "Indication",
+      "name": "degenerative diseases of the central nervous system",
+      "attributes": {
+        "context": "in degenerative diseases of the central nervous system"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_156",
+      "type": "PharmEffect",
+      "name": "psychoactive purposes",
+      "attributes": {
+        "context": "plants used for psychoactive purposes"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_157",
+      "type": "Compound",
+      "name": "psoralens",
+      "attributes": {
+        "context": "photobiology of psoralens"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_158",
+      "type": "Indication",
+      "name": "Mental Health and Disease",
+      "attributes": {
+        "context": "Mental Health and Disease in Africa"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_159",
+      "type": "Compound",
+      "name": "Eugenol",
+      "attributes": {
+        "context": "Eugenol and its structural analogs"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_160",
+      "type": "PharmEffect",
+      "name": "inhibit monoamine oxidase A",
+      "attributes": {
+        "context": "analogs inhibit monoamine oxidase A"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_161",
+      "type": "PharmEffect",
+      "name": "antidepressant-like activity",
+      "attributes": {
+        "context": "exhibit antidepressant-like activity"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_162",
+      "type": "Indication",
+      "name": "mental health",
+      "attributes": {
+        "context": "potentially useful in mental health"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    },
+    {
+      "id": "ent_163",
+      "type": "PharmEffect",
+      "name": "MAO inhibitors",
+      "attributes": {
+        "context": "pharmacology of MAO inhibitors"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:03.772602+00:00",
+    "original_file": "entities.json"
+  }
+}

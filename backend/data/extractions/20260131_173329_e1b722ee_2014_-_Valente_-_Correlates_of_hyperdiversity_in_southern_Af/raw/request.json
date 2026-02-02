@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-01-31T16:33:29.739665Z",
+  "doc_id": "051918b831a384fa29d5fdc18a97d90c777ab765235fe213066cc6092f908732",
+  "input": "/LAB/@thesis/datalab/ALL_FLAT/2014 - Valente - Correlates of hyperdiversity in southern African ice plants Aizoaceae.pdf",
+  "is_file_url": false,
+  "page_range": null,
+  "payload": {
+    "mode": "accurate",
+    "output_format": "json,html,markdown,chunks",
+    "paginate": "true",
+    "add_block_ids": "true",
+    "disable_image_extraction": "false",
+    "disable_image_captions": "false",
+    "skip_cache": "false",
+    "page_schema": "{\"$schema\": \"http://json-schema.org/draft-07/schema#\", \"$id\": \"biblio\", \"title\": \"Bibliographic Metadata Schema\", \"description\": \"Minimal join keys for dedup and graph linking. Run on pages 0-2 only via page_range parameter.\", \"type\": \"object\", \"properties\": {\"title\": {\"type\": \"string\", \"description\": \"Document title as it appears on the first page\"}, \"authors\": {\"type\": \"array\", \"description\": \"Author names in document order\", \"items\": {\"type\": \"string\"}, \"maxItems\": 20}, \"publication_year\": {\"type\": \"integer\", \"description\": \"Year of publication (4-digit)\", \"minimum\": 1500, \"maximum\": 2100}, \"doi\": {\"type\": \"string\", \"description\": \"Digital Object Identifier (e.g. 10.1234/example)\"}, \"venue\": {\"type\": \"string\", \"description\": \"Journal, conference, publisher, or institutional source\"}}, \"required\": [], \"additionalProperties\": false}",
+    "extras": "extract_links"
+  },
+  "schema_path": "/LAB/@thesis/datalab/data/notes/schemas/biblio.json",
+  "no_schema": false
+}

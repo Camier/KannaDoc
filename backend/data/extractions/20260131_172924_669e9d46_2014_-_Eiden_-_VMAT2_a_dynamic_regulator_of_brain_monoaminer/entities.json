@@ -1,0 +1,4754 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "ad0bb8f13a3e6ddfbcaf3c175688681502b8b27b3b99a59664de3415e1a8a81a",
+  "extracted_at": "2026-02-01T08:31:45.061802+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "VMAT2 knockout mice"
+      },
+      "source_chunk_ids": [
+        "fc4ec07f33f510207d1151057c3f0288"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Compound",
+      "name": "catecholamine",
+      "attributes": {
+        "context": "maintaining catecholamine and serotonin levels"
+      },
+      "source_chunk_ids": [
+        "fc4ec07f33f510207d1151057c3f0288"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "maintaining catecholamine and serotonin levels"
+      },
+      "source_chunk_ids": [
+        "fc4ec07f33f510207d1151057c3f0288"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "Compound",
+      "name": "monoamine",
+      "attributes": {
+        "context": "monoamine availability"
+      },
+      "source_chunk_ids": [
+        "fc4ec07f33f510207d1151057c3f0288"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "Compound",
+      "name": "VMAT1",
+      "attributes": {
+        "context": "variants in VMAT1"
+      },
+      "source_chunk_ids": [
+        "fc4ec07f33f510207d1151057c3f0288"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "Indication",
+      "name": "schizophrenia",
+      "attributes": {
+        "context": "susceptibility for schizophrenia"
+      },
+      "source_chunk_ids": [
+        "fc4ec07f33f510207d1151057c3f0288"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "Indication",
+      "name": "bipolar depression",
+      "attributes": {
+        "context": "bipolar depression"
+      },
+      "source_chunk_ids": [
+        "fc4ec07f33f510207d1151057c3f0288"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "those in VMAT2 to schizophrenia"
+      },
+      "source_chunk_ids": [
+        "fc4ec07f33f510207d1151057c3f0288"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "Indication",
+      "name": "schizophrenia",
+      "attributes": {
+        "context": "VMAT2 to schizophrenia"
+      },
+      "source_chunk_ids": [
+        "fc4ec07f33f510207d1151057c3f0288"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "PharmEffect",
+      "name": "protection from alcohol neurotoxicity",
+      "attributes": {
+        "context": "protection from alcohol neurotoxicity"
+      },
+      "source_chunk_ids": [
+        "fc4ec07f33f510207d1151057c3f0288"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "VMAT2 is the only vesicular monoamine transporter"
+      },
+      "source_chunk_ids": [
+        "fc4ec07f33f510207d1151057c3f0288"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "Compound",
+      "name": "VMAT1",
+      "attributes": {
+        "context": "physiology of VMAT1"
+      },
+      "source_chunk_ids": [
+        "fc4ec07f33f510207d1151057c3f0288"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "physiology of VMAT1 and VMAT2"
+      },
+      "source_chunk_ids": [
+        "fc4ec07f33f510207d1151057c3f0288"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "Compound",
+      "name": "dihydrotetrabenazine",
+      "attributes": {
+        "context": "[11C]-labeled PET ligand dihydrotetrabenazine, DTBZ"
+      },
+      "source_chunk_ids": [
+        "751ffd41157a45e761d1cd3e61c73ab2"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "Compound",
+      "name": "DTBZ",
+      "attributes": {
+        "context": "dihydrotetrabenazine, DTBZ"
+      },
+      "source_chunk_ids": [
+        "751ffd41157a45e761d1cd3e61c73ab2"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "Compound",
+      "name": "amine",
+      "attributes": {
+        "context": "intracellular amine concentration"
+      },
+      "source_chunk_ids": [
+        "751ffd41157a45e761d1cd3e61c73ab2"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "Indication",
+      "name": "stress",
+      "attributes": {
+        "context": "e.g., stress and drug abuse"
+      },
+      "source_chunk_ids": [
+        "751ffd41157a45e761d1cd3e61c73ab2"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "Indication",
+      "name": "drug abuse",
+      "attributes": {
+        "context": "stress and drug abuse"
+      },
+      "source_chunk_ids": [
+        "751ffd41157a45e761d1cd3e61c73ab2"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "Compound",
+      "name": "monoamine",
+      "attributes": {
+        "context": "monoamine storage"
+      },
+      "source_chunk_ids": [
+        "751ffd41157a45e761d1cd3e61c73ab2"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "treatment of addiction"
+      },
+      "source_chunk_ids": [
+        "751ffd41157a45e761d1cd3e61c73ab2"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "VMAT2 is expressed in all monoaminergic neurons"
+      },
+      "source_chunk_ids": [
+        "d8c927406ec7feea0b99cd0158a4097b"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "Compound",
+      "name": "dopamine (DA)",
+      "attributes": {
+        "context": "expressing dopamine (DA)"
+      },
+      "source_chunk_ids": [
+        "d8c927406ec7feea0b99cd0158a4097b"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "Compound",
+      "name": "serotonin (5-HT)",
+      "attributes": {
+        "context": "serotonin (5-HT)"
+      },
+      "source_chunk_ids": [
+        "d8c927406ec7feea0b99cd0158a4097b"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "Compound",
+      "name": "norepinephrine (NE)",
+      "attributes": {
+        "context": "norepinephrine (NE)"
+      },
+      "source_chunk_ids": [
+        "d8c927406ec7feea0b99cd0158a4097b"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "Compound",
+      "name": "epinephrine (EPI)",
+      "attributes": {
+        "context": "epinephrine (EPI)"
+      },
+      "source_chunk_ids": [
+        "d8c927406ec7feea0b99cd0158a4097b"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "Compound",
+      "name": "histamine (HIS)",
+      "attributes": {
+        "context": "histamine (HIS)"
+      },
+      "source_chunk_ids": [
+        "d8c927406ec7feea0b99cd0158a4097b"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "Compound",
+      "name": "tyramine (TYR)",
+      "attributes": {
+        "context": "tyramine (TYR)"
+      },
+      "source_chunk_ids": [
+        "d8c927406ec7feea0b99cd0158a4097b"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "Compound",
+      "name": "phenylethylamine (PEA)",
+      "attributes": {
+        "context": "phenylethylamine (PEA)"
+      },
+      "source_chunk_ids": [
+        "d8c927406ec7feea0b99cd0158a4097b"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "Compound",
+      "name": "TYR",
+      "attributes": {
+        "context": "Both TYR and PEA have affinity for VMAT2"
+      },
+      "source_chunk_ids": [
+        "d8c927406ec7feea0b99cd0158a4097b"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "Compound",
+      "name": "PEA",
+      "attributes": {
+        "context": "Both TYR and PEA have affinity for VMAT2"
+      },
+      "source_chunk_ids": [
+        "d8c927406ec7feea0b99cd0158a4097b"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "Compound",
+      "name": "DA",
+      "attributes": {
+        "context": "comparable to that of DA and NE"
+      },
+      "source_chunk_ids": [
+        "d8c927406ec7feea0b99cd0158a4097b"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "Compound",
+      "name": "NE",
+      "attributes": {
+        "context": "comparable to that of DA and NE"
+      },
+      "source_chunk_ids": [
+        "d8c927406ec7feea0b99cd0158a4097b"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "Compound",
+      "name": "5-HTT",
+      "attributes": {
+        "context": "serotonergic plasma membrane transporter 5-HTT for 5-HT"
+      },
+      "source_chunk_ids": [
+        "d8c927406ec7feea0b99cd0158a4097b"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "5-HTT for 5-HT"
+      },
+      "source_chunk_ids": [
+        "d8c927406ec7feea0b99cd0158a4097b"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "Compound",
+      "name": "DAT",
+      "attributes": {
+        "context": "dopamine plasma membrane transporter DAT for DA"
+      },
+      "source_chunk_ids": [
+        "d8c927406ec7feea0b99cd0158a4097b"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Compound",
+      "name": "NET",
+      "attributes": {
+        "context": "norepinephrine plasma membrane transporter NET for NE"
+      },
+      "source_chunk_ids": [
+        "d8c927406ec7feea0b99cd0158a4097b"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "Compound",
+      "name": "tyrosine hydroxylase (TH)",
+      "attributes": {
+        "context": "express tyrosine hydroxylase (TH) for DOPA synthesis"
+      },
+      "source_chunk_ids": [
+        "d8c927406ec7feea0b99cd0158a4097b"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "Compound",
+      "name": "DOPA",
+      "attributes": {
+        "context": "TH) for DOPA synthesis"
+      },
+      "source_chunk_ids": [
+        "d8c927406ec7feea0b99cd0158a4097b"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "Compound",
+      "name": "dopa decarboxylase (AADC)",
+      "attributes": {
+        "context": "lack dopa decarboxylase (AADC) for DA synthesis"
+      },
+      "source_chunk_ids": [
+        "d8c927406ec7feea0b99cd0158a4097b"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "Compound",
+      "name": "dopamine beta-hydroxylase (DBH)",
+      "attributes": {
+        "context": "TH and dopamine beta-hydroxylase (DBH)"
+      },
+      "source_chunk_ids": [
+        "d8c927406ec7feea0b99cd0158a4097b"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "Compound",
+      "name": "vesicular acetylcholine transporter VACht",
+      "attributes": {
+        "context": "VMAT2 and the vesicular acetylcholine transporter VACht"
+      },
+      "source_chunk_ids": [
+        "d8c927406ec7feea0b99cd0158a4097b"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "in addiction"
+      },
+      "source_chunk_ids": [
+        "2fbe5b60594cf0e239d1df363f2ee167"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "Indication",
+      "name": "Chronic drug use",
+      "attributes": {
+        "context": "Chronic drug use, for example, is already known"
+      },
+      "source_chunk_ids": [
+        "2fbe5b60594cf0e239d1df363f2ee167"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "Compound",
+      "name": "monoamines",
+      "attributes": {
+        "context": "impairments in monoaminergic circuits"
+      },
+      "source_chunk_ids": [
+        "2fbe5b60594cf0e239d1df363f2ee167"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "PharmEffect",
+      "name": "impairments",
+      "attributes": {
+        "context": "to produce impairments in monoaminergic circuits"
+      },
+      "source_chunk_ids": [
+        "2fbe5b60594cf0e239d1df363f2ee167"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "PharmEffect",
+      "name": "neurotoxicity",
+      "attributes": {
+        "context": "include neurotoxicity"
+      },
+      "source_chunk_ids": [
+        "2fbe5b60594cf0e239d1df363f2ee167"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "PharmEffect",
+      "name": "enhanced sensitivity of receptor signaling",
+      "attributes": {
+        "context": "and enhanced sensitivity of receptor signaling"
+      },
+      "source_chunk_ids": [
+        "2fbe5b60594cf0e239d1df363f2ee167"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "Compound",
+      "name": "monoamine",
+      "attributes": {
+        "context": "depleted monoamine stores"
+      },
+      "source_chunk_ids": [
+        "2fbe5b60594cf0e239d1df363f2ee167"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "Indication",
+      "name": "drug addiction",
+      "attributes": {
+        "context": "an aspect of drug addiction"
+      },
+      "source_chunk_ids": [
+        "2fbe5b60594cf0e239d1df363f2ee167"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "in which VMAT2 is likely to play a central role"
+      },
+      "source_chunk_ids": [
+        "2fbe5b60594cf0e239d1df363f2ee167"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "VMAT2 is the CNS vesicular transporter"
+      },
+      "source_chunk_ids": [
+        "530104ab715e072d9b6f98681714e531"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "Compound",
+      "name": "DA",
+      "attributes": {
+        "context": "biogenic amines DA"
+      },
+      "source_chunk_ids": [
+        "530104ab715e072d9b6f98681714e531"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "Compound",
+      "name": "NE",
+      "attributes": {
+        "context": "biogenic amines DA, NE"
+      },
+      "source_chunk_ids": [
+        "530104ab715e072d9b6f98681714e531"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "Compound",
+      "name": "EPI",
+      "attributes": {
+        "context": "biogenic amines DA, NE, EPI"
+      },
+      "source_chunk_ids": [
+        "530104ab715e072d9b6f98681714e531"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "biogenic amines DA, NE, EPI, 5-HT"
+      },
+      "source_chunk_ids": [
+        "530104ab715e072d9b6f98681714e531"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "Compound",
+      "name": "HIS",
+      "attributes": {
+        "context": "biogenic amines DA, NE, EPI, 5-HT, and HIS"
+      },
+      "source_chunk_ids": [
+        "530104ab715e072d9b6f98681714e531"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "Compound",
+      "name": "TYR",
+      "attributes": {
+        "context": "trace amines TYR"
+      },
+      "source_chunk_ids": [
+        "530104ab715e072d9b6f98681714e531"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "Compound",
+      "name": "PEA",
+      "attributes": {
+        "context": "trace amines TYR, PEA"
+      },
+      "source_chunk_ids": [
+        "530104ab715e072d9b6f98681714e531"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "Compound",
+      "name": "thyronamine",
+      "attributes": {
+        "context": "thyronamine (THYR)"
+      },
+      "source_chunk_ids": [
+        "530104ab715e072d9b6f98681714e531"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "Compound",
+      "name": "Tyramine",
+      "attributes": {
+        "context": "Tyramine neurons"
+      },
+      "source_chunk_ids": [
+        "530104ab715e072d9b6f98681714e531"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "Compound",
+      "name": "COC",
+      "attributes": {
+        "context": "sensitization to COC"
+      },
+      "source_chunk_ids": [
+        "530104ab715e072d9b6f98681714e531"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "PharmEffect",
+      "name": "sensitization",
+      "attributes": {
+        "context": "essential for sensitization to COC"
+      },
+      "source_chunk_ids": [
+        "530104ab715e072d9b6f98681714e531"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "Compound",
+      "name": "aromatic amino acid decarboxylase (AADC)",
+      "attributes": {
+        "context": "biosynthetic enzyme aromatic amino acid decarboxylase (AADC)"
+      },
+      "source_chunk_ids": [
+        "530104ab715e072d9b6f98681714e531"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "Compound",
+      "name": "TH",
+      "attributes": {
+        "context": "identified without TH"
+      },
+      "source_chunk_ids": [
+        "530104ab715e072d9b6f98681714e531"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "Compound",
+      "name": "AMPH",
+      "attributes": {
+        "context": "affected by AMPH"
+      },
+      "source_chunk_ids": [
+        "530104ab715e072d9b6f98681714e531"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "Compound",
+      "name": "trace amine-associated receptors (TAARs)",
+      "attributes": {
+        "context": "postsynaptic trace amine-associated receptors (TAARs)"
+      },
+      "source_chunk_ids": [
+        "530104ab715e072d9b6f98681714e531"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "Compound",
+      "name": "DAT",
+      "attributes": {
+        "context": "trace amine reuptake transporters (i.e., DAT)"
+      },
+      "source_chunk_ids": [
+        "530104ab715e072d9b6f98681714e531"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "Compound",
+      "name": "NET",
+      "attributes": {
+        "context": "trace amine reuptake transporters (i.e., DAT, NET)"
+      },
+      "source_chunk_ids": [
+        "530104ab715e072d9b6f98681714e531"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "Compound",
+      "name": "5-HTT",
+      "attributes": {
+        "context": "trace amine reuptake transporters (i.e., DAT, NET, or 5-HTT)"
+      },
+      "source_chunk_ids": [
+        "530104ab715e072d9b6f98681714e531"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "specificity of VMAT2 for various psychostimulants"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_071",
+      "type": "Compound",
+      "name": "psychostimulants",
+      "attributes": {
+        "context": "various psychostimulants and/or neurotoxic drugs of abuse"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_072",
+      "type": "Compound",
+      "name": "neurotoxic drugs of abuse",
+      "attributes": {
+        "context": "psychostimulants and/or neurotoxic drugs of abuse"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_073",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "heterologous-cell 5-HT uptake assay"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_074",
+      "type": "Compound",
+      "name": "d-amphetamine",
+      "attributes": {
+        "context": "VMAT2 of d-amphetamine, racemic MDMA"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_075",
+      "type": "Compound",
+      "name": "racemic MDMA",
+      "attributes": {
+        "context": "d-amphetamine, racemic MDMA, fenfluramine"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_076",
+      "type": "Compound",
+      "name": "fenfluramine",
+      "attributes": {
+        "context": "racemic MDMA, fenfluramine, and 1-methyl-4-phenylpyridinium"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_077",
+      "type": "Compound",
+      "name": "1-methyl-4-phenylpyridinium",
+      "attributes": {
+        "context": "fenfluramine, and 1-methyl-4-phenylpyridinium (MPP+)"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_078",
+      "type": "Compound",
+      "name": "MPP+",
+      "attributes": {
+        "context": "4-phenylpyridinium (MPP+) was 2, 7, 5, and 9 \u00b5M"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_079",
+      "type": "Concentration",
+      "name": "2 \u00b5M",
+      "attributes": {
+        "context": "MPP+) was 2, 7, 5, and 9 \u00b5M"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_080",
+      "type": "Concentration",
+      "name": "7 \u00b5M",
+      "attributes": {
+        "context": "was 2, 7, 5, and 9 \u00b5M"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_081",
+      "type": "Concentration",
+      "name": "5 \u00b5M",
+      "attributes": {
+        "context": "7, 5, and 9 \u00b5M"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_082",
+      "type": "Concentration",
+      "name": "9 \u00b5M",
+      "attributes": {
+        "context": "5, and 9 \u00b5M"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_083",
+      "type": "Concentration",
+      "name": "1.4 \u00b5M",
+      "attributes": {
+        "context": "compared to 1.4 and 0.9, respectively, for dopamine"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_084",
+      "type": "Concentration",
+      "name": "0.9 \u00b5M",
+      "attributes": {
+        "context": "1.4 and 0.9, respectively, for dopamine and 5-HT"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_085",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "respectively, for dopamine and 5-HT itself"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_086",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "dopamine and 5-HT itself"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_087",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "interact with VMAT2 with an apparent affinity"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_088",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "similar to that of dopamine, the major neurotransmitter"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_089",
+      "type": "Compound",
+      "name": "neurotransmitter",
+      "attributes": {
+        "context": "major neurotransmitter implicated in addiction"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_090",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "neurotransmitter implicated in addiction in the CNS"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_091",
+      "type": "Compound",
+      "name": "COC",
+      "attributes": {
+        "context": "Data for COC interaction with human VMAT2"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_092",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "interaction with human VMAT2 are not available"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_093",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "measurement of VMAT2 interaction with addictive psychotropic agents"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_094",
+      "type": "Compound",
+      "name": "addictive psychotropic agents",
+      "attributes": {
+        "context": "VMAT2 interaction with addictive psychotropic agents"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_095",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "alter VMAT2 expression in vivo"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_096",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "compounds trigger addiction and/or hedonic reward"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_097",
+      "type": "PharmEffect",
+      "name": "hedonic reward",
+      "attributes": {
+        "context": "addiction and/or hedonic reward through direct, or indirect interaction"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_098",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "indirect interaction with VMAT2-expressing neuronal circuits"
+      },
+      "source_chunk_ids": [
+        "f7937ddee7a4bb22154d331591a2f3d9"
+      ]
+    },
+    {
+      "id": "ent_099",
+      "type": "Compound",
+      "name": "Dopamine",
+      "attributes": {
+        "context": "uptake of DA"
+      },
+      "source_chunk_ids": [
+        "244ac784acafd50c3e222762b8344d1e"
+      ]
+    },
+    {
+      "id": "ent_100",
+      "type": "Compound",
+      "name": "Norepinephrine",
+      "attributes": {
+        "context": "uptake of DA, NE"
+      },
+      "source_chunk_ids": [
+        "244ac784acafd50c3e222762b8344d1e"
+      ]
+    },
+    {
+      "id": "ent_101",
+      "type": "Compound",
+      "name": "Serotonin",
+      "attributes": {
+        "context": "uptake of DA, NE and 5-HT"
+      },
+      "source_chunk_ids": [
+        "244ac784acafd50c3e222762b8344d1e"
+      ]
+    },
+    {
+      "id": "ent_102",
+      "type": "Compound",
+      "name": "Dopamine",
+      "attributes": {
+        "context": "differences in DA"
+      },
+      "source_chunk_ids": [
+        "244ac784acafd50c3e222762b8344d1e"
+      ]
+    },
+    {
+      "id": "ent_103",
+      "type": "Compound",
+      "name": "Norepinephrine",
+      "attributes": {
+        "context": "differences in DA, NE"
+      },
+      "source_chunk_ids": [
+        "244ac784acafd50c3e222762b8344d1e"
+      ]
+    },
+    {
+      "id": "ent_104",
+      "type": "Compound",
+      "name": "Serotonin",
+      "attributes": {
+        "context": "differences in DA, NE, and 5-HT metabolism"
+      },
+      "source_chunk_ids": [
+        "244ac784acafd50c3e222762b8344d1e"
+      ]
+    },
+    {
+      "id": "ent_105",
+      "type": "Compound",
+      "name": "Vesicular Monoamine Transporter 2",
+      "attributes": {
+        "context": "agents acting at VMAT2"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_106",
+      "type": "PharmEffect",
+      "name": "synaptic transmission",
+      "attributes": {
+        "context": "impacts on synaptic transmission"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_107",
+      "type": "PharmEffect",
+      "name": "neurotransmitter systems",
+      "attributes": {
+        "context": "different neurotransmitter systems"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_108",
+      "type": "Compound",
+      "name": "Amphetamine",
+      "attributes": {
+        "context": "for example AMPH"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_109",
+      "type": "Compound",
+      "name": "Cocaine",
+      "attributes": {
+        "context": "AMPH, COC or MDMA"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_110",
+      "type": "Compound",
+      "name": "3,4-methylenedioxymethamphetamine",
+      "attributes": {
+        "context": "COC or MDMA"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_111",
+      "type": "PharmEffect",
+      "name": "antidepressant",
+      "attributes": {
+        "context": "antidepressant NET- and 5-HTT-specific uptake inhibitors"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_112",
+      "type": "Compound",
+      "name": "Norepinephrine Transporter",
+      "attributes": {
+        "context": "antidepressant NET- and 5-HTT-specific uptake inhibitors"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_113",
+      "type": "Compound",
+      "name": "Serotonin Transporter",
+      "attributes": {
+        "context": "NET- and 5-HTT-specific uptake inhibitors"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_114",
+      "type": "Compound",
+      "name": "uptake inhibitors",
+      "attributes": {
+        "context": "5-HTT-specific uptake inhibitors"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_115",
+      "type": "Compound",
+      "name": "Dopamine Transporter",
+      "attributes": {
+        "context": "on the DAT/VMAT2"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_116",
+      "type": "Compound",
+      "name": "Vesicular Monoamine Transporter 2",
+      "attributes": {
+        "context": "DAT/VMAT2, NET/VMAT2, or 5-HTT/VMAT2"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_117",
+      "type": "PharmEffect",
+      "name": "neuronal uptake",
+      "attributes": {
+        "context": "5-HTT/VMAT2 neuronal uptake"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_118",
+      "type": "PharmEffect",
+      "name": "retention systems",
+      "attributes": {
+        "context": "neuronal uptake and retention systems"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_119",
+      "type": "PharmEffect",
+      "name": "DA depletion",
+      "attributes": {
+        "context": "DA depletion induced by chronic AMPH or COC"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_120",
+      "type": "Compound",
+      "name": "Amphetamine",
+      "attributes": {
+        "context": "chronic AMPH or COC"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_121",
+      "type": "Compound",
+      "name": "Cocaine",
+      "attributes": {
+        "context": "chronic AMPH or COC"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_122",
+      "type": "Indication",
+      "name": "nerve terminal destruction",
+      "attributes": {
+        "context": "due to outright nerve terminal destruction"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_123",
+      "type": "PharmEffect",
+      "name": "Vesicular amine depletion",
+      "attributes": {
+        "context": "Vesicular amine depletion of intact nerve terminals"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_124",
+      "type": "Compound",
+      "name": "drug",
+      "attributes": {
+        "context": "interactions between drug, DAT and VMAT2"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_125",
+      "type": "Compound",
+      "name": "Dopamine Transporter",
+      "attributes": {
+        "context": "between drug, DAT and VMAT2"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_126",
+      "type": "Compound",
+      "name": "Vesicular Monoamine Transporter 2",
+      "attributes": {
+        "context": "between drug, DAT and VMAT2"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_127",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "individuals become addicted to these compounds"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_128",
+      "type": "PharmEffect",
+      "name": "vesicular uptake",
+      "attributes": {
+        "context": "level of vesicular uptake"
+      },
+      "source_chunk_ids": [
+        "27ed4b6147441bed2fb677e96ad92e77"
+      ]
+    },
+    {
+      "id": "ent_129",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "substrate specificity of VMAT2"
+      },
+      "source_chunk_ids": [
+        "655463dfe0b7f68e0e9c80e404b4d470"
+      ]
+    },
+    {
+      "id": "ent_130",
+      "type": "Compound",
+      "name": "amines",
+      "attributes": {
+        "context": "transmitter uptake of amines"
+      },
+      "source_chunk_ids": [
+        "655463dfe0b7f68e0e9c80e404b4d470"
+      ]
+    },
+    {
+      "id": "ent_131",
+      "type": "Indication",
+      "name": "substance abuse",
+      "attributes": {
+        "context": "neurochemistry of substance abuse"
+      },
+      "source_chunk_ids": [
+        "655463dfe0b7f68e0e9c80e404b4d470"
+      ]
+    },
+    {
+      "id": "ent_132",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "substance abuse and addiction"
+      },
+      "source_chunk_ids": [
+        "655463dfe0b7f68e0e9c80e404b4d470"
+      ]
+    },
+    {
+      "id": "ent_133",
+      "type": "Compound",
+      "name": "histamine",
+      "attributes": {
+        "context": "ability to store histamine"
+      },
+      "source_chunk_ids": [
+        "655463dfe0b7f68e0e9c80e404b4d470"
+      ]
+    },
+    {
+      "id": "ent_134",
+      "type": "Compound",
+      "name": "VMAT1",
+      "attributes": {
+        "context": "histamine (VMAT1)"
+      },
+      "source_chunk_ids": [
+        "655463dfe0b7f68e0e9c80e404b4d470"
+      ]
+    },
+    {
+      "id": "ent_135",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "supplied with serotonin"
+      },
+      "source_chunk_ids": [
+        "655463dfe0b7f68e0e9c80e404b4d470"
+      ]
+    },
+    {
+      "id": "ent_136",
+      "type": "Compound",
+      "name": "tryptophan hydroxylase",
+      "attributes": {
+        "context": "lacking tryptophan hydroxylase"
+      },
+      "source_chunk_ids": [
+        "655463dfe0b7f68e0e9c80e404b4d470"
+      ]
+    },
+    {
+      "id": "ent_137",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "de novo 5-HT synthesis"
+      },
+      "source_chunk_ids": [
+        "655463dfe0b7f68e0e9c80e404b4d470"
+      ]
+    },
+    {
+      "id": "ent_138",
+      "type": "Compound",
+      "name": "AMPH",
+      "attributes": {
+        "context": "pharmacological ability of AMPH"
+      },
+      "source_chunk_ids": [
+        "655463dfe0b7f68e0e9c80e404b4d470"
+      ]
+    },
+    {
+      "id": "ent_139",
+      "type": "Compound",
+      "name": "HIS",
+      "attributes": {
+        "context": "release HIS from storage vesicles"
+      },
+      "source_chunk_ids": [
+        "655463dfe0b7f68e0e9c80e404b4d470"
+      ]
+    },
+    {
+      "id": "ent_140",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "addictive amine-releasing drugs"
+      },
+      "source_chunk_ids": [
+        "655463dfe0b7f68e0e9c80e404b4d470"
+      ]
+    },
+    {
+      "id": "ent_141",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "VMAT2-regulation"
+      },
+      "source_chunk_ids": [
+        "9b27b06e966ffa09a9516bdbbda1ba46"
+      ]
+    },
+    {
+      "id": "ent_142",
+      "type": "PharmEffect",
+      "name": "regulation",
+      "attributes": {
+        "context": "VMAT2-regulation of trafficking and transporter activity"
+      },
+      "source_chunk_ids": [
+        "9b27b06e966ffa09a9516bdbbda1ba46"
+      ]
+    },
+    {
+      "id": "ent_143",
+      "type": "PharmEffect",
+      "name": "trafficking",
+      "attributes": {
+        "context": "regulation of trafficking"
+      },
+      "source_chunk_ids": [
+        "9b27b06e966ffa09a9516bdbbda1ba46"
+      ]
+    },
+    {
+      "id": "ent_144",
+      "type": "PharmEffect",
+      "name": "transporter activity",
+      "attributes": {
+        "context": "regulation of trafficking and transporter activity"
+      },
+      "source_chunk_ids": [
+        "9b27b06e966ffa09a9516bdbbda1ba46"
+      ]
+    },
+    {
+      "id": "ent_145",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "learning associated with addiction"
+      },
+      "source_chunk_ids": [
+        "e9e9b6f0cc366f92517a95206c30498a"
+      ]
+    },
+    {
+      "id": "ent_146",
+      "type": "Compound",
+      "name": "acetylcholine",
+      "attributes": {
+        "context": "vesicular acetylcholine transporter (VACht)"
+      },
+      "source_chunk_ids": [
+        "e9e9b6f0cc366f92517a95206c30498a"
+      ]
+    },
+    {
+      "id": "ent_147",
+      "type": "Compound",
+      "name": "vesicular acetylcholine transporter (VACht)",
+      "attributes": {
+        "context": "such as the vesicular acetylcholine transporter (VACht)"
+      },
+      "source_chunk_ids": [
+        "e9e9b6f0cc366f92517a95206c30498a"
+      ]
+    },
+    {
+      "id": "ent_148",
+      "type": "Compound",
+      "name": "neurotransmitter",
+      "attributes": {
+        "context": "The view that neurotransmitter quantal content"
+      },
+      "source_chunk_ids": [
+        "e9e9b6f0cc366f92517a95206c30498a"
+      ]
+    },
+    {
+      "id": "ent_149",
+      "type": "Compound",
+      "name": "ChAT",
+      "attributes": {
+        "context": "biosynthetic enzyme for acetylcholine, ChAT"
+      },
+      "source_chunk_ids": [
+        "e9e9b6f0cc366f92517a95206c30498a"
+      ]
+    },
+    {
+      "id": "ent_150",
+      "type": "Compound",
+      "name": "GABA",
+      "attributes": {
+        "context": "developments in GABAergic"
+      },
+      "source_chunk_ids": [
+        "e9e9b6f0cc366f92517a95206c30498a"
+      ]
+    },
+    {
+      "id": "ent_151",
+      "type": "Compound",
+      "name": "vesicular vacuolar H+-generating ATPase",
+      "attributes": {
+        "context": "H+-generating ATPase"
+      },
+      "source_chunk_ids": [
+        "047eafa0e1b2128112754e7301afcfc9"
+      ]
+    },
+    {
+      "id": "ent_152",
+      "type": "Compound",
+      "name": "fodrin-derived inhibitory protein factor (IPF)",
+      "attributes": {
+        "context": "fodrin-derived inhibitory protein factor (IPF)"
+      },
+      "source_chunk_ids": [
+        "047eafa0e1b2128112754e7301afcfc9"
+      ]
+    },
+    {
+      "id": "ent_153",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "quantal size for serotonin"
+      },
+      "source_chunk_ids": [
+        "047eafa0e1b2128112754e7301afcfc9"
+      ]
+    },
+    {
+      "id": "ent_154",
+      "type": "Compound",
+      "name": "GABA",
+      "attributes": {
+        "context": "serotonin, GABA"
+      },
+      "source_chunk_ids": [
+        "047eafa0e1b2128112754e7301afcfc9"
+      ]
+    },
+    {
+      "id": "ent_155",
+      "type": "Compound",
+      "name": "glutamate",
+      "attributes": {
+        "context": "GABA, and glutamate"
+      },
+      "source_chunk_ids": [
+        "047eafa0e1b2128112754e7301afcfc9"
+      ]
+    },
+    {
+      "id": "ent_156",
+      "type": "Compound",
+      "name": "VMAT",
+      "attributes": {
+        "context": "protein regulator for VMAT"
+      },
+      "source_chunk_ids": [
+        "047eafa0e1b2128112754e7301afcfc9"
+      ]
+    },
+    {
+      "id": "ent_157",
+      "type": "Compound",
+      "name": "thyroxine metabolite THYR",
+      "attributes": {
+        "context": "the thyroxine metabolite THYR"
+      },
+      "source_chunk_ids": [
+        "047eafa0e1b2128112754e7301afcfc9"
+      ]
+    },
+    {
+      "id": "ent_158",
+      "type": "Compound",
+      "name": "THYR",
+      "attributes": {
+        "context": "metabolite THYR is a potent inhibitor"
+      },
+      "source_chunk_ids": [
+        "047eafa0e1b2128112754e7301afcfc9"
+      ]
+    },
+    {
+      "id": "ent_159",
+      "type": "Compound",
+      "name": "monoamine",
+      "attributes": {
+        "context": "inhibitor of monoamine uptake"
+      },
+      "source_chunk_ids": [
+        "047eafa0e1b2128112754e7301afcfc9"
+      ]
+    },
+    {
+      "id": "ent_160",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "uptake by VMAT2"
+      },
+      "source_chunk_ids": [
+        "047eafa0e1b2128112754e7301afcfc9"
+      ]
+    },
+    {
+      "id": "ent_161",
+      "type": "PharmEffect",
+      "name": "quantal size regulators",
+      "attributes": {
+        "context": "act as quantal size regulators"
+      },
+      "source_chunk_ids": [
+        "047eafa0e1b2128112754e7301afcfc9"
+      ]
+    },
+    {
+      "id": "ent_162",
+      "type": "PharmEffect",
+      "name": "decreases quantal size",
+      "attributes": {
+        "context": "synaptosomes, decreases quantal size"
+      },
+      "source_chunk_ids": [
+        "047eafa0e1b2128112754e7301afcfc9"
+      ]
+    },
+    {
+      "id": "ent_163",
+      "type": "PharmEffect",
+      "name": "inhibitor",
+      "attributes": {
+        "context": "potent inhibitor of monoamine uptake"
+      },
+      "source_chunk_ids": [
+        "047eafa0e1b2128112754e7301afcfc9"
+      ]
+    },
+    {
+      "id": "ent_164",
+      "type": "PharmEffect",
+      "name": "monoamine uptake",
+      "attributes": {
+        "context": "inhibitor of monoamine uptake by VMAT2"
+      },
+      "source_chunk_ids": [
+        "047eafa0e1b2128112754e7301afcfc9"
+      ]
+    },
+    {
+      "id": "ent_165",
+      "type": "PharmEffect",
+      "name": "endogenous inhibitor of monoamine uptake and storage",
+      "attributes": {
+        "context": "endogenous inhibitor of monoamine uptake and storage"
+      },
+      "source_chunk_ids": [
+        "047eafa0e1b2128112754e7301afcfc9"
+      ]
+    },
+    {
+      "id": "ent_166",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "regulation of VMAT2 activity"
+      },
+      "source_chunk_ids": [
+        "99889004a570b3f0ee6b38128b415558"
+      ]
+    },
+    {
+      "id": "ent_167",
+      "type": "Compound",
+      "name": "G-protein",
+      "attributes": {
+        "context": "linkage between G-protein expression"
+      },
+      "source_chunk_ids": [
+        "99889004a570b3f0ee6b38128b415558"
+      ]
+    },
+    {
+      "id": "ent_168",
+      "type": "Compound",
+      "name": "VMAT1",
+      "attributes": {
+        "context": "VMAT1 or VMAT2 expression"
+      },
+      "source_chunk_ids": [
+        "99889004a570b3f0ee6b38128b415558"
+      ]
+    },
+    {
+      "id": "ent_169",
+      "type": "Compound",
+      "name": "tritiated serotonin",
+      "attributes": {
+        "context": "uptake of tritiated serotonin"
+      },
+      "source_chunk_ids": [
+        "99889004a570b3f0ee6b38128b415558"
+      ]
+    },
+    {
+      "id": "ent_170",
+      "type": "Compound",
+      "name": "biogenic amine",
+      "attributes": {
+        "context": "unlabeled biogenic amine"
+      },
+      "source_chunk_ids": [
+        "99889004a570b3f0ee6b38128b415558"
+      ]
+    },
+    {
+      "id": "ent_171",
+      "type": "Compound",
+      "name": "VMAT",
+      "attributes": {
+        "context": "intraluminal loop of VMAT"
+      },
+      "source_chunk_ids": [
+        "99889004a570b3f0ee6b38128b415558"
+      ]
+    },
+    {
+      "id": "ent_172",
+      "type": "Compound",
+      "name": "G-proteins",
+      "attributes": {
+        "context": "require G-proteins"
+      },
+      "source_chunk_ids": [
+        "99889004a570b3f0ee6b38128b415558"
+      ]
+    },
+    {
+      "id": "ent_173",
+      "type": "Compound",
+      "name": "Go",
+      "attributes": {
+        "context": "G-proteins (Go in platelets"
+      },
+      "source_chunk_ids": [
+        "99889004a570b3f0ee6b38128b415558"
+      ]
+    },
+    {
+      "id": "ent_174",
+      "type": "Compound",
+      "name": "Gi",
+      "attributes": {
+        "context": "and Gi in other cell types)"
+      },
+      "source_chunk_ids": [
+        "99889004a570b3f0ee6b38128b415558"
+      ]
+    },
+    {
+      "id": "ent_175",
+      "type": "Compound",
+      "name": "calcium-activated protein for secretion",
+      "attributes": {
+        "context": "the calcium-activated protein for secretion (CAPS)"
+      },
+      "source_chunk_ids": [
+        "99889004a570b3f0ee6b38128b415558"
+      ]
+    },
+    {
+      "id": "ent_176",
+      "type": "Compound",
+      "name": "CAPS",
+      "attributes": {
+        "context": "protein for secretion (CAPS)"
+      },
+      "source_chunk_ids": [
+        "99889004a570b3f0ee6b38128b415558"
+      ]
+    },
+    {
+      "id": "ent_177",
+      "type": "Compound",
+      "name": "monoamine",
+      "attributes": {
+        "context": "intravesicular monoamine-VMAT interaction"
+      },
+      "source_chunk_ids": [
+        "99889004a570b3f0ee6b38128b415558"
+      ]
+    },
+    {
+      "id": "ent_178",
+      "type": "Compound",
+      "name": "GTP-binding protein",
+      "attributes": {
+        "context": "via a GTP-binding protein"
+      },
+      "source_chunk_ids": [
+        "99889004a570b3f0ee6b38128b415558"
+      ]
+    },
+    {
+      "id": "ent_179",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "cocaine (COC)-induced"
+      },
+      "source_chunk_ids": [
+        "99889004a570b3f0ee6b38128b415558"
+      ]
+    },
+    {
+      "id": "ent_180",
+      "type": "Compound",
+      "name": "COC",
+      "attributes": {
+        "context": "cocaine (COC)-induced"
+      },
+      "source_chunk_ids": [
+        "99889004a570b3f0ee6b38128b415558"
+      ]
+    },
+    {
+      "id": "ent_181",
+      "type": "Compound",
+      "name": "Go2alpha",
+      "attributes": {
+        "context": "in Go2alpha-knockout mice"
+      },
+      "source_chunk_ids": [
+        "99889004a570b3f0ee6b38128b415558"
+      ]
+    },
+    {
+      "id": "ent_182",
+      "type": "PharmEffect",
+      "name": "behavioral sensitization",
+      "attributes": {
+        "context": "COC-induced behavioral sensitization"
+      },
+      "source_chunk_ids": [
+        "99889004a570b3f0ee6b38128b415558"
+      ]
+    },
+    {
+      "id": "ent_183",
+      "type": "Compound",
+      "name": "amines",
+      "attributes": {
+        "context": "intravesicular amines might affect"
+      },
+      "source_chunk_ids": [
+        "99889004a570b3f0ee6b38128b415558"
+      ]
+    },
+    {
+      "id": "ent_184",
+      "type": "Compound",
+      "name": "METH",
+      "attributes": {
+        "context": "how COC, METH, AMPH"
+      },
+      "source_chunk_ids": [
+        "99889004a570b3f0ee6b38128b415558"
+      ]
+    },
+    {
+      "id": "ent_185",
+      "type": "Compound",
+      "name": "AMPH",
+      "attributes": {
+        "context": "METH, AMPH, and perhaps"
+      },
+      "source_chunk_ids": [
+        "99889004a570b3f0ee6b38128b415558"
+      ]
+    },
+    {
+      "id": "ent_186",
+      "type": "Compound",
+      "name": "antidepressants",
+      "attributes": {
+        "context": "therapeutic agents such as antidepressants"
+      },
+      "source_chunk_ids": [
+        "99889004a570b3f0ee6b38128b415558"
+      ]
+    },
+    {
+      "id": "ent_187",
+      "type": "PharmEffect",
+      "name": "Signaling pathway modulation",
+      "attributes": {
+        "context": "Signaling pathway modulation by addictive drugs"
+      },
+      "source_chunk_ids": [
+        "7a82bc9361c9908f67ed953dc0d5467f"
+      ]
+    },
+    {
+      "id": "ent_188",
+      "type": "PharmEffect",
+      "name": "affect VMAT2 transporter function",
+      "attributes": {
+        "context": "may also affect VMAT2 transporter function"
+      },
+      "source_chunk_ids": [
+        "7a82bc9361c9908f67ed953dc0d5467f"
+      ]
+    },
+    {
+      "id": "ent_189",
+      "type": "PharmEffect",
+      "name": "altering VMAT cellular trafficking",
+      "attributes": {
+        "context": "by altering VMAT cellular trafficking"
+      },
+      "source_chunk_ids": [
+        "7a82bc9361c9908f67ed953dc0d5467f"
+      ]
+    },
+    {
+      "id": "ent_190",
+      "type": "PharmEffect",
+      "name": "PKA signaling is reduced",
+      "attributes": {
+        "context": "PKA signaling is reduced"
+      },
+      "source_chunk_ids": [
+        "7a82bc9361c9908f67ed953dc0d5467f"
+      ]
+    },
+    {
+      "id": "ent_191",
+      "type": "Compound",
+      "name": "cAMP",
+      "attributes": {
+        "context": "cAMP/PKA signaling"
+      },
+      "source_chunk_ids": [
+        "b9b5f4f2fc5f612cd3f488e55aeddaf2"
+      ]
+    },
+    {
+      "id": "ent_192",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "its role if any in addiction itself"
+      },
+      "source_chunk_ids": [
+        "b9b5f4f2fc5f612cd3f488e55aeddaf2"
+      ]
+    },
+    {
+      "id": "ent_193",
+      "type": "Compound",
+      "name": "lobaline",
+      "attributes": {
+        "context": "compounds targeting VMAT2, such as lobaline"
+      },
+      "source_chunk_ids": [
+        "b9b5f4f2fc5f612cd3f488e55aeddaf2"
+      ]
+    },
+    {
+      "id": "ent_194",
+      "type": "Compound",
+      "name": "methamphetamine",
+      "attributes": {
+        "context": "methamphetamine addiction by blocking its amine-releasing actions"
+      },
+      "source_chunk_ids": [
+        "b9b5f4f2fc5f612cd3f488e55aeddaf2"
+      ]
+    },
+    {
+      "id": "ent_195",
+      "type": "Indication",
+      "name": "methamphetamine addiction",
+      "attributes": {
+        "context": "treatment of methamphetamine addiction"
+      },
+      "source_chunk_ids": [
+        "b9b5f4f2fc5f612cd3f488e55aeddaf2"
+      ]
+    },
+    {
+      "id": "ent_196",
+      "type": "Compound",
+      "name": "amphetamine",
+      "attributes": {
+        "context": "administration of amphetamine"
+      },
+      "source_chunk_ids": [
+        "db627d67e7a0183783522d31b582b640"
+      ]
+    },
+    {
+      "id": "ent_197",
+      "type": "PharmEffect",
+      "name": "lethal",
+      "attributes": {
+        "context": "is lethal at birth"
+      },
+      "source_chunk_ids": [
+        "db627d67e7a0183783522d31b582b640"
+      ]
+    },
+    {
+      "id": "ent_198",
+      "type": "PharmEffect",
+      "name": "lack of feeding behavior",
+      "attributes": {
+        "context": "lack of feeding behavior"
+      },
+      "source_chunk_ids": [
+        "db627d67e7a0183783522d31b582b640"
+      ]
+    },
+    {
+      "id": "ent_199",
+      "type": "Compound",
+      "name": "monoamine",
+      "attributes": {
+        "context": "secretion of a monoamine"
+      },
+      "source_chunk_ids": [
+        "db627d67e7a0183783522d31b582b640"
+      ]
+    },
+    {
+      "id": "ent_200",
+      "type": "PharmEffect",
+      "name": "enhanced motor activity",
+      "attributes": {
+        "context": "enhanced motor activity"
+      },
+      "source_chunk_ids": [
+        "db627d67e7a0183783522d31b582b640"
+      ]
+    },
+    {
+      "id": "ent_201",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "most likely dopamine-dependent"
+      },
+      "source_chunk_ids": [
+        "db627d67e7a0183783522d31b582b640"
+      ]
+    },
+    {
+      "id": "ent_202",
+      "type": "Compound",
+      "name": "reserpine",
+      "attributes": {
+        "context": "after reserpine administration"
+      },
+      "source_chunk_ids": [
+        "db627d67e7a0183783522d31b582b640"
+      ]
+    },
+    {
+      "id": "ent_203",
+      "type": "Compound",
+      "name": "Serotonin",
+      "attributes": {
+        "context": "monoamine (5-HT, DA, and NE) levels"
+      },
+      "source_chunk_ids": [
+        "db627d67e7a0183783522d31b582b640"
+      ]
+    },
+    {
+      "id": "ent_204",
+      "type": "Compound",
+      "name": "Dopamine",
+      "attributes": {
+        "context": "monoamine (5-HT, DA, and NE) levels"
+      },
+      "source_chunk_ids": [
+        "db627d67e7a0183783522d31b582b640"
+      ]
+    },
+    {
+      "id": "ent_205",
+      "type": "Compound",
+      "name": "Norepinephrine",
+      "attributes": {
+        "context": "monoamine (5-HT, DA, and NE) levels"
+      },
+      "source_chunk_ids": [
+        "db627d67e7a0183783522d31b582b640"
+      ]
+    },
+    {
+      "id": "ent_206",
+      "type": "Compound",
+      "name": "5-HT metabolite",
+      "attributes": {
+        "context": "5-HT metabolite levels"
+      },
+      "source_chunk_ids": [
+        "db627d67e7a0183783522d31b582b640"
+      ]
+    },
+    {
+      "id": "ent_207",
+      "type": "Compound",
+      "name": "DA metabolite",
+      "attributes": {
+        "context": "DA, NE, and 5-HT metabolite levels"
+      },
+      "source_chunk_ids": [
+        "db627d67e7a0183783522d31b582b640"
+      ]
+    },
+    {
+      "id": "ent_208",
+      "type": "Compound",
+      "name": "NE metabolite",
+      "attributes": {
+        "context": "DA, NE, and 5-HT metabolite levels"
+      },
+      "source_chunk_ids": [
+        "db627d67e7a0183783522d31b582b640"
+      ]
+    },
+    {
+      "id": "ent_209",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "VMAT2 as a genetic component"
+      },
+      "source_chunk_ids": [
+        "bd46ed89572b098e8b34ddf5481a7a81"
+      ]
+    },
+    {
+      "id": "ent_210",
+      "type": "Indication",
+      "name": "affective disorders",
+      "attributes": {
+        "context": "in affective disorders"
+      },
+      "source_chunk_ids": [
+        "bd46ed89572b098e8b34ddf5481a7a81"
+      ]
+    },
+    {
+      "id": "ent_211",
+      "type": "Indication",
+      "name": "schizophrenia",
+      "attributes": {
+        "context": "genetic markers for schizophrenia"
+      },
+      "source_chunk_ids": [
+        "bd46ed89572b098e8b34ddf5481a7a81"
+      ]
+    },
+    {
+      "id": "ent_212",
+      "type": "Compound",
+      "name": "ethanol",
+      "attributes": {
+        "context": "between ethanol consumption"
+      },
+      "source_chunk_ids": [
+        "bd46ed89572b098e8b34ddf5481a7a81"
+      ]
+    },
+    {
+      "id": "ent_213",
+      "type": "Compound",
+      "name": "hVMAT2",
+      "attributes": {
+        "context": "identification of an hVMAT2 SNP cluster"
+      },
+      "source_chunk_ids": [
+        "bd46ed89572b098e8b34ddf5481a7a81"
+      ]
+    },
+    {
+      "id": "ent_214",
+      "type": "Indication",
+      "name": "alcoholism",
+      "attributes": {
+        "context": "reduced risk for alcoholism"
+      },
+      "source_chunk_ids": [
+        "bd46ed89572b098e8b34ddf5481a7a81"
+      ]
+    },
+    {
+      "id": "ent_215",
+      "type": "Indication",
+      "name": "alcohol addiction",
+      "attributes": {
+        "context": "susceptibility to alcohol addiction"
+      },
+      "source_chunk_ids": [
+        "bd46ed89572b098e8b34ddf5481a7a81"
+      ]
+    },
+    {
+      "id": "ent_216",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "generalized to addiction"
+      },
+      "source_chunk_ids": [
+        "bd46ed89572b098e8b34ddf5481a7a81"
+      ]
+    },
+    {
+      "id": "ent_217",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "VMAT2 expression"
+      },
+      "source_chunk_ids": [
+        "c6b5df4e5dc9046b861f6d8ead8041df"
+      ]
+    },
+    {
+      "id": "ent_218",
+      "type": "Compound",
+      "name": "Cocaine",
+      "attributes": {
+        "context": "chronic COC or methamphetamine (METH) users"
+      },
+      "source_chunk_ids": [
+        "c0b18125f5d38ff208057335d12b72f7"
+      ]
+    },
+    {
+      "id": "ent_219",
+      "type": "Compound",
+      "name": "Methamphetamine",
+      "attributes": {
+        "context": "chronic COC or methamphetamine (METH) users"
+      },
+      "source_chunk_ids": [
+        "c0b18125f5d38ff208057335d12b72f7"
+      ]
+    },
+    {
+      "id": "ent_220",
+      "type": "Indication",
+      "name": "chronic COC users",
+      "attributes": {
+        "context": "obtained at autopsy from chronic COC or methamphetamine (METH) users"
+      },
+      "source_chunk_ids": [
+        "c0b18125f5d38ff208057335d12b72f7"
+      ]
+    },
+    {
+      "id": "ent_221",
+      "type": "Indication",
+      "name": "chronic METH users",
+      "attributes": {
+        "context": "obtained at autopsy from chronic COC or methamphetamine (METH) users"
+      },
+      "source_chunk_ids": [
+        "c0b18125f5d38ff208057335d12b72f7"
+      ]
+    },
+    {
+      "id": "ent_222",
+      "type": "Compound",
+      "name": "Dopamine",
+      "attributes": {
+        "context": "striatal DA was depleted"
+      },
+      "source_chunk_ids": [
+        "c0b18125f5d38ff208057335d12b72f7"
+      ]
+    },
+    {
+      "id": "ent_223",
+      "type": "PharmEffect",
+      "name": "depleted",
+      "attributes": {
+        "context": "striatal DA was depleted"
+      },
+      "source_chunk_ids": [
+        "c0b18125f5d38ff208057335d12b72f7"
+      ]
+    },
+    {
+      "id": "ent_224",
+      "type": "PharmEffect",
+      "name": "affected",
+      "attributes": {
+        "context": "VMAT2 levels were affected in chronic COC"
+      },
+      "source_chunk_ids": [
+        "c0b18125f5d38ff208057335d12b72f7"
+      ]
+    },
+    {
+      "id": "ent_225",
+      "type": "Indication",
+      "name": "chronic COC",
+      "attributes": {
+        "context": "VMAT2 levels were affected in chronic COC (17\u201322% decrease)"
+      },
+      "source_chunk_ids": [
+        "c0b18125f5d38ff208057335d12b72f7"
+      ]
+    },
+    {
+      "id": "ent_226",
+      "type": "Indication",
+      "name": "chronic METH users",
+      "attributes": {
+        "context": "but not in chronic METH users"
+      },
+      "source_chunk_ids": [
+        "c0b18125f5d38ff208057335d12b72f7"
+      ]
+    },
+    {
+      "id": "ent_227",
+      "type": "Compound",
+      "name": "Tetrabenazine",
+      "attributes": {
+        "context": "used TBZ binding"
+      },
+      "source_chunk_ids": [
+        "c0b18125f5d38ff208057335d12b72f7"
+      ]
+    },
+    {
+      "id": "ent_228",
+      "type": "Compound",
+      "name": "Amphetamine",
+      "attributes": {
+        "context": "effects of both AMPH and COC"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_229",
+      "type": "Compound",
+      "name": "Cocaine",
+      "attributes": {
+        "context": "effects of both AMPH and COC"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_230",
+      "type": "PharmEffect",
+      "name": "rewarding pharmacological effects",
+      "attributes": {
+        "context": "rewarding pharmacological effects of both AMPH and COC"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_231",
+      "type": "PharmEffect",
+      "name": "abuse liability",
+      "attributes": {
+        "context": "perhaps also for their abuse liability"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_232",
+      "type": "Compound",
+      "name": "Amphetamine",
+      "attributes": {
+        "context": "AMPH release of DA from synapses"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_233",
+      "type": "Compound",
+      "name": "Dopamine",
+      "attributes": {
+        "context": "AMPH release of DA from synapses"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_234",
+      "type": "Compound",
+      "name": "Vesicular monoamine transporter 2",
+      "attributes": {
+        "context": "action at VMAT2 to release DA"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_235",
+      "type": "Compound",
+      "name": "Dopamine transporter",
+      "attributes": {
+        "context": "reverse transport\u201d through DAT"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_236",
+      "type": "Compound",
+      "name": "Cocaine",
+      "attributes": {
+        "context": "COC action likewise requires exocytotic release"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_237",
+      "type": "Compound",
+      "name": "Dopamine",
+      "attributes": {
+        "context": "release of DA from vesicles"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_238",
+      "type": "Compound",
+      "name": "Vesicular monoamine transporter 2",
+      "attributes": {
+        "context": "action of VMAT2 before it can fulfill its pharmacological action"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_239",
+      "type": "PharmEffect",
+      "name": "inhibiting DA reuptake",
+      "attributes": {
+        "context": "pharmacological action of inhibiting DA reuptake through DAT"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_240",
+      "type": "Compound",
+      "name": "Dopamine transporter",
+      "attributes": {
+        "context": "inhibiting DA reuptake through DAT"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_241",
+      "type": "Compound",
+      "name": "Vesicular monoamine transporter 2",
+      "attributes": {
+        "context": "neither VMAT2 protein nor VMAT2 transporter function"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_242",
+      "type": "Compound",
+      "name": "Dihydrotetrabenazine",
+      "attributes": {
+        "context": "making DTBZ imaging an attractive candidate"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_243",
+      "type": "Indication",
+      "name": "monoaminergic neurodegeneration",
+      "attributes": {
+        "context": "assessing monoaminergic neurodegeneration in disease"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_244",
+      "type": "PharmEffect",
+      "name": "drugs of abuse",
+      "attributes": {
+        "context": "treatment with drugs of abuse"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_245",
+      "type": "Indication",
+      "name": "disease",
+      "attributes": {
+        "context": "therapeutic target in disease"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_246",
+      "type": "Compound",
+      "name": "Vesicular monoamine transporter 2",
+      "attributes": {
+        "context": "VMAT2 could be regulated dynamically"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_247",
+      "type": "PharmEffect",
+      "name": "drugs of abuse",
+      "attributes": {
+        "context": "regulated dynamically by drugs of abuse"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_248",
+      "type": "Compound",
+      "name": "Cocaine",
+      "attributes": {
+        "context": "COC administration in rodents rapidly and reversibly increased VMAT2"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_249",
+      "type": "Compound",
+      "name": "Vesicular monoamine transporter 2",
+      "attributes": {
+        "context": "increased VMAT2 Vmax and Bmax"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_250",
+      "type": "Compound",
+      "name": "Amphetamine",
+      "attributes": {
+        "context": "AMPH administration has the opposite effect"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_251",
+      "type": "Compound",
+      "name": "Vesicular monoamine transporter 2",
+      "attributes": {
+        "context": "decreased VMAT2 Vmax and Bmax"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_252",
+      "type": "Compound",
+      "name": "Cocaine",
+      "attributes": {
+        "context": "short term COC treatment (5 days)"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_253",
+      "type": "Concentration",
+      "name": "5 days",
+      "attributes": {
+        "context": "COC treatment (5 days)"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_254",
+      "type": "Compound",
+      "name": "Amphetamine",
+      "attributes": {
+        "context": "not AMPH treatment, elevates VMAT2 density"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_255",
+      "type": "Compound",
+      "name": "Vesicular monoamine transporter 2",
+      "attributes": {
+        "context": "elevates VMAT2 density"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_256",
+      "type": "Compound",
+      "name": "Amphetamine",
+      "attributes": {
+        "context": "AMPH increases cytoplasmic DA"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_257",
+      "type": "Compound",
+      "name": "Dopamine",
+      "attributes": {
+        "context": "increases cytoplasmic DA"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_258",
+      "type": "Compound",
+      "name": "Cocaine",
+      "attributes": {
+        "context": "COC decreases cytoplasmic DA"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_259",
+      "type": "Compound",
+      "name": "Dopamine",
+      "attributes": {
+        "context": "decreases cytoplasmic DA"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_260",
+      "type": "PharmEffect",
+      "name": "inhibition of reuptake",
+      "attributes": {
+        "context": "inhibition of reuptake of extra-cellular DA"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_261",
+      "type": "Compound",
+      "name": "Vesicular monoamine transporter 2",
+      "attributes": {
+        "context": "VMAT2 function may be directly regulated"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_262",
+      "type": "Compound",
+      "name": "3H-Tetrabenazine",
+      "attributes": {
+        "context": "autoradiography of 3H-TBZ binding"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_263",
+      "type": "Compound",
+      "name": "Vesicular monoamine transporter 2",
+      "attributes": {
+        "context": "VMAT2 density did not change"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_264",
+      "type": "Compound",
+      "name": "Tetrabenazine",
+      "attributes": {
+        "context": "measurement of TBZ binding in striatal vesicular preparations"
+      },
+      "source_chunk_ids": [
+        "4cc8165ab0a662866faf5a99862aa7fb"
+      ]
+    },
+    {
+      "id": "ent_265",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "VMAT2 is up-regulated"
+      },
+      "source_chunk_ids": [
+        "d720ed14a6e293617ffcb0b689acc029"
+      ]
+    },
+    {
+      "id": "ent_266",
+      "type": "PharmEffect",
+      "name": "up-regulated",
+      "attributes": {
+        "context": "VMAT2 is up-regulated"
+      },
+      "source_chunk_ids": [
+        "d720ed14a6e293617ffcb0b689acc029"
+      ]
+    },
+    {
+      "id": "ent_267",
+      "type": "Indication",
+      "name": "immobilization stress",
+      "attributes": {
+        "context": "following immobilization stress"
+      },
+      "source_chunk_ids": [
+        "d720ed14a6e293617ffcb0b689acc029"
+      ]
+    },
+    {
+      "id": "ent_268",
+      "type": "PharmEffect",
+      "name": "aversion learning",
+      "attributes": {
+        "context": "aversion learning requires"
+      },
+      "source_chunk_ids": [
+        "d720ed14a6e293617ffcb0b689acc029"
+      ]
+    },
+    {
+      "id": "ent_269",
+      "type": "PharmEffect",
+      "name": "dopaminergic up-regulation",
+      "attributes": {
+        "context": "dopaminergic up-regulation that includes"
+      },
+      "source_chunk_ids": [
+        "d720ed14a6e293617ffcb0b689acc029"
+      ]
+    },
+    {
+      "id": "ent_270",
+      "type": "Compound",
+      "name": "DAT",
+      "attributes": {
+        "context": "increases in both DAT and VMAT2 expression"
+      },
+      "source_chunk_ids": [
+        "d720ed14a6e293617ffcb0b689acc029"
+      ]
+    },
+    {
+      "id": "ent_271",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "increases in both DAT and VMAT2 expression"
+      },
+      "source_chunk_ids": [
+        "d720ed14a6e293617ffcb0b689acc029"
+      ]
+    },
+    {
+      "id": "ent_272",
+      "type": "Compound",
+      "name": "aldehyde dehydrogenase 1a1",
+      "attributes": {
+        "context": "aldehyde dehydrogenase 1a1"
+      },
+      "source_chunk_ids": [
+        "d720ed14a6e293617ffcb0b689acc029"
+      ]
+    },
+    {
+      "id": "ent_273",
+      "type": "Compound",
+      "name": "VMAT2 protein",
+      "attributes": {
+        "context": "altered VMAT2 protein expression"
+      },
+      "source_chunk_ids": [
+        "55b48d228e2de1ce58ac675f42cd3a9e"
+      ]
+    },
+    {
+      "id": "ent_274",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "VMAT2, despite its occurrence"
+      },
+      "source_chunk_ids": [
+        "f087a6d56245d6726368c459b103dc65"
+      ]
+    },
+    {
+      "id": "ent_275",
+      "type": "Compound",
+      "name": "drugs",
+      "attributes": {
+        "context": "regulated by physiological stressors and drugs"
+      },
+      "source_chunk_ids": [
+        "f087a6d56245d6726368c459b103dc65"
+      ]
+    },
+    {
+      "id": "ent_276",
+      "type": "PharmEffect",
+      "name": "rewarding effects",
+      "attributes": {
+        "context": "the rewarding effects of drugs of abuse"
+      },
+      "source_chunk_ids": [
+        "f087a6d56245d6726368c459b103dc65"
+      ]
+    },
+    {
+      "id": "ent_277",
+      "type": "Compound",
+      "name": "drugs of abuse",
+      "attributes": {
+        "context": "effects of drugs of abuse"
+      },
+      "source_chunk_ids": [
+        "f087a6d56245d6726368c459b103dc65"
+      ]
+    },
+    {
+      "id": "ent_278",
+      "type": "Compound",
+      "name": "neurotransmitter",
+      "attributes": {
+        "context": "and neurotransmitter availability"
+      },
+      "source_chunk_ids": [
+        "f087a6d56245d6726368c459b103dc65"
+      ]
+    },
+    {
+      "id": "ent_279",
+      "type": "Compound",
+      "name": "catecholamines",
+      "attributes": {
+        "context": "Uptake of catecholamines"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_280",
+      "type": "Compound",
+      "name": "biological amines",
+      "attributes": {
+        "context": "Accumulation of biological amines"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_281",
+      "type": "Compound",
+      "name": "neuro-transmitter",
+      "attributes": {
+        "context": "hormone and neuro-transmitter transport"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_282",
+      "type": "Compound",
+      "name": "neurotransmitter",
+      "attributes": {
+        "context": "The vesicular neurotransmitter transporters"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_283",
+      "type": "Compound",
+      "name": "monoamines",
+      "attributes": {
+        "context": "secretion of monoamines"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_284",
+      "type": "Compound",
+      "name": "acetylcholine",
+      "attributes": {
+        "context": "monoamines and acetylcholine"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_285",
+      "type": "Compound",
+      "name": "neuro-transmitter",
+      "attributes": {
+        "context": "Vesicular neuro-transmitter transporters"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_286",
+      "type": "Compound",
+      "name": "monoamine",
+      "attributes": {
+        "context": "The vesicular monoamine transporter"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_287",
+      "type": "Compound",
+      "name": "reserpine",
+      "attributes": {
+        "context": "reserpine-sensitive vesicular monoamine transporter"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_288",
+      "type": "Compound",
+      "name": "monoamine",
+      "attributes": {
+        "context": "vesicular monoamine transporter"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_289",
+      "type": "Compound",
+      "name": "MPP+",
+      "attributes": {
+        "context": "suppresses MPP+ toxicity"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_290",
+      "type": "PharmEffect",
+      "name": "suppresses toxicity",
+      "attributes": {
+        "context": "suppresses MPP+ toxicity"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_291",
+      "type": "Compound",
+      "name": "monoamine",
+      "attributes": {
+        "context": "human brain vesicle monoamine transporter"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_292",
+      "type": "Compound",
+      "name": "monoamine",
+      "attributes": {
+        "context": "two vesicular monoamine transporters"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_293",
+      "type": "Compound",
+      "name": "monoamine",
+      "attributes": {
+        "context": "vesicular monoamine transporter isoforms"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_294",
+      "type": "Compound",
+      "name": "L-DOPA",
+      "attributes": {
+        "context": "vulnerability to L-DOPA toxicity"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_295",
+      "type": "PharmEffect",
+      "name": "increased vulnerability",
+      "attributes": {
+        "context": "Increased vulnerability to L-DOPA toxicity"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_296",
+      "type": "PharmEffect",
+      "name": "toxicity",
+      "attributes": {
+        "context": "L-DOPA toxicity"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_297",
+      "type": "Compound",
+      "name": "amphetamine",
+      "attributes": {
+        "context": "reduced amphetamine-conditioned reward"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_298",
+      "type": "Compound",
+      "name": "MPTP",
+      "attributes": {
+        "context": "enhanced MPTP toxicity"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_299",
+      "type": "PharmEffect",
+      "name": "reduced reward",
+      "attributes": {
+        "context": "reduced amphetamine-conditioned reward"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_300",
+      "type": "PharmEffect",
+      "name": "enhanced locomotion",
+      "attributes": {
+        "context": "enhanced amphetamine locomotion"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_301",
+      "type": "PharmEffect",
+      "name": "enhanced toxicity",
+      "attributes": {
+        "context": "enhanced MPTP toxicity"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_302",
+      "type": "Compound",
+      "name": "neurotransmitter",
+      "attributes": {
+        "context": "Vesicular neurotransmitter transporters"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_303",
+      "type": "Compound",
+      "name": "monoamine",
+      "attributes": {
+        "context": "regulates monoamine storage"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_304",
+      "type": "Compound",
+      "name": "amphetamine",
+      "attributes": {
+        "context": "essential for amphetamine action"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_305",
+      "type": "Compound",
+      "name": "monoamine",
+      "attributes": {
+        "context": "vesicular monoamine transporter 2 gene"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_306",
+      "type": "Indication",
+      "name": "neonatal death",
+      "attributes": {
+        "context": "results in neonatal death"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_307",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "supersensitivity to cocaine"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_308",
+      "type": "Compound",
+      "name": "amphetamine",
+      "attributes": {
+        "context": "cocaine and amphetamine"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_309",
+      "type": "PharmEffect",
+      "name": "supersensitivity",
+      "attributes": {
+        "context": "supersensitivity to cocaine and amphetamine"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_310",
+      "type": "Compound",
+      "name": "monoamine",
+      "attributes": {
+        "context": "vesicular monoamine transporter 1 gene"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_311",
+      "type": "Indication",
+      "name": "schizophrenia",
+      "attributes": {
+        "context": "and schizophrenia"
+      },
+      "source_chunk_ids": [
+        "db70fe3c277d859b14cef5dae02475ec"
+      ]
+    },
+    {
+      "id": "ent_312",
+      "type": "Compound",
+      "name": "vesicular monoamine transporter 1",
+      "attributes": {
+        "context": "Variations in the vesicular monoamine transporter 1 gene (VMAT1/SLC18A1)"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_313",
+      "type": "Compound",
+      "name": "VMAT1/SLC18A1",
+      "attributes": {
+        "context": "Variations in the vesicular monoamine transporter 1 gene (VMAT1/SLC18A1)"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_314",
+      "type": "Indication",
+      "name": "bipolar i disorder",
+      "attributes": {
+        "context": "associated with bipolar i disorder"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_315",
+      "type": "Indication",
+      "name": "schizophrenia",
+      "attributes": {
+        "context": "schizophrenia susceptibility genes"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_316",
+      "type": "Compound",
+      "name": "SLC18A2",
+      "attributes": {
+        "context": "SLC18A2 promoter haplotypes"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_317",
+      "type": "Indication",
+      "name": "alcoholism",
+      "attributes": {
+        "context": "protective factor against alcoholism"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_318",
+      "type": "Compound",
+      "name": "vesicular acetylcholine transporter",
+      "attributes": {
+        "context": "imaging of the vesicular acetylcholine transporter"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_319",
+      "type": "Compound",
+      "name": "vesicular monoamine transporter",
+      "attributes": {
+        "context": "and the vesicular monoamine transporter"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_320",
+      "type": "Compound",
+      "name": "vesicular amine transporter",
+      "attributes": {
+        "context": "Molecular analysis of vesicular amine transporter function"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_321",
+      "type": "Compound",
+      "name": "acetylcholine",
+      "attributes": {
+        "context": "Transport mechanisms in acetylcholine and monoamine storage"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_322",
+      "type": "Compound",
+      "name": "monoamine",
+      "attributes": {
+        "context": "acetylcholine and monoamine storage"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_323",
+      "type": "Compound",
+      "name": "vesicular transporters",
+      "attributes": {
+        "context": "Neurogenetics of vesicular transporters in C. elegans"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_324",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "The VMAT2 gene in mice and humans"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_325",
+      "type": "Compound",
+      "name": "amphetamine",
+      "attributes": {
+        "context": "amphetamine responses"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_326",
+      "type": "Indication",
+      "name": "cardiac arrhythmias",
+      "attributes": {
+        "context": "locomotion, cardiac arrhythmias, aging"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_327",
+      "type": "Compound",
+      "name": "dopaminergic toxins",
+      "attributes": {
+        "context": "vulnerability to dopaminergic toxins"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_328",
+      "type": "Compound",
+      "name": "Vesicular amine transporter",
+      "attributes": {
+        "context": "Vesicular amine transporter expression in amine-handling cells"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_329",
+      "type": "Compound",
+      "name": "amine",
+      "attributes": {
+        "context": "in amine-handling cells"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_330",
+      "type": "Compound",
+      "name": "vesicular amine transporters",
+      "attributes": {
+        "context": "Chemical neuroanatomy of the vesicular amine transporters"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_331",
+      "type": "Compound",
+      "name": "vesicular monoamine transporter mRNAs",
+      "attributes": {
+        "context": "Ontogeny of vesicular monoamine transporter mRNAs VMAT1 and VMAT2"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_332",
+      "type": "Compound",
+      "name": "VMAT1",
+      "attributes": {
+        "context": "transporter mRNAs VMAT1 and VMAT2"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_333",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "transporter mRNAs VMAT1 and VMAT2"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_334",
+      "type": "Compound",
+      "name": "vesicular amine transporter",
+      "attributes": {
+        "context": "Ontogeny of vesicular amine transporter expression"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_335",
+      "type": "Compound",
+      "name": "Vesicular amine transporter",
+      "attributes": {
+        "context": "Vesicular amine transporter expression and isoform selection"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_336",
+      "type": "Compound",
+      "name": "vesicular monoamine transporter",
+      "attributes": {
+        "context": "isoforms of the human vesicular monoamine transporter"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_337",
+      "type": "Compound",
+      "name": "vesicular monoamine transporter 1",
+      "attributes": {
+        "context": "variants in the vesicular monoamine transporter 1 (VMAT1/SLC18A1)"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_338",
+      "type": "Compound",
+      "name": "VMAT1/SLC18A1",
+      "attributes": {
+        "context": "transporter 1 (VMAT1/SLC18A1) and neuropsychiatric disorders"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_339",
+      "type": "Indication",
+      "name": "neuropsychiatric disorders",
+      "attributes": {
+        "context": "and neuropsychiatric disorders"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_340",
+      "type": "Compound",
+      "name": "vesicular monoamine transporter 1",
+      "attributes": {
+        "context": "variation in the vesicular monoamine transporter 1 gene"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_341",
+      "type": "Indication",
+      "name": "anxiety-related personality traits",
+      "attributes": {
+        "context": "and anxiety-related personality traits"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_342",
+      "type": "Compound",
+      "name": "Trace amines",
+      "attributes": {
+        "context": "Trace amines: identification of a family"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_343",
+      "type": "Compound",
+      "name": "tyrosine hydroxylase",
+      "attributes": {
+        "context": "tyrosine hydroxylase-positive CNS neurons"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_344",
+      "type": "Compound",
+      "name": "dopa decarboxylase",
+      "attributes": {
+        "context": "distinguished by dopa decarboxylase and VMAT2 co-expression"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_345",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "dopa decarboxylase and VMAT2 co-expression"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_346",
+      "type": "Compound",
+      "name": "Norepinephrine transporter",
+      "attributes": {
+        "context": "Norepinephrine transporter expression in cholinergic sympathetic neurons"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_347",
+      "type": "Compound",
+      "name": "vesicular transporters",
+      "attributes": {
+        "context": "membrane and vesicular transporters"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_348",
+      "type": "Compound",
+      "name": "methamphetamine",
+      "attributes": {
+        "context": "associated with methamphetamine abuse"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_349",
+      "type": "Indication",
+      "name": "methamphetamine abuse",
+      "attributes": {
+        "context": "associated with methamphetamine abuse"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_350",
+      "type": "Compound",
+      "name": "amphetamines",
+      "attributes": {
+        "context": "mechanism of action of amphetamines"
+      },
+      "source_chunk_ids": [
+        "5103ef7c49158963c9b9d8347e61e849"
+      ]
+    },
+    {
+      "id": "ent_351",
+      "type": "Compound",
+      "name": "Dopamine",
+      "attributes": {
+        "context": "Dopamine Release"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_352",
+      "type": "Compound",
+      "name": "Methamphetamine",
+      "attributes": {
+        "context": "Methamphetamine Self-administration"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_353",
+      "type": "PharmEffect",
+      "name": "Self-administration",
+      "attributes": {
+        "context": "Methamphetamine Self-administration"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_354",
+      "type": "Compound",
+      "name": "Lobelane",
+      "attributes": {
+        "context": "Lobelane inhibits methamphetamine-evoked dopamine release"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_355",
+      "type": "PharmEffect",
+      "name": "inhibits",
+      "attributes": {
+        "context": "Lobelane inhibits methamphetamine-evoked dopamine release"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_356",
+      "type": "Compound",
+      "name": "methamphetamine",
+      "attributes": {
+        "context": "methamphetamine-evoked dopamine release"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_357",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "methamphetamine-evoked dopamine release"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_358",
+      "type": "PharmEffect",
+      "name": "inhibition",
+      "attributes": {
+        "context": "inhibition of the vesicular monoamine transporter-2"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_359",
+      "type": "Compound",
+      "name": "vesicular monoamine transporter-2",
+      "attributes": {
+        "context": "inhibition of the vesicular monoamine transporter-2"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_360",
+      "type": "Compound",
+      "name": "chromogranins",
+      "attributes": {
+        "context": "role of chromogranins in storage and exocytosis"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_361",
+      "type": "PharmEffect",
+      "name": "storage",
+      "attributes": {
+        "context": "chromogranins in storage and exocytosis"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_362",
+      "type": "PharmEffect",
+      "name": "exocytosis",
+      "attributes": {
+        "context": "chromogranins in storage and exocytosis"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_363",
+      "type": "Compound",
+      "name": "chromogranin A",
+      "attributes": {
+        "context": "chromogranin A null mouse"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_364",
+      "type": "Compound",
+      "name": "Cocaine",
+      "attributes": {
+        "context": "Cocaine increases dopamine release"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_365",
+      "type": "PharmEffect",
+      "name": "increases",
+      "attributes": {
+        "context": "Cocaine increases dopamine release"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_366",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "Cocaine increases dopamine release"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_367",
+      "type": "Compound",
+      "name": "synapsin",
+      "attributes": {
+        "context": "mobilization of a synapsin-dependent reserve pool"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_368",
+      "type": "Compound",
+      "name": "Synaptic vesicle transporter",
+      "attributes": {
+        "context": "Synaptic vesicle transporter expression"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_369",
+      "type": "Compound",
+      "name": "Methamphetamine",
+      "attributes": {
+        "context": "Methamphetamine-induced locomotor activity"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_370",
+      "type": "PharmEffect",
+      "name": "locomotor activity",
+      "attributes": {
+        "context": "Methamphetamine-induced locomotor activity"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_371",
+      "type": "PharmEffect",
+      "name": "sensitization",
+      "attributes": {
+        "context": "sensitization in dopamine transporter"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_372",
+      "type": "Compound",
+      "name": "dopamine transporter",
+      "attributes": {
+        "context": "dopamine transporter and vesicular monoamine transporter 2"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_373",
+      "type": "Compound",
+      "name": "vesicular monoamine transporter 2",
+      "attributes": {
+        "context": "vesicular monoamine transporter 2 double mutant mice"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_374",
+      "type": "Compound",
+      "name": "synaptic vesicular monoamine transporter",
+      "attributes": {
+        "context": "synaptic vesicular monoamine transporter locus"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_375",
+      "type": "Indication",
+      "name": "schizophrenia spectrum disorders",
+      "attributes": {
+        "context": "schizophrenia spectrum disorders"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_376",
+      "type": "Compound",
+      "name": "ethanol",
+      "attributes": {
+        "context": "modulation of ethanol consumption"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_377",
+      "type": "PharmEffect",
+      "name": "consumption",
+      "attributes": {
+        "context": "ethanol consumption"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_378",
+      "type": "Compound",
+      "name": "vesicular monoamine transporter 2 (VMAT2)",
+      "attributes": {
+        "context": "vesicular monoamine transporter 2 (VMAT2)"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_379",
+      "type": "Compound",
+      "name": "dopamine transporter (DAT)",
+      "attributes": {
+        "context": "dopamine transporter (DAT) knockout mice"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_380",
+      "type": "Compound",
+      "name": "ethanol",
+      "attributes": {
+        "context": "Altered ethanol-associated behaviors"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_381",
+      "type": "Compound",
+      "name": "vesicular monoamine transporter",
+      "attributes": {
+        "context": "vesicular monoamine transporter heterozygote knockout mice"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_382",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "modulated by dopamine in the amygdala"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_383",
+      "type": "Compound",
+      "name": "Tetrabenazine",
+      "attributes": {
+        "context": "Tetrabenazine Expert Opin Pharmacother"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_384",
+      "type": "Indication",
+      "name": "hyperkinetic movement disorders",
+      "attributes": {
+        "context": "Treatment of hyperkinetic movement disorders"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_385",
+      "type": "Compound",
+      "name": "vesicle monoamine transporter (VMAT2)",
+      "attributes": {
+        "context": "human vesicle monoamine transporter (VMAT2)"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_386",
+      "type": "Compound",
+      "name": "cysteines",
+      "attributes": {
+        "context": "luminal cysteines that form an intramolecular disulfide bond"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_387",
+      "type": "Compound",
+      "name": "disulfide bond",
+      "attributes": {
+        "context": "intramolecular disulfide bond"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_388",
+      "type": "Compound",
+      "name": "Vesicular neurotransmitter transporters",
+      "attributes": {
+        "context": "Vesicular neurotransmitter transporters in Huntington's disease"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_389",
+      "type": "Indication",
+      "name": "Huntington's disease",
+      "attributes": {
+        "context": "Huntington's disease"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_390",
+      "type": "PharmEffect",
+      "name": "binding",
+      "attributes": {
+        "context": "monoaminergic vesicular binding"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_391",
+      "type": "Indication",
+      "name": "Parkinson disease",
+      "attributes": {
+        "context": "aging and Parkinson disease"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_392",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "vesicular dopamine dynamics"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_393",
+      "type": "Indication",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "context": "Parkinson's disease"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_394",
+      "type": "PharmEffect",
+      "name": "Increased",
+      "attributes": {
+        "context": "Increased vesicular monoamine transporter binding"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_395",
+      "type": "Compound",
+      "name": "vesicular monoamine transporter",
+      "attributes": {
+        "context": "Increased vesicular monoamine transporter binding"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_396",
+      "type": "PharmEffect",
+      "name": "binding",
+      "attributes": {
+        "context": "vesicular monoamine transporter binding"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_397",
+      "type": "PharmEffect",
+      "name": "abstinence",
+      "attributes": {
+        "context": "early abstinence in human methamphetamine users"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_398",
+      "type": "Compound",
+      "name": "methamphetamine",
+      "attributes": {
+        "context": "human methamphetamine users"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_399",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "is VMAT2 a stable dopamine neuron biomarker?"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_400",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "stable dopamine neuron biomarker"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_401",
+      "type": "Concentration",
+      "name": "low dose",
+      "attributes": {
+        "context": "low dose of amphetamine"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_402",
+      "type": "Compound",
+      "name": "amphetamine",
+      "attributes": {
+        "context": "low dose of amphetamine"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_403",
+      "type": "Compound",
+      "name": "vesicular monoamine transporter",
+      "attributes": {
+        "context": "vesicular monoamine transporter binding"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_404",
+      "type": "PharmEffect",
+      "name": "binding",
+      "attributes": {
+        "context": "vesicular monoamine transporter binding"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_405",
+      "type": "Compound",
+      "name": "[11C]DTBZ",
+      "attributes": {
+        "context": "PET (+)[11C]DTBZ study"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_406",
+      "type": "Compound",
+      "name": "[11C]dihydrotetrabenazine",
+      "attributes": {
+        "context": "In vivo [11C]dihydrotetrabenazine binding"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_407",
+      "type": "PharmEffect",
+      "name": "binding",
+      "attributes": {
+        "context": "[11C]dihydrotetrabenazine binding"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_408",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "sensitivity to dopamine concentrations"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_409",
+      "type": "Compound",
+      "name": "vesicular monoamine transporter 2 (VMAT2)",
+      "attributes": {
+        "context": "The vesicular monoamine transporter 2 (VMAT2)"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_410",
+      "type": "Indication",
+      "name": "Langerhans cell histiocytosis",
+      "attributes": {
+        "context": "absent from Langerhans cell histiocytosis"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_411",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "VMAT2 is the transporter"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_412",
+      "type": "PharmEffect",
+      "name": "sequestration",
+      "attributes": {
+        "context": "sequestration of monoamines"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_413",
+      "type": "Compound",
+      "name": "monoamines",
+      "attributes": {
+        "context": "sequestration of monoamines"
+      },
+      "source_chunk_ids": [
+        "15301970d21ba7c9e224ee0491fc4d91"
+      ]
+    },
+    {
+      "id": "ent_414",
+      "type": "Indication",
+      "name": "Systemic Mastocytosis",
+      "attributes": {
+        "context": "Patients with Systemic Mastocytosis"
+      },
+      "source_chunk_ids": [
+        "632285a471646cb156e378c0cb9b57a5"
+      ]
+    },
+    {
+      "id": "ent_415",
+      "type": "Compound",
+      "name": "Reserpine",
+      "attributes": {
+        "context": "Reserpine affects differentially the density of the vesicular monoamine transporter"
+      },
+      "source_chunk_ids": [
+        "632285a471646cb156e378c0cb9b57a5"
+      ]
+    },
+    {
+      "id": "ent_416",
+      "type": "Compound",
+      "name": "di-hydrotetrabenazine",
+      "attributes": {
+        "context": "di-hydrotetrabenazine binding sites"
+      },
+      "source_chunk_ids": [
+        "632285a471646cb156e378c0cb9b57a5"
+      ]
+    },
+    {
+      "id": "ent_417",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "chronic cocaine self-administration in the rat"
+      },
+      "source_chunk_ids": [
+        "632285a471646cb156e378c0cb9b57a5"
+      ]
+    },
+    {
+      "id": "ent_418",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "Striatal dopamine, dopamine transporter"
+      },
+      "source_chunk_ids": [
+        "632285a471646cb156e378c0cb9b57a5"
+      ]
+    },
+    {
+      "id": "ent_419",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "chronic cocaine users"
+      },
+      "source_chunk_ids": [
+        "632285a471646cb156e378c0cb9b57a5"
+      ]
+    },
+    {
+      "id": "ent_420",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "Striatal dopamine nerve terminal markers"
+      },
+      "source_chunk_ids": [
+        "632285a471646cb156e378c0cb9b57a5"
+      ]
+    },
+    {
+      "id": "ent_421",
+      "type": "Compound",
+      "name": "methamphetamine",
+      "attributes": {
+        "context": "chronic methamphetamine users"
+      },
+      "source_chunk_ids": [
+        "632285a471646cb156e378c0cb9b57a5"
+      ]
+    },
+    {
+      "id": "ent_422",
+      "type": "Compound",
+      "name": "Cocaine",
+      "attributes": {
+        "context": "Cocaine, but not amphetamine, short term treatment"
+      },
+      "source_chunk_ids": [
+        "632285a471646cb156e378c0cb9b57a5"
+      ]
+    },
+    {
+      "id": "ent_423",
+      "type": "Compound",
+      "name": "amphetamine",
+      "attributes": {
+        "context": "Cocaine, but not amphetamine, short term treatment"
+      },
+      "source_chunk_ids": [
+        "632285a471646cb156e378c0cb9b57a5"
+      ]
+    },
+    {
+      "id": "ent_424",
+      "type": "Compound",
+      "name": "monoamines",
+      "attributes": {
+        "context": "somatodendritic exocytosis of monoamines"
+      },
+      "source_chunk_ids": [
+        "632285a471646cb156e378c0cb9b57a5"
+      ]
+    },
+    {
+      "id": "ent_425",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "'DA' (dopamine)"
+      },
+      "source_chunk_ids": [
+        "0b4e628ea645e52755547e5830e12812"
+      ]
+    },
+    {
+      "id": "ent_426",
+      "type": "Compound",
+      "name": "Vesicular Monoamine Transporter",
+      "attributes": {
+        "context": "VMAT (Vesicular Monoamine Transporter)"
+      },
+      "source_chunk_ids": [
+        "0b4e628ea645e52755547e5830e12812"
+      ]
+    },
+    {
+      "id": "ent_427",
+      "type": "Compound",
+      "name": "amphetamine",
+      "attributes": {
+        "context": "AMPH (amphetamine)"
+      },
+      "source_chunk_ids": [
+        "0b4e628ea645e52755547e5830e12812"
+      ]
+    },
+    {
+      "id": "ent_428",
+      "type": "Compound",
+      "name": "Dopamine Transporter",
+      "attributes": {
+        "context": "membrane-bound DAT (Dopamine Transporter)"
+      },
+      "source_chunk_ids": [
+        "0b4e628ea645e52755547e5830e12812"
+      ]
+    },
+    {
+      "id": "ent_429",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "COC (cocaine)"
+      },
+      "source_chunk_ids": [
+        "0b4e628ea645e52755547e5830e12812"
+      ]
+    },
+    {
+      "id": "ent_430",
+      "type": "PharmEffect",
+      "name": "inhibiting",
+      "attributes": {
+        "context": "specifically inhibiting DAT"
+      },
+      "source_chunk_ids": [
+        "0b4e628ea645e52755547e5830e12812"
+      ]
+    },
+    {
+      "id": "ent_431",
+      "type": "Compound",
+      "name": "VMAT2",
+      "attributes": {
+        "context": "VMAT2 trafficking"
+      },
+      "source_chunk_ids": [
+        "0b4e628ea645e52755547e5830e12812"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:03.899405+00:00",
+    "original_file": "entities.json"
+  }
+}

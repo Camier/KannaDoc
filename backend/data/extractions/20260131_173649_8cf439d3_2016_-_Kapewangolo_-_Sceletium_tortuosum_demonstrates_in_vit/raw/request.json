@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-01-31T16:36:49.925793Z",
+  "doc_id": "f70332719cb67a1bc714e72069c78b7141aa97a981cd0efe6bc8a5e307760e33",
+  "input": "/LAB/@thesis/datalab/ALL_FLAT/2016 - Kapewangolo - Sceletium tortuosum demonstrates in vitro anti-HIV and free radical scavenging activity.pdf",
+  "is_file_url": false,
+  "page_range": null,
+  "payload": {
+    "mode": "accurate",
+    "output_format": "json,html,markdown,chunks",
+    "paginate": "true",
+    "add_block_ids": "true",
+    "disable_image_extraction": "false",
+    "disable_image_captions": "false",
+    "skip_cache": "false",
+    "page_schema": "{\"$schema\": \"http://json-schema.org/draft-07/schema#\", \"$id\": \"biblio\", \"title\": \"Bibliographic Metadata Schema\", \"description\": \"Minimal join keys for dedup and graph linking. Run on pages 0-2 only via page_range parameter.\", \"type\": \"object\", \"properties\": {\"title\": {\"type\": \"string\", \"description\": \"Document title as it appears on the first page\"}, \"authors\": {\"type\": \"array\", \"description\": \"Author names in document order\", \"items\": {\"type\": \"string\"}, \"maxItems\": 20}, \"publication_year\": {\"type\": \"integer\", \"description\": \"Year of publication (4-digit)\", \"minimum\": 1500, \"maximum\": 2100}, \"doi\": {\"type\": \"string\", \"description\": \"Digital Object Identifier (e.g. 10.1234/example)\"}, \"venue\": {\"type\": \"string\", \"description\": \"Journal, conference, publisher, or institutional source\"}}, \"required\": [], \"additionalProperties\": false}",
+    "extras": "extract_links"
+  },
+  "schema_path": "/LAB/@thesis/datalab/data/notes/schemas/biblio.json",
+  "no_schema": false
+}

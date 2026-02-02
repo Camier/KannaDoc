@@ -1,0 +1,437 @@
+
+
+{0}------------------------------------------------
+
+CHRISTOPHER MORRIS  
+Clarkson University
+
+# Royal pharmaceuticals:
+
+# Bioprospecting, rights, and traditional authority in South Africa
+
+## A B S T R A C T
+
+The translation of international biogenetic resource rights to a former apartheid homeland is fostering business partnerships between South African traditional leaders and multinational pharmaceutical companies. In the case of one contentious resource, these partnerships are entrenching, and in some instances expanding, apartheid-associated boundaries and configurations of power. The state and corporate task of producing communities amenable to biodiversity commercialization and conservation is entangled with segregationist laws and spatial planning. Rather than exclusion and the closure of ethnic boundaries, resource rights in this context foreground forced enrollment and the expansion of indigenous group-membership as modes of capitalist accumulation in an extractive economy. [*pharmaceutical bioprospecting, Pelargonium sidoides, Convention on Biological Diversity, indigeneity, homelands, South Africa*]
+
+Ukufezeakiswa/ukuphunyezwa kwamalungelo egunya lwezimbiwa zendalo ezilapha, kwindawo ezisakuba yinxenye yamaphandle ocalu-calulo, ikhuthaza ubuhlakani nolwahlulelwano phakathi kweeNkosi kunye neeNkampani eznkulu zamazwe angaphandle kweli. (Amalungelo abhekisa kulawoabantuinezimbiwa ezijenge zityalo/mithi, ngokuzisebenzisa kwabo kwanobunini bazo.) Omnye umzekelo wesityalo obangaba ingxabano, ngowokuba obubuhlakani/lwahlulelwano (iinkosi neenkampani zamazwe) bubangela ifuthe elityhala ngamandla lokude kwandiswe memida yemihlabayayisekiwe ngeloxesha lamaphandle ocalu-calulo, kananjalo nesimo esitsha samagunya nolawulo lomthetho. Amalinge/imizamo kaRhulumente neeNkampani zamayeza/zamachiza okufumanaabantu abangena ngci kwindlela yeengcinga zabo abasele benazo kakade, (abakwaziyo ukurhweba kwanokulondoloza indalo), utyhalwa lifuthe lomgaqo-nkqubo ocalu-calulaabantu, kwanomgaqo-nkqubo obona utyalo-mali lusenzeka ikakhulu, ngaphandle kwezondawozazisakuba phantsi kwamaphandle ocalu-calulo ngokwemida. U Rhulumente ukhangeleka ngathi ufuna kwenza utyalo-mali ikakhulu, ezixekweni/dolophini kweli le Mpuma Kapa, ngaphezu kwakwimimandla yeelali zelalisakuba liphandle localu-calulo. Kunokuba iinkokheli zemveli noRhulumente zenze imali zodwa, ngokubashiya ngaphandle abahlali bale mihlaba, iinkokheli zemveli kwakunye noRhulumnte zizama ukwandisa inani lazo, lababantubaphantsi kwazo, okanye banyanzeliseabantu bezondawobabephantsi kolawulo lweenkosi ngokwabantu bemveliyalondawo, ngeenjongo zokwenza ingeniso-mali kwishini llemveliso elikhupha/elomba izimbiwa zendalo eMzantsi Afrika. [*Ushishino ngemithi/amachiza/izityalo zendalo kwaneengcambu ziseteyenziselwa ukwenza amayeza (pharmaceutical bioprospecting), uwendle, eli ligama elisemthethweni le Nkomfa (Convention on Biological Diversity), imo yokuba ngowemveli yalo ndawo oknye inzalelwane yalapho kulo ndawo, amaphandle ocalu-calulo (Bantustans)*, uMzantsi Afrika]
+
+I arrived early on an October morning in 2011 for the royal wedding at the Imingcangathelo Great Place, the home and seat of Chieftainess Tyali, in the former apartheid homeland of Ciskei, a region that is now part of South Africa's Eastern Cape Province.<sup>1</sup> Preparations were under way for the marriage of Tyali's eldest son, who in the coming months would succeed his mother as traditional leader of the Imingcangathelo chieftaincy. The latter is one of 42 chiefdoms subsumed under the Rharhabe kingdom (or "paramountcy"), a structure claiming authority over tens of thousands of subjects. In front of me, near the tangled wood of Tyali's impressive *kraal* (livestock enclosure), hundreds of guests converged for the morning ceremony.
+
+An hour before the ceremony began, a silver sedan arrived, and two formally dressed European men emerged from the car. They greeted me and warmly asked about my presence at the wedding. "I am an anthropologist interested in pharmaceutical bioprospecting in this area," I answered them. "I see," one of them replied. "Well, we are the bioprospectors." A representative from Tyali's royal council approached and invited the bioprospectors and me into the living room of the main house. There, a dozen Eastern Cape royals—the kings and chiefs of the province—sat dining together. Tyali's representative encouraged us to partake while we waited for the prince, who eventually entered, clad in his wedding attire. The bioprospectors presented him with a wedding gift: a large, carefully wrapped photo album. "We wish you and your wife-to-be a prosperous future and a good way forward," one of the bioprospectors said in German-accented English. Tyali's representative answered him on behalf of the prince: "According to our traditions, the prince is not to be seen by anyone before the wedding. But I have made a small, small opening for you." After a brief conversation, we left the house to join the rest of the wedding's attendees.
+
+I share this ethnographic vignette to reveal not the marriage between princes and princesses in the former Ciskei homeland (hereafter the Ciskei), but rather the marriage between chieftaincies and multinational pharmaceutical companies there. The two bioprospectors represented German pharmaceutical giant Schwabe Pharmaceuticals and its South African supplier company, Parceval Pharmaceuticals. They attended the wedding to maintain business relations with Imingcangathelo, the
+
+{1}------------------------------------------------
+
+first and most prominent chiefly partner to foreign companies seeking access to *Pelargonium sidoides* (hereafter *Pelargonium*), a medicinal plant endemic to southern Africa.
+
+In a region of Africa with notably contentious struggles over biogenetic resources, many high-ranking officials in the South African Department of Environmental Affairs (DEA) told me they consider *Pelargonium* the most contentious.<sup>2</sup> From 2007 to 2010, the resource attracted international attention as two anti-biopiracy NGOs sought to overturn patents associated with the plant, including a patent granting Schwabe exclusive use of it for developing drugs to treat AIDS and AIDS-related diseases like tuberculosis (African Centre for Biosafety 2010). *Pelargonium* is also the principal ingredient in Umckaloabo, a blockbuster phytotherapy sold across the world for respiratory infections like acute bronchitis. Many North Americans and Europeans can purchase Umckaloabo (also called Umcka) at their local grocery store or pharmacy, and the product annually generates hundreds of millions of dollars for US and European pharmaceutical companies.
+
+How the South African state regulates corporate access to resources like *Pelargonium* is shaped by the Convention on Biological Diversity (CBD) and its ancillary instrument, the Nagoya Protocol on Access and Benefit Sharing, which South Africa became a signatory to in 1995 and 2013 respectively. The DEA in particular has sought to fulfill its country's obligations to these international frameworks by formalizing what is called "access and benefit sharing" (ABS), that is, by establishing legal agreements that allow companies access to biogenetic resources in exchange for monetary and technological compensation to the communities that provide such access. ABS agreements like those between Schwabe and Imingcangathelo are controversial, however, because they define access-providing communities in the Ciskei region as chiefdoms. Many residents in Imingcangathelo contest this definition and complain that ABS allows chiefs to capture and hoard pharmaceutical royalties.
+
+Yet beyond a story about local actors scrambling for treasure, the state's endorsement of chiefs in ABS agreements raises broader questions about the generative interface between local configurations of power and a global context of indigenous rights and neoliberal capitalism (Geschiere 2009; Mbembe 2001). Drawing on 14 months of fieldwork in South Africa, I explore this interface, asking what material form commitments to international biogenetic resource rights take when, through their translation to local circumstances, they encounter particular interests and histories. What, specifically, do such rights do in a former apartheid homeland where aspirations for benefit sharing meet chiefly demands for control over resources and subjects?
+
+Liberal-democratic rights are empirically contingent (Englund and Nyamnjoh 2004; Goodale and Merry 2007;
+
+Robins 2008). They are not immutable concepts imposed wholesale onto local conditions. Rather, they are abstractions with a capacity for translation and distortion, as Harri Englund (2006) demonstrates in his study of human rights discourses in Malawi. Insisting that "human rights acquire significance situationally" (32), Englund invites scholars to investigate the social and historical contexts in which rights discourses take concrete form. Relatedly, Anna Tsing (2005) shows how rights discourses, as "engaged universals," mobilize and invite both powerful and marginalized actors to appropriate them, often with conjunctural effects. Both Englund and Tsing note that such effects include depoliticization, as the ostensible universalism of rights may occlude the actual grounded dynamics of power (see also Badiou 2001; W. Brown 2006; Povinelli 2002). The case of *Pelargonium* illustrates how the translation of ABS rights to a former homeland depoliticizes the construction of rural residents as customary subjects. Specifically, in an effort to produce communities amenable to biodiversity frameworks, the South African state constructs ABS agreements that elide complex, historically wrought subjectivities in favor of essentialist renderings of life under centralized chieftaincy. Alongside segregationist laws and economic development in the country, ABS schemes are thus entrenching—and in some instances expanding—apartheid-era boundaries and configurations of power. As a result, pharmaceuticals have become a site of contention over the status and content of "custom."
+
+Explosions in rights consciousness, transnational capitalist investment, ethnic incorporation, and the durability of traditional authority are profoundly linked phenomena in South Africa (Comaroff and Comaroff 2009; Cook 2011; Cook and Hardin 2013; Manson 2013; Oomen 2005; Robins 2008). An examination of *Pelargonium* in the Ciskei reinforces this finding, while highlighting less explored features of it. For one thing, the study of *Pelargonium* reveals pharmaceuticals to be an increasingly prominent frontier of chiefly recognition and legitimacy.<sup>3</sup> Second, it contrasts existing scholarship—which largely describes contexts characterized by historical continuity in the leadership of chiefs—with a situation in which rights expand customary subjectivity into areas of the country where chiefs were virtually nonexistent for over 140 years.<sup>4</sup> Third, *Pelargonium* offers a window into ethnic boundary construction in indigenous claims to culture as property. It does so, however, by shifting attention from the exclusionary nature of this construction to the dangers of exclusion's concomitant: forced inclusion or membership as tribal subject in the ethnonation.
+
+I begin by sketching the biotrade in *Pelargonium* and the circumstances of a group of villagers involved in it. I proceed by exploring ABS and indigeneity as points of articulation between the obligations of international biodiversity law and the politics of representative authority in the Ciskei.
+
+{2}------------------------------------------------
+
+Using both historical contextualization and contemporary ethnographic encounters, I then elucidate why the translation of ABS rights has assumed the form it has in the Ciskei; why some rural villagers fail to conform to the common conceptions of ABS stakeholders; and how corporatization and ethnocommodities play a role in the political legitimacy of chiefs as ABS partners. Finally, I show how state and corporate discourses concerning the identity of ABS stakeholders align with segregationist laws and economic development planning in South Africa.
+
+## Resourceful chiefs and their subject-laborers
+
+According to state and corporate actors who know the biotrade, most of the *Pelargonium* exported from South Africa is harvested from the Ciskei. The resource is widely distributed across the Eastern Cape Province, but its growth schedule is slow, and accessing it through individual private landowners is piecemeal and inconvenient. Companies therefore prefer the massive harvesting geography provided by “communal areas” under chiefs in the former homelands. Residents, however, are contesting the boundaries of such communal areas and the status of the people within them.
+
+A case in point is a group of villages in the Ciskei collectively called Masakhane. Since 2006, residents of Masakhane have harvested and sold *Pelargonium* to local biotraders, or industry middlemen, who buy *Pelargonium* from harvesters, transport it to the Western Cape Province for processing, and sell it to national and foreign pharmaceutical companies (see Figure 1). In late 2011, a community meeting about *Pelargonium* took place in a dilapidated storefront in a Masakhane village. Facilitating the meeting were representatives of a South African NGO that challenged Schwabe’s *Pelargonium* patents. The NGO had previously organized community meetings in the Masakhane villages and collected affidavits from its residents supporting the patent challenges. At the 2011 meeting, however, the NGO shared far more urgent news: in a forthcoming *Pelargonium* ABS agreement, the South African state had categorized the villagers as tribal subjects of Chieftainess Tyali, subsuming them under the Imingcangathelo chieftaincy. In exchange for paying royalties to Tyali, the pharmaceutical companies would be allowed access to *Pelargonium* in the area the state and Tyali defined as Imingcangathelo. I recorded one of the NGO employees as he explained the agreement:
+
+After lengthy discussions [between the pharmaceutical companies, the DEA, the Imingcangathelo chieftaincy, and the Rharhabe kingdom], a conclusion was arrived at that the companies would come to an ABS agreement with the Rharhabe paramountcy and Imingcangathelo chieftaincy. The companies declared that they
+
+had met and consulted with the communities of the region through the kingdom and chiefs, and therefore their understanding is that the people have agreed to this deal. The chiefs themselves are situated on the land of the state. There are people like you [the Masakhane residents] who have your own allocated land, but no difference is made between you and the land under the chiefs. There is no mention made that those people like you, who have your own land, should also be approached [for informed consent and benefit sharing]. They simply use one blanket for all. The agreement states that the agreement was done with the traditional leadership on the principle that they were doing it on your behalf, as their subjects.
+
+The Masakhane villages are located only a few miles from Chieftainess Tyali’s Great Place in Imingcangathelo. And even though Masakhane residents compose two landholding associations with their own elected leadership structures, Tyali had previously claimed Masakhane residents as her subjects. But if such declarations had been an annoyance in the past, her position in the *Pelargonium* ABS agreement made matters intolerable. As one former harvester told me,
+
+There is nothing going right at all since the chiefs took control of the industry. Before this, things were going well, when people were trading on their own. There is no partnership between us, the people, and the chieftainess. There’s no development for the people whatsoever [from the royalties]. Nothing is coming from the side of the chieftaincy.
+
+Like others, Masakhane harvesters had long earned low wages (from \$.25 to \$.75 per kilogram of tubers, which require hard labor to extract from the soil’s depths). They had also endured the erratic behavior of biotraders, who often failed to show up as scheduled and visibly tampered with the scales used to weigh plants and pay harvesters. For these and other reasons, many stopped harvesting. Living in a province with high rates of poverty and unemployment, however, some chose to continue (see Figure 2). Those who did witnessed Tyali using her growing role in the biotrade to make new demands. Residents claim that, in 2010, Tyali asked that all harvested *Pelargonium* from the Masakhane farms be brought to her Great Place to be weighed and sold. There, she would expropriate a percentage of the sale as a form of taxation. Harvesters found Tyali’s demand for this surplus value preposterous—redundant, even—given that she already extracted and hoarded funds derived from their labor through ABS agreements with Parceval and Schwabe. All the harvesters I spoke with had refused her, but some suggested that others had acquiesced.
+
+At the time of my fieldwork in 2011, the state sought to extend other powers to traditional leaders. The provincial DEA office was concerned that geographically overlapping harvesting permits encouraged overharvesting. Officials
+
+{3}------------------------------------------------
+
+![A person holding a card with four numbered illustrations (1-4) showing the steps for sustainable harvesting of Pelargonium sidoides tubers. The card includes Xhosa text at the top and bottom of each illustration.](dc1e692e5b7efd8e5a2a790c458646d9_img.jpg)
+
+The card contains the following text:
+
+- 1. N IJONGA INDAMU INE I KHUBHALO
+- 2. N GUMBA NI KHUPHA ICAMBA ENKHULU  
+NI SHEYA, INCAMBA EKONI
+- 3. NI PHENDA N PLANZA ENSHLOKHO  
+YE FLOWER
+- 4. NI SERENZA KHAKHUTHE LOWSERENDZ  
+VAKHO UNIKHA MALI PAMBLE
+
+A person holding a card with four numbered illustrations (1-4) showing the steps for sustainable harvesting of Pelargonium sidoides tubers. The card includes Xhosa text at the top and bottom of each illustration.
+
+**Figure 1.** A card instructs harvesters of *Pelargonium sidoides* how to sustainably remove plant tubers from the soil and sell them to biotraders. August 8, 2011, Khayamnandi, Eastern Cape Province, South Africa.
+
+![A photograph of a village in the former Ciskei homeland, showing several small, simple houses with corrugated metal roofs and walls, surrounded by green fields and trees. Power lines and poles are visible in the background.](16d86083b7ebdc40c0647a1d3d46ace7_img.jpg)
+
+A photograph of a village in the former Ciskei homeland, showing several small, simple houses with corrugated metal roofs and walls, surrounded by green fields and trees. Power lines and poles are visible in the background.
+
+**Figure 2.** Houses in a village in the former Ciskei homeland. September 9, 2011, Llangollen, Eastern Cape Province, South Africa.
+
+reacted by empowering participating chieftaincies to issue harvesting permits. Residents feared this measure would allow chiefs to punish noncompliant harvesters by excluding them from the biotrade.
+
+Harvesters in Masakhane had reason for such concerns. The region's most industrious biotrader, a white former colonel in the South African Defense Reserves, threatened to stop purchasing *Pelargonium* from the area if its
+
+{4}------------------------------------------------
+
+residents continued to protest Tyali. Likewise, traditional leaders and the DEA argued that, if Masakhane villagers formally rejected their status as subjects of Tyali but wanted to continue in the biotrade, they would have to establish their own ABS agreements. Of course, these same actors told me that the Masakhane area's relatively small size would make it unattractive to bioprospectors, as would the villagers' high-profile challenge to a corporate patent.
+
+Yet the villagers were far from anticorporate. Most faulted the state for their predicament. As one resident told me,
+
+I blame the government for this, because their officials don't ever come to communities to learn about our plight and to hear about our side of the story about the chieftaincy. There's no follow-up from the government's side. And that is why the chiefs are having it easy in misusing what is meant for the people. No one is monitoring their use of the money given to them. The chiefs are using us as a stepladder to [...] accumulate for themselves. All of this at our expense.
+
+The recasting of harvesters as tribal subjects is expedient for traditional leaders, who are paid under ABS according to how much raw material is harvested from their jurisdictions. With *Pelargonium* abundantly distributed across the province, and royalties associated with traditional knowledge of the resource not yet in play, traditional leaders like Tyali have found little reason to limit ethnic membership within their communities.<sup>5</sup> Rather, they seek to enroll as many subjects as possible to serve as laborers in the industry. In this respect, as a mode of accumulation, Rharhabe chiefs' jurisdiction over *persons* is as important as their jurisdiction over territory and property (Lund and Boone 2013).
+
+### Indigenous collectives and ABS agreements
+
+Around the time of the NGO's visit to the Masakhane farms, another kind of *Pelargonium* meeting unfolded at Mngqesha, the Rharhabe paramountcy's Great Place. There, I sat beside Rharhabe chiefs, provincial environmental-affairs officials, and industry biotraders at a long wooden conference table. They discussed a proposed *Pelargonium* ABS agreement between the Rharhabe paramountcy's business arm, the King Sandile Development Trust, and the dominant biotrader, who maintains business ties with a number of South African and foreign pharmaceutical companies. King Sandile had passed away several months earlier, and his chair at the table was empty. In his place, Chief Langa Mavuso, the secretary and CEO of the paramountcy's trust, led the meeting. I recorded his introductory comments, which included the following statement (emphases mine):
+
+My dear chiefs, at the trust, I was given the task of leadership in dealing with *Pelargonium*. Upon discussion with the Department of Environmental Affairs, we could detect that harvesting and selling of these plants was not going accordingly. Now the situation is such that it involves a bioprospecting legislation, which regulates how things should be done. According to the legislation, the indigenous communities in these areas where the plants are available should also benefit from this commercial industry. It is stipulated that such communities should benefit through a portion of 5 percent. *This means that this is the benefit that should go to the chiefs of these areas with the indigenous communities.* I can also categorically state that we have already begun receiving this 5 percent shared profit from Parceval Pharmaceuticals, amounting so far to 120,000 rands [\$9,400] for the paramountcy's trust and 50,000 rands [\$4,000] for the Imingcangathelo chieftaincy. Thus I'm trying to show you the potential of business from this venture if *we* can handle it well. Currently, there are about three pharmaceutical companies interested in doing business with *us*, and *we* are one of only three areas in southern Africa where *Pelargonium* is available—Free State Province, Lesotho, and *us*. As such, the various pharmaceutical companies are in such a rush to work with *us*.
+
+To grasp the claims of representative authority in this quotation—claims welding traditional authority to “indigenous community” and biogenetic resource rights—I direct attention to the CBD, a legally binding framework that transfers control over biogenetic resources from the global commons to national jurisdictions. Alongside its supplementary Nagoya Protocol, the CBD outlines a “grand bargain” (Gollin 1993, 191) between biogenetic-resource “users,” who want to access resources and knowledge for the development and commercialization of pharmaceutical products, and resource “providers,” who seek compensation for facilitating this access. The responsibility of equitably legislating and enforcing this arrangement (ABS) falls to CBD signatory states.
+
+The CBD and Nagoya Protocol are legal focal points for a number of rationalities. I focus here on four. First, the frameworks reframe nature as “biodiversity,” an entity characterized by its inherent economic value and subsequent compatibility “with ideas of industrial and economic management and intervention” (Hayden 2003, 52). Second, they couple conservation with the trope of economic incentivization, arguing that “the fair and equitable sharing of [biodiversity's] economic value with the custodians of biological diversity are key incentives for the conservation of biological diversity and the sustainable use of its components.”<sup>6</sup> Third, they discursively triangulate inclusionary participation with the market and the conservation of biodiversity, internalizing distinctive kinds of people—“indigenous
+
+{5}------------------------------------------------
+
+communities”—into the production of biodiversity's value (Hayden 2003; Hirsh 2010). Fourth, they position sovereign states as facilitators in this triangle's center, tasking them with administering ABS and identifying claimant communities.
+
+The inclusionary shift described above, which understands nature as “a resource that comes with (new kinds of) potential claimants attached” (Hayden 2003, 65), has proved problematic for signatory states. Ambiguities abound: Who are the appropriate claimants? How and to what extent shall they be compensated? Who decides? In the wake of this proprietary and participatory reframing of nature, rights-based claims have proliferated, wildly generating both expectations and expressions of entitlement.
+
+In such claims *indigeneity* is a key idiom (Comaroff and Comaroff 2009; Greene 2004; Posey 1996). It is also a hotly disputed category of belonging across Africa, where “defining which groups may count as indigenous is . . . problematic and controversial, as there are long and ongoing histories of migration, assimilation, and conquest” (Pelican 2009, 52; see also Geschiere 2009; Hodgson 2002; Igoe 2006; Kuper 2003). Consequently, the descendants of original populations are not the only people to whom the term *indigene* applies. *Indigenous* is also a relative status in the sense of prior occupation, aspired to by “nonoriginal” groups competing over land and landed resources (Peters 2010). Traditional leaders in the former homelands are indigenes in this latter sense.
+
+South Africa's ABS laws are inclusive regarding relative indigenes. The country's ABS regulations define “indigenous community” as “any community of people living or having rights or interests in a distinct geographical area within the Republic of South Africa with a leadership structure.”<sup>7</sup> Beyond communal territoriality, the definition's emphasis on leadership points to the representational issue at the heart of the signatory state's task—that is, producing “a centralized structure of representative authority . . . with which external actors can negotiate” (Greene 2004, 222). This matter of which voices—or “leaders”—to privilege over others is fundamental to the state's efforts at administering agreements between corporations and collectivities (Castree 2004). In this sense, bioprospecting is “a crucial site of struggle over what will count as a collective, as representation, and as a 'legitimate' form of political sociality” (Hayden 2004, 229). And with traditional leaders being but one among a number of actors vying for representative authority across a pluralized governance landscape, ABS foregrounds a central problem with frameworks like the CBD. As Rosemary Coombe (2005) argues, they reflect a supranational interest in shaping national policies on what are exceedingly complex cultural matters. Such matters “have not historically been the responsibility of [the South African DEA] and arguably do not belong in [its] mandate” (Van Niekerk and Wynberg 2012, 541). What is more, the
+
+DEA is programmatically overburdened and lacks resources and knowledge regarding ABS (Taylor and Wynberg 2008).
+
+DEA officials themselves told me as much, often stressing that their capacity to monitor and police ABS is limited. The biotrade in *Pelargonium* is growing, they argued, and chiefs provide the kind of broad geographic and socio-political jurisdiction that DEA officials feel they lack in the Ciskei. This jurisdiction is especially crucial, they insisted, to operationalizing ABS and surveilling the industry. One provincial official condensed a common refrain: “The chiefs will be our eyes and ears on the ground.” Other officials, echoing the CBD's far-resonating call for the market-based, incentive-oriented management of nature, similarly expressed the hope that traditional leaders would act as rational business actors and thus as environmental custodians.
+
+Reflecting the DEA's ambivalence about ABS is the failure of the biodiversity legislation it crafted to vest the state with ownership of biogenetic resources. Rather than initiating agreements between the state and pharmaceutical companies, the legislation's modus operandi for securing ABS rights hinges on bilateral agreements between such companies and claimant communities (Van Niekerk and Wynberg 2012). This move outsources the task of identifying access providers to bioprospecting applicants, which is what occurred with *Pelargonium* (see Figure 3). Indeed, the DEA has merely ratified partnerships that pharmaceutical companies and biotraders have already established with Rharhabe chiefs.
+
+Such moves typify widespread trends in regulatory governance, with state sovereignty increasingly decentralized and oriented toward shaping constellations or forums of governance (Goldstein 2007; Von Benda-Beckmann, Von Benda-Beckmann, and Eckert 2009). African states in particular have frequently reverted to modes of administration akin to indirect rule, or the maintenance of “nested territorial jurisdictions” (Lund and Boone 2013, 4). Aninka Claassens (2014) notes how such nesting enables power-sharing deals between central governments and local actors. Yet such jurisdictions, like quasi-gatekeeper states sitting astride “the interface between a territory and the rest of the world” that desires its resources (Cooper 2002, 157), additionally depend on financial and political support from foreign corporate entities. In the case of the Ciskei's chiefly jurisdictions, these entities include multinational pharmaceutical companies.
+
+## Traditional leadership then and now
+
+How does “leadership” in the biodiversity legislation's definition of “indigenous community” come to be understood as traditional authority? How do “distinct geographic areas” in this same definition come to be demarcated through apartheid-associated tribal boundaries? Given the contingent politics of representation and recognition that
+
+{6}------------------------------------------------
+
+![A photograph of a bulletin board at an elementary school in Alice, Eastern Cape Province, South Africa. The board features a large yellow sign that reads 'WELCOME HOME SCHWABE' in colorful, hand-drawn letters. Below the sign, there are several newspaper clippings. One clipping is titled 'Alice starts to blossom' and another mentions 'New project cultivated in Alice'. To the left of the sign, there is a poster with the heading 'PLAN FOR INSTITUTIONS' and a section titled 'Talk to your partner about STIs'. The bulletin board is mounted on a wooden surface.](9ebd85380ef496499e5f23ec0d9cd744_img.jpg)
+
+A photograph of a bulletin board at an elementary school in Alice, Eastern Cape Province, South Africa. The board features a large yellow sign that reads 'WELCOME HOME SCHWABE' in colorful, hand-drawn letters. Below the sign, there are several newspaper clippings. One clipping is titled 'Alice starts to blossom' and another mentions 'New project cultivated in Alice'. To the left of the sign, there is a poster with the heading 'PLAN FOR INSTITUTIONS' and a section titled 'Talk to your partner about STIs'. The bulletin board is mounted on a wooden surface.
+
+**Figure 3.** An Imingcangathelo-area elementary school's bulletin board welcomes representatives of Schwabe, a German pharmaceutical company. The company is undertaking a benefit-sharing project with its South African supplier, Parceval, to plant fruit trees near the school. Also displayed are newspaper articles about the project. November 17, 2011, Alice, Eastern Cape Province, South Africa.
+
+are invited by CBD and Nagoya Protocol rationalities, it is unsurprising that authorized forms of indigeneity in bioprospecting agreements assume a local character, depending on alliances forged between actors (Castree 2004; Greene 2004). Yet understanding why some groups have prominence over others in such alliances—indeed, to use Noel Castree's (2004, 227) words, "how different indigenous peoples step onto the political stage locally and regionally while others are marginalized or silenced"—requires a consideration of other factors as well. It requires asking how, following Englund, "the political history of a country influence[s] the translation [of rights] that [get] adopted there" (2006, 47).
+
+The colonial invention of tradition and tribalism in much of South Africa is well known. As in many other African contexts, indirect colonial rule distorted the powers of chiefs, centralizing their authority and eroding the processes of chiefly accountability and consultation that characterized the precolonial political order (Delius 2008). Ciskei did not follow this pattern, however—at least for a time. It was the site of the Frontier Wars (1779–1879), which expanded colonial rule beyond the Cape Colony and decimated the chiefs and others who resisted British expansion. With colonial officials opposed to hereditary leaders, they cast aside the trappings of chiefly authority and incorporated the region into the Cape Colony under liberal common law. Incoming white settlers received land for farming schemes, and in nonwhite settlements, the remaining chiefs surrendered power to elected authorities called "headmen" (Bergh and Visagie 1985).
+
+The apartheid state thus faced a problem when it attempted to consolidate the Ciskei as a homeland and "retribalize" its political system. When it was established as an administrative region in 1961, there were no formally recognized chiefs to appoint, so the newly sovereign Ciskei state established tribal authorities by giving headmen new powers and retitling them "chiefs." The state also set about resuscitating or wholly fabricating chiefdoms and kingdoms, jurisdictionally positioning many of these to uphold the homeland's legitimacy and its president (Peires 1989). Thoroughly contrived, the project established a strong link between chiefs and colonial rule (Ntsebenza 2011). Loyal chiefs secured control over "ancestral" land and a base of patronage by buying land and resettling people (Peires 1989).
+
+### ***"We grew up under different circumstances"***
+
+This history challenges the view, so common among state and corporate bioprospecting actors, that groups like the Masakhane are, by virtue of where they live, innate subjects of traditional leaders. As one Masakhane resident told me, "We grew up under different circumstances." This was the case because within the Ciskei homeland's already-exceptional historical context, farms like those in the Masakhane area were additionally unique. Since 1853, the various governments administering the Masakhane farms have all regarded the land as commercial. For the first 123 years, white settlers owned the land and employed farm dwellers or black laborers who were permanent residents.
+
+{7}------------------------------------------------
+
+After the white settlers left in 1982, the homeland government elected to keep the farms in commercial production rather than incorporate them into any chiefly jurisdiction. The farm dwellers who had previously worked for the white settlers remained on the farms and were employed by black stock owners who leased the land from the state but rarely resided on it (Cocks, Dold, and Grundy 2001). The families living in Masakhane today are the descendants of these farm dwellers and, over a 163-year period, have been the land's only consistent occupants.
+
+It was the former farm dwellers' uninterrupted occupation and farming activities that led the new South African state to recognize their ownership rights in 2000. That year, the minister of agriculture and land affairs approved the transfer of nine farm portions to the Masakhane villagers. They subsequently used the Communal Property Associations Act of 1996 to form two associations to hold title to the land. But for reasons that remain mysterious, the Eastern Cape official in charge of the case failed to transfer the land, and the associations never received their deeds.
+
+The leaders of the Masakhane associations argue that continued confusion over the status of their farms has led the DEA to conflate their villages with the nearby Imingcangathelo chiefdom.<sup>8</sup> Imingcangathelo and one other chiefdom flank the farms, and Masakhane residents have had contact with both over the past decades. The association leaders and other residents express respect for the chiefs' ceremonial significance, reflecting what Steven Robins calls "the hybrid and situated subjectivities of post-colonial citizen-subjects" (2008, 11). Yet, echoing many others in the former homelands (Thipe and Buthelezi 2014), residents also reject state-ascribed tribal identities and argue that they do not want chiefs interfering with their livelihoods. As one association leader explained,
+
+This issue of the traditional leaders, I simply blame the government for this. They are the ones who reinstated the headmen and chiefs without consulting the people on the ground. The government should have come and discussed with the people the reinstatement of the chiefs and what their authority would be over the people. Also, I believe that in this new dispensation, the people should have the right to say or be able to choose who should rule them. It's not that we don't recognize chiefs—after all they are the original traditional leadership from way back—but only that we have a choice of telling which leadership we would like to fall under and not be forced with them. That's where the mistake of the government occurred.
+
+### ***The Big Chief Combo: Traditional leaders as ABS stakeholders***
+
+After the dismantling and reintegration of the homelands into the new South Africa in 1994, apartheid-associated "white chiefs" in the Ciskei found themselves once again
+
+on the margins of governance plans. The new ruling party, the African National Congress (ANC), established decentralized tiers of government in the form of provinces and municipalities. In response, traditional leaders who had ascended during the apartheid era loudly complained about being marginalized (Ntsebenza 2006). They waged a juridical campaign for their authority to be recognized, claiming to be closer to the people and using idioms of cultural and human rights. Their appropriation of "the global mood" surrounding indigenous rights and their ability to "redefine [this mood] to suit their needs" has proved especially productive (Oomen 2005, 115). Indeed, the capacity for malleability is a hallmark of traditional leadership worldwide (Koelble and LiPuma 2011).
+
+This malleability is personified by the secretary of the Rharhabe paramountcy's trust, Chief Mavuso. After a month of trying to secure an interview with him, I met him in 2011 at the local Spur Steak Ranches restaurant, where he often holds business lunches. Like all Spur Steak Ranches locations across southern Africa, Mavuso's haunt is daubed in kitschy native North American iconography. Menu items include the Eat Like a Chief Special. But the towering Mavuso did not need the menu; with great earnestness, he ordered his usual, the Big Chief Combo, a meal consisting of pork ribs, a quarter chicken, a lamb chop, heaping portions of onion rings and fries, and unlimited soft-drink refills. A few booths over, an acquaintance waved at Mavuso. Her children, tangled in a playful wrestling match, sported the restaurant's cardboard Native American-styled headdresses.
+
+Embodying "Afro-modern capitalist cosmopolitanism" (Cook and Hardin 2013), the Spur Steak Ranches restaurant is a ritual space where indigenous aesthetics emanating from the United States undergird Mavuso's performance of royalty. The encounter illustrates how "African traditional leaders look to the geographic, economic, and discursive West for capital, credibility, and consumption of goods and services" (Cook and Hardin 2013, 228). It also affirms that traditional leaders invoke "a notion of 'tradition' that is not only distinctively modern and plural but is actively being created and negotiated within the wider national and sub-Saharan political audience and with their 'own' presumed subjects" (Koelble and LiPuma 2011, 6).
+
+During our meal, Mavuso spoke of the business opportunities afforded by traditional leaders' increased political and legal recognition in the new South Africa. These opportunities include travel and tourism, with the Rharhabe Great Place currently serving as a hotel and conference center, its website imploring tourists to "visit the forested land of Xhosa kings." In my notebook, Mavuso drew a chart of the trust's other ventures, listing citrus orchards, cattle farms, a biosphere project, water bottling, and finally *Pelargonium*, around which he penciled a circle. He described how, at an early-2011 meeting, he
+
+{8}------------------------------------------------
+
+persuaded the state to organize the *Pelargonium* industry and its ABS arrangements through the paramountcy's trust rather than through individual Rharhabe chiefdoms (as had previously been the case). Under the new arrangement, the trust kept a percentage of the royalties and was responsible for distributing the remainder to participating chieftaincies (based on volume of material harvested).<sup>9</sup> Mavuso's declaration to me that he is above all "a politician" seemed apt, since he then endeavored to bring chiefdoms like Imingcangathelo into line with the paramountcy's interests. The task is "hectic," Mavuso said, with chiefs unhappy about losing money to the kingdom.
+
+The paramountcy's ability to assert this kind of broad representative authority may be under threat, however. In 2010, the Nhlapo Commission, which was established by South Africa's national government to investigate the legitimacy of paramountcies in the country, ruled that the Rharhabe paramountcy is not in fact a kingship. Citing the "irregular appointment" of Sandile as king under Sebe, the commission relegated Sandile to "senior traditional leader," or mere chief.<sup>10</sup> Although Sandile was allowed to retain his ceremonial status as king until his death, this grace period proved brief. Two days before I met with Mavuso at the Spur Steak Ranch, Sandile died of renal failure. Mavuso explained that he was now preoccupied with a legal challenge against the ruling, led by Sandile's widowed queen (Prince 2012).
+
+At first glance, it is odd that the DEA would organize such controversial, potentially profitable ABS agreements through an authority structure that a national commission had deemed illegitimate. At least one provincial DEA official I interviewed saw the situation this way. "[The DEA is] going to have to call in Mandela on this one [to sort matters out]," this official told me in 2011. But a member of the Nhlapo Commission I interviewed disagreed. The ruling meant little in terms of the trust's legitimacy in the *Pelargonium* industry, the commissioner insisted, because the Rharhabe paramountcy's trust was one of the most organized tribal-corporate entities in the province. Moreover, the commissioner argued, the Rharhabe kingdom appeared better at generating authoritative consent from its subjects than many of the paramountcies that the commission considered legitimate.
+
+Taken together, the patterns outlined above echo the findings of John and Jean Comaroff (2009), who argue that "lawfare" and corporatization are significant modes of legitimation for traditional leaders in contemporary South Africa. Along these same lines, the trust's emerging line of pharmaceutical products is yet another frontier of possibility. Medicine of Rharhabe (Amayeza Akwa Rharhabe), a brand conceived by Mavuso and Parceval, includes a *Pelargonium*-derived medicine called *Ukhohlokohhlo*.<sup>11</sup> Alongside Mavuso, a number of Rharhabe chiefs see themselves as the culturally legitimate owners of the traditional
+
+medical knowledge associated with *Pelargonium*. They are thus at the forefront of an emerging identity economy linking Rharhabe culture and ethnicity with a biogenetic resource—a development echoing other case studies of culture being commodified under neoliberal conditions (M. Brown 2003; Comaroff and Comaroff 2000; Comaroff and Comaroff 2009; Coombe 2005; Sylvain 2005). And although there is currently no explicit link made in existing ABS agreements between any commercial product and the acknowledged traditional knowledge associated with *Pelargonium* (Wynberg and Van Niekerk 2014), Mavuso told me the trust "would like to move things in this direction." For its part, a high-level DEA official told me that any state decision regarding the traditional medical knowledge of *Pelargonium* "will conclude with kings and chiefs."
+
+### *Of warrior chiefs and mafiosos*
+
+The South African Constitution contains an independent chapter on traditional leaders that affords them a role in "local communities," creates a house for them in Parliament, and reserves them seats on provincial councils (Crais 2011). These gains have been foundational to a collection of traditional-leadership laws introduced by South Africa's Parliament in the new millennium. The laws legislate state salaries for chiefs and strive to invest them with statutory powers concerning land administration, welfare allocation, the administration of justice in traditional courts, safety and security, economic development, and the governance of natural resources (Claassens 2014).<sup>12</sup> Yet not all traditional leaders maintain such powers. Only a select few are currently involved in ABS in the Ciskei. In fact, in constructing ABS agreements, bioprospectors and DEA officials attempt to order a political landscape across which the status of traditional leaders is deeply uneven and contested, even within the institution of traditional leadership itself.
+
+According to some leaders who are not involved in ABS, the Rharhabe paramountcy gained its prominence in the region by acquiring territorial jurisdiction and political capital under apartheid—acquisitions, they insist, that have made the paramountcy disproportionally powerful and exclusionary in the post-1994 period. This was how a chieftaincy I met while attending a small Heritage Day festival in 2011 saw the paramountcy. The festival took place at Ntaba kaNdoda, the erstwhile national temple of the Ciskei, located in the region's wooded hills (see Figure 4). Under apartheid, one of the homeland's presidents, Lennox Sebe, had hoped that constructing the temple would bolster the link between his ideology of ethnic nationalism and a precolonial, royal past (Peires 1989). Sebe's government even repatriated and interred at the temple's graveyard—known as the Heroes' Acre—the remains of the region's most famous warrior chief, who had died in imperial confinement on Robben Island in 1873. But the burial event
+
+{9}------------------------------------------------
+
+![A photograph of Ntaba kaNdoda, a large, modern concrete structure with a curved, roof-like top, situated in a grassy field. A group of people is gathered in front of the structure, and a white tent is visible in the background under a cloudy sky.](625e10f48104ba2b06b2220a9b224712_img.jpg)
+
+A photograph of Ntaba kaNdoda, a large, modern concrete structure with a curved, roof-like top, situated in a grassy field. A group of people is gathered in front of the structure, and a white tent is visible in the background under a cloudy sky.
+
+A photograph of Ntaba kaNdoda, a large, modern concrete structure with a curved, roof-like top, situated in a grassy field. A group of people is gathered in front of the structure, and a white tent is visible in the background under a cloudy sky.
+
+**Figure 4.** Ntaba kaNdoda, the erstwhile national temple of the Ciskei homeland, on the day of the Heritage Day festival. September 24, 2011, near Keiskammahoek, Eastern Cape Province, South Africa.
+
+and the memory of the warrior chief ultimately contrasted a genuine chief's anticolonial legacy with Sebe's clearly manufactured one. As a result, Sebe's government stripped the warrior chief's descendant of his authority and exiled him from the homeland (Peires 1989).
+
+The temple now sits derelict. Its graveyard has succumbed to weeds. Locals dismantled the full-size statue of Sebe years ago, and the 18,000-seat arena is a potholed pitch. At the Heritage Day festival, a group of men gathered alone at the temple's graveyard. Standing before the gravestone of the warrior chief, they began a eulogy. One man, dressed humbly in a worn woolen army jacket, claimed to be the deceased warrior's heir.
+
+A council member of the heir's, having initially taken me to be a journalist covering the festival, invited me to spend the afternoon with the group. He became visibly frustrated, however, when I told him about my research concerning *Pelargonium*. He had never heard of the biotrade, and this seemed to confirm to him his chieftaincy's continued marginality. In explaining this marginalization, the council member recounted facts that are familiar to historians of the region. Among them, he emphasized not only the resurrection of the Sandile lineage under Sebe (Peires 1989) but also the apartheid-era positioning of the family of current Rharhabe trust secretary and "CEO" Mavuso. The Mavusos are not ethnically Xhosa, the council member insisted, and therefore lack any historically supported claim to a position within the traditionally Xhosa Rharhabe kingdom. As a result of the political emplacement of these figures, the council member maintained,
+
+Sandile is getting more money from the government. Sandile is getting more money from business. And that money, he is controlling it alone. In South Africa today, if you are not politically connected, you are going nowhere. Even in the rural sector, at the Sandile kingdom, or their trust, if you are not connected to the right people, nothing will ever be channeled to you. You'll never have access. You'll never have information. If I can give you an appropriate term, one that you will understand better, Mavuso and the Rharhabe kingdom are like the *mafiosos*. Those people will do whatever is in their power to keep you out of the circle.
+
+The signs of Mavuso's status were everywhere and went far beyond *Pelargonium*, the spokesperson suggested. For example, that same day, hundreds of miles from the decaying temple and its overgrown graveyard, Mavuso was attending a much larger, media-covered festival in a major Eastern Cape city. In his critique of Mavuso and Sandile, however, the spokesperson failed to mention that many in the region do not recognize his own leader as the genuine heir of the warrior chief—a revelation that could have exposed his group's presence at the graveyard as yet another instance of historical appropriation.
+
+What these examples show is that representational legitimacy, and its recognition by the federal government and multinational corporations, need not pivot on primordial birthright. It need not find substance in symbols of the past, either. In the context of ABS, "a collective that 'works' in political terms" (Hayden 2004, 229) emerges from the
+
+{10}------------------------------------------------
+
+entanglement of the performative, the historical-political, and the circumstantial, with corporate and state interests often seeking out paths of least resistance to establish alliances and contracts. This is especially reflected in the news that, by 2014, individual Rharhabe chiefdoms like Tyali's Imingcangathelo had wrested control over the governance of *Pelargonium* ABS from their kingdom, excluding Mavuso and the paramountcy from bioprospecting agreements. Mavuso had become deathly ill that year, people told me, and as he deteriorated physically, so too had the influence of the kingdom's trust. Doubtless, the ongoing legal challenge of the Nhlapo Commission ruling has also reordered the kingdom's priorities.
+
+## Segregation and tribal subjectivation in the context of ABS
+
+"Implicit in the question of who benefits from the Wealth of the Ethno-nation," Comaroff and Comaroff contend, "is the prior one of who belongs to it" (2009, 111). Much of the anthropological scholarship exploring this question has thus far centered on the exclusionary and excisional potential of ethnic boundary construction in claims to culture as property. In places like the Ciskei, however, a dangerous politics of forced membership is the flip side of the coin. Critics of the laws supporting ethnonations like Rharhabe argue that they reentrench the tribal boundaries established in the Bantu Authorities Act of 1951. According to Aninka Claassens, being located in a former homeland currently preempts "rural people's ability to constitute or organize themselves on any other basis than as tribal subjects" (2014, 769). Ashley Westaway, invoking Giorgio Agamben's concept of "bare life" to describe residents' resultant status, argues that they "are not included in the normal juridical terrain but are excluded from it, living as they do in a state of exception" (2012, 116).
+
+The laws are only one manifestation of contemporary segregationism. In the Eastern Cape especially, a spatial perspective dominates economic-development planning as well. Strategic areas (mostly cities, or "industrial development zones") receive investment in public resources, while residents in nonstrategic areas (rural spaces in former homelands) "are governed by custom, tradition, and welfare" (Westaway 2012, 116). And as rural constituents increasingly mistrust promises of material transformation, the ruling ANC is facing its own crisis of legitimacy (Bank and Mabhena 2011). It is within this context that many scholars situate state alliances (and amalgamations) with traditional leaders, alliances in which mobilizing electoral support is paramount (Van Kessel and Oomen 1997). According to Hein Marais (2011), this mobilization relies increasingly on hegemonic tactics, or the shaping of attitudes, values, and perceptions among residents in the former homelands. Thus, the project of building
+
+consensus on an ANC-led future includes discursively promoting abstractions like tradition and custom. In this sense, the ruling party, although resolute in its objections to traditional authority in the preliberation period, has come to co-opt it in the uncertain present (Crais 2011).<sup>13</sup>
+
+Segregationism suffuses thinking about ABS in South Africa. Encounters with elite bioprospecting actors revealed this throughout my fieldwork. In some instances, interviewees used race as a category to articulate cultural differences between homeland residents and other South Africans. For example, during a conversation with a high-level white DEA official and her black intern, I broached the topic of whether it was appropriate for traditional leaders to participate in ABS agreements. In a manner that disguised the DEA official's status as an elite decision maker in the *Pelargonium* agreements, the official deferred my query to her intern and implied that her subordinate's race endowed her with a privileged knowledge about the cultural life of chiefly subjects across the Ciskei.
+
+In other interviews, similarly prominent stakeholders took a different but no less problematic view. For many, geography, rather than race, was the relevant factor. As a provincial bioprospecting official told me, urban blacks rely on municipalities when they access goods and services. Rural blacks, by comparison, abide by their customs and get what they need through their traditional leaders. A conversation with a pharmaceutical-company executive implied something similar. When I asked about democratic alternatives to unelected traditional leaders in bioprospecting agreements, the executive reproached me for ethnocentrism. Speaking of the Ciskei's uniqueness, he said, "One must be very careful with this advanced democratic viewpoint that there need be options to get rid of people. Of course with our [Euro-American] history," he continued, "it is very important to have those systems in place. But it is very much dependent on the historical and cultural background."
+
+The insinuation that the Ciskei is a container of (traditional) culture mirrors the apartheid vision of homelands as ethnically and spatially coterminous. It also recalls part of the representational self-critique that anthropologists undertook in the 1990s and early 2000s.<sup>14</sup> "The assumed isomorphism of space, place, and culture," Akhil Gupta and James Ferguson wrote, "results in some significant problems" (1992, 7). One such problem, seen in policy discussions concerning *Pelargonium* ABS, concerns how discourses about difference in the Ciskei are bound up with the production of particular knowledges, subjectivities, and legitimacies.
+
+Throughout my fieldwork, I noted that the kind of political subjectivity imaginable in such discourses is quite circumscribed. And at the heart of contestation over what will count as a subject and polity in ABS is the relationship between liberal, modern, rights-bearing citizenship and
+
+{11}------------------------------------------------
+
+an accommodation of centralized traditional authority. Yet the actual nature of this relationship has less to do with an inherent tension between static poles of rights and custom, or individual and community, than with historically situated struggles over the actual status and content of these volatile abstractions (Claassens 2013; Robins 2008). Clearly isomorphism, familiarity, and mutuality characterize the contemporary collision of such abstractions as much as tension does. One example is the chiefs' increasing capacity to link their local authority with global capital and international rights discourses. Another is the shared (and ultimately convenient) elision of diverse interests and identities in the Ciskei by traditional leaders, DEA officials, and pharmaceutical-company representatives. "Indigeneity" features prominently in both, and the fact that the concept's deployment accords with segregationist thinking about ABS stakeholders in the Ciskei is likely not coincidental. "The UN concept of 'indigeneity,'" Sarah Ives provocatively argues, "is notably analogous to South African apartheid-era ideologies that called for maintaining and reproducing 'distinctive' peoples and cultures in separate environments and through (ostensibly) separate systems of governance" (2014, 700).
+
+## Conclusion: Rights as instruments of forced membership
+
+Toward the end of the NGO-led community meeting in the Masakhane area that I described above, a resident publicly asked, "I would like to know if our association constitutions we have state anything about the chiefs and us. Are there any bindings between them and us? I'd like to know." An elected leader of one of the associations replied,
+
+There is nothing whatsoever [in them] that involves us with the chiefs. Our land and our properties are simply controlled by us as Masakhane. Our association has its own executive committee. We adamantly say we do not want any involvement with the traditional leaders. We are under the control of our association. [...] We are under the authority of the local municipality.
+
+Frustrated, the association leaders had become progressively emboldened in their assertions of representative authority, even though some residents still hesitated to openly challenge traditional leaders.
+
+In interviews with me, the spokesperson for the Imingcangathelo chieftaincy and Chieftainess Tyali did not wholly reject such declarations of sovereignty. The spokesperson maintained, however, that although Masakhane villagers were members of state-sanctioned associations, they would need their own ABS agreements if they wished to assert their full independence from Imingcangathelo. It is this recurring assertion from elite
+
+actors that best reveals the stakes of the *Pelargonium* ABS agreements. The Masakhane villagers can meaningfully participate in the biotrade only by embracing an imposed identity and authority structure that, according to many, exploits their labor. Certainly not all traditional leaders are exploitative. Nor are residents in the former homelands uniformly critical of such leaders. As it stands, however, the structure of the industry and the ABS agreements is such that it is illegal to harvest if one is not the subject of a chief.
+
+In a context in which communal jurisdictions constitute ideal zones of resource extraction—especially given their reserves of underemployed laborers and legally accessible geographic expanses—ABS rights are currently instruments of tribal subjectivation and thus an important mode of accumulation for traditional leaders. It is in this sense that ABS acts alongside parliamentary laws and spatial planning schemes to entrench the homeland boundaries. Moreover, in a region where the centralization of traditional leadership is especially contentious, ABS agreements also *expand* chiefly jurisdiction, at least as it concerns control over a valuable resource and the distribution of benefits associated with its trade. In doing so, ABS fosters a politics of forced membership that many local residents oppose, residents who include a group that has hitherto not known life under direct traditional leadership. Together, these developments suggest that, while international and national biogenetic resource frameworks are intended to expand the rights of marginalized groups, their situational materialization can do precisely the opposite.
+
+The ostensible desirability of providing access to rights, explicit in a global preoccupation with "good governance" and the rule of law, often depoliticizes, if not occludes, processes through which modern states devolve forms of authority to other power structures (Von Benda-Beckmann, Von Benda-Beckmann, and Eckert 2009). In this context, examinations of indigenous rights have shown that centralizing the indigenous and the customary is often fundamental to decentralizing government under postcolonial state formation and widespread economic restructuring (Obarrio 2014). One outcome is the emergence of what some have called a "global conjuncture of belonging" (Geschiere 2009, 1; see also Li 2007), or ever-increasing concern with cultural identity and group classification at local, national, and transnational scales of power. Much of the anthropological work on this conjuncture has justifiably emphasized boundary closure, displacement, and exclusion in the contemporary construction of indigenous collective belonging. Yet, as a point of articulation between indigenous political legitimization and the interests of global capital, ABS in the Ciskei highlights a different trend. Beyond closure and the deepening of lines of distinction between groups, the strategic expansion of indigenous
+
+{12}------------------------------------------------
+
+group-membership—indeed a politics of forced enrollment or ethnic capture—can be equally integral as a mode of capitalist, extraction-oriented accumulation.
+
+## Notes
+
+*Acknowledgments.* This research was facilitated by grants from the Social Science Research Council, the National Science Foundation (no. 1024419), and the University of Colorado Boulder. I am grateful to the Centre for Civil Society and the School of Development Studies at the University of KwaZulu-Natal, as well as the Inkubeko Nendalo Program at Rhodes University, for hosting me in South Africa. For providing invaluable suggestions and support, I thank Donna Goldstein, Dabula Maxam, Pakama Umkhulungu, Michelle Cocks, Jean Comaroff, Tony Dold, Sara Fall, Kate Fisher, Claudia Hoffmann, Ben Joffe, Rosalie Kingwill, Gerhard Maré, Joel Morris, Shauna Mottiar, Jeff Peires, Catherine Sutherland, Marnie Thomson, Christina Xydias, and participants at the 2013 SSRC IDRF workshop in St. Louis, Missouri. I additionally thank Niko Besnier, Pablo Morales, and three anonymous reviewers for their insightful commentary. Lastly, I owe enormous thanks to all the South Africans participating in this research.
+
+1. With the advent of apartheid in 1948, the white-controlled national government initiated a formal campaign to geographically and economically isolate the black majority. For the sake of “separate development,” the state transformed a number of the already-established “native reserves” designed to contain blacks into independent, self-governing “homelands.” This process was legislatively initiated in the Bantu Authorities Act of 1951 and labeled “retribalization.” Traditional authorities loyal to the apartheid state became salaried local government functionaries and rural poor’s sole access point to government (Oomen 2005). Ultimately, some 80 percent of those categorized as “black” would populate these overcrowded socioeconomic hinterlands (J. M. Williams 2010).
+
+2. *Hoodia gordonii*, a phytomedicine commercialized internationally as an appetite suppressant, is perhaps the most famous of South Africa’s biogenetic resources. Unlike *Pelargonium*, *Hoodia* has received significant scholarly attention (Comaroff and Comaroff 2009; Robins 2008; Vermeylen 2007; Wynberg and Van Niekerk 2014).
+
+3. ABS agreements concerning *Pelargonium* (and *Aloe ferox*) are the first and only of their kind between pharmaceutical companies and chieftaincies in the former homelands. The *Hoodia gordonii* case, for example, concerns not former homeland chieftaincies and paramountcies, but indigenous San groups of southern Africa.
+
+4. Much of this scholarship has focused on platinum mining in the South African provinces of KwaZulu-Natal (Oomen 2005; J. M. Williams 2010) and North West (Comaroff and Comaroff 2009; Cook 2011; Cook and Hardin 2013; Manson 2013).
+
+5. The DEA’s “Bioprospecting Management Plan for *Pelargonium sidoides*” states that the resource currently “does not qualify under one of the [International Union for the Conservation of Nature] categories of threat (Critically Endangered, Endangered or Vulnerable), but it is experiencing loss of individuals due to various influences including habitat loss, habitat degradation from overgrazing by livestock and limited localized loss due to over-harvesting” (N433 of 2013, p. 11). To avoid further overharvesting, the DEA and traditional leaders propose rotating harvest seasons among participating villages, allowing tubers to regenerate.
+
+6. UN Secretariat of the Convention on Biological Diversity, Nagoya Protocol on Access to Genetic Resources and the Fair and Equitable Sharing of Benefits Arising from Their Utilization to the Convention on Biological Diversity, 2010, accessed November 16, 2012, [www.cbd.int/abs/text](http://www.cbd.int/abs/text), p. 2.
+
+7. National Environmental Management: Biodiversity Act—Regulations on Bio-prospecting, Access and Benefit Sharing R138 of 2008, p. 8. The ABS provisions of South Africa’s National Environmental Management: Biodiversity Act of 2004 outline the country’s obligations to the CBD. In 2008, the DEA gave effect to these provisions through the Bioprospecting Access and Benefit Sharing (BABS) regulations. South Africa ratified the Nagoya Protocol in January 2013.
+
+8. Parliament’s enactment of traditional-leadership laws has threatened the survival of such associations (Weinberg 2015). The Communal Land Rights Act (CLRA) of 2004 in particular constituted traditional councils as land-administration committees, legally bequeathing control and ownership over communal land in the former homelands to chieftaincies (Claassens and Cousins 2008). The Constitutional Court struck down the CLRA in 2010, but the act continues to shape national policies (Claassens 2014).
+
+9. As far as directing use of royalties, Mavuso expressed enthusiasm for programs addressing hunger (soup kitchens specifically) and childhood education (he and his wife had already initiated such a program at a local elementary school). Schwabe and Parceval, for their part, have independently initiated projects, like a fruit-tree planting scheme near Imingcangathelo and a scout center in Free State Province.
+
+10. Nhlapo Commission on Traditional Leadership Disputes and Claims, Determinations on the Position of the Paramount Chiefs, 2010, accessed August 20, 2013, [http://www.gov.za/sites/www.gov.za/files/Reports%20for%20paramountcies\\_0.pdf](http://www.gov.za/sites/www.gov.za/files/Reports%20for%20paramountcies_0.pdf), p. 127.
+
+11. A Parceval representative insisted to me that *Ukhohlokohhlo* is intended for cold care, but at least one traditional leader I interviewed was selling the product as a therapy for tuberculosis and HIV. Schwabe Pharmaceuticals patented the use of *Pelargonium* in 2007 for precisely these diseases, and the plant was historically used in Africa—as well as commercialized in Europe—for tuberculosis. *Pelargonium*, however, has never been clinically validated for such uses.
+
+12. These laws include the Traditional Leadership and Governance Framework of 2003, the Communal Land Rights Act of 2004, and a variety of provincial regulations enacted pursuant to the national Framework Act and the Traditional Courts Bill of 2012.
+
+13. The ANC is far from monolithic and is characterized by competition and significant internal divisions over a range of issues (Hoeane 2011), including the powers of traditional leaders.
+
+14. Beyond a spatial incarceration of the subaltern (Appadurai 1988; Gupta and Ferguson 1992), one could also read these comments as manifestations of allochronism (Fabian 1983) or as a flawed distinction between rural and urban worlds (Ferguson 1992). Raymond Williams (1973) showed how the process of urbanization in Europe was facilitated in part through an experiential segregation, fed by perceptions among urbanites about the life of the rural Other. In Zambia, James Ferguson (1992) considered how such imaginings were disrupted by the intrusion of rural life into cities, with migration and semi-immigration between country and city being quite common. The history of migration between homeland residents and cities equally problematizes the provincial official’s distinction.
+
+## References
+
+African Centre for Biosafety. 2010. “Biopiracy Under Fire: The *Pelargonium Patent Hearing*.” Briefing paper, January. African Centre for Biosafety, Johannesburg.
+
+Appadurai, Arjun. 1988. “Putting Hierarchy in Its Place.” *Cultural Anthropology* 3 (1): 36–49.
+
+{13}------------------------------------------------
+
+Badiou, Alain. 2001. *Ethics: An Essay on the Understanding of Evil*. London: Verso.
+
+Bank, Leslie, and Clifford Mabheni. 2011. "Bring Back Kaiser Matanzima? Communal Land, Traditional Leaders, and the Politics of Nostalgia." In *New South Africa Review*, vol. 2, edited by John Daniel, Prishani Naidoo, Devan Pillay, and Roger Southall, 119–41. Johannesburg: Wits University Press.
+
+Bergh, J. S., and J. C. Visagie. 1985. *The Eastern Cape Frontier Zone 1660–1980: A Cartographical Guide for Historical Research*. Durban: Butterworths.
+
+Brown, Michael. 2003. *Who Owns Native Culture?* Cambridge, MA: Harvard University Press.
+
+Brown, Wendy. 2006. *Regulating Aversion: Tolerance in the Age of Identity and Empire*. Princeton, NJ: Princeton University Press.
+
+Castree, Noel. 2004. Comment, in Shane Greene, "Indigenous People Incorporated? Culture as Politics, Culture as Property in Pharmaceutical Bioprospecting." *Current Anthropology* 45 (2): 227.
+
+Claassens, Aninka. 2013. "Recent Changes in Women's Land Rights and Contested Customary Law in South Africa." *Journal of Agrarian Change* 13 (1): 71–92.
+
+———. 2014. "Denying Ownership and Equal Citizenship: Continuities in the State's Use of Law and 'Custom,' 1913–2013." *Journal of Southern African Studies* 40 (4): 761–79.
+
+Claassens, Aninka, and Ben Cousins. 2008. *Land, Power, and Custom: Controversies Generated by South Africa's Communal Land Rights Act*. Cape Town: University of Cape Town Press.
+
+Cocks, Michelle, Anthony Dold, and Isla Grundy. 2001. "Challenges Facing a Community Structure to Implement CBNRM in the Eastern Cape, South Africa." *African Studies Quarterly* 5 (3): 57–71.
+
+Comaroff, Jean, and John L. Comaroff. 2000. "Millennial Capitalism: First Thoughts on a Second Coming." *Public Culture* 12 (2): 291–343.
+
+Comaroff, John L., and Jean Comaroff. 2009. *Ethnicity, Inc.* Durban: University of KwaZulu-Natal Press.
+
+Cook, Susan. 2011. "The Business of Being Bafokeng: Corporatization in a Tribal Authority in South Africa." *Current Anthropology* 52 (S3): S151–59.
+
+Cook, Susan, and Rebecca Hardin. 2013. "Performing Royalty in Contemporary South Africa." *Cultural Anthropology* 28 (2): 227–51.
+
+Coombe, Rosemary. 2005. "Legal Claims to Culture in and against the Market: Neoliberalism and the Global Proliferation of Meaningful Difference." *Law, Culture and the Humanities* 1 (1): 35–52.
+
+Cooper, Frederick. 2002. *Africa since 1940: The Past of the Present*. Cambridge: Cambridge University Press.
+
+Crais, Clifton. 2011. *Poverty, War, and Violence in South Africa*. New York: Cambridge University Press.
+
+Delius, Peter. 2008. "Contested Terrain: Land Rights and Chiefly Power in Historical Perspective." In *Land, Power and Custom: Controversies Generated by South Africa's Communal Land Rights Act*, edited by Aninka Claassens and Ben Cousins, 211–37. Cape Town: University of Cape Town Press.
+
+Englund, Harri. 2006. *Prisoners of Freedom: Human Rights and the African Poor*. Berkeley: University of California Press.
+
+Englund, Harri, and Francis Nyamnjoh. 2004. *Rights and the Politics of Recognition in Africa*. London: Zed Books.
+
+Fabian, Johannes. 1983. *Time and the Other: How Anthropology Makes Its Object*. New York: Columbia University Press.
+
+Ferguson, James. 1992. "The Country and the City on the Copperbelt." *Cultural Anthropology* 7 (1): 80–92.
+
+Geschiere, Peter. 2009. *The Perils of Belonging: Autochthony, Citizenship, and Exclusion in Africa and Europe*. Chicago: University of Chicago Press.
+
+Goldstein, Donna. 2007. "Life or Profit? Structural Violence, Moral Psychology, and Pharmaceutical Politics." *Anthropology in Action* 14 (3): 44–58.
+
+Gollin, Michael. 1993. "An Intellectual Property Rights Framework for Biodiversity Prospecting." In *Biodiversity Prospecting: Using Genetic Resources for Sustainable Development*, edited by Walter A. Reid, Sarah A. Laird, Carrie A. Meyer, Rodrigo Gomez, Ana Sittenfeld, Daniel H. Janzen, Michael A. Gollin, and Celestous Juma, 159–97. Washington, DC: World Resources Institute.
+
+Goodale, Mark, and Sally Engle Merry. 2007. *The Practice of Humane Rights: Tracking Law between the Global and the Local*. Cambridge: Cambridge University Press.
+
+Greene, Shane. 2004. "Indigenous People Incorporated? Culture as Politics, Culture as Property in Pharmaceutical Bioprospecting." *Current Anthropology* 45 (2): 211–37.
+
+Gupta, Akhil, and James Ferguson. 1992. "Beyond 'Culture': Space, Identity, and the Politics of Difference." *Cultural Anthropology* 7 (1): 6–23.
+
+Hayden, Cori. 2003. *When Nature Goes Public: The Making and Unmaking of Bioprospecting in Mexico*. Princeton, NJ: Princeton University Press.
+
+———. 2004. Comment, in Shane Greene, "Indigenous People Incorporated? Culture as Politics, Culture as Property in Pharmaceutical Bioprospecting." *Current Anthropology* 45 (2): 228–29.
+
+Hirsch, Eric. 2010. "Property and Persons: New Forms and Contests in the Era of Neoliberalism." *Annual Review of Anthropology* 39:347–60.
+
+Hodgson, Dorothy. 2002. "Introduction: Comparative Perspectives on the Indigenous Rights Movement in Africa and the Americas." *American Anthropologist* 104 (4): 1037–49.
+
+Hoeane, Thabisi. 2011. "Political Contestation and the ANC in the Eastern Cape." In *The Fate of the Eastern Cape: History, Politics, and Social Policy*, edited by Greg Reuters, 93–101. Scottsville, South Africa: University of KwaZulu-Natal Press.
+
+Igoe, Jim. 2006. "Becoming Indigenous Peoples: Difference, Inequality, and the Globalization of East African Identity Politics." *African Affairs* 105 (419): 1–22.
+
+Ives, Sarah. 2014. "Farming the South African 'Bush': Ecologies of Belonging and Exclusion in Rooibos Tea." *American Ethnologist* 41 (4): 698–713.
+
+Koelble, Thomas, and Edward LiPuma. 2011. "Traditional Leaders and the Culture of Governance in South Africa." *Governance: An International Journal of Policy, Administration, and Institutions* 24 (1): 5–29.
+
+Kuper, Adam. 2003. "The Return of the Native." *Current Anthropology* 44 (3): 389–402.
+
+Li, Tania Murray. 2007. "Practices of Assemblage and Community Forest Management." *Economy and Society* 36 (2): 264–94.
+
+Lund, Christian, and Catherine Boone. 2013. "Introduction: Land Politics in Africa—Constituting Authority over Territory, Property, and Persons." *Africa* 83 (1): 1–13.
+
+Manson, Andrew. 2013. "Mining and 'Traditional Communities' in South Africa's 'Platinum Belt': Contestations over Land, Leadership and Assets in North-West Province c. 1996–2012." *Journal of Southern African Studies* 39 (2): 409–23.
+
+Marais, Hein. 2011. *South Africa Pushed to the Limit: The Political Economy of Change*. Claremont, South Africa: University of Cape Town Press.
+
+Mbembe, Achille. 2001. *On the Postcolony*. Berkeley: University of California Press.
+
+{14}------------------------------------------------
+
+Ntsebeza, Lungisile. 2006. *Democracy Compromised: Chiefs and the Politics of Land in South Africa*. Cape Town: Human Sciences Research Council.
+
+———. 2011. "Traditional Authority and Democracy: Are We Back to Apartheid?" In *The Fate of the Eastern Cape: History, Politics and Social Policy*, edited by Greg Reuters, 75–92. Scottsville, South Africa: University of KwaZulu-Natal Press.
+
+Obarrio, Juan. 2014. *The Spirit of the Laws in Mozambique*. Chicago: University of Chicago Press.
+
+Oomen, Barbara. 2005. *Chiefs in South Africa: Law, Power and Culture in the Post-apartheid Era*. Pietermaritzburg, South Africa: University of KwaZulu-Natal.
+
+Peires, Jeff. 1989. "Ethnicity and Pseudo-ethnicity in the Ciskei." In *The Creation of Tribalism in Southern Africa*, edited by Leroy Vail, 395–413. Berkeley: University of California Press.
+
+Pelican, Michaela. 2009. "Complexities of Indigeneity and Autochthony: An African Example." *American Ethnologist* 36 (1): 52–65.
+
+Peters, Pauline. 2010. Comment, in Tania Murray Li, "Indigeneity, Capitalism, and the Management of Dispossession." *Current Anthropology* 51 (3): 404–5.
+
+Posey, Darrell. 1996. *Traditional Resource Rights: International Instruments for Protection and Compensation for Indigenous Peoples and Local Communities*. Gland, Switzerland: International Union for the Conservation of Nature.
+
+Povinelli, Elizabeth A. 2002. *The Cunning of Recognition: Indigenous Alterities and the Making of Australian Multiculturalism*. Durham, NC: Duke University Press.
+
+Prince, Chandre. 2012. "Queen Fights for Her Kingdom." *Times Live*, July 11. Accessed July 15, 2012. <http://www.timeslive.co.za/thetimes/2012/07/11/queen-fights-for-her-kingdom>.
+
+Robins, Steven. 2008. *From Revolution to Rights in South Africa: Social Movements, NGOs and Popular Politics*. Pietermaritzburg, South Africa: University of KwaZulu-Natal Press.
+
+Sylvain, Renee. 2005. "Disorderly Development: Globalization and the Idea of 'Culture' in the Kalahari." *American Ethnologist* 32 (3): 354–70.
+
+Taylor, Mandy, and Rachel Wynberg. 2008. "Regulating Access to South Africa's Biodiversity and Ensuring the Fair Sharing of Benefits from Its Use." *South African Journal of Environmental Science and Policy* 15 (2): 217–43.
+
+Thipe, Thuto, and Mbongiseni Buthelezi. 2014. "Democracy in Action: The Demise of the Traditional Courts Bill and Its Implications: Discourse and Debate." *South African Journal on Human Rights* 30 (1): 196–205.
+
+Tsing, Anna. 2005. *Friction: An Ethnography of Global Connection*. Princeton, NJ: Princeton University Press.
+
+van Kessel, Ineke, and Barbara Oomen. 1997. "One Chief, One Vote: The Revival of Traditional Authorities in Post-apartheid South Africa." *African Affairs* 96 (385): 551–85.
+
+van Niekerk, Jaci, and Rachel Wynberg. 2012. "The Trade in *Pelargonium sidoides*: Rural Livelihood Relief or Bounty for the 'Bio-buccaneers'?" *Development Southern Africa* 29 (4): 530–47.
+
+Vermeylen, Saskia. 2007. "Contextualizing 'Fair' and 'Equitable': The San's Reflections on the Hoodia Benefit-Sharing Agreement." *Local Environment* 12 (4): 423–36.
+
+von Benda-Beckmann, Franz, Keebet von Benda-Beckmann, and Julie Eckert. 2009. "Rules of Law and Laws of Ruling: Law and Governance between Past and Future." In *Rules of Law and Laws of Ruling: On the Governance of Law*, edited by Franz von Benda-Beckmann, Keebet von Benda-Beckmann, and Julie Eckert, 1–30. Farnham, UK: Ashgate.
+
+Weinberg, Tara. 2015. *The Contested Status of "Communal Land Tenure" in South Africa*. Cape Town: Institute for Poverty, Land and Agrarian Studies, University of the Western Cape.
+
+Westaway, Ashley. 2012. "Rural Poverty in the Eastern Cape Province: Legacy of Apartheid or Consequence of Contemporary Segregationism?" *Development Southern Africa* 29 (1): 115–25.
+
+Williams, J. Michael. 2010. *Chieftaincy, the State and Democracy: Political Legitimacy in Post-apartheid South Africa*. Bloomington: Indiana University Press.
+
+Williams, Raymond. 1973. *The Country and the City*. New York: Oxford University Press.
+
+Wynberg, Rachel, and Jaci van Niekerk. 2014. "Global Ambitions and Local Realities: Achieving Equity and Sustainability in Two High-Value NTFP Trade Chains." *Forests, Trees and Livelihoods* 23 (1–2): 19–35.
+
+Christopher Morris  
+Department of Humanities and Social Sciences  
+Clarkson University  
+Box 5750  
+Potsdam, NY 13699  
+cmorris@clarkson.edu

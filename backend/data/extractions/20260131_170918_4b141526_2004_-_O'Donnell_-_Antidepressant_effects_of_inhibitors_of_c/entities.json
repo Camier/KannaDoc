@@ -1,0 +1,882 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "d8bf90471ff5968cbdaefd032cbea28a776f61b6a6aedcbb879a9a1550ef0eab",
+  "extracted_at": "2026-02-01T08:08:53.011518+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "PharmEffect",
+      "name": "Antidepressant effects",
+      "attributes": {
+        "context": "Antidepressant effects"
+      },
+      "source_chunk_ids": [
+        "ee3db8415a2944c7f8934cce2f5ae17e"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Compound",
+      "name": "cAMP",
+      "attributes": {
+        "context": "inhibitors of cAMP phosphodiesterase"
+      },
+      "source_chunk_ids": [
+        "ee3db8415a2944c7f8934cce2f5ae17e"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "Compound",
+      "name": "PDE4",
+      "attributes": {
+        "context": "phosphodiesterase (PDE4)"
+      },
+      "source_chunk_ids": [
+        "ee3db8415a2944c7f8934cce2f5ae17e"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "Compound",
+      "name": "type 4 phosphodiesterase (PDE4) inhibitors",
+      "attributes": {
+        "context": "development of type 4 phosphodiesterase (PDE4) inhibitors"
+      },
+      "source_chunk_ids": [
+        "965d5e31ae90be5dca185dacd7b62c07"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "PharmEffect",
+      "name": "antidepressant",
+      "attributes": {
+        "context": "inhibitors as antidepressants"
+      },
+      "source_chunk_ids": [
+        "965d5e31ae90be5dca185dacd7b62c07"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "Compound",
+      "name": "PDE4",
+      "attributes": {
+        "context": "importance of PDE4 subtypes"
+      },
+      "source_chunk_ids": [
+        "965d5e31ae90be5dca185dacd7b62c07"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "Compound",
+      "name": "PDE4 inhibitors",
+      "attributes": {
+        "context": "potential of PDE4 inhibitors"
+      },
+      "source_chunk_ids": [
+        "965d5e31ae90be5dca185dacd7b62c07"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Compound",
+      "name": "PDE4",
+      "attributes": {
+        "context": "PDE4 has been shown to be involved"
+      },
+      "source_chunk_ids": [
+        "965d5e31ae90be5dca185dacd7b62c07"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "Compound",
+      "name": "cAMP",
+      "attributes": {
+        "context": "involved in cAMP signaling pathways"
+      },
+      "source_chunk_ids": [
+        "965d5e31ae90be5dca185dacd7b62c07"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "PharmEffect",
+      "name": "antidepressant",
+      "attributes": {
+        "context": "affected by antidepressants"
+      },
+      "source_chunk_ids": [
+        "965d5e31ae90be5dca185dacd7b62c07"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "Compound",
+      "name": "PDE4D",
+      "attributes": {
+        "context": "that PDE4D and PDE4B mediate"
+      },
+      "source_chunk_ids": [
+        "965d5e31ae90be5dca185dacd7b62c07"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "Compound",
+      "name": "PDE4B",
+      "attributes": {
+        "context": "PDE4D and PDE4B mediate antidepressant effects"
+      },
+      "source_chunk_ids": [
+        "965d5e31ae90be5dca185dacd7b62c07"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "PharmEffect",
+      "name": "antidepressant",
+      "attributes": {
+        "context": "mediate antidepressant effects"
+      },
+      "source_chunk_ids": [
+        "965d5e31ae90be5dca185dacd7b62c07"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "Compound",
+      "name": "PDE4",
+      "attributes": {
+        "context": "conformer of PDE4 is particularly important"
+      },
+      "source_chunk_ids": [
+        "965d5e31ae90be5dca185dacd7b62c07"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "PharmEffect",
+      "name": "antidepressant",
+      "attributes": {
+        "context": "important for antidepressant efficacy"
+      },
+      "source_chunk_ids": [
+        "965d5e31ae90be5dca185dacd7b62c07"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "Compound",
+      "name": "PDE4 inhibitors",
+      "attributes": {
+        "context": "actions of PDE4 inhibitors"
+      },
+      "source_chunk_ids": [
+        "965d5e31ae90be5dca185dacd7b62c07"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "Compound",
+      "name": "PDE4D",
+      "attributes": {
+        "context": "PDE4D has been shown to be regulated"
+      },
+      "source_chunk_ids": [
+        "aa5fb0e435cad9df2e58b5707ff754ae"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "PharmEffect",
+      "name": "regulation",
+      "attributes": {
+        "context": "of regulation in the brain"
+      },
+      "source_chunk_ids": [
+        "aa5fb0e435cad9df2e58b5707ff754ae"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "PharmEffect",
+      "name": "regulated at the expression level",
+      "attributes": {
+        "context": "regulated at the expression level in several cell types"
+      },
+      "source_chunk_ids": [
+        "aa5fb0e435cad9df2e58b5707ff754ae"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "PharmEffect",
+      "name": "antidepressant actions",
+      "attributes": {
+        "context": "implicated in antidepressant actions"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "Compound",
+      "name": "PDE4",
+      "attributes": {
+        "context": "involves PDE4"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "Compound",
+      "name": "NMDA-receptor",
+      "attributes": {
+        "context": "NMDA-receptor-mediated signaling"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "Compound",
+      "name": "NMDA receptors",
+      "attributes": {
+        "context": "The role of NMDA receptors"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "PharmEffect",
+      "name": "antidepressant effects",
+      "attributes": {
+        "context": "mediating antidepressant effects"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "Compound",
+      "name": "NMDA antagonists",
+      "attributes": {
+        "context": "NMDA antagonists such as MK801"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "Compound",
+      "name": "MK801",
+      "attributes": {
+        "context": "such as MK801 (dizocilpine)"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "Compound",
+      "name": "dizocilpine",
+      "attributes": {
+        "context": "MK801 (dizocilpine)"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "PharmEffect",
+      "name": "antidepressant-like effects",
+      "attributes": {
+        "context": "produce antidepressant-like effects"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "rolipram has been shown to reverse memory deficits"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "PharmEffect",
+      "name": "reverse memory deficits",
+      "attributes": {
+        "context": "reverse memory deficits that result from dizocilpine treatment"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "Compound",
+      "name": "dizocilpine",
+      "attributes": {
+        "context": "result from dizocilpine treatment"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "Compound",
+      "name": "PDE4",
+      "attributes": {
+        "context": "role of PDE4 in NMDA-receptor-mediated signaling"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "Compound",
+      "name": "NMDA-receptor",
+      "attributes": {
+        "context": "PDE4 in NMDA-receptor-mediated signaling"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "PharmEffect",
+      "name": "cognitive deficits",
+      "attributes": {
+        "context": "related more to cognitive deficits"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "that occur in depression"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Compound",
+      "name": "PDE4",
+      "attributes": {
+        "context": "functional role of PDE4 in NMDA receptor-mediated signaling"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "Compound",
+      "name": "NMDA receptor",
+      "attributes": {
+        "context": "PDE4 in NMDA receptor-mediated signaling"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "Compound",
+      "name": "NMDA receptors",
+      "attributes": {
+        "context": "Stimulation of NMDA receptors"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "Compound",
+      "name": "cAMP",
+      "attributes": {
+        "context": "concentrations of cAMP and cGMP"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "Compound",
+      "name": "cGMP",
+      "attributes": {
+        "context": "cAMP and cGMP"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "Compound",
+      "name": "cAMP",
+      "attributes": {
+        "context": "the cAMP formed by NMDA-receptor stimulation"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "Compound",
+      "name": "NMDA-receptor",
+      "attributes": {
+        "context": "cAMP formed by NMDA-receptor stimulation"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "Compound",
+      "name": "PDE4",
+      "attributes": {
+        "context": "hydrolyzed exclusively by PDE4"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "Compound",
+      "name": "cGMP",
+      "attributes": {
+        "context": "the cGMP that forms is hydrolyzed by PDE2"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "Compound",
+      "name": "PDE2",
+      "attributes": {
+        "context": "hydrolyzed by PDE2 only"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "Compound",
+      "name": "PDE4 subtypes",
+      "attributes": {
+        "context": "which PDE4 subtypes are components"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "Compound",
+      "name": "NMDA-receptor",
+      "attributes": {
+        "context": "components of NMDA-receptor-mediated signaling"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "PharmEffect",
+      "name": "antidepressant-like profile",
+      "attributes": {
+        "context": "exhibit an antidepressant-like profile"
+      },
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "PharmEffect",
+      "name": "reduced immobility",
+      "attributes": {
+        "context": "evidenced by reduced immobility"
+      },
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "PharmEffect",
+      "name": "reduced immobility",
+      "attributes": {
+        "context": "This reduced immobility is similar"
+      },
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "putative antidepressant rolipram"
+      },
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "PharmEffect",
+      "name": "reduction in immobility",
+      "attributes": {
+        "context": "A further reduction in immobility"
+      },
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "Compound",
+      "name": "desipramine",
+      "attributes": {
+        "context": "antidepressants desipramine"
+      },
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "Compound",
+      "name": "fluoxetine",
+      "attributes": {
+        "context": "and fluoxetine are administered"
+      },
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "rolipram causes, at best"
+      },
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "PharmEffect",
+      "name": "reduction in the time of immobility",
+      "attributes": {
+        "context": "additional reduction in the time of immobility"
+      },
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "the ability of rolipram to enhance"
+      },
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "PharmEffect",
+      "name": "\\beta-adrenoceptor-mediated cAMP formation",
+      "attributes": {
+        "context": "enhance \\beta-adrenoceptor-mediated cAMP formation in the cerebral cortex"
+      },
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "Compound",
+      "name": "PDE4D",
+      "attributes": {
+        "context": "diminished in PDE4D-deficient mice"
+      },
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "Compound",
+      "name": "desipramine",
+      "attributes": {
+        "context": "effect of desipramine and fluoxetine"
+      },
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "Compound",
+      "name": "fluoxetine",
+      "attributes": {
+        "context": "effect of desipramine and fluoxetine"
+      },
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "Compound",
+      "name": "PDE4D",
+      "attributes": {
+        "context": "that PDE4D is not involved"
+      },
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "Compound",
+      "name": "monoamine-uptake inhibitors",
+      "attributes": {
+        "context": "If the monoamine-uptake inhibitors produce their effects"
+      },
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "PharmEffect",
+      "name": "receptor-mediated cAMP formation",
+      "attributes": {
+        "context": "by increasing receptor-mediated cAMP formation"
+      },
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "Compound",
+      "name": "PDE4 subtype",
+      "attributes": {
+        "context": "loss of the PDE4 subtype in the affected pathway"
+      },
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "Compound",
+      "name": "desipramine",
+      "attributes": {
+        "context": "enhance the effects of desipramine and fluoxetine"
+      },
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "Compound",
+      "name": "fluoxetine",
+      "attributes": {
+        "context": "enhance the effects of desipramine and fluoxetine"
+      },
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "Compound",
+      "name": "desipramine",
+      "attributes": {
+        "context": "treatment with either desipramine or fluoxetine"
+      },
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "Compound",
+      "name": "fluoxetine",
+      "attributes": {
+        "context": "desipramine or fluoxetine, antidepressants"
+      },
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "PharmEffect",
+      "name": "antidepressant",
+      "attributes": {
+        "context": "antidepressants that exert their antidepressant effects"
+      },
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ]
+    },
+    {
+      "id": "ent_071",
+      "type": "PharmEffect",
+      "name": "antidepressant effects",
+      "attributes": {
+        "context": "exert their antidepressant effects primarily"
+      },
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ]
+    },
+    {
+      "id": "ent_072",
+      "type": "Compound",
+      "name": "noradrenaline",
+      "attributes": {
+        "context": "via noradrenaline-mediated and 5-HT-mediated actions"
+      },
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ]
+    },
+    {
+      "id": "ent_073",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "noradrenaline-mediated and 5-HT-mediated actions"
+      },
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ]
+    },
+    {
+      "id": "ent_074",
+      "type": "Compound",
+      "name": "PDE4",
+      "attributes": {
+        "context": "increase in PDE4 expression"
+      },
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ]
+    },
+    {
+      "id": "ent_075",
+      "type": "PharmEffect",
+      "name": "antidepressants",
+      "attributes": {
+        "context": "indicates that the antidepressants alter components"
+      },
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ]
+    },
+    {
+      "id": "ent_076",
+      "type": "PharmEffect",
+      "name": "antidepressant effects",
+      "attributes": {
+        "context": "these antidepressant effects are secondary"
+      },
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ]
+    },
+    {
+      "id": "ent_077",
+      "type": "Compound",
+      "name": "desipramine",
+      "attributes": {
+        "context": "ability of desipramine"
+      },
+      "source_chunk_ids": [
+        "b933b9ca948b4f2dc96ff4520056b739"
+      ]
+    },
+    {
+      "id": "ent_078",
+      "type": "Compound",
+      "name": "fluoxetine",
+      "attributes": {
+        "context": "and fluoxetine to increase"
+      },
+      "source_chunk_ids": [
+        "b933b9ca948b4f2dc96ff4520056b739"
+      ]
+    },
+    {
+      "id": "ent_079",
+      "type": "Indication",
+      "name": "lesion",
+      "attributes": {
+        "context": "lesion of these systems"
+      },
+      "source_chunk_ids": [
+        "b933b9ca948b4f2dc96ff4520056b739"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:03.750736+00:00",
+    "original_file": "entities.json"
+  }
+}

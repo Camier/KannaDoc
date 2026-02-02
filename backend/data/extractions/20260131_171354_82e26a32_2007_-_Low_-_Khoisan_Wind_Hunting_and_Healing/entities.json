@@ -1,0 +1,563 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "b2b8f37f436f589bcffc3d16f1e340dd96dd4687eae8c877907e6df0b95fd3e4",
+  "extracted_at": "2026-02-01T08:11:57.515928+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "PharmEffect",
+      "name": "healing",
+      "attributes": {
+        "context": "focusing on matters of healing"
+      },
+      "source_chunk_ids": [
+        "9a0e4b3e59aa555d5b8194030b8dbdde"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Indication",
+      "name": "sickness",
+      "attributes": {
+        "context": "bring sickness"
+      },
+      "source_chunk_ids": [
+        "a47b3d205b2a3a22e7e345d4d0148dd8"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "Indication",
+      "name": "sickness",
+      "attributes": {
+        "context": "removes sickness from a body"
+      },
+      "source_chunk_ids": [
+        "686f339a537ccfeb2654e397ed8c7f2d"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "PharmEffect",
+      "name": "human healing",
+      "attributes": {
+        "context": "treatments that involve human healing"
+      },
+      "source_chunk_ids": [
+        "686f339a537ccfeb2654e397ed8c7f2d"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "PharmEffect",
+      "name": "animal medicine",
+      "attributes": {
+        "context": "animal medicine"
+      },
+      "source_chunk_ids": [
+        "686f339a537ccfeb2654e397ed8c7f2d"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "Compound",
+      "name": "pheromones",
+      "attributes": {
+        "context": "Wind or smells and pheromones draw and repulse organisms"
+      },
+      "source_chunk_ids": [
+        "184b7f1386f6c8afb7a21fd231675b0a"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "Indication",
+      "name": "illness",
+      "attributes": {
+        "context": "the wind of the sick person transmits his or her illness"
+      },
+      "source_chunk_ids": [
+        "184b7f1386f6c8afb7a21fd231675b0a"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "PharmEffect",
+      "name": "burning sensation",
+      "attributes": {
+        "context": "When a burning sensation develops in their central forehead"
+      },
+      "source_chunk_ids": [
+        "34b055a605af9ecfce5a625983124035"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "PharmEffect",
+      "name": "perspiration",
+      "attributes": {
+        "context": "accompanied by perspiration under the arms"
+      },
+      "source_chunk_ids": [
+        "34b055a605af9ecfce5a625983124035"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "Indication",
+      "name": "sick",
+      "attributes": {
+        "context": "he will get sick and die"
+      },
+      "source_chunk_ids": [
+        "764ea1ec32b3a963af56ae1bddae4d06"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "Indication",
+      "name": "death",
+      "attributes": {
+        "context": "death is in it"
+      },
+      "source_chunk_ids": [
+        "764ea1ec32b3a963af56ae1bddae4d06"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "Indication",
+      "name": "die",
+      "attributes": {
+        "context": "he will get sick and die"
+      },
+      "source_chunk_ids": [
+        "764ea1ec32b3a963af56ae1bddae4d06"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "PharmEffect",
+      "name": "sickness-causing",
+      "attributes": {
+        "context": "foods are deemed to be sickness-causing"
+      },
+      "source_chunk_ids": [
+        "572b8affa578ac32f30cd81a2727bc27"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "Indication",
+      "name": "coughing sicknesses",
+      "attributes": {
+        "context": "induce coughing sicknesses"
+      },
+      "source_chunk_ids": [
+        "572b8affa578ac32f30cd81a2727bc27"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "Compound",
+      "name": "snake or scorpion venom",
+      "attributes": {
+        "context": "Poison doctors are people who take increasing amounts of snake or scorpion venom mixed with other substances"
+      },
+      "source_chunk_ids": [
+        "51825f7abb91a370b4dee2553d58cc01"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "Compound",
+      "name": "urine",
+      "attributes": {
+        "context": "mixed with other substances such as urine until such time that the animals will not harm them"
+      },
+      "source_chunk_ids": [
+        "51825f7abb91a370b4dee2553d58cc01"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "PharmEffect",
+      "name": "immunity",
+      "attributes": {
+        "context": "whilst this taking of poison confers immunity, it would be muddle-headed to think of this process in terms of immunization"
+      },
+      "source_chunk_ids": [
+        "51825f7abb91a370b4dee2553d58cc01"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "PharmEffect",
+      "name": "immunization",
+      "attributes": {
+        "context": "it would be muddle-headed to think of this process in terms of immunization in a scientific 'Western' framework"
+      },
+      "source_chunk_ids": [
+        "51825f7abb91a370b4dee2553d58cc01"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "PharmEffect",
+      "name": "Protection",
+      "attributes": {
+        "context": "Protection of Khoisan comes from affinity with the snake"
+      },
+      "source_chunk_ids": [
+        "51825f7abb91a370b4dee2553d58cc01"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "PharmEffect",
+      "name": "heal",
+      "attributes": {
+        "context": "gais that enabled him to dance and heal"
+      },
+      "source_chunk_ids": [
+        "b96352b1565e3f704aec05e18ba0e59f"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "PharmEffect",
+      "name": "resistance to snake-bite",
+      "attributes": {
+        "context": "a poison doctor possesses resistance to snake-bite"
+      },
+      "source_chunk_ids": [
+        "b304dc9c7171f7ae621d16db20cbc677"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "Indication",
+      "name": "snake-bite",
+      "attributes": {
+        "context": "possesses resistance to snake-bite"
+      },
+      "source_chunk_ids": [
+        "b304dc9c7171f7ae621d16db20cbc677"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "Indication",
+      "name": "illness",
+      "attributes": {
+        "context": "//o.b, illness and disease"
+      },
+      "source_chunk_ids": [
+        "53de37bb3cb370836a47b0a1042abf4c"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "Indication",
+      "name": "disease",
+      "attributes": {
+        "context": "//o.b, illness and disease"
+      },
+      "source_chunk_ids": [
+        "53de37bb3cb370836a47b0a1042abf4c"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "Taxon",
+      "name": "grass",
+      "attributes": {
+        "context": "grass growing after the rain"
+      },
+      "source_chunk_ids": [
+        "53de37bb3cb370836a47b0a1042abf4c"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "Taxon",
+      "name": "plants",
+      "attributes": {
+        "context": "plants ripening"
+      },
+      "source_chunk_ids": [
+        "53de37bb3cb370836a47b0a1042abf4c"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "PharmEffect",
+      "name": "well-being",
+      "attributes": {
+        "context": "sun rising and well-being"
+      },
+      "source_chunk_ids": [
+        "53de37bb3cb370836a47b0a1042abf4c"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "PharmEffect",
+      "name": "growth",
+      "attributes": {
+        "context": "well-being, growth, and strength"
+      },
+      "source_chunk_ids": [
+        "53de37bb3cb370836a47b0a1042abf4c"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "PharmEffect",
+      "name": "strength",
+      "attributes": {
+        "context": "growth, and strength"
+      },
+      "source_chunk_ids": [
+        "53de37bb3cb370836a47b0a1042abf4c"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "Indication",
+      "name": "tiredness",
+      "attributes": {
+        "context": "sun setting and tiredness"
+      },
+      "source_chunk_ids": [
+        "53de37bb3cb370836a47b0a1042abf4c"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "PharmEffect",
+      "name": "failing strength",
+      "attributes": {
+        "context": "tiredness, failing strength"
+      },
+      "source_chunk_ids": [
+        "53de37bb3cb370836a47b0a1042abf4c"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "Indication",
+      "name": "death",
+      "attributes": {
+        "context": "failing strength, and death"
+      },
+      "source_chunk_ids": [
+        "53de37bb3cb370836a47b0a1042abf4c"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "PharmEffect",
+      "name": "clogging their throat",
+      "attributes": {
+        "context": "having the effect of clogging their throat"
+      },
+      "source_chunk_ids": [
+        "c7f7cb74c7f82e63dc553aea8d07b72b"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "PharmEffect",
+      "name": "terminate a pregnancy",
+      "attributes": {
+        "context": "may terminate a pregnancy"
+      },
+      "source_chunk_ids": [
+        "c7f7cb74c7f82e63dc553aea8d07b72b"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "Indication",
+      "name": "sickness",
+      "attributes": {
+        "context": "a cause of sickness"
+      },
+      "source_chunk_ids": [
+        "c7f7cb74c7f82e63dc553aea8d07b72b"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Indication",
+      "name": "sickness",
+      "attributes": {
+        "context": "Khoisan still treat sickness by introducing potency medicines"
+      },
+      "source_chunk_ids": [
+        "1589358a2e4f1f2924019a9b2235f0a1"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "Indication",
+      "name": "sickness",
+      "attributes": {
+        "context": "her pain and sickness"
+      },
+      "source_chunk_ids": [
+        "32a273ce25c74275fa58237407a00310"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "Indication",
+      "name": "pain",
+      "attributes": {
+        "context": "her pain and sickness"
+      },
+      "source_chunk_ids": [
+        "32a273ce25c74275fa58237407a00310"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "Indication",
+      "name": "sick",
+      "attributes": {
+        "context": "make others sick"
+      },
+      "source_chunk_ids": [
+        "32a273ce25c74275fa58237407a00310"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "Taxon",
+      "name": "!Gube",
+      "attributes": {
+        "context": "put in the plant !Gube"
+      },
+      "source_chunk_ids": [
+        "32a273ce25c74275fa58237407a00310"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "Indication",
+      "name": "sick",
+      "attributes": {
+        "context": "will not make others sick"
+      },
+      "source_chunk_ids": [
+        "32a273ce25c74275fa58237407a00310"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "Indication",
+      "name": "neck pain",
+      "attributes": {
+        "context": "induce neck pain"
+      },
+      "source_chunk_ids": [
+        "32a273ce25c74275fa58237407a00310"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "Indication",
+      "name": "pa deh",
+      "attributes": {
+        "context": "neck pain, pa deh"
+      },
+      "source_chunk_ids": [
+        "32a273ce25c74275fa58237407a00310"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "Indication",
+      "name": "illness",
+      "attributes": {
+        "context": "may enter the child or person and cause illness"
+      },
+      "source_chunk_ids": [
+        "6a89fcfbfdbcc1d12b74c9c3df734489"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "Indication",
+      "name": "sinking or sticking of the anterior fontanel of the skull",
+      "attributes": {
+        "context": "associated with the sinking or sticking of the anterior fontanel of the skull"
+      },
+      "source_chunk_ids": [
+        "6a89fcfbfdbcc1d12b74c9c3df734489"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "Indication",
+      "name": "illness",
+      "attributes": {
+        "context": "including rain and illness"
+      },
+      "source_chunk_ids": [
+        "01ccc0f6a891781a0170d36f9ca853cb"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "Indication",
+      "name": "maladie",
+      "attributes": {
+        "context": "la compr\u00e9hension du corps et de la maladie des Khoisan"
+      },
+      "source_chunk_ids": [
+        "aef5249d1fc3d98e9adef5d99292602c"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "PharmEffect",
+      "name": "gu\u00e9rison",
+      "attributes": {
+        "context": "la gu\u00e9rison chez les Bushmen"
+      },
+      "source_chunk_ids": [
+        "aef5249d1fc3d98e9adef5d99292602c"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "PharmEffect",
+      "name": "gu\u00e9rison",
+      "attributes": {
+        "context": "le contexte plus large de la gu\u00e9rison"
+      },
+      "source_chunk_ids": [
+        "aef5249d1fc3d98e9adef5d99292602c"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "PharmEffect",
+      "name": "gu\u00e9rison",
+      "attributes": {
+        "context": "la danse de gu\u00e9rison"
+      },
+      "source_chunk_ids": [
+        "aef5249d1fc3d98e9adef5d99292602c"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:03.769414+00:00",
+    "original_file": "entities.json"
+  }
+}

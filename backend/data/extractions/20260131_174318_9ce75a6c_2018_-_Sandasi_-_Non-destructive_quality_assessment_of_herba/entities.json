@@ -1,0 +1,1091 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "77af0ae5e700e4295595bb6fca83538dc2cc34c72c39997eff2835861d2e24ea",
+  "extracted_at": "2026-02-01T08:48:31.742494+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "PharmEffect",
+      "name": "health benefits",
+      "attributes": {
+        "context": "appreciative of the health benefits"
+      },
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "PharmEffect",
+      "name": "health benefits",
+      "attributes": {
+        "context": "multiply the health benefits"
+      },
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "PharmEffect",
+      "name": "safety",
+      "attributes": {
+        "context": "ensure safety and efficacy"
+      },
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "PharmEffect",
+      "name": "efficacy",
+      "attributes": {
+        "context": "ensure safety and efficacy"
+      },
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "Compound",
+      "name": "solvents",
+      "attributes": {
+        "context": "preparation using solvents"
+      },
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "Compound",
+      "name": "chemical constituents",
+      "attributes": {
+        "context": "distribution of chemical constituents"
+      },
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "materials (Sceletium tortuosum and Cyclopia genistoides)"
+      },
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Taxon",
+      "name": "Cyclopia genistoides",
+      "attributes": {
+        "context": "Sceletium tortuosum and Cyclopia genistoides)"
+      },
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "context": "between S. tortuosum and C. genistoides raw materials"
+      },
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "Taxon",
+      "name": "C. genistoides",
+      "attributes": {
+        "context": "S. tortuosum and C. genistoides raw materials"
+      },
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "context": "constituents as S. tortuosum and C. genistoides"
+      },
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "Taxon",
+      "name": "C. genistoides",
+      "attributes": {
+        "context": "S. tortuosum and C. genistoides and quantitatively predict C. genistoides"
+      },
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "Concentration",
+      "name": "> 97%",
+      "attributes": {
+        "context": "major constituent (> 97%)"
+      },
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "context": "S. tortuosum was present in lower amounts"
+      },
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "Concentration",
+      "name": "< 3%",
+      "attributes": {
+        "context": "lower amounts (< 3%)"
+      },
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "Taxon",
+      "name": "Camellia sinensis (L.) Kuntze",
+      "attributes": {
+        "context": "Tea is prepared exclusively from Camellia sinensis (L.) Kuntze (Theaceae) leaves"
+      },
+      "source_chunk_ids": [
+        "7d89d9b7f2c5ecd1832e2a51d3830d98"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "Taxon",
+      "name": "rooibos",
+      "attributes": {
+        "context": "Three herbal teas including rooibos"
+      },
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "Taxon",
+      "name": "Yerba mate",
+      "attributes": {
+        "context": "Yerba mate and honeybush"
+      },
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "Taxon",
+      "name": "honeybush",
+      "attributes": {
+        "context": "and honeybush"
+      },
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "Compound",
+      "name": "caffeine",
+      "attributes": {
+        "context": "caffeine content of true tea"
+      },
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "Compound",
+      "name": "caffeine",
+      "attributes": {
+        "context": "the caffeine content of instant green tea powder"
+      },
+      "source_chunk_ids": [
+        "8f0de24265e082d7d9a340364d682394"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "Taxon",
+      "name": "green tea",
+      "attributes": {
+        "context": "instant green tea powder and granules"
+      },
+      "source_chunk_ids": [
+        "8f0de24265e082d7d9a340364d682394"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "Taxon",
+      "name": "herbal tea blends",
+      "attributes": {
+        "context": "quality assessment of herbal tea blends"
+      },
+      "source_chunk_ids": [
+        "8f0de24265e082d7d9a340364d682394"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "Taxon",
+      "name": "herbal tea blends",
+      "attributes": {
+        "context": "quality control of herbal tea blends"
+      },
+      "source_chunk_ids": [
+        "8f0de24265e082d7d9a340364d682394"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "context": "Distinct colour amplitudes were observed for the two species with S. tortuosum showing a uniformly deep red colour"
+      },
+      "source_chunk_ids": [
+        "b0d2a1d844d61e118983e4eb23982a4e"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "Taxon",
+      "name": "C. genistoides",
+      "attributes": {
+        "context": "while C. genistoides exhibited chemical heterogeneity with a yellow-blue profile."
+      },
+      "source_chunk_ids": [
+        "b0d2a1d844d61e118983e4eb23982a4e"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "context": "PC1 which separated the pixels representing S. tortuosum and C. genistoides."
+      },
+      "source_chunk_ids": [
+        "b0d2a1d844d61e118983e4eb23982a4e"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "Taxon",
+      "name": "C. genistoides",
+      "attributes": {
+        "context": "PC1 which separated the pixels representing S. tortuosum and C. genistoides."
+      },
+      "source_chunk_ids": [
+        "b0d2a1d844d61e118983e4eb23982a4e"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "Taxon",
+      "name": "C. genistoides",
+      "attributes": {
+        "context": "The heterogeneous nature of C. genistoides was also observed along PC2"
+      },
+      "source_chunk_ids": [
+        "b0d2a1d844d61e118983e4eb23982a4e"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "(S. tortuosum and C. genistoides)"
+      },
+      "source_chunk_ids": [
+        "d365f13d3f88f82366e1c8e9bd986c0b"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "Taxon",
+      "name": "Cyclopia genistoides",
+      "attributes": {
+        "context": "(S. tortuosum and C. genistoides)"
+      },
+      "source_chunk_ids": [
+        "d365f13d3f88f82366e1c8e9bd986c0b"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "Taxon",
+      "name": "Cyclopia genistoides",
+      "attributes": {
+        "context": "(Honeybush-Sceletium)"
+      },
+      "source_chunk_ids": [
+        "d365f13d3f88f82366e1c8e9bd986c0b"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "(Honeybush-Sceletium)"
+      },
+      "source_chunk_ids": [
+        "d365f13d3f88f82366e1c8e9bd986c0b"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "a) Sceletium tortuosum Retention Time (min)"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "Compound",
+      "name": "m/z 202.1727",
+      "attributes": {
+        "context": "m/z 2.05202.1727"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Compound",
+      "name": "m/z 288.1518",
+      "attributes": {
+        "context": "m/z ... 3.36288.1518"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "Compound",
+      "name": "m/z 292.1764",
+      "attributes": {
+        "context": "m/z ... 3.82292.1764"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "Compound",
+      "name": "m/z 285.1460",
+      "attributes": {
+        "context": "m/z ... 4.05285.1460"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "Compound",
+      "name": "m/z 290.1609",
+      "attributes": {
+        "context": "m/z ... 4.85290.1609"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "Taxon",
+      "name": "Cyclopia genistoides",
+      "attributes": {
+        "context": "b) Cyclopia genistoides Retention Time (min)"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "Compound",
+      "name": "m/z 203.0528",
+      "attributes": {
+        "context": "m/z 1.10203.0528"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "Compound",
+      "name": "m/z 195.0289",
+      "attributes": {
+        "context": "m/z ... 1.57195.0289"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "Compound",
+      "name": "m/z 303.0513",
+      "attributes": {
+        "context": "m/z ... 2.65303.0513"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "Compound",
+      "name": "m/z 423.0934",
+      "attributes": {
+        "context": "m/z ... 2.84423.0934"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "Compound",
+      "name": "m/z 323.1762",
+      "attributes": {
+        "context": "m/z ... 3.98323.1762"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "Compound",
+      "name": "m/z 303.0872",
+      "attributes": {
+        "context": "m/z ... 4.67303.0872"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "Compound",
+      "name": "m/z 286.1444",
+      "attributes": {
+        "context": "m/z ... 5.17286.1444"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "Compound",
+      "name": "m/z 288.1596",
+      "attributes": {
+        "context": "m/z ... 5.24288.1596"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "Compound",
+      "name": "m/z 287.0558",
+      "attributes": {
+        "context": "m/z ... 5.89287.0558"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "Compound",
+      "name": "m/z 299.0919",
+      "attributes": {
+        "context": "m/z ... 7.49299.0919"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "Compound",
+      "name": "m/z 279.0941",
+      "attributes": {
+        "context": "m/z ... 7.67279.0941"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "Compound",
+      "name": "m/z 425.3784",
+      "attributes": {
+        "context": "m/z ... 7.84425.3784"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "Compound",
+      "name": "m/z 471.3490",
+      "attributes": {
+        "context": "m/z ... 9.27471.3490"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "Compound",
+      "name": "m/z 214.9183",
+      "attributes": {
+        "context": "m/z ... 10.37214.9183"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "Taxon",
+      "name": "Honeybush",
+      "attributes": {
+        "context": "c) Honeybush-Sceletium tea blend"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "context": "c) Honeybush-Sceletium tea blend"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "Compound",
+      "name": "m/z 423.0848",
+      "attributes": {
+        "context": "m/z 0.86423.0848"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "Compound",
+      "name": "m/z 138.0573",
+      "attributes": {
+        "context": "m/z ... 1.08138.0573"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "Compound",
+      "name": "m/z 104.1100",
+      "attributes": {
+        "context": "m/z ... 1.48104.1100"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "Compound",
+      "name": "m/z 207.1418",
+      "attributes": {
+        "context": "m/z ... 1.99207.1418"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "Compound",
+      "name": "m/z 449.1355",
+      "attributes": {
+        "context": "m/z ... 2.39449.1355"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "Compound",
+      "name": "m/z 209.1542",
+      "attributes": {
+        "context": "m/z ... 2.68209.1542"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "Compound",
+      "name": "m/z 288.1571",
+      "attributes": {
+        "context": "m/z ... 3.35288.1571"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "Compound",
+      "name": "m/z 292.1677",
+      "attributes": {
+        "context": "m/z ... 3.82292.1677"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "Compound",
+      "name": "m/z 285.1573",
+      "attributes": {
+        "context": "m/z ... 4.05285.1573"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "Compound",
+      "name": "m/z 290.1756",
+      "attributes": {
+        "context": "m/z ... 4.85290.1756"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "Taxon",
+      "name": "Honeybush",
+      "attributes": {
+        "context": "d) Honeybush-Sceletium tea blend"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "context": "d) Honeybush-Sceletium tea blend"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "Compound",
+      "name": "m/z 133.0610",
+      "attributes": {
+        "context": "m/z 1.09133.0610"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "Compound",
+      "name": "m/z 409.1129",
+      "attributes": {
+        "context": "m/z ... 1.57409.1129"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_071",
+      "type": "Compound",
+      "name": "m/z 195.0298",
+      "attributes": {
+        "context": "m/z ... 2.41195.0298"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_072",
+      "type": "Compound",
+      "name": "m/z 423.0941",
+      "attributes": {
+        "context": "m/z ... 2.84423.0941"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_073",
+      "type": "Compound",
+      "name": "m/z 303.0521",
+      "attributes": {
+        "context": "m/z ... 2.65303.0521"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_074",
+      "type": "Compound",
+      "name": "m/z 273.0765",
+      "attributes": {
+        "context": "m/z ... 3.39273.0765"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_075",
+      "type": "Compound",
+      "name": "m/z 273.0771",
+      "attributes": {
+        "context": "m/z ... 3.83273.0771"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_076",
+      "type": "Compound",
+      "name": "m/z 299.0911",
+      "attributes": {
+        "context": "m/z ... 5.08299.0911"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_077",
+      "type": "Compound",
+      "name": "m/z 303.0868",
+      "attributes": {
+        "context": "m/z ... 4.67303.0868"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_078",
+      "type": "Compound",
+      "name": "m/z 299.0928",
+      "attributes": {
+        "context": "m/z ... 7.49299.0928"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_079",
+      "type": "Compound",
+      "name": "m/z 279.0940",
+      "attributes": {
+        "context": "m/z ... 7.67279.0940"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_080",
+      "type": "Compound",
+      "name": "m/z 343.2084",
+      "attributes": {
+        "context": "m/z ... 8.06343.2084"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_081",
+      "type": "Compound",
+      "name": "m/z 471.3473",
+      "attributes": {
+        "context": "m/z ... 9.27471.3473"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_082",
+      "type": "Compound",
+      "name": "m/z 214.9186",
+      "attributes": {
+        "context": "m/z ... 10.37214.9186"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_083",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "marker compounds for a) Sceletium tortuosum"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_084",
+      "type": "Taxon",
+      "name": "Cyclopia genistoides",
+      "attributes": {
+        "context": "marker compounds for b) Cyclopia genistoides"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_085",
+      "type": "Taxon",
+      "name": "Honeybush",
+      "attributes": {
+        "context": "c) Honeybush-Sceletium tea blend"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_086",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "context": "c) Honeybush-Sceletium tea blend"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_087",
+      "type": "Taxon",
+      "name": "Honeybush",
+      "attributes": {
+        "context": "d) Honeybush-Sceletium tea blend"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_088",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "context": "d) Honeybush-Sceletium tea blend"
+      },
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ]
+    },
+    {
+      "id": "ent_089",
+      "type": "Taxon",
+      "name": "tortuosum",
+      "attributes": {
+        "context": "tortuosum and C. genistoides"
+      },
+      "source_chunk_ids": [
+        "1c6a7a486d56f20d4fa023bde285a491"
+      ]
+    },
+    {
+      "id": "ent_090",
+      "type": "Taxon",
+      "name": "C. genistoides",
+      "attributes": {
+        "context": "tortuosum and C. genistoides"
+      },
+      "source_chunk_ids": [
+        "1c6a7a486d56f20d4fa023bde285a491"
+      ]
+    },
+    {
+      "id": "ent_091",
+      "type": "Taxon",
+      "name": "Cyclopia genistoides",
+      "attributes": {
+        "context": "Cyclopia genistoides"
+      },
+      "source_chunk_ids": [
+        "78ff944f8d5eedab87fe5f934996a044"
+      ]
+    },
+    {
+      "id": "ent_092",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "Sceletium tortuosum"
+      },
+      "source_chunk_ids": [
+        "78ff944f8d5eedab87fe5f934996a044"
+      ]
+    },
+    {
+      "id": "ent_093",
+      "type": "Concentration",
+      "name": "1.5 g",
+      "attributes": {
+        "context": "weighed (1.5 g each)"
+      },
+      "source_chunk_ids": [
+        "19fa3b9deeab54b14c09f68e691412ea"
+      ]
+    },
+    {
+      "id": "ent_094",
+      "type": "Concentration",
+      "name": "237 ml",
+      "attributes": {
+        "context": "A volume of 237 ml (8 oz)"
+      },
+      "source_chunk_ids": [
+        "19fa3b9deeab54b14c09f68e691412ea"
+      ]
+    },
+    {
+      "id": "ent_095",
+      "type": "Concentration",
+      "name": "8 oz",
+      "attributes": {
+        "context": "A volume of 237 ml (8 oz)"
+      },
+      "source_chunk_ids": [
+        "19fa3b9deeab54b14c09f68e691412ea"
+      ]
+    },
+    {
+      "id": "ent_096",
+      "type": "Compound",
+      "name": "marker molecules",
+      "attributes": {
+        "context": "presence of marker molecules"
+      },
+      "source_chunk_ids": [
+        "19fa3b9deeab54b14c09f68e691412ea"
+      ]
+    },
+    {
+      "id": "ent_097",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "context": "analyse S. tortuosum"
+      },
+      "source_chunk_ids": [
+        "19fa3b9deeab54b14c09f68e691412ea"
+      ]
+    },
+    {
+      "id": "ent_098",
+      "type": "Taxon",
+      "name": "C. genistoides",
+      "attributes": {
+        "context": "analyse C. genistoides"
+      },
+      "source_chunk_ids": [
+        "19fa3b9deeab54b14c09f68e691412ea"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:04.025424+00:00",
+    "original_file": "entities.json"
+  }
+}

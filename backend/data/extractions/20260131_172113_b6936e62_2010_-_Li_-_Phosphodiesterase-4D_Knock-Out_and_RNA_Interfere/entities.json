@@ -1,0 +1,2961 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "9fbdb22ab94e8d5a48b084db9f4293be9dfc201b52f612e072dd7cdf2007dc7d",
+  "extracted_at": "2026-02-01T08:21:55.843815+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "Indication",
+      "name": "Schizophrenia",
+      "attributes": {
+        "context": "National Alliance for Research on Schizophrenia"
+      },
+      "source_chunk_ids": [
+        "0ac0ee03b6482e35f463716271e4cf57"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Indication",
+      "name": "Depression",
+      "attributes": {
+        "context": "Schizophrenia and Depression"
+      },
+      "source_chunk_ids": [
+        "0ac0ee03b6482e35f463716271e4cf57"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "Indication",
+      "name": "Aging",
+      "attributes": {
+        "context": "National Institute on Aging"
+      },
+      "source_chunk_ids": [
+        "0ac0ee03b6482e35f463716271e4cf57"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "Compound",
+      "name": "PDE4D",
+      "attributes": {
+        "context": "Adult male mice deficient in PDE4D"
+      },
+      "source_chunk_ids": [
+        "ed7d2cb88e7ca3cd0684ecc07797ef89"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "Compound",
+      "name": "miRNA",
+      "attributes": {
+        "context": "lentiviral vector/microRNA (miRNA) microinfusions"
+      },
+      "source_chunk_ids": [
+        "ed7d2cb88e7ca3cd0684ecc07797ef89"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "Concentration",
+      "name": "2 g per mouse each day",
+      "attributes": {
+        "context": "food was restricted to 2 g per mouse each day"
+      },
+      "source_chunk_ids": [
+        "ed7d2cb88e7ca3cd0684ecc07797ef89"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "rolipram (1.25 mg/kg)"
+      },
+      "source_chunk_ids": [
+        "d212ca5519e9a028ab0d666b2a141da8"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Concentration",
+      "name": "1.25 mg/kg",
+      "attributes": {
+        "context": "rolipram (1.25 mg/kg)"
+      },
+      "source_chunk_ids": [
+        "d212ca5519e9a028ab0d666b2a141da8"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "Compound",
+      "name": "Dimethyl sulfoxide",
+      "attributes": {
+        "context": "vehicle (5% DMSO)"
+      },
+      "source_chunk_ids": [
+        "d212ca5519e9a028ab0d666b2a141da8"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "Concentration",
+      "name": "5% DMSO",
+      "attributes": {
+        "context": "vehicle (5% DMSO)"
+      },
+      "source_chunk_ids": [
+        "d212ca5519e9a028ab0d666b2a141da8"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "Compound",
+      "name": "Bromodeoxyuridine",
+      "attributes": {
+        "context": "BrdU (100 mg/kg)"
+      },
+      "source_chunk_ids": [
+        "d212ca5519e9a028ab0d666b2a141da8"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "Concentration",
+      "name": "100 mg/kg",
+      "attributes": {
+        "context": "BrdU (100 mg/kg)"
+      },
+      "source_chunk_ids": [
+        "d212ca5519e9a028ab0d666b2a141da8"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "Compound",
+      "name": "Bromodeoxyuridine",
+      "attributes": {
+        "context": "BrdU (100 mg/kg)"
+      },
+      "source_chunk_ids": [
+        "d212ca5519e9a028ab0d666b2a141da8"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "Concentration",
+      "name": "100 mg/kg",
+      "attributes": {
+        "context": "BrdU (100 mg/kg)"
+      },
+      "source_chunk_ids": [
+        "d212ca5519e9a028ab0d666b2a141da8"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "rolipram or vehicle"
+      },
+      "source_chunk_ids": [
+        "d212ca5519e9a028ab0d666b2a141da8"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "rolipram or vehicle"
+      },
+      "source_chunk_ids": [
+        "d212ca5519e9a028ab0d666b2a141da8"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "Compound",
+      "name": "miRNA",
+      "attributes": {
+        "context": "Lentiviral miRNA-mediated knock-down"
+      },
+      "source_chunk_ids": [
+        "2f4e21b18a9e5d3025eeb4f765ecc955"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "Compound",
+      "name": "PDE4D",
+      "attributes": {
+        "context": "silence PDE4D genes"
+      },
+      "source_chunk_ids": [
+        "2f4e21b18a9e5d3025eeb4f765ecc955"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "Compound",
+      "name": "PDE4D miRNA",
+      "attributes": {
+        "context": "The sequence for the PDE4D miRNA"
+      },
+      "source_chunk_ids": [
+        "2f4e21b18a9e5d3025eeb4f765ecc955"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "Compound",
+      "name": "shRNA-mir hairpin structure",
+      "attributes": {
+        "context": "PDE4D miRNA (shRNA-mir hairpin structure)"
+      },
+      "source_chunk_ids": [
+        "2f4e21b18a9e5d3025eeb4f765ecc955"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "Compound",
+      "name": "5'-AATGGAGTCACAATCAAGTCA-GTTTTGGCCACTGACTGACTGACTTGGAGTGACTCCATT-3'",
+      "attributes": {
+        "context": "The sequence for the PDE4D miRNA (shRNA-mir hairpin structure) was 5'-AATGGAGTCACAATCAAGTCA-GTTTTGGCCACTGACTGACTGACTTGGAGTGACTCCATT-3'"
+      },
+      "source_chunk_ids": [
+        "2f4e21b18a9e5d3025eeb4f765ecc955"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "Compound",
+      "name": "antisense target sequence",
+      "attributes": {
+        "context": "The bold sequence (first 21 nt) is the antisense target sequence"
+      },
+      "source_chunk_ids": [
+        "2f4e21b18a9e5d3025eeb4f765ecc955"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "Compound",
+      "name": "sense target sequence",
+      "attributes": {
+        "context": "The final sequence (italics) represents nt 1\u20138 and 11\u201321 of the sense target sequence"
+      },
+      "source_chunk_ids": [
+        "2f4e21b18a9e5d3025eeb4f765ecc955"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "Compound",
+      "name": "nucleotides 642\u2013662",
+      "attributes": {
+        "context": "targets nucleotides 642\u2013662 of the rat PDE4D4 coding sequence"
+      },
+      "source_chunk_ids": [
+        "2f4e21b18a9e5d3025eeb4f765ecc955"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "Compound",
+      "name": "rat PDE4D4 coding sequence",
+      "attributes": {
+        "context": "nucleotides 642\u2013662 of the rat PDE4D4 coding sequence"
+      },
+      "source_chunk_ids": [
+        "2f4e21b18a9e5d3025eeb4f765ecc955"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "Compound",
+      "name": "amino acids 214\u2013221",
+      "attributes": {
+        "context": "corresponds to amino acids 214\u2013221 within the UCR1 domain"
+      },
+      "source_chunk_ids": [
+        "2f4e21b18a9e5d3025eeb4f765ecc955"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "Compound",
+      "name": "UCR1 domain",
+      "attributes": {
+        "context": "amino acids 214\u2013221 within the UCR1 domain"
+      },
+      "source_chunk_ids": [
+        "2f4e21b18a9e5d3025eeb4f765ecc955"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "Compound",
+      "name": "long-form PDE4D",
+      "attributes": {
+        "context": "UCR1 domain of long-form PDE4D"
+      },
+      "source_chunk_ids": [
+        "2f4e21b18a9e5d3025eeb4f765ecc955"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "Compound",
+      "name": "NC sequence",
+      "attributes": {
+        "context": "the NC sequence from Invitrogen was 5'-GAAATGTACTGCCGTGGAGACGTTTTGGCCACTGACTGACG-TCTCCACGAGTACATTT-3'"
+      },
+      "source_chunk_ids": [
+        "165dbd0e04ed8aef6590905685beaa08"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "Compound",
+      "name": "5'-GAAATGTACTGCCGTGGAGACGTTTTGGCCACTGACTGACG-TCTCCACGAGTACATTT-3'",
+      "attributes": {
+        "context": "the NC sequence from Invitrogen was 5'-GAAATGTACTGCCGTGGAGACGTTTTGGCCACTGACTGACG-TCTCCACGAGTACATTT-3'"
+      },
+      "source_chunk_ids": [
+        "165dbd0e04ed8aef6590905685beaa08"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "Compound",
+      "name": "4DmiR",
+      "attributes": {
+        "context": "In both 4DmiR and NC sequences"
+      },
+      "source_chunk_ids": [
+        "165dbd0e04ed8aef6590905685beaa08"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "Compound",
+      "name": "miR-155",
+      "attributes": {
+        "context": "came from the miR-155 hairpin loop"
+      },
+      "source_chunk_ids": [
+        "165dbd0e04ed8aef6590905685beaa08"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "Compound",
+      "name": "ketamine",
+      "attributes": {
+        "context": "Mice were anesthetized with ketamine"
+      },
+      "source_chunk_ids": [
+        "1168c595b09ed861ba8bafbda5ba41bd"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "Concentration",
+      "name": "100 mg/kg",
+      "attributes": {
+        "context": "ketamine (100 mg/kg)"
+      },
+      "source_chunk_ids": [
+        "1168c595b09ed861ba8bafbda5ba41bd"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "Compound",
+      "name": "xylazine",
+      "attributes": {
+        "context": "and xylazine"
+      },
+      "source_chunk_ids": [
+        "1168c595b09ed861ba8bafbda5ba41bd"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Concentration",
+      "name": "20 mg/kg",
+      "attributes": {
+        "context": "xylazine (20 mg/kg)"
+      },
+      "source_chunk_ids": [
+        "1168c595b09ed861ba8bafbda5ba41bd"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "PharmEffect",
+      "name": "anesthetized",
+      "attributes": {
+        "context": "Mice were anesthetized"
+      },
+      "source_chunk_ids": [
+        "1168c595b09ed861ba8bafbda5ba41bd"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "Concentration",
+      "name": "4 \u00d7 10^6 TU/\u00b5l",
+      "attributes": {
+        "context": "Lentiviral vectors (4 \u00d7 10^6 TU/\u00b5l"
+      },
+      "source_chunk_ids": [
+        "1168c595b09ed861ba8bafbda5ba41bd"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "Concentration",
+      "name": "1 \u00b5l/side",
+      "attributes": {
+        "context": "1 \u00b5l/side)"
+      },
+      "source_chunk_ids": [
+        "1168c595b09ed861ba8bafbda5ba41bd"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "Compound",
+      "name": "NC",
+      "attributes": {
+        "context": "containing NC"
+      },
+      "source_chunk_ids": [
+        "1168c595b09ed861ba8bafbda5ba41bd"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "Compound",
+      "name": "4DmiR",
+      "attributes": {
+        "context": "or 4DmiR"
+      },
+      "source_chunk_ids": [
+        "1168c595b09ed861ba8bafbda5ba41bd"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "Concentration",
+      "name": "0.2 \u00b5l/min",
+      "attributes": {
+        "context": "at a rate of 0.2 \u00b5l/min"
+      },
+      "source_chunk_ids": [
+        "1168c595b09ed861ba8bafbda5ba41bd"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "Concentration",
+      "name": "30 \u00b5m",
+      "attributes": {
+        "context": "coronal sections (30 \u00b5m)"
+      },
+      "source_chunk_ids": [
+        "1168c595b09ed861ba8bafbda5ba41bd"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "Compound",
+      "name": "miRNAs",
+      "attributes": {
+        "context": "Expression of the miRNAs"
+      },
+      "source_chunk_ids": [
+        "1168c595b09ed861ba8bafbda5ba41bd"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "Compound",
+      "name": "EGFP",
+      "attributes": {
+        "context": "indicated by EGFP"
+      },
+      "source_chunk_ids": [
+        "1168c595b09ed861ba8bafbda5ba41bd"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "Compound",
+      "name": "Rolipram",
+      "attributes": {
+        "context": "Rolipram was given"
+      },
+      "source_chunk_ids": [
+        "f996e578d63fd99b16b14e839bea2353"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "PharmEffect",
+      "name": "spatial memory",
+      "attributes": {
+        "context": "measure spatial memory"
+      },
+      "source_chunk_ids": [
+        "791f229ba83b951e8d7a09abcd4f5d03"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "injection of rolipram"
+      },
+      "source_chunk_ids": [
+        "791f229ba83b951e8d7a09abcd4f5d03"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "Concentration",
+      "name": "1.25 mg/kg",
+      "attributes": {
+        "context": "rolipram (1.25 mg/kg)"
+      },
+      "source_chunk_ids": [
+        "791f229ba83b951e8d7a09abcd4f5d03"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "Compound",
+      "name": "PDE4B",
+      "attributes": {
+        "context": "PDE4B (Huston et al., 1997) (1:1500)"
+      },
+      "source_chunk_ids": [
+        "a29497f0e5ebba2d8421f7f729c210c0"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "Concentration",
+      "name": "1:1500",
+      "attributes": {
+        "context": "PDE4B ... (1:1500)"
+      },
+      "source_chunk_ids": [
+        "a29497f0e5ebba2d8421f7f729c210c0"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "Compound",
+      "name": "PDE4D3",
+      "attributes": {
+        "context": "PDE4D3 (1:500)"
+      },
+      "source_chunk_ids": [
+        "a29497f0e5ebba2d8421f7f729c210c0"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "Concentration",
+      "name": "1:500",
+      "attributes": {
+        "context": "PDE4D3 (1:500)"
+      },
+      "source_chunk_ids": [
+        "a29497f0e5ebba2d8421f7f729c210c0"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "Compound",
+      "name": "PDE4D4",
+      "attributes": {
+        "context": "PDE4D4 (1:1000)"
+      },
+      "source_chunk_ids": [
+        "a29497f0e5ebba2d8421f7f729c210c0"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "Concentration",
+      "name": "1:1000",
+      "attributes": {
+        "context": "PDE4D4 (1:1000)"
+      },
+      "source_chunk_ids": [
+        "a29497f0e5ebba2d8421f7f729c210c0"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "Compound",
+      "name": "PDE4D5",
+      "attributes": {
+        "context": "PDE4D5 (1:500; FabGennix for all PDE4 antibodies"
+      },
+      "source_chunk_ids": [
+        "a29497f0e5ebba2d8421f7f729c210c0"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "Concentration",
+      "name": "1:500",
+      "attributes": {
+        "context": "PDE4D5 (1:500;"
+      },
+      "source_chunk_ids": [
+        "a29497f0e5ebba2d8421f7f729c210c0"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "Compound",
+      "name": "PDE4 antibodies",
+      "attributes": {
+        "context": "for all PDE4 antibodies"
+      },
+      "source_chunk_ids": [
+        "a29497f0e5ebba2d8421f7f729c210c0"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "Compound",
+      "name": "\\beta-actin",
+      "attributes": {
+        "context": "or \\beta-actin (inner control; 1:1000; Sigma)"
+      },
+      "source_chunk_ids": [
+        "a29497f0e5ebba2d8421f7f729c210c0"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "Concentration",
+      "name": "1:1000",
+      "attributes": {
+        "context": "\\beta-actin (inner control; 1:1000; Sigma)"
+      },
+      "source_chunk_ids": [
+        "a29497f0e5ebba2d8421f7f729c210c0"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "Compound",
+      "name": "anti-\\beta-actin antibody",
+      "attributes": {
+        "context": "except for the anti-\\beta-actin antibody"
+      },
+      "source_chunk_ids": [
+        "a29497f0e5ebba2d8421f7f729c210c0"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "Compound",
+      "name": "Alexa Fluor 700-conjugated goat anti-rabbit IgG",
+      "attributes": {
+        "context": "Alexa Fluor 700-conjugated goat anti-rabbit IgG (1:20,000; Invitrogen)"
+      },
+      "source_chunk_ids": [
+        "a29497f0e5ebba2d8421f7f729c210c0"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "Concentration",
+      "name": "1:20,000",
+      "attributes": {
+        "context": "IgG (1:20,000; Invitrogen)"
+      },
+      "source_chunk_ids": [
+        "a29497f0e5ebba2d8421f7f729c210c0"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "Compound",
+      "name": "stripping buffer",
+      "attributes": {
+        "context": "stripping buffer (Millipore Bioscience Research Reagents)"
+      },
+      "source_chunk_ids": [
+        "a29497f0e5ebba2d8421f7f729c210c0"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "Compound",
+      "name": "BrdU",
+      "attributes": {
+        "context": "immunofluorescent staining of BrdU"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "Compound",
+      "name": "PBS-plus",
+      "attributes": {
+        "context": "incubated for 1 d with cold PBS-plus"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "Compound",
+      "name": "rat anti-BrdU",
+      "attributes": {
+        "context": "contained rat anti-BrdU"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "Concentration",
+      "name": "1:200",
+      "attributes": {
+        "context": "rat anti-BrdU (1:200)"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "Compound",
+      "name": "polysialic acid neural cell adhesion molecule (PSA-NCAM)",
+      "attributes": {
+        "context": "mouse anti-polysialic acid neural cell adhesion molecule (PSA-NCAM)"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "Concentration",
+      "name": "1:200",
+      "attributes": {
+        "context": "PSA-NCAM) (1:200)"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_071",
+      "type": "Compound",
+      "name": "pCREB",
+      "attributes": {
+        "context": "rabbit anti-pCREB"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_072",
+      "type": "Concentration",
+      "name": "1:200",
+      "attributes": {
+        "context": "anti-pCREB (1:200)"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_073",
+      "type": "Compound",
+      "name": "neuronal nuclei (NeuN)",
+      "attributes": {
+        "context": "mouse anti-neuronal nuclei (NeuN)"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_074",
+      "type": "Concentration",
+      "name": "1:1000",
+      "attributes": {
+        "context": "NeuN) (1:1000)"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_075",
+      "type": "Compound",
+      "name": "S100\u03b2 antisera",
+      "attributes": {
+        "context": "rabbit anti-S100\u03b2 antisera"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_076",
+      "type": "Concentration",
+      "name": "1:100",
+      "attributes": {
+        "context": "S100\u03b2 antisera (1:100)"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_077",
+      "type": "Compound",
+      "name": "PBS",
+      "attributes": {
+        "context": "rinsing with PBS"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_078",
+      "type": "Compound",
+      "name": "FITC-conjugated goat anti-rat IgG",
+      "attributes": {
+        "context": "incubated with FITC-conjugated goat anti-rat IgG"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_079",
+      "type": "Concentration",
+      "name": "1:200",
+      "attributes": {
+        "context": "anti-rat IgG (1:200)"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_080",
+      "type": "Compound",
+      "name": "Rhodamine Red-X-conjugated goat anti-rat IgG",
+      "attributes": {
+        "context": "Rhodamine Red-X-conjugated goat anti-rat IgG"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_081",
+      "type": "Concentration",
+      "name": "1:200",
+      "attributes": {
+        "context": "anti-rat IgG (1:200)"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_082",
+      "type": "Compound",
+      "name": "EGFP",
+      "attributes": {
+        "context": "distinguish EGFP from BrdU-labeled cells"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_083",
+      "type": "Compound",
+      "name": "Rhodamine Red-X-conjugated goat anti-mouse IgG",
+      "attributes": {
+        "context": "Rhodamine Red-X-conjugated goat anti-mouse IgG"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_084",
+      "type": "Concentration",
+      "name": "1:200",
+      "attributes": {
+        "context": "anti-mouse IgG (1:200)"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_085",
+      "type": "Compound",
+      "name": "Cy5-conjugated goat anti-rabbit IgG",
+      "attributes": {
+        "context": "Cy5-conjugated goat anti-rabbit IgG"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_086",
+      "type": "Concentration",
+      "name": "1:400",
+      "attributes": {
+        "context": "anti-rabbit IgG (1:400)"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_087",
+      "type": "Compound",
+      "name": "PBS",
+      "attributes": {
+        "context": "IgG in PBS for 2 h"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_088",
+      "type": "Compound",
+      "name": "Vectashield medium",
+      "attributes": {
+        "context": "mounted with Vectashield medium"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_089",
+      "type": "Compound",
+      "name": "PSA-NCAM",
+      "attributes": {
+        "context": "newborn neurons (PSA-NCAM immunopositive)"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_090",
+      "type": "Compound",
+      "name": "BrdU",
+      "attributes": {
+        "context": "among BrdU-labeled cells"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_091",
+      "type": "Compound",
+      "name": "pCREB",
+      "attributes": {
+        "context": "examine pCREB in the newborn cells"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_092",
+      "type": "Compound",
+      "name": "BrdU",
+      "attributes": {
+        "context": "labeled for both BrdU and PSA-NCAM"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_093",
+      "type": "Compound",
+      "name": "PSA-NCAM",
+      "attributes": {
+        "context": "labeled for both BrdU and PSA-NCAM"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_094",
+      "type": "Compound",
+      "name": "BrdU",
+      "attributes": {
+        "context": "50 BrdU-positive cells"
+      },
+      "source_chunk_ids": [
+        "f63f6a66e20dccfcd49eb59b553665cc"
+      ]
+    },
+    {
+      "id": "ent_095",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "with rolipram (1.25 mg/kg for 22 d)"
+      },
+      "source_chunk_ids": [
+        "fcb70c544930593ee59b748aa2ea0402"
+      ]
+    },
+    {
+      "id": "ent_096",
+      "type": "Concentration",
+      "name": "1.25 mg/kg for 22 d",
+      "attributes": {
+        "context": "rolipram (1.25 mg/kg for 22 d)"
+      },
+      "source_chunk_ids": [
+        "fcb70c544930593ee59b748aa2ea0402"
+      ]
+    },
+    {
+      "id": "ent_097",
+      "type": "PharmEffect",
+      "name": "greater recognition index",
+      "attributes": {
+        "context": "displayed a greater recognition index"
+      },
+      "source_chunk_ids": [
+        "fcb70c544930593ee59b748aa2ea0402"
+      ]
+    },
+    {
+      "id": "ent_098",
+      "type": "Compound",
+      "name": "PDE4D",
+      "attributes": {
+        "context": "PDE4D deficiency or rolipram treatment"
+      },
+      "source_chunk_ids": [
+        "fcb70c544930593ee59b748aa2ea0402"
+      ]
+    },
+    {
+      "id": "ent_099",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "rolipram treatment increased the recognition index"
+      },
+      "source_chunk_ids": [
+        "fcb70c544930593ee59b748aa2ea0402"
+      ]
+    },
+    {
+      "id": "ent_100",
+      "type": "PharmEffect",
+      "name": "increased the recognition index",
+      "attributes": {
+        "context": "increased the recognition index relative to WT mice"
+      },
+      "source_chunk_ids": [
+        "fcb70c544930593ee59b748aa2ea0402"
+      ]
+    },
+    {
+      "id": "ent_101",
+      "type": "Compound",
+      "name": "vehicle",
+      "attributes": {
+        "context": "treated with vehicle"
+      },
+      "source_chunk_ids": [
+        "fcb70c544930593ee59b748aa2ea0402"
+      ]
+    },
+    {
+      "id": "ent_102",
+      "type": "Compound",
+      "name": "PDE4D",
+      "attributes": {
+        "context": "effect of PDE4D deficiency"
+      },
+      "source_chunk_ids": [
+        "fcb70c544930593ee59b748aa2ea0402"
+      ]
+    },
+    {
+      "id": "ent_103",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "was not changed by rolipram"
+      },
+      "source_chunk_ids": [
+        "fcb70c544930593ee59b748aa2ea0402"
+      ]
+    },
+    {
+      "id": "ent_104",
+      "type": "Compound",
+      "name": "PDE4D",
+      "attributes": {
+        "context": "role of PDE4D in the mediation of memory"
+      },
+      "source_chunk_ids": [
+        "fcb70c544930593ee59b748aa2ea0402"
+      ]
+    },
+    {
+      "id": "ent_105",
+      "type": "PharmEffect",
+      "name": "mediation of memory",
+      "attributes": {
+        "context": "in the mediation of memory"
+      },
+      "source_chunk_ids": [
+        "fcb70c544930593ee59b748aa2ea0402"
+      ]
+    },
+    {
+      "id": "ent_106",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "chronic rolipram treatment"
+      },
+      "source_chunk_ids": [
+        "e4693f76589a3f3bd70d5332542332d5"
+      ]
+    },
+    {
+      "id": "ent_107",
+      "type": "PharmEffect",
+      "name": "memory-enhancing",
+      "attributes": {
+        "context": "memory-enhancing effects"
+      },
+      "source_chunk_ids": [
+        "e4693f76589a3f3bd70d5332542332d5"
+      ]
+    },
+    {
+      "id": "ent_108",
+      "type": "PharmEffect",
+      "name": "Increased hippocampal neurogenesis",
+      "attributes": {
+        "context": "Increased hippocampal neurogenesis in mice"
+      },
+      "source_chunk_ids": [
+        "0fd72cf059cc2f2d94e15231c361ba87"
+      ]
+    },
+    {
+      "id": "ent_109",
+      "type": "Compound",
+      "name": "PDE4D",
+      "attributes": {
+        "context": "deficient in PDE4D"
+      },
+      "source_chunk_ids": [
+        "0fd72cf059cc2f2d94e15231c361ba87"
+      ]
+    },
+    {
+      "id": "ent_110",
+      "type": "Compound",
+      "name": "BrdU",
+      "attributes": {
+        "context": "BrdU-labeled cells"
+      },
+      "source_chunk_ids": [
+        "1f904006542ab20a3c04607ab538f6a1"
+      ]
+    },
+    {
+      "id": "ent_111",
+      "type": "Compound",
+      "name": "BrdU",
+      "attributes": {
+        "context": "BrdU staining was carried out"
+      },
+      "source_chunk_ids": [
+        "3d9303599d0bdde16a47ed5293089cde"
+      ]
+    },
+    {
+      "id": "ent_112",
+      "type": "Compound",
+      "name": "BrdU",
+      "attributes": {
+        "context": "double labeling for BrdU and NeuN"
+      },
+      "source_chunk_ids": [
+        "3d9303599d0bdde16a47ed5293089cde"
+      ]
+    },
+    {
+      "id": "ent_113",
+      "type": "Compound",
+      "name": "NeuN",
+      "attributes": {
+        "context": "BrdU and NeuN, a neuronal marker"
+      },
+      "source_chunk_ids": [
+        "3d9303599d0bdde16a47ed5293089cde"
+      ]
+    },
+    {
+      "id": "ent_114",
+      "type": "Compound",
+      "name": "S100\\beta",
+      "attributes": {
+        "context": "or S100\\beta, a glial marker"
+      },
+      "source_chunk_ids": [
+        "3d9303599d0bdde16a47ed5293089cde"
+      ]
+    },
+    {
+      "id": "ent_115",
+      "type": "Compound",
+      "name": "BrdU",
+      "attributes": {
+        "context": "BrdU-positive cells colocalized"
+      },
+      "source_chunk_ids": [
+        "3d9303599d0bdde16a47ed5293089cde"
+      ]
+    },
+    {
+      "id": "ent_116",
+      "type": "Compound",
+      "name": "NeuN",
+      "attributes": {
+        "context": "both NeuN- and S100\\beta-labeled cells"
+      },
+      "source_chunk_ids": [
+        "3d9303599d0bdde16a47ed5293089cde"
+      ]
+    },
+    {
+      "id": "ent_117",
+      "type": "Compound",
+      "name": "S100\\beta",
+      "attributes": {
+        "context": "NeuN- and S100\\beta-labeled cells"
+      },
+      "source_chunk_ids": [
+        "3d9303599d0bdde16a47ed5293089cde"
+      ]
+    },
+    {
+      "id": "ent_118",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "Neither rolipram nor 4DKO altered"
+      },
+      "source_chunk_ids": [
+        "3d9303599d0bdde16a47ed5293089cde"
+      ]
+    },
+    {
+      "id": "ent_119",
+      "type": "Compound",
+      "name": "PSA-NCAM",
+      "attributes": {
+        "context": "express PSA-NCAM"
+      },
+      "source_chunk_ids": [
+        "35ccdab5610df6d9f2b539713669b711"
+      ]
+    },
+    {
+      "id": "ent_120",
+      "type": "Compound",
+      "name": "BrdU",
+      "attributes": {
+        "context": "coexpression of BrdU"
+      },
+      "source_chunk_ids": [
+        "35ccdab5610df6d9f2b539713669b711"
+      ]
+    },
+    {
+      "id": "ent_121",
+      "type": "Compound",
+      "name": "pCREB",
+      "attributes": {
+        "context": "and pCREB was examined"
+      },
+      "source_chunk_ids": [
+        "35ccdab5610df6d9f2b539713669b711"
+      ]
+    },
+    {
+      "id": "ent_122",
+      "type": "Compound",
+      "name": "vehicle",
+      "attributes": {
+        "context": "treated with vehicle"
+      },
+      "source_chunk_ids": [
+        "35ccdab5610df6d9f2b539713669b711"
+      ]
+    },
+    {
+      "id": "ent_123",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "treated with vehicle (Veh) or rolipram (Rol)"
+      },
+      "source_chunk_ids": [
+        "9530284bff511ceb09dea14b2c1257de"
+      ]
+    },
+    {
+      "id": "ent_124",
+      "type": "Compound",
+      "name": "vehicle",
+      "attributes": {
+        "context": "treated with vehicle (Veh) or rolipram (Rol)"
+      },
+      "source_chunk_ids": [
+        "9530284bff511ceb09dea14b2c1257de"
+      ]
+    },
+    {
+      "id": "ent_125",
+      "type": "Compound",
+      "name": "BrdU",
+      "attributes": {
+        "context": "show BrdU (green) labeling"
+      },
+      "source_chunk_ids": [
+        "9530284bff511ceb09dea14b2c1257de"
+      ]
+    },
+    {
+      "id": "ent_126",
+      "type": "PharmEffect",
+      "name": "increases",
+      "attributes": {
+        "context": "Rolipram treatment significantly increases the number of BrdU-labeled cells"
+      },
+      "source_chunk_ids": [
+        "9530284bff511ceb09dea14b2c1257de"
+      ]
+    },
+    {
+      "id": "ent_127",
+      "type": "Compound",
+      "name": "NeuN",
+      "attributes": {
+        "context": "double-labeled for BrdU (green) and NeuN (red)"
+      },
+      "source_chunk_ids": [
+        "9530284bff511ceb09dea14b2c1257de"
+      ]
+    },
+    {
+      "id": "ent_128",
+      "type": "Compound",
+      "name": "S100\u03b2",
+      "attributes": {
+        "context": "or S100\u03b2 (blue)"
+      },
+      "source_chunk_ids": [
+        "9530284bff511ceb09dea14b2c1257de"
+      ]
+    },
+    {
+      "id": "ent_129",
+      "type": "PharmEffect",
+      "name": "does not alter",
+      "attributes": {
+        "context": "Rolipram treatment does not alter these percentages"
+      },
+      "source_chunk_ids": [
+        "9530284bff511ceb09dea14b2c1257de"
+      ]
+    },
+    {
+      "id": "ent_130",
+      "type": "Compound",
+      "name": "PSA-NCAM",
+      "attributes": {
+        "context": "triple-labeled for BrdU (green), PSA-NCAM (red)"
+      },
+      "source_chunk_ids": [
+        "9530284bff511ceb09dea14b2c1257de"
+      ]
+    },
+    {
+      "id": "ent_131",
+      "type": "Compound",
+      "name": "pCREB",
+      "attributes": {
+        "context": "and pCREB (blue)"
+      },
+      "source_chunk_ids": [
+        "9530284bff511ceb09dea14b2c1257de"
+      ]
+    },
+    {
+      "id": "ent_132",
+      "type": "Compound",
+      "name": "Vehicle",
+      "attributes": {
+        "context": "treated with Veh"
+      },
+      "source_chunk_ids": [
+        "13f924302131cc6e0a43cb5138a29642"
+      ]
+    },
+    {
+      "id": "ent_133",
+      "type": "Compound",
+      "name": "Roflumilast",
+      "attributes": {
+        "context": "treated with Rol"
+      },
+      "source_chunk_ids": [
+        "13f924302131cc6e0a43cb5138a29642"
+      ]
+    },
+    {
+      "id": "ent_134",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "presence or absence of rolipram (Rol)"
+      },
+      "source_chunk_ids": [
+        "b5918e7e87564c2a39f8216d9f26da0c"
+      ]
+    },
+    {
+      "id": "ent_135",
+      "type": "Concentration",
+      "name": "1.25 mg/kg",
+      "attributes": {
+        "context": "Rolipram (1.25 mg/kg)"
+      },
+      "source_chunk_ids": [
+        "b5918e7e87564c2a39f8216d9f26da0c"
+      ]
+    },
+    {
+      "id": "ent_136",
+      "type": "Concentration",
+      "name": "once a day",
+      "attributes": {
+        "context": "injected (i.p.) once a day"
+      },
+      "source_chunk_ids": [
+        "b5918e7e87564c2a39f8216d9f26da0c"
+      ]
+    },
+    {
+      "id": "ent_137",
+      "type": "Concentration",
+      "name": "26 d",
+      "attributes": {
+        "context": "once a day for 26 d"
+      },
+      "source_chunk_ids": [
+        "b5918e7e87564c2a39f8216d9f26da0c"
+      ]
+    },
+    {
+      "id": "ent_138",
+      "type": "Compound",
+      "name": "Rolipram",
+      "attributes": {
+        "context": "NC+Rol"
+      },
+      "source_chunk_ids": [
+        "8b35b3dc7e9cf3e6c3b70b496c25b4ef"
+      ]
+    },
+    {
+      "id": "ent_139",
+      "type": "Compound",
+      "name": "Rolipram",
+      "attributes": {
+        "context": "4DmiR+Rol"
+      },
+      "source_chunk_ids": [
+        "8b35b3dc7e9cf3e6c3b70b496c25b4ef"
+      ]
+    },
+    {
+      "id": "ent_140",
+      "type": "Compound",
+      "name": "lentiviral PDE4D-miRNA (4DmiR)",
+      "attributes": {
+        "context": "Effects of the lentiviral PDE4D-miRNA (4DmiR)"
+      },
+      "source_chunk_ids": [
+        "320c24f3b6040b604674e9a5c33a4bf6"
+      ]
+    },
+    {
+      "id": "ent_141",
+      "type": "Compound",
+      "name": "rolipram (Rol)",
+      "attributes": {
+        "context": "with or without rolipram (Rol) treatment"
+      },
+      "source_chunk_ids": [
+        "320c24f3b6040b604674e9a5c33a4bf6"
+      ]
+    },
+    {
+      "id": "ent_142",
+      "type": "Compound",
+      "name": "EGFP",
+      "attributes": {
+        "context": "indicated by EGFP (green"
+      },
+      "source_chunk_ids": [
+        "320c24f3b6040b604674e9a5c33a4bf6"
+      ]
+    },
+    {
+      "id": "ent_143",
+      "type": "Compound",
+      "name": "PDE4D3",
+      "attributes": {
+        "context": "immunoblots of PDE4D3"
+      },
+      "source_chunk_ids": [
+        "320c24f3b6040b604674e9a5c33a4bf6"
+      ]
+    },
+    {
+      "id": "ent_144",
+      "type": "Compound",
+      "name": "4D4",
+      "attributes": {
+        "context": "PDE4D3, 4D4"
+      },
+      "source_chunk_ids": [
+        "320c24f3b6040b604674e9a5c33a4bf6"
+      ]
+    },
+    {
+      "id": "ent_145",
+      "type": "Compound",
+      "name": "4D5",
+      "attributes": {
+        "context": "4D4, 4D5"
+      },
+      "source_chunk_ids": [
+        "320c24f3b6040b604674e9a5c33a4bf6"
+      ]
+    },
+    {
+      "id": "ent_146",
+      "type": "Compound",
+      "name": "4A5",
+      "attributes": {
+        "context": "4D5, 4A5"
+      },
+      "source_chunk_ids": [
+        "320c24f3b6040b604674e9a5c33a4bf6"
+      ]
+    },
+    {
+      "id": "ent_147",
+      "type": "Compound",
+      "name": "4B1",
+      "attributes": {
+        "context": "4A5, 4B1"
+      },
+      "source_chunk_ids": [
+        "320c24f3b6040b604674e9a5c33a4bf6"
+      ]
+    },
+    {
+      "id": "ent_148",
+      "type": "Compound",
+      "name": "4B4",
+      "attributes": {
+        "context": "4B1, and 4B4"
+      },
+      "source_chunk_ids": [
+        "320c24f3b6040b604674e9a5c33a4bf6"
+      ]
+    },
+    {
+      "id": "ent_149",
+      "type": "Compound",
+      "name": "vehicle (Veh)",
+      "attributes": {
+        "context": "NC plus vehicle (Veh)"
+      },
+      "source_chunk_ids": [
+        "320c24f3b6040b604674e9a5c33a4bf6"
+      ]
+    },
+    {
+      "id": "ent_150",
+      "type": "Concentration",
+      "name": "4 \u00d7 10^6 TU/\u00b5l",
+      "attributes": {
+        "context": "4 \u00d7 10^6 TU/\u00b5l"
+      },
+      "source_chunk_ids": [
+        "320c24f3b6040b604674e9a5c33a4bf6"
+      ]
+    },
+    {
+      "id": "ent_151",
+      "type": "Concentration",
+      "name": "1 \u00b5l per side",
+      "attributes": {
+        "context": "1 \u00b5l per side"
+      },
+      "source_chunk_ids": [
+        "320c24f3b6040b604674e9a5c33a4bf6"
+      ]
+    },
+    {
+      "id": "ent_152",
+      "type": "Concentration",
+      "name": "1.25 mg/kg",
+      "attributes": {
+        "context": "rolipram treatment (1.25 mg/kg)"
+      },
+      "source_chunk_ids": [
+        "320c24f3b6040b604674e9a5c33a4bf6"
+      ]
+    },
+    {
+      "id": "ent_153",
+      "type": "Concentration",
+      "name": "once daily",
+      "attributes": {
+        "context": "injected (i.p.) once daily"
+      },
+      "source_chunk_ids": [
+        "320c24f3b6040b604674e9a5c33a4bf6"
+      ]
+    },
+    {
+      "id": "ent_154",
+      "type": "Concentration",
+      "name": "16 d",
+      "attributes": {
+        "context": "once daily for 16 d"
+      },
+      "source_chunk_ids": [
+        "320c24f3b6040b604674e9a5c33a4bf6"
+      ]
+    },
+    {
+      "id": "ent_155",
+      "type": "Compound",
+      "name": "pCREB",
+      "attributes": {
+        "context": "Increases in pCREB"
+      },
+      "source_chunk_ids": [
+        "5aab6d7a57888fdaad3b5d9b2a5c00d8"
+      ]
+    },
+    {
+      "id": "ent_156",
+      "type": "Compound",
+      "name": "PDE4D variants",
+      "attributes": {
+        "context": "downregulation of PDE4D variants"
+      },
+      "source_chunk_ids": [
+        "5aab6d7a57888fdaad3b5d9b2a5c00d8"
+      ]
+    },
+    {
+      "id": "ent_157",
+      "type": "PharmEffect",
+      "name": "Increases in pCREB",
+      "attributes": {
+        "context": "Increases in pCREB"
+      },
+      "source_chunk_ids": [
+        "5aab6d7a57888fdaad3b5d9b2a5c00d8"
+      ]
+    },
+    {
+      "id": "ent_158",
+      "type": "PharmEffect",
+      "name": "neurogenesis",
+      "attributes": {
+        "context": "neurogenesis in the hippocampus"
+      },
+      "source_chunk_ids": [
+        "5aab6d7a57888fdaad3b5d9b2a5c00d8"
+      ]
+    },
+    {
+      "id": "ent_159",
+      "type": "PharmEffect",
+      "name": "downregulation of PDE4D variants",
+      "attributes": {
+        "context": "downregulation of PDE4D variants"
+      },
+      "source_chunk_ids": [
+        "5aab6d7a57888fdaad3b5d9b2a5c00d8"
+      ]
+    },
+    {
+      "id": "ent_160",
+      "type": "Compound",
+      "name": "PDE4B",
+      "attributes": {
+        "context": "PDE4B) in the brain"
+      },
+      "source_chunk_ids": [
+        "021e34305ff46522cc1d9b996493a3d2"
+      ]
+    },
+    {
+      "id": "ent_161",
+      "type": "Compound",
+      "name": "PDE4D",
+      "attributes": {
+        "context": "brain of PDE4D-deficient mice"
+      },
+      "source_chunk_ids": [
+        "021e34305ff46522cc1d9b996493a3d2"
+      ]
+    },
+    {
+      "id": "ent_162",
+      "type": "PharmEffect",
+      "name": "memory-enhancing effect",
+      "attributes": {
+        "context": "potentiate the memory-enhancing effect"
+      },
+      "source_chunk_ids": [
+        "021e34305ff46522cc1d9b996493a3d2"
+      ]
+    },
+    {
+      "id": "ent_163",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "rolipram did not alter memory"
+      },
+      "source_chunk_ids": [
+        "021e34305ff46522cc1d9b996493a3d2"
+      ]
+    },
+    {
+      "id": "ent_164",
+      "type": "PharmEffect",
+      "name": "alter memory",
+      "attributes": {
+        "context": "rolipram did not alter memory"
+      },
+      "source_chunk_ids": [
+        "021e34305ff46522cc1d9b996493a3d2"
+      ]
+    },
+    {
+      "id": "ent_165",
+      "type": "Compound",
+      "name": "PDE4D",
+      "attributes": {
+        "context": "role of PDE4D in mediating memory"
+      },
+      "source_chunk_ids": [
+        "021e34305ff46522cc1d9b996493a3d2"
+      ]
+    },
+    {
+      "id": "ent_166",
+      "type": "Compound",
+      "name": "PDE4D",
+      "attributes": {
+        "context": "importance of PDE4D for memory"
+      },
+      "source_chunk_ids": [
+        "021e34305ff46522cc1d9b996493a3d2"
+      ]
+    },
+    {
+      "id": "ent_167",
+      "type": "Compound",
+      "name": "PDE4B",
+      "attributes": {
+        "context": "deficient in PDE4B"
+      },
+      "source_chunk_ids": [
+        "021e34305ff46522cc1d9b996493a3d2"
+      ]
+    },
+    {
+      "id": "ent_168",
+      "type": "PharmEffect",
+      "name": "changes in memory",
+      "attributes": {
+        "context": "do not exhibit changes in memory"
+      },
+      "source_chunk_ids": [
+        "021e34305ff46522cc1d9b996493a3d2"
+      ]
+    },
+    {
+      "id": "ent_169",
+      "type": "Compound",
+      "name": "PDE4D allosteric modulators",
+      "attributes": {
+        "context": "selective PDE4D allosteric modulators"
+      },
+      "source_chunk_ids": [
+        "021e34305ff46522cc1d9b996493a3d2"
+      ]
+    },
+    {
+      "id": "ent_170",
+      "type": "Compound",
+      "name": "scopolamine",
+      "attributes": {
+        "context": "reverse scopolamine-induced memory impairment"
+      },
+      "source_chunk_ids": [
+        "021e34305ff46522cc1d9b996493a3d2"
+      ]
+    },
+    {
+      "id": "ent_171",
+      "type": "PharmEffect",
+      "name": "memory impairment",
+      "attributes": {
+        "context": "scopolamine-induced memory impairment"
+      },
+      "source_chunk_ids": [
+        "021e34305ff46522cc1d9b996493a3d2"
+      ]
+    },
+    {
+      "id": "ent_172",
+      "type": "PharmEffect",
+      "name": "enhance memory",
+      "attributes": {
+        "context": "also enhance memory"
+      },
+      "source_chunk_ids": [
+        "021e34305ff46522cc1d9b996493a3d2"
+      ]
+    },
+    {
+      "id": "ent_173",
+      "type": "PharmEffect",
+      "name": "enhanced hippocampal LTP",
+      "attributes": {
+        "context": "hippocampal LTP is enhanced"
+      },
+      "source_chunk_ids": [
+        "021e34305ff46522cc1d9b996493a3d2"
+      ]
+    },
+    {
+      "id": "ent_174",
+      "type": "Compound",
+      "name": "PDE4D",
+      "attributes": {
+        "context": "enhanced in PDE4D-deficient mice"
+      },
+      "source_chunk_ids": [
+        "021e34305ff46522cc1d9b996493a3d2"
+      ]
+    },
+    {
+      "id": "ent_175",
+      "type": "PharmEffect",
+      "name": "impaired fear-conditioning memory",
+      "attributes": {
+        "context": "fear-conditioning memory is unexpectedly impaired"
+      },
+      "source_chunk_ids": [
+        "021e34305ff46522cc1d9b996493a3d2"
+      ]
+    },
+    {
+      "id": "ent_176",
+      "type": "Compound",
+      "name": "PDE4D",
+      "attributes": {
+        "context": "increased expression of PDE4D"
+      },
+      "source_chunk_ids": [
+        "021e34305ff46522cc1d9b996493a3d2"
+      ]
+    },
+    {
+      "id": "ent_177",
+      "type": "Concentration",
+      "name": "high doses",
+      "attributes": {
+        "context": "induced by high doses"
+      },
+      "source_chunk_ids": [
+        "021e34305ff46522cc1d9b996493a3d2"
+      ]
+    },
+    {
+      "id": "ent_178",
+      "type": "Compound",
+      "name": "PDE4 inhibitors",
+      "attributes": {
+        "context": "high doses of PDE4 inhibitors"
+      },
+      "source_chunk_ids": [
+        "021e34305ff46522cc1d9b996493a3d2"
+      ]
+    },
+    {
+      "id": "ent_179",
+      "type": "PharmEffect",
+      "name": "impairs memory",
+      "attributes": {
+        "context": "PDE4 inhibitors impairs memory"
+      },
+      "source_chunk_ids": [
+        "021e34305ff46522cc1d9b996493a3d2"
+      ]
+    },
+    {
+      "id": "ent_180",
+      "type": "Compound",
+      "name": "PDE4A",
+      "attributes": {
+        "context": "role of PDE4A in memory"
+      },
+      "source_chunk_ids": [
+        "021e34305ff46522cc1d9b996493a3d2"
+      ]
+    },
+    {
+      "id": "ent_181",
+      "type": "Compound",
+      "name": "cAMP",
+      "attributes": {
+        "context": "PDE4-mediated cAMP/CREB signaling"
+      },
+      "source_chunk_ids": [
+        "ec99dde2a0992a8979bf6b46e170b5bc"
+      ]
+    },
+    {
+      "id": "ent_182",
+      "type": "Compound",
+      "name": "CREB",
+      "attributes": {
+        "context": "PDE4-mediated cAMP/CREB signaling"
+      },
+      "source_chunk_ids": [
+        "ec99dde2a0992a8979bf6b46e170b5bc"
+      ]
+    },
+    {
+      "id": "ent_183",
+      "type": "PharmEffect",
+      "name": "adult neurogenesis",
+      "attributes": {
+        "context": "regulation of adult neurogenesis"
+      },
+      "source_chunk_ids": [
+        "ec99dde2a0992a8979bf6b46e170b5bc"
+      ]
+    },
+    {
+      "id": "ent_184",
+      "type": "PharmEffect",
+      "name": "learning",
+      "attributes": {
+        "context": "associated with learning and memory"
+      },
+      "source_chunk_ids": [
+        "ec99dde2a0992a8979bf6b46e170b5bc"
+      ]
+    },
+    {
+      "id": "ent_185",
+      "type": "PharmEffect",
+      "name": "memory",
+      "attributes": {
+        "context": "associated with learning and memory"
+      },
+      "source_chunk_ids": [
+        "ec99dde2a0992a8979bf6b46e170b5bc"
+      ]
+    },
+    {
+      "id": "ent_186",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "chronic treatment with rolipram"
+      },
+      "source_chunk_ids": [
+        "ec99dde2a0992a8979bf6b46e170b5bc"
+      ]
+    },
+    {
+      "id": "ent_187",
+      "type": "Compound",
+      "name": "pCREB",
+      "attributes": {
+        "context": "increased pCREB"
+      },
+      "source_chunk_ids": [
+        "ec99dde2a0992a8979bf6b46e170b5bc"
+      ]
+    },
+    {
+      "id": "ent_188",
+      "type": "PharmEffect",
+      "name": "enhanced memory",
+      "attributes": {
+        "context": "enhanced memory"
+      },
+      "source_chunk_ids": [
+        "ec99dde2a0992a8979bf6b46e170b5bc"
+      ]
+    },
+    {
+      "id": "ent_189",
+      "type": "PharmEffect",
+      "name": "increased BrdU-positive cells",
+      "attributes": {
+        "context": "increased BrdU-positive cells in the dentate gyrus"
+      },
+      "source_chunk_ids": [
+        "ec99dde2a0992a8979bf6b46e170b5bc"
+      ]
+    },
+    {
+      "id": "ent_190",
+      "type": "Compound",
+      "name": "BrdU",
+      "attributes": {
+        "context": "BrdU injections"
+      },
+      "source_chunk_ids": [
+        "ec99dde2a0992a8979bf6b46e170b5bc"
+      ]
+    },
+    {
+      "id": "ent_191",
+      "type": "PharmEffect",
+      "name": "survived",
+      "attributes": {
+        "context": "BrdU-labeled cells survived"
+      },
+      "source_chunk_ids": [
+        "ec99dde2a0992a8979bf6b46e170b5bc"
+      ]
+    },
+    {
+      "id": "ent_192",
+      "type": "PharmEffect",
+      "name": "proliferated",
+      "attributes": {
+        "context": "instead of proliferated"
+      },
+      "source_chunk_ids": [
+        "ec99dde2a0992a8979bf6b46e170b5bc"
+      ]
+    },
+    {
+      "id": "ent_193",
+      "type": "PharmEffect",
+      "name": "neurogenic effect",
+      "attributes": {
+        "context": "The neurogenic effect of rolipram"
+      },
+      "source_chunk_ids": [
+        "ec99dde2a0992a8979bf6b46e170b5bc"
+      ]
+    },
+    {
+      "id": "ent_194",
+      "type": "Compound",
+      "name": "PDE4D",
+      "attributes": {
+        "context": "PDE4D deficiency"
+      },
+      "source_chunk_ids": [
+        "ec99dde2a0992a8979bf6b46e170b5bc"
+      ]
+    },
+    {
+      "id": "ent_195",
+      "type": "PharmEffect",
+      "name": "survival",
+      "attributes": {
+        "context": "primarily survival"
+      },
+      "source_chunk_ids": [
+        "ec99dde2a0992a8979bf6b46e170b5bc"
+      ]
+    },
+    {
+      "id": "ent_196",
+      "type": "Compound",
+      "name": "PDE4B",
+      "attributes": {
+        "context": "mice deficient in PDE4B"
+      },
+      "source_chunk_ids": [
+        "ec99dde2a0992a8979bf6b46e170b5bc"
+      ]
+    },
+    {
+      "id": "ent_197",
+      "type": "PharmEffect",
+      "name": "cell proliferation",
+      "attributes": {
+        "context": "increase in cell proliferation"
+      },
+      "source_chunk_ids": [
+        "ec99dde2a0992a8979bf6b46e170b5bc"
+      ]
+    },
+    {
+      "id": "ent_198",
+      "type": "PharmEffect",
+      "name": "survival of neurons",
+      "attributes": {
+        "context": "survival of neurons"
+      },
+      "source_chunk_ids": [
+        "ec99dde2a0992a8979bf6b46e170b5bc"
+      ]
+    },
+    {
+      "id": "ent_199",
+      "type": "Compound",
+      "name": "PDE4",
+      "attributes": {
+        "context": "major PDE4 subtype"
+      },
+      "source_chunk_ids": [
+        "ec99dde2a0992a8979bf6b46e170b5bc"
+      ]
+    },
+    {
+      "id": "ent_200",
+      "type": "PharmEffect",
+      "name": "hippocampal neurogenesis",
+      "attributes": {
+        "context": "responsible for hippocampal neurogenesis"
+      },
+      "source_chunk_ids": [
+        "ec99dde2a0992a8979bf6b46e170b5bc"
+      ]
+    },
+    {
+      "id": "ent_201",
+      "type": "Compound",
+      "name": "Rolipram",
+      "attributes": {
+        "context": "Rolipram has been shown to increase hippocampal neurogenesis"
+      },
+      "source_chunk_ids": [
+        "76b4df7d10c68af55640007f1e406fef"
+      ]
+    },
+    {
+      "id": "ent_202",
+      "type": "PharmEffect",
+      "name": "increase hippocampal neurogenesis",
+      "attributes": {
+        "context": "increase hippocampal neurogenesis"
+      },
+      "source_chunk_ids": [
+        "76b4df7d10c68af55640007f1e406fef"
+      ]
+    },
+    {
+      "id": "ent_203",
+      "type": "PharmEffect",
+      "name": "increasing amplifying neural progenitors",
+      "attributes": {
+        "context": "by increasing amplifying neural progenitors (ANPs)"
+      },
+      "source_chunk_ids": [
+        "76b4df7d10c68af55640007f1e406fef"
+      ]
+    },
+    {
+      "id": "ent_204",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "rolipram increased expression of Sox2"
+      },
+      "source_chunk_ids": [
+        "76b4df7d10c68af55640007f1e406fef"
+      ]
+    },
+    {
+      "id": "ent_205",
+      "type": "PharmEffect",
+      "name": "increased hippocampal neurogenesis",
+      "attributes": {
+        "context": "At the dose that increased hippocampal neurogenesis"
+      },
+      "source_chunk_ids": [
+        "76b4df7d10c68af55640007f1e406fef"
+      ]
+    },
+    {
+      "id": "ent_206",
+      "type": "Compound",
+      "name": "pCREB",
+      "attributes": {
+        "context": "increased hippocampal neurogenesis and pCREB"
+      },
+      "source_chunk_ids": [
+        "76b4df7d10c68af55640007f1e406fef"
+      ]
+    },
+    {
+      "id": "ent_207",
+      "type": "Compound",
+      "name": "Sox2",
+      "attributes": {
+        "context": "increased expression of Sox2"
+      },
+      "source_chunk_ids": [
+        "76b4df7d10c68af55640007f1e406fef"
+      ]
+    },
+    {
+      "id": "ent_208",
+      "type": "Compound",
+      "name": "BrdU",
+      "attributes": {
+        "context": "phenotype of BrdU-positive cells"
+      },
+      "source_chunk_ids": [
+        "76b4df7d10c68af55640007f1e406fef"
+      ]
+    },
+    {
+      "id": "ent_209",
+      "type": "Compound",
+      "name": "PDE4D",
+      "attributes": {
+        "context": "PDE4D deficiency also increased hippocampal Sox2"
+      },
+      "source_chunk_ids": [
+        "76b4df7d10c68af55640007f1e406fef"
+      ]
+    },
+    {
+      "id": "ent_210",
+      "type": "PharmEffect",
+      "name": "increased hippocampal Sox2",
+      "attributes": {
+        "context": "increased hippocampal Sox2"
+      },
+      "source_chunk_ids": [
+        "76b4df7d10c68af55640007f1e406fef"
+      ]
+    },
+    {
+      "id": "ent_211",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "not altered by rolipram"
+      },
+      "source_chunk_ids": [
+        "76b4df7d10c68af55640007f1e406fef"
+      ]
+    },
+    {
+      "id": "ent_212",
+      "type": "Compound",
+      "name": "BrdU",
+      "attributes": {
+        "context": "among BrdU-positive cells"
+      },
+      "source_chunk_ids": [
+        "76b4df7d10c68af55640007f1e406fef"
+      ]
+    },
+    {
+      "id": "ent_213",
+      "type": "Compound",
+      "name": "PDE4D",
+      "attributes": {
+        "context": "PDE4D deficiency increases hippocampal neurogenesis"
+      },
+      "source_chunk_ids": [
+        "76b4df7d10c68af55640007f1e406fef"
+      ]
+    },
+    {
+      "id": "ent_214",
+      "type": "PharmEffect",
+      "name": "increases hippocampal neurogenesis",
+      "attributes": {
+        "context": "increases hippocampal neurogenesis"
+      },
+      "source_chunk_ids": [
+        "76b4df7d10c68af55640007f1e406fef"
+      ]
+    },
+    {
+      "id": "ent_215",
+      "type": "PharmEffect",
+      "name": "abnormal development",
+      "attributes": {
+        "context": "may lead to abnormal development"
+      },
+      "source_chunk_ids": [
+        "e31d4e6d9718af2e849e7be341701a6d"
+      ]
+    },
+    {
+      "id": "ent_216",
+      "type": "PharmEffect",
+      "name": "emesis",
+      "attributes": {
+        "context": "and emesis"
+      },
+      "source_chunk_ids": [
+        "e31d4e6d9718af2e849e7be341701a6d"
+      ]
+    },
+    {
+      "id": "ent_217",
+      "type": "Compound",
+      "name": "miRNAs",
+      "attributes": {
+        "context": "we used miRNAs"
+      },
+      "source_chunk_ids": [
+        "e31d4e6d9718af2e849e7be341701a6d"
+      ]
+    },
+    {
+      "id": "ent_218",
+      "type": "Compound",
+      "name": "RNAi",
+      "attributes": {
+        "context": "one of the RNAi techniques"
+      },
+      "source_chunk_ids": [
+        "e31d4e6d9718af2e849e7be341701a6d"
+      ]
+    },
+    {
+      "id": "ent_219",
+      "type": "PharmEffect",
+      "name": "gene silencing",
+      "attributes": {
+        "context": "techniques for gene silencing"
+      },
+      "source_chunk_ids": [
+        "e31d4e6d9718af2e849e7be341701a6d"
+      ]
+    },
+    {
+      "id": "ent_220",
+      "type": "Compound",
+      "name": "PDE4Ds",
+      "attributes": {
+        "context": "knock down the long-form PDE4Ds"
+      },
+      "source_chunk_ids": [
+        "e31d4e6d9718af2e849e7be341701a6d"
+      ]
+    },
+    {
+      "id": "ent_221",
+      "type": "Compound",
+      "name": "PKA",
+      "attributes": {
+        "context": "highly regulated by PKA"
+      },
+      "source_chunk_ids": [
+        "e31d4e6d9718af2e849e7be341701a6d"
+      ]
+    },
+    {
+      "id": "ent_222",
+      "type": "Compound",
+      "name": "ERK",
+      "attributes": {
+        "context": "and ERK"
+      },
+      "source_chunk_ids": [
+        "e31d4e6d9718af2e849e7be341701a6d"
+      ]
+    },
+    {
+      "id": "ent_223",
+      "type": "Compound",
+      "name": "cAMP",
+      "attributes": {
+        "context": "intracellular cAMP hydrolysis"
+      },
+      "source_chunk_ids": [
+        "e31d4e6d9718af2e849e7be341701a6d"
+      ]
+    },
+    {
+      "id": "ent_224",
+      "type": "Compound",
+      "name": "siRNAs",
+      "attributes": {
+        "context": "by using siRNAs"
+      },
+      "source_chunk_ids": [
+        "e31d4e6d9718af2e849e7be341701a6d"
+      ]
+    },
+    {
+      "id": "ent_225",
+      "type": "Compound",
+      "name": "PDE4B",
+      "attributes": {
+        "context": "variant of PDE4B"
+      },
+      "source_chunk_ids": [
+        "e31d4e6d9718af2e849e7be341701a6d"
+      ]
+    },
+    {
+      "id": "ent_226",
+      "type": "Compound",
+      "name": "PDE4D",
+      "attributes": {
+        "context": "or PDE4D"
+      },
+      "source_chunk_ids": [
+        "e31d4e6d9718af2e849e7be341701a6d"
+      ]
+    },
+    {
+      "id": "ent_227",
+      "type": "Compound",
+      "name": "lentivirus",
+      "attributes": {
+        "context": "used lentivirus as the vector"
+      },
+      "source_chunk_ids": [
+        "e31d4e6d9718af2e849e7be341701a6d"
+      ]
+    },
+    {
+      "id": "ent_228",
+      "type": "PharmEffect",
+      "name": "gene suppression",
+      "attributes": {
+        "context": "neuron-specific gene suppression"
+      },
+      "source_chunk_ids": [
+        "e31d4e6d9718af2e849e7be341701a6d"
+      ]
+    },
+    {
+      "id": "ent_229",
+      "type": "Compound",
+      "name": "EGFP",
+      "attributes": {
+        "context": "indicated by EGFP"
+      },
+      "source_chunk_ids": [
+        "e31d4e6d9718af2e849e7be341701a6d"
+      ]
+    },
+    {
+      "id": "ent_230",
+      "type": "Compound",
+      "name": "PDE4D4",
+      "attributes": {
+        "context": "long-form PDE4D4"
+      },
+      "source_chunk_ids": [
+        "e31d4e6d9718af2e849e7be341701a6d"
+      ]
+    },
+    {
+      "id": "ent_231",
+      "type": "Compound",
+      "name": "PDE4D5",
+      "attributes": {
+        "context": "and PDE4D5 were selectively downregulated"
+      },
+      "source_chunk_ids": [
+        "e31d4e6d9718af2e849e7be341701a6d"
+      ]
+    },
+    {
+      "id": "ent_232",
+      "type": "PharmEffect",
+      "name": "downregulated",
+      "attributes": {
+        "context": "were selectively downregulated"
+      },
+      "source_chunk_ids": [
+        "e31d4e6d9718af2e849e7be341701a6d"
+      ]
+    },
+    {
+      "id": "ent_233",
+      "type": "PharmEffect",
+      "name": "neurogenesis",
+      "attributes": {
+        "context": "increases in hippocampal neurogenesis"
+      },
+      "source_chunk_ids": [
+        "e31d4e6d9718af2e849e7be341701a6d"
+      ]
+    },
+    {
+      "id": "ent_234",
+      "type": "Compound",
+      "name": "pCREB",
+      "attributes": {
+        "context": "and pCREB levels"
+      },
+      "source_chunk_ids": [
+        "e31d4e6d9718af2e849e7be341701a6d"
+      ]
+    },
+    {
+      "id": "ent_235",
+      "type": "PharmEffect",
+      "name": "enhancement of memory",
+      "attributes": {
+        "context": "enhancement of memory"
+      },
+      "source_chunk_ids": [
+        "e31d4e6d9718af2e849e7be341701a6d"
+      ]
+    },
+    {
+      "id": "ent_236",
+      "type": "Compound",
+      "name": "PDE4Ds",
+      "attributes": {
+        "context": "long-form PDE4Ds"
+      },
+      "source_chunk_ids": [
+        "5ba05933d043813d045fb63477b8c990"
+      ]
+    },
+    {
+      "id": "ent_237",
+      "type": "Compound",
+      "name": "PDE4D7\u20139",
+      "attributes": {
+        "context": "PDE4D7\u20139"
+      },
+      "source_chunk_ids": [
+        "5ba05933d043813d045fb63477b8c990"
+      ]
+    },
+    {
+      "id": "ent_238",
+      "type": "Compound",
+      "name": "PDE4D11",
+      "attributes": {
+        "context": "PDE4D7\u20139, 11"
+      },
+      "source_chunk_ids": [
+        "5ba05933d043813d045fb63477b8c990"
+      ]
+    },
+    {
+      "id": "ent_239",
+      "type": "Compound",
+      "name": "PDE4D4/5",
+      "attributes": {
+        "context": "PDE4D4/5 variants"
+      },
+      "source_chunk_ids": [
+        "5ba05933d043813d045fb63477b8c990"
+      ]
+    },
+    {
+      "id": "ent_240",
+      "type": "Compound",
+      "name": "PDE4A5",
+      "attributes": {
+        "context": "PDE4A5"
+      },
+      "source_chunk_ids": [
+        "5ba05933d043813d045fb63477b8c990"
+      ]
+    },
+    {
+      "id": "ent_241",
+      "type": "Compound",
+      "name": "PDE4A10",
+      "attributes": {
+        "context": "PDE4A10"
+      },
+      "source_chunk_ids": [
+        "5ba05933d043813d045fb63477b8c990"
+      ]
+    },
+    {
+      "id": "ent_242",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "chronic rolipram treatment"
+      },
+      "source_chunk_ids": [
+        "4c99a2a31283b54fc0089a974e152c14"
+      ]
+    },
+    {
+      "id": "ent_243",
+      "type": "Compound",
+      "name": "PDE4D4",
+      "attributes": {
+        "context": "decreased expression of PDE4D4"
+      },
+      "source_chunk_ids": [
+        "4c99a2a31283b54fc0089a974e152c14"
+      ]
+    },
+    {
+      "id": "ent_244",
+      "type": "Compound",
+      "name": "PDE4D5",
+      "attributes": {
+        "context": "D5"
+      },
+      "source_chunk_ids": [
+        "4c99a2a31283b54fc0089a974e152c14"
+      ]
+    },
+    {
+      "id": "ent_245",
+      "type": "Compound",
+      "name": "PDE4A5",
+      "attributes": {
+        "context": "A5"
+      },
+      "source_chunk_ids": [
+        "4c99a2a31283b54fc0089a974e152c14"
+      ]
+    },
+    {
+      "id": "ent_246",
+      "type": "Compound",
+      "name": "PDE4B1",
+      "attributes": {
+        "context": "B1"
+      },
+      "source_chunk_ids": [
+        "4c99a2a31283b54fc0089a974e152c14"
+      ]
+    },
+    {
+      "id": "ent_247",
+      "type": "Compound",
+      "name": "PDE4D3",
+      "attributes": {
+        "context": "increased expression of PDE4D3"
+      },
+      "source_chunk_ids": [
+        "4c99a2a31283b54fc0089a974e152c14"
+      ]
+    },
+    {
+      "id": "ent_248",
+      "type": "Compound",
+      "name": "PDE4B4",
+      "attributes": {
+        "context": "did not alter PDE4B4"
+      },
+      "source_chunk_ids": [
+        "4c99a2a31283b54fc0089a974e152c14"
+      ]
+    },
+    {
+      "id": "ent_249",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "effects of rolipram"
+      },
+      "source_chunk_ids": [
+        "4c99a2a31283b54fc0089a974e152c14"
+      ]
+    },
+    {
+      "id": "ent_250",
+      "type": "PharmEffect",
+      "name": "memory",
+      "attributes": {
+        "context": "effects of rolipram on memory"
+      },
+      "source_chunk_ids": [
+        "4c99a2a31283b54fc0089a974e152c14"
+      ]
+    },
+    {
+      "id": "ent_251",
+      "type": "Compound",
+      "name": "pCREB",
+      "attributes": {
+        "context": "memory, pCREB"
+      },
+      "source_chunk_ids": [
+        "4c99a2a31283b54fc0089a974e152c14"
+      ]
+    },
+    {
+      "id": "ent_252",
+      "type": "PharmEffect",
+      "name": "neurogenesis",
+      "attributes": {
+        "context": "pCREB, and neurogenesis"
+      },
+      "source_chunk_ids": [
+        "4c99a2a31283b54fc0089a974e152c14"
+      ]
+    },
+    {
+      "id": "ent_253",
+      "type": "Compound",
+      "name": "PDE4D-miRNAs",
+      "attributes": {
+        "context": "combined rolipram and PDE4D-miRNAs"
+      },
+      "source_chunk_ids": [
+        "4c99a2a31283b54fc0089a974e152c14"
+      ]
+    },
+    {
+      "id": "ent_254",
+      "type": "Compound",
+      "name": "PDE4D4",
+      "attributes": {
+        "context": "role for PDE4D4"
+      },
+      "source_chunk_ids": [
+        "4c99a2a31283b54fc0089a974e152c14"
+      ]
+    },
+    {
+      "id": "ent_255",
+      "type": "Compound",
+      "name": "PDE4D5",
+      "attributes": {
+        "context": "PDE4D5"
+      },
+      "source_chunk_ids": [
+        "4c99a2a31283b54fc0089a974e152c14"
+      ]
+    },
+    {
+      "id": "ent_256",
+      "type": "Compound",
+      "name": "PDE4A5",
+      "attributes": {
+        "context": "PDE4A5"
+      },
+      "source_chunk_ids": [
+        "4c99a2a31283b54fc0089a974e152c14"
+      ]
+    },
+    {
+      "id": "ent_257",
+      "type": "Compound",
+      "name": "PDE4A10",
+      "attributes": {
+        "context": "PDE4A10"
+      },
+      "source_chunk_ids": [
+        "4c99a2a31283b54fc0089a974e152c14"
+      ]
+    },
+    {
+      "id": "ent_258",
+      "type": "Compound",
+      "name": "PDE4Ds",
+      "attributes": {
+        "context": "Other long-form PDE4Ds"
+      },
+      "source_chunk_ids": [
+        "4c99a2a31283b54fc0089a974e152c14"
+      ]
+    },
+    {
+      "id": "ent_259",
+      "type": "Compound",
+      "name": "4DmiR",
+      "attributes": {
+        "context": "effects of 4DmiR"
+      },
+      "source_chunk_ids": [
+        "4c99a2a31283b54fc0089a974e152c14"
+      ]
+    },
+    {
+      "id": "ent_260",
+      "type": "Compound",
+      "name": "PDE4D",
+      "attributes": {
+        "context": "downregulation of PDE4D"
+      },
+      "source_chunk_ids": [
+        "aadab4c160dabf3d3e795b15aba457e8"
+      ]
+    },
+    {
+      "id": "ent_261",
+      "type": "Compound",
+      "name": "\\alpha 2 adrenergic receptor",
+      "attributes": {
+        "context": "\\alpha 2 adrenergic receptor-mediated anesthesia"
+      },
+      "source_chunk_ids": [
+        "aadab4c160dabf3d3e795b15aba457e8"
+      ]
+    },
+    {
+      "id": "ent_262",
+      "type": "PharmEffect",
+      "name": "anesthesia",
+      "attributes": {
+        "context": "receptor-mediated anesthesia"
+      },
+      "source_chunk_ids": [
+        "aadab4c160dabf3d3e795b15aba457e8"
+      ]
+    },
+    {
+      "id": "ent_263",
+      "type": "Indication",
+      "name": "emesis",
+      "attributes": {
+        "context": "measure of emesis"
+      },
+      "source_chunk_ids": [
+        "aadab4c160dabf3d3e795b15aba457e8"
+      ]
+    },
+    {
+      "id": "ent_264",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "rolipram treatment"
+      },
+      "source_chunk_ids": [
+        "aadab4c160dabf3d3e795b15aba457e8"
+      ]
+    },
+    {
+      "id": "ent_265",
+      "type": "PharmEffect",
+      "name": "anesthesia",
+      "attributes": {
+        "context": "duration of anesthesia"
+      },
+      "source_chunk_ids": [
+        "aadab4c160dabf3d3e795b15aba457e8"
+      ]
+    },
+    {
+      "id": "ent_266",
+      "type": "Compound",
+      "name": "PDE4",
+      "attributes": {
+        "context": "contribution of PDE4"
+      },
+      "source_chunk_ids": [
+        "aadab4c160dabf3d3e795b15aba457e8"
+      ]
+    },
+    {
+      "id": "ent_267",
+      "type": "Indication",
+      "name": "emesis",
+      "attributes": {
+        "context": "PDE4D to emesis"
+      },
+      "source_chunk_ids": [
+        "aadab4c160dabf3d3e795b15aba457e8"
+      ]
+    },
+    {
+      "id": "ent_268",
+      "type": "Compound",
+      "name": "PDE4 inhibitors",
+      "attributes": {
+        "context": "side effect of PDE4 inhibitors"
+      },
+      "source_chunk_ids": [
+        "aadab4c160dabf3d3e795b15aba457e8"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:03.836855+00:00",
+    "original_file": "entities.json"
+  }
+}

@@ -1,0 +1,1146 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "f8e831118a9396ccf5ec9c87023afe525dd230b7a785dc84ef49edda3a91f540",
+  "extracted_at": "2026-02-01T08:22:54.990014+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "Compound",
+      "name": "sulfuric acid",
+      "attributes": {
+        "context": "crude sulfuric acid extract preparation"
+      },
+      "source_chunk_ids": [
+        "b988a6cfa61e17ac0b9b4846f1fd5ef9"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Concentration",
+      "name": "60 mL",
+      "attributes": {
+        "context": "extracted thrice with 60 mL"
+      },
+      "source_chunk_ids": [
+        "b988a6cfa61e17ac0b9b4846f1fd5ef9"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "Concentration",
+      "name": "0.25 M",
+      "attributes": {
+        "context": "0.25 M aqueous H2SO4"
+      },
+      "source_chunk_ids": [
+        "b988a6cfa61e17ac0b9b4846f1fd5ef9"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "Compound",
+      "name": "H2SO4",
+      "attributes": {
+        "context": "0.25 M aqueous H2SO4"
+      },
+      "source_chunk_ids": [
+        "b988a6cfa61e17ac0b9b4846f1fd5ef9"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "Concentration",
+      "name": "10 min",
+      "attributes": {
+        "context": "for 10 min"
+      },
+      "source_chunk_ids": [
+        "b988a6cfa61e17ac0b9b4846f1fd5ef9"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "Concentration",
+      "name": "150 mL",
+      "attributes": {
+        "context": "acidic extract (150 mL)"
+      },
+      "source_chunk_ids": [
+        "b988a6cfa61e17ac0b9b4846f1fd5ef9"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "Concentration",
+      "name": "25%",
+      "attributes": {
+        "context": "25% aqueous ammonia"
+      },
+      "source_chunk_ids": [
+        "b988a6cfa61e17ac0b9b4846f1fd5ef9"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Compound",
+      "name": "aqueous ammonia",
+      "attributes": {
+        "context": "25% aqueous ammonia"
+      },
+      "source_chunk_ids": [
+        "b988a6cfa61e17ac0b9b4846f1fd5ef9"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "Concentration",
+      "name": "75 mL",
+      "attributes": {
+        "context": "ammonia (75 mL)"
+      },
+      "source_chunk_ids": [
+        "b988a6cfa61e17ac0b9b4846f1fd5ef9"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "Concentration",
+      "name": "90 mL",
+      "attributes": {
+        "context": "using 90 mL of dichloromethane"
+      },
+      "source_chunk_ids": [
+        "b988a6cfa61e17ac0b9b4846f1fd5ef9"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "Compound",
+      "name": "dichloromethane",
+      "attributes": {
+        "context": "90 mL of dichloromethane"
+      },
+      "source_chunk_ids": [
+        "b988a6cfa61e17ac0b9b4846f1fd5ef9"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "Concentration",
+      "name": "40^{\\circ}\\text{C}",
+      "attributes": {
+        "context": "at 40^{\\circ}\\text{C}"
+      },
+      "source_chunk_ids": [
+        "b988a6cfa61e17ac0b9b4846f1fd5ef9"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "Concentration",
+      "name": "0.2 bar",
+      "attributes": {
+        "context": "under 0.2 bar pressure"
+      },
+      "source_chunk_ids": [
+        "b988a6cfa61e17ac0b9b4846f1fd5ef9"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "Compound",
+      "name": "Krebs Ringer bicarbonate buffer",
+      "attributes": {
+        "context": "prepared in Krebs Ringer bicarbonate buffer"
+      },
+      "source_chunk_ids": [
+        "c62dcaae3ff1929153a6ee8145a8c484"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {
+        "context": "mesembrine concentration"
+      },
+      "source_chunk_ids": [
+        "c62dcaae3ff1929153a6ee8145a8c484"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "Concentration",
+      "name": "40\\ \\mu\\text{g}/\\text{mL}",
+      "attributes": {
+        "context": "concentration of 40\\ \\mu\\text{g}/\\text{mL}"
+      },
+      "source_chunk_ids": [
+        "c62dcaae3ff1929153a6ee8145a8c484"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {
+        "context": "mesembrine content"
+      },
+      "source_chunk_ids": [
+        "c62dcaae3ff1929153a6ee8145a8c484"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {
+        "context": "mesembrenone: 90\\ \\mu\\text{g}/\\text{mL}"
+      },
+      "source_chunk_ids": [
+        "c62dcaae3ff1929153a6ee8145a8c484"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "Concentration",
+      "name": "90\\ \\mu\\text{g}/\\text{mL}",
+      "attributes": {
+        "context": "mesembrenone: 90\\ \\mu\\text{g}/\\text{mL}"
+      },
+      "source_chunk_ids": [
+        "c62dcaae3ff1929153a6ee8145a8c484"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "Compound",
+      "name": "mesembrenol",
+      "attributes": {
+        "context": "mesembrenol: 80\\ \\mu\\text{g}/\\text{mL}"
+      },
+      "source_chunk_ids": [
+        "c62dcaae3ff1929153a6ee8145a8c484"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "Concentration",
+      "name": "80\\ \\mu\\text{g}/\\text{mL}",
+      "attributes": {
+        "context": "mesembrenol: 80\\ \\mu\\text{g}/\\text{mL}"
+      },
+      "source_chunk_ids": [
+        "c62dcaae3ff1929153a6ee8145a8c484"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {
+        "context": "mesembrine: 40\\ \\mu\\text{g}/\\text{mL}"
+      },
+      "source_chunk_ids": [
+        "c62dcaae3ff1929153a6ee8145a8c484"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "Concentration",
+      "name": "40\\ \\mu\\text{g}/\\text{mL}",
+      "attributes": {
+        "context": "mesembrine: 40\\ \\mu\\text{g}/\\text{mL}"
+      },
+      "source_chunk_ids": [
+        "c62dcaae3ff1929153a6ee8145a8c484"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {
+        "context": "mesembranol: 40\\ \\mu\\text{g}/\\text{mL}"
+      },
+      "source_chunk_ids": [
+        "c62dcaae3ff1929153a6ee8145a8c484"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "Concentration",
+      "name": "40\\ \\mu\\text{g}/\\text{mL}",
+      "attributes": {
+        "context": "mesembranol: 40\\ \\mu\\text{g}/\\text{mL}"
+      },
+      "source_chunk_ids": [
+        "c62dcaae3ff1929153a6ee8145a8c484"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "Compound",
+      "name": "Krebs Ringer bicarbonate buffer",
+      "attributes": {
+        "context": "in Krebs Ringer bicarbonate buffer"
+      },
+      "source_chunk_ids": [
+        "c62dcaae3ff1929153a6ee8145a8c484"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "Compound",
+      "name": "Caffeine",
+      "attributes": {
+        "context": "Caffeine (highly permeable reference compound)"
+      },
+      "source_chunk_ids": [
+        "c62dcaae3ff1929153a6ee8145a8c484"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "Compound",
+      "name": "atenolol",
+      "attributes": {
+        "context": "atenolol (poorly permeable compound)"
+      },
+      "source_chunk_ids": [
+        "c62dcaae3ff1929153a6ee8145a8c484"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "Concentration",
+      "name": "40\\ \\mu\\text{g}/\\text{mL}",
+      "attributes": {
+        "context": "prepared as 40\\ \\mu\\text{g}/\\text{mL} solutions"
+      },
+      "source_chunk_ids": [
+        "c62dcaae3ff1929153a6ee8145a8c484"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "Compound",
+      "name": "Krebs Ringer bicarbonate buffer",
+      "attributes": {
+        "context": "in Krebs Ringer bicarbonate buffer"
+      },
+      "source_chunk_ids": [
+        "c62dcaae3ff1929153a6ee8145a8c484"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "Compound",
+      "name": "Ringer bicarbonate buffer",
+      "attributes": {
+        "context": "Ringer bicarbonate buffer."
+      },
+      "source_chunk_ids": [
+        "7f215896329f15b36c3bbce9acd0b440"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "three S. tortuosum extracts"
+      },
+      "source_chunk_ids": [
+        "a7b79b39879c1c1f632a5d134a673909"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "Compound",
+      "name": "alkaloid standards",
+      "attributes": {
+        "context": "mixture of the alkaloid standards"
+      },
+      "source_chunk_ids": [
+        "a7b79b39879c1c1f632a5d134a673909"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "Compound",
+      "name": "alkaloid-enriched extract",
+      "attributes": {
+        "context": "The dried alkaloid-enriched extract"
+      },
+      "source_chunk_ids": [
+        "a7b79b39879c1c1f632a5d134a673909"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "Compound",
+      "name": "methanol",
+      "attributes": {
+        "context": "resuspended in methanol"
+      },
+      "source_chunk_ids": [
+        "a7b79b39879c1c1f632a5d134a673909"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Concentration",
+      "name": "10.0 mg/mL",
+      "attributes": {
+        "context": "concentration of 10.0 mg/mL"
+      },
+      "source_chunk_ids": [
+        "a7b79b39879c1c1f632a5d134a673909"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "Compound",
+      "name": "methanol",
+      "attributes": {
+        "context": "the MeOH and water extracts"
+      },
+      "source_chunk_ids": [
+        "a7b79b39879c1c1f632a5d134a673909"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "Compound",
+      "name": "water",
+      "attributes": {
+        "context": "the MeOH and water extracts"
+      },
+      "source_chunk_ids": [
+        "a7b79b39879c1c1f632a5d134a673909"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "Concentration",
+      "name": "50 mg/mL",
+      "attributes": {
+        "context": "concentration of 50 mg/mL"
+      },
+      "source_chunk_ids": [
+        "a7b79b39879c1c1f632a5d134a673909"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "Compound",
+      "name": "pure alkaloid standards",
+      "attributes": {
+        "context": "the pure alkaloid standards were dissolved"
+      },
+      "source_chunk_ids": [
+        "a7b79b39879c1c1f632a5d134a673909"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "Concentration",
+      "name": "1 mg/mL",
+      "attributes": {
+        "context": "concentration of 1 mg/mL"
+      },
+      "source_chunk_ids": [
+        "a7b79b39879c1c1f632a5d134a673909"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "Compound",
+      "name": "C18",
+      "attributes": {
+        "context": "UPLC BEH C18 (2.1 x 50 mm, 1.7 \u00b5m) reversed-phase column"
+      },
+      "source_chunk_ids": [
+        "a7b79b39879c1c1f632a5d134a673909"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "Compound",
+      "name": "C18",
+      "attributes": {
+        "context": "UPLC BEH C18 (2.1 x 5 mm, 1.7 \u00b5m) Van Guard pre-col-"
+      },
+      "source_chunk_ids": [
+        "a7b79b39879c1c1f632a5d134a673909"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "Taxon",
+      "name": "Sceletium toruosum",
+      "attributes": {
+        "context": "four Sceletium toruosum alkaloids"
+      },
+      "source_chunk_ids": [
+        "06e27a884c536123912e8c93153e0b0b"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "Compound",
+      "name": "alkaloids",
+      "attributes": {
+        "context": "Sceletium toruosum alkaloids"
+      },
+      "source_chunk_ids": [
+        "06e27a884c536123912e8c93153e0b0b"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "Compound",
+      "name": "mesembrenol",
+      "attributes": {
+        "context": "1) mesembrenol"
+      },
+      "source_chunk_ids": [
+        "06e27a884c536123912e8c93153e0b0b"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {
+        "context": "2) mesembranol"
+      },
+      "source_chunk_ids": [
+        "06e27a884c536123912e8c93153e0b0b"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {
+        "context": "3) mesembrine"
+      },
+      "source_chunk_ids": [
+        "06e27a884c536123912e8c93153e0b0b"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {
+        "context": "4) mesembrenone"
+      },
+      "source_chunk_ids": [
+        "06e27a884c536123912e8c93153e0b0b"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "Compound",
+      "name": "Sceletium alkaloids",
+      "attributes": {
+        "context": "UPLC) of Sceletium alkaloids"
+      },
+      "source_chunk_ids": [
+        "7a4d3a4a2088ba3dce3364fb1516907c"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "context": "UPLC) of Sceletium alkaloids"
+      },
+      "source_chunk_ids": [
+        "7a4d3a4a2088ba3dce3364fb1516907c"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "Compound",
+      "name": "alkaloid standards",
+      "attributes": {
+        "context": "mixture of four alkaloid standards"
+      },
+      "source_chunk_ids": [
+        "7a4d3a4a2088ba3dce3364fb1516907c"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "Compound",
+      "name": "alkaloid",
+      "attributes": {
+        "context": "mixture of four alkaloid standards"
+      },
+      "source_chunk_ids": [
+        "7a4d3a4a2088ba3dce3364fb1516907c"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "Compound",
+      "name": "acid-base extract",
+      "attributes": {
+        "context": "fingerprint of the acid-base extract"
+      },
+      "source_chunk_ids": [
+        "7a4d3a4a2088ba3dce3364fb1516907c"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "Compound",
+      "name": "methanol extract",
+      "attributes": {
+        "context": "fingerprint of the methanol extract"
+      },
+      "source_chunk_ids": [
+        "7a4d3a4a2088ba3dce3364fb1516907c"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "Compound",
+      "name": "water extract",
+      "attributes": {
+        "context": "fingerprint of the water extract"
+      },
+      "source_chunk_ids": [
+        "7a4d3a4a2088ba3dce3364fb1516907c"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "Compound",
+      "name": "Sceletium alkaloid",
+      "attributes": {
+        "context": "four Sceletium alkaloid standards"
+      },
+      "source_chunk_ids": [
+        "d529c86c593ed418cfc250c9513691b4"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "Compound",
+      "name": "methanol",
+      "attributes": {
+        "context": "methanol (C)"
+      },
+      "source_chunk_ids": [
+        "d529c86c593ed418cfc250c9513691b4"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "Compound",
+      "name": "water",
+      "attributes": {
+        "context": "water (E) extracts"
+      },
+      "source_chunk_ids": [
+        "d529c86c593ed418cfc250c9513691b4"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "context": "four Sceletium alkaloid standards"
+      },
+      "source_chunk_ids": [
+        "d529c86c593ed418cfc250c9513691b4"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {
+        "context": "calibration curves for mesembrenone"
+      },
+      "source_chunk_ids": [
+        "e1283c28bab87069700b56f9fc1039f4"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "Compound",
+      "name": "mesembrenol",
+      "attributes": {
+        "context": "calibration curves for mesembrenol"
+      },
+      "source_chunk_ids": [
+        "e1283c28bab87069700b56f9fc1039f4"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {
+        "context": "calibration curves for mesembrine"
+      },
+      "source_chunk_ids": [
+        "e1283c28bab87069700b56f9fc1039f4"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {
+        "context": "calibration curves for mesembranol"
+      },
+      "source_chunk_ids": [
+        "e1283c28bab87069700b56f9fc1039f4"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "Compound",
+      "name": "caffeine",
+      "attributes": {
+        "context": "caffeine and atenolol"
+      },
+      "source_chunk_ids": [
+        "e1283c28bab87069700b56f9fc1039f4"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "Compound",
+      "name": "atenolol",
+      "attributes": {
+        "context": "caffeine and atenolol"
+      },
+      "source_chunk_ids": [
+        "e1283c28bab87069700b56f9fc1039f4"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "Compound",
+      "name": "Mesembrenone",
+      "attributes": {
+        "context": "Mesembrenone287.15"
+      },
+      "source_chunk_ids": [
+        "c8facf3b65167e49e179b6a6d0ed9aba"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "Concentration",
+      "name": "0.600 \u00b1 0.005 \u00b5g/mL",
+      "attributes": {
+        "context": "LOD* (\u00b5g/mL)LOQ* (\u00b5g/mL) Mesembrenone...0.600 \u00b1 0.005"
+      },
+      "source_chunk_ids": [
+        "c8facf3b65167e49e179b6a6d0ed9aba"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "Concentration",
+      "name": "2.002 \u00b1 0.013 \u00b5g/mL",
+      "attributes": {
+        "context": "Mesembrenone...2.002 \u00b1 0.013"
+      },
+      "source_chunk_ids": [
+        "c8facf3b65167e49e179b6a6d0ed9aba"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "Compound",
+      "name": "Mesembrenol",
+      "attributes": {
+        "context": "Mesembrenol289.15"
+      },
+      "source_chunk_ids": [
+        "c8facf3b65167e49e179b6a6d0ed9aba"
+      ]
+    },
+    {
+      "id": "ent_071",
+      "type": "Concentration",
+      "name": "0.434 \u00b1 0.009 \u00b5g/mL",
+      "attributes": {
+        "context": "Mesembrenol...0.434 \u00b1 0.009"
+      },
+      "source_chunk_ids": [
+        "c8facf3b65167e49e179b6a6d0ed9aba"
+      ]
+    },
+    {
+      "id": "ent_072",
+      "type": "Concentration",
+      "name": "1.445 \u00b1 0.024 \u00b5g/mL",
+      "attributes": {
+        "context": "Mesembrenol...1.445 \u00b1 0.024"
+      },
+      "source_chunk_ids": [
+        "c8facf3b65167e49e179b6a6d0ed9aba"
+      ]
+    },
+    {
+      "id": "ent_073",
+      "type": "Compound",
+      "name": "Mesembrine",
+      "attributes": {
+        "context": "Mesembrine289.17"
+      },
+      "source_chunk_ids": [
+        "c8facf3b65167e49e179b6a6d0ed9aba"
+      ]
+    },
+    {
+      "id": "ent_074",
+      "type": "Concentration",
+      "name": "0.208 \u00b1 0.012 \u00b5g/mL",
+      "attributes": {
+        "context": "Mesembrine...0.208 \u00b1 0.012"
+      },
+      "source_chunk_ids": [
+        "c8facf3b65167e49e179b6a6d0ed9aba"
+      ]
+    },
+    {
+      "id": "ent_075",
+      "type": "Concentration",
+      "name": "0.693 \u00b1 0.025 \u00b5g/mL",
+      "attributes": {
+        "context": "Mesembrine...0.693 \u00b1 0.025"
+      },
+      "source_chunk_ids": [
+        "c8facf3b65167e49e179b6a6d0ed9aba"
+      ]
+    },
+    {
+      "id": "ent_076",
+      "type": "Compound",
+      "name": "Mesembranol",
+      "attributes": {
+        "context": "Mesembranol291.18"
+      },
+      "source_chunk_ids": [
+        "c8facf3b65167e49e179b6a6d0ed9aba"
+      ]
+    },
+    {
+      "id": "ent_077",
+      "type": "Concentration",
+      "name": "0.203 \u00b1 0.010 \u00b5g/mL",
+      "attributes": {
+        "context": "Mesembranol...0.203 \u00b1 0.010"
+      },
+      "source_chunk_ids": [
+        "c8facf3b65167e49e179b6a6d0ed9aba"
+      ]
+    },
+    {
+      "id": "ent_078",
+      "type": "Concentration",
+      "name": "0.676 \u00b1 0.023 \u00b5g/mL",
+      "attributes": {
+        "context": "Mesembranol...0.676 \u00b1 0.023"
+      },
+      "source_chunk_ids": [
+        "c8facf3b65167e49e179b6a6d0ed9aba"
+      ]
+    },
+    {
+      "id": "ent_079",
+      "type": "Compound",
+      "name": "Caffeine",
+      "attributes": {
+        "context": "Caffeine194.19"
+      },
+      "source_chunk_ids": [
+        "c8facf3b65167e49e179b6a6d0ed9aba"
+      ]
+    },
+    {
+      "id": "ent_080",
+      "type": "Concentration",
+      "name": "0.125 \u00b1 0.004 \u00b5g/mL",
+      "attributes": {
+        "context": "Caffeine...0.125 \u00b1 0.004"
+      },
+      "source_chunk_ids": [
+        "c8facf3b65167e49e179b6a6d0ed9aba"
+      ]
+    },
+    {
+      "id": "ent_081",
+      "type": "Concentration",
+      "name": "0.377 \u00b1 0.010 \u00b5g/mL",
+      "attributes": {
+        "context": "Caffeine...0.377 \u00b1 0.010"
+      },
+      "source_chunk_ids": [
+        "c8facf3b65167e49e179b6a6d0ed9aba"
+      ]
+    },
+    {
+      "id": "ent_082",
+      "type": "Compound",
+      "name": "Atenolol",
+      "attributes": {
+        "context": "Atenolol266.30"
+      },
+      "source_chunk_ids": [
+        "c8facf3b65167e49e179b6a6d0ed9aba"
+      ]
+    },
+    {
+      "id": "ent_083",
+      "type": "Concentration",
+      "name": "0.202 \u00b1 0.008 \u00b5g/mL",
+      "attributes": {
+        "context": "Atenolol...0.202 \u00b1 0.008"
+      },
+      "source_chunk_ids": [
+        "c8facf3b65167e49e179b6a6d0ed9aba"
+      ]
+    },
+    {
+      "id": "ent_084",
+      "type": "Concentration",
+      "name": "0.521 \u00b1 0.015 \u00b5g/mL",
+      "attributes": {
+        "context": "Atenolol...0.521 \u00b1 0.015"
+      },
+      "source_chunk_ids": [
+        "c8facf3b65167e49e179b6a6d0ed9aba"
+      ]
+    },
+    {
+      "id": "ent_085",
+      "type": "PharmEffect",
+      "name": "euphoria",
+      "attributes": {
+        "context": "reports of transient euphoria"
+      },
+      "source_chunk_ids": [
+        "e92f553aa4442f6acb3721a977c1cc3f"
+      ]
+    },
+    {
+      "id": "ent_086",
+      "type": "PharmEffect",
+      "name": "intoxication",
+      "attributes": {
+        "context": "euphoria or intoxication following ingestion"
+      },
+      "source_chunk_ids": [
+        "e92f553aa4442f6acb3721a977c1cc3f"
+      ]
+    },
+    {
+      "id": "ent_087",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "context": "ingestion of Sceletium plant material"
+      },
+      "source_chunk_ids": [
+        "e92f553aa4442f6acb3721a977c1cc3f"
+      ]
+    },
+    {
+      "id": "ent_088",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {
+        "context": "rapid transport of mesembrine"
+      },
+      "source_chunk_ids": [
+        "e92f553aa4442f6acb3721a977c1cc3f"
+      ]
+    },
+    {
+      "id": "ent_089",
+      "type": "Compound",
+      "name": "alkaloid",
+      "attributes": {
+        "context": "alkaloid permeability across the sublingual mucosal tissue"
+      },
+      "source_chunk_ids": [
+        "e5d75c9a26fb04cca7d7858bac309ed3"
+      ]
+    },
+    {
+      "id": "ent_090",
+      "type": "Compound",
+      "name": "caffeine",
+      "attributes": {
+        "context": "poorer than that of caffeine"
+      },
+      "source_chunk_ids": [
+        "e5d75c9a26fb04cca7d7858bac309ed3"
+      ]
+    },
+    {
+      "id": "ent_091",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {
+        "context": "mesembrenone in the water extract"
+      },
+      "source_chunk_ids": [
+        "e5d75c9a26fb04cca7d7858bac309ed3"
+      ]
+    },
+    {
+      "id": "ent_092",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {
+        "context": "mesembranol in the acid-base extract"
+      },
+      "source_chunk_ids": [
+        "e5d75c9a26fb04cca7d7858bac309ed3"
+      ]
+    },
+    {
+      "id": "ent_093",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {
+        "context": "compared to that of mesembrine"
+      },
+      "source_chunk_ids": [
+        "e5d75c9a26fb04cca7d7858bac309ed3"
+      ]
+    },
+    {
+      "id": "ent_094",
+      "type": "Compound",
+      "name": "Mesembrenone",
+      "attributes": {
+        "context": "five compounds are shown: Mesembrenone"
+      },
+      "source_chunk_ids": [
+        "b78c9843e062bfddf4e947c8ef31d5da"
+      ]
+    },
+    {
+      "id": "ent_095",
+      "type": "Compound",
+      "name": "Mesembrenol",
+      "attributes": {
+        "context": "five compounds are shown: Mesembrenol"
+      },
+      "source_chunk_ids": [
+        "b78c9843e062bfddf4e947c8ef31d5da"
+      ]
+    },
+    {
+      "id": "ent_096",
+      "type": "Compound",
+      "name": "Mesembrine",
+      "attributes": {
+        "context": "five compounds are shown: Mesembrine"
+      },
+      "source_chunk_ids": [
+        "b78c9843e062bfddf4e947c8ef31d5da"
+      ]
+    },
+    {
+      "id": "ent_097",
+      "type": "Compound",
+      "name": "Mesembranol",
+      "attributes": {
+        "context": "five compounds are shown: Mesembranol"
+      },
+      "source_chunk_ids": [
+        "b78c9843e062bfddf4e947c8ef31d5da"
+      ]
+    },
+    {
+      "id": "ent_098",
+      "type": "Compound",
+      "name": "Caffeine",
+      "attributes": {
+        "context": "five compounds are shown: Caffeine"
+      },
+      "source_chunk_ids": [
+        "b78c9843e062bfddf4e947c8ef31d5da"
+      ]
+    },
+    {
+      "id": "ent_099",
+      "type": "Compound",
+      "name": "Atenolol",
+      "attributes": {
+        "context": "Caffeine (Atenolol, small cross-hatched)"
+      },
+      "source_chunk_ids": [
+        "b78c9843e062bfddf4e947c8ef31d5da"
+      ]
+    },
+    {
+      "id": "ent_100",
+      "type": "Compound",
+      "name": "Pure alkaloids",
+      "attributes": {
+        "context": "The x-axis categories are Pure alkaloids"
+      },
+      "source_chunk_ids": [
+        "b78c9843e062bfddf4e947c8ef31d5da"
+      ]
+    },
+    {
+      "id": "ent_101",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "values for Sceletium tortuosum pure alkaloids"
+      },
+      "source_chunk_ids": [
+        "b78c9843e062bfddf4e947c8ef31d5da"
+      ]
+    },
+    {
+      "id": "ent_102",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "values for Sceletium tortuosum alkaloids"
+      },
+      "source_chunk_ids": [
+        "386ff408b9f88a2fa43c1c1c573475a3"
+      ]
+    },
+    {
+      "id": "ent_103",
+      "type": "Compound",
+      "name": "alkaloids",
+      "attributes": {
+        "context": "Sceletium tortuosum alkaloids across porcine sublingual mucosa"
+      },
+      "source_chunk_ids": [
+        "386ff408b9f88a2fa43c1c1c573475a3"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:03.848879+00:00",
+    "original_file": "entities.json"
+  }
+}

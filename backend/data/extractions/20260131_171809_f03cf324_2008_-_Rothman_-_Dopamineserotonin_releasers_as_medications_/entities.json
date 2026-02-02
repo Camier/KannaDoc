@@ -1,0 +1,6943 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "5fa6981c5c42338b0b4f5f40d8f44776c6ff36a33bd681531ce71f1660400a10",
+  "extracted_at": "2026-02-01T08:20:01.642631+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "Indication",
+      "name": "Drug Abuse",
+      "attributes": {
+        "context": "National Institute on Drug Abuse"
+      },
+      "source_chunk_ids": [
+        "707433e25d630b53df6e5482abedfd5d"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Compound",
+      "name": "monoamine releasers",
+      "attributes": {
+        "context": "administration of stimulant-like medications (e.g. monoamine releasers)"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "Indication",
+      "name": "cocaine addiction",
+      "attributes": {
+        "context": "cocaine and methamphetamine addiction"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "Indication",
+      "name": "methamphetamine addiction",
+      "attributes": {
+        "context": "cocaine and methamphetamine addiction"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "PharmEffect",
+      "name": "reduce withdrawal symptoms",
+      "attributes": {
+        "context": "reduce withdrawal symptoms"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "PharmEffect",
+      "name": "prevent relapse",
+      "attributes": {
+        "context": "prevent relapse"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "PharmEffect",
+      "name": "abuse liability",
+      "attributes": {
+        "context": "possess abuse liability"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Compound",
+      "name": "dopamine (DA)",
+      "attributes": {
+        "context": "activation of mesolimbic dopamine (DA) neurons"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "Compound",
+      "name": "serotonin (5-HT)",
+      "attributes": {
+        "context": "add in serotonin (5-HT)-releasing properties"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "PharmEffect",
+      "name": "inhibitory influence",
+      "attributes": {
+        "context": "provide an inhibitory influence"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "Compound",
+      "name": "DA/5-HT releasers",
+      "attributes": {
+        "context": "development of dual DA/5-HT releasers"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "Indication",
+      "name": "substance use disorders",
+      "attributes": {
+        "context": "treatment of substance use disorders"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "Indication",
+      "name": "chronic cocaine abuse",
+      "attributes": {
+        "context": "withdrawal from chronic cocaine or alcohol abuse"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "Indication",
+      "name": "alcohol abuse",
+      "attributes": {
+        "context": "withdrawal from chronic cocaine or alcohol abuse"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "PharmEffect",
+      "name": "stimulant effects",
+      "attributes": {
+        "context": "dampen DA-mediated stimulant effects"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "Compound",
+      "name": "5-HT2C receptors",
+      "attributes": {
+        "context": "the \u2018anti-stimulant\u2019 role of 5-HT2C receptors"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "PharmEffect",
+      "name": "anti-stimulant role",
+      "attributes": {
+        "context": "the \u2018anti-stimulant\u2019 role"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "PharmEffect",
+      "name": "adverse effects",
+      "attributes": {
+        "context": "potential adverse effects"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "Compound",
+      "name": "PAL-287",
+      "attributes": {
+        "context": "data with PAL-287, a novel non-amphetamine DA/5-HT-releasing agent"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "Compound",
+      "name": "amphetamine",
+      "attributes": {
+        "context": "a novel non-amphetamine DA/5-HT-releasing agent"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "Compound",
+      "name": "DA/5-HT-releasing agent",
+      "attributes": {
+        "context": "a novel non-amphetamine DA/5-HT-releasing agent"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "PharmEffect",
+      "name": "suppresses cocaine self-administration",
+      "attributes": {
+        "context": "suppresses cocaine self-administration"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "PharmEffect",
+      "name": "positive reinforcing properties",
+      "attributes": {
+        "context": "lacks positive reinforcing properties"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "Indication",
+      "name": "cocaine addictions",
+      "attributes": {
+        "context": "treatment of cocaine and alcohol addictions"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "Indication",
+      "name": "alcohol addictions",
+      "attributes": {
+        "context": "treatment of cocaine and alcohol addictions"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "Indication",
+      "name": "obesity",
+      "attributes": {
+        "context": "as well as for obesity"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "Indication",
+      "name": "attention deficit disorder",
+      "attributes": {
+        "context": "attention deficit disorder"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "and depression"
+      },
+      "source_chunk_ids": [
+        "5e4e759866a368650b92c7c1c6812eae"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "Compound",
+      "name": "alcohol",
+      "attributes": {
+        "context": "Keywords: alcohol"
+      },
+      "source_chunk_ids": [
+        "fa24184795b17e6575f4b97a14548820"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "Compound",
+      "name": "amphetamine",
+      "attributes": {
+        "context": "Keywords: amphetamine"
+      },
+      "source_chunk_ids": [
+        "fa24184795b17e6575f4b97a14548820"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "Keywords: cocaine"
+      },
+      "source_chunk_ids": [
+        "fa24184795b17e6575f4b97a14548820"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "Keywords: dopamine"
+      },
+      "source_chunk_ids": [
+        "fa24184795b17e6575f4b97a14548820"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "Keywords: serotonin"
+      },
+      "source_chunk_ids": [
+        "fa24184795b17e6575f4b97a14548820"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "dual dopamine (DA)/serotonin (5-HT) releasers"
+      },
+      "source_chunk_ids": [
+        "5268763697f5f696c251e9886636a663"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "dual dopamine (DA)/serotonin (5-HT) releasers"
+      },
+      "source_chunk_ids": [
+        "5268763697f5f696c251e9886636a663"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "PharmEffect",
+      "name": "releasers",
+      "attributes": {
+        "context": "dopamine (DA)/serotonin (5-HT) releasers"
+      },
+      "source_chunk_ids": [
+        "5268763697f5f696c251e9886636a663"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "Indication",
+      "name": "stimulant addiction",
+      "attributes": {
+        "context": "medications for stimulant addiction"
+      },
+      "source_chunk_ids": [
+        "5268763697f5f696c251e9886636a663"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "Indication",
+      "name": "alcohol addiction",
+      "attributes": {
+        "context": "possibly alcohol addiction"
+      },
+      "source_chunk_ids": [
+        "5268763697f5f696c251e9886636a663"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "Indication",
+      "name": "addiction disorders",
+      "attributes": {
+        "context": "medications for addiction disorders"
+      },
+      "source_chunk_ids": [
+        "1d21f261392efbd361304acd60d7267d"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "drugs such as cocaine"
+      },
+      "source_chunk_ids": [
+        "1d21f261392efbd361304acd60d7267d"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "Compound",
+      "name": "amphetamines",
+      "attributes": {
+        "context": "cocaine and amphetamines"
+      },
+      "source_chunk_ids": [
+        "1d21f261392efbd361304acd60d7267d"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "PharmEffect",
+      "name": "cardiovascular stimulation",
+      "attributes": {
+        "context": "including cardiovascular stimulation"
+      },
+      "source_chunk_ids": [
+        "1d21f261392efbd361304acd60d7267d"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "PharmEffect",
+      "name": "mood elevation",
+      "attributes": {
+        "context": "mood elevation"
+      },
+      "source_chunk_ids": [
+        "1d21f261392efbd361304acd60d7267d"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "PharmEffect",
+      "name": "decreased need for sleep",
+      "attributes": {
+        "context": "a decreased need for sleep"
+      },
+      "source_chunk_ids": [
+        "1d21f261392efbd361304acd60d7267d"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "Concentration",
+      "name": "high doses",
+      "attributes": {
+        "context": "At high doses"
+      },
+      "source_chunk_ids": [
+        "1d21f261392efbd361304acd60d7267d"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "PharmEffect",
+      "name": "disordered thoughts",
+      "attributes": {
+        "context": "such as disordered thoughts"
+      },
+      "source_chunk_ids": [
+        "1d21f261392efbd361304acd60d7267d"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "Compound",
+      "name": "reuptake inhibitors",
+      "attributes": {
+        "context": "reuptake inhibitors and substrate-type releasers"
+      },
+      "source_chunk_ids": [
+        "e0c3dbfbe43af13f308bf949f7895af0"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "Compound",
+      "name": "substrate-type releasers",
+      "attributes": {
+        "context": "reuptake inhibitors and substrate-type releasers"
+      },
+      "source_chunk_ids": [
+        "e0c3dbfbe43af13f308bf949f7895af0"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "Compound",
+      "name": "amphetamine",
+      "attributes": {
+        "context": "The top row shows amphetamine"
+      },
+      "source_chunk_ids": [
+        "54188172c7a6b92f330b827dccbfbdad"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "Compound",
+      "name": "methamphetamine",
+      "attributes": {
+        "context": "amphetamine and methamphetamine."
+      },
+      "source_chunk_ids": [
+        "54188172c7a6b92f330b827dccbfbdad"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "Compound",
+      "name": "phentermine",
+      "attributes": {
+        "context": "The bottom row shows phentermine"
+      },
+      "source_chunk_ids": [
+        "54188172c7a6b92f330b827dccbfbdad"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "Compound",
+      "name": "chlorphenamine",
+      "attributes": {
+        "context": "phentermine, chlorphenamine, and fenfluramine"
+      },
+      "source_chunk_ids": [
+        "54188172c7a6b92f330b827dccbfbdad"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "Compound",
+      "name": "fenfluramine",
+      "attributes": {
+        "context": "chlorphenamine, and fenfluramine"
+      },
+      "source_chunk_ids": [
+        "54188172c7a6b92f330b827dccbfbdad"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "Compound",
+      "name": "m-fluoroamphetamine",
+      "attributes": {
+        "context": "m-fluoroamphetamine (PAL-353)"
+      },
+      "source_chunk_ids": [
+        "54188172c7a6b92f330b827dccbfbdad"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "Compound",
+      "name": "p-methylamphetamine",
+      "attributes": {
+        "context": "p-methylamphetamine (PAL-313)"
+      },
+      "source_chunk_ids": [
+        "54188172c7a6b92f330b827dccbfbdad"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "Compound",
+      "name": "1-naphthyl-2-aminopropane",
+      "attributes": {
+        "context": "1-naphthyl-2-aminopropane (PAL-287)"
+      },
+      "source_chunk_ids": [
+        "54188172c7a6b92f330b827dccbfbdad"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "PharmEffect",
+      "name": "stimulants",
+      "attributes": {
+        "context": "Chemical structures of stimulants discussed"
+      },
+      "source_chunk_ids": [
+        "098b56fb607de8522a2f6f2d630bd075"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "Compound",
+      "name": "transmitter molecules",
+      "attributes": {
+        "context": "transmitter molecules from the synapse"
+      },
+      "source_chunk_ids": [
+        "373e0a0b0e91145a4c78062620948992"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "Compound",
+      "name": "Substrate-type releasers",
+      "attributes": {
+        "context": "Substrate-type releasers bind to transporter proteins"
+      },
+      "source_chunk_ids": [
+        "373e0a0b0e91145a4c78062620948992"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "Compound",
+      "name": "transporter proteins",
+      "attributes": {
+        "context": "bind to transporter proteins"
+      },
+      "source_chunk_ids": [
+        "373e0a0b0e91145a4c78062620948992"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "Compound",
+      "name": "cytoplasm",
+      "attributes": {
+        "context": "transported into the cytoplasm of nerve terminals"
+      },
+      "source_chunk_ids": [
+        "373e0a0b0e91145a4c78062620948992"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "Compound",
+      "name": "transmitter 'releasers'",
+      "attributes": {
+        "context": "transmitter 'releasers' are often referred to as transporter 'substrates'"
+      },
+      "source_chunk_ids": [
+        "373e0a0b0e91145a4c78062620948992"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "Compound",
+      "name": "transporter 'substrates'",
+      "attributes": {
+        "context": "referred to as transporter 'substrates'"
+      },
+      "source_chunk_ids": [
+        "373e0a0b0e91145a4c78062620948992"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "Compound",
+      "name": "Releasers",
+      "attributes": {
+        "context": "Releasers elevate extracellular transmitter concentrations"
+      },
+      "source_chunk_ids": [
+        "373e0a0b0e91145a4c78062620948992"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "Compound",
+      "name": "transmitter",
+      "attributes": {
+        "context": "promote efflux of transmitter"
+      },
+      "source_chunk_ids": [
+        "373e0a0b0e91145a4c78062620948992"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "Compound",
+      "name": "vesicular monoamine transporter 2 (VMAT2)",
+      "attributes": {
+        "context": "interactions with the vesicular monoamine transporter 2 (VMAT2)"
+      },
+      "source_chunk_ids": [
+        "373e0a0b0e91145a4c78062620948992"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "Compound",
+      "name": "ionic currents",
+      "attributes": {
+        "context": "but ionic currents, oligomerization and reversal of normal transport function appear to be involved"
+      },
+      "source_chunk_ids": [
+        "373e0a0b0e91145a4c78062620948992"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "PharmEffect",
+      "name": "oligomerization",
+      "attributes": {
+        "context": "ionic currents, oligomerization and reversal of normal transport function appear to be involved"
+      },
+      "source_chunk_ids": [
+        "373e0a0b0e91145a4c78062620948992"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "PharmEffect",
+      "name": "transport function",
+      "attributes": {
+        "context": "reversal of normal transport function"
+      },
+      "source_chunk_ids": [
+        "373e0a0b0e91145a4c78062620948992"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "Compound",
+      "name": "substrate-type releasing agents",
+      "attributes": {
+        "context": "Because substrate-type releasing agents must be transported into nerve terminals"
+      },
+      "source_chunk_ids": [
+        "373e0a0b0e91145a4c78062620948992"
+      ]
+    },
+    {
+      "id": "ent_071",
+      "type": "Compound",
+      "name": "reuptake inhibitors",
+      "attributes": {
+        "context": "reuptake inhibitors can block the effects of releasers"
+      },
+      "source_chunk_ids": [
+        "373e0a0b0e91145a4c78062620948992"
+      ]
+    },
+    {
+      "id": "ent_072",
+      "type": "Compound",
+      "name": "5-hydroxytryptamine",
+      "attributes": {
+        "context": "existence of 5-HT deficits"
+      },
+      "source_chunk_ids": [
+        "739019506863bb79bcc7d89e6a0fec8c"
+      ]
+    },
+    {
+      "id": "ent_073",
+      "type": "Indication",
+      "name": "cocaine addiction",
+      "attributes": {
+        "context": "in cocaine addicts"
+      },
+      "source_chunk_ids": [
+        "739019506863bb79bcc7d89e6a0fec8c"
+      ]
+    },
+    {
+      "id": "ent_074",
+      "type": "Indication",
+      "name": "major depression",
+      "attributes": {
+        "context": "resembling major depression"
+      },
+      "source_chunk_ids": [
+        "739019506863bb79bcc7d89e6a0fec8c"
+      ]
+    },
+    {
+      "id": "ent_075",
+      "type": "PharmEffect",
+      "name": "suicidal ideation",
+      "attributes": {
+        "context": "prevalence of suicidal ideation"
+      },
+      "source_chunk_ids": [
+        "739019506863bb79bcc7d89e6a0fec8c"
+      ]
+    },
+    {
+      "id": "ent_076",
+      "type": "PharmEffect",
+      "name": "suicide attempts",
+      "attributes": {
+        "context": "suicide attempts"
+      },
+      "source_chunk_ids": [
+        "739019506863bb79bcc7d89e6a0fec8c"
+      ]
+    },
+    {
+      "id": "ent_077",
+      "type": "Compound",
+      "name": "5-hydroxytryptamine",
+      "attributes": {
+        "context": "importance of 5-HT dysfunction"
+      },
+      "source_chunk_ids": [
+        "739019506863bb79bcc7d89e6a0fec8c"
+      ]
+    },
+    {
+      "id": "ent_078",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "mediating depression"
+      },
+      "source_chunk_ids": [
+        "739019506863bb79bcc7d89e6a0fec8c"
+      ]
+    },
+    {
+      "id": "ent_079",
+      "type": "PharmEffect",
+      "name": "suicide",
+      "attributes": {
+        "context": "mediating depression and suicide"
+      },
+      "source_chunk_ids": [
+        "739019506863bb79bcc7d89e6a0fec8c"
+      ]
+    },
+    {
+      "id": "ent_080",
+      "type": "Compound",
+      "name": "5-hydroxytryptamine",
+      "attributes": {
+        "context": "decreased synaptic 5-HT"
+      },
+      "source_chunk_ids": [
+        "739019506863bb79bcc7d89e6a0fec8c"
+      ]
+    },
+    {
+      "id": "ent_081",
+      "type": "Indication",
+      "name": "cocaine withdrawal",
+      "attributes": {
+        "context": "in cocaine and alcohol withdrawal states"
+      },
+      "source_chunk_ids": [
+        "739019506863bb79bcc7d89e6a0fec8c"
+      ]
+    },
+    {
+      "id": "ent_082",
+      "type": "Indication",
+      "name": "alcohol withdrawal",
+      "attributes": {
+        "context": "and alcohol withdrawal states"
+      },
+      "source_chunk_ids": [
+        "739019506863bb79bcc7d89e6a0fec8c"
+      ]
+    },
+    {
+      "id": "ent_083",
+      "type": "Indication",
+      "name": "stimulant withdrawal",
+      "attributes": {
+        "context": "withdrawing from stimulant"
+      },
+      "source_chunk_ids": [
+        "739019506863bb79bcc7d89e6a0fec8c"
+      ]
+    },
+    {
+      "id": "ent_084",
+      "type": "PharmEffect",
+      "name": "depressed mood",
+      "attributes": {
+        "context": "depressed mood"
+      },
+      "source_chunk_ids": [
+        "739019506863bb79bcc7d89e6a0fec8c"
+      ]
+    },
+    {
+      "id": "ent_085",
+      "type": "PharmEffect",
+      "name": "suicidal ideations",
+      "attributes": {
+        "context": "suicidal ideations"
+      },
+      "source_chunk_ids": [
+        "739019506863bb79bcc7d89e6a0fec8c"
+      ]
+    },
+    {
+      "id": "ent_086",
+      "type": "PharmEffect",
+      "name": "obsessive thoughts",
+      "attributes": {
+        "context": "obsessive thoughts"
+      },
+      "source_chunk_ids": [
+        "739019506863bb79bcc7d89e6a0fec8c"
+      ]
+    },
+    {
+      "id": "ent_087",
+      "type": "PharmEffect",
+      "name": "intense craving",
+      "attributes": {
+        "context": "intense craving"
+      },
+      "source_chunk_ids": [
+        "739019506863bb79bcc7d89e6a0fec8c"
+      ]
+    },
+    {
+      "id": "ent_088",
+      "type": "PharmEffect",
+      "name": "anhedonia",
+      "attributes": {
+        "context": "anhedonia"
+      },
+      "source_chunk_ids": [
+        "739019506863bb79bcc7d89e6a0fec8c"
+      ]
+    },
+    {
+      "id": "ent_089",
+      "type": "PharmEffect",
+      "name": "increased impulsivity",
+      "attributes": {
+        "context": "increased impulsivity"
+      },
+      "source_chunk_ids": [
+        "739019506863bb79bcc7d89e6a0fec8c"
+      ]
+    },
+    {
+      "id": "ent_090",
+      "type": "Compound",
+      "name": "monoamine",
+      "attributes": {
+        "context": "deficits in monoamine systems"
+      },
+      "source_chunk_ids": [
+        "739019506863bb79bcc7d89e6a0fec8c"
+      ]
+    },
+    {
+      "id": "ent_091",
+      "type": "Compound",
+      "name": "fenfluramine",
+      "attributes": {
+        "context": "the 5-HT releaser fenfluramine"
+      },
+      "source_chunk_ids": [
+        "3363929e19d1bdb8822dee231bd8508d"
+      ]
+    },
+    {
+      "id": "ent_092",
+      "type": "PharmEffect",
+      "name": "5-HT releaser",
+      "attributes": {
+        "context": "the 5-HT releaser fenfluramine"
+      },
+      "source_chunk_ids": [
+        "3363929e19d1bdb8822dee231bd8508d"
+      ]
+    },
+    {
+      "id": "ent_093",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "responding for cocaine"
+      },
+      "source_chunk_ids": [
+        "3363929e19d1bdb8822dee231bd8508d"
+      ]
+    },
+    {
+      "id": "ent_094",
+      "type": "PharmEffect",
+      "name": "decreases responding for cocaine",
+      "attributes": {
+        "context": "fenfluramine decreases responding for cocaine"
+      },
+      "source_chunk_ids": [
+        "3363929e19d1bdb8822dee231bd8508d"
+      ]
+    },
+    {
+      "id": "ent_095",
+      "type": "Compound",
+      "name": "phentermine",
+      "attributes": {
+        "context": "administration of phentermine"
+      },
+      "source_chunk_ids": [
+        "3363929e19d1bdb8822dee231bd8508d"
+      ]
+    },
+    {
+      "id": "ent_096",
+      "type": "Concentration",
+      "name": "75% decrease",
+      "attributes": {
+        "context": "produces a 75% decrease"
+      },
+      "source_chunk_ids": [
+        "3363929e19d1bdb8822dee231bd8508d"
+      ]
+    },
+    {
+      "id": "ent_097",
+      "type": "PharmEffect",
+      "name": "decrease in cocaine self-administration",
+      "attributes": {
+        "context": "produces a 75% decrease in cocaine self-administration"
+      },
+      "source_chunk_ids": [
+        "3363929e19d1bdb8822dee231bd8508d"
+      ]
+    },
+    {
+      "id": "ent_098",
+      "type": "PharmEffect",
+      "name": "decrease stimulant abuse",
+      "attributes": {
+        "context": "decrease stimulant abuse"
+      },
+      "source_chunk_ids": [
+        "62675204c6afc820766a5babedc84411"
+      ]
+    },
+    {
+      "id": "ent_099",
+      "type": "Indication",
+      "name": "stimulant abuse",
+      "attributes": {
+        "context": "decrease stimulant abuse"
+      },
+      "source_chunk_ids": [
+        "62675204c6afc820766a5babedc84411"
+      ]
+    },
+    {
+      "id": "ent_100",
+      "type": "Compound",
+      "name": "abused drugs",
+      "attributes": {
+        "context": "with the abused drugs"
+      },
+      "source_chunk_ids": [
+        "62675204c6afc820766a5babedc84411"
+      ]
+    },
+    {
+      "id": "ent_101",
+      "type": "Compound",
+      "name": "stimulant medication",
+      "attributes": {
+        "context": "the stimulant medication serves"
+      },
+      "source_chunk_ids": [
+        "62675204c6afc820766a5babedc84411"
+      ]
+    },
+    {
+      "id": "ent_102",
+      "type": "PharmEffect",
+      "name": "normalize neurochemical deficits",
+      "attributes": {
+        "context": "normalize neurochemical deficits"
+      },
+      "source_chunk_ids": [
+        "62675204c6afc820766a5babedc84411"
+      ]
+    },
+    {
+      "id": "ent_103",
+      "type": "Compound",
+      "name": "abused stimulant",
+      "attributes": {
+        "context": "to the abused stimulant"
+      },
+      "source_chunk_ids": [
+        "62675204c6afc820766a5babedc84411"
+      ]
+    },
+    {
+      "id": "ent_104",
+      "type": "Indication",
+      "name": "nicotine dependence",
+      "attributes": {
+        "context": "for nicotine dependence"
+      },
+      "source_chunk_ids": [
+        "62675204c6afc820766a5babedc84411"
+      ]
+    },
+    {
+      "id": "ent_105",
+      "type": "Compound",
+      "name": "nicotine",
+      "attributes": {
+        "context": "nicotine dependence"
+      },
+      "source_chunk_ids": [
+        "62675204c6afc820766a5babedc84411"
+      ]
+    },
+    {
+      "id": "ent_106",
+      "type": "Indication",
+      "name": "opioid dependence",
+      "attributes": {
+        "context": "and opioid dependence"
+      },
+      "source_chunk_ids": [
+        "62675204c6afc820766a5babedc84411"
+      ]
+    },
+    {
+      "id": "ent_107",
+      "type": "Compound",
+      "name": "opioid",
+      "attributes": {
+        "context": "and opioid dependence"
+      },
+      "source_chunk_ids": [
+        "62675204c6afc820766a5babedc84411"
+      ]
+    },
+    {
+      "id": "ent_108",
+      "type": "Indication",
+      "name": "cocaine dependence",
+      "attributes": {
+        "context": "treatment of cocaine dependence"
+      },
+      "source_chunk_ids": [
+        "62675204c6afc820766a5babedc84411"
+      ]
+    },
+    {
+      "id": "ent_109",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "of cocaine dependence"
+      },
+      "source_chunk_ids": [
+        "62675204c6afc820766a5babedc84411"
+      ]
+    },
+    {
+      "id": "ent_110",
+      "type": "PharmEffect",
+      "name": "abuse liability",
+      "attributes": {
+        "context": "exhibit inherent abuse liability"
+      },
+      "source_chunk_ids": [
+        "62675204c6afc820766a5babedc84411"
+      ]
+    },
+    {
+      "id": "ent_111",
+      "type": "Compound",
+      "name": "DA",
+      "attributes": {
+        "context": "mesolimbic DA neurons"
+      },
+      "source_chunk_ids": [
+        "62675204c6afc820766a5babedc84411"
+      ]
+    },
+    {
+      "id": "ent_112",
+      "type": "Compound",
+      "name": "Dopamine",
+      "attributes": {
+        "context": "release [^{3}\\text{H}]DA"
+      },
+      "source_chunk_ids": [
+        "608b42dc4cba7c53e1699c690da26a60"
+      ]
+    },
+    {
+      "id": "ent_113",
+      "type": "Compound",
+      "name": "Serotonin",
+      "attributes": {
+        "context": "than [^{3}\\text{H}]5-HT"
+      },
+      "source_chunk_ids": [
+        "608b42dc4cba7c53e1699c690da26a60"
+      ]
+    },
+    {
+      "id": "ent_114",
+      "type": "Compound",
+      "name": "Amphetamine",
+      "attributes": {
+        "context": "e.g. amphetamine"
+      },
+      "source_chunk_ids": [
+        "608b42dc4cba7c53e1699c690da26a60"
+      ]
+    },
+    {
+      "id": "ent_115",
+      "type": "Compound",
+      "name": "Phentermine",
+      "attributes": {
+        "context": "and phentermine"
+      },
+      "source_chunk_ids": [
+        "608b42dc4cba7c53e1699c690da26a60"
+      ]
+    },
+    {
+      "id": "ent_116",
+      "type": "Compound",
+      "name": "Dopamine",
+      "attributes": {
+        "context": "extracellular DA"
+      },
+      "source_chunk_ids": [
+        "608b42dc4cba7c53e1699c690da26a60"
+      ]
+    },
+    {
+      "id": "ent_117",
+      "type": "PharmEffect",
+      "name": "release",
+      "attributes": {
+        "context": "drugs that release"
+      },
+      "source_chunk_ids": [
+        "608b42dc4cba7c53e1699c690da26a60"
+      ]
+    },
+    {
+      "id": "ent_118",
+      "type": "PharmEffect",
+      "name": "increase",
+      "attributes": {
+        "context": "increase endogenous extracellular DA"
+      },
+      "source_chunk_ids": [
+        "608b42dc4cba7c53e1699c690da26a60"
+      ]
+    },
+    {
+      "id": "ent_119",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "5-HT in vivo."
+      },
+      "source_chunk_ids": [
+        "de55bb27b736b486b5727fd154119b0b"
+      ]
+    },
+    {
+      "id": "ent_120",
+      "type": "Compound",
+      "name": "DA agonists",
+      "attributes": {
+        "context": "indirect DA agonists"
+      },
+      "source_chunk_ids": [
+        "de55bb27b736b486b5727fd154119b0b"
+      ]
+    },
+    {
+      "id": "ent_121",
+      "type": "PharmEffect",
+      "name": "locomotor stimulants",
+      "attributes": {
+        "context": "strong locomotor stimulants"
+      },
+      "source_chunk_ids": [
+        "de55bb27b736b486b5727fd154119b0b"
+      ]
+    },
+    {
+      "id": "ent_122",
+      "type": "PharmEffect",
+      "name": "self-administration behaviour",
+      "attributes": {
+        "context": "support self-administration behaviour."
+      },
+      "source_chunk_ids": [
+        "de55bb27b736b486b5727fd154119b0b"
+      ]
+    },
+    {
+      "id": "ent_123",
+      "type": "Compound",
+      "name": "[^{3}\\text{H}]5-HT",
+      "attributes": {
+        "context": "release [^{3}\\text{H}]5-HT"
+      },
+      "source_chunk_ids": [
+        "de55bb27b736b486b5727fd154119b0b"
+      ]
+    },
+    {
+      "id": "ent_124",
+      "type": "Compound",
+      "name": "[^{3}\\text{H}]DA",
+      "attributes": {
+        "context": "than [^{3}\\text{H}]DA"
+      },
+      "source_chunk_ids": [
+        "de55bb27b736b486b5727fd154119b0b"
+      ]
+    },
+    {
+      "id": "ent_125",
+      "type": "Compound",
+      "name": "fenfluramine",
+      "attributes": {
+        "context": "e.g. fenfluramine and chlorphentermine"
+      },
+      "source_chunk_ids": [
+        "de55bb27b736b486b5727fd154119b0b"
+      ]
+    },
+    {
+      "id": "ent_126",
+      "type": "Compound",
+      "name": "chlorphentermine",
+      "attributes": {
+        "context": "and chlorphentermine"
+      },
+      "source_chunk_ids": [
+        "de55bb27b736b486b5727fd154119b0b"
+      ]
+    },
+    {
+      "id": "ent_127",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "extracellular 5-HT"
+      },
+      "source_chunk_ids": [
+        "de55bb27b736b486b5727fd154119b0b"
+      ]
+    },
+    {
+      "id": "ent_128",
+      "type": "Compound",
+      "name": "DA",
+      "attributes": {
+        "context": "extracellular DA."
+      },
+      "source_chunk_ids": [
+        "de55bb27b736b486b5727fd154119b0b"
+      ]
+    },
+    {
+      "id": "ent_129",
+      "type": "Compound",
+      "name": "5-HT agonists",
+      "attributes": {
+        "context": "indirect 5-HT agonists"
+      },
+      "source_chunk_ids": [
+        "de55bb27b736b486b5727fd154119b0b"
+      ]
+    },
+    {
+      "id": "ent_130",
+      "type": "PharmEffect",
+      "name": "motor activity",
+      "attributes": {
+        "context": "minimal motor activity"
+      },
+      "source_chunk_ids": [
+        "de55bb27b736b486b5727fd154119b0b"
+      ]
+    },
+    {
+      "id": "ent_131",
+      "type": "PharmEffect",
+      "name": "self-administration behaviour",
+      "attributes": {
+        "context": "do not support self-administration behaviour."
+      },
+      "source_chunk_ids": [
+        "de55bb27b736b486b5727fd154119b0b"
+      ]
+    },
+    {
+      "id": "ent_132",
+      "type": "PharmEffect",
+      "name": "anti-stimulant effect",
+      "attributes": {
+        "context": "The anti-stimulant effect"
+      },
+      "source_chunk_ids": [
+        "de55bb27b736b486b5727fd154119b0b"
+      ]
+    },
+    {
+      "id": "ent_133",
+      "type": "Compound",
+      "name": "5-HT releasers",
+      "attributes": {
+        "context": "effect of 5-HT releasers"
+      },
+      "source_chunk_ids": [
+        "de55bb27b736b486b5727fd154119b0b"
+      ]
+    },
+    {
+      "id": "ent_134",
+      "type": "PharmEffect",
+      "name": "conditioned place preference (CPP)",
+      "attributes": {
+        "context": "conditioned place preference (CPP) assay"
+      },
+      "source_chunk_ids": [
+        "de55bb27b736b486b5727fd154119b0b"
+      ]
+    },
+    {
+      "id": "ent_135",
+      "type": "Compound",
+      "name": "fenfluramine",
+      "attributes": {
+        "context": "dose of fenfluramine"
+      },
+      "source_chunk_ids": [
+        "de55bb27b736b486b5727fd154119b0b"
+      ]
+    },
+    {
+      "id": "ent_136",
+      "type": "PharmEffect",
+      "name": "positive CPP",
+      "attributes": {
+        "context": "reduces the positive CPP"
+      },
+      "source_chunk_ids": [
+        "de55bb27b736b486b5727fd154119b0b"
+      ]
+    },
+    {
+      "id": "ent_137",
+      "type": "Compound",
+      "name": "phentermine",
+      "attributes": {
+        "context": "induced by phentermine."
+      },
+      "source_chunk_ids": [
+        "de55bb27b736b486b5727fd154119b0b"
+      ]
+    },
+    {
+      "id": "ent_138",
+      "type": "PharmEffect",
+      "name": "anti-stimulant",
+      "attributes": {
+        "context": "anti-stimulant effects"
+      },
+      "source_chunk_ids": [
+        "30f8a86b00b9d3a882a7db7899d606d6"
+      ]
+    },
+    {
+      "id": "ent_139",
+      "type": "Compound",
+      "name": "Serotonin releasers",
+      "attributes": {
+        "context": "effects of 5-HT releasers"
+      },
+      "source_chunk_ids": [
+        "30f8a86b00b9d3a882a7db7899d606d6"
+      ]
+    },
+    {
+      "id": "ent_140",
+      "type": "Compound",
+      "name": "Serotonin",
+      "attributes": {
+        "context": "extracellular 5-HT"
+      },
+      "source_chunk_ids": [
+        "30f8a86b00b9d3a882a7db7899d606d6"
+      ]
+    },
+    {
+      "id": "ent_141",
+      "type": "Compound",
+      "name": "Serotonin receptor subtypes",
+      "attributes": {
+        "context": "activate multiple 5-HT receptor subtypes"
+      },
+      "source_chunk_ids": [
+        "30f8a86b00b9d3a882a7db7899d606d6"
+      ]
+    },
+    {
+      "id": "ent_142",
+      "type": "Compound",
+      "name": "Dopamine",
+      "attributes": {
+        "context": "modulate DA function"
+      },
+      "source_chunk_ids": [
+        "30f8a86b00b9d3a882a7db7899d606d6"
+      ]
+    },
+    {
+      "id": "ent_143",
+      "type": "PharmEffect",
+      "name": "stimulant",
+      "attributes": {
+        "context": "stimulant and reinforcing properties"
+      },
+      "source_chunk_ids": [
+        "30f8a86b00b9d3a882a7db7899d606d6"
+      ]
+    },
+    {
+      "id": "ent_144",
+      "type": "PharmEffect",
+      "name": "reinforcing",
+      "attributes": {
+        "context": "reinforcing properties"
+      },
+      "source_chunk_ids": [
+        "30f8a86b00b9d3a882a7db7899d606d6"
+      ]
+    },
+    {
+      "id": "ent_145",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "drugs such as cocaine"
+      },
+      "source_chunk_ids": [
+        "30f8a86b00b9d3a882a7db7899d606d6"
+      ]
+    },
+    {
+      "id": "ent_146",
+      "type": "Compound",
+      "name": "methamphetamine",
+      "attributes": {
+        "context": "cocaine and methamphetamine"
+      },
+      "source_chunk_ids": [
+        "30f8a86b00b9d3a882a7db7899d606d6"
+      ]
+    },
+    {
+      "id": "ent_147",
+      "type": "Compound",
+      "name": "Dopamine",
+      "attributes": {
+        "context": "mesolimbic DA neurons"
+      },
+      "source_chunk_ids": [
+        "30f8a86b00b9d3a882a7db7899d606d6"
+      ]
+    },
+    {
+      "id": "ent_148",
+      "type": "Compound",
+      "name": "Dopamine",
+      "attributes": {
+        "context": "mesolimbic DA neurons reside"
+      },
+      "source_chunk_ids": [
+        "30f8a86b00b9d3a882a7db7899d606d6"
+      ]
+    },
+    {
+      "id": "ent_149",
+      "type": "Compound",
+      "name": "Amphetamine",
+      "attributes": {
+        "context": "Amphetaminea"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_150",
+      "type": "Concentration",
+      "name": "0.3 mg/kg i.p.",
+      "attributes": {
+        "context": "45 (0.3 mg/kg i.p.)"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_151",
+      "type": "Concentration",
+      "name": "0.3 mg/kg i.p.",
+      "attributes": {
+        "context": "224 (0.3 mg/kg i.p.)"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_152",
+      "type": "PharmEffect",
+      "name": "Self-administered",
+      "attributes": {
+        "context": "YesStrong"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_153",
+      "type": "PharmEffect",
+      "name": "Locomotor activation Strong",
+      "attributes": {
+        "context": "YesStrong"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_154",
+      "type": "Compound",
+      "name": "Phentermine",
+      "attributes": {
+        "context": "Phenterminea"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_155",
+      "type": "Concentration",
+      "name": "1.0 mg/kg i.p.",
+      "attributes": {
+        "context": "232 (1.0 mg/kg i.p.)"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_156",
+      "type": "Concentration",
+      "name": "1.0 mg/kg i.p.",
+      "attributes": {
+        "context": "156 (1.0 mg/kg i.p.)"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_157",
+      "type": "PharmEffect",
+      "name": "Self-administered",
+      "attributes": {
+        "context": "YesStrong"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_158",
+      "type": "PharmEffect",
+      "name": "Locomotor activation Strong",
+      "attributes": {
+        "context": "YesStrong"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_159",
+      "type": "Compound",
+      "name": "PAL-353",
+      "attributes": {
+        "context": "PAL-353c"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_160",
+      "type": "Concentration",
+      "name": "1.0 mg/kg i.v.",
+      "attributes": {
+        "context": "170 (1.0 mg/kg i.v.)"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_161",
+      "type": "Concentration",
+      "name": "1.0 mg/kg i.v.",
+      "attributes": {
+        "context": "432 (1.0 mg/kg i.v.)"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_162",
+      "type": "PharmEffect",
+      "name": "Self-administered",
+      "attributes": {
+        "context": "YesStrong"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_163",
+      "type": "PharmEffect",
+      "name": "Locomotor activation Strong",
+      "attributes": {
+        "context": "YesStrong"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_164",
+      "type": "Compound",
+      "name": "Fenfluramine",
+      "attributes": {
+        "context": "Fenfluraminea"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_165",
+      "type": "Concentration",
+      "name": "1.0 mg/kg i.p.",
+      "attributes": {
+        "context": "215 (1.0 mg/kg i.p.)"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_166",
+      "type": "Concentration",
+      "name": "1.0 mg/kg i.p.",
+      "attributes": {
+        "context": "20 (1.0 mg/kg i.p.)"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_167",
+      "type": "PharmEffect",
+      "name": "Self-administered",
+      "attributes": {
+        "context": "NoNone"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_168",
+      "type": "PharmEffect",
+      "name": "Locomotor activation None",
+      "attributes": {
+        "context": "NoNone"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_169",
+      "type": "Compound",
+      "name": "Chlorphentermine",
+      "attributes": {
+        "context": "Chlorphenterminea"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_170",
+      "type": "Concentration",
+      "name": "1.0 mg/kg i.p.",
+      "attributes": {
+        "context": "228 (1.0 mg/kg i.p.)"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_171",
+      "type": "Concentration",
+      "name": "1.0 mg/kg i.p.",
+      "attributes": {
+        "context": "86 (1.0 mg/kg i.p.)"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_172",
+      "type": "PharmEffect",
+      "name": "Self-administered",
+      "attributes": {
+        "context": "NoNone"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_173",
+      "type": "PharmEffect",
+      "name": "Locomotor activation None",
+      "attributes": {
+        "context": "NoNone"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_174",
+      "type": "Compound",
+      "name": "Phentermine",
+      "attributes": {
+        "context": "Phentermine + fenfluraminea"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_175",
+      "type": "Compound",
+      "name": "Fenfluramine",
+      "attributes": {
+        "context": "Phentermine + fenfluraminea"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_176",
+      "type": "Concentration",
+      "name": "1.0 + 1.0 mg/kg i.p.",
+      "attributes": {
+        "context": "222 (1.0 + 1.0 mg/kg i.p.)"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_177",
+      "type": "Concentration",
+      "name": "1.0 + 1.0 mg/kg i.p.",
+      "attributes": {
+        "context": "144 (1.0 + 1.0 mg/kg i.p.)"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_178",
+      "type": "PharmEffect",
+      "name": "Self-administered",
+      "attributes": {
+        "context": "NoWeak"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_179",
+      "type": "PharmEffect",
+      "name": "Locomotor activation Weak",
+      "attributes": {
+        "context": "NoWeak"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_180",
+      "type": "Compound",
+      "name": "PAL-313",
+      "attributes": {
+        "context": "PAL-313c"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_181",
+      "type": "Concentration",
+      "name": "1.0 mg/kg i.v.",
+      "attributes": {
+        "context": "544 (1.0 mg/kg i.v.)"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_182",
+      "type": "Concentration",
+      "name": "1.0 mg/kg i.v.",
+      "attributes": {
+        "context": "130 (1.0 mg/kg i.v.)"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_183",
+      "type": "PharmEffect",
+      "name": "Self-administered Weak",
+      "attributes": {
+        "context": "WeakWeak"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_184",
+      "type": "PharmEffect",
+      "name": "Locomotor activation Weak",
+      "attributes": {
+        "context": "WeakWeak"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_185",
+      "type": "Compound",
+      "name": "PAL-287",
+      "attributes": {
+        "context": "PAL-287b"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_186",
+      "type": "Concentration",
+      "name": "1.0 mg/kg i.v.",
+      "attributes": {
+        "context": "464 (1.0 mg/kg i.v.)"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_187",
+      "type": "Concentration",
+      "name": "1.0 mg/kg i.v.",
+      "attributes": {
+        "context": "133 (1.0 mg/kg i.v.)"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_188",
+      "type": "PharmEffect",
+      "name": "Self-administered",
+      "attributes": {
+        "context": "NoWeak"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_189",
+      "type": "PharmEffect",
+      "name": "Locomotor activation Weak",
+      "attributes": {
+        "context": "NoWeak"
+      },
+      "source_chunk_ids": [
+        "28ad247f9dd438702aa5e00b55549fab"
+      ]
+    },
+    {
+      "id": "ent_190",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "increasing extracellular 5-HT"
+      },
+      "source_chunk_ids": [
+        "4b5042ae3c22504b1332516a6cedfefd"
+      ]
+    },
+    {
+      "id": "ent_191",
+      "type": "PharmEffect",
+      "name": "reinforcing effects",
+      "attributes": {
+        "context": "reduce reinforcing and locomotor effects"
+      },
+      "source_chunk_ids": [
+        "4b5042ae3c22504b1332516a6cedfefd"
+      ]
+    },
+    {
+      "id": "ent_192",
+      "type": "PharmEffect",
+      "name": "locomotor effects",
+      "attributes": {
+        "context": "reduce reinforcing and locomotor effects"
+      },
+      "source_chunk_ids": [
+        "4b5042ae3c22504b1332516a6cedfefd"
+      ]
+    },
+    {
+      "id": "ent_193",
+      "type": "Compound",
+      "name": "DA",
+      "attributes": {
+        "context": "increases in extracellular DA"
+      },
+      "source_chunk_ids": [
+        "4b5042ae3c22504b1332516a6cedfefd"
+      ]
+    },
+    {
+      "id": "ent_194",
+      "type": "Compound",
+      "name": "5-hydroxytryptamine",
+      "attributes": {
+        "context": "5-HT neurons in the midbrain raphe nuclei"
+      },
+      "source_chunk_ids": [
+        "264f324093510c28569cbf079eb8cd8c"
+      ]
+    },
+    {
+      "id": "ent_195",
+      "type": "Compound",
+      "name": "5-hydroxytryptamine",
+      "attributes": {
+        "context": "5-HT neurons innervate various regions"
+      },
+      "source_chunk_ids": [
+        "264f324093510c28569cbf079eb8cd8c"
+      ]
+    },
+    {
+      "id": "ent_196",
+      "type": "Compound",
+      "name": "5-hydroxytryptamine",
+      "attributes": {
+        "context": "5-HT nerve terminals are uniquely positioned"
+      },
+      "source_chunk_ids": [
+        "264f324093510c28569cbf079eb8cd8c"
+      ]
+    },
+    {
+      "id": "ent_197",
+      "type": "Compound",
+      "name": "Dopamine",
+      "attributes": {
+        "context": "mesolimbic DA neurons"
+      },
+      "source_chunk_ids": [
+        "264f324093510c28569cbf079eb8cd8c"
+      ]
+    },
+    {
+      "id": "ent_198",
+      "type": "PharmEffect",
+      "name": "inhibitory influence",
+      "attributes": {
+        "context": "provide a strong inhibitory influence"
+      },
+      "source_chunk_ids": [
+        "a69bc2330b04aecbcdf9901bd8dfa90f"
+      ]
+    },
+    {
+      "id": "ent_199",
+      "type": "Compound",
+      "name": "Ro 60-0175",
+      "attributes": {
+        "context": "5-HT2C agonist Ro 60-0175"
+      },
+      "source_chunk_ids": [
+        "a69bc2330b04aecbcdf9901bd8dfa90f"
+      ]
+    },
+    {
+      "id": "ent_200",
+      "type": "PharmEffect",
+      "name": "inhibits DA cell firing",
+      "attributes": {
+        "context": "markedly inhibits DA cell firing"
+      },
+      "source_chunk_ids": [
+        "a69bc2330b04aecbcdf9901bd8dfa90f"
+      ]
+    },
+    {
+      "id": "ent_201",
+      "type": "PharmEffect",
+      "name": "decreases extracellular levels of DA",
+      "attributes": {
+        "context": "decreases extracellular levels of DA"
+      },
+      "source_chunk_ids": [
+        "a69bc2330b04aecbcdf9901bd8dfa90f"
+      ]
+    },
+    {
+      "id": "ent_202",
+      "type": "PharmEffect",
+      "name": "reduces locomotor activity",
+      "attributes": {
+        "context": "reduces locomotor activity"
+      },
+      "source_chunk_ids": [
+        "a69bc2330b04aecbcdf9901bd8dfa90f"
+      ]
+    },
+    {
+      "id": "ent_203",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "produced by cocaine"
+      },
+      "source_chunk_ids": [
+        "a69bc2330b04aecbcdf9901bd8dfa90f"
+      ]
+    },
+    {
+      "id": "ent_204",
+      "type": "Compound",
+      "name": "SB 242084",
+      "attributes": {
+        "context": "5-HT2C antagonist SB 242084"
+      },
+      "source_chunk_ids": [
+        "a69bc2330b04aecbcdf9901bd8dfa90f"
+      ]
+    },
+    {
+      "id": "ent_205",
+      "type": "PharmEffect",
+      "name": "increases burst firing of DA cells",
+      "attributes": {
+        "context": "increases burst firing of DA cells"
+      },
+      "source_chunk_ids": [
+        "a69bc2330b04aecbcdf9901bd8dfa90f"
+      ]
+    },
+    {
+      "id": "ent_206",
+      "type": "PharmEffect",
+      "name": "tonic inhibition",
+      "attributes": {
+        "context": "provide tonic inhibition"
+      },
+      "source_chunk_ids": [
+        "a69bc2330b04aecbcdf9901bd8dfa90f"
+      ]
+    },
+    {
+      "id": "ent_207",
+      "type": "Compound",
+      "name": "fenfluramines",
+      "attributes": {
+        "context": "fenfluramines, norfenfluramines and positive control drugs"
+      },
+      "source_chunk_ids": [
+        "8b3993a1de8464757d6ce027b05f8855"
+      ]
+    },
+    {
+      "id": "ent_208",
+      "type": "Compound",
+      "name": "norfenfluramines",
+      "attributes": {
+        "context": "fenfluramines, norfenfluramines and positive control drugs"
+      },
+      "source_chunk_ids": [
+        "8b3993a1de8464757d6ce027b05f8855"
+      ]
+    },
+    {
+      "id": "ent_209",
+      "type": "PharmEffect",
+      "name": "activate",
+      "attributes": {
+        "context": "ability to activate a mitogenic 5-HT receptor subtype"
+      },
+      "source_chunk_ids": [
+        "8b3993a1de8464757d6ce027b05f8855"
+      ]
+    },
+    {
+      "id": "ent_210",
+      "type": "PharmEffect",
+      "name": "mitogenic",
+      "attributes": {
+        "context": "mitogenic 5-HT receptor subtype"
+      },
+      "source_chunk_ids": [
+        "8b3993a1de8464757d6ce027b05f8855"
+      ]
+    },
+    {
+      "id": "ent_211",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "mitogenic 5-HT receptor subtype"
+      },
+      "source_chunk_ids": [
+        "8b3993a1de8464757d6ce027b05f8855"
+      ]
+    },
+    {
+      "id": "ent_212",
+      "type": "Compound",
+      "name": "fenfluramines",
+      "attributes": {
+        "context": "fenfluramines have low affinity"
+      },
+      "source_chunk_ids": [
+        "00602f763f19f9b012d9d9621e8da917"
+      ]
+    },
+    {
+      "id": "ent_213",
+      "type": "PharmEffect",
+      "name": "low affinity",
+      "attributes": {
+        "context": "have low affinity for all 5-HT2 receptor subtypes"
+      },
+      "source_chunk_ids": [
+        "00602f763f19f9b012d9d9621e8da917"
+      ]
+    },
+    {
+      "id": "ent_214",
+      "type": "Compound",
+      "name": "norfenfluramines",
+      "attributes": {
+        "context": "norfenfluramines displayed high affinity"
+      },
+      "source_chunk_ids": [
+        "00602f763f19f9b012d9d9621e8da917"
+      ]
+    },
+    {
+      "id": "ent_215",
+      "type": "PharmEffect",
+      "name": "high affinity",
+      "attributes": {
+        "context": "displayed high affinity and efficacy"
+      },
+      "source_chunk_ids": [
+        "00602f763f19f9b012d9d9621e8da917"
+      ]
+    },
+    {
+      "id": "ent_216",
+      "type": "PharmEffect",
+      "name": "efficacy",
+      "attributes": {
+        "context": "high affinity and efficacy at the 5-HT2B receptor subtype"
+      },
+      "source_chunk_ids": [
+        "00602f763f19f9b012d9d9621e8da917"
+      ]
+    },
+    {
+      "id": "ent_217",
+      "type": "Concentration",
+      "name": "10-50 nM",
+      "attributes": {
+        "context": "(K_i = 10\text{--}50\text{ nM})"
+      },
+      "source_chunk_ids": [
+        "00602f763f19f9b012d9d9621e8da917"
+      ]
+    },
+    {
+      "id": "ent_218",
+      "type": "Compound",
+      "name": "(\u00b1)-Fenfluramine",
+      "attributes": {
+        "context": "(\u00b1)-Fenfluramine5216\u00b14234134\u00b112813183\u00b1637"
+      },
+      "source_chunk_ids": [
+        "ce39fac1c8f10bec78ae7e77f7a6e2a9"
+      ]
+    },
+    {
+      "id": "ent_219",
+      "type": "Compound",
+      "name": "(+)-Fenfluramine",
+      "attributes": {
+        "context": "(+)-Fenfluramine11,107\u00b123035099\u00b111736245\u00b1874"
+      },
+      "source_chunk_ids": [
+        "ce39fac1c8f10bec78ae7e77f7a6e2a9"
+      ]
+    },
+    {
+      "id": "ent_220",
+      "type": "Compound",
+      "name": "(-)-Fenfluramine",
+      "attributes": {
+        "context": "(-)-Fenfluramine5463\u00b16005713\u00b122853415\u00b1922"
+      },
+      "source_chunk_ids": [
+        "ce39fac1c8f10bec78ae7e77f7a6e2a9"
+      ]
+    },
+    {
+      "id": "ent_221",
+      "type": "Compound",
+      "name": "(\u00b1)-Norfenfluramine",
+      "attributes": {
+        "context": "(\u00b1)-Norfenfluramine2316\u00b127852.1\u00b121557\u00b161"
+      },
+      "source_chunk_ids": [
+        "ce39fac1c8f10bec78ae7e77f7a6e2a9"
+      ]
+    },
+    {
+      "id": "ent_222",
+      "type": "Compound",
+      "name": "(+)-Norfenfluramine",
+      "attributes": {
+        "context": "(+)-Norfenfluramine1516\u00b115011.2\u00b17.3324\u00b112"
+      },
+      "source_chunk_ids": [
+        "ce39fac1c8f10bec78ae7e77f7a6e2a9"
+      ]
+    },
+    {
+      "id": "ent_223",
+      "type": "Compound",
+      "name": "(-)-Norfenfluramine",
+      "attributes": {
+        "context": "(-)-Norfenfluramine3841\u00b161447.8\u00b130.6814\u00b198"
+      },
+      "source_chunk_ids": [
+        "ce39fac1c8f10bec78ae7e77f7a6e2a9"
+      ]
+    },
+    {
+      "id": "ent_224",
+      "type": "Compound",
+      "name": "Ergotamine",
+      "attributes": {
+        "context": "Ergotamine9.0\u00b11.03.0\u00b10.412\u00b11.5"
+      },
+      "source_chunk_ids": [
+        "ce39fac1c8f10bec78ae7e77f7a6e2a9"
+      ]
+    },
+    {
+      "id": "ent_225",
+      "type": "Compound",
+      "name": "Methysergide",
+      "attributes": {
+        "context": "Methysergide15.0\u00b14.09.1\u00b14.91.8\u00b10.2"
+      },
+      "source_chunk_ids": [
+        "ce39fac1c8f10bec78ae7e77f7a6e2a9"
+      ]
+    },
+    {
+      "id": "ent_226",
+      "type": "Compound",
+      "name": "Methylergonovine",
+      "attributes": {
+        "context": "Methylergonovine12.6\u00b11.00.49\u00b10.1612.4\u00b11.0"
+      },
+      "source_chunk_ids": [
+        "ce39fac1c8f10bec78ae7e77f7a6e2a9"
+      ]
+    },
+    {
+      "id": "ent_227",
+      "type": "Compound",
+      "name": "Fluoxetine",
+      "attributes": {
+        "context": "Fluoxetine299\u00b1535030\u00b1196050\u00b110"
+      },
+      "source_chunk_ids": [
+        "ce39fac1c8f10bec78ae7e77f7a6e2a9"
+      ]
+    },
+    {
+      "id": "ent_228",
+      "type": "Compound",
+      "name": "Norfluoxetine",
+      "attributes": {
+        "context": "Norfluoxetine638\u00b11085063\u00b11974286\u00b160"
+      },
+      "source_chunk_ids": [
+        "ce39fac1c8f10bec78ae7e77f7a6e2a9"
+      ]
+    },
+    {
+      "id": "ent_229",
+      "type": "Compound",
+      "name": "Trazodone",
+      "attributes": {
+        "context": "Trazodone19.8\u00b12.473.6\u00b136402\u00b144"
+      },
+      "source_chunk_ids": [
+        "ce39fac1c8f10bec78ae7e77f7a6e2a9"
+      ]
+    },
+    {
+      "id": "ent_230",
+      "type": "Compound",
+      "name": "mCPP",
+      "attributes": {
+        "context": "mCPP391\u00b1473.2\u00b11.059\u00b111"
+      },
+      "source_chunk_ids": [
+        "ce39fac1c8f10bec78ae7e77f7a6e2a9"
+      ]
+    },
+    {
+      "id": "ent_231",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "5-HT614\u00b1744.0\u00b11.912.2\u00b11.3"
+      },
+      "source_chunk_ids": [
+        "ce39fac1c8f10bec78ae7e77f7a6e2a9"
+      ]
+    },
+    {
+      "id": "ent_232",
+      "type": "Compound",
+      "name": "Phentermine",
+      "attributes": {
+        "context": "Phentermine>10,000>10,000>10,000"
+      },
+      "source_chunk_ids": [
+        "ce39fac1c8f10bec78ae7e77f7a6e2a9"
+      ]
+    },
+    {
+      "id": "ent_233",
+      "type": "PharmEffect",
+      "name": "Functional activity",
+      "attributes": {
+        "context": "Functional activity of test drugs"
+      },
+      "source_chunk_ids": [
+        "89304a0bfc13351053b779b550bc9088"
+      ]
+    },
+    {
+      "id": "ent_234",
+      "type": "Compound",
+      "name": "5-HT2",
+      "attributes": {
+        "context": "at 5-HT2 receptors"
+      },
+      "source_chunk_ids": [
+        "89304a0bfc13351053b779b550bc9088"
+      ]
+    },
+    {
+      "id": "ent_235",
+      "type": "Compound",
+      "name": "fenfluramines",
+      "attributes": {
+        "context": "fenfluramines increase the risk"
+      },
+      "source_chunk_ids": [
+        "d6abe988e1c0db745b99f54e543713ef"
+      ]
+    },
+    {
+      "id": "ent_236",
+      "type": "Indication",
+      "name": "IPAH",
+      "attributes": {
+        "context": "developing IPAH"
+      },
+      "source_chunk_ids": [
+        "d6abe988e1c0db745b99f54e543713ef"
+      ]
+    },
+    {
+      "id": "ent_237",
+      "type": "PharmEffect",
+      "name": "vasoconstriction",
+      "attributes": {
+        "context": "pulmonary arterial vasoconstriction"
+      },
+      "source_chunk_ids": [
+        "b261139371bea9fdf729ebdbad57e2f5"
+      ]
+    },
+    {
+      "id": "ent_238",
+      "type": "PharmEffect",
+      "name": "hyperplasia",
+      "attributes": {
+        "context": "and hyperplasia that leads to severe hypertension"
+      },
+      "source_chunk_ids": [
+        "b261139371bea9fdf729ebdbad57e2f5"
+      ]
+    },
+    {
+      "id": "ent_239",
+      "type": "Indication",
+      "name": "hypertension",
+      "attributes": {
+        "context": "leads to severe hypertension"
+      },
+      "source_chunk_ids": [
+        "b261139371bea9fdf729ebdbad57e2f5"
+      ]
+    },
+    {
+      "id": "ent_240",
+      "type": "Indication",
+      "name": "IPAH",
+      "attributes": {
+        "context": "The pathogenesis of IPAH"
+      },
+      "source_chunk_ids": [
+        "b261139371bea9fdf729ebdbad57e2f5"
+      ]
+    },
+    {
+      "id": "ent_241",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "involvement of 5-HT and SERT proteins"
+      },
+      "source_chunk_ids": [
+        "b261139371bea9fdf729ebdbad57e2f5"
+      ]
+    },
+    {
+      "id": "ent_242",
+      "type": "Compound",
+      "name": "SERT proteins",
+      "attributes": {
+        "context": "involvement of 5-HT and SERT proteins"
+      },
+      "source_chunk_ids": [
+        "b261139371bea9fdf729ebdbad57e2f5"
+      ]
+    },
+    {
+      "id": "ent_243",
+      "type": "Compound",
+      "name": "SERT substrate",
+      "attributes": {
+        "context": "the SERT substrate activity"
+      },
+      "source_chunk_ids": [
+        "b261139371bea9fdf729ebdbad57e2f5"
+      ]
+    },
+    {
+      "id": "ent_244",
+      "type": "Compound",
+      "name": "fenfluramine",
+      "attributes": {
+        "context": "fenfluramine-induced IPAH"
+      },
+      "source_chunk_ids": [
+        "b261139371bea9fdf729ebdbad57e2f5"
+      ]
+    },
+    {
+      "id": "ent_245",
+      "type": "Compound",
+      "name": "fenfluramines",
+      "attributes": {
+        "context": "fenfluramines increase the risk of IPAH"
+      },
+      "source_chunk_ids": [
+        "b261139371bea9fdf729ebdbad57e2f5"
+      ]
+    },
+    {
+      "id": "ent_246",
+      "type": "Compound",
+      "name": "SERT",
+      "attributes": {
+        "context": "stimulating SERT-mediated release of 5-HT"
+      },
+      "source_chunk_ids": [
+        "b261139371bea9fdf729ebdbad57e2f5"
+      ]
+    },
+    {
+      "id": "ent_247",
+      "type": "PharmEffect",
+      "name": "pulmonary dysfunction",
+      "attributes": {
+        "context": "cause pulmonary dysfunction"
+      },
+      "source_chunk_ids": [
+        "b261139371bea9fdf729ebdbad57e2f5"
+      ]
+    },
+    {
+      "id": "ent_248",
+      "type": "Indication",
+      "name": "VHD",
+      "attributes": {
+        "context": "to explain VHD"
+      },
+      "source_chunk_ids": [
+        "b261139371bea9fdf729ebdbad57e2f5"
+      ]
+    },
+    {
+      "id": "ent_249",
+      "type": "Compound",
+      "name": "5-HT2B receptors",
+      "attributes": {
+        "context": "activation of 5-HT2B receptors"
+      },
+      "source_chunk_ids": [
+        "b261139371bea9fdf729ebdbad57e2f5"
+      ]
+    },
+    {
+      "id": "ent_250",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "plasma levels of 5-HT in rats"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_251",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "measure plasma levels of 5-HT in whole blood samples"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_252",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "baseline plasma 5-HT levels in rats"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_253",
+      "type": "Concentration",
+      "name": "0.22 nM",
+      "attributes": {
+        "context": "found to be 0.22 nM"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_254",
+      "type": "Concentration",
+      "name": "1 nM",
+      "attributes": {
+        "context": "about 1 nM when corrected"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_255",
+      "type": "Compound",
+      "name": "fenfluramine",
+      "attributes": {
+        "context": "systemic administration of fenfluramine"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_256",
+      "type": "Compound",
+      "name": "MDMA",
+      "attributes": {
+        "context": "MDMA and other amphetamines"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_257",
+      "type": "Compound",
+      "name": "amphetamines",
+      "attributes": {
+        "context": "other amphetamines evokes"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_258",
+      "type": "PharmEffect",
+      "name": "increases in plasma 5-HT",
+      "attributes": {
+        "context": "evokes transient dose-dependent increases in plasma 5-HT"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_259",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "increases in plasma 5-HT ranging"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_260",
+      "type": "Concentration",
+      "name": "4 to 20 nM",
+      "attributes": {
+        "context": "ranging from 4 to 20 nM"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_261",
+      "type": "PharmEffect",
+      "name": "increase plasma 5-HT",
+      "attributes": {
+        "context": "ability of drugs to increase plasma 5-HT"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_262",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "increase plasma 5-HT is directly correlated"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_263",
+      "type": "PharmEffect",
+      "name": "increase SERT-mediated 5-HT release",
+      "attributes": {
+        "context": "ability to increase SERT-mediated 5-HT release"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_264",
+      "type": "Compound",
+      "name": "SERT",
+      "attributes": {
+        "context": "increase SERT-mediated 5-HT release"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_265",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "SERT-mediated 5-HT release in neurons"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_266",
+      "type": "Compound",
+      "name": "SERT",
+      "attributes": {
+        "context": "platelet SERT proteins"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_267",
+      "type": "Compound",
+      "name": "fenfluramine",
+      "attributes": {
+        "context": "fenfluramine and other 5-HT releasers"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_268",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "other 5-HT releasers are able to acutely increase plasma 5-HT"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_269",
+      "type": "PharmEffect",
+      "name": "increase plasma 5-HT",
+      "attributes": {
+        "context": "able to acutely increase plasma 5-HT"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_270",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "absolute levels of 5-HT are well below"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_271",
+      "type": "PharmEffect",
+      "name": "contract pulmonary arteries",
+      "attributes": {
+        "context": "required to contract pulmonary arteries"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_272",
+      "type": "PharmEffect",
+      "name": "stimulate mitogenesis",
+      "attributes": {
+        "context": "or stimulate mitogenesis"
+      },
+      "source_chunk_ids": [
+        "3a483a860877ea40e62005015647f8af"
+      ]
+    },
+    {
+      "id": "ent_273",
+      "type": "Compound",
+      "name": "5-HT releasers",
+      "attributes": {
+        "context": "chronic administration of 5-HT releasers"
+      },
+      "source_chunk_ids": [
+        "88f10e138c083c48e016e93a537b8a8a"
+      ]
+    },
+    {
+      "id": "ent_274",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "increase plasma 5-HT"
+      },
+      "source_chunk_ids": [
+        "88f10e138c083c48e016e93a537b8a8a"
+      ]
+    },
+    {
+      "id": "ent_275",
+      "type": "PharmEffect",
+      "name": "increase plasma 5-HT",
+      "attributes": {
+        "context": "can persistently increase plasma 5-HT"
+      },
+      "source_chunk_ids": [
+        "88f10e138c083c48e016e93a537b8a8a"
+      ]
+    },
+    {
+      "id": "ent_276",
+      "type": "Compound",
+      "name": "fenfluramine",
+      "attributes": {
+        "context": "infusions of fenfluramine"
+      },
+      "source_chunk_ids": [
+        "88f10e138c083c48e016e93a537b8a8a"
+      ]
+    },
+    {
+      "id": "ent_277",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "much higher 5-HT concentrations are needed"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_278",
+      "type": "Concentration",
+      "name": "10 nM",
+      "attributes": {
+        "context": "cells is about 10 nM"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_279",
+      "type": "PharmEffect",
+      "name": "stimulate mitogenic responses",
+      "attributes": {
+        "context": "needed to stimulate mitogenic responses in rat pulmonary artery smooth muscle cells"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_280",
+      "type": "Compound",
+      "name": "fenfluramine",
+      "attributes": {
+        "context": "chronic fenfluramine elevates baseline plasma 5-HT"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_281",
+      "type": "PharmEffect",
+      "name": "elevates baseline plasma 5-HT",
+      "attributes": {
+        "context": "chronic fenfluramine elevates baseline plasma 5-HT to less than 5 nM"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_282",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "elevates baseline plasma 5-HT to less than 5 nM"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_283",
+      "type": "Concentration",
+      "name": "less than 5 nM",
+      "attributes": {
+        "context": "elevates baseline plasma 5-HT to less than 5 nM in rats"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_284",
+      "type": "PharmEffect",
+      "name": "fenfluramine-induced increases",
+      "attributes": {
+        "context": "fenfluramine-induced increases in plasma 5-HT are below the concentrations"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_285",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "fenfluramine-induced increases in plasma 5-HT are below the concentrations"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_286",
+      "type": "Indication",
+      "name": "pulmonary side effects",
+      "attributes": {
+        "context": "known to cause pulmonary side effects"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_287",
+      "type": "PharmEffect",
+      "name": "Fenfluramine-induced elevations",
+      "attributes": {
+        "context": "Fenfluramine-induced elevations of plasma 5-HT are also much lower"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_288",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "Fenfluramine-induced elevations of plasma 5-HT are also much lower"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_289",
+      "type": "PharmEffect",
+      "name": "produce VHD",
+      "attributes": {
+        "context": "required to produce VHD in rats exposed to exogenous 5-HT"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_290",
+      "type": "Indication",
+      "name": "VHD",
+      "attributes": {
+        "context": "required to produce VHD in rats exposed to exogenous 5-HT"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_291",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "exposed to exogenous 5-HT (580\u2013974 nM)"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_292",
+      "type": "Concentration",
+      "name": "580\u2013974 nM",
+      "attributes": {
+        "context": "exogenous 5-HT (580\u2013974 nM)"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_293",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "the 5-HT hypothesis cannot explain the mechanism"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_294",
+      "type": "Indication",
+      "name": "IPAH",
+      "attributes": {
+        "context": "mechanism of fenfluramine-associated IPAH or VHD"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_295",
+      "type": "Indication",
+      "name": "VHD",
+      "attributes": {
+        "context": "mechanism of fenfluramine-associated IPAH or VHD"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_296",
+      "type": "Concentration",
+      "name": "two- to fourfold increases",
+      "attributes": {
+        "context": "two- to fourfold increases in plasma 5-HT could be enough"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_297",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "two- to fourfold increases in plasma 5-HT could be enough"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_298",
+      "type": "PharmEffect",
+      "name": "stimulate mitogenic responses",
+      "attributes": {
+        "context": "enough to stimulate mitogenic responses in susceptible individuals"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_299",
+      "type": "PharmEffect",
+      "name": "increase the risk",
+      "attributes": {
+        "context": "increase the risk of developing IPAH"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_300",
+      "type": "Indication",
+      "name": "IPAH",
+      "attributes": {
+        "context": "increase the risk of developing IPAH"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_301",
+      "type": "Compound",
+      "name": "lithium",
+      "attributes": {
+        "context": "treatment with lithium or MAO inhibitors produces two- to fourfold increases"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_302",
+      "type": "Compound",
+      "name": "MAO inhibitors",
+      "attributes": {
+        "context": "treatment with lithium or MAO inhibitors produces two- to fourfold increases"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_303",
+      "type": "Concentration",
+      "name": "two- to fourfold increases",
+      "attributes": {
+        "context": "MAO inhibitors produces two- to fourfold increases in plasma 5-HT"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_304",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "produces two- to fourfold increases in plasma 5-HT without increasing the risk"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_305",
+      "type": "PharmEffect",
+      "name": "increasing the risk",
+      "attributes": {
+        "context": "without increasing the risk of IPAH"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_306",
+      "type": "Indication",
+      "name": "IPAH",
+      "attributes": {
+        "context": "without increasing the risk of IPAH"
+      },
+      "source_chunk_ids": [
+        "175ac8e246ed2c19193e9fb3f3b1f4f7"
+      ]
+    },
+    {
+      "id": "ent_307",
+      "type": "Compound",
+      "name": "fenfluramine",
+      "attributes": {
+        "context": "fenfluramine-associated IPAH"
+      },
+      "source_chunk_ids": [
+        "8d0f8dcb51d6846a717565bc65c4e7cd"
+      ]
+    },
+    {
+      "id": "ent_308",
+      "type": "Indication",
+      "name": "IPAH",
+      "attributes": {
+        "context": "fenfluramine-associated IPAH"
+      },
+      "source_chunk_ids": [
+        "8d0f8dcb51d6846a717565bc65c4e7cd"
+      ]
+    },
+    {
+      "id": "ent_309",
+      "type": "Indication",
+      "name": "IPAH",
+      "attributes": {
+        "context": "animal models of IPAH"
+      },
+      "source_chunk_ids": [
+        "8d0f8dcb51d6846a717565bc65c4e7cd"
+      ]
+    },
+    {
+      "id": "ent_310",
+      "type": "PharmEffect",
+      "name": "hypoxia",
+      "attributes": {
+        "context": "induction of hypoxia"
+      },
+      "source_chunk_ids": [
+        "8d0f8dcb51d6846a717565bc65c4e7cd"
+      ]
+    },
+    {
+      "id": "ent_311",
+      "type": "Compound",
+      "name": "fenfluramine",
+      "attributes": {
+        "context": "fenfluramine-associated IPAH"
+      },
+      "source_chunk_ids": [
+        "8d0f8dcb51d6846a717565bc65c4e7cd"
+      ]
+    },
+    {
+      "id": "ent_312",
+      "type": "Indication",
+      "name": "IPAH",
+      "attributes": {
+        "context": "fenfluramine-associated IPAH"
+      },
+      "source_chunk_ids": [
+        "8d0f8dcb51d6846a717565bc65c4e7cd"
+      ]
+    },
+    {
+      "id": "ent_313",
+      "type": "Compound",
+      "name": "fenfluramine",
+      "attributes": {
+        "context": "fenfluramine might cause IPAH"
+      },
+      "source_chunk_ids": [
+        "8d0f8dcb51d6846a717565bc65c4e7cd"
+      ]
+    },
+    {
+      "id": "ent_314",
+      "type": "Indication",
+      "name": "IPAH",
+      "attributes": {
+        "context": "fenfluramine might cause IPAH"
+      },
+      "source_chunk_ids": [
+        "8d0f8dcb51d6846a717565bc65c4e7cd"
+      ]
+    },
+    {
+      "id": "ent_315",
+      "type": "Indication",
+      "name": "IPAH",
+      "attributes": {
+        "context": "development of IPAH"
+      },
+      "source_chunk_ids": [
+        "8d0f8dcb51d6846a717565bc65c4e7cd"
+      ]
+    },
+    {
+      "id": "ent_316",
+      "type": "PharmEffect",
+      "name": "hypoxic",
+      "attributes": {
+        "context": "in a hypoxic mouse model"
+      },
+      "source_chunk_ids": [
+        "8d0f8dcb51d6846a717565bc65c4e7cd"
+      ]
+    },
+    {
+      "id": "ent_317",
+      "type": "Compound",
+      "name": "norfenfluramine",
+      "attributes": {
+        "context": "stereoisomers of norfenfluramine"
+      },
+      "source_chunk_ids": [
+        "8d0f8dcb51d6846a717565bc65c4e7cd"
+      ]
+    },
+    {
+      "id": "ent_318",
+      "type": "Compound",
+      "name": "5-HT2B agonists",
+      "attributes": {
+        "context": "potent and selective 5-HT2B agonists"
+      },
+      "source_chunk_ids": [
+        "8d0f8dcb51d6846a717565bc65c4e7cd"
+      ]
+    },
+    {
+      "id": "ent_319",
+      "type": "Indication",
+      "name": "VHD",
+      "attributes": {
+        "context": "produce VHD"
+      },
+      "source_chunk_ids": [
+        "8d0f8dcb51d6846a717565bc65c4e7cd"
+      ]
+    },
+    {
+      "id": "ent_320",
+      "type": "Indication",
+      "name": "IPAH",
+      "attributes": {
+        "context": "increase the risk of IPAH"
+      },
+      "source_chunk_ids": [
+        "8d0f8dcb51d6846a717565bc65c4e7cd"
+      ]
+    },
+    {
+      "id": "ent_321",
+      "type": "Compound",
+      "name": "methysergide",
+      "attributes": {
+        "context": "include methysergide"
+      },
+      "source_chunk_ids": [
+        "8d0f8dcb51d6846a717565bc65c4e7cd"
+      ]
+    },
+    {
+      "id": "ent_322",
+      "type": "Compound",
+      "name": "ergotamine",
+      "attributes": {
+        "context": "ergotamine"
+      },
+      "source_chunk_ids": [
+        "8d0f8dcb51d6846a717565bc65c4e7cd"
+      ]
+    },
+    {
+      "id": "ent_323",
+      "type": "Compound",
+      "name": "pergolide",
+      "attributes": {
+        "context": "pergolide"
+      },
+      "source_chunk_ids": [
+        "8d0f8dcb51d6846a717565bc65c4e7cd"
+      ]
+    },
+    {
+      "id": "ent_324",
+      "type": "Compound",
+      "name": "cabergoline",
+      "attributes": {
+        "context": "cabergoline"
+      },
+      "source_chunk_ids": [
+        "8d0f8dcb51d6846a717565bc65c4e7cd"
+      ]
+    },
+    {
+      "id": "ent_325",
+      "type": "Compound",
+      "name": "fenfluramine",
+      "attributes": {
+        "context": "administration of fenfluramine"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_326",
+      "type": "Compound",
+      "name": "\\alpha-fenfluramine",
+      "attributes": {
+        "context": "or \\alpha-fenfluramine"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_327",
+      "type": "Concentration",
+      "name": "high-dose administration",
+      "attributes": {
+        "context": "high-dose administration of fenfluramine"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_328",
+      "type": "Compound",
+      "name": "Serotonin (5-HT)",
+      "attributes": {
+        "context": "depletion of 5-HT"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_329",
+      "type": "PharmEffect",
+      "name": "long-term depletion of Serotonin (5-HT)",
+      "attributes": {
+        "context": "can cause long-term depletion of 5-HT"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_330",
+      "type": "Compound",
+      "name": "SERT",
+      "attributes": {
+        "context": "loss of SERT binding sites"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_331",
+      "type": "PharmEffect",
+      "name": "loss of SERT binding sites",
+      "attributes": {
+        "context": "loss of SERT binding sites"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_332",
+      "type": "Compound",
+      "name": "fenfluramine",
+      "attributes": {
+        "context": "fenfluramine-induced 5-HT deficits"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_333",
+      "type": "Compound",
+      "name": "Serotonin (5-HT)",
+      "attributes": {
+        "context": "fenfluramine-induced 5-HT deficits"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_334",
+      "type": "PharmEffect",
+      "name": "Serotonin (5-HT) deficits",
+      "attributes": {
+        "context": "fenfluramine-induced 5-HT deficits"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_335",
+      "type": "PharmEffect",
+      "name": "neurotoxicity",
+      "attributes": {
+        "context": "evidence for neurotoxicity"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_336",
+      "type": "Compound",
+      "name": "fenfluramine",
+      "attributes": {
+        "context": "fenfluramine-induced 5-HT depletions"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_337",
+      "type": "Compound",
+      "name": "Serotonin (5-HT)",
+      "attributes": {
+        "context": "fenfluramine-induced 5-HT depletions"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_338",
+      "type": "PharmEffect",
+      "name": "Serotonin (5-HT) depletions",
+      "attributes": {
+        "context": "fenfluramine-induced 5-HT depletions"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_339",
+      "type": "Compound",
+      "name": "Serotonin (5-HT)",
+      "attributes": {
+        "context": "acute 5-HT release"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_340",
+      "type": "PharmEffect",
+      "name": "acute Serotonin (5-HT) release",
+      "attributes": {
+        "context": "acute 5-HT release has been implicated"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_341",
+      "type": "Compound",
+      "name": "5-HT uptake blockers",
+      "attributes": {
+        "context": "5-HT uptake blockers"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_342",
+      "type": "Compound",
+      "name": "synthesis inhibitors",
+      "attributes": {
+        "context": "synthesis inhibitors"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_343",
+      "type": "Compound",
+      "name": "Serotonin (5-HT)",
+      "attributes": {
+        "context": "long-term 5-HT depletions"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_344",
+      "type": "PharmEffect",
+      "name": "prevent long-term Serotonin (5-HT) depletions",
+      "attributes": {
+        "context": "can prevent long-term 5-HT depletions"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_345",
+      "type": "Compound",
+      "name": "SERT substrates",
+      "attributes": {
+        "context": "not all SERT substrates"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_346",
+      "type": "Compound",
+      "name": "Serotonin (5-HT)",
+      "attributes": {
+        "context": "deplete 5-HT"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_347",
+      "type": "PharmEffect",
+      "name": "deplete Serotonin (5-HT)",
+      "attributes": {
+        "context": "substrates deplete 5-HT"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_348",
+      "type": "Compound",
+      "name": "mCPP",
+      "attributes": {
+        "context": "mCPP interacts with SERT"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_349",
+      "type": "Compound",
+      "name": "SERT",
+      "attributes": {
+        "context": "interacts with SERT"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_350",
+      "type": "Compound",
+      "name": "Serotonin (5-HT)",
+      "attributes": {
+        "context": "release 5-HT from neurons"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_351",
+      "type": "PharmEffect",
+      "name": "release Serotonin (5-HT) from neurons",
+      "attributes": {
+        "context": "release 5-HT from neurons"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_352",
+      "type": "Compound",
+      "name": "\\alpha-fenfluramine",
+      "attributes": {
+        "context": "equipotent with \\alpha-fenfluramine"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_353",
+      "type": "Concentration",
+      "name": "repeated high-dose administration",
+      "attributes": {
+        "context": "repeated high-dose administration of mCPP"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_354",
+      "type": "Compound",
+      "name": "mCPP",
+      "attributes": {
+        "context": "administration of mCPP"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_355",
+      "type": "Compound",
+      "name": "Serotonin (5-HT)",
+      "attributes": {
+        "context": "tissue levels of 5-HT"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_356",
+      "type": "PharmEffect",
+      "name": "fails to affect postmortem tissue levels of Serotonin (5-HT)",
+      "attributes": {
+        "context": "mCPP fails to affect postmortem tissue levels of 5-HT"
+      },
+      "source_chunk_ids": [
+        "c1ffd50c57471cb24d810908cc9c7277"
+      ]
+    },
+    {
+      "id": "ent_357",
+      "type": "Compound",
+      "name": "fenfluramine",
+      "attributes": {
+        "context": "fenfluramine causes profound loss"
+      },
+      "source_chunk_ids": [
+        "d47eab322b0e07df0ad12e2adfff742c"
+      ]
+    },
+    {
+      "id": "ent_358",
+      "type": "PharmEffect",
+      "name": "loss of 5-HT",
+      "attributes": {
+        "context": "profound loss of 5-HT"
+      },
+      "source_chunk_ids": [
+        "d47eab322b0e07df0ad12e2adfff742c"
+      ]
+    },
+    {
+      "id": "ent_359",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "loss of 5-HT"
+      },
+      "source_chunk_ids": [
+        "d47eab322b0e07df0ad12e2adfff742c"
+      ]
+    },
+    {
+      "id": "ent_360",
+      "type": "Compound",
+      "name": "SERT",
+      "attributes": {
+        "context": "SERT-mediated 5-HT release"
+      },
+      "source_chunk_ids": [
+        "d47eab322b0e07df0ad12e2adfff742c"
+      ]
+    },
+    {
+      "id": "ent_361",
+      "type": "PharmEffect",
+      "name": "5-HT release",
+      "attributes": {
+        "context": "SERT-mediated 5-HT release"
+      },
+      "source_chunk_ids": [
+        "d47eab322b0e07df0ad12e2adfff742c"
+      ]
+    },
+    {
+      "id": "ent_362",
+      "type": "PharmEffect",
+      "name": "5-HT depletion",
+      "attributes": {
+        "context": "long-term 5-HT depletion"
+      },
+      "source_chunk_ids": [
+        "d47eab322b0e07df0ad12e2adfff742c"
+      ]
+    },
+    {
+      "id": "ent_363",
+      "type": "Compound",
+      "name": "5-HT releasers",
+      "attributes": {
+        "context": "adverse effects of 5-HT releasers"
+      },
+      "source_chunk_ids": [
+        "b3edff64c00ddb379d6620449284d29c"
+      ]
+    },
+    {
+      "id": "ent_364",
+      "type": "Compound",
+      "name": "SERT substrates",
+      "attributes": {
+        "context": "development of SERT substrates as pharmacotherapies"
+      },
+      "source_chunk_ids": [
+        "b3edff64c00ddb379d6620449284d29c"
+      ]
+    },
+    {
+      "id": "ent_365",
+      "type": "Compound",
+      "name": "DA/5-HT releasers",
+      "attributes": {
+        "context": "designing dual DA/5-HT releasers"
+      },
+      "source_chunk_ids": [
+        "b3edff64c00ddb379d6620449284d29c"
+      ]
+    },
+    {
+      "id": "ent_366",
+      "type": "Compound",
+      "name": "fenfluramine",
+      "attributes": {
+        "context": "devoid of fenfluramine-like adverse effects"
+      },
+      "source_chunk_ids": [
+        "b3edff64c00ddb379d6620449284d29c"
+      ]
+    },
+    {
+      "id": "ent_367",
+      "type": "Compound",
+      "name": "phenylethylamine",
+      "attributes": {
+        "context": "distinct from the phenylethylamine structure"
+      },
+      "source_chunk_ids": [
+        "b3edff64c00ddb379d6620449284d29c"
+      ]
+    },
+    {
+      "id": "ent_368",
+      "type": "Compound",
+      "name": "amphetamine-like agents",
+      "attributes": {
+        "context": "shared by amphetamine-like agents"
+      },
+      "source_chunk_ids": [
+        "b3edff64c00ddb379d6620449284d29c"
+      ]
+    },
+    {
+      "id": "ent_369",
+      "type": "Compound",
+      "name": "amphetamine",
+      "attributes": {
+        "context": "non-amphetamine 5-HT releasers have a reduced capacity"
+      },
+      "source_chunk_ids": [
+        "b3edff64c00ddb379d6620449284d29c"
+      ]
+    },
+    {
+      "id": "ent_370",
+      "type": "Compound",
+      "name": "non-amphetamine 5-HT releasers",
+      "attributes": {
+        "context": "as non-amphetamine 5-HT releasers have a reduced capacity"
+      },
+      "source_chunk_ids": [
+        "b3edff64c00ddb379d6620449284d29c"
+      ]
+    },
+    {
+      "id": "ent_371",
+      "type": "PharmEffect",
+      "name": "adverse effects",
+      "attributes": {
+        "context": "adverse effects of 5-HT releasers"
+      },
+      "source_chunk_ids": [
+        "b3edff64c00ddb379d6620449284d29c"
+      ]
+    },
+    {
+      "id": "ent_372",
+      "type": "PharmEffect",
+      "name": "pharmacotherapies",
+      "attributes": {
+        "context": "development of SERT substrates as pharmacotherapies"
+      },
+      "source_chunk_ids": [
+        "b3edff64c00ddb379d6620449284d29c"
+      ]
+    },
+    {
+      "id": "ent_373",
+      "type": "PharmEffect",
+      "name": "adverse effects",
+      "attributes": {
+        "context": "fenfluramine-like adverse effects"
+      },
+      "source_chunk_ids": [
+        "b3edff64c00ddb379d6620449284d29c"
+      ]
+    },
+    {
+      "id": "ent_374",
+      "type": "PharmEffect",
+      "name": "5-HT2B agonist activity",
+      "attributes": {
+        "context": "lack 5-HT2B agonist activity"
+      },
+      "source_chunk_ids": [
+        "b3edff64c00ddb379d6620449284d29c"
+      ]
+    },
+    {
+      "id": "ent_375",
+      "type": "PharmEffect",
+      "name": "neurotoxic effects",
+      "attributes": {
+        "context": "causing neurotoxic effects"
+      },
+      "source_chunk_ids": [
+        "b3edff64c00ddb379d6620449284d29c"
+      ]
+    },
+    {
+      "id": "ent_376",
+      "type": "Indication",
+      "name": "VHD",
+      "attributes": {
+        "context": "prevent the risk of VHD"
+      },
+      "source_chunk_ids": [
+        "b3edff64c00ddb379d6620449284d29c"
+      ]
+    },
+    {
+      "id": "ent_377",
+      "type": "Indication",
+      "name": "IPAH",
+      "attributes": {
+        "context": "possibly IPAH"
+      },
+      "source_chunk_ids": [
+        "b3edff64c00ddb379d6620449284d29c"
+      ]
+    },
+    {
+      "id": "ent_378",
+      "type": "Compound",
+      "name": "\\alpha-fenfluramine",
+      "attributes": {
+        "context": "administration of \\alpha-fenfluramine (d-FEN)"
+      },
+      "source_chunk_ids": [
+        "f3a4c71678d371c8c4c4bf7d78a37e33"
+      ]
+    },
+    {
+      "id": "ent_379",
+      "type": "Compound",
+      "name": "d-FEN",
+      "attributes": {
+        "context": "administration of \\alpha-fenfluramine (d-FEN)"
+      },
+      "source_chunk_ids": [
+        "f3a4c71678d371c8c4c4bf7d78a37e33"
+      ]
+    },
+    {
+      "id": "ent_380",
+      "type": "Compound",
+      "name": "mCPP",
+      "attributes": {
+        "context": "administration of \\alpha-fenfluramine (d-FEN) or mCPP"
+      },
+      "source_chunk_ids": [
+        "f3a4c71678d371c8c4c4bf7d78a37e33"
+      ]
+    },
+    {
+      "id": "ent_381",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "tissue levels of 5-HT"
+      },
+      "source_chunk_ids": [
+        "f3a4c71678d371c8c4c4bf7d78a37e33"
+      ]
+    },
+    {
+      "id": "ent_382",
+      "type": "Compound",
+      "name": "5-hydroxyindoleacetic acid",
+      "attributes": {
+        "context": "its metabolite 5-hydroxyindoleacetic acid (5-HIAA)"
+      },
+      "source_chunk_ids": [
+        "f3a4c71678d371c8c4c4bf7d78a37e33"
+      ]
+    },
+    {
+      "id": "ent_383",
+      "type": "Compound",
+      "name": "5-HIAA",
+      "attributes": {
+        "context": "its metabolite 5-hydroxyindoleacetic acid (5-HIAA)"
+      },
+      "source_chunk_ids": [
+        "f3a4c71678d371c8c4c4bf7d78a37e33"
+      ]
+    },
+    {
+      "id": "ent_384",
+      "type": "Concentration",
+      "name": "10 \\mumol/kg",
+      "attributes": {
+        "context": "at doses of 10 or 30 \\mumol/kg"
+      },
+      "source_chunk_ids": [
+        "f3a4c71678d371c8c4c4bf7d78a37e33"
+      ]
+    },
+    {
+      "id": "ent_385",
+      "type": "Concentration",
+      "name": "30 \\mumol/kg",
+      "attributes": {
+        "context": "at doses of 10 or 30 \\mumol/kg"
+      },
+      "source_chunk_ids": [
+        "f3a4c71678d371c8c4c4bf7d78a37e33"
+      ]
+    },
+    {
+      "id": "ent_386",
+      "type": "PharmEffect",
+      "name": "increases in extracellular 5-HT",
+      "attributes": {
+        "context": "produce equivalent increases in extracellular 5-HT"
+      },
+      "source_chunk_ids": [
+        "f3a4c71678d371c8c4c4bf7d78a37e33"
+      ]
+    },
+    {
+      "id": "ent_387",
+      "type": "Compound",
+      "name": "saline",
+      "attributes": {
+        "context": "compared to saline-treated group"
+      },
+      "source_chunk_ids": [
+        "f3a4c71678d371c8c4c4bf7d78a37e33"
+      ]
+    },
+    {
+      "id": "ent_388",
+      "type": "Compound",
+      "name": "Amine",
+      "attributes": {
+        "context": "Dialysate Amine"
+      },
+      "source_chunk_ids": [
+        "be3c1fa204d1fe03e278412a1d79c839"
+      ]
+    },
+    {
+      "id": "ent_389",
+      "type": "Compound",
+      "name": "Dopamine (DA)",
+      "attributes": {
+        "context": "DA (% baseline)"
+      },
+      "source_chunk_ids": [
+        "be3c1fa204d1fe03e278412a1d79c839"
+      ]
+    },
+    {
+      "id": "ent_390",
+      "type": "Compound",
+      "name": "Serotonin (5-HT)",
+      "attributes": {
+        "context": "5-HT (% baseline)"
+      },
+      "source_chunk_ids": [
+        "be3c1fa204d1fe03e278412a1d79c839"
+      ]
+    },
+    {
+      "id": "ent_391",
+      "type": "PharmEffect",
+      "name": "Ambulation",
+      "attributes": {
+        "context": "Ambulation (cm)"
+      },
+      "source_chunk_ids": [
+        "be3c1fa204d1fe03e278412a1d79c839"
+      ]
+    },
+    {
+      "id": "ent_392",
+      "type": "PharmEffect",
+      "name": "Stereotypy",
+      "attributes": {
+        "context": "Stereotypy (events)"
+      },
+      "source_chunk_ids": [
+        "be3c1fa204d1fe03e278412a1d79c839"
+      ]
+    },
+    {
+      "id": "ent_393",
+      "type": "Compound",
+      "name": "PAL-287",
+      "attributes": {
+        "context": "Effects of PAL-287"
+      },
+      "source_chunk_ids": [
+        "be3c1fa204d1fe03e278412a1d79c839"
+      ]
+    },
+    {
+      "id": "ent_394",
+      "type": "PharmEffect",
+      "name": "neurochemical parameters",
+      "attributes": {
+        "context": "on neurochemical and locomotor parameters"
+      },
+      "source_chunk_ids": [
+        "be3c1fa204d1fe03e278412a1d79c839"
+      ]
+    },
+    {
+      "id": "ent_395",
+      "type": "PharmEffect",
+      "name": "locomotor parameters",
+      "attributes": {
+        "context": "on neurochemical and locomotor parameters"
+      },
+      "source_chunk_ids": [
+        "be3c1fa204d1fe03e278412a1d79c839"
+      ]
+    },
+    {
+      "id": "ent_396",
+      "type": "Compound",
+      "name": "Amine",
+      "attributes": {
+        "context": "dialysate amine concentrations"
+      },
+      "source_chunk_ids": [
+        "be3c1fa204d1fe03e278412a1d79c839"
+      ]
+    },
+    {
+      "id": "ent_397",
+      "type": "Compound",
+      "name": "Dopamine (DA)",
+      "attributes": {
+        "context": "for DA"
+      },
+      "source_chunk_ids": [
+        "be3c1fa204d1fe03e278412a1d79c839"
+      ]
+    },
+    {
+      "id": "ent_398",
+      "type": "Compound",
+      "name": "Serotonin (5-HT)",
+      "attributes": {
+        "context": "and 5-HT over time"
+      },
+      "source_chunk_ids": [
+        "be3c1fa204d1fe03e278412a1d79c839"
+      ]
+    },
+    {
+      "id": "ent_399",
+      "type": "PharmEffect",
+      "name": "ambulation",
+      "attributes": {
+        "context": "shows ambulation (cm)"
+      },
+      "source_chunk_ids": [
+        "be3c1fa204d1fe03e278412a1d79c839"
+      ]
+    },
+    {
+      "id": "ent_400",
+      "type": "PharmEffect",
+      "name": "stereotypy",
+      "attributes": {
+        "context": "and stereotypy (events)"
+      },
+      "source_chunk_ids": [
+        "be3c1fa204d1fe03e278412a1d79c839"
+      ]
+    },
+    {
+      "id": "ent_401",
+      "type": "Compound",
+      "name": "PAL-287",
+      "attributes": {
+        "context": "Effects of PAL-287"
+      },
+      "source_chunk_ids": [
+        "f43712c6ca99d243814087984163e882"
+      ]
+    },
+    {
+      "id": "ent_402",
+      "type": "PharmEffect",
+      "name": "neurochemical parameters",
+      "attributes": {
+        "context": "on neurochemical and locomotor parameters"
+      },
+      "source_chunk_ids": [
+        "f43712c6ca99d243814087984163e882"
+      ]
+    },
+    {
+      "id": "ent_403",
+      "type": "PharmEffect",
+      "name": "locomotor parameters",
+      "attributes": {
+        "context": "on neurochemical and locomotor parameters"
+      },
+      "source_chunk_ids": [
+        "f43712c6ca99d243814087984163e882"
+      ]
+    },
+    {
+      "id": "ent_404",
+      "type": "Concentration",
+      "name": "1 mg/kg",
+      "attributes": {
+        "context": "injections of 1 mg/kg PAL-287"
+      },
+      "source_chunk_ids": [
+        "f43712c6ca99d243814087984163e882"
+      ]
+    },
+    {
+      "id": "ent_405",
+      "type": "Compound",
+      "name": "PAL-287",
+      "attributes": {
+        "context": "1 mg/kg PAL-287"
+      },
+      "source_chunk_ids": [
+        "f43712c6ca99d243814087984163e882"
+      ]
+    },
+    {
+      "id": "ent_406",
+      "type": "Concentration",
+      "name": "3 mg/kg",
+      "attributes": {
+        "context": "followed by 3 mg/kg"
+      },
+      "source_chunk_ids": [
+        "f43712c6ca99d243814087984163e882"
+      ]
+    },
+    {
+      "id": "ent_407",
+      "type": "Compound",
+      "name": "DA",
+      "attributes": {
+        "context": "Concentrations of DA"
+      },
+      "source_chunk_ids": [
+        "f43712c6ca99d243814087984163e882"
+      ]
+    },
+    {
+      "id": "ent_408",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "and 5-HT in dialysate samples"
+      },
+      "source_chunk_ids": [
+        "f43712c6ca99d243814087984163e882"
+      ]
+    },
+    {
+      "id": "ent_409",
+      "type": "Compound",
+      "name": "DA",
+      "attributes": {
+        "context": "Baseline levels of DA"
+      },
+      "source_chunk_ids": [
+        "f43712c6ca99d243814087984163e882"
+      ]
+    },
+    {
+      "id": "ent_410",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "and 5-HT were"
+      },
+      "source_chunk_ids": [
+        "f43712c6ca99d243814087984163e882"
+      ]
+    },
+    {
+      "id": "ent_411",
+      "type": "Concentration",
+      "name": "0.43 \u00b1 0.07 pg/5 \u00b5l",
+      "attributes": {
+        "context": "DA and 5-HT were 0.43 \u00b1 0.07"
+      },
+      "source_chunk_ids": [
+        "f43712c6ca99d243814087984163e882"
+      ]
+    },
+    {
+      "id": "ent_412",
+      "type": "Concentration",
+      "name": "0.27 \u00b1 0.06 pg/5 \u00b5l",
+      "attributes": {
+        "context": "and 0.27 \u00b1 0.06 pg/5 \u00b5l"
+      },
+      "source_chunk_ids": [
+        "f43712c6ca99d243814087984163e882"
+      ]
+    },
+    {
+      "id": "ent_413",
+      "type": "PharmEffect",
+      "name": "Locomotor parameters",
+      "attributes": {
+        "context": "Locomotor parameters are mean"
+      },
+      "source_chunk_ids": [
+        "f43712c6ca99d243814087984163e882"
+      ]
+    },
+    {
+      "id": "ent_414",
+      "type": "PharmEffect",
+      "name": "ambulation",
+      "attributes": {
+        "context": "distance traveled in cm (ambulation)"
+      },
+      "source_chunk_ids": [
+        "f43712c6ca99d243814087984163e882"
+      ]
+    },
+    {
+      "id": "ent_415",
+      "type": "PharmEffect",
+      "name": "stereotypy",
+      "attributes": {
+        "context": "repetitive movements (stereotypy)"
+      },
+      "source_chunk_ids": [
+        "f43712c6ca99d243814087984163e882"
+      ]
+    },
+    {
+      "id": "ent_416",
+      "type": "Compound",
+      "name": "Cocaine",
+      "attributes": {
+        "context": "Cocaine (inj/session)"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_417",
+      "type": "Compound",
+      "name": "PAL-287",
+      "attributes": {
+        "context": "PAL-287 (inj/session)"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_418",
+      "type": "Compound",
+      "name": "Sal",
+      "attributes": {
+        "context": "Sal ~5 ~5"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_419",
+      "type": "Concentration",
+      "name": "mg/kg/inj",
+      "attributes": {
+        "context": "Drug Dose (mg/kg/inj)"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_420",
+      "type": "Concentration",
+      "name": "inj/session",
+      "attributes": {
+        "context": "Cocaine (inj/session)"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_421",
+      "type": "Concentration",
+      "name": "~5 inj/session",
+      "attributes": {
+        "context": "Sal ~5 ~5"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_422",
+      "type": "Concentration",
+      "name": "0.01 mg/kg/inj",
+      "attributes": {
+        "context": "0.01 ~55* ~5"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_423",
+      "type": "Concentration",
+      "name": "~55* inj/session",
+      "attributes": {
+        "context": "0.01 ~55* ~5"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_424",
+      "type": "Concentration",
+      "name": "0.03 mg/kg/inj",
+      "attributes": {
+        "context": "0.03 ~45* ~5"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_425",
+      "type": "Concentration",
+      "name": "~45* inj/session",
+      "attributes": {
+        "context": "0.03 ~45* ~5"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_426",
+      "type": "Concentration",
+      "name": "0.1 mg/kg/inj",
+      "attributes": {
+        "context": "0.1 ~25* ~10"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_427",
+      "type": "Concentration",
+      "name": "~25* inj/session",
+      "attributes": {
+        "context": "0.1 ~25* ~10"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_428",
+      "type": "Concentration",
+      "name": "~10 inj/session",
+      "attributes": {
+        "context": "0.1 ~25* ~10"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_429",
+      "type": "Concentration",
+      "name": "0.3 mg/kg/inj",
+      "attributes": {
+        "context": "0.3 ~15* ~10"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_430",
+      "type": "Concentration",
+      "name": "~15* inj/session",
+      "attributes": {
+        "context": "0.3 ~15* ~10"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_431",
+      "type": "Concentration",
+      "name": "mg/kg/hr",
+      "attributes": {
+        "context": "Dose PAL-287 (mg/kg/hr)"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_432",
+      "type": "Concentration",
+      "name": "0.1 mg/kg/hr",
+      "attributes": {
+        "context": "0.1 ~90 ~100"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_433",
+      "type": "Concentration",
+      "name": "~90 %",
+      "attributes": {
+        "context": "0.1 ~90 ~100"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_434",
+      "type": "Concentration",
+      "name": "~100 %",
+      "attributes": {
+        "context": "0.1 ~90 ~100"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_435",
+      "type": "Concentration",
+      "name": "0.32 mg/kg/hr",
+      "attributes": {
+        "context": "0.32 ~80 ~100"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_436",
+      "type": "Concentration",
+      "name": "~80 %",
+      "attributes": {
+        "context": "0.32 ~80 ~100"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_437",
+      "type": "Concentration",
+      "name": "1.0 mg/kg/hr",
+      "attributes": {
+        "context": "1.0 ~5* ~40*"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_438",
+      "type": "Concentration",
+      "name": "~5* %",
+      "attributes": {
+        "context": "1.0 ~5* ~40*"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_439",
+      "type": "Concentration",
+      "name": "~40* %",
+      "attributes": {
+        "context": "1.0 ~5* ~40*"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_440",
+      "type": "Concentration",
+      "name": "0.01 mg/kg/inj",
+      "attributes": {
+        "context": "Cocaine (0.01 mg/kg/inj)"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_441",
+      "type": "Concentration",
+      "name": "1 gm pellets",
+      "attributes": {
+        "context": "Food (1 gm pellets)"
+      },
+      "source_chunk_ids": [
+        "d141ff97b8e39f3e7bf86dc91db523a4"
+      ]
+    },
+    {
+      "id": "ent_442",
+      "type": "Compound",
+      "name": "PAL-287",
+      "attributes": {
+        "context": "Effects of PAL-287 in the monkey self-administration assay."
+      },
+      "source_chunk_ids": [
+        "7b2be919fcbd22a9d66fff4c903a6159"
+      ]
+    },
+    {
+      "id": "ent_443",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "Self-administration of cocaine and PAL-287 by rhesus monkeys."
+      },
+      "source_chunk_ids": [
+        "7b2be919fcbd22a9d66fff4c903a6159"
+      ]
+    },
+    {
+      "id": "ent_444",
+      "type": "Compound",
+      "name": "saline",
+      "attributes": {
+        "context": "compared to saline-injected control"
+      },
+      "source_chunk_ids": [
+        "7b2be919fcbd22a9d66fff4c903a6159"
+      ]
+    },
+    {
+      "id": "ent_445",
+      "type": "PharmEffect",
+      "name": "self-administration",
+      "attributes": {
+        "context": "Effects of PAL-287 in the monkey self-administration assay."
+      },
+      "source_chunk_ids": [
+        "7b2be919fcbd22a9d66fff4c903a6159"
+      ]
+    },
+    {
+      "id": "ent_446",
+      "type": "Compound",
+      "name": "PAL-287",
+      "attributes": {
+        "context": "Our findings with PAL-287 in monkeys"
+      },
+      "source_chunk_ids": [
+        "84b0c5deb9ccfd550d8548bcc03a3b52"
+      ]
+    },
+    {
+      "id": "ent_447",
+      "type": "PharmEffect",
+      "name": "suppression of cocaine self-administration",
+      "attributes": {
+        "context": "suppression of cocaine self-administration produced by d-amphetamine"
+      },
+      "source_chunk_ids": [
+        "84b0c5deb9ccfd550d8548bcc03a3b52"
+      ]
+    },
+    {
+      "id": "ent_448",
+      "type": "Compound",
+      "name": "d-amphetamine",
+      "attributes": {
+        "context": "produced by d-amphetamine"
+      },
+      "source_chunk_ids": [
+        "84b0c5deb9ccfd550d8548bcc03a3b52"
+      ]
+    },
+    {
+      "id": "ent_449",
+      "type": "PharmEffect",
+      "name": "reducing cocaine self-administration",
+      "attributes": {
+        "context": "selectivity in reducing cocaine self-administration"
+      },
+      "source_chunk_ids": [
+        "84b0c5deb9ccfd550d8548bcc03a3b52"
+      ]
+    },
+    {
+      "id": "ent_450",
+      "type": "Compound",
+      "name": "d-amphetamine",
+      "attributes": {
+        "context": "formulation of d-amphetamine is effective"
+      },
+      "source_chunk_ids": [
+        "84b0c5deb9ccfd550d8548bcc03a3b52"
+      ]
+    },
+    {
+      "id": "ent_451",
+      "type": "PharmEffect",
+      "name": "maintaining cocaine addicts in treatment",
+      "attributes": {
+        "context": "effective in maintaining cocaine addicts in treatment"
+      },
+      "source_chunk_ids": [
+        "84b0c5deb9ccfd550d8548bcc03a3b52"
+      ]
+    },
+    {
+      "id": "ent_452",
+      "type": "PharmEffect",
+      "name": "reducing illicit cocaine use",
+      "attributes": {
+        "context": "reducing illicit cocaine use"
+      },
+      "source_chunk_ids": [
+        "84b0c5deb9ccfd550d8548bcc03a3b52"
+      ]
+    },
+    {
+      "id": "ent_453",
+      "type": "Compound",
+      "name": "PAL-287",
+      "attributes": {
+        "context": "agents such as PAL-287"
+      },
+      "source_chunk_ids": [
+        "84b0c5deb9ccfd550d8548bcc03a3b52"
+      ]
+    },
+    {
+      "id": "ent_454",
+      "type": "PharmEffect",
+      "name": "mixed DA/5-HT-releasing activity",
+      "attributes": {
+        "context": "which have mixed DA/5-HT-releasing activity"
+      },
+      "source_chunk_ids": [
+        "84b0c5deb9ccfd550d8548bcc03a3b52"
+      ]
+    },
+    {
+      "id": "ent_455",
+      "type": "PharmEffect",
+      "name": "therapeutic effects",
+      "attributes": {
+        "context": "will possess the therapeutic effects"
+      },
+      "source_chunk_ids": [
+        "84b0c5deb9ccfd550d8548bcc03a3b52"
+      ]
+    },
+    {
+      "id": "ent_456",
+      "type": "Compound",
+      "name": "amphetamine-type monoamine releasers",
+      "attributes": {
+        "context": "effects of amphetamine-type monoamine releasers"
+      },
+      "source_chunk_ids": [
+        "84b0c5deb9ccfd550d8548bcc03a3b52"
+      ]
+    },
+    {
+      "id": "ent_457",
+      "type": "PharmEffect",
+      "name": "minimizing the adverse effects",
+      "attributes": {
+        "context": "minimizing the adverse effects"
+      },
+      "source_chunk_ids": [
+        "84b0c5deb9ccfd550d8548bcc03a3b52"
+      ]
+    },
+    {
+      "id": "ent_458",
+      "type": "Compound",
+      "name": "phenethylamine structure",
+      "attributes": {
+        "context": "associated with the phenethylamine structure"
+      },
+      "source_chunk_ids": [
+        "84b0c5deb9ccfd550d8548bcc03a3b52"
+      ]
+    },
+    {
+      "id": "ent_459",
+      "type": "Compound",
+      "name": "dual DA/5-HT releasers",
+      "attributes": {
+        "context": "observations that dual DA/5-HT releasers"
+      },
+      "source_chunk_ids": [
+        "84b0c5deb9ccfd550d8548bcc03a3b52"
+      ]
+    },
+    {
+      "id": "ent_460",
+      "type": "PharmEffect",
+      "name": "suppress alcohol ingestion",
+      "attributes": {
+        "context": "releasers suppress alcohol ingestion"
+      },
+      "source_chunk_ids": [
+        "84b0c5deb9ccfd550d8548bcc03a3b52"
+      ]
+    },
+    {
+      "id": "ent_461",
+      "type": "Compound",
+      "name": "PAL-287",
+      "attributes": {
+        "context": "that PAL-287 or similar agents"
+      },
+      "source_chunk_ids": [
+        "84b0c5deb9ccfd550d8548bcc03a3b52"
+      ]
+    },
+    {
+      "id": "ent_462",
+      "type": "Indication",
+      "name": "alcohol addiction",
+      "attributes": {
+        "context": "alcohol addiction"
+      },
+      "source_chunk_ids": [
+        "f7a131a0b3f48442c08655d370849fb0"
+      ]
+    },
+    {
+      "id": "ent_463",
+      "type": "Compound",
+      "name": "DA",
+      "attributes": {
+        "context": "treatment with DA"
+      },
+      "source_chunk_ids": [
+        "f7a131a0b3f48442c08655d370849fb0"
+      ]
+    },
+    {
+      "id": "ent_464",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "and 5-HT releasers"
+      },
+      "source_chunk_ids": [
+        "f7a131a0b3f48442c08655d370849fb0"
+      ]
+    },
+    {
+      "id": "ent_465",
+      "type": "PharmEffect",
+      "name": "releasers",
+      "attributes": {
+        "context": "5-HT releasers"
+      },
+      "source_chunk_ids": [
+        "f7a131a0b3f48442c08655d370849fb0"
+      ]
+    },
+    {
+      "id": "ent_466",
+      "type": "PharmEffect",
+      "name": "blocks alcohol withdrawal seizures",
+      "attributes": {
+        "context": "releasers blocks alcohol withdrawal seizures"
+      },
+      "source_chunk_ids": [
+        "f7a131a0b3f48442c08655d370849fb0"
+      ]
+    },
+    {
+      "id": "ent_467",
+      "type": "Indication",
+      "name": "alcohol withdrawal seizures",
+      "attributes": {
+        "context": "blocks alcohol withdrawal seizures"
+      },
+      "source_chunk_ids": [
+        "f7a131a0b3f48442c08655d370849fb0"
+      ]
+    },
+    {
+      "id": "ent_468",
+      "type": "Compound",
+      "name": "PAL-287",
+      "attributes": {
+        "context": "to refine PAL-287"
+      },
+      "source_chunk_ids": [
+        "f7a131a0b3f48442c08655d370849fb0"
+      ]
+    },
+    {
+      "id": "ent_469",
+      "type": "PharmEffect",
+      "name": "reduce its potency",
+      "attributes": {
+        "context": "to reduce its potency"
+      },
+      "source_chunk_ids": [
+        "f7a131a0b3f48442c08655d370849fb0"
+      ]
+    },
+    {
+      "id": "ent_470",
+      "type": "Compound",
+      "name": "5-HT2B receptors",
+      "attributes": {
+        "context": "potency at 5-HT2B receptors"
+      },
+      "source_chunk_ids": [
+        "f7a131a0b3f48442c08655d370849fb0"
+      ]
+    },
+    {
+      "id": "ent_471",
+      "type": "PharmEffect",
+      "name": "enhance monoamine release",
+      "attributes": {
+        "context": "drugs that enhance monoamine release"
+      },
+      "source_chunk_ids": [
+        "f7a131a0b3f48442c08655d370849fb0"
+      ]
+    },
+    {
+      "id": "ent_472",
+      "type": "PharmEffect",
+      "name": "acting as substrates",
+      "attributes": {
+        "context": "acting as substrates at multiple transporters"
+      },
+      "source_chunk_ids": [
+        "f7a131a0b3f48442c08655d370849fb0"
+      ]
+    },
+    {
+      "id": "ent_473",
+      "type": "Compound",
+      "name": "Dopamine",
+      "attributes": {
+        "context": "Dopamine and drug addiction"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_474",
+      "type": "Indication",
+      "name": "drug addiction",
+      "attributes": {
+        "context": "Dopamine and drug addiction"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_475",
+      "type": "Compound",
+      "name": "5-HT(2C) receptors",
+      "attributes": {
+        "context": "Role of 5-HT(2C) receptors"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_476",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "central dopamine function"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_477",
+      "type": "Compound",
+      "name": "SB 242084",
+      "attributes": {
+        "context": "SB 242084, a selective serotonin2C receptor antagonist"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_478",
+      "type": "Compound",
+      "name": "serotonin2C receptor antagonist",
+      "attributes": {
+        "context": "selective serotonin2C receptor antagonist"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_479",
+      "type": "PharmEffect",
+      "name": "increases dopaminergic transmission",
+      "attributes": {
+        "context": "increases dopaminergic transmission"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_480",
+      "type": "Compound",
+      "name": "RO 60-0175",
+      "attributes": {
+        "context": "RO 60-0175 inhibits mesolimbic dopaminergic function"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_481",
+      "type": "PharmEffect",
+      "name": "inhibits mesolimbic dopaminergic function",
+      "attributes": {
+        "context": "RO 60-0175 inhibits mesolimbic dopaminergic function"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_482",
+      "type": "Compound",
+      "name": "serotonin(2C) receptors",
+      "attributes": {
+        "context": "through serotonin(2C) receptors"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_483",
+      "type": "Compound",
+      "name": "3,4-methylenedioxymethamphetamine",
+      "attributes": {
+        "context": "3,4-methylenedioxymethamphetamine abuse"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_484",
+      "type": "Indication",
+      "name": "valvular heart disease",
+      "attributes": {
+        "context": "valvular heart disease"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_485",
+      "type": "Compound",
+      "name": "serotonin transporter",
+      "attributes": {
+        "context": "Induction of serotonin transporter"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_486",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "mitogenic action of serotonin"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_487",
+      "type": "PharmEffect",
+      "name": "mitogenic action",
+      "attributes": {
+        "context": "mitogenic action of serotonin"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_488",
+      "type": "Indication",
+      "name": "pulmonary hypertension",
+      "attributes": {
+        "context": "in pulmonary hypertension"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_489",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "serotonin-induced smooth muscle hyperplasia"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_490",
+      "type": "PharmEffect",
+      "name": "smooth muscle hyperplasia",
+      "attributes": {
+        "context": "serotonin-induced smooth muscle hyperplasia"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_491",
+      "type": "Compound",
+      "name": "Serotonin transporter",
+      "attributes": {
+        "context": "Serotonin transporter overexpression"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_492",
+      "type": "PharmEffect",
+      "name": "smooth muscle hyperplasia",
+      "attributes": {
+        "context": "pulmonary artery smooth muscle hyperplasia"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_493",
+      "type": "Indication",
+      "name": "primary pulmonary hypertension",
+      "attributes": {
+        "context": "in primary pulmonary hypertension"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_494",
+      "type": "Compound",
+      "name": "mCPP",
+      "attributes": {
+        "context": "Effects of mCPP on the extracellular concentrations"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_495",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "concentrations of serotonin and dopamine"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_496",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "concentrations of serotonin and dopamine"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_497",
+      "type": "PharmEffect",
+      "name": "Hyperlocomotive effects",
+      "attributes": {
+        "context": "Hyperlocomotive and discriminative stimulus effects"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_498",
+      "type": "PharmEffect",
+      "name": "discriminative stimulus effects",
+      "attributes": {
+        "context": "discriminative stimulus effects of cocaine"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_499",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "effects of cocaine"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_500",
+      "type": "Compound",
+      "name": "serotonin(2C) (5-HT(2C)) receptors",
+      "attributes": {
+        "context": "control of serotonin(2C) (5-HT(2C)) receptors"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_501",
+      "type": "Compound",
+      "name": "Aminorex",
+      "attributes": {
+        "context": "Aminorex to fen/phen"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_502",
+      "type": "Compound",
+      "name": "fen/phen",
+      "attributes": {
+        "context": "Aminorex to fen/phen"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_503",
+      "type": "Compound",
+      "name": "serotonin 5-HT2B receptors",
+      "attributes": {
+        "context": "valvular serotonin 5-HT2B receptors"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_504",
+      "type": "Indication",
+      "name": "cardiopathy",
+      "attributes": {
+        "context": "in the cardiopathy associated with fenfluramine"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_505",
+      "type": "Compound",
+      "name": "fenfluramine",
+      "attributes": {
+        "context": "associated with fenfluramine"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_506",
+      "type": "Compound",
+      "name": "amphetamines",
+      "attributes": {
+        "context": "action of amphetamines"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_507",
+      "type": "Compound",
+      "name": "5-HT2C receptor agonist",
+      "attributes": {
+        "context": "the 5-HT2C receptor agonist Ro60-0175"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_508",
+      "type": "Compound",
+      "name": "Ro60-0175",
+      "attributes": {
+        "context": "the 5-HT2C receptor agonist Ro60-0175"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_509",
+      "type": "PharmEffect",
+      "name": "reduces cocaine-induced locomotor activity",
+      "attributes": {
+        "context": "reduces cocaine-induced locomotor activity"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_510",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "cocaine-induced locomotor activity"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_511",
+      "type": "PharmEffect",
+      "name": "cocaine self-administration",
+      "attributes": {
+        "context": "cocaine self-administration"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_512",
+      "type": "Compound",
+      "name": "5-HT(2A) receptor antagonist",
+      "attributes": {
+        "context": "the 5-HT(2A) receptor antagonist M100907"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_513",
+      "type": "Compound",
+      "name": "M100907",
+      "attributes": {
+        "context": "the 5-HT(2A) receptor antagonist M100907"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_514",
+      "type": "Compound",
+      "name": "5-HT(2C) receptor antagonist",
+      "attributes": {
+        "context": "the 5-HT(2C) receptor antagonist SB242084"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_515",
+      "type": "Compound",
+      "name": "SB242084",
+      "attributes": {
+        "context": "the 5-HT(2C) receptor antagonist SB242084"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_516",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "cocaine-induced locomotor activity"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_517",
+      "type": "PharmEffect",
+      "name": "locomotor activity",
+      "attributes": {
+        "context": "cocaine-induced locomotor activity"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_518",
+      "type": "PharmEffect",
+      "name": "cocaine self-administration",
+      "attributes": {
+        "context": "cocaine self-administration"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_519",
+      "type": "PharmEffect",
+      "name": "cocaine-induced reinstatement of responding",
+      "attributes": {
+        "context": "cocaine-induced reinstatement of responding"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_520",
+      "type": "Compound",
+      "name": "aminorex",
+      "attributes": {
+        "context": "use of aminorex and pulmonary hypertension"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_521",
+      "type": "Indication",
+      "name": "pulmonary hypertension",
+      "attributes": {
+        "context": "and pulmonary hypertension"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_522",
+      "type": "Compound",
+      "name": "Cocaine",
+      "attributes": {
+        "context": "Cocaine use disorders"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_523",
+      "type": "Indication",
+      "name": "use disorders",
+      "attributes": {
+        "context": "Cocaine use disorders"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_524",
+      "type": "Indication",
+      "name": "suicidal ideation",
+      "attributes": {
+        "context": "and suicidal ideation"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_525",
+      "type": "PharmEffect",
+      "name": "Abstinence symptomatology",
+      "attributes": {
+        "context": "Abstinence symptomatology and psychiatric diagnosis"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_526",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "in cocaine abusers"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_527",
+      "type": "PharmEffect",
+      "name": "Serotonergic responsiveness",
+      "attributes": {
+        "context": "Serotonergic responsiveness in human cocaine users"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_528",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "in human cocaine users"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_529",
+      "type": "PharmEffect",
+      "name": "Inhibition of cocaine self-administration",
+      "attributes": {
+        "context": "Inhibition of cocaine self-administration"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_530",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "cocaine self-administration"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_531",
+      "type": "Compound",
+      "name": "fluoxetine",
+      "attributes": {
+        "context": "by fluoxetine or D-fenfluramine"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_532",
+      "type": "Compound",
+      "name": "D-fenfluramine",
+      "attributes": {
+        "context": "or D-fenfluramine combined with phentermine"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_533",
+      "type": "Compound",
+      "name": "phentermine",
+      "attributes": {
+        "context": "combined with phentermine"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_534",
+      "type": "Compound",
+      "name": "Phentermine/fenfluramine",
+      "attributes": {
+        "context": "Phentermine/fenfluramine decreases cocaine self-administration"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_535",
+      "type": "PharmEffect",
+      "name": "decreases cocaine self-administration",
+      "attributes": {
+        "context": "decreases cocaine self-administration"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_536",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "cocaine self-administration"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_537",
+      "type": "Compound",
+      "name": "dopamine reuptake inhibitors",
+      "attributes": {
+        "context": "Effects of dopamine reuptake inhibitors"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_538",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "food- and cocaine-maintained responding"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_539",
+      "type": "Compound",
+      "name": "Serotonin(2C) receptors",
+      "attributes": {
+        "context": "Serotonin(2C) receptors tonically suppress the activity"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_540",
+      "type": "PharmEffect",
+      "name": "suppress the activity",
+      "attributes": {
+        "context": "tonically suppress the activity"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_541",
+      "type": "PharmEffect",
+      "name": "dopaminergic",
+      "attributes": {
+        "context": "mesocortical dopaminergic and adrenergic"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_542",
+      "type": "PharmEffect",
+      "name": "adrenergic",
+      "attributes": {
+        "context": "dopaminergic and adrenergic"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_543",
+      "type": "PharmEffect",
+      "name": "serotonergic",
+      "attributes": {
+        "context": "but not serotonergic, pathways"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_544",
+      "type": "Compound",
+      "name": "Cocaine",
+      "attributes": {
+        "context": "Cocaine and methamphetamine"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_545",
+      "type": "Compound",
+      "name": "methamphetamine",
+      "attributes": {
+        "context": "and methamphetamine: differential addiction rates"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_546",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "differential addiction rates"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_547",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "approaches to cocaine abuse treatment"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_548",
+      "type": "Indication",
+      "name": "cocaine abuse",
+      "attributes": {
+        "context": "cocaine abuse treatment"
+      },
+      "source_chunk_ids": [
+        "2247895d58a9f60c63ac70cb44ea9956"
+      ]
+    },
+    {
+      "id": "ent_549",
+      "type": "Compound",
+      "name": "methylphenidate",
+      "attributes": {
+        "context": "for cocaine dependence: methylphenidate."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_550",
+      "type": "Indication",
+      "name": "cocaine dependence",
+      "attributes": {
+        "context": "for cocaine dependence: methylphenidate."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_551",
+      "type": "Compound",
+      "name": "Dextroamphetamine",
+      "attributes": {
+        "context": "Dextroamphetamine for cocaine-dependence treatment"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_552",
+      "type": "Indication",
+      "name": "cocaine-dependence",
+      "attributes": {
+        "context": "Dextroamphetamine for cocaine-dependence treatment"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_553",
+      "type": "PharmEffect",
+      "name": "Agonist-like",
+      "attributes": {
+        "context": "Agonist-like or antagonist-like treatment"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_554",
+      "type": "PharmEffect",
+      "name": "antagonist-like",
+      "attributes": {
+        "context": "Agonist-like or antagonist-like treatment"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_555",
+      "type": "Indication",
+      "name": "cocaine dependence",
+      "attributes": {
+        "context": "treatment for cocaine dependence with methadone"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_556",
+      "type": "Compound",
+      "name": "methadone",
+      "attributes": {
+        "context": "with methadone for heroin dependence"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_557",
+      "type": "Indication",
+      "name": "heroin dependence",
+      "attributes": {
+        "context": "for heroin dependence"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_558",
+      "type": "PharmEffect",
+      "name": "Agonist-like",
+      "attributes": {
+        "context": "Agonist-like, replacement pharmacotherapy"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_559",
+      "type": "PharmEffect",
+      "name": "replacement pharmacotherapy",
+      "attributes": {
+        "context": "replacement pharmacotherapy for stimulant abuse and dependence."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_560",
+      "type": "Indication",
+      "name": "stimulant abuse",
+      "attributes": {
+        "context": "for stimulant abuse and dependence."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_561",
+      "type": "Indication",
+      "name": "dependence",
+      "attributes": {
+        "context": "stimulant abuse and dependence."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_562",
+      "type": "Indication",
+      "name": "stimulant abuse",
+      "attributes": {
+        "context": "The science of stimulant abuse."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_563",
+      "type": "Compound",
+      "name": "5-HT(2C) receptors",
+      "attributes": {
+        "context": "role of 5-HT(2C) receptors on cocaine- and food-maintained behavior."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_564",
+      "type": "PharmEffect",
+      "name": "cocaine-maintained behavior",
+      "attributes": {
+        "context": "on cocaine- and food-maintained behavior."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_565",
+      "type": "Compound",
+      "name": "Aminorex",
+      "attributes": {
+        "context": "Aminorex and pulmonary hypertension."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_566",
+      "type": "Indication",
+      "name": "pulmonary hypertension",
+      "attributes": {
+        "context": "Aminorex and pulmonary hypertension."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_567",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "Long-term serotonin administration induces heart valve disease"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_568",
+      "type": "Indication",
+      "name": "heart valve disease",
+      "attributes": {
+        "context": "induces heart valve disease in rats."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_569",
+      "type": "PharmEffect",
+      "name": "Mitogenic",
+      "attributes": {
+        "context": "Mitogenic and secretory responses of human valve interstitial cells"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_570",
+      "type": "PharmEffect",
+      "name": "secretory responses",
+      "attributes": {
+        "context": "secretory responses of human valve interstitial cells to vasoactive agents."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_571",
+      "type": "Compound",
+      "name": "vasoactive agents",
+      "attributes": {
+        "context": "to vasoactive agents."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_572",
+      "type": "PharmEffect",
+      "name": "monoamine oxidase inhibition",
+      "attributes": {
+        "context": "Role of monoamine oxidase inhibition and monoamine depletion"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_573",
+      "type": "PharmEffect",
+      "name": "monoamine depletion",
+      "attributes": {
+        "context": "monoamine oxidase inhibition and monoamine depletion in fenfluramine-induced neurotoxicity"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_574",
+      "type": "Compound",
+      "name": "fenfluramine",
+      "attributes": {
+        "context": "in fenfluramine-induced neurotoxicity and serotonin release."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_575",
+      "type": "PharmEffect",
+      "name": "neurotoxicity",
+      "attributes": {
+        "context": "fenfluramine-induced neurotoxicity and serotonin release."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_576",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "neurotoxicity and serotonin release."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_577",
+      "type": "PharmEffect",
+      "name": "serotonin release",
+      "attributes": {
+        "context": "and serotonin release."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_578",
+      "type": "Compound",
+      "name": "monoaminergic agonists",
+      "attributes": {
+        "context": "effects of monoaminergic agonists on alcohol intake"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_579",
+      "type": "PharmEffect",
+      "name": "alcohol intake",
+      "attributes": {
+        "context": "on alcohol intake in rats fed a tryptophan-enhanced diet."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_580",
+      "type": "Compound",
+      "name": "tryptophan",
+      "attributes": {
+        "context": "fed a tryptophan-enhanced diet."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_581",
+      "type": "PharmEffect",
+      "name": "alcohol consumption",
+      "attributes": {
+        "context": "Alterations in alcohol consumption, withdrawal seizures"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_582",
+      "type": "Indication",
+      "name": "withdrawal seizures",
+      "attributes": {
+        "context": "alcohol consumption, withdrawal seizures, and monoamine transmission"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_583",
+      "type": "Compound",
+      "name": "monoamine",
+      "attributes": {
+        "context": "and monoamine transmission in rats treated with phentermine"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_584",
+      "type": "Compound",
+      "name": "phentermine",
+      "attributes": {
+        "context": "treated with phentermine and 5-hydroxy-L-tryptophan."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_585",
+      "type": "Compound",
+      "name": "5-hydroxy-L-tryptophan",
+      "attributes": {
+        "context": "and 5-hydroxy-L-tryptophan."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_586",
+      "type": "PharmEffect",
+      "name": "Neuroendocrine effects",
+      "attributes": {
+        "context": "Neuroendocrine effects of D-fenfluramine and bromocriptine"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_587",
+      "type": "Compound",
+      "name": "D-fenfluramine",
+      "attributes": {
+        "context": "of D-fenfluramine and bromocriptine following repeated smoked cocaine"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_588",
+      "type": "Compound",
+      "name": "bromocriptine",
+      "attributes": {
+        "context": "and bromocriptine following repeated smoked cocaine in humans."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_589",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "repeated smoked cocaine in humans."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_590",
+      "type": "Indication",
+      "name": "Aortic and mitral valve disease",
+      "attributes": {
+        "context": "Aortic and mitral valve disease induced by ergotamine therapy"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_591",
+      "type": "Compound",
+      "name": "ergotamine",
+      "attributes": {
+        "context": "induced by ergotamine therapy for migraine"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_592",
+      "type": "Indication",
+      "name": "migraine",
+      "attributes": {
+        "context": "therapy for migraine: a case report"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_593",
+      "type": "Compound",
+      "name": "Nicotine",
+      "attributes": {
+        "context": "Nicotine medications for smoking cessation."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_594",
+      "type": "PharmEffect",
+      "name": "smoking cessation",
+      "attributes": {
+        "context": "for smoking cessation."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_595",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "Increased plasma serotonin in primary pulmonary hypertension."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_596",
+      "type": "Indication",
+      "name": "primary pulmonary hypertension",
+      "attributes": {
+        "context": "in primary pulmonary hypertension."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_597",
+      "type": "Compound",
+      "name": "Serotonin",
+      "attributes": {
+        "context": "Serotonin and drug reward: focus on 5-HT2C receptors."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_598",
+      "type": "PharmEffect",
+      "name": "drug reward",
+      "attributes": {
+        "context": "Serotonin and drug reward: focus on 5-HT2C receptors."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_599",
+      "type": "Compound",
+      "name": "5-HT2C receptors",
+      "attributes": {
+        "context": "focus on 5-HT2C receptors."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_600",
+      "type": "PharmEffect",
+      "name": "Serotonergic modulation",
+      "attributes": {
+        "context": "Serotonergic modulation of the behavioral effects of cocaine"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_601",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "behavioral effects of cocaine in the squirrel monkey."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_602",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "combined dopamine and serotonin transporter inhibitors"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_603",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "dopamine and serotonin transporter inhibitors on cocaine self-administration"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_604",
+      "type": "PharmEffect",
+      "name": "transporter inhibitors",
+      "attributes": {
+        "context": "serotonin transporter inhibitors on cocaine self-administration"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_605",
+      "type": "PharmEffect",
+      "name": "cocaine self-administration",
+      "attributes": {
+        "context": "on cocaine self-administration in rhesus monkeys."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_606",
+      "type": "Compound",
+      "name": "5-hydroxytryptamine",
+      "attributes": {
+        "context": "receptors for 5-hydroxytryptamine (serotonin)."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_607",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "5-hydroxytryptamine (serotonin)."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_608",
+      "type": "Compound",
+      "name": "5-HT receptors",
+      "attributes": {
+        "context": "diversity of 5-HT receptors."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_609",
+      "type": "Indication",
+      "name": "Addiction",
+      "attributes": {
+        "context": "Addiction: a disease of learning and memory."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_610",
+      "type": "Compound",
+      "name": "trazodone",
+      "attributes": {
+        "context": "concentrations of trazodone and its active metabolite m-chlorophenylpiperazine."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_611",
+      "type": "Compound",
+      "name": "m-chlorophenylpiperazine",
+      "attributes": {
+        "context": "active metabolite m-chlorophenylpiperazine."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_612",
+      "type": "Compound",
+      "name": "Neurotransmitter transporters",
+      "attributes": {
+        "context": "Neurotransmitter transporters and their impact on the development of psychopharmacology."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_613",
+      "type": "Indication",
+      "name": "Drug addiction",
+      "attributes": {
+        "context": "Drug addiction as a pathology of staged neuroplasticity."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_614",
+      "type": "PharmEffect",
+      "name": "neuroplasticity",
+      "attributes": {
+        "context": "pathology of staged neuroplasticity."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_615",
+      "type": "Compound",
+      "name": "phentermine",
+      "attributes": {
+        "context": "combination of phentermine and fenfluramine reduced cocaine withdrawal symptoms"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_616",
+      "type": "Compound",
+      "name": "fenfluramine",
+      "attributes": {
+        "context": "phentermine and fenfluramine reduced cocaine withdrawal symptoms"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_617",
+      "type": "Indication",
+      "name": "cocaine withdrawal symptoms",
+      "attributes": {
+        "context": "reduced cocaine withdrawal symptoms in an open trial."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_618",
+      "type": "Indication",
+      "name": "Alcoholism",
+      "attributes": {
+        "context": "Alcoholism: allostasis and beyond."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_619",
+      "type": "PharmEffect",
+      "name": "allostasis",
+      "attributes": {
+        "context": "Alcoholism: allostasis and beyond."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_620",
+      "type": "Compound",
+      "name": "ethanol",
+      "attributes": {
+        "context": "Neurocircuitry targets in ethanol reward and dependence."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_621",
+      "type": "PharmEffect",
+      "name": "ethanol reward",
+      "attributes": {
+        "context": "in ethanol reward and dependence."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_622",
+      "type": "Indication",
+      "name": "dependence",
+      "attributes": {
+        "context": "ethanol reward and dependence."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_623",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "Function of the serotonin 5-hydroxytryptamine 2B receptor"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_624",
+      "type": "Compound",
+      "name": "5-hydroxytryptamine 2B receptor",
+      "attributes": {
+        "context": "serotonin 5-hydroxytryptamine 2B receptor in pulmonary hypertension."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_625",
+      "type": "Indication",
+      "name": "pulmonary hypertension",
+      "attributes": {
+        "context": "2B receptor in pulmonary hypertension."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_626",
+      "type": "Indication",
+      "name": "Alcohol dependence",
+      "attributes": {
+        "context": "Alcohol dependence and gene x environment interaction"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_627",
+      "type": "PharmEffect",
+      "name": "emotion regulation",
+      "attributes": {
+        "context": "environment interaction in emotion regulation: is serotonin the link?."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_628",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "is serotonin the link?."
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_629",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "Repeated cocaine exposure inhibits the adrenocorticotropin hormone"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    },
+    {
+      "id": "ent_630",
+      "type": "Compound",
+      "name": "adrenocorticotropin hormone",
+      "attributes": {
+        "context": "inhibits the adrenocorticotropin hormone"
+      },
+      "source_chunk_ids": [
+        "56f037687b805892b4ee0e2f35c32d68"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:03.790441+00:00",
+    "original_file": "entities.json"
+  }
+}

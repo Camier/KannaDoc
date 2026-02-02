@@ -1,0 +1,3236 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "467783dd698afc87114c37f9873084c3b8b4d2191d85c1f2d81342f7bc79934d",
+  "extracted_at": "2026-02-01T08:37:09.714968+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "Indication",
+      "name": "Depression",
+      "attributes": {
+        "context": "Clinical Depression"
+      },
+      "source_chunk_ids": [
+        "e339c745ac84b867549bc7e2b312be83"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Indication",
+      "name": "Depression",
+      "attributes": {
+        "context": "Neurochemistry of Depression"
+      },
+      "source_chunk_ids": [
+        "e339c745ac84b867549bc7e2b312be83"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "Indication",
+      "name": "Depression",
+      "attributes": {
+        "context": "Behavioral Model of Depression"
+      },
+      "source_chunk_ids": [
+        "e339c745ac84b867549bc7e2b312be83"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "Compound",
+      "name": "Antidepressants",
+      "attributes": {
+        "context": "e. Antidepressants"
+      },
+      "source_chunk_ids": [
+        "e339c745ac84b867549bc7e2b312be83"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "Compound",
+      "name": "Alkaloid",
+      "attributes": {
+        "context": "Alkaloid Chemistry"
+      },
+      "source_chunk_ids": [
+        "e339c745ac84b867549bc7e2b312be83"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "Compound",
+      "name": "Mesembrine",
+      "attributes": {
+        "context": "The Mesembrine family"
+      },
+      "source_chunk_ids": [
+        "e339c745ac84b867549bc7e2b312be83"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "Compound",
+      "name": "Mesembrine",
+      "attributes": {
+        "context": "Pharmacological Activity of Mesembrine"
+      },
+      "source_chunk_ids": [
+        "e339c745ac84b867549bc7e2b312be83"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Indication",
+      "name": "major depressive disorder",
+      "attributes": {
+        "context": "characterizes major depressive disorder"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "Indication",
+      "name": "major depressive episode",
+      "attributes": {
+        "context": "or a major depressive episode"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "PharmEffect",
+      "name": "depressed mood",
+      "attributes": {
+        "context": "having a depressed mood"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "PharmEffect",
+      "name": "feelings of worthlessness",
+      "attributes": {
+        "context": "including feelings of worthlessness"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "PharmEffect",
+      "name": "excessive guilt",
+      "attributes": {
+        "context": "or excessive guilt"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "PharmEffect",
+      "name": "decreases in interest in pleasurable activities or relationships",
+      "attributes": {
+        "context": "decreases in interest in pleasurable activities or relationships"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "PharmEffect",
+      "name": "anhedonia",
+      "attributes": {
+        "context": "(also called anhedonia)"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "PharmEffect",
+      "name": "fatigue",
+      "attributes": {
+        "context": "anhedonia), fatigue"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "PharmEffect",
+      "name": "impaired concentration",
+      "attributes": {
+        "context": "fatigue, impaired concentration"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "PharmEffect",
+      "name": "insomnia",
+      "attributes": {
+        "context": "concentration, insomnia"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "PharmEffect",
+      "name": "hypersomnia",
+      "attributes": {
+        "context": "insomnia or hypersomnia"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "PharmEffect",
+      "name": "significant weight loss",
+      "attributes": {
+        "context": "significant weight loss or gain"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "PharmEffect",
+      "name": "significant weight gain",
+      "attributes": {
+        "context": "significant weight loss or gain"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "PharmEffect",
+      "name": "aches and pains",
+      "attributes": {
+        "context": "aches and pains in various parts of the body"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "PharmEffect",
+      "name": "restlessness",
+      "attributes": {
+        "context": "body, restlessness"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "PharmEffect",
+      "name": "thoughts of death or suicide",
+      "attributes": {
+        "context": "and thoughts of death or suicide"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "PharmEffect",
+      "name": "irritability",
+      "attributes": {
+        "context": "such as irritability"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "Indication",
+      "name": "drug or alcohol abuse",
+      "attributes": {
+        "context": "and drug or alcohol abuse"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "Indication",
+      "name": "anxiety disorders",
+      "attributes": {
+        "context": "Many anxiety disorders"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "Indication",
+      "name": "post-traumatic stress disorder",
+      "attributes": {
+        "context": "such as post-traumatic stress disorder"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "Indication",
+      "name": "PTSD",
+      "attributes": {
+        "context": "(PTSD)"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "Indication",
+      "name": "panic disorder",
+      "attributes": {
+        "context": "PTSD), panic disorder"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "Indication",
+      "name": "social phobia",
+      "attributes": {
+        "context": "panic disorder, social phobia"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "Indication",
+      "name": "generalized anxiety disorder",
+      "attributes": {
+        "context": "and generalized anxiety disorder"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "tend to coexist with depression"
+      },
+      "source_chunk_ids": [
+        "080a3594175d8b1fae0285b0cb88cc3f"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "Treatment of depression varies"
+      },
+      "source_chunk_ids": [
+        "d0f81e7962d80a18dc3b671009f80fea"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "Indication",
+      "name": "disorder",
+      "attributes": {
+        "context": "severity of the disorder"
+      },
+      "source_chunk_ids": [
+        "d0f81e7962d80a18dc3b671009f80fea"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "Compound",
+      "name": "antidepressants",
+      "attributes": {
+        "context": "medications such as antidepressants"
+      },
+      "source_chunk_ids": [
+        "d0f81e7962d80a18dc3b671009f80fea"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "afflicted with depression"
+      },
+      "source_chunk_ids": [
+        "d0f81e7962d80a18dc3b671009f80fea"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "The neurochemistry of depression"
+      },
+      "source_chunk_ids": [
+        "8b04cc10be5c0d3cf000ea42dd17cab9"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "Compound",
+      "name": "neurotransmitters",
+      "attributes": {
+        "context": "systems of neurotransmitters"
+      },
+      "source_chunk_ids": [
+        "8b04cc10be5c0d3cf000ea42dd17cab9"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "Compound",
+      "name": "corticotropin",
+      "attributes": {
+        "context": "involves the corticotropin-"
+      },
+      "source_chunk_ids": [
+        "8b04cc10be5c0d3cf000ea42dd17cab9"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "Compound",
+      "name": "CRF",
+      "attributes": {
+        "context": "releasing factor (CRF) system"
+      },
+      "source_chunk_ids": [
+        "0c2bb05946b91d4886a7458a6c800988"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "Indication",
+      "name": "stress",
+      "attributes": {
+        "context": "role in stress"
+      },
+      "source_chunk_ids": [
+        "0c2bb05946b91d4886a7458a6c800988"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "Compound",
+      "name": "peptide",
+      "attributes": {
+        "context": "CRF is a peptide"
+      },
+      "source_chunk_ids": [
+        "0c2bb05946b91d4886a7458a6c800988"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "Compound",
+      "name": "ACTH",
+      "attributes": {
+        "context": "adrenocorticotropic hormone (ACTH)"
+      },
+      "source_chunk_ids": [
+        "0c2bb05946b91d4886a7458a6c800988"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "Compound",
+      "name": "glucocorticoids",
+      "attributes": {
+        "context": "secrete glucocorticoids"
+      },
+      "source_chunk_ids": [
+        "0c2bb05946b91d4886a7458a6c800988"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "Compound",
+      "name": "cortisol",
+      "attributes": {
+        "context": "primarily cortisol"
+      },
+      "source_chunk_ids": [
+        "0c2bb05946b91d4886a7458a6c800988"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "Compound",
+      "name": "CRH",
+      "attributes": {
+        "context": "CRH is produced"
+      },
+      "source_chunk_ids": [
+        "0c2bb05946b91d4886a7458a6c800988"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "Indication",
+      "name": "major depression",
+      "attributes": {
+        "context": "developing major depression"
+      },
+      "source_chunk_ids": [
+        "0c2bb05946b91d4886a7458a6c800988"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "implicated in depression"
+      },
+      "source_chunk_ids": [
+        "0c2bb05946b91d4886a7458a6c800988"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "such as serotonin, dopamine, and norepinephrine."
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "such as serotonin, dopamine, and norepinephrine."
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "Compound",
+      "name": "norepinephrine",
+      "attributes": {
+        "context": "such as serotonin, dopamine, and norepinephrine."
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "Compound",
+      "name": "iproniazid",
+      "attributes": {
+        "context": "iproniazid, an antimycobacterial agent"
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "PharmEffect",
+      "name": "antimycobacterial",
+      "attributes": {
+        "context": "an antimycobacterial agent"
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "Indication",
+      "name": "tuberculosis",
+      "attributes": {
+        "context": "treatment for tuberculosis"
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "have psychoactive properties"
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "Compound",
+      "name": "monoamines",
+      "attributes": {
+        "context": "neurotransmitters called monoamines."
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "PharmEffect",
+      "name": "antidepressant",
+      "attributes": {
+        "context": "class of antidepressants"
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "Compound",
+      "name": "monoamine oxidase inhibitors",
+      "attributes": {
+        "context": "monoamine oxidase inhibitors, or MAOIs"
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "Compound",
+      "name": "MAOIs",
+      "attributes": {
+        "context": "monoamine oxidase inhibitors, or MAOIs"
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "Compound",
+      "name": "monoamine oxidase",
+      "attributes": {
+        "context": "The monoamine oxidase family of mitochondrial enzymes"
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "Compound",
+      "name": "monoamine neurotransmitters",
+      "attributes": {
+        "context": "breakdown of monoamine neurotransmitters"
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "Compound",
+      "name": "isocarboxazid",
+      "attributes": {
+        "context": "MAOIs are isocarboxazid (Marplan)"
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "Compound",
+      "name": "phenelzine",
+      "attributes": {
+        "context": "and phenelzine (Nardil)."
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "Indication",
+      "name": "atypical depression",
+      "attributes": {
+        "context": "of atypical depression"
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "Indication",
+      "name": "major depressive disorder",
+      "attributes": {
+        "context": "with major depressive disorder"
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "Compound",
+      "name": "tyramine",
+      "attributes": {
+        "context": "substance called tyramine"
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "Compound",
+      "name": "birth control pills",
+      "attributes": {
+        "context": "types of birth control pills"
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "Compound",
+      "name": "cold and allergy medications",
+      "attributes": {
+        "context": "cold and allergy medications"
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "Compound",
+      "name": "herbal supplements",
+      "attributes": {
+        "context": "certain herbal supplements"
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "Compound",
+      "name": "prescription painkillers",
+      "attributes": {
+        "context": "and prescription painkillers."
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_071",
+      "type": "PharmEffect",
+      "name": "increases in blood pressure",
+      "attributes": {
+        "context": "drastic increases in blood pressure"
+      },
+      "source_chunk_ids": [
+        "d31554bcc8ccef84e737e30d8b527c74"
+      ]
+    },
+    {
+      "id": "ent_072",
+      "type": "Compound",
+      "name": "MAOIs",
+      "attributes": {
+        "context": "with MAOIs"
+      },
+      "source_chunk_ids": [
+        "77106f40096a4abc78edae7a2a860b87"
+      ]
+    },
+    {
+      "id": "ent_073",
+      "type": "Compound",
+      "name": "selegiline",
+      "attributes": {
+        "context": "Emsam (selegiline)"
+      },
+      "source_chunk_ids": [
+        "77106f40096a4abc78edae7a2a860b87"
+      ]
+    },
+    {
+      "id": "ent_074",
+      "type": "PharmEffect",
+      "name": "fewer side effects",
+      "attributes": {
+        "context": "causes fewer side effects"
+      },
+      "source_chunk_ids": [
+        "77106f40096a4abc78edae7a2a860b87"
+      ]
+    },
+    {
+      "id": "ent_075",
+      "type": "Concentration",
+      "name": "low enough doses",
+      "attributes": {
+        "context": "with low enough doses"
+      },
+      "source_chunk_ids": [
+        "77106f40096a4abc78edae7a2a860b87"
+      ]
+    },
+    {
+      "id": "ent_076",
+      "type": "Concentration",
+      "name": "low doses",
+      "attributes": {
+        "context": "low doses also only affect MAO-B"
+      },
+      "source_chunk_ids": [
+        "77106f40096a4abc78edae7a2a860b87"
+      ]
+    },
+    {
+      "id": "ent_077",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "affect MAO-B"
+      },
+      "source_chunk_ids": [
+        "77106f40096a4abc78edae7a2a860b87"
+      ]
+    },
+    {
+      "id": "ent_078",
+      "type": "Compound",
+      "name": "SSRIs",
+      "attributes": {
+        "context": "interact significantly with SSRIs"
+      },
+      "source_chunk_ids": [
+        "77106f40096a4abc78edae7a2a860b87"
+      ]
+    },
+    {
+      "id": "ent_079",
+      "type": "Indication",
+      "name": "serotonin syndrome",
+      "attributes": {
+        "context": "developing serotonin syndrome"
+      },
+      "source_chunk_ids": [
+        "77106f40096a4abc78edae7a2a860b87"
+      ]
+    },
+    {
+      "id": "ent_080",
+      "type": "Indication",
+      "name": "hallucinations",
+      "attributes": {
+        "context": "include hallucinations"
+      },
+      "source_chunk_ids": [
+        "77106f40096a4abc78edae7a2a860b87"
+      ]
+    },
+    {
+      "id": "ent_081",
+      "type": "Indication",
+      "name": "seizures",
+      "attributes": {
+        "context": "hallucinations, seizures"
+      },
+      "source_chunk_ids": [
+        "77106f40096a4abc78edae7a2a860b87"
+      ]
+    },
+    {
+      "id": "ent_082",
+      "type": "PharmEffect",
+      "name": "increased sweating",
+      "attributes": {
+        "context": "increased sweating"
+      },
+      "source_chunk_ids": [
+        "77106f40096a4abc78edae7a2a860b87"
+      ]
+    },
+    {
+      "id": "ent_083",
+      "type": "Indication",
+      "name": "confusion",
+      "attributes": {
+        "context": "sweating, confusion"
+      },
+      "source_chunk_ids": [
+        "77106f40096a4abc78edae7a2a860b87"
+      ]
+    },
+    {
+      "id": "ent_084",
+      "type": "Indication",
+      "name": "muscle stiffness",
+      "attributes": {
+        "context": "confusion, muscle stiffness"
+      },
+      "source_chunk_ids": [
+        "77106f40096a4abc78edae7a2a860b87"
+      ]
+    },
+    {
+      "id": "ent_085",
+      "type": "Indication",
+      "name": "changes in blood pressure",
+      "attributes": {
+        "context": "dangerous changes in blood pressure"
+      },
+      "source_chunk_ids": [
+        "77106f40096a4abc78edae7a2a860b87"
+      ]
+    },
+    {
+      "id": "ent_086",
+      "type": "Indication",
+      "name": "heart arrhythmia",
+      "attributes": {
+        "context": "blood pressure or heart arrhythmia"
+      },
+      "source_chunk_ids": [
+        "77106f40096a4abc78edae7a2a860b87"
+      ]
+    },
+    {
+      "id": "ent_087",
+      "type": "Compound",
+      "name": "paroxetine",
+      "attributes": {
+        "context": "administered with paroxetine"
+      },
+      "source_chunk_ids": [
+        "7c13a9291532e56bc7632070a3fd6cf4"
+      ]
+    },
+    {
+      "id": "ent_088",
+      "type": "Compound",
+      "name": "SSRI",
+      "attributes": {
+        "context": "paroxetine, a very successful SSRI"
+      },
+      "source_chunk_ids": [
+        "7c13a9291532e56bc7632070a3fd6cf4"
+      ]
+    },
+    {
+      "id": "ent_089",
+      "type": "Concentration",
+      "name": "all three doses",
+      "attributes": {
+        "context": "at all three doses of paroxetine"
+      },
+      "source_chunk_ids": [
+        "7c13a9291532e56bc7632070a3fd6cf4"
+      ]
+    },
+    {
+      "id": "ent_090",
+      "type": "Concentration",
+      "name": "the two higher doses",
+      "attributes": {
+        "context": "at the two higher doses"
+      },
+      "source_chunk_ids": [
+        "7c13a9291532e56bc7632070a3fd6cf4"
+      ]
+    },
+    {
+      "id": "ent_091",
+      "type": "Concentration",
+      "name": "the highest dose",
+      "attributes": {
+        "context": "at the highest dose only"
+      },
+      "source_chunk_ids": [
+        "7c13a9291532e56bc7632070a3fd6cf4"
+      ]
+    },
+    {
+      "id": "ent_092",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {
+        "context": "structure of mesembrine"
+      },
+      "source_chunk_ids": [
+        "92fbe71557068478d12b3f463789ae29"
+      ]
+    },
+    {
+      "id": "ent_093",
+      "type": "Compound",
+      "name": "N-methyl-3a-(3',4'-dimethoxyphenyl)-6-oxo-cis-octahydroindole",
+      "attributes": {
+        "context": "found to be N-methyl-3a-(3',4'-dimethoxyphenyl)-6-oxo-cis-octahydroindole"
+      },
+      "source_chunk_ids": [
+        "92fbe71557068478d12b3f463789ae29"
+      ]
+    },
+    {
+      "id": "ent_094",
+      "type": "Compound",
+      "name": "(+/-)-mesembrine",
+      "attributes": {
+        "context": "synthesis of (+/-)-mesembrine"
+      },
+      "source_chunk_ids": [
+        "92fbe71557068478d12b3f463789ae29"
+      ]
+    },
+    {
+      "id": "ent_095",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "Sceletium tortuosum's mechanism of action"
+      },
+      "source_chunk_ids": [
+        "43d624a5a2382dbd97932bd7e24a1632"
+      ]
+    },
+    {
+      "id": "ent_096",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "serotonin (5-HT) transporter system"
+      },
+      "source_chunk_ids": [
+        "43d624a5a2382dbd97932bd7e24a1632"
+      ]
+    },
+    {
+      "id": "ent_097",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "serotonin (5-HT) transporter system"
+      },
+      "source_chunk_ids": [
+        "43d624a5a2382dbd97932bd7e24a1632"
+      ]
+    },
+    {
+      "id": "ent_098",
+      "type": "PharmEffect",
+      "name": "inhibitor of the serotonin (5-HT) transporter system",
+      "attributes": {
+        "context": "identified as an inhibitor of the serotonin (5-HT) transporter system"
+      },
+      "source_chunk_ids": [
+        "43d624a5a2382dbd97932bd7e24a1632"
+      ]
+    },
+    {
+      "id": "ent_099",
+      "type": "PharmEffect",
+      "name": "reuptake of serotonin",
+      "attributes": {
+        "context": "responsible for the reuptake of serotonin"
+      },
+      "source_chunk_ids": [
+        "43d624a5a2382dbd97932bd7e24a1632"
+      ]
+    },
+    {
+      "id": "ent_100",
+      "type": "Compound",
+      "name": "phosphodiesterase-4",
+      "attributes": {
+        "context": "inhibition of the phosphodiesterase-4 (PDE4) enzyme"
+      },
+      "source_chunk_ids": [
+        "43d624a5a2382dbd97932bd7e24a1632"
+      ]
+    },
+    {
+      "id": "ent_101",
+      "type": "Compound",
+      "name": "PDE4",
+      "attributes": {
+        "context": "inhibition of the phosphodiesterase-4 (PDE4) enzyme"
+      },
+      "source_chunk_ids": [
+        "43d624a5a2382dbd97932bd7e24a1632"
+      ]
+    },
+    {
+      "id": "ent_102",
+      "type": "PharmEffect",
+      "name": "inhibition of the phosphodiesterase-4 (PDE4) enzyme",
+      "attributes": {
+        "context": "inhibition of the phosphodiesterase-4 (PDE4) enzyme"
+      },
+      "source_chunk_ids": [
+        "43d624a5a2382dbd97932bd7e24a1632"
+      ]
+    },
+    {
+      "id": "ent_103",
+      "type": "Compound",
+      "name": "5-HT reuptake inhibitors",
+      "attributes": {
+        "context": "5-HT reuptake inhibitors, also called SSRIs"
+      },
+      "source_chunk_ids": [
+        "43d624a5a2382dbd97932bd7e24a1632"
+      ]
+    },
+    {
+      "id": "ent_104",
+      "type": "Compound",
+      "name": "SSRIs",
+      "attributes": {
+        "context": "5-HT reuptake inhibitors, also called SSRIs"
+      },
+      "source_chunk_ids": [
+        "43d624a5a2382dbd97932bd7e24a1632"
+      ]
+    },
+    {
+      "id": "ent_105",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "treatment of depression"
+      },
+      "source_chunk_ids": [
+        "43d624a5a2382dbd97932bd7e24a1632"
+      ]
+    },
+    {
+      "id": "ent_106",
+      "type": "PharmEffect",
+      "name": "inhibition of PDE4",
+      "attributes": {
+        "context": "combination of this property with the inhibition of PDE4"
+      },
+      "source_chunk_ids": [
+        "43d624a5a2382dbd97932bd7e24a1632"
+      ]
+    },
+    {
+      "id": "ent_107",
+      "type": "PharmEffect",
+      "name": "therapeutic value",
+      "attributes": {
+        "context": "have greater therapeutic value"
+      },
+      "source_chunk_ids": [
+        "43d624a5a2382dbd97932bd7e24a1632"
+      ]
+    },
+    {
+      "id": "ent_108",
+      "type": "Compound",
+      "name": "cyclic AMP",
+      "attributes": {
+        "context": "regulated by cyclic AMP (cAMP)"
+      },
+      "source_chunk_ids": [
+        "43d624a5a2382dbd97932bd7e24a1632"
+      ]
+    },
+    {
+      "id": "ent_109",
+      "type": "Compound",
+      "name": "cAMP",
+      "attributes": {
+        "context": "regulated by cyclic AMP (cAMP)"
+      },
+      "source_chunk_ids": [
+        "43d624a5a2382dbd97932bd7e24a1632"
+      ]
+    },
+    {
+      "id": "ent_110",
+      "type": "PharmEffect",
+      "name": "inhibit second messenger systems regulated by cyclic AMP",
+      "attributes": {
+        "context": "PDE4 has been shown to inhibit second messenger systems regulated by cyclic AMP"
+      },
+      "source_chunk_ids": [
+        "43d624a5a2382dbd97932bd7e24a1632"
+      ]
+    },
+    {
+      "id": "ent_111",
+      "type": "PharmEffect",
+      "name": "promoting the metabolism of cAMP",
+      "attributes": {
+        "context": "promoting the metabolism of cAMP"
+      },
+      "source_chunk_ids": [
+        "43d624a5a2382dbd97932bd7e24a1632"
+      ]
+    },
+    {
+      "id": "ent_112",
+      "type": "PharmEffect",
+      "name": "antidepressant effects",
+      "attributes": {
+        "context": "antidepressant effects may also result"
+      },
+      "source_chunk_ids": [
+        "43d624a5a2382dbd97932bd7e24a1632"
+      ]
+    },
+    {
+      "id": "ent_113",
+      "type": "PharmEffect",
+      "name": "upregulating cAMP",
+      "attributes": {
+        "context": "result from upregulating cAMP"
+      },
+      "source_chunk_ids": [
+        "43d624a5a2382dbd97932bd7e24a1632"
+      ]
+    },
+    {
+      "id": "ent_114",
+      "type": "PharmEffect",
+      "name": "antidepressant actions",
+      "attributes": {
+        "context": "antidepressant actions of SSRIs"
+      },
+      "source_chunk_ids": [
+        "43d624a5a2382dbd97932bd7e24a1632"
+      ]
+    },
+    {
+      "id": "ent_115",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {
+        "context": "mesembrine appears to have a similar or faster effect"
+      },
+      "source_chunk_ids": [
+        "43d624a5a2382dbd97932bd7e24a1632"
+      ]
+    },
+    {
+      "id": "ent_116",
+      "type": "PharmEffect",
+      "name": "up-regulation of cAMP",
+      "attributes": {
+        "context": "effect on the up-regulation of cAMP"
+      },
+      "source_chunk_ids": [
+        "43d624a5a2382dbd97932bd7e24a1632"
+      ]
+    },
+    {
+      "id": "ent_117",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "effects of Sceletium tortuosum"
+      },
+      "source_chunk_ids": [
+        "a88313df5159b29f4392ab91c4ed7f77"
+      ]
+    },
+    {
+      "id": "ent_118",
+      "type": "Indication",
+      "name": "psychological stress",
+      "attributes": {
+        "context": "model of psychological stress"
+      },
+      "source_chunk_ids": [
+        "a88313df5159b29f4392ab91c4ed7f77"
+      ]
+    },
+    {
+      "id": "ent_119",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "given an extract of the plant"
+      },
+      "source_chunk_ids": [
+        "a88313df5159b29f4392ab91c4ed7f77"
+      ]
+    },
+    {
+      "id": "ent_120",
+      "type": "PharmEffect",
+      "name": "restraint stress",
+      "attributes": {
+        "context": "exposed to repeated restraint stress"
+      },
+      "source_chunk_ids": [
+        "a88313df5159b29f4392ab91c4ed7f77"
+      ]
+    },
+    {
+      "id": "ent_121",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "Sceletium tortuosum was administered"
+      },
+      "source_chunk_ids": [
+        "a88313df5159b29f4392ab91c4ed7f77"
+      ]
+    },
+    {
+      "id": "ent_122",
+      "type": "Concentration",
+      "name": "low dose",
+      "attributes": {
+        "context": "administered at a low dose"
+      },
+      "source_chunk_ids": [
+        "a88313df5159b29f4392ab91c4ed7f77"
+      ]
+    },
+    {
+      "id": "ent_123",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "acute doses of Zembrin"
+      },
+      "source_chunk_ids": [
+        "294837870e4e25758ba1f51a1ae67705"
+      ]
+    },
+    {
+      "id": "ent_124",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "extract of Sceletium tortuosum"
+      },
+      "source_chunk_ids": [
+        "294837870e4e25758ba1f51a1ae67705"
+      ]
+    },
+    {
+      "id": "ent_125",
+      "type": "Compound",
+      "name": "rice powder",
+      "attributes": {
+        "context": "Sceletium tortuosum on rice powder"
+      },
+      "source_chunk_ids": [
+        "294837870e4e25758ba1f51a1ae67705"
+      ]
+    },
+    {
+      "id": "ent_126",
+      "type": "PharmEffect",
+      "name": "anxiety-related activities",
+      "attributes": {
+        "context": "observe anxiety-related activities"
+      },
+      "source_chunk_ids": [
+        "294837870e4e25758ba1f51a1ae67705"
+      ]
+    },
+    {
+      "id": "ent_127",
+      "type": "Indication",
+      "name": "anxiety",
+      "attributes": {
+        "context": "anxiety-related activities"
+      },
+      "source_chunk_ids": [
+        "294837870e4e25758ba1f51a1ae67705"
+      ]
+    },
+    {
+      "id": "ent_128",
+      "type": "Concentration",
+      "name": "one 25 mg dose",
+      "attributes": {
+        "context": "took one 25 mg dose of Zembrin"
+      },
+      "source_chunk_ids": [
+        "294837870e4e25758ba1f51a1ae67705"
+      ]
+    },
+    {
+      "id": "ent_129",
+      "type": "PharmEffect",
+      "name": "reduced",
+      "attributes": {
+        "context": "reaction to fearful facial expressions was reduced"
+      },
+      "source_chunk_ids": [
+        "294837870e4e25758ba1f51a1ae67705"
+      ]
+    },
+    {
+      "id": "ent_130",
+      "type": "PharmEffect",
+      "name": "attenuation of the amygdala-hypothalamus coupling",
+      "attributes": {
+        "context": "attenuation of the amygdala-hypothalamus coupling"
+      },
+      "source_chunk_ids": [
+        "294837870e4e25758ba1f51a1ae67705"
+      ]
+    },
+    {
+      "id": "ent_131",
+      "type": "PharmEffect",
+      "name": "SRI capabilities",
+      "attributes": {
+        "context": "SRI capabilities"
+      },
+      "source_chunk_ids": [
+        "294837870e4e25758ba1f51a1ae67705"
+      ]
+    },
+    {
+      "id": "ent_132",
+      "type": "PharmEffect",
+      "name": "PDE4 action",
+      "attributes": {
+        "context": "PDE4 action"
+      },
+      "source_chunk_ids": [
+        "294837870e4e25758ba1f51a1ae67705"
+      ]
+    },
+    {
+      "id": "ent_133",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "context": "Sceletium may have potential"
+      },
+      "source_chunk_ids": [
+        "2f80c31841f94d1ad5804f3cb4e90fa9"
+      ]
+    },
+    {
+      "id": "ent_134",
+      "type": "PharmEffect",
+      "name": "reducing depression",
+      "attributes": {
+        "context": "in reducing depression"
+      },
+      "source_chunk_ids": [
+        "2f80c31841f94d1ad5804f3cb4e90fa9"
+      ]
+    },
+    {
+      "id": "ent_135",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "reducing depression"
+      },
+      "source_chunk_ids": [
+        "2f80c31841f94d1ad5804f3cb4e90fa9"
+      ]
+    },
+    {
+      "id": "ent_136",
+      "type": "PharmEffect",
+      "name": "help anxiety",
+      "attributes": {
+        "context": "can help anxiety"
+      },
+      "source_chunk_ids": [
+        "2f80c31841f94d1ad5804f3cb4e90fa9"
+      ]
+    },
+    {
+      "id": "ent_137",
+      "type": "Indication",
+      "name": "anxiety",
+      "attributes": {
+        "context": "help anxiety"
+      },
+      "source_chunk_ids": [
+        "2f80c31841f94d1ad5804f3cb4e90fa9"
+      ]
+    },
+    {
+      "id": "ent_138",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "associated with depression"
+      },
+      "source_chunk_ids": [
+        "2f80c31841f94d1ad5804f3cb4e90fa9"
+      ]
+    },
+    {
+      "id": "ent_139",
+      "type": "Compound",
+      "name": "ether soluble alkaloids",
+      "attributes": {
+        "context": "ether soluble alkaloids used in the animal experiments"
+      },
+      "source_chunk_ids": [
+        "4ef32b48acfb1dec14216a8df79536f6"
+      ]
+    },
+    {
+      "id": "ent_140",
+      "type": "Compound",
+      "name": "alkaloids",
+      "attributes": {
+        "context": "Two concentrations of the alkaloids"
+      },
+      "source_chunk_ids": [
+        "4ef32b48acfb1dec14216a8df79536f6"
+      ]
+    },
+    {
+      "id": "ent_141",
+      "type": "Compound",
+      "name": "phenylmethylsiloxane",
+      "attributes": {
+        "context": "HP-5 5% phenylmethylsiloxane capillary column"
+      },
+      "source_chunk_ids": [
+        "4ef32b48acfb1dec14216a8df79536f6"
+      ]
+    },
+    {
+      "id": "ent_142",
+      "type": "Concentration",
+      "name": "0.94 mg/mL",
+      "attributes": {
+        "context": "0.94 mg/mL and 4.23 mg/mL were prepared"
+      },
+      "source_chunk_ids": [
+        "4ef32b48acfb1dec14216a8df79536f6"
+      ]
+    },
+    {
+      "id": "ent_143",
+      "type": "Concentration",
+      "name": "4.23 mg/mL",
+      "attributes": {
+        "context": "0.94 mg/mL and 4.23 mg/mL were prepared"
+      },
+      "source_chunk_ids": [
+        "4ef32b48acfb1dec14216a8df79536f6"
+      ]
+    },
+    {
+      "id": "ent_144",
+      "type": "Concentration",
+      "name": "20mg/mL",
+      "attributes": {
+        "context": "from the 20mg/mL stock solution"
+      },
+      "source_chunk_ids": [
+        "4ef32b48acfb1dec14216a8df79536f6"
+      ]
+    },
+    {
+      "id": "ent_145",
+      "type": "Concentration",
+      "name": "1 \u00b5L",
+      "attributes": {
+        "context": "1 \u00b5L splitless injection"
+      },
+      "source_chunk_ids": [
+        "4ef32b48acfb1dec14216a8df79536f6"
+      ]
+    },
+    {
+      "id": "ent_146",
+      "type": "Compound",
+      "name": "isoflourane",
+      "attributes": {
+        "context": "euthanized using isoflourane"
+      },
+      "source_chunk_ids": [
+        "c1b896e9a34367c30f74d876cca0a0f7"
+      ]
+    },
+    {
+      "id": "ent_147",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "Dried milled Sceletium tortuosum"
+      },
+      "source_chunk_ids": [
+        "ff4ee09521688d8a2cb190bca901cf2a"
+      ]
+    },
+    {
+      "id": "ent_148",
+      "type": "Concentration",
+      "name": "24.2631 g",
+      "attributes": {
+        "context": "Sceletium tortuosum, 24.2631 g"
+      },
+      "source_chunk_ids": [
+        "ff4ee09521688d8a2cb190bca901cf2a"
+      ]
+    },
+    {
+      "id": "ent_149",
+      "type": "Concentration",
+      "name": "250 mL",
+      "attributes": {
+        "context": "stirred for 1 hour with 250 mL"
+      },
+      "source_chunk_ids": [
+        "ff4ee09521688d8a2cb190bca901cf2a"
+      ]
+    },
+    {
+      "id": "ent_150",
+      "type": "Concentration",
+      "name": "0.25M",
+      "attributes": {
+        "context": "250 mL 0.25M aqueous sulfuric acid"
+      },
+      "source_chunk_ids": [
+        "ff4ee09521688d8a2cb190bca901cf2a"
+      ]
+    },
+    {
+      "id": "ent_151",
+      "type": "Compound",
+      "name": "sulfuric acid",
+      "attributes": {
+        "context": "0.25M aqueous sulfuric acid"
+      },
+      "source_chunk_ids": [
+        "ff4ee09521688d8a2cb190bca901cf2a"
+      ]
+    },
+    {
+      "id": "ent_152",
+      "type": "Compound",
+      "name": "Celite",
+      "attributes": {
+        "context": "screened through Celite"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_153",
+      "type": "Compound",
+      "name": "ammonium hydroxide",
+      "attributes": {
+        "context": "conc. ammonium hydroxide"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_154",
+      "type": "Concentration",
+      "name": "10 mL",
+      "attributes": {
+        "context": "10 mL conc. ammonium hydroxide"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_155",
+      "type": "Compound",
+      "name": "dichloromethane",
+      "attributes": {
+        "context": "200 mL dichloromethane (DCM)"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_156",
+      "type": "Concentration",
+      "name": "200 mL",
+      "attributes": {
+        "context": "200 mL dichloromethane"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_157",
+      "type": "Compound",
+      "name": "sodium sulfate",
+      "attributes": {
+        "context": "dried over anhydrous sodium sulfate"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_158",
+      "type": "Compound",
+      "name": "crude alkaloid",
+      "attributes": {
+        "context": "0.6670 g of crude alkaloid"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_159",
+      "type": "Concentration",
+      "name": "0.6670 g",
+      "attributes": {
+        "context": "0.6670 g of crude alkaloid"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_160",
+      "type": "Compound",
+      "name": "ether",
+      "attributes": {
+        "context": "The ether insoluble alkaloids"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_161",
+      "type": "Compound",
+      "name": "alkaloids",
+      "attributes": {
+        "context": "ether insoluble alkaloids"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_162",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {
+        "context": "mesembrine isolation"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_163",
+      "type": "Compound",
+      "name": "crude alkaloid",
+      "attributes": {
+        "context": "The crude alkaloid (0.6670 g)"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_164",
+      "type": "Concentration",
+      "name": "0.6670 g",
+      "attributes": {
+        "context": "crude alkaloid (0.6670 g)"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_165",
+      "type": "Compound",
+      "name": "ethyl acetate",
+      "attributes": {
+        "context": "2 mL ethyl acetate (EtOAc)"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_166",
+      "type": "Concentration",
+      "name": "2 mL",
+      "attributes": {
+        "context": "2 mL ethyl acetate"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_167",
+      "type": "Compound",
+      "name": "diethyl ether",
+      "attributes": {
+        "context": "50 mL diethyl ether"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_168",
+      "type": "Concentration",
+      "name": "50 mL",
+      "attributes": {
+        "context": "50 mL diethyl ether"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_169",
+      "type": "Compound",
+      "name": "Celite",
+      "attributes": {
+        "context": "glass wool and Celite"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_170",
+      "type": "Concentration",
+      "name": "1.1202 g",
+      "attributes": {
+        "context": "yellow liquid 1.1202 g"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_171",
+      "type": "Compound",
+      "name": "EtOAc",
+      "attributes": {
+        "context": "residual EtOAc"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_172",
+      "type": "Compound",
+      "name": "alkaloids",
+      "attributes": {
+        "context": "ether soluble alkaloids"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_173",
+      "type": "Compound",
+      "name": "hydrochloride salts",
+      "attributes": {
+        "context": "respective hydrochloride salts"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_174",
+      "type": "Compound",
+      "name": "ether",
+      "attributes": {
+        "context": "dissolving in 2 mL ether"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_175",
+      "type": "Concentration",
+      "name": "2 mL",
+      "attributes": {
+        "context": "dissolving in 2 mL ether"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_176",
+      "type": "Compound",
+      "name": "HCL",
+      "attributes": {
+        "context": "2M HCL in ether"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_177",
+      "type": "Concentration",
+      "name": "2.0 mL",
+      "attributes": {
+        "context": "2.0 mL 2M HCL"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_178",
+      "type": "Concentration",
+      "name": "2M",
+      "attributes": {
+        "context": "2M HCL in ether"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_179",
+      "type": "Compound",
+      "name": "ether",
+      "attributes": {
+        "context": "2M HCL in ether"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_180",
+      "type": "Compound",
+      "name": "ether",
+      "attributes": {
+        "context": "2 x 20 mL ether"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_181",
+      "type": "Concentration",
+      "name": "2 x 20 mL",
+      "attributes": {
+        "context": "2 x 20 mL ether"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_182",
+      "type": "Compound",
+      "name": "argon",
+      "attributes": {
+        "context": "filled with argon"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_183",
+      "type": "Compound",
+      "name": "ether",
+      "attributes": {
+        "context": "ether soluble alkaloid hydrochloride salts"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_184",
+      "type": "Compound",
+      "name": "alkaloid hydrochloride salts",
+      "attributes": {
+        "context": "ether soluble alkaloid hydrochloride salts"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_185",
+      "type": "Concentration",
+      "name": "103.5 mg",
+      "attributes": {
+        "context": "103.5 mg of ether soluble alkaloid hydrochloride salts"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_186",
+      "type": "Concentration",
+      "name": "0.379%",
+      "attributes": {
+        "context": "Yield: 0.379% alkaloid/g plant material"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_187",
+      "type": "Compound",
+      "name": "alkaloid",
+      "attributes": {
+        "context": "0.379% alkaloid/g plant material"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_188",
+      "type": "Concentration",
+      "name": "g",
+      "attributes": {
+        "context": "alkaloid/g plant material"
+      },
+      "source_chunk_ids": [
+        "8bce5b89ee2ae0022a3e3d134af71112"
+      ]
+    },
+    {
+      "id": "ent_189",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {
+        "context": "members of the mesembrine alkaloid family"
+      },
+      "source_chunk_ids": [
+        "eeeeee814bbc537765c7f87dd756e00e"
+      ]
+    },
+    {
+      "id": "ent_190",
+      "type": "Compound",
+      "name": "Mesembranol",
+      "attributes": {
+        "context": "Mesembranol was the most abundant alkaloid"
+      },
+      "source_chunk_ids": [
+        "eeeeee814bbc537765c7f87dd756e00e"
+      ]
+    },
+    {
+      "id": "ent_191",
+      "type": "Concentration",
+      "name": "67.0%",
+      "attributes": {
+        "context": "Mesembranol was the most abundant alkaloid at 67.0%"
+      },
+      "source_chunk_ids": [
+        "eeeeee814bbc537765c7f87dd756e00e"
+      ]
+    },
+    {
+      "id": "ent_192",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {
+        "context": "the namesake mesembrine made up 9.2% of the sample"
+      },
+      "source_chunk_ids": [
+        "eeeeee814bbc537765c7f87dd756e00e"
+      ]
+    },
+    {
+      "id": "ent_193",
+      "type": "Concentration",
+      "name": "9.2%",
+      "attributes": {
+        "context": "mesembrine made up 9.2% of the sample"
+      },
+      "source_chunk_ids": [
+        "eeeeee814bbc537765c7f87dd756e00e"
+      ]
+    },
+    {
+      "id": "ent_194",
+      "type": "Compound",
+      "name": "Mesembrenol",
+      "attributes": {
+        "context": "Mesembrenol made up 15.8% of the sample"
+      },
+      "source_chunk_ids": [
+        "eeeeee814bbc537765c7f87dd756e00e"
+      ]
+    },
+    {
+      "id": "ent_195",
+      "type": "Concentration",
+      "name": "15.8%",
+      "attributes": {
+        "context": "Mesembrenol made up 15.8% of the sample"
+      },
+      "source_chunk_ids": [
+        "eeeeee814bbc537765c7f87dd756e00e"
+      ]
+    },
+    {
+      "id": "ent_196",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {
+        "context": "mesembrenone made up the smallest percentage of the sample"
+      },
+      "source_chunk_ids": [
+        "eeeeee814bbc537765c7f87dd756e00e"
+      ]
+    },
+    {
+      "id": "ent_197",
+      "type": "Concentration",
+      "name": "8.0%",
+      "attributes": {
+        "context": "mesembrenone made up the smallest percentage of the sample at 8.0%"
+      },
+      "source_chunk_ids": [
+        "eeeeee814bbc537765c7f87dd756e00e"
+      ]
+    },
+    {
+      "id": "ent_198",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {
+        "context": "The low dose mesembrine group"
+      },
+      "source_chunk_ids": [
+        "68a5736fe7c5e03525cbfec8ba5c6482"
+      ]
+    },
+    {
+      "id": "ent_199",
+      "type": "Concentration",
+      "name": "low dose",
+      "attributes": {
+        "context": "The low dose mesembrine group"
+      },
+      "source_chunk_ids": [
+        "68a5736fe7c5e03525cbfec8ba5c6482"
+      ]
+    },
+    {
+      "id": "ent_200",
+      "type": "Compound",
+      "name": "paroxetine",
+      "attributes": {
+        "context": "The paroxetine and the high dose mesembrine groups"
+      },
+      "source_chunk_ids": [
+        "68a5736fe7c5e03525cbfec8ba5c6482"
+      ]
+    },
+    {
+      "id": "ent_201",
+      "type": "Concentration",
+      "name": "high dose",
+      "attributes": {
+        "context": "the high dose mesembrine groups"
+      },
+      "source_chunk_ids": [
+        "68a5736fe7c5e03525cbfec8ba5c6482"
+      ]
+    },
+    {
+      "id": "ent_202",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {
+        "context": "the high dose mesembrine groups"
+      },
+      "source_chunk_ids": [
+        "68a5736fe7c5e03525cbfec8ba5c6482"
+      ]
+    },
+    {
+      "id": "ent_203",
+      "type": "Compound",
+      "name": "saline",
+      "attributes": {
+        "context": "The saline group"
+      },
+      "source_chunk_ids": [
+        "68a5736fe7c5e03525cbfec8ba5c6482"
+      ]
+    },
+    {
+      "id": "ent_204",
+      "type": "Compound",
+      "name": "Paroxetine",
+      "attributes": {
+        "context": "The x-axis shows four groups: Paroxetine"
+      },
+      "source_chunk_ids": [
+        "47494907f230865b8cffa88c9ad5fd1a"
+      ]
+    },
+    {
+      "id": "ent_205",
+      "type": "Compound",
+      "name": "Mesembrine",
+      "attributes": {
+        "context": "Low Dose Mesembrine, High Dose Mesembrine"
+      },
+      "source_chunk_ids": [
+        "47494907f230865b8cffa88c9ad5fd1a"
+      ]
+    },
+    {
+      "id": "ent_206",
+      "type": "Compound",
+      "name": "Saline",
+      "attributes": {
+        "context": "and Saline."
+      },
+      "source_chunk_ids": [
+        "47494907f230865b8cffa88c9ad5fd1a"
+      ]
+    },
+    {
+      "id": "ent_207",
+      "type": "Concentration",
+      "name": "Low Dose Mesembrine",
+      "attributes": {
+        "context": "Low Dose Mesembrine"
+      },
+      "source_chunk_ids": [
+        "47494907f230865b8cffa88c9ad5fd1a"
+      ]
+    },
+    {
+      "id": "ent_208",
+      "type": "Concentration",
+      "name": "High Dose Mesembrine",
+      "attributes": {
+        "context": "High Dose Mesembrine"
+      },
+      "source_chunk_ids": [
+        "47494907f230865b8cffa88c9ad5fd1a"
+      ]
+    },
+    {
+      "id": "ent_209",
+      "type": "Compound",
+      "name": "Paroxetine",
+      "attributes": {
+        "context": "four groups of mice (Paroxetine, Low Alkaloid, High Alkaloid, Saline)"
+      },
+      "source_chunk_ids": [
+        "8a8a7ba908cb3663c089d1ebc568f03d"
+      ]
+    },
+    {
+      "id": "ent_210",
+      "type": "Compound",
+      "name": "Alkaloid",
+      "attributes": {
+        "context": "Low Alkaloid, High Alkaloid"
+      },
+      "source_chunk_ids": [
+        "8a8a7ba908cb3663c089d1ebc568f03d"
+      ]
+    },
+    {
+      "id": "ent_211",
+      "type": "Compound",
+      "name": "Saline",
+      "attributes": {
+        "context": "four groups of mice (Paroxetine, Low Alkaloid, High Alkaloid, Saline)"
+      },
+      "source_chunk_ids": [
+        "8a8a7ba908cb3663c089d1ebc568f03d"
+      ]
+    },
+    {
+      "id": "ent_212",
+      "type": "Compound",
+      "name": "paroxetine",
+      "attributes": {
+        "context": "paroxetine exhibits its antidepressant effects"
+      },
+      "source_chunk_ids": [
+        "f7b6e625bd7e8a063f36e58ebab72f29"
+      ]
+    },
+    {
+      "id": "ent_213",
+      "type": "PharmEffect",
+      "name": "antidepressant effects",
+      "attributes": {
+        "context": "paroxetine exhibits its antidepressant effects"
+      },
+      "source_chunk_ids": [
+        "f7b6e625bd7e8a063f36e58ebab72f29"
+      ]
+    },
+    {
+      "id": "ent_214",
+      "type": "Compound",
+      "name": "saline",
+      "attributes": {
+        "context": "compared to the saline group"
+      },
+      "source_chunk_ids": [
+        "f7b6e625bd7e8a063f36e58ebab72f29"
+      ]
+    },
+    {
+      "id": "ent_215",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "analog to depression in humans"
+      },
+      "source_chunk_ids": [
+        "f7b6e625bd7e8a063f36e58ebab72f29"
+      ]
+    },
+    {
+      "id": "ent_216",
+      "type": "Compound",
+      "name": "Paroxetine",
+      "attributes": {
+        "context": "Paroxetine is an antidepressant"
+      },
+      "source_chunk_ids": [
+        "f7b6e625bd7e8a063f36e58ebab72f29"
+      ]
+    },
+    {
+      "id": "ent_217",
+      "type": "PharmEffect",
+      "name": "antidepressant",
+      "attributes": {
+        "context": "Paroxetine is an antidepressant"
+      },
+      "source_chunk_ids": [
+        "f7b6e625bd7e8a063f36e58ebab72f29"
+      ]
+    },
+    {
+      "id": "ent_218",
+      "type": "Compound",
+      "name": "mesembrine alkaloids",
+      "attributes": {
+        "context": "dosages of mesembrine alkaloids"
+      },
+      "source_chunk_ids": [
+        "f7b6e625bd7e8a063f36e58ebab72f29"
+      ]
+    },
+    {
+      "id": "ent_219",
+      "type": "Compound",
+      "name": "paroxetine",
+      "attributes": {
+        "context": "paroxetine was effective at producing changes"
+      },
+      "source_chunk_ids": [
+        "f7b6e625bd7e8a063f36e58ebab72f29"
+      ]
+    },
+    {
+      "id": "ent_220",
+      "type": "Compound",
+      "name": "mesembrine alkaloid",
+      "attributes": {
+        "context": "high dose mesembrine alkaloid group"
+      },
+      "source_chunk_ids": [
+        "e6deb71aa2c4685ee0abf309380f5146"
+      ]
+    },
+    {
+      "id": "ent_221",
+      "type": "Compound",
+      "name": "paroxetine",
+      "attributes": {
+        "context": "paroxetine group"
+      },
+      "source_chunk_ids": [
+        "e6deb71aa2c4685ee0abf309380f5146"
+      ]
+    },
+    {
+      "id": "ent_222",
+      "type": "Compound",
+      "name": "saline",
+      "attributes": {
+        "context": "The saline group"
+      },
+      "source_chunk_ids": [
+        "e6deb71aa2c4685ee0abf309380f5146"
+      ]
+    },
+    {
+      "id": "ent_223",
+      "type": "Compound",
+      "name": "mesembrine alkaloid",
+      "attributes": {
+        "context": "low dose mesembrine alkaloid group"
+      },
+      "source_chunk_ids": [
+        "e6deb71aa2c4685ee0abf309380f5146"
+      ]
+    },
+    {
+      "id": "ent_224",
+      "type": "Compound",
+      "name": "saline",
+      "attributes": {
+        "context": "and the saline group"
+      },
+      "source_chunk_ids": [
+        "e6deb71aa2c4685ee0abf309380f5146"
+      ]
+    },
+    {
+      "id": "ent_225",
+      "type": "Concentration",
+      "name": "high dose",
+      "attributes": {
+        "context": "high dose mesembrine alkaloid group"
+      },
+      "source_chunk_ids": [
+        "e6deb71aa2c4685ee0abf309380f5146"
+      ]
+    },
+    {
+      "id": "ent_226",
+      "type": "Concentration",
+      "name": "low dose",
+      "attributes": {
+        "context": "low dose mesembrine alkaloid group"
+      },
+      "source_chunk_ids": [
+        "e6deb71aa2c4685ee0abf309380f5146"
+      ]
+    },
+    {
+      "id": "ent_227",
+      "type": "PharmEffect",
+      "name": "antidepressant effects",
+      "attributes": {
+        "context": "producing antidepressant effects"
+      },
+      "source_chunk_ids": [
+        "e6deb71aa2c4685ee0abf309380f5146"
+      ]
+    },
+    {
+      "id": "ent_228",
+      "type": "Compound",
+      "name": "Paroxetine",
+      "attributes": {
+        "context": "Paroxetine works as a selective serotonin reuptake inhibitor"
+      },
+      "source_chunk_ids": [
+        "f6ad8f240a2d4a654cd1cd3b274579c2"
+      ]
+    },
+    {
+      "id": "ent_229",
+      "type": "PharmEffect",
+      "name": "selective serotonin reuptake inhibitor",
+      "attributes": {
+        "context": "works as a selective serotonin reuptake inhibitor"
+      },
+      "source_chunk_ids": [
+        "f6ad8f240a2d4a654cd1cd3b274579c2"
+      ]
+    },
+    {
+      "id": "ent_230",
+      "type": "Compound",
+      "name": "mesembrine alkaloids",
+      "attributes": {
+        "context": "some of the mesembrine alkaloids are thought to act"
+      },
+      "source_chunk_ids": [
+        "f6ad8f240a2d4a654cd1cd3b274579c2"
+      ]
+    },
+    {
+      "id": "ent_231",
+      "type": "Compound",
+      "name": "alkaloids",
+      "attributes": {
+        "context": "The alkaloids are also thought to act"
+      },
+      "source_chunk_ids": [
+        "f6ad8f240a2d4a654cd1cd3b274579c2"
+      ]
+    },
+    {
+      "id": "ent_232",
+      "type": "PharmEffect",
+      "name": "phosphodiesterase-4 inhibitors",
+      "attributes": {
+        "context": "act as phosphodiesterase-4 inhibitors"
+      },
+      "source_chunk_ids": [
+        "f6ad8f240a2d4a654cd1cd3b274579c2"
+      ]
+    },
+    {
+      "id": "ent_233",
+      "type": "PharmEffect",
+      "name": "antidepressant effects",
+      "attributes": {
+        "context": "shown to have antidepressant effects"
+      },
+      "source_chunk_ids": [
+        "f6ad8f240a2d4a654cd1cd3b274579c2"
+      ]
+    },
+    {
+      "id": "ent_234",
+      "type": "Concentration",
+      "name": "low dose",
+      "attributes": {
+        "context": "the low dose of mesembrine alkaloids"
+      },
+      "source_chunk_ids": [
+        "f6ad8f240a2d4a654cd1cd3b274579c2"
+      ]
+    },
+    {
+      "id": "ent_235",
+      "type": "Compound",
+      "name": "mesembrine alkaloids",
+      "attributes": {
+        "context": "low dose of mesembrine alkaloids"
+      },
+      "source_chunk_ids": [
+        "f6ad8f240a2d4a654cd1cd3b274579c2"
+      ]
+    },
+    {
+      "id": "ent_236",
+      "type": "Compound",
+      "name": "paroxetine",
+      "attributes": {
+        "context": "seen in paroxetine"
+      },
+      "source_chunk_ids": [
+        "f6ad8f240a2d4a654cd1cd3b274579c2"
+      ]
+    },
+    {
+      "id": "ent_237",
+      "type": "Concentration",
+      "name": "high dose",
+      "attributes": {
+        "context": "the high dose of mesembrine alkaloids"
+      },
+      "source_chunk_ids": [
+        "f6ad8f240a2d4a654cd1cd3b274579c2"
+      ]
+    },
+    {
+      "id": "ent_238",
+      "type": "Compound",
+      "name": "mesembrine alkaloids",
+      "attributes": {
+        "context": "high dose of mesembrine alkaloids"
+      },
+      "source_chunk_ids": [
+        "f6ad8f240a2d4a654cd1cd3b274579c2"
+      ]
+    },
+    {
+      "id": "ent_239",
+      "type": "PharmEffect",
+      "name": "Locomotor activity",
+      "attributes": {
+        "context": "Locomotor activity was assessed"
+      },
+      "source_chunk_ids": [
+        "c46a2819bddbcde9d1dc83c105e75a1e"
+      ]
+    },
+    {
+      "id": "ent_240",
+      "type": "PharmEffect",
+      "name": "movement",
+      "attributes": {
+        "context": "effect on the mice's movement"
+      },
+      "source_chunk_ids": [
+        "c46a2819bddbcde9d1dc83c105e75a1e"
+      ]
+    },
+    {
+      "id": "ent_241",
+      "type": "PharmEffect",
+      "name": "exploratory behaviors",
+      "attributes": {
+        "context": "natural exploratory behaviors of rodents"
+      },
+      "source_chunk_ids": [
+        "c46a2819bddbcde9d1dc83c105e75a1e"
+      ]
+    },
+    {
+      "id": "ent_242",
+      "type": "PharmEffect",
+      "name": "locomotor ability",
+      "attributes": {
+        "context": "assess their baseline locomotor ability"
+      },
+      "source_chunk_ids": [
+        "c46a2819bddbcde9d1dc83c105e75a1e"
+      ]
+    },
+    {
+      "id": "ent_243",
+      "type": "PharmEffect",
+      "name": "motoric effects",
+      "attributes": {
+        "context": "motoric effects may have influenced"
+      },
+      "source_chunk_ids": [
+        "c46a2819bddbcde9d1dc83c105e75a1e"
+      ]
+    },
+    {
+      "id": "ent_244",
+      "type": "PharmEffect",
+      "name": "behavioral despair",
+      "attributes": {
+        "context": "influenced the behavioral despair results"
+      },
+      "source_chunk_ids": [
+        "c46a2819bddbcde9d1dc83c105e75a1e"
+      ]
+    },
+    {
+      "id": "ent_245",
+      "type": "PharmEffect",
+      "name": "locomotor ability",
+      "attributes": {
+        "context": "interfered with the locomotor ability"
+      },
+      "source_chunk_ids": [
+        "c46a2819bddbcde9d1dc83c105e75a1e"
+      ]
+    },
+    {
+      "id": "ent_246",
+      "type": "Compound",
+      "name": "paroxetine",
+      "attributes": {
+        "context": "hallmark of paroxetine"
+      },
+      "source_chunk_ids": [
+        "407568d6cea91ccfd280063c8609081d"
+      ]
+    },
+    {
+      "id": "ent_247",
+      "type": "Compound",
+      "name": "mesembrine alkaloid",
+      "attributes": {
+        "context": "low dose mesembrine alkaloid group"
+      },
+      "source_chunk_ids": [
+        "407568d6cea91ccfd280063c8609081d"
+      ]
+    },
+    {
+      "id": "ent_248",
+      "type": "PharmEffect",
+      "name": "mechanism of action",
+      "attributes": {
+        "context": "similar mechanism of action"
+      },
+      "source_chunk_ids": [
+        "407568d6cea91ccfd280063c8609081d"
+      ]
+    },
+    {
+      "id": "ent_249",
+      "type": "Compound",
+      "name": "mesembrine alkaloid",
+      "attributes": {
+        "context": "high dose mesembrine alkaloid"
+      },
+      "source_chunk_ids": [
+        "407568d6cea91ccfd280063c8609081d"
+      ]
+    },
+    {
+      "id": "ent_250",
+      "type": "Compound",
+      "name": "saline",
+      "attributes": {
+        "context": "saline groups"
+      },
+      "source_chunk_ids": [
+        "407568d6cea91ccfd280063c8609081d"
+      ]
+    },
+    {
+      "id": "ent_251",
+      "type": "Compound",
+      "name": "mesembrine alkaloids",
+      "attributes": {
+        "context": "low dose mesembrine alkaloids"
+      },
+      "source_chunk_ids": [
+        "407568d6cea91ccfd280063c8609081d"
+      ]
+    },
+    {
+      "id": "ent_252",
+      "type": "Compound",
+      "name": "paroxetine",
+      "attributes": {
+        "context": "paroxetine groups"
+      },
+      "source_chunk_ids": [
+        "407568d6cea91ccfd280063c8609081d"
+      ]
+    },
+    {
+      "id": "ent_253",
+      "type": "PharmEffect",
+      "name": "locomotor scores",
+      "attributes": {
+        "context": "lower average locomotor scores"
+      },
+      "source_chunk_ids": [
+        "407568d6cea91ccfd280063c8609081d"
+      ]
+    },
+    {
+      "id": "ent_254",
+      "type": "Compound",
+      "name": "paroxetine",
+      "attributes": {
+        "context": "paroxetine and the low dose mesembrine alkaloid groups"
+      },
+      "source_chunk_ids": [
+        "407568d6cea91ccfd280063c8609081d"
+      ]
+    },
+    {
+      "id": "ent_255",
+      "type": "Compound",
+      "name": "mesembrine alkaloid",
+      "attributes": {
+        "context": "low dose mesembrine alkaloid groups"
+      },
+      "source_chunk_ids": [
+        "407568d6cea91ccfd280063c8609081d"
+      ]
+    },
+    {
+      "id": "ent_256",
+      "type": "PharmEffect",
+      "name": "locomotor activity",
+      "attributes": {
+        "context": "increase the locomotor activity"
+      },
+      "source_chunk_ids": [
+        "407568d6cea91ccfd280063c8609081d"
+      ]
+    },
+    {
+      "id": "ent_257",
+      "type": "Compound",
+      "name": "saline",
+      "attributes": {
+        "context": "compared to the saline group"
+      },
+      "source_chunk_ids": [
+        "407568d6cea91ccfd280063c8609081d"
+      ]
+    },
+    {
+      "id": "ent_258",
+      "type": "PharmEffect",
+      "name": "locomotor interference",
+      "attributes": {
+        "context": "produced any kind of locomotor interference"
+      },
+      "source_chunk_ids": [
+        "407568d6cea91ccfd280063c8609081d"
+      ]
+    },
+    {
+      "id": "ent_259",
+      "type": "Compound",
+      "name": "paroxetine",
+      "attributes": {
+        "context": "seen in the paroxetine and low dose mesembrine alkaloid groups"
+      },
+      "source_chunk_ids": [
+        "a8357c2a98bf27104498f9238a9d8d30"
+      ]
+    },
+    {
+      "id": "ent_260",
+      "type": "Compound",
+      "name": "mesembrine alkaloid",
+      "attributes": {
+        "context": "low dose mesembrine alkaloid groups"
+      },
+      "source_chunk_ids": [
+        "a8357c2a98bf27104498f9238a9d8d30"
+      ]
+    },
+    {
+      "id": "ent_261",
+      "type": "Compound",
+      "name": "saline",
+      "attributes": {
+        "context": "saline groups"
+      },
+      "source_chunk_ids": [
+        "a8357c2a98bf27104498f9238a9d8d30"
+      ]
+    },
+    {
+      "id": "ent_262",
+      "type": "PharmEffect",
+      "name": "increase in locomotion",
+      "attributes": {
+        "context": "see if the increase in locomotion at the third time point"
+      },
+      "source_chunk_ids": [
+        "a8357c2a98bf27104498f9238a9d8d30"
+      ]
+    },
+    {
+      "id": "ent_263",
+      "type": "PharmEffect",
+      "name": "locomotion",
+      "attributes": {
+        "context": "stay at the same level of locomotion"
+      },
+      "source_chunk_ids": [
+        "a8357c2a98bf27104498f9238a9d8d30"
+      ]
+    },
+    {
+      "id": "ent_264",
+      "type": "PharmEffect",
+      "name": "increase locomotion",
+      "attributes": {
+        "context": "paroxetine should increase locomotion"
+      },
+      "source_chunk_ids": [
+        "a8357c2a98bf27104498f9238a9d8d30"
+      ]
+    },
+    {
+      "id": "ent_265",
+      "type": "Concentration",
+      "name": "low dose",
+      "attributes": {
+        "context": "low dose mesembrine alkaloid groups"
+      },
+      "source_chunk_ids": [
+        "a8357c2a98bf27104498f9238a9d8d30"
+      ]
+    },
+    {
+      "id": "ent_266",
+      "type": "Concentration",
+      "name": "high dose",
+      "attributes": {
+        "context": "high dose mesembrine alkaloid"
+      },
+      "source_chunk_ids": [
+        "a8357c2a98bf27104498f9238a9d8d30"
+      ]
+    },
+    {
+      "id": "ent_267",
+      "type": "Compound",
+      "name": "Mesembrine",
+      "attributes": {
+        "context": "Mesembrine is an inhibitor of PDE4"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_268",
+      "type": "Compound",
+      "name": "PDE4",
+      "attributes": {
+        "context": "inhibitor of PDE4"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_269",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "relationship of rolipram"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_270",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "St. john's wort and depression"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_271",
+      "type": "Taxon",
+      "name": "Hypericum perforatum",
+      "attributes": {
+        "context": "St. john's wort and depression"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_272",
+      "type": "PharmEffect",
+      "name": "Antidepressants",
+      "attributes": {
+        "context": "Antidepressants. Retrieved October 2013"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_273",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "What is depression?"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_274",
+      "type": "Compound",
+      "name": "metabolites",
+      "attributes": {
+        "context": "their metabolites"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_275",
+      "type": "Taxon",
+      "name": "south african plants",
+      "attributes": {
+        "context": "south african plants used as remedies"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_276",
+      "type": "PharmEffect",
+      "name": "remedies",
+      "attributes": {
+        "context": "plants used as remedies"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_277",
+      "type": "Compound",
+      "name": "SAM-e",
+      "attributes": {
+        "context": "SAM-e may ease depression"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_278",
+      "type": "PharmEffect",
+      "name": "ease depression",
+      "attributes": {
+        "context": "SAM-e may ease depression"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_279",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "SAM-e may ease depression"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_280",
+      "type": "Compound",
+      "name": "phytochemical content",
+      "attributes": {
+        "context": "phytochemical content of sceletiu tortuosum"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_281",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "phytochemical content of sceletiu tortuosum"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_282",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "preparation of \"kougoed\""
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_283",
+      "type": "Taxon",
+      "name": "plant material",
+      "attributes": {
+        "context": "fermentation of plant material"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_284",
+      "type": "Compound",
+      "name": "mesembrine alkaloids",
+      "attributes": {
+        "context": "The mesembrine alkaloids"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_285",
+      "type": "PharmEffect",
+      "name": "antidepressant treatments",
+      "attributes": {
+        "context": "sensitive to antidepressant treatments"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_286",
+      "type": "Indication",
+      "name": "Depression",
+      "attributes": {
+        "context": "Depression: A new animal model"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_287",
+      "type": "PharmEffect",
+      "name": "Antidepressant behavioral effects",
+      "attributes": {
+        "context": "Antidepressant behavioral effects by dual inhibition"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_288",
+      "type": "PharmEffect",
+      "name": "inhibition of monoamine reuptake",
+      "attributes": {
+        "context": "dual inhibition of monoamine reuptake"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_289",
+      "type": "Compound",
+      "name": "monoamine",
+      "attributes": {
+        "context": "inhibition of monoamine reuptake"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_290",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "Global depression statistics"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_291",
+      "type": "PharmEffect",
+      "name": "pharmacologically active",
+      "attributes": {
+        "context": "quantification of pharmacologically active alkaloids"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_292",
+      "type": "Compound",
+      "name": "alkaloids",
+      "attributes": {
+        "context": "pharmacologically active alkaloids in sceletium tortuosum"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    },
+    {
+      "id": "ent_293",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "alkaloids in sceletium tortuosum raw material"
+      },
+      "source_chunk_ids": [
+        "c7fabd299c1d3fa293c8a29868f7b6a7"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:03.927822+00:00",
+    "original_file": "entities.json"
+  }
+}

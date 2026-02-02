@@ -1,0 +1,3885 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "bc419729c80323bfe3e09427842c90ab84c2d9521ecb49170895e21dc4382c10",
+  "extracted_at": "2026-02-01T08:37:34.387249+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "Compound",
+      "name": "Serotonin",
+      "attributes": {
+        "context": "Serotonin signaling"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Indication",
+      "name": "AD",
+      "attributes": {
+        "context": "Serotonin signaling and AD"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "PharmEffect",
+      "name": "influences executive function",
+      "attributes": {
+        "context": "influences executive function in humans"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "Compound",
+      "name": "serotonin transporter",
+      "attributes": {
+        "context": "serotonin transporter"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "Compound",
+      "name": "5-HT-4",
+      "attributes": {
+        "context": "serotonin receptor subtypes (5-HT-4"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "Compound",
+      "name": "5-HT-7",
+      "attributes": {
+        "context": "serotonin receptor subtypes (5-HT-7)"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "Compound",
+      "name": "amyloid precursor protein (APP)",
+      "attributes": {
+        "context": "amyloid precursor protein processing (APP)"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Compound",
+      "name": "serotonin receptor type-4",
+      "attributes": {
+        "context": "Activation of serotonin receptor type-4"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "Compound",
+      "name": "alpha-secretase",
+      "attributes": {
+        "context": "upregulates alpha-secretase"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "PharmEffect",
+      "name": "reduces the amyloid load",
+      "attributes": {
+        "context": "reduces the amyloid load"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "PharmEffect",
+      "name": "improves cognitive deficits",
+      "attributes": {
+        "context": "improves cognitive deficits"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "Compound",
+      "name": "selective serotonin reuptake inhibitor (SSRI)",
+      "attributes": {
+        "context": "selective serotonin reuptake inhibitor (SSRI)"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "PharmEffect",
+      "name": "anti-depressants",
+      "attributes": {
+        "context": "indicated as anti-depressants"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "Indication",
+      "name": "major depression",
+      "attributes": {
+        "context": "for major depression"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "Compound",
+      "name": "citaloprim",
+      "attributes": {
+        "context": "(citaloprim, fluoxetine)"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "Compound",
+      "name": "fluoxetine",
+      "attributes": {
+        "context": "(citaloprim, fluoxetine)"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "PharmEffect",
+      "name": "reduced amyloid plaques",
+      "attributes": {
+        "context": "reduced amyloid plaques"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "Compound",
+      "name": "SSRI",
+      "attributes": {
+        "context": "exposed to SSRI"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "PharmEffect",
+      "name": "reduction in amyloid-beta load",
+      "attributes": {
+        "context": "reduction in amyloid-beta load"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "Compound",
+      "name": "amyloid-beta (A\u03b2)",
+      "attributes": {
+        "context": "CSF A\u03b2"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "link of serotonin activity"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "Indication",
+      "name": "AD",
+      "attributes": {
+        "context": "tau pathology in AD"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "Compound",
+      "name": "serotonin neurotoxin",
+      "attributes": {
+        "context": "serotonin neurotoxin"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "Compound",
+      "name": "5,7-Dihydroxytryptamine (5,7HT)",
+      "attributes": {
+        "context": "5,7-Dihydroxytryptamine (5,7HT)"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "PharmEffect",
+      "name": "increased tau phosphorylation",
+      "attributes": {
+        "context": "leads to increased tau phosphorylation"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "PharmEffect",
+      "name": "impaired cognitive performance",
+      "attributes": {
+        "context": "impaired cognitive performance"
+      },
+      "source_chunk_ids": [
+        "9a13226fa88cf3341928defbe28910ae"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "Indication",
+      "name": "obstructive lung disease",
+      "attributes": {
+        "context": "obstructive lung disease"
+      },
+      "source_chunk_ids": [
+        "515e1c3296e5748a619be498360e6485"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "Compound",
+      "name": "PDE4 holo-enzyme",
+      "attributes": {
+        "context": "binds to PDE4 holo-enzyme state of PDE-4"
+      },
+      "source_chunk_ids": [
+        "515e1c3296e5748a619be498360e6485"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "Compound",
+      "name": "PDE-4",
+      "attributes": {
+        "context": "state of PDE-4"
+      },
+      "source_chunk_ids": [
+        "515e1c3296e5748a619be498360e6485"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "PharmEffect",
+      "name": "nausea",
+      "attributes": {
+        "context": "side effects of nausea and vomiting"
+      },
+      "source_chunk_ids": [
+        "515e1c3296e5748a619be498360e6485"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "PharmEffect",
+      "name": "vomiting",
+      "attributes": {
+        "context": "side effects of nausea and vomiting"
+      },
+      "source_chunk_ids": [
+        "515e1c3296e5748a619be498360e6485"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "Compound",
+      "name": "PDE-4",
+      "attributes": {
+        "context": "allosteric modulation of PDE-4"
+      },
+      "source_chunk_ids": [
+        "5be1c53c79c532b336aa7a50c48188f3"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "PharmEffect",
+      "name": "allosteric modulation",
+      "attributes": {
+        "context": "allosteric modulation of PDE-4"
+      },
+      "source_chunk_ids": [
+        "5be1c53c79c532b336aa7a50c48188f3"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "PharmEffect",
+      "name": "competitive inhibition",
+      "attributes": {
+        "context": "competitive inhibition of PDE-4"
+      },
+      "source_chunk_ids": [
+        "5be1c53c79c532b336aa7a50c48188f3"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "PharmEffect",
+      "name": "reducing",
+      "attributes": {
+        "context": "for reducing and eliminating the troublesome side effects"
+      },
+      "source_chunk_ids": [
+        "5be1c53c79c532b336aa7a50c48188f3"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "PharmEffect",
+      "name": "eliminating",
+      "attributes": {
+        "context": "for reducing and eliminating the troublesome side effects"
+      },
+      "source_chunk_ids": [
+        "5be1c53c79c532b336aa7a50c48188f3"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "Indication",
+      "name": "nausea",
+      "attributes": {
+        "context": "side effects of nausea and vomiting"
+      },
+      "source_chunk_ids": [
+        "5be1c53c79c532b336aa7a50c48188f3"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "Indication",
+      "name": "vomiting",
+      "attributes": {
+        "context": "side effects of nausea and vomiting"
+      },
+      "source_chunk_ids": [
+        "5be1c53c79c532b336aa7a50c48188f3"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "PharmEffect",
+      "name": "efficacy",
+      "attributes": {
+        "context": "in support of the efficacy of rolipram"
+      },
+      "source_chunk_ids": [
+        "5be1c53c79c532b336aa7a50c48188f3"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "efficacy of rolipram"
+      },
+      "source_chunk_ids": [
+        "5be1c53c79c532b336aa7a50c48188f3"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "Compound",
+      "name": "PDE-4",
+      "attributes": {
+        "context": "prototypical PDE-4 competitive inhibitor"
+      },
+      "source_chunk_ids": [
+        "5be1c53c79c532b336aa7a50c48188f3"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "trials for depression and AD"
+      },
+      "source_chunk_ids": [
+        "5be1c53c79c532b336aa7a50c48188f3"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "Indication",
+      "name": "AD",
+      "attributes": {
+        "context": "trials for depression and AD"
+      },
+      "source_chunk_ids": [
+        "5be1c53c79c532b336aa7a50c48188f3"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "Indication",
+      "name": "nausea",
+      "attributes": {
+        "context": "side effects of nausea and vomiting"
+      },
+      "source_chunk_ids": [
+        "5be1c53c79c532b336aa7a50c48188f3"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "Indication",
+      "name": "vomiting",
+      "attributes": {
+        "context": "side effects of nausea and vomiting"
+      },
+      "source_chunk_ids": [
+        "5be1c53c79c532b336aa7a50c48188f3"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "PharmEffect",
+      "name": "allosteric modulator",
+      "attributes": {
+        "context": "model of allosteric modulator of PDE-4"
+      },
+      "source_chunk_ids": [
+        "5be1c53c79c532b336aa7a50c48188f3"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "Compound",
+      "name": "PDE-4",
+      "attributes": {
+        "context": "allosteric modulator of PDE-4"
+      },
+      "source_chunk_ids": [
+        "5be1c53c79c532b336aa7a50c48188f3"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "PharmEffect",
+      "name": "improve tolerability",
+      "attributes": {
+        "context": "to improve tolerability"
+      },
+      "source_chunk_ids": [
+        "5be1c53c79c532b336aa7a50c48188f3"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "Compound",
+      "name": "PDE-4",
+      "attributes": {
+        "context": "pharmacophore of PDE-4"
+      },
+      "source_chunk_ids": [
+        "5be1c53c79c532b336aa7a50c48188f3"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "Compound",
+      "name": "PDE-4",
+      "attributes": {
+        "context": "allosteric PDE-4 modulators"
+      },
+      "source_chunk_ids": [
+        "5be1c53c79c532b336aa7a50c48188f3"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "PharmEffect",
+      "name": "enhance selectivity of therapeutic effects",
+      "attributes": {
+        "context": "can enhance selectivity of therapeutic effects"
+      },
+      "source_chunk_ids": [
+        "5be1c53c79c532b336aa7a50c48188f3"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "PharmEffect",
+      "name": "minimizing the side effects",
+      "attributes": {
+        "context": "while minimizing the side effects"
+      },
+      "source_chunk_ids": [
+        "5be1c53c79c532b336aa7a50c48188f3"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "Compound",
+      "name": "PDE-4 allosteric modulators",
+      "attributes": {
+        "context": "class of PDE-4 allosteric modulators"
+      },
+      "source_chunk_ids": [
+        "2d0dceae5f75a010f7de36535fe0cf88"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "PharmEffect",
+      "name": "emetic effects",
+      "attributes": {
+        "context": "devoid of serious emetic effects"
+      },
+      "source_chunk_ids": [
+        "2d0dceae5f75a010f7de36535fe0cf88"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "Compound",
+      "name": "EHT0202",
+      "attributes": {
+        "context": "Pipeline drugs : EHT0202"
+      },
+      "source_chunk_ids": [
+        "2d0dceae5f75a010f7de36535fe0cf88"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "Compound",
+      "name": "etiolate hydrochloride",
+      "attributes": {
+        "context": "EHT0202 (etiolate hydrochloride)"
+      },
+      "source_chunk_ids": [
+        "2d0dceae5f75a010f7de36535fe0cf88"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "Compound",
+      "name": "L-454,560",
+      "attributes": {
+        "context": "L-454,560"
+      },
+      "source_chunk_ids": [
+        "2d0dceae5f75a010f7de36535fe0cf88"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "Compound",
+      "name": "GEBR-7-b",
+      "attributes": {
+        "context": "GEBR-7-b"
+      },
+      "source_chunk_ids": [
+        "2d0dceae5f75a010f7de36535fe0cf88"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "PharmEffect",
+      "name": "gastrointestinal side effects",
+      "attributes": {
+        "context": "free from serious gastrointestinal side effects"
+      },
+      "source_chunk_ids": [
+        "2d0dceae5f75a010f7de36535fe0cf88"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "PharmEffect",
+      "name": "nausea",
+      "attributes": {
+        "context": "no nausea"
+      },
+      "source_chunk_ids": [
+        "2d0dceae5f75a010f7de36535fe0cf88"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "PharmEffect",
+      "name": "vomiting",
+      "attributes": {
+        "context": "no nausea and vomiting"
+      },
+      "source_chunk_ids": [
+        "2d0dceae5f75a010f7de36535fe0cf88"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "Compound",
+      "name": "Mg2+",
+      "attributes": {
+        "context": "apo-(Mg2+-free) and holoenzyme states (Mg2+-bound)"
+      },
+      "source_chunk_ids": [
+        "2d0dceae5f75a010f7de36535fe0cf88"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "Compound",
+      "name": "PDE-4A",
+      "attributes": {
+        "context": "PDE-4A, PDE-B and PDE-D isoforms"
+      },
+      "source_chunk_ids": [
+        "2d0dceae5f75a010f7de36535fe0cf88"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "Compound",
+      "name": "PDE-B",
+      "attributes": {
+        "context": "PDE-4A, PDE-B and PDE-D isoforms"
+      },
+      "source_chunk_ids": [
+        "2d0dceae5f75a010f7de36535fe0cf88"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "Compound",
+      "name": "PDE-D",
+      "attributes": {
+        "context": "PDE-4A, PDE-B and PDE-D isoforms"
+      },
+      "source_chunk_ids": [
+        "2d0dceae5f75a010f7de36535fe0cf88"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "PharmEffect",
+      "name": "emesis",
+      "attributes": {
+        "context": "without producing emesis in vivo"
+      },
+      "source_chunk_ids": [
+        "2d0dceae5f75a010f7de36535fe0cf88"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "derivative of rolipram"
+      },
+      "source_chunk_ids": [
+        "2d0dceae5f75a010f7de36535fe0cf88"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "PharmEffect",
+      "name": "memory tasks",
+      "attributes": {
+        "context": "rolipram in memory tasks"
+      },
+      "source_chunk_ids": [
+        "2d0dceae5f75a010f7de36535fe0cf88"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "PharmEffect",
+      "name": "emesis",
+      "attributes": {
+        "context": "measures of emesis"
+      },
+      "source_chunk_ids": [
+        "2d0dceae5f75a010f7de36535fe0cf88"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "Compound",
+      "name": "SSRI",
+      "attributes": {
+        "context": "Coupling SSRI with PDE-4 signals"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_071",
+      "type": "Compound",
+      "name": "PDE-4",
+      "attributes": {
+        "context": "Coupling SSRI with PDE-4 signals"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_072",
+      "type": "Compound",
+      "name": "molecule",
+      "attributes": {
+        "context": "within the same molecule"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_073",
+      "type": "Indication",
+      "name": "AD",
+      "attributes": {
+        "context": "in AD drug development"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_074",
+      "type": "Compound",
+      "name": "compounds",
+      "attributes": {
+        "context": "a class of compounds coupling SSRI with PDE-4"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_075",
+      "type": "Compound",
+      "name": "PDE4 inhibitor",
+      "attributes": {
+        "context": "The dual PDE4 inhibitor/SSRI"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_076",
+      "type": "Compound",
+      "name": "2-{5-[3-(5-fluoro-2-methoxy-phenyl)-ethyl]-tetrahydro-furan-2-yl}-ethylamine)-pentyl]-4,5,8,8a-tetrahydro-2H-phthalazin-1-one",
+      "attributes": {
+        "context": "The dual PDE4 inhibitor/SSRI 2-{5-[3-(5-fluoro-2-methoxy-phenyl)-ethyl]-tetrahydro-furan-2-yl}-ethylamine)-pentyl]-4,5,8,8a-tetrahydro-2H-phthalazin-1-one"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_077",
+      "type": "Compound",
+      "name": "compound 21",
+      "attributes": {
+        "context": "phthalazin-1-one (compound 21)"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_078",
+      "type": "PharmEffect",
+      "name": "active in the forced swim test",
+      "attributes": {
+        "context": "was active in the forced swim test in mice"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_079",
+      "type": "PharmEffect",
+      "name": "high affinity for SSRI",
+      "attributes": {
+        "context": "possessed high affinity for SSRI"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_080",
+      "type": "Concentration",
+      "name": "IC50 127 nM",
+      "attributes": {
+        "context": "SSRI : IC50 127 nM"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_081",
+      "type": "Compound",
+      "name": "PDE4D3",
+      "attributes": {
+        "context": "and PDE4D3 K9i) value"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_082",
+      "type": "Concentration",
+      "name": "K9i) value of 2.0 nM",
+      "attributes": {
+        "context": "PDE4D3 K9i) value of 2.0 nM"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_083",
+      "type": "Compound",
+      "name": "Mesembrine alkaloids",
+      "attributes": {
+        "context": "Mesembrine alkaloids represent the first group"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_084",
+      "type": "Compound",
+      "name": "phyto-chemicals",
+      "attributes": {
+        "context": "group of phyto-chemicals"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_085",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "dually targeting serotonin signaling"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_086",
+      "type": "PharmEffect",
+      "name": "neurotropic effects",
+      "attributes": {
+        "context": "for their neurotropic and neurotrophic effects"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_087",
+      "type": "PharmEffect",
+      "name": "neurotrophic effects",
+      "attributes": {
+        "context": "for their neurotropic and neurotrophic effects"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_088",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "from Sceletium tortuosum"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_089",
+      "type": "Compound",
+      "name": "trans-capping conformer",
+      "attributes": {
+        "context": "conformation: trans-capping conformer"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_090",
+      "type": "PharmEffect",
+      "name": "partially inhibiting the PDE-4 catalytic domain",
+      "attributes": {
+        "context": "partially inhibiting the PDE-4 catalytic domain"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_091",
+      "type": "Compound",
+      "name": "Zembrin extract",
+      "attributes": {
+        "context": "standardized Zembrin extract"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_092",
+      "type": "Compound",
+      "name": "Phosphokinase A",
+      "attributes": {
+        "context": "PDE-4- Phosphokinase A"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_093",
+      "type": "Compound",
+      "name": "PK-A",
+      "attributes": {
+        "context": "Phosphokinase A (PK-A)"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_094",
+      "type": "Compound",
+      "name": "CREB",
+      "attributes": {
+        "context": "PK-A)-CREB signal pathway"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_095",
+      "type": "PharmEffect",
+      "name": "without activating the emesis reflex",
+      "attributes": {
+        "context": "without activating the emesis reflex in the area postrema"
+      },
+      "source_chunk_ids": [
+        "de7e58ba79cb21e0a445bcb8f16bb12e"
+      ]
+    },
+    {
+      "id": "ent_096",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "studies of Zembrin"
+      },
+      "source_chunk_ids": [
+        "81617c9aa53c458104b0c856da229286"
+      ]
+    },
+    {
+      "id": "ent_097",
+      "type": "PharmEffect",
+      "name": "therapeutic potential",
+      "attributes": {
+        "context": "likely potential therapeutic potential"
+      },
+      "source_chunk_ids": [
+        "81617c9aa53c458104b0c856da229286"
+      ]
+    },
+    {
+      "id": "ent_098",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "pharmacological targets of Zembrin extract"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_099",
+      "type": "PharmEffect",
+      "name": "neurotropic effects",
+      "attributes": {
+        "context": "putative neurotropic effects of Zembrin"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_100",
+      "type": "Compound",
+      "name": "alkaloids",
+      "attributes": {
+        "context": "potencies of alkaloids"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_101",
+      "type": "Compound",
+      "name": "PDE-4",
+      "attributes": {
+        "context": "competing directly for the PDE-4 binding"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_102",
+      "type": "Compound",
+      "name": "PDE-4B",
+      "attributes": {
+        "context": "human recombinant PDE-4B"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_103",
+      "type": "Compound",
+      "name": "PDE-4D",
+      "attributes": {
+        "context": "human recombinant PDE-4D"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_104",
+      "type": "Taxon",
+      "name": "Selenium tortuosum",
+      "attributes": {
+        "context": "extract Selenium tortuosum (Zembrin\u00ae)"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_105",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "Selenium tortuosum (Zembrin\u00ae)"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_106",
+      "type": "Compound",
+      "name": "phosphodiesterase 4 (PDE4)",
+      "attributes": {
+        "context": "selectively inhibited phosphodiesterase 4 (PDE4)"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_107",
+      "type": "PharmEffect",
+      "name": "inhibited phosphodiesterase 4",
+      "attributes": {
+        "context": "selectively inhibited phosphodiesterase 4 (PDE4)"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_108",
+      "type": "Concentration",
+      "name": "8.5 \u00b5g/ml",
+      "attributes": {
+        "context": "IC50 (inhibitory constant) value of 8.5 \u00b5g/ml"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_109",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {
+        "context": "mesembrenone is the most potent compound"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_110",
+      "type": "Compound",
+      "name": "PDE-4B",
+      "attributes": {
+        "context": "in inhibiting PDE-4B"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_111",
+      "type": "PharmEffect",
+      "name": "inhibiting PDE-4B",
+      "attributes": {
+        "context": "most potent compound in inhibiting PDE-4B"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_112",
+      "type": "Compound",
+      "name": "PDE4",
+      "attributes": {
+        "context": "recombinant PDE4 in vitro assay"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_113",
+      "type": "Compound",
+      "name": "Mesembrenone",
+      "attributes": {
+        "context": "Mesembrenone, a major alkaloid"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_114",
+      "type": "Compound",
+      "name": "alkaloid",
+      "attributes": {
+        "context": "Mesembrenone, a major alkaloid"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_115",
+      "type": "PharmEffect",
+      "name": "inhibiting PDE4",
+      "attributes": {
+        "context": "active in inhibiting PDE4"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_116",
+      "type": "Concentration",
+      "name": "< 1\u00b5M",
+      "attributes": {
+        "context": "IC50 value of < 1\u00b5M"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_117",
+      "type": "Compound",
+      "name": "Mesembrenone",
+      "attributes": {
+        "context": "Mesembrenone was 17 times more potent"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_118",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {
+        "context": "more potent than mesembrine"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_119",
+      "type": "Compound",
+      "name": "mesembrenol",
+      "attributes": {
+        "context": "more active than mesembrenol"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_120",
+      "type": "Compound",
+      "name": "PDE-4",
+      "attributes": {
+        "context": "competing for PDE-4 binding"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_121",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {
+        "context": "IC50 values for mesembrenone"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_122",
+      "type": "Concentration",
+      "name": "470 nM",
+      "attributes": {
+        "context": "was 470 nM"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_123",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {
+        "context": "followed by mesembrine"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_124",
+      "type": "Concentration",
+      "name": "7800 nM",
+      "attributes": {
+        "context": "7800 nM"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_125",
+      "type": "Compound",
+      "name": "mesembrenol",
+      "attributes": {
+        "context": "mesembrenol: 10,000 nM"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_126",
+      "type": "Concentration",
+      "name": "10,000 nM",
+      "attributes": {
+        "context": "10,000 nM"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_127",
+      "type": "PharmEffect",
+      "name": "pharmacological effects",
+      "attributes": {
+        "context": "pharmacological effects of Zembrin"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_128",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "pharmacological effects of Zembrin"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_129",
+      "type": "Compound",
+      "name": "mesembrine alkaloids",
+      "attributes": {
+        "context": "mesembrine alkaloids are mediated"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_130",
+      "type": "Compound",
+      "name": "PDE-4D3",
+      "attributes": {
+        "context": "isoform of PDE-4D3"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_131",
+      "type": "Taxon",
+      "name": "Selenium tortuosum",
+      "attributes": {
+        "context": "extract Selenium tortuosum (Zembrin\u00ae)"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_132",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "Selenium tortuosum (Zembrin\u00ae)"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_133",
+      "type": "Compound",
+      "name": "GABA receptor",
+      "attributes": {
+        "context": "activities at the GABA receptor"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_134",
+      "type": "Compound",
+      "name": "mu (\u00b5) opioid receptors",
+      "attributes": {
+        "context": "mu (\u00b5) and delta (\u03b42) opioid receptors"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_135",
+      "type": "Compound",
+      "name": "delta (\u03b42) opioid receptors",
+      "attributes": {
+        "context": "delta (\u03b42) opioid receptors"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_136",
+      "type": "Compound",
+      "name": "cholecystokinin-1",
+      "attributes": {
+        "context": "cholecystokinin-1"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_137",
+      "type": "Compound",
+      "name": "EP4 prostaglandin",
+      "attributes": {
+        "context": "EP4 prostaglandin"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_138",
+      "type": "Compound",
+      "name": "melatonin-1 receptors",
+      "attributes": {
+        "context": "melatonin-1 receptors"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_139",
+      "type": "Compound",
+      "name": "PDE-4",
+      "attributes": {
+        "context": "less than that of PDE-4"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_140",
+      "type": "Compound",
+      "name": "5-HT uptake sites",
+      "attributes": {
+        "context": "5-HT uptake sites"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_141",
+      "type": "Compound",
+      "name": "PDE-4",
+      "attributes": {
+        "context": "PDE-4 interaction with Zembrin"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_142",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "standardized Zembrin extract"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_143",
+      "type": "Compound",
+      "name": "mesembrane related alkaloids",
+      "attributes": {
+        "context": "mesembrane related alkaloids exhibited little effects"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_144",
+      "type": "Compound",
+      "name": "PDE-1",
+      "attributes": {
+        "context": "effects on PDE-1"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_145",
+      "type": "Compound",
+      "name": "PDE-2",
+      "attributes": {
+        "context": "PDE-2"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_146",
+      "type": "Compound",
+      "name": "PDE-3",
+      "attributes": {
+        "context": "PDE-3"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_147",
+      "type": "Compound",
+      "name": "PDE-5",
+      "attributes": {
+        "context": "PDE-5"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_148",
+      "type": "Compound",
+      "name": "PDE-6",
+      "attributes": {
+        "context": "PDE-6"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_149",
+      "type": "Compound",
+      "name": "PDE-7",
+      "attributes": {
+        "context": "PDE-7"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_150",
+      "type": "Compound",
+      "name": "PDE-8",
+      "attributes": {
+        "context": "PDE-8"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_151",
+      "type": "Compound",
+      "name": "PDE-10",
+      "attributes": {
+        "context": "PDE-10"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_152",
+      "type": "Compound",
+      "name": "PDE-11a",
+      "attributes": {
+        "context": "PDE-11a"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_153",
+      "type": "Compound",
+      "name": "roflumilast",
+      "attributes": {
+        "context": "roflumilast (Daliresp, Forest Pharmaceuticals)"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_154",
+      "type": "Compound",
+      "name": "phosphodiesterase-4 (PDE-4)",
+      "attributes": {
+        "context": "oral phosphodiesterase-4 (PDE-4) inhibitor"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_155",
+      "type": "PharmEffect",
+      "name": "inhibitor",
+      "attributes": {
+        "context": "phosphodiesterase-4 (PDE-4) inhibitor"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_156",
+      "type": "Indication",
+      "name": "chronic obstructive pulmonary disease (COPD)",
+      "attributes": {
+        "context": "triggering chronic obstructive pulmonary disease (COPD) exacerbation"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_157",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "Whether Zembrin behaves similarly"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_158",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "clinical studies of Zembrin"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_159",
+      "type": "PharmEffect",
+      "name": "adverse effects",
+      "attributes": {
+        "context": "do not find any adverse effects"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_160",
+      "type": "Compound",
+      "name": "Mesembrine alkaloids",
+      "attributes": {
+        "context": "Mesembrine alkaloids are distinguished"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_161",
+      "type": "Compound",
+      "name": "PDE-4 inhibitors",
+      "attributes": {
+        "context": "classical PDE-4 inhibitors"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_162",
+      "type": "PharmEffect",
+      "name": "serotonergic activity",
+      "attributes": {
+        "context": "displaying concomitant serotonergic activity"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_163",
+      "type": "Compound",
+      "name": "Mesembrine",
+      "attributes": {
+        "context": "Mesembrine was found to be the most potent compound"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_164",
+      "type": "Compound",
+      "name": "serotonin transporter site (5-HT site)",
+      "attributes": {
+        "context": "binding to the serotonin transporter site (5-HT site)"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_165",
+      "type": "Compound",
+      "name": "5-HT site",
+      "attributes": {
+        "context": "serotonin transporter site (5-HT site)"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_166",
+      "type": "Concentration",
+      "name": "1.4 nM",
+      "attributes": {
+        "context": "Hill coefficient of 1.4 nM"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_167",
+      "type": "Compound",
+      "name": "Mesembrenone",
+      "attributes": {
+        "context": "Mesembrenone and mesembranol are less potent"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_168",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {
+        "context": "Mesembrenone and mesembranol"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_169",
+      "type": "Compound",
+      "name": "5-HT transport site",
+      "attributes": {
+        "context": "competing for the 5-HT transport site"
+      },
+      "source_chunk_ids": [
+        "cec1c5cf0461a8893242486d9c6d10b9"
+      ]
+    },
+    {
+      "id": "ent_170",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "Zembrin effects on symptoms"
+      },
+      "source_chunk_ids": [
+        "309d84066aa0d8e211697b4fbef9613a"
+      ]
+    },
+    {
+      "id": "ent_171",
+      "type": "Indication",
+      "name": "canine cognitive dysfunction (CCD)",
+      "attributes": {
+        "context": "symptoms of canine cognitive dysfunction (CCD)"
+      },
+      "source_chunk_ids": [
+        "309d84066aa0d8e211697b4fbef9613a"
+      ]
+    },
+    {
+      "id": "ent_172",
+      "type": "Indication",
+      "name": "feline cognitive dysfunction (FCD)",
+      "attributes": {
+        "context": "feline cognitive dysfunction (FCD )"
+      },
+      "source_chunk_ids": [
+        "309d84066aa0d8e211697b4fbef9613a"
+      ]
+    },
+    {
+      "id": "ent_173",
+      "type": "Indication",
+      "name": "AD",
+      "attributes": {
+        "context": "mirroring AD in humans"
+      },
+      "source_chunk_ids": [
+        "309d84066aa0d8e211697b4fbef9613a"
+      ]
+    },
+    {
+      "id": "ent_174",
+      "type": "Indication",
+      "name": "dementia",
+      "attributes": {
+        "context": "core signs of dementia"
+      },
+      "source_chunk_ids": [
+        "309d84066aa0d8e211697b4fbef9613a"
+      ]
+    },
+    {
+      "id": "ent_175",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "mix the Zembrin capsules"
+      },
+      "source_chunk_ids": [
+        "309d84066aa0d8e211697b4fbef9613a"
+      ]
+    },
+    {
+      "id": "ent_176",
+      "type": "Concentration",
+      "name": "2 mg/kg",
+      "attributes": {
+        "context": "from 2 mg/kg"
+      },
+      "source_chunk_ids": [
+        "309d84066aa0d8e211697b4fbef9613a"
+      ]
+    },
+    {
+      "id": "ent_177",
+      "type": "Concentration",
+      "name": "90 mg/kg oral dosage",
+      "attributes": {
+        "context": "maximum of 90 mg/kg oral dosage"
+      },
+      "source_chunk_ids": [
+        "309d84066aa0d8e211697b4fbef9613a"
+      ]
+    },
+    {
+      "id": "ent_178",
+      "type": "Concentration",
+      "name": "30 mg/kg oral daily",
+      "attributes": {
+        "context": "minimum effective dosage was 30 mg/kg oral daily"
+      },
+      "source_chunk_ids": [
+        "309d84066aa0d8e211697b4fbef9613a"
+      ]
+    },
+    {
+      "id": "ent_179",
+      "type": "PharmEffect",
+      "name": "fast onset of action",
+      "attributes": {
+        "context": "fast onset of action within he first 30 minutes"
+      },
+      "source_chunk_ids": [
+        "309d84066aa0d8e211697b4fbef9613a"
+      ]
+    },
+    {
+      "id": "ent_180",
+      "type": "PharmEffect",
+      "name": "dose-dependent",
+      "attributes": {
+        "context": "The response was dose-dependent."
+      },
+      "source_chunk_ids": [
+        "309d84066aa0d8e211697b4fbef9613a"
+      ]
+    },
+    {
+      "id": "ent_181",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "response rate of Zembrin"
+      },
+      "source_chunk_ids": [
+        "309d84066aa0d8e211697b4fbef9613a"
+      ]
+    },
+    {
+      "id": "ent_182",
+      "type": "PharmEffect",
+      "name": "markedly effective",
+      "attributes": {
+        "context": "8/33 markedly effective"
+      },
+      "source_chunk_ids": [
+        "309d84066aa0d8e211697b4fbef9613a"
+      ]
+    },
+    {
+      "id": "ent_183",
+      "type": "PharmEffect",
+      "name": "moderately effective",
+      "attributes": {
+        "context": "12/33 moderately effective"
+      },
+      "source_chunk_ids": [
+        "309d84066aa0d8e211697b4fbef9613a"
+      ]
+    },
+    {
+      "id": "ent_184",
+      "type": "PharmEffect",
+      "name": "minimally effective",
+      "attributes": {
+        "context": "12/33 minimally effective"
+      },
+      "source_chunk_ids": [
+        "309d84066aa0d8e211697b4fbef9613a"
+      ]
+    },
+    {
+      "id": "ent_185",
+      "type": "Indication",
+      "name": "dementia",
+      "attributes": {
+        "context": "baseline dementia score"
+      },
+      "source_chunk_ids": [
+        "309d84066aa0d8e211697b4fbef9613a"
+      ]
+    },
+    {
+      "id": "ent_186",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "Zembrin was highly tolerable"
+      },
+      "source_chunk_ids": [
+        "309d84066aa0d8e211697b4fbef9613a"
+      ]
+    },
+    {
+      "id": "ent_187",
+      "type": "PharmEffect",
+      "name": "highly tolerable",
+      "attributes": {
+        "context": "Zembrin was highly tolerable"
+      },
+      "source_chunk_ids": [
+        "309d84066aa0d8e211697b4fbef9613a"
+      ]
+    },
+    {
+      "id": "ent_188",
+      "type": "Indication",
+      "name": "nausea",
+      "attributes": {
+        "context": "no complaint of nausea"
+      },
+      "source_chunk_ids": [
+        "309d84066aa0d8e211697b4fbef9613a"
+      ]
+    },
+    {
+      "id": "ent_189",
+      "type": "Indication",
+      "name": "vomiting",
+      "attributes": {
+        "context": "or vomiting"
+      },
+      "source_chunk_ids": [
+        "309d84066aa0d8e211697b4fbef9613a"
+      ]
+    },
+    {
+      "id": "ent_190",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "standardized Zembrin extract"
+      },
+      "source_chunk_ids": [
+        "d08afb40921763b65070ba0549a5d4a9"
+      ]
+    },
+    {
+      "id": "ent_191",
+      "type": "PharmEffect",
+      "name": "centrally active in cognition",
+      "attributes": {
+        "context": "centrally active in cognition"
+      },
+      "source_chunk_ids": [
+        "d08afb40921763b65070ba0549a5d4a9"
+      ]
+    },
+    {
+      "id": "ent_192",
+      "type": "PharmEffect",
+      "name": "memory",
+      "attributes": {
+        "context": "cognition , memory"
+      },
+      "source_chunk_ids": [
+        "d08afb40921763b65070ba0549a5d4a9"
+      ]
+    },
+    {
+      "id": "ent_193",
+      "type": "PharmEffect",
+      "name": "affective responses",
+      "attributes": {
+        "context": "memory and affective responses"
+      },
+      "source_chunk_ids": [
+        "d08afb40921763b65070ba0549a5d4a9"
+      ]
+    },
+    {
+      "id": "ent_194",
+      "type": "PharmEffect",
+      "name": "safe",
+      "attributes": {
+        "context": "to be safe"
+      },
+      "source_chunk_ids": [
+        "d08afb40921763b65070ba0549a5d4a9"
+      ]
+    },
+    {
+      "id": "ent_195",
+      "type": "PharmEffect",
+      "name": "free from adverse events",
+      "attributes": {
+        "context": "free from adverse events"
+      },
+      "source_chunk_ids": [
+        "d08afb40921763b65070ba0549a5d4a9"
+      ]
+    },
+    {
+      "id": "ent_196",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "Zembrin passes through the BBB"
+      },
+      "source_chunk_ids": [
+        "d08afb40921763b65070ba0549a5d4a9"
+      ]
+    },
+    {
+      "id": "ent_197",
+      "type": "PharmEffect",
+      "name": "passes through the BBB (Blood-Brain Barrier)",
+      "attributes": {
+        "context": "Zembrin passes through the BBB (Blood-Brain Barrier)"
+      },
+      "source_chunk_ids": [
+        "d08afb40921763b65070ba0549a5d4a9"
+      ]
+    },
+    {
+      "id": "ent_198",
+      "type": "PharmEffect",
+      "name": "modify the functional responses towards environmental cues capable of generating fear",
+      "attributes": {
+        "context": "modify the functional responses towards environmental cues capable of generating fear"
+      },
+      "source_chunk_ids": [
+        "d08afb40921763b65070ba0549a5d4a9"
+      ]
+    },
+    {
+      "id": "ent_199",
+      "type": "Compound",
+      "name": "chemical moiety",
+      "attributes": {
+        "context": "a chemical moiety can penetrate the BBB"
+      },
+      "source_chunk_ids": [
+        "d08afb40921763b65070ba0549a5d4a9"
+      ]
+    },
+    {
+      "id": "ent_200",
+      "type": "PharmEffect",
+      "name": "penetrate the BBB",
+      "attributes": {
+        "context": "can penetrate the BBB"
+      },
+      "source_chunk_ids": [
+        "d08afb40921763b65070ba0549a5d4a9"
+      ]
+    },
+    {
+      "id": "ent_201",
+      "type": "PharmEffect",
+      "name": "produce the brain activation responses",
+      "attributes": {
+        "context": "produce the brain activation responses"
+      },
+      "source_chunk_ids": [
+        "d08afb40921763b65070ba0549a5d4a9"
+      ]
+    },
+    {
+      "id": "ent_202",
+      "type": "PharmEffect",
+      "name": "attenuated",
+      "attributes": {
+        "context": "reactivity of amygdala to fearful faces under low perceptual load conditions was attenuated"
+      },
+      "source_chunk_ids": [
+        "d08afb40921763b65070ba0549a5d4a9"
+      ]
+    },
+    {
+      "id": "ent_203",
+      "type": "Concentration",
+      "name": "25 mg oral dose",
+      "attributes": {
+        "context": "a single 25 mg oral dose"
+      },
+      "source_chunk_ids": [
+        "d08afb40921763b65070ba0549a5d4a9"
+      ]
+    },
+    {
+      "id": "ent_204",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "Zembrin attenuated the emotional responses"
+      },
+      "source_chunk_ids": [
+        "d08afb40921763b65070ba0549a5d4a9"
+      ]
+    },
+    {
+      "id": "ent_205",
+      "type": "PharmEffect",
+      "name": "attenuated the emotional responses",
+      "attributes": {
+        "context": "Zembrin attenuated the emotional responses"
+      },
+      "source_chunk_ids": [
+        "d08afb40921763b65070ba0549a5d4a9"
+      ]
+    },
+    {
+      "id": "ent_206",
+      "type": "PharmEffect",
+      "name": "adversely affected",
+      "attributes": {
+        "context": "amygdala-hypothalamus coupling was adversely affected"
+      },
+      "source_chunk_ids": [
+        "d08afb40921763b65070ba0549a5d4a9"
+      ]
+    },
+    {
+      "id": "ent_207",
+      "type": "PharmEffect",
+      "name": "emotional memory changes",
+      "attributes": {
+        "context": "emotional memory changes localized to medial temporal lobe"
+      },
+      "source_chunk_ids": [
+        "d08afb40921763b65070ba0549a5d4a9"
+      ]
+    },
+    {
+      "id": "ent_208",
+      "type": "Indication",
+      "name": "AD",
+      "attributes": {
+        "context": "medial temporal lobe in AD"
+      },
+      "source_chunk_ids": [
+        "d08afb40921763b65070ba0549a5d4a9"
+      ]
+    },
+    {
+      "id": "ent_209",
+      "type": "Indication",
+      "name": "Alzheimer dementia",
+      "attributes": {
+        "context": "earliest stage of Alzheimer dementia"
+      },
+      "source_chunk_ids": [
+        "30a59883e10cb22e75e64673a8bd011a"
+      ]
+    },
+    {
+      "id": "ent_210",
+      "type": "PharmEffect",
+      "name": "impairment in executive functioning",
+      "attributes": {
+        "context": "impairment in executive functioning is present"
+      },
+      "source_chunk_ids": [
+        "30a59883e10cb22e75e64673a8bd011a"
+      ]
+    },
+    {
+      "id": "ent_211",
+      "type": "PharmEffect",
+      "name": "memory deficits",
+      "attributes": {
+        "context": "before marked memory deficits appear"
+      },
+      "source_chunk_ids": [
+        "30a59883e10cb22e75e64673a8bd011a"
+      ]
+    },
+    {
+      "id": "ent_212",
+      "type": "Indication",
+      "name": "mild cognitive impairment",
+      "attributes": {
+        "context": "mild cognitive impairment (MCI)"
+      },
+      "source_chunk_ids": [
+        "30a59883e10cb22e75e64673a8bd011a"
+      ]
+    },
+    {
+      "id": "ent_213",
+      "type": "PharmEffect",
+      "name": "impaired instrumental activities of daily living",
+      "attributes": {
+        "context": "impaired instrumental activities of daily living predicting cognitive decline"
+      },
+      "source_chunk_ids": [
+        "30a59883e10cb22e75e64673a8bd011a"
+      ]
+    },
+    {
+      "id": "ent_214",
+      "type": "PharmEffect",
+      "name": "cognitive decline",
+      "attributes": {
+        "context": "predicting cognitive decline"
+      },
+      "source_chunk_ids": [
+        "30a59883e10cb22e75e64673a8bd011a"
+      ]
+    },
+    {
+      "id": "ent_215",
+      "type": "PharmEffect",
+      "name": "cognitive enhancing effect",
+      "attributes": {
+        "context": "The cognitive enhancing effect of Zembrin"
+      },
+      "source_chunk_ids": [
+        "30a59883e10cb22e75e64673a8bd011a"
+      ]
+    },
+    {
+      "id": "ent_216",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "effect of Zembrin in humans"
+      },
+      "source_chunk_ids": [
+        "30a59883e10cb22e75e64673a8bd011a"
+      ]
+    },
+    {
+      "id": "ent_217",
+      "type": "Compound",
+      "name": "Zembrin extract",
+      "attributes": {
+        "context": "effect of Zembrin extract in the Morris water maze test"
+      },
+      "source_chunk_ids": [
+        "30a59883e10cb22e75e64673a8bd011a"
+      ]
+    },
+    {
+      "id": "ent_218",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "earlier study of Zembrin"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_219",
+      "type": "PharmEffect",
+      "name": "generalized well-being",
+      "attributes": {
+        "context": "subjective ratings of generalized well-being"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_220",
+      "type": "PharmEffect",
+      "name": "positive mood states",
+      "attributes": {
+        "context": "subjective ratings of ... positive mood states"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_221",
+      "type": "PharmEffect",
+      "name": "uplifted spirits",
+      "attributes": {
+        "context": "reported \"uplifted spirits\""
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_222",
+      "type": "PharmEffect",
+      "name": "better coping with stress",
+      "attributes": {
+        "context": "better coping with stress"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_223",
+      "type": "PharmEffect",
+      "name": "better coping with depressing events",
+      "attributes": {
+        "context": "better coping with ... depressing events"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_224",
+      "type": "Indication",
+      "name": "stress",
+      "attributes": {
+        "context": "coping with stress"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_225",
+      "type": "Indication",
+      "name": "depressing events",
+      "attributes": {
+        "context": "coping with ... depressing events"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_226",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "subjects taking Zembrin\u00ae"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_227",
+      "type": "PharmEffect",
+      "name": "improvement in the subjective quality of their sleep",
+      "attributes": {
+        "context": "reported improvement in the subjective quality of their sleep"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_228",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "effects of Zembrin on mood and sleep"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_229",
+      "type": "Compound",
+      "name": "PDE-4",
+      "attributes": {
+        "context": "function of PDE-4"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_230",
+      "type": "Compound",
+      "name": "SSRI",
+      "attributes": {
+        "context": "function of ... SSRI"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_231",
+      "type": "PharmEffect",
+      "name": "regulating mood",
+      "attributes": {
+        "context": "in regulating mood"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_232",
+      "type": "PharmEffect",
+      "name": "enhancing cognition",
+      "attributes": {
+        "context": "enhancing cognition"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_233",
+      "type": "PharmEffect",
+      "name": "improving sleep quality",
+      "attributes": {
+        "context": "improving sleep quality"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_234",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "Zembrin treated group"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_235",
+      "type": "PharmEffect",
+      "name": "improvement in sleep",
+      "attributes": {
+        "context": "found an overall improvement in sleep"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_236",
+      "type": "Compound",
+      "name": "PDE-4",
+      "attributes": {
+        "context": "studies on PDE-4 in sleep regulation"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_237",
+      "type": "PharmEffect",
+      "name": "sleep regulation",
+      "attributes": {
+        "context": "PDE-4 in sleep regulation"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_238",
+      "type": "Indication",
+      "name": "sleep deprivation",
+      "attributes": {
+        "context": "In sleep deprivation model"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_239",
+      "type": "Concentration",
+      "name": "5 hours",
+      "attributes": {
+        "context": "sleep deprived for 5 hours"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_240",
+      "type": "Compound",
+      "name": "cAMP",
+      "attributes": {
+        "context": "impairment in cAMP/phosphokinase A-dependent synaptic plasticity"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_241",
+      "type": "Compound",
+      "name": "phosphokinase A",
+      "attributes": {
+        "context": "cAMP/phosphokinase A-dependent synaptic plasticity"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_242",
+      "type": "PharmEffect",
+      "name": "impairment in cAMP/phosphokinase A-dependent synaptic plasticity",
+      "attributes": {
+        "context": "showed selective impairment in cAMP/phosphokinase A-dependent synaptic plasticity"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_243",
+      "type": "PharmEffect",
+      "name": "long-term potentiation (LTP)",
+      "attributes": {
+        "context": "long-term potentiation (LTP) paradigm"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_244",
+      "type": "Compound",
+      "name": "PDE-4 inhibitor",
+      "attributes": {
+        "context": "Treatment with PDE-4 inhibitor"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_245",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "PDE-4 inhibitor, rolipram"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_246",
+      "type": "PharmEffect",
+      "name": "restored sleep loss",
+      "attributes": {
+        "context": "restored both sleep loss"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_247",
+      "type": "Indication",
+      "name": "sleep loss",
+      "attributes": {
+        "context": "restored both sleep loss"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_248",
+      "type": "PharmEffect",
+      "name": "restored LTP deficits",
+      "attributes": {
+        "context": "restored both ... LTP deficits"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_249",
+      "type": "Indication",
+      "name": "LTP deficits",
+      "attributes": {
+        "context": "restored both ... LTP deficits"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_250",
+      "type": "Indication",
+      "name": "sleep deprivation",
+      "attributes": {
+        "context": "sleep deprivation attenuates cAMP signaling"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_251",
+      "type": "Compound",
+      "name": "cAMP",
+      "attributes": {
+        "context": "attenuates cAMP signaling"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_252",
+      "type": "PharmEffect",
+      "name": "attenuates cAMP signaling",
+      "attributes": {
+        "context": "attenuates cAMP signaling"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_253",
+      "type": "Compound",
+      "name": "CREB",
+      "attributes": {
+        "context": "CREB-mediated gene expression"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_254",
+      "type": "PharmEffect",
+      "name": "attenuates CREB-mediated gene expression",
+      "attributes": {
+        "context": "attenuates ... CREB-mediated gene expression"
+      },
+      "source_chunk_ids": [
+        "1e0268f62c7dabbb2312a1fcd617a8a3"
+      ]
+    },
+    {
+      "id": "ent_255",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "Zembrin at oral dosage of 25 mg"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_256",
+      "type": "Concentration",
+      "name": "25 mg",
+      "attributes": {
+        "context": "oral dosage of 25 mg"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_257",
+      "type": "PharmEffect",
+      "name": "safe",
+      "attributes": {
+        "context": "was safe and well tolerated"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_258",
+      "type": "PharmEffect",
+      "name": "well tolerated",
+      "attributes": {
+        "context": "was safe and well tolerated"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_259",
+      "type": "PharmEffect",
+      "name": "nausea",
+      "attributes": {
+        "context": "no nausea or vomiting"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_260",
+      "type": "PharmEffect",
+      "name": "vomiting",
+      "attributes": {
+        "context": "no nausea or vomiting"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_261",
+      "type": "PharmEffect",
+      "name": "abnormalities",
+      "attributes": {
+        "context": "No abnormalities were found"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_262",
+      "type": "PharmEffect",
+      "name": "metabolic parameters",
+      "attributes": {
+        "context": "metabolic parameters (lipid, fasting glucose, electrolytes)"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_263",
+      "type": "PharmEffect",
+      "name": "liver and kidney functions",
+      "attributes": {
+        "context": "liver and kidney functions"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_264",
+      "type": "PharmEffect",
+      "name": "heightened sense of well-being",
+      "attributes": {
+        "context": "reported a heightened sense of well-being"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_265",
+      "type": "PharmEffect",
+      "name": "cope with stress",
+      "attributes": {
+        "context": "felt better to cope with stress"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_266",
+      "type": "PharmEffect",
+      "name": "euphoria",
+      "attributes": {
+        "context": "no euphoria occurred"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_267",
+      "type": "PharmEffect",
+      "name": "abuse liability",
+      "attributes": {
+        "context": "No euphoria or abuse liability was found"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_268",
+      "type": "PharmEffect",
+      "name": "metabolic side effects",
+      "attributes": {
+        "context": "No metabolic side effects were seen"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_269",
+      "type": "Compound",
+      "name": "Zembrin extract",
+      "attributes": {
+        "context": "studies of Zembrin extract"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_270",
+      "type": "PharmEffect",
+      "name": "QT-prolongation effect",
+      "attributes": {
+        "context": "No QT-prolongation effect was observed"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_271",
+      "type": "Compound",
+      "name": "SSRI",
+      "attributes": {
+        "context": "targeting SSRI"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_272",
+      "type": "Compound",
+      "name": "PDE-4",
+      "attributes": {
+        "context": "PDE-4/PKA/CREB"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_273",
+      "type": "Compound",
+      "name": "PKA",
+      "attributes": {
+        "context": "PDE-4/PKA/CREB"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_274",
+      "type": "Compound",
+      "name": "CREB",
+      "attributes": {
+        "context": "PDE-4/PKA/CREB"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_275",
+      "type": "Compound",
+      "name": "HAT",
+      "attributes": {
+        "context": "epigenetic signature HAT"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_276",
+      "type": "Indication",
+      "name": "major depression disorder",
+      "attributes": {
+        "context": "diagnosed as major depression disorder"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_277",
+      "type": "Indication",
+      "name": "dysthymia",
+      "attributes": {
+        "context": "dysthymia with co-morbid personality disorder"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_278",
+      "type": "Indication",
+      "name": "personality disorder",
+      "attributes": {
+        "context": "co-morbid personality disorder"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_279",
+      "type": "Indication",
+      "name": "major depressive disorder",
+      "attributes": {
+        "context": "and major depressive disorder"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_280",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "Zembrin at 50 mg po"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_281",
+      "type": "Concentration",
+      "name": "50 mg",
+      "attributes": {
+        "context": "Zembrin at 50 mg po"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_282",
+      "type": "PharmEffect",
+      "name": "efficacious",
+      "attributes": {
+        "context": "was efficacious in improving depressive symptoms"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_283",
+      "type": "PharmEffect",
+      "name": "improving depressive symptoms",
+      "attributes": {
+        "context": "efficacious in improving depressive symptoms"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_284",
+      "type": "Indication",
+      "name": "sleep disturbances",
+      "attributes": {
+        "context": "depressive symptoms: sleep disturbances"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_285",
+      "type": "Indication",
+      "name": "anxiety",
+      "attributes": {
+        "context": "sleep disturbances, anxiety and concentration difficulties"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_286",
+      "type": "Indication",
+      "name": "concentration difficulties",
+      "attributes": {
+        "context": "anxiety and concentration difficulties"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_287",
+      "type": "Indication",
+      "name": "hypersomnia",
+      "attributes": {
+        "context": "hypersomnia was resolved"
+      },
+      "source_chunk_ids": [
+        "c98538d3476534121c84dba0e8e1052d"
+      ]
+    },
+    {
+      "id": "ent_288",
+      "type": "Compound",
+      "name": "Sildenafil",
+      "attributes": {
+        "context": "Sildenafil and tadalafil, the putative PDE-5 inhibitors"
+      },
+      "source_chunk_ids": [
+        "1993f63ecc8b84852992e4f8f6af598e"
+      ]
+    },
+    {
+      "id": "ent_289",
+      "type": "Compound",
+      "name": "tadalafil",
+      "attributes": {
+        "context": "Sildenafil and tadalafil, the putative PDE-5 inhibitors"
+      },
+      "source_chunk_ids": [
+        "1993f63ecc8b84852992e4f8f6af598e"
+      ]
+    },
+    {
+      "id": "ent_290",
+      "type": "Compound",
+      "name": "PDE-5 inhibitors",
+      "attributes": {
+        "context": "the putative PDE-5 inhibitors"
+      },
+      "source_chunk_ids": [
+        "1993f63ecc8b84852992e4f8f6af598e"
+      ]
+    },
+    {
+      "id": "ent_291",
+      "type": "Compound",
+      "name": "cGMP",
+      "attributes": {
+        "context": "act through cGMP system"
+      },
+      "source_chunk_ids": [
+        "1993f63ecc8b84852992e4f8f6af598e"
+      ]
+    },
+    {
+      "id": "ent_292",
+      "type": "Indication",
+      "name": "erectile dysfunction",
+      "attributes": {
+        "context": "are indicated for erectile dysfunction"
+      },
+      "source_chunk_ids": [
+        "1993f63ecc8b84852992e4f8f6af598e"
+      ]
+    },
+    {
+      "id": "ent_293",
+      "type": "Indication",
+      "name": "AD",
+      "attributes": {
+        "context": "for AD treatment"
+      },
+      "source_chunk_ids": [
+        "1993f63ecc8b84852992e4f8f6af598e"
+      ]
+    },
+    {
+      "id": "ent_294",
+      "type": "Indication",
+      "name": "melanoma",
+      "attributes": {
+        "context": "increased incidence of melanoma"
+      },
+      "source_chunk_ids": [
+        "1993f63ecc8b84852992e4f8f6af598e"
+      ]
+    },
+    {
+      "id": "ent_295",
+      "type": "Compound",
+      "name": "Zembrin",
+      "attributes": {
+        "context": "Zembrin had no effect"
+      },
+      "source_chunk_ids": [
+        "1993f63ecc8b84852992e4f8f6af598e"
+      ]
+    },
+    {
+      "id": "ent_296",
+      "type": "PharmEffect",
+      "name": "no effect on growth",
+      "attributes": {
+        "context": "had no effect on growth"
+      },
+      "source_chunk_ids": [
+        "1993f63ecc8b84852992e4f8f6af598e"
+      ]
+    },
+    {
+      "id": "ent_297",
+      "type": "PharmEffect",
+      "name": "no effect on viability",
+      "attributes": {
+        "context": "or viability"
+      },
+      "source_chunk_ids": [
+        "1993f63ecc8b84852992e4f8f6af598e"
+      ]
+    },
+    {
+      "id": "ent_298",
+      "type": "Concentration",
+      "name": "24-hr exposure",
+      "attributes": {
+        "context": "following 24-hr exposure"
+      },
+      "source_chunk_ids": [
+        "1993f63ecc8b84852992e4f8f6af598e"
+      ]
+    },
+    {
+      "id": "ent_299",
+      "type": "Compound",
+      "name": "Zembrin extract",
+      "attributes": {
+        "context": "proprietary Zembrin extract"
+      },
+      "source_chunk_ids": [
+        "e484e994305f0d71b634f23510c6e179"
+      ]
+    },
+    {
+      "id": "ent_300",
+      "type": "Compound",
+      "name": "GSK3\u03b2",
+      "attributes": {
+        "context": "GSK3\u03b2, CREB, and BDNF in peripheral blood"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_301",
+      "type": "Compound",
+      "name": "CREB",
+      "attributes": {
+        "context": "GSK3\u03b2, CREB, and BDNF in peripheral blood"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_302",
+      "type": "Compound",
+      "name": "BDNF",
+      "attributes": {
+        "context": "GSK3\u03b2, CREB, and BDNF in peripheral blood"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_303",
+      "type": "Indication",
+      "name": "Alzheimer's disease",
+      "attributes": {
+        "context": "patients with Alzheimer's disease and depression"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_304",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "patients with Alzheimer's disease and depression"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_305",
+      "type": "Indication",
+      "name": "Alzheimer Disease",
+      "attributes": {
+        "context": "Neurogenesis and Alzheimer Disease"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_306",
+      "type": "Compound",
+      "name": "Cytokines",
+      "attributes": {
+        "context": "Role of Cytokines ScientificWorldJournal"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_307",
+      "type": "Indication",
+      "name": "Alzheimer's Disease",
+      "attributes": {
+        "context": "Inflammatory Process in Alzheimer's Disease"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_308",
+      "type": "Compound",
+      "name": "roflumilast",
+      "attributes": {
+        "context": "Update on roflumilast, a phosphodiesterase 4 inhibitor"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_309",
+      "type": "Compound",
+      "name": "phosphodiesterase 4 inhibitor",
+      "attributes": {
+        "context": "roflumilast, a phosphodiesterase 4 inhibitor"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_310",
+      "type": "PharmEffect",
+      "name": "treatment",
+      "attributes": {
+        "context": "for the treatment of chronic obstructive pulmonary disease"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_311",
+      "type": "Indication",
+      "name": "chronic obstructive pulmonary disease",
+      "attributes": {
+        "context": "treatment of chronic obstructive pulmonary disease"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_312",
+      "type": "PharmEffect",
+      "name": "Proinflammatory",
+      "attributes": {
+        "context": "Proinflammatory cytokine regulation of cyclic AMP-phosphodiesterase 4 signaling"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_313",
+      "type": "Compound",
+      "name": "cyclic AMP-phosphodiesterase 4",
+      "attributes": {
+        "context": "Proinflammatory cytokine regulation of cyclic AMP-phosphodiesterase 4 signaling"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_314",
+      "type": "Compound",
+      "name": "Cyclic AMP-specific phosphodiesterase-4",
+      "attributes": {
+        "context": "Cyclic AMP-specific phosphodiesterase-4 as a target"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_315",
+      "type": "PharmEffect",
+      "name": "antidepressant",
+      "attributes": {
+        "context": "development of antidepressant drugs"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_316",
+      "type": "Compound",
+      "name": "Pde4d",
+      "attributes": {
+        "context": "A new model of Pde4d deficiency"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_317",
+      "type": "Compound",
+      "name": "PDE4D enzyme",
+      "attributes": {
+        "context": "knock-down of PDE4D enzyme in rats"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_318",
+      "type": "PharmEffect",
+      "name": "antidepressant phenotype",
+      "attributes": {
+        "context": "produces an antidepressant phenotype"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_319",
+      "type": "PharmEffect",
+      "name": "Antidepressants",
+      "attributes": {
+        "context": "Antidepressants for neuro-regeneration"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_320",
+      "type": "PharmEffect",
+      "name": "neuro-regeneration",
+      "attributes": {
+        "context": "Antidepressants for neuro-regeneration"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_321",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "from depression to Alzheimer's disease"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_322",
+      "type": "Indication",
+      "name": "Alzheimer's disease",
+      "attributes": {
+        "context": "from depression to Alzheimer's disease"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_323",
+      "type": "Compound",
+      "name": "phosphodiesterase type IV",
+      "attributes": {
+        "context": "brain phosphodiesterase type IV measured with 11C-(R)-rolipram"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_324",
+      "type": "Compound",
+      "name": "11C-(R)-rolipram",
+      "attributes": {
+        "context": "measured with 11C-(R)-rolipram positron emission tomography"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_325",
+      "type": "Indication",
+      "name": "major depressive disorder",
+      "attributes": {
+        "context": "in major depressive disorder"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_326",
+      "type": "Compound",
+      "name": "noradrenaline",
+      "attributes": {
+        "context": "Increasing synaptic noradrenaline, serotonin and histamine"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_327",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "synaptic noradrenaline, serotonin and histamine"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_328",
+      "type": "Compound",
+      "name": "histamine",
+      "attributes": {
+        "context": "serotonin and histamine enhances in vivo binding"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_329",
+      "type": "Compound",
+      "name": "phosphodiesterase-4 inhibitor",
+      "attributes": {
+        "context": "binding of phosphodiesterase-4 inhibitor (R)-[11C]rolipram"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_330",
+      "type": "Compound",
+      "name": "(R)-[11C]rolipram",
+      "attributes": {
+        "context": "phosphodiesterase-4 inhibitor (R)-[11C]rolipram in rat brain"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_331",
+      "type": "Compound",
+      "name": "hypocretin",
+      "attributes": {
+        "context": "role of hypocretin and melatonin"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_332",
+      "type": "Compound",
+      "name": "melatonin",
+      "attributes": {
+        "context": "role of hypocretin and melatonin"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_333",
+      "type": "Indication",
+      "name": "Alzheimer's disease",
+      "attributes": {
+        "context": "circadian rhythms and Alzheimer's disease"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_334",
+      "type": "Indication",
+      "name": "mental Health Problems",
+      "attributes": {
+        "context": "Sleep disturbances in mental Health Problems and neurodegenerative disorders"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_335",
+      "type": "Indication",
+      "name": "neurodegenerative disorders",
+      "attributes": {
+        "context": "mental Health Problems and neurodegenerative disorders"
+      },
+      "source_chunk_ids": [
+        "ade9c1031cd017c58f7ac59279ef9ec1"
+      ]
+    },
+    {
+      "id": "ent_336",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "Extract Sceletium tortuosum (Zembrin)"
+      },
+      "source_chunk_ids": [
+        "bb4bd90f7336366bb7e4e6f52b87adfc"
+      ]
+    },
+    {
+      "id": "ent_337",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "standardized Zembrin extract"
+      },
+      "source_chunk_ids": [
+        "bb4bd90f7336366bb7e4e6f52b87adfc"
+      ]
+    },
+    {
+      "id": "ent_338",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {
+        "context": "mesembrenone targeting PDE-4"
+      },
+      "source_chunk_ids": [
+        "bb4bd90f7336366bb7e4e6f52b87adfc"
+      ]
+    },
+    {
+      "id": "ent_339",
+      "type": "Compound",
+      "name": "PDE-4",
+      "attributes": {
+        "context": "targeting PDE-4 (Phosphodiesterase subtype 4)"
+      },
+      "source_chunk_ids": [
+        "bb4bd90f7336366bb7e4e6f52b87adfc"
+      ]
+    },
+    {
+      "id": "ent_340",
+      "type": "Compound",
+      "name": "Phosphodiesterase subtype 4",
+      "attributes": {
+        "context": "PDE-4 (Phosphodiesterase subtype 4)"
+      },
+      "source_chunk_ids": [
+        "bb4bd90f7336366bb7e4e6f52b87adfc"
+      ]
+    },
+    {
+      "id": "ent_341",
+      "type": "PharmEffect",
+      "name": "regulation of Mood",
+      "attributes": {
+        "context": "for regulation of Mood and Cognition"
+      },
+      "source_chunk_ids": [
+        "bb4bd90f7336366bb7e4e6f52b87adfc"
+      ]
+    },
+    {
+      "id": "ent_342",
+      "type": "PharmEffect",
+      "name": "Cognition",
+      "attributes": {
+        "context": "for regulation of Mood and Cognition"
+      },
+      "source_chunk_ids": [
+        "bb4bd90f7336366bb7e4e6f52b87adfc"
+      ]
+    },
+    {
+      "id": "ent_343",
+      "type": "Compound",
+      "name": "Sildenafil",
+      "attributes": {
+        "context": "Sildenafil use and increased risk"
+      },
+      "source_chunk_ids": [
+        "bb4bd90f7336366bb7e4e6f52b87adfc"
+      ]
+    },
+    {
+      "id": "ent_344",
+      "type": "Indication",
+      "name": "melanoma",
+      "attributes": {
+        "context": "incident melanoma in US men"
+      },
+      "source_chunk_ids": [
+        "bb4bd90f7336366bb7e4e6f52b87adfc"
+      ]
+    },
+    {
+      "id": "ent_345",
+      "type": "PharmEffect",
+      "name": "Cognitive",
+      "attributes": {
+        "context": "Cognitive tests used in chronic adult human"
+      },
+      "source_chunk_ids": [
+        "bb4bd90f7336366bb7e4e6f52b87adfc"
+      ]
+    },
+    {
+      "id": "ent_346",
+      "type": "Compound",
+      "name": "micronutrient",
+      "attributes": {
+        "context": "micronutrient and phytochemical intervention studies"
+      },
+      "source_chunk_ids": [
+        "bb4bd90f7336366bb7e4e6f52b87adfc"
+      ]
+    },
+    {
+      "id": "ent_347",
+      "type": "Compound",
+      "name": "phytochemical",
+      "attributes": {
+        "context": "micronutrient and phytochemical intervention studies"
+      },
+      "source_chunk_ids": [
+        "bb4bd90f7336366bb7e4e6f52b87adfc"
+      ]
+    },
+    {
+      "id": "ent_348",
+      "type": "Indication",
+      "name": "Alzheimer's disease",
+      "attributes": {
+        "context": "markers for Alzheimer's disease"
+      },
+      "source_chunk_ids": [
+        "bb4bd90f7336366bb7e4e6f52b87adfc"
+      ]
+    },
+    {
+      "id": "ent_349",
+      "type": "Indication",
+      "name": "MCI",
+      "attributes": {
+        "context": "at the prodromal (MCI) stage"
+      },
+      "source_chunk_ids": [
+        "bb4bd90f7336366bb7e4e6f52b87adfc"
+      ]
+    },
+    {
+      "id": "ent_350",
+      "type": "Indication",
+      "name": "mild cognitive impairment",
+      "attributes": {
+        "context": "conversion from mild cognitive impairment to Alzheimer disease"
+      },
+      "source_chunk_ids": [
+        "bb4bd90f7336366bb7e4e6f52b87adfc"
+      ]
+    },
+    {
+      "id": "ent_351",
+      "type": "Indication",
+      "name": "Alzheimer disease",
+      "attributes": {
+        "context": "impairment to Alzheimer disease"
+      },
+      "source_chunk_ids": [
+        "bb4bd90f7336366bb7e4e6f52b87adfc"
+      ]
+    },
+    {
+      "id": "ent_352",
+      "type": "PharmEffect",
+      "name": "cognitive",
+      "attributes": {
+        "context": "cognitive markers, and risk factors"
+      },
+      "source_chunk_ids": [
+        "bb4bd90f7336366bb7e4e6f52b87adfc"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:03.952044+00:00",
+    "original_file": "entities.json"
+  }
+}

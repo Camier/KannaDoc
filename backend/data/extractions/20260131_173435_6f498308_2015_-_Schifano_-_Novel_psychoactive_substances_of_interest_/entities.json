@@ -1,0 +1,4930 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "20d0f18bf40fcbab8fa46c0fa1b40211049e179a3fc1bfb18602ce8015ec2e5f",
+  "extracted_at": "2026-02-01T08:39:36.204190+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "Novel psychoactive substances of interest for psychiatry"
+      },
+      "source_chunk_ids": [
+        "650fdb5edb2a7690c0a70a1a99269a53"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Indication",
+      "name": "acute/chronic psychopathological manifestations",
+      "attributes": {
+        "context": "onset of acute/chronic psychopathological manifestations"
+      },
+      "source_chunk_ids": [
+        "dbbdd543d6321faea5397ea9d8184ab7"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "Compound",
+      "name": "novel psychoactive substances",
+      "attributes": {
+        "context": "intake of a range of novel psychoactive substances"
+      },
+      "source_chunk_ids": [
+        "dbbdd543d6321faea5397ea9d8184ab7"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "Compound",
+      "name": "substances",
+      "attributes": {
+        "context": "few hundred substances available"
+      },
+      "source_chunk_ids": [
+        "dbbdd543d6321faea5397ea9d8184ab7"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "Indication",
+      "name": "psychopathological disturbances",
+      "attributes": {
+        "context": "the psychopathological disturbances they can produce"
+      },
+      "source_chunk_ids": [
+        "dbbdd543d6321faea5397ea9d8184ab7"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "Compound",
+      "name": "SC molecules",
+      "attributes": {
+        "context": "a few hundreds of SC molecules are currently available"
+      },
+      "source_chunk_ids": [
+        "ecd45f1fd1ee6b04225e229dffaf25ad"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "Compound",
+      "name": "SCs",
+      "attributes": {
+        "context": "SCs possess high/very high cannabinoid receptor binding affinity levels"
+      },
+      "source_chunk_ids": [
+        "ecd45f1fd1ee6b04225e229dffaf25ad"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "PharmEffect",
+      "name": "cannabinoid receptor binding affinity",
+      "attributes": {
+        "context": "SCs possess high/very high cannabinoid receptor binding affinity levels"
+      },
+      "source_chunk_ids": [
+        "ecd45f1fd1ee6b04225e229dffaf25ad"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "Compound",
+      "name": "tetrahydrocannabinol",
+      "attributes": {
+        "context": "efficacy than tetrahydrocannabinol itself"
+      },
+      "source_chunk_ids": [
+        "ecd45f1fd1ee6b04225e229dffaf25ad"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "Compound",
+      "name": "SCs",
+      "attributes": {
+        "context": "some SCs show further pharmacodynamic actions"
+      },
+      "source_chunk_ids": [
+        "ecd45f1fd1ee6b04225e229dffaf25ad"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "Compound",
+      "name": "N-methyl-D-aspartate",
+      "attributes": {
+        "context": "N-methyl-D-aspartate (NMDA) receptor antagonism"
+      },
+      "source_chunk_ids": [
+        "ecd45f1fd1ee6b04225e229dffaf25ad"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "PharmEffect",
+      "name": "NMDA receptor antagonism",
+      "attributes": {
+        "context": "N-methyl-D-aspartate (NMDA) receptor antagonism"
+      },
+      "source_chunk_ids": [
+        "ecd45f1fd1ee6b04225e229dffaf25ad"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "Compound",
+      "name": "monoamine oxidase",
+      "attributes": {
+        "context": "monoamine oxidase (MAO) inhibitory properties"
+      },
+      "source_chunk_ids": [
+        "ecd45f1fd1ee6b04225e229dffaf25ad"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "PharmEffect",
+      "name": "MAO inhibitory properties",
+      "attributes": {
+        "context": "monoamine oxidase (MAO) inhibitory properties"
+      },
+      "source_chunk_ids": [
+        "ecd45f1fd1ee6b04225e229dffaf25ad"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "Compound",
+      "name": "SCs",
+      "attributes": {
+        "context": "almost all SCs possess indole-derived structures"
+      },
+      "source_chunk_ids": [
+        "ecd45f1fd1ee6b04225e229dffaf25ad"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "Compound",
+      "name": "indole",
+      "attributes": {
+        "context": "almost all SCs possess indole-derived structures"
+      },
+      "source_chunk_ids": [
+        "ecd45f1fd1ee6b04225e229dffaf25ad"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "PharmEffect",
+      "name": "5-HT2A receptor dysfunction",
+      "attributes": {
+        "context": "facilitate 5-HT2A receptor dysfunction"
+      },
+      "source_chunk_ids": [
+        "ecd45f1fd1ee6b04225e229dffaf25ad"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "Indication",
+      "name": "hallucinations",
+      "attributes": {
+        "context": "associated with both hallucinations/psychosis"
+      },
+      "source_chunk_ids": [
+        "ecd45f1fd1ee6b04225e229dffaf25ad"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "Indication",
+      "name": "psychosis",
+      "attributes": {
+        "context": "associated with both hallucinations/psychosis"
+      },
+      "source_chunk_ids": [
+        "ecd45f1fd1ee6b04225e229dffaf25ad"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "Indication",
+      "name": "serotonin syndrome",
+      "attributes": {
+        "context": "and the serotonin syndrome"
+      },
+      "source_chunk_ids": [
+        "ecd45f1fd1ee6b04225e229dffaf25ad"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "Compound",
+      "name": "SC",
+      "attributes": {
+        "context": "the recent trend of SC fluorination"
+      },
+      "source_chunk_ids": [
+        "ecd45f1fd1ee6b04225e229dffaf25ad"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "PharmEffect",
+      "name": "lipophilicity",
+      "attributes": {
+        "context": "increase the compounds' lipophilicity"
+      },
+      "source_chunk_ids": [
+        "ecd45f1fd1ee6b04225e229dffaf25ad"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "PharmEffect",
+      "name": "enhancing the absorption through biological membranes",
+      "attributes": {
+        "context": "hence enhancing the absorption through biological membranes/blood brain barrier"
+      },
+      "source_chunk_ids": [
+        "ecd45f1fd1ee6b04225e229dffaf25ad"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "PharmEffect",
+      "name": "agitation",
+      "attributes": {
+        "context": "characterized by agitation/anxiety"
+      },
+      "source_chunk_ids": [
+        "582900b8e7de4b285553204140171b95"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "PharmEffect",
+      "name": "anxiety",
+      "attributes": {
+        "context": "characterized by agitation/anxiety"
+      },
+      "source_chunk_ids": [
+        "582900b8e7de4b285553204140171b95"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "PharmEffect",
+      "name": "visual/auditory hallucinations",
+      "attributes": {
+        "context": "visual/auditory hallucinations"
+      },
+      "source_chunk_ids": [
+        "582900b8e7de4b285553204140171b95"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "PharmEffect",
+      "name": "tachycardia",
+      "attributes": {
+        "context": "together with tachycardia"
+      },
+      "source_chunk_ids": [
+        "582900b8e7de4b285553204140171b95"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "PharmEffect",
+      "name": "hypertension",
+      "attributes": {
+        "context": "tachycardia, hypertension"
+      },
+      "source_chunk_ids": [
+        "582900b8e7de4b285553204140171b95"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "PharmEffect",
+      "name": "mydriasis",
+      "attributes": {
+        "context": "hypertension, mydriasis"
+      },
+      "source_chunk_ids": [
+        "582900b8e7de4b285553204140171b95"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "PharmEffect",
+      "name": "hyperglycaemia",
+      "attributes": {
+        "context": "mydriasis, hyperglycaemia"
+      },
+      "source_chunk_ids": [
+        "582900b8e7de4b285553204140171b95"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "PharmEffect",
+      "name": "dyspnoea",
+      "attributes": {
+        "context": "hyperglycaemia, dyspnoea"
+      },
+      "source_chunk_ids": [
+        "582900b8e7de4b285553204140171b95"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "PharmEffect",
+      "name": "vomiting",
+      "attributes": {
+        "context": "dyspnoea, vomiting"
+      },
+      "source_chunk_ids": [
+        "582900b8e7de4b285553204140171b95"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "PharmEffect",
+      "name": "seizures",
+      "attributes": {
+        "context": "vomiting and seizures"
+      },
+      "source_chunk_ids": [
+        "582900b8e7de4b285553204140171b95"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "Indication",
+      "name": "stroke",
+      "attributes": {
+        "context": "may include stroke"
+      },
+      "source_chunk_ids": [
+        "582900b8e7de4b285553204140171b95"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "Indication",
+      "name": "encephalopathy",
+      "attributes": {
+        "context": "stroke, encephalopathy"
+      },
+      "source_chunk_ids": [
+        "582900b8e7de4b285553204140171b95"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Indication",
+      "name": "myocardial infarction",
+      "attributes": {
+        "context": "encephalopathy, myocardial infarction"
+      },
+      "source_chunk_ids": [
+        "582900b8e7de4b285553204140171b95"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "Indication",
+      "name": "acute kidney injuries",
+      "attributes": {
+        "context": "myocardial infarction and acute kidney injuries"
+      },
+      "source_chunk_ids": [
+        "582900b8e7de4b285553204140171b95"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "Compound",
+      "name": "synthetic cathinones",
+      "attributes": {
+        "context": "synthetic cathinones are snorted"
+      },
+      "source_chunk_ids": [
+        "51e54cce87b985218219863a72208bd1"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "Compound",
+      "name": "mephedrone",
+      "attributes": {
+        "context": "For mephedrone, the half-life"
+      },
+      "source_chunk_ids": [
+        "51e54cce87b985218219863a72208bd1"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "potency levels on serotonin"
+      },
+      "source_chunk_ids": [
+        "51e54cce87b985218219863a72208bd1"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "dopamine and noradrenaline pathways"
+      },
+      "source_chunk_ids": [
+        "51e54cce87b985218219863a72208bd1"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "Compound",
+      "name": "noradrenaline",
+      "attributes": {
+        "context": "dopamine and noradrenaline pathways"
+      },
+      "source_chunk_ids": [
+        "51e54cce87b985218219863a72208bd1"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "PharmEffect",
+      "name": "sympathomimetic/amphetamine-like effects",
+      "attributes": {
+        "context": "possess sympathomimetic/amphetamine-like effects"
+      },
+      "source_chunk_ids": [
+        "51e54cce87b985218219863a72208bd1"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "Indication",
+      "name": "Fatalities",
+      "attributes": {
+        "context": "Fatalities have been associated with"
+      },
+      "source_chunk_ids": [
+        "c25d4e5c6d42a1c92d4459fd177616c3"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "Compound",
+      "name": "mephedrone",
+      "attributes": {
+        "context": "associated with mephedrone"
+      },
+      "source_chunk_ids": [
+        "c25d4e5c6d42a1c92d4459fd177616c3"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "Compound",
+      "name": "methylone",
+      "attributes": {
+        "context": "methylone and butylone"
+      },
+      "source_chunk_ids": [
+        "c25d4e5c6d42a1c92d4459fd177616c3"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "Compound",
+      "name": "butylone",
+      "attributes": {
+        "context": "methylone and butylone"
+      },
+      "source_chunk_ids": [
+        "c25d4e5c6d42a1c92d4459fd177616c3"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "Compound",
+      "name": "synthetic cathinones",
+      "attributes": {
+        "context": "proportion of synthetic cathinones\u2019 users"
+      },
+      "source_chunk_ids": [
+        "c25d4e5c6d42a1c92d4459fd177616c3"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "PharmEffect",
+      "name": "tolerance",
+      "attributes": {
+        "context": "users report tolerance"
+      },
+      "source_chunk_ids": [
+        "c25d4e5c6d42a1c92d4459fd177616c3"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "PharmEffect",
+      "name": "dependence",
+      "attributes": {
+        "context": "dependence or withdrawal symptoms"
+      },
+      "source_chunk_ids": [
+        "c25d4e5c6d42a1c92d4459fd177616c3"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "PharmEffect",
+      "name": "withdrawal symptoms",
+      "attributes": {
+        "context": "dependence or withdrawal symptoms"
+      },
+      "source_chunk_ids": [
+        "c25d4e5c6d42a1c92d4459fd177616c3"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "Compound",
+      "name": "methcathinone",
+      "attributes": {
+        "context": "Abstinent methcathinone users"
+      },
+      "source_chunk_ids": [
+        "c25d4e5c6d42a1c92d4459fd177616c3"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "PharmEffect",
+      "name": "decreased striatal dopamine transporter density",
+      "attributes": {
+        "context": "present with decreased striatal dopamine transporter density"
+      },
+      "source_chunk_ids": [
+        "c25d4e5c6d42a1c92d4459fd177616c3"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "Indication",
+      "name": "psychiatric problems",
+      "attributes": {
+        "context": "long-term psychiatric problems"
+      },
+      "source_chunk_ids": [
+        "c25d4e5c6d42a1c92d4459fd177616c3"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "Compound",
+      "name": "MDMA",
+      "attributes": {
+        "context": "MDMA (\u201cEcstasy\u201d)"
+      },
+      "source_chunk_ids": [
+        "8d0d8f50a5f8482677cf6d183a0b1e86"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "Compound",
+      "name": "Ecstasy",
+      "attributes": {
+        "context": "MDMA (\u201cEcstasy\u201d)"
+      },
+      "source_chunk_ids": [
+        "8d0d8f50a5f8482677cf6d183a0b1e86"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "PharmEffect",
+      "name": "psychedelic",
+      "attributes": {
+        "context": "psychedelic phenethylamine products"
+      },
+      "source_chunk_ids": [
+        "8d0d8f50a5f8482677cf6d183a0b1e86"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "Compound",
+      "name": "phenethylamine",
+      "attributes": {
+        "context": "psychedelic phenethylamine products"
+      },
+      "source_chunk_ids": [
+        "8d0d8f50a5f8482677cf6d183a0b1e86"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "Compound",
+      "name": "2C molecules",
+      "attributes": {
+        "context": "a few 2C molecules"
+      },
+      "source_chunk_ids": [
+        "8d0d8f50a5f8482677cf6d183a0b1e86"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "Compound",
+      "name": "2,5-dimethoxy-4-bromophenethylamine",
+      "attributes": {
+        "context": "2,5-dimethoxy-4-bromophenethylamine (2-CB, \u201cNexus\u201d)"
+      },
+      "source_chunk_ids": [
+        "0213c9f2a9b5f38e5173e29d3442b0e9"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "Compound",
+      "name": "2-CB",
+      "attributes": {
+        "context": "2,5-dimethoxy-4-bromophenethylamine (2-CB, \u201cNexus\u201d)"
+      },
+      "source_chunk_ids": [
+        "0213c9f2a9b5f38e5173e29d3442b0e9"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "Compound",
+      "name": "Nexus",
+      "attributes": {
+        "context": "2,5-dimethoxy-4-bromophenethylamine (2-CB, \u201cNexus\u201d)"
+      },
+      "source_chunk_ids": [
+        "0213c9f2a9b5f38e5173e29d3442b0e9"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "Compound",
+      "name": "2,5-dimethoxy-4-iodophenethylamine",
+      "attributes": {
+        "context": "2,5-dimethoxy-4-iodophenethylamine (2C-I)"
+      },
+      "source_chunk_ids": [
+        "0213c9f2a9b5f38e5173e29d3442b0e9"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "Compound",
+      "name": "2C-I",
+      "attributes": {
+        "context": "2,5-dimethoxy-4-iodophenethylamine (2C-I)"
+      },
+      "source_chunk_ids": [
+        "0213c9f2a9b5f38e5173e29d3442b0e9"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "Compound",
+      "name": "2,5-dimethoxy-4-ethylphenethylamine",
+      "attributes": {
+        "context": "2,5-dimethoxy-4-ethylphenethylamine (2C-E)"
+      },
+      "source_chunk_ids": [
+        "0213c9f2a9b5f38e5173e29d3442b0e9"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "Compound",
+      "name": "2C-E",
+      "attributes": {
+        "context": "2,5-dimethoxy-4-ethylphenethylamine (2C-E)"
+      },
+      "source_chunk_ids": [
+        "0213c9f2a9b5f38e5173e29d3442b0e9"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "PharmEffect",
+      "name": "affinity for 5-HT2A receptors",
+      "attributes": {
+        "context": "show affinity for 5-HT2A receptors"
+      },
+      "source_chunk_ids": [
+        "0213c9f2a9b5f38e5173e29d3442b0e9"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "PharmEffect",
+      "name": "inhibit the dopamine/noradrenaline/serotonin reuptake",
+      "attributes": {
+        "context": "inhibit the dopamine/noradrenaline/serotonin reuptake"
+      },
+      "source_chunk_ids": [
+        "0213c9f2a9b5f38e5173e29d3442b0e9"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "inhibit the dopamine/noradrenaline/serotonin reuptake"
+      },
+      "source_chunk_ids": [
+        "0213c9f2a9b5f38e5173e29d3442b0e9"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "Compound",
+      "name": "noradrenaline",
+      "attributes": {
+        "context": "inhibit the dopamine/noradrenaline/serotonin reuptake"
+      },
+      "source_chunk_ids": [
+        "0213c9f2a9b5f38e5173e29d3442b0e9"
+      ]
+    },
+    {
+      "id": "ent_071",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "inhibit the dopamine/noradrenaline/serotonin reuptake"
+      },
+      "source_chunk_ids": [
+        "0213c9f2a9b5f38e5173e29d3442b0e9"
+      ]
+    },
+    {
+      "id": "ent_072",
+      "type": "Compound",
+      "name": "MDMA",
+      "attributes": {
+        "context": "ingested as MDMA substitutes"
+      },
+      "source_chunk_ids": [
+        "0213c9f2a9b5f38e5173e29d3442b0e9"
+      ]
+    },
+    {
+      "id": "ent_073",
+      "type": "Compound",
+      "name": "MDMA",
+      "attributes": {
+        "context": "MDMA-like drugs"
+      },
+      "source_chunk_ids": [
+        "40a583d5c32893201798760ee7880893"
+      ]
+    },
+    {
+      "id": "ent_074",
+      "type": "PharmEffect",
+      "name": "enhanced mood",
+      "attributes": {
+        "context": "enhanced mood"
+      },
+      "source_chunk_ids": [
+        "40a583d5c32893201798760ee7880893"
+      ]
+    },
+    {
+      "id": "ent_075",
+      "type": "PharmEffect",
+      "name": "increased energy",
+      "attributes": {
+        "context": "increased energy"
+      },
+      "source_chunk_ids": [
+        "40a583d5c32893201798760ee7880893"
+      ]
+    },
+    {
+      "id": "ent_076",
+      "type": "PharmEffect",
+      "name": "openness",
+      "attributes": {
+        "context": "openness"
+      },
+      "source_chunk_ids": [
+        "40a583d5c32893201798760ee7880893"
+      ]
+    },
+    {
+      "id": "ent_077",
+      "type": "PharmEffect",
+      "name": "perceptual alterations",
+      "attributes": {
+        "context": "perceptual alterations"
+      },
+      "source_chunk_ids": [
+        "40a583d5c32893201798760ee7880893"
+      ]
+    },
+    {
+      "id": "ent_078",
+      "type": "PharmEffect",
+      "name": "serotonergic toxicity",
+      "attributes": {
+        "context": "serotonergic ... toxicity effects"
+      },
+      "source_chunk_ids": [
+        "40a583d5c32893201798760ee7880893"
+      ]
+    },
+    {
+      "id": "ent_079",
+      "type": "PharmEffect",
+      "name": "sympathomimetic toxicity",
+      "attributes": {
+        "context": "sympathomimetic toxicity effects"
+      },
+      "source_chunk_ids": [
+        "40a583d5c32893201798760ee7880893"
+      ]
+    },
+    {
+      "id": "ent_080",
+      "type": "Indication",
+      "name": "tachycardia",
+      "attributes": {
+        "context": "including tachycardia"
+      },
+      "source_chunk_ids": [
+        "40a583d5c32893201798760ee7880893"
+      ]
+    },
+    {
+      "id": "ent_081",
+      "type": "Indication",
+      "name": "hypertension",
+      "attributes": {
+        "context": "hypertension"
+      },
+      "source_chunk_ids": [
+        "40a583d5c32893201798760ee7880893"
+      ]
+    },
+    {
+      "id": "ent_082",
+      "type": "Indication",
+      "name": "metabolic acidosis",
+      "attributes": {
+        "context": "metabolic acidosis"
+      },
+      "source_chunk_ids": [
+        "40a583d5c32893201798760ee7880893"
+      ]
+    },
+    {
+      "id": "ent_083",
+      "type": "Indication",
+      "name": "convulsions",
+      "attributes": {
+        "context": "convulsions"
+      },
+      "source_chunk_ids": [
+        "40a583d5c32893201798760ee7880893"
+      ]
+    },
+    {
+      "id": "ent_084",
+      "type": "Indication",
+      "name": "rhabdomyolysis",
+      "attributes": {
+        "context": "rhabdomyolysis"
+      },
+      "source_chunk_ids": [
+        "40a583d5c32893201798760ee7880893"
+      ]
+    },
+    {
+      "id": "ent_085",
+      "type": "Indication",
+      "name": "mydriasis",
+      "attributes": {
+        "context": "mydriasis"
+      },
+      "source_chunk_ids": [
+        "40a583d5c32893201798760ee7880893"
+      ]
+    },
+    {
+      "id": "ent_086",
+      "type": "Indication",
+      "name": "vomiting",
+      "attributes": {
+        "context": "vomiting"
+      },
+      "source_chunk_ids": [
+        "40a583d5c32893201798760ee7880893"
+      ]
+    },
+    {
+      "id": "ent_087",
+      "type": "Indication",
+      "name": "diarrhoea",
+      "attributes": {
+        "context": "diarrhoea"
+      },
+      "source_chunk_ids": [
+        "40a583d5c32893201798760ee7880893"
+      ]
+    },
+    {
+      "id": "ent_088",
+      "type": "Indication",
+      "name": "thrombocytopenia",
+      "attributes": {
+        "context": "thrombocytopenia"
+      },
+      "source_chunk_ids": [
+        "40a583d5c32893201798760ee7880893"
+      ]
+    },
+    {
+      "id": "ent_089",
+      "type": "Indication",
+      "name": "Acute renal failure",
+      "attributes": {
+        "context": "Acute renal failure"
+      },
+      "source_chunk_ids": [
+        "40a583d5c32893201798760ee7880893"
+      ]
+    },
+    {
+      "id": "ent_090",
+      "type": "Indication",
+      "name": "hyperthermia",
+      "attributes": {
+        "context": "hyperthermia"
+      },
+      "source_chunk_ids": [
+        "40a583d5c32893201798760ee7880893"
+      ]
+    },
+    {
+      "id": "ent_091",
+      "type": "Compound",
+      "name": "3C-bromo-Dragonfly",
+      "attributes": {
+        "context": "3C-bromo-Dragonfly (\u201cB-Fly\u201d) has been described as a powerful/long lasting drug"
+      },
+      "source_chunk_ids": [
+        "9d29478aee1d8cb43d3a1dcc90d2ee94"
+      ]
+    },
+    {
+      "id": "ent_092",
+      "type": "Compound",
+      "name": "B-Fly",
+      "attributes": {
+        "context": "3C-bromo-Dragonfly (\u201cB-Fly\u201d) has been described as a powerful/long lasting drug"
+      },
+      "source_chunk_ids": [
+        "9d29478aee1d8cb43d3a1dcc90d2ee94"
+      ]
+    },
+    {
+      "id": "ent_093",
+      "type": "PharmEffect",
+      "name": "powerful/long lasting",
+      "attributes": {
+        "context": "described as a powerful/long lasting drug"
+      },
+      "source_chunk_ids": [
+        "9d29478aee1d8cb43d3a1dcc90d2ee94"
+      ]
+    },
+    {
+      "id": "ent_094",
+      "type": "PharmEffect",
+      "name": "psychoactive effects",
+      "attributes": {
+        "context": "up to 3 days of psychoactive effects"
+      },
+      "source_chunk_ids": [
+        "9d29478aee1d8cb43d3a1dcc90d2ee94"
+      ]
+    },
+    {
+      "id": "ent_095",
+      "type": "PharmEffect",
+      "name": "hallucinations",
+      "attributes": {
+        "context": "associated with long-standing hallucinations"
+      },
+      "source_chunk_ids": [
+        "9d29478aee1d8cb43d3a1dcc90d2ee94"
+      ]
+    },
+    {
+      "id": "ent_096",
+      "type": "PharmEffect",
+      "name": "mood elevation",
+      "attributes": {
+        "context": "mood elevation"
+      },
+      "source_chunk_ids": [
+        "9d29478aee1d8cb43d3a1dcc90d2ee94"
+      ]
+    },
+    {
+      "id": "ent_097",
+      "type": "PharmEffect",
+      "name": "paranoid ideation",
+      "attributes": {
+        "context": "paranoid ideation"
+      },
+      "source_chunk_ids": [
+        "9d29478aee1d8cb43d3a1dcc90d2ee94"
+      ]
+    },
+    {
+      "id": "ent_098",
+      "type": "PharmEffect",
+      "name": "confusion",
+      "attributes": {
+        "context": "confusion"
+      },
+      "source_chunk_ids": [
+        "9d29478aee1d8cb43d3a1dcc90d2ee94"
+      ]
+    },
+    {
+      "id": "ent_099",
+      "type": "PharmEffect",
+      "name": "anxiety",
+      "attributes": {
+        "context": "anxiety"
+      },
+      "source_chunk_ids": [
+        "9d29478aee1d8cb43d3a1dcc90d2ee94"
+      ]
+    },
+    {
+      "id": "ent_100",
+      "type": "PharmEffect",
+      "name": "flashbacks",
+      "attributes": {
+        "context": "flashbacks"
+      },
+      "source_chunk_ids": [
+        "9d29478aee1d8cb43d3a1dcc90d2ee94"
+      ]
+    },
+    {
+      "id": "ent_101",
+      "type": "Compound",
+      "name": "4,4\u2019-dimethylaminorex",
+      "attributes": {
+        "context": "4,4\u2019-dimethylaminorex (4,4\u2019-DMAR, \u201cSerotoni\u201d)"
+      },
+      "source_chunk_ids": [
+        "b53563496e8702e30751254f5305b476"
+      ]
+    },
+    {
+      "id": "ent_102",
+      "type": "Compound",
+      "name": "4,4\u2019-DMAR",
+      "attributes": {
+        "context": "4,4\u2019-dimethylaminorex (4,4\u2019-DMAR, \u201cSerotoni\u201d)"
+      },
+      "source_chunk_ids": [
+        "b53563496e8702e30751254f5305b476"
+      ]
+    },
+    {
+      "id": "ent_103",
+      "type": "Compound",
+      "name": "Serotoni",
+      "attributes": {
+        "context": "4,4\u2019-dimethylaminorex (4,4\u2019-DMAR, \u201cSerotoni\u201d)"
+      },
+      "source_chunk_ids": [
+        "b53563496e8702e30751254f5305b476"
+      ]
+    },
+    {
+      "id": "ent_104",
+      "type": "Compound",
+      "name": "aminorex",
+      "attributes": {
+        "context": "derivative of aminorex"
+      },
+      "source_chunk_ids": [
+        "b53563496e8702e30751254f5305b476"
+      ]
+    },
+    {
+      "id": "ent_105",
+      "type": "PharmEffect",
+      "name": "deaths",
+      "attributes": {
+        "context": "associated in 2013/2014 with some 30 deaths"
+      },
+      "source_chunk_ids": [
+        "b53563496e8702e30751254f5305b476"
+      ]
+    },
+    {
+      "id": "ent_106",
+      "type": "Compound",
+      "name": "amphetamine-type stimulants",
+      "attributes": {
+        "context": "Similar to amphetamine-type stimulants"
+      },
+      "source_chunk_ids": [
+        "b53563496e8702e30751254f5305b476"
+      ]
+    },
+    {
+      "id": "ent_107",
+      "type": "PharmEffect",
+      "name": "dopamine/noradrenaline releaser",
+      "attributes": {
+        "context": "is a potent dopamine/noradrenaline releaser"
+      },
+      "source_chunk_ids": [
+        "b53563496e8702e30751254f5305b476"
+      ]
+    },
+    {
+      "id": "ent_108",
+      "type": "PharmEffect",
+      "name": "inhibiting the serotonin transporter",
+      "attributes": {
+        "context": "whilst inhibiting the serotonin transporter"
+      },
+      "source_chunk_ids": [
+        "b53563496e8702e30751254f5305b476"
+      ]
+    },
+    {
+      "id": "ent_109",
+      "type": "PharmEffect",
+      "name": "euphoria",
+      "attributes": {
+        "context": "It produces euphoria"
+      },
+      "source_chunk_ids": [
+        "b53563496e8702e30751254f5305b476"
+      ]
+    },
+    {
+      "id": "ent_110",
+      "type": "PharmEffect",
+      "name": "alertness",
+      "attributes": {
+        "context": "euphoria, alertness and agitation"
+      },
+      "source_chunk_ids": [
+        "b53563496e8702e30751254f5305b476"
+      ]
+    },
+    {
+      "id": "ent_111",
+      "type": "PharmEffect",
+      "name": "agitation",
+      "attributes": {
+        "context": "alertness and agitation"
+      },
+      "source_chunk_ids": [
+        "b53563496e8702e30751254f5305b476"
+      ]
+    },
+    {
+      "id": "ent_112",
+      "type": "Indication",
+      "name": "Hyperthermia",
+      "attributes": {
+        "context": "Hyperthermia and cardiorespiratory problems"
+      },
+      "source_chunk_ids": [
+        "b53563496e8702e30751254f5305b476"
+      ]
+    },
+    {
+      "id": "ent_113",
+      "type": "Indication",
+      "name": "cardiorespiratory problems",
+      "attributes": {
+        "context": "and cardiorespiratory problems have also been described"
+      },
+      "source_chunk_ids": [
+        "b53563496e8702e30751254f5305b476"
+      ]
+    },
+    {
+      "id": "ent_114",
+      "type": "Compound",
+      "name": "methiopropamine",
+      "attributes": {
+        "context": "methiopropamine (MPA, \u201cBlow\u201d), a methamphetamine analogue"
+      },
+      "source_chunk_ids": [
+        "06504efb745ca802fd00787d74bd8892"
+      ]
+    },
+    {
+      "id": "ent_115",
+      "type": "Compound",
+      "name": "MPA",
+      "attributes": {
+        "context": "methiopropamine (MPA, \u201cBlow\u201d)"
+      },
+      "source_chunk_ids": [
+        "06504efb745ca802fd00787d74bd8892"
+      ]
+    },
+    {
+      "id": "ent_116",
+      "type": "Compound",
+      "name": "Blow",
+      "attributes": {
+        "context": "methiopropamine (MPA, \u201cBlow\u201d)"
+      },
+      "source_chunk_ids": [
+        "06504efb745ca802fd00787d74bd8892"
+      ]
+    },
+    {
+      "id": "ent_117",
+      "type": "Compound",
+      "name": "methamphetamine",
+      "attributes": {
+        "context": "a methamphetamine analogue"
+      },
+      "source_chunk_ids": [
+        "06504efb745ca802fd00787d74bd8892"
+      ]
+    },
+    {
+      "id": "ent_118",
+      "type": "Compound",
+      "name": "research chemical",
+      "attributes": {
+        "context": "advertised online as a \u201cresearch chemical\u201d"
+      },
+      "source_chunk_ids": [
+        "06504efb745ca802fd00787d74bd8892"
+      ]
+    },
+    {
+      "id": "ent_119",
+      "type": "Compound",
+      "name": "noradrenaline",
+      "attributes": {
+        "context": "selective noradrenaline/dopamine reuptake inhibitor"
+      },
+      "source_chunk_ids": [
+        "06504efb745ca802fd00787d74bd8892"
+      ]
+    },
+    {
+      "id": "ent_120",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "selective noradrenaline/dopamine reuptake inhibitor"
+      },
+      "source_chunk_ids": [
+        "06504efb745ca802fd00787d74bd8892"
+      ]
+    },
+    {
+      "id": "ent_121",
+      "type": "PharmEffect",
+      "name": "noradrenaline/dopamine reuptake inhibitor",
+      "attributes": {
+        "context": "Being a selective noradrenaline/dopamine reuptake inhibitor"
+      },
+      "source_chunk_ids": [
+        "06504efb745ca802fd00787d74bd8892"
+      ]
+    },
+    {
+      "id": "ent_122",
+      "type": "PharmEffect",
+      "name": "euphoria",
+      "attributes": {
+        "context": "it produces euphoria"
+      },
+      "source_chunk_ids": [
+        "06504efb745ca802fd00787d74bd8892"
+      ]
+    },
+    {
+      "id": "ent_123",
+      "type": "PharmEffect",
+      "name": "hallucinations",
+      "attributes": {
+        "context": "produces euphoria, hallucinations"
+      },
+      "source_chunk_ids": [
+        "06504efb745ca802fd00787d74bd8892"
+      ]
+    },
+    {
+      "id": "ent_124",
+      "type": "PharmEffect",
+      "name": "alertness",
+      "attributes": {
+        "context": "hallucinations, alertness"
+      },
+      "source_chunk_ids": [
+        "06504efb745ca802fd00787d74bd8892"
+      ]
+    },
+    {
+      "id": "ent_125",
+      "type": "PharmEffect",
+      "name": "sexual arousal",
+      "attributes": {
+        "context": "alertness and sexual arousal"
+      },
+      "source_chunk_ids": [
+        "06504efb745ca802fd00787d74bd8892"
+      ]
+    },
+    {
+      "id": "ent_126",
+      "type": "PharmEffect",
+      "name": "loss of appetite",
+      "attributes": {
+        "context": "associated with loss of appetite"
+      },
+      "source_chunk_ids": [
+        "06504efb745ca802fd00787d74bd8892"
+      ]
+    },
+    {
+      "id": "ent_127",
+      "type": "PharmEffect",
+      "name": "tachycardia",
+      "attributes": {
+        "context": "loss of appetite, tachycardia"
+      },
+      "source_chunk_ids": [
+        "06504efb745ca802fd00787d74bd8892"
+      ]
+    },
+    {
+      "id": "ent_128",
+      "type": "PharmEffect",
+      "name": "anxiety",
+      "attributes": {
+        "context": "tachycardia, anxiety"
+      },
+      "source_chunk_ids": [
+        "06504efb745ca802fd00787d74bd8892"
+      ]
+    },
+    {
+      "id": "ent_129",
+      "type": "PharmEffect",
+      "name": "nausea",
+      "attributes": {
+        "context": "anxiety, nausea"
+      },
+      "source_chunk_ids": [
+        "06504efb745ca802fd00787d74bd8892"
+      ]
+    },
+    {
+      "id": "ent_130",
+      "type": "PharmEffect",
+      "name": "headache",
+      "attributes": {
+        "context": "nausea, headache"
+      },
+      "source_chunk_ids": [
+        "06504efb745ca802fd00787d74bd8892"
+      ]
+    },
+    {
+      "id": "ent_131",
+      "type": "PharmEffect",
+      "name": "dizziness",
+      "attributes": {
+        "context": "headache, dizziness"
+      },
+      "source_chunk_ids": [
+        "06504efb745ca802fd00787d74bd8892"
+      ]
+    },
+    {
+      "id": "ent_132",
+      "type": "PharmEffect",
+      "name": "skin irritation",
+      "attributes": {
+        "context": "dizziness, skin irritation"
+      },
+      "source_chunk_ids": [
+        "06504efb745ca802fd00787d74bd8892"
+      ]
+    },
+    {
+      "id": "ent_133",
+      "type": "PharmEffect",
+      "name": "difficulty urinating",
+      "attributes": {
+        "context": "skin irritation, difficulty urinating"
+      },
+      "source_chunk_ids": [
+        "06504efb745ca802fd00787d74bd8892"
+      ]
+    },
+    {
+      "id": "ent_134",
+      "type": "PharmEffect",
+      "name": "hangover effects",
+      "attributes": {
+        "context": "difficulty urinating and hangover effects"
+      },
+      "source_chunk_ids": [
+        "06504efb745ca802fd00787d74bd8892"
+      ]
+    },
+    {
+      "id": "ent_135",
+      "type": "Compound",
+      "name": "tryptamines",
+      "attributes": {
+        "context": "Most exogenous tryptamines"
+      },
+      "source_chunk_ids": [
+        "0aa330a4173fc46e9a8d40d78f27e388"
+      ]
+    },
+    {
+      "id": "ent_136",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "are psychoactive hallucinogens"
+      },
+      "source_chunk_ids": [
+        "0aa330a4173fc46e9a8d40d78f27e388"
+      ]
+    },
+    {
+      "id": "ent_137",
+      "type": "PharmEffect",
+      "name": "hallucinogens",
+      "attributes": {
+        "context": "psychoactive hallucinogens found naturally"
+      },
+      "source_chunk_ids": [
+        "0aa330a4173fc46e9a8d40d78f27e388"
+      ]
+    },
+    {
+      "id": "ent_138",
+      "type": "Taxon",
+      "name": "Delosperma species",
+      "attributes": {
+        "context": "in Delosperma species plants"
+      },
+      "source_chunk_ids": [
+        "0aa330a4173fc46e9a8d40d78f27e388"
+      ]
+    },
+    {
+      "id": "ent_139",
+      "type": "Compound",
+      "name": "dimethyltryptamine",
+      "attributes": {
+        "context": "plants (dimethyltryptamine, DMT;"
+      },
+      "source_chunk_ids": [
+        "0aa330a4173fc46e9a8d40d78f27e388"
+      ]
+    },
+    {
+      "id": "ent_140",
+      "type": "Compound",
+      "name": "DMT",
+      "attributes": {
+        "context": "dimethyltryptamine, DMT;"
+      },
+      "source_chunk_ids": [
+        "0aa330a4173fc46e9a8d40d78f27e388"
+      ]
+    },
+    {
+      "id": "ent_141",
+      "type": "Compound",
+      "name": "5-MeO-DMT",
+      "attributes": {
+        "context": "DMT; 5-MeO-DMT)"
+      },
+      "source_chunk_ids": [
+        "0aa330a4173fc46e9a8d40d78f27e388"
+      ]
+    },
+    {
+      "id": "ent_142",
+      "type": "Compound",
+      "name": "psilocin",
+      "attributes": {
+        "context": "fungi (psilocin; 4-OH-DMT)"
+      },
+      "source_chunk_ids": [
+        "0aa330a4173fc46e9a8d40d78f27e388"
+      ]
+    },
+    {
+      "id": "ent_143",
+      "type": "Compound",
+      "name": "4-OH-DMT",
+      "attributes": {
+        "context": "psilocin; 4-OH-DMT)"
+      },
+      "source_chunk_ids": [
+        "0aa330a4173fc46e9a8d40d78f27e388"
+      ]
+    },
+    {
+      "id": "ent_144",
+      "type": "Compound",
+      "name": "bufotenin",
+      "attributes": {
+        "context": "amphibians (bufotenin)."
+      },
+      "source_chunk_ids": [
+        "0aa330a4173fc46e9a8d40d78f27e388"
+      ]
+    },
+    {
+      "id": "ent_145",
+      "type": "Compound",
+      "name": "bufotenin",
+      "attributes": {
+        "context": "Endogenous bufotenin and DMT"
+      },
+      "source_chunk_ids": [
+        "0aa330a4173fc46e9a8d40d78f27e388"
+      ]
+    },
+    {
+      "id": "ent_146",
+      "type": "Compound",
+      "name": "DMT",
+      "attributes": {
+        "context": "bufotenin and DMT have been"
+      },
+      "source_chunk_ids": [
+        "0aa330a4173fc46e9a8d40d78f27e388"
+      ]
+    },
+    {
+      "id": "ent_147",
+      "type": "Compound",
+      "name": "ketamine",
+      "attributes": {
+        "context": "When misused, ketamine can be injected"
+      },
+      "source_chunk_ids": [
+        "0d98c060ca8f28a83e574a7055c296c7"
+      ]
+    },
+    {
+      "id": "ent_148",
+      "type": "Concentration",
+      "name": "25-300 mg",
+      "attributes": {
+        "context": "in a dosage range of 25-300 mg"
+      },
+      "source_chunk_ids": [
+        "0d98c060ca8f28a83e574a7055c296c7"
+      ]
+    },
+    {
+      "id": "ent_149",
+      "type": "PharmEffect",
+      "name": "psychotropic effects",
+      "attributes": {
+        "context": "Its psychotropic effects include referential thinking"
+      },
+      "source_chunk_ids": [
+        "0d98c060ca8f28a83e574a7055c296c7"
+      ]
+    },
+    {
+      "id": "ent_150",
+      "type": "PharmEffect",
+      "name": "referential thinking",
+      "attributes": {
+        "context": "psychotropic effects include referential thinking"
+      },
+      "source_chunk_ids": [
+        "0d98c060ca8f28a83e574a7055c296c7"
+      ]
+    },
+    {
+      "id": "ent_151",
+      "type": "PharmEffect",
+      "name": "dissociation",
+      "attributes": {
+        "context": "dissociation, depersonalization, psychotic experiences"
+      },
+      "source_chunk_ids": [
+        "00b408fcdd197f60616256ee463ab308"
+      ]
+    },
+    {
+      "id": "ent_152",
+      "type": "PharmEffect",
+      "name": "depersonalization",
+      "attributes": {
+        "context": "depersonalization, psychotic experiences and out-of-body/near death experiences"
+      },
+      "source_chunk_ids": [
+        "00b408fcdd197f60616256ee463ab308"
+      ]
+    },
+    {
+      "id": "ent_153",
+      "type": "PharmEffect",
+      "name": "psychotic experiences",
+      "attributes": {
+        "context": "psychotic experiences and out-of-body/near death experiences"
+      },
+      "source_chunk_ids": [
+        "00b408fcdd197f60616256ee463ab308"
+      ]
+    },
+    {
+      "id": "ent_154",
+      "type": "PharmEffect",
+      "name": "out-of-body/near death experiences",
+      "attributes": {
+        "context": "out-of-body/near death experiences (e.g., the \"K-hole\""
+      },
+      "source_chunk_ids": [
+        "00b408fcdd197f60616256ee463ab308"
+      ]
+    },
+    {
+      "id": "ent_155",
+      "type": "PharmEffect",
+      "name": "K-hole",
+      "attributes": {
+        "context": "e.g., the \"K-hole\""
+      },
+      "source_chunk_ids": [
+        "00b408fcdd197f60616256ee463ab308"
+      ]
+    },
+    {
+      "id": "ent_156",
+      "type": "PharmEffect",
+      "name": "tolerance",
+      "attributes": {
+        "context": "tolerance, dependence, withdrawal signs and flashbacks"
+      },
+      "source_chunk_ids": [
+        "00b408fcdd197f60616256ee463ab308"
+      ]
+    },
+    {
+      "id": "ent_157",
+      "type": "PharmEffect",
+      "name": "dependence",
+      "attributes": {
+        "context": "dependence, withdrawal signs and flashbacks are described"
+      },
+      "source_chunk_ids": [
+        "00b408fcdd197f60616256ee463ab308"
+      ]
+    },
+    {
+      "id": "ent_158",
+      "type": "PharmEffect",
+      "name": "withdrawal signs",
+      "attributes": {
+        "context": "withdrawal signs and flashbacks are described"
+      },
+      "source_chunk_ids": [
+        "00b408fcdd197f60616256ee463ab308"
+      ]
+    },
+    {
+      "id": "ent_159",
+      "type": "PharmEffect",
+      "name": "flashbacks",
+      "attributes": {
+        "context": "flashbacks are described, with schizotypal symptoms"
+      },
+      "source_chunk_ids": [
+        "00b408fcdd197f60616256ee463ab308"
+      ]
+    },
+    {
+      "id": "ent_160",
+      "type": "PharmEffect",
+      "name": "schizotypal symptoms",
+      "attributes": {
+        "context": "schizotypal symptoms and perceptual distortions possibly persisting"
+      },
+      "source_chunk_ids": [
+        "00b408fcdd197f60616256ee463ab308"
+      ]
+    },
+    {
+      "id": "ent_161",
+      "type": "PharmEffect",
+      "name": "perceptual distortions",
+      "attributes": {
+        "context": "perceptual distortions possibly persisting after cessation"
+      },
+      "source_chunk_ids": [
+        "00b408fcdd197f60616256ee463ab308"
+      ]
+    },
+    {
+      "id": "ent_162",
+      "type": "Compound",
+      "name": "ketamine",
+      "attributes": {
+        "context": "recreational ketamine use"
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_163",
+      "type": "Indication",
+      "name": "urological problems",
+      "attributes": {
+        "context": "both urological (\"k bladder\", e.g., dysuria, suprapubic pain, haematuria, decreased bladder capacitance, abnormal bladder histology, hydronephrosis)"
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_164",
+      "type": "Indication",
+      "name": "k bladder",
+      "attributes": {
+        "context": "urological (\"k bladder\", e.g., dysuria"
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_165",
+      "type": "Indication",
+      "name": "dysuria",
+      "attributes": {
+        "context": "e.g., dysuria, suprapubic pain"
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_166",
+      "type": "Indication",
+      "name": "suprapubic pain",
+      "attributes": {
+        "context": "suprapubic pain, haematuria"
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_167",
+      "type": "Indication",
+      "name": "haematuria",
+      "attributes": {
+        "context": "haematuria, decreased bladder capacitance"
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_168",
+      "type": "Indication",
+      "name": "decreased bladder capacitance",
+      "attributes": {
+        "context": "decreased bladder capacitance, abnormal bladder histology"
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_169",
+      "type": "Indication",
+      "name": "abnormal bladder histology",
+      "attributes": {
+        "context": "abnormal bladder histology, hydronephrosis"
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_170",
+      "type": "Indication",
+      "name": "hydronephrosis",
+      "attributes": {
+        "context": "hydronephrosis)"
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_171",
+      "type": "Indication",
+      "name": "intestinal problems",
+      "attributes": {
+        "context": "and intestinal (\"k cramps\") (153) problems."
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_172",
+      "type": "Indication",
+      "name": "k cramps",
+      "attributes": {
+        "context": "intestinal (\"k cramps\")"
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_173",
+      "type": "Concentration",
+      "name": "High dosage",
+      "attributes": {
+        "context": "High dosage self-administration"
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_174",
+      "type": "PharmEffect",
+      "name": "toxicity",
+      "attributes": {
+        "context": "cardiovascular and respiratory toxicity."
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_175",
+      "type": "Indication",
+      "name": "cardiovascular toxicity",
+      "attributes": {
+        "context": "both cardiovascular and respiratory toxicity."
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_176",
+      "type": "Indication",
+      "name": "respiratory toxicity",
+      "attributes": {
+        "context": "cardiovascular and respiratory toxicity."
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_177",
+      "type": "Indication",
+      "name": "Numbness",
+      "attributes": {
+        "context": "Numbness, muscle weakness and impaired perception"
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_178",
+      "type": "Indication",
+      "name": "muscle weakness",
+      "attributes": {
+        "context": "muscle weakness and impaired perception"
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_179",
+      "type": "Indication",
+      "name": "impaired perception",
+      "attributes": {
+        "context": "impaired perception can result in falls"
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_180",
+      "type": "Indication",
+      "name": "falls",
+      "attributes": {
+        "context": "result in falls, trauma or burns."
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_181",
+      "type": "Indication",
+      "name": "trauma",
+      "attributes": {
+        "context": "falls, trauma or burns."
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_182",
+      "type": "Indication",
+      "name": "burns",
+      "attributes": {
+        "context": "trauma or burns."
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_183",
+      "type": "Indication",
+      "name": "drowning",
+      "attributes": {
+        "context": "included drowning, death from hypothermia"
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_184",
+      "type": "Indication",
+      "name": "hypothermia",
+      "attributes": {
+        "context": "death from hypothermia due to lying outside"
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_185",
+      "type": "Indication",
+      "name": "traffic accidents",
+      "attributes": {
+        "context": "winter, traffic accidents and becoming a crime victim"
+      },
+      "source_chunk_ids": [
+        "196fa564ac05ba494d2ffddf9e9403b6"
+      ]
+    },
+    {
+      "id": "ent_186",
+      "type": "Compound",
+      "name": "Methoxetamine",
+      "attributes": {
+        "context": "Methoxetamine (MXE, \"Special M\") has recently entered the market"
+      },
+      "source_chunk_ids": [
+        "ce2cac45c02fe1c73706164ce3b4653c"
+      ]
+    },
+    {
+      "id": "ent_187",
+      "type": "Compound",
+      "name": "MXE",
+      "attributes": {
+        "context": "Methoxetamine (MXE, \"Special M\") has recently entered the market"
+      },
+      "source_chunk_ids": [
+        "ce2cac45c02fe1c73706164ce3b4653c"
+      ]
+    },
+    {
+      "id": "ent_188",
+      "type": "Compound",
+      "name": "Special M",
+      "attributes": {
+        "context": "Methoxetamine (MXE, \"Special M\") has recently entered the market"
+      },
+      "source_chunk_ids": [
+        "ce2cac45c02fe1c73706164ce3b4653c"
+      ]
+    },
+    {
+      "id": "ent_189",
+      "type": "Compound",
+      "name": "ketamine",
+      "attributes": {
+        "context": "structural analogue of ketamine"
+      },
+      "source_chunk_ids": [
+        "ce2cac45c02fe1c73706164ce3b4653c"
+      ]
+    },
+    {
+      "id": "ent_190",
+      "type": "Concentration",
+      "name": "5-100 mg",
+      "attributes": {
+        "context": "at a dosage range of 5-100 mg"
+      },
+      "source_chunk_ids": [
+        "ce2cac45c02fe1c73706164ce3b4653c"
+      ]
+    },
+    {
+      "id": "ent_191",
+      "type": "Compound",
+      "name": "Ecstasy",
+      "attributes": {
+        "context": "included in \u201cfake\u201d Ecstasy tablets"
+      },
+      "source_chunk_ids": [
+        "ddd520cf6336950e9eadaa101558b971"
+      ]
+    },
+    {
+      "id": "ent_192",
+      "type": "Compound",
+      "name": "5-HT2A receptor agonist",
+      "attributes": {
+        "context": "It is an 5-HT2A receptor agonist"
+      },
+      "source_chunk_ids": [
+        "ddd520cf6336950e9eadaa101558b971"
+      ]
+    },
+    {
+      "id": "ent_193",
+      "type": "PharmEffect",
+      "name": "hallucinogenic effects",
+      "attributes": {
+        "context": "explains its hallucinogenic effects"
+      },
+      "source_chunk_ids": [
+        "ddd520cf6336950e9eadaa101558b971"
+      ]
+    },
+    {
+      "id": "ent_194",
+      "type": "Compound",
+      "name": "Piperazines",
+      "attributes": {
+        "context": "Piperazines have become popular"
+      },
+      "source_chunk_ids": [
+        "097fbc9709b30167f853e8c35519f7f0"
+      ]
+    },
+    {
+      "id": "ent_195",
+      "type": "PharmEffect",
+      "name": "Ecstasy effects",
+      "attributes": {
+        "context": "mimic Ecstasy effects"
+      },
+      "source_chunk_ids": [
+        "097fbc9709b30167f853e8c35519f7f0"
+      ]
+    },
+    {
+      "id": "ent_196",
+      "type": "Compound",
+      "name": "Molly",
+      "attributes": {
+        "context": "introduced \u201cMolly\u201d being typically an MDMA/piperazine combination"
+      },
+      "source_chunk_ids": [
+        "097fbc9709b30167f853e8c35519f7f0"
+      ]
+    },
+    {
+      "id": "ent_197",
+      "type": "Compound",
+      "name": "MDMA",
+      "attributes": {
+        "context": "an MDMA/piperazine combination"
+      },
+      "source_chunk_ids": [
+        "097fbc9709b30167f853e8c35519f7f0"
+      ]
+    },
+    {
+      "id": "ent_198",
+      "type": "Compound",
+      "name": "piperazine",
+      "attributes": {
+        "context": "an MDMA/piperazine combination"
+      },
+      "source_chunk_ids": [
+        "097fbc9709b30167f853e8c35519f7f0"
+      ]
+    },
+    {
+      "id": "ent_199",
+      "type": "Compound",
+      "name": "amphetamine",
+      "attributes": {
+        "context": "similar to those of amphetamine"
+      },
+      "source_chunk_ids": [
+        "097fbc9709b30167f853e8c35519f7f0"
+      ]
+    },
+    {
+      "id": "ent_200",
+      "type": "PharmEffect",
+      "name": "amphetamine-like effects",
+      "attributes": {
+        "context": "effects are similar to those of amphetamine"
+      },
+      "source_chunk_ids": [
+        "097fbc9709b30167f853e8c35519f7f0"
+      ]
+    },
+    {
+      "id": "ent_201",
+      "type": "PharmEffect",
+      "name": "less intense effects",
+      "attributes": {
+        "context": "but less intense"
+      },
+      "source_chunk_ids": [
+        "097fbc9709b30167f853e8c35519f7f0"
+      ]
+    },
+    {
+      "id": "ent_202",
+      "type": "PharmEffect",
+      "name": "stimulant effects",
+      "attributes": {
+        "context": "associated with stimulant effects"
+      },
+      "source_chunk_ids": [
+        "097fbc9709b30167f853e8c35519f7f0"
+      ]
+    },
+    {
+      "id": "ent_203",
+      "type": "Concentration",
+      "name": "higher dosages",
+      "attributes": {
+        "context": "at higher dosages hallucinations can be reported"
+      },
+      "source_chunk_ids": [
+        "097fbc9709b30167f853e8c35519f7f0"
+      ]
+    },
+    {
+      "id": "ent_204",
+      "type": "PharmEffect",
+      "name": "hallucinations",
+      "attributes": {
+        "context": "hallucinations can be reported"
+      },
+      "source_chunk_ids": [
+        "097fbc9709b30167f853e8c35519f7f0"
+      ]
+    },
+    {
+      "id": "ent_205",
+      "type": "Indication",
+      "name": "Seizures",
+      "attributes": {
+        "context": "Seizures can occur"
+      },
+      "source_chunk_ids": [
+        "097fbc9709b30167f853e8c35519f7f0"
+      ]
+    },
+    {
+      "id": "ent_206",
+      "type": "Compound",
+      "name": "piperazine",
+      "attributes": {
+        "context": "presenting with piperazine toxicity"
+      },
+      "source_chunk_ids": [
+        "097fbc9709b30167f853e8c35519f7f0"
+      ]
+    },
+    {
+      "id": "ent_207",
+      "type": "Indication",
+      "name": "hyponatremia",
+      "attributes": {
+        "context": "with hyponatremia"
+      },
+      "source_chunk_ids": [
+        "097fbc9709b30167f853e8c35519f7f0"
+      ]
+    },
+    {
+      "id": "ent_208",
+      "type": "Indication",
+      "name": "serotonin syndrome",
+      "attributes": {
+        "context": "serotonin syndrome and renal failure"
+      },
+      "source_chunk_ids": [
+        "097fbc9709b30167f853e8c35519f7f0"
+      ]
+    },
+    {
+      "id": "ent_209",
+      "type": "Indication",
+      "name": "renal failure",
+      "attributes": {
+        "context": "and renal failure having been described"
+      },
+      "source_chunk_ids": [
+        "097fbc9709b30167f853e8c35519f7f0"
+      ]
+    },
+    {
+      "id": "ent_210",
+      "type": "Compound",
+      "name": "gabapentin",
+      "attributes": {
+        "context": "gabapentin abuse"
+      },
+      "source_chunk_ids": [
+        "015d4506d84d67ee76e60382a79c2bfc"
+      ]
+    },
+    {
+      "id": "ent_211",
+      "type": "PharmEffect",
+      "name": "euphoria",
+      "attributes": {
+        "context": "including euphoria"
+      },
+      "source_chunk_ids": [
+        "015d4506d84d67ee76e60382a79c2bfc"
+      ]
+    },
+    {
+      "id": "ent_212",
+      "type": "PharmEffect",
+      "name": "improved sociability",
+      "attributes": {
+        "context": "improved sociability"
+      },
+      "source_chunk_ids": [
+        "015d4506d84d67ee76e60382a79c2bfc"
+      ]
+    },
+    {
+      "id": "ent_213",
+      "type": "PharmEffect",
+      "name": "sedation",
+      "attributes": {
+        "context": "opiate-like sedation"
+      },
+      "source_chunk_ids": [
+        "015d4506d84d67ee76e60382a79c2bfc"
+      ]
+    },
+    {
+      "id": "ent_214",
+      "type": "PharmEffect",
+      "name": "psychedelic effects",
+      "attributes": {
+        "context": "psychedelic effects"
+      },
+      "source_chunk_ids": [
+        "015d4506d84d67ee76e60382a79c2bfc"
+      ]
+    },
+    {
+      "id": "ent_215",
+      "type": "Compound",
+      "name": "pregabalin",
+      "attributes": {
+        "context": "pregabalin is considered"
+      },
+      "source_chunk_ids": [
+        "015d4506d84d67ee76e60382a79c2bfc"
+      ]
+    },
+    {
+      "id": "ent_216",
+      "type": "PharmEffect",
+      "name": "sedative effects",
+      "attributes": {
+        "context": "including sedative effects"
+      },
+      "source_chunk_ids": [
+        "015d4506d84d67ee76e60382a79c2bfc"
+      ]
+    },
+    {
+      "id": "ent_217",
+      "type": "PharmEffect",
+      "name": "euphoria",
+      "attributes": {
+        "context": "mixed with euphoria"
+      },
+      "source_chunk_ids": [
+        "015d4506d84d67ee76e60382a79c2bfc"
+      ]
+    },
+    {
+      "id": "ent_218",
+      "type": "PharmEffect",
+      "name": "dissociation",
+      "attributes": {
+        "context": "and dissociation"
+      },
+      "source_chunk_ids": [
+        "015d4506d84d67ee76e60382a79c2bfc"
+      ]
+    },
+    {
+      "id": "ent_219",
+      "type": "Compound",
+      "name": "pregabalin",
+      "attributes": {
+        "context": "Misuse of pregabalin"
+      },
+      "source_chunk_ids": [
+        "4c07de809bc031bddbb51f578c8e3bd2"
+      ]
+    },
+    {
+      "id": "ent_220",
+      "type": "Concentration",
+      "name": "3-20 times higher than the maximal dosage indicated",
+      "attributes": {
+        "context": "dosages up to 3-20 times higher than the maximal dosage indicated"
+      },
+      "source_chunk_ids": [
+        "4c07de809bc031bddbb51f578c8e3bd2"
+      ]
+    },
+    {
+      "id": "ent_221",
+      "type": "Compound",
+      "name": "pregabalin",
+      "attributes": {
+        "context": "in combination with pregabalin"
+      },
+      "source_chunk_ids": [
+        "4c07de809bc031bddbb51f578c8e3bd2"
+      ]
+    },
+    {
+      "id": "ent_222",
+      "type": "Compound",
+      "name": "gabapentin",
+      "attributes": {
+        "context": "or gabapentin"
+      },
+      "source_chunk_ids": [
+        "4c07de809bc031bddbb51f578c8e3bd2"
+      ]
+    },
+    {
+      "id": "ent_223",
+      "type": "Taxon",
+      "name": "Cannabis sativa",
+      "attributes": {
+        "context": "including cannabis"
+      },
+      "source_chunk_ids": [
+        "4c07de809bc031bddbb51f578c8e3bd2"
+      ]
+    },
+    {
+      "id": "ent_224",
+      "type": "Compound",
+      "name": "ethanol",
+      "attributes": {
+        "context": "alcohol"
+      },
+      "source_chunk_ids": [
+        "4c07de809bc031bddbb51f578c8e3bd2"
+      ]
+    },
+    {
+      "id": "ent_225",
+      "type": "Compound",
+      "name": "lysergic acid",
+      "attributes": {
+        "context": "lysergic acid"
+      },
+      "source_chunk_ids": [
+        "4c07de809bc031bddbb51f578c8e3bd2"
+      ]
+    },
+    {
+      "id": "ent_226",
+      "type": "Compound",
+      "name": "amphetamine",
+      "attributes": {
+        "context": "amphetamine"
+      },
+      "source_chunk_ids": [
+        "4c07de809bc031bddbb51f578c8e3bd2"
+      ]
+    },
+    {
+      "id": "ent_227",
+      "type": "Compound",
+      "name": "GHB",
+      "attributes": {
+        "context": "and GHB"
+      },
+      "source_chunk_ids": [
+        "4c07de809bc031bddbb51f578c8e3bd2"
+      ]
+    },
+    {
+      "id": "ent_228",
+      "type": "Compound",
+      "name": "Phenazepam",
+      "attributes": {
+        "context": "Phenazepam (\u201cZinnie\u201d) is an old benzodiazepine"
+      },
+      "source_chunk_ids": [
+        "2a9bc9a90552ad521bf64eb416a2e20d"
+      ]
+    },
+    {
+      "id": "ent_229",
+      "type": "Compound",
+      "name": "benzodiazepine",
+      "attributes": {
+        "context": "Phenazepam (\u201cZinnie\u201d) is an old benzodiazepine"
+      },
+      "source_chunk_ids": [
+        "2a9bc9a90552ad521bf64eb416a2e20d"
+      ]
+    },
+    {
+      "id": "ent_230",
+      "type": "Indication",
+      "name": "neurological disorders",
+      "attributes": {
+        "context": "treatment of a range of neurological disorders"
+      },
+      "source_chunk_ids": [
+        "2a9bc9a90552ad521bf64eb416a2e20d"
+      ]
+    },
+    {
+      "id": "ent_231",
+      "type": "Indication",
+      "name": "alcohol withdrawal",
+      "attributes": {
+        "context": "alcohol withdrawal/anxiety"
+      },
+      "source_chunk_ids": [
+        "2a9bc9a90552ad521bf64eb416a2e20d"
+      ]
+    },
+    {
+      "id": "ent_232",
+      "type": "Indication",
+      "name": "anxiety",
+      "attributes": {
+        "context": "alcohol withdrawal/anxiety"
+      },
+      "source_chunk_ids": [
+        "2a9bc9a90552ad521bf64eb416a2e20d"
+      ]
+    },
+    {
+      "id": "ent_233",
+      "type": "PharmEffect",
+      "name": "premedication",
+      "attributes": {
+        "context": "as a surgery premedication"
+      },
+      "source_chunk_ids": [
+        "2a9bc9a90552ad521bf64eb416a2e20d"
+      ]
+    },
+    {
+      "id": "ent_234",
+      "type": "Compound",
+      "name": "diazepam",
+      "attributes": {
+        "context": "more powerful than diazepam"
+      },
+      "source_chunk_ids": [
+        "2a9bc9a90552ad521bf64eb416a2e20d"
+      ]
+    },
+    {
+      "id": "ent_235",
+      "type": "Concentration",
+      "name": "five times",
+      "attributes": {
+        "context": "considered five times more powerful than diazepam"
+      },
+      "source_chunk_ids": [
+        "2a9bc9a90552ad521bf64eb416a2e20d"
+      ]
+    },
+    {
+      "id": "ent_236",
+      "type": "PharmEffect",
+      "name": "euphoric effects",
+      "attributes": {
+        "context": "with euphoric effects having been described"
+      },
+      "source_chunk_ids": [
+        "2a9bc9a90552ad521bf64eb416a2e20d"
+      ]
+    },
+    {
+      "id": "ent_237",
+      "type": "PharmEffect",
+      "name": "amnesia",
+      "attributes": {
+        "context": "side effects include amnesia"
+      },
+      "source_chunk_ids": [
+        "2a9bc9a90552ad521bf64eb416a2e20d"
+      ]
+    },
+    {
+      "id": "ent_238",
+      "type": "PharmEffect",
+      "name": "dizziness",
+      "attributes": {
+        "context": "amnesia, dizziness"
+      },
+      "source_chunk_ids": [
+        "2a9bc9a90552ad521bf64eb416a2e20d"
+      ]
+    },
+    {
+      "id": "ent_239",
+      "type": "PharmEffect",
+      "name": "loss of coordination",
+      "attributes": {
+        "context": "dizziness, loss of coordination"
+      },
+      "source_chunk_ids": [
+        "2a9bc9a90552ad521bf64eb416a2e20d"
+      ]
+    },
+    {
+      "id": "ent_240",
+      "type": "PharmEffect",
+      "name": "drowsiness",
+      "attributes": {
+        "context": "loss of coordination, drowsiness"
+      },
+      "source_chunk_ids": [
+        "2a9bc9a90552ad521bf64eb416a2e20d"
+      ]
+    },
+    {
+      "id": "ent_241",
+      "type": "PharmEffect",
+      "name": "blurred vision",
+      "attributes": {
+        "context": "drowsiness, blurred vision"
+      },
+      "source_chunk_ids": [
+        "2a9bc9a90552ad521bf64eb416a2e20d"
+      ]
+    },
+    {
+      "id": "ent_242",
+      "type": "PharmEffect",
+      "name": "slurred speech",
+      "attributes": {
+        "context": "blurred vision, slurred speech"
+      },
+      "source_chunk_ids": [
+        "2a9bc9a90552ad521bf64eb416a2e20d"
+      ]
+    },
+    {
+      "id": "ent_243",
+      "type": "PharmEffect",
+      "name": "ataxia",
+      "attributes": {
+        "context": "slurred speech and ataxia"
+      },
+      "source_chunk_ids": [
+        "2a9bc9a90552ad521bf64eb416a2e20d"
+      ]
+    },
+    {
+      "id": "ent_244",
+      "type": "PharmEffect",
+      "name": "respiratory arrest",
+      "attributes": {
+        "context": "Deaths by respiratory arrest"
+      },
+      "source_chunk_ids": [
+        "2a9bc9a90552ad521bf64eb416a2e20d"
+      ]
+    },
+    {
+      "id": "ent_245",
+      "type": "PharmEffect",
+      "name": "sedatives",
+      "attributes": {
+        "context": "combination with other sedatives"
+      },
+      "source_chunk_ids": [
+        "2a9bc9a90552ad521bf64eb416a2e20d"
+      ]
+    },
+    {
+      "id": "ent_246",
+      "type": "Compound",
+      "name": "orphenadrine",
+      "attributes": {
+        "context": "orphenadrine (an anticholinergic drug)"
+      },
+      "source_chunk_ids": [
+        "ed84c3787c37f33a7b808294fd9b11e8"
+      ]
+    },
+    {
+      "id": "ent_247",
+      "type": "PharmEffect",
+      "name": "anticholinergic",
+      "attributes": {
+        "context": "an anticholinergic drug"
+      },
+      "source_chunk_ids": [
+        "ed84c3787c37f33a7b808294fd9b11e8"
+      ]
+    },
+    {
+      "id": "ent_248",
+      "type": "Compound",
+      "name": "tropicamide",
+      "attributes": {
+        "context": "misuse of tropicamide"
+      },
+      "source_chunk_ids": [
+        "ed84c3787c37f33a7b808294fd9b11e8"
+      ]
+    },
+    {
+      "id": "ent_249",
+      "type": "PharmEffect",
+      "name": "anticholinergic",
+      "attributes": {
+        "context": "an ophthalmic anticholinergic compound"
+      },
+      "source_chunk_ids": [
+        "ed84c3787c37f33a7b808294fd9b11e8"
+      ]
+    },
+    {
+      "id": "ent_250",
+      "type": "PharmEffect",
+      "name": "mydriasis",
+      "attributes": {
+        "context": "short-acting mydriasis"
+      },
+      "source_chunk_ids": [
+        "ed84c3787c37f33a7b808294fd9b11e8"
+      ]
+    },
+    {
+      "id": "ent_251",
+      "type": "PharmEffect",
+      "name": "cycloplegia",
+      "attributes": {
+        "context": "and cycloplegia"
+      },
+      "source_chunk_ids": [
+        "ed84c3787c37f33a7b808294fd9b11e8"
+      ]
+    },
+    {
+      "id": "ent_252",
+      "type": "Compound",
+      "name": "tropicamide",
+      "attributes": {
+        "context": "tropicamide is typically injected intravenously"
+      },
+      "source_chunk_ids": [
+        "ed84c3787c37f33a7b808294fd9b11e8"
+      ]
+    },
+    {
+      "id": "ent_253",
+      "type": "Compound",
+      "name": "psychoactives",
+      "attributes": {
+        "context": "other psychoactives"
+      },
+      "source_chunk_ids": [
+        "ed84c3787c37f33a7b808294fd9b11e8"
+      ]
+    },
+    {
+      "id": "ent_254",
+      "type": "Compound",
+      "name": "Tropicamide",
+      "attributes": {
+        "context": "Tropicamide-related psychoactive effects"
+      },
+      "source_chunk_ids": [
+        "ed84c3787c37f33a7b808294fd9b11e8"
+      ]
+    },
+    {
+      "id": "ent_255",
+      "type": "PharmEffect",
+      "name": "psychoactive effects",
+      "attributes": {
+        "context": "Tropicamide-related psychoactive effects"
+      },
+      "source_chunk_ids": [
+        "ed84c3787c37f33a7b808294fd9b11e8"
+      ]
+    },
+    {
+      "id": "ent_256",
+      "type": "PharmEffect",
+      "name": "hallucinations",
+      "attributes": {
+        "context": "include hallucinations"
+      },
+      "source_chunk_ids": [
+        "ed84c3787c37f33a7b808294fd9b11e8"
+      ]
+    },
+    {
+      "id": "ent_257",
+      "type": "PharmEffect",
+      "name": "open eye dreams",
+      "attributes": {
+        "context": "\u201copen eye dreams\u201d"
+      },
+      "source_chunk_ids": [
+        "ed84c3787c37f33a7b808294fd9b11e8"
+      ]
+    },
+    {
+      "id": "ent_258",
+      "type": "PharmEffect",
+      "name": "dysphoria",
+      "attributes": {
+        "context": "and dysphoria"
+      },
+      "source_chunk_ids": [
+        "ed84c3787c37f33a7b808294fd9b11e8"
+      ]
+    },
+    {
+      "id": "ent_259",
+      "type": "PharmEffect",
+      "name": "slurred speech",
+      "attributes": {
+        "context": "slurred speech"
+      },
+      "source_chunk_ids": [
+        "ed84c3787c37f33a7b808294fd9b11e8"
+      ]
+    },
+    {
+      "id": "ent_260",
+      "type": "PharmEffect",
+      "name": "persistent mydriasis",
+      "attributes": {
+        "context": "persistent mydriasis"
+      },
+      "source_chunk_ids": [
+        "ed84c3787c37f33a7b808294fd9b11e8"
+      ]
+    },
+    {
+      "id": "ent_261",
+      "type": "PharmEffect",
+      "name": "hyperthermia",
+      "attributes": {
+        "context": "hyperthermia"
+      },
+      "source_chunk_ids": [
+        "ed84c3787c37f33a7b808294fd9b11e8"
+      ]
+    },
+    {
+      "id": "ent_262",
+      "type": "PharmEffect",
+      "name": "tremor",
+      "attributes": {
+        "context": "tremor"
+      },
+      "source_chunk_ids": [
+        "ed84c3787c37f33a7b808294fd9b11e8"
+      ]
+    },
+    {
+      "id": "ent_263",
+      "type": "PharmEffect",
+      "name": "convulsions",
+      "attributes": {
+        "context": "convulsions"
+      },
+      "source_chunk_ids": [
+        "ed84c3787c37f33a7b808294fd9b11e8"
+      ]
+    },
+    {
+      "id": "ent_264",
+      "type": "PharmEffect",
+      "name": "psychomotor agitation",
+      "attributes": {
+        "context": "psychomotor agitation"
+      },
+      "source_chunk_ids": [
+        "ed84c3787c37f33a7b808294fd9b11e8"
+      ]
+    },
+    {
+      "id": "ent_265",
+      "type": "PharmEffect",
+      "name": "tachycardia",
+      "attributes": {
+        "context": "tachycardia"
+      },
+      "source_chunk_ids": [
+        "ed84c3787c37f33a7b808294fd9b11e8"
+      ]
+    },
+    {
+      "id": "ent_266",
+      "type": "PharmEffect",
+      "name": "suicidal ideation",
+      "attributes": {
+        "context": "suicidal ideation"
+      },
+      "source_chunk_ids": [
+        "ed84c3787c37f33a7b808294fd9b11e8"
+      ]
+    },
+    {
+      "id": "ent_267",
+      "type": "PharmEffect",
+      "name": "adverse effects",
+      "attributes": {
+        "context": "adverse effects"
+      },
+      "source_chunk_ids": [
+        "6d44931518b5af36d9f68c30c8493998"
+      ]
+    },
+    {
+      "id": "ent_268",
+      "type": "Compound",
+      "name": "novel psychoactive substances",
+      "attributes": {
+        "context": "Consumers of novel psychoactive substances may self-refer"
+      },
+      "source_chunk_ids": [
+        "89dffe8e25d257e0f0cc34ab746a6484"
+      ]
+    },
+    {
+      "id": "ent_269",
+      "type": "Indication",
+      "name": "acute medical problems",
+      "attributes": {
+        "context": "concerned with acute medical or psychiatric problems"
+      },
+      "source_chunk_ids": [
+        "89dffe8e25d257e0f0cc34ab746a6484"
+      ]
+    },
+    {
+      "id": "ent_270",
+      "type": "Indication",
+      "name": "psychiatric problems",
+      "attributes": {
+        "context": "concerned with acute medical or psychiatric problems"
+      },
+      "source_chunk_ids": [
+        "89dffe8e25d257e0f0cc34ab746a6484"
+      ]
+    },
+    {
+      "id": "ent_271",
+      "type": "PharmEffect",
+      "name": "behavioural disturbances",
+      "attributes": {
+        "context": "cope with the behavioural and psychopathological disturbances"
+      },
+      "source_chunk_ids": [
+        "89dffe8e25d257e0f0cc34ab746a6484"
+      ]
+    },
+    {
+      "id": "ent_272",
+      "type": "PharmEffect",
+      "name": "psychopathological disturbances",
+      "attributes": {
+        "context": "cope with the behavioural and psychopathological disturbances"
+      },
+      "source_chunk_ids": [
+        "89dffe8e25d257e0f0cc34ab746a6484"
+      ]
+    },
+    {
+      "id": "ent_273",
+      "type": "Compound",
+      "name": "psychoactive molecule",
+      "attributes": {
+        "context": "prescribing a psychoactive molecule"
+      },
+      "source_chunk_ids": [
+        "eb885e38179f87bba0bc58885b12a612"
+      ]
+    },
+    {
+      "id": "ent_274",
+      "type": "Compound",
+      "name": "pregabalin",
+      "attributes": {
+        "context": "e.g., pregabalin or gabapentin"
+      },
+      "source_chunk_ids": [
+        "eb885e38179f87bba0bc58885b12a612"
+      ]
+    },
+    {
+      "id": "ent_275",
+      "type": "Compound",
+      "name": "gabapentin",
+      "attributes": {
+        "context": "pregabalin or gabapentin"
+      },
+      "source_chunk_ids": [
+        "eb885e38179f87bba0bc58885b12a612"
+      ]
+    },
+    {
+      "id": "ent_276",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "a psychoactive molecule"
+      },
+      "source_chunk_ids": [
+        "eb885e38179f87bba0bc58885b12a612"
+      ]
+    },
+    {
+      "id": "ent_277",
+      "type": "Indication",
+      "name": "misuse",
+      "attributes": {
+        "context": "potential for misuse"
+      },
+      "source_chunk_ids": [
+        "eb885e38179f87bba0bc58885b12a612"
+      ]
+    },
+    {
+      "id": "ent_278",
+      "type": "Indication",
+      "name": "neurological disorders",
+      "attributes": {
+        "context": "neurological/psychiatric disorders"
+      },
+      "source_chunk_ids": [
+        "eb885e38179f87bba0bc58885b12a612"
+      ]
+    },
+    {
+      "id": "ent_279",
+      "type": "Indication",
+      "name": "psychiatric disorders",
+      "attributes": {
+        "context": "neurological/psychiatric disorders"
+      },
+      "source_chunk_ids": [
+        "eb885e38179f87bba0bc58885b12a612"
+      ]
+    },
+    {
+      "id": "ent_280",
+      "type": "Indication",
+      "name": "drug abuse",
+      "attributes": {
+        "context": "history of drug abuse"
+      },
+      "source_chunk_ids": [
+        "eb885e38179f87bba0bc58885b12a612"
+      ]
+    },
+    {
+      "id": "ent_281",
+      "type": "Indication",
+      "name": "misuse",
+      "attributes": {
+        "context": "signs of misuse"
+      },
+      "source_chunk_ids": [
+        "eb885e38179f87bba0bc58885b12a612"
+      ]
+    },
+    {
+      "id": "ent_282",
+      "type": "Compound",
+      "name": "novel psychoactive substances",
+      "attributes": {
+        "context": "Neurochemical profiles of some novel psychoactive substances"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_283",
+      "type": "Compound",
+      "name": "opiate receptors",
+      "attributes": {
+        "context": "A classification of opiate receptors"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_284",
+      "type": "PharmEffect",
+      "name": "antinociception",
+      "attributes": {
+        "context": "mediate antinociception in animals"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_285",
+      "type": "Compound",
+      "name": "N-(1,2-Diphenylethyl)-piperazine derivatives",
+      "attributes": {
+        "context": "N-(1,2-Diphenylethyl)-piperazine derivatives"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_286",
+      "type": "Compound",
+      "name": "4-cyclohexyl-1- [(1R)-1,2-diphenylethyl]-piperazine",
+      "attributes": {
+        "context": "Reduction of 4-cyclohexyl-1- [(1R)-1,2-diphenylethyl]-piperazine-induced memory impairment"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_287",
+      "type": "PharmEffect",
+      "name": "memory impairment",
+      "attributes": {
+        "context": "piperazine-induced memory impairment of passive avoidance performance"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_288",
+      "type": "PharmEffect",
+      "name": "passive avoidance performance",
+      "attributes": {
+        "context": "memory impairment of passive avoidance performance"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_289",
+      "type": "Compound",
+      "name": "\u03c31 receptor agonists",
+      "attributes": {
+        "context": "by \u03c31 receptor agonists in mice"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_290",
+      "type": "Compound",
+      "name": "MT-45",
+      "attributes": {
+        "context": "MT-45 \u2013 en livsfarlig och potentiellt ototokisk internetdrog"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_291",
+      "type": "PharmEffect",
+      "name": "ototokisk",
+      "attributes": {
+        "context": "potentiellt ototokisk internetdrog"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_292",
+      "type": "Compound",
+      "name": "Tilidine hydrochloride",
+      "attributes": {
+        "context": "Tilidine hydrochloride"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_293",
+      "type": "PharmEffect",
+      "name": "Analgesic",
+      "attributes": {
+        "context": "Analgesic substituted piperidylidene-2-sulfon(cyan)amide derivatives"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_294",
+      "type": "Compound",
+      "name": "substituted piperidylidene-2-sulfon(cyan)amide derivatives",
+      "attributes": {
+        "context": "Analgesic substituted piperidylidene-2-sulfon(cyan)amide derivatives"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_295",
+      "type": "Compound",
+      "name": "3\u03b2-(p-substituted phenyl)tropane-2\u03b2-carboxylic acid methyl esters",
+      "attributes": {
+        "context": "study of 3\u03b2-(p-substituted phenyl)tropane-2\u03b2-carboxylic acid methyl esters"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_296",
+      "type": "PharmEffect",
+      "name": "ligand binding",
+      "attributes": {
+        "context": "Synthesis, ligand binding, QSAR"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_297",
+      "type": "Compound",
+      "name": "cocaine analogs",
+      "attributes": {
+        "context": "Highly potent cocaine analogs cause long-lasting increases"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_298",
+      "type": "PharmEffect",
+      "name": "locomotor activity",
+      "attributes": {
+        "context": "increases in locomotor activity"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_299",
+      "type": "Compound",
+      "name": "3-(3',4'-disubstituted phenyl)-tropane-2-carboxylic acid methyl esters",
+      "attributes": {
+        "context": "binding properties of 3-(3',4'-disubstituted phenyl)-tropane-2-carboxylic acid methyl esters"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_300",
+      "type": "Compound",
+      "name": "monoamine transporter",
+      "attributes": {
+        "context": "and monoamine transporter binding properties"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_301",
+      "type": "PharmEffect",
+      "name": "binding properties",
+      "attributes": {
+        "context": "monoamine transporter binding properties"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_302",
+      "type": "PharmEffect",
+      "name": "affecting the central nervous system",
+      "attributes": {
+        "context": "Compounds affecting the central nervous system"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_303",
+      "type": "Compound",
+      "name": "3\u03b2-phenyltropane-2-carboxylic esters",
+      "attributes": {
+        "context": "4. 3\u03b2-phenyltropane-2-carboxylic esters and analogs"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_304",
+      "type": "Compound",
+      "name": "analogs",
+      "attributes": {
+        "context": "3\u03b2-phenyltropane-2-carboxylic esters and analogs"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_305",
+      "type": "Compound",
+      "name": "tryptamine",
+      "attributes": {
+        "context": "tryptamine and phenylamine use among high-risk youth"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_306",
+      "type": "Compound",
+      "name": "phenylamine",
+      "attributes": {
+        "context": "tryptamine and phenylamine use among high-risk youth"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_307",
+      "type": "Compound",
+      "name": "synthetic tryptamines",
+      "attributes": {
+        "context": "analysis of the synthetic tryptamines AMT and 5-MeO-DALT"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_308",
+      "type": "Compound",
+      "name": "AMT",
+      "attributes": {
+        "context": "synthetic tryptamines AMT and 5-MeO-DALT"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_309",
+      "type": "Compound",
+      "name": "5-MeO-DALT",
+      "attributes": {
+        "context": "AMT and 5-MeO-DALT"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_310",
+      "type": "Compound",
+      "name": "novel psychoactive drugs",
+      "attributes": {
+        "context": "emerging 'novel psychoactive drugs'"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_311",
+      "type": "Compound",
+      "name": "indole derivatives",
+      "attributes": {
+        "context": "Simple indole derivatives from Paramuricea chamaeleon"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_312",
+      "type": "Compound",
+      "name": "Ayahuasca analogs",
+      "attributes": {
+        "context": "Ayahuasca analogs and plant-based tryptamines"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_313",
+      "type": "Compound",
+      "name": "plant-based tryptamines",
+      "attributes": {
+        "context": "Ayahuasca analogs and plant-based tryptamines"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_314",
+      "type": "Compound",
+      "name": "new psychoactive substances",
+      "attributes": {
+        "context": "Some new psychoactive substances: precursor chemicals"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_315",
+      "type": "Compound",
+      "name": "precursor chemicals",
+      "attributes": {
+        "context": "precursor chemicals and synthesis-driven end-products"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_316",
+      "type": "Compound",
+      "name": "psilocybin",
+      "attributes": {
+        "context": "Isolation of psilocybin from Psilocybe argenteipes"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_317",
+      "type": "Compound",
+      "name": "tryptamines",
+      "attributes": {
+        "context": "pharmacology of tryptamines and beta-carbolines"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_318",
+      "type": "Compound",
+      "name": "beta-carbolines",
+      "attributes": {
+        "context": "tryptamines and beta-carbolines"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_319",
+      "type": "Compound",
+      "name": "5-methoxy-N,N-dimethyltryptamine",
+      "attributes": {
+        "context": "Biogenesis of 5-methoxy-N,N-dimethyltryptamine in human pineal gland"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_320",
+      "type": "Compound",
+      "name": "N,N-dimethyltryptamine",
+      "attributes": {
+        "context": "N,N-dimethyltryptamine: an endogenous hallucinogen"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_321",
+      "type": "PharmEffect",
+      "name": "hallucinogen",
+      "attributes": {
+        "context": "an endogenous hallucinogen"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_322",
+      "type": "Compound",
+      "name": "bufotenin",
+      "attributes": {
+        "context": "Urinary excretion of free bufotenin by psychiatric patients"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_323",
+      "type": "Indication",
+      "name": "psychiatric patients",
+      "attributes": {
+        "context": "by psychiatric patients"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_324",
+      "type": "PharmEffect",
+      "name": "Central stimulant actions",
+      "attributes": {
+        "context": "Central stimulant actions of \u03b1-alkyl substituted tryptamine"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_325",
+      "type": "Compound",
+      "name": "\u03b1-alkyl substituted tryptamine",
+      "attributes": {
+        "context": "actions of \u03b1-alkyl substituted tryptamine in mice"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_326",
+      "type": "Compound",
+      "name": "Novel psychoactive substances",
+      "attributes": {
+        "context": "Novel psychoactive substances: classification, pharmacology and toxicology"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_327",
+      "type": "PharmEffect",
+      "name": "pharmacology",
+      "attributes": {
+        "context": "classification, pharmacology and toxicology"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_328",
+      "type": "PharmEffect",
+      "name": "toxicology",
+      "attributes": {
+        "context": "pharmacology and toxicology"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_329",
+      "type": "Compound",
+      "name": "Dimethyltryptamine",
+      "attributes": {
+        "context": "Dimethyltryptamine and other hallucinogenic tryptamines"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_330",
+      "type": "Compound",
+      "name": "hallucinogenic tryptamines",
+      "attributes": {
+        "context": "other hallucinogenic tryptamines exhibit substrate behavior"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_331",
+      "type": "PharmEffect",
+      "name": "substrate behavior",
+      "attributes": {
+        "context": "exhibit substrate behavior at the serotonin uptake transporter"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_332",
+      "type": "Compound",
+      "name": "serotonin uptake transporter",
+      "attributes": {
+        "context": "at the serotonin uptake transporter and the vesicle monoamine transporter"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_333",
+      "type": "Compound",
+      "name": "vesicle monoamine transporter",
+      "attributes": {
+        "context": "and the vesicle monoamine transporter"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_334",
+      "type": "PharmEffect",
+      "name": "behavioural pharmacology",
+      "attributes": {
+        "context": "The behavioural pharmacology of hallucinogens"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_335",
+      "type": "PharmEffect",
+      "name": "hallucinogens",
+      "attributes": {
+        "context": "pharmacology of hallucinogens"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_336",
+      "type": "PharmEffect",
+      "name": "Hallucinogens",
+      "attributes": {
+        "context": "Hallucinogens. Pharmacol Ther 2004"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_337",
+      "type": "PharmEffect",
+      "name": "hallucinogen",
+      "attributes": {
+        "context": "The hallucinogen N,N-dimethyltryptamine (DMT)"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_338",
+      "type": "Compound",
+      "name": "N,N-dimethyltryptamine",
+      "attributes": {
+        "context": "The hallucinogen N,N-dimethyltryptamine (DMT)"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_339",
+      "type": "Compound",
+      "name": "DMT",
+      "attributes": {
+        "context": "N,N-dimethyltryptamine (DMT) is an endogenous sigma-1 receptor regulator"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_340",
+      "type": "Compound",
+      "name": "sigma-1 receptor regulator",
+      "attributes": {
+        "context": "an endogenous sigma-1 receptor regulator"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_341",
+      "type": "Compound",
+      "name": "5-methoxy-N,N-diisopropyltryptamine",
+      "attributes": {
+        "context": "5-methoxy-N,N-diisopropyltryptamine (Foxy), a selective and high affinity inhibitor"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_342",
+      "type": "Compound",
+      "name": "Foxy",
+      "attributes": {
+        "context": "5-methoxy-N,N-diisopropyltryptamine (Foxy)"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_343",
+      "type": "PharmEffect",
+      "name": "inhibitor of serotonin transporter",
+      "attributes": {
+        "context": "high affinity inhibitor of serotonin transporter"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_344",
+      "type": "PharmEffect",
+      "name": "Psychoactive",
+      "attributes": {
+        "context": "Psychoactive natural products"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_345",
+      "type": "Compound",
+      "name": "natural products",
+      "attributes": {
+        "context": "Psychoactive natural products"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_346",
+      "type": "Compound",
+      "name": "bufotenine",
+      "attributes": {
+        "context": "Toads and bufotenine: fact and fiction"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_347",
+      "type": "PharmEffect",
+      "name": "psychedelic",
+      "attributes": {
+        "context": "an alleged psychedelic"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_348",
+      "type": "PharmEffect",
+      "name": "Psychoactive properties",
+      "attributes": {
+        "context": "Psychoactive properties of alpha-methyltryptamine"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_349",
+      "type": "Compound",
+      "name": "alpha-methyltryptamine",
+      "attributes": {
+        "context": "properties of alpha-methyltryptamine"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_350",
+      "type": "Compound",
+      "name": "gamma-hydroxybutyric acid",
+      "attributes": {
+        "context": "efficacy of gamma-hydroxybutyric acid in treatment of opiate withdrawal"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_351",
+      "type": "Indication",
+      "name": "opiate withdrawal",
+      "attributes": {
+        "context": "treatment of opiate withdrawal"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_352",
+      "type": "Compound",
+      "name": "Gamma-hydroxybutyrate",
+      "attributes": {
+        "context": "Gamma-hydroxybutyrate (GHB): a scoping review"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_353",
+      "type": "Compound",
+      "name": "GHB",
+      "attributes": {
+        "context": "Gamma-hydroxybutyrate (GHB)"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_354",
+      "type": "PharmEffect",
+      "name": "pharmacology",
+      "attributes": {
+        "context": "pharmacology, toxicology, motives for use"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_355",
+      "type": "PharmEffect",
+      "name": "toxicology",
+      "attributes": {
+        "context": "toxicology, motives for use"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_356",
+      "type": "Compound",
+      "name": "gamma-hydroxybutyric acid",
+      "attributes": {
+        "context": "elimination of gamma-hydroxybutyric acid in healthy volunteers"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_357",
+      "type": "PharmEffect",
+      "name": "absorption",
+      "attributes": {
+        "context": "Dose-dependent absorption and elimination"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_358",
+      "type": "PharmEffect",
+      "name": "elimination",
+      "attributes": {
+        "context": "absorption and elimination of gamma-hydroxybutyric acid"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_359",
+      "type": "Compound",
+      "name": "GHB",
+      "attributes": {
+        "context": "risk assessment of GHB in the framework"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_360",
+      "type": "Compound",
+      "name": "new synthetic drugs",
+      "attributes": {
+        "context": "joint action on new synthetic drugs"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_361",
+      "type": "PharmEffect",
+      "name": "Physical dependence",
+      "attributes": {
+        "context": "Physical dependence on sodium oxybate"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_362",
+      "type": "Compound",
+      "name": "sodium oxybate",
+      "attributes": {
+        "context": "dependence on sodium oxybate"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_363",
+      "type": "Compound",
+      "name": "GHB",
+      "attributes": {
+        "context": "deaths involving GHB and its analogues"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_364",
+      "type": "Compound",
+      "name": "analogues",
+      "attributes": {
+        "context": "GHB and its analogues"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_365",
+      "type": "PharmEffect",
+      "name": "withdrawal symptoms",
+      "attributes": {
+        "context": "severe withdrawal symptoms after acute-on-chronic baclofen overdose"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_366",
+      "type": "Compound",
+      "name": "baclofen",
+      "attributes": {
+        "context": "acute-on-chronic baclofen overdose"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_367",
+      "type": "PharmEffect",
+      "name": "overdose",
+      "attributes": {
+        "context": "baclofen overdose"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_368",
+      "type": "Compound",
+      "name": "gamma-aminobutyric acid",
+      "attributes": {
+        "context": "Role of gamma-aminobutyric acid in antipanic drug efficacy"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_369",
+      "type": "PharmEffect",
+      "name": "antipanic drug efficacy",
+      "attributes": {
+        "context": "in antipanic drug efficacy"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_370",
+      "type": "Compound",
+      "name": "GABAB agonist",
+      "attributes": {
+        "context": "The GABAB agonist baclofen reduces cigarette consumption"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_371",
+      "type": "Compound",
+      "name": "baclofen",
+      "attributes": {
+        "context": "GABAB agonist baclofen reduces cigarette consumption"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_372",
+      "type": "PharmEffect",
+      "name": "reduces cigarette consumption",
+      "attributes": {
+        "context": "baclofen reduces cigarette consumption"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_373",
+      "type": "Compound",
+      "name": "baclofen",
+      "attributes": {
+        "context": "Effects of baclofen on cocaine self-administration"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_374",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "baclofen on cocaine self-administration"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_375",
+      "type": "PharmEffect",
+      "name": "self-administration",
+      "attributes": {
+        "context": "cocaine self-administration"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_376",
+      "type": "PharmEffect",
+      "name": "opioid-dependent",
+      "attributes": {
+        "context": "opioid- and nonopioid-dependent volunteers"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_377",
+      "type": "PharmEffect",
+      "name": "nonopioid-dependent",
+      "attributes": {
+        "context": "nonopioid-dependent volunteers"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_378",
+      "type": "Compound",
+      "name": "baclofen",
+      "attributes": {
+        "context": "trial of baclofen for cocaine dependence"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_379",
+      "type": "Indication",
+      "name": "cocaine dependence",
+      "attributes": {
+        "context": "baclofen for cocaine dependence"
+      },
+      "source_chunk_ids": [
+        "acca326643e4b7ff9f8587d1ac88ed8e"
+      ]
+    },
+    {
+      "id": "ent_380",
+      "type": "Compound",
+      "name": "Phenazepam",
+      "attributes": {
+        "context": "Phenazepam abuse in the UK"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_381",
+      "type": "Indication",
+      "name": "adverse health problems",
+      "attributes": {
+        "context": "causing serious adverse health problems"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_382",
+      "type": "Indication",
+      "name": "death",
+      "attributes": {
+        "context": "including death"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_383",
+      "type": "Compound",
+      "name": "Olanzapine",
+      "attributes": {
+        "context": "Olanzapine as the ideal 'trip terminator'?"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_384",
+      "type": "Compound",
+      "name": "antipsychotics",
+      "attributes": {
+        "context": "relating to antipsychotics' use and misuse"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_385",
+      "type": "Compound",
+      "name": "novel psychoactive substance",
+      "attributes": {
+        "context": "novel psychoactive substance-related psychotic symptoms"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_386",
+      "type": "Indication",
+      "name": "psychotic symptoms",
+      "attributes": {
+        "context": "substance-related psychotic symptoms"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_387",
+      "type": "Compound",
+      "name": "quetiapine",
+      "attributes": {
+        "context": "Evaluation of quetiapine abuse and misuse"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_388",
+      "type": "Compound",
+      "name": "atypical antipsychotics",
+      "attributes": {
+        "context": "Misuse of atypical antipsychotics"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_389",
+      "type": "Compound",
+      "name": "alcohol",
+      "attributes": {
+        "context": "in conjunction with alcohol"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_390",
+      "type": "Compound",
+      "name": "drugs of abuse",
+      "attributes": {
+        "context": "and other drugs of abuse"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_391",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "Displacement of serotonin and dopamine transporters"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_392",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "and dopamine transporters"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_393",
+      "type": "Compound",
+      "name": "venlafaxine",
+      "attributes": {
+        "context": "transporters by venlafaxine extended release capsule"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_394",
+      "type": "Compound",
+      "name": "[125I]2beta-carbomethoxy-3beta-(4-iodophenyl)-tropane",
+      "attributes": {
+        "context": "a [125I]2beta-carbomethoxy-3beta-(4-iodophenyl)-tropane single photon emission computed tomography imaging study"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_395",
+      "type": "Compound",
+      "name": "alpha1-adrenoreceptors",
+      "attributes": {
+        "context": "The role of alpha1- and alpha2-adrenoreceptors"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_396",
+      "type": "Compound",
+      "name": "alpha2-adrenoreceptors",
+      "attributes": {
+        "context": "The role of alpha1- and alpha2-adrenoreceptors"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_397",
+      "type": "Compound",
+      "name": "venlafaxine",
+      "attributes": {
+        "context": "on venlafaxine-induced elevation of extracellular serotonin"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_398",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "elevation of extracellular serotonin, noradrenaline and dopamine"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_399",
+      "type": "Compound",
+      "name": "noradrenaline",
+      "attributes": {
+        "context": "serotonin, noradrenaline and dopamine levels"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_400",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "noradrenaline and dopamine levels"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_401",
+      "type": "Compound",
+      "name": "NPS",
+      "attributes": {
+        "context": "The EU early warning system: NPS"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_402",
+      "type": "Compound",
+      "name": "Tropicamide",
+      "attributes": {
+        "context": "misuse of Tropicamide collyrium"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_403",
+      "type": "Indication",
+      "name": "Acute psychotic episode",
+      "attributes": {
+        "context": "Acute psychotic episode associated with the intake"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_404",
+      "type": "PharmEffect",
+      "name": "testosterone-enhancer",
+      "attributes": {
+        "context": "a testosterone-enhancer herbal mixture"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_405",
+      "type": "Compound",
+      "name": "herbal mixture",
+      "attributes": {
+        "context": "a testosterone-enhancer herbal mixture"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_406",
+      "type": "Compound",
+      "name": "2,4-dinitrophenol (DNP)",
+      "attributes": {
+        "context": "2,4-dinitrophenol (DNP): a weight loss agent"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_407",
+      "type": "PharmEffect",
+      "name": "weight loss",
+      "attributes": {
+        "context": "a weight loss agent"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_408",
+      "type": "Indication",
+      "name": "acute toxicity",
+      "attributes": {
+        "context": "significant acute toxicity"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_409",
+      "type": "Indication",
+      "name": "death",
+      "attributes": {
+        "context": "and risk of death"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_410",
+      "type": "Compound",
+      "name": "DMAA",
+      "attributes": {
+        "context": "DMAA as a dietary ingredient"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_411",
+      "type": "Compound",
+      "name": "1,3-dimethylbutylamine (DMBA)",
+      "attributes": {
+        "context": "1,3-dimethylbutylamine (DMBA), is identified"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_412",
+      "type": "PharmEffect",
+      "name": "stimulant",
+      "attributes": {
+        "context": "A synthetic stimulant never tested in humans"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_413",
+      "type": "PharmEffect",
+      "name": "human enhancement",
+      "attributes": {
+        "context": "Heuristics of human enhancement risk"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_414",
+      "type": "Compound",
+      "name": "melanotan",
+      "attributes": {
+        "context": "experience of melanotan"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_415",
+      "type": "PharmEffect",
+      "name": "Performance and image enhancing",
+      "attributes": {
+        "context": "Performance and image enhancing drugs"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_416",
+      "type": "PharmEffect",
+      "name": "cognitive enhancer",
+      "attributes": {
+        "context": "the abuse of cognitive enhancer piracetam"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_417",
+      "type": "Compound",
+      "name": "piracetam",
+      "attributes": {
+        "context": "cognitive enhancer piracetam"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_418",
+      "type": "Compound",
+      "name": "Piracetam",
+      "attributes": {
+        "context": "Piracetam: a review of pharmacological properties"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_419",
+      "type": "PharmEffect",
+      "name": "pharmacological properties",
+      "attributes": {
+        "context": "review of pharmacological properties and clinical uses"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_420",
+      "type": "PharmEffect",
+      "name": "Cerebral blood flow effects",
+      "attributes": {
+        "context": "Cerebral blood flow effects of piracetam"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_421",
+      "type": "Compound",
+      "name": "piracetam",
+      "attributes": {
+        "context": "effects of piracetam, pentifylline, and nicotinic acid"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_422",
+      "type": "Compound",
+      "name": "pentifylline",
+      "attributes": {
+        "context": "piracetam, pentifylline, and nicotinic acid"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_423",
+      "type": "Compound",
+      "name": "nicotinic acid",
+      "attributes": {
+        "context": "pentifylline, and nicotinic acid"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_424",
+      "type": "Compound",
+      "name": "acetazolamide",
+      "attributes": {
+        "context": "known effect of acetazolamide"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_425",
+      "type": "PharmEffect",
+      "name": "Sexual enhancement",
+      "attributes": {
+        "context": "Sexual enhancement products for sale online"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_426",
+      "type": "PharmEffect",
+      "name": "psychoactive effects",
+      "attributes": {
+        "context": "awareness of the psychoactive effects of yohimbine"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_427",
+      "type": "Compound",
+      "name": "yohimbine",
+      "attributes": {
+        "context": "effects of yohimbine, Maca, Horny Goat Weed and Ginkgo Biloba"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_428",
+      "type": "Taxon",
+      "name": "Lepidium meyenii",
+      "attributes": {
+        "context": "yohimbine, Maca, Horny Goat Weed and Ginkgo Biloba"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_429",
+      "type": "Taxon",
+      "name": "Epimedium",
+      "attributes": {
+        "context": "Maca, Horny Goat Weed and Ginkgo Biloba"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_430",
+      "type": "Taxon",
+      "name": "Ginkgo biloba",
+      "attributes": {
+        "context": "Horny Goat Weed and Ginkgo Biloba"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_431",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "The role of dopamine in schizophrenia"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_432",
+      "type": "Indication",
+      "name": "schizophrenia",
+      "attributes": {
+        "context": "dopamine in schizophrenia"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_433",
+      "type": "Compound",
+      "name": "cannabinoid-1 receptors",
+      "attributes": {
+        "context": "Activation of cannabinoid-1 receptors"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_434",
+      "type": "Indication",
+      "name": "schizophrenia",
+      "attributes": {
+        "context": "relevance to schizophrenia"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_435",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "Alterations in the serotonin system in schizophrenia"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_436",
+      "type": "Indication",
+      "name": "schizophrenia",
+      "attributes": {
+        "context": "serotonin system in schizophrenia"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_437",
+      "type": "Compound",
+      "name": "NMDA receptor",
+      "attributes": {
+        "context": "chronic NMDA receptor antagonism"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_438",
+      "type": "Indication",
+      "name": "psychosis",
+      "attributes": {
+        "context": "models of psychosis"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_439",
+      "type": "PharmEffect",
+      "name": "oxidative stress",
+      "attributes": {
+        "context": "Glutamatergic dysbalance and oxidative stress"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_440",
+      "type": "Compound",
+      "name": "\u03ba opioid agonist",
+      "attributes": {
+        "context": "effects of the \u03ba opioid agonist Salvinorin A"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_441",
+      "type": "Compound",
+      "name": "Salvinorin A",
+      "attributes": {
+        "context": "\u03ba opioid agonist Salvinorin A in humans"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_442",
+      "type": "PharmEffect",
+      "name": "behavioral effects",
+      "attributes": {
+        "context": "Dose-related behavioral, subjective, endocrine, and psychophysiological effects"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_443",
+      "type": "PharmEffect",
+      "name": "subjective effects",
+      "attributes": {
+        "context": "behavioral, subjective, endocrine, and psychophysiological effects"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_444",
+      "type": "PharmEffect",
+      "name": "endocrine effects",
+      "attributes": {
+        "context": "subjective, endocrine, and psychophysiological effects"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_445",
+      "type": "PharmEffect",
+      "name": "psychophysiological effects",
+      "attributes": {
+        "context": "endocrine, and psychophysiological effects"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_446",
+      "type": "Indication",
+      "name": "Serotonin syndrome",
+      "attributes": {
+        "context": "Serotonin syndrome associated with MDPV use"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    },
+    {
+      "id": "ent_447",
+      "type": "Compound",
+      "name": "MDPV",
+      "attributes": {
+        "context": "associated with MDPV use"
+      },
+      "source_chunk_ids": [
+        "eaa7d54932b872331fdfdd199bb75a12"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:03.944541+00:00",
+    "original_file": "entities.json"
+  }
+}

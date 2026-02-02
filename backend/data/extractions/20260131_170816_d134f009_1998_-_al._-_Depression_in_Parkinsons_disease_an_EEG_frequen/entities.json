@@ -1,0 +1,1696 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "75e18c76585aa3115d76090a7f0907701b0eac1e4a4a6d95f11913d3562a208f",
+  "extracted_at": "2026-02-01T08:10:13.715333+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "Indication",
+      "name": "Parkinsonism",
+      "attributes": {
+        "context": "Parkinsonism and Related Disorders"
+      },
+      "source_chunk_ids": [
+        "4e5e4aaadf4a59d68f9f85dd8ac5a811"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Indication",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "context": "Keywords: Parkinson's disease"
+      },
+      "source_chunk_ids": [
+        "c317df7796e37234a11f55b1221c6953"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "Indication",
+      "name": "Depression",
+      "attributes": {
+        "context": "disease; Depression"
+      },
+      "source_chunk_ids": [
+        "c317df7796e37234a11f55b1221c6953"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "Indication",
+      "name": "Depression",
+      "attributes": {
+        "context": "Depression is a common finding"
+      },
+      "source_chunk_ids": [
+        "9c820c2b7146c775f5e4536913251db2"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "Indication",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "context": "in Parkinson's disease (PD)"
+      },
+      "source_chunk_ids": [
+        "9c820c2b7146c775f5e4536913251db2"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "Indication",
+      "name": "PD",
+      "attributes": {
+        "context": "Parkinson's disease (PD)"
+      },
+      "source_chunk_ids": [
+        "9c820c2b7146c775f5e4536913251db2"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "Indication",
+      "name": "Depression",
+      "attributes": {
+        "context": "patients have depression"
+      },
+      "source_chunk_ids": [
+        "9c820c2b7146c775f5e4536913251db2"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Indication",
+      "name": "Depression",
+      "attributes": {
+        "context": "mechanism of depression"
+      },
+      "source_chunk_ids": [
+        "9c820c2b7146c775f5e4536913251db2"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "Indication",
+      "name": "PD",
+      "attributes": {
+        "context": "depression in PD"
+      },
+      "source_chunk_ids": [
+        "9c820c2b7146c775f5e4536913251db2"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "Indication",
+      "name": "PD",
+      "attributes": {
+        "context": "studies in PD"
+      },
+      "source_chunk_ids": [
+        "bed45551d0d7d3d95bcafdd4f1adc78c"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "Indication",
+      "name": "movement impairment",
+      "attributes": {
+        "context": "greater movement impairment"
+      },
+      "source_chunk_ids": [
+        "bed45551d0d7d3d95bcafdd4f1adc78c"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "Indication",
+      "name": "idiopathic Parkinson's Disease",
+      "attributes": {
+        "context": "idiopathic PD"
+      },
+      "source_chunk_ids": [
+        "bee7a5a65584c13aa151f9c1f726eeb1"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "PharmEffect",
+      "name": "depressive",
+      "attributes": {
+        "context": "without, depressive"
+      },
+      "source_chunk_ids": [
+        "bee7a5a65584c13aa151f9c1f726eeb1"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "Indication",
+      "name": "symptomatology",
+      "attributes": {
+        "context": "symptomatology."
+      },
+      "source_chunk_ids": [
+        "9d733b24bc0464adec82f251f21f238d"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "Indication",
+      "name": "disease",
+      "attributes": {
+        "context": "disease severity and duration."
+      },
+      "source_chunk_ids": [
+        "9d733b24bc0464adec82f251f21f238d"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "Indication",
+      "name": "age-related EEG changes",
+      "attributes": {
+        "context": "major influence of age-related EEG changes"
+      },
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "Indication",
+      "name": "parkinsonian signs",
+      "attributes": {
+        "context": "exclusively parkinsonian signs"
+      },
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "Indication",
+      "name": "bradykinesia",
+      "attributes": {
+        "context": "cardinal features (bradykinesia, tremor, or rigidity)"
+      },
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "Indication",
+      "name": "tremor",
+      "attributes": {
+        "context": "cardinal features (bradykinesia, tremor, or rigidity)"
+      },
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "Indication",
+      "name": "rigidity",
+      "attributes": {
+        "context": "cardinal features (bradykinesia, tremor, or rigidity)"
+      },
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "Indication",
+      "name": "focal lesions",
+      "attributes": {
+        "context": "evidence of focal lesions on CT scans"
+      },
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "Indication",
+      "name": "ischemia",
+      "attributes": {
+        "context": "Hachinski ischemia score"
+      },
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "Indication",
+      "name": "motor disability",
+      "attributes": {
+        "context": "severity of motor disability"
+      },
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "Indication",
+      "name": "performance impairment of everyday activities",
+      "attributes": {
+        "context": "level of performance impairment of everyday activities"
+      },
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "Indication",
+      "name": "global cognitive decline",
+      "attributes": {
+        "context": "screen for global cognitive decline"
+      },
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "Indication",
+      "name": "Affective Disorders",
+      "attributes": {
+        "context": "Schedule for Affective Disorders and Schizophrenia"
+      },
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "Indication",
+      "name": "Schizophrenia",
+      "attributes": {
+        "context": "Schedule for Affective Disorders and Schizophrenia"
+      },
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "Indication",
+      "name": "depressed",
+      "attributes": {
+        "context": "classified, according to the Research Diagnostic Criteria [16], as either depressed (major or minor depression) or non-depressed"
+      },
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "Indication",
+      "name": "major depression",
+      "attributes": {
+        "context": "depressed (major or minor depression)"
+      },
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "Indication",
+      "name": "minor depression",
+      "attributes": {
+        "context": "depressed (major or minor depression)"
+      },
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "Severity of depression was measured"
+      },
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "Indication",
+      "name": "DEPRESSION",
+      "attributes": {
+        "context": "influence of DEPRESSION as an isolated factor"
+      },
+      "source_chunk_ids": [
+        "504361858cfaa994d40ad64405a4c61f"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "Indication",
+      "name": "DEPRESSION",
+      "attributes": {
+        "context": "DEPRESSION \u00d7 ELECTRODE SITE"
+      },
+      "source_chunk_ids": [
+        "504361858cfaa994d40ad64405a4c61f"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "Indication",
+      "name": "DEPRESSION",
+      "attributes": {
+        "context": "significant influence of DEPRESSION"
+      },
+      "source_chunk_ids": [
+        "504361858cfaa994d40ad64405a4c61f"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "Indication",
+      "name": "Depression",
+      "attributes": {
+        "context": "non-depressed (D \u2013)"
+      },
+      "source_chunk_ids": [
+        "83865a610887df334ffacf9edc0e65a7"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Indication",
+      "name": "Depression",
+      "attributes": {
+        "context": "depressed (D +)"
+      },
+      "source_chunk_ids": [
+        "83865a610887df334ffacf9edc0e65a7"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "Indication",
+      "name": "Parkinson's Disease",
+      "attributes": {
+        "context": "PD patients' groups"
+      },
+      "source_chunk_ids": [
+        "83865a610887df334ffacf9edc0e65a7"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "for depression"
+      },
+      "source_chunk_ids": [
+        "58efef66ba25259fc75c2d1067f7a1cc"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "Indication",
+      "name": "PD",
+      "attributes": {
+        "context": "in PD"
+      },
+      "source_chunk_ids": [
+        "58efef66ba25259fc75c2d1067f7a1cc"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "1\u2014depression (2)"
+      },
+      "source_chunk_ids": [
+        "b3bb46ba5de12cf2c77545f3050035ef"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "Indication",
+      "name": "cerebral hypoactivity",
+      "attributes": {
+        "context": "evidence of cerebral hypoactivity"
+      },
+      "source_chunk_ids": [
+        "d9d29d7bd09a6c550caa2df5ba000588"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "PharmEffect",
+      "name": "reduction of global cerebral blood flow",
+      "attributes": {
+        "context": "manifested mainly as reduction of global cerebral blood flow"
+      },
+      "source_chunk_ids": [
+        "d9d29d7bd09a6c550caa2df5ba000588"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "PharmEffect",
+      "name": "reduction of metabolism",
+      "attributes": {
+        "context": "reduction of global cerebral blood flow and metabolism"
+      },
+      "source_chunk_ids": [
+        "d9d29d7bd09a6c550caa2df5ba000588"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "in patients with depression"
+      },
+      "source_chunk_ids": [
+        "d9d29d7bd09a6c550caa2df5ba000588"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "PharmEffect",
+      "name": "reduced power in the alpha1 band",
+      "attributes": {
+        "context": "account for the reduced power in the alpha1 band"
+      },
+      "source_chunk_ids": [
+        "d9d29d7bd09a6c550caa2df5ba000588"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "psychomotor retardation in depression"
+      },
+      "source_chunk_ids": [
+        "d31b0c4df0bae0990a30e144f99f2528"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "Indication",
+      "name": "psychomotor retardation",
+      "attributes": {
+        "context": "association between psychomotor retardation in depression"
+      },
+      "source_chunk_ids": [
+        "d31b0c4df0bae0990a30e144f99f2528"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "PharmEffect",
+      "name": "slowing of EEG",
+      "attributes": {
+        "context": "slowing of EEG"
+      },
+      "source_chunk_ids": [
+        "d31b0c4df0bae0990a30e144f99f2528"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "Indication",
+      "name": "anxiety\u2013depression",
+      "attributes": {
+        "context": "the \u201canxiety\u2013depression\u201d psychometric construct"
+      },
+      "source_chunk_ids": [
+        "d31b0c4df0bae0990a30e144f99f2528"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "PharmEffect",
+      "name": "fast activity in the EEG",
+      "attributes": {
+        "context": "related to fast activity in the EEG"
+      },
+      "source_chunk_ids": [
+        "d31b0c4df0bae0990a30e144f99f2528"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "Indication",
+      "name": "retardation",
+      "attributes": {
+        "context": "symptoms associated with the \u201cretardation\u201d construct"
+      },
+      "source_chunk_ids": [
+        "d31b0c4df0bae0990a30e144f99f2528"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "PharmEffect",
+      "name": "slow EEG activity",
+      "attributes": {
+        "context": "relationship with slow EEG activity"
+      },
+      "source_chunk_ids": [
+        "d31b0c4df0bae0990a30e144f99f2528"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "Indication",
+      "name": "major depressive disorder",
+      "attributes": {
+        "context": "major depressive disorder was associated with an increase"
+      },
+      "source_chunk_ids": [
+        "d31b0c4df0bae0990a30e144f99f2528"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "PharmEffect",
+      "name": "increase of delta amplitude",
+      "attributes": {
+        "context": "an increase of delta amplitude"
+      },
+      "source_chunk_ids": [
+        "d31b0c4df0bae0990a30e144f99f2528"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "Indication",
+      "name": "retarded depression",
+      "attributes": {
+        "context": "retarded depression was associated with an increase"
+      },
+      "source_chunk_ids": [
+        "d31b0c4df0bae0990a30e144f99f2528"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "PharmEffect",
+      "name": "increase of delta and theta amplitudes",
+      "attributes": {
+        "context": "increase of delta and theta amplitudes"
+      },
+      "source_chunk_ids": [
+        "d31b0c4df0bae0990a30e144f99f2528"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "PharmEffect",
+      "name": "EEG variability",
+      "attributes": {
+        "context": "and EEG variability"
+      },
+      "source_chunk_ids": [
+        "d31b0c4df0bae0990a30e144f99f2528"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "in patients with depression"
+      },
+      "source_chunk_ids": [
+        "d31b0c4df0bae0990a30e144f99f2528"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "Indication",
+      "name": "depressive pseudodementia",
+      "attributes": {
+        "context": "or depressive pseudodementia"
+      },
+      "source_chunk_ids": [
+        "d31b0c4df0bae0990a30e144f99f2528"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "PharmEffect",
+      "name": "slowing of the dominant posterior rhythm",
+      "attributes": {
+        "context": "show a significant slowing of the dominant posterior rhythm"
+      },
+      "source_chunk_ids": [
+        "d31b0c4df0bae0990a30e144f99f2528"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "PharmEffect",
+      "name": "generalized abnormal EEGs",
+      "attributes": {
+        "context": "higher percentage of generalized abnormal EEGs"
+      },
+      "source_chunk_ids": [
+        "d31b0c4df0bae0990a30e144f99f2528"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "severity of depression"
+      },
+      "source_chunk_ids": [
+        "bb0739dd1da049e24128d992b9131652"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "Indication",
+      "name": "psychomotor retardation",
+      "attributes": {
+        "context": "psychomotor retardation"
+      },
+      "source_chunk_ids": [
+        "bb0739dd1da049e24128d992b9131652"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "Indication",
+      "name": "depressed patients",
+      "attributes": {
+        "context": "63 depressed patients"
+      },
+      "source_chunk_ids": [
+        "bb0739dd1da049e24128d992b9131652"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "Indication",
+      "name": "retardation",
+      "attributes": {
+        "context": "observed retardation"
+      },
+      "source_chunk_ids": [
+        "bb0739dd1da049e24128d992b9131652"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "Indication",
+      "name": "motor retardation",
+      "attributes": {
+        "context": "motor retardation correlated"
+      },
+      "source_chunk_ids": [
+        "bb0739dd1da049e24128d992b9131652"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "motor retardation in depression"
+      },
+      "source_chunk_ids": [
+        "bb0739dd1da049e24128d992b9131652"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "Indication",
+      "name": "anxiety",
+      "attributes": {
+        "context": "associate anxiety with fast EEG activity"
+      },
+      "source_chunk_ids": [
+        "bb0739dd1da049e24128d992b9131652"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "Indication",
+      "name": "Depression",
+      "attributes": {
+        "context": "in D + PD patients"
+      },
+      "source_chunk_ids": [
+        "8f0789fbb2e6ea390cccc6dcde48e2b1"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "Indication",
+      "name": "Parkinson's Disease",
+      "attributes": {
+        "context": "in D + PD patients"
+      },
+      "source_chunk_ids": [
+        "8f0789fbb2e6ea390cccc6dcde48e2b1"
+      ]
+    },
+    {
+      "id": "ent_071",
+      "type": "Indication",
+      "name": "Depression",
+      "attributes": {
+        "context": "in frontal lobes in depression"
+      },
+      "source_chunk_ids": [
+        "8f0789fbb2e6ea390cccc6dcde48e2b1"
+      ]
+    },
+    {
+      "id": "ent_072",
+      "type": "Indication",
+      "name": "Depression",
+      "attributes": {
+        "context": "in our D + patients"
+      },
+      "source_chunk_ids": [
+        "8f0789fbb2e6ea390cccc6dcde48e2b1"
+      ]
+    },
+    {
+      "id": "ent_073",
+      "type": "Indication",
+      "name": "Depression",
+      "attributes": {
+        "context": "between D + and D - patients"
+      },
+      "source_chunk_ids": [
+        "8f0789fbb2e6ea390cccc6dcde48e2b1"
+      ]
+    },
+    {
+      "id": "ent_074",
+      "type": "Indication",
+      "name": "major depression",
+      "attributes": {
+        "context": "patients with major and minor depression"
+      },
+      "source_chunk_ids": [
+        "053029e5dd47f81da5092281e8f8fad6"
+      ]
+    },
+    {
+      "id": "ent_075",
+      "type": "Indication",
+      "name": "minor depression",
+      "attributes": {
+        "context": "patients with major and minor depression"
+      },
+      "source_chunk_ids": [
+        "053029e5dd47f81da5092281e8f8fad6"
+      ]
+    },
+    {
+      "id": "ent_076",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "types of depression have different neurobiological mechanisms"
+      },
+      "source_chunk_ids": [
+        "053029e5dd47f81da5092281e8f8fad6"
+      ]
+    },
+    {
+      "id": "ent_077",
+      "type": "Indication",
+      "name": "PD",
+      "attributes": {
+        "context": "QEEG characteristics in PD patients"
+      },
+      "source_chunk_ids": [
+        "053029e5dd47f81da5092281e8f8fad6"
+      ]
+    },
+    {
+      "id": "ent_078",
+      "type": "Indication",
+      "name": "parkinsonian symptoms",
+      "attributes": {
+        "context": "onset of parkinsonian symptoms"
+      },
+      "source_chunk_ids": [
+        "053029e5dd47f81da5092281e8f8fad6"
+      ]
+    },
+    {
+      "id": "ent_079",
+      "type": "Indication",
+      "name": "motor parkinsonian symptoms",
+      "attributes": {
+        "context": "onset of the first motor parkinsonian symptoms"
+      },
+      "source_chunk_ids": [
+        "053029e5dd47f81da5092281e8f8fad6"
+      ]
+    },
+    {
+      "id": "ent_080",
+      "type": "Indication",
+      "name": "dementia",
+      "attributes": {
+        "context": "demented parkinsonian patients"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_081",
+      "type": "Indication",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "context": "demented parkinsonian patients"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_082",
+      "type": "Indication",
+      "name": "Parkinson's syndrome",
+      "attributes": {
+        "context": "The electroencephalogram in Parkinson's syndrome"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_083",
+      "type": "PharmEffect",
+      "name": "Slowing of EEG",
+      "attributes": {
+        "context": "Slowing of EEG in Parkinson's disease"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_084",
+      "type": "Indication",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "context": "Slowing of EEG in Parkinson's disease"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_085",
+      "type": "Indication",
+      "name": "Dementia",
+      "attributes": {
+        "context": "EEG frequency analysis in demented and non-demented parkinsonian patients"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_086",
+      "type": "Indication",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "context": "demented and non-demented parkinsonian patients"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_087",
+      "type": "PharmEffect",
+      "name": "Cerebral blood flow",
+      "attributes": {
+        "context": "Cerebral blood flow in dementia"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_088",
+      "type": "Indication",
+      "name": "dementia",
+      "attributes": {
+        "context": "Cerebral blood flow in dementia"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_089",
+      "type": "Indication",
+      "name": "Parkinsonism",
+      "attributes": {
+        "context": "Parkinsonism: onset, progression and mortality"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_090",
+      "type": "Indication",
+      "name": "Parkinsonism",
+      "attributes": {
+        "context": "Treatment of Parkinsonism with levodopa"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_091",
+      "type": "Compound",
+      "name": "levodopa",
+      "attributes": {
+        "context": "Treatment of Parkinsonism with levodopa"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_092",
+      "type": "Indication",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "context": "disability in patients with Parkinson's disease"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_093",
+      "type": "Indication",
+      "name": "affective disorders",
+      "attributes": {
+        "context": "Schedule for affective disorders and schizophrenia"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_094",
+      "type": "Indication",
+      "name": "schizophrenia",
+      "attributes": {
+        "context": "affective disorders and schizophrenia"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_095",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "A rating scale for depression"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_096",
+      "type": "Compound",
+      "name": "diazepam",
+      "attributes": {
+        "context": "placebo/diazepam crossover trial"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_097",
+      "type": "Indication",
+      "name": "paralysis agitans",
+      "attributes": {
+        "context": "EMGs and EEGs in paralysis agitans"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_098",
+      "type": "Indication",
+      "name": "Organic brain syndromes",
+      "attributes": {
+        "context": "Organic brain syndromes and dementia"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_099",
+      "type": "Indication",
+      "name": "dementia",
+      "attributes": {
+        "context": "Organic brain syndromes and dementia"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_100",
+      "type": "PharmEffect",
+      "name": "Cerebral blood flow",
+      "attributes": {
+        "context": "Cerebral blood flow in depression and mania"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_101",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "Cerebral blood flow in depression and mania"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_102",
+      "type": "Indication",
+      "name": "mania",
+      "attributes": {
+        "context": "Cerebral blood flow in depression and mania"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_103",
+      "type": "PharmEffect",
+      "name": "Reduction of prefrontal cortex glucose metabolism",
+      "attributes": {
+        "context": "Reduction of prefrontal cortex glucose metabolism common to three types of depression"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_104",
+      "type": "Compound",
+      "name": "glucose",
+      "attributes": {
+        "context": "Reduction of prefrontal cortex glucose metabolism"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_105",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "common to three types of depression"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_106",
+      "type": "PharmEffect",
+      "name": "alterations in cerebral glucose metabolism",
+      "attributes": {
+        "context": "common alterations in cerebral glucose metabolism in major affective disorders"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_107",
+      "type": "Compound",
+      "name": "glucose",
+      "attributes": {
+        "context": "alterations in cerebral glucose metabolism"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_108",
+      "type": "Indication",
+      "name": "major affective disorders",
+      "attributes": {
+        "context": "major affective disorders and schizophrenia"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_109",
+      "type": "Indication",
+      "name": "schizophrenia",
+      "attributes": {
+        "context": "major affective disorders and schizophrenia"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_110",
+      "type": "Compound",
+      "name": "123IIMP",
+      "attributes": {
+        "context": "SPECT with 123IIMP in the differential diagnosis"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_111",
+      "type": "Indication",
+      "name": "psychiatric disorders",
+      "attributes": {
+        "context": "differential diagnosis of psychiatric disorders"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_112",
+      "type": "Indication",
+      "name": "depressive symptomatology",
+      "attributes": {
+        "context": "Neurophysiological correlates of depressive symptomatology"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_113",
+      "type": "Indication",
+      "name": "major depressive disorder",
+      "attributes": {
+        "context": "clinical characteristics in major depressive disorder"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_114",
+      "type": "Indication",
+      "name": "depressive pseudodementia",
+      "attributes": {
+        "context": "EEG findings in depressive pseudodementia"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_115",
+      "type": "Indication",
+      "name": "dementia with secondary depression",
+      "attributes": {
+        "context": "dementia with secondary depression"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_116",
+      "type": "PharmEffect",
+      "name": "psychomotor retardation",
+      "attributes": {
+        "context": "psychomotor retardation and EEG power spectrum in major depression"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_117",
+      "type": "Indication",
+      "name": "major depression",
+      "attributes": {
+        "context": "psychomotor retardation and EEG power spectrum in major depression"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_118",
+      "type": "Indication",
+      "name": "Depression",
+      "attributes": {
+        "context": "Depression in Parkinson's disease"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_119",
+      "type": "Indication",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "context": "Depression in Parkinson's disease"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_120",
+      "type": "Indication",
+      "name": "Depression",
+      "attributes": {
+        "context": "Depression and disability in Parkinson's disease"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_121",
+      "type": "Indication",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "context": "Depression and disability in Parkinson's disease"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_122",
+      "type": "Indication",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "context": "Levin BE, Llabre MM, Weiner WJ Parkinson's disease"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_123",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "Parkinson's disease. depression: psychometric properties"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_124",
+      "type": "Indication",
+      "name": "depressive symptoms",
+      "attributes": {
+        "context": "The pattern of depressive symptoms varies with progression of Parkinson's disease"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_125",
+      "type": "Indication",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "context": "progression of Parkinson's disease"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_126",
+      "type": "Indication",
+      "name": "major depression",
+      "attributes": {
+        "context": "Cognitive functions in major depression and Parkinson disease"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_127",
+      "type": "Indication",
+      "name": "Parkinson disease",
+      "attributes": {
+        "context": "major depression and Parkinson disease"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_128",
+      "type": "Indication",
+      "name": "Major depression",
+      "attributes": {
+        "context": "Major depression in Parkinsons disease"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_129",
+      "type": "Indication",
+      "name": "Parkinsons disease",
+      "attributes": {
+        "context": "Major depression in Parkinsons disease"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_130",
+      "type": "PharmEffect",
+      "name": "mood response",
+      "attributes": {
+        "context": "the mood response to intravenous methylphenidate"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_131",
+      "type": "Compound",
+      "name": "methylphenidate",
+      "attributes": {
+        "context": "mood response to intravenous methylphenidate"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_132",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "role of the \"hedonic\" dopamine synapse"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_133",
+      "type": "PharmEffect",
+      "name": "Selective hypometabolism",
+      "attributes": {
+        "context": "Selective hypometabolism in the inferior frontal lobe in depressed patients"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_134",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "in depressed patients with Parkinson's disease"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_135",
+      "type": "Indication",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "context": "depressed patients with Parkinson's disease"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_136",
+      "type": "Indication",
+      "name": "Depression",
+      "attributes": {
+        "context": "Depression in Parkinson's disease"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_137",
+      "type": "Indication",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "context": "Depression in Parkinson's disease"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_138",
+      "type": "PharmEffect",
+      "name": "Hypoperfusion",
+      "attributes": {
+        "context": "Hypoperfusion in the limbic system and prefrontal cortex in depression"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_139",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "Hypoperfusion in the limbic system and prefrontal cortex in depression"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_140",
+      "type": "PharmEffect",
+      "name": "Cerebral perfusion",
+      "attributes": {
+        "context": "Cerebral perfusion correlates of depressed mood"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_141",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "correlates of depressed mood"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_142",
+      "type": "Indication",
+      "name": "Depression",
+      "attributes": {
+        "context": "Depression in Parkinson's disease"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_143",
+      "type": "Indication",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "context": "Depression in Parkinson's disease"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_144",
+      "type": "Indication",
+      "name": "movement disorders",
+      "attributes": {
+        "context": "Behavioral neurology of movement disorders"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_145",
+      "type": "Indication",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "context": "rCBF SPECT in Parkinson's disease patients"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_146",
+      "type": "Indication",
+      "name": "mental dysfunction",
+      "attributes": {
+        "context": "patients with mental dysfunction"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_147",
+      "type": "PharmEffect",
+      "name": "Regional cerebral blood flow",
+      "attributes": {
+        "context": "Regional cerebral blood flow and lateralized hemispheric dysfunction"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_148",
+      "type": "Indication",
+      "name": "lateralized hemispheric dysfunction",
+      "attributes": {
+        "context": "lateralized hemispheric dysfunction in depression"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_149",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "lateralized hemispheric dysfunction in depression"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_150",
+      "type": "Indication",
+      "name": "psychiatry",
+      "attributes": {
+        "context": "applications in psychiatry"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_151",
+      "type": "PharmEffect",
+      "name": "Regional cerebral blood flow alterations",
+      "attributes": {
+        "context": "Regional cerebral blood flow alterations in unipolar depression"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_152",
+      "type": "Indication",
+      "name": "unipolar depression",
+      "attributes": {
+        "context": "Regional cerebral blood flow alterations in unipolar depression"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    },
+    {
+      "id": "ent_153",
+      "type": "Indication",
+      "name": "Parkinsons disease",
+      "attributes": {
+        "context": "When does Parkinsons disease begin?"
+      },
+      "source_chunk_ids": [
+        "b8e662dd291a40625781ee7e0187c0ed"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:03.745745+00:00",
+    "original_file": "entities.json"
+  }
+}

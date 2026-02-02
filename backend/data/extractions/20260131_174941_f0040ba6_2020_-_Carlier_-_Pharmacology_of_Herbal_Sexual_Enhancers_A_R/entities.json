@@ -1,0 +1,629 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "36c9618847b67ee60c001832298f2eb6ca5b2ef9912750bd1ea4dba7b7622c57",
+  "extracted_at": "2026-02-01T08:57:20.448792+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "Compound",
+      "name": "Benzodiazepines",
+      "attributes": {
+        "context": "Benzodiazepines, carbamazepine, levetiracetam"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Compound",
+      "name": "carbamazepine",
+      "attributes": {
+        "context": "carbamazepine, levetiracetam, phenobarbital"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "Compound",
+      "name": "levetiracetam",
+      "attributes": {
+        "context": "levetiracetam, phenobarbital, phenytoin"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "Compound",
+      "name": "phenobarbital",
+      "attributes": {
+        "context": "phenobarbital, phenytoin, sodium valproate"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "Compound",
+      "name": "phenytoin",
+      "attributes": {
+        "context": "phenytoin, sodium valproate, other medications"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "Compound",
+      "name": "sodium valproate",
+      "attributes": {
+        "context": "sodium valproate, other medications"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "Indication",
+      "name": "epilepsy",
+      "attributes": {
+        "context": "participants with epilepsy"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Concentration",
+      "name": "1\u201320 nuts/day",
+      "attributes": {
+        "context": "chewed 1\u201320 nuts/day"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "PharmEffect",
+      "name": "Drowsiness",
+      "attributes": {
+        "context": "Drowsiness"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "Taxon",
+      "name": "Tobacco",
+      "attributes": {
+        "context": "Tobacco and alcohol"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "Compound",
+      "name": "alcohol",
+      "attributes": {
+        "context": "Tobacco and alcohol"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "PharmEffect",
+      "name": "Dependence",
+      "attributes": {
+        "context": "Dependence, tolerance, withdrawal"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "PharmEffect",
+      "name": "tolerance",
+      "attributes": {
+        "context": "tolerance, withdrawal, attentional bias"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "PharmEffect",
+      "name": "withdrawal",
+      "attributes": {
+        "context": "withdrawal, attentional bias, impaired work"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "PharmEffect",
+      "name": "attentional bias",
+      "attributes": {
+        "context": "attentional bias, impaired work"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "PharmEffect",
+      "name": "impaired work",
+      "attributes": {
+        "context": "impaired work, impaired time perception"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "PharmEffect",
+      "name": "impaired time perception",
+      "attributes": {
+        "context": "impaired time perception, and increased arousal"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "PharmEffect",
+      "name": "increased arousal",
+      "attributes": {
+        "context": "and increased arousal"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "PharmEffect",
+      "name": "Poor concentration",
+      "attributes": {
+        "context": "Poor concentration, lethargy, despondency"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "PharmEffect",
+      "name": "lethargy",
+      "attributes": {
+        "context": "concentration, lethargy, despondency"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "PharmEffect",
+      "name": "despondency",
+      "attributes": {
+        "context": "lethargy, despondency, and episodes of paranoia"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "PharmEffect",
+      "name": "paranoia",
+      "attributes": {
+        "context": "episodes of paranoia"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "Taxon",
+      "name": "Tobacco",
+      "attributes": {
+        "context": "TobaccoSurvey study"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "Concentration",
+      "name": "4.3 nuts/day",
+      "attributes": {
+        "context": "chewed 4.3 nuts/day"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "PharmEffect",
+      "name": "Addiction",
+      "attributes": {
+        "context": "Addiction"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "Compound",
+      "name": "Nicotine",
+      "attributes": {
+        "context": "Nicotine, arecaidine"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "Compound",
+      "name": "arecaidine",
+      "attributes": {
+        "context": "arecaidine (1.46 \u00b5g/mL in urine)"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "Concentration",
+      "name": "1.46 \u00b5g/mL",
+      "attributes": {
+        "context": "1.46 \u00b5g/mL in urine"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "Compound",
+      "name": "N-methylnipecotate",
+      "attributes": {
+        "context": "N-methylnipecotate, cotinine"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "Compound",
+      "name": "cotinine",
+      "attributes": {
+        "context": "N-methylnipecotate, cotinine"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "PharmEffect",
+      "name": "Craving for BQ",
+      "attributes": {
+        "context": "Craving for BQ, addiction"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "PharmEffect",
+      "name": "addiction",
+      "attributes": {
+        "context": "BQ, addiction, depression"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "PharmEffect",
+      "name": "depression",
+      "attributes": {
+        "context": "addiction, depression, and drowsiness"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "PharmEffect",
+      "name": "drowsiness",
+      "attributes": {
+        "context": "depression, and drowsiness"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "Compound",
+      "name": "Arecoline",
+      "attributes": {
+        "context": "ArecolineMethscopolamine"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Compound",
+      "name": "Methscopolamine",
+      "attributes": {
+        "context": "ArecolineMethscopolamine"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "Indication",
+      "name": "bipolar patients",
+      "attributes": {
+        "context": "14 bipolar patients"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "Indication",
+      "name": "affective disorders",
+      "attributes": {
+        "context": "history of affective disorders"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "Concentration",
+      "name": "0.5 mg of arecoline",
+      "attributes": {
+        "context": "administered with 0.5 mg of arecoline"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "PharmEffect",
+      "name": "Shorter REM latency",
+      "attributes": {
+        "context": "Shorter REM latency in patients"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "Indication",
+      "name": "primary affective disorders",
+      "attributes": {
+        "context": "patients with primary affective disorders"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "Compound",
+      "name": "Glycopyrrolate",
+      "attributes": {
+        "context": "GlycopyrrolatePilot dose\u2013response study"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "Indication",
+      "name": "bipolar subjects",
+      "attributes": {
+        "context": "8 bipolar subjects"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "Compound",
+      "name": "arecoline",
+      "attributes": {
+        "context": "1 or 12 mg of arecoline IP"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "Concentration",
+      "name": "1 or 12 mg of arecoline IP",
+      "attributes": {
+        "context": "administered with 1 or 12 mg of arecoline IP"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "Concentration",
+      "name": "4 or 12 mg SC",
+      "attributes": {
+        "context": "and 4 or 12 mg SC"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "PharmEffect",
+      "name": "Nausea",
+      "attributes": {
+        "context": "Nausea, vomiting, increased anger"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "PharmEffect",
+      "name": "vomiting",
+      "attributes": {
+        "context": "vomiting, increased anger, confusion"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "PharmEffect",
+      "name": "increased anger",
+      "attributes": {
+        "context": "increased anger, confusion, depression"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "PharmEffect",
+      "name": "confusion",
+      "attributes": {
+        "context": "anger, confusion, depression"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "PharmEffect",
+      "name": "depression",
+      "attributes": {
+        "context": "confusion, depression, fatigue"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "PharmEffect",
+      "name": "fatigue",
+      "attributes": {
+        "context": "depression, fatigue and tension"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "PharmEffect",
+      "name": "tension",
+      "attributes": {
+        "context": "fatigue and tension, decreased elation"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "PharmEffect",
+      "name": "decreased elation",
+      "attributes": {
+        "context": "decreased elation, friendliness"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "PharmEffect",
+      "name": "friendliness",
+      "attributes": {
+        "context": "elation, friendliness, and vigor"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "PharmEffect",
+      "name": "vigor",
+      "attributes": {
+        "context": "friendliness, and vigor"
+      },
+      "source_chunk_ids": [
+        "965780ecb4481d27cc686636d0d23f64"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:04.078374+00:00",
+    "original_file": "entities.json"
+  }
+}

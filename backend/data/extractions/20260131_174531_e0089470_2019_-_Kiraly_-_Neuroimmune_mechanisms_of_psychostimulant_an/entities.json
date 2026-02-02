@@ -1,0 +1,5260 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "3d59775f50324ae00d246f5f64bfb5a1131186bd0c34a98ac2deb0cb041b7d0d",
+  "extracted_at": "2026-02-01T08:54:02.395285+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "PharmEffect",
+      "name": "inflammatory response",
+      "attributes": {
+        "context": "mount rapid inflammatory response"
+      },
+      "source_chunk_ids": [
+        "0da26c5a1cde90e72e6e8bb39853aa34"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Compound",
+      "name": "pathogen-associated molecular patterns",
+      "attributes": {
+        "context": "via pathogen-associated molecular patterns (PAMPs)"
+      },
+      "source_chunk_ids": [
+        "0da26c5a1cde90e72e6e8bb39853aa34"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "Compound",
+      "name": "PAMPs",
+      "attributes": {
+        "context": "via pathogen-associated molecular patterns (PAMPs)"
+      },
+      "source_chunk_ids": [
+        "0da26c5a1cde90e72e6e8bb39853aa34"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "Compound",
+      "name": "danger-associated molecular patterns",
+      "attributes": {
+        "context": "endogenous danger-associated molecular patterns (DAMPs)"
+      },
+      "source_chunk_ids": [
+        "0da26c5a1cde90e72e6e8bb39853aa34"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "Compound",
+      "name": "DAMPs",
+      "attributes": {
+        "context": "endogenous danger-associated molecular patterns (DAMPs)"
+      },
+      "source_chunk_ids": [
+        "0da26c5a1cde90e72e6e8bb39853aa34"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "Compound",
+      "name": "cytokines",
+      "attributes": {
+        "context": "produce and release cytokines"
+      },
+      "source_chunk_ids": [
+        "0da26c5a1cde90e72e6e8bb39853aa34"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "PharmEffect",
+      "name": "Pro-inflammatory",
+      "attributes": {
+        "context": "Pro-inflammatory cytokines"
+      },
+      "source_chunk_ids": [
+        "0da26c5a1cde90e72e6e8bb39853aa34"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Compound",
+      "name": "IL-1\u03b2",
+      "attributes": {
+        "context": "e.g., IL-1\u03b2"
+      },
+      "source_chunk_ids": [
+        "0da26c5a1cde90e72e6e8bb39853aa34"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "Compound",
+      "name": "tumor necrosis factor-alpha",
+      "attributes": {
+        "context": "tumor necrosis factor-alpha"
+      },
+      "source_chunk_ids": [
+        "0da26c5a1cde90e72e6e8bb39853aa34"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "Compound",
+      "name": "TNF-\u03b1",
+      "attributes": {
+        "context": "TNF-\u03b1"
+      },
+      "source_chunk_ids": [
+        "0da26c5a1cde90e72e6e8bb39853aa34"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "PharmEffect",
+      "name": "anti-inflammatory",
+      "attributes": {
+        "context": "anti-inflammatory cytokines"
+      },
+      "source_chunk_ids": [
+        "0da26c5a1cde90e72e6e8bb39853aa34"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "Compound",
+      "name": "IL-10",
+      "attributes": {
+        "context": "e.g., IL-10"
+      },
+      "source_chunk_ids": [
+        "0da26c5a1cde90e72e6e8bb39853aa34"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "Indication",
+      "name": "infection",
+      "attributes": {
+        "context": "site of injury or infection"
+      },
+      "source_chunk_ids": [
+        "0da26c5a1cde90e72e6e8bb39853aa34"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "Indication",
+      "name": "prolonged inflammation",
+      "attributes": {
+        "context": "prolonged inflammation"
+      },
+      "source_chunk_ids": [
+        "0da26c5a1cde90e72e6e8bb39853aa34"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "Indication",
+      "name": "chronic diseases",
+      "attributes": {
+        "context": "several chronic diseases"
+      },
+      "source_chunk_ids": [
+        "0da26c5a1cde90e72e6e8bb39853aa34"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "Indication",
+      "name": "psychiatric pathologies",
+      "attributes": {
+        "context": "including psychiatric pathologies"
+      },
+      "source_chunk_ids": [
+        "0da26c5a1cde90e72e6e8bb39853aa34"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "Indication",
+      "name": "psychiatric conditions",
+      "attributes": {
+        "context": "immune system derangements in psychiatric conditions"
+      },
+      "source_chunk_ids": [
+        "89b6c459b5e76058ccb8d49a65704745"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "Indication",
+      "name": "mental illness",
+      "attributes": {
+        "context": "pathophysiology of mental illness"
+      },
+      "source_chunk_ids": [
+        "89b6c459b5e76058ccb8d49a65704745"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "PharmEffect",
+      "name": "therapeutic strategy",
+      "attributes": {
+        "context": "potential therapeutic strategy"
+      },
+      "source_chunk_ids": [
+        "89b6c459b5e76058ccb8d49a65704745"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "PharmEffect",
+      "name": "inflammatory changes",
+      "attributes": {
+        "context": "inflammatory changes have been seen"
+      },
+      "source_chunk_ids": [
+        "89b6c459b5e76058ccb8d49a65704745"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "Indication",
+      "name": "neuropsychiatric conditions",
+      "attributes": {
+        "context": "multiple neuropsychiatric conditions"
+      },
+      "source_chunk_ids": [
+        "89b6c459b5e76058ccb8d49a65704745"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "Indication",
+      "name": "autism spectrum disorder",
+      "attributes": {
+        "context": "such as autism spectrum disorder"
+      },
+      "source_chunk_ids": [
+        "89b6c459b5e76058ccb8d49a65704745"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "Indication",
+      "name": "bipolar disorder",
+      "attributes": {
+        "context": "bipolar disorder"
+      },
+      "source_chunk_ids": [
+        "89b6c459b5e76058ccb8d49a65704745"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "Indication",
+      "name": "Alzheimer's disease",
+      "attributes": {
+        "context": "Alzheimer's disease"
+      },
+      "source_chunk_ids": [
+        "89b6c459b5e76058ccb8d49a65704745"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "Indication",
+      "name": "schizophrenia",
+      "attributes": {
+        "context": "and schizophrenia"
+      },
+      "source_chunk_ids": [
+        "89b6c459b5e76058ccb8d49a65704745"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "Indication",
+      "name": "substance use disorders",
+      "attributes": {
+        "context": "in substance use disorders"
+      },
+      "source_chunk_ids": [
+        "89b6c459b5e76058ccb8d49a65704745"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "Indication",
+      "name": "psychiatric conditions",
+      "attributes": {
+        "context": "than in the psychiatric conditions"
+      },
+      "source_chunk_ids": [
+        "89b6c459b5e76058ccb8d49a65704745"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "Compound",
+      "name": "glutamatergic signaling",
+      "attributes": {
+        "context": "affect glutamatergic signaling"
+      },
+      "source_chunk_ids": [
+        "9b838ec4721a185bad10b4aaf82b5b2e"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "Indication",
+      "name": "drug addiction",
+      "attributes": {
+        "context": "in drug addiction"
+      },
+      "source_chunk_ids": [
+        "9b838ec4721a185bad10b4aaf82b5b2e"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "Indication",
+      "name": "relapse",
+      "attributes": {
+        "context": "and relapse"
+      },
+      "source_chunk_ids": [
+        "9b838ec4721a185bad10b4aaf82b5b2e"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "Indication",
+      "name": "Inflammation",
+      "attributes": {
+        "context": "peripheral inflammation"
+      },
+      "source_chunk_ids": [
+        "9b838ec4721a185bad10b4aaf82b5b2e"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "Indication",
+      "name": "major depressive disorder",
+      "attributes": {
+        "context": "patients with major depressive disorder"
+      },
+      "source_chunk_ids": [
+        "9b838ec4721a185bad10b4aaf82b5b2e"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "Compound",
+      "name": "glutamatergic projection neurons",
+      "attributes": {
+        "context": "connectivity of the glutamatergic projection neurons"
+      },
+      "source_chunk_ids": [
+        "9b838ec4721a185bad10b4aaf82b5b2e"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "PharmEffect",
+      "name": "pro-inflammatory",
+      "attributes": {
+        "context": "pro-inflammatory cytokines"
+      },
+      "source_chunk_ids": [
+        "9b838ec4721a185bad10b4aaf82b5b2e"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "Compound",
+      "name": "cytokines",
+      "attributes": {
+        "context": "pro-inflammatory cytokines"
+      },
+      "source_chunk_ids": [
+        "9b838ec4721a185bad10b4aaf82b5b2e"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Compound",
+      "name": "glutamate transporters",
+      "attributes": {
+        "context": "downregulate glutamate transporters"
+      },
+      "source_chunk_ids": [
+        "9b838ec4721a185bad10b4aaf82b5b2e"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "Compound",
+      "name": "glutamate signaling",
+      "attributes": {
+        "context": "homeostasis of glutamate signaling"
+      },
+      "source_chunk_ids": [
+        "9b838ec4721a185bad10b4aaf82b5b2e"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "animal models of addiction"
+      },
+      "source_chunk_ids": [
+        "9b838ec4721a185bad10b4aaf82b5b2e"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "Compound",
+      "name": "glutamate transporters",
+      "attributes": {
+        "context": "glutamate transporters are downregulated"
+      },
+      "source_chunk_ids": [
+        "9b838ec4721a185bad10b4aaf82b5b2e"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "in cocaine treated animals"
+      },
+      "source_chunk_ids": [
+        "9b838ec4721a185bad10b4aaf82b5b2e"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "Compound",
+      "name": "glutamate",
+      "attributes": {
+        "context": "increase in synaptic glutamate"
+      },
+      "source_chunk_ids": [
+        "9b838ec4721a185bad10b4aaf82b5b2e"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "Indication",
+      "name": "relapse behaviors",
+      "attributes": {
+        "context": "contribute to relapse behaviors"
+      },
+      "source_chunk_ids": [
+        "9b838ec4721a185bad10b4aaf82b5b2e"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "Compound",
+      "name": "TNF-alpha cytokine",
+      "attributes": {
+        "context": "the TNF-alpha cytokine"
+      },
+      "source_chunk_ids": [
+        "9b838ec4721a185bad10b4aaf82b5b2e"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "Indication",
+      "name": "drug reward",
+      "attributes": {
+        "context": "in both drug reward"
+      },
+      "source_chunk_ids": [
+        "9b838ec4721a185bad10b4aaf82b5b2e"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "Indication",
+      "name": "relapse to drug seeking",
+      "attributes": {
+        "context": "relapse to drug seeking"
+      },
+      "source_chunk_ids": [
+        "9b838ec4721a185bad10b4aaf82b5b2e"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "Indication",
+      "name": "inflammation",
+      "attributes": {
+        "context": "effects of inflammation"
+      },
+      "source_chunk_ids": [
+        "9b838ec4721a185bad10b4aaf82b5b2e"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "Indication",
+      "name": "substance use disorders",
+      "attributes": {
+        "context": "persistence of substance use disorders"
+      },
+      "source_chunk_ids": [
+        "9b838ec4721a185bad10b4aaf82b5b2e"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "effects of cocaine on peripheral expression"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "PharmEffect",
+      "name": "alters cytokine expression",
+      "attributes": {
+        "context": "acute cocaine alters cytokine expression in serum"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "Compound",
+      "name": "monocyte chemoattractant protein 1 (MCP-1)",
+      "attributes": {
+        "context": "decreases in serum levels of the chemokine monocyte chemoattractant protein 1 (MCP-1)"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "Compound",
+      "name": "IL-6",
+      "attributes": {
+        "context": "pro-inflammatory cytokines including IL-6"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "Compound",
+      "name": "IL-17",
+      "attributes": {
+        "context": "pro-inflammatory cytokines including IL-17"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "Compound",
+      "name": "TNF-\u03b1",
+      "attributes": {
+        "context": "pro-inflammatory cytokines including TNF-\u03b1"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "Intravenous infusion of cocaine suppressed expression"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "Compound",
+      "name": "IL-6",
+      "attributes": {
+        "context": "suppressed expression of serum IL-6 for four hours"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "PharmEffect",
+      "name": "suppressed expression",
+      "attributes": {
+        "context": "cocaine suppressed expression of serum IL-6"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "actively using cocaine have a decreased IL-6 and TNF-\u03b1 pro-inflammatory response"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "Compound",
+      "name": "IL-6",
+      "attributes": {
+        "context": "decreased IL-6 and TNF-\u03b1 pro-inflammatory response"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "Compound",
+      "name": "TNF-\u03b1",
+      "attributes": {
+        "context": "decreased IL-6 and TNF-\u03b1 pro-inflammatory response"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "PharmEffect",
+      "name": "decreased IL-6 and TNF-\u03b1 pro-inflammatory response",
+      "attributes": {
+        "context": "isolated monocytes from patients who are actively using cocaine have a decreased IL-6 and TNF-\u03b1 pro-inflammatory response"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "acute infusion of cocaine"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "active cocaine users express higher levels of IL-6"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "Compound",
+      "name": "IL-6",
+      "attributes": {
+        "context": "express higher levels of IL-6"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "PharmEffect",
+      "name": "higher levels of IL-6",
+      "attributes": {
+        "context": "active cocaine users express higher levels of IL-6"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "Compound",
+      "name": "IL-10",
+      "attributes": {
+        "context": "decreased levels of the anti-inflammatory cytokine IL-10"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "PharmEffect",
+      "name": "decreased levels of IL-10",
+      "attributes": {
+        "context": "decreased levels of the anti-inflammatory cytokine IL-10"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "Indication",
+      "name": "psychostimulant use disorders",
+      "attributes": {
+        "context": "patients with psychostimulant use disorders exhibit increased serum expression"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "PharmEffect",
+      "name": "increased serum expression of pro-inflammatory markers",
+      "attributes": {
+        "context": "exhibit increased serum expression of pro-inflammatory markers"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "PharmEffect",
+      "name": "inhibited",
+      "attributes": {
+        "context": "immune system of drug users may be inhibited"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "PharmEffect",
+      "name": "primed to respond in a pro-inflammatory manner",
+      "attributes": {
+        "context": "primed to respond to certain environmental stimuli in a pro-inflammatory manner"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_071",
+      "type": "Indication",
+      "name": "psychostimulant use disorders",
+      "attributes": {
+        "context": "development or persistence of psychostimulant use disorders"
+      },
+      "source_chunk_ids": [
+        "6397d0bc98c564306d293ca9de5e4bbe"
+      ]
+    },
+    {
+      "id": "ent_072",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "patients with cocaine use disorder"
+      },
+      "source_chunk_ids": [
+        "882049cb461271ca6e60a3b438c1fc3f"
+      ]
+    },
+    {
+      "id": "ent_073",
+      "type": "Indication",
+      "name": "cocaine use disorder",
+      "attributes": {
+        "context": "patients with cocaine use disorder"
+      },
+      "source_chunk_ids": [
+        "882049cb461271ca6e60a3b438c1fc3f"
+      ]
+    },
+    {
+      "id": "ent_074",
+      "type": "Compound",
+      "name": "microglial radiotracers",
+      "attributes": {
+        "context": "binding of microglial radiotracers"
+      },
+      "source_chunk_ids": [
+        "882049cb461271ca6e60a3b438c1fc3f"
+      ]
+    },
+    {
+      "id": "ent_075",
+      "type": "Compound",
+      "name": "PET tracers",
+      "attributes": {
+        "context": "these PET tracers"
+      },
+      "source_chunk_ids": [
+        "882049cb461271ca6e60a3b438c1fc3f"
+      ]
+    },
+    {
+      "id": "ent_076",
+      "type": "PharmEffect",
+      "name": "neuroinflammatory changes",
+      "attributes": {
+        "context": "role of neuroinflammatory changes in animal models of psychostimulant use disorder"
+      },
+      "source_chunk_ids": [
+        "14778277192a1e5c17ee72773df8b1c7"
+      ]
+    },
+    {
+      "id": "ent_077",
+      "type": "Indication",
+      "name": "psychostimulant use disorder",
+      "attributes": {
+        "context": "animal models of psychostimulant use disorder"
+      },
+      "source_chunk_ids": [
+        "14778277192a1e5c17ee72773df8b1c7"
+      ]
+    },
+    {
+      "id": "ent_078",
+      "type": "Compound",
+      "name": "psychostimulants",
+      "attributes": {
+        "context": "role of psychostimulants and activating microglia"
+      },
+      "source_chunk_ids": [
+        "14778277192a1e5c17ee72773df8b1c7"
+      ]
+    },
+    {
+      "id": "ent_079",
+      "type": "PharmEffect",
+      "name": "activating microglia",
+      "attributes": {
+        "context": "role of psychostimulants and activating microglia"
+      },
+      "source_chunk_ids": [
+        "14778277192a1e5c17ee72773df8b1c7"
+      ]
+    },
+    {
+      "id": "ent_080",
+      "type": "Compound",
+      "name": "psychostimulant",
+      "attributes": {
+        "context": "psychostimulant activation of astrocytes and other glial cells"
+      },
+      "source_chunk_ids": [
+        "14778277192a1e5c17ee72773df8b1c7"
+      ]
+    },
+    {
+      "id": "ent_081",
+      "type": "PharmEffect",
+      "name": "activation of astrocytes",
+      "attributes": {
+        "context": "psychostimulant activation of astrocytes and other glial cells"
+      },
+      "source_chunk_ids": [
+        "14778277192a1e5c17ee72773df8b1c7"
+      ]
+    },
+    {
+      "id": "ent_082",
+      "type": "PharmEffect",
+      "name": "activation of glial cells",
+      "attributes": {
+        "context": "activation of astrocytes and other glial cells"
+      },
+      "source_chunk_ids": [
+        "14778277192a1e5c17ee72773df8b1c7"
+      ]
+    },
+    {
+      "id": "ent_083",
+      "type": "Compound",
+      "name": "Methamphetamine",
+      "attributes": {
+        "context": "Methamphetamine has been repeatedly shown to induce microglial activation"
+      },
+      "source_chunk_ids": [
+        "14778277192a1e5c17ee72773df8b1c7"
+      ]
+    },
+    {
+      "id": "ent_084",
+      "type": "PharmEffect",
+      "name": "microglial activation",
+      "attributes": {
+        "context": "induce microglial activation throughout the brain"
+      },
+      "source_chunk_ids": [
+        "14778277192a1e5c17ee72773df8b1c7"
+      ]
+    },
+    {
+      "id": "ent_085",
+      "type": "PharmEffect",
+      "name": "inhibition of microglial activation",
+      "attributes": {
+        "context": "inhibition of microglial activation via the anti-inflammatory antibiotic minocycline"
+      },
+      "source_chunk_ids": [
+        "14778277192a1e5c17ee72773df8b1c7"
+      ]
+    },
+    {
+      "id": "ent_086",
+      "type": "PharmEffect",
+      "name": "anti-inflammatory",
+      "attributes": {
+        "context": "via the anti-inflammatory antibiotic minocycline"
+      },
+      "source_chunk_ids": [
+        "14778277192a1e5c17ee72773df8b1c7"
+      ]
+    },
+    {
+      "id": "ent_087",
+      "type": "Compound",
+      "name": "minocycline",
+      "attributes": {
+        "context": "anti-inflammatory antibiotic minocycline"
+      },
+      "source_chunk_ids": [
+        "14778277192a1e5c17ee72773df8b1c7"
+      ]
+    },
+    {
+      "id": "ent_088",
+      "type": "Compound",
+      "name": "phosphodiesterase inhibitor",
+      "attributes": {
+        "context": "via the phosphodiesterase inhibitor and antagonist of the toll-like receptor 4 (TLR-4) ibudilast"
+      },
+      "source_chunk_ids": [
+        "14778277192a1e5c17ee72773df8b1c7"
+      ]
+    },
+    {
+      "id": "ent_089",
+      "type": "Compound",
+      "name": "ibudilast",
+      "attributes": {
+        "context": "antagonist of the toll-like receptor 4 (TLR-4) ibudilast"
+      },
+      "source_chunk_ids": [
+        "14778277192a1e5c17ee72773df8b1c7"
+      ]
+    },
+    {
+      "id": "ent_090",
+      "type": "PharmEffect",
+      "name": "reduce the rewarding properties",
+      "attributes": {
+        "context": "ibudilast reduce the rewarding properties of stimulants"
+      },
+      "source_chunk_ids": [
+        "14778277192a1e5c17ee72773df8b1c7"
+      ]
+    },
+    {
+      "id": "ent_091",
+      "type": "Compound",
+      "name": "stimulants",
+      "attributes": {
+        "context": "rewarding properties of stimulants"
+      },
+      "source_chunk_ids": [
+        "14778277192a1e5c17ee72773df8b1c7"
+      ]
+    },
+    {
+      "id": "ent_092",
+      "type": "PharmEffect",
+      "name": "microglial activation",
+      "attributes": {
+        "context": "mechanism of microglial activation by psychostimulants"
+      },
+      "source_chunk_ids": [
+        "14778277192a1e5c17ee72773df8b1c7"
+      ]
+    },
+    {
+      "id": "ent_093",
+      "type": "Compound",
+      "name": "psychostimulants",
+      "attributes": {
+        "context": "microglial activation by psychostimulants"
+      },
+      "source_chunk_ids": [
+        "14778277192a1e5c17ee72773df8b1c7"
+      ]
+    },
+    {
+      "id": "ent_094",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "cocaine in particular may bind to TLR4"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_095",
+      "type": "Compound",
+      "name": "TLR4",
+      "attributes": {
+        "context": "may bind to TLR4"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_096",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "cocaine binds the TLR4 receptor"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_097",
+      "type": "Compound",
+      "name": "TLR4 receptor",
+      "attributes": {
+        "context": "cocaine binds the TLR4 receptor"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_098",
+      "type": "Compound",
+      "name": "TLR4 receptor",
+      "attributes": {
+        "context": "signaling through the TLR4 receptor"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_099",
+      "type": "PharmEffect",
+      "name": "dopamine release",
+      "attributes": {
+        "context": "cocaine-induced dopamine release"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_100",
+      "type": "PharmEffect",
+      "name": "conditioned place preference (CPP)",
+      "attributes": {
+        "context": "conditioned place preference (CPP)"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_101",
+      "type": "PharmEffect",
+      "name": "self-administration of cocaine",
+      "attributes": {
+        "context": "self-administration of cocaine"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_102",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "self-administration of cocaine"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_103",
+      "type": "Compound",
+      "name": "TLR4",
+      "attributes": {
+        "context": "TLR4 is necessary for basal synaptic transmission"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_104",
+      "type": "PharmEffect",
+      "name": "basal synaptic transmission",
+      "attributes": {
+        "context": "necessary for basal synaptic transmission"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_105",
+      "type": "PharmEffect",
+      "name": "NMDA-dependent synaptic plasticity",
+      "attributes": {
+        "context": "NMDA-dependent synaptic plasticity"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_106",
+      "type": "Compound",
+      "name": "NMDA",
+      "attributes": {
+        "context": "NMDA-dependent synaptic plasticity"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_107",
+      "type": "Compound",
+      "name": "TLR4",
+      "attributes": {
+        "context": "TLR4 activity in the ventral tegmental area"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_108",
+      "type": "PharmEffect",
+      "name": "reinstatement of cocaine seeking",
+      "attributes": {
+        "context": "affects reinstatement of cocaine seeking"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_109",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "reinstatement of cocaine seeking"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_110",
+      "type": "Compound",
+      "name": "IL-1",
+      "attributes": {
+        "context": "dependent on IL-1 signaling"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_111",
+      "type": "Compound",
+      "name": "TLR4 antagonists",
+      "attributes": {
+        "context": "effects of the TLR4 antagonists"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_112",
+      "type": "Compound",
+      "name": "(+)-naloxone",
+      "attributes": {
+        "context": "TLR4 antagonists (+)-naloxone"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_113",
+      "type": "PharmEffect",
+      "name": "dopamine release",
+      "attributes": {
+        "context": "naloxone on dopamine release"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_114",
+      "type": "Compound",
+      "name": "TLR4",
+      "attributes": {
+        "context": "role of TLR4-mediated signaling"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_115",
+      "type": "Indication",
+      "name": "substance use",
+      "attributes": {
+        "context": "models of substance use"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_116",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "neurobiology of addiction"
+      },
+      "source_chunk_ids": [
+        "49515793327e1cb701a04a8d3b37f688"
+      ]
+    },
+    {
+      "id": "ent_117",
+      "type": "Compound",
+      "name": "psychostimulants",
+      "attributes": {
+        "context": "gut microbiome and psychostimulants"
+      },
+      "source_chunk_ids": [
+        "5784e2135583c154501aae6c19c7963b"
+      ]
+    },
+    {
+      "id": "ent_118",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "sensitization to cocaine"
+      },
+      "source_chunk_ids": [
+        "b8183b390a437984cd6964154a680cae"
+      ]
+    },
+    {
+      "id": "ent_119",
+      "type": "PharmEffect",
+      "name": "CPP",
+      "attributes": {
+        "context": "altered CPP and locomotor sensitization"
+      },
+      "source_chunk_ids": [
+        "b8183b390a437984cd6964154a680cae"
+      ]
+    },
+    {
+      "id": "ent_120",
+      "type": "PharmEffect",
+      "name": "locomotor sensitization",
+      "attributes": {
+        "context": "altered CPP and locomotor sensitization to cocaine"
+      },
+      "source_chunk_ids": [
+        "b8183b390a437984cd6964154a680cae"
+      ]
+    },
+    {
+      "id": "ent_121",
+      "type": "PharmEffect",
+      "name": "rewarding effects",
+      "attributes": {
+        "context": "more sensitive to the rewarding and sensitizing effects of cocaine"
+      },
+      "source_chunk_ids": [
+        "b8183b390a437984cd6964154a680cae"
+      ]
+    },
+    {
+      "id": "ent_122",
+      "type": "PharmEffect",
+      "name": "sensitizing effects",
+      "attributes": {
+        "context": "more sensitive to the rewarding and sensitizing effects of cocaine"
+      },
+      "source_chunk_ids": [
+        "b8183b390a437984cd6964154a680cae"
+      ]
+    },
+    {
+      "id": "ent_123",
+      "type": "Concentration",
+      "name": "low doses",
+      "attributes": {
+        "context": "effects of cocaine at low doses"
+      },
+      "source_chunk_ids": [
+        "b8183b390a437984cd6964154a680cae"
+      ]
+    },
+    {
+      "id": "ent_124",
+      "type": "Compound",
+      "name": "brain derived neurotrophic factor (BDNF)",
+      "attributes": {
+        "context": "increased levels of brain derived neurotrophic factor (BDNF)"
+      },
+      "source_chunk_ids": [
+        "b8183b390a437984cd6964154a680cae"
+      ]
+    },
+    {
+      "id": "ent_125",
+      "type": "Compound",
+      "name": "D1 dopamine receptors",
+      "attributes": {
+        "context": "increased levels of ... D1 and D2 dopamine receptors"
+      },
+      "source_chunk_ids": [
+        "b8183b390a437984cd6964154a680cae"
+      ]
+    },
+    {
+      "id": "ent_126",
+      "type": "Compound",
+      "name": "D2 dopamine receptors",
+      "attributes": {
+        "context": "increased levels of ... D1 and D2 dopamine receptors"
+      },
+      "source_chunk_ids": [
+        "b8183b390a437984cd6964154a680cae"
+      ]
+    },
+    {
+      "id": "ent_127",
+      "type": "Compound",
+      "name": "GluR2 AMPA receptors",
+      "attributes": {
+        "context": "increased levels of ... GluR2 AMPA receptors"
+      },
+      "source_chunk_ids": [
+        "b8183b390a437984cd6964154a680cae"
+      ]
+    },
+    {
+      "id": "ent_128",
+      "type": "Compound",
+      "name": "BDNF",
+      "attributes": {
+        "context": "affect brain expression of BDNF and dopamine receptors"
+      },
+      "source_chunk_ids": [
+        "b8183b390a437984cd6964154a680cae"
+      ]
+    },
+    {
+      "id": "ent_129",
+      "type": "Compound",
+      "name": "dopamine receptors",
+      "attributes": {
+        "context": "affect brain expression of BDNF and dopamine receptors"
+      },
+      "source_chunk_ids": [
+        "b8183b390a437984cd6964154a680cae"
+      ]
+    },
+    {
+      "id": "ent_130",
+      "type": "Indication",
+      "name": "addictive behaviors",
+      "attributes": {
+        "context": "pathophysiology of addictive behaviors"
+      },
+      "source_chunk_ids": [
+        "b8183b390a437984cd6964154a680cae"
+      ]
+    },
+    {
+      "id": "ent_131",
+      "type": "Compound",
+      "name": "BDNF",
+      "attributes": {
+        "context": "between the microbiome and BDNF and dopamine signaling"
+      },
+      "source_chunk_ids": [
+        "b8183b390a437984cd6964154a680cae"
+      ]
+    },
+    {
+      "id": "ent_132",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "between the microbiome and BDNF and dopamine signaling"
+      },
+      "source_chunk_ids": [
+        "b8183b390a437984cd6964154a680cae"
+      ]
+    },
+    {
+      "id": "ent_133",
+      "type": "Compound",
+      "name": "methamphetamine",
+      "attributes": {
+        "context": "injected every other day with methamphetamine"
+      },
+      "source_chunk_ids": [
+        "b8183b390a437984cd6964154a680cae"
+      ]
+    },
+    {
+      "id": "ent_134",
+      "type": "Compound",
+      "name": "methamphetamine",
+      "attributes": {
+        "context": "bacterial diversity after methamphetamine"
+      },
+      "source_chunk_ids": [
+        "b8183b390a437984cd6964154a680cae"
+      ]
+    },
+    {
+      "id": "ent_135",
+      "type": "Compound",
+      "name": "propionate",
+      "attributes": {
+        "context": "short chain fatty acid propionate"
+      },
+      "source_chunk_ids": [
+        "b8183b390a437984cd6964154a680cae"
+      ]
+    },
+    {
+      "id": "ent_136",
+      "type": "PharmEffect",
+      "name": "behavioral effects",
+      "attributes": {
+        "context": "key role in the behavioral effects of the microbiota and cocaine"
+      },
+      "source_chunk_ids": [
+        "b8183b390a437984cd6964154a680cae"
+      ]
+    },
+    {
+      "id": "ent_137",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "behavioral effects of the microbiota and cocaine"
+      },
+      "source_chunk_ids": [
+        "b8183b390a437984cd6964154a680cae"
+      ]
+    },
+    {
+      "id": "ent_138",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "gut-immune-brain connection in addiction"
+      },
+      "source_chunk_ids": [
+        "b8183b390a437984cd6964154a680cae"
+      ]
+    },
+    {
+      "id": "ent_139",
+      "type": "Compound",
+      "name": "Opioids",
+      "attributes": {
+        "context": "Opioids are used as firstline treatment"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_140",
+      "type": "Indication",
+      "name": "acute pain",
+      "attributes": {
+        "context": "many types of acute and chronic pain"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_141",
+      "type": "Indication",
+      "name": "chronic pain",
+      "attributes": {
+        "context": "many types of acute and chronic pain"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_142",
+      "type": "Indication",
+      "name": "chronic illnesses",
+      "attributes": {
+        "context": "suffering from other chronic illnesses"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_143",
+      "type": "PharmEffect",
+      "name": "weakened immune systems",
+      "attributes": {
+        "context": "with weakened immune systems"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_144",
+      "type": "PharmEffect",
+      "name": "pain management",
+      "attributes": {
+        "context": "abundant use in pain management"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_145",
+      "type": "Compound",
+      "name": "opioids",
+      "attributes": {
+        "context": "opioids might be impairing recovery"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_146",
+      "type": "PharmEffect",
+      "name": "impairing recovery",
+      "attributes": {
+        "context": "opioids might be impairing recovery"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_147",
+      "type": "Compound",
+      "name": "opioid",
+      "attributes": {
+        "context": "opioid abusers have worse overall health"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_148",
+      "type": "Indication",
+      "name": "infectious disease complications",
+      "attributes": {
+        "context": "susceptible to infectious disease complications"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_149",
+      "type": "Indication",
+      "name": "HIV infection",
+      "attributes": {
+        "context": "including HIV infection"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_150",
+      "type": "Compound",
+      "name": "opioid",
+      "attributes": {
+        "context": "resulting from opioid exposure"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_151",
+      "type": "PharmEffect",
+      "name": "immunosuppression",
+      "attributes": {
+        "context": "to general immunosuppression"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_152",
+      "type": "Indication",
+      "name": "HIV",
+      "attributes": {
+        "context": "As it pertains to HIV"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_153",
+      "type": "Compound",
+      "name": "heroin",
+      "attributes": {
+        "context": "heroin users have lower levels"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_154",
+      "type": "Compound",
+      "name": "tripartite motif-containing 22",
+      "attributes": {
+        "context": "factors tripartite motif-containing 22 (TRIM22)"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_155",
+      "type": "Compound",
+      "name": "TRIM22",
+      "attributes": {
+        "context": "tripartite motif-containing 22 (TRIM22)"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_156",
+      "type": "Compound",
+      "name": "tripartite motif-containing 5a",
+      "attributes": {
+        "context": "tripartite motif-containing 5a (TRIM5a)"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_157",
+      "type": "Compound",
+      "name": "TRIM5a",
+      "attributes": {
+        "context": "tripartite motif-containing 5a (TRIM5a)"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_158",
+      "type": "Compound",
+      "name": "apolipoprotein B mRNA editing enzyme catalytic polypeptide-like 3G",
+      "attributes": {
+        "context": "apolipoprotein B mRNA editing enzyme catalytic polypeptide-like 3G (APOBEC3G)"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_159",
+      "type": "Compound",
+      "name": "APOBEC3G",
+      "attributes": {
+        "context": "apolipoprotein B mRNA editing enzyme catalytic polypeptide-like 3G (APOBEC3G)"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_160",
+      "type": "Compound",
+      "name": "IFN-\u03b1",
+      "attributes": {
+        "context": "and IFN-\u03b1"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_161",
+      "type": "PharmEffect",
+      "name": "decreased the ability to combat retroviral infection",
+      "attributes": {
+        "context": "leads to decreased the ability to combat retroviral infection"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_162",
+      "type": "Indication",
+      "name": "retroviral infection",
+      "attributes": {
+        "context": "to combat retroviral infection"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_163",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "exposed to morphine show decreased levels"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_164",
+      "type": "PharmEffect",
+      "name": "decreased levels of activation",
+      "attributes": {
+        "context": "show decreased levels of activation"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_165",
+      "type": "PharmEffect",
+      "name": "impaired chemotactic ability",
+      "attributes": {
+        "context": "have impaired chemotactic ability"
+      },
+      "source_chunk_ids": [
+        "a18998dea7ab79566b6d06ba56f83fcf"
+      ]
+    },
+    {
+      "id": "ent_166",
+      "type": "Compound",
+      "name": "cytokines",
+      "attributes": {
+        "context": "circulatory inflammatory cytokines"
+      },
+      "source_chunk_ids": [
+        "c4fa5bb69a296a26b2673ad71fba022f"
+      ]
+    },
+    {
+      "id": "ent_167",
+      "type": "Compound",
+      "name": "TNF-alpha",
+      "attributes": {
+        "context": "cytokines such as TNF-alpha"
+      },
+      "source_chunk_ids": [
+        "c4fa5bb69a296a26b2673ad71fba022f"
+      ]
+    },
+    {
+      "id": "ent_168",
+      "type": "Indication",
+      "name": "heroin users",
+      "attributes": {
+        "context": "heroin users have higher levels"
+      },
+      "source_chunk_ids": [
+        "c4fa5bb69a296a26b2673ad71fba022f"
+      ]
+    },
+    {
+      "id": "ent_169",
+      "type": "PharmEffect",
+      "name": "inflammatory",
+      "attributes": {
+        "context": "circulatory inflammatory cytokines"
+      },
+      "source_chunk_ids": [
+        "c4fa5bb69a296a26b2673ad71fba022f"
+      ]
+    },
+    {
+      "id": "ent_170",
+      "type": "Compound",
+      "name": "transforming growth factor a (TGF-\u03b1)",
+      "attributes": {
+        "context": "transforming growth factor a (TGF-\u03b1)"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_171",
+      "type": "Compound",
+      "name": "IL-8",
+      "attributes": {
+        "context": "and IL-8"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_172",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "giving morphine to healthy volunteers"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_173",
+      "type": "PharmEffect",
+      "name": "cytotoxic response",
+      "attributes": {
+        "context": "produce less cytotoxic response"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_174",
+      "type": "Compound",
+      "name": "mu opioid receptor selective agonist",
+      "attributes": {
+        "context": "a mu opioid receptor selective agonist increased release"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_175",
+      "type": "Compound",
+      "name": "TGF-\u03b21",
+      "attributes": {
+        "context": "including TGF-\u03b21"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_176",
+      "type": "Compound",
+      "name": "regulated on activation, normal T cell expressed and secreted (RANTES)",
+      "attributes": {
+        "context": "normal T cell expressed and secreted (RANTES)"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_177",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "morphine increased MCP-1 expression"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_178",
+      "type": "Compound",
+      "name": "MCP-1",
+      "attributes": {
+        "context": "increased MCP-1 expression"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_179",
+      "type": "Compound",
+      "name": "opioids",
+      "attributes": {
+        "context": "when opioids are administered concurrently"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_180",
+      "type": "PharmEffect",
+      "name": "dampen immune cell activation",
+      "attributes": {
+        "context": "act to dampen immune cell activation"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_181",
+      "type": "Compound",
+      "name": "heroin",
+      "attributes": {
+        "context": "Cells from heroin abusers"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_182",
+      "type": "Indication",
+      "name": "heroin abuse",
+      "attributes": {
+        "context": "Cells from heroin abusers"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_183",
+      "type": "PharmEffect",
+      "name": "pro-inflammatory cytokines",
+      "attributes": {
+        "context": "lower levels of pro-inflammatory cytokines"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_184",
+      "type": "Compound",
+      "name": "IL-1\u03b2",
+      "attributes": {
+        "context": "such as IL-1\u03b2"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_185",
+      "type": "Compound",
+      "name": "IL-6",
+      "attributes": {
+        "context": "IL-6"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_186",
+      "type": "Compound",
+      "name": "TNF-\u03b1",
+      "attributes": {
+        "context": "TNF-\u03b1"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_187",
+      "type": "Compound",
+      "name": "IFN-\u03b3",
+      "attributes": {
+        "context": "and IFN-\u03b3 after in vitro stimulation"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_188",
+      "type": "Compound",
+      "name": "lipopolysaccharide (LPS)",
+      "attributes": {
+        "context": "bacterial endotoxin lipopolysaccharide (LPS)"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_189",
+      "type": "Compound",
+      "name": "heroin",
+      "attributes": {
+        "context": "chronic heroin users produced less IFN-\u03b3"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_190",
+      "type": "Compound",
+      "name": "IFN-\u03b3",
+      "attributes": {
+        "context": "produced less IFN-\u03b3 and more IL-10"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_191",
+      "type": "Compound",
+      "name": "IL-10",
+      "attributes": {
+        "context": "and more IL-10 than healthy controls"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_192",
+      "type": "Compound",
+      "name": "LPS",
+      "attributes": {
+        "context": "stimulated with LPS"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_193",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "pretreated with morphine decreased production of IFN-\u03b3"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_194",
+      "type": "Compound",
+      "name": "Concanavilin A (Con-A)",
+      "attributes": {
+        "context": "the toxin Concanavilin A (Con-A)"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_195",
+      "type": "Compound",
+      "name": "IL-10",
+      "attributes": {
+        "context": "produced less IL-10 but more IL-12"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_196",
+      "type": "Compound",
+      "name": "IL-12",
+      "attributes": {
+        "context": "but more IL-12 in response to LPS"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_197",
+      "type": "Compound",
+      "name": "LPS",
+      "attributes": {
+        "context": "in response to LPS after morphine"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_198",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "after morphine compared to LPS alone"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_199",
+      "type": "Compound",
+      "name": "LPS",
+      "attributes": {
+        "context": "compared to LPS alone"
+      },
+      "source_chunk_ids": [
+        "255674f0477537424cf2d49d2953f29d"
+      ]
+    },
+    {
+      "id": "ent_200",
+      "type": "Compound",
+      "name": "opioids",
+      "attributes": {
+        "context": "immunosuppressive effects of opioids"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_201",
+      "type": "PharmEffect",
+      "name": "immunosuppressive effects",
+      "attributes": {
+        "context": "immunosuppressive effects of opioids"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_202",
+      "type": "Indication",
+      "name": "chronic illness",
+      "attributes": {
+        "context": "risk of chronic illness"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_203",
+      "type": "PharmEffect",
+      "name": "tolerance",
+      "attributes": {
+        "context": "including tolerance"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_204",
+      "type": "PharmEffect",
+      "name": "dependence",
+      "attributes": {
+        "context": "including tolerance, dependence"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_205",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "and addiction"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_206",
+      "type": "Compound",
+      "name": "Opioids",
+      "attributes": {
+        "context": "Opioids produce their rewarding effects"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_207",
+      "type": "PharmEffect",
+      "name": "rewarding effects",
+      "attributes": {
+        "context": "produce their rewarding effects"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_208",
+      "type": "Compound",
+      "name": "GABA",
+      "attributes": {
+        "context": "inhibiting GABA neurons"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_209",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "disinhibition of dopamine neurons"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_210",
+      "type": "Compound",
+      "name": "Opioids",
+      "attributes": {
+        "context": "Opioids also directly bind"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_211",
+      "type": "PharmEffect",
+      "name": "reduce pain",
+      "attributes": {
+        "context": "to reduce pain"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_212",
+      "type": "Compound",
+      "name": "cytokine",
+      "attributes": {
+        "context": "peripheral cytokine release"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_213",
+      "type": "Compound",
+      "name": "cytokine",
+      "attributes": {
+        "context": "cytokine production"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_214",
+      "type": "Compound",
+      "name": "cytokine",
+      "attributes": {
+        "context": "cytokine expression"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_215",
+      "type": "PharmEffect",
+      "name": "analgesia",
+      "attributes": {
+        "context": "regulating both analgesia"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_216",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "and addiction"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_217",
+      "type": "Compound",
+      "name": "cytokine",
+      "attributes": {
+        "context": "source of cytokine upregulation"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_218",
+      "type": "Compound",
+      "name": "opioid",
+      "attributes": {
+        "context": "after opioid exposure"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_219",
+      "type": "PharmEffect",
+      "name": "modulating inflammation",
+      "attributes": {
+        "context": "role in modulating inflammation"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_220",
+      "type": "Compound",
+      "name": "glial inhibitors",
+      "attributes": {
+        "context": "glial inhibitors are being investigated"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_221",
+      "type": "Compound",
+      "name": "opioid",
+      "attributes": {
+        "context": "decrease opioid-related side effects"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_222",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "namely: addiction"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_223",
+      "type": "PharmEffect",
+      "name": "physical dependence",
+      "attributes": {
+        "context": "and physical dependence"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_224",
+      "type": "Compound",
+      "name": "Ibudilast",
+      "attributes": {
+        "context": "Ibudilast, a glial inhibitor"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_225",
+      "type": "Compound",
+      "name": "glial inhibitor",
+      "attributes": {
+        "context": "Ibudilast, a glial inhibitor"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_226",
+      "type": "Compound",
+      "name": "TNF-\u03b1",
+      "attributes": {
+        "context": "decrease TNF-\u03b1 release"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_227",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "subjective morphine withdrawal"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_228",
+      "type": "PharmEffect",
+      "name": "morphine withdrawal",
+      "attributes": {
+        "context": "attenuated subjective morphine withdrawal"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_229",
+      "type": "Compound",
+      "name": "oxycodone",
+      "attributes": {
+        "context": "low-dose oxycodone"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_230",
+      "type": "Concentration",
+      "name": "low-dose",
+      "attributes": {
+        "context": "motivation for low-dose oxycodone"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_231",
+      "type": "Compound",
+      "name": "heroin",
+      "attributes": {
+        "context": "on heroin-dependent individuals"
+      },
+      "source_chunk_ids": [
+        "c81e71a21d7723bd252bb70e64cf3226"
+      ]
+    },
+    {
+      "id": "ent_232",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "morphine produces an upregulation"
+      },
+      "source_chunk_ids": [
+        "1e98b9c4ce409b227059117fd02cadfb"
+      ]
+    },
+    {
+      "id": "ent_233",
+      "type": "Compound",
+      "name": "IL-1\u03b2",
+      "attributes": {
+        "context": "peripheral IL-1\u03b2 acute or chronic administration"
+      },
+      "source_chunk_ids": [
+        "1e98b9c4ce409b227059117fd02cadfb"
+      ]
+    },
+    {
+      "id": "ent_234",
+      "type": "PharmEffect",
+      "name": "upregulation",
+      "attributes": {
+        "context": "produces an upregulation of peripheral IL-1\u03b2"
+      },
+      "source_chunk_ids": [
+        "1e98b9c4ce409b227059117fd02cadfb"
+      ]
+    },
+    {
+      "id": "ent_235",
+      "type": "Compound",
+      "name": "IL-6",
+      "attributes": {
+        "context": "IL-6 after chronic administration"
+      },
+      "source_chunk_ids": [
+        "1e98b9c4ce409b227059117fd02cadfb"
+      ]
+    },
+    {
+      "id": "ent_236",
+      "type": "Compound",
+      "name": "IL-17A",
+      "attributes": {
+        "context": "IL-17A after chronic administration"
+      },
+      "source_chunk_ids": [
+        "1e98b9c4ce409b227059117fd02cadfb"
+      ]
+    },
+    {
+      "id": "ent_237",
+      "type": "Compound",
+      "name": "IL-10",
+      "attributes": {
+        "context": "IL-10 after acute administration"
+      },
+      "source_chunk_ids": [
+        "1e98b9c4ce409b227059117fd02cadfb"
+      ]
+    },
+    {
+      "id": "ent_238",
+      "type": "Compound",
+      "name": "TNF-\u03b1",
+      "attributes": {
+        "context": "TNF-\u03b1, IL-2, and IFN-\u03b3"
+      },
+      "source_chunk_ids": [
+        "1e98b9c4ce409b227059117fd02cadfb"
+      ]
+    },
+    {
+      "id": "ent_239",
+      "type": "Compound",
+      "name": "IL-2",
+      "attributes": {
+        "context": "IL-2, and IFN-\u03b3 after acute administration"
+      },
+      "source_chunk_ids": [
+        "1e98b9c4ce409b227059117fd02cadfb"
+      ]
+    },
+    {
+      "id": "ent_240",
+      "type": "Compound",
+      "name": "IFN-\u03b3",
+      "attributes": {
+        "context": "IFN-\u03b3 after acute administration"
+      },
+      "source_chunk_ids": [
+        "1e98b9c4ce409b227059117fd02cadfb"
+      ]
+    },
+    {
+      "id": "ent_241",
+      "type": "PharmEffect",
+      "name": "decreased release",
+      "attributes": {
+        "context": "observed decreased IL-2 release"
+      },
+      "source_chunk_ids": [
+        "1e98b9c4ce409b227059117fd02cadfb"
+      ]
+    },
+    {
+      "id": "ent_242",
+      "type": "Compound",
+      "name": "IL-2",
+      "attributes": {
+        "context": "decreased IL-2 release from peripheral immune cells"
+      },
+      "source_chunk_ids": [
+        "1e98b9c4ce409b227059117fd02cadfb"
+      ]
+    },
+    {
+      "id": "ent_243",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "after acute and chronic morphine"
+      },
+      "source_chunk_ids": [
+        "1e98b9c4ce409b227059117fd02cadfb"
+      ]
+    },
+    {
+      "id": "ent_244",
+      "type": "Compound",
+      "name": "opioids",
+      "attributes": {
+        "context": "opioids impair immune response"
+      },
+      "source_chunk_ids": [
+        "1e98b9c4ce409b227059117fd02cadfb"
+      ]
+    },
+    {
+      "id": "ent_245",
+      "type": "PharmEffect",
+      "name": "impair immune response",
+      "attributes": {
+        "context": "opioids impair immune response to infection or injury"
+      },
+      "source_chunk_ids": [
+        "1e98b9c4ce409b227059117fd02cadfb"
+      ]
+    },
+    {
+      "id": "ent_246",
+      "type": "Indication",
+      "name": "infection",
+      "attributes": {
+        "context": "immune response to infection or injury"
+      },
+      "source_chunk_ids": [
+        "1e98b9c4ce409b227059117fd02cadfb"
+      ]
+    },
+    {
+      "id": "ent_247",
+      "type": "Indication",
+      "name": "injury",
+      "attributes": {
+        "context": "infection or injury in rodent models"
+      },
+      "source_chunk_ids": [
+        "1e98b9c4ce409b227059117fd02cadfb"
+      ]
+    },
+    {
+      "id": "ent_248",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "injected with morphine and infected"
+      },
+      "source_chunk_ids": [
+        "1e98b9c4ce409b227059117fd02cadfb"
+      ]
+    },
+    {
+      "id": "ent_249",
+      "type": "Indication",
+      "name": "pneumonia",
+      "attributes": {
+        "context": "infected with pneumonia"
+      },
+      "source_chunk_ids": [
+        "1e98b9c4ce409b227059117fd02cadfb"
+      ]
+    },
+    {
+      "id": "ent_250",
+      "type": "Indication",
+      "name": "Candida",
+      "attributes": {
+        "context": "Candida (Szabo et al., 1993)"
+      },
+      "source_chunk_ids": [
+        "1e98b9c4ce409b227059117fd02cadfb"
+      ]
+    },
+    {
+      "id": "ent_251",
+      "type": "Indication",
+      "name": "caecal ligation",
+      "attributes": {
+        "context": "injured by caecal ligation"
+      },
+      "source_chunk_ids": [
+        "1e98b9c4ce409b227059117fd02cadfb"
+      ]
+    },
+    {
+      "id": "ent_252",
+      "type": "Compound",
+      "name": "TNF-alpha",
+      "attributes": {
+        "context": "TNF-alpha is not as clear."
+      },
+      "source_chunk_ids": [
+        "63453d30fb5b094ddb97b7a47c71b3f5"
+      ]
+    },
+    {
+      "id": "ent_253",
+      "type": "PharmEffect",
+      "name": "inhibition",
+      "attributes": {
+        "context": "inhibition of TNF-alpha"
+      },
+      "source_chunk_ids": [
+        "63453d30fb5b094ddb97b7a47c71b3f5"
+      ]
+    },
+    {
+      "id": "ent_254",
+      "type": "Compound",
+      "name": "TNF-alpha",
+      "attributes": {
+        "context": "inhibition of TNF-alpha"
+      },
+      "source_chunk_ids": [
+        "63453d30fb5b094ddb97b7a47c71b3f5"
+      ]
+    },
+    {
+      "id": "ent_255",
+      "type": "PharmEffect",
+      "name": "reduced",
+      "attributes": {
+        "context": "reduced or reversed morphine tolerance"
+      },
+      "source_chunk_ids": [
+        "63453d30fb5b094ddb97b7a47c71b3f5"
+      ]
+    },
+    {
+      "id": "ent_256",
+      "type": "PharmEffect",
+      "name": "reversed",
+      "attributes": {
+        "context": "reduced or reversed morphine tolerance"
+      },
+      "source_chunk_ids": [
+        "63453d30fb5b094ddb97b7a47c71b3f5"
+      ]
+    },
+    {
+      "id": "ent_257",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "morphine tolerance"
+      },
+      "source_chunk_ids": [
+        "63453d30fb5b094ddb97b7a47c71b3f5"
+      ]
+    },
+    {
+      "id": "ent_258",
+      "type": "PharmEffect",
+      "name": "tolerance",
+      "attributes": {
+        "context": "morphine tolerance"
+      },
+      "source_chunk_ids": [
+        "63453d30fb5b094ddb97b7a47c71b3f5"
+      ]
+    },
+    {
+      "id": "ent_259",
+      "type": "PharmEffect",
+      "name": "knockout",
+      "attributes": {
+        "context": "knockout of TNF-alpha"
+      },
+      "source_chunk_ids": [
+        "63453d30fb5b094ddb97b7a47c71b3f5"
+      ]
+    },
+    {
+      "id": "ent_260",
+      "type": "Compound",
+      "name": "TNF-alpha",
+      "attributes": {
+        "context": "knockout of TNF-alpha"
+      },
+      "source_chunk_ids": [
+        "63453d30fb5b094ddb97b7a47c71b3f5"
+      ]
+    },
+    {
+      "id": "ent_261",
+      "type": "PharmEffect",
+      "name": "nociceptive responses",
+      "attributes": {
+        "context": "acute nociceptive responses"
+      },
+      "source_chunk_ids": [
+        "63453d30fb5b094ddb97b7a47c71b3f5"
+      ]
+    },
+    {
+      "id": "ent_262",
+      "type": "PharmEffect",
+      "name": "tolerance",
+      "attributes": {
+        "context": "nociceptive responses or tolerance"
+      },
+      "source_chunk_ids": [
+        "63453d30fb5b094ddb97b7a47c71b3f5"
+      ]
+    },
+    {
+      "id": "ent_263",
+      "type": "Compound",
+      "name": "Morphine",
+      "attributes": {
+        "context": "Morphine and other opioids are known to bind opioid receptors"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_264",
+      "type": "Compound",
+      "name": "opioids",
+      "attributes": {
+        "context": "Morphine and other opioids are known to bind opioid receptors"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_265",
+      "type": "PharmEffect",
+      "name": "reward",
+      "attributes": {
+        "context": "to produce reward"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_266",
+      "type": "PharmEffect",
+      "name": "dependence",
+      "attributes": {
+        "context": "to produce reward, dependence"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_267",
+      "type": "PharmEffect",
+      "name": "analgesia",
+      "attributes": {
+        "context": "and analgesia"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_268",
+      "type": "PharmEffect",
+      "name": "disrupt inflammatory signaling",
+      "attributes": {
+        "context": "in order to disrupt inflammatory signaling"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_269",
+      "type": "Compound",
+      "name": "(+)-isomers of opioids",
+      "attributes": {
+        "context": "that (+)- and (-)-isomers of opioids bind TLR4"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_270",
+      "type": "Compound",
+      "name": "(-)-isomers of opioids",
+      "attributes": {
+        "context": "that (+)- and (-)-isomers of opioids bind TLR4"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_271",
+      "type": "Compound",
+      "name": "TLR4",
+      "attributes": {
+        "context": "isomers of opioids bind TLR4 and opioid receptors"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_272",
+      "type": "Compound",
+      "name": "opioid receptors",
+      "attributes": {
+        "context": "isomers of opioids bind TLR4 and opioid receptors"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_273",
+      "type": "Indication",
+      "name": "inflammation",
+      "attributes": {
+        "context": "role of inflammation in morphine-induced behaviors"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_274",
+      "type": "Compound",
+      "name": "(+)-Naloxone",
+      "attributes": {
+        "context": "(+)-Naloxone and (+)-naltrexone are putative antagonists"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_275",
+      "type": "Compound",
+      "name": "(+)-naltrexone",
+      "attributes": {
+        "context": "(+)-Naloxone and (+)-naltrexone are putative antagonists"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_276",
+      "type": "PharmEffect",
+      "name": "reverse morphine tolerance",
+      "attributes": {
+        "context": "shown to reverse morphine tolerance"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_277",
+      "type": "PharmEffect",
+      "name": "enhance morphine's analgesic effect",
+      "attributes": {
+        "context": "and enhance morphine's analgesic effect"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_278",
+      "type": "PharmEffect",
+      "name": "impaired the development of morphine CPP",
+      "attributes": {
+        "context": "disruption of TLR4 signaling impaired the development of morphine CPP"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_279",
+      "type": "Compound",
+      "name": "remifentanil",
+      "attributes": {
+        "context": "self-administration of remifentanil"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_280",
+      "type": "PharmEffect",
+      "name": "self-administration of remifentanil",
+      "attributes": {
+        "context": "self-administration of remifentanil"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_281",
+      "type": "Compound",
+      "name": "heroin",
+      "attributes": {
+        "context": "incubation of heroin craving"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_282",
+      "type": "PharmEffect",
+      "name": "incubation of heroin craving",
+      "attributes": {
+        "context": "incubation of heroin craving"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_283",
+      "type": "PharmEffect",
+      "name": "enhanced microglial activation",
+      "attributes": {
+        "context": "show enhanced microglial activation in response to morphine"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_284",
+      "type": "PharmEffect",
+      "name": "normal morphine tolerance",
+      "attributes": {
+        "context": "as well as normal morphine tolerance"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_285",
+      "type": "PharmEffect",
+      "name": "dependence",
+      "attributes": {
+        "context": "and dependence"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_286",
+      "type": "PharmEffect",
+      "name": "opioid reward",
+      "attributes": {
+        "context": "do not affect opioid reward"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_287",
+      "type": "Concentration",
+      "name": "clinically relevant doses",
+      "attributes": {
+        "context": "at clinically relevant doses"
+      },
+      "source_chunk_ids": [
+        "cbf0c320530382ff6d995ca8d7d7a74e"
+      ]
+    },
+    {
+      "id": "ent_288",
+      "type": "Compound",
+      "name": "opioids",
+      "attributes": {
+        "context": "opioids influence inflammation"
+      },
+      "source_chunk_ids": [
+        "b41784bfa586f03918dd9a0e64208ded"
+      ]
+    },
+    {
+      "id": "ent_289",
+      "type": "Compound",
+      "name": "pro-inflammatory cytokines",
+      "attributes": {
+        "context": "upregulation of pro-inflammatory cytokines"
+      },
+      "source_chunk_ids": [
+        "b41784bfa586f03918dd9a0e64208ded"
+      ]
+    },
+    {
+      "id": "ent_290",
+      "type": "PharmEffect",
+      "name": "inflammation",
+      "attributes": {
+        "context": "opioids influence inflammation"
+      },
+      "source_chunk_ids": [
+        "b41784bfa586f03918dd9a0e64208ded"
+      ]
+    },
+    {
+      "id": "ent_291",
+      "type": "PharmEffect",
+      "name": "immune reactivity",
+      "attributes": {
+        "context": "immune reactivity in a variety of ways"
+      },
+      "source_chunk_ids": [
+        "b41784bfa586f03918dd9a0e64208ded"
+      ]
+    },
+    {
+      "id": "ent_292",
+      "type": "PharmEffect",
+      "name": "opioid-related behaviors",
+      "attributes": {
+        "context": "affect opioid-related behaviors"
+      },
+      "source_chunk_ids": [
+        "b41784bfa586f03918dd9a0e64208ded"
+      ]
+    },
+    {
+      "id": "ent_293",
+      "type": "PharmEffect",
+      "name": "upregulation of pro-inflammatory cytokines",
+      "attributes": {
+        "context": "upregulation of pro-inflammatory cytokines after short- or prolonged opioid exposure"
+      },
+      "source_chunk_ids": [
+        "b41784bfa586f03918dd9a0e64208ded"
+      ]
+    },
+    {
+      "id": "ent_294",
+      "type": "PharmEffect",
+      "name": "enhanced activation of microglia",
+      "attributes": {
+        "context": "enhanced activation of microglia"
+      },
+      "source_chunk_ids": [
+        "b41784bfa586f03918dd9a0e64208ded"
+      ]
+    },
+    {
+      "id": "ent_295",
+      "type": "PharmEffect",
+      "name": "reduction in the immune response",
+      "attributes": {
+        "context": "reduction in the immune response to pathogens"
+      },
+      "source_chunk_ids": [
+        "b41784bfa586f03918dd9a0e64208ded"
+      ]
+    },
+    {
+      "id": "ent_296",
+      "type": "PharmEffect",
+      "name": "disruption of intestinal permeability",
+      "attributes": {
+        "context": "disruption of intestinal permeability"
+      },
+      "source_chunk_ids": [
+        "b41784bfa586f03918dd9a0e64208ded"
+      ]
+    },
+    {
+      "id": "ent_297",
+      "type": "Indication",
+      "name": "pathogens",
+      "attributes": {
+        "context": "immune response to pathogens"
+      },
+      "source_chunk_ids": [
+        "b41784bfa586f03918dd9a0e64208ded"
+      ]
+    },
+    {
+      "id": "ent_298",
+      "type": "Indication",
+      "name": "systemic bacterial spread",
+      "attributes": {
+        "context": "leading to systemic bacterial spread"
+      },
+      "source_chunk_ids": [
+        "b41784bfa586f03918dd9a0e64208ded"
+      ]
+    },
+    {
+      "id": "ent_299",
+      "type": "PharmEffect",
+      "name": "tolerance",
+      "attributes": {
+        "context": "negative consequences of opioid use, such as tolerance"
+      },
+      "source_chunk_ids": [
+        "b41784bfa586f03918dd9a0e64208ded"
+      ]
+    },
+    {
+      "id": "ent_300",
+      "type": "PharmEffect",
+      "name": "dependence",
+      "attributes": {
+        "context": "dependence (Bland et al., 2009; Hutchinson et al., 2009)"
+      },
+      "source_chunk_ids": [
+        "b41784bfa586f03918dd9a0e64208ded"
+      ]
+    },
+    {
+      "id": "ent_301",
+      "type": "PharmEffect",
+      "name": "reward",
+      "attributes": {
+        "context": "and reward (Hutchinson et al., 2008b; Zhang et al., 2012)"
+      },
+      "source_chunk_ids": [
+        "b41784bfa586f03918dd9a0e64208ded"
+      ]
+    },
+    {
+      "id": "ent_302",
+      "type": "Compound",
+      "name": "psychostimulants",
+      "attributes": {
+        "context": "psychostimulants and opioids have robust and complex effects"
+      },
+      "source_chunk_ids": [
+        "8fafdd27117c8bfb4e029d656c6740fc"
+      ]
+    },
+    {
+      "id": "ent_303",
+      "type": "Compound",
+      "name": "opioids",
+      "attributes": {
+        "context": "psychostimulants and opioids have robust and complex effects"
+      },
+      "source_chunk_ids": [
+        "8fafdd27117c8bfb4e029d656c6740fc"
+      ]
+    },
+    {
+      "id": "ent_304",
+      "type": "Indication",
+      "name": "substance use disorders",
+      "attributes": {
+        "context": "persistence of substance use disorders"
+      },
+      "source_chunk_ids": [
+        "8fafdd27117c8bfb4e029d656c6740fc"
+      ]
+    },
+    {
+      "id": "ent_305",
+      "type": "Indication",
+      "name": "substance use disorders",
+      "attributes": {
+        "context": "animal models of substance use disorders"
+      },
+      "source_chunk_ids": [
+        "50a15928e4c629e7223e960636fec5d6"
+      ]
+    },
+    {
+      "id": "ent_306",
+      "type": "Compound",
+      "name": "drugs of abuse",
+      "attributes": {
+        "context": "how drugs of abuse affect specific synaptic functions"
+      },
+      "source_chunk_ids": [
+        "50a15928e4c629e7223e960636fec5d6"
+      ]
+    },
+    {
+      "id": "ent_307",
+      "type": "PharmEffect",
+      "name": "anti-inflammatory",
+      "attributes": {
+        "context": "not as simples as provs. anti-inflammatory"
+      },
+      "source_chunk_ids": [
+        "50a15928e4c629e7223e960636fec5d6"
+      ]
+    },
+    {
+      "id": "ent_308",
+      "type": "PharmEffect",
+      "name": "pro-inflammatory",
+      "attributes": {
+        "context": "pro-inflammatory IL-1\\beta drives"
+      },
+      "source_chunk_ids": [
+        "50a15928e4c629e7223e960636fec5d6"
+      ]
+    },
+    {
+      "id": "ent_309",
+      "type": "Compound",
+      "name": "IL-1\\beta",
+      "attributes": {
+        "context": "pro-inflammatory IL-1\\beta drives increased behavioral response"
+      },
+      "source_chunk_ids": [
+        "50a15928e4c629e7223e960636fec5d6"
+      ]
+    },
+    {
+      "id": "ent_310",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "behavioral response to cocaine and opioids"
+      },
+      "source_chunk_ids": [
+        "50a15928e4c629e7223e960636fec5d6"
+      ]
+    },
+    {
+      "id": "ent_311",
+      "type": "Compound",
+      "name": "opioids",
+      "attributes": {
+        "context": "cocaine and opioids"
+      },
+      "source_chunk_ids": [
+        "50a15928e4c629e7223e960636fec5d6"
+      ]
+    },
+    {
+      "id": "ent_312",
+      "type": "PharmEffect",
+      "name": "pro-inflammatory",
+      "attributes": {
+        "context": "pro-inflammatory TNF-\\alpha inhibits response"
+      },
+      "source_chunk_ids": [
+        "50a15928e4c629e7223e960636fec5d6"
+      ]
+    },
+    {
+      "id": "ent_313",
+      "type": "Compound",
+      "name": "TNF-\\alpha",
+      "attributes": {
+        "context": "pro-inflammatory TNF-\\alpha inhibits response to cocaine"
+      },
+      "source_chunk_ids": [
+        "50a15928e4c629e7223e960636fec5d6"
+      ]
+    },
+    {
+      "id": "ent_314",
+      "type": "PharmEffect",
+      "name": "anti-inflammatory",
+      "attributes": {
+        "context": "anti-inflammatory IL-10 reduces behavioral response"
+      },
+      "source_chunk_ids": [
+        "50a15928e4c629e7223e960636fec5d6"
+      ]
+    },
+    {
+      "id": "ent_315",
+      "type": "Compound",
+      "name": "IL-10",
+      "attributes": {
+        "context": "anti-inflammatory IL-10 reduces behavioral response for opioids"
+      },
+      "source_chunk_ids": [
+        "50a15928e4c629e7223e960636fec5d6"
+      ]
+    },
+    {
+      "id": "ent_316",
+      "type": "Compound",
+      "name": "opioids",
+      "attributes": {
+        "context": "reduces behavioral response for opioids"
+      },
+      "source_chunk_ids": [
+        "50a15928e4c629e7223e960636fec5d6"
+      ]
+    },
+    {
+      "id": "ent_317",
+      "type": "Compound",
+      "name": "G-CSF",
+      "attributes": {
+        "context": "while G-CSF, which is primarily anti-inflammatory"
+      },
+      "source_chunk_ids": [
+        "50a15928e4c629e7223e960636fec5d6"
+      ]
+    },
+    {
+      "id": "ent_318",
+      "type": "PharmEffect",
+      "name": "anti-inflammatory",
+      "attributes": {
+        "context": "which is primarily anti-inflammatory"
+      },
+      "source_chunk_ids": [
+        "50a15928e4c629e7223e960636fec5d6"
+      ]
+    },
+    {
+      "id": "ent_319",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "enhances behavioral responses to cocaine"
+      },
+      "source_chunk_ids": [
+        "50a15928e4c629e7223e960636fec5d6"
+      ]
+    },
+    {
+      "id": "ent_320",
+      "type": "Compound",
+      "name": "\\alpha-amino-3-hydroxy-5-methyl-4-isoxazolepropionic acid",
+      "attributes": {
+        "context": "AMPA\\alpha-amino-3-hydroxy-5-methyl-4-isoxazolepropionic acid"
+      },
+      "source_chunk_ids": [
+        "6eb1597a76fc4e744572859cc5af4916"
+      ]
+    },
+    {
+      "id": "ent_321",
+      "type": "Compound",
+      "name": "Apolipoprotein B mRNA editing enzyme catalytic polypeptide-like 3G",
+      "attributes": {
+        "context": "APO-BEC3GApolipoprotein B mRNA editing enzyme catalytic polypeptide-like 3G"
+      },
+      "source_chunk_ids": [
+        "6eb1597a76fc4e744572859cc5af4916"
+      ]
+    },
+    {
+      "id": "ent_322",
+      "type": "Compound",
+      "name": "Brain-derived neurotrophic factor",
+      "attributes": {
+        "context": "BDNFBrain-derived neurotrophic factor"
+      },
+      "source_chunk_ids": [
+        "6eb1597a76fc4e744572859cc5af4916"
+      ]
+    },
+    {
+      "id": "ent_323",
+      "type": "Compound",
+      "name": "C-C chemokine receptor type 2",
+      "attributes": {
+        "context": "CCR2 C-Cchemokine receptor type 2"
+      },
+      "source_chunk_ids": [
+        "6eb1597a76fc4e744572859cc5af4916"
+      ]
+    },
+    {
+      "id": "ent_324",
+      "type": "Compound",
+      "name": "Concanavalin A",
+      "attributes": {
+        "context": "Con-AConcanavalin A"
+      },
+      "source_chunk_ids": [
+        "6eb1597a76fc4e744572859cc5af4916"
+      ]
+    },
+    {
+      "id": "ent_325",
+      "type": "Compound",
+      "name": "Danger-associated molecular pattern",
+      "attributes": {
+        "context": "DAMPDanger-associated molecular pattern"
+      },
+      "source_chunk_ids": [
+        "6eb1597a76fc4e744572859cc5af4916"
+      ]
+    },
+    {
+      "id": "ent_326",
+      "type": "Compound",
+      "name": "Eosinophil chemotactic protein",
+      "attributes": {
+        "context": "ECPEosinophil chemotactic protein"
+      },
+      "source_chunk_ids": [
+        "6eb1597a76fc4e744572859cc5af4916"
+      ]
+    },
+    {
+      "id": "ent_327",
+      "type": "Compound",
+      "name": "Extracellular-regulated kinase",
+      "attributes": {
+        "context": "ERKExtracellular-regulated kinase"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_328",
+      "type": "Compound",
+      "name": "Granulocyte colony-stimulating factor",
+      "attributes": {
+        "context": "G-CSFGranulocyte colony-stimulating factor"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_329",
+      "type": "Compound",
+      "name": "Growth-related oncogene",
+      "attributes": {
+        "context": "GRO/KCGrowth-related oncogene/keratinocyte chemoattractant"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_330",
+      "type": "Compound",
+      "name": "keratinocyte chemoattractant",
+      "attributes": {
+        "context": "GRO/KCGrowth-related oncogene/keratinocyte chemoattractant"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_331",
+      "type": "Indication",
+      "name": "Hepatic encephalopathy",
+      "attributes": {
+        "context": "HEHepatic encephalopathy"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_332",
+      "type": "Compound",
+      "name": "Interferon alpha",
+      "attributes": {
+        "context": "IFN-alphaInterferon alpha"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_333",
+      "type": "Compound",
+      "name": "Interferon gamma",
+      "attributes": {
+        "context": "IFN-gammaInterferon gamma"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_334",
+      "type": "Compound",
+      "name": "Interleukin-10",
+      "attributes": {
+        "context": "IL-10Interleukin-10"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_335",
+      "type": "Compound",
+      "name": "Interleukin-12",
+      "attributes": {
+        "context": "IL-12Interleukin-12"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_336",
+      "type": "Compound",
+      "name": "Interleukin-17",
+      "attributes": {
+        "context": "IL-17Interleukin-17"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_337",
+      "type": "Compound",
+      "name": "Interleukin-1 beta",
+      "attributes": {
+        "context": "IL-1betaInterleukin-1 beta"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_338",
+      "type": "Compound",
+      "name": "Interleukin-2",
+      "attributes": {
+        "context": "IL-2Interleukin-2"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_339",
+      "type": "Compound",
+      "name": "Interleukin-6",
+      "attributes": {
+        "context": "IL-6Inter-leukin-6"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_340",
+      "type": "Compound",
+      "name": "Interleukin-8",
+      "attributes": {
+        "context": "IL-8Interleukin-8"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_341",
+      "type": "Compound",
+      "name": "Lipopolysaccharide",
+      "attributes": {
+        "context": "LPSLipopolysaccharide"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_342",
+      "type": "Compound",
+      "name": "Monocyte chemoattractant protein 1",
+      "attributes": {
+        "context": "MCP-1Monocyte chemoattractant protein 1"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_343",
+      "type": "Compound",
+      "name": "Monocyte chemoattractant protein 5",
+      "attributes": {
+        "context": "MCP-5Monocyte chemoattractant protein 5"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_344",
+      "type": "Indication",
+      "name": "Major depressive disorder",
+      "attributes": {
+        "context": "MDDMajor depressive disorder"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_345",
+      "type": "Compound",
+      "name": "Monokine induced by gamma interferon",
+      "attributes": {
+        "context": "MIG-1Monokine induced by gamma interferon"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_346",
+      "type": "Compound",
+      "name": "Macrophage inflammatory protein 1 alpha",
+      "attributes": {
+        "context": "MIP-1alphaMacrophage inflammatory protein 1 alpha"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_347",
+      "type": "Compound",
+      "name": "Macrophage inflammatory protein 1 beta",
+      "attributes": {
+        "context": "MIP-1betaMacrophage inflammatory protein 1 beta"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_348",
+      "type": "Compound",
+      "name": "N-methyl-D-aspartate",
+      "attributes": {
+        "context": "NMDAN-methyl-D-aspartate"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_349",
+      "type": "Compound",
+      "name": "Pathogen-associated molecular pattern",
+      "attributes": {
+        "context": "PAMPPathogen-associated molecular pattern"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_350",
+      "type": "Compound",
+      "name": "Pattern recognition receptor",
+      "attributes": {
+        "context": "PRRPattern recognition receptor"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_351",
+      "type": "Compound",
+      "name": "Regulated on activation, normal T cell expressed and secreted",
+      "attributes": {
+        "context": "RANTESRegulated on activation, normal T cell expressed and secreted"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_352",
+      "type": "Compound",
+      "name": "Stromal cell-derived factor 1",
+      "attributes": {
+        "context": "SDF-1Stro-mal cell-derived factor 1"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_353",
+      "type": "Compound",
+      "name": "Thymus and activation-regulated chemokine",
+      "attributes": {
+        "context": "TARCThymus and activation-regulated chemokine"
+      },
+      "source_chunk_ids": [
+        "9a5610ec78fd8c1d9138d6420d7d32a0"
+      ]
+    },
+    {
+      "id": "ent_354",
+      "type": "Compound",
+      "name": "Tumor Necrosis Factor",
+      "attributes": {
+        "context": "role of TNF in the regulation"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_355",
+      "type": "Compound",
+      "name": "Tumor Necrosis Factor alpha",
+      "attributes": {
+        "context": "Microglial TNF\\alpha suppresses cocaine-induced plasticity"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_356",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "suppresses cocaine-induced plasticity"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_357",
+      "type": "PharmEffect",
+      "name": "plasticity",
+      "attributes": {
+        "context": "cocaine-induced plasticity"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_358",
+      "type": "PharmEffect",
+      "name": "behavioral sensitization",
+      "attributes": {
+        "context": "behavioral sensitization"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_359",
+      "type": "Compound",
+      "name": "dopamine",
+      "attributes": {
+        "context": "brain dopamine cell numbers"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_360",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "human cocaine users"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_361",
+      "type": "Compound",
+      "name": "Naloxone",
+      "attributes": {
+        "context": "Naloxone-precipitated morphine withdrawal behavior"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_362",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "morphine withdrawal behavior"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_363",
+      "type": "PharmEffect",
+      "name": "withdrawal behavior",
+      "attributes": {
+        "context": "morphine withdrawal behavior"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_364",
+      "type": "Compound",
+      "name": "Interleukin-1 beta",
+      "attributes": {
+        "context": "brain IL-1\\beta expression"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_365",
+      "type": "Compound",
+      "name": "Morphine",
+      "attributes": {
+        "context": "Morphine-induced alterations of immune status"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_366",
+      "type": "PharmEffect",
+      "name": "antagonism",
+      "attributes": {
+        "context": "antagonism by naltrexone"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_367",
+      "type": "Compound",
+      "name": "naltrexone",
+      "attributes": {
+        "context": "antagonism by naltrexone"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_368",
+      "type": "Compound",
+      "name": "opiate alkaloid",
+      "attributes": {
+        "context": "an opiate alkaloid-selective receptor"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_369",
+      "type": "PharmEffect",
+      "name": "inhibition",
+      "attributes": {
+        "context": "mediating inhibition of cyto-kine-induced activation"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_370",
+      "type": "PharmEffect",
+      "name": "activation",
+      "attributes": {
+        "context": "cyto-kine-induced activation and chemotaxis"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_371",
+      "type": "PharmEffect",
+      "name": "chemotaxis",
+      "attributes": {
+        "context": "activation and chemotaxis"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_372",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "Effects of cocaine on the hypothalamic\u2013pituitary\u2013adrenal axis"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_373",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "Loss of morphine-induced analgesia"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_374",
+      "type": "PharmEffect",
+      "name": "analgesia",
+      "attributes": {
+        "context": "morphine-induced analgesia"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_375",
+      "type": "PharmEffect",
+      "name": "reward effect",
+      "attributes": {
+        "context": "reward effect and withdrawal symptoms"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_376",
+      "type": "PharmEffect",
+      "name": "withdrawal symptoms",
+      "attributes": {
+        "context": "withdrawal symptoms in mice"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_377",
+      "type": "Compound",
+      "name": "mu-opioid receptor",
+      "attributes": {
+        "context": "lacking the \\mu-opioid-receptor gene"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_378",
+      "type": "Compound",
+      "name": "Buprenorphine",
+      "attributes": {
+        "context": "Buprenorphine maintenance versus placebo"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_379",
+      "type": "Compound",
+      "name": "placebo",
+      "attributes": {
+        "context": "versus placebo or methadone maintenance"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_380",
+      "type": "Compound",
+      "name": "methadone",
+      "attributes": {
+        "context": "or methadone maintenance for opioid dependence"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_381",
+      "type": "Indication",
+      "name": "opioid dependence",
+      "attributes": {
+        "context": "maintenance for opioid dependence"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_382",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "retain morphine-induced tolerance"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_383",
+      "type": "PharmEffect",
+      "name": "tolerance",
+      "attributes": {
+        "context": "morphine-induced tolerance"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_384",
+      "type": "PharmEffect",
+      "name": "hyperalgesia",
+      "attributes": {
+        "context": "hyperalgesia, and physical dependence"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_385",
+      "type": "PharmEffect",
+      "name": "physical dependence",
+      "attributes": {
+        "context": "and physical dependence"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_386",
+      "type": "Compound",
+      "name": "alcohol",
+      "attributes": {
+        "context": "component of alcohol abuse"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_387",
+      "type": "Indication",
+      "name": "alcohol abuse",
+      "attributes": {
+        "context": "component of alcohol abuse"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_388",
+      "type": "Compound",
+      "name": "cytokines",
+      "attributes": {
+        "context": "Evaluation of plasma cytokines"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_389",
+      "type": "Indication",
+      "name": "cocaine use disorders",
+      "attributes": {
+        "context": "patients with cocaine use disorders"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_390",
+      "type": "Compound",
+      "name": "transforming growth factor alpha",
+      "attributes": {
+        "context": "identifies transforming growth factor alpha (TG\\alpha)"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_391",
+      "type": "Compound",
+      "name": "Heroin",
+      "attributes": {
+        "context": "Heroin use is associated with suppressed"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_392",
+      "type": "PharmEffect",
+      "name": "suppressed pro-inflammatory cytokine response",
+      "attributes": {
+        "context": "suppressed pro-inflammatory cytokine response after LPS exposure"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_393",
+      "type": "Compound",
+      "name": "Lipopolysaccharide",
+      "attributes": {
+        "context": "after LPS exposure in HIV-infected individuals"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_394",
+      "type": "Indication",
+      "name": "HIV-infected",
+      "attributes": {
+        "context": "in HIV-infected individuals"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_395",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "promoting depression"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_396",
+      "type": "Compound",
+      "name": "Opioid",
+      "attributes": {
+        "context": "Opioid exacerbation of gram-positive sepsis"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_397",
+      "type": "Indication",
+      "name": "sepsis",
+      "attributes": {
+        "context": "gram-positive sepsis"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_398",
+      "type": "Compound",
+      "name": "Interleukin-17A",
+      "attributes": {
+        "context": "rescued by IL-17A neutralization"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_399",
+      "type": "Compound",
+      "name": "opioids",
+      "attributes": {
+        "context": "Extended-release opioids in the management"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_400",
+      "type": "Indication",
+      "name": "cancer pain",
+      "attributes": {
+        "context": "management of cancer pain"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_401",
+      "type": "Compound",
+      "name": "Morphine",
+      "attributes": {
+        "context": "Morphine reciprocally regulates IL-10"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_402",
+      "type": "Compound",
+      "name": "Interleukin-10",
+      "attributes": {
+        "context": "regulates IL-10 and IL-12 production"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_403",
+      "type": "Compound",
+      "name": "Interleukin-12",
+      "attributes": {
+        "context": "and IL-12 production by monocyte-derived"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_404",
+      "type": "PharmEffect",
+      "name": "T cell activation",
+      "attributes": {
+        "context": "enhances T cell activation"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_405",
+      "type": "Compound",
+      "name": "ibudilast",
+      "attributes": {
+        "context": "Effects of ibudilast on the subjective"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_406",
+      "type": "PharmEffect",
+      "name": "reinforcing effects",
+      "attributes": {
+        "context": "reinforcing, and analgesic effects of oxycodone"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_407",
+      "type": "PharmEffect",
+      "name": "analgesic effects",
+      "attributes": {
+        "context": "analgesic effects of oxycodone"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_408",
+      "type": "Compound",
+      "name": "oxycodone",
+      "attributes": {
+        "context": "effects of oxycodone in recently detoxified"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_409",
+      "type": "Indication",
+      "name": "opioid dependence",
+      "attributes": {
+        "context": "adults with opioid dependence"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_410",
+      "type": "Indication",
+      "name": "drug abuse",
+      "attributes": {
+        "context": "glial cells in drug abuse"
+      },
+      "source_chunk_ids": [
+        "5da9e4b2b0775a17660037dc59532827"
+      ]
+    },
+    {
+      "id": "ent_411",
+      "type": "Compound",
+      "name": "chemokines",
+      "attributes": {
+        "context": "names of chemokines"
+      },
+      "source_chunk_ids": [
+        "0cafc8e7d1e89c2b3bd888ea148f213e"
+      ]
+    },
+    {
+      "id": "ent_412",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {
+        "context": "by cocaine"
+      },
+      "source_chunk_ids": [
+        "0cafc8e7d1e89c2b3bd888ea148f213e"
+      ]
+    },
+    {
+      "id": "ent_413",
+      "type": "Compound",
+      "name": "opioids",
+      "attributes": {
+        "context": "or opioids"
+      },
+      "source_chunk_ids": [
+        "0cafc8e7d1e89c2b3bd888ea148f213e"
+      ]
+    },
+    {
+      "id": "ent_414",
+      "type": "Compound",
+      "name": "MCP-1",
+      "attributes": {
+        "context": "MCP-1 (monocyte chemoattractant protein 1)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_415",
+      "type": "Compound",
+      "name": "monocyte chemoattractant protein 1",
+      "attributes": {
+        "context": "(monocyte chemoattractant protein 1)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_416",
+      "type": "Compound",
+      "name": "CCL2",
+      "attributes": {
+        "context": "CCL2"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_417",
+      "type": "Compound",
+      "name": "MIP-1\\alpha",
+      "attributes": {
+        "context": "MIP-1\\alpha (macrophage inflammatory protein-1 alpha)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_418",
+      "type": "Compound",
+      "name": "macrophage inflammatory protein-1 alpha",
+      "attributes": {
+        "context": "(macrophage inflammatory protein-1 alpha)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_419",
+      "type": "Compound",
+      "name": "CCL3",
+      "attributes": {
+        "context": "CCL3"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_420",
+      "type": "Compound",
+      "name": "MIP-1\\beta",
+      "attributes": {
+        "context": "MIP-1\\beta (macrophage inflammatory protein-1 beta)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_421",
+      "type": "Compound",
+      "name": "macrophage inflammatory protein-1 beta",
+      "attributes": {
+        "context": "(macrophage inflammatory protein-1 beta)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_422",
+      "type": "Compound",
+      "name": "CCL4",
+      "attributes": {
+        "context": "CCL4"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_423",
+      "type": "Compound",
+      "name": "RANTES",
+      "attributes": {
+        "context": "RANTES (regulated on activation, normal T cell expressed and secreted)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_424",
+      "type": "Compound",
+      "name": "regulated on activation, normal T cell expressed and secreted",
+      "attributes": {
+        "context": "(regulated on activation, normal T cell expressed and secreted)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_425",
+      "type": "Compound",
+      "name": "CCL5",
+      "attributes": {
+        "context": "CCL5"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_426",
+      "type": "Compound",
+      "name": "MCP-2",
+      "attributes": {
+        "context": "MCP-2 (monocyte chemoattractant protein 2)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_427",
+      "type": "Compound",
+      "name": "monocyte chemoattractant protein 2",
+      "attributes": {
+        "context": "(monocyte chemoattractant protein 2)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_428",
+      "type": "Compound",
+      "name": "CCL8",
+      "attributes": {
+        "context": "CCL8"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_429",
+      "type": "Compound",
+      "name": "ECP",
+      "attributes": {
+        "context": "ECP (eosinophil chemotactic protein)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_430",
+      "type": "Compound",
+      "name": "eosinophil chemotactic protein",
+      "attributes": {
+        "context": "(eosinophil chemotactic protein)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_431",
+      "type": "Compound",
+      "name": "CCL11",
+      "attributes": {
+        "context": "CCL11"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_432",
+      "type": "Compound",
+      "name": "MCP-5",
+      "attributes": {
+        "context": "MCP-5 (monocyte chemoattractant protein 5)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_433",
+      "type": "Compound",
+      "name": "monocyte chemoattractant protein 5",
+      "attributes": {
+        "context": "(monocyte chemoattractant protein 5)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_434",
+      "type": "Compound",
+      "name": "CCL12",
+      "attributes": {
+        "context": "CCL12"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_435",
+      "type": "Compound",
+      "name": "TARC",
+      "attributes": {
+        "context": "TARC (thymus and activation-regulated chemokine)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_436",
+      "type": "Compound",
+      "name": "thymus and activation-regulated chemokine",
+      "attributes": {
+        "context": "(thymus and activation-regulated chemokine)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_437",
+      "type": "Compound",
+      "name": "CCL17",
+      "attributes": {
+        "context": "CCL17"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_438",
+      "type": "Compound",
+      "name": "TECK",
+      "attributes": {
+        "context": "TECK (thymus-expressed chemokine)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_439",
+      "type": "Compound",
+      "name": "thymus-expressed chemokine",
+      "attributes": {
+        "context": "(thymus-expressed chemokine)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_440",
+      "type": "Compound",
+      "name": "CCL25",
+      "attributes": {
+        "context": "CCL25"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_441",
+      "type": "Compound",
+      "name": "GRO/KC",
+      "attributes": {
+        "context": "GRO/KC (growth-related oncogene/keratinocyte chemoattractant)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_442",
+      "type": "Compound",
+      "name": "growth-related oncogene/keratinocyte chemoattractant",
+      "attributes": {
+        "context": "(growth-related oncogene/keratinocyte chemoattractant)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_443",
+      "type": "Compound",
+      "name": "CXCL1",
+      "attributes": {
+        "context": "CXCL1"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_444",
+      "type": "Compound",
+      "name": "MIG",
+      "attributes": {
+        "context": "MIG (monokine induced by gamma interferon)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_445",
+      "type": "Compound",
+      "name": "monokine induced by gamma interferon",
+      "attributes": {
+        "context": "(monokine induced by gamma interferon)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_446",
+      "type": "Compound",
+      "name": "CXCL9",
+      "attributes": {
+        "context": "CXCL9"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_447",
+      "type": "Compound",
+      "name": "SDF-1",
+      "attributes": {
+        "context": "SDF-1 (stromal cell-derived factor 1)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_448",
+      "type": "Compound",
+      "name": "stromal cell-derived factor 1",
+      "attributes": {
+        "context": "(stromal cell-derived factor 1)"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_449",
+      "type": "Compound",
+      "name": "CXCL12",
+      "attributes": {
+        "context": "CXCL12"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_450",
+      "type": "Compound",
+      "name": "Fractalkine",
+      "attributes": {
+        "context": "Fractalkine"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_451",
+      "type": "Compound",
+      "name": "CX3CL1",
+      "attributes": {
+        "context": "CX3CL1"
+      },
+      "source_chunk_ids": [
+        "1b502720da0b13ea5d1620757b800733"
+      ]
+    },
+    {
+      "id": "ent_452",
+      "type": "Compound",
+      "name": "CCL2",
+      "attributes": {
+        "context": "CCL2, chemokine (C-C motif) ligand 2"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_453",
+      "type": "Compound",
+      "name": "chemokine (C-C motif) ligand 2",
+      "attributes": {
+        "context": "CCL2, chemokine (C-C motif) ligand 2"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_454",
+      "type": "Compound",
+      "name": "CCL3",
+      "attributes": {
+        "context": "CCL3, chemokine (C-C motif) ligand 3"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_455",
+      "type": "Compound",
+      "name": "chemokine (C-C motif) ligand 3",
+      "attributes": {
+        "context": "CCL3, chemokine (C-C motif) ligand 3"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_456",
+      "type": "Compound",
+      "name": "CCL4",
+      "attributes": {
+        "context": "CCL4, chemokine (C-C motif) ligand 4"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_457",
+      "type": "Compound",
+      "name": "chemokine (C-C motif) ligand 4",
+      "attributes": {
+        "context": "CCL4, chemokine (C-C motif) ligand 4"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_458",
+      "type": "Compound",
+      "name": "CCL5",
+      "attributes": {
+        "context": "CCL5, chemokine (C-C motif) ligand 5"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_459",
+      "type": "Compound",
+      "name": "chemokine (C-C motif) ligand 5",
+      "attributes": {
+        "context": "CCL5, chemokine (C-C motif) ligand 5"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_460",
+      "type": "Compound",
+      "name": "CCL8",
+      "attributes": {
+        "context": "CCL8, chemokine (C-C motif) ligand 8"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_461",
+      "type": "Compound",
+      "name": "chemokine (C-C motif) ligand 8",
+      "attributes": {
+        "context": "CCL8, chemokine (C-C motif) ligand 8"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_462",
+      "type": "Compound",
+      "name": "CCL11",
+      "attributes": {
+        "context": "CCL11, chemokine (C-C motif) ligand 11"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_463",
+      "type": "Compound",
+      "name": "chemokine (C-C motif) ligand 11",
+      "attributes": {
+        "context": "CCL11, chemokine (C-C motif) ligand 11"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_464",
+      "type": "Compound",
+      "name": "CCL12",
+      "attributes": {
+        "context": "CCL12, chemokine (C-C motif) ligand 12"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_465",
+      "type": "Compound",
+      "name": "chemokine (C-C motif) ligand 12",
+      "attributes": {
+        "context": "CCL12, chemokine (C-C motif) ligand 12"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_466",
+      "type": "Compound",
+      "name": "CCL17",
+      "attributes": {
+        "context": "CCL17, chemokine (C-C motif) ligand 17"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_467",
+      "type": "Compound",
+      "name": "chemokine (C-C motif) ligand 17",
+      "attributes": {
+        "context": "CCL17, chemokine (C-C motif) ligand 17"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_468",
+      "type": "Compound",
+      "name": "CCL25",
+      "attributes": {
+        "context": "CCL25, chemokine (C-C motif) ligand 25"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_469",
+      "type": "Compound",
+      "name": "chemokine (C-C motif) ligand 25",
+      "attributes": {
+        "context": "CCL25, chemokine (C-C motif) ligand 25"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_470",
+      "type": "Compound",
+      "name": "CXCL1",
+      "attributes": {
+        "context": "CXCL1, chemokine (C-X-C motif) ligand 1"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_471",
+      "type": "Compound",
+      "name": "chemokine (C-X-C motif) ligand 1",
+      "attributes": {
+        "context": "CXCL1, chemokine (C-X-C motif) ligand 1"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_472",
+      "type": "Compound",
+      "name": "CXCL9",
+      "attributes": {
+        "context": "CXCL9, chemokine (C-X-C motif) ligand 9"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_473",
+      "type": "Compound",
+      "name": "chemokine (C-X-C motif) ligand 9",
+      "attributes": {
+        "context": "CXCL9, chemokine (C-X-C motif) ligand 9"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_474",
+      "type": "Compound",
+      "name": "CXCL12",
+      "attributes": {
+        "context": "CXCL12, chemokine (C-X-C motif) ligand 12"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_475",
+      "type": "Compound",
+      "name": "chemokine (C-X-C motif) ligand 12",
+      "attributes": {
+        "context": "CXCL12, chemokine (C-X-C motif) ligand 12"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_476",
+      "type": "Compound",
+      "name": "CX3CL1",
+      "attributes": {
+        "context": "CX3CL1, chemokine (C-X3-C motif) ligand 1"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    },
+    {
+      "id": "ent_477",
+      "type": "Compound",
+      "name": "chemokine (C-X3-C motif) ligand 1",
+      "attributes": {
+        "context": "CX3CL1, chemokine (C-X3-C motif) ligand 1"
+      },
+      "source_chunk_ids": [
+        "573654bbc1a372f38a1e51a55c6e5fc7"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:04.050759+00:00",
+    "original_file": "entities.json"
+  }
+}

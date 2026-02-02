@@ -1,0 +1,1432 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "bfbe5f046bbf2d3138d18703dbc7a30db8943722979ee93d1d139494e6f82cad",
+  "extracted_at": "2026-02-01T08:35:32.773826+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "Compound",
+      "name": "vehicle",
+      "attributes": {
+        "context": "given IP vehicle"
+      },
+      "source_chunk_ids": [
+        "dbc9c45d16bd868d98f6ab382b0b3f52"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Compound",
+      "name": "imipramine",
+      "attributes": {
+        "context": "imipramine (10 mg/kg)"
+      },
+      "source_chunk_ids": [
+        "dbc9c45d16bd868d98f6ab382b0b3f52"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "S. tortuosum fraction"
+      },
+      "source_chunk_ids": [
+        "dbc9c45d16bd868d98f6ab382b0b3f52"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "PharmEffect",
+      "name": "distress vocalizations",
+      "attributes": {
+        "context": "distress vocalizations (DVoc) were continuously recorded"
+      },
+      "source_chunk_ids": [
+        "dbc9c45d16bd868d98f6ab382b0b3f52"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "Concentration",
+      "name": "10 mg/kg",
+      "attributes": {
+        "context": "imipramine (10 mg/kg)"
+      },
+      "source_chunk_ids": [
+        "dbc9c45d16bd868d98f6ab382b0b3f52"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "Concentration",
+      "name": "10 mg/kg",
+      "attributes": {
+        "context": "S. tortuosum fraction (10, 20, 30 mg/kg in Exp. 1"
+      },
+      "source_chunk_ids": [
+        "dbc9c45d16bd868d98f6ab382b0b3f52"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "Concentration",
+      "name": "20 mg/kg",
+      "attributes": {
+        "context": "S. tortuosum fraction (10, 20, 30 mg/kg in Exp. 1"
+      },
+      "source_chunk_ids": [
+        "dbc9c45d16bd868d98f6ab382b0b3f52"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Concentration",
+      "name": "30 mg/kg",
+      "attributes": {
+        "context": "S. tortuosum fraction (10, 20, 30 mg/kg in Exp. 1"
+      },
+      "source_chunk_ids": [
+        "dbc9c45d16bd868d98f6ab382b0b3f52"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "Concentration",
+      "name": "50 mg/kg",
+      "attributes": {
+        "context": "or 50, 75, 100 mg/kg in Exp. 2)"
+      },
+      "source_chunk_ids": [
+        "dbc9c45d16bd868d98f6ab382b0b3f52"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "Concentration",
+      "name": "75 mg/kg",
+      "attributes": {
+        "context": "or 50, 75, 100 mg/kg in Exp. 2)"
+      },
+      "source_chunk_ids": [
+        "dbc9c45d16bd868d98f6ab382b0b3f52"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "Concentration",
+      "name": "100 mg/kg",
+      "attributes": {
+        "context": "or 50, 75, 100 mg/kg in Exp. 2)"
+      },
+      "source_chunk_ids": [
+        "dbc9c45d16bd868d98f6ab382b0b3f52"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "PharmEffect",
+      "name": "behavioral despair",
+      "attributes": {
+        "context": "DVoc rates declined about 50% (i.e., behavioral despair)"
+      },
+      "source_chunk_ids": [
+        "97b9ed5729f88ff2ad4022d5de6e3fe0"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "in the depression phase"
+      },
+      "source_chunk_ids": [
+        "97b9ed5729f88ff2ad4022d5de6e3fe0"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "context": "S. tortuosum fraction"
+      },
+      "source_chunk_ids": [
+        "97b9ed5729f88ff2ad4022d5de6e3fe0"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "Concentration",
+      "name": "75 mg/kg",
+      "attributes": {
+        "context": "at 75 mg/kg"
+      },
+      "source_chunk_ids": [
+        "97b9ed5729f88ff2ad4022d5de6e3fe0"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "Concentration",
+      "name": "100 mg/kg",
+      "attributes": {
+        "context": "and 100 mg/kg"
+      },
+      "source_chunk_ids": [
+        "97b9ed5729f88ff2ad4022d5de6e3fe0"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "Indication",
+      "name": "anxiety",
+      "attributes": {
+        "context": "during the anxiety phase"
+      },
+      "source_chunk_ids": [
+        "97b9ed5729f88ff2ad4022d5de6e3fe0"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "PharmEffect",
+      "name": "anxiolytic effect",
+      "attributes": {
+        "context": "indicative of an anxiolytic effect"
+      },
+      "source_chunk_ids": [
+        "97b9ed5729f88ff2ad4022d5de6e3fe0"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "Compound",
+      "name": "Imipramine",
+      "attributes": {
+        "context": "Imipramine, but not S. tortuosum groups"
+      },
+      "source_chunk_ids": [
+        "97b9ed5729f88ff2ad4022d5de6e3fe0"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "context": "not S. tortuosum groups"
+      },
+      "source_chunk_ids": [
+        "97b9ed5729f88ff2ad4022d5de6e3fe0"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "PharmEffect",
+      "name": "antidepressant effect",
+      "attributes": {
+        "context": "indicative of an antidepressant effect"
+      },
+      "source_chunk_ids": [
+        "97b9ed5729f88ff2ad4022d5de6e3fe0"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "activity of S. tortuosum extract"
+      },
+      "source_chunk_ids": [
+        "0e599fe263fad15c8a9317a277b7adef"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "Compound",
+      "name": "alkaloid",
+      "attributes": {
+        "context": "an alkaloid enriched fraction"
+      },
+      "source_chunk_ids": [
+        "0e599fe263fad15c8a9317a277b7adef"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {
+        "context": "the isolated constituent mesembrine"
+      },
+      "source_chunk_ids": [
+        "0e599fe263fad15c8a9317a277b7adef"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "Indication",
+      "name": "addiction",
+      "attributes": {
+        "context": "measures of addiction"
+      },
+      "source_chunk_ids": [
+        "0e599fe263fad15c8a9317a277b7adef"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "PharmEffect",
+      "name": "nociception",
+      "attributes": {
+        "context": "measures of addiction, nociception"
+      },
+      "source_chunk_ids": [
+        "0e599fe263fad15c8a9317a277b7adef"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "PharmEffect",
+      "name": "motor coordination",
+      "attributes": {
+        "context": "nociception, motor coordination"
+      },
+      "source_chunk_ids": [
+        "0e599fe263fad15c8a9317a277b7adef"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "motor coordination, depression"
+      },
+      "source_chunk_ids": [
+        "0e599fe263fad15c8a9317a277b7adef"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "Indication",
+      "name": "anxiety",
+      "attributes": {
+        "context": "depression and anxiety"
+      },
+      "source_chunk_ids": [
+        "0e599fe263fad15c8a9317a277b7adef"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "Compound",
+      "name": "Mesembrine",
+      "attributes": {
+        "context": "Mesembrine produced an antinociceptive effect"
+      },
+      "source_chunk_ids": [
+        "0e599fe263fad15c8a9317a277b7adef"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "PharmEffect",
+      "name": "antinociceptive effect",
+      "attributes": {
+        "context": "produced an antinociceptive effect"
+      },
+      "source_chunk_ids": [
+        "0e599fe263fad15c8a9317a277b7adef"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {
+        "context": "similar to that of morphine"
+      },
+      "source_chunk_ids": [
+        "0e599fe263fad15c8a9317a277b7adef"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "PharmEffect",
+      "name": "mood elevating properties",
+      "attributes": {
+        "context": "anecdotal evidence of mood elevating properties"
+      },
+      "source_chunk_ids": [
+        "0e599fe263fad15c8a9317a277b7adef"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "the S. tortuosum enriched fraction"
+      },
+      "source_chunk_ids": [
+        "0e599fe263fad15c8a9317a277b7adef"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "PharmEffect",
+      "name": "antidepressant effect",
+      "attributes": {
+        "context": "produced a modest antidepressant effect"
+      },
+      "source_chunk_ids": [
+        "0e599fe263fad15c8a9317a277b7adef"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Compound",
+      "name": "imipramine",
+      "attributes": {
+        "context": "similar to that of imipramine"
+      },
+      "source_chunk_ids": [
+        "0e599fe263fad15c8a9317a277b7adef"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "PharmEffect",
+      "name": "ataxia",
+      "attributes": {
+        "context": "produced ataxia similar to its positive control"
+      },
+      "source_chunk_ids": [
+        "3884859b92f9fc047749b64cdb5dd622"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "Compound",
+      "name": "muscimol",
+      "attributes": {
+        "context": "positive control muscimol on the rotor-rod"
+      },
+      "source_chunk_ids": [
+        "3884859b92f9fc047749b64cdb5dd622"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "S. tortuosum may mitigate stress-related disorders"
+      },
+      "source_chunk_ids": [
+        "3884859b92f9fc047749b64cdb5dd622"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "Indication",
+      "name": "stress-related disorders",
+      "attributes": {
+        "context": "may mitigate stress-related disorders"
+      },
+      "source_chunk_ids": [
+        "3884859b92f9fc047749b64cdb5dd622"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "PharmEffect",
+      "name": "mitigate",
+      "attributes": {
+        "context": "S. tortuosum may mitigate stress-related disorders"
+      },
+      "source_chunk_ids": [
+        "3884859b92f9fc047749b64cdb5dd622"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "The S. tortuosum enriched fraction"
+      },
+      "source_chunk_ids": [
+        "9f3acaaa4b68cafaf128d929bb387801"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "Compound",
+      "name": "Tween 80",
+      "attributes": {
+        "context": "solution of 20% Tween 80"
+      },
+      "source_chunk_ids": [
+        "9f3acaaa4b68cafaf128d929bb387801"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "Compound",
+      "name": "deionized water",
+      "attributes": {
+        "context": "Tween 80 and deionized water"
+      },
+      "source_chunk_ids": [
+        "9f3acaaa4b68cafaf128d929bb387801"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "Concentration",
+      "name": "10 mg/kg",
+      "attributes": {
+        "context": "doses of 10 mg/kg"
+      },
+      "source_chunk_ids": [
+        "9f3acaaa4b68cafaf128d929bb387801"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "Concentration",
+      "name": "20 mg/kg",
+      "attributes": {
+        "context": "doses of 20 mg/kg"
+      },
+      "source_chunk_ids": [
+        "9f3acaaa4b68cafaf128d929bb387801"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "Concentration",
+      "name": "30 mg/kg",
+      "attributes": {
+        "context": "doses of 30 mg/kg"
+      },
+      "source_chunk_ids": [
+        "9f3acaaa4b68cafaf128d929bb387801"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "Concentration",
+      "name": "50 mg/kg",
+      "attributes": {
+        "context": "doses of 50 mg/kg"
+      },
+      "source_chunk_ids": [
+        "9f3acaaa4b68cafaf128d929bb387801"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "Concentration",
+      "name": "75 mg/kg",
+      "attributes": {
+        "context": "doses of 75 mg/kg"
+      },
+      "source_chunk_ids": [
+        "9f3acaaa4b68cafaf128d929bb387801"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "Concentration",
+      "name": "100 mg/kg",
+      "attributes": {
+        "context": "doses of 100 mg/kg"
+      },
+      "source_chunk_ids": [
+        "9f3acaaa4b68cafaf128d929bb387801"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "Compound",
+      "name": "Tween 80",
+      "attributes": {
+        "context": "solution of 20% Tween 80 and deionized water served as the vehicle control"
+      },
+      "source_chunk_ids": [
+        "9f3acaaa4b68cafaf128d929bb387801"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "Compound",
+      "name": "deionized water",
+      "attributes": {
+        "context": "Tween 80 and deionized water served as the vehicle control"
+      },
+      "source_chunk_ids": [
+        "9f3acaaa4b68cafaf128d929bb387801"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "vehicle control for the S. tortuosum groups"
+      },
+      "source_chunk_ids": [
+        "9f3acaaa4b68cafaf128d929bb387801"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "Concentration",
+      "name": "1 ml/kg",
+      "attributes": {
+        "context": "administered IP in a volume of 1 ml/kg"
+      },
+      "source_chunk_ids": [
+        "9f3acaaa4b68cafaf128d929bb387801"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "Compound",
+      "name": "Vehicle",
+      "attributes": {
+        "context": "Treatment Anxiety Early Depression Late Depression Vehicle"
+      },
+      "source_chunk_ids": [
+        "803166a8b9739ff1ee1f71fa09f9017c"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "Compound",
+      "name": "Imipramine",
+      "attributes": {
+        "context": "Imipramine 105 68 70"
+      },
+      "source_chunk_ids": [
+        "803166a8b9739ff1ee1f71fa09f9017c"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "S. tortuosum 50 mg/kg"
+      },
+      "source_chunk_ids": [
+        "803166a8b9739ff1ee1f71fa09f9017c"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "S. tortuosum 75 mg/kg"
+      },
+      "source_chunk_ids": [
+        "803166a8b9739ff1ee1f71fa09f9017c"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "S. tortuosum 100 mg/kg"
+      },
+      "source_chunk_ids": [
+        "803166a8b9739ff1ee1f71fa09f9017c"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "Indication",
+      "name": "Anxiety",
+      "attributes": {
+        "context": "Anxiety (dark grey)"
+      },
+      "source_chunk_ids": [
+        "803166a8b9739ff1ee1f71fa09f9017c"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "Indication",
+      "name": "Early Depression",
+      "attributes": {
+        "context": "Early Depression (medium grey)"
+      },
+      "source_chunk_ids": [
+        "803166a8b9739ff1ee1f71fa09f9017c"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "Indication",
+      "name": "Late Depression",
+      "attributes": {
+        "context": "Late Depression (light grey)"
+      },
+      "source_chunk_ids": [
+        "803166a8b9739ff1ee1f71fa09f9017c"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "Concentration",
+      "name": "50 mg/kg",
+      "attributes": {
+        "context": "S. tortuosum 50 mg/kg"
+      },
+      "source_chunk_ids": [
+        "803166a8b9739ff1ee1f71fa09f9017c"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "Concentration",
+      "name": "75 mg/kg",
+      "attributes": {
+        "context": "S. tortuosum 75 mg/kg"
+      },
+      "source_chunk_ids": [
+        "803166a8b9739ff1ee1f71fa09f9017c"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "Concentration",
+      "name": "100 mg/kg",
+      "attributes": {
+        "context": "S. tortuosum 100 mg/kg"
+      },
+      "source_chunk_ids": [
+        "803166a8b9739ff1ee1f71fa09f9017c"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "PharmEffect",
+      "name": "decreases in DVoc rates",
+      "attributes": {
+        "context": "significant decreases in DVoc rates compared to the vehicle group."
+      },
+      "source_chunk_ids": [
+        "803166a8b9739ff1ee1f71fa09f9017c"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "Compound",
+      "name": "imipramine",
+      "attributes": {
+        "context": "The effects of imipramine"
+      },
+      "source_chunk_ids": [
+        "d119a8ba64585f51b822a2429e82c8a1"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "context": "and S. tortuosum doses"
+      },
+      "source_chunk_ids": [
+        "d119a8ba64585f51b822a2429e82c8a1"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "Concentration",
+      "name": "50 mg/kg",
+      "attributes": {
+        "context": "doses (50, 75 and 100 mg/kg)"
+      },
+      "source_chunk_ids": [
+        "d119a8ba64585f51b822a2429e82c8a1"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "Concentration",
+      "name": "75 mg/kg",
+      "attributes": {
+        "context": "doses (50, 75 and 100 mg/kg)"
+      },
+      "source_chunk_ids": [
+        "d119a8ba64585f51b822a2429e82c8a1"
+      ]
+    },
+    {
+      "id": "ent_071",
+      "type": "Concentration",
+      "name": "100 mg/kg",
+      "attributes": {
+        "context": "doses (50, 75 and 100 mg/kg)"
+      },
+      "source_chunk_ids": [
+        "d119a8ba64585f51b822a2429e82c8a1"
+      ]
+    },
+    {
+      "id": "ent_072",
+      "type": "PharmEffect",
+      "name": "distress vocalization",
+      "attributes": {
+        "context": "on distress vocalization (DVoc) rates"
+      },
+      "source_chunk_ids": [
+        "d119a8ba64585f51b822a2429e82c8a1"
+      ]
+    },
+    {
+      "id": "ent_073",
+      "type": "Indication",
+      "name": "anxiety",
+      "attributes": {
+        "context": "during the anxiety phase"
+      },
+      "source_chunk_ids": [
+        "d119a8ba64585f51b822a2429e82c8a1"
+      ]
+    },
+    {
+      "id": "ent_074",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "early depression phase"
+      },
+      "source_chunk_ids": [
+        "d119a8ba64585f51b822a2429e82c8a1"
+      ]
+    },
+    {
+      "id": "ent_075",
+      "type": "PharmEffect",
+      "name": "anxiolytic effect",
+      "attributes": {
+        "context": "i.e. anxiolytic effect"
+      },
+      "source_chunk_ids": [
+        "d119a8ba64585f51b822a2429e82c8a1"
+      ]
+    },
+    {
+      "id": "ent_076",
+      "type": "PharmEffect",
+      "name": "anxiolytic",
+      "attributes": {
+        "context": "an anxiolytic effect"
+      },
+      "source_chunk_ids": [
+        "9c4271a27fed2c71cc6864225012c071"
+      ]
+    },
+    {
+      "id": "ent_077",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "context": "S. tortuosum did not affect DVoc rates"
+      },
+      "source_chunk_ids": [
+        "9c4271a27fed2c71cc6864225012c071"
+      ]
+    },
+    {
+      "id": "ent_078",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "in the depression phase"
+      },
+      "source_chunk_ids": [
+        "9c4271a27fed2c71cc6864225012c071"
+      ]
+    },
+    {
+      "id": "ent_079",
+      "type": "Compound",
+      "name": "Imipramine",
+      "attributes": {
+        "context": "Imipramine did not affect DVoc rates"
+      },
+      "source_chunk_ids": [
+        "9c4271a27fed2c71cc6864225012c071"
+      ]
+    },
+    {
+      "id": "ent_080",
+      "type": "Indication",
+      "name": "anxiety",
+      "attributes": {
+        "context": "in the anxiety phase"
+      },
+      "source_chunk_ids": [
+        "9c4271a27fed2c71cc6864225012c071"
+      ]
+    },
+    {
+      "id": "ent_081",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "context": "S. tortuosum 75 and 100 mg/kg groups"
+      },
+      "source_chunk_ids": [
+        "9c4271a27fed2c71cc6864225012c071"
+      ]
+    },
+    {
+      "id": "ent_082",
+      "type": "Concentration",
+      "name": "75 mg/kg",
+      "attributes": {
+        "context": "S. tortuosum 75 and 100 mg/kg groups"
+      },
+      "source_chunk_ids": [
+        "9c4271a27fed2c71cc6864225012c071"
+      ]
+    },
+    {
+      "id": "ent_083",
+      "type": "Concentration",
+      "name": "100 mg/kg",
+      "attributes": {
+        "context": "S. tortuosum 75 and 100 mg/kg groups"
+      },
+      "source_chunk_ids": [
+        "9c4271a27fed2c71cc6864225012c071"
+      ]
+    },
+    {
+      "id": "ent_084",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "context": "vehicles (S. tortuosum 84.91"
+      },
+      "source_chunk_ids": [
+        "9c4271a27fed2c71cc6864225012c071"
+      ]
+    },
+    {
+      "id": "ent_085",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "context": "S. tortuosum 87.36 vs Veh 100.99"
+      },
+      "source_chunk_ids": [
+        "9c4271a27fed2c71cc6864225012c071"
+      ]
+    },
+    {
+      "id": "ent_086",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "half of the depression phase"
+      },
+      "source_chunk_ids": [
+        "9c4271a27fed2c71cc6864225012c071"
+      ]
+    },
+    {
+      "id": "ent_087",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "late half of the depression phase"
+      },
+      "source_chunk_ids": [
+        "9c4271a27fed2c71cc6864225012c071"
+      ]
+    },
+    {
+      "id": "ent_088",
+      "type": "Compound",
+      "name": "Imipramine",
+      "attributes": {
+        "context": "DVoc rates for imipramine were higher"
+      },
+      "source_chunk_ids": [
+        "9c4271a27fed2c71cc6864225012c071"
+      ]
+    },
+    {
+      "id": "ent_089",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "context": "S. tortuosum antidepressant effects"
+      },
+      "source_chunk_ids": [
+        "6b83f2eec984c5d7645606918d9e709b"
+      ]
+    },
+    {
+      "id": "ent_090",
+      "type": "PharmEffect",
+      "name": "antidepressant",
+      "attributes": {
+        "context": "antidepressant effects"
+      },
+      "source_chunk_ids": [
+        "6b83f2eec984c5d7645606918d9e709b"
+      ]
+    },
+    {
+      "id": "ent_091",
+      "type": "Indication",
+      "name": "anxiety-depression",
+      "attributes": {
+        "context": "The chick anxiety-depression model"
+      },
+      "source_chunk_ids": [
+        "6b83f2eec984c5d7645606918d9e709b"
+      ]
+    },
+    {
+      "id": "ent_092",
+      "type": "Indication",
+      "name": "stress-related disorders",
+      "attributes": {
+        "context": "mitigate stress-related disorders"
+      },
+      "source_chunk_ids": [
+        "6b83f2eec984c5d7645606918d9e709b"
+      ]
+    },
+    {
+      "id": "ent_093",
+      "type": "PharmEffect",
+      "name": "anxiety phase",
+      "attributes": {
+        "context": "high DVoc rates during the first 3 m (anxiety phase)"
+      },
+      "source_chunk_ids": [
+        "0afdfbc1ad8eae9d1ad4587346f7dca6"
+      ]
+    },
+    {
+      "id": "ent_094",
+      "type": "PharmEffect",
+      "name": "depression phase",
+      "attributes": {
+        "context": "declined to about 50% at 30 m (depression phase)"
+      },
+      "source_chunk_ids": [
+        "0afdfbc1ad8eae9d1ad4587346f7dca6"
+      ]
+    },
+    {
+      "id": "ent_095",
+      "type": "PharmEffect",
+      "name": "behavioral despair",
+      "attributes": {
+        "context": "models of behavioral despair"
+      },
+      "source_chunk_ids": [
+        "0afdfbc1ad8eae9d1ad4587346f7dca6"
+      ]
+    },
+    {
+      "id": "ent_096",
+      "type": "PharmEffect",
+      "name": "antidepressant effect",
+      "attributes": {
+        "context": "The antidepressant effect of imipramine"
+      },
+      "source_chunk_ids": [
+        "0afdfbc1ad8eae9d1ad4587346f7dca6"
+      ]
+    },
+    {
+      "id": "ent_097",
+      "type": "Compound",
+      "name": "imipramine",
+      "attributes": {
+        "context": "antidepressant effect of imipramine"
+      },
+      "source_chunk_ids": [
+        "0afdfbc1ad8eae9d1ad4587346f7dca6"
+      ]
+    },
+    {
+      "id": "ent_098",
+      "type": "Compound",
+      "name": "imipramine",
+      "attributes": {
+        "context": "imipramine attenuated behavioral despair"
+      },
+      "source_chunk_ids": [
+        "a13d6802453a4c73483b64d72529893b"
+      ]
+    },
+    {
+      "id": "ent_099",
+      "type": "PharmEffect",
+      "name": "attenuated behavioral despair",
+      "attributes": {
+        "context": "imipramine attenuated behavioral despair"
+      },
+      "source_chunk_ids": [
+        "a13d6802453a4c73483b64d72529893b"
+      ]
+    },
+    {
+      "id": "ent_100",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "during the depression phase"
+      },
+      "source_chunk_ids": [
+        "a13d6802453a4c73483b64d72529893b"
+      ]
+    },
+    {
+      "id": "ent_101",
+      "type": "Compound",
+      "name": "imipramine",
+      "attributes": {
+        "context": "effect size of imipramine"
+      },
+      "source_chunk_ids": [
+        "a13d6802453a4c73483b64d72529893b"
+      ]
+    },
+    {
+      "id": "ent_102",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "context": "doses of S. tortuosum fraction"
+      },
+      "source_chunk_ids": [
+        "a13d6802453a4c73483b64d72529893b"
+      ]
+    },
+    {
+      "id": "ent_103",
+      "type": "Concentration",
+      "name": "75 mg/kg",
+      "attributes": {
+        "context": "75 and 100 mg/kg"
+      },
+      "source_chunk_ids": [
+        "a13d6802453a4c73483b64d72529893b"
+      ]
+    },
+    {
+      "id": "ent_104",
+      "type": "Concentration",
+      "name": "100 mg/kg",
+      "attributes": {
+        "context": "75 and 100 mg/kg"
+      },
+      "source_chunk_ids": [
+        "a13d6802453a4c73483b64d72529893b"
+      ]
+    },
+    {
+      "id": "ent_105",
+      "type": "PharmEffect",
+      "name": "decreased DVocs",
+      "attributes": {
+        "context": "decreased DVocs during the anxiety phase"
+      },
+      "source_chunk_ids": [
+        "a13d6802453a4c73483b64d72529893b"
+      ]
+    },
+    {
+      "id": "ent_106",
+      "type": "Indication",
+      "name": "anxiety",
+      "attributes": {
+        "context": "during the anxiety phase"
+      },
+      "source_chunk_ids": [
+        "a13d6802453a4c73483b64d72529893b"
+      ]
+    },
+    {
+      "id": "ent_107",
+      "type": "PharmEffect",
+      "name": "reduction in DVoc rates",
+      "attributes": {
+        "context": "This reduction in DVoc rates"
+      },
+      "source_chunk_ids": [
+        "a13d6802453a4c73483b64d72529893b"
+      ]
+    },
+    {
+      "id": "ent_108",
+      "type": "PharmEffect",
+      "name": "anxiolytic",
+      "attributes": {
+        "context": "anxiolytic compounds"
+      },
+      "source_chunk_ids": [
+        "a13d6802453a4c73483b64d72529893b"
+      ]
+    },
+    {
+      "id": "ent_109",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "context": "the S. tortuosum fraction did not affect DVoc rates"
+      },
+      "source_chunk_ids": [
+        "a13d6802453a4c73483b64d72529893b"
+      ]
+    },
+    {
+      "id": "ent_110",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "during the depression phase"
+      },
+      "source_chunk_ids": [
+        "a13d6802453a4c73483b64d72529893b"
+      ]
+    },
+    {
+      "id": "ent_111",
+      "type": "PharmEffect",
+      "name": "antidepressant activity",
+      "attributes": {
+        "context": "void of antidepressant activity"
+      },
+      "source_chunk_ids": [
+        "a13d6802453a4c73483b64d72529893b"
+      ]
+    },
+    {
+      "id": "ent_112",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "context": "S. tortuosum effects"
+      },
+      "source_chunk_ids": [
+        "c75dc7c2c671ec7d054a1f30d6e81c9d"
+      ]
+    },
+    {
+      "id": "ent_113",
+      "type": "Compound",
+      "name": "alkaloid",
+      "attributes": {
+        "context": "action of alkaloid enriched S. tortuosum fractions"
+      },
+      "source_chunk_ids": [
+        "c75dc7c2c671ec7d054a1f30d6e81c9d"
+      ]
+    },
+    {
+      "id": "ent_114",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "context": "S. tortuosum proprietary extract Zembrin\u00ae"
+      },
+      "source_chunk_ids": [
+        "c75dc7c2c671ec7d054a1f30d6e81c9d"
+      ]
+    },
+    {
+      "id": "ent_115",
+      "type": "Compound",
+      "name": "alkaloids",
+      "attributes": {
+        "context": "contains the alkaloids mesembrine"
+      },
+      "source_chunk_ids": [
+        "c75dc7c2c671ec7d054a1f30d6e81c9d"
+      ]
+    },
+    {
+      "id": "ent_116",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {
+        "context": "alkaloids mesembrine"
+      },
+      "source_chunk_ids": [
+        "c75dc7c2c671ec7d054a1f30d6e81c9d"
+      ]
+    },
+    {
+      "id": "ent_117",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {
+        "context": "mesembrine, mesembrenone and mesembrenol"
+      },
+      "source_chunk_ids": [
+        "c75dc7c2c671ec7d054a1f30d6e81c9d"
+      ]
+    },
+    {
+      "id": "ent_118",
+      "type": "Compound",
+      "name": "mesembrenol",
+      "attributes": {
+        "context": "mesembrenone and mesembrenol"
+      },
+      "source_chunk_ids": [
+        "c75dc7c2c671ec7d054a1f30d6e81c9d"
+      ]
+    },
+    {
+      "id": "ent_119",
+      "type": "Concentration",
+      "name": "Lower doses",
+      "attributes": {
+        "context": "Lower doses show preferential binding"
+      },
+      "source_chunk_ids": [
+        "c75dc7c2c671ec7d054a1f30d6e81c9d"
+      ]
+    },
+    {
+      "id": "ent_120",
+      "type": "Concentration",
+      "name": "higher doses",
+      "attributes": {
+        "context": "higher doses affect GABA and opioid receptors"
+      },
+      "source_chunk_ids": [
+        "c75dc7c2c671ec7d054a1f30d6e81c9d"
+      ]
+    },
+    {
+      "id": "ent_121",
+      "type": "Compound",
+      "name": "GABA",
+      "attributes": {
+        "context": "affect GABA and opioid receptors"
+      },
+      "source_chunk_ids": [
+        "c75dc7c2c671ec7d054a1f30d6e81c9d"
+      ]
+    },
+    {
+      "id": "ent_122",
+      "type": "Compound",
+      "name": "opioid",
+      "attributes": {
+        "context": "GABA and opioid receptors"
+      },
+      "source_chunk_ids": [
+        "c75dc7c2c671ec7d054a1f30d6e81c9d"
+      ]
+    },
+    {
+      "id": "ent_123",
+      "type": "Concentration",
+      "name": "higher doses",
+      "attributes": {
+        "context": "That the higher doses of the S. tortuosum fraction"
+      },
+      "source_chunk_ids": [
+        "c75dc7c2c671ec7d054a1f30d6e81c9d"
+      ]
+    },
+    {
+      "id": "ent_124",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "context": "S. tortuosum fraction possess anxiolytic effects"
+      },
+      "source_chunk_ids": [
+        "c75dc7c2c671ec7d054a1f30d6e81c9d"
+      ]
+    },
+    {
+      "id": "ent_125",
+      "type": "PharmEffect",
+      "name": "anxiolytic effects",
+      "attributes": {
+        "context": "possess anxiolytic effects"
+      },
+      "source_chunk_ids": [
+        "c75dc7c2c671ec7d054a1f30d6e81c9d"
+      ]
+    },
+    {
+      "id": "ent_126",
+      "type": "Compound",
+      "name": "GABA",
+      "attributes": {
+        "context": "given that GABA"
+      },
+      "source_chunk_ids": [
+        "c75dc7c2c671ec7d054a1f30d6e81c9d"
+      ]
+    },
+    {
+      "id": "ent_127",
+      "type": "Compound",
+      "name": "mu-opioid",
+      "attributes": {
+        "context": "mu- (...) and delta-opioid receptor agonists"
+      },
+      "source_chunk_ids": [
+        "c75dc7c2c671ec7d054a1f30d6e81c9d"
+      ]
+    },
+    {
+      "id": "ent_128",
+      "type": "Compound",
+      "name": "delta-opioid",
+      "attributes": {
+        "context": "delta-opioid receptor agonists"
+      },
+      "source_chunk_ids": [
+        "c75dc7c2c671ec7d054a1f30d6e81c9d"
+      ]
+    },
+    {
+      "id": "ent_129",
+      "type": "PharmEffect",
+      "name": "anxiolytic effects",
+      "attributes": {
+        "context": "receptor agonists possess anxiolytic effects"
+      },
+      "source_chunk_ids": [
+        "c75dc7c2c671ec7d054a1f30d6e81c9d"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:03.958995+00:00",
+    "original_file": "entities.json"
+  }
+}

@@ -1,0 +1,926 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "e0362794b64867f7e3e1253c308162c05d7b3216e46255f3b0805b4bc205ed3f",
+  "extracted_at": "2026-02-01T08:14:16.323309+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "Indication",
+      "name": "COPD",
+      "attributes": {
+        "context": "in COPD"
+      },
+      "source_chunk_ids": [
+        "52957fcbf8e52d0961e8a5a4706af952"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "PharmEffect",
+      "name": "prevent the accelerated decline in lung function",
+      "attributes": {
+        "context": "does not prevent the accelerated decline in lung function"
+      },
+      "source_chunk_ids": [
+        "52957fcbf8e52d0961e8a5a4706af952"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "Compound",
+      "name": "prostaglandins",
+      "attributes": {
+        "context": "including prostaglandins, leukotrienes, chemokines, cytokines, proteases and growth factors"
+      },
+      "source_chunk_ids": [
+        "7fe2c68df9e12ccd48444f28758d7bc0"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "Compound",
+      "name": "leukotrienes",
+      "attributes": {
+        "context": "including prostaglandins, leukotrienes, chemokines, cytokines, proteases and growth factors"
+      },
+      "source_chunk_ids": [
+        "7fe2c68df9e12ccd48444f28758d7bc0"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "Compound",
+      "name": "chemokines",
+      "attributes": {
+        "context": "including prostaglandins, leukotrienes, chemokines, cytokines, proteases and growth factors"
+      },
+      "source_chunk_ids": [
+        "7fe2c68df9e12ccd48444f28758d7bc0"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "Compound",
+      "name": "cytokines",
+      "attributes": {
+        "context": "including prostaglandins, leukotrienes, chemokines, cytokines, proteases and growth factors"
+      },
+      "source_chunk_ids": [
+        "7fe2c68df9e12ccd48444f28758d7bc0"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "Compound",
+      "name": "proteases",
+      "attributes": {
+        "context": "including prostaglandins, leukotrienes, chemokines, cytokines, proteases and growth factors"
+      },
+      "source_chunk_ids": [
+        "7fe2c68df9e12ccd48444f28758d7bc0"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Compound",
+      "name": "growth factors",
+      "attributes": {
+        "context": "including prostaglandins, leukotrienes, chemokines, cytokines, proteases and growth factors"
+      },
+      "source_chunk_ids": [
+        "7fe2c68df9e12ccd48444f28758d7bc0"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "Indication",
+      "name": "asthma",
+      "attributes": {
+        "context": "pathogenesis of asthma and COPD"
+      },
+      "source_chunk_ids": [
+        "7fe2c68df9e12ccd48444f28758d7bc0"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "Indication",
+      "name": "COPD",
+      "attributes": {
+        "context": "pathogenesis of asthma and COPD"
+      },
+      "source_chunk_ids": [
+        "7fe2c68df9e12ccd48444f28758d7bc0"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "Compound",
+      "name": "PDE4",
+      "attributes": {
+        "context": "PDE4 is expressed in a number of cell types"
+      },
+      "source_chunk_ids": [
+        "7fe2c68df9e12ccd48444f28758d7bc0"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "Indication",
+      "name": "respiratory diseases",
+      "attributes": {
+        "context": "treatment of respiratory diseases such as asthma and COPD"
+      },
+      "source_chunk_ids": [
+        "7fe2c68df9e12ccd48444f28758d7bc0"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "Indication",
+      "name": "asthma",
+      "attributes": {
+        "context": "treatment of respiratory diseases such as asthma and COPD"
+      },
+      "source_chunk_ids": [
+        "7fe2c68df9e12ccd48444f28758d7bc0"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "Indication",
+      "name": "COPD",
+      "attributes": {
+        "context": "treatment of respiratory diseases such as asthma and COPD"
+      },
+      "source_chunk_ids": [
+        "7fe2c68df9e12ccd48444f28758d7bc0"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "Compound",
+      "name": "PDE4",
+      "attributes": {
+        "context": "targeting PDE4 could potentially suppress the function"
+      },
+      "source_chunk_ids": [
+        "7fe2c68df9e12ccd48444f28758d7bc0"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "Compound",
+      "name": "PDE enzymes",
+      "attributes": {
+        "context": "other PDE enzymes"
+      },
+      "source_chunk_ids": [
+        "7fe2c68df9e12ccd48444f28758d7bc0"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "Compound",
+      "name": "cluster of differentiation",
+      "attributes": {
+        "context": "CD, cluster of differentiation"
+      },
+      "source_chunk_ids": [
+        "8895499d4eef65849c201aa8f681dec3"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "Indication",
+      "name": "chronic obstructive pulmonary disease",
+      "attributes": {
+        "context": "COPD, chronic obstructive pulmonary disease"
+      },
+      "source_chunk_ids": [
+        "8895499d4eef65849c201aa8f681dec3"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "Compound",
+      "name": "interleukin",
+      "attributes": {
+        "context": "IL, interleukin"
+      },
+      "source_chunk_ids": [
+        "8895499d4eef65849c201aa8f681dec3"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "Compound",
+      "name": "tumour necrosis factor",
+      "attributes": {
+        "context": "TNF, tumour necrosis factor"
+      },
+      "source_chunk_ids": [
+        "8895499d4eef65849c201aa8f681dec3"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "Indication",
+      "name": "COPD",
+      "attributes": {
+        "context": "preclinical in vivo models of COPD"
+      },
+      "source_chunk_ids": [
+        "47cf5147f47812ec616267c02786b641"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "Compound",
+      "name": "endotoxin",
+      "attributes": {
+        "context": "bacterial wall component, endotoxin"
+      },
+      "source_chunk_ids": [
+        "47cf5147f47812ec616267c02786b641"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "PharmEffect",
+      "name": "recruitment of neutrophils",
+      "attributes": {
+        "context": "recruitment of neutrophils to the airways"
+      },
+      "source_chunk_ids": [
+        "47cf5147f47812ec616267c02786b641"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "PharmEffect",
+      "name": "inhibited",
+      "attributes": {
+        "context": "was inhibited by around 50%"
+      },
+      "source_chunk_ids": [
+        "47cf5147f47812ec616267c02786b641"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "Concentration",
+      "name": "around 50%",
+      "attributes": {
+        "context": "inhibited by around 50%"
+      },
+      "source_chunk_ids": [
+        "47cf5147f47812ec616267c02786b641"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "Compound",
+      "name": "PDE4B",
+      "attributes": {
+        "context": "in PDE4B and PDE4D-deficient mice"
+      },
+      "source_chunk_ids": [
+        "47cf5147f47812ec616267c02786b641"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "Compound",
+      "name": "PDE4D",
+      "attributes": {
+        "context": "in PDE4B and PDE4D-deficient mice"
+      },
+      "source_chunk_ids": [
+        "47cf5147f47812ec616267c02786b641"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {
+        "context": "treated with rolipram"
+      },
+      "source_chunk_ids": [
+        "47cf5147f47812ec616267c02786b641"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "Compound",
+      "name": "PDE4 isoforms",
+      "attributes": {
+        "context": "roles of PDE4 isoforms"
+      },
+      "source_chunk_ids": [
+        "47cf5147f47812ec616267c02786b641"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "PharmEffect",
+      "name": "regulating neutrophil recruitment",
+      "attributes": {
+        "context": "regulating neutrophil recruitment to the airways"
+      },
+      "source_chunk_ids": [
+        "47cf5147f47812ec616267c02786b641"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "PharmEffect",
+      "name": "neutrophil recruitment",
+      "attributes": {
+        "context": "smoking induced neutrophil recruitment to the airways"
+      },
+      "source_chunk_ids": [
+        "47cf5147f47812ec616267c02786b641"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "PharmEffect",
+      "name": "release of chemokines",
+      "attributes": {
+        "context": "release of chemokines"
+      },
+      "source_chunk_ids": [
+        "47cf5147f47812ec616267c02786b641"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "Compound",
+      "name": "chemokines",
+      "attributes": {
+        "context": "release of chemokines"
+      },
+      "source_chunk_ids": [
+        "47cf5147f47812ec616267c02786b641"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "Indication",
+      "name": "emphysematous changes",
+      "attributes": {
+        "context": "emphysematous changes to the lung"
+      },
+      "source_chunk_ids": [
+        "47cf5147f47812ec616267c02786b641"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "PharmEffect",
+      "name": "attenuated",
+      "attributes": {
+        "context": "were attenuated by PDE4 inhibitors"
+      },
+      "source_chunk_ids": [
+        "47cf5147f47812ec616267c02786b641"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Compound",
+      "name": "PDE4 inhibitors",
+      "attributes": {
+        "context": "attenuated by PDE4 inhibitors"
+      },
+      "source_chunk_ids": [
+        "47cf5147f47812ec616267c02786b641"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "Compound",
+      "name": "PDE4",
+      "attributes": {
+        "context": "inhibiting PDE4"
+      },
+      "source_chunk_ids": [
+        "925c3b8b71981e012672269ef98fdc14"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "PharmEffect",
+      "name": "inhibiting",
+      "attributes": {
+        "context": "utility of inhibiting PDE4"
+      },
+      "source_chunk_ids": [
+        "925c3b8b71981e012672269ef98fdc14"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "Indication",
+      "name": "disease",
+      "attributes": {
+        "context": "implicated in this disease"
+      },
+      "source_chunk_ids": [
+        "925c3b8b71981e012672269ef98fdc14"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "Compound",
+      "name": "PDE4 inhibitors",
+      "attributes": {
+        "context": "utility of PDE4 inhibitors in the treatment of COPD"
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "Indication",
+      "name": "COPD",
+      "attributes": {
+        "context": "in the treatment of COPD (Rabe et al., 2005)"
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "Indication",
+      "name": "COPD",
+      "attributes": {
+        "context": "group of COPD patients."
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "PharmEffect",
+      "name": "relaxation of airway smooth muscle",
+      "attributes": {
+        "context": "due to relaxation of airway smooth muscle because this drug class"
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "PharmEffect",
+      "name": "bronchodilator activity",
+      "attributes": {
+        "context": "this drug class has weak bronchodilator activity."
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "PharmEffect",
+      "name": "anti-inflammatory action",
+      "attributes": {
+        "context": "due to an anti-inflammatory action of the drugs"
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "PharmEffect",
+      "name": "inflammation",
+      "attributes": {
+        "context": "biomarker of inflammation was measured in these studies."
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "Compound",
+      "name": "PDE4 inhibitors",
+      "attributes": {
+        "context": "whether PDE4 inhibitors are anti-inflammatory in COPD."
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "PharmEffect",
+      "name": "anti-inflammatory",
+      "attributes": {
+        "context": "PDE4 inhibitors are anti-inflammatory in COPD."
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "Indication",
+      "name": "COPD",
+      "attributes": {
+        "context": "are anti-inflammatory in COPD."
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "Compound",
+      "name": "roflumilast",
+      "attributes": {
+        "context": "Both roflumilast (Grootendorst et al., 2007) and cilomilast"
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "Compound",
+      "name": "cilomilast",
+      "attributes": {
+        "context": "and cilomilast (Gamble et al., 2003) reduced the number of inflammatory cells"
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "PharmEffect",
+      "name": "inflammatory cells",
+      "attributes": {
+        "context": "reduced the number of inflammatory cells such as neutrophils and lymphocytes"
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "Compound",
+      "name": "neutrophils",
+      "attributes": {
+        "context": "inflammatory cells such as neutrophils and lymphocytes recruited to the airways"
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "Compound",
+      "name": "lymphocytes",
+      "attributes": {
+        "context": "neutrophils and lymphocytes recruited to the airways and the levels"
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "Compound",
+      "name": "interleukin-8",
+      "attributes": {
+        "context": "namely interleukin-8 and neutrophil elastase."
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "Compound",
+      "name": "neutrophil elastase",
+      "attributes": {
+        "context": "interleukin-8 and neutrophil elastase."
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "Indication",
+      "name": "this disease",
+      "attributes": {
+        "context": "biochemical markers of this disease, namely interleukin-8"
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "PharmEffect",
+      "name": "beneficial action",
+      "attributes": {
+        "context": "underlie their beneficial action in the phase III clinical trials."
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "Compound",
+      "name": "PDE4",
+      "attributes": {
+        "context": "inhibition of PDE4 was not achievable because of dose-limiting side effects"
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "Compound",
+      "name": "PDE3",
+      "attributes": {
+        "context": "other PDE isoforms (for example, PDE3, 7, see Table 1)"
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "Compound",
+      "name": "PDE7",
+      "attributes": {
+        "context": "PDE3, 7, see Table 1) in these same inflammatory processes"
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "PharmEffect",
+      "name": "inflammatory processes",
+      "attributes": {
+        "context": "in these same inflammatory processes may also require targeting"
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "PharmEffect",
+      "name": "anti-inflammatory action",
+      "attributes": {
+        "context": "for a full anti-inflammatory action to be revealed in this disease."
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "Indication",
+      "name": "this disease",
+      "attributes": {
+        "context": "action to be revealed in this disease."
+      },
+      "source_chunk_ids": [
+        "8b57960a0d4fe5165486b6556180de4a"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "Compound",
+      "name": "roflumilast",
+      "attributes": {
+        "context": "reported with roflumilast included diarrhoea"
+      },
+      "source_chunk_ids": [
+        "166efba6fb3648514747dfc5171c65ee"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "Indication",
+      "name": "diarrhoea",
+      "attributes": {
+        "context": "included diarrhoea (9%)"
+      },
+      "source_chunk_ids": [
+        "166efba6fb3648514747dfc5171c65ee"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "Indication",
+      "name": "headache",
+      "attributes": {
+        "context": "headache (6%)"
+      },
+      "source_chunk_ids": [
+        "166efba6fb3648514747dfc5171c65ee"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "Indication",
+      "name": "nausea",
+      "attributes": {
+        "context": "and nausea (5%)"
+      },
+      "source_chunk_ids": [
+        "166efba6fb3648514747dfc5171c65ee"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "Compound",
+      "name": "cilomilast",
+      "attributes": {
+        "context": "reported with cilomilast"
+      },
+      "source_chunk_ids": [
+        "166efba6fb3648514747dfc5171c65ee"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "Indication",
+      "name": "abdominal pain",
+      "attributes": {
+        "context": "abdominal pain and vomiting"
+      },
+      "source_chunk_ids": [
+        "166efba6fb3648514747dfc5171c65ee"
+      ]
+    },
+    {
+      "id": "ent_071",
+      "type": "Indication",
+      "name": "vomiting",
+      "attributes": {
+        "context": "and vomiting were also reported"
+      },
+      "source_chunk_ids": [
+        "166efba6fb3648514747dfc5171c65ee"
+      ]
+    },
+    {
+      "id": "ent_072",
+      "type": "Indication",
+      "name": "cardiovascular liabilities",
+      "attributes": {
+        "context": "No cardiovascular liabilities were noted"
+      },
+      "source_chunk_ids": [
+        "166efba6fb3648514747dfc5171c65ee"
+      ]
+    },
+    {
+      "id": "ent_073",
+      "type": "Compound",
+      "name": "PMNPQ",
+      "attributes": {
+        "context": "most potent emetic PDE4 inhibitor, PMNPQ"
+      },
+      "source_chunk_ids": [
+        "d9a4da17cb4dce753b32e19513edf9c5"
+      ]
+    },
+    {
+      "id": "ent_074",
+      "type": "PharmEffect",
+      "name": "emetic",
+      "attributes": {
+        "context": "most potent emetic PDE4 inhibitor"
+      },
+      "source_chunk_ids": [
+        "d9a4da17cb4dce753b32e19513edf9c5"
+      ]
+    },
+    {
+      "id": "ent_075",
+      "type": "PharmEffect",
+      "name": "emesis",
+      "attributes": {
+        "context": "ability to induce emesis"
+      },
+      "source_chunk_ids": [
+        "d9a4da17cb4dce753b32e19513edf9c5"
+      ]
+    },
+    {
+      "id": "ent_076",
+      "type": "PharmEffect",
+      "name": "PDE4 inhibition",
+      "attributes": {
+        "context": "magnitude of PDE4 inhibition"
+      },
+      "source_chunk_ids": [
+        "d9a4da17cb4dce753b32e19513edf9c5"
+      ]
+    },
+    {
+      "id": "ent_077",
+      "type": "Compound",
+      "name": "PDE4 inhibitors",
+      "attributes": {
+        "context": "between the various PDE4 inhibitors"
+      },
+      "source_chunk_ids": [
+        "d9a4da17cb4dce753b32e19513edf9c5"
+      ]
+    },
+    {
+      "id": "ent_078",
+      "type": "Compound",
+      "name": "tor agonists",
+      "attributes": {
+        "context": "tor agonists"
+      },
+      "source_chunk_ids": [
+        "fa69ff6ba61e831f7394a0ebdd6ee4fc"
+      ]
+    },
+    {
+      "id": "ent_079",
+      "type": "Compound",
+      "name": "bronchodilator drugs",
+      "attributes": {
+        "context": "combined with bronchodilator drugs"
+      },
+      "source_chunk_ids": [
+        "fa69ff6ba61e831f7394a0ebdd6ee4fc"
+      ]
+    },
+    {
+      "id": "ent_080",
+      "type": "Compound",
+      "name": "PDE4 inhibitors",
+      "attributes": {
+        "context": "PDE4 inhibitors suppress"
+      },
+      "source_chunk_ids": [
+        "fa69ff6ba61e831f7394a0ebdd6ee4fc"
+      ]
+    },
+    {
+      "id": "ent_081",
+      "type": "PharmEffect",
+      "name": "suppress",
+      "attributes": {
+        "context": "PDE4 inhibitors suppress and not exacerbate inflammation"
+      },
+      "source_chunk_ids": [
+        "fa69ff6ba61e831f7394a0ebdd6ee4fc"
+      ]
+    },
+    {
+      "id": "ent_082",
+      "type": "PharmEffect",
+      "name": "exacerbate",
+      "attributes": {
+        "context": "suppress and not exacerbate inflammation"
+      },
+      "source_chunk_ids": [
+        "fa69ff6ba61e831f7394a0ebdd6ee4fc"
+      ]
+    },
+    {
+      "id": "ent_083",
+      "type": "Indication",
+      "name": "inflammation",
+      "attributes": {
+        "context": "exacerbate inflammation in the airways"
+      },
+      "source_chunk_ids": [
+        "fa69ff6ba61e831f7394a0ebdd6ee4fc"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:03.797914+00:00",
+    "original_file": "entities.json"
+  }
+}

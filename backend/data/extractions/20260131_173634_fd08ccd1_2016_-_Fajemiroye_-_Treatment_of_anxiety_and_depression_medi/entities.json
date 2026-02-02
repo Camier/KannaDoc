@@ -1,0 +1,4369 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "2bd70ab446d0c5461f3feee6738e4dc29c84ca3d20e85b26822ac61609eefaf2",
+  "extracted_at": "2026-02-01T08:40:09.216553+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "Indication",
+      "name": "Anxiety",
+      "attributes": {
+        "context": "Anxiety and depression are complex heterogeneous psychiatric disorders"
+      },
+      "source_chunk_ids": [
+        "09fef4f9645d66aeae1b082cb42e4c66"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "Anxiety and depression are complex heterogeneous psychiatric disorders"
+      },
+      "source_chunk_ids": [
+        "09fef4f9645d66aeae1b082cb42e4c66"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "Indication",
+      "name": "psychiatric disorders",
+      "attributes": {
+        "context": "Anxiety and depression are complex heterogeneous psychiatric disorders"
+      },
+      "source_chunk_ids": [
+        "09fef4f9645d66aeae1b082cb42e4c66"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "Compound",
+      "name": "benzodiazepine",
+      "attributes": {
+        "context": "first-line drugs (benzodiazepine, azapirone, antidepressant tricyclics"
+      },
+      "source_chunk_ids": [
+        "09fef4f9645d66aeae1b082cb42e4c66"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "Compound",
+      "name": "azapirone",
+      "attributes": {
+        "context": "benzodiazepine, azapirone, antidepressant tricyclics"
+      },
+      "source_chunk_ids": [
+        "09fef4f9645d66aeae1b082cb42e4c66"
+      ]
+    },
+    {
+      "id": "ent_006",
+      "type": "Compound",
+      "name": "antidepressant tricyclics",
+      "attributes": {
+        "context": "azapirone, antidepressant tricyclics, monoamine oxidase inhibitors"
+      },
+      "source_chunk_ids": [
+        "09fef4f9645d66aeae1b082cb42e4c66"
+      ]
+    },
+    {
+      "id": "ent_007",
+      "type": "Compound",
+      "name": "monoamine oxidase inhibitors",
+      "attributes": {
+        "context": "antidepressant tricyclics, monoamine oxidase inhibitors, serotonin selective reuptake inhibitors"
+      },
+      "source_chunk_ids": [
+        "09fef4f9645d66aeae1b082cb42e4c66"
+      ]
+    },
+    {
+      "id": "ent_008",
+      "type": "Compound",
+      "name": "serotonin selective reuptake inhibitors",
+      "attributes": {
+        "context": "monoamine oxidase inhibitors, serotonin selective reuptake inhibitors, noreadrenaline reuptake inhibitors"
+      },
+      "source_chunk_ids": [
+        "09fef4f9645d66aeae1b082cb42e4c66"
+      ]
+    },
+    {
+      "id": "ent_009",
+      "type": "Compound",
+      "name": "noreadrenaline reuptake inhibitors",
+      "attributes": {
+        "context": "serotonin selective reuptake inhibitors, noreadrenaline reuptake inhibitors, serotonin and noradrenaline reuptake inhibitors"
+      },
+      "source_chunk_ids": [
+        "09fef4f9645d66aeae1b082cb42e4c66"
+      ]
+    },
+    {
+      "id": "ent_010",
+      "type": "Compound",
+      "name": "serotonin and noradrenaline reuptake inhibitors",
+      "attributes": {
+        "context": "noreadrenaline reuptake inhibitors, serotonin and noradrenaline reuptake inhibitors"
+      },
+      "source_chunk_ids": [
+        "09fef4f9645d66aeae1b082cb42e4c66"
+      ]
+    },
+    {
+      "id": "ent_011",
+      "type": "Indication",
+      "name": "psychiatric disorders",
+      "attributes": {
+        "context": "treatment of these psychiatric disorders"
+      },
+      "source_chunk_ids": [
+        "09fef4f9645d66aeae1b082cb42e4c66"
+      ]
+    },
+    {
+      "id": "ent_012",
+      "type": "Indication",
+      "name": "anxiety",
+      "attributes": {
+        "context": "treatment of anxiety and depression"
+      },
+      "source_chunk_ids": [
+        "09fef4f9645d66aeae1b082cb42e4c66"
+      ]
+    },
+    {
+      "id": "ent_013",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "treatment of anxiety and depression"
+      },
+      "source_chunk_ids": [
+        "09fef4f9645d66aeae1b082cb42e4c66"
+      ]
+    },
+    {
+      "id": "ent_014",
+      "type": "PharmEffect",
+      "name": "anxiolytic",
+      "attributes": {
+        "context": "development of anxiolytic and antidepressant drugs of plant origin"
+      },
+      "source_chunk_ids": [
+        "09fef4f9645d66aeae1b082cb42e4c66"
+      ]
+    },
+    {
+      "id": "ent_015",
+      "type": "PharmEffect",
+      "name": "antidepressant",
+      "attributes": {
+        "context": "anxiolytic and antidepressant drugs of plant origin"
+      },
+      "source_chunk_ids": [
+        "09fef4f9645d66aeae1b082cb42e4c66"
+      ]
+    },
+    {
+      "id": "ent_016",
+      "type": "Taxon",
+      "name": "plant origin",
+      "attributes": {
+        "context": "antidepressant drugs of plant origin"
+      },
+      "source_chunk_ids": [
+        "09fef4f9645d66aeae1b082cb42e4c66"
+      ]
+    },
+    {
+      "id": "ent_017",
+      "type": "Taxon",
+      "name": "medicinal plant",
+      "attributes": {
+        "context": "application of medicinal plant"
+      },
+      "source_chunk_ids": [
+        "09fef4f9645d66aeae1b082cb42e4c66"
+      ]
+    },
+    {
+      "id": "ent_018",
+      "type": "Taxon",
+      "name": "plant",
+      "attributes": {
+        "context": "selection of a suitable plant for a pharmacological study"
+      },
+      "source_chunk_ids": [
+        "09fef4f9645d66aeae1b082cb42e4c66"
+      ]
+    },
+    {
+      "id": "ent_019",
+      "type": "Taxon",
+      "name": "Medicinal plants",
+      "attributes": {
+        "context": "Medicinal plants have been and continue to be a rich source"
+      },
+      "source_chunk_ids": [
+        "09fef4f9645d66aeae1b082cb42e4c66"
+      ]
+    },
+    {
+      "id": "ent_020",
+      "type": "Compound",
+      "name": "biomolecule",
+      "attributes": {
+        "context": "source of biomolecule with therapeutic values"
+      },
+      "source_chunk_ids": [
+        "09fef4f9645d66aeae1b082cb42e4c66"
+      ]
+    },
+    {
+      "id": "ent_021",
+      "type": "Indication",
+      "name": "anxiety",
+      "attributes": {
+        "context": "treatment of anxiety and depression"
+      },
+      "source_chunk_ids": [
+        "09fef4f9645d66aeae1b082cb42e4c66"
+      ]
+    },
+    {
+      "id": "ent_022",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "treatment of anxiety and depression"
+      },
+      "source_chunk_ids": [
+        "09fef4f9645d66aeae1b082cb42e4c66"
+      ]
+    },
+    {
+      "id": "ent_023",
+      "type": "Indication",
+      "name": "anxiety",
+      "attributes": {
+        "context": "classical animal models of anxiety"
+      },
+      "source_chunk_ids": [
+        "312667f02f661358d46c4e58ab476240"
+      ]
+    },
+    {
+      "id": "ent_024",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "Classical animal models of depression"
+      },
+      "source_chunk_ids": [
+        "312667f02f661358d46c4e58ab476240"
+      ]
+    },
+    {
+      "id": "ent_025",
+      "type": "Compound",
+      "name": "phytoconstituents",
+      "attributes": {
+        "context": "medicinal plant extracts and phytoconstituents"
+      },
+      "source_chunk_ids": [
+        "312667f02f661358d46c4e58ab476240"
+      ]
+    },
+    {
+      "id": "ent_026",
+      "type": "PharmEffect",
+      "name": "anxiolytic",
+      "attributes": {
+        "context": "anxiolytic and/or antidepressant property"
+      },
+      "source_chunk_ids": [
+        "312667f02f661358d46c4e58ab476240"
+      ]
+    },
+    {
+      "id": "ent_027",
+      "type": "PharmEffect",
+      "name": "antidepressant",
+      "attributes": {
+        "context": "anxiolytic and/or antidepressant property"
+      },
+      "source_chunk_ids": [
+        "312667f02f661358d46c4e58ab476240"
+      ]
+    },
+    {
+      "id": "ent_028",
+      "type": "Taxon",
+      "name": "medicinal plant",
+      "attributes": {
+        "context": "discovery of medicinal plant extracts"
+      },
+      "source_chunk_ids": [
+        "312667f02f661358d46c4e58ab476240"
+      ]
+    },
+    {
+      "id": "ent_029",
+      "type": "Compound",
+      "name": "phytoconstituents",
+      "attributes": {
+        "context": "discovery of medicinal plant extracts and phytoconstituents"
+      },
+      "source_chunk_ids": [
+        "63c7a4658004c6837827d1e4082a5899"
+      ]
+    },
+    {
+      "id": "ent_030",
+      "type": "Compound",
+      "name": "crude extracts",
+      "attributes": {
+        "context": "Preparation of standard crude extracts"
+      },
+      "source_chunk_ids": [
+        "63c7a4658004c6837827d1e4082a5899"
+      ]
+    },
+    {
+      "id": "ent_031",
+      "type": "Compound",
+      "name": "isolates",
+      "attributes": {
+        "context": "characterization of the isolates"
+      },
+      "source_chunk_ids": [
+        "63c7a4658004c6837827d1e4082a5899"
+      ]
+    },
+    {
+      "id": "ent_032",
+      "type": "Compound",
+      "name": "compound",
+      "attributes": {
+        "context": "synthesis of a new compound"
+      },
+      "source_chunk_ids": [
+        "63c7a4658004c6837827d1e4082a5899"
+      ]
+    },
+    {
+      "id": "ent_033",
+      "type": "Compound",
+      "name": "fractions",
+      "attributes": {
+        "context": "properties of standard crude extracts, fractions"
+      },
+      "source_chunk_ids": [
+        "63c7a4658004c6837827d1e4082a5899"
+      ]
+    },
+    {
+      "id": "ent_034",
+      "type": "Compound",
+      "name": "isolated compounds",
+      "attributes": {
+        "context": "fractions, isolated compounds or derivatives"
+      },
+      "source_chunk_ids": [
+        "63c7a4658004c6837827d1e4082a5899"
+      ]
+    },
+    {
+      "id": "ent_035",
+      "type": "Compound",
+      "name": "derivatives",
+      "attributes": {
+        "context": "isolated compounds or derivatives"
+      },
+      "source_chunk_ids": [
+        "63c7a4658004c6837827d1e4082a5899"
+      ]
+    },
+    {
+      "id": "ent_036",
+      "type": "Taxon",
+      "name": "medicinal plant",
+      "attributes": {
+        "context": "discovery of medicinal plant extracts"
+      },
+      "source_chunk_ids": [
+        "63c7a4658004c6837827d1e4082a5899"
+      ]
+    },
+    {
+      "id": "ent_037",
+      "type": "Taxon",
+      "name": "medicinal plant",
+      "attributes": {
+        "context": "Selection of medicinal plant"
+      },
+      "source_chunk_ids": [
+        "63c7a4658004c6837827d1e4082a5899"
+      ]
+    },
+    {
+      "id": "ent_038",
+      "type": "PharmEffect",
+      "name": "anxiolytic",
+      "attributes": {
+        "context": "anxiolytic and/or antidepressant property"
+      },
+      "source_chunk_ids": [
+        "63c7a4658004c6837827d1e4082a5899"
+      ]
+    },
+    {
+      "id": "ent_039",
+      "type": "PharmEffect",
+      "name": "antidepressant property",
+      "attributes": {
+        "context": "anxiolytic and/or antidepressant property"
+      },
+      "source_chunk_ids": [
+        "63c7a4658004c6837827d1e4082a5899"
+      ]
+    },
+    {
+      "id": "ent_040",
+      "type": "PharmEffect",
+      "name": "anxiolytic potential",
+      "attributes": {
+        "context": "anxiolytic and/or antidepressant potential"
+      },
+      "source_chunk_ids": [
+        "63c7a4658004c6837827d1e4082a5899"
+      ]
+    },
+    {
+      "id": "ent_041",
+      "type": "PharmEffect",
+      "name": "antidepressant potential",
+      "attributes": {
+        "context": "anxiolytic and/or antidepressant potential"
+      },
+      "source_chunk_ids": [
+        "63c7a4658004c6837827d1e4082a5899"
+      ]
+    },
+    {
+      "id": "ent_042",
+      "type": "PharmEffect",
+      "name": "anti-anxiety",
+      "attributes": {
+        "context": "study of anti-anxiety and antidepressant properties"
+      },
+      "source_chunk_ids": [
+        "63c7a4658004c6837827d1e4082a5899"
+      ]
+    },
+    {
+      "id": "ent_043",
+      "type": "PharmEffect",
+      "name": "antidepressant properties",
+      "attributes": {
+        "context": "anti-anxiety and antidepressant properties"
+      },
+      "source_chunk_ids": [
+        "63c7a4658004c6837827d1e4082a5899"
+      ]
+    },
+    {
+      "id": "ent_044",
+      "type": "Indication",
+      "name": "anxiety",
+      "attributes": {
+        "context": "animal models of anxiety"
+      },
+      "source_chunk_ids": [
+        "63c7a4658004c6837827d1e4082a5899"
+      ]
+    },
+    {
+      "id": "ent_045",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "animal models of depression"
+      },
+      "source_chunk_ids": [
+        "63c7a4658004c6837827d1e4082a5899"
+      ]
+    },
+    {
+      "id": "ent_046",
+      "type": "Indication",
+      "name": "anxiety",
+      "attributes": {
+        "context": "treatment of anxiety"
+      },
+      "source_chunk_ids": [
+        "299e06da6180041f6bdd352b2064ea78"
+      ]
+    },
+    {
+      "id": "ent_047",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "and depression"
+      },
+      "source_chunk_ids": [
+        "299e06da6180041f6bdd352b2064ea78"
+      ]
+    },
+    {
+      "id": "ent_048",
+      "type": "Compound",
+      "name": "benzodiazepines",
+      "attributes": {
+        "context": "for example benzodiazepines which induce sedation"
+      },
+      "source_chunk_ids": [
+        "c6bf8c9a097b65ff85f7789f83be1ecf"
+      ]
+    },
+    {
+      "id": "ent_049",
+      "type": "PharmEffect",
+      "name": "sedation",
+      "attributes": {
+        "context": "benzodiazepines which induce sedation"
+      },
+      "source_chunk_ids": [
+        "c6bf8c9a097b65ff85f7789f83be1ecf"
+      ]
+    },
+    {
+      "id": "ent_050",
+      "type": "PharmEffect",
+      "name": "ataxia",
+      "attributes": {
+        "context": "sedation, ataxia, and amnesia"
+      },
+      "source_chunk_ids": [
+        "c6bf8c9a097b65ff85f7789f83be1ecf"
+      ]
+    },
+    {
+      "id": "ent_051",
+      "type": "PharmEffect",
+      "name": "amnesia",
+      "attributes": {
+        "context": "ataxia, and amnesia among others"
+      },
+      "source_chunk_ids": [
+        "c6bf8c9a097b65ff85f7789f83be1ecf"
+      ]
+    },
+    {
+      "id": "ent_052",
+      "type": "PharmEffect",
+      "name": "side effects",
+      "attributes": {
+        "context": "cases of side effects"
+      },
+      "source_chunk_ids": [
+        "c6bf8c9a097b65ff85f7789f83be1ecf"
+      ]
+    },
+    {
+      "id": "ent_053",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "treatment of depression and anxiety"
+      },
+      "source_chunk_ids": [
+        "c6bf8c9a097b65ff85f7789f83be1ecf"
+      ]
+    },
+    {
+      "id": "ent_054",
+      "type": "Indication",
+      "name": "anxiety",
+      "attributes": {
+        "context": "depression and anxiety"
+      },
+      "source_chunk_ids": [
+        "c6bf8c9a097b65ff85f7789f83be1ecf"
+      ]
+    },
+    {
+      "id": "ent_055",
+      "type": "PharmEffect",
+      "name": "efficacy",
+      "attributes": {
+        "context": "The efficacy, duration of effects"
+      },
+      "source_chunk_ids": [
+        "c6bf8c9a097b65ff85f7789f83be1ecf"
+      ]
+    },
+    {
+      "id": "ent_056",
+      "type": "Taxon",
+      "name": "medicinal plants",
+      "attributes": {
+        "context": "The use of medicinal plants"
+      },
+      "source_chunk_ids": [
+        "5b86674e1d718d92e937a65f71791f34"
+      ]
+    },
+    {
+      "id": "ent_057",
+      "type": "PharmEffect",
+      "name": "prevention",
+      "attributes": {
+        "context": "in the prevention and treatment of diseases"
+      },
+      "source_chunk_ids": [
+        "5b86674e1d718d92e937a65f71791f34"
+      ]
+    },
+    {
+      "id": "ent_058",
+      "type": "PharmEffect",
+      "name": "treatment",
+      "attributes": {
+        "context": "in the prevention and treatment of diseases"
+      },
+      "source_chunk_ids": [
+        "5b86674e1d718d92e937a65f71791f34"
+      ]
+    },
+    {
+      "id": "ent_059",
+      "type": "Indication",
+      "name": "diseases",
+      "attributes": {
+        "context": "treatment of diseases"
+      },
+      "source_chunk_ids": [
+        "5b86674e1d718d92e937a65f71791f34"
+      ]
+    },
+    {
+      "id": "ent_060",
+      "type": "Compound",
+      "name": "penicillin",
+      "attributes": {
+        "context": "antibiotics (e.g. penicillin"
+      },
+      "source_chunk_ids": [
+        "5b86674e1d718d92e937a65f71791f34"
+      ]
+    },
+    {
+      "id": "ent_061",
+      "type": "Compound",
+      "name": "tetracycline",
+      "attributes": {
+        "context": "tetracycline"
+      },
+      "source_chunk_ids": [
+        "5b86674e1d718d92e937a65f71791f34"
+      ]
+    },
+    {
+      "id": "ent_062",
+      "type": "Compound",
+      "name": "erythromycin",
+      "attributes": {
+        "context": "erythromycin"
+      },
+      "source_chunk_ids": [
+        "5b86674e1d718d92e937a65f71791f34"
+      ]
+    },
+    {
+      "id": "ent_063",
+      "type": "Compound",
+      "name": "vinblastine",
+      "attributes": {
+        "context": "anticancer drugs (e.g. vinblastine"
+      },
+      "source_chunk_ids": [
+        "5b86674e1d718d92e937a65f71791f34"
+      ]
+    },
+    {
+      "id": "ent_064",
+      "type": "Compound",
+      "name": "vincristine",
+      "attributes": {
+        "context": "vincristine"
+      },
+      "source_chunk_ids": [
+        "5b86674e1d718d92e937a65f71791f34"
+      ]
+    },
+    {
+      "id": "ent_065",
+      "type": "Compound",
+      "name": "paclitaxel",
+      "attributes": {
+        "context": "paclitaxel"
+      },
+      "source_chunk_ids": [
+        "5b86674e1d718d92e937a65f71791f34"
+      ]
+    },
+    {
+      "id": "ent_066",
+      "type": "Compound",
+      "name": "digoxin",
+      "attributes": {
+        "context": "cardiac glycosides (digoxin)"
+      },
+      "source_chunk_ids": [
+        "5b86674e1d718d92e937a65f71791f34"
+      ]
+    },
+    {
+      "id": "ent_067",
+      "type": "PharmEffect",
+      "name": "therapeutic value",
+      "attributes": {
+        "context": "the therapeutic value of medicinal plants"
+      },
+      "source_chunk_ids": [
+        "5b86674e1d718d92e937a65f71791f34"
+      ]
+    },
+    {
+      "id": "ent_068",
+      "type": "Taxon",
+      "name": "medicinal plants",
+      "attributes": {
+        "context": "therapeutic value of medicinal plants"
+      },
+      "source_chunk_ids": [
+        "5b86674e1d718d92e937a65f71791f34"
+      ]
+    },
+    {
+      "id": "ent_069",
+      "type": "Taxon",
+      "name": "vegetal species",
+      "attributes": {
+        "context": "derived from vegetal species"
+      },
+      "source_chunk_ids": [
+        "5b86674e1d718d92e937a65f71791f34"
+      ]
+    },
+    {
+      "id": "ent_070",
+      "type": "PharmEffect",
+      "name": "health maintenance",
+      "attributes": {
+        "context": "use in health maintenance"
+      },
+      "source_chunk_ids": [
+        "5b86674e1d718d92e937a65f71791f34"
+      ]
+    },
+    {
+      "id": "ent_071",
+      "type": "PharmEffect",
+      "name": "disease prevention",
+      "attributes": {
+        "context": "disease prevention and treatment"
+      },
+      "source_chunk_ids": [
+        "5b86674e1d718d92e937a65f71791f34"
+      ]
+    },
+    {
+      "id": "ent_072",
+      "type": "PharmEffect",
+      "name": "treatment",
+      "attributes": {
+        "context": "disease prevention and treatment"
+      },
+      "source_chunk_ids": [
+        "5b86674e1d718d92e937a65f71791f34"
+      ]
+    },
+    {
+      "id": "ent_073",
+      "type": "Indication",
+      "name": "disease",
+      "attributes": {
+        "context": "disease prevention and treatment"
+      },
+      "source_chunk_ids": [
+        "5b86674e1d718d92e937a65f71791f34"
+      ]
+    },
+    {
+      "id": "ent_074",
+      "type": "PharmEffect",
+      "name": "diagnosis",
+      "attributes": {
+        "context": "towards diagnosis and treatment of physical and mental illness"
+      },
+      "source_chunk_ids": [
+        "5b86674e1d718d92e937a65f71791f34"
+      ]
+    },
+    {
+      "id": "ent_075",
+      "type": "PharmEffect",
+      "name": "treatment",
+      "attributes": {
+        "context": "towards diagnosis and treatment of physical and mental illness"
+      },
+      "source_chunk_ids": [
+        "5b86674e1d718d92e937a65f71791f34"
+      ]
+    },
+    {
+      "id": "ent_076",
+      "type": "Indication",
+      "name": "physical and mental illness",
+      "attributes": {
+        "context": "physical and mental illness"
+      },
+      "source_chunk_ids": [
+        "5b86674e1d718d92e937a65f71791f34"
+      ]
+    },
+    {
+      "id": "ent_077",
+      "type": "PharmEffect",
+      "name": "anxiolytic",
+      "attributes": {
+        "context": "anxiolytic and antidepressant properties"
+      },
+      "source_chunk_ids": [
+        "21b240a0a1174b4b62e2ee249ddb7397"
+      ]
+    },
+    {
+      "id": "ent_078",
+      "type": "PharmEffect",
+      "name": "antidepressant",
+      "attributes": {
+        "context": "anxiolytic and antidepressant properties"
+      },
+      "source_chunk_ids": [
+        "21b240a0a1174b4b62e2ee249ddb7397"
+      ]
+    },
+    {
+      "id": "ent_079",
+      "type": "PharmEffect",
+      "name": "Anxiolytic",
+      "attributes": {
+        "context": "Anxiolytic drugs"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_080",
+      "type": "Compound",
+      "name": "Barbiturate",
+      "attributes": {
+        "context": "Barbiturate"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_081",
+      "type": "Compound",
+      "name": "Amytal",
+      "attributes": {
+        "context": "Amytal"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_082",
+      "type": "Compound",
+      "name": "Seconal",
+      "attributes": {
+        "context": "Seconal"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_083",
+      "type": "Compound",
+      "name": "Tuinal",
+      "attributes": {
+        "context": "Tuinal"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_084",
+      "type": "Compound",
+      "name": "Phenobarbital",
+      "attributes": {
+        "context": "Phenobarbital"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_085",
+      "type": "Compound",
+      "name": "Nembutal",
+      "attributes": {
+        "context": "Nembutal"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_086",
+      "type": "PharmEffect",
+      "name": "Somnolence",
+      "attributes": {
+        "context": "Somnolence, headache, confusion"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_087",
+      "type": "PharmEffect",
+      "name": "headache",
+      "attributes": {
+        "context": "Somnolence, headache, confusion"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_088",
+      "type": "PharmEffect",
+      "name": "confusion",
+      "attributes": {
+        "context": "Somnolence, headache, confusion"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_089",
+      "type": "PharmEffect",
+      "name": "hyperkinesias",
+      "attributes": {
+        "context": "hyperkinesias, ataxia, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_090",
+      "type": "PharmEffect",
+      "name": "ataxia",
+      "attributes": {
+        "context": "hyperkinesias, ataxia, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_091",
+      "type": "PharmEffect",
+      "name": "Dizziness",
+      "attributes": {
+        "context": "Dizziness, headache, confusion"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_092",
+      "type": "PharmEffect",
+      "name": "headache",
+      "attributes": {
+        "context": "Dizziness, headache, confusion"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_093",
+      "type": "PharmEffect",
+      "name": "confusion",
+      "attributes": {
+        "context": "Dizziness, headache, confusion"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_094",
+      "type": "PharmEffect",
+      "name": "bradycardia",
+      "attributes": {
+        "context": "bradycardia, ataxia, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_095",
+      "type": "PharmEffect",
+      "name": "ataxia",
+      "attributes": {
+        "context": "bradycardia, ataxia, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_096",
+      "type": "PharmEffect",
+      "name": "Drowsiness",
+      "attributes": {
+        "context": "Drowsiness and dizziness, stomach upset"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_097",
+      "type": "PharmEffect",
+      "name": "dizziness",
+      "attributes": {
+        "context": "Drowsiness and dizziness, stomach upset"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_098",
+      "type": "PharmEffect",
+      "name": "stomach upset",
+      "attributes": {
+        "context": "stomach upset, headache, weakness"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_099",
+      "type": "PharmEffect",
+      "name": "headache",
+      "attributes": {
+        "context": "stomach upset, headache, weakness"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_100",
+      "type": "PharmEffect",
+      "name": "weakness",
+      "attributes": {
+        "context": "headache, weakness, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_101",
+      "type": "PharmEffect",
+      "name": "Clumsiness",
+      "attributes": {
+        "context": "Clumsiness, dizziness, excessive daytime drowsiness"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_102",
+      "type": "PharmEffect",
+      "name": "dizziness",
+      "attributes": {
+        "context": "Clumsiness, dizziness, excessive daytime drowsiness"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_103",
+      "type": "PharmEffect",
+      "name": "excessive daytime drowsiness",
+      "attributes": {
+        "context": "dizziness, excessive daytime drowsiness, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_104",
+      "type": "PharmEffect",
+      "name": "Confusion",
+      "attributes": {
+        "context": "Confusion, hallucinations, shallow breathing"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_105",
+      "type": "PharmEffect",
+      "name": "hallucinations",
+      "attributes": {
+        "context": "Confusion, hallucinations, shallow breathing"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_106",
+      "type": "PharmEffect",
+      "name": "shallow breathing",
+      "attributes": {
+        "context": "hallucinations, shallow breathing, weak pulse"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_107",
+      "type": "PharmEffect",
+      "name": "weak pulse",
+      "attributes": {
+        "context": "shallow breathing, weak pulse, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_108",
+      "type": "Compound",
+      "name": "barbiturates",
+      "attributes": {
+        "context": "interaction of barbiturates with GABAA receptors"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_109",
+      "type": "Compound",
+      "name": "GABAA receptors",
+      "attributes": {
+        "context": "barbiturates with GABAA receptors"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_110",
+      "type": "Compound",
+      "name": "GABA",
+      "attributes": {
+        "context": "dissociation of GABA from these receptors"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_111",
+      "type": "Compound",
+      "name": "chloride channels",
+      "attributes": {
+        "context": "opening of chloride channels"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_112",
+      "type": "Compound",
+      "name": "BZD",
+      "attributes": {
+        "context": "BZD"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_113",
+      "type": "Compound",
+      "name": "Alprazolam",
+      "attributes": {
+        "context": "Alprazolam"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_114",
+      "type": "Compound",
+      "name": "Clonazepam",
+      "attributes": {
+        "context": "Clonazepam"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_115",
+      "type": "Compound",
+      "name": "Diazepam",
+      "attributes": {
+        "context": "Diazepam"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_116",
+      "type": "Compound",
+      "name": "Lorazepam",
+      "attributes": {
+        "context": "Lorazepam"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_117",
+      "type": "PharmEffect",
+      "name": "Confusion",
+      "attributes": {
+        "context": "Confusion, hyperactivity, agitation"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_118",
+      "type": "PharmEffect",
+      "name": "hyperactivity",
+      "attributes": {
+        "context": "hyperactivity, agitation, hostility"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_119",
+      "type": "PharmEffect",
+      "name": "agitation",
+      "attributes": {
+        "context": "agitation, hostility, chest pain"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_120",
+      "type": "PharmEffect",
+      "name": "hostility",
+      "attributes": {
+        "context": "hostility, chest pain, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_121",
+      "type": "PharmEffect",
+      "name": "chest pain",
+      "attributes": {
+        "context": "hostility, chest pain, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_122",
+      "type": "PharmEffect",
+      "name": "Confusion",
+      "attributes": {
+        "context": "Confusion, hallucinations, painful or difficult urination"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_123",
+      "type": "PharmEffect",
+      "name": "hallucinations",
+      "attributes": {
+        "context": "hallucinations, painful or difficult urination, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_124",
+      "type": "PharmEffect",
+      "name": "painful or difficult urination",
+      "attributes": {
+        "context": "hallucinations, painful or difficult urination, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_125",
+      "type": "PharmEffect",
+      "name": "Sedation",
+      "attributes": {
+        "context": "Sedation, dependence, ataxia"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_126",
+      "type": "PharmEffect",
+      "name": "dependence",
+      "attributes": {
+        "context": "dependence, ataxia, amnesia"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_127",
+      "type": "PharmEffect",
+      "name": "ataxia",
+      "attributes": {
+        "context": "ataxia, amnesia, slurred speech"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_128",
+      "type": "PharmEffect",
+      "name": "amnesia",
+      "attributes": {
+        "context": "amnesia, slurred speech, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_129",
+      "type": "PharmEffect",
+      "name": "slurred speech",
+      "attributes": {
+        "context": "amnesia, slurred speech, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_130",
+      "type": "PharmEffect",
+      "name": "Drowsiness",
+      "attributes": {
+        "context": "Drowsiness, sleepiness, fatigue"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_131",
+      "type": "PharmEffect",
+      "name": "sleepiness",
+      "attributes": {
+        "context": "sleepiness, fatigue, confusion"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_132",
+      "type": "PharmEffect",
+      "name": "fatigue",
+      "attributes": {
+        "context": "fatigue, confusion, amnesia"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_133",
+      "type": "PharmEffect",
+      "name": "confusion",
+      "attributes": {
+        "context": "confusion, amnesia, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_134",
+      "type": "PharmEffect",
+      "name": "amnesia",
+      "attributes": {
+        "context": "confusion, amnesia, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_135",
+      "type": "Compound",
+      "name": "BZD",
+      "attributes": {
+        "context": "bind to BZD site of GABAA"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_136",
+      "type": "Compound",
+      "name": "GABAA",
+      "attributes": {
+        "context": "site of GABAA increasing the frequency"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_137",
+      "type": "Compound",
+      "name": "chloride channel",
+      "attributes": {
+        "context": "frequency of chloride channel opening"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_138",
+      "type": "PharmEffect",
+      "name": "inhibitory effect",
+      "attributes": {
+        "context": "potentiating inhibitory effect of GABA"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_139",
+      "type": "Compound",
+      "name": "GABA",
+      "attributes": {
+        "context": "inhibitory effect of GABA."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_140",
+      "type": "Compound",
+      "name": "Antihistamines",
+      "attributes": {
+        "context": "Antihistamines"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_141",
+      "type": "Compound",
+      "name": "Hydroxyzine",
+      "attributes": {
+        "context": "Hydroxyzine"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_142",
+      "type": "Compound",
+      "name": "Chlorpheniramine",
+      "attributes": {
+        "context": "Chlorpheniramine"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_143",
+      "type": "PharmEffect",
+      "name": "Dizziness",
+      "attributes": {
+        "context": "Dizziness, hypotension, constipation"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_144",
+      "type": "PharmEffect",
+      "name": "hypotension",
+      "attributes": {
+        "context": "hypotension, constipation, dry mouth"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_145",
+      "type": "PharmEffect",
+      "name": "constipation",
+      "attributes": {
+        "context": "constipation, dry mouth, confusion"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_146",
+      "type": "PharmEffect",
+      "name": "dry mouth",
+      "attributes": {
+        "context": "dry mouth, confusion, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_147",
+      "type": "PharmEffect",
+      "name": "confusion",
+      "attributes": {
+        "context": "dry mouth, confusion, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_148",
+      "type": "PharmEffect",
+      "name": "Constipation",
+      "attributes": {
+        "context": "Constipation, diarrhoea, dizziness"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_149",
+      "type": "PharmEffect",
+      "name": "diarrhoea",
+      "attributes": {
+        "context": "diarrhoea, dizziness, drowsiness"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_150",
+      "type": "PharmEffect",
+      "name": "dizziness",
+      "attributes": {
+        "context": "dizziness, drowsiness, dry mouth"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_151",
+      "type": "PharmEffect",
+      "name": "drowsiness",
+      "attributes": {
+        "context": "drowsiness, dry mouth, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_152",
+      "type": "PharmEffect",
+      "name": "dry mouth",
+      "attributes": {
+        "context": "drowsiness, dry mouth, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_153",
+      "type": "Compound",
+      "name": "Histamine H1 receptor antagonists",
+      "attributes": {
+        "context": "Histamine H1 receptor antagonists."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_154",
+      "type": "Compound",
+      "name": "Azapirone",
+      "attributes": {
+        "context": "Azapirone"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_155",
+      "type": "Compound",
+      "name": "Buspirone",
+      "attributes": {
+        "context": "Buspirone"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_156",
+      "type": "PharmEffect",
+      "name": "Dizziness",
+      "attributes": {
+        "context": "Dizziness, nausea, insomnia"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_157",
+      "type": "PharmEffect",
+      "name": "nausea",
+      "attributes": {
+        "context": "nausea, insomnia, nervousness"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_158",
+      "type": "PharmEffect",
+      "name": "insomnia",
+      "attributes": {
+        "context": "insomnia, nervousness, chest pain"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_159",
+      "type": "PharmEffect",
+      "name": "nervousness",
+      "attributes": {
+        "context": "nervousness, chest pain, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_160",
+      "type": "PharmEffect",
+      "name": "chest pain",
+      "attributes": {
+        "context": "nervousness, chest pain, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_161",
+      "type": "Compound",
+      "name": "5-HT1A receptor",
+      "attributes": {
+        "context": "Partial agonist of 5-HT1A receptor."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_162",
+      "type": "PharmEffect",
+      "name": "Anxiolytic",
+      "attributes": {
+        "context": "Anxiolytic and antidepressant drugs"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_163",
+      "type": "PharmEffect",
+      "name": "antidepressant",
+      "attributes": {
+        "context": "Anxiolytic and antidepressant drugs"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_164",
+      "type": "Compound",
+      "name": "MAOI",
+      "attributes": {
+        "context": "MAOI"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_165",
+      "type": "Compound",
+      "name": "Iproniazid",
+      "attributes": {
+        "context": "Iproniazid"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_166",
+      "type": "Compound",
+      "name": "Isocarboxazid",
+      "attributes": {
+        "context": "Isocarboxazid"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_167",
+      "type": "Compound",
+      "name": "Tranylcypromine",
+      "attributes": {
+        "context": "Tranylcypromine"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_168",
+      "type": "Compound",
+      "name": "Phenelzine",
+      "attributes": {
+        "context": "Phenelzine"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_169",
+      "type": "Compound",
+      "name": "Moclobemide",
+      "attributes": {
+        "context": "Moclobemide"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_170",
+      "type": "PharmEffect",
+      "name": "Sexual dysfunction",
+      "attributes": {
+        "context": "Sexual dysfunction, drowsiness, dry mouth"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_171",
+      "type": "PharmEffect",
+      "name": "drowsiness",
+      "attributes": {
+        "context": "drowsiness, dry mouth, itching"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_172",
+      "type": "PharmEffect",
+      "name": "dry mouth",
+      "attributes": {
+        "context": "dry mouth, itching, hepatitis"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_173",
+      "type": "PharmEffect",
+      "name": "itching",
+      "attributes": {
+        "context": "itching, hepatitis, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_174",
+      "type": "Indication",
+      "name": "hepatitis",
+      "attributes": {
+        "context": "itching, hepatitis, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_175",
+      "type": "PharmEffect",
+      "name": "Faintness",
+      "attributes": {
+        "context": "Faintness, numbness, orthostatic hypotension"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_176",
+      "type": "PharmEffect",
+      "name": "numbness",
+      "attributes": {
+        "context": "numbness, orthostatic hypotension, photophobia"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_177",
+      "type": "PharmEffect",
+      "name": "orthostatic hypotension",
+      "attributes": {
+        "context": "orthostatic hypotension, photophobia, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_178",
+      "type": "PharmEffect",
+      "name": "photophobia",
+      "attributes": {
+        "context": "orthostatic hypotension, photophobia, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_179",
+      "type": "PharmEffect",
+      "name": "Allergic reaction",
+      "attributes": {
+        "context": "Allergic reaction, tremor, blurred vision"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_180",
+      "type": "PharmEffect",
+      "name": "tremor",
+      "attributes": {
+        "context": "tremor, blurred vision, nausea"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_181",
+      "type": "PharmEffect",
+      "name": "blurred vision",
+      "attributes": {
+        "context": "blurred vision, nausea, vomiting"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_182",
+      "type": "PharmEffect",
+      "name": "nausea",
+      "attributes": {
+        "context": "nausea, vomiting, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_183",
+      "type": "PharmEffect",
+      "name": "vomiting",
+      "attributes": {
+        "context": "nausea, vomiting, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_184",
+      "type": "PharmEffect",
+      "name": "Dizziness",
+      "attributes": {
+        "context": "Dizziness, headache, constipation"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_185",
+      "type": "PharmEffect",
+      "name": "headache",
+      "attributes": {
+        "context": "headache, constipation, dry mouth"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_186",
+      "type": "PharmEffect",
+      "name": "constipation",
+      "attributes": {
+        "context": "constipation, dry mouth, hyperactive"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_187",
+      "type": "PharmEffect",
+      "name": "dry mouth",
+      "attributes": {
+        "context": "dry mouth, hyperactive, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_188",
+      "type": "PharmEffect",
+      "name": "hyperactive",
+      "attributes": {
+        "context": "dry mouth, hyperactive, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_189",
+      "type": "PharmEffect",
+      "name": "Irregular heartbeats",
+      "attributes": {
+        "context": "Irregular heartbeats, blurred vision, high blood pressure"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_190",
+      "type": "PharmEffect",
+      "name": "blurred vision",
+      "attributes": {
+        "context": "blurred vision, high blood pressure, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_191",
+      "type": "PharmEffect",
+      "name": "high blood pressure",
+      "attributes": {
+        "context": "blurred vision, high blood pressure, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_192",
+      "type": "Compound",
+      "name": "MAO-A",
+      "attributes": {
+        "context": "MAO-A and MAO-B inhibition"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_193",
+      "type": "Compound",
+      "name": "MAO-B",
+      "attributes": {
+        "context": "MAO-A and MAO-B inhibition"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_194",
+      "type": "PharmEffect",
+      "name": "inhibition",
+      "attributes": {
+        "context": "MAO-A and MAO-B inhibition"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_195",
+      "type": "Compound",
+      "name": "TCAs",
+      "attributes": {
+        "context": "TCAs"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_196",
+      "type": "Compound",
+      "name": "Imipramine",
+      "attributes": {
+        "context": "Imipramine"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_197",
+      "type": "Compound",
+      "name": "Desipramine",
+      "attributes": {
+        "context": "Desipramine"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_198",
+      "type": "Compound",
+      "name": "Clomipramine",
+      "attributes": {
+        "context": "Clomipramine"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_199",
+      "type": "Compound",
+      "name": "Amitriptyline",
+      "attributes": {
+        "context": "Amitriptyline"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_200",
+      "type": "Compound",
+      "name": "Nortriptyline",
+      "attributes": {
+        "context": "Nortriptyline"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_201",
+      "type": "PharmEffect",
+      "name": "Dizziness",
+      "attributes": {
+        "context": "Dizziness, impotence, dry mouth"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_202",
+      "type": "PharmEffect",
+      "name": "impotence",
+      "attributes": {
+        "context": "impotence, dry mouth, nightmares"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_203",
+      "type": "PharmEffect",
+      "name": "dry mouth",
+      "attributes": {
+        "context": "dry mouth, nightmares, pupil dilation"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_204",
+      "type": "PharmEffect",
+      "name": "nightmares",
+      "attributes": {
+        "context": "nightmares, pupil dilation, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_205",
+      "type": "PharmEffect",
+      "name": "pupil dilation",
+      "attributes": {
+        "context": "nightmares, pupil dilation, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_206",
+      "type": "PharmEffect",
+      "name": "Constipation",
+      "attributes": {
+        "context": "Constipation, diarrhoea, dizziness"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_207",
+      "type": "PharmEffect",
+      "name": "diarrhoea",
+      "attributes": {
+        "context": "diarrhoea, dizziness, dry mouth"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_208",
+      "type": "PharmEffect",
+      "name": "dizziness",
+      "attributes": {
+        "context": "dizziness, dry mouth, weight changes"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_209",
+      "type": "PharmEffect",
+      "name": "dry mouth",
+      "attributes": {
+        "context": "dry mouth, weight changes, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_210",
+      "type": "PharmEffect",
+      "name": "weight changes",
+      "attributes": {
+        "context": "dry mouth, weight changes, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_211",
+      "type": "PharmEffect",
+      "name": "Drowsiness",
+      "attributes": {
+        "context": "Drowsiness, dry mouth, headache"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_212",
+      "type": "PharmEffect",
+      "name": "dry mouth",
+      "attributes": {
+        "context": "dry mouth, headache, irritability"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_213",
+      "type": "PharmEffect",
+      "name": "headache",
+      "attributes": {
+        "context": "headache, irritability, tiredness"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_214",
+      "type": "PharmEffect",
+      "name": "irritability",
+      "attributes": {
+        "context": "irritability, tiredness, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_215",
+      "type": "PharmEffect",
+      "name": "tiredness",
+      "attributes": {
+        "context": "irritability, tiredness, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_216",
+      "type": "PharmEffect",
+      "name": "Chest pain",
+      "attributes": {
+        "context": "Chest pain, sweating, general ill feeling"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_217",
+      "type": "PharmEffect",
+      "name": "sweating",
+      "attributes": {
+        "context": "sweating, general ill feeling, numbness"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_218",
+      "type": "PharmEffect",
+      "name": "general ill feeling",
+      "attributes": {
+        "context": "general ill feeling, numbness, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_219",
+      "type": "PharmEffect",
+      "name": "numbness",
+      "attributes": {
+        "context": "general ill feeling, numbness, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_220",
+      "type": "PharmEffect",
+      "name": "Agitation",
+      "attributes": {
+        "context": "Agitation, hallucinations, overactive reflexes"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_221",
+      "type": "PharmEffect",
+      "name": "hallucinations",
+      "attributes": {
+        "context": "hallucinations, overactive reflexes, confusion"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_222",
+      "type": "PharmEffect",
+      "name": "overactive reflexes",
+      "attributes": {
+        "context": "overactive reflexes, confusion, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_223",
+      "type": "PharmEffect",
+      "name": "confusion",
+      "attributes": {
+        "context": "overactive reflexes, confusion, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_224",
+      "type": "PharmEffect",
+      "name": "Inhibition of reuptake",
+      "attributes": {
+        "context": "Inhibition of 5-HT and NE reuptake"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_225",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "Inhibition of 5-HT and NE reuptake"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_226",
+      "type": "Compound",
+      "name": "NE",
+      "attributes": {
+        "context": "5-HT and NE reuptake by blocking the SERT and NET."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_227",
+      "type": "Compound",
+      "name": "SERT",
+      "attributes": {
+        "context": "blocking the SERT and NET."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_228",
+      "type": "Compound",
+      "name": "NET",
+      "attributes": {
+        "context": "blocking the SERT and NET."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_229",
+      "type": "Compound",
+      "name": "SSRIs",
+      "attributes": {
+        "context": "SSRIs"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_230",
+      "type": "Compound",
+      "name": "Fluoxetine",
+      "attributes": {
+        "context": "Fluoxetine"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_231",
+      "type": "Compound",
+      "name": "Paroxetine",
+      "attributes": {
+        "context": "Paroxetine"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_232",
+      "type": "Compound",
+      "name": "Sertraline",
+      "attributes": {
+        "context": "Sertraline"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_233",
+      "type": "Compound",
+      "name": "Citalopram",
+      "attributes": {
+        "context": "Citalopram"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_234",
+      "type": "Compound",
+      "name": "Fluvoxamine",
+      "attributes": {
+        "context": "Fluvoxamine"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_235",
+      "type": "PharmEffect",
+      "name": "Nausea",
+      "attributes": {
+        "context": "Nausea, vomiting, diarrhoea"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_236",
+      "type": "PharmEffect",
+      "name": "vomiting",
+      "attributes": {
+        "context": "vomiting, diarrhoea, sweating"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_237",
+      "type": "PharmEffect",
+      "name": "diarrhoea",
+      "attributes": {
+        "context": "diarrhoea, sweating, confusion"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_238",
+      "type": "PharmEffect",
+      "name": "sweating",
+      "attributes": {
+        "context": "sweating, confusion, agitation"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_239",
+      "type": "PharmEffect",
+      "name": "confusion",
+      "attributes": {
+        "context": "confusion, agitation, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_240",
+      "type": "PharmEffect",
+      "name": "agitation",
+      "attributes": {
+        "context": "confusion, agitation, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_241",
+      "type": "PharmEffect",
+      "name": "Sexual dysfunction",
+      "attributes": {
+        "context": "Sexual dysfunction, heartburn, runny or stuffy nose"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_242",
+      "type": "PharmEffect",
+      "name": "heartburn",
+      "attributes": {
+        "context": "heartburn, runny or stuffy nose, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_243",
+      "type": "PharmEffect",
+      "name": "runny or stuffy nose",
+      "attributes": {
+        "context": "heartburn, runny or stuffy nose, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_244",
+      "type": "PharmEffect",
+      "name": "Decreased appetite",
+      "attributes": {
+        "context": "Decreased appetite or weight loss, diarrhoea"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_245",
+      "type": "PharmEffect",
+      "name": "weight loss",
+      "attributes": {
+        "context": "weight loss, diarrhoea or loose stools"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_246",
+      "type": "PharmEffect",
+      "name": "diarrhoea",
+      "attributes": {
+        "context": "diarrhoea or loose stools, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_247",
+      "type": "PharmEffect",
+      "name": "loose stools",
+      "attributes": {
+        "context": "diarrhoea or loose stools, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_248",
+      "type": "PharmEffect",
+      "name": "Sexual dysfunction",
+      "attributes": {
+        "context": "Sexual dysfunction, sleepiness or unusual drowsiness"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_249",
+      "type": "PharmEffect",
+      "name": "sleepiness",
+      "attributes": {
+        "context": "sleepiness or unusual drowsiness, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_250",
+      "type": "PharmEffect",
+      "name": "unusual drowsiness",
+      "attributes": {
+        "context": "sleepiness or unusual drowsiness, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_251",
+      "type": "PharmEffect",
+      "name": "Constipation",
+      "attributes": {
+        "context": "Constipation, headache, tiredness"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_252",
+      "type": "PharmEffect",
+      "name": "headache",
+      "attributes": {
+        "context": "headache, tiredness, sexual dysfunction"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_253",
+      "type": "PharmEffect",
+      "name": "tiredness",
+      "attributes": {
+        "context": "tiredness, sexual dysfunction, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_254",
+      "type": "PharmEffect",
+      "name": "sexual dysfunction",
+      "attributes": {
+        "context": "tiredness, sexual dysfunction, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_255",
+      "type": "PharmEffect",
+      "name": "Selective inhibition of 5-HT reuptake",
+      "attributes": {
+        "context": "Selective inhibition of 5-HT reuptake"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_256",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "Selective inhibition of 5-HT reuptake"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_257",
+      "type": "PharmEffect",
+      "name": "Antagonist",
+      "attributes": {
+        "context": "Antagonist/reuptake inhibitor"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_258",
+      "type": "PharmEffect",
+      "name": "reuptake inhibitor",
+      "attributes": {
+        "context": "Antagonist/reuptake inhibitor"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_259",
+      "type": "Compound",
+      "name": "Nefazodone",
+      "attributes": {
+        "context": "Nefazodone"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_260",
+      "type": "Indication",
+      "name": "Hepatic failure",
+      "attributes": {
+        "context": "Hepatic failure, nausea, blurred vision"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_261",
+      "type": "PharmEffect",
+      "name": "nausea",
+      "attributes": {
+        "context": "nausea, blurred vision, postural hypotension"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_262",
+      "type": "PharmEffect",
+      "name": "blurred vision",
+      "attributes": {
+        "context": "blurred vision, postural hypotension, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_263",
+      "type": "PharmEffect",
+      "name": "postural hypotension",
+      "attributes": {
+        "context": "blurred vision, postural hypotension, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_264",
+      "type": "Compound",
+      "name": "5-HT2 receptors",
+      "attributes": {
+        "context": "Blocks 5-HT2 receptors and inhibits neuronal reuptake"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_265",
+      "type": "PharmEffect",
+      "name": "inhibits neuronal reuptake",
+      "attributes": {
+        "context": "inhibits neuronal reuptake of 5-HT and NE"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_266",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "reuptake of 5-HT and NE to prolong their concentration"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_267",
+      "type": "Compound",
+      "name": "NE",
+      "attributes": {
+        "context": "reuptake of 5-HT and NE to prolong their concentration"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_268",
+      "type": "Compound",
+      "name": "\\alpha_2-antagonist",
+      "attributes": {
+        "context": "\\alpha_2-antagonist"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_269",
+      "type": "Compound",
+      "name": "Mirtazapine",
+      "attributes": {
+        "context": "Mirtazapine"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_270",
+      "type": "PharmEffect",
+      "name": "Agitation",
+      "attributes": {
+        "context": "Agitation, hallucinations, fever"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_271",
+      "type": "PharmEffect",
+      "name": "hallucinations",
+      "attributes": {
+        "context": "hallucinations, fever, headache"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_272",
+      "type": "PharmEffect",
+      "name": "fever",
+      "attributes": {
+        "context": "fever, headache, loss of coordination"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_273",
+      "type": "PharmEffect",
+      "name": "headache",
+      "attributes": {
+        "context": "headache, loss of coordination, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_274",
+      "type": "PharmEffect",
+      "name": "loss of coordination",
+      "attributes": {
+        "context": "headache, loss of coordination, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_275",
+      "type": "PharmEffect",
+      "name": "Enhances monoaminergic function",
+      "attributes": {
+        "context": "Enhances monoaminergic function by presynaptic \\alpha_2-receptor blockade"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_276",
+      "type": "Compound",
+      "name": "\\alpha_2-receptor",
+      "attributes": {
+        "context": "presynaptic \\alpha_2-receptor blockade to disinhibit 5-HT and NE release"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_277",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "disinhibit 5-HT and NE release"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_278",
+      "type": "Compound",
+      "name": "NE",
+      "attributes": {
+        "context": "disinhibit 5-HT and NE release"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_279",
+      "type": "Compound",
+      "name": "SNRI",
+      "attributes": {
+        "context": "SNRI"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_280",
+      "type": "Compound",
+      "name": "Venlafaxine",
+      "attributes": {
+        "context": "Venlafaxine"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_281",
+      "type": "Compound",
+      "name": "Duloxetine",
+      "attributes": {
+        "context": "Duloxetine"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_282",
+      "type": "PharmEffect",
+      "name": "Nausea",
+      "attributes": {
+        "context": "Nausea, dry mouth, dizziness"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_283",
+      "type": "PharmEffect",
+      "name": "dry mouth",
+      "attributes": {
+        "context": "dry mouth, dizziness, decreased libido"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_284",
+      "type": "PharmEffect",
+      "name": "dizziness",
+      "attributes": {
+        "context": "dizziness, decreased libido, delirium"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_285",
+      "type": "PharmEffect",
+      "name": "decreased libido",
+      "attributes": {
+        "context": "decreased libido, delirium, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_286",
+      "type": "PharmEffect",
+      "name": "delirium",
+      "attributes": {
+        "context": "decreased libido, delirium, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_287",
+      "type": "PharmEffect",
+      "name": "Tremors",
+      "attributes": {
+        "context": "Tremors, convulsions, reduced activity"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_288",
+      "type": "PharmEffect",
+      "name": "convulsions",
+      "attributes": {
+        "context": "convulsions, reduced activity, slow pupillary response"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_289",
+      "type": "PharmEffect",
+      "name": "reduced activity",
+      "attributes": {
+        "context": "reduced activity, slow pupillary response, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_290",
+      "type": "PharmEffect",
+      "name": "slow pupillary response",
+      "attributes": {
+        "context": "reduced activity, slow pupillary response, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_291",
+      "type": "PharmEffect",
+      "name": "Enhances monoaminergic function",
+      "attributes": {
+        "context": "Enhances monoaminergic function by inhibiting neuronal reuptake"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_292",
+      "type": "PharmEffect",
+      "name": "inhibiting neuronal reuptake",
+      "attributes": {
+        "context": "inhibiting neuronal reuptake of 5-HT and NE"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_293",
+      "type": "Compound",
+      "name": "5-HT",
+      "attributes": {
+        "context": "reuptake of 5-HT and NE"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_294",
+      "type": "Compound",
+      "name": "NE",
+      "attributes": {
+        "context": "reuptake of 5-HT and NE"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_295",
+      "type": "Compound",
+      "name": "NDRI",
+      "attributes": {
+        "context": "NDRI/ATCA"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_296",
+      "type": "Compound",
+      "name": "ATCA",
+      "attributes": {
+        "context": "NDRI/ATCA"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_297",
+      "type": "Compound",
+      "name": "Amineptine",
+      "attributes": {
+        "context": "Amineptine"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_298",
+      "type": "Compound",
+      "name": "Bupropion",
+      "attributes": {
+        "context": "Bupropion"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_299",
+      "type": "PharmEffect",
+      "name": "Acne",
+      "attributes": {
+        "context": "Acne, nervousness, insomnia"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_300",
+      "type": "PharmEffect",
+      "name": "nervousness",
+      "attributes": {
+        "context": "nervousness, insomnia, suicidal tendency"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_301",
+      "type": "PharmEffect",
+      "name": "insomnia",
+      "attributes": {
+        "context": "insomnia, suicidal tendency, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_302",
+      "type": "PharmEffect",
+      "name": "suicidal tendency",
+      "attributes": {
+        "context": "insomnia, suicidal tendency, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_303",
+      "type": "PharmEffect",
+      "name": "Headache",
+      "attributes": {
+        "context": "Headache, insomnia, dysphoria"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_304",
+      "type": "PharmEffect",
+      "name": "insomnia",
+      "attributes": {
+        "context": "insomnia, dysphoria, seizure"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_305",
+      "type": "PharmEffect",
+      "name": "dysphoria",
+      "attributes": {
+        "context": "dysphoria, seizure, dry mouth"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_306",
+      "type": "PharmEffect",
+      "name": "seizure",
+      "attributes": {
+        "context": "seizure, dry mouth, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_307",
+      "type": "PharmEffect",
+      "name": "dry mouth",
+      "attributes": {
+        "context": "seizure, dry mouth, etc."
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_308",
+      "type": "PharmEffect",
+      "name": "Enhances monoaminergic function",
+      "attributes": {
+        "context": "Enhances monoaminergic function by inhibiting neuronal reuptake"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_309",
+      "type": "PharmEffect",
+      "name": "inhibiting neuronal reuptake",
+      "attributes": {
+        "context": "inhibiting neuronal reuptake of DA and NE"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_310",
+      "type": "Compound",
+      "name": "DA",
+      "attributes": {
+        "context": "reuptake of DA and NE"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_311",
+      "type": "Compound",
+      "name": "NE",
+      "attributes": {
+        "context": "reuptake of DA and NE"
+      },
+      "source_chunk_ids": [
+        "58b24168dca30f6cbba16c77c85187e7"
+      ]
+    },
+    {
+      "id": "ent_312",
+      "type": "Compound",
+      "name": "molecules",
+      "attributes": {
+        "context": "source of new molecules"
+      },
+      "source_chunk_ids": [
+        "f923db9dee62ddf144b7e58f921b00a7"
+      ]
+    },
+    {
+      "id": "ent_313",
+      "type": "PharmEffect",
+      "name": "psychoactive",
+      "attributes": {
+        "context": "development of psychoactive drugs"
+      },
+      "source_chunk_ids": [
+        "2e2bea9b18eb6b860868c7f25ac34d47"
+      ]
+    },
+    {
+      "id": "ent_314",
+      "type": "Taxon",
+      "name": "medicinal plants",
+      "attributes": {
+        "context": "popularly acclaimed medicinal plants"
+      },
+      "source_chunk_ids": [
+        "e482a24a47198cb39a22ec09fb075052"
+      ]
+    },
+    {
+      "id": "ent_315",
+      "type": "Taxon",
+      "name": "plant species",
+      "attributes": {
+        "context": "isolated from plant species"
+      },
+      "source_chunk_ids": [
+        "e482a24a47198cb39a22ec09fb075052"
+      ]
+    },
+    {
+      "id": "ent_316",
+      "type": "PharmEffect",
+      "name": "psychoactive properties",
+      "attributes": {
+        "context": "plants with psychoactive properties"
+      },
+      "source_chunk_ids": [
+        "e482a24a47198cb39a22ec09fb075052"
+      ]
+    },
+    {
+      "id": "ent_317",
+      "type": "Indication",
+      "name": "emotional disorders",
+      "attributes": {
+        "context": "alleviating certain emotional disorders"
+      },
+      "source_chunk_ids": [
+        "e482a24a47198cb39a22ec09fb075052"
+      ]
+    },
+    {
+      "id": "ent_318",
+      "type": "Indication",
+      "name": "psychiatric disorders",
+      "attributes": {
+        "context": "treatment of different kinds of psychiatric disorders"
+      },
+      "source_chunk_ids": [
+        "e482a24a47198cb39a22ec09fb075052"
+      ]
+    },
+    {
+      "id": "ent_319",
+      "type": "Indication",
+      "name": "CNS disorders",
+      "attributes": {
+        "context": "for various CNS disorders"
+      },
+      "source_chunk_ids": [
+        "e482a24a47198cb39a22ec09fb075052"
+      ]
+    },
+    {
+      "id": "ent_320",
+      "type": "Indication",
+      "name": "cancer",
+      "attributes": {
+        "context": "drugs in the areas of cancer"
+      },
+      "source_chunk_ids": [
+        "3e8461c5df8320d9c5b82a26415944eb"
+      ]
+    },
+    {
+      "id": "ent_321",
+      "type": "Indication",
+      "name": "infectious diseases",
+      "attributes": {
+        "context": "and infectious diseases"
+      },
+      "source_chunk_ids": [
+        "3e8461c5df8320d9c5b82a26415944eb"
+      ]
+    },
+    {
+      "id": "ent_322",
+      "type": "Compound",
+      "name": "saponins",
+      "attributes": {
+        "context": "phytochemicals such as saponins"
+      },
+      "source_chunk_ids": [
+        "9763029b8070c29f39b77350bdc3aafa"
+      ]
+    },
+    {
+      "id": "ent_323",
+      "type": "Compound",
+      "name": "alkaloids",
+      "attributes": {
+        "context": "phytochemicals such as ... alkaloids"
+      },
+      "source_chunk_ids": [
+        "9763029b8070c29f39b77350bdc3aafa"
+      ]
+    },
+    {
+      "id": "ent_324",
+      "type": "Compound",
+      "name": "polyphenols",
+      "attributes": {
+        "context": "phytochemicals such as ... polyphenols"
+      },
+      "source_chunk_ids": [
+        "9763029b8070c29f39b77350bdc3aafa"
+      ]
+    },
+    {
+      "id": "ent_325",
+      "type": "Compound",
+      "name": "triterpenoid",
+      "attributes": {
+        "context": "phytochemicals such as ... triterpenoid"
+      },
+      "source_chunk_ids": [
+        "9763029b8070c29f39b77350bdc3aafa"
+      ]
+    },
+    {
+      "id": "ent_326",
+      "type": "Compound",
+      "name": "essential oil",
+      "attributes": {
+        "context": "phytochemicals such as ... essential oil"
+      },
+      "source_chunk_ids": [
+        "9763029b8070c29f39b77350bdc3aafa"
+      ]
+    },
+    {
+      "id": "ent_327",
+      "type": "Compound",
+      "name": "fatty acid",
+      "attributes": {
+        "context": "phytochemicals such as ... fatty acid"
+      },
+      "source_chunk_ids": [
+        "9763029b8070c29f39b77350bdc3aafa"
+      ]
+    },
+    {
+      "id": "ent_328",
+      "type": "Compound",
+      "name": "flavonoids",
+      "attributes": {
+        "context": "phytochemicals such as ... flavonoids"
+      },
+      "source_chunk_ids": [
+        "9763029b8070c29f39b77350bdc3aafa"
+      ]
+    },
+    {
+      "id": "ent_329",
+      "type": "PharmEffect",
+      "name": "anxiolytic-like effects",
+      "attributes": {
+        "context": "possess anxiolytic- and antidepressant-like effects"
+      },
+      "source_chunk_ids": [
+        "9763029b8070c29f39b77350bdc3aafa"
+      ]
+    },
+    {
+      "id": "ent_330",
+      "type": "PharmEffect",
+      "name": "antidepressant-like effects",
+      "attributes": {
+        "context": "possess anxiolytic- and antidepressant-like effects"
+      },
+      "source_chunk_ids": [
+        "9763029b8070c29f39b77350bdc3aafa"
+      ]
+    },
+    {
+      "id": "ent_331",
+      "type": "PharmEffect",
+      "name": "anxiolytic activities",
+      "attributes": {
+        "context": "new drugs with anxiolytic and antidepressant activities"
+      },
+      "source_chunk_ids": [
+        "9763029b8070c29f39b77350bdc3aafa"
+      ]
+    },
+    {
+      "id": "ent_332",
+      "type": "PharmEffect",
+      "name": "antidepressant activities",
+      "attributes": {
+        "context": "new drugs with anxiolytic and antidepressant activities"
+      },
+      "source_chunk_ids": [
+        "9763029b8070c29f39b77350bdc3aafa"
+      ]
+    },
+    {
+      "id": "ent_333",
+      "type": "Compound",
+      "name": "chemicals entities",
+      "attributes": {
+        "context": "10 new chemicals entities"
+      },
+      "source_chunk_ids": [
+        "9763029b8070c29f39b77350bdc3aafa"
+      ]
+    },
+    {
+      "id": "ent_334",
+      "type": "PharmEffect",
+      "name": "anxiolytic activity",
+      "attributes": {
+        "context": "chemicals entities with anxiolytic activity"
+      },
+      "source_chunk_ids": [
+        "9763029b8070c29f39b77350bdc3aafa"
+      ]
+    },
+    {
+      "id": "ent_335",
+      "type": "PharmEffect",
+      "name": "antidepressant activity",
+      "attributes": {
+        "context": "21 with antidepressant activity"
+      },
+      "source_chunk_ids": [
+        "9763029b8070c29f39b77350bdc3aafa"
+      ]
+    },
+    {
+      "id": "ent_336",
+      "type": "Compound",
+      "name": "D-(-)-Morphine",
+      "attributes": {
+        "context": "D-(-)-MorphineMolecular Formula: C17H19NO3Average mass: 285.338 Da"
+      },
+      "source_chunk_ids": [
+        "c62d8402faa570fe2e52fd62d3c119ee"
+      ]
+    },
+    {
+      "id": "ent_337",
+      "type": "Compound",
+      "name": "Cocaine",
+      "attributes": {
+        "context": "CocaineMolecular Formula: C17H21NO4Average mass: 303.353 Da"
+      },
+      "source_chunk_ids": [
+        "c62d8402faa570fe2e52fd62d3c119ee"
+      ]
+    },
+    {
+      "id": "ent_338",
+      "type": "Compound",
+      "name": "Scopolamine",
+      "attributes": {
+        "context": "ScopolamineMolecular Formula: C17H21NO4Average mass: 303.353 Da"
+      },
+      "source_chunk_ids": [
+        "c62d8402faa570fe2e52fd62d3c119ee"
+      ]
+    },
+    {
+      "id": "ent_339",
+      "type": "Compound",
+      "name": "Ephedrine",
+      "attributes": {
+        "context": "EphedrineMolecular Formula: C10H15NOAverage mass: 165.232 Da"
+      },
+      "source_chunk_ids": [
+        "c62d8402faa570fe2e52fd62d3c119ee"
+      ]
+    },
+    {
+      "id": "ent_340",
+      "type": "Compound",
+      "name": "(-)-Strychnine",
+      "attributes": {
+        "context": "(-)-StrychnineMolecular Formula: C21H22N2O2Average mass: 334.412 Da"
+      },
+      "source_chunk_ids": [
+        "c62d8402faa570fe2e52fd62d3c119ee"
+      ]
+    },
+    {
+      "id": "ent_341",
+      "type": "Compound",
+      "name": "Psilocybin",
+      "attributes": {
+        "context": "PsilocybinMolecular Formula: C12H17N2O4PAverage mass: 284.248 Da"
+      },
+      "source_chunk_ids": [
+        "c62d8402faa570fe2e52fd62d3c119ee"
+      ]
+    },
+    {
+      "id": "ent_342",
+      "type": "Compound",
+      "name": "(-)-Galanthamine",
+      "attributes": {
+        "context": "(-)-GalanthamineMolecular Formula: C17H21NO3Average mass: 287.353 Da"
+      },
+      "source_chunk_ids": [
+        "c62d8402faa570fe2e52fd62d3c119ee"
+      ]
+    },
+    {
+      "id": "ent_343",
+      "type": "Compound",
+      "name": "Hypericin",
+      "attributes": {
+        "context": "HypericinMolecular Formula: C30H16O8Average mass: 504.443 Da"
+      },
+      "source_chunk_ids": [
+        "c62d8402faa570fe2e52fd62d3c119ee"
+      ]
+    },
+    {
+      "id": "ent_344",
+      "type": "Compound",
+      "name": "Hyperforin",
+      "attributes": {
+        "context": "HyperforinMolecular Formula: C35H52O4Average mass: 536.785 Da"
+      },
+      "source_chunk_ids": [
+        "c62d8402faa570fe2e52fd62d3c119ee"
+      ]
+    },
+    {
+      "id": "ent_345",
+      "type": "Compound",
+      "name": "\\gamma-aminobutyric acid",
+      "attributes": {
+        "context": "GABA \u2013 \\gamma-aminobutyric acid"
+      },
+      "source_chunk_ids": [
+        "b443f84e593ff6a5adc52031e9e6a1b0"
+      ]
+    },
+    {
+      "id": "ent_346",
+      "type": "Compound",
+      "name": "Monoamine oxidase inhibitor",
+      "attributes": {
+        "context": "MAOI \u2013 Monoamine oxidase inhibitor"
+      },
+      "source_chunk_ids": [
+        "b443f84e593ff6a5adc52031e9e6a1b0"
+      ]
+    },
+    {
+      "id": "ent_347",
+      "type": "Compound",
+      "name": "norepinephrine\u2013dopamine reuptake inhibitor",
+      "attributes": {
+        "context": "NDRI \u2013 norepinephrine\u2013dopamine reuptake inhibitor"
+      },
+      "source_chunk_ids": [
+        "b443f84e593ff6a5adc52031e9e6a1b0"
+      ]
+    },
+    {
+      "id": "ent_348",
+      "type": "Compound",
+      "name": "norepinephrine",
+      "attributes": {
+        "context": "NE \u2013 norepinephrine"
+      },
+      "source_chunk_ids": [
+        "b443f84e593ff6a5adc52031e9e6a1b0"
+      ]
+    },
+    {
+      "id": "ent_349",
+      "type": "Compound",
+      "name": "serotonin\u2013norepinephrine reuptake inhibitor",
+      "attributes": {
+        "context": "SNRI \u2013 serotonin\u2013norepinephrine reuptake inhibitor"
+      },
+      "source_chunk_ids": [
+        "b443f84e593ff6a5adc52031e9e6a1b0"
+      ]
+    },
+    {
+      "id": "ent_350",
+      "type": "Compound",
+      "name": "selective serotonin reuptake inhibitor",
+      "attributes": {
+        "context": "SSRI \u2013 selective serotonin reuptake inhibitor"
+      },
+      "source_chunk_ids": [
+        "b443f84e593ff6a5adc52031e9e6a1b0"
+      ]
+    },
+    {
+      "id": "ent_351",
+      "type": "Taxon",
+      "name": "Hypericum perforatum",
+      "attributes": {
+        "context": "SJW \u2013 St. John's Wort"
+      },
+      "source_chunk_ids": [
+        "b443f84e593ff6a5adc52031e9e6a1b0"
+      ]
+    },
+    {
+      "id": "ent_352",
+      "type": "Compound",
+      "name": "tricyclic antidepressants",
+      "attributes": {
+        "context": "TCA \u2013 tricyclic antidepressants"
+      },
+      "source_chunk_ids": [
+        "b443f84e593ff6a5adc52031e9e6a1b0"
+      ]
+    },
+    {
+      "id": "ent_353",
+      "type": "Taxon",
+      "name": "plantes m\u00e9dicinales",
+      "attributes": {
+        "context": "La prospection des plantes m\u00e9dicinales"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_354",
+      "type": "PharmEffect",
+      "name": "prospection des plantes m\u00e9dicinales",
+      "attributes": {
+        "context": "La prospection des plantes m\u00e9dicinales"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_355",
+      "type": "PharmEffect",
+      "name": "Biodiversity prospecting",
+      "attributes": {
+        "context": "Biodiversity prospecting and benefit-sharing"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_356",
+      "type": "Taxon",
+      "name": "plant material",
+      "attributes": {
+        "context": "evaluation of plant material"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_357",
+      "type": "PharmEffect",
+      "name": "pharmacological evaluation",
+      "attributes": {
+        "context": "pharmacological evaluation of plant material"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_358",
+      "type": "Compound",
+      "name": "novos f\u00e1rmacos",
+      "attributes": {
+        "context": "descoberta de novos f\u00e1rmacos"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_359",
+      "type": "Indication",
+      "name": "anxiety",
+      "attributes": {
+        "context": "The age of anxiety"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_360",
+      "type": "PharmEffect",
+      "name": "anxiolytic action",
+      "attributes": {
+        "context": "animal models of anxiolytic action"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_361",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "Modeling depression in animal models"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_362",
+      "type": "Indication",
+      "name": "anxiety",
+      "attributes": {
+        "context": "Plurality of anxiety and depression"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_363",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "anxiety and depression alteration mechanism"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_364",
+      "type": "Compound",
+      "name": "oleanolic acid",
+      "attributes": {
+        "context": "mechanism by oleanolic acid"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_365",
+      "type": "Indication",
+      "name": "Anxiety Attacks",
+      "attributes": {
+        "context": "Anxiety Attacks and Disorders"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_366",
+      "type": "Indication",
+      "name": "anxiety disorders",
+      "attributes": {
+        "context": "individuals with anxiety disorders"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_367",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "Treating depression and anxiety"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_368",
+      "type": "Indication",
+      "name": "anxiety",
+      "attributes": {
+        "context": "and anxiety in primary care"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_369",
+      "type": "Indication",
+      "name": "diseases",
+      "attributes": {
+        "context": "global burden of disease"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_370",
+      "type": "Indication",
+      "name": "mental disorders",
+      "attributes": {
+        "context": "manual of mental disorders"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_371",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "Neurobiology of depression"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_372",
+      "type": "Indication",
+      "name": "mood disorders",
+      "attributes": {
+        "context": "abnormalities in mood disorders"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_373",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "models of depression"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_374",
+      "type": "Indication",
+      "name": "stress-related mood disorders",
+      "attributes": {
+        "context": "model for stress-related mood disorders"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_375",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "neurobiology of depression"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_376",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "structure in depression"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_377",
+      "type": "Indication",
+      "name": "stress",
+      "attributes": {
+        "context": "brain in stress and adaptation"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_378",
+      "type": "Indication",
+      "name": "disease",
+      "attributes": {
+        "context": "health, and disease"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_379",
+      "type": "PharmEffect",
+      "name": "anxiolytic-like effects",
+      "attributes": {
+        "context": "Potential anxiolytic- and antidepressant-like effects"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_380",
+      "type": "PharmEffect",
+      "name": "antidepressant-like effects",
+      "attributes": {
+        "context": "anxiolytic- and antidepressant-like effects"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_381",
+      "type": "Compound",
+      "name": "MPEP",
+      "attributes": {
+        "context": "effects of MPEP"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_382",
+      "type": "Compound",
+      "name": "mGlu5 receptor antagonist",
+      "attributes": {
+        "context": "systemically active mGlu5 receptor antagonist"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_383",
+      "type": "Compound",
+      "name": "antidepressant drugs",
+      "attributes": {
+        "context": "development of antidepressant drugs"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_384",
+      "type": "Compound",
+      "name": "antidepressivos",
+      "attributes": {
+        "context": "Psicofarmacologia de antidepressivos"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_385",
+      "type": "Compound",
+      "name": "psychotropic drugs",
+      "attributes": {
+        "context": "handbook of psychotropic drugs"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_386",
+      "type": "Indication",
+      "name": "depressive disorders",
+      "attributes": {
+        "context": "treatment of depressive disorders"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_387",
+      "type": "Indication",
+      "name": "anxiety disorders",
+      "attributes": {
+        "context": "treatment of anxiety disorders"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_388",
+      "type": "Compound",
+      "name": "Iproniazid",
+      "attributes": {
+        "context": "Iproniazid. Drug Discovery"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_389",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {
+        "context": "Assessment of the serotonin and norepinephrine"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_390",
+      "type": "Compound",
+      "name": "norepinephrine",
+      "attributes": {
+        "context": "and norepinephrine reuptake blocking properties"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_391",
+      "type": "Compound",
+      "name": "duloxetine",
+      "attributes": {
+        "context": "properties of duloxetine"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_392",
+      "type": "PharmEffect",
+      "name": "reuptake blocking properties",
+      "attributes": {
+        "context": "norepinephrine reuptake blocking properties"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_393",
+      "type": "Compound",
+      "name": "antidepressants",
+      "attributes": {
+        "context": "psychopharmacology of antidepressants"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_394",
+      "type": "Indication",
+      "name": "psychiatric disorders",
+      "attributes": {
+        "context": "treatment of psychiatric disorders"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_395",
+      "type": "Indication",
+      "name": "depression",
+      "attributes": {
+        "context": "psychiatric disorders: depression"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    },
+    {
+      "id": "ent_396",
+      "type": "Indication",
+      "name": "anxiety disorders",
+      "attributes": {
+        "context": "and anxiety disorders"
+      },
+      "source_chunk_ids": [
+        "359d38e38cdb250187428088f10620b6"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:03.967092+00:00",
+    "original_file": "entities.json"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "schema_version": "2.0",
+  "doc_id": "2fd18cfd61b7a161327d0af92ec81f4197ff2565529d42b90d1d3439838878df",
+  "extracted_at": "2026-02-01T08:45:57.420063+00:00",
+  "extractor": "legacy-migration",
+  "entities": [
+    {
+      "id": "ent_001",
+      "type": "Indication",
+      "name": "stomach ache",
+      "attributes": {
+        "context": "used to treat stomach ache"
+      },
+      "source_chunk_ids": [
+        "e0d1a14bbf07c22f5df24d00616a389f"
+      ]
+    },
+    {
+      "id": "ent_002",
+      "type": "Indication",
+      "name": "HIV",
+      "attributes": {
+        "context": "to study HIV"
+      },
+      "source_chunk_ids": [
+        "0a07614a7eec7ec7e9410aa6e2034a86"
+      ]
+    },
+    {
+      "id": "ent_003",
+      "type": "Taxon",
+      "name": "South African medicinal plants",
+      "attributes": {
+        "context": "she studies South African medicinal plants"
+      },
+      "source_chunk_ids": [
+        "5350f7b7f229ff4afbcb99e6ccdc8090"
+      ]
+    },
+    {
+      "id": "ent_004",
+      "type": "PharmEffect",
+      "name": "pharmacological properties",
+      "attributes": {
+        "context": "explore their pharmacological properties"
+      },
+      "source_chunk_ids": [
+        "5350f7b7f229ff4afbcb99e6ccdc8090"
+      ]
+    },
+    {
+      "id": "ent_005",
+      "type": "Taxon",
+      "name": "plants",
+      "attributes": {
+        "context": "Having studied a variety of plants"
+      },
+      "source_chunk_ids": [
+        "5350f7b7f229ff4afbcb99e6ccdc8090"
+      ]
+    }
+  ],
+  "relationships": [],
+  "metadata": {
+    "migration_date": "2026-02-02T08:40:04.024577+00:00",
+    "original_file": "entities.json"
+  }
+}
