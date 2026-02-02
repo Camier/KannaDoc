@@ -8,7 +8,7 @@ def main(inputs):
         if isinstance(v, str) and v != "":
             try:
                 return parse_val(v)
-            except:
+            except (ValueError, SyntaxError, TypeError):
                 return v
         return v
 
@@ -19,7 +19,7 @@ def main(inputs):
     if not isinstance(lst, list):
         try:
             lst = json.loads(lst) if isinstance(lst, str) else []
-        except:
+        except (ValueError, SyntaxError, TypeError):
             lst = []
 
     print("####Global variable updated####")

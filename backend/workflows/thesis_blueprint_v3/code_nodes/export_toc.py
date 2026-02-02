@@ -8,7 +8,7 @@ def main(inputs):
         if isinstance(v, str) and v != "":
             try:
                 return parse_val(v)
-            except:
+            except (ValueError, SyntaxError, TypeError):
                 return v
         return v
 
@@ -18,12 +18,12 @@ def main(inputs):
     if isinstance(macro, str):
         try:
             macro = json.loads(macro)
-        except:
+        except (ValueError, SyntaxError, TypeError):
             macro = {}
     if isinstance(micro, str):
         try:
             micro = json.loads(micro)
-        except:
+        except (ValueError, SyntaxError, TypeError):
             micro = {}
 
     # Generate MD and LaTeX export

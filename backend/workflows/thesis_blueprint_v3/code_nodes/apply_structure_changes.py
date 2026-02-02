@@ -8,7 +8,7 @@ def main(inputs):
         if isinstance(v, str) and v != "":
             try:
                 return parse_val(v)
-            except:
+            except (ValueError, SyntaxError, TypeError):
                 return v
         return v
 
@@ -18,7 +18,7 @@ def main(inputs):
     if isinstance(macro_outline, str):
         try:
             macro_outline = json.loads(macro_outline)
-        except:
+        except (ValueError, SyntaxError, TypeError):
             macro_outline = {"chapters": []}
 
     # Apply structure changes if any
@@ -40,7 +40,7 @@ def main(inputs):
                     macro_outline.update(updates)
             elif isinstance(updates, list):
                 macro_outline["chapters"] = updates
-        except:
+        except (ValueError, SyntaxError, TypeError):
             pass
 
     chapters = macro_outline.get("chapters", [])

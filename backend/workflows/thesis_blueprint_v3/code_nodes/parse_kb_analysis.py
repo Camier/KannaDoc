@@ -8,7 +8,7 @@ def main(inputs):
         if isinstance(v, str) and v != "":
             try:
                 return parse_val(v)
-            except:
+            except (ValueError, SyntaxError, TypeError):
                 return v
         return v
 
@@ -23,7 +23,7 @@ def main(inputs):
     data = {}
     try:
         data = json.loads(kb_analysis_str)
-    except Exception as e:
+    except (ValueError, SyntaxError, TypeError) as e:
         # If parsing fails, try to clean more or handle as raw string
         print(f"JSON Parse Error: {e}")
 

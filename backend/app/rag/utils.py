@@ -322,7 +322,7 @@ async def insert_to_milvus(
         sparse_page_vecs = [
             vec if isinstance(vec, dict) else {} for vec in sparse_page_vecs
         ]
-    loop = asyncio.get_event_loop()
+    loop = asyncio.get_running_loop()
     await loop.run_in_executor(
         None,
         lambda: [

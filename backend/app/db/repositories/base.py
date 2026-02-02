@@ -1,6 +1,7 @@
 from motor.motor_asyncio import AsyncIOMotorDatabase
 from typing import Any, Dict, List, Optional
 from bson import ObjectId
+from bson.errors import InvalidId
 
 
 class BaseRepository:
@@ -19,7 +20,7 @@ class BaseRepository:
         """Find a document by its ID."""
         try:
             return await self.collection.find_one({"_id": ObjectId(doc_id)})
-        except:
+        except InvalidId:
             # Handle string IDs
             return await self.collection.find_one({"_id": doc_id})
 
@@ -59,7 +60,7 @@ class BaseRepository:
         """Update a document by its ID."""
         try:
             obj_id = ObjectId(doc_id)
-        except:
+        except InvalidId:
             obj_id = doc_id
         return await self.update_one({"_id": obj_id}, update)
 
@@ -72,7 +73,7 @@ class BaseRepository:
         """Delete a document by its ID."""
         try:
             obj_id = ObjectId(doc_id)
-        except:
+        except InvalidId:
             obj_id = doc_id
         return await self.delete_one({"_id": obj_id})
 

@@ -78,11 +78,13 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -
 def _decode_jwt(token: str) -> Optional[TokenData]:
     """Internal: Decode JWT and return TokenData or None on error."""
     try:
-        payload = jwt.decode(token, settings.secret_key, algorithms=[settings.algorithm])
-        username: str = payload.get("sub")
-        if not username:
+        payload = jwt.decode(
+            token, settings.secret_key, algorithms=[settings.algorithm]
+        )
+        decoded_token: str = payload.get("sub", "")
+        if not decoded_token:
             return None
-        return TokenData(username=username)
+        return TokenData(username=decoded_token)
     except JWTError:
         return None
 
@@ -91,23 +93,16 @@ def _decode_jwt(token: str) -> Optional[TokenData]:
 # AUTHENTICATION (Token Validation)
 # =============================================================================
 
+
 class AuthErrors:
     """Centralized authentication error messages and status codes."""
-    INVALID_TOKEN = (
-        status.HTTP_401_UNAUTHORIZED,
-        "Invalid or expired token"
-    )
-    TOKEN_NOT_FOUND = (
-        status.HTTP_401_UNAUTHORIZED,
-        "Token not found or expired"
-    )
-    USERNAME_MISMATCH = (
-        status.HTTP_403_FORBIDDEN,
-        "Access denied: username mismatch"
-    )
+
+    INVALID_TOKEN = (status.HTTP_401_UNAUTHORIZED, "Invalid or expired token")
+    TOKEN_NOT_FOUND = (status.HTTP_401_UNAUTHORIZED, "Token not found or expired")
+    USERNAME_MISMATCH = (status.HTTP_403_FORBIDDEN, "Access denied: username mismatch")
     INVALID_CREDENTIALS = (
         status.HTTP_401_UNAUTHORIZED,
-        "Incorrect username or password"
+        "Incorrect username or password",
     )
 
 
@@ -161,6 +156,7 @@ async def get_current_user(token: str = Depends(oauth2_scheme)) -> TokenData:
 # AUTHORIZATION (Username Verification)
 # =============================================================================
 
+
 async def verify_username_match(
     token_data: TokenData,
     username: str,
@@ -207,10 +203,8 @@ def require_username(username_param: str = "username"):
     Returns:
         A dependency function that verifies username match
     """
-    async def _verify(
-        current_user: TokenData = Depends(get_current_user),
-        **kwargs
-    ):
+
+    async def _verify(current_user: TokenData = Depends(get_current_user), **kwargs):
         requested_username = kwargs.get(username_param)
         if requested_username:
             await verify_username_match(current_user, requested_username)
@@ -223,10 +217,9 @@ def require_username(username_param: str = "username"):
 # USER AUTHENTICATION (Password Verification)
 # =============================================================================
 
+
 async def authenticate_user(
-    db: AsyncSession,
-    username: str,
-    password: str
+    db: AsyncSession, username: str, password: str
 ) -> Optional[User]:
     """
     Authenticate a user and migrate legacy passwords if needed.
@@ -270,6 +263,7 @@ async def authenticate_user(
 # =============================================================================
 # TOKEN STORAGE (Redis Integration)
 # =============================================================================
+
 
 async def store_token(token: str, username: str, expires_in_seconds: int) -> None:
     """

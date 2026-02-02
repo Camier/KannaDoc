@@ -1,0 +1,136 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Full title of the academic paper"
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of author names as they appear in the paper"
+    },
+    "year": {
+      "type": "integer",
+      "description": "Publication year (4-digit integer)"
+    },
+    "doi": {
+      "type": "string",
+      "description": "Digital Object Identifier if present"
+    },
+    "abstract": {
+      "type": "string",
+      "description": "Abstract or summary of the paper"
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Keywords or key terms from the paper"
+    },
+    "compounds": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Chemical compound name"
+          },
+          "synonyms": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "formula": {
+            "type": "string",
+            "description": "Molecular formula if mentioned"
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "description": "Chemical compounds mentioned (alkaloids, flavonoids, terpenes, etc.)"
+    },
+    "plants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "scientific_name": {
+            "type": "string",
+            "description": "Binomial nomenclature"
+          },
+          "common_names": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "family": {
+            "type": "string",
+            "description": "Botanical family"
+          }
+        },
+        "required": [
+          "scientific_name"
+        ]
+      },
+      "description": "Plant species discussed (focus on medicinal plants)"
+    },
+    "effects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Pharmacological effect"
+          },
+          "mechanism": {
+            "type": "string",
+            "description": "Mechanism of action if described"
+          },
+          "evidence_type": {
+            "type": "string",
+            "enum": [
+              "in_vitro",
+              "in_vivo",
+              "clinical",
+              "traditional"
+            ]
+          }
+        },
+        "required": [
+          "name"
+        ]
+      },
+      "description": "Pharmacological effects (anti-inflammatory, anxiolytic, etc.)"
+    },
+    "study_type": {
+      "type": "string",
+      "enum": [
+        "review",
+        "in_vitro",
+        "in_vivo",
+        "clinical_trial",
+        "ethnobotanical",
+        "chemical_analysis",
+        "historical"
+      ],
+      "description": "Type of study"
+    }
+  },
+  "required": [
+    "title",
+    "compounds",
+    "plants",
+    "effects"
+  ]
+}

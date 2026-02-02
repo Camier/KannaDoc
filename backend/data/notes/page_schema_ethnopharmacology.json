@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "authors": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "year": {
+      "type": "integer"
+    },
+    "doi": {
+      "type": "string"
+    },
+    "abstract": {
+      "type": "string"
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "compounds": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "synonyms": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "formula": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "plants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "scientific_name": {
+            "type": "string"
+          },
+          "common_names": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "family": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "effects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "mechanism": {
+            "type": "string"
+          },
+          "evidence_type": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "study_type": {
+      "type": "string",
+      "enum": [
+        "review",
+        "in_vitro",
+        "in_vivo",
+        "clinical_trial",
+        "ethnobotanical",
+        "chemical_analysis",
+        "historical"
+      ]
+    }
+  },
+  "required": [
+    "title"
+  ]
+}

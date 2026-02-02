@@ -21,9 +21,9 @@ class FastAPIFramework:
             description="Visual-native AI agent engine with workflow orchestration, RAG pipeline, and knowledge base management",
             version="2.0.0",
             docs_url="/api/docs",
-            redoc_url="/api/redoc"
+            redoc_url="/api/redoc",
         )
-        #self.app.add_middleware(LoggingMiddleware)
+        # self.app.add_middleware(LoggingMiddleware)
         self.executor = ThreadPoolExecutor(max_workers=settings.max_workers)
         self.app.add_exception_handler(HTTPException, http_exception_handler)
         self.app.add_exception_handler(Exception, general_exception_handler)
@@ -64,7 +64,7 @@ class FastAPIFramework:
         else:
 
             async def sync_wrapper(request: Request):
-                loop = asyncio.get_event_loop()
+                loop = asyncio.get_running_loop()
                 try:
                     if request_model:
                         body = await request.json()

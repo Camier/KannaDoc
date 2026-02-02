@@ -1,21 +1,44 @@
 # Code Node: Accumulate KB Map (Layra Protocol)
+import sys
+
+sys.path.insert(0, "/LAB/@thesis/layra/backend")
+from workflows.utils.safe_parse import safe_parse
+
+
 def main(inputs):
     import json
+
     def get_val(key, default):
         v = inputs.get(key, default)
         if isinstance(v, str) and v != "":
-            try: return eval(v)
-            except: return v
+            return safe_parse(v)
         return v
 
-    kb_map = get_val("kb_map", {"themes":[], "concepts":[], "methods":[], "datasets":[], "debates":[], "sources":[]})
+    kb_map = get_val(
+        "kb_map",
+        {
+            "themes": [],
+            "concepts": [],
+            "methods": [],
+            "datasets": [],
+            "debates": [],
+            "sources": [],
+        },
+    )
     current = get_val("current_axis_result", {})
-    
+
     if current and isinstance(current, dict):
-        for key in ["themes_found", "concepts_found", "methods_found", "datasets_found", "debates_found", "candidate_sources"]:
+        for key in [
+            "themes_found",
+            "concepts_found",
+            "methods_found",
+            "datasets_found",
+            "debates_found",
+            "candidate_sources",
+        ]:
             target = key.replace("_found", "").replace("candidate_", "")
             if key in current:
                 kb_map[target].extend(current[key])
-                
+
     print("####Global variable updated####")
     print(f"kb_map = {json.dumps(kb_map)}")

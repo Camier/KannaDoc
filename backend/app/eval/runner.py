@@ -13,6 +13,8 @@ Orchestrates evaluation of retrieval quality by:
 import uuid
 import time
 import statistics
+import asyncio
+from functools import partial
 from typing import Dict, Any, List, Optional
 
 from app.core.logging import logger
@@ -120,11 +122,14 @@ async def run_evaluation(
                 continue
 
             start_time = time.perf_counter()
-            search_results = vector_db_client.search(
+            loop = asyncio.get_running_loop()
+            search_func = partial(
+                vector_db_client.search,
                 collection_name,
                 data=query_embeddings[0],
                 topk=top_k,
             )
+            search_results = await loop.run_in_executor(None, search_func)
             end_time = time.perf_counter()
             latencies.append((end_time - start_time) * 1000)
 

@@ -8,7 +8,7 @@ def main(inputs):
         if isinstance(v, str) and v != "":
             try:
                 return parse_val(v)
-            except:
+            except (ValueError, SyntaxError, TypeError):
                 return v
         return v
 
@@ -27,7 +27,7 @@ def main(inputs):
         data = {}
         try:
             data = json.loads(macro_str)
-        except Exception as e:
+        except (ValueError, SyntaxError, TypeError) as e:
             print(f"JSON Parse Error: {e}")
 
     chapters = data.get("chapters", [])

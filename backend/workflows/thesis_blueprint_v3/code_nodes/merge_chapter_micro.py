@@ -8,7 +8,7 @@ def main(inputs):
         if isinstance(v, str) and v != "":
             try:
                 return parse_val(v)
-            except:
+            except (ValueError, SyntaxError, TypeError):
                 return v
         return v
 
@@ -19,7 +19,7 @@ def main(inputs):
     if isinstance(micro_outline, str):
         try:
             micro_outline = json.loads(micro_outline)
-        except:
+        except (ValueError, SyntaxError, TypeError):
             micro_outline = {}
 
     if not isinstance(micro_outline, dict):
@@ -38,7 +38,7 @@ def main(inputs):
                 clean_str = clean_str.split("```")[1].split("```")[0].strip()
 
             chapter_micro = json.loads(clean_str)
-        except:
+        except (ValueError, SyntaxError, TypeError):
             pass
 
     if isinstance(chapter_micro, dict) and chapter_micro:

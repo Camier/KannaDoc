@@ -8,7 +8,7 @@ def main(inputs):
         if isinstance(v, str) and v != "":
             try:
                 return parse_val(v)
-            except:
+            except (ValueError, SyntaxError, TypeError):
                 return v
         return v
 
@@ -18,7 +18,7 @@ def main(inputs):
     if isinstance(micro_outline, str):
         try:
             micro_outline = json.loads(micro_outline)
-        except:
+        except (ValueError, SyntaxError, TypeError):
             micro_outline = {}
 
     # patch_actions might be a string from LLM
@@ -31,7 +31,7 @@ def main(inputs):
                 clean_str = clean_str.split("```")[1].split("```")[0].strip()
 
             patch_actions = json.loads(clean_str)
-        except:
+        except (ValueError, SyntaxError, TypeError):
             pass
 
     # Apply patches

@@ -7,6 +7,8 @@ Integrates with Milvus for document retrieval and MongoDB for storage.
 
 from typing import List, Dict, Any, Optional
 import uuid
+import asyncio
+from functools import partial
 
 from app.core.logging import logger
 from app.db.vector_db import vector_db_client
@@ -85,11 +87,14 @@ async def create_dataset(
                 eval_queries.append(EvalQuery(query_text=query_text, relevant_docs=[]))
                 continue
 
-            search_results = vector_db_client.search(
+            loop = asyncio.get_running_loop()
+            search_func = partial(
+                vector_db_client.search,
                 collection_name,
                 data=query_embeddings[0],
                 topk=topk,
             )
+            search_results = await loop.run_in_executor(None, search_func)
 
             if not search_results:
                 logger.info(f"No search results for query: '{query_text[:50]}...'")

@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "biblio",
+  "title": "Bibliographic Metadata Schema",
+  "description": "Minimal join keys for dedup and graph linking. Run on pages 0-2 only via page_range parameter.",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Document title as it appears on the first page"
+    },
+    "authors": {
+      "type": "array",
+      "description": "Author names in document order",
+      "items": {"type": "string"},
+      "maxItems": 20
+    },
+    "publication_year": {
+      "type": "integer",
+      "description": "Year of publication (4-digit)",
+      "minimum": 1500,
+      "maximum": 2100
+    },
+    "doi": {
+      "type": "string",
+      "description": "Digital Object Identifier (e.g. 10.1234/example)"
+    },
+    "venue": {
+      "type": "string",
+      "description": "Journal, conference, publisher, or institutional source"
+    }
+  },
+  "required": [],
+  "additionalProperties": false
+}

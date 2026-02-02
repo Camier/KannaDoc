@@ -1,15 +1,21 @@
 # Code Node: Normalize KB Map (Layra Protocol)
+import sys
+
+sys.path.insert(0, "/LAB/@thesis/layra/backend")
+from workflows.utils.safe_parse import safe_parse
+
+
 def main(inputs):
     import json
+
     def get_val(key, default):
         v = inputs.get(key, default)
         if isinstance(v, str) and v != "":
-            try: return eval(v)
-            except: return v
+            return safe_parse(v)
         return v
 
     kb_map = get_val("kb_map", {})
-    
+
     def dedup(lst, key_name):
         seen = set()
         out = []

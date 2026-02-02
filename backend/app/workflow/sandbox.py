@@ -29,7 +29,7 @@ class CodeSandbox:
 
     @classmethod
     async def get_all_images(cls) -> List[str]:
-        loop = asyncio.get_event_loop()
+        loop = asyncio.get_running_loop()
         client = docker.from_env()
         images = await loop.run_in_executor(None, client.images.list)
         return [tag for img in images for tag in img.tags]
@@ -38,7 +38,7 @@ class CodeSandbox:
     async def delete_image(
         cls, image_ref: str, force: bool = False, noprune: bool = False
     ) -> dict:
-        loop = asyncio.get_event_loop()
+        loop = asyncio.get_running_loop()
         client = docker.from_env()
 
         if image_ref == "python-sandbox:latest":
@@ -116,7 +116,7 @@ class CodeSandbox:
                 "Sandbox volume source not detected; falling back to layra_sandbox_volume"
             )
 
-        loop = asyncio.get_event_loop()
+        loop = asyncio.get_running_loop()
         self.container = await loop.run_in_executor(
             None,
             lambda: self.client.containers.run(
@@ -164,7 +164,7 @@ class CodeSandbox:
             self.failed = True
             raise RuntimeError("No container to commit")
 
-        loop = asyncio.get_event_loop()
+        loop = asyncio.get_running_loop()
         assert self.container is not None
         image = await loop.run_in_executor(
             None,
@@ -234,7 +234,7 @@ class CodeSandbox:
             raise ValueError("Run timed out")
 
     async def _exec_container(self, command: str, timeout: int):
-        loop = asyncio.get_event_loop()
+        loop = asyncio.get_running_loop()
 
         def _sync_exec():
             assert self.container is not None
@@ -283,7 +283,7 @@ class CodeSandbox:
     async def close(self):
         try:
             if self.container:
-                loop = asyncio.get_event_loop()
+                loop = asyncio.get_running_loop()
                 container = self.container
                 await loop.run_in_executor(None, lambda: container.remove(force=True))
                 self.container = None
