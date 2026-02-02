@@ -4,6 +4,13 @@ from pymilvus import (
     AnnSearchRequest,
     RRFRanker,
     WeightedRanker,
+    MilvusException,
+)
+from tenacity import (
+    retry,
+    stop_after_attempt,
+    wait_exponential,
+    retry_if_exception_type,
 )
 import numpy as np
 import concurrent.futures
@@ -107,6 +114,35 @@ class MilvusManager:
                 return
             self.client.load_collection(collection_name)
             self._loaded_collections.add(collection_name)
+
+    @retry(
+        stop=stop_after_attempt(3),
+        wait=wait_exponential(multiplier=2, min=2, max=30),
+        retry=retry_if_exception_type(MilvusException),
+    )
+    def _hybrid_search_with_retry(
+        self, collection_name, reqs, ranker, limit, output_fields
+    ):
+        return self.client.hybrid_search(
+            collection_name, reqs, ranker, limit, output_fields=output_fields
+        )
+
+    @retry(
+        stop=stop_after_attempt(3),
+        wait=wait_exponential(multiplier=2, min=2, max=30),
+        retry=retry_if_exception_type(MilvusException),
+    )
+    def _search_with_retry(
+        self, collection_name, data, anns_field, limit, output_fields, search_params
+    ):
+        return self.client.search(
+            collection_name,
+            data,
+            anns_field=anns_field,
+            limit=limit,
+            output_fields=output_fields,
+            search_params=search_params,
+        )
 
     def create_collection(self, collection_name: str, dim: int = 128) -> None:
         if self.client.has_collection(collection_name):
@@ -241,7 +277,7 @@ class MilvusManager:
                 param={"metric_type": "IP", "params": {"drop_ratio_search": 0.0}},
                 limit=int(search_limit),
             )
-            results = self.client.hybrid_search(
+            results = self._hybrid_search_with_retry(
                 collection_name,
                 [dense_req, sparse_req],
                 get_ranker(settings),
@@ -253,7 +289,7 @@ class MilvusManager:
                 ],
             )
         else:
-            results = self.client.search(
+            results = self._search_with_retry(
                 collection_name,
                 dense_vecs,
                 anns_field="vector",  # Required when collection has multiple vector fields
