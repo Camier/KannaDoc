@@ -526,21 +526,14 @@ class ChatService:
             # Sending stream_options to Zhipu causes API errors/empty responses
             is_zhipu = detected_provider in ("zhipu", "zhipu-coding", "zai")
 
-        # Z.ai requires uppercase model names (GLM-4.7, not glm-4.7)
+        # Z.ai accepts lowercase model names (glm-4.7-flash)
         if model_url:
             is_zai = "z.ai" in model_url.lower()
         else:
             is_zai = detected_provider == "zai"
 
+        # Use model name as-is
         api_model_name = model_name
-        if is_zai and model_name.lower().startswith("glm"):
-            # Convert glm-4.7 -> GLM-4.7, glm-4.7-flash -> GLM-4.7-Flash
-            parts = model_name.split("-")
-            api_model_name = parts[0].upper()  # GLM
-            if len(parts) > 1:
-                api_model_name += "-" + parts[1]  # GLM-4.7
-            if len(parts) > 2:
-                api_model_name += "-" + parts[2].capitalize()  # GLM-4.7-Flash
 
         logger.info(
             f"DEBUG: is_zhipu={is_zhipu}, is_zai={is_zai}, api_model_name={api_model_name}"
