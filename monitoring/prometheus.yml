@@ -7,8 +7,7 @@ rule_files:
 
 scrape_configs:
   - job_name: "layra-backend"
+    metrics_path: /api/v1/health/metrics
     static_configs:
       - targets: ["backend:8000"]
-  - job_name: "qdrant"
-    static_configs:
-      - targets: ["qdrant:6333"]
+  # Qdrant removed (2026-02-02) - Milvus is now sole vector DB
