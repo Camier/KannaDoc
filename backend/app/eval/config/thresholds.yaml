@@ -1,0 +1,7 @@
+# Quality thresholds for RAG evaluation
+# Values based on DataLab defaults
+
+recall_at_k: 0.70      # Minimum acceptable recall
+mrr: 0.65              # Minimum Mean Reciprocal Rank
+p95_latency_ms: 2500   # Maximum p95 latency in milliseconds
+error_rate: 0.01       # Maximum acceptable error rate (1%)
