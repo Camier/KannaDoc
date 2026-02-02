@@ -82,23 +82,25 @@ Based on [MiniMax official docs](https://platform.minimax.io/docs/):
 ## 6. CLI USAGE
 
 ```bash
+cd /LAB/@thesis/layra/backend
+
 # Test extraction
-PYTHONPATH=. python3 scripts/extract_entities_v2.py --test "Curcumin inhibits COX-2"
+PYTHONPATH=. python3 scripts/datalab/extract_entities_v2.py --test "Curcumin inhibits COX-2"
 
 # Full corpus extraction
-PYTHONPATH=. python3 scripts/extract_entities_v2.py \
-  --input-dir data/PROD_EXTRACTION_V2 \
+PYTHONPATH=. python3 scripts/datalab/extract_entities_v2.py \
+  --input-dir data/extractions \
   --doc-workers 4 \
   --chunk-workers 2
 
 # Lightning mode (67% faster)
-PYTHONPATH=. python3 scripts/extract_entities_v2.py --lightning --input-dir data/PROD_EXTRACTION_V2
+PYTHONPATH=. python3 scripts/datalab/extract_entities_v2.py --lightning --input-dir data/extractions
 
 # Dry run
-PYTHONPATH=. python3 scripts/extract_entities_v2.py --input-dir data/PROD_EXTRACTION_V2 --dry-run
+PYTHONPATH=. python3 scripts/datalab/extract_entities_v2.py --input-dir data/extractions --dry-run
 
 # Migrate V1 to V2
-PYTHONPATH=. python3 scripts/migrate_entities_v2.py --input-dir data/PROD_EXTRACTION_V2 --dry-run
+PYTHONPATH=. python3 scripts/datalab/migrate_entities_v2.py --input-dir data/extractions --dry-run
 ```
 
 ## 7. OUTPUT FORMAT (ExtractionResultV2)
@@ -150,15 +152,21 @@ export MINIMAX_API_KEY="your-minimax-api-key"
 
 ## 10. DEPRECATION
 
-The following scripts are deprecated:
-- `scripts/entity_extract.py` → Use `scripts/extract_entities_v2.py`
-- `scripts/entity_extract_gemini.py` → Use `scripts/extract_entities_v2.py`
+The following scripts are deprecated (kept for reference in `scripts/datalab/`):
+- `entity_extract.py` → Use `extract_entities_v2.py`
+- `entity_extract_gemini.py` → Use `extract_entities_v2.py`
 
 Running deprecated scripts will emit `DeprecationWarning`.
 
 ## 11. CROSS-REFERENCES
 
-- `/LAB/@thesis/datalab/AGENTS.md`: Root knowledge base (section 12)
-- `/LAB/@thesis/datalab/scripts/AGENTS.md`: Script details
+- `/LAB/@thesis/layra/README.md`: Project overview
+- `/LAB/@thesis/layra/backend/scripts/datalab/`: Ingestion scripts
 - [MiniMax API Docs](https://platform.minimax.io/docs/api-reference/text-openai-api): OpenAI-compatible API
 - [MiniMax Best Practices](https://platform.minimax.io/docs/coding-plan/best-practices): M2.1 usage tips
+
+## 12. HISTORY
+
+- **2026-02-02**: Module created in DataLab, copied to LAYRA
+- **2026-02-02**: DataLab archived → `/LAB/@thesis/datalab.archive`
+- Assets consolidated into LAYRA (`backend/lib/datalab/`, `backend/data/pdfs/`)

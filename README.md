@@ -12,6 +12,14 @@ This is a **private research fork** used for academic thesis work. It extends th
 - **LLM-based Relevance Labeling** - Automated ground truth generation for evaluation datasets
 - **Thesis-specific Corpus** - 129 academic documents indexed for research
 - **Extended API** - Evaluation endpoints under `/api/v1/eval/`
+- **Entity Extraction V2** - 15-type ontology with MiniMax M2.1 API
+- **Self-Contained Corpus** - 131 PDFs + 129 extractions consolidated from DataLab
+
+## Repository Structure
+
+This repository consolidates:
+- **LAYRA** (upstream fork) - RAG application framework
+- **DataLab** (archived) - PDF extraction pipeline → now in `backend/lib/datalab/` and `backend/scripts/datalab/`
 
 ## Key Extensions
 
@@ -38,21 +46,67 @@ GET /api/v1/eval/runs/{run_id}
 # Returns: MRR, NDCG@K, Precision@K, Recall@K
 ```
 
-### Files Added
+### Directory Structure
 
 ```
-backend/app/eval/
-├── metrics.py          # IR metrics (MRR, NDCG, P@K, R@K)
-├── labeler.py          # LLM relevance scoring
-├── query_generator.py  # Query synthesis
-├── dataset.py          # Dataset management
-├── runner.py           # Evaluation orchestration + p95 latency
-└── config/
-    └── thresholds.yaml # Quality thresholds (recall, MRR, latency)
-
-backend/app/api/endpoints/
-└── eval.py             # REST API endpoints
+backend/
+├── app/                    # FastAPI application
+│   ├── api/endpoints/      # REST endpoints
+│   │   └── eval.py         # Evaluation endpoints
+│   └── eval/               # Evaluation system
+│       ├── metrics.py      # IR metrics (MRR, NDCG, P@K, R@K)
+│       ├── labeler.py      # LLM relevance scoring
+│       ├── query_generator.py
+│       ├── dataset.py
+│       ├── runner.py       # Evaluation orchestration + p95 latency
+│       └── config/
+│           └── thresholds.yaml
+│
+├── lib/                    # Core libraries
+│   ├── entity_extraction/  # V2 entity extraction (MiniMax M2.1)
+│   │   ├── schemas.py      # 15 entity types, 6 relationships
+│   │   ├── extractor.py    # MinimaxExtractor
+│   │   └── prompt.py       # Extraction prompt
+│   └── datalab/            # DataLab pipeline (archived from datalab.archive)
+│       ├── datalab_api.py  # DataLab API client
+│       ├── milvus_ingest.py
+│       ├── neo4j_ingest.py
+│       └── ...
+│
+├── scripts/
+│   └── datalab/            # Ingestion & extraction scripts
+│       ├── extract_entities_v2.py
+│       ├── milvus_ingest.py
+│       ├── neo4j_ingest.py
+│       └── ...
+│
+└── data/
+    ├── pdfs/               # 131 source PDFs (corpus)
+    ├── extractions/        # 129 docs with V2 entities
+    ├── id_mapping.json     # doc_id ↔ file_id mapping
+    ├── .minimax_api_key    # MiniMax API key
+    └── .datalab_api_key    # DataLab API key
 ```
+
+### Entity Extraction V2
+
+MiniMax M2.1-powered extraction with 15 entity types across 5 domains:
+
+| Domain | Entity Types |
+|--------|-------------|
+| Ethnographic | Culture, TraditionalUse, Preparation |
+| Botanical | Taxon, PlantPart, RawMaterial |
+| Chemical | CompoundClass, Compound, Concentration |
+| Pharmacological | Target, Mechanism, PharmEffect |
+| Clinical | Indication, Evidence, Study |
+
+```bash
+# Extract entities from a document
+cd backend
+PYTHONPATH=. python3 scripts/datalab/extract_entities_v2.py --test "Quercetin inhibits COX-2"
+```
+
+See `backend/lib/entity_extraction/AGENTS.md` for full documentation.
 
 ### RAG Pipeline Improvements (2026-02)
 
