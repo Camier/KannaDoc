@@ -7,7 +7,7 @@ Academic research fork for thesis work on retrieval evaluation and visual RAG op
 | Aspect | Details |
 |--------|---------|
 | **Purpose** | Ethnopharmacology RAG system with evaluation framework |
-| **Corpus** | 131 PDFs → 129 documents with V2 entity extractions |
+| **Corpus** | 129 PDFs with legacy-migrated V2 entities (re-extraction recommended) |
 | **Stack** | FastAPI + Milvus + Neo4j + MiniMax M2.1 |
 | **Upstream** | [liweiphys/layra](https://github.com/liweiphys/layra) |
 
@@ -46,7 +46,7 @@ layra/
 │   │       └── ...
 │   │
 │   └── data/
-│       ├── pdfs/               # 131 source PDFs
+│       ├── pdfs/               # 129 source PDFs
 │       ├── extractions/        # 129 docs with V2 entities
 │       ├── id_mapping.json     # doc_id ↔ file_id
 │       ├── .minimax_api_key
@@ -59,7 +59,9 @@ layra/
 
 ## 3. ENTITY EXTRACTION (V2)
 
-15 entity types across 5 domains, extracted via MiniMax M2.1:
+**Status**: Entities are **legacy-migrated** from V1 format. Fresh extraction with MiniMax M2.1 is recommended. Relationships are not yet populated.
+
+15 entity types across 5 domains (schema designed for MiniMax M2.1):
 
 | Domain | Types |
 |--------|-------|
@@ -69,9 +71,10 @@ layra/
 | Pharmacological | Target, Mechanism, PharmEffect |
 | Clinical | Indication, Evidence, Study |
 
-6 relationship types: `TRANSFORMS`, `CONTAINS`, `ACTS_ON`, `PRODUCES`, `TREATS`, `SUGGESTS`
+6 relationship types: `TRANSFORMS`, `CONTAINS`, `ACTS_ON`, `PRODUCES`, `TREATS`, `SUGGESTS` (not yet extracted)
 
-**Detailed docs**: `backend/lib/entity_extraction/AGENTS.md`
+**Detailed docs**: `backend/lib/entity_extraction/AGENTS.md`  
+**Audit report**: `backend/docs/PIPELINE_AUDIT_2026-02-02.md`
 
 ## 4. CANONICAL COMMANDS
 
@@ -98,7 +101,7 @@ curl -X POST http://localhost:8000/api/v1/eval/run -d '{"dataset_id": "...", "co
 |---------|---------|-------|
 | **MiniMax M2.1** | Entity extraction | API key in `data/.minimax_api_key` |
 | **Milvus** | Vector store | HNSW index, configurable M/efConstruction |
-| **Neo4j** | Knowledge graph | Entity relationships |
+| **Neo4j** | Knowledge graph | **DISABLED** (not deployed) |
 | **FastAPI** | Backend API | Eval endpoints at `/api/v1/eval/` |
 
 ## 6. EVALUATION SYSTEM
