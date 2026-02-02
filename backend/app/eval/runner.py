@@ -11,6 +11,8 @@ Orchestrates evaluation of retrieval quality by:
 """
 
 import uuid
+import time
+import statistics
 from typing import Dict, Any, List, Optional
 
 from app.core.logging import logger
@@ -85,6 +87,7 @@ async def run_evaluation(
 
     per_query_results: List[Dict[str, Any]] = []
     eval_results_for_aggregation: List[EvalResult] = []
+    latencies: List[float] = []
     queries_processed = 0
     queries_failed = 0
 
@@ -116,11 +119,14 @@ async def run_evaluation(
                 )
                 continue
 
+            start_time = time.perf_counter()
             search_results = vector_db_client.search(
                 collection_name,
                 data=query_embeddings[0],
                 topk=top_k,
             )
+            end_time = time.perf_counter()
+            latencies.append((end_time - start_time) * 1000)
 
             retrieved_docs = []
             for result in search_results:
@@ -228,6 +234,13 @@ async def run_evaluation(
         "queries_with_labels": len(eval_results_for_aggregation),
     }
 
+    p95_latency_ms = (
+        statistics.quantiles(latencies, n=20)[-1]
+        if len(latencies) > 1
+        else (latencies[0] if latencies else 0.0)
+    )
+    aggregated_metrics["p95_latency_ms"] = p95_latency_ms
+
     if eval_results_for_aggregation:
         summary = compute_all_metrics(eval_results_for_aggregation, k=top_k)
         aggregated_metrics.update(
@@ -265,7 +278,8 @@ async def run_evaluation(
             f"MRR={aggregated_metrics.get('mrr', 0):.4f}, "
             f"NDCG={aggregated_metrics.get('ndcg', 0):.4f}, "
             f"P@{top_k}={aggregated_metrics.get('precision', 0):.4f}, "
-            f"R@{top_k}={aggregated_metrics.get('recall', 0):.4f}"
+            f"R@{top_k}={aggregated_metrics.get('recall', 0):.4f}, "
+            f"p95_latency={aggregated_metrics.get('p95_latency_ms', 0):.2f}ms"
         )
     except Exception as e:
         logger.error(f"Failed to store evaluation run in MongoDB: {e}")
