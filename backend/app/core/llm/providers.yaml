@@ -124,12 +124,11 @@ providers:
 
   # ============================================================================
   # Z.ai - GLM Coding Plan provider (https://z.ai)
-  # Preferred for GLM 4.5+ when configured
-  # Uses ZHIPUAI_API_KEY (same credentials work for both endpoints)
+  # Preferred for GLM 4.5+ when ZAI_API_KEY is available
   # ============================================================================
   zai:
     base_url: "https://api.z.ai/api/coding/paas/v4"
-    env_key: "ZHIPUAI_API_KEY"
+    env_key: "ZAI_API_KEY"
     vision: true
     models:
       - glm-4.5

@@ -124,9 +124,12 @@ class ProviderClient:
         ):
             return "cliproxyapi"
 
-        # GLM coding models (4.5/4.6/4.7) - prefer Z.ai endpoint
+        # GLM coding models (4.5/4.6/4.7) - prefer Z.ai if ZAI_API_KEY is set
+        # Z.ai is the GLM Coding Plan provider (https://z.ai)
         if any(x in model_lower for x in ["glm-4.5", "glm-4.6", "glm-4.7"]):
-            return "zai"
+            if os.getenv("ZAI_API_KEY"):
+                return "zai"
+            return "zhipu-coding"
 
         for provider, config in cls.PROVIDERS.items():
             for model_pattern in config["models"]:
