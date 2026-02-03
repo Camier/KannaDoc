@@ -7,8 +7,8 @@ Academic research fork for thesis work on retrieval evaluation and visual RAG op
 | Aspect | Details |
 |--------|---------|
 | **Purpose** | Ethnopharmacology RAG system with evaluation framework |
-| **Corpus** | 129 PDFs with legacy-migrated V2 entities (re-extraction recommended) |
-| **Status** | DataLab fully merged; 129 docs extracted and indexed |
+| **Corpus** | ~129 PDFs (dynamic) with legacy-migrated V2 entities (re-extraction recommended) |
+| **Status** | DataLab fully merged; docs extracted and indexed |
 | **Stack** | FastAPI + Milvus + MiniMax M2.1 (Neo4j disabled) |
 | **Upstream** | [liweiphys/layra](https://github.com/liweiphys/layra) |
 
@@ -23,8 +23,7 @@ layra/
 │   │   ├── api/                # REST API
 │   │   │   ├── endpoints/      # Resource endpoints
 │   │   │   │   ├── eval.py     # Evaluation API (Run/Status/Metrics)
-│   │   │   │   └── knowledge.py# KB management (Upload/Delete/List)
-│   │   │   └── middleware/     # CORS and Auth Logic
+│   │   │   │   └── knowledge_base.py# KB management (Upload/Delete/List)
 │   │   └── eval/               # Evaluation system
 │   │       ├── metrics.py      # MRR, NDCG, P@K, R@K implementation
 │   │       ├── labeler.py      # LLM-based relevance scoring
@@ -72,8 +71,8 @@ layra/
 │   │       └── entity_extract_gemini.py # (Deprecated) Gemini test
 │   │
 │   └── data/
-│       ├── pdfs/               # 129 source PDFs
-│       ├── extractions/        # 129 docs with V2 entities + blocks
+│       ├── pdfs/               # Source PDFs (dynamic)
+│       ├── extractions/        # Extraction results (dynamic)
 │       ├── corpus/             # biblio_corpus.jsonl + metadata
 │       ├── id_mapping.json     # doc_id ↔ file_id mapping
 │       ├── .minimax_api_key    # MiniMax API credentials
@@ -163,7 +162,7 @@ All commands should be run from `backend/` directory with `PYTHONPATH=.`.
   ```
 - **migrate_entities_v2.py**: Migrates legacy V1 extractions to the new V2 schema for backward compatibility.
   ```bash
-  PYTHONPATH=. python3 scripts/datalab/migrate_entities_v2.py --dir data/extractions
+  PYTHONPATH=. python3 scripts/datalab/migrate_entities_v2.py --input-dir data/extractions
   ```
 
 ### 6.2 Ingestion & Management
@@ -175,7 +174,7 @@ All commands should be run from `backend/` directory with `PYTHONPATH=.`.
   ```bash
   PYTHONPATH=. python3 scripts/datalab/create_id_mapping.py --pdf-dir data/pdfs --ext-dir data/extractions
   ```
-- **verify_merge.py**: Checks data integrity of the 129-document corpus, verifying PDF and extraction counts.
+- **verify_merge.py**: Checks data integrity of the corpus, verifying PDF and extraction counts.
   ```bash
   PYTHONPATH=. python3 scripts/datalab/verify_merge.py
   ```
@@ -209,14 +208,14 @@ All commands should be run from `backend/` directory with `PYTHONPATH=.`.
 | **Neo4j** | Knowledge graph | **DISABLED** in current research deployment |
 | **FastAPI** | Backend API | REST endpoints at `/api/v1/` |
 
-**Configuration**: Managed via `.env` (EMBEDDING_MODEL, MILVUS_HOST, HNSW parameters).
+**Configuration**: Managed via `.env` (EMBEDDING_MODEL, MILVUS_URI, HNSW parameters).
 
 ## 8. DATA ARTIFACTS
 
 The `backend/data/` directory contains the core knowledge assets of the system.
 
-- **pdfs/**: 129 source academic papers in PDF format.
-- **extractions/**: 129 subdirectories, each containing `entities.json` (V2), `normalized.json` (Blocks), and `images/` (Figures/Tables).
+- **pdfs/**: Source academic papers in PDF format (dynamic).
+- **extractions/**: Document subdirectories, each containing `entities.json` (V2), `normalized.json` (Blocks), and `images/` (Figures/Tables).
 - **id_mapping.json**: Canonical mapping between hash-based `doc_id` and human-readable `file_id`.
 - **corpus/**: Contains `biblio_corpus.jsonl` with aggregated document metadata.
 - **dataset_dev.jsonl**: 20 curated questions for evaluation ground truth.
