@@ -39,20 +39,7 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
 
 
 def get_password_hash(password: str) -> str:
-    """Hash password using proper bcrypt (NEW method)."""
     return pwd_context.hash(password)
-
-
-# DEADLINE: 2026-02-23 - Remove after password migration complete
-def verify_password_legacy(plain_password: str, hashed_password: str) -> bool:
-    """
-    Legacy password verification for passwords hashed with custom salt.
-
-    SECURITY WARNING: This function contains a hardcoded salt for migration ONLY.
-    After all users have migrated to proper bcrypt, this function MUST be removed.
-    """
-    legacy_salt = "mynameisliwei,nicetomeetyou!"  # Legacy salt for migration only
-    return pwd_context.verify(plain_password + legacy_salt, hashed_password)
 
 
 # =============================================================================
@@ -222,10 +209,7 @@ async def authenticate_user(
     db: AsyncSession, username: str, password: str
 ) -> Optional[User]:
     """
-    Authenticate a user and migrate legacy passwords if needed.
-
-    Legacy passwords (created with hardcoded salt) will be automatically
-    rehashed using proper bcrypt on successful authentication.
+    Authenticate a user by username and password.
 
     Args:
         db: Database session
@@ -244,18 +228,6 @@ async def authenticate_user(
     # Try NEW method first (proper bcrypt)
     if verify_password(password, user.hashed_password):
         return user
-
-    # Try LEGACY method (hardcoded salt) for migration
-    if (
-        hasattr(user, "password_migration_required")
-        and user.password_migration_required
-    ):
-        if verify_password_legacy(password, user.hashed_password):
-            # Migration: Rehash with proper bcrypt and update database
-            user.hashed_password = get_password_hash(password)
-            user.password_migration_required = False
-            await db.commit()
-            return user
 
     return None
 
