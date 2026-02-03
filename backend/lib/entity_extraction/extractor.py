@@ -39,15 +39,17 @@ Your output will be parsed programmatically, so JSON validity is essential."""
 
 
 def _load_api_key() -> str:
-    """Load API key from file or environment variable."""
+    """Load API key from environment variable or legacy file."""
+    # Try environment variable first (preferred)
+    key = os.getenv("MINIMAX_API_KEY")
+    if key:
+        return key.strip()
+    # Fallback to legacy file for backwards compatibility
     key_file = Path("data/.minimax_api_key")
     if key_file.exists():
         return key_file.read_text().strip()
-    key = os.getenv("MINIMAX_API_KEY")
-    if key:
-        return key
     raise ValueError(
-        "MINIMAX_API_KEY not found. Set env var or create data/.minimax_api_key"
+        "MINIMAX_API_KEY not found. Set environment variable MINIMAX_API_KEY in .env"
     )
 
 

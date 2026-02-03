@@ -72,23 +72,26 @@ def bool_str(v: bool) -> str:
 
 def load_api_key(root: Optional[Path] = None) -> str:
     """
-    Load API key from environment variable DATALAB_API_KEY.
-    If not found and root is provided, try reading from root/data/.datalab_api_key.
+    Load API key from environment variable DATALAB_API_KEY (preferred).
+    Falls back to legacy file root/data/.datalab_api_key for backwards compatibility.
     """
     api_key = os.environ.get("DATALAB_API_KEY", "").strip()
     if api_key:
         return api_key
 
+    # Fallback to legacy file for backwards compatibility
     if root is not None:
         api_key_file = root / "data" / ".datalab_api_key"
         if api_key_file.exists():
             api_key = api_key_file.read_text(encoding="utf-8").strip()
             if api_key:
-                logging.debug("Loading API key from file location")
+                logging.debug(
+                    "Loading API key from legacy file (consider migrating to .env)"
+                )
                 return api_key
 
     raise RuntimeError(
-        "Missing API key. Set DATALAB_API_KEY or create data/.datalab_api_key"
+        "Missing API key. Set environment variable DATALAB_API_KEY in .env"
     )
 
 
