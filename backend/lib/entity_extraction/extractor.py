@@ -273,14 +273,14 @@ class ZhipuExtractor:
     - Uses relationship type normalization for robust output
     """
 
-    MODEL_PLUS = "glm-4-plus"
-    MODEL_FLASH = "glm-4-flash"  
-    MODEL_AIR = "glm-4-air"
+    MODEL_PLUS = "glm-4.7"
+    MODEL_FLASH = "glm-4.7-flash"  
+    MODEL_AIR = "glm-4.5-air"
 
     def __init__(
         self,
         api_key: Optional[str] = None,
-        model: str = "glm-4-flash",
+        model: str = "glm-4.7-flash",
         base_url: str = "https://api.z.ai/api/coding/paas/v4",
     ):
         import openai

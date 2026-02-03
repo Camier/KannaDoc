@@ -30,7 +30,7 @@ def get_extractor(
 ) -> Union[MinimaxExtractor, ZhipuExtractor]:
     """Create the appropriate extractor based on provider selection."""
     if provider == "zhipu":
-        zhipu_model = model or "glm-4-flash"
+        zhipu_model = model or "glm-4.7-flash"
         logger.info(f"Using Zhipu extractor with model: {zhipu_model}")
         return ZhipuExtractor(model=zhipu_model)
     else:  # minimax
