@@ -8,7 +8,7 @@ import torch
 class BGEM3Service:
     """BGE-M3 model service for sparse embeddings."""
 
-    def __init__(self, model_path: str = "BAAI/bge-m3"):
+    def __init__(self, model_path: str = "/model_weights/bge-m3"):
         """Initialize BGE-M3 model.
 
         Args:

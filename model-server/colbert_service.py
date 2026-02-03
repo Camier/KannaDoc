@@ -11,6 +11,18 @@ from tqdm import tqdm
 from config import settings
 
 
+def pick_compute_dtype() -> torch.dtype:
+    if torch.cuda.is_available():
+        major, _ = torch.cuda.get_device_capability()
+        if major >= 8:
+            return torch.bfloat16
+        return torch.float16
+    return torch.float32
+
+
+compute_dtype = pick_compute_dtype()
+
+
 class ColBERTService:
     def __init__(self, model_path):
         print(f"🚀 Initializing ColBERTService with model_path: {model_path}")
@@ -34,8 +46,15 @@ class ColBERTService:
         self.device = torch.device(get_torch_device("auto"))
 
         # --- HIGH PERFORMANCE CUDA SETTINGS ---
-        torch.backends.cuda.matmul.allow_tf32 = True
-        torch.backends.cudnn.allow_tf32 = True
+        # TF32 only beneficial on Ampere+ (SM >= 8.0)
+        if torch.cuda.is_available():
+            major, _ = torch.cuda.get_device_capability()
+            if major >= 8:
+                torch.backends.cuda.matmul.allow_tf32 = True
+                torch.backends.cudnn.allow_tf32 = True
+                print(f"🔧 TF32 enabled (Ampere+ GPU detected, SM {major}.x)")
+            else:
+                print(f"🔧 TF32 skipped (SM {major}.x < 8.0)")
         torch.backends.cudnn.benchmark = True
 
         # 4-bit quantization config
@@ -43,7 +62,7 @@ class ColBERTService:
             load_in_4bit=True,
             bnb_4bit_use_double_quant=True,
             bnb_4bit_quant_type="nf4",
-            bnb_4bit_compute_dtype=torch.bfloat16,
+            bnb_4bit_compute_dtype=compute_dtype,
         )
 
         # Force SDPA (Optimized for Turing/RTX 5000 - Flash Attention 2 not supported)
@@ -52,10 +71,11 @@ class ColBERTService:
 
         print(f"🔧 Loading model from {model_path}...")
         print(f"   Using device: {self.device}")
+        print(f"   Using compute dtype: {compute_dtype}")
         try:
             self.model = ColQwen2_5.from_pretrained(
                 model_path,
-                torch_dtype=torch.bfloat16,
+                torch_dtype=compute_dtype,
                 quantization_config=bnb_config,
                 device_map=self.device,
                 attn_implementation=attn_impl,

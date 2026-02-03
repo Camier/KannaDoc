@@ -313,6 +313,7 @@ services:
       - MINIO_BUCKET_NAME=${MINIO_BUCKET_NAME}
       - MODEL_SERVER_URL=${MODEL_SERVER_URL:-http://model-server:8005}
       - DEBUG_MODE=${DEBUG_MODE}
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
       - MILVUS_URI=http://milvus-standalone:19530
       - QDRANT_URL=http://qdrant:6333
       - VECTOR_DB=${VECTOR_DB:-milvus}
@@ -398,11 +399,11 @@ services:
     networks:
       - layra-net
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8005/healthy-check"]
+      test: ["CMD", "curl", "-f", "http://localhost:8005/health/ready"]
       interval: 30s
-      start_period: 30s
-      timeout: 5s
-      retries: 10
+      start_period: 120s
+      timeout: 10s
+      retries: 15
 
   frontend:
     container_name: layra-frontend

@@ -52,4 +52,19 @@ else
     echo "警告: 找不到 adapter_config.json 文件"
 fi
 
+# Check BGE-M3 model
+BGE_MODEL="bge-m3"
+if [ -f "$MODEL_DIR/$BGE_MODEL/complete.layra" ]; then
+    echo "BGE-M3 model exists, skipping: $BGE_MODEL"
+else
+    echo "Downloading BGE-M3 model: $BGE_MODEL"
+    if [ -d "$MODEL_DIR/$BGE_MODEL" ]; then
+        echo "Cleaning incomplete BGE-M3 directory..."
+        rm -rf "$MODEL_DIR/$BGE_MODEL"
+    fi
+    # Use git clone with LFS for HuggingFace model
+    git clone https://huggingface.co/BAAI/bge-m3 "$MODEL_DIR/$BGE_MODEL"
+    touch "$MODEL_DIR/$BGE_MODEL/complete.layra"
+fi
+
 echo "✅ 模型权重初始化完成"
