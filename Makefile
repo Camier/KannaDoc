@@ -1,7 +1,7 @@
 # LAYRA - Makefile
 # Quick shortcuts for development and deployment
 
-.PHONY: up down logs restart build clean reset status health test help
+.PHONY: up down logs restart build clean reset status health test test-frontend test-all help
 
 # Colors for output
 RED = \033[0;31m
@@ -40,7 +40,10 @@ help:
 	@echo "  ${GREEN}make ssh-backend${NC} - SSH into backend container"
 	@echo "  ${GREEN}make ssh-model${NC}   - SSH into model-server container"
 	@echo ""
-	@echo "  ${GREEN}make test${NC}       - Check if services are healthy"
+	@echo "  ${GREEN}make test${NC}       - Run backend tests (pytest)"
+	@echo "  ${GREEN}make test-frontend${NC} - Run frontend tests (vitest)"
+	@echo "  ${GREEN}make test-all${NC}    - Run all tests"
+	@echo "  ${GREEN}make health${NC}     - Check API health"
 	@echo "  ${GREEN}make help${NC}       - Show this help message"
 	@echo ""
 
@@ -149,8 +152,15 @@ ssh-backend:
 ssh-model:
 	docker exec -it layra-model-server /bin/bash
 
-# Test if services are running
-test: health
-	@echo ""
-	@echo "${YELLOW}Service Status:${NC}"
-	@./scripts/compose-clean ps --filter "status=running" | head -20
+# Run backend tests
+test:
+	@echo "${YELLOW}Running backend tests...${NC}"
+	cd backend && PYTHONPATH=. pytest
+
+# Run frontend tests
+test-frontend:
+	@echo "${YELLOW}Running frontend tests...${NC}"
+	cd frontend && npm run test:run
+
+# Run all tests
+test-all: test test-frontend
