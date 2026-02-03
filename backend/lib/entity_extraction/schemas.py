@@ -50,6 +50,57 @@ RELATIONSHIP_TYPES = [
     "SUGGESTS",
 ]
 
+# Mapping of common LLM-generated relationship types to canonical types
+RELATIONSHIP_TYPE_ALIASES = {
+    "SUPPORTS": "SUGGESTS",
+    "CAUSES": "PRODUCES",
+    "DERIVES_FROM": "TRANSFORMS",
+    "EXTRACTED_FROM": "CONTAINS",
+    "INHIBITS": "ACTS_ON",
+    "ACTIVATES": "ACTS_ON",
+    "BINDS": "ACTS_ON",
+    "MODULATES": "ACTS_ON",
+    "AFFECTS": "ACTS_ON",
+    "INDICATES": "SUGGESTS",
+    "IMPLIES": "SUGGESTS",
+    "USED_FOR": "TREATS",
+    "TREATS_WITH": "TREATS",
+    "HAS": "CONTAINS",
+    "INCLUDES": "CONTAINS",
+    "COMPOSED_OF": "CONTAINS",
+    "PART_OF": "CONTAINS",
+    "YIELDS": "PRODUCES",
+    "GENERATES": "PRODUCES",
+    "RESULTS_IN": "PRODUCES",
+    "LEADS_TO": "PRODUCES",
+    "CONVERTS": "TRANSFORMS",
+    "PROCESSES": "TRANSFORMS",
+    "PREPARES": "TRANSFORMS",
+}
+
+
+def normalize_relationship_type(rel_type: str) -> str:
+    """Normalize relationship type to canonical form.
+    
+    Maps common LLM-generated relationship types to our 6 canonical types:
+    TRANSFORMS, CONTAINS, ACTS_ON, PRODUCES, TREATS, SUGGESTS
+    
+    Args:
+        rel_type: Raw relationship type from LLM
+        
+    Returns:
+        Canonical relationship type (defaults to SUGGESTS if unknown)
+    """
+    if not rel_type:
+        return "SUGGESTS"
+    normalized = rel_type.upper().strip()
+    if normalized in RELATIONSHIP_TYPES:
+        return normalized
+    if normalized in RELATIONSHIP_TYPE_ALIASES:
+        return RELATIONSHIP_TYPE_ALIASES[normalized]
+    return "SUGGESTS"
+
+
 
 class Entity(BaseModel):
     model_config = ConfigDict(populate_by_name=True)
