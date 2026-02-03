@@ -46,6 +46,9 @@ PYTHONPATH=. python3 scripts/datalab/extract_entities_v2.py [options]
 - `--lightning`: Use `MiniMax-M2.1-lightning` for faster processing.
 - `--force`: Overwrite existing `entities.json`.
 - `--doc-workers`: Number of parallel document workers (default: 4).
+- `--chunk-workers`: Parallel chunk workers per doc (default: 2).
+- `--dry-run`: Show what would be processed.
+- `--limit`: Limit number of documents to process.
 
 **Example**:
 ```bash
@@ -84,11 +87,19 @@ PYTHONPATH=. python3 scripts/datalab/milvus_ingest.py [options] <chunks_file>
 ```
 
 **Arguments**:
-- `<chunks_file>`: Path to JSONL file (rag_chunks) or directory (normalized).
+- `chunks_file`: (Positional) Path to JSONL file (`rag_chunks`) or directory (`normalized`).
 - `--collection`: Milvus collection name (default: `ethnopharmacology_v2`).
+- `--milvus-host`: Milvus server host (default: `localhost`).
+- `--milvus-port`: Milvus server port (default: `19530`).
+- `--catalog`: Path to paper catalog JSONL file for metadata enrichment.
 - `--source`: `{rag_chunks,normalized}` - Source format (default: `rag_chunks`).
-- `--ollama`: Use Ollama local embeddings instead of OpenAI.
+- `--api-key`: OpenAI API key (overrides environment variable).
+- `--index-type`: Vector index type (default: `HNSW`).
+- `--metric-type`: Distance metric type (default: `COSINE`).
 - `--batch-size`: Number of chunks per batch (default: 100).
+- `--ollama`: Use Ollama local embeddings instead of OpenAI.
+- `--dry-run`: Validate and prepare chunks without actual insertion.
+- `--no-load`: Skip loading collection into memory after insertion.
 
 **Example**:
 ```bash
@@ -129,6 +140,8 @@ PYTHONPATH=. python3 scripts/datalab/rag_eval.py [options]
 **Arguments**:
 - `--dataset`: Path to evaluation set JSONL (default: `app/eval/config/dataset_dev.jsonl`).
 - `--top-k`: Number of documents to retrieve (default: 5).
+- `--output`: Output path for results JSON.
+- `--corpus`: Path to corpus directory (for keyword search).
 - `--thresholds`: Path to thresholds YAML file.
 
 **Example**:
@@ -148,9 +161,12 @@ PYTHONPATH=. python3 scripts/datalab/rag_optimize.py [options] <extraction_path>
 ```
 
 **Arguments**:
-- `<extraction_path>`: Path to a single extraction or parent directory (with `--batch`).
+- `extraction_path`: (Positional) Path to a single extraction or parent directory (with `--batch`).
+- `--output-dir`: Output directory for optimized chunks (default: `rag_optimized/`).
 - `--batch`: Process all subdirectories and aggregate.
 - `--output`: Output file path for aggregated chunks.
+- `--quiet`: Suppress per-document output in batch mode.
+- `--verbose`: Enable verbose logging.
 
 **Example**:
 ```bash
@@ -165,7 +181,7 @@ PYTHONPATH=. python3 scripts/datalab/rag_optimize.py data/extractions --batch --
 | Script | Purpose | Notes |
 |--------|---------|-------|
 | `aggregate_corpus.py` | Merges extraction metadata and blocks into aggregated JSONL manifests. | Uses `data/cache/metadata/paper_catalog.jsonl` as source. |
-| `create_id_mapping.py` | Generates `id_mapping.json` by matching DataLab PDFs with LAYRA extractions. | **Hardcoded paths**: Expects `/LAB/@thesis/datalab/ALL_FLAT`. |
+| `create_id_mapping.py` | Generates `id_mapping.json` by matching DataLab PDFs with LAYRA extractions. | **Hardcoded paths**: Expects `/LAB/@thesis/datalab/ALL_FLAT`. (No CLI args) |
 | `verify_merge.py` | Validates that all documents in `id_mapping.json` have corresponding extraction directories. | Ensures data integrity of the 129-doc corpus. |
 | `recover_extractions.py` | Powerful CLI to recover failed extractions from Marker API logs or re-download results. | Requires `.datalab_api_key`. |
 | `tidy_data.py` | Organizes the `data/` directory by moving files to `config/`, `cache/`, or `_archive/`. | High-level cleanup tool. |
