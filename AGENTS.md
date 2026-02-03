@@ -24,15 +24,20 @@ layra/
 │   │   │   ├── endpoints/      # Resource endpoints
 │   │   │   │   ├── eval.py     # Evaluation API (Run/Status/Metrics)
 │   │   │   │   └── knowledge_base.py# KB management (Upload/Delete/List)
-│   │   └── eval/               # Evaluation system
-│   │       ├── metrics.py      # MRR, NDCG, P@K, R@K implementation
-│   │       ├── labeler.py      # LLM-based relevance scoring
-│   │       ├── runner.py       # Orchestration + p95 latency tracking
-│   │       ├── dataset.py      # Dataset CRUD and persistence
-│   │       ├── query_generator.py # Synthetic query generation
-│   │       └── config/
-│   │           ├── thresholds.yaml    # Quality targets (dev/prod)
-│   │           └── dataset_dev.jsonl  # 20 curated eval questions
+│   │   ├── eval/               # Evaluation system
+│   │   │   ├── metrics.py      # MRR, NDCG, P@K, R@K implementation
+│   │   │   ├── labeler.py      # LLM-based relevance scoring
+│   │   │   ├── runner.py       # Orchestration + p95 latency tracking
+│   │   │   ├── dataset.py      # Dataset CRUD and persistence
+│   │   │   ├── query_generator.py # Synthetic query generation
+│   │   │   └── config/
+│   │   │       ├── thresholds.yaml    # Quality targets (dev/prod)
+│   │   │       └── dataset_dev.jsonl  # 20 curated eval questions
+│   │   └── workflow/           # Autonomous workflow engine
+│   │       ├── components/     # Checkpoint, LLM, and loop management
+│   │       ├── workflow_engine.py# Core orchestration logic
+│   │       ├── graph.py        # Graph traversal and nodes
+│   │       └── sandbox.py      # Docker-based code execution
 │   │
 │   ├── lib/
 │   │   ├── entity_extraction/  # V2 extraction logic
@@ -52,6 +57,12 @@ layra/
 │   │       ├── datalab_utils.py # Shared utility functions
 │   │       ├── schemas/        # Pydantic data models
 │   │       └── repair/         # Layout correction modules
+│   │
+│   ├── tests/                  # Comprehensive test suite
+│   │   ├── test_rag_pipeline.py# E2E RAG verification
+│   │   ├── test_workflow_engine.py# Workflow engine tests
+│   │   ├── test_security_utils.py# Security and auth tests
+│   │   └── test_eval_metrics.py# Metrics calculation tests
 │   │
 │   ├── scripts/
 │   │   └── datalab/            # Data orchestration (14 scripts)
@@ -255,3 +266,48 @@ These artifacts are essential for maintaining the state of the knowledge base an
 - `backend/lib/datalab/AGENTS.md`: Detailed documentation for DataLab modules.
 - `backend/docs/PIPELINE_AUDIT_2026-02-02.md`: Audit of the current data state.
 - `/LAB/@thesis/datalab.archive/`: External backup of the original DataLab project.
+
+## 11. WORKFLOW ENGINE
+
+The system includes an autonomous workflow orchestration engine located in `backend/app/workflow/`. It enables complex multi-step reasoning and tool-augmented execution.
+
+### 11.1 Key Components
+- **WorkflowEngine**: Central orchestrator managing state, graph traversal, and execution flow.
+- **CodeSandbox**: Docker-based execution environment for safe Python code evaluation.
+- **Graph & TreeNode**: Recursive data structures for modeling complex workflow DAGs.
+- **WorkflowCheckpointManager**: Redis-backed state persistence for fault tolerance and recovery.
+- **MCP Tool Bridge**: Integration layer for Model Context Protocol (MCP) tool invocation.
+
+### 11.2 Capabilities
+- **Stateful Execution**: Context sharing across nodes with loop and recursion limits.
+- **Sandboxed Execution**: Isolated environments for dynamically generated code.
+- **LLM Fault Tolerance**: Circuit breakers and exponential backoff for LLM provider calls.
+
+## 12. TEST SUITE
+
+The repository maintains a comprehensive test suite using `pytest`. Tests are located in `backend/tests/` and cover unit, functional, and integration levels.
+
+### 12.1 Key Test Modules
+- `test_rag_pipeline.py`: End-to-end RAG workflow verification including retrieval and generation.
+- `test_workflow_engine.py`: Tests for the autonomous workflow orchestration engine.
+- `test_eval_metrics.py`: Verification of IR metrics (MRR, NDCG, etc.) calculation logic.
+- `test_hybrid_search.py`: Tests for multi-vector and filtered search capabilities.
+- `test_security_utils.py`: Security-critical tests for hashing, encryption, and data sanitization.
+- `test_repositories_crud.py`: CRUD operation tests for the database repository layer.
+- `test_performance.py`: Latency and throughput benchmarks for critical paths.
+
+### 12.2 Execution
+All tests should be run from the `backend/` directory.
+
+```bash
+# Run all tests
+PYTHONPATH=. pytest tests/
+
+# Run specific test file
+PYTHONPATH=. pytest tests/test_rag_pipeline.py
+```
+
+### 12.3 Coverage Areas
+- **RAG & Search**: Retrieval precision, HNSW parameter tuning, and hybrid ranking.
+- **Workflows**: Graph traversal integrity and sandbox isolation.
+- **Security**: Password migration, token validation, and API rate limiting.
