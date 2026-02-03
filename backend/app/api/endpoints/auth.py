@@ -17,7 +17,10 @@ from app.schemas.auth import TokenData, TokenSchema
 from app.schemas.user import UserCreate, UserResponse
 from app.models.user import User
 from app.db.mysql_session import get_mysql_session
-from app.db.repositories.repository_manager import RepositoryManager, get_repository_manager
+from app.db.repositories.repository_manager import (
+    RepositoryManager,
+    get_repository_manager,
+)
 
 from app.core.security import (
     authenticate_user,
@@ -38,6 +41,7 @@ router = APIRouter()
 # TOKEN VERIFICATION
 # =============================================================================
 
+
 @router.get("/verify-token", response_model=TokenData)
 async def verify_token(token_data: TokenData = Depends(get_current_user)):
     """
@@ -52,6 +56,7 @@ async def verify_token(token_data: TokenData = Depends(get_current_user)):
 # =============================================================================
 # LOGIN (OAuth2 Password Flow)
 # =============================================================================
+
 
 @router.post("/login", response_model=TokenSchema)
 async def login(
@@ -98,6 +103,7 @@ async def login(
 # LOGOUT (Token Revocation)
 # =============================================================================
 
+
 @router.post("/logout")
 async def logout(token_data: TokenData = Depends(get_current_user)):
     """
@@ -119,6 +125,7 @@ async def logout(token_data: TokenData = Depends(get_current_user)):
 # =============================================================================
 # REGISTRATION
 # =============================================================================
+
 
 @router.post("/register", response_model=UserResponse)
 async def register(
@@ -171,7 +178,7 @@ async def register(
         model_id=model_id,
         model_name="qwen2.5-vl-32b-instruct",
         model_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
-        api_key="sk-default-xxx",
+        api_key="",
         base_used=[],
         system_prompt="You are a helpful assistant.",
         temperature=-1,
