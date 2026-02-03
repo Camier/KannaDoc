@@ -2,12 +2,6 @@
 Security utilities for authentication and password hashing.
 
 This module provides centralized authentication and authorization functionality.
-
-MIGRATION NOTICE: The verify_password_legacy() function exists for migrating
-existing passwords from the old hardcoded salt to proper bcrypt. After all users
-have migrated (password_migration_required=False), this function should be removed.
-
-DEADLINE: 2026-02-23 - Remove verify_password_legacy() after password migration complete.
 """
 
 from fastapi import HTTPException, Depends, status
