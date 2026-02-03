@@ -53,7 +53,8 @@ GET /api/v1/eval/runs/{run_id}
 backend/
 ├── app/                    # FastAPI application
 │   ├── api/endpoints/      # REST endpoints
-│   │   └── eval.py         # Evaluation endpoints
+│   │   ├── eval.py         # Evaluation endpoints
+│   │   └── knowledge_base.py # KB management (Upload/Delete/List)
 │   └── eval/               # Evaluation system
 │       ├── metrics.py      # IR metrics (MRR, NDCG, P@K, R@K)
 │       ├── labeler.py      # LLM relevance scoring
@@ -69,9 +70,9 @@ backend/
 │   │   ├── extractor.py    # MinimaxExtractor
 │   │   └── prompt.py       # Extraction prompt
 │   └── datalab/            # DataLab pipeline (archived from datalab.archive)
-│       ├── datalab_api.py  # DataLab API client
-│       ├── milvus_ingest.py
-│       ├── neo4j_ingest.py
+│       ├── datalab_api.py  # DataLab API client (Marker API)
+│       ├── datalab_process.py# PDF-to-block transformation
+│       ├── datalab_ingest.py # Document catalog manager
 │       └── ...
 │
 ├── scripts/
