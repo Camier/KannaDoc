@@ -13,6 +13,8 @@ from app.db.repositories.repository_manager import (
 )
 from app.db.vector_db import vector_db_client
 from app.rag.get_embedding import get_embeddings_from_httpx
+from app.core.embeddings import normalize_multivector, downsample_multivector
+from app.core.config import settings
 from app.core.logging import logger
 
 router = APIRouter()
@@ -96,12 +98,20 @@ async def search_preview(
     # Get embeddings for query
     try:
         logger.info(f"Generating embeddings for query: {request.query}")
-        query_embeddings = await get_embeddings_from_httpx(request.query)
+        raw_embeddings = await get_embeddings_from_httpx(
+            [request.query], endpoint="embed_text"
+        )
 
-        if not query_embeddings:
+        if not raw_embeddings:
             raise HTTPException(
                 status_code=500, detail="Failed to generate query embeddings"
             )
+
+        # Normalize and downsample multi-vector embeddings (ColQwen format)
+        query_embeddings = normalize_multivector(raw_embeddings)
+        query_embeddings = downsample_multivector(
+            query_embeddings, settings.rag_max_query_vecs
+        )
     except Exception as e:
         logger.error(f"Embedding generation failed: {e}")
         raise HTTPException(
