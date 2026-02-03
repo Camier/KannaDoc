@@ -23,8 +23,9 @@ RUN apt-get update && \
 # Set locale
 ENV LANG zh_CN.utf8
 
-# Create docker group (commented out as in original)
-# RUN groupadd docker && usermod -aG docker root
+# Create non-root user for security (principle of least privilege)
+RUN groupadd --gid 1000 appuser && \
+    useradd --uid 1000 --gid appuser --shell /bin/bash --create-home appuser
 
 WORKDIR /app
 
@@ -46,5 +47,12 @@ RUN chmod +x /entrypoint.sh
 
 # Create sandbox shared directory
 RUN mkdir -p /app/sandbox_workspace && chmod 777 /app/sandbox_workspace
+
+# Create migrations directories with proper ownership
+RUN mkdir -p /app/migrations /app/migrations_previous && \
+    chown -R appuser:appuser /app
+
+# Switch to non-root user
+USER appuser
 
 ENTRYPOINT ["/entrypoint.sh"]
