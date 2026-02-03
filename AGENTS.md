@@ -210,6 +210,17 @@ All commands should be run from `backend/` directory with `PYTHONPATH=.`.
 
 **Configuration**: Managed via `.env` (EMBEDDING_MODEL, MILVUS_URI, HNSW parameters).
 
+### 7.1 Hybrid Search Configuration
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `RAG_HYBRID_ENABLED` | Enable hybrid search (dense + sparse) | `false` |
+| `RAG_HYBRID_RANKER` | Ranking strategy (`rrf` or `weighted`) | `rrf` |
+| `RAG_HYBRID_RRF_K` | RRF smoothing constant (default: 60) | `60` |
+| `RAG_HYBRID_DENSE_WEIGHT` | Weight for dense retrieval (if ranker=weighted) | `0.7` |
+| `RAG_HYBRID_SPARSE_WEIGHT` | Weight for sparse retrieval (if ranker=weighted) | `0.3` |
+
+
 ## 8. DATA ARTIFACTS
 
 The `backend/data/` directory contains the core knowledge assets of the system.
