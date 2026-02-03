@@ -35,17 +35,11 @@ class Config:
     """Configuration from environment variables."""
 
     # Database connections
-    mongo_url: str = os.getenv(
-        "MONGODB_URL",
-        "mongodb://thesis:thesis_mongo_3a2572a198fa78362d6d8e9b31a98bac@mongodb:27017",
-    )
+    mongo_url: str = os.getenv("MONGODB_URL", "")
     milvus_uri: str = os.getenv("MILVUS_URI", "http://milvus-standalone:19530")
     minio_url: str = os.getenv("MINIO_URL", "http://minio:9000")
     minio_access_key: str = os.getenv("MINIO_ACCESS_KEY", "thesis_minio")
-    minio_secret_key: str = os.getenv(
-        "MINIO_SECRET_KEY",
-        "thesis_minio_2d1105118d28bc4eedf9aec29b678e70566dc9e58f43df4e",
-    )
+    minio_secret_key: str = os.getenv("MINIO_SECRET_KEY", "")
     minio_bucket: str = os.getenv("MINIO_BUCKET_NAME", "minio-file")
 
     # Paths (inside container)
@@ -71,8 +65,21 @@ class Config:
     # Checkpoint file
     checkpoint_file: str = "/app/ingestion_checkpoint.json"
 
+    def validate(self):
+        """Validate critical settings."""
+        missing = []
+        if not self.mongo_url:
+            missing.append("MONGODB_URL")
+        if not self.minio_secret_key:
+            missing.append("MINIO_SECRET_KEY")
+        if missing:
+            raise ValueError(
+                f"CRITICAL SECURITY ERROR: Missing required environment variables: {', '.join(missing)}"
+            )
+
 
 config = Config()
+config.validate()
 
 # ============= LOGGING =============
 logging.basicConfig(

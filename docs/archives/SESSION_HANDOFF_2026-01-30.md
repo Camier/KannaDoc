@@ -126,7 +126,7 @@ for col in c.list_collections():
     print(f'{col}: {c.get_collection_stats(col)}')"
 
 # Check MongoDB KBs
-docker exec layra-mongodb mongosh 'mongodb://thesis:thesis_mongo_3a2572a198fa78362d6d8e9b31a98bac@localhost:27017/chat_mongodb?authSource=admin' --quiet --eval '
+docker exec layra-mongodb mongosh 'mongodb://thesis:<mongodb_password>@localhost:27017/chat_mongodb?authSource=admin' --quiet --eval '
 db.knowledge_bases.find({}, {knowledge_base_id:1, is_delete:1}).forEach(printjson)'
 
 # Check RAG latency

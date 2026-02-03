@@ -10,10 +10,12 @@ from motor.motor_asyncio import AsyncIOMotorClient
 import asyncio
 
 # Config
-MILVUS_URI = "http://milvus-standalone:19530"
-MONGO_URL = (
-    "mongodb://thesis:thesis_mongo_3a2572a198fa78362d6d8e9b31a98bac@mongodb:27017"
-)
+MILVUS_URI = os.getenv("MILVUS_URI", "http://milvus-standalone:19530")
+MONGO_URL = os.getenv("MONGODB_URL")
+if not MONGO_URL:
+    raise ValueError(
+        "MONGODB_URL environment variable is not set. Please provide it for database connection."
+    )
 KB_ID = "thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1"
 COLLECTION_NAME = "colqwen" + KB_ID.replace("-", "_")
 USERNAME = "thesis"

@@ -75,7 +75,7 @@ SERVER_IP=http://localhost:8090
 # LLM Providers
 OPENAI_API_KEY=sk-proj-...
 DEEPSEEK_API_KEY=sk-...
-ZHIPUAI_API_KEY=id.secret  # JWT format for GLM models
+ZHIPUAI_API_KEY=your-zhipu-api-key  # JWT format for GLM models
 DEFAULT_LLM_PROVIDER=openai
 DEFAULT_LLM_MODEL=gpt-4o-mini
 
@@ -248,11 +248,8 @@ docker logs layra-frontend
 ```bash
 # Check MongoDB model_config schema
 docker exec layra-mongodb mongosh \
-  "mongodb://thesis:thesis_mongo_3a2572a198fa78362d6d8e9b31a98bac@localhost:27017/chat_mongodb?authSource=admin" \
+  "mongodb://<user>:<password>@localhost:27017/chat_mongodb?authSource=admin" \
   --eval "db.model_config.findOne({username: 'your_username'})"
-
-# Expected schema has "models" array
-# If old format, migrate to new schema
 ```
 
 ### GLM-4.7 Returns "余额不足" (Insufficient Balance)

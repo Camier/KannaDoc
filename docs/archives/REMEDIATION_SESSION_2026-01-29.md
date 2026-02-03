@@ -152,7 +152,7 @@ MONGODB_DB=chat_mongodb  # NOT "layra"!
 **Direct MongoDB Access:**
 ```bash
 docker exec layra-mongodb mongosh \
-  "mongodb://thesis:thesis_mongo_3a2572a198fa78362d6d8e9b31a98bac@localhost:27017/chat_mongodb?authSource=admin"
+  "mongodb://thesis:<mongodb_password>@localhost:27017/chat_mongodb?authSource=admin"
 ```
 
 ---
