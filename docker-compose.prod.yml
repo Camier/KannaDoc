@@ -4,7 +4,7 @@
 # Security hardening applied:
 # - restart: unless-stopped on all services
 # - Resource limits (CPU/memory) on all services
-# - Log rotation (10MB, 3 files max)
+# - Log rotation (50MB, 3 files max)
 # - No Docker socket mount (sandbox feature disabled)
 # - No dev bind mounts (./backend:/app removed)
 # - Pinned image versions (no :latest tags)
@@ -14,7 +14,7 @@
 x-logging: &default-logging
   driver: json-file
   options:
-    max-size: "10m"
+    max-size: "50m"
     max-file: "3"
 
 services:
