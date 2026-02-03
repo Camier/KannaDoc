@@ -26,7 +26,7 @@ KB_ID = "thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1"
 COLLECTION_NAME = "colqwen" + KB_ID.replace("-", "_")
 USERNAME = "thesis"
 EMBEDDINGS_DIR = "/app/embeddings_output"
-CORPUS_DIR = "/app/literature/corpus"
+CORPUS_DIR = "/app/data/pdfs"
 BATCH_SIZE = 2000
 
 

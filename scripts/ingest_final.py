@@ -44,7 +44,7 @@ class Config:
 
     # Paths (inside container)
     embeddings_dir: str = "/app/embeddings_output"
-    corpus_dir: str = "/app/literature/corpus"
+    corpus_dir: str = "/app/data/pdfs"
 
     # Thesis data
     username: str = "thesis"

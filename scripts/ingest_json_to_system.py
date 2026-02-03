@@ -31,7 +31,7 @@ MINIO_BUCKET = os.getenv("MINIO_BUCKET_NAME", "minio-file")
 
 # Paths (Inside Container)
 EMBEDDINGS_DIR = "/app/embeddings_output"
-CORPUS_DIR = "/app/literature/corpus"
+CORPUS_DIR = "/app/data/pdfs"
 
 # Thesis Data
 USERNAME = "thesis"

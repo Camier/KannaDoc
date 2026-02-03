@@ -95,7 +95,7 @@ class Config:
 
     # Paths (inside container)
     embeddings_dir: str = os.getenv("LAYRA_EMBEDDINGS_DIR", "/app/embeddings_output")
-    corpus_dir: str = os.getenv("LAYRA_CORPUS_DIR", "/app/literature/corpus")
+    corpus_dir: str = os.getenv("LAYRA_CORPUS_DIR", "/app/data/pdfs")
 
     # Thesis data
     username: str = os.getenv("LAYRA_INGEST_USERNAME", "thesis")

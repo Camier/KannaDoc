@@ -305,9 +305,9 @@ def main():
     # Find a PDF to upload
     import glob
     import os
-    pdf_files = glob.glob("/LAB/@thesis/layra/literature/corpus/*.pdf")
+    pdf_files = glob.glob("/LAB/@thesis/layra/data/pdfs/*.pdf")
     if not pdf_files:
-        print("No PDF files found in literature/corpus.")
+        print("No PDF files found in data/pdfs.")
         return
     
     file_to_upload = pdf_files[0]

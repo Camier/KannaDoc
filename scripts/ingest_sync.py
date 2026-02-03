@@ -29,7 +29,7 @@ if not MINIO_SECRET_KEY:
 MINIO_BUCKET = os.getenv("MINIO_BUCKET_NAME", "minio-file")
 
 EMBEDDINGS_DIR = "/app/embeddings_output"
-CORPUS_DIR = "/app/literature/corpus"
+CORPUS_DIR = "/app/data/pdfs"
 
 USERNAME = "thesis"
 KB_ID = "thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1"

@@ -129,7 +129,7 @@ def check_embeddings():
             print(f"  - {f} ({size:,} bytes)")
 
     # Check PDF corpus
-    corpus_dir = "/app/literature/corpus"
+    corpus_dir = "/app/data/pdfs"
     if os.path.exists(corpus_dir):
         pdf_files = [f for f in os.listdir(corpus_dir) if f.endswith(".pdf")]
         print(f"\nPDF files in corpus: {len(pdf_files)}")

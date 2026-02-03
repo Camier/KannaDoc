@@ -20,7 +20,7 @@ def main():
 
     datalab_pdfs = sorted(datalab_pdf_dir.glob("*.pdf"))
 
-    layra_pdf_dir = Path("/LAB/@thesis/layra/backend/literature/corpus")
+    layra_pdf_dir = Path("/LAB/@thesis/layra/backend/data/pdfs")
 
     mappings = []
     for pdf in datalab_pdfs:
