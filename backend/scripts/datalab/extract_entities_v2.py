@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""CLI script for v2 entity extraction using MinimaxM2.1."""
+"""CLI script for v2 entity extraction using MinimaxM2.1 or Zhipu GLM-4."""
 
 import argparse
 import json
@@ -8,11 +8,12 @@ import os
 import sys
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Union
 
 from tqdm import tqdm
 
 from lib.entity_extraction import MinimaxExtractor
+from lib.entity_extraction.extractor import ZhipuExtractor
 
 logging.basicConfig(
     level=logging.INFO,
@@ -22,9 +23,24 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
+def get_extractor(
+    provider: str,
+    model: Optional[str] = None,
+    use_lightning: bool = False,
+) -> Union[MinimaxExtractor, ZhipuExtractor]:
+    """Create the appropriate extractor based on provider selection."""
+    if provider == "zhipu":
+        zhipu_model = model or "glm-4-flash"
+        logger.info(f"Using Zhipu extractor with model: {zhipu_model}")
+        return ZhipuExtractor(model=zhipu_model)
+    else:  # minimax
+        logger.info(f"Using MiniMax extractor (lightning={use_lightning})")
+        return MinimaxExtractor(use_lightning=use_lightning)
+
+
 def process_doc_dir(
     doc_dir: Path,
-    extractor: MinimaxExtractor,
+    extractor: Union[MinimaxExtractor, ZhipuExtractor],
     output_dir: Optional[Path] = None,
     chunk_workers: int = 2,
     force: bool = False,
@@ -72,7 +88,7 @@ def process_doc_dir(
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Extract entities using MinimaxM2.1 (v2 schema)"
+        description="Extract entities using MinimaxM2.1 or Zhipu GLM-4 (v2 schema)"
     )
     parser.add_argument(
         "--input-dir",
@@ -85,6 +101,18 @@ def main():
         "--output-dir",
         type=str,
         help="Output directory (default: same as input)",
+    )
+    parser.add_argument(
+        "--provider",
+        type=str,
+        choices=["minimax", "zhipu"],
+        default="zhipu",
+        help="LLM provider for extraction (default: zhipu)",
+    )
+    parser.add_argument(
+        "--model",
+        type=str,
+        help="Model to use (zhipu: glm-4-plus, glm-4-flash, glm-4-air; minimax: MiniMax-M2.1)",
     )
     parser.add_argument(
         "--doc-workers",
@@ -121,15 +149,20 @@ def main():
     parser.add_argument(
         "--lightning",
         action="store_true",
-        help="Use MiniMax-M2.1-lightning for faster processing",
+        help="Use MiniMax-M2.1-lightning for faster processing (minimax only)",
     )
 
     args = parser.parse_args()
 
-    extractor = MinimaxExtractor(use_lightning=args.lightning)
+    # Create extractor based on provider selection
+    extractor = get_extractor(
+        provider=args.provider,
+        model=args.model,
+        use_lightning=args.lightning,
+    )
 
     if args.test:
-        logger.info(f"Test mode: {args.test}")
+        logger.info(f"Test mode with {args.provider}: {args.test}")
         result = extractor.extract_chunk(
             args.test, doc_id="test_doc", chunk_id="test_chunk"
         )
@@ -162,7 +195,7 @@ def main():
             print(f"  {d.name}")
         return
 
-    logger.info(f"Found {len(doc_dirs)} documents to process")
+    logger.info(f"Found {len(doc_dirs)} documents to process with {args.provider}")
 
     output_base = Path(args.output_dir) if args.output_dir else None
 
@@ -179,7 +212,7 @@ def main():
             for d in doc_dirs
         }
 
-        with tqdm(total=len(doc_dirs), desc="Extracting entities v2") as pbar:
+        with tqdm(total=len(doc_dirs), desc=f"Extracting entities ({args.provider})") as pbar:
             for future in as_completed(futures):
                 d = futures[future]
                 try:
