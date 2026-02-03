@@ -24,17 +24,37 @@ app.middleware("http")(PrometheusMiddleware())
 
 # Parse ALLOWED_ORIGINS from environment (comma-separated)
 # Example: "http://localhost:3000,https://example.com"
-allowed_origins_str = getattr(settings, "allowed_origins", None)
+allowed_origins_str = getattr(settings, "allowed_origins", "")
 if allowed_origins_str:
-    origins = [origin.strip() for origin in allowed_origins_str.split(",") if origin.strip()]
+    origins = [
+        origin.strip() for origin in allowed_origins_str.split(",") if origin.strip()
+    ]
 else:
-    # Fallback to development mode (all origins) if not configured
-    origins = ["*"]
+    if settings.debug_mode:
+        origins = ["*"]
+    else:
+        # Default for local production deployment
+        origins = ["http://localhost:8090"]
+
+# Enforcement of security best practices
+if not settings.debug_mode:
+    if not allowed_origins_str:
+        raise RuntimeError(
+            "SECURITY ERROR: ALLOWED_ORIGINS must be explicitly configured in non-debug mode. "
+            "For local deployment, set ALLOWED_ORIGINS=http://localhost:8090 in your .env file."
+        )
+    if "*" in origins:
+        raise RuntimeError(
+            "SECURITY ERROR: Wildcard CORS origin ('*') is not allowed in non-debug mode. "
+            "Please specify explicit origins in ALLOWED_ORIGINS."
+        )
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
-    allow_credentials=True if origins != ["*"] else False,  # Only allow credentials with specific origins
+    allow_credentials=True
+    if origins != ["*"]
+    else False,  # Only allow credentials with specific origins
     allow_methods=["*"],
     allow_headers=["*"],
 )
