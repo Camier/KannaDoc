@@ -263,10 +263,10 @@ class MinimaxExtractor:
 
 class ZhipuExtractor:
     """Entity extractor using Zhipu GLM-4 via Z.ai API.
-    
+
     Uses JSON Schema mode for reliable structured output.
     Models: glm-4-plus (flagship), glm-4-flash (fast), glm-4-air (cheap)
-    
+
     Advantages over MiniMax:
     - Native JSON Schema mode eliminates parse failures
     - 80% cost savings with glm-4-air ($0.15 flat rate)
@@ -274,22 +274,22 @@ class ZhipuExtractor:
     """
 
     MODEL_PLUS = "glm-4.7"
-    MODEL_FLASH = "glm-4.7-flash"  
+    MODEL_FLASH = "glm-4.7-Flash"  # Capital F per Z.ai docs
     MODEL_AIR = "glm-4.5-air"
 
     def __init__(
         self,
         api_key: Optional[str] = None,
-        model: str = "glm-4.7-flash",
-        base_url: str = "https://api.z.ai/api/coding/paas/v4",
+        model: str = "glm-4.7-Flash",
+        base_url: str = "https://api.z.ai/api/paas/v4",  # Correct endpoint (not /coding/)
     ):
         import openai
         from lib.entity_extraction.schemas import normalize_relationship_type
-        
+
         self.api_key = api_key or os.getenv("ZAI_API_KEY") or os.getenv("ZHIPU_API_KEY")
         if not self.api_key:
             raise ValueError("ZAI_API_KEY or ZHIPU_API_KEY not found in environment")
-        
+
         self.model = model
         self.normalize_rel = normalize_relationship_type
         self.client = openai.OpenAI(
@@ -299,17 +299,14 @@ class ZhipuExtractor:
         )
 
     def extract_chunk(
-        self, 
-        text: str, 
-        doc_id: str = "", 
-        chunk_id: str = ""
+        self, text: str, doc_id: str = "", chunk_id: str = ""
     ) -> ExtractionResultV2:
         """Extract entities and relationships from a single text chunk."""
         if not text or len(text.strip()) < 20:
             return self._empty_result(doc_id)
-        
+
         prompt = build_prompt(text)
-        
+
         # JSON Schema for structured output - ensures valid JSON every time
         json_schema = {
             "name": "extraction_result",
@@ -325,11 +322,11 @@ class ZhipuExtractor:
                                 "id": {"type": "string"},
                                 "type": {"type": "string"},
                                 "name": {"type": "string"},
-                                "attributes": {"type": "object"}
+                                "attributes": {"type": "object"},
                             },
                             "required": ["id", "type", "name"],
-                            "additionalProperties": False
-                        }
+                            "additionalProperties": False,
+                        },
                     },
                     "relationships": {
                         "type": "array",
@@ -340,21 +337,26 @@ class ZhipuExtractor:
                                 "type": {"type": "string"},
                                 "source_entity_id": {"type": "string"},
                                 "target_entity_id": {"type": "string"},
-                                "attributes": {"type": "object"}
+                                "attributes": {"type": "object"},
                             },
-                            "required": ["id", "type", "source_entity_id", "target_entity_id"],
-                            "additionalProperties": False
-                        }
-                    }
+                            "required": [
+                                "id",
+                                "type",
+                                "source_entity_id",
+                                "target_entity_id",
+                            ],
+                            "additionalProperties": False,
+                        },
+                    },
                 },
                 "required": ["entities", "relationships"],
-                "additionalProperties": False
-            }
+                "additionalProperties": False,
+            },
         }
-        
+
         delays = [1, 2, 4]
         last_error = None
-        
+
         for attempt, delay in enumerate(delays):
             try:
                 response = self.client.chat.completions.create(
@@ -378,12 +380,14 @@ class ZhipuExtractor:
                 error_str = str(e).lower()
                 if "rate" in error_str or "429" in error_str or "timeout" in error_str:
                     if attempt < len(delays) - 1:
-                        logger.warning(f"Attempt {attempt + 1} failed, retrying in {delay}s: {e}")
+                        logger.warning(
+                            f"Attempt {attempt + 1} failed, retrying in {delay}s: {e}"
+                        )
                         time.sleep(delay)
                         continue
                 logger.warning(f"Extraction failed for chunk {chunk_id}: {e}")
                 break
-        
+
         logger.warning(f"All retries exhausted for chunk {chunk_id}: {last_error}")
         return self._empty_result(doc_id)
 
@@ -397,18 +401,20 @@ class ZhipuExtractor:
         all_entities: List[Entity] = []
         all_relationships: List[Relationship] = []
         chunks_to_process = []
-        
+
         for i, chunk in enumerate(chunks):
             text = chunk.get("text") or chunk.get("content", "")
             if not text or len(text.strip()) < 50:
                 continue
             chunk_id = chunk.get("id") or chunk.get("chunk_id") or f"chunk_{i:04d}"
             chunks_to_process.append({"text": text, "chunk_id": chunk_id})
-        
+
         if not chunks_to_process:
             return self._empty_result(doc_id)
-        
-        logger.info(f"Processing {len(chunks_to_process)} chunks for {doc_id} with Zhipu")
+
+        logger.info(
+            f"Processing {len(chunks_to_process)} chunks for {doc_id} with Zhipu"
+        )
 
         def process_chunk(item: Dict[str, str]) -> ExtractionResultV2:
             return self.extract_chunk(item["text"], doc_id, item["chunk_id"])
@@ -434,7 +440,7 @@ class ZhipuExtractor:
                         )
                 except Exception as e:
                     logger.warning(f"Chunk processing failed: {e}")
-        
+
         logger.info(
             f"Extracted {len(all_entities)} entities, {len(all_relationships)} relationships"
         )
@@ -458,37 +464,41 @@ class ZhipuExtractor:
             if not parsed:
                 logger.warning(f"Failed to parse JSON for chunk {chunk_id}")
                 return self._empty_result(doc_id)
-        
+
         entities = []
         for ent_data in parsed.get("entities", []):
             try:
-                entities.append(Entity(
-                    id=ent_data.get("id", f"ent_{len(entities):03d}"),
-                    type=ent_data.get("type", "Unknown"),
-                    name=ent_data.get("name", ""),
-                    attributes=ent_data.get("attributes", {}),
-                    source_chunk_ids=[chunk_id] if chunk_id else [],
-                ))
+                entities.append(
+                    Entity(
+                        id=ent_data.get("id", f"ent_{len(entities):03d}"),
+                        type=ent_data.get("type", "Unknown"),
+                        name=ent_data.get("name", ""),
+                        attributes=ent_data.get("attributes", {}),
+                        source_chunk_ids=[chunk_id] if chunk_id else [],
+                    )
+                )
             except Exception as e:
                 logger.warning(f"Failed to parse entity: {e}")
-        
+
         relationships = []
         for rel_data in parsed.get("relationships", []):
             try:
                 # NORMALIZE relationship type using the function from schemas.py
                 raw_type = rel_data.get("type", "SUGGESTS")
                 normalized_type = self.normalize_rel(raw_type)
-                
-                relationships.append(Relationship(
-                    id=rel_data.get("id", f"rel_{len(relationships):03d}"),
-                    type=normalized_type,  # Use normalized type
-                    source_entity_id=rel_data.get("source_entity_id", ""),
-                    target_entity_id=rel_data.get("target_entity_id", ""),
-                    attributes=rel_data.get("attributes", {}),
-                ))
+
+                relationships.append(
+                    Relationship(
+                        id=rel_data.get("id", f"rel_{len(relationships):03d}"),
+                        type=normalized_type,  # Use normalized type
+                        source_entity_id=rel_data.get("source_entity_id", ""),
+                        target_entity_id=rel_data.get("target_entity_id", ""),
+                        attributes=rel_data.get("attributes", {}),
+                    )
+                )
             except Exception as e:
                 logger.warning(f"Failed to parse relationship: {e}")
-        
+
         return ExtractionResultV2(
             doc_id=doc_id,
             extracted_at=datetime.now(timezone.utc).isoformat(),
