@@ -1,18 +1,19 @@
 # LAYRA Project - Complete Change Log
 
-**Last Updated:** 2026-01-31
+**Last Updated:** 2026-02-05
 
 ---
 
 ## Summary
 
-This document consolidates all changes made to the LAYRA project during the 2026-01-19 to 2026-01-31 session. The changes address security vulnerabilities, code quality issues, infrastructure improvements, comprehensive Kafka hardening, auth hardening, workflow engine fault tolerance, and system model persistence.
+This document consolidates all changes made to the LAYRA project during the 2026-01-19 to 2026-02-05 session. The changes address security vulnerabilities, code quality issues, infrastructure improvements, comprehensive Kafka hardening, auth hardening, workflow engine fault tolerance, system model persistence, and provider configuration consolidation.
 
 ### Key Changes
 
 | Category | Changes |
 |----------|---------|
-| **System Models** | **Persistence fix for CLIProxyAPI models (system prompt, temperature, etc.)** |
+| **Provider Configuration** | **PROVIDER_TIMEOUTS consolidation in ProviderRegistry (Phase 1)** |
+| **System Models** | Persistence fix for CLIProxyAPI models (system prompt, temperature, etc.) |
 | **Security Fixes** | Sandbox user fix, code scanner enhancement, await fix, .env removed from git, CORS security fix |
 | **Code Quality** | Debug prints removed, config fixes, Chinese → English |
 | **Kafka Hardening** | Commit order fix, retry, DLQ, idempotency, validation |
@@ -22,6 +23,141 @@ This document consolidates all changes made to the LAYRA project during the 2026
 | **Stabilization** | Nginx routing fix, Password hash correction, KB metadata repair |
 | **Workflow Engine** | Circuit breaker, checkpoints, retry logic, quality gates, provider timeouts |
 | **UI Stability** | React #185 infinite loop fix, node label mapping fix |
+
+---
+
+## 21. Provider Configuration Consolidation - Phase 1 (2026-02-05)
+
+### 21.1 PROVIDER_TIMEOUTS Consolidation in ProviderRegistry
+
+**Files:**
+- `backend/app/core/llm/providers.yaml` (modified)
+- `backend/app/rag/provider_registry.py` (new)
+- `backend/app/workflow/components/constants.py` (modified)
+- `backend/app/workflow/components/llm_client.py` (modified)
+- `backend/tests/test_provider_registry.py` (new)
+
+**Problem:** Provider timeout configuration was duplicated between:
+1. `workflow/components/constants.py` → `PROVIDER_TIMEOUTS` dict
+2. `providers.yaml` → no timeout field
+
+This created a maintenance burden and risk of inconsistency when adding new providers or updating timeouts.
+
+**Solution:**
+
+**Step 1 - Extended providers.yaml with timeout:**
+```yaml
+providers:
+  deepseek:
+    base_url: "https://api.deepseek.com/v1"
+    env_key: "DEEPSEEK_API_KEY"
+    timeout: 180  # ← NEW
+    vision: false
+    models: [...]
+
+  zai:
+    base_url: "https://api.z.ai/api/coding/paas/v4"
+    env_key: "ZAI_API_KEY"
+    timeout: 180  # ← NEW
+    vision: true
+    models: [...]
+
+# Default timeout for providers without explicit timeout
+default_timeout: 120  # ← NEW
+```
+
+**Step 2 - Created ProviderRegistry façade:**
+```python
+# backend/app/rag/provider_registry.py
+class ProviderRegistry:
+    """Unified provider registry with timeout support."""
+
+    @classmethod
+    def get_timeout(cls, provider_id: str) -> int:
+        """Get timeout from providers.yaml or default."""
+
+    @classmethod
+    def get_timeout_for_model(cls, model_name: str) -> int:
+        """Get timeout for a model by auto-detecting its provider."""
+```
+
+**Step 3 - Updated LLMClient to use ProviderRegistry:**
+```python
+# Before: workflow/components/llm_client.py
+from app.workflow.components.constants import PROVIDER_TIMEOUTS
+
+PROVIDER_TIMEOUTS = PROVIDER_TIMEOUTS
+
+def get_provider_timeout(cls, model_name: str) -> int:
+    for provider, timeout in cls.PROVIDER_TIMEOUTS.items():
+        if provider in model_name:
+            return timeout
+    return cls.PROVIDER_TIMEOUTS["default"]
+
+# After:
+from app.rag.provider_registry import get_timeout_for_model
+
+def get_provider_timeout(cls, model_name: str) -> int:
+    return get_timeout_for_model(model_name)
+```
+
+**Step 4 - Removed duplicate PROVIDER_TIMEOUTS:**
+```python
+# backend/app/workflow/components/constants.py
+# REMOVED:
+# PROVIDER_TIMEOUTS = {
+#     "deepseek-r1": 300,
+#     "deepseek-reasoner": 300,
+#     "deepseek": 180,
+#     "zhipu": 180,
+#     "glm": 180,
+#     "moonshot": 120,
+#     "openai": 120,
+#     "default": 120,
+# }
+
+# ADDED:
+# NOTE: PROVIDER_TIMEOUTS has been migrated to ProviderRegistry
+# See: backend/app/rag/provider_registry.py
+# Use: get_timeout_for_model(model_name) instead
+```
+
+**Commit:** `7e75b7c`
+
+**Impact:**
+- **Single Source of Truth:** `providers.yaml` is now the authoritative source for timeout configuration
+- **Maintainability:** Adding new providers or updating timeouts only requires editing `providers.yaml`
+- **Extensibility:** `ProviderRegistry` can be extended with other provider settings (retry, max_tokens, etc.)
+- **Backward Compatible:** API preserved through convenience functions
+- **Test Coverage:** 15 new tests in `test_provider_registry.py`
+
+**Timeout Values:**
+| Provider | Timeout (seconds) | Models |
+|----------|------------------|--------|
+| deepseek | 180 | deepseek-chat, deepseek-reasoner |
+| zai | 180 | glm-4.5, glm-4.6, glm-4.7 variants |
+| zhipu | 180 | glm-4, glm-4-plus, glm-4-flash |
+| cliproxyapi | 120 | claude-*, gemini-*, gpt-* |
+| ollama-cloud | 120 | llama*, qwen*, mistral, mixtral |
+| minimax | 120 | MiniMax-M2.1 |
+| default | 120 | Fallback |
+
+**Testing:**
+```bash
+# All tests passing
+pytest tests/test_provider_registry.py  # 15/15 passed
+pytest tests/test_model_config.py       # 60/60 passed
+```
+
+**Related Documentation:**
+- Updated: `docs/architecture/LAYER_FILE_MAP.md` (added provider_registry.py)
+- See: `backend/app/core/llm/providers.yaml` (SSOT for provider config)
+- See: `backend/app/rag/provider_registry.py` (unified registry implementation)
+
+**Future Phases:**
+- Phase 2: Normalize sentinel values (`-1` → `None`)
+- Phase 3: Unify system model handling
+- Phase 4: MongoDB migration for `provider` field
 
 ---
 

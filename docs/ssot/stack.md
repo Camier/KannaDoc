@@ -1,10 +1,11 @@
 # Stack SSOT - LAYRA Architecture
 
-> **Version:** 3.4.0
-> **Last Updated:** 2026-02-02
+> **Version:** 3.5.0
+> **Last Updated:** 2026-02-05
 > **Status:** ✅ Active
-> **Focus:** RAG Chat & Models Configuration + ZhipuAI Coding Plan
+> **Focus:** RAG Chat & Models Configuration + Provider Registry Consolidation
 > **Changes:**
+> - **PROVIDER_TIMEOUTS Consolidation** (2026-02-05): Phase 1 - ProviderRegistry unified timeout configuration
 > - **KB Consolidation Complete** (2026-01-30): Single active KB, legacy duplicates removed
 > - Added ZhipuAI Coding Plan provider (glm-4.5, glm-4.6, glm-4.7)
 > - Fixed MongoDB schema drift (model_config collection)
@@ -1065,18 +1066,22 @@ Frontend (display execution progress)
 
 **Integration:** Direct API calls via `backend/app/rag/provider_client.py`
 
-| Provider | Base URL | Env Key | Status | Models |
-|----------|----------|---------|--------|--------|
-| OpenAI | https://api.openai.com/v1 | OPENAI_API_KEY | ✅ Required | gpt-4o, gpt-4o-mini |
-| DeepSeek | https://api.deepseek.com | DEEPSEEK_API_KEY | ✅ Required | deepseek-chat, deepseek-coder |
-| Moonshot (Kimi) | https://api.moonshot.cn/v1 | MOONSHOT_API_KEY | Optional | moonshot-v1-8k, kimi-k2-thinking |
-| Zhipu (GLM) | https://open.bigmodel.cn/api/paas/v4 | ZHIPUAI_API_KEY | Optional | glm-4, glm-4-flash, glm-4-plus |
-| **Zhipu Coding** | https://open.bigmodel.cn/api/coding/paas/v4 | ZHIPUAI_API_KEY | Optional | glm-4.5, glm-4.6, glm-4.7 |
-| MiniMax | https://api.minimax.chat/v1 | MINIMAX_API_KEY | Optional | abab5.5-chat |
-| Cohere | https://api.cohere.ai/v1 | COHERE_API_KEY | Optional | command-r |
-| Ollama | https://api.ollama.ai/v1 | OLLAMA_API_KEY | Optional | llama3, mistral |
-| Anthropic | https://api.anthropic.com/v1 | ANTHROPIC_API_KEY | Optional | claude-3-opus |
-| Google Gemini | https://generativelanguage.googleapis.com/v1 | GEMINI_API_KEY | Optional | gemini-pro |
+**Configuration:**
+- **SSOT:** `backend/app/core/llm/providers.yaml` (provider definitions, timeouts, models)
+- **Registry:** `backend/app/rag/provider_registry.py` (unified timeout configuration)
+
+| Provider | Base URL | Env Key | Timeout | Status | Models |
+|----------|----------|---------|---------|--------|--------|
+| OpenAI | https://api.openai.com/v1 | OPENAI_API_KEY | 120s | ✅ Required | gpt-4o, gpt-4o-mini |
+| DeepSeek | https://api.deepseek.com | DEEPSEEK_API_KEY | 180s | ✅ Required | deepseek-chat, deepseek-coder |
+| Moonshot (Kimi) | https://api.moonshot.cn/v1 | MOONSHOT_API_KEY | 120s | Optional | moonshot-v1-8k, kimi-k2-thinking |
+| Zhipu (GLM) | https://open.bigmodel.cn/api/paas/v4 | ZHIPUAI_API_KEY | 180s | Optional | glm-4, glm-4-flash, glm-4-plus |
+| **Zhipu Coding** | https://open.bigmodel.cn/api/coding/paas/v4 | ZHIPUAI_API_KEY | 180s | Optional | glm-4.5, glm-4.6, glm-4.7 |
+| MiniMax | https://api.minimax.chat/v1 | MINIMAX_API_KEY | 120s | Optional | abab5.5-chat |
+| Cohere | https://api.cohere.ai/v1 | COHERE_API_KEY | 120s | Optional | command-r |
+| Ollama | https://api.ollama.ai/v1 | OLLAMA_API_KEY | 120s | Optional | llama3, mistral |
+| Anthropic | https://api.anthropic.com/v1 | ANTHROPIC_API_KEY | 120s | Optional | claude-3-opus |
+| Google Gemini | https://generativelanguage.googleapis.com/v1 | GEMINI_API_KEY | 120s | Optional | gemini-pro |
 
 **Provider Selection:** Automatic based on model name prefix
 - `gpt-*` → OpenAI
@@ -1091,6 +1096,11 @@ Frontend (display execution progress)
 - `gemini-*` → Google
 
 **Note:** Zhipu Coding Plan requires separate subscription. JWT authentication (id.secret format) required.
+
+**Timeout Configuration:**
+- Default: 120s (configurable via `providers.yaml`)
+- DeepSeek/Zhipu variants: 180s (longer for reasoning models)
+- Implementation: `ProviderRegistry.get_timeout_for_model(model_name)`
 
 ---
 

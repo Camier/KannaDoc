@@ -192,6 +192,7 @@ All endpoint modules (FastAPI routers):
 
 **LLM provider selection / clients**
 - `backend/app/rag/provider_client.py`
+- `backend/app/rag/provider_registry.py` (unified provider configuration with timeout support)
 - `backend/app/core/llm/providers.yaml` (configuration file; not Python)
 
 **Embeddings utilities (normalize/downsample multivectors)**
