@@ -215,7 +215,7 @@ All commands should be run from `backend/` directory with `PYTHONPATH=.`.
 | Service | Purpose | Notes |
 |---------|---------|-------|
 | **Zhipu GLM-4.7** | Entity extraction | Primary LLM via Z.ai API (`https://api.z.ai/api/coding/paas/v4`); API key: `ZAI_API_KEY` env var |
-| **MiniMax M2.1** | Entity extraction fallback | Fallback LLM; API key in `data/.minimax_api_key` |
+| MiniMax (Fallback) | Entity extraction fallback | Fallback LLM; API key in `data/.minimax_api_key` |
 | **Milvus** | Vector store | HNSW index (M=48, efConstruction=1024) |
 | **Neo4j** | Knowledge graph | **DISABLED** in current research deployment |
 | **FastAPI** | Backend API | REST endpoints at `/api/v1/` |
