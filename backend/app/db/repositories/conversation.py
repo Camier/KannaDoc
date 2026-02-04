@@ -3,13 +3,16 @@ from app.core.logging import logger
 from app.utils.timezone import beijing_time_now
 from app.core.config import settings
 from app.db.vector_db import vector_db_client
+from app.db.cache import cache_service
 from pymongo.errors import DuplicateKeyError
 from .base import BaseRepository
 from .knowledge_base import KnowledgeBaseRepository
 
+
 class ConversationRepository(BaseRepository):
-    
-    def __init__(self, db, knowledge_base_repo: Optional[KnowledgeBaseRepository] = None):
+    def __init__(
+        self, db, knowledge_base_repo: Optional[KnowledgeBaseRepository] = None
+    ):
         super().__init__(db)
         self.knowledge_base_repo = knowledge_base_repo or KnowledgeBaseRepository(db)
 
@@ -51,11 +54,20 @@ class ConversationRepository(BaseRepository):
         return conversation if conversation else None
 
     async def get_conversation_model_config(self, conversation_id: str):
-        """获取指定 conversation_id 的system prompt"""
+        """获取指定 conversation_id 的model config，优先从缓存读取"""
+        cached = await cache_service.get_conversation_model_config(conversation_id)
+        if cached is not None:
+            return cached
+
         conversation = await self.db.conversations.find_one(
             {"conversation_id": conversation_id, "is_delete": False}
         )
-        return conversation["model_config"] if conversation else None
+        if not conversation:
+            return None
+
+        model_config = conversation["model_config"]
+        await cache_service.set_conversation_model_config(conversation_id, model_config)
+        return model_config
 
     async def get_conversations_by_user(self, username: str):
         """按时间降序获取指定用户的所有会话"""
@@ -105,6 +117,7 @@ class ConversationRepository(BaseRepository):
                 "status": "failed",
                 "message": "Conversation not found or update failed",
             }
+        await cache_service.invalidate_conversation_model_config(conversation_id)
         return {"status": "success"}
 
     async def update_conversation_read_status(
@@ -194,6 +207,7 @@ class ConversationRepository(BaseRepository):
         )
 
         if delete_result.deleted_count == 1:
+            await cache_service.invalidate_conversation_model_config(conversation_id)
             return {
                 "status": "success",
                 "message": f"Conversation {conversation_id} deleted",

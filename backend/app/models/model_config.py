@@ -7,6 +7,7 @@ class ModelConfigBase(BaseModel):
     model_name: str
     model_url: str = ""
     api_key: str
+    provider: Optional[str] = None
     base_used: List[dict] = []
     system_prompt: str = ""
     temperature: float = 0.7
@@ -25,6 +26,18 @@ class ModelConfigBase(BaseModel):
             raise ValueError(f"Unknown model: {v}. Cannot detect provider.")
         return v.strip()
 
+    @field_validator("provider")
+    @classmethod
+    def validate_provider(cls, v: Optional[str]) -> Optional[str]:
+        if v is None:
+            return v
+        known_providers = ProviderClient.get_all_providers()
+        if v not in known_providers:
+            raise ValueError(
+                f"Unknown provider: {v}. Valid providers: {known_providers}"
+            )
+        return v
+
     @field_validator("api_key")
     @classmethod
     def validate_api_key(cls, v: str) -> str:
@@ -40,6 +53,9 @@ class ModelConfigBase(BaseModel):
     @field_validator("temperature")
     @classmethod
     def validate_temperature(cls, v: float) -> float:
+        # -1 is a sentinel value meaning "use provider default"
+        if v == -1:
+            return v
         if v < 0:
             return 0.0
         if v > 2:
@@ -49,8 +65,12 @@ class ModelConfigBase(BaseModel):
     @field_validator("max_length")
     @classmethod
     def validate_max_length(cls, v: int) -> int:
-        if v < 256:
-            return 256
+        # -1 is a sentinel value meaning "use provider default"
+        if v == -1:
+            return v
+        # Align with ChatService normalizer: min 1024, max 1048576
+        if v < 1024:
+            return 1024
         if v > 1048576:
             return 1048576
         return v
@@ -58,6 +78,8 @@ class ModelConfigBase(BaseModel):
     @field_validator("top_P")
     @classmethod
     def validate_top_p(cls, v: float) -> float:
+        if v == -1:
+            return v
         if v < 0:
             return 0.0
         if v > 1:
@@ -67,19 +89,25 @@ class ModelConfigBase(BaseModel):
     @field_validator("top_K")
     @classmethod
     def validate_top_k(cls, v: int) -> int:
+        if v == -1:
+            return v
         if v < 1:
             return 1
-        if v > 50:
-            return 50
+        # Align with ChatService normalizer: max 30
+        if v > 30:
+            return 30
         return v
 
     @field_validator("score_threshold")
     @classmethod
     def validate_score_threshold(cls, v: int) -> int:
+        if v == -1:
+            return v
         if v < 0:
             return 0
-        if v > 100:
-            return 100
+        # Align with ChatService normalizer: max 20
+        if v > 20:
+            return 20
         return v
 
 
@@ -91,6 +119,7 @@ class ModelUpdate(BaseModel):
     model_name: Optional[str] = None
     model_url: Optional[str] = None
     api_key: Optional[str] = None
+    provider: Optional[str] = None
     base_used: Optional[List[dict]] = None
     system_prompt: Optional[str] = None
     temperature: Optional[float] = None
@@ -116,6 +145,18 @@ class ModelUpdate(BaseModel):
         if len(v.strip()) < 10:
             raise ValueError("api_key must be at least 10 characters")
         return v.strip()
+
+    @field_validator("provider")
+    @classmethod
+    def validate_provider(cls, v: Optional[str]) -> Optional[str]:
+        if v is None:
+            return v
+        known_providers = ProviderClient.get_all_providers()
+        if v not in known_providers:
+            raise ValueError(
+                f"Unknown provider: {v}. Valid providers: {known_providers}"
+            )
+        return v
 
 
 class SelectedModelResponse(BaseModel):

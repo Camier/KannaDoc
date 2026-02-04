@@ -1,11 +1,26 @@
-# LLM Provider Configuration - Clean Version
-# 6 providers: DeepSeek, Z.ai, Zhipu, Antigravity, Ollama Cloud, MiniMax
+# LLM Provider Configuration
+# 
+# DETECTION PRIORITY ORDER (as implemented in ProviderClient.get_provider_for_model):
 #
-# NOTE: zai and zhipu both serve GLM models but are different API endpoints:
-#   - zai: Z.ai Coding Plan (api.z.ai) - uses ZAI_API_KEY
-#   - zhipu: Direct Zhipu API (open.bigmodel.cn) - uses ZHIPUAI_API_KEY
+# 1. CLIPROXYAPI PRECEDENCE:
+#    If CLIPROXYAPI_BASE_URL is set in the environment, the system first attempts to match 
+#    the model name against the 'cliproxyapi' models list using a two-way substring match.
+#
+# 2. GLM FAMILY SPECIAL RESOLUTION:
+#    Models containing 'glm-4' variants (4.0, 4.5, 4.6, 4.7) follow specific key logic:
+#    - ZAI_API_KEY set -> Selects 'zai' (api.z.ai). ZAI takes precedence over Zhipu.
+#    - ZHIPUAI_API_KEY set -> Selects 'zhipu' (open.bigmodel.cn).
+#    - Default fallback -> 'zai'.
+#
+# 3. GENERIC ORDERED MATCHING:
+#    If no specific resolution occurs, the system iterates through the 'providers' 
+#    dictionary below in the order defined. The first provider whose 'models' list 
+#    contains the model name as a substring will be selected.
+#
+# NOTE: Provider order in this file determines selection priority for generic matching!
 
 providers:
+  # Official DeepSeek API. Used for deepseek-chat and deepseek-reasoner models.
   deepseek:
     base_url: "https://api.deepseek.com/v1"
     env_key: "DEEPSEEK_API_KEY"
@@ -14,6 +29,8 @@ providers:
       - deepseek-chat
       - deepseek-reasoner
 
+  # Z.ai Coding Plan API (api.z.ai). 
+  # Primary provider for GLM-4.x models; selected if ZAI_API_KEY is present or as fallback.
   zai:
     base_url: "https://api.z.ai/api/coding/paas/v4"
     env_key: "ZAI_API_KEY"
@@ -30,6 +47,8 @@ providers:
       - glm-4.7
       - glm-4.7-flash
 
+  # Official Zhipu AI API (open.bigmodel.cn).
+  # Used for GLM models if ZHIPUAI_API_KEY is set and ZAI_API_KEY is absent.
   zhipu:
     base_url: "https://open.bigmodel.cn/api/paas/v4"
     env_key: "ZHIPUAI_API_KEY"
@@ -44,6 +63,8 @@ providers:
       - glm-4.7
       - glm-4.7-flash
 
+  # Antigravity Proxy API. Handles Claude, Gemini, and GPT models via unified proxy.
+  # Prioritized if CLIPROXYAPI_BASE_URL is set; otherwise matched via generic loop.
   cliproxyapi:
     base_url: ""  # Configured via CLIPROXYAPI_BASE_URL
     env_key: "CLIPROXYAPI_API_KEY"
@@ -66,6 +87,8 @@ providers:
       - gpt-4o-mini
       - gpt-oss-120b-medium
 
+  # Ollama Cloud API. Used for open-source models like Llama, Qwen, Mistral.
+  # Matched via generic ordered matching loop.
   ollama-cloud:
     base_url: "https://api.ollama.com/v1"
     env_key: "OLLAMA_CLOUD_API_KEY"
@@ -87,6 +110,8 @@ providers:
       - llama3.2-vision
       - llava
 
+  # MiniMax API. Used for MiniMax-M2.1 models.
+  # Matched via generic ordered matching loop.
   minimax:
     base_url: "https://api.minimax.io/v1"
     env_key: "MINIMAX_API_KEY"

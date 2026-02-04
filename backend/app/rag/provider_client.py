@@ -44,8 +44,20 @@ class ProviderClient:
         return any(v in model_lower for v in cls.VISION_MODELS)
 
     @classmethod
-    def get_provider_for_model(cls, model_name: str) -> Optional[str]:
-        """Detect provider from model name"""
+    def get_provider_for_model(
+        cls, model_name: str, explicit_provider: Optional[str] = None
+    ) -> Optional[str]:
+        """Detect provider from model name, or use explicit_provider if given."""
+        if explicit_provider:
+            if explicit_provider in cls.PROVIDERS:
+                logger.debug(
+                    f"Using explicit provider: {explicit_provider} for model '{model_name}'"
+                )
+                return explicit_provider
+            logger.warning(
+                f"Explicit provider '{explicit_provider}' not found in config"
+            )
+
         model_lower = model_name.lower()
 
         # Antigravity: Check FIRST when configured
@@ -56,23 +68,60 @@ class ProviderClient:
                     model_pattern.lower() in model_lower
                     or model_lower in model_pattern.lower()
                 ):
+                    logger.debug(
+                        f"Provider detected: cliproxyapi for model '{model_name}'"
+                    )
                     return "cliproxyapi"
 
         # GLM models -> zai (ZAI_API_KEY) or zhipu (ZHIPUAI_API_KEY)
         if any(x in model_lower for x in ["glm-4", "glm-4.5", "glm-4.6", "glm-4.7"]):
             if os.getenv("ZAI_API_KEY"):
+                logger.debug(
+                    f"Provider detected: zai for model '{model_name}' (ZAI_API_KEY set)"
+                )
                 return "zai"
             elif os.getenv("ZHIPUAI_API_KEY"):
+                logger.debug(
+                    f"Provider detected: zhipu for model '{model_name}' (ZHIPUAI_API_KEY set)"
+                )
                 return "zhipu"
+            logger.debug(
+                f"Provider detected: zai for model '{model_name}' (default, no key set)"
+            )
             return "zai"
 
         # Generic provider matching
         for provider, config in cls.PROVIDERS.items():
             for model_pattern in config["models"]:
                 if model_pattern.lower() in model_lower:
+                    logger.debug(
+                        f"Provider detected: {provider} for model '{model_name}'"
+                    )
                     return provider
 
+        logger.warning(
+            f"No provider detected for model '{model_name}'. "
+            f"Available providers: {list(cls.PROVIDERS.keys())}"
+        )
         return None
+
+    @classmethod
+    def get_env_hint_for_model(cls, model_name: str) -> str:
+        """Get hint about which env var is needed for a model."""
+        model_lower = model_name.lower()
+
+        if any(x in model_lower for x in ["glm-4", "glm-4.5", "glm-4.6", "glm-4.7"]):
+            return "Set ZAI_API_KEY or ZHIPUAI_API_KEY for GLM models"
+        if "deepseek" in model_lower:
+            return "Set DEEPSEEK_API_KEY for DeepSeek models"
+        if any(x in model_lower for x in ["claude", "gpt", "gemini", "o1", "o3"]):
+            return "Set CLIPROXYAPI_BASE_URL and CLIPROXYAPI_API_KEY for proxied models"
+        if any(x in model_lower for x in ["llama", "qwen", "mistral"]):
+            return "Set OLLAMA_CLOUD_API_KEY for Ollama Cloud models"
+        if "minimax" in model_lower:
+            return "Set MINIMAX_API_KEY for MiniMax models"
+
+        return f"Check providers.yaml for supported models. Available: {list(cls.PROVIDERS.keys())}"
 
     @classmethod
     def get_all_providers(cls) -> List[str]:
@@ -115,7 +164,8 @@ class ProviderClient:
         if not provider:
             provider = cls.get_provider_for_model(model_name)
         if not provider:
-            raise ValueError(f"Cannot detect provider for model: {model_name}")
+            hint = cls.get_env_hint_for_model(model_name)
+            raise ValueError(f"Cannot detect provider for model: {model_name}. {hint}")
 
         # Get provider config
         provider_config = cls.PROVIDERS.get(provider)
@@ -184,7 +234,10 @@ class ProviderClient:
 
 # Convenience function for backward compatibility
 def get_llm_client(
-    model_name: str, api_key: Optional[str] = None, base_url: Optional[str] = None
+    model_name: str,
+    api_key: Optional[str] = None,
+    base_url: Optional[str] = None,
+    provider: Optional[str] = None,
 ) -> AsyncOpenAI:
     """
     Get an LLM client for the specified model.
@@ -196,7 +249,9 @@ def get_llm_client(
         client = get_llm_client("deepseek-reasoner", api_key="sk-...")
         # or with local deployment URL
         client = get_llm_client("llama3", base_url="http://127.0.0.1:11434/v1")
+        # or with explicit provider
+        client = get_llm_client("glm-4.7-flash", provider="zhipu")
     """
     return ProviderClient.create_client(
-        model_name=model_name, api_key=api_key, base_url=base_url
+        model_name=model_name, api_key=api_key, base_url=base_url, provider=provider
     )

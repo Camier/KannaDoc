@@ -2,6 +2,7 @@
 Redis caching layer for frequently accessed data.
 Caches model configurations, user data, and knowledge base metadata.
 """
+
 import json
 import logging
 from typing import Optional, Any, List
@@ -11,6 +12,7 @@ from app.core.logging import logger
 # Default TTL values (in seconds)
 DEFAULT_TTL = 3600  # 1 hour
 MODEL_CONFIG_TTL = 1800  # 30 minutes
+CONVERSATION_MODEL_CONFIG_TTL = 900  # 15 minutes
 USER_DATA_TTL = 3600  # 1 hour
 KB_METADATA_TTL = 1800  # 30 minutes
 SEARCH_RESULTS_TTL = 600  # 10 minutes
@@ -24,6 +26,7 @@ class CacheService:
 
     # Cache key prefixes
     PREFIX_MODEL_CONFIG = "model_config"
+    PREFIX_CONV_MODEL_CONFIG = "conv_model_config"
     PREFIX_USER_DATA = "user"
     PREFIX_KB_METADATA = "kb"
     PREFIX_SEARCH_RESULTS = "search"
@@ -64,12 +67,7 @@ class CacheService:
             # Fail gracefully - return None to trigger DB fetch
             return None
 
-    async def set(
-        self,
-        key: str,
-        value: dict,
-        ttl: int = DEFAULT_TTL
-    ) -> bool:
+    async def set(self, key: str, value: dict, ttl: int = DEFAULT_TTL) -> bool:
         """
         Store data in cache with TTL.
 
@@ -107,7 +105,9 @@ class CacheService:
 
             if keys:
                 await conn.delete(*keys)
-                logger.info(f"Invalidated {len(keys)} cache entries matching: {pattern}")
+                logger.info(
+                    f"Invalidated {len(keys)} cache entries matching: {pattern}"
+                )
                 return len(keys)
 
             return 0
@@ -167,6 +167,25 @@ class CacheService:
     async def invalidate_model_config(self, username: str) -> bool:
         """Invalidate cached model configuration for user."""
         key = self._make_key(self.PREFIX_MODEL_CONFIG, username)
+        return await self.delete(key)
+
+    async def get_conversation_model_config(
+        self, conversation_id: str
+    ) -> Optional[dict]:
+        """Get cached model configuration for conversation."""
+        key = self._make_key(self.PREFIX_CONV_MODEL_CONFIG, conversation_id)
+        return await self.get(key)
+
+    async def set_conversation_model_config(
+        self, conversation_id: str, config: dict
+    ) -> bool:
+        """Cache model configuration for conversation."""
+        key = self._make_key(self.PREFIX_CONV_MODEL_CONFIG, conversation_id)
+        return await self.set(key, config, CONVERSATION_MODEL_CONFIG_TTL)
+
+    async def invalidate_conversation_model_config(self, conversation_id: str) -> bool:
+        """Invalidate cached model configuration for conversation."""
+        key = self._make_key(self.PREFIX_CONV_MODEL_CONFIG, conversation_id)
         return await self.delete(key)
 
     # User data caching

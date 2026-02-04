@@ -175,6 +175,7 @@ class ChatService:
             model_name = model_config["model_name"]
             model_url = model_config["model_url"]
             api_key = model_config["api_key"]
+            provider = model_config.get("provider")
             base_used = model_config["base_used"]
 
             # Use provided system_prompt or empty
@@ -199,6 +200,7 @@ class ChatService:
             model_name = model_config.get("model_name")
             model_url = model_config.get("model_url")
             api_key = model_config.get("api_key")
+            provider = model_config.get("provider")
             base_used = model_config.get("base_used") or []
             system_prompt = model_config.get("system_prompt") or ""
 
@@ -480,8 +482,8 @@ class ChatService:
                     base_url=model_url,
                 )
             else:
-                # New: auto-detect provider from model name
-                client = get_llm_client(model_name, api_key=api_key)
+                # New: auto-detect provider from model name (or use explicit provider)
+                client = get_llm_client(model_name, api_key=api_key, provider=provider)
         except Exception as e:
             logger.error(f"Error creating LLM client: {str(e)}")
             err_msg = f"""⚠️ **Configuration Error**:

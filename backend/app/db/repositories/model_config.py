@@ -20,8 +20,9 @@ class ModelConfigRepository(BaseRepository):
         top_P: float,
         top_K: int,
         score_threshold: int,
+        provider: Optional[str] = None,
     ) -> dict:
-        return {
+        result = {
             "model_id": model_id,
             "model_name": model_name,
             "model_url": model_url,
@@ -34,6 +35,9 @@ class ModelConfigRepository(BaseRepository):
             "top_K": top_K,
             "score_threshold": score_threshold,
         }
+        if provider is not None:
+            result["provider"] = provider
+        return result
 
     async def create_model_config(
         self,
@@ -50,6 +54,7 @@ class ModelConfigRepository(BaseRepository):
         top_P: float,
         top_K: int,
         score_threshold: int,
+        provider: Optional[str] = None,
     ):
         model_config = {
             "username": username,
@@ -67,6 +72,7 @@ class ModelConfigRepository(BaseRepository):
                     top_P=top_P,
                     top_K=top_K,
                     score_threshold=score_threshold,
+                    provider=provider,
                 )
             ],
         }
@@ -145,6 +151,7 @@ class ModelConfigRepository(BaseRepository):
         top_P: float,
         top_K: int,
         score_threshold: int,
+        provider: Optional[str] = None,
     ):
         # 检查用户是否存在
         user_exists = await self.db.model_config.find_one({"username": username})
@@ -171,6 +178,7 @@ class ModelConfigRepository(BaseRepository):
             top_P=top_P,
             top_K=top_K,
             score_threshold=score_threshold,
+            provider=provider,
         )
 
         # 插入到数组
@@ -213,6 +221,7 @@ class ModelConfigRepository(BaseRepository):
         top_P: Optional[float] = None,
         top_K: Optional[int] = None,
         score_threshold: Optional[int] = None,
+        provider: Optional[str] = None,
     ):
         # For system models, upsert into the models array
         if model_id.startswith("system_"):
@@ -229,6 +238,7 @@ class ModelConfigRepository(BaseRepository):
                 top_P=top_P,
                 top_K=top_K,
                 score_threshold=score_threshold,
+                provider=provider,
             )
 
         # 构建更新字段
@@ -253,6 +263,8 @@ class ModelConfigRepository(BaseRepository):
             update_fields["models.$[elem].top_K"] = top_K
         if score_threshold is not None:
             update_fields["models.$[elem].score_threshold"] = score_threshold
+        if provider is not None:
+            update_fields["models.$[elem].provider"] = provider
 
         # 执行更新
         try:
@@ -286,6 +298,7 @@ class ModelConfigRepository(BaseRepository):
         top_P: Optional[float] = None,
         top_K: Optional[int] = None,
         score_threshold: Optional[int] = None,
+        provider: Optional[str] = None,
     ):
         """Upsert system model config - add if not exists, update if exists."""
         try:
@@ -315,6 +328,8 @@ class ModelConfigRepository(BaseRepository):
                     update_fields["models.$[elem].top_K"] = top_K
                 if score_threshold is not None:
                     update_fields["models.$[elem].score_threshold"] = score_threshold
+                if provider is not None:
+                    update_fields["models.$[elem].provider"] = provider
 
                 if update_fields:
                     await self.db.model_config.update_one(
@@ -343,6 +358,7 @@ class ModelConfigRepository(BaseRepository):
                     score_threshold=score_threshold
                     if score_threshold is not None
                     else -1,
+                    provider=provider,
                 )
                 await self.db.model_config.update_one(
                     {"username": username}, {"$push": {"models": new_model}}
