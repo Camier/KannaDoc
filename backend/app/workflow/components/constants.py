@@ -9,17 +9,10 @@ and its components, providing a single source of truth for configuration values.
 MAX_CONTEXT_SIZE = 1000  # Maximum entries per node
 MAX_CONTEXT_ENTRIES = 10000  # Total entries before cleanup
 
-# Provider-specific timeouts (in seconds)
-PROVIDER_TIMEOUTS = {
-    "deepseek-r1": 300,
-    "deepseek-reasoner": 300,
-    "deepseek": 180,
-    "zhipu": 180,
-    "glm": 180,
-    "moonshot": 120,
-    "openai": 120,
-    "default": 120,
-}
+# NOTE: PROVIDER_TIMEOUTS has been migrated to ProviderRegistry
+# See: backend/app/rag/provider_registry.py
+# Use: get_timeout_for_model(model_name) instead
+# This consolidates timeout configuration with providers.yaml (SSOT)
 
 # Loop iteration limits for safety
 LOOP_LIMITS = {

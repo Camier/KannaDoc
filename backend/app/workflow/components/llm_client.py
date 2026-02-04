@@ -12,7 +12,7 @@ from typing import Optional, Any
 from app.core.llm import ChatService
 from app.core.circuit_breaker import llm_service_circuit
 from app.core.logging import logger
-from app.workflow.components.constants import PROVIDER_TIMEOUTS
+from app.rag.provider_registry import get_timeout_for_model
 
 
 class LLMClient:
@@ -20,12 +20,12 @@ class LLMClient:
     Wrapper for LLM calls with circuit breaker and retry logic.
     """
 
-    PROVIDER_TIMEOUTS = PROVIDER_TIMEOUTS
-
     @classmethod
     def get_provider_timeout(cls, model_name: str) -> int:
         """
         Get provider-specific timeout for a model.
+
+        Uses ProviderRegistry for unified timeout configuration.
 
         Args:
             model_name: Name of the model
@@ -33,13 +33,7 @@ class LLMClient:
         Returns:
             Timeout in seconds
         """
-        model_lower = model_name.lower()
-        for provider, timeout in cls.PROVIDER_TIMEOUTS.items():
-            if provider == "default":
-                continue
-            if provider in model_lower:
-                return timeout
-        return cls.PROVIDER_TIMEOUTS["default"]
+        return get_timeout_for_model(model_name)
 
     @staticmethod
     async def retry_with_backoff(

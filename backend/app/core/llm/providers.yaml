@@ -24,16 +24,18 @@ providers:
   deepseek:
     base_url: "https://api.deepseek.com/v1"
     env_key: "DEEPSEEK_API_KEY"
+    timeout: 180
     vision: false
     models:
       - deepseek-chat
       - deepseek-reasoner
 
-  # Z.ai Coding Plan API (api.z.ai). 
+  # Z.ai Coding Plan API (api.z.ai).
   # Primary provider for GLM-4.x models; selected if ZAI_API_KEY is present or as fallback.
   zai:
     base_url: "https://api.z.ai/api/coding/paas/v4"
     env_key: "ZAI_API_KEY"
+    timeout: 180
     vision: true
     models:
       - glm-4.5
@@ -52,6 +54,7 @@ providers:
   zhipu:
     base_url: "https://open.bigmodel.cn/api/paas/v4"
     env_key: "ZHIPUAI_API_KEY"
+    timeout: 180
     vision: true
     models:
       - glm-4
@@ -68,6 +71,7 @@ providers:
   cliproxyapi:
     base_url: ""  # Configured via CLIPROXYAPI_BASE_URL
     env_key: "CLIPROXYAPI_API_KEY"
+    timeout: 120
     vision: true
     models:
       # Antigravity Claude
@@ -92,6 +96,7 @@ providers:
   ollama-cloud:
     base_url: "https://api.ollama.com/v1"
     env_key: "OLLAMA_CLOUD_API_KEY"
+    timeout: 120
     vision: true
     models:
       - llama3.3
@@ -115,9 +120,13 @@ providers:
   minimax:
     base_url: "https://api.minimax.io/v1"
     env_key: "MINIMAX_API_KEY"
+    timeout: 120
     vision: false
     models:
       - MiniMax-M2.1
+
+# Default timeout for providers without explicit timeout (fallback)
+default_timeout: 120
 
 vision_patterns:
   - gpt-4o
