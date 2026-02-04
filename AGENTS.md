@@ -9,7 +9,7 @@ Academic research fork for thesis work on retrieval evaluation and visual RAG op
 | **Purpose** | Ethnopharmacology RAG system with evaluation framework |
 | **Corpus** | ~129 PDFs (dynamic) with legacy-migrated V2 entities (re-extraction recommended) |
 | **Status** | DataLab fully merged; docs extracted and indexed |
-| **Stack** | FastAPI + Milvus + MiniMax M2.1 (Neo4j disabled) |
+| **Stack** | FastAPI + Milvus + Zhipu GLM-4.7 (Neo4j disabled) |
 | **Upstream** | [liweiphys/layra](https://github.com/liweiphys/layra) |
 
 This system is optimized for high-precision retrieval from academic PDFs, specifically focusing on ethnobotanical and pharmacological data. It consolidates the original LAYRA RAG framework with the DataLab extraction pipeline, providing a unified end-to-end research platform for "PDF-to-Knowledge" transformation. The architecture is designed to support academic research in the field of ethnopharmacology by providing a robust retrieval and evaluation harness for specialized document sets.
@@ -42,7 +42,7 @@ layra/
 │   ├── lib/
 │   │   ├── entity_extraction/  # V2 extraction logic
 │   │   │   ├── schemas.py      # 15 entity types, 6 relationships
-│   │   │   ├── extractor.py    # MiniMax M2.1 implementation
+│   │   │   ├── extractor.py    # Zhipu GLM-4.7 + MiniMax fallback
 │   │   │   ├── prompt.py       # Extraction prompt engineering
 │   │   │   └── AGENTS.md       # Module documentation
 │   │   └── datalab/            # Archived DataLab pipeline (11 modules)
@@ -97,7 +97,7 @@ layra/
 
 ## 3. ENTITY EXTRACTION (V2)
 
-**Status**: Entities are **legacy-migrated** from V1 format. Fresh extraction with MiniMax M2.1 is recommended for improved precision. Relationships are not yet populated.
+**Status**: Entities are **legacy-migrated** from V1 format. Fresh extraction with Zhipu GLM-4.7 is recommended for improved precision. Relationships are not yet populated.
 
 15 entity types across 5 domains:
 
@@ -164,7 +164,7 @@ Targets are defined in `backend/app/eval/config/thresholds.yaml` with stage-spec
 All commands should be run from `backend/` directory with `PYTHONPATH=.`.
 
 ### 6.1 Extraction & Migration
-- **extract_entities_v2.py**: V2 entity extraction using MiniMax M2.1. Supports test strings and directory batch processing.
+- **extract_entities_v2.py**: V2 entity extraction using Zhipu GLM-4.7 (default) with MiniMax fallback. Supports test strings and directory batch processing.
   ```bash
   # Test with a specific string
   PYTHONPATH=. python3 scripts/datalab/extract_entities_v2.py --test "Quercetin inhibits COX-2"
@@ -214,7 +214,8 @@ All commands should be run from `backend/` directory with `PYTHONPATH=.`.
 
 | Service | Purpose | Notes |
 |---------|---------|-------|
-| **MiniMax M2.1** | Entity extraction | Primary LLM; API key in `data/.minimax_api_key` |
+| **Zhipu GLM-4.7** | Entity extraction | Primary LLM via Z.ai API (`https://api.z.ai/api/coding/paas/v4`); API key: `ZAI_API_KEY` env var |
+| **MiniMax M2.1** | Entity extraction fallback | Fallback LLM; API key in `data/.minimax_api_key` |
 | **Milvus** | Vector store | HNSW index (M=48, efConstruction=1024) |
 | **Neo4j** | Knowledge graph | **DISABLED** in current research deployment |
 | **FastAPI** | Backend API | REST endpoints at `/api/v1/` |
@@ -241,7 +242,7 @@ The `backend/data/` directory contains the core knowledge assets of the system.
 - **id_mapping.json**: Canonical mapping between hash-based `doc_id` and human-readable `file_id`.
 - **corpus/**: Contains `biblio_corpus.jsonl` with aggregated document metadata.
 - **dataset_dev.jsonl**: 20 curated questions for evaluation ground truth.
-- **API Keys**: `.minimax_api_key` and `.datalab_api_key` (Legacy).
+- **API Keys**: `ZAI_API_KEY` (environment variable for Zhipu), `.minimax_api_key` (fallback), and `.datalab_api_key` (Legacy).
 
 These artifacts are essential for maintaining the state of the knowledge base and ensuring reproducible evaluation results across different system configurations.
 
@@ -253,7 +254,7 @@ These artifacts are essential for maintaining the state of the knowledge base an
 | 2026-01-20 | Implemented LLM-based relevance labeler for ground truth |
 | 2026-01-25 | Integrated p95 latency tracking into evaluation runner |
 | 2026-02-01 | Migrated 129 documents to V2 entity format |
-| 2026-02-02 | Created entity_extraction module using MiniMax M2.1 |
+| 2026-02-02 | Created entity_extraction module using Zhipu GLM-4.7 |
 | 2026-02-02 | Fully merged DataLab into LAYRA repository |
 | 2026-02-02 | Consolidated 129 PDFs and extractions into backend/data/ |
 | 2026-02-02 | Docker Compose best practices: pinned monitoring images, fixed healthchecks |
