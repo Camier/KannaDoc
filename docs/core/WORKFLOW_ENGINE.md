@@ -359,15 +359,9 @@ CHECKPOINT_CONFIG = {
     "max_checkpoints": 10,
 }
 
-PROVIDER_TIMEOUTS = {
-    "deepseek-r1": 300,
-    "deepseek-reasoner": 300,
-    "zhipu": 180,
-    "glm": 180,
-    "moonshot": 120,
-    "openai": 120,
-    "default": 120,
-}
+# NOTE: PROVIDER_TIMEOUTS has been migrated to ProviderRegistry
+# See: backend/app/rag/provider_registry.py
+# Use: ProviderRegistry.get_timeout_for_model(model_name) instead
 ```
 
 ---
