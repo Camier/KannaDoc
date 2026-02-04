@@ -1,0 +1,97 @@
+version: 3.1
+description: >
+  LAYRA V3.1 machine-checkable constraint spec for entity extraction.
+  Defines allowed source/target types per relationship and required attributes.
+
+entity_types:
+  - Culture
+  - UseRecord
+  - TraditionalUse
+  - Preparation
+  - Taxon
+  - PlantPart
+  - RawMaterial
+  - CompoundClass
+  - Compound
+  - Target
+  - Effect
+  - Condition
+  - Evidence
+  - Study
+  - Dosage
+  - AdverseEvent
+  - Product
+
+relationships:
+  HAS_USE:
+    source_types: [Culture]
+    target_types: [UseRecord]
+
+  INVOLVES:
+    source_types: [UseRecord]
+    target_types: [Taxon, PlantPart, Preparation, RawMaterial, TraditionalUse]
+    required_attributes: [role]
+    role_by_target_type:
+      Taxon: taxon
+      PlantPart: plant_part
+      Preparation: preparation
+      RawMaterial: raw_material
+      TraditionalUse: traditional_use
+
+  HAS_PART:
+    source_types: [Taxon]
+    target_types: [PlantPart]
+
+  TRANSFORMS:
+    source_types: [Preparation]
+    target_types: [RawMaterial]
+
+  CONTAINS:
+    source_types: [Taxon, PlantPart, RawMaterial, Product]
+    target_types: [Compound]
+
+  HAS_CLASS:
+    source_types: [Compound]
+    target_types: [CompoundClass]
+
+  ACTS_ON:
+    source_types: [Compound]
+    target_types: [Target]
+
+  PRODUCES:
+    source_types: [Compound, Effect]
+    target_types: [Effect]
+
+  TREATS:
+    source_types: [Compound, Effect, RawMaterial, Product]
+    target_types: [Condition]
+
+  SUGGESTS:
+    source_types: [TraditionalUse, Evidence, UseRecord]
+    target_types: [Condition]
+
+  CAUSES:
+    source_types: [Compound, RawMaterial, Product]
+    target_types: [AdverseEvent]
+
+  INTERACTS_WITH:
+    source_types: [Compound]
+    target_types: [Compound]
+    bidirectional: true
+
+  HAS_EVIDENCE:
+    source_types: [Study]
+    target_types: [Evidence]
+
+  STUDIES:
+    source_types: [Study]
+    target_types: [Taxon, Compound, RawMaterial, Product]
+
+  TESTED_AT:
+    source_types: [Study]
+    target_types: [Dosage]
+
+  REPORTS:
+    source_types: [Study]
+    target_types: [Effect, Condition, AdverseEvent, Target]
+
