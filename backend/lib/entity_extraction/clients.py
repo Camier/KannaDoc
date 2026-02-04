@@ -2,15 +2,20 @@
 
 Implements the ChatClient protocol for various LLM providers:
 - ZhipuChatClient: Z.ai / Zhipu GLM models
-- MinimaxChatClient: MiniMax M2.1 models (fallback)
+- DeepSeekChatClient: DeepSeek models (recommended fallback)
+- MinimaxChatClient: MiniMax M2.1 models (legacy fallback)
 
 Usage:
-    from lib.entity_extraction.clients import ZhipuChatClient
+    from lib.entity_extraction.clients import ZhipuChatClient, DeepSeekChatClient
     from lib.entity_extraction import V31Extractor
 
     client = ZhipuChatClient(model="glm-4.7-flash")
     extractor = V31Extractor(client=client, model="glm-4.7-flash")
     result = extractor.extract(doc_id="doc1", chunk_id="chunk1", text="...")
+
+    # DeepSeek fallback when Z.ai is rate-limited
+    client = DeepSeekChatClient(model="deepseek-chat")
+    extractor = V31Extractor(client=client, model="deepseek-chat")
 """
 
 from __future__ import annotations
@@ -99,6 +104,73 @@ class ZhipuChatClient:
                     raw = msg.model_extra or {}
                     content = raw.get("reasoning_content", "")
 
+                return content.strip()
+
+            except Exception as e:
+                last_error = e
+                error_str = str(e).lower()
+
+                if any(x in error_str for x in ["rate", "429", "timeout", "503"]):
+                    if attempt < len(delays) - 1:
+                        logger.warning(
+                            f"Attempt {attempt + 1} failed, retrying in {delay}s: {e}"
+                        )
+                        time.sleep(delay)
+                        continue
+
+                logger.error(f"Chat completion failed: {e}")
+                break
+
+        raise RuntimeError(f"All retries exhausted: {last_error}")
+
+
+@dataclass
+class DeepSeekChatClient:
+    """Chat client for DeepSeek models - reliable fallback when Z.ai is rate-limited."""
+
+    model: str = "deepseek-chat"
+    base_url: str = "https://api.deepseek.com"
+    api_key: Optional[str] = None
+    timeout: float = 120.0
+    max_retries: int = 3
+    _client: Any = field(default=None, init=False, repr=False)
+
+    def __post_init__(self) -> None:
+        import openai
+
+        self.api_key = self.api_key or os.getenv("DEEPSEEK_API_KEY")
+        if not self.api_key:
+            raise ValueError("DEEPSEEK_API_KEY not found in environment")
+
+        self._client = openai.OpenAI(
+            api_key=self.api_key,
+            base_url=self.base_url,
+            timeout=self.timeout,
+            max_retries=0,
+        )
+
+    def chat(
+        self,
+        messages: List[Dict[str, str]],
+        *,
+        model: Optional[str] = None,
+        temperature: float = 0.3,
+        max_tokens: Optional[int] = 4096,
+        **kwargs: Any,
+    ) -> str:
+        use_model = model or self.model
+        delays = [1, 2, 4, 8][: self.max_retries]
+        last_error: Optional[Exception] = None
+
+        for attempt, delay in enumerate(delays):
+            try:
+                response = self._client.chat.completions.create(
+                    model=use_model,
+                    messages=messages,
+                    temperature=temperature,
+                    max_tokens=max_tokens,
+                )
+                content = response.choices[0].message.content or ""
                 return content.strip()
 
             except Exception as e:
@@ -214,11 +286,11 @@ def get_chat_client(
     provider: str = "zhipu",
     model: Optional[str] = None,
     **kwargs: Any,
-) -> ZhipuChatClient | MinimaxChatClient:
+) -> ZhipuChatClient | DeepSeekChatClient | MinimaxChatClient:
     """Factory function to create the appropriate chat client.
 
     Args:
-        provider: "zhipu" or "minimax"
+        provider: "zhipu", "deepseek", or "minimax"
         model: Model name (uses provider default if not specified)
         **kwargs: Additional arguments passed to client constructor
 
@@ -227,10 +299,19 @@ def get_chat_client(
     """
     if provider == "zhipu":
         return ZhipuChatClient(model=model or "glm-4.7-flash", **kwargs)
+    elif provider == "deepseek":
+        return DeepSeekChatClient(model=model or "deepseek-chat", **kwargs)
     elif provider == "minimax":
         return MinimaxChatClient(model=model or "MiniMax-M2.1", **kwargs)
     else:
-        raise ValueError(f"Unknown provider: {provider}. Use 'zhipu' or 'minimax'")
+        raise ValueError(
+            f"Unknown provider: {provider}. Use 'zhipu', 'deepseek', or 'minimax'"
+        )
 
 
-__all__ = ["ZhipuChatClient", "MinimaxChatClient", "get_chat_client"]
+__all__ = [
+    "ZhipuChatClient",
+    "DeepSeekChatClient",
+    "MinimaxChatClient",
+    "get_chat_client",
+]

@@ -14,7 +14,11 @@ from typing import Any, Dict, List, Optional, Union
 from tqdm import tqdm
 
 from lib.entity_extraction import V31Extractor
-from lib.entity_extraction.clients import ZhipuChatClient, MinimaxChatClient
+from lib.entity_extraction.clients import (
+    ZhipuChatClient,
+    MinimaxChatClient,
+    DeepSeekChatClient,
+)
 from lib.entity_extraction.schemas import ExtractionResult
 
 logging.basicConfig(
@@ -34,6 +38,9 @@ def get_extractor(
     if provider == "zhipu":
         client = ZhipuChatClient(model=model or "glm-4.7-flash")
         default_model = model or "glm-4.7-flash"
+    elif provider == "deepseek":
+        client = DeepSeekChatClient(model=model or "deepseek-chat")
+        default_model = model or "deepseek-chat"
     else:
         client = MinimaxChatClient(model=model or "MiniMax-M2.1")
         default_model = model or "MiniMax-M2.1"
@@ -169,14 +176,14 @@ def main():
     parser.add_argument(
         "--provider",
         type=str,
-        choices=["minimax", "zhipu"],
+        choices=["minimax", "zhipu", "deepseek"],
         default="zhipu",
         help="LLM provider for extraction (default: zhipu)",
     )
     parser.add_argument(
         "--model",
         type=str,
-        help="Model to use (zhipu: glm-4-plus, glm-4-flash, glm-4-air; minimax: MiniMax-M2.1)",
+        help="Model to use (zhipu: glm-4.7-flash; deepseek: deepseek-chat; minimax: MiniMax-M2.1)",
     )
     parser.add_argument(
         "--doc-workers",
