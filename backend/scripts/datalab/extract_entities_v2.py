@@ -2,6 +2,7 @@
 """CLI script for v2 entity extraction using MinimaxM2.1 or Zhipu GLM-4."""
 
 import argparse
+import time
 import json
 import logging
 import os
@@ -12,8 +13,9 @@ from typing import Any, Dict, List, Optional, Union
 
 from tqdm import tqdm
 
-from lib.entity_extraction import MinimaxExtractor
-from lib.entity_extraction.extractor import ZhipuExtractor
+from lib.entity_extraction import V31Extractor
+from lib.entity_extraction.clients import ZhipuChatClient, MinimaxChatClient
+from lib.entity_extraction.schemas import ExtractionResult
 
 logging.basicConfig(
     level=logging.INFO,
@@ -27,23 +29,44 @@ def get_extractor(
     provider: str,
     model: Optional[str] = None,
     use_lightning: bool = False,
-) -> Union[MinimaxExtractor, ZhipuExtractor]:
-    """Create the appropriate extractor based on provider selection."""
+) -> V31Extractor:
+    """Create a V31Extractor wired to the appropriate chat client."""
     if provider == "zhipu":
-        zhipu_model = model or "glm-4.7-flash"
-        logger.info(f"Using Zhipu extractor with model: {zhipu_model}")
-        return ZhipuExtractor(model=zhipu_model)
-    else:  # minimax
-        logger.info(f"Using MiniMax extractor (lightning={use_lightning})")
-        return MinimaxExtractor(use_lightning=use_lightning)
+        client = ZhipuChatClient(model=model or "glm-4.7-flash")
+        default_model = model or "glm-4.7-flash"
+    else:
+        client = MinimaxChatClient(model=model or "MiniMax-M2.1")
+        default_model = model or "MiniMax-M2.1"
+
+    logger.info(f"Using V31Extractor with provider={provider}, model={default_model}")
+    return V31Extractor(client=client, model=default_model, max_tokens=8192)
+
+
+def _chunk_to_id_text(chunk: Union[Dict[str, Any], str], idx: int) -> tuple:
+    """Infer chunk_id and text from a chunk entry.
+
+    Supports chunk entries shaped as dicts with common keys or raw strings.
+    """
+    cid = None
+    text = None
+    if isinstance(chunk, dict):
+        cid = chunk.get("chunk_id") or chunk.get("id") or f"chunk_{idx}"
+        text = (
+            chunk.get("text") or chunk.get("chunk_text") or chunk.get("content") or ""
+        )
+    else:
+        cid = f"chunk_{idx}"
+        text = str(chunk)
+    return cid, text
 
 
 def process_doc_dir(
     doc_dir: Path,
-    extractor: Union[MinimaxExtractor, ZhipuExtractor],
+    extractor: V31Extractor,
     output_dir: Optional[Path] = None,
     chunk_workers: int = 2,
     force: bool = False,
+    chunk_delay: int = 0,
 ) -> bool:
     target_dir = output_dir or doc_dir
     entities_file = target_dir / "entities.json"
@@ -70,10 +93,51 @@ def process_doc_dir(
         logger.warning(f"No chunks found in {normalized_file}")
         return False
 
-    result = extractor.extract_document(
-        chunks=chunks,
-        doc_id=doc_id,
-        max_workers=chunk_workers,
+    # Chunk processing - use sequential mode if chunk_delay > 0 for rate limiting
+    combined_entities: List[Any] = []
+    combined_relationships: List[Any] = []
+
+    def _process_chunk(idx: int, chunk: Union[Dict[str, Any], str]):
+        chunk_id, text = _chunk_to_id_text(chunk, idx)
+        return extractor.extract(doc_id=doc_id, chunk_id=chunk_id, text=text)
+
+    results: List[ExtractionResult] = []
+
+    if chunk_delay and chunk_delay > 0:
+        # Sequential processing with delays for rate limiting
+        for i, c in enumerate(chunks):
+            try:
+                result = _process_chunk(i, c)
+                results.append(result)
+                if i < len(chunks) - 1:  # Don't delay after last chunk
+                    time.sleep(chunk_delay)
+            except Exception as e:
+                logger.error(f"Chunk {i} failed for {doc_id}: {e}")
+    else:
+        # Parallel processing when no delay needed
+        with ThreadPoolExecutor(max_workers=chunk_workers) as ex:
+            futures = [ex.submit(_process_chunk, i, c) for i, c in enumerate(chunks)]
+            for f in as_completed(futures):
+                try:
+                    results.append(f.result())
+                except Exception as e:
+                    logger.error(f"Chunk processing failed for {doc_id}: {e}")
+
+    # Merge per-chunk results into a single document result
+    for r in results:
+        if isinstance(r, ExtractionResult):
+            combined_entities.extend(r.entities or [])
+            combined_relationships.extend(r.relationships or [])
+        else:
+            # Defensive: if a raw dict sneaks in, try to merge
+            ent = getattr(r, "entities", [])
+            rel = getattr(r, "relationships", [])
+            combined_entities.extend(ent or [])
+            combined_relationships.extend(rel or [])
+
+    result = ExtractionResult(
+        entities=combined_entities,
+        relationships=combined_relationships,
     )
 
     tmp_file = entities_file.with_suffix(".json.tmp")
@@ -127,6 +191,12 @@ def main():
         help="Parallel chunk workers per doc (default: 2)",
     )
     parser.add_argument(
+        "--chunk-delay",
+        type=int,
+        default=0,
+        help="Seconds to wait between chunk extractions",
+    )
+    parser.add_argument(
         "--test",
         type=str,
         help="Test extraction on provided text",
@@ -163,8 +233,8 @@ def main():
 
     if args.test:
         logger.info(f"Test mode with {args.provider}: {args.test}")
-        result = extractor.extract_chunk(
-            args.test, doc_id="test_doc", chunk_id="test_chunk"
+        result = extractor.extract(
+            doc_id="test_doc", chunk_id="test_chunk", text=args.test
         )
         print(json.dumps(result.model_dump(), indent=2))
         return
@@ -208,11 +278,14 @@ def main():
                 output_base / d.name if output_base else None,
                 args.chunk_workers,
                 args.force,
+                args.chunk_delay,
             ): d
             for d in doc_dirs
         }
 
-        with tqdm(total=len(doc_dirs), desc=f"Extracting entities ({args.provider})") as pbar:
+        with tqdm(
+            total=len(doc_dirs), desc=f"Extracting entities ({args.provider})"
+        ) as pbar:
             for future in as_completed(futures):
                 d = futures[future]
                 try:
