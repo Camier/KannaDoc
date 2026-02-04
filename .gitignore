@@ -214,9 +214,10 @@ model_weights/
 embeddings_output/
 tmp/
 
-# Test scripts
-test_*.py
-verify_*.py
+# Test scripts (ad-hoc, not in tests/ directory)
+/test_*.py
+/verify_*.py
+!/backend/tests/test_*.py
 
 # Editor configs
 pyrightconfig.json
