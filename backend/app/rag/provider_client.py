@@ -5,6 +5,7 @@ Replaces LiteLLM proxy with direct provider calls
 Supported Providers (2026 stack):
 - DeepSeek (R1, Chat, Reasoner)
 - Z.ai (GLM-4.5/4.6/4.7) - Z.ai GLM Coding Plan
+- Zhipu (GLM-4/4.7) - Direct Zhipu API
 - Antigravity via CLIProxyAPI (proxied models)
 - Ollama Cloud (Llama, DeepSeek, Qwen)
 - MiniMax (M2.1)
@@ -57,8 +58,12 @@ class ProviderClient:
                 ):
                     return "cliproxyapi"
 
-        # GLM models -> Z.ai
-        if any(x in model_lower for x in ["glm-4.5", "glm-4.6", "glm-4.7"]):
+        # GLM models -> zai (ZAI_API_KEY) or zhipu (ZHIPUAI_API_KEY)
+        if any(x in model_lower for x in ["glm-4", "glm-4.5", "glm-4.6", "glm-4.7"]):
+            if os.getenv("ZAI_API_KEY"):
+                return "zai"
+            elif os.getenv("ZHIPUAI_API_KEY"):
+                return "zhipu"
             return "zai"
 
         # Generic provider matching

@@ -1,5 +1,9 @@
 # LLM Provider Configuration - Clean Version
-# ONLY 5 providers: DeepSeek, Z.ai, Antigravity, Ollama Cloud, MiniMax
+# 6 providers: DeepSeek, Z.ai, Zhipu, Antigravity, Ollama Cloud, MiniMax
+#
+# NOTE: zai and zhipu both serve GLM models but are different API endpoints:
+#   - zai: Z.ai Coding Plan (api.z.ai) - uses ZAI_API_KEY
+#   - zhipu: Direct Zhipu API (open.bigmodel.cn) - uses ZHIPUAI_API_KEY
 
 providers:
   deepseek:
@@ -23,6 +27,20 @@ providers:
       - glm-4.6-flash
       - glm-4.6v
       - glm-4.6v-flash
+      - glm-4.7
+      - glm-4.7-flash
+
+  zhipu:
+    base_url: "https://open.bigmodel.cn/api/paas/v4"
+    env_key: "ZHIPUAI_API_KEY"
+    vision: true
+    models:
+      - glm-4
+      - glm-4-plus
+      - glm-4-flash
+      - glm-4-long
+      - glm-4v
+      - glm-4v-plus
       - glm-4.7
       - glm-4.7-flash
 
@@ -88,5 +106,6 @@ vision_patterns:
   - gemini-3-flash
   - glm-4.5v
   - glm-4.6v
+  - glm-4v
   - llama3.2-vision
   - llava

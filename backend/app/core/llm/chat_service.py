@@ -48,7 +48,12 @@ class ChatService:
 
     @staticmethod
     def _normalize_temperature(temperature: float) -> float:
-        """Normalize temperature parameter."""
+        """Normalize temperature parameter.
+
+        Note: -1 is a sentinel value meaning "use provider default".
+        When -1 is passed, it's preserved and typically handled by the
+        LLM client to omit the parameter from the API request.
+        """
         if temperature < 0 and not temperature == -1:
             return 0
         elif temperature > 1:
@@ -158,6 +163,14 @@ class ChatService:
                 raise ValueError("Workflow mode requires model_config parameter")
             if not message_id:
                 raise ValueError("Workflow mode requires message_id parameter")
+
+            # Validate required keys exist in workflow model_config
+            required_keys = ["model_name", "model_url", "api_key", "base_used"]
+            missing_keys = [k for k in required_keys if k not in model_config]
+            if missing_keys:
+                raise ValueError(
+                    f"Workflow model_config missing required keys: {missing_keys}"
+                )
 
             model_name = model_config["model_name"]
             model_url = model_config["model_url"]
@@ -514,8 +527,17 @@ class ChatService:
         # Detect provider to handle auto-detection cases (where model_url is None)
         detected_provider = ProviderClient.get_provider_for_model(model_name)
 
-        logger.info(
-            f"DEBUG: model_name={model_name}, detected_provider={detected_provider}, model_url={model_url}"
+        # Fail fast if provider detection fails and no explicit URL provided
+        if not detected_provider and not model_url:
+            supported = ProviderClient.get_all_providers()
+            raise ValueError(
+                f"Cannot detect provider for model '{model_name}'. "
+                f"Either use a known model name or provide an explicit model_url. "
+                f"Supported providers: {supported}"
+            )
+
+        logger.debug(
+            f"model_name={model_name}, detected_provider={detected_provider}, model_url={model_url}"
         )
 
         # Zhipu API doesn't support stream_options parameter
@@ -535,19 +557,15 @@ class ChatService:
         # Use model name as-is
         api_model_name = model_name
 
-        logger.info(
-            f"DEBUG: is_zhipu={is_zhipu}, is_zai={is_zai}, api_model_name={api_model_name}"
+        logger.debug(
+            f"is_zhipu={is_zhipu}, is_zai={is_zai}, api_model_name={api_model_name}"
         )
 
         stream_kwargs: Dict[str, Any] = {"stream": True}
         if not is_zhipu:
             stream_kwargs["stream_options"] = {"include_usage": True}
 
-        logger.info(f"DEBUG: stream_kwargs={stream_kwargs}")
-
-        stream_kwargs: Dict[str, Any] = {"stream": True}
-        if not is_zhipu:
-            stream_kwargs["stream_options"] = {"include_usage": True}
+        logger.debug(f"stream_kwargs={stream_kwargs}")
 
         # Call API with streaming
         try:
