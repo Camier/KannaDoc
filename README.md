@@ -13,7 +13,7 @@ This is a **private research fork** used for academic thesis work. It extends th
 - **Thesis-specific Corpus** - 129 academic documents indexed for research
 - **Neo4j Status** - Knowledge graph storage is currently **DISABLED** (not deployed)
 - **Extended API** - Evaluation endpoints under `/api/v1/eval/`
-- **Entity Extraction V2** - 15-type ontology with MiniMax M2.1 API
+- **Entity Extraction V2** - 15-type ontology with Zhipu GLM-4.7 (glm-4.7-flash)
 - **Self-Contained Corpus** - 129 PDFs + 129 extractions consolidated from DataLab
 
 ## Repository Structure
@@ -65,9 +65,9 @@ backend/
 │           └── thresholds.yaml
 │
 ├── lib/                    # Core libraries
-│   ├── entity_extraction/  # V2 entity extraction (MiniMax M2.1)
+│   ├── entity_extraction/  # V2 entity extraction (Zhipu GLM-4.7)
 │   │   ├── schemas.py      # 15 entity types, 6 relationships
-│   │   ├── extractor.py    # MinimaxExtractor
+│   │   ├── extractor.py    # Zhipu + MiniMax fallback
 │   │   └── prompt.py       # Extraction prompt
 │   └── datalab/            # DataLab pipeline (archived from datalab.archive)
 │       ├── datalab_api.py  # DataLab API client (Marker API)
@@ -86,13 +86,22 @@ backend/
     ├── pdfs/               # 129 source PDFs (corpus)
     ├── extractions/        # 129 docs with V2 entities
     ├── id_mapping.json     # doc_id ↔ file_id mapping
-    ├── .minimax_api_key    # MiniMax API key
+    ├── .minimax_api_key    # MiniMax API key (fallback)
     └── .datalab_api_key    # DataLab API key
 ```
 
 ### Entity Extraction V2
 
-MiniMax M2.1-powered extraction with 15 entity types across 5 domains:
+Zhipu GLM-4.7-powered extraction with 15 entity types across 5 domains.
+
+**Available Models:**
+- `glm-4.7-flash` (default) - Fastest inference
+- `glm-4.7` - Standard model
+- `glm-4.5-air` - Alternative option
+
+**Configuration:**
+- API Key: `ZAI_API_KEY` environment variable
+- Fallback: MiniMax M2.1 (use `--provider minimax`)
 
 | Domain | Entity Types |
 |--------|-------------|
@@ -103,9 +112,12 @@ MiniMax M2.1-powered extraction with 15 entity types across 5 domains:
 | Clinical | Indication, Evidence, Study |
 
 ```bash
-# Extract entities from a document
+# Extract entities from a document (Zhipu default)
 cd backend
 PYTHONPATH=. python3 scripts/datalab/extract_entities_v2.py --test "Quercetin inhibits COX-2"
+
+# Use MiniMax fallback
+PYTHONPATH=. python3 scripts/datalab/extract_entities_v2.py --provider minimax --test "Quercetin inhibits COX-2"
 ```
 
 See `backend/lib/entity_extraction/AGENTS.md` for full documentation.
