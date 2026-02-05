@@ -895,7 +895,8 @@ class TestBreakpoints:
             mock_redis.get_task_connection = AsyncMock(return_value=mock_conn)
             mock_conn.xadd = AsyncMock()
             mock_conn.pipeline = Mock(return_value=mock_conn)
-            mock_conn.expire = AsyncMock()
+            mock_conn.expire = Mock()
+            mock_conn.execute = AsyncMock()
 
             await debug_engine._send_pause_event(mock_node)
 

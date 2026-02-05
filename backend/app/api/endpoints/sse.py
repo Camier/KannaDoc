@@ -298,7 +298,9 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
                         f"Error executing MCP tool {function_name}: {e}", exc_info=True
                     )
             else:
-                pass
+                logger.debug(
+                    f"MCP function '{function_name}' not found in available tools"
+                )
         except Exception as e:
             logger.error(
                 f"Error parsing MCP response or executing tool: {e}", exc_info=True
@@ -371,7 +373,9 @@ Here is the JSON function list: {json.dumps(mcp_tools_for_call)}"""
                         f"Error executing MCP tool {function_name}: {e}", exc_info=True
                     )
             else:
-                pass
+                logger.debug(
+                    f"MCP function '{function_name}' not found in available tools"
+                )
         except Exception as e:
             logger.error(
                 f"Error parsing MCP response or executing tool: {e}", exc_info=True

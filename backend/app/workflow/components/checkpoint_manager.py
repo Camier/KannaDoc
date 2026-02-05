@@ -59,6 +59,10 @@ class WorkflowCheckpointManager:
                 "global_variables": dict(self.engine.global_variables),
                 "execution_status": dict(self.engine.execution_status),
                 "loop_index": dict(self.engine.loop_index),
+                "execution_stack": [
+                    node.node_id for node in self.engine.execution_stack
+                ],
+                "context": self.engine.context,
                 "context_snapshot": self._get_context_snapshot(),
             },
         }
@@ -123,9 +127,18 @@ class WorkflowCheckpointManager:
         checkpoint = json.loads(data)
 
         # Restore state
-        self.engine.global_variables = checkpoint["state"]["global_variables"]
-        self.engine.execution_status = checkpoint["state"]["execution_status"]
-        self.engine.loop_index = checkpoint["state"]["loop_index"]
+        state = checkpoint["state"]
+        self.engine.global_variables = state["global_variables"]
+        self.engine.execution_status = state["execution_status"]
+        self.engine.loop_index = state["loop_index"]
+        self.engine.context = state.get("context", {})
+        execution_stack = state.get("execution_stack", [])
+        if execution_stack:
+            from app.workflow.graph import TreeNode
+
+            nodes = [TreeNode.get_node(node_id) for node_id in execution_stack]
+            self.engine.execution_stack = [node for node in nodes if node is not None]
+        self.last_checkpoint_node = checkpoint.get("node")
 
         logger.info(
             f"Workflow {self.task_id}: Restored from checkpoint {checkpoint_id} "

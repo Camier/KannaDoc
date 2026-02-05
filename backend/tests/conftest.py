@@ -12,13 +12,19 @@ from unittest.mock import AsyncMock, MagicMock, Mock
 
 
 # Add backend to path
-backend_dir = Path(__file__).parent
+backend_dir = Path(__file__).resolve().parent.parent  # Points to backend/, not tests/
 sys.path.insert(0, str(backend_dir))
 
 if not os.path.exists("/.dockerenv"):
     milvus_uri = os.environ.get("MILVUS_URI")
     if not milvus_uri or "milvus-standalone" in milvus_uri:
         os.environ["MILVUS_URI"] = "http://localhost:19531"
+
+os.environ.setdefault("DB_URL", "sqlite+aiosqlite:///:memory:")
+os.environ.setdefault("MONGODB_ROOT_USERNAME", "test_user")
+os.environ.setdefault("MONGODB_ROOT_PASSWORD", "test_password")
+os.environ.setdefault("MINIO_ACCESS_KEY", "test_access_key")
+os.environ.setdefault("MINIO_SECRET_KEY", "test_secret_key")
 
 # Use an in-memory SQLite database for testing
 TEST_DATABASE_URL = "sqlite+aiosqlite:///:memory:"

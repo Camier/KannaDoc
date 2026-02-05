@@ -73,8 +73,7 @@ class DatasetResponse(BaseModel):
     created_at: str
     queries: Optional[List[QueryResponse]] = None
 
-    class Config:
-        from_attributes = True
+    model_config = {"from_attributes": True}
 
 
 class DatasetListResponse(BaseModel):
@@ -106,8 +105,7 @@ class RunResponse(BaseModel):
     created_at: str
     results: Optional[List[Dict[str, Any]]] = None
 
-    class Config:
-        from_attributes = True
+    model_config = {"from_attributes": True}
 
 
 class RunListResponse(BaseModel):
@@ -302,9 +300,7 @@ async def execute_evaluation(
         500: Evaluation execution failed
     """
     try:
-        logger.info(
-            f"Starting evaluation run on dataset '{request.dataset_id}'"
-        )
+        logger.info(f"Starting evaluation run on dataset '{request.dataset_id}'")
 
         mongo = await get_mongo()
         eval_run = await run_evaluation(
@@ -395,9 +391,7 @@ async def get_runs_for_dataset(
         List of evaluation runs (newest first)
     """
     try:
-        logger.info(
-            f"Listing runs for dataset '{dataset_id}'"
-        )
+        logger.info(f"Listing runs for dataset '{dataset_id}'")
 
         mongo = await get_mongo()
         assert mongo.db is not None, "MongoDB not connected"

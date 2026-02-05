@@ -8,7 +8,7 @@ from app.core.config import settings, validate_settings
 from app.core.logging import logger
 from app.framework.app_framework import FastAPIFramework
 
-from app.db.mysql_session import mysql
+from app.db.mysql_session import close_mysql
 from app.db.mongo import mongodb
 from app.db.redis import redis
 from app.db.miniodb import async_minio_manager
@@ -84,7 +84,7 @@ async def lifespan(app: FastAPI):
     logger.info("Shutting down application services...")
     await shutdown_hook()
     await kafka_producer_manager.stop()
-    await mysql.close()
+    await close_mysql()
     await mongodb.close()
     await redis.close()
     logger.info("FastAPI Closed")

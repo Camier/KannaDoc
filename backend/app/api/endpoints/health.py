@@ -17,9 +17,10 @@ HEALTH_CHECK_TIMEOUT = 2.0
 async def _check_mysql() -> dict[str, Any]:
     """Check MySQL connectivity via async engine."""
     try:
-        from app.db.mysql_session import mysql
+        from app.db.mysql_session import get_mysql_instance
 
-        async with mysql.async_session() as session:
+        mysql_instance = get_mysql_instance()
+        async with mysql_instance.async_session() as session:
             await asyncio.wait_for(
                 session.execute(text("SELECT 1")),
                 timeout=HEALTH_CHECK_TIMEOUT,
