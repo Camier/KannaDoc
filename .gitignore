@@ -139,6 +139,7 @@ docker/volumes/
 .env
 .env.local
 .env.*.local
+.env.prod
 .envrc
 .venv
 env/
@@ -218,6 +219,9 @@ tmp/
 /test_*.py
 /verify_*.py
 !/backend/tests/test_*.py
+
+# Local model init script (contains local creds)
+backend/scripts/init_miko_models.py
 
 # Editor configs
 pyrightconfig.json
