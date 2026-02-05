@@ -84,7 +84,7 @@ backend/
 │
 └── data/
     ├── pdfs/               # 129 source PDFs (corpus)
-    ├── extractions/        # 129 docs with V2 entities
+    ├── extractions/        # 129 docs with V3.1 entities
     ├── id_mapping.json     # doc_id ↔ file_id mapping
     ├── .minimax_api_key    # MiniMax API key (fallback)
     └── .datalab_api_key    # DataLab API key
