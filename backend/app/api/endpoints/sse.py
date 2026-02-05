@@ -4,10 +4,8 @@ import re
 from fastapi import APIRouter, Depends
 from fastapi.responses import StreamingResponse
 from sse_starlette.sse import EventSourceResponse
-from app.core.security import get_current_user, verify_username_match
 from app.db.redis import redis
 from app.models.shared import UserMessage
-from app.models.user import User
 from app.models.workflow import LLMInputOnce
 from app.core.llm import ChatService
 from app.core.logging import logger
@@ -20,17 +18,15 @@ from app.workflow.utils import find_outermost_braces, replace_template
 
 router = APIRouter()
 
+# Hardcoded username for single-user mode
+USERNAME = "miko"
+
 
 # 创建新会话
 @router.post("/chat", response_model=dict)
 async def chat_stream(
     user_message: UserMessage,
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(
-        current_user, user_message.conversation_id.split("_")[0]
-    )
-
     message_id = str(uuid.uuid4())  # 生成 UUIDv4
 
     return StreamingResponse(
@@ -41,14 +37,10 @@ async def chat_stream(
 
 
 # SSE进度查询接口
-@router.get("/task/{username}/{task_id}")
+@router.get("/task/{task_id}")
 async def get_task_progress(
     task_id: str,
-    username: str,
-    current_user: User = Depends(get_current_user),
 ):
-    # 验证当前用户是否与要删除的用户名匹配
-    await verify_username_match(current_user, username)
     redis_connection = await redis.get_task_connection()
 
     async def event_generator():
@@ -84,14 +76,10 @@ async def get_task_progress(
     return EventSourceResponse(event_generator())
 
 
-@router.get("/workflow/{username}/{task_id}")
+@router.get("/workflow/{task_id}")
 async def workflow_sse(
     task_id: str,
-    username: str,
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, username)
-
     def _parse_message(parsed_msg: dict) -> dict:
         if parsed_msg.get("type") == "node":
             return {
@@ -230,9 +218,7 @@ async def workflow_sse(
 @router.post("/llm/once", response_model=dict)
 async def workflow_llm_stream(
     llm_input: LLMInputOnce,
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, llm_input.username)
     supply_info = ""
     message_id = str(uuid.uuid4())  # 生成 UUIDv4
     vlm_input = replace_template(llm_input.user_message, llm_input.global_variables)

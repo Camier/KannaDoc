@@ -13,8 +13,6 @@ from pydantic import BaseModel, Field
 from typing import List, Dict, Any, Optional
 from datetime import datetime
 
-from app.models.user import User
-from app.core.security import get_current_user
 from app.core.logging import logger
 from app.db.mongo import get_mongo
 from app.eval.query_generator import generate_queries_from_corpus
@@ -126,32 +124,28 @@ class RunListResponse(BaseModel):
 @router.post("/datasets", response_model=DatasetResponse, status_code=201)
 async def create_evaluation_dataset(
     request: CreateDatasetRequest,
-    current_user: User = Depends(get_current_user),
 ):
     """
     Create a new evaluation dataset from a knowledge base.
 
     Workflow:
-    1. Validates user authentication
-    2. Generates queries from KB corpus using LLM
-    3. Optionally labels query-document relevance with LLM
-    4. Stores dataset in MongoDB
+    1. Generates queries from KB corpus using LLM
+    2. Optionally labels query-document relevance with LLM
+    3. Stores dataset in MongoDB
 
     Args:
         request: Dataset creation parameters
-        current_user: Authenticated user
 
     Returns:
         Created dataset with metadata
 
     Raises:
         400: Invalid KB ID or dataset name already exists
-        401: Authentication required
         500: Query generation or storage failed
     """
     try:
         logger.info(
-            f"User '{current_user.username}' creating dataset '{request.name}' "
+            f"Creating dataset '{request.name}' "
             f"for KB '{request.kb_id}' with {request.query_count} queries"
         )
 
@@ -195,23 +189,18 @@ async def create_evaluation_dataset(
 @router.get("/datasets", response_model=DatasetListResponse)
 async def get_datasets(
     kb_id: str = Query(..., description="Knowledge base ID"),
-    current_user: User = Depends(get_current_user),
 ):
     """
     List all evaluation datasets for a knowledge base.
 
     Args:
         kb_id: Knowledge base ID
-        current_user: Authenticated user
 
     Returns:
         List of datasets (newest first)
-
-    Raises:
-        401: Authentication required
     """
     try:
-        logger.info(f"User '{current_user.username}' listing datasets for KB '{kb_id}'")
+        logger.info(f"Listing datasets for KB '{kb_id}'")
 
         mongo = await get_mongo()
         datasets = await list_datasets(kb_id, db=mongo.db)
@@ -239,24 +228,21 @@ async def get_datasets(
 @router.get("/datasets/{dataset_id}", response_model=DatasetResponse)
 async def get_dataset_details(
     dataset_id: str,
-    current_user: User = Depends(get_current_user),
 ):
     """
     Retrieve full details of an evaluation dataset.
 
     Args:
         dataset_id: Dataset unique identifier
-        current_user: Authenticated user
 
     Returns:
         Dataset with all queries and relevant documents
 
     Raises:
-        401: Authentication required
         404: Dataset not found
     """
     try:
-        logger.info(f"User '{current_user.username}' retrieving dataset '{dataset_id}'")
+        logger.info(f"Retrieving dataset '{dataset_id}'")
 
         mongo = await get_mongo()
         dataset = await get_dataset(dataset_id, db=mongo.db)
@@ -294,7 +280,6 @@ async def get_dataset_details(
 @router.post("/run", response_model=RunResponse)
 async def execute_evaluation(
     request: RunEvaluationRequest,
-    current_user: User = Depends(get_current_user),
 ):
     """
     Execute an evaluation run on a dataset.
@@ -307,20 +292,18 @@ async def execute_evaluation(
 
     Args:
         request: Evaluation configuration
-        current_user: Authenticated user
 
     Returns:
         Evaluation run with aggregated metrics
 
     Raises:
         400: Invalid dataset ID
-        401: Authentication required
         404: Dataset not found
         500: Evaluation execution failed
     """
     try:
         logger.info(
-            f"User '{current_user.username}' starting evaluation run on dataset '{request.dataset_id}'"
+            f"Starting evaluation run on dataset '{request.dataset_id}'"
         )
 
         mongo = await get_mongo()
@@ -352,24 +335,21 @@ async def execute_evaluation(
 @router.get("/runs/{run_id}", response_model=RunResponse)
 async def get_run_results(
     run_id: str,
-    current_user: User = Depends(get_current_user),
 ):
     """
     Retrieve full results of an evaluation run.
 
     Args:
         run_id: Evaluation run ID
-        current_user: Authenticated user
 
     Returns:
         Evaluation run with per-query results and metrics
 
     Raises:
-        401: Authentication required
         404: Run not found
     """
     try:
-        logger.info(f"User '{current_user.username}' retrieving run '{run_id}'")
+        logger.info(f"Retrieving run '{run_id}'")
 
         mongo = await get_mongo()
         assert mongo.db is not None, "MongoDB not connected"
@@ -404,24 +384,19 @@ async def get_run_results(
 @router.get("/runs", response_model=RunListResponse)
 async def get_runs_for_dataset(
     dataset_id: str = Query(..., description="Dataset ID"),
-    current_user: User = Depends(get_current_user),
 ):
     """
     List all evaluation runs for a dataset.
 
     Args:
         dataset_id: Dataset ID
-        current_user: Authenticated user
 
     Returns:
         List of evaluation runs (newest first)
-
-    Raises:
-        401: Authentication required
     """
     try:
         logger.info(
-            f"User '{current_user.username}' listing runs for dataset '{dataset_id}'"
+            f"Listing runs for dataset '{dataset_id}'"
         )
 
         mongo = await get_mongo()

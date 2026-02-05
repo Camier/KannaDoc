@@ -1,11 +1,12 @@
 from typing import List
 from fastapi import APIRouter, Depends, HTTPException
 from app.models.chatflow import ChatflowCreate, ChatflowOutput, ChatflowRenameInput, ChatflowSummary
-from app.models.user import User
 from app.db.repositories.repository_manager import RepositoryManager, get_repository_manager
-from app.core.security import get_current_user, verify_username_match
 
 router = APIRouter()
+
+# Hardcoded username for single-user mode
+USERNAME = "miko"
 
 
 # 创建新chatflow
@@ -13,14 +14,10 @@ router = APIRouter()
 async def create_chatflow(
     chatflow: ChatflowCreate,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(
-        current_user, chatflow.chatflow_id.split("_")[0]
-    )
     result = await repo_manager.chatflow.create_chatflow(
         chatflow_id=chatflow.chatflow_id,
-        username=chatflow.username,
+        username=USERNAME,
         chatflow_name=chatflow.chatflow_name,
         workflow_id=chatflow.workflow_id,
     )
@@ -32,10 +29,7 @@ async def create_chatflow(
 async def re_name(
     renameInput: ChatflowRenameInput,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, renameInput.chatflow_id.split("_")[0])
-
     result = await repo_manager.chatflow.update_chatflow_name(
         renameInput.chatflow_id, renameInput.chatflow_new_name
     )
@@ -49,9 +43,7 @@ async def re_name(
 async def get_chatflow(
     chatflow_id: str,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, chatflow_id.split("_")[0])
     chatflow = await repo_manager.chatflow.get_chatflow(chatflow_id)
     if not chatflow:
         raise HTTPException(status_code=404, detail="Chatflow not found")
@@ -93,9 +85,7 @@ async def get_chatflow(
 async def get_chatflows_by_user(
     workflow_id: str,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, workflow_id.split("_")[0])
     chatflows = await repo_manager.chatflow.get_chatflows_by_workflow_id(workflow_id)
     if not chatflows:
         return []
@@ -116,9 +106,7 @@ async def get_chatflows_by_user(
 async def delete_chatflow(
     chatflow_id: str,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, chatflow_id.split("_")[0])
     result = await repo_manager.chatflow.delete_chatflow(chatflow_id)
     if result["status"] == "failed":
         raise HTTPException(status_code=404, detail=result["message"])
@@ -126,15 +114,11 @@ async def delete_chatflow(
 
 
 # 删除指定workflow的所有chatflow
-@router.delete("/users/{workflow_id}/chatflows", response_model=dict)
+@router.delete("/workflow/{workflow_id}/chatflows", response_model=dict)
 async def delete_all_chatflows_by_user(
     workflow_id: str,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    # 验证当前用户是否与要删除的用户名匹配
-    await verify_username_match(current_user, workflow_id.split("_")[0])
-
     # 执行批量删除
     result = await repo_manager.chatflow.delete_workflow_all_chatflow(workflow_id)
 

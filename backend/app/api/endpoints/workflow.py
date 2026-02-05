@@ -1,7 +1,6 @@
 import json
 import uuid
 from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
-from app.core.security import get_current_user, verify_username_match
 from app.db.redis import redis
 from app.models.workflow import (
     GetTools,
@@ -16,7 +15,6 @@ from app.utils.timezone import beijing_time_now
 from app.workflow.mcp_tools import mcp_list_tools
 from app.workflow.sandbox import CodeSandbox
 from app.workflow.workflow_engine import WorkflowEngine
-from app.models.user import User
 from app.db.repositories.repository_manager import (
     RepositoryManager,
     get_repository_manager,
@@ -26,17 +24,18 @@ from app.core.logging import logger
 
 router = APIRouter()
 
+# Hardcoded username for single-user mode
+USERNAME = "miko"
+
 
 @router.post("/execute")
 async def execute_workflow(
     workflow: Workflow,
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, workflow.username)
     try:
         # 使用异步上下文管理器
         async with WorkflowEngine(
-            username=workflow.username,
+            username=USERNAME,
             nodes=workflow.nodes,
             edges=workflow.edges,
             global_variables=workflow.global_variables,
@@ -89,7 +88,7 @@ async def execute_workflow(
         name=f"workflow:{task_id}",
         mapping={
             "status": "pending",
-            "username": current_user.username,
+            "username": USERNAME,
             "start_time": str(beijing_time_now()),
             "result": "",
             "error": "",
@@ -122,7 +121,7 @@ async def execute_workflow(
     await kafka_producer_manager.send_workflow_task(
         task_id=task_id,
         workflow_data=workflow.model_dump(),
-        username=current_user.username,
+        username=USERNAME,
         debug_resume=True if workflow.debug_resume_task_id else False,
         input_resume=True if workflow.input_resume_task_id else False,
     )
@@ -136,9 +135,7 @@ async def execute_workflow(
 @router.post("/test_code", response_model=dict)
 async def execute_test_code(
     function_node: TestFunctionCode,
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, function_node.username)
     test_workflow = {
         "global_variables": function_node.global_variables,
         "nodes": [
@@ -166,7 +163,7 @@ async def execute_test_code(
     try:
         # 使用异步上下文管理器
         async with WorkflowEngine(
-            username=function_node.username,
+            username=USERNAME,
             nodes=test_workflow["nodes"],
             edges=test_workflow["edges"],
             global_variables=test_workflow["global_variables"],
@@ -191,9 +188,7 @@ async def execute_test_code(
 @router.post("/test_condition", response_model=dict)
 async def execute_test_condition(
     condition_node: TestConditionNode,
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, condition_node.username)
     test_workflow = {
         "global_variables": condition_node.global_variables,
         "nodes": [
@@ -219,7 +214,7 @@ async def execute_test_condition(
     try:
         # 使用异步上下文管理器
         async with WorkflowEngine(
-            username=condition_node.username,
+            username=USERNAME,
             nodes=test_workflow["nodes"],
             edges=test_workflow["edges"],
             global_variables=test_workflow["global_variables"],
@@ -243,16 +238,14 @@ async def execute_test_condition(
 async def create_workflow(
     workflow: WorkflowCreate,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, workflow.username)
     if workflow.workflow_id == "":
-        workflow_id = workflow.username + "_" + str(uuid.uuid4())  # 生成 UUIDv4,
+        workflow_id = USERNAME + "_" + str(uuid.uuid4())  # 生成 UUIDv4,
     else:
         workflow_id = workflow.workflow_id
     await repo_manager.workflow.update_workflow(
         workflow_id=workflow_id,
-        username=workflow.username,
+        username=USERNAME,
         workflow_name=workflow.workflow_name,
         workflow_config=workflow.workflow_config,
         start_node=workflow.start_node,
@@ -268,10 +261,7 @@ async def create_workflow(
 async def re_name(
     renameInput: WorkflowRenameInput,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, renameInput.workflow_id.split("_")[0])
-
     result = await repo_manager.workflow.update_workflow_name(
         renameInput.workflow_id, renameInput.workflow_new_name
     )
@@ -285,9 +275,7 @@ async def re_name(
 async def get_workflow(
     workflow_id: str,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, workflow_id.split("_")[0])
     workflow = await repo_manager.workflow.get_workflow(workflow_id)
     if not workflow:
         raise HTTPException(status_code=404, detail="Workflow not found")
@@ -306,15 +294,12 @@ async def get_workflow(
     }
 
 
-# 查询指定用户的所有会话
-@router.get("/users/{username}/workflows", response_model=list)
+# 查询所有会话
+@router.get("/workflows", response_model=list)
 async def get_workflows_by_user(
-    username: str,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, username)
-    workflows = await repo_manager.workflow.get_workflows_by_user(username)
+    workflows = await repo_manager.workflow.get_workflows_by_user(USERNAME)
     if not workflows:
         return []
     return [
@@ -334,9 +319,7 @@ async def get_workflows_by_user(
 async def delete_workflow(
     workflow_id: str,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, workflow_id.split("_")[0])
     result = await repo_manager.workflow.delete_workflow(workflow_id)
     if result["status"] == "failed":
         raise HTTPException(status_code=404, detail=result["message"])
@@ -344,53 +327,43 @@ async def delete_workflow(
 
 
 # 保存自定义节点
-@router.post("/nodes/{username}", response_model=dict)
+@router.post("/nodes", response_model=dict)
 async def save_custom_nodes(
-    username: str,
     custom_node: NodesInput,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, username)
     result = await repo_manager.node.update_custom_nodes(
-        username, custom_node.custom_node_name, custom_node.custom_node
+        USERNAME, custom_node.custom_node_name, custom_node.custom_node
     )
     if result["status"] == "failed":
         raise HTTPException(status_code=404, detail=result["message"])
     return result
 
 
-@router.get("/nodes/{username}", response_model=dict)
+@router.get("/nodes", response_model=dict)
 async def get_custom_nodes(
-    username: str,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, username)
-    result = await repo_manager.node.get_custom_nodes(username)
+    result = await repo_manager.node.get_custom_nodes(USERNAME)
     return result
 
 
 # 删除自定义节点
-@router.delete("/nodes/{username}/{custom_node_name}", response_model=dict)
+@router.delete("/nodes/{custom_node_name}", response_model=dict)
 async def delete_nodes(
-    username: str,
     custom_node_name: str,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, username)
-    result = await repo_manager.node.delete_custom_nodes(username, custom_node_name)
+    result = await repo_manager.node.delete_custom_nodes(USERNAME, custom_node_name)
     if result["status"] == "failed":
         raise HTTPException(status_code=404, detail=result["message"])
     return result
 
 
-@router.get("/{username}/{task_id}/cancel")
+@router.get("/{task_id}/cancel")
 async def cancel_workflow(
-    username: str, task_id: str, current_user: User = Depends(get_current_user)
+    task_id: str,
 ):
-    await verify_username_match(current_user, username)
     redis_conn = await redis.get_task_connection()
 
     # 检查任务是否存在
@@ -409,9 +382,8 @@ async def cancel_workflow(
 
 @router.post("/mcp_tool_list")
 async def mcp_tool_list(
-    get_tools: GetTools, current_user: User = Depends(get_current_user)
+    get_tools: GetTools,
 ):
-    await verify_username_match(current_user, get_tools.username)
     result = await mcp_list_tools(
         get_tools.mcp_url,
         get_tools.mcp_headers,
@@ -422,24 +394,21 @@ async def mcp_tool_list(
     return {"status": "success", "tools": result}
 
 
-@router.get("/docker_image_list/{username}")
+@router.get("/docker_image_list")
 async def docker_image_list(
-    username: str, current_user: User = Depends(get_current_user)
 ):
-    await verify_username_match(current_user, username)
     images = await CodeSandbox.get_all_images()
     sandbox_images = ["python-sandbox:latest"]
     for image in images:
-        if image.startswith("sandbox-" + username + "-"):
+        if image.startswith("sandbox-" + USERNAME + "-"):
             sandbox_images.append("-".join(image.split("-")[2:]))
     return {"status": "success", "images": sandbox_images}
 
 
-@router.delete("/{username}/{image_name}/docker_image/")
-async def docker_image_list(
-    username: str, image_name: str, current_user: User = Depends(get_current_user)
+@router.delete("/{image_name}/docker_image/")
+async def delete_docker_image(
+    image_name: str,
 ):
-    await verify_username_match(current_user, username)
-    processed_image_name = "sandbox-" + username + "-" + image_name
+    processed_image_name = "sandbox-" + USERNAME + "-" + image_name
     result = await CodeSandbox.delete_image(processed_image_name, True)
     return result

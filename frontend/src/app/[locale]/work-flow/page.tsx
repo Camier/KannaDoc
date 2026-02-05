@@ -14,16 +14,19 @@ import {
   getWorkflowDetails,
   renameWorkflow,
 } from "@/lib/api/workflowApi";
-import withAuth from "@/middlewares/withAuth";
-import { useAuthStore } from "@/stores/authStore";
 import { Flow, WorkflowAll } from "@/types/types";
 import { useState, useEffect, useCallback } from "react";
 import { useFlowStore } from "@/stores/flowStore";
 import { useGlobalStore } from "@/stores/WorkflowVariableStore";
 import { useTranslations } from "next-intl";
+import { useUIStore } from "@/stores/uiStore";
+
+// Default anonymous user for non-authenticated usage
+const ANONYMOUS_USER = { name: "anonymous", email: "" };
 
 const Workflow = () => {
   const t=useTranslations("WorkflowPage")
+  const { isSidebarVisible } = useUIStore();
   const [selectedFlow, setSelectedFlow] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [flows, setFlows] = useState<Flow[]>([]);
@@ -31,7 +34,7 @@ const Workflow = () => {
   const [newFlowName, setNewFlowName] = useState("");
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [nameError, setNameError] = useState<string | null>(null);
-  const { user } = useAuthStore();
+  const user = ANONYMOUS_USER;
   const [refresh, setRefresh] = useState<boolean>(false);
   const [fullScreenFlow, setFullScreenFlow] = useState<boolean>(false);
   const [workflowAll, setWorkflowAll] = useState<WorkflowAll | null>(null);
@@ -209,7 +212,7 @@ const Workflow = () => {
   return (
     <div className="overflow-hidden flex flex-col">
       <Navbar />
-      <div className="absolute w-[96%] h-[91%] top-[7%] bg-white/90 dark:bg-gray-900/80 left-[2%] rounded-3xl flex items-center justify-between shadow-2xl backdrop-blur-sm">
+      <div className="absolute w-[96%] h-[91%] top-[7%] bg-white/90 dark:bg-gray-900/80 left-[2%] rounded-xl flex items-center justify-between shadow-2xl backdrop-blur-sm border border-slate-800">
         <div className="w-full top-0 absolute px-6 pb-6 pt-2 h-full">
           {/* 新建工作流弹窗 */}
           {showCreateModal && (
@@ -236,12 +239,16 @@ const Workflow = () => {
           )}
 
           <div
-            className={`mx-auto px-4 pt-4 flex gap-6 ${
+            className={`mx-auto px-4 pt-4 flex gap-6 transition-all duration-300 ease-in-out ${
               fullScreenFlow ? "h-full" : "h-[88%]"
             }`}
           >
             {/* 左侧边栏 */}
-            {!fullScreenFlow && (
+            <div 
+              className={`transition-all duration-300 ease-in-out overflow-hidden flex-none ${
+                !fullScreenFlow && isSidebarVisible ? "w-[15%] opacity-100" : "w-0 opacity-0 invisible"
+              }`}
+            >
               <UnifiedSideBar
                 items={flows}
                 searchTerm={searchTerm}
@@ -252,25 +259,27 @@ const Workflow = () => {
                 onRename={handleRenameWorkflow}
                 config={workflowSideBarConfig}
               />
-            )}
+            </div>
 
             {/* 右侧内容区 */}
-            {selectedFlow && workflowAll ? (
-              <FlowEditor
-                workFlow={workflowAll}
-                setFullScreenFlow={setFullScreenFlow}
-                fullScreenFlow={fullScreenFlow}
-              />
-            ) : (
-              <div className="flex-1 h-full flex items-center flex-col justify-center gap-2 bg-gray-50 dark:bg-gray-800 rounded-3xl shadow-sm p-6">
-                <p className="text-gray-500 dark:text-gray-400 text-2xl">
-                  {t("emptyPrompt.createOrChoose")}
-                </p>
-                <p className="text-gray-600 dark:text-gray-500 text-lg">
-                  {t("emptyPrompt.accessTutorials")}
-                </p>
-              </div>
-            )}
+            <div className="flex-1 h-full min-w-0 transition-all duration-300 ease-in-out">
+              {selectedFlow && workflowAll ? (
+                <FlowEditor
+                  workFlow={workflowAll}
+                  setFullScreenFlow={setFullScreenFlow}
+                  fullScreenFlow={fullScreenFlow}
+                />
+              ) : (
+                <div className="flex-1 h-full flex items-center flex-col justify-center gap-2 bg-gray-50 dark:bg-gray-800 rounded-3xl shadow-sm p-6">
+                  <p className="text-gray-500 dark:text-gray-400 text-2xl">
+                    {t("emptyPrompt.createOrChoose")}
+                  </p>
+                  <p className="text-gray-600 dark:text-gray-500 text-lg">
+                    {t("emptyPrompt.accessTutorials")}
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -278,4 +287,4 @@ const Workflow = () => {
   );
 };
 
-export default withAuth(Workflow);
+export default Workflow;

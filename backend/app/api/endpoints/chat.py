@@ -16,9 +16,7 @@ from app.schemas.chat_responses import (
     ConversationUploadResponse,
     StatusResponse,
 )
-from app.models.user import User
 from app.db.repositories.repository_manager import RepositoryManager, get_repository_manager
-from app.core.security import get_current_user, verify_username_match
 from app.rag.convert_file import save_file_to_minio
 from app.utils.kafka_producer import kafka_producer_manager
 from app.core.logging import logger
@@ -26,20 +24,19 @@ from app.db.vector_db import vector_db_client
 
 router = APIRouter()
 
+# Hardcoded username for single-user mode
+USERNAME = "miko"
+
 
 # 创建新会话
 @router.post("/conversations", response_model=ConversationCreateResponse)
 async def create_conversation(
     conversation: ConversationCreate,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(
-        current_user, conversation.conversation_id.split("_")[0]
-    )
     await repo_manager.conversation.create_conversation(
         conversation_id=conversation.conversation_id,
-        username=conversation.username,
+        username=USERNAME,
         conversation_name=conversation.conversation_name,
         model_config=conversation.chat_model_config,
     )
@@ -53,10 +50,7 @@ async def create_conversation(
 async def re_name(
     renameInput: ConversationRenameInput,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, renameInput.conversation_id.split("_")[0])
-
     result = await repo_manager.conversation.update_conversation_name(
         renameInput.conversation_id, renameInput.conversation_new_name
     )
@@ -72,10 +66,7 @@ async def re_name(
 async def select_bases(
     basesInput: ConversationUpdateModelConfig,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, basesInput.conversation_id.split("_")[0])
-
     result = await repo_manager.conversation.update_conversation_model_config(
         basesInput.conversation_id, basesInput.chat_model_config
     )
@@ -89,9 +80,7 @@ async def select_bases(
 async def get_conversation(
     conversation_id: str,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, conversation_id.split("_")[0])
     conversation = await repo_manager.conversation.get_conversation(conversation_id)
     if not conversation:
         raise HTTPException(status_code=404, detail="Conversation not found")
@@ -149,14 +138,11 @@ async def get_conversation(
 
 
 # 查询指定用户的所有会话
-@router.get("/users/{username}/conversations", response_model=List[ConversationSummary])
+@router.get("/conversations", response_model=List[ConversationSummary])
 async def get_conversations_by_user(
-    username: str,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, username)
-    conversations = await repo_manager.conversation.get_conversations_by_user(username)
+    conversations = await repo_manager.conversation.get_conversations_by_user(USERNAME)
     if not conversations:
         return []
     return [
@@ -177,9 +163,7 @@ async def get_conversations_by_user(
 async def delete_conversation(
     conversation_id: str,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, conversation_id.split("_")[0])
     result = await repo_manager.conversation.delete_conversation(conversation_id)
     if result["status"] == "failed":
         raise HTTPException(status_code=404, detail=result["message"])
@@ -187,17 +171,12 @@ async def delete_conversation(
 
 
 # 删除指定用户的所有会话
-@router.delete("/users/{username}/conversations", response_model=StatusResponse)
+@router.delete("/conversations", response_model=StatusResponse)
 async def delete_all_conversations_by_user(
-    username: str,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    # 验证当前用户是否与要删除的用户名匹配
-    await verify_username_match(current_user, username)
-
     # 执行批量删除
-    result = await repo_manager.conversation.delete_conversations_by_user(username)
+    result = await repo_manager.conversation.delete_conversations_by_user(USERNAME)
 
     if result.get("status") != "success":
         raise HTTPException(
@@ -212,23 +191,19 @@ async def delete_all_conversations_by_user(
 
 # 上传文件
 @router.post(
-    "/upload/{username}/{conversation_id}", response_model=ConversationUploadResponse
+    "/upload/{conversation_id}", response_model=ConversationUploadResponse
 )
 async def upload_multiple_files(
     files: List[UploadFile],
-    username: str,
     conversation_id: str,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    # 验证当前用户是否与要删除的用户名匹配
-    await verify_username_match(current_user, username)
     return_files = []
     id = str(uuid.uuid4())
     knowledge_db_id = "temp_" + conversation_id + "_" + id
     await repo_manager.knowledge_base.create_knowledge_base(
-        username,
-        f"temp_base_{username}_{id}",
+        USERNAME,
+        f"temp_base_{USERNAME}_{id}",
         knowledge_db_id,
         True,
     )
@@ -239,7 +214,7 @@ async def upload_multiple_files(
             "colqwen" + knowledge_db_id.replace("-", "_")
         )
     # 生成任务ID
-    task_id = username + "_" + str(uuid.uuid4())
+    task_id = USERNAME + "_" + str(uuid.uuid4())
     total_files = len(files)
     redis_connection = await redis.get_task_connection()
     # 初始化任务状态
@@ -258,7 +233,7 @@ async def upload_multiple_files(
     file_meta_list = []
 
     # Batch MinIO uploads in parallel for -50% upload latency
-    upload_tasks = [save_file_to_minio(username, file) for file in files]
+    upload_tasks = [save_file_to_minio(USERNAME, file) for file in files]
     upload_results = await asyncio.gather(*upload_tasks, return_exceptions=True)
 
     for file, result in zip(files, upload_results):
@@ -269,7 +244,7 @@ async def upload_multiple_files(
         minio_filename, minio_url = result
 
         # 生成文件ID并保存元数据
-        file_id = f"{username}_{uuid.uuid4()}"
+        file_id = f"{USERNAME}_{uuid.uuid4()}"
 
         file_meta_list.append(
             {
@@ -295,7 +270,7 @@ async def upload_multiple_files(
         )
         await kafka_producer_manager.send_embedding_task(
             task_id=task_id,
-            username=username,
+            username=USERNAME,
             knowledge_db_id=knowledge_db_id,
             file_meta=meta,
             priority=1,

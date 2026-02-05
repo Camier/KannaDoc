@@ -5,8 +5,6 @@ Knowledge Base API endpoints for managing document collections.
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from typing import List, Optional
-from app.models.user import User
-from app.core.security import get_current_user
 from app.db.repositories.repository_manager import (
     RepositoryManager,
     get_repository_manager,
@@ -54,23 +52,19 @@ class SearchPreviewResponse(BaseModel):
 async def search_preview(
     kb_id: str,
     request: SearchPreviewRequest,
-    current_user: User = Depends(get_current_user),
     repo_manager: RepositoryManager = Depends(get_repository_manager),
 ):
     """
     Preview vector search results without LLM generation.
 
-    This endpoint allows users to debug RAG quality by seeing:
+    This endpoint allows debugging RAG quality by seeing:
     - Which document chunks match their query
     - Similarity scores for each match
     - Page numbers and filenames
 
-    Useful for understanding why certain answers are generated.
-
     Args:
         kb_id: Knowledge base ID to search
         request: Search parameters (query, top_k, min_score)
-        current_user: Authenticated user
         repo_manager: Database repository manager
 
     Returns:
@@ -78,22 +72,13 @@ async def search_preview(
 
     Raises:
         HTTPException 404: Knowledge base not found
-        HTTPException 403: User doesn't have access to this KB
+        HTTPException 500: Embedding or vector search failed
     """
 
-    # Verify KB exists and user has access
+    # Verify KB exists
     kb = await repo_manager.knowledge_base.get_knowledge_base_by_id(kb_id)
     if not kb:
         raise HTTPException(status_code=404, detail="Knowledge base not found")
-
-    # Check ownership (respect single-tenant mode if enabled)
-    if kb["username"] != current_user.username:
-        from app.core.config import settings
-
-        if not getattr(settings, "single_tenant_mode", False):
-            raise HTTPException(
-                status_code=403, detail="You don't have access to this knowledge base"
-            )
 
     # Get embeddings for query
     try:

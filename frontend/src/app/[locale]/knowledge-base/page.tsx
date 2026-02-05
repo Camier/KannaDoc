@@ -13,17 +13,19 @@ import {
   renameKnowledgeBase,
   uploadFiles,
 } from "@/lib/api/knowledgeBaseApi";
-import withAuth from "@/middlewares/withAuth";
-import { useAuthStore } from "@/stores/authStore";
 import { Base, UploadFile } from "@/types/types";
 import { getFileExtension, SupportFileFormat } from "@/utils/file";
 import { useState, useEffect, useCallback } from "react";
-import Cookies from "js-cookie";
 import { EventSourceParserStream } from "eventsource-parser/stream";
-import { useTranslations } from "next-intl"; // 添加多语言支持
+import { useTranslations } from "next-intl";
+import { useUIStore } from "@/stores/uiStore";
+
+// Default anonymous user for non-authenticated usage
+const ANONYMOUS_USER = { name: "anonymous", email: "" };
 
 const KnowledgeBase = () => {
   const t = useTranslations("KnowledgeBase");
+  const { isSidebarVisible } = useUIStore();
   const [selectedBase, setSelectedBase] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [bases, setBases] = useState<Base[]>([]);
@@ -31,7 +33,7 @@ const KnowledgeBase = () => {
   const [newBaseName, setNewBaseName] = useState("");
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
   const [nameError, setNameError] = useState<string | null>(null);
-  const { user } = useAuthStore();
+  const user = ANONYMOUS_USER;
   const [refresh, setRefresh] = useState<boolean>(false);
   const [uploadProgress, setUploadProgress] = useState<number | null>(0);
   const [taskStatus, setTaskStatus] = useState<
@@ -192,17 +194,11 @@ const KnowledgeBase = () => {
         })
           .then(async (response) => {
             // 使用fetch代替EventSource
-            const token = Cookies.get("token"); // 确保已引入cookie库
             const taskId = response?.data.task_id;
 
             try {
               const response = await fetch(
-                `${process.env.NEXT_PUBLIC_API_BASE_URL}/sse/task/${user.name}/${taskId}`,
-                {
-                  headers: {
-                    Authorization: `Bearer ${token}`,
-                  },
-                }
+                `${process.env.NEXT_PUBLIC_API_BASE_URL}/sse/task/${user.name}/${taskId}`
               );
 
               if (!response.ok) throw new Error("Request failed");
@@ -262,7 +258,7 @@ const KnowledgeBase = () => {
   return (
     <div className="overflow-hidden flex flex-col h-screen bg-gray-50 dark:bg-black">
       <Navbar />
-      <div className="absolute w-[96%] h-[91%] top-[7%] bg-white/90 dark:bg-gray-900/80 left-[2%] rounded-3xl flex items-center justify-between shadow-2xl backdrop-blur-sm border border-gray-200 dark:border-gray-700">
+      <div className="absolute w-[96%] h-[91%] top-[7%] bg-white/90 dark:bg-gray-900/80 left-[2%] rounded-xl flex items-center justify-between shadow-2xl backdrop-blur-sm border border-slate-800">
         <div className="w-full top-0 absolute px-6 pb-6 pt-2 h-full">
           {/* 新建知识库弹窗 */}
           {showCreateModal && (
@@ -278,7 +274,7 @@ const KnowledgeBase = () => {
 
           {/* 成功提示 */}
           {successMessage && (
-            <div className="w-[20%] text-center fixed top-[40%] left-[40%] bg-indigo-500 text-white px-4 py-2 rounded-3xl shadow-lg animate-bounce">
+            <div className="w-[20%] text-center fixed top-[40%] left-[40%] bg-indigo-500 text-white px-4 py-2 rounded-xl shadow-lg animate-bounce">
               {successMessage}
             </div>
           )}
@@ -286,29 +282,37 @@ const KnowledgeBase = () => {
           {/* 顶部导航 */}
           <TopBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
-          <div className="mx-auto px-4 pt-4 flex gap-6 h-[88%]">
+          <div className="mx-auto px-4 pt-4 flex gap-6 h-[88%] transition-all duration-300 ease-in-out">
             {/* 左侧边栏 */}
-            <UnifiedSideBar
-              items={bases}
-              searchTerm={searchTerm}
-              setShowCreateModal={setShowCreateModal}
-              selectedItem={selectedBase}
-              setSelectedItem={setSelectedBase}
-              onDelete={handledeleteBase}
-              onRename={handleRenameKnowledgeBase}
-              config={knowledgeBaseSideBarConfig}
-            />
+            <div 
+              className={`transition-all duration-300 ease-in-out overflow-hidden flex-none ${
+                isSidebarVisible ? "w-[20%] opacity-100" : "w-0 opacity-0 invisible"
+              }`}
+            >
+              <UnifiedSideBar
+                items={bases}
+                searchTerm={searchTerm}
+                setShowCreateModal={setShowCreateModal}
+                selectedItem={selectedBase}
+                setSelectedItem={setSelectedBase}
+                onDelete={handledeleteBase}
+                onRename={handleRenameKnowledgeBase}
+                config={knowledgeBaseSideBarConfig}
+              />
+            </div>
 
             {/* 右侧内容区 */}
-            <KnowledgeBaseDetails
-              bases={bases}
-              setBases={setBases}
-              selectedBase={selectedBase}
-              setSelectedBase={setSelectedBase}
-              onFileUpload={handleFileUpload}
-              buttonText={buttonText}
-              isSendDisabled={isSendDisabled}
-            />
+            <div className="flex-1 h-full min-w-0 transition-all duration-300 ease-in-out">
+              <KnowledgeBaseDetails
+                bases={bases}
+                setBases={setBases}
+                selectedBase={selectedBase}
+                setSelectedBase={setSelectedBase}
+                onFileUpload={handleFileUpload}
+                buttonText={buttonText}
+                isSendDisabled={isSendDisabled}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -316,4 +320,4 @@ const KnowledgeBase = () => {
   );
 };
 
-export default withAuth(KnowledgeBase);
+export default KnowledgeBase;

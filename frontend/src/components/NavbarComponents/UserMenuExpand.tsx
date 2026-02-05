@@ -1,7 +1,5 @@
 "use client";
 import { useRef, useState } from "react";
-import { logoutUser } from "@/lib/auth";
-import { useAuthStore } from "@/stores/authStore";
 import { LocaleSelect } from "../LocaleSwitcher";
 import { useTranslations } from "next-intl";
 import { useClickAway } from "react-use";
@@ -12,20 +10,9 @@ const UserMenuExpand = () => {
   const t = useTranslations("UserMenu");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openPage, setOpenPage] = useState<string | null>(null);
-  const [isUserInfoOpen, setIsUserInfoOpen] = useState(false);
-  const { user } = useAuthStore();
 
-  const popupUserInfoRef = useRef<HTMLDivElement>(null);
-  const buttonUserInfoRef = useRef<HTMLButtonElement>(null);
   const popupMenuRef = useRef<HTMLDivElement>(null);
   const buttonMenuRef = useRef<HTMLButtonElement>(null);
-
-  useClickAway(popupUserInfoRef, (event) => {
-    if (buttonUserInfoRef.current?.contains(event.target as Node)) {
-      return;
-    }
-    setIsUserInfoOpen(false);
-  });
 
   useClickAway(popupMenuRef, (event) => {
     if (buttonMenuRef.current?.contains(event.target as Node)) {
@@ -36,27 +23,6 @@ const UserMenuExpand = () => {
 
   return (
     <div className="fixed right-[2%] gap-3 h-8 flex items-center justify-between px-6 border-indigo-500 text-[15px]">
-      <button ref={buttonUserInfoRef}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="2.0"
-          stroke="currentColor"
-          className="size-[27px] text-indigo-500 hover:text-indigo-600 cursor-pointer"
-          onClick={(e) => {
-            e.preventDefault();
-            setIsUserInfoOpen((prev) => !prev);
-          }}
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-          />
-        </svg>
-      </button>
-
       <button
         className="group flex flex-col gap-[4px] cursor-pointer"
         onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -102,9 +68,9 @@ const UserMenuExpand = () => {
           </div>
 
           <a
-            href="https://liweiphys.github.io/layra/" // 配置页面的路由路径
+            href="https://liweiphys.github.io/layra/"
             className="px-3 text-indigo-500 hover:text-indigo-700 flex items-center cursor-pointer"
-            target="_blank" // 新窗口打开
+            target="_blank"
             rel="noopener noreferrer"
           >
             <svg
@@ -171,69 +137,6 @@ const UserMenuExpand = () => {
             </svg>
             <span className="text-nowrap">{t("about")}</span>
           </button>
-
-          <div
-            className="px-3 cursor-pointer text-red-400 hover:text-red-600 flex items-center"
-            onClick={logoutUser}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="size-5 mr-1"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9"
-              />
-            </svg>
-            <span className="text-nowrap">{t("logOut")}</span>
-          </div>
-        </div>
-      )}
-      {isUserInfoOpen && (
-        <div
-          ref={popupUserInfoRef}
-          className="z-20 p-4 bg-gray-900/800 shadow-2xl absolute right-0 top-10 flex flex-col items-start justify-center gap-2 rounded-3xl"
-        >
-          <div className="whitespace-nowrap px-3 flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="size-5 mr-1"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-              />
-            </svg>
-
-            {user?.name}
-          </div>
-          <div className="whitespace-nowrap px-3 flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="size-5 mr-1"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
-              />
-            </svg>
-            {user?.email}
-          </div>
         </div>
       )}
       {openPage === "support" && <Support onCancel={() => setOpenPage(null)} />}

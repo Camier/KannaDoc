@@ -4,51 +4,97 @@ import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { useEffect } from "react";
+import { useUIStore } from "@/stores/uiStore";
+import Image from "next/image";
 
 const Navbar = () => {
   const t = useTranslations("Navbar");
   const pathname = usePathname(); // 直接获取当前路径（如 "/about"）
-  const navbarButtonStyle = `transform transition-transform duration-300 h-8 flex items-center justify-center gap-1 cursor-pointer cursor-point
-   border-indigo-500 text-indigo-500 hover:text-white hover:bg-indigo-600
+  const { isSidebarVisible, toggleSidebar } = useUIStore();
+  const navbarButtonStyle = `transform transition-all duration-300 h-8 flex items-center justify-center gap-1 cursor-pointer
+   border-slate-700 text-slate-400 hover:text-white hover:bg-slate-800
   `;
-  return (
-    <div className="z-10 fixed left-[2%] w-[96%] pl-[10%] pr-[15%] bg-gray-900/80 h-[5%] my-1 rounded-3xl flex justify-between items-center shadow-2xl">
-      <div className={navbarButtonStyle + `rounded-3xl px-4`}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="2"
-          stroke="currentColor"
-          className="size-5"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-            transform="translate(0, -1)"
-          />
-        </svg>
 
-        <Link href="/" className="font-medium text-sm">
-          {t("home")}
+  // Sidebar visibility is only relevant for specific pages
+  const showToggle = ["/ai-chat", "/work-flow", "/knowledge-base"].some(path => pathname.includes(path));
+
+  return (
+    <div className="z-10 fixed left-[2%] w-[96%] pl-[2%] pr-[15%] bg-slate-950/90 border border-slate-800 h-[5%] my-1 rounded-xl flex justify-between items-center shadow-2xl backdrop-blur-md">
+      <div className="flex items-center gap-4">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2 ml-2 group">
+          <Image
+            src="/pictures/logo.png"
+            alt="Logo"
+            width={28}
+            height={28}
+            className="rounded group-hover:scale-110 transition-transform duration-300 contrast-125 brightness-110"
+          />
         </Link>
+
+        <div className="h-4 w-px bg-slate-800 mx-1" />
+
+        {showToggle && (
+          <div 
+            onClick={toggleSidebar}
+            className={navbarButtonStyle + " rounded-lg p-1.5"}
+            title={isSidebarVisible ? "Hide Sidebar" : "Show Sidebar"}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth="1.5"
+              stroke="currentColor"
+              className="size-5"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d={isSidebarVisible 
+                  ? "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" 
+                  : "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"}
+              />
+            </svg>
+          </div>
+        )}
+        
+        <div className={navbarButtonStyle + `${pathname === "/" || pathname === "/en" || pathname === "/zh-CN" ? "bg-slate-800 text-white" : ""} rounded-lg px-4`}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="size-4.5"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+            />
+          </svg>
+
+          <Link href="/" className="font-medium text-xs uppercase tracking-wider">
+            {t("home")}
+          </Link>
+        </div>
       </div>
 
       <div
         className={
           navbarButtonStyle +
-          `${pathname.includes("/ai-chat") ? "bg-indigo-500 text-white" : ""
-          }  rounded-3xl px-4`
+          `${pathname.includes("/ai-chat") ? "bg-slate-800 text-white border border-slate-700" : ""
+          }  rounded-lg px-4`
         }
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          strokeWidth="2"
+          strokeWidth="1.5"
           stroke="currentColor"
-          className="size-5"
+          className="size-4.5"
         >
           <path
             strokeLinecap="round"
@@ -57,7 +103,7 @@ const Navbar = () => {
           />
         </svg>
 
-        <Link href="/ai-chat" className="font-medium text-sm">
+        <Link href="/ai-chat" className="font-medium text-xs uppercase tracking-wider">
           {t("aiChat")}
         </Link>
       </div>
@@ -65,17 +111,17 @@ const Navbar = () => {
       <div
         className={
           navbarButtonStyle +
-          `${pathname.includes("/work-flow") ? "bg-indigo-500 text-white" : ""
-          }  rounded-3xl px-4`
+          `${pathname.includes("/work-flow") ? "bg-slate-800 text-white border border-slate-700" : ""
+          }  rounded-lg px-4`
         }
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          strokeWidth="2"
+          strokeWidth="1.5"
           stroke="currentColor"
-          className="size-5"
+          className="size-4.5"
         >
           <path
             strokeLinecap="round"
@@ -84,13 +130,7 @@ const Navbar = () => {
           />
         </svg>
 
-        <Link
-          href="/work-flow"
-          // onClick={() => {
-          //   window.confirm("coming soon...");
-          // }}
-          className="font-medium text-sm"
-        >
+        <Link href="/work-flow" className="font-medium text-xs uppercase tracking-wider">
           {t("workFlow")}
         </Link>
       </div>
@@ -98,17 +138,17 @@ const Navbar = () => {
       <div
         className={
           navbarButtonStyle +
-          `${pathname.includes("/knowledge-base") ? "bg-indigo-500 text-white" : ""
-          } rounded-3xl px-4`
+          `${pathname.includes("/knowledge-base") ? "bg-slate-800 text-white border border-slate-700" : ""
+          } rounded-lg px-4`
         }
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          strokeWidth="2"
+          strokeWidth="1.5"
           stroke="currentColor"
-          className="size-5"
+          className="size-4.5"
         >
           <path
             strokeLinecap="round"
@@ -116,7 +156,7 @@ const Navbar = () => {
             d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"
           />
         </svg>
-        <Link href="/knowledge-base" className="font-medium text-sm">
+        <Link href="/knowledge-base" className="font-medium text-xs uppercase tracking-wider">
           {t("knowledgeBase")}
         </Link>
       </div>

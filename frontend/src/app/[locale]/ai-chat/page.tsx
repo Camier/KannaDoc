@@ -4,7 +4,6 @@ import { logger } from "@/lib/logger";
 import { useCallback, useEffect, useRef, useState } from "react";
 import React from "react";
 import Navbar from "@/components/NavbarComponents/Navbar";
-import withAuth from "@/middlewares/withAuth";
 import UnifiedSideBar from "@/components/shared/UnifiedSideBar";
 import { chatSideBarConfig } from "@/components/shared/SideBarConfigs";
 import ChatBox from "@/components/AiChat/ChatBox";
@@ -16,7 +15,6 @@ import {
   ModelConfig,
   KnowledgeBase,
 } from "@/types/types";
-import { useAuthStore } from "@/stores/authStore";
 import { v4 as uuidv4 } from "uuid";
 import {
   createConversation,
@@ -33,15 +31,20 @@ import { EventSourceParserStream } from "eventsource-parser/stream";
 import useModelConfigStore from "@/stores/configStore";
 import { getAllModelConfig } from "@/lib/api/configApi";
 import { getAllKnowledgeBase } from "@/lib/api/knowledgeBaseApi";
-import { useTranslations } from "next-intl"; // 添加多语言支持
+import { useTranslations } from "next-intl";
+import { useUIStore } from "@/stores/uiStore";
+
+// Default anonymous user for non-authenticated usage
+const ANONYMOUS_USER = { name: "anonymous", email: "" };
 
 const AIChat: React.FC = () => {
   const t = useTranslations("AIChat");
+  const { isSidebarVisible } = useUIStore();
 
   const [messages, setMessages] = useState<Message[]>([]);
   const [chatHistory, setChatHistory] = useState<Chat[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const { user } = useAuthStore();
+  const user = ANONYMOUS_USER;
   const [conversationName, setConversationName] = useState<string>("");
   const [sendDisabled, setSendDisabled] = useState(false);
   const [receivingMessageId, setReceivingMessageId] = useState<string | null>(
@@ -348,8 +351,6 @@ const AIChat: React.FC = () => {
     setReceivingMessageId(conversationId);
 
     try {
-      const token = Cookies.get("token");
-
       // 创建新的 AbortController
       const controller = new AbortController();
       abortControllerRef.current = controller;
@@ -360,7 +361,6 @@ const AIChat: React.FC = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`,
           },
           body: JSON.stringify({
             conversation_id: conversationId,
@@ -368,7 +368,7 @@ const AIChat: React.FC = () => {
             user_message: message,
             temp_db_id: tempBaseId,
           }),
-          signal: controller.signal, // 添加 signal
+          signal: controller.signal,
         }
       );
 
@@ -640,33 +640,42 @@ const AIChat: React.FC = () => {
   return (
     <div className="overflow-hidden">
       <Navbar />
-      <div className="absolute w-[96%] h-[91%] top-[7%] bg-white/90 dark:bg-gray-900/80 left-[2%] rounded-3xl flex items-center justify-between shadow-2xl">
-        <UnifiedSideBar
-          items={chatHistory}
-          searchTerm=""
-          setShowCreateModal={() => {}}
-          selectedItem={chatId}
-          setSelectedItem={(id) => setChatId(id as string)}
-          onDelete={handledeleteChat}
-          onRename={handleRenameChat}
-          config={chatSideBarConfig}
-          onNewChat={handleNewChat}
-          onDeleteAll={handledeleteAllChat}
-          onSelectChat={handleSelectChat}
-          searchInput={searchTerm}
-          setSearchInput={setSearchTerm}
-        />
-        <ChatBox
-          messages={messages}
-          onSendMessage={handleSendMessage}
-          sendDisabled={sendDisabled}
-          onAbort={handleAbort}
-          receivingMessageId={receivingMessageId}
-          receivingMessages={receivingMessages} // 传递接收消息状态
-        />
+      <div className="absolute w-[96%] h-[91%] top-[7%] bg-white/90 dark:bg-gray-900/80 left-[2%] rounded-xl flex items-center justify-between shadow-2xl overflow-hidden border border-slate-800">
+        <div 
+          className={`transition-all duration-300 ease-in-out h-full overflow-hidden flex-none ${
+            isSidebarVisible ? "w-[20%] opacity-100" : "w-0 opacity-0 invisible"
+          }`}
+        >
+          <UnifiedSideBar
+            items={chatHistory}
+            searchTerm=""
+            setShowCreateModal={() => {}}
+            selectedItem={chatId}
+            setSelectedItem={(id) => setChatId(id as string)}
+            onDelete={handledeleteChat}
+            onRename={handleRenameChat}
+            config={chatSideBarConfig}
+            onNewChat={handleNewChat}
+            onDeleteAll={handledeleteAllChat}
+            onSelectChat={handleSelectChat}
+            searchInput={searchTerm}
+            setSearchInput={setSearchTerm}
+          />
+        </div>
+        
+        <div className="flex-1 h-full min-w-0 transition-all duration-300 ease-in-out">
+          <ChatBox
+            messages={messages}
+            onSendMessage={handleSendMessage}
+            sendDisabled={sendDisabled}
+            onAbort={handleAbort}
+            receivingMessageId={receivingMessageId}
+            receivingMessages={receivingMessages} // 传递接收消息状态
+          />
+        </div>
       </div>
     </div>
   );
 };
 
-export default withAuth(AIChat);
+export default AIChat;

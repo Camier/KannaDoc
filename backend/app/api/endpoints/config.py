@@ -6,11 +6,6 @@ from app.models.model_config import (
     SelectedModelResponse,
     UpdateSelectedModelRequest,
 )
-from app.models.user import User
-from app.core.security import (
-    get_current_user,
-    verify_username_match,
-)
 from app.db.repositories.repository_manager import (
     RepositoryManager,
     get_repository_manager,
@@ -27,15 +22,13 @@ async def get_cliproxyapi_models():
     return models
 
 
-@router.post("/{username}", status_code=201)
+@router.post("/", status_code=201)
 async def add_model_config(
-    username: str,
     model_data: ModelCreate,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, username)
     """添加新的模型配置"""
+    username = "miko"  # Temporary hardcoded username
     model_id = username + "_" + str(uuid.uuid4())
     result = await repo_manager.model_config.add_model_config(
         username=username, model_id=model_id, **model_data.model_dump()
@@ -52,15 +45,13 @@ async def add_model_config(
     return {"message": "Model added successfully", "model_id": result["model_id"]}
 
 
-@router.delete("/{username}/{model_id}")
+@router.delete("/{model_id}")
 async def delete_model_config(
-    username: str,
     model_id: str,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, username)
     """删除指定模型配置"""
+    username = "miko"  # Temporary hardcoded username
     result = await repo_manager.model_config.delete_model_config(username, model_id)
 
     if result["status"] == "error":
@@ -72,16 +63,14 @@ async def delete_model_config(
     return {"message": "Model deleted successfully"}
 
 
-@router.patch("/{username}/{model_id}")
+@router.patch("/{model_id}")
 async def update_model_config(
-    username: str,
     model_id: str,
     update_data: ModelUpdate,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, username)
     """更新模型配置（部分更新）"""
+    username = "miko"  # Temporary hardcoded username
     result = await repo_manager.model_config.update_model_config(
         username=username,
         model_id=model_id,
@@ -99,14 +88,12 @@ async def update_model_config(
     return {"message": "Model updated successfully"}
 
 
-@router.get("/{username}/selected", response_model=SelectedModelResponse)
+@router.get("/selected", response_model=SelectedModelResponse)
 async def get_selected_model(
-    username: str,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, username)
     """获取用户选定的模型配置"""
+    username = "miko"  # Temporary hardcoded username
     result = await repo_manager.model_config.get_selected_model_config(username)
 
     if result["status"] == "error":
@@ -118,14 +105,12 @@ async def get_selected_model(
     return result
 
 
-@router.get("/{username}/all", response_model=dict)
+@router.get("/all", response_model=dict)
 async def get_all_models(
-    username: str,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, username)
     """获取用户所有模型配置"""
+    username = "miko"  # Temporary hardcoded username
     result = await repo_manager.model_config.get_all_models_config(username)
 
     if result["status"] == "error":
@@ -134,15 +119,13 @@ async def get_all_models(
     return result
 
 
-@router.put("/{username}/select-model", status_code=200)
+@router.put("/select-model", status_code=200)
 async def update_selected_model(
-    username: str,
     request: UpdateSelectedModelRequest,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
-    current_user: User = Depends(get_current_user),
 ):
-    await verify_username_match(current_user, username)
     """更新用户选定的模型"""
+    username = "miko"  # Temporary hardcoded username
     result = await repo_manager.model_config.update_selected_model(
         username=username, model_id=request.model_id
     )
