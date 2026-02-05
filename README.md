@@ -13,7 +13,7 @@ This is a **private research fork** used for academic thesis work. It extends th
 - **Thesis-specific Corpus** - 129 academic documents indexed for research
 - **Neo4j Status** - Knowledge graph storage is currently **DISABLED** (not deployed)
 - **Extended API** - Evaluation endpoints under `/api/v1/eval/`
-- **Entity Extraction V2** - 15-type ontology with Zhipu GLM-4.7 (glm-4.7-flash)
+- **Entity Extraction V3.1** - 17 entity types, 16 relationships via GLM-4.7 via Z.ai (glm-4.7-flash)
 - **Self-Contained Corpus** - 129 PDFs + 129 extractions consolidated from DataLab
 
 ## Repository Structure
@@ -65,9 +65,9 @@ backend/
 │           └── thresholds.yaml
 │
 ├── lib/                    # Core libraries
-│   ├── entity_extraction/  # V2 entity extraction (Zhipu GLM-4.7)
-│   │   ├── schemas.py      # 15 entity types, 6 relationships
-│   │   ├── extractor.py    # Zhipu + MiniMax fallback
+│   ├── entity_extraction/  # V3.1 entity extraction (GLM-4.7 via Z.ai)
+│   │   ├── schemas.py      # 17 entity types, 16 relationships
+│   │   ├── extractor.py    # GLM (Z.ai) + MiniMax fallback
 │   │   └── prompt.py       # Extraction prompt
 │   └── datalab/            # DataLab pipeline (archived from datalab.archive)
 │       ├── datalab_api.py  # DataLab API client (Marker API)
@@ -90,9 +90,9 @@ backend/
     └── .datalab_api_key    # DataLab API key
 ```
 
-### Entity Extraction V2
+### Entity Extraction V3.1
 
-Zhipu GLM-4.7-powered extraction with 15 entity types across 5 domains.
+GLM-4.7 (via Z.ai) extraction with 17 entity types across 6 domains.
 
 **Available Models:**
 - `glm-4.7-flash` (default) - Fastest inference
@@ -103,16 +103,17 @@ Zhipu GLM-4.7-powered extraction with 15 entity types across 5 domains.
 - API Key: `ZAI_API_KEY` environment variable
 - Fallback: MiniMax M2.1 (use `--provider minimax`)
 
-| Domain | Entity Types |
+| Domain | Types |
 |--------|-------------|
-| Ethnographic | Culture, TraditionalUse, Preparation |
+| Ethnographic | Culture, UseRecord, TraditionalUse, Preparation |
 | Botanical | Taxon, PlantPart, RawMaterial |
-| Chemical | CompoundClass, Compound, Concentration |
-| Pharmacological | Target, Mechanism, PharmEffect |
-| Clinical | Indication, Evidence, Study |
+| Chemical | CompoundClass, Compound |
+| Pharmacological | Target, Effect |
+| Clinical | Condition, Evidence, Study, Dosage, AdverseEvent |
+| Product | Product |
 
 ```bash
-# Extract entities from a document (Zhipu default)
+# Extract entities from a document (GLM via Z.ai default)
 cd backend
 PYTHONPATH=. python3 scripts/datalab/extract_entities_v2.py --test "Quercetin inhibits COX-2"
 

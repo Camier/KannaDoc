@@ -40,8 +40,8 @@ layra/
 │   │       └── sandbox.py      # Docker-based code execution
 │   │
 │   ├── lib/
-│   │   ├── entity_extraction/  # V2 extraction logic
-│   │   │   ├── schemas.py      # 15 entity types, 6 relationships
+│   │   ├── entity_extraction/  # V3.1 extraction logic
+│   │   │   ├── schemas.py      # 17 entity types, 16 relationships
 │   │   │   ├── extractor.py    # Zhipu GLM-4.7 + MiniMax fallback
 │   │   │   ├── prompt.py       # Extraction prompt engineering
 │   │   │   └── AGENTS.md       # Module documentation
@@ -95,21 +95,22 @@ layra/
 └── AGENTS.md                   # This file
 ```
 
-## 3. ENTITY EXTRACTION (V2)
+## 3. ENTITY EXTRACTION (V3.1)
 
-**Status**: Entities are **legacy-migrated** from V1 format. Fresh extraction with Zhipu GLM-4.7 is recommended for improved precision. Relationships are not yet populated.
+**Status**: V3.1 schema is active with 17 entity types and 16 relationships. Extraction uses DeepSeek or Z.ai GLM-4.7.
 
-15 entity types across 5 domains:
+17 entity types across 6 domains:
 
 | Domain | Types |
 |--------|-------|
-| Ethnographic | Culture, TraditionalUse, Preparation |
+| Ethnographic | Culture, UseRecord, TraditionalUse, Preparation |
 | Botanical | Taxon, PlantPart, RawMaterial |
-| Chemical | CompoundClass, Compound, Concentration |
-| Pharmacological | Target, Mechanism, PharmEffect |
-| Clinical | Indication, Evidence, Study |
+| Chemical | CompoundClass, Compound |
+| Pharmacological | Target, Effect |
+| Clinical | Condition, Evidence, Study, Dosage, AdverseEvent |
+| Product | Product |
 
-6 relationship types: `TRANSFORMS`, `CONTAINS`, `ACTS_ON`, `PRODUCES`, `TREATS`, `SUGGESTS`.
+16 relationship types: `HAS_USE`, `INVOLVES`, `HAS_PART`, `TRANSFORMS`, `CONTAINS`, `HAS_CLASS`, `ACTS_ON`, `PRODUCES`, `TREATS`, `SUGGESTS`, `CAUSES`, `INTERACTS_WITH`, `HAS_EVIDENCE`, `STUDIES`, `TESTED_AT`, `REPORTS`.
 
 **Detailed docs**: `backend/lib/entity_extraction/AGENTS.md`  
 **Audit report**: `backend/docs/PIPELINE_AUDIT_2026-02-02.md`

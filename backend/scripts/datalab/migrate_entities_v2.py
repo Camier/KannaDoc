@@ -1,6 +1,19 @@
 #!/usr/bin/env python3
 """Migration script for v1 to v2 entity extraction format."""
 
+# ============================================================================
+# DEPRECATED - LEGACY V1→V2 MIGRATION SCRIPT
+# ============================================================================
+# This script was used to migrate entities from V1 to V2 schema format.
+# The current schema is V3.1 (17 entity types, 16 relationships).
+#
+# For new entity extractions, use:
+#   - extract_deepseek.py (recommended, async high-throughput)
+#   - extract_entities_v2.py (sync CLI for testing/debugging)
+#
+# This script is preserved for historical reference only.
+# ============================================================================
+
 import argparse
 import json
 import logging

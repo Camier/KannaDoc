@@ -1,20 +1,22 @@
 #!/usr/bin/env python3
-"""High-performance async entity extraction using DeepSeek API.
+"""RECOMMENDED: High-performance async entity extraction using DeepSeek API.
 
-Optimized for maximum throughput with DeepSeek's unique characteristics:
-- NO rate limits: can fire 50+ parallel requests
-- Automatic context caching: 90% input cost savings on shared system prompts
-- 10-minute timeout tolerance for high-load scenarios
+This is the PRODUCTION script for extracting entities from the full corpus.
+It uses async HTTP requests with configurable concurrency for maximum throughput.
+
+When to use:
+  - Full corpus extraction (129+ documents)
+  - High-throughput batch processing
+  - Production entity extraction
+
+Features:
+  - Async HTTP with configurable concurrency (default: 50)
+  - DeepSeek API with context caching
+  - V3.1 schema output
+  - Validation and error logging
 
 Usage:
-    # Fast extraction (default: 50 concurrent requests)
-    python extract_deepseek.py --input-dir data/extractions --force
-
-    # Adjust concurrency
-    python extract_deepseek.py --input-dir data/extractions --concurrency 100
-
-    # Test single text
-    python extract_deepseek.py --test "Sceletium contains mesembrine alkaloids"
+  PYTHONPATH=. python3 scripts/datalab/extract_deepseek.py --force --concurrency 20
 """
 
 import argparse
@@ -63,9 +65,12 @@ async def process_document(
     doc_dir: Path,
     system_prompt: str,
     force: bool = False,
+    validate: bool = True,
 ) -> Dict[str, Any]:
     """Process all chunks in a document directory."""
     from lib.entity_extraction.schemas import ExtractionResult
+    from lib.entity_extraction.validators import validate_extraction
+    from pathlib import Path as PathType
 
     entities_file = doc_dir / "entities.json"
     if entities_file.exists() and not force:
@@ -121,6 +126,53 @@ async def process_document(
 
     # Save combined result
     combined = ExtractionResult(entities=all_entities, relationships=all_relationships)
+
+    # Validate before writing (if enabled)
+    validation_errors = []
+    if validate:
+        try:
+            constraints_path = (
+                PathType(__file__).parent.parent.parent
+                / "lib"
+                / "entity_extraction"
+                / "constraints.yaml"
+            )
+            report, template_counts = validate_extraction(
+                combined, constraints_path=str(constraints_path)
+            )
+
+            # Log validation errors (but don't block writing)
+            if not report.ok:
+                validation_errors = [
+                    {
+                        "code": issue.code,
+                        "severity": issue.severity,
+                        "message": issue.message,
+                    }
+                    for issue in report.by_severity("error")
+                ]
+                logger.warning(
+                    f"Validation errors for {doc_id}: {len(validation_errors)} issues"
+                )
+
+                # Save validation report
+                validation_file = doc_dir / ".validation_report.json"
+                with open(validation_file, "w") as f:
+                    json.dump(
+                        {
+                            "errors": validation_errors,
+                            "warnings": [
+                                {"code": issue.code, "message": issue.message}
+                                for issue in report.by_severity("warning")
+                            ],
+                            "template_counts": template_counts,
+                        },
+                        f,
+                        indent=2,
+                    )
+        except Exception as e:
+            logger.error(f"Validation failed for {doc_id}: {e}")
+
     tmp_file = entities_file.with_suffix(".json.tmp")
     with open(tmp_file, "w") as f:
         json.dump(combined.model_dump(), f, indent=2)
@@ -139,6 +191,7 @@ async def process_document(
         "relationships": len(all_relationships),
         "failed_chunks": len(failed_chunks),
         "total_chunks": len(chunks),
+        "validation_errors": len(validation_errors),
     }
 
 
@@ -183,9 +236,9 @@ async def run_extraction(
     total_relationships = 0
 
     async with DeepSeekAsyncClient(max_concurrent=concurrency) as client:
-        # Process documents with progress bar
+        # Process documents with progress bar (validation enabled by default)
         tasks = [
-            process_document(client, doc_dir, system_prompt, force)
+            process_document(client, doc_dir, system_prompt, force, validate=True)
             for doc_dir in doc_dirs
         ]
 

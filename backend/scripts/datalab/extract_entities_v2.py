@@ -1,5 +1,24 @@
 #!/usr/bin/env python3
-"""CLI script for v2 entity extraction using MinimaxM2.1 or Zhipu GLM-4."""
+"""Entity extraction CLI for testing and debugging.
+
+This script is for TESTING and DEBUGGING single documents or small batches.
+For full corpus extraction, use extract_deepseek.py instead.
+
+When to use:
+  - Testing extraction on a single document
+  - Debugging extraction issues
+  - Quick verification of extraction logic
+  - --test flag for inline text extraction
+  - testing
+  - debugging
+
+Usage:
+  # Test with inline text
+  PYTHONPATH=. python3 scripts/datalab/extract_entities_v2.py --test "Quercetin inhibits COX-2"
+
+  # Process specific document
+  PYTHONPATH=. python3 scripts/datalab/extract_entities_v2.py --limit 1 --force
+"""
 
 import argparse
 import time
@@ -15,7 +34,7 @@ from tqdm import tqdm
 
 from lib.entity_extraction import V31Extractor
 from lib.entity_extraction.clients import (
-    ZhipuChatClient,
+    ZaiChatClient,
     MinimaxChatClient,
     DeepSeekChatClient,
 )
@@ -35,8 +54,8 @@ def get_extractor(
     use_lightning: bool = False,
 ) -> V31Extractor:
     """Create a V31Extractor wired to the appropriate chat client."""
-    if provider == "zhipu":
-        client = ZhipuChatClient(model=model or "glm-4.7-flash")
+    if provider == "zai":
+        client = ZaiChatClient(model=model or "glm-4.7-flash")
         default_model = model or "glm-4.7-flash"
     elif provider == "deepseek":
         client = DeepSeekChatClient(model=model or "deepseek-chat")
@@ -159,7 +178,7 @@ def process_doc_dir(
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Extract entities using MinimaxM2.1 or Zhipu GLM-4 (v2 schema)"
+        description="Extract entities using MiniMax, DeepSeek, or GLM via Z.ai (v2 schema)"
     )
     parser.add_argument(
         "--input-dir",
@@ -176,14 +195,14 @@ def main():
     parser.add_argument(
         "--provider",
         type=str,
-        choices=["minimax", "zhipu", "deepseek"],
-        default="zhipu",
-        help="LLM provider for extraction (default: zhipu)",
+        choices=["minimax", "zai", "deepseek"],
+        default="zai",
+        help="LLM provider for extraction (default: zai)",
     )
     parser.add_argument(
         "--model",
         type=str,
-        help="Model to use (zhipu: glm-4.7-flash; deepseek: deepseek-chat; minimax: MiniMax-M2.1)",
+        help="Model to use (zai: glm-4.7-flash; deepseek: deepseek-chat; minimax: MiniMax-M2.1)",
     )
     parser.add_argument(
         "--doc-workers",
