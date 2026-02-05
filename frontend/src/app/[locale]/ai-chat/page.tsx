@@ -643,7 +643,7 @@ const AIChat: React.FC = () => {
       <div className="absolute w-[96%] h-[91%] top-[7%] bg-white/90 dark:bg-gray-900/80 left-[2%] rounded-xl flex items-center justify-between shadow-2xl overflow-hidden border border-slate-800">
         <div 
           className={`transition-all duration-300 ease-in-out h-full overflow-hidden flex-none ${
-            isSidebarVisible ? "w-[20%] opacity-100" : "w-0 opacity-0 invisible"
+            isSidebarVisible ? "w-[20%] min-w-[280px] opacity-100" : "w-0 min-w-0 opacity-0 invisible"
           }`}
         >
           <UnifiedSideBar

@@ -14,7 +14,6 @@
 
 import { useEffect, useRef } from "react";
 import { logger } from "@/lib/logger";
-import Cookies from "js-cookie";
 import { EventSourceParserStream } from "eventsource-parser/stream";
 import { CustomNode, Message } from "@/types/types";
 import { replaceTemplate } from "@/utils/convert";
@@ -109,15 +108,9 @@ export const WorkflowExecutionHandler: React.FC<WorkflowExecutionHandlerProps> =
 
       const workFlowSSE = async () => {
         if (user?.name) {
-          const token = Cookies.get("token");
           try {
             const response = await fetch(
-              `${process.env.NEXT_PUBLIC_API_BASE_URL}/sse/workflow/${user.name}/${taskId}`,
-              {
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-              }
+              `${process.env.NEXT_PUBLIC_API_BASE_URL}/sse/workflow/${user.name}/${taskId}`
             );
 
             if (!response.ok) throw new Error("Request failed");

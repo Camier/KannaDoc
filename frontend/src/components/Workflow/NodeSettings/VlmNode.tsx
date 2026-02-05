@@ -4,7 +4,6 @@
  * This component demonstrates the use of NodeSettingsBase composition pattern.
  * Reduced from ~1,161 lines to ~500 lines by extracting common patterns.
  */
-import { useAuthStore } from "@/stores/authStore";
 import { logger } from "@/lib/logger";
 import { useFlowStore } from "@/stores/flowStore";
 import { useGlobalStore } from "@/stores/WorkflowVariableStore";
@@ -17,7 +16,6 @@ import {
 import { useState } from "react";
 import KnowledgeConfigModal from "./KnowledgeConfigModal";
 import { updateModelConfig } from "@/lib/api/configApi";
-import Cookies from "js-cookie";
 import { EventSourceParserStream } from "eventsource-parser/stream";
 import ChatMessage from "@/components/AiChat/ChatMessage";
 import MarkdownDisplay from "@/components/AiChat/MarkdownDisplay";
@@ -31,6 +29,9 @@ import NodeSettingsBase, {
   GlobalVariablesSection,
   OutputSection,
 } from "./NodeSettingsBase";
+
+// Default anonymous user for non-authenticated usage
+const ANONYMOUS_USER = { name: "anonymous", email: "" };
 
 interface VlmNodeProps {
   messages: Message[];
@@ -58,7 +59,7 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
   showError,
 }) => {
   const t = useTranslations("VlmNode");
-  const { user } = useAuthStore();
+  const user = ANONYMOUS_USER;
   const {
     updateVlmModelConfig,
     updatePrompt,
@@ -101,7 +102,6 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
     if (user?.name) {
       setRunTest(true);
       try {
-        const token = Cookies.get("token");
         const modelConfig = {
           model_name: node.data.modelConfig?.modelName,
           model_url: node.data.modelConfig?.modelURL,
@@ -165,7 +165,6 @@ const VlmNodeComponent: React.FC<VlmNodeProps> = ({
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`,
             },
             body: JSON.stringify({
               username: user.name,

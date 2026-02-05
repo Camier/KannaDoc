@@ -12,7 +12,6 @@ import {
   getDockerImages,
   runPythonTest,
 } from "@/lib/api/workflowApi";
-import { useAuthStore } from "@/stores/authStore";
 import { useFlowStore } from "@/stores/flowStore";
 import { useGlobalStore } from "@/stores/WorkflowVariableStore";
 import { CustomNode } from "@/types/types";
@@ -30,6 +29,9 @@ import NodeSettingsBase, {
   GlobalVariablesSection,
   OutputSection,
 } from "./NodeSettingsBase";
+
+// Default anonymous user for non-authenticated usage
+const ANONYMOUS_USER = { name: "anonymous", email: "" };
 
 interface FunctionNodeProps {
   refreshDockerImages: boolean;
@@ -61,7 +63,7 @@ const FunctionNodeComponent: React.FC<FunctionNodeProps> = ({
   codeFullScreenFlow,
 }) => {
   const t = useTranslations("FunctionNode");
-  const { user } = useAuthStore();
+  const user = ANONYMOUS_USER;
   const {
     updateOutput,
     updatePackageInfos,

@@ -112,6 +112,7 @@ export interface SearchPreviewResult {
   score: number;
   filename: string;
   minio_url: string;
+  bbox?: [number, number, number, number];
 }
 
 export interface SearchPreviewResponse {

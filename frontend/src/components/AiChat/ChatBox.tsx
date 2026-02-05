@@ -21,11 +21,9 @@ import {
   SupportUploadFormat,
 } from "@/utils/file";
 import { uploadFiles } from "@/lib/api/chatApi";
-import { useAuthStore } from "@/stores/authStore";
 import KnowledgeConfigModal from "./KnowledgeConfigModal";
 import useModelConfigStore from "@/stores/configStore";
 import useChatStore from "@/stores/chatStore";
-import Cookies from "js-cookie";
 import { EventSourceParserStream } from "eventsource-parser/stream";
 import {
   deleteFile,
@@ -38,6 +36,9 @@ import {
   calculateDefaultBranches,
 } from "@/utils/message";
 import { useTranslations } from "next-intl";
+
+// Default anonymous user for non-authenticated usage
+const ANONYMOUS_USER = { name: "anonymous", email: "" };
 
 interface ChatBoxProps {
   messages: Message[]; //常规历史消息，后台数据库读取
@@ -69,7 +70,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({
   const [sendingFiles, setSendingFiles] = useState<FileResponse[]>([]);
   const [tempBaseId, setTempBaseId] = useState<string>(""); //后台用来存放上传文件的临时知识库
   const [fileDivStyle, setFileDivStyle] = useState({});
-  const { user } = useAuthStore();
+  const user = ANONYMOUS_USER;
   const { modelConfig, setModelConfig } = useModelConfigStore();
   const [uploadProgress, setUploadProgress] = useState<number | null>(0);
   const [taskStatus, setTaskStatus] = useState<
@@ -422,17 +423,11 @@ const ChatBox: React.FC<ChatBoxProps> = ({
           setTempBaseId(response?.data.knowledge_db_id);
 
           // 使用fetch代替EventSource
-          const token = Cookies.get("token"); // 确保已引入cookie库
           const taskId = response?.data.task_id;
 
           try {
             const response = await fetch(
-              `${process.env.NEXT_PUBLIC_API_BASE_URL}/sse/task/${user.name}/${taskId}`,
-              {
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-              }
+              `${process.env.NEXT_PUBLIC_API_BASE_URL}/sse/task/${user.name}/${taskId}`
             );
 
             if (!response.ok) throw new Error("Request failed");

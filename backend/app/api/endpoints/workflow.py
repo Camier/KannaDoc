@@ -15,6 +15,7 @@ from app.utils.timezone import beijing_time_now
 from app.workflow.mcp_tools import mcp_list_tools
 from app.workflow.sandbox import CodeSandbox
 from app.workflow.workflow_engine import WorkflowEngine
+from app.core.config import settings
 from app.db.repositories.repository_manager import (
     RepositoryManager,
     get_repository_manager,
@@ -24,8 +25,8 @@ from app.core.logging import logger
 
 router = APIRouter()
 
-# Hardcoded username for single-user mode
-USERNAME = "miko"
+# Use settings.default_username instead of hardcoded string
+USERNAME = settings.default_username
 
 
 @router.post("/execute")

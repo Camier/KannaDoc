@@ -13,13 +13,15 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import { useAuthStore } from "@/stores/authStore";
 import { CustomNode, ModelConfig } from "@/types/types";
 import { useFlowStore } from "@/stores/flowStore";
 import { useTranslations } from "next-intl";
 import { useKnowledgeConfigData } from "@/components/AiChat/hooks/useKnowledgeConfigData";
 import { useModelConfigActions } from "@/components/AiChat/hooks/useModelConfigActions";
 import { KnowledgeConfigModalBase } from "@/components/shared/modals/KnowledgeConfigModalBase";
+
+// Default anonymous user for non-authenticated usage
+const ANONYMOUS_USER = { name: "anonymous", email: "" };
 
 interface ConfigModalProps {
   node: CustomNode;
@@ -35,7 +37,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
   onSave,
 }) => {
   const t = useTranslations("WorkflowKnowledgeConfigModal");
-  const { user } = useAuthStore();
+  const user = ANONYMOUS_USER;
   const { updateVlmModelConfig } = useFlowStore();
 
   // Get current model config from node

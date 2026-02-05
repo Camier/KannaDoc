@@ -22,7 +22,7 @@ import { useTranslations } from "next-intl";
 import { useUIStore } from "@/stores/uiStore";
 
 // Default anonymous user for non-authenticated usage
-const ANONYMOUS_USER = { name: "anonymous", email: "" };
+const ANONYMOUS_USER = { name: "miko", email: "" };
 
 const Workflow = () => {
   const t=useTranslations("WorkflowPage")
@@ -246,7 +246,7 @@ const Workflow = () => {
             {/* 左侧边栏 */}
             <div 
               className={`transition-all duration-300 ease-in-out overflow-hidden flex-none ${
-                !fullScreenFlow && isSidebarVisible ? "w-[15%] opacity-100" : "w-0 opacity-0 invisible"
+                !fullScreenFlow && isSidebarVisible ? "w-[15%] min-w-[240px] opacity-100" : "w-0 min-w-0 opacity-0 invisible"
               }`}
             >
               <UnifiedSideBar

@@ -2,12 +2,14 @@ import MarkdownDisplay from "@/components/AiChat/MarkdownDisplay";
 import { logger } from "@/lib/logger";
 import ConfirmDialog from "@/components/ConfirmDialog";
 import { getMcpToolList } from "@/lib/api/workflowApi";
-import { useAuthStore } from "@/stores/authStore";
 import { useFlowStore } from "@/stores/flowStore";
 import { CustomNode } from "@/types/types";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import McpAdvancedSettingsComponent from "./McpAdvancedSettings";
 import { useTranslations } from "next-intl";
+
+// Default anonymous user for non-authenticated usage
+const ANONYMOUS_USER = { name: "anonymous", email: "" };
 
 interface McpConfigProps {
   node: CustomNode;
@@ -32,7 +34,7 @@ const McpConfigComponent: React.FC<McpConfigProps> = ({
   const [showAdvancedSettings, setShowAdvancedSettings] = useState(false);
   const [selectedMcpName, setSelectedMcpName] = useState<string>("");
 
-  const { user } = useAuthStore();
+  const user = ANONYMOUS_USER;
 
   useEffect(() => {
     setMcpUse(node.data.mcpUse || {});

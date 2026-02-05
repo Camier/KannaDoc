@@ -3,7 +3,6 @@ import {
   getKBFiles,
   getUserFiles,
 } from "@/lib/api/knowledgeBaseApi";
-import { useAuthStore } from "@/stores/authStore";
 import { logger } from "@/lib/logger";
 import { Base, KnowledgeFile } from "@/types/types";
 import {
@@ -17,7 +16,10 @@ import {
 import ShowFiles from "./ShowFiles";
 import SearchPreviewPanel from "./SearchPreviewPanel";
 import { SupportUploadFormat } from "@/utils/file";
-import { useTranslations } from "next-intl"; // 添加多语言支持
+import { useTranslations } from "next-intl";
+
+// Default anonymous user for non-authenticated usage
+const ANONYMOUS_USER = { name: "anonymous", email: "" };
 
 interface KnowledgeBaseDetailsProps {
   bases: Base[];
@@ -47,7 +49,7 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
   const [files, setFiles] = useState<KnowledgeFile[]>([]);
   const [totalFiles, setTotalFiles] = useState(0);
   const [showSearchPreview, setShowSearchPreview] = useState(false);
-  const { user } = useAuthStore();
+  const user = ANONYMOUS_USER;
   // 在组件顶部声明 ref（如果是函数组件）
   // 为每个搜索框创建独立 ref
   const search1Ref = useRef<HTMLInputElement>(null);

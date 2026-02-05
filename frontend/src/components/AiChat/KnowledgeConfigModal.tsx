@@ -13,13 +13,15 @@ import React, {
   useEffect,
   useState,
 } from "react";
-import { useAuthStore } from "@/stores/authStore";
 import { ModelConfig } from "@/types/types";
 import useModelConfigStore from "@/stores/configStore";
 import { useTranslations } from "next-intl";
 import { useKnowledgeConfigData } from "./hooks/useKnowledgeConfigData";
 import { useModelConfigActions } from "./hooks/useModelConfigActions";
 import { KnowledgeConfigModalBase } from "@/components/shared/modals/KnowledgeConfigModalBase";
+
+// Default anonymous user for non-authenticated usage
+const ANONYMOUS_USER = { name: "anonymous", email: "" };
 
 interface ConfigModalProps {
   visible: boolean;
@@ -33,7 +35,7 @@ const KnowledgeConfigModal: React.FC<ConfigModalProps> = ({
   onSave,
 }) => {
   const t = useTranslations("ChatKnowledgeConfigModal");
-  const { user } = useAuthStore();
+  const user = ANONYMOUS_USER;
   const { modelConfig, setModelConfig } = useModelConfigStore();
 
   // Custom hooks for data management

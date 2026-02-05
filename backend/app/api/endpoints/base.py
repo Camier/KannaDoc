@@ -29,8 +29,8 @@ from app.db.miniodb import async_minio_manager
 router = APIRouter()
 milvus_client = MilvusManager()
 
-# Hardcoded username for single-user mode
-USERNAME = "miko"
+# Use settings.default_username instead of hardcoded string
+USERNAME = settings.default_username
 
 
 # 查询所有知识库

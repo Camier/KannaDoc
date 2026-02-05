@@ -21,7 +21,7 @@ import { useTranslations } from "next-intl";
 import { useUIStore } from "@/stores/uiStore";
 
 // Default anonymous user for non-authenticated usage
-const ANONYMOUS_USER = { name: "anonymous", email: "" };
+const ANONYMOUS_USER = { name: "miko", email: "" };
 
 const KnowledgeBase = () => {
   const t = useTranslations("KnowledgeBase");
@@ -286,7 +286,7 @@ const KnowledgeBase = () => {
             {/* 左侧边栏 */}
             <div 
               className={`transition-all duration-300 ease-in-out overflow-hidden flex-none ${
-                isSidebarVisible ? "w-[20%] opacity-100" : "w-0 opacity-0 invisible"
+                isSidebarVisible ? "w-[20%] min-w-[280px] opacity-100" : "w-0 opacity-0 invisible"
               }`}
             >
               <UnifiedSideBar

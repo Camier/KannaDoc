@@ -45,13 +45,6 @@ vi.mock('next-intl', () => ({
 vi.mock('@/lib/api/knowledgeBaseApi');
 vi.mock('@/lib/api/configApi');
 
-// Mock stores
-vi.mock('@/stores/authStore', () => ({
-  useAuthStore: vi.fn(() => ({
-    user: { name: 'testuser' },
-  })),
-}));
-
 vi.mock('@/stores/configStore', () => ({
   default: vi.fn(() => ({
     modelConfig: {

@@ -76,7 +76,7 @@ export const useWorkflowImportExport = ({
 
     const a = document.createElement("a");
     a.href = url;
-    a.download = `${workflowName}_${Date.now()}_layra.json`;
+    a.download = `${workflowName}_${Date.now()}_export.json`;
     document.body.appendChild(a);
     a.click();
 

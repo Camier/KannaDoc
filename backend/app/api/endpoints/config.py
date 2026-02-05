@@ -6,6 +6,7 @@ from app.models.model_config import (
     SelectedModelResponse,
     UpdateSelectedModelRequest,
 )
+from app.core.config import settings
 from app.db.repositories.repository_manager import (
     RepositoryManager,
     get_repository_manager,
@@ -28,7 +29,7 @@ async def add_model_config(
     repo_manager: RepositoryManager = Depends(get_repository_manager),
 ):
     """添加新的模型配置"""
-    username = "miko"  # Temporary hardcoded username
+    username = settings.default_username
     model_id = username + "_" + str(uuid.uuid4())
     result = await repo_manager.model_config.add_model_config(
         username=username, model_id=model_id, **model_data.model_dump()
@@ -51,7 +52,7 @@ async def delete_model_config(
     repo_manager: RepositoryManager = Depends(get_repository_manager),
 ):
     """删除指定模型配置"""
-    username = "miko"  # Temporary hardcoded username
+    username = settings.default_username
     result = await repo_manager.model_config.delete_model_config(username, model_id)
 
     if result["status"] == "error":
@@ -70,7 +71,7 @@ async def update_model_config(
     repo_manager: RepositoryManager = Depends(get_repository_manager),
 ):
     """更新模型配置（部分更新）"""
-    username = "miko"  # Temporary hardcoded username
+    username = settings.default_username
     result = await repo_manager.model_config.update_model_config(
         username=username,
         model_id=model_id,
@@ -93,7 +94,7 @@ async def get_selected_model(
     repo_manager: RepositoryManager = Depends(get_repository_manager),
 ):
     """获取用户选定的模型配置"""
-    username = "miko"  # Temporary hardcoded username
+    username = settings.default_username
     result = await repo_manager.model_config.get_selected_model_config(username)
 
     if result["status"] == "error":
@@ -110,7 +111,7 @@ async def get_all_models(
     repo_manager: RepositoryManager = Depends(get_repository_manager),
 ):
     """获取用户所有模型配置"""
-    username = "miko"  # Temporary hardcoded username
+    username = settings.default_username
     result = await repo_manager.model_config.get_all_models_config(username)
 
     if result["status"] == "error":
@@ -125,7 +126,7 @@ async def update_selected_model(
     repo_manager: RepositoryManager = Depends(get_repository_manager),
 ):
     """更新用户选定的模型"""
-    username = "miko"  # Temporary hardcoded username
+    username = settings.default_username
     result = await repo_manager.model_config.update_selected_model(
         username=username, model_id=request.model_id
     )

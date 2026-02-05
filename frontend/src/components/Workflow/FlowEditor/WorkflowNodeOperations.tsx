@@ -109,7 +109,7 @@ export const useWorkflowNodeOperations = ({
           status: "init",
           label: t("label." + type),
           nodeType: type,
-          code: 'def my_func():\n    print("Hello Layra!")\n\nmy_func()\n',
+          code: 'def my_func():\n    print("Hello Research Agent!")\n\nmy_func()\n',
           output: t("defaultOutput"),
           pip: {},
         };

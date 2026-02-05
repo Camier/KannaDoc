@@ -18,7 +18,7 @@ const SearchPreviewPanel: React.FC<SearchPreviewPanelProps> = ({
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState<SearchPreviewResult[]>([]);
   const [error, setError] = useState<string | null>(null);
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedPreview, setSelectedPreview] = useState<SearchPreviewResult | null>(null);
 
   const handleSearch = async () => {
     if (!query.trim()) {
@@ -167,7 +167,7 @@ const SearchPreviewPanel: React.FC<SearchPreviewPanelProps> = ({
                     <td className="px-4 py-3">
                       {result.minio_url ? (
                         <button
-                          onClick={() => setSelectedImage(result.minio_url!)}
+                          onClick={() => setSelectedPreview(result)}
                           className="px-3 py-1 bg-indigo-500 text-white rounded-full hover:bg-indigo-600 text-sm transition-colors"
                         >
                           View Image
@@ -191,15 +191,15 @@ const SearchPreviewPanel: React.FC<SearchPreviewPanelProps> = ({
       </div>
 
       {/* Image Viewer Modal */}
-      {selectedImage && (
+      {selectedPreview && (
         <div
           className="fixed inset-0 bg-black/80 flex items-center justify-center p-4 z-[60]"
-          onClick={() => setSelectedImage(null)}
+          onClick={() => setSelectedPreview(null)}
         >
           <div className="relative max-w-4xl max-h-[90vh] overflow-auto">
             <button
-              onClick={() => setSelectedImage(null)}
-              className="absolute top-2 right-2 bg-gray-900 text-white p-2 rounded-full hover:bg-gray-800 transition-colors"
+              onClick={() => setSelectedPreview(null)}
+              className="absolute top-2 right-2 z-10 bg-gray-900 text-white p-2 rounded-full hover:bg-gray-800 transition-colors"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -216,12 +216,25 @@ const SearchPreviewPanel: React.FC<SearchPreviewPanelProps> = ({
                 />
               </svg>
             </button>
-            <img
-              src={selectedImage}
-              alt="Preview"
-              className="rounded-xl"
-              onClick={(e) => e.stopPropagation()}
-            />
+            <div className="relative">
+              <img
+                src={selectedPreview.minio_url}
+                alt="Preview"
+                className="rounded-xl"
+                onClick={(e) => e.stopPropagation()}
+              />
+              {selectedPreview.bbox && (
+                <div
+                  className="absolute border-2 border-yellow-500 bg-yellow-500/30"
+                  style={{
+                    left: `${selectedPreview.bbox[0] * 100}%`,
+                    top: `${selectedPreview.bbox[1] * 100}%`,
+                    width: `${(selectedPreview.bbox[2] - selectedPreview.bbox[0]) * 100}%`,
+                    height: `${(selectedPreview.bbox[3] - selectedPreview.bbox[1]) * 100}%`,
+                  }}
+                />
+              )}
+            </div>
           </div>
         </div>
       )}

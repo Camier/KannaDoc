@@ -103,12 +103,15 @@ const CodeBlock: FC<{
   };
 
   return language ? (
-    <div className="relative group">
-      <div className="flex items-center justify-between mx-3 mt-2 mb-1  text-gray-500 text-xs font-medium tracking-wide">
-        <div className="uppercase ">{language}</div>
+    <div className="relative group my-4 border border-slate-800 rounded-lg bg-slate-950 overflow-hidden">
+      <div className="flex items-center justify-between px-4 py-2 border-b border-slate-800 bg-slate-900/50 text-slate-400 text-[10px] font-bold tracking-[0.2em] uppercase">
+        <div className="flex items-center gap-2">
+          <div className="w-2 h-2 rounded-full bg-slate-700" />
+          {language}
+        </div>
         <button
           onClick={handleCopy}
-          className="cursor-pointer flex items-center gap-1 hover:text-gray-800"
+          className="cursor-pointer flex items-center gap-1.5 hover:text-indigo-400 transition-colors"
           aria-label="Copy"
         >
           {!copied ? (
@@ -116,14 +119,14 @@ const CodeBlock: FC<{
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              strokeWidth="1.5"
+              strokeWidth="2"
               stroke="currentColor"
-              className="size-5"
+              className="size-3.5"
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z"
+                d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75"
               />
             </svg>
           ) : (
@@ -131,35 +134,30 @@ const CodeBlock: FC<{
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              strokeWidth="1.5"
+              strokeWidth="2"
               stroke="currentColor"
-              className="size-5"
+              className="size-3.5"
             >
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0 1 18 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3 1.5 1.5 3-3.75"
+                d="m4.5 12.75 6 6 9-13.5"
               />
             </svg>
           )}
 
-          {copied ? (
-            <span className="text-xs">{t("copied")}</span>
-          ) : (
-            <span className="text-xs">{t("copy")}</span>
-          )}
+          <span className="">{copied ? t("copied") : t("copy")}</span>
         </button>
       </div>
       <code
-        className={`${className} block p-4 rounded-3xl overflow-x-auto`}
+        className={`${className} block p-4 font-mono text-[13px] leading-relaxed text-slate-300 overflow-x-auto`}
         {...props}
       >
         {children}
       </code>
-      {/* </pre> */}
     </div>
   ) : (
-    <code className="px-1 py-0.5 rounded-3xl" {...props}>
+    <code className="px-1.5 py-0.5 rounded border border-slate-800 bg-slate-900 text-indigo-300 font-mono text-[0.9em]" {...props}>
       {children}
     </code>
   );

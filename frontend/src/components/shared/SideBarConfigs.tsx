@@ -4,7 +4,7 @@ import { UnifiedSideBarConfig } from "./UnifiedSideBar";
 export const workflowSideBarConfig: UnifiedSideBarConfig = {
   translationNamespace: "WorkflowLeftSideBar",
   idField: "flowId",
-  width: "w-[15%]",
+  width: "w-[15%] min-w-[240px]",
   icon: "workflow",
   subtitleField: "lastModifyTime",
   disableFirstItem: true,
@@ -14,7 +14,7 @@ export const workflowSideBarConfig: UnifiedSideBarConfig = {
 export const knowledgeBaseSideBarConfig: UnifiedSideBarConfig = {
   translationNamespace: "KnowledgeBaseLeftSideBar",
   idField: "baseId",
-  width: "w-[20%]",
+  width: "w-[20%] min-w-[280px]",
   containerPadding: "px-6",
   buttonPadding: "px-4",
   icon: "knowledge",
@@ -27,7 +27,7 @@ export const knowledgeBaseSideBarConfig: UnifiedSideBarConfig = {
 export const chatSideBarConfig: UnifiedSideBarConfig = {
   translationNamespace: "ChatLeftSidebar",
   idField: "conversationId",
-  width: "w-[20%]",
+  width: "w-[20%] min-w-[280px]",
   icon: "chat",
   subtitleField: "lastModifyTime",
   truncateName: 30,

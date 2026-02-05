@@ -8,7 +8,8 @@ import ChatMessage from "@/components/AiChat/ChatMessage";
 import { logger } from "@/lib/logger";
 import { deleteFile } from "@/lib/api/knowledgeBaseApi";
 import { uploadFiles } from "@/lib/api/chatApi";
-import { useAuthStore } from "@/stores/authStore";
+// Default anonymous user for non-authenticated usage
+const ANONYMOUS_USER = { name: "anonymous", email: "" };
 import { useGlobalStore } from "@/stores/WorkflowVariableStore";
 import {
   Chatflow,
@@ -31,7 +32,6 @@ import {
   useRef,
   useState,
 } from "react";
-import Cookies from "js-cookie";
 import { EventSourceParserStream } from "eventsource-parser/stream";
 import useChatStore from "@/stores/chatStore";
 import ChatflowHistory from "../ChatflowHistory";
@@ -105,7 +105,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
   const fileInputRef = useRef<HTMLInputElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [fileDivStyle, setFileDivStyle] = useState({});
-  const { user } = useAuthStore();
+  const user = ANONYMOUS_USER;
   const [uploadProgress, setUploadProgress] = useState<number | null>(0);
   const [taskStatus, setTaskStatus] = useState<
     "processing" | "completed" | "failed" | null
@@ -211,17 +211,11 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
           setSendingFiles((prev) => [...prev, ...response?.data.files]);
           setTempBaseId(response?.data.knowledge_db_id);
 
-          const token = Cookies.get("token");
           const taskId = response?.data.task_id;
 
           try {
             const response = await fetch(
-              `${process.env.NEXT_PUBLIC_API_BASE_URL}/sse/task/${user.name}/${taskId}`,
-              {
-                headers: {
-                  Authorization: `Bearer ${token}`,
-                },
-              }
+              `${process.env.NEXT_PUBLIC_API_BASE_URL}/sse/task/${user.name}/${taskId}`
             );
 
             if (!response.ok) throw new Error("Request failed");

@@ -53,7 +53,6 @@ import CustomEdgeComponent from "@/components/Workflow/CustomEdge";
 import CustomNodeComponent from "@/components/Workflow/CustomNode";
 import "@xyflow/react/dist/base.css";
 import ConnectionLine from "@/components/Workflow/ConnectionLine";
-import { useAuthStore } from "@/stores/authStore";
 import { v4 as uuidv4 } from "uuid";
 import {
   cancelWorkflow,
@@ -69,6 +68,9 @@ import { getFileExtension } from "@/utils/file";
 import { createChatflow } from "@/lib/api/chatflowApi";
 import ConfirmDialog from "../ConfirmDialog";
 import { useTranslations } from "next-intl";
+
+// Default anonymous user for non-authenticated usage
+const ANONYMOUS_USER = { name: "anonymous", email: "" };
 
 // Extracted components
 import { WorkflowExecutionHandler } from "./FlowEditor/WorkflowExecutionHandler";
@@ -92,7 +94,7 @@ const FlowEditor: React.FC<FlowEditorProps> = ({
   const t = useTranslations("FlowEditor");
   const reactFlowWrapper = useRef<HTMLDivElement>(null);
   const [codeFullScreenFlow, setCodeFullScreenFlow] = useState<boolean>(false);
-  const { user } = useAuthStore();
+  const user = ANONYMOUS_USER;
 
   const {
     globalVariables,

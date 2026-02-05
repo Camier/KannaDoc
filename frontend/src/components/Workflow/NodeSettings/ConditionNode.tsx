@@ -6,7 +6,6 @@
  */
 import { logger } from "@/lib/logger";
 import { runConditionTest } from "@/lib/api/workflowApi";
-import { useAuthStore } from "@/stores/authStore";
 import { useFlowStore } from "@/stores/flowStore";
 import { CustomNode } from "@/types/types";
 import { useState } from "react";
@@ -16,6 +15,9 @@ import NodeSettingsBase, {
   GlobalVariablesSection,
   OutputSection,
 } from "./NodeSettingsBase";
+
+// Default anonymous user for non-authenticated usage
+const ANONYMOUS_USER = { name: "anonymous", email: "" };
 
 interface ConditionNodeProps {
   saveNode: (node: CustomNode) => void;
@@ -32,7 +34,7 @@ const ConditionNodeComponent: React.FC<ConditionNodeProps> = ({
   setCodeFullScreenFlow,
   codeFullScreenFlow,
 }) => {
-  const { user } = useAuthStore();
+  const user = ANONYMOUS_USER;
   const { updateConditions } = useFlowStore();
   const [runTest, setRunTest] = useState(false);
 

@@ -4,34 +4,6 @@ import { AxiosProgressEvent } from "axios";
 import { apiClient as api } from "./apiClient";
 import { mapModelConfigToBackend } from "./modelConfigMapper";
 
-export const login = async (name: string, password: string) => {
-  const formData = new FormData();
-  formData.append("username", name);
-  formData.append("password", password);
-
-  return api.post(
-    "/auth/login",
-    formData, // This is form data
-    { headers: { "Content-Type": "multipart/form-data" } } // This is optional; axios sets it automatically
-  );
-};
-
-export const verifyToken = async () => {
-  return api.get("/auth/verify-token");
-};
-
-export const refreshToken = async () => {
-  return api.post("/auth/refresh-token");
-};
-
-export const register = async (
-  name: string,
-  email: string,
-  password: string
-) => {
-  return api.post("/auth/register", { username: name, email, password });
-};
-
 export const getChatHistory = async (username: string) => {
   return api.get("/chat/users/" + username + "/conversations");
 };

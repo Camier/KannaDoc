@@ -114,15 +114,15 @@ const CustomNodeComponent = ({
           : data.nodeType == "condition"
           ? "w-28 h-42 rounded-4xl"
           : "w-32 h-32 rounded-3xl"
-      }   p-2 shadow-lg ${
-        data.status === "failed"
-          ? selected
-            ? "border-3 border-red-600"
-            : "border-2 border-red-500"
+      }   p-2 shadow-lg transition-all duration-300 ${
+        data.status === "running"
+          ? "halo-running"
+          : data.status === "failed"
+          ? "halo-error"
+          : data.status === "ok"
+          ? "halo-success"
           : data.status === "pause"
-          ? selected
-            ? "border-2 border-red-600"
-            : "border-1 border-red-500"
+          ? "border-2 border-yellow-500 shadow-[0_0_10px_rgba(234,179,8,0.5)]"
           : selected
           ? "border-2 border-indigo-500"
           : "border-1 border-gray-200 dark:border-white"

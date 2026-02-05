@@ -2,7 +2,6 @@ import ChatMessage from "@/components/AiChat/ChatMessage";
 import { logger } from "@/lib/logger";
 import { getChatflowContent } from "@/lib/api/chatflowApi";
 import { getAllKnowledgeBase } from "@/lib/api/knowledgeBaseApi";
-import { useAuthStore } from "@/stores/authStore";
 import {
   BaseUsed,
   FileUsed,
@@ -16,6 +15,9 @@ import { useState } from "react";
 import ConfirmDialog from "../ConfirmDialog";
 import { createPortal } from "react-dom";
 import { useTranslations } from "next-intl";
+
+// Default anonymous user for non-authenticated usage
+const ANONYMOUS_USER = { name: "anonymous", email: "" };
 
 interface ChatflowHistoryProps {
   chatflowId: string;
@@ -34,7 +36,7 @@ const ChatflowHistoryComponent: React.FC<ChatflowHistoryProps> = ({
   const [modelConfig, setModelConfig] = useState<ModelConfig>();
   const [showConfirmDeleteChatflow, setShowConfirmDeleteChatflow] =
     useState(false);
-  const { user } = useAuthStore();
+  const user = ANONYMOUS_USER;
 
   const confirmDeleteChatflow = () => {
     if (showConfirmDeleteChatflow) {
