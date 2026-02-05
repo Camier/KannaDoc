@@ -3,6 +3,11 @@ networks:
     external: true
 
 services:
+  backend:
+    # Add docker group (GID 987) for sandbox access
+    group_add:
+      - "987"
+
   model-server:
     # Enable GPU support for Quadro RTX 5000
     environment:
