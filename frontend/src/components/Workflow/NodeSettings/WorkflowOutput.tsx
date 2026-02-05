@@ -8,8 +8,7 @@ import ChatMessage from "@/components/AiChat/ChatMessage";
 import { logger } from "@/lib/logger";
 import { deleteFile } from "@/lib/api/knowledgeBaseApi";
 import { uploadFiles } from "@/lib/api/chatApi";
-// Default anonymous user for non-authenticated usage
-const ANONYMOUS_USER = { name: "anonymous", email: "" };
+import { ANONYMOUS_USER } from "@/lib/constants";
 import { useGlobalStore } from "@/stores/WorkflowVariableStore";
 import {
   Chatflow,

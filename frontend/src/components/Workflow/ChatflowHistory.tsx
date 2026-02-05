@@ -15,9 +15,7 @@ import { useState } from "react";
 import ConfirmDialog from "../ConfirmDialog";
 import { createPortal } from "react-dom";
 import { useTranslations } from "next-intl";
-
-// Default anonymous user for non-authenticated usage
-const ANONYMOUS_USER = { name: "anonymous", email: "" };
+import { ANONYMOUS_USER } from "@/lib/constants";
 
 interface ChatflowHistoryProps {
   chatflowId: string;

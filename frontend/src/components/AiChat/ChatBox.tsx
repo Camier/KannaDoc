@@ -36,9 +36,7 @@ import {
   calculateDefaultBranches,
 } from "@/utils/message";
 import { useTranslations } from "next-intl";
-
-// Default anonymous user for non-authenticated usage
-const ANONYMOUS_USER = { name: "anonymous", email: "" };
+import { ANONYMOUS_USER } from "@/lib/constants";
 
 interface ChatBoxProps {
   messages: Message[]; //常规历史消息，后台数据库读取

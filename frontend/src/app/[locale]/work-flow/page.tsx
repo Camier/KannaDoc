@@ -20,9 +20,7 @@ import { useFlowStore } from "@/stores/flowStore";
 import { useGlobalStore } from "@/stores/WorkflowVariableStore";
 import { useTranslations } from "next-intl";
 import { useUIStore } from "@/stores/uiStore";
-
-// Default anonymous user for non-authenticated usage
-const ANONYMOUS_USER = { name: "miko", email: "" };
+import { ANONYMOUS_USER } from "@/lib/constants";
 
 const Workflow = () => {
   const t=useTranslations("WorkflowPage")

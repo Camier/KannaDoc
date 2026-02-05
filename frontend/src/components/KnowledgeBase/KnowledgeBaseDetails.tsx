@@ -16,9 +16,7 @@ import ShowFiles from "./ShowFiles";
 import SearchPreviewPanel from "./SearchPreviewPanel";
 import { SupportUploadFormat } from "@/utils/file";
 import { useTranslations } from "next-intl";
-
-// Default anonymous user for non-authenticated usage
-const ANONYMOUS_USER = { name: "anonymous", email: "" };
+import { ANONYMOUS_USER } from "@/lib/constants";
 
 interface KnowledgeBaseDetailsProps {
   bases: Base[];

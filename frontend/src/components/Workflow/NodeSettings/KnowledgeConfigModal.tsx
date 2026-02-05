@@ -19,9 +19,7 @@ import { useTranslations } from "next-intl";
 import { useKnowledgeConfigData } from "@/components/AiChat/hooks/useKnowledgeConfigData";
 import { useModelConfigActions } from "@/components/AiChat/hooks/useModelConfigActions";
 import { KnowledgeConfigModalBase } from "@/components/shared/modals/KnowledgeConfigModalBase";
-
-// Default anonymous user for non-authenticated usage
-const ANONYMOUS_USER = { name: "anonymous", email: "" };
+import { ANONYMOUS_USER } from "@/lib/constants";
 
 interface ConfigModalProps {
   node: CustomNode;

@@ -68,9 +68,7 @@ import { getFileExtension } from "@/utils/file";
 import { createChatflow } from "@/lib/api/chatflowApi";
 import ConfirmDialog from "../ConfirmDialog";
 import { useTranslations } from "next-intl";
-
-// Default anonymous user for non-authenticated usage
-const ANONYMOUS_USER = { name: "anonymous", email: "" };
+import { ANONYMOUS_USER } from "@/lib/constants";
 
 // Extracted components
 import { WorkflowExecutionHandler } from "./FlowEditor/WorkflowExecutionHandler";

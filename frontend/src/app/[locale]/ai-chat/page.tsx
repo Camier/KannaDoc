@@ -33,9 +33,7 @@ import { getAllModelConfig } from "@/lib/api/configApi";
 import { getAllKnowledgeBase } from "@/lib/api/knowledgeBaseApi";
 import { useTranslations } from "next-intl";
 import { useUIStore } from "@/stores/uiStore";
-
-// Default anonymous user for non-authenticated usage
-const ANONYMOUS_USER = { name: "anonymous", email: "" };
+import { ANONYMOUS_USER } from "@/lib/constants";
 
 const AIChat: React.FC = () => {
   const t = useTranslations("AIChat");

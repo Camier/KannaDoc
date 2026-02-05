@@ -19,9 +19,7 @@ import { useState, useEffect, useCallback } from "react";
 import { EventSourceParserStream } from "eventsource-parser/stream";
 import { useTranslations } from "next-intl";
 import { useUIStore } from "@/stores/uiStore";
-
-// Default anonymous user for non-authenticated usage
-const ANONYMOUS_USER = { name: "miko", email: "" };
+import { ANONYMOUS_USER } from "@/lib/constants";
 
 const KnowledgeBase = () => {
   const t = useTranslations("KnowledgeBase");

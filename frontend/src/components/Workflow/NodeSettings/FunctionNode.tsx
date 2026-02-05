@@ -29,9 +29,7 @@ import NodeSettingsBase, {
   GlobalVariablesSection,
   OutputSection,
 } from "./NodeSettingsBase";
-
-// Default anonymous user for non-authenticated usage
-const ANONYMOUS_USER = { name: "anonymous", email: "" };
+import { ANONYMOUS_USER } from "@/lib/constants";
 
 interface FunctionNodeProps {
   refreshDockerImages: boolean;
