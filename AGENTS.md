@@ -65,9 +65,9 @@ layra/
 │   │   └── test_eval_metrics.py# Metrics calculation tests
 │   │
 │   ├── scripts/
-│   │   └── datalab/            # Data orchestration (14 scripts)
-│   │       ├── extract_entities_v2.py   # V2 entity extraction CLI
-│   │       ├── migrate_entities_v2.py   # V1→V2 schema migration
+│   │   └── datalab/            # Data orchestration scripts
+│   │       ├── extract_deepseek.py      # RECOMMENDED: Async high-throughput extraction
+│   │       ├── extract_entities_v2.py   # Sync CLI for testing/debugging
 │   │       ├── milvus_ingest.py         # Vector database ingestion
 │   │       ├── neo4j_ingest.py          # Graph ingestion (disabled)
 │   │       ├── aggregate_corpus.py      # Aggregating metadata
@@ -78,8 +78,7 @@ layra/
 │   │       ├── recover_extractions.py   # Recovery utilities
 │   │       ├── tidy_data.py             # Data cleanup scripts
 │   │       ├── consolidate_archive.py   # Archive consolidation
-│   │       ├── entity_extract.py        # (Deprecated) V1 extraction
-│   │       └── entity_extract_gemini.py # (Deprecated) Gemini test
+│   │       └── _archived/               # Deprecated scripts
 │   │
 │   └── data/
 │       ├── pdfs/               # Source PDFs (dynamic)
@@ -172,9 +171,9 @@ All commands should be run from `backend/` directory with `PYTHONPATH=.`.
   # Process all documents in a directory
   PYTHONPATH=. python3 scripts/datalab/extract_entities_v2.py --input-dir data/extractions
   ```
-- **migrate_entities_v2.py**: Migrates legacy V1 extractions to the new V2 schema for backward compatibility.
+- **extract_deepseek.py**: (RECOMMENDED) High-throughput async extraction using DeepSeek API.
   ```bash
-  PYTHONPATH=. python3 scripts/datalab/migrate_entities_v2.py --input-dir data/extractions
+  PYTHONPATH=. python3 scripts/datalab/extract_deepseek.py --concurrency 20
   ```
 
 ### 6.2 Ingestion & Management
@@ -215,7 +214,7 @@ All commands should be run from `backend/` directory with `PYTHONPATH=.`.
 
 | Service | Purpose | Notes |
 |---------|---------|-------|
-| **Zhipu GLM-4.7** | Entity extraction | Primary LLM via Z.ai API (`https://api.z.ai/api/coding/paas/v4`); API key: `ZAI_API_KEY` env var |
+| **GLM-4.x (Z.ai)** | Entity extraction | Primary LLM via Z.ai API (`https://api.z.ai/api/paas/v4`); API key: `ZAI_API_KEY` env var |
 | MiniMax (Fallback) | Entity extraction fallback | Fallback LLM; API key in `data/.minimax_api_key` |
 | **Milvus** | Vector store | HNSW index (M=48, efConstruction=1024) |
 | **Neo4j** | Knowledge graph | **DISABLED** in current research deployment |
