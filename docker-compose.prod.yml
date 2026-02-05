@@ -1,5 +1,5 @@
 # Production Docker Compose Configuration
-# Generated: 2026-02-03
+# Generated: 2026-02-05 (Optimized)
 # 
 # Security hardening applied:
 # - restart: unless-stopped on all services
@@ -23,7 +23,7 @@ services:
     container_name: layra-kafka-init
     build:
       context: ./init-kafka
-    restart: unless-stopped
+    restart: "no"
     depends_on:
       kafka:
         condition: service_healthy
@@ -280,27 +280,6 @@ services:
           cpus: '1'
           memory: 1G
 
-  model-weights-init:
-    container_name: layra-model-weights-init
-    build:
-      context: ./init-db
-      dockerfile: Dockerfile
-    restart: unless-stopped
-    volumes:
-      - model_weights:/model_weights
-    environment:
-      - MODEL_BASE_URL=${MODEL_BASE_URL}
-    networks:
-      - layra-net
-    logging: *default-logging
-    deploy:
-      resources:
-        limits:
-          cpus: '1'
-          memory: 4G
-        reservations:
-          memory: 1G
-
   unoserver:
     container_name: layra-unoserver
     build:
@@ -327,8 +306,7 @@ services:
 
   cliproxyapi:
     container_name: layra-cliproxyapi
-    # Pinned from :latest - verify current version with: docker pull eceasy/cli-proxy-api:latest
-    image: eceasy/cli-proxy-api:v1.0.0
+    image: eceasy/cli-proxy-api:latest
     restart: unless-stopped
     ports:
       - "8085:8085"
@@ -359,7 +337,7 @@ services:
     restart: unless-stopped
     depends_on:
       kafka-init:
-        condition: service_completed_successfully
+        condition: service_started
       mysql:
         condition: service_healthy
       redis:
@@ -376,19 +354,14 @@ services:
         condition: service_healthy
       unoserver:
         condition: service_healthy
-      model-weights-init:
-        condition: service_completed_successfully
     extra_hosts:
       - "host.docker.internal:host-gateway"
-    # PRODUCTION: No Docker socket mount (sandbox feature disabled)
-    # PRODUCTION: No dev bind mount (./backend:/app removed)
     volumes:
       - layra_sandbox_volume:${SANDBOX_SHARED_VOLUME}
       - mysql_migrations:/app/migrations_previous
     environment:
       - MAX_WORKERS=${MAX_WORKERS}
       - LOG_LEVEL=${LOG_LEVEL}
-      - SINGLE_TENANT_MODE=${SINGLE_TENANT_MODE:-false}
       - DB_URL=${DB_URL}
       - DB_POOL_SIZE=${DB_POOL_SIZE}
       - DB_MAX_OVERFLOW=${DB_MAX_OVERFLOW}
@@ -397,9 +370,6 @@ services:
       - REDIS_TOKEN_DB=${REDIS_TOKEN_DB}
       - REDIS_TASK_DB=${REDIS_TASK_DB}
       - REDIS_LOCK_DB=${REDIS_LOCK_DB}
-      - SECRET_KEY=${SECRET_KEY}
-      - ALGORITHM=${ALGORITHM}
-      - ACCESS_TOKEN_EXPIRE_MINUTES=${ACCESS_TOKEN_EXPIRE_MINUTES}
       - MONGODB_URL=${MONGODB_URL}
       - MONGODB_ROOT_USERNAME=${MONGODB_ROOT_USERNAME}
       - MONGODB_ROOT_PASSWORD=${MONGODB_ROOT_PASSWORD}
@@ -432,23 +402,19 @@ services:
       - EMBEDDING_MODEL=${EMBEDDING_MODEL}
       - JINA_API_KEY=${JINA_API_KEY}
       - JINA_EMBEDDINGS_V4_URL=${JINA_EMBEDDINGS_V4_URL}
-      # RAG Tuning
       - RAG_MAX_QUERY_VECS=${RAG_MAX_QUERY_VECS:-48}
       - RAG_SEARCH_LIMIT_CAP=${RAG_SEARCH_LIMIT_CAP:-120}
       - RAG_CANDIDATE_IMAGES_CAP=${RAG_CANDIDATE_IMAGES_CAP:-120}
       - RAG_SEARCH_LIMIT_MIN=${RAG_SEARCH_LIMIT_MIN:-50}
       - RAG_EF_MIN=${RAG_EF_MIN:-100}
       - RAG_LOAD_COLLECTION_ONCE=${RAG_LOAD_COLLECTION_ONCE:-true}
-      # Hybrid Search Configuration
       - RAG_HYBRID_ENABLED=${RAG_HYBRID_ENABLED:-false}
       - RAG_HYBRID_RANKER=${RAG_HYBRID_RANKER:-rrf}
       - RAG_HYBRID_RRF_K=${RAG_HYBRID_RRF_K:-60}
       - RAG_HYBRID_DENSE_WEIGHT=${RAG_HYBRID_DENSE_WEIGHT:-0.7}
       - RAG_HYBRID_SPARSE_WEIGHT=${RAG_HYBRID_SPARSE_WEIGHT:-0.3}
-      # LLM Provider Keys
       - OPENAI_API_KEY=${OPENAI_API_KEY}
       - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
-      - ZHIPUAI_API_KEY=${ZHIPUAI_API_KEY}
       - ZAI_API_KEY=${ZAI_API_KEY:-}
       - MOONSHOT_API_KEY=${MOONSHOT_API_KEY}
       - MINIMAX_API_KEY=${MINIMAX_API_KEY}
@@ -459,7 +425,8 @@ services:
       - CLIPROXYAPI_BASE_URL=${CLIPROXYAPI_BASE_URL:-}
       - CLIPROXYAPI_API_KEY=${CLIPROXYAPI_API_KEY:-}
       - DEFAULT_LLM_PROVIDER=${DEFAULT_LLM_PROVIDER:-openai}
-      - DEFAULT_LLM_MODEL=${DEFAULT_LLM_MODEL:-gpt-4o-mini}
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
+      - DATALAB_API_KEY=${DATALAB_API_KEY}
     networks:
       - layra-net
     logging: *default-logging
@@ -481,9 +448,6 @@ services:
       context: ./model-server
     image: layra-model-server:prod
     restart: unless-stopped
-    depends_on:
-      model-weights-init:
-        condition: service_completed_successfully
     volumes:
       - model_weights:/model_weights
     environment:

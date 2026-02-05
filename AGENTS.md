@@ -66,8 +66,7 @@ layra/
 │   │
 │   ├── scripts/
 │   │   └── datalab/            # Data orchestration scripts
-│   │       ├── extract_deepseek.py      # RECOMMENDED: Async high-throughput extraction
-│   │       ├── extract_entities_v2.py   # Sync CLI for testing/debugging
+│   │       ├── extract_deepseek.py      # V3.1 extraction CLI (single + batch)
 │   │       ├── milvus_ingest.py         # Vector database ingestion
 │   │       ├── neo4j_ingest.py          # Graph ingestion (disabled)
 │   │       ├── aggregate_corpus.py      # Aggregating metadata
@@ -164,12 +163,12 @@ Targets are defined in `backend/app/eval/config/thresholds.yaml` with stage-spec
 All commands should be run from `backend/` directory with `PYTHONPATH=.`.
 
 ### 6.1 Extraction & Migration
-- **extract_entities_v2.py**: V2 entity extraction using Zhipu GLM-4.7 (default) with MiniMax fallback. Supports test strings and directory batch processing.
+- **extract_deepseek.py**: V3.1 entity extraction CLI pinned to DeepSeek for thesis reproducibility. Supports test strings and directory batch processing.
   ```bash
   # Test with a specific string
-  PYTHONPATH=. python3 scripts/datalab/extract_entities_v2.py --test "Quercetin inhibits COX-2"
+  PYTHONPATH=. python3 scripts/datalab/extract_deepseek.py --test "Quercetin inhibits COX-2"
   # Process all documents in a directory
-  PYTHONPATH=. python3 scripts/datalab/extract_entities_v2.py --input-dir data/extractions
+  PYTHONPATH=. python3 scripts/datalab/extract_deepseek.py --input-dir data/extractions
   ```
 - **extract_deepseek.py**: (RECOMMENDED) High-throughput async extraction using DeepSeek API.
   ```bash
@@ -207,7 +206,7 @@ All commands should be run from `backend/` directory with `PYTHONPATH=.`.
 - **recover_extractions.py**: Recovery for failed Marker API extractions. It attempts to resume sessions or re-poll for results that didn't complete successfully.
 - **tidy_data.py**: Data cleanup scripts for removing temporary artifacts, normalizing directory structures, and ensuring consistent naming across the extractions.
 - **consolidate_archive.py**: Internal utility for merging the `datalab.archive` repository into the LAYRA codebase, preserving history and data artifacts.
-- **entity_extract.py**: (Deprecated) Original entity extraction logic used in early stages of the project. Replaced by `extract_entities_v2.py`.
+- **entity_extract.py**: (Deprecated) Original entity extraction logic used in early stages of the project. Replaced by `extract_deepseek.py`.
 - **entity_extract_gemini.py**: (Deprecated) Experimental script for testing entity extraction using Google's Gemini models.
 
 ## 7. INFRASTRUCTURE

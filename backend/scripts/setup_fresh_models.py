@@ -38,13 +38,13 @@ FRESH_MODELS = [
     {
         "model_name": "glm-4-plus",
         "model_url": None,
-        "provider": "zhipu",
+        "provider": "zai",
         "description": "Coding: Strong code generation"
     },
     {
         "model_name": "glm-4-flash",
         "model_url": None,
-        "provider": "zhipu",
+        "provider": "zai",
         "description": "Economy: Fast, cost-effective"
     },
 ]
@@ -155,7 +155,7 @@ async def verify_api_keys():
         "OPENAI_API_KEY": "OpenAI",
         "DEEPSEEK_API_KEY": "DeepSeek",
         "MOONSHOT_API_KEY": "Moonshot/Kimi",
-        "ZHIPUAI_API_KEY": "Zhipu/GLM",
+        "ZAI_API_KEY": "Z.ai/GLM",
     }
     
     optional_keys = {

@@ -4,8 +4,7 @@ Replaces LiteLLM proxy with direct provider calls
 
 Supported Providers (2026 stack):
 - DeepSeek (R1, Chat, Reasoner)
-- Z.ai (GLM-4.5/4.6/4.7) - Z.ai GLM Coding Plan
-- Zhipu (GLM-4/4.7) - Direct Zhipu API
+- Z.ai (GLM-4.5/4.6/4.7)
 - Antigravity via CLIProxyAPI (proxied models)
 - Ollama Cloud (Llama, DeepSeek, Qwen)
 - MiniMax (M2.1)
@@ -73,18 +72,13 @@ class ProviderClient:
                     )
                     return "cliproxyapi"
 
-        # GLM models -> zai (ZAI_API_KEY) or zhipu (ZHIPUAI_API_KEY)
+        # GLM models -> zai (Z.ai). This repo treats Z.ai as SSOT for GLM endpoints.
         if any(x in model_lower for x in ["glm-4", "glm-4.5", "glm-4.6", "glm-4.7"]):
             if os.getenv("ZAI_API_KEY"):
                 logger.debug(
                     f"Provider detected: zai for model '{model_name}' (ZAI_API_KEY set)"
                 )
                 return "zai"
-            elif os.getenv("ZHIPUAI_API_KEY"):
-                logger.debug(
-                    f"Provider detected: zhipu for model '{model_name}' (ZHIPUAI_API_KEY set)"
-                )
-                return "zhipu"
             logger.debug(
                 f"Provider detected: zai for model '{model_name}' (default, no key set)"
             )
@@ -111,7 +105,7 @@ class ProviderClient:
         model_lower = model_name.lower()
 
         if any(x in model_lower for x in ["glm-4", "glm-4.5", "glm-4.6", "glm-4.7"]):
-            return "Set ZAI_API_KEY or ZHIPUAI_API_KEY for GLM models"
+            return "Set ZAI_API_KEY for GLM models"
         if "deepseek" in model_lower:
             return "Set DEEPSEEK_API_KEY for DeepSeek models"
         if any(x in model_lower for x in ["claude", "gpt", "gemini", "o1", "o3"]):
@@ -250,7 +244,7 @@ def get_llm_client(
         # or with local deployment URL
         client = get_llm_client("llama3", base_url="http://127.0.0.1:11434/v1")
         # or with explicit provider
-        client = get_llm_client("glm-4.7-flash", provider="zhipu")
+        client = get_llm_client("glm-4.7-flash", provider="zai")
     """
     return ProviderClient.create_client(
         model_name=model_name, api_key=api_key, base_url=base_url, provider=provider

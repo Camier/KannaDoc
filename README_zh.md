@@ -352,7 +352,7 @@ LAYRA 支持多种部署配置，适用于不同使用场景：
 |------|--------------|------|----------|
 | **标准 (GPU)** | `docker-compose.yml` | 完整部署，包含本地 ColQwen2.5 嵌入模型 | 生产环境、研究、开发（需 NVIDIA GPU） |
 | **Jina API (无 GPU)** | `docker-compose.yml` (设置 `EMBEDDING_MODEL=jina_embeddings_v4`) | 使用 Jina API 云端嵌入模型 | 无 GPU 资源、快速测试 |
-| **GPU 优化** | `deploy/docker-compose.gpu.yml` | GPU 优化配置 | 最大 GPU 性能 |
+| **GPU/开发覆盖** | `docker-compose.override.yml` | GPU/开发覆盖配置（自动应用） | 本地开发或 GPU 调优 |
 | **开发** | `docker-compose.override.yml` | 开发环境覆盖配置（扩展基础配置） | 本地开发，自定义设置 |
 
 > **注意**：旧的论文专用 compose 文件已移除。单用户演示请使用标准模式并设置 `SINGLE_TENANT_MODE=true`。
@@ -361,7 +361,7 @@ LAYRA 支持多种部署配置，适用于不同使用场景：
 
 - **标准模式**：完整功能集，需要 16GB+ GPU 显存运行 ColQwen2.5
 - **Jina API 模式**：无需本地 GPU，使用云端 API（需要 Jina API 密钥）
-- **GPU 优化模式**：针对 NVIDIA GPU 性能优化
+- **GPU/开发覆盖模式**：针对 NVIDIA GPU 的开发与调优覆盖
 - **开发模式**：本地开发环境覆盖（热重载、调试设置）
 
 > **注意**：所有模式使用相同的 `.env` 配置文件。将 `.env.example` 复制为 `.env` 并根据您的部署调整配置值。
@@ -414,11 +414,11 @@ JINA_EMBEDDINGS_V4_URL=https://api.jina.ai/v1/embeddings
 ./scripts/compose-clean logs -f <container_name>
 ```
 
-**选项C**: GPU 优化部署
+**选项C**: GPU/开发覆盖部署
 
 ```bash
-# 最大 GPU 性能配置
-./scripts/compose-clean -f docker-compose.yml -f deploy/docker-compose.gpu.yml up -d --build
+# GPU/开发覆盖配置
+./scripts/compose-clean -f docker-compose.yml -f docker-compose.override.yml up -d --build
 ```
 
 > **注意**：在本仓库中，始终通过 `./scripts/compose-clean` 运行 Compose 命令（它使用净化的环境 + `--env-file .env`）。这样可以防止主机 shell 环境变量在变量插值时覆盖 `.env` 值。详见 `docs/RUNBOOK_COMPOSE_CLEAN.md`。

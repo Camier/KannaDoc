@@ -1,15 +1,15 @@
 """Chat client adapters for entity extraction.
 
 Implements the ChatClient protocol for various LLM providers:
-- ZhipuChatClient: Z.ai / Zhipu GLM models
+- ZaiChatClient: Z.ai GLM models
 - DeepSeekChatClient: DeepSeek models (recommended fallback)
 - MinimaxChatClient: MiniMax M2.1 models (legacy fallback)
 
 Usage:
-    from lib.entity_extraction.clients import ZhipuChatClient, DeepSeekChatClient
+    from lib.entity_extraction.clients import ZaiChatClient, DeepSeekChatClient
     from lib.entity_extraction import V31Extractor
 
-    client = ZhipuChatClient(model="glm-4.7-flash")
+    client = ZaiChatClient(model="glm-4.7-flash")
     extractor = V31Extractor(client=client, model="glm-4.7-flash")
     result = extractor.extract(doc_id="doc1", chunk_id="chunk1", text="...")
 
@@ -30,15 +30,15 @@ logger = logging.getLogger(__name__)
 
 
 @dataclass
-class ZhipuChatClient:
-    """Chat client for Zhipu GLM models via Z.ai API.
+class ZaiChatClient:
+    """Chat client for GLM models via Z.ai API.
 
     Uses OpenAI SDK with Z.ai base URL for compatibility.
     Supports structured JSON output via json_schema response format.
     """
 
     model: str = "glm-4.7-flash"
-    base_url: str = "https://api.z.ai/api/coding/paas/v4"
+    base_url: str = "https://api.z.ai/api/paas/v4"
     api_key: Optional[str] = None
     timeout: float = 120.0
     max_retries: int = 3
@@ -47,16 +47,9 @@ class ZhipuChatClient:
     def __post_init__(self) -> None:
         import openai
 
-        self.api_key = (
-            self.api_key
-            or os.getenv("ZAI_API_KEY")
-            or os.getenv("ZHIPU_API_KEY")
-            or os.getenv("ZHIPUAI_API_KEY")
-        )
+        self.api_key = self.api_key or os.getenv("ZAI_API_KEY")
         if not self.api_key:
-            raise ValueError(
-                "ZAI_API_KEY, ZHIPU_API_KEY, or ZHIPUAI_API_KEY not found in environment"
-            )
+            raise ValueError("ZAI_API_KEY not found in environment")
 
         self._client = openai.OpenAI(
             base_url=self.base_url,
@@ -283,34 +276,34 @@ class MinimaxChatClient:
 
 
 def get_chat_client(
-    provider: str = "zhipu",
+    provider: str = "zai",
     model: Optional[str] = None,
     **kwargs: Any,
-) -> ZhipuChatClient | DeepSeekChatClient | MinimaxChatClient:
+) -> ZaiChatClient | DeepSeekChatClient | MinimaxChatClient:
     """Factory function to create the appropriate chat client.
 
     Args:
-        provider: "zhipu", "deepseek", or "minimax"
+        provider: "zai", "deepseek", or "minimax"
         model: Model name (uses provider default if not specified)
         **kwargs: Additional arguments passed to client constructor
 
     Returns:
         Configured chat client instance
     """
-    if provider == "zhipu":
-        return ZhipuChatClient(model=model or "glm-4.7-flash", **kwargs)
+    if provider == "zai":
+        return ZaiChatClient(model=model or "glm-4.7-flash", **kwargs)
     elif provider == "deepseek":
         return DeepSeekChatClient(model=model or "deepseek-chat", **kwargs)
     elif provider == "minimax":
         return MinimaxChatClient(model=model or "MiniMax-M2.1", **kwargs)
     else:
         raise ValueError(
-            f"Unknown provider: {provider}. Use 'zhipu', 'deepseek', or 'minimax'"
+            f"Unknown provider: {provider}. Use 'zai', 'deepseek', or 'minimax'"
         )
 
 
 __all__ = [
-    "ZhipuChatClient",
+    "ZaiChatClient",
     "DeepSeekChatClient",
     "MinimaxChatClient",
     "get_chat_client",

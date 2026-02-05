@@ -12,23 +12,23 @@ The `configure_deepseek_glm.py` script properly configures DeepSeek and GLM mode
 - `deepseek-v3.2` - Latest DeepSeek V3.2 model
 
 **GLM Models:**
-- `glm-4.7` - Latest Zhipu GLM-4.7 model (default)
+- `glm-4.7` - GLM-4.7 model (default)
 - `glm-4-plus` - Enhanced GLM-4 Plus model
 - `glm-4-flash` - Fast GLM-4 Flash model
 
 ### Configuration Details
 
 Each model is configured with:
-- **Correct API endpoint** (provider-specific base URL)
+- **Provider identifier** (deepseek/zai)
 - **API key** from environment variables
-- **Provider identifier** (deepseek/zhipu)
+- **Provider SSOT resolution** via `backend/app/core/llm/providers.yaml`
 - **Default parameters** (temperature, max_length, etc.)
 
 ## Prerequisites
 
 1. **API Keys Required:**
    - `DEEPSEEK_API_KEY` - Set in `.env` file
-   - `ZHIPUAI_API_KEY` - Set in `.env` file
+   - `ZAI_API_KEY` - Set in `.env` file
 
 2. **Database Access:**
    - MongoDB running and accessible
@@ -127,7 +127,7 @@ If you see `Missing required API keys`:
 **Solution:** Verify `.env` file contains:
 ```
 DEEPSEEK_API_KEY=sk-...
-ZHIPUAI_API_KEY=...
+ZAI_API_KEY=...
 ```
 
 ### Connection Timeout Error
@@ -141,14 +141,14 @@ docker-compose ps
 
 ## Model API Endpoints
 
-| Model | Provider | Base URL |
+| Model | Provider | Base URL (resolved from SSOT) |
 |-------|----------|----------|
 | deepseek-chat | deepseek | https://api.deepseek.com/v1 |
 | deepseek-reasoner | deepseek | https://api.deepseek.com/v1 |
 | deepseek-v3.2 | deepseek | https://api.deepseek.com/v1 |
-| glm-4.7 | zhipu | https://open.bigmodel.cn/api/paas/v4 |
-| glm-4-plus | zhipu | https://open.bigmodel.cn/api/paas/v4 |
-| glm-4-flash | zhipu | https://open.bigmodel.cn/api/paas/v4 |
+| glm-4.7 | zai | https://api.z.ai/api/paas/v4 |
+| glm-4-plus | zai | https://api.z.ai/api/paas/v4 |
+| glm-4-flash | zai | https://api.z.ai/api/paas/v4 |
 
 ## Post-Configuration Testing
 
@@ -195,4 +195,4 @@ curl -X POST http://localhost:8090/api/v1/chat/conversations \
 ## References
 
 - DeepSeek API: https://api.deepseek.com/docs
-- Zhipu GLM API: https://open.bigmodel.cn/dev/api
+- Z.ai API: https://z.ai

@@ -61,24 +61,24 @@ MODELS_TO_ADD = [
         "description": "DeepSeek R1 (Reasoning)"
     },
 
-    # ZhipuAI Models
+    # Z.ai GLM Models
     {
         "model_name": "glm-4.7",
-        "model_url": "https://open.bigmodel.cn/api/paas/v4",
-        "provider": "zhipu",
-        "description": "Zhipu GLM-4.7 (Latest)"
+        "model_url": "",
+        "provider": "zai",
+        "description": "Z.ai GLM-4.7"
     },
     {
         "model_name": "glm-4-plus",
-        "model_url": "https://open.bigmodel.cn/api/paas/v4",
-        "provider": "zhipu",
-        "description": "Zhipu GLM-4 Plus"
+        "model_url": "",
+        "provider": "zai",
+        "description": "Z.ai GLM-4 Plus"
     },
     {
         "model_name": "glm-4-flash",
-        "model_url": "https://open.bigmodel.cn/api/paas/v4",
-        "provider": "zhipu",
-        "description": "Zhipu GLM-4 Flash (Fast)"
+        "model_url": "",
+        "provider": "zai",
+        "description": "Z.ai GLM-4 Flash (Fast)"
     },
 
     # Moonshot Models
@@ -139,7 +139,7 @@ DEFAULT_PARAMS = {
 PROVIDER_KEYS = {
     "openai": "OPENAI_API_KEY",
     "deepseek": "DEEPSEEK_API_KEY",
-    "zhipu": "ZHIPUAI_API_KEY",
+    "zai": "ZAI_API_KEY",
     "moonshot": "MOONSHOT_API_KEY",
     "minimax": "MINIMAX_API_KEY",
     "cohere": "COHERE_API_KEY",
@@ -198,6 +198,7 @@ async def configure_users():
                 model_name=first_model["model_name"],
                 model_url=first_model["model_url"],
                 api_key=api_key,
+                provider=provider,
                 **DEFAULT_PARAMS
             )
 
@@ -244,6 +245,7 @@ async def configure_users():
                 model_name=model_name,
                 model_url=model_url,
                 api_key=api_key,
+                provider=provider,
                 **DEFAULT_PARAMS
             )
 

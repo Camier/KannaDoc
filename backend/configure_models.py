@@ -68,28 +68,28 @@ async def configure_models():
             "username": "miko",
             "chat_model": "miko_glm47",
             "model_name": "glm-4.7",  # Updated from glm-4
-            "llm_provider": "zhipu",
+            "llm_provider": "zai",
             "embedding_model": "local_colqwen",
             "is_selected": False,
-            "api_key": os.getenv("ZHIPUAI_API_KEY", ""),
+            "api_key": os.getenv("ZAI_API_KEY", ""),
         },
         {
             "username": "miko",
             "chat_model": "miko_glm4_plus",
             "model_name": "glm-4-plus",
-            "llm_provider": "zhipu",
+            "llm_provider": "zai",
             "embedding_model": "local_colqwen",
             "is_selected": False,
-            "api_key": os.getenv("ZHIPUAI_API_KEY", ""),
+            "api_key": os.getenv("ZAI_API_KEY", ""),
         },
         {
             "username": "miko",
             "chat_model": "miko_glm47_flash",
             "model_name": "glm-4.7-flash",  # Updated from glm-4-flash
-            "llm_provider": "zhipu",
+            "llm_provider": "zai",
             "embedding_model": "local_colqwen",
             "is_selected": False,
-            "api_key": os.getenv("ZHIPUAI_API_KEY", ""),
+            "api_key": os.getenv("ZAI_API_KEY", ""),
         },
     ]
 

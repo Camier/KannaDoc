@@ -6,7 +6,7 @@ ENV_FILE="/LAB/@thesis/layra/.env"
 
 # Keys to import
 KEYS=(
-    "ZHIPUAI_API_KEY"
+    "ZAI_API_KEY"
     "MOONSHOT_API_KEY"
     "MINIMAX_API_KEY"
     "COHERE_API_KEY"

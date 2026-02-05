@@ -32,7 +32,7 @@ MONGODB_DB = os.getenv("MONGODB_DB", "chat_mongodb")
 
 # API Keys
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "")
-ZHIPUAI_API_KEY = os.getenv("ZHIPUAI_API_KEY", "")
+ZAI_API_KEY = os.getenv("ZAI_API_KEY", "")
 
 # Users to configure
 USERS = ["miko", "thesis"]
@@ -41,7 +41,7 @@ USERS = ["miko", "thesis"]
 MODELS = {
     "deepseek-chat": {
         "model_name": "deepseek-chat",
-        "model_url": "https://api.deepseek.com/v1",
+        "model_url": "",
         "api_key_env": "DEEPSEEK_API_KEY",
         "provider": "deepseek",
         "description": "DeepSeek Chat (Standard)",
@@ -55,7 +55,7 @@ MODELS = {
     },
     "deepseek-r1": {
         "model_name": "deepseek-r1",
-        "model_url": "https://api.deepseek.com/v1",
+        "model_url": "",
         "api_key_env": "DEEPSEEK_API_KEY",
         "provider": "deepseek",
         "description": "DeepSeek R1 (Reasoning Model)",
@@ -69,10 +69,10 @@ MODELS = {
     },
     "glm-4.7": {
         "model_name": "glm-4.7",
-        "model_url": "https://open.bigmodel.cn/api/paas/v4",
-        "api_key_env": "ZHIPUAI_API_KEY",
-        "provider": "zhipu",
-        "description": "Zhipu GLM-4.7 (Latest)",
+        "model_url": "",
+        "api_key_env": "ZAI_API_KEY",
+        "provider": "zai",
+        "description": "Z.ai GLM-4.7",
         "default_params": {
             "temperature": 0.7,
             "max_length": 8192,
@@ -83,10 +83,10 @@ MODELS = {
     },
     "glm-4.7-flash": {
         "model_name": "glm-4.7-flash",
-        "model_url": "https://open.bigmodel.cn/api/paas/v4",
-        "api_key_env": "ZHIPUAI_API_KEY",
-        "provider": "zhipu",
-        "description": "Zhipu GLM-4.7 Flash (Fast)",
+        "model_url": "",
+        "api_key_env": "ZAI_API_KEY",
+        "provider": "zai",
+        "description": "Z.ai GLM-4.7 Flash",
         "default_params": {
             "temperature": 0.7,
             "max_length": 4096,
@@ -143,6 +143,7 @@ async def configure_models_for_user(db, username: str) -> dict:
                 "model_name": model_config["model_name"],
                 "model_url": model_config["model_url"],
                 "api_key": api_key,
+                "provider": model_config["provider"],
                 "base_used": ["chat", "workflow"],
                 "system_prompt": "",
                 **model_config["default_params"],
@@ -184,10 +185,11 @@ async def configure_models_for_user(db, username: str) -> dict:
                     "models.$.model_name": model_config["model_name"],
                     "models.$.model_url": model_config["model_url"],
                     "models.$.api_key": api_key,
+                    "models.$.provider": model_config["provider"],
                 }
 
                 for param_key, param_value in model_config["default_params"].items():
-                    update_data[f"models.$. {param_key}"] = param_value
+                    update_data[f"models.$.{param_key}"] = param_value
 
                 try:
                     await db.model_config.update_one(
@@ -207,6 +209,7 @@ async def configure_models_for_user(db, username: str) -> dict:
                     "model_name": model_config["model_name"],
                     "model_url": model_config["model_url"],
                     "api_key": api_key,
+                    "provider": model_config["provider"],
                     "base_used": ["chat", "workflow"],
                     "system_prompt": "",
                     **model_config["default_params"],
@@ -241,7 +244,7 @@ async def configure_models_for_user(db, username: str) -> dict:
 async def verify_api_keys() -> dict:
     """Verify that all required API keys are present."""
     log("Verifying API keys...")
-    verification = {"deepseek": bool(DEEPSEEK_API_KEY), "zhipu": bool(ZHIPUAI_API_KEY)}
+    verification = {"deepseek": bool(DEEPSEEK_API_KEY), "zai": bool(ZAI_API_KEY)}
 
     for provider, status in verification.items():
         if status:
@@ -264,8 +267,8 @@ async def main():
         log("\nERROR: Missing required API keys. Please set:", "ERROR")
         if not key_verification["deepseek"]:
             log("  - DEEPSEEK_API_KEY", "ERROR")
-        if not key_verification["zhipu"]:
-            log("  - ZHIPUAI_API_KEY", "ERROR")
+        if not key_verification["zai"]:
+            log("  - ZAI_API_KEY", "ERROR")
         sys.exit(1)
 
     # Connect to MongoDB

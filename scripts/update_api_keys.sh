@@ -37,7 +37,7 @@ update_env() {
 [ -n "$DEEPSEEK_API_KEY" ] && update_env "DEEPSEEK_API_KEY" "$DEEPSEEK_API_KEY"
 
 # Add new provider keys
-[ -n "$ZHIPUAI_API_KEY" ] && update_env "ZHIPUAI_API_KEY" "$ZHIPUAI_API_KEY"
+[ -n "$ZAI_API_KEY" ] && update_env "ZAI_API_KEY" "$ZAI_API_KEY"
 [ -n "$MOONSHOT_API_KEY" ] && update_env "MOONSHOT_API_KEY" "$MOONSHOT_API_KEY"
 [ -n "$MINIMAX_API_KEY" ] && update_env "MINIMAX_API_KEY" "$MINIMAX_API_KEY"
 [ -n "$COHERE_API_KEY" ] && update_env "COHERE_API_KEY" "$COHERE_API_KEY"
@@ -49,4 +49,4 @@ update_env() {
 
 echo ""
 echo "✅ API keys updated successfully!"
-echo "Available providers: OpenAI, DeepSeek, Zhipu, Moonshot, MiniMax, Cohere, Ollama"
+echo "Available providers: OpenAI, DeepSeek, Z.ai, Moonshot, MiniMax, Cohere, Ollama"

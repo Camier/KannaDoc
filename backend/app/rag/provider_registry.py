@@ -133,7 +133,7 @@ class ProviderRegistry:
 
         Uses the same detection logic as ProviderClient:
         1. Check if model matches CLIProxyAPI (if CLIPROXYAPI_BASE_URL set)
-        2. Check GLM family (zai vs zhipu)
+        2. Check GLM family (zai)
         3. Generic provider matching
 
         Args:
@@ -168,12 +168,10 @@ class ProviderRegistry:
                     ):
                         return "cliproxyapi"
 
-        # 2. GLM family special resolution
+        # 2. GLM family special resolution (Z.ai SSOT)
         if any(x in model_lower for x in ["glm-4", "glm-4.5", "glm-4.6", "glm-4.7"]):
             if os.getenv("ZAI_API_KEY"):
                 return "zai"
-            elif os.getenv("ZHIPUAI_API_KEY"):
-                return "zhipu"
             return "zai"  # Default
 
         # 3. Generic provider matching

@@ -27,10 +27,6 @@ class Settings(BaseSettings):
     redis_token_db: int = 0
     redis_task_db: int = 1
     redis_lock_db: int = 2
-    # SECURITY: Removed hardcoded secret key - must be set via environment variables
-    secret_key: str = ""
-    algorithm: str = "HS256"
-    access_token_expire_minutes: int = 60 * 24 * 8
     mongodb_url: str = "localhost:27017"
     mongodb_db: str = "chat_mongodb"
     # SECURITY: Removed hardcoded credentials - must be set via environment variables
@@ -39,9 +35,6 @@ class Settings(BaseSettings):
     mongodb_pool_size: int = 50
     mongodb_min_pool_size: int = 10
     debug_mode: bool = False
-    # Authz / Tenancy
-    # When enabled, username-based access checks are bypassed and all users share the same data.
-    single_tenant_mode: bool = False
 
     # Infrastructure - Kafka
     kafka_broker_url: str = "localhost:9094"
@@ -99,6 +92,8 @@ class Settings(BaseSettings):
     # Server & Networking
     # server_ip is the base URL for the application server
     server_ip: str = "http://localhost"
+    single_tenant_mode: bool = True
+    default_username: str = "miko"
     allowed_origins: str = Field(
         default="",
         description="Comma-separated list of allowed CORS origins (e.g., 'http://localhost:3000,https://example.com'). Empty = allow all (development only)",
@@ -145,7 +140,6 @@ def validate_settings() -> None:
     """
     critical_settings = {
         "db_url": settings.db_url,
-        "secret_key": settings.secret_key,
         "mongodb_root_username": settings.mongodb_root_username,
         "mongodb_root_password": settings.mongodb_root_password,
         "minio_access_key": settings.minio_access_key,

@@ -4,6 +4,7 @@ Optimized for maximum throughput based on DeepSeek API characteristics:
 - NO rate limits: can fire 100s of parallel requests
 - Automatic context caching: 90% input cost savings on shared prefixes
 - 10-minute timeout tolerance for high-load scenarios
+- JSON mode: guaranteed valid JSON output
 
 Usage:
     from lib.entity_extraction.deepseek_client import DeepSeekAsyncClient
@@ -18,14 +19,17 @@ from __future__ import annotations
 import asyncio
 import logging
 import os
+import time
 from dataclasses import dataclass, field
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 logger = logging.getLogger(__name__)
 
 DEFAULT_TIMEOUT = 600.0  # 10 minutes - DeepSeek's server timeout
-DEFAULT_MAX_CONCURRENT = 50  # Conservative limit for stability
+DEFAULT_MAX_CONCURRENT = 200  # DeepSeek has no rate limits
 DEFAULT_MODEL = "deepseek-chat"
+DEFAULT_TEMPERATURE = 0.1  # Low for deterministic extraction
+DEFAULT_MAX_TOKENS = 4096  # Sufficient for entity extraction, prevents truncation
 
 
 @dataclass
@@ -45,6 +49,11 @@ class DeepSeekAsyncClient:
     _semaphore: Optional[asyncio.Semaphore] = field(
         default=None, init=False, repr=False
     )
+    # Cache metrics
+    _cache_hits: int = field(default=0, init=False, repr=False)
+    _cache_misses: int = field(default=0, init=False, repr=False)
+    _total_latency: float = field(default=0.0, init=False, repr=False)
+    _request_count: int = field(default=0, init=False, repr=False)
 
     def __post_init__(self) -> None:
         self.api_key = self.api_key or os.getenv("DEEPSEEK_API_KEY")
@@ -72,23 +81,46 @@ class DeepSeekAsyncClient:
         messages: List[Dict[str, str]],
         *,
         model: Optional[str] = None,
-        temperature: float = 0.3,
-        max_tokens: int = 8192,
-    ) -> str:
-        """Send async chat completion request with concurrency limiting."""
+        temperature: float = DEFAULT_TEMPERATURE,
+        max_tokens: int = DEFAULT_MAX_TOKENS,
+    ) -> Tuple[str, Dict[str, Any]]:
+        """Send async chat completion request with JSON mode and metrics."""
         if self._semaphore is None:
             raise RuntimeError(
                 "Client not initialized. Use 'async with' context manager."
             )
         async with self._semaphore:
+            start_time = time.perf_counter()
             try:
                 response = await self._client.chat.completions.create(
                     model=model or self.model,
                     messages=messages,
                     temperature=temperature,
                     max_tokens=max_tokens,
+                    response_format={"type": "json_object"},
                 )
-                return (response.choices[0].message.content or "").strip()
+                latency = time.perf_counter() - start_time
+                content = (response.choices[0].message.content or "").strip()
+
+                usage = getattr(response, "usage", None)
+                metrics = {"latency_ms": round(latency * 1000, 1)}
+                if usage:
+                    cache_hit = getattr(usage, "prompt_cache_hit_tokens", 0) or 0
+                    cache_miss = getattr(usage, "prompt_cache_miss_tokens", 0) or 0
+                    metrics.update(
+                        {
+                            "cache_hit_tokens": cache_hit,
+                            "cache_miss_tokens": cache_miss,
+                            "completion_tokens": getattr(usage, "completion_tokens", 0),
+                        }
+                    )
+                    self._cache_hits += cache_hit
+                    self._cache_misses += cache_miss
+
+                self._total_latency += latency
+                self._request_count += 1
+
+                return content, metrics
             except Exception as e:
                 logger.error(f"DeepSeek API error: {e}")
                 raise
@@ -101,7 +133,7 @@ class DeepSeekAsyncClient:
         temperature: float = 0.3,
         max_tokens: int = 8192,
         return_exceptions: bool = True,
-    ) -> List[str | BaseException]:
+    ) -> List[Tuple[str, Dict[str, Any]] | BaseException]:
         """Process multiple chat requests in parallel.
 
         Args:
@@ -110,7 +142,7 @@ class DeepSeekAsyncClient:
                                If False, first exception is raised
 
         Returns:
-            List of response strings (or exceptions if return_exceptions=True)
+            List of (content, metrics) tuples (or exceptions if return_exceptions=True)
         """
         tasks = [
             self.chat(msgs, model=model, temperature=temperature, max_tokens=max_tokens)
@@ -149,18 +181,36 @@ class DeepSeekSyncClient:
         messages: List[Dict[str, str]],
         *,
         model: Optional[str] = None,
-        temperature: float = 0.3,
-        max_tokens: int = 8192,
+        temperature: float = DEFAULT_TEMPERATURE,
+        max_tokens: int = DEFAULT_MAX_TOKENS,
         **kwargs: Any,
-    ) -> str:
-        """Send synchronous chat completion request."""
+    ) -> Tuple[str, Dict[str, Any]]:
+        """Send synchronous chat completion request with JSON mode."""
+        start_time = time.perf_counter()
         response = self._client.chat.completions.create(
             model=model or self.model,
             messages=messages,
             temperature=temperature,
             max_tokens=max_tokens,
+            response_format={"type": "json_object"},
         )
-        return (response.choices[0].message.content or "").strip()
+        latency = time.perf_counter() - start_time
+        content = (response.choices[0].message.content or "").strip()
+
+        usage = getattr(response, "usage", None)
+        metrics = {"latency_ms": round(latency * 1000, 1)}
+        if usage:
+            metrics.update(
+                {
+                    "cache_hit_tokens": getattr(usage, "prompt_cache_hit_tokens", 0)
+                    or 0,
+                    "cache_miss_tokens": getattr(usage, "prompt_cache_miss_tokens", 0)
+                    or 0,
+                    "completion_tokens": getattr(usage, "completion_tokens", 0),
+                }
+            )
+
+        return content, metrics
 
 
 __all__ = ["DeepSeekAsyncClient", "DeepSeekSyncClient"]
