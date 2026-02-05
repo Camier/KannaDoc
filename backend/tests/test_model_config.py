@@ -26,7 +26,6 @@ def clean_env(monkeypatch):
     """Remove all provider-related environment variables for clean testing."""
     env_vars = [
         "ZAI_API_KEY",
-        "ZHIPUAI_API_KEY",
         "DEEPSEEK_API_KEY",
         "CLIPROXYAPI_BASE_URL",
         "CLIPROXYAPI_API_KEY",
@@ -42,21 +41,6 @@ def clean_env(monkeypatch):
 def zai_env(monkeypatch, clean_env):
     """Set up environment with only ZAI_API_KEY."""
     monkeypatch.setenv("ZAI_API_KEY", "test-zai-api-key-12345")
-    yield
-
-
-@pytest.fixture
-def zhipu_env(monkeypatch, clean_env):
-    """Set up environment with only ZHIPUAI_API_KEY."""
-    monkeypatch.setenv("ZHIPUAI_API_KEY", "test-zhipu-api-key-12345")
-    yield
-
-
-@pytest.fixture
-def both_glm_env(monkeypatch, clean_env):
-    """Set up environment with both ZAI and Zhipu API keys."""
-    monkeypatch.setenv("ZAI_API_KEY", "test-zai-api-key-12345")
-    monkeypatch.setenv("ZHIPUAI_API_KEY", "test-zhipu-api-key-12345")
     yield
 
 
@@ -158,22 +142,6 @@ class TestProviderDetection:
 
         result = ProviderClient.get_provider_for_model("glm-4.7-flash")
         assert result == "zai"
-
-    def test_glm_detection_with_zhipu_key(self, zhipu_env):
-        """Verify GLM models use zhipu provider when only ZHIPUAI_API_KEY is set."""
-        from app.rag.provider_client import ProviderClient
-
-        result = ProviderClient.get_provider_for_model("glm-4.7-flash")
-        assert result == "zhipu"
-
-    def test_glm_detection_prefers_zai_over_zhipu(self, both_glm_env):
-        """Verify ZAI has priority over Zhipu when both API keys are present."""
-        from app.rag.provider_client import ProviderClient
-
-        result = ProviderClient.get_provider_for_model("glm-4.7-flash")
-        assert result == "zai", (
-            "ZAI should have priority over Zhipu when both keys present"
-        )
 
     def test_glm_detection_defaults_to_zai_without_keys(self, clean_env):
         """Verify GLM models default to zai when no API keys are set."""

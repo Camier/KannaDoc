@@ -23,6 +23,7 @@ Metrics:
 """
 
 import argparse
+import asyncio
 import json
 import time
 from dataclasses import dataclass, field
@@ -30,6 +31,126 @@ from pathlib import Path
 from typing import List, Dict, Optional, Any
 import statistics
 from datetime import datetime
+
+
+# ============================================================================
+# MILVUS SEARCH ADAPTER
+# ============================================================================
+
+_milvus_client: Any = None
+_collection_name: Optional[str] = None
+
+
+def init_milvus(
+    collection_name: Optional[str] = None,
+    milvus_uri: str = "http://localhost:19530",
+    model_server_url: str = "http://172.23.0.20:8005",
+):
+    """Initialize Milvus client for CLI usage."""
+    global _milvus_client, _collection_name, _model_server_url
+    if _milvus_client is None:
+        from pymilvus import MilvusClient
+
+        _milvus_client = MilvusClient(uri=milvus_uri)
+    if collection_name:
+        _collection_name = collection_name
+    globals()["_model_server_url"] = model_server_url
+
+
+_model_server_url: str = "http://172.23.0.20:8005"
+
+
+async def search_milvus_async(
+    question: str, top_k: int = 5, collection_name: Optional[str] = None, **kwargs: Any
+) -> List["SearchResult"]:
+    """
+    Search Milvus using ColQwen text embeddings.
+
+    Args:
+        question: Query text
+        top_k: Number of results
+        collection_name: Milvus collection name
+
+    Returns:
+        List of SearchResult objects
+    """
+    import httpx
+
+    coll = collection_name or _collection_name
+    if not coll:
+        raise ValueError("Collection name not set. Use --collection or init_milvus()")
+
+    async with httpx.AsyncClient(timeout=60.0) as client:
+        response = await client.post(
+            f"{_model_server_url}/embed_text",
+            json={"queries": [question]},
+        )
+        response.raise_for_status()
+        embeddings = response.json().get("embeddings", [])
+
+    if not embeddings or not embeddings[0]:
+        return []
+
+    query_vecs = embeddings[0] if isinstance(embeddings[0][0], float) else embeddings[0]
+
+    if _milvus_client is None:
+        raise RuntimeError("Milvus client not initialized. Call init_milvus() first.")
+
+    _milvus_client.load_collection(coll)
+    results = _milvus_client.search(
+        collection_name=coll,
+        data=query_vecs,
+        anns_field="vector",
+        limit=top_k * 10,
+        output_fields=["image_id", "file_id", "page_number"],
+        search_params={"metric_type": "IP", "params": {"ef": max(top_k * 20, 200)}},
+    )
+
+    doc_token_scores: dict[str, dict[int, float]] = {}
+    doc_meta: dict[str, dict] = {}
+    for token_idx, token_results in enumerate(results):
+        for hit in token_results:
+            entity = hit.get("entity", {})
+            file_id = entity.get("file_id", "")
+            score = float(hit.get("distance", 0.0))
+            if file_id not in doc_token_scores:
+                doc_token_scores[file_id] = {}
+                doc_meta[file_id] = entity
+            if token_idx not in doc_token_scores[file_id]:
+                doc_token_scores[file_id][token_idx] = score
+            else:
+                doc_token_scores[file_id][token_idx] = max(
+                    doc_token_scores[file_id][token_idx], score
+                )
+
+    doc_maxsim = {
+        fid: sum(scores.values()) / len(query_vecs)
+        for fid, scores in doc_token_scores.items()
+    }
+    ranked = sorted(doc_maxsim.items(), key=lambda x: -x[1])[:top_k]
+
+    search_results = []
+    for rank, (file_id, score) in enumerate(ranked, start=1):
+        entity = doc_meta[file_id]
+        doc_id = entity.get("image_id") or file_id
+        search_results.append(
+            SearchResult(
+                doc_id=doc_id,
+                title=file_id,
+                snippet="",
+                score=score,
+                rank=rank,
+            )
+        )
+
+    return search_results
+
+
+def search_milvus_sync(
+    question: str, top_k: int = 5, keywords: Optional[List[str]] = None, **kwargs: Any
+) -> List["SearchResult"]:
+    """Synchronous wrapper for Milvus search."""
+    return asyncio.run(search_milvus_async(question, top_k, **kwargs))
 
 
 # ============================================================================
@@ -780,13 +901,21 @@ def main():
     parser.add_argument(
         "--output",
         type=str,
-        default="/LAB/@thesis/datalab/eval/results.json",
+        default="data/eval_results.json",
         help="Output path for results JSON",
     )
     parser.add_argument(
         "--corpus", type=str, help="Path to corpus directory (for keyword search)"
     )
+    parser.add_argument(
+        "--collection", type=str, help="Milvus collection name (for vector search)"
+    )
     parser.add_argument("--thresholds", type=str, help="Path to thresholds YAML file")
+    parser.add_argument(
+        "--ground-truth",
+        type=str,
+        help="Path to ground truth JSON mapping question_id -> expected_docs",
+    )
 
     args = parser.parse_args()
 
@@ -794,25 +923,38 @@ def main():
     eval_set = load_questions(args.dataset)
     questions = eval_set["questions"]
 
+    # Load ground truth and override expected_docs if provided
+    if args.ground_truth and Path(args.ground_truth).exists():
+        with open(args.ground_truth, "r") as f:
+            ground_truth = json.load(f)
+        for q in questions:
+            if q["id"] in ground_truth:
+                q["expected_docs"] = ground_truth[q["id"]]
+        print(
+            f"Loaded ground truth for {len(ground_truth)} questions from {args.ground_truth}"
+        )
+
     print(
         f"Loaded {len(questions)} questions from {eval_set['metadata'].get('domain', 'unknown')}"
     )
 
     # Load thresholds or use defaults
     thresholds = DEFAULT_THRESHOLDS.copy()
-    # TODO: Load from YAML if provided
 
     # Select search function
-    if args.corpus:
+    if args.collection:
+        init_milvus(args.collection)
+        search_fn = search_milvus_sync
+        print(f"Using Milvus vector search on collection: {args.collection}")
+    elif args.corpus:
         search_fn = lambda **kwargs: search_chunks_keyword(
             corpus_dir=args.corpus, **kwargs
         )
         print(f"Using keyword search on corpus: {args.corpus}")
     else:
-        # Use placeholder - user should implement search_chunks()
         search_fn = search_chunks
         print("WARNING: Using placeholder search (returns empty results)")
-        print("         Implement search_chunks() or use --corpus for keyword search")
+        print("         Use --collection for Milvus or --corpus for keyword search")
 
     # Run evaluation
     results, summary = run_evaluation(

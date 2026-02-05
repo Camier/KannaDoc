@@ -9,7 +9,6 @@
 #
 # For new entity extractions, use:
 #   - extract_deepseek.py (recommended, async high-throughput)
-#   - extract_entities_v2.py (sync CLI for testing/debugging)
 #
 # This script is preserved for historical reference only.
 # ============================================================================
@@ -21,9 +20,14 @@ import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, cast
 
-from lib.entity_extraction.schemas import Entity, ExtractionResultV2
+from lib.entity_extraction.schemas import (
+    Entity,
+    EntityUnion,
+    ExtractionResult,
+    EntityType,
+)
 
 logging.basicConfig(
     level=logging.INFO,
@@ -32,13 +36,13 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-TYPE_MAPPING = {
+TYPE_MAPPING: dict[str, EntityType] = {
     "Plant": "Taxon",
     "Compound": "Compound",
-    "Effect": "PharmEffect",
-    "Disease": "Indication",
-    "Dosage": "Concentration",
-    "Mechanism": "Mechanism",
+    "Effect": "Effect",
+    "Disease": "Condition",
+    "Dosage": "Dosage",
+    "Mechanism": "Target",
     "TraditionalUse": "TraditionalUse",
     "Population": "Study",
 }
@@ -74,7 +78,7 @@ def migrate_file(
     doc_id = v1_data.get("doc_id", "")
     chunk_entities_v1 = v1_data.get("chunk_entities", [])
 
-    new_entities: List[Entity] = []
+    new_entities: List[EntityUnion] = []
     entity_id_counter = 1
 
     for chunk_entry in chunk_entities_v1:
@@ -98,26 +102,31 @@ def migrate_file(
             entity_id_counter += 1
 
             new_entities.append(
-                Entity(
-                    id=ent_id,
-                    type=new_type,
-                    name=name,
-                    attributes={"context": context},
-                    source_chunk_ids=[chunk_id] if chunk_id else [],
+                cast(
+                    EntityUnion,
+                    Entity(
+                        id=ent_id,
+                        type=new_type,
+                        name=name,
+                        attributes={"context": context},
+                        source_chunk_ids=[chunk_id] if chunk_id else [],
+                    ),
                 )
             )
 
-    result = ExtractionResultV2(
-        doc_id=doc_id,
-        extracted_at=v1_data.get("extraction_date")
-        or datetime.now(timezone.utc).isoformat(),
-        extractor=v1_data.get("model", "legacy-migration"),
-        entities=new_entities,
-        relationships=[],
-        metadata={
-            "migration_date": datetime.now(timezone.utc).isoformat(),
-            "original_file": str(entities_file.name),
-        },
+    result = ExtractionResult(entities=new_entities, relationships=[])
+    result_payload = result.model_dump()
+    result_payload.update(
+        {
+            "doc_id": doc_id,
+            "extracted_at": v1_data.get("extraction_date")
+            or datetime.now(timezone.utc).isoformat(),
+            "extractor": v1_data.get("model", "legacy-migration"),
+            "metadata": {
+                "migration_date": datetime.now(timezone.utc).isoformat(),
+                "original_file": str(entities_file.name),
+            },
+        }
     )
 
     if dry_run:
@@ -131,7 +140,7 @@ def migrate_file(
 
     tmp_file = entities_file.with_suffix(".json.tmp")
     with open(tmp_file, "w") as f:
-        json.dump(result.model_dump(), f, indent=2)
+        json.dump(result_payload, f, indent=2)
     os.replace(tmp_file, entities_file)
 
     logger.info(f"Migrated {entities_file.parent.name}: {len(new_entities)} entities")

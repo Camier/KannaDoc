@@ -6,12 +6,13 @@ Two-phase ingestion pipeline:
   Phase 2: Entities from entities.json
 
 Uses MERGE operations for idempotent upserts.
-Connects to Neo4j Desktop at bolt://localhost:7687 with NO AUTH.
+Connects to Neo4j at bolt://localhost:7687 with NO AUTH and database "layra".
 """
 
-import json
 import argparse
+import json
 import logging
+import os
 from pathlib import Path
 from typing import Any
 
@@ -24,8 +25,10 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Neo4j connection (NO AUTH - Neo4j Desktop)
-NEO4J_URI = "bolt://localhost:7687"
+# Neo4j connection (NO AUTH)
+NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+NEO4J_DATABASE = os.getenv("NEO4J_DATABASE", "layra")
+NEO4J_AUTH = None
 
 
 def make_entity_id(entity_type: str, name: str) -> str:
@@ -90,7 +93,7 @@ def ingest_document(session, normalized: dict[str, Any]) -> dict[str, int]:
         {
             "doc_id": doc_id,
             "title": metadata.get("title", ""),
-            "year": metadata.get("year"),
+            "year": metadata.get("publication_year", metadata.get("year")),
             "doi": metadata.get("doi", ""),
             "source_path": normalized.get("source_path", ""),
         },
@@ -126,21 +129,22 @@ def ingest_document(session, normalized: dict[str, Any]) -> dict[str, int]:
         chunk_count += 1
 
     logger.info(f"[OK] MERGE {chunk_count} Chunks for Document {doc_id}")
-    return {"documents": 1, "chunks": chunk_count}
+    return {"documents": 1, "chunks": chunk_count, "doc_id": doc_id}
 
 
-def ingest_entities(session, doc_dir: Path) -> dict[str, int]:
-    """Phase 2: Ingest Entities from entities.json.
+def ingest_entities(session, doc_dir: Path, doc_id: str) -> dict[str, int]:
+    """Phase 2: Ingest Entities + Relationships from entities.json (V3.1).
 
     Reads per-document entities.json file and creates Entity nodes.
-    Links entities to chunks via MENTIONS relationship.
+    Links entities to chunks via MENTIONS and connects entity relationships.
 
     Args:
         session: Neo4j session object
         doc_dir: Path to document directory containing entities.json
+        doc_id: Document identifier for logging
 
     Returns:
-        Dict with counts: {'entities': N, 'mentions': M}
+        Dict with counts: {'entities': N, 'mentions': M, 'relations': R}
     """
     entities_path = doc_dir / "entities.json"
 
@@ -151,62 +155,110 @@ def ingest_entities(session, doc_dir: Path) -> dict[str, int]:
     with open(entities_path, "r", encoding="utf-8") as f:
         entities_data = json.load(f)
 
-    doc_id = entities_data.get("doc_id", "")
-    chunk_entities = entities_data.get("chunk_entities", [])
+    entities = entities_data.get("entities", [])
+    relationships = entities_data.get("relationships", [])
 
     entity_count = 0
     mention_count = 0
+    relation_count = 0
     seen_entities = set()
+    entity_id_map: dict[str, str] = {}
 
-    for chunk_entry in chunk_entities:
-        chunk_id = chunk_entry.get("chunk_id", "")
-        entities = chunk_entry.get("entities", [])
+    for entity in entities:
+        entity_type = (entity.get("type") or "").strip()
+        source_id = (entity.get("id") or "").strip()
+        name = (entity.get("name") or source_id or "unknown").strip()
+        if not entity_type or not name:
+            continue
 
-        for entity in entities:
-            entity_type = entity.get("type", "")
-            entity_name = entity.get("name", "")
-            entity_id = entity.get(
-                "entity_id", make_entity_id(entity_type, entity_name)
+        entity_id = make_entity_id(entity_type, name)
+        if source_id:
+            entity_id_map[source_id] = entity_id
+
+        if entity_id not in seen_entities:
+            entity_cypher = """
+            MERGE (e:Entity {id: $entity_id})
+            SET e.type = $entity_type,
+                e.name = $entity_name
+            RETURN e.id AS id
+            """
+            session.run(
+                entity_cypher,
+                {
+                    "entity_id": entity_id,
+                    "entity_type": entity_type,
+                    "entity_name": name,
+                },
             )
-            context = entity.get("context", "")
+            seen_entities.add(entity_id)
+            entity_count += 1
 
-            # MERGE Entity node (only count unique entities)
-            if entity_id not in seen_entities:
-                entity_cypher = """
-                MERGE (e:Entity {id: $entity_id})
-                SET e.type = $entity_type,
-                    e.name = $entity_name
-                RETURN e.id AS id
-                """
-                session.run(
-                    entity_cypher,
-                    {
-                        "entity_id": entity_id,
-                        "entity_type": entity_type,
-                        "entity_name": entity_name,
-                    },
-                )
-                seen_entities.add(entity_id)
-                entity_count += 1
-
-            # MERGE MENTIONS relationship
+        for chunk_id in entity.get("source_chunk_ids", []) or []:
             mention_cypher = """
             MATCH (c:Chunk {id: $chunk_id})
             MATCH (e:Entity {id: $entity_id})
             MERGE (c)-[r:MENTIONS]->(e)
-            SET r.context = $context
+            SET r.evidence = $evidence,
+                r.confidence = $confidence
             RETURN type(r) AS rel_type
             """
             session.run(
                 mention_cypher,
-                {"chunk_id": chunk_id, "entity_id": entity_id, "context": context},
+                {
+                    "chunk_id": chunk_id,
+                    "entity_id": entity_id,
+                    "evidence": entity.get("evidence", ""),
+                    "confidence": entity.get("confidence"),
+                },
             )
             mention_count += 1
 
+    for rel in relationships:
+        rel_type = (rel.get("type") or "").strip().upper()
+        if not rel_type.replace("_", "").isalpha():
+            continue
+
+        source_id = entity_id_map.get(rel.get("source_entity_id", ""), "")
+        target_id = entity_id_map.get(rel.get("target_entity_id", ""), "")
+        if not source_id or not target_id:
+            continue
+
+        rel_cypher = f"""
+        MATCH (a:Entity {{id: $source_id}})
+        MATCH (b:Entity {{id: $target_id}})
+        MERGE (a)-[r:{rel_type}]->(b)
+        SET r.confidence = $confidence,
+            r.evidence = $evidence,
+            r.source_chunk_ids = $source_chunk_ids,
+            r.attributes = $attributes,
+            r.supporting_study_ids = $supporting_study_ids,
+            r.verified = $verified
+        RETURN type(r) AS rel_type
+        """
+        session.run(
+            rel_cypher,
+            {
+                "source_id": source_id,
+                "target_id": target_id,
+                "confidence": rel.get("confidence"),
+                "evidence": rel.get("evidence", ""),
+                "source_chunk_ids": rel.get("source_chunk_ids", []),
+                "attributes": rel.get("attributes", {}),
+                "supporting_study_ids": rel.get("supporting_study_ids", []),
+                "verified": rel.get("verified"),
+            },
+        )
+        relation_count += 1
+
     logger.info(
-        f"[OK] MERGE {entity_count} Entities, {mention_count} MENTIONS for doc {doc_id}"
+        f"[OK] MERGE {entity_count} Entities, {mention_count} MENTIONS,"
+        f" {relation_count} RELATIONSHIPS for doc {doc_id}"
     )
-    return {"entities": entity_count, "mentions": mention_count}
+    return {
+        "entities": entity_count,
+        "mentions": mention_count,
+        "relations": relation_count,
+    }
 
 
 def test_connection() -> bool:
@@ -216,8 +268,8 @@ def test_connection() -> bool:
         True if connection successful, False otherwise
     """
     try:
-        driver = GraphDatabase.driver(NEO4J_URI)  # NO AUTH
-        with driver.session() as session:
+        driver = GraphDatabase.driver(NEO4J_URI, auth=NEO4J_AUTH)
+        with driver.session(database=NEO4J_DATABASE) as session:
             result = session.run("RETURN 1 AS test")
             record = result.single()
             value = record["test"] if record else None
@@ -248,10 +300,10 @@ def ingest_directory(doc_dir: Path) -> dict[str, int]:
     with open(normalized_path, "r", encoding="utf-8") as f:
         normalized = json.load(f)
 
-    driver = GraphDatabase.driver(NEO4J_URI)  # NO AUTH
+    driver = GraphDatabase.driver(NEO4J_URI, auth=NEO4J_AUTH)
 
     try:
-        with driver.session() as session:
+        with driver.session(database=NEO4J_DATABASE) as session:
             # Ensure constraints exist
             create_constraints(session)
 
@@ -259,7 +311,8 @@ def ingest_directory(doc_dir: Path) -> dict[str, int]:
             phase1 = ingest_document(session, normalized)
 
             # Phase 2: Entities (if available)
-            phase2 = ingest_entities(session, doc_dir)
+            doc_id = str(phase1.get("doc_id", ""))
+            phase2 = ingest_entities(session, doc_dir, doc_id)
 
         return {**phase1, **phase2}
     finally:
@@ -292,8 +345,8 @@ def main():
         exit(0 if success else 1)
 
     if args.create_constraints:
-        driver = GraphDatabase.driver(NEO4J_URI)  # NO AUTH
-        with driver.session() as session:
+        driver = GraphDatabase.driver(NEO4J_URI, auth=NEO4J_AUTH)
+        with driver.session(database=NEO4J_DATABASE) as session:
             create_constraints(session)
         driver.close()
         print("Constraints created successfully")

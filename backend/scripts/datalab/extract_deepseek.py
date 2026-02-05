@@ -37,6 +37,9 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+# Minimum chunk size to process (skip micro-chunks that waste API calls)
+MIN_CHUNK_SIZE = 150
+
 
 async def extract_chunk(
     client: Any,
@@ -52,9 +55,9 @@ async def extract_chunk(
     messages = build_messages_v31(doc_id=doc_id, chunk_id=chunk_id, text=text)
 
     try:
-        response = await client.chat(messages, max_tokens=8192)
-        result = parse_extraction_result(response, chunk_id=chunk_id, strict=False)
-        return chunk_id, {"success": True, "result": result}
+        content, metrics = await client.chat(messages, max_tokens=4096)
+        result = parse_extraction_result(content, chunk_id=chunk_id, strict=False)
+        return chunk_id, {"success": True, "result": result, "metrics": metrics}
     except Exception as e:
         logger.warning(f"Chunk {chunk_id} failed: {e}")
         return chunk_id, {"success": False, "error": str(e)}
@@ -91,8 +94,9 @@ async def process_document(
     if not chunks:
         return {"status": "skipped", "reason": "no_chunks"}
 
-    # Create extraction tasks for all chunks
+    # Create extraction tasks for all chunks (skip micro-chunks)
     tasks = []
+    skipped_micro = 0
     for idx, chunk in enumerate(chunks):
         if isinstance(chunk, dict):
             chunk_id = chunk.get("chunk_id") or chunk.get("id") or f"chunk_{idx}"
@@ -105,6 +109,11 @@ async def process_document(
         else:
             chunk_id = f"chunk_{idx}"
             text = str(chunk)
+
+        # Skip micro-chunks (too small to contain meaningful entities)
+        if len(text.strip()) < MIN_CHUNK_SIZE:
+            skipped_micro += 1
+            continue
 
         tasks.append(extract_chunk(client, doc_id, chunk_id, text, system_prompt))
 
@@ -191,6 +200,7 @@ async def process_document(
         "relationships": len(all_relationships),
         "failed_chunks": len(failed_chunks),
         "total_chunks": len(chunks),
+        "skipped_micro": skipped_micro,
         "validation_errors": len(validation_errors),
     }
 
@@ -256,8 +266,22 @@ async def run_extraction(
             else:
                 stats["error"] += 1
 
+        cache_hits = client._cache_hits
+        cache_misses = client._cache_misses
+        if cache_hits or cache_misses:
+            cache_ratio = (
+                cache_hits / (cache_hits + cache_misses)
+                if (cache_hits + cache_misses) > 0
+                else 0
+            )
+            logger.info(
+                f"Cache: {cache_hits:,} hit / {cache_misses:,} miss ({cache_ratio:.1%})"
+            )
+
     stats["total_entities"] = total_entities
     stats["total_relationships"] = total_relationships
+    stats["cache_hit_tokens"] = cache_hits if "cache_hits" in dir() else 0
+    stats["cache_miss_tokens"] = cache_misses if "cache_misses" in dir() else 0
     return stats
 
 

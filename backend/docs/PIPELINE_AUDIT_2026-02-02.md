@@ -1,6 +1,7 @@
 # RAG Pipeline Audit Report — 2026-02-02
 
 Verified, evidence-based audit of the LAYRA (KannaDoc) RAG pipeline.
+Counts below are a snapshot; see `AGENTS.md` for the canonical corpus size statement.
 
 ## Verified Counts
 
