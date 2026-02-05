@@ -39,7 +39,7 @@ Similarity Search + MaxSim Reranking
 
 ### Option A: Docker Compose (Recommended)
 
-**Files**: `docker-compose.yml` + `deploy/docker-compose.gpu.yml` (GPU override)
+**Files**: `docker-compose.yml` + `docker-compose.override.yml` (GPU/dev override)
 
 ```yaml
 model-server:
@@ -68,7 +68,7 @@ model-server:
 **Start**:
 ```bash
 # GPU override (recommended for production)
-./scripts/compose-clean -f docker-compose.yml -f deploy/docker-compose.gpu.yml up -d model-server
+./scripts/compose-clean -f docker-compose.yml -f docker-compose.override.yml up -d model-server
 
 # Standard stack (CPU fallback for testing)
 ./scripts/compose-clean up -d model-server
@@ -107,7 +107,7 @@ python model_server.py
 
 ### Environment Variables
 
-**File**: `.env` or `deploy/docker-compose.gpu.yml`
+**File**: `.env` (preferred) or `docker-compose.override.yml`
 
 ```bash
 # Model Path (local cache)
@@ -429,7 +429,7 @@ EMBED_BATCH_SIZE = 2  # from 4
 
 # Solution 2: Enable memory optimization
 # Set PYTORCH_CUDA_ALLOC_CONF in .env, then restart:
-./scripts/compose-clean -f docker-compose.yml -f deploy/docker-compose.gpu.yml up -d model-server
+./scripts/compose-clean -f docker-compose.yml -f docker-compose.override.yml up -d model-server
 
 # Solution 3: Kill other GPU processes
 nvidia-smi | grep python
@@ -553,7 +553,7 @@ redis-cli -a $REDIS_PASSWORD INFO stats | grep hits
 
 ### Deployment
 - [ ] Build Docker image: `docker build -t layra/model-server:latest ./model-server`
-- [ ] Start container: `./scripts/compose-clean -f docker-compose.yml -f deploy/docker-compose.gpu.yml up -d model-server`
+- [ ] Start container: `./scripts/compose-clean -f docker-compose.yml -f docker-compose.override.yml up -d model-server`
 - [ ] Wait for health check: `curl http://localhost:8005/health/ready`
 - [ ] Test embeddings: curl text and image endpoints (see Verification)
 

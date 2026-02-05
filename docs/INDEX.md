@@ -45,6 +45,10 @@ One-page cheat sheet for:
 
 **Policy:** ANY architectural change MUST be reflected in the SSOT first.
 
+### IMPORTANT (Consolidated Repo Map)
+
+- [IMPORTANT_REPO_OVERVIEW](IMPORTANT_REPO_OVERVIEW.md) - services/configs + dependency tree + ASCII diagram
+
 ---
 
 ## 📍 Quick Navigation

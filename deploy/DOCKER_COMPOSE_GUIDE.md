@@ -55,40 +55,14 @@ See `.env.example` for required configuration. Key variables:
 
 ---
 
-### deploy/docker-compose.gpu.yml
-
-**Purpose:** GPU override configuration for enabling NVIDIA GPU support
-
-**What it Does:**
-- Enables GPU access for model-server service
-- Configures CUDA_VISIBLE_DEVICES
-- Sets up NVIDIA runtime and driver capabilities
-
-**Usage:**
-```bash
-# Combine with base configuration
-./scripts/compose-clean -f docker-compose.yml -f deploy/docker-compose.gpu.yml up -d --build
-```
-
-**When to Use:**
-- When GPU support needs to be optional/toggleable
-- Multi-environment setups where GPU may not always be available
-- Explicit GPU configuration (alternative to built-in GPU profile)
-
-**Prerequisites:**
-- NVIDIA GPU driver installed
-- nvidia-container-toolkit installed and configured
-- Test with: `docker run --rm --gpus all nvidia/cuda:12.4.0-base-ubuntu22.04 nvidia-smi`
-
----
-
 ### docker-compose.override.yml (Root Directory)
 
-**Purpose:** Local development overrides (auto-applied by Docker Compose)
+**Purpose:** Optional local overrides for GPU/dev helpers (auto-applied by Docker Compose)
 
 **What it Does:**
-- Enables GPU support for model-server in development
-- Adds Dozzle log viewer UI (port 8888)
+- Enables GPU access for the model-server service
+- Configures CUDA_VISIBLE_DEVICES and NVIDIA runtime flags
+- Adds Dozzle log viewer UI (port 8890)
 - Automatically applied when running `./scripts/compose-clean up` from project root
 
 **Usage:**
@@ -96,16 +70,24 @@ See `.env.example` for required configuration. Key variables:
 # Automatically applied in development
 ./scripts/compose-clean up
 
-# To skip overrides temporarily
-./scripts/compose-clean up --no-deps --build
+# Explicitly apply overrides
+./scripts/compose-clean -f docker-compose.yml -f docker-compose.override.yml up -d --build
+
+# Base configuration without auto-loading overrides
+./scripts/compose-clean -f docker-compose.yml --no-override up -d
 ```
 
 **When to Use:**
 - Local development environment
-- When you want Dozzle log viewer
-- GPU development setup
+- GPU debugging/tuning
+- Optional log viewer access
 
-**Note:** Docker Compose automatically loads `docker-compose.override.yml` if it exists in the same directory as `docker-compose.yml`. To prevent this, rename or move the override file.
+**Prerequisites:**
+- NVIDIA GPU driver installed
+- nvidia-container-toolkit installed and configured
+- Test with: `docker run --rm --gpus all nvidia/cuda:12.4.0-base-ubuntu22.04 nvidia-smi`
+
+**Note:** Docker Compose automatically loads `docker-compose.override.yml` if it exists in the same directory as `docker-compose.yml`. For production, prefer `docker-compose.yml` or `docker-compose.prod.yml`.
 
 ---
 
@@ -116,14 +98,14 @@ Docker Compose supports multiple compose files using the `-f` flag. Files are me
 **Examples:**
 
 ```bash
-# Standard deployment with explicit GPU override
-./scripts/compose-clean -f docker-compose.yml -f deploy/docker-compose.gpu.yml up -d
+# Standard deployment with explicit override
+./scripts/compose-clean -f docker-compose.yml -f docker-compose.override.yml up -d
 
 # Base configuration without auto-loading overrides
 ./scripts/compose-clean -f docker-compose.yml --no-override up -d
 
 # Custom deployment directory
-./scripts/compose-clean -f /path/to/docker-compose.yml -f /path/to/deploy/docker-compose.gpu.yml up -d
+./scripts/compose-clean -f /path/to/docker-compose.yml -f /path/to/docker-compose.override.yml up -d
 ```
 
 ## GPU Setup

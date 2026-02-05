@@ -19,9 +19,9 @@ help:
 	@echo "  ${GREEN}make down${NC}      - Stop all services"
 	@echo "  ${GREEN}make restart${NC}   - Restart all services"
 	@echo ""
-	@echo "  ${GREEN}make up-jina${NC}   - Start Jina API mode (no GPU)"
-	@echo "  ${GREEN}make up-thesis${NC} - Start Thesis/Solo mode"
-	@echo "  ${GREEN}make up-gpu${NC}    - Start GPU optimized mode"
+	@echo "  ${GREEN}make up-jina${NC}   - Start Jina API mode (set EMBEDDING_MODEL=jina_embeddings_v4 in .env)"
+	@echo "  ${GREEN}make up-thesis${NC} - Start single-tenant mode (set SINGLE_TENANT_MODE=true in .env)"
+	@echo "  ${GREEN}make up-gpu${NC}    - Start with GPU/dev overrides"
 	@echo ""
 	@echo "  ${GREEN}make logs${NC}      - View logs (follow mode)"
 	@echo "  ${GREEN}make logs-backend${NC}  - View backend logs only"
@@ -55,23 +55,19 @@ up:
 # Start Jina API mode (no GPU)
 up-jina:
 	@echo "${YELLOW}Starting LAYRA (Jina API mode - no GPU)...${NC}"
-	./scripts/compose-clean -f docker-compose-no-local-embedding.yml up -d
+	@echo "${YELLOW}Ensure EMBEDDING_MODEL=jina_embeddings_v4 in .env${NC}"
+	./scripts/compose-clean up -d
 
-# Start Thesis/Solo mode
+# Start single-tenant mode
 up-thesis:
-	@echo "${YELLOW}Starting LAYRA (Thesis/Solo mode)...${NC}"
-	@if [ -f .env.thesis ]; then \
-		cp .env.thesis .env; \
-		echo "${GREEN}Copied .env.thesis to .env${NC}"; \
-	else \
-		echo "${RED}Warning: .env.thesis not found. Using existing .env${NC}"; \
-	fi
-	docker compose -f docker-compose.thesis.yml up -d
+	@echo "${YELLOW}Starting LAYRA (single-tenant mode)...${NC}"
+	@echo "${YELLOW}Ensure SINGLE_TENANT_MODE=true in .env${NC}"
+	./scripts/compose-clean up -d
 
-# Start GPU optimized mode
+# Start with GPU/dev overrides
 up-gpu:
-	@echo "${YELLOW}Starting LAYRA (GPU optimized mode)...${NC}"
-	./scripts/compose-clean -f docker-compose.gpu.yml up -d
+	@echo "${YELLOW}Starting LAYRA (GPU/dev overrides)...${NC}"
+	./scripts/compose-clean -f docker-compose.yml -f docker-compose.override.yml up -d
 
 # Stop all services
 down:

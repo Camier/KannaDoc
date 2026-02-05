@@ -294,7 +294,7 @@ All endpoint modules (FastAPI routers):
 - `backend/scripts/datalab/aggregate_corpus.py`
 - `backend/scripts/datalab/consolidate_archive.py`
 - `backend/scripts/datalab/create_id_mapping.py`
-- `backend/scripts/datalab/extract_entities_v2.py`
+- `backend/scripts/datalab/extract_deepseek.py`
 - `backend/scripts/datalab/migrate_entities_v2.py`
 - `backend/scripts/datalab/milvus_ingest.py`
 - `backend/scripts/datalab/neo4j_ingest.py` (graph ingestion; currently disabled in deployment)

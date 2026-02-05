@@ -33,15 +33,15 @@ run_modes:
       - curl -f http://localhost:8090/api/v1/health/check
 
   - id: docker-gpu
-    name: Docker GPU Override
-    description: Full stack with explicit GPU override file for model-server
+    name: Docker GPU/Dev Override
+    description: Full stack with explicit override file for model-server GPU/dev helpers
     compose_file: docker-compose.yml
-    overlay_file: deploy/docker-compose.gpu.yml
+    overlay_file: docker-compose.override.yml
     prerequisites:
       - docker >= 20.10
       - docker-compose >= 2.0
       - NVIDIA GPU driver + nvidia-container-toolkit
-    start_command: "./scripts/compose-clean -f docker-compose.yml -f deploy/docker-compose.gpu.yml up -d --build"
+    start_command: "./scripts/compose-clean -f docker-compose.yml -f docker-compose.override.yml up -d --build"
     services:
       included: all
       excluded: []
@@ -346,7 +346,8 @@ services:
     layers:
       - docker
       # - native  # POTENTIAL: Could run natively OR use S3-compatible
-    role: S3-compatible object storage for documents, images
+    role: S3-compatible object storage for documents, images (user-facing)
+    note: Milvus uses a separate internal MinIO service (milvus-minio)
     entrypoint:
       docker:
         compose_service: minio
@@ -484,8 +485,8 @@ services:
     native_requirements:
       - Separate MinIO instance
     blocking_issues:
-      - Duplicate of main MinIO
-      - Could consolidate with main MinIO
+      - Intended to be a separate internal MinIO for Milvus
+      - Consolidation requires reconfiguring Milvus to use the main minio service
     evidence:
       - docker-compose.yml:154-169
 
@@ -966,7 +967,7 @@ critical_paths:
     steps:
       - create: Frontend workflow builder
         service: frontend
-        component: @xyflow/react
+        component: "@xyflow/react"
       - submit: Workflow submission
         service: backend
         endpoint: POST /api/v1/workflow/execute
@@ -1013,7 +1014,8 @@ critical_paths:
       - configure: cp .env.example .env
         action: Edit credentials
       - network: docker network create layra-net
-        condition: external: true
+        condition:
+          external: true
       - build: docker-compose build
         services_built:
           - backend
@@ -1082,9 +1084,9 @@ external_dependencies:
           - moonshot-v1-8k
           - moonshot-v1-32k
           - kimi-k2-thinking
-      - name: Zhipu (GLM)
-        base_url: https://open.bigmodel.cn/api/paas/v4
-        env_key: ZHIPUAI_API_KEY
+      - name: Z.ai (GLM)
+        base_url: https://api.z.ai/api/paas/v4
+        env_key: ZAI_API_KEY
         status: optional
         models:
           - glm-4.7
@@ -1147,12 +1149,12 @@ drift_checks:
     notes: All environment variables in compose are defined in .env.example
 
   - check: backend config vs .env.example
-    status: drift_detected
+    status: documented
     details:
       - config.py defines: milvus_uri, qdrant_url, vector_db
       - .env.example has: MILVUS_URI, QDRANT_URL, VECTOR_DB
-      - Issue: Case mismatch (milvus_uri vs MILVUS_URI)
-      - impact: Pydantic auto-lowercases env vars, but docs inconsistent
+      - Issue: Field names are lowercase while env vars are uppercase
+      - impact: Pydantic reads env vars case-insensitively; docs should use uppercase env keys
     evidence:
       - backend/app/core/config.py:56-65
       - .env.example:58, 127
@@ -1162,13 +1164,13 @@ drift_checks:
     notes: frontend/src/types/types.ts matches backend response schemas
 
   - check: README vs actual compose files
-    status: resolved
+    status: documented
     details:
-      - docker-compose.gpu.yml moved to deploy/docker-compose.gpu.yml
       - docker-compose-no-local-embedding.yml archived to scripts/archive/docker-compose/
-      - docker-compose.backup.yml archived to scripts/archive/docker-compose/
-      - Actual active: docker-compose.yml (base), deploy/docker-compose.gpu.yml (optional override)
-      - Impact: None - documentation correctly references active files
+      - docker-compose.thesis.yml archived to scripts/archive/docker-compose/
+      - docker-compose.gpu.yml / deploy/docker-compose.gpu.yml replaced by docker-compose.override.yml
+      - Actual active: docker-compose.yml (base), docker-compose.override.yml (optional override)
+      - Impact: Documentation should reference active files only
     evidence:
       - README.md (compose-clean usage and compose file list)
       - deploy/DOCKER_COMPOSE_GUIDE.md (created)

@@ -75,7 +75,7 @@ SERVER_IP=http://localhost:8090
 # LLM Providers
 OPENAI_API_KEY=sk-proj-...
 DEEPSEEK_API_KEY=sk-...
-ZHIPUAI_API_KEY=your-zhipu-api-key  # JWT format for GLM models
+ZAI_API_KEY=your-zai-api-key
 DEFAULT_LLM_PROVIDER=openai
 DEFAULT_LLM_MODEL=gpt-4o-mini
 
@@ -100,13 +100,11 @@ KAFKA_BROKER_URL=kafka:9094
 | Provider | Models | Endpoint | Notes |
 |----------|--------|----------|-------|
 | DeepSeek | deepseek-chat, deepseek-r1 | https://api.deepseek.com | Working |
-| Zhipu | glm-4, glm-4-flash | https://open.bigmodel.cn/api/paas/v4 | Regular |
-| **Zhipu Coding** | glm-4.5, glm-4.6, glm-4.7 | https://open.bigmodel.cn/api/coding/paas/v4 | Requires subscription |
+| Z.ai | glm-4.5, glm-4.6, glm-4.7 | https://api.z.ai/api/paas/v4 | GLM provider SSOT |
 | OpenAI | gpt-4o, gpt-4o-mini | https://api.openai.com | Default |
 
 **Provider Auto-Detection:**
-- `glm-4.5*`, `glm-4.6*`, `glm-4.7*` → Zhipu Coding Plan
-- `glm-*` → Zhipu Regular
+- `glm-*` → Z.ai
 - `deepseek-*` → DeepSeek
 - `gpt-*` → OpenAI
 
@@ -250,13 +248,6 @@ docker logs layra-frontend
 docker exec layra-mongodb mongosh \
   "mongodb://<user>:<password>@localhost:27017/chat_mongodb?authSource=admin" \
   --eval "db.model_config.findOne({username: 'your_username'})"
-```
-
-### GLM-4.7 Returns "余额不足" (Insufficient Balance)
-**Solution:** Use ZhipuAI Coding Plan endpoint
-```bash
-# Update model_url to coding plan endpoint
-# https://open.bigmodel.cn/api/coding/paas/v4
 ```
 
 ### RAG Search Too Slow (>10s)

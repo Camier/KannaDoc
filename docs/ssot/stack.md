@@ -379,7 +379,8 @@ docker exec layra-redis redis-cli -a password ping
 **ID:** `minio`
 **Type:** container
 **Layers:** docker (native: ⚠️ feasible, external: possible)
-**Role:** S3-compatible object storage for documents, images
+**Role:** S3-compatible object storage for documents, images (user-facing)
+**Note:** Milvus uses a separate internal MinIO service (`milvus-minio`) for vector storage
 
 **Entrypoint:**
 - Docker: `minio/minio` image, port 9000
@@ -887,11 +888,11 @@ GF_SECURITY_ADMIN_PASSWORD=admin
 
 **Persistence:** `milvus_minio` volume
 
-**Native Feasibility:** ⚠️ **Not recommended - duplicate of main MinIO**
+**Native Feasibility:** ⚠️ **Not recommended - internal Milvus dependency**
 
 **Blockers:**
-- Duplicate of main MinIO
-- Could consolidate with main MinIO
+- Intended to be a separate internal MinIO for Milvus
+- Consolidation requires reconfiguring Milvus to use the main `minio` service
 
 **Evidence:**
 - `docker-compose.yml:154-169`
@@ -1075,8 +1076,7 @@ Frontend (display execution progress)
 | OpenAI | https://api.openai.com/v1 | OPENAI_API_KEY | 120s | ✅ Required | gpt-4o, gpt-4o-mini |
 | DeepSeek | https://api.deepseek.com | DEEPSEEK_API_KEY | 180s | ✅ Required | deepseek-chat, deepseek-coder |
 | Moonshot (Kimi) | https://api.moonshot.cn/v1 | MOONSHOT_API_KEY | 120s | Optional | moonshot-v1-8k, kimi-k2-thinking |
-| Zhipu (GLM) | https://open.bigmodel.cn/api/paas/v4 | ZHIPUAI_API_KEY | 180s | Optional | glm-4, glm-4-flash, glm-4-plus |
-| **Zhipu Coding** | https://open.bigmodel.cn/api/coding/paas/v4 | ZHIPUAI_API_KEY | 180s | Optional | glm-4.5, glm-4.6, glm-4.7 |
+| Z.ai (GLM) | https://api.z.ai/api/paas/v4 | ZAI_API_KEY | 180s | Optional | glm-4.5, glm-4.6, glm-4.7, glm-4.7-flash |
 | MiniMax | https://api.minimax.chat/v1 | MINIMAX_API_KEY | 120s | Optional | abab5.5-chat |
 | Cohere | https://api.cohere.ai/v1 | COHERE_API_KEY | 120s | Optional | command-r |
 | Ollama | https://api.ollama.ai/v1 | OLLAMA_API_KEY | 120s | Optional | llama3, mistral |
@@ -1087,19 +1087,16 @@ Frontend (display execution progress)
 - `gpt-*` → OpenAI
 - `deepseek-*` → DeepSeek
 - `kimi-*` or `moonshot-*` → Moonshot
-- `glm-4.5*`, `glm-4.6*`, `glm-4.7*` → **Zhipu Coding Plan**
-- `glm-*` or `zhipu-*` → Zhipu (Regular)
+- `glm-*` → Z.ai (GLM)
 - `abab*` or `minimax-*` → MiniMax
 - `command*` or `cohere-*` → Cohere
 - `llama*`, `mistral*`, `mixtral*` → Ollama
 - `claude-*` → Anthropic
 - `gemini-*` → Google
 
-**Note:** Zhipu Coding Plan requires separate subscription. JWT authentication (id.secret format) required.
-
 **Timeout Configuration:**
 - Default: 120s (configurable via `providers.yaml`)
-- DeepSeek/Zhipu variants: 180s (longer for reasoning models)
+- DeepSeek/GLM variants: 180s (longer for reasoning models)
 - Implementation: `ProviderRegistry.get_timeout_for_model(model_name)`
 
 ---
@@ -1147,27 +1144,27 @@ Frontend (display execution progress)
 ---
 
 #### ⚠️ Backend Config vs .env.example
-**Status:** Drift Detected
-**Issue:** Case mismatch between `config.py` and `.env.example`
+**Status:** Documented
+**Issue:** Code field names are lowercase while env vars are uppercase
 **Details:**
 - `config.py` defines: `milvus_uri`, `qdrant_url`, `vector_db`
 - `.env.example` has: `MILVUS_URI`, `QDRANT_URL`, `VECTOR_DB`
-- **Impact:** Pydantic auto-lowercases env vars, but docs inconsistent
+- **Impact:** Pydantic reads env vars case-insensitively; docs should use uppercase env keys
 **Evidence:**
 - `backend/app/core/config.py:56-65`
 - `.env.example:58, 127`
 
-**Fix:** Update `.env.example` to match Pydantic expectations (lowercase)
+**Fix:** Keep `.env.example` in uppercase and standardize docs to uppercase env keys; treat lowercase names as internal field names
 
 ---
 
 #### ⚠️ README vs Actual Compose Files
-**Status:** Drift Detected
-**Issue:** Docs referenced a missing thesis compose file
+**Status:** Documented
+**Issue:** Docs referenced missing compose variants
 **Details:**
-- `docker-compose.gpu.yml` - Moved to `deploy/docker-compose.gpu.yml`
 - `docker-compose-no-local-embedding.yml` - Archived to `scripts/archive/docker-compose/`
-- `docker-compose.backup.yml` - Archived to `scripts/archive/docker-compose/`
+- `docker-compose.thesis.yml` + `.env.thesis` - Archived to `scripts/archive/docker-compose/`
+- `docker-compose.gpu.yml` / `deploy/docker-compose.gpu.yml` - Replaced by `docker-compose.override.yml`
 - **Actual active:** `docker-compose.yml` (plus optional `docker-compose.override.yml`)
 - **Impact:** Confusing deployment guidance until docs are aligned
 **Evidence:**

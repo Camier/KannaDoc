@@ -2299,13 +2299,13 @@ The following variables are required but have no default value in config.py. The
 
 **Critical (System Won't Start Without These):**
 - `SECRET_KEY` - JWT signing key
-- `db_url` - MySQL connection string
-- `redis_password` - Redis authentication
-- `mongodb_root_username` - MongoDB admin user
-- `mongodb_root_password` - MongoDB admin password
-- `minio_access_key` - MinIO access key
-- `minio_secret_key` - MinIO secret key
-- `milvus_uri` - Milvus connection URI
+- `DB_URL` - MySQL connection string
+- `REDIS_PASSWORD` - Redis authentication
+- `MONGODB_ROOT_USERNAME` - MongoDB admin user
+- `MONGODB_ROOT_PASSWORD` - MongoDB admin password
+- `MINIO_ACCESS_KEY` - MinIO access key
+- `MINIO_SECRET_KEY` - MinIO secret key
+- `MILVUS_URI` - Milvus connection URI
 
 **At Least One LLM Provider Key Required:**
 - `OPENAI_API_KEY` (recommended)

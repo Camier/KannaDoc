@@ -70,14 +70,14 @@ Practical note: most module-specific details are consolidated into the root `AGE
 - `docker-compose.prod.yml`
 - `docker-compose.override.yml`
 
-### “Drift radar” (things referenced but missing)
-Some helpers/docs reference compose files that do **not** exist in this checkout:
+### Archived compose variants (not present)
+These variants are archived and should not be referenced in docs:
 - `docker-compose-no-local-embedding.yml` (referenced by `Makefile` target `up-jina`)
 - `docker-compose.thesis.yml` + `.env.thesis` (referenced by `Makefile` target `up-thesis`)
 - `docker-compose.gpu.yml` (referenced by `Makefile` target `up-gpu`)
-- `deploy/docker-compose.gpu.yml` (mentioned in `scripts/compose-clean --help`)
+- `deploy/docker-compose.gpu.yml` (replaced by `docker-compose.override.yml`)
 
-If you need these modes, they likely need to be restored (or the Makefile targets updated to current reality).
+If you need these modes, restore them from `scripts/archive/docker-compose/` or update the Makefile targets.
 
 ### Services (from `docker-compose.yml`)
 Core application:
@@ -193,7 +193,7 @@ Dependencies:
 
 ### DataLab pipeline (scripts)
 - `backend/scripts/datalab/` — orchestration scripts (entity extraction, ingest, eval, optimize, verify)
-  - examples: `extract_entities_v2.py`, `milvus_ingest.py`, `rag_eval.py`, `rag_optimize.py`, `verify_merge.py`
+  - examples: `extract_deepseek.py`, `milvus_ingest.py`, `rag_eval.py`, `rag_optimize.py`, `verify_merge.py`
 
 ### Pipeline audit
 - `backend/docs/PIPELINE_AUDIT_2026-02-02.md` — evidence-based counts + known gaps

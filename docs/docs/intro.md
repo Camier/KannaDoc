@@ -47,7 +47,7 @@ vim .env  # Edit key parameters (SERVER_IP, MODEL_BASE_URL)
 Enable GPU for the model server:
 
 ```bash
-./scripts/compose-clean -f docker-compose.yml -f deploy/docker-compose.gpu.yml up -d --build
+./scripts/compose-clean -f docker-compose.yml -f docker-compose.override.yml up -d --build
 ```
 :::
 

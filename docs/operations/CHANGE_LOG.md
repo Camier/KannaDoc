@@ -56,7 +56,7 @@ providers:
     models: [...]
 
   zai:
-    base_url: "https://api.z.ai/api/coding/paas/v4"
+    base_url: "https://api.z.ai/api/paas/v4"
     env_key: "ZAI_API_KEY"
     timeout: 180  # ← NEW
     vision: true
