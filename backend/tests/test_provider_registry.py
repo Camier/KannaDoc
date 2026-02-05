@@ -24,10 +24,9 @@ class TestProviderRegistry:
         """Test that providers are loaded correctly."""
         providers = ProviderRegistry.get_all_providers()
         assert isinstance(providers, list)
-        assert len(providers) >= 6  # deepseek, zai, zhipu, cliproxyapi, ollama-cloud, minimax
+        assert len(providers) >= 5  # deepseek, zai, cliproxyapi, ollama-cloud, minimax
         assert "deepseek" in providers
         assert "zai" in providers
-        assert "zhipu" in providers
         assert "cliproxyapi" in providers
 
     def test_get_provider_config(self):
@@ -50,14 +49,13 @@ class TestProviderRegistry:
         """Test getting timeout for specific providers."""
         assert ProviderRegistry.get_timeout("deepseek") == 180
         assert ProviderRegistry.get_timeout("zai") == 180
-        assert ProviderRegistry.get_timeout("zhipu") == 180
         assert ProviderRegistry.get_timeout("cliproxyapi") == 120
         assert ProviderRegistry.get_timeout("ollama-cloud") == 120
         assert ProviderRegistry.get_timeout("minimax") == 120
 
     def test_get_timeout_for_model_glm(self):
         """Test timeout detection for GLM models."""
-        # GLM models should get 180s timeout (zai/zhipu)
+        # GLM models should get 180s timeout (zai)
         assert ProviderRegistry.get_timeout_for_model("glm-4.7-flash") == 180
         assert ProviderRegistry.get_timeout_for_model("glm-4.6") == 180
         assert ProviderRegistry.get_timeout_for_model("glm-4-plus") == 180

@@ -3,9 +3,9 @@ import pytest
 import pytest_asyncio
 import os
 import sys
+from typing import AsyncGenerator
 from pathlib import Path
-from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sessionmaker
 from sqlalchemy.pool import StaticPool
 from httpx import AsyncClient, ASGITransport
 from unittest.mock import AsyncMock, MagicMock, Mock
@@ -15,19 +15,26 @@ from unittest.mock import AsyncMock, MagicMock, Mock
 backend_dir = Path(__file__).parent
 sys.path.insert(0, str(backend_dir))
 
+if not os.path.exists("/.dockerenv"):
+    milvus_uri = os.environ.get("MILVUS_URI")
+    if not milvus_uri or "milvus-standalone" in milvus_uri:
+        os.environ["MILVUS_URI"] = "http://localhost:19531"
+
 # Use an in-memory SQLite database for testing
 TEST_DATABASE_URL = "sqlite+aiosqlite:///:memory:"
 
 
 # Create mock modules to prevent actual imports
-sys.modules['app.utils.kafka_producer'] = Mock()
-sys.modules['app.utils.kafka_consumer'] = Mock()
-sys.modules['app.utils.kafka_producer'].kafka_producer_manager = MagicMock()
-sys.modules['app.utils.kafka_producer'].kafka_producer_manager.start = AsyncMock()
-sys.modules['app.utils.kafka_consumer'].kafka_consumer_manager = MagicMock()
-sys.modules['app.utils.kafka_consumer'].kafka_consumer_manager.consume_messages = AsyncMock()
-sys.modules['app.utils.kafka_consumer'].kafka_consumer_manager.stop = AsyncMock()
-sys.modules['docker'] = Mock()  # Mock docker module
+sys.modules["app.utils.kafka_producer"] = Mock()
+sys.modules["app.utils.kafka_consumer"] = Mock()
+sys.modules["app.utils.kafka_producer"].kafka_producer_manager = MagicMock()
+sys.modules["app.utils.kafka_producer"].kafka_producer_manager.start = AsyncMock()
+sys.modules["app.utils.kafka_consumer"].kafka_consumer_manager = MagicMock()
+sys.modules[
+    "app.utils.kafka_consumer"
+].kafka_consumer_manager.consume_messages = AsyncMock()
+sys.modules["app.utils.kafka_consumer"].kafka_consumer_manager.stop = AsyncMock()
+sys.modules["docker"] = Mock()  # Mock docker module
 
 
 @pytest_asyncio.fixture(scope="function")
@@ -50,11 +57,9 @@ async def engine():
 
 
 @pytest_asyncio.fixture(scope="function")
-async def db(engine) -> AsyncSession:
+async def db(engine) -> AsyncGenerator[AsyncSession, None]:
     """Create a test database session"""
-    async_session = sessionmaker(
-        engine, expire_on_commit=False, class_=AsyncSession
-    )
+    async_session = async_sessionmaker(engine, expire_on_commit=False)
     async with async_session() as session:
         yield session
 
@@ -67,7 +72,6 @@ async def client(db: AsyncSession):
     """
     # Mock Redis
     mock_redis_instance = MagicMock()
-    mock_redis_instance.get_token_connection = AsyncMock()
     mock_redis_instance.get_task_connection = AsyncMock()
 
     # Mock Mongo
@@ -104,7 +108,9 @@ async def client(db: AsyncSession):
         # Mock MongoDB dependency for the auth endpoint
         async def mock_get_mongo():
             mock_mongo_for_dep = AsyncMock()
-            mock_mongo_for_dep.create_model_config = AsyncMock(return_value={"status": "success"})
+            mock_mongo_for_dep.create_model_config = AsyncMock(
+                return_value={"status": "success"}
+            )
             return mock_mongo_for_dep
 
         app.dependency_overrides[get_mysql_session] = override_get_mysql_session
@@ -112,8 +118,7 @@ async def client(db: AsyncSession):
 
         # Create AsyncClient with ASGI transport
         async with AsyncClient(
-            transport=ASGITransport(app=app),
-            base_url="http://test"
+            transport=ASGITransport(app=app), base_url="http://test"
         ) as ac:
             yield ac
 

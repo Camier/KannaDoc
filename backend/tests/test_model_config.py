@@ -704,13 +704,13 @@ class TestExplicitProviderField:
                 provider="nonexistent-provider",
             )
 
-    def test_explicit_provider_overrides_auto_detection(self, both_glm_env):
+    def test_explicit_provider_overrides_auto_detection(self, clean_env):
         from app.rag.provider_client import ProviderClient
 
         result = ProviderClient.get_provider_for_model(
-            "glm-4.7-flash", explicit_provider="zhipu"
+            "glm-4.7-flash", explicit_provider="zai"
         )
-        assert result == "zhipu"
+        assert result == "zai"
 
     def test_none_provider_uses_auto_detection(self, zai_env):
         from app.rag.provider_client import ProviderClient
