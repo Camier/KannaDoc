@@ -9,10 +9,12 @@ Deploys the V3 thesis blueprint workflow with:
 - Export to Markdown/LaTeX
 
 Usage:
-    THESIS_PASSWORD=password python3 deploy_v3.py
+    python3 deploy_v3.py
 
 Alternative with custom username:
-    THESIS_USERNAME=miko THESIS_PASSWORD=password python3 deploy_v3.py
+    THESIS_USERNAME=miko python3 deploy_v3.py
+
+Note: Authentication has been removed for research-only deployment.
 """
 
 import requests
@@ -24,29 +26,12 @@ from pathlib import Path
 # Configuration
 API_BASE = "http://localhost:8090/api/v1"
 USERNAME = os.environ.get("THESIS_USERNAME", "miko")
-PASSWORD = os.environ.get("THESIS_PASSWORD")
 KB_ID = "miko_e6643365-8b03_4bea-a69b_7a1df00ec653"  # Active Thesis Corpus KB
 
 # Directory paths
 SCRIPT_DIR = Path(__file__).parent
 PROMPTS_DIR = SCRIPT_DIR / "prompts"
 CODE_NODES_DIR = SCRIPT_DIR / "code_nodes"
-
-if not PASSWORD:
-    raise SystemExit("Error: THESIS_PASSWORD environment variable must be set.")
-
-
-def get_token():
-    """Authenticate and get JWT token."""
-    url = f"{API_BASE}/auth/login"
-    data = {"username": USERNAME, "password": PASSWORD}
-    try:
-        response = requests.post(url, data=data)
-        response.raise_for_status()
-        return response.json()["access_token"]
-    except Exception as e:
-        print(f"Auth failed: {e}")
-        exit(1)
 
 
 def load_file(path):
@@ -59,9 +44,9 @@ def load_file(path):
         return ""
 
 
-def create_workflow(token):
+def create_workflow():
     """Create and deploy the V3 workflow."""
-    headers = {"Authorization": f"Bearer {token}"}
+    headers = {}
     workflow_id = f"{USERNAME}_{uuid.uuid4()}"
 
     # --- PROMPTS ---
@@ -537,8 +522,7 @@ return {"status": "final_changes_applied"}
 
 
 if __name__ == "__main__":
-    token = get_token()
-    workflow_id = create_workflow(token)
+    workflow_id = create_workflow()
 
     if workflow_id:
         print("\n" + "=" * 60)

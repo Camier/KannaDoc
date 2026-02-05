@@ -170,6 +170,8 @@ services:
       - MINIO_SECRET_ACCESS_KEY=${MILVUS_MINIO_SECRET_KEY:-minioadmin}
     volumes:
       - milvus_data:/var/lib/milvus
+    ports:
+      - "127.0.0.1:19531:19530"
     depends_on:
       milvus-etcd:
         condition: service_healthy
