@@ -24,7 +24,6 @@ class Settings(BaseSettings):
     redis_url: str = "localhost:6379"
     # SECURITY: Removed hardcoded password - must be set via environment variables
     redis_password: str = ""
-    redis_token_db: int = 0
     redis_task_db: int = 1
     redis_lock_db: int = 2
     mongodb_url: str = "localhost:27017"

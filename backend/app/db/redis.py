@@ -1,4 +1,6 @@
-from redis import asyncio as aioredis
+import importlib
+
+aioredis = importlib.import_module("redis.asyncio")
 from app.core.config import settings
 
 
@@ -18,9 +20,6 @@ class Redis:
     async def get_redis_connection(self, db: int = 0):
         pool = self.get_redis_pool(db)
         return aioredis.Redis(connection_pool=pool)
-
-    async def get_token_connection(self):
-        return await self.get_redis_connection(settings.redis_token_db)
 
     async def get_task_connection(self):
         return await self.get_redis_connection(settings.redis_task_db)
