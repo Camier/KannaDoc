@@ -1,12 +1,1973 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "b214c728627cd94b5194ca71e717d2018a83af3369e3ed6cbe4cb746e04a6313",
-  "extracted_at": "2026-02-01T09:01:22.225038+00:00",
-  "extractor": "legacy-migration",
-  "entities": [],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.085342+00:00",
-    "original_file": "entities.json"
-  }
+  "entities": [
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "KhoiSan community",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5f508747307405fd62a27aa3b488da51"
+      ],
+      "confidence": 0.95,
+      "evidence": "indigenous KhoiSan community",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: KhoiSan \u2013 indigenous healthcare",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5f508747307405fd62a27aa3b488da51"
+      ],
+      "confidence": 0.8,
+      "evidence": "relies on indigenous healthcare",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "qualitative approach",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "f649a884017e06679adac4163da776de"
+      ],
+      "confidence": 0.9,
+      "evidence": "A qualitative approach",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "indigenous African research design",
+      "attributes": {
+        "design": "qualitative indigenous African research design"
+      },
+      "source_chunk_ids": [
+        "f649a884017e06679adac4163da776de"
+      ],
+      "confidence": 0.85,
+      "evidence": "indigenous African research design",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "African Indigenous Health Research Framework",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "f649a884017e06679adac4163da776de"
+      ],
+      "confidence": 0.8,
+      "evidence": "African Indigenous Health Research Framework",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "orature",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "f649a884017e06679adac4163da776de"
+      ],
+      "confidence": 0.75,
+      "evidence": "classical African indigenous method of data-collection, namely orature",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "theoretical sampling",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "f649a884017e06679adac4163da776de"
+      ],
+      "confidence": 0.7,
+      "evidence": "Theoretical sampling was used",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "four-step analysis",
+      "attributes": {
+        "evidence_level": 2,
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "f649a884017e06679adac4163da776de"
+      ],
+      "confidence": 0.65,
+      "evidence": "four-step analysis of the mentioned framework",
+      "verified": false
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "KhoiSan community",
+      "attributes": {},
+      "source_chunk_ids": [
+        "aa44da9bad1f31f9ceb5dc9f31c6f895"
+      ],
+      "confidence": 0.9,
+      "evidence": "KhoiSan community",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: KhoiSan \u2013 dialogues \u2013 psychosocial health management",
+      "attributes": {},
+      "source_chunk_ids": [
+        "aa44da9bad1f31f9ceb5dc9f31c6f895"
+      ],
+      "confidence": 0.7,
+      "evidence": "therapeutic merits of dialogues",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "psychosocial health management",
+      "attributes": {},
+      "source_chunk_ids": [
+        "aa44da9bad1f31f9ceb5dc9f31c6f895"
+      ],
+      "confidence": 0.8,
+      "evidence": "management of psychosocial health challenges",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "KhoiSan community",
+      "attributes": {},
+      "source_chunk_ids": [
+        "57898c7cc2c02797b2b451cc35bb51d9"
+      ],
+      "confidence": 0.95,
+      "evidence": "KhoiSan community",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: KhoiSan \u2013 management of psychosocial health challenges",
+      "attributes": {},
+      "source_chunk_ids": [
+        "57898c7cc2c02797b2b451cc35bb51d9"
+      ],
+      "confidence": 0.8,
+      "evidence": "communal indigenous practices for the management of psychosocial health challenges",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "management of psychosocial health challenges",
+      "attributes": {},
+      "source_chunk_ids": [
+        "57898c7cc2c02797b2b451cc35bb51d9"
+      ],
+      "confidence": 0.85,
+      "evidence": "management of psychosocial health challenges",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Inxabasas",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bb2a07b2026e7a60af851e705c8f5d0"
+      ],
+      "confidence": 0.8,
+      "evidence": "Keywords: Inxabasas",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "TraditionalUse",
+      "name": "healing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bb2a07b2026e7a60af851e705c8f5d0"
+      ],
+      "confidence": 0.9,
+      "evidence": "Keywords: healing",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "psychosocial health",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bb2a07b2026e7a60af851e705c8f5d0"
+      ],
+      "confidence": 0.85,
+      "evidence": "Keywords: psychosocial health",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "dialogues of healing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bb2a07b2026e7a60af851e705c8f5d0"
+      ],
+      "confidence": 0.8,
+      "evidence": "Keywords: dialogues of healing",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "mpho ya badimo",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bb2a07b2026e7a60af851e705c8f5d0"
+      ],
+      "confidence": 0.7,
+      "evidence": "Keywords: mpho ya badimo",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "the wheel of life",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bb2a07b2026e7a60af851e705c8f5d0"
+      ],
+      "confidence": 0.7,
+      "evidence": "Keywords: the wheel of life",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Moshabela, Zuma and Gaede (2016)",
+      "attributes": {
+        "year": 2016
+      },
+      "source_chunk_ids": [
+        "a715db1d46ac094d0f3a8d90ccb34e2c"
+      ],
+      "confidence": 0.9,
+      "evidence": "Moshabela, Zuma and Gaede (2016)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "indigenous health practices functional",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "a715db1d46ac094d0f3a8d90ccb34e2c"
+      ],
+      "confidence": 0.8,
+      "evidence": "indigenous health practices remain functional",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "indigenous communities in South Africa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a715db1d46ac094d0f3a8d90ccb34e2c"
+      ],
+      "confidence": 0.85,
+      "evidence": "indigenous communities in South Africa",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Salamonsen and Ahlzen (2018), Malokoane et al. (2020) and Rispel (2016)",
+      "attributes": {
+        "year": "2016-2020"
+      },
+      "source_chunk_ids": [
+        "a715db1d46ac094d0f3a8d90ccb34e2c"
+      ],
+      "confidence": 0.9,
+      "evidence": "Salamonsen and Ahlzen (2018), Malokoane et al. (2020) and Rispel (2016)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "western health systems ineffective",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "a715db1d46ac094d0f3a8d90ccb34e2c"
+      ],
+      "confidence": 0.8,
+      "evidence": "western health systems with ineffective outcomes",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "patient distrust",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "a715db1d46ac094d0f3a8d90ccb34e2c"
+      ],
+      "confidence": 0.75,
+      "evidence": "increasing levels of patient distrust",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "under-funded, under-researched, under-resourced health systems",
+      "attributes": {
+        "condition_type": "systemic issue"
+      },
+      "source_chunk_ids": [
+        "a715db1d46ac094d0f3a8d90ccb34e2c"
+      ],
+      "confidence": 0.7,
+      "evidence": "under-funded, under-researched and under-resourced",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Mahlatsi et al., 2021",
+      "attributes": {
+        "year": 2021,
+        "doi": "https://doi.org/10.4102/hsag.v26i0.1626"
+      },
+      "source_chunk_ids": [
+        "2540bccedea987c2197368852d306dac"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mahlatsi, K.S., Pienaar, A.J., Nare, N.E. & Mulaudzi, T.M., 2021",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "conceptual framework",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "2540bccedea987c2197368852d306dac"
+      ],
+      "confidence": 0.8,
+      "evidence": "A conceptual framework for psychosocial health management",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "KhoiSan",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2540bccedea987c2197368852d306dac"
+      ],
+      "confidence": 0.9,
+      "evidence": "indigenous KhoiSan health dialogues",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "psychosocial health management",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2540bccedea987c2197368852d306dac"
+      ],
+      "confidence": 0.85,
+      "evidence": "psychosocial health management",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "psychosocial health issues",
+      "attributes": {
+        "condition_type": "wellness state"
+      },
+      "source_chunk_ids": [
+        "2540bccedea987c2197368852d306dac"
+      ],
+      "confidence": 0.75,
+      "evidence": "psychosocial health management",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "South African people",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e84bf576bc1fd0c798c9a1442f206bca"
+      ],
+      "confidence": 0.8,
+      "evidence": "health of its people",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: South African \u2013 indigenous health system \u2013 healing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e84bf576bc1fd0c798c9a1442f206bca"
+      ],
+      "confidence": 0.7,
+      "evidence": "authentic practices of Africans",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "healing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e84bf576bc1fd0c798c9a1442f206bca"
+      ],
+      "confidence": 0.75,
+      "evidence": "dialogues of healing",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Burger and Christian (2020)",
+      "attributes": {
+        "year": 2020
+      },
+      "source_chunk_ids": [
+        "e84bf576bc1fd0c798c9a1442f206bca"
+      ],
+      "confidence": 0.9,
+      "evidence": "Burger and Christian (2020)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "historical analysis",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "e84bf576bc1fd0c798c9a1442f206bca"
+      ],
+      "confidence": 0.7,
+      "evidence": "South African history",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "KhoiSan community",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f92a092a8d8b9e46b12737b06d6f3ca0"
+      ],
+      "confidence": 0.9,
+      "evidence": "KhoiSan community in the Northern Cape",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: KhoiSan \u2013 psychosocial health practices",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f92a092a8d8b9e46b12737b06d6f3ca0"
+      ],
+      "confidence": 0.8,
+      "evidence": "community copes with their own psychosocial health practices",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "psychosocial health practices",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f92a092a8d8b9e46b12737b06d6f3ca0"
+      ],
+      "confidence": 0.85,
+      "evidence": "psychosocial health practices",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "psychosocial challenges",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "f92a092a8d8b9e46b12737b06d6f3ca0"
+      ],
+      "confidence": 0.8,
+      "evidence": "managing their psychosocial challenges",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "African Indigenous Health Research Framework",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "096cb16eaa063f888d0e807dd546a34a"
+      ],
+      "confidence": 0.8,
+      "evidence": "African Indigenous Health Research Framework",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Pienaar 2017",
+      "attributes": {
+        "year": 2017
+      },
+      "source_chunk_ids": [
+        "096cb16eaa063f888d0e807dd546a34a"
+      ],
+      "confidence": 0.7,
+      "evidence": "Pienaar 2017",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "KhoiSan community",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e35e85eb5e0dd5d9d828d8d80bb68563"
+      ],
+      "confidence": 0.9,
+      "evidence": "indigenous KhoiSan community",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Pienaar 2017",
+      "attributes": {
+        "year": 2017
+      },
+      "source_chunk_ids": [
+        "e35e85eb5e0dd5d9d828d8d80bb68563"
+      ],
+      "confidence": 0.85,
+      "evidence": "Pienaar 2017",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "research partnership",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "e35e85eb5e0dd5d9d828d8d80bb68563"
+      ],
+      "confidence": 0.8,
+      "evidence": "negotiated partnership research",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "African",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5e156b3e95de86274e28fd1596e3be29"
+      ],
+      "confidence": 0.8,
+      "evidence": "African indigenous approach",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Pienaar (2017)",
+      "attributes": {
+        "year": 2017
+      },
+      "source_chunk_ids": [
+        "5e156b3e95de86274e28fd1596e3be29"
+      ],
+      "confidence": 0.9,
+      "evidence": "Pienaar (2017) proposes",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "indigenous knowledge systems",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "5e156b3e95de86274e28fd1596e3be29"
+      ],
+      "confidence": 0.7,
+      "evidence": "African indigenous knowledge systems",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "KhoiSan",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6f61d12ba700345b6bb0988efc1f48f1"
+      ],
+      "confidence": 0.95,
+      "evidence": "African indigenous community, namely KhoiSan",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "KhoiSan community",
+      "attributes": {},
+      "source_chunk_ids": [
+        "66bc7111806874b1e1a1c9139e13eae3"
+      ],
+      "confidence": 0.9,
+      "evidence": "KhoiSan King and the community",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "NWU research project",
+      "attributes": {
+        "year": 2018,
+        "ethics_approval": "NWU-00724-17-A9, FAST-HSEC, NWU-RERC"
+      },
+      "source_chunk_ids": [
+        "66bc7111806874b1e1a1c9139e13eae3"
+      ],
+      "confidence": 0.85,
+      "evidence": "NWU Ethics Committee, research project",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "ethical approval",
+      "attributes": {
+        "evidence_level": 5
+      },
+      "source_chunk_ids": [
+        "66bc7111806874b1e1a1c9139e13eae3"
+      ],
+      "confidence": 0.8,
+      "evidence": "approval from NWU Ethics Committee",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "KhoiSan community",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7d79c44437dfe4aa99bae97d723a5cc1"
+      ],
+      "confidence": 0.95,
+      "evidence": "KhoiSan community",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Ouzman (2005)",
+      "attributes": {
+        "year": 2005
+      },
+      "source_chunk_ids": [
+        "7d79c44437dfe4aa99bae97d723a5cc1"
+      ],
+      "confidence": 0.85,
+      "evidence": "Ouzman (2005)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Blanco (2018)",
+      "attributes": {
+        "year": 2018
+      },
+      "source_chunk_ids": [
+        "7d79c44437dfe4aa99bae97d723a5cc1"
+      ],
+      "confidence": 0.85,
+      "evidence": "Blanco (2018)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "ethnographic study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "7d79c44437dfe4aa99bae97d723a5cc1"
+      ],
+      "confidence": 0.7,
+      "evidence": "articulate that the communicative load",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "KhoiSan community",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2ac6f60eb882fba1840b7847efd27f73"
+      ],
+      "confidence": 0.95,
+      "evidence": "KhoiSan community",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: KhoiSan \u2013 Sceletium tortuosum \u2013 psychosocial health",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2ac6f60eb882fba1840b7847efd27f73"
+      ],
+      "confidence": 0.85,
+      "evidence": "Dialogues of healing in the management of psychosocial health challenges",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2ac6f60eb882fba1840b7847efd27f73"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "psychosocial health",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2ac6f60eb882fba1840b7847efd27f73"
+      ],
+      "confidence": 0.8,
+      "evidence": "psychosocial health challenges",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "KhoiSan community",
+      "attributes": {},
+      "source_chunk_ids": [
+        "843c36b43a1458ef08e3a24dda068c06"
+      ],
+      "confidence": 0.9,
+      "evidence": "KhoiSan community maintains this balance",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: KhoiSan \u2013 rituals \u2013 healing/balance",
+      "attributes": {},
+      "source_chunk_ids": [
+        "843c36b43a1458ef08e3a24dda068c06"
+      ],
+      "confidence": 0.8,
+      "evidence": "regularly performing connecting rituals",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "healing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "843c36b43a1458ef08e3a24dda068c06"
+      ],
+      "confidence": 0.85,
+      "evidence": "to achieve healing",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "balance restoration",
+      "attributes": {},
+      "source_chunk_ids": [
+        "843c36b43a1458ef08e3a24dda068c06"
+      ],
+      "confidence": 0.9,
+      "evidence": "restore balance by regularly performing connecting rituals",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Preparation",
+      "name": "rituals",
+      "attributes": {},
+      "source_chunk_ids": [
+        "843c36b43a1458ef08e3a24dda068c06"
+      ],
+      "confidence": 0.8,
+      "evidence": "regularly performing connecting rituals",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "family and community",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b20449e5ef2f19aa3bdb69160ae6b573"
+      ],
+      "confidence": 0.8,
+      "evidence": "family and community",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: family/community \u2013 brain/skull \u2013 elderly people",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b20449e5ef2f19aa3bdb69160ae6b573"
+      ],
+      "confidence": 0.7,
+      "evidence": "should be given to elderly people",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "brain",
+      "attributes": {
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "b20449e5ef2f19aa3bdb69160ae6b573"
+      ],
+      "confidence": 0.6,
+      "evidence": "Brain",
+      "verified": false
+    },
+    {
+      "id": "E4",
+      "type": "PlantPart",
+      "name": "skull",
+      "attributes": {
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "b20449e5ef2f19aa3bdb69160ae6b573"
+      ],
+      "confidence": 0.6,
+      "evidence": "skull",
+      "verified": false
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "given to elderly people",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b20449e5ef2f19aa3bdb69160ae6b573"
+      ],
+      "confidence": 0.75,
+      "evidence": "given to elderly people",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "KhoiSan community",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0ffbd1dd473f698a8302bd0c76a20a50"
+      ],
+      "confidence": 0.9,
+      "evidence": "KhoiSan community",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: KhoiSan \u2013 rituals \u2013 life cycle balance",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0ffbd1dd473f698a8302bd0c76a20a50"
+      ],
+      "confidence": 0.7,
+      "evidence": "rituals form part of that effort",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "maintain balance life cycle",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0ffbd1dd473f698a8302bd0c76a20a50"
+      ],
+      "confidence": 0.8,
+      "evidence": "maintain balance life cycle",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "communal",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bd0d888d3d420bc40d881b3f3f022d17"
+      ],
+      "confidence": 0.7,
+      "evidence": "communal lifestyle",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: communal \u2013 Inxabasas \u2013 rite of passage",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bd0d888d3d420bc40d881b3f3f022d17"
+      ],
+      "confidence": 0.8,
+      "evidence": "ritual performed to transition",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "rite of passage",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bd0d888d3d420bc40d881b3f3f022d17"
+      ],
+      "confidence": 0.9,
+      "evidence": "rite of passage",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "purity of a young girl",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bd0d888d3d420bc40d881b3f3f022d17"
+      ],
+      "confidence": 0.85,
+      "evidence": "purity of a young girl",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "KhoiSan community",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b9f1bb2264e99b6c9ed0344e67170c7e"
+      ],
+      "confidence": 0.9,
+      "evidence": "indigenous KhoiSan community",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: KhoiSan \u2013 Sceletium tortuosum \u2013 psychosocial health challenges",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b9f1bb2264e99b6c9ed0344e67170c7e"
+      ],
+      "confidence": 0.8,
+      "evidence": "Dialogues of healing in the management of psychosocial health challenges",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b9f1bb2264e99b6c9ed0344e67170c7e"
+      ],
+      "confidence": 0.7,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "psychosocial health challenges",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b9f1bb2264e99b6c9ed0344e67170c7e"
+      ],
+      "confidence": 0.85,
+      "evidence": "psychosocial health challenges",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "KhoiSan community",
+      "attributes": {},
+      "source_chunk_ids": [
+        "540fc2722c7f7c8c960508ea49c54528"
+      ],
+      "confidence": 0.95,
+      "evidence": "KhoiSan community fundamentally upholds communality",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "TraditionalUse",
+      "name": "management of psychosocial challenges",
+      "attributes": {},
+      "source_chunk_ids": [
+        "540fc2722c7f7c8c960508ea49c54528"
+      ],
+      "confidence": 0.8,
+      "evidence": "Wheel for the management of psychosocial challenges",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "KhoiSan community",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e9733e856917e97db343c23a98a53547"
+      ],
+      "confidence": 0.95,
+      "evidence": "KhoiSan community",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: KhoiSan \u2013 dialogues \u2013 healing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e9733e856917e97db343c23a98a53547"
+      ],
+      "confidence": 0.8,
+      "evidence": "therapeutic merits of dialogues",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "healing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e9733e856917e97db343c23a98a53547"
+      ],
+      "confidence": 0.85,
+      "evidence": "dialogues of healing",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "psychosocial challenges",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "e9733e856917e97db343c23a98a53547"
+      ],
+      "confidence": 0.9,
+      "evidence": "psychosocial challenges",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "KhoiSan community",
+      "attributes": {},
+      "source_chunk_ids": [
+        "40db28d329d03b709fed4dca4e53c30f"
+      ],
+      "confidence": 0.9,
+      "evidence": "KhoiSan community adheres",
+      "verified": true
+    }
+  ],
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "community relies on indigenous healthcare",
+      "source_chunk_ids": [
+        "5f508747307405fd62a27aa3b488da51"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "A qualitative approach, by using an indigenous African research design",
+      "source_chunk_ids": [
+        "f649a884017e06679adac4163da776de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "An African Indigenous Health Research Framework (AIHRF) was employed",
+      "source_chunk_ids": [
+        "f649a884017e06679adac4163da776de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "applying a classical African indigenous method of data-collection, namely orature",
+      "source_chunk_ids": [
+        "f649a884017e06679adac4163da776de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Theoretical sampling was used",
+      "source_chunk_ids": [
+        "f649a884017e06679adac4163da776de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "The four-step analysis of the mentioned framework was deployed",
+      "source_chunk_ids": [
+        "f649a884017e06679adac4163da776de"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "therapeutic merits of dialogues in KhoiSan community",
+      "source_chunk_ids": [
+        "aa44da9bad1f31f9ceb5dc9f31c6f895"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "management of psychosocial health challenges",
+      "source_chunk_ids": [
+        "aa44da9bad1f31f9ceb5dc9f31c6f895"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "communal indigenous practices within the KhoiSan community",
+      "source_chunk_ids": [
+        "57898c7cc2c02797b2b451cc35bb51d9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "for the management of psychosocial health challenges",
+      "source_chunk_ids": [
+        "57898c7cc2c02797b2b451cc35bb51d9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "assert that indigenous health practices remain functional",
+      "source_chunk_ids": [
+        "a715db1d46ac094d0f3a8d90ccb34e2c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "describes"
+      },
+      "confidence": 0.8,
+      "evidence": "indigenous health practices in South Africa remain functional in indigenous communities",
+      "source_chunk_ids": [
+        "a715db1d46ac094d0f3a8d90ccb34e2c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "argue that western health systems with ineffective outcomes",
+      "source_chunk_ids": [
+        "a715db1d46ac094d0f3a8d90ccb34e2c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "increases"
+      },
+      "confidence": 0.75,
+      "evidence": "increasing levels of patient distrust",
+      "source_chunk_ids": [
+        "a715db1d46ac094d0f3a8d90ccb34e2c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "describes"
+      },
+      "confidence": 0.7,
+      "evidence": "under-funded, under-researched and under-resourced",
+      "source_chunk_ids": [
+        "a715db1d46ac094d0f3a8d90ccb34e2c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "A conceptual framework for psychosocial health management",
+      "source_chunk_ids": [
+        "2540bccedea987c2197368852d306dac"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "indigenous KhoiSan health dialogues",
+      "source_chunk_ids": [
+        "2540bccedea987c2197368852d306dac"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "psychosocial health management",
+      "source_chunk_ids": [
+        "2540bccedea987c2197368852d306dac"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "authentic practices of Africans",
+      "source_chunk_ids": [
+        "e84bf576bc1fd0c798c9a1442f206bca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "dialogues of healing",
+      "source_chunk_ids": [
+        "e84bf576bc1fd0c798c9a1442f206bca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Burger and Christian (2020) find",
+      "source_chunk_ids": [
+        "e84bf576bc1fd0c798c9a1442f206bca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "KhoiSan community utilises in managing",
+      "source_chunk_ids": [
+        "f92a092a8d8b9e46b12737b06d6f3ca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "psychosocial health practices",
+      "source_chunk_ids": [
+        "f92a092a8d8b9e46b12737b06d6f3ca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "managing their psychosocial challenges",
+      "source_chunk_ids": [
+        "f92a092a8d8b9e46b12737b06d6f3ca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "guided by the African Indigenous Health Research Framework",
+      "source_chunk_ids": [
+        "096cb16eaa063f888d0e807dd546a34a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "participants"
+      },
+      "confidence": 0.8,
+      "evidence": "KhoiSan community as research participants",
+      "source_chunk_ids": [
+        "e35e85eb5e0dd5d9d828d8d80bb68563"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "research was a negotiated partnership",
+      "source_chunk_ids": [
+        "e35e85eb5e0dd5d9d828d8d80bb68563"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "based on African indigenous knowledge systems",
+      "source_chunk_ids": [
+        "5e156b3e95de86274e28fd1596e3be29"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "approval obtained from NWU Ethics Committee",
+      "source_chunk_ids": [
+        "66bc7111806874b1e1a1c9139e13eae3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Ouzman (2005) articulate",
+      "source_chunk_ids": [
+        "7d79c44437dfe4aa99bae97d723a5cc1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Blanco (2018) articulate",
+      "source_chunk_ids": [
+        "7d79c44437dfe4aa99bae97d723a5cc1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "subject"
+      },
+      "confidence": 0.7,
+      "evidence": "Ouzman (2005) articulate",
+      "source_chunk_ids": [
+        "7d79c44437dfe4aa99bae97d723a5cc1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "subject"
+      },
+      "confidence": 0.7,
+      "evidence": "Blanco (2018) articulate",
+      "source_chunk_ids": [
+        "7d79c44437dfe4aa99bae97d723a5cc1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "KhoiSan community",
+      "source_chunk_ids": [
+        "2ac6f60eb882fba1840b7847efd27f73"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum",
+      "source_chunk_ids": [
+        "2ac6f60eb882fba1840b7847efd27f73"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "psychosocial health challenges",
+      "source_chunk_ids": [
+        "2ac6f60eb882fba1840b7847efd27f73"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "KhoiSan community maintains this balance through rituals",
+      "source_chunk_ids": [
+        "843c36b43a1458ef08e3a24dda068c06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "to achieve healing",
+      "source_chunk_ids": [
+        "843c36b43a1458ef08e3a24dda068c06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "restore balance by regularly performing connecting rituals",
+      "source_chunk_ids": [
+        "843c36b43a1458ef08e3a24dda068c06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "preparation"
+      },
+      "confidence": 0.75,
+      "evidence": "regularly performing connecting rituals",
+      "source_chunk_ids": [
+        "843c36b43a1458ef08e3a24dda068c06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "family and community",
+      "source_chunk_ids": [
+        "b20449e5ef2f19aa3bdb69160ae6b573"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "plant_part",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Brain",
+      "source_chunk_ids": [
+        "b20449e5ef2f19aa3bdb69160ae6b573"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "plant_part",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "skull",
+      "source_chunk_ids": [
+        "b20449e5ef2f19aa3bdb69160ae6b573"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "given to elderly people",
+      "source_chunk_ids": [
+        "b20449e5ef2f19aa3bdb69160ae6b573"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "KhoiSan community",
+      "source_chunk_ids": [
+        "0ffbd1dd473f698a8302bd0c76a20a50"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "maintain balance life cycle",
+      "source_chunk_ids": [
+        "0ffbd1dd473f698a8302bd0c76a20a50"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "communal lifestyle, ritual performed",
+      "source_chunk_ids": [
+        "bd0d888d3d420bc40d881b3f3f022d17"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "rite of passage",
+      "source_chunk_ids": [
+        "bd0d888d3d420bc40d881b3f3f022d17"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "purity of a young girl",
+      "source_chunk_ids": [
+        "bd0d888d3d420bc40d881b3f3f022d17"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Dialogues of healing in an indigenous KhoiSan community",
+      "source_chunk_ids": [
+        "b9f1bb2264e99b6c9ed0344e67170c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.7,
+      "evidence": "Sceletium tortuosum",
+      "source_chunk_ids": [
+        "b9f1bb2264e99b6c9ed0344e67170c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "management of psychosocial health challenges",
+      "source_chunk_ids": [
+        "b9f1bb2264e99b6c9ed0344e67170c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "KhoiSan community manages to cope",
+      "source_chunk_ids": [
+        "e9733e856917e97db343c23a98a53547"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "dialogues of healing",
+      "source_chunk_ids": [
+        "e9733e856917e97db343c23a98a53547"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "cope with psychosocial challenges",
+      "source_chunk_ids": [
+        "e9733e856917e97db343c23a98a53547"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

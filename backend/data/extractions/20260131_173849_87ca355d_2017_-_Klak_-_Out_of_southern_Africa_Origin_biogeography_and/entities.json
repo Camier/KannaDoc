@@ -1,1498 +1,1071 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "bc8713df9f4b75f4a11a815dc3192a7572a75d7ecb9e855496499904afc52069",
-  "extracted_at": "2026-02-01T08:43:59.726002+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
+      "id": "E1",
       "type": "Taxon",
       "name": "Aizooideae",
       "attributes": {
-        "context": "age of the Aizooideae"
+        "rank": "subfamily"
       },
       "source_chunk_ids": [
-        "1cec8f799f317a91ba4ce5f715d16ac7"
-      ]
+        "814ef4292ae1f80af6afe797727c7807"
+      ],
+      "confidence": 0.9,
+      "evidence": "Aizooideae",
+      "verified": true
     },
     {
-      "id": "ent_002",
-      "type": "Taxon",
-      "name": "Aizoaceae",
-      "attributes": {
-        "context": "Aizooideae (Aizoaceae)"
-      },
-      "source_chunk_ids": [
-        "1cec8f799f317a91ba4ce5f715d16ac7"
-      ]
-    },
-    {
-      "id": "ent_003",
+      "id": "E2",
       "type": "Taxon",
       "name": "Mesembryanthemoideae",
       "attributes": {
-        "context": "typical for the Mesembryanthemoideae"
+        "rank": "subfamily"
       },
       "source_chunk_ids": [
         "814ef4292ae1f80af6afe797727c7807"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Mesembryanthemoideae",
+      "verified": true
     },
     {
-      "id": "ent_004",
+      "id": "E3",
       "type": "Taxon",
       "name": "Ruschioideae",
       "attributes": {
-        "context": "and Ruschioideae"
+        "rank": "subfamily"
       },
       "source_chunk_ids": [
         "814ef4292ae1f80af6afe797727c7807"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Ruschioideae",
+      "verified": true
     },
     {
-      "id": "ent_005",
-      "type": "Taxon",
-      "name": "Aizooideae",
-      "attributes": {
-        "context": "all genera of the Aizooideae"
-      },
-      "source_chunk_ids": [
-        "814ef4292ae1f80af6afe797727c7807"
-      ]
-    },
-    {
-      "id": "ent_006",
-      "type": "Taxon",
-      "name": "Acrosanthes",
-      "attributes": {
-        "context": "except Acrosanthes"
-      },
-      "source_chunk_ids": [
-        "814ef4292ae1f80af6afe797727c7807"
-      ]
-    },
-    {
-      "id": "ent_007",
-      "type": "Taxon",
-      "name": "Tetragonia",
-      "attributes": {
-        "context": "and Tetragonia"
-      },
-      "source_chunk_ids": [
-        "814ef4292ae1f80af6afe797727c7807"
-      ]
-    },
-    {
-      "id": "ent_008",
+      "id": "E4",
       "type": "Taxon",
       "name": "Sesuvioidae",
       "attributes": {
-        "context": "not present in the Sesuvioidae"
+        "rank": "subfamily"
       },
       "source_chunk_ids": [
         "814ef4292ae1f80af6afe797727c7807"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Sesuvioidae",
+      "verified": true
     },
     {
-      "id": "ent_009",
+      "id": "E5",
       "type": "Taxon",
-      "name": "Ruschioideae",
+      "name": "Acrosanthes",
       "attributes": {
-        "context": "species in the Ruschioideae"
+        "rank": "genus"
       },
       "source_chunk_ids": [
         "814ef4292ae1f80af6afe797727c7807"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Acrosanthes",
+      "verified": true
     },
     {
-      "id": "ent_010",
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Tetragonia",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "814ef4292ae1f80af6afe797727c7807"
+      ],
+      "confidence": 0.9,
+      "evidence": "Tetragonia",
+      "verified": true
+    },
+    {
+      "id": "E7",
       "type": "Taxon",
       "name": "Apatesieae",
       "attributes": {
-        "context": "the 11 species of the Apatesieae"
+        "rank": "tribe"
       },
       "source_chunk_ids": [
         "814ef4292ae1f80af6afe797727c7807"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Apatesieae",
+      "verified": true
     },
     {
-      "id": "ent_011",
+      "id": "E8",
       "type": "Taxon",
       "name": "Stoeberia gigas",
       "attributes": {
-        "context": "Stoeberia gigas Dinter &amp; Schwantes"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "814ef4292ae1f80af6afe797727c7807"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Stoeberia gigas",
+      "verified": true
     },
     {
-      "id": "ent_012",
-      "type": "Taxon",
-      "name": "Mesembryanthemoideae",
-      "attributes": {
-        "context": "and Mesembryanthemoideae"
-      },
-      "source_chunk_ids": [
-        "814ef4292ae1f80af6afe797727c7807"
-      ]
-    },
-    {
-      "id": "ent_013",
+      "id": "E9",
       "type": "Taxon",
       "name": "Mesembryanthemum nucifer",
       "attributes": {
-        "context": "Mesembryanthemum nucifer (Ihlenf. &amp; Bittrich) Klak"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "814ef4292ae1f80af6afe797727c7807"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Mesembryanthemum nucifer",
+      "verified": true
     },
     {
-      "id": "ent_014",
-      "type": "Taxon",
-      "name": "Aizooideae",
-      "attributes": {
-        "context": "In the Aizooideae"
-      },
-      "source_chunk_ids": [
-        "814ef4292ae1f80af6afe797727c7807"
-      ]
-    },
-    {
-      "id": "ent_015",
+      "id": "E10",
       "type": "Taxon",
       "name": "Gunnioopsis",
       "attributes": {
-        "context": "in Gunnioopsis"
+        "rank": "genus"
       },
       "source_chunk_ids": [
         "814ef4292ae1f80af6afe797727c7807"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Gunnioopsis",
+      "verified": true
     },
     {
-      "id": "ent_016",
+      "id": "E11",
       "type": "Taxon",
       "name": "Aizoonthemum",
       "attributes": {
-        "context": "and Aizoonthemum"
+        "rank": "genus"
       },
       "source_chunk_ids": [
         "814ef4292ae1f80af6afe797727c7807"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Aizoonthemum",
+      "verified": true
     },
     {
-      "id": "ent_017",
+      "id": "E12",
       "type": "Taxon",
       "name": "Aizoon",
       "attributes": {
-        "context": "in Aizoon"
+        "rank": "genus"
       },
       "source_chunk_ids": [
         "814ef4292ae1f80af6afe797727c7807"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Aizoon",
+      "verified": true
     },
     {
-      "id": "ent_018",
+      "id": "E13",
       "type": "Taxon",
       "name": "Galenia",
       "attributes": {
-        "context": "Galenia"
+        "rank": "genus"
       },
       "source_chunk_ids": [
         "814ef4292ae1f80af6afe797727c7807"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Galenia",
+      "verified": true
     },
     {
-      "id": "ent_019",
+      "id": "E14",
       "type": "Taxon",
       "name": "Plinthus",
       "attributes": {
-        "context": "and Plinthus"
+        "rank": "genus"
       },
       "source_chunk_ids": [
         "814ef4292ae1f80af6afe797727c7807"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Plinthus",
+      "verified": true
     },
     {
-      "id": "ent_020",
-      "type": "Taxon",
-      "name": "Tetragonia",
+      "id": "E15",
+      "type": "PlantPart",
+      "name": "capsules",
+      "attributes": {},
+      "source_chunk_ids": [
+        "814ef4292ae1f80af6afe797727c7807"
+      ],
+      "confidence": 0.9,
+      "evidence": "capsules",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "PlantPart",
+      "name": "fruits",
+      "attributes": {},
+      "source_chunk_ids": [
+        "814ef4292ae1f80af6afe797727c7807"
+      ],
+      "confidence": 0.9,
+      "evidence": "fruits",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "PlantPart",
+      "name": "seeds",
+      "attributes": {},
+      "source_chunk_ids": [
+        "814ef4292ae1f80af6afe797727c7807"
+      ],
+      "confidence": 0.9,
+      "evidence": "seeds",
+      "verified": true
+    },
+    {
+      "id": "E18",
+      "type": "Effect",
+      "name": "dispersal of seeds",
       "attributes": {
-        "context": "in Tetragonia"
+        "level": "systemic",
+        "valence": "positive"
       },
       "source_chunk_ids": [
         "814ef4292ae1f80af6afe797727c7807"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "dispersal of seeds",
+      "verified": true
     },
     {
-      "id": "ent_021",
-      "type": "Taxon",
-      "name": "Acrosanthes",
+      "id": "E19",
+      "type": "Effect",
+      "name": "opening of the capsule",
       "attributes": {
-        "context": "and Acrosanthes"
+        "level": "cellular",
+        "valence": "neutral"
       },
       "source_chunk_ids": [
         "814ef4292ae1f80af6afe797727c7807"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Opening of the capsule",
+      "verified": true
     },
     {
-      "id": "ent_022",
-      "type": "Taxon",
-      "name": "Acrosanthes",
+      "id": "E20",
+      "type": "Effect",
+      "name": "seeds splashed out",
       "attributes": {
-        "context": "fruits of Acrosanthes"
+        "level": "systemic",
+        "valence": "neutral"
       },
       "source_chunk_ids": [
         "814ef4292ae1f80af6afe797727c7807"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "seeds are then splashed out",
+      "verified": true
     },
     {
-      "id": "ent_023",
-      "type": "Taxon",
-      "name": "Tetragonia",
+      "id": "E21",
+      "type": "Effect",
+      "name": "capsules close",
       "attributes": {
-        "context": "those of Tetragonia"
+        "level": "cellular",
+        "valence": "neutral"
       },
       "source_chunk_ids": [
         "814ef4292ae1f80af6afe797727c7807"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "capsules dry out, the expanding tissue contracts",
+      "verified": true
     },
     {
-      "id": "ent_024",
-      "type": "Taxon",
-      "name": "Aizoaceae",
+      "id": "E22",
+      "type": "Target",
+      "name": "expanding tissue",
       "attributes": {
-        "context": "once in the Aizoaceae"
+        "target_type": "tissue"
       },
       "source_chunk_ids": [
         "814ef4292ae1f80af6afe797727c7807"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "expanding tissue",
+      "verified": true
     },
     {
-      "id": "ent_025",
-      "type": "Taxon",
-      "name": "Aizoaceae",
-      "attributes": {
-        "context": "In the Aizoaceae, age has been estimated"
-      },
-      "source_chunk_ids": [
-        "ab88775a3a238e6e45e12a65af6fc401"
-      ]
-    },
-    {
-      "id": "ent_026",
-      "type": "Taxon",
-      "name": "Ruschieae",
-      "attributes": {
-        "context": "only for the hyperdiverse Ruschieae"
-      },
-      "source_chunk_ids": [
-        "ab88775a3a238e6e45e12a65af6fc401"
-      ]
-    },
-    {
-      "id": "ent_027",
-      "type": "Taxon",
-      "name": "Aizoaceae",
-      "attributes": {
-        "context": "fossilized Aizoaceae pollen"
-      },
-      "source_chunk_ids": [
-        "ea551c0bf1303bef330c2fcc3cf6e1cd"
-      ]
-    },
-    {
-      "id": "ent_028",
-      "type": "Taxon",
-      "name": "Aizoon",
-      "attributes": {
-        "context": "species-rich Aizoon"
-      },
-      "source_chunk_ids": [
-        "ea551c0bf1303bef330c2fcc3cf6e1cd"
-      ]
-    },
-    {
-      "id": "ent_029",
-      "type": "Taxon",
-      "name": "Galenia",
-      "attributes": {
-        "context": "Galenia and Tetragonia"
-      },
-      "source_chunk_ids": [
-        "ea551c0bf1303bef330c2fcc3cf6e1cd"
-      ]
-    },
-    {
-      "id": "ent_030",
-      "type": "Taxon",
-      "name": "Tetragonia",
-      "attributes": {
-        "context": "Galenia and Tetragonia"
-      },
-      "source_chunk_ids": [
-        "ea551c0bf1303bef330c2fcc3cf6e1cd"
-      ]
-    },
-    {
-      "id": "ent_031",
-      "type": "Taxon",
-      "name": "Ruschieae",
-      "attributes": {
-        "context": "as did the Ruschieae"
-      },
-      "source_chunk_ids": [
-        "ea551c0bf1303bef330c2fcc3cf6e1cd"
-      ]
-    },
-    {
-      "id": "ent_032",
-      "type": "Taxon",
-      "name": "Aizooideae",
-      "attributes": {
-        "context": "93 accessions of the Aizooideae"
-      },
-      "source_chunk_ids": [
-        "67256bc03be35a915ff981a34fa0687c"
-      ]
-    },
-    {
-      "id": "ent_033",
-      "type": "Taxon",
-      "name": "Aizooideae",
-      "attributes": {
-        "context": "geographical range of the Aizooideae"
-      },
-      "source_chunk_ids": [
-        "67256bc03be35a915ff981a34fa0687c"
-      ]
-    },
-    {
-      "id": "ent_034",
-      "type": "Taxon",
-      "name": "Mesembryanthemoideae",
-      "attributes": {
-        "context": "subfamilies Mesembryanthemoideae"
-      },
-      "source_chunk_ids": [
-        "67256bc03be35a915ff981a34fa0687c"
-      ]
-    },
-    {
-      "id": "ent_035",
-      "type": "Taxon",
-      "name": "Ruschioideae",
-      "attributes": {
-        "context": "Ruschioideae and Sesuvioidae"
-      },
-      "source_chunk_ids": [
-        "67256bc03be35a915ff981a34fa0687c"
-      ]
-    },
-    {
-      "id": "ent_036",
-      "type": "Taxon",
-      "name": "Sesuvioidae",
-      "attributes": {
-        "context": "and Sesuvioidae to test"
-      },
-      "source_chunk_ids": [
-        "67256bc03be35a915ff981a34fa0687c"
-      ]
-    },
-    {
-      "id": "ent_037",
-      "type": "Taxon",
-      "name": "Aizooideae",
-      "attributes": {
-        "context": "monophyly of the Aizooideae"
-      },
-      "source_chunk_ids": [
-        "67256bc03be35a915ff981a34fa0687c"
-      ]
-    },
-    {
-      "id": "ent_038",
-      "type": "Taxon",
-      "name": "Amaranthaceae",
-      "attributes": {
-        "context": "members of the Amaranthaceae"
-      },
-      "source_chunk_ids": [
-        "67256bc03be35a915ff981a34fa0687c"
-      ]
-    },
-    {
-      "id": "ent_039",
-      "type": "Taxon",
-      "name": "Anacampserotaceae",
-      "attributes": {
-        "context": "Anacampserotaceae, Didiereaceae"
-      },
-      "source_chunk_ids": [
-        "67256bc03be35a915ff981a34fa0687c"
-      ]
-    },
-    {
-      "id": "ent_040",
-      "type": "Taxon",
-      "name": "Didiereaceae",
-      "attributes": {
-        "context": "Didiereaceae, Gisekiaceae"
-      },
-      "source_chunk_ids": [
-        "67256bc03be35a915ff981a34fa0687c"
-      ]
-    },
-    {
-      "id": "ent_041",
-      "type": "Taxon",
-      "name": "Gisekiaceae",
-      "attributes": {
-        "context": "Gisekiaceae, Kewaceae"
-      },
-      "source_chunk_ids": [
-        "67256bc03be35a915ff981a34fa0687c"
-      ]
-    },
-    {
-      "id": "ent_042",
-      "type": "Taxon",
-      "name": "Kewaceae",
-      "attributes": {
-        "context": "Kewaceae, Nyctaginaceae"
-      },
-      "source_chunk_ids": [
-        "67256bc03be35a915ff981a34fa0687c"
-      ]
-    },
-    {
-      "id": "ent_043",
-      "type": "Taxon",
-      "name": "Nyctaginaceae",
-      "attributes": {
-        "context": "Nyctaginaceae and Phytolaccaceae"
-      },
-      "source_chunk_ids": [
-        "67256bc03be35a915ff981a34fa0687c"
-      ]
-    },
-    {
-      "id": "ent_044",
-      "type": "Taxon",
-      "name": "Phytolaccaceae",
-      "attributes": {
-        "context": "and Phytolaccaceae, which are"
-      },
-      "source_chunk_ids": [
-        "67256bc03be35a915ff981a34fa0687c"
-      ]
-    },
-    {
-      "id": "ent_045",
-      "type": "Taxon",
-      "name": "Aizoaceae",
-      "attributes": {
-        "context": "related to the Aizoaceae"
-      },
-      "source_chunk_ids": [
-        "67256bc03be35a915ff981a34fa0687c"
-      ]
-    },
-    {
-      "id": "ent_046",
-      "type": "Taxon",
-      "name": "Plumbago europaea L.",
-      "attributes": {
-        "context": "rooted the tree with Plumbago europaea L."
-      },
-      "source_chunk_ids": [
-        "67256bc03be35a915ff981a34fa0687c"
-      ]
-    },
-    {
-      "id": "ent_047",
-      "type": "Taxon",
-      "name": "Plumbaginaceae",
-      "attributes": {
-        "context": "L. (Plumbaginaceae)"
-      },
-      "source_chunk_ids": [
-        "67256bc03be35a915ff981a34fa0687c"
-      ]
-    },
-    {
-      "id": "ent_048",
-      "type": "Taxon",
-      "name": "Aizoaceae",
-      "attributes": {
-        "context": "subfamily in Aizoaceae"
-      },
-      "source_chunk_ids": [
-        "a5b8574d5675ea31b8e9abdefef08076"
-      ]
-    },
-    {
-      "id": "ent_049",
-      "type": "Taxon",
-      "name": "Galenia",
-      "attributes": {
-        "context": "GaleniaKolleria2314 (16)Southern Africa"
-      },
-      "source_chunk_ids": [
-        "543a075fd26f4adbab322dff9f41b60b"
-      ]
-    },
-    {
-      "id": "ent_050",
-      "type": "Taxon",
-      "name": "Kolleria",
-      "attributes": {
-        "context": "GaleniaKolleria2314 (16)Southern Africa"
-      },
-      "source_chunk_ids": [
-        "543a075fd26f4adbab322dff9f41b60b"
-      ]
-    },
-    {
-      "id": "ent_051",
-      "type": "Taxon",
-      "name": "Acrosanthes",
-      "attributes": {
-        "context": "Acrosanthes66 (8)Western Cape, South Africa"
-      },
-      "source_chunk_ids": [
-        "543a075fd26f4adbab322dff9f41b60b"
-      ]
-    },
-    {
-      "id": "ent_052",
-      "type": "Taxon",
-      "name": "Tetragonia",
-      "attributes": {
-        "context": "TetragoniaTetragonia3011 (13)Southern Africa"
-      },
-      "source_chunk_ids": [
-        "543a075fd26f4adbab322dff9f41b60b"
-      ]
-    },
-    {
-      "id": "ent_053",
-      "type": "Taxon",
-      "name": "Tetragonoides",
-      "attributes": {
-        "context": "Tetragonoides54 (6)Southern Africa, T. tetragonoides worldwide"
-      },
-      "source_chunk_ids": [
-        "543a075fd26f4adbab322dff9f41b60b"
-      ]
-    },
-    {
-      "id": "ent_054",
-      "type": "Taxon",
-      "name": "Tetragonia tetragonoides",
-      "attributes": {
-        "context": "Tetragonoides54 (6)Southern Africa, T. tetragonoides worldwide"
-      },
-      "source_chunk_ids": [
-        "543a075fd26f4adbab322dff9f41b60b"
-      ]
-    },
-    {
-      "id": "ent_055",
-      "type": "Taxon",
-      "name": "Anisostigma",
-      "attributes": {
-        "context": "Anisostigma11 (1)Namibia"
-      },
-      "source_chunk_ids": [
-        "543a075fd26f4adbab322dff9f41b60b"
-      ]
-    },
-    {
-      "id": "ent_056",
-      "type": "Taxon",
-      "name": "Gunniopsis",
-      "attributes": {
-        "context": "Gunniopsis53 (6)Southern Africa"
-      },
-      "source_chunk_ids": [
-        "543a075fd26f4adbab322dff9f41b60b"
-      ]
-    },
-    {
-      "id": "ent_057",
-      "type": "Taxon",
-      "name": "Plinthus",
-      "attributes": {
-        "context": "Plinthus1310 (16)Southern Africa, A. canariense also found in Eurasia"
-      },
-      "source_chunk_ids": [
-        "543a075fd26f4adbab322dff9f41b60b"
-      ]
-    },
-    {
-      "id": "ent_058",
-      "type": "Taxon",
-      "name": "Aizoon canariense",
-      "attributes": {
-        "context": "Plinthus1310 (16)Southern Africa, A. canariense also found in Eurasia"
-      },
-      "source_chunk_ids": [
-        "543a075fd26f4adbab322dff9f41b60b"
-      ]
-    },
-    {
-      "id": "ent_059",
-      "type": "Taxon",
-      "name": "Aizoon",
-      "attributes": {
-        "context": "Aizoon53 (7)Angola and Namibia, A. hispanicum endemic to Eurasia (from Mediterranean to Iran)"
-      },
-      "source_chunk_ids": [
-        "543a075fd26f4adbab322dff9f41b60b"
-      ]
-    },
-    {
-      "id": "ent_060",
-      "type": "Taxon",
-      "name": "Aizoon hispanicum",
-      "attributes": {
-        "context": "Aizoon53 (7)Angola and Namibia, A. hispanicum endemic to Eurasia (from Mediterranean to Iran)"
-      },
-      "source_chunk_ids": [
-        "543a075fd26f4adbab322dff9f41b60b"
-      ]
-    },
-    {
-      "id": "ent_061",
-      "type": "Taxon",
-      "name": "Aizoanthemum",
-      "attributes": {
-        "context": "Aizoanthemum Total12562 (93)"
-      },
-      "source_chunk_ids": [
-        "543a075fd26f4adbab322dff9f41b60b"
-      ]
-    },
-    {
-      "id": "ent_062",
-      "type": "Taxon",
-      "name": "Aizooidae",
-      "attributes": {
-        "context": "genera of Aizooidae"
-      },
-      "source_chunk_ids": [
-        "66de4d28690978ba060d58c69e42f699"
-      ]
-    },
-    {
-      "id": "ent_063",
-      "type": "Taxon",
-      "name": "Aizooidae",
-      "attributes": {
-        "context": "The Aizooidae (excluding Acrosanthes)"
-      },
-      "source_chunk_ids": [
-        "628040aee15b3968ab254ee69d36e5a5"
-      ]
-    },
-    {
-      "id": "ent_064",
-      "type": "Taxon",
-      "name": "Acrosanthes",
-      "attributes": {
-        "context": "Aizooidae (excluding Acrosanthes)"
-      },
-      "source_chunk_ids": [
-        "628040aee15b3968ab254ee69d36e5a5"
-      ]
-    },
-    {
-      "id": "ent_065",
-      "type": "Taxon",
-      "name": "Tetragonia",
-      "attributes": {
-        "context": "Tetragonia &amp; Gunniopsis (clade B)"
-      },
-      "source_chunk_ids": [
-        "628040aee15b3968ab254ee69d36e5a5"
-      ]
-    },
-    {
-      "id": "ent_066",
-      "type": "Taxon",
-      "name": "Gunniopsis",
-      "attributes": {
-        "context": "Tetragonia &amp; Gunniopsis (clade B)"
-      },
-      "source_chunk_ids": [
-        "628040aee15b3968ab254ee69d36e5a5"
-      ]
-    },
-    {
-      "id": "ent_067",
-      "type": "Taxon",
-      "name": "Aizoon",
-      "attributes": {
-        "context": "sister to Aizoon, Plinthus and Galenia"
-      },
-      "source_chunk_ids": [
-        "628040aee15b3968ab254ee69d36e5a5"
-      ]
-    },
-    {
-      "id": "ent_068",
-      "type": "Taxon",
-      "name": "Plinthus",
-      "attributes": {
-        "context": "sister to Aizoon, Plinthus and Galenia"
-      },
-      "source_chunk_ids": [
-        "628040aee15b3968ab254ee69d36e5a5"
-      ]
-    },
-    {
-      "id": "ent_069",
-      "type": "Taxon",
-      "name": "Galenia",
-      "attributes": {
-        "context": "sister to Aizoon, Plinthus and Galenia"
-      },
-      "source_chunk_ids": [
-        "628040aee15b3968ab254ee69d36e5a5"
-      ]
-    },
-    {
-      "id": "ent_070",
-      "type": "Taxon",
-      "name": "Aizoantheum hispanicum",
-      "attributes": {
-        "context": "Aizoantheum hispanicum (L.) H.E. K. Hartmann"
-      },
-      "source_chunk_ids": [
-        "628040aee15b3968ab254ee69d36e5a5"
-      ]
-    },
-    {
-      "id": "ent_071",
-      "type": "Taxon",
-      "name": "Aizoantheum",
-      "attributes": {
-        "context": "the African species of Aizoantheum"
-      },
-      "source_chunk_ids": [
-        "628040aee15b3968ab254ee69d36e5a5"
-      ]
-    },
-    {
-      "id": "ent_072",
-      "type": "Taxon",
-      "name": "Plinthus",
-      "attributes": {
-        "context": "Plinthus is nested"
-      },
-      "source_chunk_ids": [
-        "585e80709af32f79247720bd0f32f245"
-      ]
-    },
-    {
-      "id": "ent_073",
-      "type": "Taxon",
-      "name": "Aizoon",
-      "attributes": {
-        "context": "clades of Aizoon"
-      },
-      "source_chunk_ids": [
-        "585e80709af32f79247720bd0f32f245"
-      ]
-    },
-    {
-      "id": "ent_074",
-      "type": "Taxon",
-      "name": "Plinthus sericeus",
-      "attributes": {
-        "context": "P. sericeus is more closely related"
-      },
-      "source_chunk_ids": [
-        "585e80709af32f79247720bd0f32f245"
-      ]
-    },
-    {
-      "id": "ent_075",
-      "type": "Taxon",
-      "name": "Aizoon",
-      "attributes": {
-        "context": "members of Aizoon"
-      },
-      "source_chunk_ids": [
-        "585e80709af32f79247720bd0f32f245"
-      ]
-    },
-    {
-      "id": "ent_076",
-      "type": "Taxon",
-      "name": "Plinthus",
-      "attributes": {
-        "context": "other Plinthus"
-      },
-      "source_chunk_ids": [
-        "585e80709af32f79247720bd0f32f245"
-      ]
-    },
-    {
-      "id": "ent_077",
-      "type": "Taxon",
-      "name": "Galenia",
-      "attributes": {
-        "context": "species of Galenia"
-      },
-      "source_chunk_ids": [
-        "fe880b382420fa90df898b078196c1d9"
-      ]
-    },
-    {
-      "id": "ent_078",
-      "type": "Taxon",
-      "name": "Aizoon",
-      "attributes": {
-        "context": "members of Aizoon"
-      },
-      "source_chunk_ids": [
-        "fe880b382420fa90df898b078196c1d9"
-      ]
-    },
-    {
-      "id": "ent_079",
-      "type": "Taxon",
-      "name": "Plinthus",
-      "attributes": {
-        "context": "members of Aizoon and Plinthus"
-      },
-      "source_chunk_ids": [
-        "fe880b382420fa90df898b078196c1d9"
-      ]
-    },
-    {
-      "id": "ent_080",
-      "type": "Taxon",
-      "name": "Tetragonia",
-      "attributes": {
-        "context": "Tetragonia is monophyletic"
-      },
-      "source_chunk_ids": [
-        "08738b97f0a6ad8c9fbdfbc45e0a38eb"
-      ]
-    },
-    {
-      "id": "ent_081",
-      "type": "Taxon",
-      "name": "Tetragonia schenckii",
-      "attributes": {
-        "context": "T. schenckii, which is sister"
-      },
-      "source_chunk_ids": [
-        "08738b97f0a6ad8c9fbdfbc45e0a38eb"
-      ]
-    },
-    {
-      "id": "ent_082",
-      "type": "Taxon",
-      "name": "Tribulocarpus",
-      "attributes": {
-        "context": "species of Tribulocarpus"
-      },
-      "source_chunk_ids": [
-        "08738b97f0a6ad8c9fbdfbc45e0a38eb"
-      ]
-    },
-    {
-      "id": "ent_083",
-      "type": "Taxon",
-      "name": "Sesuvioideae",
-      "attributes": {
-        "context": "of the Sesuvioideae"
-      },
-      "source_chunk_ids": [
-        "08738b97f0a6ad8c9fbdfbc45e0a38eb"
-      ]
-    },
-    {
-      "id": "ent_084",
-      "type": "Taxon",
-      "name": "Acrosanthes",
-      "attributes": {
-        "context": "six species of Acrosanthes"
-      },
-      "source_chunk_ids": [
-        "d472d2f85d1e012e3d6858ffc24a6a0f"
-      ]
-    },
-    {
-      "id": "ent_085",
-      "type": "Taxon",
-      "name": "Aizooideae",
-      "attributes": {
-        "context": "fruits in Aizooideae"
-      },
-      "source_chunk_ids": [
-        "27e0c32deec58fcba519f4c6adb327c4"
-      ]
-    },
-    {
-      "id": "ent_086",
-      "type": "Taxon",
-      "name": "Tetragonia",
-      "attributes": {
-        "context": "fruits of Tetragonia"
-      },
-      "source_chunk_ids": [
-        "27e0c32deec58fcba519f4c6adb327c4"
-      ]
-    },
-    {
-      "id": "ent_087",
-      "type": "Taxon",
-      "name": "Tetragonia echinata",
-      "attributes": {
-        "context": "fruits of T. echinata"
-      },
-      "source_chunk_ids": [
-        "27e0c32deec58fcba519f4c6adb327c4"
-      ]
-    },
-    {
-      "id": "ent_088",
-      "type": "Taxon",
-      "name": "Tetragonia saligna",
-      "attributes": {
-        "context": "fruits of T. saligna"
-      },
-      "source_chunk_ids": [
-        "27e0c32deec58fcba519f4c6adb327c4"
-      ]
-    },
-    {
-      "id": "ent_089",
-      "type": "Taxon",
-      "name": "Tetragonia tetragonoides",
-      "attributes": {
-        "context": "fruits of T. tetragonoides"
-      },
-      "source_chunk_ids": [
-        "27e0c32deec58fcba519f4c6adb327c4"
-      ]
-    },
-    {
-      "id": "ent_090",
+      "id": "E1",
       "type": "Taxon",
       "name": "Tetragonia decumbens",
       "attributes": {
-        "context": "fruits of T. decumbens"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "27e0c32deec58fcba519f4c6adb327c4"
-      ]
+        "3c8ff963e56597492caf3ad234b26336"
+      ],
+      "confidence": 0.95,
+      "evidence": "Tetragonia decumbens",
+      "verified": true
     },
     {
-      "id": "ent_091",
-      "type": "Taxon",
-      "name": "Tetragonia spicata",
-      "attributes": {
-        "context": "fruits of T. spicata"
-      },
-      "source_chunk_ids": [
-        "27e0c32deec58fcba519f4c6adb327c4"
-      ]
-    },
-    {
-      "id": "ent_092",
-      "type": "Taxon",
-      "name": "Aizoon glinoides",
-      "attributes": {
-        "context": "capsules of Aizoon glinoides"
-      },
-      "source_chunk_ids": [
-        "27e0c32deec58fcba519f4c6adb327c4"
-      ]
-    },
-    {
-      "id": "ent_093",
-      "type": "Taxon",
-      "name": "Gunniopsis tenuifolia",
-      "attributes": {
-        "context": "keels of Gunniopsis tenuifolia"
-      },
-      "source_chunk_ids": [
-        "27e0c32deec58fcba519f4c6adb327c4"
-      ]
-    },
-    {
-      "id": "ent_094",
-      "type": "Taxon",
-      "name": "Aizoon hispanicum",
-      "attributes": {
-        "context": "capsule of Aizoon hispanicum"
-      },
-      "source_chunk_ids": [
-        "27e0c32deec58fcba519f4c6adb327c4"
-      ]
-    },
-    {
-      "id": "ent_095",
-      "type": "Taxon",
-      "name": "Acrosanthes anceps",
-      "attributes": {
-        "context": "capsules of Acrosanthes anceps"
-      },
-      "source_chunk_ids": [
-        "27e0c32deec58fcba519f4c6adb327c4"
-      ]
-    },
-    {
-      "id": "ent_096",
-      "type": "Taxon",
-      "name": "Aizoon",
-      "attributes": {
-        "context": "species of Aizoon"
-      },
-      "source_chunk_ids": [
-        "ccc68d652c49c9898e72af674b62644b"
-      ]
-    },
-    {
-      "id": "ent_097",
-      "type": "Taxon",
-      "name": "Plinthus",
-      "attributes": {
-        "context": "species of Plinthus"
-      },
-      "source_chunk_ids": [
-        "ccc68d652c49c9898e72af674b62644b"
-      ]
-    },
-    {
-      "id": "ent_098",
-      "type": "Taxon",
-      "name": "Aizoonthemum",
-      "attributes": {
-        "context": "species of Aizoonthemum"
-      },
-      "source_chunk_ids": [
-        "90cdc6ef60c9b00ca395ff26f8a81b72"
-      ]
-    },
-    {
-      "id": "ent_099",
-      "type": "Taxon",
-      "name": "Aizoonthemum hispanicum",
-      "attributes": {
-        "context": "apart from Aizoonthemum hispanicum"
-      },
-      "source_chunk_ids": [
-        "4ebe72f395dd2cd95a60a98ea85c4e8b"
-      ]
-    },
-    {
-      "id": "ent_100",
-      "type": "Taxon",
-      "name": "Tetragonia tetragonoides (Pallas) Kuntze",
-      "attributes": {
-        "context": "cosmopolitan Tetragonia tetragonoides (Pallas) Kuntze"
-      },
-      "source_chunk_ids": [
-        "4ebe72f395dd2cd95a60a98ea85c4e8b"
-      ]
-    },
-    {
-      "id": "ent_101",
-      "type": "Taxon",
-      "name": "Aizoaceae",
-      "attributes": {
-        "context": "fruits of Aizoaceae and outgroups"
-      },
-      "source_chunk_ids": [
-        "f824dc159d3ec692f7cc3c084d3dfb47"
-      ]
-    },
-    {
-      "id": "ent_102",
-      "type": "Taxon",
-      "name": "Aizoon",
-      "attributes": {
-        "context": "African species of Aizoon"
-      },
-      "source_chunk_ids": [
-        "4b4416e466105b7c164aa274ca7004e2"
-      ]
-    },
-    {
-      "id": "ent_103",
-      "type": "Taxon",
-      "name": "Aizoon",
-      "attributes": {
-        "context": "from Aizoon"
-      },
-      "source_chunk_ids": [
-        "4b4416e466105b7c164aa274ca7004e2"
-      ]
-    },
-    {
-      "id": "ent_104",
-      "type": "Taxon",
-      "name": "Aizoon hispanicum",
-      "attributes": {
-        "context": "Aizoon hispanicum L."
-      },
-      "source_chunk_ids": [
-        "4b4416e466105b7c164aa274ca7004e2"
-      ]
-    },
-    {
-      "id": "ent_105",
-      "type": "Taxon",
-      "name": "Aizoon",
-      "attributes": {
-        "context": "to Aizoon"
-      },
-      "source_chunk_ids": [
-        "4b4416e466105b7c164aa274ca7004e2"
-      ]
-    },
-    {
-      "id": "ent_106",
-      "type": "Taxon",
-      "name": "Aizoon",
-      "attributes": {
-        "context": "lineages of Aizoon"
-      },
-      "source_chunk_ids": [
-        "4b4416e466105b7c164aa274ca7004e2"
-      ]
-    },
-    {
-      "id": "ent_107",
-      "type": "Taxon",
-      "name": "Aizoon hispanicum",
-      "attributes": {
-        "context": "in A. hispanicum"
-      },
-      "source_chunk_ids": [
-        "4b4416e466105b7c164aa274ca7004e2"
-      ]
-    },
-    {
-      "id": "ent_108",
-      "type": "Taxon",
-      "name": "Aizoon hispanicum",
-      "attributes": {
-        "context": "of A. hispanicum"
-      },
-      "source_chunk_ids": [
-        "4b4416e466105b7c164aa274ca7004e2"
-      ]
-    },
-    {
-      "id": "ent_109",
-      "type": "Taxon",
-      "name": "Gunniiopsis",
-      "attributes": {
-        "context": "in Gunniiopsis"
-      },
-      "source_chunk_ids": [
-        "4b4416e466105b7c164aa274ca7004e2"
-      ]
-    },
-    {
-      "id": "ent_110",
-      "type": "Taxon",
-      "name": "Tetragonia",
-      "attributes": {
-        "context": "and Tetragonia"
-      },
-      "source_chunk_ids": [
-        "4b4416e466105b7c164aa274ca7004e2"
-      ]
-    },
-    {
-      "id": "ent_111",
-      "type": "Taxon",
-      "name": "Tribulocarpus",
-      "attributes": {
-        "context": "Tribulocarpus S.Moore was recently revised"
-      },
-      "source_chunk_ids": [
-        "9e42a94c45ea715b61568b0774cb26d8"
-      ]
-    },
-    {
-      "id": "ent_112",
-      "type": "Taxon",
-      "name": "Tribulocarpus dimorphanthus",
-      "attributes": {
-        "context": "consists of two species: T. dimorphanthus (Pax) S. Moore"
-      },
-      "source_chunk_ids": [
-        "9e42a94c45ea715b61568b0774cb26d8"
-      ]
-    },
-    {
-      "id": "ent_113",
-      "type": "Taxon",
-      "name": "Tribulocarpus retusus",
-      "attributes": {
-        "context": "and T. retusus (Thulin) Thulin &amp; Liede"
-      },
-      "source_chunk_ids": [
-        "9e42a94c45ea715b61568b0774cb26d8"
-      ]
-    },
-    {
-      "id": "ent_114",
-      "type": "Taxon",
-      "name": "Tribulocarpus schenckii",
-      "attributes": {
-        "context": "both are present in T. schenckii"
-      },
-      "source_chunk_ids": [
-        "9e42a94c45ea715b61568b0774cb26d8"
-      ]
-    },
-    {
-      "id": "ent_115",
-      "type": "Taxon",
-      "name": "Tribulocarpus",
-      "attributes": {
-        "context": "consisting of T. schenckii and Tribulocarpus"
-      },
-      "source_chunk_ids": [
-        "9e42a94c45ea715b61568b0774cb26d8"
-      ]
-    },
-    {
-      "id": "ent_116",
-      "type": "Taxon",
-      "name": "Aizoaceae",
-      "attributes": {
-        "context": "The Aizoaceae dates back to the Eocene"
-      },
-      "source_chunk_ids": [
-        "35364209169179036c18b7ad13fc92af"
-      ]
-    },
-    {
-      "id": "ent_117",
+      "id": "E1",
       "type": "Taxon",
       "name": "Aizooideae",
       "attributes": {
-        "context": "split of the Aizooideae into two clades"
+        "rank": "subfamily"
       },
       "source_chunk_ids": [
-        "e8be9820747eb30aad9707f9096a7311"
-      ]
+        "7084566bad49a777a1ff6467e8566d04"
+      ],
+      "confidence": 0.9,
+      "evidence": "Aizooideae",
+      "verified": true
     },
     {
-      "id": "ent_118",
+      "id": "E2",
       "type": "Taxon",
-      "name": "Aizooideae",
+      "name": "Gunnioopsis papillata",
       "attributes": {
-        "context": "highest diversity in the Aizooideae occurs"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "e8be9820747eb30aad9707f9096a7311"
-      ]
+        "7084566bad49a777a1ff6467e8566d04"
+      ],
+      "confidence": 0.85,
+      "evidence": "Gunnioopsis papillata",
+      "verified": true
     },
     {
-      "id": "ent_119",
-      "type": "Taxon",
-      "name": "Galenia",
-      "attributes": {
-        "context": "crown clades, Galenia (27 spp.)"
-      },
-      "source_chunk_ids": [
-        "e8be9820747eb30aad9707f9096a7311"
-      ]
-    },
-    {
-      "id": "ent_120",
-      "type": "Taxon",
-      "name": "Tetragonia",
-      "attributes": {
-        "context": "southern African Tetragonia (35 spp.)"
-      },
-      "source_chunk_ids": [
-        "e8be9820747eb30aad9707f9096a7311"
-      ]
-    },
-    {
-      "id": "ent_121",
-      "type": "Taxon",
-      "name": "Tetragonia",
-      "attributes": {
-        "context": "radiations of Tetragonia in South America"
-      },
-      "source_chunk_ids": [
-        "e8be9820747eb30aad9707f9096a7311"
-      ]
-    },
-    {
-      "id": "ent_122",
-      "type": "Taxon",
-      "name": "Aizooideae",
-      "attributes": {
-        "context": "sampling of the Aizooideae"
-      },
-      "source_chunk_ids": [
-        "028838a68e3a6c4de8f70d3669ae77b7"
-      ]
-    },
-    {
-      "id": "ent_123",
-      "type": "Taxon",
-      "name": "Aizooideae",
-      "attributes": {
-        "context": "The Aizooideae are relatively ancient"
-      },
-      "source_chunk_ids": [
-        "028838a68e3a6c4de8f70d3669ae77b7"
-      ]
-    },
-    {
-      "id": "ent_124",
-      "type": "Taxon",
-      "name": "Aizooideae",
-      "attributes": {
-        "context": "radiations in the Aizooideae"
-      },
-      "source_chunk_ids": [
-        "028838a68e3a6c4de8f70d3669ae77b7"
-      ]
-    },
-    {
-      "id": "ent_125",
-      "type": "Taxon",
-      "name": "Ruschieae",
-      "attributes": {
-        "context": "hyperdiverse Ruschieae"
-      },
-      "source_chunk_ids": [
-        "028838a68e3a6c4de8f70d3669ae77b7"
-      ]
-    },
-    {
-      "id": "ent_126",
-      "type": "Taxon",
-      "name": "Ruschioideae",
-      "attributes": {
-        "context": "Ruschieae (Ruschioideae)"
-      },
-      "source_chunk_ids": [
-        "028838a68e3a6c4de8f70d3669ae77b7"
-      ]
-    },
-    {
-      "id": "ent_127",
-      "type": "Taxon",
-      "name": "Euphorbia",
-      "attributes": {
-        "context": "in Euphorbia"
-      },
-      "source_chunk_ids": [
-        "028838a68e3a6c4de8f70d3669ae77b7"
-      ]
-    },
-    {
-      "id": "ent_128",
-      "type": "Taxon",
-      "name": "Euphorbiaceae",
-      "attributes": {
-        "context": "Euphorbia (Euphorbiaceae)"
-      },
-      "source_chunk_ids": [
-        "028838a68e3a6c4de8f70d3669ae77b7"
-      ]
-    },
-    {
-      "id": "ent_129",
-      "type": "Taxon",
-      "name": "Ceropogieae",
-      "attributes": {
-        "context": "the Ceropogieae"
-      },
-      "source_chunk_ids": [
-        "028838a68e3a6c4de8f70d3669ae77b7"
-      ]
-    },
-    {
-      "id": "ent_130",
-      "type": "Taxon",
-      "name": "Apocynaceae",
-      "attributes": {
-        "context": "Ceropogieae (Apocynaceae)"
-      },
-      "source_chunk_ids": [
-        "028838a68e3a6c4de8f70d3669ae77b7"
-      ]
-    },
-    {
-      "id": "ent_131",
-      "type": "Taxon",
-      "name": "Aizoon canariense",
-      "attributes": {
-        "context": "except for Aizoon canariense"
-      },
-      "source_chunk_ids": [
-        "028838a68e3a6c4de8f70d3669ae77b7"
-      ]
-    },
-    {
-      "id": "ent_132",
+      "id": "E3",
       "type": "Taxon",
       "name": "Tetragonia tetragonoides",
       "attributes": {
-        "context": "cosmopolitan Tetragonia tetragonoides"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "028838a68e3a6c4de8f70d3669ae77b7"
-      ]
+        "7084566bad49a777a1ff6467e8566d04"
+      ],
+      "confidence": 0.85,
+      "evidence": "Tetragonia tetragonoides",
+      "verified": true
     },
     {
-      "id": "ent_133",
+      "id": "E4",
       "type": "Taxon",
-      "name": "Aizooideae",
+      "name": "Acrosanthes",
       "attributes": {
-        "context": "ancestral area for the Aizooideae"
+        "rank": "genus"
       },
       "source_chunk_ids": [
-        "028838a68e3a6c4de8f70d3669ae77b7"
-      ]
+        "7084566bad49a777a1ff6467e8566d04"
+      ],
+      "confidence": 0.9,
+      "evidence": "Acrosanthes",
+      "verified": true
     },
     {
-      "id": "ent_134",
+      "id": "E5",
       "type": "Taxon",
-      "name": "Aizooideae",
+      "name": "Sesuvioideae",
       "attributes": {
-        "context": "lineages of Aizooideae"
+        "rank": "subfamily"
       },
       "source_chunk_ids": [
-        "028838a68e3a6c4de8f70d3669ae77b7"
-      ]
+        "7084566bad49a777a1ff6467e8566d04"
+      ],
+      "confidence": 0.85,
+      "evidence": "Sesuvioideae",
+      "verified": true
     },
     {
-      "id": "ent_135",
+      "id": "E6",
       "type": "Taxon",
-      "name": "Tetragonia",
+      "name": "Mesembryanthemoideae",
       "attributes": {
-        "context": "African Tetragonia"
+        "rank": "subfamily"
       },
       "source_chunk_ids": [
-        "028838a68e3a6c4de8f70d3669ae77b7"
-      ]
+        "7084566bad49a777a1ff6467e8566d04"
+      ],
+      "confidence": 0.85,
+      "evidence": "Mesembryanthemoideae",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Ruschioideae",
+      "attributes": {
+        "rank": "subfamily"
+      },
+      "source_chunk_ids": [
+        "7084566bad49a777a1ff6467e8566d04"
+      ],
+      "confidence": 0.85,
+      "evidence": "Ruschioideae",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "PlantPart",
+      "name": "epidermal bladder-hairs",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7084566bad49a777a1ff6467e8566d04"
+      ],
+      "confidence": 0.8,
+      "evidence": "epidermal bladder-hairs",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Bittrich (1990a)",
+      "attributes": {
+        "year": 1990
+      },
+      "source_chunk_ids": [
+        "7084566bad49a777a1ff6467e8566d04"
+      ],
+      "confidence": 0.9,
+      "evidence": "Bittrich (1990a)",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "Bittrich (1990b)",
+      "attributes": {
+        "year": 1990
+      },
+      "source_chunk_ids": [
+        "7084566bad49a777a1ff6467e8566d04"
+      ],
+      "confidence": 0.9,
+      "evidence": "Bittrich (1990b)",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Study",
+      "name": "Bittrich and Hartmann (1988)",
+      "attributes": {
+        "year": 1988
+      },
+      "source_chunk_ids": [
+        "7084566bad49a777a1ff6467e8566d04"
+      ],
+      "confidence": 0.9,
+      "evidence": "Bittrich and Hartmann (1988)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "AIZOOIDEAE",
+      "attributes": {
+        "rank": "subfamily"
+      },
+      "source_chunk_ids": [
+        "8c2d770eb471d92ca26211bdec6efbbd"
+      ],
+      "confidence": 0.9,
+      "evidence": "Phylogenetic Tree of AIZOOIDEAE",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Aizoaceae",
+      "attributes": {
+        "rank": "family"
+      },
+      "source_chunk_ids": [
+        "8c2d770eb471d92ca26211bdec6efbbd"
+      ],
+      "confidence": 0.9,
+      "evidence": "Clade Aizoaceae (41.5 My)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Galenia glandulifera",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "8c2d770eb471d92ca26211bdec6efbbd"
+      ],
+      "confidence": 0.8,
+      "evidence": "Galenia glandulifera 1, Galenia glandulifera 2, Galenia glandulifera 3",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Tetragonia tetragonoides",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "8c2d770eb471d92ca26211bdec6efbbd"
+      ],
+      "confidence": 0.8,
+      "evidence": "Tetragonia tetragonoides 3, Tetragonia tetragonoides 1, Tetragonia tetragonoides 2",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Mesembryanthemum aitonum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "8c2d770eb471d92ca26211bdec6efbbd"
+      ],
+      "confidence": 0.8,
+      "evidence": "Mesembryanthemum aitonum",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species",
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "8c2d770eb471d92ca26211bdec6efbbd"
+      ],
+      "confidence": 0.6,
+      "evidence": "Sceletium tortuosum is not explicitly mentioned, but the text is about AIZOOIDEAE which includes it",
+      "verified": false
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Tribulocarpus",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "9e42a94c45ea715b61568b0774cb26d8"
+      ],
+      "confidence": 0.95,
+      "evidence": "Tribulocarpus S.Moore was recently revised",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Tribulocarpus dimorphanthus",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "9e42a94c45ea715b61568b0774cb26d8"
+      ],
+      "confidence": 0.9,
+      "evidence": "T. dimorphanthus (Pax) S. Moore",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Tribulocarpus retusus",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "9e42a94c45ea615b61568b0774cb26d8",
+        "9e42a94c45ea715b61568b0774cb26d8"
+      ],
+      "confidence": 0.9,
+      "evidence": "T. retusus (Thulin) Thulin & Liede",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Tribulocarpus schenckii",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "9e42a94c45ea715b61568b0774cb26d8"
+      ],
+      "confidence": 0.9,
+      "evidence": "T. schenckii (Adamson, 1955)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Thulin et al., 2012",
+      "attributes": {
+        "year": 2012
+      },
+      "source_chunk_ids": [
+        "9e42a94c45ea715b61568b0774cb26d8"
+      ],
+      "confidence": 0.85,
+      "evidence": "Thulin et al., 2012",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Adamson, 1955",
+      "attributes": {
+        "year": 1955
+      },
+      "source_chunk_ids": [
+        "9e42a94c45ea715b61568b0774cb26d8"
+      ],
+      "confidence": 0.85,
+      "evidence": "Adamson, 1955",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Tetragonia tetragonoides",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "1e20a19a6c6034ba6090b7f8bd0b25df"
+      ],
+      "confidence": 0.95,
+      "evidence": "Tetragonia tetragonoides (worldwide)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Tetragonia decumbens",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "1e20a19a6c6034ba6090b7f8bd0b25df"
+      ],
+      "confidence": 0.95,
+      "evidence": "T. decumbens (southern Africa--Australasia)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Holm et al., 1979",
+      "attributes": {
+        "year": 1979
+      },
+      "source_chunk_ids": [
+        "1e20a19a6c6034ba6090b7f8bd0b25df"
+      ],
+      "confidence": 0.8,
+      "evidence": "Holm et al., 1979: 360",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Bergh and Linder, 2009",
+      "attributes": {
+        "year": 2009
+      },
+      "source_chunk_ids": [
+        "1e20a19a6c6034ba6090b7f8bd0b25df"
+      ],
+      "confidence": 0.8,
+      "evidence": "Bergh and Linder, 2009",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Kadereit et al., 2005, 2006",
+      "attributes": {
+        "year": "2005-2006"
+      },
+      "source_chunk_ids": [
+        "1e20a19a6c6034ba6090b7f8bd0b25df"
+      ],
+      "confidence": 0.8,
+      "evidence": "Kadereit et al., 2005, 2006",
+      "verified": true
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:03.992220+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E15",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Aizooideae xerochastic or hygrochastic capsules",
+      "source_chunk_ids": [
+        "814ef4292ae1f80af6afe797727c7807"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E16",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Aizooideae xerochastic or hygrochastic capsules as well as woody or rarely drupaceous fruits",
+      "source_chunk_ids": [
+        "814ef4292ae1f80af6afe797727c7807"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E2",
+      "target_entity_id": "E15",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Hygrochastic capsules are typical for the Mesembryanthemoideae",
+      "source_chunk_ids": [
+        "814ef4292ae1f80af6afe797727c7807"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_PART",
+      "source_entity_id": "E3",
+      "target_entity_id": "E15",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Hygrochastic capsules are typical for the Ruschioideae",
+      "source_chunk_ids": [
+        "814ef4292ae1f80af6afe797727c7807"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E19",
+      "target_entity_id": "E20",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Opening of the capsule... seeds are then splashed out",
+      "source_chunk_ids": [
+        "814ef4292ae1f80af6afe797727c7807"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E20",
+      "target_entity_id": "E18",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "seeds are then splashed out... dispersal of seeds",
+      "source_chunk_ids": [
+        "814ef4292ae1f80af6afe797727c7807"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E21",
+      "target_entity_id": "E18",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "capsules close... seeds are dispersed over longer periods",
+      "source_chunk_ids": [
+        "814ef4292ae1f80af6afe797727c7807"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "Bittrich (1990a) suggested the presence of epidermal bladder-hairs as a synapomorphy for the Aizooideae",
+      "source_chunk_ids": [
+        "7084566bad49a777a1ff6467e8566d04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "plant_part"
+      },
+      "confidence": 0.8,
+      "evidence": "Bittrich (1990b) described bladder-hairs",
+      "source_chunk_ids": [
+        "7084566bad49a777a1ff6467e8566d04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.75,
+      "evidence": "recorded them in Gunnioopsis papillata",
+      "source_chunk_ids": [
+        "7084566bad49a777a1ff6467e8566d04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.75,
+      "evidence": "recorded them in Tetragonia tetragonoides",
+      "source_chunk_ids": [
+        "7084566bad49a777a1ff6467e8566d04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "taxon",
+        "assertion": "refutes"
+      },
+      "confidence": 0.7,
+      "evidence": "though not in Acrosanthes",
+      "source_chunk_ids": [
+        "7084566bad49a777a1ff6467e8566d04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "Acrosanthes shares with the Sesuvioideae and the Aizooideae",
+      "source_chunk_ids": [
+        "7084566bad49a777a1ff6467e8566d04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "Acrosanthes shares with the Sesuvioideae",
+      "source_chunk_ids": [
+        "7084566bad49a777a1ff6467e8566d04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "Acrosanthes shares with the Aizooideae",
+      "source_chunk_ids": [
+        "7084566bad49a777a1ff6467e8566d04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "its sisters, the Mesembryanthemoideae",
+      "source_chunk_ids": [
+        "7084566bad49a777a1ff6467e8566d04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "its sisters, the Ruschioideae",
+      "source_chunk_ids": [
+        "7084566bad49a777a1ff6467e8566d04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "AIZOOIDEAE is part of Aizoaceae family",
+      "source_chunk_ids": [
+        "8c2d770eb471d92ca26211bdec6efbbd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "Tribulocarpus S.Moore was recently revised",
+      "source_chunk_ids": [
+        "9e42a94c45ea715b61568b0774cb26d8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "T. schenckii (Adamson, 1955)",
+      "source_chunk_ids": [
+        "9e42a94c45ea715b61568b0774cb26d8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Holm et al., 1979: 360",
+      "source_chunk_ids": [
+        "1e20a19a6c6034ba6090b7f8bd0b25df"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Asteraceae, Bergh and Linder, 2009",
+      "source_chunk_ids": [
+        "1e20a19a6c6034ba6090b7f8bd0b25df"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Amaranthaceae, Kadereit et al., 2005, 2006",
+      "source_chunk_ids": [
+        "1e20a19a6c6034ba6090b7f8bd0b25df"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

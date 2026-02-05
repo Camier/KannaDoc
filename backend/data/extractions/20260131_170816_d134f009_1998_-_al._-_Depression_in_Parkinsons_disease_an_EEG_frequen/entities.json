@@ -1,1696 +1,3671 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "75e18c76585aa3115d76090a7f0907701b0eac1e4a4a6d95f11913d3562a208f",
-  "extracted_at": "2026-02-01T08:10:13.715333+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
-      "type": "Indication",
-      "name": "Parkinsonism",
+      "id": "E1",
+      "type": "Condition",
+      "name": "depression",
       "attributes": {
-        "context": "Parkinsonism and Related Disorders"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
-        "4e5e4aaadf4a59d68f9f85dd8ac5a811"
-      ]
+        "45c05e8dda9c1c71a2bb361a7c2de166"
+      ],
+      "confidence": 0.95,
+      "evidence": "depression is a common finding",
+      "verified": true
     },
     {
-      "id": "ent_002",
-      "type": "Indication",
+      "id": "E2",
+      "type": "Condition",
       "name": "Parkinson's disease",
       "attributes": {
-        "context": "Keywords: Parkinson's disease"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
-        "c317df7796e37234a11f55b1221c6953"
-      ]
+        "45c05e8dda9c1c71a2bb361a7c2de166"
+      ],
+      "confidence": 0.95,
+      "evidence": "Parkinson's disease (PD)",
+      "verified": true
     },
     {
-      "id": "ent_003",
-      "type": "Indication",
-      "name": "Depression",
+      "id": "E3",
+      "type": "Study",
+      "name": "EEG study in PD patients",
       "attributes": {
-        "context": "disease; Depression"
+        "design": "observational study",
+        "sample_size": 24,
+        "year": 1999
       },
       "source_chunk_ids": [
-        "c317df7796e37234a11f55b1221c6953"
-      ]
+        "45c05e8dda9c1c71a2bb361a7c2de166"
+      ],
+      "confidence": 0.9,
+      "evidence": "study was performed in 24 patients",
+      "verified": true
     },
     {
-      "id": "ent_004",
-      "type": "Indication",
-      "name": "Depression",
+      "id": "E4",
+      "type": "Evidence",
+      "name": "in vivo human study",
       "attributes": {
-        "context": "Depression is a common finding"
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "45c05e8dda9c1c71a2bb361a7c2de166"
+      ],
+      "confidence": 0.85,
+      "evidence": "study in 24 patients with idiopathic PD",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "reduced EEG power in alpha1 band",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "45c05e8dda9c1c71a2bb361a7c2de166"
+      ],
+      "confidence": 0.8,
+      "evidence": "significantly less absolute and relative power in spectral band 7.5\u201310 Hz",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "increased EEG power in alpha2 band",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "45c05e8dda9c1c71a2bb361a7c2de166"
+      ],
+      "confidence": 0.75,
+      "evidence": "slightly more relative power in spectral band 10.513 Hz",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "anterior shift of alpha1 power maximum",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "45c05e8dda9c1c71a2bb361a7c2de166"
+      ],
+      "confidence": 0.8,
+      "evidence": "maximum was shifted anteriorly toward the parietal region",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "distinctive neurobiological substrate",
+      "attributes": {
+        "level": "molecular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "45c05e8dda9c1c71a2bb361a7c2de166"
+      ],
+      "confidence": 0.7,
+      "evidence": "existence of a distinctive neurobiological substrate",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
         "9c820c2b7146c775f5e4536913251db2"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Depression is a common finding",
+      "verified": true
     },
     {
-      "id": "ent_005",
-      "type": "Indication",
+      "id": "E2",
+      "type": "Condition",
       "name": "Parkinson's disease",
       "attributes": {
-        "context": "in Parkinson's disease (PD)"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "9c820c2b7146c775f5e4536913251db2"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Parkinson's disease (PD)",
+      "verified": true
     },
     {
-      "id": "ent_006",
-      "type": "Indication",
-      "name": "PD",
-      "attributes": {
-        "context": "Parkinson's disease (PD)"
-      },
+      "id": "E1",
+      "type": "Study",
+      "name": "present study",
+      "attributes": {},
       "source_chunk_ids": [
-        "9c820c2b7146c775f5e4536913251db2"
-      ]
+        "768ff3f06a5e15e530759b4a1f635ed4"
+      ],
+      "confidence": 0.8,
+      "evidence": "The purpose of the present study",
+      "verified": true
     },
     {
-      "id": "ent_007",
-      "type": "Indication",
-      "name": "Depression",
-      "attributes": {
-        "context": "patients have depression"
-      },
-      "source_chunk_ids": [
-        "9c820c2b7146c775f5e4536913251db2"
-      ]
-    },
-    {
-      "id": "ent_008",
-      "type": "Indication",
-      "name": "Depression",
-      "attributes": {
-        "context": "mechanism of depression"
-      },
-      "source_chunk_ids": [
-        "9c820c2b7146c775f5e4536913251db2"
-      ]
-    },
-    {
-      "id": "ent_009",
-      "type": "Indication",
-      "name": "PD",
-      "attributes": {
-        "context": "depression in PD"
-      },
-      "source_chunk_ids": [
-        "9c820c2b7146c775f5e4536913251db2"
-      ]
-    },
-    {
-      "id": "ent_010",
-      "type": "Indication",
-      "name": "PD",
-      "attributes": {
-        "context": "studies in PD"
-      },
-      "source_chunk_ids": [
-        "bed45551d0d7d3d95bcafdd4f1adc78c"
-      ]
-    },
-    {
-      "id": "ent_011",
-      "type": "Indication",
-      "name": "movement impairment",
-      "attributes": {
-        "context": "greater movement impairment"
-      },
-      "source_chunk_ids": [
-        "bed45551d0d7d3d95bcafdd4f1adc78c"
-      ]
-    },
-    {
-      "id": "ent_012",
-      "type": "Indication",
-      "name": "idiopathic Parkinson's Disease",
-      "attributes": {
-        "context": "idiopathic PD"
-      },
-      "source_chunk_ids": [
-        "bee7a5a65584c13aa151f9c1f726eeb1"
-      ]
-    },
-    {
-      "id": "ent_013",
-      "type": "PharmEffect",
-      "name": "depressive",
-      "attributes": {
-        "context": "without, depressive"
-      },
-      "source_chunk_ids": [
-        "bee7a5a65584c13aa151f9c1f726eeb1"
-      ]
-    },
-    {
-      "id": "ent_014",
-      "type": "Indication",
-      "name": "symptomatology",
-      "attributes": {
-        "context": "symptomatology."
-      },
-      "source_chunk_ids": [
-        "9d733b24bc0464adec82f251f21f238d"
-      ]
-    },
-    {
-      "id": "ent_015",
-      "type": "Indication",
-      "name": "disease",
-      "attributes": {
-        "context": "disease severity and duration."
-      },
-      "source_chunk_ids": [
-        "9d733b24bc0464adec82f251f21f238d"
-      ]
-    },
-    {
-      "id": "ent_016",
-      "type": "Indication",
-      "name": "age-related EEG changes",
-      "attributes": {
-        "context": "major influence of age-related EEG changes"
-      },
-      "source_chunk_ids": [
-        "040da16ceb1c54bb269089d4cda29fa0"
-      ]
-    },
-    {
-      "id": "ent_017",
-      "type": "Indication",
-      "name": "parkinsonian signs",
-      "attributes": {
-        "context": "exclusively parkinsonian signs"
-      },
-      "source_chunk_ids": [
-        "040da16ceb1c54bb269089d4cda29fa0"
-      ]
-    },
-    {
-      "id": "ent_018",
-      "type": "Indication",
-      "name": "bradykinesia",
-      "attributes": {
-        "context": "cardinal features (bradykinesia, tremor, or rigidity)"
-      },
-      "source_chunk_ids": [
-        "040da16ceb1c54bb269089d4cda29fa0"
-      ]
-    },
-    {
-      "id": "ent_019",
-      "type": "Indication",
-      "name": "tremor",
-      "attributes": {
-        "context": "cardinal features (bradykinesia, tremor, or rigidity)"
-      },
-      "source_chunk_ids": [
-        "040da16ceb1c54bb269089d4cda29fa0"
-      ]
-    },
-    {
-      "id": "ent_020",
-      "type": "Indication",
-      "name": "rigidity",
-      "attributes": {
-        "context": "cardinal features (bradykinesia, tremor, or rigidity)"
-      },
-      "source_chunk_ids": [
-        "040da16ceb1c54bb269089d4cda29fa0"
-      ]
-    },
-    {
-      "id": "ent_021",
-      "type": "Indication",
-      "name": "focal lesions",
-      "attributes": {
-        "context": "evidence of focal lesions on CT scans"
-      },
-      "source_chunk_ids": [
-        "040da16ceb1c54bb269089d4cda29fa0"
-      ]
-    },
-    {
-      "id": "ent_022",
-      "type": "Indication",
-      "name": "ischemia",
-      "attributes": {
-        "context": "Hachinski ischemia score"
-      },
-      "source_chunk_ids": [
-        "040da16ceb1c54bb269089d4cda29fa0"
-      ]
-    },
-    {
-      "id": "ent_023",
-      "type": "Indication",
-      "name": "motor disability",
-      "attributes": {
-        "context": "severity of motor disability"
-      },
-      "source_chunk_ids": [
-        "040da16ceb1c54bb269089d4cda29fa0"
-      ]
-    },
-    {
-      "id": "ent_024",
-      "type": "Indication",
-      "name": "performance impairment of everyday activities",
-      "attributes": {
-        "context": "level of performance impairment of everyday activities"
-      },
-      "source_chunk_ids": [
-        "040da16ceb1c54bb269089d4cda29fa0"
-      ]
-    },
-    {
-      "id": "ent_025",
-      "type": "Indication",
-      "name": "global cognitive decline",
-      "attributes": {
-        "context": "screen for global cognitive decline"
-      },
-      "source_chunk_ids": [
-        "040da16ceb1c54bb269089d4cda29fa0"
-      ]
-    },
-    {
-      "id": "ent_026",
-      "type": "Indication",
-      "name": "Affective Disorders",
-      "attributes": {
-        "context": "Schedule for Affective Disorders and Schizophrenia"
-      },
-      "source_chunk_ids": [
-        "040da16ceb1c54bb269089d4cda29fa0"
-      ]
-    },
-    {
-      "id": "ent_027",
-      "type": "Indication",
-      "name": "Schizophrenia",
-      "attributes": {
-        "context": "Schedule for Affective Disorders and Schizophrenia"
-      },
-      "source_chunk_ids": [
-        "040da16ceb1c54bb269089d4cda29fa0"
-      ]
-    },
-    {
-      "id": "ent_028",
-      "type": "Indication",
+      "id": "E2",
+      "type": "Condition",
       "name": "depressed",
       "attributes": {
-        "context": "classified, according to the Research Diagnostic Criteria [16], as either depressed (major or minor depression) or non-depressed"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
-        "040da16ceb1c54bb269089d4cda29fa0"
-      ]
+        "768ff3f06a5e15e530759b4a1f635ed4"
+      ],
+      "confidence": 0.9,
+      "evidence": "depressed from non-depressed PD patients",
+      "verified": true
     },
     {
-      "id": "ent_029",
-      "type": "Indication",
-      "name": "major depression",
-      "attributes": {
-        "context": "depressed (major or minor depression)"
-      },
-      "source_chunk_ids": [
-        "040da16ceb1c54bb269089d4cda29fa0"
-      ]
-    },
-    {
-      "id": "ent_030",
-      "type": "Indication",
-      "name": "minor depression",
-      "attributes": {
-        "context": "depressed (major or minor depression)"
-      },
-      "source_chunk_ids": [
-        "040da16ceb1c54bb269089d4cda29fa0"
-      ]
-    },
-    {
-      "id": "ent_031",
-      "type": "Indication",
-      "name": "depression",
-      "attributes": {
-        "context": "Severity of depression was measured"
-      },
-      "source_chunk_ids": [
-        "040da16ceb1c54bb269089d4cda29fa0"
-      ]
-    },
-    {
-      "id": "ent_032",
-      "type": "Indication",
-      "name": "DEPRESSION",
-      "attributes": {
-        "context": "influence of DEPRESSION as an isolated factor"
-      },
-      "source_chunk_ids": [
-        "504361858cfaa994d40ad64405a4c61f"
-      ]
-    },
-    {
-      "id": "ent_033",
-      "type": "Indication",
-      "name": "DEPRESSION",
-      "attributes": {
-        "context": "DEPRESSION \u00d7 ELECTRODE SITE"
-      },
-      "source_chunk_ids": [
-        "504361858cfaa994d40ad64405a4c61f"
-      ]
-    },
-    {
-      "id": "ent_034",
-      "type": "Indication",
-      "name": "DEPRESSION",
-      "attributes": {
-        "context": "significant influence of DEPRESSION"
-      },
-      "source_chunk_ids": [
-        "504361858cfaa994d40ad64405a4c61f"
-      ]
-    },
-    {
-      "id": "ent_035",
-      "type": "Indication",
-      "name": "Depression",
-      "attributes": {
-        "context": "non-depressed (D \u2013)"
-      },
-      "source_chunk_ids": [
-        "83865a610887df334ffacf9edc0e65a7"
-      ]
-    },
-    {
-      "id": "ent_036",
-      "type": "Indication",
-      "name": "Depression",
-      "attributes": {
-        "context": "depressed (D +)"
-      },
-      "source_chunk_ids": [
-        "83865a610887df334ffacf9edc0e65a7"
-      ]
-    },
-    {
-      "id": "ent_037",
-      "type": "Indication",
-      "name": "Parkinson's Disease",
-      "attributes": {
-        "context": "PD patients' groups"
-      },
-      "source_chunk_ids": [
-        "83865a610887df334ffacf9edc0e65a7"
-      ]
-    },
-    {
-      "id": "ent_038",
-      "type": "Indication",
-      "name": "depression",
-      "attributes": {
-        "context": "for depression"
-      },
-      "source_chunk_ids": [
-        "58efef66ba25259fc75c2d1067f7a1cc"
-      ]
-    },
-    {
-      "id": "ent_039",
-      "type": "Indication",
+      "id": "E3",
+      "type": "Condition",
       "name": "PD",
       "attributes": {
-        "context": "in PD"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
-        "58efef66ba25259fc75c2d1067f7a1cc"
-      ]
+        "768ff3f06a5e15e530759b4a1f635ed4"
+      ],
+      "confidence": 0.85,
+      "evidence": "PD patients",
+      "verified": true
     },
     {
-      "id": "ent_040",
-      "type": "Indication",
+      "id": "E1",
+      "type": "Study",
+      "name": "study in PD patients",
+      "attributes": {
+        "sample_size": 24,
+        "design": "clinical study"
+      },
+      "source_chunk_ids": [
+        "bee7a5a65584c13aa151f9c1f726eeb1"
+      ],
+      "confidence": 0.85,
+      "evidence": "The study was performed in 24 patients",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "idiopathic PD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "bee7a5a65584c13aa151f9c1f726eeb1"
+      ],
+      "confidence": 0.9,
+      "evidence": "patients with idiopathic PD",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "depressive",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "bee7a5a65584c13aa151f9c1f726eeb1"
+      ],
+      "confidence": 0.8,
+      "evidence": "depressive",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Parkinson's disease study",
+      "attributes": {
+        "design": "observational",
+        "sample_criteria": "patients aged \u226465 years with parkinsonian signs, excluding focal lesions, high ischemia score, low MMS score",
+        "evaluation_methods": "Hoehn and Yahr scale, CURS, NWUDSS, MMS, SADS, HAMD"
+      },
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ],
+      "confidence": 0.9,
+      "evidence": "All patients presented with exclusively parkinsonian signs",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical study",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ],
+      "confidence": 0.85,
+      "evidence": "study design was approved by the Ethical Board",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ],
+      "confidence": 0.95,
+      "evidence": "parkinsonian signs, dominated by at least two of its cardinal features",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
       "name": "depression",
       "attributes": {
-        "context": "1\u2014depression (2)"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
-        "b3bb46ba5de12cf2c77545f3050035ef"
-      ]
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ],
+      "confidence": 0.9,
+      "evidence": "classified as either depressed (major or minor depression)",
+      "verified": true
     },
     {
-      "id": "ent_041",
-      "type": "Indication",
+      "id": "E5",
+      "type": "Condition",
+      "name": "cognitive decline",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ],
+      "confidence": 0.8,
+      "evidence": "screen for global cognitive decline",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "4aa003b6e5c27cc7f4d02390c753b510"
+      ],
+      "confidence": 0.95,
+      "evidence": "presence or absence of depression",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "patient categorization study",
+      "attributes": {
+        "design": "categorization",
+        "sample_size": 24
+      },
+      "source_chunk_ids": [
+        "4aa003b6e5c27cc7f4d02390c753b510"
+      ],
+      "confidence": 0.8,
+      "evidence": "Patients were categorized into two groups",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "observational study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "4aa003b6e5c27cc7f4d02390c753b510"
+      ],
+      "confidence": 0.75,
+      "evidence": "categorized according to depression",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "15c9b3f21e6fd8e837ea8e3dc5a37694"
+      ],
+      "confidence": 0.9,
+      "evidence": "depressed patients",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "15c9b3f21e6fd8e837ea8e3dc5a37694"
+      ],
+      "confidence": 0.85,
+      "evidence": "onset of PD",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "minor depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "15c9b3f21e6fd8e837ea8e3dc5a37694"
+      ],
+      "confidence": 0.8,
+      "evidence": "diagnosed as having minor depression",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "major depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "15c9b3f21e6fd8e837ea8e3dc5a37694"
+      ],
+      "confidence": 0.8,
+      "evidence": "eight had major depression",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "EEG study on depression and PD",
+      "attributes": {
+        "design": "observational",
+        "sample_size": 12
+      },
+      "source_chunk_ids": [
+        "15c9b3f21e6fd8e837ea8e3dc5a37694"
+      ],
+      "confidence": 0.7,
+      "evidence": "depressed patients showed significantly higher HAMD scores",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "clinical observation",
+      "attributes": {
+        "evidence_level": 3,
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "15c9b3f21e6fd8e837ea8e3dc5a37694"
+      ],
+      "confidence": 0.65,
+      "evidence": "depressed patients showed significantly higher HAMD scores",
+      "verified": false
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "504361858cfaa994d40ad64405a4c61f"
+      ],
+      "confidence": 0.95,
+      "evidence": "DEPRESSION as an isolated factor",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Effect",
+      "name": "reduced alpha1 activity",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "504361858cfaa994d40ad64405a4c61f"
+      ],
+      "confidence": 0.85,
+      "evidence": "D+ patients had less alpha1 activity",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "EEG study on depression",
+      "attributes": {
+        "design": "ANOVA with repeated design",
+        "sample_size": 24
+      },
+      "source_chunk_ids": [
+        "504361858cfaa994d40ad64405a4c61f"
+      ],
+      "confidence": 0.8,
+      "evidence": "ANOVA with repeated design on absolute power values",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "504361858cfaa994d40ad64405a4c61f"
+      ],
+      "confidence": 0.7,
+      "evidence": "EEG study",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "3838f3d371046f42a2b781114fc9af17"
+      ],
+      "confidence": 0.95,
+      "evidence": "DEPRESSION as an isolated factor",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Effect",
+      "name": "reduced alpha1 activity",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "3838f3d371046f42a2b781114fc9af17"
+      ],
+      "confidence": 0.85,
+      "evidence": "D + patients having less alpha1 activity",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "increased alpha2 activity",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "3838f3d371046f42a2b781114fc9af17"
+      ],
+      "confidence": 0.7,
+      "evidence": "D + patients showing slightly more alpha2 activity",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "first study to compare QEEG findings between depressed and non-depressed PD patients",
+      "attributes": {
+        "design": "comparative study"
+      },
+      "source_chunk_ids": [
+        "b144e4edfce2467d58dff25512a21c89"
+      ],
+      "confidence": 0.9,
+      "evidence": "first study to compare QEEG findings",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "QEEG spectral pattern analysis",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "b144e4edfce2467d58dff25512a21c89"
+      ],
+      "confidence": 0.85,
+      "evidence": "distinctive spectral pattern",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "b144e4edfce2467d58dff25512a21c89"
+      ],
+      "confidence": 0.95,
+      "evidence": "depressed PD patients",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "b144e4edfce2467d58dff25512a21c89"
+      ],
+      "confidence": 0.95,
+      "evidence": "PD patients",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "diminution of slower alpha activity (alpha1)",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "b144e4edfce2467d58dff25512a21c89"
+      ],
+      "confidence": 0.8,
+      "evidence": "significant diminution of slower alpha activity",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "surplus of faster alpha activity (alpha2)",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "b144e4edfce2467d58dff25512a21c89"
+      ],
+      "confidence": 0.75,
+      "evidence": "slight surplus of faster alpha activity",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "7f14bf343f9c1277f91d915406231870"
+      ],
+      "confidence": 0.9,
+      "evidence": "depression factor",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Jasper and Andrews (1930s)",
+      "attributes": {
+        "year": "late 1930s",
+        "authors": "Jasper and Andrews"
+      },
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "confidence": 0.9,
+      "evidence": "performed in the late 1930s by Jasper and Andrews",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "EEG study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "confidence": 0.85,
+      "evidence": "EEG studies of PD patients",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "confidence": 0.95,
+      "evidence": "PD patients",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "4\u20135 Hz rhythmic activity",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "confidence": 0.8,
+      "evidence": "specific 4\u20135 Hz rhythmic activity",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "artifact from head tremor",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "confidence": 0.75,
+      "evidence": "artifact introduced into the EEG by head tremor",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "normal EEG activity",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "confidence": 0.8,
+      "evidence": "real EEG activity did not differ from normal",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "simultaneous EEG and EMG registration",
+      "attributes": {
+        "design": "simultaneous EEG and EMG registration"
+      },
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "confidence": 0.85,
+      "evidence": "simultaneous EEG and EMG registration",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "stereotaxic procedures studies (1960s)",
+      "attributes": {
+        "year": "early sixties"
+      },
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "confidence": 0.8,
+      "evidence": "stereotaxic procedures in the early sixties",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Markand review",
+      "attributes": {
+        "authors": "Markand"
+      },
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "confidence": 0.85,
+      "evidence": "Markand concluded",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "normal EEGs",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "confidence": 0.8,
+      "evidence": "majority of patients had normal EEGs",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "slowing of occipital background activity",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "confidence": 0.75,
+      "evidence": "slowing of the occipital background activity",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Neufeld et al. [6]",
+      "attributes": {
+        "design": "methodologically correct study",
+        "sample_size": null,
+        "year": null,
+        "doi": null
+      },
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "confidence": 0.9,
+      "evidence": "Neufeld et al. [6] found",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "methodologically correct study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "confidence": 0.85,
+      "evidence": "rare methodologically correct studies",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "confidence": 0.95,
+      "evidence": "PD patients",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "pathological EEG",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "confidence": 0.8,
+      "evidence": "pathological EEG in 16%",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "slowing of background activity",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "confidence": 0.85,
+      "evidence": "slowing of the background activity",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "increase in diffuse theta activity",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "confidence": 0.85,
+      "evidence": "increase in diffuse theta activity",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "relationship between EEG findings and motor impairment",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "confidence": 0.8,
+      "evidence": "relationship between pathological findings and motor impairment",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "same group [9]",
+      "attributes": {
+        "design": "QEEG study",
+        "sample_size": 20,
+        "year": null,
+        "doi": null
+      },
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "confidence": 0.85,
+      "evidence": "same group [9] using QEEG",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "QEEG study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "confidence": 0.8,
+      "evidence": "using QEEG",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "no significant difference in EEG",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "confidence": 0.75,
+      "evidence": "failed to find any significant difference",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "trend toward higher slower activity with motor deficit",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "confidence": 0.7,
+      "evidence": "trend toward a higher percentage of slower activity",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Study",
+      "name": "Soikkeli et al. [8]",
+      "attributes": {
+        "design": "QEEG study",
+        "sample_size": 18,
+        "year": null,
+        "doi": null
+      },
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "confidence": 0.9,
+      "evidence": "Soikkeli et al. [8] demonstrated",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Effect",
+      "name": "increase of absolute and relative theta activity",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "confidence": 0.85,
+      "evidence": "increase of absolute and relative theta activity",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Effect",
+      "name": "decrease of relative alpha and beta activity",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "confidence": 0.85,
+      "evidence": "decrease of relative alpha and beta activity",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Effect",
+      "name": "slowing of mean and dominant frequency",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "confidence": 0.85,
+      "evidence": "slowing of the mean and dominant frequency",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "functional imaging studies",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "d9d29d7bd09a6c550caa2df5ba000588"
+      ],
+      "confidence": 0.9,
+      "evidence": "functional imaging studies",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "d9d29d7bd09a6c550caa2df5ba000588"
+      ],
+      "confidence": 0.95,
+      "evidence": "patients with depression",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
       "name": "cerebral hypoactivity",
       "attributes": {
-        "context": "evidence of cerebral hypoactivity"
+        "level": "systemic",
+        "valence": "negative"
       },
       "source_chunk_ids": [
         "d9d29d7bd09a6c550caa2df5ba000588"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "cerebral hypoactivity",
+      "verified": true
     },
     {
-      "id": "ent_042",
-      "type": "PharmEffect",
-      "name": "reduction of global cerebral blood flow",
+      "id": "E4",
+      "type": "Effect",
+      "name": "reduction of global cerebral blood flow and metabolism",
       "attributes": {
-        "context": "manifested mainly as reduction of global cerebral blood flow"
+        "level": "systemic",
+        "valence": "negative"
       },
       "source_chunk_ids": [
         "d9d29d7bd09a6c550caa2df5ba000588"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "reduction of global cerebral blood flow and metabolism",
+      "verified": true
     },
     {
-      "id": "ent_043",
-      "type": "PharmEffect",
-      "name": "reduction of metabolism",
-      "attributes": {
-        "context": "reduction of global cerebral blood flow and metabolism"
-      },
-      "source_chunk_ids": [
-        "d9d29d7bd09a6c550caa2df5ba000588"
-      ]
-    },
-    {
-      "id": "ent_044",
-      "type": "Indication",
-      "name": "depression",
-      "attributes": {
-        "context": "in patients with depression"
-      },
-      "source_chunk_ids": [
-        "d9d29d7bd09a6c550caa2df5ba000588"
-      ]
-    },
-    {
-      "id": "ent_045",
-      "type": "PharmEffect",
+      "id": "E5",
+      "type": "Effect",
       "name": "reduced power in the alpha1 band",
       "attributes": {
-        "context": "account for the reduced power in the alpha1 band"
+        "level": "cellular",
+        "valence": "negative"
       },
       "source_chunk_ids": [
         "d9d29d7bd09a6c550caa2df5ba000588"
-      ]
+      ],
+      "confidence": 0.75,
+      "evidence": "reduced power in the alpha1 band",
+      "verified": true
     },
     {
-      "id": "ent_046",
-      "type": "Indication",
+      "id": "E1",
+      "type": "Study",
+      "name": "study on depression and EEG",
+      "attributes": {
+        "sample_size": 63,
+        "design": "observational"
+      },
+      "source_chunk_ids": [
+        "bb0739dd1da049e24128d992b9131652"
+      ],
+      "confidence": 0.85,
+      "evidence": "large group of 63 depressed patients",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "observational study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "bb0739dd1da049e24128d992b9131652"
+      ],
+      "confidence": 0.8,
+      "evidence": "associations between severity of depression",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
       "name": "depression",
       "attributes": {
-        "context": "psychomotor retardation in depression"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
-        "d31b0c4df0bae0990a30e144f99f2528"
-      ]
+        "bb0739dd1da049e24128d992b9131652"
+      ],
+      "confidence": 0.9,
+      "evidence": "depressed patients",
+      "verified": true
     },
     {
-      "id": "ent_047",
-      "type": "Indication",
+      "id": "E4",
+      "type": "Condition",
       "name": "psychomotor retardation",
       "attributes": {
-        "context": "association between psychomotor retardation in depression"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
-        "d31b0c4df0bae0990a30e144f99f2528"
-      ]
+        "bb0739dd1da049e24128d992b9131652"
+      ],
+      "confidence": 0.9,
+      "evidence": "psychomotor retardation",
+      "verified": true
     },
     {
-      "id": "ent_048",
-      "type": "PharmEffect",
-      "name": "slowing of EEG",
-      "attributes": {
-        "context": "slowing of EEG"
-      },
-      "source_chunk_ids": [
-        "d31b0c4df0bae0990a30e144f99f2528"
-      ]
-    },
-    {
-      "id": "ent_049",
-      "type": "Indication",
-      "name": "anxiety\u2013depression",
-      "attributes": {
-        "context": "the \u201canxiety\u2013depression\u201d psychometric construct"
-      },
-      "source_chunk_ids": [
-        "d31b0c4df0bae0990a30e144f99f2528"
-      ]
-    },
-    {
-      "id": "ent_050",
-      "type": "PharmEffect",
-      "name": "fast activity in the EEG",
-      "attributes": {
-        "context": "related to fast activity in the EEG"
-      },
-      "source_chunk_ids": [
-        "d31b0c4df0bae0990a30e144f99f2528"
-      ]
-    },
-    {
-      "id": "ent_051",
-      "type": "Indication",
-      "name": "retardation",
-      "attributes": {
-        "context": "symptoms associated with the \u201cretardation\u201d construct"
-      },
-      "source_chunk_ids": [
-        "d31b0c4df0bae0990a30e144f99f2528"
-      ]
-    },
-    {
-      "id": "ent_052",
-      "type": "PharmEffect",
+      "id": "E5",
+      "type": "Effect",
       "name": "slow EEG activity",
       "attributes": {
-        "context": "relationship with slow EEG activity"
-      },
-      "source_chunk_ids": [
-        "d31b0c4df0bae0990a30e144f99f2528"
-      ]
-    },
-    {
-      "id": "ent_053",
-      "type": "Indication",
-      "name": "major depressive disorder",
-      "attributes": {
-        "context": "major depressive disorder was associated with an increase"
-      },
-      "source_chunk_ids": [
-        "d31b0c4df0bae0990a30e144f99f2528"
-      ]
-    },
-    {
-      "id": "ent_054",
-      "type": "PharmEffect",
-      "name": "increase of delta amplitude",
-      "attributes": {
-        "context": "an increase of delta amplitude"
-      },
-      "source_chunk_ids": [
-        "d31b0c4df0bae0990a30e144f99f2528"
-      ]
-    },
-    {
-      "id": "ent_055",
-      "type": "Indication",
-      "name": "retarded depression",
-      "attributes": {
-        "context": "retarded depression was associated with an increase"
-      },
-      "source_chunk_ids": [
-        "d31b0c4df0bae0990a30e144f99f2528"
-      ]
-    },
-    {
-      "id": "ent_056",
-      "type": "PharmEffect",
-      "name": "increase of delta and theta amplitudes",
-      "attributes": {
-        "context": "increase of delta and theta amplitudes"
-      },
-      "source_chunk_ids": [
-        "d31b0c4df0bae0990a30e144f99f2528"
-      ]
-    },
-    {
-      "id": "ent_057",
-      "type": "PharmEffect",
-      "name": "EEG variability",
-      "attributes": {
-        "context": "and EEG variability"
-      },
-      "source_chunk_ids": [
-        "d31b0c4df0bae0990a30e144f99f2528"
-      ]
-    },
-    {
-      "id": "ent_058",
-      "type": "Indication",
-      "name": "depression",
-      "attributes": {
-        "context": "in patients with depression"
-      },
-      "source_chunk_ids": [
-        "d31b0c4df0bae0990a30e144f99f2528"
-      ]
-    },
-    {
-      "id": "ent_059",
-      "type": "Indication",
-      "name": "depressive pseudodementia",
-      "attributes": {
-        "context": "or depressive pseudodementia"
-      },
-      "source_chunk_ids": [
-        "d31b0c4df0bae0990a30e144f99f2528"
-      ]
-    },
-    {
-      "id": "ent_060",
-      "type": "PharmEffect",
-      "name": "slowing of the dominant posterior rhythm",
-      "attributes": {
-        "context": "show a significant slowing of the dominant posterior rhythm"
-      },
-      "source_chunk_ids": [
-        "d31b0c4df0bae0990a30e144f99f2528"
-      ]
-    },
-    {
-      "id": "ent_061",
-      "type": "PharmEffect",
-      "name": "generalized abnormal EEGs",
-      "attributes": {
-        "context": "higher percentage of generalized abnormal EEGs"
-      },
-      "source_chunk_ids": [
-        "d31b0c4df0bae0990a30e144f99f2528"
-      ]
-    },
-    {
-      "id": "ent_062",
-      "type": "Indication",
-      "name": "depression",
-      "attributes": {
-        "context": "severity of depression"
+        "level": "systemic",
+        "valence": "neutral"
       },
       "source_chunk_ids": [
         "bb0739dd1da049e24128d992b9131652"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "slow EEG activity",
+      "verified": true
     },
     {
-      "id": "ent_063",
-      "type": "Indication",
-      "name": "psychomotor retardation",
+      "id": "E6",
+      "type": "Effect",
+      "name": "fast EEG activity",
       "attributes": {
-        "context": "psychomotor retardation"
+        "level": "systemic",
+        "valence": "neutral"
       },
       "source_chunk_ids": [
         "bb0739dd1da049e24128d992b9131652"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "fast EEG activity",
+      "verified": true
     },
     {
-      "id": "ent_064",
-      "type": "Indication",
-      "name": "depressed patients",
-      "attributes": {
-        "context": "63 depressed patients"
-      },
-      "source_chunk_ids": [
-        "bb0739dd1da049e24128d992b9131652"
-      ]
-    },
-    {
-      "id": "ent_065",
-      "type": "Indication",
-      "name": "retardation",
-      "attributes": {
-        "context": "observed retardation"
-      },
-      "source_chunk_ids": [
-        "bb0739dd1da049e24128d992b9131652"
-      ]
-    },
-    {
-      "id": "ent_066",
-      "type": "Indication",
+      "id": "E7",
+      "type": "Condition",
       "name": "motor retardation",
       "attributes": {
-        "context": "motor retardation correlated"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "bb0739dd1da049e24128d992b9131652"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "motor retardation",
+      "verified": true
     },
     {
-      "id": "ent_067",
-      "type": "Indication",
-      "name": "depression",
-      "attributes": {
-        "context": "motor retardation in depression"
-      },
-      "source_chunk_ids": [
-        "bb0739dd1da049e24128d992b9131652"
-      ]
-    },
-    {
-      "id": "ent_068",
-      "type": "Indication",
+      "id": "E8",
+      "type": "Condition",
       "name": "anxiety",
       "attributes": {
-        "context": "associate anxiety with fast EEG activity"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "bb0739dd1da049e24128d992b9131652"
-      ]
+      ],
+      "confidence": 0.75,
+      "evidence": "associate anxiety with fast EEG activity",
+      "verified": true
     },
     {
-      "id": "ent_069",
-      "type": "Indication",
-      "name": "Depression",
+      "id": "E1",
+      "type": "Condition",
+      "name": "depressive symptoms in PD",
       "attributes": {
-        "context": "in D + PD patients"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
-        "8f0789fbb2e6ea390cccc6dcde48e2b1"
-      ]
+        "869c1c9d1e69ec0de46c75b947feaade"
+      ],
+      "confidence": 0.9,
+      "evidence": "depressive symptoms in PD",
+      "verified": true
     },
     {
-      "id": "ent_070",
-      "type": "Indication",
-      "name": "Parkinson's Disease",
+      "id": "E2",
+      "type": "Condition",
+      "name": "idiopathic depression",
       "attributes": {
-        "context": "in D + PD patients"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
-        "8f0789fbb2e6ea390cccc6dcde48e2b1"
-      ]
+        "869c1c9d1e69ec0de46c75b947feaade"
+      ],
+      "confidence": 0.9,
+      "evidence": "idiopathic depression",
+      "verified": true
     },
     {
-      "id": "ent_071",
-      "type": "Indication",
-      "name": "Depression",
+      "id": "E3",
+      "type": "Condition",
+      "name": "cognitive impairments of depressed PD patients",
       "attributes": {
-        "context": "in frontal lobes in depression"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
-        "8f0789fbb2e6ea390cccc6dcde48e2b1"
-      ]
+        "869c1c9d1e69ec0de46c75b947feaade"
+      ],
+      "confidence": 0.85,
+      "evidence": "cognitive impairments of depressed PD patients",
+      "verified": true
     },
     {
-      "id": "ent_072",
-      "type": "Indication",
-      "name": "Depression",
+      "id": "E4",
+      "type": "Condition",
+      "name": "non-PD depressed patients",
       "attributes": {
-        "context": "in our D + patients"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
-        "8f0789fbb2e6ea390cccc6dcde48e2b1"
-      ]
+        "869c1c9d1e69ec0de46c75b947feaade"
+      ],
+      "confidence": 0.85,
+      "evidence": "non-PD depressed patients",
+      "verified": true
     },
     {
-      "id": "ent_073",
-      "type": "Indication",
-      "name": "Depression",
+      "id": "E5",
+      "type": "Condition",
+      "name": "non-depressed PD patients",
       "attributes": {
-        "context": "between D + and D - patients"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
-        "8f0789fbb2e6ea390cccc6dcde48e2b1"
-      ]
+        "869c1c9d1e69ec0de46c75b947feaade"
+      ],
+      "confidence": 0.85,
+      "evidence": "non-depressed PD patients",
+      "verified": true
     },
     {
-      "id": "ent_074",
-      "type": "Indication",
-      "name": "major depression",
-      "attributes": {
-        "context": "patients with major and minor depression"
-      },
-      "source_chunk_ids": [
-        "053029e5dd47f81da5092281e8f8fad6"
-      ]
-    },
-    {
-      "id": "ent_075",
-      "type": "Indication",
-      "name": "minor depression",
-      "attributes": {
-        "context": "patients with major and minor depression"
-      },
-      "source_chunk_ids": [
-        "053029e5dd47f81da5092281e8f8fad6"
-      ]
-    },
-    {
-      "id": "ent_076",
-      "type": "Indication",
-      "name": "depression",
-      "attributes": {
-        "context": "types of depression have different neurobiological mechanisms"
-      },
-      "source_chunk_ids": [
-        "053029e5dd47f81da5092281e8f8fad6"
-      ]
-    },
-    {
-      "id": "ent_077",
-      "type": "Indication",
-      "name": "PD",
-      "attributes": {
-        "context": "QEEG characteristics in PD patients"
-      },
-      "source_chunk_ids": [
-        "053029e5dd47f81da5092281e8f8fad6"
-      ]
-    },
-    {
-      "id": "ent_078",
-      "type": "Indication",
-      "name": "parkinsonian symptoms",
-      "attributes": {
-        "context": "onset of parkinsonian symptoms"
-      },
-      "source_chunk_ids": [
-        "053029e5dd47f81da5092281e8f8fad6"
-      ]
-    },
-    {
-      "id": "ent_079",
-      "type": "Indication",
-      "name": "motor parkinsonian symptoms",
-      "attributes": {
-        "context": "onset of the first motor parkinsonian symptoms"
-      },
-      "source_chunk_ids": [
-        "053029e5dd47f81da5092281e8f8fad6"
-      ]
-    },
-    {
-      "id": "ent_080",
-      "type": "Indication",
-      "name": "dementia",
-      "attributes": {
-        "context": "demented parkinsonian patients"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_081",
-      "type": "Indication",
-      "name": "Parkinson's disease",
-      "attributes": {
-        "context": "demented parkinsonian patients"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_082",
-      "type": "Indication",
-      "name": "Parkinson's syndrome",
-      "attributes": {
-        "context": "The electroencephalogram in Parkinson's syndrome"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_083",
-      "type": "PharmEffect",
-      "name": "Slowing of EEG",
-      "attributes": {
-        "context": "Slowing of EEG in Parkinson's disease"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_084",
-      "type": "Indication",
-      "name": "Parkinson's disease",
-      "attributes": {
-        "context": "Slowing of EEG in Parkinson's disease"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_085",
-      "type": "Indication",
-      "name": "Dementia",
-      "attributes": {
-        "context": "EEG frequency analysis in demented and non-demented parkinsonian patients"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_086",
-      "type": "Indication",
-      "name": "Parkinson's disease",
-      "attributes": {
-        "context": "demented and non-demented parkinsonian patients"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_087",
-      "type": "PharmEffect",
-      "name": "Cerebral blood flow",
-      "attributes": {
-        "context": "Cerebral blood flow in dementia"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_088",
-      "type": "Indication",
-      "name": "dementia",
-      "attributes": {
-        "context": "Cerebral blood flow in dementia"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_089",
-      "type": "Indication",
-      "name": "Parkinsonism",
-      "attributes": {
-        "context": "Parkinsonism: onset, progression and mortality"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_090",
-      "type": "Indication",
-      "name": "Parkinsonism",
-      "attributes": {
-        "context": "Treatment of Parkinsonism with levodopa"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_091",
-      "type": "Compound",
-      "name": "levodopa",
-      "attributes": {
-        "context": "Treatment of Parkinsonism with levodopa"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_092",
-      "type": "Indication",
-      "name": "Parkinson's disease",
-      "attributes": {
-        "context": "disability in patients with Parkinson's disease"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_093",
-      "type": "Indication",
-      "name": "affective disorders",
-      "attributes": {
-        "context": "Schedule for affective disorders and schizophrenia"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_094",
-      "type": "Indication",
-      "name": "schizophrenia",
-      "attributes": {
-        "context": "affective disorders and schizophrenia"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_095",
-      "type": "Indication",
-      "name": "depression",
-      "attributes": {
-        "context": "A rating scale for depression"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_096",
-      "type": "Compound",
-      "name": "diazepam",
-      "attributes": {
-        "context": "placebo/diazepam crossover trial"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_097",
-      "type": "Indication",
-      "name": "paralysis agitans",
-      "attributes": {
-        "context": "EMGs and EEGs in paralysis agitans"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_098",
-      "type": "Indication",
-      "name": "Organic brain syndromes",
-      "attributes": {
-        "context": "Organic brain syndromes and dementia"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_099",
-      "type": "Indication",
-      "name": "dementia",
-      "attributes": {
-        "context": "Organic brain syndromes and dementia"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_100",
-      "type": "PharmEffect",
-      "name": "Cerebral blood flow",
-      "attributes": {
-        "context": "Cerebral blood flow in depression and mania"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_101",
-      "type": "Indication",
-      "name": "depression",
-      "attributes": {
-        "context": "Cerebral blood flow in depression and mania"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_102",
-      "type": "Indication",
-      "name": "mania",
-      "attributes": {
-        "context": "Cerebral blood flow in depression and mania"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_103",
-      "type": "PharmEffect",
-      "name": "Reduction of prefrontal cortex glucose metabolism",
-      "attributes": {
-        "context": "Reduction of prefrontal cortex glucose metabolism common to three types of depression"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_104",
-      "type": "Compound",
-      "name": "glucose",
-      "attributes": {
-        "context": "Reduction of prefrontal cortex glucose metabolism"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_105",
-      "type": "Indication",
-      "name": "depression",
-      "attributes": {
-        "context": "common to three types of depression"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_106",
-      "type": "PharmEffect",
-      "name": "alterations in cerebral glucose metabolism",
-      "attributes": {
-        "context": "common alterations in cerebral glucose metabolism in major affective disorders"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_107",
-      "type": "Compound",
-      "name": "glucose",
-      "attributes": {
-        "context": "alterations in cerebral glucose metabolism"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_108",
-      "type": "Indication",
-      "name": "major affective disorders",
-      "attributes": {
-        "context": "major affective disorders and schizophrenia"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_109",
-      "type": "Indication",
-      "name": "schizophrenia",
-      "attributes": {
-        "context": "major affective disorders and schizophrenia"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_110",
-      "type": "Compound",
-      "name": "123IIMP",
-      "attributes": {
-        "context": "SPECT with 123IIMP in the differential diagnosis"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_111",
-      "type": "Indication",
-      "name": "psychiatric disorders",
-      "attributes": {
-        "context": "differential diagnosis of psychiatric disorders"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_112",
-      "type": "Indication",
-      "name": "depressive symptomatology",
-      "attributes": {
-        "context": "Neurophysiological correlates of depressive symptomatology"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_113",
-      "type": "Indication",
-      "name": "major depressive disorder",
-      "attributes": {
-        "context": "clinical characteristics in major depressive disorder"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_114",
-      "type": "Indication",
-      "name": "depressive pseudodementia",
-      "attributes": {
-        "context": "EEG findings in depressive pseudodementia"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_115",
-      "type": "Indication",
-      "name": "dementia with secondary depression",
-      "attributes": {
-        "context": "dementia with secondary depression"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_116",
-      "type": "PharmEffect",
-      "name": "psychomotor retardation",
-      "attributes": {
-        "context": "psychomotor retardation and EEG power spectrum in major depression"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_117",
-      "type": "Indication",
-      "name": "major depression",
-      "attributes": {
-        "context": "psychomotor retardation and EEG power spectrum in major depression"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_118",
-      "type": "Indication",
-      "name": "Depression",
-      "attributes": {
-        "context": "Depression in Parkinson's disease"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_119",
-      "type": "Indication",
-      "name": "Parkinson's disease",
-      "attributes": {
-        "context": "Depression in Parkinson's disease"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_120",
-      "type": "Indication",
-      "name": "Depression",
-      "attributes": {
-        "context": "Depression and disability in Parkinson's disease"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_121",
-      "type": "Indication",
-      "name": "Parkinson's disease",
-      "attributes": {
-        "context": "Depression and disability in Parkinson's disease"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_122",
-      "type": "Indication",
-      "name": "Parkinson's disease",
-      "attributes": {
-        "context": "Levin BE, Llabre MM, Weiner WJ Parkinson's disease"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_123",
-      "type": "Indication",
-      "name": "depression",
-      "attributes": {
-        "context": "Parkinson's disease. depression: psychometric properties"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_124",
-      "type": "Indication",
-      "name": "depressive symptoms",
-      "attributes": {
-        "context": "The pattern of depressive symptoms varies with progression of Parkinson's disease"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_125",
-      "type": "Indication",
-      "name": "Parkinson's disease",
-      "attributes": {
-        "context": "progression of Parkinson's disease"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_126",
-      "type": "Indication",
-      "name": "major depression",
-      "attributes": {
-        "context": "Cognitive functions in major depression and Parkinson disease"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_127",
-      "type": "Indication",
-      "name": "Parkinson disease",
-      "attributes": {
-        "context": "major depression and Parkinson disease"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_128",
-      "type": "Indication",
-      "name": "Major depression",
-      "attributes": {
-        "context": "Major depression in Parkinsons disease"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_129",
-      "type": "Indication",
-      "name": "Parkinsons disease",
-      "attributes": {
-        "context": "Major depression in Parkinsons disease"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_130",
-      "type": "PharmEffect",
-      "name": "mood response",
-      "attributes": {
-        "context": "the mood response to intravenous methylphenidate"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_131",
+      "id": "E6",
       "type": "Compound",
       "name": "methylphenidate",
-      "attributes": {
-        "context": "mood response to intravenous methylphenidate"
-      },
+      "attributes": {},
       "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
+        "869c1c9d1e69ec0de46c75b947feaade"
+      ],
+      "confidence": 0.9,
+      "evidence": "methylphenidate",
+      "verified": true
     },
     {
-      "id": "ent_132",
-      "type": "Compound",
-      "name": "dopamine",
+      "id": "E7",
+      "type": "Target",
+      "name": "mesocorticolimbic dopaminergic circuits",
       "attributes": {
-        "context": "role of the \"hedonic\" dopamine synapse"
+        "target_type": "pathway"
       },
       "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
+        "869c1c9d1e69ec0de46c75b947feaade"
+      ],
+      "confidence": 0.8,
+      "evidence": "mesocorticolimbic dopaminergic circuits",
+      "verified": true
     },
     {
-      "id": "ent_133",
-      "type": "PharmEffect",
-      "name": "Selective hypometabolism",
+      "id": "E8",
+      "type": "Effect",
+      "name": "euphoriant responses",
       "attributes": {
-        "context": "Selective hypometabolism in the inferior frontal lobe in depressed patients"
+        "level": "behavioral",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
+        "869c1c9d1e69ec0de46c75b947feaade"
+      ],
+      "confidence": 0.75,
+      "evidence": "euphoriant responses",
+      "verified": true
     },
     {
-      "id": "ent_134",
-      "type": "Indication",
+      "id": "E9",
+      "type": "Effect",
+      "name": "reduction of metabolism",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "869c1c9d1e69ec0de46c75b947feaade"
+      ],
+      "confidence": 0.8,
+      "evidence": "reduction of metabolism",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Target",
+      "name": "bilateral caudate, prefrontal, and anterior temporal",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "869c1c9d1e69ec0de46c75b947feaade"
+      ],
+      "confidence": 0.75,
+      "evidence": "bilateral caudate, prefrontal, and anterior temporal",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Condition",
+      "name": "neurologically normal depressed patients",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "869c1c9d1e69ec0de46c75b947feaade"
+      ],
+      "confidence": 0.8,
+      "evidence": "neurologically normal depressed patients",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "idiopathic depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "b7d83e9dfa3f41315eafeaa7e136cef4"
+      ],
+      "confidence": 0.9,
+      "evidence": "idiopathic depression emphasize changes",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Mayberg et al. [40]",
+      "attributes": {
+        "design": "observational",
+        "year": "implicit"
+      },
+      "source_chunk_ids": [
+        "b7d83e9dfa3f41315eafeaa7e136cef4"
+      ],
+      "confidence": 0.85,
+      "evidence": "Mayberg et al. [40] found selective hypo-metabolism",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "depressed PD patients",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "b7d83e9dfa3f41315eafeaa7e136cef4"
+      ],
+      "confidence": 0.9,
+      "evidence": "depressed PD patients",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Ring et al. [41]",
+      "attributes": {
+        "design": "observational",
+        "year": "implicit"
+      },
+      "source_chunk_ids": [
+        "b7d83e9dfa3f41315eafeaa7e136cef4"
+      ],
+      "confidence": 0.85,
+      "evidence": "Ring et al. [41] found hypometabolism",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "primarily depressed patients",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "b7d83e9dfa3f41315eafeaa7e136cef4"
+      ],
+      "confidence": 0.85,
+      "evidence": "primarily depressed patients",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "observational study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "b7d83e9dfa3f41315eafeaa7e136cef4"
+      ],
+      "confidence": 0.8,
+      "evidence": "found selective hypo-metabolism",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "observational study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "b7d83e9dfa3f41315eafeaa7e136cef4"
+      ],
+      "confidence": 0.8,
+      "evidence": "found hypometabolism",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "our study",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8f0789fbb2e6ea390cccc6dcde48e2b1"
+      ],
+      "confidence": 0.9,
+      "evidence": "our study",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "methodological artifact",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "8f0789fbb2e6ea390cccc6dcde48e2b1"
+      ],
+      "confidence": 0.7,
+      "evidence": "methodological artifact",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
       "name": "depression",
       "attributes": {
-        "context": "in depressed patients with Parkinson's disease"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
+        "8f0789fbb2e6ea390cccc6dcde48e2b1"
+      ],
+      "confidence": 0.9,
+      "evidence": "depression",
+      "verified": true
     },
     {
-      "id": "ent_135",
-      "type": "Indication",
-      "name": "Parkinson's disease",
+      "id": "E4",
+      "type": "Effect",
+      "name": "increase in relative alpha2 power",
       "attributes": {
-        "context": "depressed patients with Parkinson's disease"
+        "level": "systemic",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
+        "8f0789fbb2e6ea390cccc6dcde48e2b1"
+      ],
+      "confidence": 0.8,
+      "evidence": "increase in relative alpha2 power",
+      "verified": true
     },
     {
-      "id": "ent_136",
-      "type": "Indication",
-      "name": "Depression",
+      "id": "E5",
+      "type": "Effect",
+      "name": "alpha1 occipital and alpha2 frontal asymmetry",
       "attributes": {
-        "context": "Depression in Parkinson's disease"
+        "level": "systemic",
+        "valence": "neutral"
       },
       "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
+        "8f0789fbb2e6ea390cccc6dcde48e2b1"
+      ],
+      "confidence": 0.75,
+      "evidence": "alpha1 occipital and alpha2 frontal asymmetry",
+      "verified": true
     },
     {
-      "id": "ent_137",
-      "type": "Indication",
-      "name": "Parkinson's disease",
-      "attributes": {
-        "context": "Depression in Parkinson's disease"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_138",
-      "type": "PharmEffect",
-      "name": "Hypoperfusion",
-      "attributes": {
-        "context": "Hypoperfusion in the limbic system and prefrontal cortex in depression"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_139",
-      "type": "Indication",
+      "id": "E1",
+      "type": "Condition",
       "name": "depression",
       "attributes": {
-        "context": "Hypoperfusion in the limbic system and prefrontal cortex in depression"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "confidence": 0.95,
+      "evidence": "depression",
+      "verified": true
     },
     {
-      "id": "ent_140",
-      "type": "PharmEffect",
-      "name": "Cerebral perfusion",
-      "attributes": {
-        "context": "Cerebral perfusion correlates of depressed mood"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_141",
-      "type": "Indication",
-      "name": "depression",
-      "attributes": {
-        "context": "correlates of depressed mood"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_142",
-      "type": "Indication",
-      "name": "Depression",
-      "attributes": {
-        "context": "Depression in Parkinson's disease"
-      },
-      "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
-    },
-    {
-      "id": "ent_143",
-      "type": "Indication",
+      "id": "E2",
+      "type": "Condition",
       "name": "Parkinson's disease",
       "attributes": {
-        "context": "Depression in Parkinson's disease"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "confidence": 0.9,
+      "evidence": "PD patients",
+      "verified": true
     },
     {
-      "id": "ent_144",
-      "type": "Indication",
-      "name": "movement disorders",
+      "id": "E3",
+      "type": "Target",
+      "name": "left hemisphere",
       "attributes": {
-        "context": "Behavioral neurology of movement disorders"
+        "target_type": "brain_region"
       },
       "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "confidence": 0.85,
+      "evidence": "left hemisphere",
+      "verified": true
     },
     {
-      "id": "ent_145",
-      "type": "Indication",
-      "name": "Parkinson's disease",
+      "id": "E4",
+      "type": "Target",
+      "name": "left posterior cortex",
       "attributes": {
-        "context": "rCBF SPECT in Parkinson's disease patients"
+        "target_type": "brain_region"
       },
       "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "confidence": 0.85,
+      "evidence": "left posterior cortex",
+      "verified": true
     },
     {
-      "id": "ent_146",
-      "type": "Indication",
-      "name": "mental dysfunction",
+      "id": "E5",
+      "type": "Effect",
+      "name": "hyperfunction",
       "attributes": {
-        "context": "patients with mental dysfunction"
+        "level": "systemic",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "confidence": 0.8,
+      "evidence": "hyperfunction",
+      "verified": true
     },
     {
-      "id": "ent_147",
-      "type": "PharmEffect",
-      "name": "Regional cerebral blood flow",
+      "id": "E6",
+      "type": "Effect",
+      "name": "dysfunction",
       "attributes": {
-        "context": "Regional cerebral blood flow and lateralized hemispheric dysfunction"
+        "level": "systemic",
+        "valence": "negative"
       },
       "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "confidence": 0.8,
+      "evidence": "dysfunction",
+      "verified": true
     },
     {
-      "id": "ent_148",
-      "type": "Indication",
-      "name": "lateralized hemispheric dysfunction",
+      "id": "E7",
+      "type": "Study",
+      "name": "Uyttenhoeft et al. [46]",
       "attributes": {
-        "context": "lateralized hemispheric dysfunction in depression"
+        "year": "implicit",
+        "design": "functional imaging"
       },
       "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "confidence": 0.75,
+      "evidence": "Uyttenhoeft et al. [46]",
+      "verified": true
     },
     {
-      "id": "ent_149",
-      "type": "Indication",
+      "id": "E8",
+      "type": "Study",
+      "name": "Devous [47]",
+      "attributes": {
+        "year": "implicit",
+        "design": "SPECT"
+      },
+      "source_chunk_ids": [
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "confidence": 0.75,
+      "evidence": "Devous [47]",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Rush et al. [26]",
+      "attributes": {
+        "year": "implicit",
+        "design": "functional imaging"
+      },
+      "source_chunk_ids": [
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "confidence": 0.75,
+      "evidence": "Rush et al. [26]",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "Devous et al. [48]",
+      "attributes": {
+        "year": "implicit",
+        "design": "systematic study"
+      },
+      "source_chunk_ids": [
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "confidence": 0.75,
+      "evidence": "Devous et al. [48]",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Evidence",
+      "name": "functional imaging",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "confidence": 0.8,
+      "evidence": "functional imaging methods",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
       "name": "depression",
       "attributes": {
-        "context": "lateralized hemispheric dysfunction in depression"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
+        "1820c246156d965989fd963e3986b30c"
+      ],
+      "confidence": 0.9,
+      "evidence": "depressed PD patients",
+      "verified": true
     },
     {
-      "id": "ent_150",
-      "type": "Indication",
-      "name": "psychiatry",
+      "id": "E2",
+      "type": "Condition",
+      "name": "Parkinson's disease",
       "attributes": {
-        "context": "applications in psychiatry"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
+        "1820c246156d965989fd963e3986b30c"
+      ],
+      "confidence": 0.85,
+      "evidence": "PD patients",
+      "verified": true
     },
     {
-      "id": "ent_151",
-      "type": "PharmEffect",
-      "name": "Regional cerebral blood flow alterations",
+      "id": "E3",
+      "type": "Effect",
+      "name": "right frontal cortex dysfunction",
       "attributes": {
-        "context": "Regional cerebral blood flow alterations in unipolar depression"
+        "level": "systemic",
+        "valence": "negative"
       },
       "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
+        "1820c246156d965989fd963e3986b30c"
+      ],
+      "confidence": 0.8,
+      "evidence": "right frontal cortex dysfunction",
+      "verified": true
     },
     {
-      "id": "ent_152",
-      "type": "Indication",
-      "name": "unipolar depression",
+      "id": "E4",
+      "type": "Effect",
+      "name": "right hemisphere dysfunction",
       "attributes": {
-        "context": "Regional cerebral blood flow alterations in unipolar depression"
+        "level": "systemic",
+        "valence": "negative"
       },
       "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
+        "1820c246156d965989fd963e3986b30c"
+      ],
+      "confidence": 0.75,
+      "evidence": "right hemisphere dysfunction",
+      "verified": true
     },
     {
-      "id": "ent_153",
-      "type": "Indication",
-      "name": "Parkinsons disease",
+      "id": "E5",
+      "type": "Effect",
+      "name": "frontal or anterior temporal dysfunction",
       "attributes": {
-        "context": "When does Parkinsons disease begin?"
+        "level": "systemic",
+        "valence": "negative"
       },
       "source_chunk_ids": [
-        "b8e662dd291a40625781ee7e0187c0ed"
-      ]
+        "1820c246156d965989fd963e3986b30c"
+      ],
+      "confidence": 0.7,
+      "evidence": "frontal or anterior temporal dysfunction",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Study on QEEG in PD depression",
+      "attributes": {
+        "design": "observational",
+        "sample_size": "small"
+      },
+      "source_chunk_ids": [
+        "053029e5dd47f81da5092281e8f8fad6"
+      ],
+      "confidence": 0.8,
+      "evidence": "our study",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "observational study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "053029e5dd47f81da5092281e8f8fad6"
+      ],
+      "confidence": 0.75,
+      "evidence": "our study",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "major depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "053029e5dd47f81da5092281e8f8fad6"
+      ],
+      "confidence": 0.9,
+      "evidence": "major depression",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "minor depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "053029e5dd47f81da5092281e8f8fad6"
+      ],
+      "confidence": 0.9,
+      "evidence": "minor depression",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "depression in Parkinson's disease",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "053029e5dd47f81da5092281e8f8fad6"
+      ],
+      "confidence": 0.85,
+      "evidence": "depression in PD",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "053029e5dd47f81da5092281e8f8fad6"
+      ],
+      "confidence": 0.9,
+      "evidence": "PD",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "neurobiological substrate of depression in PD",
+      "attributes": {
+        "target_type": "pathway"
+      },
+      "source_chunk_ids": [
+        "053029e5dd47f81da5092281e8f8fad6"
+      ],
+      "confidence": 0.7,
+      "evidence": "neurobiological substrate of depression in PD",
+      "verified": true
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:03.745745+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "study was performed in 24 patients",
+      "source_chunk_ids": [
+        "45c05e8dda9c1c71a2bb361a7c2de166"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "condition"
+      },
+      "confidence": 0.9,
+      "evidence": "patients with idiopathic PD",
+      "source_chunk_ids": [
+        "45c05e8dda9c1c71a2bb361a7c2de166"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.85,
+      "evidence": "depressed PD patients",
+      "source_chunk_ids": [
+        "45c05e8dda9c1c71a2bb361a7c2de166"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.8,
+      "evidence": "significantly less absolute and relative power",
+      "source_chunk_ids": [
+        "45c05e8dda9c1c71a2bb361a7c2de166"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.75,
+      "evidence": "slightly more relative power",
+      "source_chunk_ids": [
+        "45c05e8dda9c1c71a2bb361a7c2de166"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.8,
+      "evidence": "maximum was shifted anteriorly",
+      "source_chunk_ids": [
+        "45c05e8dda9c1c71a2bb361a7c2de166"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "proposed"
+      },
+      "confidence": 0.7,
+      "evidence": "raise the possibility for the existence",
+      "source_chunk_ids": [
+        "45c05e8dda9c1c71a2bb361a7c2de166"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "context": "comorbidity"
+      },
+      "confidence": 0.8,
+      "evidence": "depression is a common finding in Parkinson's disease",
+      "source_chunk_ids": [
+        "45c05e8dda9c1c71a2bb361a7c2de166"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "in PD patients"
+      },
+      "confidence": 0.75,
+      "evidence": "EEG of depressed PD patients showed significantly less power",
+      "source_chunk_ids": [
+        "45c05e8dda9c1c71a2bb361a7c2de166"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "context": "in PD patients"
+      },
+      "confidence": 0.7,
+      "evidence": "slightly more relative power in alpha2 band",
+      "source_chunk_ids": [
+        "45c05e8dda9c1c71a2bb361a7c2de166"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "in PD patients"
+      },
+      "confidence": 0.75,
+      "evidence": "in depressed patients its maximum was shifted anteriorly",
+      "source_chunk_ids": [
+        "45c05e8dda9c1c71a2bb361a7c2de166"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "context": "interaction with PD",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "complex product of their interaction",
+      "source_chunk_ids": [
+        "45c05e8dda9c1c71a2bb361a7c2de166"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "distinguish depressed from non-depressed",
+      "source_chunk_ids": [
+        "768ff3f06a5e15e530759b4a1f635ed4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "PD patients",
+      "source_chunk_ids": [
+        "768ff3f06a5e15e530759b4a1f635ed4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "condition"
+      },
+      "confidence": 0.85,
+      "evidence": "study in patients with idiopathic PD",
+      "source_chunk_ids": [
+        "bee7a5a65584c13aa151f9c1f726eeb1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.75,
+      "evidence": "group with depressive",
+      "source_chunk_ids": [
+        "bee7a5a65584c13aa151f9c1f726eeb1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "study design was approved by the Ethical Board",
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "characterized"
+      },
+      "confidence": 0.95,
+      "evidence": "patients presented with exclusively parkinsonian signs",
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "assessed"
+      },
+      "confidence": 0.9,
+      "evidence": "classified as either depressed (major or minor depression)",
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "screened"
+      },
+      "confidence": 0.8,
+      "evidence": "screen for global cognitive decline",
+      "source_chunk_ids": [
+        "040da16ceb1c54bb269089d4cda29fa0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Patients were categorized",
+      "source_chunk_ids": [
+        "4aa003b6e5c27cc7f4d02390c753b510"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "categorized"
+      },
+      "confidence": 0.85,
+      "evidence": "categorized according to depression",
+      "source_chunk_ids": [
+        "4aa003b6e5c27cc7f4d02390c753b510"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "depressed patients showed significantly higher HAMD scores",
+      "source_chunk_ids": [
+        "15c9b3f21e6fd8e837ea8e3dc5a37694"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "present"
+      },
+      "confidence": 0.8,
+      "evidence": "depressed patients showed significantly higher HAMD scores",
+      "source_chunk_ids": [
+        "15c9b3f21e6fd8e837ea8e3dc5a37694"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "present"
+      },
+      "confidence": 0.75,
+      "evidence": "onset of PD",
+      "source_chunk_ids": [
+        "15c9b3f21e6fd8e837ea8e3dc5a37694"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "present"
+      },
+      "confidence": 0.7,
+      "evidence": "diagnosed as having minor depression",
+      "source_chunk_ids": [
+        "15c9b3f21e6fd8e837ea8e3dc5a37694"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "present"
+      },
+      "confidence": 0.7,
+      "evidence": "eight had major depression",
+      "source_chunk_ids": [
+        "15c9b3f21e6fd8e837ea8e3dc5a37694"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "ANOVA with repeated design",
+      "source_chunk_ids": [
+        "504361858cfaa994d40ad64405a4c61f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.85,
+      "evidence": "did not detect any significant influence of DEPRESSION",
+      "source_chunk_ids": [
+        "504361858cfaa994d40ad64405a4c61f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.8,
+      "evidence": "D+ patients had less alpha1 activity",
+      "source_chunk_ids": [
+        "504361858cfaa994d40ad64405a4c61f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "D+ patients had less alpha1 activity",
+      "source_chunk_ids": [
+        "504361858cfaa994d40ad64405a4c61f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "electrophysiological"
+      },
+      "confidence": 0.8,
+      "evidence": "D + patients having less alpha1 activity",
+      "source_chunk_ids": [
+        "3838f3d371046f42a2b781114fc9af17"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "context": "electrophysiological",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "D + patients showing slightly more alpha2 activity",
+      "source_chunk_ids": [
+        "3838f3d371046f42a2b781114fc9af17"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "QEEG findings",
+      "source_chunk_ids": [
+        "b144e4edfce2467d58dff25512a21c89"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "condition"
+      },
+      "confidence": 0.85,
+      "evidence": "depressed PD patients",
+      "source_chunk_ids": [
+        "b144e4edfce2467d58dff25512a21c89"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "condition"
+      },
+      "confidence": 0.85,
+      "evidence": "PD patients",
+      "source_chunk_ids": [
+        "b144e4edfce2467d58dff25512a21c89"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.8,
+      "evidence": "significant diminution of slower alpha activity",
+      "source_chunk_ids": [
+        "b144e4edfce2467d58dff25512a21c89"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.75,
+      "evidence": "slight surplus of faster alpha activity",
+      "source_chunk_ids": [
+        "b144e4edfce2467d58dff25512a21c89"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "EEG studies of PD patients",
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "condition"
+      },
+      "confidence": 0.9,
+      "evidence": "EEG studies of PD patients",
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "suggested"
+      },
+      "confidence": 0.8,
+      "evidence": "suggested the existence of specific 4\u20135 Hz rhythmic activity",
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "simultaneous EEG and EMG registration",
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "condition"
+      },
+      "confidence": 0.85,
+      "evidence": "EEG activity in PD patients",
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "revealed",
+        "assertion": "refutes"
+      },
+      "confidence": 0.75,
+      "evidence": "revealed that this activity was actually an artifact",
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "revealed"
+      },
+      "confidence": 0.8,
+      "evidence": "real EEG activity did not differ from normal",
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "interest in EEG in PD re-emerged",
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "condition"
+      },
+      "confidence": 0.8,
+      "evidence": "EEG in PD",
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Summarizing the results of these studies",
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "condition"
+      },
+      "confidence": 0.85,
+      "evidence": "patients had normal EEGs",
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "REPORTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {
+        "outcome": "concluded"
+      },
+      "confidence": 0.8,
+      "evidence": "majority of patients had normal EEGs",
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "REPORTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "concluded"
+      },
+      "confidence": 0.75,
+      "evidence": "slowing of the occipital background activity",
+      "source_chunk_ids": [
+        "f5a6ec36bcc5149e7f204c26e97330ae"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "methodologically correct study",
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "condition"
+      },
+      "confidence": 0.9,
+      "evidence": "PD patients",
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.8,
+      "evidence": "found pathological EEG",
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.85,
+      "evidence": "slowing of the background activity",
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.85,
+      "evidence": "increase in diffuse theta activity",
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.8,
+      "evidence": "relationship between findings and motor impairment",
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "using QEEG",
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "condition"
+      },
+      "confidence": 0.85,
+      "evidence": "PD patients",
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E10",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.75,
+      "evidence": "failed to find any significant difference",
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "trend"
+      },
+      "confidence": 0.7,
+      "evidence": "trend toward higher slower activity",
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E12",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "using QEEG",
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "STUDIES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "condition"
+      },
+      "confidence": 0.9,
+      "evidence": "PD patients",
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "REPORTS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E13",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.85,
+      "evidence": "increase of theta activity",
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "REPORTS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E14",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.85,
+      "evidence": "decrease of alpha and beta activity",
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "REPORTS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E15",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.85,
+      "evidence": "slowing of mean and dominant frequency",
+      "source_chunk_ids": [
+        "766970cbbc63e1667788562e487f1420"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "patients with depression",
+      "source_chunk_ids": [
+        "d9d29d7bd09a6c550caa2df5ba000588"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "cerebral hypoactivity",
+      "source_chunk_ids": [
+        "d9d29d7bd09a6c550caa2df5ba000588"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "manifested mainly as reduction",
+      "source_chunk_ids": [
+        "d9d29d7bd09a6c550caa2df5ba000588"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "may account for the reduced power",
+      "source_chunk_ids": [
+        "d9d29d7bd09a6c550caa2df5ba000588"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "According to their data",
+      "source_chunk_ids": [
+        "bb0739dd1da049e24128d992b9131652"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "condition"
+      },
+      "confidence": 0.9,
+      "evidence": "depressed patients",
+      "source_chunk_ids": [
+        "bb0739dd1da049e24128d992b9131652"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "correlated"
+      },
+      "confidence": 0.85,
+      "evidence": "psychomotor retardation",
+      "source_chunk_ids": [
+        "bb0739dd1da049e24128d992b9131652"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "positively correlated"
+      },
+      "confidence": 0.8,
+      "evidence": "slow EEG activity was positively correlated",
+      "source_chunk_ids": [
+        "bb0739dd1da049e24128d992b9131652"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "negatively correlated"
+      },
+      "confidence": 0.8,
+      "evidence": "fast activity negatively correlated",
+      "source_chunk_ids": [
+        "bb0739dd1da049e24128d992b9131652"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "correlated most closely"
+      },
+      "confidence": 0.75,
+      "evidence": "motor retardation correlated most closely",
+      "source_chunk_ids": [
+        "bb0739dd1da049e24128d992b9131652"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "motor retardation in depression",
+      "source_chunk_ids": [
+        "bb0739dd1da049e24128d992b9131652"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "motor retardation with slow EEG activity",
+      "source_chunk_ids": [
+        "bb0739dd1da049e24128d992b9131652"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "associate anxiety with fast EEG activity",
+      "source_chunk_ids": [
+        "bb0739dd1da049e24128d992b9131652"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "euphoriant responses to methylphenidate",
+      "source_chunk_ids": [
+        "869c1c9d1e69ec0de46c75b947feaade"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "action": "tests",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "aimed at testing functional integrity",
+      "source_chunk_ids": [
+        "869c1c9d1e69ec0de46c75b947feaade"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "reduction of metabolism in depressed PD patients",
+      "source_chunk_ids": [
+        "869c1c9d1e69ec0de46c75b947feaade"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {
+        "action": "affects",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "reduction of metabolism in bilateral caudate",
+      "source_chunk_ids": [
+        "869c1c9d1e69ec0de46c75b947feaade"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Mayberg et al. [40] found selective hypo-metabolism",
+      "source_chunk_ids": [
+        "b7d83e9dfa3f41315eafeaa7e136cef4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.9,
+      "evidence": "depressed PD patients",
+      "source_chunk_ids": [
+        "b7d83e9dfa3f41315eafeaa7e136cef4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Ring et al. [41] found hypometabolism",
+      "source_chunk_ids": [
+        "b7d83e9dfa3f41315eafeaa7e136cef4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.9,
+      "evidence": "depressed PD patients",
+      "source_chunk_ids": [
+        "b7d83e9dfa3f41315eafeaa7e136cef4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.85,
+      "evidence": "primarily depressed patients",
+      "source_chunk_ids": [
+        "b7d83e9dfa3f41315eafeaa7e136cef4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "methodological artifact",
+      "source_chunk_ids": [
+        "8f0789fbb2e6ea390cccc6dcde48e2b1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.8,
+      "evidence": "depression",
+      "source_chunk_ids": [
+        "8f0789fbb2e6ea390cccc6dcde48e2b1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.7,
+      "evidence": "may well be a methodological artifact",
+      "source_chunk_ids": [
+        "8f0789fbb2e6ea390cccc6dcde48e2b1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.75,
+      "evidence": "alpha1 occipital and alpha2 frontal asymmetry",
+      "source_chunk_ids": [
+        "8f0789fbb2e6ea390cccc6dcde48e2b1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.7,
+      "evidence": "reported left frontal hyper-vascularization in depression",
+      "source_chunk_ids": [
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.7,
+      "evidence": "reduced flow in depressed patients",
+      "source_chunk_ids": [
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.7,
+      "evidence": "depressed patients exhibit greater flow to left hemisphere",
+      "source_chunk_ids": [
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.7,
+      "evidence": "greatest difference in patients with endogenous depression",
+      "source_chunk_ids": [
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Using rCBF technique",
+      "source_chunk_ids": [
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Using SPECT",
+      "source_chunk_ids": [
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "functional imaging",
+      "source_chunk_ids": [
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E10",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "systematically studying",
+      "source_chunk_ids": [
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "dysfunction typical for depression",
+      "source_chunk_ids": [
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "dysfunction (most probably hyperfunction)",
+      "source_chunk_ids": [
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "hyperfunction typical for depression",
+      "source_chunk_ids": [
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R12",
+      "type": "REPORTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "associated",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "greatest difference in left inferior temporal flow",
+      "source_chunk_ids": [
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R13",
+      "type": "REPORTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "associated",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "greater flow to the left hemisphere",
+      "source_chunk_ids": [
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R14",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "associated",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "left frontal hyper-vascularization",
+      "source_chunk_ids": [
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R15",
+      "type": "REPORTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "associated",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "left posterior cortex might be site of greatest dysfunction",
+      "source_chunk_ids": [
+        "4115efec2235f2489f4333f3e2150884"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "association": "suggested"
+      },
+      "confidence": 0.7,
+      "evidence": "EEG activity characteristic for depressed PD patients suggests dysfunction",
+      "source_chunk_ids": [
+        "1820c246156d965989fd963e3986b30c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "association": "suggested",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "right frontal cortex suggests right hemisphere dysfunction",
+      "source_chunk_ids": [
+        "1820c246156d965989fd963e3986b30c"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "association": "suggested",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "right hemisphere, probably frontal or anterior temporal, dysfunction",
+      "source_chunk_ids": [
+        "1820c246156d965989fd963e3986b30c"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "our study",
+      "source_chunk_ids": [
+        "053029e5dd47f81da5092281e8f8fad6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "grouped"
+      },
+      "confidence": 0.85,
+      "evidence": "collapsed patients with major depression",
+      "source_chunk_ids": [
+        "053029e5dd47f81da5092281e8f8fad6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "grouped"
+      },
+      "confidence": 0.85,
+      "evidence": "collapsed patients with minor depression",
+      "source_chunk_ids": [
+        "053029e5dd47f81da5092281e8f8fad6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "suggestive"
+      },
+      "confidence": 0.75,
+      "evidence": "data are suggestive for depression in PD",
+      "source_chunk_ids": [
+        "053029e5dd47f81da5092281e8f8fad6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.8,
+      "evidence": "depression in PD",
+      "source_chunk_ids": [
+        "053029e5dd47f81da5092281e8f8fad6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "suggestive"
+      },
+      "confidence": 0.7,
+      "evidence": "suggestive for neurobiological substrate",
+      "source_chunk_ids": [
+        "053029e5dd47f81da5092281e8f8fad6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

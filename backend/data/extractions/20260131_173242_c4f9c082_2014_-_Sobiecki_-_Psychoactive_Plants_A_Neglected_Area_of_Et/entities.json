@@ -1,860 +1,4825 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "b37eda82c60338ce2d8608f191718bf94465d938d1dc7acfea9b59676375ea42",
-  "extracted_at": "2026-02-01T08:32:45.276645+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
-      "type": "PharmEffect",
-      "name": "Psychoactive",
-      "attributes": {
-        "context": "Psychoactive Plants"
-      },
+      "id": "E1",
+      "type": "Culture",
+      "name": "southern African traditional healers",
+      "attributes": {},
       "source_chunk_ids": [
-        "89b3baa710c2dd99d12844d46d7d09b7"
-      ]
+        "9d98a4da8dc0f7a17b56b552b5b8069f"
+      ],
+      "confidence": 0.9,
+      "evidence": "southern African traditional healers",
+      "verified": true
     },
     {
-      "id": "ent_002",
-      "type": "Compound",
-      "name": "narcotics",
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: southern African traditional healers \u2013 psychoactive plants \u2013 mental illness treatment",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9d98a4da8dc0f7a17b56b552b5b8069f"
+      ],
+      "confidence": 0.8,
+      "evidence": "treating mental illness",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "mental illness treatment",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9d98a4da8dc0f7a17b56b552b5b8069f"
+      ],
+      "confidence": 0.85,
+      "evidence": "treating mental illness",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "mental illness",
       "attributes": {
-        "context": "seventeen plant narcotics and their potential psychoactive chemistries"
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "9d98a4da8dc0f7a17b56b552b5b8069f"
+      ],
+      "confidence": 0.9,
+      "evidence": "treating mental illness",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "initiation process",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9d98a4da8dc0f7a17b56b552b5b8069f"
+      ],
+      "confidence": 0.8,
+      "evidence": "initiation process",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "spiritual practices",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9d98a4da8dc0f7a17b56b552b5b8069f"
+      ],
+      "confidence": 0.75,
+      "evidence": "spiritual practices",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "traditional formulas",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9d98a4da8dc0f7a17b56b552b5b8069f"
+      ],
+      "confidence": 0.7,
+      "evidence": "traditional formulas",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "TraditionalUse",
+      "name": "folklore and mythology",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9d98a4da8dc0f7a17b56b552b5b8069f"
+      ],
+      "confidence": 0.7,
+      "evidence": "folklore and mythology",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "CompoundClass",
+      "name": "psychoactive substances",
+      "attributes": {},
+      "source_chunk_ids": [
+        "521bc1f91295119dde46de9f2dade2de"
+      ],
+      "confidence": 0.9,
+      "evidence": "Psychoactive or psychotropic substances",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Effect",
+      "name": "modification of emotional, intellectual and behavioral function",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "521bc1f91295119dde46de9f2dade2de"
+      ],
+      "confidence": 0.85,
+      "evidence": "modification of the emotional, intellectual and behavioral function",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "sedatives",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "521bc1f91295119dde46de9f2dade2de"
+      ],
+      "confidence": 0.8,
+      "evidence": "acting as sedatives",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "euphoriants",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "521bc1f91295119dde46de9f2dade2de"
+      ],
+      "confidence": 0.8,
+      "evidence": "euphoriants",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "stimulants",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "521bc1f91295119dde46de9f2dade2de"
+      ],
+      "confidence": 0.8,
+      "evidence": "stimulants",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "sopoforics (inducing sleep)",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "521bc1f91295119dde46de9f2dade2de"
+      ],
+      "confidence": 0.75,
+      "evidence": "sopoforics (inducing sleep)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "psychedelics",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "521bc1f91295119dde46de9f2dade2de"
+      ],
+      "confidence": 0.8,
+      "evidence": "psychedelics",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "antidepressants",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "521bc1f91295119dde46de9f2dade2de"
+      ],
+      "confidence": 0.8,
+      "evidence": "antidepressants",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "memory enhancers",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "521bc1f91295119dde46de9f2dade2de"
+      ],
+      "confidence": 0.8,
+      "evidence": "memory enhancers",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "TraditionalUse",
+      "name": "medicine and spiritual healing practices",
+      "attributes": {},
+      "source_chunk_ids": [
+        "521bc1f91295119dde46de9f2dade2de"
+      ],
+      "confidence": 0.85,
+      "evidence": "incorporating them in medicine and spiritual healing practices",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Die Narkotischen Genussmittel und der Mensch",
+      "attributes": {
+        "year": 1855,
+        "author": "Ernst Freiherr von Bibra"
       },
       "source_chunk_ids": [
         "7de71f51ff9d7472bc2c62acf3f2e240"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "1855 with Ernst Freiherr von Bibra's Die Narkotischen Genussmittel und der Mensch",
+      "verified": true
     },
     {
-      "id": "ent_003",
-      "type": "PharmEffect",
-      "name": "psychoactive",
+      "id": "E2",
+      "type": "Evidence",
+      "name": "historical review",
       "attributes": {
-        "context": "potential psychoactive chemistries"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
         "7de71f51ff9d7472bc2c62acf3f2e240"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "considered seventeen plant narcotics and their potential psychoactive chemistries",
+      "verified": true
     },
     {
-      "id": "ent_004",
-      "type": "Taxon",
-      "name": "plant narcotics",
+      "id": "E3",
+      "type": "Study",
+      "name": "Die Menschlichen Genussmittel",
       "attributes": {
-        "context": "seventeen plant narcotics"
+        "year": 1911,
+        "author": "Carl Hartwich"
       },
       "source_chunk_ids": [
         "7de71f51ff9d7472bc2c62acf3f2e240"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Carl Hartwich wrote another noteworthy book on thirty narcotic plants, Die Menschlichen Genussmittel",
+      "verified": true
     },
     {
-      "id": "ent_005",
-      "type": "Compound",
-      "name": "narcotic",
+      "id": "E4",
+      "type": "Evidence",
+      "name": "historical review",
       "attributes": {
-        "context": "thirty narcotic plants"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
         "7de71f51ff9d7472bc2c62acf3f2e240"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "book on thirty narcotic plants",
+      "verified": true
     },
     {
-      "id": "ent_006",
-      "type": "Taxon",
-      "name": "narcotic plants",
+      "id": "E5",
+      "type": "Study",
+      "name": "mescaline isolation",
       "attributes": {
-        "context": "thirty narcotic plants"
+        "year": 1897,
+        "author": "Arthur Heffter"
       },
       "source_chunk_ids": [
         "7de71f51ff9d7472bc2c62acf3f2e240"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "1897, Arthur Heffter identified mescaline from the peyote cactus",
+      "verified": true
     },
     {
-      "id": "ent_007",
-      "type": "PharmEffect",
-      "name": "psychopharmacological",
+      "id": "E6",
+      "type": "Evidence",
+      "name": "in vitro isolation",
       "attributes": {
-        "context": "beginnings of psychopharmacological research"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
         "7de71f51ff9d7472bc2c62acf3f2e240"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "first such isolation of a naturally occurring psychedelic substance in pure form",
+      "verified": true
     },
     {
-      "id": "ent_008",
-      "type": "PharmEffect",
-      "name": "psychoactive",
-      "attributes": {
-        "context": "psychopharmacological research on psychoactive plants"
-      },
-      "source_chunk_ids": [
-        "7de71f51ff9d7472bc2c62acf3f2e240"
-      ]
-    },
-    {
-      "id": "ent_009",
-      "type": "Taxon",
-      "name": "psychoactive plants",
-      "attributes": {
-        "context": "psychopharmacological research on psychoactive plants"
-      },
-      "source_chunk_ids": [
-        "7de71f51ff9d7472bc2c62acf3f2e240"
-      ]
-    },
-    {
-      "id": "ent_010",
-      "type": "Compound",
-      "name": "mescaline",
-      "attributes": {
-        "context": "identified mescaline from the peyote cactus"
-      },
-      "source_chunk_ids": [
-        "7de71f51ff9d7472bc2c62acf3f2e240"
-      ]
-    },
-    {
-      "id": "ent_011",
+      "id": "E7",
       "type": "Taxon",
       "name": "Lophophora williamsii",
       "attributes": {
-        "context": "peyote cactus Lophophora williamsii"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "7de71f51ff9d7472bc2c62acf3f2e240"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "peyote cactus Lophophora williamsii",
+      "verified": true
     },
     {
-      "id": "ent_012",
-      "type": "PharmEffect",
-      "name": "psychedelic",
-      "attributes": {
-        "context": "naturally occurring psychedelic substance"
-      },
-      "source_chunk_ids": [
-        "7de71f51ff9d7472bc2c62acf3f2e240"
-      ]
-    },
-    {
-      "id": "ent_013",
-      "type": "Compound",
-      "name": "psychedelic substance",
-      "attributes": {
-        "context": "naturally occurring psychedelic substance in pure form"
-      },
-      "source_chunk_ids": [
-        "7de71f51ff9d7472bc2c62acf3f2e240"
-      ]
-    },
-    {
-      "id": "ent_014",
-      "type": "PharmEffect",
-      "name": "pharmacological",
-      "attributes": {
-        "context": "advancement of the pharmacological study"
-      },
-      "source_chunk_ids": [
-        "7de71f51ff9d7472bc2c62acf3f2e240"
-      ]
-    },
-    {
-      "id": "ent_015",
-      "type": "PharmEffect",
-      "name": "psychoactive",
-      "attributes": {
-        "context": "pharmacological study of psychoactive plants"
-      },
-      "source_chunk_ids": [
-        "7de71f51ff9d7472bc2c62acf3f2e240"
-      ]
-    },
-    {
-      "id": "ent_016",
-      "type": "Taxon",
-      "name": "psychoactive plants",
-      "attributes": {
-        "context": "pharmacological study of psychoactive plants"
-      },
-      "source_chunk_ids": [
-        "7de71f51ff9d7472bc2c62acf3f2e240"
-      ]
-    },
-    {
-      "id": "ent_017",
+      "id": "E8",
       "type": "Compound",
       "name": "mescaline",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ],
+      "confidence": 0.95,
+      "evidence": "mescaline",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Phantastica",
       "attributes": {
-        "context": "mechanisms of mescaline"
+        "year": 1924,
+        "author": "Louis Lewin"
       },
       "source_chunk_ids": [
         "7de71f51ff9d7472bc2c62acf3f2e240"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Louis Lewin's seminal work, Phantastica (Lewin 1924)",
+      "verified": true
     },
     {
-      "id": "ent_018",
-      "type": "PharmEffect",
-      "name": "visions",
+      "id": "E10",
+      "type": "Evidence",
+      "name": "pharmacological study",
       "attributes": {
-        "context": "duced visions"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
-        "38a6fb0c3d59c19373484e90cc345177"
-      ]
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ],
+      "confidence": 0.8,
+      "evidence": "breakthrough in the advancement of the pharmacological study of psychoactive plants",
+      "verified": true
     },
     {
-      "id": "ent_019",
-      "type": "PharmEffect",
-      "name": "psychoactive",
+      "id": "E11",
+      "type": "Study",
+      "name": "Heinrich Kluver mescaline research",
       "attributes": {
-        "context": "New World psychoactive plants"
+        "year": 1924,
+        "author": "Heinrich Kluver"
       },
       "source_chunk_ids": [
-        "38a6fb0c3d59c19373484e90cc345177"
-      ]
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ],
+      "confidence": 0.85,
+      "evidence": "1924, Heinrich Kluver... began his work on understanding the mechanisms of mescaline",
+      "verified": true
     },
     {
-      "id": "ent_020",
-      "type": "PharmEffect",
-      "name": "psychoactive",
+      "id": "E12",
+      "type": "Evidence",
+      "name": "mechanistic study",
       "attributes": {
-        "context": "South American psychoactive plants"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
-        "38a6fb0c3d59c19373484e90cc345177"
-      ]
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ],
+      "confidence": 0.75,
+      "evidence": "work on understanding the mechanisms of mescaline",
+      "verified": true
     },
     {
-      "id": "ent_021",
-      "type": "PharmEffect",
-      "name": "psychoactive",
-      "attributes": {
-        "context": "chemistry of psychoactive plants"
-      },
-      "source_chunk_ids": [
-        "38a6fb0c3d59c19373484e90cc345177"
-      ]
-    },
-    {
-      "id": "ent_022",
-      "type": "PharmEffect",
-      "name": "psychoactive",
-      "attributes": {
-        "context": "psychoactive plant use research"
-      },
-      "source_chunk_ids": [
-        "38a6fb0c3d59c19373484e90cc345177"
-      ]
-    },
-    {
-      "id": "ent_023",
-      "type": "Taxon",
-      "name": "psychoactive plants",
-      "attributes": {
-        "context": "relatively few psychoactive plants of cultural importance"
-      },
+      "id": "E1",
+      "type": "Culture",
+      "name": "southern Africa",
+      "attributes": {},
       "source_chunk_ids": [
         "744acd97c8852f5f26d0c1d4eff07767"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "southern Africa",
+      "verified": true
     },
     {
-      "id": "ent_024",
-      "type": "PharmEffect",
-      "name": "psychoactive",
-      "attributes": {
-        "context": "relatively few psychoactive plants of cultural importance"
-      },
+      "id": "E2",
+      "type": "TraditionalUse",
+      "name": "psychoactive use",
+      "attributes": {},
       "source_chunk_ids": [
         "744acd97c8852f5f26d0c1d4eff07767"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "psychoactive plant use",
+      "verified": true
     },
     {
-      "id": "ent_025",
-      "type": "PharmEffect",
-      "name": "psychoactive",
-      "attributes": {
-        "context": "focusing on psychoactive plant use"
-      },
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "Magic, ritual and customs",
+      "attributes": {},
       "source_chunk_ids": [
         "744acd97c8852f5f26d0c1d4eff07767"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Magic, ritual and customs",
+      "verified": true
     },
     {
-      "id": "ent_026",
-      "type": "Taxon",
-      "name": "psychoactive flora",
-      "attributes": {
-        "context": "region's psychoactive flora"
-      },
-      "source_chunk_ids": [
-        "744acd97c8852f5f26d0c1d4eff07767"
-      ]
-    },
-    {
-      "id": "ent_027",
-      "type": "PharmEffect",
-      "name": "psychoactive",
-      "attributes": {
-        "context": "region's psychoactive flora"
-      },
-      "source_chunk_ids": [
-        "744acd97c8852f5f26d0c1d4eff07767"
-      ]
-    },
-    {
-      "id": "ent_028",
-      "type": "PharmEffect",
+      "id": "E4",
+      "type": "Condition",
       "name": "psychoactive effects",
       "attributes": {
-        "context": "more subtle psychoactive effects of traditional plants medicines"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "744acd97c8852f5f26d0c1d4eff07767"
-      ]
+      ],
+      "confidence": 0.75,
+      "evidence": "psychoactive effects",
+      "verified": true
     },
     {
-      "id": "ent_029",
-      "type": "Taxon",
-      "name": "traditional plants medicines",
+      "id": "E1",
+      "type": "Study",
+      "name": "Sobiecki 2002",
       "attributes": {
-        "context": "subtle psychoactive effects of traditional plants medicines"
+        "year": 2002,
+        "design": "preliminary inventory"
       },
       "source_chunk_ids": [
-        "744acd97c8852f5f26d0c1d4eff07767"
-      ]
+        "975ff20bf255995c3f8ec658418f4470"
+      ],
+      "confidence": 0.9,
+      "evidence": "2002 preliminary inventory on plants used for psychoactive purposes",
+      "verified": true
     },
     {
-      "id": "ent_030",
-      "type": "PharmEffect",
-      "name": "psychoactive plant use",
+      "id": "E2",
+      "type": "Evidence",
+      "name": "literature review",
       "attributes": {
-        "context": "concerning psychoactive plant use"
+        "evidence_level": 3
       },
       "source_chunk_ids": [
-        "744acd97c8852f5f26d0c1d4eff07767"
-      ]
+        "975ff20bf255995c3f8ec658418f4470"
+      ],
+      "confidence": 0.85,
+      "evidence": "review paper provides a useful interdisciplinary analysis",
+      "verified": true
     },
     {
-      "id": "ent_031",
-      "type": "Taxon",
-      "name": "traditional medicine",
-      "attributes": {
-        "context": "African traditional medicine concepts"
-      },
-      "source_chunk_ids": [
-        "744acd97c8852f5f26d0c1d4eff07767"
-      ]
-    },
-    {
-      "id": "ent_032",
-      "type": "Taxon",
-      "name": "medicinal plants",
-      "attributes": {
-        "context": "focused on medicinal plants (16 %)"
-      },
-      "source_chunk_ids": [
-        "744acd97c8852f5f26d0c1d4eff07767"
-      ]
-    },
-    {
-      "id": "ent_033",
-      "type": "Concentration",
-      "name": "16 %",
-      "attributes": {
-        "context": "medicinal plants (16 %)"
-      },
-      "source_chunk_ids": [
-        "744acd97c8852f5f26d0c1d4eff07767"
-      ]
-    },
-    {
-      "id": "ent_034",
-      "type": "Taxon",
-      "name": "food plants",
-      "attributes": {
-        "context": "and food plants (20 %)"
-      },
-      "source_chunk_ids": [
-        "744acd97c8852f5f26d0c1d4eff07767"
-      ]
-    },
-    {
-      "id": "ent_035",
-      "type": "Concentration",
-      "name": "20 %",
-      "attributes": {
-        "context": "food plants (20 %)"
-      },
-      "source_chunk_ids": [
-        "744acd97c8852f5f26d0c1d4eff07767"
-      ]
-    },
-    {
-      "id": "ent_036",
-      "type": "Concentration",
-      "name": "7 %",
-      "attributes": {
-        "context": "only a few (7 %) relating to the category 'Magic, ritual and customs'"
-      },
-      "source_chunk_ids": [
-        "744acd97c8852f5f26d0c1d4eff07767"
-      ]
-    },
-    {
-      "id": "ent_037",
-      "type": "Taxon",
-      "name": "plant species",
-      "attributes": {
-        "context": "rich in plant species with reported psychoactive uses and effects"
-      },
-      "source_chunk_ids": [
-        "744acd97c8852f5f26d0c1d4eff07767"
-      ]
-    },
-    {
-      "id": "ent_038",
-      "type": "PharmEffect",
-      "name": "psychoactive uses and effects",
-      "attributes": {
-        "context": "reported psychoactive uses and effects"
-      },
-      "source_chunk_ids": [
-        "744acd97c8852f5f26d0c1d4eff07767"
-      ]
-    },
-    {
-      "id": "ent_039",
-      "type": "Taxon",
-      "name": "species of plants",
-      "attributes": {
-        "context": "300 species of plants that are reported as having psychoactive uses"
-      },
+      "id": "E1",
+      "type": "Culture",
+      "name": "San Bushmen",
+      "attributes": {},
       "source_chunk_ids": [
         "3bbab7fd10ee3dcdeec9311c775e30da"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "shamanic healing practices of the San Bushmen",
+      "verified": true
     },
     {
-      "id": "ent_040",
-      "type": "PharmEffect",
-      "name": "psychoactive uses",
-      "attributes": {
-        "context": "reported as having psychoactive uses in traditional southern African healing practices"
-      },
+      "id": "E2",
+      "type": "Culture",
+      "name": "Southern Bantu speakers",
+      "attributes": {},
       "source_chunk_ids": [
         "3bbab7fd10ee3dcdeec9311c775e30da"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "Southern Bantu speakers' greater ethno-medicine",
+      "verified": true
     },
     {
-      "id": "ent_041",
-      "type": "Indication",
+      "id": "E3",
+      "type": "UseRecord",
+      "name": "UseRecord: Southern African traditional healing - psychoactive plants",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ],
+      "confidence": 0.8,
+      "evidence": "psychoactive uses in traditional southern African healing practices",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "treating insomnia",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ],
+      "confidence": 0.75,
+      "evidence": "treating conditions such as insomnia",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
       "name": "insomnia",
       "attributes": {
-        "context": "treating conditions such as insomnia"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "3bbab7fd10ee3dcdeec9311c775e30da"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "treating conditions such as insomnia",
+      "verified": true
     },
     {
-      "id": "ent_042",
-      "type": "Indication",
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "treating epilepsy",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ],
+      "confidence": 0.75,
+      "evidence": "convulsive conditions such as epilepsy",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
       "name": "epilepsy",
       "attributes": {
-        "context": "to convulsive conditions such as epilepsy"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "3bbab7fd10ee3dcdeec9311c775e30da"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "convulsive conditions such as epilepsy",
+      "verified": true
     },
     {
-      "id": "ent_043",
+      "id": "E8",
+      "type": "TraditionalUse",
+      "name": "traditional spiritual practices",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ],
+      "confidence": 0.7,
+      "evidence": "psychoactive plants have in the traditional spiritual practices",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "TraditionalUse",
+      "name": "Southern Bantu traditional divination",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ],
+      "confidence": 0.7,
+      "evidence": "Southern Bantu traditional divination",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "TraditionalUse",
+      "name": "healing initiation process of Southern African traditional diviners",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ],
+      "confidence": 0.7,
+      "evidence": "healing initiation process of Southern African traditional diviners",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "TraditionalUse",
+      "name": "shamanic healing practices",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ],
+      "confidence": 0.7,
+      "evidence": "shamanic healing practices of the San Bushmen",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Central Africa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3ac1be85a40369e60af4a63272ab5360"
+      ],
+      "confidence": 0.8,
+      "evidence": "psychoactive plants from Central Africa",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "South America",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3ac1be85a40369e60af4a63272ab5360"
+      ],
+      "confidence": 0.8,
+      "evidence": "psychoactive plants from ... South America",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "southern Africa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3ac1be85a40369e60af4a63272ab5360"
+      ],
+      "confidence": 0.8,
+      "evidence": "southern African psychoactive plants",
+      "verified": true
+    },
+    {
+      "id": "E4",
       "type": "Taxon",
-      "name": "psychoactive plants",
+      "name": "Tabernanthe iboga",
       "attributes": {
-        "context": "role that psychoactive plants have in the traditional spiritual practices"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "3bbab7fd10ee3dcdeec9311c775e30da"
-      ]
+        "3ac1be85a40369e60af4a63272ab5360"
+      ],
+      "confidence": 0.9,
+      "evidence": "Tabernanthe iboga",
+      "verified": true
     },
     {
-      "id": "ent_044",
-      "type": "PharmEffect",
-      "name": "psychoactive",
-      "attributes": {
-        "context": "role that psychoactive plants have"
-      },
-      "source_chunk_ids": [
-        "3bbab7fd10ee3dcdeec9311c775e30da"
-      ]
-    },
-    {
-      "id": "ent_045",
+      "id": "E5",
       "type": "Taxon",
-      "name": "plants",
+      "name": "Banisteriopsis caapi",
       "attributes": {
-        "context": "southern Africa is poor in plants with psychoactive uses and properties"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "3bbab7fd10ee3dcdeec9311c775e30da"
-      ]
+        "3ac1be85a40369e60af4a63272ab5360"
+      ],
+      "confidence": 0.9,
+      "evidence": "Banisteriopsis caapi",
+      "verified": true
     },
     {
-      "id": "ent_046",
-      "type": "PharmEffect",
-      "name": "psychoactive uses and properties",
+      "id": "E6",
+      "type": "Condition",
+      "name": "drug addiction",
       "attributes": {
-        "context": "plants with psychoactive uses and properties"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
-        "3bbab7fd10ee3dcdeec9311c775e30da"
-      ]
+        "3ac1be85a40369e60af4a63272ab5360"
+      ],
+      "confidence": 0.85,
+      "evidence": "treat drug addiction",
+      "verified": true
     },
     {
-      "id": "ent_047",
-      "type": "Taxon",
-      "name": "psychoactive plants",
+      "id": "E7",
+      "type": "Condition",
+      "name": "depression",
       "attributes": {
-        "context": "role of psychoactive plants in San rock art"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
-        "3bbab7fd10ee3dcdeec9311c775e30da"
-      ]
+        "3ac1be85a40369e60af4a63272ab5360"
+      ],
+      "confidence": 0.85,
+      "evidence": "treat ... depression",
+      "verified": true
     },
     {
-      "id": "ent_048",
-      "type": "PharmEffect",
-      "name": "psychoactive",
+      "id": "E8",
+      "type": "Evidence",
+      "name": "clinical investigation",
       "attributes": {
-        "context": "role of psychoactive plants in San rock art"
+        "evidence_level": 3
       },
       "source_chunk_ids": [
-        "3bbab7fd10ee3dcdeec9311c775e30da"
-      ]
+        "3ac1be85a40369e60af4a63272ab5360"
+      ],
+      "confidence": 0.7,
+      "evidence": "intensively investigated for therapeutic potential",
+      "verified": true
     },
     {
-      "id": "ent_049",
-      "type": "PharmEffect",
-      "name": "psychoactive",
+      "id": "E1",
+      "type": "Study",
+      "name": "Watt and Breyer-Brandwijk (1962)",
       "attributes": {
-        "context": "classification of psychoactive plants"
+        "year": 1962,
+        "design": "survey"
       },
       "source_chunk_ids": [
         "c096276440d9895881a7119e0fdc4754"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "survey of medicinal and poisonous plants of southern Africa by Watt and Breyer-Brandwijk (1962)",
+      "verified": true
     },
     {
-      "id": "ent_050",
-      "type": "PharmEffect",
-      "name": "toxic",
+      "id": "E2",
+      "type": "Evidence",
+      "name": "ethnopharmacological survey",
       "attributes": {
-        "context": "difficult to distinguish between toxic and non-toxic psychoactive plants."
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "c096276440d9895881a7119e0fdc4754"
+      ],
+      "confidence": 0.85,
+      "evidence": "ethnopharmacological based work",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Mitchell and Hudson 2004",
+      "attributes": {
+        "year": 2004
       },
       "source_chunk_ids": [
         "4e45f061e2e7039aff01c9fd758dae18"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Mitchell and Hudson 2004:40",
+      "verified": true
     },
     {
-      "id": "ent_051",
-      "type": "PharmEffect",
-      "name": "non-toxic",
+      "id": "E2",
+      "type": "Study",
+      "name": "Watt 1967",
       "attributes": {
-        "context": "difficult to distinguish between toxic and non-toxic psychoactive plants."
+        "year": 1967
       },
       "source_chunk_ids": [
         "4e45f061e2e7039aff01c9fd758dae18"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Watt (1967)",
+      "verified": true
     },
     {
-      "id": "ent_052",
-      "type": "PharmEffect",
-      "name": "psychoactive",
+      "id": "E3",
+      "type": "Evidence",
+      "name": "review paper",
       "attributes": {
-        "context": "toxic and non-toxic psychoactive plants."
+        "evidence_level": 3
       },
       "source_chunk_ids": [
         "4e45f061e2e7039aff01c9fd758dae18"
-      ]
+      ],
+      "confidence": 0.7,
+      "evidence": "first review paper on African plants",
+      "verified": true
     },
     {
-      "id": "ent_053",
-      "type": "Taxon",
-      "name": "plants",
-      "attributes": {
-        "context": "toxic and non-toxic psychoactive plants."
-      },
-      "source_chunk_ids": [
-        "4e45f061e2e7039aff01c9fd758dae18"
-      ]
-    },
-    {
-      "id": "ent_054",
-      "type": "PharmEffect",
-      "name": "psychoactive",
-      "attributes": {
-        "context": "the psychoactive pharmacology of medicinal plants"
-      },
-      "source_chunk_ids": [
-        "4e45f061e2e7039aff01c9fd758dae18"
-      ]
-    },
-    {
-      "id": "ent_055",
-      "type": "Taxon",
-      "name": "medicinal plants",
-      "attributes": {
-        "context": "the psychoactive pharmacology of medicinal plants"
-      },
-      "source_chunk_ids": [
-        "4e45f061e2e7039aff01c9fd758dae18"
-      ]
-    },
-    {
-      "id": "ent_056",
-      "type": "Taxon",
-      "name": "African plants",
-      "attributes": {
-        "context": "review paper on African plants potentially useful for mental health."
-      },
-      "source_chunk_ids": [
-        "4e45f061e2e7039aff01c9fd758dae18"
-      ]
-    },
-    {
-      "id": "ent_057",
-      "type": "Indication",
+      "id": "E4",
+      "type": "Condition",
       "name": "mental health",
       "attributes": {
-        "context": "useful for mental health."
+        "condition_type": "wellness"
       },
       "source_chunk_ids": [
         "4e45f061e2e7039aff01c9fd758dae18"
-      ]
+      ],
+      "confidence": 0.75,
+      "evidence": "potentially useful for mental health",
+      "verified": true
     },
     {
-      "id": "ent_058",
-      "type": "PharmEffect",
-      "name": "psychoactive",
+      "id": "E5",
+      "type": "Study",
+      "name": "Light et al. 2005",
       "attributes": {
-        "context": "research on psychoactive plants from southern Africa"
+        "year": 2005
       },
       "source_chunk_ids": [
         "4e45f061e2e7039aff01c9fd758dae18"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Light et al. 2005",
+      "verified": true
     },
     {
-      "id": "ent_059",
+      "id": "E6",
+      "type": "Study",
+      "name": "Smith et al. 1996",
+      "attributes": {
+        "year": 1996
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ],
+      "confidence": 0.85,
+      "evidence": "Smith et al. (1996)",
+      "verified": true
+    },
+    {
+      "id": "E7",
       "type": "Taxon",
-      "name": "psychoactive plants",
+      "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "research on psychoactive plants from southern Africa"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "4e45f061e2e7039aff01c9fd758dae18"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum (L.) N.E.Br.",
+      "verified": true
     },
     {
-      "id": "ent_060",
-      "type": "PharmEffect",
-      "name": "psychoactive",
+      "id": "E8",
+      "type": "Evidence",
+      "name": "comprehensive review",
       "attributes": {
-        "context": "scarcity of studies on southern African psychoactive plants"
+        "evidence_level": 3
       },
       "source_chunk_ids": [
         "4e45f061e2e7039aff01c9fd758dae18"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "comprehensive review on the historical use",
+      "verified": true
     },
     {
-      "id": "ent_061",
+      "id": "E9",
+      "type": "TraditionalUse",
+      "name": "historical use",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ],
+      "confidence": 0.75,
+      "evidence": "historical use",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Preparation",
+      "name": "traditional preparation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ],
+      "confidence": 0.7,
+      "evidence": "traditional preparation",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "CompoundClass",
+      "name": "chemistry",
+      "attributes": {
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ],
+      "confidence": 0.65,
+      "evidence": "chemistry",
+      "verified": false
+    },
+    {
+      "id": "E12",
+      "type": "Study",
+      "name": "Gericke and Viljoen 2008",
+      "attributes": {
+        "year": 2008
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ],
+      "confidence": 0.8,
+      "evidence": "Gericke and Viljoen 2008",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Study",
+      "name": "Patnala and Kanfer 2009",
+      "attributes": {
+        "year": 2009
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ],
+      "confidence": 0.8,
+      "evidence": "Patnala and Kanfer 2009",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Study",
+      "name": "Smith 2011",
+      "attributes": {
+        "year": 2011
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ],
+      "confidence": 0.8,
+      "evidence": "Smith 2011",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Study",
+      "name": "Harvey et al. 2011",
+      "attributes": {
+        "year": 2011
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ],
+      "confidence": 0.8,
+      "evidence": "Harvey et al. 2011",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Study",
+      "name": "Shikanga et al. 2011",
+      "attributes": {
+        "year": 2011
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ],
+      "confidence": 0.8,
+      "evidence": "Shikanga et al. 2011",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "Study",
+      "name": "Shikanga 2012a,b",
+      "attributes": {
+        "year": 2012
+      },
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ],
+      "confidence": 0.8,
+      "evidence": "Shikanga 2012a,b",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "southern African traditional medicine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4645ceb5a44a9e817cbada3e23d0b8d6"
+      ],
+      "confidence": 0.9,
+      "evidence": "southern African traditional medicine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: southern African \u2013 psychoactive purposes",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4645ceb5a44a9e817cbada3e23d0b8d6"
+      ],
+      "confidence": 0.85,
+      "evidence": "plants used for psychoactive purposes",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "psychoactive purposes",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4645ceb5a44a9e817cbada3e23d0b8d6"
+      ],
+      "confidence": 0.9,
+      "evidence": "psychoactive purposes",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "epilepsy",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "4645ceb5a44a9e817cbada3e23d0b8d6"
+      ],
+      "confidence": 0.9,
+      "evidence": "treating epilepsy",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "mental health problems",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "4645ceb5a44a9e817cbada3e23d0b8d6"
+      ],
+      "confidence": 0.85,
+      "evidence": "mental health problems",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "bioassay",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "4645ceb5a44a9e817cbada3e23d0b8d6"
+      ],
+      "confidence": 0.8,
+      "evidence": "activity in bioassays",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "acetylcholinesterase",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "4645ceb5a44a9e817cbada3e23d0b8d6"
+      ],
+      "confidence": 0.9,
+      "evidence": "acetylcholinesterase (AChE)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Target",
+      "name": "serotonin reuptake transporter",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "4645ceb5a44a9e817cbada3e23d0b8d6"
+      ],
+      "confidence": 0.9,
+      "evidence": "serotonin reuptake transporter (SERT)",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "R\u00f8nsted et al. 2012",
+      "attributes": {
+        "year": 2012
+      },
+      "source_chunk_ids": [
+        "4645ceb5a44a9e817cbada3e23d0b8d6"
+      ],
+      "confidence": 0.85,
+      "evidence": "R\u00f8nsted et al. 2012",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4645ceb5a44a9e817cbada3e23d0b8d6"
+      ],
+      "confidence": 0.9,
+      "evidence": "alkaloid diversity",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "inhibition of acetylcholinesterase",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "4645ceb5a44a9e817cbada3e23d0b8d6"
+      ],
+      "confidence": 0.8,
+      "evidence": "inhibition of acetylcholinesterase",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Effect",
+      "name": "binding to serotonin reuptake transporter",
+      "attributes": {
+        "level": "molecular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "4645ceb5a44a9e817cbada3e23d0b8d6"
+      ],
+      "confidence": 0.8,
+      "evidence": "binding to the serotonin reuptake transporter",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "indigenous healers from southern Africa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "629baa5a2b087452a8d807ead9a3c590"
+      ],
+      "confidence": 0.9,
+      "evidence": "indigenous healers from southern Africa",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: indigenous healers \u2013 psychoactive plants \u2013 divination",
+      "attributes": {},
+      "source_chunk_ids": [
+        "629baa5a2b087452a8d807ead9a3c590"
+      ],
+      "confidence": 0.85,
+      "evidence": "use of psychoactive plants for divination",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "divination",
+      "attributes": {},
+      "source_chunk_ids": [
+        "629baa5a2b087452a8d807ead9a3c590"
+      ],
+      "confidence": 0.9,
+      "evidence": "used for divination",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "enhanced divining abilities",
+      "attributes": {},
+      "source_chunk_ids": [
+        "629baa5a2b087452a8d807ead9a3c590"
+      ],
+      "confidence": 0.8,
+      "evidence": "enhanced divining abilities",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Culture",
+      "name": "Sotho diviners",
+      "attributes": {},
+      "source_chunk_ids": [
+        "629baa5a2b087452a8d807ead9a3c590"
+      ],
+      "confidence": 0.85,
+      "evidence": "Sotho diviners",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "UseRecord",
+      "name": "UseRecord: Sotho diviners \u2013 plants \u2013 psychoactive effects",
+      "attributes": {},
+      "source_chunk_ids": [
+        "629baa5a2b087452a8d807ead9a3c590"
+      ],
+      "confidence": 0.8,
+      "evidence": "internal use of plants in the initiation",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "psychoactive effects",
+      "attributes": {},
+      "source_chunk_ids": [
+        "629baa5a2b087452a8d807ead9a3c590"
+      ],
+      "confidence": 0.85,
+      "evidence": "psychoactive effects",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Culture",
+      "name": "traditional Xhosa healer",
+      "attributes": {},
+      "source_chunk_ids": [
+        "629baa5a2b087452a8d807ead9a3c590"
+      ],
+      "confidence": 0.85,
+      "evidence": "traditional Xhosa healer",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "UseRecord",
+      "name": "UseRecord: Xhosa healer \u2013 psychoactive plant preparations \u2013 training and healing initiation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "629baa5a2b087452a8d807ead9a3c590"
+      ],
+      "confidence": 0.8,
+      "evidence": "role of psychoactive plant preparations in training",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "TraditionalUse",
+      "name": "training and healing initiation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "629baa5a2b087452a8d807ead9a3c590"
+      ],
+      "confidence": 0.8,
+      "evidence": "training and healing initiation process",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Culture",
+      "name": "Southern Bantu speaking people",
+      "attributes": {},
+      "source_chunk_ids": [
+        "629baa5a2b087452a8d807ead9a3c590"
+      ],
+      "confidence": 0.85,
+      "evidence": "Southern Bantu speaking people",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "UseRecord",
+      "name": "UseRecord: Southern Bantu \u2013 plants \u2013 psychoactive uses",
+      "attributes": {},
+      "source_chunk_ids": [
+        "629baa5a2b087452a8d807ead9a3c590"
+      ],
+      "confidence": 0.8,
+      "evidence": "psychoactive uses in ethno-medicine practices",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "TraditionalUse",
+      "name": "psychoactive uses",
+      "attributes": {},
+      "source_chunk_ids": [
+        "629baa5a2b087452a8d807ead9a3c590"
+      ],
+      "confidence": 0.85,
+      "evidence": "psychoactive uses",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Southern Bantu speaking people",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e9c6518eac887b0b3f1a94965e650a7f"
+      ],
+      "confidence": 0.9,
+      "evidence": "Southern Bantu speaking people",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Southern Bantu \u2013 plants \u2013 divination",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e9c6518eac887b0b3f1a94965e650a7f"
+      ],
+      "confidence": 0.85,
+      "evidence": "plants used in divination",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "divination",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e9c6518eac887b0b3f1a94965e650a7f"
+      ],
+      "confidence": 0.95,
+      "evidence": "plants used in divination",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "psychoactive effects",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e9c6518eac887b0b3f1a94965e650a7f"
+      ],
+      "confidence": 0.9,
+      "evidence": "psychoactive effects",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "hallucinogenic activity",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e9c6518eac887b0b3f1a94965e650a7f"
+      ],
+      "confidence": 0.8,
+      "evidence": "hallucinogenic activity",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "spiritual healing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e9c6518eac887b0b3f1a94965e650a7f"
+      ],
+      "confidence": 0.85,
+      "evidence": "spiritual healing",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "ritual customs",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e9c6518eac887b0b3f1a94965e650a7f"
+      ],
+      "confidence": 0.85,
+      "evidence": "ritual customs",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Sobiecki 2008",
+      "attributes": {
+        "year": 2008,
+        "design": "review"
+      },
+      "source_chunk_ids": [
+        "e9c6518eac887b0b3f1a94965e650a7f"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sobiecki 2008",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "review",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "e9c6518eac887b0b3f1a94965e650a7f"
+      ],
+      "confidence": 0.9,
+      "evidence": "review of plants",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Kalahari San Bushmen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b05a758d19aa43b3d93ce7f350d2edf8"
+      ],
+      "confidence": 0.95,
+      "evidence": "Kalahari San Bushmen",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Kalahari San Bushmen \u2013 psychoactive plants \u2013 spiritual healing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b05a758d19aa43b3d93ce7f350d2edf8"
+      ],
+      "confidence": 0.85,
+      "evidence": "psychoactive plants were used to facilitate spiritual healing",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "spiritual healing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b05a758d19aa43b3d93ce7f350d2edf8"
+      ],
+      "confidence": 0.9,
+      "evidence": "spiritual healing practices",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "trance-related ritual contexts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b05a758d19aa43b3d93ce7f350d2edf8"
+      ],
+      "confidence": 0.8,
+      "evidence": "trance-related and other ritual contexts",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Mitchell and Hudson 2004",
+      "attributes": {
+        "year": 2004
+      },
+      "source_chunk_ids": [
+        "b05a758d19aa43b3d93ce7f350d2edf8"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mitchell and Hudson 2004",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "ethnographic evidence",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "b05a758d19aa43b3d93ce7f350d2edf8"
+      ],
+      "confidence": 0.75,
+      "evidence": "new evidence that indicates",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "indigenous people of southern Africa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "confidence": 0.9,
+      "evidence": "indigenous people of southern Africa",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: indigenous people \u2013 ubulawu \u2013 clean body, promote dreaming and healing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "confidence": 0.85,
+      "evidence": "popular use of ubulawu to clean the body and promote dreaming and healing",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "UseRecord",
+      "name": "UseRecord: traditional healers \u2013 ubulawu species \u2013 psycho-spiritual healing integration",
+      "attributes": {},
+      "source_chunk_ids": [
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "confidence": 0.85,
+      "evidence": "used in the initiation process of traditional healers to encourage psycho-spiritual healing integration",
+      "verified": true
+    },
+    {
+      "id": "E4",
       "type": "Taxon",
-      "name": "southern African psychoactive plants",
+      "name": "ubulawu",
       "attributes": {
-        "context": "scarcity of studies on southern African psychoactive plants"
+        "rank": "category"
       },
       "source_chunk_ids": [
-        "4e45f061e2e7039aff01c9fd758dae18"
-      ]
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "confidence": 0.9,
+      "evidence": "category of psychoactive plant medicines called ubulawu",
+      "verified": true
     },
     {
-      "id": "ent_062",
-      "type": "PharmEffect",
-      "name": "psychoactive",
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "clean the body",
+      "attributes": {},
+      "source_chunk_ids": [
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "confidence": 0.8,
+      "evidence": "clean the body",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "promote dreaming",
+      "attributes": {},
+      "source_chunk_ids": [
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "confidence": 0.8,
+      "evidence": "promote dreaming",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "healing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "confidence": 0.8,
+      "evidence": "healing",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "TraditionalUse",
+      "name": "psycho-spiritual healing integration",
+      "attributes": {},
+      "source_chunk_ids": [
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "confidence": 0.85,
+      "evidence": "psycho-spiritual healing integration",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Preparation",
+      "name": "ritual",
+      "attributes": {},
+      "source_chunk_ids": [
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "confidence": 0.7,
+      "evidence": "use of ritual",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Preparation",
+      "name": "preparation and administration methods",
+      "attributes": {},
+      "source_chunk_ids": [
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "confidence": 0.7,
+      "evidence": "preparation and administration methods",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "psychoactive effects",
       "attributes": {
-        "context": "a popular southern African psychoactive plant, Sceletium tortuosum"
+        "level": "systemic",
+        "valence": "neutral"
       },
       "source_chunk_ids": [
-        "4e45f061e2e7039aff01c9fd758dae18"
-      ]
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "confidence": 0.75,
+      "evidence": "resulting in psychoactive effects",
+      "verified": true
     },
     {
-      "id": "ent_063",
-      "type": "Taxon",
-      "name": "Sceletium tortuosum (L.) N.E.Br.",
-      "attributes": {
-        "context": "southern African psychoactive plant, Sceletium tortuosum (L.) N.E.Br."
-      },
-      "source_chunk_ids": [
-        "4e45f061e2e7039aff01c9fd758dae18"
-      ]
-    },
-    {
-      "id": "ent_064",
-      "type": "PharmEffect",
-      "name": "psychoactive",
-      "attributes": {
-        "context": "this important Southern African psychoactive plant"
-      },
-      "source_chunk_ids": [
-        "4e45f061e2e7039aff01c9fd758dae18"
-      ]
-    },
-    {
-      "id": "ent_065",
-      "type": "Taxon",
-      "name": "Southern African psychoactive plant",
-      "attributes": {
-        "context": "this important Southern African psychoactive plant"
-      },
-      "source_chunk_ids": [
-        "4e45f061e2e7039aff01c9fd758dae18"
-      ]
-    },
-    {
-      "id": "ent_066",
-      "type": "Taxon",
-      "name": "psychoactive plants",
-      "attributes": {
-        "context": "studies on psychoactive plants from southern Africa"
-      },
-      "source_chunk_ids": [
-        "555cb4ae905222eb6ef81a574bca5b8b"
-      ]
-    },
-    {
-      "id": "ent_067",
-      "type": "PharmEffect",
-      "name": "psychoactive drugs",
-      "attributes": {
-        "context": "developing new classes of psychoactive drugs from these plants"
-      },
-      "source_chunk_ids": [
-        "555cb4ae905222eb6ef81a574bca5b8b"
-      ]
-    },
-    {
-      "id": "ent_068",
-      "type": "Taxon",
-      "name": "psychoactive plant medicines",
-      "attributes": {
-        "context": "use of psychoactive plant medicines in southern Africa"
-      },
-      "source_chunk_ids": [
-        "555cb4ae905222eb6ef81a574bca5b8b"
-      ]
-    },
-    {
-      "id": "ent_069",
-      "type": "Indication",
+      "id": "E12",
+      "type": "Condition",
       "name": "mental illness",
       "attributes": {
-        "context": "contemporary treatment of mental illness"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
-        "555cb4ae905222eb6ef81a574bca5b8b"
-      ]
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "confidence": 0.9,
+      "evidence": "treating mental illness",
+      "verified": true
     },
     {
-      "id": "ent_070",
-      "type": "Taxon",
-      "name": "psychoactive traditional medicines",
-      "attributes": {
-        "context": "ritual uses of psychoactive traditional medicines"
-      },
+      "id": "E1",
+      "type": "Culture",
+      "name": "Southern African traditional healers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "40ba7607a8fcfa3f293b313562ae0277"
+      ],
+      "confidence": 0.95,
+      "evidence": "Southern African traditional healers",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Southern African traditional healers \u2013 psychoactive plants \u2013 spiritual practices",
+      "attributes": {},
+      "source_chunk_ids": [
+        "40ba7607a8fcfa3f293b313562ae0277"
+      ],
+      "confidence": 0.85,
+      "evidence": "Psychoactive plants are an important aid in the spiritual practices",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "access heightened states of awareness",
+      "attributes": {},
+      "source_chunk_ids": [
+        "40ba7607a8fcfa3f293b313562ae0277"
+      ],
+      "confidence": 0.9,
+      "evidence": "used to access heightened states of awareness",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "enhanced intuition and sensitivity",
+      "attributes": {},
+      "source_chunk_ids": [
+        "40ba7607a8fcfa3f293b313562ae0277"
+      ],
+      "confidence": 0.8,
+      "evidence": "enhanced intuition and sensitivity",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "trance",
+      "attributes": {},
+      "source_chunk_ids": [
+        "40ba7607a8fcfa3f293b313562ae0277"
+      ],
+      "confidence": 0.8,
+      "evidence": "trance",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "lucid dreaming",
+      "attributes": {},
+      "source_chunk_ids": [
+        "40ba7607a8fcfa3f293b313562ae0277"
+      ],
+      "confidence": 0.8,
+      "evidence": "lucid dreaming",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "connect with ancestral spirits",
+      "attributes": {},
+      "source_chunk_ids": [
+        "40ba7607a8fcfa3f293b313562ae0277"
+      ],
+      "confidence": 0.9,
+      "evidence": "connect with ones ancestral spirits",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "San Bushmen",
+      "attributes": {},
       "source_chunk_ids": [
         "555cb4ae905222eb6ef81a574bca5b8b"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "San Bushmen",
+      "verified": true
     },
     {
-      "id": "ent_071",
-      "type": "Indication",
+      "id": "E2",
+      "type": "Culture",
+      "name": "Southern Bantu speakers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ],
+      "confidence": 0.9,
+      "evidence": "Southern Bantu speakers",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "UseRecord",
+      "name": "UseRecord: San Bushmen \u2013 psychoactive plants \u2013 ritual uses",
+      "attributes": {},
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ],
+      "confidence": 0.8,
+      "evidence": "ritual uses of psychoactive traditional medicines",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "UseRecord",
+      "name": "UseRecord: Southern Bantu speakers \u2013 psychoactive plants \u2013 ritual uses",
+      "attributes": {},
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ],
+      "confidence": 0.8,
+      "evidence": "ritual uses of psychoactive traditional medicines",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "facilitating trance states and divination",
+      "attributes": {},
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ],
+      "confidence": 0.85,
+      "evidence": "facilitating trance states and divination",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "healing dynamics",
+      "attributes": {},
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ],
+      "confidence": 0.75,
+      "evidence": "healing dynamics",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
       "name": "mental illness",
       "attributes": {
-        "context": "indigenous cultural understandings of mental illness"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
         "555cb4ae905222eb6ef81a574bca5b8b"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "mental illness",
+      "verified": true
     },
     {
-      "id": "ent_072",
+      "id": "E8",
+      "type": "Evidence",
+      "name": "ethnopharmacological studies",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ],
+      "confidence": 0.8,
+      "evidence": "ethnopharmacological studies",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "southern African traditional healers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5efa3c227a0e4e9068e4076108392fbf"
+      ],
+      "confidence": 0.9,
+      "evidence": "southern African traditional healers' worldview",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: southern African traditional healers \u2013 psychoactive plants \u2013 mental disorder treatment",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5efa3c227a0e4e9068e4076108392fbf"
+      ],
+      "confidence": 0.8,
+      "evidence": "psychoactive plant use that can provide insights into the process and treatment of mental disorder",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "treatment of mental disorder",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5efa3c227a0e4e9068e4076108392fbf"
+      ],
+      "confidence": 0.85,
+      "evidence": "treatment of mental disorder",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "mental disorder",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "5efa3c227a0e4e9068e4076108392fbf"
+      ],
+      "confidence": 0.9,
+      "evidence": "mental disorder",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Culture",
+      "name": "westerners",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5efa3c227a0e4e9068e4076108392fbf"
+      ],
+      "confidence": 0.85,
+      "evidence": "westerners seeking spiritual healing alternatives",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "UseRecord",
+      "name": "UseRecord: westerners \u2013 African psychoactive plants \u2013 spiritual healing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5efa3c227a0e4e9068e4076108392fbf"
+      ],
+      "confidence": 0.75,
+      "evidence": "westerners seeking spiritual healing alternatives",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "spiritual healing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5efa3c227a0e4e9068e4076108392fbf"
+      ],
+      "confidence": 0.8,
+      "evidence": "spiritual healing alternatives",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "AdverseEvent",
+      "name": "misguided and dangerous experimentation",
+      "attributes": {
+        "severity": "dangerous"
+      },
+      "source_chunk_ids": [
+        "5efa3c227a0e4e9068e4076108392fbf"
+      ],
+      "confidence": 0.7,
+      "evidence": "misguided and dangerous experimentation",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "AdverseEvent",
+      "name": "incorrect or wrongly identified plants or products",
+      "attributes": {
+        "severity": "unknown",
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "5efa3c227a0e4e9068e4076108392fbf"
+      ],
+      "confidence": 0.65,
+      "evidence": "incorrect or wrongly identified plants or products",
+      "verified": false
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "!Kung Bushmen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ac9ce0b1e966a9750deb945132d262b2"
+      ],
+      "confidence": 0.9,
+      "evidence": "!Kung Bushmen of the Kalahari Desert",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: !Kung Bushmen \u2013 drug-induced altered states",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ac9ce0b1e966a9750deb945132d262b2"
+      ],
+      "confidence": 0.8,
+      "evidence": "drug-induced altered states of consciousness",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "altered states of consciousness",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ac9ce0b1e966a9750deb945132d262b2"
+      ],
+      "confidence": 0.85,
+      "evidence": "altered states of consciousness",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Dobkin de Rios 1986",
+      "attributes": {
+        "year": 1986
+      },
+      "source_chunk_ids": [
+        "ac9ce0b1e966a9750deb945132d262b2"
+      ],
+      "confidence": 0.9,
+      "evidence": "Dobkin de Rios M 1986",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "ethnographic study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "ac9ce0b1e966a9750deb945132d262b2"
+      ],
+      "confidence": 0.75,
+      "evidence": "Engima of drug-induced altered states",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "De Smet 1996",
+      "attributes": {
+        "year": 1996
+      },
+      "source_chunk_ids": [
+        "ac9ce0b1e966a9750deb945132d262b2"
+      ],
+      "confidence": 0.9,
+      "evidence": "De Smet PAGM 1996",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "ethnopharmacological review",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "ac9ce0b1e966a9750deb945132d262b2"
+      ],
+      "confidence": 0.8,
+      "evidence": "Some ethnopharmacological notes",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Bay-Smidt et al. 2011",
+      "attributes": {
+        "year": 2011
+      },
+      "source_chunk_ids": [
+        "ac9ce0b1e966a9750deb945132d262b2"
+      ],
+      "confidence": 0.9,
+      "evidence": "Bay-Smidt MGK et al. 2011",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "pharmacological study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "ac9ce0b1e966a9750deb945132d262b2"
+      ],
+      "confidence": 0.8,
+      "evidence": "acetylcholinesterase inhibition and affinity",
+      "verified": true
+    },
+    {
+      "id": "E10",
       "type": "Taxon",
-      "name": "psychoactive medicines",
+      "name": "Amaryllidaceae tribe Haemantheae",
       "attributes": {
-        "context": "understandings of mental illness and psychoactive medicines"
+        "rank": "tribe"
       },
       "source_chunk_ids": [
-        "555cb4ae905222eb6ef81a574bca5b8b"
-      ]
+        "ac9ce0b1e966a9750deb945132d262b2"
+      ],
+      "confidence": 0.85,
+      "evidence": "Amaryllidaceae tribe Haemantheae",
+      "verified": true
     },
     {
-      "id": "ent_073",
+      "id": "E11",
+      "type": "Target",
+      "name": "acetylcholinesterase",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "ac9ce0b1e966a9750deb945132d262b2"
+      ],
+      "confidence": 0.9,
+      "evidence": "acetylcholinesterase inhibition",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Target",
+      "name": "serotonin reuptake transport protein",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "ac9ce0b1e966a9750deb945132d262b2"
+      ],
+      "confidence": 0.9,
+      "evidence": "serotonin reuptake transport protein",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Taxon",
-      "name": "psychoactive plant species",
-      "attributes": {
-        "context": "effects of various psychoactive plant species used in traditional formulas"
-      },
+      "name": "Sceletium tortuosum",
+      "attributes": {},
       "source_chunk_ids": [
-        "555cb4ae905222eb6ef81a574bca5b8b"
-      ]
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium\u2014a review update",
+      "verified": true
     },
     {
-      "id": "ent_074",
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "confidence": 0.85,
+      "evidence": "principal alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "serotonin transporter",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "confidence": 0.8,
+      "evidence": "serotonin transporter",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "P-glycoprotein",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "confidence": 0.75,
+      "evidence": "P-glycoprotein interactions",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "GABA-benzodiazepine receptor",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "confidence": 0.7,
+      "evidence": "GABA-benzodiazepine receptor",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "NMDA receptor",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "confidence": 0.7,
+      "evidence": "NMDA receptor",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "epilepsy",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "confidence": 0.8,
+      "evidence": "treat epilepsy",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "headaches",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "confidence": 0.75,
+      "evidence": "Plants used for headaches",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Culture",
+      "name": "Zulu",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "confidence": 0.85,
+      "evidence": "Zulu, Xhosa and Sotho",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Culture",
+      "name": "Xhosa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "confidence": 0.85,
+      "evidence": "Zulu, Xhosa and Sotho",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Culture",
+      "name": "Sotho",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "confidence": 0.85,
+      "evidence": "Zulu, Xhosa and Sotho",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "UseRecord",
+      "name": "UseRecord: Zulu/Xhosa/Sotho \u2013 Sceletium \u2013 stress-related ailments",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "confidence": 0.8,
+      "evidence": "Plants used for stress-related ailments",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "TraditionalUse",
+      "name": "stress-related ailments",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "confidence": 0.8,
+      "evidence": "stress-related ailments",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Study",
+      "name": "Harvey et al. 2011",
+      "attributes": {
+        "year": 2011
+      },
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "confidence": 0.9,
+      "evidence": "Harvey AL, Young LC, Viljoen AM, Gericke NP 2011",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Evidence",
+      "name": "review",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "confidence": 0.8,
+      "evidence": "review update",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Study",
+      "name": "Eriksson et al. 2012",
+      "attributes": {
+        "year": 2012
+      },
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "confidence": 0.9,
+      "evidence": "Eriksson AH, R\u00f6nsted N, G\u00fcler S, J\u00e4ger AK, Sendra JR, Brodin B 2012",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "confidence": 0.85,
+      "evidence": "In-vitro evaluation",
+      "verified": true
+    },
+    {
+      "id": "E18",
+      "type": "Study",
+      "name": "Marchetti et al. 2011",
+      "attributes": {
+        "year": 2011
+      },
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "confidence": 0.9,
+      "evidence": "Marchetti C, Gavazzo P, Stafford GI, van Staden J 2011",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "review",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "d6178213809655b09fa1664abf14f1e2"
+      ],
+      "confidence": 0.8,
+      "evidence": "Review on plants with CNS-effects",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Stafford et al. 2008",
+      "attributes": {
+        "design": "review",
+        "year": 2008
+      },
+      "source_chunk_ids": [
+        "d6178213809655b09fa1664abf14f1e2"
+      ],
+      "confidence": 0.85,
+      "evidence": "Stafford GI, Pedersen ME, van Staden J, J\u00e4ger AK 2008",
+      "verified": true
+    },
+    {
+      "id": "E3",
       "type": "Taxon",
-      "name": "psychoactive plants",
+      "name": "South African traditional medicinal plants",
       "attributes": {
-        "context": "role of psychoactive plants in facilitating trance states"
+        "rank": "group"
       },
       "source_chunk_ids": [
-        "555cb4ae905222eb6ef81a574bca5b8b"
-      ]
+        "d6178213809655b09fa1664abf14f1e2"
+      ],
+      "confidence": 0.75,
+      "evidence": "southern African traditional medicinal plants",
+      "verified": true
     },
     {
-      "id": "ent_075",
-      "type": "PharmEffect",
-      "name": "trance states",
+      "id": "E4",
+      "type": "Condition",
+      "name": "mental diseases",
       "attributes": {
-        "context": "facilitating trance states and divination"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
-        "555cb4ae905222eb6ef81a574bca5b8b"
-      ]
+        "d6178213809655b09fa1664abf14f1e2"
+      ],
+      "confidence": 0.8,
+      "evidence": "against mental diseases",
+      "verified": true
     },
     {
-      "id": "ent_076",
+      "id": "E5",
+      "type": "Target",
+      "name": "monoamine oxidase",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "d6178213809655b09fa1664abf14f1e2"
+      ],
+      "confidence": 0.85,
+      "evidence": "Monoamine oxidase inhibition",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "serotonin transporter protein (SERT)",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "d6178213809655b09fa1664abf14f1e2"
+      ],
+      "confidence": 0.8,
+      "evidence": "Serotonin transporter protein (SERT)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "P-glycoprotein (P-gp)",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "d6178213809655b09fa1664abf14f1e2"
+      ],
+      "confidence": 0.8,
+      "evidence": "P-glycoprotein (P-gp) binding activity",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Target",
+      "name": "GABAA/benzodiazepine receptor",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "d6178213809655b09fa1664abf14f1e2"
+      ],
+      "confidence": 0.8,
+      "evidence": "affinity for the GABAA/benzodiazepine receptor",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "addiction",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "d6178213809655b09fa1664abf14f1e2"
+      ],
+      "confidence": 0.75,
+      "evidence": "Ayahuasca-assisted therapy for addiction",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Culture",
+      "name": "!Kung Bushmen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d6178213809655b09fa1664abf14f1e2"
+      ],
+      "confidence": 0.85,
+      "evidence": "!Kung Bushmen medicine plants",
+      "verified": true
+    },
+    {
+      "id": "E11",
       "type": "Taxon",
-      "name": "southern African psychoactive plants",
+      "name": "medicine plants",
       "attributes": {
-        "context": "folklore and mythology surrounding southern African psychoactive plants"
+        "rank": "group"
       },
       "source_chunk_ids": [
-        "555cb4ae905222eb6ef81a574bca5b8b"
-      ]
+        "d6178213809655b09fa1664abf14f1e2"
+      ],
+      "confidence": 0.7,
+      "evidence": "!Kung Bushmen medicine plants",
+      "verified": true
     },
     {
-      "id": "ent_077",
-      "type": "Taxon",
-      "name": "African medicinal plants",
-      "attributes": {
-        "context": "literature available on African medicinal plants"
-      },
+      "id": "E12",
+      "type": "TraditionalUse",
+      "name": "psychoactive properties",
+      "attributes": {},
       "source_chunk_ids": [
-        "6e839a764058437f4f5eafbf509ff8b3"
-      ]
+        "d6178213809655b09fa1664abf14f1e2"
+      ],
+      "confidence": 0.8,
+      "evidence": "Psychoactive properties",
+      "verified": true
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:03.933533+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "southern African traditional healers",
+      "source_chunk_ids": [
+        "9d98a4da8dc0f7a17b56b552b5b8069f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "treating mental illness",
+      "source_chunk_ids": [
+        "9d98a4da8dc0f7a17b56b552b5b8069f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "treating mental illness",
+      "source_chunk_ids": [
+        "9d98a4da8dc0f7a17b56b552b5b8069f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "initiation process",
+      "source_chunk_ids": [
+        "9d98a4da8dc0f7a17b56b552b5b8069f"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "spiritual practices",
+      "source_chunk_ids": [
+        "9d98a4da8dc0f7a17b56b552b5b8069f"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "traditional formulas",
+      "source_chunk_ids": [
+        "9d98a4da8dc0f7a17b56b552b5b8069f"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "SUGGESTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "folklore and mythology",
+      "source_chunk_ids": [
+        "9d98a4da8dc0f7a17b56b552b5b8069f"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "substances that are used for the modification",
+      "source_chunk_ids": [
+        "521bc1f91295119dde46de9f2dade2de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "acting as sedatives",
+      "source_chunk_ids": [
+        "521bc1f91295119dde46de9f2dade2de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "euphoriants",
+      "source_chunk_ids": [
+        "521bc1f91295119dde46de9f2dade2de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "stimulants",
+      "source_chunk_ids": [
+        "521bc1f91295119dde46de9f2dade2de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "sopoforics (inducing sleep)",
+      "source_chunk_ids": [
+        "521bc1f91295119dde46de9f2dade2de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "psychedelics",
+      "source_chunk_ids": [
+        "521bc1f91295119dde46de9f2dade2de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "antidepressants",
+      "source_chunk_ids": [
+        "521bc1f91295119dde46de9f2dade2de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "memory enhancers",
+      "source_chunk_ids": [
+        "521bc1f91295119dde46de9f2dade2de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "SUGGESTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E1",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "incorporating them in medicine and spiritual healing practices",
+      "source_chunk_ids": [
+        "521bc1f91295119dde46de9f2dade2de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "considered seventeen plant narcotics and their potential psychoactive chemistries",
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "book on thirty narcotic plants",
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "first such isolation of a naturally occurring psychedelic substance in pure form",
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "identified mescaline from the peyote cactus Lophophora williamsii",
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "identified mescaline from the peyote cactus",
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "breakthrough in the advancement of the pharmacological study of psychoactive plants",
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E11",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "work on understanding the mechanisms of mescaline",
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "work on understanding the mechanisms of mescaline",
+      "source_chunk_ids": [
+        "7de71f51ff9d7472bc2c62acf3f2e240"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "psychoactive plant use and effects",
+      "source_chunk_ids": [
+        "744acd97c8852f5f26d0c1d4eff07767"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "rich in plant species with reported psychoactive uses and effects",
+      "source_chunk_ids": [
+        "744acd97c8852f5f26d0c1d4eff07767"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "preliminary inventory on plants used for psychoactive purposes",
+      "source_chunk_ids": [
+        "975ff20bf255995c3f8ec658418f4470"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "shamanic healing practices of the San Bushmen",
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_USE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Southern Bantu speakers' greater ethno-medicine",
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "treating conditions such as insomnia",
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "convulsive conditions such as epilepsy",
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "traditional_use",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "psychoactive plants have in the traditional spiritual practices",
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "traditional_use",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Southern Bantu traditional divination",
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "traditional_use",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "healing initiation process of Southern African traditional diviners",
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E11",
+      "attributes": {
+        "role": "traditional_use",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "shamanic healing practices of the San Bushmen",
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "treating conditions such as insomnia",
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "SUGGESTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "convulsive conditions such as epilepsy",
+      "source_chunk_ids": [
+        "3bbab7fd10ee3dcdeec9311c775e30da"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "Tabernanthe iboga ... treat drug addiction",
+      "source_chunk_ids": [
+        "3ac1be85a40369e60af4a63272ab5360"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "Tabernanthe iboga ... treat ... depression",
+      "source_chunk_ids": [
+        "3ac1be85a40369e60af4a63272ab5360"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "Banisteriopsis caapi ... treat drug addiction",
+      "source_chunk_ids": [
+        "3ac1be85a40369e60af4a63272ab5360"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "Banisteriopsis caapi ... treat ... depression",
+      "source_chunk_ids": [
+        "3ac1be85a40369e60af4a63272ab5360"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "ethnopharmacological based work",
+      "source_chunk_ids": [
+        "c096276440d9895881a7119e0fdc4754"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "first review paper on African plants",
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "direct",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "potentially useful for mental health",
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "comprehensive review on the historical use",
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "review on Sceletium tortuosum",
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "historical use",
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "traditional preparation",
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E11",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "chemistry",
+      "source_chunk_ids": [
+        "4e45f061e2e7039aff01c9fd758dae18"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "plants used in southern African traditional medicine",
+      "source_chunk_ids": [
+        "4645ceb5a44a9e817cbada3e23d0b8d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "for psychoactive purposes",
+      "source_chunk_ids": [
+        "4645ceb5a44a9e817cbada3e23d0b8d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "treating epilepsy",
+      "source_chunk_ids": [
+        "4645ceb5a44a9e817cbada3e23d0b8d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "mental health problems",
+      "source_chunk_ids": [
+        "4645ceb5a44a9e817cbada3e23d0b8d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "activity in bioassays",
+      "source_chunk_ids": [
+        "4645ceb5a44a9e817cbada3e23d0b8d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "inhibition of acetylcholinesterase",
+      "source_chunk_ids": [
+        "4645ceb5a44a9e817cbada3e23d0b8d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "binding to the serotonin reuptake transporter",
+      "source_chunk_ids": [
+        "4645ceb5a44a9e817cbada3e23d0b8d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "alkaloid diversity",
+      "source_chunk_ids": [
+        "4645ceb5a44a9e817cbada3e23d0b8d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "alkaloid diversity and in vitro inhibition of acetylcholinesterase",
+      "source_chunk_ids": [
+        "4645ceb5a44a9e817cbada3e23d0b8d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "alkaloid diversity and binding to the serotonin reuptake transporter",
+      "source_chunk_ids": [
+        "4645ceb5a44a9e817cbada3e23d0b8d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "indigenous healers use psychoactive plants",
+      "source_chunk_ids": [
+        "629baa5a2b087452a8d807ead9a3c590"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "used for divination",
+      "source_chunk_ids": [
+        "629baa5a2b087452a8d807ead9a3c590"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "enhanced divining abilities",
+      "source_chunk_ids": [
+        "629baa5a2b087452a8d807ead9a3c590"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_USE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Sotho diviners use plants",
+      "source_chunk_ids": [
+        "629baa5a2b087452a8d807ead9a3c590"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "psychoactive effects",
+      "source_chunk_ids": [
+        "629baa5a2b087452a8d807ead9a3c590"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_USE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Xhosa healer uses psychoactive plant preparations",
+      "source_chunk_ids": [
+        "629baa5a2b087452a8d807ead9a3c590"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "training and healing initiation",
+      "source_chunk_ids": [
+        "629baa5a2b087452a8d807ead9a3c590"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_USE",
+      "source_entity_id": "E11",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Southern Bantu people have psychoactive uses",
+      "source_chunk_ids": [
+        "629baa5a2b087452a8d807ead9a3c590"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "INVOLVES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E13",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "psychoactive uses",
+      "source_chunk_ids": [
+        "629baa5a2b087452a8d807ead9a3c590"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "plants used in divination by the Southern Bantu",
+      "source_chunk_ids": [
+        "e9c6518eac887b0b3f1a94965e650a7f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "plants used in divination",
+      "source_chunk_ids": [
+        "e9c6518eac887b0b3f1a94965e650a7f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "psychoactive effects",
+      "source_chunk_ids": [
+        "e9c6518eac887b0b3f1a94965e650a7f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "hallucinogenic activity",
+      "source_chunk_ids": [
+        "e9c6518eac887b0b3f1a94965e650a7f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "spiritual healing",
+      "source_chunk_ids": [
+        "e9c6518eac887b0b3f1a94965e650a7f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "ritual customs",
+      "source_chunk_ids": [
+        "e9c6518eac887b0b3f1a94965e650a7f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "review of plants",
+      "source_chunk_ids": [
+        "e9c6518eac887b0b3f1a94965e650a7f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "plants used in divination",
+      "source_chunk_ids": [
+        "e9c6518eac887b0b3f1a94965e650a7f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "use of psychoactive plants by the Kalahari San Bushmen",
+      "source_chunk_ids": [
+        "b05a758d19aa43b3d93ce7f350d2edf8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "to facilitate the spiritual healing practices",
+      "source_chunk_ids": [
+        "b05a758d19aa43b3d93ce7f350d2edf8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "plants used in trance-related and other ritual contexts",
+      "source_chunk_ids": [
+        "b05a758d19aa43b3d93ce7f350d2edf8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Mitchell and Hudson 2004",
+      "source_chunk_ids": [
+        "b05a758d19aa43b3d93ce7f350d2edf8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "use_record"
+      },
+      "confidence": 0.7,
+      "evidence": "Mitchell and Hudson 2004: 52",
+      "source_chunk_ids": [
+        "b05a758d19aa43b3d93ce7f350d2edf8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "indigenous people use ubulawu",
+      "source_chunk_ids": [
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.9,
+      "evidence": "use of ubulawu",
+      "source_chunk_ids": [
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "clean the body",
+      "source_chunk_ids": [
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "promote dreaming",
+      "source_chunk_ids": [
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "healing",
+      "source_chunk_ids": [
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.85,
+      "evidence": "specific mixtures of ubulawu species",
+      "source_chunk_ids": [
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "encourage psycho-spiritual healing integration",
+      "source_chunk_ids": [
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "preparation"
+      },
+      "confidence": 0.7,
+      "evidence": "use of ritual",
+      "source_chunk_ids": [
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "preparation"
+      },
+      "confidence": 0.7,
+      "evidence": "preparation and administration methods",
+      "source_chunk_ids": [
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E11",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "resulting in psychoactive effects",
+      "source_chunk_ids": [
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E12",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "treating mental illness",
+      "source_chunk_ids": [
+        "343fd257fe6d688a67eb01cb3ad5c0bf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Psychoactive plants are an important aid in the spiritual practices",
+      "source_chunk_ids": [
+        "40ba7607a8fcfa3f293b313562ae0277"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "used to access heightened states of awareness",
+      "source_chunk_ids": [
+        "40ba7607a8fcfa3f293b313562ae0277"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "enhanced intuition and sensitivity",
+      "source_chunk_ids": [
+        "40ba7607a8fcfa3f293b313562ae0277"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "trance",
+      "source_chunk_ids": [
+        "40ba7607a8fcfa3f293b313562ae0277"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "lucid dreaming",
+      "source_chunk_ids": [
+        "40ba7607a8fcfa3f293b313562ae0277"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "connect with ones ancestral spirits",
+      "source_chunk_ids": [
+        "40ba7607a8fcfa3f293b313562ae0277"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "San Bushmen ritual uses",
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_USE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Southern Bantu speakers ritual uses",
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "role of psychoactive plants in facilitating trance states",
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "role of psychoactive plants in facilitating trance states",
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "healing dynamics with psychoactive plant medicines",
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "healing dynamics with psychoactive plant medicines",
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "SUGGESTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "healing dynamics may offer contributions to treatment of mental illness",
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "SUGGESTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "ethnopharmacological studies on psychoactive plants",
+      "source_chunk_ids": [
+        "555cb4ae905222eb6ef81a574bca5b8b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "southern African traditional healers' botanical knowledge concerning psychoactive plant use",
+      "source_chunk_ids": [
+        "5efa3c227a0e4e9068e4076108392fbf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "psychoactive plant use that can provide insights into the process and treatment of mental disorder",
+      "source_chunk_ids": [
+        "5efa3c227a0e4e9068e4076108392fbf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.75,
+      "evidence": "psychoactive plant use that can provide insights into the process and treatment of mental disorder",
+      "source_chunk_ids": [
+        "5efa3c227a0e4e9068e4076108392fbf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_USE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "westerners seeking spiritual healing alternatives",
+      "source_chunk_ids": [
+        "5efa3c227a0e4e9068e4076108392fbf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "spiritual healing alternatives",
+      "source_chunk_ids": [
+        "5efa3c227a0e4e9068e4076108392fbf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CAUSES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {
+        "context": "experimental",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "misguided and dangerous experimentation of African psychoactive plants newly discovered by westerners",
+      "source_chunk_ids": [
+        "5efa3c227a0e4e9068e4076108392fbf"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "CAUSES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E9",
+      "attributes": {
+        "context": "commercial",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "bogus internet ethnobotanical suppliers advertising and selling incorrect or wrongly identified plants or products",
+      "source_chunk_ids": [
+        "5efa3c227a0e4e9068e4076108392fbf"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "!Kung Bushmen of the Kalahari Desert",
+      "source_chunk_ids": [
+        "ac9ce0b1e966a9750deb945132d262b2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "drug-induced altered states of consciousness",
+      "source_chunk_ids": [
+        "ac9ce0b1e966a9750deb945132d262b2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Engima of drug-induced altered states",
+      "source_chunk_ids": [
+        "ac9ce0b1e966a9750deb945132d262b2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "drug-induced altered states of consciousness",
+      "source_chunk_ids": [
+        "ac9ce0b1e966a9750deb945132d262b2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Some ethnopharmacological notes",
+      "source_chunk_ids": [
+        "ac9ce0b1e966a9750deb945132d262b2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "acetylcholinesterase inhibition and affinity",
+      "source_chunk_ids": [
+        "ac9ce0b1e966a9750deb945132d262b2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "target species in Amaryllidaceae tribe Haemantheae",
+      "source_chunk_ids": [
+        "ac9ce0b1e966a9750deb945132d262b2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "acetylcholinesterase inhibition",
+      "source_chunk_ids": [
+        "ac9ce0b1e966a9750deb945132d262b2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "affinity to the serotonin reuptake transport protein",
+      "source_chunk_ids": [
+        "ac9ce0b1e966a9750deb945132d262b2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "principal alkaloids",
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.75,
+      "evidence": "serotonin transporter",
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "interacts"
+      },
+      "confidence": 0.7,
+      "evidence": "P-glycoprotein interactions",
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_USE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Zulu, Xhosa and Sotho",
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_USE",
+      "source_entity_id": "E10",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Zulu, Xhosa and Sotho",
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_USE",
+      "source_entity_id": "E11",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Zulu, Xhosa and Sotho",
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.75,
+      "evidence": "Sceletium\u2014a review update",
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "INVOLVES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E13",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "stress-related ailments",
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "SUGGESTS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "Plants used for headaches",
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E14",
+      "target_entity_id": "E15",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "review update",
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "STUDIES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "Sceletium tortuosum",
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E16",
+      "target_entity_id": "E17",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "In-vitro evaluation",
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "STUDIES",
+      "source_entity_id": "E16",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "Amaryllidaceae alkaloids",
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "REPORTS",
+      "source_entity_id": "E16",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "P-glycoprotein interactions",
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "STUDIES",
+      "source_entity_id": "E18",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "South African plants",
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "REPORTS",
+      "source_entity_id": "E18",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "treats"
+      },
+      "confidence": 0.8,
+      "evidence": "treat epilepsy",
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R17",
+      "type": "REPORTS",
+      "source_entity_id": "E18",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "antagonistic effect"
+      },
+      "confidence": 0.75,
+      "evidence": "antagonistic effect on NMDA receptor",
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R18",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "traditional"
+      },
+      "confidence": 0.75,
+      "evidence": "treat epilepsy",
+      "source_chunk_ids": [
+        "d577aa6381eb3494e17df47f9593835a"
+      ],
+      "supporting_study_ids": [
+        "E18"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Review on plants with CNS-effects",
+      "source_chunk_ids": [
+        "d6178213809655b09fa1664abf14f1e2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "plants with CNS-effects used in traditional South African medicine",
+      "source_chunk_ids": [
+        "d6178213809655b09fa1664abf14f1e2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.8,
+      "evidence": "against mental diseases",
+      "source_chunk_ids": [
+        "d6178213809655b09fa1664abf14f1e2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "inhibition"
+      },
+      "confidence": 0.75,
+      "evidence": "Monoamine oxidase inhibition",
+      "source_chunk_ids": [
+        "d6178213809655b09fa1664abf14f1e2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "binding"
+      },
+      "confidence": 0.7,
+      "evidence": "Serotonin transporter protein (SERT) binding activity",
+      "source_chunk_ids": [
+        "d6178213809655b09fa1664abf14f1e2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "binding"
+      },
+      "confidence": 0.7,
+      "evidence": "P-glycoprotein (P-gp) binding activity",
+      "source_chunk_ids": [
+        "d6178213809655b09fa1664abf14f1e2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "affinity"
+      },
+      "confidence": 0.7,
+      "evidence": "affinity for the GABAA/benzodiazepine receptor",
+      "source_chunk_ids": [
+        "d6178213809655b09fa1664abf14f1e2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "therapy",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Ayahuasca-assisted therapy for addiction",
+      "source_chunk_ids": [
+        "d6178213809655b09fa1664abf14f1e2"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "plants with CNS-effects used against mental diseases",
+      "source_chunk_ids": [
+        "d6178213809655b09fa1664abf14f1e2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "SUGGESTS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Psychoactive properties used against mental diseases",
+      "source_chunk_ids": [
+        "d6178213809655b09fa1664abf14f1e2"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    }
+  ]
 }

@@ -1,662 +1,4407 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "5bd339a934f5ec76920233ea523ef890b41c224522204d7d55e4424c65aea4b3",
-  "extracted_at": "2026-02-01T08:25:25.752466+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
+      "id": "E1",
+      "type": "Study",
+      "name": "Patnala S, Kanfer I. 2013",
+      "attributes": {
+        "design": "chemotaxonomic study",
+        "year": 2013,
+        "doi": "http://dx.doi.org/10.1590/sajs.2013/882"
+      },
+      "source_chunk_ids": [
+        "c8cf5796cfeade4a3f2911ec0bfabc59"
+      ],
+      "confidence": 0.95,
+      "evidence": "Patnala S, Kanfer I.Chemotaxonomic studies",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "chemotaxonomic study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "c8cf5796cfeade4a3f2911ec0bfabc59"
+      ],
+      "confidence": 0.9,
+      "evidence": "Chemotaxonomic studies",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium plant species",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "c8cf5796cfeade4a3f2911ec0bfabc59"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium plant species",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "mesembrine-type alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c8cf5796cfeade4a3f2911ec0bfabc59"
+      ],
+      "confidence": 0.85,
+      "evidence": "mesembrine-type alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoisan",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c8129aafdc13810b8830907820e2f82c"
+      ],
+      "confidence": 0.9,
+      "evidence": "Khoisan of southern Africa",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Khoisan \u2013 Sceletium \u2013 historical use",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c8129aafdc13810b8830907820e2f82c"
+      ],
+      "confidence": 0.8,
+      "evidence": "Historically, Sceletium was used by the Khoisan",
+      "verified": true
+    },
+    {
+      "id": "E3",
       "type": "Taxon",
       "name": "Sceletium",
       "attributes": {
-        "context": "Sceletium"
+        "rank": "genus"
       },
       "source_chunk_ids": [
-        "e5bab1f85e4cdcaf612d30209a05bc9d"
-      ]
+        "c8129aafdc13810b8830907820e2f82c"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium",
+      "verified": true
     },
     {
-      "id": "ent_002",
-      "type": "Compound",
-      "name": "mesembrine",
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "anti-anxiety",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c8129aafdc13810b8830907820e2f82c"
+      ],
+      "confidence": 0.85,
+      "evidence": "anti-anxiety properties",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "mood elevating",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c8129aafdc13810b8830907820e2f82c"
+      ],
+      "confidence": 0.85,
+      "evidence": "mood elevating properties",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "psychiatric disorders",
       "attributes": {
-        "context": "mesembrine"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
-        "e5bab1f85e4cdcaf612d30209a05bc9d"
-      ]
+        "c8129aafdc13810b8830907820e2f82c"
+      ],
+      "confidence": 0.9,
+      "evidence": "treatment of psychiatric disorders",
+      "verified": true
     },
     {
-      "id": "ent_003",
-      "type": "Taxon",
-      "name": "Sceletium tortuosum",
+      "id": "E7",
+      "type": "Evidence",
+      "name": "patent",
       "attributes": {
-        "context": "tortuosum"
+        "evidence_level": 3
       },
       "source_chunk_ids": [
-        "e5bab1f85e4cdcaf612d30209a05bc9d"
-      ]
+        "c8129aafdc13810b8830907820e2f82c"
+      ],
+      "confidence": 0.75,
+      "evidence": "patented",
+      "verified": true
     },
     {
-      "id": "ent_004",
-      "type": "Taxon",
-      "name": "Sceletium emarcidum",
+      "id": "E8",
+      "type": "Study",
+      "name": "Smith et al.",
       "attributes": {
-        "context": "emarcidum"
+        "year": null,
+        "design": "discussion/report"
       },
       "source_chunk_ids": [
-        "e5bab1f85e4cdcaf612d30209a05bc9d"
-      ]
+        "c8129aafdc13810b8830907820e2f82c"
+      ],
+      "confidence": 0.7,
+      "evidence": "Smith et al.5",
+      "verified": true
     },
     {
-      "id": "ent_005",
-      "type": "Taxon",
-      "name": "Sceletium species",
-      "attributes": {
-        "context": "various Sceletium species"
-      },
-      "source_chunk_ids": [
-        "283322764a4377dd17e3f9660eb354e1"
-      ]
-    },
-    {
-      "id": "ent_006",
-      "type": "Taxon",
-      "name": "Sceletium species",
-      "attributes": {
-        "context": "selected Sceletium plant specimens"
-      },
-      "source_chunk_ids": [
-        "283322764a4377dd17e3f9660eb354e1"
-      ]
-    },
-    {
-      "id": "ent_007",
-      "type": "Compound",
-      "name": "mesembrine-type alkaloid",
-      "attributes": {
-        "context": "fingerprint the mesembrine-type alkaloid profiles"
-      },
-      "source_chunk_ids": [
-        "283322764a4377dd17e3f9660eb354e1"
-      ]
-    },
-    {
-      "id": "ent_008",
-      "type": "Compound",
-      "name": "alkaloid",
-      "attributes": {
-        "context": "determine alkaloidal content"
-      },
-      "source_chunk_ids": [
-        "283322764a4377dd17e3f9660eb354e1"
-      ]
-    },
-    {
-      "id": "ent_009",
-      "type": "Compound",
-      "name": "mesembrine-type alkaloid",
-      "attributes": {
-        "context": "detection of the mesembrine-type alkaloids"
-      },
-      "source_chunk_ids": [
-        "283322764a4377dd17e3f9660eb354e1"
-      ]
-    },
-    {
-      "id": "ent_010",
-      "type": "Compound",
-      "name": "alkaloid",
-      "attributes": {
-        "context": "identification of specific alkaloids"
-      },
-      "source_chunk_ids": [
-        "283322764a4377dd17e3f9660eb354e1"
-      ]
-    },
-    {
-      "id": "ent_011",
-      "type": "Compound",
-      "name": "alkaloids",
-      "attributes": {
-        "context": "standard alkaloids in Sceletium"
-      },
-      "source_chunk_ids": [
-        "224622654b431ef132a61b931c752bdb"
-      ]
-    },
-    {
-      "id": "ent_012",
-      "type": "Compound",
-      "name": "\u0394\u2077-mesembrenone",
-      "attributes": {
-        "context": "5.68 (\u0394\u2077-mesembrenone)"
-      },
-      "source_chunk_ids": [
-        "224622654b431ef132a61b931c752bdb"
-      ]
-    },
-    {
-      "id": "ent_013",
-      "type": "Compound",
-      "name": "Mesembranol",
-      "attributes": {
-        "context": "6.69 (Mesembranol)"
-      },
-      "source_chunk_ids": [
-        "224622654b431ef132a61b931c752bdb"
-      ]
-    },
-    {
-      "id": "ent_014",
-      "type": "Compound",
-      "name": "Mesembrenone",
-      "attributes": {
-        "context": "7.12 (Mesembrenone)"
-      },
-      "source_chunk_ids": [
-        "224622654b431ef132a61b931c752bdb"
-      ]
-    },
-    {
-      "id": "ent_015",
-      "type": "Compound",
-      "name": "Mesembrine",
-      "attributes": {
-        "context": "8.41 (Mesembrine)"
-      },
-      "source_chunk_ids": [
-        "224622654b431ef132a61b931c752bdb"
-      ]
-    },
-    {
-      "id": "ent_016",
-      "type": "Compound",
-      "name": "Epimesembranol",
-      "attributes": {
-        "context": "12.62 (Epimesembranol)"
-      },
-      "source_chunk_ids": [
-        "224622654b431ef132a61b931c752bdb"
-      ]
-    },
-    {
-      "id": "ent_017",
-      "type": "Taxon",
-      "name": "Sceletium",
-      "attributes": {
-        "context": "alkaloids in Sceletium"
-      },
-      "source_chunk_ids": [
-        "224622654b431ef132a61b931c752bdb"
-      ]
-    },
-    {
-      "id": "ent_018",
-      "type": "Taxon",
-      "name": "S. rigidum",
-      "attributes": {
-        "context": "the S. rigidum sample"
-      },
-      "source_chunk_ids": [
-        "a12a266a21b1436512c47f2ae20a2697"
-      ]
-    },
-    {
-      "id": "ent_019",
-      "type": "Taxon",
-      "name": "Sceletium rigidum",
-      "attributes": {
-        "context": "Chromatograms of Sceletium rigidum"
-      },
-      "source_chunk_ids": [
-        "cd573678b6825f544e89bbd7bb92e568"
-      ]
-    },
-    {
-      "id": "ent_020",
-      "type": "Taxon",
-      "name": "Sceletium rigidum",
-      "attributes": {
-        "context": "Chromatograms of Sceletium rigidum"
-      },
-      "source_chunk_ids": [
-        "029497197c05182e29bc76345fee8c42"
-      ]
-    },
-    {
-      "id": "ent_021",
-      "type": "Taxon",
-      "name": "Sceletium exalatum",
-      "attributes": {
-        "context": "S. exalatum sample"
-      },
-      "source_chunk_ids": [
-        "beaa309640bf9533aec4651a5bafdd18"
-      ]
-    },
-    {
-      "id": "ent_022",
-      "type": "Compound",
-      "name": "alkaloids",
-      "attributes": {
-        "context": "previously identified alkaloids"
-      },
-      "source_chunk_ids": [
-        "beaa309640bf9533aec4651a5bafdd18"
-      ]
-    },
-    {
-      "id": "ent_023",
-      "type": "Taxon",
-      "name": "Sceletium",
-      "attributes": {
-        "context": "available Sceletium reference standard alkaloids"
-      },
-      "source_chunk_ids": [
-        "beaa309640bf9533aec4651a5bafdd18"
-      ]
-    },
-    {
-      "id": "ent_024",
-      "type": "Compound",
-      "name": "alkaloids",
-      "attributes": {
-        "context": "Sceletium reference standard alkaloids"
-      },
-      "source_chunk_ids": [
-        "beaa309640bf9533aec4651a5bafdd18"
-      ]
-    },
-    {
-      "id": "ent_025",
-      "type": "Compound",
-      "name": "4'-O-demethyl-mesembrenone",
-      "attributes": {
-        "context": "molecular ions of 4'-O-demethyl-mesembrenone"
-      },
-      "source_chunk_ids": [
-        "beaa309640bf9533aec4651a5bafdd18"
-      ]
-    },
-    {
-      "id": "ent_026",
-      "type": "Compound",
-      "name": "O-methyl-joubertiamine",
-      "attributes": {
-        "context": "or O-methyl-joubertiamine"
-      },
-      "source_chunk_ids": [
-        "beaa309640bf9533aec4651a5bafdd18"
-      ]
-    },
-    {
-      "id": "ent_027",
-      "type": "Compound",
-      "name": "4'-O-demethyl-mesembrenol",
-      "attributes": {
-        "context": "and 4'-O-demethyl-mesembrenol"
-      },
-      "source_chunk_ids": [
-        "beaa309640bf9533aec4651a5bafdd18"
-      ]
-    },
-    {
-      "id": "ent_028",
-      "type": "Compound",
-      "name": "N-demethyl-mesembrenol",
-      "attributes": {
-        "context": "or N-demethyl-mesembrenol"
-      },
-      "source_chunk_ids": [
-        "beaa309640bf9533aec4651a5bafdd18"
-      ]
-    },
-    {
-      "id": "ent_029",
-      "type": "Taxon",
-      "name": "Sceletium exalatum",
-      "attributes": {
-        "context": "Chromatograms of Sceletium exalatum"
-      },
-      "source_chunk_ids": [
-        "c90f29ea1a7711d3c0f7e4bfafee77f6"
-      ]
-    },
-    {
-      "id": "ent_030",
-      "type": "Taxon",
-      "name": "Sceletium tortuosum",
-      "attributes": {
-        "context": "Sceletium tortuosum sample"
-      },
-      "source_chunk_ids": [
-        "9424532aeb0c96901ce853aaafa9e1c2"
-      ]
-    },
-    {
-      "id": "ent_031",
-      "type": "Compound",
-      "name": "mesembranol",
-      "attributes": {
-        "context": "6.64 min (mesembranol)"
-      },
-      "source_chunk_ids": [
-        "9424532aeb0c96901ce853aaafa9e1c2"
-      ]
-    },
-    {
-      "id": "ent_032",
-      "type": "Compound",
-      "name": "mesembrenone",
-      "attributes": {
-        "context": "7.12 min (mesembrenone)"
-      },
-      "source_chunk_ids": [
-        "9424532aeb0c96901ce853aaafa9e1c2"
-      ]
-    },
-    {
-      "id": "ent_033",
-      "type": "Compound",
-      "name": "mesembrine",
-      "attributes": {
-        "context": "8.39 min (mesembrine)"
-      },
-      "source_chunk_ids": [
-        "9424532aeb0c96901ce853aaafa9e1c2"
-      ]
-    },
-    {
-      "id": "ent_034",
-      "type": "Compound",
-      "name": "epimesembranol",
-      "attributes": {
-        "context": "12.09 min (epimesembranol)"
-      },
-      "source_chunk_ids": [
-        "9424532aeb0c96901ce853aaafa9e1c2"
-      ]
-    },
-    {
-      "id": "ent_035",
-      "type": "Compound",
-      "name": "alkaloids",
-      "attributes": {
-        "context": "assays (% w/w) of these alkaloids"
-      },
-      "source_chunk_ids": [
-        "9424532aeb0c96901ce853aaafa9e1c2"
-      ]
-    },
-    {
-      "id": "ent_036",
-      "type": "Concentration",
-      "name": "0.18%",
-      "attributes": {
-        "context": "present at 0.18%"
-      },
-      "source_chunk_ids": [
-        "9424532aeb0c96901ce853aaafa9e1c2"
-      ]
-    },
-    {
-      "id": "ent_037",
-      "type": "Concentration",
-      "name": "0.16%",
-      "attributes": {
-        "context": "0.18%, 0.16%"
-      },
-      "source_chunk_ids": [
-        "9424532aeb0c96901ce853aaafa9e1c2"
-      ]
-    },
-    {
-      "id": "ent_038",
-      "type": "Concentration",
-      "name": "2.20%",
-      "attributes": {
-        "context": "0.16%, 2.20%"
-      },
-      "source_chunk_ids": [
-        "9424532aeb0c96901ce853aaafa9e1c2"
-      ]
-    },
-    {
-      "id": "ent_039",
-      "type": "Concentration",
-      "name": "0.41%",
-      "attributes": {
-        "context": "2.20% and 0.41%"
-      },
-      "source_chunk_ids": [
-        "9424532aeb0c96901ce853aaafa9e1c2"
-      ]
-    },
-    {
-      "id": "ent_040",
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium expansum",
       "attributes": {
-        "context": "Chromatograms of Sceletium expansum"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "c5bab5546e2d45e671ffd9c816ce53fa"
-      ]
+        "0f753c82a7c2ef09fb05ae942d906c9d"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. expansum",
+      "verified": true
     },
     {
-      "id": "ent_041",
-      "type": "Taxon",
-      "name": "S. strictum",
-      "attributes": {
-        "context": "The HPLC-UV profile of S. strictum"
-      },
-      "source_chunk_ids": [
-        "e873f090cb4ab71b22f0ad2e10c075ff"
-      ]
-    },
-    {
-      "id": "ent_042",
-      "type": "Compound",
-      "name": "mesembrenone",
-      "attributes": {
-        "context": "7.08 min (mesembrenone)"
-      },
-      "source_chunk_ids": [
-        "e873f090cb4ab71b22f0ad2e10c075ff"
-      ]
-    },
-    {
-      "id": "ent_043",
-      "type": "Compound",
-      "name": "mesembrine",
-      "attributes": {
-        "context": "8.37 min (mesembrine)"
-      },
-      "source_chunk_ids": [
-        "e873f090cb4ab71b22f0ad2e10c075ff"
-      ]
-    },
-    {
-      "id": "ent_044",
-      "type": "Compound",
-      "name": "alkaloids",
-      "attributes": {
-        "context": "The alkaloids mesembrenone and mesembrine"
-      },
-      "source_chunk_ids": [
-        "e873f090cb4ab71b22f0ad2e10c075ff"
-      ]
-    },
-    {
-      "id": "ent_045",
-      "type": "Compound",
-      "name": "mesembrenone",
-      "attributes": {
-        "context": "7.13 min (mesembrenone)"
-      },
-      "source_chunk_ids": [
-        "fa5b126e0cdfca0785adf6ef07b9aaf3"
-      ]
-    },
-    {
-      "id": "ent_046",
-      "type": "Compound",
-      "name": "mesembrine",
-      "attributes": {
-        "context": "8.41 min (mesembrine)"
-      },
-      "source_chunk_ids": [
-        "fa5b126e0cdfca0785adf6ef07b9aaf3"
-      ]
-    },
-    {
-      "id": "ent_047",
-      "type": "Compound",
-      "name": "4'-O-demethyl-mesembrenone",
-      "attributes": {
-        "context": "corresponded to 4'-O-demethyl-mesembrenone"
-      },
-      "source_chunk_ids": [
-        "fa5b126e0cdfca0785adf6ef07b9aaf3"
-      ]
-    },
-    {
-      "id": "ent_048",
-      "type": "Compound",
-      "name": "O-methyl-joubertiamine",
-      "attributes": {
-        "context": "or O-methyl-joubertiamine (MWs=273)"
-      },
-      "source_chunk_ids": [
-        "fa5b126e0cdfca0785adf6ef07b9aaf3"
-      ]
-    },
-    {
-      "id": "ent_049",
-      "type": "Compound",
-      "name": "mesembranol",
-      "attributes": {
-        "context": "Neither mesembranol"
-      },
-      "source_chunk_ids": [
-        "fa5b126e0cdfca0785adf6ef07b9aaf3"
-      ]
-    },
-    {
-      "id": "ent_050",
-      "type": "Compound",
-      "name": "epimesembranol",
-      "attributes": {
-        "context": "nor epimesembranol"
-      },
-      "source_chunk_ids": [
-        "fa5b126e0cdfca0785adf6ef07b9aaf3"
-      ]
-    },
-    {
-      "id": "ent_051",
-      "type": "Compound",
-      "name": "4'-O-demethyl-mesembrenone",
-      "attributes": {
-        "context": "corresponded to 4'-O-demethyl-mesembrenone"
-      },
-      "source_chunk_ids": [
-        "fa5b126e0cdfca0785adf6ef07b9aaf3"
-      ]
-    },
-    {
-      "id": "ent_052",
-      "type": "Compound",
-      "name": "O-methyl-joubertiamine",
-      "attributes": {
-        "context": "or O-methyl-joubertiamine (MWs=273)"
-      },
-      "source_chunk_ids": [
-        "fa5b126e0cdfca0785adf6ef07b9aaf3"
-      ]
-    },
-    {
-      "id": "ent_053",
-      "type": "Taxon",
-      "name": "S. expansum",
-      "attributes": {
-        "context": "observed in S. expansum"
-      },
-      "source_chunk_ids": [
-        "fa5b126e0cdfca0785adf6ef07b9aaf3"
-      ]
-    },
-    {
-      "id": "ent_054",
+      "id": "E2",
       "type": "Taxon",
       "name": "Sceletium strictum",
       "attributes": {
-        "context": "Chromatograms of Sceletium strictum"
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "0f753c82a7c2ef09fb05ae942d906c9d"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. strictum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "0f753c82a7c2ef09fb05ae942d906c9d"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Sceletium varians",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "0f753c82a7c2ef09fb05ae942d906c9d"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. varians",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Sceletium emarcidum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "0f753c82a7c2ef09fb05ae942d906c9d"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. emarcidum",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Sceletium exalatum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "0f753c82a7c2ef09fb05ae942d906c9d"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. exalatum",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Sceletium rigidum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "0f753c82a7c2ef09fb05ae942d906c9d"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. rigidum",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0f753c82a7c2ef09fb05ae942d906c9d"
+      ],
+      "confidence": 0.95,
+      "evidence": "alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "c5c9bb215e419353a03d35b4ef7db598"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium (family: Aizoaceae)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Sceletium crassicaule",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c5c9bb215e419353a03d35b4ef7db598"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium crassicaule (Haw.) L. Bolus",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium emarcidum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c5c9bb215e419353a03d35b4ef7db598"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium emarcidum (Thunb.) L. Bolus ex H.J. Jacobson",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Sceletium exalatum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c5c9bb215e419353a03d35b4ef7db598"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium exalatum Gerbaulet",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Sceletium expansum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c5c9bb215e419353a03d35b4ef7db598"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium expansum (L.) L. Bolus [nt]",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Sceletium rigidum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c5c9bb215e419353a03d35b4ef7db598"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium rigidum L. Bolus",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Sceletium strictum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c5c9bb215e419353a03d35b4ef7db598"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium strictum L. Bolus",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c5c9bb215e419353a03d35b4ef7db598"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum (L.) N.E.Br. [nt]",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Taxon",
+      "name": "Sceletium varians",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c5c9bb215e419353a03d35b4ef7db598"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium varians (Haw.) Gerbaulet",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "3451ecca398475c08702f37f0c4787d3"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Monograph of Sceletium tortuosum",
+      "attributes": {
+        "design": "monograph"
+      },
+      "source_chunk_ids": [
+        "3451ecca398475c08702f37f0c4787d3"
+      ],
+      "confidence": 0.85,
+      "evidence": "monograph entitled Monograph of Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "pharmacognostic analysis",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "3451ecca398475c08702f37f0c4787d3"
+      ],
+      "confidence": 0.8,
+      "evidence": "describes the pharmacognostic features",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "thin-layer chromatography",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "3451ecca398475c08702f37f0c4787d3"
+      ],
+      "confidence": 0.8,
+      "evidence": "thin-layer chromatography",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "ed23fedbdd9d34fa8eaf30731d910827"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "methanolic extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ed23fedbdd9d34fa8eaf30731d910827"
+      ],
+      "confidence": 0.85,
+      "evidence": "methanolic extract of Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ed23fedbdd9d34fa8eaf30731d910827"
+      ],
+      "confidence": 0.9,
+      "evidence": "alkaloids in Sceletium",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "cineole",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ed23fedbdd9d34fa8eaf30731d910827"
+      ],
+      "confidence": 0.8,
+      "evidence": "reference compound \u2013 cineole",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "283322764a4377dd17e3f9660eb354e1"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium species",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "mesembrine-type alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "283322764a4377dd17e3f9660eb354e1"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine-type alkaloid profiles",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "present study",
+      "attributes": {
+        "design": "investigative"
+      },
+      "source_chunk_ids": [
+        "283322764a4377dd17e3f9660eb354e1"
+      ],
+      "confidence": 0.85,
+      "evidence": "present study was undertaken",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "in vitro analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "283322764a4377dd17e3f9660eb354e1"
+      ],
+      "confidence": 0.8,
+      "evidence": "analysed using HPLC with UV methods",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "8cb50ae4068c80a408afebb90d3eb73b"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium is found mainly",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Sceletium cultivators",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8cb50ae4068c80a408afebb90d3eb73b"
+      ],
+      "confidence": 0.8,
+      "evidence": "supplied as gifts by the Sceletium cultivators",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "cultivation and identification study",
+      "attributes": {
+        "design": "observational",
+        "purpose": "identify and ascertain quality of cultivated plant material"
+      },
+      "source_chunk_ids": [
+        "8cb50ae4068c80a408afebb90d3eb73b"
+      ],
+      "confidence": 0.7,
+      "evidence": "efforts to identify and ascertain the quality",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "observational evidence",
+      "attributes": {
+        "evidence_level": 2,
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "8cb50ae4068c80a408afebb90d3eb73b"
+      ],
+      "confidence": 0.6,
+      "evidence": "samples were cultivated and pressed",
+      "verified": false
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c692363aacd27612bad49f2f3832a4b6"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c692363aacd27612bad49f2f3832a4b6"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "\u03947mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c692363aacd27612bad49f2f3832a4b6"
+      ],
+      "confidence": 0.95,
+      "evidence": "\u03947mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c692363aacd27612bad49f2f3832a4b6"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "epimesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c692363aacd27612bad49f2f3832a4b6"
+      ],
+      "confidence": 0.95,
+      "evidence": "epimesembranol",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "c692363aacd27612bad49f2f3832a4b6"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium plant material",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "RawMaterial",
+      "name": "Sceletium plant material",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c692363aacd27612bad49f2f3832a4b6"
+      ],
+      "confidence": 0.85,
+      "evidence": "Sceletium plant material",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium emarcidum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c9701334c91fae57e0c056facdb7af46"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. emarcidum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Sceletium rigidum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c9701334c91fae57e0c056facdb7af46"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. rigidum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium exalatum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c9701334c91fae57e0c056facdb7af46"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. exalatum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c9701334c91fae57e0c056facdb7af46"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Sceletium expansum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c9701334c91fae57e0c056facdb7af46"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. expansum",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Sceletium strictum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c9701334c91fae57e0c056facdb7af46"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. strictum",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "PlantPart",
+      "name": "leaf",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c9701334c91fae57e0c056facdb7af46"
+      ],
+      "confidence": 0.85,
+      "evidence": "leaf venation pattern",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c9701334c91fae57e0c056facdb7af46"
+      ],
+      "confidence": 0.8,
+      "evidence": "relevant alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "8676724867a1c1f38c5b4eaa596a6edf"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium dried leaves",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8676724867a1c1f38c5b4eaa596a6edf"
+      ],
+      "confidence": 0.95,
+      "evidence": "dried Sceletium leaves",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "dried leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8676724867a1c1f38c5b4eaa596a6edf"
+      ],
+      "confidence": 0.85,
+      "evidence": "dried Sceletium leaves",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "\u0394\u2077mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "confidence": 0.9,
+      "evidence": "\u0394\u2077mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrine hydrochloride",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine hydrochloride",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "epimesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "confidence": 0.9,
+      "evidence": "epimesembranol",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "confidence": 0.85,
+      "evidence": "alkaloid",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "RawMaterial",
+      "name": "methanolic stock solutions",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "confidence": 0.8,
+      "evidence": "Standard methanolic stock solutions",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "RawMaterial",
+      "name": "working stock solution",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "confidence": 0.8,
+      "evidence": "working stock solution",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "RawMaterial",
+      "name": "reference standard alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "confidence": 0.8,
+      "evidence": "reference standard alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {},
+      "source_chunk_ids": [
+        "224622654b431ef132a61b931c752bdb"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "\u0394\u2077-mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "224622654b431ef132a61b931c752bdb"
+      ],
+      "confidence": 0.85,
+      "evidence": "\u0394\u2077-mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "Mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "224622654b431ef132a61b931c752bdb"
+      ],
+      "confidence": 0.85,
+      "evidence": "Mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "Mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "224622654b431ef132a61b931c752bdb"
+      ],
+      "confidence": 0.85,
+      "evidence": "Mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "Mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "224622654b431ef132a61b931c752bdb"
+      ],
+      "confidence": 0.85,
+      "evidence": "Mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "Epimesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "224622654b431ef132a61b931c752bdb"
+      ],
+      "confidence": 0.85,
+      "evidence": "Epimesembranol",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "224622654b431ef132a61b931c752bdb"
+      ],
+      "confidence": 0.8,
+      "evidence": "standard alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "\u0394\u2077-mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "eb8e36dcb285a4a823983a9d0c1a6d81"
+      ],
+      "confidence": 0.9,
+      "evidence": "\u0394\u2077-mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "eb8e36dcb285a4a823983a9d0c1a6d81"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "eb8e36dcb285a4a823983a9d0c1a6d81"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "eb8e36dcb285a4a823983a9d0c1a6d81"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "epimesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "eb8e36dcb285a4a823983a9d0c1a6d81"
+      ],
+      "confidence": 0.9,
+      "evidence": "epimesembranol",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "42c0c897899c1013dd90ef9fe2ee60b7"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium samples",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "cuttings",
+      "attributes": {},
+      "source_chunk_ids": [
+        "42c0c897899c1013dd90ef9fe2ee60b7"
+      ],
+      "confidence": 0.8,
+      "evidence": "cuttings of cultivated plants",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Preparation",
+      "name": "drying",
+      "attributes": {
+        "temperature": "80 \u00b0C"
+      },
+      "source_chunk_ids": [
+        "42c0c897899c1013dd90ef9fe2ee60b7"
+      ],
+      "confidence": 0.85,
+      "evidence": "dried at 80 \u00b0C",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "methanol extract",
+      "attributes": {
+        "concentration": "~150 mg/mL"
+      },
+      "source_chunk_ids": [
+        "42c0c897899c1013dd90ef9fe2ee60b7"
+      ],
+      "confidence": 0.8,
+      "evidence": "extracted with methanol",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Preparation",
+      "name": "sonication",
+      "attributes": {},
+      "source_chunk_ids": [
+        "42c0c897899c1013dd90ef9fe2ee60b7"
+      ],
+      "confidence": 0.75,
+      "evidence": "under sonication",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Preparation",
+      "name": "filtration",
+      "attributes": {
+        "filter_type": "0.45-\u03bcm PVDF membrane"
+      },
+      "source_chunk_ids": [
+        "42c0c897899c1013dd90ef9fe2ee60b7"
+      ],
+      "confidence": 0.8,
+      "evidence": "filtered through 0.45-\u03bcm PVDF membrane",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "S. emarcidum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "b27d6b937ed6a2c4826edb0fd51d4742"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. emarcidum specimen",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "HPLC-UV profile",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b27d6b937ed6a2c4826edb0fd51d4742"
+      ],
+      "confidence": 0.8,
+      "evidence": "HPLC-UV profile of the S. emarcidum specimen",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "MS profile",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b27d6b937ed6a2c4826edb0fd51d4742"
+      ],
+      "confidence": 0.8,
+      "evidence": "MS profile showed one major peak",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "Sceletium alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b27d6b937ed6a2c4826edb0fd51d4742"
+      ],
+      "confidence": 0.85,
+      "evidence": "Sceletium alkaloid reference standards",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium emarcidum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "85e8452399409530513f46e82b36dfab"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium emarcidum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "chromatography analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "85e8452399409530513f46e82b36dfab"
+      ],
+      "confidence": 0.8,
+      "evidence": "Chromatograms of Sceletium emarcidum",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium emarcidum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2b1bbca770eddbb2f2631bb73943ed51"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium emarcidum",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "\u0394\u2077-mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "70b6ac435bbb69a2df98b3e45b6b59cc"
+      ],
+      "confidence": 0.9,
+      "evidence": "\u0394\u2077-mesembrenone: m/z 288.3",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "Mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "70b6ac435bbb69a2df98b3e45b6b59cc"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mesembranol: m/z 292.2",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "Mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "70b6ac435bbb69a2df98b3e45b6b59cc"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mesembrenone: m/z 288.2",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "Mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "70b6ac435bbb69a2df98b3e45b6b59cc"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mesembrine: m/z 290.2",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "Epimesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "70b6ac435bbb69a2df98b3e45b6b59cc"
+      ],
+      "confidence": 0.9,
+      "evidence": "Epimesembranol: m/z 292.2",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "70b6ac435bbb69a2df98b3e45b6b59cc"
+      ],
+      "confidence": 0.85,
+      "evidence": "standard reference alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "Delta^7-mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e38f5475bbc33e1f04c5e14d65e611c6"
+      ],
+      "confidence": 0.9,
+      "evidence": "Delta^7-mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e38f5475bbc33e1f04c5e14d65e611c6"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e38f5475bbc33e1f04c5e14d65e611c6"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e38f5475bbc33e1f04c5e14d65e611c6"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "epimesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e38f5475bbc33e1f04c5e14d65e611c6"
+      ],
+      "confidence": 0.9,
+      "evidence": "epimesembranol",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e38f5475bbc33e1f04c5e14d65e611c6"
+      ],
+      "confidence": 0.85,
+      "evidence": "standard reference alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium rigidum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "cd573678b6825f544e89bbd7bb92e568"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium rigidum",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium rigidum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "029497197c05182e29bc76345fee8c42"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium rigidum",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "S. exalatum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "beaa309640bf9533aec4651a5bafdd18"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. exalatum sample",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "beaa309640bf9533aec4651a5bafdd18"
+      ],
+      "confidence": 0.9,
+      "evidence": "previously identified alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "4'-O-demethyl-mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "beaa309640bf9533aec4651a5bafdd18"
+      ],
+      "confidence": 0.8,
+      "evidence": "4'-O-demethyl-mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "O-methyl-joubertiamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "beaa309640bf9533aec4651a5bafdd18"
+      ],
+      "confidence": 0.8,
+      "evidence": "O-methyl-joubertiamine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "4'-O-demethyl-mesembrenol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "beaa309640bf9533aec4651a5bafdd18"
+      ],
+      "confidence": 0.8,
+      "evidence": "4'-O-demethyl-mesembrenol",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "N-demethyl-mesembrenol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "beaa309640bf9533aec4651a5bafdd18"
+      ],
+      "confidence": 0.8,
+      "evidence": "N-demethyl-mesembrenol",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium exalatum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c90f29ea1a7711d3c0f7e4bfafee77f6"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium exalatum",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium exalatum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "81a402ba27a6db832f489fe8a492202b"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium exalatum",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "9424532aeb0c96901ce853aaafa9e1c2"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum sample",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9424532aeb0c96901ce853aaafa9e1c2"
+      ],
+      "confidence": 0.9,
+      "evidence": "6.64 min (mesembranol)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9424532aeb0c96901ce853aaafa9e1c2"
+      ],
+      "confidence": 0.9,
+      "evidence": "7.12 min (mesembrenone)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9424532aeb0c96901ce853aaafa9e1c2"
+      ],
+      "confidence": 0.9,
+      "evidence": "8.39 min (mesembrine)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "epimesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9424532aeb0c96901ce853aaafa9e1c2"
+      ],
+      "confidence": 0.9,
+      "evidence": "12.09 min (epimesembranol)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9424532aeb0c96901ce853aaafa9e1c2"
+      ],
+      "confidence": 0.85,
+      "evidence": "these alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "\u0394^7-mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "575b4c31d88d5c7229bb3a1fe4ee952e"
+      ],
+      "confidence": 0.9,
+      "evidence": "\u0394^7-mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "575b4c31d88d5c7229bb3a1fe4ee952e"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "575b4c31d88d5c7229bb3a1fe4ee952e"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "575b4c31d88d5c7229bb3a1fe4ee952e"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "epimesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "575b4c31d88d5c7229bb3a1fe4ee952e"
+      ],
+      "confidence": 0.9,
+      "evidence": "epimesembranol",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "unidentified compound",
+      "attributes": {
+        "mz": 334
+      },
+      "source_chunk_ids": [
+        "575b4c31d88d5c7229bb3a1fe4ee952e"
+      ],
+      "confidence": 0.7,
+      "evidence": "unidentified peak at m/z 334",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c7516814db377c48023b88d7d8cb7b99"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "chromatogram sample",
+      "attributes": {
+        "material_type": "analytical sample"
+      },
+      "source_chunk_ids": [
+        "c7516814db377c48023b88d7d8cb7b99"
+      ],
+      "confidence": 0.7,
+      "evidence": "Chromatograms of Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "51c335d48652936609ab597cbb55e6bf"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "Sceletium tortuosum derived material",
+      "attributes": {},
+      "source_chunk_ids": [
+        "51c335d48652936609ab597cbb55e6bf"
+      ],
+      "confidence": 0.7,
+      "evidence": "Sceletium tortuosum derived",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "S. expansum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "550b153cf712e15c975088103bc76a89"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. expansum sample",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "S. strictum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "550b153cf712e15c975088103bc76a89"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. strictum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "550b153cf712e15c975088103bc76a89"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "550b153cf712e15c975088103bc76a89"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "550b153cf712e15c975088103bc76a89"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "epimesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "550b153cf712e15c975088103bc76a89"
+      ],
+      "confidence": 0.9,
+      "evidence": "epimesembranol",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "4'-O-demethyl-mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "550b153cf712e15c975088103bc76a89"
+      ],
+      "confidence": 0.8,
+      "evidence": "4'-O-demethyl-mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Compound",
+      "name": "O-methyl-joubertiamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "550b153cf712e15c975088103bc76a89"
+      ],
+      "confidence": 0.8,
+      "evidence": "O-methyl-joubertiamine",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "550b153cf712e15c975088103bc76a89"
+      ],
+      "confidence": 0.9,
+      "evidence": "alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium expansum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f8ca77fee731b1fbd2446fb583a744c9"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium expansum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vitro analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "f8ca77fee731b1fbd2446fb583a744c9"
+      ],
+      "confidence": 0.8,
+      "evidence": "Chromatograms of Sceletium expansum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Figure 8 chromatographic analysis",
+      "attributes": {
+        "design": "chromatographic analysis"
+      },
+      "source_chunk_ids": [
+        "f8ca77fee731b1fbd2446fb583a744c9"
+      ],
+      "confidence": 0.85,
+      "evidence": "Figure 8: Chromatograms of Sceletium expansum",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium expansum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c5bab5546e2d45e671ffd9c816ce53fa"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium expansum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c5bab5546e2d45e671ffd9c816ce53fa"
+      ],
+      "confidence": 0.7,
+      "evidence": "derived from",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "S. strictum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "e873f090cb4ab71b22f0ad2e10c075ff"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. strictum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e873f090cb4ab71b22f0ad2e10c075ff"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e873f090cb4ab71b22f0ad2e10c075ff"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e873f090cb4ab71b22f0ad2e10c075ff"
+      ],
+      "confidence": 0.85,
+      "evidence": "alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fa5b126e0cdfca0785adf6ef07b9aaf3"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fa5b126e0cdfca0785adf6ef07b9aaf3"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "4'-O-demethyl-mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fa5b126e0cdfca0785adf6ef07b9aaf3"
+      ],
+      "confidence": 0.8,
+      "evidence": "4'-O-demethyl-mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "O-methyl-joubertiamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fa5b126e0cdfca0785adf6ef07b9aaf3"
+      ],
+      "confidence": 0.8,
+      "evidence": "O-methyl-joubertiamine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fa5b126e0cdfca0785adf6ef07b9aaf3"
+      ],
+      "confidence": 0.7,
+      "evidence": "mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "epimesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fa5b126e0cdfca0785adf6ef07b9aaf3"
+      ],
+      "confidence": 0.7,
+      "evidence": "epimesembranol",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "RawMaterial",
+      "name": "sample",
+      "attributes": {
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "fa5b126e0cdfca0785adf6ef07b9aaf3"
+      ],
+      "confidence": 0.6,
+      "evidence": "sample",
+      "verified": false
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium strictum",
+      "attributes": {
+        "rank": "species"
       },
       "source_chunk_ids": [
         "867f3a9474eb1ebe2a7ba94456b2d42b"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium strictum",
+      "verified": true
     },
     {
-      "id": "ent_055",
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium strictum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f605ef344ce114223234beba9868dc56"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium strictum",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium",
       "attributes": {
-        "context": "Sceletium presents a formidable challenge"
+        "rank": "genus"
       },
       "source_chunk_ids": [
         "25feb2ca6eccfc6ab9df376e0dc57625"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium presents a formidable challenge",
+      "verified": true
     },
     {
-      "id": "ent_056",
-      "type": "Compound",
-      "name": "compounds",
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "closely related compounds",
+      "attributes": {},
+      "source_chunk_ids": [
+        "25feb2ca6eccfc6ab9df376e0dc57625"
+      ],
+      "confidence": 0.8,
+      "evidence": "complex mixture of closely related compounds",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "plant material",
+      "attributes": {},
+      "source_chunk_ids": [
+        "25feb2ca6eccfc6ab9df376e0dc57625"
+      ],
+      "confidence": 0.7,
+      "evidence": "assay plant material for constituents",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Smith et al. 1996 review",
       "attributes": {
-        "context": "complex mixture of closely related compounds"
+        "design": "review",
+        "year": 1996
       },
       "source_chunk_ids": [
-        "25feb2ca6eccfc6ab9df376e0dc57625"
-      ]
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "confidence": 0.85,
+      "evidence": "Psychoactive constituents of the genus Sceletium",
+      "verified": true
     },
     {
-      "id": "ent_057",
-      "type": "Compound",
-      "name": "compounds",
+      "id": "E2",
+      "type": "Evidence",
+      "name": "review",
       "attributes": {
-        "context": "availability of relevant reference compounds"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
-        "25feb2ca6eccfc6ab9df376e0dc57625"
-      ]
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "confidence": 0.8,
+      "evidence": "Psychoactive constituents of the genus Sceletium",
+      "verified": true
     },
     {
-      "id": "ent_058",
-      "type": "Compound",
-      "name": "constituents",
-      "attributes": {
-        "context": "assay plant material for constituents"
-      },
-      "source_chunk_ids": [
-        "25feb2ca6eccfc6ab9df376e0dc57625"
-      ]
-    },
-    {
-      "id": "ent_059",
+      "id": "E3",
       "type": "Taxon",
       "name": "Sceletium",
       "attributes": {
-        "context": "identification of Sceletium species"
+        "rank": "genus"
       },
       "source_chunk_ids": [
-        "25feb2ca6eccfc6ab9df376e0dc57625"
-      ]
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "confidence": 0.9,
+      "evidence": "genus Sceletium N.E.Br.",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "mesembrine alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "confidence": 0.85,
+      "evidence": "mesembrine alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Smith et al. 1998",
+      "attributes": {
+        "design": "research article",
+        "year": 1998
+      },
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "confidence": 0.85,
+      "evidence": "The distribution of mesembrine alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "research article",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "confidence": 0.8,
+      "evidence": "The distribution of mesembrine alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "RawMaterial",
+      "name": "Kougoed",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "confidence": 0.75,
+      "evidence": "Sceletium derived 'Kougoed'",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Patnala & Kanfer 2010",
+      "attributes": {
+        "design": "research article",
+        "year": 2010
+      },
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "confidence": 0.85,
+      "evidence": "HPLC analysis of mesembrine-type alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "research article",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "confidence": 0.8,
+      "evidence": "HPLC analysis of mesembrine-type alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "PlantPart",
+      "name": "plant material",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "confidence": 0.7,
+      "evidence": "Sceletium plant material",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Study",
+      "name": "Patnala 2007 thesis",
+      "attributes": {
+        "design": "thesis",
+        "year": 2007
+      },
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "confidence": 0.85,
+      "evidence": "Pharmaceutical analysis and quality control",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Evidence",
+      "name": "thesis",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "confidence": 0.8,
+      "evidence": "Pharmaceutical analysis and quality control",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Product",
+      "name": "complementary medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "confidence": 0.7,
+      "evidence": "complementary medicines: Sceletium and associated products",
+      "verified": true
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:03.877632+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Chemotaxonomic studies",
+      "source_chunk_ids": [
+        "c8cf5796cfeade4a3f2911ec0bfabc59"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium plant species",
+      "source_chunk_ids": [
+        "c8cf5796cfeade4a3f2911ec0bfabc59"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "mesembrine-type alkaloids in Sceletium plant species",
+      "source_chunk_ids": [
+        "c8cf5796cfeade4a3f2911ec0bfabc59"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Historically, Sceletium was used by the Khoisan",
+      "source_chunk_ids": [
+        "c8129aafdc13810b8830907820e2f82c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium was used",
+      "source_chunk_ids": [
+        "c8129aafdc13810b8830907820e2f82c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "pharmacological claims that it has anti-anxiety",
+      "source_chunk_ids": [
+        "c8129aafdc13810b8830907820e2f82c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "mood elevating properties",
+      "source_chunk_ids": [
+        "c8129aafdc13810b8830907820e2f82c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "use of Sceletium for the treatment of psychiatric disorders",
+      "source_chunk_ids": [
+        "c8129aafdc13810b8830907820e2f82c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E7",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "patented,6 provides sufficient evidence",
+      "source_chunk_ids": [
+        "c8129aafdc13810b8830907820e2f82c"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "records of its use as a commercial material",
+      "source_chunk_ids": [
+        "c8129aafdc13810b8830907820e2f82c"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "reported to contain alkaloids",
+      "source_chunk_ids": [
+        "0f753c82a7c2ef09fb05ae942d906c9d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "reported to contain alkaloids",
+      "source_chunk_ids": [
+        "0f753c82a7c2ef09fb05ae942d906c9d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "reported to contain alkaloids",
+      "source_chunk_ids": [
+        "0f753c82a7c2ef09fb05ae942d906c9d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "reported to contain alkaloids",
+      "source_chunk_ids": [
+        "0f753c82a7c2ef09fb05ae942d906c9d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "describes the pharmacognostic features",
+      "source_chunk_ids": [
+        "3451ecca398475c08702f37f0c4787d3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "thin-layer chromatography",
+      "source_chunk_ids": [
+        "3451ecca398475c08702f37f0c4787d3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Monograph of Sceletium tortuosum",
+      "source_chunk_ids": [
+        "3451ecca398475c08702f37f0c4787d3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "alkaloids in Sceletium",
+      "source_chunk_ids": [
+        "ed23fedbdd9d34fa8eaf30731d910827"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "methanolic extract of Sceletium tortuosum",
+      "source_chunk_ids": [
+        "ed23fedbdd9d34fa8eaf30731d910827"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "investigate selected Sceletium plant specimens",
+      "source_chunk_ids": [
+        "283322764a4377dd17e3f9660eb354e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "analysed using HPLC with UV methods",
+      "source_chunk_ids": [
+        "283322764a4377dd17e3f9660eb354e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "mesembrine-type alkaloid profiles",
+      "source_chunk_ids": [
+        "283322764a4377dd17e3f9660eb354e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "efforts to identify and ascertain the quality",
+      "source_chunk_ids": [
+        "8cb50ae4068c80a408afebb90d3eb73b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "samples were cultivated and pressed",
+      "source_chunk_ids": [
+        "8cb50ae4068c80a408afebb90d3eb73b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "extracted and isolated from Sceletium plant material",
+      "source_chunk_ids": [
+        "c692363aacd27612bad49f2f3832a4b6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "extracted and isolated from Sceletium plant material",
+      "source_chunk_ids": [
+        "c692363aacd27612bad49f2f3832a4b6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "extracted and isolated from Sceletium plant material",
+      "source_chunk_ids": [
+        "c692363aacd27612bad49f2f3832a4b6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "process": "synthesis"
+      },
+      "confidence": 0.85,
+      "evidence": "synthesised from mesembrine",
+      "source_chunk_ids": [
+        "c692363aacd27612bad49f2f3832a4b6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "process": "synthesis"
+      },
+      "confidence": 0.85,
+      "evidence": "synthesised from mesembrine",
+      "source_chunk_ids": [
+        "c692363aacd27612bad49f2f3832a4b6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "emarcidum-type leaf",
+      "source_chunk_ids": [
+        "c9701334c91fae57e0c056facdb7af46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "emarcidum-type leaf",
+      "source_chunk_ids": [
+        "c9701334c91fae57e0c056facdb7af46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "emarcidum-type leaf",
+      "source_chunk_ids": [
+        "c9701334c91fae57e0c056facdb7af46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_PART",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "tortuosum-type leaf",
+      "source_chunk_ids": [
+        "c9701334c91fae57e0c056facdb7af46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_PART",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "tortuosum-type leaf",
+      "source_chunk_ids": [
+        "c9701334c91fae57e0c056facdb7af46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_PART",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "tortuosum-type leaf",
+      "source_chunk_ids": [
+        "c9701334c91fae57e0c056facdb7af46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Sceletium dried leaves",
+      "source_chunk_ids": [
+        "8676724867a1c1f38c5b4eaa596a6edf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "dried Sceletium leaves",
+      "source_chunk_ids": [
+        "8676724867a1c1f38c5b4eaa596a6edf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloid",
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloid",
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloid",
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloid",
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloid",
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "measurement": {
+          "value": 1,
+          "unit": "mg/mL",
+          "measurement_type": "concentration",
+          "notes": "stock solution"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "1 mg/mL of \u0394\u2077mesembrenone",
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {
+        "measurement": {
+          "value": 1,
+          "unit": "mg/mL",
+          "measurement_type": "concentration",
+          "notes": "stock solution"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "1 mg/mL of mesembranol",
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E3",
+      "attributes": {
+        "measurement": {
+          "value": 1,
+          "unit": "mg/mL",
+          "measurement_type": "concentration",
+          "notes": "stock solution"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "1 mg/mL of mesembrenone",
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 1,
+          "unit": "mg/mL",
+          "measurement_type": "concentration",
+          "notes": "stock solution"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "1 mg/mL of mesembrine hydrochloride",
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E5",
+      "attributes": {
+        "measurement": {
+          "value": 1,
+          "unit": "mg/mL",
+          "measurement_type": "concentration",
+          "notes": "stock solution"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "1 mg/mL of epimesembranol",
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "CONTAINS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E1",
+      "attributes": {
+        "measurement": {
+          "value": 100,
+          "unit": "\u03bcg/mL",
+          "measurement_type": "concentration",
+          "notes": "working stock solution"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "100 \u03bcg/mL of each alkaloid",
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "CONTAINS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E2",
+      "attributes": {
+        "measurement": {
+          "value": 100,
+          "unit": "\u03bcg/mL",
+          "measurement_type": "concentration",
+          "notes": "working stock solution"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "100 \u03bcg/mL of each alkaloid",
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "CONTAINS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E3",
+      "attributes": {
+        "measurement": {
+          "value": 100,
+          "unit": "\u03bcg/mL",
+          "measurement_type": "concentration",
+          "notes": "working stock solution"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "100 \u03bcg/mL of each alkaloid",
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "CONTAINS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 100,
+          "unit": "\u03bcg/mL",
+          "measurement_type": "concentration",
+          "notes": "working stock solution"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "100 \u03bcg/mL of each alkaloid",
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "CONTAINS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E5",
+      "attributes": {
+        "measurement": {
+          "value": 100,
+          "unit": "\u03bcg/mL",
+          "measurement_type": "concentration",
+          "notes": "working stock solution"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "100 \u03bcg/mL of each alkaloid",
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "CONTAINS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "reference standard alkaloids",
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R17",
+      "type": "CONTAINS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E2",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "reference standard alkaloids",
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R18",
+      "type": "CONTAINS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E3",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "reference standard alkaloids",
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R19",
+      "type": "CONTAINS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E4",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "reference standard alkaloids",
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R20",
+      "type": "CONTAINS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E5",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "reference standard alkaloids",
+      "source_chunk_ids": [
+        "f80bea8fca4d7971dff365c00a428c7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "standard alkaloids in Sceletium",
+      "source_chunk_ids": [
+        "224622654b431ef132a61b931c752bdb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "standard alkaloids in Sceletium",
+      "source_chunk_ids": [
+        "224622654b431ef132a61b931c752bdb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "standard alkaloids in Sceletium",
+      "source_chunk_ids": [
+        "224622654b431ef132a61b931c752bdb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "standard alkaloids in Sceletium",
+      "source_chunk_ids": [
+        "224622654b431ef132a61b931c752bdb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "standard alkaloids in Sceletium",
+      "source_chunk_ids": [
+        "224622654b431ef132a61b931c752bdb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "standard alkaloids",
+      "source_chunk_ids": [
+        "224622654b431ef132a61b931c752bdb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "standard alkaloids",
+      "source_chunk_ids": [
+        "224622654b431ef132a61b931c752bdb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "standard alkaloids",
+      "source_chunk_ids": [
+        "224622654b431ef132a61b931c752bdb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "standard alkaloids",
+      "source_chunk_ids": [
+        "224622654b431ef132a61b931c752bdb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "standard alkaloids",
+      "source_chunk_ids": [
+        "224622654b431ef132a61b931c752bdb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "cuttings of cultivated plants",
+      "source_chunk_ids": [
+        "42c0c897899c1013dd90ef9fe2ee60b7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "dried at 80 \u00b0C prior to processing",
+      "source_chunk_ids": [
+        "42c0c897899c1013dd90ef9fe2ee60b7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "extracted with methanol under sonication",
+      "source_chunk_ids": [
+        "42c0c897899c1013dd90ef9fe2ee60b7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "filtered through 0.45-\u03bcm PVDF membrane",
+      "source_chunk_ids": [
+        "42c0c897899c1013dd90ef9fe2ee60b7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "HPLC-UV profile of the S. emarcidum specimen",
+      "source_chunk_ids": [
+        "b27d6b937ed6a2c4826edb0fd51d4742"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "MS profile showed one major peak",
+      "source_chunk_ids": [
+        "b27d6b937ed6a2c4826edb0fd51d4742"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Sceletium alkaloid reference standards",
+      "source_chunk_ids": [
+        "b27d6b937ed6a2c4826edb0fd51d4742"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "analyzed_taxon"
+      },
+      "confidence": 0.85,
+      "evidence": "Chromatograms of Sceletium emarcidum",
+      "source_chunk_ids": [
+        "85e8452399409530513f46e82b36dfab"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "standard reference alkaloids",
+      "source_chunk_ids": [
+        "70b6ac435bbb69a2df98b3e45b6b59cc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "standard reference alkaloids",
+      "source_chunk_ids": [
+        "70b6ac435bbb69a2df98b3e45b6b59cc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "standard reference alkaloids",
+      "source_chunk_ids": [
+        "70b6ac435bbb69a2df98b3e45b6b59cc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "standard reference alkaloids",
+      "source_chunk_ids": [
+        "70b6ac435bbb69a2df98b3e45b6b59cc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "standard reference alkaloids",
+      "source_chunk_ids": [
+        "70b6ac435bbb69a2df98b3e45b6b59cc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "standard reference alkaloids",
+      "source_chunk_ids": [
+        "e38f5475bbc33e1f04c5e14d65e611c6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "standard reference alkaloids",
+      "source_chunk_ids": [
+        "e38f5475bbc33e1f04c5e14d65e611c6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "standard reference alkaloids",
+      "source_chunk_ids": [
+        "e38f5475bbc33e1f04c5e14d65e611c6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "standard reference alkaloids",
+      "source_chunk_ids": [
+        "e38f5475bbc33e1f04c5e14d65e611c6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "standard reference alkaloids",
+      "source_chunk_ids": [
+        "e38f5475bbc33e1f04c5e14d65e611c6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "previously identified alkaloids",
+      "source_chunk_ids": [
+        "beaa309640bf9533aec4651a5bafdd18"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "4'-O-demethyl-mesembrenone or O-methyl-joubertiamine",
+      "source_chunk_ids": [
+        "beaa309640bf9533aec4651a5bafdd18"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "4'-O-demethyl-mesembrenone or O-methyl-joubertiamine",
+      "source_chunk_ids": [
+        "beaa309640bf9533aec4651a5bafdd18"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "4'-O-demethyl-mesembrenol or N-demethyl-mesembrenol",
+      "source_chunk_ids": [
+        "beaa309640bf9533aec4651a5bafdd18"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "4'-O-demethyl-mesembrenol or N-demethyl-mesembrenol",
+      "source_chunk_ids": [
+        "beaa309640bf9533aec4651a5bafdd18"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "measurement": {
+          "value": 0.18,
+          "unit": "% w/w",
+          "measurement_type": "content",
+          "notes": "assays (% w/w) of these alkaloids"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "present at 0.18%",
+      "source_chunk_ids": [
+        "9424532aeb0c96901ce853aaafa9e1c2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "measurement": {
+          "value": 0.16,
+          "unit": "% w/w",
+          "measurement_type": "content",
+          "notes": "assays (% w/w) of these alkaloids"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "present at 0.16%",
+      "source_chunk_ids": [
+        "9424532aeb0c96901ce853aaafa9e1c2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 2.2,
+          "unit": "% w/w",
+          "measurement_type": "content",
+          "notes": "assays (% w/w) of these alkaloids"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "present at 2.20%",
+      "source_chunk_ids": [
+        "9424532aeb0c96901ce853aaafa9e1c2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "measurement": {
+          "value": 0.41,
+          "unit": "% w/w",
+          "measurement_type": "content",
+          "notes": "assays (% w/w) of these alkaloids"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "present at 0.41%",
+      "source_chunk_ids": [
+        "9424532aeb0c96901ce853aaafa9e1c2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "these alkaloids",
+      "source_chunk_ids": [
+        "9424532aeb0c96901ce853aaafa9e1c2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "these alkaloids",
+      "source_chunk_ids": [
+        "9424532aeb0c96901ce853aaafa9e1c2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "these alkaloids",
+      "source_chunk_ids": [
+        "9424532aeb0c96901ce853aaafa9e1c2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "these alkaloids",
+      "source_chunk_ids": [
+        "9424532aeb0c96901ce853aaafa9e1c2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "analytical",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Chromatograms of Sceletium tortuosum",
+      "source_chunk_ids": [
+        "c7516814db377c48023b88d7d8cb7b99"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "measurement": {
+          "value": 0.03,
+          "unit": "%",
+          "measurement_type": "content",
+          "notes": "HPLC-UV assay"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "mesembrenone present at 0.03%",
+      "source_chunk_ids": [
+        "550b153cf712e15c975088103bc76a89"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 0.3,
+          "unit": "%",
+          "measurement_type": "content",
+          "notes": "HPLC-UV assay"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "mesembrine present at 0.30%",
+      "source_chunk_ids": [
+        "550b153cf712e15c975088103bc76a89"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "detection",
+          "notes": "below limit of detection by HPLC-UV, confirmed by MS"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "Mesembranol below limits of detection",
+      "source_chunk_ids": [
+        "550b153cf712e15c975088103bc76a89"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "detection",
+          "notes": "below limit of detection by HPLC-UV, confirmed by MS"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "epimesembranol below limits of detection",
+      "source_chunk_ids": [
+        "550b153cf712e15c975088103bc76a89"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "detection",
+          "notes": "corresponds to m/z 274 in LC-MS"
+        },
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "peak at 5.49 min in S. strictum",
+      "source_chunk_ids": [
+        "550b153cf712e15c975088103bc76a89"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "detection",
+          "notes": "corresponds to m/z 274 in LC-MS"
+        },
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "peak at 5.49 min in S. strictum",
+      "source_chunk_ids": [
+        "550b153cf712e15c975088103bc76a89"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "alkaloids mesembrenone",
+      "source_chunk_ids": [
+        "550b153cf712e15c975088103bc76a89"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "alkaloids mesembrine",
+      "source_chunk_ids": [
+        "550b153cf712e15c975088103bc76a89"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "alkaloids mesembranol",
+      "source_chunk_ids": [
+        "550b153cf712e15c975088103bc76a89"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "alkaloids epimesembranol",
+      "source_chunk_ids": [
+        "550b153cf712e15c975088103bc76a89"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Chromatograms of Sceletium expansum",
+      "source_chunk_ids": [
+        "f8ca77fee731b1fbd2446fb583a744c9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Chromatograms of Sceletium expansum",
+      "source_chunk_ids": [
+        "f8ca77fee731b1fbd2446fb583a744c9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "derived from",
+      "source_chunk_ids": [
+        "c5bab5546e2d45e671ffd9c816ce53fa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "showed mesembrenone",
+      "source_chunk_ids": [
+        "e873f090cb4ab71b22f0ad2e10c075ff"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "showed mesembrine",
+      "source_chunk_ids": [
+        "e873f090cb4ab71b22f0ad2e10c075ff"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloids mesembrenone",
+      "source_chunk_ids": [
+        "e873f090cb4ab71b22f0ad2e10c075ff"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloids mesembrine",
+      "source_chunk_ids": [
+        "e873f090cb4ab71b22f0ad2e10c075ff"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "measurement": {
+          "value": 0.76,
+          "unit": "%",
+          "measurement_type": "content",
+          "notes": "by HPLC-UV detection"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "present at 0.76%",
+      "source_chunk_ids": [
+        "fa5b126e0cdfca0785adf6ef07b9aaf3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {
+        "measurement": {
+          "value": 0.68,
+          "unit": "%",
+          "measurement_type": "content",
+          "notes": "by HPLC-UV detection"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "present at 0.68%",
+      "source_chunk_ids": [
+        "fa5b126e0cdfca0785adf6ef07b9aaf3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "plant contains a complex mixture of closely related compounds",
+      "source_chunk_ids": [
+        "25feb2ca6eccfc6ab9df376e0dc57625"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "assay plant material for constituents",
+      "source_chunk_ids": [
+        "25feb2ca6eccfc6ab9df376e0dc57625"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Psychoactive constituents of the genus Sceletium",
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Psychoactive constituents of the genus Sceletium",
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "identifies"
+      },
+      "confidence": 0.8,
+      "evidence": "mesembrine alkaloids",
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "The distribution of mesembrine alkaloids",
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "The distribution of mesembrine alkaloids",
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "identifies"
+      },
+      "confidence": 0.8,
+      "evidence": "mesembrine alkaloids",
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "identifies"
+      },
+      "confidence": 0.75,
+      "evidence": "Sceletium derived 'Kougoed'",
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "HPLC analysis of mesembrine-type alkaloids",
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "HPLC analysis of mesembrine-type alkaloids",
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "identifies"
+      },
+      "confidence": 0.8,
+      "evidence": "mesembrine-type alkaloids",
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E10",
+      "attributes": {
+        "outcome": "identifies"
+      },
+      "confidence": 0.7,
+      "evidence": "Sceletium plant material",
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E11",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Pharmaceutical analysis and quality control",
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Sceletium and associated products",
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "REPORTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E13",
+      "attributes": {
+        "outcome": "identifies"
+      },
+      "confidence": 0.7,
+      "evidence": "complementary medicines: Sceletium and associated products",
+      "source_chunk_ids": [
+        "bfb07fe7557963c1083129bbf0edb5f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

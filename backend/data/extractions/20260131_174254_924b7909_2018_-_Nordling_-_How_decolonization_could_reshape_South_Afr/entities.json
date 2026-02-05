@@ -1,68 +1,206 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "2fd18cfd61b7a161327d0af92ec81f4197ff2565529d42b90d1d3439838878df",
-  "extracted_at": "2026-02-01T08:45:57.420063+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
-      "type": "Indication",
-      "name": "stomach ache",
+      "id": "E1",
+      "type": "Culture",
+      "name": "traditional culture",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e0d1a14bbf07c22f5df24d00616a389f"
+      ],
+      "confidence": 0.7,
+      "evidence": "traditional culture in modern science",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: grandmothers \u2013 plants \u2013 stomach ache",
       "attributes": {
-        "context": "used to treat stomach ache"
+        "verification_needed": true
       },
       "source_chunk_ids": [
         "e0d1a14bbf07c22f5df24d00616a389f"
-      ]
+      ],
+      "confidence": 0.65,
+      "evidence": "grandmothers used to treat stomach ache",
+      "verified": false
     },
     {
-      "id": "ent_002",
-      "type": "Indication",
-      "name": "HIV",
-      "attributes": {
-        "context": "to study HIV"
-      },
-      "source_chunk_ids": [
-        "0a07614a7eec7ec7e9410aa6e2034a86"
-      ]
-    },
-    {
-      "id": "ent_003",
-      "type": "Taxon",
-      "name": "South African medicinal plants",
-      "attributes": {
-        "context": "she studies South African medicinal plants"
-      },
-      "source_chunk_ids": [
-        "5350f7b7f229ff4afbcb99e6ccdc8090"
-      ]
-    },
-    {
-      "id": "ent_004",
-      "type": "PharmEffect",
-      "name": "pharmacological properties",
-      "attributes": {
-        "context": "explore their pharmacological properties"
-      },
-      "source_chunk_ids": [
-        "5350f7b7f229ff4afbcb99e6ccdc8090"
-      ]
-    },
-    {
-      "id": "ent_005",
+      "id": "E3",
       "type": "Taxon",
       "name": "plants",
       "attributes": {
-        "context": "Having studied a variety of plants"
+        "rank": "general",
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "e0d1a14bbf07c22f5df24d00616a389f"
+      ],
+      "confidence": 0.6,
+      "evidence": "plants their grandmothers used",
+      "verified": false
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "treat stomach ache",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e0d1a14bbf07c22f5df24d00616a389f"
+      ],
+      "confidence": 0.8,
+      "evidence": "treat stomach ache",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "stomach ache",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "e0d1a14bbf07c22f5df24d00616a389f"
+      ],
+      "confidence": 0.75,
+      "evidence": "treat stomach ache",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Makunga's ancestors",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5350f7b7f229ff4afbcb99e6ccdc8090"
+      ],
+      "confidence": 0.7,
+      "evidence": "traditional medicine practised by her ancestors",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Makunga's ancestors \u2013 South African medicinal plants \u2013 traditional medicine",
+      "attributes": {
+        "verification_needed": true
       },
       "source_chunk_ids": [
         "5350f7b7f229ff4afbcb99e6ccdc8090"
-      ]
+      ],
+      "confidence": 0.65,
+      "evidence": "traditional medicine practised by her ancestors",
+      "verified": false
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "South African medicinal plants",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5350f7b7f229ff4afbcb99e6ccdc8090"
+      ],
+      "confidence": 0.8,
+      "evidence": "South African medicinal plants",
+      "verified": true
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.024577+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "traditional culture in modern science",
+      "source_chunk_ids": [
+        "e0d1a14bbf07c22f5df24d00616a389f"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "plants their grandmothers used",
+      "source_chunk_ids": [
+        "e0d1a14bbf07c22f5df24d00616a389f"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "treat stomach ache",
+      "source_chunk_ids": [
+        "e0d1a14bbf07c22f5df24d00616a389f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "treat stomach ache",
+      "source_chunk_ids": [
+        "e0d1a14bbf07c22f5df24d00616a389f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "traditional medicine practised by her ancestors",
+      "source_chunk_ids": [
+        "5350f7b7f229ff4afbcb99e6ccdc8090"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.75,
+      "evidence": "South African medicinal plants",
+      "source_chunk_ids": [
+        "5350f7b7f229ff4afbcb99e6ccdc8090"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

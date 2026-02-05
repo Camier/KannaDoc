@@ -1,12 +1,3743 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "17eaaa5e40da73d2b4b845313b6d7ec87f8599f06372faa614c96c47f50f2bb4",
-  "extracted_at": "2026-02-01T08:57:48.072327+00:00",
-  "extractor": "legacy-migration",
-  "entities": [],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.081945+00:00",
-    "original_file": "entities.json"
-  }
+  "entities": [
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "183773025033e9439ff04f837d58e70b"
+      ],
+      "confidence": 0.95,
+      "evidence": "Depression is a disorder",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "183773025033e9439ff04f837d58e70b"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "183773025033e9439ff04f837d58e70b"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "183773025033e9439ff04f837d58e70b"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "183773025033e9439ff04f837d58e70b"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "RawMaterial",
+      "name": "plant extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "183773025033e9439ff04f837d58e70b"
+      ],
+      "confidence": 0.8,
+      "evidence": "plant extract of Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "reported",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "183773025033e9439ff04f837d58e70b"
+      ],
+      "confidence": 0.7,
+      "evidence": "were reported as potent Antidepressants",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "computational docking study",
+      "attributes": {
+        "design": "in silico docking",
+        "methods": "autodock 4.2, autodock vina (PyRxtool), discovery studio visualizer, pro-check validation, drulito tool"
+      },
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "confidence": 0.9,
+      "evidence": "computational study of a few Phytoconstituents",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in silico",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "confidence": 0.95,
+      "evidence": "In silico methods were adopted",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "Phosphodiesterase 4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "confidence": 0.95,
+      "evidence": "Phosphodiesterase 4 as receptor",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "imipramine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "confidence": 0.9,
+      "evidence": "standard drug Imipramine",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "confidence": 0.95,
+      "evidence": "treatment of depression",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "antidepressant activity",
+      "attributes": {
+        "level": "molecular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "confidence": 0.85,
+      "evidence": "can act as potent antidepressant agents",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "RawMaterial",
+      "name": "plant extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "confidence": 0.8,
+      "evidence": "plant extract",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "computational method",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "d7f32ef0001ac065717af38acc1ae3f9"
+      ],
+      "confidence": 0.8,
+      "evidence": "Computational method",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "Phosphodiesterases 4 Receptor",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "d7f32ef0001ac065717af38acc1ae3f9"
+      ],
+      "confidence": 0.9,
+      "evidence": "Phosphodiesterases 4 Receptor [PDB]",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "ligand from pubchem",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d7f32ef0001ac065717af38acc1ae3f9"
+      ],
+      "confidence": 0.7,
+      "evidence": "Ligand from pubchem",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Preparation",
+      "name": "protein preparation by Autodock tools",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d7f32ef0001ac065717af38acc1ae3f9"
+      ],
+      "confidence": 0.75,
+      "evidence": "Protein preparation by Autodock tools",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Preparation",
+      "name": "molecular docking by Autodock vina",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d7f32ef0001ac065717af38acc1ae3f9"
+      ],
+      "confidence": 0.8,
+      "evidence": "Molecular docking by Autodock vina",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Preparation",
+      "name": "analysis of molecular docking by Discovery studio visualizer",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d7f32ef0001ac065717af38acc1ae3f9"
+      ],
+      "confidence": 0.8,
+      "evidence": "Analysis of molecular docking by Discovery studio visualizer",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Preparation",
+      "name": "validation of prepared model by Ramachandran plot",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d7f32ef0001ac065717af38acc1ae3f9"
+      ],
+      "confidence": 0.75,
+      "evidence": "Validation of prepared model by Ramachandran plot",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "Depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "236277ed99a322a238b515c1707c9f52"
+      ],
+      "confidence": 0.95,
+      "evidence": "Depression is a diminishing mental disorder",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "236277ed99a322a238b515c1707c9f52"
+      ],
+      "confidence": 0.85,
+      "evidence": "compiled with anxiety",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "820768b6bf348e279cdd9530157876f8"
+      ],
+      "confidence": 0.95,
+      "evidence": "Depression is characterized",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "AdverseEvent",
+      "name": "adverse effects",
+      "attributes": {},
+      "source_chunk_ids": [
+        "820768b6bf348e279cdd9530157876f8"
+      ],
+      "confidence": 0.8,
+      "evidence": "lots of adverse effects",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "AdverseEvent",
+      "name": "side effects",
+      "attributes": {},
+      "source_chunk_ids": [
+        "820768b6bf348e279cdd9530157876f8"
+      ],
+      "confidence": 0.8,
+      "evidence": "side effects",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "treat depression",
+      "attributes": {},
+      "source_chunk_ids": [
+        "820768b6bf348e279cdd9530157876f8"
+      ],
+      "confidence": 0.85,
+      "evidence": "to treat depression",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "San people",
+      "attributes": {},
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "confidence": 0.9,
+      "evidence": "San and Khoikhoi people",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Khoikhoi people",
+      "attributes": {},
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "confidence": 0.9,
+      "evidence": "San and Khoikhoi people",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "UseRecord",
+      "name": "UseRecord: San/Khoikhoi \u2013 Sceletium tortuosum \u2013 masticatory/medicine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "confidence": 0.85,
+      "evidence": "medicinal and traditional use by San and Khoikhoi people as a masticatory and medicine",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "confidence": 0.95,
+      "evidence": "Scelentium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "masticatory",
+      "attributes": {},
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "confidence": 0.8,
+      "evidence": "as a masticatory",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "medicine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "confidence": 0.8,
+      "evidence": "and medicine",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "UseRecord",
+      "name": "UseRecord: colonial farmers \u2013 Sceletium tortuosum \u2013 psychotropic",
+      "attributes": {},
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "confidence": 0.8,
+      "evidence": "colonial farmers as a psychotropic in nature in tincture form",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Culture",
+      "name": "colonial farmers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "confidence": 0.85,
+      "evidence": "colonial farmers",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "TraditionalUse",
+      "name": "psychotropic",
+      "attributes": {},
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "confidence": 0.85,
+      "evidence": "as a psychotropic",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "RawMaterial",
+      "name": "tincture",
+      "attributes": {},
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "confidence": 0.75,
+      "evidence": "in tincture form",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "TraditionalUse",
+      "name": "endorsing a sense of wellbeing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "confidence": 0.8,
+      "evidence": "endorsing a sense of wellbeing",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "TraditionalUse",
+      "name": "relieving stress",
+      "attributes": {},
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "confidence": 0.8,
+      "evidence": "relieving stress",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "confidence": 0.9,
+      "evidence": "treatment of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "confidence": 0.9,
+      "evidence": "depression",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Target",
+      "name": "Phosphodiesterases",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "confidence": 0.85,
+      "evidence": "Phosphodiesterases",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "PDE4 family",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "027a1bd911c445ab7bcbc9eadbfc6fd2"
+      ],
+      "confidence": 0.9,
+      "evidence": "Enzymes found in the PDE4 family",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "cAMP cascade",
+      "attributes": {
+        "target_type": "pathway"
+      },
+      "source_chunk_ids": [
+        "027a1bd911c445ab7bcbc9eadbfc6fd2"
+      ],
+      "confidence": 0.8,
+      "evidence": "downregulation of the cAMP cascade",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "Phosphodiesterase 4 inhibitors",
+      "attributes": {},
+      "source_chunk_ids": [
+        "027a1bd911c445ab7bcbc9eadbfc6fd2"
+      ],
+      "confidence": 0.85,
+      "evidence": "Phosphodiesterase 4 inhibitors",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "in vivo studies",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "027a1bd911c445ab7bcbc9eadbfc6fd2"
+      ],
+      "confidence": 0.8,
+      "evidence": "increasing number of in vivo studies",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "standardized extract of the plant",
+      "attributes": {},
+      "source_chunk_ids": [
+        "027a1bd911c445ab7bcbc9eadbfc6fd2"
+      ],
+      "confidence": 0.85,
+      "evidence": "standardized extract of the plant",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "027a1bd911c445ab7bcbc9eadbfc6fd2"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "5-HT reuptake",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "027a1bd911c445ab7bcbc9eadbfc6fd2"
+      ],
+      "confidence": 0.8,
+      "evidence": "5-HT reuptake inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "CompoundClass",
+      "name": "Phytoconstituents",
+      "attributes": {},
+      "source_chunk_ids": [
+        "027a1bd911c445ab7bcbc9eadbfc6fd2"
+      ],
+      "confidence": 0.7,
+      "evidence": "Phytoconstituents",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "Mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b558d6506180483bc50131f8b80bf9fb"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrine (left) features a methoxy group",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "Mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b558d6506180483bc50131f8b80bf9fb"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrenone (middle) has a methoxy group",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "Mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b558d6506180483bc50131f8b80bf9fb"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembranol (right) has a methoxy group",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "b6eba3aee5bea84a46339d4b0127de14"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum, an African endemic plant",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "Phytoconstituents",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b6eba3aee5bea84a46339d4b0127de14"
+      ],
+      "confidence": 0.8,
+      "evidence": "antidepressant Phytoconstituents",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "receptor protein",
+      "attributes": {
+        "target_type": "protein"
+      },
+      "source_chunk_ids": [
+        "b6eba3aee5bea84a46339d4b0127de14"
+      ],
+      "confidence": 0.7,
+      "evidence": "binding conformations of ligands with the receptor protein",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "computational study [12]",
+      "attributes": {
+        "design": "computational approach",
+        "year": "implied from reference [12]"
+      },
+      "source_chunk_ids": [
+        "b6eba3aee5bea84a46339d4b0127de14"
+      ],
+      "confidence": 0.75,
+      "evidence": "computational approach of phytochemical search, molecular docking simulation",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in silico",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "b6eba3aee5bea84a46339d4b0127de14"
+      ],
+      "confidence": 0.8,
+      "evidence": "computational approach, molecular docking simulation",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "Phosphodiesterase 4 receptor",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "3aa66bf99b686387cb4f391c835b072e"
+      ],
+      "confidence": 0.9,
+      "evidence": "Phosphodiesterase 4 receptor protein",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in silico docking",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "3aa66bf99b686387cb4f391c835b072e"
+      ],
+      "confidence": 0.8,
+      "evidence": "Before docking, the protein was cleaned",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "PDB retrieval and preparation",
+      "attributes": {
+        "design": "in silico docking preparation",
+        "year": null,
+        "doi": "https://www.rcsb.org/"
+      },
+      "source_chunk_ids": [
+        "3aa66bf99b686387cb4f391c835b072e"
+      ],
+      "confidence": 0.75,
+      "evidence": "retrieved from RCSB PDB data bank",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "computational docking study",
+      "attributes": {
+        "design": "computational molecular docking",
+        "method": "Autodock vina, PyRx virtual screening tool, Discovery Studio visualizer"
+      },
+      "source_chunk_ids": [
+        "e6ab9269a526e43ca5cc290599d0a1d8"
+      ],
+      "confidence": 0.9,
+      "evidence": "Computational molecular docking of all active Phytoconstituents",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in silico",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "e6ab9269a526e43ca5cc290599d0a1d8"
+      ],
+      "confidence": 0.85,
+      "evidence": "computational molecular docking",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "Phytoconstituents",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e6ab9269a526e43ca5cc290599d0a1d8"
+      ],
+      "confidence": 0.8,
+      "evidence": "active Phytoconstituents",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "Phosphodiesterase 4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "e6ab9269a526e43ca5cc290599d0a1d8"
+      ],
+      "confidence": 0.9,
+      "evidence": "Phosphodiesterase 4",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "EH58",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e6ab9269a526e43ca5cc290599d0a1d8"
+      ],
+      "confidence": 0.85,
+      "evidence": "inhibitor EH58",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "Phytoconstituents",
+      "attributes": {},
+      "source_chunk_ids": [
+        "45ea70f31744b438f397c69d3d4ccd58"
+      ],
+      "confidence": 0.9,
+      "evidence": "Phytoconstituents",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "computational analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "45ea70f31744b438f397c69d3d4ccd58"
+      ],
+      "confidence": 0.8,
+      "evidence": "used to study physicochemical properties",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "Mesembrenone",
+      "attributes": {
+        "molecular_weight": 287.15,
+        "clogp": 1.28,
+        "hydrogen_bond_acceptors": 4,
+        "hydrogen_bond_donors": 0,
+        "tpsa": 38.77,
+        "molar_refractivity": 86.94,
+        "rotatable_bonds": 3,
+        "deviations": 0
+      },
+      "source_chunk_ids": [
+        "81e6624b7556f842407ed5dcbb0787e3"
+      ],
+      "confidence": 0.95,
+      "evidence": "1Mesembrenone287.151.2814038.7786.9430",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "Mesembrine",
+      "attributes": {
+        "molecular_weight": 289.17,
+        "clogp": 0.77,
+        "hydrogen_bond_acceptors": 4,
+        "hydrogen_bond_donors": 0,
+        "tpsa": 38.77,
+        "molar_refractivity": 86.11,
+        "rotatable_bonds": 3,
+        "deviations": 0
+      },
+      "source_chunk_ids": [
+        "81e6624b7556f842407ed5dcbb0787e3"
+      ],
+      "confidence": 0.95,
+      "evidence": "2Mesembrine289.170.774038.7786.1130",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "Mesembranol",
+      "attributes": {
+        "molecular_weight": 291.18,
+        "clogp": 1.85,
+        "hydrogen_bond_acceptors": 4,
+        "hydrogen_bond_donors": 1,
+        "tpsa": 41.93,
+        "molar_refractivity": 83.95,
+        "rotatable_bonds": 3,
+        "deviations": 0
+      },
+      "source_chunk_ids": [
+        "81e6624b7556f842407ed5dcbb0787e3"
+      ],
+      "confidence": 0.95,
+      "evidence": "3Mesembranol291.181.854141.9383.9530",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "cb78e59d1e353997988af18a8b0d66da"
+      ],
+      "confidence": 0.95,
+      "evidence": "Scelentium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "Phytoconstituents",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cb78e59d1e353997988af18a8b0d66da"
+      ],
+      "confidence": 0.9,
+      "evidence": "3 Phytoconstituents obtained from Scelentium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "PDE4 receptor protein",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "cb78e59d1e353997988af18a8b0d66da"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDEs 4 receptor protein (PDB ID: 3I8V)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "cb78e59d1e353997988af18a8b0d66da"
+      ],
+      "confidence": 0.9,
+      "evidence": "depression control",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "molecular docking study",
+      "attributes": {
+        "design": "molecular docking"
+      },
+      "source_chunk_ids": [
+        "cb78e59d1e353997988af18a8b0d66da"
+      ],
+      "confidence": 0.85,
+      "evidence": "Molecular docking was performed",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "in silico",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "cb78e59d1e353997988af18a8b0d66da"
+      ],
+      "confidence": 0.8,
+      "evidence": "Molecular docking was performed",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "Mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "df2543cb63e853316213c5549fba947d"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrenone with PDEs 4 protein complexes",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "df2543cb63e853316213c5549fba947d"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDEs 4 protein complexes",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "Mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "df2543cb63e853316213c5549fba947d"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrine complex",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "Mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "df2543cb63e853316213c5549fba947d"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembranol formed two hydrogen bond interactions",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "34abc360d853669c7f1806e0e8e4cb8b"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "34abc360d853669c7f1806e0e8e4cb8b"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "34abc360d853669c7f1806e0e8e4cb8b"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "protein target",
+      "attributes": {
+        "target_type": "protein"
+      },
+      "source_chunk_ids": [
+        "34abc360d853669c7f1806e0e8e4cb8b"
+      ],
+      "confidence": 0.7,
+      "evidence": "Amino acid involved in the interaction",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "Mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "92587052021bf10f353853fd2bc67625"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "Mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "92587052021bf10f353853fd2bc67625"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "Mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "92587052021bf10f353853fd2bc67625"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "Phosphodiesterase 4 receptor protein",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "92587052021bf10f353853fd2bc67625"
+      ],
+      "confidence": 0.9,
+      "evidence": "Phosphodiesterase 4 receptor protein",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "Mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9ce24e7d5c320fd53bf45141d12ca0d3"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrenone interacting with residues",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "Mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9ce24e7d5c320fd53bf45141d12ca0d3"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrine interacting with residues",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "Mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9ce24e7d5c320fd53bf45141d12ca0d3"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembranol interacting with residues",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "9ce24e7d5c320fd53bf45141d12ca0d3"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDEs 4 receptor protein",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "Imipramine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0c225beabaf18b4ff2f0a552dc9aa348"
+      ],
+      "confidence": 0.95,
+      "evidence": "Imipramine is shown in pink",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "Phosphodiesterase 4 receptor protein",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "0c225beabaf18b4ff2f0a552dc9aa348"
+      ],
+      "confidence": 0.9,
+      "evidence": "Phosphodiesterase 4 receptor protein",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "Phosphodiesterase 4 receptor protein",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "9fb69100070442a4065347a83b5c0518"
+      ],
+      "confidence": 0.9,
+      "evidence": "Phosphodiesterase 4 receptor protein",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum plant extract",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "plant extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "confidence": 0.8,
+      "evidence": "Sceletium tortuosum plant extract",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "Phosphodiesterase 4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "confidence": 0.85,
+      "evidence": "Phosphodiesterase 4 inhibitors",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "confidence": 0.9,
+      "evidence": "concomitant with depression",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "improve quality of life",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "confidence": 0.75,
+      "evidence": "improve quality of life",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "regulating mood",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "confidence": 0.8,
+      "evidence": "regulating mood",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "reversal of functional and social incapacities",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "confidence": 0.7,
+      "evidence": "reversal of functional and social incapacities",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Evidence",
+      "name": "bioinformatics and molecular docking",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "confidence": 0.8,
+      "evidence": "bioinformatics tools, molecular docking",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Study",
+      "name": "computational study",
+      "attributes": {
+        "design": "computational modeling"
+      },
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "confidence": 0.75,
+      "evidence": "bioinformatics tools, molecular docking",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "CompoundClass",
+      "name": "Phytoconstituents",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c07adef1dd83acd29e1c0437196ba087"
+      ],
+      "confidence": 0.9,
+      "evidence": "phytoconstituents",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "imipramine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c07adef1dd83acd29e1c0437196ba087"
+      ],
+      "confidence": 0.95,
+      "evidence": "imipramine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "c07adef1dd83acd29e1c0437196ba087"
+      ],
+      "confidence": 0.95,
+      "evidence": "treatment of depression",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Sibi PI.; Meera P., 2013",
+      "attributes": {
+        "design": "in-silico docking analysis",
+        "year": 2013
+      },
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "confidence": 0.9,
+      "evidence": "In-silico docking analysis of constituents of Zingiber officinale as antidepressant",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in-silico docking",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "confidence": 0.85,
+      "evidence": "In-silico docking analysis",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Zingiber officinale",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zingiber officinale",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "confidence": 0.9,
+      "evidence": "as antidepressant",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Smith C., 2011",
+      "attributes": {
+        "design": "in vivo model",
+        "year": 2011
+      },
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "confidence": 0.9,
+      "evidence": "The effects of Sceletium tortuosum in an in vivo model of psychological Stress",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "in vivo study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "confidence": 0.85,
+      "evidence": "in vivo model of psychological Stress",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "psychological stress",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "confidence": 0.9,
+      "evidence": "psychological Stress",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "David Terburg et al., 2013",
+      "attributes": {
+        "design": "acute effects study",
+        "year": 2013
+      },
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "confidence": 0.9,
+      "evidence": "Acute Effects of Sceletium tortuosum (Zembrin)",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Evidence",
+      "name": "human neuroimaging study",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "confidence": 0.85,
+      "evidence": "in the Human Amygdala and its Connection to the Hypothalamus",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum (Zembrin)",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Target",
+      "name": "5-HT reuptake",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "confidence": 0.85,
+      "evidence": "5-HT Reuptake",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "confidence": 0.85,
+      "evidence": "PDE4 Inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Study",
+      "name": "Van Wyk B.E.; Gorelik B., 2017",
+      "attributes": {
+        "design": "ethnobotanical review",
+        "year": 2017
+      },
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "confidence": 0.9,
+      "evidence": "The history and ethnobotany of Cape herbal teas",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Evidence",
+      "name": "ethnobotanical review",
+      "attributes": {
+        "evidence_level": 5
+      },
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "confidence": 0.85,
+      "evidence": "ethnobotany of Cape herbal teas",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Culture",
+      "name": "Cape people",
+      "attributes": {},
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "confidence": 0.7,
+      "evidence": "Cape herbal teas",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "UseRecord",
+      "name": "UseRecord: Cape \u2013 herbal teas",
+      "attributes": {
+        "route": "oral",
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "confidence": 0.65,
+      "evidence": "Cape herbal teas",
+      "verified": false
+    },
+    {
+      "id": "E18",
+      "type": "TraditionalUse",
+      "name": "herbal tea use",
+      "attributes": {
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "confidence": 0.6,
+      "evidence": "herbal teas",
+      "verified": false
+    }
+  ],
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Mesembrine obtained from Sceletium tortuosum",
+      "source_chunk_ids": [
+        "183773025033e9439ff04f837d58e70b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Mesembrenone obtained from Sceletium tortuosum",
+      "source_chunk_ids": [
+        "183773025033e9439ff04f837d58e70b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Mesembranol obtained from Sceletium tortuosum",
+      "source_chunk_ids": [
+        "183773025033e9439ff04f837d58e70b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Mesembrine obtained from a plant extract",
+      "source_chunk_ids": [
+        "183773025033e9439ff04f837d58e70b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Mesembrenone obtained from a plant extract",
+      "source_chunk_ids": [
+        "183773025033e9439ff04f837d58e70b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Mesembranol obtained from a plant extract",
+      "source_chunk_ids": [
+        "183773025033e9439ff04f837d58e70b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "TREATS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "context": "pharmacological"
+      },
+      "confidence": 0.7,
+      "evidence": "reported as potent Antidepressants",
+      "source_chunk_ids": [
+        "183773025033e9439ff04f837d58e70b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "context": "pharmacological"
+      },
+      "confidence": 0.7,
+      "evidence": "reported as potent Antidepressants",
+      "source_chunk_ids": [
+        "183773025033e9439ff04f837d58e70b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "TREATS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "context": "pharmacological"
+      },
+      "confidence": 0.7,
+      "evidence": "reported as potent Antidepressants",
+      "source_chunk_ids": [
+        "183773025033e9439ff04f837d58e70b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "In silico methods were adopted",
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "mesembrine as ligands",
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "mesembrenone as ligands",
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "mesembranol as ligands",
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "comparator"
+      },
+      "confidence": 0.8,
+      "evidence": "comparison with standard drug Imipramine",
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "target identified"
+      },
+      "confidence": 0.9,
+      "evidence": "Phosphodiesterase 4 as receptor",
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "therapeutic potential"
+      },
+      "confidence": 0.85,
+      "evidence": "treatment of depression",
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "positive effect"
+      },
+      "confidence": 0.8,
+      "evidence": "can act as potent antidepressant agents",
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": -8.1,
+          "unit": "kcal/mol",
+          "measurement_type": "binding energy",
+          "notes": "estimated free binding energy"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "Mesembrine showed -8.1 kcal/mol",
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "ACTS_ON",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": -8.2,
+          "unit": "kcal/mol",
+          "measurement_type": "binding energy",
+          "notes": "estimated free binding energy"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "Mesembrenone showed -8.2 kcal/mol",
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "ACTS_ON",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": -8.0,
+          "unit": "kcal/mol",
+          "measurement_type": "binding energy",
+          "notes": "estimated free binding energy"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "Mesembranol showed -8.0 kcal/mol",
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "ACTS_ON",
+      "source_entity_id": "E7",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": -7.9,
+          "unit": "kcal/mol",
+          "measurement_type": "binding energy",
+          "notes": "estimated free binding energy"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "imipramine (-7.9 kcal/mol)",
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "can act as potent antidepressant agents",
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "can act as potent antidepressant agents",
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "can act as potent antidepressant agents",
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "TREATS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {
+        "context": "computational"
+      },
+      "confidence": 0.7,
+      "evidence": "alternative drug lead for depression",
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R17",
+      "type": "TREATS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {
+        "context": "computational"
+      },
+      "confidence": 0.7,
+      "evidence": "alternative drug lead for depression",
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R18",
+      "type": "TREATS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {
+        "context": "computational"
+      },
+      "confidence": 0.7,
+      "evidence": "alternative drug lead for depression",
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R19",
+      "type": "CONTAINS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E4",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Phytoconstituents obtained from plant extract",
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R20",
+      "type": "CONTAINS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E5",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Phytoconstituents obtained from plant extract",
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R21",
+      "type": "CONTAINS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E6",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Phytoconstituents obtained from plant extract",
+      "source_chunk_ids": [
+        "ade86a2007eabd0325cb8bb20680d5e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "target"
+      },
+      "confidence": 0.7,
+      "evidence": "Phosphodiesterases 4 Receptor [PDB]",
+      "source_chunk_ids": [
+        "d7f32ef0001ac065717af38acc1ae3f9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Ligand from pubchem",
+      "source_chunk_ids": [
+        "d7f32ef0001ac065717af38acc1ae3f9"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Protein preparation by Autodock tools",
+      "source_chunk_ids": [
+        "d7f32ef0001ac065717af38acc1ae3f9"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Molecular docking by Autodock vina",
+      "source_chunk_ids": [
+        "d7f32ef0001ac065717af38acc1ae3f9"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Analysis of molecular docking by Discovery studio visualizer",
+      "source_chunk_ids": [
+        "d7f32ef0001ac065717af38acc1ae3f9"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Validation of prepared model by Ramachandran plot",
+      "source_chunk_ids": [
+        "d7f32ef0001ac065717af38acc1ae3f9"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.8,
+      "evidence": "to treat depression",
+      "source_chunk_ids": [
+        "820768b6bf348e279cdd9530157876f8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "San and Khoikhoi people",
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_USE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "San and Khoikhoi people",
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.9,
+      "evidence": "Scelentium tortuosum",
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "as a masticatory",
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "and medicine",
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_USE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "colonial farmers",
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.85,
+      "evidence": "Scelentium tortuosum",
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "INVOLVES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "as a psychotropic",
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "INVOLVES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.75,
+      "evidence": "in tincture form",
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "SUGGESTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E13",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "endorsing a sense of wellbeing and relieving stress",
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "SUGGESTS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E13",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "relieving stress",
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "SUGGESTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E14",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "endorsing a sense of wellbeing",
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R13",
+      "type": "SUGGESTS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E14",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "relieving stress",
+      "source_chunk_ids": [
+        "34e8bcb735436a79cff81eb4e3b02d66"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.85,
+      "evidence": "Phosphodiesterase 4 inhibitors",
+      "source_chunk_ids": [
+        "027a1bd911c445ab7bcbc9eadbfc6fd2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "downregulation"
+      },
+      "confidence": 0.75,
+      "evidence": "downregulation of the cAMP cascade",
+      "source_chunk_ids": [
+        "027a1bd911c445ab7bcbc9eadbfc6fd2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "restoration"
+      },
+      "confidence": 0.8,
+      "evidence": "restored using Phosphodiesterase 4 inhibitors",
+      "source_chunk_ids": [
+        "027a1bd911c445ab7bcbc9eadbfc6fd2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "in vivo studies reinforce idea",
+      "source_chunk_ids": [
+        "027a1bd911c445ab7bcbc9eadbfc6fd2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "extract of the plant (mesembrine)",
+      "source_chunk_ids": [
+        "027a1bd911c445ab7bcbc9eadbfc6fd2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "ACTS_ON",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "dual Phosphodiesterase 4 inhibitor",
+      "source_chunk_ids": [
+        "027a1bd911c445ab7bcbc9eadbfc6fd2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "ACTS_ON",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "5-HT reuptake inhibitor",
+      "source_chunk_ids": [
+        "027a1bd911c445ab7bcbc9eadbfc6fd2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Phytoconstituents",
+      "source_chunk_ids": [
+        "027a1bd911c445ab7bcbc9eadbfc6fd2"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Phytoconstituents obtained from Sceletium tortuosum",
+      "source_chunk_ids": [
+        "b6eba3aee5bea84a46339d4b0127de14"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "computational approach, molecular docking simulation",
+      "source_chunk_ids": [
+        "b6eba3aee5bea84a46339d4b0127de14"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "targets to recognize the mechanism of action of Phytoconstituents from Sceletium tortuosum",
+      "source_chunk_ids": [
+        "b6eba3aee5bea84a46339d4b0127de14"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "investigates",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "predict the pocket region of the protein, binding conformations with the receptor protein",
+      "source_chunk_ids": [
+        "b6eba3aee5bea84a46339d4b0127de14"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Before docking, the protein was cleaned",
+      "source_chunk_ids": [
+        "3aa66bf99b686387cb4f391c835b072e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "computational molecular docking",
+      "source_chunk_ids": [
+        "e6ab9269a526e43ca5cc290599d0a1d8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "Phytoconstituents were read as input",
+      "source_chunk_ids": [
+        "e6ab9269a526e43ca5cc290599d0a1d8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "target"
+      },
+      "confidence": 0.85,
+      "evidence": "docking with the receptor protein",
+      "source_chunk_ids": [
+        "e6ab9269a526e43ca5cc290599d0a1d8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.75,
+      "evidence": "inhibitor EH58 bound with Phosphodiesterase 4",
+      "source_chunk_ids": [
+        "e6ab9269a526e43ca5cc290599d0a1d8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Phytoconstituents obtained from Scelentium tortuosum",
+      "source_chunk_ids": [
+        "cb78e59d1e353997988af18a8b0d66da"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "binds",
+        "measurement": {
+          "value": -8.2,
+          "unit": "kcal/mol",
+          "measurement_type": "docking_score",
+          "notes": "top compound docking value"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "docking value of -8.2 kcal/mol",
+      "source_chunk_ids": [
+        "cb78e59d1e353997988af18a8b0d66da"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TREATS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "prospective"
+      },
+      "confidence": 0.75,
+      "evidence": "prospective antidepressant drug against PDEs 4 receptor",
+      "source_chunk_ids": [
+        "cb78e59d1e353997988af18a8b0d66da"
+      ],
+      "supporting_study_ids": [
+        "E5"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Molecular docking was performed",
+      "source_chunk_ids": [
+        "cb78e59d1e353997988af18a8b0d66da"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "3 Phytoconstituents obtained from Scelentium tortuosum",
+      "source_chunk_ids": [
+        "cb78e59d1e353997988af18a8b0d66da"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "potential"
+      },
+      "confidence": 0.7,
+      "evidence": "depression control",
+      "source_chunk_ids": [
+        "cb78e59d1e353997988af18a8b0d66da"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "binds",
+        "measurement": {
+          "value": -8.2,
+          "unit": "kcal/mol",
+          "measurement_type": "binding_affinity",
+          "notes": "rigid docking, strongest connection"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "strongest connection -8.2 kcal/mol",
+      "source_chunk_ids": [
+        "df2543cb63e853316213c5549fba947d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "binds"
+      },
+      "confidence": 0.8,
+      "evidence": "Mesembrine complex formed hydrogen bonds",
+      "source_chunk_ids": [
+        "df2543cb63e853316213c5549fba947d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "binds"
+      },
+      "confidence": 0.8,
+      "evidence": "Mesembranol formed hydrogen bond interactions",
+      "source_chunk_ids": [
+        "df2543cb63e853316213c5549fba947d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "binds",
+        "measurement": {
+          "value": -8.2,
+          "unit": "kcal/mol",
+          "measurement_type": "binding energy",
+          "notes": "hydrogen bond and hydrophobic interactions"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "Binding energy, (kcal/mol) -8.2",
+      "source_chunk_ids": [
+        "34abc360d853669c7f1806e0e8e4cb8b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "binds",
+        "measurement": {
+          "value": -8.1,
+          "unit": "kcal/mol",
+          "measurement_type": "binding energy",
+          "notes": "hydrogen bond and hydrophobic interactions"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "Binding energy, (kcal/mol) -8.1",
+      "source_chunk_ids": [
+        "34abc360d853669c7f1806e0e8e4cb8b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "binds",
+        "measurement": {
+          "value": -8.0,
+          "unit": "kcal/mol",
+          "measurement_type": "binding energy",
+          "notes": "hydrogen bond and hydrophobic interactions"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "Binding energy, (kcal/mol) -8.0",
+      "source_chunk_ids": [
+        "34abc360d853669c7f1806e0e8e4cb8b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "binds"
+      },
+      "confidence": 0.85,
+      "evidence": "binding of Mesembrenone",
+      "source_chunk_ids": [
+        "92587052021bf10f353853fd2bc67625"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "binds"
+      },
+      "confidence": 0.85,
+      "evidence": "binding of Mesembrine",
+      "source_chunk_ids": [
+        "92587052021bf10f353853fd2bc67625"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "binds"
+      },
+      "confidence": 0.85,
+      "evidence": "binding of Mesembranol",
+      "source_chunk_ids": [
+        "92587052021bf10f353853fd2bc67625"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "binds"
+      },
+      "confidence": 0.85,
+      "evidence": "Mesembrenone interacting with PDEs 4",
+      "source_chunk_ids": [
+        "9ce24e7d5c320fd53bf45141d12ca0d3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "binds"
+      },
+      "confidence": 0.85,
+      "evidence": "Mesembrine interacting with PDEs 4",
+      "source_chunk_ids": [
+        "9ce24e7d5c320fd53bf45141d12ca0d3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "binds"
+      },
+      "confidence": 0.85,
+      "evidence": "Mesembranol interacting with PDEs 4",
+      "source_chunk_ids": [
+        "9ce24e7d5c320fd53bf45141d12ca0d3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "binds"
+      },
+      "confidence": 0.85,
+      "evidence": "3D interaction of Imipramine with Phosphodiesterase 4 receptor protein",
+      "source_chunk_ids": [
+        "0c225beabaf18b4ff2f0a552dc9aa348"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Phytoconstituents obtained from Sceletium tortuosum plant extract",
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Phytoconstituents obtained from Sceletium tortuosum plant extract",
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Phytoconstituents obtained from Sceletium tortuosum plant extract",
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "potent and safe Phosphodiesterase 4 inhibitors",
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "potent and safe Phosphodiesterase 4 inhibitors",
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "ACTS_ON",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "potent and safe Phosphodiesterase 4 inhibitors",
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "computational"
+      },
+      "confidence": 0.7,
+      "evidence": "to improve quality of life by regulating mood and reversal of functional and social incapacities concomitant with depression",
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "supporting_study_ids": [
+        "E12"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "TREATS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "computational"
+      },
+      "confidence": 0.7,
+      "evidence": "to improve quality of life by regulating mood and reversal of functional and social incapacities concomitant with depression",
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "supporting_study_ids": [
+        "E12"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "TREATS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "computational"
+      },
+      "confidence": 0.7,
+      "evidence": "to improve quality of life by regulating mood and reversal of functional and social incapacities concomitant with depression",
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "supporting_study_ids": [
+        "E12"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E8",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "to improve quality of life",
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "regulating mood",
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E10",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "reversal of functional and social incapacities",
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R13",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "to improve quality of life",
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R14",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "regulating mood",
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E10",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "reversal of functional and social incapacities",
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R16",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "to improve quality of life",
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R17",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "regulating mood",
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R18",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E10",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "reversal of functional and social incapacities",
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R19",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E12",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "bioinformatics tools, molecular docking",
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R20",
+      "type": "STUDIES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "Phytoconstituents obtained from Sceletium tortuosum plant extract",
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R21",
+      "type": "REPORTS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "inhibition"
+      },
+      "confidence": 0.7,
+      "evidence": "potent and safe Phosphodiesterase 4 inhibitors",
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R22",
+      "type": "REPORTS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "potential treatment",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "concomitant with depression",
+      "source_chunk_ids": [
+        "08778afb20597836905d69ba49e1d272"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "context": "suggested"
+      },
+      "confidence": 0.7,
+      "evidence": "suggests that these Phytoconstituents can be an unconventional and safe source for treatment and mitigation of depression",
+      "source_chunk_ids": [
+        "c07adef1dd83acd29e1c0437196ba087"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TREATS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "context": "synthetic drug"
+      },
+      "confidence": 0.8,
+      "evidence": "synthetic drugs for the treatment of depression such as imipramine",
+      "source_chunk_ids": [
+        "c07adef1dd83acd29e1c0437196ba087"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "In-silico docking analysis",
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "constituents of Zingiber officinale",
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "suggests"
+      },
+      "confidence": 0.8,
+      "evidence": "as antidepressant",
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "in vivo model",
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum",
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "studies"
+      },
+      "confidence": 0.85,
+      "evidence": "psychological Stress",
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "in the Human Amygdala",
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E11",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum (Zembrin)",
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E12",
+      "attributes": {
+        "outcome": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "5-HT Reuptake",
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E13",
+      "attributes": {
+        "outcome": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "PDE4 Inhibitor",
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E14",
+      "target_entity_id": "E15",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "ethnobotany of Cape herbal teas",
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "HAS_USE",
+      "source_entity_id": "E16",
+      "target_entity_id": "E17",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Cape herbal teas",
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "INVOLVES",
+      "source_entity_id": "E17",
+      "target_entity_id": "E18",
+      "attributes": {
+        "role": "traditional_use",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "herbal teas",
+      "source_chunk_ids": [
+        "990269164078f9671df72e91e65e1957"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    }
+  ]
 }

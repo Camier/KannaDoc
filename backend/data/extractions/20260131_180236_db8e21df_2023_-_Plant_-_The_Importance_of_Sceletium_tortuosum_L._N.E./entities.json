@@ -1,12 +1,4465 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "10ae08204a6731805389864e2662fdf7def46be4fe4eb11e43263cb2c2045fa5",
-  "extracted_at": "2026-02-01T09:01:46.926002+00:00",
-  "extractor": "legacy-migration",
-  "entities": [],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.088562+00:00",
-    "original_file": "entities.json"
-  }
+  "entities": [
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum is a succulent plant",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "indigenous people of South Africa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "confidence": 0.8,
+      "evidence": "indigenous people, especially in Namaqualand",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "UseRecord",
+      "name": "UseRecord: indigenous \u2013 Sceletium \u2013 medicinal/psychoactive",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "confidence": 0.75,
+      "evidence": "utilized regularly for its medicinal and psycho-active properties",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "medicinal and psychoactive properties",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "confidence": 0.8,
+      "evidence": "medicinal and psycho-active properties",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "confidence": 0.9,
+      "evidence": "main alkaloids responsible",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Compound",
+      "name": "mesembrenol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrenol",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "confidence": 0.9,
+      "evidence": "depression",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "confidence": 0.9,
+      "evidence": "anxiety",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Product",
+      "name": "commercialized traditional African medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "confidence": 0.7,
+      "evidence": "commercialization of traditional African medicines",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "9ec069554e5a7751d5096c6073c932e9"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum (L.) N.E. Br.",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Sceletium expansum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "9ec069554e5a7751d5096c6073c932e9"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium expansum L. Bolus",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Mesembryanthemum tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "9ec069554e5a7751d5096c6073c932e9"
+      ],
+      "confidence": 0.9,
+      "evidence": "formerly known as Mesembryanthemum tortuosum L.",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Mesembryanthemum expansum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "9ec069554e5a7751d5096c6073c932e9"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mesembryanthemum expansum L.",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Mesembryanthemaceae",
+      "attributes": {
+        "rank": "family"
+      },
+      "source_chunk_ids": [
+        "9ec069554e5a7751d5096c6073c932e9"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembryanthemaceae family",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "RawMaterial",
+      "name": "kougoed",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9ec069554e5a7751d5096c6073c932e9"
+      ],
+      "confidence": 0.8,
+      "evidence": "kougoed refers to the finished traditional preparation",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Preparation",
+      "name": "drying",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9ec069554e5a7751d5096c6073c932e9"
+      ],
+      "confidence": 0.75,
+      "evidence": "drying and fermenting",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Preparation",
+      "name": "fermentation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9ec069554e5a7751d5096c6073c932e9"
+      ],
+      "confidence": 0.75,
+      "evidence": "drying and fermenting",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "98fa373f4e456283a5abd7a501336a4e"
+      ],
+      "confidence": 0.9,
+      "evidence": "The plant is native to South Africa",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "indigenous people of Namaqualand",
+      "attributes": {},
+      "source_chunk_ids": [
+        "98fa373f4e456283a5abd7a501336a4e"
+      ],
+      "confidence": 0.85,
+      "evidence": "indigenous people, especially in Namaqualand",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "UseRecord",
+      "name": "UseRecord: indigenous people \u2013 Sceletium \u2013 medicinal and anti-depressant properties",
+      "attributes": {},
+      "source_chunk_ids": [
+        "98fa373f4e456283a5abd7a501336a4e"
+      ],
+      "confidence": 0.8,
+      "evidence": "utilized regularly for its medicinal and anti-depressant properties",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "medicinal properties",
+      "attributes": {},
+      "source_chunk_ids": [
+        "98fa373f4e456283a5abd7a501336a4e"
+      ],
+      "confidence": 0.75,
+      "evidence": "medicinal and anti-depressant properties",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "98fa373f4e456283a5abd7a501336a4e"
+      ],
+      "confidence": 0.7,
+      "evidence": "anti-depressant properties",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "confidence": 0.9,
+      "evidence": "the alkaloids mesembrine, mesembrenine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrenine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrenine (mesembrenone)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrenol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrenol",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "promotion of health",
+      "attributes": {},
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "confidence": 0.8,
+      "evidence": "promotion of health",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "confidence": 0.9,
+      "evidence": "depression",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "confidence": 0.9,
+      "evidence": "anxiety",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "ethnobotanical reports",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "confidence": 0.7,
+      "evidence": "ethnobotanical reports",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "Schultes [3]",
+      "attributes": {
+        "year": "unknown",
+        "design": "literature review"
+      },
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "confidence": 0.75,
+      "evidence": "Schultes [3]",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Study",
+      "name": "Harvey et al. [4]",
+      "attributes": {
+        "year": "unknown",
+        "design": "literature review"
+      },
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "confidence": 0.75,
+      "evidence": "Harvey et al. [4]",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Study",
+      "name": "Studies on TAMP (1997\u20132008)",
+      "attributes": {
+        "year_range": "1997\u20132008",
+        "design": "chemistry and biological activity studies"
+      },
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "confidence": 0.7,
+      "evidence": "Studies on the chemistry and biological activity",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "09246b19e5ceb6375e454c354fff3f1b"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "09246b19e5ceb6375e454c354fff3f1b"
+      ],
+      "confidence": 0.85,
+      "evidence": "alkaloid concentration",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "secondary metabolites",
+      "attributes": {},
+      "source_chunk_ids": [
+        "09246b19e5ceb6375e454c354fff3f1b"
+      ],
+      "confidence": 0.8,
+      "evidence": "secondary metabolites",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "vegetative growth",
+      "attributes": {
+        "condition_type": "physiological process"
+      },
+      "source_chunk_ids": [
+        "09246b19e5ceb6375e454c354fff3f1b"
+      ],
+      "confidence": 0.7,
+      "evidence": "vegetative growth",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Preparation",
+      "name": "soilless growing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "09246b19e5ceb6375e454c354fff3f1b"
+      ],
+      "confidence": 0.75,
+      "evidence": "soilless growing media",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Preparation",
+      "name": "hydroponics",
+      "attributes": {},
+      "source_chunk_ids": [
+        "09246b19e5ceb6375e454c354fff3f1b"
+      ],
+      "confidence": 0.8,
+      "evidence": "cultivating in hydroponics",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "medicinal value",
+      "attributes": {},
+      "source_chunk_ids": [
+        "09246b19e5ceb6375e454c354fff3f1b"
+      ],
+      "confidence": 0.85,
+      "evidence": "medicinal value",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Aizoaceae",
+      "attributes": {
+        "rank": "family"
+      },
+      "source_chunk_ids": [
+        "76cf67a7728cf0c37b68ea83fde59398"
+      ],
+      "confidence": 0.95,
+      "evidence": "family Aizoaceae Martinov.",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Sesuvioidae",
+      "attributes": {
+        "rank": "sub-family"
+      },
+      "source_chunk_ids": [
+        "76cf67a7728cf0c37b68ea83fde59398"
+      ],
+      "confidence": 0.9,
+      "evidence": "sub-families, namely Sesuvioidae",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Aizooideae",
+      "attributes": {
+        "rank": "sub-family"
+      },
+      "source_chunk_ids": [
+        "76cf67a7728cf0c37b68ea83fde59398"
+      ],
+      "confidence": 0.9,
+      "evidence": "Aizooideae",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Ruschioideae",
+      "attributes": {
+        "rank": "sub-family"
+      },
+      "source_chunk_ids": [
+        "76cf67a7728cf0c37b68ea83fde59398"
+      ],
+      "confidence": 0.9,
+      "evidence": "Ruschioideae",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Mesembryanthemoideae",
+      "attributes": {
+        "rank": "sub-family"
+      },
+      "source_chunk_ids": [
+        "76cf67a7728cf0c37b68ea83fde59398"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mesembryanthemoideae",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Mesembryanthemaceae",
+      "attributes": {
+        "rank": "family"
+      },
+      "source_chunk_ids": [
+        "76cf67a7728cf0c37b68ea83fde59398"
+      ],
+      "confidence": 0.85,
+      "evidence": "Mesembryanthemaceae",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "a965544073fb171121a542804dffbab5"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum plant",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a965544073fb171121a542804dffbab5"
+      ],
+      "confidence": 0.9,
+      "evidence": "thick, succulent, green, finger-like leaves",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "flowers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a965544073fb171121a542804dffbab5"
+      ],
+      "confidence": 0.9,
+      "evidence": "white, star-shaped flowers",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "this family",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f4c2ed5bda19de2ac8c18134cba2d821"
+      ],
+      "confidence": 0.7,
+      "evidence": "This family has received a large amount of attention",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "TraditionalUse",
+      "name": "making soap",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f4c2ed5bda19de2ac8c18134cba2d821"
+      ],
+      "confidence": 0.8,
+      "evidence": "used in making soap",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "poultices",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f4c2ed5bda19de2ac8c18134cba2d821"
+      ],
+      "confidence": 0.8,
+      "evidence": "used in making poultices",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "preserves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f4c2ed5bda19de2ac8c18134cba2d821"
+      ],
+      "confidence": 0.8,
+      "evidence": "used in making preserves",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "psycho-active stimulant",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f4c2ed5bda19de2ac8c18134cba2d821"
+      ],
+      "confidence": 0.85,
+      "evidence": "serve as a type of psycho-active stimulant",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species",
+        "synonyms": "Mesembryanthemum tortuosum"
+      },
+      "source_chunk_ids": [
+        "930e868196bd13938e26a3af3dab58f5"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum (L.) N.E. Br.",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Sceletium expansum",
+      "attributes": {
+        "rank": "species",
+        "synonyms": "Mesembryanthemum expansum"
+      },
+      "source_chunk_ids": [
+        "930e868196bd13938e26a3af3dab58f5"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. expansum L. Bolus",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "930e868196bd13938e26a3af3dab58f5"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium spp.",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Mesembryanthemaceae",
+      "attributes": {
+        "rank": "family"
+      },
+      "source_chunk_ids": [
+        "930e868196bd13938e26a3af3dab58f5"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mesembryanthemaceae family",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "930e868196bd13938e26a3af3dab58f5"
+      ],
+      "confidence": 0.85,
+      "evidence": "dried leaves of the plants",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "RawMaterial",
+      "name": "kougoed",
+      "attributes": {},
+      "source_chunk_ids": [
+        "930e868196bd13938e26a3af3dab58f5"
+      ],
+      "confidence": 0.8,
+      "evidence": "kougoed refers to the finished traditional preparation",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Preparation",
+      "name": "drying",
+      "attributes": {},
+      "source_chunk_ids": [
+        "930e868196bd13938e26a3af3dab58f5"
+      ],
+      "confidence": 0.75,
+      "evidence": "drying and fermenting",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Preparation",
+      "name": "fermentation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "930e868196bd13938e26a3af3dab58f5"
+      ],
+      "confidence": 0.75,
+      "evidence": "drying and fermenting",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "psychoactive effect",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "930e868196bd13938e26a3af3dab58f5"
+      ],
+      "confidence": 0.7,
+      "evidence": "increases its psychoactive effect",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "indigenous people of southern Africa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cd84909d8eec057a9c31bfb903814362"
+      ],
+      "confidence": 0.9,
+      "evidence": "indigenous people of southern Africa used",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: indigenous \u2013 Sceletium \u2013 vision-inducing narcotic",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cd84909d8eec057a9c31bfb903814362"
+      ],
+      "confidence": 0.8,
+      "evidence": "used one or both Sceletium species as a vision-inducing narcotic",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "cd84909d8eec057a9c31bfb903814362"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium species",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "vision-inducing narcotic",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cd84909d8eec057a9c31bfb903814362"
+      ],
+      "confidence": 0.85,
+      "evidence": "vision-inducing narcotic",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Cannabis spp.",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "cd84909d8eec057a9c31bfb903814362"
+      ],
+      "confidence": 0.9,
+      "evidence": "Cannabis spp.",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Sclerocarya spp.",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "cd84909d8eec057a9c31bfb903814362"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sclerocarya spp.",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cd84909d8eec057a9c31bfb903814362"
+      ],
+      "confidence": 0.95,
+      "evidence": "alkaloids possessing sedative, cocaine-like effects",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "sedative",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "cd84909d8eec057a9c31bfb903814362"
+      ],
+      "confidence": 0.85,
+      "evidence": "sedative effects",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "cocaine-like effects",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "cd84909d8eec057a9c31bfb903814362"
+      ],
+      "confidence": 0.8,
+      "evidence": "cocaine-like effects",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Taxon",
+      "name": "S. crassicaule L. Bolus",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "cd84909d8eec057a9c31bfb903814362"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. crassicaule L. Bolus",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Taxon",
+      "name": "S. exalatum Gerbaulet",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "cd84909d8eec057a9c31bfb903814362"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. exalatum Gerbaulet",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Taxon",
+      "name": "S. expansum L. Bolus",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "cd84909d8eec057a9c31bfb903814362"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. expansum L. Bolus",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Taxon",
+      "name": "S. rigidum L. Bolus",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "cd84909d8eec057a9c31bfb903814362"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. rigidum L. Bolus",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Taxon",
+      "name": "S. strictum L. Bolus",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "cd84909d8eec057a9c31bfb903814362"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. strictum L. Bolus",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Taxon",
+      "name": "S. varians (Haw.) Gerbaulet",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "cd84909d8eec057a9c31bfb903814362"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. varians (Haw.) Gerbaulet",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Product",
+      "name": "Kanna Sceletium capsules",
+      "attributes": {
+        "brand": "Medico Herbs",
+        "form": "capsules",
+        "packaging": "white plastic bottle"
+      },
+      "source_chunk_ids": [
+        "ad8efb7e466b92cce9dea21e2d08f0f4"
+      ],
+      "confidence": 0.95,
+      "evidence": "A white plastic bottle of Kanna Sceletium capsules",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "ad8efb7e466b92cce9dea21e2d08f0f4"
+      ],
+      "confidence": 0.9,
+      "evidence": "'Sceletium' in smaller black letters",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Product",
+      "name": "Phyto Force 150 SCELETIUM",
+      "attributes": {
+        "form": "tincture"
+      },
+      "source_chunk_ids": [
+        "ff5cc044f1f36b62a7c2ae21fd919425"
+      ],
+      "confidence": 0.95,
+      "evidence": "labeled 'Phyto Force 150 SCELETIUM'",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "ff5cc044f1f36b62a7c2ae21fd919425"
+      ],
+      "confidence": 0.9,
+      "evidence": "tincture for anxiety",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "ff5cc044f1f36b62a7c2ae21fd919425"
+      ],
+      "confidence": 0.9,
+      "evidence": "tincture for depression",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f821a836d88a89acc45189d1a567ef51"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f821a836d88a89acc45189d1a567ef51"
+      ],
+      "confidence": 0.9,
+      "evidence": "alkaloids responsible for psychoactive properties",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f821a836d88a89acc45189d1a567ef51"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f821a836d88a89acc45189d1a567ef51"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "f821a836d88a89acc45189d1a567ef51"
+      ],
+      "confidence": 0.9,
+      "evidence": "treatment of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "stress",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "f821a836d88a89acc45189d1a567ef51"
+      ],
+      "confidence": 0.9,
+      "evidence": "treatment of stress",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "nervous tension",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "f821a836d88a89acc45189d1a567ef51"
+      ],
+      "confidence": 0.9,
+      "evidence": "treatment of nervous tension",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "alcohol addiction",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "f821a836d88a89acc45189d1a567ef51"
+      ],
+      "confidence": 0.9,
+      "evidence": "treatment of alcohol addiction",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "colic",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "f821a836d88a89acc45189d1a567ef51"
+      ],
+      "confidence": 0.9,
+      "evidence": "colic in infants",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "TraditionalUse",
+      "name": "suppressing hunger and thirst",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f821a836d88a89acc45189d1a567ef51"
+      ],
+      "confidence": 0.85,
+      "evidence": "suppressing hunger and thirst",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "AdverseEvent",
+      "name": "dependency",
+      "attributes": {
+        "severity": "none"
+      },
+      "source_chunk_ids": [
+        "f821a836d88a89acc45189d1a567ef51"
+      ],
+      "confidence": 0.8,
+      "evidence": "develops no physical or psychological dependency",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "South Africa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e9a46270df7e16824d018f7d19ae617e"
+      ],
+      "confidence": 0.9,
+      "evidence": "people in South Africa that depend on TAMP",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: South Africa \u2013 Traditional African Medicinal Plants \u2013 medical needs",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e9a46270df7e16824d018f7d19ae617e"
+      ],
+      "confidence": 0.8,
+      "evidence": "people in South Africa that depend on TAMP to aid their medical needs",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Traditional African Medicinal Plants",
+      "attributes": {
+        "rank": "group"
+      },
+      "source_chunk_ids": [
+        "e9a46270df7e16824d018f7d19ae617e"
+      ],
+      "confidence": 0.85,
+      "evidence": "Traditional African Medicinal Plants (TAMP)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "medical needs",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e9a46270df7e16824d018f7d19ae617e"
+      ],
+      "confidence": 0.8,
+      "evidence": "to aid their medical needs",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "plant species",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d1d17c20ef866f4ee8093ee75dba8424"
+      ],
+      "confidence": 0.7,
+      "evidence": "1000 plant species",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "plant material",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d1d17c20ef866f4ee8093ee75dba8424"
+      ],
+      "confidence": 0.8,
+      "evidence": "20 000 tonnes of plant material",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "CompoundClass",
+      "name": "terpenoids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "confidence": 0.95,
+      "evidence": "terpenoids",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "flavonoids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "confidence": 0.95,
+      "evidence": "flavonoids",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "confidence": 0.95,
+      "evidence": "alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "artemisinin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "confidence": 0.9,
+      "evidence": "artemisinin",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "paclitaxel",
+      "attributes": {},
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "confidence": 0.9,
+      "evidence": "paclitaxel",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "ginsenoside",
+      "attributes": {},
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "confidence": 0.9,
+      "evidence": "ginsenoside",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "lycopene",
+      "attributes": {},
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "confidence": 0.9,
+      "evidence": "lycopene",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Compound",
+      "name": "resveratrol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "confidence": 0.9,
+      "evidence": "resveratrol",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "antimicrobial activity",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "confidence": 0.8,
+      "evidence": "antimicrobial activities exhibited by plants",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "anti-viral activity",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "confidence": 0.8,
+      "evidence": "anti-viral activities exhibited by plants",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "ultra-violet trapping",
+      "attributes": {
+        "level": "molecular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "confidence": 0.75,
+      "evidence": "ultra-violet trapping mechanisms",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Effect",
+      "name": "allelopathy",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "confidence": 0.75,
+      "evidence": "allelopathy",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Effect",
+      "name": "antipathogens",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "confidence": 0.75,
+      "evidence": "antipathogens",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Effect",
+      "name": "antifeeding",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "confidence": 0.75,
+      "evidence": "antifeeding mechanisms",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "df73d1a624f0c46a79e37d399158bdc0"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium is one of the few plant genera",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "mesembrine alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "df73d1a624f0c46a79e37d399158bdc0"
+      ],
+      "confidence": 0.9,
+      "evidence": "containing mesembrine alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "df73d1a624f0c46a79e37d399158bdc0"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Sceletium atomicum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "df73d1a624f0c46a79e37d399158bdc0"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. atomicum",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Sceletium crassicaule",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "df73d1a624f0c46a79e37d399158bdc0"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. crassicaule",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Sceletium expansum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "df73d1a624f0c46a79e37d399158bdc0"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. expansum",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Sceletium namaquense",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "df73d1a624f0c46a79e37d399158bdc0"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. namaquense",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Taxon",
+      "name": "Sceletium strictum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "df73d1a624f0c46a79e37d399158bdc0"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. strictum",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Taxon",
+      "name": "Sceletium archeri",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "df73d1a624f0c46a79e37d399158bdc0"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. archeri",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Taxon",
+      "name": "Sceletium emarcidum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "df73d1a624f0c46a79e37d399158bdc0"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. emarcidum",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Taxon",
+      "name": "Sceletium exalatum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "df73d1a624f0c46a79e37d399158bdc0"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. exalatum",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Taxon",
+      "name": "Sceletium joubertii",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "df73d1a624f0c46a79e37d399158bdc0"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. joubertii",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Taxon",
+      "name": "Sceletium rigidum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "df73d1a624f0c46a79e37d399158bdc0"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. rigidum",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Taxon",
+      "name": "Sceletium varians",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "df73d1a624f0c46a79e37d399158bdc0"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. varians",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Taxon",
+      "name": "Sceletium subvelutinum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "df73d1a624f0c46a79e37d399158bdc0"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. subvelutinum",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "enzymes in respiration and photosynthesis",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "confidence": 0.8,
+      "evidence": "enzymes that are important in respiration and photosynthesis",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "osmotic potential of plant cells",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "confidence": 0.7,
+      "evidence": "osmotic potential of plant cells",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "K deficiency",
+      "attributes": {
+        "condition_type": "deficiency"
+      },
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "confidence": 0.9,
+      "evidence": "K deficiency in plants",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "marginal chlorosis of leaves",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "confidence": 0.85,
+      "evidence": "Marginal chlorosis of leaves",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "necrosis of leaf tips or margins and in between veins",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "confidence": 0.85,
+      "evidence": "necrosis of leaf tips or margins and in between veins",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "cell wall synthesis",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "confidence": 0.8,
+      "evidence": "cell wall synthesis",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "mitotic cell division",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "confidence": 0.8,
+      "evidence": "mitotic cell division",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Target",
+      "name": "plant membranes",
+      "attributes": {
+        "target_type": "structure"
+      },
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "confidence": 0.7,
+      "evidence": "plant membranes",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Target",
+      "name": "plant responses to environmental and hormonal signals",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "confidence": 0.7,
+      "evidence": "plant responses to environmental and hormonal signals",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "Ca deficiency",
+      "attributes": {
+        "condition_type": "deficiency"
+      },
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "confidence": 0.9,
+      "evidence": "Ca deficiency",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "necrosis of young meristematic regions",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "confidence": 0.85,
+      "evidence": "Necrosis of young meristematic regions",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Compound",
+      "name": "cystine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "confidence": 0.9,
+      "evidence": "cystine",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Compound",
+      "name": "cysteine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "confidence": 0.9,
+      "evidence": "cysteine",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Compound",
+      "name": "methionine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "confidence": 0.9,
+      "evidence": "methionine",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Target",
+      "name": "co-enzymes and vitamins",
+      "attributes": {
+        "target_type": "molecule"
+      },
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "confidence": 0.7,
+      "evidence": "co-enzymes and vitamins",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Compound",
+      "name": "coenzyme A",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "confidence": 0.8,
+      "evidence": "coenzyme A",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "Compound",
+      "name": "S-adenosylmethionine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "confidence": 0.8,
+      "evidence": "S-adenosylmethionine",
+      "verified": true
+    },
+    {
+      "id": "E18",
+      "type": "Compound",
+      "name": "biotin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "confidence": 0.8,
+      "evidence": "biotin",
+      "verified": true
+    },
+    {
+      "id": "E19",
+      "type": "Compound",
+      "name": "Vitamin B1",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "confidence": 0.8,
+      "evidence": "Vitamin B1",
+      "verified": true
+    },
+    {
+      "id": "E20",
+      "type": "Compound",
+      "name": "pantothenic acid",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "confidence": 0.8,
+      "evidence": "pantothenic acid",
+      "verified": true
+    },
+    {
+      "id": "E21",
+      "type": "Target",
+      "name": "optimal metabolism in plant cells",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "confidence": 0.7,
+      "evidence": "optimal metabolism in plant cells",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "67c6a89c957e73df5ab8b1a78de75905"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum is indigenous",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "mesembrine alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "67c6a89c957e73df5ab8b1a78de75905"
+      ],
+      "confidence": 0.9,
+      "evidence": "contain highly sought after mesembrine alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "67c6a89c957e73df5ab8b1a78de75905"
+      ],
+      "confidence": 0.9,
+      "evidence": "disorders such as depression",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "67c6a89c957e73df5ab8b1a78de75905"
+      ],
+      "confidence": 0.9,
+      "evidence": "disorders such as depression and anxiety",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Preparation",
+      "name": "hydroponics",
+      "attributes": {},
+      "source_chunk_ids": [
+        "67c6a89c957e73df5ab8b1a78de75905"
+      ],
+      "confidence": 0.8,
+      "evidence": "efficient systems such as hydroponics",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2ca31fdc3ca62e1ac7556ca719ecb6b8"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2ca31fdc3ca62e1ac7556ca719ecb6b8"
+      ],
+      "confidence": 0.8,
+      "evidence": "alkaloidal components",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Gericke and Viljoen, 2008",
+      "attributes": {
+        "year": 2008,
+        "title": "Sceletium\u2014a review update"
+      },
+      "source_chunk_ids": [
+        "2ca31fdc3ca62e1ac7556ca719ecb6b8"
+      ],
+      "confidence": 0.9,
+      "evidence": "Gericke, N. and Viljoen, A.M., 2008",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Harvey et al., 2011",
+      "attributes": {
+        "year": 2011,
+        "title": "Pharmacological actions of the South African medicinal and functional food plant Sceletium tortuosum and its principal alkaloids"
+      },
+      "source_chunk_ids": [
+        "2ca31fdc3ca62e1ac7556ca719ecb6b8"
+      ],
+      "confidence": 0.9,
+      "evidence": "Harvey, A.L., Young, L.C., Viljoen, A.M., Gericke, N.P., 2011",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Patnala and Kanfer, 2017",
+      "attributes": {
+        "year": 2017,
+        "title": "Sceletium plant species: alkaloidal components, chemistry and ethnopharmacology"
+      },
+      "source_chunk_ids": [
+        "2ca31fdc3ca62e1ac7556ca719ecb6b8"
+      ],
+      "confidence": 0.9,
+      "evidence": "Patnala, S. and Kanfer, I., 2017",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "review",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "2ca31fdc3ca62e1ac7556ca719ecb6b8"
+      ],
+      "confidence": 0.85,
+      "evidence": "review update",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "pharmacological study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "2ca31fdc3ca62e1ac7556ca719ecb6b8"
+      ],
+      "confidence": 0.8,
+      "evidence": "Pharmacological actions",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "ethnopharmacology study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "2ca31fdc3ca62e1ac7556ca719ecb6b8"
+      ],
+      "confidence": 0.8,
+      "evidence": "ethnopharmacology",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Kapewangolo et al., 2016",
+      "attributes": {
+        "design": "in vitro study",
+        "year": 2016,
+        "doi": "https://doi.org/10.1016/j.sajb.2016.06.009"
+      },
+      "source_chunk_ids": [
+        "0ff0501d6ae5c5584a3f2f5f12aec81f"
+      ],
+      "confidence": 0.95,
+      "evidence": "Kapewangolo, P., Tawha, T., Nawinda, T., Knott, M., Hans, R., 2016",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "0ff0501d6ae5c5584a3f2f5f12aec81f"
+      ],
+      "confidence": 0.9,
+      "evidence": "in vitro anti-HIV and free radical scavenging activity",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "0ff0501d6ae5c5584a3f2f5f12aec81f"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "HIV",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "0ff0501d6ae5c5584a3f2f5f12aec81f"
+      ],
+      "confidence": 0.85,
+      "evidence": "anti-HIV",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "free radical scavenging",
+      "attributes": {
+        "level": "molecular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "0ff0501d6ae5c5584a3f2f5f12aec81f"
+      ],
+      "confidence": 0.8,
+      "evidence": "free radical scavenging activity",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Faber et al., 2020",
+      "attributes": {
+        "design": "experimental study",
+        "year": 2020,
+        "doi": "10.1016/j.heliyon.2020.e05479"
+      },
+      "source_chunk_ids": [
+        "0a771b99c319075e1e7d9e7d29f302e0"
+      ],
+      "confidence": 0.95,
+      "evidence": "Faber, R.J., Laubscher, C.P., Rautenbach, F., Jimoh, M.O., 2020",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "0a771b99c319075e1e7d9e7d29f302e0"
+      ],
+      "confidence": 0.8,
+      "evidence": "hydroponics",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "0a771b99c319075e1e7d9e7d29f302e0"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum (L.) N. E. Br",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0a771b99c319075e1e7d9e7d29f302e0"
+      ],
+      "confidence": 0.9,
+      "evidence": "alkaloid concentration",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Jeffs et al., 1970",
+      "attributes": {
+        "year": 1970,
+        "doi": "10.1021/jo00835a071"
+      },
+      "source_chunk_ids": [
+        "1cd32c54615251b6816357ec644840f9"
+      ],
+      "confidence": 0.95,
+      "evidence": "Jeffs, P.W., Ahmann, G., Campbell, H.F., Farrier, D.S., Ganguli, G., Hawks, R.L., 1970",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vitro chemical analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "1cd32c54615251b6816357ec644840f9"
+      ],
+      "confidence": 0.8,
+      "evidence": "Alkaloids of Sceletium Species",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium strictum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "1cd32c54615251b6816357ec644840f9"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. Strictum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1cd32c54615251b6816357ec644840f9"
+      ],
+      "confidence": 0.85,
+      "evidence": "Alkaloids of Sceletium Species",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Krstenansky 2017 review",
+      "attributes": {
+        "design": "review",
+        "year": 2017,
+        "doi": "10.1016/j.jep.2016.12.004"
+      },
+      "source_chunk_ids": [
+        "6a1e2e773b33a5854fca964486f95c7c"
+      ],
+      "confidence": 0.95,
+      "evidence": "Krstenansky, J.L., 2017. Mesembrine alkaloids: Review",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "review article",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "6a1e2e773b33a5854fca964486f95c7c"
+      ],
+      "confidence": 0.9,
+      "evidence": "Review of their occurrence, chemistry, and pharmacology",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "mesembrine alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6a1e2e773b33a5854fca964486f95c7c"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrine alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Pigni et al., 2013",
+      "attributes": {
+        "year": 2013,
+        "doi": "https://doi.org/10.1016/j.phytochem.2013.07.010"
+      },
+      "source_chunk_ids": [
+        "87d58521d35e07a629b82db66b18e525"
+      ],
+      "confidence": 0.95,
+      "evidence": "Pigni, N.B., R\u00edos-Ruiz, S., Luque, F.J., Viladomat, F., Codina, C., Bastida, J., 2013",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "phytochemical analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "87d58521d35e07a629b82db66b18e525"
+      ],
+      "confidence": 0.8,
+      "evidence": "Phytochemistry 95, 384-393",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Ganymedes",
+      "attributes": {
+        "rank": "section"
+      },
+      "source_chunk_ids": [
+        "87d58521d35e07a629b82db66b18e525"
+      ],
+      "confidence": 0.9,
+      "evidence": "Wild daffodils of the section Ganymedes",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "mesembrane alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "87d58521d35e07a629b82db66b18e525"
+      ],
+      "confidence": 0.85,
+      "evidence": "mesembrane alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Patnala & Kanfer 2013",
+      "attributes": {
+        "year": 2013,
+        "doi": "https://doi.org/10.1590/sajs.2013/882"
+      },
+      "source_chunk_ids": [
+        "7bc4510ebed8fb10debfa4a261544fef"
+      ],
+      "confidence": 0.95,
+      "evidence": "Patnala, S., Kanfer, I., 2013",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "chemotaxonomic study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "7bc4510ebed8fb10debfa4a261544fef"
+      ],
+      "confidence": 0.85,
+      "evidence": "Chemotaxonomic studies",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "7bc4510ebed8fb10debfa4a261544fef"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium plant species",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "mesembrine-type alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7bc4510ebed8fb10debfa4a261544fef"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine-type alkaloids",
+      "verified": true
+    }
+  ],
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "indigenous people... utilized regularly",
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "Sceletium tortuosum... utilized",
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "medicinal and psycho-active properties",
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "S. tortuosum... contains... mesembrine",
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "contains the alkaloids mesembrenone",
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "main alkaloids... mesembrine",
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "alkaloids mesembrenone",
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "alkaloids... mesembrenol",
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E9",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "utilized... for... treating... depression",
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E10",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "utilized... for... treating... anxiety",
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "context": "potential",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "potential... treating... depression",
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R12",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {
+        "context": "potential",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "potential... treating... anxiety",
+      "source_chunk_ids": [
+        "8f0df5fd183461b668e58d87f0c20959"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "drying and fermenting the harvested plant material",
+      "source_chunk_ids": [
+        "9ec069554e5a7751d5096c6073c932e9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "drying and fermenting the harvested plant material",
+      "source_chunk_ids": [
+        "9ec069554e5a7751d5096c6073c932e9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "indigenous people... utilized regularly",
+      "source_chunk_ids": [
+        "98fa373f4e456283a5abd7a501336a4e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.85,
+      "evidence": "The plant... utilized regularly",
+      "source_chunk_ids": [
+        "98fa373f4e456283a5abd7a501336a4e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "medicinal and anti-depressant properties",
+      "source_chunk_ids": [
+        "98fa373f4e456283a5abd7a501336a4e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "anti-depressant properties",
+      "source_chunk_ids": [
+        "98fa373f4e456283a5abd7a501336a4e"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "the alkaloids mesembrine",
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "the alkaloids mesembrenine",
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "the alkaloids mesembrenol",
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "S. tortuosum ... mesembrine",
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "S. tortuosum ... mesembrenine",
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "S. tortuosum ... mesembrenol",
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "SUGGESTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "promotion of health ... depression",
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "SUGGESTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "promotion of health ... anxiety",
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E10",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Schultes [3] ... ethnobotanical reports",
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E11",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Harvey et al. [4] ... ethnobotanical reports",
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "STUDIES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Schultes [3] ... S. tortuosum",
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R12",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Harvey et al. [4] ... S. tortuosum",
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R13",
+      "type": "STUDIES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Studies on ... S. tortuosum",
+      "source_chunk_ids": [
+        "80a8f0b5527f0c2eb13e14dd38c4a6f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "concentration",
+          "notes": "alkaloid concentration mentioned"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "alkaloid concentration of S. tortuosum",
+      "source_chunk_ids": [
+        "09246b19e5ceb6375e454c354fff3f1b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "concentration",
+          "notes": "secondary metabolite concentration mentioned"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "secondary metabolites of medicinal plants",
+      "source_chunk_ids": [
+        "09246b19e5ceb6375e454c354fff3f1b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "alkaloids as secondary metabolites",
+      "source_chunk_ids": [
+        "09246b19e5ceb6375e454c354fff3f1b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "medicinal value related to vegetative growth",
+      "source_chunk_ids": [
+        "09246b19e5ceb6375e454c354fff3f1b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "plant has thick, succulent, green, finger-like leaves",
+      "source_chunk_ids": [
+        "a965544073fb171121a542804dffbab5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "white, star-shaped flowers are visible",
+      "source_chunk_ids": [
+        "a965544073fb171121a542804dffbab5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "leaf veins resembling skeleton-like structures within dried leaves",
+      "source_chunk_ids": [
+        "930e868196bd13938e26a3af3dab58f5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "drying and fermenting the harvested plant material",
+      "source_chunk_ids": [
+        "930e868196bd13938e26a3af3dab58f5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "drying and fermenting the harvested plant material",
+      "source_chunk_ids": [
+        "930e868196bd13938e26a3af3dab58f5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E9",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "increases its psychoactive effect",
+      "source_chunk_ids": [
+        "930e868196bd13938e26a3af3dab58f5"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "indigenous people of southern Africa used",
+      "source_chunk_ids": [
+        "cd84909d8eec057a9c31bfb903814362"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium species",
+      "source_chunk_ids": [
+        "cd84909d8eec057a9c31bfb903814362"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "vision-inducing narcotic",
+      "source_chunk_ids": [
+        "cd84909d8eec057a9c31bfb903814362"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "alkaloids have been found within both of these species of Sceletium",
+      "source_chunk_ids": [
+        "cd84909d8eec057a9c31bfb903814362"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloids possessing sedative effects",
+      "source_chunk_ids": [
+        "cd84909d8eec057a9c31bfb903814362"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "alkaloids possessing cocaine-like effects",
+      "source_chunk_ids": [
+        "cd84909d8eec057a9c31bfb903814362"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Kanna Sceletium capsules",
+      "source_chunk_ids": [
+        "ad8efb7e466b92cce9dea21e2d08f0f4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "commercial"
+      },
+      "confidence": 0.7,
+      "evidence": "tincture for anxiety",
+      "source_chunk_ids": [
+        "ff5cc044f1f36b62a7c2ae21fd919425"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "context": "commercial"
+      },
+      "confidence": 0.7,
+      "evidence": "tincture for depression",
+      "source_chunk_ids": [
+        "ff5cc044f1f36b62a7c2ae21fd919425"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "alkaloids responsible for psychoactive properties",
+      "source_chunk_ids": [
+        "f821a836d88a89acc45189d1a567ef51"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "alkaloids are mesembrine and mesembrenone",
+      "source_chunk_ids": [
+        "f821a836d88a89acc45189d1a567ef51"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "alkaloids are mesembrine and mesembrenone",
+      "source_chunk_ids": [
+        "f821a836d88a89acc45189d1a567ef51"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "ethnobotanical"
+      },
+      "confidence": 0.8,
+      "evidence": "treatment of anxiety",
+      "source_chunk_ids": [
+        "f821a836d88a89acc45189d1a567ef51"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "context": "ethnobotanical"
+      },
+      "confidence": 0.8,
+      "evidence": "treatment of stress",
+      "source_chunk_ids": [
+        "f821a836d88a89acc45189d1a567ef51"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "ethnobotanical"
+      },
+      "confidence": 0.8,
+      "evidence": "treatment of nervous tension",
+      "source_chunk_ids": [
+        "f821a836d88a89acc45189d1a567ef51"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "context": "ethnobotanical"
+      },
+      "confidence": 0.8,
+      "evidence": "treatment of alcohol addiction",
+      "source_chunk_ids": [
+        "f821a836d88a89acc45189d1a567ef51"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "context": "ethnobotanical"
+      },
+      "confidence": 0.8,
+      "evidence": "colic in infants",
+      "source_chunk_ids": [
+        "f821a836d88a89acc45189d1a567ef51"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "suppressing hunger and thirst",
+      "source_chunk_ids": [
+        "f821a836d88a89acc45189d1a567ef51"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "CAUSES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E11",
+      "attributes": {
+        "assertion": "refutes",
+        "context": "ethnobotanical"
+      },
+      "confidence": 0.7,
+      "evidence": "develops no physical or psychological dependency",
+      "source_chunk_ids": [
+        "f821a836d88a89acc45189d1a567ef51"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "people in South Africa that depend on TAMP",
+      "source_chunk_ids": [
+        "e9a46270df7e16824d018f7d19ae617e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.9,
+      "evidence": "depend on TAMP",
+      "source_chunk_ids": [
+        "e9a46270df7e16824d018f7d19ae617e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "to aid their medical needs",
+      "source_chunk_ids": [
+        "e9a46270df7e16824d018f7d19ae617e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "artemisinin is a plant product",
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "paclitaxel is a plant product",
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "ginsenoside is a plant product",
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "lycopene is a plant product",
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E2",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "resveratrol is a plant product",
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "secondary metabolites are responsible for antimicrobial",
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "secondary metabolites are responsible for anti-viral",
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E11",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "secondary metabolites cause ultra-violet trapping",
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E12",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "secondary metabolites cause allelopathy",
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E13",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "secondary metabolites cause antipathogens",
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E14",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "secondary metabolites cause antifeeding",
+      "source_chunk_ids": [
+        "13cda17bf3c61337a9cb4efdfaf18842"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Sceletium is one of the few plant genera containing mesembrine alkaloids",
+      "source_chunk_ids": [
+        "df73d1a624f0c46a79e37d399158bdc0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "S. tortuosum have been reported to contain mesembrinated",
+      "source_chunk_ids": [
+        "df73d1a624f0c46a79e37d399158bdc0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "S. atomicum have been reported to contain mesembrinated",
+      "source_chunk_ids": [
+        "df73d1a624f0c46a79e37d399158bdc0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "S. crassicaule have been reported to contain mesembrinated",
+      "source_chunk_ids": [
+        "df73d1a624f0c46a79e37d399158bdc0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "S. expansum have been reported to contain mesembrinated",
+      "source_chunk_ids": [
+        "df73d1a624f0c46a79e37d399158bdc0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "S. namaquense have been reported to contain mesembrinated",
+      "source_chunk_ids": [
+        "df73d1a624f0c46a79e37d399158bdc0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "S. strictum have been reported to contain mesembrinated",
+      "source_chunk_ids": [
+        "df73d1a624f0c46a79e37d399158bdc0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "activates"
+      },
+      "confidence": 0.75,
+      "evidence": "activated by potassium",
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "symptom of K deficiency",
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "further develops into necrosis",
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "action": "depends on"
+      },
+      "confidence": 0.75,
+      "evidence": "depend on the availability of calcium",
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {
+        "action": "requires"
+      },
+      "confidence": 0.75,
+      "evidence": "require Ca",
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "symptom of Ca deficiency",
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E13",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "cystine, cysteine, and methionine are amino acids",
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "CONTAINS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "cystine, cysteine, and methionine are amino acids",
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "CONTAINS",
+      "source_entity_id": "E15",
+      "target_entity_id": "E16",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "coenzyme A, S-adenosylmethionine, biotin, Vitamin B1 and pantothenic acid",
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "CONTAINS",
+      "source_entity_id": "E15",
+      "target_entity_id": "E17",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "coenzyme A, S-adenosylmethionine, biotin, Vitamin B1 and pantothenic acid",
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "CONTAINS",
+      "source_entity_id": "E15",
+      "target_entity_id": "E18",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "coenzyme A, S-adenosylmethionine, biotin, Vitamin B1 and pantothenic acid",
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "CONTAINS",
+      "source_entity_id": "E15",
+      "target_entity_id": "E19",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "coenzyme A, S-adenosylmethionine, biotin, Vitamin B1 and pantothenic acid",
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "CONTAINS",
+      "source_entity_id": "E15",
+      "target_entity_id": "E20",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "coenzyme A, S-adenosylmethionine, biotin, Vitamin B1 and pantothenic acid",
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "ACTS_ON",
+      "source_entity_id": "E15",
+      "target_entity_id": "E21",
+      "attributes": {
+        "action": "essential for"
+      },
+      "confidence": 0.75,
+      "evidence": "essential for optimal metabolism",
+      "source_chunk_ids": [
+        "5e790c15ae81200097f8a79b593b896d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "contain highly sought after mesembrine alkaloids",
+      "source_chunk_ids": [
+        "67c6a89c957e73df5ab8b1a78de75905"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "treating a variety of psychological disorders such as depression",
+      "source_chunk_ids": [
+        "67c6a89c957e73df5ab8b1a78de75905"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "treating a variety of psychological disorders such as anxiety",
+      "source_chunk_ids": [
+        "67c6a89c957e73df5ab8b1a78de75905"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "hydroponics... to cultivate the plant",
+      "source_chunk_ids": [
+        "67c6a89c957e73df5ab8b1a78de75905"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Sceletium\u2014a review update",
+      "source_chunk_ids": [
+        "2ca31fdc3ca62e1ac7556ca719ecb6b8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Sceletium tortuosum and its principal alkaloids",
+      "source_chunk_ids": [
+        "2ca31fdc3ca62e1ac7556ca719ecb6b8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Sceletium plant species",
+      "source_chunk_ids": [
+        "2ca31fdc3ca62e1ac7556ca719ecb6b8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "review update",
+      "source_chunk_ids": [
+        "2ca31fdc3ca62e1ac7556ca719ecb6b8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Pharmacological actions",
+      "source_chunk_ids": [
+        "2ca31fdc3ca62e1ac7556ca719ecb6b8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "ethnopharmacology",
+      "source_chunk_ids": [
+        "2ca31fdc3ca62e1ac7556ca719ecb6b8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloidal components",
+      "source_chunk_ids": [
+        "2ca31fdc3ca62e1ac7556ca719ecb6b8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "in vitro anti-HIV and free radical scavenging activity",
+      "source_chunk_ids": [
+        "0ff0501d6ae5c5584a3f2f5f12aec81f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum demonstrates",
+      "source_chunk_ids": [
+        "0ff0501d6ae5c5584a3f2f5f12aec81f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "anti-HIV",
+      "source_chunk_ids": [
+        "0ff0501d6ae5c5584a3f2f5f12aec81f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.75,
+      "evidence": "free radical scavenging activity",
+      "source_chunk_ids": [
+        "0ff0501d6ae5c5584a3f2f5f12aec81f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "in vitro"
+      },
+      "confidence": 0.7,
+      "evidence": "anti-HIV",
+      "source_chunk_ids": [
+        "0ff0501d6ae5c5584a3f2f5f12aec81f"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "free radical scavenging activity",
+      "source_chunk_ids": [
+        "0ff0501d6ae5c5584a3f2f5f12aec81f"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "hydroponics",
+      "source_chunk_ids": [
+        "0a771b99c319075e1e7d9e7d29f302e0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum",
+      "source_chunk_ids": [
+        "0a771b99c319075e1e7d9e7d29f302e0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "alkaloid concentration of Sceletium tortuosum",
+      "source_chunk_ids": [
+        "0a771b99c319075e1e7d9e7d29f302e0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Alkaloids of Sceletium Species",
+      "source_chunk_ids": [
+        "1cd32c54615251b6816357ec644840f9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Alkaloids of Sceletium Species.1 III.2 the Structures of Four New Alkaloids from S. Strictum",
+      "source_chunk_ids": [
+        "1cd32c54615251b6816357ec644840f9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "identified"
+      },
+      "confidence": 0.8,
+      "evidence": "Alkaloids of Sceletium Species",
+      "source_chunk_ids": [
+        "1cd32c54615251b6816357ec644840f9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Review of their occurrence, chemistry, and pharmacology",
+      "source_chunk_ids": [
+        "6a1e2e773b33a5854fca964486f95c7c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Mesembrine alkaloids: Review",
+      "source_chunk_ids": [
+        "6a1e2e773b33a5854fca964486f95c7c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Phytochemistry 95, 384-393",
+      "source_chunk_ids": [
+        "87d58521d35e07a629b82db66b18e525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Wild daffodils of the section Ganymedes",
+      "source_chunk_ids": [
+        "87d58521d35e07a629b82db66b18e525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "present"
+      },
+      "confidence": 0.8,
+      "evidence": "source of mesembrane alkaloids",
+      "source_chunk_ids": [
+        "87d58521d35e07a629b82db66b18e525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Chemotaxonomic studies",
+      "source_chunk_ids": [
+        "7bc4510ebed8fb10debfa4a261544fef"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Sceletium plant species",
+      "source_chunk_ids": [
+        "7bc4510ebed8fb10debfa4a261544fef"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "mesembrine-type alkaloids",
+      "source_chunk_ids": [
+        "7bc4510ebed8fb10debfa4a261544fef"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

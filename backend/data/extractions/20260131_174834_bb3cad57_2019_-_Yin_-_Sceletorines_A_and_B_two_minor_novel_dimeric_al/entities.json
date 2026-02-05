@@ -1,365 +1,2587 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "860ac564e8bfc965037f00c7dae2d4e8e5b167683e8f8972134b4944e439e94f",
-  "extracted_at": "2026-02-01T08:55:28.408307+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
+      "id": "E1",
       "type": "Compound",
-      "name": "1",
-      "attributes": {
-        "context": "data of 1"
-      },
+      "name": "Sceletorine A",
+      "attributes": {},
       "source_chunk_ids": [
-        "c76c03d6b7c90bda8c338150aa9c26c6"
-      ]
+        "5e500352e4f391d893b5328f06ba55e9"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletorines A and B, two unique alkaloids",
+      "verified": true
     },
     {
-      "id": "ent_002",
+      "id": "E2",
       "type": "Compound",
-      "name": "2",
-      "attributes": {
-        "context": "data of 2"
-      },
+      "name": "Sceletorine B",
+      "attributes": {},
       "source_chunk_ids": [
-        "c76c03d6b7c90bda8c338150aa9c26c6"
-      ]
+        "5e500352e4f391d893b5328f06ba55e9"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletorines A and B, two unique alkaloids",
+      "verified": true
     },
     {
-      "id": "ent_003",
-      "type": "Compound",
-      "name": "CDCl_3",
-      "attributes": {
-        "context": "recorded in ^{a}CDCl_3"
-      },
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
       "source_chunk_ids": [
-        "ed9a78e01d0b4616c8457d99eeb209ad"
-      ]
+        "5e500352e4f391d893b5328f06ba55e9"
+      ],
+      "confidence": 0.95,
+      "evidence": "two unique alkaloids",
+      "verified": true
     },
     {
-      "id": "ent_004",
-      "type": "Compound",
-      "name": "C_6D_6",
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Mesembryanthemum tortuosum",
       "attributes": {
-        "context": "recorded in ^{a}CDCl_3, ^{b}C_6D_6"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "ed9a78e01d0b4616c8457d99eeb209ad"
-      ]
+        "5e500352e4f391d893b5328f06ba55e9"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembryanthemum tortuosum",
+      "verified": true
     },
     {
-      "id": "ent_005",
+      "id": "E5",
+      "type": "PlantPart",
+      "name": "aerial parts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5e500352e4f391d893b5328f06ba55e9"
+      ],
+      "confidence": 0.85,
+      "evidence": "aerial parts of Mesembryanthemum tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E6",
       "type": "Compound",
-      "name": "C_3D_6O",
+      "name": "channaine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5e500352e4f391d893b5328f06ba55e9"
+      ],
+      "confidence": 0.8,
+      "evidence": "previously assumed artifact, channaine",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Mesembryanthemum tortuosum",
       "attributes": {
-        "context": "recorded in ^{a}CDCl_3, ^{b}C_6D_6, and ^{c}C_3D_6O"
+        "rank": "species",
+        "synonyms": "Sceletium tortuosum"
       },
       "source_chunk_ids": [
-        "ed9a78e01d0b4616c8457d99eeb209ad"
-      ]
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembryanthemum tortuosum L. (synonym Sceletium tortuosum)",
+      "verified": true
     },
     {
-      "id": "ent_006",
+      "id": "E2",
+      "type": "Culture",
+      "name": "Khoi",
+      "attributes": {},
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "confidence": 0.8,
+      "evidence": "locally referred to as \u201ckanna\u201d or \u201ccanna\u201d (Khoi)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Afrikaans",
+      "attributes": {},
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "confidence": 0.8,
+      "evidence": "\u201ckougoed\u201d (Afrikaans)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "UseRecord",
+      "name": "UseRecord: Traditional \u2013 M. tortuosum \u2013 CNS conditions",
+      "attributes": {
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "confidence": 0.85,
+      "evidence": "traditionally used to treat central nervous system (CNS) conditions",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "confidence": 0.9,
+      "evidence": "depression",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "stress",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "confidence": 0.9,
+      "evidence": "stress",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "confidence": 0.9,
+      "evidence": "anxiety",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "TraditionalUse",
+      "name": "relief of thirst and hunger",
+      "attributes": {},
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "confidence": 0.85,
+      "evidence": "relief of thirst and hunger",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Zhao et al., 2018",
+      "attributes": {
+        "year": 2018,
+        "design": "metabolomic study"
+      },
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "confidence": 0.8,
+      "evidence": "Zhao et al., 2018",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "confidence": 0.7,
+      "evidence": "metabolomic study",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "CompoundClass",
+      "name": "mesembrine type alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine type alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Compound",
+      "name": "mesembrenol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrenol",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Effect",
+      "name": "psychoactive activities",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "confidence": 0.85,
+      "evidence": "psychoactive activities",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "M. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "62171ed1cf3f5e0b2044d300069d9365"
+      ],
+      "confidence": 0.95,
+      "evidence": "M. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "sceletorine A",
+      "attributes": {},
+      "source_chunk_ids": [
+        "62171ed1cf3f5e0b2044d300069d9365"
+      ],
+      "confidence": 0.9,
+      "evidence": "sceletorine A (1)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "sceletorine B",
+      "attributes": {},
+      "source_chunk_ids": [
+        "62171ed1cf3f5e0b2044d300069d9365"
+      ],
+      "confidence": 0.9,
+      "evidence": "sceletorine B (2)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "62171ed1cf3f5e0b2044d300069d9365"
+      ],
+      "confidence": 0.85,
+      "evidence": "novel alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "channaine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "62171ed1cf3f5e0b2044d300069d9365"
+      ],
+      "confidence": 0.8,
+      "evidence": "precursor of channaine",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "N-desmethylmesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "62171ed1cf3f5e0b2044d300069d9365"
+      ],
+      "confidence": 0.75,
+      "evidence": "condensation of N-desmethylmesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "S. strictum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "62171ed1cf3f5e0b2044d300069d9365"
+      ],
+      "confidence": 0.8,
+      "evidence": "S. strictum",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "RawMaterial",
+      "name": "methanol extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "62171ed1cf3f5e0b2044d300069d9365"
+      ],
+      "confidence": 0.7,
+      "evidence": "methanol extract of the plant",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Jeffs et al., 1978",
+      "attributes": {
+        "year": 1978
+      },
+      "source_chunk_ids": [
+        "62171ed1cf3f5e0b2044d300069d9365"
+      ],
+      "confidence": 0.8,
+      "evidence": "Jeffs et al., 1978",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "Veale et al., 2018",
+      "attributes": {
+        "year": 2018
+      },
+      "source_chunk_ids": [
+        "62171ed1cf3f5e0b2044d300069d9365"
+      ],
+      "confidence": 0.8,
+      "evidence": "Veale et al., 2018",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Compound",
       "name": "compound 1",
       "attributes": {
-        "context": "correlations of compound 1"
+        "description": "complex dimeric alkaloid with two indole-like rings and a central bridged system"
       },
       "source_chunk_ids": [
-        "1687f3c9e784b5176266eec39877666f"
-      ]
+        "b2fa4f2afa66456c5b68b112e15a8553"
+      ],
+      "confidence": 0.9,
+      "evidence": "Compound 1 is a complex dimeric alkaloid",
+      "verified": true
     },
     {
-      "id": "ent_007",
+      "id": "E2",
+      "type": "Compound",
+      "name": "compound 2",
+      "attributes": {
+        "description": "similar dimeric alkaloid with a different bridged system and a carbonyl group"
+      },
+      "source_chunk_ids": [
+        "b2fa4f2afa66456c5b68b112e15a8553"
+      ],
+      "confidence": 0.9,
+      "evidence": "Compound 2 is a similar dimeric alkaloid",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b2fa4f2afa66456c5b68b112e15a8553"
+      ],
+      "confidence": 0.8,
+      "evidence": "dimeric alkaloid",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "Sceletorine A",
+      "attributes": {
+        "molecular_formula": "C33H41N2O5"
+      },
+      "source_chunk_ids": [
+        "fc4597e18410323b2749f0e83cebde19"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletorine A (1) was isolated",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine type alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1988bff51f5c4013efd652188d8732e5"
+      ],
+      "confidence": 0.85,
+      "evidence": "mesembrine type alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1988bff51f5c4013efd652188d8732e5"
+      ],
+      "confidence": 0.8,
+      "evidence": "mesembrine type alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Bastida et al., 1989",
+      "attributes": {
+        "year": 1989
+      },
+      "source_chunk_ids": [
+        "1988bff51f5c4013efd652188d8732e5"
+      ],
+      "confidence": 0.9,
+      "evidence": "Bastida et al., 1989",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Chavan et al., 2004",
+      "attributes": {
+        "year": 2004
+      },
+      "source_chunk_ids": [
+        "1988bff51f5c4013efd652188d8732e5"
+      ],
+      "confidence": 0.9,
+      "evidence": "Chavan et al., 2004",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "spectroscopic analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "1988bff51f5c4013efd652188d8732e5"
+      ],
+      "confidence": 0.75,
+      "evidence": "NMR spectra suggested the presence",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1bf7f0f316aa10c5cf7163adf49cc6dd"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine alkaloid type",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1bf7f0f316aa10c5cf7163adf49cc6dd"
+      ],
+      "confidence": 0.85,
+      "evidence": "mesembrine alkaloid type",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Compound",
       "name": "compound 1",
       "attributes": {
-        "context": "chemical structures of compound 1"
+        "absolute_configuration": "3aR,7aS,3a'S,7'S"
       },
       "source_chunk_ids": [
-        "1687f3c9e784b5176266eec39877666f"
-      ]
+        "75d68ba69294d53a73506a7bd01eb0ba"
+      ],
+      "confidence": 0.95,
+      "evidence": "compound 1",
+      "verified": true
     },
     {
-      "id": "ent_008",
-      "type": "Compound",
-      "name": "1",
+      "id": "E2",
+      "type": "Study",
+      "name": "Ding et al., 2007, 2010; Li et al., 2015; Yang et al., 2014",
       "attributes": {
-        "context": "correlations of 1"
+        "year": "2007, 2010, 2015, 2014",
+        "design": "computational chemistry"
       },
       "source_chunk_ids": [
-        "baa1de63f921cb3913b3e50f93603d2b"
-      ]
+        "75d68ba69294d53a73506a7bd01eb0ba"
+      ],
+      "confidence": 0.85,
+      "evidence": "Ding et al., 2007, 2010; Li et al., 2015; Yang et al., 2014",
+      "verified": true
     },
     {
-      "id": "ent_009",
-      "type": "Compound",
-      "name": "compound 1",
+      "id": "E3",
+      "type": "Evidence",
+      "name": "computational modeling",
       "attributes": {
-        "context": "configurations of compound 1"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
-        "63d47e7c9630be596b2a4e9674382e6f"
-      ]
+        "75d68ba69294d53a73506a7bd01eb0ba"
+      ],
+      "confidence": 0.8,
+      "evidence": "ECD spectra were calculated",
+      "verified": true
     },
     {
-      "id": "ent_010",
-      "type": "Compound",
-      "name": "1a",
-      "attributes": {
-        "context": "chemical structures, 1a and 1b"
-      },
-      "source_chunk_ids": [
-        "63d47e7c9630be596b2a4e9674382e6f"
-      ]
-    },
-    {
-      "id": "ent_011",
-      "type": "Compound",
-      "name": "1b",
-      "attributes": {
-        "context": "chemical structures, 1a and 1b"
-      },
-      "source_chunk_ids": [
-        "63d47e7c9630be596b2a4e9674382e6f"
-      ]
-    },
-    {
-      "id": "ent_012",
+      "id": "E1",
       "type": "Compound",
       "name": "Sceletorine B",
       "attributes": {
-        "context": "Sceletorine B (2) was obtained"
+        "molecular_formula": "C33H40N2O5"
       },
       "source_chunk_ids": [
         "7b7061b06dccba293d713fdf236c66b0"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletorine B (2) was obtained",
+      "verified": true
     },
     {
-      "id": "ent_013",
+      "id": "E1",
+      "type": "Compound",
+      "name": "compound 2",
+      "attributes": {
+        "description": "dimeric alkaloid with non-conjugated carbonyl, N-methyl, four methoxy groups, two 1,3,4-trisubstituted phenyl groups"
+      },
+      "source_chunk_ids": [
+        "c6efe8a66c09d0cc3293f6fd31e92147"
+      ],
+      "confidence": 0.9,
+      "evidence": "2 is also a dimeric alkaloid",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c6efe8a66c09d0cc3293f6fd31e92147"
+      ],
+      "confidence": 0.85,
+      "evidence": "dimeric alkaloid",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d39c52950af0ffd2c47ff9cf7bf382e6"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine type alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d39c52950af0ffd2c47ff9cf7bf382e6"
+      ],
+      "confidence": 0.85,
+      "evidence": "mesembrine type alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "compound 2",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d39c52950af0ffd2c47ff9cf7bf382e6"
+      ],
+      "confidence": 0.95,
+      "evidence": "compound 2",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "ECD analysis of compound 2",
+      "attributes": {
+        "design": "computational ECD analysis"
+      },
+      "source_chunk_ids": [
+        "d39c52950af0ffd2c47ff9cf7bf382e6"
+      ],
+      "confidence": 0.8,
+      "evidence": "ECD spectra were calculated",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in silico",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "d39c52950af0ffd2c47ff9cf7bf382e6"
+      ],
+      "confidence": 0.75,
+      "evidence": "ECD spectra were calculated",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "N-desmethylmesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "confidence": 0.9,
+      "evidence": "N-desmethylmesembrine unit",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "dimer (1)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "confidence": 0.85,
+      "evidence": "unique dimer (1)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "tetracyclic intermediate",
+      "attributes": {},
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "confidence": 0.8,
+      "evidence": "tetracyclic intermediate",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "compound 1",
+      "attributes": {},
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "confidence": 0.85,
+      "evidence": "compound 1",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "pentacyclic compound 2",
+      "attributes": {},
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "confidence": 0.85,
+      "evidence": "pentacyclic compound 2",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "N-demethylmesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "confidence": 0.9,
+      "evidence": "N-demethylmesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Compound",
+      "name": "enamine/iminium intermediate",
+      "attributes": {},
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "confidence": 0.8,
+      "evidence": "enamine/iminium intermediate",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Compound",
+      "name": "amino-enone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "confidence": 0.8,
+      "evidence": "amino-enone",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Compound",
+      "name": "aminol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "confidence": 0.8,
+      "evidence": "aminol",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Compound",
+      "name": "hemiacetal",
+      "attributes": {},
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "confidence": 0.8,
+      "evidence": "hemiacetal",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Compound",
+      "name": "channaine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "confidence": 0.85,
+      "evidence": "channaine",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "CompoundClass",
+      "name": "dimeric alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "confidence": 0.9,
+      "evidence": "dimeric alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "CompoundClass",
+      "name": "monomeric mesembrine alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "confidence": 0.9,
+      "evidence": "monomeric mesembrine alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Target",
+      "name": "cytochrome P450",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "confidence": 0.85,
+      "evidence": "cytochrome P450",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Taxon",
+      "name": "M. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "confidence": 0.9,
+      "evidence": "M. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "Study",
+      "name": "Guo et al., 2012",
+      "attributes": {
+        "year": 2012
+      },
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "confidence": 0.9,
+      "evidence": "Guo et al., 2012",
+      "verified": true
+    },
+    {
+      "id": "E18",
+      "type": "Evidence",
+      "name": "biogenetic proposal",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "confidence": 0.8,
+      "evidence": "proposed biogenesis",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "M. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "ec9d645a9c2ccca8c86b3b651be55db4"
+      ],
+      "confidence": 0.9,
+      "evidence": "M. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "freshly prepared extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ec9d645a9c2ccca8c86b3b651be55db4"
+      ],
+      "confidence": 0.8,
+      "evidence": "freshly prepared extract",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "mesembrine-type mono alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ec9d645a9c2ccca8c86b3b651be55db4"
+      ],
+      "confidence": 0.85,
+      "evidence": "mesembrine-type mono alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ec9d645a9c2ccca8c86b3b651be55db4"
+      ],
+      "confidence": 0.7,
+      "evidence": "mesembrine-type mono alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "M. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f8af571942c4798145fd8bde44cf0534"
+      ],
+      "confidence": 0.9,
+      "evidence": "M. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "aerial parts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f8af571942c4798145fd8bde44cf0534"
+      ],
+      "confidence": 0.85,
+      "evidence": "aerial parts of M. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "collection study 2012",
+      "attributes": {
+        "year": 2012,
+        "location": "Farm Vredelus, Uhlenhorst, Namibia"
+      },
+      "source_chunk_ids": [
+        "f8af571942c4798145fd8bde44cf0534"
+      ],
+      "confidence": 0.8,
+      "evidence": "collected (2012) from cultivated material",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "collection record",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "f8af571942c4798145fd8bde44cf0534"
+      ],
+      "confidence": 0.75,
+      "evidence": "collected (2012)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "M. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "6fe8a3786922b3c6ab1da9ffb4a7d6f2"
+      ],
+      "confidence": 0.95,
+      "evidence": "M. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "aerial parts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6fe8a3786922b3c6ab1da9ffb4a7d6f2"
+      ],
+      "confidence": 0.9,
+      "evidence": "aerial parts of M. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "methanol extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6fe8a3786922b3c6ab1da9ffb4a7d6f2"
+      ],
+      "confidence": 0.85,
+      "evidence": "methanol extracts (256.1 g)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "alkaloid extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6fe8a3786922b3c6ab1da9ffb4a7d6f2"
+      ],
+      "confidence": 0.85,
+      "evidence": "alkaloid extract (40.8 g)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "Compound 1",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6fe8a3786922b3c6ab1da9ffb4a7d6f2"
+      ],
+      "confidence": 0.8,
+      "evidence": "Compound 1 (1.7 mg)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Preparation",
+      "name": "extraction with methanol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6fe8a3786922b3c6ab1da9ffb4a7d6f2"
+      ],
+      "confidence": 0.75,
+      "evidence": "extracted with methanol",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Preparation",
+      "name": "acid-base extraction",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6fe8a3786922b3c6ab1da9ffb4a7d6f2"
+      ],
+      "confidence": 0.7,
+      "evidence": "suspended in 5% HCl, basified with NH4OH",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Preparation",
+      "name": "chromatography",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6fe8a3786922b3c6ab1da9ffb4a7d6f2"
+      ],
+      "confidence": 0.7,
+      "evidence": "chromatographed on a silica gel column",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Preparation",
+      "name": "preparative TLC",
+      "attributes": {
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "6fe8a3786922b3c6ab1da9ffb4a7d6f2"
+      ],
+      "confidence": 0.65,
+      "evidence": "by preparative TLC",
+      "verified": false
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "Mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cce69c3ae0c0194c8b26f12fc96613f8"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrine (Ar = 3,4-Dimethoxyphenyl)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "N-Desmethyimesembranone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cce69c3ae0c0194c8b26f12fc96613f8"
+      ],
+      "confidence": 0.9,
+      "evidence": "N-Desmethyimesembranone (Ar = 3,4-Dimethoxyphenyl)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "N-Desmethyimesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cce69c3ae0c0194c8b26f12fc96613f8"
+      ],
+      "confidence": 0.9,
+      "evidence": "N-Desmethyimesembrine (R = H)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "Compound 1",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cce69c3ae0c0194c8b26f12fc96613f8"
+      ],
+      "confidence": 0.85,
+      "evidence": "Compound 1 (1)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "Compound 2",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cce69c3ae0c0194c8b26f12fc96613f8"
+      ],
+      "confidence": 0.85,
+      "evidence": "Compound 2 (2, R = Me)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "Channanine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cce69c3ae0c0194c8b26f12fc96613f8"
+      ],
+      "confidence": 0.9,
+      "evidence": "leading to Channanine",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "Compound 2",
+      "attributes": {},
+      "source_chunk_ids": [
+        "06b2ab9a5cbe9b410dace41606249c1c"
+      ],
+      "confidence": 0.9,
+      "evidence": "Compound 2 (3.5 mg) was isolated",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "subfraction 21",
+      "attributes": {},
+      "source_chunk_ids": [
+        "06b2ab9a5cbe9b410dace41606249c1c"
+      ],
+      "confidence": 0.8,
+      "evidence": "isolated from subfraction 21",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Preparation",
+      "name": "semi preparative reversed phase HPLC",
+      "attributes": {},
+      "source_chunk_ids": [
+        "06b2ab9a5cbe9b410dace41606249c1c"
+      ],
+      "confidence": 0.85,
+      "evidence": "by semi preparative reversed phase HPLC",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Compound",
       "name": "C33H40N2O5",
       "attributes": {
-        "context": "Its molecular formula, C33H40N2O5"
+        "formula": "C33H40N2O5",
+        "physical_state": "colorless solid",
+        "optical_rotation": "[\u03b1]D^26 +60 (c 0.02, CH3OH)",
+        "uv_spectrum": "UV (CH3OH) \u03bbmax (log \u03b5) 279.1 (3.30) nm",
+        "ir_spectrum": "IR (neat) \u03bdmax 2951, 1706, 1695, 1634, 1522, 1455, 1422, 1388, 1260, 1154, 1031, 830, 769 cm^-1",
+        "hrms": "HRESIMS: m/z 545.3073 [M+H]+ (calcd for C33H41N2O5, 545.3015)",
+        "nmr": "1H NMR and 13C NMR data: see Table 1"
       },
       "source_chunk_ids": [
-        "7b7061b06dccba293d713fdf236c66b0"
-      ]
-    },
-    {
-      "id": "ent_014",
-      "type": "Compound",
-      "name": "C33H41N2O5",
-      "attributes": {
-        "context": "calc'd. for C33H41N2O5"
-      },
-      "source_chunk_ids": [
-        "7b7061b06dccba293d713fdf236c66b0"
-      ]
-    },
-    {
-      "id": "ent_015",
-      "type": "Compound",
-      "name": "2",
-      "attributes": {
-        "context": "demonstrated that 2 contained a non-conjugated carbonyl group"
-      },
-      "source_chunk_ids": [
-        "c6efe8a66c09d0cc3293f6fd31e92147"
-      ]
-    },
-    {
-      "id": "ent_016",
-      "type": "Compound",
-      "name": "non-conjugated carbonyl group",
-      "attributes": {
-        "context": "2 contained a non-conjugated carbonyl group"
-      },
-      "source_chunk_ids": [
-        "c6efe8a66c09d0cc3293f6fd31e92147"
-      ]
-    },
-    {
-      "id": "ent_017",
-      "type": "Compound",
-      "name": "N-methyl",
-      "attributes": {
-        "context": "2 contained ... N-methyl"
-      },
-      "source_chunk_ids": [
-        "c6efe8a66c09d0cc3293f6fd31e92147"
-      ]
-    },
-    {
-      "id": "ent_018",
-      "type": "Compound",
-      "name": "methoxy groups",
-      "attributes": {
-        "context": "2 contained ... four methoxy groups"
-      },
-      "source_chunk_ids": [
-        "c6efe8a66c09d0cc3293f6fd31e92147"
-      ]
-    },
-    {
-      "id": "ent_019",
-      "type": "Compound",
-      "name": "1,3,4-trisubstituted phenyl groups",
-      "attributes": {
-        "context": "2 contained ... two 1,3,4-trisubstituted phenyl groups"
-      },
-      "source_chunk_ids": [
-        "c6efe8a66c09d0cc3293f6fd31e92147"
-      ]
-    },
-    {
-      "id": "ent_020",
-      "type": "Compound",
-      "name": "dimeric alkaloid",
-      "attributes": {
-        "context": "2 is also a dimeric alkaloid"
-      },
-      "source_chunk_ids": [
-        "c6efe8a66c09d0cc3293f6fd31e92147"
-      ]
-    },
-    {
-      "id": "ent_021",
-      "type": "Compound",
-      "name": "3aR,7aS,3a'S,7'S- configuration of compound 1",
-      "attributes": {
-        "context": "3aR,7aS,3a'S,7'S- configuration of compound 1"
-      },
-      "source_chunk_ids": [
-        "2ee714c6b0c32ecd42694353f79e205a"
-      ]
-    },
-    {
-      "id": "ent_022",
-      "type": "Compound",
-      "name": "1",
-      "attributes": {
-        "context": "spectra of 1"
-      },
-      "source_chunk_ids": [
-        "ca10cba23a30b8154f20488cb42335e3"
-      ]
-    },
-    {
-      "id": "ent_023",
-      "type": "Compound",
-      "name": "methanol",
-      "attributes": {
-        "context": "recorded in methanol"
-      },
-      "source_chunk_ids": [
-        "ca10cba23a30b8154f20488cb42335e3"
-      ]
-    },
-    {
-      "id": "ent_024",
-      "type": "Compound",
-      "name": "methanol",
-      "attributes": {
-        "context": "recorded in methanol"
-      },
-      "source_chunk_ids": [
-        "56ab217adee7523e6141b3f4f73b6f83"
-      ]
-    },
-    {
-      "id": "ent_025",
-      "type": "Compound",
-      "name": "1",
-      "attributes": {
-        "context": "spectra of 1"
-      },
-      "source_chunk_ids": [
-        "56ab217adee7523e6141b3f4f73b6f83"
-      ]
-    },
-    {
-      "id": "ent_026",
-      "type": "Compound",
-      "name": "C18",
-      "attributes": {
-        "context": "using RP-C18 column"
-      },
-      "source_chunk_ids": [
-        "47f77acc144ad70d20e3a1a1cdb61645"
-      ]
-    },
-    {
-      "id": "ent_027",
-      "type": "Compound",
-      "name": "acetonitrile",
-      "attributes": {
-        "context": "HPLC grade acetonitrile and water were used as eluting solvents"
-      },
-      "source_chunk_ids": [
-        "47f77acc144ad70d20e3a1a1cdb61645"
-      ]
-    },
-    {
-      "id": "ent_028",
-      "type": "Compound",
-      "name": "water",
-      "attributes": {
-        "context": "acetonitrile and water were used as eluting solvents"
-      },
-      "source_chunk_ids": [
-        "47f77acc144ad70d20e3a1a1cdb61645"
-      ]
-    },
-    {
-      "id": "ent_029",
-      "type": "Compound",
-      "name": "silica gel",
-      "attributes": {
-        "context": "Analtech uniplate silica gel plates"
-      },
-      "source_chunk_ids": [
-        "47f77acc144ad70d20e3a1a1cdb61645"
-      ]
-    },
-    {
-      "id": "ent_030",
-      "type": "Compound",
-      "name": "silica gel F254",
-      "attributes": {
-        "context": "pre-coated with silica gel F254"
-      },
-      "source_chunk_ids": [
-        "47f77acc144ad70d20e3a1a1cdb61645"
-      ]
-    },
-    {
-      "id": "ent_031",
-      "type": "Compound",
-      "name": "Dragendorff's solution",
-      "attributes": {
-        "context": "visualized by Dragendorff's and vanillin staining solutions"
-      },
-      "source_chunk_ids": [
-        "47f77acc144ad70d20e3a1a1cdb61645"
-      ]
-    },
-    {
-      "id": "ent_032",
-      "type": "Compound",
-      "name": "vanillin",
-      "attributes": {
-        "context": "and vanillin staining solutions"
-      },
-      "source_chunk_ids": [
-        "47f77acc144ad70d20e3a1a1cdb61645"
-      ]
+        "68891bc611a0a2c846fbf7b39e495500"
+      ],
+      "confidence": 0.95,
+      "evidence": "C33H40N2O5; colorless solid",
+      "verified": true
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.073646+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "isolated from the aerial parts of Mesembryanthemum tortuosum",
+      "source_chunk_ids": [
+        "5e500352e4f391d893b5328f06ba55e9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "isolated from the aerial parts of Mesembryanthemum tortuosum",
+      "source_chunk_ids": [
+        "5e500352e4f391d893b5328f06ba55e9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Sceletorines A and B, two unique alkaloids",
+      "source_chunk_ids": [
+        "5e500352e4f391d893b5328f06ba55e9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Sceletorines A and B, two unique alkaloids",
+      "source_chunk_ids": [
+        "5e500352e4f391d893b5328f06ba55e9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_PART",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "aerial parts of Mesembryanthemum tortuosum",
+      "source_chunk_ids": [
+        "5e500352e4f391d893b5328f06ba55e9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Khoi referred to as \u201ckanna\u201d",
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_USE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Afrikaans referred to as \u201ckougoed\u201d",
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.9,
+      "evidence": "M. tortuosum is traditionally used",
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "treat depression",
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "treat stress",
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "treat anxiety",
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "relief of thirst and hunger",
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "metabolomic study",
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "exploring chemotypic variation in S. tortuosum",
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "mesembrine are constituents of the plant",
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E13",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "mesembrenone are constituents of the plant",
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "mesembrenol are constituents of the plant",
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E15",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "mesembranol are constituents of the plant",
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "mesembrine type alkaloids",
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "mesembrine type alkaloids",
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E14",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "mesembrine type alkaloids",
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R17",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E15",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "mesembrine type alkaloids",
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R18",
+      "type": "PRODUCES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E16",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "responsible for psychoactive activities",
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R19",
+      "type": "PRODUCES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E16",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "responsible for psychoactive activities",
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R20",
+      "type": "PRODUCES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E16",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "responsible for psychoactive activities",
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R21",
+      "type": "PRODUCES",
+      "source_entity_id": "E15",
+      "target_entity_id": "E16",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "responsible for psychoactive activities",
+      "source_chunk_ids": [
+        "49fa42cdd3dbac22b64556e35d223271"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "isolation of sceletorine A from M. tortuosum",
+      "source_chunk_ids": [
+        "62171ed1cf3f5e0b2044d300069d9365"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "isolation of sceletorine B from M. tortuosum",
+      "source_chunk_ids": [
+        "62171ed1cf3f5e0b2044d300069d9365"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "sceletorine A is an alkaloid",
+      "source_chunk_ids": [
+        "62171ed1cf3f5e0b2044d300069d9365"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "sceletorine B is an alkaloid",
+      "source_chunk_ids": [
+        "62171ed1cf3f5e0b2044d300069d9365"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "compound 2 appears to be a precursor of channaine",
+      "source_chunk_ids": [
+        "62171ed1cf3f5e0b2044d300069d9365"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "channaine from condensation of N-desmethylmesembrenone",
+      "source_chunk_ids": [
+        "62171ed1cf3f5e0b2044d300069d9365"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "channaine reported from S. strictum",
+      "source_chunk_ids": [
+        "62171ed1cf3f5e0b2044d300069d9365"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "channaine isolated from M. tortuosum",
+      "source_chunk_ids": [
+        "62171ed1cf3f5e0b2044d300069d9365"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "CONTAINS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E2",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "sceletorine A in methanol extract",
+      "source_chunk_ids": [
+        "62171ed1cf3f5e0b2044d300069d9365"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R10",
+      "type": "CONTAINS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E3",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "sceletorine B in methanol extract",
+      "source_chunk_ids": [
+        "62171ed1cf3f5e0b2044d300069d9365"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R11",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Jeffs et al. from S. strictum",
+      "source_chunk_ids": [
+        "62171ed1cf3f5e0b2044d300069d9365"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "STUDIES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Veale et al. from M. tortuosum",
+      "source_chunk_ids": [
+        "62171ed1cf3f5e0b2044d300069d9365"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "dimeric alkaloid",
+      "source_chunk_ids": [
+        "b2fa4f2afa66456c5b68b112e15a8553"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "dimeric alkaloid",
+      "source_chunk_ids": [
+        "b2fa4f2afa66456c5b68b112e15a8553"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "mesembrine type alkaloids",
+      "source_chunk_ids": [
+        "1988bff51f5c4013efd652188d8732e5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Bastida et al., 1989",
+      "source_chunk_ids": [
+        "1988bff51f5c4013efd652188d8732e5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Chavan et al., 2004",
+      "source_chunk_ids": [
+        "1988bff51f5c4013efd652188d8732e5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "characterization",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Bastida et al., 1989",
+      "source_chunk_ids": [
+        "1988bff51f5c4013efd652188d8732e5"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "characterization",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Chavan et al., 2004",
+      "source_chunk_ids": [
+        "1988bff51f5c4013efd652188d8732e5"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "mesembrine alkaloid type",
+      "source_chunk_ids": [
+        "1bf7f0f316aa10c5cf7163adf49cc6dd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "ECD spectra were calculated",
+      "source_chunk_ids": [
+        "75d68ba69294d53a73506a7bd01eb0ba"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "assign the exact AC of compound 1",
+      "source_chunk_ids": [
+        "75d68ba69294d53a73506a7bd01eb0ba"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "2 is also a dimeric alkaloid",
+      "source_chunk_ids": [
+        "c6efe8a66c09d0cc3293f6fd31e92147"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "mesembrine type alkaloids",
+      "source_chunk_ids": [
+        "d39c52950af0ffd2c47ff9cf7bf382e6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "ECD spectra were calculated",
+      "source_chunk_ids": [
+        "d39c52950af0ffd2c47ff9cf7bf382e6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "ECD spectra were calculated to facilitate the AC assignment of compound 2",
+      "source_chunk_ids": [
+        "d39c52950af0ffd2c47ff9cf7bf382e6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "mechanism": "oxidative keto-enamine coupling"
+      },
+      "confidence": 0.8,
+      "evidence": "oxidative keto-enamine coupling of mesembrine",
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "mechanism": "oxidative keto-enamine coupling"
+      },
+      "confidence": 0.8,
+      "evidence": "coupling with N-desmethylmesembrine unit",
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "yield a tetracyclic intermediate",
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "steps": "proton rearrangement, allylic oxidation, elimination"
+      },
+      "confidence": 0.75,
+      "evidence": "results in compound 1",
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mechanism": "intramolecular Michael addition"
+      },
+      "confidence": 0.8,
+      "evidence": "envisioned from intramolecular Michael addition",
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mechanism": "intramolecular Michael addition"
+      },
+      "confidence": 0.8,
+      "evidence": "addition to N-demethylmesembrenone",
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "via enamine/iminium intermediate",
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {
+        "mechanism": "P450 mediated allylic oxidation, rearrangement"
+      },
+      "confidence": 0.7,
+      "evidence": "could yield amino-enone",
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E10",
+      "attributes": {
+        "mechanism": "P450 mediated allylic oxidation, rearrangement"
+      },
+      "confidence": 0.7,
+      "evidence": "could yield aminol",
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E11",
+      "attributes": {
+        "mechanism": "P450 mediated allylic oxidation, rearrangement"
+      },
+      "confidence": 0.7,
+      "evidence": "could yield hemiacetal",
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E12",
+      "attributes": {
+        "mechanism": "P450 mediated allylic oxidation, rearrangement"
+      },
+      "confidence": 0.7,
+      "evidence": "could yield channaine",
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E13",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "dimeric alkaloids",
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "monomeric mesembrine alkaloids",
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "ACTS_ON",
+      "source_entity_id": "E15",
+      "target_entity_id": "E8",
+      "attributes": {
+        "action": "mediated oxidation"
+      },
+      "confidence": 0.75,
+      "evidence": "P450 mediated allylic oxidation",
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "CONTAINS",
+      "source_entity_id": "E16",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "monomeric mesembrine alkaloids in M. tortuosum",
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E17",
+      "target_entity_id": "E18",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Guo et al., 2012 proposed biogenesis",
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R17",
+      "type": "STUDIES",
+      "source_entity_id": "E17",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "compound"
+      },
+      "confidence": 0.85,
+      "evidence": "Guo et al., 2012 on mesembrine",
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R18",
+      "type": "STUDIES",
+      "source_entity_id": "E17",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "compound"
+      },
+      "confidence": 0.85,
+      "evidence": "Guo et al., 2012 on N-desmethylmesembrine",
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R19",
+      "type": "STUDIES",
+      "source_entity_id": "E17",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "compound"
+      },
+      "confidence": 0.85,
+      "evidence": "Guo et al., 2012 on N-demethylmesembrenone",
+      "source_chunk_ids": [
+        "45cb5b82671dcbb57ec3c3463b09a582"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "natural secondary metabolites of mesembrine-type mono alkaloids present in M. tortuosum",
+      "source_chunk_ids": [
+        "ec9d645a9c2ccca8c86b3b651be55db4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "presence in freshly prepared extract",
+      "source_chunk_ids": [
+        "ec9d645a9c2ccca8c86b3b651be55db4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "mesembrine-type mono alkaloids",
+      "source_chunk_ids": [
+        "ec9d645a9c2ccca8c86b3b651be55db4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "aerial parts of M. tortuosum",
+      "source_chunk_ids": [
+        "f8af571942c4798145fd8bde44cf0534"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "collected (2012)",
+      "source_chunk_ids": [
+        "f8af571942c4798145fd8bde44cf0534"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "collected (2012) from cultivated material",
+      "source_chunk_ids": [
+        "f8af571942c4798145fd8bde44cf0534"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "aerial parts of M. tortuosum",
+      "source_chunk_ids": [
+        "6fe8a3786922b3c6ab1da9ffb4a7d6f2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "extracted with methanol to afford methanol extracts",
+      "source_chunk_ids": [
+        "6fe8a3786922b3c6ab1da9ffb4a7d6f2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "acid-base extraction to afford alkaloid extract",
+      "source_chunk_ids": [
+        "6fe8a3786922b3c6ab1da9ffb4a7d6f2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E5",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "chromatography and preparative TLC to yield Compound 1",
+      "source_chunk_ids": [
+        "6fe8a3786922b3c6ab1da9ffb4a7d6f2"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "measurement": {
+          "value": 1.7,
+          "unit": "mg",
+          "measurement_type": "yield",
+          "notes": "from subfractions 12\u201315"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "Compound 1 (1.7 mg) from M. tortuosum",
+      "source_chunk_ids": [
+        "6fe8a3786922b3c6ab1da9ffb4a7d6f2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Mesembrine reacts to form an intermediate, which then cyclizes to Compound 1",
+      "source_chunk_ids": [
+        "cce69c3ae0c0194c8b26f12fc96613f8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "N-Desmethyimesembranone reacts with N-Desmethyimesembrine or Mesembrine to form an intermediate, which then cyclizes to Compound 2",
+      "source_chunk_ids": [
+        "cce69c3ae0c0194c8b26f12fc96613f8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Compound 1 and Compound 2 are shown to interconvert, leading to Channanine",
+      "source_chunk_ids": [
+        "cce69c3ae0c0194c8b26f12fc96613f8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Compound 1 and Compound 2 are shown to interconvert, leading to Channanine",
+      "source_chunk_ids": [
+        "cce69c3ae0c0194c8b26f12fc96613f8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "measurement": {
+          "value": 3.5,
+          "unit": "mg",
+          "measurement_type": "content",
+          "notes": "isolated amount"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Compound 2 (3.5 mg) was isolated from subfraction 21",
+      "source_chunk_ids": [
+        "06b2ab9a5cbe9b410dace41606249c1c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "isolated from subfraction 21 by semi preparative reversed phase HPLC",
+      "source_chunk_ids": [
+        "06b2ab9a5cbe9b410dace41606249c1c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

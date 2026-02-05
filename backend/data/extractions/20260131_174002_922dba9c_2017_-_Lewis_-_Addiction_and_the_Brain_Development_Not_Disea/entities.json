@@ -1,1333 +1,1902 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "b2c83251baf66d1dd4d6a886f94ec350a4958db0447f7b2bb1911b7e5dc9984d",
-  "extracted_at": "2026-02-01T08:42:58.626563+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
-      "type": "Indication",
+      "id": "E1",
+      "type": "Condition",
       "name": "addiction",
       "attributes": {
-        "context": "brain disease model of addiction"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
-        "b9e69f5dcd571dd6e63d301b21e832b4"
-      ]
+        "1b1ed5a119b54990833b70cc3ca62566"
+      ],
+      "confidence": 0.95,
+      "evidence": "addiction is a brain disease",
+      "verified": true
     },
     {
-      "id": "ent_002",
-      "type": "Indication",
-      "name": "brain disease model of addiction",
+      "id": "E2",
+      "type": "Target",
+      "name": "brain reward systems",
       "attributes": {
-        "context": "I review the brain disease model of addiction"
+        "target_type": "system"
       },
       "source_chunk_ids": [
-        "b9e69f5dcd571dd6e63d301b21e832b4"
-      ]
+        "1b1ed5a119b54990833b70cc3ca62566"
+      ],
+      "confidence": 0.8,
+      "evidence": "brain systems that mediate reward",
+      "verified": true
     },
     {
-      "id": "ent_003",
-      "type": "Indication",
+      "id": "E3",
+      "type": "Target",
+      "name": "perception and memory systems",
+      "attributes": {
+        "target_type": "system"
+      },
+      "source_chunk_ids": [
+        "1b1ed5a119b54990833b70cc3ca62566"
+      ],
+      "confidence": 0.8,
+      "evidence": "systems responsible for perception and memory",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "executive cognitive control systems",
+      "attributes": {
+        "target_type": "system"
+      },
+      "source_chunk_ids": [
+        "1b1ed5a119b54990833b70cc3ca62566"
+      ],
+      "confidence": 0.8,
+      "evidence": "higher-order executive systems underlying cognitive control",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "drugs of abuse",
+      "attributes": {
+        "condition_type": "substance"
+      },
+      "source_chunk_ids": [
+        "1b1ed5a119b54990833b70cc3ca62566"
+      ],
+      "confidence": 0.85,
+      "evidence": "exposure to drugs of abuse",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
       "name": "addiction",
       "attributes": {
-        "context": "brain changes in addiction"
-      },
-      "source_chunk_ids": [
-        "b9e69f5dcd571dd6e63d301b21e832b4"
-      ]
-    },
-    {
-      "id": "ent_004",
-      "type": "Indication",
-      "name": "substance addictions",
-      "attributes": {
-        "context": "parallels between substance addictions"
-      },
-      "source_chunk_ids": [
-        "b9e69f5dcd571dd6e63d301b21e832b4"
-      ]
-    },
-    {
-      "id": "ent_005",
-      "type": "Indication",
-      "name": "behavioral addictions",
-      "attributes": {
-        "context": "behavioral addictions, normative compulsive behaviors"
-      },
-      "source_chunk_ids": [
-        "b9e69f5dcd571dd6e63d301b21e832b4"
-      ]
-    },
-    {
-      "id": "ent_006",
-      "type": "Indication",
-      "name": "compulsive behaviors",
-      "attributes": {
-        "context": "normative compulsive behaviors"
-      },
-      "source_chunk_ids": [
-        "b9e69f5dcd571dd6e63d301b21e832b4"
-      ]
-    },
-    {
-      "id": "ent_007",
-      "type": "Indication",
-      "name": "addiction",
-      "attributes": {
-        "context": "understanding of addiction"
-      },
-      "source_chunk_ids": [
-        "b9e69f5dcd571dd6e63d301b21e832b4"
-      ]
-    },
-    {
-      "id": "ent_008",
-      "type": "Indication",
-      "name": "disease model",
-      "attributes": {
-        "context": "ethos of the disease model"
-      },
-      "source_chunk_ids": [
-        "b9e69f5dcd571dd6e63d301b21e832b4"
-      ]
-    },
-    {
-      "id": "ent_009",
-      "type": "Indication",
-      "name": "Addiction",
-      "attributes": {
-        "context": "Keywords Addiction"
-      },
-      "source_chunk_ids": [
-        "b576927a66cf13df7ef340fed8ae94cb"
-      ]
-    },
-    {
-      "id": "ent_010",
-      "type": "Indication",
-      "name": "addiction",
-      "attributes": {
-        "context": "disease model of addiction"
-      },
-      "source_chunk_ids": [
-        "3811a68cc0cd684bb4bb5a9c01c7e6ea"
-      ]
-    },
-    {
-      "id": "ent_011",
-      "type": "Indication",
-      "name": "disease",
-      "attributes": {
-        "context": "the validity of the disease perspective."
-      },
-      "source_chunk_ids": [
-        "52480198f1c2037abf5e516e5678beed"
-      ]
-    },
-    {
-      "id": "ent_012",
-      "type": "Indication",
-      "name": "addicts",
-      "attributes": {
-        "context": "many former addicts"
-      },
-      "source_chunk_ids": [
-        "52480198f1c2037abf5e516e5678beed"
-      ]
-    },
-    {
-      "id": "ent_013",
-      "type": "Indication",
-      "name": "sick",
-      "attributes": {
-        "context": "they were ever sick"
-      },
-      "source_chunk_ids": [
-        "52480198f1c2037abf5e516e5678beed"
-      ]
-    },
-    {
-      "id": "ent_014",
-      "type": "Indication",
-      "name": "disease",
-      "attributes": {
-        "context": "the strongest endorsements of the disease model"
-      },
-      "source_chunk_ids": [
-        "52480198f1c2037abf5e516e5678beed"
-      ]
-    },
-    {
-      "id": "ent_015",
-      "type": "Indication",
-      "name": "addicts",
-      "attributes": {
-        "context": "belief that addicts need long-term medical treatment."
-      },
-      "source_chunk_ids": [
-        "52480198f1c2037abf5e516e5678beed"
-      ]
-    },
-    {
-      "id": "ent_016",
-      "type": "Indication",
-      "name": "alcoholics",
-      "attributes": {
-        "context": "most alcoholics and addicts recover"
-      },
-      "source_chunk_ids": [
-        "52480198f1c2037abf5e516e5678beed"
-      ]
-    },
-    {
-      "id": "ent_017",
-      "type": "Indication",
-      "name": "addiction",
-      "attributes": {
-        "context": "the idea that addiction is a chronic disease."
-      },
-      "source_chunk_ids": [
-        "52480198f1c2037abf5e516e5678beed"
-      ]
-    },
-    {
-      "id": "ent_018",
-      "type": "Indication",
-      "name": "chronic disease",
-      "attributes": {
-        "context": "addiction is a chronic disease."
-      },
-      "source_chunk_ids": [
-        "52480198f1c2037abf5e516e5678beed"
-      ]
-    },
-    {
-      "id": "ent_019",
-      "type": "Indication",
-      "name": "addiction",
-      "attributes": {
-        "context": "investigators who approach addiction as a disease"
-      },
-      "source_chunk_ids": [
-        "52480198f1c2037abf5e516e5678beed"
-      ]
-    },
-    {
-      "id": "ent_020",
-      "type": "Indication",
-      "name": "addiction",
-      "attributes": {
-        "context": "the disease model of addiction"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
         "bb2575a34d55b5d672a75513cc7abf01"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "disease model of addiction",
+      "verified": true
     },
     {
-      "id": "ent_021",
-      "type": "Indication",
-      "name": "Addiction",
-      "attributes": {
-        "context": "Addiction may be viewed as a choice"
-      },
-      "source_chunk_ids": [
-        "bb2575a34d55b5d672a75513cc7abf01"
-      ]
-    },
-    {
-      "id": "ent_022",
-      "type": "Indication",
-      "name": "pathology",
-      "attributes": {
-        "context": "rather than a pathology"
-      },
-      "source_chunk_ids": [
-        "bb2575a34d55b5d672a75513cc7abf01"
-      ]
-    },
-    {
-      "id": "ent_023",
-      "type": "Indication",
-      "name": "addiction",
-      "attributes": {
-        "context": "that addiction is a good choice"
-      },
-      "source_chunk_ids": [
-        "bb2575a34d55b5d672a75513cc7abf01"
-      ]
-    },
-    {
-      "id": "ent_024",
-      "type": "Indication",
-      "name": "Addiction",
-      "attributes": {
-        "context": "Addiction may be a natural response"
-      },
-      "source_chunk_ids": [
-        "bb2575a34d55b5d672a75513cc7abf01"
-      ]
-    },
-    {
-      "id": "ent_025",
-      "type": "Indication",
-      "name": "poverty",
-      "attributes": {
-        "context": "including poverty and social alienation"
-      },
-      "source_chunk_ids": [
-        "bb2575a34d55b5d672a75513cc7abf01"
-      ]
-    },
-    {
-      "id": "ent_026",
-      "type": "Indication",
-      "name": "social alienation",
-      "attributes": {
-        "context": "poverty and social alienation"
-      },
-      "source_chunk_ids": [
-        "bb2575a34d55b5d672a75513cc7abf01"
-      ]
-    },
-    {
-      "id": "ent_027",
-      "type": "Indication",
-      "name": "Addiction",
-      "attributes": {
-        "context": "Addiction can be viewed as a form"
-      },
-      "source_chunk_ids": [
-        "bb2575a34d55b5d672a75513cc7abf01"
-      ]
-    },
-    {
-      "id": "ent_028",
-      "type": "Indication",
-      "name": "psychological suffering",
-      "attributes": {
-        "context": "against psychological suffering"
-      },
-      "source_chunk_ids": [
-        "bb2575a34d55b5d672a75513cc7abf01"
-      ]
-    },
-    {
-      "id": "ent_029",
-      "type": "Indication",
-      "name": "Trauma",
-      "attributes": {
-        "context": "Trauma\u2014whether physical, psychological, or sexual"
-      },
-      "source_chunk_ids": [
-        "bb2575a34d55b5d672a75513cc7abf01"
-      ]
-    },
-    {
-      "id": "ent_030",
-      "type": "Indication",
+      "id": "E2",
+      "type": "Condition",
       "name": "anxiety",
       "attributes": {
-        "context": "long-term anxiety and depression"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "bb2575a34d55b5d672a75513cc7abf01"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "long-term anxiety",
+      "verified": true
     },
     {
-      "id": "ent_031",
-      "type": "Indication",
+      "id": "E3",
+      "type": "Condition",
       "name": "depression",
       "attributes": {
-        "context": "anxiety and depression"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
         "bb2575a34d55b5d672a75513cc7abf01"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "long-term anxiety and depression",
+      "verified": true
     },
     {
-      "id": "ent_032",
-      "type": "Indication",
-      "name": "post-traumatic stress disorder",
-      "attributes": {
-        "context": "post-traumatic stress disorder (PTSD)"
-      },
-      "source_chunk_ids": [
-        "bb2575a34d55b5d672a75513cc7abf01"
-      ]
-    },
-    {
-      "id": "ent_033",
-      "type": "Indication",
+      "id": "E4",
+      "type": "Condition",
       "name": "PTSD",
       "attributes": {
-        "context": "post-traumatic stress disorder (PTSD)"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
         "bb2575a34d55b5d672a75513cc7abf01"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "post-traumatic stress disorder (PTSD)",
+      "verified": true
     },
     {
-      "id": "ent_034",
-      "type": "Indication",
-      "name": "substance use",
-      "attributes": {
-        "context": "correlated with substance use"
-      },
-      "source_chunk_ids": [
-        "bb2575a34d55b5d672a75513cc7abf01"
-      ]
-    },
-    {
-      "id": "ent_035",
-      "type": "Indication",
+      "id": "E1",
+      "type": "Condition",
       "name": "addiction",
       "attributes": {
-        "context": "views addiction as a product"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
-        "bb2575a34d55b5d672a75513cc7abf01"
-      ]
+        "1da79ab1d81b275e39e36c62bafb1af2"
+      ],
+      "confidence": 0.95,
+      "evidence": "Addiction is defined as a chronic, relapsing brain disease",
+      "verified": true
     },
     {
-      "id": "ent_036",
-      "type": "Indication",
-      "name": "disease",
+      "id": "E2",
+      "type": "Target",
+      "name": "dopamine transmission",
       "attributes": {
-        "context": "support for the disease model"
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "1da79ab1d81b275e39e36c62bafb1af2"
+      ],
+      "confidence": 0.9,
+      "evidence": "dopamine transmission and reception are altered",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "dopamine reception",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "1da79ab1d81b275e39e36c62bafb1af2"
+      ],
+      "confidence": 0.9,
+      "evidence": "dopamine transmission and reception are altered",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "dopamine metabolism",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "1da79ab1d81b275e39e36c62bafb1af2"
+      ],
+      "confidence": 0.85,
+      "evidence": "changes in dopamine metabolism bring about structural changes",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "striatum",
+      "attributes": {
+        "target_type": "brain region"
+      },
+      "source_chunk_ids": [
+        "1da79ab1d81b275e39e36c62bafb1af2"
+      ],
+      "confidence": 0.9,
+      "evidence": "critical locus of dopamine reception is the striatum",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "amygdala",
+      "attributes": {
+        "target_type": "brain region"
+      },
+      "source_chunk_ids": [
+        "1da79ab1d81b275e39e36c62bafb1af2"
+      ],
+      "confidence": 0.85,
+      "evidence": "other targets include the amygdala",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "hippocampus",
+      "attributes": {
+        "target_type": "brain region"
+      },
+      "source_chunk_ids": [
+        "1da79ab1d81b275e39e36c62bafb1af2"
+      ],
+      "confidence": 0.85,
+      "evidence": "hippocampus, which directs memory encoding",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Target",
+      "name": "prefrontal cortex",
+      "attributes": {
+        "target_type": "brain region"
+      },
+      "source_chunk_ids": [
+        "1da79ab1d81b275e39e36c62bafb1af2"
+      ],
+      "confidence": 0.85,
+      "evidence": "several regions of the prefrontal cortex",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "compulsive drug seeking and use",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "1da79ab1d81b275e39e36c62bafb1af2"
+      ],
+      "confidence": 0.9,
+      "evidence": "characterized by compulsive drug seeking and use",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "structural changes in synaptic networks",
+      "attributes": {
+        "level": "cellular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "1da79ab1d81b275e39e36c62bafb1af2"
+      ],
+      "confidence": 0.85,
+      "evidence": "bring about structural changes in synaptic networks",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "addiction",
+      "attributes": {
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
         "19e58dc2880339f34eb93b6c764c0fb7"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "when it comes to addiction",
+      "verified": true
     },
     {
-      "id": "ent_037",
-      "type": "Indication",
-      "name": "drug use",
+      "id": "E2",
+      "type": "Target",
+      "name": "nucleus accumbens",
       "attributes": {
-        "context": "caused by drug use"
+        "target_type": "brain region"
       },
       "source_chunk_ids": [
         "19e58dc2880339f34eb93b6c764c0fb7"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "nucleus accumbens describes one of the most ventral regions",
+      "verified": true
     },
     {
-      "id": "ent_038",
-      "type": "PharmEffect",
-      "name": "reduced capacity to engage cognitive control",
+      "id": "E3",
+      "type": "Target",
+      "name": "striatum",
       "attributes": {
-        "context": "reduced capacity to engage cognitive control"
+        "target_type": "brain region"
       },
       "source_chunk_ids": [
         "19e58dc2880339f34eb93b6c764c0fb7"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "most ventral regions of the striatum",
+      "verified": true
     },
     {
-      "id": "ent_039",
-      "type": "PharmEffect",
+      "id": "E4",
+      "type": "Target",
+      "name": "ventral tegmental area",
+      "attributes": {
+        "target_type": "brain region"
+      },
+      "source_chunk_ids": [
+        "19e58dc2880339f34eb93b6c764c0fb7"
+      ],
+      "confidence": 0.9,
+      "evidence": "ventral tegmental area (VTA) in the mid-brain",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "reduced cognitive control",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "19e58dc2880339f34eb93b6c764c0fb7"
+      ],
+      "confidence": 0.8,
+      "evidence": "reduced capacity to engage cognitive control",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
       "name": "increased compulsivity in drug seeking",
       "attributes": {
-        "context": "increased compulsivity in drug seeking"
+        "level": "behavioral",
+        "valence": "negative"
       },
       "source_chunk_ids": [
         "19e58dc2880339f34eb93b6c764c0fb7"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "increased compulsivity in drug seeking",
+      "verified": true
     },
     {
-      "id": "ent_040",
-      "type": "PharmEffect",
-      "name": "emotional blunting",
+      "id": "E7",
+      "type": "Effect",
+      "name": "emotional blunting in response to rewards",
       "attributes": {
-        "context": "emotional blunting in response to rewards"
+        "level": "behavioral",
+        "valence": "negative"
       },
       "source_chunk_ids": [
         "19e58dc2880339f34eb93b6c764c0fb7"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "emotional blunting in response to rewards",
+      "verified": true
     },
     {
-      "id": "ent_041",
-      "type": "Indication",
-      "name": "addiction",
+      "id": "E8",
+      "type": "Effect",
+      "name": "dopamine release triggered by drug cues",
       "attributes": {
-        "context": "when it comes to addiction"
+        "level": "molecular",
+        "valence": "positive"
       },
       "source_chunk_ids": [
         "19e58dc2880339f34eb93b6c764c0fb7"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "drug-related cues were found to trigger dopamine release",
+      "verified": true
     },
     {
-      "id": "ent_042",
-      "type": "PharmEffect",
-      "name": "incentive sensitization",
+      "id": "E9",
+      "type": "Effect",
+      "name": "increased activation in the accumbens",
       "attributes": {
-        "context": "coined the phrase incentive sensitization"
+        "level": "cellular",
+        "valence": "positive"
       },
       "source_chunk_ids": [
         "19e58dc2880339f34eb93b6c764c0fb7"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "increased activation in the accumbens",
+      "verified": true
     },
     {
-      "id": "ent_043",
-      "type": "Compound",
-      "name": "dopamine",
+      "id": "E10",
+      "type": "Effect",
+      "name": "driven drug-seeking behavior",
       "attributes": {
-        "context": "dopamine flows from the ventral tegmental area"
+        "level": "behavioral",
+        "valence": "negative"
       },
       "source_chunk_ids": [
         "19e58dc2880339f34eb93b6c764c0fb7"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "induced a more driven quality to drug-seeking behavior",
+      "verified": true
     },
     {
-      "id": "ent_044",
-      "type": "PharmEffect",
-      "name": "dopamine release",
+      "id": "E1",
+      "type": "Target",
+      "name": "ventral striatum",
       "attributes": {
-        "context": "trigger dopamine release"
-      },
-      "source_chunk_ids": [
-        "19e58dc2880339f34eb93b6c764c0fb7"
-      ]
-    },
-    {
-      "id": "ent_045",
-      "type": "PharmEffect",
-      "name": "increased activation",
-      "attributes": {
-        "context": "increased activation in the accumbens"
-      },
-      "source_chunk_ids": [
-        "19e58dc2880339f34eb93b6c764c0fb7"
-      ]
-    },
-    {
-      "id": "ent_046",
-      "type": "PharmEffect",
-      "name": "induced a more driven, even \u201cfrenzied\u201d quality to drug-seeking behavior",
-      "attributes": {
-        "context": "induced a more driven, even \u201cfrenzied\u201d quality to drug-seeking behavior"
-      },
-      "source_chunk_ids": [
-        "19e58dc2880339f34eb93b6c764c0fb7"
-      ]
-    },
-    {
-      "id": "ent_047",
-      "type": "Indication",
-      "name": "addiction",
-      "attributes": {
-        "context": "important for addiction"
+        "target_type": "brain region"
       },
       "source_chunk_ids": [
         "0eb0ec8f26bb19831beda57ea7237e93"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "ventral striatum or accumbens",
+      "verified": true
     },
     {
-      "id": "ent_048",
-      "type": "Indication",
-      "name": "addiction",
+      "id": "E2",
+      "type": "Target",
+      "name": "dorsal striatum",
       "attributes": {
-        "context": "period of addiction"
+        "target_type": "brain region"
       },
       "source_chunk_ids": [
         "0eb0ec8f26bb19831beda57ea7237e93"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "dorsal striatum",
+      "verified": true
     },
     {
-      "id": "ent_049",
-      "type": "Indication",
-      "name": "addiction",
+      "id": "E3",
+      "type": "Effect",
+      "name": "impulsive drug seeking",
       "attributes": {
-        "context": "true addiction"
+        "level": "behavioral",
+        "valence": "negative"
       },
       "source_chunk_ids": [
         "0eb0ec8f26bb19831beda57ea7237e93"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "impulsive drug seeking and use",
+      "verified": true
     },
     {
-      "id": "ent_050",
-      "type": "Indication",
+      "id": "E4",
+      "type": "Effect",
+      "name": "compulsive drug seeking",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "0eb0ec8f26bb19831beda57ea7237e93"
+      ],
+      "confidence": 0.85,
+      "evidence": "drug-seeking behavior becomes more compulsive",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
       "name": "addiction",
       "attributes": {
-        "context": "over the course of addiction"
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "0eb0ec8f26bb19831beda57ea7237e93"
+      ],
+      "confidence": 0.95,
+      "evidence": "addiction with the passage of time",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Robbins et al. study",
+      "attributes": {
+        "design": "neuroscience research",
+        "year": "implied ongoing"
+      },
+      "source_chunk_ids": [
+        "0eb0ec8f26bb19831beda57ea7237e93"
+      ],
+      "confidence": 0.8,
+      "evidence": "Trevor Robbins and his colleagues at Cambridge have been studying",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "neuroscience evidence",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "0eb0ec8f26bb19831beda57ea7237e93"
+      ],
+      "confidence": 0.75,
+      "evidence": "studying the shift from impulsive to compulsive drug seeking",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "dorsolateral prefrontal cortex",
+      "attributes": {
+        "target_type": "brain region"
+      },
+      "source_chunk_ids": [
+        "2ffb79090674e3d524188b2374f2b4c0"
+      ],
+      "confidence": 0.9,
+      "evidence": "dorsolateral prefrontal cortex (dlPFC)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "striatum",
+      "attributes": {
+        "target_type": "brain region"
+      },
+      "source_chunk_ids": [
+        "2ffb79090674e3d524188b2374f2b4c0"
+      ],
+      "confidence": 0.85,
+      "evidence": "striatum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "amygdala",
+      "attributes": {
+        "target_type": "brain region"
+      },
+      "source_chunk_ids": [
+        "2ffb79090674e3d524188b2374f2b4c0"
+      ],
+      "confidence": 0.85,
+      "evidence": "amygdala",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "hyperactivation",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "2ffb79090674e3d524188b2374f2b4c0"
+      ],
+      "confidence": 0.8,
+      "evidence": "dlPFC becomes hyperactivated",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "disengagement",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "2ffb79090674e3d524188b2374f2b4c0"
+      ],
+      "confidence": 0.8,
+      "evidence": "start to disengage",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "addiction",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "2ffb79090674e3d524188b2374f2b4c0"
+      ],
+      "confidence": 0.9,
+      "evidence": "addiction",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "eating disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "2ffb79090674e3d524188b2374f2b4c0"
+      ],
+      "confidence": 0.85,
+      "evidence": "eating disorders",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Volkow et al. research",
+      "attributes": {
+        "year": "two decades",
+        "design": "research"
+      },
+      "source_chunk_ids": [
+        "2ffb79090674e3d524188b2374f2b4c0"
+      ],
+      "confidence": 0.75,
+      "evidence": "two decades of research",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "scientific research",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "2ffb79090674e3d524188b2374f2b4c0"
+      ],
+      "confidence": 0.7,
+      "evidence": "research into cortical changes",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "prefrontal regions",
+      "attributes": {
+        "target_type": "brain region"
       },
       "source_chunk_ids": [
         "310392ea565fd66048172b8a0cadd87b"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "prefrontal regions responsible for judging options",
+      "verified": true
     },
     {
-      "id": "ent_051",
-      "type": "Indication",
-      "name": "cognitive dysfunction",
+      "id": "E2",
+      "type": "Effect",
+      "name": "lose grey matter volume",
       "attributes": {
-        "context": "the resulting cognitive dysfunction"
+        "level": "cellular",
+        "valence": "negative"
       },
       "source_chunk_ids": [
         "310392ea565fd66048172b8a0cadd87b"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "lose grey matter volume",
+      "verified": true
     },
     {
-      "id": "ent_052",
-      "type": "Indication",
+      "id": "E3",
+      "type": "Effect",
+      "name": "reduced synaptic density",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "310392ea565fd66048172b8a0cadd87b"
+      ],
+      "confidence": 0.8,
+      "evidence": "reduced synaptic density",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "become partially dysfunctional",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "310392ea565fd66048172b8a0cadd87b"
+      ],
+      "confidence": 0.85,
+      "evidence": "become partially dysfunctional",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "addiction",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "310392ea565fd66048172b8a0cadd87b"
+      ],
+      "confidence": 0.9,
+      "evidence": "over the course of addiction",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
       "name": "impaired response inhibition",
       "attributes": {
-        "context": "\u201cimpaired response inhibition.\u201d"
+        "level": "behavioral",
+        "valence": "negative"
       },
       "source_chunk_ids": [
         "310392ea565fd66048172b8a0cadd87b"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "impaired response inhibition",
+      "verified": true
     },
     {
-      "id": "ent_053",
-      "type": "Indication",
-      "name": "anxiety",
-      "attributes": {
-        "context": "familiar emotional reaction (as in anxiety regarding perceived threats)"
-      },
-      "source_chunk_ids": [
-        "1bbbf8707605cf6daade18530b47c8a9"
-      ]
-    },
-    {
-      "id": "ent_054",
-      "type": "Indication",
-      "name": "Depression",
-      "attributes": {
-        "context": "Depression and anxiety also develop"
-      },
-      "source_chunk_ids": [
-        "98f086b3eb676a85a5ef1cbebf590f23"
-      ]
-    },
-    {
-      "id": "ent_055",
-      "type": "Indication",
-      "name": "anxiety",
-      "attributes": {
-        "context": "Depression and anxiety also develop"
-      },
-      "source_chunk_ids": [
-        "98f086b3eb676a85a5ef1cbebf590f23"
-      ]
-    },
-    {
-      "id": "ent_056",
-      "type": "Indication",
+      "id": "E1",
+      "type": "Condition",
       "name": "depression",
       "attributes": {
-        "context": "born of depression or anxiety"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
         "98f086b3eb676a85a5ef1cbebf590f23"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Depression and anxiety also develop",
+      "verified": true
     },
     {
-      "id": "ent_057",
-      "type": "Indication",
+      "id": "E2",
+      "type": "Condition",
       "name": "anxiety",
       "attributes": {
-        "context": "born of depression or anxiety"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
         "98f086b3eb676a85a5ef1cbebf590f23"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Depression and anxiety also develop",
+      "verified": true
     },
     {
-      "id": "ent_058",
-      "type": "Indication",
+      "id": "E3",
+      "type": "Condition",
       "name": "addiction",
       "attributes": {
-        "context": "model of addiction"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
         "98f086b3eb676a85a5ef1cbebf590f23"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "addiction is often a partner",
+      "verified": true
     },
     {
-      "id": "ent_059",
+      "id": "E4",
+      "type": "Evidence",
+      "name": "self-medication model",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "98f086b3eb676a85a5ef1cbebf590f23"
+      ],
+      "confidence": 0.8,
+      "evidence": "self-medication model of addiction",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Gabor Mat\u00e9 [11]",
+      "attributes": {
+        "year": null,
+        "design": "theoretical/model"
+      },
+      "source_chunk_ids": [
+        "98f086b3eb676a85a5ef1cbebf590f23"
+      ],
+      "confidence": 0.75,
+      "evidence": "Gabor Mat\u00e9 persuasively shows",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Maia Szalavitz [10]",
+      "attributes": {
+        "year": null,
+        "design": "personal experience"
+      },
+      "source_chunk_ids": [
+        "98f086b3eb676a85a5ef1cbebf590f23"
+      ],
+      "confidence": 0.75,
+      "evidence": "Maia Szalavitz vividly portrays",
+      "verified": true
+    },
+    {
+      "id": "E7",
       "type": "Compound",
       "name": "cocaine",
-      "attributes": {
-        "context": "brighten her depression with cocaine"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "98f086b3eb676a85a5ef1cbebf590f23"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "brighten her depression with cocaine",
+      "verified": true
     },
     {
-      "id": "ent_060",
-      "type": "Indication",
-      "name": "depression",
-      "attributes": {
-        "context": "brighten her depression with cocaine"
-      },
-      "source_chunk_ids": [
-        "98f086b3eb676a85a5ef1cbebf590f23"
-      ]
-    },
-    {
-      "id": "ent_061",
+      "id": "E8",
       "type": "Compound",
       "name": "heroin",
-      "attributes": {
-        "context": "ease her anxiety with heroin"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "98f086b3eb676a85a5ef1cbebf590f23"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "ease her anxiety with heroin",
+      "verified": true
     },
     {
-      "id": "ent_062",
-      "type": "Indication",
-      "name": "anxiety",
+      "id": "E1",
+      "type": "Target",
+      "name": "ventral striatum",
       "attributes": {
-        "context": "ease her anxiety with heroin"
+        "target_type": "brain region"
       },
       "source_chunk_ids": [
-        "98f086b3eb676a85a5ef1cbebf590f23"
-      ]
+        "bcec7ba7b72f285c40f6b55c63e890d1"
+      ],
+      "confidence": 0.9,
+      "evidence": "activation of the ventral striatum",
+      "verified": true
     },
     {
-      "id": "ent_063",
-      "type": "Indication",
+      "id": "E2",
+      "type": "Target",
+      "name": "dlPFC",
+      "attributes": {
+        "target_type": "brain region"
+      },
+      "source_chunk_ids": [
+        "bcec7ba7b72f285c40f6b55c63e890d1"
+      ],
+      "confidence": 0.9,
+      "evidence": "activation of the dlPFC",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
       "name": "addiction",
       "attributes": {
-        "context": "between addiction and depression or anxiety"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
-        "98f086b3eb676a85a5ef1cbebf590f23"
-      ]
+        "bcec7ba7b72f285c40f6b55c63e890d1"
+      ],
+      "confidence": 0.95,
+      "evidence": "addiction as well",
+      "verified": true
     },
     {
-      "id": "ent_064",
-      "type": "Indication",
-      "name": "depression",
+      "id": "E4",
+      "type": "Condition",
+      "name": "emotion regulation",
       "attributes": {
-        "context": "between addiction and depression or anxiety"
+        "condition_type": "process"
       },
       "source_chunk_ids": [
-        "98f086b3eb676a85a5ef1cbebf590f23"
-      ]
+        "bcec7ba7b72f285c40f6b55c63e890d1"
+      ],
+      "confidence": 0.85,
+      "evidence": "development of emotion regulation",
+      "verified": true
     },
     {
-      "id": "ent_065",
-      "type": "Indication",
-      "name": "anxiety",
+      "id": "E5",
+      "type": "Effect",
+      "name": "delay discounting",
       "attributes": {
-        "context": "between addiction and depression or anxiety"
+        "level": "behavioral",
+        "valence": "negative"
       },
       "source_chunk_ids": [
-        "98f086b3eb676a85a5ef1cbebf590f23"
-      ]
+        "bcec7ba7b72f285c40f6b55c63e890d1"
+      ],
+      "confidence": 0.9,
+      "evidence": "delay discounting",
+      "verified": true
     },
     {
-      "id": "ent_066",
-      "type": "Indication",
-      "name": "disease",
+      "id": "E6",
+      "type": "Effect",
+      "name": "delay gratification",
       "attributes": {
-        "context": "external cause like disease"
+        "level": "behavioral",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "f807ed2a847f32ba231ea9d388e38f3f"
-      ]
+        "bcec7ba7b72f285c40f6b55c63e890d1"
+      ],
+      "confidence": 0.85,
+      "evidence": "capacity to delay gratification",
+      "verified": true
     },
     {
-      "id": "ent_067",
-      "type": "Indication",
-      "name": "addiction",
+      "id": "E1",
+      "type": "Target",
+      "name": "mesolimbic dopamine",
       "attributes": {
-        "context": "comes to addiction"
+        "target_type": "neurotransmitter system"
       },
       "source_chunk_ids": [
-        "f807ed2a847f32ba231ea9d388e38f3f"
-      ]
+        "a929c2e3334b0a100f06474bbd5e0ffa"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesolimbic dopamine is a major contributor",
+      "verified": true
     },
     {
-      "id": "ent_068",
-      "type": "Indication",
-      "name": "addiction",
-      "attributes": {
-        "context": "Addiction has been described as a habit"
-      },
-      "source_chunk_ids": [
-        "f807ed2a847f32ba231ea9d388e38f3f"
-      ]
-    },
-    {
-      "id": "ent_069",
-      "type": "Indication",
-      "name": "addiction",
-      "attributes": {
-        "context": "addiction may simply grow and stabilize"
-      },
-      "source_chunk_ids": [
-        "f807ed2a847f32ba231ea9d388e38f3f"
-      ]
-    },
-    {
-      "id": "ent_070",
-      "type": "Indication",
-      "name": "addiction",
-      "attributes": {
-        "context": "addiction belongs to a subset of habits"
-      },
-      "source_chunk_ids": [
-        "f807ed2a847f32ba231ea9d388e38f3f"
-      ]
-    },
-    {
-      "id": "ent_071",
-      "type": "Indication",
-      "name": "addiction",
-      "attributes": {
-        "context": "conceptualize addiction as an outcome"
-      },
-      "source_chunk_ids": [
-        "f807ed2a847f32ba231ea9d388e38f3f"
-      ]
-    },
-    {
-      "id": "ent_072",
-      "type": "Indication",
-      "name": "addictive behavior",
-      "attributes": {
-        "context": "as addictive behavior becomes increasingly compulsive"
-      },
-      "source_chunk_ids": [
-        "13a5e0374b82e09a74d60706c239a8b1"
-      ]
-    },
-    {
-      "id": "ent_073",
-      "type": "Indication",
-      "name": "addiction",
-      "attributes": {
-        "context": "Unfortunately, in addiction, this perfectly natural developmental mechanism often leads to suffering."
-      },
-      "source_chunk_ids": [
-        "13a5e0374b82e09a74d60706c239a8b1"
-      ]
-    },
-    {
-      "id": "ent_074",
-      "type": "Indication",
-      "name": "addiction",
-      "attributes": {
-        "context": "solution to addiction"
-      },
-      "source_chunk_ids": [
-        "4132994b235fc126d21721aad294e68a"
-      ]
-    },
-    {
-      "id": "ent_075",
-      "type": "Indication",
-      "name": "mental disorders",
-      "attributes": {
-        "context": "treatment of mental disorders"
-      },
-      "source_chunk_ids": [
-        "4132994b235fc126d21721aad294e68a"
-      ]
-    },
-    {
-      "id": "ent_076",
-      "type": "Compound",
-      "name": "nicotine",
-      "attributes": {
-        "context": "life-time nicotine, alcohol, cannabis or cocaine dependence"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_077",
-      "type": "Compound",
-      "name": "alcohol",
-      "attributes": {
-        "context": "life-time nicotine, alcohol, cannabis or cocaine dependence"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_078",
-      "type": "Taxon",
-      "name": "Cannabis sativa",
-      "attributes": {
-        "context": "life-time nicotine, alcohol, cannabis or cocaine dependence"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_079",
-      "type": "Compound",
-      "name": "cocaine",
-      "attributes": {
-        "context": "life-time nicotine, alcohol, cannabis or cocaine dependence"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_080",
-      "type": "Indication",
-      "name": "dependence",
-      "attributes": {
-        "context": "cocaine dependence"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_081",
-      "type": "Indication",
-      "name": "Addiction",
-      "attributes": {
-        "context": "conditions. Addiction 106"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_082",
-      "type": "Compound",
-      "name": "alcohol",
-      "attributes": {
-        "context": "Maturing out of alcohol dependence"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_083",
-      "type": "Indication",
-      "name": "dependence",
-      "attributes": {
-        "context": "alcohol dependence"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_084",
-      "type": "Indication",
-      "name": "Alcohol Abuse",
-      "attributes": {
-        "context": "National Institute on Alcohol Abuse and Alcoholism"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_085",
-      "type": "Indication",
-      "name": "Alcoholism",
-      "attributes": {
-        "context": "Alcohol Abuse and Alcoholism (NIAAA)"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_086",
-      "type": "Compound",
-      "name": "alcohol",
-      "attributes": {
-        "context": "survey on alcohol and related conditions"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_087",
-      "type": "Compound",
-      "name": "drugs",
-      "attributes": {
-        "context": "Quitting drugs: quantitative and qualitative features"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_088",
-      "type": "Indication",
-      "name": "Addiction",
-      "attributes": {
-        "context": "Addiction: a disorder of choice"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_089",
-      "type": "Compound",
-      "name": "drugs",
-      "attributes": {
-        "context": "everything you know about drugs and society"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_090",
-      "type": "Indication",
-      "name": "addiction",
-      "attributes": {
-        "context": "The globalization of addiction"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_091",
-      "type": "Indication",
-      "name": "substance use disorders",
-      "attributes": {
-        "context": "mental and substance use disorders"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_092",
-      "type": "Indication",
-      "name": "chronic stress",
-      "attributes": {
-        "context": "effects of chronic stress"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_093",
-      "type": "Indication",
-      "name": "Stress",
-      "attributes": {
-        "context": "Stress in Addiction"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_094",
-      "type": "Indication",
-      "name": "Addiction",
-      "attributes": {
-        "context": "Stress in Addiction"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_095",
-      "type": "Indication",
-      "name": "addiction",
-      "attributes": {
-        "context": "understanding addiction"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_096",
-      "type": "Indication",
-      "name": "Addiction",
-      "attributes": {
-        "context": "Addiction is not a brain disease"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_097",
-      "type": "Indication",
-      "name": "brain disease",
-      "attributes": {
-        "context": "Addiction is not a brain disease"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_098",
-      "type": "Indication",
-      "name": "brain disease",
-      "attributes": {
-        "context": "The brain disease model of addiction"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_099",
-      "type": "Indication",
-      "name": "addiction",
-      "attributes": {
-        "context": "model of addiction"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_100",
-      "type": "Indication",
-      "name": "addiction",
-      "attributes": {
-        "context": "why addiction is not a disease"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_101",
-      "type": "Indication",
-      "name": "disease",
-      "attributes": {
-        "context": "addiction is not a disease"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_102",
-      "type": "Indication",
-      "name": "addiction",
-      "attributes": {
-        "context": "neurobiology of addiction"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_103",
-      "type": "Compound",
-      "name": "Dopamine",
-      "attributes": {
-        "context": "Dopamine transmission in the initiation"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_104",
-      "type": "Compound",
-      "name": "drug",
-      "attributes": {
-        "context": "expression of drug- and stress-induced sensitization"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_105",
-      "type": "Indication",
-      "name": "stress",
-      "attributes": {
-        "context": "drug- and stress-induced sensitization"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_106",
-      "type": "Compound",
-      "name": "N-methyl-D-aspartate",
-      "attributes": {
-        "context": "Involvement of N-methyl-D-aspartate receptor stimulation"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_107",
-      "type": "Compound",
-      "name": "cocaine",
-      "attributes": {
-        "context": "sensitization to cocaine"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_108",
-      "type": "Indication",
-      "name": "brain disease",
-      "attributes": {
-        "context": "from the brain disease model of addiction"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_109",
-      "type": "Indication",
-      "name": "addiction",
-      "attributes": {
-        "context": "model of addiction"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_110",
-      "type": "Compound",
+      "id": "E2",
+      "type": "Target",
       "name": "dopamine",
       "attributes": {
-        "context": "role of dopamine in reward"
+        "target_type": "neurotransmitter"
       },
       "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
+        "a929c2e3334b0a100f06474bbd5e0ffa"
+      ],
+      "confidence": 0.95,
+      "evidence": "increased levels of central dopamine",
+      "verified": true
     },
     {
-      "id": "ent_111",
-      "type": "Indication",
-      "name": "Addiction",
+      "id": "E3",
+      "type": "Target",
+      "name": "nucleus accumbens",
       "attributes": {
-        "context": "2003. Addiction. Annual Review of Psychology"
+        "target_type": "brain region"
       },
       "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
+        "a929c2e3334b0a100f06474bbd5e0ffa"
+      ],
+      "confidence": 0.9,
+      "evidence": "nucleus accumbens region",
+      "verified": true
     },
     {
-      "id": "ent_112",
-      "type": "Compound",
-      "name": "amphetamine",
+      "id": "E4",
+      "type": "Effect",
+      "name": "focused attention on the beloved",
       "attributes": {
-        "context": "sensitization and amphetamine"
+        "level": "behavioral",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
+        "a929c2e3334b0a100f06474bbd5e0ffa"
+      ],
+      "confidence": 0.8,
+      "evidence": "focused attention on the beloved",
+      "verified": true
     },
     {
-      "id": "ent_113",
-      "type": "Indication",
-      "name": "drug addiction",
+      "id": "E5",
+      "type": "Effect",
+      "name": "regard the beloved as unique",
       "attributes": {
-        "context": "roles in drug addiction"
+        "level": "behavioral",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
+        "a929c2e3334b0a100f06474bbd5e0ffa"
+      ],
+      "confidence": 0.8,
+      "evidence": "regard the beloved as unique",
+      "verified": true
     },
     {
-      "id": "ent_114",
-      "type": "Indication",
-      "name": "Drug addiction",
+      "id": "E6",
+      "type": "Effect",
+      "name": "formation of pair bonds",
       "attributes": {
-        "context": "Drug addiction and its underlying neurobiological basis"
+        "level": "behavioral",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
+        "a929c2e3334b0a100f06474bbd5e0ffa"
+      ],
+      "confidence": 0.85,
+      "evidence": "formation of pair bonds",
+      "verified": true
     },
     {
-      "id": "ent_115",
-      "type": "Indication",
-      "name": "addiction",
+      "id": "E7",
+      "type": "Effect",
+      "name": "common currency of wanting",
       "attributes": {
-        "context": "cortex in addiction"
+        "level": "behavioral",
+        "valence": "neutral"
       },
       "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
+        "a929c2e3334b0a100f06474bbd5e0ffa"
+      ],
+      "confidence": 0.75,
+      "evidence": "common currency of wanting",
+      "verified": true
     },
     {
-      "id": "ent_116",
-      "type": "Indication",
-      "name": "Addiction",
+      "id": "E8",
+      "type": "Effect",
+      "name": "motivating to overcome obstacles",
       "attributes": {
-        "context": "Addiction, a disease of compulsion and drive"
+        "level": "behavioral",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
+        "a929c2e3334b0a100f06474bbd5e0ffa"
+      ],
+      "confidence": 0.8,
+      "evidence": "motivating to overcome obstacles",
+      "verified": true
     },
     {
-      "id": "ent_117",
-      "type": "Indication",
-      "name": "disease",
+      "id": "E9",
+      "type": "Effect",
+      "name": "biases decision making for immediate gains",
       "attributes": {
-        "context": "Addiction, a disease of compulsion and drive"
+        "level": "behavioral",
+        "valence": "neutral"
       },
       "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
+        "a929c2e3334b0a100f06474bbd5e0ffa"
+      ],
+      "confidence": 0.8,
+      "evidence": "biases decision making",
+      "verified": true
     },
     {
-      "id": "ent_118",
-      "type": "PharmEffect",
-      "name": "craving",
+      "id": "E10",
+      "type": "Effect",
+      "name": "increase salience of incentive cues",
       "attributes": {
-        "context": "cognitive regulation of craving"
+        "level": "behavioral",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_119",
-      "type": "Indication",
-      "name": "drug dependence",
-      "attributes": {
-        "context": "understanding of drug dependence"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
-    },
-    {
-      "id": "ent_120",
-      "type": "Indication",
-      "name": "Addiction",
-      "attributes": {
-        "context": "delay discounting processes. Addiction"
-      },
-      "source_chunk_ids": [
-        "5bb20e50711c44f60574fe6c99ff8a14"
-      ]
+        "a929c2e3334b0a100f06474bbd5e0ffa"
+      ],
+      "confidence": 0.8,
+      "evidence": "increase the salience of incentive cues",
+      "verified": true
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:03.998283+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "characterized_by"
+      },
+      "confidence": 0.75,
+      "evidence": "addiction is characterized by changes in brain reward systems",
+      "source_chunk_ids": [
+        "1b1ed5a119b54990833b70cc3ca62566"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "characterized_by"
+      },
+      "confidence": 0.75,
+      "evidence": "addiction is characterized by changes in perception and memory systems",
+      "source_chunk_ids": [
+        "1b1ed5a119b54990833b70cc3ca62566"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "characterized_by"
+      },
+      "confidence": 0.75,
+      "evidence": "addiction is characterized by changes in executive cognitive control systems",
+      "source_chunk_ids": [
+        "1b1ed5a119b54990833b70cc3ca62566"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CAUSES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "context": "disease_model"
+      },
+      "confidence": 0.8,
+      "evidence": "changes are caused by exposure to drugs of abuse",
+      "source_chunk_ids": [
+        "1b1ed5a119b54990833b70cc3ca62566"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "addiction can be viewed as a form of self-medication",
+      "source_chunk_ids": [
+        "bb2575a34d55b5d672a75513cc7abf01"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "addiction can be viewed as a form of self-medication",
+      "source_chunk_ids": [
+        "bb2575a34d55b5d672a75513cc7abf01"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "PTSD is highly correlated with substance use",
+      "source_chunk_ids": [
+        "bb2575a34d55b5d672a75513cc7abf01"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "addiction is characterized by compulsive drug seeking",
+      "source_chunk_ids": [
+        "1da79ab1d81b275e39e36c62bafb1af2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "changes in dopamine metabolism bring about structural changes",
+      "source_chunk_ids": [
+        "1da79ab1d81b275e39e36c62bafb1af2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "dopamine release then increased activation in the accumbens",
+      "source_chunk_ids": [
+        "19e58dc2880339f34eb93b6c764c0fb7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "increased activation in the accumbens induced a more driven quality",
+      "source_chunk_ids": [
+        "19e58dc2880339f34eb93b6c764c0fb7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "context": "neural association"
+      },
+      "confidence": 0.8,
+      "evidence": "ventral striatum is associated with impulsive drug seeking",
+      "source_chunk_ids": [
+        "0eb0ec8f26bb19831beda57ea7237e93"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "neural shift in addiction"
+      },
+      "confidence": 0.8,
+      "evidence": "dorsal striatum becomes important for addiction, behavior becomes compulsive",
+      "source_chunk_ids": [
+        "0eb0ec8f26bb19831beda57ea7237e93"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "behavioral progression"
+      },
+      "confidence": 0.75,
+      "evidence": "shift from impulsive to compulsive drug seeking",
+      "source_chunk_ids": [
+        "0eb0ec8f26bb19831beda57ea7237e93"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "describes"
+      },
+      "confidence": 0.7,
+      "evidence": "studying the shift from impulsive to compulsive drug seeking",
+      "source_chunk_ids": [
+        "0eb0ec8f26bb19831beda57ea7237e93"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "describes"
+      },
+      "confidence": 0.7,
+      "evidence": "studying the shift from impulsive to compulsive drug seeking",
+      "source_chunk_ids": [
+        "0eb0ec8f26bb19831beda57ea7237e93"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "describes"
+      },
+      "confidence": 0.7,
+      "evidence": "compulsive phase as true addiction",
+      "source_chunk_ids": [
+        "0eb0ec8f26bb19831beda57ea7237e93"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Trevor Robbins and his colleagues have been studying",
+      "source_chunk_ids": [
+        "0eb0ec8f26bb19831beda57ea7237e93"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "early stages"
+      },
+      "confidence": 0.75,
+      "evidence": "dlPFC becomes hyperactivated in the early stages of addiction",
+      "source_chunk_ids": [
+        "2ffb79090674e3d524188b2374f2b4c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "over time"
+      },
+      "confidence": 0.75,
+      "evidence": "over time, this region ... start to disengage",
+      "source_chunk_ids": [
+        "2ffb79090674e3d524188b2374f2b4c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "similar to addiction"
+      },
+      "confidence": 0.7,
+      "evidence": "as it does in some eating disorders",
+      "source_chunk_ids": [
+        "2ffb79090674e3d524188b2374f2b4c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "research into cortical changes",
+      "source_chunk_ids": [
+        "2ffb79090674e3d524188b2374f2b4c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "condition"
+      },
+      "confidence": 0.8,
+      "evidence": "research into cortical changes underlying addiction",
+      "source_chunk_ids": [
+        "2ffb79090674e3d524188b2374f2b4c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "modified"
+      },
+      "confidence": 0.75,
+      "evidence": "brain regions ... are physically modified",
+      "source_chunk_ids": [
+        "2ffb79090674e3d524188b2374f2b4c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.7,
+      "evidence": "dlPFC becomes hyperactivated",
+      "source_chunk_ids": [
+        "2ffb79090674e3d524188b2374f2b4c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.7,
+      "evidence": "start to disengage",
+      "source_chunk_ids": [
+        "2ffb79090674e3d524188b2374f2b4c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "addiction [23, 25]. They dub the resulting cognitive dysfunction",
+      "source_chunk_ids": [
+        "310392ea565fd66048172b8a0cadd87b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "addiction [23, 25]. They dub the resulting cognitive dysfunction",
+      "source_chunk_ids": [
+        "310392ea565fd66048172b8a0cadd87b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "addiction [23, 25]. They dub the resulting cognitive dysfunction",
+      "source_chunk_ids": [
+        "310392ea565fd66048172b8a0cadd87b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "They dub the resulting cognitive dysfunction \u201cimpaired response inhibition.\u201d",
+      "source_chunk_ids": [
+        "310392ea565fd66048172b8a0cadd87b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "self-medication model of addiction",
+      "source_chunk_ids": [
+        "98f086b3eb676a85a5ef1cbebf590f23"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "self-medication model of addiction",
+      "source_chunk_ids": [
+        "98f086b3eb676a85a5ef1cbebf590f23"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "addiction is often a partner",
+      "source_chunk_ids": [
+        "98f086b3eb676a85a5ef1cbebf590f23"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "addiction is often a partner",
+      "source_chunk_ids": [
+        "98f086b3eb676a85a5ef1cbebf590f23"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "associated",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "early emotional disturbances",
+      "source_chunk_ids": [
+        "98f086b3eb676a85a5ef1cbebf590f23"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "associated",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "brighten her depression with cocaine",
+      "source_chunk_ids": [
+        "98f086b3eb676a85a5ef1cbebf590f23"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "associated",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "ease her anxiety with heroin",
+      "source_chunk_ids": [
+        "98f086b3eb676a85a5ef1cbebf590f23"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "self-medication model of addiction",
+      "source_chunk_ids": [
+        "98f086b3eb676a85a5ef1cbebf590f23"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "self-medication model of addiction",
+      "source_chunk_ids": [
+        "98f086b3eb676a85a5ef1cbebf590f23"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R10",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "self-medication model of addiction",
+      "source_chunk_ids": [
+        "98f086b3eb676a85a5ef1cbebf590f23"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R11",
+      "type": "TREATS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "context": "self-medication",
+        "supporting_study_ids": [
+          "E6"
+        ],
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "brighten her depression with cocaine",
+      "source_chunk_ids": [
+        "98f086b3eb676a85a5ef1cbebf590f23"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R12",
+      "type": "TREATS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "self-medication",
+        "supporting_study_ids": [
+          "E6"
+        ],
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "ease her anxiety with heroin",
+      "source_chunk_ids": [
+        "98f086b3eb676a85a5ef1cbebf590f23"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "delay discounting has been shown to correspond to activation of the ventral striatum, the villain when it comes to addictive behavior",
+      "source_chunk_ids": [
+        "bcec7ba7b72f285c40f6b55c63e890d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "capacity to delay gratification taps activation of the dlPFC\u2014a crucial step in the development of emotion regulation",
+      "source_chunk_ids": [
+        "bcec7ba7b72f285c40f6b55c63e890d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "delay discounting has been shown to correspond to activation of the ventral striatum",
+      "source_chunk_ids": [
+        "bcec7ba7b72f285c40f6b55c63e890d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "capacity to delay gratification taps activation of the dlPFC",
+      "source_chunk_ids": [
+        "bcec7ba7b72f285c40f6b55c63e890d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "increased levels of central dopamine contribute",
+      "source_chunk_ids": [
+        "a929c2e3334b0a100f06474bbd5e0ffa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "increased levels of central dopamine contribute",
+      "source_chunk_ids": [
+        "a929c2e3334b0a100f06474bbd5e0ffa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "mesolimbic dopamine is a major contributor",
+      "source_chunk_ids": [
+        "a929c2e3334b0a100f06474bbd5e0ffa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "dopamine system provides a common currency",
+      "source_chunk_ids": [
+        "a929c2e3334b0a100f06474bbd5e0ffa"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "nucleus accumbens is involved in motivating",
+      "source_chunk_ids": [
+        "a929c2e3334b0a100f06474bbd5e0ffa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "dopamine metabolism biases decision making",
+      "source_chunk_ids": [
+        "a929c2e3334b0a100f06474bbd5e0ffa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "dopamine is released in the nucleus accumbens",
+      "source_chunk_ids": [
+        "a929c2e3334b0a100f06474bbd5e0ffa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

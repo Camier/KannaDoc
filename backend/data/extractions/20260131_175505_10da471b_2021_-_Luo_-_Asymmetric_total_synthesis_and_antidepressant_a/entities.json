@@ -1,12 +1,3270 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "0aca62844ea22babe406783fd6165f447e5d375cf47aa24ecafa2be7dde2a511",
-  "extracted_at": "2026-02-01T08:57:41.082628+00:00",
-  "extractor": "legacy-migration",
-  "entities": [],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.083376+00:00",
-    "original_file": "entities.json"
-  }
+  "entities": [
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "sila-mesembranol",
+      "attributes": {
+        "analog": "silicon analog of mesembranol"
+      },
+      "source_chunk_ids": [
+        "82c474d94b7530be6ba1b92ccaa09097"
+      ],
+      "confidence": 0.95,
+      "evidence": "sila-mesembranol, the silicon analog",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {
+        "natural": true
+      },
+      "source_chunk_ids": [
+        "82c474d94b7530be6ba1b92ccaa09097"
+      ],
+      "confidence": 0.9,
+      "evidence": "natural alkaloid (\u2013)-mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "82c474d94b7530be6ba1b92ccaa09097"
+      ],
+      "confidence": 0.85,
+      "evidence": "natural alkaloid",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "antidepressant effects",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "82c474d94b7530be6ba1b92ccaa09097"
+      ],
+      "confidence": 0.9,
+      "evidence": "exhibits better antidepressant effects",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "82c474d94b7530be6ba1b92ccaa09097"
+      ],
+      "confidence": 0.8,
+      "evidence": "antidepressant effects",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "CompoundClass",
+      "name": "silicon-containing bioactive molecules",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3ecbd1a47099856a6940755b4ca45f86"
+      ],
+      "confidence": 0.9,
+      "evidence": "silicon-containing bioactive molecules",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "karenitecin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3ecbd1a47099856a6940755b4ca45f86"
+      ],
+      "confidence": 0.85,
+      "evidence": "karenitecin (8 clinical trials)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "sila-Almquist inhibitor",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3ecbd1a47099856a6940755b4ca45f86"
+      ],
+      "confidence": 0.85,
+      "evidence": "sila-Almquist inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "sila-HCV inhibitor",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3ecbd1a47099856a6940755b4ca45f86"
+      ],
+      "confidence": 0.85,
+      "evidence": "sila-HCV inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "sila-haloperidol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3ecbd1a47099856a6940755b4ca45f86"
+      ],
+      "confidence": 0.85,
+      "evidence": "sila-haloperidol",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "increased cell-penetration",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "3ecbd1a47099856a6940755b4ca45f86"
+      ],
+      "confidence": 0.8,
+      "evidence": "increased cell-penetration",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "reduced toxicity",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "3ecbd1a47099856a6940755b4ca45f86"
+      ],
+      "confidence": 0.8,
+      "evidence": "reduced toxicity",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "improved bioactivity",
+      "attributes": {
+        "level": "molecular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "3ecbd1a47099856a6940755b4ca45f86"
+      ],
+      "confidence": 0.8,
+      "evidence": "improved bioactivity",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "karenitecin clinical trials",
+      "attributes": {
+        "design": "clinical trials",
+        "sample_size": null,
+        "year": null,
+        "doi": null
+      },
+      "source_chunk_ids": [
+        "3ecbd1a47099856a6940755b4ca45f86"
+      ],
+      "confidence": 0.7,
+      "evidence": "karenitecin (8 clinical trials)",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Evidence",
+      "name": "clinical trial evidence",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "3ecbd1a47099856a6940755b4ca45f86"
+      ],
+      "confidence": 0.7,
+      "evidence": "8 clinical trials",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "(-)-mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "dcfb9685f5e3a6a9fa45acbfd2cd4164"
+      ],
+      "confidence": 0.95,
+      "evidence": "(-)-mesembranol 1",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "dcfb9685f5e3a6a9fa45acbfd2cd4164"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "dcfb9685f5e3a6a9fa45acbfd2cd4164"
+      ],
+      "confidence": 0.9,
+      "evidence": "alkaloids from Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "alkaloid extracts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "dcfb9685f5e3a6a9fa45acbfd2cd4164"
+      ],
+      "confidence": 0.85,
+      "evidence": "alkaloid extracts containing compound 1",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "antidepressant activity",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "dcfb9685f5e3a6a9fa45acbfd2cd4164"
+      ],
+      "confidence": 0.9,
+      "evidence": "exhibit antidepressant activity",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "dcfb9685f5e3a6a9fa45acbfd2cd4164"
+      ],
+      "confidence": 0.95,
+      "evidence": "commercialized as Zembrin\u00ae",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "(-)-sila-mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "dcfb9685f5e3a6a9fa45acbfd2cd4164"
+      ],
+      "confidence": 0.95,
+      "evidence": "(-)-sila-mesembranol 4",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "antidepressant studies",
+      "attributes": {
+        "design": "preliminary"
+      },
+      "source_chunk_ids": [
+        "dcfb9685f5e3a6a9fa45acbfd2cd4164"
+      ],
+      "confidence": 0.8,
+      "evidence": "preliminary results of its antidepressant studies",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "dcfb9685f5e3a6a9fa45acbfd2cd4164"
+      ],
+      "confidence": 0.7,
+      "evidence": "exhibit antidepressant activity16b,17",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "(-)-sila-mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6f2ec0ade734de2ae6c24cd104ff765a"
+      ],
+      "confidence": 0.9,
+      "evidence": "synthesis of the target (\u2212)-sila-mesembranol 4",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "(-)-sila-mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6f2ec0ade734de2ae6c24cd104ff765a"
+      ],
+      "confidence": 0.9,
+      "evidence": "leading to the formation of (\u2212)-sila-mesembrine 14",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "(-)-mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6f2ec0ade734de2ae6c24cd104ff765a"
+      ],
+      "confidence": 0.85,
+      "evidence": "Although (\u2212)-mesembrine26 is stable",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "(-)-mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3ef929b5c1b0f06657978a08747c841d"
+      ],
+      "confidence": 0.95,
+      "evidence": "(-)-mesembranol (1)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "(-)-sila-mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3ef929b5c1b0f06657978a08747c841d"
+      ],
+      "confidence": 0.95,
+      "evidence": "(-)-sila-mesembranol (4)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "(-)-sila-mesembranol-HOAc",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6248c7542c08ac5f4f85973d1242457c"
+      ],
+      "confidence": 0.9,
+      "evidence": "(-)-sila-mesembranol-HOAc (4-HOAc)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "silacyclobutane 5",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6248c7542c08ac5f4f85973d1242457c"
+      ],
+      "confidence": 0.85,
+      "evidence": "silacyclobutane 5",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "propargyl ester 6i",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6248c7542c08ac5f4f85973d1242457c"
+      ],
+      "confidence": 0.85,
+      "evidence": "propargyl ester 6i",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "silacyclohexene 7",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6248c7542c08ac5f4f85973d1242457c"
+      ],
+      "confidence": 0.85,
+      "evidence": "silacyclohexene 7",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Preparation",
+      "name": "asymmetric total synthesis",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6248c7542c08ac5f4f85973d1242457c"
+      ],
+      "confidence": 0.8,
+      "evidence": "Asymmetric total synthesis",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "06b4d3d2769f0dd53a4bc1f711895bc6"
+      ],
+      "confidence": 0.9,
+      "evidence": "(\u2013)-mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "06b4d3d2769f0dd53a4bc1f711895bc6"
+      ],
+      "confidence": 0.9,
+      "evidence": "(\u2013)-mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "sila-mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "06b4d3d2769f0dd53a4bc1f711895bc6"
+      ],
+      "confidence": 0.85,
+      "evidence": "(\u2013)-sila-mesembrine 14",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "sila-mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "06b4d3d2769f0dd53a4bc1f711895bc6"
+      ],
+      "confidence": 0.85,
+      "evidence": "(\u2013)-sila-mesembranol 4",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Preparation",
+      "name": "Pt-catalyzed hydrogenation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "06b4d3d2769f0dd53a4bc1f711895bc6"
+      ],
+      "confidence": 0.8,
+      "evidence": "Pt-catalyzed hydrogenation",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Preparation",
+      "name": "NaBH4 reduction",
+      "attributes": {},
+      "source_chunk_ids": [
+        "06b4d3d2769f0dd53a4bc1f711895bc6"
+      ],
+      "confidence": 0.8,
+      "evidence": "NaBH4 reduced the crude residue",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Preparation",
+      "name": "preparative HPLC",
+      "attributes": {},
+      "source_chunk_ids": [
+        "06b4d3d2769f0dd53a4bc1f711895bc6"
+      ],
+      "confidence": 0.8,
+      "evidence": "separated by preparative HPLC",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "09ff2c488c3026f6cf4f938a0fd85a75"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "acetic acid salt of (\u2013)-mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "09ff2c488c3026f6cf4f938a0fd85a75"
+      ],
+      "confidence": 0.85,
+      "evidence": "acetic acid salt of (\u2013)-mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "4\u00b7HOAc",
+      "attributes": {},
+      "source_chunk_ids": [
+        "09ff2c488c3026f6cf4f938a0fd85a75"
+      ],
+      "confidence": 0.8,
+      "evidence": "4\u00b7HOAc",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Preparation",
+      "name": "preparation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "09ff2c488c3026f6cf4f938a0fd85a75"
+      ],
+      "confidence": 0.7,
+      "evidence": "prepared following the known processes",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "alkaloid extracts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "confidence": 0.85,
+      "evidence": "alkaloid extracts",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "confidence": 0.9,
+      "evidence": "(\u2013)-mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "confidence": 0.95,
+      "evidence": "antidepressant activity",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zembrin\u00ae",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "depressive symptoms",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "confidence": 0.9,
+      "evidence": "depressive symptoms",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "4\u00b7HOAc",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "confidence": 0.9,
+      "evidence": "4\u00b7HOAc",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Compound",
+      "name": "1\u00b7HOAc",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "confidence": 0.9,
+      "evidence": "1\u00b7HOAc",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "animal model study",
+      "attributes": {
+        "design": "animal model",
+        "sample_size": null,
+        "year": null
+      },
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "confidence": 0.8,
+      "evidence": "animal model of depression",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Evidence",
+      "name": "in vivo",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "confidence": 0.85,
+      "evidence": "animal model",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Dosage",
+      "name": "10 mg kg\u20131",
+      "attributes": {
+        "amount": 10,
+        "unit": "mg kg\u20131",
+        "frequency": null,
+        "duration": null,
+        "route": "systemic"
+      },
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "confidence": 0.9,
+      "evidence": "10 mg kg\u20131",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Effect",
+      "name": "alleviated depressive behavior",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "confidence": 0.85,
+      "evidence": "alleviated the depressive behavior",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Effect",
+      "name": "better antidepressant effect",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "confidence": 0.8,
+      "evidence": "showing a better effect",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "(-)-mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e5a4aa78560be9fca525a6fff4961379"
+      ],
+      "confidence": 0.9,
+      "evidence": "(-)-mesembranol (1\u00b7HOAc)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "(-)-sila-mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e5a4aa78560be9fca525a6fff4961379"
+      ],
+      "confidence": 0.9,
+      "evidence": "(-)-sila-mesembranol (4\u00b7HOAc)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "NMR spectroscopy",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "e5a4aa78560be9fca525a6fff4961379"
+      ],
+      "confidence": 0.85,
+      "evidence": "Comparison of selected 1H and 13C NMR data",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "(-)-sila-mesembranol (4\u00b7HOAc)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d0e19b34fd14f670e11517f5f484d9e0"
+      ],
+      "confidence": 0.95,
+      "evidence": "(-)-sila-mesembranol (4\u00b7HOAc)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Effect",
+      "name": "reduced depressive-like behaviors",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "d0e19b34fd14f670e11517f5f484d9e0"
+      ],
+      "confidence": 0.85,
+      "evidence": "Effects on depressive-like behaviors",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "depressive-like behaviors",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "d0e19b34fd14f670e11517f5f484d9e0"
+      ],
+      "confidence": 0.9,
+      "evidence": "depressive-like behaviors in mice",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Figure 1 study on (-)-sila-mesembranol",
+      "attributes": {
+        "design": "animal study",
+        "species": "mice"
+      },
+      "source_chunk_ids": [
+        "d0e19b34fd14f670e11517f5f484d9e0"
+      ],
+      "confidence": 0.8,
+      "evidence": "Figure 1: Effects on depressive-like behaviors in mice",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vivo animal study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "d0e19b34fd14f670e11517f5f484d9e0"
+      ],
+      "confidence": 0.75,
+      "evidence": "behavioral tests in mice",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "(-)-sila-mesembranol (4\u00b7HOAc)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8827b5d0afd408a077bc703495979ccd"
+      ],
+      "confidence": 0.95,
+      "evidence": "(-)-sila-mesembranol (4\u00b7HOAc)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Effect",
+      "name": "reduced immobility time in tail suspension test",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "8827b5d0afd408a077bc703495979ccd"
+      ],
+      "confidence": 0.85,
+      "evidence": "Immobility time of LPS-treated mice in the tail suspension test",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "reduced immobility time in forced swimming test",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "8827b5d0afd408a077bc703495979ccd"
+      ],
+      "confidence": 0.85,
+      "evidence": "Immobility time of LPS-treated mice in forced swimming test",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "reduced immobility time in tail suspension test (CMS)",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "8827b5d0afd408a077bc703495979ccd"
+      ],
+      "confidence": 0.85,
+      "evidence": "Immobility time of CMS-treated mice in TST",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "reduced immobility time in forced swimming test (CMS)",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "8827b5d0afd408a077bc703495979ccd"
+      ],
+      "confidence": 0.85,
+      "evidence": "Immobility time of CMS-treated mice in FST",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "increased sucrose preference",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "8827b5d0afd408a077bc703495979ccd"
+      ],
+      "confidence": 0.8,
+      "evidence": "Sucrose preference of CMS-treated mice",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "depressive-like behaviors",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "8827b5d0afd408a077bc703495979ccd"
+      ],
+      "confidence": 0.9,
+      "evidence": "depressive-like behaviors in mice",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Fig. 1 study on (-)-sila-mesembranol in mice",
+      "attributes": {
+        "design": "animal study",
+        "sample_size": "mice groups (e.g., n=38 for LPS TST)"
+      },
+      "source_chunk_ids": [
+        "8827b5d0afd408a077bc703495979ccd"
+      ],
+      "confidence": 0.8,
+      "evidence": "Fig. 1 Effects of (-)-sila-mesembranol on depressive-like behaviors",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "in vivo animal study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "8827b5d0afd408a077bc703495979ccd"
+      ],
+      "confidence": 0.85,
+      "evidence": "Effects on depressive-like behaviors in mice",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Study on 4-HOAc in chronic mild stress model",
+      "attributes": {
+        "design": "animal model study",
+        "model": "chronic mild stress"
+      },
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "confidence": 0.85,
+      "evidence": "chronic mild stress, a potentially more realistic model",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vivo animal model",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "confidence": 0.8,
+      "evidence": "chronic mild stress model",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "4-HOAc",
+      "attributes": {},
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "confidence": 0.95,
+      "evidence": "4-HOAc administration",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Dosage",
+      "name": "10 mg kg-1",
+      "attributes": {
+        "amount": 10,
+        "unit": "mg kg-1",
+        "route": "administration"
+      },
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "confidence": 0.9,
+      "evidence": "10 mg kg-1",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "confidence": 0.9,
+      "evidence": "patients with depression",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "alleviated depressive behavior",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "confidence": 0.85,
+      "evidence": "alleviated the depressive behavior",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "no effect on autonomic locomotor activity",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "confidence": 0.8,
+      "evidence": "had no effect on autonomic locomotor activity",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "no effect on sucrose preference",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "confidence": 0.8,
+      "evidence": "did not affect the sucrose preference",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "regulates glutamatergic transmission",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "confidence": 0.85,
+      "evidence": "regulates glutamatergic transmission",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Target",
+      "name": "glutamatergic transmission in anterior cingulate cortex",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "confidence": 0.8,
+      "evidence": "glutamatergic transmission in the anterior cingulate cortex",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "in vivo study on (-)-sila-mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fe43a19edeb83f9e5b70562157804fda"
+      ],
+      "confidence": 0.9,
+      "evidence": "Our in vivo studies found",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vivo",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "fe43a19edeb83f9e5b70562157804fda"
+      ],
+      "confidence": 0.85,
+      "evidence": "in vivo studies",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "(-)-sila-mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fe43a19edeb83f9e5b70562157804fda"
+      ],
+      "confidence": 0.95,
+      "evidence": "(-)-sila-mesembranol (4)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "(-)-mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fe43a19edeb83f9e5b70562157804fda"
+      ],
+      "confidence": 0.95,
+      "evidence": "(-)-mesembranol (1)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "CompoundClass",
+      "name": "alkaloid",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fe43a19edeb83f9e5b70562157804fda"
+      ],
+      "confidence": 0.8,
+      "evidence": "natural alkaloid",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "fe43a19edeb83f9e5b70562157804fda"
+      ],
+      "confidence": 0.9,
+      "evidence": "mouse models of depression",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "higher activity",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "fe43a19edeb83f9e5b70562157804fda"
+      ],
+      "confidence": 0.8,
+      "evidence": "showed higher activity",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "70ff00e1d5a48742ee6af258371883d0"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "70ff00e1d5a48742ee6af258371883d0"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "70ff00e1d5a48742ee6af258371883d0"
+      ],
+      "confidence": 0.85,
+      "evidence": "promising antidepressant activity",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "Sceletium tortuosum extracts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "70ff00e1d5a48742ee6af258371883d0"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum extracts",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "serotonin uptake",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "70ff00e1d5a48742ee6af258371883d0"
+      ],
+      "confidence": 0.8,
+      "evidence": "inhibit serotonin uptake",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "phosphodiesterase-4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "70ff00e1d5a48742ee6af258371883d0"
+      ],
+      "confidence": 0.85,
+      "evidence": "phosphodiesterase-4 activity",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "70ff00e1d5a48742ee6af258371883d0"
+      ],
+      "confidence": 0.9,
+      "evidence": "in vitro",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Compound",
+      "name": "(-)-sila-mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "70ff00e1d5a48742ee6af258371883d0"
+      ],
+      "confidence": 0.95,
+      "evidence": "(-)-sila-mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Phase II Trial of Karenitecin in Patients with Malignant Melanoma",
+      "attributes": {
+        "design": "phase II trial",
+        "year": 2005
+      },
+      "source_chunk_ids": [
+        "9b542728a01ea8e255ef13b3722a6038"
+      ],
+      "confidence": 0.9,
+      "evidence": "Phase II Trial of Karenitecin in Patients with Malignant Melanoma",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "9b542728a01ea8e255ef13b3722a6038"
+      ],
+      "confidence": 0.85,
+      "evidence": "Phase II Trial",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "Karenitecin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9b542728a01ea8e255ef13b3722a6038"
+      ],
+      "confidence": 0.95,
+      "evidence": "Karenitecin",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "malignant melanoma",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "9b542728a01ea8e255ef13b3722a6038"
+      ],
+      "confidence": 0.9,
+      "evidence": "malignant melanoma",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "7-tert-Butyldimethylsilyl-10-hydroxy-camptothecin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9b542728a01ea8e255ef13b3722a6038"
+      ],
+      "confidence": 0.8,
+      "evidence": "7-tert-Butyldimethylsilyl-10-hydroxy-",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "CompoundClass",
+      "name": "silicon-containing compounds",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9b542728a01ea8e255ef13b3722a6038"
+      ],
+      "confidence": 0.7,
+      "evidence": "Silicon Chemistry as a Novel Source",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "242eb76b4579b62e7845b4126f5e36d5"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium Tortuosum in Rats",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "242eb76b4579b62e7845b4126f5e36d5"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrine alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "242eb76b4579b62e7845b4126f5e36d5"
+      ],
+      "confidence": 0.85,
+      "evidence": "Mesembrine alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Loria et al., 2014",
+      "attributes": {
+        "year": 2014,
+        "design": "animal study"
+      },
+      "source_chunk_ids": [
+        "242eb76b4579b62e7845b4126f5e36d5"
+      ],
+      "confidence": 0.8,
+      "evidence": "Effects of Sceletium Tortuosum in Rats, J. Ethnopharmacol., 2014",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vivo",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "242eb76b4579b62e7845b4126f5e36d5"
+      ],
+      "confidence": 0.75,
+      "evidence": "Effects of Sceletium Tortuosum in Rats",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "confidence": 0.85,
+      "evidence": "mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "joubertinamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "confidence": 0.8,
+      "evidence": "joubertinamine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "tortuosamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "confidence": 0.8,
+      "evidence": "tortuosamine",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "N-formyltortuosamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "confidence": 0.8,
+      "evidence": "N-formyltortuosamine",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "oxomaritidine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "confidence": 0.8,
+      "evidence": "oxomaritidine",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "confidence": 0.85,
+      "evidence": "alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Harvey et al., 2011",
+      "attributes": {
+        "year": 2011,
+        "design": "pharmacological study"
+      },
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "confidence": 0.9,
+      "evidence": "Harvey et al., 2011",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "Coetzee et al., 2016",
+      "attributes": {
+        "year": 2016,
+        "design": "pharmacological study"
+      },
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "confidence": 0.9,
+      "evidence": "Coetzee et al., 2016",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "confidence": 0.8,
+      "evidence": "pharmacological study",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "RawMaterial",
+      "name": "Trimesemine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "confidence": 0.85,
+      "evidence": "Trimesemine",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Target",
+      "name": "monoamine releasing agent",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "confidence": 0.8,
+      "evidence": "monoamine releasing agent",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Target",
+      "name": "serotonin reuptake inhibitor",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "confidence": 0.8,
+      "evidence": "serotonin reuptake inhibitor",
+      "verified": true
+    }
+  ],
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "natural alkaloid (\u2013)-mesembranol",
+      "source_chunk_ids": [
+        "82c474d94b7530be6ba1b92ccaa09097"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "in mice"
+      },
+      "confidence": 0.8,
+      "evidence": "exhibits better antidepressant effects",
+      "source_chunk_ids": [
+        "82c474d94b7530be6ba1b92ccaa09097"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "in mice"
+      },
+      "confidence": 0.75,
+      "evidence": "exhibits better antidepressant effects",
+      "source_chunk_ids": [
+        "82c474d94b7530be6ba1b92ccaa09097"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "karenitecin as silicon-containing bioactive molecule",
+      "source_chunk_ids": [
+        "3ecbd1a47099856a6940755b4ca45f86"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "sila-Almquist inhibitor as silicon-containing bioactive molecule",
+      "source_chunk_ids": [
+        "3ecbd1a47099856a6940755b4ca45f86"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "sila-HCV inhibitor as silicon-containing bioactive molecule",
+      "source_chunk_ids": [
+        "3ecbd1a47099856a6940755b4ca45f86"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "sila-haloperidol as silicon-containing bioactive molecule",
+      "source_chunk_ids": [
+        "3ecbd1a47099856a6940755b4ca45f86"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "silicon incorporation increased cell-penetration",
+      "source_chunk_ids": [
+        "3ecbd1a47099856a6940755b4ca45f86"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "silicon incorporation reduced toxicity",
+      "source_chunk_ids": [
+        "3ecbd1a47099856a6940755b4ca45f86"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "silicon incorporation improved bioactivity",
+      "source_chunk_ids": [
+        "3ecbd1a47099856a6940755b4ca45f86"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "karenitecin (8 clinical trials)",
+      "source_chunk_ids": [
+        "3ecbd1a47099856a6940755b4ca45f86"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "karenitecin (8 clinical trials)",
+      "source_chunk_ids": [
+        "3ecbd1a47099856a6940755b4ca45f86"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "alkaloids from Sceletium tortuosum",
+      "source_chunk_ids": [
+        "dcfb9685f5e3a6a9fa45acbfd2cd4164"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "alkaloid extracts containing compound 1",
+      "source_chunk_ids": [
+        "dcfb9685f5e3a6a9fa45acbfd2cd4164"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "(-)-mesembranol bears a cis-3a-aryl-octahydroindole core",
+      "source_chunk_ids": [
+        "dcfb9685f5e3a6a9fa45acbfd2cd4164"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "exhibit antidepressant activity",
+      "source_chunk_ids": [
+        "dcfb9685f5e3a6a9fa45acbfd2cd4164"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "preliminary results of its antidepressant studies",
+      "source_chunk_ids": [
+        "dcfb9685f5e3a6a9fa45acbfd2cd4164"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "exhibit antidepressant activity16b,17",
+      "source_chunk_ids": [
+        "dcfb9685f5e3a6a9fa45acbfd2cd4164"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "synthesis of (-)-sila-mesembranol-HOAc",
+      "source_chunk_ids": [
+        "6248c7542c08ac5f4f85973d1242457c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Pt-catalyzed hydrogenation worked well for (\u2013)-mesembrine to give (\u2013)-mesembranol",
+      "source_chunk_ids": [
+        "06b4d3d2769f0dd53a4bc1f711895bc6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "NaBH4 reduced the crude residue of 14 to give (\u2013)-sila-mesembranol 4",
+      "source_chunk_ids": [
+        "06b4d3d2769f0dd53a4bc1f711895bc6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "separated by preparative HPLC to afford (\u2013)-sila-mesembranol",
+      "source_chunk_ids": [
+        "06b4d3d2769f0dd53a4bc1f711895bc6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "acetic acid salt of (\u2013)-mesembranol",
+      "source_chunk_ids": [
+        "09ff2c488c3026f6cf4f938a0fd85a75"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "prepared following the known processes",
+      "source_chunk_ids": [
+        "09ff2c488c3026f6cf4f938a0fd85a75"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Sceletium tortuosum alkaloid extracts",
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "containing (\u2013)-mesembranol",
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TREATS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "preclinical"
+      },
+      "confidence": 0.75,
+      "evidence": "show antidepressant activity in rodents",
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TREATS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.7,
+      "evidence": "can reduce depressive symptoms in patients",
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "animal model of depression",
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "assessed the antidepressant activity of 4\u00b7HOAc",
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "assessed the antidepressant activity of 1\u00b7HOAc",
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "TESTED_AT",
+      "source_entity_id": "E9",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "10 mg kg\u20131",
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E12",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "alleviated the depressive behavior",
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E13",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.75,
+      "evidence": "showing a better effect",
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "TREATS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "preclinical"
+      },
+      "confidence": 0.8,
+      "evidence": "alleviated the depressive behavior",
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "supporting_study_ids": [
+        "E9"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "TREATS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "preclinical"
+      },
+      "confidence": 0.8,
+      "evidence": "alleviated the depressive behavior",
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "supporting_study_ids": [
+        "E9"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E13",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "4\u00b7HOAc showing a better effect",
+      "source_chunk_ids": [
+        "b6deaf58f53d98859fb5819dcd5caf3c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "INTERACTS_WITH",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "interaction_type": "structural comparison",
+        "bidirectional": true
+      },
+      "confidence": 0.8,
+      "evidence": "Comparison of selected 1H and 13C NMR data",
+      "source_chunk_ids": [
+        "e5a4aa78560be9fca525a6fff4961379"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INTERACTS_WITH",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "interaction_type": "structural comparison",
+        "bidirectional": true
+      },
+      "confidence": 0.8,
+      "evidence": "Comparison of selected 1H and 13C NMR data",
+      "source_chunk_ids": [
+        "e5a4aa78560be9fca525a6fff4961379"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Effects on depressive-like behaviors",
+      "source_chunk_ids": [
+        "d0e19b34fd14f670e11517f5f484d9e0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "context": "preclinical"
+      },
+      "confidence": 0.75,
+      "evidence": "Effects on depressive-like behaviors",
+      "source_chunk_ids": [
+        "d0e19b34fd14f670e11517f5f484d9e0"
+      ],
+      "supporting_study_ids": [
+        "E4"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Figure 1 study",
+      "source_chunk_ids": [
+        "d0e19b34fd14f670e11517f5f484d9e0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Effects of (-)-sila-mesembranol",
+      "source_chunk_ids": [
+        "d0e19b34fd14f670e11517f5f484d9e0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "Effects on depressive-like behaviors",
+      "source_chunk_ids": [
+        "d0e19b34fd14f670e11517f5f484d9e0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "depressive-like behaviors in mice",
+      "source_chunk_ids": [
+        "d0e19b34fd14f670e11517f5f484d9e0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Effects on immobility time in tail suspension test",
+      "source_chunk_ids": [
+        "8827b5d0afd408a077bc703495979ccd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Effects on immobility time in forced swimming test",
+      "source_chunk_ids": [
+        "8827b5d0afd408a077bc703495979ccd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Effects on immobility time in TST (CMS)",
+      "source_chunk_ids": [
+        "8827b5d0afd408a077bc703495979ccd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Effects on immobility time in FST (CMS)",
+      "source_chunk_ids": [
+        "8827b5d0afd408a077bc703495979ccd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Effects on sucrose preference in CMS-treated mice",
+      "source_chunk_ids": [
+        "8827b5d0afd408a077bc703495979ccd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "preclinical"
+      },
+      "confidence": 0.85,
+      "evidence": "Effects on depressive-like behaviors in mice",
+      "source_chunk_ids": [
+        "8827b5d0afd408a077bc703495979ccd"
+      ],
+      "supporting_study_ids": [
+        "E8"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Fig. 1 study on effects in mice",
+      "source_chunk_ids": [
+        "8827b5d0afd408a077bc703495979ccd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Effects of (-)-sila-mesembranol",
+      "source_chunk_ids": [
+        "8827b5d0afd408a077bc703495979ccd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "Effects on depressive-like behaviors",
+      "source_chunk_ids": [
+        "8827b5d0afd408a077bc703495979ccd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "chronic mild stress model",
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "4-HOAc administration",
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "10 mg kg-1",
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "models"
+      },
+      "confidence": 0.8,
+      "evidence": "model of dysfunction observed in patients with depression",
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "alleviated the depressive behavior",
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.8,
+      "evidence": "had no effect on autonomic locomotor activity",
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.8,
+      "evidence": "did not affect the sucrose preference",
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "modulates"
+      },
+      "confidence": 0.85,
+      "evidence": "regulates glutamatergic transmission",
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "preclinical"
+      },
+      "confidence": 0.75,
+      "evidence": "alleviated the depressive behavior",
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "4-HOAc administration alleviated the depressive behavior",
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {
+        "assertion": "refutes"
+      },
+      "confidence": 0.75,
+      "evidence": "had no effect on autonomic locomotor activity",
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E8",
+      "attributes": {
+        "assertion": "refutes"
+      },
+      "confidence": 0.75,
+      "evidence": "did not affect the sucrose preference",
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "4-HOAc regulates glutamatergic transmission",
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E10",
+      "attributes": {
+        "action": "regulates"
+      },
+      "confidence": 0.8,
+      "evidence": "regulates glutamatergic transmission in the anterior cingulate cortex",
+      "source_chunk_ids": [
+        "80eb0f2bc149b052bfb080927b5ee905"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "in vivo studies",
+      "source_chunk_ids": [
+        "fe43a19edeb83f9e5b70562157804fda"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "(-)-sila-mesembranol showed higher activity",
+      "source_chunk_ids": [
+        "fe43a19edeb83f9e5b70562157804fda"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "mouse models of depression",
+      "source_chunk_ids": [
+        "fe43a19edeb83f9e5b70562157804fda"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "positive"
+      },
+      "confidence": 0.8,
+      "evidence": "showed higher activity",
+      "source_chunk_ids": [
+        "fe43a19edeb83f9e5b70562157804fda"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "context": "preclinical"
+      },
+      "confidence": 0.75,
+      "evidence": "suggesting a clinical application potential",
+      "source_chunk_ids": [
+        "fe43a19edeb83f9e5b70562157804fda"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "showed higher activity",
+      "source_chunk_ids": [
+        "fe43a19edeb83f9e5b70562157804fda"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "natural alkaloid (-)-mesembranol",
+      "source_chunk_ids": [
+        "fe43a19edeb83f9e5b70562157804fda"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Sceletium tortuosum alkaloids",
+      "source_chunk_ids": [
+        "70ff00e1d5a48742ee6af258371883d0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.75,
+      "evidence": "promising antidepressant activity",
+      "source_chunk_ids": [
+        "70ff00e1d5a48742ee6af258371883d0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "inhibit serotonin uptake",
+      "source_chunk_ids": [
+        "70ff00e1d5a48742ee6af258371883d0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "inhibit phosphodiesterase-4 activity",
+      "source_chunk_ids": [
+        "70ff00e1d5a48742ee6af258371883d0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "in vitro",
+      "source_chunk_ids": [
+        "70ff00e1d5a48742ee6af258371883d0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "investigate the pharmacological effect on these processes",
+      "source_chunk_ids": [
+        "70ff00e1d5a48742ee6af258371883d0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "investigate the pharmacological effect on these proteins",
+      "source_chunk_ids": [
+        "70ff00e1d5a48742ee6af258371883d0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Phase II Trial",
+      "source_chunk_ids": [
+        "9b542728a01ea8e255ef13b3722a6038"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Karenitecin",
+      "source_chunk_ids": [
+        "9b542728a01ea8e255ef13b3722a6038"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "studied"
+      },
+      "confidence": 0.85,
+      "evidence": "malignant melanoma",
+      "source_chunk_ids": [
+        "9b542728a01ea8e255ef13b3722a6038"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "Karenitecin in Patients with Malignant Melanoma",
+      "source_chunk_ids": [
+        "9b542728a01ea8e255ef13b3722a6038"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "silicon-containing compounds",
+      "source_chunk_ids": [
+        "9b542728a01ea8e255ef13b3722a6038"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "silicon-containing compounds",
+      "source_chunk_ids": [
+        "9b542728a01ea8e255ef13b3722a6038"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Sceletium\u2014A Review Update",
+      "source_chunk_ids": [
+        "242eb76b4579b62e7845b4126f5e36d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Mesembrine alkaloids",
+      "source_chunk_ids": [
+        "242eb76b4579b62e7845b4126f5e36d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Effects of Sceletium Tortuosum in Rats",
+      "source_chunk_ids": [
+        "242eb76b4579b62e7845b4126f5e36d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Effects of Sceletium Tortuosum in Rats",
+      "source_chunk_ids": [
+        "242eb76b4579b62e7845b4126f5e36d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Sceletium tortuosum alkaloids",
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "alkaloids",
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloids",
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloids",
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloids",
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloids",
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloids",
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "pharmacological study",
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E10",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "pharmacological study",
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum",
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "STUDIES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E12",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Trimesemine",
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "REPORTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E13",
+      "attributes": {
+        "outcome": "identifies"
+      },
+      "confidence": 0.8,
+      "evidence": "monoamine releasing agent",
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "REPORTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E14",
+      "attributes": {
+        "outcome": "refutes"
+      },
+      "confidence": 0.8,
+      "evidence": "rather than only a selective serotonin reuptake inhibitor",
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "ACTS_ON",
+      "source_entity_id": "E12",
+      "target_entity_id": "E13",
+      "attributes": {
+        "action": "modulates"
+      },
+      "confidence": 0.75,
+      "evidence": "monoamine releasing agent",
+      "source_chunk_ids": [
+        "91cda4547eadafb32ed8692d7109c93b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

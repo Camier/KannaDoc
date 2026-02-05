@@ -1,3467 +1,1421 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "051918b831a384fa29d5fdc18a97d90c777ab765235fe213066cc6092f908732",
-  "extracted_at": "2026-02-01T08:36:13.829834+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
+      "id": "E1",
+      "type": "Taxon",
+      "name": "ruschioids",
+      "attributes": {
+        "rank": "subfamily"
+      },
+      "source_chunk_ids": [
+        "89243c744a17f4171000d31df845f38b"
+      ],
+      "confidence": 0.8,
+      "evidence": "diversification of ruschioids",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Aizoaceae",
+      "attributes": {
+        "rank": "family"
+      },
+      "source_chunk_ids": [
+        "89243c744a17f4171000d31df845f38b"
+      ],
+      "confidence": 0.9,
+      "evidence": "southern African Aizoaceae",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "mesembs",
+      "attributes": {
+        "rank": "group"
+      },
+      "source_chunk_ids": [
+        "89243c744a17f4171000d31df845f38b"
+      ],
+      "confidence": 0.85,
+      "evidence": "Mesembs form a major component",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Ihlenfeldt, 1994",
+      "attributes": {
+        "year": 1994
+      },
+      "source_chunk_ids": [
+        "89243c744a17f4171000d31df845f38b"
+      ],
+      "confidence": 0.7,
+      "evidence": "Ihlenfeldt, 1994",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Ellis, Weis & Brandon, 2006",
+      "attributes": {
+        "year": 2006
+      },
+      "source_chunk_ids": [
+        "89243c744a17f4171000d31df845f38b"
+      ],
+      "confidence": 0.7,
+      "evidence": "Ellis, Weis & Brandon, 2006",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Goldblatt & Manning, 2002",
+      "attributes": {
+        "year": 2002
+      },
+      "source_chunk_ids": [
+        "89243c744a17f4171000d31df845f38b"
+      ],
+      "confidence": 0.7,
+      "evidence": "Goldblatt & Manning, 2002",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Born et al., 2007",
+      "attributes": {
+        "year": 2007
+      },
+      "source_chunk_ids": [
+        "89243c744a17f4171000d31df845f38b"
+      ],
+      "confidence": 0.7,
+      "evidence": "Born et al., 2007",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Linder, 2003",
+      "attributes": {
+        "year": 2003
+      },
+      "source_chunk_ids": [
+        "89243c744a17f4171000d31df845f38b"
+      ],
+      "confidence": 0.7,
+      "evidence": "Linder, 2003",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Schnitzler et al., 2011",
+      "attributes": {
+        "year": 2011
+      },
+      "source_chunk_ids": [
+        "89243c744a17f4171000d31df845f38b"
+      ],
+      "confidence": 0.7,
+      "evidence": "Schnitzler et al., 2011",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "Ellis et al., 2006",
+      "attributes": {
+        "year": 2006
+      },
+      "source_chunk_ids": [
+        "89243c744a17f4171000d31df845f38b"
+      ],
+      "confidence": 0.7,
+      "evidence": "Ellis et al., 2006",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Evidence",
+      "name": "ecological study",
+      "attributes": {
+        "evidence_level": 3,
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "89243c744a17f4171000d31df845f38b"
+      ],
+      "confidence": 0.65,
+      "evidence": "Studies in southern African Aizoaceae",
+      "verified": false
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Aizoaceae",
+      "attributes": {
+        "rank": "family"
+      },
+      "source_chunk_ids": [
+        "9a534fde00b3568e2fa9af11d3c3d9e0"
+      ],
+      "confidence": 0.95,
+      "evidence": "Aizoaceae are composed of four subfamilies",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Aizooideae",
+      "attributes": {
+        "rank": "subfamily"
+      },
+      "source_chunk_ids": [
+        "9a534fde00b3568e2fa9af11d3c3d9e0"
+      ],
+      "confidence": 0.9,
+      "evidence": "Two of these subfamilies, Aizooideae and Sesuvioidae",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sesuvioidae",
+      "attributes": {
+        "rank": "subfamily"
+      },
+      "source_chunk_ids": [
+        "9a534fde00b3568e2fa9af11d3c3d9e0"
+      ],
+      "confidence": 0.9,
+      "evidence": "Two of these subfamilies, Aizooideae and Sesuvioidae",
+      "verified": true
+    },
+    {
+      "id": "E4",
       "type": "Taxon",
       "name": "Mesembryanthemoideae",
       "attributes": {
-        "context": "With sub-family Mesembryanthemoideae"
+        "rank": "subfamily"
       },
       "source_chunk_ids": [
-        "8816afd83c50b1e863a1358f49123a3a"
-      ]
+        "9a534fde00b3568e2fa9af11d3c3d9e0"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mesembryanthemoideae, the weedy mesembs",
+      "verified": true
     },
     {
-      "id": "ent_002",
+      "id": "E5",
       "type": "Taxon",
       "name": "Ruschioideae",
       "attributes": {
-        "context": "species of Ruschioideae are commonly referred to as the 'mesembs'"
+        "rank": "subfamily"
       },
       "source_chunk_ids": [
-        "8816afd83c50b1e863a1358f49123a3a"
-      ]
+        "9a534fde00b3568e2fa9af11d3c3d9e0"
+      ],
+      "confidence": 0.9,
+      "evidence": "Ruschioideae contains about 1585 species",
+      "verified": true
     },
     {
-      "id": "ent_003",
-      "type": "Taxon",
-      "name": "mesembs",
+      "id": "E1",
+      "type": "Study",
+      "name": "sampling study of mesemb genera",
       "attributes": {
-        "context": "commonly referred to as the 'mesembs'"
+        "year": "2008-2009",
+        "location": "South Africa"
       },
       "source_chunk_ids": [
-        "8816afd83c50b1e863a1358f49123a3a"
-      ]
+        "eb4754dc78e0eb32dd5f0dd1504c967d"
+      ],
+      "confidence": 0.8,
+      "evidence": "sampled in this study; collected in South Africa during 2008 and 2009",
+      "verified": true
     },
     {
-      "id": "ent_004",
+      "id": "E2",
       "type": "Taxon",
-      "name": "ruschioids",
+      "name": "mesemb genera",
       "attributes": {
-        "context": "a subclade of the ruschioids"
+        "rank": "genera"
       },
       "source_chunk_ids": [
-        "8816afd83c50b1e863a1358f49123a3a"
-      ]
+        "eb4754dc78e0eb32dd5f0dd1504c967d"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesemb genera",
+      "verified": true
     },
     {
-      "id": "ent_005",
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "silica-dried material",
+      "attributes": {},
+      "source_chunk_ids": [
+        "eb4754dc78e0eb32dd5f0dd1504c967d"
+      ],
+      "confidence": 0.7,
+      "evidence": "stored in silica gel; silica-dried material",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "phylogenetic sampling",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "eb4754dc78e0eb32dd5f0dd1504c967d"
+      ],
+      "confidence": 0.75,
+      "evidence": "sampled in this study; as complete a sampling as possible",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Taxon",
       "name": "core Ruschioideae",
       "attributes": {
-        "context": "(core Ruschioideae)"
+        "rank": "subfamily"
       },
       "source_chunk_ids": [
-        "8816afd83c50b1e863a1358f49123a3a"
-      ]
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "confidence": 0.9,
+      "evidence": "core Ruschioideae",
+      "verified": true
     },
     {
-      "id": "ent_006",
+      "id": "E2",
       "type": "Taxon",
-      "name": "angiosperms",
+      "name": "Trichodiadema Schwantes",
       "attributes": {
-        "context": "recorded in angiosperms"
+        "rank": "genus"
       },
       "source_chunk_ids": [
-        "8816afd83c50b1e863a1358f49123a3a"
-      ]
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "confidence": 0.85,
+      "evidence": "Trichodiadema Schwantes",
+      "verified": true
     },
     {
-      "id": "ent_007",
+      "id": "E3",
       "type": "Taxon",
-      "name": "ice plant",
+      "name": "Erepsia",
       "attributes": {
-        "context": "the ice plant dating analysis"
+        "rank": "genus"
       },
       "source_chunk_ids": [
-        "5d4af68b555e457415bdd1b496635df7"
-      ]
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "confidence": 0.85,
+      "evidence": "Erepsia",
+      "verified": true
     },
     {
-      "id": "ent_008",
+      "id": "E4",
       "type": "Taxon",
-      "name": "Ruschioideae",
+      "name": "Faucaria",
       "attributes": {
-        "context": "radiation of core Ruschioideae"
+        "rank": "genus"
       },
       "source_chunk_ids": [
-        "5d4af68b555e457415bdd1b496635df7"
-      ]
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "confidence": 0.85,
+      "evidence": "Faucaria",
+      "verified": true
     },
     {
-      "id": "ent_009",
-      "type": "Taxon",
-      "name": "mesembs",
-      "attributes": {
-        "context": "radiation of mesembs"
-      },
-      "source_chunk_ids": [
-        "5d4af68b555e457415bdd1b496635df7"
-      ]
-    },
-    {
-      "id": "ent_010",
-      "type": "Taxon",
-      "name": "Ruschioideae",
-      "attributes": {
-        "context": "radiation of Ruschioideae"
-      },
-      "source_chunk_ids": [
-        "5d4af68b555e457415bdd1b496635df7"
-      ]
-    },
-    {
-      "id": "ent_011",
-      "type": "Taxon",
-      "name": "angiosperm",
-      "attributes": {
-        "context": "an angiosperm-wide chronogram"
-      },
-      "source_chunk_ids": [
-        "5d4af68b555e457415bdd1b496635df7"
-      ]
-    },
-    {
-      "id": "ent_012",
-      "type": "Taxon",
-      "name": "ice plant",
-      "attributes": {
-        "context": "the ice plant radiation"
-      },
-      "source_chunk_ids": [
-        "5d4af68b555e457415bdd1b496635df7"
-      ]
-    },
-    {
-      "id": "ent_013",
-      "type": "Taxon",
-      "name": "mesembs",
-      "attributes": {
-        "context": "diversification of mesembs"
-      },
-      "source_chunk_ids": [
-        "5d4af68b555e457415bdd1b496635df7"
-      ]
-    },
-    {
-      "id": "ent_014",
-      "type": "Taxon",
-      "name": "ruschioids",
-      "attributes": {
-        "context": "radiation of the core ruschioids"
-      },
-      "source_chunk_ids": [
-        "14d889a6743e1aa8e8ed6a76849824dc"
-      ]
-    },
-    {
-      "id": "ent_015",
-      "type": "Taxon",
-      "name": "Mesembryanthemaceae",
-      "attributes": {
-        "context": "evolutionary success of mesembs"
-      },
-      "source_chunk_ids": [
-        "14d889a6743e1aa8e8ed6a76849824dc"
-      ]
-    },
-    {
-      "id": "ent_016",
-      "type": "Taxon",
-      "name": "ruschioids",
-      "attributes": {
-        "context": "core ruschioids show great leaf shape diversity"
-      },
-      "source_chunk_ids": [
-        "14d889a6743e1aa8e8ed6a76849824dc"
-      ]
-    },
-    {
-      "id": "ent_017",
-      "type": "Concentration",
-      "name": "500 \u00b5L",
-      "attributes": {
-        "context": "(500 \u00b5L) was added"
-      },
-      "source_chunk_ids": [
-        "5fca998eb06aa29c20c1128b7dc6198c"
-      ]
-    },
-    {
-      "id": "ent_018",
-      "type": "Concentration",
-      "name": "50\u2013100 mg",
-      "attributes": {
-        "context": "to 50\u2013100 mg of ground plant material"
-      },
-      "source_chunk_ids": [
-        "5fca998eb06aa29c20c1128b7dc6198c"
-      ]
-    },
-    {
-      "id": "ent_019",
-      "type": "Taxon",
-      "name": "plant material",
-      "attributes": {
-        "context": "ground plant material"
-      },
-      "source_chunk_ids": [
-        "5fca998eb06aa29c20c1128b7dc6198c"
-      ]
-    },
-    {
-      "id": "ent_020",
-      "type": "Compound",
-      "name": "SEVAG",
-      "attributes": {
-        "context": "protein denaturant (SEVAG"
-      },
-      "source_chunk_ids": [
-        "5fca998eb06aa29c20c1128b7dc6198c"
-      ]
-    },
-    {
-      "id": "ent_021",
-      "type": "Compound",
-      "name": "chloroform",
-      "attributes": {
-        "context": "24 parts chloroform"
-      },
-      "source_chunk_ids": [
-        "5fca998eb06aa29c20c1128b7dc6198c"
-      ]
-    },
-    {
-      "id": "ent_022",
-      "type": "Compound",
-      "name": "isoamyl alcohol",
-      "attributes": {
-        "context": "one part isoamyl alcohol"
-      },
-      "source_chunk_ids": [
-        "5fca998eb06aa29c20c1128b7dc6198c"
-      ]
-    },
-    {
-      "id": "ent_023",
-      "type": "Compound",
-      "name": "ethanol",
-      "attributes": {
-        "context": "washed in ethanol"
-      },
-      "source_chunk_ids": [
-        "5fca998eb06aa29c20c1128b7dc6198c"
-      ]
-    },
-    {
-      "id": "ent_024",
-      "type": "Concentration",
-      "name": "50 \u00b5L",
-      "attributes": {
-        "context": "resuspended in 50 \u00b5L TE buffer"
-      },
-      "source_chunk_ids": [
-        "5fca998eb06aa29c20c1128b7dc6198c"
-      ]
-    },
-    {
-      "id": "ent_025",
-      "type": "Compound",
-      "name": "TE buffer",
-      "attributes": {
-        "context": "in 50 \u00b5L TE buffer"
-      },
-      "source_chunk_ids": [
-        "5fca998eb06aa29c20c1128b7dc6198c"
-      ]
-    },
-    {
-      "id": "ent_026",
-      "type": "Taxon",
-      "name": "mesembs",
-      "attributes": {
-        "context": "of mesembs: leaf shape and tracheid type"
-      },
-      "source_chunk_ids": [
-        "2b3e35c77b252fc041c0e211018e900c"
-      ]
-    },
-    {
-      "id": "ent_027",
-      "type": "Taxon",
-      "name": "Mesembryanthemum",
-      "attributes": {
-        "context": "mesemb genus richness"
-      },
-      "source_chunk_ids": [
-        "eb1ca5152c37497424f26a11afb204c9"
-      ]
-    },
-    {
-      "id": "ent_028",
-      "type": "Taxon",
-      "name": "mesembs",
-      "attributes": {
-        "context": "case of mesembs (> 1500 species)"
-      },
-      "source_chunk_ids": [
-        "eb1ca5152c37497424f26a11afb204c9"
-      ]
-    },
-    {
-      "id": "ent_029",
-      "type": "Taxon",
-      "name": "ruschioids",
-      "attributes": {
-        "context": "core ruschioids"
-      },
-      "source_chunk_ids": [
-        "7d705270a74c7303822cbb9edc6da8b6"
-      ]
-    },
-    {
-      "id": "ent_030",
-      "type": "Taxon",
-      "name": "Ruschioid",
-      "attributes": {
-        "context": "IN RUSCHIOID DIVERSIFICATION"
-      },
-      "source_chunk_ids": [
-        "8999277bdd752f4fca98465cb01444c2"
-      ]
-    },
-    {
-      "id": "ent_031",
-      "type": "Taxon",
-      "name": "ruschioids",
-      "attributes": {
-        "context": "core ruschioids"
-      },
-      "source_chunk_ids": [
-        "059c6c936c5eb4cd08cdc4b169d9d05c"
-      ]
-    },
-    {
-      "id": "ent_032",
-      "type": "Taxon",
-      "name": "angiosperms",
-      "attributes": {
-        "context": "radiations known in angiosperms"
-      },
-      "source_chunk_ids": [
-        "37934af323bad93d8548904240ec43f6"
-      ]
-    },
-    {
-      "id": "ent_033",
-      "type": "Taxon",
-      "name": "Ruschioideae",
-      "attributes": {
-        "context": "diversification rate of core Ruschioideae"
-      },
-      "source_chunk_ids": [
-        "37934af323bad93d8548904240ec43f6"
-      ]
-    },
-    {
-      "id": "ent_034",
-      "type": "Taxon",
-      "name": "Dianthus L.",
-      "attributes": {
-        "context": "including Dianthus L. (Caryophyllaceae)"
-      },
-      "source_chunk_ids": [
-        "37934af323bad93d8548904240ec43f6"
-      ]
-    },
-    {
-      "id": "ent_035",
-      "type": "Taxon",
-      "name": "Caryophyllaceae",
-      "attributes": {
-        "context": "Dianthus L. (Caryophyllaceae)"
-      },
-      "source_chunk_ids": [
-        "37934af323bad93d8548904240ec43f6"
-      ]
-    },
-    {
-      "id": "ent_036",
-      "type": "Taxon",
-      "name": "Ruschioideae",
-      "attributes": {
-        "context": "core ruschioid genus richness"
-      },
-      "source_chunk_ids": [
-        "3760a1968f257ce21fb6abfd5d880bf1"
-      ]
-    },
-    {
-      "id": "ent_037",
-      "type": "Taxon",
-      "name": "Ruschioideae",
-      "attributes": {
-        "context": "core ruschioid richness"
-      },
-      "source_chunk_ids": [
-        "3760a1968f257ce21fb6abfd5d880bf1"
-      ]
-    },
-    {
-      "id": "ent_038",
+      "id": "E5",
       "type": "Taxon",
       "name": "Lithops",
       "attributes": {
-        "context": "drought-resistant flowering stones"
+        "rank": "genus"
       },
       "source_chunk_ids": [
-        "3760a1968f257ce21fb6abfd5d880bf1"
-      ]
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "confidence": 0.85,
+      "evidence": "Lithops",
+      "verified": true
     },
     {
-      "id": "ent_039",
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Conophytum",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "confidence": 0.85,
+      "evidence": "Conophytum",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Argyroderma",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "confidence": 0.85,
+      "evidence": "Argyroderma",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Taxon",
+      "name": "Conicosia",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "confidence": 0.85,
+      "evidence": "Conicosia",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Taxon",
+      "name": "Mesembryanthemoideae",
+      "attributes": {
+        "rank": "subfamily"
+      },
+      "source_chunk_ids": [
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mesembryanthemoideae",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "confidence": 0.95,
+      "evidence": "flat leaves to highly succulent leaves",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "decreased water loss",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "confidence": 0.8,
+      "evidence": "decreased surface area that can account for much lower water loss",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Effect",
+      "name": "water storage",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "confidence": 0.8,
+      "evidence": "act as water storage organs",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Effect",
+      "name": "survival in low rainfall",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "confidence": 0.75,
+      "evidence": "allowing the core ruschioids to survive in areas of much lower rainfall",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Condition",
+      "name": "semi-arid conditions",
+      "attributes": {
+        "condition_type": "environmental"
+      },
+      "source_chunk_ids": [
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "confidence": 0.7,
+      "evidence": "beneficial in semi-arid conditions",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Mesembryanthemoideae",
+      "attributes": {
+        "rank": "subfamily"
+      },
+      "source_chunk_ids": [
+        "24e6421fe5d317c614f1dc341d8b4a55"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mesembryanthemoideae",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "core ruschioids",
+      "attributes": {
+        "rank": "group"
+      },
+      "source_chunk_ids": [
+        "24e6421fe5d317c614f1dc341d8b4a55"
+      ],
+      "confidence": 0.85,
+      "evidence": "core ruschioids",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "early-diverging ruschioids",
+      "attributes": {
+        "rank": "group"
+      },
+      "source_chunk_ids": [
+        "24e6421fe5d317c614f1dc341d8b4a55"
+      ],
+      "confidence": 0.85,
+      "evidence": "early-diverging ruschioids",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24e6421fe5d317c614f1dc341d8b4a55"
+      ],
+      "confidence": 0.8,
+      "evidence": "highly succulent leaves",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24e6421fe5d317c614f1dc341d8b4a55"
+      ],
+      "confidence": 0.8,
+      "evidence": "flat leaves",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24e6421fe5d317c614f1dc341d8b4a55"
+      ],
+      "confidence": 0.8,
+      "evidence": "more succulent, cylindrical leaves",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Aizoaceae",
+      "attributes": {
+        "rank": "family"
+      },
+      "source_chunk_ids": [
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "confidence": 0.95,
+      "evidence": "Aizoaceae",
+      "verified": true
+    },
+    {
+      "id": "E2",
       "type": "Taxon",
       "name": "Ruschioideae",
       "attributes": {
-        "context": "core ruschioid species occur there"
+        "rank": "subfamily"
       },
       "source_chunk_ids": [
-        "3760a1968f257ce21fb6abfd5d880bf1"
-      ]
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "confidence": 0.9,
+      "evidence": "core Ruschioideae",
+      "verified": true
     },
     {
-      "id": "ent_040",
+      "id": "E3",
       "type": "Taxon",
-      "name": "Lupinus L.",
+      "name": "mesembs",
       "attributes": {
-        "context": "other groups [e.g. Lupinus L. (Fabaceae)]"
+        "rank": "common_name"
       },
       "source_chunk_ids": [
-        "a4583ff1796347ea6d8c91f0f5da3be7"
-      ]
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "confidence": 0.85,
+      "evidence": "mesembs",
+      "verified": true
     },
     {
-      "id": "ent_041",
-      "type": "Compound",
-      "name": "quartz",
-      "attributes": {
-        "context": "reflective ability of quartz in the mountainous quartz fields"
-      },
-      "source_chunk_ids": [
-        "a4583ff1796347ea6d8c91f0f5da3be7"
-      ]
-    },
-    {
-      "id": "ent_042",
-      "type": "Compound",
-      "name": "UV radiation",
-      "attributes": {
-        "context": "increase levels of UV radiation, which has been known to increase mutation rates"
-      },
-      "source_chunk_ids": [
-        "a4583ff1796347ea6d8c91f0f5da3be7"
-      ]
-    },
-    {
-      "id": "ent_043",
-      "type": "PharmEffect",
-      "name": "increase mutation rates",
-      "attributes": {
-        "context": "known to increase mutation rates"
-      },
-      "source_chunk_ids": [
-        "a4583ff1796347ea6d8c91f0f5da3be7"
-      ]
-    },
-    {
-      "id": "ent_044",
-      "type": "PharmEffect",
-      "name": "higher rates of mutation",
-      "attributes": {
-        "context": "potentially higher rates of mutation in the quartz habitat"
-      },
-      "source_chunk_ids": [
-        "a4583ff1796347ea6d8c91f0f5da3be7"
-      ]
-    },
-    {
-      "id": "ent_045",
-      "type": "PharmEffect",
-      "name": "high speciation rates",
-      "attributes": {
-        "context": "could have driven high speciation rates"
-      },
-      "source_chunk_ids": [
-        "a4583ff1796347ea6d8c91f0f5da3be7"
-      ]
-    },
-    {
-      "id": "ent_046",
-      "type": "Taxon",
-      "name": "succulent",
-      "attributes": {
-        "context": "Wide-band tracheids from a southern African succulent"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_047",
-      "type": "Taxon",
-      "name": "Cape flora",
-      "attributes": {
-        "context": "The radiation of the Cape flora, southern Africa"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_048",
-      "type": "Taxon",
-      "name": "Restionaceae",
-      "attributes": {
-        "context": "an example from the African Restionaceae"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_049",
-      "type": "Taxon",
-      "name": "angiosperms",
-      "attributes": {
-        "context": "Absolute diversification rates in angiosperm clades"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_050",
-      "type": "Taxon",
-      "name": "cacti",
-      "attributes": {
-        "context": "an unusual tracheid type in cacti"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_051",
-      "type": "Taxon",
-      "name": "Protea",
-      "attributes": {
-        "context": "a recent radiation within Protea (Proteaceae L.)"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_052",
-      "type": "Taxon",
-      "name": "Proteaceae",
-      "attributes": {
-        "context": "within Protea (Proteaceae L.)"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_053",
-      "type": "Taxon",
-      "name": "Cape flora",
-      "attributes": {
-        "context": "species richness in the Cape flora of South Africa"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_054",
-      "type": "Taxon",
-      "name": "Gladiolus",
-      "attributes": {
-        "context": "southern African gladioli (Gladiolus; Iridaceae)"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_055",
-      "type": "Taxon",
-      "name": "Iridaceae",
-      "attributes": {
-        "context": "Gladiolus; Iridaceae"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_056",
-      "type": "Taxon",
-      "name": "Paeonia",
-      "attributes": {
-        "context": "biogeography of Paeonia (Paeoniaceae)"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_057",
-      "type": "Taxon",
-      "name": "Paeoniaceae",
-      "attributes": {
-        "context": "Paeonia (Paeoniaceae)"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_058",
-      "type": "Taxon",
-      "name": "Succulent Karoo",
-      "attributes": {
-        "context": "quartz-fields in the Succulent Karoo, South Africa"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_059",
-      "type": "Taxon",
-      "name": "Cape biodiversity hotspot",
-      "attributes": {
-        "context": "plant diversification in the Cape biodiversity hotspot of South Africa"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_060",
-      "type": "Taxon",
-      "name": "angiosperms",
-      "attributes": {
-        "context": "phylogenetic studies in angiosperms"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_061",
-      "type": "Taxon",
-      "name": "Mesembs",
-      "attributes": {
-        "context": "Mesembs of the world"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_062",
-      "type": "Taxon",
-      "name": "Gladiolus",
-      "attributes": {
-        "context": "diversification in Southern African Gladiolus"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_063",
-      "type": "Taxon",
-      "name": "Protea",
-      "attributes": {
-        "context": "Diversification of the African genus Protea (Proteaceae)"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_064",
-      "type": "Taxon",
-      "name": "Proteaceae",
-      "attributes": {
-        "context": "genus Protea (Proteaceae)"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_065",
-      "type": "Taxon",
-      "name": "Cape biodiversity hotspot",
-      "attributes": {
-        "context": "in the Cape biodiversity hotspot and beyond"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_066",
-      "type": "Taxon",
-      "name": "Gladiolus",
-      "attributes": {
-        "context": "a case study in Gladiolus (Iridaceae)"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_067",
-      "type": "Taxon",
-      "name": "Iridaceae",
-      "attributes": {
-        "context": "Gladiolus (Iridaceae)"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_068",
-      "type": "Taxon",
-      "name": "Greater Cape flora",
-      "attributes": {
-        "context": "diversification of the Greater Cape flora"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_069",
-      "type": "Taxon",
-      "name": "Ehrharta",
-      "attributes": {
-        "context": "Phylogenetics of the grass genus Ehrharta"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_070",
-      "type": "Taxon",
-      "name": "angiosperms",
-      "attributes": {
-        "context": "Evolution of the angiosperms"
-      },
-      "source_chunk_ids": [
-        "dfd6dc8fbda741669e7743c25e670384"
-      ]
-    },
-    {
-      "id": "ent_071",
-      "type": "Taxon",
-      "name": "Aloinopsis spathulata",
-      "attributes": {
-        "context": "Aloinopsis spathulataPMB10422"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_072",
-      "type": "Taxon",
-      "name": "Acrodon bellidiflorus",
-      "attributes": {
-        "context": "Acrodon bellidiflorus\u2013This study"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_073",
-      "type": "Taxon",
-      "name": "Acrodon purpurea",
-      "attributes": {
-        "context": "Acrodon purpureaPMB9850"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_074",
-      "type": "Taxon",
-      "name": "Aizoon canariense",
-      "attributes": {
-        "context": "Aizoon canarienseGoldblatt &amp; Manning 11 708 (MO)"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_075",
-      "type": "Taxon",
-      "name": "Amphibolia laevis",
-      "attributes": {
-        "context": "Amphibolia laevisPMB10389"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_076",
-      "type": "Taxon",
-      "name": "Antegibbaeum fissoides",
-      "attributes": {
-        "context": "Antegibbaeum fissoidesPMB10721"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_077",
-      "type": "Taxon",
-      "name": "Antimima crassifolia",
-      "attributes": {
-        "context": "Antimima crassifoliaPMB10361b"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_078",
-      "type": "Taxon",
-      "name": "Antimima ventricosa",
-      "attributes": {
-        "context": "Antimima ventricosa\u2013GenBank"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_079",
-      "type": "Taxon",
-      "name": "Apatesia helianthoides",
-      "attributes": {
-        "context": "Apatesia helianthoidesKlak 800 (BOL)"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_080",
-      "type": "Taxon",
-      "name": "Apatesia sabulosa",
-      "attributes": {
-        "context": "Apatesia sabulosaPMB12063"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_081",
-      "type": "Taxon",
-      "name": "Aptenia geniculiflora",
-      "attributes": {
-        "context": "Aptenia geniculifloraPMB8859"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_082",
-      "type": "Taxon",
-      "name": "Argyroderma pearsonii",
-      "attributes": {
-        "context": "Argyroderma pearsoniiPMB10387"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_083",
-      "type": "Taxon",
-      "name": "Aridaria brevicarpa",
-      "attributes": {
-        "context": "Aridaria brevicarpaBruyns 9469 (BOL)"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_084",
-      "type": "Taxon",
-      "name": "Aridaria vespertina",
-      "attributes": {
-        "context": "Aridaria vespertinaPMB10359"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_085",
-      "type": "Taxon",
-      "name": "Aspazoma amplexens",
-      "attributes": {
-        "context": "Aspazoma amplexensPMB10338"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_086",
-      "type": "Taxon",
-      "name": "Astridia longifolia",
-      "attributes": {
-        "context": "Astridia longifoliaPMB33"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_087",
-      "type": "Taxon",
-      "name": "Bergeranthus scapiger",
-      "attributes": {
-        "context": "Bergeranthus scapigerPMB9123"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_088",
-      "type": "Taxon",
-      "name": "Bijlia tugwelliae",
-      "attributes": {
-        "context": "Bijlia tugwelliaeBruyns 2762 (BOL)"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_089",
-      "type": "Taxon",
-      "name": "Braunsia geminata",
-      "attributes": {
-        "context": "Braunsia geminata\u2013GenBank"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_090",
-      "type": "Taxon",
-      "name": "Braunsia stayneri",
-      "attributes": {
-        "context": "Braunsia stayneriPMB10439"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_091",
-      "type": "Taxon",
-      "name": "Brianhuntleya intrusa",
-      "attributes": {
-        "context": "Brianhuntleya intrusaPMB1333"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_092",
-      "type": "Taxon",
-      "name": "Brownanthus neglectus",
-      "attributes": {
-        "context": "Brownanthus neglectus\u2013GenBank"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_093",
-      "type": "Taxon",
-      "name": "Brownanthus pubescens",
-      "attributes": {
-        "context": "Brownanthus pubescens\u2013GenBank"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_094",
-      "type": "Taxon",
-      "name": "Carpanthea pomeridiana",
-      "attributes": {
-        "context": "Carpanthea pomeridianaKlak 801 (BOL)"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_095",
-      "type": "Taxon",
-      "name": "Carpobrotus deliciosus",
-      "attributes": {
-        "context": "Carpobrotus deliciosusPMB9139"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_096",
-      "type": "Taxon",
-      "name": "Carpobrotus muirii",
-      "attributes": {
-        "context": "Carpobrotus muirii\u2013GenBank"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_097",
-      "type": "Taxon",
-      "name": "Carruanthus ringens",
-      "attributes": {
-        "context": "Carruanthus ringensBruyns 8173a (BOL)"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_098",
-      "type": "Taxon",
-      "name": "Caryotophora skiatophytoides",
-      "attributes": {
-        "context": "Caryotophora skiatophytoidesKlak 805 (BOL)"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_099",
-      "type": "Taxon",
-      "name": "Caryotophora sp.",
-      "attributes": {
-        "context": "Caryotophora sp.none"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_100",
-      "type": "Taxon",
-      "name": "Caulipsolon rapaceum",
-      "attributes": {
-        "context": "Caulipsolon rapaceumKlak 750 (BOL)"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_101",
-      "type": "Taxon",
-      "name": "Cephalophyllum pillansii",
-      "attributes": {
-        "context": "Cephalophyllum pillansiiKlak 785 (BOL)"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_102",
-      "type": "Taxon",
-      "name": "Cephalophyllum sp.",
-      "attributes": {
-        "context": "Cephalophyllum sp.PMB11815"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_103",
-      "type": "Taxon",
-      "name": "Cerochlamys pachyphylla",
-      "attributes": {
-        "context": "Cerochlamys pachyphyllaPMB19455"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_104",
-      "type": "Taxon",
-      "name": "Chasmatophyllum musculinum",
-      "attributes": {
-        "context": "Chasmatophyllum musculinumPMB11398"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_105",
-      "type": "Taxon",
-      "name": "Cheiridopsis turbita",
-      "attributes": {
-        "context": "Cheiridopsis turbitaPMB10325"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_106",
-      "type": "Taxon",
-      "name": "Cleretum papulosum",
-      "attributes": {
-        "context": "Cleretum papulosumBruyns 8825a (BOL)"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_107",
-      "type": "Taxon",
-      "name": "Cleretum sp.",
-      "attributes": {
-        "context": "Cleretum sp.PMB11728"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_108",
-      "type": "Taxon",
-      "name": "Conicosia elongata",
-      "attributes": {
-        "context": "Conicosia elongataPMB11723"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_109",
-      "type": "Taxon",
-      "name": "Conophytum bilobum",
-      "attributes": {
-        "context": "Conophytum bilobumPMB10357"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_110",
-      "type": "Taxon",
-      "name": "Conophytum bruynsii",
-      "attributes": {
-        "context": "Conophytum bruynsiiBruyns 6784 (BOL)"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_111",
-      "type": "Taxon",
-      "name": "Cylindrophyllum comptonii",
-      "attributes": {
-        "context": "Cylindrophyllum comptoniiPMB10429"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_112",
-      "type": "Taxon",
-      "name": "Dactylopsis digitata",
-      "attributes": {
-        "context": "Dactylopsis digitata\u2013This study"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_113",
-      "type": "Taxon",
-      "name": "Deilanthe peersii",
-      "attributes": {
-        "context": "Deilanthe peersiiPMB9234"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_114",
-      "type": "Taxon",
-      "name": "Delosperma echinatum",
-      "attributes": {
-        "context": "Delosperma echinatum\u2013GenBank"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_115",
-      "type": "Taxon",
-      "name": "Delosperma esterhuyensiae",
-      "attributes": {
-        "context": "Delosperma esterhuyensiae\u2013GenBank"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_116",
-      "type": "Taxon",
-      "name": "Dicrocaulon sp.",
-      "attributes": {
-        "context": "Dicrocaulon sp.PMB11983"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_117",
-      "type": "Taxon",
-      "name": "Didymaotus lapidiformis",
-      "attributes": {
-        "context": "Didymaotus lapidiformisPMB11507"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_118",
-      "type": "Taxon",
-      "name": "Dinteranthus puberulus",
-      "attributes": {
-        "context": "Dinteranthus puberulusPMB7227"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_119",
-      "type": "Taxon",
-      "name": "Diplosoma retroversum",
-      "attributes": {
-        "context": "Diplosoma retroversumKlak 835 (BOL)"
-      },
-      "source_chunk_ids": [
-        "b2c4f76abcf4a84c4f17ec1405d7ce62"
-      ]
-    },
-    {
-      "id": "ent_120",
-      "type": "Taxon",
-      "name": "Disphyma dunsonii",
-      "attributes": {
-        "context": "Disphyma dunsoniiKlak 808 (BOL)"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_121",
-      "type": "Taxon",
-      "name": "Dorotheanthus bellidiformis",
-      "attributes": {
-        "context": "Dorotheanthus bellidiformis\u2013GenBank"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_122",
-      "type": "Taxon",
-      "name": "Dracophilus dealbatus",
-      "attributes": {
-        "context": "Dracophilus dealbatusPMB20This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_123",
-      "type": "Taxon",
-      "name": "Drosanthemum schoenlandianum",
-      "attributes": {
-        "context": "Drosanthemum schoenlandianum\u2013GenBank"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_124",
-      "type": "Taxon",
-      "name": "Drosanthemum sp.",
-      "attributes": {
-        "context": "Drosanthemum sp.PMB11917This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_125",
-      "type": "Taxon",
-      "name": "Eberlanzia dichotoma",
-      "attributes": {
-        "context": "Eberlanzia dichotoma\u2013GenBank"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_126",
-      "type": "Taxon",
-      "name": "Eberlanzia gravida",
-      "attributes": {
-        "context": "Eberlanzia gravidaPMB10325This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_127",
-      "type": "Taxon",
-      "name": "Ebracteola fullerii",
-      "attributes": {
-        "context": "Ebracteola fulleriiPMB11572This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_128",
-      "type": "Taxon",
-      "name": "Enarganthe octonaria",
-      "attributes": {
-        "context": "Enarganthe octonariaPMB10358This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_129",
-      "type": "Taxon",
-      "name": "Erepsia inlaudens",
-      "attributes": {
-        "context": "Erepsia inlaudensPMB10399bThis study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_130",
-      "type": "Taxon",
-      "name": "Erepsia pillansii",
-      "attributes": {
-        "context": "Erepsia pillansii\u2013GenBank"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_131",
-      "type": "Taxon",
-      "name": "Esterhuyseia drepanophylla",
-      "attributes": {
-        "context": "Esterhuyseia drepanophylla\u2013GenBank"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_132",
-      "type": "Taxon",
-      "name": "Faucaria britteniae",
-      "attributes": {
-        "context": "Faucaria britteniaePMB8935This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_133",
-      "type": "Taxon",
-      "name": "Faucaria felina",
-      "attributes": {
-        "context": "Faucaria felinaKlak 338 (BOL)"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_134",
-      "type": "Taxon",
-      "name": "Fenestraria rhopalophylla",
-      "attributes": {
-        "context": "Fenestraria rhopalophyllaPMB7371This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_135",
-      "type": "Taxon",
-      "name": "Frithia pulchra",
-      "attributes": {
-        "context": "Frithia pulchraPMB1This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_136",
-      "type": "Taxon",
-      "name": "Galenia sp.",
-      "attributes": {
-        "context": "Galenia sp.PMB8898This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_137",
-      "type": "Taxon",
-      "name": "Gibbaeum pachypodium",
-      "attributes": {
-        "context": "Gibbaeum pachypodiumKlak 380 (BOL)"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_138",
-      "type": "Taxon",
-      "name": "Gibbaeum pubescens",
-      "attributes": {
-        "context": "Gibbaeum pubescensPMB10452This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_139",
-      "type": "Taxon",
-      "name": "Glottiphyllum depressum",
-      "attributes": {
-        "context": "Glottiphyllum depressumPMB10435This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_140",
-      "type": "Taxon",
-      "name": "Hallianthus planus",
-      "attributes": {
-        "context": "Hallianthus planusPMB7375This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_141",
-      "type": "Taxon",
-      "name": "Hammeria sp.",
-      "attributes": {
-        "context": "Hammeria sp.PMB11527This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_142",
-      "type": "Taxon",
-      "name": "Hartmanthus sp.",
-      "attributes": {
-        "context": "Hartmanthus sp.PMB16This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_143",
-      "type": "Taxon",
-      "name": "Hereroa crassa",
-      "attributes": {
-        "context": "Hereroa crassaPMB10400This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_144",
-      "type": "Taxon",
-      "name": "Hymenogene conica",
-      "attributes": {
-        "context": "Hymenogene conicaKlak 802 (BOL)"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_145",
-      "type": "Taxon",
-      "name": "Jacobsenia sp.",
-      "attributes": {
-        "context": "Jacobsenia sp.PMB11963This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_146",
-      "type": "Taxon",
-      "name": "Jensenobotrya lossowiana",
-      "attributes": {
-        "context": "Jensenobotrya lossowianaPMB215This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_147",
-      "type": "Taxon",
-      "name": "Juttadinteria simpsonii",
-      "attributes": {
-        "context": "Juttadinteria simpsonii\u2013GenBank"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_148",
-      "type": "Taxon",
-      "name": "Khadia carolinensis",
-      "attributes": {
-        "context": "Khadia carolinensisPMB4542This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_149",
-      "type": "Taxon",
-      "name": "Lampranthus amphibolius",
-      "attributes": {
-        "context": "Lampranthus amphibolius\u2013GenBank"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_150",
-      "type": "Taxon",
-      "name": "Lampranthus bicolor",
-      "attributes": {
-        "context": "Lampranthus bicolor\u2013GenBank"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_151",
-      "type": "Taxon",
-      "name": "Leipoldtia weigangiana",
-      "attributes": {
-        "context": "Leipoldtia weigangianaPMB10350This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_152",
-      "type": "Taxon",
-      "name": "Lithops julii",
-      "attributes": {
-        "context": "Lithops julii\u2013GenBank"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_153",
-      "type": "Taxon",
-      "name": "Lithops sp.",
-      "attributes": {
-        "context": "Lithops sp.PMB11542This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_154",
-      "type": "Taxon",
-      "name": "Machairophyllum albidum",
-      "attributes": {
-        "context": "Machairophyllum albidumKlak 182 (BOL)"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_155",
-      "type": "Taxon",
-      "name": "Machairophyllum sp.",
-      "attributes": {
-        "context": "Machairophyllum sp.PMB8485This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_156",
-      "type": "Taxon",
-      "name": "Malephora crassa",
-      "attributes": {
-        "context": "Malephora crassaPMB11525This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_157",
-      "type": "Taxon",
-      "name": "Malephora lutea",
-      "attributes": {
-        "context": "Malephora luteaKlak 664 (BOL)"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_158",
-      "type": "Taxon",
-      "name": "Mesembryanthemum crystallinum",
-      "attributes": {
-        "context": "Mesembryanthemum crystallinumPMB11964This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_159",
-      "type": "Taxon",
-      "name": "Mestoklema sp.",
-      "attributes": {
-        "context": "Mestoklema sp.PMB11863This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_160",
-      "type": "Taxon",
-      "name": "Meyerophytum meyeri",
-      "attributes": {
-        "context": "Meyerophytum meyeriPMB10332This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_161",
-      "type": "Taxon",
-      "name": "Mitrophyllum grande",
-      "attributes": {
-        "context": "Mitrophyllum grandePMB10344This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_162",
-      "type": "Taxon",
-      "name": "Monilaria moniliformis",
-      "attributes": {
-        "context": "Monilaria moniliformisKlak787 (BOL)"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_163",
-      "type": "Taxon",
-      "name": "Monilaria pissiformis",
-      "attributes": {
-        "context": "Monilaria pissiformisPMB10386This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_164",
-      "type": "Taxon",
-      "name": "Mossia intervallaris",
-      "attributes": {
-        "context": "Mossia intervallarisPMB8890This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_165",
-      "type": "Taxon",
-      "name": "Namaquanhus vanheerdei",
-      "attributes": {
-        "context": "Namaquanhus vanheerdei\u2013GenBank"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_166",
-      "type": "Taxon",
-      "name": "Namibia sp.",
-      "attributes": {
-        "context": "Namibia sp.PMB8480bThis study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_167",
-      "type": "Taxon",
-      "name": "Nananthus aloides",
-      "attributes": {
-        "context": "Nananthus aloidesPMB10494This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_168",
-      "type": "Taxon",
-      "name": "Neea floribunda",
-      "attributes": {
-        "context": "Neea floribunda\u2013GenBank"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_169",
-      "type": "Taxon",
-      "name": "Nelia pillansii",
-      "attributes": {
-        "context": "Nelia pillansiiKlak777(BOL)"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_170",
-      "type": "Taxon",
-      "name": "Nelia schlechteri",
-      "attributes": {
-        "context": "Nelia schlechteriPMB10340This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_171",
-      "type": "Taxon",
-      "name": "Neohenricia sibbettii",
-      "attributes": {
-        "context": "Neohenricia sibbettiiPMB11358This study"
-      },
-      "source_chunk_ids": [
-        "5e506449b7c143dfd207d515625fd482"
-      ]
-    },
-    {
-      "id": "ent_172",
-      "type": "Taxon",
-      "name": "Acrodon bellidiflorus",
-      "attributes": {
-        "context": "Acrodon bellidiflorus02"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_173",
-      "type": "Taxon",
-      "name": "Acrodon purpurea",
-      "attributes": {
-        "context": "Acrodon purpurea02"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_174",
-      "type": "Taxon",
-      "name": "Aizoon canariense",
-      "attributes": {
-        "context": "Aizoon canariense10"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_175",
-      "type": "Taxon",
-      "name": "Aloinopsis spathulata",
-      "attributes": {
-        "context": "Aloinopsis spathulata02"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_176",
-      "type": "Taxon",
-      "name": "Amphibolia leavis",
-      "attributes": {
-        "context": "Amphibolia leavis?5"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_177",
-      "type": "Taxon",
-      "name": "Antegibbaeum fissoides",
-      "attributes": {
-        "context": "Antegibbaeum fissoides05"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_178",
-      "type": "Taxon",
-      "name": "Antimima crassa",
-      "attributes": {
-        "context": "Antimima crassa02"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_179",
-      "type": "Taxon",
-      "name": "Antimima ventricosa",
-      "attributes": {
-        "context": "Antimima ventricosa02"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_180",
-      "type": "Taxon",
-      "name": "Apatesia helianthoides",
-      "attributes": {
-        "context": "Apatesia helianthoides?0"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_181",
-      "type": "Taxon",
-      "name": "Apatesia sabulosa",
-      "attributes": {
-        "context": "Apatesia sabulosa?0"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_182",
-      "type": "Taxon",
-      "name": "Aptenia genicula",
-      "attributes": {
-        "context": "Aptenia genicula10"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_183",
-      "type": "Taxon",
-      "name": "Argyroderma pearsonii",
-      "attributes": {
-        "context": "Argyroderma pearsonii03"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_184",
-      "type": "Taxon",
-      "name": "Aridaria brevicarpa",
-      "attributes": {
-        "context": "Aridaria brevicarpa11"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_185",
-      "type": "Taxon",
-      "name": "Aridaria vespertina",
-      "attributes": {
-        "context": "Aridaria vespertina11"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_186",
-      "type": "Taxon",
-      "name": "Aspazoma amplectens",
-      "attributes": {
-        "context": "Aspazoma amplectens?1"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_187",
-      "type": "Taxon",
-      "name": "Astridia longifolia",
-      "attributes": {
-        "context": "Astridia longifolia05"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_188",
-      "type": "Taxon",
-      "name": "Bergeranthus scapiger",
-      "attributes": {
-        "context": "Bergeranthus scapiger02"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_189",
-      "type": "Taxon",
-      "name": "Bijlia tugwelliae",
-      "attributes": {
-        "context": "Bijlia tugwelliae02"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_190",
-      "type": "Taxon",
-      "name": "Braunsia geminata",
-      "attributes": {
-        "context": "Braunsia geminata02"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_191",
-      "type": "Taxon",
-      "name": "Braunsia stayneri",
-      "attributes": {
-        "context": "Braunsia stayneri02"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_192",
-      "type": "Taxon",
-      "name": "Brianhuntleya intrusa",
-      "attributes": {
-        "context": "Brianhuntleya intrusa??"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_193",
-      "type": "Taxon",
-      "name": "Brownanthus neglectus",
-      "attributes": {
-        "context": "Brownanthus neglectus?1"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_194",
-      "type": "Taxon",
-      "name": "Brownanthus pubescens",
-      "attributes": {
-        "context": "Brownanthus pubescens?1"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_195",
-      "type": "Taxon",
-      "name": "Carpanthea pomeridiana",
-      "attributes": {
-        "context": "Carpanthea pomeridiana10"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_196",
-      "type": "Taxon",
-      "name": "Carpobrotus nuiiri",
-      "attributes": {
-        "context": "Carpobrotus nuiiri12"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_197",
-      "type": "Taxon",
-      "name": "Carpobrotus deliciosus",
-      "attributes": {
-        "context": "Carpobrotus deliciosus??"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_198",
-      "type": "Taxon",
-      "name": "Carruanthus ringens",
-      "attributes": {
-        "context": "Carruanthus ringens02"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_199",
-      "type": "Taxon",
-      "name": "Caryotophora skiatophytoides",
-      "attributes": {
-        "context": "Caryotophora skiatophytoides?0"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_200",
-      "type": "Taxon",
-      "name": "Caryotophora sp.",
-      "attributes": {
-        "context": "Caryotophora sp.?0"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_201",
-      "type": "Taxon",
-      "name": "Caulipsolon rapaceum",
-      "attributes": {
-        "context": "Caulipsolon rapaceum?1"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_202",
-      "type": "Taxon",
-      "name": "Cephalophyllum pillansii",
-      "attributes": {
-        "context": "Cephalophyllum pillansii??"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_203",
-      "type": "Taxon",
-      "name": "Cephalophyllum sp.",
-      "attributes": {
-        "context": "Cephalophyllum sp.?2"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_204",
-      "type": "Taxon",
-      "name": "Cerochlamys pachyphylla",
-      "attributes": {
-        "context": "Cerochlamys pachyphylla?2"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_205",
-      "type": "Taxon",
-      "name": "Chasmatophyllum musculinum",
-      "attributes": {
-        "context": "Chasmatophyllum musculinum12"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_206",
-      "type": "Taxon",
-      "name": "Cheiridopsis turbita",
-      "attributes": {
-        "context": "Cheiridopsis turbita02"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_207",
-      "type": "Taxon",
-      "name": "Cleretum papulosum",
-      "attributes": {
-        "context": "Cleretum papulosum10"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_208",
-      "type": "Taxon",
-      "name": "Cleretum sp.",
-      "attributes": {
-        "context": "Cleretum sp.10"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_209",
-      "type": "Taxon",
-      "name": "Conicosia elongata",
-      "attributes": {
-        "context": "Conicosia elongata15"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_210",
-      "type": "Taxon",
-      "name": "Conophytum bilobum",
-      "attributes": {
-        "context": "Conophytum bilobum13"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_211",
-      "type": "Taxon",
-      "name": "Conophytum bruynsii",
-      "attributes": {
-        "context": "Conophytum bruynsii13"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_212",
-      "type": "Taxon",
-      "name": "Cylindrophyllum comptonii",
-      "attributes": {
-        "context": "Cylindrophyllum comptonii01"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_213",
-      "type": "Taxon",
-      "name": "Dactylopsis digitata",
-      "attributes": {
-        "context": "Dactylopsis digitata?4"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_214",
-      "type": "Taxon",
-      "name": "Deilanthe peersii",
-      "attributes": {
-        "context": "Deilanthe peersii?2"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_215",
-      "type": "Taxon",
-      "name": "Delosperma echinatum",
-      "attributes": {
-        "context": "Delosperma echinatum05"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_216",
-      "type": "Taxon",
-      "name": "Delosperma esterhuyensiae",
-      "attributes": {
-        "context": "Delosperma esterhuyensiae05"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_217",
-      "type": "Taxon",
-      "name": "Dicraulon sp.",
-      "attributes": {
-        "context": "Dicraulon sp.02"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_218",
-      "type": "Taxon",
-      "name": "Didymaotus lapidiformis",
-      "attributes": {
-        "context": "Didymaotus lapidiformis03"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_219",
-      "type": "Taxon",
-      "name": "Dinteranthus puberulus",
-      "attributes": {
-        "context": "Dinteranthus puberulus03"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_220",
-      "type": "Taxon",
-      "name": "Diplosoma retroversum",
-      "attributes": {
-        "context": "Diplosoma retroversum?3"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_221",
-      "type": "Taxon",
-      "name": "Disphyma dunsonii",
-      "attributes": {
-        "context": "Disphyma dunsonii05"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_222",
-      "type": "Taxon",
-      "name": "Dorotheanthus bellidiformis",
-      "attributes": {
-        "context": "Dorotheanthus bellidiformis10"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_223",
-      "type": "Taxon",
-      "name": "Dracophilus dealbatus",
-      "attributes": {
-        "context": "Dracophilus dealbatus02"
-      },
-      "source_chunk_ids": [
-        "d3445255dc9aa80338577509edfb3838"
-      ]
-    },
-    {
-      "id": "ent_224",
-      "type": "Taxon",
-      "name": "Drosanthemum schoenlandianum",
-      "attributes": {
-        "context": "Drosanthemum schoenlandianum05"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_225",
-      "type": "Taxon",
-      "name": "Drosanthemum sp.",
-      "attributes": {
-        "context": "Drosanthemum sp.05"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_226",
-      "type": "Taxon",
-      "name": "Eberlanzia dichotoma",
-      "attributes": {
-        "context": "Eberlanzia dichotoma01"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_227",
-      "type": "Taxon",
-      "name": "Eberlanzia gravida",
-      "attributes": {
-        "context": "Eberlanzia gravida01"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_228",
-      "type": "Taxon",
-      "name": "Ebracteola fullerii",
-      "attributes": {
-        "context": "Ebracteola fullerii02"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_229",
-      "type": "Taxon",
-      "name": "Enarganthe octonaria",
-      "attributes": {
-        "context": "Enarganthe octonaria?2"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_230",
-      "type": "Taxon",
-      "name": "Erepsia inlaudens",
-      "attributes": {
-        "context": "Erepsia inlaudens12"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_231",
-      "type": "Taxon",
-      "name": "Erepsia pillansii",
-      "attributes": {
-        "context": "Erepsia pillansii12"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_232",
-      "type": "Taxon",
-      "name": "Esterhuysenia drepanophylla",
-      "attributes": {
-        "context": "Esterhuysenia drepanophylla?2"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_233",
-      "type": "Taxon",
-      "name": "Faucaria britteniae",
-      "attributes": {
-        "context": "Faucaria britteniae02"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_234",
-      "type": "Taxon",
-      "name": "Faucaria felina",
-      "attributes": {
-        "context": "Faucaria felina02"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_235",
-      "type": "Taxon",
-      "name": "Fenestraria rhopalophylla",
-      "attributes": {
-        "context": "Fenestraria rhopalophylla03"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_236",
-      "type": "Taxon",
-      "name": "Frithia pulchra",
-      "attributes": {
-        "context": "Frithia pulchra03"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_237",
-      "type": "Taxon",
-      "name": "Galenia sp.",
-      "attributes": {
-        "context": "Galenia sp.10"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_238",
-      "type": "Taxon",
-      "name": "Gibbaeum pachypodium",
-      "attributes": {
-        "context": "Gibbaeum pachypodium13"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_239",
-      "type": "Taxon",
-      "name": "Gibbaeum pubescens",
-      "attributes": {
-        "context": "Gibbaeum pubescens13"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_240",
-      "type": "Taxon",
-      "name": "Glottiphyllum depressum",
-      "attributes": {
-        "context": "Glottiphyllum depressum12"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_241",
-      "type": "Taxon",
-      "name": "Hallianthus planus",
-      "attributes": {
-        "context": "Hallianthus planus02"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_242",
-      "type": "Taxon",
-      "name": "Hammeria sp.",
-      "attributes": {
-        "context": "Hammeria sp.?1"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_243",
-      "type": "Taxon",
-      "name": "Hartmanthus sp.",
-      "attributes": {
-        "context": "Hartmanthus sp.?2"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_244",
-      "type": "Taxon",
-      "name": "Hereroa crassa",
-      "attributes": {
-        "context": "Hereroa crassa01"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_245",
-      "type": "Taxon",
-      "name": "Hymenogene conica",
-      "attributes": {
-        "context": "Hymenogene conica?0"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_246",
-      "type": "Taxon",
-      "name": "Jensenobotrya lossowiana",
-      "attributes": {
-        "context": "Jensenobotrya lossowiana03"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_247",
-      "type": "Taxon",
-      "name": "Juttadinteria simpsonii",
-      "attributes": {
-        "context": "Juttadinteria simpsonii05"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_248",
-      "type": "Taxon",
-      "name": "Khadia carolinensis",
-      "attributes": {
-        "context": "Khadia carolinensis?5"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_249",
-      "type": "Taxon",
-      "name": "Lampranthus amphibolius",
-      "attributes": {
-        "context": "Lampranthus amphibolius05"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_250",
-      "type": "Taxon",
-      "name": "Lampranthus bicolor",
-      "attributes": {
-        "context": "Lampranthus bicolor05"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_251",
-      "type": "Taxon",
-      "name": "Leipoldtia weigangiana",
-      "attributes": {
-        "context": "Leipoldtia weigangiana02"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_252",
-      "type": "Taxon",
-      "name": "Lithops julii",
-      "attributes": {
-        "context": "Lithops julii03"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_253",
-      "type": "Taxon",
-      "name": "Lithops sp.",
-      "attributes": {
-        "context": "Lithops sp.03"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_254",
-      "type": "Taxon",
-      "name": "Machairophyllum albidum",
-      "attributes": {
-        "context": "Machairophyllum albidum02"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_255",
-      "type": "Taxon",
-      "name": "Machairophyllum sp.",
-      "attributes": {
-        "context": "Machairophyllum sp.02"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_256",
-      "type": "Taxon",
-      "name": "Malephora crassa",
-      "attributes": {
-        "context": "Malephora crassa05"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_257",
-      "type": "Taxon",
-      "name": "Malephora lutea",
-      "attributes": {
-        "context": "Malephora lutea05"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_258",
-      "type": "Taxon",
-      "name": "Mesembryanthemum crystallinum",
-      "attributes": {
-        "context": "Mesembryanthemum crystallinum14"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_259",
-      "type": "Taxon",
-      "name": "Mestoklema sp.",
-      "attributes": {
-        "context": "Mestoklema sp.05"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_260",
-      "type": "Taxon",
-      "name": "Meyerothymum meyeri",
-      "attributes": {
-        "context": "Meyerothymum meyeri01"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_261",
-      "type": "Taxon",
-      "name": "Mitrophyllum grande",
-      "attributes": {
-        "context": "Mitrophyllum grande01"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_262",
-      "type": "Taxon",
-      "name": "Monilaria moniliformis",
-      "attributes": {
-        "context": "Monilaria moniliformis01"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_263",
-      "type": "Taxon",
-      "name": "Monilaria pissiformis",
-      "attributes": {
-        "context": "Monilaria pissiformis01"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_264",
-      "type": "Taxon",
-      "name": "Mossia intervallaris",
-      "attributes": {
-        "context": "Mossia intervallaris02"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_265",
-      "type": "Taxon",
-      "name": "Namaquanthus vanheerdei",
-      "attributes": {
-        "context": "Namaquanthus vanheerdei01"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_266",
-      "type": "Taxon",
-      "name": "Namibia sp.",
-      "attributes": {
-        "context": "Namibia sp.03"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_267",
-      "type": "Taxon",
-      "name": "Nananthus aloides",
-      "attributes": {
-        "context": "Nananthus aloides02"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_268",
-      "type": "Taxon",
-      "name": "Neea floribunda",
-      "attributes": {
-        "context": "Neea floribunda??"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_269",
-      "type": "Taxon",
-      "name": "Nelia pillansii",
-      "attributes": {
-        "context": "Nelia pillansii?2"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_270",
-      "type": "Taxon",
-      "name": "Nelia schlechteri",
-      "attributes": {
-        "context": "Nelia schlechteri?2"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_271",
-      "type": "Taxon",
-      "name": "Neohenricia sibbettii",
-      "attributes": {
-        "context": "Neohenricia sibbettii02"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_272",
-      "type": "Taxon",
-      "name": "Neohenricia spiculata",
-      "attributes": {
-        "context": "Neohenricia spiculata02"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_273",
-      "type": "Taxon",
-      "name": "Octopoma sp.",
-      "attributes": {
-        "context": "Octopoma sp.02"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_274",
-      "type": "Taxon",
-      "name": "Odontophorus marlothii",
-      "attributes": {
-        "context": "Odontophorus marlothii02"
-      },
-      "source_chunk_ids": [
-        "3f2763837bc21555368c8b75318f153a"
-      ]
-    },
-    {
-      "id": "ent_275",
-      "type": "Taxon",
-      "name": "Odontophorus nanus",
-      "attributes": {
-        "context": "Odontophorus nanus"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_276",
-      "type": "Taxon",
-      "name": "Oophytum nanum",
-      "attributes": {
-        "context": "Oophytum nanum"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_277",
-      "type": "Taxon",
-      "name": "Orthopterum coeganum",
-      "attributes": {
-        "context": "Orthopterum coeganum"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_278",
-      "type": "Taxon",
-      "name": "Orthopterum waltoniae",
-      "attributes": {
-        "context": "Orthopterum waltoniae"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_279",
-      "type": "Taxon",
-      "name": "Oscularia comptonii",
-      "attributes": {
-        "context": "Oscularia comptonii"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_280",
-      "type": "Taxon",
-      "name": "Oscularia deltooides",
-      "attributes": {
-        "context": "Oscularia deltooides"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_281",
-      "type": "Taxon",
-      "name": "Phiambolia unca",
-      "attributes": {
-        "context": "Phiambolia unca"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_282",
-      "type": "Taxon",
-      "name": "Phyllobolus deciduus",
-      "attributes": {
-        "context": "Phyllobolus deciduus"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_283",
-      "type": "Taxon",
-      "name": "Phytolacca sp.",
-      "attributes": {
-        "context": "Phytolacca sp."
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_284",
-      "type": "Taxon",
-      "name": "Pleiospilos simulans",
-      "attributes": {
-        "context": "Pleiospilos simulans"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_285",
-      "type": "Taxon",
-      "name": "Pleiospilos sp.",
-      "attributes": {
-        "context": "Pleiospilos sp."
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_286",
-      "type": "Taxon",
-      "name": "Polymita steenbokensis",
-      "attributes": {
-        "context": "Polymita steenbokensis"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_287",
-      "type": "Taxon",
-      "name": "Prepodesma orpenii",
-      "attributes": {
-        "context": "Prepodesma orpenii"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_288",
-      "type": "Taxon",
-      "name": "Psammophora modesta",
-      "attributes": {
-        "context": "Psammophora modesta"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_289",
-      "type": "Taxon",
-      "name": "Psilocaule dinteri",
-      "attributes": {
-        "context": "Psilocaule dinteri"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_290",
-      "type": "Taxon",
-      "name": "Psilocaule parviflorum",
-      "attributes": {
-        "context": "Psilocaule parviflorum"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_291",
-      "type": "Taxon",
-      "name": "Rabiea albinota",
-      "attributes": {
-        "context": "Rabiea albinota"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_292",
-      "type": "Taxon",
-      "name": "Rhinephyllum sp.",
-      "attributes": {
-        "context": "Rhinephyllum sp."
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_293",
-      "type": "Taxon",
-      "name": "Ruschia crassa",
-      "attributes": {
-        "context": "Ruschia crassa"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_294",
-      "type": "Taxon",
-      "name": "Ruschia strubeniae",
-      "attributes": {
-        "context": "Ruschia strubeniae"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_295",
-      "type": "Taxon",
-      "name": "Saphesia flaccida",
-      "attributes": {
-        "context": "Saphesia flaccida"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_296",
-      "type": "Taxon",
-      "name": "Schlechteranthus hallii",
-      "attributes": {
-        "context": "Schlechteranthus hallii"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_297",
-      "type": "Taxon",
-      "name": "Schlechteranthus maximilliani",
-      "attributes": {
-        "context": "Schlechteranthus maximilliani"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_298",
-      "type": "Taxon",
-      "name": "Schwantesia herrei",
-      "attributes": {
-        "context": "Schwantesia herrei"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_299",
-      "type": "Taxon",
-      "name": "Scopelogena bruynseii",
-      "attributes": {
-        "context": "Scopelogena bruynseii"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_300",
-      "type": "Taxon",
-      "name": "Skiatophytum tripolium",
-      "attributes": {
-        "context": "Skiatophytum tripolium"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_301",
-      "type": "Taxon",
-      "name": "Smicrostigma viride",
-      "attributes": {
-        "context": "Smicrostigma viride"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_302",
-      "type": "Taxon",
-      "name": "Stoberia beetzi",
-      "attributes": {
-        "context": "Stoberia beetzi"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_303",
-      "type": "Taxon",
-      "name": "Stomatium alboroseum",
-      "attributes": {
-        "context": "Stomatium alboroseum"
-      },
-      "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
-    },
-    {
-      "id": "ent_304",
+      "id": "E4",
       "type": "Taxon",
-      "name": "Synaptophyllum juttiae",
+      "name": "ice plant",
       "attributes": {
-        "context": "Synaptophyllum juttiae"
+        "rank": "common_name"
       },
       "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "confidence": 0.8,
+      "evidence": "ice plant",
+      "verified": true
     },
     {
-      "id": "ent_305",
-      "type": "Taxon",
-      "name": "Tanquana prismatica",
+      "id": "E5",
+      "type": "Study",
+      "name": "new dating analysis of Aizoaceae",
       "attributes": {
-        "context": "Tanquana prismatica"
+        "design": "dating analysis",
+        "year": "not specified"
       },
       "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "confidence": 0.9,
+      "evidence": "new dating analysis of Aizoaceae",
+      "verified": true
     },
     {
-      "id": "ent_306",
-      "type": "Taxon",
-      "name": "Titanopsis calcarea",
+      "id": "E6",
+      "type": "Evidence",
+      "name": "phylogenetic dating evidence",
       "attributes": {
-        "context": "Titanopsis calcarea"
+        "evidence_level": 3
       },
       "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "confidence": 0.85,
+      "evidence": "denser sampling, revised calibration age",
+      "verified": true
     },
     {
-      "id": "ent_307",
-      "type": "Taxon",
-      "name": "Titanopsis hugo-schlechteri",
+      "id": "E7",
+      "type": "Condition",
+      "name": "arid conditions",
       "attributes": {
-        "context": "Titanopsis hugo-schlechteri"
+        "condition_type": "environmental"
       },
       "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "confidence": 0.8,
+      "evidence": "arid conditions",
+      "verified": true
     },
     {
-      "id": "ent_308",
-      "type": "Taxon",
-      "name": "Trichodiadema emarginatum",
+      "id": "E8",
+      "type": "Effect",
+      "name": "rapid diversification",
       "attributes": {
-        "context": "Trichodiadema emarginatum"
+        "level": "systemic",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "confidence": 0.75,
+      "evidence": "most rapid angiosperm diversification events",
+      "verified": true
     },
     {
-      "id": "ent_309",
-      "type": "Taxon",
-      "name": "Trichodiadema rogerii",
+      "id": "E9",
+      "type": "Effect",
+      "name": "evolutionary success",
       "attributes": {
-        "context": "Trichodiadema rogerii"
+        "level": "systemic",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "confidence": 0.7,
+      "evidence": "mesemb evolutionary success",
+      "verified": true
     },
     {
-      "id": "ent_310",
-      "type": "Taxon",
-      "name": "Vanzijlia annulata",
+      "id": "E10",
+      "type": "Effect",
+      "name": "morphological adaptations to aridity",
       "attributes": {
-        "context": "Vanzijlia annulata"
+        "level": "molecular",
+        "valence": "neutral"
       },
       "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "confidence": 0.8,
+      "evidence": "morphological adaptations to aridity",
+      "verified": true
     },
     {
-      "id": "ent_311",
-      "type": "Taxon",
-      "name": "Vlokia ater",
+      "id": "E11",
+      "type": "Effect",
+      "name": "high diversity",
       "attributes": {
-        "context": "Vlokia ater"
+        "level": "systemic",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "confidence": 0.75,
+      "evidence": "high ice plant diversity",
+      "verified": true
     },
     {
-      "id": "ent_312",
-      "type": "Taxon",
-      "name": "Wooleyia farinosa",
+      "id": "E12",
+      "type": "Effect",
+      "name": "reproductive isolation",
       "attributes": {
-        "context": "Wooleyia farinosa"
+        "level": "cellular",
+        "valence": "neutral"
       },
       "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "confidence": 0.7,
+      "evidence": "promoting reproductive isolation",
+      "verified": true
     },
     {
-      "id": "ent_313",
-      "type": "Taxon",
-      "name": "Zeuktophyllum sp.",
+      "id": "E13",
+      "type": "Effect",
+      "name": "survival in arid environment",
       "attributes": {
-        "context": "Zeuktophyllum sp."
+        "level": "systemic",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "confidence": 0.8,
+      "evidence": "crucial for their survival in an arid environment",
+      "verified": true
     },
     {
-      "id": "ent_314",
-      "type": "Taxon",
-      "name": "Zeuktophyllum suppositum",
+      "id": "E14",
+      "type": "Effect",
+      "name": "low extinction rates",
       "attributes": {
-        "context": "Zeuktophyllum suppositum"
+        "level": "systemic",
+        "valence": "positive",
+        "verification_needed": true
       },
       "source_chunk_ids": [
-        "cb3c984a1fb4a7665fa508594bd47fb3"
-      ]
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "confidence": 0.65,
+      "evidence": "low extinction rates",
+      "verified": false
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:03.937060+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Ihlenfeldt, 1994",
+      "source_chunk_ids": [
+        "89243c744a17f4171000d31df845f38b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Ellis, Weis & Brandon, 2006",
+      "source_chunk_ids": [
+        "89243c744a17f4171000d31df845f38b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Goldblatt & Manning, 2002",
+      "source_chunk_ids": [
+        "89243c744a17f4171000d31df845f38b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Born et al., 2007",
+      "source_chunk_ids": [
+        "89243c744a17f4171000d31df845f38b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Linder, 2003",
+      "source_chunk_ids": [
+        "89243c744a17f4171000d31df845f38b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Schnitzler et al., 2011",
+      "source_chunk_ids": [
+        "89243c744a17f4171000d31df845f38b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Ellis et al., 2006",
+      "source_chunk_ids": [
+        "89243c744a17f4171000d31df845f38b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E11",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Studies in southern African Aizoaceae",
+      "source_chunk_ids": [
+        "89243c744a17f4171000d31df845f38b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E11",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Studies in southern African Aizoaceae",
+      "source_chunk_ids": [
+        "89243c744a17f4171000d31df845f38b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "sampled in this study",
+      "source_chunk_ids": [
+        "eb4754dc78e0eb32dd5f0dd1504c967d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Representatives of 106 out of the 123 currently recognized mesemb genera were sampled",
+      "source_chunk_ids": [
+        "eb4754dc78e0eb32dd5f0dd1504c967d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "stored in silica gel",
+      "source_chunk_ids": [
+        "eb4754dc78e0eb32dd5f0dd1504c967d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "core Ruschioideae...highly succulent leaves",
+      "source_chunk_ids": [
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Trichodiadema...cylindrical",
+      "source_chunk_ids": [
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E3",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Erepsia...trigonal",
+      "source_chunk_ids": [
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_PART",
+      "source_entity_id": "E4",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Faucaria...trigonal",
+      "source_chunk_ids": [
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_PART",
+      "source_entity_id": "E5",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Lithops...compact stones",
+      "source_chunk_ids": [
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_PART",
+      "source_entity_id": "E6",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Conophytum...compact stones",
+      "source_chunk_ids": [
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_PART",
+      "source_entity_id": "E7",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Argyroderma...compact stones",
+      "source_chunk_ids": [
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_PART",
+      "source_entity_id": "E8",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Conicosia...cylindrical leaves",
+      "source_chunk_ids": [
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_PART",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Mesembryanthemoideae...flattened mesomorphic leaves",
+      "source_chunk_ids": [
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "decreased surface area...lower water loss",
+      "source_chunk_ids": [
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "act as water storage organs",
+      "source_chunk_ids": [
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "PRODUCES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E13",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "water storage...survive in areas of much lower rainfall",
+      "source_chunk_ids": [
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "SUGGESTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E14",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "beneficial in semi-arid conditions",
+      "source_chunk_ids": [
+        "39f1b54b05e2f4c10169c509829f3f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "highly succulent leaves",
+      "source_chunk_ids": [
+        "24e6421fe5d317c614f1dc341d8b4a55"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "flat leaves",
+      "source_chunk_ids": [
+        "24e6421fe5d317c614f1dc341d8b4a55"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "more succulent, cylindrical leaves",
+      "source_chunk_ids": [
+        "24e6421fe5d317c614f1dc341d8b4a55"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "new dating analysis",
+      "source_chunk_ids": [
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "dating analysis of Aizoaceae",
+      "source_chunk_ids": [
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "confirms"
+      },
+      "confidence": 0.8,
+      "evidence": "places the radiation among most rapid diversification events",
+      "source_chunk_ids": [
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "suggests"
+      },
+      "confidence": 0.75,
+      "evidence": "evidence suggesting a link between mesemb evolutionary success and arid conditions",
+      "source_chunk_ids": [
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E10",
+      "attributes": {
+        "outcome": "shows"
+      },
+      "confidence": 0.8,
+      "evidence": "two morphological adaptations to aridity evolved",
+      "source_chunk_ids": [
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "corroborates"
+      },
+      "confidence": 0.75,
+      "evidence": "high ice plant diversity is associated with arid conditions",
+      "source_chunk_ids": [
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E12",
+      "attributes": {
+        "outcome": "suggests"
+      },
+      "confidence": 0.7,
+      "evidence": "role of allopatry in promoting reproductive isolation",
+      "source_chunk_ids": [
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E13",
+      "attributes": {
+        "outcome": "suggests"
+      },
+      "confidence": 0.8,
+      "evidence": "crucial for their survival in an arid environment",
+      "source_chunk_ids": [
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E14",
+      "attributes": {
+        "outcome": "cannot be confirmed",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "low extinction rates cannot be confirmed",
+      "source_chunk_ids": [
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R10",
+      "type": "SUGGESTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "link between mesemb evolutionary success and arid conditions",
+      "source_chunk_ids": [
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "radiation post-dates establishment of summer-arid climate",
+      "source_chunk_ids": [
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "link between mesemb evolutionary success and arid conditions",
+      "source_chunk_ids": [
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R13",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "morphological adaptations to aridity evolved",
+      "source_chunk_ids": [
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "high ice plant diversity is associated with arid conditions",
+      "source_chunk_ids": [
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E13",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "crucial for survival in arid environment",
+      "source_chunk_ids": [
+        "e6eb795be4fc79dd70d044d82f5f802c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

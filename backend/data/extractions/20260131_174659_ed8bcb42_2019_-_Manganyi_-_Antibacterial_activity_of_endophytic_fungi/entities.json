@@ -1,508 +1,2365 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "eea280366246aa9d8fdd4e17424423095c5f5c04e0545f8831b9003ca4543f53",
-  "extracted_at": "2026-02-01T08:51:03.485363+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
-      "type": "PharmEffect",
-      "name": "Antibacterial activity",
-      "attributes": {
-        "context": "Antibacterial activity of endophytic fungi"
-      },
-      "source_chunk_ids": [
-        "69ea405b23c1330d14bb890da94ee14c"
-      ]
-    },
-    {
-      "id": "ent_002",
-      "type": "Taxon",
-      "name": "Sceletium tortuosum L.",
-      "attributes": {
-        "context": "isolated from Sceletium tortuosum L."
-      },
-      "source_chunk_ids": [
-        "69ea405b23c1330d14bb890da94ee14c"
-      ]
-    },
-    {
-      "id": "ent_003",
-      "type": "Taxon",
-      "name": "Kougoed",
-      "attributes": {
-        "context": "Sceletium tortuosum L. (Kougoed)"
-      },
-      "source_chunk_ids": [
-        "69ea405b23c1330d14bb890da94ee14c"
-      ]
-    },
-    {
-      "id": "ent_004",
-      "type": "Compound",
-      "name": "secondary metabolites",
-      "attributes": {
-        "context": "The current study determined the antimicrobial properties and identify the chemical compounds of secondary metabolites produced by endophytic fungi"
-      },
-      "source_chunk_ids": [
-        "256ae1ae608785a85103407361ecf297"
-      ]
-    },
-    {
-      "id": "ent_005",
-      "type": "Compound",
-      "name": "secondary metabolites",
-      "attributes": {
-        "context": "A total of 60 endophytic fungi produced secondary metabolites that were detected after fermentation and extraction."
-      },
-      "source_chunk_ids": [
-        "256ae1ae608785a85103407361ecf297"
-      ]
-    },
-    {
-      "id": "ent_006",
-      "type": "Compound",
-      "name": "secondary metabolites",
-      "attributes": {
-        "context": "Antibacterial properties of the secondary metabolites were determined using the disc diffusion assay"
-      },
-      "source_chunk_ids": [
-        "256ae1ae608785a85103407361ecf297"
-      ]
-    },
-    {
-      "id": "ent_007",
-      "type": "Compound",
-      "name": "5-hydroxymethylfurfural",
-      "attributes": {
-        "context": "linked to high levels of 5-hydroxymethylfurfural (HMF) and octadecanoic acid"
-      },
-      "source_chunk_ids": [
-        "256ae1ae608785a85103407361ecf297"
-      ]
-    },
-    {
-      "id": "ent_008",
-      "type": "Compound",
-      "name": "HMF",
-      "attributes": {
-        "context": "linked to high levels of 5-hydroxymethylfurfural (HMF) and octadecanoic acid"
-      },
-      "source_chunk_ids": [
-        "256ae1ae608785a85103407361ecf297"
-      ]
-    },
-    {
-      "id": "ent_009",
-      "type": "Compound",
-      "name": "octadecanoic acid",
-      "attributes": {
-        "context": "linked to high levels of 5-hydroxymethylfurfural (HMF) and octadecanoic acid"
-      },
-      "source_chunk_ids": [
-        "256ae1ae608785a85103407361ecf297"
-      ]
-    },
-    {
-      "id": "ent_010",
-      "type": "Compound",
-      "name": "secondary metabolites",
-      "attributes": {
-        "context": "This study revealed the presence of bioactive secondary metabolites with antibacterial activities"
-      },
-      "source_chunk_ids": [
-        "256ae1ae608785a85103407361ecf297"
-      ]
-    },
-    {
-      "id": "ent_011",
-      "type": "Taxon",
-      "name": "Sceletium tortuosum L.",
-      "attributes": {
-        "context": "endophytic fungi isolated from Sceletium tortuosum L."
-      },
-      "source_chunk_ids": [
-        "256ae1ae608785a85103407361ecf297"
-      ]
-    },
-    {
-      "id": "ent_012",
-      "type": "Taxon",
-      "name": "Sceletium tortuosum L.",
-      "attributes": {
-        "context": "from fungi isolated from Sceletium tortuosum L."
-      },
-      "source_chunk_ids": [
-        "256ae1ae608785a85103407361ecf297"
-      ]
-    },
-    {
-      "id": "ent_013",
-      "type": "PharmEffect",
-      "name": "antimicrobial properties",
-      "attributes": {
-        "context": "The current study determined the antimicrobial properties and identify the chemical compounds"
-      },
-      "source_chunk_ids": [
-        "256ae1ae608785a85103407361ecf297"
-      ]
-    },
-    {
-      "id": "ent_014",
-      "type": "PharmEffect",
-      "name": "Antibacterial properties",
-      "attributes": {
-        "context": "Antibacterial properties of the secondary metabolites were determined using the disc diffusion assay"
-      },
-      "source_chunk_ids": [
-        "256ae1ae608785a85103407361ecf297"
-      ]
-    },
-    {
-      "id": "ent_015",
-      "type": "PharmEffect",
-      "name": "inhibited growth",
-      "attributes": {
-        "context": "none of the fungal extracts inhibited growth of Enterococcus faecalis"
-      },
-      "source_chunk_ids": [
-        "256ae1ae608785a85103407361ecf297"
-      ]
-    },
-    {
-      "id": "ent_016",
-      "type": "PharmEffect",
-      "name": "antibacterial activity",
-      "attributes": {
-        "context": "Fusarium oxysporum (GG 008) ... displayed significant antibacterial activity"
-      },
-      "source_chunk_ids": [
-        "256ae1ae608785a85103407361ecf297"
-      ]
-    },
-    {
-      "id": "ent_017",
-      "type": "PharmEffect",
-      "name": "antibacterial activities",
-      "attributes": {
-        "context": "bioactive secondary metabolites with antibacterial activities from fungi isolated from Sceletium tortuosum L."
-      },
-      "source_chunk_ids": [
-        "256ae1ae608785a85103407361ecf297"
-      ]
-    },
-    {
-      "id": "ent_018",
-      "type": "PharmEffect",
-      "name": "antimicrobial activity",
-      "attributes": {
-        "context": "biological activities against a wide variety of microbes"
-      },
-      "source_chunk_ids": [
-        "6ebfa4bee4d16e7ee2153a227a2b799e"
-      ]
-    },
-    {
-      "id": "ent_019",
-      "type": "Compound",
-      "name": "secondary metabolites",
-      "attributes": {
-        "context": "assess the bioactive potential of the secondary metabolites"
-      },
-      "source_chunk_ids": [
-        "b9963b69ccf02a7b61483bd4aaad9d7e"
-      ]
-    },
-    {
-      "id": "ent_020",
-      "type": "Compound",
-      "name": "secondary metabolites",
-      "attributes": {
-        "context": "produce secondary metabolites"
-      },
-      "source_chunk_ids": [
-        "b9963b69ccf02a7b61483bd4aaad9d7e"
-      ]
-    },
-    {
-      "id": "ent_021",
-      "type": "Compound",
-      "name": "malt extract broth",
-      "attributes": {
-        "context": "50 mL of malt extract broth"
-      },
-      "source_chunk_ids": [
-        "b9963b69ccf02a7b61483bd4aaad9d7e"
-      ]
-    },
-    {
-      "id": "ent_022",
-      "type": "Compound",
-      "name": "secondary metabolites",
-      "attributes": {
-        "context": "Secondary metabolites were screened for antibacterial activity"
-      },
-      "source_chunk_ids": [
-        "b9963b69ccf02a7b61483bd4aaad9d7e"
-      ]
-    },
-    {
-      "id": "ent_023",
-      "type": "Compound",
-      "name": "Nutrient agar",
-      "attributes": {
-        "context": "spread-plated on Nutrient agar"
-      },
-      "source_chunk_ids": [
-        "b9963b69ccf02a7b61483bd4aaad9d7e"
-      ]
-    },
-    {
-      "id": "ent_024",
-      "type": "Compound",
-      "name": "fungal extracts",
-      "attributes": {
-        "context": "The discs were soaked in fungal extracts"
-      },
-      "source_chunk_ids": [
-        "b9963b69ccf02a7b61483bd4aaad9d7e"
-      ]
-    },
-    {
-      "id": "ent_025",
-      "type": "Compound",
-      "name": "secondary metabolites",
-      "attributes": {
-        "context": "Gas chromatography-mass spectrometry analysis of secondary metabolites"
-      },
-      "source_chunk_ids": [
-        "b9963b69ccf02a7b61483bd4aaad9d7e"
-      ]
-    },
-    {
-      "id": "ent_026",
-      "type": "PharmEffect",
-      "name": "bioactive potential",
-      "attributes": {
-        "context": "assess the bioactive potential"
-      },
-      "source_chunk_ids": [
-        "b9963b69ccf02a7b61483bd4aaad9d7e"
-      ]
-    },
-    {
-      "id": "ent_027",
-      "type": "PharmEffect",
-      "name": "antibacterial activity",
-      "attributes": {
-        "context": "screened for antibacterial activity"
-      },
-      "source_chunk_ids": [
-        "b9963b69ccf02a7b61483bd4aaad9d7e"
-      ]
-    },
-    {
-      "id": "ent_028",
-      "type": "PharmEffect",
-      "name": "inhibition bacteria growth inhibition zone",
-      "attributes": {
-        "context": "The inhibition bacteria growth inhibition zone diameter data"
-      },
-      "source_chunk_ids": [
-        "b9963b69ccf02a7b61483bd4aaad9d7e"
-      ]
-    },
-    {
-      "id": "ent_029",
-      "type": "Concentration",
-      "name": "50 mL",
-      "attributes": {
-        "context": "50 mL of malt extract broth"
-      },
-      "source_chunk_ids": [
-        "b9963b69ccf02a7b61483bd4aaad9d7e"
-      ]
-    },
-    {
-      "id": "ent_030",
-      "type": "Concentration",
-      "name": "1 \u00d7 10^7 cells/mL",
-      "attributes": {
-        "context": "About 1 \u00d7 10^7 cells/mL of bacteria suspensions"
-      },
-      "source_chunk_ids": [
-        "b9963b69ccf02a7b61483bd4aaad9d7e"
-      ]
-    },
-    {
-      "id": "ent_031",
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "medicinal plant Sceletium tortuosum"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "6162a9c2073a6eb60152d9260067768e"
-      ]
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum L.",
+      "verified": true
     },
     {
-      "id": "ent_032",
-      "type": "PharmEffect",
-      "name": "Antibiotic resistance",
+      "id": "E2",
+      "type": "Study",
+      "name": "current study",
       "attributes": {
-        "context": "Antibiotic resistance surveillance"
+        "design": "experimental study"
       },
       "source_chunk_ids": [
-        "6162a9c2073a6eb60152d9260067768e"
-      ]
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "confidence": 0.9,
+      "evidence": "The current study determined the antimicrobial properties",
+      "verified": true
     },
     {
-      "id": "ent_033",
-      "type": "PharmEffect",
-      "name": "antimicrobial",
+      "id": "E3",
+      "type": "Evidence",
+      "name": "in vitro study",
       "attributes": {
-        "context": "antimicrobial potentials"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
-        "6162a9c2073a6eb60152d9260067768e"
-      ]
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "confidence": 0.85,
+      "evidence": "determined using the disc diffusion assay",
+      "verified": true
     },
     {
-      "id": "ent_034",
-      "type": "Taxon",
-      "name": "medicinal plants",
-      "attributes": {
-        "context": "occurring in medicinal plants"
-      },
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "fungal extracts",
+      "attributes": {},
       "source_chunk_ids": [
-        "6162a9c2073a6eb60152d9260067768e"
-      ]
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "confidence": 0.8,
+      "evidence": "fungal extracts displayed narrow spectrum of activity",
+      "verified": true
     },
     {
-      "id": "ent_035",
+      "id": "E5",
+      "type": "Preparation",
+      "name": "fermentation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "confidence": 0.75,
+      "evidence": "detected after fermentation and extraction",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Preparation",
+      "name": "extraction",
+      "attributes": {},
+      "source_chunk_ids": [
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "confidence": 0.75,
+      "evidence": "detected after fermentation and extraction",
+      "verified": true
+    },
+    {
+      "id": "E7",
       "type": "Compound",
-      "name": "secondary metabolites",
-      "attributes": {
-        "context": "bioactive secondary metabolites"
-      },
+      "name": "5-hydroxymethylfurfural",
+      "attributes": {},
       "source_chunk_ids": [
-        "6162a9c2073a6eb60152d9260067768e"
-      ]
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "confidence": 0.9,
+      "evidence": "5-hydroxymethylfurfural (HMF)",
+      "verified": true
     },
     {
-      "id": "ent_036",
+      "id": "E8",
+      "type": "Compound",
+      "name": "octadecanoic acid",
+      "attributes": {},
+      "source_chunk_ids": [
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "confidence": 0.9,
+      "evidence": "octadecanoic acid",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "antibacterial activity",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "confidence": 0.85,
+      "evidence": "displayed significant antibacterial activity",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Target",
+      "name": "Bacillus cereus",
+      "attributes": {
+        "target_type": "bacteria"
+      },
+      "source_chunk_ids": [
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "confidence": 0.8,
+      "evidence": "Bacillus cereus (ATCC 10876) was the most susceptible",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Target",
+      "name": "Enterococcus faecalis",
+      "attributes": {
+        "target_type": "bacteria"
+      },
+      "source_chunk_ids": [
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "confidence": 0.8,
+      "evidence": "none of the fungal extracts inhibited growth of Enterococcus faecalis",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Target",
+      "name": "Enterococcus gallinarum",
+      "attributes": {
+        "target_type": "bacteria"
+      },
+      "source_chunk_ids": [
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "confidence": 0.8,
+      "evidence": "none of the fungal extracts inhibited growth of Enterococcus gallinarum",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "176cbf77cc7917fbe51b852f3aef4a9a"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum L.",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "San",
+      "attributes": {},
+      "source_chunk_ids": [
+        "176cbf77cc7917fbe51b852f3aef4a9a"
+      ],
+      "confidence": 0.9,
+      "evidence": "San and Khoikhoi natives",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Khoikhoi",
+      "attributes": {},
+      "source_chunk_ids": [
+        "176cbf77cc7917fbe51b852f3aef4a9a"
+      ],
+      "confidence": 0.9,
+      "evidence": "San and Khoikhoi natives",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "UseRecord",
+      "name": "UseRecord: San/Khoikhoi \u2013 Sceletium \u2013 wellbeing/stress/anxiety/depression",
+      "attributes": {},
+      "source_chunk_ids": [
+        "176cbf77cc7917fbe51b852f3aef4a9a"
+      ],
+      "confidence": 0.85,
+      "evidence": "use Sceletium tortuosum for wellbeing, stress, anxiety, depression",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "creating a sense of wellbeing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "176cbf77cc7917fbe51b852f3aef4a9a"
+      ],
+      "confidence": 0.8,
+      "evidence": "creating a sense of wellbeing",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "reducing stress",
+      "attributes": {},
+      "source_chunk_ids": [
+        "176cbf77cc7917fbe51b852f3aef4a9a"
+      ],
+      "confidence": 0.8,
+      "evidence": "reducing stress",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "176cbf77cc7917fbe51b852f3aef4a9a"
+      ],
+      "confidence": 0.9,
+      "evidence": "treating anxiety",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "176cbf77cc7917fbe51b852f3aef4a9a"
+      ],
+      "confidence": 0.9,
+      "evidence": "treating depression",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "endophytic fungi",
+      "attributes": {},
+      "source_chunk_ids": [
+        "eda35150b53fba7b18234b45a4c666f7"
+      ],
+      "confidence": 0.95,
+      "evidence": "Endophytic fungi colonize",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "4-hydroxybenzoic acid",
+      "attributes": {},
+      "source_chunk_ids": [
+        "eda35150b53fba7b18234b45a4c666f7"
+      ],
+      "confidence": 0.9,
+      "evidence": "4-hydroxybenzoic acid",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "indole-3-acetic acid",
+      "attributes": {},
+      "source_chunk_ids": [
+        "eda35150b53fba7b18234b45a4c666f7"
+      ],
+      "confidence": 0.9,
+      "evidence": "indole-3-acetic acid (IAA)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "gibberellin D",
+      "attributes": {},
+      "source_chunk_ids": [
+        "eda35150b53fba7b18234b45a4c666f7"
+      ],
+      "confidence": 0.9,
+      "evidence": "gibberellin D",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "growth promotion",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "eda35150b53fba7b18234b45a4c666f7"
+      ],
+      "confidence": 0.8,
+      "evidence": "growth promotion",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "competitiveness",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "eda35150b53fba7b18234b45a4c666f7"
+      ],
+      "confidence": 0.8,
+      "evidence": "competitiveness",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "protection against herbivores",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "eda35150b53fba7b18234b45a4c666f7"
+      ],
+      "confidence": 0.8,
+      "evidence": "protection of the host against herbivores",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "protection against pathogens",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "eda35150b53fba7b18234b45a4c666f7"
+      ],
+      "confidence": 0.8,
+      "evidence": "protection of the host against pathogens",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "present study",
+      "attributes": {},
+      "source_chunk_ids": [
+        "74cc9ae95a7e5f87c028efe13c72837f"
+      ],
+      "confidence": 0.9,
+      "evidence": "In the present study",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vitro screening",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "74cc9ae95a7e5f87c028efe13c72837f"
+      ],
+      "confidence": 0.85,
+      "evidence": "screened against resistant bacteria",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "74cc9ae95a7e5f87c028efe13c72837f"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum (L.)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "secondary metabolites",
+      "attributes": {},
+      "source_chunk_ids": [
+        "74cc9ae95a7e5f87c028efe13c72837f"
+      ],
+      "confidence": 0.8,
+      "evidence": "secondary metabolites",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "resistant Gram-positive bacteria",
+      "attributes": {
+        "target_type": "bacteria"
+      },
+      "source_chunk_ids": [
+        "74cc9ae95a7e5f87c028efe13c72837f"
+      ],
+      "confidence": 0.75,
+      "evidence": "resistant Gram-positive bacteria",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "resistant Gram-negative bacteria",
+      "attributes": {
+        "target_type": "bacteria"
+      },
+      "source_chunk_ids": [
+        "74cc9ae95a7e5f87c028efe13c72837f"
+      ],
+      "confidence": 0.75,
+      "evidence": "resistant Gram-negative bacteria",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "a6ec306d83e0286f07dc22cd91182ae8"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum plants",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Manganyi et al. 2018a",
+      "attributes": {
+        "year": 2018,
+        "design": "molecular identification study"
+      },
+      "source_chunk_ids": [
+        "a6ec306d83e0286f07dc22cd91182ae8"
+      ],
+      "confidence": 0.8,
+      "evidence": "reported in a previous finding (Manganyi et al. 2018a)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "molecular identification",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "a6ec306d83e0286f07dc22cd91182ae8"
+      ],
+      "confidence": 0.75,
+      "evidence": "molecular identification using ITS and EF-1\u03b1 primers",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "5-hydroxymethylfurfural",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6c95522fb149c704abcb941a952a9bb8"
+      ],
+      "confidence": 0.95,
+      "evidence": "5-hydroxymethylfurfural",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "octadecanoic acid",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6c95522fb149c704abcb941a952a9bb8"
+      ],
+      "confidence": 0.95,
+      "evidence": "octadecanoic acid",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "5-hydroxymethylfurfural",
+      "attributes": {},
+      "source_chunk_ids": [
+        "348fa0cdcf50f4cbc8b57ccecee19397"
+      ],
+      "confidence": 0.9,
+      "evidence": "5-hydroxymethylfurfural",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "octadecanoic acid",
+      "attributes": {},
+      "source_chunk_ids": [
+        "348fa0cdcf50f4cbc8b57ccecee19397"
+      ],
+      "confidence": 0.9,
+      "evidence": "octadecanoic acid",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Manganyi et al. 2018b",
+      "attributes": {
+        "year": "2018",
+        "design": "experimental"
+      },
+      "source_chunk_ids": [
+        "b9963b69ccf02a7b61483bd4aaad9d7e"
+      ],
+      "confidence": 0.8,
+      "evidence": "Manganyi et al. 2018b",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "b9963b69ccf02a7b61483bd4aaad9d7e"
+      ],
+      "confidence": 0.9,
+      "evidence": "agar disc diffusion assay",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "fungal isolates",
+      "attributes": {
+        "rank": "isolates"
+      },
+      "source_chunk_ids": [
+        "b9963b69ccf02a7b61483bd4aaad9d7e"
+      ],
+      "confidence": 0.85,
+      "evidence": "60 fungal isolates",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Preparation",
+      "name": "fermentation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b9963b69ccf02a7b61483bd4aaad9d7e"
+      ],
+      "confidence": 0.9,
+      "evidence": "fermentation process",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "fungal extracts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b9963b69ccf02a7b61483bd4aaad9d7e"
+      ],
+      "confidence": 0.85,
+      "evidence": "fungal extracts",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "CompoundClass",
+      "name": "secondary metabolites",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b9963b69ccf02a7b61483bd4aaad9d7e"
+      ],
+      "confidence": 0.9,
+      "evidence": "secondary metabolites",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "bacteria",
+      "attributes": {
+        "target_type": "microorganism"
+      },
+      "source_chunk_ids": [
+        "b9963b69ccf02a7b61483bd4aaad9d7e"
+      ],
+      "confidence": 0.8,
+      "evidence": "test bacteria isolates",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "antibacterial activity",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "b9963b69ccf02a7b61483bd4aaad9d7e"
+      ],
+      "confidence": 0.85,
+      "evidence": "antibacterial activity",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "bacterial infection",
+      "attributes": {
+        "condition_type": "infection"
+      },
+      "source_chunk_ids": [
+        "b9963b69ccf02a7b61483bd4aaad9d7e"
+      ],
+      "confidence": 0.7,
+      "evidence": "inhibition bacteria growth",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Sharma et al. (2017)",
+      "attributes": {
+        "year": 2017
+      },
+      "source_chunk_ids": [
+        "335fee3172c594ac569815af6eedee2a"
+      ],
+      "confidence": 0.9,
+      "evidence": "described by Sharma et al. (2017)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "335fee3172c594ac569815af6eedee2a"
+      ],
+      "confidence": 0.85,
+      "evidence": "fungal extracts showed effective antibacterial activities",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Fusarium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "335fee3172c594ac569815af6eedee2a"
+      ],
+      "confidence": 0.95,
+      "evidence": "fungi belonging to the genus Fusarium",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Neurospora",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "335fee3172c594ac569815af6eedee2a"
+      ],
+      "confidence": 0.9,
+      "evidence": "isolates belonging to the genus Neurospora",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Aspergillus",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "335fee3172c594ac569815af6eedee2a"
+      ],
+      "confidence": 0.9,
+      "evidence": "isolates belonging to the genus Aspergillus",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "RawMaterial",
+      "name": "fungal extracts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "335fee3172c594ac569815af6eedee2a"
+      ],
+      "confidence": 0.85,
+      "evidence": "fungal extracts showed effective antibacterial activities",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "antibacterial activity",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "335fee3172c594ac569815af6eedee2a"
+      ],
+      "confidence": 0.9,
+      "evidence": "showed effective antibacterial activities",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Zhang et al. (2016)",
+      "attributes": {
+        "year": 2016
+      },
+      "source_chunk_ids": [
+        "335fee3172c594ac569815af6eedee2a"
+      ],
+      "confidence": 0.9,
+      "evidence": "previous report (Zhang et al. 2016)",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "335fee3172c594ac569815af6eedee2a"
+      ],
+      "confidence": 0.85,
+      "evidence": "demonstrated the strongest antimicrobial potential",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Taxon",
+      "name": "Fusarium sp.",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "335fee3172c594ac569815af6eedee2a"
+      ],
+      "confidence": 0.8,
+      "evidence": "endophytic belonging to the genus Fusarium sp.",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Condition",
+      "name": "Pseudomonas aeruginosa infection",
+      "attributes": {
+        "condition_type": "infection"
+      },
+      "source_chunk_ids": [
+        "335fee3172c594ac569815af6eedee2a"
+      ],
+      "confidence": 0.75,
+      "evidence": "against Pseudomonas aeruginosa",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Effect",
+      "name": "antimicrobial potential",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "335fee3172c594ac569815af6eedee2a"
+      ],
+      "confidence": 0.8,
+      "evidence": "demonstrated the strongest antimicrobial potential",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "Ethanol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3b6322fa8f39d17d86adfc615e828709"
+      ],
+      "confidence": 0.95,
+      "evidence": "Ethanol",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "Octadecanoic acid, phenylmethyl ester",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3b6322fa8f39d17d86adfc615e828709"
+      ],
+      "confidence": 0.95,
+      "evidence": "Octadecanoic acid, phenylmethyl ester",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "4H-Pyran-4-one, 2,3-dihydro-3,5-dihydroxy-6-methyl-4H-pyran-4-one",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3b6322fa8f39d17d86adfc615e828709"
+      ],
+      "confidence": 0.95,
+      "evidence": "4H-Pyran-4-one, 2,3-dihydro-3,5-dihydroxy-6-methyl-4H-pyran-4-one",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "5-Hydroxymethylfurfural",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3b6322fa8f39d17d86adfc615e828709"
+      ],
+      "confidence": 0.95,
+      "evidence": "5-Hydroxymethylfurfural",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "Acetamide-N-D, N,N'-1,3- cyclohexane",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3b6322fa8f39d17d86adfc615e828709"
+      ],
+      "confidence": 0.95,
+      "evidence": "Acetamide-N-D, N,N'-1,3- cyclohexane",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "F. oxysporum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "4b0cb5de75779c7faa219a89291a2b79"
+      ],
+      "confidence": 0.95,
+      "evidence": "fungal extract from F. oxysporum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "fungal extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4b0cb5de75779c7faa219a89291a2b79"
+      ],
+      "confidence": 0.9,
+      "evidence": "GC-MS chromatograms of fungal extract",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "5-hydroxymethylfurfural",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4b0cb5de75779c7faa219a89291a2b79"
+      ],
+      "confidence": 0.95,
+      "evidence": "5-hydroxymethylfurfural was the most abundant",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "octadecanoic acid",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4b0cb5de75779c7faa219a89291a2b79"
+      ],
+      "confidence": 0.9,
+      "evidence": "octadecanoic acid (Fig. 2)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "ethanol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4b0cb5de75779c7faa219a89291a2b79"
+      ],
+      "confidence": 0.8,
+      "evidence": "ethanol, saturated hydrocarbons, and acetamide",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "acetamide",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4b0cb5de75779c7faa219a89291a2b79"
+      ],
+      "confidence": 0.8,
+      "evidence": "ethanol, saturated hydrocarbons, and acetamide",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Sharma et al. (2016)",
+      "attributes": {
+        "year": 2016
+      },
+      "source_chunk_ids": [
+        "4b0cb5de75779c7faa219a89291a2b79"
+      ],
+      "confidence": 0.85,
+      "evidence": "Sharma et al. (2016) reported",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "4b0cb5de75779c7faa219a89291a2b79"
+      ],
+      "confidence": 0.7,
+      "evidence": "bioactive compounds produced",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Taxon",
+      "name": "Pestalotiopsis neglecta",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "4b0cb5de75779c7faa219a89291a2b79"
+      ],
+      "confidence": 0.9,
+      "evidence": "endophytic fungus Pestalotiopsis neglecta",
+      "verified": true
+    },
+    {
+      "id": "E10",
       "type": "Taxon",
       "name": "Cupressus torulosa",
       "attributes": {
-        "context": "leaves of Cupressus torulosa D.Don"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "6162a9c2073a6eb60152d9260067768e"
-      ]
+        "4b0cb5de75779c7faa219a89291a2b79"
+      ],
+      "confidence": 0.85,
+      "evidence": "isolated from leaves of Cupressus torulosa",
+      "verified": true
     },
     {
-      "id": "ent_037",
+      "id": "E11",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4b0cb5de75779c7faa219a89291a2b79"
+      ],
+      "confidence": 0.8,
+      "evidence": "isolated from leaves",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "bacterial infections",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "4feb2d7a25bbcdfde3feccbae9136b7b"
+      ],
+      "confidence": 0.9,
+      "evidence": "bacterial infections associated with antibiotic resistant strains",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "antibiotic resistant strains",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "4feb2d7a25bbcdfde3feccbae9136b7b"
+      ],
+      "confidence": 0.85,
+      "evidence": "antibiotic resistant strains",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "antimicrobial activity",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4feb2d7a25bbcdfde3feccbae9136b7b"
+      ],
+      "confidence": 0.8,
+      "evidence": "antimicrobial activity against both Gram-negative and Gram-positive bacteria isolates",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "secondary metabolites",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4feb2d7a25bbcdfde3feccbae9136b7b"
+      ],
+      "confidence": 0.75,
+      "evidence": "secondary metabolites from endophytic fungi",
+      "verified": true
+    },
+    {
+      "id": "E5",
       "type": "Taxon",
-      "name": "Brassica juncea",
+      "name": "medicinal plants",
       "attributes": {
-        "context": "leaves of Brassica juncea L."
+        "rank": "group"
       },
       "source_chunk_ids": [
-        "6162a9c2073a6eb60152d9260067768e"
-      ]
+        "4feb2d7a25bbcdfde3feccbae9136b7b"
+      ],
+      "confidence": 0.7,
+      "evidence": "medicinal plant extracts",
+      "verified": true
     },
     {
-      "id": "ent_038",
-      "type": "PharmEffect",
-      "name": "Psychoactive",
-      "attributes": {
-        "context": "Psychoactive constituents"
-      },
-      "source_chunk_ids": [
-        "6162a9c2073a6eb60152d9260067768e"
-      ]
-    },
-    {
-      "id": "ent_039",
+      "id": "E6",
       "type": "Taxon",
-      "name": "Sceletium",
+      "name": "endophytic fungi",
       "attributes": {
-        "context": "genus Sceletium N.E.Br."
+        "rank": "group"
       },
       "source_chunk_ids": [
-        "6162a9c2073a6eb60152d9260067768e"
-      ]
+        "4feb2d7a25bbcdfde3feccbae9136b7b"
+      ],
+      "confidence": 0.8,
+      "evidence": "endophytic fungi",
+      "verified": true
     },
     {
-      "id": "ent_040",
+      "id": "E7",
+      "type": "Effect",
+      "name": "antimicrobial effect",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "4feb2d7a25bbcdfde3feccbae9136b7b"
+      ],
+      "confidence": 0.75,
+      "evidence": "antimicrobial activity against both Gram-negative and Gram-positive bacteria isolates",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Taxon",
-      "name": "Mesembryanthemaceae",
+      "name": "S. tortuosum L.",
       "attributes": {
-        "context": "other Mesembryanthemaceae"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "6162a9c2073a6eb60152d9260067768e"
-      ]
+        "dc99043a4363f034b8e8507a17c71079"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum L.",
+      "verified": true
     },
     {
-      "id": "ent_041",
-      "type": "PharmEffect",
-      "name": "Antibacterial",
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "secondary metabolites",
+      "attributes": {},
+      "source_chunk_ids": [
+        "dc99043a4363f034b8e8507a17c71079"
+      ],
+      "confidence": 0.85,
+      "evidence": "secondary metabolites",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "antibacterial activity",
       "attributes": {
-        "context": "Antibacterial natural products"
+        "level": "cellular",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "6162a9c2073a6eb60152d9260067768e"
-      ]
+        "dc99043a4363f034b8e8507a17c71079"
+      ],
+      "confidence": 0.9,
+      "evidence": "exhibited highly effective antibacterial activity",
+      "verified": true
     },
     {
-      "id": "ent_042",
-      "type": "Compound",
-      "name": "artemisinin",
+      "id": "E4",
+      "type": "Condition",
+      "name": "multi-drug resistant bacterial infections",
       "attributes": {
-        "context": "artemisinin production"
+        "condition_type": "infection"
       },
       "source_chunk_ids": [
-        "6162a9c2073a6eb60152d9260067768e"
-      ]
+        "dc99043a4363f034b8e8507a17c71079"
+      ],
+      "confidence": 0.8,
+      "evidence": "against multi-drug resistant bacterial strains",
+      "verified": true
     },
     {
-      "id": "ent_043",
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vitro study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "dc99043a4363f034b8e8507a17c71079"
+      ],
+      "confidence": 0.7,
+      "evidence": "these findings suggest",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Taxon",
-      "name": "Artemisia annua",
+      "name": "S. tortuosum L.",
       "attributes": {
-        "context": "Artemisia annua hairy roots"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "6162a9c2073a6eb60152d9260067768e"
-      ]
+        "6a9361d6c52751f1bd0739f24a2a365c"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum L. plants",
+      "verified": true
     },
     {
-      "id": "ent_044",
-      "type": "PharmEffect",
-      "name": "Antimicrobial",
-      "attributes": {
-        "context": "Antimicrobial activity"
-      },
-      "source_chunk_ids": [
-        "6162a9c2073a6eb60152d9260067768e"
-      ]
-    },
-    {
-      "id": "ent_045",
+      "id": "E2",
       "type": "Taxon",
-      "name": "honeysuckle",
+      "name": "F. oxysporum",
       "attributes": {
-        "context": "medicinal honeysuckle"
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "6a9361d6c52751f1bd0739f24a2a365c"
+      ],
+      "confidence": 0.85,
+      "evidence": "F. oxysporum (GG 008, accession no. KJ774041.1)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "first report on secondary metabolites from endophytic fungi",
+      "attributes": {
+        "design": "report"
+      },
+      "source_chunk_ids": [
+        "6a9361d6c52751f1bd0739f24a2a365c"
+      ],
+      "confidence": 0.8,
+      "evidence": "first report on secondary metabolites from endophytic fungi",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "in vitro study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "6a9361d6c52751f1bd0739f24a2a365c"
+      ],
+      "confidence": 0.7,
+      "evidence": "isolated from S. tortuosum L. plants",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
       },
       "source_chunk_ids": [
         "6162a9c2073a6eb60152d9260067768e"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "medicinal plant Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6162a9c2073a6eb60152d9260067768e"
+      ],
+      "confidence": 0.7,
+      "evidence": "Psychoactive constituents",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Smith et al. 1996",
+      "attributes": {
+        "year": 1996,
+        "design": "phytochemical analysis"
+      },
+      "source_chunk_ids": [
+        "6162a9c2073a6eb60152d9260067768e"
+      ],
+      "confidence": 0.85,
+      "evidence": "Smith MT et al. (1996) Psychoactive constituents",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "phytochemical analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "6162a9c2073a6eb60152d9260067768e"
+      ],
+      "confidence": 0.8,
+      "evidence": "Psychoactive constituents",
+      "verified": true
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.066705+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "The current study determined the antimicrobial properties",
+      "source_chunk_ids": [
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "source"
+      },
+      "confidence": 0.85,
+      "evidence": "endophytic fungi isolated from Sceletium tortuosum L",
+      "source_chunk_ids": [
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "fungal extracts displayed narrow spectrum of activity",
+      "source_chunk_ids": [
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "detected after fermentation and extraction",
+      "source_chunk_ids": [
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "detected after fermentation and extraction",
+      "source_chunk_ids": [
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "linked to high levels of 5-hydroxymethylfurfural (HMF)",
+      "source_chunk_ids": [
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "linked to high levels of octadecanoic acid",
+      "source_chunk_ids": [
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "positive"
+      },
+      "confidence": 0.8,
+      "evidence": "displayed significant antibacterial activity",
+      "source_chunk_ids": [
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {
+        "outcome": "positive"
+      },
+      "confidence": 0.75,
+      "evidence": "Bacillus cereus was the most susceptible",
+      "source_chunk_ids": [
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.8,
+      "evidence": "none of the fungal extracts inhibited growth of Enterococcus faecalis",
+      "source_chunk_ids": [
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E12",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.8,
+      "evidence": "none of the fungal extracts inhibited growth of Enterococcus gallinarum",
+      "source_chunk_ids": [
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "fungal extracts displayed antibacterial activity",
+      "source_chunk_ids": [
+        "256ae1ae608785a85103407361ecf297"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "San use Sceletium tortuosum",
+      "source_chunk_ids": [
+        "176cbf77cc7917fbe51b852f3aef4a9a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_USE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Khoikhoi use Sceletium tortuosum",
+      "source_chunk_ids": [
+        "176cbf77cc7917fbe51b852f3aef4a9a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.9,
+      "evidence": "use Sceletium tortuosum",
+      "source_chunk_ids": [
+        "176cbf77cc7917fbe51b852f3aef4a9a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "creating a sense of wellbeing",
+      "source_chunk_ids": [
+        "176cbf77cc7917fbe51b852f3aef4a9a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "reducing stress",
+      "source_chunk_ids": [
+        "176cbf77cc7917fbe51b852f3aef4a9a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "treating anxiety",
+      "source_chunk_ids": [
+        "176cbf77cc7917fbe51b852f3aef4a9a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "treating depression",
+      "source_chunk_ids": [
+        "176cbf77cc7917fbe51b852f3aef4a9a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "produce secondary metabolites (4-hydroxybenzoic acid",
+      "source_chunk_ids": [
+        "eda35150b53fba7b18234b45a4c666f7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "indole-3-acetic acid (IAA)",
+      "source_chunk_ids": [
+        "eda35150b53fba7b18234b45a4c666f7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "gibberellin D)",
+      "source_chunk_ids": [
+        "eda35150b53fba7b18234b45a4c666f7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "bioactive compounds that function in growth promotion",
+      "source_chunk_ids": [
+        "eda35150b53fba7b18234b45a4c666f7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "bioactive compounds that function in competitiveness",
+      "source_chunk_ids": [
+        "eda35150b53fba7b18234b45a4c666f7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "bioactive compounds that function in protection against herbivores",
+      "source_chunk_ids": [
+        "eda35150b53fba7b18234b45a4c666f7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "bioactive compounds that function in protection against pathogens",
+      "source_chunk_ids": [
+        "eda35150b53fba7b18234b45a4c666f7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "In the present study, screened against bacteria",
+      "source_chunk_ids": [
+        "74cc9ae95a7e5f87c028efe13c72837f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "source"
+      },
+      "confidence": 0.85,
+      "evidence": "endophytic fungi were isolated from Sceletium tortuosum",
+      "source_chunk_ids": [
+        "74cc9ae95a7e5f87c028efe13c72837f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "secondary metabolites were screened",
+      "source_chunk_ids": [
+        "74cc9ae95a7e5f87c028efe13c72837f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "screened_against"
+      },
+      "confidence": 0.75,
+      "evidence": "screened against resistant Gram-positive bacteria",
+      "source_chunk_ids": [
+        "74cc9ae95a7e5f87c028efe13c72837f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "screened_against"
+      },
+      "confidence": 0.75,
+      "evidence": "screened against resistant Gram-negative bacteria",
+      "source_chunk_ids": [
+        "74cc9ae95a7e5f87c028efe13c72837f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "subject"
+      },
+      "confidence": 0.7,
+      "evidence": "fungi isolated from Sceletium tortuosum plants",
+      "source_chunk_ids": [
+        "a6ec306d83e0286f07dc22cd91182ae8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "molecular identification using ITS and EF-1\u03b1 primers",
+      "source_chunk_ids": [
+        "a6ec306d83e0286f07dc22cd91182ae8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "agar disc diffusion assay",
+      "source_chunk_ids": [
+        "b9963b69ccf02a7b61483bd4aaad9d7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "60 fungal isolates",
+      "source_chunk_ids": [
+        "b9963b69ccf02a7b61483bd4aaad9d7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "fermentation process",
+      "source_chunk_ids": [
+        "b9963b69ccf02a7b61483bd4aaad9d7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "secondary metabolites",
+      "source_chunk_ids": [
+        "b9963b69ccf02a7b61483bd4aaad9d7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.75,
+      "evidence": "antibacterial activity against the test bacteria",
+      "source_chunk_ids": [
+        "b9963b69ccf02a7b61483bd4aaad9d7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "screened for antibacterial activity",
+      "source_chunk_ids": [
+        "b9963b69ccf02a7b61483bd4aaad9d7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.8,
+      "evidence": "antibacterial activity",
+      "source_chunk_ids": [
+        "b9963b69ccf02a7b61483bd4aaad9d7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "TREATS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E9",
+      "attributes": {
+        "context": "in vitro"
+      },
+      "confidence": 0.7,
+      "evidence": "inhibition bacteria growth",
+      "source_chunk_ids": [
+        "b9963b69ccf02a7b61483bd4aaad9d7e"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "described by Sharma et al. (2017)",
+      "source_chunk_ids": [
+        "335fee3172c594ac569815af6eedee2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "fungal extracts showed effective antibacterial activities",
+      "source_chunk_ids": [
+        "335fee3172c594ac569815af6eedee2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "positive"
+      },
+      "confidence": 0.85,
+      "evidence": "showed effective antibacterial activities",
+      "source_chunk_ids": [
+        "335fee3172c594ac569815af6eedee2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "previous report (Zhang et al. 2016)",
+      "source_chunk_ids": [
+        "335fee3172c594ac569815af6eedee2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "endophytic belonging to the genus Fusarium sp.",
+      "source_chunk_ids": [
+        "335fee3172c594ac569815af6eedee2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E12",
+      "attributes": {
+        "outcome": "positive"
+      },
+      "confidence": 0.8,
+      "evidence": "demonstrated the strongest antimicrobial potential",
+      "source_chunk_ids": [
+        "335fee3172c594ac569815af6eedee2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "targeted"
+      },
+      "confidence": 0.7,
+      "evidence": "against Pseudomonas aeruginosa",
+      "source_chunk_ids": [
+        "335fee3172c594ac569815af6eedee2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "abundance",
+          "notes": "most abundant secondary metabolite"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "5-hydroxymethylfurfural was the most abundant",
+      "source_chunk_ids": [
+        "4b0cb5de75779c7faa219a89291a2b79"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "abundance",
+          "notes": "second highest peak area"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "octadecanoic acid displayed the highest peak area followed by",
+      "source_chunk_ids": [
+        "4b0cb5de75779c7faa219a89291a2b79"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "presence of ethanol",
+      "source_chunk_ids": [
+        "4b0cb5de75779c7faa219a89291a2b79"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "presence of acetamide",
+      "source_chunk_ids": [
+        "4b0cb5de75779c7faa219a89291a2b79"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Sharma et al. (2016) reported",
+      "source_chunk_ids": [
+        "4b0cb5de75779c7faa219a89291a2b79"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "compound"
+      },
+      "confidence": 0.8,
+      "evidence": "5-hydroxymethylfurfural was one of the major bioactive compounds",
+      "source_chunk_ids": [
+        "4b0cb5de75779c7faa219a89291a2b79"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.85,
+      "evidence": "produced by the endophytic fungus Pestalotiopsis neglecta",
+      "source_chunk_ids": [
+        "4b0cb5de75779c7faa219a89291a2b79"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_PART",
+      "source_entity_id": "E10",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "isolated from leaves of Cupressus torulosa",
+      "source_chunk_ids": [
+        "4b0cb5de75779c7faa219a89291a2b79"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "antimicrobial activity against bacterial infections",
+      "source_chunk_ids": [
+        "4feb2d7a25bbcdfde3feccbae9136b7b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "antimicrobial activity against antibiotic resistant strains",
+      "source_chunk_ids": [
+        "4feb2d7a25bbcdfde3feccbae9136b7b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "secondary metabolites with antimicrobial activity",
+      "source_chunk_ids": [
+        "4feb2d7a25bbcdfde3feccbae9136b7b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "endophytic fungi from S. tortuosum L. produced secondary metabolites",
+      "source_chunk_ids": [
+        "dc99043a4363f034b8e8507a17c71079"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "secondary metabolites that exhibited antibacterial activity",
+      "source_chunk_ids": [
+        "dc99043a4363f034b8e8507a17c71079"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "in vitro"
+      },
+      "confidence": 0.75,
+      "evidence": "antibacterial activity against multi-drug resistant bacterial strains",
+      "source_chunk_ids": [
+        "dc99043a4363f034b8e8507a17c71079"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "these findings suggest that ... may contribute in the fight against antibiotic strains",
+      "source_chunk_ids": [
+        "dc99043a4363f034b8e8507a17c71079"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "source"
+      },
+      "confidence": 0.75,
+      "evidence": "isolated from S. tortuosum L. plants",
+      "source_chunk_ids": [
+        "6a9361d6c52751f1bd0739f24a2a365c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "F. oxysporum (GG 008, accession no. KJ774041.1)",
+      "source_chunk_ids": [
+        "6a9361d6c52751f1bd0739f24a2a365c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "first report on secondary metabolites from endophytic fungi",
+      "source_chunk_ids": [
+        "6a9361d6c52751f1bd0739f24a2a365c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Psychoactive constituents",
+      "source_chunk_ids": [
+        "6162a9c2073a6eb60152d9260067768e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Smith MT et al. (1996) Psychoactive constituents",
+      "source_chunk_ids": [
+        "6162a9c2073a6eb60152d9260067768e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "Psychoactive constituents of the genus Sceletium",
+      "source_chunk_ids": [
+        "6162a9c2073a6eb60152d9260067768e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

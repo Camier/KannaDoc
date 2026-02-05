@@ -1,255 +1,5974 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "2364c5b098e4baf420f58b0ea237448dd3544724ccf9951ffbfcaab16a78618a",
-  "extracted_at": "2026-02-01T08:55:57.226427+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
+      "id": "E1",
+      "type": "Study",
+      "name": "Study 1",
+      "attributes": {
+        "design": "placebo-controlled, double-blind, between-subject",
+        "sample_size": 20,
+        "description": "investigated effects of Sceletium tortuosum on stress/anxiety in healthy volunteers"
+      },
+      "source_chunk_ids": [
+        "d063ed193b784028d446d0e9e2005abb"
+      ],
+      "confidence": 0.9,
+      "evidence": "Two studies utilized a placebo-controlled, double-blind, between-subject experimental design",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Study 2",
+      "attributes": {
+        "design": "placebo-controlled, double-blind, between-subject",
+        "sample_size": 20,
+        "description": "investigated effects of Sceletium tortuosum on stress/anxiety in healthy volunteers"
+      },
+      "source_chunk_ids": [
+        "d063ed193b784028d446d0e9e2005abb"
+      ],
+      "confidence": 0.9,
+      "evidence": "Two studies utilized a placebo-controlled, double-blind, between-subject experimental design",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "d063ed193b784028d446d0e9e2005abb"
+      ],
+      "confidence": 0.85,
+      "evidence": "placebo-controlled, double-blind, between-subject experimental design",
+      "verified": true
+    },
+    {
+      "id": "E4",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "single dose of Sceletium tortuosum"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "d063ed193b784028d446d0e9e2005abb"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
     },
     {
-      "id": "ent_002",
-      "type": "Concentration",
-      "name": "25 mg",
+      "id": "E5",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d063ed193b784028d446d0e9e2005abb"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zembrin\u00ae",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Dosage",
+      "name": "25 mg single dose",
       "attributes": {
-        "context": "Sceletium tortuosum (25 mg, Zembrin\u00ae)"
+        "amount": 25,
+        "unit": "mg",
+        "frequency": "single dose",
+        "route": "oral"
       },
       "source_chunk_ids": [
         "d063ed193b784028d446d0e9e2005abb"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "single dose of Sceletium tortuosum (25 mg, Zembrin\u00ae)",
+      "verified": true
     },
     {
-      "id": "ent_003",
-      "type": "PharmEffect",
-      "name": "stress/anxiety responding",
-      "attributes": {
-        "context": "on laboratory stress/anxiety responding"
-      },
-      "source_chunk_ids": [
-        "d063ed193b784028d446d0e9e2005abb"
-      ]
-    },
-    {
-      "id": "ent_004",
-      "type": "Indication",
+      "id": "E7",
+      "type": "Condition",
       "name": "stress",
       "attributes": {
-        "context": "laboratory stress/anxiety responding"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "d063ed193b784028d446d0e9e2005abb"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "stress/anxiety responding",
+      "verified": true
     },
     {
-      "id": "ent_005",
-      "type": "Indication",
+      "id": "E8",
+      "type": "Condition",
       "name": "anxiety",
       "attributes": {
-        "context": "laboratory stress/anxiety responding"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "d063ed193b784028d446d0e9e2005abb"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "stress/anxiety responding",
+      "verified": true
     },
     {
-      "id": "ent_006",
-      "type": "Indication",
-      "name": "stress",
+      "id": "E9",
+      "type": "Effect",
+      "name": "mood changes",
       "attributes": {
-        "context": "To elicit feelings of stress/anxiety"
+        "level": "behavioral",
+        "valence": "neutral"
       },
       "source_chunk_ids": [
         "d063ed193b784028d446d0e9e2005abb"
-      ]
+      ],
+      "confidence": 0.7,
+      "evidence": "measured subjective experiences of mood",
+      "verified": true
     },
     {
-      "id": "ent_007",
-      "type": "Indication",
+      "id": "E10",
+      "type": "Effect",
+      "name": "anxiety changes",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "d063ed193b784028d446d0e9e2005abb"
+      ],
+      "confidence": 0.7,
+      "evidence": "measured subjective experiences of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "physiological stress indicators",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "d063ed193b784028d446d0e9e2005abb"
+      ],
+      "confidence": 0.7,
+      "evidence": "physiological indicators of stress",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "study 1",
+      "attributes": {
+        "design": "analysis of covariances"
+      },
+      "source_chunk_ids": [
+        "c5117dcfd16f44c6f78d2edab7177a76"
+      ],
+      "confidence": 0.8,
+      "evidence": "study 1",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "study 2",
+      "attributes": {
+        "design": "analysis of covariances"
+      },
+      "source_chunk_ids": [
+        "c5117dcfd16f44c6f78d2edab7177a76"
+      ],
+      "confidence": 0.8,
+      "evidence": "study 2",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "analysis of covariances",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "c5117dcfd16f44c6f78d2edab7177a76"
+      ],
+      "confidence": 0.75,
+      "evidence": "analysis of covariances",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c5117dcfd16f44c6f78d2edab7177a76"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zembrin\u00ae",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
       "name": "anxiety",
       "attributes": {
-        "context": "To elicit feelings of stress/anxiety"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
-        "d063ed193b784028d446d0e9e2005abb"
-      ]
+        "c5117dcfd16f44c6f78d2edab7177a76"
+      ],
+      "confidence": 0.9,
+      "evidence": "subjective anxiety levels",
+      "verified": true
     },
     {
-      "id": "ent_008",
-      "type": "PharmEffect",
-      "name": "mood",
+      "id": "E6",
+      "type": "Effect",
+      "name": "reduced anxiety responding",
       "attributes": {
-        "context": "subjective experiences of mood"
+        "level": "behavioral",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "d063ed193b784028d446d0e9e2005abb"
-      ]
+        "c5117dcfd16f44c6f78d2edab7177a76"
+      ],
+      "confidence": 0.85,
+      "evidence": "ameliorate laboratory stress/anxiety responding",
+      "verified": true
     },
     {
-      "id": "ent_009",
-      "type": "Indication",
-      "name": "anxiety",
+      "id": "E7",
+      "type": "Dosage",
+      "name": "single dose",
       "attributes": {
-        "context": "subjective experiences of anxiety"
+        "frequency": "single dose",
+        "route": "oral"
       },
       "source_chunk_ids": [
-        "d063ed193b784028d446d0e9e2005abb"
-      ]
+        "c5117dcfd16f44c6f78d2edab7177a76"
+      ],
+      "confidence": 0.7,
+      "evidence": "single dose",
+      "verified": true
     },
     {
-      "id": "ent_010",
-      "type": "Indication",
-      "name": "stress",
-      "attributes": {
-        "context": "physiological indicators of stress"
-      },
-      "source_chunk_ids": [
-        "d063ed193b784028d446d0e9e2005abb"
-      ]
-    },
-    {
-      "id": "ent_011",
-      "type": "Taxon",
-      "name": "Sceletium tortuosum (L.) N.E.Br.",
-      "attributes": {
-        "context": "Sceletium tortuosum (L.) N.E.Br. (Mesembryanthemaceae)"
-      },
+      "id": "E1",
+      "type": "Culture",
+      "name": "some tribal people of South Africa",
+      "attributes": {},
       "source_chunk_ids": [
         "3c9d6bc2c5e6cfab50d66a44e4b6534f"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "used by some tribal people of South Africa",
+      "verified": true
     },
     {
-      "id": "ent_012",
-      "type": "PharmEffect",
-      "name": "analgesic",
-      "attributes": {
-        "context": "reduce feelings of pain"
-      },
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: tribal people \u2013 Sceletium tortuosum \u2013 reduce pain/hunger, ameliorate stress, enhance performance",
+      "attributes": {},
       "source_chunk_ids": [
         "3c9d6bc2c5e6cfab50d66a44e4b6534f"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "used to reduce feelings of pain and hunger, ameliorate stress, and enhance mental and physical performance",
+      "verified": true
     },
     {
-      "id": "ent_013",
-      "type": "Indication",
-      "name": "pain",
-      "attributes": {
-        "context": "feelings of pain"
-      },
-      "source_chunk_ids": [
-        "3c9d6bc2c5e6cfab50d66a44e4b6534f"
-      ]
-    },
-    {
-      "id": "ent_014",
-      "type": "PharmEffect",
-      "name": "appetite suppression",
-      "attributes": {
-        "context": "reduce feelings of hunger"
-      },
-      "source_chunk_ids": [
-        "3c9d6bc2c5e6cfab50d66a44e4b6534f"
-      ]
-    },
-    {
-      "id": "ent_015",
-      "type": "PharmEffect",
-      "name": "anxiolytic",
-      "attributes": {
-        "context": "ameliorate stress"
-      },
-      "source_chunk_ids": [
-        "3c9d6bc2c5e6cfab50d66a44e4b6534f"
-      ]
-    },
-    {
-      "id": "ent_016",
-      "type": "Indication",
-      "name": "stress",
-      "attributes": {
-        "context": "ameliorate stress"
-      },
-      "source_chunk_ids": [
-        "3c9d6bc2c5e6cfab50d66a44e4b6534f"
-      ]
-    },
-    {
-      "id": "ent_017",
-      "type": "PharmEffect",
-      "name": "cognitive enhancement",
-      "attributes": {
-        "context": "enhance mental performance"
-      },
-      "source_chunk_ids": [
-        "3c9d6bc2c5e6cfab50d66a44e4b6534f"
-      ]
-    },
-    {
-      "id": "ent_018",
-      "type": "PharmEffect",
-      "name": "physical performance enhancement",
-      "attributes": {
-        "context": "enhance physical performance"
-      },
-      "source_chunk_ids": [
-        "3c9d6bc2c5e6cfab50d66a44e4b6534f"
-      ]
-    },
-    {
-      "id": "ent_019",
+      "id": "E3",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "properties of Sceletium tortuosum"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "4f0447ee44176565dc0dccee77c67906"
-      ]
+        "3c9d6bc2c5e6cfab50d66a44e4b6534f"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum (L.) N.E.Br.",
+      "verified": true
     },
     {
-      "id": "ent_020",
-      "type": "PharmEffect",
-      "name": "anxiolytic",
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "reduce feelings of pain and hunger",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3c9d6bc2c5e6cfab50d66a44e4b6534f"
+      ],
+      "confidence": 0.9,
+      "evidence": "reduce feelings of pain and hunger",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "ameliorate stress",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3c9d6bc2c5e6cfab50d66a44e4b6534f"
+      ],
+      "confidence": 0.9,
+      "evidence": "ameliorate stress",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "enhance mental and physical performance",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3c9d6bc2c5e6cfab50d66a44e4b6534f"
+      ],
+      "confidence": 0.9,
+      "evidence": "enhance mental and physical performance",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "western cultures",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4f0447ee44176565dc0dccee77c67906"
+      ],
+      "confidence": 0.9,
+      "evidence": "In western cultures",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "anxiolytic properties"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "4f0447ee44176565dc0dccee77c67906"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
     },
     {
-      "id": "ent_021",
-      "type": "Concentration",
+      "id": "E3",
+      "type": "Study",
+      "name": "Smith (2011)",
+      "attributes": {
+        "year": 2011
+      },
+      "source_chunk_ids": [
+        "4f0447ee44176565dc0dccee77c67906"
+      ],
+      "confidence": 0.85,
+      "evidence": "Smith (2011) reported evidence",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "early research",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "4f0447ee44176565dc0dccee77c67906"
+      ],
+      "confidence": 0.7,
+      "evidence": "early research is promising",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "4f0447ee44176565dc0dccee77c67906"
+      ],
+      "confidence": 0.8,
+      "evidence": "anxiolytic properties",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Dosage",
       "name": "5 mg/kg/day",
       "attributes": {
-        "context": "low dose (5 mg/kg/day)"
+        "amount": 5,
+        "unit": "mg/kg/day",
+        "frequency": "daily",
+        "route": "oral"
       },
       "source_chunk_ids": [
         "4f0447ee44176565dc0dccee77c67906"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "low dose (5 mg/kg/day)",
+      "verified": true
     },
     {
-      "id": "ent_022",
-      "type": "Concentration",
+      "id": "E7",
+      "type": "Dosage",
       "name": "20 mg/kg/day",
       "attributes": {
-        "context": "higher dose (20 mg/kg/day)"
+        "amount": 20,
+        "unit": "mg/kg/day",
+        "frequency": "daily",
+        "route": "oral"
       },
       "source_chunk_ids": [
         "4f0447ee44176565dc0dccee77c67906"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "higher dose (20 mg/kg/day)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Study 1",
+      "attributes": {
+        "design": "placebo-controlled, double-blind, between-subject experimental design"
+      },
+      "source_chunk_ids": [
+        "f591f49e3a7b7fcb627325e4682afa11"
+      ],
+      "confidence": 0.9,
+      "evidence": "Study 1 measured at baseline, prestress, and poststress induction",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Study 2",
+      "attributes": {
+        "design": "placebo-controlled, double-blind, between-subject experimental design"
+      },
+      "source_chunk_ids": [
+        "f591f49e3a7b7fcb627325e4682afa11"
+      ],
+      "confidence": 0.9,
+      "evidence": "Study 2 measured at baseline, prestress, during stress, and poststress induction",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "f591f49e3a7b7fcb627325e4682afa11"
+      ],
+      "confidence": 0.85,
+      "evidence": "placebo-controlled, double-blind, between-subject experimental design",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f591f49e3a7b7fcb627325e4682afa11"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zembrin\u00ae (25 mg)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Dosage",
+      "name": "25 mg single dose",
+      "attributes": {
+        "amount": 25,
+        "unit": "mg",
+        "frequency": "single dose",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "f591f49e3a7b7fcb627325e4682afa11"
+      ],
+      "confidence": 0.8,
+      "evidence": "single dose of Zembrin\u00ae (25 mg)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "anxiolytic effects",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "f591f49e3a7b7fcb627325e4682afa11"
+      ],
+      "confidence": 0.85,
+      "evidence": "anxiolytic effects of a single dose of Zembrin\u00ae",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Study 1",
+      "attributes": {
+        "sample_size": 20,
+        "population": "healthy volunteers",
+        "demographics": "six male, mean age 19.6 years, SD 1.09, body mass index 20.87"
+      },
+      "source_chunk_ids": [
+        "73aa6972426c869fb005a3d14f1ec2d3"
+      ],
+      "confidence": 0.9,
+      "evidence": "Study 1: Twenty (six male) healthy volunteers",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Study 2",
+      "attributes": {
+        "sample_size": 20,
+        "population": "healthy volunteers",
+        "demographics": "11 male, mean age 21.3 years, SD 1.38"
+      },
+      "source_chunk_ids": [
+        "73aa6972426c869fb005a3d14f1ec2d3"
+      ],
+      "confidence": 0.9,
+      "evidence": "Study 2: Twenty (11 male) healthy volunteers",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "8040deeb9dbe549b490ea9a076236172"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum plant",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "hydroethanolic extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8040deeb9dbe549b490ea9a076236172"
+      ],
+      "confidence": 0.9,
+      "evidence": "hydroethanolic extract",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8040deeb9dbe549b490ea9a076236172"
+      ],
+      "confidence": 0.85,
+      "evidence": "total alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8040deeb9dbe549b490ea9a076236172"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "mesembrenol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8040deeb9dbe549b490ea9a076236172"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrenol",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8040deeb9dbe549b490ea9a076236172"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Product",
+      "name": "HGH Inc.",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8040deeb9dbe549b490ea9a076236172"
+      ],
+      "confidence": 0.8,
+      "evidence": "HGH Inc.",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "multi-tasking framework",
+      "attributes": {
+        "target_type": "cognitive stressor"
+      },
+      "source_chunk_ids": [
+        "900045c166dda4fd5dbfddf504e7dbaa"
+      ],
+      "confidence": 0.9,
+      "evidence": "multi-tasking framework (MTF)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Effect",
+      "name": "cognitive demand",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "900045c166dda4fd5dbfddf504e7dbaa"
+      ],
+      "confidence": 0.85,
+      "evidence": "elicits cognitive demand",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "negative affect",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "900045c166dda4fd5dbfddf504e7dbaa"
+      ],
+      "confidence": 0.85,
+      "evidence": "elicits negative affect",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "stress",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "900045c166dda4fd5dbfddf504e7dbaa"
+      ],
+      "confidence": 0.85,
+      "evidence": "elicits stress",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "900045c166dda4fd5dbfddf504e7dbaa"
+      ],
+      "confidence": 0.9,
+      "evidence": "elicits anxiety",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Scholey et al., 2009",
+      "attributes": {
+        "year": 2009
+      },
+      "source_chunk_ids": [
+        "900045c166dda4fd5dbfddf504e7dbaa"
+      ],
+      "confidence": 0.8,
+      "evidence": "Scholey et al., 2009",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Wetherell & Carter, 2014",
+      "attributes": {
+        "year": 2014
+      },
+      "source_chunk_ids": [
+        "900045c166dda4fd5dbfddf504e7dbaa"
+      ],
+      "confidence": 0.8,
+      "evidence": "Wetherell & Carter, 2014",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "Bond-Lader Visual Analogue Scales",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "a344227dbad21b1e2617abb45da81d76"
+      ],
+      "confidence": 0.9,
+      "evidence": "Bond-Lader Visual Analogue Scales",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Bond & Lader, 1974",
+      "attributes": {
+        "year": 1974
+      },
+      "source_chunk_ids": [
+        "a344227dbad21b1e2617abb45da81d76"
+      ],
+      "confidence": 0.85,
+      "evidence": "Bond & Lader, 1974",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "alert",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "a344227dbad21b1e2617abb45da81d76"
+      ],
+      "confidence": 0.8,
+      "evidence": "alert",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "calm",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "a344227dbad21b1e2617abb45da81d76"
+      ],
+      "confidence": 0.8,
+      "evidence": "calm",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "content",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "a344227dbad21b1e2617abb45da81d76"
+      ],
+      "confidence": 0.8,
+      "evidence": "content",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Study 1",
+      "attributes": {
+        "design": "protocol flowchart"
+      },
+      "source_chunk_ids": [
+        "49c5a25ce258eef084087f8c4f8b5be1"
+      ],
+      "confidence": 0.9,
+      "evidence": "Flowchart for Study 1 protocol",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "protocol description",
+      "attributes": {
+        "evidence_level": 1
+      },
+      "source_chunk_ids": [
+        "49c5a25ce258eef084087f8c4f8b5be1"
+      ],
+      "confidence": 0.8,
+      "evidence": "Flowchart of Study 1 protocol",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "stress",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "49c5a25ce258eef084087f8c4f8b5be1"
+      ],
+      "confidence": 0.7,
+      "evidence": "Pre-stress, Post-stress",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "multi-tasking performance",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "49c5a25ce258eef084087f8c4f8b5be1"
+      ],
+      "confidence": 0.75,
+      "evidence": "Multi-tasking (20 minutes) task",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "study 1 and study 2",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0f6d77f12b9439f19b206c26edaf4a0d"
+      ],
+      "confidence": 0.9,
+      "evidence": "Study protocol for study 1 and study 2",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Dosage",
+      "name": "25 mg Sceletium tortuosum",
+      "attributes": {
+        "amount": 25,
+        "unit": "mg",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "0f6d77f12b9439f19b206c26edaf4a0d"
+      ],
+      "confidence": 0.95,
+      "evidence": "Dosage = 25 mg Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "0f6d77f12b9439f19b206c26edaf4a0d"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0f6d77f12b9439f19b206c26edaf4a0d"
+      ],
+      "confidence": 0.9,
+      "evidence": "trademarked Zembrin\u00ae",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "0f6d77f12b9439f19b206c26edaf4a0d"
+      ],
+      "confidence": 0.85,
+      "evidence": "State\u2013Trait Anxiety Inventory",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "stress",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "0f6d77f12b9439f19b206c26edaf4a0d"
+      ],
+      "confidence": 0.85,
+      "evidence": "Perceived Stress Scale",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "hunger",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "0f6d77f12b9439f19b206c26edaf4a0d"
+      ],
+      "confidence": 0.8,
+      "evidence": "Visual Analogue Hunger Scale",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Study 2 protocol",
+      "attributes": {
+        "design": "experimental protocol"
+      },
+      "source_chunk_ids": [
+        "d4cbb6d06e07b6ea581e39ac116cb110"
+      ],
+      "confidence": 0.9,
+      "evidence": "Flowchart for Study 2 protocol",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "experimental study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "d4cbb6d06e07b6ea581e39ac116cb110"
+      ],
+      "confidence": 0.8,
+      "evidence": "Flowchart of Study 2 protocol",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "stress",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "d4cbb6d06e07b6ea581e39ac116cb110"
+      ],
+      "confidence": 0.85,
+      "evidence": "Simulated Public Speaking task",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "physiological response",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "d4cbb6d06e07b6ea581e39ac116cb110"
+      ],
+      "confidence": 0.75,
+      "evidence": "Recording GSR and HR",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "GSR",
+      "attributes": {
+        "target_type": "physiological measure"
+      },
+      "source_chunk_ids": [
+        "d4cbb6d06e07b6ea581e39ac116cb110"
+      ],
+      "confidence": 0.8,
+      "evidence": "Recording GSR and HR",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "HR",
+      "attributes": {
+        "target_type": "physiological measure"
+      },
+      "source_chunk_ids": [
+        "d4cbb6d06e07b6ea581e39ac116cb110"
+      ],
+      "confidence": 0.8,
+      "evidence": "Recording GSR and HR",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "State\u2013Trait Anxiety Inventory",
+      "attributes": {
+        "target_type": "assessment_tool"
+      },
+      "source_chunk_ids": [
+        "acdee28a797442acba7affe1a26dcc65"
+      ],
+      "confidence": 0.95,
+      "evidence": "State\u2013Trait Anxiety Inventory (STAI; Spielberger, 2010)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "state anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "acdee28a797442acba7affe1a26dcc65"
+      ],
+      "confidence": 0.9,
+      "evidence": "first focuses on state anxiety",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "trait anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "acdee28a797442acba7affe1a26dcc65"
+      ],
+      "confidence": 0.9,
+      "evidence": "second focuses upon trait anxiety",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Wetherell et al., 2017",
+      "attributes": {
+        "year": 2017,
+        "design": "scale development"
+      },
+      "source_chunk_ids": [
+        "854459e0d298d39a702c8fc7792bdba3"
+      ],
+      "confidence": 0.9,
+      "evidence": "Wetherell, Craw, Smith, & Smith, 2017",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "scale validation",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "854459e0d298d39a702c8fc7792bdba3"
+      ],
+      "confidence": 0.8,
+      "evidence": "Visual Analogue Anxiety Mood Scale",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "854459e0d298d39a702c8fc7792bdba3"
+      ],
+      "confidence": 0.95,
+      "evidence": "Visual Analogue Anxiety Mood Scale",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "study 1",
+      "attributes": {
+        "design": "randomized controlled trial"
+      },
+      "source_chunk_ids": [
+        "ef227ba8c54420af37ab0a3bdb309eea"
+      ],
+      "confidence": 0.7,
+      "evidence": "randomly allocated placebo or Zembrin",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "study 2",
+      "attributes": {
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "ef227ba8c54420af37ab0a3bdb309eea"
+      ],
+      "confidence": 0.6,
+      "evidence": "study 2",
+      "verified": false
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4,
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "ef227ba8c54420af37ab0a3bdb309eea"
+      ],
+      "confidence": 0.65,
+      "evidence": "randomly allocated placebo or Zembrin",
+      "verified": false
+    },
+    {
+      "id": "E4",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ef227ba8c54420af37ab0a3bdb309eea"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zembrin",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "stress and cognitive performance study",
+      "attributes": {
+        "design": "controlled trial"
+      },
+      "source_chunk_ids": [
+        "2caa50b993acd6bec39108f58ca71ecd"
+      ],
+      "confidence": 0.8,
+      "evidence": "BaselinePrestressPoststress MeanSEMeanSEMeanSE",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "2caa50b993acd6bec39108f58ca71ecd"
+      ],
+      "confidence": 0.75,
+      "evidence": "MeanSEMeanSEMeanSE",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Zembrin\u00ae",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2caa50b993acd6bec39108f58ca71ecd"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zembrin\u00ae",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "stress",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "2caa50b993acd6bec39108f58ca71ecd"
+      ],
+      "confidence": 0.85,
+      "evidence": "Perceived stress",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "reduced perceived stress",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "2caa50b993acd6bec39108f58ca71ecd"
+      ],
+      "confidence": 0.7,
+      "evidence": "Perceived stressZembrin\u00ae22.22.8",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "improved calmness",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "2caa50b993acd6bec39108f58ca71ecd"
+      ],
+      "confidence": 0.7,
+      "evidence": "CalmZembrin\u00ae67.354.93",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "improved contentedness",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "2caa50b993acd6bec39108f58ca71ecd"
+      ],
+      "confidence": 0.7,
+      "evidence": "ContentZembrin\u00ae58.52.83",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "reduced hunger",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "2caa50b993acd6bec39108f58ca71ecd"
+      ],
+      "confidence": 0.7,
+      "evidence": "Hunger scaleZembrin\u00ae43.57.44",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "improved word recall",
+      "attributes": {
+        "level": "cognitive",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "2caa50b993acd6bec39108f58ca71ecd"
+      ],
+      "confidence": 0.7,
+      "evidence": "Word recall (number correct)Zembrin\u00ae8.40.41",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "reduced word recall errors",
+      "attributes": {
+        "level": "cognitive",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "2caa50b993acd6bec39108f58ca71ecd"
+      ],
+      "confidence": 0.7,
+      "evidence": "Word recall (number error)Zembrin\u00ae0.20.15",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "improved alertness",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "2caa50b993acd6bec39108f58ca71ecd"
+      ],
+      "confidence": 0.7,
+      "evidence": "AlertZembrin\u00ae53.184.40",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "stress study with Zembrin",
+      "attributes": {
+        "design": "clinical trial",
+        "sample_size": null
+      },
+      "source_chunk_ids": [
+        "200382e729c9013b7e1cc79550889ce2"
+      ],
+      "confidence": 0.7,
+      "evidence": "BaselinePrestressMidstressPoststress",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "200382e729c9013b7e1cc79550889ce2"
+      ],
+      "confidence": 0.7,
+      "evidence": "MeanSEMeanSEMeanSEMeanSE",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Zembrin\u00ae",
+      "attributes": {},
+      "source_chunk_ids": [
+        "200382e729c9013b7e1cc79550889ce2"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zembrin\u00ae",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "200382e729c9013b7e1cc79550889ce2"
+      ],
+      "confidence": 0.9,
+      "evidence": "Anxiety scale",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "reduced anxiety scores",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "200382e729c9013b7e1cc79550889ce2"
+      ],
+      "confidence": 0.8,
+      "evidence": "Anxiety scale Zembrin\u00ae 2.25 to 4.25",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "increased heart rate",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "200382e729c9013b7e1cc79550889ce2"
+      ],
+      "confidence": 0.7,
+      "evidence": "HR (bpm) Zembrin\u00ae 87.15 to 90.52",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "decreased galvanic skin response",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "200382e729c9013b7e1cc79550889ce2"
+      ],
+      "confidence": 0.7,
+      "evidence": "GSR Zembrin\u00ae 0.74 to 0.71",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Effect",
+      "name": "stress induction",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "f404870c7bae1fc2d4ea70a4ab21ccb1"
+      ],
+      "confidence": 0.85,
+      "evidence": "confirmed stress induction",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "ANCOVA study",
+      "attributes": {
+        "design": "ANCOVA",
+        "sample_size": 19
+      },
+      "source_chunk_ids": [
+        "5cf9d6c95f9627ef5f554d9b4301dadb"
+      ],
+      "confidence": 0.85,
+      "evidence": "ANCOVA revealed a treatment \u00d7 time interaction",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "5cf9d6c95f9627ef5f554d9b4301dadb"
+      ],
+      "confidence": 0.8,
+      "evidence": "ANCOVA revealed a treatment \u00d7 time interaction",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5cf9d6c95f9627ef5f554d9b4301dadb"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zembrin\u00ae group",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "5cf9d6c95f9627ef5f554d9b4301dadb"
+      ],
+      "confidence": 0.9,
+      "evidence": "anxiety level significantly lower",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "ANCOVA analysis",
+      "attributes": {
+        "design": "ANCOVA",
+        "statistics": "F(2,34) = 3.28, p = 0.05"
+      },
+      "source_chunk_ids": [
+        "5762120fd50001c6cbe42e5d0aa55629"
+      ],
+      "confidence": 0.9,
+      "evidence": "ANCOVA revealed a treatment \\times time interaction",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial evidence",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "5762120fd50001c6cbe42e5d0aa55629"
+      ],
+      "confidence": 0.85,
+      "evidence": "ANCOVA revealed a treatment \\times time interaction",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5762120fd50001c6cbe42e5d0aa55629"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zembrin\u00ae group",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "5762120fd50001c6cbe42e5d0aa55629"
+      ],
+      "confidence": 0.9,
+      "evidence": "anxiety level being significantly lower",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "HR ANCOVA study",
+      "attributes": {
+        "design": "ANCOVA",
+        "statistics": "F(1,17) = 6.08, p = 0.025"
+      },
+      "source_chunk_ids": [
+        "083c9f9501267dcf47a13602912a9a40"
+      ],
+      "confidence": 0.85,
+      "evidence": "ANCOVA revealed a treatment \u00d7 time interaction",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vivo physiological study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "083c9f9501267dcf47a13602912a9a40"
+      ],
+      "confidence": 0.8,
+      "evidence": "demonstrates a physiological response",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "083c9f9501267dcf47a13602912a9a40"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zembrin\u00ae group",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "increased heart rate",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "083c9f9501267dcf47a13602912a9a40"
+      ],
+      "confidence": 0.85,
+      "evidence": "increased HR",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "no heart rate increase",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "083c9f9501267dcf47a13602912a9a40"
+      ],
+      "confidence": 0.8,
+      "evidence": "not Zembrin\u00ae group",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "current studies",
+      "attributes": {},
+      "source_chunk_ids": [
+        "183c0b1646c609a85256158db154400a"
+      ],
+      "confidence": 0.9,
+      "evidence": "current studies",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "behavioral evidence",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "183c0b1646c609a85256158db154400a"
+      ],
+      "confidence": 0.85,
+      "evidence": "behavioral evidence",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "183c0b1646c609a85256158db154400a"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "183c0b1646c609a85256158db154400a"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zembrin\u00ae",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Dosage",
+      "name": "25 mg Zembrin",
+      "attributes": {
+        "amount": 25,
+        "unit": "mg"
+      },
+      "source_chunk_ids": [
+        "183c0b1646c609a85256158db154400a"
+      ],
+      "confidence": 0.8,
+      "evidence": "25 mg Zembrin\u00ae",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "anxiolytic properties",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "183c0b1646c609a85256158db154400a"
+      ],
+      "confidence": 0.85,
+      "evidence": "anxiolytic properties",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "enhancement of cognitive function",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "183c0b1646c609a85256158db154400a"
+      ],
+      "confidence": 0.8,
+      "evidence": "enhancement of cognitive function",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "stress",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "183c0b1646c609a85256158db154400a"
+      ],
+      "confidence": 0.75,
+      "evidence": "stress induction",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "increased subjective experience of alertness",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "183c0b1646c609a85256158db154400a"
+      ],
+      "confidence": 0.7,
+      "evidence": "increased subjective experience of alertness",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "decreased feelings of calmness",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "183c0b1646c609a85256158db154400a"
+      ],
+      "confidence": 0.7,
+      "evidence": "decreased feelings of calmness",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Carter, 2014 study 1",
+      "attributes": {
+        "year": 2014,
+        "design": "clinical study"
+      },
+      "source_chunk_ids": [
+        "6b56a7f3e24fc593a2fc1643b009450c"
+      ],
+      "confidence": 0.85,
+      "evidence": "Carter, 2014) and in study 1",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Carter, 2014 study 2",
+      "attributes": {
+        "year": 2014,
+        "design": "clinical study"
+      },
+      "source_chunk_ids": [
+        "6b56a7f3e24fc593a2fc1643b009450c"
+      ],
+      "confidence": 0.85,
+      "evidence": "study 2 by participants",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "clinical study",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "6b56a7f3e24fc593a2fc1643b009450c"
+      ],
+      "confidence": 0.8,
+      "evidence": "study 1 and study 2",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "6b56a7f3e24fc593a2fc1643b009450c"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6b56a7f3e24fc593a2fc1643b009450c"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zembrin\u00ae",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "stress",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "6b56a7f3e24fc593a2fc1643b009450c"
+      ],
+      "confidence": 0.85,
+      "evidence": "feelings stress",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "6b56a7f3e24fc593a2fc1643b009450c"
+      ],
+      "confidence": 0.9,
+      "evidence": "feelings of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "memory performance",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "6b56a7f3e24fc593a2fc1643b009450c"
+      ],
+      "confidence": 0.75,
+      "evidence": "memory performance",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "heart rate increase",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "6b56a7f3e24fc593a2fc1643b009450c"
+      ],
+      "confidence": 0.8,
+      "evidence": "increased HR",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "ameliorated anxiety",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "6b56a7f3e24fc593a2fc1643b009450c"
+      ],
+      "confidence": 0.85,
+      "evidence": "ameliorated the anticipatory increase in subjective feelings of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "ameliorated heart rate increase",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "6b56a7f3e24fc593a2fc1643b009450c"
+      ],
+      "confidence": 0.85,
+      "evidence": "ameliorated increases in HR",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "study 1",
+      "attributes": {},
+      "source_chunk_ids": [
+        "350de229ee20fbd76af740c75bc5bdc6"
+      ],
+      "confidence": 0.9,
+      "evidence": "study 1",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "study 2",
+      "attributes": {},
+      "source_chunk_ids": [
+        "350de229ee20fbd76af740c75bc5bdc6"
+      ],
+      "confidence": 0.9,
+      "evidence": "study 2",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "350de229ee20fbd76af740c75bc5bdc6"
+      ],
+      "confidence": 0.8,
+      "evidence": "protocol inducing elevated feelings of stress",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "350de229ee20fbd76af740c75bc5bdc6"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "350de229ee20fbd76af740c75bc5bdc6"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zembrin\u00ae",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "350de229ee20fbd76af740c75bc5bdc6"
+      ],
+      "confidence": 0.9,
+      "evidence": "anxiety scale",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "no anxiolytic effect",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "350de229ee20fbd76af740c75bc5bdc6"
+      ],
+      "confidence": 0.85,
+      "evidence": "lack of an anxiolytic effect",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "no impact on nonexecutive memory processing",
+      "attributes": {
+        "level": "cognitive",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "350de229ee20fbd76af740c75bc5bdc6"
+      ],
+      "confidence": 0.8,
+      "evidence": "no impact on nonexecutive memory processing",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Terburg et al. (2013)",
+      "attributes": {
+        "year": 2013
+      },
+      "source_chunk_ids": [
+        "350de229ee20fbd76af740c75bc5bdc6"
+      ],
+      "confidence": 0.9,
+      "evidence": "Terburg et al. (2013)",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Evidence",
+      "name": "previous study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "350de229ee20fbd76af740c75bc5bdc6"
+      ],
+      "confidence": 0.75,
+      "evidence": "previous studies",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "simulated public speaking task study",
+      "attributes": {
+        "design": "experimental study with stress simulation"
+      },
+      "source_chunk_ids": [
+        "018d16b5c32f19667ee818b1601904ad"
+      ],
+      "confidence": 0.8,
+      "evidence": "Stress in this context was a simulated public speaking task",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "experimental study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "018d16b5c32f19667ee818b1601904ad"
+      ],
+      "confidence": 0.75,
+      "evidence": "simulated public speaking task",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "018d16b5c32f19667ee818b1601904ad"
+      ],
+      "confidence": 0.9,
+      "evidence": "self-reported anxiety on the STAI(s) and VAa",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Figure 2 study",
+      "attributes": {
+        "design": "experimental study"
+      },
+      "source_chunk_ids": [
+        "dd249dfee0332c50de521b084949ae3f"
+      ],
+      "confidence": 0.8,
+      "evidence": "Figure 2 consists of two bar charts",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "experimental evidence",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "dd249dfee0332c50de521b084949ae3f"
+      ],
+      "confidence": 0.75,
+      "evidence": "Bar charts showing means and standard error",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "dd249dfee0332c50de521b084949ae3f"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium (grey bars)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "dd249dfee0332c50de521b084949ae3f"
+      ],
+      "confidence": 0.95,
+      "evidence": "self-reported anxiety (STAI(s) and VAa)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "reduced anxiety scores",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "dd249dfee0332c50de521b084949ae3f"
+      ],
+      "confidence": 0.7,
+      "evidence": "significant group differences at prestress",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Heart rate study",
+      "attributes": {
+        "design": "experimental",
+        "sample_size": null
+      },
+      "source_chunk_ids": [
+        "7adb72535a765bebf67c58c9c64f8b76"
+      ],
+      "confidence": 0.8,
+      "evidence": "Two groups are compared: Placebo and Sceletium",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vivo",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "7adb72535a765bebf67c58c9c64f8b76"
+      ],
+      "confidence": 0.7,
+      "evidence": "Figure 3 showing heart rate data",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "7adb72535a765bebf67c58c9c64f8b76"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium (grey line with circles)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "heart rate reduction",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "7adb72535a765bebf67c58c9c64f8b76"
+      ],
+      "confidence": 0.75,
+      "evidence": "Sceletium ~92 ~91 (decrease)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "heart rate increase",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "7adb72535a765bebf67c58c9c64f8b76"
+      ],
+      "confidence": 0.75,
+      "evidence": "Placebo ~87 ~95 (increase)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "stress",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "7adb72535a765bebf67c58c9c64f8b76"
+      ],
+      "confidence": 0.8,
+      "evidence": "PRE-STRESS and MID-STRESS time points",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "01bc8feb6bd3aece805a8e2c754c8a78"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "01bc8feb6bd3aece805a8e2c754c8a78"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zembrin\u00ae",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "anxiolytic effects",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "01bc8feb6bd3aece805a8e2c754c8a78"
+      ],
+      "confidence": 0.85,
+      "evidence": "anxiolytic effects",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "01bc8feb6bd3aece805a8e2c754c8a78"
+      ],
+      "confidence": 0.8,
+      "evidence": "anxiolytic effects",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "laboratory stress protocol study",
+      "attributes": {
+        "design": "controlled laboratory stress protocol",
+        "sample_population": "young healthy volunteers"
+      },
+      "source_chunk_ids": [
+        "fa5764e320938ae0ae42f6135df53ab5"
+      ],
+      "confidence": 0.85,
+      "evidence": "controlled laboratory stress protocol in young healthy volunteers",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "fa5764e320938ae0ae42f6135df53ab5"
+      ],
+      "confidence": 0.8,
+      "evidence": "controlled laboratory stress protocol",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "fa5764e320938ae0ae42f6135df53ab5"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fa5764e320938ae0ae42f6135df53ab5"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zembrin\u00ae",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Dosage",
+      "name": "25 mg single dose",
+      "attributes": {
+        "amount": 25,
+        "unit": "mg",
+        "frequency": "single dose",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "fa5764e320938ae0ae42f6135df53ab5"
+      ],
+      "confidence": 0.9,
+      "evidence": "single 25 mg dose",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "stress",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "fa5764e320938ae0ae42f6135df53ab5"
+      ],
+      "confidence": 0.85,
+      "evidence": "indicators of stress",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "fa5764e320938ae0ae42f6135df53ab5"
+      ],
+      "confidence": 0.85,
+      "evidence": "indicators of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Chiu et al. 2014",
+      "attributes": {
+        "design": "randomized controlled study",
+        "year": 2014,
+        "doi": "10.1155/2014/682014"
+      },
+      "source_chunk_ids": [
+        "4e1f4d40f401456d13b5de0959c80032"
+      ],
+      "confidence": 0.95,
+      "evidence": "Proof-of-concept randomized controlled study",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "4e1f4d40f401456d13b5de0959c80032"
+      ],
+      "confidence": 0.9,
+      "evidence": "randomized controlled study",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e1f4d40f401456d13b5de0959c80032"
+      ],
+      "confidence": 0.95,
+      "evidence": "proprietary extract Sceletium tortuosum (Zembrin)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "phosphodiesterase-4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "4e1f4d40f401456d13b5de0959c80032"
+      ],
+      "confidence": 0.9,
+      "evidence": "targeting phosphodiesterase-4",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "Alzheimer's dementia",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "4e1f4d40f401456d13b5de0959c80032"
+      ],
+      "confidence": 0.85,
+      "evidence": "Implications for Alzheimer's dementia",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Dimpfel et al. 2016",
+      "attributes": {
+        "year": 2016,
+        "doi": "10.1016/j.jep.2015.11.036"
+      },
+      "source_chunk_ids": [
+        "4e1f4d40f401456d13b5de0959c80032"
+      ],
+      "confidence": 0.9,
+      "evidence": "Electropharmacogram of Sceletium tortuosum extract",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "in vivo animal study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "4e1f4d40f401456d13b5de0959c80032"
+      ],
+      "confidence": 0.85,
+      "evidence": "conscious freely moving rats",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "RawMaterial",
+      "name": "Sceletium tortuosum extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e1f4d40f401456d13b5de0959c80032"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum extract",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Harvey et al. 2011",
+      "attributes": {
+        "year": 2011
+      },
+      "source_chunk_ids": [
+        "4e1f4d40f401456d13b5de0959c80032"
+      ],
+      "confidence": 0.9,
+      "evidence": "Pharmacological actions of Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Evidence",
+      "name": "pharmacological review",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "4e1f4d40f401456d13b5de0959c80032"
+      ],
+      "confidence": 0.8,
+      "evidence": "Pharmacological actions",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "4e1f4d40f401456d13b5de0959c80032"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e1f4d40f401456d13b5de0959c80032"
+      ],
+      "confidence": 0.8,
+      "evidence": "principal alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Nell et al. 2013 RCT",
+      "attributes": {
+        "design": "randomized, double-blind, parallel-group, placebo-controlled trial",
+        "sample_size": "healthy adults",
+        "year": 2013
+      },
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "confidence": 0.95,
+      "evidence": "A randomized, double-blind, parallel-group, placebo-controlled trial of extract Sceletium tortuosum (Zembrin) in healthy adults",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "confidence": 0.9,
+      "evidence": "randomized, double-blind, parallel-group, placebo-controlled trial",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum (Zembrin)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Terburg et al. 2013 acute effects study",
+      "attributes": {
+        "design": "acute effects study",
+        "year": 2013
+      },
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "confidence": 0.9,
+      "evidence": "Acute effects of Sceletium tortuosum (Zembrin), a dual 5-HT reuptake and PDE4 inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "5-HT reuptake",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "confidence": 0.85,
+      "evidence": "dual 5-HT reuptake and PDE4 inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "confidence": 0.85,
+      "evidence": "dual 5-HT reuptake and PDE4 inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Smith 2011 in vivo stress model",
+      "attributes": {
+        "design": "in vivo model",
+        "year": 2011
+      },
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "confidence": 0.9,
+      "evidence": "The effects of Sceletium tortuosum in an in vivo model of psychological stress",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "psychological stress",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "confidence": 0.9,
+      "evidence": "model of psychological stress",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "Scholey et al. 2009 chewing gum study",
+      "attributes": {
+        "design": "laboratory stress study",
+        "year": 2009
+      },
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "confidence": 0.85,
+      "evidence": "Chewing gum alleviates negative mood and reduces cortisol during acute laboratory psychological stress",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "alleviates negative mood",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "confidence": 0.8,
+      "evidence": "alleviates negative mood",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Effect",
+      "name": "reduces cortisol",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "confidence": 0.8,
+      "evidence": "reduces cortisol",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Condition",
+      "name": "acute laboratory psychological stress",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "confidence": 0.85,
+      "evidence": "acute laboratory psychological stress",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Reay et al. 2020",
+      "attributes": {
+        "design": "experimental study",
+        "year": 2020,
+        "doi": "10.1002/hup.2753"
+      },
+      "source_chunk_ids": [
+        "db70a6ce4ca476c31a4808f7733b32f5"
+      ],
+      "confidence": 0.95,
+      "evidence": "Reay J, Wetherell MA, Morton E, Lillis J, Badmaev V. Sceletium tortuosum (Zembrin\u00ae) ameliorates experimentally induced anxiety in healthy volunteers. Hum Psychopharmacol Clin Exp. 2020;35:e2753.",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical experimental study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "db70a6ce4ca476c31a4808f7733b32f5"
+      ],
+      "confidence": 0.85,
+      "evidence": "experimentally induced anxiety in healthy volunteers",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "db70a6ce4ca476c31a4808f7733b32f5"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "db70a6ce4ca476c31a4808f7733b32f5"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zembrin\u00ae",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "db70a6ce4ca476c31a4808f7733b32f5"
+      ],
+      "confidence": 0.9,
+      "evidence": "ameliorates experimentally induced anxiety",
+      "verified": true
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.076456+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "placebo-controlled, double-blind, between-subject experimental design",
+      "source_chunk_ids": [
+        "d063ed193b784028d446d0e9e2005abb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "placebo-controlled, double-blind, between-subject experimental design",
+      "source_chunk_ids": [
+        "d063ed193b784028d446d0e9e2005abb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "investigate the effects of a single dose of Sceletium tortuosum",
+      "source_chunk_ids": [
+        "d063ed193b784028d446d0e9e2005abb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "investigate the effects of a single dose of Sceletium tortuosum",
+      "source_chunk_ids": [
+        "d063ed193b784028d446d0e9e2005abb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "Sceletium tortuosum (25 mg, Zembrin\u00ae)",
+      "source_chunk_ids": [
+        "d063ed193b784028d446d0e9e2005abb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "Sceletium tortuosum (25 mg, Zembrin\u00ae)",
+      "source_chunk_ids": [
+        "d063ed193b784028d446d0e9e2005abb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "single dose of Sceletium tortuosum (25 mg, Zembrin\u00ae)",
+      "source_chunk_ids": [
+        "d063ed193b784028d446d0e9e2005abb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "TESTED_AT",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "single dose of Sceletium tortuosum (25 mg, Zembrin\u00ae)",
+      "source_chunk_ids": [
+        "d063ed193b784028d446d0e9e2005abb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "investigated"
+      },
+      "confidence": 0.8,
+      "evidence": "investigate the effects on stress/anxiety responding",
+      "source_chunk_ids": [
+        "d063ed193b784028d446d0e9e2005abb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "investigated"
+      },
+      "confidence": 0.8,
+      "evidence": "investigate the effects on stress/anxiety responding",
+      "source_chunk_ids": [
+        "d063ed193b784028d446d0e9e2005abb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "investigated"
+      },
+      "confidence": 0.8,
+      "evidence": "investigate the effects on stress/anxiety responding",
+      "source_chunk_ids": [
+        "d063ed193b784028d446d0e9e2005abb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "investigated"
+      },
+      "confidence": 0.8,
+      "evidence": "investigate the effects on stress/anxiety responding",
+      "source_chunk_ids": [
+        "d063ed193b784028d446d0e9e2005abb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "measured"
+      },
+      "confidence": 0.7,
+      "evidence": "measured subjective experiences of mood",
+      "source_chunk_ids": [
+        "d063ed193b784028d446d0e9e2005abb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {
+        "outcome": "measured"
+      },
+      "confidence": 0.7,
+      "evidence": "measured subjective experiences of anxiety",
+      "source_chunk_ids": [
+        "d063ed193b784028d446d0e9e2005abb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "measured"
+      },
+      "confidence": 0.7,
+      "evidence": "measured physiological indicators of stress",
+      "source_chunk_ids": [
+        "d063ed193b784028d446d0e9e2005abb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "analysis of covariances",
+      "source_chunk_ids": [
+        "c5117dcfd16f44c6f78d2edab7177a76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "analysis of covariances",
+      "source_chunk_ids": [
+        "c5117dcfd16f44c6f78d2edab7177a76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "no treatment effect in study 1",
+      "source_chunk_ids": [
+        "c5117dcfd16f44c6f78d2edab7177a76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Zembrin\u00ae group",
+      "source_chunk_ids": [
+        "c5117dcfd16f44c6f78d2edab7177a76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.7,
+      "evidence": "no treatment effect",
+      "source_chunk_ids": [
+        "c5117dcfd16f44c6f78d2edab7177a76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "anxiety levels to be significantly lower",
+      "source_chunk_ids": [
+        "c5117dcfd16f44c6f78d2edab7177a76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "ameliorate laboratory stress/anxiety responding",
+      "source_chunk_ids": [
+        "c5117dcfd16f44c6f78d2edab7177a76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "TREATS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.8,
+      "evidence": "ameliorate laboratory stress/anxiety responding",
+      "source_chunk_ids": [
+        "c5117dcfd16f44c6f78d2edab7177a76"
+      ],
+      "supporting_study_ids": [
+        "E2"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "TESTED_AT",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "single dose",
+      "source_chunk_ids": [
+        "c5117dcfd16f44c6f78d2edab7177a76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "used by some tribal people of South Africa",
+      "source_chunk_ids": [
+        "3c9d6bc2c5e6cfab50d66a44e4b6534f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum is used",
+      "source_chunk_ids": [
+        "3c9d6bc2c5e6cfab50d66a44e4b6534f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "reduce feelings of pain and hunger",
+      "source_chunk_ids": [
+        "3c9d6bc2c5e6cfab50d66a44e4b6534f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "ameliorate stress",
+      "source_chunk_ids": [
+        "3c9d6bc2c5e6cfab50d66a44e4b6534f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "enhance mental and physical performance",
+      "source_chunk_ids": [
+        "3c9d6bc2c5e6cfab50d66a44e4b6534f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "Smith (2011) reported evidence of Sceletium tortuosum",
+      "source_chunk_ids": [
+        "4f0447ee44176565dc0dccee77c67906"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Smith (2011) reported evidence",
+      "source_chunk_ids": [
+        "4f0447ee44176565dc0dccee77c67906"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "anxiolytic properties",
+      "source_chunk_ids": [
+        "4f0447ee44176565dc0dccee77c67906"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TESTED_AT",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "low dose (5 mg/kg/day)",
+      "source_chunk_ids": [
+        "4f0447ee44176565dc0dccee77c67906"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TESTED_AT",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "higher dose (20 mg/kg/day)",
+      "source_chunk_ids": [
+        "4f0447ee44176565dc0dccee77c67906"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "purported therapeutic properties",
+      "source_chunk_ids": [
+        "4f0447ee44176565dc0dccee77c67906"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "placebo-controlled, double-blind, between-subject experimental design",
+      "source_chunk_ids": [
+        "f591f49e3a7b7fcb627325e4682afa11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "placebo-controlled, double-blind, between-subject experimental design",
+      "source_chunk_ids": [
+        "f591f49e3a7b7fcb627325e4682afa11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "investigate the anxiolytic effects of a single dose of Zembrin\u00ae",
+      "source_chunk_ids": [
+        "f591f49e3a7b7fcb627325e4682afa11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "investigate the anxiolytic effects of a single dose of Zembrin\u00ae",
+      "source_chunk_ids": [
+        "f591f49e3a7b7fcb627325e4682afa11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "single dose of Zembrin\u00ae (25 mg)",
+      "source_chunk_ids": [
+        "f591f49e3a7b7fcb627325e4682afa11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "TESTED_AT",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "single dose of Zembrin\u00ae (25 mg)",
+      "source_chunk_ids": [
+        "f591f49e3a7b7fcb627325e4682afa11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "investigates"
+      },
+      "confidence": 0.85,
+      "evidence": "investigate the anxiolytic effects of a single dose of Zembrin\u00ae",
+      "source_chunk_ids": [
+        "f591f49e3a7b7fcb627325e4682afa11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "investigates"
+      },
+      "confidence": 0.85,
+      "evidence": "investigate the anxiolytic effects of a single dose of Zembrin\u00ae",
+      "source_chunk_ids": [
+        "f591f49e3a7b7fcb627325e4682afa11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "measurement": {
+          "value": 0.35,
+          "unit": "%",
+          "measurement_type": "content",
+          "notes": "range 0.35%\u20130.45% total alkaloids"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "standardized to contain 0.35%\u20130.45% total alkaloids",
+      "source_chunk_ids": [
+        "8040deeb9dbe549b490ea9a076236172"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 60,
+          "unit": "%",
+          "measurement_type": "content",
+          "notes": "mesembrenone and mesembrenol \u226560%"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "mesembrenone and mesembrenol \u226560%",
+      "source_chunk_ids": [
+        "8040deeb9dbe549b490ea9a076236172"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "measurement": {
+          "value": 60,
+          "unit": "%",
+          "measurement_type": "content",
+          "notes": "mesembrenone and mesembrenol \u226560%"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "mesembrenone and mesembrenol \u226560%",
+      "source_chunk_ids": [
+        "8040deeb9dbe549b490ea9a076236172"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "measurement": {
+          "value": 20,
+          "unit": "%",
+          "measurement_type": "content",
+          "notes": "mesembrine <20%"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "mesembrine <20%",
+      "source_chunk_ids": [
+        "8040deeb9dbe549b490ea9a076236172"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "mesembrenone (alkaloid)",
+      "source_chunk_ids": [
+        "8040deeb9dbe549b490ea9a076236172"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "mesembrenol (alkaloid)",
+      "source_chunk_ids": [
+        "8040deeb9dbe549b490ea9a076236172"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "mesembrine (alkaloid)",
+      "source_chunk_ids": [
+        "8040deeb9dbe549b490ea9a076236172"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Scholey et al., 2009",
+      "source_chunk_ids": [
+        "900045c166dda4fd5dbfddf504e7dbaa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Wetherell & Carter, 2014",
+      "source_chunk_ids": [
+        "900045c166dda4fd5dbfddf504e7dbaa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E2",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Scholey et al., 2009",
+      "source_chunk_ids": [
+        "900045c166dda4fd5dbfddf504e7dbaa"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Scholey et al., 2009",
+      "source_chunk_ids": [
+        "900045c166dda4fd5dbfddf504e7dbaa"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Scholey et al., 2009",
+      "source_chunk_ids": [
+        "900045c166dda4fd5dbfddf504e7dbaa"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Scholey et al., 2009",
+      "source_chunk_ids": [
+        "900045c166dda4fd5dbfddf504e7dbaa"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Wetherell & Carter, 2014",
+      "source_chunk_ids": [
+        "900045c166dda4fd5dbfddf504e7dbaa"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E3",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Wetherell & Carter, 2014",
+      "source_chunk_ids": [
+        "900045c166dda4fd5dbfddf504e7dbaa"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Wetherell & Carter, 2014",
+      "source_chunk_ids": [
+        "900045c166dda4fd5dbfddf504e7dbaa"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E5",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Wetherell & Carter, 2014",
+      "source_chunk_ids": [
+        "900045c166dda4fd5dbfddf504e7dbaa"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Bond-Lader Visual Analogue Scales (Bond & Lader, 1974)",
+      "source_chunk_ids": [
+        "a344227dbad21b1e2617abb45da81d76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "measures"
+      },
+      "confidence": 0.75,
+      "evidence": "provides three mood dimensions: alert",
+      "source_chunk_ids": [
+        "a344227dbad21b1e2617abb45da81d76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "measures"
+      },
+      "confidence": 0.75,
+      "evidence": "provides three mood dimensions: calm",
+      "source_chunk_ids": [
+        "a344227dbad21b1e2617abb45da81d76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "measures"
+      },
+      "confidence": 0.75,
+      "evidence": "provides three mood dimensions: content",
+      "source_chunk_ids": [
+        "a344227dbad21b1e2617abb45da81d76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Flowchart of Study 1 protocol",
+      "source_chunk_ids": [
+        "49c5a25ce258eef084087f8c4f8b5be1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "measured"
+      },
+      "confidence": 0.7,
+      "evidence": "Pre-stress, Post-stress",
+      "source_chunk_ids": [
+        "49c5a25ce258eef084087f8c4f8b5be1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "measured"
+      },
+      "confidence": 0.75,
+      "evidence": "Multi-tasking (20 minutes) task",
+      "source_chunk_ids": [
+        "49c5a25ce258eef084087f8c4f8b5be1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Dosage = 25 mg Sceletium tortuosum",
+      "source_chunk_ids": [
+        "0f6d77f12b9439f19b206c26edaf4a0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Sceletium tortuosum",
+      "source_chunk_ids": [
+        "0f6d77f12b9439f19b206c26edaf4a0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "trademarked Zembrin\u00ae",
+      "source_chunk_ids": [
+        "0f6d77f12b9439f19b206c26edaf4a0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "State\u2013Trait Anxiety Inventory",
+      "source_chunk_ids": [
+        "0f6d77f12b9439f19b206c26edaf4a0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Perceived Stress Scale",
+      "source_chunk_ids": [
+        "0f6d77f12b9439f19b206c26edaf4a0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Visual Analogue Hunger Scale",
+      "source_chunk_ids": [
+        "0f6d77f12b9439f19b206c26edaf4a0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Flowchart of Study 2 protocol",
+      "source_chunk_ids": [
+        "d4cbb6d06e07b6ea581e39ac116cb110"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "induced"
+      },
+      "confidence": 0.8,
+      "evidence": "Simulated Public Speaking task",
+      "source_chunk_ids": [
+        "d4cbb6d06e07b6ea581e39ac116cb110"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "measured"
+      },
+      "confidence": 0.75,
+      "evidence": "Recording GSR and HR",
+      "source_chunk_ids": [
+        "d4cbb6d06e07b6ea581e39ac116cb110"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "measured"
+      },
+      "confidence": 0.8,
+      "evidence": "Recording GSR and HR",
+      "source_chunk_ids": [
+        "d4cbb6d06e07b6ea581e39ac116cb110"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "measured"
+      },
+      "confidence": 0.8,
+      "evidence": "Recording GSR and HR",
+      "source_chunk_ids": [
+        "d4cbb6d06e07b6ea581e39ac116cb110"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Visual Analogue Anxiety Mood Scale",
+      "source_chunk_ids": [
+        "854459e0d298d39a702c8fc7792bdba3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "measures"
+      },
+      "confidence": 0.9,
+      "evidence": "Visual Analogue Anxiety Mood Scale",
+      "source_chunk_ids": [
+        "854459e0d298d39a702c8fc7792bdba3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "randomly allocated placebo or Zembrin",
+      "source_chunk_ids": [
+        "ef227ba8c54420af37ab0a3bdb309eea"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "Zembrin treatment condition",
+      "source_chunk_ids": [
+        "ef227ba8c54420af37ab0a3bdb309eea"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "MeanSEMeanSEMeanSE",
+      "source_chunk_ids": [
+        "2caa50b993acd6bec39108f58ca71ecd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Zembrin\u00ae",
+      "source_chunk_ids": [
+        "2caa50b993acd6bec39108f58ca71ecd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "Perceived stress",
+      "source_chunk_ids": [
+        "2caa50b993acd6bec39108f58ca71ecd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.7,
+      "evidence": "Perceived stressZembrin\u00ae22.22.8",
+      "source_chunk_ids": [
+        "2caa50b993acd6bec39108f58ca71ecd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.7,
+      "evidence": "CalmZembrin\u00ae67.354.93",
+      "source_chunk_ids": [
+        "2caa50b993acd6bec39108f58ca71ecd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.7,
+      "evidence": "ContentZembrin\u00ae58.52.83",
+      "source_chunk_ids": [
+        "2caa50b993acd6bec39108f58ca71ecd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.7,
+      "evidence": "Hunger scaleZembrin\u00ae43.57.44",
+      "source_chunk_ids": [
+        "2caa50b993acd6bec39108f58ca71ecd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.7,
+      "evidence": "Word recall (number correct)Zembrin\u00ae8.40.41",
+      "source_chunk_ids": [
+        "2caa50b993acd6bec39108f58ca71ecd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.7,
+      "evidence": "Word recall (number error)Zembrin\u00ae0.20.15",
+      "source_chunk_ids": [
+        "2caa50b993acd6bec39108f58ca71ecd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.7,
+      "evidence": "AlertZembrin\u00ae53.184.40",
+      "source_chunk_ids": [
+        "2caa50b993acd6bec39108f58ca71ecd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "Perceived stressZembrin\u00ae22.22.8",
+      "source_chunk_ids": [
+        "2caa50b993acd6bec39108f58ca71ecd"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "BaselinePrestressMidstressPoststress",
+      "source_chunk_ids": [
+        "200382e729c9013b7e1cc79550889ce2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Zembrin\u00ae",
+      "source_chunk_ids": [
+        "200382e729c9013b7e1cc79550889ce2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "Anxiety scale Zembrin\u00ae",
+      "source_chunk_ids": [
+        "200382e729c9013b7e1cc79550889ce2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "Anxiety scale Zembrin\u00ae 2.25 to 4.25",
+      "source_chunk_ids": [
+        "200382e729c9013b7e1cc79550889ce2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.7,
+      "evidence": "HR (bpm) Zembrin\u00ae 87.15 to 90.52",
+      "source_chunk_ids": [
+        "200382e729c9013b7e1cc79550889ce2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.7,
+      "evidence": "GSR Zembrin\u00ae 0.74 to 0.71",
+      "source_chunk_ids": [
+        "200382e729c9013b7e1cc79550889ce2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "Anxiety scale Zembrin\u00ae",
+      "source_chunk_ids": [
+        "200382e729c9013b7e1cc79550889ce2"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Anxiety scale Zembrin\u00ae 2.25 to 4.25",
+      "source_chunk_ids": [
+        "200382e729c9013b7e1cc79550889ce2"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "ANCOVA revealed a treatment \u00d7 time interaction",
+      "source_chunk_ids": [
+        "5cf9d6c95f9627ef5f554d9b4301dadb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Zembrin\u00ae group",
+      "source_chunk_ids": [
+        "5cf9d6c95f9627ef5f554d9b4301dadb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "anxiety level significantly lower in the Zembrin\u00ae group",
+      "source_chunk_ids": [
+        "5cf9d6c95f9627ef5f554d9b4301dadb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.8,
+      "evidence": "anxiety level significantly lower in the Zembrin\u00ae group",
+      "source_chunk_ids": [
+        "5cf9d6c95f9627ef5f554d9b4301dadb"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "ANCOVA revealed a treatment \\times time interaction",
+      "source_chunk_ids": [
+        "5762120fd50001c6cbe42e5d0aa55629"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Zembrin\u00ae group",
+      "source_chunk_ids": [
+        "5762120fd50001c6cbe42e5d0aa55629"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "anxiety level being significantly lower",
+      "source_chunk_ids": [
+        "5762120fd50001c6cbe42e5d0aa55629"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.8,
+      "evidence": "anxiety level being significantly lower",
+      "source_chunk_ids": [
+        "5762120fd50001c6cbe42e5d0aa55629"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "ANCOVA revealed a treatment \u00d7 time interaction",
+      "source_chunk_ids": [
+        "083c9f9501267dcf47a13602912a9a40"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Zembrin\u00ae group",
+      "source_chunk_ids": [
+        "083c9f9501267dcf47a13602912a9a40"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "observed",
+        "context": "placebo group"
+      },
+      "confidence": 0.85,
+      "evidence": "increased HR in placebo",
+      "source_chunk_ids": [
+        "083c9f9501267dcf47a13602912a9a40"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "no_effect",
+        "context": "Zembrin group"
+      },
+      "confidence": 0.8,
+      "evidence": "not Zembrin\u00ae group",
+      "source_chunk_ids": [
+        "083c9f9501267dcf47a13602912a9a40"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "stress response"
+      },
+      "confidence": 0.75,
+      "evidence": "not Zembrin\u00ae group",
+      "source_chunk_ids": [
+        "083c9f9501267dcf47a13602912a9a40"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "behavioral evidence",
+      "source_chunk_ids": [
+        "183c0b1646c609a85256158db154400a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Sceletium tortuosum",
+      "source_chunk_ids": [
+        "183c0b1646c609a85256158db154400a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Zembrin\u00ae",
+      "source_chunk_ids": [
+        "183c0b1646c609a85256158db154400a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "25 mg Zembrin\u00ae",
+      "source_chunk_ids": [
+        "183c0b1646c609a85256158db154400a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "supports"
+      },
+      "confidence": 0.8,
+      "evidence": "support the anxiolytic properties",
+      "source_chunk_ids": [
+        "183c0b1646c609a85256158db154400a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.75,
+      "evidence": "fail to replicate the enhancement of cognitive function",
+      "source_chunk_ids": [
+        "183c0b1646c609a85256158db154400a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "induces"
+      },
+      "confidence": 0.7,
+      "evidence": "stress induction was confirmed",
+      "source_chunk_ids": [
+        "183c0b1646c609a85256158db154400a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "increases",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "increased subjective experience of alertness",
+      "source_chunk_ids": [
+        "183c0b1646c609a85256158db154400a"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {
+        "outcome": "decreases",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "decreased feelings of calmness",
+      "source_chunk_ids": [
+        "183c0b1646c609a85256158db154400a"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "study 1",
+      "source_chunk_ids": [
+        "6b56a7f3e24fc593a2fc1643b009450c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "study 2",
+      "source_chunk_ids": [
+        "6b56a7f3e24fc593a2fc1643b009450c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Sceletium tortuosum (Zembrin\u00ae) in study 1",
+      "source_chunk_ids": [
+        "6b56a7f3e24fc593a2fc1643b009450c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Sceletium tortuosum (Zembrin\u00ae) in study 2",
+      "source_chunk_ids": [
+        "6b56a7f3e24fc593a2fc1643b009450c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.8,
+      "evidence": "failed to show any effect on feelings stress",
+      "source_chunk_ids": [
+        "6b56a7f3e24fc593a2fc1643b009450c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.75,
+      "evidence": "failed to show any effect on memory performance",
+      "source_chunk_ids": [
+        "6b56a7f3e24fc593a2fc1643b009450c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "ameliorated the anticipatory increase in feelings of anxiety",
+      "source_chunk_ids": [
+        "6b56a7f3e24fc593a2fc1643b009450c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "ameliorated increases in HR",
+      "source_chunk_ids": [
+        "6b56a7f3e24fc593a2fc1643b009450c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "TREATS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.8,
+      "evidence": "ameliorated the anticipatory increase in feelings of anxiety",
+      "source_chunk_ids": [
+        "6b56a7f3e24fc593a2fc1643b009450c"
+      ],
+      "supporting_study_ids": [
+        "E2"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "ameliorated the anticipatory increase in subjective feelings of anxiety",
+      "source_chunk_ids": [
+        "6b56a7f3e24fc593a2fc1643b009450c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "ameliorated increases in HR",
+      "source_chunk_ids": [
+        "6b56a7f3e24fc593a2fc1643b009450c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "protocol inducing elevated feelings of stress",
+      "source_chunk_ids": [
+        "350de229ee20fbd76af740c75bc5bdc6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "protocol inducing elevated feelings of stress",
+      "source_chunk_ids": [
+        "350de229ee20fbd76af740c75bc5bdc6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Sceletium tortuosum (Zembrin\u00ae)",
+      "source_chunk_ids": [
+        "350de229ee20fbd76af740c75bc5bdc6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Sceletium tortuosum (Zembrin\u00ae)",
+      "source_chunk_ids": [
+        "350de229ee20fbd76af740c75bc5bdc6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.85,
+      "evidence": "lack of an anxiolytic effect",
+      "source_chunk_ids": [
+        "350de229ee20fbd76af740c75bc5bdc6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.85,
+      "evidence": "lack of an anxiolytic effect",
+      "source_chunk_ids": [
+        "350de229ee20fbd76af740c75bc5bdc6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.8,
+      "evidence": "no impact on nonexecutive memory processing",
+      "source_chunk_ids": [
+        "350de229ee20fbd76af740c75bc5bdc6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.8,
+      "evidence": "no impact on nonexecutive memory processing",
+      "source_chunk_ids": [
+        "350de229ee20fbd76af740c75bc5bdc6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "SUGGESTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "lack of an anxiolytic effect",
+      "source_chunk_ids": [
+        "350de229ee20fbd76af740c75bc5bdc6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "previous studies",
+      "source_chunk_ids": [
+        "350de229ee20fbd76af740c75bc5bdc6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "simulated public speaking task",
+      "source_chunk_ids": [
+        "018d16b5c32f19667ee818b1601904ad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "measured"
+      },
+      "confidence": 0.85,
+      "evidence": "self-reported anxiety on the STAI(s) and VAa",
+      "source_chunk_ids": [
+        "018d16b5c32f19667ee818b1601904ad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Figure 2 consists of two bar charts",
+      "source_chunk_ids": [
+        "dd249dfee0332c50de521b084949ae3f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Sceletium (grey bars) groups",
+      "source_chunk_ids": [
+        "dd249dfee0332c50de521b084949ae3f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "self-reported anxiety (STAI(s) and VAa)",
+      "source_chunk_ids": [
+        "dd249dfee0332c50de521b084949ae3f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "improves",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "significant group differences at prestress",
+      "source_chunk_ids": [
+        "dd249dfee0332c50de521b084949ae3f"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "experimental"
+      },
+      "confidence": 0.7,
+      "evidence": "significant group differences at prestress",
+      "source_chunk_ids": [
+        "dd249dfee0332c50de521b084949ae3f"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Figure 3 showing heart rate data",
+      "source_chunk_ids": [
+        "7adb72535a765bebf67c58c9c64f8b76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium (grey line with circles)",
+      "source_chunk_ids": [
+        "7adb72535a765bebf67c58c9c64f8b76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.7,
+      "evidence": "Sceletium ~92 ~91 (decrease)",
+      "source_chunk_ids": [
+        "7adb72535a765bebf67c58c9c64f8b76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "worsens"
+      },
+      "confidence": 0.7,
+      "evidence": "Placebo ~87 ~95 (increase)",
+      "source_chunk_ids": [
+        "7adb72535a765bebf67c58c9c64f8b76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "contextual"
+      },
+      "confidence": 0.8,
+      "evidence": "PRE-STRESS and MID-STRESS time points",
+      "source_chunk_ids": [
+        "7adb72535a765bebf67c58c9c64f8b76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "scientific"
+      },
+      "confidence": 0.75,
+      "evidence": "anxiolytic effects of Sceletium tortuosum",
+      "source_chunk_ids": [
+        "01bc8feb6bd3aece805a8e2c754c8a78"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TREATS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "scientific"
+      },
+      "confidence": 0.75,
+      "evidence": "anxiolytic effects of Sceletium tortuosum (Zembrin\u00ae)",
+      "source_chunk_ids": [
+        "01bc8feb6bd3aece805a8e2c754c8a78"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "anxiolytic effects of Sceletium tortuosum",
+      "source_chunk_ids": [
+        "01bc8feb6bd3aece805a8e2c754c8a78"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "anxiolytic effects of Sceletium tortuosum (Zembrin\u00ae)",
+      "source_chunk_ids": [
+        "01bc8feb6bd3aece805a8e2c754c8a78"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "controlled laboratory stress protocol",
+      "source_chunk_ids": [
+        "fa5764e320938ae0ae42f6135df53ab5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum (Zembrin\u00ae)",
+      "source_chunk_ids": [
+        "fa5764e320938ae0ae42f6135df53ab5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum (Zembrin\u00ae)",
+      "source_chunk_ids": [
+        "fa5764e320938ae0ae42f6135df53ab5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "single 25 mg dose",
+      "source_chunk_ids": [
+        "fa5764e320938ae0ae42f6135df53ab5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "ameliorates"
+      },
+      "confidence": 0.8,
+      "evidence": "ameliorate indicators of stress",
+      "source_chunk_ids": [
+        "fa5764e320938ae0ae42f6135df53ab5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "ameliorates"
+      },
+      "confidence": 0.8,
+      "evidence": "ameliorate indicators of anxiety",
+      "source_chunk_ids": [
+        "fa5764e320938ae0ae42f6135df53ab5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "ameliorate indicators of stress",
+      "source_chunk_ids": [
+        "fa5764e320938ae0ae42f6135df53ab5"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "ameliorate indicators of anxiety",
+      "source_chunk_ids": [
+        "fa5764e320938ae0ae42f6135df53ab5"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "TREATS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "ameliorate indicators of stress",
+      "source_chunk_ids": [
+        "fa5764e320938ae0ae42f6135df53ab5"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "TREATS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "ameliorate indicators of anxiety",
+      "source_chunk_ids": [
+        "fa5764e320938ae0ae42f6135df53ab5"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.95,
+      "evidence": "randomized controlled study",
+      "source_chunk_ids": [
+        "4e1f4d40f401456d13b5de0959c80032"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "proprietary extract Sceletium tortuosum (Zembrin)",
+      "source_chunk_ids": [
+        "4e1f4d40f401456d13b5de0959c80032"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "targets"
+      },
+      "confidence": 0.85,
+      "evidence": "targeting phosphodiesterase-4",
+      "source_chunk_ids": [
+        "4e1f4d40f401456d13b5de0959c80032"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "suggests_implications"
+      },
+      "confidence": 0.8,
+      "evidence": "Implications for Alzheimer's dementia",
+      "source_chunk_ids": [
+        "4e1f4d40f401456d13b5de0959c80032"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "indirect"
+      },
+      "confidence": 0.7,
+      "evidence": "Implications for Alzheimer's dementia",
+      "source_chunk_ids": [
+        "4e1f4d40f401456d13b5de0959c80032"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "in conscious freely moving rats",
+      "source_chunk_ids": [
+        "4e1f4d40f401456d13b5de0959c80032"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum extract",
+      "source_chunk_ids": [
+        "4e1f4d40f401456d13b5de0959c80032"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Pharmacological actions",
+      "source_chunk_ids": [
+        "4e1f4d40f401456d13b5de0959c80032"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E11",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum",
+      "source_chunk_ids": [
+        "4e1f4d40f401456d13b5de0959c80032"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "CONTAINS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "principal alkaloids",
+      "source_chunk_ids": [
+        "4e1f4d40f401456d13b5de0959c80032"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "randomized, double-blind, parallel-group, placebo-controlled trial",
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "trial of extract Sceletium tortuosum (Zembrin)",
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Sceletium tortuosum",
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Sceletium tortuosum (Zembrin)",
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Sceletium tortuosum",
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "dual 5-HT reuptake inhibitor",
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "PDE4 inhibitor",
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "effects of Sceletium tortuosum",
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "studies"
+      },
+      "confidence": 0.85,
+      "evidence": "model of psychological stress",
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E13",
+      "attributes": {
+        "role": "condition"
+      },
+      "confidence": 0.8,
+      "evidence": "acute laboratory psychological stress",
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "alleviates"
+      },
+      "confidence": 0.75,
+      "evidence": "alleviates negative mood",
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "REPORTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E12",
+      "attributes": {
+        "outcome": "reduces"
+      },
+      "confidence": 0.75,
+      "evidence": "reduces cortisol",
+      "source_chunk_ids": [
+        "3864ad1c641a8389a33cad6c9d927792"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "experimentally induced anxiety in healthy volunteers",
+      "source_chunk_ids": [
+        "db70a6ce4ca476c31a4808f7733b32f5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Sceletium tortuosum (Zembrin\u00ae) ameliorates",
+      "source_chunk_ids": [
+        "db70a6ce4ca476c31a4808f7733b32f5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum (Zembrin\u00ae)",
+      "source_chunk_ids": [
+        "db70a6ce4ca476c31a4808f7733b32f5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "ameliorates experimentally induced anxiety",
+      "source_chunk_ids": [
+        "db70a6ce4ca476c31a4808f7733b32f5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.8,
+      "evidence": "ameliorates experimentally induced anxiety",
+      "source_chunk_ids": [
+        "db70a6ce4ca476c31a4808f7733b32f5"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "TREATS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.8,
+      "evidence": "ameliorates experimentally induced anxiety",
+      "source_chunk_ids": [
+        "db70a6ce4ca476c31a4808f7733b32f5"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    }
+  ]
 }

@@ -1,585 +1,1331 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "0f7b5a269984e9d6fec84b55eff0732e206e587299c4cbbd32a475902b356c1a",
-  "extracted_at": "2026-02-01T08:20:12.665115+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
+      "id": "E1",
       "type": "Taxon",
-      "name": "Galeniaceae",
+      "name": "Drosanthemum candens",
       "attributes": {
-        "context": "Synonymy: Galeniaceae"
-      },
-      "source_chunk_ids": [
-        "e6a0bcbe9d44f569533f5002255035e6"
-      ]
-    },
-    {
-      "id": "ent_002",
-      "type": "Taxon",
-      "name": "Mesembryanthaceae",
-      "attributes": {
-        "context": "Synonymy: Mesembryanthaceae"
-      },
-      "source_chunk_ids": [
-        "e6a0bcbe9d44f569533f5002255035e6"
-      ]
-    },
-    {
-      "id": "ent_003",
-      "type": "Taxon",
-      "name": "Tetragoniaceae",
-      "attributes": {
-        "context": "Synonymy: Tetragoniaceae"
-      },
-      "source_chunk_ids": [
-        "e6a0bcbe9d44f569533f5002255035e6"
-      ]
-    },
-    {
-      "id": "ent_004",
-      "type": "Taxon",
-      "name": "Drosanthemum candens (Haw.) Schwantes",
-      "attributes": {
-        "context": "Drosanthemum candens (Haw.) Schwantes (Rodondo Creeper; from South Africa)"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "39a1e1f180fa8d1191c5a293b2bab0ff"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Drosanthemum candens (Haw.) Schwantes",
+      "verified": true
     },
     {
-      "id": "ent_005",
-      "type": "Taxon",
-      "name": "Rodondo Creeper",
+      "id": "E2",
+      "type": "Study",
+      "name": "Prescott & Venning 1984",
       "attributes": {
-        "context": "Drosanthemum candens (Haw.) Schwantes (Rodondo Creeper; from South Africa)"
+        "year": 1984
       },
       "source_chunk_ids": [
         "39a1e1f180fa8d1191c5a293b2bab0ff"
-      ]
+      ],
+      "confidence": 0.7,
+      "evidence": "Prescott &amp; Venning 1984",
+      "verified": true
     },
     {
-      "id": "ent_006",
-      "type": "Taxon",
-      "name": "Psilocaule N.E.Br.",
+      "id": "E3",
+      "type": "Study",
+      "name": "Walsh 1996",
       "attributes": {
-        "context": "Synonymy: Psilocaule N.E.Br."
+        "year": 1996
       },
       "source_chunk_ids": [
-        "1f676f2f03a7397dd8c137e1027cb8a9"
-      ]
+        "39a1e1f180fa8d1191c5a293b2bab0ff"
+      ],
+      "confidence": 0.7,
+      "evidence": "Walsh 1996",
+      "verified": true
     },
     {
-      "id": "ent_007",
-      "type": "Taxon",
-      "name": "Gasoul Adans.",
+      "id": "E4",
+      "type": "Study",
+      "name": "Richardson et al. 2006",
       "attributes": {
-        "context": "Gasoul Adans., Fam. Pl."
+        "year": 2006
       },
       "source_chunk_ids": [
-        "1f676f2f03a7397dd8c137e1027cb8a9"
-      ]
+        "39a1e1f180fa8d1191c5a293b2bab0ff"
+      ],
+      "confidence": 0.7,
+      "evidence": "Richardson et al. (2006)",
+      "verified": true
     },
     {
-      "id": "ent_008",
-      "type": "Taxon",
-      "name": "Cryophytum N.E.Br.",
-      "attributes": {
-        "context": "Cryophytum N.E.Br., Gard. Chron."
-      },
-      "source_chunk_ids": [
-        "1f676f2f03a7397dd8c137e1027cb8a9"
-      ]
-    },
-    {
-      "id": "ent_009",
-      "type": "Taxon",
-      "name": "Aptenia N.E.Br.",
-      "attributes": {
-        "context": "Aptenia N.E.Br., Gard. Chron."
-      },
-      "source_chunk_ids": [
-        "1f676f2f03a7397dd8c137e1027cb8a9"
-      ]
-    },
-    {
-      "id": "ent_010",
-      "type": "Taxon",
-      "name": "Litocarpus L.Bolus",
-      "attributes": {
-        "context": "Litocarpus L.Bolus, Fl. Pl."
-      },
-      "source_chunk_ids": [
-        "1f676f2f03a7397dd8c137e1027cb8a9"
-      ]
-    },
-    {
-      "id": "ent_011",
-      "type": "Taxon",
-      "name": "Mesembryanthemoideae",
-      "attributes": {
-        "context": "cladistic analysis of the Mesembryanthemoideae"
-      },
-      "source_chunk_ids": [
-        "e781ce815f0f96147bdbeb558d9936ec"
-      ]
-    },
-    {
-      "id": "ent_012",
+      "id": "E1",
       "type": "Taxon",
       "name": "Mesembryanthemum",
       "attributes": {
-        "context": "Mesembryanthemum was not a natural group"
+        "rank": "genus"
       },
       "source_chunk_ids": [
         "e781ce815f0f96147bdbeb558d9936ec"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Mesembryanthemum was not a natural group",
+      "verified": true
     },
     {
-      "id": "ent_013",
+      "id": "E2",
       "type": "Taxon",
       "name": "Aptenia",
       "attributes": {
-        "context": "including Aptenia and Psilocaule"
+        "rank": "genus"
       },
       "source_chunk_ids": [
         "e781ce815f0f96147bdbeb558d9936ec"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "including Aptenia and Psilocaule",
+      "verified": true
     },
     {
-      "id": "ent_014",
+      "id": "E3",
       "type": "Taxon",
       "name": "Psilocaule",
       "attributes": {
-        "context": "including Aptenia and Psilocaule"
+        "rank": "genus"
       },
       "source_chunk_ids": [
         "e781ce815f0f96147bdbeb558d9936ec"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "including Aptenia and Psilocaule",
+      "verified": true
     },
     {
-      "id": "ent_015",
-      "type": "Taxon",
-      "name": "Mesembryanthemum crystallinum",
+      "id": "E4",
+      "type": "Study",
+      "name": "Klak et al. (2007)",
       "attributes": {
-        "context": "1 M. crystallinum"
+        "year": 2007,
+        "design": "cladistic analysis"
       },
       "source_chunk_ids": [
-        "979b53b1d65babc51050be693ddf3d78"
-      ]
+        "e781ce815f0f96147bdbeb558d9936ec"
+      ],
+      "confidence": 0.85,
+      "evidence": "Klak et al. (2007) presented a cladistic analysis",
+      "verified": true
     },
     {
-      "id": "ent_016",
-      "type": "Taxon",
-      "name": "Mesembryanthemum cordifolium",
+      "id": "E5",
+      "type": "Evidence",
+      "name": "phylogenetic analysis",
       "attributes": {
-        "context": "2 M. cordifolium"
+        "evidence_level": 3
       },
       "source_chunk_ids": [
-        "979b53b1d65babc51050be693ddf3d78"
-      ]
+        "e781ce815f0f96147bdbeb558d9936ec"
+      ],
+      "confidence": 0.75,
+      "evidence": "cladistic analysis of the Mesembryanthemoideae",
+      "verified": true
     },
     {
-      "id": "ent_017",
+      "id": "E1",
       "type": "Taxon",
-      "name": "Mesembryanthemum crystallinum L.",
+      "name": "Cryophytum crystallinum",
       "attributes": {
-        "context": "Mesembryanthemum crystallinum L."
-      },
-      "source_chunk_ids": [
-        "20d17ef56eafa89e5177a0b00a1b5151"
-      ]
-    },
-    {
-      "id": "ent_018",
-      "type": "Taxon",
-      "name": "Cryophytum crystallinum (L.) N.E.Br.",
-      "attributes": {
-        "context": "Cryophytum crystallinum (L.) N.E.Br. in E.P.Phillips"
-      },
-      "source_chunk_ids": [
-        "48e4539e9f09faf30c499718f3d978e1"
-      ]
-    },
-    {
-      "id": "ent_019",
-      "type": "Taxon",
-      "name": "Gasoul crystallinum (L.) Rothm.",
-      "attributes": {
-        "context": "Gasoul crystallinum (L.) Rothm., Notizbl. Bot. Gart. Berlin-Dahlem"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "48e4539e9f09faf30c499718f3d978e1"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Cryophytum crystallinum (L.) N.E.Br.",
+      "verified": true
     },
     {
-      "id": "ent_020",
+      "id": "E2",
       "type": "Taxon",
-      "name": "Mesembryanthemum cordifolium L.f.",
+      "name": "Gasoul crystallinum",
       "attributes": {
-        "context": "Mesembryanthemum cordifolium L.f."
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "f0f4aee12875749a08cf8dcc43462ca5"
-      ]
+        "48e4539e9f09faf30c499718f3d978e1"
+      ],
+      "confidence": 0.9,
+      "evidence": "Gasoul crystallinum (L.) Rothm.",
+      "verified": true
     },
     {
-      "id": "ent_021",
+      "id": "E1",
       "type": "Taxon",
-      "name": "Litocarpus cordifolius",
+      "name": "genus",
       "attributes": {
-        "context": "Litocarpus cordifolius (L.f.) L.Bolus"
+        "rank": "genus"
       },
       "source_chunk_ids": [
-        "192a4084a760b10504f2746a5c4478c8"
-      ]
+        "ac2726755f31f9b8caea758bbf05248d"
+      ],
+      "confidence": 0.8,
+      "evidence": "A genus of about 25 species",
+      "verified": true
     },
     {
-      "id": "ent_022",
+      "id": "E2",
       "type": "Taxon",
-      "name": "Aptenia cordifolia",
+      "name": "species",
       "attributes": {
-        "context": "Aptenia cordifolia (L.f.) Schwantes"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "192a4084a760b10504f2746a5c4478c8"
-      ]
+        "ac2726755f31f9b8caea758bbf05248d"
+      ],
+      "confidence": 0.7,
+      "evidence": "about 25 species",
+      "verified": true
     },
     {
-      "id": "ent_023",
+      "id": "E1",
       "type": "Taxon",
-      "name": "C. edulis",
+      "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "3 C. edulis"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "a84ddffe72efb549cb18b4d8297e9d38"
-      ]
+        "b580b56187ff1baa592d818f6e60cdfb"
+      ],
+      "confidence": 0.9,
+      "evidence": "Fleshy perennial herb; stems prostrate",
+      "verified": true
     },
     {
-      "id": "ent_024",
-      "type": "Taxon",
-      "name": "C. rossii",
-      "attributes": {
-        "context": "1 C. rossii"
-      },
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "stems",
+      "attributes": {},
       "source_chunk_ids": [
-        "a84ddffe72efb549cb18b4d8297e9d38"
-      ]
+        "b580b56187ff1baa592d818f6e60cdfb"
+      ],
+      "confidence": 0.8,
+      "evidence": "stems prostrate, to 1 m long",
+      "verified": true
     },
     {
-      "id": "ent_025",
-      "type": "Taxon",
-      "name": "C. aequilateralus",
-      "attributes": {
-        "context": "2 C. aequilateralus"
-      },
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
       "source_chunk_ids": [
-        "a84ddffe72efb549cb18b4d8297e9d38"
-      ]
+        "b580b56187ff1baa592d818f6e60cdfb"
+      ],
+      "confidence": 0.85,
+      "evidence": "Leaves fleshy, linear, 3\u20137 cm long",
+      "verified": true
     },
     {
-      "id": "ent_026",
-      "type": "Taxon",
-      "name": "Mesembryanthemum aequilaterum",
-      "attributes": {
-        "context": "Mesembryanthemum aequilaterum Haw."
-      },
+      "id": "E4",
+      "type": "PlantPart",
+      "name": "flowers",
+      "attributes": {},
       "source_chunk_ids": [
-        "476c78b16f51a6c3d57438c1755f84fe"
-      ]
+        "b580b56187ff1baa592d818f6e60cdfb"
+      ],
+      "confidence": 0.8,
+      "evidence": "Flowers 3.5\u20135.5 cm diam., solitary",
+      "verified": true
     },
     {
-      "id": "ent_027",
-      "type": "Taxon",
-      "name": "Mesembryanthemum edule var. aequilaterum",
-      "attributes": {
-        "context": "M. edule var. aequilaterum (Haw.) Moss"
-      },
+      "id": "E5",
+      "type": "PlantPart",
+      "name": "fruit",
+      "attributes": {},
       "source_chunk_ids": [
-        "476c78b16f51a6c3d57438c1755f84fe"
-      ]
+        "b580b56187ff1baa592d818f6e60cdfb"
+      ],
+      "confidence": 0.8,
+      "evidence": "Fruit green or reddish, cylindrical-ovoid",
+      "verified": true
     },
     {
-      "id": "ent_028",
+      "id": "E1",
       "type": "Taxon",
-      "name": "Mesembryanthemum aequilaterale",
+      "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "Mesembryanthemum aequilaterale Willd."
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "476c78b16f51a6c3d57438c1755f84fe"
-      ]
+        "81e6e8bbfe8d41b1eab83f05554b35a0"
+      ],
+      "confidence": 0.9,
+      "evidence": "Fleshy, prostrate perennial herb",
+      "verified": true
     },
     {
-      "id": "ent_029",
-      "type": "Taxon",
-      "name": "Carpobrotus aequilateralis",
-      "attributes": {
-        "context": "Carpobrotus aequilateralis (Willd.) J.Black"
-      },
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "stems",
+      "attributes": {},
       "source_chunk_ids": [
-        "476c78b16f51a6c3d57438c1755f84fe"
-      ]
+        "81e6e8bbfe8d41b1eab83f05554b35a0"
+      ],
+      "confidence": 0.8,
+      "evidence": "stems stout, to 2 m long",
+      "verified": true
     },
     {
-      "id": "ent_030",
-      "type": "Taxon",
-      "name": "Mesembryanthemum aequilaterale var. decagynum",
-      "attributes": {
-        "context": "Mesembryanthemum aequilaterale var. decagynum Haw. ex DC."
-      },
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
       "source_chunk_ids": [
-        "476c78b16f51a6c3d57438c1755f84fe"
-      ]
+        "81e6e8bbfe8d41b1eab83f05554b35a0"
+      ],
+      "confidence": 0.85,
+      "evidence": "Leaves fleshy, linear, 3\u20139 cm long",
+      "verified": true
     },
     {
-      "id": "ent_031",
-      "type": "Taxon",
-      "name": "Mesembryanthemum aequilaterale",
-      "attributes": {
-        "context": "Mesembryanthemum aequilaterale Benth."
-      },
+      "id": "E4",
+      "type": "PlantPart",
+      "name": "flowers",
+      "attributes": {},
       "source_chunk_ids": [
-        "476c78b16f51a6c3d57438c1755f84fe"
-      ]
+        "81e6e8bbfe8d41b1eab83f05554b35a0"
+      ],
+      "confidence": 0.8,
+      "evidence": "Flowers 3.5\u20138 cm diam., solitary",
+      "verified": true
     },
     {
-      "id": "ent_032",
-      "type": "Taxon",
-      "name": "Carpobrotus disparilis",
-      "attributes": {
-        "context": "Carpobrotus disparilis N.E.Br."
-      },
+      "id": "E5",
+      "type": "PlantPart",
+      "name": "fruit",
+      "attributes": {},
       "source_chunk_ids": [
-        "476c78b16f51a6c3d57438c1755f84fe"
-      ]
+        "81e6e8bbfe8d41b1eab83f05554b35a0"
+      ],
+      "confidence": 0.8,
+      "evidence": "Fruit purple, obovoid to ellipsoid",
+      "verified": true
     },
     {
-      "id": "ent_033",
+      "id": "E1",
       "type": "Taxon",
-      "name": "Mesembryanthemum edule",
+      "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "Mesembryanthemum edule L."
+        "rank": "species",
+        "description": "Fleshy prostrate perennial herb; stems stout, to 2 m long. Leaves fleshy, linear, 4\u201310 cm long, triquetrous, bright green, angles often tinged red, surfaces distinctly concave, keel crenulate throughout or in the distal portion only. Flowers 7\u20139 cm diam.; pedicles 10\u201320 mm long. Petaloid staminodes yellow, fading to pink; fertile stamens numerous in 6\u20137 whorls; anthers golden-yellow. Ovary turbinate; styles 8\u201310. Fruit green, becoming yellowish-red, subglobose, c. 3 cm long. Flowering & fruiting? Oct.-Jan."
       },
       "source_chunk_ids": [
-        "49b48101e68a0d4b741621ebf782baeb"
-      ]
+        "b5ed4d25bb4ca66b5e698e5f6e36c5d4"
+      ],
+      "confidence": 0.9,
+      "evidence": "Fleshy prostrate perennial herb",
+      "verified": true
     },
     {
-      "id": "ent_034",
-      "type": "Taxon",
-      "name": "Carpobrotus edulis",
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "leaves",
       "attributes": {
-        "context": "Carpobrotus edulis (L.) L.Bolus"
+        "description": "fleshy, linear, 4\u201310 cm long, triquetrous, bright green, angles often tinged red, surfaces distinctly concave, keel crenulate throughout or in the distal portion only"
       },
       "source_chunk_ids": [
-        "49b48101e68a0d4b741621ebf782baeb"
-      ]
+        "b5ed4d25bb4ca66b5e698e5f6e36c5d4"
+      ],
+      "confidence": 0.85,
+      "evidence": "Leaves fleshy, linear, 4\u201310 cm long",
+      "verified": true
     },
     {
-      "id": "ent_035",
-      "type": "Taxon",
-      "name": "Mesembryanthemum glaucum L.",
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "stems",
       "attributes": {
-        "context": "Mesembryanthemum glaucum L."
+        "description": "stout, to 2 m long"
       },
       "source_chunk_ids": [
-        "2d2194dd9abf8f16fe609455426fadc4"
-      ]
+        "b5ed4d25bb4ca66b5e698e5f6e36c5d4"
+      ],
+      "confidence": 0.8,
+      "evidence": "stems stout, to 2 m long",
+      "verified": true
     },
     {
-      "id": "ent_036",
-      "type": "Taxon",
-      "name": "Tetragonia tetragonoides",
+      "id": "E4",
+      "type": "PlantPart",
+      "name": "flowers",
       "attributes": {
-        "context": "Tetragonia tetragonoides (Pall.) Kuntze"
+        "description": "7\u20139 cm diam.; pedicles 10\u201320 mm long. Petaloid staminodes yellow, fading to pink; fertile stamens numerous in 6\u20137 whorls; anthers golden-yellow"
       },
       "source_chunk_ids": [
-        "34731c11f6f941bb7f8cfc7bc9554e5b"
-      ]
+        "b5ed4d25bb4ca66b5e698e5f6e36c5d4"
+      ],
+      "confidence": 0.8,
+      "evidence": "Flowers 7\u20139 cm diam.",
+      "verified": true
     },
     {
-      "id": "ent_037",
-      "type": "Taxon",
-      "name": "Demidovia tetragonoides",
+      "id": "E5",
+      "type": "PlantPart",
+      "name": "fruit",
       "attributes": {
-        "context": "Demidovia tetragonoides Pall."
+        "description": "green, becoming yellowish-red, subglobose, c. 3 cm long"
       },
       "source_chunk_ids": [
-        "6ee4e8028c4574b1528fe61d75cea817"
-      ]
+        "b5ed4d25bb4ca66b5e698e5f6e36c5d4"
+      ],
+      "confidence": 0.8,
+      "evidence": "Fruit green, becoming yellowish-red",
+      "verified": true
     },
     {
-      "id": "ent_038",
+      "id": "E1",
       "type": "Taxon",
-      "name": "Tetragonia expansa",
+      "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "Tetragonia expansa Murray"
+        "rank": "species",
+        "description": "Erect perennial herb; stems 15\u201320(\u201330) cm high, somewhat woody at the base; branches terete, grey, branchlets reddish, \u00b1 compressed, the angles narrowly winged. Leaves 9\u201315 mm long, 2\u20133 mm wide, dark green or glaucous, prominently gland-dotted, the glands at the margins giving the leaf edges a denticulate appearance. Flowers solitary, yellow, 4\u20135 cm diam. Sepals 5\u20137 mm long, fleshy. Petaloid staminodes golden yellow, 20\u201325 mm long; anthers sulphur-yellow. Capsule c. 1 cm diam. Seeds orange-brown, rugulose. Flowering Sep.-Nov.; fruiting ?."
       },
       "source_chunk_ids": [
-        "6ee4e8028c4574b1528fe61d75cea817"
-      ]
+        "055e7e560e632b44e2fa88ba4d51504e"
+      ],
+      "confidence": 0.95,
+      "evidence": "Erect perennial herb; stems 15\u201320(\u201330) cm high",
+      "verified": true
     },
     {
-      "id": "ent_039",
-      "type": "Taxon",
-      "name": "Tetragonia inermis",
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "stems",
       "attributes": {
-        "context": "Tetragonia inermis F.Muell."
+        "description": "15\u201320(\u201330) cm high, somewhat woody at the base"
       },
       "source_chunk_ids": [
-        "6ee4e8028c4574b1528fe61d75cea817"
-      ]
+        "055e7e560e632b44e2fa88ba4d51504e"
+      ],
+      "confidence": 0.8,
+      "evidence": "stems 15\u201320(\u201330) cm high",
+      "verified": true
     },
     {
-      "id": "ent_040",
-      "type": "Taxon",
-      "name": "Aizoon pubescens",
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "leaves",
       "attributes": {
-        "context": "Aizoon pubescens Eckl. &amp; Zeyh"
+        "description": "9\u201315 mm long, 2\u20133 mm wide, dark green or glaucous, prominently gland-dotted"
       },
       "source_chunk_ids": [
-        "c8ae73897fe48f7abde4c87e91565634"
-      ]
+        "055e7e560e632b44e2fa88ba4d51504e"
+      ],
+      "confidence": 0.85,
+      "evidence": "Leaves 9\u201315 mm long, 2\u20133 mm wide",
+      "verified": true
     },
     {
-      "id": "ent_041",
-      "type": "Taxon",
-      "name": "Galenia secunda",
+      "id": "E4",
+      "type": "PlantPart",
+      "name": "flowers",
       "attributes": {
-        "context": "Galenia secunda sensu W.M.Curtis"
+        "description": "solitary, yellow, 4\u20135 cm diam"
       },
       "source_chunk_ids": [
-        "c8ae73897fe48f7abde4c87e91565634"
-      ]
+        "055e7e560e632b44e2fa88ba4d51504e"
+      ],
+      "confidence": 0.8,
+      "evidence": "Flowers solitary, yellow, 4\u20135 cm diam",
+      "verified": true
     },
     {
-      "id": "ent_042",
-      "type": "Taxon",
-      "name": "Aizoaceae",
+      "id": "E5",
+      "type": "PlantPart",
+      "name": "capsule",
       "attributes": {
-        "context": "Aizoaceae"
+        "description": "c. 1 cm diam"
       },
       "source_chunk_ids": [
-        "fc9133ed2b54f6857647e15d23567822"
-      ]
+        "055e7e560e632b44e2fa88ba4d51504e"
+      ],
+      "confidence": 0.75,
+      "evidence": "Capsule c. 1 cm diam",
+      "verified": true
     },
     {
-      "id": "ent_043",
-      "type": "Taxon",
-      "name": "Aizoaceae",
+      "id": "E6",
+      "type": "PlantPart",
+      "name": "seeds",
       "attributes": {
-        "context": "Aizoaceae"
+        "description": "orange-brown, rugulose"
       },
       "source_chunk_ids": [
-        "47b215bfb5fb91e7d8027de736c23c25"
-      ]
+        "055e7e560e632b44e2fa88ba4d51504e"
+      ],
+      "confidence": 0.75,
+      "evidence": "Seeds orange-brown, rugulose",
+      "verified": true
     },
     {
-      "id": "ent_044",
+      "id": "E1",
       "type": "Taxon",
-      "name": "Aizoon pubescens",
+      "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "Aizoon pubescens"
+        "rank": "species",
+        "description": "A fleshy perennial herb with stout prostrate stems to 1 m long rooting at some of the nodes. Leaves fleshy, linear and terete or trigonous, opposite but apparently clustered because of the development of the leaves on very short axillary branches, 2\u20135 cm long, apex usually blunt, base stem-clasping, glabrous, often reddish in colour at least at the tip. Flowers showy, 3\u20134 cm diam., solitary and terminal; pedicel arising between the 2 leaves of a very short axillary flowering branch, usually longer than the leaves and thicker towards the top, below the flower; receptacle-tube turbinate, c. 5 mm long. Sepals fleshy, unequal, the 2 longer ones about as long as the tube, the 3 shorter ones with membranous wings. Petaloid staminodes magenta or the proximal third almost white, numerous, narrow-linear, 15\u201320 mm long; stamens numerous, in several rows, white, filaments shorter than the petaloid staminodes and with a tuft of slender hairs at the base; anthers versatile. Stigmas 5, ending in filiform appendages. Fruit a capsule; valves prominent, rounded, at first red and succulent, later dry and hard, when turned back, the valves each with 2 horny longitudinal ridges arising on either side of a septum and with membranous marginal wings. Flowering Oct.-Jan. (Apr.); fruiting Dec.-Aug."
       },
       "source_chunk_ids": [
-        "47b215bfb5fb91e7d8027de736c23c25"
-      ]
+        "e96fe964e1c35f9998c7a8d19ea519ce"
+      ],
+      "confidence": 0.95,
+      "evidence": "A fleshy perennial herb with stout prostrate stems to 1 m long",
+      "verified": true
     },
     {
-      "id": "ent_045",
-      "type": "Taxon",
-      "name": "Angled Pigface",
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "leaves",
       "attributes": {
-        "context": "Angled Pigface"
+        "description": "fleshy, linear and terete or trigonous, opposite but apparently clustered because of the development of the leaves on very short axillary branches, 2\u20135 cm long, apex usually blunt, base stem-clasping, glabrous, often reddish in colour at least at the tip"
       },
       "source_chunk_ids": [
-        "47b215bfb5fb91e7d8027de736c23c25"
-      ]
+        "e96fe964e1c35f9998c7a8d19ea519ce"
+      ],
+      "confidence": 0.9,
+      "evidence": "Leaves fleshy, linear and terete or trigonous",
+      "verified": true
     },
     {
-      "id": "ent_046",
-      "type": "Taxon",
-      "name": "Angular Pigface",
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "stems",
       "attributes": {
-        "context": "Angular Pigface"
+        "description": "stout prostrate stems to 1 m long rooting at some of the nodes"
       },
       "source_chunk_ids": [
-        "47b215bfb5fb91e7d8027de736c23c25"
-      ]
+        "e96fe964e1c35f9998c7a8d19ea519ce"
+      ],
+      "confidence": 0.85,
+      "evidence": "stout prostrate stems to 1 m long",
+      "verified": true
     },
     {
-      "id": "ent_047",
-      "type": "Taxon",
-      "name": "Aptenia",
+      "id": "E4",
+      "type": "PlantPart",
+      "name": "flowers",
       "attributes": {
-        "context": "Aptenia"
+        "description": "showy, 3\u20134 cm diam., solitary and terminal; pedicel arising between the 2 leaves of a very short axillary flowering branch, usually longer than the leaves and thicker towards the top, below the flower; receptacle-tube turbinate, c. 5 mm long. Sepals fleshy, unequal, the 2 longer ones about as long as the tube, the 3 shorter ones with membranous wings. Petaloid staminodes magenta or the proximal third almost white, numerous, narrow-linear, 15\u201320 mm long; stamens numerous, in several rows, white, filaments shorter than the petaloid staminodes and with a tuft of slender hairs at the base; anthers versatile. Stigmas 5, ending in filiform appendages"
       },
       "source_chunk_ids": [
-        "47b215bfb5fb91e7d8027de736c23c25"
-      ]
+        "e96fe964e1c35f9998c7a8d19ea519ce"
+      ],
+      "confidence": 0.9,
+      "evidence": "Flowers showy, 3\u20134 cm diam., solitary and terminal",
+      "verified": true
     },
     {
-      "id": "ent_048",
-      "type": "Taxon",
-      "name": "Aptenia cordifolia",
+      "id": "E5",
+      "type": "PlantPart",
+      "name": "fruit",
       "attributes": {
-        "context": "Aptenia cordifolia"
+        "description": "a capsule; valves prominent, rounded, at first red and succulent, later dry and hard, when turned back, the valves each with 2 horny longitudinal ridges arising on either side of a septum and with membranous marginal wings"
       },
       "source_chunk_ids": [
-        "47b215bfb5fb91e7d8027de736c23c25"
-      ]
+        "e96fe964e1c35f9998c7a8d19ea519ce"
+      ],
+      "confidence": 0.85,
+      "evidence": "Fruit a capsule; valves prominent, rounded",
+      "verified": true
     },
     {
-      "id": "ent_049",
+      "id": "E1",
       "type": "Taxon",
-      "name": "Tetragonia implexicoma",
+      "name": "Disphyma australe",
       "attributes": {
-        "context": "Tetragonia implexicoma"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "9f22da86faaf6584c3a3494d4c6ecdc4"
-      ]
+        "7cb21d020cf857e94dc1c30bd27ed914"
+      ],
+      "confidence": 0.9,
+      "evidence": "Disphyma australe is treated as a distinct species",
+      "verified": true
     },
     {
-      "id": "ent_050",
+      "id": "E2",
       "type": "Taxon",
-      "name": "Tetragonia inermis",
+      "name": "typical subspecies",
       "attributes": {
-        "context": "Tetragonia inermis"
+        "rank": "subspecies"
       },
       "source_chunk_ids": [
-        "9c9fe6a5c9c07935308c02585af548c2"
-      ]
+        "7cb21d020cf857e94dc1c30bd27ed914"
+      ],
+      "confidence": 0.7,
+      "evidence": "The typical subspecies is endemic to South Africa",
+      "verified": true
     },
     {
-      "id": "ent_051",
+      "id": "E3",
       "type": "Taxon",
-      "name": "Tetragonia trigyna",
+      "name": "two subspecies",
       "attributes": {
-        "context": "Tetragonia trigyna"
+        "rank": "subspecies"
       },
       "source_chunk_ids": [
-        "97c4461ba94b557d2a681617fe5358a6"
-      ]
+        "7cb21d020cf857e94dc1c30bd27ed914"
+      ],
+      "confidence": 0.7,
+      "evidence": "two subspecies endemic to New Zealand",
+      "verified": true
     },
     {
-      "id": "ent_052",
+      "id": "E1",
       "type": "Taxon",
-      "name": "Trianthema maidenii",
+      "name": "Tetragonaceae",
       "attributes": {
-        "context": "Trianthema maidenii"
+        "rank": "family"
       },
       "source_chunk_ids": [
-        "2e1a56325d192cb7d6bfdeb86c078653"
-      ]
+        "23cdf1c0fe5355105184f0b3649537a8"
+      ],
+      "confidence": 0.7,
+      "evidence": "placed the genus in its own family, the Tetragonaceae",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Annual or perennial herb",
+      "attributes": {
+        "rank": "species",
+        "description": "decumbent or ascending; stems to 1 m long"
+      },
+      "source_chunk_ids": [
+        "b508d6d8ebd646006776679d416dd73c"
+      ],
+      "confidence": 0.9,
+      "evidence": "Annual or perennial herb, decumbent or ascending",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {
+        "description": "broadly hastate, rhomboid or lanceolate; petiole 10\u201345 mm long, papillose, decurrent; blade 1\u20138(\u201310?) cm long, 0.5\u20135 cm wide, dark green above, paler below with larger papillae"
+      },
+      "source_chunk_ids": [
+        "b508d6d8ebd646006776679d416dd73c"
+      ],
+      "confidence": 0.95,
+      "evidence": "Leaves broadly hastate, rhomboid or lanceolate",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "flowers",
+      "attributes": {
+        "description": "axillary, solitary or rarely 2 together, 8\u201310 mm diam.; pedicels to 5 mm long"
+      },
+      "source_chunk_ids": [
+        "b508d6d8ebd646006776679d416dd73c"
+      ],
+      "confidence": 0.9,
+      "evidence": "Flowers axillary, solitary or rarely 2 together",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "PlantPart",
+      "name": "fruit",
+      "attributes": {
+        "description": "indehiscent, at first green, becoming dry and bony, to 13 mm long and 12 mm wide, globular or turbinate variously ridged at the summit; ridges produced into short equal or unequal horns"
+      },
+      "source_chunk_ids": [
+        "b508d6d8ebd646006776679d416dd73c"
+      ],
+      "confidence": 0.9,
+      "evidence": "Fruit indehiscent, at first green, becoming dry and bony",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "PlantPart",
+      "name": "seeds",
+      "attributes": {
+        "description": "in 2 rows, c. 2.5 mm long, pyriform"
+      },
+      "source_chunk_ids": [
+        "b508d6d8ebd646006776679d416dd73c"
+      ],
+      "confidence": 0.85,
+      "evidence": "Seeds in 2 rows, c. 2.5 mm long, pyriform",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "d5e080778960e269bf4dc3cc13f75d3a"
+      ],
+      "confidence": 0.9,
+      "evidence": "Prostrate, scrambling or climbing undershrub",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d5e080778960e269bf4dc3cc13f75d3a"
+      ],
+      "confidence": 0.95,
+      "evidence": "Leaves scattered or clustered",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "branches",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d5e080778960e269bf4dc3cc13f75d3a"
+      ],
+      "confidence": 0.85,
+      "evidence": "branches to 2 m long",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "PlantPart",
+      "name": "flowers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d5e080778960e269bf4dc3cc13f75d3a"
+      ],
+      "confidence": 0.9,
+      "evidence": "Flowers on long slender pedicels",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "PlantPart",
+      "name": "fruit",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d5e080778960e269bf4dc3cc13f75d3a"
+      ],
+      "confidence": 0.8,
+      "evidence": "shrinking as the fruit matures",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f49b9c50201083ba7f992996f2ff9300"
+      ],
+      "confidence": 0.9,
+      "evidence": "Greyish undershrub, stems to 1 m long",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "stems",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f49b9c50201083ba7f992996f2ff9300"
+      ],
+      "confidence": 0.85,
+      "evidence": "stems to 1 m long",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f49b9c50201083ba7f992996f2ff9300"
+      ],
+      "confidence": 0.9,
+      "evidence": "leaves 5\u201320 mm long",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "PlantPart",
+      "name": "flowers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f49b9c50201083ba7f992996f2ff9300"
+      ],
+      "confidence": 0.85,
+      "evidence": "Flowers 5\u20136 mm diam.",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "PlantPart",
+      "name": "seeds",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f49b9c50201083ba7f992996f2ff9300"
+      ],
+      "confidence": 0.8,
+      "evidence": "Seeds c. 1\u20132 mm long",
+      "verified": true
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:03.828401+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Prescott &amp; Venning 1984",
+      "source_chunk_ids": [
+        "39a1e1f180fa8d1191c5a293b2bab0ff"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Walsh 1996",
+      "source_chunk_ids": [
+        "39a1e1f180fa8d1191c5a293b2bab0ff"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Richardson et al. (2006)",
+      "source_chunk_ids": [
+        "39a1e1f180fa8d1191c5a293b2bab0ff"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "presented a cladistic analysis",
+      "source_chunk_ids": [
+        "e781ce815f0f96147bdbeb558d9936ec"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "showed that Mesembryanthemum was not a natural group",
+      "source_chunk_ids": [
+        "e781ce815f0f96147bdbeb558d9936ec"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "stems prostrate",
+      "source_chunk_ids": [
+        "b580b56187ff1baa592d818f6e60cdfb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Leaves fleshy",
+      "source_chunk_ids": [
+        "b580b56187ff1baa592d818f6e60cdfb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Flowers 3.5\u20135.5 cm diam.",
+      "source_chunk_ids": [
+        "b580b56187ff1baa592d818f6e60cdfb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Fruit green or reddish",
+      "source_chunk_ids": [
+        "b580b56187ff1baa592d818f6e60cdfb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "stems stout, to 2 m long",
+      "source_chunk_ids": [
+        "81e6e8bbfe8d41b1eab83f05554b35a0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Leaves fleshy, linear",
+      "source_chunk_ids": [
+        "81e6e8bbfe8d41b1eab83f05554b35a0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Flowers 3.5\u20138 cm diam.",
+      "source_chunk_ids": [
+        "81e6e8bbfe8d41b1eab83f05554b35a0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Fruit purple, obovoid to ellipsoid",
+      "source_chunk_ids": [
+        "81e6e8bbfe8d41b1eab83f05554b35a0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Leaves fleshy",
+      "source_chunk_ids": [
+        "b5ed4d25bb4ca66b5e698e5f6e36c5d4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "stems stout",
+      "source_chunk_ids": [
+        "b5ed4d25bb4ca66b5e698e5f6e36c5d4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Flowers 7\u20139 cm diam.",
+      "source_chunk_ids": [
+        "b5ed4d25bb4ca66b5e698e5f6e36c5d4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Fruit green, becoming yellowish-red",
+      "source_chunk_ids": [
+        "b5ed4d25bb4ca66b5e698e5f6e36c5d4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "stems 15\u201320(\u201330) cm high",
+      "source_chunk_ids": [
+        "055e7e560e632b44e2fa88ba4d51504e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Leaves 9\u201315 mm long",
+      "source_chunk_ids": [
+        "055e7e560e632b44e2fa88ba4d51504e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Flowers solitary, yellow",
+      "source_chunk_ids": [
+        "055e7e560e632b44e2fa88ba4d51504e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Capsule c. 1 cm diam",
+      "source_chunk_ids": [
+        "055e7e560e632b44e2fa88ba4d51504e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Seeds orange-brown, rugulose",
+      "source_chunk_ids": [
+        "055e7e560e632b44e2fa88ba4d51504e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Leaves fleshy, linear and terete or trigonous",
+      "source_chunk_ids": [
+        "e96fe964e1c35f9998c7a8d19ea519ce"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "stout prostrate stems to 1 m long",
+      "source_chunk_ids": [
+        "e96fe964e1c35f9998c7a8d19ea519ce"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Flowers showy, 3\u20134 cm diam., solitary and terminal",
+      "source_chunk_ids": [
+        "e96fe964e1c35f9998c7a8d19ea519ce"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Fruit a capsule; valves prominent, rounded",
+      "source_chunk_ids": [
+        "e96fe964e1c35f9998c7a8d19ea519ce"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Leaves broadly hastate, rhomboid or lanceolate",
+      "source_chunk_ids": [
+        "b508d6d8ebd646006776679d416dd73c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Flowers axillary, solitary or rarely 2 together",
+      "source_chunk_ids": [
+        "b508d6d8ebd646006776679d416dd73c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Fruit indehiscent, at first green, becoming dry and bony",
+      "source_chunk_ids": [
+        "b508d6d8ebd646006776679d416dd73c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Seeds in 2 rows, c. 2.5 mm long, pyriform",
+      "source_chunk_ids": [
+        "b508d6d8ebd646006776679d416dd73c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Leaves scattered or clustered",
+      "source_chunk_ids": [
+        "d5e080778960e269bf4dc3cc13f75d3a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "branches to 2 m long",
+      "source_chunk_ids": [
+        "d5e080778960e269bf4dc3cc13f75d3a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Flowers on long slender pedicels",
+      "source_chunk_ids": [
+        "d5e080778960e269bf4dc3cc13f75d3a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "shrinking as the fruit matures",
+      "source_chunk_ids": [
+        "d5e080778960e269bf4dc3cc13f75d3a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "stems to 1 m long",
+      "source_chunk_ids": [
+        "f49b9c50201083ba7f992996f2ff9300"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "leaves 5\u201320 mm long",
+      "source_chunk_ids": [
+        "f49b9c50201083ba7f992996f2ff9300"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Flowers 5\u20136 mm diam.",
+      "source_chunk_ids": [
+        "f49b9c50201083ba7f992996f2ff9300"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Seeds c. 1\u20132 mm long",
+      "source_chunk_ids": [
+        "f49b9c50201083ba7f992996f2ff9300"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

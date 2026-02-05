@@ -1,387 +1,3226 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "b614120fce2e9a597987a21068f29f57637b2ab6d052f247acf45ca70df53f35",
-  "extracted_at": "2026-02-01T08:46:26.994678+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "medicinal plant Sceletium tortuosum"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "303ba305590861c0e5ddb3114315c94b"
-      ]
+        "9664cd3bc94f0810512ecebb94fb73b6"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
     },
     {
-      "id": "ent_002",
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9664cd3bc94f0810512ecebb94fb73b6"
+      ],
+      "confidence": 0.9,
+      "evidence": "leaves and roots used",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9664cd3bc94f0810512ecebb94fb73b6"
+      ],
+      "confidence": 0.9,
+      "evidence": "leaves and roots used",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "endophytic fungi isolation study",
+      "attributes": {
+        "design": "observational",
+        "sample_size": 50
+      },
+      "source_chunk_ids": [
+        "9664cd3bc94f0810512ecebb94fb73b6"
+      ],
+      "confidence": 0.85,
+      "evidence": "Fifty Sceletium tortuosum plants were collected",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "9664cd3bc94f0810512ecebb94fb73b6"
+      ],
+      "confidence": 0.8,
+      "evidence": "isolated from a medicinal plant",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Fusarium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "9664cd3bc94f0810512ecebb94fb73b6"
+      ],
+      "confidence": 0.9,
+      "evidence": "Fusarium species (37%)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Aspergillus",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "9664cd3bc94f0810512ecebb94fb73b6"
+      ],
+      "confidence": 0.9,
+      "evidence": "Aspergillus (25%)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Taxon",
+      "name": "Penicillium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "9664cd3bc94f0810512ecebb94fb73b6"
+      ],
+      "confidence": 0.9,
+      "evidence": "Penicillium (7%) species",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Taxon",
+      "name": "Fusarium penzigii",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "9664cd3bc94f0810512ecebb94fb73b6"
+      ],
+      "confidence": 0.85,
+      "evidence": "DR 019 Fusarium penzigii",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Taxon",
+      "name": "Phomopsis columnaris",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "9664cd3bc94f0810512ecebb94fb73b6"
+      ],
+      "confidence": 0.85,
+      "evidence": "DR 010 Phomopsis columnaris",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Taxon",
+      "name": "Fusarium oxysporum f. sp. lycopersici",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "9664cd3bc94f0810512ecebb94fb73b6"
+      ],
+      "confidence": 0.85,
+      "evidence": "DR 007 Fusarium oxysporum f. sp. lycopersici",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "Sceletium tortuosum is a small succulent plant"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "48ce1ee5f6c5df8c3f25c52e9f6f51be"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum is a small succulent plant",
+      "verified": true
     },
     {
-      "id": "ent_003",
-      "type": "PharmEffect",
-      "name": "medicinal properties",
-      "attributes": {
-        "context": "well-known for its medicinal properties"
-      },
-      "source_chunk_ids": [
-        "48ce1ee5f6c5df8c3f25c52e9f6f51be"
-      ]
-    },
-    {
-      "id": "ent_004",
+      "id": "E2",
       "type": "Taxon",
-      "name": "Sceletium species",
+      "name": "Sceletium",
       "attributes": {
-        "context": "Sceletium species are widely distributed"
+        "rank": "genus"
       },
       "source_chunk_ids": [
         "48ce1ee5f6c5df8c3f25c52e9f6f51be"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium species are widely distributed",
+      "verified": true
     },
     {
-      "id": "ent_005",
-      "type": "PharmEffect",
-      "name": "mood-altering drug",
-      "attributes": {
-        "context": "used as a mood-altering drug"
-      },
-      "source_chunk_ids": [
-        "48ce1ee5f6c5df8c3f25c52e9f6f51be"
-      ]
-    },
-    {
-      "id": "ent_006",
+      "id": "E3",
       "type": "Taxon",
-      "name": "Kanna",
+      "name": "Aizoaceae",
       "attributes": {
-        "context": "common names that range from Kanna"
+        "rank": "family"
       },
       "source_chunk_ids": [
         "48ce1ee5f6c5df8c3f25c52e9f6f51be"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "belongs to the family Aizoaceae",
+      "verified": true
     },
     {
-      "id": "ent_007",
-      "type": "Taxon",
-      "name": "Channa",
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "mood-altering",
+      "attributes": {},
+      "source_chunk_ids": [
+        "48ce1ee5f6c5df8c3f25c52e9f6f51be"
+      ],
+      "confidence": 0.9,
+      "evidence": "used as a mood-altering drug",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "UseRecord",
+      "name": "UseRecord: traditional \u2013 Sceletium \u2013 mood-altering",
       "attributes": {
-        "context": "to Channa"
+        "route": "oral"
       },
       "source_chunk_ids": [
         "48ce1ee5f6c5df8c3f25c52e9f6f51be"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "used as a mood-altering drug",
+      "verified": true
     },
     {
-      "id": "ent_008",
-      "type": "Taxon",
-      "name": "Kougoed",
+      "id": "E6",
+      "type": "Preparation",
+      "name": "concoction",
+      "attributes": {},
+      "source_chunk_ids": [
+        "48ce1ee5f6c5df8c3f25c52e9f6f51be"
+      ],
+      "confidence": 0.75,
+      "evidence": "traditional concoction called \u201cKougoed\u201d",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "treat intoxication",
+      "attributes": {},
+      "source_chunk_ids": [
+        "48ce1ee5f6c5df8c3f25c52e9f6f51be"
+      ],
+      "confidence": 0.85,
+      "evidence": "used to treat cases of intoxication",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "UseRecord",
+      "name": "UseRecord: traditional \u2013 Sceletium \u2013 treat intoxication",
       "attributes": {
-        "context": "and Kougoed, meaning something to chew or chewable"
+        "route": "oral"
       },
       "source_chunk_ids": [
         "48ce1ee5f6c5df8c3f25c52e9f6f51be"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "used to treat cases of intoxication",
+      "verified": true
     },
     {
-      "id": "ent_009",
-      "type": "PharmEffect",
-      "name": "psychoactive",
+      "id": "E9",
+      "type": "TraditionalUse",
+      "name": "prior to stressing events",
+      "attributes": {},
+      "source_chunk_ids": [
+        "48ce1ee5f6c5df8c3f25c52e9f6f51be"
+      ],
+      "confidence": 0.8,
+      "evidence": "taken prior to stressing events such as hunting",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "UseRecord",
+      "name": "UseRecord: traditional \u2013 Sceletium \u2013 prior to stressing events",
       "attributes": {
-        "context": "known as a psychoactive plant"
+        "route": "oral"
       },
       "source_chunk_ids": [
         "48ce1ee5f6c5df8c3f25c52e9f6f51be"
-      ]
+      ],
+      "confidence": 0.75,
+      "evidence": "taken prior to stressing events such as hunting",
+      "verified": true
     },
     {
-      "id": "ent_010",
-      "type": "Indication",
+      "id": "E11",
+      "type": "Condition",
       "name": "intoxication",
       "attributes": {
-        "context": "used to treat cases of intoxication"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "48ce1ee5f6c5df8c3f25c52e9f6f51be"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "treat cases of intoxication",
+      "verified": true
     },
     {
-      "id": "ent_011",
-      "type": "PharmEffect",
-      "name": "hallucinogenic",
+      "id": "E1",
+      "type": "Study",
+      "name": "Shikanga et al., 2011",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3761ec1e2c7ba5d6029a6d580913d41a"
+      ],
+      "confidence": 0.8,
+      "evidence": "Shikanga et al., 2011",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Setsheedi, 2012",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3761ec1e2c7ba5d6029a6d580913d41a"
+      ],
+      "confidence": 0.8,
+      "evidence": "Setsheedi, 2012",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "phytochemical analysis",
       "attributes": {
-        "context": "not known to be hallucinogenic"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
-        "48ce1ee5f6c5df8c3f25c52e9f6f51be"
-      ]
+        "3761ec1e2c7ba5d6029a6d580913d41a"
+      ],
+      "confidence": 0.85,
+      "evidence": "phytochemical analysis",
+      "verified": true
     },
     {
-      "id": "ent_012",
-      "type": "PharmEffect",
-      "name": "habit forming",
+      "id": "E4",
+      "type": "Evidence",
+      "name": "structural elucidation",
       "attributes": {
-        "context": "nor habit forming"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
-        "48ce1ee5f6c5df8c3f25c52e9f6f51be"
-      ]
+        "3761ec1e2c7ba5d6029a6d580913d41a"
+      ],
+      "confidence": 0.85,
+      "evidence": "structural elucidation",
+      "verified": true
     },
     {
-      "id": "ent_013",
-      "type": "Compound",
-      "name": "ITS1",
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "crude extracts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3761ec1e2c7ba5d6029a6d580913d41a"
+      ],
+      "confidence": 0.9,
+      "evidence": "crude extracts",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "literature review",
       "attributes": {
-        "context": "PrimerSequence (5'-3')Target speciesPCR cycling conditions ITS1TCCGTAGGTGAACCTGCGG"
+        "evidence_level": 3
       },
       "source_chunk_ids": [
-        "2ec8d4f1645f06c512a6a46143dd5550"
-      ]
+        "eeb723dc76db86d4cc3823d50e5b8197"
+      ],
+      "confidence": 0.8,
+      "evidence": "It has also been reported",
+      "verified": true
     },
     {
-      "id": "ent_014",
-      "type": "Compound",
-      "name": "TCCGTAGGTGAACCTGCGG",
+      "id": "E2",
+      "type": "TraditionalUse",
+      "name": "treatment of infections",
+      "attributes": {},
+      "source_chunk_ids": [
+        "eeb723dc76db86d50e5b8197",
+        "eeb723dc76db86d4cc3823d50e5b8197"
+      ],
+      "confidence": 0.9,
+      "evidence": "traditionally for the treatment of infections",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "infections",
       "attributes": {
-        "context": "ITS1TCCGTAGGTGAACCTGCGGAll fungal isolates"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
-        "2ec8d4f1645f06c512a6a46143dd5550"
-      ]
+        "eeb723dc76db86d4cc3823d50e5b8197"
+      ],
+      "confidence": 0.85,
+      "evidence": "treatment of infections",
+      "verified": true
     },
     {
-      "id": "ent_015",
-      "type": "Compound",
-      "name": "ITS4",
-      "attributes": {
-        "context": "ITS4TCCTCCGCTTATTGATATGC94 \u00b0C"
-      },
-      "source_chunk_ids": [
-        "2ec8d4f1645f06c512a6a46143dd5550"
-      ]
-    },
-    {
-      "id": "ent_016",
-      "type": "Compound",
-      "name": "TCCTCCGCTTATTGATATGC",
-      "attributes": {
-        "context": "ITS4TCCTCCGCTTATTGATATGC94 \u00b0C"
-      },
-      "source_chunk_ids": [
-        "2ec8d4f1645f06c512a6a46143dd5550"
-      ]
-    },
-    {
-      "id": "ent_017",
-      "type": "Compound",
-      "name": "EF 1",
-      "attributes": {
-        "context": "7 mins EF 1CGAATCTTTGAACGCACATTGFusarium species"
-      },
-      "source_chunk_ids": [
-        "2ec8d4f1645f06c512a6a46143dd5550"
-      ]
-    },
-    {
-      "id": "ent_018",
-      "type": "Compound",
-      "name": "CGAATCTTTGAACGCACATTG",
-      "attributes": {
-        "context": "EF 1CGAATCTTTGAACGCACATTGFusarium species"
-      },
-      "source_chunk_ids": [
-        "2ec8d4f1645f06c512a6a46143dd5550"
-      ]
-    },
-    {
-      "id": "ent_019",
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "medicinal plant Sceletium tortuosum"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "cf203c5bc541be630ff481271fe19371"
-      ]
+        "aa0ba7f6af69861ba4bc1dd9cda2947b"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum medicinal plant",
+      "verified": true
     },
     {
-      "id": "ent_020",
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "aa0ba7f6af69861ba4bc1dd9cda2947b"
+      ],
+      "confidence": 0.8,
+      "evidence": "fine roots laid out",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "CompoundClass",
+      "name": "saponin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "350d13305e0059e4a33c0d5511b95b08"
+      ],
+      "confidence": 0.9,
+      "evidence": "secondary metabolites, such as saponin",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "essential oils",
+      "attributes": {},
+      "source_chunk_ids": [
+        "350d13305e0059e4a33c0d5511b95b08"
+      ],
+      "confidence": 0.85,
+      "evidence": "some essential oils",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "pathogens",
+      "attributes": {
+        "target_type": "pathogen"
+      },
+      "source_chunk_ids": [
+        "350d13305e0059e4a33c0d5511b95b08"
+      ],
+      "confidence": 0.8,
+      "evidence": "resistance mechanism against pathogens",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "endophytic fungi",
+      "attributes": {
+        "target_type": "fungi"
+      },
+      "source_chunk_ids": [
+        "350d13305e0059e4a33c0d5511b95b08"
+      ],
+      "confidence": 0.9,
+      "evidence": "endophytic fungi",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "medicinal plants",
+      "attributes": {
+        "rank": "group"
+      },
+      "source_chunk_ids": [
+        "350d13305e0059e4a33c0d5511b95b08"
+      ],
+      "confidence": 0.85,
+      "evidence": "medicinal plants",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "resistance against pathogens",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "350d13305e0059e4a33c0d5511b95b08"
+      ],
+      "confidence": 0.75,
+      "evidence": "resistance mechanism against pathogens",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "CompoundClass",
+      "name": "bioactive compounds",
+      "attributes": {},
+      "source_chunk_ids": [
+        "350d13305e0059e4a33c0d5511b95b08"
+      ],
+      "confidence": 0.8,
+      "evidence": "bioactive compounds",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "enhanced tolerance to stress",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "350d13305e0059e4a33c0d5511b95b08"
+      ],
+      "confidence": 0.7,
+      "evidence": "enhance the tolerance to abiotic and biotic stress",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "induction of novel metabolites",
+      "attributes": {
+        "level": "molecular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "350d13305e0059e4a33c0d5511b95b08"
+      ],
+      "confidence": 0.75,
+      "evidence": "induce the production of novel bioactive secondary metabolites",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "TraditionalUse",
+      "name": "medicinal resources",
+      "attributes": {},
+      "source_chunk_ids": [
+        "350d13305e0059e4a33c0d5511b95b08"
+      ],
+      "confidence": 0.8,
+      "evidence": "serve as important medicinal resources",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "50 Sceletium tortuosum plants"
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "290c2cdd3b4b377e21b7585d778113f1"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum plants",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Patnala and Kanfer, 2009",
+      "attributes": {
+        "year": 2009
+      },
+      "source_chunk_ids": [
+        "290c2cdd3b4b377e21b7585d778113f1"
+      ],
+      "confidence": 0.8,
+      "evidence": "Patnala and Kanfer, 2009",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Shikanga et al., 2011",
+      "attributes": {
+        "year": 2011
+      },
+      "source_chunk_ids": [
+        "290c2cdd3b377e21b7585d778113f1",
+        "290c2cdd3b4b377e21b7585d778113f1"
+      ],
+      "confidence": 0.8,
+      "evidence": "Shikanga et al., 2011",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "present study",
+      "attributes": {
+        "design": "investigative"
+      },
+      "source_chunk_ids": [
+        "290c2cdd3b4b377e21b7585d778113f1"
+      ],
+      "confidence": 0.85,
+      "evidence": "The present study is therefore designed to investigate",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "phytochemical analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "290c2cdd3b4b377e21b7585d778113f1"
+      ],
+      "confidence": 0.75,
+      "evidence": "phytochemical analysis of crude extracts",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "RawMaterial",
+      "name": "crude extracts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "290c2cdd3b4b377e21b7585d778113f1"
+      ],
+      "confidence": 0.7,
+      "evidence": "crude extracts",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "antimicrobial",
+      "attributes": {
+        "condition_type": "application",
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "290c2cdd3b4b377e21b7585d778113f1"
+      ],
+      "confidence": 0.65,
+      "evidence": "novel antimicrobial agents",
+      "verified": false
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
       },
       "source_chunk_ids": [
         "6a4ae788443fbd8aa30342046105f1c2"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum plants",
+      "verified": true
     },
     {
-      "id": "ent_021",
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "plant materials",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6a4ae788443fbd8aa30342046105f1c2"
+      ],
+      "confidence": 0.8,
+      "evidence": "Fresh plant materials",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "Mature healthy Sceletium tortuosum plants"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "663ebfc7e4ee0267badf661c88fa74d5"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum plants",
+      "verified": true
     },
     {
-      "id": "ent_022",
-      "type": "Indication",
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "leaf",
+      "attributes": {},
+      "source_chunk_ids": [
+        "663ebfc7e4ee0267badf661c88fa74d5"
+      ],
+      "confidence": 0.9,
+      "evidence": "Leaf samples",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "stem",
+      "attributes": {},
+      "source_chunk_ids": [
+        "663ebfc7e4ee0267badf661c88fa74d5"
+      ],
+      "confidence": 0.9,
+      "evidence": "stem samples",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "PlantPart",
+      "name": "root",
+      "attributes": {},
+      "source_chunk_ids": [
+        "663ebfc7e4ee0267badf661c88fa74d5"
+      ],
+      "confidence": 0.9,
+      "evidence": "root samples",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "endophytic fungi",
+      "attributes": {},
+      "source_chunk_ids": [
+        "695c3df0454170183323c6c39b56062a"
+      ],
+      "confidence": 0.9,
+      "evidence": "endophytic fungi isolated",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "695c3df0454170183323c6c39b56062a"
+      ],
+      "confidence": 0.95,
+      "evidence": "leaves and roots",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "695c3df0454170183323c6c39b56062a"
+      ],
+      "confidence": 0.95,
+      "evidence": "leaves and roots",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "colonization rate study",
+      "attributes": {},
+      "source_chunk_ids": [
+        "695c3df0454170183323c6c39b56062a"
+      ],
+      "confidence": 0.8,
+      "evidence": "Bar chart showing the colonization rate",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "695c3df0454170183323c6c39b56062a"
+      ],
+      "confidence": 0.7,
+      "evidence": "isolated in leaves and roots",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium endophytic fungi",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "endophytic fungi",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "confidence": 0.85,
+      "evidence": "Sceletium endophytic fungi",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "Aspergillus",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "confidence": 0.95,
+      "evidence": "Aspergillus has the highest percentage",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "Fusarium",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "confidence": 0.95,
+      "evidence": "Fusarium at approximately 37%",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "CompoundClass",
+      "name": "Penicillium",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "confidence": 0.9,
+      "evidence": "Penicillium6%",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "CompoundClass",
+      "name": "Alternaria",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "confidence": 0.9,
+      "evidence": "Alternaria6%",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "CompoundClass",
+      "name": "Cladosporium",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "confidence": 0.9,
+      "evidence": "Cladosporium2%",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "CompoundClass",
+      "name": "Ceratobasidium",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "confidence": 0.85,
+      "evidence": "Ceratobasidium4%",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "CompoundClass",
+      "name": "Epicoccum",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "confidence": 0.85,
+      "evidence": "Epicoccum2%",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "CompoundClass",
+      "name": "Neurospora",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "confidence": 0.85,
+      "evidence": "Neurospora2%",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "CompoundClass",
+      "name": "Phomopsis",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "confidence": 0.85,
+      "evidence": "Phomopsis2%",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "CompoundClass",
+      "name": "Cf. Pleosporales",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "confidence": 0.8,
+      "evidence": "Cf. Pleosporales2%",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "CompoundClass",
+      "name": "Coniothyrium",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "confidence": 0.85,
+      "evidence": "Coniothyrium2%",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "CompoundClass",
+      "name": "Geotrichum",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "confidence": 0.85,
+      "evidence": "Geotrichum2%",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "CompoundClass",
+      "name": "Mucor",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "confidence": 0.85,
+      "evidence": "Mucor2%",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "CompoundClass",
+      "name": "Neonectria",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "confidence": 0.85,
+      "evidence": "Neonectria4%",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "CompoundClass",
+      "name": "Purpureocillium",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "confidence": 0.85,
+      "evidence": "Purpureocillium2%",
+      "verified": true
+    },
+    {
+      "id": "E18",
+      "type": "CompoundClass",
+      "name": "Pythium",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "confidence": 0.85,
+      "evidence": "Pythium2%",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ccd78a4e00023e5d5e9b22fe3c0926e0"
+      ],
+      "confidence": 0.9,
+      "evidence": "leaves and roots",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ccd78a4e00023e5d5e9b22fe3c0926e0"
+      ],
+      "confidence": 0.9,
+      "evidence": "leaves and roots",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "higher colonization rate",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "ccd78a4e00023e5d5e9b22fe3c0926e0"
+      ],
+      "confidence": 0.8,
+      "evidence": "CR in leaves were higher than roots",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Petrini et al., 1982",
+      "attributes": {
+        "year": 1982
+      },
+      "source_chunk_ids": [
+        "ccd78a4e00023e5d5e9b22fe3c0926e0"
+      ],
+      "confidence": 0.85,
+      "evidence": "Petrini et al., 1982",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Naik et al., 2009",
+      "attributes": {
+        "year": 2009
+      },
+      "source_chunk_ids": [
+        "ccd78a4e00023e5d5e9b22fe3c0926e0"
+      ],
+      "confidence": 0.85,
+      "evidence": "Naik et al., 2009",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Oryza sativa",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "ccd78a4e00023e5d5e9b22fe3c0926e0"
+      ],
+      "confidence": 0.9,
+      "evidence": "Oryza sativa",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "a21b97339f1c5972c415e902d2324b60"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum plants",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Fusarium oxysporum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "a21b97339f1c5972c415e902d2324b60"
+      ],
+      "confidence": 0.9,
+      "evidence": "identified as Fusarium oxysporum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Aspergillus niger",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "a21b97339f1c5972c415e902d2324b60"
+      ],
+      "confidence": 0.9,
+      "evidence": "Aspergillus niger (KM460938.1)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Neurospora",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "a21b97339f1c5972c415e902d2324b60"
+      ],
+      "confidence": 0.85,
+      "evidence": "Neurospora (KT844664.1)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Fusarium penzigii",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "a21b97339f1c5972c415e902d2324b60"
+      ],
+      "confidence": 0.9,
+      "evidence": "Fusarium penzigii (NR_137707.1)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Fusarium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "a21b97339f1c5972c415e902d2324b60"
+      ],
+      "confidence": 0.8,
+      "evidence": "genus Fusarium (37%; 22/60)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Aspergillus",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "a21b97339f1c5972c415e902d2324b60"
+      ],
+      "confidence": 0.8,
+      "evidence": "identified as Aspergillus (25%; 15/60)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Taxon",
+      "name": "Penicillium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "a21b97339f1c5972c415e902d2324b60"
+      ],
+      "confidence": 0.7,
+      "evidence": "Penicillium, Alternaria, Phomopsis, Neurospora",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Taxon",
+      "name": "Alternaria",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "a21b97339f1c5972c415e902d2324b60"
+      ],
+      "confidence": 0.7,
+      "evidence": "Penicillium, Alternaria, Phomopsis, Neurospora",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Taxon",
+      "name": "Phomopsis",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "a21b97339f1c5972c415e902d2324b60"
+      ],
+      "confidence": 0.7,
+      "evidence": "Penicillium, Alternaria, Phomopsis, Neurospora",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Condition",
       "name": "disease",
       "attributes": {
-        "context": "no visual symptoms of disease"
+        "condition_type": "disease",
+        "verification_needed": true
       },
       "source_chunk_ids": [
-        "663ebfc7e4ee0267badf661c88fa74d5"
-      ]
+        "a21b97339f1c5972c415e902d2324b60"
+      ],
+      "confidence": 0.6,
+      "evidence": "disease-causing capabilities",
+      "verified": false
     },
     {
-      "id": "ent_023",
-      "type": "Compound",
-      "name": "ethanol",
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Aspergillus",
       "attributes": {
-        "context": "rinsed with 70% (v/v) ethanol"
+        "rank": "genus"
       },
       "source_chunk_ids": [
-        "663ebfc7e4ee0267badf661c88fa74d5"
-      ]
+        "e2e0ffe736020c2cd2d64078baf2229e"
+      ],
+      "confidence": 0.9,
+      "evidence": "Aspergillus species were dominant",
+      "verified": true
     },
     {
-      "id": "ent_024",
-      "type": "Concentration",
-      "name": "70% (v/v)",
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Fusarium equiseti",
       "attributes": {
-        "context": "rinsed with 70% (v/v) ethanol"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "663ebfc7e4ee0267badf661c88fa74d5"
-      ]
+        "e2e0ffe736020c2cd2d64078baf2229e"
+      ],
+      "confidence": 0.85,
+      "evidence": "sequence similarities with Fusarium equiseti",
+      "verified": true
     },
     {
-      "id": "ent_025",
-      "type": "Concentration",
-      "name": "1 min",
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Alternaria",
       "attributes": {
-        "context": "ethanol for 1 min"
+        "rank": "genus"
       },
       "source_chunk_ids": [
-        "663ebfc7e4ee0267badf661c88fa74d5"
-      ]
+        "e2e0ffe736020c2cd2d64078baf2229e"
+      ],
+      "confidence": 0.85,
+      "evidence": "Alternaria sp.",
+      "verified": true
     },
     {
-      "id": "ent_026",
-      "type": "Compound",
-      "name": "sodium hypochlorite",
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Fusarium oxysporum",
       "attributes": {
-        "context": "disinfected with 2% (v/v) sodium hypochlorite solution"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "663ebfc7e4ee0267badf661c88fa74d5"
-      ]
+        "e2e0ffe736020c2cd2d64078baf2229e"
+      ],
+      "confidence": 0.85,
+      "evidence": "Fusarium oxysporum",
+      "verified": true
     },
     {
-      "id": "ent_027",
-      "type": "Concentration",
-      "name": "2% (v/v)",
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Aspergillus niger",
       "attributes": {
-        "context": "disinfected with 2% (v/v) sodium hypochlorite solution"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "663ebfc7e4ee0267badf661c88fa74d5"
-      ]
+        "e2e0ffe736020c2cd2d64078baf2229e"
+      ],
+      "confidence": 0.85,
+      "evidence": "Aspergillus niger",
+      "verified": true
     },
     {
-      "id": "ent_028",
-      "type": "Concentration",
-      "name": "2 min",
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Fusarium",
       "attributes": {
-        "context": "solution for 2 min"
+        "rank": "genus"
       },
       "source_chunk_ids": [
-        "663ebfc7e4ee0267badf661c88fa74d5"
-      ]
+        "e2e0ffe736020c2cd2d64078baf2229e"
+      ],
+      "confidence": 0.85,
+      "evidence": "Fusarium sp.",
+      "verified": true
     },
     {
-      "id": "ent_029",
-      "type": "Compound",
-      "name": "ethanol",
+      "id": "E7",
+      "type": "Study",
+      "name": "Zakaria et al., 2010",
       "attributes": {
-        "context": "rinsed again 70% (v/v) ethanol"
+        "year": 2010
       },
       "source_chunk_ids": [
-        "663ebfc7e4ee0267badf661c88fa74d5"
-      ]
+        "e2e0ffe736020c2cd2d64078baf2229e"
+      ],
+      "confidence": 0.8,
+      "evidence": "Zakaria et al., 2010",
+      "verified": true
     },
     {
-      "id": "ent_030",
-      "type": "Concentration",
-      "name": "70% (v/v)",
+      "id": "E8",
+      "type": "Study",
+      "name": "Musavi and Balakrishnan, 2013",
       "attributes": {
-        "context": "rinsed again 70% (v/v) ethanol"
+        "year": 2013
       },
       "source_chunk_ids": [
-        "663ebfc7e4ee0267badf661c88fa74d5"
-      ]
+        "e2e0ffe736020c2cd2d64078baf2229e"
+      ],
+      "confidence": 0.8,
+      "evidence": "Musavi and Balakrishnan, 2013",
+      "verified": true
     },
     {
-      "id": "ent_031",
-      "type": "Concentration",
-      "name": "20 s",
+      "id": "E9",
+      "type": "Study",
+      "name": "Srivastava, 2017",
       "attributes": {
-        "context": "ethanol for 20 s"
+        "year": 2017
       },
       "source_chunk_ids": [
-        "663ebfc7e4ee0267badf661c88fa74d5"
-      ]
+        "e2e0ffe736020c2cd2d64078baf2229e"
+      ],
+      "confidence": 0.8,
+      "evidence": "Srivastava, 2017",
+      "verified": true
     },
     {
-      "id": "ent_032",
-      "type": "Compound",
-      "name": "distilled water",
+      "id": "E1",
+      "type": "Taxon",
+      "name": "S. tortuosum",
       "attributes": {
-        "context": "twice with sterile distilled water"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "663ebfc7e4ee0267badf661c88fa74d5"
-      ]
+        "37081e6903f87e8207c5228b89c65570"
+      ],
+      "confidence": 0.9,
+      "evidence": "indigenous S. tortuosum",
+      "verified": true
     },
     {
-      "id": "ent_033",
-      "type": "Compound",
-      "name": "antibiotics",
-      "attributes": {
-        "context": "supplemented with antibiotics"
-      },
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
       "source_chunk_ids": [
-        "663ebfc7e4ee0267badf661c88fa74d5"
-      ]
+        "37081e6903f87e8207c5228b89c65570"
+      ],
+      "confidence": 0.8,
+      "evidence": "endophytes in the roots",
+      "verified": true
     },
     {
-      "id": "ent_034",
-      "type": "Compound",
-      "name": "nucleotide sequences",
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "37081e6903f87e8207c5228b89c65570"
+      ],
+      "confidence": 0.85,
+      "evidence": "endophytes in the roots and leaves",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "current study",
       "attributes": {
-        "context": "60 nucleotide sequences"
+        "design": "observational"
       },
       "source_chunk_ids": [
-        "69402b1c53def59ad7ed86bd237858eb"
-      ]
+        "37081e6903f87e8207c5228b89c65570"
+      ],
+      "confidence": 0.7,
+      "evidence": "The current study demonstrates",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2,
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "37081e6903f87e8207c5228b89c65570"
+      ],
+      "confidence": 0.6,
+      "evidence": "investigated the diversity of endophytic fungi isolates",
+      "verified": false
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "faba204a9181cab52a9a58b9dbfa9947"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "faba204a9181cab52a9a58b9dbfa9947"
+      ],
+      "confidence": 0.8,
+      "evidence": "leaves",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "faba204a9181cab52a9a58b9dbfa9947"
+      ],
+      "confidence": 0.8,
+      "evidence": "roots",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "bioactive compounds",
+      "attributes": {},
+      "source_chunk_ids": [
+        "faba204a9181cab52a9a58b9dbfa9947"
+      ],
+      "confidence": 0.7,
+      "evidence": "bioactive compounds",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "therapeutic applications",
+      "attributes": {},
+      "source_chunk_ids": [
+        "faba204a9181cab52a9a58b9dbfa9947"
+      ],
+      "confidence": 0.7,
+      "evidence": "therapeutic applications",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Preparation",
+      "name": "fermentation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "confidence": 0.8,
+      "evidence": "fermentation of plant material",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "Kougoed",
+      "attributes": {},
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "confidence": 0.85,
+      "evidence": "preparation of \"Kougoed\" by fermentation",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Patnala & Kanfer 2009",
+      "attributes": {
+        "year": 2009,
+        "design": "phytochemical investigation"
+      },
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "confidence": 0.9,
+      "evidence": "Patnala, S., Kanfer, I., 2009. Investigations of the phytochemical content",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "phytochemical analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "confidence": 0.8,
+      "evidence": "phytochemical content of Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Shikanga et al. 2011",
+      "attributes": {
+        "year": 2011,
+        "design": "isolation study"
+      },
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "confidence": 0.9,
+      "evidence": "Shikanga, E.A., Viljoen, A., Combrinck, S., Marston, A., 2011. Isolation of Sceletium alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "isolation study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "confidence": 0.8,
+      "evidence": "Isolation of Sceletium alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Setshedi 2012",
+      "attributes": {
+        "year": 2012,
+        "design": "phytochemical isolation"
+      },
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "confidence": 0.85,
+      "evidence": "Setshedi, I.B., 2012. Phytochemical isolation of compounds from Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Evidence",
+      "name": "phytochemical isolation",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "confidence": 0.8,
+      "evidence": "Phytochemical isolation of compounds",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Study",
+      "name": "Gericke & Viljoen 2008",
+      "attributes": {
+        "year": 2008,
+        "design": "review"
+      },
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "confidence": 0.9,
+      "evidence": "Gericke, N., Viljoen, A.M., 2008. Sceletium - a review update",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Evidence",
+      "name": "review",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "confidence": 0.85,
+      "evidence": "Sceletium - a review update",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Study",
+      "name": "Smith et al. 1996",
+      "attributes": {
+        "year": 1996,
+        "design": "phytochemical study"
+      },
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "confidence": 0.85,
+      "evidence": "Smith, M.T., Crouch, N.R., Gericke, N., Hirst, M., 1996. Psychoactive constituents of Sceletium",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Evidence",
+      "name": "phytochemical study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "confidence": 0.8,
+      "evidence": "Psychoactive constituents of the genus Sceletium",
+      "verified": true
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.023710+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "leaves and roots used",
+      "source_chunk_ids": [
+        "9664cd3bc94f0810512ecebb94fb73b6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "leaves and roots used",
+      "source_chunk_ids": [
+        "9664cd3bc94f0810512ecebb94fb73b6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "isolated from a medicinal plant",
+      "source_chunk_ids": [
+        "9664cd3bc94f0810512ecebb94fb73b6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum plants were collected",
+      "source_chunk_ids": [
+        "9664cd3bc94f0810512ecebb94fb73b6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "identified"
+      },
+      "confidence": 0.85,
+      "evidence": "Fusarium species (37%)",
+      "source_chunk_ids": [
+        "9664cd3bc94f0810512ecebb94fb73b6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "identified"
+      },
+      "confidence": 0.85,
+      "evidence": "Aspergillus (25%)",
+      "source_chunk_ids": [
+        "9664cd3bc94f0810512ecebb94fb73b6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "identified"
+      },
+      "confidence": 0.85,
+      "evidence": "Penicillium (7%) species",
+      "source_chunk_ids": [
+        "9664cd3bc94f0810512ecebb94fb73b6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "identified"
+      },
+      "confidence": 0.8,
+      "evidence": "DR 019 Fusarium penzigii",
+      "source_chunk_ids": [
+        "9664cd3bc94f0810512ecebb94fb73b6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E10",
+      "attributes": {
+        "outcome": "identified"
+      },
+      "confidence": 0.8,
+      "evidence": "DR 010 Phomopsis columnaris",
+      "source_chunk_ids": [
+        "9664cd3bc94f0810512ecebb94fb73b6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "identified"
+      },
+      "confidence": 0.8,
+      "evidence": "DR 007 Fusarium oxysporum f. sp. lycopersici",
+      "source_chunk_ids": [
+        "9664cd3bc94f0810512ecebb94fb73b6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum is used as a mood-altering drug",
+      "source_chunk_ids": [
+        "48ce1ee5f6c5df8c3f25c52e9f6f51be"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "used as a mood-altering drug",
+      "source_chunk_ids": [
+        "48ce1ee5f6c5df8c3f25c52e9f6f51be"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.85,
+      "evidence": "concoction prepared from the plant",
+      "source_chunk_ids": [
+        "48ce1ee5f6c5df8c3f25c52e9f6f51be"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "preparation"
+      },
+      "confidence": 0.8,
+      "evidence": "traditional concoction called \u201cKougoed\u201d",
+      "source_chunk_ids": [
+        "48ce1ee5f6c5df8c3f25c52e9f6f51be"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "used to treat cases of intoxication",
+      "source_chunk_ids": [
+        "48ce1ee5f6c5df8c3f25c52e9f6f51be"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "it is taken prior to stressing events",
+      "source_chunk_ids": [
+        "48ce1ee5f6c5df8c3f25c52e9f6f51be"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "taken prior to stressing events such as hunting",
+      "source_chunk_ids": [
+        "48ce1ee5f6c5df8c3f25c52e9f6f51be"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "SUGGESTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E11",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "treat cases of intoxication",
+      "source_chunk_ids": [
+        "48ce1ee5f6c5df8c3f25c52e9f6f51be"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "phytochemical analysis",
+      "source_chunk_ids": [
+        "3761ec1e2c7ba5d6029a6d580913d41a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "structural elucidation",
+      "source_chunk_ids": [
+        "3761ec1e2c7ba5d6029a6d580913d41a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "phytochemical analysis",
+      "source_chunk_ids": [
+        "3761ec1e2c7ba5d6029a6d580913d41a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "structural elucidation",
+      "source_chunk_ids": [
+        "3761ec1e2c7ba5d6029a6d580913d41a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "involving the plant",
+      "source_chunk_ids": [
+        "3761ec1e2c7ba5d6029a6d580913d41a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "involving the plant",
+      "source_chunk_ids": [
+        "3761ec1e2c7ba5d6029a6d580913d41a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "traditionally for the treatment of infections",
+      "source_chunk_ids": [
+        "eeb723dc76db86d4cc3823d50e5b8197"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Sceletium tortuosum plants with fine roots",
+      "source_chunk_ids": [
+        "aa0ba7f6af69861ba4bc1dd9cda2947b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "produced by medicinal plants",
+      "source_chunk_ids": [
+        "350d13305e0059e4a33c0d5511b95b08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "produced by medicinal plants",
+      "source_chunk_ids": [
+        "350d13305e0059e4a33c0d5511b95b08"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "resistance mechanism against pathogens",
+      "source_chunk_ids": [
+        "350d13305e0059e4a33c0d5511b95b08"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "resistance mechanism against pathogens",
+      "source_chunk_ids": [
+        "350d13305e0059e4a33c0d5511b95b08"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "inhibits",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "against pathogens",
+      "source_chunk_ids": [
+        "350d13305e0059e4a33c0d5511b95b08"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "inhibits",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "against pathogens",
+      "source_chunk_ids": [
+        "350d13305e0059e4a33c0d5511b95b08"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "inhibits",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "against endophytic fungi",
+      "source_chunk_ids": [
+        "350d13305e0059e4a33c0d5511b95b08"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "inhibits",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "against endophytic fungi",
+      "source_chunk_ids": [
+        "350d13305e0059e4a33c0d5511b95b08"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "bioactive compounds produced by endophytic fungi",
+      "source_chunk_ids": [
+        "350d13305e0059e4a33c0d5511b95b08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "enhance the tolerance to stress",
+      "source_chunk_ids": [
+        "350d13305e0059e4a33c0d5511b95b08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "induce the production of novel metabolites",
+      "source_chunk_ids": [
+        "350d13305e0059e4a33c0d5511b95b08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "SUGGESTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E9",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "serve as important medicinal resources",
+      "source_chunk_ids": [
+        "350d13305e0059e4a33c0d5511b95b08"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "phytochemical analysis of crude extracts",
+      "source_chunk_ids": [
+        "290c2cdd3b4b377e21b7585d778113f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "phytochemical analysis of crude extracts",
+      "source_chunk_ids": [
+        "290c2cdd3b4b377e21b7585d778113f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "phytochemical analysis of crude extracts",
+      "source_chunk_ids": [
+        "290c2cdd3b377e21b7585d778113f1",
+        "290c2cdd3b4b377e21b7585d778113f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "phytochemical analysis of crude extracts",
+      "source_chunk_ids": [
+        "290c2cdd3b4b377e21b7585d778113f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "endophytic fungi isolated from Sceletium tortuosum plants",
+      "source_chunk_ids": [
+        "290c2cdd3b4b377e21b7585d778113f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "potential",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "novel antimicrobial agents",
+      "source_chunk_ids": [
+        "290c2cdd3b4b377e21b7585d778113f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Sceletium tortuosum plants...Fresh plant materials",
+      "source_chunk_ids": [
+        "6a4ae788443fbd8aa30342046105f1c2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Leaf samples of plants",
+      "source_chunk_ids": [
+        "663ebfc7e4ee0267badf661c88fa74d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "stem samples of plants",
+      "source_chunk_ids": [
+        "663ebfc7e4ee0267badf661c88fa74d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "root samples of plants",
+      "source_chunk_ids": [
+        "663ebfc7e4ee0267badf661c88fa74d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "endophytic fungi isolated in leaves",
+      "source_chunk_ids": [
+        "695c3df0454170183323c6c39b56062a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "endophytic fungi isolated in roots",
+      "source_chunk_ids": [
+        "695c3df0454170183323c6c39b56062a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "isolated in leaves and roots",
+      "source_chunk_ids": [
+        "695c3df0454170183323c6c39b56062a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "colonization rate of endophytic fungi",
+      "source_chunk_ids": [
+        "695c3df0454170183323c6c39b56062a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "measurement": {
+          "value": 100,
+          "unit": "%",
+          "measurement_type": "percentage",
+          "notes": "total endophytic fungi"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Sceletium endophytic fungi",
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "measurement": {
+          "value": 26,
+          "unit": "%",
+          "measurement_type": "percentage",
+          "notes": "genus level distribution"
+        }
+      },
+      "confidence": 0.9,
+      "evidence": "Aspergillus26%",
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 37,
+          "unit": "%",
+          "measurement_type": "percentage",
+          "notes": "genus level distribution"
+        }
+      },
+      "confidence": 0.9,
+      "evidence": "Fusarium37%",
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "measurement": {
+          "value": 6,
+          "unit": "%",
+          "measurement_type": "percentage",
+          "notes": "genus level distribution"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "Penicillium6%",
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "measurement": {
+          "value": 6,
+          "unit": "%",
+          "measurement_type": "percentage",
+          "notes": "genus level distribution"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "Alternaria6%",
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "measurement": {
+          "value": 2,
+          "unit": "%",
+          "measurement_type": "percentage",
+          "notes": "genus level distribution"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "Cladosporium2%",
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "measurement": {
+          "value": 4,
+          "unit": "%",
+          "measurement_type": "percentage",
+          "notes": "genus level distribution"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Ceratobasidium4%",
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {
+        "measurement": {
+          "value": 2,
+          "unit": "%",
+          "measurement_type": "percentage",
+          "notes": "genus level distribution"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Epicoccum2%",
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {
+        "measurement": {
+          "value": 2,
+          "unit": "%",
+          "measurement_type": "percentage",
+          "notes": "genus level distribution"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Neurospora2%",
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E11",
+      "attributes": {
+        "measurement": {
+          "value": 2,
+          "unit": "%",
+          "measurement_type": "percentage",
+          "notes": "genus level distribution"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Phomopsis2%",
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E12",
+      "attributes": {
+        "measurement": {
+          "value": 2,
+          "unit": "%",
+          "measurement_type": "percentage",
+          "notes": "genus level distribution"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "Cf. Pleosporales2%",
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E13",
+      "attributes": {
+        "measurement": {
+          "value": 2,
+          "unit": "%",
+          "measurement_type": "percentage",
+          "notes": "genus level distribution"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Coniothyrium2%",
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E14",
+      "attributes": {
+        "measurement": {
+          "value": 2,
+          "unit": "%",
+          "measurement_type": "percentage",
+          "notes": "genus level distribution"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Geotrichum2%",
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E15",
+      "attributes": {
+        "measurement": {
+          "value": 2,
+          "unit": "%",
+          "measurement_type": "percentage",
+          "notes": "genus level distribution"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Mucor2%",
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E16",
+      "attributes": {
+        "measurement": {
+          "value": 4,
+          "unit": "%",
+          "measurement_type": "percentage",
+          "notes": "genus level distribution"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Neonectria4%",
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E17",
+      "attributes": {
+        "measurement": {
+          "value": 2,
+          "unit": "%",
+          "measurement_type": "percentage",
+          "notes": "genus level distribution"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Purpureocillium2%",
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R17",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E18",
+      "attributes": {
+        "measurement": {
+          "value": 2,
+          "unit": "%",
+          "measurement_type": "percentage",
+          "notes": "genus level distribution"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Pythium2%",
+      "source_chunk_ids": [
+        "f6c4dee8a713fd91b72b2dbd8c827ece"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "supports"
+      },
+      "confidence": 0.7,
+      "evidence": "CR was defined by Petrini et al., 1982",
+      "source_chunk_ids": [
+        "ccd78a4e00023e5d5e9b22fe3c0926e0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "refutes",
+        "assertion": "refutes"
+      },
+      "confidence": 0.75,
+      "evidence": "Naik et al., 2009 revealed higher CR in roots",
+      "source_chunk_ids": [
+        "ccd78a4e00023e5d5e9b22fe3c0926e0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "subject"
+      },
+      "confidence": 0.8,
+      "evidence": "colonization rate of Oryza sativa",
+      "source_chunk_ids": [
+        "ccd78a4e00023e5d5e9b22fe3c0926e0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Aspergillus species were isolated (Zakaria et al., 2010)",
+      "source_chunk_ids": [
+        "e2e0ffe736020c2cd2d64078baf2229e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Aspergillus species were isolated (Musavi and Balakrishnan, 2013)",
+      "source_chunk_ids": [
+        "e2e0ffe736020c2cd2d64078baf2229e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Aspergillus species were isolated (Srivastava, 2017)",
+      "source_chunk_ids": [
+        "e2e0ffe736020c2cd2d64078baf2229e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "endophytes in the roots",
+      "source_chunk_ids": [
+        "37081e6903f87e8207c5228b89c65570"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "endophytes in the roots and leaves",
+      "source_chunk_ids": [
+        "37081e6903f87e8207c5228b89c65570"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "investigated the diversity of endophytic fungi isolates",
+      "source_chunk_ids": [
+        "37081e6903f87e8207c5228b89c65570"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "The current study demonstrates",
+      "source_chunk_ids": [
+        "37081e6903f87e8207c5228b89c65570"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "leaves of S. tortuosum",
+      "source_chunk_ids": [
+        "faba204a9181cab52a9a58b9dbfa9947"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "roots of S. tortuosum",
+      "source_chunk_ids": [
+        "faba204a9181cab52a9a58b9dbfa9947"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "preparation of \"Kougoed\" by fermentation",
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Patnala, S., Kanfer, I., 2009. Investigations of the phytochemical content",
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "phytochemical content of Sceletium tortuosum",
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Shikanga et al. 2011. Isolation of Sceletium alkaloids",
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Isolation of Sceletium alkaloids",
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Sceletium alkaloids",
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Setshedi 2012. Phytochemical isolation of compounds",
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Phytochemical isolation of compounds from Sceletium tortuosum",
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E11",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Gericke & Viljoen 2008. Sceletium - a review update",
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium - a review update",
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E13",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Smith et al. 1996. Psychoactive constituents of Sceletium",
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "STUDIES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Psychoactive constituents of the genus Sceletium",
+      "source_chunk_ids": [
+        "82a64d2613b0d73e8022a96d563769f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

@@ -1,1608 +1,5727 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "db69936e2f5c7e3b66a881fb5ac00cae10975c3c61276519059a2d427676464e",
-  "extracted_at": "2026-02-01T08:41:29.998699+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "Sceletium tortuosum, is an indigenous herb"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "b91109075b11691ade293c3e4bf9eea7"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
     },
     {
-      "id": "ent_002",
-      "type": "PharmEffect",
-      "name": "herbal supplement",
-      "attributes": {
-        "context": "used as an herbal supplement"
-      },
+      "id": "E2",
+      "type": "TraditionalUse",
+      "name": "treatment of anxiety and stress",
+      "attributes": {},
       "source_chunk_ids": [
         "b91109075b11691ade293c3e4bf9eea7"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "treatment of anxiety and stress",
+      "verified": true
     },
     {
-      "id": "ent_003",
-      "type": "Indication",
+      "id": "E3",
+      "type": "Condition",
       "name": "anxiety",
       "attributes": {
-        "context": "treatment of anxiety"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "b91109075b11691ade293c3e4bf9eea7"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "treatment of anxiety",
+      "verified": true
     },
     {
-      "id": "ent_004",
-      "type": "Indication",
+      "id": "E4",
+      "type": "Condition",
       "name": "stress",
       "attributes": {
-        "context": "treatment of anxiety and stress"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "b91109075b11691ade293c3e4bf9eea7"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "treatment of stress",
+      "verified": true
     },
     {
-      "id": "ent_005",
+      "id": "E5",
       "type": "Compound",
-      "name": "Mesembrenone",
-      "attributes": {
-        "context": "Mesembrenone and mesembrine are the two main pharmacologically active alkaloids"
-      },
+      "name": "mesembrenone",
+      "attributes": {},
       "source_chunk_ids": [
         "b91109075b11691ade293c3e4bf9eea7"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrenone",
+      "verified": true
     },
     {
-      "id": "ent_006",
+      "id": "E6",
       "type": "Compound",
       "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b91109075b11691ade293c3e4bf9eea7"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b91109075b11691ade293c3e4bf9eea7"
+      ],
+      "confidence": 0.9,
+      "evidence": "pharmacologically active alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "RawMaterial",
+      "name": "Sceletium extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b91109075b11691ade293c3e4bf9eea7"
+      ],
+      "confidence": 0.85,
+      "evidence": "Sceletium extract",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "current study",
       "attributes": {
-        "context": "Mesembrenone and mesembrine are the two main pharmacologically active alkaloids"
+        "design": "analytical method development and validation",
+        "year": "implicit",
+        "sample_size": "mouse plasma"
       },
       "source_chunk_ids": [
         "b91109075b11691ade293c3e4bf9eea7"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "current study aimed to develop and validate",
+      "verified": true
     },
     {
-      "id": "ent_007",
-      "type": "PharmEffect",
-      "name": "therapeutic applications",
+      "id": "E10",
+      "type": "Evidence",
+      "name": "in vitro analytical",
       "attributes": {
-        "context": "wide therapeutic applications of Sceletium extract"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
         "b91109075b11691ade293c3e4bf9eea7"
-      ]
+      ],
+      "confidence": 0.75,
+      "evidence": "analytical method for quantification",
+      "verified": true
     },
     {
-      "id": "ent_008",
+      "id": "E11",
+      "type": "Effect",
+      "name": "poor oral bioavailability",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "b91109075b11691ade293c3e4bf9eea7"
+      ],
+      "confidence": 0.8,
+      "evidence": "oral bioavailability was poor",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "therapeutic applications of Sceletium extract"
+        "rank": "species",
+        "family": "Mesembryanthemaceae"
       },
       "source_chunk_ids": [
-        "b91109075b11691ade293c3e4bf9eea7"
-      ]
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
     },
     {
-      "id": "ent_009",
-      "type": "Compound",
-      "name": "methanol",
+      "id": "E2",
+      "type": "Culture",
+      "name": "South African indigenous",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "confidence": 0.8,
+      "evidence": "indigenous South African herb",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "UseRecord",
+      "name": "UseRecord: South African \u2013 Sceletium \u2013 anxiety/depression/stress",
       "attributes": {
-        "context": "protein precipitation by methanol (100%)"
+        "route": "oral/smoking"
       },
       "source_chunk_ids": [
-        "b91109075b11691ade293c3e4bf9eea7"
-      ]
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "confidence": 0.85,
+      "evidence": "consumed by smoking or chewing",
+      "verified": true
     },
     {
-      "id": "ent_010",
-      "type": "Compound",
-      "name": "quinine",
+      "id": "E4",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "confidence": 0.9,
+      "evidence": "dried leaves",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Preparation",
+      "name": "drying",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "confidence": 0.8,
+      "evidence": "dried leaves",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "RawMaterial",
+      "name": "tincture",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "confidence": 0.85,
+      "evidence": "in the form of a tincture",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "treatment of central nervous system-related disorders",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "confidence": 0.9,
+      "evidence": "treatment of central nervous system-related disorders",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "anxiety",
       "attributes": {
-        "context": "with quinine as an internal standard"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
-        "b91109075b11691ade293c3e4bf9eea7"
-      ]
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "confidence": 0.95,
+      "evidence": "anxiety",
+      "verified": true
     },
     {
-      "id": "ent_011",
-      "type": "Concentration",
-      "name": "10 ng/mL",
+      "id": "E9",
+      "type": "Condition",
+      "name": "depression",
       "attributes": {
-        "context": "lower limit of quantification for both the compounds was 10 ng/mL"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
-        "b91109075b11691ade293c3e4bf9eea7"
-      ]
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "confidence": 0.95,
+      "evidence": "depression",
+      "verified": true
     },
     {
-      "id": "ent_012",
-      "type": "Compound",
-      "name": "mesembrenone",
+      "id": "E10",
+      "type": "Condition",
+      "name": "stress",
       "attributes": {
-        "context": "alkaloids being reported to be mesembrenone"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
-        "d3f693fbbcd85636922a39937bb71278"
-      ]
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "confidence": 0.95,
+      "evidence": "stress",
+      "verified": true
     },
     {
-      "id": "ent_013",
-      "type": "Compound",
-      "name": "mesembrine",
+      "id": "E11",
+      "type": "RawMaterial",
+      "name": "Sceletium extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium extract",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zembrin",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Study",
+      "name": "Terburg et al., 2013",
       "attributes": {
-        "context": "alkaloids being reported to be mesembrine"
+        "year": 2013,
+        "design": "clinical study"
       },
       "source_chunk_ids": [
-        "d3f693fbbcd85636922a39937bb71278"
-      ]
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "confidence": 0.85,
+      "evidence": "Terburg et al., 2013",
+      "verified": true
     },
     {
-      "id": "ent_014",
-      "type": "PharmEffect",
-      "name": "pharmacologically active",
+      "id": "E14",
+      "type": "Evidence",
+      "name": "clinical study",
       "attributes": {
-        "context": "main pharmacologically active alkaloids"
+        "evidence_level": 4
       },
       "source_chunk_ids": [
-        "d3f693fbbcd85636922a39937bb71278"
-      ]
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "confidence": 0.8,
+      "evidence": "clinical study",
+      "verified": true
     },
     {
-      "id": "ent_015",
-      "type": "Taxon",
-      "name": "Kanna",
+      "id": "E15",
+      "type": "Effect",
+      "name": "anxiolytic effect",
       "attributes": {
-        "context": "major alkaloid in Kanna"
+        "level": "behavioral",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "d3f693fbbcd85636922a39937bb71278"
-      ]
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "confidence": 0.85,
+      "evidence": "anxiolytic potential",
+      "verified": true
     },
     {
-      "id": "ent_016",
-      "type": "PharmEffect",
-      "name": "potent 5-HT inhibitor",
+      "id": "E16",
+      "type": "Target",
+      "name": "5-HT receptor",
       "attributes": {
-        "context": "is a potent 5-HT inhibitor"
+        "target_type": "receptor"
       },
       "source_chunk_ids": [
-        "d3f693fbbcd85636922a39937bb71278"
-      ]
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "confidence": 0.9,
+      "evidence": "5-hydroxytryptamine (5-HT) receptor",
+      "verified": true
     },
     {
-      "id": "ent_017",
-      "type": "PharmEffect",
-      "name": "inhibit PDE4",
-      "attributes": {
-        "context": "effectively inhibit PDE4"
-      },
-      "source_chunk_ids": [
-        "d3f693fbbcd85636922a39937bb71278"
-      ]
-    },
-    {
-      "id": "ent_018",
-      "type": "Compound",
-      "name": "bicyclic molecule",
-      "attributes": {
-        "context": "Mesembrine is a bicyclic molecule"
-      },
-      "source_chunk_ids": [
-        "d3f693fbbcd85636922a39937bb71278"
-      ]
-    },
-    {
-      "id": "ent_019",
-      "type": "PharmEffect",
-      "name": "cytotoxic effect",
-      "attributes": {
-        "context": "have a cytotoxic effect"
-      },
-      "source_chunk_ids": [
-        "d3f693fbbcd85636922a39937bb71278"
-      ]
-    },
-    {
-      "id": "ent_020",
-      "type": "Indication",
-      "name": "cancer cells",
-      "attributes": {
-        "context": "effect in cancer cells"
-      },
-      "source_chunk_ids": [
-        "d3f693fbbcd85636922a39937bb71278"
-      ]
-    },
-    {
-      "id": "ent_021",
-      "type": "PharmEffect",
-      "name": "anti-5HT",
-      "attributes": {
-        "context": "its anti-5HT and PDE4 inhibition properties"
-      },
-      "source_chunk_ids": [
-        "d3f693fbbcd85636922a39937bb71278"
-      ]
-    },
-    {
-      "id": "ent_022",
-      "type": "PharmEffect",
-      "name": "PDE4 inhibition",
-      "attributes": {
-        "context": "its anti-5HT and PDE4 inhibition properties"
-      },
-      "source_chunk_ids": [
-        "d3f693fbbcd85636922a39937bb71278"
-      ]
-    },
-    {
-      "id": "ent_023",
-      "type": "PharmEffect",
-      "name": "5-HT inhibitor",
-      "attributes": {
-        "context": "Mesembrine is a more potent 5-HT inhibitor"
-      },
-      "source_chunk_ids": [
-        "d3f693fbbcd85636922a39937bb71278"
-      ]
-    },
-    {
-      "id": "ent_024",
-      "type": "PharmEffect",
-      "name": "potent towards PDE4",
-      "attributes": {
-        "context": "mesembrenone is more potent towards PDE4"
-      },
-      "source_chunk_ids": [
-        "d3f693fbbcd85636922a39937bb71278"
-      ]
-    },
-    {
-      "id": "ent_025",
-      "type": "Compound",
-      "name": "molecules",
-      "attributes": {
-        "context": "structural differences between the two molecules"
-      },
-      "source_chunk_ids": [
-        "d3f693fbbcd85636922a39937bb71278"
-      ]
-    },
-    {
-      "id": "ent_026",
-      "type": "Compound",
-      "name": "alkaloids",
-      "attributes": {
-        "context": "these alkaloids may have potential"
-      },
-      "source_chunk_ids": [
-        "d3f693fbbcd85636922a39937bb71278"
-      ]
-    },
-    {
-      "id": "ent_027",
-      "type": "Indication",
-      "name": "inflammatory diseases",
-      "attributes": {
-        "context": "in other inflammatory diseases"
-      },
-      "source_chunk_ids": [
-        "d3f693fbbcd85636922a39937bb71278"
-      ]
-    },
-    {
-      "id": "ent_028",
-      "type": "Compound",
-      "name": "Mesembrine",
-      "attributes": {
-        "context": "Mesembrine MesembrenoneChemical structures of Mesembrine and Mesembrenone. Mesembrine is a tetracyclic alkaloid"
-      },
-      "source_chunk_ids": [
-        "9fca48de6871fca4993f73145ca4c364"
-      ]
-    },
-    {
-      "id": "ent_029",
-      "type": "Compound",
-      "name": "Mesembrenone",
-      "attributes": {
-        "context": "Mesembrine MesembrenoneChemical structures of Mesembrine and Mesembrenone. Mesembrenone is a similar structure"
-      },
-      "source_chunk_ids": [
-        "9fca48de6871fca4993f73145ca4c364"
-      ]
-    },
-    {
-      "id": "ent_030",
-      "type": "Compound",
-      "name": "tetracyclic alkaloid",
-      "attributes": {
-        "context": "Mesembrine is a tetracyclic alkaloid"
-      },
-      "source_chunk_ids": [
-        "9fca48de6871fca4993f73145ca4c364"
-      ]
-    },
-    {
-      "id": "ent_031",
-      "type": "Compound",
-      "name": "pyridine ring",
-      "attributes": {
-        "context": "with a pyridine ring substituted"
-      },
-      "source_chunk_ids": [
-        "9fca48de6871fca4993f73145ca4c364"
-      ]
-    },
-    {
-      "id": "ent_032",
-      "type": "Compound",
-      "name": "methoxy groups",
-      "attributes": {
-        "context": "two methoxy groups"
-      },
-      "source_chunk_ids": [
-        "9fca48de6871fca4993f73145ca4c364"
-      ]
-    },
-    {
-      "id": "ent_033",
-      "type": "Compound",
-      "name": "piperidine ring",
-      "attributes": {
-        "context": "and a piperidine ring. ... double bond in the piperidine ring"
-      },
-      "source_chunk_ids": [
-        "9fca48de6871fca4993f73145ca4c364"
-      ]
-    },
-    {
-      "id": "ent_034",
-      "type": "Compound",
-      "name": "mesembrine",
-      "attributes": {
-        "context": "Chemical structures of mesembrine"
-      },
-      "source_chunk_ids": [
-        "d16f75fe0df2ef18aaf05a7c48fe9dc3"
-      ]
-    },
-    {
-      "id": "ent_035",
-      "type": "Compound",
-      "name": "mesembrenone",
-      "attributes": {
-        "context": "mesembrine and mesembrenone"
-      },
-      "source_chunk_ids": [
-        "d16f75fe0df2ef18aaf05a7c48fe9dc3"
-      ]
-    },
-    {
-      "id": "ent_036",
-      "type": "Indication",
-      "name": "asthma",
-      "attributes": {
-        "context": "asthma owing"
-      },
-      "source_chunk_ids": [
-        "4c81c651abdb01cd9ef52eed3ebbf28b"
-      ]
-    },
-    {
-      "id": "ent_037",
-      "type": "PharmEffect",
-      "name": "inhibition",
-      "attributes": {
-        "context": "dual inhibition properties"
-      },
-      "source_chunk_ids": [
-        "4c81c651abdb01cd9ef52eed3ebbf28b"
-      ]
-    },
-    {
-      "id": "ent_038",
-      "type": "Compound",
-      "name": "5-HT",
-      "attributes": {
-        "context": "towards 5-HT"
-      },
-      "source_chunk_ids": [
-        "4c81c651abdb01cd9ef52eed3ebbf28b"
-      ]
-    },
-    {
-      "id": "ent_039",
-      "type": "Compound",
+      "id": "E17",
+      "type": "Target",
       "name": "PDE4",
       "attributes": {
-        "context": "and PDE4"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
-        "4c81c651abdb01cd9ef52eed3ebbf28b"
-      ]
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "confidence": 0.9,
+      "evidence": "Phosphodiesterase4 (PDE4) enzyme",
+      "verified": true
     },
     {
-      "id": "ent_040",
-      "type": "Taxon",
-      "name": "Scelietum",
-      "attributes": {
-        "context": "pharmacological activities of Scelietum extract"
-      },
-      "source_chunk_ids": [
-        "54f6509e4426a915d6dab747b6318b24"
-      ]
-    },
-    {
-      "id": "ent_041",
-      "type": "PharmEffect",
-      "name": "pharmacological activities",
-      "attributes": {
-        "context": "confirming the pharmacological activities of Scelietum extract"
-      },
-      "source_chunk_ids": [
-        "54f6509e4426a915d6dab747b6318b24"
-      ]
-    },
-    {
-      "id": "ent_042",
-      "type": "Compound",
-      "name": "mesembrine",
-      "attributes": {
-        "context": "active ingredients, mesembrine and mesembrenone"
-      },
-      "source_chunk_ids": [
-        "54f6509e4426a915d6dab747b6318b24"
-      ]
-    },
-    {
-      "id": "ent_043",
-      "type": "Compound",
-      "name": "mesembrenone",
-      "attributes": {
-        "context": "active ingredients, mesembrine and mesembrenone"
-      },
-      "source_chunk_ids": [
-        "54f6509e4426a915d6dab747b6318b24"
-      ]
-    },
-    {
-      "id": "ent_044",
-      "type": "Compound",
+      "id": "E18",
+      "type": "CompoundClass",
       "name": "alkaloids",
-      "attributes": {
-        "context": "pharmacologically active alkaloids of Scelietum"
-      },
+      "attributes": {},
       "source_chunk_ids": [
-        "54f6509e4426a915d6dab747b6318b24"
-      ]
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "confidence": 0.8,
+      "evidence": "alkaloids present in Kanna",
+      "verified": true
     },
     {
-      "id": "ent_045",
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d3f693fbbcd85636922a39937bb71278"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d3f693fbbcd85636922a39937bb71278"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d3f693fbbcd85636922a39937bb71278"
+      ],
+      "confidence": 0.9,
+      "evidence": "pharmacologically active alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "5-HT",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "d3f693fbbcd85636922a39937bb71278"
+      ],
+      "confidence": 0.85,
+      "evidence": "potent 5-HT inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "d3f693fbbcd85636922a39937bb71278"
+      ],
+      "confidence": 0.85,
+      "evidence": "inhibit PDE4",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "cytotoxic effect",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "d3f693fbbcd85636922a39937bb71278"
+      ],
+      "confidence": 0.8,
+      "evidence": "cytotoxic effect in cancer cells",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Harvey et al., 2011",
+      "attributes": {
+        "year": 2011
+      },
+      "source_chunk_ids": [
+        "d3f693fbbcd85636922a39937bb71278"
+      ],
+      "confidence": 0.8,
+      "evidence": "Harvey et al., 2011",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Gericke & Viljoen, 2008",
+      "attributes": {
+        "year": 2008
+      },
+      "source_chunk_ids": [
+        "d3f693fbbcd85636922a39937bb71278"
+      ],
+      "confidence": 0.8,
+      "evidence": "Gericke & Viljoen, 2008",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Weniger et al., 1995",
+      "attributes": {
+        "year": 1995
+      },
+      "source_chunk_ids": [
+        "d3f693fbbcd85636922a39937bb71278"
+      ],
+      "confidence": 0.8,
+      "evidence": "Weniger et al., 1995",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "d3f693fbbcd85636922a39937bb71278"
+      ],
+      "confidence": 0.7,
+      "evidence": "in cancer cells",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "Mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9fca48de6871fca4993f73145ca4c364"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "Mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9fca48de6871fca4993f73145ca4c364"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "alkaloid",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9fca48de6871fca4993f73145ca4c364"
+      ],
+      "confidence": 0.9,
+      "evidence": "tetracyclic alkaloid",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Taxon",
       "name": "Scelietum",
-      "attributes": {
-        "context": "active alkaloids of Scelietum"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "54f6509e4426a915d6dab747b6318b24"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Scelietum extract",
+      "verified": true
     },
     {
-      "id": "ent_046",
-      "type": "Concentration",
-      "name": "intravenous (i.v.) administration",
-      "attributes": {
-        "context": "after an intravenous (i.v.) and per oral (p.o.) administration"
-      },
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "Scelietum extract",
+      "attributes": {},
       "source_chunk_ids": [
         "54f6509e4426a915d6dab747b6318b24"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "Scelietum extract",
+      "verified": true
     },
     {
-      "id": "ent_047",
-      "type": "Concentration",
-      "name": "per oral (p.o.) administration",
-      "attributes": {
-        "context": "after an intravenous (i.v.) and per oral (p.o.) administration"
-      },
-      "source_chunk_ids": [
-        "54f6509e4426a915d6dab747b6318b24"
-      ]
-    },
-    {
-      "id": "ent_048",
-      "type": "Concentration",
-      "name": "combined dose",
-      "attributes": {
-        "context": "administration of a combined dose of mesembrenone and mesembrine"
-      },
-      "source_chunk_ids": [
-        "54f6509e4426a915d6dab747b6318b24"
-      ]
-    },
-    {
-      "id": "ent_049",
+      "id": "E3",
       "type": "Compound",
       "name": "mesembrine",
-      "attributes": {
-        "context": "Extraction and isolation of mesembrine"
-      },
+      "attributes": {},
       "source_chunk_ids": [
-        "9e7cf3774bef4e17d11e2832cc4792d5"
-      ]
+        "54f6509e4426a915d6dab747b6318b24"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
     },
     {
-      "id": "ent_050",
+      "id": "E4",
       "type": "Compound",
       "name": "mesembrenone",
-      "attributes": {
-        "context": "isolation of mesembrine and mesembrenone"
-      },
+      "attributes": {},
       "source_chunk_ids": [
-        "9e7cf3774bef4e17d11e2832cc4792d5"
-      ]
+        "54f6509e4426a915d6dab747b6318b24"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
     },
     {
-      "id": "ent_051",
-      "type": "Compound",
-      "name": "mesembrenone",
-      "attributes": {
-        "context": "stability of mesembrenone"
-      },
+      "id": "E5",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
       "source_chunk_ids": [
-        "644743a211350ae3834bb9a2090f0059"
-      ]
+        "54f6509e4426a915d6dab747b6318b24"
+      ],
+      "confidence": 0.8,
+      "evidence": "pharmacologically active alkaloids",
+      "verified": true
     },
     {
-      "id": "ent_052",
-      "type": "Compound",
-      "name": "mesembrine",
+      "id": "E6",
+      "type": "Study",
+      "name": "this study",
       "attributes": {
-        "context": "mesembrenone and mesembrine"
+        "design": "pharmacokinetic study"
       },
       "source_chunk_ids": [
-        "644743a211350ae3834bb9a2090f0059"
-      ]
+        "54f6509e4426a915d6dab747b6318b24"
+      ],
+      "confidence": 0.9,
+      "evidence": "this study is focused on two objectives",
+      "verified": true
     },
     {
-      "id": "ent_053",
-      "type": "Compound",
-      "name": "mesembrenone",
+      "id": "E7",
+      "type": "Evidence",
+      "name": "in vivo pharmacokinetic study",
       "attributes": {
-        "context": "combined dose (15 mg/kg each) of mesembrenone and mesembrine"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
-        "e239d3a1c19d36d7a1c5feaef988f353"
-      ]
+        "54f6509e4426a915d6dab747b6318b24"
+      ],
+      "confidence": 0.85,
+      "evidence": "pharmacokinetic study in mouse plasma",
+      "verified": true
     },
     {
-      "id": "ent_054",
-      "type": "Compound",
-      "name": "mesembrine",
+      "id": "E8",
+      "type": "Dosage",
+      "name": "combined dose of mesembrenone and mesembrine",
       "attributes": {
-        "context": "combined dose (15 mg/kg each) of mesembrenone and mesembrine"
+        "route": "intravenous and per oral"
       },
       "source_chunk_ids": [
-        "e239d3a1c19d36d7a1c5feaef988f353"
-      ]
+        "54f6509e4426a915d6dab747b6318b24"
+      ],
+      "confidence": 0.75,
+      "evidence": "combined dose of mesembrenone and mesembrine",
+      "verified": true
     },
     {
-      "id": "ent_055",
-      "type": "Concentration",
-      "name": "15 mg/kg each",
-      "attributes": {
-        "context": "administered a combined dose (15 mg/kg each) of mesembrenone and mesembrine"
-      },
-      "source_chunk_ids": [
-        "e239d3a1c19d36d7a1c5feaef988f353"
-      ]
-    },
-    {
-      "id": "ent_056",
+      "id": "E1",
       "type": "Taxon",
-      "name": "S. tourtuosum",
+      "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "administered an enriched S. tourtuosum extract"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "e239d3a1c19d36d7a1c5feaef988f353"
-      ]
+        "e7dfc04a26fb050fe1edbe54c03718d6"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
     },
     {
-      "id": "ent_057",
-      "type": "Concentration",
-      "name": "75 mg/kg each",
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "aerial parts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e7dfc04a26fb050fe1edbe54c03718d6"
+      ],
+      "confidence": 0.9,
+      "evidence": "dried aerial parts",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "dried aerial parts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e7dfc04a26fb050fe1edbe54c03718d6"
+      ],
+      "confidence": 0.85,
+      "evidence": "dried aerial parts",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "equivalent to a dose of 75 mg/kg each of mesembrine and mesembrenone"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "e239d3a1c19d36d7a1c5feaef988f353"
-      ]
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
     },
     {
-      "id": "ent_058",
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "plant material",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "confidence": 0.9,
+      "evidence": "plant material of S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "dried powder",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "confidence": 0.85,
+      "evidence": "dried powder of plant material",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Preparation",
+      "name": "extraction with methanol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "confidence": 0.8,
+      "evidence": "extracted at room temperature with methanol",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "CHCl3 extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "confidence": 0.85,
+      "evidence": "CHCl3 extract (23.6 g)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Preparation",
+      "name": "SiO2 column chromatography",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "confidence": 0.8,
+      "evidence": "subjected to SiO2 column chromatography",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "RawMaterial",
+      "name": "Fr. C3",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "confidence": 0.8,
+      "evidence": "Fr. C3 (3.61 g)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Preparation",
+      "name": "silver-nitrate-impregnated SiO2 CC",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "confidence": 0.75,
+      "evidence": "silver-nitrate-impregnated SiO2 CC",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "RawMaterial",
+      "name": "combined Fr. C3-4,5",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "confidence": 0.75,
+      "evidence": "combined Fr. C3-4, 5 (1.6 g)",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Preparation",
+      "name": "octadecylsilyl column purification",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "confidence": 0.75,
+      "evidence": "purification using a octadecylsilyl column",
+      "verified": true
+    },
+    {
+      "id": "E11",
       "type": "Compound",
       "name": "mesembrine",
-      "attributes": {
-        "context": "75 mg/kg each of mesembrine and mesembrenone"
-      },
+      "attributes": {},
       "source_chunk_ids": [
-        "e239d3a1c19d36d7a1c5feaef988f353"
-      ]
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrine (1.4 g)",
+      "verified": true
     },
     {
-      "id": "ent_059",
+      "id": "E12",
       "type": "Compound",
       "name": "mesembrenone",
-      "attributes": {
-        "context": "75 mg/kg each of mesembrine and mesembrenone"
-      },
+      "attributes": {},
       "source_chunk_ids": [
-        "e239d3a1c19d36d7a1c5feaef988f353"
-      ]
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone (240 mg)",
+      "verified": true
     },
     {
-      "id": "ent_060",
-      "type": "Concentration",
-      "name": "0.2 mL",
+      "id": "E13",
+      "type": "Study",
+      "name": "Bastida et al., 1989; Patnala & Kanfer, 2010",
       "attributes": {
-        "context": "dissolved in 0.2 mL of Dimethyl sulfoxide:Phosphate-buffered saline"
+        "year": "1989, 2010"
       },
       "source_chunk_ids": [
-        "e239d3a1c19d36d7a1c5feaef988f353"
-      ]
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "confidence": 0.8,
+      "evidence": "Bastida et al., 1989; Patnala & Kanfer, 2010",
+      "verified": true
     },
     {
-      "id": "ent_061",
-      "type": "Compound",
-      "name": "Dimethyl sulfoxide",
+      "id": "E14",
+      "type": "Evidence",
+      "name": "spectroscopic analysis",
       "attributes": {
-        "context": "0.2 mL of Dimethyl sulfoxide:Phosphate-buffered saline"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
-        "e239d3a1c19d36d7a1c5feaef988f353"
-      ]
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "confidence": 0.7,
+      "evidence": "analysis of the spectroscopic data",
+      "verified": true
     },
     {
-      "id": "ent_062",
-      "type": "Compound",
-      "name": "Phosphate-buffered saline",
+      "id": "E1",
+      "type": "Evidence",
+      "name": "in vitro",
       "attributes": {
-        "context": "Dimethyl sulfoxide:Phosphate-buffered saline (DMSO:PBS)"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
-        "e239d3a1c19d36d7a1c5feaef988f353"
-      ]
+        "b6f29a3dfb0ebc4c1bbc4a0bc0deb462"
+      ],
+      "confidence": 0.9,
+      "evidence": "mass spectrometric analysis",
+      "verified": true
     },
     {
-      "id": "ent_063",
-      "type": "Compound",
-      "name": "DMSO",
+      "id": "E2",
+      "type": "Study",
+      "name": "LC-MS analysis",
       "attributes": {
-        "context": "Dimethyl sulfoxide:Phosphate-buffered saline (DMSO:PBS)"
+        "design": "liquid chromatography-mass spectrometry"
       },
       "source_chunk_ids": [
-        "e239d3a1c19d36d7a1c5feaef988f353"
-      ]
+        "b6f29a3dfb0ebc4c1bbc4a0bc0deb462"
+      ],
+      "confidence": 0.85,
+      "evidence": "liquid chromatographic system",
+      "verified": true
     },
     {
-      "id": "ent_064",
-      "type": "Compound",
-      "name": "PBS",
-      "attributes": {
-        "context": "Dimethyl sulfoxide:Phosphate-buffered saline (DMSO:PBS)"
-      },
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "sample",
+      "attributes": {},
       "source_chunk_ids": [
-        "e239d3a1c19d36d7a1c5feaef988f353"
-      ]
+        "b6f29a3dfb0ebc4c1bbc4a0bc0deb462"
+      ],
+      "confidence": 0.7,
+      "evidence": "Two microliters of sample were injected",
+      "verified": true
     },
     {
-      "id": "ent_065",
-      "type": "Compound",
-      "name": "Sodium heparin",
-      "attributes": {
-        "context": "Sodium heparin (5 Units/mL) was used as an anticoagulant"
-      },
-      "source_chunk_ids": [
-        "e239d3a1c19d36d7a1c5feaef988f353"
-      ]
-    },
-    {
-      "id": "ent_066",
-      "type": "Concentration",
-      "name": "5 Units/mL",
-      "attributes": {
-        "context": "Sodium heparin (5 Units/mL) was used as an anticoagulant"
-      },
-      "source_chunk_ids": [
-        "e239d3a1c19d36d7a1c5feaef988f353"
-      ]
-    },
-    {
-      "id": "ent_067",
-      "type": "Compound",
-      "name": "Mesembrenone",
-      "attributes": {
-        "context": "plasma concentration (ng/mL) of Mesembrenone"
-      },
-      "source_chunk_ids": [
-        "0121c787ab687cf41477a7a75683f07a"
-      ]
-    },
-    {
-      "id": "ent_068",
-      "type": "Compound",
-      "name": "Mesembrine",
-      "attributes": {
-        "context": "Mesembrenone (solid line with circles) and Mesembrine"
-      },
-      "source_chunk_ids": [
-        "0121c787ab687cf41477a7a75683f07a"
-      ]
-    },
-    {
-      "id": "ent_069",
-      "type": "Compound",
-      "name": "Mesembrenone",
-      "attributes": {
-        "context": "Mesembrenone starts at approximately 400 ng/mL"
-      },
-      "source_chunk_ids": [
-        "0121c787ab687cf41477a7a75683f07a"
-      ]
-    },
-    {
-      "id": "ent_070",
-      "type": "Compound",
-      "name": "Mesembrine",
-      "attributes": {
-        "context": "Mesembrine starts at approximately 350 ng/mL"
-      },
-      "source_chunk_ids": [
-        "0121c787ab687cf41477a7a75683f07a"
-      ]
-    },
-    {
-      "id": "ent_071",
+      "id": "E1",
       "type": "Compound",
       "name": "mesembrenone",
-      "attributes": {
-        "context": "profile of mesembrenone and mesembrine"
-      },
+      "attributes": {},
       "source_chunk_ids": [
-        "0121c787ab687cf41477a7a75683f07a"
-      ]
+        "0d83ffacd1d6f7899d697624b9a17aae"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
     },
     {
-      "id": "ent_072",
+      "id": "E2",
       "type": "Compound",
       "name": "mesembrine",
-      "attributes": {
-        "context": "profile of mesembrenone and mesembrine"
-      },
+      "attributes": {},
       "source_chunk_ids": [
-        "0121c787ab687cf41477a7a75683f07a"
-      ]
+        "0d83ffacd1d6f7899d697624b9a17aae"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
     },
     {
-      "id": "ent_073",
-      "type": "Concentration",
-      "name": "15 mg/kg",
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "stock solution",
       "attributes": {
-        "context": "administration (15 mg/kg)"
+        "concentration": "2 mg/mL"
       },
       "source_chunk_ids": [
-        "0121c787ab687cf41477a7a75683f07a"
-      ]
+        "0d83ffacd1d6f7899d697624b9a17aae"
+      ],
+      "confidence": 0.8,
+      "evidence": "Stock solutions (2 mg/mL)",
+      "verified": true
     },
     {
-      "id": "ent_074",
-      "type": "Compound",
-      "name": "Mesembrenone",
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "combined stock solution",
       "attributes": {
-        "context": "Mesembrenone (intra-day)"
+        "concentration": "1 mg/mL"
       },
       "source_chunk_ids": [
-        "4ad667039a4ba669c43a9573192add48"
-      ]
+        "0d83ffacd1d6f7899d697624b9a17aae"
+      ],
+      "confidence": 0.8,
+      "evidence": "combined stock solution of 1 mg/mL",
+      "verified": true
     },
     {
-      "id": "ent_075",
-      "type": "Concentration",
-      "name": "10 ng/mL",
-      "attributes": {
-        "context": "Mesembrenone (intra-day) Low (10 ng/mL)"
-      },
-      "source_chunk_ids": [
-        "4ad667039a4ba669c43a9573192add48"
-      ]
-    },
-    {
-      "id": "ent_076",
-      "type": "Concentration",
-      "name": "250 ng/mL",
-      "attributes": {
-        "context": "Mesembrenone (intra-day) Medium (250 ng/mL)"
-      },
-      "source_chunk_ids": [
-        "4ad667039a4ba669c43a9573192add48"
-      ]
-    },
-    {
-      "id": "ent_077",
-      "type": "Concentration",
-      "name": "1000 ng/mL",
-      "attributes": {
-        "context": "Mesembrenone (intra-day) High (1000 ng/mL)"
-      },
-      "source_chunk_ids": [
-        "4ad667039a4ba669c43a9573192add48"
-      ]
-    },
-    {
-      "id": "ent_078",
-      "type": "Compound",
-      "name": "Mesembrine",
-      "attributes": {
-        "context": "Mesembrine (intra-day)"
-      },
-      "source_chunk_ids": [
-        "4ad667039a4ba669c43a9573192add48"
-      ]
-    },
-    {
-      "id": "ent_079",
-      "type": "Concentration",
-      "name": "10 ng/mL",
-      "attributes": {
-        "context": "Mesembrine (intra-day) Low (10 ng/mL)"
-      },
-      "source_chunk_ids": [
-        "4ad667039a4ba669c43a9573192add48"
-      ]
-    },
-    {
-      "id": "ent_080",
-      "type": "Concentration",
-      "name": "250 ng/mL",
-      "attributes": {
-        "context": "Mesembrine (intra-day) Medium (250 ng/mL)"
-      },
-      "source_chunk_ids": [
-        "4ad667039a4ba669c43a9573192add48"
-      ]
-    },
-    {
-      "id": "ent_081",
-      "type": "Concentration",
-      "name": "1000 ng/mL",
-      "attributes": {
-        "context": "Mesembrine (intra-day) High (1000 ng/mL)"
-      },
-      "source_chunk_ids": [
-        "4ad667039a4ba669c43a9573192add48"
-      ]
-    },
-    {
-      "id": "ent_082",
-      "type": "Compound",
-      "name": "Mesembrenone",
-      "attributes": {
-        "context": "Mesembrenone (inter-day)"
-      },
-      "source_chunk_ids": [
-        "4ad667039a4ba669c43a9573192add48"
-      ]
-    },
-    {
-      "id": "ent_083",
-      "type": "Concentration",
-      "name": "10 ng/mL",
-      "attributes": {
-        "context": "Mesembrenone (inter-day) Low (10 ng/mL)"
-      },
-      "source_chunk_ids": [
-        "4ad667039a4ba669c43a9573192add48"
-      ]
-    },
-    {
-      "id": "ent_084",
-      "type": "Concentration",
-      "name": "250 ng/mL",
-      "attributes": {
-        "context": "Mesembrenone (inter-day) Medium (250 ng/mL)"
-      },
-      "source_chunk_ids": [
-        "4ad667039a4ba669c43a9573192add48"
-      ]
-    },
-    {
-      "id": "ent_085",
-      "type": "Concentration",
-      "name": "1000 ng/mL",
-      "attributes": {
-        "context": "Mesembrenone (inter-day) High (1000 ng/mL)"
-      },
-      "source_chunk_ids": [
-        "4ad667039a4ba669c43a9573192add48"
-      ]
-    },
-    {
-      "id": "ent_086",
-      "type": "Compound",
-      "name": "Mesembrine",
-      "attributes": {
-        "context": "Mesembrine (inter-day)"
-      },
-      "source_chunk_ids": [
-        "4ad667039a4ba669c43a9573192add48"
-      ]
-    },
-    {
-      "id": "ent_087",
-      "type": "Concentration",
-      "name": "10 ng/mL",
-      "attributes": {
-        "context": "Mesembrine (inter-day) Low (10 ng/mL)"
-      },
-      "source_chunk_ids": [
-        "4ad667039a4ba669c43a9573192add48"
-      ]
-    },
-    {
-      "id": "ent_088",
-      "type": "Concentration",
-      "name": "250 ng/mL",
-      "attributes": {
-        "context": "Mesembrine (inter-day) Medium (250 ng/mL)"
-      },
-      "source_chunk_ids": [
-        "4ad667039a4ba669c43a9573192add48"
-      ]
-    },
-    {
-      "id": "ent_089",
-      "type": "Concentration",
-      "name": "1000 ng/mL",
-      "attributes": {
-        "context": "Mesembrine (inter-day) High (1000 ng/mL)"
-      },
-      "source_chunk_ids": [
-        "4ad667039a4ba669c43a9573192add48"
-      ]
-    },
-    {
-      "id": "ent_090",
-      "type": "Compound",
-      "name": "mesembrenone",
-      "attributes": {
-        "context": "spiked (A) with mesembrenone"
-      },
-      "source_chunk_ids": [
-        "768b827738078c90946b7e9184466352"
-      ]
-    },
-    {
-      "id": "ent_091",
-      "type": "Compound",
-      "name": "mesembrine",
-      "attributes": {
-        "context": "mesembrenone and mesembrine (100 ng/mL)"
-      },
-      "source_chunk_ids": [
-        "768b827738078c90946b7e9184466352"
-      ]
-    },
-    {
-      "id": "ent_092",
+      "id": "E5",
       "type": "Compound",
       "name": "quinine",
-      "attributes": {
-        "context": "and quinine (250 ng/mL)"
-      },
+      "attributes": {},
       "source_chunk_ids": [
-        "768b827738078c90946b7e9184466352"
-      ]
+        "0d83ffacd1d6f7899d697624b9a17aae"
+      ],
+      "confidence": 0.9,
+      "evidence": "Quinine was used as an internal standard",
+      "verified": true
     },
     {
-      "id": "ent_093",
-      "type": "Concentration",
-      "name": "100 ng/mL",
+      "id": "E6",
+      "type": "RawMaterial",
+      "name": "calibration standards",
       "attributes": {
-        "context": "mesembrine (100 ng/mL)"
+        "range": "10\u20131000 ng/mL"
       },
       "source_chunk_ids": [
-        "768b827738078c90946b7e9184466352"
-      ]
+        "0d83ffacd1d6f7899d697624b9a17aae"
+      ],
+      "confidence": 0.85,
+      "evidence": "Calibration standards were prepared",
+      "verified": true
     },
     {
-      "id": "ent_094",
-      "type": "Concentration",
-      "name": "250 ng/mL",
+      "id": "E7",
+      "type": "RawMaterial",
+      "name": "quality control plasma samples",
       "attributes": {
-        "context": "quinine (250 ng/mL)"
+        "concentrations": "10, 250 and 1000 ng/mL"
       },
       "source_chunk_ids": [
-        "768b827738078c90946b7e9184466352"
-      ]
+        "0d83ffacd1d6f7899d697624b9a17aae"
+      ],
+      "confidence": 0.85,
+      "evidence": "quality control (QC) plasma samples",
+      "verified": true
     },
     {
-      "id": "ent_095",
-      "type": "Concentration",
-      "name": "15 mg/kg",
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "774c53af8097d9ac3346d0584527e3db"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "774c53af8097d9ac3346d0584527e3db"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "QC sample analysis",
       "attributes": {
-        "context": "dose of 15 mg/kg mesembrenone and mesembrine"
+        "design": "quality control analysis"
       },
       "source_chunk_ids": [
-        "768b827738078c90946b7e9184466352"
-      ]
+        "774c53af8097d9ac3346d0584527e3db"
+      ],
+      "confidence": 0.8,
+      "evidence": "QC samples at low, medium and high concentrations",
+      "verified": true
     },
     {
-      "id": "ent_096",
+      "id": "E4",
+      "type": "Evidence",
+      "name": "in vitro analytical validation",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "774c53af8097d9ac3346d0584527e3db"
+      ],
+      "confidence": 0.75,
+      "evidence": "accuracy and precision were quantified",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "573c5db1c62ef76f405386e68c23514c"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "573c5db1c62ef76f405386e68c23514c"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "analytical method validation study",
+      "attributes": {
+        "design": "analytical method validation"
+      },
+      "source_chunk_ids": [
+        "573c5db1c62ef76f405386e68c23514c"
+      ],
+      "confidence": 0.8,
+      "evidence": "extraction recovery quantified",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "in vitro analytical",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "573c5db1c62ef76f405386e68c23514c"
+      ],
+      "confidence": 0.75,
+      "evidence": "plasma samples spiked",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "226ebe96440bbca865eaf3e9263cf221"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "226ebe96440bbca865eaf3e9263cf221"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "stability study in mouse plasma",
+      "attributes": {
+        "design": "stability study",
+        "sample_size": "at least three replicates",
+        "duration": "7 days"
+      },
+      "source_chunk_ids": [
+        "226ebe96440bbca865eaf3e9263cf221"
+      ],
+      "confidence": 0.85,
+      "evidence": "stability of mesembrenone and mesembrine in mouse plasma",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "226ebe96440bbca865eaf3e9263cf221"
+      ],
+      "confidence": 0.8,
+      "evidence": "analyzed at days 0 and 7",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "644743a211350ae3834bb9a2090f0059"
+      ],
+      "confidence": 0.9,
+      "evidence": "autosampler stability of mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "644743a211350ae3834bb9a2090f0059"
+      ],
+      "confidence": 0.9,
+      "evidence": "autosampler stability of mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "pharmacokinetic study in CD-1 mice",
+      "attributes": {
+        "design": "pharmacokinetic study",
+        "sample_species": "CD-1 mice"
+      },
+      "source_chunk_ids": [
+        "e239d3a1c19d36d7a1c5feaef988f353"
+      ],
+      "confidence": 0.9,
+      "evidence": "pharmacokinetic study",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vivo pharmacokinetic",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "e239d3a1c19d36d7a1c5feaef988f353"
+      ],
+      "confidence": 0.85,
+      "evidence": "pharmacokinetic study in mice",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e239d3a1c19d36d7a1c5feaef988f353"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e239d3a1c19d36d7a1c5feaef988f353"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "enriched S. tortuosum extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e239d3a1c19d36d7a1c5feaef988f353"
+      ],
+      "confidence": 0.9,
+      "evidence": "enriched S. tortuosum extract",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Dosage",
+      "name": "15 mg/kg each i.v. bolus",
+      "attributes": {
+        "amount": 15,
+        "unit": "mg/kg",
+        "route": "intravenous",
+        "frequency": "single dose"
+      },
+      "source_chunk_ids": [
+        "e239d3a1c19d36d7a1c5feaef988f353"
+      ],
+      "confidence": 0.85,
+      "evidence": "15 mg/kg each by i.v. bolus injection",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Dosage",
+      "name": "75 mg/kg each oral",
+      "attributes": {
+        "amount": 75,
+        "unit": "mg/kg",
+        "route": "oral",
+        "frequency": "single dose"
+      },
+      "source_chunk_ids": [
+        "e239d3a1c19d36d7a1c5feaef988f353"
+      ],
+      "confidence": 0.85,
+      "evidence": "75 mg/kg each by oral gavage",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E3",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "oral administration of the enriched S. tourtuosum extract"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "507cd04203e54d46361817b752cb8dc7"
-      ]
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tourtuosum",
+      "verified": true
     },
     {
-      "id": "ent_097",
-      "type": "Compound",
-      "name": "mesembrine",
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "confidence": 0.85,
+      "evidence": "pharmacologically active alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Patnala & Kanfer, 2009, 2010",
       "attributes": {
-        "context": "both mesembrine and mesembrenone (75 mg/kg)"
+        "year": "2009, 2010"
       },
       "source_chunk_ids": [
-        "507cd04203e54d46361817b752cb8dc7"
-      ]
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "confidence": 0.8,
+      "evidence": "Patnala & Kanfer, 2009, 2010",
+      "verified": true
     },
     {
-      "id": "ent_098",
+      "id": "E6",
+      "type": "Evidence",
+      "name": "literature reports",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "confidence": 0.75,
+      "evidence": "reported methods in the literature",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "current study",
+      "attributes": {
+        "design": "method development and pharmacokinetic study"
+      },
+      "source_chunk_ids": [
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "confidence": 0.85,
+      "evidence": "In this study we have developed a validated method",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "in vitro method validation",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "confidence": 0.8,
+      "evidence": "validated method for quantification",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "RawMaterial",
+      "name": "mouse plasma",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "confidence": 0.9,
+      "evidence": "mouse plasma",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Compound",
+      "name": "quinine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "confidence": 0.9,
+      "evidence": "quinine",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Compound",
       "name": "mesembrenone",
-      "attributes": {
-        "context": "both mesembrine and mesembrenone (75 mg/kg)"
-      },
+      "attributes": {},
       "source_chunk_ids": [
-        "507cd04203e54d46361817b752cb8dc7"
-      ]
+        "930c36888cb3004abec352f9897feaa2"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrenone",
+      "verified": true
     },
     {
-      "id": "ent_099",
-      "type": "Concentration",
-      "name": "75 mg/kg",
-      "attributes": {
-        "context": "mesembrenone (75 mg/kg)"
-      },
-      "source_chunk_ids": [
-        "507cd04203e54d46361817b752cb8dc7"
-      ]
-    },
-    {
-      "id": "ent_100",
+      "id": "E2",
       "type": "Compound",
-      "name": "alkaloids",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "930c36888cb3004abec352f9897feaa2"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "quinine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "930c36888cb3004abec352f9897feaa2"
+      ],
+      "confidence": 0.95,
+      "evidence": "Quinine",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "mouse T15 min sample study",
       "attributes": {
-        "context": "these alkaloids have very low oral bioavailability"
+        "design": "in vivo pharmacokinetic study",
+        "sample_type": "mouse plasma"
+      },
+      "source_chunk_ids": [
+        "930c36888cb3004abec352f9897feaa2"
+      ],
+      "confidence": 0.8,
+      "evidence": "mouse T15 min sample after i.v. administration",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vivo pharmacokinetic evidence",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "930c36888cb3004abec352f9897feaa2"
+      ],
+      "confidence": 0.75,
+      "evidence": "mouse T15 min plasma sample",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "RawMaterial",
+      "name": "standard plasma sample",
+      "attributes": {
+        "material_type": "spiked plasma"
+      },
+      "source_chunk_ids": [
+        "930c36888cb3004abec352f9897feaa2"
+      ],
+      "confidence": 0.7,
+      "evidence": "Standard plasma sample spiked",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d16dcbfbf7cc49eff7f1f56a5de96b2f"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d16dcbfbf7cc49eff7f1f56a5de96b2f"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "quinine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d16dcbfbf7cc49eff7f1f56a5de96b2f"
+      ],
+      "confidence": 0.9,
+      "evidence": "quinine (IS)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "mouse pharmacokinetic study",
+      "attributes": {
+        "design": "pharmacokinetic study",
+        "species": "mouse",
+        "route": "intravenous"
+      },
+      "source_chunk_ids": [
+        "d16dcbfbf7cc49eff7f1f56a5de96b2f"
+      ],
+      "confidence": 0.8,
+      "evidence": "i.v. administration of mesembrenone and mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vivo pharmacokinetic evidence",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "d16dcbfbf7cc49eff7f1f56a5de96b2f"
+      ],
+      "confidence": 0.75,
+      "evidence": "plasma sample after i.v. administration",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3d292ea50514146ec7564e33ace58138"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3d292ea50514146ec7564e33ace58138"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "analytical method validation study",
+      "attributes": {
+        "design": "analytical method validation"
+      },
+      "source_chunk_ids": [
+        "3d292ea50514146ec7564e33ace58138"
+      ],
+      "confidence": 0.8,
+      "evidence": "standard curve was constructed",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "in vitro analytical",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "3d292ea50514146ec7564e33ace58138"
+      ],
+      "confidence": 0.75,
+      "evidence": "plasma spiked with a mixture",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "mouse plasma",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3d292ea50514146ec7564e33ace58138"
+      ],
+      "confidence": 0.85,
+      "evidence": "mouse plasma",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0121c787ab687cf41477a7a75683f07a"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrenone (solid line with circles)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0121c787ab687cf41477a7a75683f07a"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrine (solid line with squares)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "mouse pharmacokinetic study",
+      "attributes": {
+        "species": "mouse",
+        "route": "i.v."
+      },
+      "source_chunk_ids": [
+        "0121c787ab687cf41477a7a75683f07a"
+      ],
+      "confidence": 0.85,
+      "evidence": "Plasma concentration and time profile in mouse after i.v. administration",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "in vivo pharmacokinetic",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "0121c787ab687cf41477a7a75683f07a"
+      ],
+      "confidence": 0.8,
+      "evidence": "plasma concentration in mouse after i.v. administration",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Dosage",
+      "name": "15 mg/kg i.v.",
+      "attributes": {
+        "amount": 15,
+        "unit": "mg/kg",
+        "route": "i.v."
+      },
+      "source_chunk_ids": [
+        "0121c787ab687cf41477a7a75683f07a"
+      ],
+      "confidence": 0.9,
+      "evidence": "15 mg/kg i.v. administration",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "05fb57905718a177ed89109daaad8c43"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "05fb57905718a177ed89109daaad8c43"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "mouse plasma analysis study",
+      "attributes": {
+        "design": "analytical validation",
+        "sample_type": "mouse plasma"
+      },
+      "source_chunk_ids": [
+        "05fb57905718a177ed89109daaad8c43"
+      ],
+      "confidence": 0.8,
+      "evidence": "analysis of mesembrenone and mesembrine in mouse plasma",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "in vivo analytical",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "05fb57905718a177ed89109daaad8c43"
+      ],
+      "confidence": 0.75,
+      "evidence": "analysis in mouse plasma",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4ad667039a4ba669c43a9573192add48"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4ad667039a4ba669c43a9573192add48"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1101de97103cf30fd9f5163e314ffd6c"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1101de97103cf30fd9f5163e314ffd6c"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "plasma",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1101de97103cf30fd9f5163e314ffd6c"
+      ],
+      "confidence": 0.9,
+      "evidence": "plasma",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Preparation",
+      "name": "extraction",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1101de97103cf30fd9f5163e314ffd6c"
+      ],
+      "confidence": 0.85,
+      "evidence": "extraction",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Van Eckhaut et al., 2009",
+      "attributes": {
+        "year": 2009
+      },
+      "source_chunk_ids": [
+        "1101de97103cf30fd9f5163e314ffd6c"
+      ],
+      "confidence": 0.8,
+      "evidence": "Van Eckhaut et al., 2009",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "1101de97103cf30fd9f5163e314ffd6c"
+      ],
+      "confidence": 0.75,
+      "evidence": "in vitro",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a67ba000181cefa027873bc707cf6c92"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a67ba000181cefa027873bc707cf6c92"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "stability study",
+      "attributes": {
+        "design": "stability evaluation"
+      },
+      "source_chunk_ids": [
+        "a67ba000181cefa027873bc707cf6c92"
+      ],
+      "confidence": 0.8,
+      "evidence": "stability of mesembrenone and mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "in vitro stability",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "a67ba000181cefa027873bc707cf6c92"
+      ],
+      "confidence": 0.75,
+      "evidence": "stability in QC plasma samples",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "pharmacokinetic study of mesembrenone and mesembrine",
+      "attributes": {
+        "design": "pharmacokinetic study",
+        "route": "intravenous"
+      },
+      "source_chunk_ids": [
+        "2e3599575fa029bcb4a9f88a5f936bea"
+      ],
+      "confidence": 0.9,
+      "evidence": "pharmacokinetic parameters of mesembrenone and mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vivo pharmacokinetic study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "2e3599575fa029bcb4a9f88a5f936bea"
+      ],
+      "confidence": 0.85,
+      "evidence": "pharmacokinetic parameters after i.v. administration",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2e3599575fa029bcb4a9f88a5f936bea"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2e3599575fa029bcb4a9f88a5f936bea"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Dosage",
+      "name": "15 mg/kg i.v.",
+      "attributes": {
+        "amount": 15,
+        "unit": "mg/kg",
+        "route": "intravenous"
+      },
+      "source_chunk_ids": [
+        "2e3599575fa029bcb4a9f88a5f936bea"
+      ],
+      "confidence": 0.9,
+      "evidence": "i.v. administration (15 mg/kg)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "elimination half-life",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "2e3599575fa029bcb4a9f88a5f936bea"
+      ],
+      "confidence": 0.8,
+      "evidence": "elimination half-life (T_{1/2})",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "clearance",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "2e3599575fa029bcb4a9f88a5f936bea"
+      ],
+      "confidence": 0.8,
+      "evidence": "clearance (CL)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "51804cf87da35054c62df0d720b86230"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "51804cf87da35054c62df0d720b86230"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a33c1a9d80112d0d7e60738ff3a1307d"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a33c1a9d80112d0d7e60738ff3a1307d"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3e5892504d4fb43e65cfd4368cf38250"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3e5892504d4fb43e65cfd4368cf38250"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "mouse pharmacokinetic study",
+      "attributes": {
+        "species": "mouse",
+        "dose": "15 mg/kg",
+        "route": "intravenous",
+        "analysis_software": "Phoenix-WinNonlin version 6.3"
+      },
+      "source_chunk_ids": [
+        "3e5892504d4fb43e65cfd4368cf38250"
+      ],
+      "confidence": 0.85,
+      "evidence": "mouse plasma after an intravenous dose of 15 mg/kg",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "in vivo pharmacokinetic",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "3e5892504d4fb43e65cfd4368cf38250"
+      ],
+      "confidence": 0.8,
+      "evidence": "Pharmacokinetic parameters in mouse plasma",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Dosage",
+      "name": "15 mg/kg intravenous",
+      "attributes": {
+        "amount": 15,
+        "unit": "mg/kg",
+        "route": "intravenous"
+      },
+      "source_chunk_ids": [
+        "3e5892504d4fb43e65cfd4368cf38250"
+      ],
+      "confidence": 0.9,
+      "evidence": "intravenous dose of 15 mg/kg",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6e3cdeb235c76d2bc7e255b3fc17a86c"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6e3cdeb235c76d2bc7e255b3fc17a86c"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "pharmacokinetic study",
+      "attributes": {
+        "design": "pharmacokinetic parameters"
+      },
+      "source_chunk_ids": [
+        "6e3cdeb235c76d2bc7e255b3fc17a86c"
+      ],
+      "confidence": 0.8,
+      "evidence": "Pharmacokinetic parameters",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "in vivo",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "6e3cdeb235c76d2bc7e255b3fc17a86c"
+      ],
+      "confidence": 0.7,
+      "evidence": "pharmacokinetic parameters",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "768b827738078c90946b7e9184466352"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "768b827738078c90946b7e9184466352"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "quinine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "768b827738078c90946b7e9184466352"
+      ],
+      "confidence": 0.9,
+      "evidence": "quinine",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "mouse pharmacokinetic study",
+      "attributes": {
+        "design": "pharmacokinetic study",
+        "species": "mouse"
+      },
+      "source_chunk_ids": [
+        "768b827738078c90946b7e9184466352"
+      ],
+      "confidence": 0.8,
+      "evidence": "mouse plasma after extraction",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vivo",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "768b827738078c90946b7e9184466352"
+      ],
+      "confidence": 0.75,
+      "evidence": "mouse plasma after extraction",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Dosage",
+      "name": "15 mg/kg i.v.",
+      "attributes": {
+        "amount": 15,
+        "unit": "mg/kg",
+        "route": "intravenous"
+      },
+      "source_chunk_ids": [
+        "768b827738078c90946b7e9184466352"
+      ],
+      "confidence": 0.85,
+      "evidence": "i.v. administration of a dose of 15 mg/kg",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bbb1b89fc83c6227cccf2de1a207d763"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bbb1b89fc83c6227cccf2de1a207d763"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "quinine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bbb1b89fc83c6227cccf2de1a207d763"
+      ],
+      "confidence": 0.9,
+      "evidence": "quinine",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "mouse plasma study",
+      "attributes": {
+        "species": "mouse",
+        "sample_type": "plasma"
+      },
+      "source_chunk_ids": [
+        "bbb1b89fc83c6227cccf2de1a207d763"
+      ],
+      "confidence": 0.8,
+      "evidence": "mouse plasma after extraction",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Dosage",
+      "name": "15 mg/kg i.v.",
+      "attributes": {
+        "amount": 15,
+        "unit": "mg/kg",
+        "route": "intravenous"
+      },
+      "source_chunk_ids": [
+        "bbb1b89fc83c6227cccf2de1a207d763"
+      ],
+      "confidence": 0.85,
+      "evidence": "i.v. administration of a dose of 15 mg/kg",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6280318b45422c0629fe43cbf22ffd92"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone (0.08 \u00b1 0.01 h)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6280318b45422c0629fe43cbf22ffd92"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine (0.09 \u00b1 0.02 h)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "rapid distribution to tissues",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "6280318b45422c0629fe43cbf22ffd92"
+      ],
+      "confidence": 0.8,
+      "evidence": "rapidly distributed to other tissues",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "pharmacokinetic study in mice",
+      "attributes": {
+        "design": "pharmacokinetic",
+        "species": "mice",
+        "route": "i.v."
+      },
+      "source_chunk_ids": [
+        "6280318b45422c0629fe43cbf22ffd92"
+      ],
+      "confidence": 0.85,
+      "evidence": "plasma collected from mice after i.v. administration",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vivo animal study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "6280318b45422c0629fe43cbf22ffd92"
+      ],
+      "confidence": 0.8,
+      "evidence": "plasma collected from mice",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "RawMaterial",
+      "name": "enriched S. tortuosum extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "507cd04203e54d46361817b752cb8dc7"
+      ],
+      "confidence": 0.9,
+      "evidence": "enriched S. tortuosum extract",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "507cd04203e54d46361817b752cb8dc7"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "507cd04203e54d46361817b752cb8dc7"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Dosage",
+      "name": "75 mg/kg oral administration",
+      "attributes": {
+        "amount": 75,
+        "unit": "mg/kg",
+        "route": "oral"
       },
       "source_chunk_ids": [
         "507cd04203e54d46361817b752cb8dc7"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "75 mg/kg oral administration",
+      "verified": true
     },
     {
-      "id": "ent_101",
-      "type": "PharmEffect",
+      "id": "E5",
+      "type": "Effect",
       "name": "low oral bioavailability",
       "attributes": {
-        "context": "very low oral bioavailability"
+        "level": "systemic",
+        "valence": "negative"
       },
       "source_chunk_ids": [
         "507cd04203e54d46361817b752cb8dc7"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "very low oral bioavailability",
+      "verified": true
     },
     {
-      "id": "ent_102",
-      "type": "Compound",
-      "name": "mesembrine",
+      "id": "E6",
+      "type": "Study",
+      "name": "Meyer et al., 2015",
       "attributes": {
-        "context": "mesembrine and mesembrenone are metabolically unstable"
+        "year": 2015
       },
       "source_chunk_ids": [
         "507cd04203e54d46361817b752cb8dc7"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Meyer et al., 2015",
+      "verified": true
     },
     {
-      "id": "ent_103",
+      "id": "E7",
+      "type": "Evidence",
+      "name": "in vitro study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "507cd04203e54d46361817b752cb8dc7"
+      ],
+      "confidence": 0.8,
+      "evidence": "human liver microsomes",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "metabolic instability",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "507cd04203e54d46361817b752cb8dc7"
+      ],
+      "confidence": 0.75,
+      "evidence": "metabolically unstable",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "UHPLC/QToF-MS analytical method development and validation",
+      "attributes": {
+        "design": "method development and validation",
+        "sample_type": "mouse plasma"
+      },
+      "source_chunk_ids": [
+        "5cc50bc74ff50d52ef58deb771505846"
+      ],
+      "confidence": 0.9,
+      "evidence": "UHPLC/QToF-MS analytical method was developed, optimized and validated",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vitro analytical validation",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "5cc50bc74ff50d52ef58deb771505846"
+      ],
+      "confidence": 0.85,
+      "evidence": "method was validated for linearity, precision, accuracy, LOD and LOQ",
+      "verified": true
+    },
+    {
+      "id": "E3",
       "type": "Compound",
       "name": "mesembrenone",
-      "attributes": {
-        "context": "mesembrine and mesembrenone are metabolically unstable"
-      },
+      "attributes": {},
       "source_chunk_ids": [
-        "507cd04203e54d46361817b752cb8dc7"
-      ]
+        "5cc50bc74ff50d52ef58deb771505846"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
     },
     {
-      "id": "ent_104",
-      "type": "PharmEffect",
-      "name": "metabolically unstable",
-      "attributes": {
-        "context": "are metabolically unstable in human liver microsomes"
-      },
-      "source_chunk_ids": [
-        "507cd04203e54d46361817b752cb8dc7"
-      ]
-    },
-    {
-      "id": "ent_105",
-      "type": "PharmEffect",
-      "name": "instability",
-      "attributes": {
-        "context": "instability in gastric and intestinal fluids"
-      },
-      "source_chunk_ids": [
-        "507cd04203e54d46361817b752cb8dc7"
-      ]
-    },
-    {
-      "id": "ent_106",
-      "type": "PharmEffect",
-      "name": "low bioavailability",
-      "attributes": {
-        "context": "low bioavailability of mesembrine and mesembrenone"
-      },
-      "source_chunk_ids": [
-        "507cd04203e54d46361817b752cb8dc7"
-      ]
-    },
-    {
-      "id": "ent_107",
+      "id": "E4",
       "type": "Compound",
       "name": "mesembrine",
-      "attributes": {
-        "context": "low bioavailability of mesembrine and mesembrenone"
-      },
+      "attributes": {},
       "source_chunk_ids": [
-        "507cd04203e54d46361817b752cb8dc7"
-      ]
+        "5cc50bc74ff50d52ef58deb771505846"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
     },
     {
-      "id": "ent_108",
-      "type": "Compound",
-      "name": "mesembrenone",
+      "id": "E5",
+      "type": "Effect",
+      "name": "low oral bioavailability",
       "attributes": {
-        "context": "low bioavailability of mesembrine and mesembrenone"
+        "level": "systemic",
+        "valence": "negative"
       },
       "source_chunk_ids": [
-        "507cd04203e54d46361817b752cb8dc7"
-      ]
+        "5cc50bc74ff50d52ef58deb771505846"
+      ],
+      "confidence": 0.8,
+      "evidence": "low oral bioavailability",
+      "verified": true
     },
     {
-      "id": "ent_109",
-      "type": "Compound",
-      "name": "5-hydroxytryptamine",
+      "id": "E6",
+      "type": "Dosage",
+      "name": "oral dose",
       "attributes": {
-        "context": "5-HT5-hydroxytryptamine"
+        "route": "oral"
       },
       "source_chunk_ids": [
-        "fc0a39acb5e5f7187351c8e7bac15244"
-      ]
+        "5cc50bc74ff50d52ef58deb771505846"
+      ],
+      "confidence": 0.7,
+      "evidence": "after an oral dose",
+      "verified": true
     },
     {
-      "id": "ent_110",
-      "type": "Compound",
-      "name": "acetonitrile",
+      "id": "E7",
+      "type": "Dosage",
+      "name": "intravenous dose",
       "attributes": {
-        "context": "ACNacetonitrile"
+        "route": "intravenous"
       },
       "source_chunk_ids": [
-        "fc0a39acb5e5f7187351c8e7bac15244"
-      ]
+        "5cc50bc74ff50d52ef58deb771505846"
+      ],
+      "confidence": 0.7,
+      "evidence": "i.v. pharmacokinetics",
+      "verified": true
     },
     {
-      "id": "ent_111",
-      "type": "Compound",
-      "name": "methanol",
-      "attributes": {
-        "context": "MeOHmethanol"
-      },
-      "source_chunk_ids": [
-        "fc0a39acb5e5f7187351c8e7bac15244"
-      ]
-    },
-    {
-      "id": "ent_112",
-      "type": "Compound",
-      "name": "phosphodiesterase4",
-      "attributes": {
-        "context": "PDE4phosphodiesterase4"
-      },
-      "source_chunk_ids": [
-        "fc0a39acb5e5f7187351c8e7bac15244"
-      ]
-    },
-    {
-      "id": "ent_113",
-      "type": "Compound",
-      "name": "Mesembrenone",
-      "attributes": {
-        "context": "Mesembrenone: an unexpected alkaloid from Narcissus pallidulus."
-      },
-      "source_chunk_ids": [
-        "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
-    },
-    {
-      "id": "ent_114",
-      "type": "Compound",
-      "name": "Narcissus alkaloids",
-      "attributes": {
-        "context": "Narcissus alkaloids, VIII."
-      },
-      "source_chunk_ids": [
-        "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
-    },
-    {
-      "id": "ent_115",
-      "type": "Taxon",
-      "name": "Narcissus pallidulus",
-      "attributes": {
-        "context": "alkaloid from Narcissus pallidulus."
-      },
-      "source_chunk_ids": [
-        "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
-    },
-    {
-      "id": "ent_116",
-      "type": "Taxon",
-      "name": "Sceletium",
-      "attributes": {
-        "context": "Sceletium \u2013 a review update."
-      },
-      "source_chunk_ids": [
-        "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
-    },
-    {
-      "id": "ent_117",
-      "type": "PharmEffect",
-      "name": "Pharmacological actions",
-      "attributes": {
-        "context": "Pharmacological actions of the South African medicinal and functional food plant Sceletium tortuosum"
-      },
-      "source_chunk_ids": [
-        "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
-    },
-    {
-      "id": "ent_118",
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "plant Sceletium tortuosum"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
     },
     {
-      "id": "ent_119",
+      "id": "E2",
       "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cfdd1b3ea435268a78c1d27b062755c0"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cfdd1b3ea435268a78c1d27b062755c0"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
       "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cfdd1b3ea435268a78c1d27b062755c0"
+      ],
+      "confidence": 0.85,
+      "evidence": "alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cfdd1b3ea435268a78c1d27b062755c0"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zembrin",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "5-HT reuptake",
       "attributes": {
-        "context": "its principal alkaloids."
+        "target_type": "transporter"
       },
       "source_chunk_ids": [
         "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "5-HT reuptake",
+      "verified": true
     },
     {
-      "id": "ent_120",
-      "type": "Compound",
-      "name": "midazolam",
+      "id": "E7",
+      "type": "Target",
+      "name": "PDE4",
       "attributes": {
-        "context": "analysis of midazolam and its major metabolite in human plasma"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
         "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "PDE4",
+      "verified": true
     },
     {
-      "id": "ent_121",
-      "type": "PharmEffect",
-      "name": "drug metabolism",
+      "id": "E8",
+      "type": "Study",
+      "name": "Terburg et al. 2013",
       "attributes": {
-        "context": "applications to drug metabolism."
+        "year": 2013,
+        "design": "acute effects study"
       },
       "source_chunk_ids": [
         "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "Terburg, D., et al. (2013)",
+      "verified": true
     },
     {
-      "id": "ent_122",
-      "type": "Compound",
-      "name": "mesembrine",
+      "id": "E9",
+      "type": "Evidence",
+      "name": "in vivo human study",
       "attributes": {
-        "context": "metabolism and toxicological detection of mesembrine and mesembrenone"
+        "evidence_level": 3
       },
       "source_chunk_ids": [
         "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "acute effects in the human amygdala",
+      "verified": true
     },
     {
-      "id": "ent_123",
-      "type": "Compound",
-      "name": "mesembrenone",
+      "id": "E10",
+      "type": "Preparation",
+      "name": "fermentation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cfdd1b3ea435268a78c1d27b062755c0"
+      ],
+      "confidence": 0.75,
+      "evidence": "fermentation of plant material",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "RawMaterial",
+      "name": "Kougoed",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cfdd1b3ea435268a78c1d27b062755c0"
+      ],
+      "confidence": 0.8,
+      "evidence": "Kougoed by fermentation",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Study",
+      "name": "Patnala & Kanfer 2009",
       "attributes": {
-        "context": "metabolism and toxicological detection of mesembrine and mesembrenone, the main alkaloids of the legal high 'Kanna' isolated from Sceletium tortuosum."
+        "year": 2009
       },
       "source_chunk_ids": [
         "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "Patnala, S., & Kanfer, I. (2009)",
+      "verified": true
     },
     {
-      "id": "ent_124",
-      "type": "PharmEffect",
-      "name": "metabolism",
+      "id": "E13",
+      "type": "Evidence",
+      "name": "phytochemical analysis",
       "attributes": {
-        "context": "metabolism and toxicological detection of mesembrine and mesembrenone"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
         "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "phytochemical content following fermentation",
+      "verified": true
     },
     {
-      "id": "ent_125",
-      "type": "PharmEffect",
-      "name": "toxicological detection",
+      "id": "E14",
+      "type": "Study",
+      "name": "Smith 2011",
       "attributes": {
-        "context": "metabolism and toxicological detection of mesembrine and mesembrenone"
+        "year": 2011
       },
       "source_chunk_ids": [
         "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "Smith, C. (2011)",
+      "verified": true
     },
     {
-      "id": "ent_126",
-      "type": "Taxon",
-      "name": "Sceletium tortuosum",
+      "id": "E15",
+      "type": "Evidence",
+      "name": "in vivo animal study",
       "attributes": {
-        "context": "legal high 'Kanna' isolated from Sceletium tortuosum."
+        "evidence_level": 3
       },
       "source_chunk_ids": [
         "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "in vivo model of psychological stress",
+      "verified": true
     },
     {
-      "id": "ent_127",
-      "type": "Taxon",
-      "name": "Sceletium tortuosum",
-      "attributes": {
-        "context": "Sceletium tortuosum following the preparation of 'Kougoed' by fermentation of plant material."
-      },
-      "source_chunk_ids": [
-        "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
-    },
-    {
-      "id": "ent_128",
-      "type": "Compound",
-      "name": "mesembrine-type alkaloids",
-      "attributes": {
-        "context": "HPLC analysis of mesembrine-type alkaloids in Sceletium plant material"
-      },
-      "source_chunk_ids": [
-        "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
-    },
-    {
-      "id": "ent_129",
-      "type": "Taxon",
-      "name": "Sceletium",
-      "attributes": {
-        "context": "Sceletium plant material used as an African traditional medicine."
-      },
-      "source_chunk_ids": [
-        "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
-    },
-    {
-      "id": "ent_130",
-      "type": "PharmEffect",
-      "name": "effects on psychological stress",
-      "attributes": {
-        "context": "The effects of Sceletium tortuosum in an in vivo model of psychological stress."
-      },
-      "source_chunk_ids": [
-        "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
-    },
-    {
-      "id": "ent_131",
-      "type": "Taxon",
-      "name": "Sceletium tortuosum",
-      "attributes": {
-        "context": "The effects of Sceletium tortuosum in an in vivo model of psychological stress."
-      },
-      "source_chunk_ids": [
-        "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
-    },
-    {
-      "id": "ent_132",
-      "type": "Indication",
+      "id": "E16",
+      "type": "Condition",
       "name": "psychological stress",
       "attributes": {
-        "context": "in vivo model of psychological stress."
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "model of psychological stress",
+      "verified": true
     },
     {
-      "id": "ent_133",
-      "type": "PharmEffect",
-      "name": "Psychoactive",
+      "id": "E1",
+      "type": "Study",
+      "name": "Manda et al. 2017",
       "attributes": {
-        "context": "Psychoactive constituents of the genus Sceletium N.E.Br."
+        "design": "pharmacokinetic study",
+        "year": 2017,
+        "doi": "10.1002/bmc.3815"
       },
       "source_chunk_ids": [
-        "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
+        "9b6204436d34e088cb7238bf8b382c02"
+      ],
+      "confidence": 0.95,
+      "evidence": "Quantification of mesembrine and mesembrenone in mouse plasma using UHPLC-QToF-MS: Application to a pharmacokinetic study",
+      "verified": true
     },
     {
-      "id": "ent_134",
-      "type": "Taxon",
-      "name": "Sceletium N.E.Br.",
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vivo pharmacokinetic study",
       "attributes": {
-        "context": "genus Sceletium N.E.Br."
+        "evidence_level": 3
       },
       "source_chunk_ids": [
-        "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
+        "9b6204436d34e088cb7238bf8b382c02"
+      ],
+      "confidence": 0.9,
+      "evidence": "Application to a pharmacokinetic study",
+      "verified": true
     },
     {
-      "id": "ent_135",
-      "type": "Taxon",
-      "name": "Mesembryanthemaceae",
-      "attributes": {
-        "context": "other Mesembryanthemaceae"
-      },
-      "source_chunk_ids": [
-        "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
-    },
-    {
-      "id": "ent_136",
-      "type": "Taxon",
-      "name": "Sceletium tortuosum",
-      "attributes": {
-        "context": "Acute effects of Sceletium tortuosum (Zembrin)"
-      },
-      "source_chunk_ids": [
-        "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
-    },
-    {
-      "id": "ent_137",
-      "type": "PharmEffect",
-      "name": "5-HT reuptake inhibition",
-      "attributes": {
-        "context": "a dual 5-HT reuptake and PDE4 inhibitor"
-      },
-      "source_chunk_ids": [
-        "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
-    },
-    {
-      "id": "ent_138",
-      "type": "PharmEffect",
-      "name": "PDE4 inhibition",
-      "attributes": {
-        "context": "a dual 5-HT reuptake and PDE4 inhibitor"
-      },
-      "source_chunk_ids": [
-        "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
-    },
-    {
-      "id": "ent_139",
-      "type": "Compound",
-      "name": "5-HT reuptake inhibitor",
-      "attributes": {
-        "context": "a dual 5-HT reuptake and PDE4 inhibitor"
-      },
-      "source_chunk_ids": [
-        "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
-    },
-    {
-      "id": "ent_140",
-      "type": "Compound",
-      "name": "PDE4 inhibitor",
-      "attributes": {
-        "context": "a dual 5-HT reuptake and PDE4 inhibitor"
-      },
-      "source_chunk_ids": [
-        "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
-    },
-    {
-      "id": "ent_141",
-      "type": "PharmEffect",
-      "name": "Cytotoxic activity",
-      "attributes": {
-        "context": "Cytotoxic activity of Amaryllidaceae alkaloids."
-      },
-      "source_chunk_ids": [
-        "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
-    },
-    {
-      "id": "ent_142",
-      "type": "Taxon",
-      "name": "Amaryllidaceae",
-      "attributes": {
-        "context": "Cytotoxic activity of Amaryllidaceae alkaloids."
-      },
-      "source_chunk_ids": [
-        "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
-    },
-    {
-      "id": "ent_143",
-      "type": "Compound",
-      "name": "Amaryllidaceae alkaloids",
-      "attributes": {
-        "context": "Cytotoxic activity of Amaryllidaceae alkaloids."
-      },
-      "source_chunk_ids": [
-        "cfdd1b3ea435268a78c1d27b062755c0"
-      ]
-    },
-    {
-      "id": "ent_144",
+      "id": "E3",
       "type": "Compound",
       "name": "mesembrine",
-      "attributes": {
-        "context": "Quantification of mesembrine and mesembrenone in mouse plasma"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "9b6204436d34e088cb7238bf8b382c02"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
     },
     {
-      "id": "ent_145",
+      "id": "E4",
       "type": "Compound",
       "name": "mesembrenone",
-      "attributes": {
-        "context": "Quantification of mesembrine and mesembrenone in mouse plasma"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "9b6204436d34e088cb7238bf8b382c02"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:03.989426+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.85,
+      "evidence": "treatment of anxiety",
+      "source_chunk_ids": [
+        "b91109075b11691ade293c3e4bf9eea7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.85,
+      "evidence": "treatment of stress",
+      "source_chunk_ids": [
+        "b91109075b11691ade293c3e4bf9eea7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Mesembrenone present in the extract",
+      "source_chunk_ids": [
+        "b91109075b11691ade293c3e4bf9eea7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "mesembrine present in the extract",
+      "source_chunk_ids": [
+        "b91109075b11691ade293c3e4bf9eea7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "mesembrenone are alkaloids",
+      "source_chunk_ids": [
+        "b91109075b11691ade293c3e4bf9eea7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "mesembrine are alkaloids",
+      "source_chunk_ids": [
+        "b91109075b11691ade293c3e4bf9eea7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Mesembrenone present in the extract",
+      "source_chunk_ids": [
+        "b91109075b11691ade293c3e4bf9eea7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "CONTAINS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "mesembrine present in the extract",
+      "source_chunk_ids": [
+        "b91109075b11691ade293c3e4bf9eea7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "analytical method development",
+      "source_chunk_ids": [
+        "b91109075b11691ade293c3e4bf9eea7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "quantification of mesembrenone",
+      "source_chunk_ids": [
+        "b91109075b11691ade293c3e4bf9eea7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "quantification of mesembrine",
+      "source_chunk_ids": [
+        "b91109075b11691ade293c3e4bf9eea7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "REPORTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.7,
+      "evidence": "oral bioavailability was poor",
+      "source_chunk_ids": [
+        "b91109075b11691ade293c3e4bf9eea7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Traditionally, the plant is consumed",
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum",
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "plant_part"
+      },
+      "confidence": 0.85,
+      "evidence": "dried leaves",
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "preparation"
+      },
+      "confidence": 0.75,
+      "evidence": "dried leaves",
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "in the form of a tincture",
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "treatment of central nervous system-related disorders",
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "anxiety",
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E9",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "depression",
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E10",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "stress",
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "TREATS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E8",
+      "attributes": {
+        "context": "herbal supplement"
+      },
+      "confidence": 0.8,
+      "evidence": "treatment of anxiety",
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "TREATS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E10",
+      "attributes": {
+        "context": "herbal supplement"
+      },
+      "confidence": 0.8,
+      "evidence": "treatment of stress",
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E13",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "clinical study",
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "STUDIES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E12",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Zembrin",
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "REPORTS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E15",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "anxiolytic potential",
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "REPORTS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E16",
+      "attributes": {
+        "outcome": "inhibition"
+      },
+      "confidence": 0.8,
+      "evidence": "inhibition of 5-HT receptor",
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "REPORTS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E17",
+      "attributes": {
+        "outcome": "inhibition"
+      },
+      "confidence": 0.8,
+      "evidence": "inhibition of PDE4 enzyme",
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R17",
+      "type": "TREATS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E8",
+      "attributes": {
+        "context": "clinical",
+        "supporting_study_ids": [
+          "E13"
+        ]
+      },
+      "confidence": 0.75,
+      "evidence": "anxiolytic potential",
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R18",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "leaves",
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R19",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E18",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "alkaloids present in Kanna",
+      "source_chunk_ids": [
+        "7a05581c38cc67664841482b7b75f1b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "alkaloids being reported to be mesembrenone",
+      "source_chunk_ids": [
+        "d3f693fbbcd85636922a39937bb71278"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "alkaloids being reported to be mesembrine",
+      "source_chunk_ids": [
+        "d3f693fbbcd85636922a39937bb71278"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.9,
+      "evidence": "potent 5-HT inhibitor",
+      "source_chunk_ids": [
+        "d3f693fbbcd85636922a39937bb71278"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.85,
+      "evidence": "inhibit PDE4",
+      "source_chunk_ids": [
+        "d3f693fbbcd85636922a39937bb71278"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "PDE4 inhibition properties",
+      "source_chunk_ids": [
+        "d3f693fbbcd85636922a39937bb71278"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "cytotoxic effect in cancer cells",
+      "source_chunk_ids": [
+        "d3f693fbbcd85636922a39937bb71278"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Harvey et al., 2011",
+      "source_chunk_ids": [
+        "d3f693fbbcd85636922a39937bb71278"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Harvey et al., 2011",
+      "source_chunk_ids": [
+        "d3f693fbbcd85636922a39937bb71278"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Gericke & Viljoen, 2008",
+      "source_chunk_ids": [
+        "d3f693fbbcd85636922a39937bb71278"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Weniger et al., 1995",
+      "source_chunk_ids": [
+        "d3f693fbbcd85636922a39937bb71278"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "produces"
+      },
+      "confidence": 0.75,
+      "evidence": "cytotoxic effect in cancer cells",
+      "source_chunk_ids": [
+        "d3f693fbbcd85636922a39937bb71278"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "in cancer cells",
+      "source_chunk_ids": [
+        "d3f693fbbcd85636922a39937bb71278"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Mesembrine is a tetracyclic alkaloid",
+      "source_chunk_ids": [
+        "9fca48de6871fca4993f73145ca4c364"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "active ingredients, mesembrine",
+      "source_chunk_ids": [
+        "54f6509e4426a915d6dab747b6318b24"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "active ingredients, mesembrenone",
+      "source_chunk_ids": [
+        "54f6509e4426a915d6dab747b6318b24"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "pharmacologically active alkaloids",
+      "source_chunk_ids": [
+        "54f6509e4426a915d6dab747b6318b24"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "pharmacologically active alkaloids",
+      "source_chunk_ids": [
+        "54f6509e4426a915d6dab747b6318b24"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "pharmacokinetic study in mouse plasma",
+      "source_chunk_ids": [
+        "54f6509e4426a915d6dab747b6318b24"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "quantification of mesembrine",
+      "source_chunk_ids": [
+        "54f6509e4426a915d6dab747b6318b24"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "quantification of mesembrenone",
+      "source_chunk_ids": [
+        "54f6509e4426a915d6dab747b6318b24"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "TESTED_AT",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "combined dose of mesembrenone and mesembrine",
+      "source_chunk_ids": [
+        "54f6509e4426a915d6dab747b6318b24"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "aerial parts of S. tortuosum",
+      "source_chunk_ids": [
+        "e7dfc04a26fb050fe1edbe54c03718d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "dried aerial parts",
+      "source_chunk_ids": [
+        "e7dfc04a26fb050fe1edbe54c03718d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "plant material of S. tortuosum",
+      "source_chunk_ids": [
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "extracted to give dried powder",
+      "source_chunk_ids": [
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E11",
+      "attributes": {
+        "measurement": {
+          "value": 1.4,
+          "unit": "g",
+          "measurement_type": "content",
+          "notes": "obtained from combined Fr. C3-4,5"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Mesembrine (1.4 g) obtained",
+      "source_chunk_ids": [
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E12",
+      "attributes": {
+        "measurement": {
+          "value": 240,
+          "unit": "mg",
+          "measurement_type": "content",
+          "notes": "obtained from combined Fr. C3-4,5"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "mesembrenone (240 mg) obtained",
+      "source_chunk_ids": [
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "subjected to SiO2 CC to yield CHCl3 extract",
+      "source_chunk_ids": [
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "silver-nitrate-impregnated SiO2 CC to give Fr. C3",
+      "source_chunk_ids": [
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "octadecylsilyl column purification from combined Fr. C3-4,5",
+      "source_chunk_ids": [
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E13",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "analysis of the spectroscopic data",
+      "source_chunk_ids": [
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "STUDIES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E11",
+      "attributes": {
+        "role": "compound"
+      },
+      "confidence": 0.7,
+      "evidence": "Bastida et al., 1989; Patnala & Kanfer, 2010",
+      "source_chunk_ids": [
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E12",
+      "attributes": {
+        "role": "compound"
+      },
+      "confidence": 0.7,
+      "evidence": "Bastida et al., 1989; Patnala & Kanfer, 2010",
+      "source_chunk_ids": [
+        "7d167ebdf87d64c3c280b6babf50cfa4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "mass spectrometric analysis",
+      "source_chunk_ids": [
+        "b6f29a3dfb0ebc4c1bbc4a0bc0deb462"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "sample were injected",
+      "source_chunk_ids": [
+        "b6f29a3dfb0ebc4c1bbc4a0bc0deb462"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "measurement": {
+          "value": 2,
+          "unit": "mg/mL",
+          "measurement_type": "concentration",
+          "notes": "stock solution"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Stock solutions (2 mg/mL) were prepared by weighing mesembrenone",
+      "source_chunk_ids": [
+        "0d83ffacd1d6f7899d697624b9a17aae"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "measurement": {
+          "value": 2,
+          "unit": "mg/mL",
+          "measurement_type": "concentration",
+          "notes": "stock solution"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Stock solutions (2 mg/mL) were prepared by weighing mesembrine",
+      "source_chunk_ids": [
+        "0d83ffacd1d6f7899d697624b9a17aae"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "measurement": {
+          "value": 1,
+          "unit": "mg/mL",
+          "measurement_type": "concentration",
+          "notes": "combined stock solution"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "combined stock solution of 1 mg/mL was prepared",
+      "source_chunk_ids": [
+        "0d83ffacd1d6f7899d697624b9a17aae"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "measurement": {
+          "value": 1,
+          "unit": "mg/mL",
+          "measurement_type": "concentration",
+          "notes": "combined stock solution"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "combined stock solution of 1 mg/mL was prepared",
+      "source_chunk_ids": [
+        "0d83ffacd1d6f7899d697624b9a17aae"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "measurement": {
+          "value": 10,
+          "unit": "ng/mL",
+          "measurement_type": "concentration",
+          "notes": "calibration range 10\u20131000 ng/mL"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "calibration range of 10\u20131000 ng/mL was employed for mesembrenone",
+      "source_chunk_ids": [
+        "0d83ffacd1d6f7899d697624b9a17aae"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E2",
+      "attributes": {
+        "measurement": {
+          "value": 10,
+          "unit": "ng/mL",
+          "measurement_type": "concentration",
+          "notes": "calibration range 10\u20131000 ng/mL"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "calibration range of 10\u20131000 ng/mL was employed for mesembrine",
+      "source_chunk_ids": [
+        "0d83ffacd1d6f7899d697624b9a17aae"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "measurement": {
+          "value": 10,
+          "unit": "ng/mL",
+          "measurement_type": "concentration",
+          "notes": "QC plasma samples"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "QC plasma samples prepared in concentrations of 10 ng/mL",
+      "source_chunk_ids": [
+        "0d83ffacd1d6f7899d697624b9a17aae"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {
+        "measurement": {
+          "value": 10,
+          "unit": "ng/mL",
+          "measurement_type": "concentration",
+          "notes": "QC plasma samples"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "QC plasma samples prepared in concentrations of 10 ng/mL",
+      "source_chunk_ids": [
+        "0d83ffacd1d6f7899d697624b9a17aae"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "QC samples were assayed",
+      "source_chunk_ids": [
+        "774c53af8097d9ac3346d0584527e3db"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "analyte"
+      },
+      "confidence": 0.85,
+      "evidence": "concentrations of mesembrenone",
+      "source_chunk_ids": [
+        "774c53af8097d9ac3346d0584527e3db"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "analyte"
+      },
+      "confidence": 0.85,
+      "evidence": "concentrations of mesembrine",
+      "source_chunk_ids": [
+        "774c53af8097d9ac3346d0584527e3db"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "extraction recovery quantified",
+      "source_chunk_ids": [
+        "573c5db1c62ef76f405386e68c23514c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "analyte"
+      },
+      "confidence": 0.85,
+      "evidence": "mesembrenone quantified",
+      "source_chunk_ids": [
+        "573c5db1c62ef76f405386e68c23514c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "analyte"
+      },
+      "confidence": 0.85,
+      "evidence": "mesembrine quantified",
+      "source_chunk_ids": [
+        "573c5db1c62ef76f405386e68c23514c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "stability study",
+      "source_chunk_ids": [
+        "226ebe96440bbca865eaf3e9263cf221"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "mesembrenone",
+      "source_chunk_ids": [
+        "226ebe96440bbca865eaf3e9263cf221"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "mesembrine",
+      "source_chunk_ids": [
+        "226ebe96440bbca865eaf3e9263cf221"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "pharmacokinetic study",
+      "source_chunk_ids": [
+        "e239d3a1c19d36d7a1c5feaef988f353"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "administered mesembrenone",
+      "source_chunk_ids": [
+        "e239d3a1c19d36d7a1c5feaef988f353"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "administered mesembrine",
+      "source_chunk_ids": [
+        "e239d3a1c19d36d7a1c5feaef988f353"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "administered enriched S. tortuosum extract",
+      "source_chunk_ids": [
+        "e239d3a1c19d36d7a1c5feaef988f353"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "15 mg/kg each by i.v. bolus injection",
+      "source_chunk_ids": [
+        "e239d3a1c19d36d7a1c5feaef988f353"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "75 mg/kg each by oral gavage",
+      "source_chunk_ids": [
+        "e239d3a1c19d36d7a1c5feaef988f353"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "extract equivalent to mesembrenone",
+      "source_chunk_ids": [
+        "e239d3a1c19d36d7a1c5feaef988f353"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "extract equivalent to mesembrine",
+      "source_chunk_ids": [
+        "e239d3a1c19d36d7a1c5feaef988f353"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "pharmacologically active alkaloids",
+      "source_chunk_ids": [
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "pharmacologically active alkaloids",
+      "source_chunk_ids": [
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "alkaloids of S. tourtuosum",
+      "source_chunk_ids": [
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "alkaloids of S. tourtuosum",
+      "source_chunk_ids": [
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "reported methods in the literature",
+      "source_chunk_ids": [
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "analyte"
+      },
+      "confidence": 0.7,
+      "evidence": "detection of mesembrine",
+      "source_chunk_ids": [
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "analyte"
+      },
+      "confidence": 0.7,
+      "evidence": "detection of mesembrenone",
+      "source_chunk_ids": [
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "validated method for quantification",
+      "source_chunk_ids": [
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "analyte"
+      },
+      "confidence": 0.85,
+      "evidence": "quantification of mesembrine",
+      "source_chunk_ids": [
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "analyte"
+      },
+      "confidence": 0.85,
+      "evidence": "quantification of mesembrenone",
+      "source_chunk_ids": [
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "matrix"
+      },
+      "confidence": 0.9,
+      "evidence": "quantification in mouse plasma",
+      "source_chunk_ids": [
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "CONTAINS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "quantification of mesembrine in mouse plasma",
+      "source_chunk_ids": [
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "CONTAINS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "quantification of mesembrenone in mouse plasma",
+      "source_chunk_ids": [
+        "d0d6798bdb4da7880a53e069e5b1495a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "mouse T15 min plasma sample",
+      "source_chunk_ids": [
+        "930c36888cb3004abec352f9897feaa2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "administration of mesembrenone",
+      "source_chunk_ids": [
+        "930c36888cb3004abec352f9897feaa2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "administration of mesembrine",
+      "source_chunk_ids": [
+        "930c36888cb3004abec352f9897feaa2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "control",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Standard plasma sample spiked",
+      "source_chunk_ids": [
+        "930c36888cb3004abec352f9897feaa2"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "plasma sample after i.v. administration",
+      "source_chunk_ids": [
+        "d16dcbfbf7cc49eff7f1f56a5de96b2f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "i.v. administration of mesembrenone",
+      "source_chunk_ids": [
+        "d16dcbfbf7cc49eff7f1f56a5de96b2f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "i.v. administration of mesembrine",
+      "source_chunk_ids": [
+        "d16dcbfbf7cc49eff7f1f56a5de96b2f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "standard curve was constructed",
+      "source_chunk_ids": [
+        "3d292ea50514146ec7564e33ace58138"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "analyte"
+      },
+      "confidence": 0.85,
+      "evidence": "mesembrine was quantified",
+      "source_chunk_ids": [
+        "3d292ea50514146ec7564e33ace58138"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "analyte"
+      },
+      "confidence": 0.85,
+      "evidence": "mesembrenone was quantified",
+      "source_chunk_ids": [
+        "3d292ea50514146ec7564e33ace58138"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "matrix"
+      },
+      "confidence": 0.8,
+      "evidence": "plasma spiked with a mixture",
+      "source_chunk_ids": [
+        "3d292ea50514146ec7564e33ace58138"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "plasma concentration in mouse after i.v. administration",
+      "source_chunk_ids": [
+        "0121c787ab687cf41477a7a75683f07a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Plasma concentration of Mesembrenone",
+      "source_chunk_ids": [
+        "0121c787ab687cf41477a7a75683f07a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Plasma concentration of Mesembrine",
+      "source_chunk_ids": [
+        "0121c787ab687cf41477a7a75683f07a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TESTED_AT",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "15 mg/kg i.v. administration",
+      "source_chunk_ids": [
+        "0121c787ab687cf41477a7a75683f07a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "analysis in mouse plasma",
+      "source_chunk_ids": [
+        "05fb57905718a177ed89109daaad8c43"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "analyte"
+      },
+      "confidence": 0.85,
+      "evidence": "analysis of mesembrenone",
+      "source_chunk_ids": [
+        "05fb57905718a177ed89109daaad8c43"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "analyte"
+      },
+      "confidence": 0.85,
+      "evidence": "analysis of mesembrine",
+      "source_chunk_ids": [
+        "05fb57905718a177ed89109daaad8c43"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "extraction of mesembrenone from plasma",
+      "source_chunk_ids": [
+        "1101de97103cf30fd9f5163e314ffd6c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "extraction of mesembrine from plasma",
+      "source_chunk_ids": [
+        "1101de97103cf30fd9f5163e314ffd6c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "extraction from plasma",
+      "source_chunk_ids": [
+        "1101de97103cf30fd9f5163e314ffd6c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Van Eckhaut et al., 2009",
+      "source_chunk_ids": [
+        "1101de97103cf30fd9f5163e314ffd6c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "effects on mesembrenone",
+      "source_chunk_ids": [
+        "1101de97103cf30fd9f5163e314ffd6c"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "effects on mesembrine",
+      "source_chunk_ids": [
+        "1101de97103cf30fd9f5163e314ffd6c"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "stability of mesembrenone and mesembrine",
+      "source_chunk_ids": [
+        "a67ba000181cefa027873bc707cf6c92"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "mesembrenone",
+      "source_chunk_ids": [
+        "a67ba000181cefa027873bc707cf6c92"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "mesembrine",
+      "source_chunk_ids": [
+        "a67ba000181cefa027873bc707cf6c92"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "pharmacokinetic parameters after i.v. administration",
+      "source_chunk_ids": [
+        "2e3599575fa029bcb4a9f88a5f936bea"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "pharmacokinetic parameters of mesembrenone",
+      "source_chunk_ids": [
+        "2e3599575fa029bcb4a9f88a5f936bea"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "pharmacokinetic parameters of mesembrine",
+      "source_chunk_ids": [
+        "2e3599575fa029bcb4a9f88a5f936bea"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "i.v. administration (15 mg/kg)",
+      "source_chunk_ids": [
+        "2e3599575fa029bcb4a9f88a5f936bea"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "measured"
+      },
+      "confidence": 0.85,
+      "evidence": "elimination half-life (T_{1/2})",
+      "source_chunk_ids": [
+        "2e3599575fa029bcb4a9f88a5f936bea"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "measured"
+      },
+      "confidence": 0.85,
+      "evidence": "clearance (CL)",
+      "source_chunk_ids": [
+        "2e3599575fa029bcb4a9f88a5f936bea"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Pharmacokinetic parameters determined",
+      "source_chunk_ids": [
+        "3e5892504d4fb43e65cfd4368cf38250"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "mesembrenone in mouse plasma",
+      "source_chunk_ids": [
+        "3e5892504d4fb43e65cfd4368cf38250"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "mesembrine in mouse plasma",
+      "source_chunk_ids": [
+        "3e5892504d4fb43e65cfd4368cf38250"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TESTED_AT",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "intravenous dose of 15 mg/kg",
+      "source_chunk_ids": [
+        "3e5892504d4fb43e65cfd4368cf38250"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Pharmacokinetic parameters",
+      "source_chunk_ids": [
+        "6e3cdeb235c76d2bc7e255b3fc17a86c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Mesembrenone",
+      "source_chunk_ids": [
+        "6e3cdeb235c76d2bc7e255b3fc17a86c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Mesembrine",
+      "source_chunk_ids": [
+        "6e3cdeb235c76d2bc7e255b3fc17a86c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "mouse plasma after extraction",
+      "source_chunk_ids": [
+        "768b827738078c90946b7e9184466352"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "administration of mesembrenone",
+      "source_chunk_ids": [
+        "768b827738078c90946b7e9184466352"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "administration of mesembrine",
+      "source_chunk_ids": [
+        "768b827738078c90946b7e9184466352"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TESTED_AT",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "i.v. administration of a dose of 15 mg/kg",
+      "source_chunk_ids": [
+        "768b827738078c90946b7e9184466352"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "administration of mesembrenone",
+      "source_chunk_ids": [
+        "bbb1b89fc83c6227cccf2de1a207d763"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "administration of mesembrine",
+      "source_chunk_ids": [
+        "bbb1b89fc83c6227cccf2de1a207d763"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TESTED_AT",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "i.v. administration of a dose of 15 mg/kg",
+      "source_chunk_ids": [
+        "bbb1b89fc83c6227cccf2de1a207d763"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "administration of mesembrenone",
+      "source_chunk_ids": [
+        "6280318b45422c0629fe43cbf22ffd92"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "administration of mesembrine",
+      "source_chunk_ids": [
+        "6280318b45422c0629fe43cbf22ffd92"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "plasma collected from mice",
+      "source_chunk_ids": [
+        "6280318b45422c0629fe43cbf22ffd92"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.75,
+      "evidence": "rapidly distributed to other tissues",
+      "source_chunk_ids": [
+        "6280318b45422c0629fe43cbf22ffd92"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "mesembrine and mesembrenone",
+      "source_chunk_ids": [
+        "507cd04203e54d46361817b752cb8dc7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "mesembrine and mesembrenone",
+      "source_chunk_ids": [
+        "507cd04203e54d46361817b752cb8dc7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "low oral bioavailability",
+      "source_chunk_ids": [
+        "507cd04203e54d46361817b752cb8dc7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "low oral bioavailability",
+      "source_chunk_ids": [
+        "507cd04203e54d46361817b752cb8dc7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Meyer et al., 2015",
+      "source_chunk_ids": [
+        "507cd04203e54d46361817b752cb8dc7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "mesembrine and mesembrenone",
+      "source_chunk_ids": [
+        "507cd04203e54d46361817b752cb8dc7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "mesembrine and mesembrenone",
+      "source_chunk_ids": [
+        "507cd04203e54d46361817b752cb8dc7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.7,
+      "evidence": "metabolically unstable",
+      "source_chunk_ids": [
+        "507cd04203e54d46361817b752cb8dc7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "method was validated",
+      "source_chunk_ids": [
+        "5cc50bc74ff50d52ef58deb771505846"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "analyte"
+      },
+      "confidence": 0.85,
+      "evidence": "detection of mesembrenone",
+      "source_chunk_ids": [
+        "5cc50bc74ff50d52ef58deb771505846"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "analyte"
+      },
+      "confidence": 0.85,
+      "evidence": "detection of mesembrine",
+      "source_chunk_ids": [
+        "5cc50bc74ff50d52ef58deb771505846"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.75,
+      "evidence": "low oral bioavailability",
+      "source_chunk_ids": [
+        "5cc50bc74ff50d52ef58deb771505846"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "after an oral dose",
+      "source_chunk_ids": [
+        "5cc50bc74ff50d52ef58deb771505846"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "i.v. pharmacokinetics",
+      "source_chunk_ids": [
+        "5cc50bc74ff50d52ef58deb771505846"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "main alkaloids of Sceletium tortuosum",
+      "source_chunk_ids": [
+        "cfdd1b3ea435268a78c1d27b062755c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "main alkaloids of Sceletium tortuosum",
+      "source_chunk_ids": [
+        "cfdd1b3ea435268a78c1d27b062755c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "mesembrine-type alkaloids",
+      "source_chunk_ids": [
+        "cfdd1b3ea435268a78c1d27b062755c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "mesembrine-type alkaloids",
+      "source_chunk_ids": [
+        "cfdd1b3ea435268a78c1d27b062755c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.75,
+      "evidence": "dual 5-HT reuptake inhibitor",
+      "source_chunk_ids": [
+        "cfdd1b3ea435268a78c1d27b062755c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "ACTS_ON",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.75,
+      "evidence": "dual PDE4 inhibitor",
+      "source_chunk_ids": [
+        "cfdd1b3ea435268a78c1d27b062755c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "acute effects in the human amygdala",
+      "source_chunk_ids": [
+        "cfdd1b3ea435268a78c1d27b062755c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "Sceletium tortuosum (Zembrin)",
+      "source_chunk_ids": [
+        "cfdd1b3ea435268a78c1d27b062755c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Kougoed by fermentation",
+      "source_chunk_ids": [
+        "cfdd1b3ea435268a78c1d27b062755c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E12",
+      "target_entity_id": "E13",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "phytochemical content following fermentation",
+      "source_chunk_ids": [
+        "cfdd1b3ea435268a78c1d27b062755c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "STUDIES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "Sceletium tortuosum following fermentation",
+      "source_chunk_ids": [
+        "cfdd1b3ea435268a78c1d27b062755c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E14",
+      "target_entity_id": "E15",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "in vivo model of psychological stress",
+      "source_chunk_ids": [
+        "cfdd1b3ea435268a78c1d27b062755c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "STUDIES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "effects of Sceletium tortuosum",
+      "source_chunk_ids": [
+        "cfdd1b3ea435268a78c1d27b062755c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "REPORTS",
+      "source_entity_id": "E14",
+      "target_entity_id": "E16",
+      "attributes": {
+        "outcome": "studies"
+      },
+      "confidence": 0.75,
+      "evidence": "model of psychological stress",
+      "source_chunk_ids": [
+        "cfdd1b3ea435268a78c1d27b062755c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Application to a pharmacokinetic study",
+      "source_chunk_ids": [
+        "9b6204436d34e088cb7238bf8b382c02"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Quantification of mesembrine",
+      "source_chunk_ids": [
+        "9b6204436d34e088cb7238bf8b382c02"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Quantification of mesembrenone",
+      "source_chunk_ids": [
+        "9b6204436d34e088cb7238bf8b382c02"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

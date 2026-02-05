@@ -1,12 +1,7455 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "ae5150a5bde747a67774636cdf5a87b24cde0102526e59a2154bbc9af4e81229",
-  "extracted_at": "2026-02-01T08:56:47.097892+00:00",
-  "extractor": "legacy-migration",
-  "entities": [],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.080417+00:00",
-    "original_file": "entities.json"
-  }
+  "entities": [
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "inflammatory bowel disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "ad45c50cfcd144b43c33efea02f27311"
+      ],
+      "confidence": 0.95,
+      "evidence": "Inflammatory bowel disease (IBD)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "ad45c50cfcd144b43c33efea02f27311"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of common mental disorders such as anxiety",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "ad45c50cfcd144b43c33efea02f27311"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of common mental disorders such as depression",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "prevalence assessment study",
+      "attributes": {
+        "design": "observational",
+        "sample_population": "adult patients with IBD"
+      },
+      "source_chunk_ids": [
+        "ad45c50cfcd144b43c33efea02f27311"
+      ],
+      "confidence": 0.8,
+      "evidence": "We aimed to assess prevalence of symptoms",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "observational study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "ad45c50cfcd144b43c33efea02f27311"
+      ],
+      "confidence": 0.75,
+      "evidence": "assess prevalence of symptoms",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "systematic review and meta-analysis",
+      "attributes": {
+        "design": "systematic review and meta-analysis",
+        "year": 2020
+      },
+      "source_chunk_ids": [
+        "ed23f6977c96f3de00ef2eef88978753"
+      ],
+      "confidence": 0.95,
+      "evidence": "systematic review and meta-analysis",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "ed23f6977c96f3de00ef2eef88978753"
+      ],
+      "confidence": 0.9,
+      "evidence": "meta-analysis",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "ed23f6977c96f3de00ef2eef88978753"
+      ],
+      "confidence": 0.95,
+      "evidence": "adult patients with IBD",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "ed23f6977c96f3de00ef2eef88978753"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "ed23f6977c96f3de00ef2eef88978753"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of depression",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "meta-analysis of 77 studies",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 30118
+      },
+      "source_chunk_ids": [
+        "7d96f478efe0df869f6377ec09756e04"
+      ],
+      "confidence": 0.9,
+      "evidence": "77 fulfilled the eligibility criteria, including 30 118 patients",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 5
+      },
+      "source_chunk_ids": [
+        "7d96f478efe0df869f6377ec09756e04"
+      ],
+      "confidence": 0.85,
+      "evidence": "pooled prevalence from 58 studies",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "anxiety symptoms",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "7d96f478efe0df869f6377ec09756e04"
+      ],
+      "confidence": 0.95,
+      "evidence": "prevalence of anxiety symptoms",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "depression symptoms",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "7d96f478efe0df869f6377ec09756e04"
+      ],
+      "confidence": 0.95,
+      "evidence": "prevalence of depression symptoms",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "7d96f478efe0df869f6377ec09756e04"
+      ],
+      "confidence": 0.9,
+      "evidence": "patients with Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "7d96f478efe0df869f6377ec09756e04"
+      ],
+      "confidence": 0.9,
+      "evidence": "patients with ulcerative colitis",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "7d96f478efe0df869f6377ec09756e04"
+      ],
+      "confidence": 0.85,
+      "evidence": "women with IBD",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "active IBD",
+      "attributes": {
+        "condition_type": "disease state"
+      },
+      "source_chunk_ids": [
+        "7d96f478efe0df869f6377ec09756e04"
+      ],
+      "confidence": 0.8,
+      "evidence": "patients with active IBD",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "inactive disease",
+      "attributes": {
+        "condition_type": "disease state"
+      },
+      "source_chunk_ids": [
+        "7d96f478efe0df869f6377ec09756e04"
+      ],
+      "confidence": 0.8,
+      "evidence": "patients with inactive disease",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "08717ee0cee30720598b7dcab0a3367a"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "08717ee0cee30720598b7dcab0a3367a"
+      ],
+      "confidence": 0.9,
+      "evidence": "depression symptoms",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "08717ee0cee30720598b7dcab0a3367a"
+      ],
+      "confidence": 0.95,
+      "evidence": "patients with IBD",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "inflammatory bowel diseases",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "2462b912831853385a1f98d62fc0840a"
+      ],
+      "confidence": 0.95,
+      "evidence": "Inflammatory bowel diseases",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "2462b912831853385a1f98d62fc0840a"
+      ],
+      "confidence": 0.9,
+      "evidence": "Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "2462b912831853385a1f98d62fc0840a"
+      ],
+      "confidence": 0.9,
+      "evidence": "ulcerative colitis",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "inflammation of the gastrointestinal tract",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "2462b912831853385a1f98d62fc0840a"
+      ],
+      "confidence": 0.85,
+      "evidence": "cause inflammation of the gastrointestinal tract",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "innate and adaptive immune systems",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "2462b912831853385a1f98d62fc0840a"
+      ],
+      "confidence": 0.8,
+      "evidence": "dysregulation of the innate and adaptive immune systems",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "abnormal inflammatory response to commensal bacteria",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "2462b912831853385a1f98d62fc0840a"
+      ],
+      "confidence": 0.75,
+      "evidence": "abnormal inflammatory response to commensal bacteria",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "22995c1ecebc57887d207db70a9c0b18"
+      ],
+      "confidence": 0.95,
+      "evidence": "IBD is a lifelong condition",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "psychological illness",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "22995c1ecebc57887d207db70a9c0b18"
+      ],
+      "confidence": 0.9,
+      "evidence": "patients with IBD might have psychological illness",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "common mental disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "22995c1ecebc57887d207db70a9c0b18"
+      ],
+      "confidence": 0.85,
+      "evidence": "symptoms of common mental disorders",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "somatisation",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "22995c1ecebc57887d207db70a9c0b18"
+      ],
+      "confidence": 0.85,
+      "evidence": "somatisation",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "gut\u2013brain axis",
+      "attributes": {
+        "target_type": "pathway"
+      },
+      "source_chunk_ids": [
+        "22995c1ecebc57887d207db70a9c0b18"
+      ],
+      "confidence": 0.8,
+      "evidence": "bidirectional communication via the gut\u2013brain axis",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "inflammatory bowel disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "0c44d46a48ff5cb65fefc0186a661a16"
+      ],
+      "confidence": 0.95,
+      "evidence": "inflammatory bowel disease (IBD)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "0c44d46a48ff5cb65fefc0186a661a16"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "0c44d46a48ff5cb65fefc0186a661a16"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of depression",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "systematic review",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "0c44d46a48ff5cb65fefc0186a661a16"
+      ],
+      "confidence": 0.85,
+      "evidence": "two systematic reviews",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "systematic review and meta-analysis",
+      "attributes": {
+        "design": "systematic review and meta-analysis"
+      },
+      "source_chunk_ids": [
+        "d0deb0436b533ee536f7d91268abf45c"
+      ],
+      "confidence": 0.9,
+      "evidence": "systematic review and meta-analysis",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 5
+      },
+      "source_chunk_ids": [
+        "d0deb0436b533ee536f7d91268abf45c"
+      ],
+      "confidence": 0.85,
+      "evidence": "meta-analysis",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "d0deb0436b533ee536f7d91268abf45c"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "d0deb0436b533ee536f7d91268abf45c"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of depression",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "d0deb0436b533ee536f7d91268abf45c"
+      ],
+      "confidence": 0.95,
+      "evidence": "patients with IBD",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "anxiety symptoms",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "c27dcb62aa583718c8408ba2fde00119"
+      ],
+      "confidence": 0.95,
+      "evidence": "prevalence of anxiety symptoms",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "depression symptoms",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "c27dcb62aa583718c8408ba2fde00119"
+      ],
+      "confidence": 0.95,
+      "evidence": "prevalence of depression symptoms",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "c27dcb62aa583718c8408ba2fde00119"
+      ],
+      "confidence": 0.9,
+      "evidence": "patients with IBD",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "c27dcb62aa583718c8408ba2fde00119"
+      ],
+      "confidence": 0.9,
+      "evidence": "women with Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "active disease",
+      "attributes": {
+        "condition_type": "state"
+      },
+      "source_chunk_ids": [
+        "c27dcb62aa583718c8408ba2fde00119"
+      ],
+      "confidence": 0.8,
+      "evidence": "Patients with active disease",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "inactive disease",
+      "attributes": {
+        "condition_type": "state"
+      },
+      "source_chunk_ids": [
+        "c27dcb62aa583718c8408ba2fde00119"
+      ],
+      "confidence": 0.8,
+      "evidence": "patients with inactive disease",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "28e7343e9d2022c58126d13524e43773"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "28e7343e9d2022c58126d13524e43773"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of anxiety and depression",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "28e7343e9d2022c58126d13524e43773"
+      ],
+      "confidence": 0.95,
+      "evidence": "patients with IBD",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "systematic review",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "28e7343e9d2022c58126d13524e43773"
+      ],
+      "confidence": 0.85,
+      "evidence": "Two systematic reviews",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "systematic review up to 2014",
+      "attributes": {
+        "design": "systematic review",
+        "year": "up to 2014"
+      },
+      "source_chunk_ids": [
+        "28e7343e9d2022c58126d13524e43773"
+      ],
+      "confidence": 0.8,
+      "evidence": "studies published up to 2014",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "systematic review and meta-analysis",
+      "attributes": {
+        "design": "systematic review and meta-analysis"
+      },
+      "source_chunk_ids": [
+        "2d4dcea3762521d218dee0b2f6c9a2b4"
+      ],
+      "confidence": 0.95,
+      "evidence": "systematic review and meta-analysis",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "2d4dcea3762521d218dee0b2f6c9a2b4"
+      ],
+      "confidence": 0.9,
+      "evidence": "meta-analysis",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "2d4dcea3762521d218dee0b2f6c9a2b4"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "2d4dcea3762521d218dee0b2f6c9a2b4"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of depression",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "2d4dcea3762521d218dee0b2f6c9a2b4"
+      ],
+      "confidence": 0.95,
+      "evidence": "adult patients with IBD",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "systematic review of cross-sectional surveys and case-control studies",
+      "attributes": {
+        "design": "systematic review",
+        "inclusion_criteria": "cross-sectional surveys or case-control studies, at least 100 participants, validated questionnaire for anxiety/depression symptoms, adult IBD patients"
+      },
+      "source_chunk_ids": [
+        "d43658d90e6b591920d824c84e97ab2f"
+      ],
+      "confidence": 0.9,
+      "evidence": "systematic review of cross-sectional surveys or case-control studies",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "systematic review",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "d43658d90e6b591920d824c84e97ab2f"
+      ],
+      "confidence": 0.85,
+      "evidence": "systematic review",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "d43658d90e6b591920d824c84e97ab2f"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "d43658d90e6b591920d824c84e97ab2f"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of depression",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "d43658d90e6b591920d824c84e97ab2f"
+      ],
+      "confidence": 0.95,
+      "evidence": "patients with histologically or radiologically confirmed IBD",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "c0524111b15224233d160a5ecc99141c"
+      ],
+      "confidence": 0.9,
+      "evidence": "\"ulcerative colitis\"",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "colitis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "c0524111b15224233d160a5ecc99141c"
+      ],
+      "confidence": 0.85,
+      "evidence": "\"colitis\"",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "c0524111b15224233d160a5ecc99141c"
+      ],
+      "confidence": 0.9,
+      "evidence": "\"Crohn's disease\"",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "inflammatory bowel diseases",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "c0524111b15224233d160a5ecc99141c"
+      ],
+      "confidence": 0.9,
+      "evidence": "\"inflammatory bowel diseases\"",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "c0524111b15224233d160a5ecc99141c"
+      ],
+      "confidence": 0.9,
+      "evidence": "\"anxiety\"",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "c0524111b15224233d160a5ecc99141c"
+      ],
+      "confidence": 0.9,
+      "evidence": "\"depression\"",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "mood disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "c0524111b15224233d160a5ecc99141c"
+      ],
+      "confidence": 0.85,
+      "evidence": "\"mood disorders\"",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "cross-sectional survey",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "ef12da14c9a0b837bb1a39872e6ac10b"
+      ],
+      "confidence": 0.9,
+      "evidence": "Cross-sectional surveys",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "case-control study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "ef12da14c9a0b837bb1a39872e6ac10b"
+      ],
+      "confidence": 0.9,
+      "evidence": "case-control studies",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "inflammatory bowel disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "ef12da14c9a0b837bb1a39872e6ac10b"
+      ],
+      "confidence": 0.95,
+      "evidence": "inflammatory bowel disease",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "ef12da14c9a0b837bb1a39872e6ac10b"
+      ],
+      "confidence": 0.9,
+      "evidence": "Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "ef12da14c9a0b837bb1a39872e6ac10b"
+      ],
+      "confidence": 0.9,
+      "evidence": "ulcerative colitis",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "unclassified inflammatory bowel disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "ef12da14c9a0b837bb1a39872e6ac10b"
+      ],
+      "confidence": 0.85,
+      "evidence": "unclassified inflammatory bowel disease",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "ef12da14c9a0b837bb1a39872e6ac10b"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "ef12da14c9a0b837bb1a39872e6ac10b"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of depression",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "systematic review or meta-analysis",
+      "attributes": {
+        "design": "systematic review or meta-analysis",
+        "sample_size": 5544
+      },
+      "source_chunk_ids": [
+        "00fa3b9b4bc8c4d1fc05b2e87a4ac1de"
+      ],
+      "confidence": 0.8,
+      "evidence": "5544 studies identified in literature search",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "systematic review",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "00fa3b9b4bc8c4d1fc05b2e87a4ac1de"
+      ],
+      "confidence": 0.75,
+      "evidence": "literature search and evaluation",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "inflammatory bowel disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "00fa3b9b4bc8c4d1fc05b2e87a4ac1de"
+      ],
+      "confidence": 0.9,
+      "evidence": "inflammatory bowel disease",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "00fa3b9b4bc8c4d1fc05b2e87a4ac1de"
+      ],
+      "confidence": 0.9,
+      "evidence": "Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "00fa3b9b4bc8c4d1fc05b2e87a4ac1de"
+      ],
+      "confidence": 0.9,
+      "evidence": "ulcerative colitis",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "00fa3b9b4bc8c4d1fc05b2e87a4ac1de"
+      ],
+      "confidence": 0.95,
+      "evidence": "anxiety symptoms",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "00fa3b9b4bc8c4d1fc05b2e87a4ac1de"
+      ],
+      "confidence": 0.95,
+      "evidence": "depression symptoms",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 5
+      },
+      "source_chunk_ids": [
+        "32824d014b11375fba8b62c75da00f38"
+      ],
+      "confidence": 0.9,
+      "evidence": "pooled prevalence for all studies",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "32824d014b11375fba8b62c75da00f38"
+      ],
+      "confidence": 0.95,
+      "evidence": "symptoms of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "32824d014b11375fba8b62c75da00f38"
+      ],
+      "confidence": 0.95,
+      "evidence": "symptoms of depression",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "32824d014b11375fba8b62c75da00f38"
+      ],
+      "confidence": 0.9,
+      "evidence": "ulcerative colitis",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "32824d014b11375fba8b62c75da00f38"
+      ],
+      "confidence": 0.9,
+      "evidence": "Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "unclassified IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "32824d014b11375fba8b62c75da00f38"
+      ],
+      "confidence": 0.85,
+      "evidence": "unclassified IBD",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "unclassified IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "af9cced1740644ae0355d65331d37c69"
+      ],
+      "confidence": 0.9,
+      "evidence": "patients with unclassified IBD",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "af9cced1740644ae0355d65331d37c69"
+      ],
+      "confidence": 0.9,
+      "evidence": "prevalence of symptoms of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "af9cced1740644ae0355d65331d37c69"
+      ],
+      "confidence": 0.9,
+      "evidence": "prevalence of depression symptoms",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "included studies",
+      "attributes": {
+        "design": "systematic review or meta-analysis"
+      },
+      "source_chunk_ids": [
+        "af9cced1740644ae0355d65331d37c69"
+      ],
+      "confidence": 0.8,
+      "evidence": "included studies",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "systematic review evidence",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "af9cced1740644ae0355d65331d37c69"
+      ],
+      "confidence": 0.75,
+      "evidence": "included studies",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "anxiety symptoms",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "a20116193dabf214c564fff987aa2f78"
+      ],
+      "confidence": 0.95,
+      "evidence": "anxiety symptoms",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "a20116193dabf214c564fff987aa2f78"
+      ],
+      "confidence": 0.9,
+      "evidence": "patients with IBD",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "a20116193dabf214c564fff987aa2f78"
+      ],
+      "confidence": 0.9,
+      "evidence": "ulcerative colitis",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "a20116193dabf214c564fff987aa2f78"
+      ],
+      "confidence": 0.9,
+      "evidence": "Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 5
+      },
+      "source_chunk_ids": [
+        "a20116193dabf214c564fff987aa2f78"
+      ],
+      "confidence": 0.85,
+      "evidence": "pooled prevalence based on 58 studies",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "meta-analysis of anxiety in IBD",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 18915
+      },
+      "source_chunk_ids": [
+        "a20116193dabf214c564fff987aa2f78"
+      ],
+      "confidence": 0.8,
+      "evidence": "58 studies including 18915 patients",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "963ddc2753c4def9679c21767d30ca3c"
+      ],
+      "confidence": 0.95,
+      "evidence": "depression symptoms",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "963ddc2753c4def9679c21767d30ca3c"
+      ],
+      "confidence": 0.9,
+      "evidence": "patients with IBD",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "963ddc2753c4def9679c21767d30ca3c"
+      ],
+      "confidence": 0.9,
+      "evidence": "ulcerative colitis",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "963ddc2753c4def9679c21767d30ca3c"
+      ],
+      "confidence": 0.9,
+      "evidence": "Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "meta-analysis of 75 studies",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 29438
+      },
+      "source_chunk_ids": [
+        "963ddc2753c4def9679c21767d30ca3c"
+      ],
+      "confidence": 0.85,
+      "evidence": "pooled prevalence of depression symptoms among 29438 patients",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 1
+      },
+      "source_chunk_ids": [
+        "963ddc2753c4def9679c21767d30ca3c"
+      ],
+      "confidence": 0.8,
+      "evidence": "pooled prevalence",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "6bc45e3081d97a1884a8823e55c3775b"
+      ],
+      "confidence": 0.95,
+      "evidence": "IBD Anxiety Any",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "6bc45e3081d97a1884a8823e55c3775b"
+      ],
+      "confidence": 0.95,
+      "evidence": "Depression Any",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "6bc45e3081d97a1884a8823e55c3775b"
+      ],
+      "confidence": 0.9,
+      "evidence": "Crohn's disease Anxiety Any",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "meta-analysis of anxiety and depression in IBD",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 142,
+        "condition_focus": "anxiety"
+      },
+      "source_chunk_ids": [
+        "584d5c185163546154db176199cdf055"
+      ],
+      "confidence": 0.85,
+      "evidence": "based on two studies that included 142 patients",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "meta-analysis of depression in IBD",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 694,
+        "condition_focus": "depression"
+      },
+      "source_chunk_ids": [
+        "584d5c185163546154db176199cdf055"
+      ],
+      "confidence": 0.85,
+      "evidence": "based on five studies that included 694 patients",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "584d5c185163546154db176199cdf055"
+      ],
+      "confidence": 0.9,
+      "evidence": "pooled prevalence",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "anxiety symptoms",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "584d5c185163546154db176199cdf055"
+      ],
+      "confidence": 0.95,
+      "evidence": "anxiety symptoms",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "depression symptoms",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "584d5c185163546154db176199cdf055"
+      ],
+      "confidence": 0.95,
+      "evidence": "depression symptoms",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "584d5c185163546154db176199cdf055"
+      ],
+      "confidence": 0.9,
+      "evidence": "patients with IBD",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "af337bf70311bd336a0aa78feb37ec80"
+      ],
+      "confidence": 0.9,
+      "evidence": "prevalence of anxiety symptoms",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "af337bf70311bd336a0aa78feb37ec80"
+      ],
+      "confidence": 0.95,
+      "evidence": "patients with IBD",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 5
+      },
+      "source_chunk_ids": [
+        "af337bf70311bd336a0aa78feb37ec80"
+      ],
+      "confidence": 0.8,
+      "evidence": "pooled prevalence",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Study using HADS",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 58
+      },
+      "source_chunk_ids": [
+        "af337bf70311bd336a0aa78feb37ec80"
+      ],
+      "confidence": 0.85,
+      "evidence": "58 studies reporting the prevalence",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Study using Beck's Anxiety Inventory",
+      "attributes": {
+        "design": "study"
+      },
+      "source_chunk_ids": [
+        "af337bf70311bd336a0aa78feb37ec80"
+      ],
+      "confidence": 0.75,
+      "evidence": "one study that used Beck's Anxiety Inventory",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Study using State-Trait Anxiety Inventory",
+      "attributes": {
+        "design": "study"
+      },
+      "source_chunk_ids": [
+        "af337bf70311bd336a0aa78feb37ec80"
+      ],
+      "confidence": 0.75,
+      "evidence": "two studies using the State-Trait Anxiety Inventory",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "depression symptoms",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "ecee874f269bdab3db65b80ddb2b679e"
+      ],
+      "confidence": 0.95,
+      "evidence": "prevalence of depression symptoms",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "ecee874f269bdab3db65b80ddb2b679e"
+      ],
+      "confidence": 0.9,
+      "evidence": "patients with IBD",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "anxiety symptoms",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "ecee874f269bdab3db65b80ddb2b679e"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 5
+      },
+      "source_chunk_ids": [
+        "ecee874f269bdab3db65b80ddb2b679e"
+      ],
+      "confidence": 0.85,
+      "evidence": "pooled prevalence",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "75 studies on depression in IBD",
+      "attributes": {
+        "design": "systematic review/meta-analysis",
+        "sample_size": 75
+      },
+      "source_chunk_ids": [
+        "ecee874f269bdab3db65b80ddb2b679e"
+      ],
+      "confidence": 0.8,
+      "evidence": "75 studies reporting the prevalence",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "confidence": 0.95,
+      "evidence": "Ulcerative colitis",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "confidence": 0.95,
+      "evidence": "Anxiety",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "confidence": 0.95,
+      "evidence": "Depression",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 5
+      },
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "confidence": 0.8,
+      "evidence": "Pooled prevalence",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "meta-analysis of ulcerative colitis studies",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 3915
+      },
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "confidence": 0.75,
+      "evidence": "Number of patients 3915",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "meta-analysis of ulcerative colitis studies (HADS)",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 3789
+      },
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "confidence": 0.75,
+      "evidence": "HADS 203789",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "meta-analysis of ulcerative colitis studies (HAM-A)",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 225
+      },
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "confidence": 0.75,
+      "evidence": "HAM-A 15225",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "meta-analysis of ulcerative colitis studies (STAI)",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 485
+      },
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "confidence": 0.75,
+      "evidence": "STAI 17485",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "meta-analysis of ulcerative colitis studies (any depression)",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 8219
+      },
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "confidence": 0.75,
+      "evidence": "Number of patients 8219",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "meta-analysis of ulcerative colitis studies (HADS depression)",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 3681
+      },
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "confidence": 0.75,
+      "evidence": "HADS 193681",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Study",
+      "name": "meta-analysis of ulcerative colitis studies (PHQ-9)",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 3561
+      },
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "confidence": 0.75,
+      "evidence": "PHQ-9 53561",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Study",
+      "name": "meta-analysis of ulcerative colitis studies (BDI)",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 243
+      },
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "confidence": 0.75,
+      "evidence": "BDI 32243",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Study",
+      "name": "meta-analysis of ulcerative colitis studies (Zung SDS)",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 261
+      },
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "confidence": 0.75,
+      "evidence": "Zung SDS 21261",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Study",
+      "name": "meta-analysis of ulcerative colitis studies (CES-D)",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 1084
+      },
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "confidence": 0.75,
+      "evidence": "CES-D 11084",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Study",
+      "name": "meta-analysis of ulcerative colitis studies (SF-36)",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 1919
+      },
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "confidence": 0.75,
+      "evidence": "SF-36 151911",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "not applicable",
+      "attributes": {
+        "evidence_level": null
+      },
+      "source_chunk_ids": [
+        "90017767d596e56c7cdf3d0de62edbf1"
+      ],
+      "confidence": 0.7,
+      "evidence": "entries classed as not applicable",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "90017767d596e56c7cdf3d0de62edbf1"
+      ],
+      "confidence": 0.9,
+      "evidence": "BAI=Beck's Anxiety Inventory",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "90017767d596e56c7cdf3d0de62edbf1"
+      ],
+      "confidence": 0.9,
+      "evidence": "BDI=Beck's Depression Inventory",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "90017767d596e56c7cdf3d0de62edbf1"
+      ],
+      "confidence": 0.9,
+      "evidence": "CES-D=Center for Epidemiologic Studies Depression scale",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "90017767d596e56c7cdf3d0de62edbf1"
+      ],
+      "confidence": 0.9,
+      "evidence": "GAD-7=General Anxiety Disorder-7",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "90017767d596e56c7cdf3d0de62edbf1"
+      ],
+      "confidence": 0.9,
+      "evidence": "HADS=Hospital Anxiety and Depression Scale",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "90017767d596e56c7cdf3d0de62edbf1"
+      ],
+      "confidence": 0.9,
+      "evidence": "HADS=Hospital Anxiety and Depression Scale",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "90017767d596e56c7cdf3d0de62edbf1"
+      ],
+      "confidence": 0.9,
+      "evidence": "HAM-A=Hamilton Anxiety Rating Scale",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "90017767d596e56c7cdf3d0de62edbf1"
+      ],
+      "confidence": 0.9,
+      "evidence": "HAM-D=Hamilton Depression Rating Scale",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "inflammatory bowel disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "90017767d596e56c7cdf3d0de62edbf1"
+      ],
+      "confidence": 0.9,
+      "evidence": "IBD=inflammatory bowel disease",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "90017767d596e56c7cdf3d0de62edbf1"
+      ],
+      "confidence": 0.9,
+      "evidence": "PHQ-9=Patient Health Questionnaire-9",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "90017767d596e56c7cdf3d0de62edbf1"
+      ],
+      "confidence": 0.9,
+      "evidence": "STAI=State-Trait Anxiety Inventory",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "90017767d596e56c7cdf3d0de62edbf1"
+      ],
+      "confidence": 0.9,
+      "evidence": "QIDS=Quick Inventory of Depressive Symptomatology",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "90017767d596e56c7cdf3d0de62edbf1"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zung SAS=Zung Self-rating Anxiety Scale",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "90017767d596e56c7cdf3d0de62edbf1"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zung SDS=Zung Self-rating Depression Scale",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "da80be2235e246bf541f30e7df9d1039"
+      ],
+      "confidence": 0.95,
+      "evidence": "anxiety symptoms",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "da80be2235e246bf541f30e7df9d1039"
+      ],
+      "confidence": 0.9,
+      "evidence": "patients with Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "da80be2235e246bf541f30e7df9d1039"
+      ],
+      "confidence": 0.9,
+      "evidence": "patients with ulcerative colitis",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "meta-analysis of seven studies",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": null,
+        "year": null,
+        "doi": null
+      },
+      "source_chunk_ids": [
+        "da80be2235e246bf541f30e7df9d1039"
+      ],
+      "confidence": 0.85,
+      "evidence": "seven studies",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 1
+      },
+      "source_chunk_ids": [
+        "da80be2235e246bf541f30e7df9d1039"
+      ],
+      "confidence": 0.8,
+      "evidence": "pooled prevalence",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "meta-analysis of 12 studies",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 12
+      },
+      "source_chunk_ids": [
+        "28008262c6c8b3eeb1fbea4486326f83"
+      ],
+      "confidence": 0.9,
+      "evidence": "12 studies that reported prevalence",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "28008262c6c8b3eeb1fbea4486326f83"
+      ],
+      "confidence": 0.85,
+      "evidence": "pooled prevalence",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "28008262c6c8b3eeb1fbea4486326f83"
+      ],
+      "confidence": 0.95,
+      "evidence": "depression symptoms",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "28008262c6c8b3eeb1fbea4486326f83"
+      ],
+      "confidence": 0.9,
+      "evidence": "patients with IBD",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "2d28f9e880acccdccdb3de0452d848f8"
+      ],
+      "confidence": 0.9,
+      "evidence": "IBD Anxiety",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "2d28f9e880acccdccdb3de0452d848f8"
+      ],
+      "confidence": 0.9,
+      "evidence": "Depression",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "2d28f9e880acccdccdb3de0452d848f8"
+      ],
+      "confidence": 0.95,
+      "evidence": "Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "2d28f9e880acccdccdb3de0452d848f8"
+      ],
+      "confidence": 0.95,
+      "evidence": "Ulcerative colitis",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 5
+      },
+      "source_chunk_ids": [
+        "2d28f9e880acccdccdb3de0452d848f8"
+      ],
+      "confidence": 0.8,
+      "evidence": "Pooled prevalence",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "meta-analysis on IBD and mental health",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 1338
+      },
+      "source_chunk_ids": [
+        "2d28f9e880acccdccdb3de0452d848f8"
+      ],
+      "confidence": 0.75,
+      "evidence": "Number of studiesNumber of patients",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "depression symptoms",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "dcf15774b5c3109e2102a62b4a328acb"
+      ],
+      "confidence": 0.95,
+      "evidence": "prevalence of depression symptoms",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "dcf15774b5c3109e2102a62b4a328acb"
+      ],
+      "confidence": 0.95,
+      "evidence": "Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "dcf15774b5c3109e2102a62b4a328acb"
+      ],
+      "confidence": 0.95,
+      "evidence": "ulcerative colitis",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "f95bdd2bab8545e674f5a840dc3e2d12"
+      ],
+      "confidence": 0.95,
+      "evidence": "patients with Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "f95bdd2bab8545e674f5a840dc3e2d12"
+      ],
+      "confidence": 0.95,
+      "evidence": "patients with ulcerative colitis",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "anxiety symptoms",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "f95bdd2bab8545e674f5a840dc3e2d12"
+      ],
+      "confidence": 0.9,
+      "evidence": "prevalence of anxiety symptoms",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "active Crohn's disease",
+      "attributes": {
+        "condition_type": "disease",
+        "disease_activity": "active"
+      },
+      "source_chunk_ids": [
+        "f95bdd2bab8545e674f5a840dc3e2d12"
+      ],
+      "confidence": 0.85,
+      "evidence": "patients with active Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "inactive Crohn's disease",
+      "attributes": {
+        "condition_type": "disease",
+        "disease_activity": "inactive"
+      },
+      "source_chunk_ids": [
+        "f95bdd2bab8545e674f5a840dc3e2d12"
+      ],
+      "confidence": 0.85,
+      "evidence": "patients with inactive Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "active ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease",
+        "disease_activity": "active"
+      },
+      "source_chunk_ids": [
+        "f95bdd2bab8545e674f5a840dc3e2d12"
+      ],
+      "confidence": 0.85,
+      "evidence": "patients with active ulcerative colitis",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "inactive ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease",
+        "disease_activity": "inactive"
+      },
+      "source_chunk_ids": [
+        "f95bdd2bab8545e674f5a840dc3e2d12"
+      ],
+      "confidence": 0.85,
+      "evidence": "patients with inactive ulcerative colitis",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "meta-analysis on anxiety in IBD",
+      "attributes": {
+        "design": "meta-analysis",
+        "heterogeneity": "I^2=77.2%"
+      },
+      "source_chunk_ids": [
+        "f95bdd2bab8545e674f5a840dc3e2d12"
+      ],
+      "confidence": 0.8,
+      "evidence": "studies (I^2=77.2%, p=0.0006)",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 1
+      },
+      "source_chunk_ids": [
+        "f95bdd2bab8545e674f5a840dc3e2d12"
+      ],
+      "confidence": 0.75,
+      "evidence": "Subgroup analyses",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "d8641b012d2ffcf0aae79ec934672c2d"
+      ],
+      "confidence": 0.95,
+      "evidence": "depression symptoms",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "active IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "d8641b012d2ffcf0aae79ec934672c2d"
+      ],
+      "confidence": 0.9,
+      "evidence": "patients with active IBD",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "inactive IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "d8641b012d2ffcf0aae79ec934672c2d"
+      ],
+      "confidence": 0.9,
+      "evidence": "patients with inactive IBD",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "d8641b012d2ffcf0aae79ec934672c2d"
+      ],
+      "confidence": 0.95,
+      "evidence": "Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "meta-analysis of depression in IBD",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": "multiple studies"
+      },
+      "source_chunk_ids": [
+        "d8641b012d2ffcf0aae79ec934672c2d"
+      ],
+      "confidence": 0.85,
+      "evidence": "pooled prevalence in 11 studies",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "d8641b012d2ffcf0aae79ec934672c2d"
+      ],
+      "confidence": 0.8,
+      "evidence": "pooled prevalence",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "inflammatory bowel disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "2ec2de4e3c197ee7087501049a79de3d"
+      ],
+      "confidence": 0.95,
+      "evidence": "Inflammatory bowel disease",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "2ec2de4e3c197ee7087501049a79de3d"
+      ],
+      "confidence": 0.95,
+      "evidence": "Anxiety",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "2ec2de4e3c197ee7087501049a79de3d"
+      ],
+      "confidence": 0.95,
+      "evidence": "Depression",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "2ec2de4e3c197ee7087501049a79de3d"
+      ],
+      "confidence": 0.95,
+      "evidence": "Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "2ec2de4e3c197ee7087501049a79de3d"
+      ],
+      "confidence": 0.95,
+      "evidence": "Ulcerative colitis",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 5
+      },
+      "source_chunk_ids": [
+        "2ec2de4e3c197ee7087501049a79de3d"
+      ],
+      "confidence": 0.8,
+      "evidence": "Pooled prevalence",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "meta-analysis of IBD studies",
+      "attributes": {
+        "design": "meta-analysis"
+      },
+      "source_chunk_ids": [
+        "2ec2de4e3c197ee7087501049a79de3d"
+      ],
+      "confidence": 0.8,
+      "evidence": "Pooled prevalence",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "05e6dda8fc07ec9cea36c54e37ee115d"
+      ],
+      "confidence": 0.9,
+      "evidence": "prevalence of depression symptoms",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "05e6dda8fc07ec9cea36c54e37ee115d"
+      ],
+      "confidence": 0.95,
+      "evidence": "patients with active Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "05e6dda8fc07ec9cea36c54e37ee115d"
+      ],
+      "confidence": 0.95,
+      "evidence": "patients with active ulcerative colitis",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Study 1",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": null,
+        "year": null,
+        "doi": null
+      },
+      "source_chunk_ids": [
+        "05e6dda8fc07ec9cea36c54e37ee115d"
+      ],
+      "confidence": 0.8,
+      "evidence": "five studies,19,53,70,84,101",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Study 2",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": null,
+        "year": null,
+        "doi": null
+      },
+      "source_chunk_ids": [
+        "05e6dda8fc07ec9cea36c54e37ee115d"
+      ],
+      "confidence": 0.8,
+      "evidence": "ten studies.11,19,28,53,61,70,72,84,92,101",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Study 3",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": null,
+        "year": null,
+        "doi": null
+      },
+      "source_chunk_ids": [
+        "05e6dda8fc07ec9cea36c54e37ee115d"
+      ],
+      "confidence": 0.8,
+      "evidence": "five studies,19,49,65,70,84",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Study 4",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": null,
+        "year": null,
+        "doi": null
+      },
+      "source_chunk_ids": [
+        "05e6dda8fc07ec9cea36c54e37ee115d"
+      ],
+      "confidence": 0.8,
+      "evidence": "nine studies (table 3).11,19,28,49,65,70,72,84,92",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "05e6dda8fc07ec9cea36c54e37ee115d"
+      ],
+      "confidence": 0.85,
+      "evidence": "prevalence in five studies",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "systematic review and meta-analysis",
+      "attributes": {
+        "design": "systematic review and meta-analysis",
+        "sample_size": 77
+      },
+      "source_chunk_ids": [
+        "1e2bd700af13e2b9f44c6b4c4393cf4c"
+      ],
+      "confidence": 0.95,
+      "evidence": "systematic review and meta-analysis includes data from 77 studies",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "1e2bd700af13e2b9f44c6b4c4393cf4c"
+      ],
+      "confidence": 0.9,
+      "evidence": "meta-analysis includes data from 77 studies",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "1e2bd700af13e2b9f44c6b4c4393cf4c"
+      ],
+      "confidence": 0.95,
+      "evidence": "prevalence of symptoms of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "1e2bd700af13e2b9f44c6b4c4393cf4c"
+      ],
+      "confidence": 0.95,
+      "evidence": "prevalence of symptoms of depression",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "1e2bd700af13e2b9f44c6b4c4393cf4c"
+      ],
+      "confidence": 0.9,
+      "evidence": "patients with IBD",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "1e2bd700af13e2b9f44c6b4c4393cf4c"
+      ],
+      "confidence": 0.85,
+      "evidence": "patients with either Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "1e2bd700af13e2b9f44c6b4c4393cf4c"
+      ],
+      "confidence": 0.85,
+      "evidence": "ulcerative colitis",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "anxiety symptoms",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "346571ce3f83d7ce11b253570a1aae5d"
+      ],
+      "confidence": 0.95,
+      "evidence": "anxiety symptoms",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "depression symptoms",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "346571ce3f83d7ce11b253570a1aae5d"
+      ],
+      "confidence": 0.95,
+      "evidence": "depression symptoms",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "346571ce3f83d7ce11b253570a1aae5d"
+      ],
+      "confidence": 0.95,
+      "evidence": "Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "346571ce3f83d7ce11b253570a1aae5d"
+      ],
+      "confidence": 0.95,
+      "evidence": "ulcerative colitis",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "346571ce3f83d7ce11b253570a1aae5d"
+      ],
+      "confidence": 0.9,
+      "evidence": "patients with IBD",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Study: prevalence of anxiety symptoms with Beck's Anxiety Inventory",
+      "attributes": {
+        "design": "observational",
+        "questionnaire": "Beck's Anxiety Inventory"
+      },
+      "source_chunk_ids": [
+        "346571ce3f83d7ce11b253570a1aae5d"
+      ],
+      "confidence": 0.8,
+      "evidence": "Beck's Anxiety Inventory in one study",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Study: prevalence of anxiety symptoms with State-Trait Anxiety Inventory",
+      "attributes": {
+        "design": "observational",
+        "questionnaire": "State-Trait Anxiety Inventory"
+      },
+      "source_chunk_ids": [
+        "346571ce3f83d7ce11b253570a1aae5d"
+      ],
+      "confidence": 0.8,
+      "evidence": "State-Trait Anxiety Inventory in two studies",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Study: pooled prevalence of anxiety symptoms with HADS",
+      "attributes": {
+        "design": "meta-analysis",
+        "questionnaire": "HADS",
+        "sample_size": 58
+      },
+      "source_chunk_ids": [
+        "346571ce3f83d7ce11b253570a1aae5d"
+      ],
+      "confidence": 0.85,
+      "evidence": "44 of 58 studies reporting prevalence of anxiety symptoms used the HADS questionnaire",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Study: prevalence of depression symptoms with 36-item Short-Form Survey",
+      "attributes": {
+        "design": "observational",
+        "questionnaire": "36-item Short-Form Survey"
+      },
+      "source_chunk_ids": [
+        "346571ce3f83d7ce11b253570a1aae5d"
+      ],
+      "confidence": 0.8,
+      "evidence": "36-item Short-Form Survey in one study",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "Study: prevalence of depression symptoms with Hamilton Depression Rating Scale",
+      "attributes": {
+        "design": "observational",
+        "questionnaire": "Hamilton Depression Rating Scale"
+      },
+      "source_chunk_ids": [
+        "346571ce3f83d7ce11b253570a1aae5d"
+      ],
+      "confidence": 0.8,
+      "evidence": "Hamilton Depression Rating Scale in another study",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Study",
+      "name": "Study: pooled prevalence of depression symptoms with HADS",
+      "attributes": {
+        "design": "meta-analysis",
+        "questionnaire": "HADS",
+        "sample_size": 75
+      },
+      "source_chunk_ids": [
+        "346571ce3f83d7ce11b253570a1aae5d"
+      ],
+      "confidence": 0.85,
+      "evidence": "44 of 75 studies used the HADS questionnaire",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "346571ce3f83d7ce11b253570a1aae5d"
+      ],
+      "confidence": 0.8,
+      "evidence": "pooled prevalence",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "systematic review and meta-analysis",
+      "attributes": {
+        "design": "systematic review and meta-analysis"
+      },
+      "source_chunk_ids": [
+        "c3229afc34b5e4bd63bb83332dc83e71"
+      ],
+      "confidence": 0.9,
+      "evidence": "systematic review and meta-analysis",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "c3229afc34b5e4bd63bb83332dc83e71"
+      ],
+      "confidence": 0.85,
+      "evidence": "meta-analysis",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "c3229afc34b5e4bd63bb83332dc83e71"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "c3229afc34b5e4bd63bb83332dc83e71"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of depression",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "c3229afc34b5e4bd63bb83332dc83e71"
+      ],
+      "confidence": 0.85,
+      "evidence": "patients with IBD",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "d0a95e38fa6c70358d0a3777f5939562"
+      ],
+      "confidence": 0.95,
+      "evidence": "patients with Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "d0a95e38fa6c70358d0a3777f5939562"
+      ],
+      "confidence": 0.95,
+      "evidence": "patients with ulcerative colitis",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "d0a95e38fa6c70358d0a3777f5939562"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "d0a95e38fa6c70358d0a3777f5939562"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of depression",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Nordin et al. cross-sectional study",
+      "attributes": {
+        "design": "cross-sectional study",
+        "sample_size": 492
+      },
+      "source_chunk_ids": [
+        "d0a95e38fa6c70358d0a3777f5939562"
+      ],
+      "confidence": 0.85,
+      "evidence": "cross-sectional study in 492 patients with IBD",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 5
+      },
+      "source_chunk_ids": [
+        "d0a95e38fa6c70358d0a3777f5939562"
+      ],
+      "confidence": 0.9,
+      "evidence": "Our meta-analysis",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "meta-analysis (current)",
+      "attributes": {
+        "design": "meta-analysis"
+      },
+      "source_chunk_ids": [
+        "d0a95e38fa6c70358d0a3777f5939562"
+      ],
+      "confidence": 0.9,
+      "evidence": "Our meta-analysis",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "28547393255b1b9080000bb67d0ff054"
+      ],
+      "confidence": 0.9,
+      "evidence": "anxiety and depression symptoms",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "28547393255b1b9080000bb67d0ff054"
+      ],
+      "confidence": 0.9,
+      "evidence": "anxiety and depression symptoms",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "28547393255b1b9080000bb67d0ff054"
+      ],
+      "confidence": 0.85,
+      "evidence": "IBD disease activity",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "28547393255b1b9080000bb67d0ff054"
+      ],
+      "confidence": 0.8,
+      "evidence": "patients with Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "28547393255b1b9080000bb67d0ff054"
+      ],
+      "confidence": 0.8,
+      "evidence": "patients with ulcerative colitis",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Tabatabaien et al.",
+      "attributes": {
+        "year": null,
+        "design": "observational"
+      },
+      "source_chunk_ids": [
+        "28547393255b1b9080000bb67d0ff054"
+      ],
+      "confidence": 0.7,
+      "evidence": "Tabatabaien and colleagues reported",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "2017 meta-analysis",
+      "attributes": {
+        "year": 2017,
+        "design": "meta-analysis"
+      },
+      "source_chunk_ids": [
+        "28547393255b1b9080000bb67d0ff054"
+      ],
+      "confidence": 0.8,
+      "evidence": "a 2017 meta-analysis",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "28547393255b1b9080000bb67d0ff054"
+      ],
+      "confidence": 0.75,
+      "evidence": "meta-analysis",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "common mental disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "28547393255b1b9080000bb67d0ff054"
+      ],
+      "confidence": 0.85,
+      "evidence": "symptoms of common mental disorders",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Study: prevalence of anxiety/depression in IBD",
+      "attributes": {
+        "design": "systematic review or meta-analysis",
+        "sample_size": 19
+      },
+      "source_chunk_ids": [
+        "06411b9db60bc9a241df6496e6f2cf26"
+      ],
+      "confidence": 0.8,
+      "evidence": "19 studies that reported prevalence",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "systematic review",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "06411b9db60bc9a241df6496e6f2cf26"
+      ],
+      "confidence": 0.7,
+      "evidence": "19 studies that reported prevalence",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "06411b9db60bc9a241df6496e6f2cf26"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "06411b9db60bc9a241df6496e6f2cf26"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of depression",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "06411b9db60bc9a241df6496e6f2cf26"
+      ],
+      "confidence": 0.85,
+      "evidence": "IBD activity",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "2ec926299881fa0827dbfccf72948b2f"
+      ],
+      "confidence": 0.95,
+      "evidence": "symptoms of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "2ec926299881fa0827dbfccf72948b2f"
+      ],
+      "confidence": 0.95,
+      "evidence": "symptoms of depression",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "2ec926299881fa0827dbfccf72948b2f"
+      ],
+      "confidence": 0.9,
+      "evidence": "patients with IBD",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "2ec926299881fa0827dbfccf72948b2f"
+      ],
+      "confidence": 0.85,
+      "evidence": "our meta-analysis",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "systematic review",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "2ec926299881fa0827dbfccf72948b2f"
+      ],
+      "confidence": 0.8,
+      "evidence": "systematic review by Mikocka-Walus",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Mikocka-Walus et al. systematic review",
+      "attributes": {
+        "design": "systematic review"
+      },
+      "source_chunk_ids": [
+        "2ec926299881fa0827dbfccf72948b2f"
+      ],
+      "confidence": 0.75,
+      "evidence": "systematic review by Mikocka-Walus",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "cb2a78e223189381ce4a4562f483363d"
+      ],
+      "confidence": 0.9,
+      "evidence": "symptoms of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "cb2a78e223189381ce4a4562f483363d"
+      ],
+      "confidence": 0.9,
+      "evidence": "depression",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "cb2a78e223189381ce4a4562f483363d"
+      ],
+      "confidence": 0.85,
+      "evidence": "ulcerative colitis",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "cb2a78e223189381ce4a4562f483363d"
+      ],
+      "confidence": 0.85,
+      "evidence": "Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "nested case-control study from 2020",
+      "attributes": {
+        "design": "nested case-control study",
+        "year": 2020,
+        "sample_size": 15360
+      },
+      "source_chunk_ids": [
+        "cb2a78e223189381ce4a4562f483363d"
+      ],
+      "confidence": 0.8,
+      "evidence": "nested case-control study from 2020",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "epidemiological study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "cb2a78e223189381ce4a4562f483363d"
+      ],
+      "confidence": 0.75,
+      "evidence": "nested case-control study",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "da9ad65ec507b5786b3da5419dffddea"
+      ],
+      "confidence": 0.95,
+      "evidence": "IBD did in the years before",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "da9ad65ec507b5786b3da5419dffddea"
+      ],
+      "confidence": 0.95,
+      "evidence": "history of depression",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "2019 cohort study",
+      "attributes": {
+        "design": "cohort study",
+        "year": 2019
+      },
+      "source_chunk_ids": [
+        "da9ad65ec507b5786b3da5419dffddea"
+      ],
+      "confidence": 0.9,
+      "evidence": "a 2019 cohort study observed",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "cohort study evidence",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "da9ad65ec507b5786b3da5419dffddea"
+      ],
+      "confidence": 0.85,
+      "evidence": "cohort study observed",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "common mental disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "da9ad65ec507b5786b3da5419dffddea"
+      ],
+      "confidence": 0.8,
+      "evidence": "symptoms of common mental disorders",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "reduced adherence to therapy",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "da9ad65ec507b5786b3da5419dffddea"
+      ],
+      "confidence": 0.75,
+      "evidence": "reduced adherence to therapy",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "improving treatment adherence",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "da9ad65ec507b5786b3da5419dffddea"
+      ],
+      "confidence": 0.75,
+      "evidence": "improving treatment adherence",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "reducing health-care use and costs",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "da9ad65ec507b5786b3da5419dffddea"
+      ],
+      "confidence": 0.7,
+      "evidence": "reducing health-care use and associated costs",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "systematic review and meta-analysis",
+      "attributes": {
+        "evidence_level": 1
+      },
+      "source_chunk_ids": [
+        "9d778baed9b02bfa333d14111a94b2b7"
+      ],
+      "confidence": 0.95,
+      "evidence": "systematic review and meta-analysis",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "common mental disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "9d778baed9b02bfa333d14111a94b2b7"
+      ],
+      "confidence": 0.9,
+      "evidence": "common mental disorders",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "9d778baed9b02bfa333d14111a94b2b7"
+      ],
+      "confidence": 0.95,
+      "evidence": "symptoms of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "9d778baed9b02bfa333d14111a94b2b7"
+      ],
+      "confidence": 0.95,
+      "evidence": "symptoms of depression",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "IBD",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "9d778baed9b02bfa333d14111a94b2b7"
+      ],
+      "confidence": 0.9,
+      "evidence": "patients with IBD",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "inflammatory bowel disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "36994286edf221a10ccfdabff6d6a283"
+      ],
+      "confidence": 0.95,
+      "evidence": "inflammatory bowel disease",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "Crohn's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "36994286edf221a10ccfdabff6d6a283"
+      ],
+      "confidence": 0.9,
+      "evidence": "Crohn's disease",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "ulcerative colitis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "36994286edf221a10ccfdabff6d6a283"
+      ],
+      "confidence": 0.9,
+      "evidence": "ulcerative colitis",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "36994286edf221a10ccfdabff6d6a283"
+      ],
+      "confidence": 0.95,
+      "evidence": "depression",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "36994286edf221a10ccfdabff6d6a283"
+      ],
+      "confidence": 0.95,
+      "evidence": "anxiety",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Mikocka-Walus et al. 2016",
+      "attributes": {
+        "year": 2016,
+        "design": "study"
+      },
+      "source_chunk_ids": [
+        "36994286edf221a10ccfdabff6d6a283"
+      ],
+      "confidence": 0.8,
+      "evidence": "Mikocka-Walus A, Pittet V, Rossel JB, et al. Symptoms of depression and anxiety are independently associated with clinical recurrence of inflammatory bowel disease. Clin Gastroenterol Hepatol 2016",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Gaines et al. 2016",
+      "attributes": {
+        "year": 2016,
+        "design": "study"
+      },
+      "source_chunk_ids": [
+        "36994286edf221a10ccfdabff6d6a283"
+      ],
+      "confidence": 0.8,
+      "evidence": "Gaines LS, Slaughter JC, Horst SN, et al. Association between affective-cognitive symptoms of depression and exacerbation of Crohn's disease. Am J Gastroenterol 2016",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Narula et al. 2019",
+      "attributes": {
+        "year": 2019,
+        "design": "study"
+      },
+      "source_chunk_ids": [
+        "36994286edf221a10ccfdabff6d6a283"
+      ],
+      "confidence": 0.8,
+      "evidence": "Narula N, Pinto-Sanchez MI, Calo NC, et al. Anxiety but not depression predicts poor outcomes in inflammatory bowel disease. Inflamm Bowel Dis 2019",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "systematic review",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "36994286edf221a10ccfdabff6d6a283"
+      ],
+      "confidence": 0.75,
+      "evidence": "systematic review",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 1
+      },
+      "source_chunk_ids": [
+        "36994286edf221a10ccfdabff6d6a283"
+      ],
+      "confidence": 0.7,
+      "evidence": "meta-analyses",
+      "verified": true
+    }
+  ],
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "associates"
+      },
+      "confidence": 0.7,
+      "evidence": "symptoms of anxiety in adult patients with IBD",
+      "source_chunk_ids": [
+        "ad45c50cfcd144b43c33efea02f27311"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "associates"
+      },
+      "confidence": 0.7,
+      "evidence": "symptoms of depression in adult patients with IBD",
+      "source_chunk_ids": [
+        "ad45c50cfcd144b43c33efea02f27311"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "assess prevalence of symptoms",
+      "source_chunk_ids": [
+        "ad45c50cfcd144b43c33efea02f27311"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "condition"
+      },
+      "confidence": 0.8,
+      "evidence": "adult patients with IBD",
+      "source_chunk_ids": [
+        "ad45c50cfcd144b43c33efea02f27311"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "systematic review and meta-analysis",
+      "source_chunk_ids": [
+        "ed23f6977c96f3de00ef2eef88978753"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "patients with IBD",
+      "source_chunk_ids": [
+        "ed23f6977c96f3de00ef2eef88978753"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "symptoms of anxiety",
+      "source_chunk_ids": [
+        "ed23f6977c96f3de00ef2eef88978753"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "symptoms of depression",
+      "source_chunk_ids": [
+        "ed23f6977c96f3de00ef2eef88978753"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "meta-analysis of 77 studies",
+      "source_chunk_ids": [
+        "7d96f478efe0df869f6377ec09756e04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "pooled prevalence of anxiety symptoms",
+      "source_chunk_ids": [
+        "7d96f478efe0df869f6377ec09756e04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "pooled prevalence of depression symptoms",
+      "source_chunk_ids": [
+        "7d96f478efe0df869f6377ec09756e04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.8,
+      "evidence": "patients with Crohn's disease had higher odds",
+      "source_chunk_ids": [
+        "7d96f478efe0df869f6377ec09756e04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.8,
+      "evidence": "patients with ulcerative colitis",
+      "source_chunk_ids": [
+        "7d96f478efe0df869f6377ec09756e04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.75,
+      "evidence": "women with IBD were more likely",
+      "source_chunk_ids": [
+        "7d96f478efe0df869f6377ec09756e04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.75,
+      "evidence": "higher in patients with active IBD",
+      "source_chunk_ids": [
+        "7d96f478efe0df869f6377ec09756e04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.75,
+      "evidence": "patients with inactive disease",
+      "source_chunk_ids": [
+        "7d96f478efe0df869f6377ec09756e04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "cause inflammation of the gastrointestinal tract",
+      "source_chunk_ids": [
+        "2462b912831853385a1f98d62fc0840a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "leading to an abnormal inflammatory response",
+      "source_chunk_ids": [
+        "2462b912831853385a1f98d62fc0840a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "patients with IBD might have psychological illness",
+      "source_chunk_ids": [
+        "22995c1ecebc57887d207db70a9c0b18"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.7,
+      "evidence": "including symptoms of common mental disorders",
+      "source_chunk_ids": [
+        "22995c1ecebc57887d207db70a9c0b18"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.7,
+      "evidence": "including symptoms of ... somatisation",
+      "source_chunk_ids": [
+        "22995c1ecebc57887d207db70a9c0b18"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "involves",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "bidirectional communication via the gut\u2013brain axis",
+      "source_chunk_ids": [
+        "22995c1ecebc57887d207db70a9c0b18"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "patients with IBD might experience symptoms of anxiety",
+      "source_chunk_ids": [
+        "0c44d46a48ff5cb65fefc0186a661a16"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "patients with IBD might experience symptoms of depression",
+      "source_chunk_ids": [
+        "0c44d46a48ff5cb65fefc0186a661a16"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "systematic review and meta-analysis",
+      "source_chunk_ids": [
+        "d0deb0436b533ee536f7d91268abf45c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "assesses prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "assess prevalence of symptoms of anxiety",
+      "source_chunk_ids": [
+        "d0deb0436b533ee536f7d91268abf45c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "assesses prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "assess prevalence of symptoms of depression",
+      "source_chunk_ids": [
+        "d0deb0436b533ee536f7d91268abf45c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "investigates influence"
+      },
+      "confidence": 0.8,
+      "evidence": "patients with IBD",
+      "source_chunk_ids": [
+        "d0deb0436b533ee536f7d91268abf45c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.7,
+      "evidence": "symptoms of anxiety in patients with IBD",
+      "source_chunk_ids": [
+        "28e7343e9d2022c58126d13524e43773"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.7,
+      "evidence": "symptoms of depression in patients with IBD",
+      "source_chunk_ids": [
+        "28e7343e9d2022c58126d13524e43773"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Two systematic reviews",
+      "source_chunk_ids": [
+        "28e7343e9d2022c58126d13524e43773"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "systematic review and meta-analysis",
+      "source_chunk_ids": [
+        "2d4dcea3762521d218dee0b2f6c9a2b4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "prevalence of symptoms of anxiety",
+      "source_chunk_ids": [
+        "2d4dcea3762521d218dee0b2f6c9a2b4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "prevalence of symptoms of depression",
+      "source_chunk_ids": [
+        "2d4dcea3762521d218dee0b2f6c9a2b4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.8,
+      "evidence": "patients with IBD",
+      "source_chunk_ids": [
+        "2d4dcea3762521d218dee0b2f6c9a2b4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "systematic review",
+      "source_chunk_ids": [
+        "d43658d90e6b591920d824c84e97ab2f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "reporting prevalence of symptoms of anxiety",
+      "source_chunk_ids": [
+        "d43658d90e6b591920d824c84e97ab2f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "reporting prevalence of symptoms of depression",
+      "source_chunk_ids": [
+        "d43658d90e6b591920d824c84e97ab2f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.8,
+      "evidence": "in adult patients with histologically or radiologically confirmed IBD",
+      "source_chunk_ids": [
+        "d43658d90e6b591920d824c84e97ab2f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "symptoms of anxiety",
+      "source_chunk_ids": [
+        "ef12da14c9a0b837bb1a39872e6ac10b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "symptoms of depression",
+      "source_chunk_ids": [
+        "ef12da14c9a0b837bb1a39872e6ac10b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "symptoms of anxiety",
+      "source_chunk_ids": [
+        "ef12da14c9a0b837bb1a39872e6ac10b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "symptoms of depression",
+      "source_chunk_ids": [
+        "ef12da14c9a0b837bb1a39872e6ac10b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "studies identified in literature search",
+      "source_chunk_ids": [
+        "00fa3b9b4bc8c4d1fc05b2e87a4ac1de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "prevalence of symptoms in patients with inflammatory bowel disease",
+      "source_chunk_ids": [
+        "00fa3b9b4bc8c4d1fc05b2e87a4ac1de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "anxiety symptoms in patients with Crohn's disease",
+      "source_chunk_ids": [
+        "00fa3b9b4bc8c4d1fc05b2e87a4ac1de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "anxiety symptoms in patients with ulcerative colitis",
+      "source_chunk_ids": [
+        "00fa3b9b4bc8c4d1fc05b2e87a4ac1de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.9,
+      "evidence": "prevalence of symptoms of anxiety",
+      "source_chunk_ids": [
+        "00fa3b9b4bc8c4d1fc05b2e87a4ac1de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.9,
+      "evidence": "prevalence of symptoms of depression",
+      "source_chunk_ids": [
+        "00fa3b9b4bc8c4d1fc05b2e87a4ac1de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "included studies",
+      "source_chunk_ids": [
+        "af9cced1740644ae0355d65331d37c69"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "no_separate_data"
+      },
+      "confidence": 0.7,
+      "evidence": "none reported prevalence separately",
+      "source_chunk_ids": [
+        "af9cced1740644ae0355d65331d37c69"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "prevalence_in_controls"
+      },
+      "confidence": 0.7,
+      "evidence": "two studies reported anxiety in controls",
+      "source_chunk_ids": [
+        "af9cced1740644ae0355d65331d37c69"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "prevalence_in_controls"
+      },
+      "confidence": 0.7,
+      "evidence": "five studies reported depression in controls",
+      "source_chunk_ids": [
+        "af9cced1740644ae0355d65331d37c69"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "pooled prevalence based on 58 studies",
+      "source_chunk_ids": [
+        "a20116193dabf214c564fff987aa2f78"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.9,
+      "evidence": "pooled prevalence of anxiety symptoms",
+      "source_chunk_ids": [
+        "a20116193dabf214c564fff987aa2f78"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.85,
+      "evidence": "anxiety symptoms in patients with IBD",
+      "source_chunk_ids": [
+        "a20116193dabf214c564fff987aa2f78"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.8,
+      "evidence": "anxiety symptoms in patients with ulcerative colitis",
+      "source_chunk_ids": [
+        "a20116193dabf214c564fff987aa2f78"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.8,
+      "evidence": "anxiety symptoms in patients with Crohn's disease",
+      "source_chunk_ids": [
+        "a20116193dabf214c564fff987aa2f78"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "pooled prevalence",
+      "source_chunk_ids": [
+        "963ddc2753c4def9679c21767d30ca3c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.9,
+      "evidence": "prevalence of depression symptoms",
+      "source_chunk_ids": [
+        "963ddc2753c4def9679c21767d30ca3c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.85,
+      "evidence": "patients with IBD",
+      "source_chunk_ids": [
+        "963ddc2753c4def9679c21767d30ca3c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.8,
+      "evidence": "ulcerative colitis in 31 studies",
+      "source_chunk_ids": [
+        "963ddc2753c4def9679c21767d30ca3c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.8,
+      "evidence": "Crohn's disease in 30 studies",
+      "source_chunk_ids": [
+        "963ddc2753c4def9679c21767d30ca3c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "pooled prevalence based on two studies",
+      "source_chunk_ids": [
+        "584d5c185163546154db176199cdf055"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "pooled prevalence based on five studies",
+      "source_chunk_ids": [
+        "584d5c185163546154db176199cdf055"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "association",
+        "measurement": {
+          "value": 2.6,
+          "unit": "OR",
+          "measurement_type": "odds ratio",
+          "notes": "95% CI 1.4\u20134.9"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "OR for anxiety symptoms in patients with IBD",
+      "source_chunk_ids": [
+        "584d5c185163546154db176199cdf055"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "association",
+        "measurement": {
+          "value": 1.9,
+          "unit": "OR",
+          "measurement_type": "odds ratio",
+          "notes": "95% CI 1.4\u20132.7"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "OR for depression symptoms in patients with IBD",
+      "source_chunk_ids": [
+        "584d5c185163546154db176199cdf055"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "patients with IBD versus healthy controls",
+      "source_chunk_ids": [
+        "584d5c185163546154db176199cdf055"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "patients with IBD versus healthy controls",
+      "source_chunk_ids": [
+        "584d5c185163546154db176199cdf055"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "pooled prevalence",
+      "source_chunk_ids": [
+        "af337bf70311bd336a0aa78feb37ec80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "prevalence of anxiety symptoms",
+      "source_chunk_ids": [
+        "af337bf70311bd336a0aa78feb37ec80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.9,
+      "evidence": "patients with IBD",
+      "source_chunk_ids": [
+        "af337bf70311bd336a0aa78feb37ec80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.7,
+      "evidence": "Beck's Anxiety Inventory",
+      "source_chunk_ids": [
+        "af337bf70311bd336a0aa78feb37ec80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.7,
+      "evidence": "State-Trait Anxiety Inventory",
+      "source_chunk_ids": [
+        "af337bf70311bd336a0aa78feb37ec80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "75 studies reporting the prevalence of depression symptoms",
+      "source_chunk_ids": [
+        "ecee874f269bdab3db65b80ddb2b679e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.8,
+      "evidence": "patients with IBD",
+      "source_chunk_ids": [
+        "ecee874f269bdab3db65b80ddb2b679e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.8,
+      "evidence": "symptoms of anxiety",
+      "source_chunk_ids": [
+        "ecee874f269bdab3db65b80ddb2b679e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "pooled prevalence",
+      "source_chunk_ids": [
+        "ecee874f269bdab3db65b80ddb2b679e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Pooled prevalence",
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Pooled prevalence",
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Pooled prevalence",
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Pooled prevalence",
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Pooled prevalence",
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E10",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Pooled prevalence",
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E11",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Pooled prevalence",
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E12",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Pooled prevalence",
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E13",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Pooled prevalence",
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E14",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Pooled prevalence",
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E15",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Pooled prevalence",
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "34.2% (27.1\u201341.8)",
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "32.2% (25.4\u201339.3)",
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "25.0% (14.0\u201338.9)",
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "5.1% (75.0\u201392.3)",
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "REPORTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "24.0% (18.6\u201329.9)",
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R17",
+      "type": "REPORTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "22.6% (18.5\u201327.1)",
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R18",
+      "type": "REPORTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "27.9% (14.8\u201343.4)",
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R19",
+      "type": "REPORTS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "31.6% (11.2\u201356.7)",
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R20",
+      "type": "REPORTS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "12.4% (7.3\u201318.7)",
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R21",
+      "type": "REPORTS",
+      "source_entity_id": "E14",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "43.5% (34.0\u201353.4)",
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R22",
+      "type": "REPORTS",
+      "source_entity_id": "E15",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "11.4% (8.8\u201314.4)",
+      "source_chunk_ids": [
+        "d7a7480761cf51db15edcda4153a7525"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "meta-analysis of seven studies",
+      "source_chunk_ids": [
+        "da80be2235e246bf541f30e7df9d1039"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.9,
+      "evidence": "prevalence of anxiety symptoms",
+      "source_chunk_ids": [
+        "da80be2235e246bf541f30e7df9d1039"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.8,
+      "evidence": "patients with Crohn's disease",
+      "source_chunk_ids": [
+        "da80be2235e246bf541f30e7df9d1039"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.8,
+      "evidence": "patients with ulcerative colitis",
+      "source_chunk_ids": [
+        "da80be2235e246bf541f30e7df9d1039"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "12 studies that reported prevalence",
+      "source_chunk_ids": [
+        "28008262c6c8b3eeb1fbea4486326f83"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "condition"
+      },
+      "confidence": 0.85,
+      "evidence": "patients with IBD",
+      "source_chunk_ids": [
+        "28008262c6c8b3eeb1fbea4486326f83"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.9,
+      "evidence": "reported prevalence of depression symptoms",
+      "source_chunk_ids": [
+        "28008262c6c8b3eeb1fbea4486326f83"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Pooled prevalence",
+      "source_chunk_ids": [
+        "2d28f9e880acccdccdb3de0452d848f8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "IBD Anxiety",
+      "source_chunk_ids": [
+        "2d28f9e880acccdccdb3de0452d848f8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "Depression",
+      "source_chunk_ids": [
+        "2d28f9e880acccdccdb3de0452d848f8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.8,
+      "evidence": "Crohn's disease",
+      "source_chunk_ids": [
+        "2d28f9e880acccdccdb3de0452d848f8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.8,
+      "evidence": "Ulcerative colitis",
+      "source_chunk_ids": [
+        "2d28f9e880acccdccdb3de0452d848f8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "studies (I^2=77.2%, p=0.0006)",
+      "source_chunk_ids": [
+        "f95bdd2bab8545e674f5a840dc3e2d12"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "condition"
+      },
+      "confidence": 0.85,
+      "evidence": "patients with Crohn's disease",
+      "source_chunk_ids": [
+        "f95bdd2bab8545e674f5a840dc3e2d12"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "condition"
+      },
+      "confidence": 0.85,
+      "evidence": "patients with ulcerative colitis",
+      "source_chunk_ids": [
+        "f95bdd2bab8545e674f5a840dc3e2d12"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.9,
+      "evidence": "prevalence of anxiety symptoms",
+      "source_chunk_ids": [
+        "f95bdd2bab8545e674f5a840dc3e2d12"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.8,
+      "evidence": "patients with active Crohn's disease",
+      "source_chunk_ids": [
+        "f95bdd2bab8545e674f5a840dc3e2d12"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.8,
+      "evidence": "patients with inactive Crohn's disease",
+      "source_chunk_ids": [
+        "f95bdd2bab8545e674f5a840dc3e2d12"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.8,
+      "evidence": "patients with active ulcerative colitis",
+      "source_chunk_ids": [
+        "f95bdd2bab8545e674f5a840dc3e2d12"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.8,
+      "evidence": "patients with inactive ulcerative colitis",
+      "source_chunk_ids": [
+        "f95bdd2bab8545e674f5a840dc3e2d12"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "pooled prevalence in 11 studies",
+      "source_chunk_ids": [
+        "d8641b012d2ffcf0aae79ec934672c2d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.9,
+      "evidence": "pooled prevalence of depression symptoms",
+      "source_chunk_ids": [
+        "d8641b012d2ffcf0aae79ec934672c2d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.8,
+      "evidence": "depression in patients with active IBD",
+      "source_chunk_ids": [
+        "d8641b012d2ffcf0aae79ec934672c2d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.8,
+      "evidence": "depression in patients with inactive IBD",
+      "source_chunk_ids": [
+        "d8641b012d2ffcf0aae79ec934672c2d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "subgroup analysis"
+      },
+      "confidence": 0.75,
+      "evidence": "Subgroup analyses in patients with Crohn's disease",
+      "source_chunk_ids": [
+        "d8641b012d2ffcf0aae79ec934672c2d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Pooled prevalence",
+      "source_chunk_ids": [
+        "2ec2de4e3c197ee7087501049a79de3d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.85,
+      "evidence": "Inflammatory bowel disease",
+      "source_chunk_ids": [
+        "2ec2de4e3c197ee7087501049a79de3d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.85,
+      "evidence": "Anxiety",
+      "source_chunk_ids": [
+        "2ec2de4e3c197ee7087501049a79de3d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.85,
+      "evidence": "Depression",
+      "source_chunk_ids": [
+        "2ec2de4e3c197ee7087501049a79de3d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.85,
+      "evidence": "Crohn's disease",
+      "source_chunk_ids": [
+        "2ec2de4e3c197ee7087501049a79de3d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.85,
+      "evidence": "Ulcerative colitis",
+      "source_chunk_ids": [
+        "2ec2de4e3c197ee7087501049a79de3d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "five studies",
+      "source_chunk_ids": [
+        "05e6dda8fc07ec9cea36c54e37ee115d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "ten studies",
+      "source_chunk_ids": [
+        "05e6dda8fc07ec9cea36c54e37ee115d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "five studies",
+      "source_chunk_ids": [
+        "05e6dda8fc07ec9cea36c54e37ee115d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "nine studies",
+      "source_chunk_ids": [
+        "05e6dda8fc07ec9cea36c54e37ee115d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "prevalence",
+        "measurement": {
+          "value": 50.9,
+          "unit": "%",
+          "measurement_type": "prevalence",
+          "notes": "95% CI 31.0-70.8"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "prevalence of depression symptoms was 50.9%",
+      "source_chunk_ids": [
+        "05e6dda8fc07ec9cea36c54e37ee115d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "prevalence",
+        "measurement": {
+          "value": 20.2,
+          "unit": "%",
+          "measurement_type": "prevalence",
+          "notes": "12.0-30.0"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "prevalence of depression symptoms was 20.2%",
+      "source_chunk_ids": [
+        "05e6dda8fc07ec9cea36c54e37ee115d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "prevalence",
+        "measurement": {
+          "value": 41.3,
+          "unit": "%",
+          "measurement_type": "prevalence",
+          "notes": "95% CI 26.6-56.8"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "prevalence of depression symptoms was 41.3%",
+      "source_chunk_ids": [
+        "05e6dda8fc07ec9cea36c54e37ee115d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "prevalence",
+        "measurement": {
+          "value": 21.8,
+          "unit": "%",
+          "measurement_type": "prevalence",
+          "notes": "13.7-31.1"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "prevalence of depression symptoms was 21.8%",
+      "source_chunk_ids": [
+        "05e6dda8fc07ec9cea36c54e37ee115d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.7,
+      "evidence": "patients with active Crohn's disease",
+      "source_chunk_ids": [
+        "05e6dda8fc07ec9cea36c54e37ee115d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.7,
+      "evidence": "patients with inactive Crohn's disease",
+      "source_chunk_ids": [
+        "05e6dda8fc07ec9cea36c54e37ee115d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.7,
+      "evidence": "patients with active ulcerative colitis",
+      "source_chunk_ids": [
+        "05e6dda8fc07ec9cea36c54e37ee115d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.7,
+      "evidence": "patients with inactive ulcerative colitis",
+      "source_chunk_ids": [
+        "05e6dda8fc07ec9cea36c54e37ee115d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "systematic review and meta-analysis",
+      "source_chunk_ids": [
+        "1e2bd700af13e2b9f44c6b4c4393cf4c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "pooled prevalence of anxiety symptoms",
+      "source_chunk_ids": [
+        "1e2bd700af13e2b9f44c6b4c4393cf4c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "pooled prevalence of depression symptoms",
+      "source_chunk_ids": [
+        "1e2bd700af13e2b9f44c6b4c4393cf4c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.8,
+      "evidence": "patients with IBD",
+      "source_chunk_ids": [
+        "1e2bd700af13e2b9f44c6b4c4393cf4c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.75,
+      "evidence": "patients with either Crohn's disease",
+      "source_chunk_ids": [
+        "1e2bd700af13e2b9f44c6b4c4393cf4c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.75,
+      "evidence": "ulcerative colitis",
+      "source_chunk_ids": [
+        "1e2bd700af13e2b9f44c6b4c4393cf4c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "prevalence",
+        "value": 6.6,
+        "unit": "%"
+      },
+      "confidence": 0.75,
+      "evidence": "prevalence of anxiety symptoms ranged from 6.6%",
+      "source_chunk_ids": [
+        "346571ce3f83d7ce11b253570a1aae5d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "prevalence",
+        "value": 57.8,
+        "unit": "%"
+      },
+      "confidence": 0.75,
+      "evidence": "57.8% with the State-Trait Anxiety Inventory",
+      "source_chunk_ids": [
+        "346571ce3f83d7ce11b253570a1aae5d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "prevalence",
+        "value": 33.2,
+        "unit": "%"
+      },
+      "confidence": 0.8,
+      "evidence": "pooled prevalence of 33.2%",
+      "source_chunk_ids": [
+        "346571ce3f83d7ce11b253570a1aae5d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "prevalence",
+        "value": 14.9,
+        "unit": "%"
+      },
+      "confidence": 0.75,
+      "evidence": "prevalence of depression symptoms ranged from 14.9%",
+      "source_chunk_ids": [
+        "346571ce3f83d7ce11b253570a1aae5d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "prevalence",
+        "value": 88.9,
+        "unit": "%"
+      },
+      "confidence": 0.75,
+      "evidence": "88.9% with the Hamilton Depression Rating Scale",
+      "source_chunk_ids": [
+        "346571ce3f83d7ce11b253570a1aae5d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "prevalence",
+        "value": 21.6,
+        "unit": "%"
+      },
+      "confidence": 0.8,
+      "evidence": "pooled prevalence of depression symptoms of 21.6%",
+      "source_chunk_ids": [
+        "346571ce3f83d7ce11b253570a1aae5d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "pooled prevalence",
+      "source_chunk_ids": [
+        "346571ce3f83d7ce11b253570a1aae5d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E11",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "pooled prevalence",
+      "source_chunk_ids": [
+        "346571ce3f83d7ce11b253570a1aae5d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "systematic review and meta-analysis",
+      "source_chunk_ids": [
+        "c3229afc34b5e4bd63bb83332dc83e71"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "prevalence of symptoms of anxiety",
+      "source_chunk_ids": [
+        "c3229afc34b5e4bd63bb83332dc83e71"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "prevalence of symptoms of depression",
+      "source_chunk_ids": [
+        "c3229afc34b5e4bd63bb83332dc83e71"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.8,
+      "evidence": "patients with IBD",
+      "source_chunk_ids": [
+        "c3229afc34b5e4bd63bb83332dc83e71"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "associated_with"
+      },
+      "confidence": 0.8,
+      "evidence": "found a high prevalence in patients with Crohn's disease",
+      "source_chunk_ids": [
+        "d0a95e38fa6c70358d0a3777f5939562"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "associated_with"
+      },
+      "confidence": 0.8,
+      "evidence": "found a high prevalence of symptoms of anxiety",
+      "source_chunk_ids": [
+        "d0a95e38fa6c70358d0a3777f5939562"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "associated_with"
+      },
+      "confidence": 0.8,
+      "evidence": "found a high prevalence of symptoms of depression",
+      "source_chunk_ids": [
+        "d0a95e38fa6c70358d0a3777f5939562"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Our meta-analysis",
+      "source_chunk_ids": [
+        "d0a95e38fa6c70358d0a3777f5939562"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "increased_risk"
+      },
+      "confidence": 0.75,
+      "evidence": "slightly increased risk in patients with Crohn's disease",
+      "source_chunk_ids": [
+        "d0a95e38fa6c70358d0a3777f5939562"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "associated_with"
+      },
+      "confidence": 0.75,
+      "evidence": "prevalence of symptoms of anxiety",
+      "source_chunk_ids": [
+        "d0a95e38fa6c70358d0a3777f5939562"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "associated_with"
+      },
+      "confidence": 0.75,
+      "evidence": "prevalence of symptoms of depression",
+      "source_chunk_ids": [
+        "d0a95e38fa6c70358d0a3777f5939562"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.7,
+      "evidence": "severity of anxiety symptoms was strongly associated",
+      "source_chunk_ids": [
+        "28547393255b1b9080000bb67d0ff054"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.7,
+      "evidence": "depression symptoms was strongly associated",
+      "source_chunk_ids": [
+        "28547393255b1b9080000bb67d0ff054"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.7,
+      "evidence": "associated with disease activity",
+      "source_chunk_ids": [
+        "28547393255b1b9080000bb67d0ff054"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "a 2017 meta-analysis",
+      "source_chunk_ids": [
+        "28547393255b1b9080000bb67d0ff054"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.75,
+      "evidence": "depressive state might be associated",
+      "source_chunk_ids": [
+        "28547393255b1b9080000bb67d0ff054"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.7,
+      "evidence": "in patients with Crohn's disease",
+      "source_chunk_ids": [
+        "28547393255b1b9080000bb67d0ff054"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "no_effect",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "association was not observed in ulcerative colitis",
+      "source_chunk_ids": [
+        "28547393255b1b9080000bb67d0ff054"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "SUGGESTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E3",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "bidirectional effects between psychological status and course of IBD",
+      "source_chunk_ids": [
+        "28547393255b1b9080000bb67d0ff054"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "SUGGESTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "higher odds of anxiety symptoms",
+      "source_chunk_ids": [
+        "28547393255b1b9080000bb67d0ff054"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "SUGGESTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E2",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "higher odds of depression symptoms",
+      "source_chunk_ids": [
+        "28547393255b1b9080000bb67d0ff054"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "SUGGESTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E3",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "association between symptoms of common mental disorders and disease activity",
+      "source_chunk_ids": [
+        "28547393255b1b9080000bb67d0ff054"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "19 studies that reported prevalence",
+      "source_chunk_ids": [
+        "06411b9db60bc9a241df6496e6f2cf26"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "prevalence of symptoms of anxiety",
+      "source_chunk_ids": [
+        "06411b9db60bc9a241df6496e6f2cf26"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "prevalence"
+      },
+      "confidence": 0.85,
+      "evidence": "prevalence of symptoms of depression",
+      "source_chunk_ids": [
+        "06411b9db60bc9a241df6496e6f2cf26"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.8,
+      "evidence": "according to IBD activity",
+      "source_chunk_ids": [
+        "06411b9db60bc9a241df6496e6f2cf26"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "prevalence of symptoms of anxiety",
+      "source_chunk_ids": [
+        "2ec926299881fa0827dbfccf72948b2f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "prevalence of symptoms of depression",
+      "source_chunk_ids": [
+        "2ec926299881fa0827dbfccf72948b2f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "patients with IBD",
+      "source_chunk_ids": [
+        "2ec926299881fa0827dbfccf72948b2f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "systematic review by Mikocka-Walus",
+      "source_chunk_ids": [
+        "2ec926299881fa0827dbfccf72948b2f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.7,
+      "evidence": "rates of anxiety symptoms",
+      "source_chunk_ids": [
+        "2ec926299881fa0827dbfccf72948b2f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "heterogeneous"
+      },
+      "confidence": 0.7,
+      "evidence": "findings for depression were more heterogeneous",
+      "source_chunk_ids": [
+        "2ec926299881fa0827dbfccf72948b2f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "nested case-control study",
+      "source_chunk_ids": [
+        "cb2a78e223189381ce4a4562f483363d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "higher prevalence"
+      },
+      "confidence": 0.75,
+      "evidence": "higher prevalence of depression",
+      "source_chunk_ids": [
+        "cb2a78e223189381ce4a4562f483363d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.7,
+      "evidence": "individuals with ulcerative colitis",
+      "source_chunk_ids": [
+        "cb2a78e223189381ce4a4562f483363d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "association"
+      },
+      "confidence": 0.7,
+      "evidence": "Crohn's disease",
+      "source_chunk_ids": [
+        "cb2a78e223189381ce4a4562f483363d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "cohort study observed",
+      "source_chunk_ids": [
+        "da9ad65ec507b5786b3da5419dffddea"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.85,
+      "evidence": "history of depression were more likely",
+      "source_chunk_ids": [
+        "da9ad65ec507b5786b3da5419dffddea"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.85,
+      "evidence": "diagnosed subsequently with IBD",
+      "source_chunk_ids": [
+        "da9ad65ec507b5786b3da5419dffddea"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "depression were more likely to be diagnosed with IBD",
+      "source_chunk_ids": [
+        "da9ad65ec507b5786b3da5419dffddea"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.7,
+      "evidence": "reduced adherence to therapy",
+      "source_chunk_ids": [
+        "da9ad65ec507b5786b3da5419dffddea"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "treatment of symptoms might improve adherence",
+      "source_chunk_ids": [
+        "da9ad65ec507b5786b3da5419dffddea"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "improving adherence might reduce costs",
+      "source_chunk_ids": [
+        "da9ad65ec507b5786b3da5419dffddea"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "high prevalence of symptoms of common mental disorders",
+      "source_chunk_ids": [
+        "9d778baed9b02bfa333d14111a94b2b7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "up to a third of patients affected by symptoms of anxiety",
+      "source_chunk_ids": [
+        "9d778baed9b02bfa333d14111a94b2b7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "a quarter by symptoms of depression",
+      "source_chunk_ids": [
+        "9d778baed9b02bfa333d14111a94b2b7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "patients with IBD",
+      "source_chunk_ids": [
+        "9d778baed9b02bfa333d14111a94b2b7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.8,
+      "evidence": "Symptoms of depression and anxiety are independently associated with clinical recurrence of inflammatory bowel disease",
+      "source_chunk_ids": [
+        "36994286edf221a10ccfdabff6d6a283"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.8,
+      "evidence": "Symptoms of depression and anxiety are independently associated",
+      "source_chunk_ids": [
+        "36994286edf221a10ccfdabff6d6a283"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.8,
+      "evidence": "Symptoms of depression and anxiety are independently associated",
+      "source_chunk_ids": [
+        "36994286edf221a10ccfdabff6d6a283"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.8,
+      "evidence": "Association between affective-cognitive symptoms of depression and exacerbation of Crohn's disease",
+      "source_chunk_ids": [
+        "36994286edf221a10ccfdabff6d6a283"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.8,
+      "evidence": "Association between affective-cognitive symptoms of depression",
+      "source_chunk_ids": [
+        "36994286edf221a10ccfdabff6d6a283"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "predicts"
+      },
+      "confidence": 0.8,
+      "evidence": "Anxiety but not depression predicts poor outcomes in inflammatory bowel disease",
+      "source_chunk_ids": [
+        "36994286edf221a10ccfdabff6d6a283"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "predicts"
+      },
+      "confidence": 0.8,
+      "evidence": "Anxiety but not depression predicts poor outcomes",
+      "source_chunk_ids": [
+        "36994286edf221a10ccfdabff6d6a283"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "systematic review",
+      "source_chunk_ids": [
+        "36994286edf221a10ccfdabff6d6a283"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "systematic review",
+      "source_chunk_ids": [
+        "36994286edf221a10ccfdabff6d6a283"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "systematic review",
+      "source_chunk_ids": [
+        "36994286edf221a10ccfdabff6d6a283"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

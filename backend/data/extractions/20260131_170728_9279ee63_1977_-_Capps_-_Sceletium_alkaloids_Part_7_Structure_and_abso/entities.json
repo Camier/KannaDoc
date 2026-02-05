@@ -1,11 +1,2222 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "729c0735dac33f261702afba004c6c1af012a6c4d27bac15d4f0e5f584c148d6",
-  "extracted_at": "2026-02-03T21:10:48.915690+00:00",
-  "extractor": "minimax:MiniMax-M2.1-lightning",
-  "entities": [],
-  "relationships": [],
-  "metadata": {
-    "chunks_processed": 103
-  }
+  "entities": [
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "S. namaquense",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "8929dff0c92a14cfd5032a9f6ba95aed"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. Namaquense L. Bolus",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrane",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8929dff0c92a14cfd5032a9f6ba95aed"
+      ],
+      "confidence": 0.95,
+      "evidence": "(\u2014)-Mesembrane",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "3'-methoxy-4'-O-methyljoubertiamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8929dff0c92a14cfd5032a9f6ba95aed"
+      ],
+      "confidence": 0.95,
+      "evidence": "3'-Methoxy-4'-O-methyljoubertiamine",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8929dff0c92a14cfd5032a9f6ba95aed"
+      ],
+      "confidence": 0.85,
+      "evidence": "Sceletium Alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "X-ray analysis of mesembrane hydrochloride monohydrate",
+      "attributes": {
+        "design": "X-ray analysis"
+      },
+      "source_chunk_ids": [
+        "8929dff0c92a14cfd5032a9f6ba95aed"
+      ],
+      "confidence": 0.8,
+      "evidence": "X-Ray Analysis of (\u2014)-Mesembrane Hydrochloride Monohydrate",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "structural analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "8929dff0c92a14cfd5032a9f6ba95aed"
+      ],
+      "confidence": 0.75,
+      "evidence": "Structure and Absolute Stereochemistry",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "S. namaquense",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "550a3abe77af01ef8d365379291f7272"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. namaquense L. Bolus",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "tortuosamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "550a3abe77af01ef8d365379291f7272"
+      ],
+      "confidence": 0.9,
+      "evidence": "tortuosamine (7)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "3'-methoxy-4'-O-methyljoubertiamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "550a3abe77af01ef8d365379291f7272"
+      ],
+      "confidence": 0.85,
+      "evidence": "3'-methoxy-4'-O-methyljoubertiamine (6)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrane",
+      "attributes": {},
+      "source_chunk_ids": [
+        "550a3abe77af01ef8d365379291f7272"
+      ],
+      "confidence": 0.9,
+      "evidence": "(\u2014)-mesembrane (2)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "X-ray analysis of mesembrane hydrochloride monohydrate",
+      "attributes": {
+        "design": "X-ray crystallography",
+        "year": "implicit from context"
+      },
+      "source_chunk_ids": [
+        "550a3abe77af01ef8d365379291f7272"
+      ],
+      "confidence": 0.8,
+      "evidence": "X-ray analysis of (\u2014)-mesembrane hydrochloride monohydrate",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "in vitro spectroscopic and X-ray analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "550a3abe77af01ef8d365379291f7272"
+      ],
+      "confidence": 0.75,
+      "evidence": "spectroscopic and X-ray methods",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium namaquense",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "b13a3e6775afca40c7d6960a1286388a"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium namaquense L. Bolus",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "mesembrine group",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b13a3e6775afca40c7d6960a1286388a"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine group",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "pyridino-octahydroindole class",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b13a3e6775afca40c7d6960a1286388a"
+      ],
+      "confidence": 0.9,
+      "evidence": "pyridino-octahydroindole class",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "sceletium alkaloid A4",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b13a3e6775afca40c7d6960a1286388a"
+      ],
+      "confidence": 0.85,
+      "evidence": "sceletium alkaloid A4 (1)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "mesembrane",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b13a3e6775afca40c7d6960a1286388a"
+      ],
+      "confidence": 0.85,
+      "evidence": "(\u2014)-mesembrane (2)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "3'-methoxy-4'-O-methyljoubertiamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b13a3e6775afca40c7d6960a1286388a"
+      ],
+      "confidence": 0.85,
+      "evidence": "3'-methoxy-4'-O-methyljoubertiamine (6)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "tortuosamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b13a3e6775afca40c7d6960a1286388a"
+      ],
+      "confidence": 0.85,
+      "evidence": "tortuosamine (7)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "Sceletium alkaloid A4",
+      "attributes": {},
+      "source_chunk_ids": [
+        "27f9e0a7f03639ec2ee22f50ccd55711"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium alkaloid A4",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "3a-aryl-cis-octahydroindole",
+      "attributes": {},
+      "source_chunk_ids": [
+        "27f9e0a7f03639ec2ee22f50ccd55711"
+      ],
+      "confidence": 0.9,
+      "evidence": "3a-aryl-cis-octahydroindole",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrane",
+      "attributes": {},
+      "source_chunk_ids": [
+        "27f9e0a7f03639ec2ee22f50ccd55711"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrane",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "hydroxylated derivative",
+      "attributes": {},
+      "source_chunk_ids": [
+        "27f9e0a7f03639ec2ee22f50ccd55711"
+      ],
+      "confidence": 0.8,
+      "evidence": "hydroxylated derivative",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "hydrochloride monohydrate",
+      "attributes": {},
+      "source_chunk_ids": [
+        "27f9e0a7f03639ec2ee22f50ccd55711"
+      ],
+      "confidence": 0.85,
+      "evidence": "hydrochloride monohydrate",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "3'-methoxy-4'-O-methyljoubertiamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "27f9e0a7f03639ec2ee22f50ccd55711"
+      ],
+      "confidence": 0.95,
+      "evidence": "3'-methoxy-4'-O-methyljoubertiamine",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "CompoundClass",
+      "name": "joubertiamine class",
+      "attributes": {},
+      "source_chunk_ids": [
+        "27f9e0a7f03639ec2ee22f50ccd55711"
+      ],
+      "confidence": 0.9,
+      "evidence": "joubertiamine class",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Compound",
+      "name": "tortuosamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "27f9e0a7f03639ec2ee22f50ccd55711"
+      ],
+      "confidence": 0.95,
+      "evidence": "Tortuosamine",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Compound",
+      "name": "dimethylamino cation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "27f9e0a7f03639ec2ee22f50ccd55711"
+      ],
+      "confidence": 0.8,
+      "evidence": "dimethylamino cation",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Compound",
+      "name": "nitrogen-containing ring fragment",
+      "attributes": {},
+      "source_chunk_ids": [
+        "27f9e0a7f03639ec2ee22f50ccd55711"
+      ],
+      "confidence": 0.8,
+      "evidence": "nitrogen-containing ring fragment",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "RawMaterial",
+      "name": "methanol extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "deaef2bc7b6a2e8db67a993867cee457"
+      ],
+      "confidence": 0.7,
+      "evidence": "by methanol (3 l) were collected",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "tortuosamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "deaef2bc7b6a2e8db67a993867cee457"
+      ],
+      "confidence": 0.9,
+      "evidence": "The alkaloid tortuosamine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "deaef2bc7b6a2e8db67a993867cee457"
+      ],
+      "confidence": 0.8,
+      "evidence": "The alkaloid tortuosamine",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "N-formyltortuosamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "83b97def84e8cab58f2617a6f4a22297"
+      ],
+      "confidence": 0.8,
+      "evidence": "N-formyltortuosamine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "polar fraction (VI)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "83b97def84e8cab58f2617a6f4a22297"
+      ],
+      "confidence": 0.7,
+      "evidence": "polar fraction (VI)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "RawMaterial",
+      "name": "Fraction (III)",
+      "attributes": {
+        "mass": "2.3 g"
+      },
+      "source_chunk_ids": [
+        "8388537360135cd5d83b31cee024948c"
+      ],
+      "confidence": 0.9,
+      "evidence": "Fraction (III) (2.3 g)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8388537360135cd5d83b31cee024948c"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "sceletium alkaloid A4",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8388537360135cd5d83b31cee024948c"
+      ],
+      "confidence": 0.9,
+      "evidence": "sceletium alkaloid A4",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "unidentified component",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8388537360135cd5d83b31cee024948c"
+      ],
+      "confidence": 0.7,
+      "evidence": "unidentified component on g.l.c.",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "non-crystalline base",
+      "attributes": {
+        "mass": "ca. 100 mg"
+      },
+      "source_chunk_ids": [
+        "8388537360135cd5d83b31cee024948c"
+      ],
+      "confidence": 0.85,
+      "evidence": "ca. 100 mg of a non-crystalline base",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "CompoundClass",
+      "name": "mesembrine class of alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8388537360135cd5d83b31cee024948c"
+      ],
+      "confidence": 0.8,
+      "evidence": "mesembrine class of alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "CompoundClass",
+      "name": "joubertiamine class",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8388537360135cd5d83b31cee024948c"
+      ],
+      "confidence": 0.85,
+      "evidence": "joubertiamine class",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Compound",
+      "name": "3'-methoxy-4'-O-methyljoubertiamine",
+      "attributes": {
+        "formula": "C19H22NO3"
+      },
+      "source_chunk_ids": [
+        "8388537360135cd5d83b31cee024948c"
+      ],
+      "confidence": 0.9,
+      "evidence": "3'-methoxy-4'-O-methyljoubertiamine (6)",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Compound",
+      "name": "(\u2014)-mesembrane methiodide",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8388537360135cd5d83b31cee024948c"
+      ],
+      "confidence": 0.8,
+      "evidence": "(\u2014)-mesembrane methiodide",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "475160c4a1114e3ff069abdebd9c1957"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "new base",
+      "attributes": {},
+      "source_chunk_ids": [
+        "475160c4a1114e3ff069abdebd9c1957"
+      ],
+      "confidence": 0.8,
+      "evidence": "new base",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrane",
+      "attributes": {
+        "stereochemistry": "(-)-mesembrane"
+      },
+      "source_chunk_ids": [
+        "2e0515612446d37468b0fc62c20eccc1"
+      ],
+      "confidence": 0.95,
+      "evidence": "Isolation of (\u2014)-mesembrane",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2e0515612446d37468b0fc62c20eccc1"
+      ],
+      "confidence": 0.9,
+      "evidence": "resembled that of mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "dimethoxyphenyl-3a-octahydroindole",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2e0515612446d37468b0fc62c20eccc1"
+      ],
+      "confidence": 0.85,
+      "evidence": "dimethoxyphenyl-3a-octahydroindole class",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "CompoundClass",
+      "name": "mesembrine series",
+      "attributes": {},
+      "source_chunk_ids": [
+        "785a63dfa2c6584a9c4449940d8c1779"
+      ],
+      "confidence": 0.85,
+      "evidence": "alkaloids in the mesembrine series",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "785a63dfa2c6584a9c4449940d8c1779"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine (2)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "(-)-mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1db5dea026bb0c502d93e8e133ea0479"
+      ],
+      "confidence": 0.95,
+      "evidence": "(-)-mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1db5dea026bb0c502d93e8e133ea0479"
+      ],
+      "confidence": 0.9,
+      "evidence": "alkaloids of this family",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "491dce68cf4deecf0e64d24be2db935c"
+      ],
+      "confidence": 0.9,
+      "evidence": "(\u2013)-mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "6-epimesembranol methiodide",
+      "attributes": {},
+      "source_chunk_ids": [
+        "491dce68cf4deecf0e64d24be2db935c"
+      ],
+      "confidence": 0.85,
+      "evidence": "(\u2013)-6-epimesembranol methiodide",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrane hydrochloride",
+      "attributes": {},
+      "source_chunk_ids": [
+        "491dce68cf4deecf0e64d24be2db935c"
+      ],
+      "confidence": 0.85,
+      "evidence": "(\u2013)-mesembrane hydrochloride",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "beta-aminoketones",
+      "attributes": {},
+      "source_chunk_ids": [
+        "491dce68cf4deecf0e64d24be2db935c"
+      ],
+      "confidence": 0.8,
+      "evidence": "beta-aminoketones",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Hudec11",
+      "attributes": {
+        "year": "2011"
+      },
+      "source_chunk_ids": [
+        "491dce68cf4deecf0e64d24be2db935c"
+      ],
+      "confidence": 0.7,
+      "evidence": "Hudec11",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {
+        "stereochemistry": "(-)-mesembrine"
+      },
+      "source_chunk_ids": [
+        "0837a48f23902cdd44876a6897ee8d9c"
+      ],
+      "confidence": 0.9,
+      "evidence": "Crystal structure of (\u2013)-mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "548ad7f96ca2e28a783281a63aa0df5c"
+      ],
+      "confidence": 0.9,
+      "evidence": "(\u2013)-mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "daeac0725ff66f5fa451d8cffa0778d3"
+      ],
+      "confidence": 0.95,
+      "evidence": "(\u2013)-mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine hydrochloride",
+      "attributes": {},
+      "source_chunk_ids": [
+        "daeac0725ff66f5fa451d8cffa0778d3"
+      ],
+      "confidence": 0.9,
+      "evidence": "(\u2013)-mesembrine hydrochloride",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrine methiodide",
+      "attributes": {},
+      "source_chunk_ids": [
+        "daeac0725ff66f5fa451d8cffa0778d3"
+      ],
+      "confidence": 0.9,
+      "evidence": "(\u2013)-mesembrine methiodide",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "c.d. spectra study",
+      "attributes": {},
+      "source_chunk_ids": [
+        "daeac0725ff66f5fa451d8cffa0778d3"
+      ],
+      "confidence": 0.8,
+      "evidence": "we examined the c.d. spectra",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "daeac0725ff66f5fa451d8cffa0778d3"
+      ],
+      "confidence": 0.7,
+      "evidence": "c.d. spectra",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "(-)-mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9707ea0fb9f3be2632e8cb1263cc6e50"
+      ],
+      "confidence": 0.95,
+      "evidence": "(-)-mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "(-)-mesembrine hydrochloride",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9707ea0fb9f3be2632e8cb1263cc6e50"
+      ],
+      "confidence": 0.95,
+      "evidence": "(-)-mesembrine hydrochloride",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "methiodide derivatives",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9707ea0fb9f3be2632e8cb1263cc6e50"
+      ],
+      "confidence": 0.9,
+      "evidence": "methiodide derivatives",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "efa25297d532481e7686d6d50391762e"
+      ],
+      "confidence": 0.9,
+      "evidence": "(\u2014)-mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine hydrochloride",
+      "attributes": {},
+      "source_chunk_ids": [
+        "efa25297d532481e7686d6d50391762e"
+      ],
+      "confidence": 0.9,
+      "evidence": "(\u2014)-mesembrine hydrochloride",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "methiodide derivatives",
+      "attributes": {},
+      "source_chunk_ids": [
+        "efa25297d532481e7686d6d50391762e"
+      ],
+      "confidence": 0.8,
+      "evidence": "methiodide derivatives",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "76542d6007d2bdd61a24146b48ac9068"
+      ],
+      "confidence": 0.9,
+      "evidence": "(\u2014)-mesembrine methiodide",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine methiodide",
+      "attributes": {},
+      "source_chunk_ids": [
+        "76542d6007d2bdd61a24146b48ac9068"
+      ],
+      "confidence": 0.95,
+      "evidence": "(\u2014)-mesembrine methiodide",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "enone (6)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "76542d6007d2bdd61a24146b48ac9068"
+      ],
+      "confidence": 0.8,
+      "evidence": "enone (6)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "88d734aa9c53cc8d6c3c3c88e06f631c"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "mesembrine alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "88d734aa9c53cc8d6c3c3c88e06f631c"
+      ],
+      "confidence": 0.85,
+      "evidence": "mesembrine alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "S. namaquense L. Bolus",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "8b7d49058f204ecbb73378320defe503"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. namaquense L. Bolus",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "dried plant material",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8b7d49058f204ecbb73378320defe503"
+      ],
+      "confidence": 0.9,
+      "evidence": "Dried plant material of S. namaquense",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Preparation",
+      "name": "macerated",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8b7d49058f204ecbb73378320defe503"
+      ],
+      "confidence": 0.85,
+      "evidence": "macerated in a Waring blender",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "non-phenolic alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8b7d49058f204ecbb73378320defe503"
+      ],
+      "confidence": 0.9,
+      "evidence": "non-phenolic alkaloids (150 g)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "phenolic alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8b7d49058f204ecbb73378320defe503"
+      ],
+      "confidence": 0.9,
+      "evidence": "Phenolic alkaloids (35 g)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8b7d49058f204ecbb73378320defe503"
+      ],
+      "confidence": 0.8,
+      "evidence": "non-phenolic alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "CompoundClass",
+      "name": "non-phenolic alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3c6a284d8e83b352bb139ffa35c2caec"
+      ],
+      "confidence": 0.9,
+      "evidence": "non-phenolic alkaloid fraction",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrane",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3c6a284d8e83b352bb139ffa35c2caec"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrane",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3c6a284d8e83b352bb139ffa35c2caec"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3c6a284d8e83b352bb139ffa35c2caec"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "sceletium A4",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3c6a284d8e83b352bb139ffa35c2caec"
+      ],
+      "confidence": 0.9,
+      "evidence": "sceletium A4",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "3'-methoxy-4'-O-methyljoubertiamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3c6a284d8e83b352bb139ffa35c2caec"
+      ],
+      "confidence": 0.9,
+      "evidence": "3'-methoxy-4'-O-methyljoubertiamine",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "tortuosamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3c6a284d8e83b352bb139ffa35c2caec"
+      ],
+      "confidence": 0.9,
+      "evidence": "tortuosamine",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "RawMaterial",
+      "name": "non-phenolic alkaloid fraction",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3c6a284d8e83b352bb139ffa35c2caec"
+      ],
+      "confidence": 0.85,
+      "evidence": "non-phenolic alkaloid fraction",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "tortuosamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "728bbdeba8bb5142aa13d7e3047f50c0"
+      ],
+      "confidence": 0.95,
+      "evidence": "tortuosamine (7)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "fractions (526)\u2013(600)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "728bbdeba8bb5142aa13d7e3047f50c0"
+      ],
+      "confidence": 0.8,
+      "evidence": "Fractions (526)\u2013(600) (2.75 g)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "fractions (20)\u2013(26)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "728bbdeba8bb5142aa13d7e3047f50c0"
+      ],
+      "confidence": 0.8,
+      "evidence": "fractions (20)\u2013(26) contained a new component",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "tortuosamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5dc79aad9344e0ffad57d4228e68a406"
+      ],
+      "confidence": 0.9,
+      "evidence": "tortuosamine were identical",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "N-formyltortuosamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5dc79aad9344e0ffad57d4228e68a406"
+      ],
+      "confidence": 0.85,
+      "evidence": "hydrolysis of N-formyltortuosamine",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "(-)-3'-methoxy-4'-methyljoubertiamine",
+      "attributes": {
+        "synonyms": [
+          "6"
+        ]
+      },
+      "source_chunk_ids": [
+        "b29487ecf44572177d3c04a462917e6f"
+      ],
+      "confidence": 0.95,
+      "evidence": "(-)-3'-methoxy-4'-methyljoubertiamine (6)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b29487ecf44572177d3c04a462917e6f"
+      ],
+      "confidence": 0.9,
+      "evidence": "authentic sample prepared by Hofmann degradation of mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrane",
+      "attributes": {},
+      "source_chunk_ids": [
+        "81024c8251584bd86d87a5caf2ff6b4a"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrane (2)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "81024c8251584bd86d87a5caf2ff6b4a"
+      ],
+      "confidence": 0.9,
+      "evidence": "authentic sample prepared by Wolff\u2013Kishner reduction of mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrane hydrochloride monohydrate",
+      "attributes": {
+        "formula": "C17H26ClNO2\u00b7H2O",
+        "molecular_weight": 329.9
+      },
+      "source_chunk_ids": [
+        "db9741a6571d834a737393b708157927"
+      ],
+      "confidence": 0.95,
+      "evidence": "Crystal Data for Mesembrane Hydrochloride Monohydrate",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrane",
+      "attributes": {
+        "chirality": "chiral"
+      },
+      "source_chunk_ids": [
+        "db9741a6571d834a737393b708157927"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrane is a chiral molecule",
+      "verified": true
+    }
+  ],
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Two Minor Bases from S. Namaquense",
+      "source_chunk_ids": [
+        "8929dff0c92a14cfd5032a9f6ba95aed"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Two Minor Bases from S. Namaquense",
+      "source_chunk_ids": [
+        "8929dff0c92a14cfd5032a9f6ba95aed"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Sceletium Alkaloids",
+      "source_chunk_ids": [
+        "8929dff0c92a14cfd5032a9f6ba95aed"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Sceletium Alkaloids",
+      "source_chunk_ids": [
+        "8929dff0c92a14cfd5032a9f6ba95aed"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "X-Ray Analysis",
+      "source_chunk_ids": [
+        "8929dff0c92a14cfd5032a9f6ba95aed"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "X-Ray Analysis of (\u2014)-Mesembrane",
+      "source_chunk_ids": [
+        "8929dff0c92a14cfd5032a9f6ba95aed"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "isolated the known base tortuosamine",
+      "source_chunk_ids": [
+        "550a3abe77af01ef8d365379291f7272"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "two new alkaloids, 3'-methoxy-4'-O-methyljoubertiamine",
+      "source_chunk_ids": [
+        "550a3abe77af01ef8d365379291f7272"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "and (\u2014)-mesembrane (2)",
+      "source_chunk_ids": [
+        "550a3abe77af01ef8d365379291f7272"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "X-ray analysis",
+      "source_chunk_ids": [
+        "550a3abe77af01ef8d365379291f7272"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "X-ray analysis of (\u2014)-mesembrane hydrochloride monohydrate",
+      "source_chunk_ids": [
+        "550a3abe77af01ef8d365379291f7272"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "alkaloids belonging to the mesembrine group",
+      "source_chunk_ids": [
+        "b13a3e6775afca40c7d6960a1286388a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "pyridino-octahydroindole class",
+      "source_chunk_ids": [
+        "b13a3e6775afca40c7d6960a1286388a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "sceletium alkaloid A4",
+      "source_chunk_ids": [
+        "b13a3e6775afca40c7d6960a1286388a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "isolation of (\u2014)-mesembrane",
+      "source_chunk_ids": [
+        "b13a3e6775afca40c7d6960a1286388a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "isolation of 3'-methoxy-4'-O-methyljoubertiamine",
+      "source_chunk_ids": [
+        "b13a3e6775afca40c7d6960a1286388a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "known base tortuosamine",
+      "source_chunk_ids": [
+        "b13a3e6775afca40c7d6960a1286388a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "exemplified by sceletium alkaloid A4",
+      "source_chunk_ids": [
+        "b13a3e6775afca40c7d6960a1286388a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "3a-aryl-cis-octahydroindole",
+      "source_chunk_ids": [
+        "27f9e0a7f03639ec2ee22f50ccd55711"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "3a-aryl-cis-octahydroindole",
+      "source_chunk_ids": [
+        "27f9e0a7f03639ec2ee22f50ccd55711"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "3a-aryl-cis-octahydroindole",
+      "source_chunk_ids": [
+        "27f9e0a7f03639ec2ee22f50ccd55711"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "fragmentation products of the joubertiamine class",
+      "source_chunk_ids": [
+        "27f9e0a7f03639ec2ee22f50ccd55711"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "fragmentation products of the joubertiamine class",
+      "source_chunk_ids": [
+        "27f9e0a7f03639ec2ee22f50ccd55711"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "The alkaloid tortuosamine",
+      "source_chunk_ids": [
+        "deaef2bc7b6a2e8db67a993867cee457"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "The alkaloid tortuosamine",
+      "source_chunk_ids": [
+        "deaef2bc7b6a2e8db67a993867cee457"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "comprising mesembrenone",
+      "source_chunk_ids": [
+        "8388537360135cd5d83b31cee024948c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "sceletium alkaloid A4 as major components",
+      "source_chunk_ids": [
+        "8388537360135cd5d83b31cee024948c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "also contained an unidentified component",
+      "source_chunk_ids": [
+        "8388537360135cd5d83b31cee024948c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "mesembrenone ... mesembrine class of alkaloids",
+      "source_chunk_ids": [
+        "8388537360135cd5d83b31cee024948c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "sceletium alkaloids of the joubertiamine class",
+      "source_chunk_ids": [
+        "8388537360135cd5d83b31cee024948c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "derived from mesembrine",
+      "source_chunk_ids": [
+        "475160c4a1114e3ff069abdebd9c1957"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "alkaloid was a member of the dimethoxyphenyl-3a-octahydroindole class",
+      "source_chunk_ids": [
+        "2e0515612446d37468b0fc62c20eccc1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "alkaloids in the mesembrine series",
+      "source_chunk_ids": [
+        "785a63dfa2c6584a9c4449940d8c1779"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "alkaloids of this family",
+      "source_chunk_ids": [
+        "1db5dea026bb0c502d93e8e133ea0479"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "beta-aminoketones",
+      "source_chunk_ids": [
+        "491dce68cf4deecf0e64d24be2db935c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "beta-aminoketones",
+      "source_chunk_ids": [
+        "491dce68cf4deecf0e64d24be2db935c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "beta-aminoketones",
+      "source_chunk_ids": [
+        "491dce68cf4deecf0e64d24be2db935c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Hudec11 has concluded that beta-aminoketones",
+      "source_chunk_ids": [
+        "491dce68cf4deecf0e64d24be2db935c"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "examined the c.d. spectra",
+      "source_chunk_ids": [
+        "daeac0725ff66f5fa451d8cffa0778d3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "examined (\u2013)-mesembrine",
+      "source_chunk_ids": [
+        "daeac0725ff66f5fa451d8cffa0778d3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "examined (\u2013)-mesembrine hydrochloride",
+      "source_chunk_ids": [
+        "daeac0725ff66f5fa451d8cffa0778d3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "examined (\u2013)-mesembrine methiodide",
+      "source_chunk_ids": [
+        "daeac0725ff66f5fa451d8cffa0778d3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "INTERACTS_WITH",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "interaction_type": "equilibrium",
+        "bidirectional": true
+      },
+      "confidence": 0.75,
+      "evidence": "methiodide is in equilibrium with enone (6)",
+      "source_chunk_ids": [
+        "76542d6007d2bdd61a24146b48ac9068"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "mesembrine alkaloids",
+      "source_chunk_ids": [
+        "88d734aa9c53cc8d6c3c3c88e06f631c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Dried plant material of S. namaquense",
+      "source_chunk_ids": [
+        "8b7d49058f204ecbb73378320defe503"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "macerated ... yielded non-phenolic alkaloids",
+      "source_chunk_ids": [
+        "8b7d49058f204ecbb73378320defe503"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "macerated ... Phenolic alkaloids were recovered",
+      "source_chunk_ids": [
+        "8b7d49058f204ecbb73378320defe503"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "measurement": {
+          "value": 150,
+          "unit": "g",
+          "measurement_type": "content",
+          "notes": "non-phenolic alkaloids"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "non-phenolic alkaloids (150 g)",
+      "source_chunk_ids": [
+        "8b7d49058f204ecbb73378320defe503"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "measurement": {
+          "value": 35,
+          "unit": "g",
+          "measurement_type": "content",
+          "notes": "phenolic alkaloids"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Phenolic alkaloids (35 g)",
+      "source_chunk_ids": [
+        "8b7d49058f204ecbb73378320defe503"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "mesembrane, unidentified alkaloids",
+      "source_chunk_ids": [
+        "3c6a284d8e83b352bb139ffa35c2caec"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "mesembrine and mesembrenone",
+      "source_chunk_ids": [
+        "3c6a284d8e83b352bb139ffa35c2caec"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "mesembrenone, sceletium A4",
+      "source_chunk_ids": [
+        "3c6a284d8e83b352bb139ffa35c2caec"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "sceletium A4 and unidentified alkaloids",
+      "source_chunk_ids": [
+        "3c6a284d8e83b352bb139ffa35c2caec"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "3'-methoxy-4'-O-methyljoubertiamine",
+      "source_chunk_ids": [
+        "3c6a284d8e83b352bb139ffa35c2caec"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "tortuosamine and unidentified alkaloids",
+      "source_chunk_ids": [
+        "3c6a284d8e83b352bb139ffa35c2caec"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "fractions (1)\u2013(75) contained mesembrane",
+      "source_chunk_ids": [
+        "3c6a284d8e83b352bb139ffa35c2caec"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "CONTAINS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "(76)\u2013(150), mesembrine and mesembrenone",
+      "source_chunk_ids": [
+        "3c6a284d8e83b352bb139ffa35c2caec"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "CONTAINS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "mesembrenone, sceletium A4",
+      "source_chunk_ids": [
+        "3c6a284d8e83b352bb139ffa35c2caec"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "CONTAINS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "sceletium A4 and unidentified alkaloids",
+      "source_chunk_ids": [
+        "3c6a284d8e83b352bb139ffa35c2caec"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "CONTAINS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "3'-methoxy-4'-O-methyljoubertiamine",
+      "source_chunk_ids": [
+        "3c6a284d8e83b352bb139ffa35c2caec"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "CONTAINS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "tortuosamine and unidentified alkaloids",
+      "source_chunk_ids": [
+        "3c6a284d8e83b352bb139ffa35c2caec"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "measurement": {
+          "value": 2.75,
+          "unit": "g",
+          "measurement_type": "mass",
+          "notes": "initial fraction mass"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "Fractions (526)\u2013(600) (2.75 g) ... to give tortuosamine",
+      "source_chunk_ids": [
+        "728bbdeba8bb5142aa13d7e3047f50c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "measurement": {
+          "value": 400,
+          "unit": "mg",
+          "measurement_type": "mass",
+          "notes": "fraction mass before purification"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "They (400 mg) ... to give tortuosamine (7)",
+      "source_chunk_ids": [
+        "728bbdeba8bb5142aa13d7e3047f50c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "method": "hydrolysis"
+      },
+      "confidence": 0.8,
+      "evidence": "hydrolysis of N-formyltortuosamine",
+      "source_chunk_ids": [
+        "5dc79aad9344e0ffad57d4228e68a406"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "INTERACTS_WITH",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "interaction_type": "derived_from",
+        "notes": "Hofmann degradation of mesembrine",
+        "bidirectional": true
+      },
+      "confidence": 0.85,
+      "evidence": "authentic sample prepared by Hofmann degradation of mesembrine",
+      "source_chunk_ids": [
+        "b29487ecf44572177d3c04a462917e6f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "method": "Wolff\u2013Kishner reduction"
+      },
+      "confidence": 0.85,
+      "evidence": "prepared by Wolff\u2013Kishner reduction of mesembrine",
+      "source_chunk_ids": [
+        "81024c8251584bd86d87a5caf2ff6b4a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

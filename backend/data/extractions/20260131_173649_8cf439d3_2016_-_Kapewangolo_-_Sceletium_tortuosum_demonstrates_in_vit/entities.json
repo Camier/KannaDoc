@@ -1,1113 +1,4926 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "f70332719cb67a1bc714e72069c78b7141aa97a981cd0efe6bc8a5e307760e33",
-  "extracted_at": "2026-02-01T08:38:25.848905+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
-      "type": "Taxon",
-      "name": "Sceletium tortuosum",
-      "attributes": {
-        "context": "Sceletium tortuosum demonstrates"
-      },
+      "id": "E1",
+      "type": "Culture",
+      "name": "Southern Africa",
+      "attributes": {},
       "source_chunk_ids": [
-        "6081fcf9417adf71e4ef258afdf90ee8"
-      ]
+        "e96c6e78a8f2809f67b5eaddcc9cdd84"
+      ],
+      "confidence": 0.9,
+      "evidence": "Southern Africa has a long tradition",
+      "verified": true
     },
     {
-      "id": "ent_002",
-      "type": "PharmEffect",
-      "name": "anti-HIV",
-      "attributes": {
-        "context": "demonstrates in vitro anti-HIV"
-      },
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Southern Africa \u2013 plants \u2013 medicinal use",
+      "attributes": {},
       "source_chunk_ids": [
-        "6081fcf9417adf71e4ef258afdf90ee8"
-      ]
+        "e96c6e78a8f2809f67b5eaddcc9cdd84"
+      ],
+      "confidence": 0.85,
+      "evidence": "plants with a long tradition of medicinal use",
+      "verified": true
     },
     {
-      "id": "ent_003",
-      "type": "Indication",
-      "name": "HIV",
-      "attributes": {
-        "context": "anti-HIV"
-      },
-      "source_chunk_ids": [
-        "6081fcf9417adf71e4ef258afdf90ee8"
-      ]
-    },
-    {
-      "id": "ent_004",
-      "type": "PharmEffect",
-      "name": "free radical scavenging activity",
-      "attributes": {
-        "context": "and free radical scavenging activity"
-      },
-      "source_chunk_ids": [
-        "6081fcf9417adf71e4ef258afdf90ee8"
-      ]
-    },
-    {
-      "id": "ent_005",
+      "id": "E3",
       "type": "Taxon",
       "name": "plants",
-      "attributes": {
-        "context": "A number of these plants"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "e96c6e78a8f2809f67b5eaddcc9cdd84"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "plants with a long tradition",
+      "verified": true
     },
     {
-      "id": "ent_006",
-      "type": "Compound",
-      "name": "compounds",
-      "attributes": {
-        "context": "contain compounds"
-      },
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "medicinal use",
+      "attributes": {},
       "source_chunk_ids": [
         "e96c6e78a8f2809f67b5eaddcc9cdd84"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "tradition of medicinal use",
+      "verified": true
     },
     {
-      "id": "ent_007",
-      "type": "PharmEffect",
-      "name": "anti-HIV",
-      "attributes": {
-        "context": "with anti-HIV and antioxidant properties"
-      },
-      "source_chunk_ids": [
-        "e96c6e78a8f2809f67b5eaddcc9cdd84"
-      ]
-    },
-    {
-      "id": "ent_008",
-      "type": "PharmEffect",
-      "name": "antioxidant",
-      "attributes": {
-        "context": "with anti-HIV and antioxidant properties"
-      },
-      "source_chunk_ids": [
-        "e96c6e78a8f2809f67b5eaddcc9cdd84"
-      ]
-    },
-    {
-      "id": "ent_009",
-      "type": "PharmEffect",
-      "name": "drug toxicity",
-      "attributes": {
-        "context": "Due to drug toxicity"
-      },
-      "source_chunk_ids": [
-        "e96c6e78a8f2809f67b5eaddcc9cdd84"
-      ]
-    },
-    {
-      "id": "ent_010",
-      "type": "Indication",
+      "id": "E5",
+      "type": "Condition",
       "name": "HIV/AIDS",
       "attributes": {
-        "context": "against HIV/AIDS"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "e96c6e78a8f2809f67b5eaddcc9cdd84"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "treatment against HIV/AIDS",
+      "verified": true
     },
     {
-      "id": "ent_011",
+      "id": "E6",
+      "type": "Study",
+      "name": "Van Wyk and Gericke, 2000",
+      "attributes": {
+        "year": 2000
+      },
+      "source_chunk_ids": [
+        "e96c6e78a8f2809f67b5eaddcc9cdd84"
+      ],
+      "confidence": 0.8,
+      "evidence": "Van Wyk and Gericke, 2000",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Van Wyk, 2011",
+      "attributes": {
+        "year": 2011
+      },
+      "source_chunk_ids": [
+        "e96c6e78a8f2809f67b5eaddcc9cdd84"
+      ],
+      "confidence": 0.8,
+      "evidence": "Van Wyk, 2011",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Clavel and Hance, 2004",
+      "attributes": {
+        "year": 2004
+      },
+      "source_chunk_ids": [
+        "e96c6e78a8f2809f67b5eaddcc9cdd84"
+      ],
+      "confidence": 0.8,
+      "evidence": "Clavel and Hance, 2004",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "literature review",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "e96c6e78a8f2809f67b5eaddcc9cdd84"
+      ],
+      "confidence": 0.7,
+      "evidence": "reportedly contain compounds",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "Sceletium tortuosum is widely distributed"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "64d2fe816a20cbcc73ad5d07cd9da669"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
     },
     {
-      "id": "ent_012",
+      "id": "E2",
       "type": "Taxon",
       "name": "Aizoaceae",
       "attributes": {
-        "context": "belongs to the family Aizoaceae"
+        "rank": "family"
       },
       "source_chunk_ids": [
         "64d2fe816a20cbcc73ad5d07cd9da669"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "family Aizoaceae",
+      "verified": true
     },
     {
-      "id": "ent_013",
+      "id": "E3",
       "type": "Taxon",
       "name": "Mesembryanthemaceae",
       "attributes": {
-        "context": "sub-family Mesembryanthemaceae"
+        "rank": "sub-family"
       },
       "source_chunk_ids": [
         "64d2fe816a20cbcc73ad5d07cd9da669"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "sub-family Mesembryanthemaceae",
+      "verified": true
     },
     {
-      "id": "ent_014",
-      "type": "Taxon",
-      "name": "Koegooed",
-      "attributes": {
-        "context": "referred to as Koegooed (Afrikaans)"
-      },
+      "id": "E4",
+      "type": "Culture",
+      "name": "Afrikaans",
+      "attributes": {},
       "source_chunk_ids": [
         "64d2fe816a20cbcc73ad5d07cd9da669"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Koegooed (Afrikaans)",
+      "verified": true
     },
     {
-      "id": "ent_015",
-      "type": "Taxon",
-      "name": "Kanna",
-      "attributes": {
-        "context": "Kanna (Khoi)"
-      },
+      "id": "E5",
+      "type": "Culture",
+      "name": "Khoi",
+      "attributes": {},
       "source_chunk_ids": [
         "64d2fe816a20cbcc73ad5d07cd9da669"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Kanna (Khoi)",
+      "verified": true
     },
     {
-      "id": "ent_016",
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "Sceletium (English)"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "42289e0e593123f5c6bb098ae02a109c"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
     },
     {
-      "id": "ent_017",
-      "type": "Taxon",
-      "name": "Sceletium tortuosum",
-      "attributes": {
-        "context": "S. tortuosum powders"
-      },
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "powders",
+      "attributes": {},
       "source_chunk_ids": [
         "42289e0e593123f5c6bb098ae02a109c"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "S. tortuosum powders",
+      "verified": true
     },
     {
-      "id": "ent_018",
-      "type": "Taxon",
+      "id": "E3",
+      "type": "Product",
       "name": "kanna",
-      "attributes": {
-        "context": "known as \u201ckanna\u201d"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "42289e0e593123f5c6bb098ae02a109c"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "capsules known as \u201ckanna\u201d",
+      "verified": true
     },
     {
-      "id": "ent_019",
-      "type": "Indication",
-      "name": "psychiatric disorders",
-      "attributes": {
-        "context": "treat psychiatric disorders"
-      },
-      "source_chunk_ids": [
-        "42289e0e593123f5c6bb098ae02a109c"
-      ]
-    },
-    {
-      "id": "ent_020",
-      "type": "Indication",
+      "id": "E4",
+      "type": "Condition",
       "name": "depression",
       "attributes": {
-        "context": "such as depression"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
         "42289e0e593123f5c6bb098ae02a109c"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "depression",
+      "verified": true
     },
     {
-      "id": "ent_021",
-      "type": "Indication",
+      "id": "E5",
+      "type": "Condition",
       "name": "anxiety",
       "attributes": {
-        "context": "and anxiety"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "42289e0e593123f5c6bb098ae02a109c"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "anxiety",
+      "verified": true
     },
     {
-      "id": "ent_022",
-      "type": "Indication",
-      "name": "neuropsychiatric disorders",
+      "id": "E6",
+      "type": "Condition",
+      "name": "psychiatric disorders",
       "attributes": {
-        "context": "pathogenesis of neuropsychiatric disorders"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
         "42289e0e593123f5c6bb098ae02a109c"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "psychiatric disorders",
+      "verified": true
     },
     {
-      "id": "ent_023",
-      "type": "Indication",
-      "name": "oxidative stress",
-      "attributes": {
-        "context": "oxidative stress in the pathogenesis"
-      },
-      "source_chunk_ids": [
-        "42289e0e593123f5c6bb098ae02a109c"
-      ]
-    },
-    {
-      "id": "ent_024",
-      "type": "Compound",
-      "name": "free radicals",
-      "attributes": {
-        "context": "accumulation of free radicals"
-      },
-      "source_chunk_ids": [
-        "42289e0e593123f5c6bb098ae02a109c"
-      ]
-    },
-    {
-      "id": "ent_025",
-      "type": "PharmEffect",
-      "name": "neutralized",
-      "attributes": {
-        "context": "can be neutralized or scavenged"
-      },
-      "source_chunk_ids": [
-        "42289e0e593123f5c6bb098ae02a109c"
-      ]
-    },
-    {
-      "id": "ent_026",
-      "type": "PharmEffect",
-      "name": "scavenged",
-      "attributes": {
-        "context": "can be neutralized or scavenged"
-      },
-      "source_chunk_ids": [
-        "42289e0e593123f5c6bb098ae02a109c"
-      ]
-    },
-    {
-      "id": "ent_027",
-      "type": "Compound",
-      "name": "antioxidants",
-      "attributes": {
-        "context": "exogenous antioxidants"
-      },
-      "source_chunk_ids": [
-        "42289e0e593123f5c6bb098ae02a109c"
-      ]
-    },
-    {
-      "id": "ent_028",
-      "type": "Taxon",
-      "name": "Aizoaceae",
-      "attributes": {
-        "context": "Aizoaceae family"
-      },
-      "source_chunk_ids": [
-        "42289e0e593123f5c6bb098ae02a109c"
-      ]
-    },
-    {
-      "id": "ent_029",
+      "id": "E7",
       "type": "Taxon",
       "name": "Carpobrotus edulis",
       "attributes": {
-        "context": "for example Carpobrotus edulis"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "42289e0e593123f5c6bb098ae02a109c"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Carpobrotus edulis",
+      "verified": true
     },
     {
-      "id": "ent_030",
-      "type": "PharmEffect",
+      "id": "E8",
+      "type": "Culture",
+      "name": "Eastern Cape, South Africa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "42289e0e593123f5c6bb098ae02a109c"
+      ],
+      "confidence": 0.8,
+      "evidence": "Eastern Cape, South Africa",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "TraditionalUse",
       "name": "boost the immune system",
-      "attributes": {
-        "context": "to boost the immune system"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "42289e0e593123f5c6bb098ae02a109c"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "boost the immune system",
+      "verified": true
     },
     {
-      "id": "ent_031",
-      "type": "Indication",
+      "id": "E10",
+      "type": "TraditionalUse",
+      "name": "treat associated opportunistic infections",
+      "attributes": {},
+      "source_chunk_ids": [
+        "42289e0e593123f5c6bb098ae02a109c"
+      ],
+      "confidence": 0.85,
+      "evidence": "treat associated opportunistic infections",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Condition",
       "name": "HIV/AIDS",
       "attributes": {
-        "context": "persons with HIV/AIDS"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "42289e0e593123f5c6bb098ae02a109c"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "HIV/AIDS",
+      "verified": true
     },
     {
-      "id": "ent_032",
-      "type": "Indication",
-      "name": "opportunistic infections",
-      "attributes": {
-        "context": "treat associated opportunistic infections"
-      },
-      "source_chunk_ids": [
-        "42289e0e593123f5c6bb098ae02a109c"
-      ]
-    },
-    {
-      "id": "ent_033",
-      "type": "Taxon",
-      "name": "Carpobrotus edulis",
-      "attributes": {
-        "context": "C. edulis"
-      },
-      "source_chunk_ids": [
-        "42289e0e593123f5c6bb098ae02a109c"
-      ]
-    },
-    {
-      "id": "ent_034",
-      "type": "PharmEffect",
+      "id": "E12",
+      "type": "Effect",
       "name": "antioxidant properties",
       "attributes": {
-        "context": "reported the antioxidant properties"
+        "level": "molecular",
+        "valence": "positive"
       },
       "source_chunk_ids": [
         "42289e0e593123f5c6bb098ae02a109c"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "antioxidant properties",
+      "verified": true
     },
     {
-      "id": "ent_035",
-      "type": "PharmEffect",
+      "id": "E13",
+      "type": "Effect",
       "name": "free radical scavenging activity",
       "attributes": {
-        "context": "linked the free radical scavenging activity"
+        "level": "molecular",
+        "valence": "positive"
       },
       "source_chunk_ids": [
         "42289e0e593123f5c6bb098ae02a109c"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "free radical scavenging activity",
+      "verified": true
     },
     {
-      "id": "ent_036",
-      "type": "PharmEffect",
-      "name": "managing",
+      "id": "E1",
+      "type": "Condition",
+      "name": "HIV",
       "attributes": {
-        "context": "managing aspects of HIV/AIDS"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
-        "42289e0e593123f5c6bb098ae02a109c"
-      ]
+        "54c244c5e4ed2f6010b0e405a98faad9"
+      ],
+      "confidence": 0.95,
+      "evidence": "HIV reportedly induces oxidative stress",
+      "verified": true
     },
     {
-      "id": "ent_037",
-      "type": "Concentration",
-      "name": "111.2 g",
+      "id": "E2",
+      "type": "Effect",
+      "name": "oxidative stress",
       "attributes": {
-        "context": "Powdered plant parts (111.2 g)"
+        "level": "cellular",
+        "valence": "negative"
       },
+      "source_chunk_ids": [
+        "54c244c5e4ed2f6010b0e405a98faad9"
+      ],
+      "confidence": 0.9,
+      "evidence": "HIV reportedly induces oxidative stress",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "cellular antioxidant defences",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "54c244c5e4ed2f6010b0e405a98faad9"
+      ],
+      "confidence": 0.8,
+      "evidence": "disturbing cellular antioxidant defences",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "oxidative reactions",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "54c244c5e4ed2f6010b0e405a98faad9"
+      ],
+      "confidence": 0.8,
+      "evidence": "initiating oxidative reactions",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "AIDS",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "54c244c5e4ed2f6010b0e405a98faad9"
+      ],
+      "confidence": 0.9,
+      "evidence": "progression of HIV to AIDS",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "opportunistic infections",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "54c244c5e4ed2f6010b0e405a98faad9"
+      ],
+      "confidence": 0.85,
+      "evidence": "prone to opportunistic infections",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Gil et al., 2003",
+      "attributes": {
+        "year": 2003
+      },
+      "source_chunk_ids": [
+        "54c244c5e4ed2f6010b0e405a98faad9"
+      ],
+      "confidence": 0.7,
+      "evidence": "Gil et al., 2003",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Kashou and Agarwal, 2011",
+      "attributes": {
+        "year": 2011
+      },
+      "source_chunk_ids": [
+        "54c244c5e4ed2f6010b0e405a98faad9"
+      ],
+      "confidence": 0.7,
+      "evidence": "Kashou and Agarwal, 2011",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Mallery et al., 2004",
+      "attributes": {
+        "year": 2004
+      },
+      "source_chunk_ids": [
+        "54c244c5e4ed2f6010b0e405a98faad9"
+      ],
+      "confidence": 0.7,
+      "evidence": "Mallery et al., 2004",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "9d9ebef8d7c690e922461adbb1ff7b66"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "whole plant parts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9d9ebef8d7c690e922461adbb1ff7b66"
+      ],
+      "confidence": 0.9,
+      "evidence": "dried whole plant parts",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9d9ebef8d7c690e922461adbb1ff7b66"
+      ],
+      "confidence": 0.85,
+      "evidence": "roots were removed",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Preparation",
+      "name": "drying",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9d9ebef8d7c690e922461adbb1ff7b66"
+      ],
+      "confidence": 0.8,
+      "evidence": "dried and milled",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Preparation",
+      "name": "milling",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9d9ebef8d7c690e922461adbb1ff7b66"
+      ],
+      "confidence": 0.75,
+      "evidence": "dried and milled",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "RawMaterial",
+      "name": "dried milled plant material",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9d9ebef8d7c690e922461adbb1ff7b66"
+      ],
+      "confidence": 0.7,
+      "evidence": "dried and milled",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Product",
+      "name": "S. tortuosum capsules",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9d9ebef8d7c690e922461adbb1ff7b66"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum capsules",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "PlantPart",
+      "name": "plant parts",
+      "attributes": {},
       "source_chunk_ids": [
         "a9dc30757291ab7fab2d66b20ec337a6"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Powdered plant parts",
+      "verified": true
     },
     {
-      "id": "ent_038",
-      "type": "Compound",
-      "name": "ethanol",
-      "attributes": {
-        "context": "steeped in ethanol (1 L)"
-      },
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "ethanol extract",
+      "attributes": {},
       "source_chunk_ids": [
         "a9dc30757291ab7fab2d66b20ec337a6"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "steeped in ethanol",
+      "verified": true
     },
     {
-      "id": "ent_039",
-      "type": "Concentration",
-      "name": "1 L",
-      "attributes": {
-        "context": "in ethanol (1 L)"
-      },
+      "id": "E3",
+      "type": "Preparation",
+      "name": "steeping",
+      "attributes": {},
       "source_chunk_ids": [
         "a9dc30757291ab7fab2d66b20ec337a6"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "steeped in ethanol",
+      "verified": true
     },
     {
-      "id": "ent_040",
-      "type": "Concentration",
-      "name": "48 h",
-      "attributes": {
-        "context": "for 48 h"
-      },
+      "id": "E4",
+      "type": "Preparation",
+      "name": "filtration",
+      "attributes": {},
       "source_chunk_ids": [
         "a9dc30757291ab7fab2d66b20ec337a6"
-      ]
+      ],
+      "confidence": 0.75,
+      "evidence": "The filtrate was concentrated",
+      "verified": true
     },
     {
-      "id": "ent_041",
-      "type": "Compound",
-      "name": "ethyl acetate",
-      "attributes": {
-        "context": "re-dissolved in ethyl acetate"
-      },
+      "id": "E5",
+      "type": "Preparation",
+      "name": "concentration under vacuum",
+      "attributes": {},
       "source_chunk_ids": [
         "a9dc30757291ab7fab2d66b20ec337a6"
-      ]
+      ],
+      "confidence": 0.75,
+      "evidence": "concentrated under vacuum",
+      "verified": true
     },
     {
-      "id": "ent_042",
-      "type": "Compound",
-      "name": "polymeric tannins",
-      "attributes": {
-        "context": "highly polymeric tannins"
-      },
+      "id": "E6",
+      "type": "Preparation",
+      "name": "re-dissolving in ethyl acetate",
+      "attributes": {},
       "source_chunk_ids": [
         "a9dc30757291ab7fab2d66b20ec337a6"
-      ]
+      ],
+      "confidence": 0.7,
+      "evidence": "re-dissolved in ethyl acetate",
+      "verified": true
     },
     {
-      "id": "ent_043",
-      "type": "PharmEffect",
-      "name": "non-specific enzyme inhibitors",
-      "attributes": {
-        "context": "regarded as non-specific enzyme inhibitors"
-      },
+      "id": "E7",
+      "type": "RawMaterial",
+      "name": "ethyl acetate extract",
+      "attributes": {},
       "source_chunk_ids": [
         "a9dc30757291ab7fab2d66b20ec337a6"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "re-dissolved in ethyl acetate",
+      "verified": true
     },
     {
-      "id": "ent_044",
-      "type": "Compound",
-      "name": "phenolic",
-      "attributes": {
-        "context": "Total phenolic, flavonoid and tannin contents"
-      },
+      "id": "E8",
+      "type": "Preparation",
+      "name": "drying",
+      "attributes": {},
       "source_chunk_ids": [
-        "3a73a89501b95b776eb1e342ac30972c"
-      ]
+        "a9dc30757291ab7fab2d66b20ec337a6"
+      ],
+      "confidence": 0.7,
+      "evidence": "extracts were dried",
+      "verified": true
     },
     {
-      "id": "ent_045",
-      "type": "Compound",
-      "name": "flavonoid",
-      "attributes": {
-        "context": "Total phenolic, flavonoid and tannin contents"
-      },
+      "id": "E1",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
       "source_chunk_ids": [
-        "3a73a89501b95b776eb1e342ac30972c"
-      ]
+        "516d2fb3a8364e3562552ed75555c7b2"
+      ],
+      "confidence": 0.9,
+      "evidence": "alkaloids",
+      "verified": true
     },
     {
-      "id": "ent_046",
-      "type": "Compound",
-      "name": "tannin",
-      "attributes": {
-        "context": "Total phenolic, flavonoid and tannin contents"
-      },
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "anthraquinones",
+      "attributes": {},
       "source_chunk_ids": [
-        "3a73a89501b95b776eb1e342ac30972c"
-      ]
+        "516d2fb3a8364e3562552ed75555c7b2"
+      ],
+      "confidence": 0.9,
+      "evidence": "anthraquinones",
+      "verified": true
     },
     {
-      "id": "ent_047",
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "coumarins",
+      "attributes": {},
+      "source_chunk_ids": [
+        "516d2fb3a8364e3562552ed75555c7b2"
+      ],
+      "confidence": 0.9,
+      "evidence": "coumarins",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "terpenes",
+      "attributes": {},
+      "source_chunk_ids": [
+        "516d2fb3a8364e3562552ed75555c7b2"
+      ],
+      "confidence": 0.9,
+      "evidence": "terpenes",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "CompoundClass",
+      "name": "saponins",
+      "attributes": {},
+      "source_chunk_ids": [
+        "516d2fb3a8364e3562552ed75555c7b2"
+      ],
+      "confidence": 0.9,
+      "evidence": "saponins",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "CompoundClass",
+      "name": "phenols",
+      "attributes": {},
+      "source_chunk_ids": [
+        "516d2fb3a8364e3562552ed75555c7b2"
+      ],
+      "confidence": 0.9,
+      "evidence": "phenols",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "CompoundClass",
+      "name": "flavonoids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "516d2fb3a8364e3562552ed75555c7b2"
+      ],
+      "confidence": 0.9,
+      "evidence": "flavonoids",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "CompoundClass",
+      "name": "emodins",
+      "attributes": {},
+      "source_chunk_ids": [
+        "516d2fb3a8364e3562552ed75555c7b2"
+      ],
+      "confidence": 0.9,
+      "evidence": "emodins",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "CompoundClass",
+      "name": "tannins",
+      "attributes": {},
+      "source_chunk_ids": [
+        "516d2fb3a8364e3562552ed75555c7b2"
+      ],
+      "confidence": 0.9,
+      "evidence": "tannins",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Taxon",
       "name": "S. tortuosum",
       "attributes": {
-        "context": "S. tortuosum ethanol extract"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "3a73a89501b95b776eb1e342ac30972c"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum ethanol extract",
+      "verified": true
     },
     {
-      "id": "ent_048",
-      "type": "Compound",
-      "name": "ethanol",
-      "attributes": {
-        "context": "S. tortuosum ethanol extract"
-      },
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "ethanol extract",
+      "attributes": {},
       "source_chunk_ids": [
         "3a73a89501b95b776eb1e342ac30972c"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "S. tortuosum ethanol extract",
+      "verified": true
     },
     {
-      "id": "ent_049",
-      "type": "Indication",
-      "name": "HIV-1",
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "phenolic compounds",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3a73a89501b95b776eb1e342ac30972c"
+      ],
+      "confidence": 0.8,
+      "evidence": "Total phenolic",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "flavonoids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3a73a89501b95b776eb1e342ac30972c"
+      ],
+      "confidence": 0.8,
+      "evidence": "flavonoid",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "CompoundClass",
+      "name": "tannins",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3a73a89501b95b776eb1e342ac30972c"
+      ],
+      "confidence": 0.8,
+      "evidence": "tannin",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Gracelin et al., 2013",
       "attributes": {
-        "context": "HIV-1 protease (PR) inhibition assay"
+        "year": 2013
       },
       "source_chunk_ids": [
-        "8d6458eb909be355a29a95f73d9c69d3"
-      ]
+        "4a911c57184f1ecf551dc84d1667f5c4"
+      ],
+      "confidence": 0.9,
+      "evidence": "Gracelin et al., 2013",
+      "verified": true
     },
     {
-      "id": "ent_050",
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vitro assay",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "4a911c57184f1ecf551dc84d1667f5c4"
+      ],
+      "confidence": 0.85,
+      "evidence": "Folin\u2013Ciocalteu assay",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4a911c57184f1ecf551dc84d1667f5c4"
+      ],
+      "confidence": 0.8,
+      "evidence": "1 mL of extract",
+      "verified": true
+    },
+    {
+      "id": "E4",
       "type": "Compound",
-      "name": "HIV-1 protease",
-      "attributes": {
-        "context": "HIV-1 protease (PR) inhibition assay"
-      },
+      "name": "gallic acid",
+      "attributes": {},
       "source_chunk_ids": [
-        "8d6458eb909be355a29a95f73d9c69d3"
-      ]
+        "4a911c57184f1ecf551dc84d1667f5c4"
+      ],
+      "confidence": 0.9,
+      "evidence": "gallic acid solutions",
+      "verified": true
     },
     {
-      "id": "ent_051",
-      "type": "PharmEffect",
-      "name": "inhibition",
+      "id": "E5",
+      "type": "Effect",
+      "name": "total phenolic content",
       "attributes": {
-        "context": "HIV-1 protease (PR) inhibition assay"
+        "level": "molecular",
+        "valence": "neutral"
       },
       "source_chunk_ids": [
-        "8d6458eb909be355a29a95f73d9c69d3"
-      ]
+        "4a911c57184f1ecf551dc84d1667f5c4"
+      ],
+      "confidence": 0.85,
+      "evidence": "TPC was determined",
+      "verified": true
     },
     {
-      "id": "ent_052",
+      "id": "E1",
+      "type": "Evidence",
+      "name": "in vitro assay",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "43ba68ff47409c8bc2f72c20807a9c85"
+      ],
+      "confidence": 0.8,
+      "evidence": "method reported by Marinova et al.",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Marinova et al. (2005)",
+      "attributes": {
+        "year": 2005
+      },
+      "source_chunk_ids": [
+        "43ba68ff47409c8bc2f72c20807a9c85"
+      ],
+      "confidence": 0.9,
+      "evidence": "method reported by Marinova et al. (2005)",
+      "verified": true
+    },
+    {
+      "id": "E3",
       "type": "Compound",
-      "name": "HIV-1 PR",
-      "attributes": {
-        "context": "HIV-1 PR and the fluorogenic substrate"
-      },
+      "name": "quercetin",
+      "attributes": {},
       "source_chunk_ids": [
-        "8d6458eb909be355a29a95f73d9c69d3"
-      ]
+        "43ba68ff47409c8bc2f72c20807a9c85"
+      ],
+      "confidence": 0.95,
+      "evidence": "standard solution of quercetin",
+      "verified": true
     },
     {
-      "id": "ent_053",
-      "type": "Compound",
-      "name": "fluorogenic substrate",
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "sample",
       "attributes": {
-        "context": "and the fluorogenic substrate were mixed"
+        "concentration": "1 mg/mL"
       },
       "source_chunk_ids": [
-        "8d6458eb909be355a29a95f73d9c69d3"
-      ]
+        "43ba68ff47409c8bc2f72c20807a9c85"
+      ],
+      "confidence": 0.7,
+      "evidence": "1 mL of sample (1 mg/mL)",
+      "verified": true
     },
     {
-      "id": "ent_054",
-      "type": "Concentration",
-      "name": "100 \u00b5L",
-      "attributes": {
-        "context": "final reaction volume of 100 \u00b5L"
-      },
-      "source_chunk_ids": [
-        "8d6458eb909be355a29a95f73d9c69d3"
-      ]
-    },
-    {
-      "id": "ent_055",
-      "type": "Compound",
-      "name": "Acetyl pepstatin",
-      "attributes": {
-        "context": "Acetyl pepstatin (AP) was used"
-      },
-      "source_chunk_ids": [
-        "8d6458eb909be355a29a95f73d9c69d3"
-      ]
-    },
-    {
-      "id": "ent_056",
-      "type": "PharmEffect",
-      "name": "inhibitor",
-      "attributes": {
-        "context": "known inhibitor of HIV-1 PR"
-      },
-      "source_chunk_ids": [
-        "8d6458eb909be355a29a95f73d9c69d3"
-      ]
-    },
-    {
-      "id": "ent_057",
-      "type": "Compound",
-      "name": "HIV-1 PR",
-      "attributes": {
-        "context": "inhibitor of HIV-1 PR"
-      },
-      "source_chunk_ids": [
-        "8d6458eb909be355a29a95f73d9c69d3"
-      ]
-    },
-    {
-      "id": "ent_058",
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "S. tortuosum was tested"
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f89fac3ac32db52dc7364c12cf33af2b"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f89fac3ac32db52dc7364c12cf33af2b"
+      ],
+      "confidence": 0.8,
+      "evidence": "mg TAE/g extract",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Gracelin et al. (2013)",
+      "attributes": {
+        "year": 2013
+      },
+      "source_chunk_ids": [
+        "f89fac3ac32db52dc7364c12cf33af2b"
+      ],
+      "confidence": 0.85,
+      "evidence": "method previously described by Gracelin et al. (2013)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "f89fac3ac32db52dc7364c12cf33af2b"
+      ],
+      "confidence": 0.7,
+      "evidence": "UV absorbance at 120 nm",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "HIV-1 protease",
+      "attributes": {
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
         "8d6458eb909be355a29a95f73d9c69d3"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "HIV-1 protease (PR) inhibition assay",
+      "verified": true
     },
     {
-      "id": "ent_059",
-      "type": "Concentration",
-      "name": "25 \u00b5g/mL",
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "S. tortuosum extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8d6458eb909be355a29a95f73d9c69d3"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum was tested at final concentrations",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "acetyl pepstatin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8d6458eb909be355a29a95f73d9c69d3"
+      ],
+      "confidence": 0.85,
+      "evidence": "Acetyl pepstatin (AP) was used as a known inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "HIV-1 protease inhibition assay",
       "attributes": {
-        "context": "concentrations of 25, 50, 100, 150, 200 and 250 \u00b5g/mL"
+        "design": "in vitro assay"
       },
       "source_chunk_ids": [
         "8d6458eb909be355a29a95f73d9c69d3"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "HIV-1 protease (PR) inhibition assay was conducted",
+      "verified": true
     },
     {
-      "id": "ent_060",
-      "type": "Concentration",
-      "name": "50 \u00b5g/mL",
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vitro",
       "attributes": {
-        "context": "concentrations of 25, 50, 100, 150, 200 and 250 \u00b5g/mL"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
         "8d6458eb909be355a29a95f73d9c69d3"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "FRET-based Sensolyte HIV-1 protease assay kit",
+      "verified": true
     },
     {
-      "id": "ent_061",
-      "type": "Concentration",
-      "name": "100 \u00b5g/mL",
+      "id": "E1",
+      "type": "Evidence",
+      "name": "in vitro",
       "attributes": {
-        "context": "concentrations of 25, 50, 100, 150, 200 and 250 \u00b5g/mL"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
-        "8d6458eb909be355a29a95f73d9c69d3"
-      ]
+        "b542140a20c3b2e27c94b46a4c6e49b7"
+      ],
+      "confidence": 0.95,
+      "evidence": "in vitro HIV-1 reverse transcriptase activity",
+      "verified": true
     },
     {
-      "id": "ent_062",
-      "type": "Concentration",
-      "name": "150 \u00b5g/mL",
+      "id": "E2",
+      "type": "Target",
+      "name": "HIV-1 reverse transcriptase",
       "attributes": {
-        "context": "concentrations of 25, 50, 100, 150, 200 and 250 \u00b5g/mL"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
-        "8d6458eb909be355a29a95f73d9c69d3"
-      ]
+        "b542140a20c3b2e27c94b46a4c6e49b7"
+      ],
+      "confidence": 0.9,
+      "evidence": "HIV-1 reverse transcriptase (RT)",
+      "verified": true
     },
     {
-      "id": "ent_063",
-      "type": "Concentration",
-      "name": "200 \u00b5g/mL",
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "extracts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b542140a20c3b2e27c94b46a4c6e49b7"
+      ],
+      "confidence": 0.85,
+      "evidence": "extracts were tested",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Kuete et al., 2010; Mbaveng et al., 2011",
       "attributes": {
-        "context": "concentrations of 25, 50, 100, 150, 200 and 250 \u00b5g/mL"
+        "year": "2010, 2011"
       },
       "source_chunk_ids": [
-        "8d6458eb909be355a29a95f73d9c69d3"
-      ]
+        "b542140a20c3b2e27c94b46a4c6e49b7"
+      ],
+      "confidence": 0.8,
+      "evidence": "Kuete et al., 2010; Mbaveng et al., 2011",
+      "verified": true
     },
     {
-      "id": "ent_064",
-      "type": "Concentration",
-      "name": "250 \u00b5g/mL",
+      "id": "E1",
+      "type": "Study",
+      "name": "Jiang et al., 2010",
       "attributes": {
-        "context": "concentrations of 25, 50, 100, 150, 200 and 250 \u00b5g/mL"
+        "year": 2010
       },
       "source_chunk_ids": [
-        "8d6458eb909be355a29a95f73d9c69d3"
-      ]
+        "b37ce677329a77de630cb37313db3451"
+      ],
+      "confidence": 0.9,
+      "evidence": "Jiang et al., 2010",
+      "verified": true
     },
     {
-      "id": "ent_065",
-      "type": "Indication",
-      "name": "HIV-1",
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vitro assay",
       "attributes": {
-        "context": "HIV-1 reverse transcriptase"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
-        "e972885803e9a32df00bb9b585db364c"
-      ]
+        "b37ce677329a77de630cb37313db3451"
+      ],
+      "confidence": 0.85,
+      "evidence": "non-radioactive HIV-1 integrase assay kit",
+      "verified": true
     },
     {
-      "id": "ent_066",
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "b37ce677329a77de630cb37313db3451"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum extracts",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "S. tortuosum extracts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b37ce677329a77de630cb37313db3451"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum extracts",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "HIV-1 integrase",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "b37ce677329a77de630cb37313db3451"
+      ],
+      "confidence": 0.95,
+      "evidence": "HIV-1 integrase",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "inhibition of HIV-1 integrase",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "b37ce677329a77de630cb37313db3451"
+      ],
+      "confidence": 0.8,
+      "evidence": "inhibitory effects",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "et al. (2013)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "63cc018d1bd36b4db91db9d7bb25e870"
+      ],
+      "confidence": 0.9,
+      "evidence": "et al. (2013)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "63cc018d1bd36b4db91db9d7bb25e870"
+      ],
+      "confidence": 0.85,
+      "evidence": "extracts dissolved in ethanol",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "extracts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "63cc018d1bd36b4db91db9d7bb25e870"
+      ],
+      "confidence": 0.8,
+      "evidence": "extracts dissolved in ethanol",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "DPPH",
+      "attributes": {
+        "target_type": "radical"
+      },
+      "source_chunk_ids": [
+        "63cc018d1bd36b4db91db9d7bb25e870"
+      ],
+      "confidence": 0.9,
+      "evidence": "2,2-diphenyl-1-picrylhydrazyl (DPPH)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "antiradical activity",
+      "attributes": {
+        "level": "molecular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "63cc018d1bd36b4db91db9d7bb25e870"
+      ],
+      "confidence": 0.85,
+      "evidence": "percentage antiradical activity",
+      "verified": true
+    },
+    {
+      "id": "E6",
       "type": "Compound",
-      "name": "reverse transcriptase",
-      "attributes": {
-        "context": "HIV-1 reverse transcriptase colorimetric assay"
-      },
+      "name": "ascorbic acid",
+      "attributes": {},
       "source_chunk_ids": [
-        "e972885803e9a32df00bb9b585db364c"
-      ]
+        "63cc018d1bd36b4db91db9d7bb25e870"
+      ],
+      "confidence": 0.9,
+      "evidence": "Ascorbic acid was used as a standard control",
+      "verified": true
     },
     {
-      "id": "ent_067",
-      "type": "PharmEffect",
-      "name": "HIV-1 reverse transcriptase (RT) activity",
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "The in vitro HIV-1 reverse transcriptase (RT) activity of the extracts was evaluated"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "b542140a20c3b2e27c94b46a4c6e49b7"
-      ]
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum extracts",
+      "verified": true
     },
     {
-      "id": "ent_068",
-      "type": "Indication",
-      "name": "HIV-1",
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "ethanol extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "confidence": 0.9,
+      "evidence": "ethanol extract of S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "anthraquinones",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "confidence": 0.85,
+      "evidence": "anthraquinones",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "terpenes",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "confidence": 0.85,
+      "evidence": "terpenes",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "CompoundClass",
+      "name": "polyphenols",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "confidence": 0.85,
+      "evidence": "polyphenols",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "CompoundClass",
+      "name": "anthocyanin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "confidence": 0.85,
+      "evidence": "anthocyanin",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "CompoundClass",
+      "name": "tannins",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "confidence": 0.9,
+      "evidence": "tannins",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "confidence": 0.9,
+      "evidence": "alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "CompoundClass",
+      "name": "glycosides",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "confidence": 0.85,
+      "evidence": "glycosides",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "CompoundClass",
+      "name": "carbohydrates",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "confidence": 0.85,
+      "evidence": "carbohydrates",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "CompoundClass",
+      "name": "coumarins",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "confidence": 0.85,
+      "evidence": "coumarins",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "CompoundClass",
+      "name": "flavonoids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "confidence": 0.9,
+      "evidence": "flavonoid",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Effect",
+      "name": "radical scavenging activity",
       "attributes": {
-        "context": "The in vitro HIV-1 reverse transcriptase (RT) activity"
+        "level": "molecular",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "b542140a20c3b2e27c94b46a4c6e49b7"
-      ]
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "confidence": 0.8,
+      "evidence": "good radical scavenging activity",
+      "verified": true
     },
     {
-      "id": "ent_069",
-      "type": "Concentration",
-      "name": "4 ng",
+      "id": "E14",
+      "type": "Effect",
+      "name": "protection of cells from oxidative-induced damage/death",
       "attributes": {
-        "context": "using 4 ng of enzyme per well"
+        "level": "cellular",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "b542140a20c3b2e27c94b46a4c6e49b7"
-      ]
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "confidence": 0.75,
+      "evidence": "protection of cells from oxidative-induced damage/death",
+      "verified": true
     },
     {
-      "id": "ent_070",
-      "type": "Concentration",
-      "name": "25 \u00b5g/mL",
+      "id": "E15",
+      "type": "Study",
+      "name": "Klos et al., 2009",
       "attributes": {
-        "context": "tested at known concentrations (25, 50, 100, 150, 200, 250 \u00b5g/mL)"
+        "year": 2009
       },
       "source_chunk_ids": [
-        "b542140a20c3b2e27c94b46a4c6e49b7"
-      ]
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "confidence": 0.7,
+      "evidence": "Klos et al., 2009",
+      "verified": true
     },
     {
-      "id": "ent_071",
-      "type": "Concentration",
-      "name": "50 \u00b5g/mL",
+      "id": "E16",
+      "type": "Study",
+      "name": "Omoruyi et al., 2012b",
       "attributes": {
-        "context": "tested at known concentrations (25, 50, 100, 150, 200, 250 \u00b5g/mL)"
+        "year": 2012
       },
       "source_chunk_ids": [
-        "b542140a20c3b2e27c94b46a4c6e49b7"
-      ]
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "confidence": 0.7,
+      "evidence": "Omoruyi et al., 2012b",
+      "verified": true
     },
     {
-      "id": "ent_072",
-      "type": "Concentration",
-      "name": "100 \u00b5g/mL",
+      "id": "E17",
+      "type": "Study",
+      "name": "Panat et al., 2016",
       "attributes": {
-        "context": "tested at known concentrations (25, 50, 100, 150, 200, 250 \u00b5g/mL)"
+        "year": 2016
       },
       "source_chunk_ids": [
-        "b542140a20c3b2e27c94b46a4c6e49b7"
-      ]
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "confidence": 0.7,
+      "evidence": "Panat et al., 2016",
+      "verified": true
     },
     {
-      "id": "ent_073",
-      "type": "Concentration",
-      "name": "150 \u00b5g/mL",
+      "id": "E18",
+      "type": "Study",
+      "name": "Zieli\u0144ska-Przyjemska et al., 2015",
       "attributes": {
-        "context": "tested at known concentrations (25, 50, 100, 150, 200, 250 \u00b5g/mL)"
+        "year": 2015
       },
       "source_chunk_ids": [
-        "b542140a20c3b2e27c94b46a4c6e49b7"
-      ]
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "confidence": 0.7,
+      "evidence": "Zieli\u0144ska-Przyjemska et al., 2015",
+      "verified": true
     },
     {
-      "id": "ent_074",
-      "type": "Concentration",
-      "name": "200 \u00b5g/mL",
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "tested at known concentrations (25, 50, 100, 150, 200, 250 \u00b5g/mL)"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "b542140a20c3b2e27c94b46a4c6e49b7"
-      ]
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum extracts",
+      "verified": true
     },
     {
-      "id": "ent_075",
-      "type": "Concentration",
-      "name": "250 \u00b5g/mL",
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "ethanolic extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "confidence": 0.9,
+      "evidence": "ethanolic extract",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "ethyl acetate extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "confidence": 0.9,
+      "evidence": "ethyl acetate extract",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "HIV-1 reverse transcriptase",
       "attributes": {
-        "context": "tested at known concentrations (25, 50, 100, 150, 200, 250 \u00b5g/mL)"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
-        "b542140a20c3b2e27c94b46a4c6e49b7"
-      ]
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "confidence": 0.95,
+      "evidence": "HIV-1 RT",
+      "verified": true
     },
     {
-      "id": "ent_076",
+      "id": "E5",
+      "type": "Target",
+      "name": "HIV-1 protease",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "confidence": 0.95,
+      "evidence": "HIV-1 PR",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "HIV-1 integrase",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "confidence": 0.9,
+      "evidence": "HIV-1 integrase",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "inhibition of HIV-1 RT",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "confidence": 0.85,
+      "evidence": "inhibited HIV-1 RT",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "inhibition of HIV-1 PR",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "confidence": 0.85,
+      "evidence": "inhibited HIV-1 PR",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "weak inhibition of HIV-1 integrase",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "confidence": 0.8,
+      "evidence": "weak activity against HIV-1 integrase",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "RawMaterial",
+      "name": "ethanol extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a9bc2c351c5ff353b7295c941a7ded80"
+      ],
+      "confidence": 0.9,
+      "evidence": "Ethanol extract",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "ethyl acetate extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a9bc2c351c5ff353b7295c941a7ded80"
+      ],
+      "confidence": 0.9,
+      "evidence": "Ethyl acetate extract",
+      "verified": true
+    },
+    {
+      "id": "E3",
       "type": "Compound",
-      "name": "peroxidase",
-      "attributes": {
-        "context": "an antibody conjugated to peroxidase"
-      },
+      "name": "acetyl pepstatin",
+      "attributes": {},
       "source_chunk_ids": [
-        "b542140a20c3b2e27c94b46a4c6e49b7"
-      ]
+        "a9bc2c351c5ff353b7295c941a7ded80"
+      ],
+      "confidence": 0.85,
+      "evidence": "Acetyl pepstatin",
+      "verified": true
     },
     {
-      "id": "ent_077",
+      "id": "E4",
       "type": "Compound",
-      "name": "digoxigenin",
-      "attributes": {
-        "context": "binds to the digoxigenin-labelled DNA"
-      },
+      "name": "doxorubicin",
+      "attributes": {},
       "source_chunk_ids": [
-        "b542140a20c3b2e27c94b46a4c6e49b7"
-      ]
+        "a9bc2c351c5ff353b7295c941a7ded80"
+      ],
+      "confidence": 0.85,
+      "evidence": "Doxorubicin",
+      "verified": true
     },
     {
-      "id": "ent_078",
+      "id": "E5",
       "type": "Compound",
-      "name": "2,2'-azino-bis-(3-ethylbenzthiazoline-6-sulfonic acid)",
-      "attributes": {
-        "context": "the peroxidase substrate solution [2,2'-azino-bis-(3-ethylbenzthiazoline-6-sulfonic acid)]"
-      },
+      "name": "sodium azide",
+      "attributes": {},
       "source_chunk_ids": [
-        "b542140a20c3b2e27c94b46a4c6e49b7"
-      ]
+        "a9bc2c351c5ff353b7295c941a7ded80"
+      ],
+      "confidence": 0.85,
+      "evidence": "Sodium azide",
+      "verified": true
     },
     {
-      "id": "ent_079",
-      "type": "Compound",
-      "name": "Doxorubicin",
+      "id": "E6",
+      "type": "Target",
+      "name": "HIV-1 RT",
       "attributes": {
-        "context": "Doxorubicin was used as a positive control"
-      },
-      "source_chunk_ids": [
-        "b542140a20c3b2e27c94b46a4c6e49b7"
-      ]
-    },
-    {
-      "id": "ent_080",
-      "type": "PharmEffect",
-      "name": "IC50 values",
-      "attributes": {
-        "context": "IC50 values were computed"
-      },
-      "source_chunk_ids": [
-        "b542140a20c3b2e27c94b46a4c6e49b7"
-      ]
-    },
-    {
-      "id": "ent_081",
-      "type": "Indication",
-      "name": "HIV-1",
-      "attributes": {
-        "context": "HIV-1 RT"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
         "a9bc2c351c5ff353b7295c941a7ded80"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "HIV-1 RT",
+      "verified": true
     },
     {
-      "id": "ent_082",
-      "type": "Indication",
-      "name": "HIV-1",
+      "id": "E7",
+      "type": "Target",
+      "name": "HIV-1 PR",
       "attributes": {
-        "context": "HIV-1 PR"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
         "a9bc2c351c5ff353b7295c941a7ded80"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "HIV-1 PR",
+      "verified": true
     },
     {
-      "id": "ent_083",
-      "type": "Indication",
-      "name": "HIV-1",
+      "id": "E8",
+      "type": "Target",
+      "name": "HIV-1 IN",
       "attributes": {
-        "context": "HIV-1 IN"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
         "a9bc2c351c5ff353b7295c941a7ded80"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "HIV-1 IN",
+      "verified": true
     },
     {
-      "id": "ent_084",
-      "type": "Compound",
-      "name": "Ethanol extract",
-      "attributes": {
-        "context": "Ethanol extract"
-      },
+      "id": "E1",
+      "type": "Condition",
+      "name": "oxidative stress",
+      "attributes": {},
       "source_chunk_ids": [
-        "a9bc2c351c5ff353b7295c941a7ded80"
-      ]
+        "55dfe465a349913e9494af83f0a8e384"
+      ],
+      "confidence": 0.9,
+      "evidence": "Oxidative stress is also largely linked",
+      "verified": true
     },
     {
-      "id": "ent_085",
-      "type": "Compound",
-      "name": "Ethyl acetate extract",
-      "attributes": {
-        "context": "Ethyl acetate extract"
-      },
+      "id": "E2",
+      "type": "Condition",
+      "name": "HIV-1 activation",
+      "attributes": {},
       "source_chunk_ids": [
-        "a9bc2c351c5ff353b7295c941a7ded80"
-      ]
+        "55dfe465a349913e9494af83f0a8e384"
+      ],
+      "confidence": 0.85,
+      "evidence": "activation of HIV-1",
+      "verified": true
     },
     {
-      "id": "ent_086",
-      "type": "Compound",
-      "name": "Acetyl pepstatin",
-      "attributes": {
-        "context": "Acetyl pepstatin"
-      },
+      "id": "E3",
+      "type": "Condition",
+      "name": "AIDS",
+      "attributes": {},
       "source_chunk_ids": [
-        "a9bc2c351c5ff353b7295c941a7ded80"
-      ]
+        "55dfe465a349913e9494af83f0a8e384"
+      ],
+      "confidence": 0.9,
+      "evidence": "development of AIDS",
+      "verified": true
     },
     {
-      "id": "ent_087",
-      "type": "Compound",
-      "name": "Doxorubicin",
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "Doxorubicin"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "a9bc2c351c5ff353b7295c941a7ded80"
-      ]
+        "55dfe465a349913e9494af83f0a8e384"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
     },
     {
-      "id": "ent_088",
-      "type": "Compound",
-      "name": "Sodium azide",
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vitro study",
       "attributes": {
-        "context": "Sodium azide"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
-        "a9bc2c351c5ff353b7295c941a7ded80"
-      ]
+        "55dfe465a349913e9494af83f0a8e384"
+      ],
+      "confidence": 0.8,
+      "evidence": "in vitro HIV study",
+      "verified": true
     },
     {
-      "id": "ent_089",
-      "type": "Concentration",
-      "name": "\u00b5g/mL",
+      "id": "E6",
+      "type": "Study",
+      "name": "Allard et al., 1998",
       "attributes": {
-        "context": "IC50 (\u00b5g/mL)"
+        "year": 1998
       },
       "source_chunk_ids": [
-        "a9bc2c351c5ff353b7295c941a7ded80"
-      ]
+        "55dfe465a349913e9494af83f0a8e384"
+      ],
+      "confidence": 0.7,
+      "evidence": "Allard et al., 1998",
+      "verified": true
     },
     {
-      "id": "ent_090",
-      "type": "Concentration",
-      "name": "<50 \u00b5g/mL",
+      "id": "E7",
+      "type": "Study",
+      "name": "Gil del Valle et al., 2013",
       "attributes": {
-        "context": "Ethanol extract<50"
+        "year": 2013
       },
       "source_chunk_ids": [
-        "a9bc2c351c5ff353b7295c941a7ded80"
-      ]
+        "55dfe465a349913e9494af83f0a8e384"
+      ],
+      "confidence": 0.7,
+      "evidence": "Gil del Valle et al., 2013",
+      "verified": true
     },
     {
-      "id": "ent_091",
-      "type": "Concentration",
-      "name": "<100 \u00b5g/mL",
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "Ethanol extract<100"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "a9bc2c351c5ff353b7295c941a7ded80"
-      ]
+        "afdbc4f26b772b067030053792957239"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
     },
     {
-      "id": "ent_092",
-      "type": "Concentration",
-      "name": ">400 \u00b5g/mL",
+      "id": "E2",
+      "type": "Target",
+      "name": "HIV-1 RT",
       "attributes": {
-        "context": "Ethanol extract>400"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
-        "a9bc2c351c5ff353b7295c941a7ded80"
-      ]
+        "afdbc4f26b772b067030053792957239"
+      ],
+      "confidence": 0.9,
+      "evidence": "HIV-1 RT",
+      "verified": true
     },
     {
-      "id": "ent_093",
-      "type": "Concentration",
-      "name": "121.7 \u00b1 2.5 \u00b5g/mL",
+      "id": "E3",
+      "type": "Target",
+      "name": "HIV-1 PR",
       "attributes": {
-        "context": "Ethyl acetate extract121.7 \u00b1 2.5"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
-        "a9bc2c351c5ff353b7295c941a7ded80"
-      ]
+        "afdbc4f26b772b067030053792957239"
+      ],
+      "confidence": 0.9,
+      "evidence": "HIV-1 PR",
+      "verified": true
     },
     {
-      "id": "ent_094",
-      "type": "Concentration",
-      "name": "<100 \u00b5g/mL",
+      "id": "E4",
+      "type": "Effect",
+      "name": "inhibitory effects",
       "attributes": {
-        "context": "Ethyl acetate extract<100"
+        "level": "molecular",
+        "valence": "negative"
       },
       "source_chunk_ids": [
-        "a9bc2c351c5ff353b7295c941a7ded80"
-      ]
+        "afdbc4f26b772b067030053792957239"
+      ],
+      "confidence": 0.85,
+      "evidence": "inhibitory effects",
+      "verified": true
     },
     {
-      "id": "ent_095",
-      "type": "Concentration",
-      "name": ">400 \u00b5g/mL",
+      "id": "E5",
+      "type": "Effect",
+      "name": "antiradical properties",
       "attributes": {
-        "context": "Ethyl acetate extract>400"
+        "level": "molecular",
+        "valence": "negative"
       },
       "source_chunk_ids": [
-        "a9bc2c351c5ff353b7295c941a7ded80"
-      ]
+        "afdbc4f26b067030053792957239",
+        "afdbc4f26b772b067030053792957239"
+      ],
+      "confidence": 0.8,
+      "evidence": "antiradical properties",
+      "verified": true
     },
     {
-      "id": "ent_096",
-      "type": "Concentration",
-      "name": "<10 \u00b5g/mL",
+      "id": "E6",
+      "type": "Evidence",
+      "name": "in vitro",
       "attributes": {
-        "context": "Acetyl pepstatina\u2013<10"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
-        "a9bc2c351c5ff353b7295c941a7ded80"
-      ]
+        "afdbc4f26b772b067030053792957239"
+      ],
+      "confidence": 0.9,
+      "evidence": "in vitro",
+      "verified": true
     },
     {
-      "id": "ent_097",
-      "type": "Concentration",
-      "name": "<25 \u00b5g/mL",
-      "attributes": {
-        "context": "Doxorubicinb<25"
-      },
+      "id": "E7",
+      "type": "Study",
+      "name": "this study",
+      "attributes": {},
       "source_chunk_ids": [
-        "a9bc2c351c5ff353b7295c941a7ded80"
-      ]
+        "afdbc4f26b772b067030053792957239"
+      ],
+      "confidence": 0.7,
+      "evidence": "this study",
+      "verified": true
     },
     {
-      "id": "ent_098",
-      "type": "Concentration",
-      "name": "<10 \u00b5g/mL",
-      "attributes": {
-        "context": "Sodium azidec\u2013\u2013<10"
-      },
+      "id": "E8",
+      "type": "TraditionalUse",
+      "name": "traditional success",
+      "attributes": {},
       "source_chunk_ids": [
-        "a9bc2c351c5ff353b7295c941a7ded80"
-      ]
+        "afdbc4f26b772b067030053792957239"
+      ],
+      "confidence": 0.75,
+      "evidence": "traditional success",
+      "verified": true
     },
     {
-      "id": "ent_099",
-      "type": "Indication",
-      "name": "HIV-1",
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "HIV-1 reverse transcriptase"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "1e6d8ed2e46ef4cc685df147e650436a"
-      ]
+        "46dac1a3fea6656ee7689c4db684281c"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
     },
     {
-      "id": "ent_100",
-      "type": "Compound",
-      "name": "reverse transcriptase (RT)",
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "ethanol extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "46dac1a3fea6656ee7689c4db684281c"
+      ],
+      "confidence": 0.9,
+      "evidence": "EtOH (ethanol extract)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "ethyl acetate extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "46dac1a3fea6656ee7689c4db684281c"
+      ],
+      "confidence": 0.9,
+      "evidence": "EtOAc (ethyl acetate extract)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "free radical scavenging activity",
       "attributes": {
-        "context": "HIV-1 reverse transcriptase (RT)"
+        "level": "molecular",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "1e6d8ed2e46ef4cc685df147e650436a"
-      ]
+        "46dac1a3fea6656ee7689c4db684281c"
+      ],
+      "confidence": 0.85,
+      "evidence": "free radical scavenging activity",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "46dac1a3fea6656ee7689c4db684281c"
+      ],
+      "confidence": 0.8,
+      "evidence": "inhibition percentages",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f7f37f5573fbbae2f672654987a2a4c1"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "ethanol extract",
+      "attributes": {
+        "extraction_solvent": "ethanol"
+      },
+      "source_chunk_ids": [
+        "f7f37f5573fbbae2f672654987a2a4c1"
+      ],
+      "confidence": 0.85,
+      "evidence": "S. tortuosum ethanol (EtOH) extract",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "ethyl acetate extract",
+      "attributes": {
+        "extraction_solvent": "ethyl acetate"
+      },
+      "source_chunk_ids": [
+        "f7f37f5573fbbae2f672654987a2a4c1"
+      ],
+      "confidence": 0.85,
+      "evidence": "ethyl acetate (EtOAc) extract",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "free radical scavenging activity",
+      "attributes": {
+        "level": "molecular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "f7f37f5573fbbae2f672654987a2a4c1"
+      ],
+      "confidence": 0.9,
+      "evidence": "Free radical scavenging activity",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "antiradical activity",
+      "attributes": {
+        "level": "molecular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "f7f37f5573fbbae2f672654987a2a4c1"
+      ],
+      "confidence": 0.9,
+      "evidence": "good antiradical activity",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "136589536996e19abb7fb3504ac07edb"
+      ],
+      "confidence": 0.9,
+      "evidence": "managing depression",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "136589536996e19abb7fb3504ac07edb"
+      ],
+      "confidence": 0.9,
+      "evidence": "managing anxiety",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "HIV/AIDS",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "136589536996e19abb7fb3504ac07edb"
+      ],
+      "confidence": 0.95,
+      "evidence": "managing HIV/AIDS",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Aizoaceae",
+      "attributes": {
+        "rank": "family"
+      },
+      "source_chunk_ids": [
+        "136589536996e19abb7fb3504ac07edb"
+      ],
+      "confidence": 0.85,
+      "evidence": "selected Aizoaceae plants",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "managing depression and anxiety",
+      "attributes": {},
+      "source_chunk_ids": [
+        "136589536996e19abb7fb3504ac07edb"
+      ],
+      "confidence": 0.8,
+      "evidence": "managing depression and anxiety",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "managing HIV/AIDS",
+      "attributes": {},
+      "source_chunk_ids": [
+        "136589536996e19abb7fb3504ac07edb"
+      ],
+      "confidence": 0.8,
+      "evidence": "managing HIV/AIDS",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "UseRecord",
+      "name": "UseRecord: Aizoaceae \u2013 managing depression and anxiety",
+      "attributes": {},
+      "source_chunk_ids": [
+        "136589536996e19abb7fb3504ac07edb"
+      ],
+      "confidence": 0.7,
+      "evidence": "managing depression and anxiety",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "UseRecord",
+      "name": "UseRecord: Aizoaceae \u2013 managing HIV/AIDS",
+      "attributes": {},
+      "source_chunk_ids": [
+        "136589536996e19abb7fb3504ac07edb"
+      ],
+      "confidence": 0.7,
+      "evidence": "managing HIV/AIDS",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Farm Vredelus",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e580bcb1e42e830ef890b6a62d39bf6f"
+      ],
+      "confidence": 0.8,
+      "evidence": "Farm Vredelus in Mariental (Namibia)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "e580bcb1e42e830ef890b6a62d39bf6f"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Gericke and Viljoen 2008 review",
+      "attributes": {
+        "design": "review",
+        "year": 2008
+      },
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "confidence": 0.85,
+      "evidence": "Gericke, N., Viljoen, A.M., 2008. Sceletium\u2014a review update",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "review",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "confidence": 0.8,
+      "evidence": "review update",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Harvey et al. 2011 pharmacological study",
+      "attributes": {
+        "design": "pharmacological study",
+        "year": 2011
+      },
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "confidence": 0.85,
+      "evidence": "Harvey, A.L., Young, L.C., Viljoen, A.M., Gericke, N.P., 2011. Pharmacological actions",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "pharmacological study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "confidence": 0.8,
+      "evidence": "Pharmacological actions",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "confidence": 0.75,
+      "evidence": "principal alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Smith et al. 1996 review",
+      "attributes": {
+        "design": "review",
+        "year": 1996
+      },
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "confidence": 0.85,
+      "evidence": "Smith, M.T., Crouch, N.R., Gericke, N., Hirst, M., 1996. Psychoactive constituents",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "review",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "confidence": 0.8,
+      "evidence": "Psychoactive constituents",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Shikanga et al. 2012 analytical study",
+      "attributes": {
+        "design": "analytical study",
+        "year": 2012
+      },
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "confidence": 0.85,
+      "evidence": "Shikanga, E.A., Kamatou, G.P.P., Chen, W., Combrinck, S., Viljoen, A.M., 2012. Validated RP-UHPLC PDA and GC-MS methods",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Evidence",
+      "name": "analytical study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "confidence": 0.8,
+      "evidence": "Validated RP-UHPLC PDA and GC-MS methods",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "CompoundClass",
+      "name": "psychoactive alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "confidence": 0.75,
+      "evidence": "psychoactive alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Study",
+      "name": "Van Wyk and Gericke 2000 ethnobotanical guide",
+      "attributes": {
+        "design": "ethnobotanical guide",
+        "year": 2000
+      },
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "confidence": 0.85,
+      "evidence": "Van Wyk, B.-E., Gericke, N., 2000. People's Plants: a Guide to Useful Plants of Southern Africa",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Evidence",
+      "name": "ethnobotanical guide",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "confidence": 0.8,
+      "evidence": "People's Plants: a Guide to Useful Plants",
+      "verified": true
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:03.973643+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Southern Africa has plants with medicinal use",
+      "source_chunk_ids": [
+        "e96c6e78a8f2809f67b5eaddcc9cdd84"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "plants with medicinal use",
+      "source_chunk_ids": [
+        "e96c6e78a8f2809f67b5eaddcc9cdd84"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "tradition of medicinal use",
+      "source_chunk_ids": [
+        "e96c6e78a8f2809f67b5eaddcc9cdd84"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "medicinal use for HIV/AIDS treatment",
+      "source_chunk_ids": [
+        "e96c6e78a8f2809f67b5eaddcc9cdd84"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Van Wyk and Gericke, 2000",
+      "source_chunk_ids": [
+        "e96c6e78a8f2809f67b5eaddcc9cdd84"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Van Wyk, 2011",
+      "source_chunk_ids": [
+        "e96c6e78a8f2809f67b5eaddcc9cdd84"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Clavel and Hance, 2004",
+      "source_chunk_ids": [
+        "e96c6e78a8f2809f67b5eaddcc9cdd84"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "plants reportedly contain compounds",
+      "source_chunk_ids": [
+        "e96c6e78a8f2809f67b5eaddcc9cdd84"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "plants reportedly contain compounds",
+      "source_chunk_ids": [
+        "e96c6e78a8f2809f67b5eaddcc9cdd84"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "condition"
+      },
+      "confidence": 0.7,
+      "evidence": "drug resistant viral strains",
+      "source_chunk_ids": [
+        "e96c6e78a8f2809f67b5eaddcc9cdd84"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "S. tortuosum powders",
+      "source_chunk_ids": [
+        "42289e0e593123f5c6bb098ae02a109c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "powders are commercially available as capsules",
+      "source_chunk_ids": [
+        "42289e0e593123f5c6bb098ae02a109c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "traditional"
+      },
+      "confidence": 0.7,
+      "evidence": "used to treat psychiatric disorders such as depression",
+      "source_chunk_ids": [
+        "42289e0e593123f5c6bb098ae02a109c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "traditional"
+      },
+      "confidence": 0.7,
+      "evidence": "used to treat psychiatric disorders such as anxiety",
+      "source_chunk_ids": [
+        "42289e0e593123f5c6bb098ae02a109c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "context": "traditional",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "used to treat psychiatric disorders",
+      "source_chunk_ids": [
+        "42289e0e593123f5c6bb098ae02a109c"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "HAS_USE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "used traditionally in the Eastern Cape, South Africa",
+      "source_chunk_ids": [
+        "42289e0e593123f5c6bb098ae02a109c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "boost the immune system",
+      "source_chunk_ids": [
+        "42289e0e593123f5c6bb098ae02a109c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "INVOLVES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "treat associated opportunistic infections",
+      "source_chunk_ids": [
+        "42289e0e593123f5c6bb098ae02a109c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "SUGGESTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E11",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "boost the immune system of persons with HIV/AIDS",
+      "source_chunk_ids": [
+        "42289e0e593123f5c6bb098ae02a109c"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R10",
+      "type": "SUGGESTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E11",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "treat associated opportunistic infections with HIV/AIDS",
+      "source_chunk_ids": [
+        "42289e0e593123f5c6bb098ae02a109c"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "antioxidant properties of C. edulis",
+      "source_chunk_ids": [
+        "42289e0e593123f5c6bb098ae02a109c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "PRODUCES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E13",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "linked the free radical scavenging activity",
+      "source_chunk_ids": [
+        "42289e0e593123f5c6bb098ae02a109c"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "HIV reportedly induces oxidative stress",
+      "source_chunk_ids": [
+        "54c244c5e4ed2f6010b0e405a98faad9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "disturbing cellular antioxidant defences",
+      "source_chunk_ids": [
+        "54c244c5e4ed2f6010b0e405a98faad9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "initiating oxidative reactions",
+      "source_chunk_ids": [
+        "54c244c5e4ed2f6010b0e405a98faad9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "oxidative stress contributes to progression of HIV to AIDS",
+      "source_chunk_ids": [
+        "54c244c5e4ed2f6010b0e405a98faad9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "HIV infection leaves individuals prone to opportunistic infections",
+      "source_chunk_ids": [
+        "54c244c5e4ed2f6010b0e405a98faad9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Gil et al., 2003",
+      "source_chunk_ids": [
+        "54c244c5e4ed2f6010b0e405a98faad9"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E2",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Kashou and Agarwal, 2011",
+      "source_chunk_ids": [
+        "54c244c5e4ed2f6010b0e405a98faad9"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E2",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Mallery et al., 2004",
+      "source_chunk_ids": [
+        "54c244c5e4ed2f6010b0e405a98faad9"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "whole plant parts of S. tortuosum",
+      "source_chunk_ids": [
+        "9d9ebef8d7c690e922461adbb1ff7b66"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "roots of S. tortuosum",
+      "source_chunk_ids": [
+        "9d9ebef8d7c690e922461adbb1ff7b66"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "drying produced dried material",
+      "source_chunk_ids": [
+        "9d9ebef8d7c690e922461adbb1ff7b66"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "milling produced milled material",
+      "source_chunk_ids": [
+        "9d9ebef8d7c690e922461adbb1ff7b66"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "steeped in ethanol",
+      "source_chunk_ids": [
+        "a9dc30757291ab7fab2d66b20ec337a6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "The filtrate was concentrated",
+      "source_chunk_ids": [
+        "a9dc30757291ab7fab2d66b20ec337a6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "concentrated under vacuum",
+      "source_chunk_ids": [
+        "a9dc30757291ab7fab2d66b20ec337a6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "re-dissolved in ethyl acetate",
+      "source_chunk_ids": [
+        "a9dc30757291ab7fab2d66b20ec337a6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "extracts were dried",
+      "source_chunk_ids": [
+        "a9dc30757291ab7fab2d66b20ec337a6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "content",
+          "notes": "total content quantified"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "Total phenolic present in S. tortuosum ethanol extract",
+      "source_chunk_ids": [
+        "3a73a89501b95b776eb1e342ac30972c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "content",
+          "notes": "total content quantified"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "flavonoid present in S. tortuosum ethanol extract",
+      "source_chunk_ids": [
+        "3a73a89501b95b776eb1e342ac30972c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "content",
+          "notes": "total content quantified"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "tannin present in S. tortuosum ethanol extract",
+      "source_chunk_ids": [
+        "3a73a89501b95b776eb1e342ac30972c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Folin\u2013Ciocalteu assay (Gracelin et al., 2013)",
+      "source_chunk_ids": [
+        "4a911c57184f1ecf551dc84d1667f5c4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "1 mL of extract",
+      "source_chunk_ids": [
+        "4a911c57184f1ecf551dc84d1667f5c4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "measured"
+      },
+      "confidence": 0.85,
+      "evidence": "TPC was determined",
+      "source_chunk_ids": [
+        "4a911c57184f1ecf551dc84d1667f5c4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": "mg GAE/g extract",
+          "measurement_type": "equivalents",
+          "notes": "TPC expressed as gallic acid equivalents"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "TPC expressed as mg GAE/g extract",
+      "source_chunk_ids": [
+        "4a911c57184f1ecf551dc84d1667f5c4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "method reported by Marinova et al.",
+      "source_chunk_ids": [
+        "43ba68ff47409c8bc2f72c20807a9c85"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "standard"
+      },
+      "confidence": 0.8,
+      "evidence": "standard solution of quercetin",
+      "source_chunk_ids": [
+        "43ba68ff47409c8bc2f72c20807a9c85"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "sample"
+      },
+      "confidence": 0.7,
+      "evidence": "1 mL of sample",
+      "source_chunk_ids": [
+        "43ba68ff47409c8bc2f72c20807a9c85"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "TTC of S. tortuosum was determined",
+      "source_chunk_ids": [
+        "f89fac3ac32db52dc7364c12cf33af2b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "UV absorbance at 120 nm",
+      "source_chunk_ids": [
+        "f89fac3ac32db52dc7364c12cf33af2b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.85,
+      "evidence": "Acetyl pepstatin (AP) was used as a known inhibitor",
+      "source_chunk_ids": [
+        "8d6458eb909be355a29a95f73d9c69d3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "S. tortuosum was tested at final concentrations",
+      "source_chunk_ids": [
+        "8d6458eb909be355a29a95f73d9c69d3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "FRET-based Sensolyte HIV-1 protease assay kit",
+      "source_chunk_ids": [
+        "8d6458eb909be355a29a95f73d9c69d3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "tested"
+      },
+      "confidence": 0.85,
+      "evidence": "HIV-1 protease (PR) inhibition assay",
+      "source_chunk_ids": [
+        "8d6458eb909be355a29a95f73d9c69d3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "in vitro HIV-1 reverse transcriptase activity",
+      "source_chunk_ids": [
+        "b542140a20c3b2e27c94b46a4c6e49b7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "extracts were tested",
+      "source_chunk_ids": [
+        "b542140a20c3b2e27c94b46a4c6e49b7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "measured"
+      },
+      "confidence": 0.85,
+      "evidence": "HIV-1 reverse transcriptase activity",
+      "source_chunk_ids": [
+        "b542140a20c3b2e27c94b46a4c6e49b7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "assay kit was used",
+      "source_chunk_ids": [
+        "b37ce677329a77de630cb37313db3451"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "measure the inhibitory effects of S. tortuosum extracts",
+      "source_chunk_ids": [
+        "b37ce677329a77de630cb37313db3451"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "targeted"
+      },
+      "confidence": 0.9,
+      "evidence": "against HIV-1 integrase",
+      "source_chunk_ids": [
+        "b37ce677329a77de630cb37313db3451"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.8,
+      "evidence": "inhibitory effects",
+      "source_chunk_ids": [
+        "b37ce677329a77de630cb37313db3451"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.75,
+      "evidence": "inhibitory effects against HIV-1 integrase",
+      "source_chunk_ids": [
+        "b37ce677329a77de630cb37313db3451"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "inhibitory effects",
+      "source_chunk_ids": [
+        "b37ce677329a77de630cb37313db3451"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "S. tortuosum extracts",
+      "source_chunk_ids": [
+        "b37ce677329a77de630cb37313db3451"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "et al. (2013)",
+      "source_chunk_ids": [
+        "63cc018d1bd36b4db91db9d7bb25e870"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "extracts dissolved in ethanol",
+      "source_chunk_ids": [
+        "63cc018d1bd36b4db91db9d7bb25e870"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "targeted"
+      },
+      "confidence": 0.8,
+      "evidence": "mixed with a 90 \u00b5M DPPH ethanol solution",
+      "source_chunk_ids": [
+        "63cc018d1bd36b4db91db9d7bb25e870"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "measured"
+      },
+      "confidence": 0.85,
+      "evidence": "converted into percentage antiradical activity",
+      "source_chunk_ids": [
+        "63cc018d1bd36b4db91db9d7bb25e870"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "IC50",
+          "notes": "IC50 values were calculated"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "IC50 values were then calculated",
+      "source_chunk_ids": [
+        "63cc018d1bd36b4db91db9d7bb25e870"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "converted into percentage antiradical activity",
+      "source_chunk_ids": [
+        "63cc018d1bd36b4db91db9d7bb25e870"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "anthraquinones",
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "terpenes",
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "polyphenols",
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "anthocyanin",
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "tannins",
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "alkaloids",
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "glycosides",
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "carbohydrates",
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "coumarins",
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "measurement": {
+          "value": 903.15,
+          "unit": "mg TAE/g",
+          "measurement_type": "content",
+          "notes": "tannin content"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "903.15 \u00b1 0.02 mg TAE/g extract",
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E12",
+      "attributes": {
+        "measurement": {
+          "value": 678.51,
+          "unit": "mg QE/g",
+          "measurement_type": "content",
+          "notes": "flavonoid content"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "678.51 \u00b1 0.01 mg QE/g",
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E13",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "high tannin content attributed to radical scavenging",
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R13",
+      "type": "PRODUCES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E13",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "high flavonoid content attributed to radical scavenging",
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R14",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E14",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "tannins effect on protection of cells",
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R15",
+      "type": "PRODUCES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E14",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "flavonoids effect on protection of cells",
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R16",
+      "type": "REPORTS",
+      "source_entity_id": "E15",
+      "target_entity_id": "E7",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Klos et al., 2009 on tannins",
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R17",
+      "type": "REPORTS",
+      "source_entity_id": "E16",
+      "target_entity_id": "E7",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Omoruyi et al., 2012b on tannin content",
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R18",
+      "type": "REPORTS",
+      "source_entity_id": "E17",
+      "target_entity_id": "E14",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Panat et al., 2016 on protection of cells",
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R19",
+      "type": "REPORTS",
+      "source_entity_id": "E18",
+      "target_entity_id": "E14",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Zieli\u0144ska-Przyjemska et al., 2015 on protection of cells",
+      "source_chunk_ids": [
+        "c803377417fe32e4cf531cb7310c23ed"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "S. tortuosum extracts",
+      "source_chunk_ids": [
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "S. tortuosum extracts",
+      "source_chunk_ids": [
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 59.9,
+          "unit": "%",
+          "measurement_type": "inhibition",
+          "notes": "at 100 \u00b5g/mL"
+        }
+      },
+      "confidence": 0.9,
+      "evidence": "inhibited HIV-1 RT by 59.9%",
+      "source_chunk_ids": [
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 91.1,
+          "unit": "%",
+          "measurement_type": "inhibition",
+          "notes": "at 100 \u00b5g/mL"
+        }
+      },
+      "confidence": 0.9,
+      "evidence": "HIV-1 PR was inhibited by 91.1%",
+      "source_chunk_ids": [
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 56.7,
+          "unit": "%",
+          "measurement_type": "inhibition",
+          "notes": "at 200 \u00b5g/mL"
+        }
+      },
+      "confidence": 0.9,
+      "evidence": "inhibited HIV-1 RT by 56.7%",
+      "source_chunk_ids": [
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 100,
+          "unit": "%",
+          "measurement_type": "inhibition",
+          "notes": "at 100 \u00b5g/mL"
+        }
+      },
+      "confidence": 0.9,
+      "evidence": "inhibition of HIV-1 PR was 100%",
+      "source_chunk_ids": [
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "action": "weakly inhibits",
+        "measurement": {
+          "value": 20,
+          "unit": "%",
+          "measurement_type": "inhibition",
+          "notes": "less than 20% at 400 \u00b5g/mL"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "weak activity against HIV-1 integrase",
+      "source_chunk_ids": [
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "action": "weakly inhibits",
+        "measurement": {
+          "value": 20,
+          "unit": "%",
+          "measurement_type": "inhibition",
+          "notes": "less than 20% at 400 \u00b5g/mL"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "weak activity against HIV-1 integrase",
+      "source_chunk_ids": [
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "inhibited HIV-1 RT",
+      "source_chunk_ids": [
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "inhibited HIV-1 PR",
+      "source_chunk_ids": [
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "inhibited HIV-1 RT",
+      "source_chunk_ids": [
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "inhibited HIV-1 PR",
+      "source_chunk_ids": [
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "weak activity against HIV-1 integrase",
+      "source_chunk_ids": [
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "weak activity against HIV-1 integrase",
+      "source_chunk_ids": [
+        "5fe2287019f942c937fb79db134460de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 50,
+          "unit": "\u00b5g/mL",
+          "measurement_type": "IC50",
+          "notes": "value <50"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Ethanol extract <50",
+      "source_chunk_ids": [
+        "a9bc2c351c5ff353b7295c941a7ded80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 100,
+          "unit": "\u00b5g/mL",
+          "measurement_type": "IC50",
+          "notes": "value <100"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Ethanol extract <100",
+      "source_chunk_ids": [
+        "a9bc2c351c5ff353b7295c941a7ded80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 400,
+          "unit": "\u00b5g/mL",
+          "measurement_type": "IC50",
+          "notes": "value >400"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Ethanol extract >400",
+      "source_chunk_ids": [
+        "a9bc2c351c5ff353b7295c941a7ded80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 121.7,
+          "unit": "\u00b5g/mL",
+          "measurement_type": "IC50",
+          "notes": "SD \u00b1 2.5"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "Ethyl acetate extract 121.7 \u00b1 2.5",
+      "source_chunk_ids": [
+        "a9bc2c351c5ff353b7295c941a7ded80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 100,
+          "unit": "\u00b5g/mL",
+          "measurement_type": "IC50",
+          "notes": "value <100"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Ethyl acetate extract <100",
+      "source_chunk_ids": [
+        "a9bc2c351c5ff353b7295c941a7ded80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 400,
+          "unit": "\u00b5g/mL",
+          "measurement_type": "IC50",
+          "notes": "value >400"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Ethyl acetate extract >400",
+      "source_chunk_ids": [
+        "a9bc2c351c5ff353b7295c941a7ded80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 10,
+          "unit": "\u00b5g/mL",
+          "measurement_type": "IC50",
+          "notes": "value <10"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Acetyl pepstatin <10",
+      "source_chunk_ids": [
+        "a9bc2c351c5ff353b7295c941a7ded80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 25,
+          "unit": "\u00b5g/mL",
+          "measurement_type": "IC50",
+          "notes": "value <25"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Doxorubicin <25",
+      "source_chunk_ids": [
+        "a9bc2c351c5ff353b7295c941a7ded80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "ACTS_ON",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 10,
+          "unit": "\u00b5g/mL",
+          "measurement_type": "IC50",
+          "notes": "value <10"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Sodium azide <10",
+      "source_chunk_ids": [
+        "a9bc2c351c5ff353b7295c941a7ded80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "Oxidative stress is also largely linked to the activation of HIV-1",
+      "source_chunk_ids": [
+        "55dfe465a349913e9494af83f0a8e384"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "activation of HIV-1 leading to the development of AIDS",
+      "source_chunk_ids": [
+        "55dfe465a349913e9494af83f0a8e384"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "in vitro HIV study a first for this plant",
+      "source_chunk_ids": [
+        "55dfe465a349913e9494af83f0a8e384"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Allard et al., 1998",
+      "source_chunk_ids": [
+        "55dfe465a349913e9494af83f0a8e384"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E5",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Gil del Valle et al., 2013",
+      "source_chunk_ids": [
+        "55dfe465a349913e9494af83f0a8e384"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "inhibitory effects against HIV-1 RT",
+      "source_chunk_ids": [
+        "afdbc4f26b772b067030053792957239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "inhibitory effects against HIV-1 PR",
+      "source_chunk_ids": [
+        "afdbc4f26b772b067030053792957239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "contains compounds with inhibitory effects",
+      "source_chunk_ids": [
+        "afdbc4f26b772b067030053792957239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "possesses compounds with antiradical properties",
+      "source_chunk_ids": [
+        "afdbc4f26b772b067030053792957239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E6",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "in vitro anti-HIV data",
+      "source_chunk_ids": [
+        "afdbc4f26b772b067030053792957239"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "S. tortuosum contains compounds",
+      "source_chunk_ids": [
+        "afdbc4f26b772b067030053792957239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "positive"
+      },
+      "confidence": 0.7,
+      "evidence": "inhibitory effects",
+      "source_chunk_ids": [
+        "afdbc4f26b772b067030053792957239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "positive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "antiradical properties",
+      "source_chunk_ids": [
+        "afdbc4f26b772b067030053792957239"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "SUGGESTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E1",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "justify the traditional success",
+      "source_chunk_ids": [
+        "afdbc4f26b772b067030053792957239"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "crude extracts from S. tortuosum",
+      "source_chunk_ids": [
+        "46dac1a3fea6656ee7689c4db684281c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "crude extracts from S. tortuosum",
+      "source_chunk_ids": [
+        "46dac1a3fea6656ee7689c4db684281c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "EtOH shows inhibition percentages",
+      "source_chunk_ids": [
+        "46dac1a3fea6656ee7689c4db684281c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "EtOAc shows inhibition percentages",
+      "source_chunk_ids": [
+        "46dac1a3fea6656ee7689c4db684281c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "inhibition percentages",
+      "source_chunk_ids": [
+        "46dac1a3fea6656ee7689c4db684281c"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "S. tortuosum ethanol (EtOH) extract",
+      "source_chunk_ids": [
+        "f7f37f5573fbbae2f672654987a2a4c1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "ethyl acetate (EtOAc) extract",
+      "source_chunk_ids": [
+        "f7f37f5573fbbae2f672654987a2a4c1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 49.0,
+          "unit": "\u00b5g/mL",
+          "measurement_type": "IC50",
+          "notes": "mean \u00b1 SD: 49.0 \u00b1 0.2 \u00b5g/mL"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "IC50 values of 49.0 \u00b1 0.2 \u00b5g/mL",
+      "source_chunk_ids": [
+        "f7f37f5573fbbae2f672654987a2a4c1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 64.7,
+          "unit": "\u00b5g/mL",
+          "measurement_type": "IC50",
+          "notes": "mean \u00b1 SD: 64.7 \u00b1 3.1 \u00b5g/mL"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "IC50 values of 64.7 \u00b1 3.1 \u00b5g/mL",
+      "source_chunk_ids": [
+        "f7f37f5573fbbae2f672654987a2a4c1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "demonstrated good antiradical activity",
+      "source_chunk_ids": [
+        "f7f37f5573fbbae2f672654987a2a4c1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "demonstrated good antiradical activity",
+      "source_chunk_ids": [
+        "f7f37f5573fbbae2f672654987a2a4c1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.75,
+      "evidence": "managing depression",
+      "source_chunk_ids": [
+        "136589536996e19abb7fb3504ac07edb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.75,
+      "evidence": "managing anxiety",
+      "source_chunk_ids": [
+        "136589536996e19abb7fb3504ac07edb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.8,
+      "evidence": "managing HIV/AIDS",
+      "source_chunk_ids": [
+        "136589536996e19abb7fb3504ac07edb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.7,
+      "evidence": "selected Aizoaceae plants",
+      "source_chunk_ids": [
+        "136589536996e19abb7fb3504ac07edb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "managing depression and anxiety",
+      "source_chunk_ids": [
+        "136589536996e19abb7fb3504ac07edb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.7,
+      "evidence": "selected Aizoaceae plants",
+      "source_chunk_ids": [
+        "136589536996e19abb7fb3504ac07edb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "managing HIV/AIDS",
+      "source_chunk_ids": [
+        "136589536996e19abb7fb3504ac07edb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "donation of S. tortuosum",
+      "source_chunk_ids": [
+        "e580bcb1e42e830ef890b6a62d39bf6f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Gericke, N., Viljoen, A.M., 2008. Sceletium\u2014a review update",
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium\u2014a review update",
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Harvey et al. 2011 pharmacological study",
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Pharmacological actions of Sceletium tortuosum",
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Smith et al. 1996 review",
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Psychoactive constituents of the genus Sceletium",
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Shikanga et al. 2012 analytical study",
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "analysis of psychoactive alkaloids in Sceletium tortuosum",
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E12",
+      "target_entity_id": "E13",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Van Wyk and Gericke 2000 ethnobotanical guide",
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "People's Plants: a Guide to Useful Plants of Southern Africa",
+      "source_chunk_ids": [
+        "06f9f5c69a29264909dc3b1bcf566760"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

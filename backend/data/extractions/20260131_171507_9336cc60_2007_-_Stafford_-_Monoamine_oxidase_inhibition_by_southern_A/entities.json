@@ -1,1806 +1,5468 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "0c02c901066f553ff48cbb0a6d75952358157d7eaea27ad992e46c93343d2681",
-  "extracted_at": "2026-02-01T08:11:46.966527+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
-      "type": "Indication",
-      "name": "Anxiety disorder",
-      "attributes": {
-        "context": "Keywords: Anxiety disorder"
-      },
-      "source_chunk_ids": [
-        "db6e8a21b1f5648058ca7262adc82957"
-      ]
-    },
-    {
-      "id": "ent_002",
-      "type": "Indication",
-      "name": "Depression",
-      "attributes": {
-        "context": "Depression;"
-      },
-      "source_chunk_ids": [
-        "db6e8a21b1f5648058ca7262adc82957"
-      ]
-    },
-    {
-      "id": "ent_003",
-      "type": "Compound",
-      "name": "Monoamine oxidase",
-      "attributes": {
-        "context": "Monoamine oxidase;"
-      },
-      "source_chunk_ids": [
-        "db6e8a21b1f5648058ca7262adc82957"
-      ]
-    },
-    {
-      "id": "ent_004",
-      "type": "Indication",
-      "name": "Parkinson's disease",
-      "attributes": {
-        "context": "Parkinson's disease;"
-      },
-      "source_chunk_ids": [
-        "db6e8a21b1f5648058ca7262adc82957"
-      ]
-    },
-    {
-      "id": "ent_005",
-      "type": "Taxon",
-      "name": "plant species",
-      "attributes": {
-        "context": "1020 plant species"
-      },
-      "source_chunk_ids": [
-        "8e12043f8981b7647a5ef0199499f137"
-      ]
-    },
-    {
-      "id": "ent_006",
-      "type": "Concentration",
-      "name": "1020 plant species",
-      "attributes": {
-        "context": "from as many as 1020 plant species"
-      },
-      "source_chunk_ids": [
-        "8e12043f8981b7647a5ef0199499f137"
-      ]
-    },
-    {
-      "id": "ent_007",
-      "type": "Indication",
-      "name": "mental health problems",
-      "attributes": {
-        "context": "treatment for mental health problems"
-      },
-      "source_chunk_ids": [
-        "8e12043f8981b7647a5ef0199499f137"
-      ]
-    },
-    {
-      "id": "ent_008",
-      "type": "Indication",
-      "name": "mental disease",
-      "attributes": {
-        "context": "treatment of mental disease"
-      },
-      "source_chunk_ids": [
-        "8e12043f8981b7647a5ef0199499f137"
-      ]
-    },
-    {
-      "id": "ent_009",
-      "type": "Indication",
-      "name": "diseases",
-      "attributes": {
-        "context": "because these diseases"
-      },
-      "source_chunk_ids": [
-        "8e12043f8981b7647a5ef0199499f137"
-      ]
-    },
-    {
-      "id": "ent_010",
-      "type": "Indication",
-      "name": "mental illnesses",
-      "attributes": {
-        "context": "numerous mental illnesses"
-      },
-      "source_chunk_ids": [
-        "8e12043f8981b7647a5ef0199499f137"
-      ]
-    },
-    {
-      "id": "ent_011",
-      "type": "Indication",
-      "name": "disorders of the central nervous system",
-      "attributes": {
-        "context": "disorders of the central nervous system"
-      },
-      "source_chunk_ids": [
-        "8e12043f8981b7647a5ef0199499f137"
-      ]
-    },
-    {
-      "id": "ent_012",
-      "type": "Indication",
-      "name": "anxiety",
-      "attributes": {
-        "context": "including anxiety"
-      },
-      "source_chunk_ids": [
-        "8e12043f8981b7647a5ef0199499f137"
-      ]
-    },
-    {
-      "id": "ent_013",
-      "type": "Indication",
-      "name": "fits",
-      "attributes": {
-        "context": "anxiety, fits"
-      },
-      "source_chunk_ids": [
-        "8e12043f8981b7647a5ef0199499f137"
-      ]
-    },
-    {
-      "id": "ent_014",
-      "type": "Indication",
-      "name": "convulsions",
-      "attributes": {
-        "context": "fits, convulsions"
-      },
-      "source_chunk_ids": [
-        "8e12043f8981b7647a5ef0199499f137"
-      ]
-    },
-    {
-      "id": "ent_015",
-      "type": "Indication",
-      "name": "epilepsy",
-      "attributes": {
-        "context": "convulsions, epilepsy"
-      },
-      "source_chunk_ids": [
-        "8e12043f8981b7647a5ef0199499f137"
-      ]
-    },
-    {
-      "id": "ent_016",
-      "type": "Indication",
-      "name": "hysteria",
-      "attributes": {
-        "context": "epilepsy, hysteria"
-      },
-      "source_chunk_ids": [
-        "8e12043f8981b7647a5ef0199499f137"
-      ]
-    },
-    {
-      "id": "ent_017",
-      "type": "Indication",
-      "name": "nightmares",
-      "attributes": {
-        "context": "hysteria, nightmares"
-      },
-      "source_chunk_ids": [
-        "8e12043f8981b7647a5ef0199499f137"
-      ]
-    },
-    {
-      "id": "ent_018",
-      "type": "Indication",
-      "name": "mental distur-",
-      "attributes": {
-        "context": "nightmares and mental distur-"
-      },
-      "source_chunk_ids": [
-        "8e12043f8981b7647a5ef0199499f137"
-      ]
-    },
-    {
-      "id": "ent_019",
-      "type": "Taxon",
-      "name": "flowering plants",
-      "attributes": {
-        "context": "30,000 species of flowering plants"
-      },
-      "source_chunk_ids": [
-        "09f0b00da3d97e216166abcad590350a"
-      ]
-    },
-    {
-      "id": "ent_020",
-      "type": "Taxon",
-      "name": "higher plants",
-      "attributes": {
-        "context": "one tenth of the world's higher plants"
-      },
-      "source_chunk_ids": [
-        "09f0b00da3d97e216166abcad590350a"
-      ]
-    },
-    {
-      "id": "ent_021",
-      "type": "Compound",
-      "name": "Monoamine oxidase",
-      "attributes": {
-        "context": "Monoamine oxidase (MAO) is an enzyme"
-      },
-      "source_chunk_ids": [
-        "9f4df41d8090ac1961844f13ef78e5b0"
-      ]
-    },
-    {
-      "id": "ent_022",
-      "type": "Compound",
-      "name": "MAO",
-      "attributes": {
-        "context": "Monoamine oxidase (MAO) is an enzyme"
-      },
-      "source_chunk_ids": [
-        "9f4df41d8090ac1961844f13ef78e5b0"
-      ]
-    },
-    {
-      "id": "ent_023",
-      "type": "Compound",
-      "name": "MAO-A",
-      "attributes": {
-        "context": "referred to as MAO-A and MAO-B"
-      },
-      "source_chunk_ids": [
-        "9f4df41d8090ac1961844f13ef78e5b0"
-      ]
-    },
-    {
-      "id": "ent_024",
-      "type": "Compound",
-      "name": "MAO-B",
-      "attributes": {
-        "context": "referred to as MAO-A and MAO-B"
-      },
-      "source_chunk_ids": [
-        "9f4df41d8090ac1961844f13ef78e5b0"
-      ]
-    },
-    {
-      "id": "ent_025",
-      "type": "PharmEffect",
-      "name": "oxidative deamination",
-      "attributes": {
-        "context": "for the oxidative deamination of endogenous"
-      },
-      "source_chunk_ids": [
-        "9f4df41d8090ac1961844f13ef78e5b0"
-      ]
-    },
-    {
-      "id": "ent_026",
-      "type": "Compound",
-      "name": "amines",
-      "attributes": {
-        "context": "xenobiotic amines"
-      },
-      "source_chunk_ids": [
-        "9f4df41d8090ac1961844f13ef78e5b0"
-      ]
-    },
-    {
-      "id": "ent_027",
-      "type": "Compound",
-      "name": "inhibitor",
-      "attributes": {
-        "context": "inhibitor specificity"
-      },
-      "source_chunk_ids": [
-        "9f4df41d8090ac1961844f13ef78e5b0"
-      ]
-    },
-    {
-      "id": "ent_028",
-      "type": "Compound",
-      "name": "serotonin",
-      "attributes": {
-        "context": "deaminates serotonin, noradrenaline, and adrenaline"
-      },
-      "source_chunk_ids": [
-        "9f4df41d8090ac1961844f13ef78e5b0"
-      ]
-    },
-    {
-      "id": "ent_029",
-      "type": "Compound",
-      "name": "noradrenaline",
-      "attributes": {
-        "context": "deaminates serotonin, noradrenaline, and adrenaline"
-      },
-      "source_chunk_ids": [
-        "9f4df41d8090ac1961844f13ef78e5b0"
-      ]
-    },
-    {
-      "id": "ent_030",
-      "type": "Compound",
-      "name": "adrenaline",
-      "attributes": {
-        "context": "deaminates serotonin, noradrenaline, and adrenaline"
-      },
-      "source_chunk_ids": [
-        "9f4df41d8090ac1961844f13ef78e5b0"
-      ]
-    },
-    {
-      "id": "ent_031",
-      "type": "Compound",
-      "name": "dopamine",
-      "attributes": {
-        "context": "MAO-B deaminates dopamine, \\beta-phenylethylamine"
-      },
-      "source_chunk_ids": [
-        "9f4df41d8090ac1961844f13ef78e5b0"
-      ]
-    },
-    {
-      "id": "ent_032",
-      "type": "Compound",
-      "name": "\\beta-phenylethylamine",
-      "attributes": {
-        "context": "dopamine, \\beta-phenylethylamine (PEA)"
-      },
-      "source_chunk_ids": [
-        "9f4df41d8090ac1961844f13ef78e5b0"
-      ]
-    },
-    {
-      "id": "ent_033",
-      "type": "Compound",
-      "name": "PEA",
-      "attributes": {
-        "context": "\\beta-phenylethylamine (PEA)"
-      },
-      "source_chunk_ids": [
-        "9f4df41d8090ac1961844f13ef78e5b0"
-      ]
-    },
-    {
-      "id": "ent_034",
-      "type": "Compound",
-      "name": "benzylamine",
-      "attributes": {
-        "context": "PEA), and benzylamine"
-      },
-      "source_chunk_ids": [
-        "9f4df41d8090ac1961844f13ef78e5b0"
-      ]
-    },
-    {
-      "id": "ent_035",
-      "type": "Compound",
-      "name": "Inhibitors",
-      "attributes": {
-        "context": "Inhibitors of MAO"
-      },
-      "source_chunk_ids": [
-        "9f4df41d8090ac1961844f13ef78e5b0"
-      ]
-    },
-    {
-      "id": "ent_036",
-      "type": "PharmEffect",
-      "name": "psychoactive",
-      "attributes": {
-        "context": "traditionally used for psychoactive purposes"
-      },
-      "source_chunk_ids": [
-        "70086abebe781227d2c02b9a9ac04c19"
-      ]
-    },
-    {
-      "id": "ent_037",
-      "type": "Taxon",
-      "name": "Datura ferox L.",
-      "attributes": {
-        "context": "Solanaceae Datura ferox L."
-      },
-      "source_chunk_ids": [
-        "d770055bd56d475ed1a67bbf8fd561c0"
-      ]
-    },
-    {
-      "id": "ent_038",
-      "type": "PharmEffect",
-      "name": "sedate",
-      "attributes": {
-        "context": "Leaves used to sedate hysterical"
-      },
-      "source_chunk_ids": [
-        "d770055bd56d475ed1a67bbf8fd561c0"
-      ]
-    },
-    {
-      "id": "ent_039",
-      "type": "Indication",
-      "name": "hysterical",
-      "attributes": {
-        "context": "sedate hysterical and psychotic patients"
-      },
-      "source_chunk_ids": [
-        "d770055bd56d475ed1a67bbf8fd561c0"
-      ]
-    },
-    {
-      "id": "ent_040",
-      "type": "Indication",
-      "name": "psychotic",
-      "attributes": {
-        "context": "sedate hysterical and psychotic patients"
-      },
-      "source_chunk_ids": [
-        "d770055bd56d475ed1a67bbf8fd561c0"
-      ]
-    },
-    {
-      "id": "ent_041",
-      "type": "PharmEffect",
-      "name": "treat",
-      "attributes": {
-        "context": "also to treat insomnia"
-      },
-      "source_chunk_ids": [
-        "d770055bd56d475ed1a67bbf8fd561c0"
-      ]
-    },
-    {
-      "id": "ent_042",
-      "type": "Indication",
-      "name": "insomnia",
-      "attributes": {
-        "context": "to treat insomnia"
-      },
-      "source_chunk_ids": [
-        "d770055bd56d475ed1a67bbf8fd561c0"
-      ]
-    },
-    {
-      "id": "ent_043",
-      "type": "Taxon",
-      "name": "Datura stramonium L.",
-      "attributes": {
-        "context": "Datura stramonium L."
-      },
-      "source_chunk_ids": [
-        "d770055bd56d475ed1a67bbf8fd561c0"
-      ]
-    },
-    {
-      "id": "ent_044",
-      "type": "PharmEffect",
-      "name": "sedate",
-      "attributes": {
-        "context": "Leaves used to sedate hysterical"
-      },
-      "source_chunk_ids": [
-        "d770055bd56d475ed1a67bbf8fd561c0"
-      ]
-    },
-    {
-      "id": "ent_045",
-      "type": "Indication",
-      "name": "hysterical",
-      "attributes": {
-        "context": "sedate hysterical and psychotic patients"
-      },
-      "source_chunk_ids": [
-        "d770055bd56d475ed1a67bbf8fd561c0"
-      ]
-    },
-    {
-      "id": "ent_046",
-      "type": "Indication",
-      "name": "psychotic",
-      "attributes": {
-        "context": "sedate hysterical and psychotic patients"
-      },
-      "source_chunk_ids": [
-        "d770055bd56d475ed1a67bbf8fd561c0"
-      ]
-    },
-    {
-      "id": "ent_047",
-      "type": "PharmEffect",
-      "name": "treat",
-      "attributes": {
-        "context": "also to treat insomnia"
-      },
-      "source_chunk_ids": [
-        "d770055bd56d475ed1a67bbf8fd561c0"
-      ]
-    },
-    {
-      "id": "ent_048",
-      "type": "Indication",
-      "name": "insomnia",
-      "attributes": {
-        "context": "to treat insomnia"
-      },
-      "source_chunk_ids": [
-        "d770055bd56d475ed1a67bbf8fd561c0"
-      ]
-    },
-    {
-      "id": "ent_049",
-      "type": "Compound",
-      "name": "amines",
-      "attributes": {
-        "context": "amount of these amines stored"
-      },
-      "source_chunk_ids": [
-        "0180fa9f5ee29a88f023739457009ffa"
-      ]
-    },
-    {
-      "id": "ent_050",
-      "type": "PharmEffect",
-      "name": "monoaminergic activity",
-      "attributes": {
-        "context": "increasing the monoaminergic activity"
-      },
-      "source_chunk_ids": [
-        "0180fa9f5ee29a88f023739457009ffa"
-      ]
-    },
-    {
-      "id": "ent_051",
-      "type": "Compound",
-      "name": "MAO-A",
-      "attributes": {
-        "context": "Inhibition of MAO-A"
-      },
-      "source_chunk_ids": [
-        "0180fa9f5ee29a88f023739457009ffa"
-      ]
-    },
-    {
-      "id": "ent_052",
-      "type": "Compound",
-      "name": "neurotransmitters",
-      "attributes": {
-        "context": "affects neurotransmitters considered"
-      },
-      "source_chunk_ids": [
-        "0180fa9f5ee29a88f023739457009ffa"
-      ]
-    },
-    {
-      "id": "ent_053",
-      "type": "Indication",
-      "name": "depression",
-      "attributes": {
-        "context": "important in depression"
-      },
-      "source_chunk_ids": [
-        "0180fa9f5ee29a88f023739457009ffa"
-      ]
-    },
-    {
-      "id": "ent_054",
-      "type": "Indication",
-      "name": "anxiety disorders",
-      "attributes": {
-        "context": "and anxiety disorders"
-      },
-      "source_chunk_ids": [
-        "0180fa9f5ee29a88f023739457009ffa"
-      ]
-    },
-    {
-      "id": "ent_055",
-      "type": "Compound",
-      "name": "MAO-B inhibitors",
-      "attributes": {
-        "context": "MAO-B inhibitors would increase"
-      },
-      "source_chunk_ids": [
-        "0180fa9f5ee29a88f023739457009ffa"
-      ]
-    },
-    {
-      "id": "ent_056",
-      "type": "Compound",
-      "name": "dopamine",
-      "attributes": {
-        "context": "basal dopamine levels"
-      },
-      "source_chunk_ids": [
-        "0180fa9f5ee29a88f023739457009ffa"
-      ]
-    },
-    {
-      "id": "ent_057",
-      "type": "Compound",
-      "name": "Selegiline",
-      "attributes": {
-        "context": "Selegiline is the only selective"
-      },
-      "source_chunk_ids": [
-        "0180fa9f5ee29a88f023739457009ffa"
-      ]
-    },
-    {
-      "id": "ent_058",
-      "type": "Compound",
-      "name": "MAO-B inhibitor",
-      "attributes": {
-        "context": "irreversible MAO-B inhibitor"
-      },
-      "source_chunk_ids": [
-        "0180fa9f5ee29a88f023739457009ffa"
-      ]
-    },
-    {
-      "id": "ent_059",
-      "type": "Indication",
-      "name": "Alzheimer's disease (AD)",
-      "attributes": {
-        "context": "and Alzheimer's disease (AD)"
-      },
-      "source_chunk_ids": [
-        "0180fa9f5ee29a88f023739457009ffa"
-      ]
-    },
-    {
-      "id": "ent_060",
-      "type": "Compound",
-      "name": "MAO-B",
-      "attributes": {
-        "context": "catalyzed by MAO-B"
-      },
-      "source_chunk_ids": [
-        "0180fa9f5ee29a88f023739457009ffa"
-      ]
-    },
-    {
-      "id": "ent_061",
-      "type": "PharmEffect",
-      "name": "neuroprotective effects",
-      "attributes": {
-        "context": "has neuroprotective effects"
-      },
-      "source_chunk_ids": [
-        "0180fa9f5ee29a88f023739457009ffa"
-      ]
-    },
-    {
-      "id": "ent_062",
-      "type": "Compound",
-      "name": "hydrogen peroxide",
-      "attributes": {
-        "context": "yields reactive hydrogen peroxide"
-      },
-      "source_chunk_ids": [
-        "0180fa9f5ee29a88f023739457009ffa"
-      ]
-    },
-    {
-      "id": "ent_063",
-      "type": "Compound",
-      "name": "reactive oxygen species",
-      "attributes": {
-        "context": "other reactive oxygen species"
-      },
-      "source_chunk_ids": [
-        "0180fa9f5ee29a88f023739457009ffa"
-      ]
-    },
-    {
-      "id": "ent_064",
-      "type": "PharmEffect",
-      "name": "neuronal death",
-      "attributes": {
-        "context": "lead to neuronal death"
-      },
-      "source_chunk_ids": [
-        "0180fa9f5ee29a88f023739457009ffa"
-      ]
-    },
-    {
-      "id": "ent_065",
-      "type": "Concentration",
-      "name": "Two grams",
-      "attributes": {
-        "context": "Two grams of material was extracted"
-      },
-      "source_chunk_ids": [
-        "36523bc6747e0718af4039f0710ff64b"
-      ]
-    },
-    {
-      "id": "ent_066",
-      "type": "Concentration",
-      "name": "20 ml",
-      "attributes": {
-        "context": "with 20 ml solvent"
-      },
-      "source_chunk_ids": [
-        "36523bc6747e0718af4039f0710ff64b"
-      ]
-    },
-    {
-      "id": "ent_067",
-      "type": "Compound",
-      "name": "water",
-      "attributes": {
-        "context": "solvent (water, 70% ethanol, ethyl acetate and petroleum ether)"
-      },
-      "source_chunk_ids": [
-        "36523bc6747e0718af4039f0710ff64b"
-      ]
-    },
-    {
-      "id": "ent_068",
-      "type": "Compound",
-      "name": "ethanol",
-      "attributes": {
-        "context": "solvent (water, 70% ethanol, ethyl acetate and petroleum ether)"
-      },
-      "source_chunk_ids": [
-        "36523bc6747e0718af4039f0710ff64b"
-      ]
-    },
-    {
-      "id": "ent_069",
-      "type": "Compound",
-      "name": "ethyl acetate",
-      "attributes": {
-        "context": "solvent (water, 70% ethanol, ethyl acetate and petroleum ether)"
-      },
-      "source_chunk_ids": [
-        "36523bc6747e0718af4039f0710ff64b"
-      ]
-    },
-    {
-      "id": "ent_070",
-      "type": "Compound",
-      "name": "petroleum ether",
-      "attributes": {
-        "context": "solvent (water, 70% ethanol, ethyl acetate and petroleum ether)"
-      },
-      "source_chunk_ids": [
-        "36523bc6747e0718af4039f0710ff64b"
-      ]
-    },
-    {
-      "id": "ent_071",
-      "type": "Concentration",
-      "name": "60 min",
-      "attributes": {
-        "context": "for 60 min on an ultrasound bath"
-      },
-      "source_chunk_ids": [
-        "36523bc6747e0718af4039f0710ff64b"
-      ]
-    },
-    {
-      "id": "ent_072",
-      "type": "Compound",
-      "name": "DMSO",
-      "attributes": {
-        "context": "re-dissolved in DMSO respectively"
-      },
-      "source_chunk_ids": [
-        "36523bc6747e0718af4039f0710ff64b"
-      ]
-    },
-    {
-      "id": "ent_073",
-      "type": "Concentration",
-      "name": "36 mg/ml",
-      "attributes": {
-        "context": "at 36 mg/ml when required"
-      },
-      "source_chunk_ids": [
-        "36523bc6747e0718af4039f0710ff64b"
-      ]
-    },
-    {
-      "id": "ent_074",
-      "type": "Compound",
-      "name": "potassium phosphate buffer",
-      "attributes": {
-        "context": "with potassium phosphate buffer"
-      },
-      "source_chunk_ids": [
-        "36523bc6747e0718af4039f0710ff64b"
-      ]
-    },
-    {
-      "id": "ent_075",
-      "type": "Concentration",
-      "name": "0.2 M",
-      "attributes": {
-        "context": "buffer (0.2 M, pH 7.6)"
-      },
-      "source_chunk_ids": [
-        "36523bc6747e0718af4039f0710ff64b"
-      ]
-    },
-    {
-      "id": "ent_076",
-      "type": "Concentration",
-      "name": "pH 7.6",
-      "attributes": {
-        "context": "buffer (0.2 M, pH 7.6)"
-      },
-      "source_chunk_ids": [
-        "36523bc6747e0718af4039f0710ff64b"
-      ]
-    },
-    {
-      "id": "ent_077",
-      "type": "Concentration",
-      "name": "1 mg/ml",
-      "attributes": {
-        "context": "concentrations of 1, 0.5, 0.25, 0.1, 0.01, 0.001 and 0.0001 mg/ml"
-      },
-      "source_chunk_ids": [
-        "36523bc6747e0718af4039f0710ff64b"
-      ]
-    },
-    {
-      "id": "ent_078",
-      "type": "Concentration",
-      "name": "0.5 mg/ml",
-      "attributes": {
-        "context": "concentrations of 1, 0.5, 0.25, 0.1, 0.01, 0.001 and 0.0001 mg/ml"
-      },
-      "source_chunk_ids": [
-        "36523bc6747e0718af4039f0710ff64b"
-      ]
-    },
-    {
-      "id": "ent_079",
-      "type": "Concentration",
-      "name": "0.25 mg/ml",
-      "attributes": {
-        "context": "concentrations of 1, 0.5, 0.25, 0.1, 0.01, 0.001 and 0.0001 mg/ml"
-      },
-      "source_chunk_ids": [
-        "36523bc6747e0718af4039f0710ff64b"
-      ]
-    },
-    {
-      "id": "ent_080",
-      "type": "Concentration",
-      "name": "0.1 mg/ml",
-      "attributes": {
-        "context": "concentrations of 1, 0.5, 0.25, 0.1, 0.01, 0.001 and 0.0001 mg/ml"
-      },
-      "source_chunk_ids": [
-        "36523bc6747e0718af4039f0710ff64b"
-      ]
-    },
-    {
-      "id": "ent_081",
-      "type": "Concentration",
-      "name": "0.01 mg/ml",
-      "attributes": {
-        "context": "concentrations of 1, 0.5, 0.25, 0.1, 0.01, 0.001 and 0.0001 mg/ml"
-      },
-      "source_chunk_ids": [
-        "36523bc6747e0718af4039f0710ff64b"
-      ]
-    },
-    {
-      "id": "ent_082",
-      "type": "Concentration",
-      "name": "0.001 mg/ml",
-      "attributes": {
-        "context": "concentrations of 1, 0.5, 0.25, 0.1, 0.01, 0.001 and 0.0001 mg/ml"
-      },
-      "source_chunk_ids": [
-        "36523bc6747e0718af4039f0710ff64b"
-      ]
-    },
-    {
-      "id": "ent_083",
-      "type": "Concentration",
-      "name": "0.0001 mg/ml",
-      "attributes": {
-        "context": "concentrations of 1, 0.5, 0.25, 0.1, 0.01, 0.001 and 0.0001 mg/ml"
-      },
-      "source_chunk_ids": [
-        "36523bc6747e0718af4039f0710ff64b"
-      ]
-    },
-    {
-      "id": "ent_084",
-      "type": "PharmEffect",
-      "name": "MAO inhibitory",
-      "attributes": {
-        "context": "MAO inhibitory activity"
-      },
-      "source_chunk_ids": [
-        "065b9015af84f712259c7d7636f25cf0"
-      ]
-    },
-    {
-      "id": "ent_085",
-      "type": "Compound",
-      "name": "protein",
-      "attributes": {
-        "context": "0.2 mg protein per ml"
-      },
-      "source_chunk_ids": [
-        "c843497e8f39f0e94741ccab3933f2bb"
-      ]
-    },
-    {
-      "id": "ent_086",
-      "type": "Concentration",
-      "name": "0.2 mg protein per ml",
-      "attributes": {
-        "context": "0.2 mg protein per ml"
-      },
-      "source_chunk_ids": [
-        "c843497e8f39f0e94741ccab3933f2bb"
-      ]
-    },
-    {
-      "id": "ent_087",
-      "type": "Concentration",
-      "name": "1 ml",
-      "attributes": {
-        "context": "aliquots of 1 ml"
-      },
-      "source_chunk_ids": [
-        "c843497e8f39f0e94741ccab3933f2bb"
-      ]
-    },
-    {
-      "id": "ent_088",
-      "type": "Compound",
-      "name": "Monoamine oxidase",
-      "attributes": {
-        "context": "MAO converting an aminosubstrate"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_089",
-      "type": "Compound",
-      "name": "aminosubstrate",
-      "attributes": {
-        "context": "converting an aminosubstrate (e.g., tyramine)"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_090",
-      "type": "Compound",
-      "name": "tyramine",
-      "attributes": {
-        "context": "aminosubstrate (e.g., tyramine)"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_091",
-      "type": "Compound",
-      "name": "H2O",
-      "attributes": {
-        "context": "with H2O and O2"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_092",
-      "type": "Compound",
-      "name": "O2",
-      "attributes": {
-        "context": "with H2O and O2"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_093",
-      "type": "Compound",
-      "name": "aldehyde",
-      "attributes": {
-        "context": "into an aldehyde"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_094",
-      "type": "Compound",
-      "name": "NH3",
-      "attributes": {
-        "context": "into NH3"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_095",
-      "type": "Compound",
-      "name": "H2O2",
-      "attributes": {
-        "context": "into H2O2"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_096",
-      "type": "Compound",
-      "name": "FADH2",
-      "attributes": {
-        "context": "into FADH2"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_097",
-      "type": "Compound",
-      "name": "Horseradish peroxidase",
-      "attributes": {
-        "context": "Horseradish peroxidase (HRP) oxidizing"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_098",
-      "type": "Compound",
-      "name": "4-aminoantipyrine",
-      "attributes": {
-        "context": "oxidizing 4-aminoantipyrine (3)"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_099",
-      "type": "Compound",
-      "name": "oxidised 4-aminoantipyrine",
-      "attributes": {
-        "context": "to oxidised 4-aminoantipyrine"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_100",
-      "type": "Compound",
-      "name": "H2O2",
-      "attributes": {
-        "context": "using H2O2 to produce"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_101",
-      "type": "Compound",
-      "name": "H2O",
-      "attributes": {
-        "context": "produce 2 H2O"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_102",
-      "type": "Compound",
-      "name": "pyrimidine ring",
-      "attributes": {
-        "context": "a pyrimidine ring with a phenyl group"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_103",
-      "type": "Compound",
-      "name": "phenyl group",
-      "attributes": {
-        "context": "a pyrimidine ring with a phenyl group"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_104",
-      "type": "Compound",
-      "name": "methyl group",
-      "attributes": {
-        "context": "a methyl group, and an amino group"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_105",
-      "type": "Compound",
-      "name": "amino group",
-      "attributes": {
-        "context": "and an amino group"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_106",
-      "type": "Compound",
-      "name": "nitro group",
-      "attributes": {
-        "context": "and a nitro group"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_107",
-      "type": "Compound",
-      "name": "quinoneimine dye",
-      "attributes": {
-        "context": "chemical structure of the quinoneimine dye"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_108",
-      "type": "Compound",
-      "name": "quinone ring",
-      "attributes": {
-        "context": "a quinone ring, an imine group"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_109",
-      "type": "Compound",
-      "name": "imine group",
-      "attributes": {
-        "context": "an imine group, and a phenyl group"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_110",
-      "type": "Compound",
-      "name": "vanillic acid",
-      "attributes": {
-        "context": "chemical structure of vanillic acid"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_111",
-      "type": "Compound",
-      "name": "benzene ring",
-      "attributes": {
-        "context": "a benzene ring with a carboxylic acid group"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_112",
-      "type": "Compound",
-      "name": "carboxylic acid group",
-      "attributes": {
-        "context": "a carboxylic acid group"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_113",
-      "type": "Compound",
-      "name": "methoxy group",
-      "attributes": {
-        "context": "a methoxy group"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_114",
-      "type": "Compound",
-      "name": "hydroxyl group",
-      "attributes": {
-        "context": "and a hydroxyl group"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_115",
-      "type": "PharmEffect",
-      "name": "inhibitor",
-      "attributes": {
-        "context": "monoamine oxidase (MAO) inhibitor bioassay"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_116",
-      "type": "Compound",
-      "name": "Monoamine oxidase",
-      "attributes": {
-        "context": "MAO catalyzes the oxidative deamination"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_117",
-      "type": "Compound",
-      "name": "aminosubstrate",
-      "attributes": {
-        "context": "deamination of an aminosubstrate (e.g., tyramine)"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_118",
-      "type": "Compound",
-      "name": "tyramine",
-      "attributes": {
-        "context": "aminosubstrate (e.g., tyramine)"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_119",
-      "type": "Compound",
-      "name": "H2O",
-      "attributes": {
-        "context": "with H2O and O2 to produce"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_120",
-      "type": "Compound",
-      "name": "O2",
-      "attributes": {
-        "context": "with H2O and O2 to produce"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_121",
-      "type": "Compound",
-      "name": "aldehyde",
-      "attributes": {
-        "context": "to produce an aldehyde"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_122",
-      "type": "Compound",
-      "name": "NH3",
-      "attributes": {
-        "context": "to produce NH3"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_123",
-      "type": "Compound",
-      "name": "H2O2",
-      "attributes": {
-        "context": "to produce H2O2"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_124",
-      "type": "Compound",
-      "name": "FADH2",
-      "attributes": {
-        "context": "to produce FADH2"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_125",
-      "type": "Compound",
-      "name": "Horseradish peroxidase",
-      "attributes": {
-        "context": "Horseradish peroxidase (HRP) catalyzes"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_126",
-      "type": "Compound",
-      "name": "4-aminoantipyrine",
-      "attributes": {
-        "context": "oxidation of 4-aminoantipyrine (3)"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_127",
-      "type": "Compound",
-      "name": "oxidised 4-aminoantipyrine",
-      "attributes": {
-        "context": "to oxidised 4-aminoantipyrine using H2O2"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_128",
-      "type": "Compound",
-      "name": "H2O2",
-      "attributes": {
-        "context": "using H2O2"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_129",
-      "type": "Compound",
-      "name": "oxidised 4-aminoantipyrine",
-      "attributes": {
-        "context": "Oxidised 4-aminoantipyrine reacts with vanillic acid"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_130",
-      "type": "Compound",
-      "name": "vanillic acid",
-      "attributes": {
-        "context": "reacts with vanillic acid (4)"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_131",
-      "type": "Compound",
-      "name": "quinoneimine dye",
-      "attributes": {
-        "context": "form a red quinoneimine dye (5)"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_132",
-      "type": "Compound",
-      "name": "quinoneimine dye",
-      "attributes": {
-        "context": "The quinoneimine dye (5) is detected"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_133",
-      "type": "Compound",
-      "name": "4-aminoantipyrine",
-      "attributes": {
-        "context": "Chemical structures for 4-aminoantipyrine"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_134",
-      "type": "Compound",
-      "name": "oxidised 4-aminoantipyrine",
-      "attributes": {
-        "context": "oxidised 4-aminoantipyrine, vanillic acid"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_135",
-      "type": "Compound",
-      "name": "vanillic acid",
-      "attributes": {
-        "context": "vanillic acid, and the quinoneimine dye"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_136",
-      "type": "Compound",
-      "name": "quinoneimine dye",
-      "attributes": {
-        "context": "and the quinoneimine dye are shown"
-      },
-      "source_chunk_ids": [
-        "8d741eb82bbb87f56f46b1b9598b7cbe"
-      ]
-    },
-    {
-      "id": "ent_137",
-      "type": "PharmEffect",
-      "name": "Monoamine oxidase B (MAO-B) inhibition",
-      "attributes": {
-        "context": "Monoamine oxidase B (MAO-B) inhibition by active principles"
-      },
-      "source_chunk_ids": [
-        "7a919a32042364e6b79be8c0272ae5d1"
-      ]
-    },
-    {
-      "id": "ent_138",
-      "type": "Taxon",
-      "name": "Uncaria rhynchophylla",
-      "attributes": {
-        "context": "active principles from Uncaria rhynchophylla"
-      },
-      "source_chunk_ids": [
-        "7a919a32042364e6b79be8c0272ae5d1"
-      ]
-    },
-    {
-      "id": "ent_139",
-      "type": "PharmEffect",
-      "name": "Monoamine oxidase inhibitors",
-      "attributes": {
-        "context": "Monoamine oxidase inhibitors from Aquilaria agallocha"
-      },
-      "source_chunk_ids": [
-        "7a919a32042364e6b79be8c0272ae5d1"
-      ]
-    },
-    {
-      "id": "ent_140",
-      "type": "Taxon",
-      "name": "Aquilaria agallocha",
-      "attributes": {
-        "context": "Monoamine oxidase inhibitors from Aquilaria agallocha"
-      },
-      "source_chunk_ids": [
-        "7a919a32042364e6b79be8c0272ae5d1"
-      ]
-    },
-    {
-      "id": "ent_141",
-      "type": "Indication",
-      "name": "stress-related ailments",
-      "attributes": {
-        "context": "Plants used for stress-related ailments"
-      },
-      "source_chunk_ids": [
-        "7a919a32042364e6b79be8c0272ae5d1"
-      ]
-    },
-    {
-      "id": "ent_142",
-      "type": "Indication",
-      "name": "headaches",
-      "attributes": {
-        "context": "Plants used for headaches"
-      },
-      "source_chunk_ids": [
-        "7a919a32042364e6b79be8c0272ae5d1"
-      ]
-    },
-    {
-      "id": "ent_143",
-      "type": "PharmEffect",
-      "name": "Antimicrobial activity",
-      "attributes": {
-        "context": "Antimicrobial and cytotoxic activity of Ruta graveolens"
-      },
-      "source_chunk_ids": [
-        "7a919a32042364e6b79be8c0272ae5d1"
-      ]
-    },
-    {
-      "id": "ent_144",
-      "type": "PharmEffect",
-      "name": "cytotoxic activity",
-      "attributes": {
-        "context": "Antimicrobial and cytotoxic activity of Ruta graveolens"
-      },
-      "source_chunk_ids": [
-        "7a919a32042364e6b79be8c0272ae5d1"
-      ]
-    },
-    {
-      "id": "ent_145",
+      "id": "E1",
+      "type": "Culture",
+      "name": "southern African population",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "confidence": 0.8,
+      "evidence": "population in southern Africa",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: southern African \u2013 traditional plants \u2013 mental health treatment",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "confidence": 0.75,
+      "evidence": "treatment for mental health problems",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "mental health treatment",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "confidence": 0.85,
+      "evidence": "treatment for mental health problems",
+      "verified": true
+    },
+    {
+      "id": "E4",
       "type": "Taxon",
       "name": "Ruta graveolens",
       "attributes": {
-        "context": "cytotoxic activity of Ruta graveolens"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "7a919a32042364e6b79be8c0272ae5d1"
-      ]
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "confidence": 0.95,
+      "evidence": "Ruta graveolens exhibited the best MAO inhibitory activity",
+      "verified": true
     },
     {
-      "id": "ent_146",
-      "type": "PharmEffect",
-      "name": "Monoamine oxidase inhibitory",
+      "id": "E5",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "confidence": 0.8,
+      "evidence": "ethyl acetate leaf extract",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "RawMaterial",
+      "name": "ethyl acetate leaf extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "confidence": 0.85,
+      "evidence": "ethyl acetate leaf extract",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "RawMaterial",
+      "name": "petroleum ether extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "confidence": 0.85,
+      "evidence": "petroleum ether extract",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Taxon",
+      "name": "Schotia brachypetala",
       "attributes": {
-        "context": "Monoamine oxidase inhibitory coumarin from Zanthoxylum schinifolium"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "7a919a32042364e6b79be8c0272ae5d1"
-      ]
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "confidence": 0.9,
+      "evidence": "Schotia brachypetala",
+      "verified": true
     },
     {
-      "id": "ent_147",
+      "id": "E9",
+      "type": "Taxon",
+      "name": "Mentha aquatica",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mentha aquatica",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Taxon",
+      "name": "Gasteria croucheri",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "confidence": 0.9,
+      "evidence": "Gasteria croucheri",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Target",
+      "name": "MAO",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "confidence": 0.95,
+      "evidence": "MAO inhibition",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Target",
+      "name": "MAO-B",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "confidence": 0.95,
+      "evidence": "MAO-B inhibition",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Condition",
+      "name": "Parkinson's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "confidence": 0.9,
+      "evidence": "Parkinson's",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Condition",
+      "name": "Alzheimer's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "confidence": 0.9,
+      "evidence": "Alzheimer's disease",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Effect",
+      "name": "MAO inhibition",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "confidence": 0.9,
+      "evidence": "MAO inhibition",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Effect",
+      "name": "MAO-B inhibition",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "confidence": 0.9,
+      "evidence": "MAO-B inhibition",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "Study",
+      "name": "screening study for MAO inhibition",
+      "attributes": {
+        "design": "in vitro screening"
+      },
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "confidence": 0.8,
+      "evidence": "screened for MAO inhibition",
+      "verified": true
+    },
+    {
+      "id": "E18",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "confidence": 0.85,
+      "evidence": "photometric peroxidase linked assay",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "southern African population",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ],
+      "confidence": 0.9,
+      "evidence": "population in southern Africa",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "African traditional healers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ],
+      "confidence": 0.95,
+      "evidence": "African traditional healers",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "UseRecord",
+      "name": "UseRecord: traditional healers \u2013 herbal preparations \u2013 mental health",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ],
+      "confidence": 0.85,
+      "evidence": "herbal preparations administered to patients",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "herbal preparations",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ],
+      "confidence": 0.8,
+      "evidence": "herbal preparations",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "treatment for mental health problems",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ],
+      "confidence": 0.9,
+      "evidence": "treatment for mental health problems",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ],
+      "confidence": 0.95,
+      "evidence": "anxiety",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "fits",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ],
+      "confidence": 0.9,
+      "evidence": "fits",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "convulsions",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ],
+      "confidence": 0.9,
+      "evidence": "convulsions",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "epilepsy",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ],
+      "confidence": 0.95,
+      "evidence": "epilepsy",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "hysteria",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ],
+      "confidence": 0.9,
+      "evidence": "hysteria",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Condition",
+      "name": "nightmares",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ],
+      "confidence": 0.9,
+      "evidence": "nightmares",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Condition",
+      "name": "mental disturbances",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ],
+      "confidence": 0.85,
+      "evidence": "mental disturbances",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "MAO",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "9f4df41d8090ac1961844f13ef78e5b0"
+      ],
+      "confidence": 0.95,
+      "evidence": "Monoamine oxidase (MAO) is an enzyme",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "MAO-A",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "9f4df41d8090ac1961844f13ef78e5b0"
+      ],
+      "confidence": 0.9,
+      "evidence": "MAO-A preferentially deaminates serotonin",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "MAO-B",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "9f4df41d8090ac1961844f13ef78e5b0"
+      ],
+      "confidence": 0.9,
+      "evidence": "MAO-B deaminates dopamine",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Yamada and Yasuhara, 2004",
+      "attributes": {
+        "year": 2004
+      },
+      "source_chunk_ids": [
+        "9f4df41d8090ac1961844f13ef78e5b0"
+      ],
+      "confidence": 0.8,
+      "evidence": "Yamada and Yasuhara, 2004",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Saura Marti et al., 1990",
+      "attributes": {
+        "year": 1990
+      },
+      "source_chunk_ids": [
+        "9f4df41d8090ac1961844f13ef78e5b0"
+      ],
+      "confidence": 0.8,
+      "evidence": "Saura Marti et al., 1990",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Datura ferox",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "confidence": 0.95,
+      "evidence": "Datura ferox L.",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "confidence": 0.9,
+      "evidence": "Leaves used",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "UseRecord",
+      "name": "UseRecord: Datura ferox leaves for sedation and insomnia",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "confidence": 0.85,
+      "evidence": "Leaves used to sedate",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "sedate hysterical and psychotic patients",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "confidence": 0.9,
+      "evidence": "sedate hysterical and psychotic patients",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "treat insomnia",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "confidence": 0.9,
+      "evidence": "treat insomnia",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Datura stramonium",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "confidence": 0.95,
+      "evidence": "Datura stramonium L.",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "confidence": 0.9,
+      "evidence": "Leaves used",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "UseRecord",
+      "name": "UseRecord: Datura stramonium leaves for sedation and insomnia",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "confidence": 0.85,
+      "evidence": "Leaves used to sedate",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "TraditionalUse",
+      "name": "sedate hysterical and psychotic patients",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "confidence": 0.9,
+      "evidence": "sedate hysterical and psychotic patients",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "TraditionalUse",
+      "name": "treat insomnia",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "confidence": 0.9,
+      "evidence": "treat insomnia",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Study",
+      "name": "Van Wyk and Gericke, 2000",
+      "attributes": {
+        "year": 2000
+      },
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "confidence": 0.8,
+      "evidence": "(Van Wyk and Gericke, 2000)",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Evidence",
+      "name": "ethnobotanical reference",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "confidence": 0.75,
+      "evidence": "ethnobotanical information",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "MAO-A",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ],
+      "confidence": 0.9,
+      "evidence": "MAO-A",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ],
+      "confidence": 0.85,
+      "evidence": "depression",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "anxiety disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ],
+      "confidence": 0.85,
+      "evidence": "anxiety disorders",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "MAO-B",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ],
+      "confidence": 0.9,
+      "evidence": "MAO-B",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "increase basal dopamine levels",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ],
+      "confidence": 0.8,
+      "evidence": "increase the basal dopamine levels",
+      "verified": true
+    },
+    {
+      "id": "E6",
       "type": "Compound",
-      "name": "coumarin",
-      "attributes": {
-        "context": "Monoamine oxidase inhibitory coumarin from Zanthoxylum schinifolium"
-      },
+      "name": "Selegiline",
+      "attributes": {},
       "source_chunk_ids": [
-        "7a919a32042364e6b79be8c0272ae5d1"
-      ]
+        "0180fa9f5ee29a88f023739457009ffa"
+      ],
+      "confidence": 0.95,
+      "evidence": "Selegiline",
+      "verified": true
     },
     {
-      "id": "ent_148",
+      "id": "E7",
+      "type": "Condition",
+      "name": "Alzheimer's disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ],
+      "confidence": 0.9,
+      "evidence": "Alzheimer's disease (AD)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "neuroprotective effects",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ],
+      "confidence": 0.85,
+      "evidence": "neuroprotective effects",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "increase monoaminergic activity",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ],
+      "confidence": 0.8,
+      "evidence": "increasing the monoaminergic activity",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "MAO-A",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "confidence": 0.9,
+      "evidence": "MAO-A inhibitory activity",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Acorus gramineus",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "confidence": 0.95,
+      "evidence": "Acorus gramineus",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Rhazya stricta",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "confidence": 0.95,
+      "evidence": "Rhazya stricta",
+      "verified": true
+    },
+    {
+      "id": "E4",
       "type": "Taxon",
       "name": "Zanthoxylum schinifolium",
       "attributes": {
-        "context": "coumarin from Zanthoxylum schinifolium"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "7a919a32042364e6b79be8c0272ae5d1"
-      ]
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zanthoxylum schinifolium",
+      "verified": true
     },
     {
-      "id": "ent_149",
-      "type": "PharmEffect",
-      "name": "Inhibition of monoamine oxidase B (MAO-B)",
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Kaempferia galangal",
       "attributes": {
-        "context": "Inhibition of monoamine oxidase B (MAO-B) by Chinese herbal medicines"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "7a919a32042364e6b79be8c0272ae5d1"
-      ]
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "confidence": 0.95,
+      "evidence": "Kaempferia galangal",
+      "verified": true
     },
     {
-      "id": "ent_150",
-      "type": "PharmEffect",
-      "name": "affinity to the serotonin reuptake transport protein",
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Arisaema amurense",
       "attributes": {
-        "context": "for affinity to the serotonin reuptake transport protein"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "7a919a32042364e6b79be8c0272ae5d1"
-      ]
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "confidence": 0.95,
+      "evidence": "Arisaema amurense",
+      "verified": true
     },
     {
-      "id": "ent_151",
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Lilium brownie",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "confidence": 0.95,
+      "evidence": "Lilium brownie",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Taxon",
+      "name": "Lycium chinense",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "confidence": 0.95,
+      "evidence": "Lycium chinense",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Taxon",
+      "name": "Gentiana lutea",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "confidence": 0.95,
+      "evidence": "Gentiana lutea",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Taxon",
+      "name": "Uncaria rhynchophylla",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "confidence": 0.95,
+      "evidence": "Uncaria rhynchophylla",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "TraditionalUse",
+      "name": "traditional use",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "confidence": 0.7,
+      "evidence": "traditionally used herbal remedies",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Effect",
+      "name": "MAO-A inhibition",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "confidence": 0.85,
+      "evidence": "MAO-A inhibitory activity",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "southern African communities",
+      "attributes": {},
+      "source_chunk_ids": [
+        "900cf9e316b1f3df23a827ed56cd1cdb"
+      ],
+      "confidence": 0.8,
+      "evidence": "southern Africa",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: southern African \u2013 plants \u2013 mental illness",
+      "attributes": {},
+      "source_chunk_ids": [
+        "900cf9e316b1f3df23a827ed56cd1cdb"
+      ],
+      "confidence": 0.75,
+      "evidence": "used traditionally to treat mental illness",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "southern African medicinal plants",
+      "attributes": {
+        "rank": "group"
+      },
+      "source_chunk_ids": [
+        "900cf9e316b1f3df23a827ed56cd1cdb"
+      ],
+      "confidence": 0.85,
+      "evidence": "southern African medicinal plants",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "psychoactive purposes",
+      "attributes": {},
+      "source_chunk_ids": [
+        "900cf9e316b1f3df23a827ed56cd1cdb"
+      ],
+      "confidence": 0.9,
+      "evidence": "psychoactive purposes",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "treat mental illness",
+      "attributes": {},
+      "source_chunk_ids": [
+        "900cf9e316b1f3df23a827ed56cd1cdb"
+      ],
+      "confidence": 0.9,
+      "evidence": "treat mental illness",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "mental illness",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "900cf9e316b1f3df23a827ed56cd1cdb"
+      ],
+      "confidence": 0.85,
+      "evidence": "mental illness",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "MAO",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "900cf9e316b1f3df23a827ed56cd1cdb"
+      ],
+      "confidence": 0.9,
+      "evidence": "MAO inhibitory activity",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Target",
+      "name": "MAO-B",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "900cf9e316b1f3df23a827ed56cd1cdb"
+      ],
+      "confidence": 0.85,
+      "evidence": "MAO-B inhibitory activity",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Sobiecki, 2002",
+      "attributes": {
+        "year": 2002
+      },
+      "source_chunk_ids": [
+        "900cf9e316b1f3df23a827ed56cd1cdb"
+      ],
+      "confidence": 0.8,
+      "evidence": "Sobiecki, 2002",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Evidence",
+      "name": "ethnographic survey",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "900cf9e316b1f3df23a827ed56cd1cdb"
+      ],
+      "confidence": 0.7,
+      "evidence": "reported to be used traditionally",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "KwaZulu-Natal communities",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8c48e0c033aff4984a23877ec3a9e35c"
+      ],
+      "confidence": 0.7,
+      "evidence": "Plants were collected in KwaZulu-Natal",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: KwaZulu-Natal \u2013 plants \u2013 treat mental diseases",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8c48e0c033aff4984a23877ec3a9e35c"
+      ],
+      "confidence": 0.8,
+      "evidence": "plants used to treat mental diseases",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "plants",
+      "attributes": {
+        "rank": "general"
+      },
+      "source_chunk_ids": [
+        "8c48e0c033aff4984a23877ec3a9e35c"
+      ],
+      "confidence": 0.9,
+      "evidence": "plants used to treat mental diseases",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "treat mental diseases",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8c48e0c033aff4984a23877ec3a9e35c"
+      ],
+      "confidence": 0.85,
+      "evidence": "treat mental diseases",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Preparation",
+      "name": "drying",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8c48e0c033aff4984a23877ec3a9e35c"
+      ],
+      "confidence": 0.75,
+      "evidence": "dried at 50 \u00b0C",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "RawMaterial",
+      "name": "dried plant material",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8c48e0c033aff4984a23877ec3a9e35c"
+      ],
+      "confidence": 0.7,
+      "evidence": "Plant material was dried",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "University of KwaZulu-Natal study",
+      "attributes": {
+        "design": "ethnobotanical database construction",
+        "year": "implied recent",
+        "ethical_clearance": "AE/Van Staden/06"
+      },
+      "source_chunk_ids": [
+        "8c48e0c033aff4984a23877ec3a9e35c"
+      ],
+      "confidence": 0.8,
+      "evidence": "database on plants used to treat mental diseases",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "ethnobotanical database",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "8c48e0c033aff4984a23877ec3a9e35c"
+      ],
+      "confidence": 0.75,
+      "evidence": "database on plants used to treat mental diseases",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "RawMaterial",
+      "name": "extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ],
+      "confidence": 0.9,
+      "evidence": "extracts were filtered",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Preparation",
+      "name": "ultrasound extraction",
+      "attributes": {},
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ],
+      "confidence": 0.85,
+      "evidence": "extracted on an ultrasound bath",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Preparation",
+      "name": "filtration",
+      "attributes": {},
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ],
+      "confidence": 0.8,
+      "evidence": "filtered under vacuum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Preparation",
+      "name": "drying under reduced pressure",
+      "attributes": {},
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ],
+      "confidence": 0.8,
+      "evidence": "taken to dryness under reduced pressure",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Preparation",
+      "name": "re-dissolution in DMSO",
+      "attributes": {},
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ],
+      "confidence": 0.85,
+      "evidence": "re-dissolved in DMSO",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Datura stramonium",
+      "attributes": {
+        "rank": "species",
+        "family": "Solanaceae"
+      },
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "confidence": 0.95,
+      "evidence": "Datura stramonium",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "seeds",
+      "attributes": {},
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "confidence": 0.9,
+      "evidence": "Seeds",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "water extract",
+      "attributes": {
+        "solvent": "water"
+      },
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "confidence": 0.8,
+      "evidence": "Water extract",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "MAO",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "confidence": 0.85,
+      "evidence": "MAO inhibition",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "MAO-B",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "confidence": 0.85,
+      "evidence": "MAO-B inhibition",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Rhoicissus tridentata",
+      "attributes": {
+        "rank": "species",
+        "family": "Vitaceae"
+      },
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "confidence": 0.95,
+      "evidence": "Rhoicissus tridentata",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "PlantPart",
+      "name": "leaf",
+      "attributes": {},
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "confidence": 0.9,
+      "evidence": "Leaf",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "RawMaterial",
+      "name": "water extract",
+      "attributes": {
+        "solvent": "water"
+      },
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "confidence": 0.8,
+      "evidence": "Water extract",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "RawMaterial",
+      "name": "ethanol extract",
+      "attributes": {
+        "solvent": "ethanol"
+      },
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "confidence": 0.8,
+      "evidence": "Ethanol extract",
+      "verified": true
+    },
+    {
+      "id": "E10",
       "type": "Compound",
-      "name": "Alkaloids",
+      "name": "clorgyline",
+      "attributes": {},
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "confidence": 0.9,
+      "evidence": "Clorgyline",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Compound",
+      "name": "selegiline",
+      "attributes": {},
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "confidence": 0.9,
+      "evidence": "Selegiline",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Compound",
+      "name": "clorgyline + selegiline",
+      "attributes": {},
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "confidence": 0.85,
+      "evidence": "Clorgyline + Selegiline",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "peroxidase-linked photometric assay",
       "attributes": {
-        "context": "Alkaloids from Boophane disticha"
+        "design": "in vitro assay",
+        "method": "continuous peroxidase-linked photometric assay in 96-well microtiter format"
+      },
+      "source_chunk_ids": [
+        "79e411992aec37823529e1ba1662995d"
+      ],
+      "confidence": 0.9,
+      "evidence": "continuous peroxidase-linked photometric assay",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "79e411992aec37823529e1ba1662995d"
+      ],
+      "confidence": 0.85,
+      "evidence": "in vitro assay",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "plant extracts",
+      "attributes": {
+        "solvents": "water, 70% ethanol, ethyl acetate, petroleum ether"
+      },
+      "source_chunk_ids": [
+        "79e411992aec37823529e1ba1662995d"
+      ],
+      "confidence": 0.8,
+      "evidence": "Plant extracts (water, 70% ethanol, ethyl acetate and petroleum ether)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "MAO-B",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "79e411992aec37823529e1ba1662995d"
+      ],
+      "confidence": 0.75,
+      "evidence": "specific MAO-B activity",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "MAO-A",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "79e411992aec37823529e1ba1662995d"
+      ],
+      "confidence": 0.7,
+      "evidence": "MAO-A activity",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "clorgyline",
+      "attributes": {
+        "selectivity": "MAO-A inhibitor"
+      },
+      "source_chunk_ids": [
+        "79e411992aec37823529e1ba1662995d"
+      ],
+      "confidence": 0.8,
+      "evidence": "clorgyline (selective MAO-A-I)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "MAO",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ],
+      "confidence": 0.95,
+      "evidence": "monoamine oxidase (MAO)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "HRP",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ],
+      "confidence": 0.9,
+      "evidence": "Horseradish peroxidase (HRP)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "tyramine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ],
+      "confidence": 0.85,
+      "evidence": "aminosubstrate (e.g., tyramine)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "4-aminoantipyrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ],
+      "confidence": 0.9,
+      "evidence": "4-aminoantipyrine (3)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "oxidised 4-aminoantipyrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ],
+      "confidence": 0.85,
+      "evidence": "oxidised 4-aminoantipyrine",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "vanillic acid",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ],
+      "confidence": 0.9,
+      "evidence": "vanillic acid (4)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "quinoneimine dye",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ],
+      "confidence": 0.85,
+      "evidence": "quinoneimine dye (5)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "in vitro assay",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ],
+      "confidence": 0.8,
+      "evidence": "biochemical assay",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "MAO inhibitor bioassay",
+      "attributes": {
+        "design": "continuous peroxidase-linked photometric assay"
+      },
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ],
+      "confidence": 0.75,
+      "evidence": "MAO inhibitor bioassay",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "monoamine oxidase",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "d96e9e2ce16348117d4f632bf90d020f"
+      ],
+      "confidence": 0.9,
+      "evidence": "monoamine oxidase (MAO)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "peroxidase",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "d96e9e2ce16348117d4f632bf90d020f"
+      ],
+      "confidence": 0.85,
+      "evidence": "peroxidase",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "4-aminoantipyrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d96e9e2ce16348117d4f632bf90d020f"
+      ],
+      "confidence": 0.9,
+      "evidence": "4-aminoantipyrine",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "vanillic acid",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d96e9e2ce16348117d4f632bf90d020f"
+      ],
+      "confidence": 0.9,
+      "evidence": "vanillic acid",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "quinoneimine dye",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d96e9e2ce16348117d4f632bf90d020f"
+      ],
+      "confidence": 0.85,
+      "evidence": "quinoneimine dye",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "in vitro bioassay",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "d96e9e2ce16348117d4f632bf90d020f"
+      ],
+      "confidence": 0.8,
+      "evidence": "peroxidase-linked photometric monoamine oxidase (MAO) inhibitor bioassay",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Ruta graveolens",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "confidence": 0.95,
+      "evidence": "Ruta graveolens leaf material",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "leaf",
+      "attributes": {},
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "confidence": 0.9,
+      "evidence": "leaf material",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "ethyl acetate extract",
+      "attributes": {
+        "solvent": "ethyl acetate"
+      },
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "confidence": 0.85,
+      "evidence": "ethyl acetate extract",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "petroleum ether extract",
+      "attributes": {
+        "solvent": "petroleum ether"
+      },
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "confidence": 0.85,
+      "evidence": "petroleum ether extract",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "MAO",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "confidence": 0.9,
+      "evidence": "MAO inhibitory activity",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "MAO-B",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "confidence": 0.9,
+      "evidence": "MAO-B inhibition",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Schotia brachypetala",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "confidence": 0.95,
+      "evidence": "Schotia brachypetala",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Taxon",
+      "name": "Mentha aquatica",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mentha aquatica",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Taxon",
+      "name": "Gasteria croucheri",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "confidence": 0.95,
+      "evidence": "Gasteria croucheri",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "MAO inhibitory activity",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "confidence": 0.85,
+      "evidence": "MAO inhibitory activity",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "MAO-B inhibition",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "confidence": 0.85,
+      "evidence": "MAO-B inhibition activity",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "R. graveolens",
+      "attributes": {
+        "rank": "species",
+        "common_name": "garden rue"
+      },
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "confidence": 0.95,
+      "evidence": "R. graveolens (garden rue)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "furocoumarins",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "confidence": 0.9,
+      "evidence": "furocoumarins",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "furoquinolines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "confidence": 0.9,
+      "evidence": "furoquinolines",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "acridone alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "confidence": 0.9,
+      "evidence": "acridone alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "methanol extract",
+      "attributes": {
+        "solvent": "methanol"
+      },
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "confidence": 0.8,
+      "evidence": "methanol extracts",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "RawMaterial",
+      "name": "petroleum ether extract",
+      "attributes": {
+        "solvent": "petroleum ether"
+      },
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "confidence": 0.8,
+      "evidence": "petroleum ether extracts",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "RawMaterial",
+      "name": "ethyl acetate extract",
+      "attributes": {
+        "solvent": "ethyl acetate"
+      },
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "confidence": 0.8,
+      "evidence": "ethyl acetate extracts",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "RawMaterial",
+      "name": "water-methanol extract",
+      "attributes": {
+        "solvent": "water-methanol"
+      },
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "confidence": 0.8,
+      "evidence": "water\u2013methanol extracts",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "antimicrobial activity",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "confidence": 0.85,
+      "evidence": "antimicrobial activities",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "cytotoxic activity",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "confidence": 0.85,
+      "evidence": "cytotoxic activities",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Compound",
+      "name": "bergapten",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "confidence": 0.9,
+      "evidence": "bergapten",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Condition",
+      "name": "vitiligo",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "confidence": 0.9,
+      "evidence": "vitiligo",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Condition",
+      "name": "psoriasis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "confidence": 0.9,
+      "evidence": "psoriasis",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Target",
+      "name": "MAO",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "confidence": 0.8,
+      "evidence": "MAO inhibition",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Taxon",
+      "name": "M. aquatica",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "confidence": 0.9,
+      "evidence": "M. aquatica",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "CompoundClass",
+      "name": "flavones",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "confidence": 0.85,
+      "evidence": "flavones",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "CompoundClass",
+      "name": "flavanone derivatives",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "confidence": 0.85,
+      "evidence": "flavanone derivatives",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "tyramine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "113ff2a1f0ba7510578993bb43a87568"
+      ],
+      "confidence": 0.95,
+      "evidence": "Tyramine is a substrate",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "MAO-A",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "113ff2a1f0ba7510578993bb43a87568"
+      ],
+      "confidence": 0.9,
+      "evidence": "substrate for both MAO-A",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "MAO-B",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "113ff2a1f0ba7510578993bb43a87568"
+      ],
+      "confidence": 0.9,
+      "evidence": "substrate for both MAO-B",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "tranylcypromine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "113ff2a1f0ba7510578993bb43a87568"
+      ],
+      "confidence": 0.85,
+      "evidence": "tranylcypromine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "phenelzine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "113ff2a1f0ba7510578993bb43a87568"
+      ],
+      "confidence": 0.85,
+      "evidence": "phenelzine",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "AdverseEvent",
+      "name": "hypertensive crisis",
+      "attributes": {
+        "severity": "dangerous"
+      },
+      "source_chunk_ids": [
+        "113ff2a1f0ba7510578993bb43a87568"
+      ],
+      "confidence": 0.8,
+      "evidence": "dangerous hypertensive crisis",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "AdverseEvent",
+      "name": "cheese effect",
+      "attributes": {},
+      "source_chunk_ids": [
+        "113ff2a1f0ba7510578993bb43a87568"
+      ],
+      "confidence": 0.75,
+      "evidence": "\u2018cheese effect\u2019",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Yamada and Yasuhara, 2004",
+      "attributes": {
+        "year": 2004
+      },
+      "source_chunk_ids": [
+        "113ff2a1f0ba7510578993bb43a87568"
+      ],
+      "confidence": 0.7,
+      "evidence": "(Yamada and Yasuhara, 2004)",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "literature reference",
+      "attributes": {
+        "evidence_level": 3,
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "113ff2a1f0ba7510578993bb43a87568"
+      ],
+      "confidence": 0.65,
+      "evidence": "Yamada and Yasuhara, 2004",
+      "verified": false
+    },
+    {
+      "id": "E1",
+      "type": "RawMaterial",
+      "name": "ethyl acetate extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7757aaaabf8ad612ae26523ecb8b449d"
+      ],
+      "confidence": 0.9,
+      "evidence": "ethyl acetate extracts",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "petroleum ether extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7757aaaabf8ad612ae26523ecb8b449d"
+      ],
+      "confidence": 0.9,
+      "evidence": "petroleum ether extracts",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "MAO",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "7757aaaabf8ad612ae26523ecb8b449d"
+      ],
+      "confidence": 0.95,
+      "evidence": "MAO activity",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "MAO-B",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "7757aaaabf8ad612ae26523ecb8b449d"
+      ],
+      "confidence": 0.95,
+      "evidence": "MAO-B activity",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "decrease in MAO activity",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "7757aaaabf8ad612ae26523ecb8b449d"
+      ],
+      "confidence": 0.85,
+      "evidence": "decrease in activity as concentration increases",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "decrease in MAO-B activity",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "7757aaaabf8ad612ae26523ecb8b449d"
+      ],
+      "confidence": 0.85,
+      "evidence": "decrease in activity as concentration increases",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "7757aaaabf8ad612ae26523ecb8b449d"
+      ],
+      "confidence": 0.7,
+      "evidence": "IC50 determinations",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "R. graveolens",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f40bfc848a38803c2f7ca9f0c5c92855"
+      ],
+      "confidence": 0.9,
+      "evidence": "R. graveolens MAO activity",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "ethyl acetate extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f40bfc848a38803c2f7ca9f0c5c92855"
+      ],
+      "confidence": 0.85,
+      "evidence": "ethyl acetate extracts",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "petroleum ether extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f40bfc848a38803c2f7ca9f0c5c92855"
+      ],
+      "confidence": 0.85,
+      "evidence": "petroleum ether extracts",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "MAO",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "f40bfc848a38803c2f7ca9f0c5c92855"
+      ],
+      "confidence": 0.9,
+      "evidence": "MAO activity",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "MAO-B",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "f40bfc848a38803c2f7ca9f0c5c92855"
+      ],
+      "confidence": 0.9,
+      "evidence": "MAO-B activity",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "traditional medicine findings",
+      "attributes": {},
+      "source_chunk_ids": [
+        "02ffcb686f56cbe1644abc1fdd441781"
+      ],
+      "confidence": 0.7,
+      "evidence": "some of these findings support",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "MAO",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "02ffcb686f56cbe1644abc1fdd441781"
+      ],
+      "confidence": 0.8,
+      "evidence": "novel MAO inhibitors",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Nielsen et al., 2003",
+      "attributes": {
+        "year": 2003,
+        "design": "screening study"
       },
       "source_chunk_ids": [
         "7a919a32042364e6b79be8c0272ae5d1"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "Nielsen, N.D., Sandager, M., Stafford, G.I., Van Staden, J., J\u00e4ger, A.K., 2003. Screening of indigenous plants from South Africa for affinity to the serotonin reuptake transport protein.",
+      "verified": true
     },
     {
-      "id": "ent_152",
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vitro screening",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "confidence": 0.8,
+      "evidence": "Screening of indigenous plants from South Africa",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "indigenous plants from South Africa",
+      "attributes": {
+        "rank": "multiple"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "confidence": 0.9,
+      "evidence": "indigenous plants from South Africa",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "serotonin reuptake transport protein",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "confidence": 0.95,
+      "evidence": "serotonin reuptake transport protein",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Sandager et al., 2005",
+      "attributes": {
+        "year": 2005,
+        "design": "pharmacological study"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "confidence": 0.85,
+      "evidence": "Sandager, M., Nielsen, N.D., Stafford, G.I., Van Staden, J., J\u00e4ger, A.K., 2005. Alkaloids from Boophane disticha with affinity to the serotonin transporter in rat brain.",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "in vitro/in vivo study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "confidence": 0.8,
+      "evidence": "Alkaloids from Boophane disticha with affinity to the serotonin transporter",
+      "verified": true
+    },
+    {
+      "id": "E7",
       "type": "Taxon",
       "name": "Boophane disticha",
       "attributes": {
-        "context": "Alkaloids from Boophane disticha"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "7a919a32042364e6b79be8c0272ae5d1"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Boophane disticha",
+      "verified": true
     },
     {
-      "id": "ent_153",
-      "type": "PharmEffect",
-      "name": "affinity to the serotonin transporter",
+      "id": "E8",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "confidence": 0.9,
+      "evidence": "Alkaloids from Boophane disticha",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Target",
+      "name": "serotonin transporter",
       "attributes": {
-        "context": "with affinity to the serotonin transporter in rat brain"
+        "target_type": "transporter"
       },
       "source_chunk_ids": [
         "7a919a32042364e6b79be8c0272ae5d1"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "serotonin transporter in rat brain",
+      "verified": true
     },
     {
-      "id": "ent_154",
-      "type": "Taxon",
-      "name": "Ruta",
+      "id": "E10",
+      "type": "Study",
+      "name": "Hutchings and Van Staden, 1994",
       "attributes": {
-        "context": "Rue (Ruta L., Rutaceae) in traditional Spain"
+        "year": 1994,
+        "design": "ethnobotanical survey"
       },
       "source_chunk_ids": [
         "7a919a32042364e6b79be8c0272ae5d1"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "Hutchings, A., Van Staden, J., 1994. Plants used for stress-related ailments in traditional Zulu, Xhosa and Sotho medicine.",
+      "verified": true
     },
     {
-      "id": "ent_155",
-      "type": "Indication",
-      "name": "degenerative diseases of the central nervous system",
+      "id": "E11",
+      "type": "Evidence",
+      "name": "ethnobotanical survey",
       "attributes": {
-        "context": "in degenerative diseases of the central nervous system"
+        "evidence_level": 3
       },
       "source_chunk_ids": [
         "7a919a32042364e6b79be8c0272ae5d1"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Plants used for stress-related ailments in traditional Zulu, Xhosa and Sotho medicine",
+      "verified": true
     },
     {
-      "id": "ent_156",
-      "type": "PharmEffect",
+      "id": "E12",
+      "type": "Culture",
+      "name": "Zulu, Xhosa, Sotho",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "confidence": 0.9,
+      "evidence": "traditional Zulu, Xhosa and Sotho medicine",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Condition",
+      "name": "stress-related ailments",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "confidence": 0.85,
+      "evidence": "stress-related ailments",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Study",
+      "name": "Sobiecki, 2002",
+      "attributes": {
+        "year": 2002,
+        "design": "ethnobotanical inventory"
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "confidence": 0.85,
+      "evidence": "Sobiecki, J.F., 2002. A preliminary inventory of plants used for psychoactive purposes in southern Africa healing traditions.",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Evidence",
+      "name": "ethnobotanical inventory",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "confidence": 0.8,
+      "evidence": "plants used for psychoactive purposes in southern Africa healing traditions",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Culture",
+      "name": "southern Africa healing traditions",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "confidence": 0.85,
+      "evidence": "southern Africa healing traditions",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "TraditionalUse",
       "name": "psychoactive purposes",
-      "attributes": {
-        "context": "plants used for psychoactive purposes"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "7a919a32042364e6b79be8c0272ae5d1"
-      ]
-    },
-    {
-      "id": "ent_157",
-      "type": "Compound",
-      "name": "psoralens",
-      "attributes": {
-        "context": "photobiology of psoralens"
-      },
-      "source_chunk_ids": [
-        "7a919a32042364e6b79be8c0272ae5d1"
-      ]
-    },
-    {
-      "id": "ent_158",
-      "type": "Indication",
-      "name": "Mental Health and Disease",
-      "attributes": {
-        "context": "Mental Health and Disease in Africa"
-      },
-      "source_chunk_ids": [
-        "7a919a32042364e6b79be8c0272ae5d1"
-      ]
-    },
-    {
-      "id": "ent_159",
-      "type": "Compound",
-      "name": "Eugenol",
-      "attributes": {
-        "context": "Eugenol and its structural analogs"
-      },
-      "source_chunk_ids": [
-        "7a919a32042364e6b79be8c0272ae5d1"
-      ]
-    },
-    {
-      "id": "ent_160",
-      "type": "PharmEffect",
-      "name": "inhibit monoamine oxidase A",
-      "attributes": {
-        "context": "analogs inhibit monoamine oxidase A"
-      },
-      "source_chunk_ids": [
-        "7a919a32042364e6b79be8c0272ae5d1"
-      ]
-    },
-    {
-      "id": "ent_161",
-      "type": "PharmEffect",
-      "name": "antidepressant-like activity",
-      "attributes": {
-        "context": "exhibit antidepressant-like activity"
-      },
-      "source_chunk_ids": [
-        "7a919a32042364e6b79be8c0272ae5d1"
-      ]
-    },
-    {
-      "id": "ent_162",
-      "type": "Indication",
-      "name": "mental health",
-      "attributes": {
-        "context": "potentially useful in mental health"
-      },
-      "source_chunk_ids": [
-        "7a919a32042364e6b79be8c0272ae5d1"
-      ]
-    },
-    {
-      "id": "ent_163",
-      "type": "PharmEffect",
-      "name": "MAO inhibitors",
-      "attributes": {
-        "context": "pharmacology of MAO inhibitors"
-      },
-      "source_chunk_ids": [
-        "7a919a32042364e6b79be8c0272ae5d1"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "plants used for psychoactive purposes",
+      "verified": true
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:03.772602+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Traditional health care is utilized",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "treatment for mental health problems",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E13",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "MAO-B inhibitors are employed in Parkinson's",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E14",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "MAO-B inhibitors are employed in Alzheimer's",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "HAS_PART",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "ethyl acetate leaf extract",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "ACTS_ON",
+      "source_entity_id": "E6",
+      "target_entity_id": "E11",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 5,
+          "unit": "ug/ml",
+          "measurement_type": "IC50",
+          "notes": "ethyl acetate leaf extract"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "IC_{50} 5\\pm 1 \\mug/ml",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "ACTS_ON",
+      "source_entity_id": "E7",
+      "target_entity_id": "E11",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 3,
+          "unit": "ug/ml",
+          "measurement_type": "IC50",
+          "notes": "petroleum ether extract"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "IC_{50} 3\\pm 1 \\mug/ml",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "ACTS_ON",
+      "source_entity_id": "E6",
+      "target_entity_id": "E12",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 7,
+          "unit": "ug/ml",
+          "measurement_type": "IC50",
+          "notes": "ethyl acetate leaf extract"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "IC_{50} 7\\pm 6 \\mug/ml",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "ACTS_ON",
+      "source_entity_id": "E7",
+      "target_entity_id": "E12",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 3,
+          "unit": "ug/ml",
+          "measurement_type": "IC50",
+          "notes": "petroleum ether extract"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "IC_{50} 3\\pm 1 \\mug/ml",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E15",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "MAO inhibitory activity",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E15",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "MAO inhibitory activity",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E16",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "specific MAO-B inhibition",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E16",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "specific MAO-B inhibition",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "PRODUCES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E16",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "exhibited good MAO-B inhibition",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "PRODUCES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E16",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "exhibited good MAO-B inhibition",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "PRODUCES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E16",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "exhibited good MAO-B inhibition",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R17",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E17",
+      "target_entity_id": "E18",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "photometric peroxidase linked assay",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R18",
+      "type": "STUDIES",
+      "source_entity_id": "E17",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Ruta graveolens exhibited the best MAO inhibitory activity",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R19",
+      "type": "STUDIES",
+      "source_entity_id": "E17",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "Schotia brachypetala exhibited good MAO-B inhibition",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R20",
+      "type": "STUDIES",
+      "source_entity_id": "E17",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "Mentha aquatica exhibited good MAO-B inhibition",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R21",
+      "type": "STUDIES",
+      "source_entity_id": "E17",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "Gasteria croucheri exhibited good MAO-B inhibition",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R22",
+      "type": "REPORTS",
+      "source_entity_id": "E17",
+      "target_entity_id": "E15",
+      "attributes": {
+        "outcome": "positive"
+      },
+      "confidence": 0.85,
+      "evidence": "MAO inhibitory activity",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R23",
+      "type": "REPORTS",
+      "source_entity_id": "E17",
+      "target_entity_id": "E16",
+      "attributes": {
+        "outcome": "positive"
+      },
+      "confidence": 0.85,
+      "evidence": "MAO-B inhibition activity",
+      "source_chunk_ids": [
+        "1ce59b61a2524540c2ea323caeea5532"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "traditional healers use herbal preparations",
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "herbal preparations administered",
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "treatment for mental health problems",
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "mental health problems include anxiety",
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "mental health problems include fits",
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "mental health problems include convulsions",
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "SUGGESTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E9",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "mental health problems include epilepsy",
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "SUGGESTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E10",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "mental health problems include hysteria",
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "SUGGESTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E11",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "mental health problems include nightmares",
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "SUGGESTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E12",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "mental health problems include mental disturbances",
+      "source_chunk_ids": [
+        "8e12043f8981b7647a5ef0199499f137"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.9,
+      "evidence": "Datura ferox L.",
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "plant_part"
+      },
+      "confidence": 0.85,
+      "evidence": "Leaves used",
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "sedate hysterical and psychotic patients",
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "treat insomnia",
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.9,
+      "evidence": "Datura stramonium L.",
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "plant_part"
+      },
+      "confidence": 0.85,
+      "evidence": "Leaves used",
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "sedate hysterical and psychotic patients",
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "INVOLVES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "treat insomnia",
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E11",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "ethnobotanical information",
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Datura ferox L.",
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Datura stramonium L.",
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "REPORTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "reports"
+      },
+      "confidence": 0.75,
+      "evidence": "sedate hysterical and psychotic patients",
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "REPORTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "reports"
+      },
+      "confidence": 0.75,
+      "evidence": "treat insomnia",
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "REPORTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "reports"
+      },
+      "confidence": 0.75,
+      "evidence": "sedate hysterical and psychotic patients",
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "REPORTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E10",
+      "attributes": {
+        "outcome": "reports"
+      },
+      "confidence": 0.75,
+      "evidence": "treat insomnia",
+      "source_chunk_ids": [
+        "d770055bd56d475ed1a67bbf8fd561c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.85,
+      "evidence": "MAO-B inhibitor",
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "MAO-B inhibitors would increase the basal dopamine levels",
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TREATS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.7,
+      "evidence": "treatment of anxiety disorders",
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TREATS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.7,
+      "evidence": "treatment of ... Alzheimer's disease",
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "MAO-B inhibition also has neuroprotective effects",
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Inhibition of MAO-A ... increasing the monoaminergic activity",
+      "source_chunk_ids": [
+        "0180fa9f5ee29a88f023739457009ffa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "MAO-A inhibitory activity of Acorus gramineus",
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "MAO-A inhibitory activity of Rhazya stricta",
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "MAO-A inhibitory activity of Zanthoxylum schinifolium",
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "MAO-A inhibitory activity of Kaempferia galangal",
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "MAO-A inhibitory activity of Arisaema amurense",
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "ACTS_ON",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "MAO-A inhibitory activity of Lilium brownie",
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "ACTS_ON",
+      "source_entity_id": "E8",
+      "target_entity_id": "E1",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "MAO-A inhibitory activity of Lycium chinense",
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "ACTS_ON",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "MAO-A inhibitory activity of Gentiana lutea",
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "ACTS_ON",
+      "source_entity_id": "E10",
+      "target_entity_id": "E1",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "MAO-A inhibitory activity of Uncaria rhynchophylla",
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "MAO-A inhibitory activity of Acorus gramineus",
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "MAO-A inhibitory activity of Rhazya stricta",
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "MAO-A inhibitory activity of Zanthoxylum schinifolium",
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "MAO-A inhibitory activity of Kaempferia galangal",
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "MAO-A inhibitory activity of Arisaema amurense",
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "MAO-A inhibitory activity of Lilium brownie",
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "PRODUCES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "MAO-A inhibitory activity of Lycium chinense",
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R17",
+      "type": "PRODUCES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "MAO-A inhibitory activity of Gentiana lutea",
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R18",
+      "type": "PRODUCES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "MAO-A inhibitory activity of Uncaria rhynchophylla",
+      "source_chunk_ids": [
+        "7126246c08bfda49f1ad310822b48239"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "used traditionally in southern Africa",
+      "source_chunk_ids": [
+        "900cf9e316b1f3df23a827ed56cd1cdb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "southern African plants",
+      "source_chunk_ids": [
+        "900cf9e316b1f3df23a827ed56cd1cdb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "treat mental illness",
+      "source_chunk_ids": [
+        "900cf9e316b1f3df23a827ed56cd1cdb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "treat mental illness",
+      "source_chunk_ids": [
+        "900cf9e316b1f3df23a827ed56cd1cdb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "psychoactive purposes",
+      "source_chunk_ids": [
+        "900cf9e316b1f3df23a827ed56cd1cdb"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Sobiecki, 2002",
+      "source_chunk_ids": [
+        "900cf9e316b1f3df23a827ed56cd1cdb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Over 300 species are reported",
+      "source_chunk_ids": [
+        "900cf9e316b1f3df23a827ed56cd1cdb"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "psychoactive purposes",
+      "source_chunk_ids": [
+        "900cf9e316b1f3df23a827ed56cd1cdb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Plants were collected in KwaZulu-Natal",
+      "source_chunk_ids": [
+        "8c48e0c033aff4984a23877ec3a9e35c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.85,
+      "evidence": "plants used to treat mental diseases",
+      "source_chunk_ids": [
+        "8c48e0c033aff4984a23877ec3a9e35c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "treat mental diseases",
+      "source_chunk_ids": [
+        "8c48e0c033aff4984a23877ec3a9e35c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "preparation"
+      },
+      "confidence": 0.7,
+      "evidence": "dried at 50 \u00b0C",
+      "source_chunk_ids": [
+        "8c48e0c033aff4984a23877ec3a9e35c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Plant material was dried",
+      "source_chunk_ids": [
+        "8c48e0c033aff4984a23877ec3a9e35c"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "database on plants used to treat mental diseases",
+      "source_chunk_ids": [
+        "8c48e0c033aff4984a23877ec3a9e35c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "database on plants used to treat mental diseases",
+      "source_chunk_ids": [
+        "8c48e0c033aff4984a23877ec3a9e35c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "extracted with solvent to produce extracts",
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "filtered extracts were produced",
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "drying produced residues",
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "re-dissolved residues to prepare extracts",
+      "source_chunk_ids": [
+        "36523bc6747e0718af4039f0710ff64b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Datura stramonium Seeds",
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "measurement": {
+          "value": 4136,
+          "unit": "\u00b5g/ml",
+          "measurement_type": "IC50",
+          "notes": "non-selective MAO inhibition"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Water 4136\u00b12195",
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 4136,
+          "unit": "\u00b5g/ml",
+          "measurement_type": "IC50",
+          "notes": "non-selective MAO inhibition"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "IC50 4136\u00b12195",
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_PART",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Rhoicissus tridentata Leaf",
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {
+        "measurement": {
+          "value": 595,
+          "unit": "\u00b5g/ml",
+          "measurement_type": "IC50",
+          "notes": "non-selective MAO inhibition"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Water 595\u00b1915",
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "ACTS_ON",
+      "source_entity_id": "E8",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 595,
+          "unit": "\u00b5g/ml",
+          "measurement_type": "IC50",
+          "notes": "non-selective MAO inhibition"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "IC50 595\u00b1915",
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {
+        "measurement": {
+          "value": 864,
+          "unit": "\u00b5g/ml",
+          "measurement_type": "IC50",
+          "notes": "non-selective MAO inhibition"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Ethanol 864\u00b11000",
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "ACTS_ON",
+      "source_entity_id": "E9",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 864,
+          "unit": "\u00b5g/ml",
+          "measurement_type": "IC50",
+          "notes": "non-selective MAO inhibition"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "IC50 864\u00b11000",
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "ACTS_ON",
+      "source_entity_id": "E10",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 31,
+          "unit": "nM",
+          "measurement_type": "IC50",
+          "notes": "selective MAO-A inhibitor"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "Clorgyline 31\u00b110 nM",
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "ACTS_ON",
+      "source_entity_id": "E11",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 111,
+          "unit": "nM",
+          "measurement_type": "IC50",
+          "notes": "selective MAO-B inhibitor"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "Selegiline 111\u00b168 nM",
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "ACTS_ON",
+      "source_entity_id": "E12",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 39,
+          "unit": "nM",
+          "measurement_type": "IC50",
+          "notes": "1:1 combination"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Clorgyline + Selegiline 39\u00b12 nM",
+      "source_chunk_ids": [
+        "97c41a7bed884917ad1e434a67c067c6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "in vitro assay",
+      "source_chunk_ids": [
+        "79e411992aec37823529e1ba1662995d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Plant extracts were serially diluted",
+      "source_chunk_ids": [
+        "79e411992aec37823529e1ba1662995d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "tested"
+      },
+      "confidence": 0.75,
+      "evidence": "test for specific MAO-B activity",
+      "source_chunk_ids": [
+        "79e411992aec37823529e1ba1662995d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "blocked"
+      },
+      "confidence": 0.7,
+      "evidence": "total block MAO-A activity",
+      "source_chunk_ids": [
+        "79e411992aec37823529e1ba1662995d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 50,
+          "unit": "uM",
+          "measurement_type": "concentration",
+          "notes": "pre-incubation concentration"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "50 \u00b5M clorgyline (selective MAO-A-I)",
+      "source_chunk_ids": [
+        "79e411992aec37823529e1ba1662995d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "MAO inhibitor bioassay",
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "target"
+      },
+      "confidence": 0.75,
+      "evidence": "MAO inhibitor bioassay",
+      "source_chunk_ids": [
+        "8d741eb82bbb87f56f46b1b9598b7cbe"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Ruta graveolens leaf material",
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 5,
+          "unit": "\u03bcg/ml",
+          "measurement_type": "IC50",
+          "notes": "standard error \u00b11 \u03bcg/ml"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "ethyl acetate extract=IC50 5 \u00b1 1 \u03bcg/ml",
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 3,
+          "unit": "\u03bcg/ml",
+          "measurement_type": "IC50",
+          "notes": "standard error \u00b11 \u03bcg/ml"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "petroleum ether extract=3 \u00b1 1 \u03bcg/ml",
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 7,
+          "unit": "\u03bcg/ml",
+          "measurement_type": "IC50",
+          "notes": "standard error \u00b16 \u03bcg/ml"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "ethyl acetate extract=IC50 7. \u00b1 6 \u03bcg/ml",
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 3,
+          "unit": "\u03bcg/ml",
+          "measurement_type": "IC50",
+          "notes": "standard error \u00b11 \u03bcg/ml"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "petroleum ether extract=3 \u00b1 1 \u03bcg/ml",
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "exhibited the best MAO inhibitory activity",
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "exhibited the best MAO inhibitory activity",
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "specific MAO-B inhibition",
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "specific MAO-B inhibition",
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E11",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "exhibited good MAO-B inhibition activity",
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E11",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "exhibited good MAO-B inhibition activity",
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R12",
+      "type": "PRODUCES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E11",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "exhibited good MAO-B inhibition activity",
+      "source_chunk_ids": [
+        "81eb9a7e3fc824aec92732b0da6d1e80"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "contains like furocoumarins",
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "contains like furoquinolines",
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "contains like acridone alkaloids",
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "methanol extracts of R. graveolens",
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "petroleum ether extracts of R. graveolens",
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "ethyl acetate extracts of R. graveolens",
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "water\u2013methanol extracts of R. graveolens",
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "extracts possess antimicrobial activities",
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "extracts possess cytotoxic activities",
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "extracts possess antimicrobial activities",
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "extracts possess cytotoxic activities",
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "extracts possess antimicrobial activities",
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "extracts possess cytotoxic activities",
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "PRODUCES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "extracts possess antimicrobial activities",
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "PRODUCES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "extracts possess cytotoxic activities",
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Amongst furocoumarins, bergapten",
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R17",
+      "type": "TREATS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "treatment of various skin diseases such as vitiligo",
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R18",
+      "type": "TREATS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E13",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "treatment of various skin diseases such as psoriasis",
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R19",
+      "type": "CONTAINS",
+      "source_entity_id": "E15",
+      "target_entity_id": "E16",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "M. aquatica is known to contain flavones",
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R20",
+      "type": "CONTAINS",
+      "source_entity_id": "E15",
+      "target_entity_id": "E17",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "M. aquatica is known to contain flavanone derivatives",
+      "source_chunk_ids": [
+        "bcbe755b3276d8926cae44cee624cca0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "substrate for"
+      },
+      "confidence": 0.85,
+      "evidence": "substrate for both MAO-A",
+      "source_chunk_ids": [
+        "113ff2a1f0ba7510578993bb43a87568"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "substrate for"
+      },
+      "confidence": 0.85,
+      "evidence": "substrate for both MAO-B",
+      "source_chunk_ids": [
+        "113ff2a1f0ba7510578993bb43a87568"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.7,
+      "evidence": "inhibiting both these compounds",
+      "source_chunk_ids": [
+        "113ff2a1f0ba7510578993bb43a87568"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.7,
+      "evidence": "inhibiting both these compounds",
+      "source_chunk_ids": [
+        "113ff2a1f0ba7510578993bb43a87568"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.7,
+      "evidence": "inhibiting both these compounds",
+      "source_chunk_ids": [
+        "113ff2a1f0ba7510578993bb43a87568"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "ACTS_ON",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.7,
+      "evidence": "inhibiting both these compounds",
+      "source_chunk_ids": [
+        "113ff2a1f0ba7510578993bb43a87568"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CAUSES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "context": "pharmacological",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "precipitate a dangerous hypertensive crisis",
+      "source_chunk_ids": [
+        "113ff2a1f0ba7510578993bb43a87568"
+      ],
+      "supporting_study_ids": [
+        "E8"
+      ],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "CAUSES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "context": "pharmacological",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "precipitate a dangerous hypertensive crisis",
+      "source_chunk_ids": [
+        "113ff2a1f0ba7510578993bb43a87568"
+      ],
+      "supporting_study_ids": [
+        "E8"
+      ],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "CAUSES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "pharmacological",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "\u2018cheese effect\u2019",
+      "source_chunk_ids": [
+        "113ff2a1f0ba7510578993bb43a87568"
+      ],
+      "supporting_study_ids": [
+        "E8"
+      ],
+      "verified": false
+    },
+    {
+      "id": "R10",
+      "type": "CAUSES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "pharmacological",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "\u2018cheese effect\u2019",
+      "source_chunk_ids": [
+        "113ff2a1f0ba7510578993bb43a87568"
+      ],
+      "supporting_study_ids": [
+        "E8"
+      ],
+      "verified": false
+    },
+    {
+      "id": "R11",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "(Yamada and Yasuhara, 2004)",
+      "source_chunk_ids": [
+        "113ff2a1f0ba7510578993bb43a87568"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": null,
+          "unit": "mg/ml",
+          "measurement_type": "IC50",
+          "notes": "estimated from Figure 2 for MAO activity"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "ethyl acetate extracts show MAO activity decrease",
+      "source_chunk_ids": [
+        "7757aaaabf8ad612ae26523ecb8b449d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": null,
+          "unit": "mg/ml",
+          "measurement_type": "IC50",
+          "notes": "estimated from Figure 2 for MAO-B activity"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "ethyl acetate extracts show MAO-B activity decrease",
+      "source_chunk_ids": [
+        "7757aaaabf8ad612ae26523ecb8b449d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": null,
+          "unit": "mg/ml",
+          "measurement_type": "IC50",
+          "notes": "estimated from Figure 2 for MAO activity"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "petroleum ether extracts show MAO activity decrease",
+      "source_chunk_ids": [
+        "7757aaaabf8ad612ae26523ecb8b449d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": null,
+          "unit": "mg/ml",
+          "measurement_type": "IC50",
+          "notes": "estimated from Figure 2 for MAO-B activity"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "petroleum ether extracts show MAO-B activity decrease",
+      "source_chunk_ids": [
+        "7757aaaabf8ad612ae26523ecb8b449d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "ethyl acetate extracts decrease MAO activity",
+      "source_chunk_ids": [
+        "7757aaaabf8ad612ae26523ecb8b449d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "ethyl acetate extracts decrease MAO-B activity",
+      "source_chunk_ids": [
+        "7757aaaabf8ad612ae26523ecb8b449d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "petroleum ether extracts decrease MAO activity",
+      "source_chunk_ids": [
+        "7757aaaabf8ad612ae26523ecb8b449d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "petroleum ether extracts decrease MAO-B activity",
+      "source_chunk_ids": [
+        "7757aaaabf8ad612ae26523ecb8b449d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "ethyl acetate extracts of R. graveolens",
+      "source_chunk_ids": [
+        "f40bfc848a38803c2f7ca9f0c5c92855"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "petroleum ether extracts of R. graveolens",
+      "source_chunk_ids": [
+        "f40bfc848a38803c2f7ca9f0c5c92855"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 5,
+          "unit": "mg/ml",
+          "measurement_type": "IC50",
+          "notes": "IC50 = 5 \u00b1 1 mg/ml for MAO activity"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "IC50 = 5 \u00b1 1 mg/ml for MAO activity",
+      "source_chunk_ids": [
+        "f40bfc848a38803c2f7ca9f0c5c92855"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 3,
+          "unit": "mg/ml",
+          "measurement_type": "IC50",
+          "notes": "IC50 = 3 \u00b1 1 mg/ml for MAO activity"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "IC50 = 3 \u00b1 1 mg/ml for MAO activity",
+      "source_chunk_ids": [
+        "f40bfc848a38803c2f7ca9f0c5c92855"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 7,
+          "unit": "mg/ml",
+          "measurement_type": "IC50",
+          "notes": "IC50 = 7 \u00b1 6 mg/ml for MAO-B activity"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "IC50 = 7 \u00b1 6 mg/ml for MAO-B activity",
+      "source_chunk_ids": [
+        "f40bfc848a38803c2f7ca9f0c5c92855"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 3,
+          "unit": "mg/ml",
+          "measurement_type": "IC50",
+          "notes": "IC50 = 3 \u00b1 1 mg/ml for MAO-B activity"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "IC50 = 3 \u00b1 1 mg/ml for MAO-B activity",
+      "source_chunk_ids": [
+        "f40bfc848a38803c2f7ca9f0c5c92855"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Screening of indigenous plants from South Africa",
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "indigenous plants from South Africa",
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "affinity"
+      },
+      "confidence": 0.8,
+      "evidence": "affinity to the serotonin reuptake transport protein",
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Alkaloids from Boophane disticha with affinity to the serotonin transporter",
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.95,
+      "evidence": "Boophane disticha",
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "contains"
+      },
+      "confidence": 0.9,
+      "evidence": "Alkaloids from Boophane disticha",
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "affinity"
+      },
+      "confidence": 0.85,
+      "evidence": "affinity to the serotonin transporter in rat brain",
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E10",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Plants used for stress-related ailments in traditional Zulu, Xhosa and Sotho medicine",
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "STUDIES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E12",
+      "attributes": {
+        "role": "culture"
+      },
+      "confidence": 0.9,
+      "evidence": "traditional Zulu, Xhosa and Sotho medicine",
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E13",
+      "attributes": {
+        "outcome": "used for"
+      },
+      "confidence": 0.85,
+      "evidence": "Plants used for stress-related ailments",
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E14",
+      "target_entity_id": "E15",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "plants used for psychoactive purposes in southern Africa healing traditions",
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "STUDIES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E16",
+      "attributes": {
+        "role": "culture"
+      },
+      "confidence": 0.85,
+      "evidence": "southern Africa healing traditions",
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "REPORTS",
+      "source_entity_id": "E14",
+      "target_entity_id": "E17",
+      "attributes": {
+        "outcome": "used for"
+      },
+      "confidence": 0.9,
+      "evidence": "plants used for psychoactive purposes",
+      "source_chunk_ids": [
+        "7a919a32042364e6b79be8c0272ae5d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

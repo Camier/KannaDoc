@@ -1,12 +1,3636 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "deb6d1258cd8fa01876f56d9f7f3651c11495b6bbb40637d05760f72101a3361",
-  "extracted_at": "2026-02-01T08:56:30.834271+00:00",
-  "extractor": "legacy-migration",
-  "entities": [],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.081023+00:00",
-    "original_file": "entities.json"
-  }
+  "entities": [
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Antidepressant potential of Mesembryanthemum cordifolium roots assisted by metabolomic analysis and virtual screening",
+      "attributes": {
+        "year": 2020,
+        "doi": "10.1080/14786419.2020.1788019"
+      },
+      "source_chunk_ids": [
+        "a59d2abb081b1e1a2f41a7e7443b0f6d"
+      ],
+      "confidence": 0.95,
+      "evidence": "Antidepressant potential of Mesembryanthemum cordifolium roots",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "metabolomic analysis and virtual screening",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "a59d2abb081b1e1a2f41a7e7443b0f6d"
+      ],
+      "confidence": 0.85,
+      "evidence": "assisted by metabolomic analysis and virtual screening",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Mesembryanthemum cordifolium",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "a59d2abb081b1e1a2f41a7e7443b0f6d"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mesembryanthemum cordifolium",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a59d2abb081b1e1a2f41a7e7443b0f6d"
+      ],
+      "confidence": 0.8,
+      "evidence": "roots",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "a59d2abb081b1e1a2f41a7e7443b0f6d"
+      ],
+      "confidence": 0.85,
+      "evidence": "Antidepressant potential",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "583d707c1775e4fea0218d0f2989e4dc"
+      ],
+      "confidence": 0.95,
+      "evidence": "Depression is a common mental disturbance",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "mesemberine alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "583d707c1775e4fea0218d0f2989e4dc"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mesemberine alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Mesembryanthemum cordifolium",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "583d707c1775e4fea0218d0f2989e4dc"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mesembryanthemum cordifolium L.f.",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "583d707c1775e4fea0218d0f2989e4dc"
+      ],
+      "confidence": 0.85,
+      "evidence": "roots",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "alkaloidal fraction",
+      "attributes": {},
+      "source_chunk_ids": [
+        "583d707c1775e4fea0218d0f2989e4dc"
+      ],
+      "confidence": 0.85,
+      "evidence": "alkaloidal fraction",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "study evaluating antidepressant activity",
+      "attributes": {
+        "design": "experimental study"
+      },
+      "source_chunk_ids": [
+        "583d707c1775e4fea0218d0f2989e4dc"
+      ],
+      "confidence": 0.8,
+      "evidence": "objective of this study is to evaluate",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "in vitro and in silico",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "583d707c1775e4fea0218d0f2989e4dc"
+      ],
+      "confidence": 0.75,
+      "evidence": "metabolomic analysis and in silico",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "antidepressant activity",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "583d707c1775e4fea0218d0f2989e4dc"
+      ],
+      "confidence": 0.9,
+      "evidence": "antidepressant activity",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Compound",
+      "name": "mesembrane",
+      "attributes": {},
+      "source_chunk_ids": [
+        "583d707c1775e4fea0218d0f2989e4dc"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrane (5)",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Target",
+      "name": "SERT",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "583d707c1775e4fea0218d0f2989e4dc"
+      ],
+      "confidence": 0.85,
+      "evidence": "SERT protein",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Mesembryanthemum cordifolium",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "9964e2b0e27d8b95f34e1b14f4cc32fd"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembryanthemum cordifolium roots",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9964e2b0e27d8b95f34e1b14f4cc32fd"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mesembryanthemum cordifolium roots",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "antidepressant activity",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "9964e2b0e27d8b95f34e1b14f4cc32fd"
+      ],
+      "confidence": 0.85,
+      "evidence": "Antidepressant activity",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9964e2b0e27d8b95f34e1b14f4cc32fd"
+      ],
+      "confidence": 0.9,
+      "evidence": "9 Alkaloids Identified",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "SERT",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "9964e2b0e27d8b95f34e1b14f4cc32fd"
+      ],
+      "confidence": 0.9,
+      "evidence": "SERT 0.035",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "NET",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "9964e2b0e27d8b95f34e1b14f4cc32fd"
+      ],
+      "confidence": 0.85,
+      "evidence": "NET 5.9",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "DAT",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "9964e2b0e27d8b95f34e1b14f4cc32fd"
+      ],
+      "confidence": 0.85,
+      "evidence": "DAT 9.7",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "9964e2b0e27d8b95f34e1b14f4cc32fd"
+      ],
+      "confidence": 0.8,
+      "evidence": "IC50 values",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "depressive disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "62de7aafdeb2ab6de41e89288b2e7b76"
+      ],
+      "confidence": 0.9,
+      "evidence": "depressive disorders",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Mesembryanthemum cordifolium",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "62de7aafdeb2ab6de41e89288b2e7b76"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembryanthemum cordifolium L.f",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "62de7aafdeb2ab6de41e89288b2e7b76"
+      ],
+      "confidence": 0.9,
+      "evidence": "roots of Mesembryanthemum cordifolium",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "alkaloidal fraction",
+      "attributes": {},
+      "source_chunk_ids": [
+        "62de7aafdeb2ab6de41e89288b2e7b76"
+      ],
+      "confidence": 0.85,
+      "evidence": "alkaloidal fraction of the roots",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "CompoundClass",
+      "name": "mesembrine alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "62de7aafdeb2ab6de41e89288b2e7b76"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "62de7aafdeb2ab6de41e89288b2e7b76"
+      ],
+      "confidence": 0.8,
+      "evidence": "mesembrine alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "serotonin reuptake",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "62de7aafdeb2ab6de41e89288b2e7b76"
+      ],
+      "confidence": 0.85,
+      "evidence": "serotonin reuptake inhibitors",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "inhibition of serotonin reuptake",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "62de7aafdeb2ab6de41e89288b2e7b76"
+      ],
+      "confidence": 0.8,
+      "evidence": "serotonin reuptake inhibitors",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "this study",
+      "attributes": {
+        "design": "experimental study"
+      },
+      "source_chunk_ids": [
+        "62de7aafdeb2ab6de41e89288b2e7b76"
+      ],
+      "confidence": 0.9,
+      "evidence": "the aim of this study",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Evidence",
+      "name": "in vitro and in silico analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "62de7aafdeb2ab6de41e89288b2e7b76"
+      ],
+      "confidence": 0.8,
+      "evidence": "HR-LC-ESI-MS analysis and in silico screening",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Mesembryanthemum cordifolium",
+      "attributes": {
+        "rank": "species",
+        "synonym": "A. cordifolia"
+      },
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "confidence": 0.9,
+      "evidence": "M. cordifolium (A. cordifolia)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "alkaloidal fraction",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "confidence": 0.85,
+      "evidence": "alkaloidal fraction of M. cordifolium",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "sceletenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "confidence": 0.9,
+      "evidence": "sceletenone (4)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrane",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrane (5)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "dihydro-joubertiamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "confidence": 0.9,
+      "evidence": "dihydro-joubertiamine (6)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "O-methyl-joubertiamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "confidence": 0.9,
+      "evidence": "O-methyl-joubertiamine (7)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "O-methyl dihydrojoubertiamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "confidence": 0.9,
+      "evidence": "O-methyl dihydrojoubertiamine (8)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Compound",
+      "name": "touruosamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "confidence": 0.9,
+      "evidence": "touruosamine (9)",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Compound",
+      "name": "hordenine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "confidence": 0.9,
+      "evidence": "hordenine (1)",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Compound",
+      "name": "4,5-dihydro-4'-O-methylsceletenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "confidence": 0.9,
+      "evidence": "4,5-dihydro-4'-O-methylsceletenone (2)",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Compound",
+      "name": "4'-O-methylsceletenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "confidence": 0.9,
+      "evidence": "4'-O-methylsceletenone (3)",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "confidence": 0.95,
+      "evidence": "nine alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "M. cordifolium",
+      "attributes": {
+        "rank": "species",
+        "synonym": "A. cordifolia"
+      },
+      "source_chunk_ids": [
+        "330c97d8ec28ee03b2f0fc8a5d50204f"
+      ],
+      "confidence": 0.9,
+      "evidence": "M. cordifolium (A. cordifolia)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "alkaloidal fraction",
+      "attributes": {},
+      "source_chunk_ids": [
+        "330c97d8ec28ee03b2f0fc8a5d50204f"
+      ],
+      "confidence": 0.85,
+      "evidence": "alkaloidal fraction",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Dosage",
+      "name": "100 mg/kg",
+      "attributes": {
+        "amount": 100,
+        "unit": "mg/kg",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "330c97d8ec28ee03b2f0fc8a5d50204f"
+      ],
+      "confidence": 0.8,
+      "evidence": "100 mg/kg",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "FST study",
+      "attributes": {
+        "design": "animal study",
+        "test": "FST"
+      },
+      "source_chunk_ids": [
+        "330c97d8ec28ee03b2f0fc8a5d50204f"
+      ],
+      "confidence": 0.75,
+      "evidence": "studied by using the FST",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vivo",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "330c97d8ec28ee03b2f0fc8a5d50204f"
+      ],
+      "confidence": 0.7,
+      "evidence": "studied by using the FST",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "reduction in immobility period",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "330c97d8ec28ee03b2f0fc8a5d50204f"
+      ],
+      "confidence": 0.8,
+      "evidence": "significant reduction in the immobility period",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "elevation of struggling time",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "330c97d8ec28ee03b2f0fc8a5d50204f"
+      ],
+      "confidence": 0.8,
+      "evidence": "elevation of the struggling time",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "330c97d8ec28ee03b2f0fc8a5d50204f"
+      ],
+      "confidence": 0.85,
+      "evidence": "antidepressant effects",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Compound",
+      "name": "imipramine hydrochloride",
+      "attributes": {},
+      "source_chunk_ids": [
+        "330c97d8ec28ee03b2f0fc8a5d50204f"
+      ],
+      "confidence": 0.9,
+      "evidence": "imipramine hydrochloride\u00ae",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Dosage",
+      "name": "15 mg/kg",
+      "attributes": {
+        "amount": 15,
+        "unit": "mg/kg",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "330c97d8ec28ee03b2f0fc8a5d50204f"
+      ],
+      "confidence": 0.8,
+      "evidence": "15 mg/kg",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Study",
+      "name": "open field test study",
+      "attributes": {
+        "design": "animal study",
+        "test": "open field test"
+      },
+      "source_chunk_ids": [
+        "330c97d8ec28ee03b2f0fc8a5d50204f"
+      ],
+      "confidence": 0.75,
+      "evidence": "open field test was performed",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "Hordenine",
+      "attributes": {
+        "chemical_formula": "C10H15NO",
+        "exact_mass": 165.1154
+      },
+      "source_chunk_ids": [
+        "e9ee28d2d44440a2f390a48fc9215754"
+      ],
+      "confidence": 0.95,
+      "evidence": "Hordenine (1)Chemical Formula: C_{10}H_{15}NO",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "4,5-Dihydro-4'-O-methylsceletenone",
+      "attributes": {
+        "chemical_formula": "C16H21NO2",
+        "exact_mass": 259.1572
+      },
+      "source_chunk_ids": [
+        "e9ee28d2d44440a2f390a48fc9215754"
+      ],
+      "confidence": 0.95,
+      "evidence": "4,5-Dihydro-4'-O-methylsceletenone (2)Chemical Formula: C_{16}H_{21}NO_2",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "4'-O-Methylsceletenone",
+      "attributes": {
+        "chemical_formula": "C16H19NO2",
+        "exact_mass": 257.1416
+      },
+      "source_chunk_ids": [
+        "e9ee28d2d44440a2f390a48fc9215754"
+      ],
+      "confidence": 0.95,
+      "evidence": "4'-O-Methylsceletenone (3)Chemical Formula: C_{16}H_{19}NO_2",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "Sceletenone",
+      "attributes": {
+        "chemical_formula": "C15H17NO2",
+        "exact_mass": 243.1259
+      },
+      "source_chunk_ids": [
+        "e9ee28d2d44440a2f390a48fc9215754"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletenone (4)Chemical Formula: C_{15}H_{17}NO_2",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "Mesembrane",
+      "attributes": {
+        "chemical_formula": "C17H25NO2",
+        "exact_mass": 275.1885
+      },
+      "source_chunk_ids": [
+        "e9ee28d2d44440a2f390a48fc9215754"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrane (5)Chemical Formula: C_{17}H_{25}NO_2",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "Dihydro-joubertamine",
+      "attributes": {
+        "chemical_formula": "C16H23NO2",
+        "exact_mass": 261.1729
+      },
+      "source_chunk_ids": [
+        "e9ee28d2d44440a2f390a48fc9215754"
+      ],
+      "confidence": 0.95,
+      "evidence": "Dihydro-joubertamine (6)Chemical Formula: C_{16}H_{23}NO_2",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "O-Methyl-joubertamine",
+      "attributes": {
+        "chemical_formula": "C17H23NO2",
+        "exact_mass": 273.1729
+      },
+      "source_chunk_ids": [
+        "e9ee28d2d44440a2f390a48fc9215754"
+      ],
+      "confidence": 0.95,
+      "evidence": "O-Methyl-joubertamine (7)Chemical Formula: C_{17}H_{23}NO_2",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Compound",
+      "name": "O-Methyl-dihydro-joubertamine",
+      "attributes": {
+        "chemical_formula": "C17H25NO2",
+        "exact_mass": 275.1885
+      },
+      "source_chunk_ids": [
+        "e9ee28d2d44440a2f390a48fc9215754"
+      ],
+      "confidence": 0.95,
+      "evidence": "O-Methyl-dihydro-joubertamine (8)Chemical Formula: C_{17}H_{25}NO_2",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Compound",
+      "name": "Touruosamine",
+      "attributes": {
+        "chemical_formula": "C20H26N2O2",
+        "exact_mass": 326.1994
+      },
+      "source_chunk_ids": [
+        "e9ee28d2d44440a2f390a48fc9215754"
+      ],
+      "confidence": 0.95,
+      "evidence": "Touruosamine (9)Chemical Formula: C_{20}H_{26}N_2O_2",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e9ee28d2d44440a2f390a48fc9215754"
+      ],
+      "confidence": 0.7,
+      "evidence": "tetrahydroisoquinoline ring structures",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Gfeller et al. 2013",
+      "attributes": {
+        "year": 2013
+      },
+      "source_chunk_ids": [
+        "625dbffbc8785db0ec032a5c76dcb3f2"
+      ],
+      "confidence": 0.9,
+      "evidence": "Gfeller et al. 2013",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in silico prediction",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "625dbffbc8785db0ec032a5c76dcb3f2"
+      ],
+      "confidence": 0.85,
+      "evidence": "SwissTargetPrediction method",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "compound 5",
+      "attributes": {},
+      "source_chunk_ids": [
+        "625dbffbc8785db0ec032a5c76dcb3f2"
+      ],
+      "confidence": 0.95,
+      "evidence": "compound 5",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "NET",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "625dbffbc8785db0ec032a5c76dcb3f2"
+      ],
+      "confidence": 0.9,
+      "evidence": "norepinephrine (NET) transporters",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "SERT",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "625dbffbc8785db0ec032a5c76dcb3f2"
+      ],
+      "confidence": 0.9,
+      "evidence": "serotonin (SERT) transporters",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "DAT",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "625dbffbc8785db0ec032a5c76dcb3f2"
+      ],
+      "confidence": 0.9,
+      "evidence": "dopamine (DAT) transporters",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Zoete et al. 2016",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c069c14801f874bb683caee74ce1c2f7"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zoete et al. 2016",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Shao et al. 2011",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c069c14801f874bb683caee74ce1c2f7"
+      ],
+      "confidence": 0.9,
+      "evidence": "Shao et al. 2011",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "compound 5",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c069c14801f874bb683caee74ce1c2f7"
+      ],
+      "confidence": 0.95,
+      "evidence": "compound 5",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "compound 4f",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c069c14801f874bb683caee74ce1c2f7"
+      ],
+      "confidence": 0.95,
+      "evidence": "compound 4f",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "venlafaxine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c069c14801f874bb683caee74ce1c2f7"
+      ],
+      "confidence": 0.95,
+      "evidence": "venlafaxine",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "compound 2",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c069c14801f874bb683caee74ce1c2f7"
+      ],
+      "confidence": 0.8,
+      "evidence": "compound 2",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "compound 8",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c069c14801f874bb683caee74ce1c2f7"
+      ],
+      "confidence": 0.8,
+      "evidence": "compound 8",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Target",
+      "name": "SERT",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "c069c14801f874bb683caee74ce1c2f7"
+      ],
+      "confidence": 0.9,
+      "evidence": "SERT inhibition",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "antidepressant activity",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "c069c14801f874bb683caee74ce1c2f7"
+      ],
+      "confidence": 0.85,
+      "evidence": "antidepressant activity",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "c069c14801f874bb683caee74ce1c2f7"
+      ],
+      "confidence": 0.8,
+      "evidence": "antidepressant",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Malikowska et al. 2017",
+      "attributes": {
+        "design": "molecular docking study"
+      },
+      "source_chunk_ids": [
+        "cf274a32081ca248402fa0c4c8364d7d"
+      ],
+      "confidence": 0.9,
+      "evidence": "Malikowska et al. 2017",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "molecular docking",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "cf274a32081ca248402fa0c4c8364d7d"
+      ],
+      "confidence": 0.85,
+      "evidence": "molecular docking study",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "venlafaxine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cf274a32081ca248402fa0c4c8364d7d"
+      ],
+      "confidence": 0.95,
+      "evidence": "venlafaxine",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "SERT",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "cf274a32081ca248402fa0c4c8364d7d"
+      ],
+      "confidence": 0.9,
+      "evidence": "SERT protein",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "antidepressant activity",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "cf274a32081ca248402fa0c4c8364d7d"
+      ],
+      "confidence": 0.8,
+      "evidence": "antidepressant activity",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "compound 5",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cf274a32081ca248402fa0c4c8364d7d"
+      ],
+      "confidence": 0.85,
+      "evidence": "compound 5",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "compound 4f",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cf274a32081ca248402fa0c4c8364d7d"
+      ],
+      "confidence": 0.8,
+      "evidence": "reference compound 4f",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "compounds 1\u20139",
+      "attributes": {},
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "confidence": 0.9,
+      "evidence": "All dereplicated compounds (1\u20139)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Effect",
+      "name": "high gastrointestinal absorption",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "confidence": 0.85,
+      "evidence": "all compounds have high gastrointestinal absorption",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "cross the blood brain barrier",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "confidence": 0.85,
+      "evidence": "can cross the blood brain barrier (BBB)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "affect the CNS",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "confidence": 0.8,
+      "evidence": "will affect the CNS",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "CNS",
+      "attributes": {
+        "target_type": "system"
+      },
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "confidence": 0.8,
+      "evidence": "affect the CNS",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Daina and Zoete 2016; Daina et al. 2017",
+      "attributes": {
+        "year": "2016, 2017"
+      },
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "confidence": 0.75,
+      "evidence": "Daina and Zoete 2016; Daina et al. 2017",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "in silico prediction",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "confidence": 0.7,
+      "evidence": "pharmacokinetic profiling",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "rat brain homogenate study",
+      "attributes": {
+        "design": "experimental"
+      },
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "confidence": 0.7,
+      "evidence": "measuring the total ion chromatogram of the tested rats' brain homogenate",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "in vivo confirmation",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "confidence": 0.7,
+      "evidence": "BBB permeability prediction was confirmed",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Compound",
+      "name": "compound 2",
+      "attributes": {},
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "confidence": 0.8,
+      "evidence": "compounds 2, 5, 6 and 8 were detected",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Compound",
+      "name": "compound 5",
+      "attributes": {},
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "confidence": 0.8,
+      "evidence": "compounds 2, 5, 6 and 8 were detected",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Compound",
+      "name": "compound 6",
+      "attributes": {},
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "confidence": 0.8,
+      "evidence": "compounds 2, 5, 6 and 8 were detected",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Compound",
+      "name": "compound 8",
+      "attributes": {},
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "confidence": 0.8,
+      "evidence": "compounds 2, 5, 6 and 8 were detected",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "M. cordifolium (A. cordifolia)",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "7c427cf61222d1051e684480c7c5b188"
+      ],
+      "confidence": 0.95,
+      "evidence": "M. cordifolium (A. cordifolia)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "root",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7c427cf61222d1051e684480c7c5b188"
+      ],
+      "confidence": 0.9,
+      "evidence": "root extract",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "alkaloidal fraction",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7c427cf61222d1051e684480c7c5b188"
+      ],
+      "confidence": 0.85,
+      "evidence": "alkaloidal fraction",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7c427cf61222d1051e684480c7c5b188"
+      ],
+      "confidence": 0.8,
+      "evidence": "alkaloidal fraction",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "mesembrane alkaloid (5)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7c427cf61222d1051e684480c7c5b188"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrane alkaloid (5)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "SERT",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "7c427cf61222d1051e684480c7c5b188"
+      ],
+      "confidence": 0.85,
+      "evidence": "SERT inhibitory activity",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "antidepressant activity",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "7c427cf61222d1051e684480c7c5b188"
+      ],
+      "confidence": 0.9,
+      "evidence": "significant antidepressant activity",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "7c427cf61222d1051e684480c7c5b188"
+      ],
+      "confidence": 0.85,
+      "evidence": "folk antidepressant remedy",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "TraditionalUse",
+      "name": "folk antidepressant remedy",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7c427cf61222d1051e684480c7c5b188"
+      ],
+      "confidence": 0.9,
+      "evidence": "folk antidepressant remedy",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Evidence",
+      "name": "in silico virtual screening",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "7c427cf61222d1051e684480c7c5b188"
+      ],
+      "confidence": 0.8,
+      "evidence": "in silico virtual screening",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Study",
+      "name": "current study",
+      "attributes": {
+        "design": "pharmacological study"
+      },
+      "source_chunk_ids": [
+        "7c427cf61222d1051e684480c7c5b188"
+      ],
+      "confidence": 0.75,
+      "evidence": "current study",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Carpenter et al. 2016",
+      "attributes": {
+        "year": 2016,
+        "design": "animal model study"
+      },
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "confidence": 0.9,
+      "evidence": "Carpenter JM, Jourdan MK, Fountain EM, Ali Z, Abe N, Khan IA, Sufka KJ. 2016. The effects of Sceletium tortuosum (L.) N.E. Br. extract fraction in the chick anxiety-depression model.",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vivo animal model",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "confidence": 0.85,
+      "evidence": "chick anxiety-depression model",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum (L.) N.E. Br.",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "extract fraction",
+      "attributes": {},
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "confidence": 0.8,
+      "evidence": "Sceletium tortuosum extract fraction",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "confidence": 0.9,
+      "evidence": "chick anxiety-depression model",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "confidence": 0.9,
+      "evidence": "chick anxiety-depression model",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Terburg et al. 2013",
+      "attributes": {
+        "year": 2013,
+        "design": "acute human study"
+      },
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "confidence": 0.9,
+      "evidence": "Terburg D, Syal S, Rosenberger LA, Heany S, Phillips N, Gericke N, Stein DJ, van Honk J. 2013. Acute effects of Sceletium tortuosum (Zembrin), a dual 5-HT reuptake and PDE4 inhibitor, in the human amygdala and its connection to the hypothalamus.",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "human neuroimaging study",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "confidence": 0.85,
+      "evidence": "Acute effects in the human amygdala",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum (Zembrin)",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Target",
+      "name": "5-HT reuptake",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "confidence": 0.9,
+      "evidence": "dual 5-HT reuptake and PDE4 inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "confidence": 0.9,
+      "evidence": "dual 5-HT reuptake and PDE4 inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "CompoundClass",
+      "name": "Mesembrine alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "confidence": 0.85,
+      "evidence": "Mesembrine alkaloids: review of their occurrence, chemistry, and pharmacology.",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Study",
+      "name": "Krstenansky 2017",
+      "attributes": {
+        "year": 2017,
+        "design": "review"
+      },
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "confidence": 0.9,
+      "evidence": "Krstenansky JL. 2017. Mesembrine alkaloids: review of their occurrence, chemistry, and pharmacology.",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Evidence",
+      "name": "review",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "confidence": 0.85,
+      "evidence": "review of their occurrence, chemistry, and pharmacology",
+      "verified": true
+    }
+  ],
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "assisted by metabolomic analysis and virtual screening",
+      "source_chunk_ids": [
+        "a59d2abb081b1e1a2f41a7e7443b0f6d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Antidepressant potential of Mesembryanthemum cordifolium roots",
+      "source_chunk_ids": [
+        "a59d2abb081b1e1a2f41a7e7443b0f6d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "roots",
+      "source_chunk_ids": [
+        "a59d2abb081b1e1a2f41a7e7443b0f6d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "potential"
+      },
+      "confidence": 0.8,
+      "evidence": "Antidepressant potential",
+      "source_chunk_ids": [
+        "a59d2abb081b1e1a2f41a7e7443b0f6d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "Antidepressant potential",
+      "source_chunk_ids": [
+        "a59d2abb081b1e1a2f41a7e7443b0f6d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "roots",
+      "source_chunk_ids": [
+        "583d707c1775e4fea0218d0f2989e4dc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "alkaloidal fraction of the M. cordifolium root",
+      "source_chunk_ids": [
+        "583d707c1775e4fea0218d0f2989e4dc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "metabolomic analysis and in silico",
+      "source_chunk_ids": [
+        "583d707c1775e4fea0218d0f2989e4dc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "evaluate the antidepressant activity of the alkaloidal fraction",
+      "source_chunk_ids": [
+        "583d707c1775e4fea0218d0f2989e4dc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.9,
+      "evidence": "displayed an antidepressant activity superior to imipramine",
+      "source_chunk_ids": [
+        "583d707c1775e4fea0218d0f2989e4dc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "TREATS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "context": "experimental"
+      },
+      "confidence": 0.8,
+      "evidence": "antidepressant activity",
+      "source_chunk_ids": [
+        "583d707c1775e4fea0218d0f2989e4dc"
+      ],
+      "supporting_study_ids": [
+        "E6"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "mesembrane (5) displayed strong binding affinity",
+      "source_chunk_ids": [
+        "583d707c1775e4fea0218d0f2989e4dc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "mesembrane (5)",
+      "source_chunk_ids": [
+        "583d707c1775e4fea0218d0f2989e4dc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "ACTS_ON",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {
+        "action": "binds"
+      },
+      "confidence": 0.85,
+      "evidence": "displayed strong binding affinity to SERT protein",
+      "source_chunk_ids": [
+        "583d707c1775e4fea0218d0f2989e4dc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "attributed in part to mesembrane (5)",
+      "source_chunk_ids": [
+        "583d707c1775e4fea0218d0f2989e4dc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Mesembryanthemum cordifolium roots",
+      "source_chunk_ids": [
+        "9964e2b0e27d8b95f34e1b14f4cc32fd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 9,
+          "unit": "count",
+          "measurement_type": "identified",
+          "notes": "alkaloids identified"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "9 Alkaloids Identified",
+      "source_chunk_ids": [
+        "9964e2b0e27d8b95f34e1b14f4cc32fd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 0.035,
+          "unit": "uM",
+          "measurement_type": "IC50",
+          "notes": "from table"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "SERT 0.035",
+      "source_chunk_ids": [
+        "9964e2b0e27d8b95f34e1b14f4cc32fd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 5.9,
+          "unit": "uM",
+          "measurement_type": "IC50",
+          "notes": "from table"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "NET 5.9",
+      "source_chunk_ids": [
+        "9964e2b0e27d8b95f34e1b14f4cc32fd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 9.7,
+          "unit": "uM",
+          "measurement_type": "IC50",
+          "notes": "from table"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "DAT 9.7",
+      "source_chunk_ids": [
+        "9964e2b0e27d8b95f34e1b14f4cc32fd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "arrow labeled 'Forced swim test'",
+      "source_chunk_ids": [
+        "9964e2b0e27d8b95f34e1b14f4cc32fd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "roots of Mesembryanthemum cordifolium",
+      "source_chunk_ids": [
+        "62de7aafdeb2ab6de41e89288b2e7b76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "owing to its content of mesembrine alkaloids",
+      "source_chunk_ids": [
+        "62de7aafdeb2ab6de41e89288b2e7b76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "mesembrine alkaloids",
+      "source_chunk_ids": [
+        "62de7aafdeb2ab6de41e89288b2e7b76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.75,
+      "evidence": "serotonin reuptake inhibitors",
+      "source_chunk_ids": [
+        "62de7aafdeb2ab6de41e89288b2e7b76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "serotonin reuptake inhibitors",
+      "source_chunk_ids": [
+        "62de7aafdeb2ab6de41e89288b2e7b76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "TREATS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "context": "pharmacological",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "antidepressant activity",
+      "source_chunk_ids": [
+        "62de7aafdeb2ab6de41e89288b2e7b76"
+      ],
+      "supporting_study_ids": [
+        "E9"
+      ],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "HR-LC-ESI-MS analysis and in silico screening",
+      "source_chunk_ids": [
+        "62de7aafdeb2ab6de41e89288b2e7b76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "evaluate the antidepressant activity of the alkaloidal fraction",
+      "source_chunk_ids": [
+        "62de7aafdeb2ab6de41e89288b2e7b76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "investigates"
+      },
+      "confidence": 0.85,
+      "evidence": "antidepressant activity",
+      "source_chunk_ids": [
+        "62de7aafdeb2ab6de41e89288b2e7b76"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "alkaloidal fraction of M. cordifolium",
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "sceletenone (4)",
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "mesembrane (5)",
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "dihydro-joubertiamine (6)",
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "O-methyl-joubertiamine (7)",
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "O-methyl dihydrojoubertiamine (8)",
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "touruosamine (9)",
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "hordenine (1)",
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "4,5-dihydro-4'-O-methylsceletenone (2)",
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "4'-O-methylsceletenone (3)",
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloids",
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloids",
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloids",
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloids",
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloids",
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloids",
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R17",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloids",
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R18",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloids",
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R19",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "alkaloids",
+      "source_chunk_ids": [
+        "e47ef66b8395847cc0346a721354ed06"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "M. cordifolium alkaloidal fraction",
+      "source_chunk_ids": [
+        "330c97d8ec28ee03b2f0fc8a5d50204f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "alkaloidal fraction produced a significant reduction",
+      "source_chunk_ids": [
+        "330c97d8ec28ee03b2f0fc8a5d50204f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "studied by using the FST",
+      "source_chunk_ids": [
+        "330c97d8ec28ee03b2f0fc8a5d50204f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TESTED_AT",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "100 mg/kg",
+      "source_chunk_ids": [
+        "330c97d8ec28ee03b2f0fc8a5d50204f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "significant reduction in the immobility period",
+      "source_chunk_ids": [
+        "330c97d8ec28ee03b2f0fc8a5d50204f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "elevation of the struggling time",
+      "source_chunk_ids": [
+        "330c97d8ec28ee03b2f0fc8a5d50204f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "TREATS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "context": "preclinical"
+      },
+      "confidence": 0.75,
+      "evidence": "antidepressant effects",
+      "source_chunk_ids": [
+        "330c97d8ec28ee03b2f0fc8a5d50204f"
+      ],
+      "supporting_study_ids": [
+        "E4"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "comparator"
+      },
+      "confidence": 0.8,
+      "evidence": "compared to imipramine hydrochloride\u00ae",
+      "source_chunk_ids": [
+        "330c97d8ec28ee03b2f0fc8a5d50204f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "TESTED_AT",
+      "source_entity_id": "E4",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "15 mg/kg",
+      "source_chunk_ids": [
+        "330c97d8ec28ee03b2f0fc8a5d50204f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "animals treated with the extract",
+      "source_chunk_ids": [
+        "330c97d8ec28ee03b2f0fc8a5d50204f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "tetrahydroisoquinoline ring",
+      "source_chunk_ids": [
+        "e9ee28d2d44440a2f390a48fc9215754"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "tetrahydroisoquinoline ring",
+      "source_chunk_ids": [
+        "e9ee28d2d44440a2f390a48fc9215754"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "tetrahydroisoquinoline ring",
+      "source_chunk_ids": [
+        "e9ee28d2d44440a2f390a48fc9215754"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "tetrahydroisoquinoline ring",
+      "source_chunk_ids": [
+        "e9ee28d2d44440a2f390a48fc9215754"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "tetrahydroisoquinoline ring",
+      "source_chunk_ids": [
+        "e9ee28d2d44440a2f390a48fc9215754"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "tetrahydroisoquinoline ring",
+      "source_chunk_ids": [
+        "e9ee28d2d44440a2f390a48fc9215754"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "tetrahydroisoquinoline ring",
+      "source_chunk_ids": [
+        "e9ee28d2d44440a2f390a48fc9215754"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "tetrahydroisoquinoline ring",
+      "source_chunk_ids": [
+        "e9ee28d2d44440a2f390a48fc9215754"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "tetrahydroisoquinoline ring",
+      "source_chunk_ids": [
+        "e9ee28d2d44440a2f390a48fc9215754"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "SwissTargetPrediction method",
+      "source_chunk_ids": [
+        "625dbffbc8785db0ec032a5c76dcb3f2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "screening possible molecular targets for our compounds",
+      "source_chunk_ids": [
+        "625dbffbc8785db0ec032a5c76dcb3f2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "binds",
+        "measurement": {
+          "value": 90.5,
+          "unit": "%",
+          "measurement_type": "probability",
+          "notes": "in silico prediction"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "high probability (90.5%) towards NET",
+      "source_chunk_ids": [
+        "625dbffbc8785db0ec032a5c76dcb3f2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "binds",
+        "measurement": {
+          "value": 90.5,
+          "unit": "%",
+          "measurement_type": "probability",
+          "notes": "in silico prediction"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "high probability (90.5%) towards SERT",
+      "source_chunk_ids": [
+        "625dbffbc8785db0ec032a5c76dcb3f2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "action": "binds",
+        "measurement": {
+          "value": 90.5,
+          "unit": "%",
+          "measurement_type": "probability",
+          "notes": "in silico prediction"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "high probability (90.5%) towards DAT",
+      "source_chunk_ids": [
+        "625dbffbc8785db0ec032a5c76dcb3f2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "analyze the structural similarity of our compounds",
+      "source_chunk_ids": [
+        "c069c14801f874bb683caee74ce1c2f7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "compound 4f (Shao et al. 2011)",
+      "source_chunk_ids": [
+        "c069c14801f874bb683caee74ce1c2f7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INTERACTS_WITH",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "similarity_2D": 1.0,
+        "similarity_3D": 0.97,
+        "bidirectional": true
+      },
+      "confidence": 0.9,
+      "evidence": "2D and 3D similarity score of 1.0 and 0.97",
+      "source_chunk_ids": [
+        "c069c14801f874bb683caee74ce1c2f7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INTERACTS_WITH",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "similarity_2D": "acceptable",
+        "bidirectional": true
+      },
+      "confidence": 0.8,
+      "evidence": "venlafaxine showed an acceptable 2D similarity score to compound 5",
+      "source_chunk_ids": [
+        "c069c14801f874bb683caee74ce1c2f7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INTERACTS_WITH",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "similarity_2D": "acceptable",
+        "bidirectional": true
+      },
+      "confidence": 0.7,
+      "evidence": "venlafaxine showed an acceptable 2D similarity score to compound 2",
+      "source_chunk_ids": [
+        "c069c14801f874bb683caee74ce1c2f7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INTERACTS_WITH",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "similarity_2D": "acceptable",
+        "bidirectional": true
+      },
+      "confidence": 0.7,
+      "evidence": "venlafaxine showed an acceptable 2D similarity score to compound 8",
+      "source_chunk_ids": [
+        "c069c14801f874bb683caee74ce1c2f7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E8",
+      "attributes": {
+        "action": "inhibits",
+        "probability": ">90%"
+      },
+      "confidence": 0.85,
+      "evidence": "probability (>90%) to have antidepressant activity chiefly via SERT inhibition",
+      "source_chunk_ids": [
+        "c069c14801f874bb683caee74ce1c2f7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E9",
+      "attributes": {
+        "probability": ">90%"
+      },
+      "confidence": 0.8,
+      "evidence": "probability (>90%) to have antidepressant activity",
+      "source_chunk_ids": [
+        "c069c14801f874bb683caee74ce1c2f7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E10",
+      "attributes": {
+        "context": "predicted",
+        "probability": ">90%"
+      },
+      "confidence": 0.75,
+      "evidence": "probability (>90%) to have antidepressant activity",
+      "source_chunk_ids": [
+        "c069c14801f874bb683caee74ce1c2f7"
+      ],
+      "supporting_study_ids": [
+        "E1",
+        "E2"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "molecular docking study",
+      "source_chunk_ids": [
+        "cf274a32081ca248402fa0c4c8364d7d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "venlafaxine exhibited antidepressant activity",
+      "source_chunk_ids": [
+        "cf274a32081ca248402fa0c4c8364d7d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "inhibition"
+      },
+      "confidence": 0.8,
+      "evidence": "inhibition of SERT",
+      "source_chunk_ids": [
+        "cf274a32081ca248402fa0c4c8364d7d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "produces"
+      },
+      "confidence": 0.75,
+      "evidence": "exhibited antidepressant activity",
+      "source_chunk_ids": [
+        "cf274a32081ca248402fa0c4c8364d7d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.85,
+      "evidence": "inhibition of SERT",
+      "source_chunk_ids": [
+        "cf274a32081ca248402fa0c4c8364d7d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "exhibited antidepressant activity",
+      "source_chunk_ids": [
+        "cf274a32081ca248402fa0c4c8364d7d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "ACTS_ON",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "binds"
+      },
+      "confidence": 0.8,
+      "evidence": "strong binding affinity to SERT protein",
+      "source_chunk_ids": [
+        "cf274a32081ca248402fa0c4c8364d7d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "INTERACTS_WITH",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "comparison": "equivalent binding affinity",
+        "bidirectional": true
+      },
+      "confidence": 0.75,
+      "evidence": "equivalent to that of the reference compound 4f",
+      "source_chunk_ids": [
+        "cf274a32081ca248402fa0c4c8364d7d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "INTERACTS_WITH",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "comparison": "slightly higher binding affinity",
+        "bidirectional": true
+      },
+      "confidence": 0.7,
+      "evidence": "slightly higher than the antidepressant drug venlafaxine",
+      "source_chunk_ids": [
+        "cf274a32081ca248402fa0c4c8364d7d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "all compounds have high gastrointestinal absorption",
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "can cross the blood brain barrier (BBB)",
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "will affect the CNS",
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "affects"
+      },
+      "confidence": 0.75,
+      "evidence": "will affect the CNS",
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Daina and Zoete 2016; Daina et al. 2017",
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "pharmacokinetic profiling",
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "BBB permeability prediction was confirmed",
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "measuring the total ion chromatogram",
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E10",
+      "attributes": {
+        "outcome": "detected"
+      },
+      "confidence": 0.75,
+      "evidence": "compound 2 was detected",
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "detected"
+      },
+      "confidence": 0.75,
+      "evidence": "compound 5 was detected",
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E12",
+      "attributes": {
+        "outcome": "detected"
+      },
+      "confidence": 0.75,
+      "evidence": "compound 6 was detected",
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E13",
+      "attributes": {
+        "outcome": "detected"
+      },
+      "confidence": 0.75,
+      "evidence": "compound 8 was detected",
+      "source_chunk_ids": [
+        "506e862a02129cd61632ab5446d6e043"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "root extract",
+      "source_chunk_ids": [
+        "7c427cf61222d1051e684480c7c5b188"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "alkaloidal fraction of root extract",
+      "source_chunk_ids": [
+        "7c427cf61222d1051e684480c7c5b188"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "mesembrane alkaloid",
+      "source_chunk_ids": [
+        "7c427cf61222d1051e684480c7c5b188"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "content of mesembrane alkaloid",
+      "source_chunk_ids": [
+        "7c427cf61222d1051e684480c7c5b188"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.7,
+      "evidence": "SERT inhibitory activity",
+      "source_chunk_ids": [
+        "7c427cf61222d1051e684480c7c5b188"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "antidepressant activity of alkaloidal fraction",
+      "source_chunk_ids": [
+        "7c427cf61222d1051e684480c7c5b188"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E8",
+      "attributes": {
+        "context": "pharmacological"
+      },
+      "confidence": 0.75,
+      "evidence": "antidepressant activity",
+      "source_chunk_ids": [
+        "7c427cf61222d1051e684480c7c5b188"
+      ],
+      "supporting_study_ids": [
+        "E11"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "SUGGESTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.8,
+      "evidence": "folk antidepressant remedy",
+      "source_chunk_ids": [
+        "7c427cf61222d1051e684480c7c5b188"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E11",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "in silico virtual screening",
+      "source_chunk_ids": [
+        "7c427cf61222d1051e684480c7c5b188"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "study revealed antidepressant activity",
+      "source_chunk_ids": [
+        "7c427cf61222d1051e684480c7c5b188"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "revealed significant antidepressant activity",
+      "source_chunk_ids": [
+        "7c427cf61222d1051e684480c7c5b188"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "chick anxiety-depression model",
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Sceletium tortuosum extract fraction",
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "studied"
+      },
+      "confidence": 0.8,
+      "evidence": "chick anxiety-depression model",
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "studied"
+      },
+      "confidence": 0.8,
+      "evidence": "chick anxiety-depression model",
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Acute effects in the human amygdala",
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum (Zembrin)",
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E10",
+      "attributes": {
+        "outcome": "inhibits"
+      },
+      "confidence": 0.85,
+      "evidence": "dual 5-HT reuptake and PDE4 inhibitor",
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "inhibits"
+      },
+      "confidence": 0.85,
+      "evidence": "dual 5-HT reuptake and PDE4 inhibitor",
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E13",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "review of their occurrence, chemistry, and pharmacology",
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E12",
+      "attributes": {
+        "role": "topic"
+      },
+      "confidence": 0.85,
+      "evidence": "Mesembrine alkaloids: review",
+      "source_chunk_ids": [
+        "124049b1cfdc8b29347f402b0b60df17"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

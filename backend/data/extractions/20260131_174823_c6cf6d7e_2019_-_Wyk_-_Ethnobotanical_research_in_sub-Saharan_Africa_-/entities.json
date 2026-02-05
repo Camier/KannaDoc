@@ -1,409 +1,1354 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "85bfd77c6fffbfa150b23bbb9942a79527d689fa58e5cb6481cf4ea821d0f9ec",
-  "extracted_at": "2026-02-01T08:53:37.261033+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
+      "id": "E1",
+      "type": "Study",
+      "name": "Viljoen 1982-2017 analysis",
+      "attributes": {
+        "design": "analysis",
+        "year": "1982-2017"
+      },
+      "source_chunk_ids": [
+        "41608caaaefaab0372733dac653fe25f"
+      ],
+      "confidence": 0.8,
+      "evidence": "analysis of the role of the South African Journal of Botany",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "publication analysis",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "41608caaaefaab0372733dac653fe25f"
+      ],
+      "confidence": 0.75,
+      "evidence": "analysis of the role of the South African Journal of Botany",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Botha archaeological comparison",
+      "attributes": {
+        "design": "comparative analysis",
+        "year": "0-80,000 years BP"
+      },
+      "source_chunk_ids": [
+        "41608caaaefaab0372733dac653fe25f"
+      ],
+      "confidence": 0.8,
+      "evidence": "comparing current plant uses in the Cape with plant remains",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "archaeological evidence",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "41608caaaefaab0372733dac653fe25f"
+      ],
+      "confidence": 0.75,
+      "evidence": "plant remains from archaeological sites",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Lesotho",
+      "attributes": {},
+      "source_chunk_ids": [
+        "66776d703801e62d7a46ae7722a06f50"
+      ],
+      "confidence": 0.8,
+      "evidence": "ethnobotanical data for Lesotho",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Free State",
+      "attributes": {},
+      "source_chunk_ids": [
+        "66776d703801e62d7a46ae7722a06f50"
+      ],
+      "confidence": 0.8,
+      "evidence": "ethnobotanical data for Free State",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Vhembe District",
+      "attributes": {},
+      "source_chunk_ids": [
+        "66776d703801e62d7a46ae7722a06f50"
+      ],
+      "confidence": 0.8,
+      "evidence": "ethnobotanical data for Vhembe District",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Culture",
+      "name": "Central Sekhukhuneland",
+      "attributes": {},
+      "source_chunk_ids": [
+        "66776d703801e62d7a46ae7722a06f50"
+      ],
+      "confidence": 0.8,
+      "evidence": "ethnobotanical data for Central Sekhukhuneland",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Culture",
+      "name": "Namaqualand",
+      "attributes": {},
+      "source_chunk_ids": [
+        "66776d703801e62d7a46ae7722a06f50"
+      ],
+      "confidence": 0.8,
+      "evidence": "ethnobotanical data for Namaqualand",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "UseRecord",
+      "name": "UseRecord: Lesotho \u2013 traditional knowledge",
+      "attributes": {},
+      "source_chunk_ids": [
+        "66776d703801e62d7a46ae7722a06f50"
+      ],
+      "confidence": 0.7,
+      "evidence": "ethnobotanical data for Lesotho",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "UseRecord",
+      "name": "UseRecord: Free State \u2013 traditional knowledge",
+      "attributes": {},
+      "source_chunk_ids": [
+        "66776d703801e62d7a46ae7722a06f50"
+      ],
+      "confidence": 0.7,
+      "evidence": "ethnobotanical data for Free State",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "UseRecord",
+      "name": "UseRecord: Vhembe District \u2013 traditional knowledge",
+      "attributes": {},
+      "source_chunk_ids": [
+        "66776d703801e62d7a46ae7722a06f50"
+      ],
+      "confidence": 0.7,
+      "evidence": "ethnobotanical data for Vhembe District",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "UseRecord",
+      "name": "UseRecord: Central Sekhukhuneland \u2013 traditional knowledge",
+      "attributes": {},
+      "source_chunk_ids": [
+        "66776d703801e62d7a46ae7722a06f50"
+      ],
+      "confidence": 0.7,
+      "evidence": "ethnobotanical data for Central Sekhukhuneland",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "UseRecord",
+      "name": "UseRecord: Namaqualand \u2013 traditional knowledge",
+      "attributes": {},
+      "source_chunk_ids": [
+        "66776d703801e62d7a46ae7722a06f50"
+      ],
+      "confidence": 0.7,
+      "evidence": "ethnobotanical data for Namaqualand",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "TraditionalUse",
+      "name": "traditional knowledge",
+      "attributes": {},
+      "source_chunk_ids": [
+        "66776d703801e62d7a46ae7722a06f50"
+      ],
+      "confidence": 0.75,
+      "evidence": "traditional knowledge has not yet been recorded",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Welcome paper",
+      "attributes": {
+        "topic": "inventories and analyses of food plants for the entire southern African region"
+      },
+      "source_chunk_ids": [
+        "93328b4e3a4bcb41d661ce5da0194f68"
+      ],
+      "confidence": 0.7,
+      "evidence": "inventories and analyses of food plants for the entire southern African region (Welcome)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Mashile paper",
+      "attributes": {
+        "topic": "indigenous fruits of Mapulana in Mpumalanga"
+      },
+      "source_chunk_ids": [
+        "93328b4e3a4bcb41d661ce5da0194f68"
+      ],
+      "confidence": 0.7,
+      "evidence": "indigenous fruits of Mapulana in Mpumalanga (Mashile)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Mokganya paper",
+      "attributes": {
+        "topic": "medicinal uses of wild vegetables in the Vhembe district"
+      },
+      "source_chunk_ids": [
+        "93328b4e3a4bcb41d661ce5da0194f68"
+      ],
+      "confidence": 0.7,
+      "evidence": "medicinal uses of wild vegetables in the Vhembe district (Mokganya)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "ethnobotanical inventory",
+      "attributes": {
+        "evidence_level": 3,
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "93328b4e3a4bcb41d661ce5da0194f68"
+      ],
+      "confidence": 0.65,
+      "evidence": "provide inventories and analyses of food plants",
+      "verified": false
+    },
+    {
+      "id": "E5",
       "type": "Taxon",
-      "name": "plants",
+      "name": "edible species",
       "attributes": {
-        "context": "Inventories of plants"
+        "rank": "species",
+        "verification_needed": true
       },
       "source_chunk_ids": [
-        "de9687ef2773ca3a61ebba84dd243aec"
-      ]
+        "93328b4e3a4bcb41d661ce5da0194f68"
+      ],
+      "confidence": 0.6,
+      "evidence": "edible species for southern Africa",
+      "verified": false
     },
     {
-      "id": "ent_002",
-      "type": "Indication",
-      "name": "ailments",
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "medicinal uses",
+      "attributes": {},
+      "source_chunk_ids": [
+        "93328b4e3a4bcb41d661ce5da0194f68"
+      ],
+      "confidence": 0.7,
+      "evidence": "medicinal uses of wild vegetables",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Mauritius",
+      "attributes": {},
+      "source_chunk_ids": [
+        "854a9940900bdf6caf42bf53cdc4fae4"
+      ],
+      "confidence": 0.8,
+      "evidence": "Mauritius (Suroowan)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Tanzania",
+      "attributes": {},
+      "source_chunk_ids": [
+        "854a9940900bdf6caf42bf53cdc4fae4"
+      ],
+      "confidence": 0.8,
+      "evidence": "Tanzania (Hilonga)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Little Karoo",
+      "attributes": {},
+      "source_chunk_ids": [
+        "854a9940900bdf6caf42bf53cdc4fae4"
+      ],
+      "confidence": 0.8,
+      "evidence": "Little Karoo (Hulley)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Culture",
+      "name": "Amandawe area of KwaZulu-Natal",
+      "attributes": {},
+      "source_chunk_ids": [
+        "854a9940900bdf6caf42bf53cdc4fae4"
+      ],
+      "confidence": 0.8,
+      "evidence": "Amandawe area of KwaZulu-Natal (Mhlongo)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Neuwinger (2000)",
       "attributes": {
-        "context": "particular ailments"
+        "year": 2000
       },
       "source_chunk_ids": [
-        "de9687ef2773ca3a61ebba84dd243aec"
-      ]
+        "854a9940900bdf6caf42bf53cdc4fae4"
+      ],
+      "confidence": 0.9,
+      "evidence": "Neuwinger (2000) recorded more than 5000 African medicinal species",
+      "verified": true
     },
     {
-      "id": "ent_003",
-      "type": "Taxon",
-      "name": "sub-Saharan plants",
+      "id": "E6",
+      "type": "Evidence",
+      "name": "ethnobotanical survey",
       "attributes": {
-        "context": "sub-Saharan plants used as aphrodisiacs"
+        "evidence_level": 3
       },
       "source_chunk_ids": [
-        "1615683ff14bb5ce5efacd86e2c39073"
-      ]
+        "854a9940900bdf6caf42bf53cdc4fae4"
+      ],
+      "confidence": 0.7,
+      "evidence": "Surveys of the medicinal ethnobotany",
+      "verified": true
     },
     {
-      "id": "ent_004",
-      "type": "PharmEffect",
-      "name": "aphrodisiacs",
-      "attributes": {
-        "context": "used as aphrodisiacs"
-      },
-      "source_chunk_ids": [
-        "1615683ff14bb5ce5efacd86e2c39073"
-      ]
-    },
-    {
-      "id": "ent_005",
-      "type": "Indication",
-      "name": "sexual dysfunction",
-      "attributes": {
-        "context": "for sexual dysfunction"
-      },
-      "source_chunk_ids": [
-        "1615683ff14bb5ce5efacd86e2c39073"
-      ]
-    },
-    {
-      "id": "ent_006",
-      "type": "Taxon",
-      "name": "plants",
-      "attributes": {
-        "context": "a survey of plants used for cancer"
-      },
-      "source_chunk_ids": [
-        "1615683ff14bb5ce5efacd86e2c39073"
-      ]
-    },
-    {
-      "id": "ent_007",
-      "type": "Indication",
-      "name": "cancer",
-      "attributes": {
-        "context": "used for cancer"
-      },
-      "source_chunk_ids": [
-        "1615683ff14bb5ce5efacd86e2c39073"
-      ]
-    },
-    {
-      "id": "ent_008",
-      "type": "Indication",
-      "name": "related ailments",
-      "attributes": {
-        "context": "cancer and related ailments"
-      },
-      "source_chunk_ids": [
-        "1615683ff14bb5ce5efacd86e2c39073"
-      ]
-    },
-    {
-      "id": "ent_009",
-      "type": "Taxon",
-      "name": "plants",
-      "attributes": {
-        "context": "plants used by traditional healers to treat"
-      },
-      "source_chunk_ids": [
-        "1615683ff14bb5ce5efacd86e2c39073"
-      ]
-    },
-    {
-      "id": "ent_010",
-      "type": "Indication",
-      "name": "HIV/AIDS-related diseases",
-      "attributes": {
-        "context": "HIV/AIDS-related diseases in Lusaka"
-      },
+      "id": "E1",
+      "type": "Culture",
+      "name": "Bapedi healers",
+      "attributes": {},
       "source_chunk_ids": [
         "4eb7320e7ed7a77cfe621d7640ea81a2"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Bapedi healers to treat tuberculosis",
+      "verified": true
     },
     {
-      "id": "ent_011",
-      "type": "Indication",
-      "name": "sexually transmitted diseases",
-      "attributes": {
-        "context": "treat sexually transmitted diseases"
-      },
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Bapedi healers \u2013 treat tuberculosis and infections",
+      "attributes": {},
       "source_chunk_ids": [
         "4eb7320e7ed7a77cfe621d7640ea81a2"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "Bapedi healers to treat tuberculosis and infections",
+      "verified": true
     },
     {
-      "id": "ent_012",
-      "type": "Indication",
+      "id": "E3",
+      "type": "Condition",
       "name": "tuberculosis",
       "attributes": {
-        "context": "treat tuberculosis and infections"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "4eb7320e7ed7a77cfe621d7640ea81a2"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "treat tuberculosis",
+      "verified": true
     },
     {
-      "id": "ent_013",
-      "type": "Indication",
+      "id": "E4",
+      "type": "Condition",
       "name": "infections",
       "attributes": {
-        "context": "treat tuberculosis and infections"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "4eb7320e7ed7a77cfe621d7640ea81a2"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "treat tuberculosis and infections",
+      "verified": true
     },
     {
-      "id": "ent_014",
-      "type": "Indication",
-      "name": "gastrointestinal disorders",
+      "id": "E5",
+      "type": "Culture",
+      "name": "people in Lusaka, Zambia",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ],
+      "confidence": 0.8,
+      "evidence": "HIV/AIDS-related diseases in Lusaka, Zambia",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "UseRecord",
+      "name": "UseRecord: Lusaka, Zambia \u2013 treat HIV/AIDS-related diseases",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ],
+      "confidence": 0.75,
+      "evidence": "HIV/AIDS-related diseases in Lusaka, Zambia",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "HIV/AIDS-related diseases",
       "attributes": {
-        "context": "treat gastrointestinal disorders of cattle"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "4eb7320e7ed7a77cfe621d7640ea81a2"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "HIV/AIDS-related diseases",
+      "verified": true
     },
     {
-      "id": "ent_015",
-      "type": "PharmEffect",
-      "name": "Antimicrobial",
-      "attributes": {
-        "context": "Antimicrobial studies"
-      },
+      "id": "E8",
+      "type": "Culture",
+      "name": "people in Blouberg and Wolkbreg districts, South Africa",
+      "attributes": {},
       "source_chunk_ids": [
-        "f65627d24cecc197721e20ac50008476"
-      ]
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ],
+      "confidence": 0.8,
+      "evidence": "plants used to treat sexually transmitted diseases in the Blouberg and Wolkbreg districts",
+      "verified": true
     },
     {
-      "id": "ent_016",
-      "type": "Taxon",
-      "name": "plants",
-      "attributes": {
-        "context": "traditional uses of plants"
-      },
+      "id": "E9",
+      "type": "UseRecord",
+      "name": "UseRecord: Blouberg and Wolkbreg districts \u2013 treat sexually transmitted diseases",
+      "attributes": {},
       "source_chunk_ids": [
-        "2af9a85bb4932324ea209459231911a0"
-      ]
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ],
+      "confidence": 0.75,
+      "evidence": "plants used to treat sexually transmitted diseases",
+      "verified": true
     },
     {
-      "id": "ent_017",
-      "type": "PharmEffect",
-      "name": "antimicrobial",
-      "attributes": {
-        "context": "antimicrobial and other bioactivity tests"
-      },
-      "source_chunk_ids": [
-        "2af9a85bb4932324ea209459231911a0"
-      ]
-    },
-    {
-      "id": "ent_018",
-      "type": "PharmEffect",
-      "name": "bioactivity",
-      "attributes": {
-        "context": "antimicrobial and other bioactivity tests"
-      },
-      "source_chunk_ids": [
-        "2af9a85bb4932324ea209459231911a0"
-      ]
-    },
-    {
-      "id": "ent_019",
-      "type": "PharmEffect",
-      "name": "antimicrobial",
-      "attributes": {
-        "context": "antimicrobial and acaricidal activities"
-      },
-      "source_chunk_ids": [
-        "2af9a85bb4932324ea209459231911a0"
-      ]
-    },
-    {
-      "id": "ent_020",
-      "type": "PharmEffect",
-      "name": "acaricidal",
-      "attributes": {
-        "context": "antimicrobial and acaricidal activities"
-      },
-      "source_chunk_ids": [
-        "2af9a85bb4932324ea209459231911a0"
-      ]
-    },
-    {
-      "id": "ent_021",
-      "type": "Taxon",
-      "name": "plants from Reunion",
-      "attributes": {
-        "context": "activities of plants from Reunion"
-      },
-      "source_chunk_ids": [
-        "2af9a85bb4932324ea209459231911a0"
-      ]
-    },
-    {
-      "id": "ent_022",
-      "type": "PharmEffect",
-      "name": "antimicrobial",
-      "attributes": {
-        "context": "antimicrobial activities of plants"
-      },
-      "source_chunk_ids": [
-        "2af9a85bb4932324ea209459231911a0"
-      ]
-    },
-    {
-      "id": "ent_023",
-      "type": "Taxon",
-      "name": "plants",
-      "attributes": {
-        "context": "activities of plants used to treat sexually transmitted diseases"
-      },
-      "source_chunk_ids": [
-        "2af9a85bb4932324ea209459231911a0"
-      ]
-    },
-    {
-      "id": "ent_024",
-      "type": "Indication",
+      "id": "E10",
+      "type": "Condition",
       "name": "sexually transmitted diseases",
       "attributes": {
-        "context": "treat sexually transmitted diseases"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
-        "2af9a85bb4932324ea209459231911a0"
-      ]
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ],
+      "confidence": 0.9,
+      "evidence": "sexually transmitted diseases",
+      "verified": true
     },
     {
-      "id": "ent_025",
-      "type": "PharmEffect",
-      "name": "antibacterial",
+      "id": "E11",
+      "type": "Culture",
+      "name": "people in Vhembe District",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ],
+      "confidence": 0.8,
+      "evidence": "cosmetic plants used in the Vhembe District",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "UseRecord",
+      "name": "UseRecord: Vhembe District \u2013 cosmetic plants",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ],
+      "confidence": 0.75,
+      "evidence": "cosmetic plants used in the Vhembe District",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "TraditionalUse",
+      "name": "cosmetic use",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ],
+      "confidence": 0.85,
+      "evidence": "cosmetic plants",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Culture",
+      "name": "people in Benin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ],
+      "confidence": 0.8,
+      "evidence": "plants used to treat gastrointestinal disorders of cattle in Benin",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "UseRecord",
+      "name": "UseRecord: Benin \u2013 treat gastrointestinal disorders of cattle",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ],
+      "confidence": 0.75,
+      "evidence": "plants used to treat gastrointestinal disorders of cattle",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Condition",
+      "name": "gastrointestinal disorders",
       "attributes": {
-        "context": "antibacterial activity of medicinal grasses"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
-        "2af9a85bb4932324ea209459231911a0"
-      ]
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ],
+      "confidence": 0.9,
+      "evidence": "gastrointestinal disorders",
+      "verified": true
     },
     {
-      "id": "ent_026",
-      "type": "Taxon",
-      "name": "medicinal grasses",
+      "id": "E1",
+      "type": "Culture",
+      "name": "indigenous peoples",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ],
+      "confidence": 0.7,
+      "evidence": "indigenous uses",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: indigenous \u2013 plants \u2013 traditional uses",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ],
+      "confidence": 0.8,
+      "evidence": "traditional uses of plants",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "treat sexually transmitted diseases",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ],
+      "confidence": 0.85,
+      "evidence": "treat sexually transmitted diseases",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "traditional skin care",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ],
+      "confidence": 0.85,
+      "evidence": "traditional skin care",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "treating urinary tract infections",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ],
+      "confidence": 0.85,
+      "evidence": "treating urinary tract infections",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "sexually transmitted diseases",
       "attributes": {
-        "context": "antibacterial activity of medicinal grasses"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "2af9a85bb4932324ea209459231911a0"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "sexually transmitted diseases",
+      "verified": true
     },
     {
-      "id": "ent_027",
-      "type": "PharmEffect",
-      "name": "antimicrobial",
-      "attributes": {
-        "context": "antimicrobial, antioxidant, photo-protective and anti-tyrosinase activities"
-      },
-      "source_chunk_ids": [
-        "2af9a85bb4932324ea209459231911a0"
-      ]
-    },
-    {
-      "id": "ent_028",
-      "type": "PharmEffect",
-      "name": "antioxidant",
-      "attributes": {
-        "context": "antimicrobial, antioxidant, photo-protective and anti-tyrosinase activities"
-      },
-      "source_chunk_ids": [
-        "2af9a85bb4932324ea209459231911a0"
-      ]
-    },
-    {
-      "id": "ent_029",
-      "type": "PharmEffect",
-      "name": "photo-protective",
-      "attributes": {
-        "context": "antimicrobial, antioxidant, photo-protective and anti-tyrosinase activities"
-      },
-      "source_chunk_ids": [
-        "2af9a85bb4932324ea209459231911a0"
-      ]
-    },
-    {
-      "id": "ent_030",
-      "type": "PharmEffect",
-      "name": "anti-tyrosinase",
-      "attributes": {
-        "context": "antimicrobial, antioxidant, photo-protective and anti-tyrosinase activities"
-      },
-      "source_chunk_ids": [
-        "2af9a85bb4932324ea209459231911a0"
-      ]
-    },
-    {
-      "id": "ent_031",
-      "type": "Taxon",
-      "name": "plants",
-      "attributes": {
-        "context": "activities of plants used in traditional skin care"
-      },
-      "source_chunk_ids": [
-        "2af9a85bb4932324ea209459231911a0"
-      ]
-    },
-    {
-      "id": "ent_032",
-      "type": "Indication",
-      "name": "skin care",
-      "attributes": {
-        "context": "traditional skin care"
-      },
-      "source_chunk_ids": [
-        "2af9a85bb4932324ea209459231911a0"
-      ]
-    },
-    {
-      "id": "ent_033",
-      "type": "PharmEffect",
-      "name": "antimicrobial",
-      "attributes": {
-        "context": "antimicrobial and anti-quorum sensing activities"
-      },
-      "source_chunk_ids": [
-        "2af9a85bb4932324ea209459231911a0"
-      ]
-    },
-    {
-      "id": "ent_034",
-      "type": "PharmEffect",
-      "name": "anti-quorum sensing",
-      "attributes": {
-        "context": "antimicrobial and anti-quorum sensing activities"
-      },
-      "source_chunk_ids": [
-        "2af9a85bb4932324ea209459231911a0"
-      ]
-    },
-    {
-      "id": "ent_035",
-      "type": "Taxon",
-      "name": "several plants",
-      "attributes": {
-        "context": "activities of several plants used in treating urinary tract infections"
-      },
-      "source_chunk_ids": [
-        "2af9a85bb4932324ea209459231911a0"
-      ]
-    },
-    {
-      "id": "ent_036",
-      "type": "Indication",
+      "id": "E7",
+      "type": "Condition",
       "name": "urinary tract infections",
       "attributes": {
-        "context": "treating urinary tract infections"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "2af9a85bb4932324ea209459231911a0"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "urinary tract infections",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "scientific studies",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ],
+      "confidence": 0.8,
+      "evidence": "scientific studies support",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Chen study on fermentation effects",
+      "attributes": {
+        "design": "experimental",
+        "year": null
+      },
+      "source_chunk_ids": [
+        "46d6f5df9658c3cb8338009894c57799"
+      ],
+      "confidence": 0.8,
+      "evidence": "the effects of traditional fermentation on the alkaloid content of Sceletium tortuosum (Chen)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "46d6f5df9658c3cb8338009894c57799"
+      ],
+      "confidence": 0.7,
+      "evidence": "the effects of traditional fermentation on the alkaloid content",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "46d6f5df9658c3cb8338009894c57799"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Preparation",
+      "name": "traditional fermentation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "46d6f5df9658c3cb8338009894c57799"
+      ],
+      "confidence": 0.85,
+      "evidence": "traditional fermentation",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "46d6f5df9658c3cb8338009894c57799"
+      ],
+      "confidence": 0.9,
+      "evidence": "alkaloid content",
+      "verified": true
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.072639+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "analysis of the role of the South African Journal of Botany",
+      "source_chunk_ids": [
+        "41608caaaefaab0372733dac653fe25f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "plant remains from archaeological sites",
+      "source_chunk_ids": [
+        "41608caaaefaab0372733dac653fe25f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "ethnobotanical data for Lesotho",
+      "source_chunk_ids": [
+        "66776d703801e62d7a46ae7722a06f50"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_USE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "ethnobotanical data for Free State",
+      "source_chunk_ids": [
+        "66776d703801e62d7a46ae7722a06f50"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_USE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "ethnobotanical data for Vhembe District",
+      "source_chunk_ids": [
+        "66776d703801e62d7a46ae7722a06f50"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_USE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "ethnobotanical data for Central Sekhukhuneland",
+      "source_chunk_ids": [
+        "66776d703801e62d7a46ae7722a06f50"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_USE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "ethnobotanical data for Namaqualand",
+      "source_chunk_ids": [
+        "66776d703801e62d7a46ae7722a06f50"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E11",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "traditional knowledge has not yet been recorded",
+      "source_chunk_ids": [
+        "66776d703801e62d7a46ae7722a06f50"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E11",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "traditional knowledge has not yet been recorded",
+      "source_chunk_ids": [
+        "66776d703801e62d7a46ae7722a06f50"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "INVOLVES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E11",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "traditional knowledge has not yet been recorded",
+      "source_chunk_ids": [
+        "66776d703801e62d7a46ae7722a06f50"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "INVOLVES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E11",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "traditional knowledge has not yet been recorded",
+      "source_chunk_ids": [
+        "66776d703801e62d7a46ae7722a06f50"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "INVOLVES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E11",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "traditional knowledge has not yet been recorded",
+      "source_chunk_ids": [
+        "66776d703801e62d7a46ae7722a06f50"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "provide inventories and analyses",
+      "source_chunk_ids": [
+        "93328b4e3a4bcb41d661ce5da0194f68"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "provide inventories and analyses",
+      "source_chunk_ids": [
+        "93328b4e3a4bcb41d661ce5da0194f68"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "provide inventories and analyses",
+      "source_chunk_ids": [
+        "93328b4e3a4bcb41d661ce5da0194f68"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "edible species for southern Africa",
+      "source_chunk_ids": [
+        "93328b4e3a4bcb41d661ce5da0194f68"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "medicinal uses of wild vegetables",
+      "source_chunk_ids": [
+        "93328b4e3a4bcb41d661ce5da0194f68"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Surveys of the medicinal ethnobotany",
+      "source_chunk_ids": [
+        "854a9940900bdf6caf42bf53cdc4fae4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Bapedi healers to treat tuberculosis",
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.9,
+      "evidence": "treat tuberculosis",
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "treat tuberculosis and infections",
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_USE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "HIV/AIDS-related diseases in Lusaka, Zambia",
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "HIV/AIDS-related diseases",
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_USE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "plants used to treat sexually transmitted diseases",
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "SUGGESTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "sexually transmitted diseases",
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_USE",
+      "source_entity_id": "E11",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "cosmetic plants used in the Vhembe District",
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "INVOLVES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E13",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "cosmetic plants",
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "HAS_USE",
+      "source_entity_id": "E14",
+      "target_entity_id": "E15",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "plants used to treat gastrointestinal disorders of cattle in Benin",
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "SUGGESTS",
+      "source_entity_id": "E15",
+      "target_entity_id": "E16",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "gastrointestinal disorders",
+      "source_chunk_ids": [
+        "4eb7320e7ed7a77cfe621d7640ea81a2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "indigenous uses",
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "treat sexually transmitted diseases",
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "traditional skin care",
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "treating urinary tract infections",
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "treat sexually transmitted diseases",
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "treating urinary tract infections",
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "SUGGESTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "supportive"
+      },
+      "confidence": 0.7,
+      "evidence": "support or validate indigenous uses",
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "SUGGESTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "supportive"
+      },
+      "confidence": 0.7,
+      "evidence": "support or validate indigenous uses",
+      "source_chunk_ids": [
+        "2af9a85bb4932324ea209459231911a0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "the effects of traditional fermentation on the alkaloid content",
+      "source_chunk_ids": [
+        "46d6f5df9658c3cb8338009894c57799"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Sceletium tortuosum (Chen)",
+      "source_chunk_ids": [
+        "46d6f5df9658c3cb8338009894c57799"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "traditional fermentation",
+      "source_chunk_ids": [
+        "46d6f5df9658c3cb8338009894c57799"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "affects"
+      },
+      "confidence": 0.75,
+      "evidence": "alkaloid content",
+      "source_chunk_ids": [
+        "46d6f5df9658c3cb8338009894c57799"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

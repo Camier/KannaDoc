@@ -1,12 +1,1210 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "8a63f953bdfcc05dddf86ee2569fef09c175ddc936459cf0b6af4e6c9ed06994",
-  "extracted_at": "2026-02-01T09:08:13.791304+00:00",
-  "extractor": "legacy-migration",
-  "entities": [],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.090007+00:00",
-    "original_file": "entities.json"
-  }
+  "entities": [
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Jul'hoan_North",
+      "attributes": {},
+      "source_chunk_ids": [
+        "65b1cca571c2c3a69baf73289578805b"
+      ],
+      "confidence": 0.9,
+      "evidence": "Jul'hoan_North",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Hadza",
+      "attributes": {},
+      "source_chunk_ids": [
+        "65b1cca571c2c3a69baf73289578805b"
+      ],
+      "confidence": 0.9,
+      "evidence": "Hadza",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Dinka",
+      "attributes": {},
+      "source_chunk_ids": [
+        "65b1cca571c2c3a69baf73289578805b"
+      ],
+      "confidence": 0.9,
+      "evidence": "Dinka",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Culture",
+      "name": "Sandawe",
+      "attributes": {},
+      "source_chunk_ids": [
+        "65b1cca571c2c3a69baf73289578805b"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sandawe",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Culture",
+      "name": "Khoisan",
+      "attributes": {},
+      "source_chunk_ids": [
+        "65b1cca571c2c3a69baf73289578805b"
+      ],
+      "confidence": 0.85,
+      "evidence": "Khoisan",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Culture",
+      "name": "Mbuti",
+      "attributes": {},
+      "source_chunk_ids": [
+        "65b1cca571c2c3a69baf73289578805b"
+      ],
+      "confidence": 0.8,
+      "evidence": "Mbuti",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Culture",
+      "name": "Biaka",
+      "attributes": {},
+      "source_chunk_ids": [
+        "65b1cca571c2c3a69baf73289578805b"
+      ],
+      "confidence": 0.8,
+      "evidence": "Biaka",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "population test26",
+      "attributes": {
+        "design": "genetic analysis"
+      },
+      "source_chunk_ids": [
+        "65b1cca571c2c3a69baf73289578805b"
+      ],
+      "confidence": 0.7,
+      "evidence": "population test26",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "genetic evidence",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "65b1cca571c2c3a69baf73289578805b"
+      ],
+      "confidence": 0.75,
+      "evidence": "genome-wide allele frequencies",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Himba",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Himba",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Wambo",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Wambo",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Dinka",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Dinka",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Culture",
+      "name": "Yoruba",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Yoruba",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Culture",
+      "name": "BantuSouthAfrica",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "BantuSouthAfrica",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Culture",
+      "name": "Mbukushu",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mbukushu",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Culture",
+      "name": "Mandenka",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mandenka",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Culture",
+      "name": "Tswana",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Tswana",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Culture",
+      "name": "Kgalagadi",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Kgalagadi",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Culture",
+      "name": "Naro",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Naro",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Culture",
+      "name": "Hailom",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Hailom",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Culture",
+      "name": "Khwe",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Khwe",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Culture",
+      "name": "Shua",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Shua",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Culture",
+      "name": "Tshwa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Tshwa",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Culture",
+      "name": "Gilana",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Gilana",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Culture",
+      "name": "Glui",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Glui",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "Culture",
+      "name": "Nama",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Nama",
+      "verified": true
+    },
+    {
+      "id": "E18",
+      "type": "Culture",
+      "name": "Damara",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Damara",
+      "verified": true
+    },
+    {
+      "id": "E19",
+      "type": "Culture",
+      "name": "Jul'hoan_North",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Jul'hoan_North",
+      "verified": true
+    },
+    {
+      "id": "E20",
+      "type": "Culture",
+      "name": "Jul'hoan_South",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Jul'hoan_South",
+      "verified": true
+    },
+    {
+      "id": "E21",
+      "type": "Culture",
+      "name": "Ixuun",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Ixuun",
+      "verified": true
+    },
+    {
+      "id": "E22",
+      "type": "Culture",
+      "name": "Taa_West",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Taa_West",
+      "verified": true
+    },
+    {
+      "id": "E23",
+      "type": "Culture",
+      "name": "Taa_North",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Taa_North",
+      "verified": true
+    },
+    {
+      "id": "E24",
+      "type": "Culture",
+      "name": "Taa_East",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24351c402a3c36da64d2e9be4d3f4f61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Taa_East",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Jul'hoan North",
+      "attributes": {},
+      "source_chunk_ids": [
+        "743107c36db3966f5f4423ab38180355"
+      ],
+      "confidence": 0.9,
+      "evidence": "Jul'hoan North",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Jul'hoan South",
+      "attributes": {},
+      "source_chunk_ids": [
+        "743107c36db3966f5f4423ab38180355"
+      ],
+      "confidence": 0.9,
+      "evidence": "Jul'hoan South",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "\u2260Hoan",
+      "attributes": {},
+      "source_chunk_ids": [
+        "743107c36db3966f5f4423ab38180355"
+      ],
+      "confidence": 0.9,
+      "evidence": "\u2260Hoan",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Culture",
+      "name": "Taa North",
+      "attributes": {},
+      "source_chunk_ids": [
+        "743107c36db3966f5f4423ab38180355"
+      ],
+      "confidence": 0.9,
+      "evidence": "Taa North",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Culture",
+      "name": "Taa East",
+      "attributes": {},
+      "source_chunk_ids": [
+        "743107c36db3966f5f4423ab38180355"
+      ],
+      "confidence": 0.9,
+      "evidence": "Taa East",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Culture",
+      "name": "Bantu",
+      "attributes": {},
+      "source_chunk_ids": [
+        "743107c36db3966f5f4423ab38180355"
+      ],
+      "confidence": 0.85,
+      "evidence": "Bantu",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Ju|\u2019hoan_North",
+      "attributes": {
+        "alternative_names": [
+          "Ju|\u2019hoan",
+          "San"
+        ]
+      },
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "confidence": 0.9,
+      "evidence": "Ju|\u2019hoan_North largely corresponds to what is known as Ju|\u2019hoan, often simply referred to as San",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Ju|\u2019hoan_South",
+      "attributes": {
+        "alternative_names": [
+          "\u00b1Kx\u2019au||\u2019en"
+        ]
+      },
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "confidence": 0.85,
+      "evidence": "Ju|\u2019hoan_South are also known as \u00b1Kx\u2019au||\u2019en",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Khwe",
+      "attributes": {
+        "subgroups": [
+          "||Xokhoe",
+          "||Anikhoe"
+        ]
+      },
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "confidence": 0.8,
+      "evidence": "For the Khwe, five samples each of the ||Xokhoe and ||Anikhoe subgroups were combined",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Culture",
+      "name": "Damara",
+      "attributes": {},
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "confidence": 0.75,
+      "evidence": "Damara and Nama individuals were chosen",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Culture",
+      "name": "Nama",
+      "attributes": {},
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "confidence": 0.75,
+      "evidence": "Damara and Nama individuals were chosen",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Culture",
+      "name": "Taa_West",
+      "attributes": {
+        "dialects": [
+          "West !Xoon",
+          "!Ama"
+        ]
+      },
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "confidence": 0.8,
+      "evidence": "Taa_West group includes speakers of the West !Xoon and !Ama dialects",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Culture",
+      "name": "Taa_North",
+      "attributes": {
+        "dialects": [
+          "East !Xoon"
+        ]
+      },
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "confidence": 0.8,
+      "evidence": "Taa_North comprises speakers of the East !Xoon dialect",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Culture",
+      "name": "Taa_East",
+      "attributes": {
+        "dialects": [
+          "Tshaasi",
+          "\u00b1Huan"
+        ]
+      },
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "confidence": 0.8,
+      "evidence": "Taa_East includes speakers of the Tshaasi and \u00b1Huan dialects",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Culture",
+      "name": "Mbukushu",
+      "attributes": {
+        "language_family": "Bantu",
+        "region": "southwestern Zambia"
+      },
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "confidence": 0.7,
+      "evidence": "Bantu-speaking groups from southwestern Zambia (Mbukushu)",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Culture",
+      "name": "Himba",
+      "attributes": {
+        "language_family": "Bantu",
+        "region": "Namibia"
+      },
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "confidence": 0.7,
+      "evidence": "Namibia (Himba and Wambo)",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Culture",
+      "name": "Wambo",
+      "attributes": {
+        "language_family": "Bantu",
+        "region": "Namibia"
+      },
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "confidence": 0.7,
+      "evidence": "Namibia (Himba and Wambo)",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Culture",
+      "name": "Kgalagadi",
+      "attributes": {
+        "language_family": "Bantu",
+        "region": "Botswana"
+      },
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "confidence": 0.7,
+      "evidence": "Botswana (Kgalagadi and Tswana)",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Culture",
+      "name": "Tswana",
+      "attributes": {
+        "language_family": "Bantu",
+        "region": "Botswana"
+      },
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "confidence": 0.7,
+      "evidence": "Botswana (Kgalagadi and Tswana)",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Study",
+      "name": "genetic study of Khoisan populations",
+      "attributes": {
+        "design": "genetic sampling",
+        "sample_size": "minimum 10 per linguistic branch",
+        "year": "implied from references"
+      },
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "confidence": 0.85,
+      "evidence": "For the purposes of this study, a minimum of 10 unrelated individuals from each linguistic branch",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Evidence",
+      "name": "genetic analysis",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "confidence": 0.8,
+      "evidence": "genetic differentiation between them using the data from this study",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Taa_West",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8ac356b059eba2406197e593bd4739de"
+      ],
+      "confidence": 0.9,
+      "evidence": "Taa_West individuals",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Hai||om",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8ac356b059eba2406197e593bd4739de"
+      ],
+      "confidence": 0.9,
+      "evidence": "Hai||om individuals",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Nama",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8ac356b059eba2406197e593bd4739de"
+      ],
+      "confidence": 0.9,
+      "evidence": "Nama individuals",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Culture",
+      "name": "G||ana",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8ac356b059eba2406197e593bd4739de"
+      ],
+      "confidence": 0.9,
+      "evidence": "G||ana individuals",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Culture",
+      "name": "Tshwa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8ac356b059eba2406197e593bd4739de"
+      ],
+      "confidence": 0.9,
+      "evidence": "Tshwa individuals",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Culture",
+      "name": "Khwe",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8ac356b059eba2406197e593bd4739de"
+      ],
+      "confidence": 0.9,
+      "evidence": "Khwe individuals",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Culture",
+      "name": "!Xuun",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8ac356b059eba2406197e593bd4739de"
+      ],
+      "confidence": 0.9,
+      "evidence": "!Xuun individuals",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Culture",
+      "name": "Damara",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8ac356b059eba2406197e593bd4739de"
+      ],
+      "confidence": 0.9,
+      "evidence": "Damara sample",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Culture",
+      "name": "Topnaar",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8ac356b059eba2406197e593bd4739de"
+      ],
+      "confidence": 0.9,
+      "evidence": "Topnaar from the Kuiseb Valley",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Ju|\u2019hoan_North",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bbdc1bc789c919e588cae20955346523"
+      ],
+      "confidence": 0.9,
+      "evidence": "Ju|\u2019hoan_North",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Ju|\u2019hoan_South",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bbdc1bc789c919e588cae20955346523"
+      ],
+      "confidence": 0.9,
+      "evidence": "Ju|\u2019hoan_South",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "!Hoan",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bbdc1bc789c919e588cae20955346523"
+      ],
+      "confidence": 0.9,
+      "evidence": "!Hoan",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Culture",
+      "name": "Taa_North",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bbdc1bc789c919e588cae20955346523"
+      ],
+      "confidence": 0.9,
+      "evidence": "Taa_North",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Culture",
+      "name": "Taa_East",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bbdc1bc789c919e588cae20955346523"
+      ],
+      "confidence": 0.9,
+      "evidence": "Taa_East",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Culture",
+      "name": "Yoruba",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bbdc1bc789c919e588cae20955346523"
+      ],
+      "confidence": 0.8,
+      "evidence": "Yoruba as a reference non-Khoisan population",
+      "verified": true
+    }
+  ],
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "population test26",
+      "source_chunk_ids": [
+        "65b1cca571c2c3a69baf73289578805b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "population"
+      },
+      "confidence": 0.7,
+      "evidence": "Jul'hoan_North",
+      "source_chunk_ids": [
+        "65b1cca571c2c3a69baf73289578805b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "population"
+      },
+      "confidence": 0.7,
+      "evidence": "Hadza",
+      "source_chunk_ids": [
+        "65b1cca571c2c3a69baf73289578805b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "population"
+      },
+      "confidence": 0.7,
+      "evidence": "Dinka",
+      "source_chunk_ids": [
+        "65b1cca571c2c3a69baf73289578805b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "relatedness",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "signal in the Sandawe",
+      "source_chunk_ids": [
+        "65b1cca571c2c3a69baf73289578805b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "relatedness",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "relatedness to the Khoisan",
+      "source_chunk_ids": [
+        "65b1cca571c2c3a69baf73289578805b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E14",
+      "target_entity_id": "E15",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "genetic differentiation between them using the data from this study",
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "population"
+      },
+      "confidence": 0.8,
+      "evidence": "Ju|\u2019hoan_North largely corresponds to what is known as Ju|\u2019hoan, often simply referred to as San",
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "population"
+      },
+      "confidence": 0.75,
+      "evidence": "Ju|\u2019hoan_South are also known as \u00b1Kx\u2019au||\u2019en",
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "population"
+      },
+      "confidence": 0.75,
+      "evidence": "For the Khwe, five samples each of the ||Xokhoe and ||Anikhoe subgroups were combined",
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "population"
+      },
+      "confidence": 0.7,
+      "evidence": "Damara and Nama individuals were chosen",
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "population"
+      },
+      "confidence": 0.7,
+      "evidence": "Damara and Nama individuals were chosen",
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "population"
+      },
+      "confidence": 0.7,
+      "evidence": "Taa_West group includes speakers of the West !Xoon and !Ama dialects",
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "population"
+      },
+      "confidence": 0.7,
+      "evidence": "Taa_North comprises speakers of the East !Xoon dialect",
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "STUDIES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "population"
+      },
+      "confidence": 0.7,
+      "evidence": "Taa_East includes speakers of the Tshaasi and \u00b1Huan dialects",
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "population",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Bantu-speaking groups from southwestern Zambia (Mbukushu)",
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R11",
+      "type": "STUDIES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "population",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Namibia (Himba and Wambo)",
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R12",
+      "type": "STUDIES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E11",
+      "attributes": {
+        "role": "population",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Namibia (Himba and Wambo)",
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R13",
+      "type": "STUDIES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E12",
+      "attributes": {
+        "role": "population",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Botswana (Kgalagadi and Tswana)",
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R14",
+      "type": "STUDIES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E13",
+      "attributes": {
+        "role": "population",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Botswana (Kgalagadi and Tswana)",
+      "source_chunk_ids": [
+        "df92a155d674ff8bed00832d19382004"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    }
+  ]
 }

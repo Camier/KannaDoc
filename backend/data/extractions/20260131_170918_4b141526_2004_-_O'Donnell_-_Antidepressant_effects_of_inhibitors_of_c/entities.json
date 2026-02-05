@@ -1,882 +1,5810 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "d8bf90471ff5968cbdaefd032cbea28a776f61b6a6aedcbb879a9a1550ef0eab",
-  "extracted_at": "2026-02-01T08:08:53.011518+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
-      "type": "PharmEffect",
-      "name": "Antidepressant effects",
+      "id": "E1",
+      "type": "Target",
+      "name": "type 4 phosphodiesterase",
       "attributes": {
-        "context": "Antidepressant effects"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
-        "ee3db8415a2944c7f8934cce2f5ae17e"
-      ]
+        "965d5e31ae90be5dca185dacd7b62c07"
+      ],
+      "confidence": 0.9,
+      "evidence": "type 4 phosphodiesterase (PDE4)",
+      "verified": true
     },
     {
-      "id": "ent_002",
-      "type": "Compound",
-      "name": "cAMP",
-      "attributes": {
-        "context": "inhibitors of cAMP phosphodiesterase"
-      },
-      "source_chunk_ids": [
-        "ee3db8415a2944c7f8934cce2f5ae17e"
-      ]
-    },
-    {
-      "id": "ent_003",
-      "type": "Compound",
+      "id": "E2",
+      "type": "Target",
       "name": "PDE4",
       "attributes": {
-        "context": "phosphodiesterase (PDE4)"
-      },
-      "source_chunk_ids": [
-        "ee3db8415a2944c7f8934cce2f5ae17e"
-      ]
-    },
-    {
-      "id": "ent_004",
-      "type": "Compound",
-      "name": "type 4 phosphodiesterase (PDE4) inhibitors",
-      "attributes": {
-        "context": "development of type 4 phosphodiesterase (PDE4) inhibitors"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
         "965d5e31ae90be5dca185dacd7b62c07"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "PDE4",
+      "verified": true
     },
     {
-      "id": "ent_005",
-      "type": "PharmEffect",
-      "name": "antidepressant",
-      "attributes": {
-        "context": "inhibitors as antidepressants"
-      },
-      "source_chunk_ids": [
-        "965d5e31ae90be5dca185dacd7b62c07"
-      ]
-    },
-    {
-      "id": "ent_006",
-      "type": "Compound",
-      "name": "PDE4",
-      "attributes": {
-        "context": "importance of PDE4 subtypes"
-      },
-      "source_chunk_ids": [
-        "965d5e31ae90be5dca185dacd7b62c07"
-      ]
-    },
-    {
-      "id": "ent_007",
-      "type": "Compound",
-      "name": "PDE4 inhibitors",
-      "attributes": {
-        "context": "potential of PDE4 inhibitors"
-      },
-      "source_chunk_ids": [
-        "965d5e31ae90be5dca185dacd7b62c07"
-      ]
-    },
-    {
-      "id": "ent_008",
-      "type": "Compound",
-      "name": "PDE4",
-      "attributes": {
-        "context": "PDE4 has been shown to be involved"
-      },
-      "source_chunk_ids": [
-        "965d5e31ae90be5dca185dacd7b62c07"
-      ]
-    },
-    {
-      "id": "ent_009",
-      "type": "Compound",
-      "name": "cAMP",
-      "attributes": {
-        "context": "involved in cAMP signaling pathways"
-      },
-      "source_chunk_ids": [
-        "965d5e31ae90be5dca185dacd7b62c07"
-      ]
-    },
-    {
-      "id": "ent_010",
-      "type": "PharmEffect",
-      "name": "antidepressant",
-      "attributes": {
-        "context": "affected by antidepressants"
-      },
-      "source_chunk_ids": [
-        "965d5e31ae90be5dca185dacd7b62c07"
-      ]
-    },
-    {
-      "id": "ent_011",
-      "type": "Compound",
+      "id": "E3",
+      "type": "Target",
       "name": "PDE4D",
       "attributes": {
-        "context": "that PDE4D and PDE4B mediate"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
         "965d5e31ae90be5dca185dacd7b62c07"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "PDE4D",
+      "verified": true
     },
     {
-      "id": "ent_012",
-      "type": "Compound",
+      "id": "E4",
+      "type": "Target",
       "name": "PDE4B",
       "attributes": {
-        "context": "PDE4D and PDE4B mediate antidepressant effects"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
         "965d5e31ae90be5dca185dacd7b62c07"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "PDE4B",
+      "verified": true
     },
     {
-      "id": "ent_013",
-      "type": "PharmEffect",
-      "name": "antidepressant",
+      "id": "E5",
+      "type": "Target",
+      "name": "cAMP signaling pathways",
       "attributes": {
-        "context": "mediate antidepressant effects"
+        "target_type": "pathway"
       },
       "source_chunk_ids": [
         "965d5e31ae90be5dca185dacd7b62c07"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "cAMP signaling pathways",
+      "verified": true
     },
     {
-      "id": "ent_014",
-      "type": "Compound",
-      "name": "PDE4",
-      "attributes": {
-        "context": "conformer of PDE4 is particularly important"
-      },
-      "source_chunk_ids": [
-        "965d5e31ae90be5dca185dacd7b62c07"
-      ]
-    },
-    {
-      "id": "ent_015",
-      "type": "PharmEffect",
-      "name": "antidepressant",
-      "attributes": {
-        "context": "important for antidepressant efficacy"
-      },
-      "source_chunk_ids": [
-        "965d5e31ae90be5dca185dacd7b62c07"
-      ]
-    },
-    {
-      "id": "ent_016",
-      "type": "Compound",
-      "name": "PDE4 inhibitors",
-      "attributes": {
-        "context": "actions of PDE4 inhibitors"
-      },
-      "source_chunk_ids": [
-        "965d5e31ae90be5dca185dacd7b62c07"
-      ]
-    },
-    {
-      "id": "ent_017",
-      "type": "Compound",
-      "name": "PDE4D",
-      "attributes": {
-        "context": "PDE4D has been shown to be regulated"
-      },
-      "source_chunk_ids": [
-        "aa5fb0e435cad9df2e58b5707ff754ae"
-      ]
-    },
-    {
-      "id": "ent_018",
-      "type": "PharmEffect",
-      "name": "regulation",
-      "attributes": {
-        "context": "of regulation in the brain"
-      },
-      "source_chunk_ids": [
-        "aa5fb0e435cad9df2e58b5707ff754ae"
-      ]
-    },
-    {
-      "id": "ent_019",
-      "type": "PharmEffect",
-      "name": "regulated at the expression level",
-      "attributes": {
-        "context": "regulated at the expression level in several cell types"
-      },
-      "source_chunk_ids": [
-        "aa5fb0e435cad9df2e58b5707ff754ae"
-      ]
-    },
-    {
-      "id": "ent_020",
-      "type": "PharmEffect",
-      "name": "antidepressant actions",
-      "attributes": {
-        "context": "implicated in antidepressant actions"
-      },
-      "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
-    },
-    {
-      "id": "ent_021",
-      "type": "Compound",
-      "name": "PDE4",
-      "attributes": {
-        "context": "involves PDE4"
-      },
-      "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
-    },
-    {
-      "id": "ent_022",
-      "type": "Compound",
-      "name": "NMDA-receptor",
-      "attributes": {
-        "context": "NMDA-receptor-mediated signaling"
-      },
-      "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
-    },
-    {
-      "id": "ent_023",
-      "type": "Compound",
-      "name": "NMDA receptors",
-      "attributes": {
-        "context": "The role of NMDA receptors"
-      },
-      "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
-    },
-    {
-      "id": "ent_024",
-      "type": "PharmEffect",
-      "name": "antidepressant effects",
-      "attributes": {
-        "context": "mediating antidepressant effects"
-      },
-      "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
-    },
-    {
-      "id": "ent_025",
-      "type": "Compound",
-      "name": "NMDA antagonists",
-      "attributes": {
-        "context": "NMDA antagonists such as MK801"
-      },
-      "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
-    },
-    {
-      "id": "ent_026",
-      "type": "Compound",
-      "name": "MK801",
-      "attributes": {
-        "context": "such as MK801 (dizocilpine)"
-      },
-      "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
-    },
-    {
-      "id": "ent_027",
-      "type": "Compound",
-      "name": "dizocilpine",
-      "attributes": {
-        "context": "MK801 (dizocilpine)"
-      },
-      "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
-    },
-    {
-      "id": "ent_028",
-      "type": "PharmEffect",
-      "name": "antidepressant-like effects",
-      "attributes": {
-        "context": "produce antidepressant-like effects"
-      },
-      "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
-    },
-    {
-      "id": "ent_029",
-      "type": "Compound",
-      "name": "rolipram",
-      "attributes": {
-        "context": "rolipram has been shown to reverse memory deficits"
-      },
-      "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
-    },
-    {
-      "id": "ent_030",
-      "type": "PharmEffect",
-      "name": "reverse memory deficits",
-      "attributes": {
-        "context": "reverse memory deficits that result from dizocilpine treatment"
-      },
-      "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
-    },
-    {
-      "id": "ent_031",
-      "type": "Compound",
-      "name": "dizocilpine",
-      "attributes": {
-        "context": "result from dizocilpine treatment"
-      },
-      "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
-    },
-    {
-      "id": "ent_032",
-      "type": "Compound",
-      "name": "PDE4",
-      "attributes": {
-        "context": "role of PDE4 in NMDA-receptor-mediated signaling"
-      },
-      "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
-    },
-    {
-      "id": "ent_033",
-      "type": "Compound",
-      "name": "NMDA-receptor",
-      "attributes": {
-        "context": "PDE4 in NMDA-receptor-mediated signaling"
-      },
-      "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
-    },
-    {
-      "id": "ent_034",
-      "type": "PharmEffect",
-      "name": "cognitive deficits",
-      "attributes": {
-        "context": "related more to cognitive deficits"
-      },
-      "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
-    },
-    {
-      "id": "ent_035",
-      "type": "Indication",
+      "id": "E6",
+      "type": "Condition",
       "name": "depression",
       "attributes": {
-        "context": "that occur in depression"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
+        "965d5e31ae90be5dca185dacd7b62c07"
+      ],
+      "confidence": 0.9,
+      "evidence": "antidepressants",
+      "verified": true
     },
     {
-      "id": "ent_036",
+      "id": "E7",
+      "type": "Effect",
+      "name": "antidepressant effects",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "965d5e31ae90be5dca185dacd7b62c07"
+      ],
+      "confidence": 0.85,
+      "evidence": "antidepressant effects",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Helmut Wachtel research",
+      "attributes": {
+        "year": "over 20 years ago",
+        "affiliation": "Schering AG Pharmaceuticals"
+      },
+      "source_chunk_ids": [
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "confidence": 0.9,
+      "evidence": "Research by Helmut Wachtel at Schering AG Pharmaceuticals",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vitro study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "confidence": 0.8,
+      "evidence": "demonstrated that the then-novel compound rolipram",
+      "verified": true
+    },
+    {
+      "id": "E3",
       "type": "Compound",
+      "name": "rolipram",
+      "attributes": {},
+      "source_chunk_ids": [
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "confidence": 0.95,
+      "evidence": "compound rolipram",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "cAMP phosphodiesterase",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "confidence": 0.85,
+      "evidence": "inhibitors of cAMP phosphodiesterase (PDE)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
       "name": "PDE4",
       "attributes": {
-        "context": "functional role of PDE4 in NMDA receptor-mediated signaling"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "confidence": 0.9,
+      "evidence": "type 4 PDE (PDE4)",
+      "verified": true
     },
     {
-      "id": "ent_037",
-      "type": "Compound",
-      "name": "NMDA receptor",
+      "id": "E6",
+      "type": "Effect",
+      "name": "CNS activity",
       "attributes": {
-        "context": "PDE4 in NMDA receptor-mediated signaling"
+        "level": "systemic",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "confidence": 0.8,
+      "evidence": "have CNS activity",
+      "verified": true
     },
     {
-      "id": "ent_038",
-      "type": "Compound",
-      "name": "NMDA receptors",
+      "id": "E7",
+      "type": "Effect",
+      "name": "antidepressant efficacy",
       "attributes": {
-        "context": "Stimulation of NMDA receptors"
+        "level": "systemic",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "confidence": 0.85,
+      "evidence": "indicative of antidepressant efficacy",
+      "verified": true
     },
     {
-      "id": "ent_039",
-      "type": "Compound",
-      "name": "cAMP",
+      "id": "E8",
+      "type": "Study",
+      "name": "clinical trial [3]",
       "attributes": {
-        "context": "concentrations of cAMP and cGMP"
+        "design": "clinical trial"
       },
       "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "confidence": 0.75,
+      "evidence": "borne out later in a clinical trial",
+      "verified": true
     },
     {
-      "id": "ent_040",
-      "type": "Compound",
-      "name": "cGMP",
+      "id": "E9",
+      "type": "Evidence",
+      "name": "clinical trial evidence",
       "attributes": {
-        "context": "cAMP and cGMP"
+        "evidence_level": 4
       },
       "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "confidence": 0.7,
+      "evidence": "clinical trial",
+      "verified": true
     },
     {
-      "id": "ent_041",
-      "type": "Compound",
-      "name": "cAMP",
+      "id": "E10",
+      "type": "Condition",
+      "name": "depression",
       "attributes": {
-        "context": "the cAMP formed by NMDA-receptor stimulation"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "confidence": 0.9,
+      "evidence": "therapeutic utility in depression",
+      "verified": true
     },
     {
-      "id": "ent_042",
-      "type": "Compound",
-      "name": "NMDA-receptor",
+      "id": "E11",
+      "type": "Condition",
+      "name": "inflammatory disorders",
       "attributes": {
-        "context": "cAMP formed by NMDA-receptor stimulation"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "confidence": 0.8,
+      "evidence": "inflammatory and immunological disorders",
+      "verified": true
     },
     {
-      "id": "ent_043",
-      "type": "Compound",
-      "name": "PDE4",
+      "id": "E12",
+      "type": "Condition",
+      "name": "immunological disorders",
       "attributes": {
-        "context": "hydrolyzed exclusively by PDE4"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "confidence": 0.8,
+      "evidence": "inflammatory and immunological disorders",
+      "verified": true
     },
     {
-      "id": "ent_044",
-      "type": "Compound",
-      "name": "cGMP",
-      "attributes": {
-        "context": "the cGMP that forms is hydrolyzed by PDE2"
-      },
-      "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
-    },
-    {
-      "id": "ent_045",
-      "type": "Compound",
-      "name": "PDE2",
-      "attributes": {
-        "context": "hydrolyzed by PDE2 only"
-      },
-      "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
-    },
-    {
-      "id": "ent_046",
-      "type": "Compound",
+      "id": "E13",
+      "type": "Target",
       "name": "PDE4 subtypes",
       "attributes": {
-        "context": "which PDE4 subtypes are components"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "confidence": 0.75,
+      "evidence": "four PDE4 subtypes",
+      "verified": true
     },
     {
-      "id": "ent_047",
-      "type": "Compound",
-      "name": "NMDA-receptor",
+      "id": "E14",
+      "type": "Target",
+      "name": "HARBS",
       "attributes": {
-        "context": "components of NMDA-receptor-mediated signaling"
+        "target_type": "binding site"
       },
       "source_chunk_ids": [
-        "8a565dbf31f1453b967c49a5c540a569"
-      ]
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "confidence": 0.7,
+      "evidence": "high-affinity rolipram-binding sites (HARBS)",
+      "verified": true
     },
     {
-      "id": "ent_048",
-      "type": "PharmEffect",
-      "name": "antidepressant-like profile",
+      "id": "E15",
+      "type": "Target",
+      "name": "LARBS",
       "attributes": {
-        "context": "exhibit an antidepressant-like profile"
+        "target_type": "binding site"
       },
       "source_chunk_ids": [
-        "5491df562c325ae25574b24b75a967aa"
-      ]
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "confidence": 0.7,
+      "evidence": "low-affinity rolipram-binding sites (LARBS)",
+      "verified": true
     },
     {
-      "id": "ent_049",
-      "type": "PharmEffect",
-      "name": "reduced immobility",
+      "id": "E1",
+      "type": "Target",
+      "name": "PDE enzymes",
       "attributes": {
-        "context": "evidenced by reduced immobility"
+        "target_type": "enzyme family"
       },
       "source_chunk_ids": [
-        "5491df562c325ae25574b24b75a967aa"
-      ]
+        "3a627f2ba9f61ab88dcc03d98345355c"
+      ],
+      "confidence": 0.95,
+      "evidence": "PDE enzymes comprise an eleven-family group",
+      "verified": true
     },
     {
-      "id": "ent_050",
-      "type": "PharmEffect",
-      "name": "reduced immobility",
+      "id": "E2",
+      "type": "Target",
+      "name": "PDE1\u2013PDE11",
       "attributes": {
-        "context": "This reduced immobility is similar"
+        "target_type": "enzyme family"
       },
       "source_chunk_ids": [
-        "5491df562c325ae25574b24b75a967aa"
-      ]
+        "3a627f2ba9f61ab88dcc03d98345355c"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE1\u2013PDE11",
+      "verified": true
     },
     {
-      "id": "ent_051",
-      "type": "Compound",
-      "name": "rolipram",
+      "id": "E3",
+      "type": "Target",
+      "name": "cAMP",
       "attributes": {
-        "context": "putative antidepressant rolipram"
+        "target_type": "substrate"
       },
       "source_chunk_ids": [
-        "5491df562c325ae25574b24b75a967aa"
-      ]
+        "3a627f2ba9f61ab88dcc03d98345355c"
+      ],
+      "confidence": 0.85,
+      "evidence": "hydrolyze cAMP",
+      "verified": true
     },
     {
-      "id": "ent_052",
-      "type": "PharmEffect",
-      "name": "reduction in immobility",
+      "id": "E4",
+      "type": "Target",
+      "name": "cGMP",
       "attributes": {
-        "context": "A further reduction in immobility"
+        "target_type": "substrate"
       },
       "source_chunk_ids": [
-        "5491df562c325ae25574b24b75a967aa"
-      ]
+        "3a627f2ba9f61ab88dcc03d98345355c"
+      ],
+      "confidence": 0.85,
+      "evidence": "hydrolyze cGMP",
+      "verified": true
     },
     {
-      "id": "ent_053",
-      "type": "Compound",
-      "name": "desipramine",
+      "id": "E5",
+      "type": "Target",
+      "name": "Ca^{2+}",
       "attributes": {
-        "context": "antidepressants desipramine"
+        "target_type": "modulator"
       },
       "source_chunk_ids": [
-        "5491df562c325ae25574b24b75a967aa"
-      ]
+        "3a627f2ba9f61ab88dcc03d98345355c"
+      ],
+      "confidence": 0.8,
+      "evidence": "sensitivity to modulators (e.g. Ca^{2+})",
+      "verified": true
     },
     {
-      "id": "ent_054",
-      "type": "Compound",
-      "name": "fluoxetine",
+      "id": "E6",
+      "type": "Target",
+      "name": "calmodulin",
       "attributes": {
-        "context": "and fluoxetine are administered"
+        "target_type": "modulator"
       },
       "source_chunk_ids": [
-        "5491df562c325ae25574b24b75a967aa"
-      ]
+        "3a627f2ba9f61ab88dcc03d98345355c"
+      ],
+      "confidence": 0.8,
+      "evidence": "sensitivity to modulators (e.g. calmodulin)",
+      "verified": true
     },
     {
-      "id": "ent_055",
-      "type": "Compound",
-      "name": "rolipram",
+      "id": "E7",
+      "type": "Target",
+      "name": "pharmacological inhibitors",
       "attributes": {
-        "context": "rolipram causes, at best"
+        "target_type": "inhibitor"
       },
       "source_chunk_ids": [
-        "5491df562c325ae25574b24b75a967aa"
-      ]
+        "3a627f2ba9f61ab88dcc03d98345355c"
+      ],
+      "confidence": 0.75,
+      "evidence": "sensitivity to pharmacological inhibitors",
+      "verified": true
     },
     {
-      "id": "ent_056",
-      "type": "PharmEffect",
-      "name": "reduction in the time of immobility",
+      "id": "E1",
+      "type": "Target",
+      "name": "PDE4 enzyme family",
       "attributes": {
-        "context": "additional reduction in the time of immobility"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
-        "5491df562c325ae25574b24b75a967aa"
-      ]
+        "7f5a74ac13da75da462287b1cb003d32"
+      ],
+      "confidence": 0.95,
+      "evidence": "PDE4 enzyme family",
+      "verified": true
     },
     {
-      "id": "ent_057",
-      "type": "Compound",
-      "name": "rolipram",
+      "id": "E2",
+      "type": "Target",
+      "name": "PDE4A",
       "attributes": {
-        "context": "the ability of rolipram to enhance"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
-        "3fcaa03a54b2f6cedb9f791441394f66"
-      ]
+        "7f5a74ac13da75da462287b1cb003d32"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4A",
+      "verified": true
     },
     {
-      "id": "ent_058",
-      "type": "PharmEffect",
-      "name": "\\beta-adrenoceptor-mediated cAMP formation",
+      "id": "E3",
+      "type": "Target",
+      "name": "PDE4B",
       "attributes": {
-        "context": "enhance \\beta-adrenoceptor-mediated cAMP formation in the cerebral cortex"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
-        "3fcaa03a54b2f6cedb9f791441394f66"
-      ]
+        "7f5a74ac13da75da462287b1cb003d32"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4B",
+      "verified": true
     },
     {
-      "id": "ent_059",
-      "type": "Compound",
+      "id": "E4",
+      "type": "Target",
+      "name": "PDE4C",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "7f5a74ac13da75da462287b1cb003d32"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4C",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
       "name": "PDE4D",
       "attributes": {
-        "context": "diminished in PDE4D-deficient mice"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
-        "3fcaa03a54b2f6cedb9f791441394f66"
-      ]
+        "7f5a74ac13da75da462287b1cb003d32"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4D",
+      "verified": true
     },
     {
-      "id": "ent_060",
+      "id": "E6",
+      "type": "Effect",
+      "name": "reward",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "7f5a74ac13da75da462287b1cb003d32"
+      ],
+      "confidence": 0.8,
+      "evidence": "involved in reward",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "affect",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "7f5a74ac13da75da462287b1cb003d32"
+      ],
+      "confidence": 0.8,
+      "evidence": "involved in affect",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Compound",
-      "name": "desipramine",
-      "attributes": {
-        "context": "effect of desipramine and fluoxetine"
-      },
+      "name": "Rolipram",
+      "attributes": {},
       "source_chunk_ids": [
-        "3fcaa03a54b2f6cedb9f791441394f66"
-      ]
+        "daf511dbaf73a527055607849218e6c4"
+      ],
+      "confidence": 0.95,
+      "evidence": "Rolipram",
+      "verified": true
     },
     {
-      "id": "ent_061",
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "PDE4 inhibitors",
+      "attributes": {},
+      "source_chunk_ids": [
+        "daf511dbaf73a527055607849218e6c4"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4 inhibitors",
+      "verified": true
+    },
+    {
+      "id": "E3",
       "type": "Compound",
-      "name": "fluoxetine",
-      "attributes": {
-        "context": "effect of desipramine and fluoxetine"
-      },
+      "name": "Ro201724",
+      "attributes": {},
       "source_chunk_ids": [
-        "3fcaa03a54b2f6cedb9f791441394f66"
-      ]
+        "daf511dbaf73a527055607849218e6c4"
+      ],
+      "confidence": 0.85,
+      "evidence": "Ro201724",
+      "verified": true
     },
     {
-      "id": "ent_062",
+      "id": "E4",
       "type": "Compound",
-      "name": "PDE4D",
-      "attributes": {
-        "context": "that PDE4D is not involved"
-      },
+      "name": "ICI63197",
+      "attributes": {},
       "source_chunk_ids": [
-        "3fcaa03a54b2f6cedb9f791441394f66"
-      ]
+        "daf511dbaf73a527055607849218e6c4"
+      ],
+      "confidence": 0.85,
+      "evidence": "ICI63197",
+      "verified": true
     },
     {
-      "id": "ent_063",
-      "type": "Compound",
-      "name": "monoamine-uptake inhibitors",
+      "id": "E5",
+      "type": "Effect",
+      "name": "antidepressant-like effects",
       "attributes": {
-        "context": "If the monoamine-uptake inhibitors produce their effects"
+        "level": "behavioral",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "3fcaa03a54b2f6cedb9f791441394f66"
-      ]
+        "daf511dbaf73a527055607849218e6c4"
+      ],
+      "confidence": 0.9,
+      "evidence": "produce antidepressant-like effects",
+      "verified": true
     },
     {
-      "id": "ent_064",
-      "type": "PharmEffect",
-      "name": "receptor-mediated cAMP formation",
-      "attributes": {
-        "context": "by increasing receptor-mediated cAMP formation"
-      },
-      "source_chunk_ids": [
-        "3fcaa03a54b2f6cedb9f791441394f66"
-      ]
-    },
-    {
-      "id": "ent_065",
-      "type": "Compound",
-      "name": "PDE4 subtype",
-      "attributes": {
-        "context": "loss of the PDE4 subtype in the affected pathway"
-      },
-      "source_chunk_ids": [
-        "3fcaa03a54b2f6cedb9f791441394f66"
-      ]
-    },
-    {
-      "id": "ent_066",
-      "type": "Compound",
-      "name": "desipramine",
-      "attributes": {
-        "context": "enhance the effects of desipramine and fluoxetine"
-      },
-      "source_chunk_ids": [
-        "3fcaa03a54b2f6cedb9f791441394f66"
-      ]
-    },
-    {
-      "id": "ent_067",
-      "type": "Compound",
-      "name": "fluoxetine",
-      "attributes": {
-        "context": "enhance the effects of desipramine and fluoxetine"
-      },
-      "source_chunk_ids": [
-        "3fcaa03a54b2f6cedb9f791441394f66"
-      ]
-    },
-    {
-      "id": "ent_068",
-      "type": "Compound",
-      "name": "desipramine",
-      "attributes": {
-        "context": "treatment with either desipramine or fluoxetine"
-      },
-      "source_chunk_ids": [
-        "75b2c2fb00b45bdaa16e7d05ef8076c8"
-      ]
-    },
-    {
-      "id": "ent_069",
-      "type": "Compound",
-      "name": "fluoxetine",
-      "attributes": {
-        "context": "desipramine or fluoxetine, antidepressants"
-      },
-      "source_chunk_ids": [
-        "75b2c2fb00b45bdaa16e7d05ef8076c8"
-      ]
-    },
-    {
-      "id": "ent_070",
-      "type": "PharmEffect",
-      "name": "antidepressant",
-      "attributes": {
-        "context": "antidepressants that exert their antidepressant effects"
-      },
-      "source_chunk_ids": [
-        "75b2c2fb00b45bdaa16e7d05ef8076c8"
-      ]
-    },
-    {
-      "id": "ent_071",
-      "type": "PharmEffect",
-      "name": "antidepressant effects",
-      "attributes": {
-        "context": "exert their antidepressant effects primarily"
-      },
-      "source_chunk_ids": [
-        "75b2c2fb00b45bdaa16e7d05ef8076c8"
-      ]
-    },
-    {
-      "id": "ent_072",
-      "type": "Compound",
-      "name": "noradrenaline",
-      "attributes": {
-        "context": "via noradrenaline-mediated and 5-HT-mediated actions"
-      },
-      "source_chunk_ids": [
-        "75b2c2fb00b45bdaa16e7d05ef8076c8"
-      ]
-    },
-    {
-      "id": "ent_073",
-      "type": "Compound",
-      "name": "5-HT",
-      "attributes": {
-        "context": "noradrenaline-mediated and 5-HT-mediated actions"
-      },
-      "source_chunk_ids": [
-        "75b2c2fb00b45bdaa16e7d05ef8076c8"
-      ]
-    },
-    {
-      "id": "ent_074",
-      "type": "Compound",
+      "id": "E1",
+      "type": "Target",
       "name": "PDE4",
       "attributes": {
-        "context": "increase in PDE4 expression"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
-        "75b2c2fb00b45bdaa16e7d05ef8076c8"
-      ]
+        "f287f72f1c1f1c7a6de4e2fdf97bc536"
+      ],
+      "confidence": 0.95,
+      "evidence": "Type 4 phosphodiesterase (PDE4) enzyme",
+      "verified": true
     },
     {
-      "id": "ent_075",
-      "type": "PharmEffect",
-      "name": "antidepressants",
+      "id": "E2",
+      "type": "Target",
+      "name": "PDE4A",
       "attributes": {
-        "context": "indicates that the antidepressants alter components"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
-        "75b2c2fb00b45bdaa16e7d05ef8076c8"
-      ]
+        "f287f72f1c1f1c7a6de4e2fdf97bc536"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4A",
+      "verified": true
     },
     {
-      "id": "ent_076",
-      "type": "PharmEffect",
+      "id": "E3",
+      "type": "Target",
+      "name": "PDE4B",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "f287f72f1c1f1c7a6de4e2fdf97bc536"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4B",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "PDE4C",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "f287f72f1c1f1c7a6de4e2fdf97bc536"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4C",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "PDE4D",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "f287f72f1c1f1c7a6de4e2fdf97bc536"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4D",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "PKA",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "f287f72f1c1f1c7a6de4e2fdf97bc536"
+      ],
+      "confidence": 0.8,
+      "evidence": "PKA phosphorylation",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "ERK2",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "f287f72f1c1f1c7a6de4e2fdf97bc536"
+      ],
+      "confidence": 0.8,
+      "evidence": "ERK2 phosphorylation",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "d65e820b041e8c5f6f6f4882e90a8656"
+      ],
+      "confidence": 0.95,
+      "evidence": "Type 4 phosphodiesterase (PDE4) enzymes",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "PDE4A",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "d65e820b041e8c5f6f6f4882e90a8656"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4A",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "PDE4B",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "d65e820b041e8c5f6f6f4882e90a8656"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4B",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "PDE4C",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "d65e820b041e8c5f6f6f4882e90a8656"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4C",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "PDE4D",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "d65e820b041e8c5f6f6f4882e90a8656"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4D",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "ERK2",
+      "attributes": {
+        "target_type": "kinase"
+      },
+      "source_chunk_ids": [
+        "d65e820b041e8c5f6f6f4882e90a8656"
+      ],
+      "confidence": 0.85,
+      "evidence": "extracellular signal-regulated kinase (ERK2)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Effect",
+      "name": "decrease time of immobility in forced-swim test",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "confidence": 0.85,
+      "evidence": "decrease time of immobility in forced-swim test",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Effect",
+      "name": "decrease response rate under DRL schedule",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "confidence": 0.8,
+      "evidence": "decrease response rate under DRL schedule",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "increase reinforcement rate under DRL schedule",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "confidence": 0.8,
+      "evidence": "increase reinforcement rate under DRL schedule",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "reverse effects of chronic mild stress",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "confidence": 0.8,
+      "evidence": "reverse effects of chronic mild stress",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "normalize behavioral deficits in Flinders sensitive-line rats",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "confidence": 0.75,
+      "evidence": "normalize deficits in Flinders sensitive-line rats",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "normalize behavioral deficits in olfactory-bulb-cocaineized rats",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "confidence": 0.75,
+      "evidence": "normalize deficits in olfactory-bulb-cocaineized rats",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "antagonize effects of reserpine",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "confidence": 0.8,
+      "evidence": "antagonize effects of reserpine",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "potentiate yohimbine-induced toxicity",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "confidence": 0.8,
+      "evidence": "potentiate yohimbine-induced toxicity",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "typical antidepressant effects",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "confidence": 0.7,
+      "evidence": "effects typical of antidepressant drugs",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4 also appears to be involved",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Target",
+      "name": "CREB",
+      "attributes": {
+        "target_type": "protein"
+      },
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "confidence": 0.85,
+      "evidence": "CREB (cAMP response element-binding protein)",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Effect",
+      "name": "induction of neurogenesis in hippocampus",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "confidence": 0.8,
+      "evidence": "induction of neurogenesis in hippocampus",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Effect",
+      "name": "induce neurogenesis",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "confidence": 0.75,
+      "evidence": "ability to induce neurogenesis",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Effect",
+      "name": "mediate late-developing behavioral effects",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "confidence": 0.7,
+      "evidence": "important in mediating late-developing effects",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "clinical studies",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "faa4b4cea1353cd24eecfad1b58d6bda"
+      ],
+      "confidence": 0.9,
+      "evidence": "clinical studies",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "faa4b4cea1353cd24eecfad1b58d6bda"
+      ],
+      "confidence": 0.95,
+      "evidence": "PDE4 inhibitors",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "antidepressant efficacy",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "faa4b4cea1353cd24eecfad1b58d6bda"
+      ],
+      "confidence": 0.85,
+      "evidence": "antidepressant efficacy",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {},
+      "source_chunk_ids": [
+        "faa4b4cea1353cd24eecfad1b58d6bda"
+      ],
+      "confidence": 0.95,
+      "evidence": "rolipram",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "AdverseEvent",
+      "name": "emetic actions",
+      "attributes": {
+        "severity": "troublesome"
+      },
+      "source_chunk_ids": [
+        "faa4b4cea1353cd24eecfad1b58d6bda"
+      ],
+      "confidence": 0.8,
+      "evidence": "emetic actions",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "AdverseEvent",
+      "name": "sedative actions",
+      "attributes": {
+        "severity": "troublesome"
+      },
+      "source_chunk_ids": [
+        "faa4b4cea1353cd24eecfad1b58d6bda"
+      ],
+      "confidence": 0.8,
+      "evidence": "sedative actions",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "PDE4A",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "faa4b4cea1353cd24eecfad1b58d6bda"
+      ],
+      "confidence": 0.85,
+      "evidence": "PDE4A",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Target",
+      "name": "PDE4B",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "faa4b4cea1353cd24eecfad1b58d6bda"
+      ],
+      "confidence": 0.85,
+      "evidence": "PDE4B",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Target",
+      "name": "PDE4D",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "faa4b4cea1353cd24eecfad1b58d6bda"
+      ],
+      "confidence": 0.85,
+      "evidence": "PDE4D",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "86ecbea6e66d2e9eaa19330f2e576700"
+      ],
+      "confidence": 0.95,
+      "evidence": "PDE4 is a regulated component",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "\u03b2-adrenoceptors",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "86ecbea6e66d2e9eaa19330f2e576700"
+      ],
+      "confidence": 0.9,
+      "evidence": "\u03b2-adrenoceptors in rat cerebral cortex",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "noradrenaline-mediated neurotransmission",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "86ecbea6e66d2e9eaa19330f2e576700"
+      ],
+      "confidence": 0.85,
+      "evidence": "noradrenaline-mediated neurotransmission",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
       "name": "antidepressant effects",
       "attributes": {
-        "context": "these antidepressant effects are secondary"
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "86ecbea6e66d2e9eaa19330f2e576700"
+      ],
+      "confidence": 0.8,
+      "evidence": "produce antidepressant effects",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "inhibition of PDE4",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "86ecbea6e66d2e9eaa19330f2e576700"
+      ],
+      "confidence": 0.75,
+      "evidence": "Inhibition of PDE4",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "21a98f83de243122f2a63ceebb9ace2a"
+      ],
+      "confidence": 0.9,
+      "evidence": "involvement of PDE4",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "5-HT-mediated neurotransmission",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "21a98f83de243122f2a63ceebb9ace2a"
+      ],
+      "confidence": 0.85,
+      "evidence": "5-HT-mediated neurotransmission",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "adenylyl cyclase",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "21a98f83de243122f2a63ceebb9ace2a"
+      ],
+      "confidence": 0.8,
+      "evidence": "coupled positively to adenylyl cyclase",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "PDE4 inhibitors",
+      "attributes": {
+        "target_type": "enzyme inhibitor"
+      },
+      "source_chunk_ids": [
+        "21a98f83de243122f2a63ceebb9ace2a"
+      ],
+      "confidence": 0.75,
+      "evidence": "PDE4 inhibitors enhance aspects",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "cAMP",
+      "attributes": {
+        "target_type": "molecule"
+      },
+      "source_chunk_ids": [
+        "21a98f83de243122f2a63ceebb9ace2a"
+      ],
+      "confidence": 0.8,
+      "evidence": "involve cAMP",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "fluoxetine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "21a98f83de243122f2a63ceebb9ace2a"
+      ],
+      "confidence": 0.9,
+      "evidence": "inhibitor of 5-HT reuptake such as fluoxetine",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "5-HT reuptake",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "21a98f83de243122f2a63ceebb9ace2a"
+      ],
+      "confidence": 0.85,
+      "evidence": "inhibitor of 5-HT reuptake",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Target",
+      "name": "PDE4A",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "21a98f83de243122f2a63ceebb9ace2a"
+      ],
+      "confidence": 0.8,
+      "evidence": "expression of PDE4A",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Target",
+      "name": "PDE4B",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "21a98f83de243122f2a63ceebb9ace2a"
+      ],
+      "confidence": 0.8,
+      "evidence": "expression of PDE4B",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Target",
+      "name": "PDE4D",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "21a98f83de243122f2a63ceebb9ace2a"
+      ],
+      "confidence": 0.8,
+      "evidence": "expression of PDE4D",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "enhance aspects of 5-HT-mediated neurotransmission",
+      "attributes": {
+        "level": "molecular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "21a98f83de243122f2a63ceebb9ace2a"
+      ],
+      "confidence": 0.7,
+      "evidence": "PDE4 inhibitors enhance aspects",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Effect",
+      "name": "increase expression of PDE4A and PDE4B",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "21a98f83de243122f2a63ceebb9ace2a"
+      ],
+      "confidence": 0.8,
+      "evidence": "increases the expression of PDE4A and PDE4B",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Effect",
+      "name": "PDE4D activity affected by phosphorylation",
+      "attributes": {
+        "level": "molecular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "21a98f83de243122f2a63ceebb9ace2a"
+      ],
+      "confidence": 0.75,
+      "evidence": "PDE4D activity is particularly affected by phosphorylation",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "2ff9a599199735e9334bd4ffc2b41627"
+      ],
+      "confidence": 0.95,
+      "evidence": "PDE4 is shown hydrolyzing cAMP",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "NMDA receptor",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "2ff9a599199735e9334bd4ffc2b41627"
+      ],
+      "confidence": 0.9,
+      "evidence": "Glutamate binds to the NMDA receptor",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "noradrenaline transporter",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "2ff9a599199735e9334bd4ffc2b41627"
+      ],
+      "confidence": 0.9,
+      "evidence": "Desipramine inhibits the noradrenaline transporter",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "serotonin transporter",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "2ff9a599199735e9334bd4ffc2b41627"
+      ],
+      "confidence": 0.9,
+      "evidence": "Fluoxetine inhibits the serotonin transporter",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "\u03b2-Adrenergic receptor",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "2ff9a599199735e9334bd4ffc2b41627"
+      ],
+      "confidence": 0.85,
+      "evidence": "\u03b2-Adrenergic receptor and 5-HT receptor",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "5-HT receptor",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "2ff9a599199735e9334bd4ffc2b41627"
+      ],
+      "confidence": 0.85,
+      "evidence": "\u03b2-Adrenergic receptor and 5-HT receptor",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "Adenylate Cyclase",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "2ff9a599199735e9334bd4ffc2b41627"
+      ],
+      "confidence": 0.8,
+      "evidence": "activate Adenylate Cyclase (AC)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Target",
+      "name": "PKA cascade",
+      "attributes": {
+        "target_type": "pathway"
+      },
+      "source_chunk_ids": [
+        "2ff9a599199735e9334bd4ffc2b41627"
+      ],
+      "confidence": 0.8,
+      "evidence": "cAMP activates the PKA cascade",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Compound",
+      "name": "Rolipram",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2ff9a599199735e9334bd4ffc2b41627"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4 is regulated by Rolipram",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "Antidepressant",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "2ff9a599199735e9334bd4ffc2b41627"
+      ],
+      "confidence": 0.85,
+      "evidence": "PDE4A, PDE4B, and PDE4D interacting with Antidepressant",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "Memory enhancing",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "2ff9a599199735e9334bd4ffc2b41627"
+      ],
+      "confidence": 0.85,
+      "evidence": "PDE4A, PDE4B, and PDE4D interacting with Memory enhancing",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Effect",
+      "name": "Emesis",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "2ff9a599199735e9334bd4ffc2b41627"
+      ],
+      "confidence": 0.85,
+      "evidence": "PDE4A, PDE4B, and PDE4D interacting with Emesis",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Target",
+      "name": "HARBS",
+      "attributes": {
+        "target_type": "binding site"
+      },
+      "source_chunk_ids": [
+        "2ff9a599199735e9334bd4ffc2b41627"
+      ],
+      "confidence": 0.75,
+      "evidence": "HARBS (High-affinity Rolipram-binding sites)",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Target",
+      "name": "LARBS",
+      "attributes": {
+        "target_type": "binding site"
+      },
+      "source_chunk_ids": [
+        "2ff9a599199735e9334bd4ffc2b41627"
+      ],
+      "confidence": 0.75,
+      "evidence": "LARBS (Low-affinity Rolipram-binding sites)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "d1b266a586f21cad7004d900e58c7267"
+      ],
+      "confidence": 0.95,
+      "evidence": "Type 4 phosphodiesterase (PDE4)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "beta-adrenergic receptor",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "d1b266a586f21cad7004d900e58c7267"
+      ],
+      "confidence": 0.9,
+      "evidence": "beta-adrenergic-receptor-mediated signaling",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "NMDA receptor",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "d1b266a586f21cad7004d900e58c7267"
+      ],
+      "confidence": 0.9,
+      "evidence": "NMDA-receptor-mediated signaling",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "5-HT receptor",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "d1b266a586f21cad7004d900e58c7267"
+      ],
+      "confidence": 0.85,
+      "evidence": "5-HT-receptor-mediated signaling",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "RACK1",
+      "attributes": {
+        "target_type": "protein"
+      },
+      "source_chunk_ids": [
+        "d1b266a586f21cad7004d900e58c7267"
+      ],
+      "confidence": 0.8,
+      "evidence": "receptors for activated C kinases 1 (RACK1)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "AKAPs",
+      "attributes": {
+        "target_type": "protein"
+      },
+      "source_chunk_ids": [
+        "d1b266a586f21cad7004d900e58c7267"
+      ],
+      "confidence": 0.8,
+      "evidence": "A-kinase-anchoring proteins (AKAPs)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "NAT",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "d1b266a586f21cad7004d900e58c7267"
+      ],
+      "confidence": 0.85,
+      "evidence": "noradrenaline transporters (NATs)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Target",
+      "name": "SERT",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "d1b266a586f21cad7004d900e58c7267"
+      ],
+      "confidence": 0.85,
+      "evidence": "5-HT transporters (SERTs)",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "increased cAMP-mediated signaling",
+      "attributes": {
+        "level": "molecular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "d1b266a586f21cad7004d900e58c7267"
+      ],
+      "confidence": 0.9,
+      "evidence": "Inhibition of PDE4 increases cAMP-mediated signaling",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "antidepressant effect",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "d1b266a586f21cad7004d900e58c7267"
+      ],
+      "confidence": 0.85,
+      "evidence": "antidepressant effects",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "memory-enhancing effect",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "d1b266a586f21cad7004d900e58c7267"
+      ],
+      "confidence": 0.85,
+      "evidence": "memory-enhancing effects",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Target",
+      "name": "HARBS",
+      "attributes": {
+        "target_type": "binding site"
+      },
+      "source_chunk_ids": [
+        "d1b266a586f21cad7004d900e58c7267"
+      ],
+      "confidence": 0.75,
+      "evidence": "high-affinity rolipram-binding sites (HARBS)",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Target",
+      "name": "LARBS",
+      "attributes": {
+        "target_type": "binding site"
+      },
+      "source_chunk_ids": [
+        "d1b266a586f21cad7004d900e58c7267"
+      ],
+      "confidence": 0.75,
+      "evidence": "low-affinity rolipram-binding sites (LARBS)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "confidence": 0.95,
+      "evidence": "PDE4 is implicated in antidepressant actions",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "NMDA receptors",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "confidence": 0.95,
+      "evidence": "NMDA-receptor-mediated signaling",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "antidepressant effects",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "confidence": 0.9,
+      "evidence": "antidepressant actions",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "antidepressant-like effects on behavior",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "confidence": 0.85,
+      "evidence": "produce antidepressant-like effects on behavior",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "MK801",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "confidence": 0.9,
+      "evidence": "MK801 (dizocilpine)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "dizocilpine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "confidence": 0.9,
+      "evidence": "MK801 (dizocilpine)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "confidence": 0.9,
+      "evidence": "rolipram has been shown",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "memory deficits",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "confidence": 0.85,
+      "evidence": "reverse memory deficits",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "confidence": 0.9,
+      "evidence": "cognitive deficits that occur in depression",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "cognitive deficits",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "confidence": 0.8,
+      "evidence": "cognitive deficits that occur in depression",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Target",
+      "name": "cAMP",
+      "attributes": {
+        "target_type": "molecule"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "confidence": 0.85,
+      "evidence": "increases intracellular concentrations of cAMP",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Target",
+      "name": "cGMP",
+      "attributes": {
+        "target_type": "molecule"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "confidence": 0.85,
+      "evidence": "increases intracellular concentrations of cGMP",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Target",
+      "name": "PDE2",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "confidence": 0.8,
+      "evidence": "cGMP that forms is hydrolyzed by PDE2 only",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "CompoundClass",
+      "name": "PDE4 inhibitors",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a9bf951806a526ce7d2abe85a7c1b07a"
+      ],
+      "confidence": 0.8,
+      "evidence": "inhibitors of the PDE4 subtypes",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a9bf951806a526ce7d2abe85a7c1b07a"
+      ],
+      "confidence": 0.9,
+      "evidence": "rolipram",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "Ro201724",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a9bf951806a526ce7d2abe85a7c1b07a"
+      ],
+      "confidence": 0.9,
+      "evidence": "Ro201724",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "PDE4 subtypes",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "a9bf951806a526ce7d2abe85a7c1b07a"
+      ],
+      "confidence": 0.95,
+      "evidence": "PDE4 subtypes",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "PDE4B",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "a9bf951806a526ce7d2abe85a7c1b07a"
+      ],
+      "confidence": 0.85,
+      "evidence": "PDE4B-knockout",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "PDE4D",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "a9bf951806a526ce7d2abe85a7c1b07a"
+      ],
+      "confidence": 0.85,
+      "evidence": "PDE4D-knockout",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "antidepressant effects",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "a9bf951806a526ce7d2abe85a7c1b07a"
+      ],
+      "confidence": 0.9,
+      "evidence": "antidepressant effects",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "mouse knockout studies",
+      "attributes": {
+        "design": "knockout model"
+      },
+      "source_chunk_ids": [
+        "a9bf951806a526ce7d2abe85a7c1b07a"
+      ],
+      "confidence": 0.75,
+      "evidence": "mouse lines that are deficient",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "PDE4D",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ],
+      "confidence": 0.95,
+      "evidence": "PDE4D-deficient mice",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Effect",
+      "name": "antidepressant-like profile",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ],
+      "confidence": 0.9,
+      "evidence": "antidepressant-like profile",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "reduced immobility",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ],
+      "confidence": 0.95,
+      "evidence": "reduced immobility",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ],
+      "confidence": 0.95,
+      "evidence": "rolipram",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "desipramine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ],
+      "confidence": 0.9,
+      "evidence": "desipramine",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "fluoxetine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ],
+      "confidence": 0.9,
+      "evidence": "fluoxetine",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "PDE4D-deficient mice study",
+      "attributes": {
+        "design": "animal model study",
+        "year": "implied from reference [43]"
+      },
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ],
+      "confidence": 0.85,
+      "evidence": "PDE4D-deficient mice exhibit",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "in vivo animal evidence",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ],
+      "confidence": 0.8,
+      "evidence": "PDE4D-deficient mice exhibit",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ],
+      "confidence": 0.95,
+      "evidence": "rolipram",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "PDE4D",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4D-deficient mice",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "beta-adrenoceptor",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ],
+      "confidence": 0.85,
+      "evidence": "beta-adrenoceptor-mediated cAMP formation",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "desipramine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ],
+      "confidence": 0.95,
+      "evidence": "desipramine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "fluoxetine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ],
+      "confidence": 0.95,
+      "evidence": "fluoxetine",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "enhanced cAMP formation",
+      "attributes": {
+        "level": "molecular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ],
+      "confidence": 0.8,
+      "evidence": "enhance beta-adrenoceptor-mediated cAMP formation",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "diminished cAMP formation enhancement",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ],
+      "confidence": 0.75,
+      "evidence": "diminished in PDE4D-deficient mice",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "increased receptor-mediated cAMP formation",
+      "attributes": {
+        "level": "molecular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ],
+      "confidence": 0.7,
+      "evidence": "increasing receptor-mediated cAMP formation",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "enhanced drug effects",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive",
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ],
+      "confidence": 0.65,
+      "evidence": "enhance the effects of desipramine and fluoxetine",
+      "verified": false
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "increased drug potency",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive",
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ],
+      "confidence": 0.65,
+      "evidence": "increase the potency of these drugs",
+      "verified": false
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "PDE4B",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "71a1953f84ad5fcc11d2125c2c179e00"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4B subtype",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "PDE4D",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "71a1953f84ad5fcc11d2125c2c179e00"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4D-deficient mice",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "antidepressant-like profile",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "71a1953f84ad5fcc11d2125c2c179e00"
+      ],
+      "confidence": 0.85,
+      "evidence": "antidepressant-like profile",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {},
+      "source_chunk_ids": [
+        "71a1953f84ad5fcc11d2125c2c179e00"
+      ],
+      "confidence": 0.95,
+      "evidence": "rolipram",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "desipramine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "71a1953f84ad5fcc11d2125c2c179e00"
+      ],
+      "confidence": 0.95,
+      "evidence": "desipramine",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "5-HT-reuptake inhibitors",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "71a1953f84ad5fcc11d2125c2c179e00"
+      ],
+      "confidence": 0.8,
+      "evidence": "5-HT-reuptake inhibitors",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Zhang and O'Donnell unpublished",
+      "attributes": {
+        "design": "preliminary results",
+        "year": "unpublished"
+      },
+      "source_chunk_ids": [
+        "71a1953f84ad5fcc11d2125c2c179e00"
+      ],
+      "confidence": 0.7,
+      "evidence": "H.-T. Zhang and J.M. O'Donnell, unpublished",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "in vivo",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "71a1953f84ad5fcc11d2125c2c179e00"
+      ],
+      "confidence": 0.75,
+      "evidence": "PDE4B-deficient mice",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "PDE4D",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "61fda0e6683450b82c7a2d8f19d254d5"
+      ],
+      "confidence": 0.95,
+      "evidence": "PDE4D subtype",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "PDE4A",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "61fda0e6683450b82c7a2d8f19d254d5"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4A-deficient mice",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "PDE4B",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "61fda0e6683450b82c7a2d8f19d254d5"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4A and PDE4B",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "antidepressant-like effects",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "61fda0e6683450b82c7a2d8f19d254d5"
+      ],
+      "confidence": 0.85,
+      "evidence": "antidepressant-like effects",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "AdverseEvent",
+      "name": "emesis",
+      "attributes": {
+        "severity": "not specified"
+      },
+      "source_chunk_ids": [
+        "61fda0e6683450b82c7a2d8f19d254d5"
+      ],
+      "confidence": 0.9,
+      "evidence": "side-effects of emesis",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "AdverseEvent",
+      "name": "sedation",
+      "attributes": {
+        "severity": "not specified"
+      },
+      "source_chunk_ids": [
+        "61fda0e6683450b82c7a2d8f19d254d5"
+      ],
+      "confidence": 0.9,
+      "evidence": "side-effects of ... sedation",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "CompoundClass",
+      "name": "PDE4 inhibitors",
+      "attributes": {},
+      "source_chunk_ids": [
+        "61fda0e6683450b82c7a2d8f19d254d5"
+      ],
+      "confidence": 0.95,
+      "evidence": "PDE4 inhibitors",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "61fda0e6683450b82c7a2d8f19d254d5"
+      ],
+      "confidence": 0.8,
+      "evidence": "antidepressant-like effects",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "caf80bdf725c1fa6209c0c2d12006214"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4 inhibitors",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {},
+      "source_chunk_ids": [
+        "caf80bdf725c1fa6209c0c2d12006214"
+      ],
+      "confidence": 0.95,
+      "evidence": "rolipram binding",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "HARBS",
+      "attributes": {
+        "target_type": "binding conformer"
+      },
+      "source_chunk_ids": [
+        "caf80bdf725c1fa6209c0c2d12006214"
+      ],
+      "confidence": 0.8,
+      "evidence": "high-affinity binding conformers (the HARBS)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "LARBS",
+      "attributes": {
+        "target_type": "binding conformer"
+      },
+      "source_chunk_ids": [
+        "caf80bdf725c1fa6209c0c2d12006214"
+      ],
+      "confidence": 0.8,
+      "evidence": "low-affinity binding conformers (the LARBS)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vitro binding study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "caf80bdf725c1fa6209c0c2d12006214"
+      ],
+      "confidence": 0.7,
+      "evidence": "binding to brain membranes",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "PDE4A",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "50093827e7a3ffc2e25a0d18067a5338"
+      ],
+      "confidence": 0.9,
+      "evidence": "recombinant PDE4A",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {},
+      "source_chunk_ids": [
+        "50093827e7a3ffc2e25a0d18067a5338"
+      ],
+      "confidence": 0.95,
+      "evidence": "rolipram binds",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "piclamilast",
+      "attributes": {},
+      "source_chunk_ids": [
+        "50093827e7a3ffc2e25a0d18067a5338"
+      ],
+      "confidence": 0.85,
+      "evidence": "piclamilast",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "50093827e7a3ffc2e25a0d18067a5338"
+      ],
+      "confidence": 0.7,
+      "evidence": "technique that assesses interactions",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "rolipram",
+      "attributes": {},
+      "source_chunk_ids": [
+        "80eabf32513520a8d886aeb8c856efb4"
+      ],
+      "confidence": 0.95,
+      "evidence": "high-affinity and low-affinity binding sites for rolipram",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "HARBS",
+      "attributes": {
+        "target_type": "binding site"
+      },
+      "source_chunk_ids": [
+        "80eabf32513520a8d886aeb8c856efb4"
+      ],
+      "confidence": 0.85,
+      "evidence": "affinity for the HARBS",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "LARBS",
+      "attributes": {
+        "target_type": "binding site"
+      },
+      "source_chunk_ids": [
+        "80eabf32513520a8d886aeb8c856efb4"
+      ],
+      "confidence": 0.85,
+      "evidence": "more closely related to the LARBS",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "induction of head twitches and tremor in mice",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "80eabf32513520a8d886aeb8c856efb4"
+      ],
+      "confidence": 0.8,
+      "evidence": "induction of head twitches and tremor in mice",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "emesis in ferrets",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "80eabf32513520a8d886aeb8c856efb4"
+      ],
+      "confidence": 0.8,
+      "evidence": "emesis in ferrets",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "inhibition of mast cell degranulation",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "80eabf32513520a8d886aeb8c856efb4"
+      ],
+      "confidence": 0.8,
+      "evidence": "inhibition of mast cell degranulation",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "inhibition of antigen-induced T-cell proliferation in guinea-pigs",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "80eabf32513520a8d886aeb8c856efb4"
+      ],
+      "confidence": 0.8,
+      "evidence": "inhibition of antigen-induced T-cell proliferation in guinea-pigs",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "HARBS",
+      "attributes": {
+        "target_type": "binding site"
+      },
+      "source_chunk_ids": [
+        "bd5729556bfa08457465c1c27eaa40af"
+      ],
+      "confidence": 0.9,
+      "evidence": "HARBS appears to be present in brain",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "bd5729556bfa08457465c1c27eaa40af"
+      ],
+      "confidence": 0.95,
+      "evidence": "PDE4 is expressed throughout the body",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "A-kinase-anchoring proteins",
+      "attributes": {
+        "target_type": "protein"
+      },
+      "source_chunk_ids": [
+        "bd5729556bfa08457465c1c27eaa40af"
+      ],
+      "confidence": 0.8,
+      "evidence": "proteins such as A-kinase-anchoring proteins",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "RACK1",
+      "attributes": {
+        "target_type": "protein"
+      },
+      "source_chunk_ids": [
+        "bd5729556bfa08457465c1c27eaa40af"
+      ],
+      "confidence": 0.8,
+      "evidence": "receptors for activated C kinases 1 (RACK1)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "SH3 domain proteins",
+      "attributes": {
+        "target_type": "protein"
+      },
+      "source_chunk_ids": [
+        "bd5729556bfa08457465c1c27eaa40af"
+      ],
+      "confidence": 0.75,
+      "evidence": "proteins that contain SH3 domains",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "reducing immobility in forced-swim test",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "bd5729556bfa08457465c1c27eaa40af"
+      ],
+      "confidence": 0.85,
+      "evidence": "reducing immobility of mice in the forced-swim test",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "CNS effects of PDE4 inhibitors",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "bd5729556bfa08457465c1c27eaa40af"
+      ],
+      "confidence": 0.8,
+      "evidence": "CNS effects of PDE4 inhibitors",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Saccomano et al. (unpublished)",
+      "attributes": {
+        "design": "experimental study",
+        "year": "unpublished"
+      },
+      "source_chunk_ids": [
+        "bd5729556bfa08457465c1c27eaa40af"
+      ],
+      "confidence": 0.7,
+      "evidence": "Saccomano and co-workers [16] found",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "in vitro binding assay",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "bd5729556bfa08457465c1c27eaa40af"
+      ],
+      "confidence": 0.75,
+      "evidence": "inhibition of [^{3}H]-rolipram binding",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Evidence",
+      "name": "animal behavioral test",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "bd5729556bfa08457465c1c27eaa40af"
+      ],
+      "confidence": 0.8,
+      "evidence": "forced-swim test in rats",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "desipramine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ],
+      "confidence": 0.9,
+      "evidence": "desipramine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "fluoxetine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ],
+      "confidence": 0.9,
+      "evidence": "fluoxetine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "noradrenaline-mediated neurotransmission",
+      "attributes": {
+        "target_type": "neurotransmission"
       },
       "source_chunk_ids": [
         "75b2c2fb00b45bdaa16e7d05ef8076c8"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "noradrenaline-mediated actions",
+      "verified": true
     },
     {
-      "id": "ent_077",
+      "id": "E4",
+      "type": "Target",
+      "name": "5-HT-mediated neurotransmission",
+      "attributes": {
+        "target_type": "neurotransmission"
+      },
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ],
+      "confidence": 0.8,
+      "evidence": "5-HT-mediated actions",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ],
+      "confidence": 0.85,
+      "evidence": "PDE4",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "increase in HARBS binding",
+      "attributes": {
+        "level": "molecular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ],
+      "confidence": 0.75,
+      "evidence": "increases the HARBS",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "no increase in LARBS binding",
+      "attributes": {
+        "level": "molecular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ],
+      "confidence": 0.75,
+      "evidence": "not the LARBS",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "antidepressant effects",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ],
+      "confidence": 0.8,
+      "evidence": "antidepressant effects",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "fa409341bf8245f30b66ff1e73ef0e25"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4 is the predominant PDE",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "\u03b2-adrenoceptor-linked adenylyl cyclase pathway",
+      "attributes": {
+        "target_type": "pathway"
+      },
+      "source_chunk_ids": [
+        "fa409341bf8245f30b66ff1e73ef0e25"
+      ],
+      "confidence": 0.8,
+      "evidence": "\u03b2-adrenoceptor-linked adenylyl cyclase pathway",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "5-HT-receptor-mediated signaling",
+      "attributes": {
+        "target_type": "pathway"
+      },
+      "source_chunk_ids": [
+        "fa409341bf8245f30b66ff1e73ef0e25"
+      ],
+      "confidence": 0.8,
+      "evidence": "5-HT-receptor-mediated signaling",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "fa409341bf8245f30b66ff1e73ef0e25"
+      ],
+      "confidence": 0.7,
+      "evidence": "signaling pathways that are affected by antidepressants",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "48c14a07868915458502117c76e8d780"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE4 inhibitors",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "HARBS",
+      "attributes": {
+        "target_type": "binding conformer"
+      },
+      "source_chunk_ids": [
+        "48c14a07868915458502117c76e8d780"
+      ],
+      "confidence": 0.85,
+      "evidence": "high-affinity binding conformers (HARBS)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "LARBS",
+      "attributes": {
+        "target_type": "binding conformer"
+      },
+      "source_chunk_ids": [
+        "48c14a07868915458502117c76e8d780"
+      ],
+      "confidence": 0.85,
+      "evidence": "low-affinity binding conformers (LARBS)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "alter cAMP hydrolysis",
+      "attributes": {
+        "level": "molecular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "48c14a07868915458502117c76e8d780"
+      ],
+      "confidence": 0.8,
+      "evidence": "alter cAMP hydrolysis",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "alter PDE4-related CNS function",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "48c14a07868915458502117c76e8d780"
+      ],
+      "confidence": 0.8,
+      "evidence": "alter PDE4-related CNS function",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "48c14a07868915458502117c76e8d780"
+      ],
+      "confidence": 0.75,
+      "evidence": "mediation of antidepressant activity",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Compound",
-      "name": "desipramine",
-      "attributes": {
-        "context": "ability of desipramine"
-      },
+      "name": "rolipram",
+      "attributes": {},
       "source_chunk_ids": [
-        "b933b9ca948b4f2dc96ff4520056b739"
-      ]
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "confidence": 0.95,
+      "evidence": "rolipram and other selective adenosine cyclic 3',5'-monophosphate phosphodiesterase inhibitors",
+      "verified": true
     },
     {
-      "id": "ent_078",
-      "type": "Compound",
-      "name": "fluoxetine",
+      "id": "E2",
+      "type": "Target",
+      "name": "cAMP phosphodiesterase",
       "attributes": {
-        "context": "and fluoxetine to increase"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
-        "b933b9ca948b4f2dc96ff4520056b739"
-      ]
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "confidence": 0.9,
+      "evidence": "selective adenosine cyclic 3',5'-monophosphate phosphodiesterase inhibitors",
+      "verified": true
     },
     {
-      "id": "ent_079",
-      "type": "Indication",
-      "name": "lesion",
+      "id": "E3",
+      "type": "Effect",
+      "name": "behavioral alterations",
       "attributes": {
-        "context": "lesion of these systems"
+        "level": "behavioral",
+        "valence": "neutral"
       },
       "source_chunk_ids": [
-        "b933b9ca948b4f2dc96ff4520056b739"
-      ]
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "confidence": 0.8,
+      "evidence": "Characteristic behavioral alterations in rats induced by rolipram",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "antidepressant activity",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "confidence": 0.85,
+      "evidence": "Potential antidepressant activity of rolipram",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Wachtel 1982",
+      "attributes": {
+        "year": 1982
+      },
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "confidence": 0.9,
+      "evidence": "Wachtel, H. (1982) Characteristic behavioral alterations in rats induced by rolipram",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Wachtel 1983",
+      "attributes": {
+        "year": 1983
+      },
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "confidence": 0.9,
+      "evidence": "Wachtel, H. (1983) Potential antidepressant activity of rolipram",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Zeller 1984",
+      "attributes": {
+        "year": 1984
+      },
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zeller, E. (1984) Results of a phase II study of the antidepressant effect of rolipram",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "confidence": 0.8,
+      "evidence": "in vitro studies mentioned",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "confidence": 0.85,
+      "evidence": "phase II study of the antidepressant effect of rolipram",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "confidence": 0.9,
+      "evidence": "antidepressant effect of rolipram",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "AdverseEvent",
+      "name": "emesis",
+      "attributes": {
+        "severity": "not specified"
+      },
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "confidence": 0.8,
+      "evidence": "Emesis induced by inhibitors of type IV cyclic nucleotide phosphodiesterase",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Effect",
+      "name": "sedative effects",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "confidence": 0.75,
+      "evidence": "sedative effects of rolipram in rats",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "387a41515771a03ed7e7cdefcf4c33ff"
+      ],
+      "confidence": 0.9,
+      "evidence": "cyclic AMP phosphodiesterase (PDE4)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "PDE4A",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "387a41515771a03ed7e7cdefcf4c33ff"
+      ],
+      "confidence": 0.85,
+      "evidence": "cAMP-specific phosphodiesterase 4A",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "PDE4B",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "387a41515771a03ed7e7cdefcf4c33ff"
+      ],
+      "confidence": 0.85,
+      "evidence": "cAMP-specific phosphodiesterase 4B",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "PDE4D",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "387a41515771a03ed7e7cdefcf4c33ff"
+      ],
+      "confidence": 0.85,
+      "evidence": "phosphodiesterase 4D",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "NMDA receptor",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "387a41515771a03ed7e7cdefcf4c33ff"
+      ],
+      "confidence": 0.9,
+      "evidence": "NMDA receptor",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "387a41515771a03ed7e7cdefcf4c33ff"
+      ],
+      "confidence": 0.8,
+      "evidence": "antidepressant actions",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "memory deficits",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "387a41515771a03ed7e7cdefcf4c33ff"
+      ],
+      "confidence": 0.75,
+      "evidence": "memory deficits",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "antidepressant-like effect",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "387a41515771a03ed7e7cdefcf4c33ff"
+      ],
+      "confidence": 0.7,
+      "evidence": "Antidepressant-like profile",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Zhang et al. (2000)",
+      "attributes": {
+        "year": 2000
+      },
+      "source_chunk_ids": [
+        "387a41515771a03ed7e7cdefcf4c33ff"
+      ],
+      "confidence": 0.8,
+      "evidence": "Zhang, H.T. et al. (2000)",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "Zhang et al. (2002)",
+      "attributes": {
+        "year": 2002
+      },
+      "source_chunk_ids": [
+        "387a41515771a03ed7e7cdefcf4c33ff"
+      ],
+      "confidence": 0.8,
+      "evidence": "Zhang, H.T. et al. (2002)",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "387a41515771a03ed7e7cdefcf4c33ff"
+      ],
+      "confidence": 0.7,
+      "evidence": "in vitro",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Evidence",
+      "name": "animal study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "387a41515771a03ed7e7cdefcf4c33ff"
+      ],
+      "confidence": 0.7,
+      "evidence": "mice deficient",
+      "verified": true
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:03.750736+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "involved in"
+      },
+      "confidence": 0.75,
+      "evidence": "PDE4 has been shown to be involved in cAMP signaling pathways",
+      "source_chunk_ids": [
+        "965d5e31ae90be5dca185dacd7b62c07"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "PDE4D and PDE4B mediate antidepressant effects",
+      "source_chunk_ids": [
+        "965d5e31ae90be5dca185dacd7b62c07"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "PDE4D and PDE4B mediate antidepressant effects",
+      "source_chunk_ids": [
+        "965d5e31ae90be5dca185dacd7b62c07"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TREATS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E6",
+      "attributes": {
+        "context": "therapeutic"
+      },
+      "confidence": 0.8,
+      "evidence": "antidepressant effects",
+      "source_chunk_ids": [
+        "965d5e31ae90be5dca185dacd7b62c07"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Research by Helmut Wachtel demonstrated",
+      "source_chunk_ids": [
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "demonstrated that the then-novel compound rolipram",
+      "source_chunk_ids": [
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "positive"
+      },
+      "confidence": 0.8,
+      "evidence": "have CNS activity",
+      "source_chunk_ids": [
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.85,
+      "evidence": "inhibitors of cAMP phosphodiesterase",
+      "source_chunk_ids": [
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "pattern of effects is indicative of antidepressant efficacy",
+      "source_chunk_ids": [
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "borne out later in a clinical trial",
+      "source_chunk_ids": [
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "positive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "borne out later in a clinical trial",
+      "source_chunk_ids": [
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E10",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.7,
+      "evidence": "therapeutic utility in depression",
+      "source_chunk_ids": [
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "supporting_study_ids": [
+        "E8"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.9,
+      "evidence": "potent, highly selective inhibitor of type 4 PDE",
+      "source_chunk_ids": [
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "inhibitors of PDE4 might represent antidepressant drugs",
+      "source_chunk_ids": [
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E11",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "potential for treatment of inflammatory disorders",
+      "source_chunk_ids": [
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E12",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "potential for treatment of immunological disorders",
+      "source_chunk_ids": [
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E13",
+      "attributes": {
+        "action": "inhibits",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "lack of highly selective inhibitors of PDE4 subtypes",
+      "source_chunk_ids": [
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R14",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E14",
+      "attributes": {
+        "action": "interacts with",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "inhibitors interact with HARBS",
+      "source_chunk_ids": [
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R15",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E15",
+      "attributes": {
+        "action": "interacts with",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "inhibitors interact with LARBS",
+      "source_chunk_ids": [
+        "932852e578657d1f1cdd15cd076ead6a"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "context": "brain involvement"
+      },
+      "confidence": 0.7,
+      "evidence": "PDE4 is present in brain regions involved in reward",
+      "source_chunk_ids": [
+        "7f5a74ac13da75da462287b1cb003d32"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "brain involvement"
+      },
+      "confidence": 0.7,
+      "evidence": "PDE4 is present in brain regions involved in affect",
+      "source_chunk_ids": [
+        "7f5a74ac13da75da462287b1cb003d32"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Rolipram and other PDE4 inhibitors",
+      "source_chunk_ids": [
+        "daf511dbaf73a527055607849218e6c4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "PDE4 inhibitors [e.g. Ro201724",
+      "source_chunk_ids": [
+        "daf511dbaf73a527055607849218e6c4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "PDE4 inhibitors [e.g. ... ICI63197]",
+      "source_chunk_ids": [
+        "daf511dbaf73a527055607849218e6c4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Rolipram ... produce antidepressant-like effects",
+      "source_chunk_ids": [
+        "daf511dbaf73a527055607849218e6c4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "PDE4 inhibitors ... produce antidepressant-like effects",
+      "source_chunk_ids": [
+        "daf511dbaf73a527055607849218e6c4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "effects typical of antidepressant drugs",
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "effects typical of antidepressant drugs",
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E9",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "effects typical of antidepressant drugs",
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E9",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "effects typical of antidepressant drugs",
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E9",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "effects typical of antidepressant drugs",
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E9",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "effects typical of antidepressant drugs",
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "effects typical of antidepressant drugs",
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "effects typical of antidepressant drugs",
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "PDE4 involved in CREB-mediated induction",
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "CREB-mediated induction of neurogenesis",
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E14",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "induce neurogenesis important in mediating effects",
+      "source_chunk_ids": [
+        "9cf7c3476eaf50eb155077d28a3c7195"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "PDE4 inhibitors",
+      "source_chunk_ids": [
+        "faa4b4cea1353cd24eecfad1b58d6bda"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "antidepressant effects of rolipram",
+      "source_chunk_ids": [
+        "faa4b4cea1353cd24eecfad1b58d6bda"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CAUSES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.7,
+      "evidence": "emetic actions",
+      "source_chunk_ids": [
+        "faa4b4cea1353cd24eecfad1b58d6bda"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CAUSES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.7,
+      "evidence": "sedative actions",
+      "source_chunk_ids": [
+        "faa4b4cea1353cd24eecfad1b58d6bda"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "mechanistic"
+      },
+      "confidence": 0.7,
+      "evidence": "Inhibition of PDE4 might produce antidepressant effects",
+      "source_chunk_ids": [
+        "86ecbea6e66d2e9eaa19330f2e576700"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "context": "mechanistic",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "by altering noradrenaline-mediated neurotransmission",
+      "source_chunk_ids": [
+        "86ecbea6e66d2e9eaa19330f2e576700"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "enhances",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "PDE4 inhibitors enhance aspects of 5-HT-mediated neurotransmission",
+      "source_chunk_ids": [
+        "21a98f83de243122f2a63ceebb9ace2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "PDE4 inhibitors enhance aspects",
+      "source_chunk_ids": [
+        "21a98f83de243122f2a63ceebb9ace2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.85,
+      "evidence": "inhibitor of 5-HT reuptake such as fluoxetine",
+      "source_chunk_ids": [
+        "21a98f83de243122f2a63ceebb9ace2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "repeated treatment with fluoxetine increases expression",
+      "source_chunk_ids": [
+        "21a98f83de243122f2a63ceebb9ace2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E13",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "PDE4D activity is affected by phosphorylation",
+      "source_chunk_ids": [
+        "21a98f83de243122f2a63ceebb9ace2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "PDE4 is regulated by Rolipram (inhibitor)",
+      "source_chunk_ids": [
+        "2ff9a599199735e9334bd4ffc2b41627"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "PDE4A, PDE4B, and PDE4D interacting with Antidepressant",
+      "source_chunk_ids": [
+        "2ff9a599199735e9334bd4ffc2b41627"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "PDE4A, PDE4B, and PDE4D interacting with Memory enhancing",
+      "source_chunk_ids": [
+        "2ff9a599199735e9334bd4ffc2b41627"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "PDE4A, PDE4B, and PDE4D interacting with Emesis",
+      "source_chunk_ids": [
+        "2ff9a599199735e9334bd4ffc2b41627"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "action": "inhibition"
+      },
+      "confidence": 0.85,
+      "evidence": "Inhibition of PDE4 increases cAMP-mediated signaling",
+      "source_chunk_ids": [
+        "d1b266a586f21cad7004d900e58c7267"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "antidepressant effects might be mediated via these signaling pathways",
+      "source_chunk_ids": [
+        "d1b266a586f21cad7004d900e58c7267"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "memory-enhancing effects might be mediated via these signaling pathways",
+      "source_chunk_ids": [
+        "d1b266a586f21cad7004d900e58c7267"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "involved in"
+      },
+      "confidence": 0.8,
+      "evidence": "PDE4 in NMDA-receptor-mediated signaling",
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "PDE4 is implicated in antidepressant actions",
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "antagonist"
+      },
+      "confidence": 0.85,
+      "evidence": "NMDA antagonists such as MK801",
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "MK801 are reported to produce antidepressant-like effects",
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {
+        "action": "reverses"
+      },
+      "confidence": 0.85,
+      "evidence": "rolipram has been shown to reverse memory deficits",
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E11",
+      "attributes": {
+        "action": "increases"
+      },
+      "confidence": 0.85,
+      "evidence": "NMDA receptors increases intracellular concentrations of cAMP",
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E12",
+      "attributes": {
+        "action": "increases"
+      },
+      "confidence": 0.85,
+      "evidence": "NMDA receptors increases intracellular concentrations of cGMP",
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E11",
+      "attributes": {
+        "action": "hydrolyzes"
+      },
+      "confidence": 0.8,
+      "evidence": "cAMP formed by NMDA-receptor stimulation is hydrolyzed exclusively by PDE4",
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "ACTS_ON",
+      "source_entity_id": "E13",
+      "target_entity_id": "E12",
+      "attributes": {
+        "action": "hydrolyzes"
+      },
+      "confidence": 0.8,
+      "evidence": "cGMP that forms is hydrolyzed by PDE2 only",
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "PDE4 in NMDA-receptor-mediated signaling might be related more to cognitive deficits",
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "SUGGESTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E9",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "cognitive deficits that occur in depression",
+      "source_chunk_ids": [
+        "8a565dbf31f1453b967c49a5c540a569"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "inhibitors, such as rolipram",
+      "source_chunk_ids": [
+        "a9bf951806a526ce7d2abe85a7c1b07a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "inhibitors, such as Ro201724",
+      "source_chunk_ids": [
+        "a9bf951806a526ce7d2abe85a7c1b07a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "inhibiting the four PDE4 subtypes",
+      "source_chunk_ids": [
+        "a9bf951806a526ce7d2abe85a7c1b07a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "inhibiting the four PDE4 subtypes",
+      "source_chunk_ids": [
+        "a9bf951806a526ce7d2abe85a7c1b07a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "roles of the PDE4 subtypes in antidepressant effects",
+      "source_chunk_ids": [
+        "a9bf951806a526ce7d2abe85a7c1b07a"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "target"
+      },
+      "confidence": 0.7,
+      "evidence": "PDE4B-knockout lines",
+      "source_chunk_ids": [
+        "a9bf951806a526ce7d2abe85a7c1b07a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "target"
+      },
+      "confidence": 0.7,
+      "evidence": "PDE4D-knockout lines",
+      "source_chunk_ids": [
+        "a9bf951806a526ce7d2abe85a7c1b07a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "assesses",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "assess the relative roles in antidepressant effects",
+      "source_chunk_ids": [
+        "a9bf951806a526ce7d2abe85a7c1b07a"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "involves"
+      },
+      "confidence": 0.9,
+      "evidence": "PDE4D-deficient mice",
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.85,
+      "evidence": "exhibit an antidepressant-like profile",
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "evidenced by reduced immobility",
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "action": "inhibits",
+        "notes": "mediated by PDE4D subtype"
+      },
+      "confidence": 0.75,
+      "evidence": "its actions are mediated by the PDE4D subtype",
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "tested"
+      },
+      "confidence": 0.8,
+      "evidence": "rolipram causes minimal reduction",
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "tested"
+      },
+      "confidence": 0.7,
+      "evidence": "desipramine administered",
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "tested"
+      },
+      "confidence": 0.7,
+      "evidence": "fluoxetine administered",
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "PDE4D-deficient mice exhibit",
+      "source_chunk_ids": [
+        "5491df562c325ae25574b24b75a967aa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "enhances"
+      },
+      "confidence": 0.85,
+      "evidence": "rolipram to enhance beta-adrenoceptor-mediated cAMP formation",
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "rolipram to enhance cAMP formation",
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "assertion": "refutes"
+      },
+      "confidence": 0.75,
+      "evidence": "PDE4D-deficient mice diminished cAMP formation enhancement",
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "unknown",
+        "assertion": "speculative",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "PDE4D is not involved in their actions",
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "unknown",
+        "assertion": "speculative",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "PDE4D is not involved in their actions",
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {
+        "assertion": "speculative",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "monoamine-uptake inhibitors produce effects by increasing cAMP formation",
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {
+        "assertion": "speculative",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "monoamine-uptake inhibitors produce effects by increasing cAMP formation",
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {
+        "assertion": "speculative",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "loss of PDE4D would enhance effects of desipramine and fluoxetine",
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {
+        "assertion": "speculative",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "loss of PDE4D would increase potency of these drugs",
+      "source_chunk_ids": [
+        "3fcaa03a54b2f6cedb9f791441394f66"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "target"
+      },
+      "confidence": 0.7,
+      "evidence": "PDE4B-deficient mice",
+      "source_chunk_ids": [
+        "71a1953f84ad5fcc11d2125c2c179e00"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "preliminary results",
+      "source_chunk_ids": [
+        "71a1953f84ad5fcc11d2125c2c179e00"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "exhibits"
+      },
+      "confidence": 0.7,
+      "evidence": "exhibit an antidepressant-like profile",
+      "source_chunk_ids": [
+        "71a1953f84ad5fcc11d2125c2c179e00"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "action": "no significant effect",
+        "outcome": "no_effect"
+      },
+      "confidence": 0.75,
+      "evidence": "rolipram causes no significant, additional reduction",
+      "source_chunk_ids": [
+        "71a1953f84ad5fcc11d2125c2c179e00"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "action": "no effect",
+        "outcome": "no_effect"
+      },
+      "confidence": 0.8,
+      "evidence": "desipramine produces no further antidepressant-like effects",
+      "source_chunk_ids": [
+        "71a1953f84ad5fcc11d2125c2c179e00"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "PDE4B-deficient mice exhibit an antidepressant-like profile",
+      "source_chunk_ids": [
+        "71a1953f84ad5fcc11d2125c2c179e00"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "pharmacological"
+      },
+      "confidence": 0.85,
+      "evidence": "antidepressant-like effects of PDE4 inhibitors",
+      "source_chunk_ids": [
+        "61fda0e6683450b82c7a2d8f19d254d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TREATS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {
+        "context": "pharmacological"
+      },
+      "confidence": 0.75,
+      "evidence": "antidepressant-like effects",
+      "source_chunk_ids": [
+        "61fda0e6683450b82c7a2d8f19d254d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CAUSES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "pharmacological"
+      },
+      "confidence": 0.8,
+      "evidence": "side-effects of emesis",
+      "source_chunk_ids": [
+        "61fda0e6683450b82c7a2d8f19d254d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CAUSES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E6",
+      "attributes": {
+        "context": "pharmacological"
+      },
+      "confidence": 0.8,
+      "evidence": "side-effects of ... sedation",
+      "source_chunk_ids": [
+        "61fda0e6683450b82c7a2d8f19d254d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.85,
+      "evidence": "PDE4 inhibitors",
+      "source_chunk_ids": [
+        "caf80bdf725c1fa6209c0c2d12006214"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "binds",
+        "measurement": {
+          "value": 1,
+          "unit": "nM",
+          "measurement_type": "Ki",
+          "notes": "high-affinity binding in brain membranes"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "binds with high affinity (K_i = 1-10 nM)",
+      "source_chunk_ids": [
+        "caf80bdf725c1fa6209c0c2d12006214"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "binds",
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "low-affinity",
+          "notes": "little high-affinity binding in peripheral organs"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "little high-affinity binding in peripheral organs",
+      "source_chunk_ids": [
+        "caf80bdf725c1fa6209c0c2d12006214"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "action": "binds",
+        "measurement": {
+          "value": 500,
+          "unit": "fold",
+          "measurement_type": "affinity difference",
+          "notes": "high-affinity and low-affinity states differ ~500-fold in apparent Ki values"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "binds with two distinct affinity states that differ ~500-fold",
+      "source_chunk_ids": [
+        "50093827e7a3ffc2e25a0d18067a5338"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "action": "binds",
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "affinity",
+          "notes": "exhibits high, equal affinity for both affinity states"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "some drugs exhibit high, equal affinity for both affinity states (e.g. piclamilast)",
+      "source_chunk_ids": [
+        "50093827e7a3ffc2e25a0d18067a5338"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "binds"
+      },
+      "confidence": 0.85,
+      "evidence": "binding to each affinity state",
+      "source_chunk_ids": [
+        "80eabf32513520a8d886aeb8c856efb4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "binds"
+      },
+      "confidence": 0.85,
+      "evidence": "binding to each affinity state",
+      "source_chunk_ids": [
+        "80eabf32513520a8d886aeb8c856efb4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "producing some effects, such as induction of head twitches and tremor in mice",
+      "source_chunk_ids": [
+        "80eabf32513520a8d886aeb8c856efb4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "producing some effects, such as ... emesis in ferrets",
+      "source_chunk_ids": [
+        "80eabf32513520a8d886aeb8c856efb4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "other effects, including inhibition of mast cell degranulation",
+      "source_chunk_ids": [
+        "80eabf32513520a8d886aeb8c856efb4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "other effects, including ... antigen-induced T-cell proliferation in guinea-pigs",
+      "source_chunk_ids": [
+        "80eabf32513520a8d886aeb8c856efb4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "action": "interacts with"
+      },
+      "confidence": 0.7,
+      "evidence": "HARBS appears to be present in brain",
+      "source_chunk_ids": [
+        "bd5729556bfa08457465c1c27eaa40af"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E6",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "CNS effects of PDE4 inhibitors are mediated by the HARBS",
+      "source_chunk_ids": [
+        "bd5729556bfa08457465c1c27eaa40af"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "inhibition of [^{3}H]-rolipram binding",
+      "source_chunk_ids": [
+        "bd5729556bfa08457465c1c27eaa40af"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "forced-swim test in rats",
+      "source_chunk_ids": [
+        "bd5729556bfa08457465c1c27eaa40af"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "correlates"
+      },
+      "confidence": 0.75,
+      "evidence": "relative potency correlates with inhibition of binding",
+      "source_chunk_ids": [
+        "bd5729556bfa08457465c1c27eaa40af"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "enhances"
+      },
+      "confidence": 0.7,
+      "evidence": "noradrenaline-mediated actions",
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "enhances"
+      },
+      "confidence": 0.7,
+      "evidence": "5-HT-mediated actions",
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "increases the HARBS",
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "increases the HARBS",
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "no_effect",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "not the LARBS",
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "no_effect",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "not the LARBS",
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "antidepressant effects are secondary",
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E8",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "noradrenaline-mediated neurotransmission",
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "5-HT-mediated neurotransmission",
+      "source_chunk_ids": [
+        "75b2c2fb00b45bdaa16e7d05ef8076c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "alter cAMP hydrolysis... alter PDE4-related CNS function",
+      "source_chunk_ids": [
+        "48c14a07868915458502117c76e8d780"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "mediation of antidepressant activity",
+      "source_chunk_ids": [
+        "48c14a07868915458502117c76e8d780"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.9,
+      "evidence": "selective adenosine cyclic 3',5'-monophosphate phosphodiesterase inhibitors",
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "behavioral alterations in rats induced by rolipram",
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Potential antidepressant activity of rolipram",
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "in vitro studies mentioned",
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "phase II study of the antidepressant effect of rolipram",
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Wachtel, H. (1982) Characteristic behavioral alterations in rats induced by rolipram",
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Wachtel, H. (1983) Potential antidepressant activity of rolipram",
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Zeller, E. (1984) Results of a phase II study of the antidepressant effect of rolipram",
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "induces"
+      },
+      "confidence": 0.8,
+      "evidence": "Characteristic behavioral alterations in rats induced by rolipram",
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "potential"
+      },
+      "confidence": 0.85,
+      "evidence": "Potential antidepressant activity of rolipram",
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E10",
+      "attributes": {
+        "outcome": "antidepressant effect"
+      },
+      "confidence": 0.9,
+      "evidence": "Results of a phase II study of the antidepressant effect of rolipram",
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.8,
+      "evidence": "antidepressant effect of rolipram",
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "supporting_study_ids": [
+        "E7"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "CAUSES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E11",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.7,
+      "evidence": "Emesis induced by inhibitors of type IV cyclic nucleotide phosphodiesterase",
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "sedative effects of rolipram in rats",
+      "source_chunk_ids": [
+        "8a033d3d806294e79fa7a7bf320bafad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.75,
+      "evidence": "reverses memory deficits",
+      "source_chunk_ids": [
+        "387a41515771a03ed7e7cdefcf4c33ff"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.7,
+      "evidence": "Antidepressant-like profile",
+      "source_chunk_ids": [
+        "387a41515771a03ed7e7cdefcf4c33ff"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E11",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "in vitro",
+      "source_chunk_ids": [
+        "387a41515771a03ed7e7cdefcf4c33ff"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E10",
+      "target_entity_id": "E12",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "mice deficient",
+      "source_chunk_ids": [
+        "387a41515771a03ed7e7cdefcf4c33ff"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "target"
+      },
+      "confidence": 0.7,
+      "evidence": "PDE4",
+      "source_chunk_ids": [
+        "387a41515771a03ed7e7cdefcf4c33ff"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "target"
+      },
+      "confidence": 0.7,
+      "evidence": "PDE4D",
+      "source_chunk_ids": [
+        "387a41515771a03ed7e7cdefcf4c33ff"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "antidepressant actions",
+      "source_chunk_ids": [
+        "387a41515771a03ed7e7cdefcf4c33ff"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "SUGGESTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "antidepressant actions",
+      "source_chunk_ids": [
+        "387a41515771a03ed7e7cdefcf4c33ff"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    }
+  ]
 }

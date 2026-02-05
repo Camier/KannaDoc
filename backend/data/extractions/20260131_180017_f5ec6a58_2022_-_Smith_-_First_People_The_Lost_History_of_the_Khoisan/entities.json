@@ -1,12 +1,7568 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "ce0b4fa827cb6f0d2096b0c1d084a5c9ef732113e7a52a708a9abd94772b87bb",
-  "extracted_at": "2026-02-01T09:17:24.247329+00:00",
-  "extractor": "legacy-migration",
-  "entities": [],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.087369+00:00",
-    "original_file": "entities.json"
-  }
+  "entities": [
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoisan",
+      "attributes": {},
+      "source_chunk_ids": [
+        "43c0edf5f57a8677cba03348793fc0ed"
+      ],
+      "confidence": 0.9,
+      "evidence": "The name 'Khoisan' was created",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "San",
+      "attributes": {},
+      "source_chunk_ids": [
+        "43c0edf5f57a8677cba03348793fc0ed"
+      ],
+      "confidence": 0.85,
+      "evidence": "The genetics of the San",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Khoekhoen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "43c0edf5f57a8677cba03348793fc0ed"
+      ],
+      "confidence": 0.8,
+      "evidence": "The Khoekhoen were the herding people",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoisan",
+      "attributes": {},
+      "source_chunk_ids": [
+        "929a91cef16f076ffc2de8ddf2cf4a5b"
+      ],
+      "confidence": 0.9,
+      "evidence": "Khoisan descendants interested in early southern African history",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Parkington et al. 2015",
+      "attributes": {
+        "year": 2015
+      },
+      "source_chunk_ids": [
+        "929a91cef16f076ffc2de8ddf2cf4a5b"
+      ],
+      "confidence": 0.85,
+      "evidence": "Parkington et al. 2015",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Isaac Schapera 1930",
+      "attributes": {
+        "year": 1930
+      },
+      "source_chunk_ids": [
+        "929a91cef16f076ffc2de8ddf2cf4a5b"
+      ],
+      "confidence": 0.85,
+      "evidence": "Isaac Schapera (1930) wrote his seminal work",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Boonzaier et al. 1996",
+      "attributes": {
+        "year": 1996
+      },
+      "source_chunk_ids": [
+        "929a91cef16f076ffc2de8ddf2cf4a5b"
+      ],
+      "confidence": 0.85,
+      "evidence": "publication of The Cape Herders (Boonzaier et al. 1996)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Smith et al. 2000",
+      "attributes": {
+        "year": 2000
+      },
+      "source_chunk_ids": [
+        "929a91cef16f076ffc2de8ddf2cf4a5b"
+      ],
+      "confidence": 0.85,
+      "evidence": "companion work on the Bushmen (Smith et al. 2000)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "archaeological research",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "929a91cef16f076ffc2de8ddf2cf4a5b"
+      ],
+      "confidence": 0.8,
+      "evidence": "archaeological, linguistic and genomic history",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoisan",
+      "attributes": {},
+      "source_chunk_ids": [
+        "abf47eb110e282a0e5fa216fac4a3edb"
+      ],
+      "confidence": 0.9,
+      "evidence": "Khoisan: What does this name represent",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "click-language users of southern Africa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "abf47eb110e282a0e5fa216fac4a3edb"
+      ],
+      "confidence": 0.8,
+      "evidence": "click-language users of southern Africa",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Strandloper",
+      "attributes": {},
+      "source_chunk_ids": [
+        "08c35aa4b208598fabbcccc7b2cd622d"
+      ],
+      "confidence": 0.95,
+      "evidence": "Strandloper: This means 'beach ranger'",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Soaqua",
+      "attributes": {},
+      "source_chunk_ids": [
+        "08c35aa4b208598fabbcccc7b2cd622d"
+      ],
+      "confidence": 0.8,
+      "evidence": "may have been either Soaqua",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Khoekhoen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "08c35aa4b208598fabbcccc7b2cd622d"
+      ],
+      "confidence": 0.8,
+      "evidence": "impoverished Khoekhoen",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Hottentot",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7e22ceac44c1016a3704b103a6ecc31c"
+      ],
+      "confidence": 0.9,
+      "evidence": "Hottentot: This was the name given to the herders of the Cape",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Goringhaicona",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7e22ceac44c1016a3704b103a6ecc31c"
+      ],
+      "confidence": 0.85,
+      "evidence": "Goringhaicona (!Uri-//\u2019ae, a group living around the Cape Peninsula)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Cochoqua",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7e22ceac44c1016a3704b103a6ecc31c"
+      ],
+      "confidence": 0.85,
+      "evidence": "Cochoqua (whose territory included Saldanha Bay)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Culture",
+      "name": "Chainoqua",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7e22ceac44c1016a3704b103a6ecc31c"
+      ],
+      "confidence": 0.85,
+      "evidence": "Chainoqua and Hessequa",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Culture",
+      "name": "Hessequa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7e22ceac44c1016a3704b103a6ecc31c"
+      ],
+      "confidence": 0.85,
+      "evidence": "Chainoqua and Hessequa (who lived beyond the Hottentots-Holland Mountains)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Soaqua",
+      "attributes": {},
+      "source_chunk_ids": [
+        "17caf4b1955f90a7a7cc20bb7a81ca78"
+      ],
+      "confidence": 0.9,
+      "evidence": "Soaqua or Sonqua: These were hunter-gatherers",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Sonqua",
+      "attributes": {},
+      "source_chunk_ids": [
+        "17caf4b1955f90a7a7cc20bb7a81ca78"
+      ],
+      "confidence": 0.9,
+      "evidence": "Soaqua or Sonqua: These were hunter-gatherers",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Khoekhoen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "17caf4b1955f90a7a7cc20bb7a81ca78"
+      ],
+      "confidence": 0.85,
+      "evidence": "The name came from the Khoekhoen",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Culture",
+      "name": "Swy Ei or Oesjswana",
+      "attributes": {},
+      "source_chunk_ids": [
+        "17caf4b1955f90a7a7cc20bb7a81ca78"
+      ],
+      "confidence": 0.8,
+      "evidence": "Swy Ei or Oesjswana, the Sneeuberg Bushmen",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Culture",
+      "name": "Sneeuberg Bushmen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "17caf4b1955f90a7a7cc20bb7a81ca78"
+      ],
+      "confidence": 0.85,
+      "evidence": "Swy Ei or Oesjswana, the Sneeuberg Bushmen",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Culture",
+      "name": "Dutch colonists",
+      "attributes": {},
+      "source_chunk_ids": [
+        "17caf4b1955f90a7a7cc20bb7a81ca78"
+      ],
+      "confidence": 0.8,
+      "evidence": "keeping the Dutch colonists out",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Culture",
+      "name": "/Xam of Bushmanland",
+      "attributes": {},
+      "source_chunk_ids": [
+        "17caf4b1955f90a7a7cc20bb7a81ca78"
+      ],
+      "confidence": 0.8,
+      "evidence": "/Xam of Bushmanland",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Culture",
+      "name": "Bushmen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "17caf4b1955f90a7a7cc20bb7a81ca78"
+      ],
+      "confidence": 0.9,
+      "evidence": "The name \u2018Bushmen\u2019 is a direct translation",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Culture",
+      "name": "San",
+      "attributes": {},
+      "source_chunk_ids": [
+        "17caf4b1955f90a7a7cc20bb7a81ca78"
+      ],
+      "confidence": 0.85,
+      "evidence": "some researchers prefer to use the name \u2018San\u2019",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "coastal people of the Pacific Northwest of the United States and Canada",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d3951ed718be7fdb87e8e9f4b6478253"
+      ],
+      "confidence": 0.9,
+      "evidence": "coastal people of the Pacific Northwest",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: coastal people \u2013 salmon \u2013 potlatches",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d3951ed718be7fdb87e8e9f4b6478253"
+      ],
+      "confidence": 0.8,
+      "evidence": "harvest the salmon runs every year",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "salmon",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d3951ed718be7fdb87e8e9f4b6478253"
+      ],
+      "confidence": 0.85,
+      "evidence": "salmon runs every year",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Preparation",
+      "name": "drying",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d3951ed718be7fdb87e8e9f4b6478253"
+      ],
+      "confidence": 0.7,
+      "evidence": "fish that is dried",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Preparation",
+      "name": "smoking",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d3951ed718be7fdb87e8e9f4b6478253"
+      ],
+      "confidence": 0.7,
+      "evidence": "fish that is dried or smoked",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "potlatches",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d3951ed718be7fdb87e8e9f4b6478253"
+      ],
+      "confidence": 0.85,
+      "evidence": "big celebrations called 'potlatches'",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Culture",
+      "name": "hunter-fisher shellfish collectors on the shores of Lake Victoria in Kenya",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d3951ed718be7fdb87e8e9f4b6478253"
+      ],
+      "confidence": 0.8,
+      "evidence": "hunter-fisher shellfish collectors",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Culture",
+      "name": "hunter-fishers of the Botletle River in northern Botswana",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d3951ed718be7fdb87e8e9f4b6478253"
+      ],
+      "confidence": 0.8,
+      "evidence": "hunter-fishers of the Botletle River",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Culture",
+      "name": "foraging people on the Cape West Coast",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d3951ed718be7fdb87e8e9f4b6478253"
+      ],
+      "confidence": 0.75,
+      "evidence": "foraging people who dried the mussel meat",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "UseRecord",
+      "name": "UseRecord: foraging people \u2013 mussel \u2013 delayed use or exchange",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d3951ed718be7fdb87e8e9f4b6478253"
+      ],
+      "confidence": 0.7,
+      "evidence": "dried the mussel meat for delayed use or exchange",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Taxon",
+      "name": "mussel",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d3951ed718be7fdb87e8e9f4b6478253"
+      ],
+      "confidence": 0.8,
+      "evidence": "black mussel shells",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Preparation",
+      "name": "drying",
+      "attributes": {
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "d3951ed718be7fdb87e8e9f4b6478253"
+      ],
+      "confidence": 0.65,
+      "evidence": "dried the mussel meat",
+      "verified": false
+    },
+    {
+      "id": "E13",
+      "type": "TraditionalUse",
+      "name": "delayed use or exchange",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d3951ed718be7fdb87e8e9f4b6478253"
+      ],
+      "confidence": 0.75,
+      "evidence": "for delayed use or exchange",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoisan hunter-gatherers and herders",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b8dce29d082c5417cf3428b9818db2bc"
+      ],
+      "confidence": 0.9,
+      "evidence": "Khoisan hunter-gatherers and herders of the Cape",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Goringhaicona",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b8dce29d082c5417cf3428b9818db2bc"
+      ],
+      "confidence": 0.8,
+      "evidence": "Goringhaicona",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Dutch colonists",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b8dce29d082c5417cf3428b9818db2bc"
+      ],
+      "confidence": 0.85,
+      "evidence": "Dutch colonists",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoe women",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bc83f15750f02ca3a3bb4fd7bc456a07"
+      ],
+      "confidence": 0.9,
+      "evidence": "group of Khoe women",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Khoe \u2013 medical examination",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bc83f15750f02ca3a3bb4fd7bc456a07"
+      ],
+      "confidence": 0.7,
+      "evidence": "scene that appears to be a medical or scientific examination",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "medical examination",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bc83f15750f02ca3a3bb4fd7bc456a07"
+      ],
+      "confidence": 0.75,
+      "evidence": "medical or scientific examination",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoisan",
+      "attributes": {},
+      "source_chunk_ids": [
+        "29efcde16adb4825797309396a67dbff"
+      ],
+      "confidence": 0.95,
+      "evidence": "Khoisan were, using the fragmentary evidence",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Petersen et al. 2013",
+      "attributes": {
+        "year": 2013
+      },
+      "source_chunk_ids": [
+        "29efcde16adb4825797309396a67dbff"
+      ],
+      "confidence": 0.8,
+      "evidence": "see Petersen et al. 2013",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "genetic evidence",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "29efcde16adb4825797309396a67dbff"
+      ],
+      "confidence": 0.7,
+      "evidence": "genetics of the populations at the Cape",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "CompoundClass",
+      "name": "omega-3 long-chain fatty acids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "confidence": 0.9,
+      "evidence": "omega-3 long-chain fatty acids",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "omega-6 long-chain fatty acids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "confidence": 0.9,
+      "evidence": "omega-6 long-chain fatty acids",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "brain growth support",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "confidence": 0.85,
+      "evidence": "important support for brain growth",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "brain function support",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "confidence": 0.85,
+      "evidence": "important support for brain function",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "shellfish",
+      "attributes": {
+        "rank": "group"
+      },
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "confidence": 0.95,
+      "evidence": "shellfish",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "oily marine fish",
+      "attributes": {
+        "rank": "group"
+      },
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "confidence": 0.95,
+      "evidence": "oily marine fish",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Broadhurst et al. 2002",
+      "attributes": {
+        "year": 2002
+      },
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "confidence": 0.8,
+      "evidence": "Broadhurst et al. 2002",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "hypothesis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "confidence": 0.75,
+      "evidence": "hypothesis is that",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Klein and Steele 2013",
+      "attributes": {
+        "year": 2013
+      },
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "confidence": 0.8,
+      "evidence": "Klein and Steele (2013)",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Evidence",
+      "name": "archaeological record",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "confidence": 0.7,
+      "evidence": "archaeological record of coastal caves",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Culture",
+      "name": "Middle Stone Age humans",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "confidence": 0.75,
+      "evidence": "during the Middle Stone Age",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Culture",
+      "name": "Later Stone Age humans",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "confidence": 0.75,
+      "evidence": "during the Later Stone Age",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "UseRecord",
+      "name": "UseRecord: Middle Stone Age \u2013 shellfish \u2013 brain growth",
+      "attributes": {
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "confidence": 0.7,
+      "evidence": "intake of shellfish by women during pregnancy",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "TraditionalUse",
+      "name": "brain growth facilitation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "confidence": 0.8,
+      "evidence": "growth of the human brain may have been facilitated",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "hunters",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d4f46067fb7dd37c101b54fd818e4a7a"
+      ],
+      "confidence": 0.7,
+      "evidence": "hunters in the Later Stone Age",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: hunters \u2013 poison \u2013 hunting dangerous animals",
+      "attributes": {
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "d4f46067fb7dd37c101b54fd818e4a7a"
+      ],
+      "confidence": 0.65,
+      "evidence": "possibly with poison",
+      "verified": false
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "hunting dangerous animals",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d4f46067fb7dd37c101b54fd818e4a7a"
+      ],
+      "confidence": 0.8,
+      "evidence": "dangerous animals, such as buffalo and bushpig",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "poison",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d4f46067fb7dd37c101b54fd818e4a7a"
+      ],
+      "confidence": 0.75,
+      "evidence": "possibly with poison",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Lombard (2020a)",
+      "attributes": {
+        "year": 2020
+      },
+      "source_chunk_ids": [
+        "d4f46067fb7dd37c101b54fd818e4a7a"
+      ],
+      "confidence": 0.9,
+      "evidence": "Lombard (2020a)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Lombard (2020b)",
+      "attributes": {
+        "year": 2020
+      },
+      "source_chunk_ids": [
+        "d4f46067fb7dd37c101b54fd818e4a7a"
+      ],
+      "confidence": 0.9,
+      "evidence": "Lombard (2020b)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "archaeological evidence",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "d4f46067fb7dd37c101b54fd818e4a7a"
+      ],
+      "confidence": 0.8,
+      "evidence": "bone points from a number of sites",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Ju/\u2019hoansi",
+      "attributes": {},
+      "source_chunk_ids": [
+        "863b84de80c34394e53e1e4f708ce53f"
+      ],
+      "confidence": 0.95,
+      "evidence": "Foraging Ju/\u2019hoansi",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Bushmen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "98b99d2474cabda9250df5161b22e083"
+      ],
+      "confidence": 0.95,
+      "evidence": "Bushmen who worked for him",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Stander et al. 1997",
+      "attributes": {
+        "year": 1997
+      },
+      "source_chunk_ids": [
+        "98b99d2474cabda9250df5161b22e083"
+      ],
+      "confidence": 0.9,
+      "evidence": "scientific study (Stander et al. 1997)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "scientific study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "98b99d2474cabda9250df5161b22e083"
+      ],
+      "confidence": 0.85,
+      "evidence": "scientific study (Stander et al. 1997)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Ju/'hoansi",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d44bbb990df78fc07728684fb0361549"
+      ],
+      "confidence": 0.9,
+      "evidence": "Ju/'hoansi hunter",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Ju/'hoansi \u2013 plant root/tuber",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d44bbb990df78fc07728684fb0361549"
+      ],
+      "confidence": 0.7,
+      "evidence": "holding a large, bulbous plant root or tuber",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "root",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d44bbb990df78fc07728684fb0361549"
+      ],
+      "confidence": 0.8,
+      "evidence": "plant root or tuber",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Ju/'hoansi of Nyae Nyae",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cf5db1e21ee30dc08f48d19deb1a9213"
+      ],
+      "confidence": 0.9,
+      "evidence": "Ju/'hoansi of Nyae Nyae can identify over 200 species of plants",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Ju/'hoansi \u2013 gathering plants for food",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cf5db1e21ee30dc08f48d19deb1a9213"
+      ],
+      "confidence": 0.8,
+      "evidence": "Gathering by women provides over 70 per cent of calories consumed",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "food",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cf5db1e21ee30dc08f48d19deb1a9213"
+      ],
+      "confidence": 0.85,
+      "evidence": "105 are edible",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "women",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d7ec0477cf933098c005079c127fe177"
+      ],
+      "confidence": 0.9,
+      "evidence": "women also collect useful plants",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: women \u2013 gathering \u2013 medicinal plants",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d7ec0477cf933098c005079c127fe177"
+      ],
+      "confidence": 0.8,
+      "evidence": "women also collect medicinal plants",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "medicinal",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d7ec0477cf933098c005079c127fe177"
+      ],
+      "confidence": 0.85,
+      "evidence": "medicinal plants",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "southern African hunters",
+      "attributes": {},
+      "source_chunk_ids": [
+        "345b1140912e4bd41417db8c46cfef98"
+      ],
+      "confidence": 0.9,
+      "evidence": "southern African hunters",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: southern African hunters \u2013 healing rituals \u2013 trance dance",
+      "attributes": {},
+      "source_chunk_ids": [
+        "345b1140912e4bd41417db8c46cfef98"
+      ],
+      "confidence": 0.8,
+      "evidence": "Healing rituals are performed around the trance dance",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "healing rituals",
+      "attributes": {},
+      "source_chunk_ids": [
+        "345b1140912e4bd41417db8c46cfef98"
+      ],
+      "confidence": 0.85,
+      "evidence": "Healing rituals are performed",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "trance dance",
+      "attributes": {},
+      "source_chunk_ids": [
+        "345b1140912e4bd41417db8c46cfef98"
+      ],
+      "confidence": 0.8,
+      "evidence": "around the trance dance",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "drawing sickness",
+      "attributes": {},
+      "source_chunk_ids": [
+        "345b1140912e4bd41417db8c46cfef98"
+      ],
+      "confidence": 0.75,
+      "evidence": "Drawing sickness requires the healer",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "visits the spirit world",
+      "attributes": {},
+      "source_chunk_ids": [
+        "345b1140912e4bd41417db8c46cfef98"
+      ],
+      "confidence": 0.7,
+      "evidence": "visits the spirit world",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "obtains the power to heal",
+      "attributes": {},
+      "source_chunk_ids": [
+        "345b1140912e4bd41417db8c46cfef98"
+      ],
+      "confidence": 0.7,
+      "evidence": "obtains the power to heal",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "TraditionalUse",
+      "name": "the little death",
+      "attributes": {},
+      "source_chunk_ids": [
+        "345b1140912e4bd41417db8c46cfef98"
+      ],
+      "confidence": 0.8,
+      "evidence": "This condition is called 'the little death'",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Culture",
+      "name": "Ju/'hoansi",
+      "attributes": {},
+      "source_chunk_ids": [
+        "345b1140912e4bd41417db8c46cfef98"
+      ],
+      "confidence": 0.9,
+      "evidence": "Among the Ju/'hoansi",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "TraditionalUse",
+      "name": "kia",
+      "attributes": {},
+      "source_chunk_ids": [
+        "345b1140912e4bd41417db8c46cfef98"
+      ],
+      "confidence": 0.85,
+      "evidence": "this moment is known as kia",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "hunter-gatherers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fd62b1d7d7f3fbe8e890f427a20e9435"
+      ],
+      "confidence": 0.9,
+      "evidence": "hunter-gatherers",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: hunter-gatherers \u2013 medicinal plants \u2013 healing dances",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fd62b1d7d7f3fbe8e890f427a20e9435"
+      ],
+      "confidence": 0.8,
+      "evidence": "some of which might be used to assist in the healing dances",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "healing dances",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fd62b1d7d7f3fbe8e890f427a20e9435"
+      ],
+      "confidence": 0.85,
+      "evidence": "assist in the healing dances",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "eland fat",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fd62b1d7d7f3fbe8e890f427a20e9435"
+      ],
+      "confidence": 0.75,
+      "evidence": "eland fat is mixed with the plants",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Preparation",
+      "name": "mixing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fd62b1d7d7f3fbe8e890f427a20e9435"
+      ],
+      "confidence": 0.7,
+      "evidence": "mixed with the plants",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Ju/'hoansi Bushmen of Nyae Nyae",
+      "attributes": {},
+      "source_chunk_ids": [
+        "be1aaeac21613099397199b584253b7d"
+      ],
+      "confidence": 0.9,
+      "evidence": "Ju/'hoansi Bushmen of Nyae Nyae",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "TraditionalUse",
+      "name": "kia",
+      "attributes": {},
+      "source_chunk_ids": [
+        "be1aaeac21613099397199b584253b7d"
+      ],
+      "confidence": 0.85,
+      "evidence": "called kia",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoekhoe",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9e7d432a41dfc41ac76b56a27cf170e3"
+      ],
+      "confidence": 0.95,
+      "evidence": "Khoekhoe girls",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Bushmen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9e7d432a41dfc41ac76b56a27cf170e3"
+      ],
+      "confidence": 0.9,
+      "evidence": "Bushmen boys and girls",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Nama",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9e7d432a41dfc41ac76b56a27cf170e3"
+      ],
+      "confidence": 0.85,
+      "evidence": "still is among the Nama",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "puberty ceremony",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9e7d432a41dfc41ac76b56a27cf170e3"
+      ],
+      "confidence": 0.8,
+      "evidence": "ceremonies that allowed them to move into adulthood",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "seclusion in a hut",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9e7d432a41dfc41ac76b56a27cf170e3"
+      ],
+      "confidence": 0.75,
+      "evidence": "seclusion in a hut",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "slaughter of a sheep",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9e7d432a41dfc41ac76b56a27cf170e3"
+      ],
+      "confidence": 0.85,
+      "evidence": "required the slaughter of a sheep",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "eating meat separately",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9e7d432a41dfc41ac76b56a27cf170e3"
+      ],
+      "confidence": 0.7,
+      "evidence": "eaten separately from the rest",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Bushman",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ca7c306c2526250dfd2151c498da24e0"
+      ],
+      "confidence": 0.9,
+      "evidence": "Bushman society",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Khoe",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ca7c306c2526250dfd2151c498da24e0"
+      ],
+      "confidence": 0.85,
+      "evidence": "Khoe ceremonies",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "UseRecord",
+      "name": "UseRecord: Bushman \u2013 initiation ceremony",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ca7c306c2526250dfd2151c498da24e0"
+      ],
+      "confidence": 0.8,
+      "evidence": "initiation in Bushman society",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "initiation ceremony",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ca7c306c2526250dfd2151c498da24e0"
+      ],
+      "confidence": 0.85,
+      "evidence": "initiation in Bushman society",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "eland dance",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ca7c306c2526250dfd2151c498da24e0"
+      ],
+      "confidence": 0.8,
+      "evidence": "eland dance",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "trancing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ca7c306c2526250dfd2151c498da24e0"
+      ],
+      "confidence": 0.75,
+      "evidence": "learning the mysteries of ritual belief, including trancing",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Yates et al. 1990",
+      "attributes": {
+        "year": 1990
+      },
+      "source_chunk_ids": [
+        "ca7c306c2526250dfd2151c498da24e0"
+      ],
+      "confidence": 0.8,
+      "evidence": "Yates et al. 1990: 55",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Schapera 1930",
+      "attributes": {
+        "year": 1930
+      },
+      "source_chunk_ids": [
+        "ca7c306c2526250dfd2151c498da24e0"
+      ],
+      "confidence": 0.85,
+      "evidence": "Schapera 1930: 284",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Bushmen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ad74b8fb06e686047b92fdb0d74666de"
+      ],
+      "confidence": 0.8,
+      "evidence": "interpreted by the Bushmen",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "TraditionalUse",
+      "name": "rain-making",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ad74b8fb06e686047b92fdb0d74666de"
+      ],
+      "confidence": 0.7,
+      "evidence": "rain-making and healing",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "healing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ad74b8fb06e686047b92fdb0d74666de"
+      ],
+      "confidence": 0.7,
+      "evidence": "rain-making and healing",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "trance-dance",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ad74b8fb06e686047b92fdb0d74666de"
+      ],
+      "confidence": 0.75,
+      "evidence": "trance-dance symbolism",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "trance",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ad74b8fb06e686047b92fdb0d74666de"
+      ],
+      "confidence": 0.8,
+      "evidence": "symbols of the trance",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Bushmen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ed5843c6f889e8371fc25538d657f04c"
+      ],
+      "confidence": 0.9,
+      "evidence": "belief system of the Bushmen",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Bushmen \u2013 rock art \u2013 healing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ed5843c6f889e8371fc25538d657f04c"
+      ],
+      "confidence": 0.8,
+      "evidence": "using the spiritual power to draw upon healing",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "healing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ed5843c6f889e8371fc25538d657f04c"
+      ],
+      "confidence": 0.85,
+      "evidence": "draw upon healing",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoekhoen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33cb40921a4fb362efffe5c99cad6ef5"
+      ],
+      "confidence": 0.9,
+      "evidence": "historic Khoekhoen",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Namaqua",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33cb40921a4fb362efffe5c99cad6ef5"
+      ],
+      "confidence": 0.85,
+      "evidence": "were called Namaqua",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoekhoe",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "confidence": 0.9,
+      "evidence": "Khoekhoe rituals revolved around sheep",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Khoekhoe \u2013 sheep \u2013 rituals",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "confidence": 0.8,
+      "evidence": "Khoekhoe rituals revolved around sheep",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "sheep",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "confidence": 0.95,
+      "evidence": "sheep flocks were the dominant animal",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "rituals",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "confidence": 0.85,
+      "evidence": "Khoekhoe rituals revolved around sheep",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "UseRecord",
+      "name": "UseRecord: Pastoralists \u2013 milk \u2013 consumption",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "confidence": 0.75,
+      "evidence": "Pastoralists usually have a high milk intake",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "RawMaterial",
+      "name": "milk",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "confidence": 0.9,
+      "evidence": "milk intake",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Preparation",
+      "name": "souring",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "confidence": 0.7,
+      "evidence": "it was soured",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "RawMaterial",
+      "name": "butter",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "confidence": 0.8,
+      "evidence": "made into butter",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "TraditionalUse",
+      "name": "body decoration",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "confidence": 0.75,
+      "evidence": "used for body decoration",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "Balasse et al. 2003",
+      "attributes": {
+        "year": 2003
+      },
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "confidence": 0.85,
+      "evidence": "Balasse et al. 2003",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Evidence",
+      "name": "isotopic analysis",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "confidence": 0.8,
+      "evidence": "Isotopic work done on sheep teeth",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Study",
+      "name": "Macholdt et al. 2014",
+      "attributes": {
+        "year": 2014
+      },
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "confidence": 0.85,
+      "evidence": "Macholdt et al. 2014",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Evidence",
+      "name": "genetic analysis",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "confidence": 0.8,
+      "evidence": "genetic ability to metabolise raw milk",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Condition",
+      "name": "lactose metabolism ability",
+      "attributes": {
+        "condition_type": "genetic trait"
+      },
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "confidence": 0.7,
+      "evidence": "genetic ability to metabolise raw milk",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoe",
+      "attributes": {},
+      "source_chunk_ids": [
+        "948d68d181c1ba383646f4baaf7b4559"
+      ],
+      "confidence": 0.9,
+      "evidence": "main food of the Khoe",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Khoe \u2013 Watsonia \u2013 food",
+      "attributes": {},
+      "source_chunk_ids": [
+        "948d68d181c1ba383646f4baaf7b4559"
+      ],
+      "confidence": 0.8,
+      "evidence": "main food of the Khoe was a kind of root",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Watsonia",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "948d68d181c1ba383646f4baaf7b4559"
+      ],
+      "confidence": 0.7,
+      "evidence": "possibly Watsonia",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "PlantPart",
+      "name": "root",
+      "attributes": {},
+      "source_chunk_ids": [
+        "948d68d181c1ba383646f4baaf7b4559"
+      ],
+      "confidence": 0.85,
+      "evidence": "a kind of root",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Preparation",
+      "name": "boiling",
+      "attributes": {},
+      "source_chunk_ids": [
+        "948d68d181c1ba383646f4baaf7b4559"
+      ],
+      "confidence": 0.75,
+      "evidence": "boiled or roasted",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Preparation",
+      "name": "roasting",
+      "attributes": {},
+      "source_chunk_ids": [
+        "948d68d181c1ba383646f4baaf7b4559"
+      ],
+      "confidence": 0.75,
+      "evidence": "boiled or roasted",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "food",
+      "attributes": {},
+      "source_chunk_ids": [
+        "948d68d181c1ba383646f4baaf7b4559"
+      ],
+      "confidence": 0.9,
+      "evidence": "main food",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoekhoen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "11bea9d0e18387237c4d656546b4a1cc"
+      ],
+      "confidence": 0.95,
+      "evidence": "The Khoekhoen were probably equally healthy",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "smallpox",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "11bea9d0e18387237c4d656546b4a1cc"
+      ],
+      "confidence": 0.9,
+      "evidence": "smallpox epidemic arrived at the Cape",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Elphick 1985",
+      "attributes": {
+        "year": 1985
+      },
+      "source_chunk_ids": [
+        "11bea9d0e18387237c4d656546b4a1cc"
+      ],
+      "confidence": 0.8,
+      "evidence": "Elphick 1985: 232",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Smith 1989",
+      "attributes": {
+        "year": 1989
+      },
+      "source_chunk_ids": [
+        "11bea9d0e18387237c4d656546b4a1cc"
+      ],
+      "confidence": 0.8,
+      "evidence": "Smith 1989",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoekhoen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "confidence": 0.95,
+      "evidence": "The Khoekhoen had a rich pharmacopoeia",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Cape Khoekhoen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "confidence": 0.9,
+      "evidence": "Cape Khoekhoen used a wide range",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Genadendal community",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "confidence": 0.85,
+      "evidence": "plants used by the Genadendal community",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Culture",
+      "name": "congregation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "confidence": 0.8,
+      "evidence": "still used by the congregation",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "UseRecord",
+      "name": "UseRecord: Cape Khoekhoen \u2013 fynbos plants \u2013 minor ailments",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "confidence": 0.85,
+      "evidence": "For minor ailments, the Cape Khoekhoen used",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "UseRecord",
+      "name": "UseRecord: Genadendal community \u2013 33 plants \u2013 medicinal",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "confidence": 0.8,
+      "evidence": "33 plants used by the Genadendal community",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "UseRecord",
+      "name": "UseRecord: Richtersveld \u2013 23 plants \u2013 medicinal",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "confidence": 0.8,
+      "evidence": "23 plants are still used for medicinal purposes",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "TraditionalUse",
+      "name": "minor ailments",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "confidence": 0.9,
+      "evidence": "For minor ailments",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "TraditionalUse",
+      "name": "medicinal purposes",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "confidence": 0.9,
+      "evidence": "used for medicinal purposes",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Taxon",
+      "name": "fynbos plants",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "confidence": 0.85,
+      "evidence": "local fynbos plants",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Taxon",
+      "name": "33 plants",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "confidence": 0.8,
+      "evidence": "33 plants used by the Genadendal community",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Taxon",
+      "name": "61 wild plants",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "confidence": 0.8,
+      "evidence": "61 wild plants that are considered edible",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Taxon",
+      "name": "23 plants",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "confidence": 0.8,
+      "evidence": "23 plants are still used for medicinal purposes",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Study",
+      "name": "Archer (1994)",
+      "attributes": {
+        "year": 1994
+      },
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "confidence": 0.9,
+      "evidence": "Archer (1994) was able to get information",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "people described by Raven-Hart",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e66352a17f757d0a1ccd5590f5486b0"
+      ],
+      "confidence": 0.8,
+      "evidence": "From the whales and other sea monsters",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: people \u2013 whales/sea monsters \u2013 food",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e66352a17f757d0a1ccd5590f5486b0"
+      ],
+      "confidence": 0.75,
+      "evidence": "cut away the blubber and oily meat, and eat it",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "whales",
+      "attributes": {
+        "rank": "group"
+      },
+      "source_chunk_ids": [
+        "4e66352a17f757d0a1ccd5590f5486b0"
+      ],
+      "confidence": 0.9,
+      "evidence": "whales",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "sea monsters",
+      "attributes": {
+        "rank": "group"
+      },
+      "source_chunk_ids": [
+        "4e66352a17f757d0a1ccd5590f5486b0"
+      ],
+      "confidence": 0.85,
+      "evidence": "sea monsters",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "PlantPart",
+      "name": "blubber",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e66352a17f757d0a1ccd5590f5486b0"
+      ],
+      "confidence": 0.8,
+      "evidence": "blubber",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "PlantPart",
+      "name": "oily meat",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e66352a17f757d0a1ccd5590f5486b0"
+      ],
+      "confidence": 0.8,
+      "evidence": "oily meat",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Preparation",
+      "name": "cutting",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e66352a17f757d0a1ccd5590f5486b0"
+      ],
+      "confidence": 0.7,
+      "evidence": "cut away",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Preparation",
+      "name": "burying under sand",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e66352a17f757d0a1ccd5590f5486b0"
+      ],
+      "confidence": 0.7,
+      "evidence": "bury them under the sand",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "TraditionalUse",
+      "name": "food",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e66352a17f757d0a1ccd5590f5486b0"
+      ],
+      "confidence": 0.85,
+      "evidence": "eat it with great relish",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Nuer",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e9180e39d0d4c357df7a296a76188fab"
+      ],
+      "confidence": 0.9,
+      "evidence": "His work among the Nuer",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Khoekhoen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e9180e39d0d4c357df7a296a76188fab"
+      ],
+      "confidence": 0.85,
+      "evidence": "religious beliefs among the Khoekhoen",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoekhoen descendants",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3024fa198f39fd974e1a05bfcf1bfa37"
+      ],
+      "confidence": 0.9,
+      "evidence": "Khoekhoen descendants",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Nama",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3024fa198f39fd974e1a05bfcf1bfa37"
+      ],
+      "confidence": 0.85,
+      "evidence": "local Nama",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Damara",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3024fa198f39fd974e1a05bfcf1bfa37"
+      ],
+      "confidence": 0.85,
+      "evidence": "Damara in Namibia",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Schmidt (2020)",
+      "attributes": {
+        "year": 2020
+      },
+      "source_chunk_ids": [
+        "3024fa198f39fd974e1a05bfcf1bfa37"
+      ],
+      "confidence": 0.8,
+      "evidence": "Schmidt (2020)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Low (2014)",
+      "attributes": {
+        "year": 2014
+      },
+      "source_chunk_ids": [
+        "3024fa198f39fd974e1a05bfcf1bfa37"
+      ],
+      "confidence": 0.8,
+      "evidence": "Low (2014)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "respect spirits",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3024fa198f39fd974e1a05bfcf1bfa37"
+      ],
+      "confidence": 0.75,
+      "evidence": "need to be respected",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "add to stone cairns",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3024fa198f39fd974e1a05bfcf1bfa37"
+      ],
+      "confidence": 0.75,
+      "evidence": "added to",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "misfortune",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "3024fa198f39fd974e1a05bfcf1bfa37"
+      ],
+      "confidence": 0.7,
+      "evidence": "misfortune will happen",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoekhoen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9b081ad0a4eafd6cbb1710aa77a77257"
+      ],
+      "confidence": 0.95,
+      "evidence": "The Khoekhoen chose to celebrate",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Khoekhoen \u2013 ritual sacrifice \u2013 transition celebration",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9b081ad0a4eafd6cbb1710aa77a77257"
+      ],
+      "confidence": 0.8,
+      "evidence": "celebrate moments of transition",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "ritual sacrifice",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9b081ad0a4eafd6cbb1710aa77a77257"
+      ],
+      "confidence": 0.85,
+      "evidence": "ritual sacrifice",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Hoernl\u00e9 1925",
+      "attributes": {
+        "year": 1925
+      },
+      "source_chunk_ids": [
+        "9b081ad0a4eafd6cbb1710aa77a77257"
+      ],
+      "confidence": 0.9,
+      "evidence": "well documented by Hoernl\u00e9 (1925)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "ethnographic documentation",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "9b081ad0a4eafd6cbb1710aa77a77257"
+      ],
+      "confidence": 0.8,
+      "evidence": "well documented by Hoernl\u00e9",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Smith & Pheiffer 1992",
+      "attributes": {
+        "year": 1992
+      },
+      "source_chunk_ids": [
+        "9b081ad0a4eafd6cbb1710aa77a77257"
+      ],
+      "confidence": 0.9,
+      "evidence": "Smith & Pheiffer 1992",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "historical record",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "9b081ad0a4eafd6cbb1710aa77a77257"
+      ],
+      "confidence": 0.8,
+      "evidence": "noted in 1779\u20131780",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Smith 2006",
+      "attributes": {
+        "year": 2006
+      },
+      "source_chunk_ids": [
+        "9b081ad0a4eafd6cbb1710aa77a77257"
+      ],
+      "confidence": 0.9,
+      "evidence": "Smith 2006",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "archaeological evidence",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "9b081ad0a4eafd6cbb1710aa77a77257"
+      ],
+      "confidence": 0.85,
+      "evidence": "suggested a ritual sacrifice",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Bushmen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f0ad3e80fcdbc852e4ffc2c2df2b39cd"
+      ],
+      "confidence": 0.9,
+      "evidence": "burial practices of the Bushmen",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Khoekhoen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f0ad3e80fcdbc852e4ffc2c2df2b39cd"
+      ],
+      "confidence": 0.9,
+      "evidence": "burial practices of the ... Khoekhoen",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "burial practices",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f0ad3e80fcdbc852e4ffc2c2df2b39cd"
+      ],
+      "confidence": 0.85,
+      "evidence": "burial practices of the Bushmen and Khoekhoen",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Schapera (1930)",
+      "attributes": {
+        "year": 1930
+      },
+      "source_chunk_ids": [
+        "f0ad3e80fcdbc852e4ffc2c2df2b39cd"
+      ],
+      "confidence": 0.95,
+      "evidence": "Schapera (1930) has extensive notes",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "ethnographic notes",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "f0ad3e80fcdbc852e4ffc2c2df2b39cd"
+      ],
+      "confidence": 0.8,
+      "evidence": "extensive notes on the burial practices",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoekhoe",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f41997680271a5ee21a313722d87f827"
+      ],
+      "confidence": 0.95,
+      "evidence": "Among the Khoekhoe music",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Khoekhoe \u2013 music \u2013 sacred invocation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f41997680271a5ee21a313722d87f827"
+      ],
+      "confidence": 0.8,
+      "evidence": "sacred, used to invoke the moon",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "invoke the moon for help",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f41997680271a5ee21a313722d87f827"
+      ],
+      "confidence": 0.85,
+      "evidence": "invoke the moon for help",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "UseRecord",
+      "name": "UseRecord: Khoekhoe \u2013 music \u2013 secular activities",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f41997680271a5ee21a313722d87f827"
+      ],
+      "confidence": 0.8,
+      "evidence": "\u2018profane\u2019, or secular, where stories were told",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "storytelling",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f41997680271a5ee21a313722d87f827"
+      ],
+      "confidence": 0.8,
+      "evidence": "stories were told",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "dancing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f41997680271a5ee21a313722d87f827"
+      ],
+      "confidence": 0.85,
+      "evidence": "for dancing in !Nau celebrations",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Schapera (1930)",
+      "attributes": {
+        "year": 1930
+      },
+      "source_chunk_ids": [
+        "f41997680271a5ee21a313722d87f827"
+      ],
+      "confidence": 0.9,
+      "evidence": "Schapera (1930)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "ethnographic study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "f41997680271a5ee21a313722d87f827"
+      ],
+      "confidence": 0.8,
+      "evidence": "considerable detail on Khoisan music",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Taxon",
+      "name": "acacia",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "f41997680271a5ee21a313722d87f827"
+      ],
+      "confidence": 0.85,
+      "evidence": "roots of acacia trees",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f41997680271a5ee21a313722d87f827"
+      ],
+      "confidence": 0.9,
+      "evidence": "roots of acacia trees",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "RawMaterial",
+      "name": "flutes",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f41997680271a5ee21a313722d87f827"
+      ],
+      "confidence": 0.85,
+      "evidence": "flutes were made from reeds or roots",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Preparation",
+      "name": "crafting",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f41997680271a5ee21a313722d87f827"
+      ],
+      "confidence": 0.75,
+      "evidence": "flutes were made from",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Gibbon & Davies 2020",
+      "attributes": {
+        "year": 2020,
+        "design": "archaeological study"
+      },
+      "source_chunk_ids": [
+        "6feb1b77d396dcac6a8f22f2c24d20c5"
+      ],
+      "confidence": 0.9,
+      "evidence": "study of archaeological skulls (Gibbon & Davies 2020)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "archaeological evidence",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "6feb1b77d396dcac6a8f22f2c24d20c5"
+      ],
+      "confidence": 0.85,
+      "evidence": "study of archaeological skulls",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "perimortem trauma",
+      "attributes": {
+        "condition_type": "injury"
+      },
+      "source_chunk_ids": [
+        "6feb1b77d396dcac6a8f22f2c24d20c5"
+      ],
+      "confidence": 0.9,
+      "evidence": "39 per cent of them had perimortem trauma",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "ante-mortem trauma",
+      "attributes": {
+        "condition_type": "injury"
+      },
+      "source_chunk_ids": [
+        "6feb1b77d396dcac6a8f22f2c24d20c5"
+      ],
+      "confidence": 0.9,
+      "evidence": "19 per cent with ante-mortem trauma",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Manhire 1993",
+      "attributes": {
+        "year": 1993,
+        "design": "archaeological excavation"
+      },
+      "source_chunk_ids": [
+        "6feb1b77d396dcac6a8f22f2c24d20c5"
+      ],
+      "confidence": 0.85,
+      "evidence": "unique 2 000-year-old skeletons from Faraoskop (Manhire 1993)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "head injuries",
+      "attributes": {
+        "condition_type": "injury"
+      },
+      "source_chunk_ids": [
+        "6feb1b77d396dcac6a8f22f2c24d20c5"
+      ],
+      "confidence": 0.8,
+      "evidence": "several with head injuries that were probably fatal",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "eastern Khoe Bushmen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4b3fbf5e663063aff31b578c978a17c7"
+      ],
+      "confidence": 0.9,
+      "evidence": "eastern Khoe Bushmen",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Shua",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4b3fbf5e663063aff31b578c978a17c7"
+      ],
+      "confidence": 0.8,
+      "evidence": "Shua",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Tshwa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4b3fbf5e663063aff31b578c978a17c7"
+      ],
+      "confidence": 0.8,
+      "evidence": "Tshwa",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Culture",
+      "name": "Batwa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4b3fbf5e663063aff31b578c978a17c7"
+      ],
+      "confidence": 0.7,
+      "evidence": "mythical Batwa",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Bakoba",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2a48c7d09bee0cbb967901845b9090db"
+      ],
+      "confidence": 0.95,
+      "evidence": "principal tribe ... is the Bakoba",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Bechuana",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2a48c7d09bee0cbb967901845b9090db"
+      ],
+      "confidence": 0.9,
+      "evidence": "Bechuana Kaffirs",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Bushmen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2a48c7d09bee0cbb967901845b9090db"
+      ],
+      "confidence": 0.85,
+      "evidence": "language ... similar to that of the Bushmen",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoekhoen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "aeaca52724b70c65b2ed3f2ddbf542e8"
+      ],
+      "confidence": 0.9,
+      "evidence": "The observation that the Khoekhoen had hunters as clients",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Sonquas",
+      "attributes": {},
+      "source_chunk_ids": [
+        "aeaca52724b70c65b2ed3f2ddbf542e8"
+      ],
+      "confidence": 0.95,
+      "evidence": "these Sonquas are just the same as the poor in Europe",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Hottentots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "aeaca52724b70c65b2ed3f2ddbf542e8"
+      ],
+      "confidence": 0.9,
+      "evidence": "each tribe of Hottentots having some of them",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "UseRecord",
+      "name": "UseRecord: Khoekhoen \u2013 Sonquas \u2013 menial tasks",
+      "attributes": {},
+      "source_chunk_ids": [
+        "aeaca52724b70c65b2ed3f2ddbf542e8"
+      ],
+      "confidence": 0.8,
+      "evidence": "Khoekhoen had hunters as clients to do menial tasks",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "menial tasks",
+      "attributes": {},
+      "source_chunk_ids": [
+        "aeaca52724b70c65b2ed3f2ddbf542e8"
+      ],
+      "confidence": 0.85,
+      "evidence": "to do menial tasks",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "bring news of approach of strange tribe",
+      "attributes": {},
+      "source_chunk_ids": [
+        "aeaca52724b70c65b2ed3f2ddbf542e8"
+      ],
+      "confidence": 0.8,
+      "evidence": "employing them to bring news of the approach of a strange tribe",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "steal from other kraals",
+      "attributes": {},
+      "source_chunk_ids": [
+        "aeaca52724b70c65b2ed3f2ddbf542e8"
+      ],
+      "confidence": 0.75,
+      "evidence": "steal nothing from the kraals of their employers, but regularly from other kraals",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "TraditionalUse",
+      "name": "serve for food",
+      "attributes": {},
+      "source_chunk_ids": [
+        "aeaca52724b70c65b2ed3f2ddbf542e8"
+      ],
+      "confidence": 0.8,
+      "evidence": "Sonquas are mercenaries to other Hottentot nations, serving for food",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Bushmen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b689ad5f40d2ef83ba49a010d87e72d8"
+      ],
+      "confidence": 0.9,
+      "evidence": "Bushmen of southern Africa",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "San",
+      "attributes": {},
+      "source_chunk_ids": [
+        "68a6b8035625888f9e48f3b48aeec3c1"
+      ],
+      "confidence": 0.9,
+      "evidence": "The San or Bushmen hunter-gatherers",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Ju/'hoansi Bushmen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "68a6b8035625888f9e48f3b48aeec3c1"
+      ],
+      "confidence": 0.85,
+      "evidence": "Ju/'hoansi Bushmen of Nyae Nyae",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "San people",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8f5aa88dce2ea50d6dbc779ed3fd2c3c"
+      ],
+      "confidence": 0.9,
+      "evidence": "interviews with San people",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Bushmen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8f5aa88dce2ea50d6dbc779ed3fd2c3c"
+      ],
+      "confidence": 0.85,
+      "evidence": "intervene on behalf of the Bushmen",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Nyae Nyae Ju/'hoansi",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8f5aa88dce2ea50d6dbc779ed3fd2c3c"
+      ],
+      "confidence": 0.8,
+      "evidence": "Nyae Nyae Ju/'hoansi interviewed",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Le Roux and White (2004)",
+      "attributes": {
+        "year": 2004
+      },
+      "source_chunk_ids": [
+        "8f5aa88dce2ea50d6dbc779ed3fd2c3c"
+      ],
+      "confidence": 0.95,
+      "evidence": "Le Roux and White (2004)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Suzman (2017)",
+      "attributes": {
+        "year": 2017
+      },
+      "source_chunk_ids": [
+        "8f5aa88dce2ea50d6dbc779ed3fd2c3c"
+      ],
+      "confidence": 0.9,
+      "evidence": "Suzman (2017: 94)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "ethnographic interviews",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "8f5aa88dce2ea50d6dbc779ed3fd2c3c"
+      ],
+      "confidence": 0.75,
+      "evidence": "interviews with San people",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "survey data",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "8f5aa88dce2ea50d6dbc779ed3fd2c3c"
+      ],
+      "confidence": 0.7,
+      "evidence": "interviewed in 2010",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Sonqua",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cb6ce02c3fa9f9a01e72cbed231b8763"
+      ],
+      "confidence": 0.8,
+      "evidence": "spoken by Sonqua",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "South African Tuu-speakers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cb6ce02c3fa9f9a01e72cbed231b8763"
+      ],
+      "confidence": 0.85,
+      "evidence": "South African Tuu-speakers",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoisan",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bc94cfdf62c8c0ba5220b0ce07ba38fb"
+      ],
+      "confidence": 0.9,
+      "evidence": "Khoisan traditions",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Moravian Church",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bc94cfdf62c8c0ba5220b0ce07ba38fb"
+      ],
+      "confidence": 0.8,
+      "evidence": "Moravian Church",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "London Missionary Society",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bc94cfdf62c8c0ba5220b0ce07ba38fb"
+      ],
+      "confidence": 0.8,
+      "evidence": "London Missionary Society",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "r\u00eb\u00ebl dancing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bc94cfdf62c8c0ba5220b0ce07ba38fb"
+      ],
+      "confidence": 0.85,
+      "evidence": "traditional r\u00eb\u00ebl dancing",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoisan people",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bb235d16e7de2da89bda472c59d9a3bf"
+      ],
+      "confidence": 0.9,
+      "evidence": "Khoisan people back in England",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Khoe",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bb235d16e7de2da89bda472c59d9a3bf"
+      ],
+      "confidence": 0.85,
+      "evidence": "She was a Khoe woman",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoisan",
+      "attributes": {},
+      "source_chunk_ids": [
+        "907fccc699215147c8554b388bdf5c67"
+      ],
+      "confidence": 0.9,
+      "evidence": "The study of the Khoisan",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Bushmen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "907fccc699215147c8554b388bdf5c67"
+      ],
+      "confidence": 0.95,
+      "evidence": "placement of the Bushmen",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoekhoen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e0c8932e46152b3f21601ff64d212ce"
+      ],
+      "confidence": 0.95,
+      "evidence": "Among the Khoekhoen",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Cochoqua",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e0c8932e46152b3f21601ff64d212ce"
+      ],
+      "confidence": 0.9,
+      "evidence": "Cochoqua",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Namaqua",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e0c8932e46152b3f21601ff64d212ce"
+      ],
+      "confidence": 0.9,
+      "evidence": "Namaqua",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "herbalists-healers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "311b9da02c551b1db7fd16e92f47d5c8"
+      ],
+      "confidence": 0.8,
+      "evidence": "Herbalists-healers travel extensively",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: herbaceous plants for influenza, pains and aches, stomach ailments",
+      "attributes": {},
+      "source_chunk_ids": [
+        "311b9da02c551b1db7fd16e92f47d5c8"
+      ],
+      "confidence": 0.85,
+      "evidence": "herbaceous plants \u2018are used for influenza, for pains and aches and for stomach ailments\u2019",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "herbaceous plants",
+      "attributes": {
+        "rank": "group"
+      },
+      "source_chunk_ids": [
+        "311b9da02c551b1db7fd16e92f47d5c8"
+      ],
+      "confidence": 0.9,
+      "evidence": "herbaceous plants \u2018are used for influenza",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "influenza",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "311b9da02c551b1db7fd16e92f47d5c8"
+      ],
+      "confidence": 0.95,
+      "evidence": "used for influenza",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "pains and aches",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "311b9da02c551b1db7fd16e92f47d5c8"
+      ],
+      "confidence": 0.9,
+      "evidence": "for pains and aches",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "stomach ailments",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "311b9da02c551b1db7fd16e92f47d5c8"
+      ],
+      "confidence": 0.9,
+      "evidence": "for stomach ailments",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Archer (1994)",
+      "attributes": {
+        "year": 1994,
+        "author": "Archer"
+      },
+      "source_chunk_ids": [
+        "311b9da02c551b1db7fd16e92f47d5c8"
+      ],
+      "confidence": 0.95,
+      "evidence": "According to Archer (1994: 66)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "ethnographic report",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "311b9da02c551b1db7fd16e92f47d5c8"
+      ],
+      "confidence": 0.8,
+      "evidence": "According to Archer (1994: 66)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Boscia albitrunca",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.9,
+      "evidence": "Boscia albitrunca",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.85,
+      "evidence": "Boscia albitruncaleaves",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "stress",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.8,
+      "evidence": "stress",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "kidney/bladder infection",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.8,
+      "evidence": "kidney/bladder infection",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "epilepsy",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.85,
+      "evidence": "epilepsy",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.85,
+      "evidence": "Boscia albitruncaroots",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Cotyledon orbiculata",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.9,
+      "evidence": "Cotyledon orbiculata",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "PlantPart",
+      "name": "stems",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.8,
+      "evidence": "Cotyledon orbiculatastems",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "sore throat",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.8,
+      "evidence": "sore throat",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "TraditionalUse",
+      "name": "worming",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.75,
+      "evidence": "worming",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Condition",
+      "name": "boils",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.8,
+      "evidence": "boils",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Condition",
+      "name": "abscesses",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.8,
+      "evidence": "abscesses",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Condition",
+      "name": "nappy rash",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.8,
+      "evidence": "nappy rash",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Condition",
+      "name": "tooth/earache",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.8,
+      "evidence": "tooth/earache",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Taxon",
+      "name": "Crassula elegans",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.9,
+      "evidence": "Crassula elegans",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.85,
+      "evidence": "Crassula elegansroots",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "Taxon",
+      "name": "Crassula muscosa",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.9,
+      "evidence": "Crassula muscosa",
+      "verified": true
+    },
+    {
+      "id": "E18",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.85,
+      "evidence": "Crassula muscosaleaves",
+      "verified": true
+    },
+    {
+      "id": "E19",
+      "type": "Taxon",
+      "name": "Cyperus marginatus",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.9,
+      "evidence": "Cyperus marginatus",
+      "verified": true
+    },
+    {
+      "id": "E20",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.85,
+      "evidence": "Cyperus marginatusroots",
+      "verified": true
+    },
+    {
+      "id": "E21",
+      "type": "Taxon",
+      "name": "Cyphia phyteuma",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.9,
+      "evidence": "Cyphia phyteuma",
+      "verified": true
+    },
+    {
+      "id": "E22",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.85,
+      "evidence": "Cyphia phyteumaroots",
+      "verified": true
+    },
+    {
+      "id": "E23",
+      "type": "Taxon",
+      "name": "Dicoma capensis",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.9,
+      "evidence": "Dicoma capensis",
+      "verified": true
+    },
+    {
+      "id": "E24",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.85,
+      "evidence": "Dicoma capensisleaves",
+      "verified": true
+    },
+    {
+      "id": "E25",
+      "type": "Condition",
+      "name": "fever",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.8,
+      "evidence": "fever",
+      "verified": true
+    },
+    {
+      "id": "E26",
+      "type": "Condition",
+      "name": "colds",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.8,
+      "evidence": "colds",
+      "verified": true
+    },
+    {
+      "id": "E27",
+      "type": "Condition",
+      "name": "flu",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.8,
+      "evidence": "flu",
+      "verified": true
+    },
+    {
+      "id": "E28",
+      "type": "Condition",
+      "name": "hypertension",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.8,
+      "evidence": "hypertension",
+      "verified": true
+    },
+    {
+      "id": "E29",
+      "type": "Condition",
+      "name": "diarrhoea",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.8,
+      "evidence": "diarrhoea",
+      "verified": true
+    },
+    {
+      "id": "E30",
+      "type": "Condition",
+      "name": "cancer",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.8,
+      "evidence": "cancer",
+      "verified": true
+    },
+    {
+      "id": "E31",
+      "type": "Taxon",
+      "name": "Diospyros lycioides",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.9,
+      "evidence": "Diospyros lycioides",
+      "verified": true
+    },
+    {
+      "id": "E32",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.85,
+      "evidence": "Diospyros lycioidesroots",
+      "verified": true
+    },
+    {
+      "id": "E33",
+      "type": "TraditionalUse",
+      "name": "antibiotic chewing stick",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.75,
+      "evidence": "antibiotic chewing stick",
+      "verified": true
+    },
+    {
+      "id": "E34",
+      "type": "Taxon",
+      "name": "Euclea pseudobenus",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.9,
+      "evidence": "Euclea pseudobenus",
+      "verified": true
+    },
+    {
+      "id": "E35",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.85,
+      "evidence": "Euclea pseudobenusroots",
+      "verified": true
+    },
+    {
+      "id": "E36",
+      "type": "TraditionalUse",
+      "name": "chewing stick",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.75,
+      "evidence": "chewing stick",
+      "verified": true
+    },
+    {
+      "id": "E37",
+      "type": "Taxon",
+      "name": "Galium tomentosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.9,
+      "evidence": "Galium tomentosum",
+      "verified": true
+    },
+    {
+      "id": "E38",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.85,
+      "evidence": "Galium tomentosumroots",
+      "verified": true
+    },
+    {
+      "id": "E39",
+      "type": "Taxon",
+      "name": "Gorteria diffusa",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.9,
+      "evidence": "Gorteria diffusa",
+      "verified": true
+    },
+    {
+      "id": "E40",
+      "type": "Taxon",
+      "name": "Hermannia stricta",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.9,
+      "evidence": "Hermannia stricta",
+      "verified": true
+    },
+    {
+      "id": "E41",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "confidence": 0.85,
+      "evidence": "Hermannia strictaleaves",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "indigenous people",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0fea8a0d47e56fd9eb6309e7bcc476b1"
+      ],
+      "confidence": 0.8,
+      "evidence": "herbs used by indigenous people",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: indigenous people \u2013 herbs \u2013 medicinal purposes",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0fea8a0d47e56fd9eb6309e7bcc476b1"
+      ],
+      "confidence": 0.7,
+      "evidence": "herbs used by indigenous people for medicinal purposes",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "medicinal purposes",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0fea8a0d47e56fd9eb6309e7bcc476b1"
+      ],
+      "confidence": 0.85,
+      "evidence": "for medicinal purposes",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Kleine Bels",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "confidence": 0.8,
+      "evidence": "Kleine Bels is boiled",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Groote Bels",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "confidence": 0.8,
+      "evidence": "Groote Bels are boiled",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "UseRecord",
+      "name": "UseRecord: Kleine Bels \u2013 infusion \u2013 colds/coughs/worms",
+      "attributes": {
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "confidence": 0.85,
+      "evidence": "take three times a day several drops",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "UseRecord",
+      "name": "UseRecord: Groote Bels \u2013 infusion \u2013 colds/coughs/worms",
+      "attributes": {
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "confidence": 0.85,
+      "evidence": "take three times a day several drops",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Preparation",
+      "name": "boiling in water",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "confidence": 0.9,
+      "evidence": "boiled in water",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Preparation",
+      "name": "put in brandy",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "confidence": 0.9,
+      "evidence": "put in brandy",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "RawMaterial",
+      "name": "infusion",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "confidence": 0.85,
+      "evidence": "From infusions",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Dosage",
+      "name": "several drops to half a small cup three times a day",
+      "attributes": {
+        "amount_range": "several drops to half a small cup",
+        "frequency": "three times a day",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "confidence": 0.8,
+      "evidence": "take three times a day several drops or up to half a small cup",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "TraditionalUse",
+      "name": "create perspiration",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "confidence": 0.9,
+      "evidence": "to create perspiration",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "colds",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "confidence": 0.9,
+      "evidence": "against colds",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Condition",
+      "name": "coughs",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "confidence": 0.9,
+      "evidence": "coughs",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Condition",
+      "name": "worms",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "confidence": 0.9,
+      "evidence": "worms",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "UseRecord",
+      "name": "UseRecord: infusion for missed menstruation and postpartum bleeding",
+      "attributes": {
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "ec6be22497c373bf8d8e44f428d2313d"
+      ],
+      "confidence": 0.85,
+      "evidence": "From infusions three times a day",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Preparation",
+      "name": "infusion",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ec6be22497c373bf8d8e44f428d2313d"
+      ],
+      "confidence": 0.9,
+      "evidence": "infusions",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Dosage",
+      "name": "three times a day one small cup",
+      "attributes": {
+        "frequency": "three times a day",
+        "amount": 1,
+        "unit": "small cup",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "ec6be22497c373bf8d8e44f428d2313d"
+      ],
+      "confidence": 0.8,
+      "evidence": "three times a day one small cup",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "missed menstruation",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "ec6be22497c373bf8d8e44f428d2313d"
+      ],
+      "confidence": 0.9,
+      "evidence": "Against missed menstruation",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "bleeding after giving birth",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "ec6be22497c373bf8d8e44f428d2313d"
+      ],
+      "confidence": 0.9,
+      "evidence": "bleeding after giving birth",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "improvement of bleeding after giving birth",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ec6be22497c373bf8d8e44f428d2313d"
+      ],
+      "confidence": 0.85,
+      "evidence": "for improvement of bleeding after giving birth",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "UseRecord",
+      "name": "UseRecord: infusion for colds, missed menstruation, postpartum bleeding",
+      "attributes": {
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "confidence": 0.85,
+      "evidence": "From infusions three times a day",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Preparation",
+      "name": "infusion",
+      "attributes": {},
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "confidence": 0.9,
+      "evidence": "infusions",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Dosage",
+      "name": "three times a day one small cup",
+      "attributes": {
+        "frequency": "three times a day",
+        "amount": 1,
+        "unit": "small cup",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "confidence": 0.8,
+      "evidence": "three times a day one small cup",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "against colds",
+      "attributes": {},
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "confidence": 0.9,
+      "evidence": "Against colds",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "missed menstruation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "confidence": 0.9,
+      "evidence": "missed menstruation",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "improvement of bleeding after given birth",
+      "attributes": {},
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "confidence": 0.9,
+      "evidence": "improvement of bleeding after given birth",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "UseRecord",
+      "name": "UseRecord: ground herb with honey for children's cough",
+      "attributes": {
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "confidence": 0.85,
+      "evidence": "For children against coughs",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Preparation",
+      "name": "grinding and mixing with honey",
+      "attributes": {},
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "confidence": 0.8,
+      "evidence": "grind the herb fine, mix with honey",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "TraditionalUse",
+      "name": "against coughs",
+      "attributes": {},
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "confidence": 0.9,
+      "evidence": "against coughs",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "colds",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "confidence": 0.85,
+      "evidence": "Against colds",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Condition",
+      "name": "missed menstruation",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "confidence": 0.85,
+      "evidence": "missed menstruation",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Condition",
+      "name": "postpartum bleeding",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "confidence": 0.85,
+      "evidence": "bleeding after given birth",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Condition",
+      "name": "cough",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "confidence": 0.85,
+      "evidence": "against coughs",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoisan",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c34d894cf234dec9dd4d7753b8ace392"
+      ],
+      "confidence": 0.9,
+      "evidence": "groups, known today as the Khoisan",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Bushmen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c34d894cf234dec9dd4d7753b8ace392"
+      ],
+      "confidence": 0.85,
+      "evidence": "Bushmen (or San)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "San",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c34d894cf234dec9dd4d7753b8ace392"
+      ],
+      "confidence": 0.85,
+      "evidence": "Bushmen (or San)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Culture",
+      "name": "Khoe",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c34d894cf234dec9dd4d7753b8ace392"
+      ],
+      "confidence": 0.8,
+      "evidence": "the Khoe",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Khoekhoen descendants",
+      "attributes": {},
+      "source_chunk_ids": [
+        "51b55dd8dfda62ded220ebea0307733c"
+      ],
+      "confidence": 0.8,
+      "evidence": "Khoekhoen descendants in South Africa",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Ju/'hoansi Bushmen",
+      "attributes": {},
+      "source_chunk_ids": [
+        "51b55dd8dfda62ded220ebea0307733c"
+      ],
+      "confidence": 0.8,
+      "evidence": "Ju/'hoansi Bushmen in Namibia",
+      "verified": true
+    }
+  ],
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "archaeological research",
+      "source_chunk_ids": [
+        "929a91cef16f076ffc2de8ddf2cf4a5b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "archaeological research",
+      "source_chunk_ids": [
+        "929a91cef16f076ffc2de8ddf2cf4a5b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "archaeological research",
+      "source_chunk_ids": [
+        "929a91cef16f076ffc2de8ddf2cf4a5b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "archaeological research",
+      "source_chunk_ids": [
+        "929a91cef16f076ffc2de8ddf2cf4a5b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "subject"
+      },
+      "confidence": 0.7,
+      "evidence": "Khoisan history",
+      "source_chunk_ids": [
+        "929a91cef16f076ffc2de8ddf2cf4a5b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "subject"
+      },
+      "confidence": 0.7,
+      "evidence": "social anthropology of the Khoisan",
+      "source_chunk_ids": [
+        "929a91cef16f076ffc2de8ddf2cf4a5b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "subject"
+      },
+      "confidence": 0.7,
+      "evidence": "Khoekhoe history",
+      "source_chunk_ids": [
+        "929a91cef16f076ffc2de8ddf2cf4a5b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "subject"
+      },
+      "confidence": 0.7,
+      "evidence": "Bushmen",
+      "source_chunk_ids": [
+        "929a91cef16f076ffc2de8ddf2cf4a5b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "coastal people who harvest the salmon runs",
+      "source_chunk_ids": [
+        "d3951ed718be7fdb87e8e9f4b6478253"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.85,
+      "evidence": "salmon runs every year",
+      "source_chunk_ids": [
+        "d3951ed718be7fdb87e8e9f4b6478253"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "preparation",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "fish that is dried",
+      "source_chunk_ids": [
+        "d3951ed718be7fdb87e8e9f4b6478253"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "preparation",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "fish that is dried or smoked",
+      "source_chunk_ids": [
+        "d3951ed718be7fdb87e8e9f4b6478253"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "big celebrations called 'potlatches'",
+      "source_chunk_ids": [
+        "d3951ed718be7fdb87e8e9f4b6478253"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_USE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "foraging people who dried the mussel meat",
+      "source_chunk_ids": [
+        "d3951ed718be7fdb87e8e9f4b6478253"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E11",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.75,
+      "evidence": "black mussel shells",
+      "source_chunk_ids": [
+        "d3951ed718be7fdb87e8e9f4b6478253"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "INVOLVES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E12",
+      "attributes": {
+        "role": "preparation",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "dried the mussel meat",
+      "source_chunk_ids": [
+        "d3951ed718be7fdb87e8e9f4b6478253"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "INVOLVES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E13",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "for delayed use or exchange",
+      "source_chunk_ids": [
+        "d3951ed718be7fdb87e8e9f4b6478253"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Khoe women gathered around a central figure",
+      "source_chunk_ids": [
+        "bc83f15750f02ca3a3bb4fd7bc456a07"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "medical or scientific examination",
+      "source_chunk_ids": [
+        "bc83f15750f02ca3a3bb4fd7bc456a07"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "New evidence is appearing of the genetics",
+      "source_chunk_ids": [
+        "29efcde16adb4825797309396a67dbff"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "population"
+      },
+      "confidence": 0.7,
+      "evidence": "genetics of the populations at the Cape",
+      "source_chunk_ids": [
+        "29efcde16adb4825797309396a67dbff"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "omega-3 long-chain fatty acids are an important support for brain growth",
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "omega-3 long-chain fatty acids are an important support for brain function",
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "omega-6 long-chain fatty acids are an important support for brain growth",
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "omega-6 long-chain fatty acids are an important support for brain function",
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "These acids are to be found in shellfish",
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "These acids are to be found in shellfish",
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "These acids are to be found in oily marine fish",
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "CONTAINS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "These acids are to be found in oily marine fish",
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Broadhurst et al. 2002 hypothesis",
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "intake of shellfish by women during pregnancy",
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.7,
+      "evidence": "growth of the human brain may have been facilitated",
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Klein and Steele (2013) show archaeological record",
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "shellfish first show up in the archaeological record",
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "HAS_USE",
+      "source_entity_id": "E11",
+      "target_entity_id": "E13",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "during the Middle Stone Age",
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "INVOLVES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "intake of shellfish by women during pregnancy",
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "INVOLVES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E14",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "growth of the human brain may have been facilitated",
+      "source_chunk_ids": [
+        "fd37cc7a056a26f990be7b001be17489"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "hunters in the Later Stone Age",
+      "source_chunk_ids": [
+        "d4f46067fb7dd37c101b54fd818e4a7a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "dangerous animals, such as buffalo and bushpig",
+      "source_chunk_ids": [
+        "d4f46067fb7dd37c101b54fd818e4a7a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "possibly with poison",
+      "source_chunk_ids": [
+        "d4f46067fb7dd37c101b54fd818e4a7a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "bone points from a number of sites",
+      "source_chunk_ids": [
+        "d4f46067fb7dd37c101b54fd818e4a7a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "traces of poison",
+      "source_chunk_ids": [
+        "d4f46067fb7dd37c101b54fd818e4a7a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "bone points may well have been poisoned",
+      "source_chunk_ids": [
+        "d4f46067fb7dd37c101b54fd818e4a7a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "found traces of poison",
+      "source_chunk_ids": [
+        "d4f46067fb7dd37c101b54fd818e4a7a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "scientific study (Stander et al. 1997)",
+      "source_chunk_ids": [
+        "98b99d2474cabda9250df5161b22e083"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "subject"
+      },
+      "confidence": 0.8,
+      "evidence": "study of the accuracy of the Bushmen",
+      "source_chunk_ids": [
+        "98b99d2474cabda9250df5161b22e083"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Ju/'hoansi hunter holding",
+      "source_chunk_ids": [
+        "d44bbb990df78fc07728684fb0361549"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "plant_part"
+      },
+      "confidence": 0.75,
+      "evidence": "holding a plant root or tuber",
+      "source_chunk_ids": [
+        "d44bbb990df78fc07728684fb0361549"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Ju/'hoansi of Nyae Nyae can identify over 200 species of plants",
+      "source_chunk_ids": [
+        "cf5db1e21ee30dc08f48d19deb1a9213"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "culture"
+      },
+      "confidence": 0.8,
+      "evidence": "Gathering by women provides over 70 per cent of calories consumed",
+      "source_chunk_ids": [
+        "cf5db1e21ee30dc08f48d19deb1a9213"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "105 are edible",
+      "source_chunk_ids": [
+        "cf5db1e21ee30dc08f48d19deb1a9213"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "women also collect medicinal plants",
+      "source_chunk_ids": [
+        "d7ec0477cf933098c005079c127fe177"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "medicinal plants",
+      "source_chunk_ids": [
+        "d7ec0477cf933098c005079c127fe177"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Healing rituals are performed around the trance dance among southern African hunters",
+      "source_chunk_ids": [
+        "345b1140912e4bd41417db8c46cfef98"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "Healing rituals are performed",
+      "source_chunk_ids": [
+        "345b1140912e4bd41417db8c46cfef98"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "around the trance dance",
+      "source_chunk_ids": [
+        "345b1140912e4bd41417db8c46cfef98"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "Drawing sickness requires the healer",
+      "source_chunk_ids": [
+        "345b1140912e4bd41417db8c46cfef98"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "visits the spirit world",
+      "source_chunk_ids": [
+        "345b1140912e4bd41417db8c46cfef98"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "obtains the power to heal",
+      "source_chunk_ids": [
+        "345b1140912e4bd41417db8c46cfef98"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "This condition is called 'the little death'",
+      "source_chunk_ids": [
+        "345b1140912e4bd41417db8c46cfef98"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_USE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Among the Ju/'hoansi this moment is known as kia",
+      "source_chunk_ids": [
+        "345b1140912e4bd41417db8c46cfef98"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "this moment is known as kia",
+      "source_chunk_ids": [
+        "345b1140912e4bd41417db8c46cfef98"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "hunter-gatherers... have a good knowledge of medicinal plants",
+      "source_chunk_ids": [
+        "fd62b1d7d7f3fbe8e890f427a20e9435"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "assist in the healing dances",
+      "source_chunk_ids": [
+        "fd62b1d7d7f3fbe8e890f427a20e9435"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "eland fat is mixed with the plants",
+      "source_chunk_ids": [
+        "fd62b1d7d7f3fbe8e890f427a20e9435"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "preparation",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "mixed with the plants",
+      "source_chunk_ids": [
+        "fd62b1d7d7f3fbe8e890f427a20e9435"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.75,
+      "evidence": "seclusion in a hut for puberty ceremony",
+      "source_chunk_ids": [
+        "9e7d432a41dfc41ac76b56a27cf170e3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.8,
+      "evidence": "slaughter of a sheep for ceremonies",
+      "source_chunk_ids": [
+        "9e7d432a41dfc41ac76b56a27cf170e3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "eating meat separately in ceremony",
+      "source_chunk_ids": [
+        "9e7d432a41dfc41ac76b56a27cf170e3"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "initiation in Bushman society",
+      "source_chunk_ids": [
+        "ca7c306c2526250dfd2151c498da24e0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "initiation in Bushman society",
+      "source_chunk_ids": [
+        "ca7c306c2526250dfd2151c498da24e0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "eland dance",
+      "source_chunk_ids": [
+        "ca7c306c2526250dfd2151c498da24e0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "learning the mysteries of ritual belief, including trancing",
+      "source_chunk_ids": [
+        "ca7c306c2526250dfd2151c498da24e0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Sevilla rock-art initiation sequence",
+      "source_chunk_ids": [
+        "ca7c306c2526250dfd2151c498da24e0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Schapera 1930: 284",
+      "source_chunk_ids": [
+        "ca7c306c2526250dfd2151c498da24e0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Bushmen using the spiritual power",
+      "source_chunk_ids": [
+        "ed5843c6f889e8371fc25538d657f04c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "draw upon healing",
+      "source_chunk_ids": [
+        "ed5843c6f889e8371fc25538d657f04c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Khoekhoe rituals revolved around sheep",
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.9,
+      "evidence": "Khoekhoe rituals revolved around sheep",
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "Khoekhoe rituals revolved around sheep",
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "Pastoralists usually have a high milk intake",
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "preparation",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "it was soured",
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "made into butter",
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "used for body decoration",
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E10",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Isotopic work done on sheep teeth",
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "STUDIES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "sheep teeth from this period",
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E12",
+      "target_entity_id": "E13",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "genetic ability to metabolise raw milk",
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E14",
+      "attributes": {
+        "outcome": "present"
+      },
+      "confidence": 0.75,
+      "evidence": "genetic ability to metabolise raw milk",
+      "source_chunk_ids": [
+        "2ad7db7a8601b710e424ad71176d9987"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "main food of the Khoe",
+      "source_chunk_ids": [
+        "948d68d181c1ba383646f4baaf7b4559"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.7,
+      "evidence": "possibly Watsonia",
+      "source_chunk_ids": [
+        "948d68d181c1ba383646f4baaf7b4559"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "plant_part"
+      },
+      "confidence": 0.8,
+      "evidence": "a kind of root",
+      "source_chunk_ids": [
+        "948d68d181c1ba383646f4baaf7b4559"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "preparation"
+      },
+      "confidence": 0.7,
+      "evidence": "boiled or roasted",
+      "source_chunk_ids": [
+        "948d68d181c1ba383646f4baaf7b4559"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "preparation"
+      },
+      "confidence": 0.7,
+      "evidence": "boiled or roasted",
+      "source_chunk_ids": [
+        "948d68d181c1ba383646f4baaf7b4559"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "main food",
+      "source_chunk_ids": [
+        "948d68d181c1ba383646f4baaf7b4559"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "afflicts"
+      },
+      "confidence": 0.75,
+      "evidence": "afflicting the Khoekhoen in large numbers",
+      "source_chunk_ids": [
+        "11bea9d0e18387237c4d656546b4a1cc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "infects"
+      },
+      "confidence": 0.7,
+      "evidence": "only a maximum of 30 per cent of the population was infected",
+      "source_chunk_ids": [
+        "11bea9d0e18387237c4d656546b4a1cc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Cape Khoekhoen used a wide range",
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_USE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "plants used by the Genadendal community",
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_USE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "still used by the congregation",
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "local fynbos plants",
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "For minor ailments",
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E11",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "33 plants used by the Genadendal community",
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "plants used by the Genadendal community",
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "INVOLVES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E13",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "23 plants are still used for medicinal purposes",
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "INVOLVES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "used for medicinal purposes",
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E12",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "61 wild plants that are considered edible",
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "STUDIES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E13",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "23 plants are still used for medicinal purposes",
+      "source_chunk_ids": [
+        "bf7e2ea2b47c1992346709b3f7965446"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "From the whales and other sea monsters",
+      "source_chunk_ids": [
+        "4e66352a17f757d0a1ccd5590f5486b0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "whales",
+      "source_chunk_ids": [
+        "4e66352a17f757d0a1ccd5590f5486b0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.75,
+      "evidence": "sea monsters",
+      "source_chunk_ids": [
+        "4e66352a17f757d0a1ccd5590f5486b0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "plant_part"
+      },
+      "confidence": 0.7,
+      "evidence": "blubber",
+      "source_chunk_ids": [
+        "4e66352a17f757d0a1ccd5590f5486b0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "plant_part"
+      },
+      "confidence": 0.7,
+      "evidence": "oily meat",
+      "source_chunk_ids": [
+        "4e66352a17f757d0a1ccd5590f5486b0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "preparation",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "cut away",
+      "source_chunk_ids": [
+        "4e66352a17f757d0a1ccd5590f5486b0"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "preparation",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "bury them under the sand",
+      "source_chunk_ids": [
+        "4e66352a17f757d0a1ccd5590f5486b0"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "eat it with great relish",
+      "source_chunk_ids": [
+        "4e66352a17f757d0a1ccd5590f5486b0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "subject"
+      },
+      "confidence": 0.7,
+      "evidence": "working with local Nama",
+      "source_chunk_ids": [
+        "3024fa198f39fd974e1a05bfcf1bfa37"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "subject"
+      },
+      "confidence": 0.7,
+      "evidence": "working with local Nama and Damara",
+      "source_chunk_ids": [
+        "3024fa198f39fd974e1a05bfcf1bfa37"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "subject"
+      },
+      "confidence": 0.7,
+      "evidence": "working with local Nama",
+      "source_chunk_ids": [
+        "3024fa198f39fd974e1a05bfcf1bfa37"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "subject"
+      },
+      "confidence": 0.7,
+      "evidence": "working with local Nama and Damara",
+      "source_chunk_ids": [
+        "3024fa198f39fd974e1a05bfcf1bfa37"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "otherwise misfortune will happen",
+      "source_chunk_ids": [
+        "3024fa198f39fd974e1a05bfcf1bfa37"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "otherwise misfortune will happen",
+      "source_chunk_ids": [
+        "3024fa198f39fd974e1a05bfcf1bfa37"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "The Khoekhoen chose to celebrate",
+      "source_chunk_ids": [
+        "9b081ad0a4eafd6cbb1710aa77a77257"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "ritual sacrifice",
+      "source_chunk_ids": [
+        "9b081ad0a4eafd6cbb1710aa77a77257"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "well documented by Hoernl\u00e9",
+      "source_chunk_ids": [
+        "9b081ad0a4eafd6cbb1710aa77a77257"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "noted in 1779\u20131780",
+      "source_chunk_ids": [
+        "9b081ad0a4eafd6cbb1710aa77a77257"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "suggested a ritual sacrifice",
+      "source_chunk_ids": [
+        "9b081ad0a4eafd6cbb1710aa77a77257"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Schapera (1930) has extensive notes",
+      "source_chunk_ids": [
+        "f0ad3e80fcdbc852e4ffc2c2df2b39cd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "subject"
+      },
+      "confidence": 0.8,
+      "evidence": "notes on the burial practices of the Bushmen",
+      "source_chunk_ids": [
+        "f0ad3e80fcdbc852e4ffc2c2df2b39cd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "subject"
+      },
+      "confidence": 0.8,
+      "evidence": "notes on the burial practices of the ... Khoekhoen",
+      "source_chunk_ids": [
+        "f0ad3e80fcdbc852e4ffc2c2df2b39cd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "describes"
+      },
+      "confidence": 0.85,
+      "evidence": "notes on the burial practices",
+      "source_chunk_ids": [
+        "f0ad3e80fcdbc852e4ffc2c2df2b39cd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Khoekhoe music had sacred subset",
+      "source_chunk_ids": [
+        "f41997680271a5ee21a313722d87f827"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "used to invoke the moon for help",
+      "source_chunk_ids": [
+        "f41997680271a5ee21a313722d87f827"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Khoekhoe music had \u2018profane\u2019 subset",
+      "source_chunk_ids": [
+        "f41997680271a5ee21a313722d87f827"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "stories were told",
+      "source_chunk_ids": [
+        "f41997680271a5ee21a313722d87f827"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "for dancing in !Nau celebrations",
+      "source_chunk_ids": [
+        "f41997680271a5ee21a313722d87f827"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "detail on Khoisan music offered by Schapera",
+      "source_chunk_ids": [
+        "f41997680271a5ee21a313722d87f827"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "culture"
+      },
+      "confidence": 0.8,
+      "evidence": "detail on Khoisan music",
+      "source_chunk_ids": [
+        "f41997680271a5ee21a313722d87f827"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_PART",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "roots of acacia trees",
+      "source_chunk_ids": [
+        "f41997680271a5ee21a313722d87f827"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "flutes were made from reeds or roots",
+      "source_chunk_ids": [
+        "f41997680271a5ee21a313722d87f827"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E11",
+      "attributes": {
+        "role": "raw_material",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "flutes used for dancing",
+      "source_chunk_ids": [
+        "f41997680271a5ee21a313722d87f827"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "study of archaeological skulls",
+      "source_chunk_ids": [
+        "6feb1b77d396dcac6a8f22f2c24d20c5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.85,
+      "evidence": "39 per cent of them had perimortem trauma",
+      "source_chunk_ids": [
+        "6feb1b77d396dcac6a8f22f2c24d20c5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.85,
+      "evidence": "19 per cent with ante-mortem trauma",
+      "source_chunk_ids": [
+        "6feb1b77d396dcac6a8f22f2c24d20c5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.8,
+      "evidence": "several with head injuries that were probably fatal",
+      "source_chunk_ids": [
+        "6feb1b77d396dcac6a8f22f2c24d20c5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Khoekhoen had hunters as clients to do menial tasks",
+      "source_chunk_ids": [
+        "aeaca52724b70c65b2ed3f2ddbf542e8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "these Sonquas are just the same as the poor in Europe",
+      "source_chunk_ids": [
+        "aeaca52724b70c65b2ed3f2ddbf542e8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "to do menial tasks",
+      "source_chunk_ids": [
+        "aeaca52724b70c65b2ed3f2ddbf542e8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "employing them to bring news of the approach of a strange tribe",
+      "source_chunk_ids": [
+        "aeaca52724b70c65b2ed3f2ddbf542e8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "steal nothing from the kraals of their employers, but regularly from other kraals",
+      "source_chunk_ids": [
+        "aeaca52724b70c65b2ed3f2ddbf542e8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "Sonquas are mercenaries to other Hottentot nations, serving for food",
+      "source_chunk_ids": [
+        "aeaca52724b70c65b2ed3f2ddbf542e8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "interviews with San people",
+      "source_chunk_ids": [
+        "8f5aa88dce2ea50d6dbc779ed3fd2c3c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "interviewed in 2010",
+      "source_chunk_ids": [
+        "8f5aa88dce2ea50d6dbc779ed3fd2c3c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "subject"
+      },
+      "confidence": 0.85,
+      "evidence": "interviews with San people",
+      "source_chunk_ids": [
+        "8f5aa88dce2ea50d6dbc779ed3fd2c3c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "subject"
+      },
+      "confidence": 0.8,
+      "evidence": "Nyae Nyae Ju/'hoansi interviewed",
+      "source_chunk_ids": [
+        "8f5aa88dce2ea50d6dbc779ed3fd2c3c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Herbalists-healers travel extensively to get appropriate herbs",
+      "source_chunk_ids": [
+        "311b9da02c551b1db7fd16e92f47d5c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.9,
+      "evidence": "herbaceous plants \u2018are used for influenza",
+      "source_chunk_ids": [
+        "311b9da02c551b1db7fd16e92f47d5c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "used for influenza",
+      "source_chunk_ids": [
+        "311b9da02c551b1db7fd16e92f47d5c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "for pains and aches",
+      "source_chunk_ids": [
+        "311b9da02c551b1db7fd16e92f47d5c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "for stomach ailments",
+      "source_chunk_ids": [
+        "311b9da02c551b1db7fd16e92f47d5c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "According to Archer (1994: 66)",
+      "source_chunk_ids": [
+        "311b9da02c551b1db7fd16e92f47d5c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "herbaceous plants \u2018are used",
+      "source_chunk_ids": [
+        "311b9da02c551b1db7fd16e92f47d5c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Boscia albitruncaleaves",
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Boscia albitruncaroots",
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Cotyledon orbiculatastems",
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_PART",
+      "source_entity_id": "E15",
+      "target_entity_id": "E16",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Crassula elegansroots",
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_PART",
+      "source_entity_id": "E17",
+      "target_entity_id": "E18",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Crassula muscosaleaves",
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_PART",
+      "source_entity_id": "E19",
+      "target_entity_id": "E20",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Cyperus marginatusroots",
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_PART",
+      "source_entity_id": "E21",
+      "target_entity_id": "E22",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Cyphia phyteumaroots",
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_PART",
+      "source_entity_id": "E23",
+      "target_entity_id": "E24",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Dicoma capensisleaves",
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_PART",
+      "source_entity_id": "E31",
+      "target_entity_id": "E32",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Diospyros lycioidesroots",
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "HAS_PART",
+      "source_entity_id": "E34",
+      "target_entity_id": "E35",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Euclea pseudobenusroots",
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "HAS_PART",
+      "source_entity_id": "E37",
+      "target_entity_id": "E38",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Galium tomentosumroots",
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "HAS_PART",
+      "source_entity_id": "E40",
+      "target_entity_id": "E41",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Hermannia strictaleaves",
+      "source_chunk_ids": [
+        "f072c6876caa24161346b85cc24f4870"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "herbs used by indigenous people",
+      "source_chunk_ids": [
+        "0fea8a0d47e56fd9eb6309e7bcc476b1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "for medicinal purposes",
+      "source_chunk_ids": [
+        "0fea8a0d47e56fd9eb6309e7bcc476b1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Kleine Bels is boiled",
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_USE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Groote Bels are boiled",
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "preparation"
+      },
+      "confidence": 0.85,
+      "evidence": "boiled in water",
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "preparation"
+      },
+      "confidence": 0.85,
+      "evidence": "put in brandy",
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "From infusions",
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "dosage"
+      },
+      "confidence": 0.75,
+      "evidence": "take three times a day several drops",
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "to create perspiration",
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "preparation"
+      },
+      "confidence": 0.85,
+      "evidence": "boiled in water",
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "preparation"
+      },
+      "confidence": 0.85,
+      "evidence": "put in brandy",
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "From infusions",
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "dosage"
+      },
+      "confidence": 0.75,
+      "evidence": "take three times a day several drops",
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "to create perspiration",
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E10",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "against colds",
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E11",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "coughs",
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E12",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "worms",
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E10",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "against colds",
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R17",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E11",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "coughs",
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R18",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E12",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "worms",
+      "source_chunk_ids": [
+        "1ecfaae8522a1be84549b5a8d54ae0f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "INVOLVES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "preparation"
+      },
+      "confidence": 0.9,
+      "evidence": "From infusions",
+      "source_chunk_ids": [
+        "ec6be22497c373bf8d8e44f428d2313d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "dosage"
+      },
+      "confidence": 0.8,
+      "evidence": "three times a day one small cup",
+      "source_chunk_ids": [
+        "ec6be22497c373bf8d8e44f428d2313d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "Against missed menstruation",
+      "source_chunk_ids": [
+        "ec6be22497c373bf8d8e44f428d2313d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "for improvement of bleeding after giving birth",
+      "source_chunk_ids": [
+        "ec6be22497c373bf8d8e44f428d2313d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "for improvement of bleeding after giving birth",
+      "source_chunk_ids": [
+        "ec6be22497c373bf8d8e44f428d2313d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "INVOLVES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "preparation"
+      },
+      "confidence": 0.9,
+      "evidence": "From infusions",
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "dosage"
+      },
+      "confidence": 0.8,
+      "evidence": "three times a day one small cup",
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "Against colds",
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "missed menstruation",
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "improvement of bleeding after given birth",
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "Against colds",
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E11",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "missed menstruation",
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E12",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "bleeding after given birth",
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "INVOLVES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "preparation"
+      },
+      "confidence": 0.8,
+      "evidence": "grind the herb fine, mix with honey",
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "INVOLVES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "against coughs",
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "SUGGESTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E13",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "against coughs",
+      "source_chunk_ids": [
+        "abe26966cadc98db1ec7208e3a947e9f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

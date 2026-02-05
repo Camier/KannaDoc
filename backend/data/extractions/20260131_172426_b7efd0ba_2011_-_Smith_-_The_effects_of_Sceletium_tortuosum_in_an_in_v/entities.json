@@ -1,1014 +1,6718 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "1d3624f7b2942e4f735c351d42e4ae841061bb35485a5d9e1b4514ac2e67fa30",
-  "extracted_at": "2026-02-01T08:22:11.865162+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "Sceletium tortuosum in an in vivo model"
-      },
-      "source_chunk_ids": [
-        "e099787effb70950cba360c50540c22f"
-      ]
-    },
-    {
-      "id": "ent_002",
-      "type": "Indication",
-      "name": "psychological stress",
-      "attributes": {
-        "context": "model of psychological stress"
-      },
-      "source_chunk_ids": [
-        "e099787effb70950cba360c50540c22f"
-      ]
-    },
-    {
-      "id": "ent_003",
-      "type": "Taxon",
-      "name": "Sceletium",
-      "attributes": {
-        "context": "Sceletium, and especially Sceletium tortuosum"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "c66f9488c37448ac14804de751d92795"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
     },
     {
-      "id": "ent_004",
-      "type": "Taxon",
-      "name": "Sceletium tortuosum",
-      "attributes": {
-        "context": "Sceletium, and especially Sceletium tortuosum"
-      },
+      "id": "E2",
+      "type": "TraditionalUse",
+      "name": "masticator",
+      "attributes": {},
       "source_chunk_ids": [
         "c66f9488c37448ac14804de751d92795"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "traditionally used as masticator",
+      "verified": true
     },
     {
-      "id": "ent_005",
-      "type": "PharmEffect",
-      "name": "sedative",
-      "attributes": {
-        "context": "thought to have a sedative effect"
-      },
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "sedative effect",
+      "attributes": {},
       "source_chunk_ids": [
         "c66f9488c37448ac14804de751d92795"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "thought to have a sedative effect",
+      "verified": true
     },
     {
-      "id": "ent_006",
-      "type": "Indication",
+      "id": "E4",
+      "type": "Condition",
       "name": "anxiety",
       "attributes": {
-        "context": "reduce symptoms of anxiety and/or depression"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "c66f9488c37448ac14804de751d92795"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "reduce symptoms of anxiety",
+      "verified": true
     },
     {
-      "id": "ent_007",
-      "type": "Indication",
+      "id": "E5",
+      "type": "Condition",
       "name": "depression",
       "attributes": {
-        "context": "reduce symptoms of anxiety and/or depression"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
         "c66f9488c37448ac14804de751d92795"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "reduce symptoms of depression",
+      "verified": true
     },
     {
-      "id": "ent_008",
-      "type": "Indication",
-      "name": "psychological stress",
+      "id": "E6",
+      "type": "Study",
+      "name": "current study",
       "attributes": {
-        "context": "in vivo model of psychological stress"
+        "design": "in vivo model of psychological stress"
       },
       "source_chunk_ids": [
         "c66f9488c37448ac14804de751d92795"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "current study evaluated",
+      "verified": true
     },
     {
-      "id": "ent_009",
-      "type": "Indication",
-      "name": "mental conditions associated with stress",
+      "id": "E7",
+      "type": "Evidence",
+      "name": "anecdotal claims",
       "attributes": {
-        "context": "mental conditions associated with stress"
+        "evidence_level": 1
       },
       "source_chunk_ids": [
-        "e12db21e6bd759b8632679524cacb60c"
-      ]
+        "c66f9488c37448ac14804de751d92795"
+      ],
+      "confidence": 0.75,
+      "evidence": "these anecdotal claims",
+      "verified": true
     },
     {
-      "id": "ent_010",
-      "type": "Indication",
-      "name": "depression",
+      "id": "E1",
+      "type": "Study",
+      "name": "rat study on Sceletium tortuosum extract and stress",
       "attributes": {
-        "context": "such as depression"
+        "design": "animal study",
+        "sample_species": "Wistar rats",
+        "duration": "17 days"
       },
       "source_chunk_ids": [
-        "e12db21e6bd759b8632679524cacb60c"
-      ]
+        "773ddb1abb65a126169f76fe2f126aca"
+      ],
+      "confidence": 0.9,
+      "evidence": "Male Wistar rats were administered",
+      "verified": true
     },
     {
-      "id": "ent_011",
-      "type": "Indication",
-      "name": "disease",
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vivo animal study",
       "attributes": {
-        "context": "recognition as a disease"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
-        "e12db21e6bd759b8632679524cacb60c"
-      ]
+        "773ddb1abb65a126169f76fe2f126aca"
+      ],
+      "confidence": 0.85,
+      "evidence": "Male Wistar rats were administered",
+      "verified": true
     },
     {
-      "id": "ent_012",
-      "type": "Indication",
-      "name": "ailments",
-      "attributes": {
-        "context": "efficacy for a variety of ailments"
-      },
-      "source_chunk_ids": [
-        "487f9559888834bcaaca95309649860f"
-      ]
-    },
-    {
-      "id": "ent_013",
-      "type": "PharmEffect",
-      "name": "anti-stress effects",
-      "attributes": {
-        "context": "the anecdotally reported anti-stress effects of Sceletium tortuosum"
-      },
-      "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
-    },
-    {
-      "id": "ent_014",
+      "id": "E3",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "anti-stress effects of Sceletium tortuosum"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
+        "773ddb1abb65a126169f76fe2f126aca"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum extract",
+      "verified": true
     },
     {
-      "id": "ent_015",
-      "type": "Compound",
-      "name": "alkaloids",
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "Sceletium tortuosum extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "773ddb1abb65a126169f76fe2f126aca"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum extract",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Dosage",
+      "name": "5 mg/kg/day for 17 days",
       "attributes": {
-        "context": "ascribed to the alkaloids contained in the plant"
+        "amount": 5,
+        "unit": "mg/kg/day",
+        "duration": "17 days",
+        "route": "oral gavage"
       },
       "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
+        "773ddb1abb65a126169f76fe2f126aca"
+      ],
+      "confidence": 0.8,
+      "evidence": "5 mg/kg/day of Sceletium tortuosum extract for 17 days",
+      "verified": true
     },
     {
-      "id": "ent_016",
-      "type": "Compound",
-      "name": "mesembrine",
+      "id": "E6",
+      "type": "Dosage",
+      "name": "20 mg/kg/day for 17 days",
       "attributes": {
-        "context": "which includes mesembrine"
+        "amount": 20,
+        "unit": "mg/kg/day",
+        "duration": "17 days",
+        "route": "oral gavage"
       },
       "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
+        "773ddb1abb65a126169f76fe2f126aca"
+      ],
+      "confidence": 0.8,
+      "evidence": "20 mg/kg/day of Sceletium tortuosum extract for 17 days",
+      "verified": true
     },
     {
-      "id": "ent_017",
-      "type": "Compound",
-      "name": "mesembrenone",
+      "id": "E7",
+      "type": "Condition",
+      "name": "stress",
       "attributes": {
-        "context": "mesembrine, mesembrenone"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
+        "773ddb1abb65a126169f76fe2f126aca"
+      ],
+      "confidence": 0.85,
+      "evidence": "repeated restraint stress",
+      "verified": true
     },
     {
-      "id": "ent_018",
-      "type": "Compound",
-      "name": "\\Delta^7 mesembrenone",
+      "id": "E8",
+      "type": "Effect",
+      "name": "behavioral changes in response to stress",
       "attributes": {
-        "context": "\\Delta^7 mesembrenone"
+        "level": "behavioral",
+        "valence": "neutral"
       },
       "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
+        "773ddb1abb65a126169f76fe2f126aca"
+      ],
+      "confidence": 0.75,
+      "evidence": "behavioral changes in response to stress",
+      "verified": true
     },
     {
-      "id": "ent_019",
-      "type": "Compound",
-      "name": "mesembranol",
-      "attributes": {
-        "context": "mesembranol"
-      },
-      "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
-    },
-    {
-      "id": "ent_020",
-      "type": "Compound",
-      "name": "epi-mesembranol",
-      "attributes": {
-        "context": "epi-mesembranol"
-      },
-      "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
-    },
-    {
-      "id": "ent_021",
-      "type": "Compound",
-      "name": "mesembrine",
-      "attributes": {
-        "context": "synthetically prepared mesembrine"
-      },
-      "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
-    },
-    {
-      "id": "ent_022",
-      "type": "Compound",
-      "name": "alkaloids",
-      "attributes": {
-        "context": "one of the major alkaloids known to be present in Sceletium"
-      },
-      "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
-    },
-    {
-      "id": "ent_023",
-      "type": "Taxon",
-      "name": "Sceletium tortuosum",
-      "attributes": {
-        "context": "present in Sceletium"
-      },
-      "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
-    },
-    {
-      "id": "ent_024",
-      "type": "PharmEffect",
-      "name": "inhibit serotonin uptake",
-      "attributes": {
-        "context": "reported to selectively inhibit serotonin uptake"
-      },
-      "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
-    },
-    {
-      "id": "ent_025",
-      "type": "Concentration",
-      "name": "dose-dependent manner",
-      "attributes": {
-        "context": "in a dose-dependent manner in vitro"
-      },
-      "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
-    },
-    {
-      "id": "ent_026",
-      "type": "Compound",
-      "name": "mesembrine",
-      "attributes": {
-        "context": "Mesembrine isolated from Sceletium"
-      },
-      "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
-    },
-    {
-      "id": "ent_027",
-      "type": "Taxon",
-      "name": "Sceletium tortuosum",
-      "attributes": {
-        "context": "isolated from Sceletium"
-      },
-      "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
-    },
-    {
-      "id": "ent_028",
-      "type": "PharmEffect",
-      "name": "weakly narcotic",
-      "attributes": {
-        "context": "reported to be weakly narcotic"
-      },
-      "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
-    },
-    {
-      "id": "ent_029",
-      "type": "Taxon",
-      "name": "Sceletium tortuosum",
-      "attributes": {
-        "context": "phytochemical content of Sceletium tortuosum"
-      },
-      "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
-    },
-    {
-      "id": "ent_030",
-      "type": "Compound",
-      "name": "alkaloid",
-      "attributes": {
-        "context": "altered the alkaloid content of the plant material"
-      },
-      "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
-    },
-    {
-      "id": "ent_031",
-      "type": "Compound",
-      "name": "mesembrine",
-      "attributes": {
-        "context": "transformation of mesembrine to \\Delta^7 mesembrenone"
-      },
-      "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
-    },
-    {
-      "id": "ent_032",
-      "type": "Compound",
-      "name": "\\Delta^7 mesembrenone",
-      "attributes": {
-        "context": "mesembrine to \\Delta^7 mesembrenone"
-      },
-      "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
-    },
-    {
-      "id": "ent_033",
-      "type": "Taxon",
-      "name": "Sceletium tortuosum",
-      "attributes": {
-        "context": "effects ascribed to Sceletium"
-      },
-      "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
-    },
-    {
-      "id": "ent_034",
-      "type": "Compound",
-      "name": "mesembrine",
-      "attributes": {
-        "context": "effects of the mesembrine"
-      },
-      "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
-    },
-    {
-      "id": "ent_035",
-      "type": "Compound",
-      "name": "oxalates",
-      "attributes": {
-        "context": "decrease the amount of oxalates in the plant material"
-      },
-      "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
-    },
-    {
-      "id": "ent_036",
-      "type": "PharmEffect",
-      "name": "gastric irritant",
-      "attributes": {
-        "context": "may act as a gastric irritant"
-      },
-      "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
-    },
-    {
-      "id": "ent_037",
-      "type": "PharmEffect",
-      "name": "anxiolytic effect",
-      "attributes": {
-        "context": "its claimed anxiolytic effect"
-      },
-      "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
-    },
-    {
-      "id": "ent_038",
-      "type": "Taxon",
-      "name": "Sceletium tortuosum",
-      "attributes": {
-        "context": "effects of unfermented Sceletium tortuosum"
-      },
-      "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
-    },
-    {
-      "id": "ent_039",
-      "type": "Indication",
-      "name": "psychological stress",
-      "attributes": {
-        "context": "in vivo model of psychological stress"
-      },
-      "source_chunk_ids": [
-        "806662cc93b3c756305c6bc4f37e1f99"
-      ]
-    },
-    {
-      "id": "ent_040",
-      "type": "Compound",
-      "name": "alkaloid",
-      "attributes": {
-        "context": "analysed the extract for its alkaloid content"
-      },
-      "source_chunk_ids": [
-        "afc0949a171606389b42f7d44e4156f1"
-      ]
-    },
-    {
-      "id": "ent_041",
-      "type": "Compound",
-      "name": "chloroform",
-      "attributes": {
-        "context": "1 ml chloroform and 1 ml 1 M HCl were added"
-      },
-      "source_chunk_ids": [
-        "afc0949a171606389b42f7d44e4156f1"
-      ]
-    },
-    {
-      "id": "ent_042",
-      "type": "Concentration",
-      "name": "1 ml",
-      "attributes": {
-        "context": "1 ml chloroform and 1 ml 1 M HCl"
-      },
-      "source_chunk_ids": [
-        "afc0949a171606389b42f7d44e4156f1"
-      ]
-    },
-    {
-      "id": "ent_043",
-      "type": "Compound",
-      "name": "HCl",
-      "attributes": {
-        "context": "1 ml 1 M HCl were added"
-      },
-      "source_chunk_ids": [
-        "afc0949a171606389b42f7d44e4156f1"
-      ]
-    },
-    {
-      "id": "ent_044",
-      "type": "Concentration",
-      "name": "1 M",
-      "attributes": {
-        "context": "1 ml 1 M HCl were added"
-      },
-      "source_chunk_ids": [
-        "afc0949a171606389b42f7d44e4156f1"
-      ]
-    },
-    {
-      "id": "ent_045",
-      "type": "Concentration",
-      "name": "0.5 g",
-      "attributes": {
-        "context": "added to 0.5 g plant material"
-      },
-      "source_chunk_ids": [
-        "afc0949a171606389b42f7d44e4156f1"
-      ]
-    },
-    {
-      "id": "ent_046",
-      "type": "Compound",
-      "name": "chloroform",
-      "attributes": {
-        "context": "washed with one volume of chloroform"
-      },
-      "source_chunk_ids": [
-        "afc0949a171606389b42f7d44e4156f1"
-      ]
-    },
-    {
-      "id": "ent_047",
-      "type": "Compound",
-      "name": "NaOH",
-      "attributes": {
-        "context": "made basic with NaOH"
-      },
-      "source_chunk_ids": [
-        "afc0949a171606389b42f7d44e4156f1"
-      ]
-    },
-    {
-      "id": "ent_048",
-      "type": "Compound",
-      "name": "chloroform",
-      "attributes": {
-        "context": "extracted twice with chloroform"
-      },
-      "source_chunk_ids": [
-        "afc0949a171606389b42f7d44e4156f1"
-      ]
-    },
-    {
-      "id": "ent_049",
-      "type": "Compound",
-      "name": "alkaloids",
-      "attributes": {
-        "context": "The chloroform layers (containing the alkaloids)"
-      },
-      "source_chunk_ids": [
-        "afc0949a171606389b42f7d44e4156f1"
-      ]
-    },
-    {
-      "id": "ent_050",
-      "type": "Compound",
-      "name": "Na2SO4",
-      "attributes": {
-        "context": "dried with Na2SO4"
-      },
-      "source_chunk_ids": [
-        "afc0949a171606389b42f7d44e4156f1"
-      ]
-    },
-    {
-      "id": "ent_051",
-      "type": "Compound",
-      "name": "alkaloid",
-      "attributes": {
-        "context": "presence of 4 alkaloid peaks"
-      },
-      "source_chunk_ids": [
-        "afc0949a171606389b42f7d44e4156f1"
-      ]
-    },
-    {
-      "id": "ent_052",
-      "type": "Compound",
-      "name": "mesembrine",
-      "attributes": {
-        "context": "was identified as mesembrine"
-      },
-      "source_chunk_ids": [
-        "afc0949a171606389b42f7d44e4156f1"
-      ]
-    },
-    {
-      "id": "ent_053",
-      "type": "Compound",
-      "name": "mesembrine",
-      "attributes": {
-        "context": "mesembrine is not the dominant constituent in Sceletium"
-      },
-      "source_chunk_ids": [
-        "afc0949a171606389b42f7d44e4156f1"
-      ]
-    },
-    {
-      "id": "ent_054",
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium",
       "attributes": {
-        "context": "constituent in Sceletium"
+        "rank": "genus"
       },
       "source_chunk_ids": [
-        "afc0949a171606389b42f7d44e4156f1"
-      ]
+        "b872d206bbd98eabeecf70b9586d603d"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium",
+      "verified": true
     },
     {
-      "id": "ent_055",
+      "id": "E2",
+      "type": "Effect",
+      "name": "decrease restraint stress-induced self-soothing behavior",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "b872d206bbd98eabeecf70b9586d603d"
+      ],
+      "confidence": 0.8,
+      "evidence": "decrease restraint stress-induced self-soothing behavior",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "decrease stress-induced corticosterone levels",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "b872d206bbd98eabeecf70b9586d603d"
+      ],
+      "confidence": 0.8,
+      "evidence": "decrease stress-induced corticosterone levels",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "increased IL-1\u03b2 levels",
+      "attributes": {
+        "level": "molecular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "b872d206bbd98eabeecf70b9586d603d"
+      ],
+      "confidence": 0.85,
+      "evidence": "increased IL-1\u03b2 levels",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "serotonin reuptake inhibitor",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "b872d206bbd98eabeecf70b9586d603d"
+      ],
+      "confidence": 0.7,
+      "evidence": "selective serotonin reuptake inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "increased C-reactive protein levels",
+      "attributes": {
+        "level": "molecular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "b872d206bbd98eabeecf70b9586d603d"
+      ],
+      "confidence": 0.8,
+      "evidence": "increased levels of C-reactive protein",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "increased prostaglandin E2 levels",
+      "attributes": {
+        "level": "molecular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "b872d206bbd98eabeecf70b9586d603d"
+      ],
+      "confidence": 0.8,
+      "evidence": "prostaglandin E2",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "AdverseEvent",
+      "name": "intolerance to treatment",
+      "attributes": {
+        "severity": "unspecified"
+      },
+      "source_chunk_ids": [
+        "b872d206bbd98eabeecf70b9586d603d"
+      ],
+      "confidence": 0.75,
+      "evidence": "suggest intolerance to the treatment",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "decreased IL-2 levels",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "b872d206bbd98eabeecf70b9586d603d"
+      ],
+      "confidence": 0.85,
+      "evidence": "Decreased IL-2",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "increased IL-10 levels",
+      "attributes": {
+        "level": "molecular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "b872d206bbd98eabeecf70b9586d603d"
+      ],
+      "confidence": 0.85,
+      "evidence": "increased IL-10 levels",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "suppressive effect on T helper 1 immune function",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "b872d206bbd98eabeecf70b9586d603d"
+      ],
+      "confidence": 0.8,
+      "evidence": "suppressive effect on T helper 1 immune function",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {},
+      "source_chunk_ids": [
+        "350fe031830093989efc43ab67066acc"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "restraint-induced anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "350fe031830093989efc43ab67066acc"
+      ],
+      "confidence": 0.85,
+      "evidence": "restraint-induced anxiety",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "AdverseEvent",
+      "name": "side-effects",
+      "attributes": {},
+      "source_chunk_ids": [
+        "350fe031830093989efc43ab67066acc"
+      ],
+      "confidence": 0.8,
+      "evidence": "side-effects were evident",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "stress-related conditions",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "7c2ab9c219e99ad9b5228f01e6ea6f74"
+      ],
+      "confidence": 0.9,
+      "evidence": "Stress-related conditions are becoming more prevalent",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "7c2ab9c219e99ad9b5228f01e6ea6f74"
+      ],
+      "confidence": 0.95,
+      "evidence": "Depression is known to be highly prevalent",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "suicide",
+      "attributes": {
+        "condition_type": "cause_of_death"
+      },
+      "source_chunk_ids": [
+        "7c2ab9c219e99ad9b5228f01e6ea6f74"
+      ],
+      "confidence": 0.85,
+      "evidence": "suicide was recently reported as a leading cause of death",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "d05ac611e72c2bc327cc49c8e33bd1de"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "TraditionalUse",
+      "name": "sedative",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d05ac611e72c2bc327cc49c8e33bd1de"
+      ],
+      "confidence": 0.85,
+      "evidence": "traditionally claimed to have sedative",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "anti-anxiety",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d05ac611e72c2bc327cc49c8e33bd1de"
+      ],
+      "confidence": 0.85,
+      "evidence": "traditionally claimed to have anti-anxiety properties",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "dementia",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "d05ac611e72c2bc327cc49c8e33bd1de"
+      ],
+      "confidence": 0.9,
+      "evidence": "cats and dogs with dementia",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Smith et al., 1996",
+      "attributes": {
+        "year": 1996
+      },
+      "source_chunk_ids": [
+        "d05ac611e72c2bc327cc49c8e33bd1de"
+      ],
+      "confidence": 0.8,
+      "evidence": "Smith et al., 1996",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Jin, 2009",
+      "attributes": {
+        "year": 2009
+      },
+      "source_chunk_ids": [
+        "d05ac611e72c2bc327cc49c8e33bd1de"
+      ],
+      "confidence": 0.8,
+      "evidence": "Jin, 2009",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Gericke and Viljoen, 2008",
+      "attributes": {
+        "year": 2008
+      },
+      "source_chunk_ids": [
+        "d05ac611e72c2bc327cc49c8e33bd1de"
+      ],
+      "confidence": 0.8,
+      "evidence": "Gericke and Viljoen, 2008",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "anecdotal evidence",
+      "attributes": {
+        "evidence_level": 1
+      },
+      "source_chunk_ids": [
+        "d05ac611e72c2bc327cc49c8e33bd1de"
+      ],
+      "confidence": 0.75,
+      "evidence": "anecdotal evidence of efficacy",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "review",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "d05ac611e72c2bc327cc49c8e33bd1de"
+      ],
+      "confidence": 0.7,
+      "evidence": "recently comprehensively reviewed",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Evidence",
+      "name": "Japanese studies",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "d05ac611e72c2bc327cc49c8e33bd1de"
+      ],
+      "confidence": 0.7,
+      "evidence": "Japanese studies quoted in this review",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Gericke and Viljoen, 2008",
+      "attributes": {
+        "design": "case reports"
+      },
+      "source_chunk_ids": [
+        "1373ef8d0a8f661d092322a473e0c52e"
+      ],
+      "confidence": 0.9,
+      "evidence": "Gericke and Viljoen, 2008",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "case reports",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "1373ef8d0a8f661d092322a473e0c52e"
+      ],
+      "confidence": 0.85,
+      "evidence": "case reports",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "1373ef8d0a8f661d092322a473e0c52e"
+      ],
+      "confidence": 0.9,
+      "evidence": "anti-anxiety effect",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "stress",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "1373ef8d0a8f661d092322a473e0c52e"
+      ],
+      "confidence": 0.9,
+      "evidence": "anti-stress effect",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "anti-anxiety effect",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "1373ef8d0a8f661d092322a473e0c52e"
+      ],
+      "confidence": 0.8,
+      "evidence": "anti-anxiety effect",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "anti-stress effect",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "1373ef8d0a8f661d092322a473e0c52e"
+      ],
+      "confidence": 0.8,
+      "evidence": "anti-stress effect",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Stellenbosch University Subcommittee B Research Ethics Committee approved study",
+      "attributes": {
+        "ethics_approval": "Stellenbosch University Subcommittee B Research Ethics Committee",
+        "reference_number": "2006B02004",
+        "guidelines": "South African Medical Research Council animal research guidelines"
+      },
+      "source_chunk_ids": [
+        "94afc7c1a973d14a41bbbd62ae1c3ba3"
+      ],
+      "confidence": 0.9,
+      "evidence": "ethically approved by the Stellenbosch University Subcommittee B Research Ethics Committee",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "animal research",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "94afc7c1a973d14a41bbbd62ae1c3ba3"
+      ],
+      "confidence": 0.8,
+      "evidence": "guidelines for animal research",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "rat study with Sceletium tortuosum",
+      "attributes": {
+        "design": "animal study",
+        "sample_size": 90,
+        "species": "Wistar rats",
+        "weight": "\u2248300g",
+        "groups": 6,
+        "group_size": 15
+      },
+      "source_chunk_ids": [
+        "aa699bf8752c125c0050dc01f72a41a3"
+      ],
+      "confidence": 0.9,
+      "evidence": "90 male Wistar rats randomly divided into 6 weight-matched groups",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vivo animal study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "aa699bf8752c125c0050dc01f72a41a3"
+      ],
+      "confidence": 0.85,
+      "evidence": "animal study with Wistar rats",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "aa699bf8752c125c0050dc01f72a41a3"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Dosage",
+      "name": "low concentration of Sceletium tortuosum",
+      "attributes": {
+        "amount": null,
+        "unit": null,
+        "frequency": "supplemented",
+        "duration": null,
+        "route": "oral gavage"
+      },
+      "source_chunk_ids": [
+        "aa699bf8752c125c0050dc01f72a41a3"
+      ],
+      "confidence": 0.7,
+      "evidence": "low concentration of Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Dosage",
+      "name": "high concentration of Sceletium tortuosum",
+      "attributes": {
+        "amount": null,
+        "unit": null,
+        "frequency": "supplemented",
+        "duration": null,
+        "route": "oral gavage"
+      },
+      "source_chunk_ids": [
+        "aa699bf8752c125c0050dc01f72a41a3"
+      ],
+      "confidence": 0.7,
+      "evidence": "high concentration of Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "stress",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "aa699bf8752c125c0050dc01f72a41a3"
+      ],
+      "confidence": 0.8,
+      "evidence": "daily stress exposure",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "28a9b697adab4f027cf1caf6b5817e18"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum (L.) N.E.Br.",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "28a9b697adab4f027cf1caf6b5817e18"
+      ],
+      "confidence": 0.9,
+      "evidence": "Leaves were collected",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "spray-dried aqueous\u2013ethanolic extract",
+      "attributes": {
+        "ratio": "2:1"
+      },
+      "source_chunk_ids": [
+        "28a9b697adab4f027cf1caf6b5817e18"
+      ],
+      "confidence": 0.85,
+      "evidence": "2:1 spray-dried aqueous\u2013ethanolic extract",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium",
       "attributes": {
-        "context": "for Sceletium plant material"
+        "rank": "genus"
       },
       "source_chunk_ids": [
         "afc0949a171606389b42f7d44e4156f1"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium plant material",
+      "verified": true
     },
     {
-      "id": "ent_056",
-      "type": "Compound",
-      "name": "alkaloids",
-      "attributes": {
-        "context": "for the same alkaloids in other plant material"
-      },
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "plant material",
+      "attributes": {},
       "source_chunk_ids": [
         "afc0949a171606389b42f7d44e4156f1"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "0.5 g plant material",
+      "verified": true
     },
     {
-      "id": "ent_057",
-      "type": "Compound",
-      "name": "alkaloids",
-      "attributes": {
-        "context": "abundance of alkaloids in relation to each other"
-      },
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "extract",
+      "attributes": {},
       "source_chunk_ids": [
         "afc0949a171606389b42f7d44e4156f1"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "analysed the extract for its alkaloid content",
+      "verified": true
     },
     {
-      "id": "ent_058",
-      "type": "Compound",
-      "name": "alkaloids",
-      "attributes": {
-        "context": "places the unidentified alkaloids in the same structural category"
-      },
-      "source_chunk_ids": [
-        "afc0949a171606389b42f7d44e4156f1"
-      ]
-    },
-    {
-      "id": "ent_059",
+      "id": "E4",
       "type": "Compound",
       "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "afc0949a171606389b42f7d44e4156f1"
+      ],
+      "confidence": 0.95,
+      "evidence": "identified as mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "afc0949a171606389b42f7d44e4156f1"
+      ],
+      "confidence": 0.9,
+      "evidence": "alkaloid content",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "current study",
       "attributes": {
-        "context": "structural category as mesembrine and \\Delta^7 mesembrenone"
+        "design": "analytical"
       },
       "source_chunk_ids": [
         "afc0949a171606389b42f7d44e4156f1"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "current study",
+      "verified": true
     },
     {
-      "id": "ent_060",
-      "type": "Compound",
-      "name": "\\Delta^7 mesembrenone",
+      "id": "E7",
+      "type": "Evidence",
+      "name": "in vitro",
       "attributes": {
-        "context": "mesembrine and \\Delta^7 mesembrenone"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
         "afc0949a171606389b42f7d44e4156f1"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "GC\u2013MS techniques",
+      "verified": true
     },
     {
-      "id": "ent_061",
-      "type": "PharmEffect",
-      "name": "psychological stress response",
-      "attributes": {
-        "context": "to induce a mild, psychological stress response"
-      },
-      "source_chunk_ids": [
-        "8be76815b14f8e5f81469259839bca51"
-      ]
-    },
-    {
-      "id": "ent_062",
-      "type": "Concentration",
-      "name": "14 days",
-      "attributes": {
-        "context": "for 14 days"
-      },
-      "source_chunk_ids": [
-        "8be76815b14f8e5f81469259839bca51"
-      ]
-    },
-    {
-      "id": "ent_063",
-      "type": "Concentration",
-      "name": "1 h per day",
-      "attributes": {
-        "context": "subjected to 1 h per day of restraint"
-      },
-      "source_chunk_ids": [
-        "8be76815b14f8e5f81469259839bca51"
-      ]
-    },
-    {
-      "id": "ent_064",
-      "type": "Concentration",
-      "name": "3 consecutive days",
-      "attributes": {
-        "context": "for 3 consecutive days"
-      },
-      "source_chunk_ids": [
-        "8be76815b14f8e5f81469259839bca51"
-      ]
-    },
-    {
-      "id": "ent_065",
-      "type": "Concentration",
-      "name": "6 cm \u00d7 7 cm \u00d7 18 cm",
-      "attributes": {
-        "context": "Perspex cages (6 cm \u00d7 7 cm \u00d7 18 cm)"
-      },
-      "source_chunk_ids": [
-        "8be76815b14f8e5f81469259839bca51"
-      ]
-    },
-    {
-      "id": "ent_066",
+      "id": "E8",
       "type": "Compound",
+      "name": "\u0394^7 mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "afc0949a171606389b42f7d44e4156f1"
+      ],
+      "confidence": 0.7,
+      "evidence": "\u0394^7 mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "732cc29025002de1a75068e06edd4505"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium extract",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "Sceletium extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "732cc29025002de1a75068e06edd4505"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium extract",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Dosage",
+      "name": "5 mg/kg/day",
+      "attributes": {
+        "amount": 5,
+        "unit": "mg/kg/day",
+        "frequency": "daily",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "732cc29025002de1a75068e06edd4505"
+      ],
+      "confidence": 0.85,
+      "evidence": "5 mg/kg/day of Sceletium extract",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Dosage",
+      "name": "20 mg/kg/day",
+      "attributes": {
+        "amount": 20,
+        "unit": "mg/kg/day",
+        "frequency": "daily",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "732cc29025002de1a75068e06edd4505"
+      ],
+      "confidence": 0.85,
+      "evidence": "20 mg/kg/day",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Dosage",
+      "name": "1.5\u20136 mg/kg/day",
+      "attributes": {
+        "amount_min": 1.5,
+        "amount_max": 6,
+        "unit": "mg/kg/day",
+        "frequency": "daily",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "732cc29025002de1a75068e06edd4505"
+      ],
+      "confidence": 0.8,
+      "evidence": "1.5\u20136 mg/kg/day are prescribed for human consumption",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "rat study",
+      "attributes": {
+        "design": "animal study",
+        "duration": "17 days",
+        "species": "rats"
+      },
+      "source_chunk_ids": [
+        "732cc29025002de1a75068e06edd4505"
+      ],
+      "confidence": 0.75,
+      "evidence": "rats were administered",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "stress exposure study in rats",
+      "attributes": {
+        "design": "animal study",
+        "sample_type": "rats",
+        "duration": "3 days"
+      },
+      "source_chunk_ids": [
+        "1da6091df00ed2671259e56a23642c95"
+      ],
+      "confidence": 0.8,
+      "evidence": "After 3 days of daily stress exposure",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vivo animal study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "1da6091df00ed2671259e56a23642c95"
+      ],
+      "confidence": 0.75,
+      "evidence": "Rats were euthanized 24 h after",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "behavioral changes",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "1da6091df00ed2671259e56a23642c95"
+      ],
+      "confidence": 0.7,
+      "evidence": "stress-induced changes in behavior",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "elevated plus-maze",
+      "attributes": {
+        "target_type": "behavioral test"
+      },
+      "source_chunk_ids": [
+        "1da6091df00ed2671259e56a23642c95"
+      ],
+      "confidence": 0.85,
+      "evidence": "using the elevated plus-maze",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "plasma samples",
+      "attributes": {
+        "processing": "centrifugation and storage"
+      },
+      "source_chunk_ids": [
+        "1da6091df00ed2671259e56a23642c95"
+      ],
+      "confidence": 0.8,
+      "evidence": "plasma samples were aliquotted",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "b18445037bed8bc7f43a9ac38b8552cd"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "unidentified alkaloid 1",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b18445037bed8bc7f43a9ac38b8552cd"
+      ],
+      "confidence": 0.7,
+      "evidence": "unidentified alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "unidentified alkaloid 2",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b18445037bed8bc7f43a9ac38b8552cd"
+      ],
+      "confidence": 0.7,
+      "evidence": "unidentified alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "unidentified alkaloid 3",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b18445037bed8bc7f43a9ac38b8552cd"
+      ],
+      "confidence": 0.7,
+      "evidence": "unidentified alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b18445037bed8bc7f43a9ac38b8552cd"
+      ],
+      "confidence": 0.9,
+      "evidence": "alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
       "name": "corticosterone",
       "attributes": {
-        "context": "corticosterone levels were significantly increased"
+        "target_type": "hormone"
       },
       "source_chunk_ids": [
-        "e84c9d88e8099568b96745454c7c42a8"
-      ]
+        "44a00df2178a441ced9dae89a2c96aaa"
+      ],
+      "confidence": 0.9,
+      "evidence": "corticosterone (AC-14F, Immunodiagnostic Systems)",
+      "verified": true
     },
     {
-      "id": "ent_067",
-      "type": "Taxon",
-      "name": "Sceletium",
+      "id": "E2",
+      "type": "Target",
+      "name": "testosterone",
       "attributes": {
-        "context": "effect of Sceletium treatment"
+        "target_type": "hormone"
       },
       "source_chunk_ids": [
-        "e84c9d88e8099568b96745454c7c42a8"
-      ]
+        "44a00df2178a441ced9dae89a2c96aaa"
+      ],
+      "confidence": 0.9,
+      "evidence": "testosterone (EIA-1559, DRG Instruments GmbH)",
+      "verified": true
     },
     {
-      "id": "ent_068",
-      "type": "Indication",
-      "name": "stress",
+      "id": "E3",
+      "type": "Target",
+      "name": "C-reactive protein",
       "attributes": {
-        "context": "in response to stress"
+        "target_type": "protein"
       },
       "source_chunk_ids": [
-        "e84c9d88e8099568b96745454c7c42a8"
-      ]
+        "44a00df2178a441ced9dae89a2c96aaa"
+      ],
+      "confidence": 0.9,
+      "evidence": "C-reactive protein (IB66103, Immuno-Biological Laboratories)",
+      "verified": true
     },
     {
-      "id": "ent_069",
+      "id": "E4",
+      "type": "Target",
+      "name": "prostaglandin E2",
+      "attributes": {
+        "target_type": "lipid"
+      },
+      "source_chunk_ids": [
+        "44a00df2178a441ced9dae89a2c96aaa"
+      ],
+      "confidence": 0.9,
+      "evidence": "prostaglandin E2 (PGE2) (900-001, Assay Designs)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "TNF-\u03b1",
+      "attributes": {
+        "target_type": "cytokine"
+      },
+      "source_chunk_ids": [
+        "44a00df2178a441ced9dae89a2c96aaa"
+      ],
+      "confidence": 0.9,
+      "evidence": "TNF-\u03b1, IL-1\u03b2, IFN-\u03b3, IL-2 and IL-10",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "IL-1\u03b2",
+      "attributes": {
+        "target_type": "cytokine"
+      },
+      "source_chunk_ids": [
+        "44a00df2178a441ced9dae89a2c96aaa"
+      ],
+      "confidence": 0.9,
+      "evidence": "TNF-\u03b1, IL-1\u03b2, IFN-\u03b3, IL-2 and IL-10",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "IFN-\u03b3",
+      "attributes": {
+        "target_type": "cytokine"
+      },
+      "source_chunk_ids": [
+        "44a00df2178a441ced9dae89a2c96aaa"
+      ],
+      "confidence": 0.9,
+      "evidence": "TNF-\u03b1, IL-1\u03b2, IFN-\u03b3, IL-2 and IL-10",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Target",
+      "name": "IL-2",
+      "attributes": {
+        "target_type": "cytokine"
+      },
+      "source_chunk_ids": [
+        "44a00df2178a441ced9dae89a2c96aaa"
+      ],
+      "confidence": 0.9,
+      "evidence": "TNF-\u03b1, IL-1\u03b2, IFN-\u03b3, IL-2 and IL-10",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Target",
+      "name": "IL-10",
+      "attributes": {
+        "target_type": "cytokine"
+      },
+      "source_chunk_ids": [
+        "44a00df2178a441ced9dae89a2c96aaa"
+      ],
+      "confidence": 0.9,
+      "evidence": "TNF-\u03b1, IL-1\u03b2, IFN-\u03b3, IL-2 and IL-10",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "Sceletium tortuosum administration"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "41f11822acaf4f1439a399cf6f35e66a"
-      ]
+        "167eea31cef5cb542ac3b329ac44fac6"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
     },
     {
-      "id": "ent_070",
-      "type": "PharmEffect",
-      "name": "Behavioral responses",
+      "id": "E2",
+      "type": "Study",
+      "name": "in vivo rodent model study",
       "attributes": {
-        "context": "Behavioral responses to stress"
+        "design": "in vivo rodent model",
+        "model": "psychological stress"
       },
       "source_chunk_ids": [
-        "41f11822acaf4f1439a399cf6f35e66a"
-      ]
+        "167eea31cef5cb542ac3b329ac44fac6"
+      ],
+      "confidence": 0.85,
+      "evidence": "in vivo effects of Sceletium tortuosum in a rodent model of psychological stress",
+      "verified": true
     },
     {
-      "id": "ent_071",
-      "type": "Indication",
-      "name": "stress",
+      "id": "E3",
+      "type": "Evidence",
+      "name": "in vivo",
       "attributes": {
-        "context": "responses to stress"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
-        "41f11822acaf4f1439a399cf6f35e66a"
-      ]
+        "167eea31cef5cb542ac3b329ac44fac6"
+      ],
+      "confidence": 0.9,
+      "evidence": "in vivo effects",
+      "verified": true
     },
     {
-      "id": "ent_072",
-      "type": "Concentration",
-      "name": "low- or high-dose",
+      "id": "E4",
+      "type": "Effect",
+      "name": "psychological behavior effects",
       "attributes": {
-        "context": "low- or high-dose Sceletium tortuosum administration"
+        "level": "behavioral",
+        "valence": "neutral"
       },
       "source_chunk_ids": [
-        "41f11822acaf4f1439a399cf6f35e66a"
-      ]
+        "167eea31cef5cb542ac3b329ac44fac6"
+      ],
+      "confidence": 0.7,
+      "evidence": "assessments of psychological behavior",
+      "verified": true
     },
     {
-      "id": "ent_073",
-      "type": "Indication",
-      "name": "stress",
+      "id": "E5",
+      "type": "Effect",
+      "name": "hormone level effects",
       "attributes": {
-        "context": "placebo stress"
+        "level": "systemic",
+        "valence": "neutral"
       },
       "source_chunk_ids": [
-        "44e9e818a4819062fcb76548d364dc05"
-      ]
+        "167eea31cef5cb542ac3b329ac44fac6"
+      ],
+      "confidence": 0.7,
+      "evidence": "hormone levels",
+      "verified": true
     },
     {
-      "id": "ent_074",
-      "type": "Indication",
-      "name": "stress",
+      "id": "E6",
+      "type": "Effect",
+      "name": "inflammatory system effects",
       "attributes": {
-        "context": "placebo stress (P-S)"
+        "level": "systemic",
+        "valence": "neutral"
       },
       "source_chunk_ids": [
-        "3fd0e99b6c486356cde185578b6656f1"
-      ]
+        "167eea31cef5cb542ac3b329ac44fac6"
+      ],
+      "confidence": 0.75,
+      "evidence": "analysis of the inflammatory system",
+      "verified": true
     },
     {
-      "id": "ent_075",
-      "type": "Compound",
-      "name": "PGE2",
-      "attributes": {
-        "context": "PGE2 (pg/ml)"
-      },
-      "source_chunk_ids": [
-        "b19df49ed8e6acad3ac5259ebba5bead"
-      ]
-    },
-    {
-      "id": "ent_076",
-      "type": "Compound",
-      "name": "PGE2",
-      "attributes": {
-        "context": "plasma PGE2 levels"
-      },
-      "source_chunk_ids": [
-        "b19df49ed8e6acad3ac5259ebba5bead"
-      ]
-    },
-    {
-      "id": "ent_077",
-      "type": "Compound",
-      "name": "PGE2",
-      "attributes": {
-        "context": "PGE2 levels are significantly higher"
-      },
-      "source_chunk_ids": [
-        "b19df49ed8e6acad3ac5259ebba5bead"
-      ]
-    },
-    {
-      "id": "ent_078",
-      "type": "Concentration",
-      "name": "1000 pg/ml",
-      "attributes": {
-        "context": "P-C~1000"
-      },
-      "source_chunk_ids": [
-        "b19df49ed8e6acad3ac5259ebba5bead"
-      ]
-    },
-    {
-      "id": "ent_079",
-      "type": "Concentration",
-      "name": "1100 pg/ml",
-      "attributes": {
-        "context": "L-C~1100"
-      },
-      "source_chunk_ids": [
-        "b19df49ed8e6acad3ac5259ebba5bead"
-      ]
-    },
-    {
-      "id": "ent_080",
-      "type": "Concentration",
-      "name": "1280 pg/ml",
-      "attributes": {
-        "context": "H-C~1280"
-      },
-      "source_chunk_ids": [
-        "b19df49ed8e6acad3ac5259ebba5bead"
-      ]
-    },
-    {
-      "id": "ent_081",
-      "type": "Concentration",
-      "name": "1100 pg/ml",
-      "attributes": {
-        "context": "P-S~1100"
-      },
-      "source_chunk_ids": [
-        "b19df49ed8e6acad3ac5259ebba5bead"
-      ]
-    },
-    {
-      "id": "ent_082",
-      "type": "Concentration",
-      "name": "1200 pg/ml",
-      "attributes": {
-        "context": "L-S~1200"
-      },
-      "source_chunk_ids": [
-        "b19df49ed8e6acad3ac5259ebba5bead"
-      ]
-    },
-    {
-      "id": "ent_083",
-      "type": "Concentration",
-      "name": "1280 pg/ml",
-      "attributes": {
-        "context": "H-S~1280"
-      },
-      "source_chunk_ids": [
-        "b19df49ed8e6acad3ac5259ebba5bead"
-      ]
-    },
-    {
-      "id": "ent_084",
-      "type": "Compound",
-      "name": "prostaglandin E2",
-      "attributes": {
-        "context": "plasma prostaglandin E2"
-      },
-      "source_chunk_ids": [
-        "160632e222a1eb91b110be08417c6e41"
-      ]
-    },
-    {
-      "id": "ent_085",
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium",
       "attributes": {
-        "context": "Sceletium administration"
+        "rank": "genus"
       },
       "source_chunk_ids": [
-        "160632e222a1eb91b110be08417c6e41"
-      ]
+        "938d674c397b59e4036e622f7f0f3924"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium treatment",
+      "verified": true
     },
     {
-      "id": "ent_086",
-      "type": "Indication",
+      "id": "E2",
+      "type": "Study",
+      "name": "elevated plus maze study",
+      "attributes": {
+        "design": "animal study",
+        "sample_species": "rats"
+      },
+      "source_chunk_ids": [
+        "938d674c397b59e4036e622f7f0f3924"
+      ],
+      "confidence": 0.85,
+      "evidence": "assessed using the elevated plus maze",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "in vivo animal study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "938d674c397b59e4036e622f7f0f3924"
+      ],
+      "confidence": 0.8,
+      "evidence": "rats treated with Sceletium",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "heightened response to stress",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "938d674c397b59e4036e622f7f0f3924"
+      ],
+      "confidence": 0.75,
+      "evidence": "heightened response to stress",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "increased anxiety behavior",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "938d674c397b59e4036e622f7f0f3924"
+      ],
+      "confidence": 0.8,
+      "evidence": "exhibited significantly more anxiety behavior",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "no effect on grooming behavior",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "938d674c397b59e4036e622f7f0f3924"
+      ],
+      "confidence": 0.85,
+      "evidence": "did not have any effect on this parameter",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Dosage",
+      "name": "high and low doses",
+      "attributes": {
+        "frequency": "unspecified",
+        "route": "unspecified"
+      },
+      "source_chunk_ids": [
+        "938d674c397b59e4036e622f7f0f3924"
+      ],
+      "confidence": 0.7,
+      "evidence": "both high and low doses",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "e84c9d88e8099568b96745454c7c42a8"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium treatment",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Effect",
+      "name": "increased corticosterone levels",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "e84c9d88e8099568b96745454c7c42a8"
+      ],
+      "confidence": 0.85,
+      "evidence": "corticosterone levels were significantly increased",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
       "name": "stress",
       "attributes": {
-        "context": "stressed rats"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
-        "160632e222a1eb91b110be08417c6e41"
-      ]
+        "e84c9d88e8099568b96745454c7c42a8"
+      ],
+      "confidence": 0.9,
+      "evidence": "in response to stress",
+      "verified": true
     },
     {
-      "id": "ent_087",
-      "type": "Compound",
-      "name": "Cytokine",
-      "attributes": {
-        "context": "Cytokine responses"
-      },
-      "source_chunk_ids": [
-        "f26b42b0ddadf1b1ae4b05ffa03a7234"
-      ]
-    },
-    {
-      "id": "ent_088",
-      "type": "Indication",
-      "name": "restraint stress",
-      "attributes": {
-        "context": "restraint stress in rats"
-      },
-      "source_chunk_ids": [
-        "f26b42b0ddadf1b1ae4b05ffa03a7234"
-      ]
-    },
-    {
-      "id": "ent_089",
-      "type": "Concentration",
+      "id": "E4",
+      "type": "Dosage",
       "name": "low-dose",
       "attributes": {
-        "context": "low-dose or high-dose Sceletium"
+        "amount": null,
+        "unit": null,
+        "frequency": null,
+        "duration": null,
+        "route": null
       },
       "source_chunk_ids": [
-        "f26b42b0ddadf1b1ae4b05ffa03a7234"
-      ]
+        "e84c9d88e8099568b96745454c7c42a8"
+      ],
+      "confidence": 0.7,
+      "evidence": "low-dose stress",
+      "verified": true
     },
     {
-      "id": "ent_090",
-      "type": "Concentration",
-      "name": "high-dose",
+      "id": "E1",
+      "type": "Study",
+      "name": "Fig. 2 data",
       "attributes": {
-        "context": "low-dose or high-dose Sceletium"
+        "design": "experimental study"
       },
       "source_chunk_ids": [
-        "f26b42b0ddadf1b1ae4b05ffa03a7234"
-      ]
+        "45944258ccb8a84e8e9fb2ccffc87561"
+      ],
+      "confidence": 0.8,
+      "evidence": "Data for Fig. 2",
+      "verified": true
     },
     {
-      "id": "ent_091",
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vivo study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "45944258ccb8a84e8e9fb2ccffc87561"
+      ],
+      "confidence": 0.7,
+      "evidence": "plasma corticosterone levels",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "corticosterone",
+      "attributes": {
+        "target_type": "hormone"
+      },
+      "source_chunk_ids": [
+        "45944258ccb8a84e8e9fb2ccffc87561"
+      ],
+      "confidence": 0.9,
+      "evidence": "Corticosterone levels",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "increased corticosterone levels",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "45944258ccb8a84e8e9fb2ccffc87561"
+      ],
+      "confidence": 0.85,
+      "evidence": "Corticosterone levels are significantly higher",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "stress",
+      "attributes": {
+        "condition_type": "state"
+      },
+      "source_chunk_ids": [
+        "45944258ccb8a84e8e9fb2ccffc87561"
+      ],
+      "confidence": 0.8,
+      "evidence": "stressed groups",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "animal study on stress and Sceletium",
+      "attributes": {
+        "design": "animal study",
+        "analysis": "statistical analysis with post hoc"
+      },
+      "source_chunk_ids": [
+        "e2fc408d03e90e983db56187e7e480d0"
+      ],
+      "confidence": 0.8,
+      "evidence": "Statistical analysis revealed a main effect",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vivo animal evidence",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "e2fc408d03e90e983db56187e7e480d0"
+      ],
+      "confidence": 0.75,
+      "evidence": "plasma levels of the acute phase protein",
+      "verified": true
+    },
+    {
+      "id": "E3",
       "type": "Taxon",
       "name": "Sceletium",
       "attributes": {
-        "context": "high-dose Sceletium"
+        "rank": "genus"
       },
       "source_chunk_ids": [
-        "f26b42b0ddadf1b1ae4b05ffa03a7234"
-      ]
+        "e2fc408d03e90e983db56187e7e480d0"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium dose-dependent effect",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "increased CRP levels",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "e2fc408d03e90e983db56187e7e480d0"
+      ],
+      "confidence": 0.85,
+      "evidence": "CRP was significantly increased",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "C-reactive protein (CRP)",
+      "attributes": {
+        "target_type": "protein"
+      },
+      "source_chunk_ids": [
+        "e2fc408d03e90e983db56187e7e480d0"
+      ],
+      "confidence": 0.95,
+      "evidence": "C-reactive protein (CRP)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "no effect in non-stressed groups",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "e2fc408d03e90e983db56187e7e480d0"
+      ],
+      "confidence": 0.8,
+      "evidence": "no effect of treatment in the non-stressed groups",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {},
+      "source_chunk_ids": [
+        "da2a267d35324d42ba8cdcd8d80dac5e"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium administration",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Effect",
+      "name": "increased PGE2 response",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "da2a267d35324d42ba8cdcd8d80dac5e"
+      ],
+      "confidence": 0.8,
+      "evidence": "increased PGE2 response",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "tendency for higher responses",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "da2a267d35324d42ba8cdcd8d80dac5e"
+      ],
+      "confidence": 0.7,
+      "evidence": "tendency for higher responses",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "post hoc analysis",
+      "attributes": {
+        "design": "post hoc analysis"
+      },
+      "source_chunk_ids": [
+        "da2a267d35324d42ba8cdcd8d80dac5e"
+      ],
+      "confidence": 0.75,
+      "evidence": "post hoc analysis",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Dosage",
+      "name": "high-dose",
+      "attributes": {
+        "amount": null,
+        "unit": null,
+        "frequency": null,
+        "duration": null,
+        "route": null,
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "da2a267d35324d42ba8cdcd8d80dac5e"
+      ],
+      "confidence": 0.6,
+      "evidence": "high-dose",
+      "verified": false
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "IFN-gamma",
+      "attributes": {
+        "target_type": "cytokine"
+      },
+      "source_chunk_ids": [
+        "0600ddd216e6d0e677974b6c1a0f24d1"
+      ],
+      "confidence": 0.9,
+      "evidence": "IFN-gamma levels were not affected",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "TNF-alpha",
+      "attributes": {
+        "target_type": "cytokine"
+      },
+      "source_chunk_ids": [
+        "0600ddd216e6d0e677974b6c1a0f24d1"
+      ],
+      "confidence": 0.9,
+      "evidence": "TNF-alpha levels were not affected",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "IL-1beta",
+      "attributes": {
+        "target_type": "cytokine"
+      },
+      "source_chunk_ids": [
+        "0600ddd216e6d0e677974b6c1a0f24d1"
+      ],
+      "confidence": 0.9,
+      "evidence": "IL-1beta exhibited a main effect",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "IL-10",
+      "attributes": {
+        "target_type": "cytokine"
+      },
+      "source_chunk_ids": [
+        "0600ddd216e6d0e677974b6c1a0f24d1"
+      ],
+      "confidence": 0.9,
+      "evidence": "IL-10 levels indicated a tendency",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "IL-2",
+      "attributes": {
+        "target_type": "cytokine"
+      },
+      "source_chunk_ids": [
+        "0600ddd216e6d0e677974b6c1a0f24d1"
+      ],
+      "confidence": 0.9,
+      "evidence": "IL-2 levels were not affected",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "increase cytokine levels",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "0600ddd216e6d0e677974b6c1a0f24d1"
+      ],
+      "confidence": 0.8,
+      "evidence": "both to increase cytokine levels",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "decrease IL-2 levels",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "0600ddd216e6d0e677974b6c1a0f24d1"
+      ],
+      "confidence": 0.85,
+      "evidence": "effect of treatment to decrease IL-2 levels",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "cytokine study",
+      "attributes": {
+        "design": "experimental study"
+      },
+      "source_chunk_ids": [
+        "0600ddd216e6d0e677974b6c1a0f24d1"
+      ],
+      "confidence": 0.7,
+      "evidence": "varied responses were evident",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2,
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "0600ddd216e6d0e677974b6c1a0f24d1"
+      ],
+      "confidence": 0.6,
+      "evidence": "cytokine levels",
+      "verified": false
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "PGE2",
+      "attributes": {
+        "target_type": "biomarker"
+      },
+      "source_chunk_ids": [
+        "b19df49ed8e6acad3ac5259ebba5bead"
+      ],
+      "confidence": 0.95,
+      "evidence": "PGE2 (pg/ml)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Effect",
+      "name": "increased plasma PGE2 levels",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "b19df49ed8e6acad3ac5259ebba5bead"
+      ],
+      "confidence": 0.85,
+      "evidence": "PGE2 levels are significantly higher",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "stress",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "b19df49ed8e6acad3ac5259ebba5bead"
+      ],
+      "confidence": 0.8,
+      "evidence": "stressed groups",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "confidence": 0.8,
+      "evidence": "main alkaloid",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "serotonin transporter",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "confidence": 0.9,
+      "evidence": "serotonin (5-HT) uptake",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "sedative effect",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "confidence": 0.85,
+      "evidence": "sedative effect",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "excitement",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "confidence": 0.85,
+      "evidence": "Sceletium-induced excitement",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "confidence": 0.9,
+      "evidence": "exacerbation of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "calming effect",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "confidence": 0.8,
+      "evidence": "calming effect",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Gericke and Viljoen, 2008",
+      "attributes": {
+        "year": 2008,
+        "design": "review"
+      },
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "confidence": 0.9,
+      "evidence": "Gericke and Viljoen, 2008",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Evidence",
+      "name": "anecdotal evidence",
+      "attributes": {
+        "evidence_level": 1
+      },
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "confidence": 0.85,
+      "evidence": "Anecdotal evidence",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Evidence",
+      "name": "non-peer-reviewed data",
+      "attributes": {
+        "evidence_level": 1
+      },
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "confidence": 0.8,
+      "evidence": "non-peer-reviewed data",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Study",
+      "name": "current study",
+      "attributes": {
+        "design": "animal model"
+      },
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "confidence": 0.75,
+      "evidence": "our model of mild, psychological stress",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Dosage",
+      "name": "low-dose Sceletium",
+      "attributes": {
+        "amount": "low",
+        "unit": "dose",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "confidence": 0.7,
+      "evidence": "low-dose Sceletium",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Dosage",
+      "name": "high-dose Sceletium",
+      "attributes": {
+        "amount": "high",
+        "unit": "dose",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "confidence": 0.7,
+      "evidence": "high-dose treated",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium treatment",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Effect",
+      "name": "stress response in corticosterone levels",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "confidence": 0.85,
+      "evidence": "clear response to stress in corticosterone levels",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "no effect on hormone levels",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "confidence": 0.8,
+      "evidence": "no statistically significant effect on hormone levels",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "corticosterone levels approximately 20% lower",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "confidence": 0.75,
+      "evidence": "corticosterone levels were approximately 20% lower",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "stress-limiting effect",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "confidence": 0.7,
+      "evidence": "may have masked a stress-limiting effect",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "no effect on testosterone levels",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "confidence": 0.85,
+      "evidence": "no effect on testosterone levels",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "AdverseEvent",
+      "name": "unwanted side-effects",
+      "attributes": {
+        "severity": "potential"
+      },
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "confidence": 0.75,
+      "evidence": "possibility of unwanted side-effects",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "de Ronde, 2009; Thomas et al., 2008",
+      "attributes": {
+        "year": "2009, 2008"
+      },
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "confidence": 0.8,
+      "evidence": "de Ronde, 2009; Thomas et al., 2008",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "in vivo study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "confidence": 0.7,
+      "evidence": "study on a much larger population is required",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "IL-1\u03b2",
+      "attributes": {
+        "target_type": "cytokine"
+      },
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "confidence": 0.95,
+      "evidence": "IL-1\u03b2 is known to be a potent inducer",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "corticosterone",
+      "attributes": {
+        "target_type": "hormone"
+      },
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "confidence": 0.9,
+      "evidence": "inducer of corticosterone production",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "CRH",
+      "attributes": {
+        "target_type": "hormone"
+      },
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "confidence": 0.85,
+      "evidence": "induction of CRH release",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Watkins, 1994",
+      "attributes": {
+        "year": 1994
+      },
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "confidence": 0.8,
+      "evidence": "Watkins, 1994",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium may act as a selective serotonin reuptake inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine action",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "serotonin transporter",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "confidence": 0.9,
+      "evidence": "selective serotonin reuptake inhibitor (SSRI)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Gericke and Viljoen, 2008",
+      "attributes": {
+        "year": 2008
+      },
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "confidence": 0.8,
+      "evidence": "Gericke and Viljoen, 2008",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Target",
+      "name": "TNF-\u03b1",
+      "attributes": {
+        "target_type": "cytokine"
+      },
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "confidence": 0.95,
+      "evidence": "TNF-\u03b1 is known to stimulate serotonin uptake",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "Zhu et al., 2006",
+      "attributes": {
+        "year": 2006
+      },
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "confidence": 0.8,
+      "evidence": "Zhu et al., 2006",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "increase in IL-1\u03b2 levels",
+      "attributes": {
+        "level": "molecular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "confidence": 0.85,
+      "evidence": "increase IL-1\u03b2 levels",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Effect",
+      "name": "no effect on TNF-\u03b1 levels",
+      "attributes": {
+        "level": "molecular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "confidence": 0.8,
+      "evidence": "no effect on average TNF-\u03b1 levels",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Effect",
+      "name": "positive effects on behavior",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "confidence": 0.7,
+      "evidence": "positive effects on behavior",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Effect",
+      "name": "positive effects on corticosterone levels",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "confidence": 0.7,
+      "evidence": "positive effects on corticosterone levels",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "2a7b3a9f2f1aff5f8fc86248a082e2bb"
+      ],
+      "confidence": 0.9,
+      "evidence": "low-dose Sceletium treatment",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "2a7b3a9f2f1aff5f8fc86248a082e2bb"
+      ],
+      "confidence": 0.95,
+      "evidence": "positive effect on anxiety",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "AdverseEvent",
+      "name": "intolerance",
+      "attributes": {
+        "severity": "potentially less desirable"
+      },
+      "source_chunk_ids": [
+        "2a7b3a9f2f1aff5f8fc86248a082e2bb"
+      ],
+      "confidence": 0.8,
+      "evidence": "intolerance to constituents",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "AdverseEvent",
+      "name": "undesirable effects on organs or systems",
+      "attributes": {
+        "severity": "potentially less desirable"
+      },
+      "source_chunk_ids": [
+        "2a7b3a9f2f1aff5f8fc86248a082e2bb"
+      ],
+      "confidence": 0.75,
+      "evidence": "undesirable effects on other organs or systems",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "plant supplement",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2a7b3a9f2f1aff5f8fc86248a082e2bb"
+      ],
+      "confidence": 0.7,
+      "evidence": "constituents of the plant supplement",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "369b3b8ceca85540d60ea5cff6439eaf"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium dose-dependent manner",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "CRP",
+      "attributes": {
+        "target_type": "protein"
+      },
+      "source_chunk_ids": [
+        "369b3b8ceca85540d60ea5cff6439eaf"
+      ],
+      "confidence": 0.95,
+      "evidence": "acute phase protein CRP",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "increased CRP levels",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "369b3b8ceca85540d60ea5cff6439eaf"
+      ],
+      "confidence": 0.85,
+      "evidence": "CRP levels increasing significantly",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "anti-inflammatory effect",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "369b3b8ceca85540d60ea5cff6439eaf"
+      ],
+      "confidence": 0.8,
+      "evidence": "anti-inflammatory effect of corticosterone",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "inflammation",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "369b3b8ceca85540d60ea5cff6439eaf"
+      ],
+      "confidence": 0.9,
+      "evidence": "indicates the presence of inflammation",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d650b786881a2c323a17e9af7823a3b3"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium-treated rats",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "TraditionalUse",
+      "name": "treatment for constipation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d650b786881a2c323a17e9af7823a3b3"
+      ],
+      "confidence": 0.95,
+      "evidence": "traditional use of Sceletium as a treatment for constipation",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "constipation",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "d650b786881a2c323a17e9af7823a3b3"
+      ],
+      "confidence": 0.9,
+      "evidence": "treatment for constipation",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "inflammatory condition",
+      "attributes": {
+        "condition_type": "condition"
+      },
+      "source_chunk_ids": [
+        "d650b786881a2c323a17e9af7823a3b3"
+      ],
+      "confidence": 0.8,
+      "evidence": "sustained inflammatory condition",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "AdverseEvent",
+      "name": "loose stools",
+      "attributes": {
+        "severity": "increased"
+      },
+      "source_chunk_ids": [
+        "d650b786881a2c323a17e9af7823a3b3"
+      ],
+      "confidence": 0.85,
+      "evidence": "increased passing of loose stools",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "IL-1\u03b2",
+      "attributes": {
+        "target_type": "cytokine"
+      },
+      "source_chunk_ids": [
+        "d650b786881a2c323a17e9af7823a3b3"
+      ],
+      "confidence": 0.9,
+      "evidence": "IL-1\u03b2 is commonly known",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "PGE2",
+      "attributes": {
+        "target_type": "prostaglandin"
+      },
+      "source_chunk_ids": [
+        "d650b786881a2c323a17e9af7823a3b3"
+      ],
+      "confidence": 0.9,
+      "evidence": "prostaglandin E2 level changes",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Target",
+      "name": "TNF-\u03b1",
+      "attributes": {
+        "target_type": "cytokine"
+      },
+      "source_chunk_ids": [
+        "d650b786881a2c323a17e9af7823a3b3"
+      ],
+      "confidence": 0.85,
+      "evidence": "no effect on TNF-\u03b1 levels",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "increased gut secretion of PGE2",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "d650b786881a2c323a17e9af7823a3b3"
+      ],
+      "confidence": 0.8,
+      "evidence": "increased gut secretion of PGE2",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "no effect on TNF-\u03b1 levels",
+      "attributes": {
+        "level": "molecular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "d650b786881a2c323a17e9af7823a3b3"
+      ],
+      "confidence": 0.75,
+      "evidence": "no effect on TNF-\u03b1 levels",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Study",
+      "name": "Gericke and Viljoen, 2008",
+      "attributes": {
+        "year": 2008
+      },
+      "source_chunk_ids": [
+        "d650b786881a2c323a17e9af7823a3b3"
+      ],
+      "confidence": 0.85,
+      "evidence": "Gericke and Viljoen, 2008",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Evidence",
+      "name": "traditional knowledge",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "d650b786881a2c323a17e9af7823a3b3"
+      ],
+      "confidence": 0.8,
+      "evidence": "traditional use of Sceletium",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "685f6da45f77e67e56bb20cb292295ad"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium treatment",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "IL-2",
+      "attributes": {
+        "target_type": "cytokine"
+      },
+      "source_chunk_ids": [
+        "685f6da45f77e67e56bb20cb292295ad"
+      ],
+      "confidence": 0.9,
+      "evidence": "IL-2 levels",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "HPA-axis",
+      "attributes": {
+        "target_type": "pathway"
+      },
+      "source_chunk_ids": [
+        "685f6da45f77e67e56bb20cb292295ad"
+      ],
+      "confidence": 0.85,
+      "evidence": "HPA-axis activation",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "decreased IL-2 levels",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "685f6da45f77e67e56bb20cb292295ad"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium treatment decreased IL-2 levels",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "anti-anxiety effect",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "685f6da45f77e67e56bb20cb292295ad"
+      ],
+      "confidence": 0.7,
+      "evidence": "Sceletium exerts an anti-anxiety effect",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "stress",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "685f6da45f77e67e56bb20cb292295ad"
+      ],
+      "confidence": 0.9,
+      "evidence": "in the presence of stress",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "rat study",
+      "attributes": {
+        "design": "animal study",
+        "sample_size": null,
+        "year": null,
+        "doi": null
+      },
+      "source_chunk_ids": [
+        "685f6da45f77e67e56bb20cb292295ad"
+      ],
+      "confidence": 0.8,
+      "evidence": "high-dose treated unstressed rats",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "in vivo",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "685f6da45f77e67e56bb20cb292295ad"
+      ],
+      "confidence": 0.85,
+      "evidence": "rat study data",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Effect",
+      "name": "positive effect on corticosterone and behavior",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "confidence": 0.85,
+      "evidence": "positive effect in terms of corticosterone and behavior",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "enhanced down-regulatory effect on Th1 immune response",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "confidence": 0.8,
+      "evidence": "enhanced the down-regulatory effect of corticosterone on the T helper 1 (Th1) immune response",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "T helper 1 (Th1) immune response",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "confidence": 0.9,
+      "evidence": "T helper 1 (Th1), or cell-mediated, immune response",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "increased levels of IL-10",
+      "attributes": {
+        "level": "molecular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "confidence": 0.85,
+      "evidence": "increasing levels of the Th2 (humoral) anti-inflammatory cytokine IL-10",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "IL-10",
+      "attributes": {
+        "target_type": "cytokine"
+      },
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "confidence": 0.9,
+      "evidence": "IL-10",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "Th1 immune-suppressive effect",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "confidence": 0.8,
+      "evidence": "Th1 immune-suppressive effect of the plant",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "tolerance to Sceletium treatment",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "confidence": 0.7,
+      "evidence": "tolerance to Sceletium treatment",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "food intolerance",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "confidence": 0.75,
+      "evidence": "food intolerance",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "food hypersensitivity",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "confidence": 0.75,
+      "evidence": "food hypersensitivity",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Study",
+      "name": "Gray et al., 2004",
+      "attributes": {
+        "year": 2004
+      },
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "confidence": 0.8,
+      "evidence": "Gray et al., 2004",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Study",
+      "name": "Ng et al., 2002",
+      "attributes": {
+        "year": 2002
+      },
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "confidence": 0.8,
+      "evidence": "Ng et al., 2002",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Study",
+      "name": "Torres-Aguilar et al., 2010",
+      "attributes": {
+        "year": 2010
+      },
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "confidence": 0.8,
+      "evidence": "Torres-Aguilar et al., 2010",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "9ced5277da0650aae49adf2e3eabe0ac"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium used in this study",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Dosage",
+      "name": "5 mg/kg/day",
+      "attributes": {
+        "amount": 5,
+        "unit": "mg/kg/day",
+        "frequency": "daily",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "9ced5277da0650aae49adf2e3eabe0ac"
+      ],
+      "confidence": 0.85,
+      "evidence": "lower dose of Sceletium (5 mg/kg/day)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Dosage",
+      "name": "20 mg/kg/day",
+      "attributes": {
+        "amount": 20,
+        "unit": "mg/kg/day",
+        "frequency": "daily",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "9ced5277da0650aae49adf2e3eabe0ac"
+      ],
+      "confidence": 0.85,
+      "evidence": "both doses (5 and 20 mg/kg/day)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "positive effects on response to psychological stress",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "9ced5277da0650aae49adf2e3eabe0ac"
+      ],
+      "confidence": 0.8,
+      "evidence": "positive effects in terms of the response to psychological stress",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "AdverseEvent",
+      "name": "inflammatory or intolerance reaction",
+      "attributes": {
+        "severity": "inflammatory"
+      },
+      "source_chunk_ids": [
+        "9ced5277da0650aae49adf2e3eabe0ac"
+      ],
+      "confidence": 0.8,
+      "evidence": "inflammatory, or intolerance reaction",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "Th1 immune suppression",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "9ced5277da0650aae49adf2e3eabe0ac"
+      ],
+      "confidence": 0.85,
+      "evidence": "Th1 immune suppression",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "current study",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9ced5277da0650aae49adf2e3eabe0ac"
+      ],
+      "confidence": 0.7,
+      "evidence": "this study",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "adb2bd4efe36bba88a5b8da5887afee3"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium exhibits",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Effect",
+      "name": "anti-anxiety effects",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "adb2bd4efe36bba88a5b8da5887afee3"
+      ],
+      "confidence": 0.85,
+      "evidence": "promising anti-anxiety effects",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "adb2bd4efe36bba88a5b8da5887afee3"
+      ],
+      "confidence": 0.8,
+      "evidence": "anti-anxiety effects",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Dosage",
+      "name": "therapeutic dosage range",
+      "attributes": {
+        "notes": "fine line between therapeutic and detrimental dosage range"
+      },
+      "source_chunk_ids": [
+        "adb2bd4efe36bba88a5b8da5887afee3"
+      ],
+      "confidence": 0.7,
+      "evidence": "therapeutic dosage range",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Dosage",
+      "name": "detrimental dosage range",
+      "attributes": {
+        "notes": "fine line between therapeutic and detrimental dosage range"
+      },
+      "source_chunk_ids": [
+        "adb2bd4efe36bba88a5b8da5887afee3"
+      ],
+      "confidence": 0.7,
+      "evidence": "detrimental dosage range",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "Amaryllidaceae and Sceletium alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "confidence": 0.9,
+      "evidence": "Amaryllidaceae and Sceletium alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Patnala & Kanfer 2009",
+      "attributes": {
+        "year": 2009,
+        "design": "investigation"
+      },
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "confidence": 0.85,
+      "evidence": "Patnala, S., Kanfer, I., 2009. Investigations of the phytochemical content of Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "confidence": 0.8,
+      "evidence": "phytochemical content",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Preparation",
+      "name": "fermentation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "confidence": 0.9,
+      "evidence": "fermentation of plant material",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "RawMaterial",
+      "name": "Kougoed",
+      "attributes": {},
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "confidence": 0.85,
+      "evidence": "Kougoed",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Smith et al. 1996",
+      "attributes": {
+        "year": 1996,
+        "design": "review"
+      },
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "confidence": 0.85,
+      "evidence": "Smith, M.T., Crouch, N.R., Gericke, N., Hirst, M., 1996. Psychoactive constituents of the genus Sceletium",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "review",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "confidence": 0.8,
+      "evidence": "Psychoactive constituents",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "confidence": 0.9,
+      "evidence": "alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "Gericke & Viljoen 2008",
+      "attributes": {
+        "year": 2008,
+        "design": "review"
+      },
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "confidence": 0.85,
+      "evidence": "Gericke, N., Viljoen, A.M., 2008. Sceletium\u2014a review update",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Evidence",
+      "name": "review",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "confidence": 0.8,
+      "evidence": "review update",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Study",
+      "name": "Stafford et al. 2008",
+      "attributes": {
+        "year": 2008,
+        "design": "review"
+      },
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "confidence": 0.85,
+      "evidence": "Stafford, G.I., Pedersen, M.E., van Staden, J., Jager, A.K., 2008. Review on plants with CNS-effects",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Evidence",
+      "name": "review",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "confidence": 0.8,
+      "evidence": "Review on plants with CNS-effects",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "TraditionalUse",
+      "name": "mental diseases",
+      "attributes": {},
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "confidence": 0.85,
+      "evidence": "against mental diseases",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Condition",
+      "name": "mental diseases",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "confidence": 0.8,
+      "evidence": "against mental diseases",
+      "verified": true
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:03.850647+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "may be beneficial to reduce symptoms of anxiety",
+      "source_chunk_ids": [
+        "c66f9488c37448ac14804de751d92795"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "may be beneficial to reduce symptoms of depression",
+      "source_chunk_ids": [
+        "c66f9488c37448ac14804de751d92795"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "sedative effect which may be beneficial to reduce symptoms of anxiety",
+      "source_chunk_ids": [
+        "c66f9488c37448ac14804de751d92795"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "sedative effect which may be beneficial to reduce symptoms of depression",
+      "source_chunk_ids": [
+        "c66f9488c37448ac14804de751d92795"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "evaluated the scientific merit of these anecdotal claims",
+      "source_chunk_ids": [
+        "c66f9488c37448ac14804de751d92795"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Sceletium tortuosum is traditionally used",
+      "source_chunk_ids": [
+        "c66f9488c37448ac14804de751d92795"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Male Wistar rats were administered",
+      "source_chunk_ids": [
+        "773ddb1abb65a126169f76fe2f126aca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum extract",
+      "source_chunk_ids": [
+        "773ddb1abb65a126169f76fe2f126aca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "5 mg/kg/day of Sceletium tortuosum extract",
+      "source_chunk_ids": [
+        "773ddb1abb65a126169f76fe2f126aca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "20 mg/kg/day of Sceletium tortuosum extract",
+      "source_chunk_ids": [
+        "773ddb1abb65a126169f76fe2f126aca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "exposed"
+      },
+      "confidence": 0.85,
+      "evidence": "repeated restraint stress",
+      "source_chunk_ids": [
+        "773ddb1abb65a126169f76fe2f126aca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "assessed"
+      },
+      "confidence": 0.75,
+      "evidence": "behavioral changes in response to stress",
+      "source_chunk_ids": [
+        "773ddb1abb65a126169f76fe2f126aca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Sceletium tortuosum extract",
+      "source_chunk_ids": [
+        "773ddb1abb65a126169f76fe2f126aca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "behavioral"
+      },
+      "confidence": 0.75,
+      "evidence": "Sceletium to decrease restraint stress-induced self-soothing behavior",
+      "source_chunk_ids": [
+        "b872d206bbd98eabeecf70b9586d603d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "context": "systemic"
+      },
+      "confidence": 0.75,
+      "evidence": "Sceletium to decrease stress-induced corticosterone levels",
+      "source_chunk_ids": [
+        "b872d206bbd98eabeecf70b9586d603d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "molecular"
+      },
+      "confidence": 0.8,
+      "evidence": "increased IL-1\u03b2 levels",
+      "source_chunk_ids": [
+        "b872d206bbd98eabeecf70b9586d603d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "inhibits",
+        "assertion": "refutes"
+      },
+      "confidence": 0.7,
+      "evidence": "argue against the claim that the plant may act as selective serotonin reuptake inhibitor",
+      "source_chunk_ids": [
+        "b872d206bbd98eabeecf70b9586d603d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "context": "molecular"
+      },
+      "confidence": 0.75,
+      "evidence": "increased levels of C-reactive protein",
+      "source_chunk_ids": [
+        "b872d206bbd98eabeecf70b9586d603d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "molecular"
+      },
+      "confidence": 0.75,
+      "evidence": "prostaglandin E2",
+      "source_chunk_ids": [
+        "b872d206bbd98eabeecf70b9586d603d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CAUSES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "context": "experimental"
+      },
+      "confidence": 0.7,
+      "evidence": "suggest intolerance to the treatment",
+      "source_chunk_ids": [
+        "b872d206bbd98eabeecf70b9586d603d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "context": "molecular"
+      },
+      "confidence": 0.8,
+      "evidence": "Decreased IL-2",
+      "source_chunk_ids": [
+        "b872d206bbd98eabeecf70b9586d603d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {
+        "context": "molecular"
+      },
+      "confidence": 0.8,
+      "evidence": "increased IL-10 levels",
+      "source_chunk_ids": [
+        "b872d206bbd98eabeecf70b9586d603d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E11",
+      "attributes": {
+        "context": "cellular"
+      },
+      "confidence": 0.75,
+      "evidence": "suppressive effect on T helper 1 immune function",
+      "source_chunk_ids": [
+        "b872d206bbd98eabeecf70b9586d603d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "preclinical",
+        "outcome": "limited positive effect"
+      },
+      "confidence": 0.7,
+      "evidence": "limited positive effect of Sceletium on restraint-induced anxiety",
+      "source_chunk_ids": [
+        "350fe031830093989efc43ab67066acc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CAUSES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "context": "preclinical"
+      },
+      "confidence": 0.75,
+      "evidence": "side-effects were evident",
+      "source_chunk_ids": [
+        "350fe031830093989efc43ab67066acc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "sedative effect in cats and dogs with dementia",
+      "source_chunk_ids": [
+        "d05ac611e72c2bc327cc49c8e33bd1de"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "anti-anxiety properties",
+      "source_chunk_ids": [
+        "d05ac611e72c2bc327cc49c8e33bd1de"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.7,
+      "evidence": "Smith et al., 1996",
+      "source_chunk_ids": [
+        "d05ac611e72c2bc327cc49c8e33bd1de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.7,
+      "evidence": "Jin, 2009",
+      "source_chunk_ids": [
+        "d05ac611e72c2bc327cc49c8e33bd1de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.7,
+      "evidence": "Gericke and Viljoen, 2008",
+      "source_chunk_ids": [
+        "d05ac611e72c2bc327cc49c8e33bd1de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "recently comprehensively reviewed",
+      "source_chunk_ids": [
+        "d05ac611e72c2bc327cc49c8e33bd1de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E10",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Japanese studies quoted in this review",
+      "source_chunk_ids": [
+        "d05ac611e72c2bc327cc49c8e33bd1de"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "suggests",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "sedative effect in cats and dogs with dementia",
+      "source_chunk_ids": [
+        "d05ac611e72c2bc327cc49c8e33bd1de"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "case reports",
+      "source_chunk_ids": [
+        "1373ef8d0a8f661d092322a473e0c52e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "anti-anxiety effect",
+      "source_chunk_ids": [
+        "1373ef8d0a8f661d092322a473e0c52e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "anti-stress effect",
+      "source_chunk_ids": [
+        "1373ef8d0a8f661d092322a473e0c52e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.75,
+      "evidence": "anti-anxiety effect",
+      "source_chunk_ids": [
+        "1373ef8d0a8f661d092322a473e0c52e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.75,
+      "evidence": "anti-stress effect",
+      "source_chunk_ids": [
+        "1373ef8d0a8f661d092322a473e0c52e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "anti-anxiety effect",
+      "source_chunk_ids": [
+        "1373ef8d0a8f661d092322a473e0c52e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "anti-stress effect",
+      "source_chunk_ids": [
+        "1373ef8d0a8f661d092322a473e0c52e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "experimental work was conducted according to the guidelines for animal research",
+      "source_chunk_ids": [
+        "94afc7c1a973d14a41bbbd62ae1c3ba3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "animal study with Wistar rats",
+      "source_chunk_ids": [
+        "aa699bf8752c125c0050dc01f72a41a3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "supplemented with Sceletium tortuosum",
+      "source_chunk_ids": [
+        "aa699bf8752c125c0050dc01f72a41a3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "low-dose control supplemented with low concentration",
+      "source_chunk_ids": [
+        "aa699bf8752c125c0050dc01f72a41a3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "high-dose control supplemented with high concentration",
+      "source_chunk_ids": [
+        "aa699bf8752c125c0050dc01f72a41a3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "exposed"
+      },
+      "confidence": 0.8,
+      "evidence": "stress groups with daily stress exposure",
+      "source_chunk_ids": [
+        "aa699bf8752c125c0050dc01f72a41a3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Leaves were collected from the source plant",
+      "source_chunk_ids": [
+        "28a9b697adab4f027cf1caf6b5817e18"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "method": "spray-drying"
+      },
+      "confidence": 0.8,
+      "evidence": "used to prepare a 2:1 spray-dried aqueous\u2013ethanolic extract",
+      "source_chunk_ids": [
+        "28a9b697adab4f027cf1caf6b5817e18"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Sceletium plant material",
+      "source_chunk_ids": [
+        "afc0949a171606389b42f7d44e4156f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "relative abundance",
+          "notes": "relatively smallest peak"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "mesembrine is not the dominant constituent",
+      "source_chunk_ids": [
+        "afc0949a171606389b42f7d44e4156f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "presence",
+          "notes": "identified in extract"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "extract ... identified as mesembrine",
+      "source_chunk_ids": [
+        "afc0949a171606389b42f7d44e4156f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "mesembrine ... alkaloids",
+      "source_chunk_ids": [
+        "afc0949a171606389b42f7d44e4156f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "analysed ... using GC\u2013MS techniques",
+      "source_chunk_ids": [
+        "afc0949a171606389b42f7d44e4156f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "study ... Sceletium plant material",
+      "source_chunk_ids": [
+        "afc0949a171606389b42f7d44e4156f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "analysed the extract",
+      "source_chunk_ids": [
+        "afc0949a171606389b42f7d44e4156f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "identified"
+      },
+      "confidence": 0.9,
+      "evidence": "identified as mesembrine",
+      "source_chunk_ids": [
+        "afc0949a171606389b42f7d44e4156f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "\u0394^7 mesembrenone ... alkaloids",
+      "source_chunk_ids": [
+        "afc0949a171606389b42f7d44e4156f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Sceletium extract",
+      "source_chunk_ids": [
+        "732cc29025002de1a75068e06edd4505"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "rats were supplemented with Sceletium extract",
+      "source_chunk_ids": [
+        "732cc29025002de1a75068e06edd4505"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TESTED_AT",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "low-dose rats were supplemented with 5 mg/kg/day",
+      "source_chunk_ids": [
+        "732cc29025002de1a75068e06edd4505"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TESTED_AT",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "high-dose rats with 20 mg/kg/day",
+      "source_chunk_ids": [
+        "732cc29025002de1a75068e06edd4505"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Rats were euthanized 24 h after",
+      "source_chunk_ids": [
+        "1da6091df00ed2671259e56a23642c95"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.7,
+      "evidence": "stress-induced changes in behavior",
+      "source_chunk_ids": [
+        "1da6091df00ed2671259e56a23642c95"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "used for assessment"
+      },
+      "confidence": 0.85,
+      "evidence": "using the elevated plus-maze",
+      "source_chunk_ids": [
+        "1da6091df00ed2671259e56a23642c95"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "sample_collection"
+      },
+      "confidence": 0.75,
+      "evidence": "plasma samples were aliquotted",
+      "source_chunk_ids": [
+        "1da6091df00ed2671259e56a23642c95"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "unidentified alkaloids in Sceletium tortuosum",
+      "source_chunk_ids": [
+        "b18445037bed8bc7f43a9ac38b8552cd"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "unidentified alkaloids in Sceletium tortuosum",
+      "source_chunk_ids": [
+        "b18445037bed8bc7f43a9ac38b8552cd"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "unidentified alkaloids in Sceletium tortuosum",
+      "source_chunk_ids": [
+        "b18445037bed8bc7f43a9ac38b8552cd"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "unidentified alkaloids",
+      "source_chunk_ids": [
+        "b18445037bed8bc7f43a9ac38b8552cd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "unidentified alkaloids",
+      "source_chunk_ids": [
+        "b18445037bed8bc7f43a9ac38b8552cd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "unidentified alkaloids",
+      "source_chunk_ids": [
+        "b18445037bed8bc7f43a9ac38b8552cd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "in vivo effects",
+      "source_chunk_ids": [
+        "167eea31cef5cb542ac3b329ac44fac6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "effects of Sceletium tortuosum",
+      "source_chunk_ids": [
+        "167eea31cef5cb542ac3b329ac44fac6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "assessed"
+      },
+      "confidence": 0.7,
+      "evidence": "assessments of psychological behavior",
+      "source_chunk_ids": [
+        "167eea31cef5cb542ac3b329ac44fac6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "assessed"
+      },
+      "confidence": 0.7,
+      "evidence": "hormone levels",
+      "source_chunk_ids": [
+        "167eea31cef5cb542ac3b329ac44fac6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "analyzed"
+      },
+      "confidence": 0.75,
+      "evidence": "analysis of the inflammatory system",
+      "source_chunk_ids": [
+        "167eea31cef5cb542ac3b329ac44fac6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "rats treated with Sceletium",
+      "source_chunk_ids": [
+        "938d674c397b59e4036e622f7f0f3924"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium treatment",
+      "source_chunk_ids": [
+        "938d674c397b59e4036e622f7f0f3924"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TESTED_AT",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "both high and low doses",
+      "source_chunk_ids": [
+        "938d674c397b59e4036e622f7f0f3924"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.75,
+      "evidence": "heightened response to stress",
+      "source_chunk_ids": [
+        "938d674c397b59e4036e622f7f0f3924"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.8,
+      "evidence": "exhibited significantly more anxiety behavior",
+      "source_chunk_ids": [
+        "938d674c397b59e4036e622f7f0f3924"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.85,
+      "evidence": "did not have any effect on this parameter",
+      "source_chunk_ids": [
+        "938d674c397b59e4036e622f7f0f3924"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "stress response"
+      },
+      "confidence": 0.8,
+      "evidence": "corticosterone levels were significantly increased in response to stress",
+      "source_chunk_ids": [
+        "e84c9d88e8099568b96745454c7c42a8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "effect of Sceletium treatment, the average corticosterone concentration in the low-dose stress",
+      "source_chunk_ids": [
+        "e84c9d88e8099568b96745454c7c42a8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Data for Fig. 2",
+      "source_chunk_ids": [
+        "45944258ccb8a84e8e9fb2ccffc87561"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Corticosterone levels",
+      "source_chunk_ids": [
+        "45944258ccb8a84e8e9fb2ccffc87561"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "increases"
+      },
+      "confidence": 0.8,
+      "evidence": "Corticosterone levels are significantly higher",
+      "source_chunk_ids": [
+        "45944258ccb8a84e8e9fb2ccffc87561"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "stressed groups",
+      "source_chunk_ids": [
+        "45944258ccb8a84e8e9fb2ccffc87561"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Corticosterone levels are significantly higher in the stressed groups",
+      "source_chunk_ids": [
+        "45944258ccb8a84e8e9fb2ccffc87561"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Statistical analysis revealed",
+      "source_chunk_ids": [
+        "e2fc408d03e90e983db56187e7e480d0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Sceletium dose-dependent effect",
+      "source_chunk_ids": [
+        "e2fc408d03e90e983db56187e7e480d0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "increases"
+      },
+      "confidence": 0.85,
+      "evidence": "CRP was significantly increased",
+      "source_chunk_ids": [
+        "e2fc408d03e90e983db56187e7e480d0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "measured"
+      },
+      "confidence": 0.9,
+      "evidence": "plasma levels of C-reactive protein (CRP)",
+      "source_chunk_ids": [
+        "e2fc408d03e90e983db56187e7e480d0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.8,
+      "evidence": "no effect of treatment in the non-stressed groups",
+      "source_chunk_ids": [
+        "e2fc408d03e90e983db56187e7e480d0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "dose-dependent"
+      },
+      "confidence": 0.75,
+      "evidence": "Sceletium dose-dependent effect, with higher CRP levels",
+      "source_chunk_ids": [
+        "e2fc408d03e90e983db56187e7e480d0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Sceletium administration",
+      "source_chunk_ids": [
+        "da2a267d35324d42ba8cdcd8d80dac5e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "suggests",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "average values suggested an increased PGE2 response",
+      "source_chunk_ids": [
+        "da2a267d35324d42ba8cdcd8d80dac5e"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "tendency",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "only a tendency for higher responses",
+      "source_chunk_ids": [
+        "da2a267d35324d42ba8cdcd8d80dac5e"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "TESTED_AT",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.55,
+      "evidence": "high-dose vs. placebo-treated control rats",
+      "source_chunk_ids": [
+        "da2a267d35324d42ba8cdcd8d80dac5e"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "varied responses were evident",
+      "source_chunk_ids": [
+        "0600ddd216e6d0e677974b6c1a0f24d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.85,
+      "evidence": "IFN-gamma levels were not affected",
+      "source_chunk_ids": [
+        "0600ddd216e6d0e677974b6c1a0f24d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.85,
+      "evidence": "TNF-alpha levels were not affected",
+      "source_chunk_ids": [
+        "0600ddd216e6d0e677974b6c1a0f24d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "increases"
+      },
+      "confidence": 0.8,
+      "evidence": "IL-1beta exhibited a main effect",
+      "source_chunk_ids": [
+        "0600ddd216e6d0e677974b6c1a0f24d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "increases"
+      },
+      "confidence": 0.75,
+      "evidence": "IL-10 levels indicated a tendency",
+      "source_chunk_ids": [
+        "0600ddd216e6d0e677974b6c1a0f24d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "decreases"
+      },
+      "confidence": 0.8,
+      "evidence": "effect of treatment to decrease IL-2 levels",
+      "source_chunk_ids": [
+        "0600ddd216e6d0e677974b6c1a0f24d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "IL-1beta exhibited a main effect",
+      "source_chunk_ids": [
+        "0600ddd216e6d0e677974b6c1a0f24d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "IL-10 levels indicated a tendency",
+      "source_chunk_ids": [
+        "0600ddd216e6d0e677974b6c1a0f24d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "effect of treatment to decrease IL-2 levels",
+      "source_chunk_ids": [
+        "0600ddd216e6d0e677974b6c1a0f24d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "experimental"
+      },
+      "confidence": 0.75,
+      "evidence": "PGE2 levels are significantly higher in the stressed groups",
+      "source_chunk_ids": [
+        "b19df49ed8e6acad3ac5259ebba5bead"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "increases"
+      },
+      "confidence": 0.7,
+      "evidence": "plasma PGE2 levels (pg/ml)",
+      "source_chunk_ids": [
+        "b19df49ed8e6acad3ac5259ebba5bead"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "main alkaloid to which the effect of Sceletium is ascribed",
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "main alkaloid",
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "inhibits",
+        "measurement": {
+          "value": 1e-08,
+          "unit": "M",
+          "measurement_type": "concentration",
+          "notes": "in excess of 1 \u00d7 10^-8 M"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "serotonin reuptake was reported to be inhibited",
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "support the notion of a sedative effect",
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Sceletium-induced excitement",
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "exacerbates"
+      },
+      "confidence": 0.8,
+      "evidence": "exacerbation of anxiety",
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "suggests"
+      },
+      "confidence": 0.7,
+      "evidence": "may suggest a calming effect",
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "quotes from a recent review",
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "non-peer-reviewed data was presented",
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "review on the effect of Sceletium",
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "sedative effect",
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "STUDIES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "stressed rats treated with Sceletium",
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "TESTED_AT",
+      "source_entity_id": "E12",
+      "target_entity_id": "E13",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "low-dose Sceletium",
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "TESTED_AT",
+      "source_entity_id": "E12",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "high-dose treated",
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "REPORTS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "exacerbates"
+      },
+      "confidence": 0.8,
+      "evidence": "exacerbation of anxiety",
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "REPORTS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "suggests"
+      },
+      "confidence": 0.7,
+      "evidence": "may suggest a calming effect",
+      "source_chunk_ids": [
+        "d82f257ec668619c5f31cd2cd92e5844"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "potential"
+      },
+      "confidence": 0.75,
+      "evidence": "de Ronde, 2009; Thomas et al., 2008",
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "study on a much larger population is required",
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "Sceletium treatment",
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.85,
+      "evidence": "clear response to stress in corticosterone levels",
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.8,
+      "evidence": "no statistically significant effect on hormone levels",
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.75,
+      "evidence": "corticosterone levels were approximately 20% lower",
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "suggested"
+      },
+      "confidence": 0.7,
+      "evidence": "may have masked a stress-limiting effect",
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.85,
+      "evidence": "no effect on testosterone levels",
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Sceletium treatment",
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "assertion": "refutes"
+      },
+      "confidence": 0.75,
+      "evidence": "no statistically significant effect on hormone levels",
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "low-dose treated stressed group",
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "suggested",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "may have masked a stress-limiting effect",
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R13",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "assertion": "refutes"
+      },
+      "confidence": 0.8,
+      "evidence": "no effect on testosterone levels",
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "CAUSES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "potential",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "possibility of unwanted side-effects",
+      "source_chunk_ids": [
+        "9ef122f5bcb874af696c1490a8622c07"
+      ],
+      "supporting_study_ids": [
+        "E8"
+      ],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "induces"
+      },
+      "confidence": 0.85,
+      "evidence": "IL-1\u03b2 is known to be a potent inducer of corticosterone production",
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "induces"
+      },
+      "confidence": 0.8,
+      "evidence": "induction of CRH release",
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Watkins, 1994",
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "Gericke and Viljoen, 2008 claim that Sceletium may act as a SSRI",
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "action": "inhibits",
+        "assertion": "refutes"
+      },
+      "confidence": 0.7,
+      "evidence": "current data argues against this suggestion",
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "ACTS_ON",
+      "source_entity_id": "E9",
+      "target_entity_id": "E7",
+      "attributes": {
+        "action": "stimulates"
+      },
+      "confidence": 0.85,
+      "evidence": "TNF-\u03b1 is known to stimulate serotonin uptake",
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Zhu et al., 2006",
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "effect of treatment to increase IL-1\u03b2 levels",
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "no effect on average TNF-\u03b1 levels",
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E13",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "positive effects on behavior",
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E14",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "positive effects on corticosterone levels",
+      "source_chunk_ids": [
+        "dc950a0ee173cec620a8a5ce7dc42213"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "assertion": "hints at positive effect"
+      },
+      "confidence": 0.7,
+      "evidence": "hint at a positive effect on anxiety",
+      "source_chunk_ids": [
+        "2a7b3a9f2f1aff5f8fc86248a082e2bb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CAUSES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "context": "potential",
+        "severity": "potentially less desirable",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "intolerance to constituents of the plant supplement",
+      "source_chunk_ids": [
+        "2a7b3a9f2f1aff5f8fc86248a082e2bb"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "CAUSES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "potential",
+        "severity": "potentially less desirable",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "undesirable effects on other organs or systems",
+      "source_chunk_ids": [
+        "2a7b3a9f2f1aff5f8fc86248a082e2bb"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "modulates",
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "dose-dependent",
+          "notes": "in control rats"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "Sceletium dose-dependent manner on CRP",
+      "source_chunk_ids": [
+        "369b3b8ceca85540d60ea5cff6439eaf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "CRP levels increasing with Sceletium",
+      "source_chunk_ids": [
+        "369b3b8ceca85540d60ea5cff6439eaf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "anti-inflammatory effect possibly from Sceletium",
+      "source_chunk_ids": [
+        "369b3b8ceca85540d60ea5cff6439eaf"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "experimental",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Sceletium effects on inflammation indicator",
+      "source_chunk_ids": [
+        "369b3b8ceca85540d60ea5cff6439eaf"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.9,
+      "evidence": "traditional use of Sceletium as a treatment for constipation",
+      "source_chunk_ids": [
+        "d650b786881a2c323a17e9af7823a3b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CAUSES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "animal study"
+      },
+      "confidence": 0.8,
+      "evidence": "Sceletium-treated rats independent of stress",
+      "source_chunk_ids": [
+        "d650b786881a2c323a17e9af7823a3b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "irritant contained in Sceletium may have given rise to a sustained inflammatory condition",
+      "source_chunk_ids": [
+        "d650b786881a2c323a17e9af7823a3b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "treatment effect reported here implies that an irritant contained in Sceletium may have given rise to increased gut secretion of PGE2",
+      "source_chunk_ids": [
+        "d650b786881a2c323a17e9af7823a3b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "no effect on TNF-\u03b1 levels at the time of sacrifice",
+      "source_chunk_ids": [
+        "d650b786881a2c323a17e9af7823a3b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E11",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Gericke and Viljoen, 2008",
+      "source_chunk_ids": [
+        "d650b786881a2c323a17e9af7823a3b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "traditional use of Sceletium",
+      "source_chunk_ids": [
+        "d650b786881a2c323a17e9af7823a3b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "traditional use of Sceletium as a treatment for constipation",
+      "source_chunk_ids": [
+        "d650b786881a2c323a17e9af7823a3b3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "Sceletium treatment",
+      "source_chunk_ids": [
+        "685f6da45f77e67e56bb20cb292295ad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "rat study data",
+      "source_chunk_ids": [
+        "685f6da45f77e67e56bb20cb292295ad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "decreases"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium treatment decreased IL-2 levels",
+      "source_chunk_ids": [
+        "685f6da45f77e67e56bb20cb292295ad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "present"
+      },
+      "confidence": 0.9,
+      "evidence": "in the presence of stress",
+      "source_chunk_ids": [
+        "685f6da45f77e67e56bb20cb292295ad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Sceletium treatment decreased IL-2 levels",
+      "source_chunk_ids": [
+        "685f6da45f77e67e56bb20cb292295ad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "may suggest that Sceletium exerts an anti-anxiety effect by down-regulation of IL-2",
+      "source_chunk_ids": [
+        "685f6da45f77e67e56bb20cb292295ad"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "decreases"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium treatment decreased IL-2 levels",
+      "source_chunk_ids": [
+        "685f6da45f77e67e56bb20cb292295ad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "activates"
+      },
+      "confidence": 0.8,
+      "evidence": "IL-2-associated HPA-axis activation",
+      "source_chunk_ids": [
+        "685f6da45f77e67e56bb20cb292295ad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "SUGGESTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "may suggest that Sceletium exerts an anti-anxiety effect",
+      "source_chunk_ids": [
+        "685f6da45f77e67e56bb20cb292295ad"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "low-dose treatment"
+      },
+      "confidence": 0.8,
+      "evidence": "positive effect in terms of corticosterone and behavior was most evident in the low-dose treated rats",
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "context": "higher dose"
+      },
+      "confidence": 0.75,
+      "evidence": "Sceletium, in particular the higher dose, enhanced the down-regulatory effect",
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "down-regulates"
+      },
+      "confidence": 0.7,
+      "evidence": "enhanced the down-regulatory effect on the T helper 1 (Th1) immune response",
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "high-dose treatment"
+      },
+      "confidence": 0.75,
+      "evidence": "increasing levels of IL-10, with highest average levels in the high-dose treated groups",
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Th1 immune-suppressive effect of the plant",
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mechanism": "increased IL-10 implicated",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "increased IL-10 has been implicated in tolerance to Sceletium treatment",
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E9",
+      "attributes": {
+        "association": "implicated"
+      },
+      "confidence": 0.7,
+      "evidence": "increased IL-10 has been implicated in food intolerance (Gray et al., 2004)",
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E10",
+      "attributes": {
+        "association": "implicated"
+      },
+      "confidence": 0.7,
+      "evidence": "increased IL-10 has been implicated in food hypersensitivity (Gray et al., 2004)",
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E8",
+      "attributes": {
+        "association": "key factor",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "stronger IL-10 response named as key factor in tolerance (Ng et al., 2002)",
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E8",
+      "attributes": {
+        "association": "key factor",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "stronger IL-10 response named as key factor in tolerance (Torres-Aguilar et al., 2010)",
+      "source_chunk_ids": [
+        "31dab67c3d79c75ac090e52a1281db0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "Sceletium used in this study",
+      "source_chunk_ids": [
+        "9ced5277da0650aae49adf2e3eabe0ac"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TESTED_AT",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "lower dose of Sceletium (5 mg/kg/day)",
+      "source_chunk_ids": [
+        "9ced5277da0650aae49adf2e3eabe0ac"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TESTED_AT",
+      "source_entity_id": "E7",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "both doses (5 and 20 mg/kg/day)",
+      "source_chunk_ids": [
+        "9ced5277da0650aae49adf2e3eabe0ac"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.75,
+      "evidence": "positive effects in terms of the response to psychological stress",
+      "source_chunk_ids": [
+        "9ced5277da0650aae49adf2e3eabe0ac"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "causes"
+      },
+      "confidence": 0.75,
+      "evidence": "inflammatory, or intolerance reaction",
+      "source_chunk_ids": [
+        "9ced5277da0650aae49adf2e3eabe0ac"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "causes"
+      },
+      "confidence": 0.8,
+      "evidence": "Th1 immune suppression",
+      "source_chunk_ids": [
+        "9ced5277da0650aae49adf2e3eabe0ac"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CAUSES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "experimental"
+      },
+      "confidence": 0.7,
+      "evidence": "resulted in inflammatory, or intolerance reaction",
+      "source_chunk_ids": [
+        "9ced5277da0650aae49adf2e3eabe0ac"
+      ],
+      "supporting_study_ids": [
+        "E7"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "CAUSES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "context": "experimental"
+      },
+      "confidence": 0.75,
+      "evidence": "resulted in Th1 immune suppression",
+      "source_chunk_ids": [
+        "9ced5277da0650aae49adf2e3eabe0ac"
+      ],
+      "supporting_study_ids": [
+        "E7"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Sceletium exhibits anti-anxiety effects",
+      "source_chunk_ids": [
+        "adb2bd4efe36bba88a5b8da5887afee3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "context": "potential"
+      },
+      "confidence": 0.7,
+      "evidence": "Sceletium exhibits anti-anxiety effects",
+      "source_chunk_ids": [
+        "adb2bd4efe36bba88a5b8da5887afee3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Amaryllidaceae and Sceletium alkaloids",
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Investigations of the phytochemical content",
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Investigations of the phytochemical content of Sceletium tortuosum",
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "preparation of \"Kougoed\" by fermentation",
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Psychoactive constituents",
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Psychoactive constituents of the genus Sceletium",
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "alkaloids",
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E10",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "review update",
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "STUDIES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium\u2014a review update",
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E12",
+      "target_entity_id": "E13",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Review on plants with CNS-effects",
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "STUDIES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Review on plants with CNS-effects used in traditional South African medicine",
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "REPORTS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E14",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.8,
+      "evidence": "against mental diseases",
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "SUGGESTS",
+      "source_entity_id": "E14",
+      "target_entity_id": "E15",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.75,
+      "evidence": "against mental diseases",
+      "source_chunk_ids": [
+        "19174d2a31c74c67eb32a4c55a393cb6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

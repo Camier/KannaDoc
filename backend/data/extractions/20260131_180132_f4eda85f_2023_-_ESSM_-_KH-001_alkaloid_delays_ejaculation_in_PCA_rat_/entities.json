@@ -1,12 +1,983 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "37e9026a6acc778e9e24ef7d4a29ccdc1205a2768c75936c816071bb392f6003",
-  "extracted_at": "2026-02-01T08:59:46.824122+00:00",
-  "extractor": "legacy-migration",
-  "entities": [],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.087975+00:00",
-    "original_file": "entities.json"
-  }
+  "entities": [
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "PCA-induced ejaculation rat model study",
+      "attributes": {
+        "design": "experimental study",
+        "objective": "determine efficacy and potency of purified alkaloids"
+      },
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "confidence": 0.9,
+      "evidence": "Objectives: To determine the efficacy and potency",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vivo animal study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "confidence": 0.85,
+      "evidence": "PCA-induced ejaculation rat model",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "KH-001",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "confidence": 0.8,
+      "evidence": "purified alkaloids (KH-001, KH-002, KH-003, KH-004)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "KH-002",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "confidence": 0.8,
+      "evidence": "purified alkaloids (KH-001, KH-002, KH-003, KH-004)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "KH-003",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "confidence": 0.8,
+      "evidence": "purified alkaloids (KH-001, KH-002, KH-003, KH-004)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "KH-004",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "confidence": 0.8,
+      "evidence": "purified alkaloids (KH-001, KH-002, KH-003, KH-004)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "confidence": 0.85,
+      "evidence": "purified alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "ejaculation disorder",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "confidence": 0.7,
+      "evidence": "PCA-induced ejaculation rat model",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "rat ejaculation study",
+      "attributes": {
+        "design": "animal study",
+        "sample_size": 12,
+        "species": "Wistar rats",
+        "sex": "male"
+      },
+      "source_chunk_ids": [
+        "1d79a5a9d92e0507832ef3bcd635b5c7"
+      ],
+      "confidence": 0.9,
+      "evidence": "Male Wistar rats received the following compounds",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vivo animal study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "1d79a5a9d92e0507832ef3bcd635b5c7"
+      ],
+      "confidence": 0.85,
+      "evidence": "Male Wistar rats received compounds",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "KH-001",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1d79a5a9d92e0507832ef3bcd635b5c7"
+      ],
+      "confidence": 0.95,
+      "evidence": "KH-001 (20 \u00b5g/kg - 20 mg/kg)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "KH-002",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1d79a5a9d92e0507832ef3bcd635b5c7"
+      ],
+      "confidence": 0.95,
+      "evidence": "KH-002 (20 mg/kg)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "KH-003",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1d79a5a9d92e0507832ef3bcd635b5c7"
+      ],
+      "confidence": 0.95,
+      "evidence": "KH-003 (10, 20 mg/kg)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "KH-004",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1d79a5a9d92e0507832ef3bcd635b5c7"
+      ],
+      "confidence": 0.95,
+      "evidence": "KH-004 (10, 20 mg/kg)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Dosage",
+      "name": "20 \u00b5g/kg - 20 mg/kg KH-001",
+      "attributes": {
+        "amount_range": "20 \u00b5g/kg to 20 mg/kg",
+        "route": "intraperitoneal"
+      },
+      "source_chunk_ids": [
+        "1d79a5a9d92e0507832ef3bcd635b5c7"
+      ],
+      "confidence": 0.8,
+      "evidence": "KH-001 (20 \u00b5g/kg - 20 mg/kg)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Dosage",
+      "name": "20 mg/kg KH-002",
+      "attributes": {
+        "amount": 20,
+        "unit": "mg/kg",
+        "route": "intraperitoneal"
+      },
+      "source_chunk_ids": [
+        "1d79a5a9d92e0507832ef3bcd635b5c7"
+      ],
+      "confidence": 0.8,
+      "evidence": "KH-002 (20 mg/kg)",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Dosage",
+      "name": "10, 20 mg/kg KH-003 and KH-004",
+      "attributes": {
+        "amount_range": "10 to 20 mg/kg",
+        "route": "intraperitoneal"
+      },
+      "source_chunk_ids": [
+        "1d79a5a9d92e0507832ef3bcd635b5c7"
+      ],
+      "confidence": 0.8,
+      "evidence": "KH-003 and KH-004 (10, 20 mg/kg)",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "ejaculation induction",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "1d79a5a9d92e0507832ef3bcd635b5c7"
+      ],
+      "confidence": 0.85,
+      "evidence": "induction of ejaculation with PCA",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Target",
+      "name": "ejaculation process",
+      "attributes": {
+        "target_type": "physiological process"
+      },
+      "source_chunk_ids": [
+        "1d79a5a9d92e0507832ef3bcd635b5c7"
+      ],
+      "confidence": 0.8,
+      "evidence": "induction of ejaculation",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Product",
+      "name": "KH-001",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bcfefc422e421be46786ba1e7cb9532d"
+      ],
+      "confidence": 0.95,
+      "evidence": "KH-001 increased latency",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Effect",
+      "name": "increased latency to first ejaculation",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "bcfefc422e421be46786ba1e7cb9532d"
+      ],
+      "confidence": 0.9,
+      "evidence": "increased latency to first ejaculation",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Dosage",
+      "name": "200 \u00b5g/kg",
+      "attributes": {
+        "amount": 200,
+        "unit": "\u00b5g/kg",
+        "notes": "minimum effective dose"
+      },
+      "source_chunk_ids": [
+        "bcfefc422e421be46786ba1e7cb9532d"
+      ],
+      "confidence": 0.85,
+      "evidence": "minimum effective dose of 200\u00b5g/kg",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "kanna alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bcfefc422e421be46786ba1e7cb9532d"
+      ],
+      "confidence": 0.9,
+      "evidence": "other tested kanna alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Dosage",
+      "name": "20 mg/kg",
+      "attributes": {
+        "amount": 20,
+        "unit": "mg/kg",
+        "notes": "tested up to"
+      },
+      "source_chunk_ids": [
+        "bcfefc422e421be46786ba1e7cb9532d"
+      ],
+      "confidence": 0.85,
+      "evidence": "up to 20mg/kg",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "no effect on latency to first ejaculation",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "bcfefc422e421be46786ba1e7cb9532d"
+      ],
+      "confidence": 0.8,
+      "evidence": "no such effect was observed",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "reduced SV contractions",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "bcfefc422e421be46786ba1e7cb9532d"
+      ],
+      "confidence": 0.9,
+      "evidence": "SV contractions were significantly reduced",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "no effect on BS muscle burst",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "bcfefc422e421be46786ba1e7cb9532d"
+      ],
+      "confidence": 0.8,
+      "evidence": "no effect on BS muscle burst",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Product",
+      "name": "KH-001",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8ecbe72cbfbbd8b2c39c06583489136a"
+      ],
+      "confidence": 0.95,
+      "evidence": "KH-001",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "premature ejaculation",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "8ecbe72cbfbbd8b2c39c06583489136a"
+      ],
+      "confidence": 0.9,
+      "evidence": "premature ejaculation",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "delayed ejaculation",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "8ecbe72cbfbbd8b2c39c06583489136a"
+      ],
+      "confidence": 0.85,
+      "evidence": "delayed ejaculation",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "kanna alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8ecbe72cbfbbd8b2c39c06583489136a"
+      ],
+      "confidence": 0.8,
+      "evidence": "kanna alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "kanna",
+      "attributes": {
+        "rank": "common_name"
+      },
+      "source_chunk_ids": [
+        "8ecbe72cbfbbd8b2c39c06583489136a"
+      ],
+      "confidence": 0.75,
+      "evidence": "kanna-derived alkaloids",
+      "verified": true
+    }
+  ],
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "PCA-induced ejaculation rat model",
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "source"
+      },
+      "confidence": 0.85,
+      "evidence": "derived from Sceletium tortuosum",
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "purified alkaloids (KH-001, KH-002, KH-003, KH-004)",
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "purified alkaloids (KH-001, KH-002, KH-003, KH-004)",
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "purified alkaloids (KH-001, KH-002, KH-003, KH-004)",
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "purified alkaloids (KH-001, KH-002, KH-003, KH-004)",
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "studied"
+      },
+      "confidence": 0.7,
+      "evidence": "PCA-induced ejaculation rat model",
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "derived from Sceletium tortuosum",
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "derived from Sceletium tortuosum",
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "derived from Sceletium tortuosum",
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "derived from Sceletium tortuosum",
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "purified alkaloids",
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "purified alkaloids",
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "purified alkaloids",
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "purified alkaloids",
+      "source_chunk_ids": [
+        "6f02dce0c8786497c960185f57120fca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Male Wistar rats received compounds",
+      "source_chunk_ids": [
+        "1d79a5a9d92e0507832ef3bcd635b5c7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "KH-001 (20 \u00b5g/kg - 20 mg/kg)",
+      "source_chunk_ids": [
+        "1d79a5a9d92e0507832ef3bcd635b5c7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "KH-002 (20 mg/kg)",
+      "source_chunk_ids": [
+        "1d79a5a9d92e0507832ef3bcd635b5c7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "KH-003 (10, 20 mg/kg)",
+      "source_chunk_ids": [
+        "1d79a5a9d92e0507832ef3bcd635b5c7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "KH-004 (10, 20 mg/kg)",
+      "source_chunk_ids": [
+        "1d79a5a9d92e0507832ef3bcd635b5c7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "KH-001 (20 \u00b5g/kg - 20 mg/kg)",
+      "source_chunk_ids": [
+        "1d79a5a9d92e0507832ef3bcd635b5c7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "KH-002 (20 mg/kg)",
+      "source_chunk_ids": [
+        "1d79a5a9d92e0507832ef3bcd635b5c7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "KH-003 and KH-004 (10, 20 mg/kg)",
+      "source_chunk_ids": [
+        "1d79a5a9d92e0507832ef3bcd635b5c7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {
+        "outcome": "studied"
+      },
+      "confidence": 0.8,
+      "evidence": "induction of ejaculation with PCA",
+      "source_chunk_ids": [
+        "1d79a5a9d92e0507832ef3bcd635b5c7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "studied"
+      },
+      "confidence": 0.75,
+      "evidence": "ejaculation process",
+      "source_chunk_ids": [
+        "1d79a5a9d92e0507832ef3bcd635b5c7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "dose_dependency": "dose-dependent"
+      },
+      "confidence": 0.85,
+      "evidence": "KH-001 increased latency in a dose-dependent fashion",
+      "source_chunk_ids": [
+        "bcfefc422e421be46786ba1e7cb9532d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "minimum effective dose of 200\u00b5g/kg",
+      "source_chunk_ids": [
+        "bcfefc422e421be46786ba1e7cb9532d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "assertion": "refutes",
+        "tested_dosage": "up to 20 mg/kg"
+      },
+      "confidence": 0.75,
+      "evidence": "no such effect was observed with the other tested kanna alkaloids",
+      "source_chunk_ids": [
+        "bcfefc422e421be46786ba1e7cb9532d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TESTED_AT",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "up to 20mg/kg",
+      "source_chunk_ids": [
+        "bcfefc422e421be46786ba1e7cb9532d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "SV contractions were significantly reduced by all alkaloids",
+      "source_chunk_ids": [
+        "bcfefc422e421be46786ba1e7cb9532d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {
+        "assertion": "refutes"
+      },
+      "confidence": 0.75,
+      "evidence": "no effect on BS muscle burst",
+      "source_chunk_ids": [
+        "bcfefc422e421be46786ba1e7cb9532d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "symptomatic"
+      },
+      "confidence": 0.8,
+      "evidence": "potential utility in symptomatic treatment of premature ejaculation",
+      "source_chunk_ids": [
+        "8ecbe72cbfbbd8b2c39c06583489136a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "delayed ejaculation was observed with only KH-001",
+      "source_chunk_ids": [
+        "8ecbe72cbfbbd8b2c39c06583489136a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "KH-001 is one of the kanna alkaloids",
+      "source_chunk_ids": [
+        "8ecbe72cbfbbd8b2c39c06583489136a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "kanna-derived alkaloids",
+      "source_chunk_ids": [
+        "8ecbe72cbfbbd8b2c39c06583489136a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

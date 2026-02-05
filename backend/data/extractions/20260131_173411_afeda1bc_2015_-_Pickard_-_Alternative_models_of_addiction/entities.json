@@ -1,211 +1,823 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "be42e38635422e239019149812ba46185be4dc95a07afad09a3e1665cf7382fa",
-  "extracted_at": "2026-02-01T08:32:21.192152+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
-      "type": "Indication",
+      "id": "E1",
+      "type": "Study",
+      "name": "Heyman (1)",
+      "attributes": {
+        "year": null,
+        "design": "theoretical analysis"
+      },
+      "source_chunk_ids": [
+        "2b97843dc5089d7066e5ea7344872168"
+      ],
+      "confidence": 0.8,
+      "evidence": "Heyman (1) examines new data",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "theoretical analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "2b97843dc5089d7066e5ea7344872168"
+      ],
+      "confidence": 0.7,
+      "evidence": "examines new data on the ways",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
       "name": "addiction",
       "attributes": {
-        "context": "Keywords: drugs, addiction"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
-        "dfcba7bbd17284663c80744ea627124f"
-      ]
+        "2b97843dc5089d7066e5ea7344872168"
+      ],
+      "confidence": 0.95,
+      "evidence": "recovery from addiction",
+      "verified": true
     },
     {
-      "id": "ent_002",
-      "type": "Indication",
-      "name": "disease",
+      "id": "E4",
+      "type": "Study",
+      "name": "Satel and Lilienfeld (2)",
       "attributes": {
-        "context": "addiction, disease"
+        "year": null,
+        "design": "theoretical analysis"
       },
       "source_chunk_ids": [
-        "dfcba7bbd17284663c80744ea627124f"
-      ]
+        "2b97843dc5089d7066e5ea7344872168"
+      ],
+      "confidence": 0.8,
+      "evidence": "Satel and Lilienfeld (2)",
+      "verified": true
     },
     {
-      "id": "ent_003",
-      "type": "Indication",
-      "name": "substance abuse",
+      "id": "E5",
+      "type": "Evidence",
+      "name": "historical and clinical data analysis",
       "attributes": {
-        "context": "self-control, substance abuse"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
-        "dfcba7bbd17284663c80744ea627124f"
-      ]
+        "2b97843dc5089d7066e5ea7344872168"
+      ],
+      "confidence": 0.7,
+      "evidence": "drawing on historical and clinical data",
+      "verified": true
     },
     {
-      "id": "ent_004",
-      "type": "Indication",
-      "name": "substance dependence",
+      "id": "E6",
+      "type": "Study",
+      "name": "Ainslie (3)",
       "attributes": {
-        "context": "substance abuse, substance dependence"
+        "year": null,
+        "design": "theoretical analysis"
       },
       "source_chunk_ids": [
-        "dfcba7bbd17284663c80744ea627124f"
-      ]
+        "2b97843dc5089d7066e5ea7344872168"
+      ],
+      "confidence": 0.8,
+      "evidence": "Ainslie (3) reprises his large body of work",
+      "verified": true
     },
     {
-      "id": "ent_005",
-      "type": "Indication",
+      "id": "E7",
+      "type": "Evidence",
+      "name": "theoretical work on choice",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "2b97843dc5089d7066e5ea7344872168"
+      ],
+      "confidence": 0.7,
+      "evidence": "reprises his large body of work",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
       "name": "addiction",
       "attributes": {
-        "context": "recovery from addiction is better predicted"
-      },
-      "source_chunk_ids": [
-        "2b97843dc5089d7066e5ea7344872168"
-      ]
-    },
-    {
-      "id": "ent_006",
-      "type": "Indication",
-      "name": "disease",
-      "attributes": {
-        "context": "compelled to do so by a disease"
-      },
-      "source_chunk_ids": [
-        "2b97843dc5089d7066e5ea7344872168"
-      ]
-    },
-    {
-      "id": "ent_007",
-      "type": "Indication",
-      "name": "Addiction",
-      "attributes": {
-        "context": "in \u201cAddiction and the Brain-Disease Fallacy\u201d"
-      },
-      "source_chunk_ids": [
-        "2b97843dc5089d7066e5ea7344872168"
-      ]
-    },
-    {
-      "id": "ent_008",
-      "type": "Indication",
-      "name": "Brain-Disease Fallacy",
-      "attributes": {
-        "context": "\u201cAddiction and the Brain-Disease Fallacy\u201d directly challenge the disease model"
-      },
-      "source_chunk_ids": [
-        "2b97843dc5089d7066e5ea7344872168"
-      ]
-    },
-    {
-      "id": "ent_009",
-      "type": "Indication",
-      "name": "addictive behavior",
-      "attributes": {
-        "context": "addictive behavior must be understood as a choice"
-      },
-      "source_chunk_ids": [
-        "2b97843dc5089d7066e5ea7344872168"
-      ]
-    },
-    {
-      "id": "ent_010",
-      "type": "Indication",
-      "name": "Addiction",
-      "attributes": {
-        "context": "In \u201cIntertemporal Bargaining in Addiction,\u201d Ainslie (3)"
-      },
-      "source_chunk_ids": [
-        "2b97843dc5089d7066e5ea7344872168"
-      ]
-    },
-    {
-      "id": "ent_011",
-      "type": "Indication",
-      "name": "addictive behavior",
-      "attributes": {
-        "context": "holding addicts accountable for addictive behavior and its consequences"
-      },
-      "source_chunk_ids": [
-        "2b97843dc5089d7066e5ea7344872168"
-      ]
-    },
-    {
-      "id": "ent_012",
-      "type": "Indication",
-      "name": "addiction",
-      "attributes": {
-        "context": "impaired by addiction"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
         "39d11d593bca7af4f5367dd4f27f3627"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "pathologically impaired by addiction",
+      "verified": true
     },
     {
-      "id": "ent_013",
-      "type": "Indication",
-      "name": "addictive consumption",
+      "id": "E2",
+      "type": "Study",
+      "name": "Dill and Holton (4)",
       "attributes": {
-        "context": "typical in addictive consumption"
+        "authors": "Dill and Holton",
+        "year": null,
+        "title": "The Addict In Us All"
       },
       "source_chunk_ids": [
         "39d11d593bca7af4f5367dd4f27f3627"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Dill and Holton\u2019s (4) article \u201cThe Addict In Us All\u201d",
+      "verified": true
     },
     {
-      "id": "ent_014",
-      "type": "PharmEffect",
-      "name": "extreme cravings",
+      "id": "E3",
+      "type": "Study",
+      "name": "Henden et al. (5)",
       "attributes": {
-        "context": "involve extreme cravings for drugs"
+        "authors": "Henden et al.",
+        "year": null,
+        "title": "Addiction: Choice or Compulsion?"
       },
       "source_chunk_ids": [
         "39d11d593bca7af4f5367dd4f27f3627"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Henden et al. (5) in \u201cAddiction: Choice or Compulsion?\u201d",
+      "verified": true
     },
     {
-      "id": "ent_015",
-      "type": "PharmEffect",
+      "id": "E4",
+      "type": "Effect",
+      "name": "extreme cravings for drugs",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "39d11d593bca7af4f5367dd4f27f3627"
+      ],
+      "confidence": 0.85,
+      "evidence": "extreme cravings for drugs",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
       "name": "strong motivation to consume",
       "attributes": {
-        "context": "strong motivation to consume"
+        "level": "behavioral",
+        "valence": "negative"
       },
       "source_chunk_ids": [
         "39d11d593bca7af4f5367dd4f27f3627"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "strong motivation to consume",
+      "verified": true
     },
     {
-      "id": "ent_016",
-      "type": "Indication",
-      "name": "Addiction",
+      "id": "E6",
+      "type": "Effect",
+      "name": "maladaptive behavioral outcomes",
       "attributes": {
-        "context": "in \u201cAddiction: Choice or Compulsion?\u201d"
+        "level": "behavioral",
+        "valence": "negative"
       },
       "source_chunk_ids": [
         "39d11d593bca7af4f5367dd4f27f3627"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "maladaptive and self-destructive behavioral outcomes",
+      "verified": true
     },
     {
-      "id": "ent_017",
-      "type": "Indication",
-      "name": "addictive behavior",
+      "id": "E7",
+      "type": "Effect",
+      "name": "self-destructive behavioral outcomes",
       "attributes": {
-        "context": "addictive behavior can be labeled"
+        "level": "behavioral",
+        "valence": "negative"
       },
       "source_chunk_ids": [
         "39d11d593bca7af4f5367dd4f27f3627"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "maladaptive and self-destructive behavioral outcomes",
+      "verified": true
     },
     {
-      "id": "ent_018",
-      "type": "PharmEffect",
-      "name": "maladaptive and self-destructive behavioral outcomes",
+      "id": "E1",
+      "type": "Condition",
+      "name": "addiction",
       "attributes": {
-        "context": "lead to maladaptive and self-destructive behavioral outcomes"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
-        "39d11d593bca7af4f5367dd4f27f3627"
-      ]
+        "eaeae08c29981780e6d57d6c67eefc11"
+      ],
+      "confidence": 0.95,
+      "evidence": "Addiction is Not a Brain Disease",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "neurological dysfunction",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "eaeae08c29981780e6d57d6c67eefc11"
+      ],
+      "confidence": 0.85,
+      "evidence": "addiction does produce neurological dysfunction",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "alcohol use disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "eaeae08c29981780e6d57d6c67eefc11"
+      ],
+      "confidence": 0.9,
+      "evidence": "How Many People Have Alcohol Use Disorders?",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "chronic alcohol use",
+      "attributes": {
+        "condition_type": "condition"
+      },
+      "source_chunk_ids": [
+        "eaeae08c29981780e6d57d6c67eefc11"
+      ],
+      "confidence": 0.8,
+      "evidence": "negative health correlates of chronic alcohol use",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Flanagan (10)",
+      "attributes": {
+        "year": "10",
+        "authors": "Flanagan"
+      },
+      "source_chunk_ids": [
+        "3dbf3e643329b8afdee7401496b7b750"
+      ],
+      "confidence": 0.9,
+      "evidence": "Flanagan (10) argues",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "addiction",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "3dbf3e643329b8afdee7401496b7b750"
+      ],
+      "confidence": 0.95,
+      "evidence": "human addiction",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Heyman et al. (11)",
+      "attributes": {
+        "year": "11",
+        "authors": "Heyman et al."
+      },
+      "source_chunk_ids": [
+        "3dbf3e643329b8afdee7401496b7b750"
+      ],
+      "confidence": 0.9,
+      "evidence": "Heyman et al. (11) present data",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "illicit drug use",
+      "attributes": {
+        "condition_type": "behavior"
+      },
+      "source_chunk_ids": [
+        "3dbf3e643329b8afdee7401496b7b750"
+      ],
+      "confidence": 0.9,
+      "evidence": "illicit drug use",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Zernig et al. (8)",
+      "attributes": {
+        "authors": "Zernig et al.",
+        "year": null,
+        "design": "experimental animal study"
+      },
+      "source_chunk_ids": [
+        "e20c1fed7e1ba59ef48fd134ce4449f6"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zernig et al.\u2019s (8) article",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "animal behavioral study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "e20c1fed7e1ba59ef48fd134ce4449f6"
+      ],
+      "confidence": 0.85,
+      "evidence": "experimental conditions, rats",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Hagen et al. (9)",
+      "attributes": {
+        "authors": "Hagen et al.",
+        "year": null
+      },
+      "source_chunk_ids": [
+        "e20c1fed7e1ba59ef48fd134ce4449f6"
+      ],
+      "confidence": 0.9,
+      "evidence": "Hagen et al. (9)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "evolutionary view",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "e20c1fed7e1ba59ef48fd134ce4449f6"
+      ],
+      "confidence": 0.8,
+      "evidence": "general evolutionary view of drug use",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "cocaine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e20c1fed7e1ba59ef48fd134ce4449f6"
+      ],
+      "confidence": 0.95,
+      "evidence": "cocaine",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "cannabis",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e20c1fed7e1ba59ef48fd134ce4449f6"
+      ],
+      "confidence": 0.9,
+      "evidence": "cannabis",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "nicotine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e20c1fed7e1ba59ef48fd134ce4449f6"
+      ],
+      "confidence": 0.9,
+      "evidence": "nicotine",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "addiction",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "e20c1fed7e1ba59ef48fd134ce4449f6"
+      ],
+      "confidence": 0.85,
+      "evidence": "cocaine-addicted rats",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "reinforcing and incentive salience",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "e20c1fed7e1ba59ef48fd134ce4449f6"
+      ],
+      "confidence": 0.8,
+      "evidence": "reinforcing and incentive salience neuronal pathways",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Target",
+      "name": "reinforcing and incentive salience neuronal pathways",
+      "attributes": {
+        "target_type": "pathway"
+      },
+      "source_chunk_ids": [
+        "e20c1fed7e1ba59ef48fd134ce4449f6"
+      ],
+      "confidence": 0.75,
+      "evidence": "reinforcing and incentive salience neuronal pathways",
+      "verified": true
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:03.941952+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Heyman (1) examines new data",
+      "source_chunk_ids": [
+        "2b97843dc5089d7066e5ea7344872168"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "theoretical_model"
+      },
+      "confidence": 0.85,
+      "evidence": "recovery from addiction is better predicted",
+      "source_chunk_ids": [
+        "2b97843dc5089d7066e5ea7344872168"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "drawing on historical and clinical data",
+      "source_chunk_ids": [
+        "2b97843dc5089d7066e5ea7344872168"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "theoretical_challenge"
+      },
+      "confidence": 0.85,
+      "evidence": "directly challenge the disease model",
+      "source_chunk_ids": [
+        "2b97843dc5089d7066e5ea7344872168"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "reprises his large body of work",
+      "source_chunk_ids": [
+        "2b97843dc5089d7066e5ea7344872168"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "theoretical_analysis"
+      },
+      "confidence": 0.85,
+      "evidence": "exploring its relevance to questions",
+      "source_chunk_ids": [
+        "2b97843dc5089d7066e5ea7344872168"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "article contrasts ordinary choices with... addictive consumption",
+      "source_chunk_ids": [
+        "39d11d593bca7af4f5367dd4f27f3627"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "involve extreme cravings for drugs",
+      "source_chunk_ids": [
+        "39d11d593bca7af4f5367dd4f27f3627"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "strong motivation to consume",
+      "source_chunk_ids": [
+        "39d11d593bca7af4f5367dd4f27f3627"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "chart a course... by arguing that addictive behavior",
+      "source_chunk_ids": [
+        "39d11d593bca7af4f5367dd4f27f3627"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "lead to maladaptive... behavioral outcomes",
+      "source_chunk_ids": [
+        "39d11d593bca7af4f5367dd4f27f3627"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "lead to... self-destructive behavioral outcomes",
+      "source_chunk_ids": [
+        "39d11d593bca7af4f5367dd4f27f3627"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "confidence": 0.8,
+      "evidence": "addiction does produce neurological dysfunction",
+      "source_chunk_ids": [
+        "eaeae08c29981780e6d57d6c67eefc11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "describes"
+      },
+      "confidence": 0.85,
+      "evidence": "central to understanding human addiction",
+      "source_chunk_ids": [
+        "3dbf3e643329b8afdee7401496b7b750"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "predicts"
+      },
+      "confidence": 0.8,
+      "evidence": "key predictor of illicit drug use",
+      "source_chunk_ids": [
+        "3dbf3e643329b8afdee7401496b7b750"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "experimental conditions, rats",
+      "source_chunk_ids": [
+        "e20c1fed7e1ba59ef48fd134ce4449f6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "general evolutionary view of drug use",
+      "source_chunk_ids": [
+        "e20c1fed7e1ba59ef48fd134ce4449f6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "rats will also forego cocaine",
+      "source_chunk_ids": [
+        "e20c1fed7e1ba59ef48fd134ce4449f6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "behavioral choice"
+      },
+      "confidence": 0.8,
+      "evidence": "cocaine-addicted rats",
+      "source_chunk_ids": [
+        "e20c1fed7e1ba59ef48fd134ce4449f6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "context-dependent"
+      },
+      "confidence": 0.75,
+      "evidence": "reinforcing and incentive salience",
+      "source_chunk_ids": [
+        "e20c1fed7e1ba59ef48fd134ce4449f6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "cannabis",
+      "source_chunk_ids": [
+        "e20c1fed7e1ba59ef48fd134ce4449f6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "cocaine",
+      "source_chunk_ids": [
+        "e20c1fed7e1ba59ef48fd134ce4449f6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "nicotine",
+      "source_chunk_ids": [
+        "e20c1fed7e1ba59ef48fd134ce4449f6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "ACTS_ON",
+      "source_entity_id": "E5",
+      "target_entity_id": "E10",
+      "attributes": {
+        "action": "activates/sensitizes",
+        "assertion": "refutes"
+      },
+      "confidence": 0.7,
+      "evidence": "not determined by the ability of a drug to directly activate and/or sensitize",
+      "source_chunk_ids": [
+        "e20c1fed7e1ba59ef48fd134ce4449f6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

@@ -1,12 +1,3702 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "71966000e650a8a6a193f633a17214dcc2dfca2b94d63eec6aa55428b853c0ea",
-  "extracted_at": "2026-02-01T08:56:30.877161+00:00",
-  "extractor": "legacy-migration",
-  "entities": [],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.079629+00:00",
-    "original_file": "entities.json"
-  }
+  "entities": [
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Aizoaceae",
+      "attributes": {
+        "rank": "family"
+      },
+      "source_chunk_ids": [
+        "b0ce1d87e2ae6190f217cb3268c04770"
+      ],
+      "confidence": 0.95,
+      "evidence": "Aizoaceae is one of the most important",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "morphological and anatomical study of Aizoaceae",
+      "attributes": {
+        "design": "observational study",
+        "sample_size": 27
+      },
+      "source_chunk_ids": [
+        "b0ce1d87e2ae6190f217cb3268c04770"
+      ],
+      "confidence": 0.85,
+      "evidence": "In this study, 27 species were collected",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "b0ce1d87e2ae6190f217cb3268c04770"
+      ],
+      "confidence": 0.8,
+      "evidence": "morphological and anatomical features",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b0ce1d87e2ae6190f217cb3268c04770"
+      ],
+      "confidence": 0.9,
+      "evidence": "morphological and anatomical features of leaves",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Aizoaceae",
+      "attributes": {
+        "rank": "family"
+      },
+      "source_chunk_ids": [
+        "c0e1f3bbfee64d18a957730c2d582ec3"
+      ],
+      "confidence": 0.95,
+      "evidence": "Aizoaceae Rudolphi is a family",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Centrospermae",
+      "attributes": {
+        "rank": "order"
+      },
+      "source_chunk_ids": [
+        "c0e1f3bbfee64d18a957730c2d582ec3"
+      ],
+      "confidence": 0.8,
+      "evidence": "belongs to Centrospermae",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Caryophyllales",
+      "attributes": {
+        "rank": "order"
+      },
+      "source_chunk_ids": [
+        "c0e1f3bbfee64d18a957730c2d582ec3"
+      ],
+      "confidence": 0.8,
+      "evidence": "Order: Caryophyllales",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Aizoon group",
+      "attributes": {
+        "rank": "group"
+      },
+      "source_chunk_ids": [
+        "c0e1f3bbfee64d18a957730c2d582ec3"
+      ],
+      "confidence": 0.7,
+      "evidence": "Aizoon group",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Mesembryanthemum group",
+      "attributes": {
+        "rank": "group"
+      },
+      "source_chunk_ids": [
+        "c0e1f3bbfee64d18a957730c2d582ec3"
+      ],
+      "confidence": 0.7,
+      "evidence": "Mesembryanthemum group",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Tetragonia group",
+      "attributes": {
+        "rank": "group"
+      },
+      "source_chunk_ids": [
+        "c0e1f3bbfee64d18a957730c2d582ec3"
+      ],
+      "confidence": 0.7,
+      "evidence": "Tetragonia group",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Sesuvium group",
+      "attributes": {
+        "rank": "group"
+      },
+      "source_chunk_ids": [
+        "c0e1f3bbfee64d18a957730c2d582ec3"
+      ],
+      "confidence": 0.7,
+      "evidence": "Sesuvium group",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Taxon",
+      "name": "Mollogo group",
+      "attributes": {
+        "rank": "group"
+      },
+      "source_chunk_ids": [
+        "c0e1f3bbfee64d18a957730c2d582ec3"
+      ],
+      "confidence": 0.7,
+      "evidence": "Mollogo group",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Aizoaceae",
+      "attributes": {
+        "rank": "family"
+      },
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "confidence": 0.95,
+      "evidence": "Aizoaceae leaves",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Metcalfe and Chalk (1957)",
+      "attributes": {
+        "year": 1957
+      },
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "confidence": 0.9,
+      "evidence": "Metcalfe and Chalk (1957)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Bhambie et al. (1977)",
+      "attributes": {
+        "year": 1977
+      },
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "confidence": 0.9,
+      "evidence": "Bhambie et al., 1977",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Dioni (2004)",
+      "attributes": {
+        "year": 2004
+      },
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "confidence": 0.9,
+      "evidence": "Dioni, 2004",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Kluge and Ting (1978)",
+      "attributes": {
+        "year": 1978
+      },
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "confidence": 0.9,
+      "evidence": "Kluge and Ting, 1978",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "L\u00fcttge and Ball (1977)",
+      "attributes": {
+        "year": 1977
+      },
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "confidence": 0.9,
+      "evidence": "L\u00fcttge and Ball, 1977",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Lampranthus",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "confidence": 0.85,
+      "evidence": "Lampranthus",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Taxon",
+      "name": "Dorotheanthus",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "confidence": 0.85,
+      "evidence": "Dorotheanthus",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Taxon",
+      "name": "Mesembryanthemum",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "confidence": 0.85,
+      "evidence": "Mesembryanthemum",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Taxon",
+      "name": "Ruscia",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "confidence": 0.85,
+      "evidence": "Ruscia",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Taxon",
+      "name": "Carpobrotus",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "confidence": 0.85,
+      "evidence": "Carpobrotus",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Taxon",
+      "name": "Tetragonia",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "confidence": 0.85,
+      "evidence": "Tetragonia",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "TraditionalUse",
+      "name": "vegetable use",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "confidence": 0.8,
+      "evidence": "used as vegetables",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Study",
+      "name": "current study",
+      "attributes": {
+        "design": "morphological and anatomical analysis"
+      },
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "confidence": 0.75,
+      "evidence": "This study aimed to use the morphological and anatomical characteristics",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Evidence",
+      "name": "anatomical study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "confidence": 0.7,
+      "evidence": "anatomical characteristics of leaves",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "82f95035b0fd20c53a6a5c96d386dcfb"
+      ],
+      "confidence": 0.3,
+      "evidence": "Fresh specimens used in this study",
+      "verified": false
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "study on Sceletium tortuosum specimens",
+      "attributes": {},
+      "source_chunk_ids": [
+        "82f95035b0fd20c53a6a5c96d386dcfb"
+      ],
+      "confidence": 0.8,
+      "evidence": "Fresh specimens used in this study",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2,
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "82f95035b0fd20c53a6a5c96d386dcfb"
+      ],
+      "confidence": 0.6,
+      "evidence": "Fresh specimens used in this study",
+      "verified": false
+    },
+    {
+      "id": "E1",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3f55369a3a3d8220219735244725cd22"
+      ],
+      "confidence": 0.9,
+      "evidence": "their leaves were analyzed",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Preparation",
+      "name": "fixation in FAA solution",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3f55369a3a3d8220219735244725cd22"
+      ],
+      "confidence": 0.8,
+      "evidence": "fixed in (FAA solution) formalin-acetic acid-alcohol",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Aizoon canariense",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Aizoon canariense L.",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Aloinopsis malherbei",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Aloinopsis malherbei",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Aptenia cordifolia",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Aptenia cordifolia",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Carpobrotus acinaciformis",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Carpobrotus acinaciformis",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Carpobrotus edulis",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Carpobrotus edulis",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Cheiridopsis marothii",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Cheiridopsis marothii",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Corpuscularia lehmannii",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Corpuscularia lehmannii",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Taxon",
+      "name": "Delosperma echinatum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Delosperma echinatum",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Taxon",
+      "name": "Drosanthemum floribundum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Drosanthemum floribundum",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Taxon",
+      "name": "Faucaria bosscheana",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Faucaria bosscheana",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Taxon",
+      "name": "Faucaria tuberculosa",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Faucaria tuberculosa",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Taxon",
+      "name": "Fenestraria rhopalophylla",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Fenestraria rhopalophylla",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Taxon",
+      "name": "Glottiphyllum linguiforme",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Glottiphyllum linguiforme",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Taxon",
+      "name": "Hereroa incurva",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Hereroa incurva",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Taxon",
+      "name": "Lampranthus aureus",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Lampranthus aureus",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Taxon",
+      "name": "Lampranthus spectabilis",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Lampranthus spectabilis",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "Taxon",
+      "name": "Lithops aucampiae",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Lithops aucampiae",
+      "verified": true
+    },
+    {
+      "id": "E18",
+      "type": "Taxon",
+      "name": "Lithops pseudotruncatella",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Lithops pseudotruncatella",
+      "verified": true
+    },
+    {
+      "id": "E19",
+      "type": "Taxon",
+      "name": "Mesembryanthemum crystallinum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembryanthemum crystallinum",
+      "verified": true
+    },
+    {
+      "id": "E20",
+      "type": "Taxon",
+      "name": "Mesembryanthemum forsskalei",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembryanthemum forsskalei",
+      "verified": true
+    },
+    {
+      "id": "E21",
+      "type": "Taxon",
+      "name": "Mesembryanthemum nodiflorum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembryanthemum nodiflorum",
+      "verified": true
+    },
+    {
+      "id": "E22",
+      "type": "Taxon",
+      "name": "Oscularia deltoides",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Oscularia deltoides",
+      "verified": true
+    },
+    {
+      "id": "E23",
+      "type": "Taxon",
+      "name": "Pleiospilos nelli",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Pleiospilos nelli",
+      "verified": true
+    },
+    {
+      "id": "E24",
+      "type": "Taxon",
+      "name": "Sesuvium portulacastrum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sesuvium portulacastrum",
+      "verified": true
+    },
+    {
+      "id": "E25",
+      "type": "Taxon",
+      "name": "Tanquana prismatic",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Tanquana prismatic",
+      "verified": true
+    },
+    {
+      "id": "E26",
+      "type": "Taxon",
+      "name": "Trianthema portulacastrum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Trianthema portulacastrum",
+      "verified": true
+    },
+    {
+      "id": "E27",
+      "type": "Taxon",
+      "name": "Zaleya pentandra",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c78eae118d31641fa2e6701bcaf00fe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zaleya pentandra",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Trianthema portulacastrum",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "confidence": 0.95,
+      "evidence": "Trianthema portulacastrum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Zaleya pentandra",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zaleya pentandra",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Lithops",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "confidence": 0.95,
+      "evidence": "genus Lithops",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Aptenia cordifolia",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "confidence": 0.95,
+      "evidence": "Aptenia cordifolia",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Aizoon canariense",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "confidence": 0.95,
+      "evidence": "Aizoon canariense",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Faucaria bosscheana",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "confidence": 0.95,
+      "evidence": "Faucaria bosscheana",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Carpobrotus acinaciformis",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "confidence": 0.95,
+      "evidence": "Carpobrotus acinaciformis",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Taxon",
+      "name": "Fenestraria rhopalophylla",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "confidence": 0.95,
+      "evidence": "Fenestraria rhopalophylla",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Taxon",
+      "name": "Faucaria tuberculosa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "confidence": 0.95,
+      "evidence": "Faucaria tuberculosa",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Taxon",
+      "name": "Glottiphyllum linguiforme",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "confidence": 0.95,
+      "evidence": "Glottiphyllum linguiforme",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Taxon",
+      "name": "Delosperma echinatum",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "confidence": 0.95,
+      "evidence": "Delosperma echinatum",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Taxon",
+      "name": "Pleiospilos nellii",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "confidence": 0.95,
+      "evidence": "Pleiospilos nellii",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Taxon",
+      "name": "Aloinopsis malherbei",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "confidence": 0.95,
+      "evidence": "Aloinopsis malherbei",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "confidence": 0.9,
+      "evidence": "leaves",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Fenestraria rhopalophylla",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2190b58e05fc68ed8f167e9e8f1ebfee"
+      ],
+      "confidence": 0.95,
+      "evidence": "Fenestraria rhopalophylla",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Lithops aucampiae",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2190b58e05fc68ed8f167e9e8f1ebfee"
+      ],
+      "confidence": 0.95,
+      "evidence": "Lithops aucampiae",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Lithops pseudotruncatella",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2190b58e05fc68ed8f167e9e8f1ebfee"
+      ],
+      "confidence": 0.95,
+      "evidence": "Lithops pseudotruncatella",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Delosperma echinatum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2190b58e05fc68ed8f167e9e8f1ebfee"
+      ],
+      "confidence": 0.95,
+      "evidence": "Delosperma echinatum",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Aloinopsis malherbei",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2190b58e05fc68ed8f167e9e8f1ebfee"
+      ],
+      "confidence": 0.95,
+      "evidence": "Aloinopsis malherbei",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Carpobrotus acinaciformis",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2190b58e05fc68ed8f167e9e8f1ebfee"
+      ],
+      "confidence": 0.95,
+      "evidence": "Carpobrotus acinaciformis",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Drosanthemum floribundum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2190b58e05fc68ed8f167e9e8f1ebfee"
+      ],
+      "confidence": 0.95,
+      "evidence": "Drosanthemum floribundum",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Taxon",
+      "name": "Lampranthus aureus",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2190b58e05fc68ed8f167e9e8f1ebfee"
+      ],
+      "confidence": 0.95,
+      "evidence": "Lampranthus aureus",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Taxon",
+      "name": "Pleiospilos nellii",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2190b58e05fc68ed8f167e9e8f1ebfee"
+      ],
+      "confidence": 0.95,
+      "evidence": "Pleiospilos nellii",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Taxon",
+      "name": "Tanquana prismatica",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2190b58e05fc68ed8f167e9e8f1ebfee"
+      ],
+      "confidence": 0.95,
+      "evidence": "Tanquana prismatica",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2190b58e05fc68ed8f167e9e8f1ebfee"
+      ],
+      "confidence": 0.9,
+      "evidence": "triquetrous leaves",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Carpobrotus acinaciformis",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "359e989624c1fb2122bc5185584654ba"
+      ],
+      "confidence": 0.95,
+      "evidence": "Carpobrotus acinaciformis",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Pleiospilos nellii",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "359e989624c1fb2122bc5185584654ba"
+      ],
+      "confidence": 0.95,
+      "evidence": "Pleiospilos nellii",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Lithops pseudotruncatella",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "359e989624c1fb2122bc5185584654ba"
+      ],
+      "confidence": 0.95,
+      "evidence": "Lithops pseudotruncatella",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Sesuvium portulacastrum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "359e989624c1fb2122bc5185584654ba"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sesuvium portulacastrum",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Aloinopsis malherbei",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "359e989624c1fb2122bc5185584654ba"
+      ],
+      "confidence": 0.9,
+      "evidence": "Aloinopsis malherbei",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Aptenia cordifolia",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "confidence": 0.95,
+      "evidence": "Aptenia cordifolia",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Lampranthus aureus",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "confidence": 0.95,
+      "evidence": "Lampranthus aureus",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Faucaria tuberculosa",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "confidence": 0.95,
+      "evidence": "Faucaria tuberculosa",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Trianthema portulacastrum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "confidence": 0.95,
+      "evidence": "Trianthema portulacastrum",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Carpobrotus edulis",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "confidence": 0.95,
+      "evidence": "Carpobrotus edulis",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Tanquana prismatica",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "confidence": 0.95,
+      "evidence": "Tanquana prismatica",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Lithops pseudotruncatella",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "confidence": 0.95,
+      "evidence": "Lithops pseudotruncatella",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "PlantPart",
+      "name": "mesophyll tissue",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesophyll tissue",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "PlantPart",
+      "name": "storage cells",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "confidence": 0.9,
+      "evidence": "Storage cells",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "PlantPart",
+      "name": "tannin sacs",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "confidence": 0.9,
+      "evidence": "Tannin sacs",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "PlantPart",
+      "name": "calcium oxalate crystals",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "confidence": 0.9,
+      "evidence": "calcium oxalate crystals",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "PlantPart",
+      "name": "fiber groups",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "confidence": 0.9,
+      "evidence": "Fiber groups",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Effect",
+      "name": "homogenous mesophyll",
+      "attributes": {
+        "level": "cellular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "confidence": 0.8,
+      "evidence": "mesophyll tissue was homogenous",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Effect",
+      "name": "heterogenous mesophyll",
+      "attributes": {
+        "level": "cellular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "confidence": 0.8,
+      "evidence": "it was heterogenous",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Effect",
+      "name": "connective mesophyll",
+      "attributes": {
+        "level": "cellular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "confidence": 0.8,
+      "evidence": "mesophyll was connective",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Effect",
+      "name": "presence of storage cells",
+      "attributes": {
+        "level": "cellular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "confidence": 0.8,
+      "evidence": "Storage cells were present",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "Effect",
+      "name": "absence of storage cells",
+      "attributes": {
+        "level": "cellular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "confidence": 0.8,
+      "evidence": "they were absent",
+      "verified": true
+    },
+    {
+      "id": "E18",
+      "type": "Effect",
+      "name": "presence of tannin sacs",
+      "attributes": {
+        "level": "cellular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "confidence": 0.8,
+      "evidence": "Tannin sacs were observed",
+      "verified": true
+    },
+    {
+      "id": "E19",
+      "type": "Effect",
+      "name": "absence of tannin sacs",
+      "attributes": {
+        "level": "cellular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "confidence": 0.8,
+      "evidence": "they were absent",
+      "verified": true
+    },
+    {
+      "id": "E20",
+      "type": "Effect",
+      "name": "presence of raphides",
+      "attributes": {
+        "level": "cellular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "confidence": 0.8,
+      "evidence": "raphides, which were present",
+      "verified": true
+    },
+    {
+      "id": "E21",
+      "type": "Effect",
+      "name": "presence of druses",
+      "attributes": {
+        "level": "cellular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "confidence": 0.8,
+      "evidence": "druses, which were not common",
+      "verified": true
+    },
+    {
+      "id": "E22",
+      "type": "Effect",
+      "name": "supportive fiber groups",
+      "attributes": {
+        "level": "cellular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "confidence": 0.8,
+      "evidence": "Fiber groups had supportive tissue",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Tanquana prismatica",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5d063b635c75c8d2273a85fd8f0b5628"
+      ],
+      "confidence": 0.9,
+      "evidence": "Tanquana prismatica (Fig. 29)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Faucaria tuberculosa",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5d063b635c75c8d2273a85fd8f0b5628"
+      ],
+      "confidence": 0.9,
+      "evidence": "Faucaria tuberculosa (Fig. 27)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Zaleya pentandra",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5d063b635c75c8d2273a85fd8f0b5628"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zaleya pentandra",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Sesuvium portulacastrum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5d063b635c75c8d2273a85fd8f0b5628"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sesuvium portulacastrum",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Trianthema portulacastrum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5d063b635c75c8d2273a85fd8f0b5628"
+      ],
+      "confidence": 0.9,
+      "evidence": "Trianthema portulacastrum (Fig. 23)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "PlantPart",
+      "name": "vascular tissues",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5d063b635c75c8d2273a85fd8f0b5628"
+      ],
+      "confidence": 0.8,
+      "evidence": "Vascular tissues",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "PlantPart",
+      "name": "phloem",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5d063b635c75c8d2273a85fd8f0b5628"
+      ],
+      "confidence": 0.8,
+      "evidence": "poorly developed phloem",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "PlantPart",
+      "name": "vascular bundles",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5d063b635c75c8d2273a85fd8f0b5628"
+      ],
+      "confidence": 0.8,
+      "evidence": "Vascular bundles",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "PlantPart",
+      "name": "Kranz unit",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5d063b635c75c8d2273a85fd8f0b5628"
+      ],
+      "confidence": 0.7,
+      "evidence": "Kranz unit",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "PlantPart",
+      "name": "collenchyma sheaths",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5d063b635c75c8d2273a85fd8f0b5628"
+      ],
+      "confidence": 0.7,
+      "evidence": "Collenchyma sheaths",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Carpobrotus edulis",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5ac263f7f86fc540888ade27fcef97c2"
+      ],
+      "confidence": 0.9,
+      "evidence": "Carpobrotus edulis",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Trianthema portulacastrum",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5ac263f7f86fc540888ade27fcef97c2"
+      ],
+      "confidence": 0.9,
+      "evidence": "Trianthema portulacastrum",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Mesembryanthemum",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "confidence": 0.95,
+      "evidence": "genus Mesembryanthemum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Aizoon canariense",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "confidence": 0.95,
+      "evidence": "Aizoon canariense",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Trianthema portulacastrum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "confidence": 0.95,
+      "evidence": "Trianthema portulacastrum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Zaleya pentandra",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zaleya pentandra",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Faucaria",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "confidence": 0.95,
+      "evidence": "genus Faucaria",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Aizoaceae",
+      "attributes": {
+        "rank": "family"
+      },
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "confidence": 0.95,
+      "evidence": "Aizoaceae plants",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Cheiridopsis albo-oculata",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "confidence": 0.95,
+      "evidence": "Cheiridopsis albo-oculata",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "confidence": 0.9,
+      "evidence": "leaves",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Groen and Van der (1999)",
+      "attributes": {
+        "year": 1999
+      },
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "confidence": 0.85,
+      "evidence": "Groen and Van der (1999)",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "Hartmann (2001)",
+      "attributes": {
+        "year": 2001
+      },
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "confidence": 0.85,
+      "evidence": "Hartmann (2001)",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Study",
+      "name": "Clak et al. (2015)",
+      "attributes": {
+        "year": 2015
+      },
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "confidence": 0.85,
+      "evidence": "Clak et al. (2015)",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Study",
+      "name": "Judd et al. (2016)",
+      "attributes": {
+        "year": 2016
+      },
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "confidence": 0.85,
+      "evidence": "Judd et al. (2016)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Lithops aucampiae",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "07703962e9443bc1afe5d45f9c38eb33"
+      ],
+      "confidence": 0.95,
+      "evidence": "Lithops aucampiae",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Lithops pseudotruncatella",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "07703962e9443bc1afe5d45f9c38eb33"
+      ],
+      "confidence": 0.95,
+      "evidence": "Lithops pseudotruncatella",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Fenestraria rhopalophylla",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "07703962e9443bc1afe5d45f9c38eb33"
+      ],
+      "confidence": 0.95,
+      "evidence": "Fenestraria rhopalophylla",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Glottiphyllum linguiforme",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "07703962e9443bc1afe5d45f9c38eb33"
+      ],
+      "confidence": 0.95,
+      "evidence": "Glottiphyllum linguiforme",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Lampranthus spectabilis",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "07703962e9443bc1afe5d45f9c38eb33"
+      ],
+      "confidence": 0.95,
+      "evidence": "Lampranthus spectabilis",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Lampranthus aureus",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "07703962e9443bc1afe5d45f9c38eb33"
+      ],
+      "confidence": 0.95,
+      "evidence": "Lampranthus aureus",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Carpobrotus edulis",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "07703962e9443bc1afe5d45f9c38eb33"
+      ],
+      "confidence": 0.95,
+      "evidence": "Carpobrotus edulis",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Taxon",
+      "name": "Hereroa incurve",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "07703962e9443bc1afe5d45f9c38eb33"
+      ],
+      "confidence": 0.95,
+      "evidence": "Hereroa incurve",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Taxon",
+      "name": "Faucaria tuberculosa",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "07703962e9443bc1afe5d45f9c38eb33"
+      ],
+      "confidence": 0.95,
+      "evidence": "Faucaria tuberculosa",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Taxon",
+      "name": "Faucaria bosscheana",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "07703962e9443bc1afe5d45f9c38eb33"
+      ],
+      "confidence": 0.95,
+      "evidence": "Faucaria bosscheana",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Taxon",
+      "name": "Tanquana prismatica",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "07703962e9443bc1afe5d45f9c38eb33"
+      ],
+      "confidence": 0.95,
+      "evidence": "Tanquana prismatica",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Taxon",
+      "name": "Corpuscularia lehmannii",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "07703962e9443bc1afe5d45f9c38eb33"
+      ],
+      "confidence": 0.95,
+      "evidence": "Corpuscularia lehmannii",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Taxon",
+      "name": "Pleiospilos nellii",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "07703962e9443bc1afe5d45f9c38eb33"
+      ],
+      "confidence": 0.95,
+      "evidence": "Pleiospilos nellii",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Taxon",
+      "name": "Cheiridopsis marothii",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "07703962e9443bc1afe5d45f9c38eb33"
+      ],
+      "confidence": 0.95,
+      "evidence": "Cheiridopsis marothii",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Taxon",
+      "name": "Carpobrotus acinaciformis",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "07703962e9443bc1afe5d45f9c38eb33"
+      ],
+      "confidence": 0.95,
+      "evidence": "Carpobrotus acinaciformis",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Taxon",
+      "name": "Oscularia deltoidea",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "07703962e9443bc1afe5d45f9c38eb33"
+      ],
+      "confidence": 0.95,
+      "evidence": "Oscularia deltoidea",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "Taxon",
+      "name": "Aloinopsis malherbei",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "07703962e9443bc1afe5d45f9c38eb33"
+      ],
+      "confidence": 0.95,
+      "evidence": "Aloinopsis malherbei",
+      "verified": true
+    },
+    {
+      "id": "E18",
+      "type": "Taxon",
+      "name": "Delosperma echinatum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "07703962e9443bc1afe5d45f9c38eb33"
+      ],
+      "confidence": 0.95,
+      "evidence": "Delosperma echinatum",
+      "verified": true
+    },
+    {
+      "id": "E19",
+      "type": "Taxon",
+      "name": "Drosanthemum floribundum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "07703962e9443bc1afe5d45f9c38eb33"
+      ],
+      "confidence": 0.95,
+      "evidence": "Drosanthemum floribundum",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Mesembryanthemum forsskalei",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "33cfc373e9135616dd79fa780bbe529e"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mesembryanthemum forsskalei",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "M. nodiflorum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "33cfc373e9135616dd79fa780bbe529e"
+      ],
+      "confidence": 0.9,
+      "evidence": "M. nodiflorum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "M. crystallinum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "33cfc373e9135616dd79fa780bbe529e"
+      ],
+      "confidence": 0.9,
+      "evidence": "M. crystallinum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Aptenia cordifolia",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "33cfc373e9135616dd79fa780bbe529e"
+      ],
+      "confidence": 0.9,
+      "evidence": "Aptenia cordifolia",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33cfc373e9135616dd79fa780bbe529e"
+      ],
+      "confidence": 0.95,
+      "evidence": "leaves heterophyllus",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Aizoon",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "50a5308c70c1a8cc26db00bffd30b23b"
+      ],
+      "confidence": 0.95,
+      "evidence": "genus Aizoon",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Sesuvium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "50a5308c70c1a8cc26db00bffd30b23b"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sesuvium",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Trianthema",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "50a5308c70c1a8cc26db00bffd30b23b"
+      ],
+      "confidence": 0.95,
+      "evidence": "Trianthema",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Zaleya",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "50a5308c70c1a8cc26db00bffd30b23b"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zaleya",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Aizooideae",
+      "attributes": {
+        "rank": "subfamily"
+      },
+      "source_chunk_ids": [
+        "50a5308c70c1a8cc26db00bffd30b23b"
+      ],
+      "confidence": 0.9,
+      "evidence": "subfamily Aizooideae",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Sesuvioidae",
+      "attributes": {
+        "rank": "subfamily"
+      },
+      "source_chunk_ids": [
+        "50a5308c70c1a8cc26db00bffd30b23b"
+      ],
+      "confidence": 0.9,
+      "evidence": "subfamily Sesuvioidae",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "morphological and anatomical study",
+      "attributes": {
+        "design": "observational study"
+      },
+      "source_chunk_ids": [
+        "50a5308c70c1a8cc26db00bffd30b23b"
+      ],
+      "confidence": 0.8,
+      "evidence": "Studies have shown",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "morphological and anatomical evidence",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "50a5308c70c1a8cc26db00bffd30b23b"
+      ],
+      "confidence": 0.75,
+      "evidence": "Studies have shown",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "PlantPart",
+      "name": "leaf",
+      "attributes": {},
+      "source_chunk_ids": [
+        "50a5308c70c1a8cc26db00bffd30b23b"
+      ],
+      "confidence": 0.85,
+      "evidence": "leaf petiolate, leaf base, leaf margin, and leaf texture",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "morphological similarity",
+      "attributes": {
+        "level": "molecular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "50a5308c70c1a8cc26db00bffd30b23b"
+      ],
+      "confidence": 0.8,
+      "evidence": "clear similarity between the morphological features",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "anatomical similarity",
+      "attributes": {
+        "level": "cellular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "50a5308c70c1a8cc26db00bffd30b23b"
+      ],
+      "confidence": 0.8,
+      "evidence": "similarities in their anatomical features",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Mesembryanthemoideae",
+      "attributes": {
+        "rank": "subfamily"
+      },
+      "source_chunk_ids": [
+        "0de6f14cbc558ce52a26ff6bd85d7f01"
+      ],
+      "confidence": 0.9,
+      "evidence": "subfamily Mesembryanthemoideae",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Ruschioideae",
+      "attributes": {
+        "rank": "subfamily"
+      },
+      "source_chunk_ids": [
+        "0de6f14cbc558ce52a26ff6bd85d7f01"
+      ],
+      "confidence": 0.9,
+      "evidence": "subfamily Ruschioideae",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Delosperma",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "0de6f14cbc558ce52a26ff6bd85d7f01"
+      ],
+      "confidence": 0.85,
+      "evidence": "Delosperma",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Lithops",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "0de6f14cbc558ce52a26ff6bd85d7f01"
+      ],
+      "confidence": 0.85,
+      "evidence": "Lithops",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Drosanthemum",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "0de6f14cbc558ce52a26ff6bd85d7f01"
+      ],
+      "confidence": 0.85,
+      "evidence": "Drosanthemum",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Aloiopsis",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "0de6f14cbc558ce52a26ff6bd85d7f01"
+      ],
+      "confidence": 0.85,
+      "evidence": "Aloiopsis",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0de6f14cbc558ce52a26ff6bd85d7f01"
+      ],
+      "confidence": 0.8,
+      "evidence": "succulent leaves",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "CompoundClass",
+      "name": "tannins",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0de6f14cbc558ce52a26ff6bd85d7f01"
+      ],
+      "confidence": 0.75,
+      "evidence": "tannin sacs",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "CompoundClass",
+      "name": "raphide crystals",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0de6f14cbc558ce52a26ff6bd85d7f01"
+      ],
+      "confidence": 0.75,
+      "evidence": "raphide crystals",
+      "verified": true
+    }
+  ],
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "study of morphological and anatomical features",
+      "source_chunk_ids": [
+        "b0ce1d87e2ae6190f217cb3268c04770"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "27 species were collected from Aizoaceae",
+      "source_chunk_ids": [
+        "b0ce1d87e2ae6190f217cb3268c04770"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "morphological and anatomical features of leaves",
+      "source_chunk_ids": [
+        "b0ce1d87e2ae6190f217cb3268c04770"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "observed by Metcalfe and Chalk (1957)",
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Bhambie et al., 1977",
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Dioni, 2004",
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Kluge and Ting, 1978",
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "L\u00fcttge and Ball, 1977",
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E12",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "Tetragonia are used as vegetables",
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "This study aimed to use the morphological and anatomical characteristics",
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E14",
+      "target_entity_id": "E15",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "anatomical characteristics of leaves",
+      "source_chunk_ids": [
+        "cce68bc268c89cd95f2f971fa81154d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Fresh specimens used in this study",
+      "source_chunk_ids": [
+        "82f95035b0fd20c53a6a5c96d386dcfb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Fresh specimens used in this study",
+      "source_chunk_ids": [
+        "82f95035b0fd20c53a6a5c96d386dcfb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Trianthema portulacastrum had cauline leaves",
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E2",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Zaleya pentandra had petiolate leaves",
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E3",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Lithops had radical leaves",
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_PART",
+      "source_entity_id": "E4",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Aptenia cordifolia had opposite leaves",
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_PART",
+      "source_entity_id": "E5",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Aizoon canariense had alternate leaves",
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_PART",
+      "source_entity_id": "E6",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Faucaria bosscheana had sessile leaves",
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_PART",
+      "source_entity_id": "E7",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Carpobrotus acinaciformis had connate leaf base",
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_PART",
+      "source_entity_id": "E8",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Fenestraria rhopalophylla had clavate leaves",
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_PART",
+      "source_entity_id": "E9",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Faucaria tuberculosa had keel leaves",
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "HAS_PART",
+      "source_entity_id": "E10",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Glottiphyllum linguiforme had linear leaves",
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "HAS_PART",
+      "source_entity_id": "E11",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Delosperma echinatum had ovate leaves",
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "HAS_PART",
+      "source_entity_id": "E12",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Pleiospilos nellii had semi globose leaves",
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "HAS_PART",
+      "source_entity_id": "E13",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Aloinopsis malherbei had spatulate leaves",
+      "source_chunk_ids": [
+        "9910ce9a4a0642457187075b77ac8778"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E10",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "triquetrous leaves, such as in the case of Tanquana prismatica",
+      "source_chunk_ids": [
+        "2190b58e05fc68ed8f167e9e8f1ebfee"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Aptenia cordifolia (Fig. 22)",
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Lampranthus aureus (Fig. 26)",
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E3",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Faucaria tuberculosa (Fig. 27)",
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_PART",
+      "source_entity_id": "E4",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Trianthema portulacastrum (Fig. 23)",
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_PART",
+      "source_entity_id": "E5",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Carpobrotus edulis (Fig. 28)",
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_PART",
+      "source_entity_id": "E6",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Tanquana prismatica (Fig. 29)",
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_PART",
+      "source_entity_id": "E2",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Lampranthus aureus (Fig. 26)",
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_PART",
+      "source_entity_id": "E4",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Trianthema portulacastrum (Fig. 23)",
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_PART",
+      "source_entity_id": "E7",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Lithops pseudotruncatella (Fig. 30)",
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E13",
+      "attributes": {
+        "outcome": "present"
+      },
+      "confidence": 0.75,
+      "evidence": "Aptenia cordifolia (Fig. 22)",
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E14",
+      "attributes": {
+        "outcome": "present"
+      },
+      "confidence": 0.75,
+      "evidence": "Lampranthus aureus (Fig. 26)",
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E15",
+      "attributes": {
+        "outcome": "present"
+      },
+      "confidence": 0.75,
+      "evidence": "Aptenia cordifolia and Lampranthus aureus",
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E15",
+      "attributes": {
+        "outcome": "present"
+      },
+      "confidence": 0.75,
+      "evidence": "Aptenia cordifolia and Lampranthus aureus",
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E16",
+      "attributes": {
+        "outcome": "present"
+      },
+      "confidence": 0.75,
+      "evidence": "Faucaria tuberculosa (Fig. 27)",
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E17",
+      "attributes": {
+        "outcome": "absent"
+      },
+      "confidence": 0.75,
+      "evidence": "Trianthema portulacastrum (Fig. 23)",
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E18",
+      "attributes": {
+        "outcome": "present"
+      },
+      "confidence": 0.75,
+      "evidence": "Carpobrotus edulis (Fig. 28)",
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R17",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E19",
+      "attributes": {
+        "outcome": "absent"
+      },
+      "confidence": 0.75,
+      "evidence": "Tanquana prismatica (Fig. 29)",
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R18",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E20",
+      "attributes": {
+        "outcome": "present"
+      },
+      "confidence": 0.75,
+      "evidence": "Lampranthus aureus (Fig. 26)",
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R19",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E21",
+      "attributes": {
+        "outcome": "present"
+      },
+      "confidence": 0.75,
+      "evidence": "Trianthema portulacastrum (Fig. 23)",
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R20",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E22",
+      "attributes": {
+        "outcome": "present"
+      },
+      "confidence": 0.75,
+      "evidence": "Lithops pseudotruncatella (Fig. 30)",
+      "source_chunk_ids": [
+        "5ff7a23f3b0c1492849eac4dec226da7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Vascular bundles were single in most of the examined taxa, such as Tanquana prismatica",
+      "source_chunk_ids": [
+        "5d063b635c75c8d2273a85fd8f0b5628"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "they were grouped in some taxa, e.g., Faucaria tuberculosa",
+      "source_chunk_ids": [
+        "5d063b635c75c8d2273a85fd8f0b5628"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E3",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Kranz unit was recorded in three of the examined taxa, i.e., Zaleya pentandra",
+      "source_chunk_ids": [
+        "5d063b635c75c8d2273a85fd8f0b5628"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_PART",
+      "source_entity_id": "E4",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Kranz unit was recorded in three of the examined taxa, i.e., Sesuvium portulacastrum",
+      "source_chunk_ids": [
+        "5d063b635c75c8d2273a85fd8f0b5628"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_PART",
+      "source_entity_id": "E5",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Kranz unit was recorded in three of the examined taxa, i.e., Trianthema portulacastrum",
+      "source_chunk_ids": [
+        "5d063b635c75c8d2273a85fd8f0b5628"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "leaves such as in the case of the genus Mesembryanthemum",
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "spathulate leaves such as in Aizoon canariense",
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E3",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "sheathing membranes, e.g., connate in Trianthema portulacastrum",
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_PART",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Zaleya pentandra leaves may be elliptic",
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_PART",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "leaves belonging to the genus Faucaria",
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_PART",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Aizoaceae leaves as simple",
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_PART",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "leaves of Cheiridopsis albo-oculata",
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "described the leaves belonging to the genus Faucaria",
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "STUDIES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "reported that some Aizoaceae plants",
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "reported that the leaves of Cheiridopsis albo-oculata",
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "STUDIES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "reported the general features of Aizoaceae leaves",
+      "source_chunk_ids": [
+        "96b52f07c1e01dc760ecded82acfb6a9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "leaves semi centric",
+      "source_chunk_ids": [
+        "33cfc373e9135616dd79fa780bbe529e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "leaves centric",
+      "source_chunk_ids": [
+        "33cfc373e9135616dd79fa780bbe529e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "leaves petiolate, dorsiventral",
+      "source_chunk_ids": [
+        "33cfc373e9135616dd79fa780bbe529e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_PART",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "leaves homophyllous",
+      "source_chunk_ids": [
+        "33cfc373e9135616dd79fa780bbe529e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Group B included four taxa: the genus Aizoon",
+      "source_chunk_ids": [
+        "50a5308c70c1a8cc26db00bffd30b23b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "three genera that represented the subfamily Sesuvioidae (i.e., Sesuvium)",
+      "source_chunk_ids": [
+        "50a5308c70c1a8cc26db00bffd30b23b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "three genera that represented the subfamily Sesuvioidae (i.e., Trianthema)",
+      "source_chunk_ids": [
+        "50a5308c70c1a8cc26db00bffd30b23b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "three genera that represented the subfamily Sesuvioidae (i.e., Zaleya)",
+      "source_chunk_ids": [
+        "50a5308c70c1a8cc26db00bffd30b23b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Studies have shown",
+      "source_chunk_ids": [
+        "50a5308c70c1a8cc26db00bffd30b23b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E10",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.75,
+      "evidence": "clear similarity between the morphological features",
+      "source_chunk_ids": [
+        "50a5308c70c1a8cc26db00bffd30b23b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "observed"
+      },
+      "confidence": 0.75,
+      "evidence": "similarities in their anatomical features",
+      "source_chunk_ids": [
+        "50a5308c70c1a8cc26db00bffd30b23b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "leaf petiolate, leaf base, leaf margin, and leaf texture",
+      "source_chunk_ids": [
+        "50a5308c70c1a8cc26db00bffd30b23b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "HAS_PART",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "leaf petiolate, leaf base, leaf margin, and leaf texture",
+      "source_chunk_ids": [
+        "50a5308c70c1a8cc26db00bffd30b23b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R10",
+      "type": "HAS_PART",
+      "source_entity_id": "E3",
+      "target_entity_id": "E9",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "leaf petiolate, leaf base, leaf margin, and leaf texture",
+      "source_chunk_ids": [
+        "50a5308c70c1a8cc26db00bffd30b23b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R11",
+      "type": "HAS_PART",
+      "source_entity_id": "E4",
+      "target_entity_id": "E9",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "leaf petiolate, leaf base, leaf margin, and leaf texture",
+      "source_chunk_ids": [
+        "50a5308c70c1a8cc26db00bffd30b23b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "succulent leaves in Mesembryanthemoideae",
+      "source_chunk_ids": [
+        "0de6f14cbc558ce52a26ff6bd85d7f01"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "succulent leaves in Ruschioideae",
+      "source_chunk_ids": [
+        "0de6f14cbc558ce52a26ff6bd85d7f01"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "tannin sacs in Mesembryanthemoideae",
+      "source_chunk_ids": [
+        "0de6f14cbc558ce52a26ff6bd85d7f01"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "raphide crystals in Mesembryanthemoideae",
+      "source_chunk_ids": [
+        "0de6f14cbc558ce52a26ff6bd85d7f01"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "tannin sacs in Ruschioideae",
+      "source_chunk_ids": [
+        "0de6f14cbc558ce52a26ff6bd85d7f01"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "raphide crystals in Ruschioideae",
+      "source_chunk_ids": [
+        "0de6f14cbc558ce52a26ff6bd85d7f01"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    }
+  ]
 }

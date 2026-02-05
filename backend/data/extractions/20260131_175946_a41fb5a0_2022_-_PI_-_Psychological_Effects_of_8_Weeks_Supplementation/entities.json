@@ -1,12 +1,7050 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "2c9a5b31fd53fb61ca413c850b3960ab862304a4bd9c41efd5187b7ab547b356",
-  "extracted_at": "2026-02-01T08:59:37.458164+00:00",
-  "extractor": "legacy-migration",
-  "entities": [],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.087087+00:00",
-    "original_file": "entities.json"
-  }
+  "entities": [
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "pilot study on Zembrin effects after resistance exercise",
+      "attributes": {
+        "design": "pilot study"
+      },
+      "source_chunk_ids": [
+        "00b37d3c5b3a486b63781bc171b96f12"
+      ],
+      "confidence": 0.9,
+      "evidence": "Pilot Study",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "pilot study evidence",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "00b37d3c5b3a486b63781bc171b96f12"
+      ],
+      "confidence": 0.8,
+      "evidence": "Pilot Study",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "00b37d3c5b3a486b63781bc171b96f12"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zembrin\u00ae",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "00b37d3c5b3a486b63781bc171b96f12"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "mood",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "00b37d3c5b3a486b63781bc171b96f12"
+      ],
+      "confidence": 0.85,
+      "evidence": "Mood",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "soreness",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "00b37d3c5b3a486b63781bc171b96f12"
+      ],
+      "confidence": 0.85,
+      "evidence": "Soreness",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "performance",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "00b37d3c5b3a486b63781bc171b96f12"
+      ],
+      "confidence": 0.8,
+      "evidence": "Performance",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Berry et al. 2021 pilot study",
+      "attributes": {
+        "design": "pilot study",
+        "year": 2021,
+        "doi": "10.3390/nutraceuticals1010002"
+      },
+      "source_chunk_ids": [
+        "254d84dc7ec6895d32503300ecc22052"
+      ],
+      "confidence": 0.95,
+      "evidence": "Berry, A.R.; Langley, H.N.; Rogers, R.R.; Benjamin, C.L.; Williams, T.D.; Ballmann, C.G. Effects of Zembrin\u00ae (Sceletium tortuosum) Supplementation on Mood, Soreness, and Performance Following Unaccustomed Resistance Exercise: A Pilot Study. Nutraceuticals 2021, 1, 2\u201311. https://doi.org/10.3390/nutraceuticals1010002",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "pilot study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "254d84dc7ec6895d32503300ecc22052"
+      ],
+      "confidence": 0.9,
+      "evidence": "Pilot Study",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "254d84dc7ec6895d32503300ecc22052"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zembrin\u00ae",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "254d84dc7ec6895d32503300ecc22052"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "mood",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "254d84dc7ec6895d32503300ecc22052"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mood",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "soreness",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "254d84dc7ec6895d32503300ecc22052"
+      ],
+      "confidence": 0.9,
+      "evidence": "Soreness",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "performance",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "254d84dc7ec6895d32503300ecc22052"
+      ],
+      "confidence": 0.85,
+      "evidence": "Performance",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "acute Zembrin supplementation study",
+      "attributes": {
+        "design": "randomized controlled trial",
+        "sample_size": 16,
+        "population": "untrained females",
+        "duration": "3 days"
+      },
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "confidence": 0.95,
+      "evidence": "study was to investigate acute Zembrin supplementation",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "confidence": 0.9,
+      "evidence": "randomized controlled trial with n = 16",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zembrin\u00ae (Sceletium tortuosum)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "muscle soreness",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "confidence": 0.95,
+      "evidence": "muscle soreness",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "mood worsening",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "confidence": 0.85,
+      "evidence": "mood worsened from the baseline",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "reduced perceived soreness",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "confidence": 0.9,
+      "evidence": "lower perceived soreness (p = 0.020)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "preserved range of motion",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "confidence": 0.85,
+      "evidence": "greater preservation of ROM (p = 0.028)",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "preserved mood",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "confidence": 0.8,
+      "evidence": "decrements were exacerbated in the PL group compared with the ZEM group",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "no change in exercise performance",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "confidence": 0.75,
+      "evidence": "did not alter the exercise performance",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "no change in muscle damage biomarkers",
+      "attributes": {
+        "level": "cellular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "confidence": 0.75,
+      "evidence": "did not alter biomarkers of muscle damage",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zembrin\u00ae (ZEM)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "UseRecord",
+      "name": "UseRecord: traditional \u2013 Sceletium \u2013 thirst/hunger/fatigue",
+      "attributes": {
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "confidence": 0.8,
+      "evidence": "leaves have been chewed or used in teas",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "confidence": 0.85,
+      "evidence": "leaves from the plant",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "amelioration of thirst",
+      "attributes": {},
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "confidence": 0.8,
+      "evidence": "amelioration of thirst",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "staving hunger",
+      "attributes": {},
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "confidence": 0.8,
+      "evidence": "staving hunger",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "decreasing fatigue",
+      "attributes": {},
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "confidence": 0.8,
+      "evidence": "decreasing fatigue",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "confidence": 0.9,
+      "evidence": "potent anxiolytic",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "confidence": 0.9,
+      "evidence": "anti-depressant actions",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "CompoundClass",
+      "name": "mesembrine alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "confidence": 0.85,
+      "evidence": "mesembrine alkaloid concentrations",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "alter central nervous system activity",
+      "attributes": {
+        "level": "systemic",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "confidence": 0.75,
+      "evidence": "alter central nervous system activity",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Condition",
+      "name": "hyperalgesia",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "confidence": 0.8,
+      "evidence": "induce hyperalgesia",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Condition",
+      "name": "diminished exercise performance",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "confidence": 0.8,
+      "evidence": "diminishing exercise performance",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Product",
+      "name": "ZEM",
+      "attributes": {},
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "confidence": 0.95,
+      "evidence": "ZEM",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "PDE-4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "confidence": 0.9,
+      "evidence": "phosphodiesterase-4 (PDE-4)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "5HT reuptake",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "confidence": 0.9,
+      "evidence": "5-hydroxytryptamine (5HT) reuptake",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "increased cAMP signaling",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "confidence": 0.85,
+      "evidence": "increased cyclic-adenosine monophosphate (cAMP) signaling",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "confidence": 0.9,
+      "evidence": "depression",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "mesembrine alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "confidence": 0.85,
+      "evidence": "mesembrine alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Target",
+      "name": "5HT transporter protein",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "confidence": 0.85,
+      "evidence": "5HT transporter protein expression",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "confidence": 0.9,
+      "evidence": "anxiety",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "mood disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "confidence": 0.85,
+      "evidence": "mood disorders",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "relief of depressive symptoms",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "confidence": 0.8,
+      "evidence": "greater relief of depressive symptoms",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Effect",
+      "name": "analgesic actions",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "confidence": 0.85,
+      "evidence": "analgesic actions",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Effect",
+      "name": "anti-inflammatory actions",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "confidence": 0.85,
+      "evidence": "anti-inflammatory actions",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "RawMaterial",
+      "name": "Sceletium tortuosum extracts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "confidence": 0.8,
+      "evidence": "Sceletium tortuosum extracts",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Effect",
+      "name": "blunted cytokine release",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "confidence": 0.8,
+      "evidence": "blunt cytokine release",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Effect",
+      "name": "decreased nociceptive pain responses",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "confidence": 0.8,
+      "evidence": "decreased nociceptive pain responses",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "Study",
+      "name": "Harvey et al.",
+      "attributes": {
+        "year": null,
+        "design": "in vitro"
+      },
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "confidence": 0.75,
+      "evidence": "Harvey et al. reported",
+      "verified": true
+    },
+    {
+      "id": "E18",
+      "type": "Study",
+      "name": "Coetzee et al.",
+      "attributes": {
+        "year": null,
+        "design": "in vitro"
+      },
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "confidence": 0.75,
+      "evidence": "Coetzee et al. showed",
+      "verified": true
+    },
+    {
+      "id": "E19",
+      "type": "Study",
+      "name": "Bennet et al.",
+      "attributes": {
+        "year": null,
+        "design": "in vitro"
+      },
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "confidence": 0.75,
+      "evidence": "Bennet et al. showed",
+      "verified": true
+    },
+    {
+      "id": "E20",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "confidence": 0.8,
+      "evidence": "in vitro",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Product",
+      "name": "ZEM",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "confidence": 0.95,
+      "evidence": "ZEM treatment",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "confidence": 0.9,
+      "evidence": "anxiety and mood",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "mood",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "confidence": 0.85,
+      "evidence": "anxiety and mood",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Terburg et al.",
+      "attributes": {
+        "year": "2013",
+        "design": "human study"
+      },
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "confidence": 0.8,
+      "evidence": "Terburg et al. showed",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "human study",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "confidence": 0.75,
+      "evidence": "Investigations of ZEM treatment in humans",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "decreased anxiety-related amygdala activation",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "confidence": 0.8,
+      "evidence": "decreased anxiety-related amygdala activation",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "diminished threat responsivity",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "confidence": 0.7,
+      "evidence": "diminished threat responsivity",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Hoffman et al.",
+      "attributes": {
+        "year": "2021",
+        "design": "supplementation study"
+      },
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "confidence": 0.8,
+      "evidence": "Hoffman et al. demonstrated",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Dosage",
+      "name": "8 days of ZEM supplementation",
+      "attributes": {
+        "duration": "8 days",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "confidence": 0.75,
+      "evidence": "8 days of ZEM supplementation",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "improved complex reaction time",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "confidence": 0.8,
+      "evidence": "improved the complex reaction time",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "improved physical task performance",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "confidence": 0.8,
+      "evidence": "physical task performance",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Condition",
+      "name": "muscle soreness",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "confidence": 0.85,
+      "evidence": "muscle soreness/damage",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Condition",
+      "name": "exercise performance",
+      "attributes": {
+        "condition_type": "functional state"
+      },
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "confidence": 0.8,
+      "evidence": "exercise performance",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Study",
+      "name": "current study",
+      "attributes": {
+        "design": "preliminary investigation"
+      },
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "confidence": 0.75,
+      "evidence": "purpose of this study",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "confidence": 0.9,
+      "evidence": "ZEM (Sceletium tortuosum)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "convenience sample study",
+      "attributes": {
+        "design": "randomized controlled trial",
+        "sample_size": 16,
+        "population": "non-resistance-trained females"
+      },
+      "source_chunk_ids": [
+        "d35abab05b75d5e58802782abdea7565"
+      ],
+      "confidence": 0.85,
+      "evidence": "convenience sample of non-resistance-trained females (n = 16) were randomly assigned",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "d35abab05b75d5e58802782abdea7565"
+      ],
+      "confidence": 0.8,
+      "evidence": "randomly assigned into one of two groups",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d35abab05b75d5e58802782abdea7565"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zembrin (ZEM; Sceletium tortuosum; n = 8)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "d35abab05b75d5e58802782abdea7565"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "double-blinded between-groups study",
+      "attributes": {
+        "design": "double-blinded, between-groups study design"
+      },
+      "source_chunk_ids": [
+        "0a8ea6bf2d17be31a35e43c6198a3fd9"
+      ],
+      "confidence": 0.9,
+      "evidence": "double-blinded, between-groups study design",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "0a8ea6bf2d17be31a35e43c6198a3fd9"
+      ],
+      "confidence": 0.85,
+      "evidence": "double-blinded, between-groups study",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0a8ea6bf2d17be31a35e43c6198a3fd9"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zembrin",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "placebo",
+      "attributes": {
+        "composition": "gluten-free cornstarch"
+      },
+      "source_chunk_ids": [
+        "0a8ea6bf2d17be31a35e43c6198a3fd9"
+      ],
+      "confidence": 0.8,
+      "evidence": "placebo (gluten-free cornstarch)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Dosage",
+      "name": "supplemented until follow-up 48 h later",
+      "attributes": {
+        "duration": "48 h",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "0a8ea6bf2d17be31a35e43c6198a3fd9"
+      ],
+      "confidence": 0.7,
+      "evidence": "supplemented with Zembrin or a placebo until the follow-up visit 48 h later",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "convenience sample study",
+      "attributes": {
+        "design": "convenience sample",
+        "sample_size": 16,
+        "population": "healthy, non-resistance-trained females"
+      },
+      "source_chunk_ids": [
+        "187cbf6939255cddacc16ff55a399958"
+      ],
+      "confidence": 0.9,
+      "evidence": "A convenience sample of healthy, non-resistance-trained females (n = 16)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "observational study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "187cbf6939255cddacc16ff55a399958"
+      ],
+      "confidence": 0.8,
+      "evidence": "convenience sample",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "mood disorder",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "187cbf6939255cddacc16ff55a399958"
+      ],
+      "confidence": 0.85,
+      "evidence": "diagnosis with a mood disorder",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "187cbf6939255cddacc16ff55a399958"
+      ],
+      "confidence": 0.8,
+      "evidence": "anti-anxiety medication",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "187cbf6939255cddacc16ff55a399958"
+      ],
+      "confidence": 0.75,
+      "evidence": "anti-depressant medication",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "short-term supplementation study",
+      "attributes": {
+        "design": "double-blinded",
+        "sample_size": null
+      },
+      "source_chunk_ids": [
+        "505b2e09ffcdf9b0425187c5363d8c61"
+      ],
+      "confidence": 0.85,
+      "evidence": "participants underwent a short-term supplementation regimen",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "505b2e09ffcdf9b0425187c5363d8c61"
+      ],
+      "confidence": 0.8,
+      "evidence": "double-blinded manner",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "ZEM",
+      "attributes": {
+        "brand": "Nutricost"
+      },
+      "source_chunk_ids": [
+        "505b2e09ffcdf9b0425187c5363d8c61"
+      ],
+      "confidence": 0.95,
+      "evidence": "ZEM (Nutricost, N. Vineyard, UT, USA)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Dosage",
+      "name": "25 mg/day for three days",
+      "attributes": {
+        "amount": 25,
+        "unit": "mg",
+        "frequency": "daily",
+        "duration": "three days",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "505b2e09ffcdf9b0425187c5363d8c61"
+      ],
+      "confidence": 0.9,
+      "evidence": "single dose of 25 mg/day over three days",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "AdverseEvent",
+      "name": "no side effects",
+      "attributes": {
+        "severity": "none"
+      },
+      "source_chunk_ids": [
+        "505b2e09ffcdf9b0425187c5363d8c61"
+      ],
+      "confidence": 0.9,
+      "evidence": "No participants reported any side effects",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "study on ZEM vs PL for soreness and ROM",
+      "attributes": {
+        "design": "randomized controlled trial",
+        "sample_size": null
+      },
+      "source_chunk_ids": [
+        "369a470a77093f73f5c9ec841c72bd20"
+      ],
+      "confidence": 0.8,
+      "evidence": "post-hoc analysis revealed that perceived soreness",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "369a470a77093f73f5c9ec841c72bd20"
+      ],
+      "confidence": 0.75,
+      "evidence": "main effect for time and treatment",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "ZEM",
+      "attributes": {},
+      "source_chunk_ids": [
+        "369a470a77093f73f5c9ec841c72bd20"
+      ],
+      "confidence": 0.9,
+      "evidence": "ZEM group",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Product",
+      "name": "PL",
+      "attributes": {},
+      "source_chunk_ids": [
+        "369a470a77093f73f5c9ec841c72bd20"
+      ],
+      "confidence": 0.9,
+      "evidence": "PL group",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "perceived soreness",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "369a470a77093f73f5c9ec841c72bd20"
+      ],
+      "confidence": 0.85,
+      "evidence": "perceived soreness (1\u201310 scale)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "reduced range of motion",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "369a470a77093f73f5c9ec841c72bd20"
+      ],
+      "confidence": 0.8,
+      "evidence": "ROM decreased at 48 h",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "lower perceived soreness",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "369a470a77093f73f5c9ec841c72bd20"
+      ],
+      "confidence": 0.75,
+      "evidence": "perceived soreness was lower in the ZEM group",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "greater range of motion",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "369a470a77093f73f5c9ec841c72bd20"
+      ],
+      "confidence": 0.7,
+      "evidence": "ZEM treatment resulted in a greater ROM",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Study: plasma LDH analysis",
+      "attributes": {
+        "design": "experimental study"
+      },
+      "source_chunk_ids": [
+        "3a25a51b7ab2bfb5b2212bcb4148bd03"
+      ],
+      "confidence": 0.8,
+      "evidence": "analysis of plasma LDH levels",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vitro evidence",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "3a25a51b7ab2bfb5b2212bcb4148bd03"
+      ],
+      "confidence": 0.7,
+      "evidence": "plasma LDH levels",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "ZEM",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3a25a51b7ab2bfb5b2212bcb4148bd03"
+      ],
+      "confidence": 0.9,
+      "evidence": "ZEM groups",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "increased LDH activity",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "3a25a51b7ab2bfb5b2212bcb4148bd03"
+      ],
+      "confidence": 0.85,
+      "evidence": "large-sized increases in LDH activity",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Figure 1 study",
+      "attributes": {
+        "design": "comparative study",
+        "sample_groups": [
+          "Placebo",
+          "Zembrin\u00ae"
+        ]
+      },
+      "source_chunk_ids": [
+        "9499b1fa54bb972eebb287b06634bda0"
+      ],
+      "confidence": 0.9,
+      "evidence": "Figure 1: Changes in (a) perceived soreness, (b) range of motion (ROM), and (c) plasma lactate dehydrogenase (LDH)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vivo study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "9499b1fa54bb972eebb287b06634bda0"
+      ],
+      "confidence": 0.85,
+      "evidence": "bar charts comparing Placebo and Zembrin\u00ae at Baseline and 48 Hours",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Zembrin\u00ae",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9499b1fa54bb972eebb287b06634bda0"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zembrin\u00ae (ZEM, light green bars)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "increased perceived soreness",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "9499b1fa54bb972eebb287b06634bda0"
+      ],
+      "confidence": 0.8,
+      "evidence": "At 48 Hours, PL increases to approximately 5.5 and ZEM increases to approximately 4.0",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "decreased range of motion",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "9499b1fa54bb972eebb287b06634bda0"
+      ],
+      "confidence": 0.8,
+      "evidence": "At 48 Hours, PL decreases to approximately 105 and ZEM decreases to approximately 125",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "increased plasma LDH",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "9499b1fa54bb972eebb287b06634bda0"
+      ],
+      "confidence": 0.8,
+      "evidence": "At 48 Hours, both PL and ZEM increase to approximately 0.48",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "muscle soreness",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "9499b1fa54bb972eebb287b06634bda0"
+      ],
+      "confidence": 0.75,
+      "evidence": "perceived soreness (1\u201310 scale)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "reduced range of motion",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "9499b1fa54bb972eebb287b06634bda0"
+      ],
+      "confidence": 0.75,
+      "evidence": "range of motion (ROM; degrees)",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "elevated LDH",
+      "attributes": {
+        "condition_type": "biomarker"
+      },
+      "source_chunk_ids": [
+        "9499b1fa54bb972eebb287b06634bda0"
+      ],
+      "confidence": 0.75,
+      "evidence": "plasma lactate dehydrogenase (LDH)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Figure 1 study",
+      "attributes": {
+        "design": "repeated measure ANOVA with Bonferroni\u2013Holm post-hoc test"
+      },
+      "source_chunk_ids": [
+        "5623bad41afca45cefdeeef613d514bc"
+      ],
+      "confidence": 0.8,
+      "evidence": "A statistical analysis was conducted using a 2 \u00d7 2 (Treatment \u00d7 Time) repeated measure ANOVA",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vivo study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "5623bad41afca45cefdeeef613d514bc"
+      ],
+      "confidence": 0.7,
+      "evidence": "Changes in perceived soreness, range of motion, plasma LDH",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5623bad41afca45cefdeeef613d514bc"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zembrin\u00ae (ZEM)-treated groups",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "soreness",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "5623bad41afca45cefdeeef613d514bc"
+      ],
+      "confidence": 0.85,
+      "evidence": "perceived soreness (1\u201310 scale)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "reduced soreness",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "5623bad41afca45cefdeeef613d514bc"
+      ],
+      "confidence": 0.75,
+      "evidence": "Changes in perceived soreness",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "improved range of motion",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "5623bad41afca45cefdeeef613d514bc"
+      ],
+      "confidence": 0.75,
+      "evidence": "range of motion (ROM; degrees)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "reduced plasma LDH",
+      "attributes": {
+        "level": "molecular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "5623bad41afca45cefdeeef613d514bc"
+      ],
+      "confidence": 0.75,
+      "evidence": "plasma lactate dehydrogenase (LDH)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "exercise study with ZEM vs PL",
+      "attributes": {
+        "design": "interventional study"
+      },
+      "source_chunk_ids": [
+        "a67b77f9debb7fc60cfa86db3a735fc5"
+      ],
+      "confidence": 0.8,
+      "evidence": "analysis of RPE, mood",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "a67b77f9debb7fc60cfa86db3a735fc5"
+      ],
+      "confidence": 0.7,
+      "evidence": "groups PL and ZEM",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "ZEM",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a67b77f9debb7fc60cfa86db3a735fc5"
+      ],
+      "confidence": 0.9,
+      "evidence": "ZEM group",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Product",
+      "name": "PL",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a67b77f9debb7fc60cfa86db3a735fc5"
+      ],
+      "confidence": 0.9,
+      "evidence": "PL group",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "mood improvement",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "a67b77f9debb7fc60cfa86db3a735fc5"
+      ],
+      "confidence": 0.85,
+      "evidence": "mood was significantly improved",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "mood worsening",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "a67b77f9debb7fc60cfa86db3a735fc5"
+      ],
+      "confidence": 0.8,
+      "evidence": "mood was significantly worse",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "no effect on total repetitions",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "a67b77f9debb7fc60cfa86db3a735fc5"
+      ],
+      "confidence": 0.75,
+      "evidence": "no effect for treatment",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "no effect on RPE",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "a67b77f9debb7fc60cfa86db3a735fc5"
+      ],
+      "confidence": 0.75,
+      "evidence": "not for treatment",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Figure 2 study",
+      "attributes": {
+        "design": "2 \u00d7 2 (Treatment \u00d7 Time) repeated measure ANOVA with Bonferroni\u2013Holm post-hoc test",
+        "duration": "48 hours"
+      },
+      "source_chunk_ids": [
+        "0e8f1f711c9397db82ee5a24a784b943"
+      ],
+      "confidence": 0.9,
+      "evidence": "A statistical analysis was conducted using a 2 \u00d7 2 (Treatment \u00d7 Time) repeated measure ANOVA",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vivo study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "0e8f1f711c9397db82ee5a24a784b943"
+      ],
+      "confidence": 0.85,
+      "evidence": "Changes in total repetitions, RPE, and POMS from baseline to 48 h",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0e8f1f711c9397db82ee5a24a784b943"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zembrin\u00ae (ZEM)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "increased repetitions",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "0e8f1f711c9397db82ee5a24a784b943"
+      ],
+      "confidence": 0.8,
+      "evidence": "ZEM group decreases to approximately 20 repetitions",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "lower RPE",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "0e8f1f711c9397db82ee5a24a784b943"
+      ],
+      "confidence": 0.75,
+      "evidence": "ZEM group increases to approximately 6.5 RPE",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "improved mood",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "0e8f1f711c9397db82ee5a24a784b943"
+      ],
+      "confidence": 0.85,
+      "evidence": "ZEM group decreases to approximately -10 POMS score",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "mood improvement",
+      "attributes": {
+        "condition_type": "wellness"
+      },
+      "source_chunk_ids": [
+        "0e8f1f711c9397db82ee5a24a784b943"
+      ],
+      "confidence": 0.8,
+      "evidence": "a more negative POMS score indicates a better mood",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Figure 2 study",
+      "attributes": {
+        "design": "2x2 repeated measure ANOVA with Bonferroni-Holm post-hoc test"
+      },
+      "source_chunk_ids": [
+        "93b033812c650f4dbe1372c3e422f336"
+      ],
+      "confidence": 0.9,
+      "evidence": "A statistical analysis was conducted using a 2 \u00d7 2 (Treatment \u00d7 Time) repeated measure ANOVA",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vivo study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "93b033812c650f4dbe1372c3e422f336"
+      ],
+      "confidence": 0.8,
+      "evidence": "Data are presented as a mean \u00b1 SD",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "93b033812c650f4dbe1372c3e422f336"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zembrin\u00ae (ZEM)-treated groups",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "improved mood",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "93b033812c650f4dbe1372c3e422f336"
+      ],
+      "confidence": 0.85,
+      "evidence": "a more negative POMS score indicates a better mood",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "changes in total repetitions",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "93b033812c650f4dbe1372c3e422f336"
+      ],
+      "confidence": 0.7,
+      "evidence": "Changes in (a) total repetitions",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "changes in rate of perceived exertion",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "93b033812c650f4dbe1372c3e422f336"
+      ],
+      "confidence": 0.7,
+      "evidence": "Changes in (b) rate of perceived exertion",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "changes in profile of mood states",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "93b033812c650f4dbe1372c3e422f336"
+      ],
+      "confidence": 0.7,
+      "evidence": "Changes in (c) profile of mood states",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Product",
+      "name": "ZEM",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c4998f47eefdd3c56b3d4157fd34083d"
+      ],
+      "confidence": 0.95,
+      "evidence": "ZEM has been widely reported",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "c4998f47eefdd3c56b3d4157fd34083d"
+      ],
+      "confidence": 0.8,
+      "evidence": "anxiolytic properties",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "c4998f47eefdd3c56b3d4157fd34083d"
+      ],
+      "confidence": 0.8,
+      "evidence": "anti-depressant properties",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "inflammation",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "c4998f47eefdd3c56b3d4157fd34083d"
+      ],
+      "confidence": 0.75,
+      "evidence": "mild anti-inflammatory properties",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "current study",
+      "attributes": {
+        "design": "experimental study",
+        "sample_size": null,
+        "year": null,
+        "doi": null
+      },
+      "source_chunk_ids": [
+        "c4998f47eefdd3c56b3d4157fd34083d"
+      ],
+      "confidence": 0.85,
+      "evidence": "the aim of this study was to elucidate",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "preliminary findings",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "c4998f47eefdd3c56b3d4157fd34083d"
+      ],
+      "confidence": 0.8,
+      "evidence": "these preliminary findings",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "muscle soreness",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "c4998f47eefdd3c56b3d4157fd34083d"
+      ],
+      "confidence": 0.9,
+      "evidence": "ZEM decreased perceived soreness",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "mood",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "c4998f47eefdd3c56b3d4157fd34083d"
+      ],
+      "confidence": 0.9,
+      "evidence": "ZEM supplementation also resulted in a more favorable overall mood",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "exercise performance",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "c4998f47eefdd3c56b3d4157fd34083d"
+      ],
+      "confidence": 0.85,
+      "evidence": "both the ZEM and PL groups had a worsened exercise performance",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "TraditionalUse",
+      "name": "recovery following exercise",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c4998f47eefdd3c56b3d4157fd34083d"
+      ],
+      "confidence": 0.8,
+      "evidence": "using ZEM in recovery following exercise",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "current study",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1138d912717a17c32ba5bcc5e84d556f"
+      ],
+      "confidence": 0.9,
+      "evidence": "Unique to the current study",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "1138d912717a17c32ba5bcc5e84d556f"
+      ],
+      "confidence": 0.8,
+      "evidence": "perceived soreness was lower at 48 h with ZEM treatment",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "ZEM",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1138d912717a17c32ba5bcc5e84d556f"
+      ],
+      "confidence": 0.95,
+      "evidence": "ZEM treatment",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "perceived soreness",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "1138d912717a17c32ba5bcc5e84d556f"
+      ],
+      "confidence": 0.9,
+      "evidence": "perceived soreness was lower at 48 h",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "blunted increases in perceptions of exertion",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "1138d912717a17c32ba5bcc5e84d556f"
+      ],
+      "confidence": 0.85,
+      "evidence": "ZEM blunted increases in perceptions of exertion",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "partially attenuated losses in ROM",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "1138d912717a17c32ba5bcc5e84d556f"
+      ],
+      "confidence": 0.85,
+      "evidence": "ZEM partially attenuated losses in ROM",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "analgesic effects",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "1138d912717a17c32ba5bcc5e84d556f"
+      ],
+      "confidence": 0.8,
+      "evidence": "analgesic effects of ZEM",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Product",
+      "name": "ZEM",
+      "attributes": {},
+      "source_chunk_ids": [
+        "03219b5e89e31dc4067667b0303ed0d6"
+      ],
+      "confidence": 0.95,
+      "evidence": "ZEM supplementation",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Loria et al. [17]",
+      "attributes": {
+        "year": "implied",
+        "design": "animal study"
+      },
+      "source_chunk_ids": [
+        "03219b5e89e31dc4067667b0303ed0d6"
+      ],
+      "confidence": 0.85,
+      "evidence": "Loria et al. showed similar decreases in pain sensitivity",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "animal study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "03219b5e89e31dc4067667b0303ed0d6"
+      ],
+      "confidence": 0.8,
+      "evidence": "decreases in pain sensitivity between morphine and ZEM in rats",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "mesembrine alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "03219b5e89e31dc4067667b0303ed0d6"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "delta 2-opioid receptor",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "03219b5e89e31dc4067667b0303ed0d6"
+      ],
+      "confidence": 0.85,
+      "evidence": "delta 2- opioid receptors",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "mu-opioid receptor",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "03219b5e89e31dc4067667b0303ed0d6"
+      ],
+      "confidence": 0.85,
+      "evidence": "mu- opioid receptors",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "musculoskeletal pain",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "03219b5e89e31dc4067667b0303ed0d6"
+      ],
+      "confidence": 0.9,
+      "evidence": "musculoskeletal pain",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "reduced pain sensitivity",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "03219b5e89e31dc4067667b0303ed0d6"
+      ],
+      "confidence": 0.8,
+      "evidence": "decreases in pain sensitivity",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "reduced perceived soreness",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "03219b5e89e31dc4067667b0303ed0d6"
+      ],
+      "confidence": 0.75,
+      "evidence": "reductions in perceived soreness",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "attenuated RPE increases",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "03219b5e89e31dc4067667b0303ed0d6"
+      ],
+      "confidence": 0.7,
+      "evidence": "attenuation in increases in RPE",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "AdverseEvent",
+      "name": "health threats from long-term opioid use",
+      "attributes": {
+        "severity": "considerable"
+      },
+      "source_chunk_ids": [
+        "03219b5e89e31dc4067667b0303ed0d6"
+      ],
+      "confidence": 0.8,
+      "evidence": "long-term opioid/narcotic use poses considerable health threats",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Product",
+      "name": "ZEM",
+      "attributes": {},
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "confidence": 0.95,
+      "evidence": "ZEM treatment",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "confidence": 0.9,
+      "evidence": "decreases in anxiety",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "anxiolytic effects",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "confidence": 0.85,
+      "evidence": "potent anxiolytic effects",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "pain",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "confidence": 0.8,
+      "evidence": "detrimentally affect pain",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "joint ROM",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "confidence": 0.8,
+      "evidence": "decreased joint ROM",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "5HT reuptake inhibitor mechanisms",
+      "attributes": {
+        "target_type": "mechanism"
+      },
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "confidence": 0.75,
+      "evidence": "5HT reuptake inhibitor mechanisms",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "amygdala activity",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "confidence": 0.7,
+      "evidence": "alterations of the emotional state through amygdala activity",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Terburg et al.",
+      "attributes": {
+        "year": "2018",
+        "design": "experimental"
+      },
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "confidence": 0.8,
+      "evidence": "Terburg et al. demonstrated",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "previous reports",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "confidence": 0.7,
+      "evidence": "previous reports have shown",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "reduced anxiety",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "confidence": 0.75,
+      "evidence": "reduced anxiety",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "lower perception of soreness",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "confidence": 0.7,
+      "evidence": "lower perception of soreness",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Effect",
+      "name": "loss of ROM",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "confidence": 0.7,
+      "evidence": "loss of ROM",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Bennet et al. study",
+      "attributes": {
+        "year": 2016,
+        "reference": "[16]"
+      },
+      "source_chunk_ids": [
+        "531c973c8b6689ea72876377677ca2d6"
+      ],
+      "confidence": 0.8,
+      "evidence": "Bennet et al. suggested",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "previous reports",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "531c973c8b6689ea72876377677ca2d6"
+      ],
+      "confidence": 0.7,
+      "evidence": "previous reports of the anti-inflammatory effects",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "ZEM",
+      "attributes": {},
+      "source_chunk_ids": [
+        "531c973c8b6689ea72876377677ca2d6"
+      ],
+      "confidence": 0.95,
+      "evidence": "ZEM",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "anti-inflammatory effects",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "531c973c8b6689ea72876377677ca2d6"
+      ],
+      "confidence": 0.85,
+      "evidence": "anti-inflammatory effects of ZEM",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "inflammatory signaling",
+      "attributes": {
+        "target_type": "pathway"
+      },
+      "source_chunk_ids": [
+        "531c973c8b6689ea72876377677ca2d6"
+      ],
+      "confidence": 0.75,
+      "evidence": "inflammatory signaling",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "low-grade inflammation",
+      "attributes": {
+        "condition_type": "condition"
+      },
+      "source_chunk_ids": [
+        "531c973c8b6689ea72876377677ca2d6"
+      ],
+      "confidence": 0.8,
+      "evidence": "low-grade inflammation",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "muscle damage",
+      "attributes": {
+        "condition_type": "condition"
+      },
+      "source_chunk_ids": [
+        "531c973c8b6689ea72876377677ca2d6"
+      ],
+      "confidence": 0.9,
+      "evidence": "muscle damage",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "ergogenic benefits",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "531c973c8b6689ea72876377677ca2d6"
+      ],
+      "confidence": 0.8,
+      "evidence": "ergogenic benefits of ZEM",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "performance decrements",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "531c973c8b6689ea72876377677ca2d6"
+      ],
+      "confidence": 0.75,
+      "evidence": "performance decrements",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "previous investigations",
+      "attributes": {
+        "reference": "[19]"
+      },
+      "source_chunk_ids": [
+        "531c973c8b6689ea72876377677ca2d6"
+      ],
+      "confidence": 0.7,
+      "evidence": "previous investigations",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Product",
+      "name": "ZEM",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2277ef110348e6809231fc0dc5aadd64"
+      ],
+      "confidence": 0.95,
+      "evidence": "ZEM prevented mood disturbance",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Effect",
+      "name": "mood stabilization",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "2277ef110348e6809231fc0dc5aadd64"
+      ],
+      "confidence": 0.85,
+      "evidence": "ZEM as a mood stabilizer",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "mood disturbance prevention",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "2277ef110348e6809231fc0dc5aadd64"
+      ],
+      "confidence": 0.9,
+      "evidence": "ZEM prevented mood disturbance",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "improved mood at 48 h",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "2277ef110348e6809231fc0dc5aadd64"
+      ],
+      "confidence": 0.85,
+      "evidence": "mood was significantly better at 48 h",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "worse mood at 48 h",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "2277ef110348e6809231fc0dc5aadd64"
+      ],
+      "confidence": 0.8,
+      "evidence": "Overall mood was worse at 48 h",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Product",
+      "name": "ZEM",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4b64f80b0a2cc087eb70d7b954564f46"
+      ],
+      "confidence": 0.95,
+      "evidence": "ZEM as a 5HT reuptake and PDE-4 inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "5HT reuptake",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "4b64f80b0a2cc087eb70d7b954564f46"
+      ],
+      "confidence": 0.9,
+      "evidence": "5HT reuptake",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "PDE-4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "4b64f80b0a2cc087eb70d7b954564f46"
+      ],
+      "confidence": 0.9,
+      "evidence": "PDE-4 inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "mood stabilization",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "4b64f80b0a2cc087eb70d7b954564f46"
+      ],
+      "confidence": 0.85,
+      "evidence": "mood stabilization effects",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "4b64f80b0a2cc087eb70d7b954564f46"
+      ],
+      "confidence": 0.9,
+      "evidence": "treatment for both depression",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "4b64f80b0a2cc087eb70d7b954564f46"
+      ],
+      "confidence": 0.9,
+      "evidence": "treatment for both depression and anxiety",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Hoffman et al. (ZEM and mood during exercise)",
+      "attributes": {
+        "design": "previous work",
+        "year": "implied from citation [19]"
+      },
+      "source_chunk_ids": [
+        "4b64f80b0a2cc087eb70d7b954564f46"
+      ],
+      "confidence": 0.8,
+      "evidence": "previous work on ZEM and mood during exercise [19]",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "clinical study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "4b64f80b0a2cc087eb70d7b954564f46"
+      ],
+      "confidence": 0.75,
+      "evidence": "Hoffman et al. showed that ZEM did not alter mood",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Dosage",
+      "name": "8 days of supplementation",
+      "attributes": {
+        "duration": "8 days",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "4b64f80b0a2cc087eb70d7b954564f46"
+      ],
+      "confidence": 0.7,
+      "evidence": "after 8 days of supplementation",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "mood changes following intense exercise",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "4b64f80b0a2cc087eb70d7b954564f46"
+      ],
+      "confidence": 0.8,
+      "evidence": "mood changes following intense exercise",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "improves depressive mood symptoms",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "4b64f80b0a2cc087eb70d7b954564f46"
+      ],
+      "confidence": 0.85,
+      "evidence": "improves depressive mood symptoms",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "current study",
+      "attributes": {
+        "design": "pilot study",
+        "sample_size": "small"
+      },
+      "source_chunk_ids": [
+        "37eec8e2b6ab3b8cfee24ca6f6df77ab"
+      ],
+      "confidence": 0.9,
+      "evidence": "the current study provides novel information",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "pilot data",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "37eec8e2b6ab3b8cfee24ca6f6df77ab"
+      ],
+      "confidence": 0.85,
+      "evidence": "these pilot data should be viewed with cautionary optimism",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "37eec8e2b6ab3b8cfee24ca6f6df77ab"
+      ],
+      "confidence": 0.95,
+      "evidence": "nutraceutical Zembrin\u00ae",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "pain",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "37eec8e2b6ab3b8cfee24ca6f6df77ab"
+      ],
+      "confidence": 0.9,
+      "evidence": "positively affects pain",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "mood disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "37eec8e2b6ab3b8cfee24ca6f6df77ab"
+      ],
+      "confidence": 0.8,
+      "evidence": "individuals with higher baseline anxiety or mood disorders",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "attenuation of perceived soreness",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "37eec8e2b6ab3b8cfee24ca6f6df77ab"
+      ],
+      "confidence": 0.85,
+      "evidence": "attenuation of perceived soreness",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "loss of ROM",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "37eec8e2b6ab3b8cfee24ca6f6df77ab"
+      ],
+      "confidence": 0.8,
+      "evidence": "loss of ROM",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "increase in RPE",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "37eec8e2b6ab3b8cfee24ca6f6df77ab"
+      ],
+      "confidence": 0.8,
+      "evidence": "increase in RPE",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "preservation of mood",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "37eec8e2b6ab3b8cfee24ca6f6df77ab"
+      ],
+      "confidence": 0.9,
+      "evidence": "preservation of mood 48 h after intense exercise",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "negative psychological effects",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "37eec8e2b6ab3b8cfee24ca6f6df77ab"
+      ],
+      "confidence": 0.75,
+      "evidence": "negative psychological effects associated with exercise",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Samford University study",
+      "attributes": {
+        "year": 2020,
+        "approval_id": "FULL-HP-21-S-1",
+        "data_collection_period": "January to May 2021"
+      },
+      "source_chunk_ids": [
+        "894029731d934fd284f917389cf4ca41"
+      ],
+      "confidence": 0.9,
+      "evidence": "approved by the Samford University Institutional Review Board",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "ethical approval",
+      "attributes": {
+        "evidence_level": 5
+      },
+      "source_chunk_ids": [
+        "894029731d934fd284f917389cf4ca41"
+      ],
+      "confidence": 0.85,
+      "evidence": "approved by the Samford University Institutional Review Board",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zembrin",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Terburg et al. 2013",
+      "attributes": {
+        "year": 2013,
+        "design": "acute effects study"
+      },
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "confidence": 0.85,
+      "evidence": "Terburg, D.; et al. Acute effects of Sceletium tortuosum (Zembrin)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "confidence": 0.8,
+      "evidence": "in vitro",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "5-HT reuptake",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "confidence": 0.85,
+      "evidence": "dual 5-HT reuptake and PDE4 inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "confidence": 0.85,
+      "evidence": "dual 5-HT reuptake and PDE4 inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Reay et al. 2020",
+      "attributes": {
+        "year": 2020,
+        "design": "experimental study"
+      },
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "confidence": 0.85,
+      "evidence": "Reay, J.; et al. Sceletium tortuosum (Zembrin\u00ae) ameliorates experimentally induced anxiety",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "confidence": 0.8,
+      "evidence": "healthy volunteers",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "confidence": 0.9,
+      "evidence": "ameliorates experimentally induced anxiety",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "Dimpfel et al. 2016",
+      "attributes": {
+        "year": 2016,
+        "design": "randomized double-blind placebo-controlled"
+      },
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "confidence": 0.85,
+      "evidence": "Dimpfel, W.; et al. Effect of Zembrin\u00ae on Brain Electrical Activity",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Dosage",
+      "name": "daily intake for 6 weeks",
+      "attributes": {
+        "duration": "6 weeks",
+        "frequency": "daily"
+      },
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "confidence": 0.8,
+      "evidence": "6 weeks of daily intake",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mesembrine Is an Inhibitor of PDE4",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "RawMaterial",
+      "name": "high-mesembrine Sceletium extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "confidence": 0.85,
+      "evidence": "High-mesembrine Sceletium extract (TrimesemineTM)",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Effect",
+      "name": "monoamine releasing",
+      "attributes": {
+        "level": "molecular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "confidence": 0.8,
+      "evidence": "monoamine releasing agent",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Study",
+      "name": "Chiu et al. 2014",
+      "attributes": {
+        "year": 2014,
+        "design": "proof-of-concept randomized controlled"
+      },
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "confidence": 0.85,
+      "evidence": "Chiu, S.; et al. Proof-of-concept randomized controlled study of cognition effects",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Condition",
+      "name": "Alzheimer's dementia",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "confidence": 0.85,
+      "evidence": "targeting phosphodiesterase-4 in cognitively healthy subjects: Implications for Alzheimer's dementia",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "Study",
+      "name": "Hoffman et al. 2020",
+      "attributes": {
+        "year": 2020,
+        "design": "supplementation study"
+      },
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "confidence": 0.85,
+      "evidence": "Hoffman, J.R.; et al. Ergogenic effects of 8 Days of sceletium tortuosum supplementation",
+      "verified": true
+    },
+    {
+      "id": "E18",
+      "type": "Effect",
+      "name": "mood improvement",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "confidence": 0.8,
+      "evidence": "effects on mood",
+      "verified": true
+    },
+    {
+      "id": "E19",
+      "type": "Effect",
+      "name": "visual tracking improvement",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "confidence": 0.75,
+      "evidence": "visual tracking",
+      "verified": true
+    },
+    {
+      "id": "E20",
+      "type": "Effect",
+      "name": "reaction improvement",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "confidence": 0.75,
+      "evidence": "reaction",
+      "verified": true
+    }
+  ],
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Pilot Study",
+      "source_chunk_ids": [
+        "00b37d3c5b3a486b63781bc171b96f12"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Zembrin\u00ae",
+      "source_chunk_ids": [
+        "00b37d3c5b3a486b63781bc171b96f12"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Zembrin\u00ae (Sceletium tortuosum)",
+      "source_chunk_ids": [
+        "00b37d3c5b3a486b63781bc171b96f12"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "studied"
+      },
+      "confidence": 0.85,
+      "evidence": "Mood",
+      "source_chunk_ids": [
+        "00b37d3c5b3a486b63781bc171b96f12"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "studied"
+      },
+      "confidence": 0.85,
+      "evidence": "Soreness",
+      "source_chunk_ids": [
+        "00b37d3c5b3a486b63781bc171b96f12"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "studied"
+      },
+      "confidence": 0.8,
+      "evidence": "Performance",
+      "source_chunk_ids": [
+        "00b37d3c5b3a486b63781bc171b96f12"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Pilot Study",
+      "source_chunk_ids": [
+        "254d84dc7ec6895d32503300ecc22052"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Effects of Zembrin\u00ae (Sceletium tortuosum) Supplementation",
+      "source_chunk_ids": [
+        "254d84dc7ec6895d32503300ecc22052"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Zembrin\u00ae (Sceletium tortuosum)",
+      "source_chunk_ids": [
+        "254d84dc7ec6895d32503300ecc22052"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "studies"
+      },
+      "confidence": 0.85,
+      "evidence": "Effects on Mood",
+      "source_chunk_ids": [
+        "254d84dc7ec6895d32503300ecc22052"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "studies"
+      },
+      "confidence": 0.85,
+      "evidence": "Effects on Soreness",
+      "source_chunk_ids": [
+        "254d84dc7ec6895d32503300ecc22052"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "studies"
+      },
+      "confidence": 0.85,
+      "evidence": "Effects on Performance",
+      "source_chunk_ids": [
+        "254d84dc7ec6895d32503300ecc22052"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "randomized controlled trial",
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.95,
+      "evidence": "investigate acute Zembrin supplementation",
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Zembrin\u00ae (Sceletium tortuosum)",
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.9,
+      "evidence": "lower perceived soreness (p = 0.020)",
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "worsens"
+      },
+      "confidence": 0.85,
+      "evidence": "mood worsened from the baseline",
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "positive"
+      },
+      "confidence": 0.9,
+      "evidence": "lower perceived soreness (p = 0.020)",
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "positive"
+      },
+      "confidence": 0.85,
+      "evidence": "greater preservation of ROM (p = 0.028)",
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "positive"
+      },
+      "confidence": 0.8,
+      "evidence": "decrements were exacerbated in the PL group compared with the ZEM group",
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.75,
+      "evidence": "did not alter the exercise performance",
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.75,
+      "evidence": "did not alter biomarkers of muscle damage",
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.8,
+      "evidence": "lower perceived soreness (p = 0.020)",
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "ZEM supplementation resulted in lower perceived soreness",
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "ZEM supplementation resulted in greater preservation of ROM",
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "decrements were exacerbated in the PL group compared with the ZEM group",
+      "source_chunk_ids": [
+        "5935b0f3e147e9038dba5a236e26dfa3"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Sceletium tortuosum (sold as Zembrin)",
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "leaves from the plant",
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "plant_part"
+      },
+      "confidence": 0.85,
+      "evidence": "leaves from the plant",
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "amelioration of thirst",
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "staving hunger",
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "decreasing fatigue",
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "TREATS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "potent anxiolytic actions",
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "TREATS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "anti-depressant actions",
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "high mesembrine alkaloid concentrations within ZEM",
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "alter central nervous system activity",
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "traditional use for mood-related purposes",
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R12",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E9",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "traditional use for mood-related purposes",
+      "source_chunk_ids": [
+        "20959da4fe7f009e830325e2c714cd95"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.85,
+      "evidence": "inhibition of phosphodiesterase-4 (PDE-4)",
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "blocks"
+      },
+      "confidence": 0.85,
+      "evidence": "blockade of 5-hydroxytryptamine (5HT) reuptake",
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "PDE-4 inhibition results in increased cAMP signaling",
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "synergistic ablation ... may provide greater relief of depressive symptoms",
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "mechanistic"
+      },
+      "confidence": 0.75,
+      "evidence": "depression have diminished neuronal cAMP signaling",
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "mesembrine alkaloids, derived from Sceletium tortuosum",
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "ACTS_ON",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {
+        "action": "reduces"
+      },
+      "confidence": 0.8,
+      "evidence": "resulted in a reduced 5HT transporter protein expression",
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "context": "mechanistic"
+      },
+      "confidence": 0.75,
+      "evidence": "anxiolytic and mood-enhancing actions of ZEM",
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {
+        "context": "mechanistic"
+      },
+      "confidence": 0.75,
+      "evidence": "mood-enhancing actions of ZEM",
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Reports of analgesic actions have been reported with ZEM treatment",
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E13",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Reports of anti-inflammatory actions have been reported with ZEM treatment",
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Sceletium tortuosum extracts",
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "PRODUCES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E15",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "blunt cytokine release",
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E16",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "rodents treated with alkaloids from ZEM showed decreased nociceptive pain responses",
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E17",
+      "target_entity_id": "E20",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Harvey et al. reported",
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "STUDIES",
+      "source_entity_id": "E17",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "ZEM potently inhibited human myeloid cell-derived PDE-4 activity",
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R17",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E18",
+      "target_entity_id": "E20",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Coetzee et al. showed",
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R18",
+      "type": "STUDIES",
+      "source_entity_id": "E18",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "mesembrine alkaloids ... resulted in a reduced 5HT transporter protein expression",
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R19",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E19",
+      "target_entity_id": "E20",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Bennet et al. showed",
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R20",
+      "type": "STUDIES",
+      "source_entity_id": "E19",
+      "target_entity_id": "E14",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Sceletium tortuosum extracts blunt cytokine release",
+      "source_chunk_ids": [
+        "29a9815f745329de7270144703641e25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "ZEM treatment decreased",
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Terburg et al. showed",
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.75,
+      "evidence": "decreased anxiety-related amygdala activation",
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.7,
+      "evidence": "diminished threat responsivity",
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.8,
+      "evidence": "ZEM treatment decreased anxiety",
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "supporting_study_ids": [
+        "E4"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "ZEM supplementation improved",
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "TESTED_AT",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "8 days of ZEM supplementation",
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E10",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "improved the complex reaction time",
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "physical task performance",
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "effects of acute ZEM supplementation",
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E14",
+      "target_entity_id": "E12",
+      "attributes": {
+        "outcome": "hypothesized"
+      },
+      "confidence": 0.75,
+      "evidence": "attenuate muscle soreness/damage",
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "REPORTS",
+      "source_entity_id": "E14",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "hypothesized"
+      },
+      "confidence": 0.75,
+      "evidence": "improve mood",
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "REPORTS",
+      "source_entity_id": "E14",
+      "target_entity_id": "E13",
+      "attributes": {
+        "outcome": "hypothesized"
+      },
+      "confidence": 0.75,
+      "evidence": "preserving exercise performance",
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "CONTAINS",
+      "source_entity_id": "E15",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "ZEM (Sceletium tortuosum)",
+      "source_chunk_ids": [
+        "a32f321cc6ece8c4eb264f211432ea9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "randomly assigned into one of two groups",
+      "source_chunk_ids": [
+        "d35abab05b75d5e58802782abdea7565"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Zembrin (ZEM; Sceletium tortuosum; n = 8)",
+      "source_chunk_ids": [
+        "d35abab05b75d5e58802782abdea7565"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Zembrin (ZEM; Sceletium tortuosum)",
+      "source_chunk_ids": [
+        "d35abab05b75d5e58802782abdea7565"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "double-blinded, between-groups study design",
+      "source_chunk_ids": [
+        "0a8ea6bf2d17be31a35e43c6198a3fd9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "supplemented with Zembrin",
+      "source_chunk_ids": [
+        "0a8ea6bf2d17be31a35e43c6198a3fd9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "control"
+      },
+      "confidence": 0.8,
+      "evidence": "placebo (gluten-free cornstarch)",
+      "source_chunk_ids": [
+        "0a8ea6bf2d17be31a35e43c6198a3fd9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "supplemented until the follow-up visit 48 h later",
+      "source_chunk_ids": [
+        "0a8ea6bf2d17be31a35e43c6198a3fd9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "convenience sample",
+      "source_chunk_ids": [
+        "187cbf6939255cddacc16ff55a399958"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "exclusion"
+      },
+      "confidence": 0.8,
+      "evidence": "exclusion criteria included: diagnosis with a mood disorder",
+      "source_chunk_ids": [
+        "187cbf6939255cddacc16ff55a399958"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "exclusion"
+      },
+      "confidence": 0.75,
+      "evidence": "exclusion criteria included: therapy with anti-anxiety medication",
+      "source_chunk_ids": [
+        "187cbf6939255cddacc16ff55a399958"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "exclusion"
+      },
+      "confidence": 0.7,
+      "evidence": "exclusion criteria included: therapy with anti-depressant medication",
+      "source_chunk_ids": [
+        "187cbf6939255cddacc16ff55a399958"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "double-blinded manner",
+      "source_chunk_ids": [
+        "505b2e09ffcdf9b0425187c5363d8c61"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "ZEM (Nutricost, N. Vineyard, UT, USA)",
+      "source_chunk_ids": [
+        "505b2e09ffcdf9b0425187c5363d8c61"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "single dose of 25 mg/day over three days",
+      "source_chunk_ids": [
+        "505b2e09ffcdf9b0425187c5363d8c61"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.9,
+      "evidence": "No participants reported any side effects",
+      "source_chunk_ids": [
+        "505b2e09ffcdf9b0425187c5363d8c61"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "main effect for time and treatment",
+      "source_chunk_ids": [
+        "369a470a77093f73f5c9ec841c72bd20"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "ZEM group",
+      "source_chunk_ids": [
+        "369a470a77093f73f5c9ec841c72bd20"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "control"
+      },
+      "confidence": 0.85,
+      "evidence": "PL group",
+      "source_chunk_ids": [
+        "369a470a77093f73f5c9ec841c72bd20"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "perceived soreness was lower in the ZEM group",
+      "source_chunk_ids": [
+        "369a470a77093f73f5c9ec841c72bd20"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.75,
+      "evidence": "ZEM treatment resulted in a greater ROM",
+      "source_chunk_ids": [
+        "369a470a77093f73f5c9ec841c72bd20"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "positive"
+      },
+      "confidence": 0.75,
+      "evidence": "perceived soreness was lower in the ZEM group",
+      "source_chunk_ids": [
+        "369a470a77093f73f5c9ec841c72bd20"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "positive"
+      },
+      "confidence": 0.7,
+      "evidence": "ZEM treatment resulted in a greater ROM",
+      "source_chunk_ids": [
+        "369a470a77093f73f5c9ec841c72bd20"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "perceived soreness was lower in the ZEM group",
+      "source_chunk_ids": [
+        "369a470a77093f73f5c9ec841c72bd20"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.7,
+      "evidence": "ZEM treatment resulted in a greater ROM",
+      "source_chunk_ids": [
+        "369a470a77093f73f5c9ec841c72bd20"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "analysis of plasma LDH levels",
+      "source_chunk_ids": [
+        "3a25a51b7ab2bfb5b2212bcb4148bd03"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "ZEM groups",
+      "source_chunk_ids": [
+        "3a25a51b7ab2bfb5b2212bcb4148bd03"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "increases"
+      },
+      "confidence": 0.8,
+      "evidence": "large-sized increases in LDH activity",
+      "source_chunk_ids": [
+        "3a25a51b7ab2bfb5b2212bcb4148bd03"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Figure 1 consists of three bar charts",
+      "source_chunk_ids": [
+        "9499b1fa54bb972eebb287b06634bda0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Zembrin\u00ae (ZEM, light green bars)",
+      "source_chunk_ids": [
+        "9499b1fa54bb972eebb287b06634bda0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "increases"
+      },
+      "confidence": 0.85,
+      "evidence": "ZEM increases to approximately 4.0 at 48 Hours",
+      "source_chunk_ids": [
+        "9499b1fa54bb972eebb287b06634bda0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "decreases"
+      },
+      "confidence": 0.85,
+      "evidence": "ZEM decreases to approximately 125 at 48 Hours",
+      "source_chunk_ids": [
+        "9499b1fa54bb972eebb287b06634bda0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "increases"
+      },
+      "confidence": 0.85,
+      "evidence": "ZEM increases to approximately 0.48 at 48 Hours",
+      "source_chunk_ids": [
+        "9499b1fa54bb972eebb287b06634bda0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "Changes in (a) perceived soreness",
+      "source_chunk_ids": [
+        "9499b1fa54bb972eebb287b06634bda0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "Changes in (b) range of motion (ROM)",
+      "source_chunk_ids": [
+        "9499b1fa54bb972eebb287b06634bda0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "Changes in (c) plasma lactate dehydrogenase (LDH)",
+      "source_chunk_ids": [
+        "9499b1fa54bb972eebb287b06634bda0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "A statistical analysis was conducted",
+      "source_chunk_ids": [
+        "5623bad41afca45cefdeeef613d514bc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Zembrin\u00ae (ZEM)-treated groups",
+      "source_chunk_ids": [
+        "5623bad41afca45cefdeeef613d514bc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "Changes in perceived soreness",
+      "source_chunk_ids": [
+        "5623bad41afca45cefdeeef613d514bc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.75,
+      "evidence": "Changes in perceived soreness",
+      "source_chunk_ids": [
+        "5623bad41afca45cefdeeef613d514bc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.75,
+      "evidence": "range of motion (ROM; degrees)",
+      "source_chunk_ids": [
+        "5623bad41afca45cefdeeef613d514bc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.75,
+      "evidence": "plasma lactate dehydrogenase (LDH)",
+      "source_chunk_ids": [
+        "5623bad41afca45cefdeeef613d514bc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.7,
+      "evidence": "Changes in perceived soreness in ZEM-treated groups",
+      "source_chunk_ids": [
+        "5623bad41afca45cefdeeef613d514bc"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Changes in perceived soreness in ZEM-treated groups",
+      "source_chunk_ids": [
+        "5623bad41afca45cefdeeef613d514bc"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "range of motion in ZEM-treated groups",
+      "source_chunk_ids": [
+        "5623bad41afca45cefdeeef613d514bc"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "plasma LDH in ZEM-treated groups",
+      "source_chunk_ids": [
+        "5623bad41afca45cefdeeef613d514bc"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "groups PL and ZEM",
+      "source_chunk_ids": [
+        "a67b77f9debb7fc60cfa86db3a735fc5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "ZEM group",
+      "source_chunk_ids": [
+        "a67b77f9debb7fc60cfa86db3a735fc5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "PL group",
+      "source_chunk_ids": [
+        "a67b77f9debb7fc60cfa86db3a735fc5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "mood was significantly improved",
+      "source_chunk_ids": [
+        "a67b77f9debb7fc60cfa86db3a735fc5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "worsens"
+      },
+      "confidence": 0.8,
+      "evidence": "mood was significantly worse",
+      "source_chunk_ids": [
+        "a67b77f9debb7fc60cfa86db3a735fc5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.75,
+      "evidence": "no effect for treatment",
+      "source_chunk_ids": [
+        "a67b77f9debb7fc60cfa86db3a735fc5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.75,
+      "evidence": "not for treatment",
+      "source_chunk_ids": [
+        "a67b77f9debb7fc60cfa86db3a735fc5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Figure 2: Changes in total repetitions, RPE, and POMS",
+      "source_chunk_ids": [
+        "0e8f1f711c9397db82ee5a24a784b943"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Zembrin\u00ae (ZEM)-treated groups",
+      "source_chunk_ids": [
+        "0e8f1f711c9397db82ee5a24a784b943"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "ZEM group decreases to approximately 20 repetitions",
+      "source_chunk_ids": [
+        "0e8f1f711c9397db82ee5a24a784b943"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.75,
+      "evidence": "ZEM group increases to approximately 6.5 RPE",
+      "source_chunk_ids": [
+        "0e8f1f711c9397db82ee5a24a784b943"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "ZEM group decreases to approximately -10 POMS score",
+      "source_chunk_ids": [
+        "0e8f1f711c9397db82ee5a24a784b943"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.8,
+      "evidence": "ZEM group decreases to approximately -10 POMS score",
+      "source_chunk_ids": [
+        "0e8f1f711c9397db82ee5a24a784b943"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Data are presented as a mean \u00b1 SD",
+      "source_chunk_ids": [
+        "93b033812c650f4dbe1372c3e422f336"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Zembrin\u00ae (ZEM)-treated groups",
+      "source_chunk_ids": [
+        "93b033812c650f4dbe1372c3e422f336"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "a more negative POMS score indicates a better mood",
+      "source_chunk_ids": [
+        "93b033812c650f4dbe1372c3e422f336"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "changes"
+      },
+      "confidence": 0.7,
+      "evidence": "Changes in (a) total repetitions",
+      "source_chunk_ids": [
+        "93b033812c650f4dbe1372c3e422f336"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "changes"
+      },
+      "confidence": 0.7,
+      "evidence": "Changes in (b) rate of perceived exertion",
+      "source_chunk_ids": [
+        "93b033812c650f4dbe1372c3e422f336"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "changes"
+      },
+      "confidence": 0.7,
+      "evidence": "Changes in (c) profile of mood states",
+      "source_chunk_ids": [
+        "93b033812c650f4dbe1372c3e422f336"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "reported"
+      },
+      "confidence": 0.7,
+      "evidence": "ZEM has been widely reported to have anxiolytic properties",
+      "source_chunk_ids": [
+        "c4998f47eefdd3c56b3d4157fd34083d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "context": "reported"
+      },
+      "confidence": 0.7,
+      "evidence": "ZEM has been widely reported to have anti-depressant properties",
+      "source_chunk_ids": [
+        "c4998f47eefdd3c56b3d4157fd34083d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "reported",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "ZEM has been widely reported to have mild anti-inflammatory properties",
+      "source_chunk_ids": [
+        "c4998f47eefdd3c56b3d4157fd34083d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "these preliminary findings",
+      "source_chunk_ids": [
+        "c4998f47eefdd3c56b3d4157fd34083d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "short-term ZEM supplementation influences",
+      "source_chunk_ids": [
+        "c4998f47eefdd3c56b3d4157fd34083d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "ZEM decreased perceived soreness",
+      "source_chunk_ids": [
+        "c4998f47eefdd3c56b3d4157fd34083d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "ZEM supplementation also resulted in a more favorable overall mood",
+      "source_chunk_ids": [
+        "c4998f47eefdd3c56b3d4157fd34083d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.8,
+      "evidence": "both the ZEM and PL groups had a worsened exercise performance",
+      "source_chunk_ids": [
+        "c4998f47eefdd3c56b3d4157fd34083d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "clinical",
+        "supporting_study_ids": [
+          "E5"
+        ]
+      },
+      "confidence": 0.75,
+      "evidence": "ZEM decreased perceived soreness",
+      "source_chunk_ids": [
+        "c4998f47eefdd3c56b3d4157fd34083d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "context": "clinical",
+        "supporting_study_ids": [
+          "E5"
+        ]
+      },
+      "confidence": 0.75,
+      "evidence": "ZEM supplementation also resulted in a more favorable overall mood",
+      "source_chunk_ids": [
+        "c4998f47eefdd3c56b3d4157fd34083d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "SUGGESTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "using ZEM in recovery following exercise",
+      "source_chunk_ids": [
+        "c4998f47eefdd3c56b3d4157fd34083d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Unique to the current study",
+      "source_chunk_ids": [
+        "1138d912717a17c32ba5bcc5e84d556f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "ZEM treatment",
+      "source_chunk_ids": [
+        "1138d912717a17c32ba5bcc5e84d556f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "perceived soreness was lower at 48 h",
+      "source_chunk_ids": [
+        "1138d912717a17c32ba5bcc5e84d556f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "ZEM blunted increases in perceptions of exertion",
+      "source_chunk_ids": [
+        "1138d912717a17c32ba5bcc5e84d556f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "ZEM partially attenuated losses in ROM",
+      "source_chunk_ids": [
+        "1138d912717a17c32ba5bcc5e84d556f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.8,
+      "evidence": "perceived soreness was lower at 48 h with ZEM treatment",
+      "source_chunk_ids": [
+        "1138d912717a17c32ba5bcc5e84d556f"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "ZEM blunted increases in perceptions of exertion",
+      "source_chunk_ids": [
+        "1138d912717a17c32ba5bcc5e84d556f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "ZEM partially attenuated losses in ROM",
+      "source_chunk_ids": [
+        "1138d912717a17c32ba5bcc5e84d556f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "analgesic effects of ZEM",
+      "source_chunk_ids": [
+        "1138d912717a17c32ba5bcc5e84d556f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Loria et al. showed decreases in pain sensitivity",
+      "source_chunk_ids": [
+        "03219b5e89e31dc4067667b0303ed0d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "decreases in pain sensitivity between morphine and ZEM",
+      "source_chunk_ids": [
+        "03219b5e89e31dc4067667b0303ed0d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.75,
+      "evidence": "decreases in pain sensitivity",
+      "source_chunk_ids": [
+        "03219b5e89e31dc4067667b0303ed0d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "interaction of mesembrine alkaloids with opioid receptors",
+      "source_chunk_ids": [
+        "03219b5e89e31dc4067667b0303ed0d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "interacts with"
+      },
+      "confidence": 0.8,
+      "evidence": "interaction of mesembrine alkaloids with delta 2- opioid receptors",
+      "source_chunk_ids": [
+        "03219b5e89e31dc4067667b0303ed0d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "action": "interacts with"
+      },
+      "confidence": 0.8,
+      "evidence": "interaction of mesembrine alkaloids with mu- opioid receptors",
+      "source_chunk_ids": [
+        "03219b5e89e31dc4067667b0303ed0d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "clinical",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "ZEM could serve as a possible safe and effective alternative in blunting musculoskeletal pain",
+      "source_chunk_ids": [
+        "03219b5e89e31dc4067667b0303ed0d6"
+      ],
+      "supporting_study_ids": [
+        "E2"
+      ],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "reductions in perceived soreness were large in magnitude",
+      "source_chunk_ids": [
+        "03219b5e89e31dc4067667b0303ed0d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "attenuation in increases in RPE may support that ZEM can modulate psychophysiological feelings",
+      "source_chunk_ids": [
+        "03219b5e89e31dc4067667b0303ed0d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R10",
+      "type": "CAUSES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E11",
+      "attributes": {
+        "context": "implied",
+        "assertion": "refutes",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "long-term opioid/narcotic use poses considerable health threats",
+      "source_chunk_ids": [
+        "03219b5e89e31dc4067667b0303ed0d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.8,
+      "evidence": "decreases in anxiety with ZEM treatment",
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "potent anxiolytic effects of ZEM treatment",
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "ZEM supplementation resulted in reduced anxiety",
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E11",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "lower perception of soreness with ZEM",
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.7,
+      "evidence": "ZEM may be due to 5HT reuptake inhibitor mechanisms",
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "action": "alters",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "linked to alterations of amygdala activity",
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "Terburg et al. demonstrated after ZEM treatment",
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "affects"
+      },
+      "confidence": 0.7,
+      "evidence": "lower amygdala reactivity after ZEM treatment",
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Terburg et al. demonstrated",
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "anxiety detrimentally affect pain",
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "anxiety lead to decreased joint ROM",
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "PRODUCES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E11",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "reduced anxiety leading to lower perception of soreness",
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R13",
+      "type": "PRODUCES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E12",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "reduced anxiety leading to loss of ROM",
+      "source_chunk_ids": [
+        "708fdda3bb30779ac06e43faf045ba77"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Bennet et al. suggested",
+      "source_chunk_ids": [
+        "531c973c8b6689ea72876377677ca2d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "ZEM",
+      "source_chunk_ids": [
+        "531c973c8b6689ea72876377677ca2d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.7,
+      "evidence": "anti-inflammatory effects of ZEM may not have existed",
+      "source_chunk_ids": [
+        "531c973c8b6689ea72876377677ca2d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "partial_block"
+      },
+      "confidence": 0.75,
+      "evidence": "partially block inflammatory signaling",
+      "source_chunk_ids": [
+        "531c973c8b6689ea72876377677ca2d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "beneficial"
+      },
+      "confidence": 0.7,
+      "evidence": "beneficial in low-grade inflammation",
+      "source_chunk_ids": [
+        "531c973c8b6689ea72876377677ca2d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.8,
+      "evidence": "muscle damage and inflammation produced by intense exercise may overwhelm the capacity of ZEM",
+      "source_chunk_ids": [
+        "531c973c8b6689ea72876377677ca2d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.75,
+      "evidence": "lack of ergogenic benefits of ZEM",
+      "source_chunk_ids": [
+        "531c973c8b6689ea72876377677ca2d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.7,
+      "evidence": "ZEM may not have attenuated performance decrements",
+      "source_chunk_ids": [
+        "531c973c8b6689ea72876377677ca2d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "STUDIES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "previous investigations showing modest to no improvements",
+      "source_chunk_ids": [
+        "531c973c8b6689ea72876377677ca2d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.7,
+      "evidence": "modest to no improvements",
+      "source_chunk_ids": [
+        "531c973c8b6689ea72876377677ca2d6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "ZEM as a mood stabilizer",
+      "source_chunk_ids": [
+        "2277ef110348e6809231fc0dc5aadd64"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "ZEM prevented mood disturbance",
+      "source_chunk_ids": [
+        "2277ef110348e6809231fc0dc5aadd64"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "mood was significantly better at 48 h",
+      "source_chunk_ids": [
+        "2277ef110348e6809231fc0dc5aadd64"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "assertion": "refutes"
+      },
+      "confidence": 0.75,
+      "evidence": "ZEM prevented mood disturbance",
+      "source_chunk_ids": [
+        "2277ef110348e6809231fc0dc5aadd64"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.85,
+      "evidence": "ZEM as a 5HT reuptake inhibitor",
+      "source_chunk_ids": [
+        "4b64f80b0a2cc087eb70d7b954564f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.85,
+      "evidence": "ZEM as a PDE-4 inhibitor",
+      "source_chunk_ids": [
+        "4b64f80b0a2cc087eb70d7b954564f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "support the mood stabilization effects",
+      "source_chunk_ids": [
+        "4b64f80b0a2cc087eb70d7b954564f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "mechanistic"
+      },
+      "confidence": 0.75,
+      "evidence": "treatment for both depression",
+      "source_chunk_ids": [
+        "4b64f80b0a2cc087eb70d7b954564f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "context": "mechanistic"
+      },
+      "confidence": 0.75,
+      "evidence": "treatment for both depression and anxiety",
+      "source_chunk_ids": [
+        "4b64f80b0a2cc087eb70d7b954564f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Hoffman et al. showed that ZEM did not alter mood",
+      "source_chunk_ids": [
+        "4b64f80b0a2cc087eb70d7b954564f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "previous work on ZEM and mood during exercise",
+      "source_chunk_ids": [
+        "4b64f80b0a2cc087eb70d7b954564f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "TESTED_AT",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "after 8 days of supplementation",
+      "source_chunk_ids": [
+        "4b64f80b0a2cc087eb70d7b954564f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.8,
+      "evidence": "ZEM did not alter mood compared with a PL group",
+      "source_chunk_ids": [
+        "4b64f80b0a2cc087eb70d7b954564f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {
+        "context": "proposed"
+      },
+      "confidence": 0.7,
+      "evidence": "ZEM may serve as an effective strategy to combat mood changes",
+      "source_chunk_ids": [
+        "4b64f80b0a2cc087eb70d7b954564f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "5HT reuptake inhibition improves depressive mood symptoms",
+      "source_chunk_ids": [
+        "4b64f80b0a2cc087eb70d7b954564f46"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "these pilot data",
+      "source_chunk_ids": [
+        "37eec8e2b6ab3b8cfee24ca6f6df77ab"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "novel information on the nutraceutical Zembrin\u00ae",
+      "source_chunk_ids": [
+        "37eec8e2b6ab3b8cfee24ca6f6df77ab"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "positively affects pain",
+      "source_chunk_ids": [
+        "37eec8e2b6ab3b8cfee24ca6f6df77ab"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "attenuation of perceived soreness",
+      "source_chunk_ids": [
+        "37eec8e2b6ab3b8cfee24ca6f6df77ab"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "worsens"
+      },
+      "confidence": 0.75,
+      "evidence": "loss of ROM",
+      "source_chunk_ids": [
+        "37eec8e2b6ab3b8cfee24ca6f6df77ab"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "worsens"
+      },
+      "confidence": 0.75,
+      "evidence": "increase in RPE",
+      "source_chunk_ids": [
+        "37eec8e2b6ab3b8cfee24ca6f6df77ab"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "preservation of mood",
+      "source_chunk_ids": [
+        "37eec8e2b6ab3b8cfee24ca6f6df77ab"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.8,
+      "evidence": "positively affects pain",
+      "source_chunk_ids": [
+        "37eec8e2b6ab3b8cfee24ca6f6df77ab"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "more investigation is needed for mood disorders",
+      "source_chunk_ids": [
+        "37eec8e2b6ab3b8cfee24ca6f6df77ab"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {
+        "mapping_type": "direct",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "combat negative psychological effects",
+      "source_chunk_ids": [
+        "37eec8e2b6ab3b8cfee24ca6f6df77ab"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "approved by the Samford University Institutional Review Board",
+      "source_chunk_ids": [
+        "894029731d934fd284f917389cf4ca41"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Acute effects of Sceletium tortuosum (Zembrin)",
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "in vitro",
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "inhibits"
+      },
+      "confidence": 0.85,
+      "evidence": "dual 5-HT reuptake inhibitor",
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "inhibits"
+      },
+      "confidence": 0.85,
+      "evidence": "PDE4 inhibitor",
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum (Zembrin\u00ae) ameliorates anxiety",
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "healthy volunteers",
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "ameliorates"
+      },
+      "confidence": 0.85,
+      "evidence": "ameliorates experimentally induced anxiety",
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "TREATS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.8,
+      "evidence": "ameliorates experimentally induced anxiety",
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "supporting_study_ids": [
+        "E7"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "STUDIES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Effect of Zembrin\u00ae on Brain Electrical Activity",
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "TESTED_AT",
+      "source_entity_id": "E10",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "6 weeks of daily intake",
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "ACTS_ON",
+      "source_entity_id": "E12",
+      "target_entity_id": "E6",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.85,
+      "evidence": "Mesembrine Is an Inhibitor of PDE4",
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "CONTAINS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "High-mesembrine Sceletium extract",
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "PRODUCES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "monoamine releasing agent",
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "STUDIES",
+      "source_entity_id": "E15",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "study of cognition effects of the proprietary extract sceletium tortuosum (Zembrin)",
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "REPORTS",
+      "source_entity_id": "E15",
+      "target_entity_id": "E16",
+      "attributes": {
+        "outcome": "implications"
+      },
+      "confidence": 0.8,
+      "evidence": "Implications for Alzheimer's dementia",
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "STUDIES",
+      "source_entity_id": "E17",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Ergogenic effects of 8 Days of sceletium tortuosum supplementation",
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R17",
+      "type": "REPORTS",
+      "source_entity_id": "E17",
+      "target_entity_id": "E18",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "effects on mood",
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R18",
+      "type": "REPORTS",
+      "source_entity_id": "E17",
+      "target_entity_id": "E19",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.75,
+      "evidence": "visual tracking",
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R19",
+      "type": "REPORTS",
+      "source_entity_id": "E17",
+      "target_entity_id": "E20",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.75,
+      "evidence": "reaction",
+      "source_chunk_ids": [
+        "72153a38ce9ddd4754240e65cc695d02"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

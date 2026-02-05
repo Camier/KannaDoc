@@ -1,12 +1,5402 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "7cf96c73ad07ecd2e02f96316c91fe60752b3eea5d4d08103f5f92139277dd82",
-  "extracted_at": "2026-02-01T08:57:31.021195+00:00",
-  "extractor": "legacy-migration",
-  "entities": [],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.081624+00:00",
-    "original_file": "entities.json"
-  }
+  "entities": [
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Hoffman et al. 2020",
+      "attributes": {
+        "design": "randomized controlled trial",
+        "sample_size": 60,
+        "duration": "8 days",
+        "year": 2020,
+        "doi": "10.1519/JSC.0000000000002815"
+      },
+      "source_chunk_ids": [
+        "a9054a1ec1438f6b238165056d5b5df4"
+      ],
+      "confidence": 0.95,
+      "evidence": "Hoffman, JR, Marcus, I, Dubnov-Raz, G, and Gepner, Y. Ergogenic effects of 8 days of Sceletium tortuosum supplementation",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "a9054a1ec1438f6b238165056d5b5df4"
+      ],
+      "confidence": 0.9,
+      "evidence": "randomly assigned to 1 of 2 groups: ST or placebo",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "a9054a1ec1438f6b238165056d5b5df4"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum (ST) is a South African plant",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "ST extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a9054a1ec1438f6b238165056d5b5df4"
+      ],
+      "confidence": 0.85,
+      "evidence": "ST extract (25-mg) supplementation",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Dosage",
+      "name": "25 mg daily for 8 days",
+      "attributes": {
+        "amount": 25,
+        "unit": "mg",
+        "frequency": "daily",
+        "duration": "8 days",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "a9054a1ec1438f6b238165056d5b5df4"
+      ],
+      "confidence": 0.8,
+      "evidence": "8 days of ST extract (25-mg) supplementation",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "a9054a1ec1438f6b238165056d5b5df4"
+      ],
+      "confidence": 0.9,
+      "evidence": "used in treating people with anxiety",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "stress",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "a9054a1ec1438f6b238165056d5b5df4"
+      ],
+      "confidence": 0.9,
+      "evidence": "used in treating people with stress",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "a9054a1ec1438f6b238165056d5b5df4"
+      ],
+      "confidence": 0.9,
+      "evidence": "used in treating people with depression",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "improved complex reactive performance",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "a9054a1ec1438f6b238165056d5b5df4"
+      ],
+      "confidence": 0.85,
+      "evidence": "Significant improvements were noted for ST in complex reactive performance",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "no change in mood",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "a9054a1ec1438f6b238165056d5b5df4"
+      ],
+      "confidence": 0.8,
+      "evidence": "no benefits in mood were observed",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "no change in simple reaction",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "a9054a1ec1438f6b238165056d5b5df4"
+      ],
+      "confidence": 0.8,
+      "evidence": "no differences were observed in simple reaction assessments",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "TraditionalUse",
+      "name": "promote a sense of well-being",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a9054a1ec1438f6b238165056d5b5df4"
+      ],
+      "confidence": 0.85,
+      "evidence": "reported to promote a sense of well-being",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "ce8e49c5eb4f46e501164b601e375fe2"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum (ST)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "ce8e49c5eb4f46e501164b601e375fe2"
+      ],
+      "confidence": 0.9,
+      "evidence": "treating people with anxiety",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "stress",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "ce8e49c5eb4f46e501164b601e375fe2"
+      ],
+      "confidence": 0.9,
+      "evidence": "treating people with stress",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "ce8e49c5eb4f46e501164b601e375fe2"
+      ],
+      "confidence": 0.9,
+      "evidence": "treating people with depression",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "serotonin transporter",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "ce8e49c5eb4f46e501164b601e375fe2"
+      ],
+      "confidence": 0.85,
+      "evidence": "blocker of the serotonin (5-HT) transporter",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "ce8e49c5eb4f46e501164b601e375fe2"
+      ],
+      "confidence": 0.85,
+      "evidence": "inhibitor of phosphodiesterase-4 (PDE4)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "promote a sense of well-being",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "ce8e49c5eb4f46e501164b601e375fe2"
+      ],
+      "confidence": 0.8,
+      "evidence": "promote a sense of well-being",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "attenuate proinflammatory cytokines",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "ce8e49c5eb4f46e501164b601e375fe2"
+      ],
+      "confidence": 0.75,
+      "evidence": "attenuate proinflammatory cytokines",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "reported evidence",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "ce8e49c5eb4f46e501164b601e375fe2"
+      ],
+      "confidence": 0.7,
+      "evidence": "has been reported to promote",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "serotonin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "83126570411f4febb871e23c7ca047ba"
+      ],
+      "confidence": 0.95,
+      "evidence": "Serotonin is a neurotransmitter",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "neuroplasticity",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "83126570411f4febb871e23c7ca047ba"
+      ],
+      "confidence": 0.9,
+      "evidence": "role in neuroplasticity",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "83126570411f4febb871e23c7ca047ba"
+      ],
+      "confidence": 0.95,
+      "evidence": "pathophysiology of depression",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "learning and memory deficits",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "83126570411f4febb871e23c7ca047ba"
+      ],
+      "confidence": 0.85,
+      "evidence": "learning and memory deficits",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "5-HT reuptake",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "83126570411f4febb871e23c7ca047ba"
+      ],
+      "confidence": 0.8,
+      "evidence": "Blocking the reuptake of 5-HT",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "phosphodiesterases",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "41ec8b90141e5f3151c7162bb7e3a3d8"
+      ],
+      "confidence": 0.9,
+      "evidence": "Phosphodiesterases (PDE) are a group of enzymes",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "41ec8b90141e5f3151c7162bb7e3a3d8"
+      ],
+      "confidence": 0.95,
+      "evidence": "PDE4 has received much focus in neuro-dysfunction",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "cAMP",
+      "attributes": {
+        "target_type": "molecule"
+      },
+      "source_chunk_ids": [
+        "41ec8b90141e5f3151c7162bb7e3a3d8"
+      ],
+      "confidence": 0.9,
+      "evidence": "cyclic adenosine monophosphate (cAMP)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "protein kinase A",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "41ec8b90141e5f3151c7162bb7e3a3d8"
+      ],
+      "confidence": 0.85,
+      "evidence": "protein kinase A (PKA)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "cAMP response element binding protein",
+      "attributes": {
+        "target_type": "transcription factor"
+      },
+      "source_chunk_ids": [
+        "41ec8b90141e5f3151c7162bb7e3a3d8"
+      ],
+      "confidence": 0.9,
+      "evidence": "cAMP response element binding protein (CREB)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "brain-derived neurotrophic factor",
+      "attributes": {
+        "target_type": "protein"
+      },
+      "source_chunk_ids": [
+        "41ec8b90141e5f3151c7162bb7e3a3d8"
+      ],
+      "confidence": 0.85,
+      "evidence": "brain-derived neurotrophic factor (BDNF)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "altered synaptic function",
+      "attributes": {
+        "level": "cellular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "41ec8b90141e5f3151c7162bb7e3a3d8"
+      ],
+      "confidence": 0.8,
+      "evidence": "alter synaptic function",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "cAMP alterations",
+      "attributes": {
+        "level": "molecular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "41ec8b90141e5f3151c7162bb7e3a3d8"
+      ],
+      "confidence": 0.85,
+      "evidence": "cAMP alterations",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "attenuate inflammatory cytokines",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "41ec8b90141e5f3151c7162bb7e3a3d8"
+      ],
+      "confidence": 0.8,
+      "evidence": "attenuate inflammatory cytokines",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "neuro-dysfunction",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "41ec8b90141e5f3151c7162bb7e3a3d8"
+      ],
+      "confidence": 0.75,
+      "evidence": "neuro-dysfunction",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Terburg et al. (21)",
+      "attributes": {
+        "year": "21",
+        "authors": "Terburg et al."
+      },
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "confidence": 0.9,
+      "evidence": "Terburg et al. (21) reported",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "initial evidence",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "confidence": 0.8,
+      "evidence": "providing the initial evidence",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "ST extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "confidence": 0.85,
+      "evidence": "ST extract (25 mg)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Dosage",
+      "name": "25 mg single administration",
+      "attributes": {
+        "amount": 25,
+        "unit": "mg",
+        "frequency": "single",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "confidence": 0.8,
+      "evidence": "single administration of ST extract (25 mg)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "anxiety disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "confidence": 0.9,
+      "evidence": "treatment of anxiety disorders",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "confidence": 0.9,
+      "evidence": "treatment of anxiety disorders and depression",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "confidence": 0.85,
+      "evidence": "dual PDE4 and 5-HT reuptake inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Target",
+      "name": "5-HT reuptake",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "confidence": 0.85,
+      "evidence": "dual PDE4 and 5-HT reuptake inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "reduce anxiety-related amygdala reactivity",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "confidence": 0.8,
+      "evidence": "reduce anxiety-related amygdala reactivity",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "attenuate amygdala-hypothalamus coupling",
+      "attributes": {
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "confidence": 0.8,
+      "evidence": "attenuate amygdala-hypothalamus coupling",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Study",
+      "name": "subsequent investigation (4)",
+      "attributes": {
+        "year": "4",
+        "sample": "middle-aged healthy men and women"
+      },
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "confidence": 0.85,
+      "evidence": "subsequent investigation examined a 25-mg dose",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Dosage",
+      "name": "25 mg for 3 weeks",
+      "attributes": {
+        "amount": 25,
+        "unit": "mg",
+        "duration": "3 weeks",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "confidence": 0.8,
+      "evidence": "25-mg dose consumed for 3 weeks",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Effect",
+      "name": "improvements in mood",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "confidence": 0.85,
+      "evidence": "demonstrated improvements in mood",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "recent study (5)",
+      "attributes": {
+        "design": "single-dose study",
+        "sample_size": null,
+        "duration": "single dose",
+        "year": null,
+        "doi": null
+      },
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "confidence": 0.85,
+      "evidence": "A recent study reported",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical study",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "confidence": 0.8,
+      "evidence": "study reported",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "ST extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "confidence": 0.9,
+      "evidence": "ST extract",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Dosage",
+      "name": "25 mg single dose",
+      "attributes": {
+        "amount": 25,
+        "unit": "mg",
+        "frequency": "single dose",
+        "duration": "single dose",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "confidence": 0.9,
+      "evidence": "single (25-mg) dose",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "improved cognition",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "confidence": 0.85,
+      "evidence": "improving cognition",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "improved mood",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "confidence": 0.85,
+      "evidence": "improving cognition and mood",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "improved eye tracking ability",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "confidence": 0.8,
+      "evidence": "eye tracking ability",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "current study",
+      "attributes": {
+        "design": "intervention study",
+        "sample_size": null,
+        "duration": "8 days",
+        "year": null,
+        "doi": null
+      },
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "confidence": 0.8,
+      "evidence": "purpose of this study",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "intervention study",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "confidence": 0.75,
+      "evidence": "study to examine",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Dosage",
+      "name": "8 days of ST ingestion",
+      "attributes": {
+        "amount": null,
+        "unit": null,
+        "frequency": null,
+        "duration": "8 days",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "confidence": 0.85,
+      "evidence": "8 days of ST ingestion",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "reactive agility changes",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "confidence": 0.8,
+      "evidence": "reactive agility",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Effect",
+      "name": "visual tracking changes",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "confidence": 0.8,
+      "evidence": "visual tracking",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Effect",
+      "name": "mood changes",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "confidence": 0.8,
+      "evidence": "mood",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "8-day supplementation study on ST extract",
+      "attributes": {
+        "design": "randomized controlled trial",
+        "sample_size": "healthy, college-aged men and women",
+        "duration": "8 days"
+      },
+      "source_chunk_ids": [
+        "4fd97010543d4be567a70d464874158b"
+      ],
+      "confidence": 0.9,
+      "evidence": "The effect of 8 days of ST extract supplementation was examined",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "4fd97010543d4be567a70d464874158b"
+      ],
+      "confidence": 0.85,
+      "evidence": "Subjects were randomized into either a placebo or active ingredient group",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "ST extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4fd97010543d4be567a70d464874158b"
+      ],
+      "confidence": 0.95,
+      "evidence": "ST extract (25-mg) supplementation",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Dosage",
+      "name": "25 mg daily for 8 days",
+      "attributes": {
+        "amount": 25,
+        "unit": "mg",
+        "frequency": "daily",
+        "duration": "8 days",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "4fd97010543d4be567a70d464874158b"
+      ],
+      "confidence": 0.8,
+      "evidence": "25-mg supplementation on reactive agility",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "reactive agility",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "4fd97010543d4be567a70d464874158b"
+      ],
+      "confidence": 0.85,
+      "evidence": "effect on reactive agility",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "visual tracking",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "4fd97010543d4be567a70d464874158b"
+      ],
+      "confidence": 0.85,
+      "evidence": "visual tracking",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "mood",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "4fd97010543d4be567a70d464874158b"
+      ],
+      "confidence": 0.85,
+      "evidence": "mood was examined",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "fatigue",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "4fd97010543d4be567a70d464874158b"
+      ],
+      "confidence": 0.8,
+      "evidence": "assess fatigue",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "focus",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "4fd97010543d4be567a70d464874158b"
+      ],
+      "confidence": 0.8,
+      "evidence": "assess focus",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "randomized controlled trial on Sceletium tortuosum",
+      "attributes": {
+        "design": "randomized controlled trial",
+        "sample_size": 60,
+        "year": null,
+        "doi": null
+      },
+      "source_chunk_ids": [
+        "82de8b3ac5ded5b78a9fe9f087fc5d20"
+      ],
+      "confidence": 0.9,
+      "evidence": "Subjects were randomized into either the active ingredient ST or the PL group",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "82de8b3ac5ded5b78a9fe9f087fc5d20"
+      ],
+      "confidence": 0.85,
+      "evidence": "randomized controlled trial",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "82de8b3ac5ded5b78a9fe9f087fc5d20"
+      ],
+      "confidence": 0.8,
+      "evidence": "active ingredient ST",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "Sceletium tortuosum supplement",
+      "attributes": {},
+      "source_chunk_ids": [
+        "82de8b3ac5ded5b78a9fe9f087fc5d20"
+      ],
+      "confidence": 0.75,
+      "evidence": "active ingredient ST",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Mood Questionnaire and VAS study",
+      "attributes": {
+        "design": "questionnaire and visual analog scale assessment"
+      },
+      "source_chunk_ids": [
+        "3ba7329311b85352f6cfa13b0f3b037b"
+      ],
+      "confidence": 0.8,
+      "evidence": "Mood Questionnaire and VAS for Alertness and Energy",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "questionnaire and VAS assessment",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "3ba7329311b85352f6cfa13b0f3b037b"
+      ],
+      "confidence": 0.75,
+      "evidence": "Mood Questionnaire and VAS for Alertness and Energy",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "alertness",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "3ba7329311b85352f6cfa13b0f3b037b"
+      ],
+      "confidence": 0.85,
+      "evidence": "degree of alertness and energy using a 10-cm VAS",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "energy",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "3ba7329311b85352f6cfa13b0f3b037b"
+      ],
+      "confidence": 0.85,
+      "evidence": "degree of alertness and energy using a 10-cm VAS",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "Profile of Mood States (POMS) Questionnaire",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "6ead76543ddbb5f7ae90cc2bf6320649"
+      ],
+      "confidence": 0.9,
+      "evidence": "Profile of Mood States. Analysis of mood was performed through the administration of the POMS Questionnaire.",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "tension",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "6ead76543ddbb5f7ae90cc2bf6320649"
+      ],
+      "confidence": 0.85,
+      "evidence": "provides measures of tension",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "6ead76543ddbb5f7ae90cc2bf6320649"
+      ],
+      "confidence": 0.85,
+      "evidence": "provides measures of depression",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "anger",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "6ead76543ddbb5f7ae90cc2bf6320649"
+      ],
+      "confidence": 0.85,
+      "evidence": "provides measures of anger",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "fatigue",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "6ead76543ddbb5f7ae90cc2bf6320649"
+      ],
+      "confidence": 0.85,
+      "evidence": "provides measures of fatigue",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "confusion",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "6ead76543ddbb5f7ae90cc2bf6320649"
+      ],
+      "confidence": 0.85,
+      "evidence": "provides measures of confusion",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "total mood disturbance",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "6ead76543ddbb5f7ae90cc2bf6320649"
+      ],
+      "confidence": 0.8,
+      "evidence": "Total mood disturbance (TMD) was calculated",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "study design timeline",
+      "attributes": {
+        "design": "randomized controlled trial"
+      },
+      "source_chunk_ids": [
+        "4875bd17c617fb547171b2106aaf67d5"
+      ],
+      "confidence": 0.8,
+      "evidence": "Study design timeline",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "4875bd17c617fb547171b2106aaf67d5"
+      ],
+      "confidence": 0.75,
+      "evidence": "randomized controlled trial",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Dosage",
+      "name": "Food bar supplementation",
+      "attributes": {
+        "route": "oral",
+        "duration": "7 days"
+      },
+      "source_chunk_ids": [
+        "4875bd17c617fb547171b2106aaf67d5"
+      ],
+      "confidence": 0.7,
+      "evidence": "Supplementation period",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "energy",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive",
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "4875bd17c617fb547171b2106aaf67d5"
+      ],
+      "confidence": 0.65,
+      "evidence": "Energy (VAS)",
+      "verified": false
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "alertness",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive",
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "4875bd17c617fb547171b2106aaf67d5"
+      ],
+      "confidence": 0.65,
+      "evidence": "Alertness (VAS)",
+      "verified": false
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Supplementation Protocol",
+      "attributes": {
+        "design": "supplementation protocol"
+      },
+      "source_chunk_ids": [
+        "7972797191d87c66d07e40c8f9f46f37"
+      ],
+      "confidence": 0.9,
+      "evidence": "Supplementation Protocol",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "7972797191d87c66d07e40c8f9f46f37"
+      ],
+      "confidence": 0.8,
+      "evidence": "supplement group and placebo group",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7972797191d87c66d07e40c8f9f46f37"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zembrin",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Dosage",
+      "name": "2.5 mg once per day",
+      "attributes": {
+        "amount": 2.5,
+        "unit": "mg",
+        "frequency": "once per day",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "7972797191d87c66d07e40c8f9f46f37"
+      ],
+      "confidence": 0.85,
+      "evidence": "2.5 mg per serving consumed once per day",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "AdverseEvent",
+      "name": "side effects",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7972797191d87c66d07e40c8f9f46f37"
+      ],
+      "confidence": 0.7,
+      "evidence": "list any side effects",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "study",
+      "attributes": {
+        "sample_size": 60
+      },
+      "source_chunk_ids": [
+        "4dffa95a018c33ba065619cc49ef759e"
+      ],
+      "confidence": 0.9,
+      "evidence": "60 subjects who were enrolled in the study",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "4dffa95a018c33ba065619cc49ef759e"
+      ],
+      "confidence": 0.8,
+      "evidence": "subjects enrolled in the study",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "AdverseEvent",
+      "name": "side effects",
+      "attributes": {
+        "severity": "none"
+      },
+      "source_chunk_ids": [
+        "4dffa95a018c33ba065619cc49ef759e"
+      ],
+      "confidence": 0.85,
+      "evidence": "No side effects associated with supplementation",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "study on ST supplementation",
+      "attributes": {
+        "design": "supplementation study",
+        "duration": "8-day supplementation period"
+      },
+      "source_chunk_ids": [
+        "d65aa81e046508ecfa246338e6006dbc"
+      ],
+      "confidence": 0.85,
+      "evidence": "8-day supplementation period",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "d65aa81e046508ecfa246338e6006dbc"
+      ],
+      "confidence": 0.8,
+      "evidence": "supplementation period",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "ST",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d65aa81e046508ecfa246338e6006dbc"
+      ],
+      "confidence": 0.9,
+      "evidence": "ST and PL",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "improved visual tracking performance",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "d65aa81e046508ecfa246338e6006dbc"
+      ],
+      "confidence": 0.75,
+      "evidence": "significantly greater performance",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "no difference in motor, visual, and physical reaction time",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "d65aa81e046508ecfa246338e6006dbc"
+      ],
+      "confidence": 0.8,
+      "evidence": "no differences in motor, visual, and physical reaction time",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "no difference in missed stimuli",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "d65aa81e046508ecfa246338e6006dbc"
+      ],
+      "confidence": 0.75,
+      "evidence": "no differences in missed stimuli",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "no difference in average time per hit",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "d65aa81e046508ecfa246338e6006dbc"
+      ],
+      "confidence": 0.75,
+      "evidence": "no differences in average time per hit",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "supplement study",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "confidence": 0.8,
+      "evidence": "The effect of the supplement on mood",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "confidence": 0.7,
+      "evidence": "No significant differences in tension or anxiety",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "ST",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "confidence": 0.9,
+      "evidence": "ST and PL",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Product",
+      "name": "PL",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "confidence": 0.9,
+      "evidence": "ST and PL",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "tension",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "confidence": 0.85,
+      "evidence": "tension or anxiety",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "confidence": 0.85,
+      "evidence": "tension or anxiety",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "confidence": 0.85,
+      "evidence": "depression",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "anger",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "confidence": 0.85,
+      "evidence": "anger or hostility",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "hostility",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "confidence": 0.85,
+      "evidence": "anger or hostility",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "vigor",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "confidence": 0.85,
+      "evidence": "vigor",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Condition",
+      "name": "confusion",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "confidence": 0.85,
+      "evidence": "confusion",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Condition",
+      "name": "fatigue",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "confidence": 0.85,
+      "evidence": "subjective feelings of fatigue",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Condition",
+      "name": "alertness",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "confidence": 0.85,
+      "evidence": "subjective feelings of alertness",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Condition",
+      "name": "energy",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "confidence": 0.85,
+      "evidence": "subjective changes in alertness and energy",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "study on ST extract and cognitive performance",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4321a53f35a100749e3208456d3265c0"
+      ],
+      "confidence": 0.9,
+      "evidence": "The results of this study revealed",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical study",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "4321a53f35a100749e3208456d3265c0"
+      ],
+      "confidence": 0.85,
+      "evidence": "study revealed that ingestion",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "ST extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4321a53f35a100749e3208456d3265c0"
+      ],
+      "confidence": 0.95,
+      "evidence": "ST extract",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Dosage",
+      "name": "25 mg per day for 8 days",
+      "attributes": {
+        "amount": 25,
+        "unit": "mg",
+        "frequency": "per day",
+        "duration": "8 days",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "4321a53f35a100749e3208456d3265c0"
+      ],
+      "confidence": 0.9,
+      "evidence": "25 mg of ST extract per day for 8 days",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "improved reactive performance to visual stimulus under cognitive stress",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "4321a53f35a100749e3208456d3265c0"
+      ],
+      "confidence": 0.85,
+      "evidence": "significantly improved reactive performance to a visual stimulus",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "no improvement to visual stimuli without cognitive load",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "4321a53f35a100749e3208456d3265c0"
+      ],
+      "confidence": 0.8,
+      "evidence": "improvements to a single to multiple visual stimuli were not seen",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "no change in subjective mood, alertness, or energy",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "4321a53f35a100749e3208456d3265c0"
+      ],
+      "confidence": 0.85,
+      "evidence": "did not result in any changes in subjective feelings of mood, alertness, or energy",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Chiu et al. investigation",
+      "attributes": {
+        "design": "supplementation protocol",
+        "duration": "3 weeks",
+        "year": "implied from citation (4)"
+      },
+      "source_chunk_ids": [
+        "04ac011cf3f05fa494e4d6ccca7d7293"
+      ],
+      "confidence": 0.85,
+      "evidence": "Chiu et al. investigation (4) used a 3-week supplementation protocol",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Dimpfel et al. study",
+      "attributes": {
+        "design": "acute dose",
+        "duration": "single dose",
+        "year": "implied from citation (5)"
+      },
+      "source_chunk_ids": [
+        "04ac011cf3f05fa494e4d6ccca7d7293"
+      ],
+      "confidence": 0.85,
+      "evidence": "Dimpfel et al. (5) examined a single acute dose",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "present study",
+      "attributes": {
+        "design": "supplement protocol",
+        "duration": "8 days",
+        "sample_age_range": "20 to 35 years"
+      },
+      "source_chunk_ids": [
+        "04ac011cf3f05fa494e4d6ccca7d7293"
+      ],
+      "confidence": 0.9,
+      "evidence": "we chose an 8-day supplement protocol",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "clinical trial evidence",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "04ac011cf3f05fa494e4d6ccca7d7293"
+      ],
+      "confidence": 0.8,
+      "evidence": "Previous investigations using the same dose",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "ST extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "04ac011cf3f05fa494e4d6ccca7d7293"
+      ],
+      "confidence": 0.9,
+      "evidence": "ST extract recruited subjects",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "improvements in mood",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "04ac011cf3f05fa494e4d6ccca7d7293"
+      ],
+      "confidence": 0.85,
+      "evidence": "significant improvements in mood",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "improvements in cognitive function",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "04ac011cf3f05fa494e4d6ccca7d7293"
+      ],
+      "confidence": 0.85,
+      "evidence": "significant improvements in cognitive function",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "cognitive disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "04ac011cf3f05fa494e4d6ccca7d7293"
+      ],
+      "confidence": 0.8,
+      "evidence": "increasing the risk for a variety of cognitive disorders",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "neurodysfunction",
+      "attributes": {
+        "condition_type": "dysfunction"
+      },
+      "source_chunk_ids": [
+        "04ac011cf3f05fa494e4d6ccca7d7293"
+      ],
+      "confidence": 0.75,
+      "evidence": "more vulnerable to neurodysfunction",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "inflammation",
+      "attributes": {
+        "condition_type": "process"
+      },
+      "source_chunk_ids": [
+        "04ac011cf3f05fa494e4d6ccca7d7293"
+      ],
+      "confidence": 0.75,
+      "evidence": "more vulnerable to neurodysfunction and inflammation",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Product",
+      "name": "supplement",
+      "attributes": {},
+      "source_chunk_ids": [
+        "3acde2b3d8300859daa4dab8d6225e92"
+      ],
+      "confidence": 0.9,
+      "evidence": "a supplement",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "serotonin uptake",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "3acde2b3d8300859daa4dab8d6225e92"
+      ],
+      "confidence": 0.85,
+      "evidence": "inhibit serotonin uptake",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "3acde2b3d8300859daa4dab8d6225e92"
+      ],
+      "confidence": 0.9,
+      "evidence": "inhibit ... PDE4",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "inhibition of serotonin uptake",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "3acde2b3d8300859daa4dab8d6225e92"
+      ],
+      "confidence": 0.8,
+      "evidence": "inhibit serotonin uptake",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "inhibition of PDE4",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "3acde2b3d8300859daa4dab8d6225e92"
+      ],
+      "confidence": 0.8,
+      "evidence": "inhibit ... PDE4",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "low brain serotonin levels",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "3acde2b3d8300859daa4dab8d6225e92"
+      ],
+      "confidence": 0.7,
+      "evidence": "brain serotonin levels ... within normal ranges",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "low cAMP levels",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "3acde2b3d8300859daa4dab8d6225e92"
+      ],
+      "confidence": 0.7,
+      "evidence": "cAMP levels ... within normal ranges",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "d2b6e242b0a389c62453fa9d8c9edfb5"
+      ],
+      "confidence": 0.9,
+      "evidence": "ST extract",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "ST extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d2b6e242b0a389c62453fa9d8c9edfb5"
+      ],
+      "confidence": 0.85,
+      "evidence": "ST extract",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "improved performance in reactive assessments",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "d2b6e242b0a389c62453fa9d8c9edfb5"
+      ],
+      "confidence": 0.8,
+      "evidence": "significant improvements were noted in the performance response by ST",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "ergogenic effect",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "d2b6e242b0a389c62453fa9d8c9edfb5"
+      ],
+      "confidence": 0.75,
+      "evidence": "benefits of ST extract appear to provide an ergogenic effect",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "improvement in complex attention",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "d2b6e242b0a389c62453fa9d8c9edfb5"
+      ],
+      "confidence": 0.7,
+      "evidence": "improvement in complex attention reported by Chiu et al.",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "d2b6e242b0a389c62453fa9d8c9edfb5"
+      ],
+      "confidence": 0.8,
+      "evidence": "inhibiting PDE4 action",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "BDNF expression",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "d2b6e242b0a389c62453fa9d8c9edfb5"
+      ],
+      "confidence": 0.75,
+      "evidence": "enhanced BDNF expression",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Chiu et al. (4)",
+      "attributes": {
+        "design": "study"
+      },
+      "source_chunk_ids": [
+        "d2b6e242b0a389c62453fa9d8c9edfb5"
+      ],
+      "confidence": 0.7,
+      "evidence": "improvement in complex attention reported by Chiu et al. (4)",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "in vivo study",
+      "attributes": {
+        "evidence_level": 3,
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "d2b6e242b0a389c62453fa9d8c9edfb5"
+      ],
+      "confidence": 0.65,
+      "evidence": "reactive assessments in young adults",
+      "verified": false
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "previous research on ST extract",
+      "attributes": {
+        "design": "acute ingestion study",
+        "year": "previous"
+      },
+      "source_chunk_ids": [
+        "32178a7710989d6c4bfbf46710cd8adc"
+      ],
+      "confidence": 0.8,
+      "evidence": "Previous research has reported improved mood",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vivo study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "32178a7710989d6c4bfbf46710cd8adc"
+      ],
+      "confidence": 0.75,
+      "evidence": "acute ingestion of ST extract",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "ST extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "32178a7710989d6c4bfbf46710cd8adc"
+      ],
+      "confidence": 0.9,
+      "evidence": "ST extract",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "improved mood",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "32178a7710989d6c4bfbf46710cd8adc"
+      ],
+      "confidence": 0.85,
+      "evidence": "improved mood",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "current study on ST extract",
+      "attributes": {
+        "design": "supplementation trial",
+        "sample_population": "young healthy adults"
+      },
+      "source_chunk_ids": [
+        "32178a7710989d6c4bfbf46710cd8adc"
+      ],
+      "confidence": 0.85,
+      "evidence": "supplementation with ST extract in young adults",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "no change in mood",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "32178a7710989d6c4bfbf46710cd8adc"
+      ],
+      "confidence": 0.9,
+      "evidence": "no changes in mood",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "fatigue",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "32178a7710989d6c4bfbf46710cd8adc"
+      ],
+      "confidence": 0.9,
+      "evidence": "fatigue",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "reduced fatigue",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "32178a7710989d6c4bfbf46710cd8adc"
+      ],
+      "confidence": 0.8,
+      "evidence": "fatigue was significantly reduced",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "TraditionalUse",
+      "name": "cognitive and mood enhancer",
+      "attributes": {},
+      "source_chunk_ids": [
+        "32178a7710989d6c4bfbf46710cd8adc"
+      ],
+      "confidence": 0.75,
+      "evidence": "cognitive and mood enhancer",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "current study",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d9aa779386c5c3d75fc978644aae2325"
+      ],
+      "confidence": 0.8,
+      "evidence": "results of this study",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "d9aa779386c5c3d75fc978644aae2325"
+      ],
+      "confidence": 0.7,
+      "evidence": "inhibition of serotonin reuptake",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "ST extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d9aa779386c5c3d75fc978644aae2325"
+      ],
+      "confidence": 0.9,
+      "evidence": "ST extract ingestion",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "ergogenic benefit",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "d9aa779386c5c3d75fc978644aae2325"
+      ],
+      "confidence": 0.85,
+      "evidence": "ergogenic benefit in complex reactive tasks",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "improved mood",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "d9aa779386c5c3d75fc978644aae2325"
+      ],
+      "confidence": 0.8,
+      "evidence": "improved mood",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "serotonin reuptake",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "d9aa779386c5c3d75fc978644aae2325"
+      ],
+      "confidence": 0.85,
+      "evidence": "inhibition of serotonin reuptake",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "d9aa779386c5c3d75fc978644aae2325"
+      ],
+      "confidence": 0.8,
+      "evidence": "PDE4",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "study on ST extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "46d98204e840aab013c6ef4cc022f0c8"
+      ],
+      "confidence": 0.9,
+      "evidence": "The results of this study",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "preliminary evidence",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "46d98204e840aab013c6ef4cc022f0c8"
+      ],
+      "confidence": 0.8,
+      "evidence": "suggest that this new dietary ingredient",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "ST extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "46d98204e840aab013c6ef4cc022f0c8"
+      ],
+      "confidence": 0.95,
+      "evidence": "ST extract",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "ergogenic benefit",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "46d98204e840aab013c6ef4cc022f0c8"
+      ],
+      "confidence": 0.85,
+      "evidence": "may provide an ergogenic benefit",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "reactive agility task with cognitive load",
+      "attributes": {
+        "condition_type": "performance"
+      },
+      "source_chunk_ids": [
+        "46d98204e840aab013c6ef4cc022f0c8"
+      ],
+      "confidence": 0.8,
+      "evidence": "performing a reactive agility task with a cognitive load",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Chiu et al. 2014",
+      "attributes": {
+        "design": "Proof-of-Concept randomized controlled study",
+        "year": 2014,
+        "doi": "10.1155/2014/682014"
+      },
+      "source_chunk_ids": [
+        "0239e30a2a96b111a5f94aadf8a54154"
+      ],
+      "confidence": 0.95,
+      "evidence": "Proof-of-Concept randomized controlled study",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "0239e30a2a96b111a5f94aadf8a54154"
+      ],
+      "confidence": 0.9,
+      "evidence": "randomized controlled study",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0239e30a2a96b111a5f94aadf8a54154"
+      ],
+      "confidence": 0.95,
+      "evidence": "Zembrin\u00ae",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "0239e30a2a96b111a5f94aadf8a54154"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "phosphodiesterase-4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "0239e30a2a96b111a5f94aadf8a54154"
+      ],
+      "confidence": 0.9,
+      "evidence": "targeting phosphodiesterase-4",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "Alzheimer's Dementia",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "0239e30a2a96b111a5f94aadf8a54154"
+      ],
+      "confidence": 0.9,
+      "evidence": "Alzheimer's Dementia",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Dimpfel et al. 2016",
+      "attributes": {
+        "design": "Double-blind, randomized, placebo-controlled, 3-Armed study",
+        "sample_size": 60,
+        "year": 2016
+      },
+      "source_chunk_ids": [
+        "0239e30a2a96b111a5f94aadf8a54154"
+      ],
+      "confidence": 0.95,
+      "evidence": "Double-blind, randomized, placebo-controlled, 3-Armed study",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "0239e30a2a96b111a5f94aadf8a54154"
+      ],
+      "confidence": 0.9,
+      "evidence": "Double-blind, randomized, placebo-controlled",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Gericke & Viljoen 2008",
+      "attributes": {
+        "design": "review",
+        "year": 2008
+      },
+      "source_chunk_ids": [
+        "0239e30a2a96b111a5f94aadf8a54154"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium\u2014a review update",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Evidence",
+      "name": "review",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "0239e30a2a96b111a5f94aadf8a54154"
+      ],
+      "confidence": 0.85,
+      "evidence": "review update",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Terburg et al., 2013",
+      "attributes": {
+        "year": 2013,
+        "design": "acute effects study"
+      },
+      "source_chunk_ids": [
+        "2c2dc080894160f1f1cc9e185531783f"
+      ],
+      "confidence": 0.9,
+      "evidence": "Terburg D, Syal S, Rosenberger LA, et al. Acute effects of Sceletium tortuosum (Zembrin), a dual 5-HT reuptake and PDE4 inhibitor, in the human amygdala and its connection to the hypothalamus. Neuropsychopharmacology 38: 2708\u20132716, 2013.",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical study",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "2c2dc080894160f1f1cc9e185531783f"
+      ],
+      "confidence": 0.85,
+      "evidence": "Acute effects of Sceletium tortuosum (Zembrin) in the human amygdala",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2c2dc080894160f1f1cc9e185531783f"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2c2dc080894160f1f1cc9e185531783f"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum (Zembrin)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "5-HT reuptake",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "2c2dc080894160f1f1cc9e185531783f"
+      ],
+      "confidence": 0.8,
+      "evidence": "dual 5-HT reuptake and PDE4 inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "2c2dc080894160f1f1cc9e185531783f"
+      ],
+      "confidence": 0.8,
+      "evidence": "dual 5-HT reuptake and PDE4 inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "inhibition of 5-HT reuptake",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "2c2dc080894160f1f1cc9e185531783f"
+      ],
+      "confidence": 0.75,
+      "evidence": "dual 5-HT reuptake and PDE4 inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "inhibition of PDE4",
+      "attributes": {
+        "level": "molecular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "2c2dc080894160f1f1cc9e185531783f"
+      ],
+      "confidence": 0.75,
+      "evidence": "dual 5-HT reuptake and PDE4 inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Harvey et al., 2011",
+      "attributes": {
+        "year": 2011,
+        "design": "pharmacological review"
+      },
+      "source_chunk_ids": [
+        "2c2dc080894160f1f1cc9e185531783f"
+      ],
+      "confidence": 0.9,
+      "evidence": "Harvey AL, Young LC, Viljoenb AM, Gericke NP. Pharmacological actions of the South African medicinal and functional food plant Sceletium tortuosum and its principal alkaloids. J Ethnopharmacol 137: 1124\u20131129, 2011.",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Evidence",
+      "name": "ethnopharmacological review",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "2c2dc080894160f1f1cc9e185531783f"
+      ],
+      "confidence": 0.85,
+      "evidence": "Pharmacological actions of Sceletium tortuosum and its principal alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2c2dc080894160f1f1cc9e185531783f"
+      ],
+      "confidence": 0.8,
+      "evidence": "principal alkaloids",
+      "verified": true
+    }
+  ],
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "randomly assigned to 1 of 2 groups",
+      "source_chunk_ids": [
+        "a9054a1ec1438f6b238165056d5b5df4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "examine the effect of 8 days of ST extract supplementation",
+      "source_chunk_ids": [
+        "a9054a1ec1438f6b238165056d5b5df4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "ST extract (25-mg) supplementation",
+      "source_chunk_ids": [
+        "a9054a1ec1438f6b238165056d5b5df4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "8 days of ST extract (25-mg) supplementation",
+      "source_chunk_ids": [
+        "a9054a1ec1438f6b238165056d5b5df4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "Significant improvements were noted for ST in complex reactive performance",
+      "source_chunk_ids": [
+        "a9054a1ec1438f6b238165056d5b5df4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.8,
+      "evidence": "no benefits in mood were observed",
+      "source_chunk_ids": [
+        "a9054a1ec1438f6b238165056d5b5df4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.8,
+      "evidence": "no differences were observed in simple reaction assessments",
+      "source_chunk_ids": [
+        "a9054a1ec1438f6b238165056d5b5df4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "SUGGESTS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "promote a sense of well-being in healthy individuals and used in treating anxiety",
+      "source_chunk_ids": [
+        "a9054a1ec1438f6b238165056d5b5df4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "SUGGESTS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "promote a sense of well-being in healthy individuals and used in treating stress",
+      "source_chunk_ids": [
+        "a9054a1ec1438f6b238165056d5b5df4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "SUGGESTS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "promote a sense of well-being in healthy individuals and used in treating depression",
+      "source_chunk_ids": [
+        "a9054a1ec1438f6b238165056d5b5df4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "traditional"
+      },
+      "confidence": 0.8,
+      "evidence": "used in treating people with anxiety",
+      "source_chunk_ids": [
+        "ce8e49c5eb4f46e501164b601e375fe2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "context": "traditional"
+      },
+      "confidence": 0.8,
+      "evidence": "used in treating people with stress",
+      "source_chunk_ids": [
+        "ce8e49c5eb4f46e501164b601e375fe2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "traditional"
+      },
+      "confidence": 0.8,
+      "evidence": "used in treating people with depression",
+      "source_chunk_ids": [
+        "ce8e49c5eb4f46e501164b601e375fe2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "blocks"
+      },
+      "confidence": 0.75,
+      "evidence": "potent blocker of the serotonin transporter",
+      "source_chunk_ids": [
+        "ce8e49c5eb4f46e501164b601e375fe2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.75,
+      "evidence": "inhibitor of phosphodiesterase-4 (PDE4)",
+      "source_chunk_ids": [
+        "ce8e49c5eb4f46e501164b601e375fe2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "promote a sense of well-being",
+      "source_chunk_ids": [
+        "ce8e49c5eb4f46e501164b601e375fe2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "PDE4 inhibitors attenuate proinflammatory cytokines",
+      "source_chunk_ids": [
+        "ce8e49c5eb4f46e501164b601e375fe2"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "TREATS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "general"
+      },
+      "confidence": 0.7,
+      "evidence": "Serotonin reuptake inhibitors treat depression",
+      "source_chunk_ids": [
+        "ce8e49c5eb4f46e501164b601e375fe2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "TREATS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "potential"
+      },
+      "confidence": 0.7,
+      "evidence": "PDE4 inhibitors can treat depression",
+      "source_chunk_ids": [
+        "ce8e49c5eb4f46e501164b601e375fe2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "modulates"
+      },
+      "confidence": 0.85,
+      "evidence": "role in neuroplasticity",
+      "source_chunk_ids": [
+        "83126570411f4febb871e23c7ca047ba"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Dysfunction in neuroplasticity can result in learning and memory deficits",
+      "source_chunk_ids": [
+        "83126570411f4febb871e23c7ca047ba"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "contribute to the pathophysiology of depression",
+      "source_chunk_ids": [
+        "83126570411f4febb871e23c7ca047ba"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Decreases in serotonin... is thought to be a cause of depression",
+      "source_chunk_ids": [
+        "83126570411f4febb871e23c7ca047ba"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "modulates",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Blocking the reuptake of 5-HT",
+      "source_chunk_ids": [
+        "83126570411f4febb871e23c7ca047ba"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "action": "inhibition"
+      },
+      "confidence": 0.7,
+      "evidence": "PDE4 inhibition as a therapeutic option",
+      "source_chunk_ids": [
+        "41ec8b90141e5f3151c7162bb7e3a3d8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E7",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "cAMP alterations directly results",
+      "source_chunk_ids": [
+        "41ec8b90141e5f3151c7162bb7e3a3d8"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {
+        "action": "inhibition"
+      },
+      "confidence": 0.7,
+      "evidence": "PDE4 inhibition can also attenuate inflammatory cytokines",
+      "source_chunk_ids": [
+        "41ec8b90141e5f3151c7162bb7e3a3d8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "PDE4 has received much focus in neuro-dysfunction",
+      "source_chunk_ids": [
+        "41ec8b90141e5f3151c7162bb7e3a3d8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "providing the initial evidence",
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "single administration of ST extract",
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "single administration of ST extract (25 mg)",
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "treatment of anxiety disorders",
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "treatment of anxiety disorders and depression",
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "dual PDE4 and 5-HT reuptake inhibitor",
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "dual PDE4 and 5-HT reuptake inhibitor",
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "reduce anxiety-related amygdala reactivity",
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "attenuate amygdala-hypothalamus coupling",
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "treatment of anxiety disorders",
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "treatment of anxiety disorders and depression",
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "subsequent investigation examined a 25-mg dose",
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "TESTED_AT",
+      "source_entity_id": "E11",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "25-mg dose consumed for 3 weeks",
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "REPORTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E13",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "demonstrated improvements in mood",
+      "source_chunk_ids": [
+        "98215a35c563fa9d8f2fff0f803288fd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "A recent study reported",
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "ST extract",
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "single (25-mg) dose",
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "improving cognition",
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "improving cognition and mood",
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "eye tracking ability",
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "purpose of this study",
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "ST ingestion",
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "TESTED_AT",
+      "source_entity_id": "E8",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "8 days of ST ingestion",
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "unknown"
+      },
+      "confidence": 0.8,
+      "evidence": "reactive agility",
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E12",
+      "attributes": {
+        "outcome": "unknown"
+      },
+      "confidence": 0.8,
+      "evidence": "visual tracking",
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E13",
+      "attributes": {
+        "outcome": "unknown"
+      },
+      "confidence": 0.8,
+      "evidence": "mood",
+      "source_chunk_ids": [
+        "6d461d9f61d0474f6a6e7171d89fc60c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "randomized controlled trial",
+      "source_chunk_ids": [
+        "4fd97010543d4be567a70d464874158b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "ST extract supplementation",
+      "source_chunk_ids": [
+        "4fd97010543d4be567a70d464874158b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "25-mg supplementation",
+      "source_chunk_ids": [
+        "4fd97010543d4be567a70d464874158b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "examined"
+      },
+      "confidence": 0.85,
+      "evidence": "effect on reactive agility",
+      "source_chunk_ids": [
+        "4fd97010543d4be567a70d464874158b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "examined"
+      },
+      "confidence": 0.85,
+      "evidence": "visual tracking",
+      "source_chunk_ids": [
+        "4fd97010543d4be567a70d464874158b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "examined"
+      },
+      "confidence": 0.85,
+      "evidence": "mood was examined",
+      "source_chunk_ids": [
+        "4fd97010543d4be567a70d464874158b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "assessed"
+      },
+      "confidence": 0.8,
+      "evidence": "assess fatigue",
+      "source_chunk_ids": [
+        "4fd97010543d4be567a70d464874158b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "assessed"
+      },
+      "confidence": 0.8,
+      "evidence": "assess focus",
+      "source_chunk_ids": [
+        "4fd97010543d4be567a70d464874158b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "randomized controlled trial",
+      "source_chunk_ids": [
+        "82de8b3ac5ded5b78a9fe9f087fc5d20"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "active ingredient ST",
+      "source_chunk_ids": [
+        "82de8b3ac5ded5b78a9fe9f087fc5d20"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "active ingredient ST",
+      "source_chunk_ids": [
+        "82de8b3ac5ded5b78a9fe9f087fc5d20"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Mood Questionnaire and VAS for Alertness and Energy",
+      "source_chunk_ids": [
+        "3ba7329311b85352f6cfa13b0f3b037b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "assesses"
+      },
+      "confidence": 0.75,
+      "evidence": "Subjects were asked to quantify their degree of alertness",
+      "source_chunk_ids": [
+        "3ba7329311b85352f6cfa13b0f3b037b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "assesses"
+      },
+      "confidence": 0.75,
+      "evidence": "Subjects were asked to quantify their degree of energy",
+      "source_chunk_ids": [
+        "3ba7329311b85352f6cfa13b0f3b037b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "randomized controlled trial",
+      "source_chunk_ids": [
+        "4875bd17c617fb547171b2106aaf67d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Supplementation period",
+      "source_chunk_ids": [
+        "4875bd17c617fb547171b2106aaf67d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "assessed",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Performance assessments (Energy (VAS))",
+      "source_chunk_ids": [
+        "4875bd17c617fb547171b2106aaf67d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "assessed",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Alertness (VAS)",
+      "source_chunk_ids": [
+        "4875bd17c617fb547171b2106aaf67d5"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "supplement group and placebo group",
+      "source_chunk_ids": [
+        "7972797191d87c66d07e40c8f9f46f37"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "ST supplement (Zembrin)",
+      "source_chunk_ids": [
+        "7972797191d87c66d07e40c8f9f46f37"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "2.5 mg per serving consumed once per day",
+      "source_chunk_ids": [
+        "7972797191d87c66d07e40c8f9f46f37"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "monitored"
+      },
+      "confidence": 0.7,
+      "evidence": "list any side effects",
+      "source_chunk_ids": [
+        "7972797191d87c66d07e40c8f9f46f37"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "subjects enrolled in the study",
+      "source_chunk_ids": [
+        "4dffa95a018c33ba065619cc49ef759e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.9,
+      "evidence": "No side effects associated with supplementation",
+      "source_chunk_ids": [
+        "4dffa95a018c33ba065619cc49ef759e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "supplementation period",
+      "source_chunk_ids": [
+        "d65aa81e046508ecfa246338e6006dbc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "ST and PL",
+      "source_chunk_ids": [
+        "d65aa81e046508ecfa246338e6006dbc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.75,
+      "evidence": "significantly greater performance",
+      "source_chunk_ids": [
+        "d65aa81e046508ecfa246338e6006dbc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.8,
+      "evidence": "no differences in motor, visual, and physical reaction time",
+      "source_chunk_ids": [
+        "d65aa81e046508ecfa246338e6006dbc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.75,
+      "evidence": "no differences in missed stimuli",
+      "source_chunk_ids": [
+        "d65aa81e046508ecfa246338e6006dbc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.75,
+      "evidence": "no differences in average time per hit",
+      "source_chunk_ids": [
+        "d65aa81e046508ecfa246338e6006dbc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "The effect of the supplement on mood",
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "ST and PL",
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "ST and PL",
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.85,
+      "evidence": "No significant differences in tension",
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.85,
+      "evidence": "No significant differences in anxiety",
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.85,
+      "evidence": "depression (p = 0.46)",
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.85,
+      "evidence": "anger or hostility (p = 0.43)",
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.85,
+      "evidence": "anger or hostility (p = 0.43)",
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.85,
+      "evidence": "vigor (p = 0.15)",
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.85,
+      "evidence": "confusion (p = 0.49)",
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E12",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.85,
+      "evidence": "fatigue was significantly lower in PL",
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E13",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.85,
+      "evidence": "no differences in alertness",
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E14",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.85,
+      "evidence": "no differences in energy",
+      "source_chunk_ids": [
+        "b50ab51a3147c35af1b0434084ae0197"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "The results of this study revealed",
+      "source_chunk_ids": [
+        "4321a53f35a100749e3208456d3265c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "ingestion of 25 mg of ST extract",
+      "source_chunk_ids": [
+        "4321a53f35a100749e3208456d3265c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "25 mg of ST extract per day for 8 days",
+      "source_chunk_ids": [
+        "4321a53f35a100749e3208456d3265c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "significantly improved reactive performance",
+      "source_chunk_ids": [
+        "4321a53f35a100749e3208456d3265c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.8,
+      "evidence": "improvements were not seen",
+      "source_chunk_ids": [
+        "4321a53f35a100749e3208456d3265c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.85,
+      "evidence": "did not result in any changes",
+      "source_chunk_ids": [
+        "4321a53f35a100749e3208456d3265c0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Chiu et al. investigation (4)",
+      "source_chunk_ids": [
+        "04ac011cf3f05fa494e4d6ccca7d7293"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Dimpfel et al. (5)",
+      "source_chunk_ids": [
+        "04ac011cf3f05fa494e4d6ccca7d7293"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "ST extract recruited subjects",
+      "source_chunk_ids": [
+        "04ac011cf3f05fa494e4d6ccca7d7293"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Previous investigations using the same dose",
+      "source_chunk_ids": [
+        "04ac011cf3f05fa494e4d6ccca7d7293"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "we chose an 8-day supplement protocol",
+      "source_chunk_ids": [
+        "04ac011cf3f05fa494e4d6ccca7d7293"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "significant improvements in mood",
+      "source_chunk_ids": [
+        "04ac011cf3f05fa494e4d6ccca7d7293"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "significant improvements in cognitive function",
+      "source_chunk_ids": [
+        "04ac011cf3f05fa494e4d6ccca7d7293"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "significant improvements in mood",
+      "source_chunk_ids": [
+        "04ac011cf3f05fa494e4d6ccca7d7293"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "significant improvements in cognitive function",
+      "source_chunk_ids": [
+        "04ac011cf3f05fa494e4d6ccca7d7293"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "TREATS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {
+        "context": "clinical",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "increasing the risk for a variety of cognitive disorders",
+      "source_chunk_ids": [
+        "04ac011cf3f05fa494e4d6ccca7d7293"
+      ],
+      "supporting_study_ids": [
+        "E1",
+        "E2"
+      ],
+      "verified": false
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "improvements in mood and cognitive function",
+      "source_chunk_ids": [
+        "04ac011cf3f05fa494e4d6ccca7d7293"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.85,
+      "evidence": "inhibit serotonin uptake",
+      "source_chunk_ids": [
+        "3acde2b3d8300859daa4dab8d6225e92"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.85,
+      "evidence": "inhibit ... PDE4",
+      "source_chunk_ids": [
+        "3acde2b3d8300859daa4dab8d6225e92"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "inhibit serotonin uptake",
+      "source_chunk_ids": [
+        "3acde2b3d8300859daa4dab8d6225e92"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "inhibit ... PDE4",
+      "source_chunk_ids": [
+        "3acde2b3d8300859daa4dab8d6225e92"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "assertion": "refutes",
+        "context": "hypothetical",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "may not be efficacious if brain serotonin levels ... within normal ranges",
+      "source_chunk_ids": [
+        "3acde2b3d8300859daa4dab8d6225e92"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "assertion": "refutes",
+        "context": "hypothetical",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "may not be efficacious if ... cAMP levels are within normal ranges",
+      "source_chunk_ids": [
+        "3acde2b3d8300859daa4dab8d6225e92"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "ST extract",
+      "source_chunk_ids": [
+        "d2b6e242b0a389c62453fa9d8c9edfb5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "significant improvements were noted in the performance response by ST",
+      "source_chunk_ids": [
+        "d2b6e242b0a389c62453fa9d8c9edfb5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "benefits of ST extract appear to provide an ergogenic effect",
+      "source_chunk_ids": [
+        "d2b6e242b0a389c62453fa9d8c9edfb5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "improvement in complex attention reported by Chiu et al.",
+      "source_chunk_ids": [
+        "d2b6e242b0a389c62453fa9d8c9edfb5"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "action": "inhibits",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "inhibiting PDE4 action through ST extract ingestion",
+      "source_chunk_ids": [
+        "d2b6e242b0a389c62453fa9d8c9edfb5"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.55,
+      "evidence": "inhibiting PDE4 action may have enhanced BDNF expression",
+      "source_chunk_ids": [
+        "d2b6e242b0a389c62453fa9d8c9edfb5"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "improvement in complex attention reported by Chiu et al. (4)",
+      "source_chunk_ids": [
+        "d2b6e242b0a389c62453fa9d8c9edfb5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "improvement in complex attention reported by Chiu et al.",
+      "source_chunk_ids": [
+        "d2b6e242b0a389c62453fa9d8c9edfb5"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.7,
+      "evidence": "improvement in complex attention reported by Chiu et al. (4)",
+      "source_chunk_ids": [
+        "d2b6e242b0a389c62453fa9d8c9edfb5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Previous research has reported",
+      "source_chunk_ids": [
+        "32178a7710989d6c4bfbf46710cd8adc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "acute ingestion of ST extract",
+      "source_chunk_ids": [
+        "32178a7710989d6c4bfbf46710cd8adc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "reported improved mood",
+      "source_chunk_ids": [
+        "32178a7710989d6c4bfbf46710cd8adc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "supplementation with ST extract",
+      "source_chunk_ids": [
+        "32178a7710989d6c4bfbf46710cd8adc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.9,
+      "evidence": "no changes in mood",
+      "source_chunk_ids": [
+        "32178a7710989d6c4bfbf46710cd8adc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.85,
+      "evidence": "no differences were noted",
+      "source_chunk_ids": [
+        "32178a7710989d6c4bfbf46710cd8adc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "improves",
+        "context": "placebo comparison"
+      },
+      "confidence": 0.75,
+      "evidence": "fatigue was significantly reduced for PL",
+      "source_chunk_ids": [
+        "32178a7710989d6c4bfbf46710cd8adc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "SUGGESTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "cognitive and mood enhancer",
+      "source_chunk_ids": [
+        "32178a7710989d6c4bfbf46710cd8adc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "inhibition of serotonin reuptake",
+      "source_chunk_ids": [
+        "d9aa779386c5c3d75fc978644aae2325"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "ST extract ingestion",
+      "source_chunk_ids": [
+        "d9aa779386c5c3d75fc978644aae2325"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "demonstrate an ergogenic benefit",
+      "source_chunk_ids": [
+        "d9aa779386c5c3d75fc978644aae2325"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.8,
+      "evidence": "results do not support improved mood",
+      "source_chunk_ids": [
+        "d9aa779386c5c3d75fc978644aae2325"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.7,
+      "evidence": "inhibition of serotonin reuptake",
+      "source_chunk_ids": [
+        "d9aa779386c5c3d75fc978644aae2325"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {
+        "action": "inhibits",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "inhibition of serotonin reuptake and PDE4",
+      "source_chunk_ids": [
+        "d9aa779386c5c3d75fc978644aae2325"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "The results of this study suggest",
+      "source_chunk_ids": [
+        "46d98204e840aab013c6ef4cc022f0c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "study on ST extract",
+      "source_chunk_ids": [
+        "46d98204e840aab013c6ef4cc022f0c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "suggests_benefit"
+      },
+      "confidence": 0.8,
+      "evidence": "may provide an ergogenic benefit",
+      "source_chunk_ids": [
+        "46d98204e840aab013c6ef4cc022f0c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "context"
+      },
+      "confidence": 0.75,
+      "evidence": "reactive agility task with a cognitive load",
+      "source_chunk_ids": [
+        "46d98204e840aab013c6ef4cc022f0c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "indirect"
+      },
+      "confidence": 0.7,
+      "evidence": "suggest that this new dietary ingredient may provide an ergogenic benefit",
+      "source_chunk_ids": [
+        "46d98204e840aab013c6ef4cc022f0c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.95,
+      "evidence": "Proof-of-Concept randomized controlled study",
+      "source_chunk_ids": [
+        "0239e30a2a96b111a5f94aadf8a54154"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Zembrin\u00ae",
+      "source_chunk_ids": [
+        "0239e30a2a96b111a5f94aadf8a54154"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Sceletium tortuosum (Zembrin\u00ae)",
+      "source_chunk_ids": [
+        "0239e30a2a96b111a5f94aadf8a54154"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "targets"
+      },
+      "confidence": 0.85,
+      "evidence": "targeting phosphodiesterase-4",
+      "source_chunk_ids": [
+        "0239e30a2a96b111a5f94aadf8a54154"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "implications"
+      },
+      "confidence": 0.8,
+      "evidence": "Implications for Alzheimer's Dementia",
+      "source_chunk_ids": [
+        "0239e30a2a96b111a5f94aadf8a54154"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.7,
+      "evidence": "Implications for Alzheimer's Dementia",
+      "source_chunk_ids": [
+        "0239e30a2a96b111a5f94aadf8a54154"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.95,
+      "evidence": "Double-blind, randomized, placebo-controlled",
+      "source_chunk_ids": [
+        "0239e30a2a96b111a5f94aadf8a54154"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Zembrin\u00ae",
+      "source_chunk_ids": [
+        "0239e30a2a96b111a5f94aadf8a54154"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "review update",
+      "source_chunk_ids": [
+        "0239e30a2a96b111a5f94aadf8a54154"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Sceletium\u2014a review update",
+      "source_chunk_ids": [
+        "0239e30a2a96b111a5f94aadf8a54154"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Acute effects study in Neuropsychopharmacology",
+      "source_chunk_ids": [
+        "2c2dc080894160f1f1cc9e185531783f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Acute effects of Sceletium tortuosum (Zembrin)",
+      "source_chunk_ids": [
+        "2c2dc080894160f1f1cc9e185531783f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "dual 5-HT reuptake and PDE4 inhibitor",
+      "source_chunk_ids": [
+        "2c2dc080894160f1f1cc9e185531783f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "dual 5-HT reuptake and PDE4 inhibitor",
+      "source_chunk_ids": [
+        "2c2dc080894160f1f1cc9e185531783f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "dual 5-HT reuptake and PDE4 inhibitor",
+      "source_chunk_ids": [
+        "2c2dc080894160f1f1cc9e185531783f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "dual 5-HT reuptake and PDE4 inhibitor",
+      "source_chunk_ids": [
+        "2c2dc080894160f1f1cc9e185531783f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Pharmacological actions review in J Ethnopharmacol",
+      "source_chunk_ids": [
+        "2c2dc080894160f1f1cc9e185531783f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Pharmacological actions of Sceletium tortuosum",
+      "source_chunk_ids": [
+        "2c2dc080894160f1f1cc9e185531783f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "principal alkaloids",
+      "source_chunk_ids": [
+        "2c2dc080894160f1f1cc9e185531783f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

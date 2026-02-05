@@ -1,1091 +1,3667 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "77af0ae5e700e4295595bb6fca83538dc2cc34c72c39997eff2835861d2e24ea",
-  "extracted_at": "2026-02-01T08:48:31.742494+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
-      "type": "PharmEffect",
-      "name": "health benefits",
-      "attributes": {
-        "context": "appreciative of the health benefits"
-      },
-      "source_chunk_ids": [
-        "24dbd00e8e8e64a49110eb86a24fe829"
-      ]
-    },
-    {
-      "id": "ent_002",
-      "type": "PharmEffect",
-      "name": "health benefits",
-      "attributes": {
-        "context": "multiply the health benefits"
-      },
-      "source_chunk_ids": [
-        "24dbd00e8e8e64a49110eb86a24fe829"
-      ]
-    },
-    {
-      "id": "ent_003",
-      "type": "PharmEffect",
-      "name": "safety",
-      "attributes": {
-        "context": "ensure safety and efficacy"
-      },
-      "source_chunk_ids": [
-        "24dbd00e8e8e64a49110eb86a24fe829"
-      ]
-    },
-    {
-      "id": "ent_004",
-      "type": "PharmEffect",
-      "name": "efficacy",
-      "attributes": {
-        "context": "ensure safety and efficacy"
-      },
-      "source_chunk_ids": [
-        "24dbd00e8e8e64a49110eb86a24fe829"
-      ]
-    },
-    {
-      "id": "ent_005",
-      "type": "Compound",
-      "name": "solvents",
-      "attributes": {
-        "context": "preparation using solvents"
-      },
-      "source_chunk_ids": [
-        "24dbd00e8e8e64a49110eb86a24fe829"
-      ]
-    },
-    {
-      "id": "ent_006",
-      "type": "Compound",
-      "name": "chemical constituents",
-      "attributes": {
-        "context": "distribution of chemical constituents"
-      },
-      "source_chunk_ids": [
-        "24dbd00e8e8e64a49110eb86a24fe829"
-      ]
-    },
-    {
-      "id": "ent_007",
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "materials (Sceletium tortuosum and Cyclopia genistoides)"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "24dbd00e8e8e64a49110eb86a24fe829"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
     },
     {
-      "id": "ent_008",
+      "id": "E2",
       "type": "Taxon",
       "name": "Cyclopia genistoides",
       "attributes": {
-        "context": "Sceletium tortuosum and Cyclopia genistoides)"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "24dbd00e8e8e64a49110eb86a24fe829"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Cyclopia genistoides",
+      "verified": true
     },
     {
-      "id": "ent_009",
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "raw material",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ],
+      "confidence": 0.8,
+      "evidence": "Certified raw materials",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Product",
+      "name": "herbal tea blend",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ],
+      "confidence": 0.85,
+      "evidence": "herbal tea blends",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "hyperspectral imaging study",
+      "attributes": {
+        "design": "experimental study"
+      },
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ],
+      "confidence": 0.9,
+      "evidence": "In this study, hyperspectral imaging is applied",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ],
+      "confidence": 0.8,
+      "evidence": "hyperspectral imaging is applied",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Taxon",
-      "name": "S. tortuosum",
+      "name": "Camellia sinensis",
       "attributes": {
-        "context": "between S. tortuosum and C. genistoides raw materials"
-      },
-      "source_chunk_ids": [
-        "24dbd00e8e8e64a49110eb86a24fe829"
-      ]
-    },
-    {
-      "id": "ent_010",
-      "type": "Taxon",
-      "name": "C. genistoides",
-      "attributes": {
-        "context": "S. tortuosum and C. genistoides raw materials"
-      },
-      "source_chunk_ids": [
-        "24dbd00e8e8e64a49110eb86a24fe829"
-      ]
-    },
-    {
-      "id": "ent_011",
-      "type": "Taxon",
-      "name": "S. tortuosum",
-      "attributes": {
-        "context": "constituents as S. tortuosum and C. genistoides"
-      },
-      "source_chunk_ids": [
-        "24dbd00e8e8e64a49110eb86a24fe829"
-      ]
-    },
-    {
-      "id": "ent_012",
-      "type": "Taxon",
-      "name": "C. genistoides",
-      "attributes": {
-        "context": "S. tortuosum and C. genistoides and quantitatively predict C. genistoides"
-      },
-      "source_chunk_ids": [
-        "24dbd00e8e8e64a49110eb86a24fe829"
-      ]
-    },
-    {
-      "id": "ent_013",
-      "type": "Concentration",
-      "name": "> 97%",
-      "attributes": {
-        "context": "major constituent (> 97%)"
-      },
-      "source_chunk_ids": [
-        "24dbd00e8e8e64a49110eb86a24fe829"
-      ]
-    },
-    {
-      "id": "ent_014",
-      "type": "Taxon",
-      "name": "S. tortuosum",
-      "attributes": {
-        "context": "S. tortuosum was present in lower amounts"
-      },
-      "source_chunk_ids": [
-        "24dbd00e8e8e64a49110eb86a24fe829"
-      ]
-    },
-    {
-      "id": "ent_015",
-      "type": "Concentration",
-      "name": "< 3%",
-      "attributes": {
-        "context": "lower amounts (< 3%)"
-      },
-      "source_chunk_ids": [
-        "24dbd00e8e8e64a49110eb86a24fe829"
-      ]
-    },
-    {
-      "id": "ent_016",
-      "type": "Taxon",
-      "name": "Camellia sinensis (L.) Kuntze",
-      "attributes": {
-        "context": "Tea is prepared exclusively from Camellia sinensis (L.) Kuntze (Theaceae) leaves"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "7d89d9b7f2c5ecd1832e2a51d3830d98"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Camellia sinensis (L.) Kuntze",
+      "verified": true
     },
     {
-      "id": "ent_017",
-      "type": "Taxon",
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7d89d9b7f2c5ecd1832e2a51d3830d98"
+      ],
+      "confidence": 0.9,
+      "evidence": "leaves by brewing",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Preparation",
+      "name": "brewing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7d89d9b7f2c5ecd1832e2a51d3830d98"
+      ],
+      "confidence": 0.85,
+      "evidence": "brewing in hot water",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Preparation",
+      "name": "processing of the leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "confidence": 0.8,
+      "evidence": "processing of the leaves",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "black tea",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "confidence": 0.7,
+      "evidence": "teas are black",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "green tea",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "confidence": 0.7,
+      "evidence": "green teas",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "white tea",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "confidence": 0.7,
+      "evidence": "white",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "herbal teas",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "confidence": 0.9,
+      "evidence": "Herbal teas",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Preparation",
+      "name": "tisanes/infusions",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "confidence": 0.8,
+      "evidence": "tisanes/infusions",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "confidence": 0.9,
+      "evidence": "leaves",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "PlantPart",
+      "name": "bark",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "confidence": 0.8,
+      "evidence": "bark",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "confidence": 0.8,
+      "evidence": "roots",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "PlantPart",
+      "name": "berries",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "confidence": 0.8,
+      "evidence": "berries",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "PlantPart",
+      "name": "seeds",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "confidence": 0.8,
+      "evidence": "seeds",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "PlantPart",
+      "name": "spices",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "confidence": 0.8,
+      "evidence": "spices",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "RawMaterial",
+      "name": "fruit teas",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "confidence": 0.8,
+      "evidence": "fruit teas",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "RawMaterial",
       "name": "rooibos",
-      "attributes": {
-        "context": "Three herbal teas including rooibos"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "b81b768e06d699571070afc476891fc8"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "rooibos",
+      "verified": true
     },
     {
-      "id": "ent_018",
-      "type": "Taxon",
+      "id": "E15",
+      "type": "RawMaterial",
       "name": "Yerba mate",
-      "attributes": {
-        "context": "Yerba mate and honeybush"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "b81b768e06d699571070afc476891fc8"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Yerba mate",
+      "verified": true
     },
     {
-      "id": "ent_019",
+      "id": "E16",
+      "type": "RawMaterial",
+      "name": "honeybush",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "confidence": 0.9,
+      "evidence": "honeybush",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "TraditionalUse",
+      "name": "health benefits",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "confidence": 0.85,
+      "evidence": "health benefits",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Cyclopia",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "5866f884e6bcd54d5f4a6675d246e490"
+      ],
+      "confidence": 0.9,
+      "evidence": "several species of Cyclopia",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Cyclopia genistoides",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5866f884e6bcd54d5f4a6675d246e490"
+      ],
+      "confidence": 0.95,
+      "evidence": "Cyclopia genistoides (L.) R.Br.",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "tea substitute",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5866f884e6bcd54d5f4a6675d246e490"
+      ],
+      "confidence": 0.85,
+      "evidence": "used as a substitute for tea",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "UseRecord",
+      "name": "UseRecord: Cyclopia genistoides \u2013 tea substitute",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5866f884e6bcd54d5f4a6675d246e490"
+      ],
+      "confidence": 0.8,
+      "evidence": "used as a substitute for tea",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "Mesembrine",
+      "attributes": {
+        "molecular_weight": "289.37 g/mol"
+      },
+      "source_chunk_ids": [
+        "5b9a3e34b50c0b4402d050d2b8776f71"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrine (m/z 289.37 g/mol)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "Mesembranol",
+      "attributes": {
+        "molecular_weight": "291.39 g/mol"
+      },
+      "source_chunk_ids": [
+        "5b9a3e34b50c0b4402d050d2b8776f71"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembranol (m/z 291.39 g/mol)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "Mesembrenone",
+      "attributes": {
+        "molecular_weight": "287.35 g/mol"
+      },
+      "source_chunk_ids": [
+        "5b9a3e34b50c0b4402d050d2b8776f71"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrenone (m/z 287.35 g/mol)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "Mesembrenol",
+      "attributes": {
+        "molecular_weight": "289.37 g/mol"
+      },
+      "source_chunk_ids": [
+        "5b9a3e34b50c0b4402d050d2b8776f71"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrenol (m/z 289.37 g/mol)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "Mangiferin",
+      "attributes": {
+        "molecular_weight": "422.33 g/mol"
+      },
+      "source_chunk_ids": [
+        "5b9a3e34b50c0b4402d050d2b8776f71"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mangiferin (m/z 422.33 g/mol)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "Isomangiferin",
+      "attributes": {
+        "molecular_weight": "422.33 g/mol"
+      },
+      "source_chunk_ids": [
+        "5b9a3e34b50c0b4402d050d2b8776f71"
+      ],
+      "confidence": 0.95,
+      "evidence": "Isomangiferin (m/z 422.33 g/mol)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "Hesperidin",
+      "attributes": {
+        "molecular_weight": "610.1898 g/mol"
+      },
+      "source_chunk_ids": [
+        "5b9a3e34b50c0b4402d050d2b8776f71"
+      ],
+      "confidence": 0.95,
+      "evidence": "Hesperidin (m/z 610.1898 g/mol)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "CompoundClass",
+      "name": "tetracyclic alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5b9a3e34b50c0b4402d050d2b8776f71"
+      ],
+      "confidence": 0.9,
+      "evidence": "tetracyclic alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "CompoundClass",
+      "name": "flavonol glycosides",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5b9a3e34b50c0b4402d050d2b8776f71"
+      ],
+      "confidence": 0.9,
+      "evidence": "flavonol glycosides",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "CompoundClass",
+      "name": "flavanone glycoside",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5b9a3e34b50c0b4402d050d2b8776f71"
+      ],
+      "confidence": 0.9,
+      "evidence": "flavanone glycoside",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "32efc53e5cd7c66a17ec0dcf59851d1e"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "32efc53e5cd7c66a17ec0dcf59851d1e"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "32efc53e5cd7c66a17ec0dcf59851d1e"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "32efc53e5cd7c66a17ec0dcf59851d1e"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "mesembrenol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "32efc53e5cd7c66a17ec0dcf59851d1e"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenol",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "C. genistoides",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "32efc53e5cd7c66a17ec0dcf59851d1e"
+      ],
+      "confidence": 0.9,
+      "evidence": "C. genistoides",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "mangiferin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "32efc53e5cd7c66a17ec0dcf59851d1e"
+      ],
+      "confidence": 0.95,
+      "evidence": "mangiferin",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Compound",
+      "name": "isomangiferin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "32efc53e5cd7c66a17ec0dcf59851d1e"
+      ],
+      "confidence": 0.95,
+      "evidence": "isomangiferin",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Compound",
+      "name": "hesperidin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "32efc53e5cd7c66a17ec0dcf59851d1e"
+      ],
+      "confidence": 0.95,
+      "evidence": "hesperidin",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Taxon",
       "name": "honeybush",
       "attributes": {
-        "context": "and honeybush"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "b81b768e06d699571070afc476891fc8"
-      ]
+        "c3a31c6178266be94615bf6f3d55bf72"
+      ],
+      "confidence": 0.9,
+      "evidence": "honeybush tea plant",
+      "verified": true
     },
     {
-      "id": "ent_020",
+      "id": "E2",
+      "type": "TraditionalUse",
+      "name": "restorative",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c3a31c6178266be94615bf6f3d55bf72"
+      ],
+      "confidence": 0.85,
+      "evidence": "restorative",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "expectorant",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c3a31c6178266be94615bf6f3d55bf72"
+      ],
+      "confidence": 0.85,
+      "evidence": "expectorant",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "chronic catarrh",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "c3a31c6178266be94615bf6f3d55bf72"
+      ],
+      "confidence": 0.8,
+      "evidence": "chronic catarrh",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "pulmonary tuberculosis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "c3a31c6178266be94615bf6f3d55bf72"
+      ],
+      "confidence": 0.8,
+      "evidence": "pulmonary tuberculosis",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "C. genistoides",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "e9390502b8830073bc8e54503bc65eec"
+      ],
+      "confidence": 0.95,
+      "evidence": "C. genistoides",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mangiferin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e9390502b8830073bc8e54503bc65eec"
+      ],
+      "confidence": 0.9,
+      "evidence": "high in mangiferin",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "isomangiferin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e9390502b8830073bc8e54503bc65eec"
+      ],
+      "confidence": 0.9,
+      "evidence": "isomangiferin",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "hesperidin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e9390502b8830073bc8e54503bc65eec"
+      ],
+      "confidence": 0.9,
+      "evidence": "hesperidin",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "CompoundClass",
+      "name": "polyphenolic compounds",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e9390502b8830073bc8e54503bc65eec"
+      ],
+      "confidence": 0.85,
+      "evidence": "wealth of polyphenolic compounds",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "03ec5b920523027511f1c84c34a3687e"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Cyclopia genistoides",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "03ec5b920523027511f1c84c34a3687e"
+      ],
+      "confidence": 0.95,
+      "evidence": "C. genistoides",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "tea powder",
+      "attributes": {},
+      "source_chunk_ids": [
+        "03ec5b920523027511f1c84c34a3687e"
+      ],
+      "confidence": 0.9,
+      "evidence": "tea powders",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "PCA analysis of tea powders",
+      "attributes": {
+        "design": "PCA analysis",
+        "year": null,
+        "doi": null
+      },
+      "source_chunk_ids": [
+        "03ec5b920523027511f1c84c34a3687e"
+      ],
+      "confidence": 0.8,
+      "evidence": "PCA score images, scatter plot",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vitro analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "03ec5b84c34a3687e",
+        "03ec5b920523027511f1c84c34a3687e"
+      ],
+      "confidence": 0.75,
+      "evidence": "PCA analysis",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "review article",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "confidence": 0.7,
+      "evidence": "Wu and Sun, 2013",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "review article",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "confidence": 0.7,
+      "evidence": "Breithaupt, 2004",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Wu and Sun, 2013",
+      "attributes": {
+        "design": "review",
+        "year": 2013
+      },
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "confidence": 0.8,
+      "evidence": "Wu and Sun, 2013",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Breithaupt, 2004",
+      "attributes": {
+        "design": "review",
+        "year": 2004
+      },
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "confidence": 0.8,
+      "evidence": "Breithaupt, 2004",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "tea blends",
+      "attributes": {},
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "confidence": 0.9,
+      "evidence": "Tea blends are produced",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "improve taste",
+      "attributes": {},
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "confidence": 0.85,
+      "evidence": "to improve the taste",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "increase health benefits",
+      "attributes": {},
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "confidence": 0.85,
+      "evidence": "increase the health benefits",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Preparation",
+      "name": "hyperspectral imaging",
+      "attributes": {},
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "confidence": 0.75,
+      "evidence": "hyperspectral imaging (HSI)",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Preparation",
+      "name": "vibrational spectroscopy",
+      "attributes": {},
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "confidence": 0.75,
+      "evidence": "Vibrational spectroscopy",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Preparation",
+      "name": "high performance liquid chromatography",
+      "attributes": {},
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "confidence": 0.8,
+      "evidence": "high performance liquid chromatography (HPLC)",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Preparation",
+      "name": "mass spectrometry",
+      "attributes": {},
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "confidence": 0.8,
+      "evidence": "mass spectrometry (MS)",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Effect",
+      "name": "non-destructive analysis",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "confidence": 0.7,
+      "evidence": "non-destructive analysis",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Effect",
+      "name": "quality control",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "confidence": 0.8,
+      "evidence": "quality control",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Effect",
+      "name": "determine origin",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "confidence": 0.7,
+      "evidence": "origin of green tea was determined",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Zhuang et al., 2017",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8f0de24265e082d7d9a340364d682394"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zhuang et al., 2017",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "infrared spectroscopy and PLS analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "8f0de24265e082d7d9a340364d682394"
+      ],
+      "confidence": 0.8,
+      "evidence": "infrared spectroscopy and partial least squares regression (PLS) analysis",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Sinija and Mishra, 2009",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8f0de24265e082d7d9a340364d682394"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sinija and Mishra, 2009",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "near infrared spectroscopy and PLS-first derivative plus straight line subtraction",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "8f0de24265e082d7d9a340364d682394"
+      ],
+      "confidence": 0.8,
+      "evidence": "near infrared spectroscopy and PLS-first derivative plus straight line subtraction",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Djokam et al., 2017",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8f0de24265e082d7d9a340364d682394"
+      ],
+      "confidence": 0.9,
+      "evidence": "Djokam et al., 2017",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "hyperspectral imaging and PLS-DA",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "8f0de24265e082d7d9a340364d682394"
+      ],
+      "confidence": 0.8,
+      "evidence": "hyperspectral imaging and partial least squares discriminant analysis (PLS-DA)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "this study",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8f0de24265e082d7d9a340364d682394"
+      ],
+      "confidence": 0.7,
+      "evidence": "In this study",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "HSI with chemometric data modeling",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "8f0de24265e082d7d9a340364d682394"
+      ],
+      "confidence": 0.75,
+      "evidence": "HSI in combination with chemometric data modeling",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "RawMaterial",
+      "name": "instant green tea powder and granules",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8f0de24265e082d7d9a340364d682394"
+      ],
+      "confidence": 0.85,
+      "evidence": "instant green tea powder and granules",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "RawMaterial",
+      "name": "herbal tea blends",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8f0de24265e082d7d9a340364d682394"
+      ],
+      "confidence": 0.85,
+      "evidence": "herbal tea blends",
+      "verified": true
+    },
+    {
+      "id": "E11",
       "type": "Compound",
       "name": "caffeine",
-      "attributes": {
-        "context": "caffeine content of true tea"
-      },
+      "attributes": {},
       "source_chunk_ids": [
-        "b81b768e06d699571070afc476891fc8"
-      ]
+        "8f0de24265e082d7d9a340364d682394"
+      ],
+      "confidence": 0.9,
+      "evidence": "caffeine content",
+      "verified": true
     },
     {
-      "id": "ent_021",
+      "id": "E1",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "967e6975444f764923d792ae2121a6a7"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum (green)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "C. genistoides",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "967e6975444f764923d792ae2121a6a7"
+      ],
+      "confidence": 0.9,
+      "evidence": "C. genistoides (blue)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "C. genistoides",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "aab559f961a4c2e276f162b48f06697f"
+      ],
+      "confidence": 0.9,
+      "evidence": "C. genistoides",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "aab559f961a4c2e276f162b48f06697f"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "raw material of C. genistoides",
+      "attributes": {},
+      "source_chunk_ids": [
+        "aab559f961a4c2e276f162b48f06697f"
+      ],
+      "confidence": 0.8,
+      "evidence": "raw material of C. genistoides",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "raw material of S. tortuosum",
+      "attributes": {},
+      "source_chunk_ids": [
+        "aab559f961a4c2e276f162b48f06697f"
+      ],
+      "confidence": 0.8,
+      "evidence": "raw material of S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Product",
+      "name": "tea blend",
+      "attributes": {},
+      "source_chunk_ids": [
+        "aab559f961a4c2e276f162b48f06697f"
+      ],
+      "confidence": 0.85,
+      "evidence": "tea blend",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Cyclopia genistoides",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "65611cc78623783d5c3740d7e62340b6"
+      ],
+      "confidence": 0.9,
+      "evidence": "Cyclopia genistoides",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "65611cc78623783d5c3740d7e62340b6"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "raw material",
+      "attributes": {},
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "confidence": 0.8,
+      "evidence": "raw material as S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
       "type": "Compound",
-      "name": "caffeine",
-      "attributes": {
-        "context": "the caffeine content of instant green tea powder"
-      },
+      "name": "mesembrine",
+      "attributes": {},
       "source_chunk_ids": [
-        "8f0de24265e082d7d9a340364d682394"
-      ]
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrine",
+      "verified": true
     },
     {
-      "id": "ent_022",
-      "type": "Taxon",
-      "name": "green tea",
-      "attributes": {
-        "context": "instant green tea powder and granules"
-      },
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
       "source_chunk_ids": [
-        "8f0de24265e082d7d9a340364d682394"
-      ]
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrenone",
+      "verified": true
     },
     {
-      "id": "ent_023",
+      "id": "E5",
+      "type": "Compound",
+      "name": "mesembranol",
+      "attributes": {},
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembranol",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "confidence": 0.85,
+      "evidence": "marker alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E7",
       "type": "Taxon",
+      "name": "Cyclopia genistoides",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "confidence": 0.9,
+      "evidence": "C. genistoides",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "RawMaterial",
+      "name": "second raw material",
+      "attributes": {},
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "confidence": 0.75,
+      "evidence": "second raw material",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Compound",
+      "name": "mangiferin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "confidence": 0.9,
+      "evidence": "mangiferin",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Compound",
+      "name": "isomangiferin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "confidence": 0.9,
+      "evidence": "isomangiferin",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Compound",
+      "name": "hesperidin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "confidence": 0.9,
+      "evidence": "hesperidin",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Product",
+      "name": "tea blends",
+      "attributes": {},
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "confidence": 0.8,
+      "evidence": "tea blend batches",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "C. genistoides",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "e91bf82fc4db2daa9927eab7585edd66"
+      ],
+      "confidence": 0.9,
+      "evidence": "C. genistoides in the tea blend",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mangiferin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e91bf82fc4db2daa9927eab7585edd66"
+      ],
+      "confidence": 0.85,
+      "evidence": "mangiferin could be identified",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "isomangiferin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e91bf82fc4db2daa9927eab7585edd66"
+      ],
+      "confidence": 0.85,
+      "evidence": "isomangiferin could be identified",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "hesperidin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e91bf82fc4db2daa9927eab7585edd66"
+      ],
+      "confidence": 0.85,
+      "evidence": "hesperidin could be identified",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "e91bf82fc4db2daa9927eab7585edd66"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "RawMaterial",
+      "name": "tea blend",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e91bf82fc4db2daa9927eab7585edd66"
+      ],
+      "confidence": 0.8,
+      "evidence": "tea blend",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "hyperspectral imaging study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "dfe27434683d03401d036fe84fe49ed8"
+      ],
+      "confidence": 0.8,
+      "evidence": "HSI in combination with chemometric data analysis",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "UPLC-MS study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "dfe27434683d03401d036fe84fe49ed8"
+      ],
+      "confidence": 0.8,
+      "evidence": "UPLC-MS is a powerful, sensitive quality control tool",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
       "name": "herbal tea blends",
-      "attributes": {
-        "context": "quality assessment of herbal tea blends"
-      },
+      "attributes": {},
       "source_chunk_ids": [
-        "8f0de24265e082d7d9a340364d682394"
-      ]
+        "dfe27434683d03401d036fe84fe49ed8"
+      ],
+      "confidence": 0.9,
+      "evidence": "herbal tea blends",
+      "verified": true
     },
     {
-      "id": "ent_024",
+      "id": "E4",
       "type": "Taxon",
-      "name": "herbal tea blends",
+      "name": "plant species",
       "attributes": {
-        "context": "quality control of herbal tea blends"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "8f0de24265e082d7d9a340364d682394"
-      ]
+        "dfe27434683d03401d036fe84fe49ed8"
+      ],
+      "confidence": 0.7,
+      "evidence": "more than one plant species is used",
+      "verified": true
     },
     {
-      "id": "ent_025",
-      "type": "Taxon",
-      "name": "S. tortuosum",
-      "attributes": {
-        "context": "Distinct colour amplitudes were observed for the two species with S. tortuosum showing a uniformly deep red colour"
-      },
+      "id": "E5",
+      "type": "Preparation",
+      "name": "polyherbal mixtures",
+      "attributes": {},
       "source_chunk_ids": [
-        "b0d2a1d844d61e118983e4eb23982a4e"
-      ]
+        "dfe27434683d03401d036fe84fe49ed8"
+      ],
+      "confidence": 0.75,
+      "evidence": "polyherbal mixtures",
+      "verified": true
     },
     {
-      "id": "ent_026",
-      "type": "Taxon",
-      "name": "C. genistoides",
-      "attributes": {
-        "context": "while C. genistoides exhibited chemical heterogeneity with a yellow-blue profile."
-      },
-      "source_chunk_ids": [
-        "b0d2a1d844d61e118983e4eb23982a4e"
-      ]
-    },
-    {
-      "id": "ent_027",
-      "type": "Taxon",
-      "name": "S. tortuosum",
-      "attributes": {
-        "context": "PC1 which separated the pixels representing S. tortuosum and C. genistoides."
-      },
-      "source_chunk_ids": [
-        "b0d2a1d844d61e118983e4eb23982a4e"
-      ]
-    },
-    {
-      "id": "ent_028",
-      "type": "Taxon",
-      "name": "C. genistoides",
-      "attributes": {
-        "context": "PC1 which separated the pixels representing S. tortuosum and C. genistoides."
-      },
-      "source_chunk_ids": [
-        "b0d2a1d844d61e118983e4eb23982a4e"
-      ]
-    },
-    {
-      "id": "ent_029",
-      "type": "Taxon",
-      "name": "C. genistoides",
-      "attributes": {
-        "context": "The heterogeneous nature of C. genistoides was also observed along PC2"
-      },
-      "source_chunk_ids": [
-        "b0d2a1d844d61e118983e4eb23982a4e"
-      ]
-    },
-    {
-      "id": "ent_030",
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "(S. tortuosum and C. genistoides)"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "d365f13d3f88f82366e1c8e9bd986c0b"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum",
+      "verified": true
     },
     {
-      "id": "ent_031",
+      "id": "E2",
       "type": "Taxon",
       "name": "Cyclopia genistoides",
       "attributes": {
-        "context": "(S. tortuosum and C. genistoides)"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "d365f13d3f88f82366e1c8e9bd986c0b"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "C. genistoides",
+      "verified": true
     },
     {
-      "id": "ent_032",
-      "type": "Taxon",
-      "name": "Cyclopia genistoides",
-      "attributes": {
-        "context": "(Honeybush-Sceletium)"
-      },
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "raw material",
+      "attributes": {},
       "source_chunk_ids": [
         "d365f13d3f88f82366e1c8e9bd986c0b"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "Authentic raw material",
+      "verified": true
     },
     {
-      "id": "ent_033",
-      "type": "Taxon",
-      "name": "Sceletium tortuosum",
-      "attributes": {
-        "context": "(Honeybush-Sceletium)"
-      },
+      "id": "E4",
+      "type": "Product",
+      "name": "Honeybush-Sceletium herbal tea blends",
+      "attributes": {},
       "source_chunk_ids": [
         "d365f13d3f88f82366e1c8e9bd986c0b"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "herbal tea blends (Honeybush-Sceletium)",
+      "verified": true
     },
     {
-      "id": "ent_034",
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "pulverised form",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d365f13d3f88f82366e1c8e9bd986c0b"
+      ],
+      "confidence": 0.75,
+      "evidence": "provided in pulverised form",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "a) Sceletium tortuosum Retention Time (min)"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "95ef41c43b5855956b810ff71bafc904"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
     },
     {
-      "id": "ent_035",
-      "type": "Compound",
-      "name": "m/z 202.1727",
-      "attributes": {
-        "context": "m/z 2.05202.1727"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_036",
-      "type": "Compound",
-      "name": "m/z 288.1518",
-      "attributes": {
-        "context": "m/z ... 3.36288.1518"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_037",
-      "type": "Compound",
-      "name": "m/z 292.1764",
-      "attributes": {
-        "context": "m/z ... 3.82292.1764"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_038",
-      "type": "Compound",
-      "name": "m/z 285.1460",
-      "attributes": {
-        "context": "m/z ... 4.05285.1460"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_039",
-      "type": "Compound",
-      "name": "m/z 290.1609",
-      "attributes": {
-        "context": "m/z ... 4.85290.1609"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_040",
+      "id": "E2",
       "type": "Taxon",
       "name": "Cyclopia genistoides",
       "attributes": {
-        "context": "b) Cyclopia genistoides Retention Time (min)"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "95ef41c43b5855956b810ff71bafc904"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Cyclopia genistoides",
+      "verified": true
     },
     {
-      "id": "ent_041",
-      "type": "Compound",
-      "name": "m/z 203.0528",
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "Honeybush-Sceletium tea blend",
+      "attributes": {},
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ],
+      "confidence": 0.9,
+      "evidence": "Honeybush-Sceletium tea blend",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Preparation",
+      "name": "method 1",
+      "attributes": {},
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ],
+      "confidence": 0.8,
+      "evidence": "method 1",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Preparation",
+      "name": "method 2",
+      "attributes": {},
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ],
+      "confidence": 0.8,
+      "evidence": "method 2",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "UPLC-MS analysis",
       "attributes": {
-        "context": "m/z 1.10203.0528"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
         "95ef41c43b5855956b810ff71bafc904"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "UPLC-MS chromatograms",
+      "verified": true
     },
     {
-      "id": "ent_042",
-      "type": "Compound",
-      "name": "m/z 195.0289",
+      "id": "E7",
+      "type": "Study",
+      "name": "UPLC-MS study",
       "attributes": {
-        "context": "m/z ... 1.57195.0289"
+        "design": "analytical chemistry"
       },
       "source_chunk_ids": [
         "95ef41c43b5855956b810ff71bafc904"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "UPLC-MS chromatograms showing marker compounds",
+      "verified": true
     },
     {
-      "id": "ent_043",
-      "type": "Compound",
-      "name": "m/z 303.0513",
-      "attributes": {
-        "context": "m/z ... 2.65303.0513"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_044",
-      "type": "Compound",
-      "name": "m/z 423.0934",
-      "attributes": {
-        "context": "m/z ... 2.84423.0934"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_045",
-      "type": "Compound",
-      "name": "m/z 323.1762",
-      "attributes": {
-        "context": "m/z ... 3.98323.1762"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_046",
-      "type": "Compound",
-      "name": "m/z 303.0872",
-      "attributes": {
-        "context": "m/z ... 4.67303.0872"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_047",
-      "type": "Compound",
-      "name": "m/z 286.1444",
-      "attributes": {
-        "context": "m/z ... 5.17286.1444"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_048",
-      "type": "Compound",
-      "name": "m/z 288.1596",
-      "attributes": {
-        "context": "m/z ... 5.24288.1596"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_049",
-      "type": "Compound",
-      "name": "m/z 287.0558",
-      "attributes": {
-        "context": "m/z ... 5.89287.0558"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_050",
-      "type": "Compound",
-      "name": "m/z 299.0919",
-      "attributes": {
-        "context": "m/z ... 7.49299.0919"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_051",
-      "type": "Compound",
-      "name": "m/z 279.0941",
-      "attributes": {
-        "context": "m/z ... 7.67279.0941"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_052",
-      "type": "Compound",
-      "name": "m/z 425.3784",
-      "attributes": {
-        "context": "m/z ... 7.84425.3784"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_053",
-      "type": "Compound",
-      "name": "m/z 471.3490",
-      "attributes": {
-        "context": "m/z ... 9.27471.3490"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_054",
-      "type": "Compound",
-      "name": "m/z 214.9183",
-      "attributes": {
-        "context": "m/z ... 10.37214.9183"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_055",
-      "type": "Taxon",
-      "name": "Honeybush",
-      "attributes": {
-        "context": "c) Honeybush-Sceletium tea blend"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_056",
-      "type": "Taxon",
-      "name": "Sceletium",
-      "attributes": {
-        "context": "c) Honeybush-Sceletium tea blend"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_057",
-      "type": "Compound",
-      "name": "m/z 423.0848",
-      "attributes": {
-        "context": "m/z 0.86423.0848"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_058",
-      "type": "Compound",
-      "name": "m/z 138.0573",
-      "attributes": {
-        "context": "m/z ... 1.08138.0573"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_059",
-      "type": "Compound",
-      "name": "m/z 104.1100",
-      "attributes": {
-        "context": "m/z ... 1.48104.1100"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_060",
-      "type": "Compound",
-      "name": "m/z 207.1418",
-      "attributes": {
-        "context": "m/z ... 1.99207.1418"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_061",
-      "type": "Compound",
-      "name": "m/z 449.1355",
-      "attributes": {
-        "context": "m/z ... 2.39449.1355"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_062",
-      "type": "Compound",
-      "name": "m/z 209.1542",
-      "attributes": {
-        "context": "m/z ... 2.68209.1542"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_063",
-      "type": "Compound",
-      "name": "m/z 288.1571",
-      "attributes": {
-        "context": "m/z ... 3.35288.1571"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_064",
-      "type": "Compound",
-      "name": "m/z 292.1677",
-      "attributes": {
-        "context": "m/z ... 3.82292.1677"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_065",
-      "type": "Compound",
-      "name": "m/z 285.1573",
-      "attributes": {
-        "context": "m/z ... 4.05285.1573"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_066",
-      "type": "Compound",
-      "name": "m/z 290.1756",
-      "attributes": {
-        "context": "m/z ... 4.85290.1756"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_067",
-      "type": "Taxon",
-      "name": "Honeybush",
-      "attributes": {
-        "context": "d) Honeybush-Sceletium tea blend"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_068",
-      "type": "Taxon",
-      "name": "Sceletium",
-      "attributes": {
-        "context": "d) Honeybush-Sceletium tea blend"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_069",
-      "type": "Compound",
-      "name": "m/z 133.0610",
-      "attributes": {
-        "context": "m/z 1.09133.0610"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_070",
-      "type": "Compound",
-      "name": "m/z 409.1129",
-      "attributes": {
-        "context": "m/z ... 1.57409.1129"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_071",
-      "type": "Compound",
-      "name": "m/z 195.0298",
-      "attributes": {
-        "context": "m/z ... 2.41195.0298"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_072",
-      "type": "Compound",
-      "name": "m/z 423.0941",
-      "attributes": {
-        "context": "m/z ... 2.84423.0941"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_073",
-      "type": "Compound",
-      "name": "m/z 303.0521",
-      "attributes": {
-        "context": "m/z ... 2.65303.0521"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_074",
-      "type": "Compound",
-      "name": "m/z 273.0765",
-      "attributes": {
-        "context": "m/z ... 3.39273.0765"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_075",
-      "type": "Compound",
-      "name": "m/z 273.0771",
-      "attributes": {
-        "context": "m/z ... 3.83273.0771"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_076",
-      "type": "Compound",
-      "name": "m/z 299.0911",
-      "attributes": {
-        "context": "m/z ... 5.08299.0911"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_077",
-      "type": "Compound",
-      "name": "m/z 303.0868",
-      "attributes": {
-        "context": "m/z ... 4.67303.0868"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_078",
-      "type": "Compound",
-      "name": "m/z 299.0928",
-      "attributes": {
-        "context": "m/z ... 7.49299.0928"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_079",
-      "type": "Compound",
-      "name": "m/z 279.0940",
-      "attributes": {
-        "context": "m/z ... 7.67279.0940"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_080",
-      "type": "Compound",
-      "name": "m/z 343.2084",
-      "attributes": {
-        "context": "m/z ... 8.06343.2084"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_081",
-      "type": "Compound",
-      "name": "m/z 471.3473",
-      "attributes": {
-        "context": "m/z ... 9.27471.3473"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_082",
-      "type": "Compound",
-      "name": "m/z 214.9186",
-      "attributes": {
-        "context": "m/z ... 10.37214.9186"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_083",
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "marker compounds for a) Sceletium tortuosum"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
+        "8d4212d32c354f9d397f692828b0faae"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
     },
     {
-      "id": "ent_084",
+      "id": "E2",
       "type": "Taxon",
       "name": "Cyclopia genistoides",
       "attributes": {
-        "context": "marker compounds for b) Cyclopia genistoides"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
+        "8d4212d32c354f9d397f692828b0faae"
+      ],
+      "confidence": 0.95,
+      "evidence": "Cyclopia genistoides",
+      "verified": true
     },
     {
-      "id": "ent_085",
-      "type": "Taxon",
-      "name": "Honeybush",
-      "attributes": {
-        "context": "c) Honeybush-Sceletium tea blend"
-      },
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "Honeybush-Sceletium tea blend",
+      "attributes": {},
       "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
+        "8d4212d32c354f9d397f692828b0faae"
+      ],
+      "confidence": 0.8,
+      "evidence": "Honeybush-Sceletium tea blend",
+      "verified": true
     },
     {
-      "id": "ent_086",
-      "type": "Taxon",
-      "name": "Sceletium",
-      "attributes": {
-        "context": "c) Honeybush-Sceletium tea blend"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_087",
-      "type": "Taxon",
-      "name": "Honeybush",
-      "attributes": {
-        "context": "d) Honeybush-Sceletium tea blend"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_088",
-      "type": "Taxon",
-      "name": "Sceletium",
-      "attributes": {
-        "context": "d) Honeybush-Sceletium tea blend"
-      },
-      "source_chunk_ids": [
-        "95ef41c43b5855956b810ff71bafc904"
-      ]
-    },
-    {
-      "id": "ent_089",
-      "type": "Taxon",
-      "name": "tortuosum",
-      "attributes": {
-        "context": "tortuosum and C. genistoides"
-      },
-      "source_chunk_ids": [
-        "1c6a7a486d56f20d4fa023bde285a491"
-      ]
-    },
-    {
-      "id": "ent_090",
-      "type": "Taxon",
-      "name": "C. genistoides",
-      "attributes": {
-        "context": "tortuosum and C. genistoides"
-      },
-      "source_chunk_ids": [
-        "1c6a7a486d56f20d4fa023bde285a491"
-      ]
-    },
-    {
-      "id": "ent_091",
-      "type": "Taxon",
-      "name": "Cyclopia genistoides",
-      "attributes": {
-        "context": "Cyclopia genistoides"
-      },
-      "source_chunk_ids": [
-        "78ff944f8d5eedab87fe5f934996a044"
-      ]
-    },
-    {
-      "id": "ent_092",
+      "id": "E1",
       "type": "Taxon",
       "name": "Sceletium tortuosum",
       "attributes": {
-        "context": "Sceletium tortuosum"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "78ff944f8d5eedab87fe5f934996a044"
-      ]
+        "256c130699870afb6c20f3cb8d1b7454"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum (Method 1)",
+      "verified": true
     },
     {
-      "id": "ent_093",
-      "type": "Concentration",
-      "name": "1.5 g",
-      "attributes": {
-        "context": "weighed (1.5 g each)"
-      },
-      "source_chunk_ids": [
-        "19fa3b9deeab54b14c09f68e691412ea"
-      ]
-    },
-    {
-      "id": "ent_094",
-      "type": "Concentration",
-      "name": "237 ml",
-      "attributes": {
-        "context": "A volume of 237 ml (8 oz)"
-      },
-      "source_chunk_ids": [
-        "19fa3b9deeab54b14c09f68e691412ea"
-      ]
-    },
-    {
-      "id": "ent_095",
-      "type": "Concentration",
-      "name": "8 oz",
-      "attributes": {
-        "context": "A volume of 237 ml (8 oz)"
-      },
-      "source_chunk_ids": [
-        "19fa3b9deeab54b14c09f68e691412ea"
-      ]
-    },
-    {
-      "id": "ent_096",
-      "type": "Compound",
-      "name": "marker molecules",
-      "attributes": {
-        "context": "presence of marker molecules"
-      },
-      "source_chunk_ids": [
-        "19fa3b9deeab54b14c09f68e691412ea"
-      ]
-    },
-    {
-      "id": "ent_097",
+      "id": "E2",
       "type": "Taxon",
-      "name": "S. tortuosum",
+      "name": "Cyclopia genistoides",
       "attributes": {
-        "context": "analyse S. tortuosum"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "19fa3b9deeab54b14c09f68e691412ea"
-      ]
+        "256c130699870afb6c20f3cb8d1b7454"
+      ],
+      "confidence": 0.95,
+      "evidence": "Cyclopia genistoides (Method 2)",
+      "verified": true
     },
     {
-      "id": "ent_098",
-      "type": "Taxon",
-      "name": "C. genistoides",
+      "id": "E1",
+      "type": "Study",
+      "name": "Djokam et al., 2017",
       "attributes": {
-        "context": "analyse C. genistoides"
+        "design": "partial least squares-discriminant analysis (PLS-DA) study",
+        "year": 2017
+      },
+      "source_chunk_ids": [
+        "420a49026c9af5048913fa5718ed0051"
+      ],
+      "confidence": 0.9,
+      "evidence": "Djokam et al., 2017",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vitro analytical study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "420a49026c9af5048913fa5718ed0051"
+      ],
+      "confidence": 0.8,
+      "evidence": "Partial least squares-discriminant analysis",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "raw material",
+      "attributes": {},
+      "source_chunk_ids": [
+        "420a49026c9af5048913fa5718ed0051"
+      ],
+      "confidence": 0.85,
+      "evidence": "raw materials were each assigned to a class",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "species",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "420a49026c9af5048913fa5718ed0051"
+      ],
+      "confidence": 0.8,
+      "evidence": "classes representing each species",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "tea blends",
+      "attributes": {},
+      "source_chunk_ids": [
+        "420a49026c9af5048913fa5718ed0051"
+      ],
+      "confidence": 0.75,
+      "evidence": "raw material in the tea blends",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "RawMaterial",
+      "name": "pulverised raw materials",
+      "attributes": {},
+      "source_chunk_ids": [
+        "19fa3b9deeab54b14c09f68e691412ea"
+      ],
+      "confidence": 0.9,
+      "evidence": "pulverised raw materials",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "tea blends",
+      "attributes": {},
+      "source_chunk_ids": [
+        "19fa3b9deeab54b14c09f68e691412ea"
+      ],
+      "confidence": 0.95,
+      "evidence": "tea blends",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Preparation",
+      "name": "infusion",
+      "attributes": {},
+      "source_chunk_ids": [
+        "19fa3b9deeab54b14c09f68e691412ea"
+      ],
+      "confidence": 0.85,
+      "evidence": "infusions were drawn",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
       },
       "source_chunk_ids": [
         "19fa3b9deeab54b14c09f68e691412ea"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Cyclopia genistoides",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "19fa3b9deeab54b14c09f68e691412ea"
+      ],
+      "confidence": 0.9,
+      "evidence": "C. genistoides",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Shikanga et al. (2012a,b)",
+      "attributes": {
+        "year": "2012"
+      },
+      "source_chunk_ids": [
+        "19fa3b9deeab54b14c09f68e691412ea"
+      ],
+      "confidence": 0.8,
+      "evidence": "method of Shikanga et al. (2012a,b)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Djokam et al. (2017)",
+      "attributes": {
+        "year": "2017"
+      },
+      "source_chunk_ids": [
+        "19fa3b9deeab54b14c09f68e691412ea"
+      ],
+      "confidence": 0.8,
+      "evidence": "method of Djokam et al. (2017)",
+      "verified": true
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.025424+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "raw materials (Sceletium tortuosum)",
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "raw materials (Cyclopia genistoides)",
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "measurement": {
+          "value": 3,
+          "unit": "%",
+          "measurement_type": "content",
+          "notes": "present in lower amounts (< 3%)"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "S. tortuosum was present in lower amounts (< 3%)",
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "measurement": {
+          "value": 97,
+          "unit": "%",
+          "measurement_type": "content",
+          "notes": "major constituent (> 97%)"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "C. genistoides as the major constituent (> 97%)",
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "hyperspectral imaging is applied",
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "raw material and tea blends were acquired",
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "herbal tea blends were acquired",
+      "source_chunk_ids": [
+        "24dbd00e8e8e64a49110eb86a24fe829"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Camellia sinensis leaves",
+      "source_chunk_ids": [
+        "7d89d9b7f2c5ecd1832e2a51d3830d98"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "processing of the leaves determine whether the teas are black",
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "processing of the leaves determine whether the teas are green",
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "processing of the leaves determine whether the teas are white",
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "tisanes/infusions as opposed to 'teas'",
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "plant_part"
+      },
+      "confidence": 0.8,
+      "evidence": "prepared from the leaves",
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "plant_part"
+      },
+      "confidence": 0.75,
+      "evidence": "prepared from the bark",
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "plant_part"
+      },
+      "confidence": 0.75,
+      "evidence": "prepared from the roots",
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "plant_part"
+      },
+      "confidence": 0.75,
+      "evidence": "prepared from the berries",
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E11",
+      "attributes": {
+        "role": "plant_part"
+      },
+      "confidence": 0.75,
+      "evidence": "prepared from the seeds",
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E12",
+      "attributes": {
+        "role": "plant_part"
+      },
+      "confidence": 0.75,
+      "evidence": "prepared from the spices",
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E17",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "health benefits associated with these teas",
+      "source_chunk_ids": [
+        "b81b768e06d699571070afc476891fc8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.85,
+      "evidence": "Cyclopia genistoides was used as a tea",
+      "source_chunk_ids": [
+        "5866f884e6bcd54d5f4a6675d246e490"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "used as a substitute for tea",
+      "source_chunk_ids": [
+        "5866f884e6bcd54d5f4a6675d246e490"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Mesembrine ... tetracyclic alkaloids",
+      "source_chunk_ids": [
+        "5b9a3e34b50c0b4402d050d2b8776f71"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Mesembranol ... tetracyclic alkaloids",
+      "source_chunk_ids": [
+        "5b9a3e34b50c0b4402d050d2b8776f71"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Mangiferin ... flavonol glycosides",
+      "source_chunk_ids": [
+        "5b9a3e34b50c0b4402d050d2b8776f71"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Isomangiferin ... flavonol glycosides",
+      "source_chunk_ids": [
+        "5b9a3e34b50c0b4402d050d2b8776f71"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Hesperidin ... flavanone glycoside",
+      "source_chunk_ids": [
+        "5b9a3e34b50c0b4402d050d2b8776f71"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "marker compounds present in S. tortuosum (mesembrine",
+      "source_chunk_ids": [
+        "32efc53e5cd7c66a17ec0dcf59851d1e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "marker compounds present in S. tortuosum (mesembranol",
+      "source_chunk_ids": [
+        "32efc53e5cd7c66a17ec0dcf59851d1e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "marker compounds present in S. tortuosum (mesembrenone",
+      "source_chunk_ids": [
+        "32efc53e5cd7c66a17ec0dcf59851d1e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "marker compounds present in S. tortuosum (mesembrenol",
+      "source_chunk_ids": [
+        "32efc53e5cd7c66a17ec0dcf59851d1e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "C. genistoides (mangiferin",
+      "source_chunk_ids": [
+        "32efc53e5cd7c66a17ec0dcf59851d1e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "C. genistoides (isomangiferin",
+      "source_chunk_ids": [
+        "32efc53e5cd7c66a17ec0dcf59851d1e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "C. genistoides (hesperidin",
+      "source_chunk_ids": [
+        "32efc53e5cd7c66a17ec0dcf59851d1e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "expectorant in chronic catarrh",
+      "source_chunk_ids": [
+        "c3a31c6178266be94615bf6f3d55bf72"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "expectorant in pulmonary tuberculosis",
+      "source_chunk_ids": [
+        "c3a31c6178266be94615bf6f3d55bf72"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "high in mangiferin",
+      "source_chunk_ids": [
+        "e9390502b8830073bc8e54503bc65eec"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "isomangiferin",
+      "source_chunk_ids": [
+        "e9390502b8830073bc8e54503bc65eec"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "hesperidin",
+      "source_chunk_ids": [
+        "e9390502b8830073bc8e54503bc65eec"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "polyphenolic compounds",
+      "source_chunk_ids": [
+        "e9390502b8830073bc8e54503bc65eec"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "polyphenolic compounds",
+      "source_chunk_ids": [
+        "e9390502b8830073bc8e54503bc65eec"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "polyphenolic compounds",
+      "source_chunk_ids": [
+        "e9390502b8830073bc8e54503bc65eec"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "S. tortuosum tea powders",
+      "source_chunk_ids": [
+        "03ec5b920523027511f1c84c34a3687e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "C. genistoides tea powders",
+      "source_chunk_ids": [
+        "03ec5b920523027511f1c84c34a3687e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "tea powders",
+      "source_chunk_ids": [
+        "03ec5b920523027511f1c84c34a3687e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "PCA analysis",
+      "source_chunk_ids": [
+        "03ec5b920523027511f1c84c34a3687e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Wu and Sun, 2013",
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Breithaupt, 2004",
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Wu and Sun, 2013",
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Breithaupt, 2004",
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E13",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.7,
+      "evidence": "Wu and Sun, 2013",
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E13",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.7,
+      "evidence": "Breithaupt, 2004",
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E14",
+      "attributes": {
+        "outcome": "improves",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "origin of green tea was determined",
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "to improve the taste",
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "increase the health benefits",
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "non-destructive analysis",
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E13",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "quality control of teas",
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "PRODUCES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E13",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "quality control",
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "PRODUCES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E13",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "quality control",
+      "source_chunk_ids": [
+        "46ebedd751eaca89f3b5d42a6bd3dbfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "infrared spectroscopy and partial least squares regression (PLS) analysis (Zhuang et al., 2017)",
+      "source_chunk_ids": [
+        "8f0de24265e082d7d9a340364d682394"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "near infrared spectroscopy and PLS-first derivative plus straight line subtraction (Sinija and Mishra, 2009)",
+      "source_chunk_ids": [
+        "8f0de24265e082d7d9a340364d682394"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "hyperspectral imaging and partial least squares discriminant analysis (PLS-DA) (Djokam et al., 2017)",
+      "source_chunk_ids": [
+        "8f0de24265e082d7d9a340364d682394"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "HSI in combination with chemometric data modeling",
+      "source_chunk_ids": [
+        "8f0de24265e082d7d9a340364d682394"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "caffeine content of instant green tea powder and granules",
+      "source_chunk_ids": [
+        "8f0de24265e082d7d9a340364d682394"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "quality assessment of herbal tea blends (Djokam et al., 2017)",
+      "source_chunk_ids": [
+        "8f0de24265e082d7d9a340364d682394"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "quality control of herbal tea blends",
+      "source_chunk_ids": [
+        "8f0de24265e082d7d9a340364d682394"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "CONTAINS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "caffeine content of instant green tea powder and granules",
+      "source_chunk_ids": [
+        "8f0de24265e082d7d9a340364d682394"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "measurement": {
+          "value": 97.1,
+          "unit": "%",
+          "measurement_type": "content",
+          "notes": "range 97.10\u201399.50%"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "C. genistoides was predicted to be present in higher amounts (> 97%; 97.10\u201399.50%)",
+      "source_chunk_ids": [
+        "aab559f961a4c2e276f162b48f06697f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 0.5,
+          "unit": "%",
+          "measurement_type": "content",
+          "notes": "range 0.50\u20132.90%"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "S. tortuosum occurred in lower quantities (< 3%; 0.50\u20132.90%)",
+      "source_chunk_ids": [
+        "aab559f961a4c2e276f162b48f06697f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "presence",
+          "notes": "major compound"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "Mesembrine was identified as the major compound",
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "presence",
+          "notes": "lower levels"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "mesembrenone occurred at lower levels",
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "presence",
+          "notes": "lower levels"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "mesembranol occurred at lower levels",
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "marker alkaloids",
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "marker alkaloids",
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "marker alkaloids",
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "presence",
+          "notes": "major compound"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "mangiferin identified as major compound",
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E10",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "presence",
+          "notes": "major compound"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "isomangiferin identified as major compound",
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E11",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "presence",
+          "notes": "major compound"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "hesperidin identified as major compound",
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "CONTAINS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E3",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "presence",
+          "notes": "prominent"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "three alkaloids are more prominent",
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "CONTAINS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "presence",
+          "notes": "prominent"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "three alkaloids are more prominent",
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "CONTAINS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E5",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "presence",
+          "notes": "prominent"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "three alkaloids are more prominent",
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "CONTAINS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E9",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "presence",
+          "notes": "very low levels"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "mangiferin are detected at very low levels",
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "CONTAINS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E11",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "presence",
+          "notes": "very low levels"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "hesperidin are detected at very low levels",
+      "source_chunk_ids": [
+        "55dfc48cf502a16066afb36eca8c0c41"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "assertion": "confirms"
+      },
+      "confidence": 0.8,
+      "evidence": "mangiferin could be identified",
+      "source_chunk_ids": [
+        "e91bf82fc4db2daa9927eab7585edd66"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "assertion": "confirms"
+      },
+      "confidence": 0.8,
+      "evidence": "isomangiferin could be identified",
+      "source_chunk_ids": [
+        "e91bf82fc4db2daa9927eab7585edd66"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "assertion": "confirms"
+      },
+      "confidence": 0.8,
+      "evidence": "hesperidin could be identified",
+      "source_chunk_ids": [
+        "e91bf82fc4db2daa9927eab7585edd66"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "assertion": "confirms"
+      },
+      "confidence": 0.75,
+      "evidence": "C. genistoides in the tea blend",
+      "source_chunk_ids": [
+        "e91bf82fc4db2daa9927eab7585edd66"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {
+        "assertion": "refutes"
+      },
+      "confidence": 0.7,
+      "evidence": "marker compounds for S. tortuosum could not be detected",
+      "source_chunk_ids": [
+        "e91bf82fc4db2daa9927eab7585edd66"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "HSI for quality analysis of herbal tea blends",
+      "source_chunk_ids": [
+        "dfe27434683d03401d036fe84fe49ed8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "UPLC-MS for quality control of herbal tea blends",
+      "source_chunk_ids": [
+        "dfe27434683d03401d036fe84fe49ed8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "species included in the tea blend",
+      "source_chunk_ids": [
+        "dfe27434683d03401d036fe84fe49ed8"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "polyherbal mixtures including herbal tea blends",
+      "source_chunk_ids": [
+        "dfe27434683d03401d036fe84fe49ed8"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "raw material (S. tortuosum)",
+      "source_chunk_ids": [
+        "d365f13d3f88f82366e1c8e9bd986c0b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "raw material (C. genistoides)",
+      "source_chunk_ids": [
+        "d365f13d3f88f82366e1c8e9bd986c0b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "tea blends (Honeybush-Sceletium)",
+      "source_chunk_ids": [
+        "d365f13d3f88f82366e1c8e9bd986c0b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "UPLC-MS chromatograms",
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum",
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Cyclopia genistoides",
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Honeybush-Sceletium tea blend",
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "method 1",
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "method 2",
+      "source_chunk_ids": [
+        "95ef41c43b5855956b810ff71bafc904"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Partial least squares-discriminant analysis study",
+      "source_chunk_ids": [
+        "420a49026c9af5048913fa5718ed0051"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "raw materials were each assigned to a class",
+      "source_chunk_ids": [
+        "420a49026c9af5048913fa5718ed0051"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "raw material in the tea blends",
+      "source_chunk_ids": [
+        "420a49026c9af5048913fa5718ed0051"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "identified"
+      },
+      "confidence": 0.75,
+      "evidence": "classes representing each species",
+      "source_chunk_ids": [
+        "420a49026c9af5048913fa5718ed0051"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "infusions were drawn from tea blends",
+      "source_chunk_ids": [
+        "19fa3b9deeab54b14c09f68e691412ea"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "used to analyse S. tortuosum",
+      "source_chunk_ids": [
+        "19fa3b9deeab54b14c09f68e691412ea"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "used to analyse S. tortuosum and the tea blends",
+      "source_chunk_ids": [
+        "19fa3b9deeab54b14c09f68e691412ea"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "used to analyse C. genistoides",
+      "source_chunk_ids": [
+        "19fa3b9deeab54b14c09f68e691412ea"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "used to analyse C. genistoides and the tea blends",
+      "source_chunk_ids": [
+        "19fa3b9deeab54b14c09f68e691412ea"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

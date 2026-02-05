@@ -1,783 +1,7072 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "6936d07003e4749dfe04caca9911537528b3235c10770fe874e5a20d24c88f2f",
-  "extracted_at": "2026-02-01T08:13:21.218326+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
-      "type": "Taxon",
+      "id": "E1",
+      "type": "Culture",
+      "name": "South African racial and ethnic groups",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fbe20203e749c0ca0267bcd9028b40da"
+      ],
+      "confidence": 0.9,
+      "evidence": "racial and ethnic groups in South Africa",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: South African groups \u2013 self-medication",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fbe20203e749c0ca0267bcd9028b40da"
+      ],
+      "confidence": 0.85,
+      "evidence": "self-medication in South Africa",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "self-medication",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fbe20203e749c0ca0267bcd9028b40da"
+      ],
+      "confidence": 0.9,
+      "evidence": "self-medication",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "herbs",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fbe20203e749c0ca0267bcd9028b40da"
+      ],
+      "confidence": 0.8,
+      "evidence": "consumption of herbs",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "home and folk remedies",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fbe20203e749c0ca0267bcd9028b40da"
+      ],
+      "confidence": 0.8,
+      "evidence": "home and folk remedies",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "RawMaterial",
+      "name": "patent and proprietary medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fbe20203e749c0ca0267bcd9028b40da"
+      ],
+      "confidence": 0.8,
+      "evidence": "patent and proprietary medicines",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "RawMaterial",
+      "name": "pharmaceuticals",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fbe20203e749c0ca0267bcd9028b40da"
+      ],
+      "confidence": 0.8,
+      "evidence": "pharmaceuticals",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "RawMaterial",
+      "name": "natural and manufactured products",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fbe20203e749c0ca0267bcd9028b40da"
+      ],
+      "confidence": 0.75,
+      "evidence": "natural and manufactured products",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "black sufferers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a4fe8a301a6dcf10fe865cf9eb08d0eb"
+      ],
+      "confidence": 0.8,
+      "evidence": "black sufferers",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "white patients",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a4fe8a301a6dcf10fe865cf9eb08d0eb"
+      ],
+      "confidence": 0.8,
+      "evidence": "white patients",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Afrikaner farm households",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a4fe8a301a6dcf10fe865cf9eb08d0eb"
+      ],
+      "confidence": 0.85,
+      "evidence": "Afrikaner farm households",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Culture",
+      "name": "African and coloured purchasers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a4fe8a301a6dcf10fe865cf9eb08d0eb"
+      ],
+      "confidence": 0.85,
+      "evidence": "African and coloured purchasers",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Culture",
+      "name": "black and white customers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a4fe8a301a6dcf10fe865cf9eb08d0eb"
+      ],
+      "confidence": 0.8,
+      "evidence": "black and white customers",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Culture",
+      "name": "urban predominantly white elite",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a4fe8a301a6dcf10fe865cf9eb08d0eb"
+      ],
+      "confidence": 0.8,
+      "evidence": "urban predominantly white elite",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "self-medication",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a4fe8a301a6dcf10fe865cf9eb08d0eb"
+      ],
+      "confidence": 0.9,
+      "evidence": "self-medication",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "RawMaterial",
+      "name": "Dutch medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a4fe8a301a6dcf10fe865cf9eb08d0eb"
+      ],
+      "confidence": 0.75,
+      "evidence": "Dutch medicines",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "RawMaterial",
+      "name": "folk remedies",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a4fe8a301a6dcf10fe865cf9eb08d0eb"
+      ],
+      "confidence": 0.75,
+      "evidence": "folk remedies",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "RawMaterial",
+      "name": "patent medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a4fe8a301a6dcf10fe865cf9eb08d0eb"
+      ],
+      "confidence": 0.8,
+      "evidence": "patent medicines",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "RawMaterial",
       "name": "medicinal plants",
-      "attributes": {
-        "context": "medicinal plants were sold by itinerant traders"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "a4fe8a301a6dcf10fe865cf9eb08d0eb"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "medicinal plants",
+      "verified": true
     },
     {
-      "id": "ent_002",
-      "type": "Taxon",
+      "id": "E12",
+      "type": "RawMaterial",
       "name": "herbal medicines",
-      "attributes": {
-        "context": "herbal and manufactured medicines attracted black and white customers"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "a4fe8a301a6dcf10fe865cf9eb08d0eb"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "herbal medicines",
+      "verified": true
     },
     {
-      "id": "ent_003",
-      "type": "Indication",
-      "name": "sickness",
-      "attributes": {
-        "context": "explicit duty to treat sickness"
-      },
+      "id": "E13",
+      "type": "RawMaterial",
+      "name": "manufactured medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a4fe8a301a6dcf10fe865cf9eb08d0eb"
+      ],
+      "confidence": 0.8,
+      "evidence": "manufactured medicines",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Moravians",
+      "attributes": {},
       "source_chunk_ids": [
         "a749b9c64ba04698526b3a4a96c023aa"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "The Moravians were already committed",
+      "verified": true
     },
     {
-      "id": "ent_004",
+      "id": "E2",
+      "type": "Culture",
+      "name": "coloured population",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a749b9c64ba04698526b3a4a96c023aa"
+      ],
+      "confidence": 0.8,
+      "evidence": "coloured population recently emancipated",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Halle Orphanage",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a749b9c64ba04698526b3a4a96c023aa"
+      ],
+      "confidence": 0.85,
+      "evidence": "Halle Orphanage had manufactured pharmaceuticals",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "UseRecord",
+      "name": "UseRecord: Moravians \u2013 pharmaceuticals \u2013 treat sickness",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a749b9c64ba04698526b3a4a96c023aa"
+      ],
+      "confidence": 0.75,
+      "evidence": "duty to treat sickness",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "pharmaceuticals",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a749b9c64ba04698526b3a4a96c023aa"
+      ],
+      "confidence": 0.8,
+      "evidence": "manufactured pharmaceuticals",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Product",
+      "name": "small physic or medicine chest",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a749b9c64ba04698526b3a4a96c023aa"
+      ],
+      "confidence": 0.7,
+      "evidence": "small physic or medicine chest",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "treat sickness",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a749b9c64ba04698526b3a4a96c023aa"
+      ],
+      "confidence": 0.8,
+      "evidence": "duty to treat sickness",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Culture",
+      "name": "Rudolph Roser",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a749b9c64ba04698526b3a4a96c023aa"
+      ],
+      "confidence": 0.85,
+      "evidence": "Rudolph Roser came out",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Culture",
+      "name": "C. F. Juritz",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a749b9c64ba04698526b3a4a96c023aa"
+      ],
+      "confidence": 0.8,
+      "evidence": "Mr C. F. Juritz",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "RawMaterial",
+      "name": "Dutch medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a749b9c64ba04698526b3a4a96c023aa"
+      ],
+      "confidence": 0.75,
+      "evidence": "'Dutch medicines' imported",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Red people (ababomvu)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fb5b8f4e19ff93e5eb395b7e0440e249"
+      ],
+      "confidence": 0.9,
+      "evidence": "The 'Red people' (ababomvu) were Africans",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Red people \u2013 mixture \u2013 protect against cold and sunburn",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fb5b8f4e19ff93e5eb395b7e0440e249"
+      ],
+      "confidence": 0.8,
+      "evidence": "used a mixture of red ochre and animal fat",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "mixture of red ochre and animal fat",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fb5b8f4e19ff93e5eb395b7e0440e249"
+      ],
+      "confidence": 0.85,
+      "evidence": "mixture of red ochre and animal fat",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "protect against cold",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fb5b8f4e19ff93e5eb395b7e0440e249"
+      ],
+      "confidence": 0.9,
+      "evidence": "protect against the cold",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "protect against sunburn",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fb5b8f4e19ff93e5eb395b7e0440e249"
+      ],
+      "confidence": 0.9,
+      "evidence": "protect against ... sunburn",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Moravian mission stores",
+      "attributes": {},
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "confidence": 0.9,
+      "evidence": "Moravian mission stores at Mamre, Elim, Genadendal",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Moravian stores \u2013 commercial remedies \u2013 ailments",
+      "attributes": {},
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "confidence": 0.85,
+      "evidence": "store at Genadendal had a poster of 'Sound Remedies for Sick People'",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "self-medication",
+      "attributes": {},
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "confidence": 0.8,
+      "evidence": "extensive use of self-medication by local Cape consumers",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "acidity",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "confidence": 0.9,
+      "evidence": "Beginning with 'acidity'",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "constipation",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "confidence": 0.9,
+      "evidence": "constipation",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "ear ache",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "confidence": 0.9,
+      "evidence": "ear ache",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "sore throat",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "confidence": 0.9,
+      "evidence": "sore throat",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "gout",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "confidence": 0.9,
+      "evidence": "gout",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "scrofula",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "confidence": 0.9,
+      "evidence": "scrofula",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "weakness",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "confidence": 0.9,
+      "evidence": "finally reaching 'weakness'",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Product",
+      "name": "Rajah Stomach Mixture",
+      "attributes": {},
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "confidence": 0.85,
+      "evidence": "Rajah Stomach Mixture",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Product",
+      "name": "Graham's Ginger Cure for infants",
+      "attributes": {},
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "confidence": 0.85,
+      "evidence": "Graham's Ginger Cure for infants",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Product",
+      "name": "Virata pills",
+      "attributes": {},
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "confidence": 0.85,
+      "evidence": "Virata pills",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Product",
+      "name": "Virnil Tonic and Strengthening Pills",
+      "attributes": {},
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "confidence": 0.85,
+      "evidence": "Virnil Tonic and Strengthening Pills",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Culture",
+      "name": "coloured farm labourers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "confidence": 0.8,
+      "evidence": "coloured farm labourers",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Culture",
+      "name": "Afrikaner farm households",
+      "attributes": {},
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "confidence": 0.8,
+      "evidence": "Afrikaner farm households",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "ethnic groups",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f00fdaa6a465c6c72a0f9d3516dce96b"
+      ],
+      "confidence": 0.7,
+      "evidence": "different ethnic groups",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "buchu",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f00fdaa6a465c6c72a0f9d3516dce96b"
+      ],
+      "confidence": 0.8,
+      "evidence": "indigenous herbs such as buchu",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "dagga",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f00fdaa6a465c6c72a0f9d3516dce96b"
+      ],
+      "confidence": 0.8,
+      "evidence": "indigenous herbs such as ... dagga",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "rooibos",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f00fdaa6a465c6c72a0f9d3516dce96b"
+      ],
+      "confidence": 0.8,
+      "evidence": "rooibos tea",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "rooibos tea",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f00fdaa6a465c6c72a0f9d3516dce96b"
+      ],
+      "confidence": 0.75,
+      "evidence": "rooibos tea",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Namaqualand",
+      "attributes": {},
+      "source_chunk_ids": [
+        "014071d196490cee663ddc130d0dbe7e"
+      ],
+      "confidence": 0.8,
+      "evidence": "Namaqualand, where their stores",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Namaqualand \u2013 Dutch medicines \u2013 remedies",
+      "attributes": {},
+      "source_chunk_ids": [
+        "014071d196490cee663ddc130d0dbe7e"
+      ],
+      "confidence": 0.7,
+      "evidence": "storekeepers obtained patent medicines",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "Dutch medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "014071d196490cee663ddc130d0dbe7e"
+      ],
+      "confidence": 0.85,
+      "evidence": "sold 'Dutch' medicines",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "remedies",
+      "attributes": {},
+      "source_chunk_ids": [
+        "014071d196490cee663ddc130d0dbe7e"
+      ],
+      "confidence": 0.8,
+      "evidence": "Remedies of every description",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "druppels or drops",
+      "attributes": {},
+      "source_chunk_ids": [
+        "014071d196490cee663ddc130d0dbe7e"
+      ],
+      "confidence": 0.9,
+      "evidence": "Druppels or drops made up in a tincture",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Preparation",
+      "name": "tincture",
+      "attributes": {},
+      "source_chunk_ids": [
+        "014071d196490cee663ddc130d0dbe7e"
+      ],
+      "confidence": 0.75,
+      "evidence": "made up in a tincture",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Product",
+      "name": "Nature's Health Restorer",
+      "attributes": {},
+      "source_chunk_ids": [
+        "014071d196490cee663ddc130d0dbe7e"
+      ],
+      "confidence": 0.95,
+      "evidence": "patent medicines such as 'Nature's Health Restorer'",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Afrikaners",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "confidence": 0.95,
+      "evidence": "Most Afrikaners were farmers",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Khoisan",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "confidence": 0.9,
+      "evidence": "some learned from the Khoisan",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "UseRecord",
+      "name": "UseRecord: Afrikaners \u2013 buchu tea \u2013 weak kidneys",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "confidence": 0.85,
+      "evidence": "buchu tea for weak kidneys",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "UseRecord",
+      "name": "UseRecord: Afrikaners \u2013 wormwood \u2013 weak heart",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "confidence": 0.85,
+      "evidence": "wormwood in the shoes for a weak heart",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "UseRecord",
+      "name": "UseRecord: Colesberg area \u2013 dog's blood \u2013 fits",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "confidence": 0.8,
+      "evidence": "for fits the old people used dog's blood",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "UseRecord",
+      "name": "UseRecord: Colesberg area \u2013 goat's dung \u2013 measles",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "confidence": 0.8,
+      "evidence": "for measles goat's dung",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "UseRecord",
+      "name": "UseRecord: Colesberg area \u2013 wolf's dung \u2013 sore throat",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "confidence": 0.8,
+      "evidence": "for a sore throat wolf's dung",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "UseRecord",
+      "name": "UseRecord: Afrikaner mother \u2013 eucalyptus leaves \u2013 fever",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "confidence": 0.85,
+      "evidence": "wrapping them in soothing eucalyptus leaves during fever",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "TraditionalUse",
+      "name": "weak kidneys",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "confidence": 0.9,
+      "evidence": "for weak kidneys",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "TraditionalUse",
+      "name": "weak heart",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "confidence": 0.9,
+      "evidence": "for a weak heart",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "TraditionalUse",
+      "name": "fits",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "confidence": 0.9,
+      "evidence": "for fits",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "TraditionalUse",
+      "name": "measles",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "confidence": 0.9,
+      "evidence": "for measles",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "TraditionalUse",
+      "name": "sore throat",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "confidence": 0.9,
+      "evidence": "for a sore throat",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "TraditionalUse",
+      "name": "fever",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "confidence": 0.9,
+      "evidence": "during fever",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "RawMaterial",
+      "name": "buchu tea",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "confidence": 0.8,
+      "evidence": "buchu tea",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "RawMaterial",
+      "name": "wormwood",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "confidence": 0.8,
+      "evidence": "wormwood",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "RawMaterial",
+      "name": "dog's blood",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "confidence": 0.8,
+      "evidence": "dog's blood",
+      "verified": true
+    },
+    {
+      "id": "E18",
+      "type": "RawMaterial",
+      "name": "goat's dung",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "confidence": 0.8,
+      "evidence": "goat's dung",
+      "verified": true
+    },
+    {
+      "id": "E19",
+      "type": "RawMaterial",
+      "name": "wolf's dung",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "confidence": 0.8,
+      "evidence": "wolf's dung",
+      "verified": true
+    },
+    {
+      "id": "E20",
+      "type": "PlantPart",
+      "name": "eucalyptus leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "confidence": 0.85,
+      "evidence": "eucalyptus leaves",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Sequah",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b663965e003ec1b35e3054521691df11"
+      ],
+      "confidence": 0.9,
+      "evidence": "travelling Sequah",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Sequah \u2013 American Indian medicines \u2013 rheumatism",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b663965e003ec1b35e3054521691df11"
+      ],
+      "confidence": 0.8,
+      "evidence": "promoted American Indian medicines for rheumatism",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "cures for rheumatism",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b663965e003ec1b35e3054521691df11"
+      ],
+      "confidence": 0.85,
+      "evidence": "cures for rheumatism",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "rheumatism",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "b663965e003ec1b35e3054521691df11"
+      ],
+      "confidence": 0.9,
+      "evidence": "cures for rheumatism",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "American Indian medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b663965e003ec1b35e3054521691df11"
+      ],
+      "confidence": 0.75,
+      "evidence": "American Indian medicines",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Product",
+      "name": "Sequah Oil",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b663965e003ec1b35e3054521691df11"
+      ],
+      "confidence": 0.85,
+      "evidence": "Sequah Oil",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Product",
+      "name": "Prairie Flower Mixture",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b663965e003ec1b35e3054521691df11"
+      ],
+      "confidence": 0.85,
+      "evidence": "Prairie Flower Mixture",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "RawMaterial",
+      "name": "turpentine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b663965e003ec1b35e3054521691df11"
+      ],
+      "confidence": 0.8,
+      "evidence": "turpentine",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "RawMaterial",
+      "name": "fish oil",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b663965e003ec1b35e3054521691df11"
+      ],
+      "confidence": 0.8,
+      "evidence": "fish oil",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "RawMaterial",
+      "name": "camphor",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b663965e003ec1b35e3054521691df11"
+      ],
+      "confidence": 0.8,
+      "evidence": "camphor",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Condition",
+      "name": "cancer",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "b663965e003ec1b35e3054521691df11"
+      ],
+      "confidence": 0.7,
+      "evidence": "cancer-curer",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Africans",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "confidence": 0.9,
+      "evidence": "Africans 'purchase our [European] medicines freely'",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Africans \u2013 European medicines \u2013 self-medication",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "confidence": 0.8,
+      "evidence": "Africans 'purchase our [European] medicines freely'",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Holloway's Ointment",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "confidence": 0.85,
+      "evidence": "Holloway's Ointment",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Product",
+      "name": "Chlorodyne",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "confidence": 0.85,
+      "evidence": "painkillers such as Chlorodyne",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Product",
+      "name": "laudanum",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "confidence": 0.85,
+      "evidence": "painkillers such as ... laudanum",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Product",
+      "name": "Epsom salts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "confidence": 0.85,
+      "evidence": "laxatives such as Epsom salts",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Product",
+      "name": "Sarsaparilla",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "confidence": 0.85,
+      "evidence": "laxatives such as ... Sarsaparilla",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Product",
+      "name": "Enos fruit salts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "confidence": 0.85,
+      "evidence": "Enos fruit salts",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Product",
+      "name": "Beecham's powders",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "confidence": 0.85,
+      "evidence": "Beecham's powders",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Product",
+      "name": "Carter's little liver pills",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "confidence": 0.85,
+      "evidence": "Carter's little liver pills",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Product",
+      "name": "Phospherine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "confidence": 0.85,
+      "evidence": "Phospherine",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Product",
+      "name": "embrocation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "confidence": 0.8,
+      "evidence": "bottles of embrocation",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Product",
+      "name": "eucalyptus oil",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "confidence": 0.8,
+      "evidence": "eucalyptus oil",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Product",
+      "name": "asafoetida",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "confidence": 0.8,
+      "evidence": "asafoetida",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Product",
+      "name": "Pink Pills for Pale People",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "confidence": 0.85,
+      "evidence": "'Pink Pills for Pale People'",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "TraditionalUse",
+      "name": "blood purifier",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "confidence": 0.8,
+      "evidence": "a 'blood purifier' called",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "Condition",
+      "name": "nervous debility",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "confidence": 0.75,
+      "evidence": "nervous debility",
+      "verified": true
+    },
+    {
+      "id": "E18",
+      "type": "Condition",
+      "name": "malaria",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "confidence": 0.75,
+      "evidence": "malaria",
+      "verified": true
+    },
+    {
+      "id": "E19",
+      "type": "Condition",
+      "name": "rheumatism",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "confidence": 0.75,
+      "evidence": "rheumatism",
+      "verified": true
+    },
+    {
+      "id": "E20",
+      "type": "Product",
+      "name": "Wood's peppermint cure",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "confidence": 0.85,
+      "evidence": "Wood's peppermint cure",
+      "verified": true
+    },
+    {
+      "id": "E21",
+      "type": "Product",
+      "name": "castor oil",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "confidence": 0.85,
+      "evidence": "castor oil",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Bhaca",
+      "attributes": {},
+      "source_chunk_ids": [
+        "738c58aa05d9ad420665e088d9093c61"
+      ],
+      "confidence": 0.8,
+      "evidence": "Bhaca clientele",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Bhaca \u2013 patent medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "738c58aa05d9ad420665e088d9093c61"
+      ],
+      "confidence": 0.7,
+      "evidence": "area stocked patent medicines for their Bhaca clientele",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "patent medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "738c58aa05d9ad420665e088d9093c61"
+      ],
+      "confidence": 0.9,
+      "evidence": "patent medicines",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Culture",
+      "name": "Ciskei consumers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "738c58aa05d9ad420665e088d9093c61"
+      ],
+      "confidence": 0.75,
+      "evidence": "local consumers in the Ciskei",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "UseRecord",
+      "name": "UseRecord: Ciskei \u2013 medicines and toilet requisites",
+      "attributes": {},
+      "source_chunk_ids": [
+        "738c58aa05d9ad420665e088d9093c61"
+      ],
+      "confidence": 0.7,
+      "evidence": "medicines and toilet requisites comprised between 1 and 2 per cent of sales",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "RawMaterial",
+      "name": "medicines and toilet requisites",
+      "attributes": {},
+      "source_chunk_ids": [
+        "738c58aa05d9ad420665e088d9093c61"
+      ],
+      "confidence": 0.8,
+      "evidence": "medicines and toilet requisites",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Culture",
+      "name": "African reserves in Bechuanaland Protectorate",
+      "attributes": {},
+      "source_chunk_ids": [
+        "738c58aa05d9ad420665e088d9093c61"
+      ],
+      "confidence": 0.8,
+      "evidence": "African reserves in the Bechuanaland Protectorate",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "UseRecord",
+      "name": "UseRecord: Bechuanaland \u2013 patent medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "738c58aa05d9ad420665e088d9093c61"
+      ],
+      "confidence": 0.7,
+      "evidence": "patent medicines were found in the trading stores",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Product",
+      "name": "Kyalami heart tonic",
+      "attributes": {},
+      "source_chunk_ids": [
+        "738c58aa05d9ad420665e088d9093c61"
+      ],
+      "confidence": 0.9,
+      "evidence": "Kyalami heart tonic",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Product",
+      "name": "headache powders",
+      "attributes": {},
+      "source_chunk_ids": [
+        "738c58aa05d9ad420665e088d9093c61"
+      ],
+      "confidence": 0.9,
+      "evidence": "headache powders",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Culture",
+      "name": "black miners",
+      "attributes": {},
+      "source_chunk_ids": [
+        "738c58aa05d9ad420665e088d9093c61"
+      ],
+      "confidence": 0.8,
+      "evidence": "black miners who had worked on the Rand",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "UseRecord",
+      "name": "UseRecord: black miners \u2013 non-indigenous medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "738c58aa05d9ad420665e088d9093c61"
+      ],
+      "confidence": 0.7,
+      "evidence": "brought home bottles of medicine",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "RawMaterial",
+      "name": "non-indigenous medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "738c58aa05d9ad420665e088d9093c61"
+      ],
+      "confidence": 0.75,
+      "evidence": "non-indigenous medicines",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Afrikaner",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0bba663e62efbb07c0e02a2a34067c48"
+      ],
+      "confidence": 0.8,
+      "evidence": "Afrikaner and English customers",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "English",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0bba663e62efbb07c0e02a2a34067c48"
+      ],
+      "confidence": 0.8,
+      "evidence": "Afrikaner and English customers",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "UseRecord",
+      "name": "UseRecord: Gaston's Pharmacy \u2013 Red Mixture \u2013 influenza",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0bba663e62efbb07c0e02a2a34067c48"
+      ],
+      "confidence": 0.7,
+      "evidence": "Gaston's was famous for its ... 'Red Mixture' ... It was an ideal thing for influenza",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Product",
+      "name": "Gaston's Red Mixture",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0bba663e62efbb07c0e02a2a34067c48"
+      ],
+      "confidence": 0.9,
+      "evidence": "Gaston's Red Mixture",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "influenza",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "0bba663e62efbb07c0e02a2a34067c48"
+      ],
+      "confidence": 0.9,
+      "evidence": "ideal thing for influenza",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Product",
+      "name": "Dr Smith's Mixture",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0bba663e62efbb07c0e02a2a34067c48"
+      ],
+      "confidence": 0.8,
+      "evidence": "Dr Smith's Mixture",
+      "verified": true
+    },
+    {
+      "id": "E7",
       "type": "Compound",
-      "name": "red ochre",
-      "attributes": {
-        "context": "used a mixture of red ochre and animal fat"
-      },
+      "name": "camphor",
+      "attributes": {},
       "source_chunk_ids": [
-        "fb5b8f4e19ff93e5eb395b7e0440e249"
-      ]
+        "0bba663e62efbb07c0e02a2a34067c48"
+      ],
+      "confidence": 0.85,
+      "evidence": "camphor, menthol and other ingredients",
+      "verified": true
     },
     {
-      "id": "ent_005",
+      "id": "E8",
       "type": "Compound",
-      "name": "animal fat",
-      "attributes": {
-        "context": "used a mixture of red ochre and animal fat"
-      },
+      "name": "menthol",
+      "attributes": {},
       "source_chunk_ids": [
-        "fb5b8f4e19ff93e5eb395b7e0440e249"
-      ]
+        "0bba663e62efbb07c0e02a2a34067c48"
+      ],
+      "confidence": 0.85,
+      "evidence": "camphor, menthol and other ingredients",
+      "verified": true
     },
     {
-      "id": "ent_006",
-      "type": "PharmEffect",
-      "name": "protect against the cold",
-      "attributes": {
-        "context": "to protect against the cold and sunburn"
-      },
+      "id": "E9",
+      "type": "RawMaterial",
+      "name": "syrup",
+      "attributes": {},
       "source_chunk_ids": [
-        "fb5b8f4e19ff93e5eb395b7e0440e249"
-      ]
+        "0bba663e62efbb07c0e02a2a34067c48"
+      ],
+      "confidence": 0.8,
+      "evidence": "syrup was added",
+      "verified": true
     },
     {
-      "id": "ent_007",
-      "type": "Indication",
-      "name": "sunburn",
-      "attributes": {
-        "context": "protect against the cold and sunburn"
-      },
+      "id": "E1",
+      "type": "Culture",
+      "name": "African",
+      "attributes": {},
       "source_chunk_ids": [
-        "fb5b8f4e19ff93e5eb395b7e0440e249"
-      ]
+        "febfbacd08791c440e0176f25cfbd3f1"
+      ],
+      "confidence": 0.9,
+      "evidence": "African needs, African apprentice, African patients",
+      "verified": true
     },
     {
-      "id": "ent_008",
-      "type": "Indication",
+      "id": "E2",
+      "type": "Culture",
+      "name": "Mfengu",
+      "attributes": {},
+      "source_chunk_ids": [
+        "febfbacd08791c440e0176f25cfbd3f1"
+      ],
+      "confidence": 0.8,
+      "evidence": "Solomon Dinga, a young Mfengu",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "UseRecord",
+      "name": "UseRecord: African \u2013 pharmacy services",
+      "attributes": {},
+      "source_chunk_ids": [
+        "febfbacd08791c440e0176f25cfbd3f1"
+      ],
+      "confidence": 0.7,
+      "evidence": "Black customers liked pharmacies",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "prompt and courteous service",
+      "attributes": {},
+      "source_chunk_ids": [
+        "febfbacd08791c440e0176f25cfbd3f1"
+      ],
+      "confidence": 0.75,
+      "evidence": "offered prompt and courteous service",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "minor operations",
+      "attributes": {},
+      "source_chunk_ids": [
+        "febfbacd08791c440e0176f25cfbd3f1"
+      ],
+      "confidence": 0.7,
+      "evidence": "performed minor operations",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Afrikaner",
+      "attributes": {},
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "confidence": 0.8,
+      "evidence": "distinctively Afrikaner medications",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Afrikaner \u2013 medications \u2013 unspecified",
+      "attributes": {},
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "confidence": 0.7,
+      "evidence": "distinctively Afrikaner medications",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Beecham's pills",
+      "attributes": {},
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "confidence": 0.9,
+      "evidence": "Beecham's pills",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Product",
+      "name": "Ashton and Parson's Infant Powders",
+      "attributes": {},
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "confidence": 0.9,
+      "evidence": "Ashton and Parson's Infant Powders",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Product",
+      "name": "Eagle Pile Pills and Ointment",
+      "attributes": {},
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "confidence": 0.9,
+      "evidence": "Eagle Pile Pills and Ointment",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Product",
+      "name": "Gets-it",
+      "attributes": {},
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "confidence": 0.85,
+      "evidence": "'Gets-it' for corns and calluses",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Product",
+      "name": "Jones' Rheumaticuro",
+      "attributes": {},
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "confidence": 0.9,
+      "evidence": "Jones' Rheumaticuro for neuralgia",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Product",
+      "name": "De Witts' kidney and bladder pills",
+      "attributes": {},
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "confidence": 0.9,
+      "evidence": "De Witts' kidney and bladder pills",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Product",
+      "name": "Collinson's Quinine Commando",
+      "attributes": {},
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "confidence": 0.9,
+      "evidence": "Collinson's Quinine Commando for flu or colds",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "back-ache",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "confidence": 0.85,
+      "evidence": "awful back-ache",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Condition",
+      "name": "neuralgia",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "confidence": 0.9,
+      "evidence": "neuralgia",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Condition",
+      "name": "flu",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "confidence": 0.8,
+      "evidence": "flu or colds",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Condition",
+      "name": "colds",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "confidence": 0.8,
+      "evidence": "flu or colds",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Condition",
+      "name": "corns",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "confidence": 0.8,
+      "evidence": "corns and calluses",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Condition",
+      "name": "calluses",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "confidence": 0.8,
+      "evidence": "corns and calluses",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "African readership",
+      "attributes": {},
+      "source_chunk_ids": [
+        "04f850373e134bd25844f5f4fa001255"
+      ],
+      "confidence": 0.8,
+      "evidence": "An African readership",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: indigenous healers \u2013 restoratives/revivers \u2013 general well-being/good fortune",
+      "attributes": {},
+      "source_chunk_ids": [
+        "04f850373e134bd25844f5f4fa001255"
+      ],
+      "confidence": 0.75,
+      "evidence": "indigenous healers customarily used restoratives and revivers",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "general well-being",
+      "attributes": {},
+      "source_chunk_ids": [
+        "04f850373e134bd25844f5f4fa001255"
+      ],
+      "confidence": 0.8,
+      "evidence": "general well-being",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "good fortune",
+      "attributes": {},
+      "source_chunk_ids": [
+        "04f850373e134bd25844f5f4fa001255"
+      ],
+      "confidence": 0.8,
+      "evidence": "good fortune",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "holistic health",
+      "attributes": {},
+      "source_chunk_ids": [
+        "04f850373e134bd25844f5f4fa001255"
+      ],
+      "confidence": 0.7,
+      "evidence": "holistic health",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "stoppage of evil spirits",
+      "attributes": {},
+      "source_chunk_ids": [
+        "04f850373e134bd25844f5f4fa001255"
+      ],
+      "confidence": 0.85,
+      "evidence": "For stoppage of evil spirits",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "Good Luck and finding Employment",
+      "attributes": {},
+      "source_chunk_ids": [
+        "04f850373e134bd25844f5f4fa001255"
+      ],
+      "confidence": 0.85,
+      "evidence": "Good Luck and finding Employment",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "TraditionalUse",
+      "name": "Young Men to be Desired by Girls",
+      "attributes": {},
+      "source_chunk_ids": [
+        "04f850373e134bd25844f5f4fa001255"
+      ],
+      "confidence": 0.85,
+      "evidence": "Young Men to be Desired by Girls",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "TraditionalUse",
+      "name": "open your brain at school and to pass school exams",
+      "attributes": {},
+      "source_chunk_ids": [
+        "04f850373e134bd25844f5f4fa001255"
+      ],
+      "confidence": 0.85,
+      "evidence": "To open your brain at school and to pass school exams",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "TraditionalUse",
+      "name": "improving fertility",
+      "attributes": {},
+      "source_chunk_ids": [
+        "04f850373e134bd25844f5f4fa001255"
+      ],
+      "confidence": 0.8,
+      "evidence": "improving fertility",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "TraditionalUse",
+      "name": "casting spells",
+      "attributes": {},
+      "source_chunk_ids": [
+        "04f850373e134bd25844f5f4fa001255"
+      ],
+      "confidence": 0.8,
+      "evidence": "casting spells",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "RawMaterial",
+      "name": "restoratives",
+      "attributes": {},
+      "source_chunk_ids": [
+        "04f850373e134bd25844f5f4fa001255"
+      ],
+      "confidence": 0.7,
+      "evidence": "restoratives",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "RawMaterial",
+      "name": "revivers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "04f850373e134bd25844f5f4fa001255"
+      ],
+      "confidence": 0.7,
+      "evidence": "revivers",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "RawMaterial",
+      "name": "charms",
+      "attributes": {},
+      "source_chunk_ids": [
+        "04f850373e134bd25844f5f4fa001255"
+      ],
+      "confidence": 0.7,
+      "evidence": "charms",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "RawMaterial",
+      "name": "medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "04f850373e134bd25844f5f4fa001255"
+      ],
+      "confidence": 0.8,
+      "evidence": "medicines",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "South African Union",
+      "attributes": {},
+      "source_chunk_ids": [
+        "480d00a0123104bbd37c77f039082a0d"
+      ],
+      "confidence": 0.8,
+      "evidence": "South African Union's Department of Public Health",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: South African Union \u2013 nostrums \u2013 sexual conditions",
+      "attributes": {},
+      "source_chunk_ids": [
+        "480d00a0123104bbd37c77f039082a0d"
+      ],
+      "confidence": 0.7,
+      "evidence": "promoted nostrums for diseases of the generative organs",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "increase sex attraction",
+      "attributes": {},
+      "source_chunk_ids": [
+        "480d00a0123104bbd37c77f039082a0d"
+      ],
+      "confidence": 0.75,
+      "evidence": "have remarkable effects in increasing sex attraction",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "sexual impotence",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "480d00a0123104bbd37c77f039082a0d"
+      ],
+      "confidence": 0.85,
+      "evidence": "sexual impotence",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "sterility",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "480d00a0123104bbd37c77f039082a0d"
+      ],
+      "confidence": 0.85,
+      "evidence": "sterility",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "diseases of the generative organs",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "480d00a0123104bbd37c77f039082a0d"
+      ],
+      "confidence": 0.8,
+      "evidence": "diseases of the generative organs",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Culture",
+      "name": "United Transkeian Territories",
+      "attributes": {},
+      "source_chunk_ids": [
+        "480d00a0123104bbd37c77f039082a0d"
+      ],
+      "confidence": 0.8,
+      "evidence": "United Transkeian Territories",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "UseRecord",
+      "name": "UseRecord: African herbalists \u2013 pamphlets \u2013 misleading",
+      "attributes": {},
+      "source_chunk_ids": [
+        "480d00a0123104bbd37c77f039082a0d"
+      ],
+      "confidence": 0.7,
+      "evidence": "pamphlets from African herbalists",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Culture",
+      "name": "African herbalists",
+      "attributes": {},
+      "source_chunk_ids": [
+        "480d00a0123104bbd37c77f039082a0d"
+      ],
+      "confidence": 0.75,
+      "evidence": "African herbalists",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Africans",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a56b1ff54f2412cd0e99e0ce7b14cb09"
+      ],
+      "confidence": 0.9,
+      "evidence": "targeted Africans in the Transkei and Natal",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Africans \u2013 remedies \u2013 impotence",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a56b1ff54f2412cd0e99e0ce7b14cb09"
+      ],
+      "confidence": 0.8,
+      "evidence": "advertisements for 'remedies' for impotence",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
       "name": "impotence",
-      "attributes": {
-        "context": "remedies' for impotence"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "a56b1ff54f2412cd0e99e0ce7b14cb09"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "remedies' for impotence",
+      "verified": true
     },
     {
-      "id": "ent_009",
-      "type": "PharmEffect",
-      "name": "procure women's miscarriages",
-      "attributes": {
-        "context": "promising to procure women's miscarriages"
-      },
-      "source_chunk_ids": [
-        "a56b1ff54f2412cd0e99e0ce7b14cb09"
-      ]
-    },
-    {
-      "id": "ent_010",
-      "type": "Indication",
+      "id": "E4",
+      "type": "Condition",
       "name": "tuberculosis",
       "attributes": {
-        "context": "treat tuberculosis"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "a56b1ff54f2412cd0e99e0ce7b14cb09"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "treat tuberculosis",
+      "verified": true
     },
     {
-      "id": "ent_011",
-      "type": "Indication",
+      "id": "E5",
+      "type": "Condition",
       "name": "sexually-transmitted diseases",
       "attributes": {
-        "context": "cure sexually-transmitted diseases"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "a56b1ff54f2412cd0e99e0ce7b14cb09"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "cure sexually-transmitted diseases",
+      "verified": true
     },
     {
-      "id": "ent_012",
-      "type": "Compound",
-      "name": "iron",
-      "attributes": {
-        "context": "iron mixtures for men"
-      },
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "procure wealth",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a56b1ff54f2412cd0e99e0ce7b14cb09"
+      ],
+      "confidence": 0.8,
+      "evidence": "procure wealth",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "success",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a56b1ff54f2412cd0e99e0ce7b14cb09"
+      ],
+      "confidence": 0.8,
+      "evidence": "success",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "TraditionalUse",
+      "name": "immunity from witchcraft",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a56b1ff54f2412cd0e99e0ce7b14cb09"
+      ],
+      "confidence": 0.8,
+      "evidence": "immunity from 'witchcraft'",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "RawMaterial",
+      "name": "native medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a56b1ff54f2412cd0e99e0ce7b14cb09"
+      ],
+      "confidence": 0.75,
+      "evidence": "advertisements of 'native' medicines",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "RawMaterial",
+      "name": "African medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a56b1ff54f2412cd0e99e0ce7b14cb09"
+      ],
+      "confidence": 0.75,
+      "evidence": "information on African medicines",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "African",
+      "attributes": {},
       "source_chunk_ids": [
         "63ad42e21c59891209db22e5bcbf2289"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "African medicine trader",
+      "verified": true
     },
     {
-      "id": "ent_013",
-      "type": "PharmEffect",
-      "name": "tonic effect (lungs)",
-      "attributes": {
-        "context": "promoted lung tonics"
-      },
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: African \u2013 herbal mail order business",
+      "attributes": {},
       "source_chunk_ids": [
         "63ad42e21c59891209db22e5bcbf2289"
-      ]
+      ],
+      "confidence": 0.7,
+      "evidence": "herbal mail order business",
+      "verified": true
     },
     {
-      "id": "ent_014",
-      "type": "PharmEffect",
-      "name": "healing effect",
-      "attributes": {
-        "context": "healing ointment"
-      },
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "lung tonic",
+      "attributes": {},
       "source_chunk_ids": [
         "63ad42e21c59891209db22e5bcbf2289"
-      ]
+      ],
+      "confidence": 0.75,
+      "evidence": "lung tonics",
+      "verified": true
     },
     {
-      "id": "ent_015",
-      "type": "PharmEffect",
-      "name": "vermifuge effect",
-      "attributes": {
-        "context": "vermifuges"
-      },
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "eye drops",
+      "attributes": {},
       "source_chunk_ids": [
         "63ad42e21c59891209db22e5bcbf2289"
-      ]
+      ],
+      "confidence": 0.75,
+      "evidence": "eye drops",
+      "verified": true
     },
     {
-      "id": "ent_016",
-      "type": "Compound",
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "healing ointment",
+      "attributes": {},
+      "source_chunk_ids": [
+        "63ad42e21c59891209db22e5bcbf2289"
+      ],
+      "confidence": 0.75,
+      "evidence": "healing ointment",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "vermifuge",
+      "attributes": {},
+      "source_chunk_ids": [
+        "63ad42e21c59891209db22e5bcbf2289"
+      ],
+      "confidence": 0.75,
+      "evidence": "vermifuges",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "hair straightener",
+      "attributes": {},
+      "source_chunk_ids": [
+        "63ad42e21c59891209db22e5bcbf2289"
+      ],
+      "confidence": 0.75,
+      "evidence": "hair straighteners",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "TraditionalUse",
+      "name": "iron mixture",
+      "attributes": {},
+      "source_chunk_ids": [
+        "63ad42e21c59891209db22e5bcbf2289"
+      ],
+      "confidence": 0.75,
+      "evidence": "iron mixtures",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "RawMaterial",
       "name": "treacle",
-      "attributes": {
-        "context": "ingredients were treacle"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "63ad42e21c59891209db22e5bcbf2289"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "treacle",
+      "verified": true
     },
     {
-      "id": "ent_017",
-      "type": "Compound",
+      "id": "E10",
+      "type": "RawMaterial",
       "name": "castor oil",
-      "attributes": {
-        "context": "and castor oil"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "63ad42e21c59891209db22e5bcbf2289"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "castor oil",
+      "verified": true
     },
     {
-      "id": "ent_018",
-      "type": "PharmEffect",
-      "name": "laxative effect",
-      "attributes": {
-        "context": "its laxative effects"
-      },
+      "id": "E11",
+      "type": "Product",
+      "name": "Green Leaf Products",
+      "attributes": {},
       "source_chunk_ids": [
         "63ad42e21c59891209db22e5bcbf2289"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Green Leaf Products",
+      "verified": true
     },
     {
-      "id": "ent_019",
-      "type": "Taxon",
-      "name": "Herbs",
-      "attributes": {
-        "context": "Herbs were employed"
-      },
+      "id": "E1",
+      "type": "Culture",
+      "name": "coloured midwife or oude tante",
+      "attributes": {},
       "source_chunk_ids": [
-        "2582c0cd7be53793adeef16026841479"
-      ]
+        "c51ec63547fcd7a1075f63a14b230f04"
+      ],
+      "confidence": 0.9,
+      "evidence": "coloured midwife or oude tante",
+      "verified": true
     },
     {
-      "id": "ent_020",
-      "type": "Taxon",
-      "name": "a plant",
-      "attributes": {
-        "context": "usage of a plant"
-      },
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: coloured midwife \u2013 herbal remedies \u2013 obstetric needs and common ailments",
+      "attributes": {},
       "source_chunk_ids": [
-        "2582c0cd7be53793adeef16026841479"
-      ]
+        "c51ec63547fcd7a1075f63a14b230f04"
+      ],
+      "confidence": 0.85,
+      "evidence": "carried herbal remedies to deal with obstetric needs, but common ailments",
+      "verified": true
     },
     {
-      "id": "ent_021",
-      "type": "Indication",
-      "name": "ailments",
-      "attributes": {
-        "context": "for similar ailments"
-      },
-      "source_chunk_ids": [
-        "2582c0cd7be53793adeef16026841479"
-      ]
-    },
-    {
-      "id": "ent_022",
-      "type": "Taxon",
+      "id": "E3",
+      "type": "RawMaterial",
       "name": "herbal remedies",
-      "attributes": {
-        "context": "dependent on herbal remedies"
-      },
+      "attributes": {},
       "source_chunk_ids": [
-        "2582c0cd7be53793adeef16026841479"
-      ]
+        "c51ec63547fcd7a1075f63a14b230f04"
+      ],
+      "confidence": 0.8,
+      "evidence": "herbal remedies",
+      "verified": true
     },
     {
-      "id": "ent_023",
-      "type": "Indication",
+      "id": "E4",
+      "type": "TraditionalUse",
       "name": "obstetric needs",
-      "attributes": {
-        "context": "deal not only with obstetric needs"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "c51ec63547fcd7a1075f63a14b230f04"
-      ]
+      ],
+      "confidence": 0.75,
+      "evidence": "obstetric needs",
+      "verified": true
     },
     {
-      "id": "ent_024",
-      "type": "Indication",
+      "id": "E5",
+      "type": "TraditionalUse",
       "name": "common ailments",
-      "attributes": {
-        "context": "but common ailments as well"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "c51ec63547fcd7a1075f63a14b230f04"
-      ]
+      ],
+      "confidence": 0.75,
+      "evidence": "common ailments",
+      "verified": true
     },
     {
-      "id": "ent_025",
+      "id": "E6",
+      "type": "Culture",
+      "name": "African indigenous medicine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c51ec63547fcd7a1075f63a14b230f04"
+      ],
+      "confidence": 0.85,
+      "evidence": "African indigenous medicine",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "UseRecord",
+      "name": "UseRecord: African indigenous medicine \u2013 herbal medicines \u2013 central use",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c51ec63547fcd7a1075f63a14b230f04"
+      ],
+      "confidence": 0.8,
+      "evidence": "herbal medicines were central to African indigenous medicine",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "RawMaterial",
+      "name": "herbal medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c51ec63547fcd7a1075f63a14b230f04"
+      ],
+      "confidence": 0.8,
+      "evidence": "herbal medicines",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "white and black customers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "confidence": 0.8,
+      "evidence": "appealing to both white and black customers",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Cook's Great African Remedy for various ailments",
+      "attributes": {},
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "confidence": 0.85,
+      "evidence": "advertised the merits of Orsmond's 'Great African Remedy'",
+      "verified": true
+    },
+    {
+      "id": "E3",
       "type": "Taxon",
-      "name": "Monsonia",
+      "name": "Cape Roots",
       "attributes": {
-        "context": "sales of monsonia as a cure"
+        "rank": "unknown"
       },
       "source_chunk_ids": [
         "11b0343190a55b5fc99601e8bb59ce9b"
-      ]
+      ],
+      "confidence": 0.75,
+      "evidence": "prepared from 'Cape Roots'",
+      "verified": true
     },
     {
-      "id": "ent_026",
-      "type": "PharmEffect",
-      "name": "specific for fevers",
-      "attributes": {
-        "context": "as a specific for fevers"
-      },
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "Great African Remedy",
+      "attributes": {},
       "source_chunk_ids": [
         "11b0343190a55b5fc99601e8bb59ce9b"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Orsmond's 'Great African Remedy'",
+      "verified": true
     },
     {
-      "id": "ent_027",
-      "type": "PharmEffect",
-      "name": "remedy for blood disorders",
-      "attributes": {
-        "context": "a remedy for blood disorders"
-      },
-      "source_chunk_ids": [
-        "11b0343190a55b5fc99601e8bb59ce9b"
-      ]
-    },
-    {
-      "id": "ent_028",
-      "type": "PharmEffect",
-      "name": "unrivalled for female diseases",
-      "attributes": {
-        "context": "as unrivalled for female diseases"
-      },
-      "source_chunk_ids": [
-        "11b0343190a55b5fc99601e8bb59ce9b"
-      ]
-    },
-    {
-      "id": "ent_029",
-      "type": "PharmEffect",
-      "name": "cure for dysentery",
-      "attributes": {
-        "context": "as a cure for dysentery"
-      },
-      "source_chunk_ids": [
-        "11b0343190a55b5fc99601e8bb59ce9b"
-      ]
-    },
-    {
-      "id": "ent_030",
-      "type": "PharmEffect",
-      "name": "drives away evil spirits",
-      "attributes": {
-        "context": "drives away evil spirits"
-      },
-      "source_chunk_ids": [
-        "11b0343190a55b5fc99601e8bb59ce9b"
-      ]
-    },
-    {
-      "id": "ent_031",
-      "type": "Indication",
+      "id": "E5",
+      "type": "Condition",
       "name": "fevers",
       "attributes": {
-        "context": "specific for fevers"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "11b0343190a55b5fc99601e8bb59ce9b"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "a specific for fevers",
+      "verified": true
     },
     {
-      "id": "ent_032",
-      "type": "Indication",
+      "id": "E6",
+      "type": "Condition",
       "name": "blood disorders",
       "attributes": {
-        "context": "remedy for blood disorders"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
         "11b0343190a55b5fc99601e8bb59ce9b"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "a remedy for blood disorders",
+      "verified": true
     },
     {
-      "id": "ent_033",
-      "type": "Indication",
+      "id": "E7",
+      "type": "Condition",
       "name": "female diseases",
       "attributes": {
-        "context": "unrivalled for female diseases"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
         "11b0343190a55b5fc99601e8bb59ce9b"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "unrivalled for female diseases",
+      "verified": true
     },
     {
-      "id": "ent_034",
-      "type": "Indication",
+      "id": "E8",
+      "type": "Condition",
       "name": "dyspepsia",
       "attributes": {
-        "context": "ailments from dyspepsia"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "11b0343190a55b5fc99601e8bb59ce9b"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "from dyspepsia to syphilis",
+      "verified": true
     },
     {
-      "id": "ent_035",
-      "type": "Indication",
+      "id": "E9",
+      "type": "Condition",
       "name": "syphilis",
       "attributes": {
-        "context": "dyspepsia to syphilis"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "11b0343190a55b5fc99601e8bb59ce9b"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "from dyspepsia to syphilis",
+      "verified": true
     },
     {
-      "id": "ent_036",
-      "type": "Indication",
+      "id": "E10",
+      "type": "UseRecord",
+      "name": "UseRecord: Lennon's monsonia for dysentery",
+      "attributes": {},
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "confidence": 0.8,
+      "evidence": "sales of monsonia as a cure for dysentery",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Taxon",
+      "name": "monsonia",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "confidence": 0.7,
+      "evidence": "monsonia as a cure for dysentery",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Condition",
       "name": "dysentery",
       "attributes": {
-        "context": "cure for dysentery"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "11b0343190a55b5fc99601e8bb59ce9b"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "a cure for dysentery",
+      "verified": true
     },
     {
-      "id": "ent_037",
-      "type": "Indication",
+      "id": "E13",
+      "type": "UseRecord",
+      "name": "UseRecord: Transkei trader's remedies for various ailments",
+      "attributes": {},
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "confidence": 0.85,
+      "evidence": "trader kept stock carefully selected to appeal",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "RawMaterial",
+      "name": "tikoloshe fat",
+      "attributes": {},
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "confidence": 0.8,
+      "evidence": "'tikoloshe fat' (a pink liquid medicine)",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "RawMaterial",
+      "name": "injayowawdle oil",
+      "attributes": {},
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "confidence": 0.75,
+      "evidence": "an oil called 'injayowawdle'",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Condition",
       "name": "lumbago",
       "attributes": {
-        "context": "afflicted by lumbago"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "11b0343190a55b5fc99601e8bb59ce9b"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "afflicted by lumbago",
+      "verified": true
     },
     {
-      "id": "ent_038",
-      "type": "Indication",
+      "id": "E17",
+      "type": "RawMaterial",
+      "name": "baboon dung",
+      "attributes": {},
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "confidence": 0.8,
+      "evidence": "lumps of baboon dung",
+      "verified": true
+    },
+    {
+      "id": "E18",
+      "type": "Condition",
       "name": "stomach-ache",
       "attributes": {
-        "context": "cure for a stomach-ache"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "11b0343190a55b5fc99601e8bb59ce9b"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "a cure for a stomach-ache",
+      "verified": true
     },
     {
-      "id": "ent_039",
-      "type": "PharmEffect",
-      "name": "headache cure",
+      "id": "E19",
+      "type": "RawMaterial",
+      "name": "dried elephant's hide",
+      "attributes": {},
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "confidence": 0.8,
+      "evidence": "a small square of dried elephant's hide",
+      "verified": true
+    },
+    {
+      "id": "E20",
+      "type": "TraditionalUse",
+      "name": "drive away evil spirits",
+      "attributes": {},
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "confidence": 0.85,
+      "evidence": "drives away evil spirits",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Sotho",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ef33bcef82ff22bd783f31effbd23d42"
+      ],
+      "confidence": 0.7,
+      "evidence": "presumably Sotho healer",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Sotho \u2013 animal fats \u2013 herbal medicine supply",
       "attributes": {
-        "context": "Mamba bones are considered an excellent headache cure"
+        "verification_needed": true
       },
       "source_chunk_ids": [
         "ef33bcef82ff22bd783f31effbd23d42"
-      ]
+      ],
+      "confidence": 0.65,
+      "evidence": "we buy most of our 30 or 40 kinds of animal fats",
+      "verified": false
     },
     {
-      "id": "ent_040",
-      "type": "Indication",
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "animal fats",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ef33bcef82ff22bd783f31effbd23d42"
+      ],
+      "confidence": 0.8,
+      "evidence": "animal fats",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "UseRecord",
+      "name": "UseRecord: native circles \u2013 mamba bones \u2013 headache cure",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ef33bcef82ff22bd783f31effbd23d42"
+      ],
+      "confidence": 0.75,
+      "evidence": "Mamba bones are considered an excellent headache cure",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "mamba bones",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ef33bcef82ff23d42",
+        "ef33bcef82ff22bd783f31effbd23d42"
+      ],
+      "confidence": 0.85,
+      "evidence": "Mamba bones",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
       "name": "headache",
       "attributes": {
-        "context": "Mamba bones are considered an excellent headache cure"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "ef33bcef82ff22bd783f31effbd23d42"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "headache cure",
+      "verified": true
     },
     {
-      "id": "ent_041",
-      "type": "PharmEffect",
-      "name": "chase away nightmares",
-      "attributes": {
-        "context": "smelling a piece of grated and burnt elephant skin will chase away nightmares"
-      },
+      "id": "E7",
+      "type": "UseRecord",
+      "name": "UseRecord: native circles \u2013 burnt elephant skin \u2013 chase away nightmares",
+      "attributes": {},
       "source_chunk_ids": [
         "ef33bcef82ff22bd783f31effbd23d42"
-      ]
+      ],
+      "confidence": 0.7,
+      "evidence": "smelling a piece of grated and burnt elephant skin will chase away nightmares",
+      "verified": true
     },
     {
-      "id": "ent_042",
-      "type": "Indication",
+      "id": "E8",
+      "type": "RawMaterial",
+      "name": "burnt elephant skin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ef33bcef82ff22bd783f31effbd23d42"
+      ],
+      "confidence": 0.8,
+      "evidence": "burnt elephant skin",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
       "name": "nightmares",
       "attributes": {
-        "context": "smelling a piece of grated and burnt elephant skin will chase away nightmares"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "ef33bcef82ff22bd783f31effbd23d42"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "chase away nightmares",
+      "verified": true
     },
     {
-      "id": "ent_043",
-      "type": "Taxon",
-      "name": "herbs",
+      "id": "E1",
+      "type": "Culture",
+      "name": "Xhosa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "170a1449ae043c64afed6f7c6fa49bd7"
+      ],
+      "confidence": 0.9,
+      "evidence": "Xhosa consumers",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Xhosa \u2013 alleviate physical illnesses",
+      "attributes": {},
+      "source_chunk_ids": [
+        "170a1449ae043c64afed6f7c6fa49bd7"
+      ],
+      "confidence": 0.85,
+      "evidence": "wishing to alleviate physical illnesses",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "UseRecord",
+      "name": "UseRecord: Xhosa \u2013 treat culturally-related needs",
+      "attributes": {},
+      "source_chunk_ids": [
+        "170a1449ae043c64afed6f7c6fa49bd7"
+      ],
+      "confidence": 0.85,
+      "evidence": "to treat culturally-related needs",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "physical illnesses",
       "attributes": {
-        "context": "herbs were harvested from the local bush"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
-        "133d9a2dc37437eb8dbcc3bf371b9311"
-      ]
+        "170a1449ae043c64afed6f7c6fa49bd7"
+      ],
+      "confidence": 0.8,
+      "evidence": "alleviate physical illnesses",
+      "verified": true
     },
     {
-      "id": "ent_044",
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "gain good luck",
+      "attributes": {},
+      "source_chunk_ids": [
+        "170a1449ae043c64afed6f7c6fa49bd7"
+      ],
+      "confidence": 0.9,
+      "evidence": "gain good luck",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "success in love",
+      "attributes": {},
+      "source_chunk_ids": [
+        "170a1449ae043c64afed6f7c6fa49bd7"
+      ],
+      "confidence": 0.9,
+      "evidence": "success in love",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Culture",
+      "name": "local herbalists and diviners",
+      "attributes": {},
+      "source_chunk_ids": [
+        "170a1449ae043c64afed6f7c6fa49bd7"
+      ],
+      "confidence": 0.85,
+      "evidence": "local herbalists and diviners",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "UseRecord",
+      "name": "UseRecord: herbalists \u2013 make specialist mixtures",
+      "attributes": {},
+      "source_chunk_ids": [
+        "170a1449ae043c64afed6f7c6fa49bd7"
+      ],
+      "confidence": 0.8,
+      "evidence": "make up into specialist mixtures",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "RawMaterial",
+      "name": "medicines and herbs",
+      "attributes": {},
+      "source_chunk_ids": [
+        "170a1449ae043c64afed6f7c6fa49bd7"
+      ],
+      "confidence": 0.75,
+      "evidence": "medicines and herbs",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Preparation",
+      "name": "make up into specialist mixtures",
+      "attributes": {},
+      "source_chunk_ids": [
+        "170a1449ae043c64afed6f7c6fa49bd7"
+      ],
+      "confidence": 0.7,
+      "evidence": "make up into specialist mixtures",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "traditional healers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "133d9a2dc37437eb8dbcc3bf371b9311"
+      ],
+      "confidence": 0.8,
+      "evidence": "traditional healers' associations",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: traditional healers \u2013 medicinal plant \u2013 individual client",
+      "attributes": {},
+      "source_chunk_ids": [
+        "133d9a2dc37437eb8dbcc3bf371b9311"
+      ],
+      "confidence": 0.7,
+      "evidence": "medicinal plant needed for an individual client",
+      "verified": true
+    },
+    {
+      "id": "E3",
       "type": "Taxon",
       "name": "medicinal plant",
+      "attributes": {},
+      "source_chunk_ids": [
+        "133d9a2dc37437eb8dbcc3bf371b9311"
+      ],
+      "confidence": 0.75,
+      "evidence": "medicinal plant needed",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "therapeutic",
+      "attributes": {},
+      "source_chunk_ids": [
+        "133d9a2dc37437eb8dbcc3bf371b9311"
+      ],
+      "confidence": 0.7,
+      "evidence": "therapeutic implications",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "stored herbs",
       "attributes": {
-        "context": "potency of the medicinal plant needed"
+        "verification_needed": true
       },
       "source_chunk_ids": [
         "133d9a2dc37437eb8dbcc3bf371b9311"
-      ]
+      ],
+      "confidence": 0.65,
+      "evidence": "drawbacks of stored herbs",
+      "verified": false
     },
     {
-      "id": "ent_045",
-      "type": "PharmEffect",
-      "name": "potency",
+      "id": "E6",
+      "type": "Preparation",
+      "name": "warehouse provision",
       "attributes": {
-        "context": "related to the chemistry and potency of the medicinal plant"
+        "verification_needed": true
       },
       "source_chunk_ids": [
         "133d9a2dc37437eb8dbcc3bf371b9311"
-      ]
+      ],
+      "confidence": 0.6,
+      "evidence": "warehouse provision",
+      "verified": false
     },
     {
-      "id": "ent_046",
-      "type": "PharmEffect",
-      "name": "therapeutic implications",
-      "attributes": {
-        "context": "The therapeutic implications of this commercialization are unclear"
-      },
+      "id": "E1",
+      "type": "Culture",
+      "name": "Zulu",
+      "attributes": {},
       "source_chunk_ids": [
-        "133d9a2dc37437eb8dbcc3bf371b9311"
-      ]
+        "08f61187dfd77bad5029eee9f2073803"
+      ],
+      "confidence": 0.8,
+      "evidence": "Zulu medicine",
+      "verified": true
     },
     {
-      "id": "ent_047",
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Zulu \u2013 isi-bihaha \u2013 multiple disorders",
+      "attributes": {},
+      "source_chunk_ids": [
+        "08f61187dfd77bad5029eee9f2073803"
+      ],
+      "confidence": 0.85,
+      "evidence": "used for a range of disorders",
+      "verified": true
+    },
+    {
+      "id": "E3",
       "type": "Taxon",
-      "name": "herbs",
-      "attributes": {
-        "context": "drawbacks of stored herbs"
-      },
+      "name": "isi-bihaha",
+      "attributes": {},
       "source_chunk_ids": [
-        "133d9a2dc37437eb8dbcc3bf371b9311"
-      ]
+        "08f61187dfd77bad5029eee9f2073803"
+      ],
+      "confidence": 0.9,
+      "evidence": "isi-bihaha",
+      "verified": true
     },
     {
-      "id": "ent_048",
-      "type": "Taxon",
-      "name": "herbal plots",
+      "id": "E4",
+      "type": "Condition",
+      "name": "coughs",
       "attributes": {
-        "context": "self-sustaining herbal plots"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
-        "133d9a2dc37437eb8dbcc3bf371b9311"
-      ]
+        "08f61187dfd77bad5029eee9f2073803"
+      ],
+      "confidence": 0.9,
+      "evidence": "coughs",
+      "verified": true
     },
     {
-      "id": "ent_049",
-      "type": "Compound",
-      "name": "opiate",
+      "id": "E5",
+      "type": "Condition",
+      "name": "colds",
       "attributes": {
-        "context": "some opiate or alcohol-based patent medicines"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
-        "79f1316f7203d9fba8312b8a57d4caf0"
-      ]
+        "08f61187dfd77bad5029eee9f2073803"
+      ],
+      "confidence": 0.9,
+      "evidence": "colds",
+      "verified": true
     },
     {
-      "id": "ent_050",
-      "type": "Compound",
-      "name": "alcohol",
+      "id": "E6",
+      "type": "Condition",
+      "name": "influenza",
       "attributes": {
-        "context": "some opiate or alcohol-based patent medicines"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
-        "79f1316f7203d9fba8312b8a57d4caf0"
-      ]
+        "08f61187dfd77bad5029eee9f2073803"
+      ],
+      "confidence": 0.9,
+      "evidence": "influenza",
+      "verified": true
     },
     {
-      "id": "ent_051",
-      "type": "PharmEffect",
+      "id": "E7",
+      "type": "Condition",
+      "name": "rheumatism",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "08f61187dfd77bad5029eee9f2073803"
+      ],
+      "confidence": 0.9,
+      "evidence": "rheumatism",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "headaches",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "08f61187dfd77bad5029eee9f2073803"
+      ],
+      "confidence": 0.9,
+      "evidence": "headaches",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "TraditionalUse",
+      "name": "antidote for sorcery",
+      "attributes": {},
+      "source_chunk_ids": [
+        "08f61187dfd77bad5029eee9f2073803"
+      ],
+      "confidence": 0.85,
+      "evidence": "antidote for sorcery",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Afrikaner",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7f75e83440fdc666820de352d476e4d9"
+      ],
+      "confidence": 0.9,
+      "evidence": "use by the Afrikaner",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Khoikhoi",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7f75e83440fdc666820de352d476e4d9"
+      ],
+      "confidence": 0.9,
+      "evidence": "Khoikhoi remedies",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Africans",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7f75e83440fdc666820de352d476e4d9"
+      ],
+      "confidence": 0.9,
+      "evidence": "Africans' consumption",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "UseRecord",
+      "name": "UseRecord: Afrikaner \u2013 Khoikhoi remedies",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7f75e83440fdc666820de352d476e4d9"
+      ],
+      "confidence": 0.7,
+      "evidence": "use by the Afrikaner of Khoikhoi remedies",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "UseRecord",
+      "name": "UseRecord: Africans \u2013 western patent medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7f75e83440fdc666820de352d476e4d9"
+      ],
+      "confidence": 0.7,
+      "evidence": "Africans' consumption of 'western' patent",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "RawMaterial",
+      "name": "Khoikhoi remedies",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7f75e83440fdc666820de352d476e4d9"
+      ],
+      "confidence": 0.8,
+      "evidence": "Khoikhoi remedies",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Product",
+      "name": "western patent medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7f75e83440fdc666820de352d476e4d9"
+      ],
+      "confidence": 0.8,
+      "evidence": "'western' patent and proprietary medicines",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "AdverseEvent",
       "name": "harmful side effects",
-      "attributes": {
-        "context": "harmful side effects (as occurred with some opiate or alcohol-based patent medicines)"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "79f1316f7203d9fba8312b8a57d4caf0"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "harmful side effects",
+      "verified": true
     },
     {
-      "id": "ent_052",
-      "type": "PharmEffect",
+      "id": "E2",
+      "type": "AdverseEvent",
       "name": "toxic side effects",
+      "attributes": {},
+      "source_chunk_ids": [
+        "79f1316f7203d9fba8312b8a57d4caf0"
+      ],
+      "confidence": 0.9,
+      "evidence": "toxic side effects",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "positive placebo effect",
       "attributes": {
-        "context": "Some herbal medicines had toxic side effects"
+        "level": "systemic",
+        "valence": "positive"
       },
       "source_chunk_ids": [
         "79f1316f7203d9fba8312b8a57d4caf0"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "positive placebo effect",
+      "verified": true
     },
     {
-      "id": "ent_053",
-      "type": "PharmEffect",
-      "name": "placebo effect",
-      "attributes": {
-        "context": "the positive placebo effect of even inert mixtures"
-      },
+      "id": "E4",
+      "type": "Culture",
+      "name": "Afrikaner",
+      "attributes": {},
       "source_chunk_ids": [
         "79f1316f7203d9fba8312b8a57d4caf0"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Afrikaner confidence in Dutch remedies",
+      "verified": true
     },
     {
-      "id": "ent_054",
-      "type": "PharmEffect",
-      "name": "psychologically better",
-      "attributes": {
-        "context": "a medicine that made a sufferer feel psychologically better"
-      },
+      "id": "E5",
+      "type": "Culture",
+      "name": "African",
+      "attributes": {},
       "source_chunk_ids": [
         "79f1316f7203d9fba8312b8a57d4caf0"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "African trust in indigenous medicine",
+      "verified": true
     },
     {
-      "id": "ent_055",
-      "type": "PharmEffect",
-      "name": "physical recovery",
-      "attributes": {
-        "context": "aided a natural process of physical recovery"
-      },
+      "id": "E1",
+      "type": "TraditionalUse",
+      "name": "alleviate impure blood, biliousness, nervous exhaustion",
+      "attributes": {},
       "source_chunk_ids": [
-        "79f1316f7203d9fba8312b8a57d4caf0"
-      ]
+        "a3666fea07141cea7fbe666293b4260e"
+      ],
+      "confidence": 0.8,
+      "evidence": "promised to alleviate\u2014such as impure blood, biliousness, or nervous exhaustion",
+      "verified": true
     },
     {
-      "id": "ent_056",
-      "type": "Indication",
-      "name": "sickness",
+      "id": "E2",
+      "type": "TraditionalUse",
+      "name": "transform listless and afflicted into vital, vigorous, virile",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ],
+      "confidence": 0.8,
+      "evidence": "listless and afflicted would be transformed into the vital, vigorous, and virile",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "improve desirable attributes, eliminate undesirable ones",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ],
+      "confidence": 0.75,
+      "evidence": "desirable attributes could be improved or undesirable ones eliminated",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "attain cultural ideals of beauty",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ],
+      "confidence": 0.8,
+      "evidence": "cultural ideals of \u2018beauty\u2019 that could be attained only by using the merchandise",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Product",
+      "name": "straighten hair product",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ],
+      "confidence": 0.85,
+      "evidence": "Products to straighten hair",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Product",
+      "name": "lighten skin product",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ],
+      "confidence": 0.85,
+      "evidence": "lighten skin",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "anxiety",
       "attributes": {
-        "context": "beyond real sickness"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "a3666fea07141cea7fbe666293b4260e"
-      ]
+      ],
+      "confidence": 0.7,
+      "evidence": "play on the reader\u2019s anxieties",
+      "verified": true
     },
     {
-      "id": "ent_057",
-      "type": "Indication",
-      "name": "impure blood",
-      "attributes": {
-        "context": "such as impure blood"
-      },
-      "source_chunk_ids": [
-        "a3666fea07141cea7fbe666293b4260e"
-      ]
-    },
-    {
-      "id": "ent_058",
-      "type": "Indication",
-      "name": "biliousness",
-      "attributes": {
-        "context": "or biliousness"
-      },
-      "source_chunk_ids": [
-        "a3666fea07141cea7fbe666293b4260e"
-      ]
-    },
-    {
-      "id": "ent_059",
-      "type": "Indication",
-      "name": "nervous exhaustion",
-      "attributes": {
-        "context": "or nervous exhaustion"
-      },
-      "source_chunk_ids": [
-        "a3666fea07141cea7fbe666293b4260e"
-      ]
-    },
-    {
-      "id": "ent_060",
-      "type": "PharmEffect",
-      "name": "listless",
-      "attributes": {
-        "context": "the listless and afflicted"
-      },
-      "source_chunk_ids": [
-        "a3666fea07141cea7fbe666293b4260e"
-      ]
-    },
-    {
-      "id": "ent_061",
-      "type": "PharmEffect",
-      "name": "vital",
-      "attributes": {
-        "context": "transformed into the vital"
-      },
-      "source_chunk_ids": [
-        "a3666fea07141cea7fbe666293b4260e"
-      ]
-    },
-    {
-      "id": "ent_062",
-      "type": "PharmEffect",
-      "name": "vigorous",
-      "attributes": {
-        "context": "vital, vigorous, and virile"
-      },
-      "source_chunk_ids": [
-        "a3666fea07141cea7fbe666293b4260e"
-      ]
-    },
-    {
-      "id": "ent_063",
-      "type": "PharmEffect",
-      "name": "virile",
-      "attributes": {
-        "context": "vigorous, and virile"
-      },
-      "source_chunk_ids": [
-        "a3666fea07141cea7fbe666293b4260e"
-      ]
-    },
-    {
-      "id": "ent_064",
-      "type": "Indication",
-      "name": "anxieties",
-      "attributes": {
-        "context": "reader\u2019s anxieties"
-      },
-      "source_chunk_ids": [
-        "a3666fea07141cea7fbe666293b4260e"
-      ]
-    },
-    {
-      "id": "ent_065",
-      "type": "Indication",
+      "id": "E8",
+      "type": "Condition",
       "name": "low self-worth",
       "attributes": {
-        "context": "or low self-worth"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "a3666fea07141cea7fbe666293b4260e"
-      ]
+      ],
+      "confidence": 0.7,
+      "evidence": "low self-worth",
+      "verified": true
     },
     {
-      "id": "ent_066",
-      "type": "PharmEffect",
-      "name": "beauty",
-      "attributes": {
-        "context": "ideals of \u2018beauty\u2019"
-      },
-      "source_chunk_ids": [
-        "a3666fea07141cea7fbe666293b4260e"
-      ]
-    },
-    {
-      "id": "ent_067",
-      "type": "PharmEffect",
-      "name": "straighten hair",
-      "attributes": {
-        "context": "Products to straighten hair"
-      },
-      "source_chunk_ids": [
-        "a3666fea07141cea7fbe666293b4260e"
-      ]
-    },
-    {
-      "id": "ent_068",
-      "type": "PharmEffect",
-      "name": "lighten skin",
-      "attributes": {
-        "context": "or lighten skin"
-      },
-      "source_chunk_ids": [
-        "a3666fea07141cea7fbe666293b4260e"
-      ]
-    },
-    {
-      "id": "ent_069",
-      "type": "PharmEffect",
+      "id": "E9",
+      "type": "AdverseEvent",
       "name": "harmful",
       "attributes": {
-        "context": "dismissed as harmful"
+        "verification_needed": true
       },
       "source_chunk_ids": [
         "a3666fea07141cea7fbe666293b4260e"
-      ]
+      ],
+      "confidence": 0.65,
+      "evidence": "dismissed as harmful",
+      "verified": false
     },
     {
-      "id": "ent_070",
-      "type": "PharmEffect",
-      "name": "vitality",
+      "id": "E10",
+      "type": "AdverseEvent",
+      "name": "fraudulent",
       "attributes": {
-        "context": "quality such as vitality"
+        "verification_needed": true
       },
       "source_chunk_ids": [
         "a3666fea07141cea7fbe666293b4260e"
-      ]
+      ],
+      "confidence": 0.65,
+      "evidence": "fraudulent",
+      "verified": false
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Xhosa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4096b5fda52588354148a49abae8b983"
+      ],
+      "confidence": 0.9,
+      "evidence": "Xhosa, Zulu, and Sotho healers",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Zulu",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4096b5fda52588354148a49abae8b983"
+      ],
+      "confidence": 0.9,
+      "evidence": "Xhosa, Zulu, and Sotho healers",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Sotho",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4096b5fda52588354148a49abae8b983"
+      ],
+      "confidence": 0.9,
+      "evidence": "Xhosa, Zulu, and Sotho healers",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "UseRecord",
+      "name": "UseRecord: Xhosa/Zulu/Sotho \u2013 plants \u2013 childbirth",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4096b5fda52588354148a49abae8b983"
+      ],
+      "confidence": 0.8,
+      "evidence": "plants used by Xhosa, Zulu, and Sotho healers in connection with childbirth",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "childbirth",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4096b5fda52588354148a49abae8b983"
+      ],
+      "confidence": 0.85,
+      "evidence": "used in connection with childbirth",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Veale 1992",
+      "attributes": {
+        "year": 1992,
+        "doi": "10.1016/0378-8741(92)90045-6"
+      },
+      "source_chunk_ids": [
+        "4096b5fda52588354148a49abae8b983"
+      ],
+      "confidence": 0.9,
+      "evidence": "D. J. H. Veale, \u2018South African Traditional Herbal Medicines Used During Childbirth\u2019, Journal of Ethnopharmacology, 36 (1992), 185\u201391",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "ethnopharmacological study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "4096b5fda52588354148a49abae8b983"
+      ],
+      "confidence": 0.85,
+      "evidence": "study of 57 plants used by Xhosa, Zulu, and Sotho healers",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "AdverseEvent",
+      "name": "toxicity",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4096b5fda52588354148a49abae8b983"
+      ],
+      "confidence": 0.8,
+      "evidence": "16, or more than a quarter, were toxic",
+      "verified": true
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:03.756259+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "self-medication in South Africa",
+      "source_chunk_ids": [
+        "fbe20203e749c0ca0267bcd9028b40da"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "self-medication",
+      "source_chunk_ids": [
+        "fbe20203e749c0ca0267bcd9028b40da"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "consumption of herbs",
+      "source_chunk_ids": [
+        "fbe20203e749c0ca0267bcd9028b40da"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "home and folk remedies",
+      "source_chunk_ids": [
+        "fbe20203e749c0ca0267bcd9028b40da"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "patent and proprietary medicines",
+      "source_chunk_ids": [
+        "fbe20203e749c0ca0267bcd9028b40da"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "pharmaceuticals",
+      "source_chunk_ids": [
+        "fbe20203e749c0ca0267bcd9028b40da"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.75,
+      "evidence": "natural and manufactured products",
+      "source_chunk_ids": [
+        "fbe20203e749c0ca0267bcd9028b40da"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Moravians... duty to treat sickness",
+      "source_chunk_ids": [
+        "a749b9c64ba04698526b3a4a96c023aa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "raw_material",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "pharmaceuticals... treat sickness",
+      "source_chunk_ids": [
+        "a749b9c64ba04698526b3a4a96c023aa"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "duty to treat sickness",
+      "source_chunk_ids": [
+        "a749b9c64ba04698526b3a4a96c023aa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "The 'Red people' ... used a mixture",
+      "source_chunk_ids": [
+        "fb5b8f4e19ff93e5eb395b7e0440e249"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.9,
+      "evidence": "used a mixture of red ochre and animal fat",
+      "source_chunk_ids": [
+        "fb5b8f4e19ff93e5eb395b7e0440e249"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "protect against the cold",
+      "source_chunk_ids": [
+        "fb5b8f4e19ff93e5eb395b7e0440e249"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "protect against ... sunburn",
+      "source_chunk_ids": [
+        "fb5b8f4e19ff93e5eb395b7e0440e249"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Moravian mission stores displayed a linkage between religion, trade, and medicine",
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "extensive use of self-medication by local Cape consumers",
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "chart listed ailments including 'acidity'",
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "ailments such as constipation",
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "ailments such as ear ache",
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "ailments such as sore throat",
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "less common afflictions such as gout",
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "less common afflictions such as scrofula",
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "finally reaching 'weakness'",
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "TREATS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "commercial"
+      },
+      "confidence": 0.7,
+      "evidence": "Rajah Stomach Mixture for acidity",
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "TREATS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "commercial"
+      },
+      "confidence": 0.7,
+      "evidence": "Graham's Ginger Cure for infants for acidity",
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "TREATS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E10",
+      "attributes": {
+        "context": "commercial"
+      },
+      "confidence": 0.7,
+      "evidence": "Virata pills for weakness",
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "TREATS",
+      "source_entity_id": "E14",
+      "target_entity_id": "E10",
+      "attributes": {
+        "context": "commercial"
+      },
+      "confidence": 0.7,
+      "evidence": "Virnil Tonic and Strengthening Pills for weakness",
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "HAS_USE",
+      "source_entity_id": "E15",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "self-medication by coloured farm labourers",
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "HAS_USE",
+      "source_entity_id": "E16",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "self-medication by Afrikaner farm households",
+      "source_chunk_ids": [
+        "da434b7566571ba3992abe5023728a22"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Namaqualand, where their stores",
+      "source_chunk_ids": [
+        "014071d196490cee663ddc130d0dbe7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.75,
+      "evidence": "storekeepers obtained patent medicines",
+      "source_chunk_ids": [
+        "014071d196490cee663ddc130d0dbe7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "Remedies of every description",
+      "source_chunk_ids": [
+        "014071d196490cee663ddc130d0dbe7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "Druppels or drops made up in a tincture",
+      "source_chunk_ids": [
+        "014071d196490cee663ddc130d0dbe7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "made up in a tincture",
+      "source_chunk_ids": [
+        "014071d196490cee663ddc130d0dbe7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Afrikaners used buchu tea",
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Afrikaners used wormwood",
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Afrikaner mother used eucalyptus leaves",
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E15",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "buchu tea for weak kidneys",
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "for weak kidneys",
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E16",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "wormwood in the shoes for a weak heart",
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "for a weak heart",
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E17",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "dog's blood for fits",
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E11",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "for fits",
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "INVOLVES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E18",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "goat's dung for measles",
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "INVOLVES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E12",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "for measles",
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "INVOLVES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E19",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "wolf's dung for a sore throat",
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "INVOLVES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E13",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "for a sore throat",
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "INVOLVES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E20",
+      "attributes": {
+        "role": "plant_part"
+      },
+      "confidence": 0.85,
+      "evidence": "eucalyptus leaves during fever",
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "INVOLVES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E14",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "during fever",
+      "source_chunk_ids": [
+        "5bba9448676fa02378a59c1824167e87"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Sequah promoted American Indian medicines",
+      "source_chunk_ids": [
+        "b663965e003ec1b35e3054521691df11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.75,
+      "evidence": "American Indian medicines",
+      "source_chunk_ids": [
+        "b663965e003ec1b35e3054521691df11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "cures for rheumatism",
+      "source_chunk_ids": [
+        "b663965e003ec1b35e3054521691df11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "cures for rheumatism",
+      "source_chunk_ids": [
+        "b663965e003ec1b35e3054521691df11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Sequah Oil were made up of turpentine",
+      "source_chunk_ids": [
+        "b663965e003ec1b35e3054521691df11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Sequah Oil were made up of fish oil",
+      "source_chunk_ids": [
+        "b663965e003ec1b35e3054521691df11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Sequah Oil were made up of camphor",
+      "source_chunk_ids": [
+        "b663965e003ec1b35e3054521691df11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Prairie Flower Mixture were made up of turpentine",
+      "source_chunk_ids": [
+        "b663965e003ec1b35e3054521691df11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Prairie Flower Mixture were made up of fish oil",
+      "source_chunk_ids": [
+        "b663965e003ec1b35e3054521691df11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Prairie Flower Mixture were made up of camphor",
+      "source_chunk_ids": [
+        "b663965e003ec1b35e3054521691df11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E11",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "cancer-curer",
+      "source_chunk_ids": [
+        "b663965e003ec1b35e3054521691df11"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Africans 'purchase our [European] medicines freely'",
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "Holloway's Ointment",
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "Chlorodyne",
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "laudanum",
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "Epsom salts",
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "Sarsaparilla",
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "Enos fruit salts",
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "Beecham's powders",
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "Carter's little liver pills",
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E11",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "Phospherine",
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E12",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "embrocation",
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E13",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "eucalyptus oil",
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E14",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "asafoetida",
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E15",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "'Pink Pills for Pale People'",
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E16",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "a 'blood purifier' called",
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "SUGGESTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E17",
+      "attributes": {
+        "mapping_type": "direct",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "efficacy for ... nervous debility",
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R17",
+      "type": "SUGGESTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E18",
+      "attributes": {
+        "mapping_type": "direct",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "efficacy for ... malaria",
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R18",
+      "type": "SUGGESTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E19",
+      "attributes": {
+        "mapping_type": "direct",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "efficacy for ... rheumatism",
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R19",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E20",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "Wood's peppermint cure",
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R20",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E21",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "castor oil",
+      "source_chunk_ids": [
+        "33b5bdcb7484d4a25c68b1519445ddfd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "area stocked patent medicines for their Bhaca clientele",
+      "source_chunk_ids": [
+        "738c58aa05d9ad420665e088d9093c61"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "patent medicines",
+      "source_chunk_ids": [
+        "738c58aa05d9ad420665e088d9093c61"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_USE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "medicines and toilet requisites comprised between 1 and 2 per cent of sales",
+      "source_chunk_ids": [
+        "738c58aa05d9ad420665e088d9093c61"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.75,
+      "evidence": "medicines and toilet requisites",
+      "source_chunk_ids": [
+        "738c58aa05d9ad420665e088d9093c61"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_USE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "patent medicines were found in the trading stores",
+      "source_chunk_ids": [
+        "738c58aa05d9ad420665e088d9093c61"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "Kyalami heart tonic",
+      "source_chunk_ids": [
+        "738c58aa05d9ad420665e088d9093c61"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "headache powders",
+      "source_chunk_ids": [
+        "738c58aa05d9ad420665e088d9093c61"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_USE",
+      "source_entity_id": "E11",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "brought home bottles of medicine",
+      "source_chunk_ids": [
+        "738c58aa05d9ad420665e088d9093c61"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "INVOLVES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E13",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "non-indigenous medicines",
+      "source_chunk_ids": [
+        "738c58aa05d9ad420665e088d9093c61"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Afrikaner and English customers",
+      "source_chunk_ids": [
+        "0bba663e62efbb07c0e02a2a34067c48"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R2",
+      "type": "HAS_USE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Afrikaner and English customers",
+      "source_chunk_ids": [
+        "0bba663e62efbb07c0e02a2a34067c48"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "Gaston's Red Mixture",
+      "source_chunk_ids": [
+        "0bba663e62efbb07c0e02a2a34067c48"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "ideal thing for influenza",
+      "source_chunk_ids": [
+        "0bba663e62efbb07c0e02a2a34067c48"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "increased proportions of camphor",
+      "source_chunk_ids": [
+        "0bba663e62efbb07c0e02a2a34067c48"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "increased proportions of ... menthol",
+      "source_chunk_ids": [
+        "0bba663e62efbb07c0e02a2a34067c48"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "syrup was added",
+      "source_chunk_ids": [
+        "0bba663e62efbb07c0e02a2a34067c48"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "pharmacists targeted African needs",
+      "source_chunk_ids": [
+        "febfbacd08791c440e0176f25cfbd3f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "offered prompt and courteous service",
+      "source_chunk_ids": [
+        "febfbacd08791c440e0176f25cfbd3f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "performed minor operations",
+      "source_chunk_ids": [
+        "febfbacd08791c440e0176f25cfbd3f1"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "distinctively Afrikaner medications",
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "taxon",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Afrikaner medications",
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "promised sure-fire cures",
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E11",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "promised sure-fire cures",
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E12",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "promised sure-fire cures",
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E13",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "promised sure-fire cures",
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E14",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "promised sure-fire cures",
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E15",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "promised sure-fire cures",
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "TREATS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E10",
+      "attributes": {
+        "context": "advertisement"
+      },
+      "confidence": 0.75,
+      "evidence": "certain relief in 24 hours",
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "TREATS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E11",
+      "attributes": {
+        "context": "advertisement"
+      },
+      "confidence": 0.8,
+      "evidence": "for neuralgia",
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "TREATS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E12",
+      "attributes": {
+        "context": "advertisement"
+      },
+      "confidence": 0.8,
+      "evidence": "for flu or colds",
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "TREATS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E13",
+      "attributes": {
+        "context": "advertisement"
+      },
+      "confidence": 0.8,
+      "evidence": "for flu or colds",
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "TREATS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E14",
+      "attributes": {
+        "context": "advertisement"
+      },
+      "confidence": 0.75,
+      "evidence": "for corns and calluses",
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "TREATS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E15",
+      "attributes": {
+        "context": "advertisement"
+      },
+      "confidence": 0.75,
+      "evidence": "for corns and calluses",
+      "source_chunk_ids": [
+        "76689946ed9e16c45621de882ea3012a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "African readership... indigenous healers customarily used",
+      "source_chunk_ids": [
+        "04f850373e134bd25844f5f4fa001255"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E12",
+      "attributes": {
+        "role": "raw_material",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "restoratives",
+      "source_chunk_ids": [
+        "04f850373e134bd25844f5f4fa001255"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E13",
+      "attributes": {
+        "role": "raw_material",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "revivers",
+      "source_chunk_ids": [
+        "04f850373e134bd25844f5f4fa001255"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E14",
+      "attributes": {
+        "role": "raw_material",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "charms",
+      "source_chunk_ids": [
+        "04f850373e134bd25844f5f4fa001255"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "general well-being",
+      "source_chunk_ids": [
+        "04f850373e134bd25844f5f4fa001255"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "good fortune",
+      "source_chunk_ids": [
+        "04f850373e134bd25844f5f4fa001255"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E15",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "medicines",
+      "source_chunk_ids": [
+        "04f850373e134bd25844f5f4fa001255"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Department of Public Health criticized practices",
+      "source_chunk_ids": [
+        "480d00a0123104bbd37c77f039082a0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "increase sex attraction",
+      "source_chunk_ids": [
+        "480d00a0123104bbd37c77f039082a0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "sexual impotence",
+      "source_chunk_ids": [
+        "480d00a0123104bbd37c77f039082a0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "sterility",
+      "source_chunk_ids": [
+        "480d00a0123104bbd37c77f039082a0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "diseases of the generative organs",
+      "source_chunk_ids": [
+        "480d00a0123104bbd37c77f039082a0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_USE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "complained of misleading pamphlets",
+      "source_chunk_ids": [
+        "480d00a0123104bbd37c77f039082a0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "HAS_USE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "pamphlets from African herbalists",
+      "source_chunk_ids": [
+        "480d00a0123104bbd37c77f039082a0d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "targeted Africans with advertisements for remedies",
+      "source_chunk_ids": [
+        "a56b1ff54f2412cd0e99e0ce7b14cb09"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "remedies' for impotence",
+      "source_chunk_ids": [
+        "a56b1ff54f2412cd0e99e0ce7b14cb09"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "treat tuberculosis",
+      "source_chunk_ids": [
+        "a56b1ff54f2412cd0e99e0ce7b14cb09"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "cure sexually-transmitted diseases",
+      "source_chunk_ids": [
+        "a56b1ff54f2412cd0e99e0ce7b14cb09"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "procure wealth",
+      "source_chunk_ids": [
+        "a56b1ff54f2412cd0e99e0ce7b14cb09"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "success",
+      "source_chunk_ids": [
+        "a56b1ff54f2412cd0e99e0ce7b14cb09"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "immunity from 'witchcraft'",
+      "source_chunk_ids": [
+        "a56b1ff54f2412cd0e99e0ce7b14cb09"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "advertisements of 'native' medicines",
+      "source_chunk_ids": [
+        "a56b1ff54f2412cd0e99e0ce7b14cb09"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "information on African medicines",
+      "source_chunk_ids": [
+        "a56b1ff54f2412cd0e99e0ce7b14cb09"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "African medicine trader",
+      "source_chunk_ids": [
+        "63ad42e21c59891209db22e5bcbf2289"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "lung tonics",
+      "source_chunk_ids": [
+        "63ad42e21c59891209db22e5bcbf2289"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "eye drops",
+      "source_chunk_ids": [
+        "63ad42e21c59891209db22e5bcbf2289"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "healing ointment",
+      "source_chunk_ids": [
+        "63ad42e21c59891209db22e5bcbf2289"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "vermifuges",
+      "source_chunk_ids": [
+        "63ad42e21c59891209db22e5bcbf2289"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "hair straighteners",
+      "source_chunk_ids": [
+        "63ad42e21c59891209db22e5bcbf2289"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "iron mixtures",
+      "source_chunk_ids": [
+        "63ad42e21c59891209db22e5bcbf2289"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "treacle",
+      "source_chunk_ids": [
+        "63ad42e21c59891209db22e5bcbf2289"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "castor oil",
+      "source_chunk_ids": [
+        "63ad42e21c59891209db22e5bcbf2289"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E11",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "Green Leaf Products",
+      "source_chunk_ids": [
+        "63ad42e21c59891209db22e5bcbf2289"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "coloured midwife or oude tante carried herbal remedies",
+      "source_chunk_ids": [
+        "c51ec63547fcd7a1075f63a14b230f04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "herbal remedies",
+      "source_chunk_ids": [
+        "c51ec63547fcd7a1075f63a14b230f04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "obstetric needs",
+      "source_chunk_ids": [
+        "c51ec63547fcd7a1075f63a14b230f04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "common ailments",
+      "source_chunk_ids": [
+        "c51ec63547fcd7a1075f63a14b230f04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_USE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "herbal medicines were central to African indigenous medicine",
+      "source_chunk_ids": [
+        "c51ec63547fcd7a1075f63a14b230f04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "herbal medicines",
+      "source_chunk_ids": [
+        "c51ec63547fcd7a1075f63a14b230f04"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "appealing to both white and black customers",
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.75,
+      "evidence": "prepared from 'Cape Roots'",
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "Orsmond's 'Great African Remedy'",
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "a specific for fevers",
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "a remedy for blood disorders",
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "unrivalled for female diseases",
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "from dyspepsia to syphilis",
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "from dyspepsia to syphilis",
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "firm of Lennon was also quick to exploit",
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R10",
+      "type": "INVOLVES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E11",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.7,
+      "evidence": "sales of monsonia",
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "SUGGESTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E12",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "a cure for dysentery",
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E13",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "trader kept stock to appeal to his local clientele",
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "INVOLVES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E14",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "'tikoloshe fat'",
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "INVOLVES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E15",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.75,
+      "evidence": "an oil called 'injayowawdle'",
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "SUGGESTS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E16",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "afflicted by lumbago",
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "INVOLVES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E17",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "lumps of baboon dung",
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R17",
+      "type": "SUGGESTS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E18",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "a cure for a stomach-ache",
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R18",
+      "type": "INVOLVES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E19",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "dried elephant's hide",
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R19",
+      "type": "INVOLVES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E20",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "drives away evil spirits",
+      "source_chunk_ids": [
+        "11b0343190a55b5fc99601e8bb59ce9b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "presumably Sotho healer",
+      "source_chunk_ids": [
+        "ef33bcef82ff22bd783f31effbd23d42"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.75,
+      "evidence": "animal fats",
+      "source_chunk_ids": [
+        "ef33bcef82ff22bd783f31effbd23d42"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "Mamba bones",
+      "source_chunk_ids": [
+        "ef33bcef82ff22bd783f31effbd23d42"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "headache cure",
+      "source_chunk_ids": [
+        "ef33bcef82ff22bd783f31effbd23d42"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.75,
+      "evidence": "burnt elephant skin",
+      "source_chunk_ids": [
+        "ef33bcef82ff22bd783f31effbd23d42"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "chase away nightmares",
+      "source_chunk_ids": [
+        "ef33bcef82ff22bd783f31effbd23d42"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Xhosa consumers wishing to alleviate",
+      "source_chunk_ids": [
+        "170a1449ae043c64afed6f7c6fa49bd7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Xhosa consumers to treat culturally-related",
+      "source_chunk_ids": [
+        "170a1449ae043c64afed6f7c6fa49bd7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "alleviate physical illnesses",
+      "source_chunk_ids": [
+        "170a1449ae043c64afed6f7c6fa49bd7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "gain good luck",
+      "source_chunk_ids": [
+        "170a1449ae043c64afed6f7c6fa49bd7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "success in love",
+      "source_chunk_ids": [
+        "170a1449ae043c64afed6f7c6fa49bd7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_USE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "herbalists and diviners bought medicines",
+      "source_chunk_ids": [
+        "170a1449ae043c64afed6f7c6fa49bd7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.75,
+      "evidence": "bought their medicines and herbs",
+      "source_chunk_ids": [
+        "170a1449ae043c64afed6f7c6fa49bd7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "INVOLVES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "preparation"
+      },
+      "confidence": 0.7,
+      "evidence": "make up into specialist mixtures",
+      "source_chunk_ids": [
+        "170a1449ae043c64afed6f7c6fa49bd7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "traditional healers' associations",
+      "source_chunk_ids": [
+        "133d9a2dc37437eb8dbcc3bf371b9311"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.75,
+      "evidence": "medicinal plant needed",
+      "source_chunk_ids": [
+        "133d9a2dc37437eb8dbcc3bf371b9311"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "therapeutic implications",
+      "source_chunk_ids": [
+        "133d9a2dc37437eb8dbcc3bf371b9311"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "raw_material",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "drawbacks of stored herbs",
+      "source_chunk_ids": [
+        "133d9a2dc37437eb8dbcc3bf371b9311"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "warehouse provision",
+      "source_chunk_ids": [
+        "133d9a2dc37437eb8dbcc3bf371b9311"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Zulu medicine",
+      "source_chunk_ids": [
+        "08f61187dfd77bad5029eee9f2073803"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.9,
+      "evidence": "isi-bihaha",
+      "source_chunk_ids": [
+        "08f61187dfd77bad5029eee9f2073803"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "used for coughs",
+      "source_chunk_ids": [
+        "08f61187dfd77bad5029eee9f2073803"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "used for colds",
+      "source_chunk_ids": [
+        "08f61187dfd77bad5029eee9f2073803"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "used for influenza",
+      "source_chunk_ids": [
+        "08f61187dfd77bad5029eee9f2073803"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "used for rheumatism",
+      "source_chunk_ids": [
+        "08f61187dfd77bad5029eee9f2073803"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "used for headaches",
+      "source_chunk_ids": [
+        "08f61187dfd77bad5029eee9f2073803"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "antidote for sorcery",
+      "source_chunk_ids": [
+        "08f61187dfd77bad5029eee9f2073803"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "use by the Afrikaner",
+      "source_chunk_ids": [
+        "7f75e83440fdc666820de352d476e4d9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_USE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Africans' consumption",
+      "source_chunk_ids": [
+        "7f75e83440fdc666820de352d476e4d9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "Khoikhoi remedies",
+      "source_chunk_ids": [
+        "7f75e83440fdc666820de352d476e4d9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "'western' patent medicines",
+      "source_chunk_ids": [
+        "7f75e83440fdc666820de352d476e4d9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "promised to alleviate nervous exhaustion",
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "promised to alleviate nervous exhaustion",
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "play on the reader\u2019s anxieties",
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "low self-worth",
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "CAUSES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E9",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "dismissed as harmful",
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "CAUSES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E10",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "fraudulent",
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "CAUSES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E9",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "dismissed as harmful",
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "CAUSES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E10",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "fraudulent",
+      "source_chunk_ids": [
+        "a3666fea07141cea7fbe666293b4260e"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "plants used by Xhosa healers",
+      "source_chunk_ids": [
+        "4096b5fda52588354148a49abae8b983"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_USE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "plants used by Zulu healers",
+      "source_chunk_ids": [
+        "4096b5fda52588354148a49abae8b983"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_USE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "plants used by Sotho healers",
+      "source_chunk_ids": [
+        "4096b5fda52588354148a49abae8b983"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "used in connection with childbirth",
+      "source_chunk_ids": [
+        "4096b5fda52588354148a49abae8b983"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "study of 57 plants",
+      "source_chunk_ids": [
+        "4096b5fda52588354148a49abae8b983"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "study of 57 plants used by Xhosa, Zulu, and Sotho healers",
+      "source_chunk_ids": [
+        "4096b5fda52588354148a49abae8b983"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "present"
+      },
+      "confidence": 0.8,
+      "evidence": "16, or more than a quarter, were toxic",
+      "source_chunk_ids": [
+        "4096b5fda52588354148a49abae8b983"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "plants used in childbirth were toxic",
+      "source_chunk_ids": [
+        "4096b5fda52588354148a49abae8b983"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

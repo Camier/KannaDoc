@@ -1,12 +1,5993 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "cadd970e22144ef08b6bf928f89e7c02062b721c5431eb00b94d8dd00d14fd82",
-  "extracted_at": "2026-02-01T08:56:50.891866+00:00",
-  "extractor": "legacy-migration",
-  "entities": [],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.080066+00:00",
-    "original_file": "entities.json"
-  }
+  "entities": [
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "ca1421c5395bf4438aa7fe045e7b9de3"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum (L.) N.E. Br",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ca1421c5395bf4438aa7fe045e7b9de3"
+      ],
+      "confidence": 0.9,
+      "evidence": "alkaloid concentration",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "Delta 7 mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "efc89e40927825382ae91506f45cbf6c"
+      ],
+      "confidence": 0.8,
+      "evidence": "Alkaloids Delta 7 mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "Mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "efc89e40927825382ae91506f45cbf6c"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "Mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "efc89e40927825382ae91506f45cbf6c"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "Alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "efc89e40927825382ae91506f45cbf6c"
+      ],
+      "confidence": 0.85,
+      "evidence": "Alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "Food science",
+      "attributes": {},
+      "source_chunk_ids": [
+        "efc89e40927825382ae91506f45cbf6c"
+      ],
+      "confidence": 0.7,
+      "evidence": "Food science",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "Agricultural science",
+      "attributes": {},
+      "source_chunk_ids": [
+        "efc89e40927825382ae91506f45cbf6c"
+      ],
+      "confidence": 0.7,
+      "evidence": "Agricultural science",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "Environmental science",
+      "attributes": {},
+      "source_chunk_ids": [
+        "efc89e40927825382ae91506f45cbf6c"
+      ],
+      "confidence": 0.7,
+      "evidence": "Environmental science",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "Biological sciences",
+      "attributes": {},
+      "source_chunk_ids": [
+        "efc89e40927825382ae91506f45cbf6c"
+      ],
+      "confidence": 0.7,
+      "evidence": "Biological sciences",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "Pharmaceutical science",
+      "attributes": {},
+      "source_chunk_ids": [
+        "efc89e40927825382ae91506f45cbf6c"
+      ],
+      "confidence": 0.7,
+      "evidence": "Pharmaceutical science",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "hydroponic cultivation study",
+      "attributes": {
+        "design": "experimental",
+        "sample_size": 300
+      },
+      "source_chunk_ids": [
+        "ba47e1195ce43e0e94d84269e3447db0"
+      ],
+      "confidence": 0.9,
+      "evidence": "investigate the variations in alkaloid concentrations",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "ba47e1195ce43e0e94d84269e3447db0"
+      ],
+      "confidence": 0.8,
+      "evidence": "hydroponic cultivation study",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "ba47e1195ce43e0e94d84269e3447db0"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ba47e1195ce43e0e94d84269e3447db0"
+      ],
+      "confidence": 0.85,
+      "evidence": "roots contained higher amounts",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "PlantPart",
+      "name": "shoots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ba47e1195ce43e0e94d84269e3447db0"
+      ],
+      "confidence": 0.85,
+      "evidence": "shoots contained higher amounts",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "delta 7 mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ba47e1195ce43e0e94d84269e3447db0"
+      ],
+      "confidence": 0.8,
+      "evidence": "delta 7 mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ba47e1195ce43e0e94d84269e3447db0"
+      ],
+      "confidence": 0.8,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ba47e1195ce43e0e94d84269e3447db0"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ba47e1195ce43e0e94d84269e3447db0"
+      ],
+      "confidence": 0.85,
+      "evidence": "alkaloid concentrations",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "CompoundClass",
+      "name": "alkaloid",
+      "attributes": {},
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "confidence": 0.95,
+      "evidence": "an alkaloid",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "caffeine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "confidence": 0.9,
+      "evidence": "caffeine (a stimulant)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "ephedrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "confidence": 0.9,
+      "evidence": "ephedrine (a stimulant)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "scopolamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "confidence": 0.9,
+      "evidence": "scopolamine (travel sickness)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "capsaicin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "confidence": 0.9,
+      "evidence": "capsaicin (rheumatic pains)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "morphine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "confidence": 0.9,
+      "evidence": "morphine (pain killer)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "codeine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "confidence": 0.9,
+      "evidence": "codeine (antitussive)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Compound",
+      "name": "papaverine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "confidence": 0.9,
+      "evidence": "papaverine (phosphodiesterase inhibitor)",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Compound",
+      "name": "quinine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "confidence": 0.9,
+      "evidence": "quinine (anti-malarial)",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Compound",
+      "name": "colchicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "confidence": 0.9,
+      "evidence": "colchicines (gout)",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Compound",
+      "name": "yohimbine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "confidence": 0.9,
+      "evidence": "yohimbine (aphrodisiac)",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Compound",
+      "name": "pilocarpine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "confidence": 0.85,
+      "evidence": "pilocarpine",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "TraditionalUse",
+      "name": "stimulant",
+      "attributes": {},
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "confidence": 0.8,
+      "evidence": "a stimulant",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "TraditionalUse",
+      "name": "travel sickness",
+      "attributes": {},
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "confidence": 0.8,
+      "evidence": "travel sickness",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "TraditionalUse",
+      "name": "rheumatic pains",
+      "attributes": {},
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "confidence": 0.8,
+      "evidence": "rheumatic pains",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "TraditionalUse",
+      "name": "pain killer",
+      "attributes": {},
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "confidence": 0.8,
+      "evidence": "pain killer",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "TraditionalUse",
+      "name": "antitussive",
+      "attributes": {},
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "confidence": 0.8,
+      "evidence": "antitussive",
+      "verified": true
+    },
+    {
+      "id": "E18",
+      "type": "TraditionalUse",
+      "name": "phosphodiesterase inhibitor",
+      "attributes": {},
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "confidence": 0.8,
+      "evidence": "phosphodiesterase inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E19",
+      "type": "TraditionalUse",
+      "name": "anti-malarial",
+      "attributes": {},
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "confidence": 0.8,
+      "evidence": "anti-malarial",
+      "verified": true
+    },
+    {
+      "id": "E20",
+      "type": "TraditionalUse",
+      "name": "gout",
+      "attributes": {},
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "confidence": 0.8,
+      "evidence": "gout",
+      "verified": true
+    },
+    {
+      "id": "E21",
+      "type": "TraditionalUse",
+      "name": "aphrodisiac",
+      "attributes": {},
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "confidence": 0.8,
+      "evidence": "aphrodisiac",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrine serves a primary function",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "monoamine releasing agent",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "confidence": 0.85,
+      "evidence": "monoamine releasing agent (MRA)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "selective serotonin reuptake inhibitor",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "confidence": 0.85,
+      "evidence": "selective serotonin reuptake inhibitor (SSRI)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "confidence": 0.9,
+      "evidence": "treatment of anxiety",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "confidence": 0.9,
+      "evidence": "treatment of anxiety and depression",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "delta 7 mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "confidence": 0.95,
+      "evidence": "delta 7 mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "antioxidant",
+      "attributes": {
+        "level": "molecular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "confidence": 0.8,
+      "evidence": "potent antioxidant",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Target",
+      "name": "tyrosinase",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "confidence": 0.85,
+      "evidence": "inhibitor of tyrosinase activity",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Compound",
+      "name": "kojic acid",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "confidence": 0.8,
+      "evidence": "kojic acid at high doses",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "RawMaterial",
+      "name": "plant extracts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "confidence": 0.75,
+      "evidence": "S. tortuosum plant extracts",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "confidence": 0.9,
+      "evidence": "alkaloids delta 7 mesembrenone, mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Study",
+      "name": "this study",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "confidence": 0.7,
+      "evidence": "this study aimed to determine",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2,
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "confidence": 0.6,
+      "evidence": "alkaloid composition in different extracts",
+      "verified": false
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "a8580b3ec1fa679c1dfb1e2a31c838ad"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum mother plant",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "stem cuttings",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a8580b3ec1fa679c1dfb1e2a31c838ad"
+      ],
+      "confidence": 0.9,
+      "evidence": "2.5\u20133 cm stem cuttings",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "rooted cuttings",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a8580b3ec1fa679c1dfb1e2a31c838ad"
+      ],
+      "confidence": 0.85,
+      "evidence": "more than 300 rooted cuttings",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Preparation",
+      "name": "rooting hormone treatment",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bf2aa5803c8d589bc23fa1c403853fb1"
+      ],
+      "confidence": 0.8,
+      "evidence": "Cuttings were treated with Dynaroot\u2122 No 1",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "Dynaroot\u2122 No 1",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bf2aa5803c8d589bc23fa1c403853fb1"
+      ],
+      "confidence": 0.9,
+      "evidence": "Dynaroot\u2122 No 1",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "I.B.A.",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bf2aa5803c8d589bc23fa1c403853fb1"
+      ],
+      "confidence": 0.85,
+      "evidence": "Active ingredient: 0.1% I.B.A.",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "silica sand",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bf2aa5803c8d589bc23fa1c403853fb1"
+      ],
+      "confidence": 0.8,
+      "evidence": "silica sand",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "coco-peat",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bf2aa5803c8d589bc23fa1c403853fb1"
+      ],
+      "confidence": 0.8,
+      "evidence": "coco-peat",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Preparation",
+      "name": "rooting medium mixture",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bf2aa5803c8d589bc23fa1c403853fb1"
+      ],
+      "confidence": 0.75,
+      "evidence": "50/50 mixture of silica sand, and coco-peat",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "propagation experiment",
+      "attributes": {
+        "design": "experimental propagation"
+      },
+      "source_chunk_ids": [
+        "bf2aa5803c8d589bc23fa1c403853fb1"
+      ],
+      "confidence": 0.7,
+      "evidence": "selected for the experiment",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "in vitro propagation",
+      "attributes": {
+        "evidence_level": 2,
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "bf2aa5803c8d589bc23fa1c403853fb1"
+      ],
+      "confidence": 0.65,
+      "evidence": "environmentally controlled propagation greenhouse",
+      "verified": false
+    },
+    {
+      "id": "E1",
+      "type": "Preparation",
+      "name": "drying",
+      "attributes": {
+        "temperature": "30\u201331 \u00b0C",
+        "equipment": "forced convection oven (Daihan Labtech LDO-150F)"
+      },
+      "source_chunk_ids": [
+        "ef832f7eb601d88c675e89e3d56b45c6"
+      ],
+      "confidence": 0.9,
+      "evidence": "dried at 30\u201331 \u00b0C in a forced convection oven",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "powder",
+      "attributes": {
+        "processing_method": "milling"
+      },
+      "source_chunk_ids": [
+        "ef832f7eb601d88c675e89e3d56b45c6"
+      ],
+      "confidence": 0.85,
+      "evidence": "milled to powder using a coffee grinder",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Preparation",
+      "name": "milling",
+      "attributes": {
+        "equipment": "coffee grinder (Mellerware - Aromatic Coffee Mill & Grinder)"
+      },
+      "source_chunk_ids": [
+        "ef832f7eb601d88c675e89e3d56b45c6"
+      ],
+      "confidence": 0.8,
+      "evidence": "milled to powder using a coffee grinder",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "26cbab71669c3b33aeec89827faf4c51"
+      ],
+      "confidence": 0.9,
+      "evidence": "roots and shoots",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "shoots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "26cbab71669c3b33aeec89827faf4c51"
+      ],
+      "confidence": 0.9,
+      "evidence": "roots and shoots",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "methanol extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "26cbab71669c3b33aeec89827faf4c51"
+      ],
+      "confidence": 0.85,
+      "evidence": "methanol extract",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "26cbab71669c3b33aeec89827faf4c51"
+      ],
+      "confidence": 0.95,
+      "evidence": "total alkaloid content",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Preparation",
+      "name": "extraction",
+      "attributes": {},
+      "source_chunk_ids": [
+        "26cbab71669c3b33aeec89827faf4c51"
+      ],
+      "confidence": 0.8,
+      "evidence": "Extraction was done",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "CompoundClass",
+      "name": "mesembrine-type alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0930af92044036d1758ed241d7e65923"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine-type alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "delta 7 mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0930af92044036d1758ed241d7e65923"
+      ],
+      "confidence": 0.85,
+      "evidence": "delta 7 mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0930af92044036d1758ed241d7e65923"
+      ],
+      "confidence": 0.85,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0930af92044036d1758ed241d7e65923"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "0930af92044036d1758ed241d7e65923"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "RawMaterial",
+      "name": "extractions",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0930af92044036d1758ed241d7e65923"
+      ],
+      "confidence": 0.8,
+      "evidence": "extractions",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "12c5306f9bd3e03ed6896346edb07245"
+      ],
+      "confidence": 0.95,
+      "evidence": "pure mesembrine compound",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "extractions",
+      "attributes": {},
+      "source_chunk_ids": [
+        "12c5306f9bd3e03ed6896346edb07245"
+      ],
+      "confidence": 0.8,
+      "evidence": "extractions were filtered",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "HPLC analysis study",
+      "attributes": {
+        "design": "HPLC analysis",
+        "repetitions": 5
+      },
+      "source_chunk_ids": [
+        "12c5306f9bd3e03ed6896346edb07245"
+      ],
+      "confidence": 0.85,
+      "evidence": "HPLC method with UV detection",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "in vitro analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "12c5306f9bd3e03ed6896346edb07245"
+      ],
+      "confidence": 0.8,
+      "evidence": "HPLC method with UV detection",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "a7f09528672e3e1ead077dc4254f5e42"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "root",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a7f09528672e3e1ead077dc4254f5e42"
+      ],
+      "confidence": 0.9,
+      "evidence": "root of S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "alkaloid",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a7f09528672e3e1ead077dc4254f5e42"
+      ],
+      "confidence": 0.85,
+      "evidence": "total alkaloid concentrations",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "soilless media and fertigation regime study",
+      "attributes": {
+        "design": "experimental"
+      },
+      "source_chunk_ids": [
+        "a7f09528672e3e1ead077dc4254f5e42"
+      ],
+      "confidence": 0.8,
+      "evidence": "effect of soilless media and fertigation regime",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "a7f09528672e3e1ead077dc4254f5e42"
+      ],
+      "confidence": 0.7,
+      "evidence": "statistically significant",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c33673d313aed84abd3d1edced3231bf"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "shoot",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c33673d313aed84abd3d1edced3231bf"
+      ],
+      "confidence": 0.9,
+      "evidence": "shoot of S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "alkaloid",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c33673d313aed84abd3d1edced3231bf"
+      ],
+      "confidence": 0.85,
+      "evidence": "total alkaloid concentrations",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "soilless media and fertigation study",
+      "attributes": {
+        "design": "experimental study"
+      },
+      "source_chunk_ids": [
+        "c33673d313aed84abd3d1edced3231bf"
+      ],
+      "confidence": 0.8,
+      "evidence": "effect of soilless media and fertigation regime",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vitro study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "c33673d313aed84abd3d1edced3231bf"
+      ],
+      "confidence": 0.75,
+      "evidence": "statistically significant at p \u2264 0.001",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "df11709213f8a1550fb29acb14fa228a"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine standard",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "mesembrine standard",
+      "attributes": {},
+      "source_chunk_ids": [
+        "df11709213f8a1550fb29acb14fa228a"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine standard obtained from Verve Dynamics",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "chromatographic analysis",
+      "attributes": {
+        "design": "chromatographic analysis",
+        "year": 2016
+      },
+      "source_chunk_ids": [
+        "df11709213f8a1550fb29acb14fa228a"
+      ],
+      "confidence": 0.8,
+      "evidence": "chromatograph displaying mesembrine standard",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "in vitro analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "df11709213f8a1550fb29acb14fa228a"
+      ],
+      "confidence": 0.75,
+      "evidence": "chromatograph displaying mesembrine standard",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0e7a1c72f46b4b95a5193620fd26e04d"
+      ],
+      "confidence": 0.7,
+      "evidence": "roots and shoots of the plant",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0e7a1c72f46b4b95a5193620fd26e04d"
+      ],
+      "confidence": 0.9,
+      "evidence": "roots were found",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "shoots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0e7a1c72f46b4b95a5193620fd26e04d"
+      ],
+      "confidence": 0.9,
+      "evidence": "shoots had highest concentration",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "total alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0e7a1c72f46b4b95a5193620fd26e04d"
+      ],
+      "confidence": 0.95,
+      "evidence": "total alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c9c47bb56032e15535097bcd5f81b7ef"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "root",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c9c47bb56032e15535097bcd5f81b7ef"
+      ],
+      "confidence": 0.9,
+      "evidence": "root of S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c9c47bb56032e15535097bcd5f81b7ef"
+      ],
+      "confidence": 0.85,
+      "evidence": "total alkaloid concentrations",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "delta 7 mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c9c47bb56032e15535097bcd5f81b7ef"
+      ],
+      "confidence": 0.9,
+      "evidence": "delta 7 mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "83d55b756b8514dd0296d152e77c403b"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "83d55b756b8514dd0296d152e77c403b"
+      ],
+      "confidence": 0.9,
+      "evidence": "Roots (mg/mL)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "shoots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "83d55b756b8514dd0296d152e77c403b"
+      ],
+      "confidence": 0.9,
+      "evidence": "Shoots (mg/mL)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "83d55b756b8514dd0296d152e77c403b"
+      ],
+      "confidence": 0.85,
+      "evidence": "Total alkaloid concentration",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "hydroponic study on S. tortuosum",
+      "attributes": {
+        "design": "experimental study"
+      },
+      "source_chunk_ids": [
+        "83d55b756b8514dd0296d152e77c403b"
+      ],
+      "confidence": 0.8,
+      "evidence": "hydroponics",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "83d55b756b8514dd0296d152e77c403b"
+      ],
+      "confidence": 0.75,
+      "evidence": "hydroponics",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "eaef4ee2d62790c0917a3dafd49ab1b7"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum root vs shoot",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "root",
+      "attributes": {},
+      "source_chunk_ids": [
+        "eaef4ee2d62790c0917a3dafd49ab1b7"
+      ],
+      "confidence": 0.85,
+      "evidence": "S. tortuosum root",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "shoot",
+      "attributes": {},
+      "source_chunk_ids": [
+        "eaef4ee2d62790c0917a3dafd49ab1b7"
+      ],
+      "confidence": 0.85,
+      "evidence": "shoot total alkaloid concentration",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "eaef4ee2d62790c0917a3dafd49ab1b7"
+      ],
+      "confidence": 0.8,
+      "evidence": "total alkaloid concentration",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "632f80b17d6f108b0ea294f68d9a1d2d"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "632f80b17d6f108b0ea294f68d9a1d2d"
+      ],
+      "confidence": 0.9,
+      "evidence": "roots show higher concentrations",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "shoots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "632f80b17d6f108b0ea294f68d9a1d2d"
+      ],
+      "confidence": 0.9,
+      "evidence": "shoots across all treatments",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "Delta 7 mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "632f80b17d6f108b0ea294f68d9a1d2d"
+      ],
+      "confidence": 0.95,
+      "evidence": "Delta 7 mesembrenone area %",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "9001ccd170f90d9126097ee0bc78daf3"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum root vs shoot",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "root",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9001ccd170f90d9126097ee0bc78daf3"
+      ],
+      "confidence": 0.85,
+      "evidence": "S. tortuosum root",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "shoot",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9001ccd170f90d9126097ee0bc78daf3"
+      ],
+      "confidence": 0.85,
+      "evidence": "S. tortuosum shoot",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "delta 7 mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9001ccd170f90d9126097ee0bc78daf3"
+      ],
+      "confidence": 0.9,
+      "evidence": "delta 7 mesembrenone concentration",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a14590d708d903f937dae1704d5e4a52"
+      ],
+      "confidence": 0.7,
+      "evidence": "soilless media SV yielded the highest concentration",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a14590d708d903f937dae1704d5e4a52"
+      ],
+      "confidence": 0.9,
+      "evidence": "roots had an overall higher concentration",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "shoots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a14590d708d903f937dae1704d5e4a52"
+      ],
+      "confidence": 0.9,
+      "evidence": "shoots had an overall lower concentration",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "delta 7 mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a14590d708d903f937dae1704d5e4a52"
+      ],
+      "confidence": 0.95,
+      "evidence": "delta 7 mesembrenone area (37.23%)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "7d06809a7b5759ad42c63505deb70299"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7d06809a7b5759ad42c63505deb70299"
+      ],
+      "confidence": 0.9,
+      "evidence": "roots show higher concentrations",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "shoots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7d06809a7b5759ad42c63505deb70299"
+      ],
+      "confidence": 0.9,
+      "evidence": "shoots across all treatments",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7d06809a7b5759ad42c63505deb70299"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrenone area %",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "835d2f0bb97b9a28ca9828f990eb96e8"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum root vs shoot",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "root",
+      "attributes": {},
+      "source_chunk_ids": [
+        "835d2f0bb97b9a28ca9828f990eb96e8"
+      ],
+      "confidence": 0.85,
+      "evidence": "S. tortuosum root",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "shoot",
+      "attributes": {},
+      "source_chunk_ids": [
+        "835d2f0bb97b9a28ca9828f990eb96e8"
+      ],
+      "confidence": 0.85,
+      "evidence": "shoot mesembrenone concentration",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "835d2f0bb97b9a28ca9828f990eb96e8"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrenone concentration",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b1af5ec2df242065675b4c43d5fb048a"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mesembrenone area %",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b1af5ec2df242065675b4c43d5fb048a"
+      ],
+      "confidence": 0.9,
+      "evidence": "Roots (%)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "shoots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b1af5ec2df242065675b4c43d5fb048a"
+      ],
+      "confidence": 0.9,
+      "evidence": "Shoots (%)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Figure 5 study",
+      "attributes": {
+        "design": "experimental study"
+      },
+      "source_chunk_ids": [
+        "b1af5ec2df242065675b4c43d5fb048a"
+      ],
+      "confidence": 0.8,
+      "evidence": "Figure 5: Bar chart comparing mesembrenone area %",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "b1af5ec2df242065675b4c43d5fb048a"
+      ],
+      "confidence": 0.7,
+      "evidence": "soilless media and five fertigation regimes",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "36b39bb9a1560531e21ef5396ee10876"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "root",
+      "attributes": {},
+      "source_chunk_ids": [
+        "36b39bb9a1560531e21ef5396ee10876"
+      ],
+      "confidence": 0.85,
+      "evidence": "root vs shoot",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "shoot",
+      "attributes": {},
+      "source_chunk_ids": [
+        "36b39bb9a1560531e21ef5396ee10876"
+      ],
+      "confidence": 0.85,
+      "evidence": "root vs shoot",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "36b39bb9a1560531e21ef5396ee10876"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone concentration",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "0a17a2e516caa8119c4b6ea10181e4d0"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "root",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0a17a2e516caa8119c4b6ea10181e4d0"
+      ],
+      "confidence": 0.85,
+      "evidence": "root of S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0a17a2e516caa8119c4b6ea10181e4d0"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone area %",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5ea20b4147211384cb5566248b3f0ad7"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "shoot",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5ea20b4147211384cb5566248b3f0ad7"
+      ],
+      "confidence": 0.85,
+      "evidence": "shoot of S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5ea20b4147211384cb5566248b3f0ad7"
+      ],
+      "confidence": 0.85,
+      "evidence": "roots had an overall higher concentration",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5ea20b4147211384cb5566248b3f0ad7"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrenone area %",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "RawMaterial",
+      "name": "SSFR3 root extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0c3cf2577999ec43b5edf9460f1df7ff"
+      ],
+      "confidence": 0.9,
+      "evidence": "SSFR3 root extract",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "delta 7 Mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0c3cf2577999ec43b5edf9460f1df7ff"
+      ],
+      "confidence": 0.85,
+      "evidence": "delta 7 Mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "Mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0c3cf2577999ec43b5edf9460f1df7ff"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "Mesembline",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0c3cf2577999ec43b5edf9460f1df7ff"
+      ],
+      "confidence": 0.85,
+      "evidence": "Mesembline",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "RawMaterial",
+      "name": "SPFR4 shoot extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c71384af31c991aba372ac5cd25c1d87"
+      ],
+      "confidence": 0.9,
+      "evidence": "SPFR4 shoot extract",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c71384af31c991aba372ac5cd25c1d87"
+      ],
+      "confidence": 0.95,
+      "evidence": "labeled 'Mesembrenone'",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c71384af31c991aba372ac5cd25c1d87"
+      ],
+      "confidence": 0.95,
+      "evidence": "labeled 'Mesembrine'",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "966969c161fb181fc982e55b64876963"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "root",
+      "attributes": {},
+      "source_chunk_ids": [
+        "966969c161fb181fc982e55b64876963"
+      ],
+      "confidence": 0.85,
+      "evidence": "root of S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "966969c161fb181fc982e55b64876963"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine area %",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "soilless media and fertigation regime study",
+      "attributes": {
+        "design": "experimental study"
+      },
+      "source_chunk_ids": [
+        "966969c161fb181fc982e55b64876963"
+      ],
+      "confidence": 0.8,
+      "evidence": "effect of soilless media and fertigation regime",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "966969c161fb181fc982e55b64876963"
+      ],
+      "confidence": 0.7,
+      "evidence": "statistically significant at p \u2264 0.001",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "44cc34e48fdcf43035731c8d1b29a25f"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "shoot",
+      "attributes": {},
+      "source_chunk_ids": [
+        "44cc34e48fdcf43035731c8d1b29a25f"
+      ],
+      "confidence": 0.9,
+      "evidence": "shoot of S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "44cc34e48fdcf43035731c8d1b29a25f"
+      ],
+      "confidence": 0.9,
+      "evidence": "roots had an overall higher concentration",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "44cc34e48fdcf43035731c8d1b29a25f"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine area %",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "soilless media and fertigation regime study",
+      "attributes": {
+        "design": "experimental study"
+      },
+      "source_chunk_ids": [
+        "44cc34e48fdcf43035731c8d1b29a25f"
+      ],
+      "confidence": 0.8,
+      "evidence": "effect of soilless media and fertigation regime",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "44cc34e48fdcf43035731c8d1b29a25f"
+      ],
+      "confidence": 0.7,
+      "evidence": "statistically significant at p \u2264 0.001",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "9da442d0ff131c5e7d3cfa45f240ca93"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9da442d0ff131c5e7d3cfa45f240ca93"
+      ],
+      "confidence": 0.9,
+      "evidence": "Roots (mg/mL)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "shoots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9da442d0ff131c5e7d3cfa45f240ca93"
+      ],
+      "confidence": 0.9,
+      "evidence": "Shoots (mg/mL)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "root extracts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9da442d0ff131c5e7d3cfa45f240ca93"
+      ],
+      "confidence": 0.8,
+      "evidence": "root extracts",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "shoot extracts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9da442d0ff131c5e7d3cfa45f240ca93"
+      ],
+      "confidence": 0.8,
+      "evidence": "shoot extracts",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9da442d0ff131c5e7d3cfa45f240ca93"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "d73e676057adac7b3df1d38e6e656064"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "root",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d73e676057adac7b3df1d38e6e656064"
+      ],
+      "confidence": 0.85,
+      "evidence": "root extracts",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "shoot",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d73e676057adac7b3df1d38e6e656064"
+      ],
+      "confidence": 0.85,
+      "evidence": "shoot extracts",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "root extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d73e676057adac7b3df1d38e6e656064"
+      ],
+      "confidence": 0.8,
+      "evidence": "root extracts",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "shoot extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d73e676057adac7b3df1d38e6e656064"
+      ],
+      "confidence": 0.8,
+      "evidence": "shoot extracts",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d73e676057adac7b3df1d38e6e656064"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine concentration",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "79f3dc6b3dc004fdb816e28ed6abec4f"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "root",
+      "attributes": {},
+      "source_chunk_ids": [
+        "79f3dc6b3dc004fdb816e28ed6abec4f"
+      ],
+      "confidence": 0.9,
+      "evidence": "root of S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "79f3dc6b3dc004fdb816e28ed6abec4f"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine concentrations",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "soilless media and fertigation regime study",
+      "attributes": {
+        "design": "experimental study"
+      },
+      "source_chunk_ids": [
+        "79f3dc6b3dc004fdb816e28ed6abec4f"
+      ],
+      "confidence": 0.8,
+      "evidence": "effect of soilless media and fertigation regime",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "79f3dc6b3dc004fdb816e28ed6abec4f"
+      ],
+      "confidence": 0.7,
+      "evidence": "statistically significant at p \u2264 0.001",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5bf70fa0d6df67e7b7530fa3e54adb25"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "shoot",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bf70fa0d6df67e7b7530fa3e54adb25"
+      ],
+      "confidence": 0.85,
+      "evidence": "shoot of S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bf70fa0d6df67e7b7530fa3e54adb25"
+      ],
+      "confidence": 0.85,
+      "evidence": "roots had an overall lower mesembrine concentration",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5bf70fa0d6df67e7b7530fa3e54adb25"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine concentration",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "soilless media and fertigation regime study",
+      "attributes": {
+        "design": "experimental study"
+      },
+      "source_chunk_ids": [
+        "5bf70fa0d6df67e7b7530fa3e54adb25"
+      ],
+      "confidence": 0.8,
+      "evidence": "effect of soilless media and fertigation regime",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "5bf70fa0d6df67e7b7530fa3e54adb25"
+      ],
+      "confidence": 0.7,
+      "evidence": "statistically significant at p \u2264 0.001",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "e1d1bded5f255c83ed369914261972bc"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e1d1bded5f255c83ed369914261972bc"
+      ],
+      "confidence": 0.9,
+      "evidence": "root extracts",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "shoots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e1d1bded5f255c83ed369914261972bc"
+      ],
+      "confidence": 0.9,
+      "evidence": "shoots",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "delta 7 mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e1d1bded5f255c83ed369914261972bc"
+      ],
+      "confidence": 0.85,
+      "evidence": "delta 7 mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e1d1bded5f255c83ed369914261972bc"
+      ],
+      "confidence": 0.85,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e1d1bded5f255c83ed369914261972bc"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e1d1bded5f255c83ed369914261972bc"
+      ],
+      "confidence": 0.95,
+      "evidence": "alkaloid concentrations",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "d916e1c9e8a2c68a1411d278e358bffb"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d916e1c9e8a2c68a1411d278e358bffb"
+      ],
+      "confidence": 0.9,
+      "evidence": "containing various alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "root",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d916e1c9e8a2c68a1411d278e358bffb"
+      ],
+      "confidence": 0.85,
+      "evidence": "S. tortuosum root",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "PlantPart",
+      "name": "shoots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d916e1c9e8a2c68a1411d278e358bffb"
+      ],
+      "confidence": 0.85,
+      "evidence": "S. tortuosum shoots",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "root extracts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d916e1c9e8a2c68a1411d278e358bffb"
+      ],
+      "confidence": 0.8,
+      "evidence": "root extracts",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "RawMaterial",
+      "name": "shoot extracts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d916e1c9e8a2c68a1411d278e358bffb"
+      ],
+      "confidence": 0.8,
+      "evidence": "shoot extracts",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "delta 7 mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d916e1c9e8a2c68a1411d278e358bffb"
+      ],
+      "confidence": 0.9,
+      "evidence": "delta 7 mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d916e1c9e8a2c68a1411d278e358bffb"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d916e1c9e8a2c68a1411d278e358bffb"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "study on alkaloid concentration",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d916e1c9e8a2c68a1411d278e358bffb"
+      ],
+      "confidence": 0.8,
+      "evidence": "This study has shown",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "07e83e7b3064021fa797459963f9ddf7"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "shoots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "07e83e7b3064021fa797459963f9ddf7"
+      ],
+      "confidence": 0.9,
+      "evidence": "shoots had an overall higher concentration",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "roots",
+      "attributes": {},
+      "source_chunk_ids": [
+        "07e83e7b3064021fa797459963f9ddf7"
+      ],
+      "confidence": 0.9,
+      "evidence": "roots of S. tortuosum should be harvested",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "07e83e7b3064021fa797459963f9ddf7"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "delta 7 mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "07e83e7b3064021fa797459963f9ddf7"
+      ],
+      "confidence": 0.85,
+      "evidence": "delta 7 mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "mesembrenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "07e83e7b3064021fa797459963f9ddf7"
+      ],
+      "confidence": 0.85,
+      "evidence": "mesembrenone",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "CompoundClass",
+      "name": "alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "07e83e7b3064021fa797459963f9ddf7"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine-type alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Preparation",
+      "name": "fermentation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "07e83e7b3064021fa797459963f9ddf7"
+      ],
+      "confidence": 0.8,
+      "evidence": "fermentation of S. tortuosum plant material",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "this study",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2341dabe3fdeb892575ad7950eba7d05"
+      ],
+      "confidence": 0.7,
+      "evidence": "this study",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "2341dabe3fdeb892575ad7950eba7d05"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "mother plant",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2341dabe3fdeb892575ad7950eba7d05"
+      ],
+      "confidence": 0.8,
+      "evidence": "mother plant",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2341dabe3fdeb892575ad7950eba7d05"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine standard",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "mesembrine standard",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2341dabe3fdeb892575ad7950eba7d05"
+      ],
+      "confidence": 0.85,
+      "evidence": "mesembrine standard",
+      "verified": true
+    }
+  ],
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "concentration",
+          "notes": "variabilities in response to growing conditions"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "alkaloid concentration of Sceletium tortuosum",
+      "source_chunk_ids": [
+        "ca1421c5395bf4438aa7fe045e7b9de3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Alkaloids Delta 7 mesembrenone",
+      "source_chunk_ids": [
+        "efc89e40927825382ae91506f45cbf6c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Alkaloids Mesembrenone",
+      "source_chunk_ids": [
+        "efc89e40927825382ae91506f45cbf6c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Alkaloids Mesembrine",
+      "source_chunk_ids": [
+        "efc89e40927825382ae91506f45cbf6c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "hydroponic cultivation study",
+      "source_chunk_ids": [
+        "ba47e1195ce43e0e94d84269e3447db0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "investigate the variations in alkaloid concentrations of Sceletium tortuosum",
+      "source_chunk_ids": [
+        "ba47e1195ce43e0e94d84269e3447db0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "roots contained higher amounts",
+      "source_chunk_ids": [
+        "ba47e1195ce43e0e94d84269e3447db0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_PART",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "shoots contained higher amounts",
+      "source_chunk_ids": [
+        "ba47e1195ce43e0e94d84269e3447db0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "concentration",
+          "notes": "higher amounts in roots"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "roots contained higher amounts of delta 7 mesembrenone",
+      "source_chunk_ids": [
+        "ba47e1195ce43e0e94d84269e3447db0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "concentration",
+          "notes": "higher amounts in roots"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "roots contained higher amounts of mesembrenone",
+      "source_chunk_ids": [
+        "ba47e1195ce43e0e94d84269e3447db0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "concentration",
+          "notes": "higher amounts in shoots"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "shoots contained higher amounts of mesembrine",
+      "source_chunk_ids": [
+        "ba47e1195ce43e0e94d84269e3447db0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "alkaloid concentrations",
+      "source_chunk_ids": [
+        "ba47e1195ce43e0e94d84269e3447db0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "alkaloid concentrations",
+      "source_chunk_ids": [
+        "ba47e1195ce43e0e94d84269e3447db0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "alkaloid concentrations",
+      "source_chunk_ids": [
+        "ba47e1195ce43e0e94d84269e3447db0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "alkaloid. Examples... caffeine",
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "alkaloid. Examples... ephedrine",
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "alkaloid. Examples... scopolamine",
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "alkaloid. Examples... capsaicin",
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "alkaloid. Examples... morphine",
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "alkaloid. Examples... codeine",
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "alkaloid. Examples... papaverine",
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "alkaloid. Examples... quinine",
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "alkaloid. Examples... colchicines",
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "alkaloid. Examples... yohimbine",
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E1",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "alkaloid. Examples... pilocarpine",
+      "source_chunk_ids": [
+        "993665b169d1e6c8035fdb0fdc3214a7"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Mesembrine serves as a monoamine releasing agent",
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Mesembrine serves as a selective serotonin reuptake inhibitor",
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "pharmacological"
+      },
+      "confidence": 0.75,
+      "evidence": "treatment of anxiety",
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "pharmacological"
+      },
+      "confidence": 0.75,
+      "evidence": "treatment of anxiety and depression",
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "delta 7 mesembrenone is a potent antioxidant",
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "ACTS_ON",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.8,
+      "evidence": "inhibitor of tyrosinase activity",
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "ACTS_ON",
+      "source_entity_id": "E9",
+      "target_entity_id": "E8",
+      "attributes": {
+        "action": "inhibits",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "kojic acid had an almost identical effect on this enzyme",
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "CONTAINS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "alkaloids delta 7 mesembrenone, mesembrenone, and mesembrine",
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "CONTAINS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "alkaloids delta 7 mesembrenone, mesembrenone, and mesembrine",
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "CONTAINS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "alkaloids delta 7 mesembrenone, mesembrenone, and mesembrine",
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "CONTAINS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "alkaloid composition in different S. tortuosum plant extracts",
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E13",
+      "target_entity_id": "E14",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "alkaloid composition in different extracts",
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R13",
+      "type": "STUDIES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "this study aimed to determine an optimal protocol for cultivating S. tortuosum",
+      "source_chunk_ids": [
+        "7516e3f568a1dcc6fea783201ce06930"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "stem cuttings propagated from the mother plants",
+      "source_chunk_ids": [
+        "a8580b3ec1fa679c1dfb1e2a31c838ad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "rooted cuttings from stem cuttings",
+      "source_chunk_ids": [
+        "a8580b3ec1fa679c1dfb1e2a31c838ad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "treated with Dynaroot\u2122 No 1",
+      "source_chunk_ids": [
+        "bf2aa5803c8d589bc23fa1c403853fb1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "measurement": {
+          "value": 0.1,
+          "unit": "%",
+          "measurement_type": "content",
+          "notes": "Active ingredient"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Active ingredient: 0.1% I.B.A.",
+      "source_chunk_ids": [
+        "bf2aa5803c8d589bc23fa1c403853fb1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "50/50 mixture of silica sand",
+      "source_chunk_ids": [
+        "bf2aa5803c8d589bc23fa1c403853fb1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "50/50 mixture of ... coco-peat",
+      "source_chunk_ids": [
+        "bf2aa5803c8d589bc23fa1c403853fb1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "propagation experiment",
+      "source_chunk_ids": [
+        "bf2aa5803c8d589bc23fa1c403853fb1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Plants were dried... then milled to powder",
+      "source_chunk_ids": [
+        "ef832f7eb601d88c675e89e3d56b45c6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "milled to powder using a coffee grinder",
+      "source_chunk_ids": [
+        "ef832f7eb601d88c675e89e3d56b45c6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "total content",
+          "notes": "measured via Bromo cresol green method"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "total alkaloid content for roots",
+      "source_chunk_ids": [
+        "26cbab71669c3b33aeec89827faf4c51"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "total content",
+          "notes": "measured via Bromo cresol green method"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "total alkaloid content for shoots",
+      "source_chunk_ids": [
+        "26cbab71669c3b33aeec89827faf4c51"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Extraction was done by placing plant material in methanol",
+      "source_chunk_ids": [
+        "26cbab71669c3b33aeec89827faf4c51"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "total content",
+          "notes": "measured via Bromo cresol green method"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "alkaloids are present in the extract",
+      "source_chunk_ids": [
+        "26cbab71669c3b33aeec89827faf4c51"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "mesembrine-type alkaloids",
+      "source_chunk_ids": [
+        "0930af92044036d1758ed241d7e65923"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "S. tortuosum alkaloid standards",
+      "source_chunk_ids": [
+        "0930af92044036d1758ed241d7e65923"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "S. tortuosum alkaloid standards",
+      "source_chunk_ids": [
+        "0930af92044036d1758ed241d7e65923"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "S. tortuosum alkaloid standards",
+      "source_chunk_ids": [
+        "0930af92044036d1758ed241d7e65923"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "extractions were filtered",
+      "source_chunk_ids": [
+        "0930af92044036d1758ed241d7e65923"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "extractions were filtered",
+      "source_chunk_ids": [
+        "0930af92044036d1758ed241d7e65923"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "extractions were filtered",
+      "source_chunk_ids": [
+        "0930af92044036d1758ed241d7e65923"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "molecules identical to mesembrine standard",
+      "source_chunk_ids": [
+        "12c5306f9bd3e03ed6896346edb07245"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "HPLC method with UV detection",
+      "source_chunk_ids": [
+        "12c5306f9bd3e03ed6896346edb07245"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "extractions were filtered into HPLC vials",
+      "source_chunk_ids": [
+        "12c5306f9bd3e03ed6896346edb07245"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "root of S. tortuosum",
+      "source_chunk_ids": [
+        "a7f09528672e3e1ead077dc4254f5e42"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "measurement": {
+          "value": 1.68,
+          "unit": "mg/mL",
+          "measurement_type": "concentration",
+          "notes": "highest in SP medium under FR4"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "highest concentration of alkaloid (1.68 mg/mL)",
+      "source_chunk_ids": [
+        "a7f09528672e3e1ead077dc4254f5e42"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "measurement": {
+          "value": 0.71,
+          "unit": "mg/mL",
+          "measurement_type": "concentration",
+          "notes": "least in SV medium under FR3"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "least value (0.71 mg/mL)",
+      "source_chunk_ids": [
+        "a7f09528672e3e1ead077dc4254f5e42"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "statistically significant",
+      "source_chunk_ids": [
+        "a7f09528672e3e1ead077dc4254f5e42"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "effect on S. tortuosum",
+      "source_chunk_ids": [
+        "a7f09528672e3e1ead077dc4254f5e42"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "shoot of S. tortuosum",
+      "source_chunk_ids": [
+        "c33673d313aed84abd3d1edced3231bf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "concentration",
+          "notes": "total alkaloid concentrations, highest under specific conditions"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "total alkaloid concentrations in the shoot",
+      "source_chunk_ids": [
+        "c33673d313aed84abd3d1edced3231bf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "statistically significant at p \u2264 0.001",
+      "source_chunk_ids": [
+        "c33673d313aed84abd3d1edced3231bf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "effect on S. tortuosum",
+      "source_chunk_ids": [
+        "c33673d313aed84abd3d1edced3231bf"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "mesembrine standard",
+      "source_chunk_ids": [
+        "df11709213f8a1550fb29acb14fa228a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "chromatograph displaying mesembrine standard",
+      "source_chunk_ids": [
+        "df11709213f8a1550fb29acb14fa228a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "chromatograph displaying mesembrine standard",
+      "source_chunk_ids": [
+        "df11709213f8a1550fb29acb14fa228a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "roots of the plant",
+      "source_chunk_ids": [
+        "0e7a1c72f46b4b95a5193620fd26e04d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "shoots of the plant",
+      "source_chunk_ids": [
+        "0e7a1c72f46b4b95a5193620fd26e04d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 1.07,
+          "unit": "mg/mL",
+          "measurement_type": "concentration",
+          "notes": "lowest in SV medium under FR4"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "roots had lowest concentration of total alkaloids",
+      "source_chunk_ids": [
+        "0e7a1c72f46b4b95a5193620fd26e04d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": "mg/mL",
+          "measurement_type": "concentration",
+          "notes": "highest overall in shoots"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "highest concentration of total alkaloids in shoots",
+      "source_chunk_ids": [
+        "0e7a1c72f46b4b95a5193620fd26e04d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "root of S. tortuosum",
+      "source_chunk_ids": [
+        "c9c47bb56032e15535097bcd5f81b7ef"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "concentration",
+          "notes": "total alkaloid concentrations statistically significant at p \u2264 0.001"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "total alkaloid concentrations in the root",
+      "source_chunk_ids": [
+        "c9c47bb56032e15535097bcd5f81b7ef"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 52.37,
+          "unit": "%",
+          "measurement_type": "area",
+          "notes": "highest concentration in SV medium"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "52.37% delta 7 mesembrenone in root",
+      "source_chunk_ids": [
+        "c9c47bb56032e15535097bcd5f81b7ef"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "delta 7 mesembrenone is an alkaloid",
+      "source_chunk_ids": [
+        "c9c47bb56032e15535097bcd5f81b7ef"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "S. tortuosum root",
+      "source_chunk_ids": [
+        "83d55b756b8514dd0296d152e77c403b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "S. tortuosum shoot",
+      "source_chunk_ids": [
+        "83d55b756b8514dd0296d152e77c403b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 1.25,
+          "unit": "mg/mL",
+          "measurement_type": "concentration",
+          "notes": "average from SS FR1"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "Roots (mg/mL) 1.25",
+      "source_chunk_ids": [
+        "83d55b756b8514dd0296d152e77c403b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 1.7,
+          "unit": "mg/mL",
+          "measurement_type": "concentration",
+          "notes": "average from SS FR1"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "Shoots (mg/mL) 1.70",
+      "source_chunk_ids": [
+        "83d55b756b8514dd0296d152e77c403b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "hydroponics",
+      "source_chunk_ids": [
+        "83d55b756b8514dd0296d152e77c403b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "S. tortuosum",
+      "source_chunk_ids": [
+        "83d55b756b8514dd0296d152e77c403b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "S. tortuosum root",
+      "source_chunk_ids": [
+        "eaef4ee2d62790c0917a3dafd49ab1b7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "shoot total alkaloid concentration",
+      "source_chunk_ids": [
+        "eaef4ee2d62790c0917a3dafd49ab1b7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "concentration",
+          "notes": "total alkaloid concentration measured in root vs shoot"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "total alkaloid concentration",
+      "source_chunk_ids": [
+        "eaef4ee2d62790c0917a3dafd49ab1b7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "roots and shoots for S. tortuosum",
+      "source_chunk_ids": [
+        "632f80b17d6f108b0ea294f68d9a1d2d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "roots and shoots for S. tortuosum",
+      "source_chunk_ids": [
+        "632f80b17d6f108b0ea294f68d9a1d2d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 45.2,
+          "unit": "%",
+          "measurement_type": "area percentage",
+          "notes": "in roots under SS FR1 condition"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Roots (%) 45.2",
+      "source_chunk_ids": [
+        "632f80b17d6f108b0ea294f68d9a1d2d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 16.5,
+          "unit": "%",
+          "measurement_type": "area percentage",
+          "notes": "in shoots under SS FR1 condition"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Shoots (%) 16.5",
+      "source_chunk_ids": [
+        "632f80b17d6f108b0ea294f68d9a1d2d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "S. tortuosum root",
+      "source_chunk_ids": [
+        "9001ccd170f90d9126097ee0bc78daf3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "S. tortuosum shoot",
+      "source_chunk_ids": [
+        "9001ccd170f90d9126097ee0bc78daf3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": "area %",
+          "measurement_type": "concentration",
+          "notes": "in terms of area %"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "root vs shoot delta 7 mesembrenone concentration",
+      "source_chunk_ids": [
+        "9001ccd170f90d9126097ee0bc78daf3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": "area %",
+          "measurement_type": "concentration",
+          "notes": "in terms of area %"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "root vs shoot delta 7 mesembrenone concentration",
+      "source_chunk_ids": [
+        "9001ccd170f90d9126097ee0bc78daf3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "roots had an overall higher concentration",
+      "source_chunk_ids": [
+        "a14590d708d903f937dae1704d5e4a52"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "shoots had an overall lower concentration",
+      "source_chunk_ids": [
+        "a14590d708d903f937dae1704d5e4a52"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": "area %",
+          "measurement_type": "concentration",
+          "notes": "overall higher concentration in roots"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "roots had an overall higher concentration of delta 7 mesembrenone",
+      "source_chunk_ids": [
+        "a14590d708d903f937dae1704d5e4a52"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": "area %",
+          "measurement_type": "concentration",
+          "notes": "overall lower concentration in shoots"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "shoots had an overall lower concentration of delta 7 mesembrenone",
+      "source_chunk_ids": [
+        "a14590d708d903f937dae1704d5e4a52"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "roots for S. tortuosum",
+      "source_chunk_ids": [
+        "7d06809a7b5759ad42c63505deb70299"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "shoots for S. tortuosum",
+      "source_chunk_ids": [
+        "7d06809a7b5759ad42c63505deb70299"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 33.5,
+          "unit": "%",
+          "measurement_type": "area percentage",
+          "notes": "in roots under SS FR1"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Roots (%) 33.5",
+      "source_chunk_ids": [
+        "7d06809a7b5759ad42c63505deb70299"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 12.5,
+          "unit": "%",
+          "measurement_type": "area percentage",
+          "notes": "in shoots under SS FR1"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Shoots (%) 12.5",
+      "source_chunk_ids": [
+        "7d06809a7b5759ad42c63505deb70299"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "S. tortuosum root",
+      "source_chunk_ids": [
+        "835d2f0bb97b9a28ca9828f990eb96e8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "shoot mesembrenone concentration",
+      "source_chunk_ids": [
+        "835d2f0bb97b9a28ca9828f990eb96e8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": "area %",
+          "measurement_type": "concentration",
+          "notes": "in response to soilless media and fertigation regimes"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "root vs shoot mesembrenone concentration",
+      "source_chunk_ids": [
+        "835d2f0bb97b9a28ca9828f990eb96e8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": "area %",
+          "measurement_type": "concentration",
+          "notes": "in response to soilless media and fertigation regimes"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "shoot mesembrenone concentration",
+      "source_chunk_ids": [
+        "835d2f0bb97b9a28ca9828f990eb96e8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": "%",
+          "measurement_type": "area percentage",
+          "notes": "Data varies by media and fertigation regime"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "Mesembrenone area % in roots",
+      "source_chunk_ids": [
+        "b1af5ec2df242065675b4c43d5fb048a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": "%",
+          "measurement_type": "area percentage",
+          "notes": "Data varies by media and fertigation regime"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "Mesembrenone area % in shoots",
+      "source_chunk_ids": [
+        "b1af5ec2df242065675b4c43d5fb048a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Figure 5: Bar chart comparing",
+      "source_chunk_ids": [
+        "b1af5ec2df242065675b4c43d5fb048a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "comparing mesembrenone area %",
+      "source_chunk_ids": [
+        "b1af5ec2df242065675b4c43d5fb048a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "S. tortuosum root",
+      "source_chunk_ids": [
+        "36b39bb9a1560531e21ef5396ee10876"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "S. tortuosum shoot",
+      "source_chunk_ids": [
+        "36b39bb9a1560531e21ef5396ee10876"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": "area %",
+          "measurement_type": "concentration",
+          "notes": "in response to soilless media and fertigation regimes"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "root vs shoot mesembrenone concentration",
+      "source_chunk_ids": [
+        "36b39bb9a1560531e21ef5396ee10876"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": "area %",
+          "measurement_type": "concentration",
+          "notes": "in response to soilless media and fertigation regimes"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "root vs shoot mesembrenone concentration",
+      "source_chunk_ids": [
+        "36b39bb9a1560531e21ef5396ee10876"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "root of S. tortuosum",
+      "source_chunk_ids": [
+        "0a17a2e516caa8119c4b6ea10181e4d0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "measurement": {
+          "value": 17.56,
+          "unit": "%",
+          "measurement_type": "area_percentage",
+          "notes": "least value observed in SP medium under FR2"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "mesembrenone area % in the root",
+      "source_chunk_ids": [
+        "0a17a2e516caa8119c4b6ea10181e4d0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "shoot of S. tortuosum",
+      "source_chunk_ids": [
+        "5ea20b4147211384cb5566248b3f0ad7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "roots had an overall higher concentration",
+      "source_chunk_ids": [
+        "5ea20b4147211384cb5566248b3f0ad7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 2.02,
+          "unit": "area %",
+          "measurement_type": "concentration",
+          "notes": "least value in SC medium under FR3"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "least value (2.02) was recorded",
+      "source_chunk_ids": [
+        "5ea20b4147211384cb5566248b3f0ad7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": "area %",
+          "measurement_type": "concentration",
+          "notes": "overall higher concentration than shoots"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "roots had an overall higher concentration",
+      "source_chunk_ids": [
+        "5ea20b4147211384cb5566248b3f0ad7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Peaks are labeled with... delta 7 Mesembrenone",
+      "source_chunk_ids": [
+        "0c3cf2577999ec43b5edf9460f1df7ff"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Peaks are labeled with... Mesembrenone",
+      "source_chunk_ids": [
+        "0c3cf2577999ec43b5edf9460f1df7ff"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Peaks are labeled with... Mesembline",
+      "source_chunk_ids": [
+        "0c3cf2577999ec43b5edf9460f1df7ff"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "peaks labeled 'Mesembrenone'",
+      "source_chunk_ids": [
+        "c71384af31c991aba372ac5cd25c1d87"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "peak labeled 'Mesembrine'",
+      "source_chunk_ids": [
+        "c71384af31c991aba372ac5cd25c1d87"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "root of S. tortuosum",
+      "source_chunk_ids": [
+        "966969c161fb181fc982e55b64876963"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "measurement": {
+          "value": 51.83,
+          "unit": "%",
+          "measurement_type": "area percentage",
+          "notes": "highest value in SP medium under FR3"
+        }
+      },
+      "confidence": 0.9,
+      "evidence": "mesembrine area of 51.83 % in the root",
+      "source_chunk_ids": [
+        "966969c161fb181fc982e55b64876963"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "statistically significant at p \u2264 0.001",
+      "source_chunk_ids": [
+        "966969c161fb181fc982e55b64876963"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "effect on mesembrine area % in S. tortuosum",
+      "source_chunk_ids": [
+        "966969c161fb181fc982e55b64876963"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "shoot of S. tortuosum",
+      "source_chunk_ids": [
+        "44cc34e48fdcf43035731c8d1b29a25f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "roots had an overall higher concentration",
+      "source_chunk_ids": [
+        "44cc34e48fdcf43035731c8d1b29a25f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 86.52,
+          "unit": "%",
+          "measurement_type": "area percentage",
+          "notes": "highest value in SS medium under FR3"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "highest mesembrine area % (86.52%)",
+      "source_chunk_ids": [
+        "44cc34e48fdcf43035731c8d1b29a25f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 56.65,
+          "unit": "%",
+          "measurement_type": "area percentage",
+          "notes": "least value in SV medium under FR4"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "least value (56.65%)",
+      "source_chunk_ids": [
+        "44cc34e48fdcf43035731c8d1b29a25f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": "%",
+          "measurement_type": "area percentage",
+          "notes": "overall higher concentration in shoots than roots"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "shoots had an overall higher concentration",
+      "source_chunk_ids": [
+        "44cc34e48fdcf43035731c8d1b29a25f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "statistically significant at p \u2264 0.001",
+      "source_chunk_ids": [
+        "44cc34e48fdcf43035731c8d1b29a25f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "effect on mesembrine area % in S. tortuosum",
+      "source_chunk_ids": [
+        "44cc34e48fdcf43035731c8d1b29a25f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "roots of S. tortuosum",
+      "source_chunk_ids": [
+        "9da442d0ff131c5e7d3cfa45f240ca93"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "shoot of S. tortuosum",
+      "source_chunk_ids": [
+        "9da442d0ff131c5e7d3cfa45f240ca93"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "measurement": {
+          "value": 0.5,
+          "unit": "mg/mL",
+          "measurement_type": "concentration",
+          "notes": "highest root concentration across media (e.g., SS FR3, SC FR1)"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Roots (mg/mL) values up to 0.5 mg/mL",
+      "source_chunk_ids": [
+        "9da442d0ff131c5e7d3cfa45f240ca93"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "measurement": {
+          "value": 4.2,
+          "unit": "mg/mL",
+          "measurement_type": "concentration",
+          "notes": "highest shoot concentration (SC FR3)"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Shoots (mg/mL) values up to 4.2 mg/mL",
+      "source_chunk_ids": [
+        "9da442d0ff131c5e7d3cfa45f240ca93"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "measurement": {
+          "value": 0.5,
+          "unit": "mg/mL",
+          "measurement_type": "concentration",
+          "notes": "based on root extract data"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "root extracts of S. tortuosum",
+      "source_chunk_ids": [
+        "9da442d0ff131c5e7d3cfa45f240ca93"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "measurement": {
+          "value": 4.2,
+          "unit": "mg/mL",
+          "measurement_type": "concentration",
+          "notes": "based on shoot extract data"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "shoot extracts of S. tortuosum",
+      "source_chunk_ids": [
+        "9da442d0ff131c5e7d3cfa45f240ca93"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "root extracts of S. tortuosum",
+      "source_chunk_ids": [
+        "d73e676057adac7b3df1d38e6e656064"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "shoot extracts of S. tortuosum",
+      "source_chunk_ids": [
+        "d73e676057adac7b3df1d38e6e656064"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "concentration",
+          "notes": "total mesembrine concentration in root extract"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "total mesembrine concentration in the root extracts",
+      "source_chunk_ids": [
+        "d73e676057adac7b3df1d38e6e656064"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "concentration",
+          "notes": "total mesembrine concentration in shoot extract"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "total mesembrine concentration in the shoot extracts",
+      "source_chunk_ids": [
+        "d73e676057adac7b3df1d38e6e656064"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "root of S. tortuosum",
+      "source_chunk_ids": [
+        "79f3dc6b3dc004fdb816e28ed6abec4f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "measurement": {
+          "value": 1.14,
+          "unit": "concentration unit",
+          "measurement_type": "concentration",
+          "notes": "highest in SC medium under FR2"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "highest mesembrine concentration of (1.14)",
+      "source_chunk_ids": [
+        "79f3dc6b3dc004fdb816e28ed6abec4f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "statistically significant at p \u2264 0.001",
+      "source_chunk_ids": [
+        "79f3dc6b3dc004fdb816e28ed6abec4f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "effect on mesembrine concentrations in S. tortuosum",
+      "source_chunk_ids": [
+        "79f3dc6b3dc004fdb816e28ed6abec4f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "concentration measured"
+      },
+      "confidence": 0.9,
+      "evidence": "mesembrine concentrations in the root",
+      "source_chunk_ids": [
+        "79f3dc6b3dc004fdb816e28ed6abec4f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "shoot of S. tortuosum",
+      "source_chunk_ids": [
+        "5bf70fa0d6df67e7b7530fa3e54adb25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "roots had an overall lower mesembrine concentration",
+      "source_chunk_ids": [
+        "5bf70fa0d6df67e7b7530fa3e54adb25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 4.19,
+          "unit": "mg/g",
+          "measurement_type": "concentration",
+          "notes": "highest in SC medium under FR3"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "highest concentration of mesembrine (4.19)",
+      "source_chunk_ids": [
+        "5bf70fa0d6df67e7b7530fa3e54adb25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": 0.59,
+          "unit": "mg/g",
+          "measurement_type": "concentration",
+          "notes": "least in SV medium under FR4"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "least value (0.59) was recorded",
+      "source_chunk_ids": [
+        "5bf70fa0d6df67e7b7530fa3e54adb25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": "mg/g",
+          "measurement_type": "concentration",
+          "notes": "overall lower than shoots"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "roots had an overall lower mesembrine concentration",
+      "source_chunk_ids": [
+        "5bf70fa0d6df67e7b7530fa3e54adb25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "statistically significant at p \u2264 0.001",
+      "source_chunk_ids": [
+        "5bf70fa0d6df67e7b7530fa3e54adb25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "effect on mesembrine concentration in S. tortuosum",
+      "source_chunk_ids": [
+        "5bf70fa0d6df67e7b7530fa3e54adb25"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "root extracts of plants samples",
+      "source_chunk_ids": [
+        "e1d1bded5f255c83ed369914261972bc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "shoots",
+      "source_chunk_ids": [
+        "e1d1bded5f255c83ed369914261972bc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "concentration",
+          "notes": "more than in shoots"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "root extracts had more delta 7 mesembrenone",
+      "source_chunk_ids": [
+        "e1d1bded5f255c83ed369914261972bc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "concentration",
+          "notes": "more than in shoots"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "root extracts had more mesembrenone",
+      "source_chunk_ids": [
+        "e1d1bded5f255c83ed369914261972bc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "concentration",
+          "notes": "more than in roots"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "shoots had more mesembrine",
+      "source_chunk_ids": [
+        "e1d1bded5f255c83ed369914261972bc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "total content",
+          "notes": "higher than roots"
+        }
+      },
+      "confidence": 0.9,
+      "evidence": "shoots had a higher content of total alkaloids",
+      "source_chunk_ids": [
+        "e1d1bded5f255c83ed369914261972bc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "delta 7 mesembrenone is an alkaloid",
+      "source_chunk_ids": [
+        "e1d1bded5f255c83ed369914261972bc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "mesembrenone is an alkaloid",
+      "source_chunk_ids": [
+        "e1d1bded5f255c83ed369914261972bc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "mesembrine is an alkaloid",
+      "source_chunk_ids": [
+        "e1d1bded5f255c83ed369914261972bc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "containing various alkaloids",
+      "source_chunk_ids": [
+        "d916e1c9e8a2c68a1411d278e358bffb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "S. tortuosum root",
+      "source_chunk_ids": [
+        "d916e1c9e8a2c68a1411d278e358bffb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "S. tortuosum shoots",
+      "source_chunk_ids": [
+        "d916e1c9e8a2c68a1411d278e358bffb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "concentration",
+          "notes": "higher amount in root extracts"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "root extracts had an overall higher amount",
+      "source_chunk_ids": [
+        "d916e1c9e8a2c68a1411d278e358bffb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E2",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "concentration",
+          "notes": "higher concentration in shoot extracts"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "Shoot extracts contained a higher concentration",
+      "source_chunk_ids": [
+        "d916e1c9e8a2c68a1411d278e358bffb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": "area %",
+          "measurement_type": "content",
+          "notes": "higher amount in root extracts"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "root extracts had an overall higher amount of delta 7 mesembrenone",
+      "source_chunk_ids": [
+        "d916e1c9e8a2c68a1411d278e358bffb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": "area %",
+          "measurement_type": "content",
+          "notes": "higher amount in root extracts"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "root extracts had an overall higher amount of mesembrenone",
+      "source_chunk_ids": [
+        "d916e1c9e8a2c68a1411d278e358bffb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "CONTAINS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E9",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "content",
+          "notes": "higher amounts in shoots"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "shoots had higher amounts of mesembrine",
+      "source_chunk_ids": [
+        "d916e1c9e8a2c68a1411d278e358bffb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "delta 7 mesembrenone is an alkaloid",
+      "source_chunk_ids": [
+        "d916e1c9e8a2c68a1411d278e358bffb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "mesembrenone is an alkaloid",
+      "source_chunk_ids": [
+        "d916e1c9e8a2c68a1411d278e358bffb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "mesembrine is an alkaloid",
+      "source_chunk_ids": [
+        "d916e1c9e8a2c68a1411d278e358bffb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "STUDIES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "study on alkaloid concentration in S. tortuosum",
+      "source_chunk_ids": [
+        "d916e1c9e8a2c68a1411d278e358bffb"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "shoots of S. tortuosum",
+      "source_chunk_ids": [
+        "07e83e7b3064021fa797459963f9ddf7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "roots of S. tortuosum",
+      "source_chunk_ids": [
+        "07e83e7b3064021fa797459963f9ddf7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "concentration",
+          "notes": "higher concentration in shoots than roots"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "shoots had higher concentration of mesembrine",
+      "source_chunk_ids": [
+        "07e83e7b3064021fa797459963f9ddf7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "concentration",
+          "notes": "roots should be harvested for delta 7 mesembrenone"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "roots should be harvested for delta 7 mesembrenone",
+      "source_chunk_ids": [
+        "07e83e7b3064021fa797459963f9ddf7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "concentration",
+          "notes": "roots should be harvested for mesembrenone"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "roots should be harvested for mesembrenone",
+      "source_chunk_ids": [
+        "07e83e7b3064021fa797459963f9ddf7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "mesembrine-type alkaloids",
+      "source_chunk_ids": [
+        "07e83e7b3064021fa797459963f9ddf7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "minor alkaloids delta 7 mesembrenone",
+      "source_chunk_ids": [
+        "07e83e7b3064021fa797459963f9ddf7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "minor alkaloids mesembrenone",
+      "source_chunk_ids": [
+        "07e83e7b3064021fa797459963f9ddf7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "Sceletium tortuosum mother plant for this study",
+      "source_chunk_ids": [
+        "2341dabe3fdeb892575ad7950eba7d05"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_PART",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Sceletium tortuosum mother plant",
+      "source_chunk_ids": [
+        "2341dabe3fdeb892575ad7950eba7d05"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "mesembrine standard",
+      "source_chunk_ids": [
+        "2341dabe3fdeb892575ad7950eba7d05"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

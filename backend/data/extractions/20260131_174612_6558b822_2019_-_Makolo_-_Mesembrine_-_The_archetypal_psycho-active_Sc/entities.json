@@ -1,475 +1,5919 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "446766f75b772164e9c9bbf25c183c756dd0c09af8ae481bf85b746b4d5d4908",
-  "extracted_at": "2026-02-01T08:51:43.019626+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
+      "id": "E1",
       "type": "Compound",
-      "name": "(\u2013)-mesembrine",
-      "attributes": {
-        "context": "isolation of (\u2013)-mesembrine"
-      },
+      "name": "(-)-mesembrine",
+      "attributes": {},
       "source_chunk_ids": [
-        "9de706eccb24037cde2cf319a30014d1"
-      ]
+        "171b5b75a72b6b3e4b17c91835e988ad"
+      ],
+      "confidence": 0.95,
+      "evidence": "(-)-Mesembrine is a chiral alkaloid",
+      "verified": true
     },
     {
-      "id": "ent_002",
-      "type": "Compound",
-      "name": "C_{16}H_{10}NO_4",
-      "attributes": {
-        "context": "molecular formula to be C_{16}H_{10}NO_4"
-      },
+      "id": "E2",
+      "type": "CompoundClass",
+      "name": "alkaloid",
+      "attributes": {},
       "source_chunk_ids": [
-        "9de706eccb24037cde2cf319a30014d1"
-      ]
+        "171b5b75a72b6b3e4b17c91835e988ad"
+      ],
+      "confidence": 0.9,
+      "evidence": "chiral alkaloid",
+      "verified": true
     },
     {
-      "id": "ent_003",
-      "type": "Compound",
-      "name": "C_{17}H_{23}NO_3",
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium",
       "attributes": {
-        "context": "molecular formula was correctly assigned as C_{17}H_{23}NO_3"
+        "rank": "genus"
       },
       "source_chunk_ids": [
-        "9de706eccb24037cde2cf319a30014d1"
-      ]
+        "171b5b75a72b6b3e4b17c91835e988ad"
+      ],
+      "confidence": 0.9,
+      "evidence": "succulent genus Sceletium",
+      "verified": true
     },
     {
-      "id": "ent_004",
-      "type": "Compound",
-      "name": "(\u2013)-Mesembrine",
+      "id": "E4",
+      "type": "Culture",
+      "name": "various ethnic groups in South Africa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "171b5b75a72b6b3e4b17c91835e988ad"
+      ],
+      "confidence": 0.85,
+      "evidence": "various ethnic groups in South Africa",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "UseRecord",
+      "name": "UseRecord: ethnic groups \u2013 Sceletium \u2013 manage CNS disorders",
+      "attributes": {},
+      "source_chunk_ids": [
+        "171b5b75a72b6b3e4b17c91835e988ad"
+      ],
+      "confidence": 0.8,
+      "evidence": "used to manage disorders of the central nervous system",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "manage disorders of the central nervous system",
+      "attributes": {},
+      "source_chunk_ids": [
+        "171b5b75a72b6b3e4b17c91835e988ad"
+      ],
+      "confidence": 0.85,
+      "evidence": "manage disorders of the central nervous system",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "SERT",
       "attributes": {
-        "context": "(\u2013)-Mesembrine features a cis-fused octahydroindole unit"
+        "target_type": "transporter"
       },
       "source_chunk_ids": [
-        "9de706eccb24037cde2cf319a30014d1"
-      ]
+        "171b5b75a72b6b3e4b17c91835e988ad"
+      ],
+      "confidence": 0.9,
+      "evidence": "serotonin transporter (SERT)",
+      "verified": true
     },
     {
-      "id": "ent_005",
+      "id": "E8",
       "type": "Compound",
-      "name": "octahydroindole",
+      "name": "fluoxetine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "171b5b75a72b6b3e4b17c91835e988ad"
+      ],
+      "confidence": 0.85,
+      "evidence": "fluoxetine (Prozac)",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Product",
+      "name": "mesembrine-containing consumer products",
+      "attributes": {},
+      "source_chunk_ids": [
+        "171b5b75a72b6b3e4b17c91835e988ad"
+      ],
+      "confidence": 0.8,
+      "evidence": "mesembrine-containing consumer products",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "(-)-mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "confidence": 0.95,
+      "evidence": "(-)-mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "serotonin reuptake",
       "attributes": {
-        "context": "cis-fused octahydroindole unit"
+        "target_type": "process"
       },
       "source_chunk_ids": [
-        "9de706eccb24037cde2cf319a30014d1"
-      ]
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "confidence": 0.85,
+      "evidence": "serotonin reuptake",
+      "verified": true
     },
     {
-      "id": "ent_006",
-      "type": "Compound",
-      "name": "aryl moiety",
+      "id": "E4",
+      "type": "Condition",
+      "name": "depression",
       "attributes": {
-        "context": "freely rotatable aryl moiety"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
-        "9de706eccb24037cde2cf319a30014d1"
-      ]
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "confidence": 0.8,
+      "evidence": "anti-depressant",
+      "verified": true
     },
     {
-      "id": "ent_007",
-      "type": "Compound",
-      "name": "octahydroindole",
+      "id": "E5",
+      "type": "Condition",
+      "name": "anxiety",
       "attributes": {
-        "context": "This octahydroindole nucleus"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
-        "9de706eccb24037cde2cf319a30014d1"
-      ]
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "confidence": 0.8,
+      "evidence": "anxiolytic",
+      "verified": true
     },
     {
-      "id": "ent_008",
-      "type": "Compound",
-      "name": "pyrrolidine",
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "mood elevation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "confidence": 0.8,
+      "evidence": "mood elevator",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "anti-addiction",
+      "attributes": {},
+      "source_chunk_ids": [
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "confidence": 0.8,
+      "evidence": "anti-addiction agent",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Smith et al., 1996; Stafford et al., 2008",
       "attributes": {
-        "context": "saturated pyrrolidine ring"
+        "year": "1996, 2008"
       },
       "source_chunk_ids": [
-        "9de706eccb24037cde2cf319a30014d1"
-      ]
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "confidence": 0.7,
+      "evidence": "Smith et al., 1996; Stafford et al., 2008",
+      "verified": true
     },
     {
-      "id": "ent_009",
-      "type": "Compound",
-      "name": "cyclohexanone",
+      "id": "E9",
+      "type": "Evidence",
+      "name": "pharmacological study",
       "attributes": {
-        "context": "fused to a cyclohexanone"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
-        "9de706eccb24037cde2cf319a30014d1"
-      ]
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "confidence": 0.7,
+      "evidence": "pharmacology",
+      "verified": true
     },
     {
-      "id": "ent_010",
-      "type": "Compound",
-      "name": "racemate",
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
       "attributes": {
-        "context": "synthesis of the racemate"
+        "rank": "genus"
       },
       "source_chunk_ids": [
-        "9de706eccb24037cde2cf319a30014d1"
-      ]
+        "aaaf21be9999469cbd643e25d72e42ac"
+      ],
+      "confidence": 0.95,
+      "evidence": "genus Sceletium",
+      "verified": true
     },
     {
-      "id": "ent_011",
-      "type": "Compound",
-      "name": "mesembrine",
+      "id": "E2",
+      "type": "Taxon",
+      "name": "S. crassicaule",
       "attributes": {
-        "context": "led to mesembrine being assigned to conformation A"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "9de706eccb24037cde2cf319a30014d1"
-      ]
+        "aaaf21be9999469cbd643e25d72e42ac"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. crassicaule (Haw.) L. Bolus",
+      "verified": true
     },
     {
-      "id": "ent_012",
-      "type": "Compound",
-      "name": "6-epimesembrenol methiodide",
+      "id": "E3",
+      "type": "Taxon",
+      "name": "S. emarcidium",
       "attributes": {
-        "context": "x-ray crystallography studies of 6-epimesembrenol methiodide"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "9de706eccb24037cde2cf319a30014d1"
-      ]
+        "aaaf21be9999469cbd643e25d72e42ac"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. emarcidium (Thumb.) L. Bolus ex H. J. Jacobson",
+      "verified": true
     },
     {
-      "id": "ent_013",
-      "type": "Compound",
-      "name": "(\u2013)-mesembrine",
+      "id": "E4",
+      "type": "Taxon",
+      "name": "S. exalatum",
       "attributes": {
-        "context": "absolute configuration of (\u2013)-mesembrine"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "9de706eccb24037cde2cf319a30014d1"
-      ]
+        "aaaf21be9999469cbd643e25d72e42ac"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. exalatum Gerbaulet",
+      "verified": true
     },
     {
-      "id": "ent_014",
-      "type": "Compound",
-      "name": "(\u2013)-mesembrine",
+      "id": "E5",
+      "type": "Taxon",
+      "name": "S. expansum",
       "attributes": {
-        "context": "biosynthetic pathways for (\u2013)-mesembrine"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "c2baba5ef642ba67079793df4f9063f0"
-      ]
+        "aaaf21be9999469cbd643e25d72e42ac"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. expansum (L.) Bolus [nt]",
+      "verified": true
     },
     {
-      "id": "ent_015",
-      "type": "Compound",
-      "name": "C_6-C_2-N",
+      "id": "E6",
+      "type": "Taxon",
+      "name": "S. rigidum",
       "attributes": {
-        "context": "between a C_6-C_2-N and a C_6 subunit"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "c2baba5ef642ba67079793df4f9063f0"
-      ]
+        "aaaf21be9999469cbd643e25d72e42ac"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. rigidum L. Bolus",
+      "verified": true
     },
     {
-      "id": "ent_016",
-      "type": "Compound",
-      "name": "C_6 subunit",
-      "attributes": {
-        "context": "and a C_6 subunit"
-      },
-      "source_chunk_ids": [
-        "c2baba5ef642ba67079793df4f9063f0"
-      ]
-    },
-    {
-      "id": "ent_017",
-      "type": "Compound",
-      "name": "radiolabelled amino acids",
-      "attributes": {
-        "context": "incorporation of radiolabelled amino acids"
-      },
-      "source_chunk_ids": [
-        "c2baba5ef642ba67079793df4f9063f0"
-      ]
-    },
-    {
-      "id": "ent_018",
+      "id": "E7",
       "type": "Taxon",
       "name": "S. strictum",
       "attributes": {
-        "context": "specimens of S. strictum"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "c2baba5ef642ba67079793df4f9063f0"
-      ]
+        "aaaf21be9999469cbd643e25d72e42ac"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. strictum L. Bolus",
+      "verified": true
     },
     {
-      "id": "ent_019",
+      "id": "E8",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "aaaf21be9999469cbd643e25d72e42ac"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. tortuosum (L.) N. E. Br. [nt]",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Taxon",
+      "name": "S. varians",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "aaaf21be9999469cbd643e25d72e42ac"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. varians (Haw.) (Gerbaulet, 1996)",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Compound",
+      "name": "(-)-mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "aaaf21be9999469cbd643e25d72e42ac"
+      ],
+      "confidence": 0.85,
+      "evidence": "alkaloid (-)-mesembrine is known",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "0decdf382da2c7c83ed6d8564f184972"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Sceletium strictum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "0decdf382da2c7c83ed6d8564f184972"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. strictum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium expansum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "0decdf382da2c7c83ed6d8564f184972"
+      ],
+      "confidence": 0.95,
+      "evidence": "S. expansum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Sceletium emarcidum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "0decdf382da2c7c83ed6d8564f184972"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium (Patnala and Kanfer, 2013)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "(-)-mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0decdf382da2c7c83ed6d8564f184972"
+      ],
+      "confidence": 0.95,
+      "evidence": "(-)-mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Aptenia cordifolia",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "0decdf382da2c7c83ed6d8564f184972"
+      ],
+      "confidence": 0.9,
+      "evidence": "Aptenia cordifolia",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Delosperma pruinosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "0decdf382da2c7c83ed6d8564f184972"
+      ],
+      "confidence": 0.9,
+      "evidence": "Delosperma pruinosum",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Taxon",
+      "name": "Delosperma pottsi",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "0decdf382da2c7c83ed6d8564f184972"
+      ],
+      "confidence": 0.9,
+      "evidence": "Delosperma pottsi",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Patnala and Kanfer, 2013",
+      "attributes": {
+        "year": 2013
+      },
+      "source_chunk_ids": [
+        "0decdf382da2c7c83ed6d8564f184972"
+      ],
+      "confidence": 0.85,
+      "evidence": "Patnala and Kanfer, 2013",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "Smith et al., 1998",
+      "attributes": {
+        "year": 1998
+      },
+      "source_chunk_ids": [
+        "0decdf382da2c7c83ed6d8564f184972"
+      ],
+      "confidence": 0.85,
+      "evidence": "Smith et al. (1998)",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Evidence",
+      "name": "gas chromatography-mass spectrometry analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "0decdf382da2c7c83ed6d8564f184972"
+      ],
+      "confidence": 0.8,
+      "evidence": "gas chromatography-mass spectrometry analysis",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Aptenia cordifolia",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5e022b8383a8364aae8c5cfdd1265665"
+      ],
+      "confidence": 0.95,
+      "evidence": "Aptenia cordifolia",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Delosperma pruinosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5e022b8383a8364aae8c5cfdd1265665"
+      ],
+      "confidence": 0.95,
+      "evidence": "Delosperma pruinosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Delosperma pottsi",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5e022b8383a8364aae8c5cfdd1265665"
+      ],
+      "confidence": 0.95,
+      "evidence": "Delosperma pottsi",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Narcissus pallidulus",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5e022b8383a8364aae8c5cfdd1265665"
+      ],
+      "confidence": 0.95,
+      "evidence": "Narcissus pallidulus",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Narcissus triandrus",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5e022b8383a8364aae8c5cfdd1265665"
+      ],
+      "confidence": 0.95,
+      "evidence": "Narcissus triandrus",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Sceletium crassicaule",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5e022b8383a8364aae8c5cfdd1265665"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium crassicaule",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Sceletium expansum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5e022b8383a8364aae8c5cfdd1265665"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium expansum",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Taxon",
+      "name": "Sceletium strictum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5e022b8383a8364aae8c5cfdd1265665"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium strictum",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "5e022b8383a8364aae8c5cfdd1265665"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Smith et al. (1998)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "224bb1851a90adc6d15fed8f51a0be63"
+      ],
+      "confidence": 0.9,
+      "evidence": "Smith et al. (1998)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Berkov et al. (2014)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "224bb1851a90adc6d15fed8f51a0be63"
+      ],
+      "confidence": 0.9,
+      "evidence": "Berkov et al. (2014)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Pigni et al. (2013)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "224bb1851a90adc6d15fed8f51a0be63"
+      ],
+      "confidence": 0.9,
+      "evidence": "Pigni et al. (2013)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Shikanga et al. (2013)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "224bb1851a90adc6d15fed8f51a0be63"
+      ],
+      "confidence": 0.9,
+      "evidence": "Shikanga et al. (2013)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Patnala and Kanfer (2013)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "224bb1851a90adc6d15fed8f51a0be63"
+      ],
+      "confidence": 0.9,
+      "evidence": "Patnala and Kanfer (2013)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Jeffs et al. (1970)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "224bb1851a90adc6d15fed8f51a0be63"
+      ],
+      "confidence": 0.9,
+      "evidence": "Jeffs et al. (1970)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Shikanga et al. (2011)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "224bb1851a90adc6d15fed8f51a0be63"
+      ],
+      "confidence": 0.9,
+      "evidence": "Shikanga et al. (2011)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Zwicky (1914)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "224bb1851a90adc6d15fed8f51a0be63"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zwicky (1914)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24c0ad205a5f8b0a5b30e282ded435ee"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "24c0ad205a5f8b0a5b30e282ded435ee"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium plants",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "S. namaquense",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "24c0ad205a5f8b0a5b30e282ded435ee"
+      ],
+      "confidence": 0.85,
+      "evidence": "S. namaquense",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "S. strictum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "24c0ad205a5f8b0a5b30e282ded435ee"
+      ],
+      "confidence": 0.85,
+      "evidence": "S. strictum",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "S. tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "24c0ad205a5f8b0a5b30e282ded435ee"
+      ],
+      "confidence": 0.85,
+      "evidence": "S. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "CompoundClass",
+      "name": "alkaloid",
+      "attributes": {},
+      "source_chunk_ids": [
+        "24c0ad205a5f8b0a5b30e282ded435ee"
+      ],
+      "confidence": 0.8,
+      "evidence": "alkaloid",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Smith et al., 1998",
+      "attributes": {
+        "year": 1998
+      },
+      "source_chunk_ids": [
+        "24c0ad205a5f8b0a5b30e282ded435ee"
+      ],
+      "confidence": 0.7,
+      "evidence": "Smith et al., 1998",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Jeffs, 1981",
+      "attributes": {
+        "year": 1981
+      },
+      "source_chunk_ids": [
+        "24c0ad205a5f8b0a5b30e282ded435ee"
+      ],
+      "confidence": 0.7,
+      "evidence": "Jeffs, 1981",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Compound",
       "name": "mesembrine",
       "attributes": {
-        "context": "biosynthetic pathway for mesembrine"
+        "stereochemistry": "(-)-mesembrine"
       },
       "source_chunk_ids": [
-        "08949734b77ce15587a55ec01dcd8d97"
-      ]
+        "9de706eccb24037cde2cf319a30014d1"
+      ],
+      "confidence": 0.95,
+      "evidence": "(-)-mesembrine",
+      "verified": true
     },
     {
-      "id": "ent_020",
-      "type": "Compound",
-      "name": "Phenylalanine",
+      "id": "E2",
+      "type": "Study",
+      "name": "Zwicky, 1914",
       "attributes": {
-        "context": "Phenylalanine (blue) and Tyrosine (red)"
+        "year": 1914
       },
       "source_chunk_ids": [
-        "08949734b77ce15587a55ec01dcd8d97"
-      ]
+        "9de706eccb24037cde2cf319a30014d1"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zwicky, 1914",
+      "verified": true
     },
     {
-      "id": "ent_021",
-      "type": "Compound",
-      "name": "Tyrosine",
+      "id": "E3",
+      "type": "Study",
+      "name": "Rimington and Roets, 1937",
       "attributes": {
-        "context": "Phenylalanine (blue) and Tyrosine (red)"
+        "year": 1937
       },
       "source_chunk_ids": [
-        "08949734b77ce15587a55ec01dcd8d97"
-      ]
+        "9de706eccb24037cde2cf319a30014d1"
+      ],
+      "confidence": 0.9,
+      "evidence": "Rimington and Roets (1937)",
+      "verified": true
     },
     {
-      "id": "ent_022",
+      "id": "E4",
+      "type": "Study",
+      "name": "Popelak et al., 1960; Stevens et al., 1968",
+      "attributes": {
+        "year": "1960-1968"
+      },
+      "source_chunk_ids": [
+        "9de706eccb24037cde2cf319a30014d1"
+      ],
+      "confidence": 0.85,
+      "evidence": "Popelak et al., 1960; Stevens et al., 1968",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Coggon et al., 1970; Jeffs et al., 1969",
+      "attributes": {
+        "year": "1969-1970"
+      },
+      "source_chunk_ids": [
+        "9de706eccb24037cde2cf319a30014d1"
+      ],
+      "confidence": 0.85,
+      "evidence": "Coggon et al., 1970; Jeffs et al., 1969",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c2baba5ef642ba67079793df4f9063f0"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Bodendorf and Kloss, 1961",
+      "attributes": {
+        "year": 1961
+      },
+      "source_chunk_ids": [
+        "c2baba5ef642ba67079793df4f9063f0"
+      ],
+      "confidence": 0.85,
+      "evidence": "Bodendorf and Kloss, 1961",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Jeffs and co-workers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c2baba5ef642ba67079793df4f9063f0"
+      ],
+      "confidence": 0.8,
+      "evidence": "Jeffs and co-workers",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "S. strictum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c2baba5ef642ba67079793df4f9063f0"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. strictum",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "c2baba5ef642ba67079793df4f9063f0"
+      ],
+      "confidence": 0.7,
+      "evidence": "living specimens",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "08949734b77ce15587a55ec01dcd8d97"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine is highlighted",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "phenylalanine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "08949734b77ce15587a55ec01dcd8d97"
+      ],
+      "confidence": 0.85,
+      "evidence": "Phenylalanine (blue)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "tyrosine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "08949734b77ce15587a55ec01dcd8d97"
+      ],
+      "confidence": 0.85,
+      "evidence": "Tyrosine (red)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "4'-O-methyl norbelladine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e28e86c2a8ef00469eab4f5a202dee9e"
+      ],
+      "confidence": 0.9,
+      "evidence": "Structure 11 (4'-O-methyl norbelladine)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "dienone derivative",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e28e86c2a8ef00469eab4f5a202dee9e"
+      ],
+      "confidence": 0.8,
+      "evidence": "structure 12 (a dienone derivative)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "Crinine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e28e86c2a8ef00469eab4f5a202dee9e"
+      ],
+      "confidence": 0.95,
+      "evidence": "structure 10, Crinine",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "CompoundClass",
+      "name": "octahydroindole moiety",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bfc440520ce39003236465c24e5dd608"
+      ],
+      "confidence": 0.9,
+      "evidence": "octahydroindole moiety",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "tyrosine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bfc440520ce39003236465c24e5dd608"
+      ],
+      "confidence": 0.95,
+      "evidence": "tyrosine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "phenylalanine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bfc440520ce39003236465c24e5dd608"
+      ],
+      "confidence": 0.95,
+      "evidence": "phenylalanine",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "L-methionine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bfc440520ce39003236465c24e5dd608"
+      ],
+      "confidence": 0.95,
+      "evidence": "L-methionine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Jeffs et al., 1971",
+      "attributes": {
+        "year": 1971
+      },
+      "source_chunk_ids": [
+        "bfc440520ce39003236465c24e5dd608"
+      ],
+      "confidence": 0.85,
+      "evidence": "Jeffs et al., 1971",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Jeffs et al., 1967",
+      "attributes": {
+        "year": 1967
+      },
+      "source_chunk_ids": [
+        "bfc440520ce39003236465c24e5dd608"
+      ],
+      "confidence": 0.85,
+      "evidence": "Jeffs et al., 1967",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "bfc440520ce39003236465c24e5dd608"
+      ],
+      "confidence": 0.7,
+      "evidence": "determined that",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "CompoundClass",
+      "name": "Amaryllidaceae alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "58e62f5d76f55b3044841f3101b419c1"
+      ],
+      "confidence": 0.9,
+      "evidence": "Amaryllidaceae alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "crinine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "58e62f5d76f55b3044841f3101b419c1"
+      ],
+      "confidence": 0.95,
+      "evidence": "crinine (10)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "4'-O-methyl norbelladine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "58e62f5d76f55b3044841f3101b419c1"
+      ],
+      "confidence": 0.9,
+      "evidence": "4'-O-methyl norbelladine (11)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "dienone derivative",
+      "attributes": {},
+      "source_chunk_ids": [
+        "58e62f5d76f55b3044841f3101b419c1"
+      ],
+      "confidence": 0.8,
+      "evidence": "dienone derivative (12)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "crinine skeleton",
+      "attributes": {},
+      "source_chunk_ids": [
+        "58e62f5d76f55b3044841f3101b419c1"
+      ],
+      "confidence": 0.85,
+      "evidence": "crinine skeleton",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Barton et al., 1963; Battersby et al., 1964; Jeffs et al., 1974",
+      "attributes": {
+        "year": "1963-1974"
+      },
+      "source_chunk_ids": [
+        "58e62f5d76f55b3044841f3101b419c1"
+      ],
+      "confidence": 0.9,
+      "evidence": "Barton et al., 1963; Battersby et al., 1964; Jeffs et al., 1974",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "58e62f5d76f55b3044841f3101b419c1"
+      ],
+      "confidence": 0.7,
+      "evidence": "Biosynthetic pathways",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "norbelladine analogues",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9e3ebb9adc629f044f216dd29888e89c"
+      ],
+      "confidence": 0.8,
+      "evidence": "radiolabelled norbelladine analogues",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "S. strictum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "9e3ebb9adc629f044f216dd29888e89c"
+      ],
+      "confidence": 0.9,
+      "evidence": "S. strictum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "3'-O-methyl norbelladine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9e3ebb9adc629f044f216dd29888e89c"
+      ],
+      "confidence": 0.95,
+      "evidence": "3'-O-methyl norbelladine (13)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9e3ebb9adc629f044f216dd29888e89c"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "bis-spirodienone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9e3ebb9adc629f044f216dd29888e89c"
+      ],
+      "confidence": 0.85,
+      "evidence": "bis-spirodienone (14)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Jeffs et al. (1974b)",
+      "attributes": {
+        "year": 1974
+      },
+      "source_chunk_ids": [
+        "9e3ebb9adc629f044f216dd29888e89c"
+      ],
+      "confidence": 0.9,
+      "evidence": "Jeffs et al. (1974b)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "in vitro study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "9e3ebb9adc629f044f216dd29888e89c"
+      ],
+      "confidence": 0.7,
+      "evidence": "incorporation experiments",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Compound",
+      "name": "phenylalanine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9e3ebb9adc629f044f216dd29888e89c"
+      ],
+      "confidence": 0.8,
+      "evidence": "phenylalanine",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5a9d35c469cd049b80c3f4e0c80a7e3d"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "sceletenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5a9d35c469cd049b80c3f4e0c80a7e3d"
+      ],
+      "confidence": 0.9,
+      "evidence": "sceletenone (15)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "CompoundClass",
+      "name": "mesembrine-like alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5a9d35c469cd049b80c3f4e0c80a7e3d"
+      ],
+      "confidence": 0.85,
+      "evidence": "mesembrine-like alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Jeffs et al., 1974b",
+      "attributes": {
+        "year": 1974
+      },
+      "source_chunk_ids": [
+        "5a9d35c469cd049b80c3f4e0c80a7e3d"
+      ],
+      "confidence": 0.8,
+      "evidence": "Jeffs et al., 1974b",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "in vitro identification",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "5a9d35c469cd049b80c3f4e0c80a7e3d"
+      ],
+      "confidence": 0.7,
+      "evidence": "identification of sceletenone",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mono-hydroxylated joubertiamine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "confidence": 0.9,
+      "evidence": "mono-hydroxylated joubertiamine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Arndt and Kruger, 1970",
+      "attributes": {
+        "year": 1970
+      },
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "confidence": 0.85,
+      "evidence": "Arndt and Kruger, 1970",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Jeffs et al., 1974b",
+      "attributes": {
+        "year": 1974
+      },
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "confidence": 0.85,
+      "evidence": "Jeffs et al., 1974b",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "Sceletium alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "sceletenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "confidence": 0.9,
+      "evidence": "sceletenone is a common precursor",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "4'-hydroxy cinnamic acid",
+      "attributes": {},
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "confidence": 0.85,
+      "evidence": "4'-hydroxy cinnamic acid (16)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Compound",
+      "name": "N-functionalised tyramine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "confidence": 0.85,
+      "evidence": "N-functionalised tyramine (17)",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Compound",
+      "name": "bis-spirodienone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "confidence": 0.8,
+      "evidence": "bis-spirodienone (18)",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "Jeffs et al., 1976",
+      "attributes": {
+        "year": 1976
+      },
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "confidence": 0.85,
+      "evidence": "Jeffs et al., 1976",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Study",
+      "name": "Herbert and Kattah, 1989",
+      "attributes": {
+        "year": 1989
+      },
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "confidence": 0.85,
+      "evidence": "Herbert and Kattah, 1989",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Study",
+      "name": "Jeffs et al., 1978; Jeffs and Karle, 1977",
+      "attributes": {
+        "year": "1977-1978"
+      },
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "confidence": 0.85,
+      "evidence": "Jeffs et al., 1978; Jeffs and Karle, 1977",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "CompoundClass",
+      "name": "mesembrine class of alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "confidence": 0.9,
+      "evidence": "mesembrine class of alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "CompoundClass",
+      "name": "mesembrine alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c9cac7a96c8a355bc1c43dab3525aefc"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "3'-O-methyl norbelladine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c9cac7a96c8a355bc1c43dab3525aefc"
+      ],
+      "confidence": 0.9,
+      "evidence": "Structure 13 (3'-O-methyl norbelladine)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "bis-spirodienone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c9cac7a96c8a355bc1c43dab3525aefc"
+      ],
+      "confidence": 0.9,
+      "evidence": "structure 14 (bis-spirodienone)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "4'-Hydroxy cinnamic acid",
+      "attributes": {},
+      "source_chunk_ids": [
+        "83634137faab90d39fd5e9f8247f382e"
+      ],
+      "confidence": 0.95,
+      "evidence": "16. 4'-Hydroxy cinnamic acid",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "N-methyltyramine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "83634137faab90d39fd5e9f8247f382e"
+      ],
+      "confidence": 0.95,
+      "evidence": "17. N-methyltyramine",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "Sceletenone",
+      "attributes": {},
+      "source_chunk_ids": [
+        "83634137faab90d39fd5e9f8247f382e"
+      ],
+      "confidence": 0.95,
+      "evidence": "15. Sceletenone",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "biosynthetic pathway for sceletenone",
+      "attributes": {
+        "target_type": "pathway"
+      },
+      "source_chunk_ids": [
+        "83634137faab90d39fd5e9f8247f382e"
+      ],
+      "confidence": 0.85,
+      "evidence": "Confirmed biosynthetic pathway for sceletenone",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5a2636d45ba1b655d3860986bcc5ac2d"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Shamma and Rodr\u00edguez (1965)",
+      "attributes": {
+        "year": 1965,
+        "design": "total synthesis"
+      },
+      "source_chunk_ids": [
+        "5a2636d45ba1b655d3860986bcc5ac2d"
+      ],
+      "confidence": 0.85,
+      "evidence": "first synthesis of racemic mesembrine by Shamma and Rodr\u00edguez (1965)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Yamada and Otani (1971)",
+      "attributes": {
+        "year": 1971,
+        "design": "asymmetric synthesis"
+      },
+      "source_chunk_ids": [
+        "5a2636d45ba1b655d3860986bcc5ac2d"
+      ],
+      "confidence": 0.85,
+      "evidence": "synthesis of (+)-mesembrine, Yamada and Otani (1971)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Takano et al. (1981)",
+      "attributes": {
+        "year": 1981,
+        "design": "enantioselective synthesis"
+      },
+      "source_chunk_ids": [
+        "5a2636d45ba1b655d3860986bcc5ac2d"
+      ],
+      "confidence": 0.85,
+      "evidence": "Takano et al. (1981) exploited (D)-mannitol",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Czekelius (2018)",
+      "attributes": {
+        "year": 2018,
+        "design": "review"
+      },
+      "source_chunk_ids": [
+        "5a2636d45ba1b655d3860986bcc5ac2d"
+      ],
+      "confidence": 0.8,
+      "evidence": "Czekelius, 2018",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Du et al. (2010)",
+      "attributes": {
+        "year": 2010,
+        "design": "review"
+      },
+      "source_chunk_ids": [
+        "5a2636d45ba1b655d3860986bcc5ac2d"
+      ],
+      "confidence": 0.8,
+      "evidence": "Du et al., 2010",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Smith and Kevin Brown (2017)",
+      "attributes": {
+        "year": 2017,
+        "design": "synthetic procedure"
+      },
+      "source_chunk_ids": [
+        "847aab5d3fecced2df1b77d781f51343"
+      ],
+      "confidence": 0.9,
+      "evidence": "Smith and Kevin Brown (2017) developed a synthetic procedure",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vitro synthesis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "847aab5d3fecced2df1b77d781f51343"
+      ],
+      "confidence": 0.8,
+      "evidence": "synthetic procedure utilising cooperative Pd/Cu catalysis",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "DMAP",
+      "attributes": {},
+      "source_chunk_ids": [
+        "847aab5d3fecced2df1b77d781f51343"
+      ],
+      "confidence": 0.85,
+      "evidence": "incorporation of quantitative amounts of DMAP",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "847aab5d3fecced2df1b77d781f51343"
+      ],
+      "confidence": 0.95,
+      "evidence": "formal synthesis of racemic mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "cyclic diene (19)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "847aab5d3fecced2df1b77d781f51343"
+      ],
+      "confidence": 0.8,
+      "evidence": "Applying their protocol to cyclic diene (19)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "anti-diastereomer (20)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "847aab5d3fecced2df1b77d781f51343"
+      ],
+      "confidence": 0.8,
+      "evidence": "generation of the anti-diastereomer (20)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "lactone (21)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "847aab5d3fecced2df1b77d781f51343"
+      ],
+      "confidence": 0.8,
+      "evidence": "generate lactone (21)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Kulkarni et al. (2002)",
+      "attributes": {
+        "year": 2002
+      },
+      "source_chunk_ids": [
+        "847aab5d3fecced2df1b77d781f51343"
+      ],
+      "confidence": 0.7,
+      "evidence": "Kulkarni et al., 2002",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f36da341cbc645a942a47502ab53d346"
+      ],
+      "confidence": 0.95,
+      "evidence": "enantioselective synthesis of mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Han et al., 2016",
+      "attributes": {
+        "year": 2016
+      },
+      "source_chunk_ids": [
+        "f36da341cbc645a942a47502ab53d346"
+      ],
+      "confidence": 0.8,
+      "evidence": "Han et al., 2016",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Naganawa et al., 2016",
+      "attributes": {
+        "year": 2016
+      },
+      "source_chunk_ids": [
+        "f36da341cbc645a942a47502ab53d346"
+      ],
+      "confidence": 0.8,
+      "evidence": "Naganawa et al., 2016",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "Bokka et al., 2018",
+      "attributes": {
+        "year": 2018
+      },
+      "source_chunk_ids": [
+        "f36da341cbc645a942a47502ab53d346"
+      ],
+      "confidence": 0.9,
+      "evidence": "Bokka et al. (2018) developed related methodology",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Verma et al. (2018)",
+      "attributes": {
+        "year": 2018
+      },
+      "source_chunk_ids": [
+        "0a05d43281bdb87f1e460044131d44f3"
+      ],
+      "confidence": 0.95,
+      "evidence": "Verma et al. (2018)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "synthetic chemistry",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "0a05d43281bdb87f1e460044131d44f3"
+      ],
+      "confidence": 0.8,
+      "evidence": "sought to generate a common hydroindole intermediate",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0a05d43281bdb87f1e460044131d44f3"
+      ],
+      "confidence": 0.9,
+      "evidence": "(+)-mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "CompoundClass",
+      "name": "Sceletium alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0a05d43281bdb87f1e460044131d44f3"
+      ],
+      "confidence": 0.85,
+      "evidence": "Sceletium alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "CompoundClass",
+      "name": "Amaryllidaceae alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "0a05d43281bdb87f1e460044131d44f3"
+      ],
+      "confidence": 0.85,
+      "evidence": "Amaryllidaceae alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Kim et al. (2018)",
+      "attributes": {
+        "year": 2018
+      },
+      "source_chunk_ids": [
+        "cca8183438ff8cf5d2e8dff9441e288b"
+      ],
+      "confidence": 0.95,
+      "evidence": "Kim et al. (2018)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "in vitro synthesis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "cca8183438ff8cf5d2e8dff9441e288b"
+      ],
+      "confidence": 0.85,
+      "evidence": "developed an efficient seven-step synthesis",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cca8183438ff8cf5d2e8dff9441e288b"
+      ],
+      "confidence": 0.95,
+      "evidence": "synthesis of racemic mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "3-ethoxy-2-cyclohexen-1-one",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cca8183438ff8cf5d2e8dff9441e288b"
+      ],
+      "confidence": 0.9,
+      "evidence": "commercially available 3-ethoxy-2-cyclohexen-1-one",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Preparation",
+      "name": "synthesis",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cca8183438ff8cf5d2e8dff9441e288b"
+      ],
+      "confidence": 0.8,
+      "evidence": "seven-step synthesis",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d89466042113e0c7b0700cb86c16adb2"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium extracts",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "Sceletium extracts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d89466042113e0c7b0700cb86c16adb2"
+      ],
+      "confidence": 0.85,
+      "evidence": "Sceletium extracts",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "treatment of disorders of the central nervous system",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d89466042113e0c7b0700cb86c16adb2"
+      ],
+      "confidence": 0.8,
+      "evidence": "treatment of disorders of the central nervous system",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "mood enhancing capabilities",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d89466042113e0c7b0700cb86c16adb2"
+      ],
+      "confidence": 0.8,
+      "evidence": "mood enhancing capabilities",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Smith et al., 1996",
+      "attributes": {
+        "year": 1996
+      },
+      "source_chunk_ids": [
+        "d89466042113e0c7b0700cb86c16adb2"
+      ],
+      "confidence": 0.9,
+      "evidence": "Smith et al., 1996",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "ethnopharmacological applications",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "d89466042113e0c7b0700cb86c16adb2"
+      ],
+      "confidence": 0.7,
+      "evidence": "ethnopharmacological applications",
+      "verified": true
+    },
+    {
+      "id": "E7",
       "type": "Compound",
       "name": "(-)-mesembrine",
-      "attributes": {
-        "context": "reacting to form (-)-mesembrine"
-      },
+      "attributes": {},
       "source_chunk_ids": [
-        "08949734b77ce15587a55ec01dcd8d97"
-      ]
+        "d89466042113e0c7b0700cb86c16adb2"
+      ],
+      "confidence": 0.95,
+      "evidence": "(-)-mesembrine",
+      "verified": true
     },
     {
-      "id": "ent_023",
+      "id": "E1",
       "type": "Compound",
-      "name": "(-)-mesembrine",
+      "name": "mesembrine",
       "attributes": {
-        "context": "structure of (-)-mesembrine"
+        "stereochemistry": "(+)"
       },
       "source_chunk_ids": [
-        "08949734b77ce15587a55ec01dcd8d97"
-      ]
+        "372979fe41021e907d5444781689f8f8"
+      ],
+      "confidence": 0.95,
+      "evidence": "Synthesis of (+)-mesembrine",
+      "verified": true
     },
     {
-      "id": "ent_024",
+      "id": "E2",
       "type": "Compound",
-      "name": "C6 unit",
+      "name": "compound 22",
       "attributes": {
-        "context": "indicate the C6 unit (phenyl ring)"
+        "description": "substituted benzylideneacetone derivative"
       },
       "source_chunk_ids": [
-        "08949734b77ce15587a55ec01dcd8d97"
-      ]
+        "372979fe41021e907d5444781689f8f8"
+      ],
+      "confidence": 0.9,
+      "evidence": "Compound 22 is a substituted benzylideneacetone derivative",
+      "verified": true
     },
     {
-      "id": "ent_025",
+      "id": "E3",
       "type": "Compound",
-      "name": "phenyl ring",
+      "name": "compound 23",
       "attributes": {
-        "context": "C6 unit (phenyl ring)"
+        "description": "cyclohexenone derivative"
       },
       "source_chunk_ids": [
-        "08949734b77ce15587a55ec01dcd8d97"
-      ]
+        "372979fe41021e907d5444781689f8f8"
+      ],
+      "confidence": 0.9,
+      "evidence": "compound 23, which is a cyclohexenone derivative",
+      "verified": true
     },
     {
-      "id": "ent_026",
+      "id": "E1",
       "type": "Compound",
-      "name": "C6-C2-N unit",
+      "name": "mesembrine",
       "attributes": {
-        "context": "and the C6-C2-N unit (norbornane ring system)"
+        "stereochemistry": "(+)"
       },
       "source_chunk_ids": [
-        "08949734b77ce15587a55ec01dcd8d97"
-      ]
+        "b1e5637140e87b461fd01c624d8fc11f"
+      ],
+      "confidence": 0.9,
+      "evidence": "Synthesis of (+)-mesembrine",
+      "verified": true
     },
     {
-      "id": "ent_027",
+      "id": "E2",
       "type": "Compound",
-      "name": "norbornane ring system",
+      "name": "compound 25",
       "attributes": {
-        "context": "C6-C2-N unit (norbornane ring system)"
+        "description": "substituted indole derivative"
       },
       "source_chunk_ids": [
-        "08949734b77ce15587a55ec01dcd8d97"
-      ]
+        "b1e5637140e87b461fd01c624d8fc11f"
+      ],
+      "confidence": 0.85,
+      "evidence": "Compound 25 is a substituted indole derivative",
+      "verified": true
     },
     {
-      "id": "ent_028",
+      "id": "E3",
       "type": "Compound",
-      "name": "CuCl",
-      "attributes": {
-        "context": "a) CuCl (5 mol %)"
-      },
+      "name": "compound 26",
+      "attributes": {},
       "source_chunk_ids": [
-        "8637875d5b23436e16b702d929129102"
-      ]
+        "b1e5637140e87b461fd01c624d8fc11f"
+      ],
+      "confidence": 0.8,
+      "evidence": "Reaction a converts it to 26",
+      "verified": true
     },
     {
-      "id": "ent_029",
-      "type": "Concentration",
-      "name": "5 mol %",
-      "attributes": {
-        "context": "CuCl (5 mol %)"
-      },
-      "source_chunk_ids": [
-        "8637875d5b23436e16b702d929129102"
-      ]
-    },
-    {
-      "id": "ent_030",
+      "id": "E4",
       "type": "Compound",
-      "name": "(R,R)-Ph-BPE",
-      "attributes": {
-        "context": "(R,R)-Ph-BPE (5 mol %)"
-      },
+      "name": "compound 24",
+      "attributes": {},
       "source_chunk_ids": [
-        "8637875d5b23436e16b702d929129102"
-      ]
+        "b1e5637140e87b461fd01c624d8fc11f"
+      ],
+      "confidence": 0.8,
+      "evidence": "then b, c to 24",
+      "verified": true
     },
     {
-      "id": "ent_031",
-      "type": "Concentration",
-      "name": "5 mol %",
-      "attributes": {
-        "context": "(R,R)-Ph-BPE (5 mol %)"
-      },
-      "source_chunk_ids": [
-        "8637875d5b23436e16b702d929129102"
-      ]
-    },
-    {
-      "id": "ent_032",
+      "id": "E5",
       "type": "Compound",
-      "name": "NaOtBu",
-      "attributes": {
-        "context": "NaOtBu (5 mol %)"
-      },
+      "name": "compound 27",
+      "attributes": {},
       "source_chunk_ids": [
-        "8637875d5b23436e16b702d929129102"
-      ]
+        "b1e5637140e87b461fd01c624d8fc11f"
+      ],
+      "confidence": 0.8,
+      "evidence": "Reaction d, e leads to 27",
+      "verified": true
     },
     {
-      "id": "ent_033",
-      "type": "Concentration",
-      "name": "5 mol %",
-      "attributes": {
-        "context": "NaOtBu (5 mol %)"
-      },
-      "source_chunk_ids": [
-        "8637875d5b23436e16b702d929129102"
-      ]
-    },
-    {
-      "id": "ent_034",
+      "id": "E6",
       "type": "Compound",
-      "name": "PMHS",
-      "attributes": {
-        "context": "b) PMHS (1.1 equiv)"
-      },
+      "name": "compound 28",
+      "attributes": {},
       "source_chunk_ids": [
-        "8637875d5b23436e16b702d929129102"
-      ]
+        "b1e5637140e87b461fd01c624d8fc11f"
+      ],
+      "confidence": 0.8,
+      "evidence": "converted to 28 via h, i",
+      "verified": true
     },
     {
-      "id": "ent_035",
-      "type": "Concentration",
-      "name": "1.1 equiv",
+      "id": "E1",
+      "type": "Target",
+      "name": "type 4 phosphodiesterases",
       "attributes": {
-        "context": "PMHS (1.1 equiv)"
+        "target_type": "enzyme"
       },
       "source_chunk_ids": [
-        "8637875d5b23436e16b702d929129102"
-      ]
+        "59deaf505a3b2143cae110bfe088fa0a"
+      ],
+      "confidence": 0.9,
+      "evidence": "type 4 phosphodiesterases (PDE-4)",
+      "verified": true
     },
     {
-      "id": "ent_036",
+      "id": "E2",
       "type": "Compound",
-      "name": "toluene",
-      "attributes": {
-        "context": "toluene, 0\u201322 \u00b0C"
-      },
+      "name": "rolipram",
+      "attributes": {},
       "source_chunk_ids": [
-        "8637875d5b23436e16b702d929129102"
-      ]
+        "59deaf505a3b2143cae110bfe088fa0a"
+      ],
+      "confidence": 0.95,
+      "evidence": "rolipram",
+      "verified": true
     },
     {
-      "id": "ent_037",
-      "type": "Compound",
-      "name": "TFA",
+      "id": "E3",
+      "type": "Effect",
+      "name": "anti-depressant effect",
       "attributes": {
-        "context": "c) TFA, DCM, r.t."
+        "level": "systemic",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "8637875d5b23436e16b702d929129102"
-      ]
+        "59deaf505a3b2143cae110bfe088fa0a"
+      ],
+      "confidence": 0.85,
+      "evidence": "exert an anti-depressant effect",
+      "verified": true
     },
     {
-      "id": "ent_038",
-      "type": "Compound",
-      "name": "DCM",
+      "id": "E4",
+      "type": "Effect",
+      "name": "neuroprotective effect",
       "attributes": {
-        "context": "TFA, DCM, r.t."
+        "level": "cellular",
+        "valence": "positive"
       },
       "source_chunk_ids": [
-        "8637875d5b23436e16b702d929129102"
-      ]
+        "59deaf505a3b2143cae110bfe088fa0a"
+      ],
+      "confidence": 0.8,
+      "evidence": "neuroprotective effect following spinal injury",
+      "verified": true
     },
     {
-      "id": "ent_039",
-      "type": "Compound",
-      "name": "cannabinoid",
+      "id": "E5",
+      "type": "Study",
+      "name": "Wachtel and Schneider, 1986",
       "attributes": {
-        "context": "cannabinoid CB1 receptor"
+        "year": 1986
       },
       "source_chunk_ids": [
-        "e6751037c996d7eea67c6dc530e511e1"
-      ]
+        "59deaf505a3b2143cae110bfe088fa0a"
+      ],
+      "confidence": 0.9,
+      "evidence": "Wachtel and Schneider, 1986",
+      "verified": true
     },
     {
-      "id": "ent_040",
+      "id": "E6",
+      "type": "Study",
+      "name": "Schaal et al., 2012",
+      "attributes": {
+        "year": 2012
+      },
+      "source_chunk_ids": [
+        "59deaf505a3b2143cae110bfe088fa0a"
+      ],
+      "confidence": 0.9,
+      "evidence": "Schaal et al., 2012",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Sceletium",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "59deaf505a3b2143cae110bfe088fa0a"
+      ],
+      "confidence": 0.85,
+      "evidence": "Sceletium extracts",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "RawMaterial",
+      "name": "standardised Sceletium extracts",
+      "attributes": {},
+      "source_chunk_ids": [
+        "59deaf505a3b2143cae110bfe088fa0a"
+      ],
+      "confidence": 0.8,
+      "evidence": "standardised Sceletium extracts",
+      "verified": true
+    },
+    {
+      "id": "E9",
       "type": "Compound",
       "name": "(\u2013)-mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "59deaf505a3b2143cae110bfe088fa0a"
+      ],
+      "confidence": 0.95,
+      "evidence": "(\u2013)-mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "Harvey et al., 2011",
       "attributes": {
-        "context": "found that (\u2013)-mesembrine bound strongly"
+        "year": 2011
+      },
+      "source_chunk_ids": [
+        "59deaf505a3b2143cae110bfe088fa0a"
+      ],
+      "confidence": 0.9,
+      "evidence": "Harvey et al., 2011",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Target",
+      "name": "choline esterase",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "59deaf505a3b2143cae110bfe088fa0a"
+      ],
+      "confidence": 0.8,
+      "evidence": "choline esterase inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "cannabinoid CB1 receptor",
+      "attributes": {
+        "target_type": "receptor"
       },
       "source_chunk_ids": [
         "e6751037c996d7eea67c6dc530e511e1"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "cannabinoid CB1 receptor",
+      "verified": true
     },
     {
-      "id": "ent_041",
+      "id": "E2",
+      "type": "Study",
+      "name": "Harvey et al., 2011",
+      "attributes": {
+        "year": 2011
+      },
+      "source_chunk_ids": [
+        "e6751037c996d7eea67c6dc530e511e1"
+      ],
+      "confidence": 0.9,
+      "evidence": "Harvey et al., 2011",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Lubbe et al., 2010",
+      "attributes": {
+        "year": 2010
+      },
+      "source_chunk_ids": [
+        "e6751037c996d7eea67c6dc530e511e1"
+      ],
+      "confidence": 0.9,
+      "evidence": "Lubbe et al., 2010",
+      "verified": true
+    },
+    {
+      "id": "E4",
       "type": "Compound",
-      "name": "SSRI",
-      "attributes": {
-        "context": "potential as an SSRI"
-      },
+      "name": "(-)-mesembrine",
+      "attributes": {},
       "source_chunk_ids": [
         "e6751037c996d7eea67c6dc530e511e1"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "(-)-mesembrine",
+      "verified": true
     },
     {
-      "id": "ent_042",
-      "type": "PharmEffect",
-      "name": "serotonin reuptake inhibition",
+      "id": "E5",
+      "type": "Target",
+      "name": "serotonin transporter protein",
       "attributes": {
-        "context": "suggesting potential as an SSRI"
+        "target_type": "transporter"
       },
       "source_chunk_ids": [
         "e6751037c996d7eea67c6dc530e511e1"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "serotonin transporter protein",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "in vitro",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "e6751037c996d7eea67c6dc530e511e1"
+      ],
+      "confidence": 0.8,
+      "evidence": "suggesting potential as an SSRI",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7dbbf9cd33405f5a4439280ab1d9d1e2"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "serotonin transporter",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "7dbbf9cd33405f5a4439280ab1d9d1e2"
+      ],
+      "confidence": 0.9,
+      "evidence": "serotonin-uptake inhibitors",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "clinical evidence",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "7dbbf9cd33405f5a4439280ab1d9d1e2"
+      ],
+      "confidence": 0.8,
+      "evidence": "emerging clinical evidence",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "psychological disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "7dbbf9cd33405f5a4439280ab1d9d1e2"
+      ],
+      "confidence": 0.85,
+      "evidence": "psychological and psychiatric disorders",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "psychiatric disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "7dbbf9cd33405f5a4439280ab1d9d1e2"
+      ],
+      "confidence": 0.85,
+      "evidence": "psychological and psychiatric disorders",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "62788b15407d8055fc39a9c6e67fbf64"
+      ],
+      "confidence": 0.95,
+      "evidence": "Synthesis of (\u00b1)-mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "compound 29",
+      "attributes": {},
+      "source_chunk_ids": [
+        "62788b15407d8055fc39a9c6e67fbf64"
+      ],
+      "confidence": 0.9,
+      "evidence": "Compound 29 is a substituted benzylideneacetone derivative",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "compound 30",
+      "attributes": {},
+      "source_chunk_ids": [
+        "62788b15407d8055fc39a9c6e67fbf64"
+      ],
+      "confidence": 0.8,
+      "evidence": "Reaction a converts it to 30",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "compound 31",
+      "attributes": {},
+      "source_chunk_ids": [
+        "62788b15407d8055fc39a9c6e67fbf64"
+      ],
+      "confidence": 0.8,
+      "evidence": "then b to 31",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "compound 32",
+      "attributes": {},
+      "source_chunk_ids": [
+        "62788b15407d8055fc39a9c6e67fbf64"
+      ],
+      "confidence": 0.8,
+      "evidence": "then c to 32",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "compound 33",
+      "attributes": {},
+      "source_chunk_ids": [
+        "62788b15407d8055fc39a9c6e67fbf64"
+      ],
+      "confidence": 0.8,
+      "evidence": "then d to 33",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "compound 34",
+      "attributes": {},
+      "source_chunk_ids": [
+        "62788b15407d8055fc39a9c6e67fbf64"
+      ],
+      "confidence": 0.8,
+      "evidence": "then e to 34",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {},
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "RawMaterial",
+      "name": "extract of Sceletium tortuosum",
+      "attributes": {},
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "confidence": 0.9,
+      "evidence": "extract of Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "mild to moderate depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "confidence": 0.9,
+      "evidence": "mild to moderate depression",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "stress",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "confidence": 0.85,
+      "evidence": "stress",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "confidence": 0.85,
+      "evidence": "anxiety",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "cancer",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "confidence": 0.85,
+      "evidence": "cancer",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "inflammation",
+      "attributes": {
+        "condition_type": "process"
+      },
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "confidence": 0.85,
+      "evidence": "inflammation",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "obesity",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "confidence": 0.85,
+      "evidence": "obesity",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "hypertension",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "confidence": 0.85,
+      "evidence": "hypertension",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Condition",
+      "name": "obsessive-compulsive disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "confidence": 0.85,
+      "evidence": "obsessive-compulsive disorders",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Target",
+      "name": "PDE4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "confidence": 0.8,
+      "evidence": "PDE4 inhibitor",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Condition",
+      "name": "cystic fibrosis",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "confidence": 0.85,
+      "evidence": "cystic fibrosis",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Study",
+      "name": "Davies (2016) patent",
+      "attributes": {
+        "year": 2016,
+        "design": "patent"
+      },
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "confidence": 0.9,
+      "evidence": "patent filed by Davies (2016)",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Study",
+      "name": "Freissmuth et al. (2016) patent",
+      "attributes": {
+        "year": 2016,
+        "design": "patent"
+      },
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "confidence": 0.9,
+      "evidence": "United States Patent 9504663 filed by Freissmuth et al., 2016",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Evidence",
+      "name": "patent evidence",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "confidence": 0.8,
+      "evidence": "patent filed",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "Product",
+      "name": "pharmaceutical formulation containing extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "confidence": 0.85,
+      "evidence": "pharmaceutical formulation containing an extract",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium species",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ac94b6d16b6f8fd036eb7a257d388fc4"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium species",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "(-)-mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ac94b6d16b6f8fd036eb7a257d388fc4"
+      ],
+      "confidence": 0.95,
+      "evidence": "(-)-mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Mesembryanthemum anatomicum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mesembryanthemum anatomicum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Mesembryanthemum tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "confidence": 0.9,
+      "evidence": "M. tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Sceletium crassicaule",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium crassicaule",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "CompoundClass",
+      "name": "mesembrine alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "channaine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "confidence": 0.9,
+      "evidence": "channaine",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "RawMaterial",
+      "name": "Kougoed",
+      "attributes": {},
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "confidence": 0.85,
+      "evidence": "Kougoed",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Rimington & Roets 1937",
+      "attributes": {
+        "year": 1937
+      },
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "confidence": 0.85,
+      "evidence": "Rimington, C., Roets, G.C.S., 1937",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "Smith et al. 1996",
+      "attributes": {
+        "year": 1996
+      },
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "confidence": 0.85,
+      "evidence": "Smith, M.T., Crouch, N.R., Gericke, N., Hirst, M., 1996",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Study",
+      "name": "Smith et al. 1998",
+      "attributes": {
+        "year": 1998
+      },
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "confidence": 0.85,
+      "evidence": "Smith, M.T., Field, C.R., Crouch, N.R., Hirst, M., 1998",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Study",
+      "name": "Shikanga et al. 2011",
+      "attributes": {
+        "year": 2011
+      },
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "confidence": 0.85,
+      "evidence": "Shikanga, E.A., Viljoen, A., Combrinck, S., Marston, A., 2011",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Study",
+      "name": "Shikanga et al. 2013",
+      "attributes": {
+        "year": 2013
+      },
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "confidence": 0.85,
+      "evidence": "Shikanga, E.A., Viljoen, A.M., Vermaak, I., Combrinck, S., 2013",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Study",
+      "name": "Veale et al. 2018",
+      "attributes": {
+        "year": 2018
+      },
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "confidence": 0.85,
+      "evidence": "Veale, C.G.L., Chen, W., Chaudhary, S., Kituyi, S.N., Isaacs, M., Hoppe, H., Edkins, A.L., Combrinck, S., Mehari, B., Viljoen, A., 2018",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Evidence",
+      "name": "phytochemical analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "confidence": 0.8,
+      "evidence": "phytochemical analysis",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Evidence",
+      "name": "review",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "confidence": 0.8,
+      "evidence": "review",
+      "verified": true
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.065667+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "chiral alkaloid",
+      "source_chunk_ids": [
+        "171b5b75a72b6b3e4b17c91835e988ad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "found in species of the succulent genus Sceletium",
+      "source_chunk_ids": [
+        "171b5b75a72b6b3e4b17c91835e988ad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_USE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "used by various ethnic groups",
+      "source_chunk_ids": [
+        "171b5b75a72b6b3e4b17c91835e988ad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.85,
+      "evidence": "Sceletium species are used",
+      "source_chunk_ids": [
+        "171b5b75a72b6b3e4b17c91835e988ad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "manage disorders of the central nervous system",
+      "source_chunk_ids": [
+        "171b5b75a72b6b3e4b17c91835e988ad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.9,
+      "evidence": "mesembrine is a more potent inhibitor of the serotonin transporter (SERT)",
+      "source_chunk_ids": [
+        "171b5b75a72b6b3e4b17c91835e988ad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INTERACTS_WITH",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "comparison": "more potent inhibitor",
+        "bidirectional": true
+      },
+      "confidence": 0.8,
+      "evidence": "more potent inhibitor than fluoxetine",
+      "source_chunk_ids": [
+        "171b5b75a72b6b3e4b17c91835e988ad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "CONTAINS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "mesembrine-containing consumer products",
+      "source_chunk_ids": [
+        "171b5b75a72b6b3e4b17c91835e988ad"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "abundance in Sceletium",
+      "source_chunk_ids": [
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.9,
+      "evidence": "inhibits serotonin reuptake",
+      "source_chunk_ids": [
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TREATS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "pharmacological"
+      },
+      "confidence": 0.75,
+      "evidence": "anti-depressant",
+      "source_chunk_ids": [
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "supporting_study_ids": [
+        "E8"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TREATS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "pharmacological"
+      },
+      "confidence": 0.75,
+      "evidence": "anxiolytic",
+      "source_chunk_ids": [
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "supporting_study_ids": [
+        "E8"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "mood elevator",
+      "source_chunk_ids": [
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "mood elevator",
+      "source_chunk_ids": [
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "SUGGESTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "anti-addiction agent",
+      "source_chunk_ids": [
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "pharmacology",
+      "source_chunk_ids": [
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Smith et al., 1996; Stafford et al., 2008",
+      "source_chunk_ids": [
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "inhibits"
+      },
+      "confidence": 0.7,
+      "evidence": "inhibits serotonin reuptake",
+      "source_chunk_ids": [
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.7,
+      "evidence": "anti-depressant",
+      "source_chunk_ids": [
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.7,
+      "evidence": "anxiolytic",
+      "source_chunk_ids": [
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.7,
+      "evidence": "mood elevator",
+      "source_chunk_ids": [
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.7,
+      "evidence": "anti-addiction agent",
+      "source_chunk_ids": [
+        "2b9a430c87e518800f320b0f8f1e672b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "presence",
+          "notes": "detected in 'tortuosum' type species"
+        }
+      },
+      "confidence": 0.9,
+      "evidence": "occur in at least three species of the 'tortuosum' type such as S. tortuosum",
+      "source_chunk_ids": [
+        "0decdf382da2c7c83ed6d8564f184972"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "presence",
+          "notes": "detected in 'tortuosum' type species"
+        }
+      },
+      "confidence": 0.9,
+      "evidence": "occur in at least three species of the 'tortuosum' type such as S. strictum",
+      "source_chunk_ids": [
+        "0decdf382da2c7c83ed6d8564f184972"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "presence",
+          "notes": "detected in 'tortuosum' type species"
+        }
+      },
+      "confidence": 0.9,
+      "evidence": "occur in at least three species of the 'tortuosum' type such as S. expansum",
+      "source_chunk_ids": [
+        "0decdf382da2c7c83ed6d8564f184972"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "absence",
+          "notes": "not detected in 'emarcidum' type species"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "this alkaloid has not been detected in the 'emarcidum' type species",
+      "source_chunk_ids": [
+        "0decdf382da2c7c83ed6d8564f184972"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "presence",
+          "notes": "some level of (-)-mesembrine"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Aptenia cordifolia appeared to have some level of (-)-mesembrine",
+      "source_chunk_ids": [
+        "0decdf382da2c7c83ed6d8564f184972"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E5",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "presence",
+          "notes": "some level of (-)-mesembrine"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Delosperma pruinosum appeared to have some level of (-)-mesembrine",
+      "source_chunk_ids": [
+        "0decdf382da2c7c83ed6d8564f184972"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E5",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "presence",
+          "notes": "some level of (-)-mesembrine"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "Delosperma pottsi appeared to have some level of (-)-mesembrine",
+      "source_chunk_ids": [
+        "0decdf382da2c7c83ed6d8564f184972"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Patnala and Kanfer, 2013",
+      "source_chunk_ids": [
+        "0decdf382da2c7c83ed6d8564f184972"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E10",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Smith et al. (1998)",
+      "source_chunk_ids": [
+        "0decdf382da2c7c83ed6d8564f184972"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "compound"
+      },
+      "confidence": 0.75,
+      "evidence": "Patnala and Kanfer, 2013",
+      "source_chunk_ids": [
+        "0decdf382da2c7c83ed6d8564f184972"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "STUDIES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "compound"
+      },
+      "confidence": 0.75,
+      "evidence": "Smith et al. (1998)",
+      "source_chunk_ids": [
+        "0decdf382da2c7c83ed6d8564f184972"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "mesembrine vary in Sceletium plants",
+      "source_chunk_ids": [
+        "24c0ad205a5f8b0a5b30e282ded435ee"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "measurement": {
+          "value": 1,
+          "unit": "%",
+          "measurement_type": "content",
+          "notes": "approximately"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "approximately 1% in S. namaquense",
+      "source_chunk_ids": [
+        "24c0ad205a5f8b0a5b30e282ded435ee"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": "content",
+          "notes": "lesser quantities"
+        }
+      },
+      "confidence": 0.75,
+      "evidence": "lesser quantities in S. strictum",
+      "source_chunk_ids": [
+        "24c0ad205a5f8b0a5b30e282ded435ee"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "isolated from S. tortuosum",
+      "source_chunk_ids": [
+        "24c0ad205a5f8b0a5b30e282ded435ee"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "this alkaloid",
+      "source_chunk_ids": [
+        "24c0ad205a5f8b0a5b30e282ded435ee"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Smith et al., 1998",
+      "source_chunk_ids": [
+        "24c0ad205a5f8b0a5b30e282ded435ee"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Jeffs, 1981",
+      "source_chunk_ids": [
+        "24c0ad205a5f8b0a5b30e282ded435ee"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "Zwicky incorrectly assigned its molecular formula",
+      "source_chunk_ids": [
+        "9de706eccb24037cde2cf319a30014d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "molecular formula was correctly assigned",
+      "source_chunk_ids": [
+        "9de706eccb24037cde2cf319a30014d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "relative cis arrangement was elucidated",
+      "source_chunk_ids": [
+        "9de706eccb24037cde2cf319a30014d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "absolute configuration of (-)-mesembrine being assigned",
+      "source_chunk_ids": [
+        "9de706eccb24037cde2cf319a30014d1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "proposed biosynthetic pathways for mesembrine",
+      "source_chunk_ids": [
+        "c2baba5ef642ba67079793df4f9063f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "proposed that",
+      "source_chunk_ids": [
+        "c2baba5ef642ba67079793df4f9063f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "into living specimens of S. strictum",
+      "source_chunk_ids": [
+        "c2baba5ef642ba67079793df4f9063f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "living specimens",
+      "source_chunk_ids": [
+        "c2baba5ef642ba67079793df4f9063f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "process": "oxidative cyclisation"
+      },
+      "confidence": 0.85,
+      "evidence": "undergoes oxidative cyclisation to form structure 12",
+      "source_chunk_ids": [
+        "e28e86c2a8ef00469eab4f5a202dee9e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "process": "cyclisation"
+      },
+      "confidence": 0.85,
+      "evidence": "then cyclises to form structure 10, Crinine",
+      "source_chunk_ids": [
+        "e28e86c2a8ef00469eab4f5a202dee9e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "tyrosine is source of the C_6-C_2-N subunit",
+      "source_chunk_ids": [
+        "bfc440520ce39003236465c24e5dd608"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "phenylalanine is source of the remaining C-6 subunit",
+      "source_chunk_ids": [
+        "bfc440520ce39003236465c24e5dd608"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "L-methionine was the source of both the O and N-methyl moieties",
+      "source_chunk_ids": [
+        "bfc440520ce39003236465c24e5dd608"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Jeffs et al., 1971 determined that",
+      "source_chunk_ids": [
+        "bfc440520ce39003236465c24e5dd608"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Jeffs et al., 1971 determined that L-methionine",
+      "source_chunk_ids": [
+        "bfc440520ce39003236465c24e5dd608"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Jeffs et al., 1967",
+      "source_chunk_ids": [
+        "bfc440520ce39003236465c24e5dd608"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Amaryllidaceae alkaloids such as crinine",
+      "source_chunk_ids": [
+        "58e62f5d76f55b3044841f3101b419c1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "oxidative cyclisation of 4'-O-methyl norbelladine results in dienone derivative",
+      "source_chunk_ids": [
+        "58e62f5d76f55b3044841f3101b419c1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "dienone derivative capable of undergoing intramolecular Michael addition, leading to crinine skeleton",
+      "source_chunk_ids": [
+        "58e62f5d76f55b3044841f3101b419c1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Biosynthetic pathways have been shown",
+      "source_chunk_ids": [
+        "58e62f5d76f55b3044841f3101b419c1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "Barton et al., 1963; Battersby et al., 1964; Jeffs et al., 1974",
+      "source_chunk_ids": [
+        "58e62f5d76f55b3044841f3101b419c1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "incorporation into S. strictum",
+      "source_chunk_ids": [
+        "9e3ebb9adc629f044f216dd29888e89c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Jeffs et al. (1974b) experiments",
+      "source_chunk_ids": [
+        "9e3ebb9adc629f044f216dd29888e89c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.85,
+      "evidence": "3'-O-methyl norbelladine is not incorporated",
+      "source_chunk_ids": [
+        "9e3ebb9adc629f044f216dd29888e89c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.8,
+      "evidence": "this specific intermediate is incorrect",
+      "source_chunk_ids": [
+        "9e3ebb9adc629f044f216dd29888e89c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "assertion": "refutes"
+      },
+      "confidence": 0.85,
+      "evidence": "3'-O-methyl norbelladine is not incorporated into mesembrine",
+      "source_chunk_ids": [
+        "9e3ebb9adc629f044f216dd29888e89c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "assertion": "refutes"
+      },
+      "confidence": 0.8,
+      "evidence": "this specific intermediate is incorrect",
+      "source_chunk_ids": [
+        "9e3ebb9adc629f044f216dd29888e89c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "mesembrine-like alkaloids",
+      "source_chunk_ids": [
+        "5a9d35c469cd049b80c3f4e0c80a7e3d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "mesembrine-like alkaloids",
+      "source_chunk_ids": [
+        "5a9d35c469cd049b80c3f4e0c80a7e3d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "identification of sceletenone",
+      "source_chunk_ids": [
+        "5a9d35c469cd049b80c3f4e0c80a7e3d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "identification of sceletenone",
+      "source_chunk_ids": [
+        "5a9d35c469cd049b80c3f4e0c80a7e3d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "discovery of mono-hydroxylated joubertiamine",
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "postulate a unified biosynthetic pathway for Sceletium alkaloids",
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "skeletenone is the biosynthetic precursor to the mesembrine class",
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "combine to form a bis-spirodienone",
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "combine to form a bis-spirodienone",
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "form the sceletenone skeleton",
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "confirmed the intermediacy of cinnamic and 4'-hydroxycinnamic acid",
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "possibly via an aldehyde",
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "confirmed that sceletenone is the biosynthetic precursor",
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E13",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "mesembrine class of alkaloids",
+      "source_chunk_ids": [
+        "21d3236de470dd40247581dccb31e3a8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "undergoing a series of reactions to form structure 14",
+      "source_chunk_ids": [
+        "c9cac7a96c8a355bc1c43dab3525aefc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "cyclises to form the final mesembrine alkaloid structure",
+      "source_chunk_ids": [
+        "c9cac7a96c8a355bc1c43dab3525aefc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "context": "biosynthetic"
+      },
+      "confidence": 0.8,
+      "evidence": "react to form intermediate 18, which then cyclizes to form 15. Sceletenone",
+      "source_chunk_ids": [
+        "83634137faab90d39fd5e9f8247f382e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "context": "biosynthetic"
+      },
+      "confidence": 0.8,
+      "evidence": "react to form intermediate 18, which then cyclizes to form 15. Sceletenone",
+      "source_chunk_ids": [
+        "83634137faab90d39fd5e9f8247f382e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "participates in"
+      },
+      "confidence": 0.75,
+      "evidence": "The reaction starts with 16. 4'-Hydroxy cinnamic acid",
+      "source_chunk_ids": [
+        "83634137faab90d39fd5e9f8247f382e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "participates in"
+      },
+      "confidence": 0.75,
+      "evidence": "and 17. N-methyltyramine",
+      "source_chunk_ids": [
+        "83634137faab90d39fd5e9f8247f382e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "first synthesis of racemic mesembrine",
+      "source_chunk_ids": [
+        "5a2636d45ba1b655d3860986bcc5ac2d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "synthesis of (+)-mesembrine",
+      "source_chunk_ids": [
+        "5a2636d45ba1b655d3860986bcc5ac2d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "enantioselective synthesis of (\u2013)-mesembrine",
+      "source_chunk_ids": [
+        "5a2636d45ba1b655d3860986bcc5ac2d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "reviews which will be updated here",
+      "source_chunk_ids": [
+        "5a2636d45ba1b655d3860986bcc5ac2d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "reviews which will be updated here",
+      "source_chunk_ids": [
+        "5a2636d45ba1b655d3860986bcc5ac2d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "synthetic procedure utilising cooperative Pd/Cu catalysis",
+      "source_chunk_ids": [
+        "847aab5d3fecced2df1b77d781f51343"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "formal synthesis of racemic mesembrine",
+      "source_chunk_ids": [
+        "847aab5d3fecced2df1b77d781f51343"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "formation"
+      },
+      "confidence": 0.8,
+      "evidence": "incorporation of quantitative amounts of DMAP resulted in the formation",
+      "source_chunk_ids": [
+        "847aab5d3fecced2df1b77d781f51343"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "transformation"
+      },
+      "confidence": 0.75,
+      "evidence": "Applying their protocol to cyclic diene (19)",
+      "source_chunk_ids": [
+        "847aab5d3fecced2df1b77d781f51343"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "generation"
+      },
+      "confidence": 0.75,
+      "evidence": "generation of the anti-diastereomer (20)",
+      "source_chunk_ids": [
+        "847aab5d3fecced2df1b77d781f51343"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "generation"
+      },
+      "confidence": 0.75,
+      "evidence": "generate lactone (21)",
+      "source_chunk_ids": [
+        "847aab5d3fecced2df1b77d781f51343"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "precursor"
+      },
+      "confidence": 0.7,
+      "evidence": "lactone (21), a known precursor to mesembrine (Kulkarni et al., 2002)",
+      "source_chunk_ids": [
+        "847aab5d3fecced2df1b77d781f51343"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Han et al., 2016; ... synthesis of mesembrine",
+      "source_chunk_ids": [
+        "f36da341cbc645a942a47502ab53d346"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "Naganawa et al., 2016; ... synthesis of mesembrine",
+      "source_chunk_ids": [
+        "f36da341cbc645a942a47502ab53d346"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Bokka et al. (2018) developed ... methodology",
+      "source_chunk_ids": [
+        "f36da341cbc645a942a47502ab53d346"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Verma et al. (2018) sought to generate",
+      "source_chunk_ids": [
+        "0a05d43281bdb87f1e460044131d44f3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "delivered (+)-mesembrine",
+      "source_chunk_ids": [
+        "0a05d43281bdb87f1e460044131d44f3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Sceletium alkaloids",
+      "source_chunk_ids": [
+        "0a05d43281bdb87f1e460044131d44f3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "developed an efficient seven-step synthesis",
+      "source_chunk_ids": [
+        "cca8183438ff8cf5d2e8dff9441e288b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "synthesis of racemic mesembrine",
+      "source_chunk_ids": [
+        "cca8183438ff8cf5d2e8dff9441e288b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "synthesis of racemic mesembrine",
+      "source_chunk_ids": [
+        "cca8183438ff8cf5d2e8dff9441e288b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Sceletium extracts",
+      "source_chunk_ids": [
+        "d89466042113e0c7b0700cb86c16adb2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.75,
+      "evidence": "treatment of disorders of the central nervous system",
+      "source_chunk_ids": [
+        "d89466042113e0c7b0700cb86c16adb2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.75,
+      "evidence": "mood enhancing capabilities",
+      "source_chunk_ids": [
+        "d89466042113e0c7b0700cb86c16adb2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Smith et al., 1996",
+      "source_chunk_ids": [
+        "d89466042113e0c7b0700cb86c16adb2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "studies have attempted to elucidate the role of (-)-mesembrine",
+      "source_chunk_ids": [
+        "d89466042113e0c7b0700cb86c16adb2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "reaction": "a, b"
+      },
+      "confidence": 0.85,
+      "evidence": "Reaction a, b converts it to compound 23",
+      "source_chunk_ids": [
+        "372979fe41021e907d5444781689f8f8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "reaction": "c"
+      },
+      "confidence": 0.85,
+      "evidence": "Reaction c then converts 23 to (+)-mesembrine",
+      "source_chunk_ids": [
+        "372979fe41021e907d5444781689f8f8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "reaction": "a"
+      },
+      "confidence": 0.75,
+      "evidence": "Reaction a converts it to 26",
+      "source_chunk_ids": [
+        "b1e5637140e87b461fd01c624d8fc11f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "reaction": "b, c"
+      },
+      "confidence": 0.75,
+      "evidence": "then b, c to 24",
+      "source_chunk_ids": [
+        "b1e5637140e87b461fd01c624d8fc11f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "reaction": "d, e"
+      },
+      "confidence": 0.75,
+      "evidence": "Reaction d, e leads to 27",
+      "source_chunk_ids": [
+        "b1e5637140e87b461fd01c624d8fc11f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "reaction": "h, i"
+      },
+      "confidence": 0.75,
+      "evidence": "converted to 28 via h, i",
+      "source_chunk_ids": [
+        "b1e5637140e87b461fd01c624d8fc11f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "reaction": "f, g"
+      },
+      "confidence": 0.75,
+      "evidence": "finally to (+)-mesembrine via f, g",
+      "source_chunk_ids": [
+        "b1e5637140e87b461fd01c624d8fc11f"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.85,
+      "evidence": "Inhibition of type 4 phosphodiesterases with rolipram",
+      "source_chunk_ids": [
+        "59deaf505a3b2143cae110bfe088fa0a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "rolipram has been shown to exert an anti-depressant effect",
+      "source_chunk_ids": [
+        "59deaf505a3b2143cae110bfe088fa0a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "rolipram has been shown to have a neuroprotective effect",
+      "source_chunk_ids": [
+        "59deaf505a3b2143cae110bfe088fa0a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.7,
+      "evidence": "Wachtel and Schneider, 1986",
+      "source_chunk_ids": [
+        "59deaf505a3b2143cae110bfe088fa0a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.7,
+      "evidence": "Schaal et al., 2012",
+      "source_chunk_ids": [
+        "59deaf505a3b2143cae110bfe088fa0a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "Harvey et al., 2011",
+      "source_chunk_ids": [
+        "59deaf505a3b2143cae110bfe088fa0a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "Harvey et al., 2011",
+      "source_chunk_ids": [
+        "59deaf505a3b2143cae110bfe088fa0a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.7,
+      "evidence": "(\u2013)-mesembrine was only found to be weak inhibitor",
+      "source_chunk_ids": [
+        "59deaf505a3b2143cae110bfe088fa0a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "ACTS_ON",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {
+        "action": "inhibits",
+        "assertion": "refutes",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "(\u2013)-mesembrine was only found to be weak inhibitor",
+      "source_chunk_ids": [
+        "59deaf505a3b2143cae110bfe088fa0a"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R10",
+      "type": "ACTS_ON",
+      "source_entity_id": "E9",
+      "target_entity_id": "E11",
+      "attributes": {
+        "action": "inhibits",
+        "assertion": "refutes",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "negligible activity as a choline esterase inhibitor",
+      "source_chunk_ids": [
+        "59deaf505a3b2143cae110bfe088fa0a"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Harvey et al., 2011; Lubbe et al., 2010",
+      "source_chunk_ids": [
+        "e6751037c996d7eea67c6dc530e511e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Harvey et al., 2011; Lubbe et al., 2010",
+      "source_chunk_ids": [
+        "e6751037c996d7eea67c6dc530e511e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "study of Harvey et al. (2011) found that (-)-mesembrine",
+      "source_chunk_ids": [
+        "e6751037c996d7eea67c6dc530e511e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "suggesting potential as an SSRI",
+      "source_chunk_ids": [
+        "e6751037c996d7eea67c6dc530e511e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "binds"
+      },
+      "confidence": 0.9,
+      "evidence": "(-)-mesembrine bound strongly to the serotonin transporter protein",
+      "source_chunk_ids": [
+        "e6751037c996d7eea67c6dc530e511e1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.9,
+      "evidence": "potent serotonin-uptake inhibitors",
+      "source_chunk_ids": [
+        "7dbbf9cd33405f5a4439280ab1d9d1e2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "patent"
+      },
+      "confidence": 0.75,
+      "evidence": "treatment of psychological disorders",
+      "source_chunk_ids": [
+        "7dbbf9cd33405f5a4439280ab1d9d1e2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "patent"
+      },
+      "confidence": 0.75,
+      "evidence": "treatment of psychiatric disorders",
+      "source_chunk_ids": [
+        "7dbbf9cd33405f5a4439280ab1d9d1e2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "reaction": "a"
+      },
+      "confidence": 0.85,
+      "evidence": "Reaction a converts it to 30",
+      "source_chunk_ids": [
+        "62788b15407d8055fc39a9c6e67fbf64"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "reaction": "b"
+      },
+      "confidence": 0.85,
+      "evidence": "then b to 31",
+      "source_chunk_ids": [
+        "62788b15407d8055fc39a9c6e67fbf64"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "reaction": "c"
+      },
+      "confidence": 0.85,
+      "evidence": "then c to 32",
+      "source_chunk_ids": [
+        "62788b15407d8055fc39a9c6e67fbf64"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "reaction": "d"
+      },
+      "confidence": 0.85,
+      "evidence": "then d to 33",
+      "source_chunk_ids": [
+        "62788b15407d8055fc39a9c6e67fbf64"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "reaction": "e"
+      },
+      "confidence": 0.85,
+      "evidence": "then e to 34",
+      "source_chunk_ids": [
+        "62788b15407d8055fc39a9c6e67fbf64"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "reaction": "f, g, h"
+      },
+      "confidence": 0.85,
+      "evidence": "finally f, g, h to (\u00b1)-mesembrine",
+      "source_chunk_ids": [
+        "62788b15407d8055fc39a9c6e67fbf64"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "measurement": {
+          "value": 70,
+          "unit": "% (w/w)",
+          "measurement_type": "content",
+          "notes": "stabilized mesembrine"
+        }
+      },
+      "confidence": 0.85,
+      "evidence": "> 70% (w/w) stabilized mesembrine",
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "extract of Sceletium tortuosum comprising mesembrine",
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TREATS",
+      "source_entity_id": "E17",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "patent claim"
+      },
+      "confidence": 0.75,
+      "evidence": "useful in treating mild to moderate depression",
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "supporting_study_ids": [
+        "E14"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TREATS",
+      "source_entity_id": "E17",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "patent claim"
+      },
+      "confidence": 0.7,
+      "evidence": "useful in treating stress",
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "supporting_study_ids": [
+        "E14"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TREATS",
+      "source_entity_id": "E17",
+      "target_entity_id": "E6",
+      "attributes": {
+        "context": "patent claim"
+      },
+      "confidence": 0.7,
+      "evidence": "useful in treating anxiety",
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "supporting_study_ids": [
+        "E14"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "TREATS",
+      "source_entity_id": "E17",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "patent claim"
+      },
+      "confidence": 0.7,
+      "evidence": "useful in treating cancer",
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "supporting_study_ids": [
+        "E14"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "TREATS",
+      "source_entity_id": "E17",
+      "target_entity_id": "E8",
+      "attributes": {
+        "context": "patent claim"
+      },
+      "confidence": 0.7,
+      "evidence": "useful in treating inflammation",
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "supporting_study_ids": [
+        "E14"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "TREATS",
+      "source_entity_id": "E17",
+      "target_entity_id": "E9",
+      "attributes": {
+        "context": "patent claim"
+      },
+      "confidence": 0.7,
+      "evidence": "useful in treating obesity",
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "supporting_study_ids": [
+        "E14"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "TREATS",
+      "source_entity_id": "E17",
+      "target_entity_id": "E10",
+      "attributes": {
+        "context": "patent claim"
+      },
+      "confidence": 0.7,
+      "evidence": "useful in treating hypertension",
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "supporting_study_ids": [
+        "E14"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "TREATS",
+      "source_entity_id": "E17",
+      "target_entity_id": "E11",
+      "attributes": {
+        "context": "patent claim"
+      },
+      "confidence": 0.7,
+      "evidence": "useful in treating obsessive-compulsive disorders",
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "supporting_study_ids": [
+        "E14"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "ACTS_ON",
+      "source_entity_id": "E3",
+      "target_entity_id": "E12",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.75,
+      "evidence": "mesembrine has been identified as a potent PDE inhibitor",
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E13",
+      "attributes": {
+        "context": "combination therapy"
+      },
+      "confidence": 0.7,
+      "evidence": "combination of prostacyclin with mesembrine for cystic fibrosis",
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "supporting_study_ids": [
+        "E15"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E14",
+      "target_entity_id": "E16",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "patent filed by Davies (2016)",
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E15",
+      "target_entity_id": "E16",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "United States Patent 9504663 filed by Freissmuth et al., 2016",
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "STUDIES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E17",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "patent describes use of pharmaceutical formulation",
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "STUDIES",
+      "source_entity_id": "E15",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "patent describes combination with mesembrine",
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R17",
+      "type": "REPORTS",
+      "source_entity_id": "E14",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "claimed useful"
+      },
+      "confidence": 0.75,
+      "evidence": "claimed to be useful in treating mild to moderate depression",
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R18",
+      "type": "REPORTS",
+      "source_entity_id": "E15",
+      "target_entity_id": "E13",
+      "attributes": {
+        "outcome": "claimed useful"
+      },
+      "confidence": 0.75,
+      "evidence": "for preventing or treating cystic fibrosis",
+      "source_chunk_ids": [
+        "45150180887e11121114c64db355f303"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Sceletium species in addition to its quaternary stereocenter has rendered (\u2013)-mesembrine",
+      "source_chunk_ids": [
+        "ac94b6d16b6f8fd036eb7a257d388fc4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Sceletium tortuosum contains mesembrine",
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Mesembryanthemum anatomicum contains mesembrine",
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "M. tortuosum contains mesembrine",
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Kougoed contains mesembrine",
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Sceletium tortuosum contains channaine",
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "mesembrine is a mesembrine alkaloid",
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_CLASS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "channaine is an alkaloid",
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E9",
+      "target_entity_id": "E15",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Rimington & Roets 1937 is a phytochemical analysis",
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E10",
+      "target_entity_id": "E16",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Smith et al. 1996 is a review",
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Rimington & Roets 1937 studies Sceletium tortuosum",
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "STUDIES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Smith et al. 1996 studies Sceletium",
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Smith et al. 1998 studies Sceletium",
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "STUDIES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Shikanga et al. 2011 studies Sceletium",
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "STUDIES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Shikanga et al. 2013 studies Sceletium tortuosum",
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "STUDIES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Veale et al. 2018 studies Sceletium tortuosum",
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "STUDIES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Shikanga et al. 2013 studies Sceletium crassicaule",
+      "source_chunk_ids": [
+        "92bb45bfeca75ec7b57ea64997ac1ea3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }

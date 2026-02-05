@@ -1,12 +1,3441 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "686da3b38ea4bd83e83f2da7a38b33d966b03c7c1f5780900a3962a355743b6d",
-  "extracted_at": "2026-02-01T08:58:11.437092+00:00",
-  "extractor": "legacy-migration",
-  "entities": [],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.083662+00:00",
-    "original_file": "entities.json"
-  }
+  "entities": [
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "hippocampus",
+      "attributes": {
+        "target_type": "brain_region"
+      },
+      "source_chunk_ids": [
+        "5026b3cc609aaa1ccbb8407933f247ab"
+      ],
+      "confidence": 0.9,
+      "evidence": "hippocampus assists with consolidation",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Effect",
+      "name": "synaptic plasticity",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "5026b3cc609aaa1ccbb8407933f247ab"
+      ],
+      "confidence": 0.85,
+      "evidence": "Synaptic plasticity in the hippocampus",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "addiction",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "5026b3cc609aaa1ccbb8407933f247ab"
+      ],
+      "confidence": 0.95,
+      "evidence": "Addiction is a chronic relapsing disorder",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "relapse",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "5026b3cc609aaa1ccbb8407933f247ab"
+      ],
+      "confidence": 0.8,
+      "evidence": "Relapse to drug use is caused",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "drug-induced synaptic alterations",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "5026b3cc609aaa1ccbb8407933f247ab"
+      ],
+      "confidence": 0.75,
+      "evidence": "drug-induced synaptic alterations",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Avchalumov & Mandyam 2021",
+      "attributes": {
+        "year": 2021,
+        "doi": "10.3390/brainsci11030404"
+      },
+      "source_chunk_ids": [
+        "132f1d809180941a2ac38f04835ee4b1"
+      ],
+      "confidence": 0.95,
+      "evidence": "Avchalumov, Y.; Mandyam, C.D. Plasticity in the Hippocampus, Neurogenesis and Drugs of Abuse. Brain Sci. 2021, 11, 404.",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "review article",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "132f1d809180941a2ac38f04835ee4b1"
+      ],
+      "confidence": 0.85,
+      "evidence": "review article",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "132f1d809180941a2ac38f04835ee4b1"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "mesembrine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "132f1d809180941a2ac38f04835ee4b1"
+      ],
+      "confidence": 0.95,
+      "evidence": "mesembrine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "serotonin transporter",
+      "attributes": {
+        "target_type": "transporter"
+      },
+      "source_chunk_ids": [
+        "132f1d809180941a2ac38f04835ee4b1"
+      ],
+      "confidence": 0.9,
+      "evidence": "serotonin transporter",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "neurogenesis",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "132f1d809180941a2ac38f04835ee4b1"
+      ],
+      "confidence": 0.85,
+      "evidence": "neurogenesis",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "132f1d809180941a2ac38f04835ee4b1"
+      ],
+      "confidence": 0.8,
+      "evidence": "depression",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "132f1d809180941a2ac38f04835ee4b1"
+      ],
+      "confidence": 0.8,
+      "evidence": "anxiety",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "San people",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b11367b22c59e58c624a07940a71fbb5"
+      ],
+      "confidence": 0.95,
+      "evidence": "San people",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: San \u2013 Sceletium \u2013 mood elevation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b11367b22c59e58c624a07940a71fbb5"
+      ],
+      "confidence": 0.85,
+      "evidence": "traditionally used",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "b11367b22c59e58c624a07940a71fbb5"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "PlantPart",
+      "name": "leaves",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b11367b22c59e58c624a07940a71fbb5"
+      ],
+      "confidence": 0.8,
+      "evidence": "leaves",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Preparation",
+      "name": "fermentation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b11367b22c59e58c624a07940a71fbb5"
+      ],
+      "confidence": 0.75,
+      "evidence": "fermented",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "mood elevation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b11367b22c59e58c624a07940a71fbb5"
+      ],
+      "confidence": 0.9,
+      "evidence": "mood elevation",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "hippocampus",
+      "attributes": {
+        "target_type": "brain_region"
+      },
+      "source_chunk_ids": [
+        "a4b08eec9307ce8700b4ffd5095352af"
+      ],
+      "confidence": 0.95,
+      "evidence": "Hippocampus is a brain region",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "epilepsy",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "a4b08eec9307ce8700b4ffd5095352af"
+      ],
+      "confidence": 0.9,
+      "evidence": "surgical removal of the hippocampus which was done to treat epilepsy",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "memory impairment",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "a4b08eec9307ce8700b4ffd5095352af"
+      ],
+      "confidence": 0.85,
+      "evidence": "lost the ability to form new declarative memories",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "synaptic plasticity",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "a4b08eec9307ce8700b4ffd5095352af"
+      ],
+      "confidence": 0.8,
+      "evidence": "activity-dependent synaptic plasticity in the hippocampus",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "spatial memory",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "a4b08eec9307ce8700b4ffd5095352af"
+      ],
+      "confidence": 0.75,
+      "evidence": "hippocampal place cells\u2014neurons that are important for spatial position",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "synaptic plasticity",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "10716ddf7ca8fb3149187de2cd0a4f9c"
+      ],
+      "confidence": 0.9,
+      "evidence": "synaptic plasticity",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "Hebbian plasticity",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "10716ddf7ca8fb3149187de2cd0a4f9c"
+      ],
+      "confidence": 0.85,
+      "evidence": "Hebbian plasticity",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "short-term plasticity",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "10716ddf7ca8fb3149187de2cd0a4f9c"
+      ],
+      "confidence": 0.8,
+      "evidence": "short-term plasticity",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "LTP",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "10716ddf7ca8fb3149187de2cd0a4f9c"
+      ],
+      "confidence": 0.85,
+      "evidence": "LTP",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "LTD",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "10716ddf7ca8fb3149187de2cd0a4f9c"
+      ],
+      "confidence": 0.85,
+      "evidence": "LTD",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "spike timing-dependent plasticity (STDP)",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "10716ddf7ca8fb3149187de2cd0a4f9c"
+      ],
+      "confidence": 0.9,
+      "evidence": "spike timing-dependent plasticity (STDP)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "metaplasticity",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "10716ddf7ca8fb3149187de2cd0a4f9c"
+      ],
+      "confidence": 0.85,
+      "evidence": "metaplasticity",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Target",
+      "name": "homeostatic plasticity",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "10716ddf7ca8fb3149187de2cd0a4f9c"
+      ],
+      "confidence": 0.85,
+      "evidence": "homeostatic plasticity",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Target",
+      "name": "structural plasticity",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "10716ddf7ca8fb3149187de2cd0a4f9c"
+      ],
+      "confidence": 0.85,
+      "evidence": "structural plasticity",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Target",
+      "name": "hippocampus",
+      "attributes": {
+        "target_type": "brain region"
+      },
+      "source_chunk_ids": [
+        "10716ddf7ca8fb3149187de2cd0a4f9c"
+      ],
+      "confidence": 0.9,
+      "evidence": "hippocampus",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Target",
+      "name": "synaptic transmission",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "10716ddf7ca8fb3149187de2cd0a4f9c"
+      ],
+      "confidence": 0.85,
+      "evidence": "synaptic transmission",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Target",
+      "name": "neuronal plasticity",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "10716ddf7ca8fb3149187de2cd0a4f9c"
+      ],
+      "confidence": 0.8,
+      "evidence": "neuronal plasticity",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Compound",
+      "name": "glutamate",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ea953a86f26fdd63914be97afda1fa1c"
+      ],
+      "confidence": 0.95,
+      "evidence": "The key molecule that modulates plasticity in the CA1 is glutamate",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "glutamatergic receptors",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "ea953a86f26fdd63914be97afda1fa1c"
+      ],
+      "confidence": 0.9,
+      "evidence": "glutamatergic receptors",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "NMDA-type glutamatergic receptor",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "ea953a86f26fdd63914be97afda1fa1c"
+      ],
+      "confidence": 0.9,
+      "evidence": "NMDA-type glutamatergic receptor",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Compound",
+      "name": "DL-2-amino-5-phosphononvalerate",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ea953a86f26fdd63914be97afda1fa1c"
+      ],
+      "confidence": 0.85,
+      "evidence": "DL-2-amino-5-phosphononvalerate (APV)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "LTP induction",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "ea953a86f26fdd63914be97afda1fa1c"
+      ],
+      "confidence": 0.8,
+      "evidence": "blocks the induction of LTP",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "basal synaptic potentials",
+      "attributes": {
+        "level": "cellular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "ea953a86f26fdd63914be97afda1fa1c"
+      ],
+      "confidence": 0.75,
+      "evidence": "no effect on basal synaptic potentials",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "seminal studies [69-72]",
+      "attributes": {
+        "year": "referenced",
+        "design": "experimental"
+      },
+      "source_chunk_ids": [
+        "ea953a86f26fdd63914be97afda1fa1c"
+      ],
+      "confidence": 0.8,
+      "evidence": "seminal studies that have indicated causation",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "in vitro evidence",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "ea953a86f26fdd63914be97afda1fa1c"
+      ],
+      "confidence": 0.7,
+      "evidence": "studies that determined the mechanism",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "NMDA-type glutamatergic receptors",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "confidence": 0.9,
+      "evidence": "NMDA-type glutamatergic receptors",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "GluN2A subunit",
+      "attributes": {
+        "target_type": "receptor subunit"
+      },
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "confidence": 0.85,
+      "evidence": "GluN2A subunits activate signaling pathways",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "GluN2B subunit",
+      "attributes": {
+        "target_type": "receptor subunit"
+      },
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "confidence": 0.85,
+      "evidence": "GluN2B subunits activate signaling pathways",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "calcium/calmodulin-dependent protein kinase II",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "confidence": 0.8,
+      "evidence": "phosphorylation of calcium/calmodulin-dependent protein kinase II",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "protein kinase A",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "confidence": 0.8,
+      "evidence": "phosphorylation of... protein kinase A",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "protein kinase B",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "confidence": 0.8,
+      "evidence": "phosphorylation of... protein kinase B",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "extracellular signal-regulated kinases",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "confidence": 0.8,
+      "evidence": "extracellular signal-regulated kinases",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Target",
+      "name": "protein phosphatases",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "confidence": 0.8,
+      "evidence": "activation of protein phosphatases",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "long-term potentiation",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "confidence": 0.9,
+      "evidence": "long-lasting enhancement of synaptic efficacy",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "long-term depression",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "confidence": 0.9,
+      "evidence": "LTD",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "synaptic plasticity",
+      "attributes": {
+        "level": "cellular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "confidence": 0.85,
+      "evidence": "regulating synaptic plasticity",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Effect",
+      "name": "calcium influx",
+      "attributes": {
+        "level": "molecular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "confidence": 0.8,
+      "evidence": "differences in calcium influx",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "GluN",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "confidence": 0.9,
+      "evidence": "GluN dependent mechanisms",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "CA1",
+      "attributes": {
+        "target_type": "brain_region"
+      },
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "confidence": 0.85,
+      "evidence": "CA1 for induction and maintenance",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "LTP",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "confidence": 0.95,
+      "evidence": "induction and maintenance of LTP",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "LTD",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "confidence": 0.9,
+      "evidence": "maintenance of LTP and LTD",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "CA3",
+      "attributes": {
+        "target_type": "brain_region"
+      },
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "confidence": 0.85,
+      "evidence": "LTP in the CA3",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "mossy fiber synapses",
+      "attributes": {
+        "target_type": "synapse"
+      },
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "confidence": 0.8,
+      "evidence": "mossy fiber synapses",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "intracellular calcium",
+      "attributes": {
+        "target_type": "ion"
+      },
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "confidence": 0.75,
+      "evidence": "presynaptic activation of intracellular calcium",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Target",
+      "name": "kainate receptors",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "confidence": 0.8,
+      "evidence": "activation of presynaptic kainate receptors",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Target",
+      "name": "glutamate",
+      "attributes": {
+        "target_type": "neurotransmitter"
+      },
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "confidence": 0.7,
+      "evidence": "endogenous glutamate",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Target",
+      "name": "PKA",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "confidence": 0.85,
+      "evidence": "activation of PKA",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Target",
+      "name": "presynaptic substrates",
+      "attributes": {
+        "target_type": "protein"
+      },
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "confidence": 0.7,
+      "evidence": "presynaptic substrates that activate PKA",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Target",
+      "name": "long-term synaptic plasticity",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "confidence": 0.8,
+      "evidence": "mediating this form of long-term synaptic plasticity",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Target",
+      "name": "hyperpolarization-activated cation channels",
+      "attributes": {
+        "target_type": "channel"
+      },
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "confidence": 0.75,
+      "evidence": "hyperpolarization-activated cation channels",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Target",
+      "name": "transmitter release",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "confidence": 0.7,
+      "evidence": "control of transmitter release",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Target",
+      "name": "synaptic vesicle proteins",
+      "attributes": {
+        "target_type": "protein"
+      },
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "confidence": 0.8,
+      "evidence": "synaptic vesicle proteins are ultimately responsible",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Target",
+      "name": "neurotransmitter release",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "confidence": 0.75,
+      "evidence": "regulation of neurotransmitter release",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "Effect",
+      "name": "induction of LTP",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "confidence": 0.85,
+      "evidence": "induction of LTP in the CA3",
+      "verified": true
+    },
+    {
+      "id": "E18",
+      "type": "Effect",
+      "name": "regulation of plasticity",
+      "attributes": {
+        "level": "cellular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "confidence": 0.7,
+      "evidence": "regulate plasticity in the CA3 region",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "dentate gyrus",
+      "attributes": {
+        "target_type": "brain region"
+      },
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "confidence": 0.9,
+      "evidence": "DG is anatomically and functionally well characterized region",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "granule cells neurons",
+      "attributes": {
+        "target_type": "neuron"
+      },
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "confidence": 0.85,
+      "evidence": "Granule cells neurons (GCNs), the principal neurons of DG",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "stellate cells",
+      "attributes": {
+        "target_type": "neuron"
+      },
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "confidence": 0.8,
+      "evidence": "stellate cells in the EC",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "perforant pathway",
+      "attributes": {
+        "target_type": "neural pathway"
+      },
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "confidence": 0.85,
+      "evidence": "axons form the perforant pathway",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "glutamatergic synapses",
+      "attributes": {
+        "target_type": "synapse"
+      },
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "confidence": 0.8,
+      "evidence": "make glutamatergic synapses onto GCNs",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "lateral perforant path",
+      "attributes": {
+        "target_type": "neural pathway"
+      },
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "confidence": 0.75,
+      "evidence": "afferents coming from the lateral perforant path (LPP)",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "medial perforant path",
+      "attributes": {
+        "target_type": "neural pathway"
+      },
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "confidence": 0.75,
+      "evidence": "or medial perforant path (MPP)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Target",
+      "name": "LTP",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "confidence": 0.9,
+      "evidence": "LTP in the DG is very similar to the LTP",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Target",
+      "name": "GluN",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "confidence": 0.8,
+      "evidence": "they are both GluN dependent",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Compound",
+      "name": "glutamate",
+      "attributes": {},
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "confidence": 0.85,
+      "evidence": "In addition to glutamate",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Target",
+      "name": "neuroligins",
+      "attributes": {
+        "target_type": "protein"
+      },
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "confidence": 0.8,
+      "evidence": "neuroligins (NL) are transmembrane cell adhesion proteins",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Target",
+      "name": "NL1",
+      "attributes": {
+        "target_type": "protein"
+      },
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "confidence": 0.85,
+      "evidence": "hippocampal knockdown of NL1 decreases perforant path-granule cell LTP",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Target",
+      "name": "collybistin",
+      "attributes": {
+        "target_type": "protein"
+      },
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "confidence": 0.75,
+      "evidence": "brain specific guanine nucleotide exchange factor collybistin (Cb)",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Target",
+      "name": "gephyrin",
+      "attributes": {
+        "target_type": "protein"
+      },
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "confidence": 0.75,
+      "evidence": "synaptic scaffolding protein gephyrin",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Effect",
+      "name": "decreases LTP",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "confidence": 0.8,
+      "evidence": "decreases perforant path-granule cell LTP",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Effect",
+      "name": "reduces excitatory transmission",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "confidence": 0.75,
+      "evidence": "reduces excitatory transmission",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "Effect",
+      "name": "diminishes LTP",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "confidence": 0.75,
+      "evidence": "diminishes LTP in the DG",
+      "verified": true
+    },
+    {
+      "id": "E18",
+      "type": "Effect",
+      "name": "impairment in LTP",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "confidence": 0.7,
+      "evidence": "exhibit impairment in LTP in the DG",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "GluN receptor",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "ac3660af59c63e8797b45664c4d0bf43"
+      ],
+      "confidence": 0.9,
+      "evidence": "requires GluN receptor activation",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Target",
+      "name": "GluN2B",
+      "attributes": {
+        "target_type": "receptor subtype"
+      },
+      "source_chunk_ids": [
+        "ac3660af59c63e8797b45664c4d0bf43"
+      ],
+      "confidence": 0.9,
+      "evidence": "GluN2Bs are essential for DG synaptic plasticity",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "survival of adult born GCNs",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "ac3660af59c63e8797b45664c4d0bf43"
+      ],
+      "confidence": 0.85,
+      "evidence": "survival of adult born GCNs requires GluN receptor activation",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "LTP in adult born GCNs",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "ac3660af59c63e8797b45664c4d0bf43"
+      ],
+      "confidence": 0.85,
+      "evidence": "LTP in adult born GCNs is blocked by GluN2B antagonists",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "DG synaptic plasticity",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "ac3660af59c63e8797b45664c4d0bf43"
+      ],
+      "confidence": 0.85,
+      "evidence": "GluN2Bs are essential for DG synaptic plasticity",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "neurogenesis in the DG",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "ac3660af59c63e8797b45664c4d0bf43"
+      ],
+      "confidence": 0.85,
+      "evidence": "neurogenesis in the DG is regulated by synaptic plasticity",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "DG LTD",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "ac3660af59c63e8797b45664c4d0bf43"
+      ],
+      "confidence": 0.85,
+      "evidence": "adult born GCNs also play a role in DG LTD",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "gradual decay of hippocampal LTP",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "ac3660af59c63e8797b45664c4d0bf43"
+      ],
+      "confidence": 0.85,
+      "evidence": "adult born GCNs also play a role in the gradual decay of hippocampal LTP",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "synaptic plasticity in the DG",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "ac3660af59c63e8797b45664c4d0bf43"
+      ],
+      "confidence": 0.85,
+      "evidence": "synaptic plasticity in the DG is regulated by neurogenesis",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Effect",
+      "name": "adult born GCNs are hyperplastic",
+      "attributes": {
+        "level": "cellular",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "ac3660af59c63e8797b45664c4d0bf43"
+      ],
+      "confidence": 0.85,
+      "evidence": "adult born GCNs are hyperplastic",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Effect",
+      "name": "reduces CA1 LTP",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "86a57275d24d03cbb34dc0a8549b4436"
+      ],
+      "confidence": 0.9,
+      "evidence": "reduces CA1 LTP",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Compound",
+      "name": "delta-9-THC",
+      "attributes": {},
+      "source_chunk_ids": [
+        "86a57275d24d03cbb34dc0a8549b4436"
+      ],
+      "confidence": 0.95,
+      "evidence": "delta (9)-tetrahydrocannabinol (delta-9-THC)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Effect",
+      "name": "reduced CA1 LTP with chronic delta-9-THC",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "86a57275d24d03cbb34dc0a8549b4436"
+      ],
+      "confidence": 0.85,
+      "evidence": "reduced CA1 LTP with chronic delta-9-THC",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Effect",
+      "name": "effects of CB1 agonists on synaptic depression",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "86a57275d24d03cbb34dc0a8549b4436"
+      ],
+      "confidence": 0.8,
+      "evidence": "effects of CB1 agonists on synaptic depression",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "CB1",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "86a57275d24d03cbb34dc0a8549b4436"
+      ],
+      "confidence": 0.75,
+      "evidence": "CB1 agonists",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "altering synaptic plasticity in the CA1 and DG of the hippocampus",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "86a57275d24d03cbb34dc0a8549b4436"
+      ],
+      "confidence": 0.85,
+      "evidence": "altering synaptic plasticity in the CA1 and DG",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "reduce adult neurogenesis in the DG",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "86a57275d24d03cbb34dc0a8549b4436"
+      ],
+      "confidence": 0.9,
+      "evidence": "reduce adult neurogenesis in the DG",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Effect",
+      "name": "reduce the number of adult born GCNs",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "86a57275d24d03cbb34dc0a8549b4436"
+      ],
+      "confidence": 0.9,
+      "evidence": "reduce the number of adult born GCNs",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Effect",
+      "name": "reduce several aspects of neurogenesis",
+      "attributes": {
+        "level": "cellular",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "86a57275d24d03cbb34dc0a8549b4436"
+      ],
+      "confidence": 0.85,
+      "evidence": "reduce several aspects of neurogenesis",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "addiction",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "86a57275d24d03cbb34dc0a8549b4436"
+      ],
+      "confidence": 0.9,
+      "evidence": "treat addiction",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Target",
+      "name": "adult neurogenesis",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "confidence": 0.9,
+      "evidence": "adult neurogenesis",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "cocaine addiction",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "confidence": 0.85,
+      "evidence": "cocaine addiction",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "substance use disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "confidence": 0.9,
+      "evidence": "substance use disorders",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Target",
+      "name": "GABA(A) Receptor Subunit Expression",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "confidence": 0.8,
+      "evidence": "GABA(A) Receptor Subunit Expression",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Target",
+      "name": "glutamate receptors",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "confidence": 0.85,
+      "evidence": "glutamate receptors",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Target",
+      "name": "GluN2B-containing NMDA receptors",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "confidence": 0.8,
+      "evidence": "GluN2B-containing NMDA receptors",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Target",
+      "name": "endocannabinoid-mediated synaptic plasticity",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "confidence": 0.8,
+      "evidence": "endocannabinoid-mediated synaptic plasticity",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Target",
+      "name": "synaptic integration and plasticity",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "confidence": 0.8,
+      "evidence": "synaptic integration and plasticity",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Target",
+      "name": "transcription factors",
+      "attributes": {
+        "target_type": "protein"
+      },
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "confidence": 0.75,
+      "evidence": "transcription factors",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Target",
+      "name": "hippocampal plasticity",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "confidence": 0.85,
+      "evidence": "hippocampal plasticity",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Target",
+      "name": "neural stem cells",
+      "attributes": {
+        "target_type": "cell"
+      },
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "confidence": 0.8,
+      "evidence": "neural stem cells",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Target",
+      "name": "glutamate",
+      "attributes": {
+        "target_type": "neurotransmitter"
+      },
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "confidence": 0.85,
+      "evidence": "glutamate",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Target",
+      "name": "N-methyl-D-aspartate receptors",
+      "attributes": {
+        "target_type": "receptor"
+      },
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "confidence": 0.8,
+      "evidence": "N-methyl-D-aspartate receptors",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Target",
+      "name": "memory systems",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "confidence": 0.75,
+      "evidence": "memory systems",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Target",
+      "name": "dopamine",
+      "attributes": {
+        "target_type": "neurotransmitter"
+      },
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "confidence": 0.85,
+      "evidence": "dopamine",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Target",
+      "name": "neuroplastic alterations",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "confidence": 0.8,
+      "evidence": "neuroplastic alterations",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "Target",
+      "name": "Sonic Hedgehog Signaling",
+      "attributes": {
+        "target_type": "pathway"
+      },
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "confidence": 0.75,
+      "evidence": "Sonic Hedgehog Signaling",
+      "verified": true
+    },
+    {
+      "id": "E18",
+      "type": "Target",
+      "name": "endocannabinoid-mediated plasticity",
+      "attributes": {
+        "target_type": "process"
+      },
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "confidence": 0.8,
+      "evidence": "endocannabinoid-mediated plasticity",
+      "verified": true
+    },
+    {
+      "id": "E19",
+      "type": "Condition",
+      "name": "alcohol use disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "confidence": 0.85,
+      "evidence": "alcohol use disorders",
+      "verified": true
+    },
+    {
+      "id": "E20",
+      "type": "Target",
+      "name": "neuronal molecular targets",
+      "attributes": {
+        "target_type": "molecular"
+      },
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "confidence": 0.75,
+      "evidence": "neuronal molecular targets",
+      "verified": true
+    }
+  ],
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "addiction"
+      },
+      "confidence": 0.7,
+      "evidence": "drugs of abuse alter plasticity",
+      "source_chunk_ids": [
+        "5026b3cc609aaa1ccbb8407933f247ab"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "addiction",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "drugs of abuse alter plasticity",
+      "source_chunk_ids": [
+        "5026b3cc609aaa1ccbb8407933f247ab"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "review article",
+      "source_chunk_ids": [
+        "132f1d809180941a2ac38f04835ee4b1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Sceletium tortuosum",
+      "source_chunk_ids": [
+        "132f1d809180941a2ac38f04835ee4b1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "mesembrine",
+      "source_chunk_ids": [
+        "132f1d809180941a2ac38f04835ee4b1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "inhibits"
+      },
+      "confidence": 0.85,
+      "evidence": "inhibits the serotonin transporter",
+      "source_chunk_ids": [
+        "132f1d809180941a2ac38f04835ee4b1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "neurogenesis",
+      "source_chunk_ids": [
+        "132f1d809180941a2ac38f04835ee4b1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "TREATS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "scientific"
+      },
+      "confidence": 0.7,
+      "evidence": "depression",
+      "source_chunk_ids": [
+        "132f1d809180941a2ac38f04835ee4b1"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "TREATS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {
+        "context": "scientific"
+      },
+      "confidence": 0.7,
+      "evidence": "anxiety",
+      "source_chunk_ids": [
+        "132f1d809180941a2ac38f04835ee4b1"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "serotonin transporter",
+      "source_chunk_ids": [
+        "132f1d809180941a2ac38f04835ee4b1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "neurogenesis",
+      "source_chunk_ids": [
+        "132f1d809180941a2ac38f04835ee4b1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "depression",
+      "source_chunk_ids": [
+        "132f1d809180941a2ac38f04835ee4b1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "anxiety",
+      "source_chunk_ids": [
+        "132f1d809180941a2ac38f04835ee4b1"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "San people traditionally used",
+      "source_chunk_ids": [
+        "b11367b22c59e58c624a07940a71fbb5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.9,
+      "evidence": "Sceletium tortuosum",
+      "source_chunk_ids": [
+        "b11367b22c59e58c624a07940a71fbb5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "plant_part"
+      },
+      "confidence": 0.75,
+      "evidence": "leaves",
+      "source_chunk_ids": [
+        "b11367b22c59e58c624a07940a71fbb5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "preparation"
+      },
+      "confidence": 0.7,
+      "evidence": "fermented",
+      "source_chunk_ids": [
+        "b11367b22c59e58c624a07940a71fbb5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "mood elevation",
+      "source_chunk_ids": [
+        "b11367b22c59e58c624a07940a71fbb5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "treats"
+      },
+      "confidence": 0.7,
+      "evidence": "surgical removal of the hippocampus which was done to treat epilepsy",
+      "source_chunk_ids": [
+        "a4b08eec9307ce8700b4ffd5095352af"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "causes"
+      },
+      "confidence": 0.8,
+      "evidence": "lost the ability to form new declarative memories after surgical removal of the hippocampus",
+      "source_chunk_ids": [
+        "a4b08eec9307ce8700b4ffd5095352af"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "activity-dependent synaptic plasticity in the hippocampus",
+      "source_chunk_ids": [
+        "a4b08eec9307ce8700b4ffd5095352af"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "hippocampal place cells\u2014neurons that are important for spatial position",
+      "source_chunk_ids": [
+        "a4b08eec9307ce8700b4ffd5095352af"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Hebbian plasticity is a widely used model",
+      "source_chunk_ids": [
+        "10716ddf7ca8fb3149187de2cd0a4f9c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "short-term plasticity",
+      "source_chunk_ids": [
+        "10716ddf7ca8fb3149187de2cd0a4f9c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "LTP",
+      "source_chunk_ids": [
+        "10716ddf7ca8fb3149187de2cd0a4f9c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "LTD",
+      "source_chunk_ids": [
+        "10716ddf7ca8fb3149187de2cd0a4f9c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "spike timing-dependent plasticity (STDP)",
+      "source_chunk_ids": [
+        "10716ddf7ca8fb3149187de2cd0a4f9c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "metaplasticity",
+      "source_chunk_ids": [
+        "10716ddf7ca8fb3149187de2cd0a4f9c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "homeostatic plasticity",
+      "source_chunk_ids": [
+        "10716ddf7ca8fb3149187de2cd0a4f9c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "structural plasticity",
+      "source_chunk_ids": [
+        "10716ddf7ca8fb3149187de2cd0a4f9c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "neuronal plasticity",
+      "source_chunk_ids": [
+        "10716ddf7ca8fb3149187de2cd0a4f9c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "synaptic transmission and synaptic plasticity",
+      "source_chunk_ids": [
+        "10716ddf7ca8fb3149187de2cd0a4f9c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "action": "activates"
+      },
+      "confidence": 0.85,
+      "evidence": "glutamate, by activating the glutamatergic receptors",
+      "source_chunk_ids": [
+        "ea953a86f26fdd63914be97afda1fa1c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "antagonist"
+      },
+      "confidence": 0.9,
+      "evidence": "selective antagonist DL-2-amino-5-phosphononvalerate (APV) of the NMDA-type glutamatergic receptor",
+      "source_chunk_ids": [
+        "ea953a86f26fdd63914be97afda1fa1c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "causation between glutamatergic receptors and LTP",
+      "source_chunk_ids": [
+        "ea953a86f26fdd63914be97afda1fa1c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "blocks"
+      },
+      "confidence": 0.8,
+      "evidence": "blocks the induction of LTP",
+      "source_chunk_ids": [
+        "ea953a86f26fdd63914be97afda1fa1c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.75,
+      "evidence": "no effect on basal synaptic potentials",
+      "source_chunk_ids": [
+        "ea953a86f26fdd63914be97afda1fa1c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "studies that determined the mechanism",
+      "source_chunk_ids": [
+        "ea953a86f26fdd63914be97afda1fa1c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "NMDA-type glutamatergic receptors... produce long-lasting enhancement",
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "GluN2A subunits activate... LTP",
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "GluN2B subunits activate... LTP",
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "GluN2A subunits activate... LTD",
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "GluN2B subunits activate... LTD",
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "regulating synaptic plasticity",
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "calcium influx may contribute to LTP",
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "calcium influx may contribute to LTD",
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "phosphorylation of... mediates... LTP",
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "phosphorylation of... mediates... LTP",
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "phosphorylation of... mediates... LTP",
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "extracellular signal-regulated kinases are mediators for LTP",
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "PRODUCES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "activation of protein phosphatases... mediate LTD",
+      "source_chunk_ids": [
+        "55650e62d0ce5c319e3da205e8a02ec2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "dependent"
+      },
+      "confidence": 0.8,
+      "evidence": "GluN dependent mechanisms for LTP",
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "dependent"
+      },
+      "confidence": 0.75,
+      "evidence": "GluN dependent mechanisms for LTD",
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E17",
+      "attributes": {
+        "action": "activation"
+      },
+      "confidence": 0.7,
+      "evidence": "presynaptic activation of intracellular calcium induces LTP",
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E17",
+      "attributes": {
+        "action": "activation",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "activation of presynaptic kainate receptors requires LTP",
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E8",
+      "attributes": {
+        "action": "activation",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "endogenous glutamate activates kainate receptors",
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E12",
+      "attributes": {
+        "action": "activation"
+      },
+      "confidence": 0.7,
+      "evidence": "activation of PKA mediates synaptic plasticity",
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E10",
+      "attributes": {
+        "action": "activation",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "presynaptic substrates activate PKA",
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E14",
+      "attributes": {
+        "action": "control"
+      },
+      "confidence": 0.7,
+      "evidence": "cation channels control transmitter release",
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "PRODUCES",
+      "source_entity_id": "E15",
+      "target_entity_id": "E16",
+      "attributes": {
+        "action": "responsible"
+      },
+      "confidence": 0.75,
+      "evidence": "synaptic vesicle proteins responsible for neurotransmitter release",
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E16",
+      "target_entity_id": "E18",
+      "attributes": {
+        "action": "regulation",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "neurotransmitter release regulates plasticity",
+      "source_chunk_ids": [
+        "6300634f546e94797a4a286831953a68"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E12",
+      "target_entity_id": "E8",
+      "attributes": {
+        "action": "decreases",
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": null,
+          "notes": "in acute slices of the adult rat DG"
+        }
+      },
+      "confidence": 0.8,
+      "evidence": "hippocampal knockdown of NL1 decreases perforant path-granule cell LTP",
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E15",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "decreases perforant path-granule cell LTP",
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E16",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "global knockdown of NL1 reduces excitatory transmission",
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E17",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "diminishes LTP in the DG",
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "ACTS_ON",
+      "source_entity_id": "E13",
+      "target_entity_id": "E8",
+      "attributes": {
+        "action": "impairs",
+        "measurement": {
+          "value": null,
+          "unit": null,
+          "measurement_type": null,
+          "notes": "in Cb knock out mice"
+        }
+      },
+      "confidence": 0.7,
+      "evidence": "Cb knock out mice exhibit impairment in LTP in the DG",
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E18",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "exhibit impairment in LTP in the DG",
+      "source_chunk_ids": [
+        "aea659c6224121e455f001ff81b7c8ca"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "ACTS_ON",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "action": "activates"
+      },
+      "confidence": 0.8,
+      "evidence": "survival of adult born GCNs requires GluN receptor activation",
+      "source_chunk_ids": [
+        "ac3660af59c63e8797b45664c4d0bf43"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "action": "essential for"
+      },
+      "confidence": 0.8,
+      "evidence": "GluN2Bs are essential for DG synaptic plasticity",
+      "source_chunk_ids": [
+        "ac3660af59c63e8797b45664c4d0bf43"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "survival of adult born GCNs influences DG synaptic plasticity",
+      "source_chunk_ids": [
+        "ac3660af59c63e8797b45664c4d0bf43"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "synaptic plasticity in the DG regulates neurogenesis",
+      "source_chunk_ids": [
+        "ac3660af59c63e8797b45664c4d0bf43"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "neurogenesis influences DG LTD",
+      "source_chunk_ids": [
+        "ac3660af59c63e8797b45664c4d0bf43"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "adult born GCNs play a role in gradual decay of hippocampal LTP",
+      "source_chunk_ids": [
+        "ac3660af59c63e8797b45664c4d0bf43"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "neurogenesis regulates synaptic plasticity in the DG",
+      "source_chunk_ids": [
+        "ac3660af59c63e8797b45664c4d0bf43"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "PRODUCES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "synaptic plasticity influences hyperplasticity of adult born GCNs",
+      "source_chunk_ids": [
+        "ac3660af59c63e8797b45664c4d0bf43"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "chronic delta-9-THC reduced CA1 LTP",
+      "source_chunk_ids": [
+        "86a57275d24d03cbb34dc0a8549b4436"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "effects of CB1 agonists on synaptic depression",
+      "source_chunk_ids": [
+        "86a57275d24d03cbb34dc0a8549b4436"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "ACTS_ON",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "action": "agonist"
+      },
+      "confidence": 0.7,
+      "evidence": "CB1 agonists",
+      "source_chunk_ids": [
+        "86a57275d24d03cbb34dc0a8549b4436"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "altering synaptic plasticity",
+      "source_chunk_ids": [
+        "86a57275d24d03cbb34dc0a8549b4436"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "reduce adult neurogenesis",
+      "source_chunk_ids": [
+        "86a57275d24d03cbb34dc0a8549b4436"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "reduce the number of adult born GCNs",
+      "source_chunk_ids": [
+        "86a57275d24d03cbb34dc0a8549b4436"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "PRODUCES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "reduce several aspects of neurogenesis",
+      "source_chunk_ids": [
+        "86a57275d24d03cbb34dc0a8549b4436"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "TREATS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {
+        "context": "potential",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "new therapeutic strategies to treat addiction",
+      "source_chunk_ids": [
+        "86a57275d24d03cbb34dc0a8549b4436"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.7,
+      "evidence": "adult neurogenesis as a target for cocaine addiction",
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "associated"
+      },
+      "confidence": 0.7,
+      "evidence": "adult neurogenesis in substance use disorders",
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "regulated",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "GABA(A) Receptor Subunit Expression in Substance Use Disorders",
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "involved",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "glutamate receptors in addiction",
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "role",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "GluN2B-containing NMDA receptors in adult neurogenesis",
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "involved",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "endocannabinoid-mediated synaptic plasticity and substance use disorders",
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "involved",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "synaptic integration and plasticity of new neurons in adult hippocampus",
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "role",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "transcription factors in adult neurogenesis",
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "affected",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "hippocampal plasticity in addiction",
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "involved",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "neural stem cells in adult neurogenesis",
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "involved",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "glutamate in drug addiction",
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R12",
+      "type": "REPORTS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "role",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "N-methyl-D-aspartate receptors in neurogenesis",
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R13",
+      "type": "REPORTS",
+      "source_entity_id": "E14",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "involved",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "memory systems in drug addiction",
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R14",
+      "type": "REPORTS",
+      "source_entity_id": "E15",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "involved",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "dopamine and addiction",
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c80ecbf49c88c8ef3ec29d",
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R15",
+      "type": "REPORTS",
+      "source_entity_id": "E16",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "following",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "neuroplastic alterations following cocaine or alcohol exposure",
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R16",
+      "type": "REPORTS",
+      "source_entity_id": "E17",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "involved",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Sonic Hedgehog Signaling and Hippocampal Neuroplasticity",
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R17",
+      "type": "REPORTS",
+      "source_entity_id": "E18",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "altered",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "Drug-Induced Alterations of Endocannabinoid-Mediated Plasticity",
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R18",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E19",
+      "attributes": {
+        "outcome": "role",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "adult neurogenesis in adolescent alcohol use disorders",
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R19",
+      "type": "REPORTS",
+      "source_entity_id": "E20",
+      "target_entity_id": "E19",
+      "attributes": {
+        "outcome": "targets",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "neuronal molecular targets in alcohol",
+      "source_chunk_ids": [
+        "636f181e13c80ecbf49c88c8ef3ec29d"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    }
+  ]
 }

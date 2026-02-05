@@ -1,387 +1,1455 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "005cc0ba0b8cdea3d7e75f2bd73d57a0b22ef6fbd6219c25780302988a1712c0",
-  "extracted_at": "2026-02-01T08:42:44.849731+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
+      "id": "E1",
+      "type": "Culture",
+      "name": "South African traditional leaders",
+      "attributes": {},
+      "source_chunk_ids": [
+        "051c7e1aa91293dd0e8f408a30559ebe"
+      ],
+      "confidence": 0.9,
+      "evidence": "South African traditional leaders",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "indigenous group",
+      "attributes": {},
+      "source_chunk_ids": [
+        "051c7e1aa91293dd0e8f408a30559ebe"
+      ],
+      "confidence": 0.8,
+      "evidence": "indigenous group-membership",
+      "verified": true
+    },
+    {
+      "id": "E4",
       "type": "Taxon",
       "name": "Pelargonium sidoides",
       "attributes": {
-        "context": "access to Pelargonium sidoides (hereafter Pelargonium), a medicinal plant"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "632f9f6384399f139ad11eae293f52db"
-      ]
+        "051c7e1aa91293dd0e8f408a30559ebe"
+      ],
+      "confidence": 0.95,
+      "evidence": "Pelargonium sidoides",
+      "verified": true
     },
     {
-      "id": "ent_002",
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "biodiversity commercialization",
+      "attributes": {},
+      "source_chunk_ids": [
+        "051c7e1aa91293dd0e8f408a30559ebe"
+      ],
+      "confidence": 0.85,
+      "evidence": "biodiversity commercialization",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "conservation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "051c7e1aa91293dd0e8f408a30559ebe"
+      ],
+      "confidence": 0.8,
+      "evidence": "conservation",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Ciskei",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a4fa0fc3ff4a4f1e88327a16cc8a1083"
+      ],
+      "confidence": 0.8,
+      "evidence": "former Ciskei homeland",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Imingcangathelo",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a4fa0fc3ff4a4f1e88327a16cc8a1083"
+      ],
+      "confidence": 0.7,
+      "evidence": "maintain business relations with Imingcangathelo",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Taxon",
       "name": "Pelargonium",
-      "attributes": {
-        "context": "consider Pelargonium the most contentious"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "1e13c227fc042350734ee1c5926b2c75"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Pelargonium",
+      "verified": true
     },
     {
-      "id": "ent_003",
-      "type": "Taxon",
-      "name": "Pelargonium",
-      "attributes": {
-        "context": "patents associated with the plant"
-      },
+      "id": "E2",
+      "type": "Product",
+      "name": "Umckaloabo",
+      "attributes": {},
       "source_chunk_ids": [
         "1e13c227fc042350734ee1c5926b2c75"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Umckaloabo",
+      "verified": true
     },
     {
-      "id": "ent_004",
-      "type": "Indication",
+      "id": "E3",
+      "type": "Condition",
       "name": "AIDS",
       "attributes": {
-        "context": "drugs to treat AIDS"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "1e13c227fc042350734ee1c5926b2c75"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "treat AIDS",
+      "verified": true
     },
     {
-      "id": "ent_005",
-      "type": "Indication",
-      "name": "AIDS-related diseases",
-      "attributes": {
-        "context": "AIDS and AIDS-related diseases"
-      },
-      "source_chunk_ids": [
-        "1e13c227fc042350734ee1c5926b2c75"
-      ]
-    },
-    {
-      "id": "ent_006",
-      "type": "Indication",
+      "id": "E4",
+      "type": "Condition",
       "name": "tuberculosis",
       "attributes": {
-        "context": "diseases like tuberculosis"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "1e13c227fc042350734ee1c5926b2c75"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "AIDS-related diseases like tuberculosis",
+      "verified": true
     },
     {
-      "id": "ent_007",
-      "type": "Taxon",
-      "name": "Pelargonium",
-      "attributes": {
-        "context": "Pelargonium is also the principal ingredient"
-      },
-      "source_chunk_ids": [
-        "1e13c227fc042350734ee1c5926b2c75"
-      ]
-    },
-    {
-      "id": "ent_008",
-      "type": "Taxon",
-      "name": "Umckaloabo",
-      "attributes": {
-        "context": "ingredient in Umckaloabo"
-      },
-      "source_chunk_ids": [
-        "1e13c227fc042350734ee1c5926b2c75"
-      ]
-    },
-    {
-      "id": "ent_009",
-      "type": "Indication",
-      "name": "respiratory infections",
-      "attributes": {
-        "context": "for respiratory infections"
-      },
-      "source_chunk_ids": [
-        "1e13c227fc042350734ee1c5926b2c75"
-      ]
-    },
-    {
-      "id": "ent_010",
-      "type": "Indication",
+      "id": "E5",
+      "type": "Condition",
       "name": "acute bronchitis",
       "attributes": {
-        "context": "infections like acute bronchitis"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "1e13c227fc042350734ee1c5926b2c75"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "respiratory infections like acute bronchitis",
+      "verified": true
     },
     {
-      "id": "ent_011",
-      "type": "Taxon",
-      "name": "Umckaloabo",
-      "attributes": {
-        "context": "purchase Umckaloabo (also called Umcka)"
-      },
+      "id": "E1",
+      "type": "Culture",
+      "name": "communities in the Ciskei region",
+      "attributes": {},
       "source_chunk_ids": [
-        "1e13c227fc042350734ee1c5926b2c75"
-      ]
+        "7c8f0b07b10b514d6b5d6be06ae6eeee"
+      ],
+      "confidence": 0.8,
+      "evidence": "communities that provide such access",
+      "verified": true
     },
     {
-      "id": "ent_012",
-      "type": "Taxon",
-      "name": "Umcka",
-      "attributes": {
-        "context": "Umckaloabo (also called Umcka)"
-      },
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Schwabe \u2013 Imingcangathelo \u2013 ABS agreement",
+      "attributes": {},
       "source_chunk_ids": [
-        "1e13c227fc042350734ee1c5926b2c75"
-      ]
+        "7c8f0b07b10b514d6b5d6be06ae6eeee"
+      ],
+      "confidence": 0.7,
+      "evidence": "ABS agreements like those between Schwabe and Imingcangathelo",
+      "verified": true
     },
     {
-      "id": "ent_013",
-      "type": "Taxon",
-      "name": "Pelargonium",
-      "attributes": {
-        "context": "another kind of Pelargonium meeting"
-      },
-      "source_chunk_ids": [
-        "fa28fddf3a73b5f636458a36bc94ef1e"
-      ]
-    },
-    {
-      "id": "ent_014",
+      "id": "E3",
       "type": "Taxon",
       "name": "Pelargonium",
       "attributes": {
-        "context": "proposed Pelargonium ABS agreement"
+        "rank": "genus"
       },
       "source_chunk_ids": [
-        "fa28fddf3a73b5f636458a36bc94ef1e"
-      ]
+        "7c8f0b07b10b514d6b5d6be06ae6eeee"
+      ],
+      "confidence": 0.9,
+      "evidence": "resources like Pelargonium",
+      "verified": true
     },
     {
-      "id": "ent_015",
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "access and benefit sharing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7c8f0b07b10b514d6b5d6be06ae6eeee"
+      ],
+      "confidence": 0.85,
+      "evidence": "formalizing what is called 'access and benefit sharing' (ABS)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "pharmaceutical royalties capture",
+      "attributes": {
+        "condition_type": "socioeconomic"
+      },
+      "source_chunk_ids": [
+        "7c8f0b07b10b514d6b5d6be06ae6eeee"
+      ],
+      "confidence": 0.75,
+      "evidence": "chiefs to capture and hoard pharmaceutical royalties",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Masakhane villagers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bcfdda35d9e71e425a77a707a3637a30"
+      ],
+      "confidence": 0.9,
+      "evidence": "residents of Masakhane",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Masakhane \u2013 Pelargonium \u2013 harvesting for sale",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bcfdda35d9e71e425a77a707a3637a30"
+      ],
+      "confidence": 0.85,
+      "evidence": "harvested and sold Pelargonium",
+      "verified": true
+    },
+    {
+      "id": "E3",
       "type": "Taxon",
       "name": "Pelargonium",
       "attributes": {
-        "context": "The biotrade in Pelargonium is growing"
+        "rank": "genus"
       },
       "source_chunk_ids": [
-        "d0125713b58e1f59f907d4a69fafca26"
-      ]
+        "bcfdda35d9e71e425a77a707a3637a30"
+      ],
+      "confidence": 0.95,
+      "evidence": "Pelargonium",
+      "verified": true
     },
     {
-      "id": "ent_016",
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "commercial sale",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bcfdda35d9e71e425a77a707a3637a30"
+      ],
+      "confidence": 0.8,
+      "evidence": "sold Pelargonium",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Culture",
+      "name": "Imingcangathelo chieftaincy",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bcfdda35d9e71e425a77a707a3637a30"
+      ],
+      "confidence": 0.85,
+      "evidence": "Imingcangathelo chieftaincy",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Culture",
+      "name": "Chieftainess Tyali",
+      "attributes": {},
+      "source_chunk_ids": [
+        "bcfdda35d9e71e425a77a707a3637a30"
+      ],
+      "confidence": 0.9,
+      "evidence": "Chieftainess Tyali",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Masakhane harvesters",
+      "attributes": {},
+      "source_chunk_ids": [
+        "19fe87e753b022c1477da48016928b07"
+      ],
+      "confidence": 0.9,
+      "evidence": "Masakhane harvesters",
+      "verified": true
+    },
+    {
+      "id": "E2",
       "type": "Taxon",
       "name": "Pelargonium",
       "attributes": {
-        "context": "occurred with Pelargonium"
+        "rank": "genus"
       },
       "source_chunk_ids": [
-        "7a7d0c7713b15122b3512b686d490b2e"
-      ]
+        "19fe87e753b022c1477da48016928b07"
+      ],
+      "confidence": 0.95,
+      "evidence": "harvested Pelargonium",
+      "verified": true
     },
     {
-      "id": "ent_017",
-      "type": "Indication",
-      "name": "STIs",
-      "attributes": {
-        "context": "Talk to your partner about STIs"
-      },
+      "id": "E3",
+      "type": "PlantPart",
+      "name": "tubers",
+      "attributes": {},
       "source_chunk_ids": [
-        "caa8ec2c9e5ccbbdf6dd57541afb4082"
-      ]
+        "19fe87e753b022c1477da48016928b07"
+      ],
+      "confidence": 0.85,
+      "evidence": "tubers",
+      "verified": true
     },
     {
-      "id": "ent_018",
+      "id": "E4",
+      "type": "UseRecord",
+      "name": "UseRecord: Masakhane \u2013 Pelargonium \u2013 harvesting",
+      "attributes": {},
+      "source_chunk_ids": [
+        "19fe87e753b022c1477da48016928b07"
+      ],
+      "confidence": 0.8,
+      "evidence": "harvested Pelargonium from the Masakhane farms",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Xhosa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cfdf4d7d1fe1d00a675070eaf7c5db2d"
+      ],
+      "confidence": 0.8,
+      "evidence": "Xhosa text at the top",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Xhosa \u2013 Pelargonium sidoides \u2013 sustainable harvesting",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cfdf4d7d1fe1d00a675070eaf7c5db2d"
+      ],
+      "confidence": 0.7,
+      "evidence": "steps for sustainable harvesting",
+      "verified": true
+    },
+    {
+      "id": "E3",
       "type": "Taxon",
-      "name": "fruit trees",
+      "name": "Pelargonium sidoides",
       "attributes": {
-        "context": "to plant fruit trees near the school"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "22aa8fd0d5f0f08638a73dbea1faca21"
-      ]
+        "cfdf4d7d1fe1d00a675070eaf7c5db2d"
+      ],
+      "confidence": 0.9,
+      "evidence": "Pelargonium sidoides tubers",
+      "verified": true
     },
     {
-      "id": "ent_019",
+      "id": "E4",
+      "type": "PlantPart",
+      "name": "tubers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cfdf4d7d1fe1d00a675070eaf7c5db2d"
+      ],
+      "confidence": 0.85,
+      "evidence": "Pelargonium sidoides tubers",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "sustainable harvesting",
+      "attributes": {},
+      "source_chunk_ids": [
+        "cfdf4d7d1fe1d00a675070eaf7c5db2d"
+      ],
+      "confidence": 0.75,
+      "evidence": "steps for sustainable harvesting",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "indigenous communities",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8f4db3b29f5ef5baeb1d0c95ca61cd7a"
+      ],
+      "confidence": 0.9,
+      "evidence": "indigenous communities in these areas",
+      "verified": true
+    },
+    {
+      "id": "E2",
       "type": "Taxon",
       "name": "Pelargonium",
       "attributes": {
-        "context": "legitimacy in the Pelargonium industry"
+        "rank": "genus"
       },
       "source_chunk_ids": [
-        "9c7b0b3082f65755893342fa2aa33c58"
-      ]
+        "8f4db3b29f5ef5baeb1d0c95ca61cd7a"
+      ],
+      "confidence": 0.95,
+      "evidence": "Pelargonium",
+      "verified": true
     },
     {
-      "id": "ent_020",
+      "id": "E1",
+      "type": "Culture",
+      "name": "Rharhabe",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33ccd8f7398e18b39825d6ac9945b862"
+      ],
+      "confidence": 0.8,
+      "evidence": "Rharhabe chiefs",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Product",
+      "name": "Medicine of Rharhabe (Amayeza Akwa Rharhabe)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33ccd8f7398e18b39825d6ac9945b862"
+      ],
+      "confidence": 0.9,
+      "evidence": "Medicine of Rharhabe (Amayeza Akwa Rharhabe)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Ukhohlokohhlo",
+      "attributes": {},
+      "source_chunk_ids": [
+        "33ccd8f7398e18b39825d6ac9945b862"
+      ],
+      "confidence": 0.85,
+      "evidence": "Ukhohlokohhlo",
+      "verified": true
+    },
+    {
+      "id": "E4",
       "type": "Taxon",
       "name": "Pelargonium",
       "attributes": {
-        "context": "my research concerning Pelargonium"
+        "rank": "genus"
       },
       "source_chunk_ids": [
-        "22812b0d86b8b5c208af339981c795ed"
-      ]
+        "33ccd8f7398e18b39825d6ac9945b862"
+      ],
+      "confidence": 0.8,
+      "evidence": "Pelargonium-derived",
+      "verified": true
     },
     {
-      "id": "ent_021",
+      "id": "E1",
+      "type": "Culture",
+      "name": "Rharhabe",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d08e2f3d3a2e2cee9542cae93cb238aa"
+      ],
+      "confidence": 0.8,
+      "evidence": "Rharhabe culture and ethnicity",
+      "verified": true
+    },
+    {
+      "id": "E2",
       "type": "Taxon",
       "name": "Pelargonium",
       "attributes": {
-        "context": "went far beyond Pelargonium"
+        "rank": "genus"
       },
       "source_chunk_ids": [
-        "784c72d112962a83ebb0d7ce4a28a46f"
-      ]
+        "d08e2f3d3a2e2cee9542cae93cb238aa"
+      ],
+      "confidence": 0.95,
+      "evidence": "Pelargonium",
+      "verified": true
     },
     {
-      "id": "ent_022",
-      "type": "Taxon",
-      "name": "Pelargonium",
-      "attributes": {
-        "context": "Pelargonium ABS agreements"
-      },
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "traditional medical knowledge",
+      "attributes": {},
       "source_chunk_ids": [
-        "b568232a558c992c3f158c79709d199a"
-      ]
+        "d08e2f3d3a2e2cee9542cae93cb238aa"
+      ],
+      "confidence": 0.85,
+      "evidence": "traditional medical knowledge of Pelargonium",
+      "verified": true
     },
     {
-      "id": "ent_023",
+      "id": "E4",
+      "type": "UseRecord",
+      "name": "UseRecord: Rharhabe \u2013 Pelargonium \u2013 traditional medical knowledge",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d08e2f3d3a2e2cee9542cae93cb238aa"
+      ],
+      "confidence": 0.7,
+      "evidence": "linking Rharhabe culture with a biogenetic resource",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Taxon",
       "name": "Hoodia gordonii",
       "attributes": {
-        "context": "Hoodia gordonii, a phytomedicine"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "06e841b36a3a83da32d06177faacad15"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Hoodia gordonii",
+      "verified": true
     },
     {
-      "id": "ent_024",
-      "type": "PharmEffect",
+      "id": "E2",
+      "type": "Product",
+      "name": "Hoodia gordonii phytomedicine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "06e841b36a3a83da32d06177faacad15"
+      ],
+      "confidence": 0.8,
+      "evidence": "phytomedicine commercialized internationally",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
       "name": "appetite suppressant",
-      "attributes": {
-        "context": "as an appetite suppressant"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "06e841b36a3a83da32d06177faacad15"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "appetite suppressant",
+      "verified": true
     },
     {
-      "id": "ent_025",
-      "type": "Taxon",
-      "name": "Pelargonium",
-      "attributes": {
-        "context": "Unlike Pelargonium, Hoodia"
-      },
-      "source_chunk_ids": [
-        "06e841b36a3a83da32d06177faacad15"
-      ]
-    },
-    {
-      "id": "ent_026",
+      "id": "E1",
       "type": "Taxon",
       "name": "Pelargonium sidoides",
       "attributes": {
-        "context": "Bioprospecting Management Plan for Pelargonium sidoides"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "c9e676819b2e760639e107200eb94cd4"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Pelargonium sidoides",
+      "verified": true
     },
     {
-      "id": "ent_027",
-      "type": "Indication",
+      "id": "E2",
+      "type": "PlantPart",
+      "name": "tubers",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c9e676819b2e760639e107200eb94cd4"
+      ],
+      "confidence": 0.9,
+      "evidence": "tubers to regenerate",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Preparation",
+      "name": "harvesting",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c9e676819b2e760639e107200eb94cd4"
+      ],
+      "confidence": 0.8,
+      "evidence": "over-harvesting",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Culture",
+      "name": "traditional leaders",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c9e676819b2e760639e107200eb94cd4"
+      ],
+      "confidence": 0.85,
+      "evidence": "traditional leaders propose",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "UseRecord",
+      "name": "UseRecord: traditional leaders \u2013 Pelargonium sidoides \u2013 harvesting",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c9e676819b2e760639e107200eb94cd4"
+      ],
+      "confidence": 0.75,
+      "evidence": "propose rotating harvest seasons",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Parceval representative",
+      "attributes": {},
+      "source_chunk_ids": [
+        "249e3453c89bff18bec4804abb560d52"
+      ],
+      "confidence": 0.8,
+      "evidence": "Parceval representative insisted",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Parceval \u2013 Ukhohlokohhlo \u2013 cold care",
+      "attributes": {},
+      "source_chunk_ids": [
+        "249e3453c89bff18bec4804abb560d52"
+      ],
+      "confidence": 0.75,
+      "evidence": "Ukhohlokohhlo is intended for cold care",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Ukhohlokohhlo",
+      "attributes": {},
+      "source_chunk_ids": [
+        "249e3453c89bff18bec4804abb560d52"
+      ],
+      "confidence": 0.9,
+      "evidence": "Ukhohlokohhlo is intended for cold care",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
       "name": "cold",
       "attributes": {
-        "context": "Ukhohlokohhlo is intended for cold care"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "249e3453c89bff18bec4804abb560d52"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "intended for cold care",
+      "verified": true
     },
     {
-      "id": "ent_028",
-      "type": "Indication",
+      "id": "E5",
+      "type": "Culture",
+      "name": "traditional leader",
+      "attributes": {},
+      "source_chunk_ids": [
+        "249e3453c89bff18bec4804abb560d52"
+      ],
+      "confidence": 0.8,
+      "evidence": "traditional leader I interviewed",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "UseRecord",
+      "name": "UseRecord: traditional leader \u2013 Ukhohlokohhlo \u2013 tuberculosis and HIV",
+      "attributes": {},
+      "source_chunk_ids": [
+        "249e3453c89bff18bec4804abb560d52"
+      ],
+      "confidence": 0.75,
+      "evidence": "selling the product as a therapy for tuberculosis and HIV",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
       "name": "tuberculosis",
       "attributes": {
-        "context": "selling the product as a therapy for tuberculosis"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "249e3453c89bff18bec4804abb560d52"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "therapy for tuberculosis",
+      "verified": true
     },
     {
-      "id": "ent_029",
-      "type": "Indication",
+      "id": "E8",
+      "type": "Condition",
       "name": "HIV",
       "attributes": {
-        "context": "selling the product as a therapy for tuberculosis and HIV"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "249e3453c89bff18bec4804abb560d52"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "therapy for HIV",
+      "verified": true
     },
     {
-      "id": "ent_030",
+      "id": "E10",
       "type": "Taxon",
       "name": "Pelargonium",
       "attributes": {
-        "context": "use of Pelargonium in 2007"
+        "rank": "genus"
       },
       "source_chunk_ids": [
         "249e3453c89bff18bec4804abb560d52"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Pelargonium",
+      "verified": true
     },
     {
-      "id": "ent_031",
-      "type": "Indication",
-      "name": "tuberculosis",
+      "id": "E11",
+      "type": "UseRecord",
+      "name": "UseRecord: historical Africa \u2013 Pelargonium \u2013 tuberculosis",
+      "attributes": {},
+      "source_chunk_ids": [
+        "249e3453c89bff18bec4804abb560d52"
+      ],
+      "confidence": 0.7,
+      "evidence": "historically used in Africa for tuberculosis",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Culture",
+      "name": "Africa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "249e3453c89bff18bec4804abb560d52"
+      ],
+      "confidence": 0.8,
+      "evidence": "historically used in Africa",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Evidence",
+      "name": "clinical validation",
       "attributes": {
-        "context": "used in Africa\u2014as well as commercialized in Europe\u2014for tuberculosis"
+        "evidence_level": 5,
+        "verification_needed": true
       },
       "source_chunk_ids": [
         "249e3453c89bff18bec4804abb560d52"
-      ]
-    },
-    {
-      "id": "ent_032",
-      "type": "Taxon",
-      "name": "Pelargonium",
-      "attributes": {
-        "context": "Pelargonium, however, has never been clinically validated"
-      },
-      "source_chunk_ids": [
-        "249e3453c89bff18bec4804abb560d52"
-      ]
-    },
-    {
-      "id": "ent_033",
-      "type": "Taxon",
-      "name": "Pelargonium sidoides",
-      "attributes": {
-        "context": "The Trade in Pelargonium sidoides"
-      },
-      "source_chunk_ids": [
-        "cde4be081f58a3eba3d355f0c5cf948f"
-      ]
-    },
-    {
-      "id": "ent_034",
-      "type": "Taxon",
-      "name": "Hoodia",
-      "attributes": {
-        "context": "the Hoodia Benefit-Sharing Agreement"
-      },
-      "source_chunk_ids": [
-        "cde4be081f58a3eba3d355f0c5cf948f"
-      ]
+      ],
+      "confidence": 0.6,
+      "evidence": "never been clinically validated",
+      "verified": false
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:03.980348+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.7,
+      "evidence": "contentious resource, Pelargonium sidoides",
+      "source_chunk_ids": [
+        "051c7e1aa91293dd0e8f408a30559ebe"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "biodiversity commercialization",
+      "source_chunk_ids": [
+        "051c7e1aa91293dd0e8f408a30559ebe"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "conservation",
+      "source_chunk_ids": [
+        "051c7e1aa91293dd0e8f408a30559ebe"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Pelargonium is also the principal ingredient in Umckaloabo",
+      "source_chunk_ids": [
+        "1e13c227fc042350734ee1c5926b2c75"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "context": "patent claim"
+      },
+      "confidence": 0.7,
+      "evidence": "patent granting Schwabe exclusive use of it for developing drugs to treat AIDS",
+      "source_chunk_ids": [
+        "1e13c227fc042350734ee1c5926b2c75"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "patent claim"
+      },
+      "confidence": 0.7,
+      "evidence": "AIDS-related diseases like tuberculosis",
+      "source_chunk_ids": [
+        "1e13c227fc042350734ee1c5926b2c75"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TREATS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "commercial"
+      },
+      "confidence": 0.8,
+      "evidence": "sold across the world for respiratory infections like acute bronchitis",
+      "source_chunk_ids": [
+        "1e13c227fc042350734ee1c5926b2c75"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "communities that provide such access",
+      "source_chunk_ids": [
+        "7c8f0b07b10b514d6b5d6be06ae6eeee"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "resources like Pelargonium",
+      "source_chunk_ids": [
+        "7c8f0b07b10b514d6b5d6be06ae6eeee"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "ABS agreements like those between Schwabe and Imingcangathelo",
+      "source_chunk_ids": [
+        "7c8f0b07b10b514d6b5d6be06ae6eeee"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "chiefs to capture and hoard pharmaceutical royalties",
+      "source_chunk_ids": [
+        "7c8f0b07b10b514d6b5d6be06ae6eeee"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "residents of Masakhane have harvested and sold",
+      "source_chunk_ids": [
+        "bcfdda35d9e71e425a77a707a3637a30"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.9,
+      "evidence": "harvested and sold Pelargonium",
+      "source_chunk_ids": [
+        "bcfdda35d9e71e425a77a707a3637a30"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "sold Pelargonium",
+      "source_chunk_ids": [
+        "bcfdda35d9e71e425a77a707a3637a30"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Masakhane harvesters had long earned low wages",
+      "source_chunk_ids": [
+        "19fe87e753b022c1477da48016928b07"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.9,
+      "evidence": "harvested Pelargonium",
+      "source_chunk_ids": [
+        "19fe87e753b022c1477da48016928b07"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "plant_part"
+      },
+      "confidence": 0.8,
+      "evidence": "tubers",
+      "source_chunk_ids": [
+        "19fe87e753b022c1477da48016928b07"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Xhosa text at the top",
+      "source_chunk_ids": [
+        "cfdf4d7d1fe1d00a675070eaf7c5db2d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "Pelargonium sidoides tubers",
+      "source_chunk_ids": [
+        "cfdf4d7d1fe1d00a675070eaf7c5db2d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "plant_part"
+      },
+      "confidence": 0.75,
+      "evidence": "Pelargonium sidoides tubers",
+      "source_chunk_ids": [
+        "cfdf4d7d1fe1d00a675070eaf7c5db2d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "steps for sustainable harvesting",
+      "source_chunk_ids": [
+        "cfdf4d7d1fe1d00a675070eaf7c5db2d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Pelargonium-derived medicine",
+      "source_chunk_ids": [
+        "33ccd8f7398e18b39825d6ac9945b862"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "linking Rharhabe culture with a biogenetic resource",
+      "source_chunk_ids": [
+        "d08e2f3d3a2e2cee9542cae93cb238aa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "biogenetic resource\u2014a development",
+      "source_chunk_ids": [
+        "d08e2f3d3a2e2cee9542cae93cb238aa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "traditional medical knowledge of Pelargonium",
+      "source_chunk_ids": [
+        "d08e2f3d3a2e2cee9542cae93cb238aa"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "CONTAINS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Hoodia gordonii, a phytomedicine",
+      "source_chunk_ids": [
+        "06e841b36a3a83da32d06177faacad15"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "commercialized as an appetite suppressant",
+      "source_chunk_ids": [
+        "06e841b36a3a83da32d06177faacad15"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_PART",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "tubers to regenerate",
+      "source_chunk_ids": [
+        "c9e676819b2e760639e107200eb94cd4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_USE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "traditional leaders propose",
+      "source_chunk_ids": [
+        "c9e676819b2e760639e107200eb94cd4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "Pelargonium sidoides",
+      "source_chunk_ids": [
+        "c9e676819b2e760639e107200eb94cd4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "preparation"
+      },
+      "confidence": 0.7,
+      "evidence": "harvest seasons",
+      "source_chunk_ids": [
+        "c9e676819b2e760639e107200eb94cd4"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Parceval representative insisted",
+      "source_chunk_ids": [
+        "249e3453c89bff18bec4804abb560d52"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "product"
+      },
+      "confidence": 0.8,
+      "evidence": "Ukhohlokohhlo is intended",
+      "source_chunk_ids": [
+        "249e3453c89bff18bec4804abb560d52"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "intended for cold care",
+      "source_chunk_ids": [
+        "249e3453c89bff18bec4804abb560d52"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_USE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "traditional leader was selling",
+      "source_chunk_ids": [
+        "249e3453c89bff18bec4804abb560d52"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "product"
+      },
+      "confidence": 0.8,
+      "evidence": "selling the product",
+      "source_chunk_ids": [
+        "249e3453c89bff18bec4804abb560d52"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "therapy for tuberculosis",
+      "source_chunk_ids": [
+        "249e3453c89bff18bec4804abb560d52"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "SUGGESTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "therapy for HIV",
+      "source_chunk_ids": [
+        "249e3453c89bff18bec4804abb560d52"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_USE",
+      "source_entity_id": "E12",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "historically used in Africa",
+      "source_chunk_ids": [
+        "249e3453c89bff18bec4804abb560d52"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "INVOLVES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "Pelargonium was historically used",
+      "source_chunk_ids": [
+        "249e3453c89bff18bec4804abb560d52"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "SUGGESTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "used for tuberculosis",
+      "source_chunk_ids": [
+        "249e3453c89bff18bec4804abb560d52"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "SUGGESTS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E7",
+      "attributes": {
+        "assertion": "refutes",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "never been clinically validated",
+      "source_chunk_ids": [
+        "249e3453c89bff18bec4804abb560d52"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R12",
+      "type": "SUGGESTS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E8",
+      "attributes": {
+        "assertion": "refutes",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "never been clinically validated",
+      "source_chunk_ids": [
+        "249e3453c89bff18bec4804abb560d52"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    }
+  ]
 }

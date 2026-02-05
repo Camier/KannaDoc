@@ -1,12 +1,5742 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "93b1fff3b887d02417c5d0e1bc5116e7c379ec45a81b901b03f03db3af496d97",
-  "extracted_at": "2026-02-01T08:58:35.868377+00:00",
-  "extractor": "legacy-migration",
-  "entities": [],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:04.082745+00:00",
-    "original_file": "entities.json"
-  }
+  "entities": [
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 1
+      },
+      "source_chunk_ids": [
+        "a10d16608fee284ee873b686e0280adb"
+      ],
+      "confidence": 0.9,
+      "evidence": "meta-analyses",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "randomized controlled trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "a10d16608fee284ee873b686e0280adb"
+      ],
+      "confidence": 0.85,
+      "evidence": "randomized controlled trials (RCTs)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 1
+      },
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "confidence": 0.95,
+      "evidence": "meta-analyses of RCTs",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "systematic search meta-analyses",
+      "attributes": {
+        "design": "systematic search of meta-analyses",
+        "sample_size": 5927
+      },
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "confidence": 0.9,
+      "evidence": "systematic search identified 9 relevant meta-analyses",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "St John\u2019s wort",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "confidence": 0.95,
+      "evidence": "St John\u2019s wort",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "major depressive disorder",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "confidence": 0.95,
+      "evidence": "major depressive disorder (MDD)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "curcumin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "confidence": 0.95,
+      "evidence": "curcumin",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "saffron",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "confidence": 0.95,
+      "evidence": "saffron",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "depression symptoms",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "confidence": 0.9,
+      "evidence": "depression symptoms",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Taxon",
+      "name": "ginkgo",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "confidence": 0.95,
+      "evidence": "ginkgo",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "schizophrenia",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "confidence": 0.95,
+      "evidence": "schizophrenia",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Taxon",
+      "name": "kava",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "confidence": 0.95,
+      "evidence": "Kava",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Condition",
+      "name": "anxiety disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "confidence": 0.9,
+      "evidence": "anxiety disorders",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "RawMaterial",
+      "name": "traditional Chinese herbal medicine formulas",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "confidence": 0.85,
+      "evidence": "traditional Chinese herbal medicine formulas",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 1
+      },
+      "source_chunk_ids": [
+        "b180659047e794e98a76cb22381143c8"
+      ],
+      "confidence": 0.9,
+      "evidence": "m\u00e9ta-analyses disponibles",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "randomized controlled trials",
+      "attributes": {
+        "design": "randomized controlled trials"
+      },
+      "source_chunk_ids": [
+        "b180659047e794e98a76cb22381143c8"
+      ],
+      "confidence": 0.85,
+      "evidence": "essais randomis\u00e9s contr\u00f4l\u00e9s (ERC)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "phytoceuticals",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b180659047e794e98a76cb22381143c8"
+      ],
+      "confidence": 0.8,
+      "evidence": "phytoceutiques individuels",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "psychiatric disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "b180659047e794e98a76cb22381143c8"
+      ],
+      "confidence": 0.9,
+      "evidence": "tous les principaux troubles psychiatriques",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 1
+      },
+      "source_chunk_ids": [
+        "f407f9704ae7e43d68e275d2680fc3d8"
+      ],
+      "confidence": 0.95,
+      "evidence": "m\u00e9ta-analyses pertinentes d\u2019ERC",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Hypericum perforatum",
+      "attributes": {
+        "rank": "species",
+        "common_name": "millepertuis"
+      },
+      "source_chunk_ids": [
+        "f407f9704ae7e43d68e275d2680fc3d8"
+      ],
+      "confidence": 0.9,
+      "evidence": "millepertuis",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "major depressive disorder",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "f407f9704ae7e43d68e275d2680fc3d8"
+      ],
+      "confidence": 0.95,
+      "evidence": "trouble d\u00e9pressif majeur (TDM)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Curcuma longa",
+      "attributes": {
+        "rank": "species",
+        "common_name": "curcumine"
+      },
+      "source_chunk_ids": [
+        "f407f9704ae7e43d68e275d2680fc3d8"
+      ],
+      "confidence": 0.9,
+      "evidence": "curcumine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "depressive symptoms",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "f407f9704ae7e43d68e275d2680fc3d8"
+      ],
+      "confidence": 0.9,
+      "evidence": "sympt\u00f4mes d\u00e9pressifs",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Crocus sativus",
+      "attributes": {
+        "rank": "species",
+        "common_name": "safran"
+      },
+      "source_chunk_ids": [
+        "f407f9704ae7e43d68e275d2680fc3d8"
+      ],
+      "confidence": 0.9,
+      "evidence": "safran",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Ginkgo biloba",
+      "attributes": {
+        "rank": "species",
+        "common_name": "ginkgo"
+      },
+      "source_chunk_ids": [
+        "f407f9704ae7e43d68e275d2680fc3d8"
+      ],
+      "confidence": 0.95,
+      "evidence": "ginkgo",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "schizophrenia",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "f407f9704ae7e43d68e275d2680fc3d8"
+      ],
+      "confidence": 0.95,
+      "evidence": "schizophr\u00e9nie",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Taxon",
+      "name": "Piper methysticum",
+      "attributes": {
+        "rank": "species",
+        "common_name": "kava"
+      },
+      "source_chunk_ids": [
+        "f407f9704ae7e43d68e275d2680fc3d8"
+      ],
+      "confidence": 0.95,
+      "evidence": "kava",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "anxiety disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "f407f9704ae7e43d68e275d2680fc3d8"
+      ],
+      "confidence": 0.9,
+      "evidence": "troubles anxieux diagnostiqu\u00e9s",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Culture",
+      "name": "Traditional Chinese Medicine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f407f9704ae7e43d68e275d2680fc3d8"
+      ],
+      "confidence": 0.85,
+      "evidence": "phytoth\u00e9rapie traditionnelles chinoises",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "RawMaterial",
+      "name": "herbal formulas",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f407f9704ae7e43d68e275d2680fc3d8"
+      ],
+      "confidence": 0.8,
+      "evidence": "formules de phytoth\u00e9rapie",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "world population",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c47e384708d4c09baec56c6dcaaeaa57"
+      ],
+      "confidence": 0.8,
+      "evidence": "80% of the world population",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: world population \u2013 herbal medicines \u2013 primary health care",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c47e384708d4c09baec56c6dcaaeaa57"
+      ],
+      "confidence": 0.75,
+      "evidence": "utilizing them as part of primary health care",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "herbal medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c47e384708d4c09baec56c6dcaaeaa57"
+      ],
+      "confidence": 0.85,
+      "evidence": "herbal and plant-based medicines",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "primary health care",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c47e384708d4c09baec56c6dcaaeaa57"
+      ],
+      "confidence": 0.8,
+      "evidence": "part of primary health care treatment",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Culture",
+      "name": "United States population",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c47e384708d4c09baec56c6dcaaeaa57"
+      ],
+      "confidence": 0.8,
+      "evidence": "In the United States, a national household survey",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "UseRecord",
+      "name": "UseRecord: United States \u2013 herbal/natural medicines \u2013 psychiatric disorders",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c47e384708d4c09baec56c6dcaaeaa57"
+      ],
+      "confidence": 0.75,
+      "evidence": "utilized complementary therapies for psychiatric disorders",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "RawMaterial",
+      "name": "herbal/natural medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c47e384708d4c09baec56c6dcaaeaa57"
+      ],
+      "confidence": 0.85,
+      "evidence": "herbal/natural medicines",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "psychiatric disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "c47e384708d4c09baec56c6dcaaeaa57"
+      ],
+      "confidence": 0.9,
+      "evidence": "psychiatric disorders",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Taxon",
+      "name": "Hypericum perforatum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c47e384708d4c09baec56c6dcaaeaa57"
+      ],
+      "confidence": 0.9,
+      "evidence": "St John\u2019s wort (Hypericum perforatum L.)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Piper methysticum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "fd19efa914f513df325160ab219f0305"
+      ],
+      "confidence": 0.95,
+      "evidence": "Piper methysticum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "mood disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "fd19efa914f513df325160ab219f0305"
+      ],
+      "confidence": 0.9,
+      "evidence": "treatment of mood disorders",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "treatment of mood disorders",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fd19efa914f513df325160ab219f0305"
+      ],
+      "confidence": 0.85,
+      "evidence": "treatment of mood disorders",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "Traditional, Complementary, and Integrative Medicine",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "fd19efa914f513df325160ab219f0305"
+      ],
+      "confidence": 0.8,
+      "evidence": "Traditional, Complementary, and Integrative Medicine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "natural products",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fd19efa914f513df325160ab219f0305"
+      ],
+      "confidence": 0.75,
+      "evidence": "natural products",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "curcumin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fd19efa914f513df325160ab219f0305"
+      ],
+      "confidence": 0.9,
+      "evidence": "curcumin",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Compound",
+      "name": "n-acetyl cysteine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fd19efa914f513df325160ab219f0305"
+      ],
+      "confidence": 0.9,
+      "evidence": "n-acetyl cysteine",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Compound",
+      "name": "5-hydroxytryptophan",
+      "attributes": {},
+      "source_chunk_ids": [
+        "fd19efa914f513df325160ab219f0305"
+      ],
+      "confidence": 0.9,
+      "evidence": "5-hydroxytryptophan",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "review",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7f0b019ce13e8b7a31912cd63dcc9a3d"
+      ],
+      "confidence": 0.9,
+      "evidence": "A recent review has examined",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Piper methysticum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "7f0b019ce13e8b7a31912cd63dcc9a3d"
+      ],
+      "confidence": 0.95,
+      "evidence": "kava (Piper methysticum)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Passiflora spp",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "7f0b019ce13e8b7a31912cd63dcc9a3d"
+      ],
+      "confidence": 0.95,
+      "evidence": "passionflower (Passiflora spp)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Galphimia glauca",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "7f0b019ce13e8b7a31912cd63dcc9a3d"
+      ],
+      "confidence": 0.95,
+      "evidence": "galphimia (Galphimia glauca)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Matricaria recutita",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "7f0b019ce13e8b7a31912cd63dcc9a3d"
+      ],
+      "confidence": 0.95,
+      "evidence": "chamomile (Matricaria recutita)",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "anxiety disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "7f0b019ce13e8b7a31912cd63dcc9a3d"
+      ],
+      "confidence": 0.95,
+      "evidence": "for anxiety disorders",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Hypericum perforatum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "7f0b019ce13e8b7a31912cd63dcc9a3d"
+      ],
+      "confidence": 0.95,
+      "evidence": "St John's wort (Hypericum perforatum)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Compound",
+      "name": "curcumin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7f0b019ce13e8b7a31912cd63dcc9a3d"
+      ],
+      "confidence": 0.95,
+      "evidence": "curcumin from turmeric",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Taxon",
+      "name": "Curcuma longa",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "7f0b019ce13e8b7a31912cd63dcc9a3d"
+      ],
+      "confidence": 0.95,
+      "evidence": "turmeric (Curcuma longa)",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Taxon",
+      "name": "Crocus sativus",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "7f0b019ce13e8b7a31912cd63dcc9a3d"
+      ],
+      "confidence": 0.95,
+      "evidence": "saffron (Crocus sativus)",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Condition",
+      "name": "major depressive disorder",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "7f0b019ce13e8b7a31912cd63dcc9a3d"
+      ],
+      "confidence": 0.95,
+      "evidence": "for major depressive disorder (MDD)",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Taxon",
+      "name": "Ginkgo biloba",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "7f0b019ce13e8b7a31912cd63dcc9a3d"
+      ],
+      "confidence": 0.95,
+      "evidence": "ginkgo (Ginkgo biloba)",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Condition",
+      "name": "schizophrenia",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "7f0b019ce13e8b7a31912cd63dcc9a3d"
+      ],
+      "confidence": 0.95,
+      "evidence": "adjunctive treatment in schizophrenia",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Evidence",
+      "name": "meta-synthesis",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7f0b019ce13e8b7a31912cd63dcc9a3d"
+      ],
+      "confidence": 0.8,
+      "evidence": "meta-synthesis has not been conducted",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "Evidence",
+      "name": "meta-analyses",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7f0b019ce13e8b7a31912cd63dcc9a3d"
+      ],
+      "confidence": 0.9,
+      "evidence": "33 meta-analyses of placebo-controlled RCTs",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "Compound",
+      "name": "omega-3 fatty acids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7f0b019ce13e8b7a31912cd63dcc9a3d"
+      ],
+      "confidence": 0.9,
+      "evidence": "omega-3 fatty acids",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "Compound",
+      "name": "methylfolate",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7f0b019ce13e8b7a31912cd63dcc9a3d"
+      ],
+      "confidence": 0.9,
+      "evidence": "methylfolate",
+      "verified": true
+    },
+    {
+      "id": "E18",
+      "type": "Compound",
+      "name": "n-acetyl cysteine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7f0b019ce13e8b7a31912cd63dcc9a3d"
+      ],
+      "confidence": 0.9,
+      "evidence": "n-acetyl cysteine",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "meta-review of RCT meta-analyses",
+      "attributes": {
+        "design": "meta-review",
+        "description": "aggregate and evaluate top-tier evidence for plant-based medicines in psychiatric disorders"
+      },
+      "source_chunk_ids": [
+        "2bb72cb66df4fb5858f43e4627f8bc9c"
+      ],
+      "confidence": 0.9,
+      "evidence": "meta-review was to aggregate and evaluate the top-tier evidence",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "meta-analysis of RCTs",
+      "attributes": {
+        "evidence_level": 1
+      },
+      "source_chunk_ids": [
+        "2bb72cb66df4fb5858f43e4627f8bc9c"
+      ],
+      "confidence": 0.85,
+      "evidence": "meta-analyses of randomized controlled trials (RCTs)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "plant-based medicines",
+      "attributes": {
+        "rank": "group"
+      },
+      "source_chunk_ids": [
+        "2bb72cb66df4fb5858f43e4627f8bc9c"
+      ],
+      "confidence": 0.8,
+      "evidence": "plant-based medicines",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "psychiatric disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "2bb72cb66df4fb5858f43e4627f8bc9c"
+      ],
+      "confidence": 0.9,
+      "evidence": "psychiatric disorders",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Dosage",
+      "name": "dosages for psychiatric disorders",
+      "attributes": {
+        "description": "explore which dosages were most appropriate"
+      },
+      "source_chunk_ids": [
+        "2bb72cb66df4fb5858f43e4627f8bc9c"
+      ],
+      "confidence": 0.7,
+      "evidence": "explore which dosages were most appropriate",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "symptomatic targets",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "2bb72cb66df4fb5858f43e4627f8bc9c"
+      ],
+      "confidence": 0.7,
+      "evidence": "symptomatic targets were most appropriate",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "systematic search",
+      "attributes": {
+        "design": "systematic search",
+        "year": 2020
+      },
+      "source_chunk_ids": [
+        "f6d25ee55e1685cf8dbe5f006157d782"
+      ],
+      "confidence": 0.85,
+      "evidence": "systematic search was conducted",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "systematic review",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "f6d25ee55e1685cf8dbe5f006157d782"
+      ],
+      "confidence": 0.8,
+      "evidence": "systematic search",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "depressive disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "8f576f78d618174dbabe3d262b6b3d86"
+      ],
+      "confidence": 0.9,
+      "evidence": "depressive disorders",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "clinical depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "8f576f78d618174dbabe3d262b6b3d86"
+      ],
+      "confidence": 0.85,
+      "evidence": "clinical depression",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "MDD",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "8f576f78d618174dbabe3d262b6b3d86"
+      ],
+      "confidence": 0.8,
+      "evidence": "diagnosed MDD",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "bipolar disorder",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "8f576f78d618174dbabe3d262b6b3d86"
+      ],
+      "confidence": 0.8,
+      "evidence": "bipolar disorder",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "mania",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "8f576f78d618174dbabe3d262b6b3d86"
+      ],
+      "confidence": 0.75,
+      "evidence": "mania",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "depression in pregnancy",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "8f576f78d618174dbabe3d262b6b3d86"
+      ],
+      "confidence": 0.8,
+      "evidence": "depression in pregnancy",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "depression in old age",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "8f576f78d618174dbabe3d262b6b3d86"
+      ],
+      "confidence": 0.8,
+      "evidence": "depression in old age",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "depression as comorbidity",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "8f576f78d618174dbabe3d262b6b3d86"
+      ],
+      "confidence": 0.75,
+      "evidence": "depression as a comorbidity",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "anxiety disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "8f576f78d618174dbabe3d262b6b3d86"
+      ],
+      "confidence": 0.9,
+      "evidence": "all diagnosed anxiety disorders",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "schizophrenia",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "8f576f78d618174dbabe3d262b6b3d86"
+      ],
+      "confidence": 0.9,
+      "evidence": "schizophrenia",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Condition",
+      "name": "tardive dyskinesia",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "8f576f78d618174dbabe3d262b6b3d86"
+      ],
+      "confidence": 0.8,
+      "evidence": "tardive dyskinesia",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Condition",
+      "name": "states at risk for psychosis",
+      "attributes": {
+        "condition_type": "risk_state"
+      },
+      "source_chunk_ids": [
+        "8f576f78d618174dbabe3d262b6b3d86"
+      ],
+      "confidence": 0.85,
+      "evidence": "states at risk for psychosis",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Condition",
+      "name": "attenuated psychotic symptoms",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "8f576f78d618174dbabe3d262b6b3d86"
+      ],
+      "confidence": 0.8,
+      "evidence": "attenuated psychotic",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "meta-review of RCTs",
+      "attributes": {
+        "design": "meta-review",
+        "inclusion_criteria": "meta-analyses of RCTs"
+      },
+      "source_chunk_ids": [
+        "b6b8018386f0a25c05aade31ec70d5e2"
+      ],
+      "confidence": 0.9,
+      "evidence": "meta-review of top-tier evidence",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 1
+      },
+      "source_chunk_ids": [
+        "b6b8018386f0a25c05aade31ec70d5e2"
+      ],
+      "confidence": 0.85,
+      "evidence": "meta-analyses of RCTs",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 1
+      },
+      "source_chunk_ids": [
+        "9ba1ae36f480b89f09acf748dd377fe5"
+      ],
+      "confidence": 0.9,
+      "evidence": "meta-analyses of RCTs",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "mental health outcomes",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "9ba1ae36f480b89f09acf748dd377fe5"
+      ],
+      "confidence": 0.85,
+      "evidence": "mental health outcomes",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "meta-review of plant-based medicines for psychiatric disorders",
+      "attributes": {
+        "design": "meta-review",
+        "sample_size": 9
+      },
+      "source_chunk_ids": [
+        "49f3ba48fa737386074d7925eefb3137"
+      ],
+      "confidence": 0.85,
+      "evidence": "meta-review of RCTs of plant-based medicines",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 5
+      },
+      "source_chunk_ids": [
+        "49f3ba48fa737386074d7925eefb3137"
+      ],
+      "confidence": 0.9,
+      "evidence": "9 independent main meta-analyses of RCTs",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "psychiatric disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "49f3ba48fa737386074d7925eefb3137"
+      ],
+      "confidence": 0.95,
+      "evidence": "psychiatric disorders",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 1
+      },
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "confidence": 0.95,
+      "evidence": "Meta-analyses of RCTs",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "St John's wort",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "confidence": 0.9,
+      "evidence": "St John's wort for MDD13",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "MDD",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "confidence": 0.85,
+      "evidence": "St John's wort for MDD13",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "curcumin",
+      "attributes": {
+        "rank": "compound"
+      },
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "confidence": 0.9,
+      "evidence": "curcumin for MDD or depression symptoms",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "depression symptoms",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "confidence": 0.8,
+      "evidence": "curcumin for MDD or depression symptoms",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "saffron",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "confidence": 0.9,
+      "evidence": "saffron for MDD or depression/anxiety symptoms",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "anxiety symptoms",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "confidence": 0.8,
+      "evidence": "saffron for MDD or depression/anxiety symptoms",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Taxon",
+      "name": "kava",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "confidence": 0.9,
+      "evidence": "kava for anxiety disorders",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "anxiety disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "confidence": 0.85,
+      "evidence": "kava for anxiety disorders",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Taxon",
+      "name": "ginkgo",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "confidence": 0.9,
+      "evidence": "ginkgo for total and negative symptoms in schizophrenia",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Condition",
+      "name": "schizophrenia",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "confidence": 0.85,
+      "evidence": "ginkgo for total and negative symptoms in schizophrenia",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Condition",
+      "name": "tardive dyskinesia",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "confidence": 0.8,
+      "evidence": "effects on tardive dyskinesia",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Study",
+      "name": "meta-analysis study",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 5927
+      },
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "confidence": 0.9,
+      "evidence": "total sample consisted of 5,927 individuals",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "PRISMA flow diagram study selection process",
+      "attributes": {
+        "design": "systematic review"
+      },
+      "source_chunk_ids": [
+        "7edf3eb1f742a7a15a4e3f272d667e2b"
+      ],
+      "confidence": 0.8,
+      "evidence": "PRISMA flow diagram showing the study selection process",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "systematic review",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "7edf3eb1f742a7a15a4e3f272d667e2b"
+      ],
+      "confidence": 0.75,
+      "evidence": "PRISMA flow diagram",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "dd7703032f79632cd498d6c2f5f31078"
+      ],
+      "confidence": 0.9,
+      "evidence": "individual meta-analyses",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "RCTs",
+      "attributes": {
+        "design": "randomized controlled trial"
+      },
+      "source_chunk_ids": [
+        "dd7703032f79632cd498d6c2f5f31078"
+      ],
+      "confidence": 0.85,
+      "evidence": "all were RCTs",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "St John's wort",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "dd7703032f79632cd498d6c2f5f31078"
+      ],
+      "confidence": 0.8,
+      "evidence": "St John's wort",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "kava",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "dd7703032f79632cd498d6c2f5f31078"
+      ],
+      "confidence": 0.8,
+      "evidence": "kava",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "saffron",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "dd7703032f79632cd498d6c2f5f31078"
+      ],
+      "confidence": 0.8,
+      "evidence": "saffron",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "ginkgo",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "dd7703032f79632cd498d6c2f5f31078"
+      ],
+      "confidence": 0.8,
+      "evidence": "ginkgo",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "curcumin",
+      "attributes": {
+        "rank": "compound"
+      },
+      "source_chunk_ids": [
+        "dd7703032f79632cd498d6c2f5f31078"
+      ],
+      "confidence": 0.7,
+      "evidence": "curcumin",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "c9bf81103fc0d115fc960ddff13f1b34"
+      ],
+      "confidence": 0.95,
+      "evidence": "Depression",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "meta-review forest plot",
+      "attributes": {
+        "design": "meta-review"
+      },
+      "source_chunk_ids": [
+        "c9bf81103fc0d115fc960ddff13f1b34"
+      ],
+      "confidence": 0.85,
+      "evidence": "meta-review forest plot",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 5
+      },
+      "source_chunk_ids": [
+        "c9bf81103fc0d115fc960ddff13f1b34"
+      ],
+      "confidence": 0.9,
+      "evidence": "meta-review forest plot",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "St John's wort",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c9bf81103fc0d115fc960ddff13f1b34"
+      ],
+      "confidence": 0.95,
+      "evidence": "St John's wort studies",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Dosage",
+      "name": "900 mg per day divided into 2 or 3 doses",
+      "attributes": {
+        "amount": 900,
+        "unit": "mg",
+        "frequency": "2 or 3 doses per day",
+        "duration": "6 to 8 weeks",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "c9bf81103fc0d115fc960ddff13f1b34"
+      ],
+      "confidence": 0.8,
+      "evidence": "900 mg per day divided into 2 or 3 doses",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "saffron",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "c9bf81103fc0d115fc960ddff13f1b34"
+      ],
+      "confidence": 0.95,
+      "evidence": "saffron",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 1
+      },
+      "source_chunk_ids": [
+        "7e0300cd6eafcd88766458bcb6e43362"
+      ],
+      "confidence": 0.9,
+      "evidence": "Two meta-analyses are included",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "meta-review",
+      "attributes": {
+        "design": "meta-review"
+      },
+      "source_chunk_ids": [
+        "7e0300cd6eafcd88766458bcb6e43362"
+      ],
+      "confidence": 0.85,
+      "evidence": "meta-review",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Compound",
+      "name": "crocin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7e0300cd6eafcd88766458bcb6e43362"
+      ],
+      "confidence": 0.9,
+      "evidence": "standardized to crocin",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Product",
+      "name": "leptocrosalides",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7e0300cd6eafcd88766458bcb6e43362"
+      ],
+      "confidence": 0.8,
+      "evidence": "leptocrosalides\u00ae",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Compound",
+      "name": "safranal",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7e0300cd6eafcd88766458bcb6e43362"
+      ],
+      "confidence": 0.7,
+      "evidence": "including safranal",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Compound",
+      "name": "curcumin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7e0300cd6eafcd88766458bcb6e43362"
+      ],
+      "confidence": 0.95,
+      "evidence": "curcumin",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "depressive symptoms",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "7e0300cd6eafcd88766458bcb6e43362"
+      ],
+      "confidence": 0.9,
+      "evidence": "depressive symptoms",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Dosage",
+      "name": "500 mg to 1 g per day",
+      "attributes": {
+        "amount_min": 500,
+        "amount_max": 1000,
+        "unit": "mg",
+        "frequency": "per day",
+        "duration": "4 to 8 weeks"
+      },
+      "source_chunk_ids": [
+        "7e0300cd6eafcd88766458bcb6e43362"
+      ],
+      "confidence": 0.8,
+      "evidence": "500 mg to 1 g of curcumin",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Compound",
+      "name": "piperine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7e0300cd6eafcd88766458bcb6e43362"
+      ],
+      "confidence": 0.8,
+      "evidence": "piperine",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Preparation",
+      "name": "formulation for bioavailability",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7e0300cd6eafcd88766458bcb6e43362"
+      ],
+      "confidence": 0.7,
+      "evidence": "formulation designed to enhance bioavailability",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Taxon",
+      "name": "St John's wort",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "7e0300cd6eafcd88766458bcb6e43362"
+      ],
+      "confidence": 0.9,
+      "evidence": "St John's wort",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "AdverseEvent",
+      "name": "potential adverse effects",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7e0300cd6eafcd88766458bcb6e43362"
+      ],
+      "confidence": 0.7,
+      "evidence": "potential adverse effects",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "b2eb973299e1ab00080ed8596515c2a3"
+      ],
+      "confidence": 0.95,
+      "evidence": "Anxiety",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "GAD",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "b2eb973299e1ab00080ed8596515c2a3"
+      ],
+      "confidence": 0.9,
+      "evidence": "GAD",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 1
+      },
+      "source_chunk_ids": [
+        "b2eb973299e1ab00080ed8596515c2a3"
+      ],
+      "confidence": 0.85,
+      "evidence": "meta-analytic evidence",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "meta-analysis on kava for anxiety",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 4
+      },
+      "source_chunk_ids": [
+        "b2eb973299e1ab00080ed8596515c2a3"
+      ],
+      "confidence": 0.8,
+      "evidence": "meta-analytic evidence",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 5
+      },
+      "source_chunk_ids": [
+        "34a68db3ae176ad1689392bc58b4c4b3"
+      ],
+      "confidence": 0.8,
+      "evidence": "AMSTAR-2 total score",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "generalized anxiety disorder",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "34a68db3ae176ad1689392bc58b4c4b3"
+      ],
+      "confidence": 0.9,
+      "evidence": "GAD = generalized anxiety disorder",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "major depressive disorder",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "34a68db3ae176ad1689392bc58b4c4b3"
+      ],
+      "confidence": 0.9,
+      "evidence": "MDD = major depressive disorder",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "a054e2b821c9bad7a6550e2b5ae31633"
+      ],
+      "confidence": 0.9,
+      "evidence": "An older meta-analysis",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "meta-analysis of WS1490",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 6
+      },
+      "source_chunk_ids": [
+        "a054e2b821c9bad7a6550e2b5ae31633"
+      ],
+      "confidence": 0.85,
+      "evidence": "meta-analysis of a specific kava extract (WS1490)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "WS1490",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a054e2b821c9bad7a6550e2b5ae31633"
+      ],
+      "confidence": 0.95,
+      "evidence": "WS1490 kava extract",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Dosage",
+      "name": "150 mg or 300 mg per day",
+      "attributes": {
+        "amount": [
+          150,
+          300
+        ],
+        "unit": "mg",
+        "frequency": "per day",
+        "route": "oral"
+      },
+      "source_chunk_ids": [
+        "a054e2b821c9bad7a6550e2b5ae31633"
+      ],
+      "confidence": 0.8,
+      "evidence": "150 mg or 300 mg per day",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "anxiety disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "a054e2b821c9bad7a6550e2b5ae31633"
+      ],
+      "confidence": 0.9,
+      "evidence": "diagnosed anxiety disorders",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "AdverseEvent",
+      "name": "negative effect on the liver",
+      "attributes": {
+        "severity": "concern"
+      },
+      "source_chunk_ids": [
+        "a054e2b821c9bad7a6550e2b5ae31633"
+      ],
+      "confidence": 0.7,
+      "evidence": "negative effect on the liver",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "a054e2b821c9bad7a6550e2b5ae31633"
+      ],
+      "confidence": 0.85,
+      "evidence": "A meta-analysis concerning saffron",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Taxon",
+      "name": "saffron",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "a054e2b821c9bad7a6550e2b5ae31633"
+      ],
+      "confidence": 0.8,
+      "evidence": "saffron for anxiety outcomes",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "a054e2b821c9bad7a6550e2b5ae31633"
+      ],
+      "confidence": 0.9,
+      "evidence": "anxiety outcomes",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Condition",
+      "name": "schizophrenia",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "6a0edaa360ff122f1ca200a727d626c9"
+      ],
+      "confidence": 0.95,
+      "evidence": "Schizophrenia",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "6a0edaa360ff122f1ca200a727d626c9"
+      ],
+      "confidence": 0.9,
+      "evidence": "Three meta-analyses",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "most recent meta-analysis",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 7
+      },
+      "source_chunk_ids": [
+        "6a0edaa360ff122f1ca200a727d626c9"
+      ],
+      "confidence": 0.85,
+      "evidence": "most recent data showed",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "older meta-analysis",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": 6
+      },
+      "source_chunk_ids": [
+        "6a0edaa360ff122f1ca200a727d626c9"
+      ],
+      "confidence": 0.8,
+      "evidence": "An older meta-analysis",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "ginkgo",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "6a0edaa360ff122f1ca200a727d626c9"
+      ],
+      "confidence": 0.95,
+      "evidence": "ginkgo",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Effect",
+      "name": "reduced total symptoms",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "6a0edaa360ff122f1ca200a727d626c9"
+      ],
+      "confidence": 0.85,
+      "evidence": "reducing total symptoms",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Effect",
+      "name": "reduced negative symptoms",
+      "attributes": {
+        "level": "systemic",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "6a0edaa360ff122f1ca200a727d626c9"
+      ],
+      "confidence": 0.85,
+      "evidence": "reducing negative symptoms",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Product",
+      "name": "St John's wort",
+      "attributes": {},
+      "source_chunk_ids": [
+        "54345b694649cea8742d087aef2d7ed2"
+      ],
+      "confidence": 0.95,
+      "evidence": "St John's wort",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "MDD",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "54345b694649cea8742d087aef2d7ed2"
+      ],
+      "confidence": 0.9,
+      "evidence": "MDD",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "54345b694649cea8742d087aef2d7ed2"
+      ],
+      "confidence": 0.8,
+      "evidence": "Studies employed standardized high-grade extracts",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Product",
+      "name": "Saffron",
+      "attributes": {},
+      "source_chunk_ids": [
+        "54345b694649cea8742d087aef2d7ed2"
+      ],
+      "confidence": 0.95,
+      "evidence": "Saffron",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Product",
+      "name": "Curcumin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "54345b694649cea8742d087aef2d7ed2"
+      ],
+      "confidence": 0.95,
+      "evidence": "Curcumin",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Product",
+      "name": "Kava",
+      "attributes": {},
+      "source_chunk_ids": [
+        "54345b694649cea8742d087aef2d7ed2"
+      ],
+      "confidence": 0.95,
+      "evidence": "Kava",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "GAD",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "54345b694649cea8742d087aef2d7ed2"
+      ],
+      "confidence": 0.9,
+      "evidence": "GAD",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "54345b694649cea8742d087aef2d7ed2"
+      ],
+      "confidence": 0.85,
+      "evidence": "anxiety symptoms",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "AdverseEvent",
+      "name": "liver issues",
+      "attributes": {
+        "severity": "potential"
+      },
+      "source_chunk_ids": [
+        "54345b694649cea8742d087aef2d7ed2"
+      ],
+      "confidence": 0.7,
+      "evidence": "caution in people with liver issues",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Product",
+      "name": "Ginkgo",
+      "attributes": {},
+      "source_chunk_ids": [
+        "54345b694649cea8742d087aef2d7ed2"
+      ],
+      "confidence": 0.95,
+      "evidence": "Ginkgo",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Condition",
+      "name": "schizophrenia",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "54345b694649cea8742d087aef2d7ed2"
+      ],
+      "confidence": 0.9,
+      "evidence": "schizophrenia",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Product",
+      "name": "TCHM formulas",
+      "attributes": {},
+      "source_chunk_ids": [
+        "54345b694649cea8742d087aef2d7ed2"
+      ],
+      "confidence": 0.9,
+      "evidence": "TCHM formulas",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "meta-analysis for tardive dyskinesia",
+      "attributes": {
+        "design": "meta-analysis",
+        "sample_size": "29 to 568 participants",
+        "duration": "8 to 16 weeks"
+      },
+      "source_chunk_ids": [
+        "c841670cf731c51183dcd504bf364a92"
+      ],
+      "confidence": 0.9,
+      "evidence": "meta-analysis revealed mixed evidence for use of ginkgo in treating tardive dyskinesia",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "c841670cf731c51183dcd504bf364a92"
+      ],
+      "confidence": 0.85,
+      "evidence": "meta-analysis revealed mixed evidence",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "ginkgo",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "c841670cf731c51183dcd504bf364a92"
+      ],
+      "confidence": 0.95,
+      "evidence": "ginkgo",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "Egb extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "c841670cf731c51183dcd504bf364a92"
+      ],
+      "confidence": 0.8,
+      "evidence": "standardized \u201cEgb\u201d extract",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Dosage",
+      "name": "120 to 360 mg",
+      "attributes": {
+        "amount": "120 to 360",
+        "unit": "mg",
+        "duration": "8 to 16 weeks"
+      },
+      "source_chunk_ids": [
+        "c841670cf731c51183dcd504bf364a92"
+      ],
+      "confidence": 0.85,
+      "evidence": "120 to 360 mg of the standardized \u201cEgb\u201d extract",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "tardive dyskinesia",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "c841670cf731c51183dcd504bf364a92"
+      ],
+      "confidence": 0.9,
+      "evidence": "treating tardive dyskinesia",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "AdverseEvent",
+      "name": "mild anticoagulant effects",
+      "attributes": {
+        "severity": "mild"
+      },
+      "source_chunk_ids": [
+        "c841670cf731c51183dcd504bf364a92"
+      ],
+      "confidence": 0.75,
+      "evidence": "mild anticoagulant effects",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 1
+      },
+      "source_chunk_ids": [
+        "7d02cc6ceba92655c4c3dd126f0f865c"
+      ],
+      "confidence": 0.9,
+      "evidence": "meta-analyses of RCTs",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "meta-review",
+      "attributes": {
+        "design": "meta-review",
+        "sample_size": 5927
+      },
+      "source_chunk_ids": [
+        "7d02cc6ceba92655c4c3dd126f0f865c"
+      ],
+      "confidence": 0.85,
+      "evidence": "meta-review aggregated and evaluated",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "psychiatric disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "7d02cc6ceba92655c4c3dd126f0f865c"
+      ],
+      "confidence": 0.9,
+      "evidence": "psychiatric disorders",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "St John's wort",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "confidence": 0.95,
+      "evidence": "St John's wort for MDD",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "MDD",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "confidence": 0.9,
+      "evidence": "MDD",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "curcumin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "confidence": 0.95,
+      "evidence": "curcumin",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "saffron",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "confidence": 0.95,
+      "evidence": "saffron",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "depression symptoms",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "confidence": 0.85,
+      "evidence": "depression symptoms",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "ginkgo",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "confidence": 0.95,
+      "evidence": "ginkgo",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "total and negative symptoms",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "confidence": 0.8,
+      "evidence": "total and negative symptoms",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Taxon",
+      "name": "kava",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "confidence": 0.95,
+      "evidence": "Kava",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "anxiety disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "confidence": 0.9,
+      "evidence": "anxiety disorders",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "GAD",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "confidence": 0.85,
+      "evidence": "GAD",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Study",
+      "name": "large RCT",
+      "attributes": {
+        "design": "RCT",
+        "year": "recently published"
+      },
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "confidence": 0.8,
+      "evidence": "recently published large RCT",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "confidence": 0.85,
+      "evidence": "meta-analyses",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "Taxon",
+      "name": "Chinese herbal medicine formulas",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "confidence": 0.9,
+      "evidence": "Chinese herbal medicine formulas",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "confidence": 0.9,
+      "evidence": "depression studies",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "meta-review",
+      "attributes": {
+        "evidence_level": 1
+      },
+      "source_chunk_ids": [
+        "092134712891f136ff294d070846ce60"
+      ],
+      "confidence": 0.9,
+      "evidence": "meta-review",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "meta-analytic RCT data",
+      "attributes": {
+        "design": "meta-analysis"
+      },
+      "source_chunk_ids": [
+        "092134712891f136ff294d070846ce60"
+      ],
+      "confidence": 0.85,
+      "evidence": "meta-analytic RCT data",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "TCHM formulas",
+      "attributes": {},
+      "source_chunk_ids": [
+        "092134712891f136ff294d070846ce60"
+      ],
+      "confidence": 0.8,
+      "evidence": "TCHM formulas",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "saffron",
+      "attributes": {},
+      "source_chunk_ids": [
+        "092134712891f136ff294d070846ce60"
+      ],
+      "confidence": 0.9,
+      "evidence": "saffron",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "curcumin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "092134712891f136ff294d070846ce60"
+      ],
+      "confidence": 0.85,
+      "evidence": "curcumin",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "ac74c8cfdb977b27ca84eefce62550e3"
+      ],
+      "confidence": 0.95,
+      "evidence": "kanna (Sceletium tortuosum)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "bipolar depression",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "ac74c8cfdb977b27ca84eefce62550e3"
+      ],
+      "confidence": 0.9,
+      "evidence": "bipolar depression",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "affective disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "ac74c8cfdb977b27ca84eefce62550e3"
+      ],
+      "confidence": 0.85,
+      "evidence": "affective disorders",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "schizophrenia",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "ac74c8cfdb977b27ca84eefce62550e3"
+      ],
+      "confidence": 0.9,
+      "evidence": "schizophrenia",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "mood disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "ac74c8cfdb977b27ca84eefce62550e3"
+      ],
+      "confidence": 0.85,
+      "evidence": "mood disorders",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "social phobia",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "ac74c8cfdb977b27ca84eefce62550e3"
+      ],
+      "confidence": 0.9,
+      "evidence": "social phobia",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "obsessive compulsive disorder",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "ac74c8cfdb977b27ca84eefce62550e3"
+      ],
+      "confidence": 0.9,
+      "evidence": "obsessive compulsive disorder (OCD)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "somatoform",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "ac74c8cfdb977b27ca84eefce62550e3"
+      ],
+      "confidence": 0.8,
+      "evidence": "somatoform",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "RCT",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "ac74c8cfdb977b27ca84eefce62550e3"
+      ],
+      "confidence": 0.9,
+      "evidence": "supportive or mixed RCT evidence",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Evidence",
+      "name": "meta-analysis",
+      "attributes": {
+        "evidence_level": 5
+      },
+      "source_chunk_ids": [
+        "ac74c8cfdb977b27ca84eefce62550e3"
+      ],
+      "confidence": 0.85,
+      "evidence": "not been subjected to meta-analysis",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Effect",
+      "name": "procognitive effects",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "ac74c8cfdb977b27ca84eefce62550e3"
+      ],
+      "confidence": 0.8,
+      "evidence": "procognitive effects",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Effect",
+      "name": "mood-modulating",
+      "attributes": {
+        "level": "behavioral",
+        "valence": "positive"
+      },
+      "source_chunk_ids": [
+        "ac74c8cfdb977b27ca84eefce62550e3"
+      ],
+      "confidence": 0.75,
+      "evidence": "mood-modulating candidates",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Evidence",
+      "name": "meta-synthesis",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "1deafba0cedf6de9d881a362de446308"
+      ],
+      "confidence": 0.9,
+      "evidence": "meta-synthesis of the data from 9 meta-analyses",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "psychiatric disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "1deafba0cedf6de9d881a362de446308"
+      ],
+      "confidence": 0.85,
+      "evidence": "positive findings for a variety of plant-based medicines in a range of psychiatric disorders",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "plant-based medicines",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1deafba0cedf6de9d881a362de446308"
+      ],
+      "confidence": 0.8,
+      "evidence": "plant-based medicines",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "mental disorders",
+      "attributes": {
+        "condition_type": "disorder"
+      },
+      "source_chunk_ids": [
+        "1deafba0cedf6de9d881a362de446308"
+      ],
+      "confidence": 0.85,
+      "evidence": "mental disorders",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Nell et al. 2013",
+      "attributes": {
+        "design": "randomized, double-blind, parallel-group, placebo-controlled trial",
+        "sample_size": null,
+        "year": 2013
+      },
+      "source_chunk_ids": [
+        "282cec27f041a39f56f64946e5279ab9"
+      ],
+      "confidence": 0.9,
+      "evidence": "A randomized, double-blind, parallel-group, placebo-controlled trial of Extract Sceletium tortuosum (Zembrin) in healthy adults",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "clinical trial",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "282cec27f041a39f56f64946e5279ab9"
+      ],
+      "confidence": 0.85,
+      "evidence": "randomized, double-blind, placebo-controlled trial",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "282cec27f041a39f56f64946e5279ab9"
+      ],
+      "confidence": 0.95,
+      "evidence": "Extract Sceletium tortuosum (Zembrin)",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "282cec27f041a39f56f64946e5279ab9"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "RawMaterial",
+      "name": "extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "282cec27f041a39f56f64946e5279ab9"
+      ],
+      "confidence": 0.8,
+      "evidence": "Extract Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Product",
+      "name": "Zembrin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "32b5f79c54d06a97180fd8443a0293ef"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zembrin",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Taxon",
+      "name": "Sceletium tortuosum",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "32b5f79c54d06a97180fd8443a0293ef"
+      ],
+      "confidence": 0.95,
+      "evidence": "Sceletium tortuosum",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Target",
+      "name": "phosphodiesterase-4",
+      "attributes": {
+        "target_type": "enzyme"
+      },
+      "source_chunk_ids": [
+        "32b5f79c54d06a97180fd8443a0293ef"
+      ],
+      "confidence": 0.85,
+      "evidence": "targeting phosphodiesterase-4",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Condition",
+      "name": "Alzheimer's dementia",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "32b5f79c54d06a97180fd8443a0293ef"
+      ],
+      "confidence": 0.9,
+      "evidence": "implications for Alzheimer's dementia",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Carpenter et al. 2016",
+      "attributes": {
+        "year": 2016,
+        "design": "animal study"
+      },
+      "source_chunk_ids": [
+        "32b5f79c54d06a97180fd8443a0293ef"
+      ],
+      "confidence": 0.8,
+      "evidence": "Carpenter JM, Jourdan MK, Fountain EM, et al. 2016",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "in vitro/animal evidence",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "32b5f79c54d06a97180fd8443a0293ef"
+      ],
+      "confidence": 0.75,
+      "evidence": "chick anxiety-depression model",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Condition",
+      "name": "anxiety",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "32b5f79c54d06a97180fd8443a0293ef"
+      ],
+      "confidence": 0.85,
+      "evidence": "chick anxiety-depression model",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Condition",
+      "name": "depression",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "32b5f79c54d06a97180fd8443a0293ef"
+      ],
+      "confidence": 0.85,
+      "evidence": "chick anxiety-depression model",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "RawMaterial",
+      "name": "Sceletium tortuosum extract fraction",
+      "attributes": {},
+      "source_chunk_ids": [
+        "32b5f79c54d06a97180fd8443a0293ef"
+      ],
+      "confidence": 0.8,
+      "evidence": "Sceletium tortuosum extract fraction",
+      "verified": true
+    }
+  ],
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "meta-analyses of RCTs",
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "St John\u2019s wort for major depressive disorder",
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "Supportive meta-analytic evidence for MDD",
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "Supportive meta-analytic evidence for MDD",
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "supporting_study_ids": [
+        "E2"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "curcumin for MDD or depression symptoms",
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "saffron for MDD or depression symptoms",
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "curcumin and saffron for depression symptoms",
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "TREATS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "curcumin for depression symptoms",
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "supporting_study_ids": [
+        "E2"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "TREATS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "saffron for depression symptoms",
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "supporting_study_ids": [
+        "E2"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "ginkgo for total and negative symptoms",
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "ginkgo for symptoms in schizophrenia",
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "TREATS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "ginkgo for symptoms in schizophrenia",
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "supporting_study_ids": [
+        "E2"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "Kava was not effective",
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.8,
+      "evidence": "Kava was not effective in treating anxiety disorders",
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E12",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "traditional Chinese herbal medicine formulas",
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.75,
+      "evidence": "primarily for depression studies",
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R17",
+      "type": "TREATS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.7,
+      "evidence": "formulas\u2019 meta-analyses for depression studies",
+      "source_chunk_ids": [
+        "c455cdd2b990ead5477b2b9c3f556339"
+      ],
+      "supporting_study_ids": [
+        "E2"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "m\u00e9ta-analyses disponibles d\u2019essais randomis\u00e9s contr\u00f4l\u00e9s",
+      "source_chunk_ids": [
+        "b180659047e794e98a76cb22381143c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "portant sur l\u2019efficience et l\u2019efficacit\u00e9 des phytoceutiques individuels",
+      "source_chunk_ids": [
+        "b180659047e794e98a76cb22381143c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "evaluates"
+      },
+      "confidence": 0.9,
+      "evidence": "dans tous les principaux troubles psychiatriques",
+      "source_chunk_ids": [
+        "b180659047e794e98a76cb22381143c8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "TREATS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "context": "clinical",
+        "supporting_evidence": "meta-analysis"
+      },
+      "confidence": 0.85,
+      "evidence": "millepertuis dans le trouble d\u00e9pressif majeur",
+      "source_chunk_ids": [
+        "f407f9704ae7e43d68e275d2680fc3d8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TREATS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {
+        "context": "clinical",
+        "supporting_evidence": "meta-analysis"
+      },
+      "confidence": 0.8,
+      "evidence": "curcumine pour le TDM",
+      "source_chunk_ids": [
+        "f407f9704ae7e43d68e275d2680fc3d8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TREATS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "clinical",
+        "supporting_evidence": "meta-analysis"
+      },
+      "confidence": 0.8,
+      "evidence": "curcumine pour les sympt\u00f4mes d\u00e9pressifs",
+      "source_chunk_ids": [
+        "f407f9704ae7e43d68e275d2680fc3d8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TREATS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E3",
+      "attributes": {
+        "context": "clinical",
+        "supporting_evidence": "meta-analysis"
+      },
+      "confidence": 0.8,
+      "evidence": "safran pour le TDM",
+      "source_chunk_ids": [
+        "f407f9704ae7e43d68e275d2680fc3d8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TREATS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "clinical",
+        "supporting_evidence": "meta-analysis"
+      },
+      "confidence": 0.8,
+      "evidence": "safran pour les sympt\u00f4mes d\u00e9pressifs",
+      "source_chunk_ids": [
+        "f407f9704ae7e43d68e275d2680fc3d8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "TREATS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {
+        "context": "clinical",
+        "supporting_evidence": "meta-analysis"
+      },
+      "confidence": 0.85,
+      "evidence": "ginkgo pour les sympt\u00f4mes de la schizophr\u00e9nie",
+      "source_chunk_ids": [
+        "f407f9704ae7e43d68e275d2680fc3d8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "TREATS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E10",
+      "attributes": {
+        "context": "clinical",
+        "outcome": "no_effect",
+        "supporting_evidence": "meta-analysis"
+      },
+      "confidence": 0.9,
+      "evidence": "kava n\u2019\u00e9tait pas efficace pour traiter les troubles anxieux",
+      "source_chunk_ids": [
+        "f407f9704ae7e43d68e275d2680fc3d8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "SUGGESTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "formules de phytoth\u00e9rapie traditionnelles chinoises pour des \u00e9tudes sur la d\u00e9pression",
+      "source_chunk_ids": [
+        "f407f9704ae7e43d68e275d2680fc3d8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "INVOLVES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E12",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.7,
+      "evidence": "formules de phytoth\u00e9rapie traditionnelles chinoises",
+      "source_chunk_ids": [
+        "f407f9704ae7e43d68e275d2680fc3d8"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "world population utilizing them",
+      "source_chunk_ids": [
+        "c47e384708d4c09baec56c6dcaaeaa57"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "herbal and plant-based medicines",
+      "source_chunk_ids": [
+        "c47e384708d4c09baec56c6dcaaeaa57"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "primary health care treatment",
+      "source_chunk_ids": [
+        "c47e384708d4c09baec56c6dcaaeaa57"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_USE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "United States population utilized",
+      "source_chunk_ids": [
+        "c47e384708d4c09baec56c6dcaaeaa57"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.8,
+      "evidence": "herbal/natural medicines",
+      "source_chunk_ids": [
+        "c47e384708d4c09baec56c6dcaaeaa57"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "therapies for psychiatric disorders",
+      "source_chunk_ids": [
+        "c47e384708d4c09baec56c6dcaaeaa57"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "St John\u2019s wort (Hypericum perforatum L.)",
+      "source_chunk_ids": [
+        "c47e384708d4c09baec56c6dcaaeaa57"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "treatment of mood disorders",
+      "source_chunk_ids": [
+        "fd19efa914f513df325160ab219f0305"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "therapeutic approach under Traditional, Complementary, and Integrative Medicine",
+      "source_chunk_ids": [
+        "fd19efa914f513df325160ab219f0305"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "for anxiety disorders",
+      "source_chunk_ids": [
+        "7f0b019ce13e8b7a31912cd63dcc9a3d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E11",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "for major depressive disorder (MDD)",
+      "source_chunk_ids": [
+        "7f0b019ce13e8b7a31912cd63dcc9a3d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E13",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "adjunctive treatment in schizophrenia",
+      "source_chunk_ids": [
+        "7f0b019ce13e8b7a31912cd63dcc9a3d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "meta-analyses of randomized controlled trials",
+      "source_chunk_ids": [
+        "2bb72cb66df4fb5858f43e4627f8bc9c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "plant-based medicines",
+      "source_chunk_ids": [
+        "2bb72cb66df4fb5858f43e4627f8bc9c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "evaluates"
+      },
+      "confidence": 0.85,
+      "evidence": "treatment of psychiatric disorders",
+      "source_chunk_ids": [
+        "2bb72cb66df4fb5858f43e4627f8bc9c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "explore which dosages were most appropriate",
+      "source_chunk_ids": [
+        "2bb72cb66df4fb5858f43e4627f8bc9c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "explores"
+      },
+      "confidence": 0.7,
+      "evidence": "symptomatic targets were most appropriate",
+      "source_chunk_ids": [
+        "2bb72cb66df4fb5858f43e4627f8bc9c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "systematic search",
+      "source_chunk_ids": [
+        "f6d25ee55e1685cf8dbe5f006157d782"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "meta-analyses of RCTs",
+      "source_chunk_ids": [
+        "b6b8018386f0a25c05aade31ec70d5e2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "meta-review of RCTs",
+      "source_chunk_ids": [
+        "49f3ba48fa737386074d7925eefb3137"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "treats"
+      },
+      "confidence": 0.8,
+      "evidence": "treatment of psychiatric disorders",
+      "source_chunk_ids": [
+        "49f3ba48fa737386074d7925eefb3137"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E13",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Meta-analyses of RCTs",
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "St John's wort for MDD13",
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "St John's wort for MDD13",
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "curcumin for MDD or depression symptoms",
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.75,
+      "evidence": "curcumin for MDD or depression symptoms",
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "saffron for MDD or depression/anxiety symptoms",
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.75,
+      "evidence": "saffron for MDD or depression/anxiety symptoms",
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "kava for anxiety disorders",
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "kava for anxiety disorders",
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "ginkgo for total and negative symptoms in schizophrenia",
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "ginkgo for total and negative symptoms in schizophrenia",
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "REPORTS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E12",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.7,
+      "evidence": "effects on tardive dyskinesia",
+      "source_chunk_ids": [
+        "cd5eb55f903ab5b8ee6958688f453f2a"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "PRISMA flow diagram showing the study selection process",
+      "source_chunk_ids": [
+        "7edf3eb1f742a7a15a4e3f272d667e2b"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "studies contained within the individual meta-analyses",
+      "source_chunk_ids": [
+        "dd7703032f79632cd498d6c2f5f31078"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "research was conducted for St John's wort",
+      "source_chunk_ids": [
+        "dd7703032f79632cd498d6c2f5f31078"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "research was conducted for kava",
+      "source_chunk_ids": [
+        "dd7703032f79632cd498d6c2f5f31078"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "research was conducted for saffron",
+      "source_chunk_ids": [
+        "dd7703032f79632cd498d6c2f5f31078"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "research was conducted for ginkgo",
+      "source_chunk_ids": [
+        "dd7703032f79632cd498d6c2f5f31078"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "research was conducted for curcumin",
+      "source_chunk_ids": [
+        "dd7703032f79632cd498d6c2f5f31078"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "meta-review forest plot",
+      "source_chunk_ids": [
+        "c9bf81103fc0d115fc960ddff13f1b34"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "St John's wort studies",
+      "source_chunk_ids": [
+        "c9bf81103fc0d115fc960ddff13f1b34"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TESTED_AT",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "900 mg per day divided into 2 or 3 doses",
+      "source_chunk_ids": [
+        "c9bf81103fc0d115fc960ddff13f1b34"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "significant reduction of depressive symptoms",
+      "source_chunk_ids": [
+        "c9bf81103fc0d115fc960ddff13f1b34"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TREATS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "significant reduction of depressive symptoms",
+      "source_chunk_ids": [
+        "c9bf81103fc0d115fc960ddff13f1b34"
+      ],
+      "supporting_study_ids": [
+        "E2"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "saffron",
+      "source_chunk_ids": [
+        "c9bf81103fc0d115fc960ddff13f1b34"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "significant reduction in depressive symptoms",
+      "source_chunk_ids": [
+        "c9bf81103fc0d115fc960ddff13f1b34"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "TREATS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E1",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "significant reduction in depressive symptoms",
+      "source_chunk_ids": [
+        "c9bf81103fc0d115fc960ddff13f1b34"
+      ],
+      "supporting_study_ids": [
+        "E2"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "meta-analyses are included in the meta-review",
+      "source_chunk_ids": [
+        "7e0300cd6eafcd88766458bcb6e43362"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "leptocrosalides\u00ae (including crocin)",
+      "source_chunk_ids": [
+        "7e0300cd6eafcd88766458bcb6e43362"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "including safranal",
+      "source_chunk_ids": [
+        "7e0300cd6eafcd88766458bcb6e43362"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "support of curcumin for all studies",
+      "source_chunk_ids": [
+        "7e0300cd6eafcd88766458bcb6e43362"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.85,
+      "evidence": "positive finding for depressive symptoms",
+      "source_chunk_ids": [
+        "7e0300cd6eafcd88766458bcb6e43362"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "TREATS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.8,
+      "evidence": "support of curcumin for depressive symptoms",
+      "source_chunk_ids": [
+        "7e0300cd6eafcd88766458bcb6e43362"
+      ],
+      "supporting_study_ids": [
+        "E2"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "TESTED_AT",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "500 mg to 1 g of curcumin",
+      "source_chunk_ids": [
+        "7e0300cd6eafcd88766458bcb6e43362"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E6",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "formulation designed to enhance bioavailability",
+      "source_chunk_ids": [
+        "7e0300cd6eafcd88766458bcb6e43362"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "CAUSES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E12",
+      "attributes": {
+        "context": "clinical",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "St John's wort has potential adverse effects",
+      "source_chunk_ids": [
+        "7e0300cd6eafcd88766458bcb6e43362"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "meta-analytic evidence",
+      "source_chunk_ids": [
+        "b2eb973299e1ab00080ed8596515c2a3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E1",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.75,
+      "evidence": "absence of statistical significance for anxiety",
+      "source_chunk_ids": [
+        "b2eb973299e1ab00080ed8596515c2a3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.7,
+      "evidence": "in particular for GAD",
+      "source_chunk_ids": [
+        "b2eb973299e1ab00080ed8596515c2a3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "meta-analysis of a specific kava extract",
+      "source_chunk_ids": [
+        "a054e2b821c9bad7a6550e2b5ae31633"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "WS1490 kava extract",
+      "source_chunk_ids": [
+        "a054e2b821c9bad7a6550e2b5ae31633"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TESTED_AT",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "150 mg or 300 mg per day",
+      "source_chunk_ids": [
+        "a054e2b821c9bad7a6550e2b5ae31633"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "trend toward significance"
+      },
+      "confidence": 0.75,
+      "evidence": "trend toward significance for treatment",
+      "source_chunk_ids": [
+        "a054e2b821c9bad7a6550e2b5ae31633"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "trend toward significance for treatment",
+      "source_chunk_ids": [
+        "a054e2b821c9bad7a6550e2b5ae31633"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CAUSES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "context": "clinical",
+        "severity": "concern",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "negative effect on the liver",
+      "source_chunk_ids": [
+        "a054e2b821c9bad7a6550e2b5ae31633"
+      ],
+      "supporting_study_ids": [
+        "E2"
+      ],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "saffron for anxiety outcomes",
+      "source_chunk_ids": [
+        "a054e2b821c9bad7a6550e2b5ae31633"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {
+        "outcome": "significant effect"
+      },
+      "confidence": 0.85,
+      "evidence": "significant effect in favor",
+      "source_chunk_ids": [
+        "a054e2b821c9bad7a6550e2b5ae31633"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "TREATS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.8,
+      "evidence": "significant effect in favor",
+      "source_chunk_ids": [
+        "a054e2b821c9bad7a6550e2b5ae31633"
+      ],
+      "supporting_study_ids": [
+        "E7"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "meta-analyses",
+      "source_chunk_ids": [
+        "6a0edaa360ff122f1ca200a727d626c9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "meta-analysis",
+      "source_chunk_ids": [
+        "6a0edaa360ff122f1ca200a727d626c9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "adjunctive use of ginkgo",
+      "source_chunk_ids": [
+        "6a0edaa360ff122f1ca200a727d626c9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "ginkgo",
+      "source_chunk_ids": [
+        "6a0edaa360ff122f1ca200a727d626c9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "reducing total symptoms",
+      "source_chunk_ids": [
+        "6a0edaa360ff122f1ca200a727d626c9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "reducing negative symptoms",
+      "source_chunk_ids": [
+        "6a0edaa360ff122f1ca200a727d626c9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.75,
+      "evidence": "ginkgo for both total",
+      "source_chunk_ids": [
+        "6a0edaa360ff122f1ca200a727d626c9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.75,
+      "evidence": "ginkgo for both negative symptoms",
+      "source_chunk_ids": [
+        "6a0edaa360ff122f1ca200a727d626c9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "TREATS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.8,
+      "evidence": "adjunctive use of ginkgo was superior",
+      "source_chunk_ids": [
+        "6a0edaa360ff122f1ca200a727d626c9"
+      ],
+      "supporting_study_ids": [
+        "E3",
+        "E4"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.85,
+      "evidence": "Superior efficacy to placebo and equivalency with antidepressants MDD",
+      "source_chunk_ids": [
+        "54345b694649cea8742d087aef2d7ed2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TREATS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.8,
+      "evidence": "Superior efficacy to placebo and equivalency with antidepressants MDD",
+      "source_chunk_ids": [
+        "54345b694649cea8742d087aef2d7ed2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TREATS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "Superior efficacy to placebo MDD",
+      "source_chunk_ids": [
+        "54345b694649cea8742d087aef2d7ed2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TREATS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.7,
+      "evidence": "effective in reducing anxiety symptoms",
+      "source_chunk_ids": [
+        "54345b694649cea8742d087aef2d7ed2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TREATS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E11",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "Superior efficacy to placebo in reducing total and negative scores in schizophrenia",
+      "source_chunk_ids": [
+        "54345b694649cea8742d087aef2d7ed2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "TREATS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.7,
+      "evidence": "Superior efficacy to placebo and equivalence in some cases to medications for depression",
+      "source_chunk_ids": [
+        "54345b694649cea8742d087aef2d7ed2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "TREATS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E11",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.7,
+      "evidence": "Potentially effective for use in schizophrenia",
+      "source_chunk_ids": [
+        "54345b694649cea8742d087aef2d7ed2"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "CAUSES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E9",
+      "attributes": {
+        "context": "clinical",
+        "severity": "potential",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "caution in people with liver issues",
+      "source_chunk_ids": [
+        "54345b694649cea8742d087aef2d7ed2"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "meta-analysis revealed mixed evidence",
+      "source_chunk_ids": [
+        "c841670cf731c51183dcd504bf364a92"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "ginkgo studies in the meta-analyses",
+      "source_chunk_ids": [
+        "c841670cf731c51183dcd504bf364a92"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "ginkgo studies used standardized \u201cEgb\u201d extract",
+      "source_chunk_ids": [
+        "c841670cf731c51183dcd504bf364a92"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TESTED_AT",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "used 120 to 360 mg of the standardized \u201cEgb\u201d extract",
+      "source_chunk_ids": [
+        "c841670cf731c51183dcd504bf364a92"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "mixed"
+      },
+      "confidence": 0.8,
+      "evidence": "mixed evidence for use of ginkgo in treating tardive dyskinesia",
+      "source_chunk_ids": [
+        "c841670cf731c51183dcd504bf364a92"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.7,
+      "evidence": "use of ginkgo in treating tardive dyskinesia",
+      "source_chunk_ids": [
+        "c841670cf731c51183dcd504bf364a92"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CAUSES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "clinical",
+        "severity": "mild",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "mild anticoagulant effects",
+      "source_chunk_ids": [
+        "c841670cf731c51183dcd504bf364a92"
+      ],
+      "supporting_study_ids": [
+        "E1"
+      ],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "meta-review aggregated meta-analyses",
+      "source_chunk_ids": [
+        "7d02cc6ceba92655c4c3dd126f0f865c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "evaluated"
+      },
+      "confidence": 0.8,
+      "evidence": "examining the efficacy for psychiatric disorder symptoms",
+      "source_chunk_ids": [
+        "7d02cc6ceba92655c4c3dd126f0f865c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "TREATS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "clinical",
+        "supporting_study_ids": [
+          "E12"
+        ]
+      },
+      "confidence": 0.8,
+      "evidence": "St John's wort for MDD",
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "TREATS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "clinical",
+        "supporting_study_ids": [
+          "E12"
+        ]
+      },
+      "confidence": 0.75,
+      "evidence": "curcumin for MDD",
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "TREATS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "context": "clinical",
+        "supporting_study_ids": [
+          "E12"
+        ]
+      },
+      "confidence": 0.75,
+      "evidence": "saffron for MDD",
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TREATS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "clinical",
+        "supporting_study_ids": [
+          "E12"
+        ]
+      },
+      "confidence": 0.7,
+      "evidence": "saffron for depression symptoms",
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "TREATS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "context": "clinical",
+        "supporting_study_ids": [
+          "E12"
+        ]
+      },
+      "confidence": 0.7,
+      "evidence": "ginkgo for total and negative symptoms",
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "TREATS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E9",
+      "attributes": {
+        "context": "clinical",
+        "outcome": "no_effect",
+        "supporting_study_ids": [
+          "E11"
+        ]
+      },
+      "confidence": 0.8,
+      "evidence": "Kava was not effective in treating diagnosed anxiety disorders",
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "TREATS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E10",
+      "attributes": {
+        "context": "clinical",
+        "outcome": "no_effect",
+        "supporting_study_ids": [
+          "E11"
+        ]
+      },
+      "confidence": 0.75,
+      "evidence": "absence of statistical significance in GAD",
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "TREATS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E10",
+      "attributes": {
+        "context": "clinical",
+        "supporting_study_ids": [
+          "E12"
+        ],
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "supportive data for saffron for this application",
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "large RCT involving the phytoceutical",
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E10",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.75,
+      "evidence": "nonsignificant effect compared to placebo",
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E12",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "meta-analyses",
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "STUDIES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E13",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "meta-analyses of Chinese herbal medicine formulas",
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "REPORTS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E14",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.75,
+      "evidence": "primarily for depression studies",
+      "source_chunk_ids": [
+        "a12dc8a54bb4daa9d7af21eba7da7052"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "meta-analytic RCT data via a rigorous systematic search process",
+      "source_chunk_ids": [
+        "092134712891f136ff294d070846ce60"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "data from studies contained within the individual meta-analyses",
+      "source_chunk_ids": [
+        "092134712891f136ff294d070846ce60"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.7,
+      "evidence": "data from studies contained within the individual meta-analyses",
+      "source_chunk_ids": [
+        "092134712891f136ff294d070846ce60"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "limited_utility",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "limited clinical utility of the results",
+      "source_chunk_ids": [
+        "092134712891f136ff294d070846ce60"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "limited_utility",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "limited clinical utility of the results",
+      "source_chunk_ids": [
+        "092134712891f136ff294d070846ce60"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E2",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "RCT evidence exist for bipolar depression",
+      "source_chunk_ids": [
+        "ac74c8cfdb977b27ca84eefce62550e3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E3",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "RCT evidence for affective disorders",
+      "source_chunk_ids": [
+        "ac74c8cfdb977b27ca84eefce62550e3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "RCT evidence for schizophrenia",
+      "source_chunk_ids": [
+        "ac74c8cfdb977b27ca84eefce62550e3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "RCT evidence for mood disorders",
+      "source_chunk_ids": [
+        "ac74c8cfdb977b27ca84eefce62550e3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "RCTs for social phobia",
+      "source_chunk_ids": [
+        "ac74c8cfdb977b27ca84eefce62550e3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "RCTs for obsessive compulsive disorder",
+      "source_chunk_ids": [
+        "ac74c8cfdb977b27ca84eefce62550e3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "SUGGESTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "RCTs for somatoform",
+      "source_chunk_ids": [
+        "ac74c8cfdb977b27ca84eefce62550e3"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E12",
+      "attributes": {
+        "mapping_type": "direct",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "kanna (Sceletium tortuosum) as mood-modulating candidates",
+      "source_chunk_ids": [
+        "ac74c8cfdb977b27ca84eefce62550e3"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "positive findings for a variety of plant-based medicines in a range of psychiatric disorders",
+      "source_chunk_ids": [
+        "1deafba0cedf6de9d881a362de446308"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "several phytoceuticals may be an effective option for mental disorders",
+      "source_chunk_ids": [
+        "1deafba0cedf6de9d881a362de446308"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "randomized, double-blind, placebo-controlled trial",
+      "source_chunk_ids": [
+        "282cec27f041a39f56f64946e5279ab9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.9,
+      "evidence": "Extract Sceletium tortuosum (Zembrin)",
+      "source_chunk_ids": [
+        "282cec27f041a39f56f64946e5279ab9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Extract Sceletium tortuosum",
+      "source_chunk_ids": [
+        "282cec27f041a39f56f64946e5279ab9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "TRANSFORMS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Extract Sceletium tortuosum",
+      "source_chunk_ids": [
+        "282cec27f041a39f56f64946e5279ab9"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.8,
+      "evidence": "Sceletium tortuosum extract fraction",
+      "source_chunk_ids": [
+        "32b5f79c54d06a97180fd8443a0293ef"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "chick anxiety-depression model",
+      "source_chunk_ids": [
+        "32b5f79c54d06a97180fd8443a0293ef"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "outcome": "studied"
+      },
+      "confidence": 0.7,
+      "evidence": "chick anxiety-depression model",
+      "source_chunk_ids": [
+        "32b5f79c54d06a97180fd8443a0293ef"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "studied"
+      },
+      "confidence": 0.7,
+      "evidence": "chick anxiety-depression model",
+      "source_chunk_ids": [
+        "32b5f79c54d06a97180fd8443a0293ef"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {
+        "mapping_type": "direct",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "implications for Alzheimer's dementia",
+      "source_chunk_ids": [
+        "32b5f79c54d06a97180fd8443a0293ef"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "chick anxiety-depression model",
+      "source_chunk_ids": [
+        "32b5f79c54d06a97180fd8443a0293ef"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "SUGGESTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "direct",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "chick anxiety-depression model",
+      "source_chunk_ids": [
+        "32b5f79c54d06a97180fd8443a0293ef"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    }
+  ]
 }

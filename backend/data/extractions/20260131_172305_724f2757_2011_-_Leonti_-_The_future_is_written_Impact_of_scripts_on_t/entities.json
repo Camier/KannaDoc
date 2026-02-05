@@ -1,1531 +1,6325 @@
 {
-  "schema_version": "2.0",
-  "doc_id": "57592faf6d7c193945b54872e1eaa321680b95918edb2c6c249d69eb7246a5cc",
-  "extracted_at": "2026-02-01T08:22:48.992375+00:00",
-  "extractor": "legacy-migration",
   "entities": [
     {
-      "id": "ent_001",
+      "id": "E1",
+      "type": "Evidence",
+      "name": "historical texts",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "1a3de8ec2c4c38a808a1f3f80c708c55"
+      ],
+      "confidence": 0.8,
+      "evidence": "Historical texts on materia medica",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "popular books",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "1a3de8ec2c4c38a808a1f3f80c708c55"
+      ],
+      "confidence": 0.8,
+      "evidence": "popular books on plant use",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "clinical studies",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "1a3de8ec2c4c38a808a1f3f80c708c55"
+      ],
+      "confidence": 0.9,
+      "evidence": "clinical studies",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "ethnobotanical field studies",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "1a3de8ec2c4c38a808a1f3f80c708c55"
+      ],
+      "confidence": 0.85,
+      "evidence": "ethnobotanical field studies",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "phytotherapeutical trends",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1a3de8ec2c4c38a808a1f3f80c708c55"
+      ],
+      "confidence": 0.75,
+      "evidence": "phytotherapeutical trends",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "well established folk remedies",
+      "attributes": {},
+      "source_chunk_ids": [
+        "1a3de8ec2c4c38a808a1f3f80c708c55"
+      ],
+      "confidence": 0.8,
+      "evidence": "well established folk remedies",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "German nation",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a74244f2bde8448ebffba49cde97957c"
+      ],
+      "confidence": 0.8,
+      "evidence": "German nation finally understood",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: German \u2013 medicinal plants \u2013 intellectual heritage",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a74244f2bde8448ebffba49cde97957c"
+      ],
+      "confidence": 0.7,
+      "evidence": "importance of the intellectual heritage",
+      "verified": true
+    },
+    {
+      "id": "E3",
       "type": "Taxon",
-      "name": "tree",
+      "name": "Dieffenbachia seguine",
       "attributes": {
-        "context": "showing a green background with a tree"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "8e20f1b61ca24e9edfa32d0e0d54a2e4"
-      ]
+        "a74244f2bde8448ebffba49cde97957c"
+      ],
+      "confidence": 0.9,
+      "evidence": "Dieffenbachia seguine (Jacq.) Schott",
+      "verified": true
     },
     {
-      "id": "ent_002",
-      "type": "PharmEffect",
-      "name": "psychotherapy",
+      "id": "E4",
+      "type": "RawMaterial",
+      "name": "extract",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a74244f2bde8448ebffba49cde97957c"
+      ],
+      "confidence": 0.8,
+      "evidence": "extract of Dieffenbachia seguine",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Effect",
+      "name": "sterilization",
       "attributes": {
-        "context": "homeopathy is just a larvate form of psychotherapy"
+        "level": "systemic",
+        "valence": "negative"
+      },
+      "source_chunk_ids": [
+        "a74244f2bde8448ebffba49cde97957c"
+      ],
+      "confidence": 0.85,
+      "evidence": "sterilizing mice",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Madaus experiment",
+      "attributes": {
+        "year": "interwar period"
+      },
+      "source_chunk_ids": [
+        "a74244f2bde8448ebffba49cde97957c"
+      ],
+      "confidence": 0.75,
+      "evidence": "Madaus was also involved",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "experimental",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "a74244f2bde8448ebffba49cde97957c"
+      ],
+      "confidence": 0.7,
+      "evidence": "attempt of scientific validation",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "TraditionalUse",
+      "name": "homeopathy",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a74244f2bde8448ebffba49cde97957c"
+      ],
+      "confidence": 0.9,
+      "evidence": "homeopathic theory",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Nazi concentration camp experiments",
+      "attributes": {
+        "design": "experiments",
+        "year": "1940s",
+        "notes": "conducted by Nazis with concentration camp inmates"
       },
       "source_chunk_ids": [
         "4af14a34e5af123192444e0c1415d51e"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "experiments conducted by the Nazis with concentration camp inmates",
+      "verified": true
     },
     {
-      "id": "ent_003",
-      "type": "PharmEffect",
-      "name": "therapeutic effect",
+      "id": "E2",
+      "type": "Evidence",
+      "name": "historical report",
       "attributes": {
-        "context": "the only therapeutic effect is that of the \u201cmeaning response\u201d"
+        "evidence_level": 3
       },
       "source_chunk_ids": [
         "4af14a34e5af123192444e0c1415d51e"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Donner-Report concludes homeopathy is just a larvate form of psychotherapy",
+      "verified": true
     },
     {
-      "id": "ent_004",
-      "type": "PharmEffect",
-      "name": "meaning response",
-      "attributes": {
-        "context": "effect is that of the \u201cmeaning response\u201d"
-      },
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "homeopathy",
+      "attributes": {},
       "source_chunk_ids": [
         "4af14a34e5af123192444e0c1415d51e"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "homeopathy is just a larvate form of psychotherapy",
+      "verified": true
     },
     {
-      "id": "ent_005",
-      "type": "PharmEffect",
+      "id": "E4",
+      "type": "Effect",
       "name": "placebo effect",
       "attributes": {
-        "context": "or \u201cplacebo effect\u201d"
+        "level": "systemic",
+        "valence": "neutral"
       },
       "source_chunk_ids": [
         "4af14a34e5af123192444e0c1415d51e"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "the only therapeutic effect is that of the 'meaning response' or 'placebo effect'",
+      "verified": true
     },
     {
-      "id": "ent_006",
-      "type": "Taxon",
+      "id": "E5",
+      "type": "TraditionalUse",
       "name": "immunostimulating plants",
-      "attributes": {
-        "context": "apparently immunostimulating plants"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "4af14a34e5af123192444e0c1415d51e"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "apparently immunostimulating plants, which have gained an ethno-validated status",
+      "verified": true
     },
     {
-      "id": "ent_007",
-      "type": "PharmEffect",
-      "name": "immunostimulating",
+      "id": "E1",
+      "type": "Culture",
+      "name": "indigenous peoples",
+      "attributes": {},
+      "source_chunk_ids": [
+        "25b0d08570b4090db4d8992e5d23a3e8"
+      ],
+      "confidence": 0.7,
+      "evidence": "indigenous peoples suffer from",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Condition",
+      "name": "poor health status",
       "attributes": {
-        "context": "apparently immunostimulating plants"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
-        "4af14a34e5af123192444e0c1415d51e"
-      ]
+        "25b0d08570b4090db4d8992e5d23a3e8"
+      ],
+      "confidence": 0.75,
+      "evidence": "poor health status indigenous peoples",
+      "verified": true
     },
     {
-      "id": "ent_008",
-      "type": "Indication",
+      "id": "E3",
+      "type": "Condition",
       "name": "under nourishment",
       "attributes": {
-        "context": "problems like under nourishment"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "25b0d08570b4090db4d8992e5d23a3e8"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "under nourishment",
+      "verified": true
     },
     {
-      "id": "ent_009",
-      "type": "Indication",
+      "id": "E4",
+      "type": "Condition",
+      "name": "unreliable water supply",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "25b0d08570b4090db4d8992e5d23a3e8"
+      ],
+      "confidence": 0.8,
+      "evidence": "unreliable water supply",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
       "name": "diabetes",
       "attributes": {
-        "context": "unreliable water supply, diabetes"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "25b0d08570b4090db4d8992e5d23a3e8"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "diabetes",
+      "verified": true
     },
     {
-      "id": "ent_010",
-      "type": "Indication",
+      "id": "E6",
+      "type": "Condition",
       "name": "tuberculosis",
       "attributes": {
-        "context": "diabetes, tuberculosis, AIDS"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "25b0d08570b4090db4d8992e5d23a3e8"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "tuberculosis",
+      "verified": true
     },
     {
-      "id": "ent_011",
-      "type": "Indication",
+      "id": "E7",
+      "type": "Condition",
       "name": "AIDS",
       "attributes": {
-        "context": "tuberculosis, AIDS and drug abuse"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "25b0d08570b4090db4d8992e5d23a3e8"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "AIDS",
+      "verified": true
     },
     {
-      "id": "ent_012",
-      "type": "Indication",
+      "id": "E8",
+      "type": "Condition",
       "name": "drug abuse",
       "attributes": {
-        "context": "AIDS and drug abuse"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
         "25b0d08570b4090db4d8992e5d23a3e8"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "drug abuse",
+      "verified": true
     },
     {
-      "id": "ent_013",
-      "type": "PharmEffect",
-      "name": "curative properties",
+      "id": "E1",
+      "type": "Culture",
+      "name": "Popoluca",
       "attributes": {
-        "context": "recognition of the curative properties of medicinal plants"
+        "region": "southern Veracruz"
       },
       "source_chunk_ids": [
-        "9a3e8e5e94ca0fd4a5d3e7de1d0b07af"
-      ]
+        "ea142c04216a6cfea7493b4d57e4ca34"
+      ],
+      "confidence": 0.95,
+      "evidence": "Popoluca of southern Veracruz",
+      "verified": true
     },
     {
-      "id": "ent_014",
-      "type": "Indication",
-      "name": "illness",
+      "id": "E2",
+      "type": "Culture",
+      "name": "Mixe",
       "attributes": {
-        "context": "a specific illness struck"
+        "region": "isthmus of Tehuantepec (Oaxaca)"
       },
       "source_chunk_ids": [
-        "be5577904657c34de9032ef539691a44"
-      ]
+        "ea142c04216a6cfea7493b4d57e4ca34"
+      ],
+      "confidence": 0.95,
+      "evidence": "Mixe from the isthmus of Tehuantepec",
+      "verified": true
     },
     {
-      "id": "ent_015",
-      "type": "Indication",
-      "name": "disease",
+      "id": "E3",
+      "type": "UseRecord",
+      "name": "UseRecord: Popoluca \u2013 plant uses",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ea142c04216a6cfea7493b4d57e4ca34"
+      ],
+      "confidence": 0.8,
+      "evidence": "plant uses from the Popoluca",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "UseRecord",
+      "name": "UseRecord: Mixe \u2013 plant uses",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ea142c04216a6cfea7493b4d57e4ca34"
+      ],
+      "confidence": 0.8,
+      "evidence": "plant uses from the Mixe",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Study",
+      "name": "Leonti et al., 2003b",
       "attributes": {
-        "context": "gives rise to disease theory systems"
+        "year": 2003,
+        "reference": "Leonti et al., 2003b"
       },
       "source_chunk_ids": [
-        "be5577904657c34de9032ef539691a44"
-      ]
+        "ea142c04216a6cfea7493b4d57e4ca34"
+      ],
+      "confidence": 0.9,
+      "evidence": "Leonti et al., 2003b",
+      "verified": true
     },
     {
-      "id": "ent_016",
-      "type": "Indication",
-      "name": "Fever",
+      "id": "E6",
+      "type": "Evidence",
+      "name": "ethnobotanical analysis",
       "attributes": {
-        "context": "FEV7"
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "ea142c04216a6cfea7493b4d57e4ca34"
+      ],
+      "confidence": 0.75,
+      "evidence": "share a significantly higher number of plant uses",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Europe",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f806c49923aff1b2f54014ffc0abeb11"
+      ],
+      "confidence": 0.8,
+      "evidence": "cultures and regions with a rich writing tradition like Europe",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "India",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f806c49923aff1b2f54014ffc0abeb11"
+      ],
+      "confidence": 0.8,
+      "evidence": "cultures and regions with a rich writing tradition like India",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "China",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f806c49923aff1b2f54014ffc0abeb11"
+      ],
+      "confidence": 0.8,
+      "evidence": "cultures and regions with a rich writing tradition like China",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Culture",
+      "name": "Campania (Italy)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f806c49923aff1b2f54014ffc0abeb11"
+      ],
+      "confidence": 0.9,
+      "evidence": "region of Campania (Italy)",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "UseRecord",
+      "name": "UseRecord: historical written texts influence",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f806c49923aff1b2f54014ffc0abeb11"
+      ],
+      "confidence": 0.7,
+      "evidence": "interrelatedness and mutual influence of historical written texts on medicinal plant use",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Leonti et al., 2009, 2010",
+      "attributes": {
+        "year": "2009-2010"
+      },
+      "source_chunk_ids": [
+        "f806c49923aff1b2f54014ffc0abeb11"
+      ],
+      "confidence": 0.85,
+      "evidence": "Leonti et al., 2009, 2010",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "historical analysis",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "f806c49923aff1b2f54014ffc0abeb11"
+      ],
+      "confidence": 0.75,
+      "evidence": "diachronic studies",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "TraditionalUse",
+      "name": "medicinal plant use",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f806c49923aff1b2f54014ffc0abeb11"
+      ],
+      "confidence": 0.9,
+      "evidence": "medicinal plant use",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Moerman (1979)",
+      "attributes": {
+        "year": 1979
+      },
+      "source_chunk_ids": [
+        "c3d4b29fd2bb00ede4abf96f6548afb7"
+      ],
+      "confidence": 0.9,
+      "evidence": "Moerman (1979) tested the hypothesis",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Evidence",
+      "name": "ethnobotanical analysis",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "c3d4b29fd2bb00ede4abf96f6548afb7"
+      ],
+      "confidence": 0.7,
+      "evidence": "tested the hypothesis that plants used medicinally",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "holarctic peoples",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "confidence": 0.8,
+      "evidence": "holarctic peoples rely on similar plant families",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: holarctic peoples \u2013 medicinal plants",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "confidence": 0.7,
+      "evidence": "rely on similar plant families for their health care",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "Euasterids",
+      "attributes": {
+        "rank": "clade"
+      },
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "confidence": 0.9,
+      "evidence": "plant families belonging to the Euasterids",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Taxon",
+      "name": "Asteraceae",
+      "attributes": {
+        "rank": "family"
+      },
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "confidence": 0.85,
+      "evidence": "Asteraceae",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Taxon",
+      "name": "Apiaceae",
+      "attributes": {
+        "rank": "family"
+      },
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b161a5",
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "confidence": 0.85,
+      "evidence": "Apiaceae",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Lamiaceae",
+      "attributes": {
+        "rank": "family"
+      },
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "confidence": 0.85,
+      "evidence": "Lamiaceae",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Solanaceae",
+      "attributes": {
+        "rank": "family"
+      },
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "confidence": 0.85,
+      "evidence": "Solanaceae",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Taxon",
+      "name": "Poales",
+      "attributes": {
+        "rank": "order"
+      },
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "confidence": 0.8,
+      "evidence": "families belonging to the Poales",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Taxon",
+      "name": "Orchidaceae",
+      "attributes": {
+        "rank": "family"
+      },
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "confidence": 0.85,
+      "evidence": "family of the Orchidaceae",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "TraditionalUse",
+      "name": "medicinal use",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "confidence": 0.9,
+      "evidence": "medicinal floras",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "CompoundClass",
+      "name": "iridoids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "confidence": 0.8,
+      "evidence": "iridoids",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "CompoundClass",
+      "name": "indole alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "confidence": 0.8,
+      "evidence": "indole alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "CompoundClass",
+      "name": "pyrrolizidine alkaloids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "confidence": 0.8,
+      "evidence": "pyrrolizidine alkaloids",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "CompoundClass",
+      "name": "essential oils",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "confidence": 0.8,
+      "evidence": "essential oils",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "CompoundClass",
+      "name": "flavones",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "confidence": 0.8,
+      "evidence": "flavones",
+      "verified": true
+    },
+    {
+      "id": "E16",
+      "type": "CompoundClass",
+      "name": "sesquiterpenes",
+      "attributes": {},
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "confidence": 0.8,
+      "evidence": "sesquiterpenes",
+      "verified": true
+    },
+    {
+      "id": "E17",
+      "type": "Effect",
+      "name": "biological activity",
+      "attributes": {
+        "level": "molecular",
+        "valence": "neutral"
+      },
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "confidence": 0.7,
+      "evidence": "biologically active substances",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "European and North-American folk medicine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e7db447b201daa695b0e0394f8fc01fd"
+      ],
+      "confidence": 0.8,
+      "evidence": "European and North-American folk medicine",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: European/North-American folk \u2013 medicinal plants \u2013 magico-religious healing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e7db447b201daa695b0e0394f8fc01fd"
+      ],
+      "confidence": 0.7,
+      "evidence": "medicinal plants, symbolic devices and charms are used in magical practices and religiously shaded healing rituals",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "medicinal plants",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e7db447b201daa695b0e0394f8fc01fd"
+      ],
+      "confidence": 0.75,
+      "evidence": "medicinal plants",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "magico-religious healing",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e7db447b201daa695b0e0394f8fc01fd"
+      ],
+      "confidence": 0.8,
+      "evidence": "magical practices and religiously shaded healing rituals",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "laying on of hands",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e7db447b201daa695b0e0394f8fc01fd"
+      ],
+      "confidence": 0.85,
+      "evidence": "laying on of hands as a method of curing and averting disease",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "prayer",
+      "attributes": {},
+      "source_chunk_ids": [
+        "e7db447b201daa695b0e0394f8fc01fd"
+      ],
+      "confidence": 0.8,
+      "evidence": "prayer should be considered a modality of complementary and alternative medicine",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Latin America",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5c59e5cf5e346b5bb8394c1c6687a3f0"
+      ],
+      "confidence": 0.9,
+      "evidence": "Latin America the humoral system",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Latin America \u2013 medicinal plants \u2013 hot/cold equilibrium",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5c59e5cf5e346b5bb8394c1c6687a3f0"
+      ],
+      "confidence": 0.8,
+      "evidence": "remedies must have opposite virtue",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "medicinal plants",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5c59e5cf5e346b5bb8394c1c6687a3f0"
+      ],
+      "confidence": 0.85,
+      "evidence": "selection of medicinal plants",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "hot/cold equilibrium",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5c59e5cf5e346b5bb8394c1c6687a3f0"
+      ],
+      "confidence": 0.9,
+      "evidence": "hot/cold equilibrium models",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Condition",
+      "name": "disorders and illnesses",
+      "attributes": {},
+      "source_chunk_ids": [
+        "5c59e5cf5e346b5bb8394c1c6687a3f0"
+      ],
+      "confidence": 0.8,
+      "evidence": "provoke disorders and illnesses",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Maya of Yucatan",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "confidence": 0.9,
+      "evidence": "Maya of Yucatan",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Popoluca of southern Veracruz",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "confidence": 0.9,
+      "evidence": "Popoluca of southern Veracruz",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Isthmus Sierra Zapotec",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "confidence": 0.9,
+      "evidence": "Isthmus Sierra Zapotec",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Culture",
+      "name": "Sierra Popoluca",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sierra Popoluca",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "correlate smell and taste properties with symptom categories",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "confidence": 0.85,
+      "evidence": "correlate smell and taste properties with specific symptom categories",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "application against diarrhoea and skin diseases",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "confidence": 0.85,
+      "evidence": "application against diarrhoea and skin diseases",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "bitter sensation with cold humoral state",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "confidence": 0.8,
+      "evidence": "correlate the \u201cbitter\u201d sensation with a cold humoral state",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "TraditionalUse",
+      "name": "bitterness as a hot virtue",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "confidence": 0.8,
+      "evidence": "perceive bitterness as a \u201chot\u201d virtue",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "diarrhoea",
+      "attributes": {
+        "condition_type": "symptom"
+      },
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "confidence": 0.9,
+      "evidence": "diarrhoea",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Condition",
+      "name": "skin diseases",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "confidence": 0.9,
+      "evidence": "skin diseases",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Study",
+      "name": "Leonti et al., 2002",
+      "attributes": {
+        "year": 2002
+      },
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "confidence": 0.85,
+      "evidence": "Leonti et al., 2002",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Evidence",
+      "name": "ethnobotanical study",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "confidence": 0.8,
+      "evidence": "Leonti et al., 2002",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Campania region (Italy)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "71443ed360ee6b160b25efdb28d583cc"
+      ],
+      "confidence": 0.8,
+      "evidence": "field-based studies from the region of Campania (Italy)",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Campania \u2013 medicinal plants \u2013 symptom/organ categories",
+      "attributes": {},
+      "source_chunk_ids": [
+        "71443ed360ee6b160b25efdb28d583cc"
+      ],
+      "confidence": 0.75,
+      "evidence": "medicinal plants reported in eight recent field-based studies",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "symptom- and organ-defined use categories",
+      "attributes": {},
+      "source_chunk_ids": [
+        "71443ed360ee6b160b25efdb28d583cc"
+      ],
+      "confidence": 0.85,
+      "evidence": "arranged into eleven symptom- and organ-defined use categories",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "eight recent field-based studies from Campania",
+      "attributes": {
+        "design": "field-based studies",
+        "sample_size": 8
+      },
+      "source_chunk_ids": [
+        "71443ed360ee6b160b25efdb28d583cc"
+      ],
+      "confidence": 0.9,
+      "evidence": "eight recent field-based studies from the region of Campania",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "ethnobotanical field studies",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "71443ed360ee6b160b25efdb28d583cc"
+      ],
+      "confidence": 0.8,
+      "evidence": "field-based studies from the region of Campania",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "TraditionalUse",
+      "name": "gastrointestinal disorders",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d946fd3c2a2b2ed62821c8af49d27002"
+      ],
+      "confidence": 0.9,
+      "evidence": "gastrointestinal disorders",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "TraditionalUse",
+      "name": "urological problems",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d946fd3c2a2b2ed62821c8af49d27002"
+      ],
+      "confidence": 0.9,
+      "evidence": "urological problems",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "respiratory complaints",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d946fd3c2a2b2ed62821c8af49d27002"
+      ],
+      "confidence": 0.9,
+      "evidence": "respiratory complaints",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "dermatologic problems",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d946fd3c2a2b2ed62821c8af49d27002"
+      ],
+      "confidence": 0.9,
+      "evidence": "dermatologic problems",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "skeleto-muscular disorders",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d946fd3c2a2b2ed62821c8af49d27002"
+      ],
+      "confidence": 0.9,
+      "evidence": "skeleto-muscular disorders",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "women\u2019s medicine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d946fd3c2a2b2ed62821c8af49d27002"
+      ],
+      "confidence": 0.85,
+      "evidence": "application in women\u2019s medicine",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "fever",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d946fd3c2a2b2ed62821c8af49d27002"
+      ],
+      "confidence": 0.85,
+      "evidence": "fever (including malaria)",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "TraditionalUse",
+      "name": "sensory organs of the head",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d946fd3c2a2b2ed62821c8af49d27002"
+      ],
+      "confidence": 0.8,
+      "evidence": "sensory organs of the head",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "TraditionalUse",
+      "name": "neuropathies",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d946fd3c2a2b2ed62821c8af49d27002"
+      ],
+      "confidence": 0.8,
+      "evidence": "neuropathies",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "field-based studies",
+      "attributes": {
+        "design": "field-based studies",
+        "sample_size": 8
+      },
+      "source_chunk_ids": [
+        "d946fd3c2a2b2ed62821c8af49d27002"
+      ],
+      "confidence": 0.75,
+      "evidence": "eight field-based studies",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Evidence",
+      "name": "ethnographic survey",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "d946fd3c2a2b2ed62821c8af49d27002"
+      ],
+      "confidence": 0.7,
+      "evidence": "use categories established",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Taxon",
+      "name": "27 taxa",
+      "attributes": {
+        "rank": "multiple"
+      },
+      "source_chunk_ids": [
+        "d946fd3c2a2b2ed62821c8af49d27002"
+      ],
+      "confidence": 0.8,
+      "evidence": "27 taxa",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "27 taxa",
+      "attributes": {},
+      "source_chunk_ids": [
+        "406dd540db94f0406e53cc21f9100102"
+      ],
+      "confidence": 0.9,
+      "evidence": "27 taxa account for 453 use category citations",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Campania data set",
+      "attributes": {
+        "design": "ethnobotanical survey"
+      },
+      "source_chunk_ids": [
+        "406dd540db94f0406e53cc21f9100102"
+      ],
+      "confidence": 0.8,
+      "evidence": "data set from Campania",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Study",
+      "name": "Matthioli study",
+      "attributes": {
+        "design": "historical ethnobotanical study"
+      },
+      "source_chunk_ids": [
+        "406dd540db94f0406e53cc21f9100102"
+      ],
+      "confidence": 0.8,
+      "evidence": "In Matthioli the 27 taxa account for 170 use category citations",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Evidence",
+      "name": "ethnobotanical survey evidence",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "406dd540db94f0406e53cc21f9100102"
+      ],
+      "confidence": 0.75,
+      "evidence": "use category citations for the data set from Campania",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "historical ethnobotanical evidence",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "406dd540db94f0406e53cc21f9100102"
+      ],
+      "confidence": 0.75,
+      "evidence": "use category citations in Matthioli",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Study",
+      "name": "Matthioli (1568)",
+      "attributes": {
+        "year": 1568
       },
       "source_chunk_ids": [
         "a625cec2ab969b3860e55e563df59d08"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "Matthioli (1568)",
+      "verified": true
     },
     {
-      "id": "ent_017",
-      "type": "Indication",
-      "name": "Fever",
+      "id": "E2",
+      "type": "Study",
+      "name": "Ethnobotanical literature from Campania",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "confidence": 0.85,
+      "evidence": "Ethnobotanical literature from Campania",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "historical ethnobotanical record",
       "attributes": {
-        "context": "FEV5"
+        "evidence_level": 2
       },
       "source_chunk_ids": [
         "a625cec2ab969b3860e55e563df59d08"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Matthioli (1568) Use Category Citations",
+      "verified": true
     },
     {
-      "id": "ent_018",
-      "type": "Indication",
+      "id": "E4",
+      "type": "Evidence",
+      "name": "regional ethnobotanical literature",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "confidence": 0.8,
+      "evidence": "Ethnobotanical literature from Campania",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "gastrointestinal (GA)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "confidence": 0.85,
+      "evidence": "GA25",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "dermatological (DERM)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "confidence": 0.85,
+      "evidence": "DERM27",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "neurological (NERV)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "confidence": 0.85,
+      "evidence": "NERV17",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "TraditionalUse",
+      "name": "musculoskeletal (SK-MU)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "confidence": 0.85,
+      "evidence": "SK-MU14",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "TraditionalUse",
+      "name": "gynecological (GYN)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "confidence": 0.85,
+      "evidence": "GYN22",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "TraditionalUse",
+      "name": "respiratory (RESP)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "confidence": 0.85,
+      "evidence": "RESP21",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "TraditionalUse",
+      "name": "fever (FEV)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "confidence": 0.85,
+      "evidence": "FEV7",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "TraditionalUse",
+      "name": "urinary (UR)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "confidence": 0.85,
+      "evidence": "UR20",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "TraditionalUse",
+      "name": "ear (EAR)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "confidence": 0.85,
+      "evidence": "EAR13",
+      "verified": true
+    },
+    {
+      "id": "E14",
+      "type": "TraditionalUse",
+      "name": "eye (EYE)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "confidence": 0.85,
+      "evidence": "EYE10",
+      "verified": true
+    },
+    {
+      "id": "E15",
+      "type": "TraditionalUse",
+      "name": "nose (NOSE)",
+      "attributes": {},
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "confidence": 0.85,
+      "evidence": "NOSE7",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Campania",
+      "attributes": {},
+      "source_chunk_ids": [
+        "026d38e42901358a47e64ef793df4c69"
+      ],
+      "confidence": 0.9,
+      "evidence": "data set from Campania",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Matthioli",
+      "attributes": {},
+      "source_chunk_ids": [
+        "026d38e42901358a47e64ef793df4c69"
+      ],
+      "confidence": 0.9,
+      "evidence": "Matthioli (1568)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "nose",
+      "attributes": {},
+      "source_chunk_ids": [
+        "026d38e42901358a47e64ef793df4c69"
+      ],
+      "confidence": 0.8,
+      "evidence": "use categories \u201cnose\u201d",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "eye",
+      "attributes": {},
+      "source_chunk_ids": [
+        "026d38e42901358a47e64ef793df4c69"
+      ],
+      "confidence": 0.8,
+      "evidence": "use categories \u201ceye\u201d",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "ear",
+      "attributes": {},
+      "source_chunk_ids": [
+        "026d38e42901358a47e64ef793df4c69"
+      ],
+      "confidence": 0.8,
+      "evidence": "use categories \u201cear\u201d",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
       "name": "fever",
       "attributes": {
-        "context": "less frequent use categories ... \u201cfever\u201d receive proportionally more importance"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "026d38e42901358a47e64ef793df4c69"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "use categories \u201cfever\u201d",
+      "verified": true
     },
     {
-      "id": "ent_019",
+      "id": "E7",
+      "type": "Study",
+      "name": "Leonti et al., 2010",
+      "attributes": {
+        "year": 2010
+      },
+      "source_chunk_ids": [
+        "026d38e42901358a47e64ef793df4c69"
+      ],
+      "confidence": 0.9,
+      "evidence": "Leonti et al., 2010",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "Bayesian statistical model",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "026d38e42901358a47e64ef793df4c69"
+      ],
+      "confidence": 0.75,
+      "evidence": "Bayesian statistical model",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Sardinia",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8aee953db9b434e8f232583ca9699837"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sardinia",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Culture",
+      "name": "Sicily",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8aee953db9b434e8f232583ca9699837"
+      ],
+      "confidence": 0.9,
+      "evidence": "Sicily",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Culture",
+      "name": "Campania",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8aee953db9b434e8f232583ca9699837"
+      ],
+      "confidence": 0.9,
+      "evidence": "Campania",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "UseRecord",
+      "name": "UseRecord: Sardinia, Sicily, Campania \u2013 120 taxa \u2013 medicine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8aee953db9b434e8f232583ca9699837"
+      ],
+      "confidence": 0.85,
+      "evidence": "120 taxa used as medicine in Sardinia, Sicily as well as in Campania",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "medicine",
+      "attributes": {},
+      "source_chunk_ids": [
+        "8aee953db9b434e8f232583ca9699837"
+      ],
+      "confidence": 0.9,
+      "evidence": "used as medicine",
+      "verified": true
+    },
+    {
+      "id": "E6",
       "type": "Taxon",
-      "name": "Ruta spp.",
-      "attributes": {
-        "context": "e.g. Ruta spp. and Plantago spp."
-      },
+      "name": "120 taxa",
+      "attributes": {},
       "source_chunk_ids": [
-        "b35f24258d55b1f33b296ee891e254da"
-      ]
+        "8aee953db9b434e8f232583ca9699837"
+      ],
+      "confidence": 0.8,
+      "evidence": "120 taxa used as medicine",
+      "verified": true
     },
     {
-      "id": "ent_020",
+      "id": "E7",
+      "type": "Study",
+      "name": "Leonti et al., 2010",
+      "attributes": {
+        "year": 2010
+      },
+      "source_chunk_ids": [
+        "8aee953db9b434e8f232583ca9699837"
+      ],
+      "confidence": 0.85,
+      "evidence": "Leonti et al., 2010",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "ethnobotanical survey",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "8aee953db9b434e8f232583ca9699837"
+      ],
+      "confidence": 0.8,
+      "evidence": "ethnobotanical and ethnopharmacological survey data",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Caucasian mountains community",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9cba96bbf10b1870e3af39ec494f1ada"
+      ],
+      "confidence": 0.7,
+      "evidence": "in the Caucasian mountains",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Caucasian \u2013 Galanthus woroncwwii \u2013 poliomyelitis",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9cba96bbf10b1870e3af39ec494f1ada"
+      ],
+      "confidence": 0.75,
+      "evidence": "decoction of the bulbs was given to children suffering from poliomyelitis",
+      "verified": true
+    },
+    {
+      "id": "E3",
       "type": "Taxon",
-      "name": "Plantago spp.",
+      "name": "Galanthus woroncwwii",
       "attributes": {
-        "context": "e.g. Ruta spp. and Plantago spp."
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "b35f24258d55b1f33b296ee891e254da"
-      ]
+        "9cba96bbf10b1870e3af39ec494f1ada"
+      ],
+      "confidence": 0.9,
+      "evidence": "Galanthus woroncwwii Los (Caucasian snowdrop)",
+      "verified": true
     },
     {
-      "id": "ent_021",
-      "type": "Indication",
-      "name": "diseases",
+      "id": "E4",
+      "type": "PlantPart",
+      "name": "bulbs",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9cba96bbf10b1870e3af39ec494f1ada"
+      ],
+      "confidence": 0.85,
+      "evidence": "bulbs of Galanthus woroncwwii",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Preparation",
+      "name": "decoction",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9cba96bbf10b1870e3af39ec494f1ada"
+      ],
+      "confidence": 0.8,
+      "evidence": "decoction of the bulbs",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "poliomyelitis",
       "attributes": {
-        "context": "whole range of diseases and symptoms"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
-        "b35f24258d55b1f33b296ee891e254da"
-      ]
+        "9cba96bbf10b1870e3af39ec494f1ada"
+      ],
+      "confidence": 0.9,
+      "evidence": "children suffering from poliomyelitis",
+      "verified": true
     },
     {
-      "id": "ent_022",
-      "type": "Indication",
-      "name": "symptoms",
-      "attributes": {
-        "context": "whole range of diseases and symptoms"
-      },
+      "id": "E7",
+      "type": "Compound",
+      "name": "galanthamin",
+      "attributes": {},
       "source_chunk_ids": [
-        "b35f24258d55b1f33b296ee891e254da"
-      ]
+        "9cba96bbf10b1870e3af39ec494f1ada"
+      ],
+      "confidence": 0.95,
+      "evidence": "alkaloid galanthamin",
+      "verified": true
     },
     {
-      "id": "ent_023",
-      "type": "PharmEffect",
-      "name": "pharmacological mechanisms",
-      "attributes": {
-        "context": "information on pharmacological mechanisms"
-      },
-      "source_chunk_ids": [
-        "b35f24258d55b1f33b296ee891e254da"
-      ]
-    },
-    {
-      "id": "ent_024",
-      "type": "PharmEffect",
-      "name": "phytopharmaceutic potentials",
-      "attributes": {
-        "context": "phytopharmaceutic potentials"
-      },
-      "source_chunk_ids": [
-        "b35f24258d55b1f33b296ee891e254da"
-      ]
-    },
-    {
-      "id": "ent_025",
-      "type": "Indication",
-      "name": "ailment groups",
-      "attributes": {
-        "context": "corresponding to ailment groups"
-      },
-      "source_chunk_ids": [
-        "b35f24258d55b1f33b296ee891e254da"
-      ]
-    },
-    {
-      "id": "ent_026",
+      "id": "E8",
       "type": "Taxon",
-      "name": "medicinal plants",
+      "name": "Galanthus spp.",
       "attributes": {
-        "context": "importance of medicinal plants"
+        "rank": "genus"
       },
+      "source_chunk_ids": [
+        "9cba96bbf1870e3af39ec494f1ada",
+        "9cba96bbf10b1870e3af39ec494f1ada"
+      ],
+      "confidence": 0.85,
+      "evidence": "Galanthus spp. (Amaryllidaceae)",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Condition",
+      "name": "Alzheimer Disease",
+      "attributes": {
+        "condition_type": "disease"
+      },
+      "source_chunk_ids": [
+        "9cba96bbf10b1870e3af39ec494f1ada"
+      ],
+      "confidence": 0.9,
+      "evidence": "Alzheimer Disease treatment",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Product",
+      "name": "Nivalin",
+      "attributes": {},
+      "source_chunk_ids": [
+        "9cba96bbf10b1870e3af39ec494f1ada"
+      ],
+      "confidence": 0.8,
+      "evidence": "Nivalin\u00ae",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Study",
+      "name": "phytochemical and pharmacological studies in Bulgaria and UdSSR",
+      "attributes": {
+        "year": "1960s",
+        "location": "Bulgaria and UdSSR"
+      },
+      "source_chunk_ids": [
+        "9cba96bbf10b1870e3af39ec494f1ada"
+      ],
+      "confidence": 0.7,
+      "evidence": "phytochemical and pharmacological studies were conducted in Bulgaria and the UdSSR",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Evidence",
+      "name": "ethnobotanical lead",
+      "attributes": {
+        "evidence_level": 2,
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "9cba96bbf10b1870e3af39ec494f1ada"
+      ],
+      "confidence": 0.65,
+      "evidence": "ethnobotanical leads",
+      "verified": false
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "ethnobotanists from Europe and elsewhere",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d5fdb3c47c0f8486aeeec9f88b517887"
+      ],
+      "confidence": 0.7,
+      "evidence": "ethnobotanists from Europe and elsewhere",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: ethnobotanists \u2013 medicinal species \u2013 drug discovery",
+      "attributes": {
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "d5fdb3c47c0f8486aeeec9f88b517887"
+      ],
+      "confidence": 0.6,
+      "evidence": "keep alive the romantic tale alluding to the relevance for drug discovery",
+      "verified": false
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "medicinal species",
+      "attributes": {
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "d5fdb3c47c0f8486aeeec9f88b517887"
+      ],
+      "confidence": 0.65,
+      "evidence": "medicinal species reported",
+      "verified": false
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "drug discovery",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d5fdb3c47c0f8486aeeec9f88b517887"
+      ],
+      "confidence": 0.7,
+      "evidence": "relevance for drug discovery",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "ethnopharmacological research",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d5fdb3c47c0f8486aeeec9f88b517887"
+      ],
+      "confidence": 0.75,
+      "evidence": "research goal of ethnopharmacologists",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Study",
+      "name": "Rivier and Bruhn, 1979",
+      "attributes": {
+        "year": 1979
+      },
+      "source_chunk_ids": [
+        "d5fdb3c47c0f8486aeeec9f88b517887"
+      ],
+      "confidence": 0.8,
+      "evidence": "Rivier and Bruhn, 1979",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Heinrich, 2003",
+      "attributes": {
+        "year": 2003
+      },
+      "source_chunk_ids": [
+        "d5fdb3c47c0f8486aeeec9f88b517887"
+      ],
+      "confidence": 0.8,
+      "evidence": "Heinrich, 2003",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Gertsch, 2009",
+      "attributes": {
+        "year": 2009
+      },
+      "source_chunk_ids": [
+        "d5fdb3c47c0f8486aeeec9f88b517887"
+      ],
+      "confidence": 0.8,
+      "evidence": "Gertsch, 2009",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Balick and Cox, 1996",
+      "attributes": {
+        "year": 1996
+      },
+      "source_chunk_ids": [
+        "d5fdb3c47c0f8486aeeec9f88b517887"
+      ],
+      "confidence": 0.8,
+      "evidence": "Balick and Cox (1996)",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Study",
+      "name": "Cox, 2000",
+      "attributes": {
+        "year": 2000
+      },
+      "source_chunk_ids": [
+        "d5fdb3c47c0f8486aeeec9f88b517887"
+      ],
+      "confidence": 0.8,
+      "evidence": "Cox, 2000",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Study",
+      "name": "Holland, 1994",
+      "attributes": {
+        "year": 1994
+      },
+      "source_chunk_ids": [
+        "d5fdb3c47c0f8486aeeec9f88b517887"
+      ],
+      "confidence": 0.8,
+      "evidence": "Holland, 1994",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Mapuche",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7eb52392b8e9eb99c47dc54fb714bd7e"
+      ],
+      "confidence": 0.9,
+      "evidence": "Mapuche medicinal flora",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Mapuche \u2013 introduced Mediterranean medicinal species",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7eb52392b8e9eb99c47dc54fb714bd7e"
+      ],
+      "confidence": 0.7,
+      "evidence": "Mapuche have inherited the indications for the introduced Mediterranean medicinal species",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Taxon",
+      "name": "introduced Mediterranean medicinal species",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7eb52392b8e9eb99c47dc54fb714bd7e"
+      ],
+      "confidence": 0.75,
+      "evidence": "introduced Mediterranean medicinal species",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "medicinal use",
+      "attributes": {},
+      "source_chunk_ids": [
+        "7eb52392b8e9eb99c47dc54fb714bd7e"
+      ],
+      "confidence": 0.8,
+      "evidence": "medicinal flora",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Campania",
+      "attributes": {},
       "source_chunk_ids": [
         "6af153f2dd204b0d4e11814a4c220473"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "data set from Campania",
+      "verified": true
     },
     {
-      "id": "ent_027",
-      "type": "Indication",
+      "id": "E2",
+      "type": "Culture",
+      "name": "German Renaissance",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ],
+      "confidence": 0.7,
+      "evidence": "German Renaissance herbals",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "nose",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ],
+      "confidence": 0.9,
+      "evidence": "use categories \u201cnose\u201d",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "eye",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ],
+      "confidence": 0.9,
+      "evidence": "\u201ceye\u201d",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "TraditionalUse",
+      "name": "ear",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ],
+      "confidence": 0.9,
+      "evidence": "\u201cear\u201d",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
       "name": "fever",
-      "attributes": {
-        "context": "use categories \u201cnose\u201d, \u201ceye\u201d, \u201cear\u201d as well as \u201cfever\u201d"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "6af153f2dd204b0d4e11814a4c220473"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "\u201cfever\u201d",
+      "verified": true
     },
     {
-      "id": "ent_028",
-      "type": "Indication",
-      "name": "ailments",
-      "attributes": {
-        "context": "connected with more common ailments"
-      },
-      "source_chunk_ids": [
-        "6af153f2dd204b0d4e11814a4c220473"
-      ]
-    },
-    {
-      "id": "ent_029",
-      "type": "Indication",
-      "name": "diseases",
-      "attributes": {
-        "context": "prevalence and virulence of diseases"
-      },
-      "source_chunk_ids": [
-        "6af153f2dd204b0d4e11814a4c220473"
-      ]
-    },
-    {
-      "id": "ent_030",
-      "type": "Taxon",
-      "name": "Dipsacus fullonum L.",
-      "attributes": {
-        "context": "Dipsacus fullonum L. (Dipsacaceae)) against malaria"
-      },
-      "source_chunk_ids": [
-        "6af153f2dd204b0d4e11814a4c220473"
-      ]
-    },
-    {
-      "id": "ent_031",
-      "type": "Indication",
+      "id": "E7",
+      "type": "Condition",
       "name": "malaria",
       "attributes": {
-        "context": "against malaria and intermittent fever"
+        "condition_type": "disease"
       },
       "source_chunk_ids": [
         "6af153f2dd204b0d4e11814a4c220473"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "against malaria",
+      "verified": true
     },
     {
-      "id": "ent_032",
-      "type": "Indication",
+      "id": "E8",
+      "type": "Condition",
       "name": "intermittent fever",
       "attributes": {
-        "context": "against malaria and intermittent fever"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "6af153f2dd204b0d4e11814a4c220473"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "intermittent fever",
+      "verified": true
     },
     {
-      "id": "ent_033",
-      "type": "Indication",
-      "name": "malaria",
-      "attributes": {
-        "context": "indicated against malaria in the German herbals"
-      },
-      "source_chunk_ids": [
-        "6af153f2dd204b0d4e11814a4c220473"
-      ]
-    },
-    {
-      "id": "ent_034",
-      "type": "Compound",
-      "name": "oil of Anethum graveolens L.",
-      "attributes": {
-        "context": "exception of the oil of Anethum graveolens L. (Apiaceae)"
-      },
-      "source_chunk_ids": [
-        "6af153f2dd204b0d4e11814a4c220473"
-      ]
-    },
-    {
-      "id": "ent_035",
+      "id": "E9",
       "type": "Taxon",
-      "name": "Anethum graveolens L.",
+      "name": "Dipsacus fullonum",
       "attributes": {
-        "context": "oil of Anethum graveolens L. (Apiaceae)"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "6af153f2dd204b0d4e11814a4c220473"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "Dipsacus fullonum L.",
+      "verified": true
     },
     {
-      "id": "ent_036",
+      "id": "E10",
       "type": "Taxon",
-      "name": "Portulaca oleracea L.",
+      "name": "Anethum graveolens",
       "attributes": {
-        "context": "Portulaca oleracea L. (Portulacaceae)"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "6af153f2dd204b0d4e11814a4c220473"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "Anethum graveolens L.",
+      "verified": true
     },
     {
-      "id": "ent_037",
+      "id": "E11",
       "type": "Taxon",
-      "name": "Portulaca oleracea L.",
+      "name": "Portulaca oleracea",
       "attributes": {
-        "context": "While Portulaca oleracea, is indicated against malaria"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "6af153f2dd204b0d4e11814a4c220473"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "Portulaca oleracea L.",
+      "verified": true
     },
     {
-      "id": "ent_038",
-      "type": "Indication",
-      "name": "malaria",
-      "attributes": {
-        "context": "Portulaca oleracea, is indicated against malaria"
-      },
-      "source_chunk_ids": [
-        "6af153f2dd204b0d4e11814a4c220473"
-      ]
-    },
-    {
-      "id": "ent_039",
-      "type": "Indication",
-      "name": "fevers",
-      "attributes": {
-        "context": "indicated against all kind of fevers"
-      },
-      "source_chunk_ids": [
-        "6af153f2dd204b0d4e11814a4c220473"
-      ]
-    },
-    {
-      "id": "ent_040",
-      "type": "Taxon",
-      "name": "Portulaca oleracea L.",
-      "attributes": {
-        "context": "Portulaca oleracea is indicated against fever"
-      },
-      "source_chunk_ids": [
-        "6af153f2dd204b0d4e11814a4c220473"
-      ]
-    },
-    {
-      "id": "ent_041",
-      "type": "Indication",
-      "name": "fever",
-      "attributes": {
-        "context": "indicated against fever and fervid afflictions"
-      },
-      "source_chunk_ids": [
-        "6af153f2dd204b0d4e11814a4c220473"
-      ]
-    },
-    {
-      "id": "ent_042",
-      "type": "Indication",
-      "name": "fervid afflictions",
-      "attributes": {
-        "context": "against fever and fervid afflictions"
-      },
-      "source_chunk_ids": [
-        "6af153f2dd204b0d4e11814a4c220473"
-      ]
-    },
-    {
-      "id": "ent_043",
-      "type": "Indication",
-      "name": "fever",
-      "attributes": {
-        "context": "indicated against fever by Dioscorides"
-      },
-      "source_chunk_ids": [
-        "6af153f2dd204b0d4e11814a4c220473"
-      ]
-    },
-    {
-      "id": "ent_044",
-      "type": "Taxon",
-      "name": "Anethum graveolens L.",
-      "attributes": {
-        "context": "only Anethum graveolens, Bupleurum sp."
-      },
-      "source_chunk_ids": [
-        "6af153f2dd204b0d4e11814a4c220473"
-      ]
-    },
-    {
-      "id": "ent_045",
+      "id": "E12",
       "type": "Taxon",
       "name": "Bupleurum sp.",
       "attributes": {
-        "context": "Bupleurum sp., Opopanax chironium W.D.J. Koch"
+        "rank": "genus"
       },
       "source_chunk_ids": [
         "6af153f2dd204b0d4e11814a4c220473"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Bupleurum sp.",
+      "verified": true
     },
     {
-      "id": "ent_046",
+      "id": "E13",
       "type": "Taxon",
-      "name": "Opopanax chironium W.D.J. Koch",
+      "name": "Opopanax chironium",
       "attributes": {
-        "context": "Opopanax chironium W.D.J. Koch (all Apiaceae)"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "6af153f2dd204b0d4e11814a4c220473"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Opopanax chironium",
+      "verified": true
     },
     {
-      "id": "ent_047",
+      "id": "E14",
       "type": "Taxon",
-      "name": "Phoenix dactylifera L.",
+      "name": "Phoenix dactylifera",
       "attributes": {
-        "context": "Phoenix dactylifera L. (Arecaceae)"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "6af153f2dd204b0d4e11814a4c220473"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Phoenix dactylifera L.",
+      "verified": true
     },
     {
-      "id": "ent_048",
+      "id": "E15",
       "type": "Taxon",
       "name": "Aristolochia spp.",
       "attributes": {
-        "context": "Aristolochia spp. (Aristolochiaceae)"
+        "rank": "genus"
       },
       "source_chunk_ids": [
         "6af153f2dd204b0d4e11814a4c220473"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Aristolochia spp.",
+      "verified": true
     },
     {
-      "id": "ent_049",
+      "id": "E16",
       "type": "Taxon",
-      "name": "Cucurbita pepo L.",
+      "name": "Cucurbita pepo",
       "attributes": {
-        "context": "Cucurbita pepo L. (Cucurbitaceae)"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "6af153f2dd204b0d4e11814a4c220473"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "Cucurbita pepo L.",
+      "verified": true
     },
     {
-      "id": "ent_050",
+      "id": "E17",
+      "type": "RawMaterial",
+      "name": "oil",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ],
+      "confidence": 0.7,
+      "evidence": "oil of Anethum graveolens",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "Popoluca",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d9adfe1b3806b90b7f5b92ced09dda9d"
+      ],
+      "confidence": 0.9,
+      "evidence": "used by the Popoluca",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: Popoluca \u2013 Aristolochia \u2013 snake-bites and stomach-ache",
+      "attributes": {},
+      "source_chunk_ids": [
+        "d9adfe1b3806b90b7f5b92ced09dda9d"
+      ],
+      "confidence": 0.85,
+      "evidence": "used by the Popoluca to treat snake-bites, and stomach-ache",
+      "verified": true
+    },
+    {
+      "id": "E3",
       "type": "Taxon",
-      "name": "Portulaca oleracea L.",
+      "name": "Aristolochia asclepiadifolia",
       "attributes": {
-        "context": "Cucurbita pepo L. (Cucurbitaceae) and Portulaca oleracea"
-      },
-      "source_chunk_ids": [
-        "6af153f2dd204b0d4e11814a4c220473"
-      ]
-    },
-    {
-      "id": "ent_051",
-      "type": "Indication",
-      "name": "malaria",
-      "attributes": {
-        "context": "indicated against malaria in the German herbals"
-      },
-      "source_chunk_ids": [
-        "6af153f2dd204b0d4e11814a4c220473"
-      ]
-    },
-    {
-      "id": "ent_052",
-      "type": "Indication",
-      "name": "fever",
-      "attributes": {
-        "context": "indications against fever for 15 taxa"
-      },
-      "source_chunk_ids": [
-        "6af153f2dd204b0d4e11814a4c220473"
-      ]
-    },
-    {
-      "id": "ent_053",
-      "type": "Indication",
-      "name": "malaria",
-      "attributes": {
-        "context": "treatment of malaria in the German Renaissance herbals"
-      },
-      "source_chunk_ids": [
-        "6af153f2dd204b0d4e11814a4c220473"
-      ]
-    },
-    {
-      "id": "ent_054",
-      "type": "Taxon",
-      "name": "Aristolochia species",
-      "attributes": {
-        "context": "Different native Aristolochia species"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "d9adfe1b3806b90b7f5b92ced09dda9d"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Aristolochia asclepiadifolia Brandegee",
+      "verified": true
     },
     {
-      "id": "ent_055",
+      "id": "E4",
       "type": "Taxon",
-      "name": "snake-root",
+      "name": "Aristolochia ovalifolia",
       "attributes": {
-        "context": "Aristolochia species (snake-root)"
+        "rank": "species"
       },
       "source_chunk_ids": [
         "d9adfe1b3806b90b7f5b92ced09dda9d"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Aristolochia ovalifolia Duch.",
+      "verified": true
     },
     {
-      "id": "ent_056",
-      "type": "Indication",
+      "id": "E5",
+      "type": "Condition",
       "name": "snake-bites",
       "attributes": {
-        "context": "to treat snake-bites"
+        "condition_type": "injury"
       },
       "source_chunk_ids": [
         "d9adfe1b3806b90b7f5b92ced09dda9d"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "to treat snake-bites",
+      "verified": true
     },
     {
-      "id": "ent_057",
-      "type": "Indication",
+      "id": "E6",
+      "type": "Condition",
       "name": "stomach-ache",
       "attributes": {
-        "context": "and stomach-ache"
+        "condition_type": "symptom"
       },
       "source_chunk_ids": [
         "d9adfe1b3806b90b7f5b92ced09dda9d"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "to treat stomach-ache",
+      "verified": true
     },
     {
-      "id": "ent_058",
+      "id": "E1",
+      "type": "Culture",
+      "name": "local communities",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "confidence": 0.7,
+      "evidence": "local communities disseminating the surveyed knowledge",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: local communities \u2013 medicinal plants \u2013 house remedies",
+      "attributes": {
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "confidence": 0.65,
+      "evidence": "guide to house remedies local knowledge",
+      "verified": false
+    },
+    {
+      "id": "E3",
       "type": "Taxon",
-      "name": "Aristolochia asclepiadifolia Brandegee",
+      "name": "Brugmansia arborea",
       "attributes": {
-        "context": "Aristolochia asclepiadifolia Brandegee"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "d9adfe1b3806b90b7f5b92ced09dda9d"
-      ]
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "confidence": 0.9,
+      "evidence": "Brugmansia arborea (L.) Steud.",
+      "verified": true
     },
     {
-      "id": "ent_059",
+      "id": "E4",
       "type": "Taxon",
-      "name": "Aristolochia ovalifolia Duch.",
+      "name": "Zea mays",
       "attributes": {
-        "context": "and Aristolochia ovalifolia Duch."
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "d9adfe1b3806b90b7f5b92ced09dda9d"
-      ]
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "confidence": 0.9,
+      "evidence": "Zea mays L.",
+      "verified": true
     },
     {
-      "id": "ent_060",
-      "type": "Taxon",
-      "name": "Aristolochia spp.",
-      "attributes": {
-        "context": "properties of Aristolochia spp."
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_061",
-      "type": "PharmEffect",
-      "name": "bitter",
-      "attributes": {
-        "context": "perceived as bitter"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_062",
-      "type": "PharmEffect",
-      "name": "hot",
-      "attributes": {
-        "context": "therefore \u201chot\u201d"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_063",
-      "type": "Taxon",
-      "name": "Aristolochia spp.",
-      "attributes": {
-        "context": "three Aristolochia spp."
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_064",
-      "type": "Indication",
-      "name": "pregnant women",
-      "attributes": {
-        "context": "for pregnant women"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_065",
-      "type": "Indication",
-      "name": "menstrual problems",
-      "attributes": {
-        "context": "and menstrual problems"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_066",
-      "type": "Indication",
-      "name": "venoms",
-      "attributes": {
-        "context": "against all kind of venoms"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_067",
-      "type": "Indication",
-      "name": "snakes",
-      "attributes": {
-        "context": "species against snakes"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_068",
-      "type": "Taxon",
-      "name": "Aristolochia spp.",
-      "attributes": {
-        "context": "indicates Aristolochia spp."
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_069",
-      "type": "Indication",
-      "name": "respiratory problems",
-      "attributes": {
-        "context": "against respiratory problems"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_070",
-      "type": "Indication",
-      "name": "hiccup",
-      "attributes": {
-        "context": "and hiccup"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_071",
-      "type": "Indication",
-      "name": "fevers",
-      "attributes": {
-        "context": "before fevers"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_072",
-      "type": "Indication",
-      "name": "spleen",
-      "attributes": {
-        "context": "the spleen"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_073",
-      "type": "Indication",
-      "name": "spasms",
-      "attributes": {
-        "context": "spasms"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_074",
-      "type": "Indication",
-      "name": "cutaneous ulcers",
-      "attributes": {
-        "context": "against cutaneous ulcers"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_075",
-      "type": "PharmEffect",
-      "name": "hot",
-      "attributes": {
-        "context": "the \u201chot\u201d properties of Aristolochia spp."
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_076",
-      "type": "Taxon",
-      "name": "Aristolochia spp.",
-      "attributes": {
-        "context": "properties of Aristolochia spp."
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_077",
-      "type": "Indication",
-      "name": "venoms",
-      "attributes": {
-        "context": "against venoms of any kind"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_078",
-      "type": "Taxon",
-      "name": "Aristolochia spp.",
-      "attributes": {
-        "context": "Aristolochia spp. are of worldwide importance"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_079",
-      "type": "Indication",
-      "name": "gastrointestinal problems",
-      "attributes": {
-        "context": "related to gastrointestinal problems"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_080",
-      "type": "Indication",
-      "name": "snakebites",
-      "attributes": {
-        "context": "and snakebites"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_081",
-      "type": "Taxon",
-      "name": "Aristolochia cf. consimilis Mast.",
-      "attributes": {
-        "context": "wood of Aristolochia cf. consimilis Mast."
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_082",
-      "type": "Indication",
-      "name": "menstrual pain",
-      "attributes": {
-        "context": "against menstrual pain"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_083",
-      "type": "PharmEffect",
-      "name": "bitter tonic",
-      "attributes": {
-        "context": "as a bitter tonic"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_084",
-      "type": "PharmEffect",
-      "name": "pharmacologic properties",
-      "attributes": {
-        "context": "specific pharmacologic properties"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_085",
-      "type": "Taxon",
-      "name": "Aristolochia genus",
-      "attributes": {
-        "context": "the Aristolochia genus"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_086",
-      "type": "PharmEffect",
-      "name": "nephrotoxic",
-      "attributes": {
-        "context": "nephrotoxic aristolochic acids"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_087",
-      "type": "Compound",
-      "name": "aristolochic acids",
-      "attributes": {
-        "context": "presence of nephrotoxic aristolochic acids"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_088",
-      "type": "PharmEffect",
-      "name": "toxicity",
-      "attributes": {
-        "context": "their toxicity remains undetected"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_089",
-      "type": "Taxon",
-      "name": "Aristolochia species",
-      "attributes": {
-        "context": "using Aristolochia species in herbal medicine"
-      },
-      "source_chunk_ids": [
-        "4a6b5089f17c77307b794db8132ac90a"
-      ]
-    },
-    {
-      "id": "ent_090",
-      "type": "Taxon",
-      "name": "Capsella bursa-pastoris",
-      "attributes": {
-        "context": "Capsella bursa-pastoris (L.) Medik. (shepherd's purse)"
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_091",
-      "type": "Taxon",
-      "name": "Thlaspi",
-      "attributes": {
-        "context": "chapter on Thlaspi (Book II, Chapter 145)"
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_092",
-      "type": "Taxon",
-      "name": "Capsella bursa-pastoris",
-      "attributes": {
-        "context": "Shepherd's purse is mentioned by Fuchs (1543)"
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_093",
-      "type": "Indication",
-      "name": "nosebleed",
-      "attributes": {
-        "context": "indication that is nosebleed (Chapter 233)"
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_094",
-      "type": "Taxon",
-      "name": "Capsella bursa-pastoris",
-      "attributes": {
-        "context": "Matthioli (1568) mention Capsella bursa-pastoris against blood fluxes"
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_095",
-      "type": "Indication",
-      "name": "blood fluxes",
-      "attributes": {
-        "context": "against blood fluxes of all kinds"
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_096",
-      "type": "Indication",
-      "name": "nosebleed",
-      "attributes": {
-        "context": "specific indication against nosebleed"
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_097",
-      "type": "Indication",
-      "name": "bleeding",
-      "attributes": {
-        "context": "general indication against bleeding of all kinds"
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_098",
-      "type": "Taxon",
-      "name": "medicinal plants",
-      "attributes": {
-        "context": "collect medicinal plants including Capsella bursa-pastoris"
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_099",
-      "type": "Taxon",
-      "name": "Capsella bursa-pastoris",
-      "attributes": {
-        "context": "medicinal plants including Capsella bursa-pastoris"
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_100",
-      "type": "Indication",
-      "name": "nosebleed",
-      "attributes": {
-        "context": "recommended by their teacher against nosebleed"
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_101",
-      "type": "Taxon",
-      "name": "Capsella bursa-pastoris",
-      "attributes": {
-        "context": "Today shepherd's purse is considered a folkloristic element"
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_102",
-      "type": "PharmEffect",
-      "name": "medicinal",
-      "attributes": {
-        "context": "obsolete medicinal herb"
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_103",
-      "type": "PharmEffect",
-      "name": "cardiovascular",
-      "attributes": {
-        "context": "cardiovascular uses of garlic"
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_104",
+      "id": "E5",
       "type": "Taxon",
       "name": "Allium sativum",
       "attributes": {
-        "context": "cardiovascular uses of garlic as an example"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "confidence": 0.9,
+      "evidence": "Allium sativum L.",
+      "verified": true
     },
     {
-      "id": "ent_105",
-      "type": "PharmEffect",
-      "name": "anti-depressive",
+      "id": "E6",
+      "type": "Taxon",
+      "name": "Pachycereus pecten-aboriginum",
       "attributes": {
-        "context": "anti-depressive indication of Hypericum spp."
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "confidence": 0.9,
+      "evidence": "Pachycereus pecten-aboriginum",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Taxon",
+      "name": "Aloe sp.",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "confidence": 0.85,
+      "evidence": "Aloe sp.",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Taxon",
+      "name": "Carica papaya",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "confidence": 0.9,
+      "evidence": "Carica papaya L.",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Taxon",
+      "name": "Lysiloma Watsonii",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "confidence": 0.9,
+      "evidence": "Lysiloma Watsonii Rose",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Taxon",
+      "name": "Salix sp.",
+      "attributes": {
+        "rank": "genus"
+      },
+      "source_chunk_ids": [
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "confidence": 0.85,
+      "evidence": "Salix sp.",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Taxon",
+      "name": "Ricinus communis",
+      "attributes": {
+        "rank": "species"
+      },
+      "source_chunk_ids": [
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "confidence": 0.9,
+      "evidence": "Ricinus communis L.",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "TraditionalUse",
+      "name": "medicinal properties",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "confidence": 0.8,
+      "evidence": "medicinal properties and the application",
+      "verified": true
+    },
+    {
+      "id": "E13",
+      "type": "TraditionalUse",
+      "name": "meaning response",
+      "attributes": {},
+      "source_chunk_ids": [
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "confidence": 0.75,
+      "evidence": "meaning response (La buena sugesti\u00f3n)",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Taxon",
+      "name": "Capsella bursa-pastoris",
+      "attributes": {
+        "rank": "species",
+        "common_name": "shepherd's purse"
       },
       "source_chunk_ids": [
         "ede0bbaa88556f292ec730ade5272ec6"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Capsella bursa-pastoris (shepherd's purse)",
+      "verified": true
     },
     {
-      "id": "ent_106",
+      "id": "E2",
+      "type": "TraditionalUse",
+      "name": "nosebleed",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ],
+      "confidence": 0.9,
+      "evidence": "nosebleed (Chapter 233)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "TraditionalUse",
+      "name": "blood fluxes of all kinds",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ],
+      "confidence": 0.85,
+      "evidence": "against blood fluxes of all kinds",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Culture",
+      "name": "post War Germany school kids",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ],
+      "confidence": 0.8,
+      "evidence": "post War Germany school kids",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "UseRecord",
+      "name": "UseRecord: post War Germany \u2013 Capsella \u2013 nosebleed",
+      "attributes": {},
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ],
+      "confidence": 0.75,
+      "evidence": "recommended by their teacher against nosebleed",
+      "verified": true
+    },
+    {
+      "id": "E6",
       "type": "Taxon",
       "name": "Hypericum spp.",
       "attributes": {
-        "context": "anti-depressive indication of Hypericum spp. (St. Johns wort)"
+        "rank": "genus",
+        "common_name": "St. Johns wort"
       },
       "source_chunk_ids": [
         "ede0bbaa88556f292ec730ade5272ec6"
-      ]
+      ],
+      "confidence": 0.95,
+      "evidence": "Hypericum spp. (St. Johns wort)",
+      "verified": true
     },
     {
-      "id": "ent_107",
-      "type": "Indication",
-      "name": "Melancholy",
-      "attributes": {
-        "context": "Melancholy as an indication for Hypericum spp."
-      },
+      "id": "E7",
+      "type": "TraditionalUse",
+      "name": "melancholy",
+      "attributes": {},
       "source_chunk_ids": [
         "ede0bbaa88556f292ec730ade5272ec6"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "Melancholy as an indication",
+      "verified": true
     },
     {
-      "id": "ent_108",
-      "type": "Taxon",
-      "name": "Hypericum spp.",
-      "attributes": {
-        "context": "Melancholy as an indication for Hypericum spp."
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_109",
-      "type": "Taxon",
-      "name": "Hypericum perforatum",
-      "attributes": {
-        "context": "M\u00fcller (1873, p. 292) mentions Hypericum perforatum L."
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_110",
-      "type": "Indication",
+      "id": "E8",
+      "type": "TraditionalUse",
       "name": "depressive moods",
-      "attributes": {
-        "context": "against depressive moods in the masculine gender"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "ede0bbaa88556f292ec730ade5272ec6"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "against depressive moods",
+      "verified": true
     },
     {
-      "id": "ent_111",
-      "type": "Indication",
-      "name": "neurological disorders",
-      "attributes": {
-        "context": "uses related to neurological disorders for Hypericum spp."
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_112",
-      "type": "Taxon",
-      "name": "Hypericum spp.",
-      "attributes": {
-        "context": "neurological disorders for Hypericum spp."
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_113",
-      "type": "Indication",
+      "id": "E9",
+      "type": "TraditionalUse",
       "name": "epilepsy",
-      "attributes": {
-        "context": "epilepsy as an indication"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "ede0bbaa88556f292ec730ade5272ec6"
-      ]
+      ],
+      "confidence": 0.8,
+      "evidence": "epilepsy as an indication",
+      "verified": true
     },
     {
-      "id": "ent_114",
-      "type": "Taxon",
-      "name": "Hypericum spp.",
-      "attributes": {
-        "context": "16th century Hypericum spp. gained importance"
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_115",
-      "type": "PharmEffect",
+      "id": "E10",
+      "type": "TraditionalUse",
       "name": "apotropaic",
-      "attributes": {
-        "context": "gained importance as an apotropaic (Czygan, 2003)"
-      },
+      "attributes": {},
       "source_chunk_ids": [
         "ede0bbaa88556f292ec730ade5272ec6"
-      ]
+      ],
+      "confidence": 0.7,
+      "evidence": "gained importance as an apotropaic",
+      "verified": true
     },
     {
-      "id": "ent_116",
-      "type": "PharmEffect",
-      "name": "antidepressant",
-      "attributes": {
-        "context": "antidepressant uses of Hypericum spp."
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_117",
-      "type": "Taxon",
-      "name": "Hypericum spp.",
-      "attributes": {
-        "context": "antidepressant uses of Hypericum spp."
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_118",
-      "type": "Indication",
-      "name": "depressive states",
-      "attributes": {
-        "context": "treatment of depressive states with hypericin"
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_119",
-      "type": "Compound",
-      "name": "hypericin",
-      "attributes": {
-        "context": "depressive states with hypericin"
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_120",
-      "type": "PharmEffect",
-      "name": "antidepressive",
-      "attributes": {
-        "context": "antidepressive effect of a standardized Hypericum extract"
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_121",
-      "type": "Taxon",
-      "name": "Hypericum spp.",
-      "attributes": {
-        "context": "standardized Hypericum extract"
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_122",
-      "type": "Taxon",
-      "name": "medicinal plants",
-      "attributes": {
-        "context": "ancient uses of medicinal plants"
-      },
-      "source_chunk_ids": [
-        "ede0bbaa88556f292ec730ade5272ec6"
-      ]
-    },
-    {
-      "id": "ent_123",
-      "type": "Indication",
+      "id": "E11",
+      "type": "Condition",
       "name": "depression",
       "attributes": {
-        "context": "surveying depression related uses of Hypericum spp."
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
         "ede0bbaa88556f292ec730ade5272ec6"
-      ]
+      ],
+      "confidence": 0.9,
+      "evidence": "depression related uses",
+      "verified": true
     },
     {
-      "id": "ent_124",
-      "type": "Taxon",
-      "name": "Hypericum spp.",
+      "id": "E12",
+      "type": "Study",
+      "name": "Hoffmann and Kuehl (1979)",
       "attributes": {
-        "context": "depression related uses of Hypericum spp."
+        "year": 1979
       },
       "source_chunk_ids": [
         "ede0bbaa88556f292ec730ade5272ec6"
-      ]
+      ],
+      "confidence": 0.85,
+      "evidence": "Hoffmann and Kuehl (1979)",
+      "verified": true
     },
     {
-      "id": "ent_125",
-      "type": "Taxon",
-      "name": "medicinal plants",
+      "id": "E13",
+      "type": "Study",
+      "name": "M\u00fcldner and Z\u00f6ller (1984)",
       "attributes": {
-        "context": "The use of medicinal plants and natural product drugs"
+        "year": 1984
       },
       "source_chunk_ids": [
-        "0682750cc00727d0b190206718f5fef4"
-      ]
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ],
+      "confidence": 0.85,
+      "evidence": "M\u00fcldner and Z\u00f6ller (1984)",
+      "verified": true
     },
     {
-      "id": "ent_126",
+      "id": "E14",
+      "type": "Evidence",
+      "name": "clinical studies",
+      "attributes": {
+        "evidence_level": 4
+      },
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ],
+      "confidence": 0.8,
+      "evidence": "fostered by clinical studies",
+      "verified": true
+    },
+    {
+      "id": "E15",
       "type": "Compound",
-      "name": "natural product drugs",
-      "attributes": {
-        "context": "natural product drugs is embedded"
-      },
+      "name": "hypericin",
+      "attributes": {},
       "source_chunk_ids": [
-        "0682750cc00727d0b190206718f5fef4"
-      ]
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ],
+      "confidence": 0.9,
+      "evidence": "hypericin",
+      "verified": true
     },
     {
-      "id": "ent_127",
-      "type": "PharmEffect",
-      "name": "pharmacological properties",
-      "attributes": {
-        "context": "pharmacological properties, the selection of medicinal plants"
-      },
+      "id": "E16",
+      "type": "RawMaterial",
+      "name": "standardized Hypericum extract",
+      "attributes": {},
       "source_chunk_ids": [
-        "0682750cc00727d0b190206718f5fef4"
-      ]
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ],
+      "confidence": 0.85,
+      "evidence": "standardized Hypericum extract",
+      "verified": true
     },
     {
-      "id": "ent_128",
+      "id": "E1",
+      "type": "Culture",
+      "name": "Bolivian Tsimane'",
+      "attributes": {},
+      "source_chunk_ids": [
+        "34814d0246e9cc4746868baed3ffca1c"
+      ],
+      "confidence": 0.9,
+      "evidence": "Bolivian Tsimane'",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Study",
+      "name": "Reyes-Garc\u00eda et al. (2009)",
+      "attributes": {
+        "year": 2009
+      },
+      "source_chunk_ids": [
+        "34814d0246e9cc4746868baed3ffca1c"
+      ],
+      "confidence": 0.95,
+      "evidence": "Reyes-Garc\u00eda et al. (2009)",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Evidence",
+      "name": "ethnographic study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "34814d0246e9cc4746868baed3ffca1c"
+      ],
+      "confidence": 0.8,
+      "evidence": "gathered evidence",
+      "verified": true
+    },
+    {
+      "id": "E4",
+      "type": "Study",
+      "name": "McDade et al. (2007)",
+      "attributes": {
+        "year": 2007
+      },
+      "source_chunk_ids": [
+        "34814d0246e9cc4746868baed3ffca1c"
+      ],
+      "confidence": 0.9,
+      "evidence": "McDade et al., 2007",
+      "verified": true
+    },
+    {
+      "id": "E5",
+      "type": "Evidence",
+      "name": "correlational study",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "34814d0246e9cc4746868baed3ffca1c"
+      ],
+      "confidence": 0.75,
+      "evidence": "correlated maternal plant knowledge",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Condition",
+      "name": "child health",
+      "attributes": {
+        "condition_type": "wellness"
+      },
+      "source_chunk_ids": [
+        "34814d0246e9cc4746868baed3ffca1c"
+      ],
+      "confidence": 0.8,
+      "evidence": "indices of child health",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Study",
+      "name": "Cavalli-Sforza et al. (1982)",
+      "attributes": {
+        "year": 1982
+      },
+      "source_chunk_ids": [
+        "34814d0246e9cc4746868baed3ffca1c"
+      ],
+      "confidence": 0.85,
+      "evidence": "Cavalli-Sforza et al., 1982",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Study",
+      "name": "Hewlett and Cavalli-Sforza (1986)",
+      "attributes": {
+        "year": 1986
+      },
+      "source_chunk_ids": [
+        "34814d0246e9cc4746868baed3ffca1c"
+      ],
+      "confidence": 0.85,
+      "evidence": "Hewlett and Cavalli-Sforza, 1986",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Study",
+      "name": "Kalish et al. (2007)",
+      "attributes": {
+        "year": 2007
+      },
+      "source_chunk_ids": [
+        "34814d0246e9cc4746868baed3ffca1c"
+      ],
+      "confidence": 0.85,
+      "evidence": "Kalish et al., 2007",
+      "verified": true
+    },
+    {
+      "id": "E1",
+      "type": "Culture",
+      "name": "local plant users",
+      "attributes": {},
+      "source_chunk_ids": [
+        "b862bc525bf054297e30e6bd58b77f33"
+      ],
+      "confidence": 0.7,
+      "evidence": "local plant use",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "UseRecord",
+      "name": "UseRecord: local \u2013 medicinal taxa \u2013 guide",
+      "attributes": {
+        "verification_needed": true
+      },
+      "source_chunk_ids": [
+        "b862bc525bf054297e30e6bd58b77f33"
+      ],
+      "confidence": 0.65,
+      "evidence": "guide and reference for almost 2000 years",
+      "verified": false
+    },
+    {
+      "id": "E3",
       "type": "Taxon",
-      "name": "plant",
+      "name": "medicinal taxa",
       "attributes": {
-        "context": "plant knowledge by text"
+        "rank": "group"
       },
       "source_chunk_ids": [
-        "0682750cc00727d0b190206718f5fef4"
-      ]
+        "b862bc525bf054297e30e6bd58b77f33"
+      ],
+      "confidence": 0.75,
+      "evidence": "core group of medicinal taxa",
+      "verified": true
     },
     {
-      "id": "ent_129",
-      "type": "Compound",
-      "name": "materia medica",
-      "attributes": {
-        "context": "use of the materia medica in Dioscorides' work"
-      },
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "medicinal use",
+      "attributes": {},
       "source_chunk_ids": [
-        "0682750cc00727d0b190206718f5fef4"
-      ]
+        "b862bc525bf054297e30e6bd58b77f33"
+      ],
+      "confidence": 0.7,
+      "evidence": "medicinal taxa",
+      "verified": true
     },
     {
-      "id": "ent_130",
+      "id": "E5",
       "type": "Taxon",
-      "name": "medicinal plant",
+      "name": "garlic",
       "attributes": {
-        "context": "on local medicinal plant use"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "0682750cc00727d0b190206718f5fef4"
-      ]
+        "b862bc525bf054297e30e6bd58b77f33"
+      ],
+      "confidence": 0.8,
+      "evidence": "examples of garlic",
+      "verified": true
     },
     {
-      "id": "ent_131",
+      "id": "E6",
       "type": "Taxon",
-      "name": "taxa",
+      "name": "St. Johns wort",
       "attributes": {
-        "context": "the analyzed taxa exert pharmacological activities"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "0682750cc00727d0b190206718f5fef4"
-      ]
+        "b862bc525bf054297e30e6bd58b77f33"
+      ],
+      "confidence": 0.8,
+      "evidence": "St. Johns wort",
+      "verified": true
     },
     {
-      "id": "ent_132",
-      "type": "PharmEffect",
-      "name": "pharmacological activities",
+      "id": "E1",
+      "type": "Product",
+      "name": "Hypericum",
+      "attributes": {},
+      "source_chunk_ids": [
+        "020ba105f92506f279a9412625a86973"
+      ],
+      "confidence": 0.8,
+      "evidence": "boxes of Hypericum",
+      "verified": true
+    },
+    {
+      "id": "E2",
+      "type": "Product",
+      "name": "Garlic",
+      "attributes": {},
+      "source_chunk_ids": [
+        "020ba105f92506f279a9412625a86973"
+      ],
+      "confidence": 0.8,
+      "evidence": "boxes of Garlic",
+      "verified": true
+    },
+    {
+      "id": "E3",
+      "type": "Condition",
+      "name": "Depression",
       "attributes": {
-        "context": "exert pharmacological activities beyond the placebo effect"
+        "condition_type": "disorder"
       },
       "source_chunk_ids": [
-        "0682750cc00727d0b190206718f5fef4"
-      ]
+        "020ba105f92506f279a9412625a86973"
+      ],
+      "confidence": 0.9,
+      "evidence": "Hypericum and Depression",
+      "verified": true
     },
     {
-      "id": "ent_133",
-      "type": "PharmEffect",
-      "name": "placebo effect",
+      "id": "E4",
+      "type": "Evidence",
+      "name": "journal article",
       "attributes": {
-        "context": "activities beyond the placebo effect"
+        "evidence_level": 3
       },
       "source_chunk_ids": [
-        "0682750cc00727d0b190206718f5fef4"
-      ]
+        "020ba105f92506f279a9412625a86973"
+      ],
+      "confidence": 0.7,
+      "evidence": "Journal of Ethnopharmacology",
+      "verified": true
     },
     {
-      "id": "ent_134",
+      "id": "E5",
+      "type": "Evidence",
+      "name": "journal article",
+      "attributes": {
+        "evidence_level": 5
+      },
+      "source_chunk_ids": [
+        "020ba105f92506f279a9412625a86973"
+      ],
+      "confidence": 0.7,
+      "evidence": "THE LANCET",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "Evidence",
+      "name": "book",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "020ba105f92506f279a9412625a86973"
+      ],
+      "confidence": 0.7,
+      "evidence": "Modern Phytomedicine",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "Evidence",
+      "name": "book",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "020ba105f92506f279a9412625a86973"
+      ],
+      "confidence": 0.7,
+      "evidence": "Hypericum and Depression",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "Evidence",
+      "name": "book",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "020ba105f92506f279a9412625a86973"
+      ],
+      "confidence": 0.7,
+      "evidence": "Der Kosmos-Heilpflanzenf\u00fchrer",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "Evidence",
+      "name": "journal article",
+      "attributes": {
+        "evidence_level": 3
+      },
+      "source_chunk_ids": [
+        "020ba105f92506f279a9412625a86973"
+      ],
+      "confidence": 0.7,
+      "evidence": "Economic Botany",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Evidence",
+      "name": "book",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "020ba105f92506f279a9412625a86973"
+      ],
+      "confidence": 0.7,
+      "evidence": "Yanestia",
+      "verified": true
+    },
+    {
+      "id": "E11",
+      "type": "Evidence",
+      "name": "book",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "020ba105f92506f279a9412625a86973"
+      ],
+      "confidence": 0.7,
+      "evidence": "Segreti e virt\u00f9 delle piante medicinali",
+      "verified": true
+    },
+    {
+      "id": "E12",
+      "type": "Evidence",
+      "name": "book",
+      "attributes": {
+        "evidence_level": 2
+      },
+      "source_chunk_ids": [
+        "020ba105f92506f279a9412625a86973"
+      ],
+      "confidence": 0.7,
+      "evidence": "book by Dim Pietro and Andrea Matthioli",
+      "verified": true
+    },
+    {
+      "id": "E1",
       "type": "Taxon",
-      "name": "herbal pharmacopoeia",
+      "name": "ginkgo biloba",
       "attributes": {
-        "context": "the Mediterranean herbal pharmacopoeia was conditioned"
+        "rank": "species"
       },
       "source_chunk_ids": [
-        "0682750cc00727d0b190206718f5fef4"
-      ]
+        "6ec1cc2c1a8c6ba96fa9a304698e0dbd"
+      ],
+      "confidence": 0.9,
+      "evidence": "ginkgo biloba",
+      "verified": true
     },
     {
-      "id": "ent_135",
-      "type": "Indication",
-      "name": "Malaria",
-      "attributes": {
-        "context": "Malaria in the renaissance"
-      },
+      "id": "E2",
+      "type": "TraditionalUse",
+      "name": "memory",
+      "attributes": {},
       "source_chunk_ids": [
-        "f326d66b6a9eefed841be978708f8d25"
-      ]
+        "6ec1cc2c1a8c6ba96fa9a304698e0dbd"
+      ],
+      "confidence": 0.85,
+      "evidence": "for memory",
+      "verified": true
     },
     {
-      "id": "ent_136",
-      "type": "Taxon",
-      "name": "European herbs",
-      "attributes": {
-        "context": "Remedies from European herbs"
-      },
+      "id": "E3",
+      "type": "RawMaterial",
+      "name": "shark cartilage",
+      "attributes": {},
       "source_chunk_ids": [
-        "f326d66b6a9eefed841be978708f8d25"
-      ]
+        "6ec1cc2c1a8c6ba96fa9a304698e0dbd"
+      ],
+      "confidence": 0.8,
+      "evidence": "shark cartilage",
+      "verified": true
     },
     {
-      "id": "ent_137",
-      "type": "Taxon",
-      "name": "Q'eqchi' Maya Medicinal Plants",
-      "attributes": {
-        "context": "Q'eqchi' Maya Medicinal Plants from Southern Belize"
-      },
+      "id": "E4",
+      "type": "TraditionalUse",
+      "name": "joints",
+      "attributes": {},
       "source_chunk_ids": [
-        "f326d66b6a9eefed841be978708f8d25"
-      ]
+        "6ec1cc2c1a8c6ba96fa9a304698e0dbd"
+      ],
+      "confidence": 0.85,
+      "evidence": "for the joints",
+      "verified": true
     },
     {
-      "id": "ent_138",
-      "type": "Taxon",
-      "name": "medicinal plant",
-      "attributes": {
-        "context": "The medicinal plant trade in Suriname"
-      },
+      "id": "E5",
+      "type": "Product",
+      "name": "Splenda",
+      "attributes": {},
       "source_chunk_ids": [
-        "f326d66b6a9eefed841be978708f8d25"
-      ]
+        "6ec1cc2c1a8c6ba96fa9a304698e0dbd"
+      ],
+      "confidence": 0.9,
+      "evidence": "Splenda",
+      "verified": true
+    },
+    {
+      "id": "E6",
+      "type": "TraditionalUse",
+      "name": "sweetness without calories",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6ec1cc2c1a8c6ba96fa9a304698e0dbd"
+      ],
+      "confidence": 0.85,
+      "evidence": "for sweetness without calories",
+      "verified": true
+    },
+    {
+      "id": "E7",
+      "type": "UseRecord",
+      "name": "UseRecord: witches \u2013 ginkgo biloba \u2013 memory",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6ec1cc2c1a8c6ba96fa9a304698e0dbd"
+      ],
+      "confidence": 0.7,
+      "evidence": "A little ginkgo biloba for memory",
+      "verified": true
+    },
+    {
+      "id": "E8",
+      "type": "UseRecord",
+      "name": "UseRecord: witches \u2013 shark cartilage \u2013 joints",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6ec1cc2c1a8c6ba96fa9a304698e0dbd"
+      ],
+      "confidence": 0.7,
+      "evidence": "A pinch of shark cartilage for the joints",
+      "verified": true
+    },
+    {
+      "id": "E9",
+      "type": "UseRecord",
+      "name": "UseRecord: witches \u2013 Splenda \u2013 sweetness without calories",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6ec1cc2c1a8c6ba96fa9a304698e0dbd"
+      ],
+      "confidence": 0.7,
+      "evidence": "And a teeny-tiny bit of Splenda, for sweetness without calories",
+      "verified": true
+    },
+    {
+      "id": "E10",
+      "type": "Culture",
+      "name": "witches",
+      "attributes": {},
+      "source_chunk_ids": [
+        "6ec1cc2c1a8c6ba96fa9a304698e0dbd"
+      ],
+      "confidence": 0.75,
+      "evidence": "witches",
+      "verified": true
     }
   ],
-  "relationships": [],
-  "metadata": {
-    "migration_date": "2026-02-02T08:40:03.846709+00:00",
-    "original_file": "entities.json"
-  }
+  "relationships": [
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "text reporting on phytotherapeutical trends",
+      "source_chunk_ids": [
+        "1a3de8ec2c4c38a808a1f3f80c708c55"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "text reporting on phytotherapeutical trends",
+      "source_chunk_ids": [
+        "1a3de8ec2c4c38a808a1f3f80c708c55"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "text reporting on phytotherapeutical trends",
+      "source_chunk_ids": [
+        "1a3de8ec2c4c38a808a1f3f80c708c55"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "text reporting on phytotherapeutical trends",
+      "source_chunk_ids": [
+        "1a3de8ec2c4c38a808a1f3f80c708c55"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.75,
+      "evidence": "persistently repeating well established folk remedies",
+      "source_chunk_ids": [
+        "1a3de8ec2c4c38a808a1f3f80c708c55"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.75,
+      "evidence": "persistently repeating well established folk remedies",
+      "source_chunk_ids": [
+        "1a3de8ec2c4c38a808a1f3f80c708c55"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.75,
+      "evidence": "persistently repeating well established folk remedies",
+      "source_chunk_ids": [
+        "1a3de8ec2c4c38a808a1f3f80c708c55"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.75,
+      "evidence": "persistently repeating well established folk remedies",
+      "source_chunk_ids": [
+        "1a3de8ec2c4c38a808a1f3f80c708c55"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "German nation understood importance",
+      "source_chunk_ids": [
+        "a74244f2bde8448ebffba49cde97957c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "traditional_use",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "homeopathic theory",
+      "source_chunk_ids": [
+        "a74244f2bde8448ebffba49cde97957c"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "extract of Dieffenbachia seguine",
+      "source_chunk_ids": [
+        "a74244f2bde8448ebffba49cde97957c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CAUSES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "context": "experimental"
+      },
+      "confidence": 0.75,
+      "evidence": "sterilizing mice using the extract",
+      "source_chunk_ids": [
+        "a74244f2bde8448ebffba49cde97957c"
+      ],
+      "supporting_study_ids": [
+        "E6"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "attempt of scientific validation",
+      "source_chunk_ids": [
+        "a74244f2bde8448ebffba49cde97957c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "sterilizing mice using the extract",
+      "source_chunk_ids": [
+        "a74244f2bde8448ebffba49cde97957c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {
+        "outcome": "causes"
+      },
+      "confidence": 0.8,
+      "evidence": "sterilizing mice",
+      "source_chunk_ids": [
+        "a74244f2bde8448ebffba49cde97957c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Donner-Report about the research results",
+      "source_chunk_ids": [
+        "4af14a34e5af123192444e0c1415d51e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "no_effect"
+      },
+      "confidence": 0.8,
+      "evidence": "Donner-Report concludes homeopathy is just a larvate form of psychotherapy",
+      "source_chunk_ids": [
+        "4af14a34e5af123192444e0c1415d51e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "PRODUCES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "the only therapeutic effect is that of the 'placebo effect'",
+      "source_chunk_ids": [
+        "4af14a34e5af123192444e0c1415d51e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "similar scenario is found with apparently immunostimulating plants",
+      "source_chunk_ids": [
+        "4af14a34e5af123192444e0c1415d51e"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "plant uses from the Popoluca",
+      "source_chunk_ids": [
+        "ea142c04216a6cfea7493b4d57e4ca34"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_USE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "plant uses from the Mixe",
+      "source_chunk_ids": [
+        "ea142c04216a6cfea7493b4d57e4ca34"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Leonti et al., 2003b",
+      "source_chunk_ids": [
+        "ea142c04216a6cfea7493b4d57e4ca34"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "subject"
+      },
+      "confidence": 0.8,
+      "evidence": "Popoluca of southern Veracruz",
+      "source_chunk_ids": [
+        "ea142c04216a6cfea7493b4d57e4ca34"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "STUDIES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "subject"
+      },
+      "confidence": 0.8,
+      "evidence": "Mixe from the isthmus of Tehuantepec",
+      "source_chunk_ids": [
+        "ea142c04216a6cfea7493b4d57e4ca34"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E3",
+      "attributes": {
+        "outcome": "shared uses"
+      },
+      "confidence": 0.75,
+      "evidence": "plant uses from the Popoluca",
+      "source_chunk_ids": [
+        "ea142c04216a6cfea7493b4d57e4ca34"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "outcome": "shared uses"
+      },
+      "confidence": 0.75,
+      "evidence": "plant uses from the Mixe",
+      "source_chunk_ids": [
+        "ea142c04216a6cfea7493b4d57e4ca34"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "historical written texts on medicinal plant use",
+      "source_chunk_ids": [
+        "f806c49923aff1b2f54014ffc0abeb11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_USE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "historical written texts on medicinal plant use",
+      "source_chunk_ids": [
+        "f806c49923aff1b2f54014ffc0abeb11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_USE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "historical written texts on medicinal plant use",
+      "source_chunk_ids": [
+        "f806c49923aff1b2f54014ffc0abeb11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "medicinal plant use",
+      "source_chunk_ids": [
+        "f806c49923aff1b2f54014ffc0abeb11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Leonti et al., 2009, 2010",
+      "source_chunk_ids": [
+        "f806c49923aff1b2f54014ffc0abeb11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "STUDIES",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "influence of written knowledge on local plant use",
+      "source_chunk_ids": [
+        "f806c49923aff1b2f54014ffc0abeb11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {
+        "outcome": "influences"
+      },
+      "confidence": 0.8,
+      "evidence": "influence of written knowledge on medicinal plant use",
+      "source_chunk_ids": [
+        "f806c49923aff1b2f54014ffc0abeb11"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Moerman (1979) tested the hypothesis",
+      "source_chunk_ids": [
+        "c3d4b29fd2bb00ede4abf96f6548afb7"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "holarctic peoples rely on similar plant families",
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.7,
+      "evidence": "Euasterids are generally overused",
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "medicinal floras",
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Characteristic secondary metabolites of the Euasterids are iridoids",
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "indole alkaloids",
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E13",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "pyrrolizidine alkaloids",
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "essential oils",
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E15",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "flavones",
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "CONTAINS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E16",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "sesquiterpenes",
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "PRODUCES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E17",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "biologically active substances",
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R11",
+      "type": "PRODUCES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E17",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "biologically active substances",
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R12",
+      "type": "PRODUCES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E17",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "biologically active substances",
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R13",
+      "type": "PRODUCES",
+      "source_entity_id": "E14",
+      "target_entity_id": "E17",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "biologically active substances",
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R14",
+      "type": "PRODUCES",
+      "source_entity_id": "E15",
+      "target_entity_id": "E17",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "biologically active substances",
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R15",
+      "type": "PRODUCES",
+      "source_entity_id": "E16",
+      "target_entity_id": "E17",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "biologically active substances",
+      "source_chunk_ids": [
+        "4e593b3739abb26cf6224b1116e161a5"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "European and North-American folk medicine until two centuries ago",
+      "source_chunk_ids": [
+        "e7db447b201daa695b0e0394f8fc01fd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.75,
+      "evidence": "medicinal plants are used in magical practices",
+      "source_chunk_ids": [
+        "e7db447b201daa695b0e0394f8fc01fd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "magical practices and religiously shaded healing rituals",
+      "source_chunk_ids": [
+        "e7db447b201daa695b0e0394f8fc01fd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Latin America the humoral system",
+      "source_chunk_ids": [
+        "5c59e5cf5e346b5bb8394c1c6687a3f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.85,
+      "evidence": "selection of medicinal plants",
+      "source_chunk_ids": [
+        "5c59e5cf5e346b5bb8394c1c6687a3f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "hot/cold equilibrium models",
+      "source_chunk_ids": [
+        "5c59e5cf5e346b5bb8394c1c6687a3f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "provoke disorders and illnesses",
+      "source_chunk_ids": [
+        "5c59e5cf5e346b5bb8394c1c6687a3f0"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Maya of Yucatan correlate smell and taste properties",
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_USE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Popoluca of southern Veracruz correlate smell and taste properties",
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_USE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Isthmus Sierra Zapotec correlate the \u201cbitter\u201d sensation",
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_USE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "Sierra Popoluca perceive bitterness as a \u201chot\u201d virtue",
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E9",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.85,
+      "evidence": "application against diarrhoea",
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E10",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.85,
+      "evidence": "application against skin diseases",
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E11",
+      "target_entity_id": "E12",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "Leonti et al., 2002",
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "Leonti et al., 2002",
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "Leonti et al., 2002",
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "Leonti et al., 2002",
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "Leonti et al., 2002",
+      "source_chunk_ids": [
+        "7f92371e77c1a6ce1c6040291efa260e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.75,
+      "evidence": "medicinal plants reported in eight recent field-based studies",
+      "source_chunk_ids": [
+        "71443ed360ee6b160b25efdb28d583cc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "arranged into eleven symptom- and organ-defined use categories",
+      "source_chunk_ids": [
+        "71443ed360ee6b160b25efdb28d583cc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "field-based studies from the region of Campania",
+      "source_chunk_ids": [
+        "71443ed360ee6b160b25efdb28d583cc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "STUDIES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "use_record"
+      },
+      "confidence": 0.8,
+      "evidence": "medicinal plants reported in eight recent field-based studies",
+      "source_chunk_ids": [
+        "71443ed360ee6b160b25efdb28d583cc"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E10",
+      "target_entity_id": "E11",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "field-based studies",
+      "source_chunk_ids": [
+        "d946fd3c2a2b2ed62821c8af49d27002"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E12",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "species mentioned in at least six of the eight field-based studies (27 taxa)",
+      "source_chunk_ids": [
+        "d946fd3c2a2b2ed62821c8af49d27002"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "data set from Campania includes 27 taxa",
+      "source_chunk_ids": [
+        "406dd540db94f0406e53cc21f9100102"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E3",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "In Matthioli the 27 taxa account for 170 use category citations",
+      "source_chunk_ids": [
+        "406dd540db94f0406e53cc21f9100102"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "use category citations for the data set from Campania",
+      "source_chunk_ids": [
+        "406dd540db94f0406e53cc21f9100102"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "use category citations in Matthioli",
+      "source_chunk_ids": [
+        "406dd540db94f0406e53cc21f9100102"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Matthioli (1568) Use Category Citations",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "Ethnobotanical literature from Campania",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E5",
+      "attributes": {
+        "citation_count": 25
+      },
+      "confidence": 0.8,
+      "evidence": "GA25",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E6",
+      "attributes": {
+        "citation_count": 27
+      },
+      "confidence": 0.8,
+      "evidence": "DERM27",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E7",
+      "attributes": {
+        "citation_count": 17
+      },
+      "confidence": 0.8,
+      "evidence": "NERV17",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E8",
+      "attributes": {
+        "citation_count": 14
+      },
+      "confidence": 0.8,
+      "evidence": "SK-MU14",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E9",
+      "attributes": {
+        "citation_count": 22
+      },
+      "confidence": 0.8,
+      "evidence": "GYN22",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E10",
+      "attributes": {
+        "citation_count": 21
+      },
+      "confidence": 0.8,
+      "evidence": "RESP21",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E11",
+      "attributes": {
+        "citation_count": 7
+      },
+      "confidence": 0.8,
+      "evidence": "FEV7",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E12",
+      "attributes": {
+        "citation_count": 20
+      },
+      "confidence": 0.8,
+      "evidence": "UR20",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E13",
+      "attributes": {
+        "citation_count": 13
+      },
+      "confidence": 0.8,
+      "evidence": "EAR13",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E14",
+      "attributes": {
+        "citation_count": 10
+      },
+      "confidence": 0.8,
+      "evidence": "EYE10",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "REPORTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E15",
+      "attributes": {
+        "citation_count": 7
+      },
+      "confidence": 0.8,
+      "evidence": "NOSE7",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "citation_count": 100
+      },
+      "confidence": 0.8,
+      "evidence": "GA100",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "citation_count": 100
+      },
+      "confidence": 0.8,
+      "evidence": "DERM100",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R16",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "citation_count": 35
+      },
+      "confidence": 0.8,
+      "evidence": "NERV35",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R17",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "citation_count": 40
+      },
+      "confidence": 0.8,
+      "evidence": "SK-MU40",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R18",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {
+        "citation_count": 25
+      },
+      "confidence": 0.8,
+      "evidence": "GYN25",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R19",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {
+        "citation_count": 80
+      },
+      "confidence": 0.8,
+      "evidence": "RESP80",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R20",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E11",
+      "attributes": {
+        "citation_count": 5
+      },
+      "confidence": 0.8,
+      "evidence": "FEV5",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R21",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E12",
+      "attributes": {
+        "citation_count": 50
+      },
+      "confidence": 0.8,
+      "evidence": "UR50",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R22",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E13",
+      "attributes": {
+        "citation_count": 1
+      },
+      "confidence": 0.8,
+      "evidence": "EAR1",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R23",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E14",
+      "attributes": {
+        "citation_count": 1
+      },
+      "confidence": 0.8,
+      "evidence": "EYE1",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R24",
+      "type": "REPORTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E15",
+      "attributes": {
+        "citation_count": 1
+      },
+      "confidence": 0.8,
+      "evidence": "NOSE1",
+      "source_chunk_ids": [
+        "a625cec2ab969b3860e55e563df59d08"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "use categories \u201cnose\u201d, \u201ceye\u201d, \u201cear\u201d as well as \u201cfever\u201d",
+      "source_chunk_ids": [
+        "026d38e42901358a47e64ef793df4c69"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "use categories \u201cnose\u201d, \u201ceye\u201d, \u201cear\u201d as well as \u201cfever\u201d",
+      "source_chunk_ids": [
+        "026d38e38e42901358a47e64ef793df4c69",
+        "026d38e42901358a47e64ef793df4c69"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "use categories \u201cnose\u201d, \u201ceye\u201d, \u201cear\u201d as well as \u201cfever\u201d",
+      "source_chunk_ids": [
+        "026d38e42901358a47e64ef793df4c69"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Bayesian statistical model for causal inference",
+      "source_chunk_ids": [
+        "026d38e42901358a47e64ef793df4c69"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "120 taxa used as medicine in Sardinia",
+      "source_chunk_ids": [
+        "8aee953db9b434e8f232583ca9699837"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "HAS_USE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "120 taxa used as medicine in Sicily",
+      "source_chunk_ids": [
+        "8aee953db9b434e8f232583ca9699837"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_USE",
+      "source_entity_id": "E3",
+      "target_entity_id": "E4",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "120 taxa used as medicine in Campania",
+      "source_chunk_ids": [
+        "8aee953db9b434e8f232583ca9699837"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.9,
+      "evidence": "used as medicine",
+      "source_chunk_ids": [
+        "8aee953db9b434e8f232583ca9699837"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "120 taxa used as medicine",
+      "source_chunk_ids": [
+        "8aee953db9b434e8f232583ca9699837"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "ethnobotanical and ethnopharmacological survey data",
+      "source_chunk_ids": [
+        "8aee953db9b434e8f232583ca9699837"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.75,
+      "evidence": "analyzed literature from Campania",
+      "source_chunk_ids": [
+        "8aee953db9b434e8f232583ca9699837"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "in the Caucasian mountains a decoction was given",
+      "source_chunk_ids": [
+        "9cba96bbf10b1870e3af39ec494f1ada"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.85,
+      "evidence": "Galanthus woroncwwii",
+      "source_chunk_ids": [
+        "9cba96bbf10b1870e3af39ec494f1ada"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "plant_part"
+      },
+      "confidence": 0.8,
+      "evidence": "bulbs of Galanthus woroncwwii",
+      "source_chunk_ids": [
+        "9cba96bbf10b1870e3af39ec494f1ada"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "preparation"
+      },
+      "confidence": 0.75,
+      "evidence": "decoction of the bulbs",
+      "source_chunk_ids": [
+        "9cba96bbf10b1870e3af39ec494f1ada"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "given to children suffering from poliomyelitis",
+      "source_chunk_ids": [
+        "9cba96bbf10b1870e3af39ec494f1ada"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "CONTAINS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "galanthamin, first isolated from Galanthus spp.",
+      "source_chunk_ids": [
+        "9cba96bbf10b1870e3af39ec494f1ada"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "TREATS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E9",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "galanthamin was launched as an Alzheimer Disease treatment",
+      "source_chunk_ids": [
+        "9cba96bbf10b1870e3af39ec494f1ada"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "phytochemical and pharmacological studies",
+      "source_chunk_ids": [
+        "9cba96bbf10b1870e3af39ec494f1ada"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E11",
+      "target_entity_id": "E12",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "ethnobotanical leads",
+      "source_chunk_ids": [
+        "9cba96bbf10b1870e3af39ec494f1ada"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "ethnobotanists keep alive the romantic tale",
+      "source_chunk_ids": [
+        "d5fdb3c47c0f8486aeeec9f88b517887"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "medicinal species reported",
+      "source_chunk_ids": [
+        "d5fdb3c47c0f8486aeeec9f88b517887"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "relevance for drug discovery",
+      "source_chunk_ids": [
+        "d5fdb3c47c0f8486aeeec9f88b517887"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E6",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Rivier and Bruhn, 1979",
+      "source_chunk_ids": [
+        "d5fdb3c47c0f8486aeeec9f88b517887"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E7",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Heinrich, 2003",
+      "source_chunk_ids": [
+        "d5fdb3c47c0f8486aeeec9f88b517887"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E8",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Gertsch, 2009",
+      "source_chunk_ids": [
+        "d5fdb3c47c0f8486aeeec9f88b517887"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "STUDIES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Balick and Cox (1996)",
+      "source_chunk_ids": [
+        "d5fdb3c47c0f8486aeeec9f88b517887"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E10",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Cox, 2000",
+      "source_chunk_ids": [
+        "d5fdb3c47c0f8486aeeec9f88b517887"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R9",
+      "type": "STUDIES",
+      "source_entity_id": "E11",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "intervention",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Holland, 1994",
+      "source_chunk_ids": [
+        "d5fdb3c47c0f8486aeeec9f88b517887"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "Mapuche have inherited the indications",
+      "source_chunk_ids": [
+        "7eb52392b8e9eb99c47dc54fb714bd7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.75,
+      "evidence": "introduced Mediterranean medicinal species",
+      "source_chunk_ids": [
+        "7eb52392b8e9eb99c47dc54fb714bd7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "medicinal flora",
+      "source_chunk_ids": [
+        "7eb52392b8e9eb99c47dc54fb714bd7e"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E3",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "use categories \u201cnose\u201d... against malaria",
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R2",
+      "type": "SUGGESTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "\u201ceye\u201d... against malaria",
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R3",
+      "type": "SUGGESTS",
+      "source_entity_id": "E5",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "interpretive",
+        "verification_needed": true
+      },
+      "confidence": 0.6,
+      "evidence": "\u201cear\u201d... against malaria",
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "\u201cfever\u201d... against malaria",
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E6",
+      "target_entity_id": "E8",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "fever and intermittent fever",
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "SUGGESTS",
+      "source_entity_id": "E9",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "Dipsacus fullonum... against malaria",
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "SUGGESTS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "Anethum graveolens... against malaria",
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "SUGGESTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.8,
+      "evidence": "Portulaca oleracea... against malaria",
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "SUGGESTS",
+      "source_entity_id": "E11",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "Portulaca oleracea... against fever",
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "SUGGESTS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "Bupleurum sp.... against malaria",
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "SUGGESTS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "Opopanax chironium... against malaria",
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "SUGGESTS",
+      "source_entity_id": "E14",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "Phoenix dactylifera... against malaria",
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "SUGGESTS",
+      "source_entity_id": "E15",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "Aristolochia spp.... against malaria",
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R14",
+      "type": "SUGGESTS",
+      "source_entity_id": "E16",
+      "target_entity_id": "E7",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.7,
+      "evidence": "Cucurbita pepo... against malaria",
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R15",
+      "type": "CONTAINS",
+      "source_entity_id": "E10",
+      "target_entity_id": "E17",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "oil of Anethum graveolens",
+      "source_chunk_ids": [
+        "6af153f2dd204b0d4e11814a4c220473"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {},
+      "confidence": 0.85,
+      "evidence": "used by the Popoluca",
+      "source_chunk_ids": [
+        "d9adfe1b3806b90b7f5b92ced09dda9d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "Aristolochia asclepiadifolia Brandegee",
+      "source_chunk_ids": [
+        "d9adfe1b3806b90b7f5b92ced09dda9d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "Aristolochia ovalifolia Duch.",
+      "source_chunk_ids": [
+        "d9adfe1b3806b90b7f5b92ced09dda9d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "to treat snake-bites",
+      "source_chunk_ids": [
+        "d9adfe1b3806b90b7f5b92ced09dda9d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.85,
+      "evidence": "to treat stomach-ache",
+      "source_chunk_ids": [
+        "d9adfe1b3806b90b7f5b92ced09dda9d"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "local communities disseminating the surveyed knowledge",
+      "source_chunk_ids": [
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.7,
+      "evidence": "Brugmansia arborea ... are explained",
+      "source_chunk_ids": [
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.7,
+      "evidence": "Zea mays ... are explained",
+      "source_chunk_ids": [
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.7,
+      "evidence": "Allium sativum ... are explained",
+      "source_chunk_ids": [
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.7,
+      "evidence": "Pachycereus pecten-aboriginum ... are explained",
+      "source_chunk_ids": [
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E7",
+      "attributes": {
+        "role": "taxon",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Aloe sp. ... are explained",
+      "source_chunk_ids": [
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R7",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E8",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.7,
+      "evidence": "Carica papaya ... are explained",
+      "source_chunk_ids": [
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E9",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.7,
+      "evidence": "Lysiloma Watsonii ... are explained",
+      "source_chunk_ids": [
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E10",
+      "attributes": {
+        "role": "taxon",
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "Salix sp. ... are explained",
+      "source_chunk_ids": [
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R10",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E11",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.7,
+      "evidence": "Ricinus communis ... are explained",
+      "source_chunk_ids": [
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E12",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "medicinal properties and the application",
+      "source_chunk_ids": [
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E13",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "meaning response (La buena sugesti\u00f3n)",
+      "source_chunk_ids": [
+        "f0b832cad3e0a003ab88babea177c231"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "culture"
+      },
+      "confidence": 0.75,
+      "evidence": "post War Germany school kids",
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "Capsella bursa-pastoris",
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E5",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.85,
+      "evidence": "against nosebleed",
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "SUGGESTS",
+      "source_entity_id": "E7",
+      "target_entity_id": "E11",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.7,
+      "evidence": "Melancholy as an indication",
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "SUGGESTS",
+      "source_entity_id": "E8",
+      "target_entity_id": "E11",
+      "attributes": {
+        "mapping_type": "interpretive"
+      },
+      "confidence": 0.8,
+      "evidence": "against depressive moods",
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E12",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "clinical studies",
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E13",
+      "target_entity_id": "E14",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "clinical studies",
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "STUDIES",
+      "source_entity_id": "E12",
+      "target_entity_id": "E15",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "treatment of depressive states with hypericin",
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "STUDIES",
+      "source_entity_id": "E13",
+      "target_entity_id": "E16",
+      "attributes": {
+        "role": "intervention"
+      },
+      "confidence": 0.85,
+      "evidence": "antidepressive effect of a standardized Hypericum extract",
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R10",
+      "type": "REPORTS",
+      "source_entity_id": "E12",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "treatment of depressive states",
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R11",
+      "type": "REPORTS",
+      "source_entity_id": "E13",
+      "target_entity_id": "E11",
+      "attributes": {
+        "outcome": "improves"
+      },
+      "confidence": 0.8,
+      "evidence": "antidepressive effect",
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R12",
+      "type": "TREATS",
+      "source_entity_id": "E15",
+      "target_entity_id": "E11",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "treatment of depressive states with hypericin",
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ],
+      "supporting_study_ids": [
+        "E12"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R13",
+      "type": "TREATS",
+      "source_entity_id": "E16",
+      "target_entity_id": "E11",
+      "attributes": {
+        "context": "clinical"
+      },
+      "confidence": 0.75,
+      "evidence": "antidepressive effect of a standardized Hypericum extract",
+      "source_chunk_ids": [
+        "ede0bbaa88556f292ec730ade5272ec6"
+      ],
+      "supporting_study_ids": [
+        "E13"
+      ],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {},
+      "confidence": 0.9,
+      "evidence": "Reyes-Garc\u00eda et al. (2009) gathered evidence",
+      "source_chunk_ids": [
+        "34814d0246e9cc4746868baed3ffca1c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "STUDIES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "subject"
+      },
+      "confidence": 0.85,
+      "evidence": "Bolivian Tsimane'",
+      "source_chunk_ids": [
+        "34814d0246e9cc4746868baed3ffca1c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "HAS_EVIDENCE",
+      "source_entity_id": "E4",
+      "target_entity_id": "E5",
+      "attributes": {},
+      "confidence": 0.8,
+      "evidence": "McDade et al., 2007 correlated",
+      "source_chunk_ids": [
+        "34814d0246e9cc4746868baed3ffca1c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "REPORTS",
+      "source_entity_id": "E4",
+      "target_entity_id": "E6",
+      "attributes": {
+        "outcome": "correlated"
+      },
+      "confidence": 0.75,
+      "evidence": "correlated with indices of child health",
+      "source_chunk_ids": [
+        "34814d0246e9cc4746868baed3ffca1c"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "HAS_USE",
+      "source_entity_id": "E1",
+      "target_entity_id": "E2",
+      "attributes": {
+        "verification_needed": true
+      },
+      "confidence": 0.65,
+      "evidence": "local plant use",
+      "source_chunk_ids": [
+        "b862bc525bf054297e30e6bd58b77f33"
+      ],
+      "supporting_study_ids": [],
+      "verified": false
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.7,
+      "evidence": "core group of medicinal taxa",
+      "source_chunk_ids": [
+        "b862bc525bf054297e30e6bd58b77f33"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E2",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.7,
+      "evidence": "medicinal taxa",
+      "source_chunk_ids": [
+        "b862bc525bf054297e30e6bd58b77f33"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "SUGGESTS",
+      "source_entity_id": "E1",
+      "target_entity_id": "E3",
+      "attributes": {
+        "mapping_type": "direct"
+      },
+      "confidence": 0.75,
+      "evidence": "Hypericum and Depression",
+      "source_chunk_ids": [
+        "020ba105f92506f279a9412625a86973"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R1",
+      "type": "INVOLVES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E1",
+      "attributes": {
+        "role": "taxon"
+      },
+      "confidence": 0.8,
+      "evidence": "ginkgo biloba",
+      "source_chunk_ids": [
+        "6ec1cc2c1a8c6ba96fa9a304698e0dbd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R2",
+      "type": "INVOLVES",
+      "source_entity_id": "E7",
+      "target_entity_id": "E2",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "for memory",
+      "source_chunk_ids": [
+        "6ec1cc2c1a8c6ba96fa9a304698e0dbd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R3",
+      "type": "INVOLVES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E3",
+      "attributes": {
+        "role": "raw_material"
+      },
+      "confidence": 0.75,
+      "evidence": "shark cartilage",
+      "source_chunk_ids": [
+        "6ec1cc2c1a8c6ba96fa9a304698e0dbd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R4",
+      "type": "INVOLVES",
+      "source_entity_id": "E8",
+      "target_entity_id": "E4",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.75,
+      "evidence": "for the joints",
+      "source_chunk_ids": [
+        "6ec1cc2c1a8c6ba96fa9a304698e0dbd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R5",
+      "type": "INVOLVES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E5",
+      "attributes": {
+        "role": "product"
+      },
+      "confidence": 0.8,
+      "evidence": "Splenda",
+      "source_chunk_ids": [
+        "6ec1cc2c1a8c6ba96fa9a304698e0dbd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R6",
+      "type": "INVOLVES",
+      "source_entity_id": "E9",
+      "target_entity_id": "E6",
+      "attributes": {
+        "role": "traditional_use"
+      },
+      "confidence": 0.8,
+      "evidence": "for sweetness without calories",
+      "source_chunk_ids": [
+        "6ec1cc2c1a8c6ba96fa9a304698e0dbd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R7",
+      "type": "HAS_USE",
+      "source_entity_id": "E10",
+      "target_entity_id": "E7",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "witches",
+      "source_chunk_ids": [
+        "6ec1cc2c1a8c6ba96fa9a304698e0dbd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R8",
+      "type": "HAS_USE",
+      "source_entity_id": "E10",
+      "target_entity_id": "E8",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "witches",
+      "source_chunk_ids": [
+        "6ec1cc2c1a8c6ba96fa9a304698e0dbd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    },
+    {
+      "id": "R9",
+      "type": "HAS_USE",
+      "source_entity_id": "E10",
+      "target_entity_id": "E9",
+      "attributes": {},
+      "confidence": 0.7,
+      "evidence": "witches",
+      "source_chunk_ids": [
+        "6ec1cc2c1a8c6ba96fa9a304698e0dbd"
+      ],
+      "supporting_study_ids": [],
+      "verified": true
+    }
+  ]
 }
