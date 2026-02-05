@@ -235,3 +235,13 @@ backend/lib/entity_extraction/_backup_v2/
 
 # Entity extraction error logs (temporary)
 backend/data/extractions/*/.errors.jsonl
+
+# Entity extraction validation artifacts (temporary)
+backend/data/extractions/**/.validation_report.json
+
+# Evaluation artifacts (generated)
+backend/data/eval_results.json
+docs/thesis/evaluation/data/eval-run-full.json
+
+# Migration reports (generated)
+backend/migration_report_*.json
