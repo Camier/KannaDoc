@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400&family=DM+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 @config "../../tailwind.config.ts";
 
@@ -212,4 +213,207 @@ code:not(pre code) {
 
   border: 2px solid #ef4444 !important;
 
+}
+
+/* ============================================
+   LIVING PHARMACOPEIA DESIGN SYSTEM
+   ============================================ */
+
+/* CSS Variables for Pharmacopeia Theme */
+:root {
+  /* Forest Green Scale */
+  --forest-50: #f0fdf4;
+  --forest-100: #dcfce7;
+  --forest-200: #bbf7d0;
+  --forest-300: #86efac;
+  --forest-400: #4ade80;
+  --forest-500: #22c55e;
+  --forest-600: #16a34a;
+  --forest-700: #15803d;
+  --forest-800: #166534;
+  --forest-900: #14532d;
+  --forest-950: #0D2818;
+
+  /* Parchment Scale */
+  --parchment-50: #FDFCFB;
+  --parchment-100: #FAF6F1;
+  --parchment-200: #F5EDE3;
+  --parchment-300: #E8DED0;
+  --parchment-400: #D4C4AE;
+  --parchment-500: #B8A586;
+
+  /* Ink Scale */
+  --ink-900: #3d352f;
+  --ink-950: #1C1917;
+
+  /* Amber Accent */
+  --amber-500: #f59e0b;
+  --amber-600: #d97706;
+  --amber-700: #b45309;
+}
+
+/* Pharmacopeia Background - Parchment with grain */
+.pharmacopeia-bg {
+  background-color: var(--parchment-100);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* Dark mode variant */
+.dark .pharmacopeia-bg {
+  background-color: var(--forest-950);
+}
+
+/* Botanical Border - Forest green decorative */
+.botanical-border {
+  border: 1px solid var(--forest-700);
+  box-shadow: 0 0 0 1px rgba(22, 101, 52, 0.1);
+}
+
+/* Glass Card - Modern glassmorphism effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dark .glass-card {
+  background: rgba(13, 40, 24, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient Text - Forest to amber */
+.gradient-text {
+  background: linear-gradient(135deg, var(--forest-700) 0%, var(--amber-600) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Specimen Card - Archival document look */
+.specimen-card {
+  background: var(--parchment-50);
+  border: 1px solid var(--parchment-300);
+  box-shadow: 0 0 0 1px rgba(28, 25, 23, 0.05), 0 2px 8px rgba(28, 25, 23, 0.05);
+}
+
+.dark .specimen-card {
+  background: var(--forest-950);
+  border-color: var(--forest-800);
+}
+
+/* Hover lift effect for cards */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(28, 25, 23, 0.15);
+}
+
+/* Button Primary - Forest green */
+.btn-primary {
+  background: linear-gradient(135deg, var(--forest-700) 0%, var(--forest-800) 100%);
+  color: white;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--forest-600) 0%, var(--forest-700) 100%);
+  box-shadow: 0 4px 14px rgba(22, 101, 52, 0.3);
+}
+
+/* Button Secondary - Amber accent */
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--amber-600);
+  color: var(--amber-700);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--amber-600);
+  color: white;
+}
+
+/* Decorative Divider */
+.divider-botanical {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--forest-600), transparent);
+}
+
+/* Typography Classes */
+.font-display {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-body {
+  font-family: 'Source Serif Pro', Georgia, serif;
+}
+
+.font-data {
+  font-family: 'DM Mono', 'JetBrains Mono', monospace;
+}
+
+/* Section Title Style */
+.section-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--forest-950);
+  letter-spacing: -0.02em;
+}
+
+.dark .section-title {
+  color: var(--parchment-100);
+}
+
+/* Metric Display */
+.metric-value {
+  font-family: 'DM Mono', monospace;
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--forest-700);
+}
+
+.dark .metric-value {
+  color: var(--forest-400);
+}
+
+/* Input Pharmacopeia Style */
+.input-pharmacopeia {
+  background: var(--parchment-50);
+  border: 1px solid var(--parchment-400);
+  font-family: 'Source Serif Pro', Georgia, serif;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-pharmacopeia:focus {
+  border-color: var(--forest-600);
+  box-shadow: 0 0 0 3px rgba(22, 101, 52, 0.15);
+  outline: none;
+}
+
+/* Scrollbar Styling for Pharmacopeia */
+.pharmacopeia-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.pharmacopeia-scrollbar::-webkit-scrollbar-track {
+  background: var(--parchment-200);
+}
+
+.pharmacopeia-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--forest-600);
+  border-radius: 4px;
+}
+
+.pharmacopeia-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--forest-700);
 }

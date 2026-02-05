@@ -56,7 +56,7 @@ const ShowFiles: React.FC<ShowFilesProps> = ({
         {files.map((file, index) => (
           <div
             key={index}
-            className="flex items-center justify-between px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer border-b border-gray-200 dark:border-gray-700"
+            className="flex items-center justify-between px-3 py-2 hover:bg-gray-50 dark:hover:bg-gray-800 cursor-pointer border-b border-gray-200 dark:border-gray-700 transform hover:-translate-y-1 transition-all duration-300"
           >
             <div
               className="flex items-center justify-between w-[calc(100%-24px)]"

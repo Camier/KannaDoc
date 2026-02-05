@@ -1,7 +1,6 @@
 import {
   deleteFile,
   getKBFiles,
-  getUserFiles,
 } from "@/lib/api/knowledgeBaseApi";
 import { logger } from "@/lib/logger";
 import { Base, KnowledgeFile } from "@/types/types";
@@ -55,24 +54,14 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
   const search1Ref = useRef<HTMLInputElement>(null);
   const search2Ref = useRef<HTMLInputElement>(null);
   const loadFiles = useCallback(async () => {
-    if (!user?.name) return;
+    if (!user?.name || !selectedBase) return;
     try {
-      let response;
-      if (selectedBase) {
-        response = await getKBFiles(
-          selectedBase,
-          currentPage,
-          pageSize,
-          searchKeyword
-        );
-      } else {
-        response = await getUserFiles(
-          user.name,
-          currentPage,
-          pageSize,
-          searchKeyword
-        );
-      }
+      const response = await getKBFiles(
+        selectedBase,
+        currentPage,
+        pageSize,
+        searchKeyword
+      );
       setFiles(response.data.data);
       setTotalFiles(response.data.total);
     } catch (error) {

@@ -2,15 +2,15 @@
 import { ModelConfig } from "@/types/types";
 import { apiClient as api } from "./apiClient";
 
-export const getAllModelConfig = async (username: string) => {
-  return api.get("/config/" + username + "/all");
+export const getAllModelConfig = async (_username?: string) => {
+  return api.get("/config/all");
 };
 
 export const updateModelConfig = async (
-  username: string,
+  _username: string,
   modelConfig: ModelConfig
 ) => {
-  return api.patch(`/config/${username}/${modelConfig.modelId}`, {
+  return api.patch(`/config/${modelConfig.modelId}`, {
     model_name: modelConfig.modelName,
     model_url: modelConfig.modelURL,
     api_key: modelConfig.apiKey,
@@ -27,10 +27,10 @@ export const updateModelConfig = async (
 };
 
 export const addModelConfig = async (
-  username: string,
+  _username: string,
   modelConfig: ModelConfig
 ) => {
-  return api.post("/config/" + username, {
+  return api.post("/config/", {
     model_name: modelConfig.modelName,
     model_url: modelConfig.modelURL,
     api_key: modelConfig.apiKey,
@@ -46,12 +46,12 @@ export const addModelConfig = async (
   });
 };
 
-export const deleteModelConfig = async (username: string, modelId: string) => {
-  return api.delete(`/config/${username}/${modelId}`);
+export const deleteModelConfig = async (_username: string, modelId: string) => {
+  return api.delete(`/config/${modelId}`);
 };
 
-export const selectModel = async (username: string, modelId: string) => {
-  return api.put(`/config/${username}/select-model`, {
+export const selectModel = async (_username: string, modelId: string) => {
+  return api.put(`/config/select-model`, {
     model_id: modelId,
   });
 };

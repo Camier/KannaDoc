@@ -40,5 +40,5 @@ export const deleteChatflow = async (chatflowId: string) => {
 };
 
 export const deleteAllChatflow = async (workflowId: string) => {
-  return api.delete("/chatflow/users/" + workflowId + "/chatflows");
+  return api.delete("/chatflow/workflow/" + workflowId + "/chatflows");
 };

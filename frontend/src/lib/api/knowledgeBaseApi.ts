@@ -2,22 +2,21 @@
 import { AxiosProgressEvent } from "axios";
 import { apiClient as api } from "./apiClient";
 
-export const getAllKnowledgeBase = async (username: string) => {
-  return api.get("/base/users/" + username + "/knowledge_bases");
+export const getAllKnowledgeBase = async (_username?: string) => {
+  return api.get("/base/knowledge_bases");
 };
 
 export const createKnowledgeBase = async (
-  username: string,
+  _username: string,
   knowledgeBaseName: string
 ) => {
-  return api.post("/base/knowledge_base", {
-    username: username,
+  return api.post("/base/knowledge_bases", {
     knowledge_base_name: knowledgeBaseName,
   });
 };
 
 export const deleteKnowledgeBase = async (BaseId: string) => {
-  return api.delete("/base/knowledge_base/" + BaseId);
+  return api.delete("/base/knowledge_bases/" + BaseId);
 };
 
 export const deleteTempKnowledgeBase = async (username: string) => {
@@ -25,48 +24,35 @@ export const deleteTempKnowledgeBase = async (username: string) => {
 };
 
 export const deleteFile = async (BaseId: string, file_id: string) => {
-  return api.delete(`/base/file/${BaseId}/${file_id}`);
+  return api.delete(`/base/knowledge_bases/${BaseId}/files/${file_id}`);
 };
 
 export const renameKnowledgeBase = async (
   baseId: string,
   knowledgeBaseName: string
 ) => {
-  return api.post("/base/knowledge_base/rename", {
+  return api.post("/base/knowledge_bases/rename", {
     knowledge_base_id: baseId,
     knowledge_base_new_name: knowledgeBaseName,
   });
 };
 
-// 获取知识库文件
 export const getKBFiles = async (
   kbId: string,
-  page: number,
-  pageSize: number,
-  keyword: string
+  _page: number,
+  _pageSize: number,
+  _keyword: string
 ) => {
-  return api.post(`/base/knowledge_bases/${kbId}/files`, {
-    keyword: keyword,
-    page: page,
-    page_size: pageSize,
-  });
+  const response = await api.get(`/base/knowledge_bases/${kbId}/files`);
+  const files = response.data.files || [];
+  return {
+    data: {
+      data: files,
+      total: files.length,
+    },
+  };
 };
 
-// 获取用户所有文件
-export const getUserFiles = async (
-  username: string,
-  page: number,
-  pageSize: number,
-  keyword: string
-) => {
-  return await api.post(`/base/users/${username}/files`, {
-    keyword: keyword,
-    page: page,
-    page_size: pageSize,
-  });
-};
-
-// 生成下载链接
 export const generateDownloadUrl = async (
   username: string,
   minioFilename: string

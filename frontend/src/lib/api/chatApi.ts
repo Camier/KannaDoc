@@ -4,8 +4,8 @@ import { AxiosProgressEvent } from "axios";
 import { apiClient as api } from "./apiClient";
 import { mapModelConfigToBackend } from "./modelConfigMapper";
 
-export const getChatHistory = async (username: string) => {
-  return api.get("/chat/users/" + username + "/conversations");
+export const getChatHistory = async (_username?: string) => {
+  return api.get("/chat/conversations");
 };
 
 export const renameChat = async (conversationId: string, chatName: string) => {
@@ -23,8 +23,8 @@ export const deleteConversations = async (conversationId: string) => {
   return api.delete("/chat/conversations/" + conversationId);
 };
 
-export const deleteAllConversations = async (username: string) => {
-  return api.delete("/chat/users/" + username + "/conversations");
+export const deleteAllConversations = async (_username?: string) => {
+  return api.delete("/chat/conversations");
 };
 
 export const uploadFiles = async (
@@ -41,7 +41,7 @@ export const uploadFiles = async (
     fileFormData.append("files", file); // 多个文件使用相同字段名
   });
 
-  return api.post("/chat/upload/" + username + "/" + chatId, fileFormData, {
+  return api.post("/chat/upload/" + chatId, fileFormData, {
     onUploadProgress: (progressEvent: AxiosProgressEvent) => {
       if (progressEvent.lengthComputable && progressEvent.total) {
         const percent = Math.round(

@@ -108,8 +108,8 @@ export const createWorkflow = async (
   });
 };
 
-export const getAllWorkflow = async (username: string) => {
-  return api.get("/workflow/users/" + username + "/workflows");
+export const getAllWorkflow = async (_username?: string) => {
+  return api.get("/workflow/workflows");
 };
 
 export const renameWorkflow = async (
@@ -126,8 +126,8 @@ export const getWorkflowDetails = async (workflowId: string) => {
   return api.get("/workflow/workflows/" + workflowId);
 };
 
-export const getCustomNodes = async (username: string) => {
-  return api.get("/workflow/nodes/" + username);
+export const getCustomNodes = async (_username?: string) => {
+  return api.get("/workflow/nodes");
 };
 
 export const saveCustomNodes = async (
@@ -135,7 +135,7 @@ export const saveCustomNodes = async (
   customNodeName: string,
   customNode: CustomNode
 ) => {
-  return api.post("/workflow/nodes/" + username, {
+  return api.post("/workflow/nodes", {
     username: username,
     custom_node_name: customNodeName,
     custom_node: customNode,
@@ -143,14 +143,14 @@ export const saveCustomNodes = async (
 };
 
 export const deleteCustomNodes = async (
-  username: string,
+  _username: string,
   custom_node_name: string
 ) => {
-  return api.delete(`/workflow/nodes/${username}/${custom_node_name}`);
+  return api.delete(`/workflow/nodes/${custom_node_name}`);
 };
 
-export const cancelWorkflow = async (username: string, taskId: string) => {
-  return api.get(`/workflow/${username}/${taskId}/cancel`);
+export const cancelWorkflow = async (_username: string, taskId: string) => {
+  return api.get(`/workflow/${taskId}/cancel`);
 };
 
 export const getMcpToolList = async (
@@ -169,13 +169,13 @@ export const getMcpToolList = async (
   });
 };
 
-export const getDockerImages = async (username: string) => {
-  return api.get(`/workflow/docker_image_list/${username}`);
+export const getDockerImages = async (_username?: string) => {
+  return api.get(`/workflow/docker_image_list`);
 };
 
 export const deleteDockerImages = async (
-  username: string,
+  _username: string,
   imageName: string
 ) => {
-  return api.delete(`/workflow/${username}/${imageName}/docker_image/`);
+  return api.delete(`/workflow/${imageName}/docker_image/`);
 };
