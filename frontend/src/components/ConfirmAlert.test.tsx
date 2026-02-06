@@ -61,7 +61,7 @@ describe('ConfirmAlert Component', () => {
     );
 
     const titleElement = screen.getByText('Notice');
-    expect(titleElement).toHaveClass('text-indigo-500');
+    expect(titleElement.parentElement).toHaveClass('text-indigo-500');
   });
 
   it('applies correct styling for error type', () => {
@@ -74,7 +74,7 @@ describe('ConfirmAlert Component', () => {
     );
 
     const titleElement = screen.getByText('Error');
-    expect(titleElement).toHaveClass('text-red-500');
+    expect(titleElement.parentElement).toHaveClass('text-red-500');
   });
 
   it('calls onCancel when close button is clicked', () => {
@@ -144,7 +144,7 @@ describe('ConfirmAlert Component', () => {
 
     const messageElement = screen.getByText(longMessage);
     expect(messageElement).toBeInTheDocument();
-    expect(messageElement.parentElement).toHaveClass('overflow-auto');
+    expect(messageElement).toHaveClass('overflow-auto');
   });
 
   it('displays close button at the end', () => {
@@ -172,11 +172,11 @@ describe('ConfirmAlert Component', () => {
     const closeButton = screen.getByText('Close');
     expect(closeButton).toHaveClass('px-4');
     expect(closeButton).toHaveClass('py-2');
-    expect(closeButton).toHaveClass('text-gray-700');
+    expect(closeButton).toHaveClass('text-gray-300');
     expect(closeButton).toHaveClass('border');
-    expect(closeButton).toHaveClass('border-gray-300');
+    expect(closeButton).toHaveClass('border-gray-700');
     expect(closeButton).toHaveClass('rounded-full');
-    expect(closeButton).toHaveClass('hover:bg-gray-100');
+    expect(closeButton).toHaveClass('hover:bg-gray-800');
   });
 
   it('renders with rounded corners', () => {
@@ -188,7 +188,7 @@ describe('ConfirmAlert Component', () => {
       />
     );
 
-    const modalContent = container.querySelector('.bg-gray-800');
+    const modalContent = container.querySelector('.bg-gray-900');
     expect(modalContent).toHaveClass('rounded-3xl');
   });
 

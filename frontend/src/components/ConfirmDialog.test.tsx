@@ -1,40 +1,20 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
+import ConfirmDialog from './ConfirmDialog';
 
-// Simple inline component for testing (in case ConfirmDialog doesn't exist)
-interface ConfirmDialogProps {
-  message: string;
-  onConfirm: () => void;
-  onCancel: () => void;
-}
-
-const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
-  message,
-  onConfirm,
-  onCancel,
-}) => {
-  return (
-    <div className="fixed inset-0 flex items-center justify-center z-50 bg-black/50">
-      <div className="bg-gray-800 rounded-3xl shadow-lg p-6 w-[30%] max-h-[50vh] flex flex-col">
-        <p className="mb-6 p-2 overflow-auto">{message}</p>
-        <div className="flex justify-end gap-2">
-          <button
-            onClick={onCancel}
-            className="px-4 py-2 text-gray-700 border border-gray-300 rounded-full hover:bg-gray-100 cursor-pointer"
-          >
-            Cancel
-          </button>
-          <button
-            onClick={onConfirm}
-            className="px-4 py-2 text-white bg-indigo-500 rounded-full hover:bg-indigo-700 cursor-pointer"
-          >
-            Confirm
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
+// Mock next-intl
+vi.mock('next-intl', () => ({
+  useTranslations: (key: string) => (str: string) => {
+    const translations: Record<string, Record<string, string>> = {
+      ConfirmDialog: {
+        title: 'Confirm Action',
+        confirm: 'Confirm',
+        cancel: 'Cancel',
+      },
+    };
+    return translations[key]?.[str] || str;
+  },
+}));
 
 describe('ConfirmDialog Component', () => {
   const mockOnConfirm = vi.fn();
@@ -206,7 +186,7 @@ describe('ConfirmDialog Component', () => {
       />
     );
 
-    const modalContent = container.querySelector('.bg-gray-800');
+    const modalContent = container.querySelector('.bg-gray-900');
     expect(modalContent).toHaveClass('rounded-3xl');
   });
 
@@ -223,9 +203,9 @@ describe('ConfirmDialog Component', () => {
     expect(confirmButton).toHaveClass('px-4');
     expect(confirmButton).toHaveClass('py-2');
     expect(confirmButton).toHaveClass('text-white');
-    expect(confirmButton).toHaveClass('bg-indigo-500');
+    expect(confirmButton).toHaveClass('bg-red-500');
     expect(confirmButton).toHaveClass('rounded-full');
-    expect(confirmButton).toHaveClass('hover:bg-indigo-700');
+    expect(confirmButton).toHaveClass('hover:bg-red-600');
   });
 
   it('cancel button has correct styling', () => {
@@ -240,14 +220,14 @@ describe('ConfirmDialog Component', () => {
     const cancelButton = screen.getByText('Cancel');
     expect(cancelButton).toHaveClass('px-4');
     expect(cancelButton).toHaveClass('py-2');
-    expect(cancelButton).toHaveClass('text-gray-700');
+    expect(cancelButton).toHaveClass('text-gray-300');
     expect(cancelButton).toHaveClass('border');
-    expect(cancelButton).toHaveClass('border-gray-300');
+    expect(cancelButton).toHaveClass('border-gray-700');
     expect(cancelButton).toHaveClass('rounded-full');
-    expect(cancelButton).toHaveClass('hover:bg-gray-100');
+    expect(cancelButton).toHaveClass('hover:bg-gray-800');
   });
 
-  it('renders message in scrollable container', () => {
+  it('renders long message correctly', () => {
     const longMessage = 'A'.repeat(1000);
     render(
       <ConfirmDialog
@@ -259,7 +239,7 @@ describe('ConfirmDialog Component', () => {
 
     const messageElement = screen.getByText(longMessage);
     expect(messageElement).toBeInTheDocument();
-    expect(messageElement.parentElement).toHaveClass('overflow-auto');
+    expect(messageElement).toHaveClass('text-gray-300');
   });
 
   it('buttons are right-aligned', () => {

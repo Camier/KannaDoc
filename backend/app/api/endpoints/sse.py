@@ -77,16 +77,6 @@ async def get_task_progress(
     return EventSourceResponse(event_generator())
 
 
-# Frontend compatibility: it calls `/sse/task/{username}/{task_id}`.
-# Username is ignored in single-tenant mode; task_id is globally unique anyway.
-@router.get("/task/{username}/{task_id}")
-async def get_task_progress_with_user(
-    username: str,
-    task_id: str,
-):
-    return await get_task_progress(task_id)
-
-
 @router.get("/workflow/{task_id}")
 async def workflow_sse(
     task_id: str,

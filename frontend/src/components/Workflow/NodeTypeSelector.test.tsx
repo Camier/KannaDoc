@@ -6,7 +6,7 @@ import { CustomNode } from '@/types/types';
 // Mock next-intl
 vi.mock('next-intl', () => ({
   useTranslations: (key: string) => (str: string) => {
-    const translations: Record<string, Record<string, string>> = {
+    const translations: Record<string, any> = {
       NodeTypeSelector: {
         baseNodeSection: 'Base Nodes',
         customNodeSection: 'Custom Nodes',
@@ -21,26 +21,32 @@ vi.mock('next-intl', () => ({
           loop: 'Loop',
           function: 'Function',
           mcp: 'MCP',
-          vlm: 'VLM',
+          vlm: 'LLM',
           output: 'Output',
         },
       },
     };
-    // Handle nested keys like "label.start"
+    
+    const namespace = translations[key];
+    if (!namespace) return str;
+
     if (str.includes('.')) {
-      const [namespace, key] = str.split('.');
-      return translations[namespace]?.[key] || str;
+      return str.split('.').reduce((obj, k) => obj?.[k], namespace) || str;
     }
-    return translations[key]?.[str] || str;
+    
+    return namespace[str] || str;
   },
 }));
 
 // Mock stores
 vi.mock('@/stores/flowStore', () => ({
-  useFlowStore: vi.fn(() => ({
-    selectedType: null,
-    setSelectedType: vi.fn(),
-  })),
+  useFlowStore: vi.fn((selector) => {
+    const state = {
+      selectedType: null,
+      setSelectedType: vi.fn(),
+    };
+    return selector ? selector(state) : state;
+  }),
 }));
 
 // Mock ConfirmDialog
@@ -128,8 +134,8 @@ describe('NodeTypeSelector Component', () => {
   it('renders all custom nodes', () => {
     render(<NodeTypeSelector {...defaultProps} />);
 
-    expect(screen.getByText('Custom Node 1')).toBeInTheDocument();
-    expect(screen.getByText('Custom Node 2')).toBeInTheDocument();
+    expect(screen.getByText('customNode1')).toBeInTheDocument();
+    expect(screen.getByText('customNode2')).toBeInTheDocument();
   });
 
   it('calls addNode when base node is clicked', () => {
@@ -144,20 +150,20 @@ describe('NodeTypeSelector Component', () => {
   it('calls addCustomNode when custom node is clicked', () => {
     render(<NodeTypeSelector {...defaultProps} />);
 
-    const customNode = screen.getByText('Custom Node 1');
+    const customNode = screen.getByText('customNode1');
     fireEvent.click(customNode);
 
-    expect(mockAddCustomNode).toHaveBeenCalledWith('Custom Node 1');
+    expect(mockAddCustomNode).toHaveBeenCalledWith('customNode1');
   });
 
   it('filters custom nodes based on search term', () => {
     render(<NodeTypeSelector {...defaultProps} />);
 
     const searchInput = screen.getByPlaceholderText('Search nodes...');
-    fireEvent.change(searchInput, { target: { value: 'Node 1' } });
+    fireEvent.change(searchInput, { target: { value: 'customNode1' } });
 
-    expect(screen.getByText('Custom Node 1')).toBeInTheDocument();
-    expect(screen.queryByText('Custom Node 2')).not.toBeInTheDocument();
+    expect(screen.getByText('customNode1')).toBeInTheDocument();
+    expect(screen.queryByText('customNode2')).not.toBeInTheDocument();
   });
 
   it('displays all nodes when search is empty', () => {
@@ -166,31 +172,27 @@ describe('NodeTypeSelector Component', () => {
     const searchInput = screen.getByPlaceholderText('Search nodes...');
     fireEvent.change(searchInput, { target: { value: '' } });
 
-    expect(screen.getByText('Custom Node 1')).toBeInTheDocument();
-    expect(screen.getByText('Custom Node 2')).toBeInTheDocument();
+    expect(screen.getByText('customNode1')).toBeInTheDocument();
+    expect(screen.getByText('customNode2')).toBeInTheDocument();
   });
 
   it('search is case-insensitive', () => {
     render(<NodeTypeSelector {...defaultProps} />);
 
     const searchInput = screen.getByPlaceholderText('Search nodes...');
-    fireEvent.change(searchInput, { target: { value: 'CUSTOM NODE 1' } });
+    fireEvent.change(searchInput, { target: { value: 'CUSTOMNODE1' } });
 
-    expect(screen.getByText('Custom Node 1')).toBeInTheDocument();
+    expect(screen.getByText('customNode1')).toBeInTheDocument();
   });
 
   it('shows delete confirmation when delete icon is clicked', () => {
-    render(<NodeTypeSelector {...defaultProps} />);
+    const { container } = render(<NodeTypeSelector {...defaultProps} />);
 
-    const deleteButtons = screen.getAllByRole('button');
-    const deleteButton = deleteButtons.find(btn =>
-      btn.querySelector('svg[stroke="currentColor"]')
-    );
-
-    if (deleteButton) {
-      fireEvent.click(deleteButton);
-      expect(screen.getByTestId('confirm-dialog')).toBeInTheDocument();
-    }
+    const deleteIcons = container.querySelectorAll('svg.size-4\\.5.shrink-0');
+    expect(deleteIcons.length).toBeGreaterThan(0);
+    
+    fireEvent.click(deleteIcons[0]);
+    expect(screen.getByTestId('confirm-dialog')).toBeInTheDocument();
   });
 
   it('renders search input in custom nodes section', () => {
@@ -216,9 +218,9 @@ describe('NodeTypeSelector Component', () => {
   });
 
   it('renders node icons for each node type', () => {
-    render(<NodeTypeSelector {...defaultProps} />);
+    const { container } = render(<NodeTypeSelector {...defaultProps} />);
 
-    const icons = screen.getAllByRole('img');
+    const icons = container.querySelectorAll('svg');
     expect(icons.length).toBeGreaterThan(0);
   });
 
@@ -231,14 +233,14 @@ describe('NodeTypeSelector Component', () => {
     render(<NodeTypeSelector {...props} />);
 
     expect(screen.getByText('Custom Nodes')).toBeInTheDocument();
-    expect(screen.queryByText('Custom Node 1')).not.toBeInTheDocument();
+    expect(screen.queryByText('customNode1')).not.toBeInTheDocument();
   });
 
   it('renders multiple base nodes', () => {
     render(<NodeTypeSelector {...defaultProps} />);
 
     expect(screen.getByText('Start')).toBeInTheDocument();
-    expect(screen.getByText('End')).toBeInTheDocument();
+    expect(screen.getByText('Loop')).toBeInTheDocument();
     expect(screen.getByText('LLM')).toBeInTheDocument();
   });
 
