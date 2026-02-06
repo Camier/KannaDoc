@@ -18,6 +18,7 @@ import threading
 import math
 from collections import defaultdict
 from app.core.config import settings
+from app.core.logging import logger
 
 
 def get_ranker(settings):
@@ -595,6 +596,16 @@ class MilvusManager:
                 break
         return out
 
+    @staticmethod
+    def _distinct_files(candidates: list[tuple[str, int, float]]) -> int:
+        """Count distinct file_id in a (file_id, page_number, score) list."""
+        return len({str(fid) for fid, _pn, _s in (candidates or [])})
+
+    @staticmethod
+    def _distinct_pages(candidates: list[tuple[str, int, float]]) -> int:
+        """Count distinct (file_id, page_number) keys in a candidate list."""
+        return len({(str(fid), int(pn)) for fid, pn, _s in (candidates or [])})
+
     def _exact_rerank_pages(
         self,
         patch_collection_name: str,
@@ -606,7 +617,22 @@ class MilvusManager:
         if not candidate_pages:
             return []
         if diversify:
+            if getattr(settings, "rag_debug_retrieval", False):
+                logger.info(
+                    "RAG(thesis): exact_rerank input candidates=%d distinct_pages=%d distinct_files=%d",
+                    len(candidate_pages),
+                    self._distinct_pages(candidate_pages),
+                    self._distinct_files(candidate_pages),
+                )
             candidate_pages = self._diversify_with_backfill(candidate_pages, topk=topk)
+            if getattr(settings, "rag_debug_retrieval", False):
+                logger.info(
+                    "RAG(thesis): exact_rerank after diversify+backfill candidates=%d distinct_pages=%d distinct_files=%d topk=%d",
+                    len(candidate_pages),
+                    self._distinct_pages(candidate_pages),
+                    self._distinct_files(candidate_pages),
+                    int(topk),
+                )
 
         # Group requested pages by file_id to keep Milvus filter small and correct for (file_id,page_number) pairs.
         pages_by_file: dict[str, set[int]] = defaultdict(set)
@@ -714,6 +740,15 @@ class MilvusManager:
             sparse_query=sparse_query,
             limit=sparse_limit,
         )
+        if getattr(settings, "rag_debug_retrieval", False):
+            logger.info(
+                "RAG(thesis): mode=%s topk=%d sparse_limit=%d sparse_candidates=%d sparse_distinct_files=%d",
+                str(mode),
+                int(topk),
+                int(sparse_limit),
+                len(sparse_ranked),
+                self._distinct_files(sparse_ranked),
+            )
 
         if mode == "sparse_then_rerank":
             candidates = sparse_ranked
@@ -725,12 +760,26 @@ class MilvusManager:
                 dense_vecs=dense_vecs,
                 limit=dense_limit,
             )
+            if getattr(settings, "rag_debug_retrieval", False):
+                logger.info(
+                    "RAG(thesis): dense_fallback dense_limit=%d dense_candidates=%d dense_distinct_files=%d",
+                    int(dense_limit),
+                    len(candidates),
+                    self._distinct_files(candidates),
+                )
         else:
             dense_ranked = self._dense_approx_recall_pages(
                 patch_collection_name=patch_collection_name,
                 dense_vecs=dense_vecs,
                 limit=dense_limit,
             )
+            if getattr(settings, "rag_debug_retrieval", False):
+                logger.info(
+                    "RAG(thesis): dense_stage dense_limit=%d dense_candidates=%d dense_distinct_files=%d",
+                    int(dense_limit),
+                    len(dense_ranked),
+                    self._distinct_files(dense_ranked),
+                )
 
             fused = self._rrf_fuse(
                 ranked_lists=[sparse_ranked, dense_ranked],
@@ -743,9 +792,22 @@ class MilvusManager:
                     fused.items(), key=lambda kv: kv[1], reverse=True
                 )
             ]
+            if getattr(settings, "rag_debug_retrieval", False):
+                logger.info(
+                    "RAG(thesis): fused_candidates=%d fused_distinct_files=%d",
+                    len(candidates),
+                    self._distinct_files(candidates),
+                )
 
         # Cap candidate pages before fetching patch vectors.
         candidates = candidates[: int(getattr(settings, "rag_candidate_images_cap", 120))]
+        if getattr(settings, "rag_debug_retrieval", False):
+            logger.info(
+                "RAG(thesis): capped_candidates=%d cap=%d distinct_files=%d",
+                len(candidates),
+                int(getattr(settings, "rag_candidate_images_cap", 120)),
+                self._distinct_files(candidates),
+            )
 
         return self._exact_rerank_pages(
             patch_collection_name=patch_collection_name,

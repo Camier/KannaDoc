@@ -128,6 +128,7 @@ For existing collections, see `backend/scripts/milvus_ensure_scalar_indexes.py` 
 - `search-preview overrides`: `search-preview` accepts `retrieval_mode` (optional override) and `min_score` (explicit filter for preview only). In absence of `retrieval_mode`, it uses `RAG_RETRIEVAL_MODE`.
 - `dual_then_rerank` safety: if the page sparse sidecar is missing/unavailable or sparse recall returns an empty list, thesis falls back to dense approximate page recall, then applies the same exact MaxSim rerank on patch vectors.
 - `sparse_then_rerank` expectation: this mode is intentionally “sparse-only” for candidate generation; if the sparse sidecar is missing or sparse recall yields no candidates, it can return an empty result set.
+- Debugging: set `RAG_DEBUG_RETRIEVAL=1` to log candidate counts and distinct `file_id` stats through the sparse/dense/fuse/diversify/rerank stages (no secrets logged).
 
 ## Link 8: Evaluation System
 

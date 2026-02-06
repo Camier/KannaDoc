@@ -112,6 +112,12 @@ class Settings(BaseSettings):
     rag_ef_min: int = 100
     rag_load_collection_once: bool = True
 
+    # Debug/observability
+    rag_debug_retrieval: bool = Field(
+        default=False,
+        description="If true, log retrieval candidate counts and distinct file_id stats (no secrets).",
+    )
+
     # Retrieval modes
     # - dense: dense-only candidate generation + exact MaxSim rerank on patch vectors (ColPali-style)
     # - hybrid: Milvus hybrid search (dense + sparse) on collections that have both fields
