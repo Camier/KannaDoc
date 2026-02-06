@@ -16,10 +16,18 @@ import os
 import sys
 from typing import Any, cast, Dict, List
 
+pytestmark = pytest.mark.unit
+
 
 # ==============================================================================
 # FIXTURES
 # ==============================================================================
+
+
+def _require_chat_service_deps() -> None:
+    """Skip ChatService-dependent tests when optional deps are missing."""
+    pytest.importorskip("circuitbreaker")
+    pytest.importorskip("openai")
 
 
 @pytest.fixture
@@ -338,7 +346,32 @@ class TestChatServiceNormalizers:
 class TestChatServiceProviderAwareReasoner:
     """Unit tests for provider-aware DeepSeek reasoner handling."""
 
+    def test_resolve_effective_provider_skips_detection_for_custom_model_url(self, clean_env):
+        _require_chat_service_deps()
+        from app.core.llm.chat_service import ChatService
+
+        # If a user provides an explicit OpenAI-compatible model_url, we should not
+        # apply provider-specific special-cases based on model name heuristics.
+        effective = ChatService._resolve_effective_provider(
+            provider=None,
+            model_url="http://example.com/v1",
+            model_name="deepseek-reasoner",
+        )
+        assert effective is None
+
+    def test_resolve_effective_provider_uses_explicit_provider(self, clean_env):
+        _require_chat_service_deps()
+        from app.core.llm.chat_service import ChatService
+
+        effective = ChatService._resolve_effective_provider(
+            provider="deepseek",
+            model_url="http://example.com/v1",
+            model_name="deepseek-reasoner",
+        )
+        assert effective == "deepseek"
+
     def test_deepseek_reasoner_only_for_official_provider(self, clean_env):
+        _require_chat_service_deps()
         from app.core.llm.chat_service import ChatService
 
         assert (
@@ -352,6 +385,7 @@ class TestChatServiceProviderAwareReasoner:
         )
 
     def test_optional_args_for_ollama_deepseek_r1_keeps_standard_params(self, clean_env):
+        _require_chat_service_deps()
         from app.core.llm.chat_service import ChatService
 
         optional = ChatService._build_optional_openai_args(
@@ -367,6 +401,7 @@ class TestChatServiceProviderAwareReasoner:
         assert "max_completion_tokens" not in optional
 
     def test_optional_args_for_deepseek_reasoner_uses_max_completion_tokens(self, clean_env):
+        _require_chat_service_deps()
         from app.core.llm.chat_service import ChatService
 
         optional = ChatService._build_optional_openai_args(

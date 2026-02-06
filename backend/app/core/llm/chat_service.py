@@ -131,6 +131,30 @@ class ChatService:
         return model_id.startswith("system_")
 
     @staticmethod
+    def _resolve_effective_provider(
+        *,
+        provider: Optional[str],
+        model_url: Optional[str],
+        model_name: str,
+    ) -> Optional[str]:
+        """Resolve the effective provider for provider-specific behavior.
+
+        Rationale:
+        - If the user provides an explicit provider, trust it.
+        - If the user provides an explicit OpenAI-compatible model_url, do NOT apply
+          provider-specific special-cases based on the model name alone. That avoids
+          breaking proxied/self-hosted endpoints (e.g., a proxy serving a model named
+          "deepseek-reasoner" but still supporting standard temperature/top_p).
+        - Otherwise, fall back to provider detection by model name.
+        """
+        p = (provider or "").strip().lower() or None
+        if p:
+            return p
+        if model_url and str(model_url).startswith("http"):
+            return None
+        return ProviderClient.get_provider_for_model(model_name)
+
+    @staticmethod
     def _tuned_generation_defaults(
         provider: Optional[str],
         model_name: str,
@@ -334,7 +358,11 @@ class ChatService:
             system_prompt = system_prompt[0:1048576]
 
         # Normalize parameters (with thesis-specific tuned defaults for system_* models).
-        effective_provider = provider or ProviderClient.get_provider_for_model(model_name)
+        effective_provider = ChatService._resolve_effective_provider(
+            provider=provider,
+            model_url=model_url,
+            model_name=model_name,
+        )
         is_system_model = ChatService._is_system_model(model_config)
 
         if is_workflow:
@@ -810,6 +838,7 @@ class ChatService:
 
         # Detect provider to handle auto-detection cases (where model_url is None)
         detected_provider = ProviderClient.get_provider_for_model(model_name)
+        provider_for_stream = effective_provider or detected_provider
 
         # Fail fast if provider detection fails and no explicit URL provided
         if not detected_provider and not model_url:
@@ -830,13 +859,13 @@ class ChatService:
         else:
             # Strictly identify Zhipu/Z.ai providers to suppress stream_options
             # Sending stream_options to Zhipu causes API errors/empty responses
-            is_zhipu = detected_provider in ("zhipu", "zhipu-coding", "zai")
+            is_zhipu = provider_for_stream in ("zhipu", "zhipu-coding", "zai")
 
         # Z.ai accepts lowercase model names (glm-4.7-flash)
         if model_url:
             is_zai = "z.ai" in model_url.lower()
         else:
-            is_zai = detected_provider == "zai"
+            is_zai = provider_for_stream == "zai"
 
         # Map legacy/alias model name for provider API calls
         api_model_name = resolve_api_model_name(model_name)
