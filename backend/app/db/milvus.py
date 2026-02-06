@@ -565,6 +565,36 @@ class MilvusManager:
         diversified.sort(key=lambda x: x[2], reverse=True)
         return diversified
 
+    def _diversify_with_backfill(
+        self,
+        candidates: list[tuple[str, int, float]],
+        topk: int,
+    ) -> list[tuple[str, int, float]]:
+        """Diversify but still guarantee up to topk candidates when possible.
+
+        Diversification can intentionally cap pages-per-file. When that cap makes the
+        result set smaller than topk, we backfill from the remaining ranked candidates
+        (preserving the diversified head ordering).
+        """
+        if not candidates:
+            return []
+
+        diversified = self._diversify_candidates(candidates, topk=topk)
+        if len(diversified) >= int(topk):
+            return diversified[: int(topk)]
+
+        seen: set[tuple[str, int]] = {(fid, int(pn)) for fid, pn, _s in diversified}
+        out = list(diversified)
+        for fid, pn, score in candidates:
+            key = (str(fid), int(pn))
+            if key in seen:
+                continue
+            out.append((str(fid), int(pn), float(score)))
+            seen.add(key)
+            if len(out) >= int(topk):
+                break
+        return out
+
     def _exact_rerank_pages(
         self,
         patch_collection_name: str,
@@ -576,7 +606,7 @@ class MilvusManager:
         if not candidate_pages:
             return []
         if diversify:
-            candidate_pages = self._diversify_candidates(candidate_pages, topk=topk)
+            candidate_pages = self._diversify_with_backfill(candidate_pages, topk=topk)
 
         # Group requested pages by file_id to keep Milvus filter small and correct for (file_id,page_number) pairs.
         pages_by_file: dict[str, set[int]] = defaultdict(set)
@@ -685,8 +715,16 @@ class MilvusManager:
             limit=sparse_limit,
         )
 
-        if mode == "sparse_then_rerank" or not sparse_ranked:
+        if mode == "sparse_then_rerank":
             candidates = sparse_ranked
+        elif mode == "dual_then_rerank" and not sparse_ranked:
+            # Thesis safety: if the sparse sidecar is missing/unavailable, do not return
+            # an empty result set. Fall back to dense approx recall then exact rerank.
+            candidates = self._dense_approx_recall_pages(
+                patch_collection_name=patch_collection_name,
+                dense_vecs=dense_vecs,
+                limit=dense_limit,
+            )
         else:
             dense_ranked = self._dense_approx_recall_pages(
                 patch_collection_name=patch_collection_name,

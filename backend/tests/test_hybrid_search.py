@@ -259,6 +259,83 @@ class TestQueryTimeSparseEmbeddings:
             result = await get_sparse_embeddings(["test query"])
             assert result == []
 
+
+class TestThesisDualThenRerankSafety:
+    """Tests for thesis sparse/dual retrieval safety behavior."""
+
+    def _make_manager(self):
+        """Create a MilvusManager instance without connecting to a real Milvus."""
+        from app.db.milvus import MilvusManager
+
+        mgr = MilvusManager.__new__(MilvusManager)
+        mgr.client = MagicMock()
+        mgr._loaded_collections = set()
+        mgr._load_lock = MagicMock()
+        return mgr
+
+    def test_dual_then_rerank_falls_back_to_dense_when_sparse_empty(self, monkeypatch):
+        """dual_then_rerank must not return empty results just because sparse recall is empty."""
+        from app.core.config import settings
+
+        mgr = self._make_manager()
+
+        # Keep candidate generation bounded/deterministic for the test.
+        monkeypatch.setattr(settings, "rag_search_limit_min", 5, raising=False)
+        monkeypatch.setattr(settings, "rag_search_limit_cap", 50, raising=False)
+        monkeypatch.setattr(settings, "rag_candidate_images_cap", 50, raising=False)
+        monkeypatch.setattr(settings, "rag_hybrid_rrf_k", 60, raising=False)
+
+        mgr._pages_sparse_collection_name = MagicMock(return_value="coll_pages_sparse")
+        mgr._sparse_recall_pages = MagicMock(return_value=[])
+        dense_candidates = [("f1", 1, 0.9), ("f2", 2, 0.8), ("f3", 3, 0.7)]
+        mgr._dense_approx_recall_pages = MagicMock(return_value=dense_candidates)
+
+        captured = {}
+
+        def _capture_exact(*, candidate_pages, **kwargs):
+            captured["candidate_pages"] = list(candidate_pages)
+            return [{"file_id": "f1", "page_number": 1, "score": 1.0, "image_id": "x"}]
+
+        mgr._exact_rerank_pages = MagicMock(side_effect=_capture_exact)
+
+        out = mgr._search_sparse_then_rerank(
+            patch_collection_name="patch_coll",
+            dense_vecs=[[0.0] * 128],
+            sparse_query={},
+            topk=2,
+            mode="dual_then_rerank",
+        )
+
+        assert out, "Expected non-empty results via dense fallback"
+        assert captured["candidate_pages"] == dense_candidates
+
+    def test_diversify_with_backfill_guarantees_topk(self, monkeypatch):
+        """Diversification should not under-fill results when enough candidates exist."""
+        from app.core.config import settings
+
+        mgr = self._make_manager()
+
+        # Force diversification to pick 2 files and 1 page per file.
+        monkeypatch.setattr(settings, "rag_diverse_file_limit", 2, raising=False)
+        monkeypatch.setattr(settings, "rag_diverse_pages_per_file_cap", 1, raising=False)
+
+        candidates = [
+            ("a", 1, 10.0),
+            ("a", 2, 9.0),
+            ("a", 3, 8.0),
+            ("b", 1, 7.0),
+            ("b", 2, 6.0),
+            ("c", 1, 5.0),
+        ]
+
+        out = mgr._diversify_with_backfill(candidates, topk=5)
+
+        assert len(out) == 5
+        # Head should be diversified (a:1, b:1 in some order by score).
+        head_keys = [(fid, pn) for fid, pn, _s in out[:2]]
+        assert ("a", 1) in head_keys
+        assert ("b", 1) in head_keys
+
     def test_sparse_vector_replication_logic(self):
         """Sparse vector replication matches dense vector count."""
         # This tests the logic used in ChatService
