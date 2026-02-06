@@ -1,7 +1,34 @@
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import { useClickAway } from "react-use";
-import { getCliproxyapiModels, CliproxyapiModel } from "@/lib/api/configApi";
+import {
+  AvailableModelsProvider,
+  getAvailableModels,
+} from "@/lib/api/configApi";
+
+type ModelOption = {
+  name: string;
+  group: string;
+  providerId: string;
+  baseUrl: string;
+};
+
+function providerLabel(providerId: string): string {
+  switch (providerId) {
+    case "deepseek":
+      return "DeepSeek";
+    case "zai":
+      return "Z.ai";
+    case "ollama-cloud":
+      return "Ollama Cloud";
+    case "cliproxyapi":
+      return "CLIProxyAPI";
+    case "minimax":
+      return "MiniMax";
+    default:
+      return providerId;
+  }
+}
 
 interface AddLLMEngineProps {
   setShowAddLLM: Dispatch<SetStateAction<boolean>>;
@@ -23,7 +50,7 @@ const AddLLMEngine: React.FC<AddLLMEngineProps> = ({
   setNewModelUrl,
 }) => {
   const t = useTranslations("AddLLMEngine");
-  const [availableModels, setAvailableModels] = useState<CliproxyapiModel[]>([]);
+  const [availableModels, setAvailableModels] = useState<ModelOption[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -37,8 +64,26 @@ const AddLLMEngine: React.FC<AddLLMEngineProps> = ({
     const fetchModels = async () => {
       setIsLoading(true);
       try {
-        const models = await getCliproxyapiModels();
-        setAvailableModels(models);
+        const response = await getAvailableModels();
+        const providers: AvailableModelsProvider[] = response.providers || [];
+
+        const options: ModelOption[] = [];
+        for (const p of providers) {
+          // Only offer models that are actually configured.
+          if (!p.is_configured) continue;
+          const group = providerLabel(p.provider_id);
+          const baseUrl = p.provider_id === "cliproxyapi" ? p.base_url : "";
+          for (const name of p.models || []) {
+            options.push({
+              name,
+              group,
+              providerId: p.provider_id,
+              baseUrl,
+            });
+          }
+        }
+
+        setAvailableModels(options);
       } catch (error) {
         console.error("Failed to fetch models", error);
       } finally {
@@ -55,12 +100,13 @@ const AddLLMEngine: React.FC<AddLLMEngineProps> = ({
   const groupedModels = filteredModels.reduce((acc, model) => {
     (acc[model.group] = acc[model.group] || []).push(model);
     return acc;
-  }, {} as Record<string, CliproxyapiModel[]>);
+  }, {} as Record<string, ModelOption[]>);
 
-  const handleModelSelect = (model: CliproxyapiModel) => {
+  const handleModelSelect = (model: ModelOption) => {
     setNewModelName(model.name);
     if (setNewModelUrl) {
-      setNewModelUrl(model.base_url);
+      // Prefer provider routing. Only set explicit URL for proxy models.
+      setNewModelUrl(model.providerId === "cliproxyapi" ? model.baseUrl : "");
     }
     setNameError(null);
     setShowDropdown(false);

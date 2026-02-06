@@ -245,6 +245,9 @@ const AIChat: React.FC = () => {
                   baseId: file.knowledge_db_id,
                   minioUrl: file.file_url,
                   score: file.score,
+                  fileId: file.file_id,
+                  pageNumber: file.page_number,
+                  textPreview: file.text_preview,
                   from: "ai",
                 })),
               ];
@@ -370,7 +373,21 @@ const AIChat: React.FC = () => {
         }
       );
 
-      if (!response.ok) throw new Error("Request failed");
+      if (!response.ok) {
+        const raw = await response.text();
+        let detail = raw;
+        try {
+          const parsed = JSON.parse(raw);
+          detail =
+            parsed?.error?.message ||
+            parsed?.detail ||
+            parsed?.message ||
+            raw;
+        } catch {
+          // keep raw text
+        }
+        throw new Error(`HTTP ${response.status}: ${detail}`);
+      }
       if (!response.body) return;
 
       // 使用EventSourceParserStream处理流
@@ -462,6 +479,9 @@ const AIChat: React.FC = () => {
             baseId: file.knowledge_db_id,
             minioUrl: file.file_url,
             score: file.score,
+            fileId: file.file_id,
+            pageNumber: file.page_number,
+            textPreview: file.text_preview,
             from: "ai",
           })),
         ];
@@ -477,7 +497,8 @@ const AIChat: React.FC = () => {
         }
       } else {
         // 可选的：添加用户中断的视觉反馈
-        aiMessage += t("llmError")
+        const suffix = error instanceof Error && error.message ? `\n${error.message}` : "";
+        aiMessage += `${t("llmError")}${suffix}`
         // 错误时更新最后一条AI消息内容
         handleSelectChat(conversationId, true);
       }
@@ -509,6 +530,9 @@ const AIChat: React.FC = () => {
               baseId: file.knowledge_db_id,
               minioUrl: file.file_url,
               score: file.score,
+              fileId: file.file_id,
+              pageNumber: file.page_number,
+              textPreview: file.text_preview,
               from: "ai",
             } as Message)
         ),

@@ -63,6 +63,26 @@ export interface CliproxyapiModel {
   vision: boolean;
 }
 
+export interface AvailableModelsProvider {
+  provider_id: string;
+  models: string[];
+  base_url: string;
+  env_key: string | null;
+  requires_env_key: boolean;
+  is_configured: boolean;
+  model_url_hint: string;
+  cliproxy_reason?: string;
+}
+
+export interface AvailableModelsResponse {
+  providers: AvailableModelsProvider[];
+}
+
+export const getAvailableModels = async (): Promise<AvailableModelsResponse> => {
+  const response = await api.get("/config/available-models");
+  return response.data;
+};
+
 export const getCliproxyapiModels = async (): Promise<CliproxyapiModel[]> => {
   try {
     const response = await api.get("/config/cliproxyapi-models");
