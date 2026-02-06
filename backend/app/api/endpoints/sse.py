@@ -170,14 +170,16 @@ async def workflow_sse(
             "canceled",
             "vlm_input",
         ):
+            workflow_result = await redis_conn.hget(workflow_key, "result")
+            workflow_error = await redis_conn.hget(workflow_key, "error")
             yield {
                 "data": json.dumps(
                     {
                         "event": "workflow",
                         "workflow": {
                             "status": workflow_status,
-                            "result": await redis_conn.hget(workflow_key, "result"),
-                            "error": await redis_conn.hget(workflow_key, "error"),
+                            "result": workflow_result,
+                            "error": workflow_error,
                         },
                     }
                 )
