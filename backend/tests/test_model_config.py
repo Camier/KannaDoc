@@ -511,15 +511,15 @@ class TestModelConfigBaseValidation:
         assert config.top_K == 1
 
     def test_top_k_clamps_high(self, zai_env):
-        """Verify top_K is clamped to 30 when above 30 (aligned with ChatService)."""
+        """Verify top_K is clamped to 120 when above 120 (aligned with thesis settings)."""
         from app.models.model_config import ModelConfigBase
 
         config = ModelConfigBase(
             model_name="glm-4.7-flash",
             api_key="valid-api-key-12345678901234567890",
-            top_K=100,
+            top_K=1000,
         )
-        assert config.top_K == 30
+        assert config.top_K == 120
 
     def test_score_threshold_clamps_negative(self, zai_env):
         """Verify score_threshold is clamped to 0 when negative."""
@@ -681,14 +681,8 @@ class TestBoundaryValues:
         )
         assert config_high.temperature == 2.0
 
-    def test_normalizer_boundary_differences_temperature(self):
-        """Document the difference between ModelConfigBase and ChatService bounds.
-
-        ModelConfigBase: temperature 0-2 (Pydantic validation)
-        ChatService: temperature 0-1 (runtime normalization)
-
-        This test documents this discrepancy for awareness during refactoring.
-        """
+    def test_normalizer_boundary_alignment_temperature(self):
+        """Verify ModelConfigBase and ChatService temperature bounds are aligned (0-2)."""
         from app.models.model_config import ModelConfigBase
 
         # ModelConfigBase allows 1.5
@@ -699,9 +693,9 @@ class TestBoundaryValues:
         )
         assert config.temperature == 1.5
 
-        # ChatService normalizes 1.5 to 1.0
+        # ChatService should preserve 1.5 (clamp only above 2.0; -1 sentinel preserved)
         normalized = _normalize_temperature(1.5)
-        assert normalized == 1.0
+        assert normalized == 1.5
 
     def test_normalizer_boundary_alignment_max_length(self):
         """Verify ModelConfigBase and ChatService max_length bounds are aligned."""
@@ -722,10 +716,10 @@ class TestBoundaryValues:
         config = ModelConfigBase(
             model_name="deepseek-chat",
             api_key="valid-api-key-12345678901234567890",
-            top_K=100,
+            top_K=500,
         )
-        normalized = _normalize_top_k(100)
-        assert config.top_K == normalized == 30
+        normalized = _normalize_top_k(500)
+        assert config.top_K == normalized == 120
 
     def test_normalizer_boundary_alignment_score_threshold(self):
         """Verify ModelConfigBase and ChatService score_threshold bounds are aligned."""

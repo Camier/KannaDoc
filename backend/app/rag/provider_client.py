@@ -110,6 +110,22 @@ class ProviderClient:
                     )
                     return "cliproxyapi"
 
+            # Heuristic fallback: cliproxyapi can proxy many OpenAI-compatible model ids
+            # beyond the static providers.yaml list. Keep this gated on CLIPROXYAPI_BASE_URL
+            # so we don't "detect" an unconfigured provider.
+            if "gpt-oss" not in model_lower:
+                if (
+                    model_lower.startswith("gpt-")
+                    or model_lower.startswith("o1")
+                    or model_lower.startswith("o3")
+                    or "claude" in model_lower
+                    or "gemini" in model_lower
+                ):
+                    logger.debug(
+                        f"Provider detected: cliproxyapi for model '{model_name}' (heuristic)"
+                    )
+                    return "cliproxyapi"
+
         # GLM models -> zai (Z.ai). This repo treats Z.ai as SSOT for GLM endpoints.
         if any(x in model_lower for x in ["glm-4", "glm-4.5", "glm-4.6", "glm-4.7"]):
             if os.getenv("ZAI_API_KEY"):

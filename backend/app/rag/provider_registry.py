@@ -158,6 +158,21 @@ class ProviderRegistry:
         cls.load()  # Ensure providers are loaded
         model_lower = model_name.lower()
 
+        # 0. OpenAI-family models are typically routed via CLIProxyAPI in this stack.
+        # This detection is intentionally config-independent for timeout selection.
+        #
+        # Do NOT treat "gpt-oss" as OpenAI; those are routed to Ollama Cloud when configured.
+        if "gpt-oss" not in model_lower:
+            if (
+                model_lower.startswith("gpt-")
+                or model_lower.startswith("o1")
+                or model_lower.startswith("o3")
+                or "claude" in model_lower
+                or "gemini" in model_lower
+            ):
+                if "cliproxyapi" in cls._providers:
+                    return "cliproxyapi"
+
         # 1. CLIProxyAPI precedence
         if os.getenv("CLIPROXYAPI_BASE_URL"):
             cliproxyapi_config = cls._providers.get("cliproxyapi")
