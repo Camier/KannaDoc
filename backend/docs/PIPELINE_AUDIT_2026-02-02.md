@@ -110,13 +110,19 @@ For existing collections, see `backend/scripts/milvus_ensure_scalar_indexes.py` 
 | Aspect | Evidence |
 |--------|----------|
 | **Method** | MaxSim reranking on ColQwen patch vectors (ColPali-style) |
-| **Endpoint** | `POST /api/v1/kb/search` |
+| **Endpoint (chat RAG)** | `POST /api/v1/sse/chat` |
+| **Endpoint (debug, no LLM)** | `POST /api/v1/kb/knowledge-base/{kb_id}/search-preview` |
 | **Implementation** | `app/db/milvus.py:MilvusManager.search()` |
 | **Retry logic** | Tenacity (3 attempts, 2-30s backoff) |
 | **Modes** | `dense` / `sparse_then_rerank` / `dual_then_rerank` |
 | **Sparse recall** | Uses the page-level collection `*_pages_sparse` then reranks on `colpali_kanna_128` |
 | **Diversification** | Candidates are diversified by `file_id` before exact rerank |
 | **Status** | ENABLED (thesis defaults) |
+
+### Retrieval Defaults (Thesis)
+
+- `top_K`: If the runtime mode is `sparse_then_rerank` or `dual_then_rerank`, `top_K` is normalized with a minimum of `RAG_SEARCH_LIMIT_MIN` (default: 50) to prevent accidental “2 sources only” caps from legacy UI defaults.
+- `score_threshold`: `-1` is treated as “use environment default”; in thesis this defaults to `RAG_DEFAULT_SCORE_THRESHOLD=0.0` (no filtering). Set an explicit positive threshold only when you want to aggressively prune candidates.
 
 ## Link 8: Evaluation System
 
