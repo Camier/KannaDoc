@@ -851,10 +851,53 @@ def print_per_question(results: List[EvalResult]):
                 )
 
 
-def save_results(results: List[EvalResult], summary: MetricsSummary, output_path: str):
-    """Save results to JSON file."""
+def save_results(
+    results: List[EvalResult],
+    summary: MetricsSummary,
+    output_path: str,
+    thresholds: Optional[Dict[str, float]] = None,
+):
+    """Save results to JSON file with threshold evaluation."""
+    if thresholds is None:
+        thresholds = DEFAULT_THRESHOLDS
+
+    violations = []
+    if summary.recall_at_k < thresholds["recall_at_k"]:
+        violations.append(
+            {
+                "metric": "recall_at_k",
+                "actual": summary.recall_at_k,
+                "threshold": thresholds["recall_at_k"],
+            }
+        )
+    if summary.mrr < thresholds["mrr"]:
+        violations.append(
+            {"metric": "mrr", "actual": summary.mrr, "threshold": thresholds["mrr"]}
+        )
+    if summary.p95_latency_ms > thresholds["p95_latency_ms"]:
+        violations.append(
+            {
+                "metric": "p95_latency_ms",
+                "actual": summary.p95_latency_ms,
+                "threshold": thresholds["p95_latency_ms"],
+            }
+        )
+    if summary.error_rate > thresholds["error_rate"]:
+        violations.append(
+            {
+                "metric": "error_rate",
+                "actual": summary.error_rate,
+                "threshold": thresholds["error_rate"],
+            }
+        )
+
+    passed = len(violations) == 0
+
     output = {
         "timestamp": datetime.now().isoformat(),
+        "passed": passed,
+        "thresholds": thresholds,
+        "violations": violations,
         "summary": {
             "total_questions": summary.total_questions,
             "recall_at_k": summary.recall_at_k,
@@ -882,6 +925,7 @@ def save_results(results: List[EvalResult], summary: MetricsSummary, output_path
         json.dump(output, f, indent=2)
 
     print(f"\nResults saved to: {output_path}")
+    return passed
 
 
 # ============================================================================
@@ -915,6 +959,23 @@ def main():
         "--ground-truth",
         type=str,
         help="Path to ground truth JSON mapping question_id -> expected_docs",
+    )
+    parser.add_argument(
+        "--benchmark",
+        action="store_true",
+        help="Run in benchmark mode with multiple iterations",
+    )
+    parser.add_argument(
+        "--iterations",
+        type=int,
+        default=100,
+        help="Number of benchmark iterations (default: 100)",
+    )
+    parser.add_argument(
+        "--warmup",
+        type=int,
+        default=10,
+        help="Warmup iterations before timing (default: 10)",
     )
 
     args = parser.parse_args()
@@ -965,11 +1026,10 @@ def main():
     print_scorecard(summary, thresholds)
     print_per_question(results)
 
-    # Save results
-    save_results(results, summary, args.output)
+    # Save results with threshold evaluation
+    passed = save_results(results, summary, args.output, thresholds)
 
     # Overall verdict
-    passed = summary.recall_at_k >= thresholds["recall_at_k"]
     print(f"\n{'=' * 60}")
     print(
         f"OVERALL: {'GO - Thresholds met' if passed else 'NO-GO - Thresholds not met'}"

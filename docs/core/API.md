@@ -12,10 +12,11 @@
 2. [Chat & Conversations](#chat--conversations)
 3. [File Management](#file-management)
 4. [Workflows](#workflows)
-5. [Model Configuration](#model-configuration)
-6. [Chatflows](#chatflows)
-7. [Server-Sent Events (SSE)](#server-sent-events-sse)
-8. [Health Check](#health-check)
+5. [Evaluation API](#evaluation-api)
+6. [Model Configuration](#model-configuration)
+7. [Chatflows](#chatflows)
+8. [Server-Sent Events (SSE)](#server-sent-events-sse)
+9. [Health Check](#health-check)
 
 ---
 
@@ -736,6 +737,198 @@ data: {"status":"completed","result":{"summary":"Done"}}
 {
   "status": "success",
   "message": "Task cancelled"
+}
+```
+
+---
+
+---
+
+## Evaluation API
+
+Retrieval quality assessment and dataset management for RAG benchmarking.
+
+### Create Evaluation Dataset
+
+**Endpoint**: `POST /eval/datasets`
+
+**Description**: Create a new evaluation dataset by generating queries from a knowledge base.
+
+**Request**:
+```json
+{
+  "name": "eval-v1",
+  "kb_id": "kdb_123",
+  "query_count": 50,
+  "label_with_llm": true
+}
+```
+
+**Response** (201 Created):
+```json
+{
+  "id": "ds_123",
+  "name": "eval-v1",
+  "kb_id": "kdb_123",
+  "query_count": 50,
+  "created_at": "2026-02-06T12:00:00Z"
+}
+```
+
+---
+
+### List Datasets
+
+**Endpoint**: `GET /eval/datasets`
+
+**Description**: List all evaluation datasets for a specific knowledge base.
+
+**Parameters**:
+- `kb_id` (string, query): Knowledge base ID
+
+**Response** (200 OK):
+```json
+{
+  "datasets": [
+    {
+      "id": "ds_123",
+      "name": "eval-v1",
+      "kb_id": "kdb_123",
+      "query_count": 50,
+      "created_at": "2026-02-06T12:00:00Z"
+    }
+  ]
+}
+```
+
+---
+
+### Get Dataset Details
+
+**Endpoint**: `GET /eval/datasets/{dataset_id}`
+
+**Description**: Retrieve full details of a dataset, including all queries and ground truth.
+
+**Parameters**:
+- `dataset_id` (string, path): Dataset unique identifier
+
+**Response** (200 OK):
+```json
+{
+  "id": "ds_123",
+  "name": "eval-v1",
+  "kb_id": "kdb_123",
+  "query_count": 1,
+  "created_at": "2026-02-06T12:00:00Z",
+  "queries": [
+    {
+      "query_text": "What is the primary effect of Quercetin?",
+      "relevant_docs": [{"doc_id": "doc_456", "score": 1.0}]
+    }
+  ]
+}
+```
+
+---
+
+### Execute Evaluation Run
+
+**Endpoint**: `POST /eval/run`
+
+**Description**: Execute an evaluation benchmark against a dataset.
+
+**Request**:
+```json
+{
+  "dataset_id": "ds_123",
+  "config": {
+    "top_k": 10,
+    "score_threshold": 0.5
+  }
+}
+```
+
+**Response** (200 OK):
+```json
+{
+  "id": "run_789",
+  "dataset_id": "ds_123",
+  "config": {"top_k": 10},
+  "metrics": {
+    "queries_total": 50,
+    "queries_processed": 50,
+    "queries_failed": 0,
+    "queries_with_labels": 50,
+    "mrr": 0.85,
+    "ndcg": 0.78,
+    "precision": 0.65,
+    "recall": 0.92
+  },
+  "created_at": "2026-02-06T12:05:00Z"
+}
+```
+
+---
+
+### Get Run Results
+
+**Endpoint**: `GET /eval/runs/{run_id}`
+
+**Description**: Retrieve detailed metrics and per-query results of an evaluation run.
+
+**Parameters**:
+- `run_id` (string, path): Evaluation run ID
+
+**Response** (200 OK):
+```json
+{
+  "id": "run_789",
+  "dataset_id": "ds_123",
+  "config": {"top_k": 10},
+  "metrics": {
+    "mrr": 0.85,
+    "ndcg": 0.78,
+    "precision": 0.65,
+    "recall": 0.92,
+    "queries_total": 50,
+    "queries_processed": 50,
+    "queries_failed": 0,
+    "queries_with_labels": 50
+  },
+  "results": [
+    {
+      "query": "What is the primary effect of Quercetin?",
+      "metrics": {"mrr": 1.0, "recall": 1.0},
+      "retrieved_docs": [...]
+    }
+  ],
+  "created_at": "2026-02-06T12:05:00Z"
+}
+```
+
+---
+
+### List Evaluation Runs
+
+**Endpoint**: `GET /eval/runs`
+
+**Description**: List all evaluation runs for a specific dataset.
+
+**Parameters**:
+- `dataset_id` (string, query): Dataset ID
+
+**Response** (200 OK):
+```json
+{
+  "runs": [
+    {
+      "id": "run_789",
+      "dataset_id": "ds_123",
+      "config": {"top_k": 10},
+      "metrics": {...},
+      "created_at": "2026-02-06T12:05:00Z"
+    }
+  ]
 }
 ```
 

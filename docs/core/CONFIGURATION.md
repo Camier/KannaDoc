@@ -394,6 +394,41 @@ cp .env.example .env
 
 ---
 
+### Hybrid Search Configuration
+
+**Purpose**: Combines dense (ColQwen) and sparse (BGE-M3) retrieval for improved precision
+**Added**: v2.1.0 (2026-02-06)
+**Note**: Sparse embeddings require BGE-M3 to be running on the `model-server`
+
+| Variable | Type | Default | Valid Values | Description |
+|----------|------|---------|--------------|-------------|
+| `RAG_HYBRID_ENABLED` | Boolean | `false` | `true`, `false` | Enable/disable hybrid retrieval mode |
+| `RAG_HYBRID_RANKER` | Enum | `rrf` | `rrf`, `weighted` | Strategy to merge dense and sparse results |
+| `RAG_HYBRID_RRF_K` | Integer | `60` | `1-100` | RRF smoothing constant (lower = emphasize top ranks) |
+| `RAG_HYBRID_DENSE_WEIGHT` | Float | `0.7` | `0.0-1.0` | Weight for dense scores (used if ranker=weighted) |
+| `RAG_HYBRID_SPARSE_WEIGHT` | Float | `0.3` | `0.0-1.0` | Weight for sparse scores (used if ranker=weighted) |
+
+#### Usage Examples
+
+**Reciprocal Rank Fusion (RRF)**
+Recommended for general use as it is score-invariant and doesn't require weight tuning.
+```bash
+RAG_HYBRID_ENABLED=true
+RAG_HYBRID_RANKER=rrf
+RAG_HYBRID_RRF_K=60
+```
+
+**Weighted Scoring**
+Useful when one retrieval method is significantly more reliable than the other. Weights should ideally sum to 1.0.
+```bash
+RAG_HYBRID_ENABLED=true
+RAG_HYBRID_RANKER=weighted
+RAG_HYBRID_DENSE_WEIGHT=0.8
+RAG_HYBRID_SPARSE_WEIGHT=0.2
+```
+
+---
+
 ### LLM Configuration
 
 LLM provider definitions are stored in `backend/app/core/llm/providers.yaml`.

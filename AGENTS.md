@@ -7,9 +7,9 @@ Academic research fork for thesis work on retrieval evaluation and visual RAG op
 | Aspect | Details |
 |--------|---------|
 | **Purpose** | Ethnopharmacology RAG system with evaluation framework |
-| **Corpus** | ~129 PDFs (dynamic) with legacy-migrated V2 entities (re-extraction recommended) |
-| **Status** | DataLab fully merged; docs extracted and indexed |
-| **Stack** | FastAPI + Milvus + Zhipu GLM-4.7 (Neo4j disabled) |
+| **Corpus** | 129 PDFs with V3.1 entities (128 with relationships, 53,800 total) |
+| **Status** | DataLab fully merged; V3.1 extraction complete |
+| **Stack** | FastAPI + Milvus + DeepSeek (Neo4j disabled) |
 | **Upstream** | [liweiphys/layra](https://github.com/liweiphys/layra) |
 
 This system is optimized for high-precision retrieval from academic PDFs, specifically focusing on ethnobotanical and pharmacological data. It consolidates the original LAYRA RAG framework with the DataLab extraction pipeline, providing a unified end-to-end research platform for "PDF-to-Knowledge" transformation. The architecture is designed to support academic research in the field of ethnopharmacology by providing a robust retrieval and evaluation harness for specialized document sets.

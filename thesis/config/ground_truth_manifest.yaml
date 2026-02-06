@@ -1,0 +1,35 @@
+# Ground Truth Manifest
+# Versioned ground truth for thesis reproducibility
+
+version: "1.0.0"
+created: "2026-02-06"
+updated: "2026-02-06"
+
+dataset:
+  file: "dataset_dev.jsonl"
+  queries: 20
+  types:
+    simple_factual: 10
+    reasoning: 5
+    multi_hop: 5
+
+ground_truth:
+  file: "ground_truth.json"
+  format: "question_id -> [doc_ids]"
+  coverage: "20 questions mapped to relevant documents"
+
+corpus:
+  manifest: "../../../data/corpus_manifest.jsonl"
+  documents: 129
+  extractions: 129
+  relationships: 53800
+
+thresholds:
+  file: "thresholds.yaml"
+  stages: ["development", "production"]
+  metrics: ["recall_at_k", "mrr", "p95_latency_ms", "error_rate"]
+
+notes: |
+  Initial thesis evaluation dataset created for ethnopharmacology RAG system.
+  Ground truth mappings verified against V3.1 extracted corpus.
+  Dataset covers Sceletium tortuosum pharmacology, traditional uses, and clinical evidence.

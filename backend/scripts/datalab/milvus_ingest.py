@@ -349,7 +349,7 @@ def create_collection_if_not_exists(
             "metric_type": metric_type,
             "params": {
                 "M": 16,  # HNSW: number of bidirectional links
-                "ef_construction": 200,  # HNSW: depth during construction
+                "efConstruction": 200,  # HNSW: depth during construction
             },
         }
 
@@ -406,7 +406,7 @@ def create_v2_collection_if_not_exists(
             "metric_type": metric_type,
             "params": {
                 "M": 16,  # HNSW: number of bidirectional links
-                "ef_construction": 200,  # HNSW: depth during construction
+                "efConstruction": 200,  # HNSW: depth during construction
             },
         }
 
