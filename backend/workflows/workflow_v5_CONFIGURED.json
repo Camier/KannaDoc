@@ -1,0 +1,800 @@
+{
+  "workflow_id": "thesis_8b3dc337-2100-4fe9-bdaf-ba12fac6257c",
+  "workflow_name": "Thesis Blueprint (Minutieux V2.1 FULL)",
+  "workflow_config": {},
+  "username": "thesis",
+  "nodes": [
+    {
+      "id": "n0",
+      "type": "start",
+      "data": {
+        "name": "Start"
+      },
+      "position": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": "n1",
+      "type": "vlm",
+      "data": {
+        "name": "Requirements",
+        "isChatflowInput": false,
+        "useChatHistory": false,
+        "isChatflowOutput": false,
+        "chatflowOutputVariable": "requirements",
+        "mcpUse": {},
+        "vlmInput": "Build requirements for topic: {{thesis_topic}}",
+        "prompt": "Tu es un directeur de thèse et un architecte de manuscrits académiques. Ta mission : produire un cahier des charges opérationnel (JSON) pour construire un plan de thèse très détaillé. Tu ne dois PAS inventer de contraintes institutionnelles : si non fourni, utilise des hypothèses génériques et marque-les comme assumed. Tu dois renvoyer UNIQUEMENT du JSON valide.\n\nINPUT VARIABLES:\nSujet de thèse : {{thesis_topic}}\nDiplôme : {{thesis_degree}}\nFormat : {{thesis_format}}\nLangue : {{thesis_language}}\nDiscipline (indice) : {{discipline_hint}}\nNiveau de granularité attendu : niveau {{granularity_target}}\nLongueur cible : {{target_length_pages}} pages\nStyle de citation : {{citation_style}}\n\nProduis un JSON requirements contenant:\n- research_area\n- provisional_research_question\n- thesis_type (empirical/theoretical/mixed/review-based/unknown)\n- scope: in_scope[], out_of_scope[]\n- mandatory_components[]\n- structure_preferences{}\n- quality_gates{min_sources_per_subsection={{min_sources_per_subsection}}, min_sources_per_chapter={{min_sources_per_chapter}}, granularity_target={{granularity_target}}, evidence_policy:'no-claim-without-evidence'}\n- assumptions[]\n- risks[]\n- output_contract{}\n\nContraintes:\n- JSON strict, pas de texte autour\n- Toutes les clés doivent exister\n- Si incertain: 'unknown' + ajouter une assumption",
+        "modelConfig": {
+          "model_id": "thesis_glm",
+          "model_name": "glm-4.7",
+          "model_url": "https://api.z.ai/api/paas/v4",
+          "api_key": "7c9a64caea6848d9b2a78cb452b8c564.eTEJlpK6BaCbFCfa",
+          "base_used": [
+            {
+              "name": "Thesis Corpus",
+              "baseId": "thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1"
+            }
+          ],
+          "system_prompt": "You are an expert academic researcher.",
+          "temperature": 0.5,
+          "max_length": 4096,
+          "top_P": 1,
+          "top_K": 10,
+          "score_threshold": 10
+        }
+      },
+      "position": {
+        "x": 300,
+        "y": 0
+      }
+    },
+    {
+      "id": "n2",
+      "type": "vlm",
+      "data": {
+        "name": "Seed Axes",
+        "isChatflowInput": false,
+        "useChatHistory": false,
+        "isChatflowOutput": false,
+        "chatflowOutputVariable": "seed_axes_json",
+        "mcpUse": {},
+        "vlmInput": "Generate seed axes for requirements: {{requirements}}",
+        "prompt": "Tu es un analyste bibliographique. Tu dois proposer des axes (thèmes) et des requêtes de recherche pour cartographier une base de 129 PDF scientifiques. Tu renvoies UNIQUEMENT du JSON valide.\n\nINPUT VARIABLES:\nRequirements JSON: {{requirements}}\n\nGénère un JSON avec:\n- seed_axes: 10 à 20 axes {axis_id,label,description,synonyms[],signals_to_look_for[],suggested_queries[3..6]}\n- mapping_strategy{pass_1_goal, pass_2_goal, stop_condition}\n\nContraintes:\n- axes non redondants\n- requêtes variées (FR/EN si utile)\n- JSON strict",
+        "modelConfig": {
+          "model_id": "thesis_glm",
+          "model_name": "glm-4.7",
+          "model_url": "https://api.z.ai/api/paas/v4",
+          "api_key": "7c9a64caea6848d9b2a78cb452b8c564.eTEJlpK6BaCbFCfa",
+          "base_used": [
+            {
+              "name": "Thesis Corpus",
+              "baseId": "thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1"
+            }
+          ],
+          "system_prompt": "You are an expert academic researcher.",
+          "temperature": 0.5,
+          "max_length": 4096,
+          "top_P": 1,
+          "top_K": 10,
+          "score_threshold": 10
+        }
+      },
+      "position": {
+        "x": 600,
+        "y": 0
+      }
+    },
+    {
+      "id": "n3",
+      "type": "code",
+      "data": {
+        "name": "Parse Seeds",
+        "code": "# Code Node: Parse Seed Axes (Layra Protocol)\ndef main(inputs):\n    import json\n    raw_data = inputs.get(\"seed_axes_json\", \"{}\")\n    \n    # Layra variables are usually string-wrapped python objects\n    if isinstance(raw_data, str):\n        try:\n            # Try to strip markdown and load\n            clean = raw_data\n            if \"```json\" in raw_data:\n                clean = raw_data.split(\"```json\")[1].split(\"```\")[0]\n            data = json.loads(clean)\n        except:\n            data = {}\n    else:\n        data = raw_data\n\n    axes = data.get(\"seed_axes\", [])\n    if not axes and \"axes\" in data:\n        axes = data[\"axes\"]\n        \n    print(\"####Global variable updated####\")\n    print(f\"seed_axes = {json.dumps(axes)}\")\n    print(f\"axes_count = {len(axes)}\")\n    print(f\"loop_idx = 0\")"
+      },
+      "position": {
+        "x": 900,
+        "y": 0
+      }
+    },
+    {
+      "id": "n4_init",
+      "type": "code",
+      "data": {
+        "name": "Init Loop 1",
+        "code": "# Code Node: Init Loop Index (Layra Protocol)\ndef main(inputs):\n    print(\"####Global variable updated####\")\n    print(\"loop_idx = 0\")\n    print(\"needs_refinement = True\")\n    print(\"refine_iter = 0\")\n    print(\"chapter_idx = 0\")\n    print(\"subsection_idx = 0\")"
+      },
+      "position": {
+        "x": 1200,
+        "y": 0
+      }
+    },
+    {
+      "id": "n4_loop",
+      "type": "loop",
+      "data": {
+        "name": "KB Loop",
+        "loopType": "condition",
+        "condition": "loop_idx < axes_count"
+      },
+      "position": {
+        "x": 1500,
+        "y": 0
+      }
+    },
+    {
+      "id": "n4_get",
+      "type": "code",
+      "data": {
+        "name": "Get Axis",
+        "code": "# Code Node: Get Axis By Index (Layra Protocol)\ndef main(inputs):\n    import json\n    from ast import literal_eval as parse_val\n    # Variables in Layra are often strings that need eval\n    def get_val(key, default):\n        v = inputs.get(key, default)\n        if isinstance(v, str) and v != \"\":\n            try: return parse_val(v)\n            except: return v\n        return v\n\n    idx = get_val(\"loop_idx\", 0)\n    axes = get_val(\"seed_axes\", [])\n    \n    print(\"####Global variable updated####\")\n    if idx < len(axes):\n        axis = axes[idx]\n        # Must expose 'axis' for prompt {{axis}}\n        val = json.dumps(axis)\n        print(f\"axis = {val}\")\n    else:\n        print(\"axis = ''\")"
+      },
+      "position": {
+        "x": 1500,
+        "y": 300
+      }
+    },
+    {
+      "id": "n4_rag",
+      "type": "vlm",
+      "data": {
+        "name": "Extract",
+        "isChatflowInput": false,
+        "useChatHistory": false,
+        "isChatflowOutput": false,
+        "chatflowOutputVariable": "current_axis_result",
+        "mcpUse": {},
+        "vlmInput": "Extract from KB for axis: {{axis}}",
+        "prompt": "Tu es un extracteur bibliographique. Tu dois utiliser UNIQUEMENT le contexte récupéré depuis la Knowledge Base. Tu renvoies UNIQUEMENT du JSON valide. Si l’information n’est pas dans le contexte : 'unknown'.\n\nINPUT VARIABLES:\nAxe: {{axis}}\n\nÀ partir du CONTEXTE KB fourni (RAG), renvoie:\n{\n  axis_id,\n  themes_found:[{name,rationale,signals[]}],\n  concepts_found:[{name,definition_hint,notes}],\n  methods_found:[{name,how_used,notes}],\n  datasets_found:[{name,what_it_is,notes}],\n  debates_found:[{topic,positions[],notes}],\n  candidate_sources:[{doc_ref,year,why_relevant,useful_for[],}]\n}\n\nContraintes:\n- si pas d’identifiant exact: doc_ref='unknown'\n- ne fabrique pas de références\n- JSON strict",
+        "modelConfig": {
+          "model_id": "thesis_glm_flash",
+          "model_name": "glm-4.7-flash",
+          "model_url": "https://api.z.ai/api/paas/v4",
+          "api_key": "7c9a64caea6848d9b2a78cb452b8c564.eTEJlpK6BaCbFCfa",
+          "base_used": [
+            {
+              "name": "Thesis Corpus",
+              "baseId": "thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1"
+            }
+          ],
+          "system_prompt": "You are an expert academic researcher.",
+          "temperature": 0.5,
+          "max_length": 4096,
+          "top_P": 1,
+          "top_K": 10,
+          "score_threshold": 10
+        }
+      },
+      "position": {
+        "x": 1800,
+        "y": 300
+      }
+    },
+    {
+      "id": "n4_acc",
+      "type": "code",
+      "data": {
+        "name": "Accumulate",
+        "code": "# Code Node: Accumulate KB Map (Layra Protocol)\ndef main(inputs):\n    import json\n    def get_val(key, default):\n        v = inputs.get(key, default)\n        if isinstance(v, str) and v != \"\":\n            try: return eval(v)\n            except: return v\n        return v\n\n    kb_map = get_val(\"kb_map\", {\"themes\":[], \"concepts\":[], \"methods\":[], \"datasets\":[], \"debates\":[], \"sources\":[]})\n    current = get_val(\"current_axis_result\", {})\n    \n    if current and isinstance(current, dict):\n        for key in [\"themes_found\", \"concepts_found\", \"methods_found\", \"datasets_found\", \"debates_found\", \"candidate_sources\"]:\n            target = key.replace(\"_found\", \"\").replace(\"candidate_\", \"\")\n            if key in current:\n                kb_map[target].extend(current[key])\n                \n    print(\"####Global variable updated####\")\n    print(f\"kb_map = {json.dumps(kb_map)}\")"
+      },
+      "position": {
+        "x": 2100,
+        "y": 300
+      }
+    },
+    {
+      "id": "n4_inc",
+      "type": "code",
+      "data": {
+        "name": "Inc Loop 1",
+        "code": "# Code Node: Inc Loop Index (Layra Protocol)\ndef main(inputs):\n    from ast import literal_eval as parse_val\n    def get_val(key, default):\n        v = inputs.get(key, default)\n        if isinstance(v, str) and v != \"\":\n            try: return parse_val(v)\n            except: return v\n        return v\n\n    idx = get_val(\"loop_idx\", 0)\n    print(\"####Global variable updated####\")\n    print(f\"loop_idx = {idx + 1}\")"
+      },
+      "position": {
+        "x": 2400,
+        "y": 300
+      }
+    },
+    {
+      "id": "n5",
+      "type": "code",
+      "data": {
+        "name": "Normalize KB",
+        "code": "# Code Node: Normalize KB Map (Layra Protocol)\ndef main(inputs):\n    import json\n    def get_val(key, default):\n        v = inputs.get(key, default)\n        if isinstance(v, str) and v != \"\":\n            try: return eval(v)\n            except: return v\n        return v\n\n    kb_map = get_val(\"kb_map\", {})\n    \n    def dedup(lst, key_name):\n        seen = set()\n        out = []\n        for item in lst:\n            val = item.get(key_name, \"\").lower().strip()\n            if val and val not in seen:\n                seen.add(val)\n                out.append(item)\n        return out\n\n    if kb_map:\n        kb_map[\"themes\"] = dedup(kb_map.get(\"themes\", []), \"name\")\n        kb_map[\"concepts\"] = dedup(kb_map.get(\"concepts\", []), \"name\")\n        kb_map[\"methods\"] = dedup(kb_map.get(\"methods\", []), \"name\")\n        kb_map[\"sources\"] = dedup(kb_map.get(\"sources\", []), \"doc_ref\")\n\n    print(\"####Global variable updated####\")\n    print(f\"kb_map = {json.dumps(kb_map)}\")"
+      },
+      "position": {
+        "x": 1800,
+        "y": 0
+      }
+    },
+    {
+      "id": "n6",
+      "type": "vlm",
+      "data": {
+        "name": "Macro Gen",
+        "isChatflowInput": false,
+        "useChatHistory": false,
+        "isChatflowOutput": false,
+        "chatflowOutputVariable": "macro_outline",
+        "mcpUse": {},
+        "vlmInput": "Generate macro outline for mapping: {{kb_map}}",
+        "prompt": "Tu es un architecte de thèse. Tu produis un plan macro (chapitres) qui suit une logique argumentative. Tu renvoies UNIQUEMENT du JSON valide.\n\nINPUT VARIABLES:\nRequirements: {{requirements}}\nCartographie KB: {{kb_map}}\n\nGénère:\n{ chapters:[{chapter_id,title,role_in_argument,goal,expected_length_pages,key_questions[],inputs_needed[],expected_outputs[],depends_on[]}]}\n\nContraintes:\n- standard: inclure intro/related work/cadre/méthode/résultats/discussion/conclusion\n- manuscript: inclure intro générale + chapitres/manuscrits + conclusion générale\n- refléter kb_map (thèmes majeurs)\n- JSON strict",
+        "modelConfig": {
+          "model_id": "thesis_glm",
+          "model_name": "glm-4.7",
+          "model_url": "https://api.z.ai/api/paas/v4",
+          "api_key": "7c9a64caea6848d9b2a78cb452b8c564.eTEJlpK6BaCbFCfa",
+          "base_used": [
+            {
+              "name": "Thesis Corpus",
+              "baseId": "thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1"
+            }
+          ],
+          "system_prompt": "You are an expert academic researcher.",
+          "temperature": 0.5,
+          "max_length": 4096,
+          "top_P": 1,
+          "top_K": 10,
+          "score_threshold": 10
+        }
+      },
+      "position": {
+        "x": 2100,
+        "y": 0
+      }
+    },
+    {
+      "id": "n7",
+      "type": "code",
+      "data": {
+        "name": "Parse Chapters",
+        "code": "# Code Node: Parse Macro Chapters (Layra Protocol)\ndef main(inputs):\n    import json\n    def get_val(key, default):\n        v = inputs.get(key, default)\n        if isinstance(v, str) and v != \"\":\n            try: return eval(v)\n            except: return v\n        return v\n\n    macro = get_val(\"macro_outline\", {})\n    chapters = macro.get(\"chapters\", [])\n    \n    print(\"####Global variable updated####\")\n    print(f\"chapters_list = {json.dumps(chapters)}\")\n    print(f\"chapters_count = {len(chapters)}\")\n    print(f\"chapter_idx = 0\")"
+      },
+      "position": {
+        "x": 2400,
+        "y": 0
+      }
+    },
+    {
+      "id": "n8_loop",
+      "type": "loop",
+      "data": {
+        "name": "Micro Loop",
+        "loopType": "condition",
+        "condition": "chapter_idx < chapters_count"
+      },
+      "position": {
+        "x": 2700,
+        "y": 0
+      }
+    },
+    {
+      "id": "n8_get",
+      "type": "code",
+      "data": {
+        "name": "Get Chap",
+        "code": "# Code Node: Get Chapter By Index (Layra Protocol)\ndef main(inputs):\n    import json\n    from ast import literal_eval as parse_val\n    def get_val(key, default):\n        v = inputs.get(key, default)\n        if isinstance(v, str) and v != \"\":\n            try: return parse_val(v)\n            except: return v\n        return v\n\n    idx = get_val(\"chapter_idx\", 0)\n    lst = get_val(\"chapters_list\", [])\n    \n    print(\"####Global variable updated####\")\n    if idx < len(lst):\n        print(f\"chapter = {json.dumps(lst[idx])}\")\n    else:\n        print(\"chapter = ''\")"
+      },
+      "position": {
+        "x": 2700,
+        "y": 300
+      }
+    },
+    {
+      "id": "n8_gen",
+      "type": "vlm",
+      "data": {
+        "name": "Micro Gen",
+        "isChatflowInput": false,
+        "useChatHistory": false,
+        "isChatflowOutput": false,
+        "chatflowOutputVariable": "micro_chapter",
+        "mcpUse": {},
+        "vlmInput": "Generate micro outline for chapter: {{current_chapter}}",
+        "prompt": "Tu es un directeur de thèse. Tu dois détailler un chapitre en sections et sous-sections (niveau 3). Chaque sous-section doit avoir: objectif, sous-questions, preuves attendues, requêtes KB, critères de réussite. Tu renvoies UNIQUEMENT du JSON valide.\n\nINPUT VARIABLES:\nRequirements: {{requirements}}\nKB map: {{kb_map}}\nChapitre: {{chapter}}\n\nProduis:\n{\n  chapter_id,title,\n  sections:[\n    {section_id,title,objective,\n     subsections:[\n       {subsection_id,title,objective,key_terms[],questions[],expected_evidence_types[],kb_queries[],acceptance_criteria[],min_sources:{{min_sources_per_subsection}},candidate_sources:[]}\n     ]}\n  ]\n}\n\nContraintes:\n- granularité niveau {{granularity_target}} (pas niveau 4 sauf indispensable)\n- titres actionnables\n- JSON strict",
+        "modelConfig": {
+          "model_id": "thesis_glm_flash",
+          "model_name": "glm-4.7-flash",
+          "model_url": "https://api.z.ai/api/paas/v4",
+          "api_key": "7c9a64caea6848d9b2a78cb452b8c564.eTEJlpK6BaCbFCfa",
+          "base_used": [
+            {
+              "name": "Thesis Corpus",
+              "baseId": "thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1"
+            }
+          ],
+          "system_prompt": "You are an expert academic researcher.",
+          "temperature": 0.5,
+          "max_length": 4096,
+          "top_P": 1,
+          "top_K": 10,
+          "score_threshold": 10
+        }
+      },
+      "position": {
+        "x": 3000,
+        "y": 300
+      }
+    },
+    {
+      "id": "n8_app",
+      "type": "code",
+      "data": {
+        "name": "Append",
+        "code": "# Code Node: Append Micro (Layra Protocol)\ndef main(inputs):\n    import json\n    def get_val(key, default):\n        v = inputs.get(key, default)\n        if isinstance(v, str) and v != \"\":\n            try: return eval(v)\n            except: return v\n        return v\n\n    micro = get_val(\"micro_outline\", {\"chapters\": []})\n    new_ch = get_val(\"micro_chapter\", {})\n    \n    if new_ch and isinstance(new_ch, dict):\n        if \"chapter\" in new_ch: new_ch = new_ch[\"chapter\"]\n        micro[\"chapters\"].append(new_ch)\n        \n    print(\"####Global variable updated####\")\n    print(f\"micro_outline = {json.dumps(micro)}\")"
+      },
+      "position": {
+        "x": 3300,
+        "y": 300
+      }
+    },
+    {
+      "id": "n8_inc",
+      "type": "code",
+      "data": {
+        "name": "Inc Loop 2",
+        "code": "# Code Node: Inc Chapter Index (Layra Protocol)\ndef main(inputs):\n    from ast import literal_eval as parse_val\n    def get_val(key, default):\n        v = inputs.get(key, default)\n        if isinstance(v, str) and v != \"\":\n            try: return parse_val(v)\n            except: return v\n        return v\n\n    idx = get_val(\"chapter_idx\", 0)\n    print(\"####Global variable updated####\")\n    print(f\"chapter_idx = {idx + 1}\")"
+      },
+      "position": {
+        "x": 3600,
+        "y": 300
+      }
+    },
+    {
+      "id": "n9",
+      "type": "code",
+      "data": {
+        "name": "Flatten Subs",
+        "code": "# Code Node: Flatten Subsections (Layra Protocol)\ndef main(inputs):\n    import json\n    def get_val(key, default):\n        v = inputs.get(key, default)\n        if isinstance(v, str) and v != \"\":\n            try: return eval(v)\n            except: return v\n        return v\n\n    micro = get_val(\"micro_outline\", {})\n    subs = []\n    for ch in micro.get(\"chapters\", []):\n        for sec in ch.get(\"sections\", []):\n            for s in sec.get(\"subsections\", []):\n                # Ensure subsection has ID\n                s[\"_ch_title\"] = ch.get(\"title\")\n                subs.append(s)\n                \n    print(\"####Global variable updated####\")\n    print(f\"subsections_list = {json.dumps(subs)}\")\n    print(f\"subsections_count = {len(subs)}\")\n    print(f\"subsection_idx = 0\")"
+      },
+      "position": {
+        "x": 3000,
+        "y": 0
+      }
+    },
+    {
+      "id": "n10_loop",
+      "type": "loop",
+      "data": {
+        "name": "Source Loop",
+        "loopType": "condition",
+        "condition": "subsection_idx < subsections_count"
+      },
+      "position": {
+        "x": 3300,
+        "y": 0
+      }
+    },
+    {
+      "id": "n10_get",
+      "type": "code",
+      "data": {
+        "name": "Get Sub",
+        "code": "# Code Node: Get Subsection (Layra Protocol)\ndef main(inputs):\n    import json\n    from ast import literal_eval as parse_val\n    def get_val(key, default):\n        v = inputs.get(key, default)\n        if isinstance(v, str) and v != \"\":\n            try: return parse_val(v)\n            except: return v\n        return v\n\n    idx = get_val(\"subsection_idx\", 0)\n    lst = get_val(\"subsections_list\", [])\n    \n    print(\"####Global variable updated####\")\n    if idx < len(lst):\n        print(f\"subsection = {json.dumps(lst[idx])}\")\n    else:\n        print(\"subsection = ''\")"
+      },
+      "position": {
+        "x": 3300,
+        "y": 300
+      }
+    },
+    {
+      "id": "n10_rag",
+      "type": "vlm",
+      "data": {
+        "name": "Find Sources",
+        "isChatflowInput": false,
+        "useChatHistory": false,
+        "isChatflowOutput": false,
+        "chatflowOutputVariable": "found_sources",
+        "mcpUse": {},
+        "vlmInput": "Retrieve sources for subsection: {{current_subsection}}",
+        "prompt": "Tu es un assistant de recherche. Tu utilises UNIQUEMENT le contexte récupéré depuis la KB. Tu renvoies UNIQUEMENT du JSON valide.\n\nINPUT VARIABLES:\nSous-section: {{subsection}}\n\nUtilise kb_queries pour récupérer du contexte. À partir du CONTEXTE, renvoie:\n{ subsection_id, candidate_sources:[{doc_ref,year,why_relevant,best_for[],confidence:0.0}] }\n\nContraintes:\n- si aucune source claire: candidate_sources=[]\n- ne fabrique pas de références\n- JSON strict",
+        "modelConfig": {
+          "model_id": "thesis_glm_flash",
+          "model_name": "glm-4.7-flash",
+          "model_url": "https://api.z.ai/api/paas/v4",
+          "api_key": "7c9a64caea6848d9b2a78cb452b8c564.eTEJlpK6BaCbFCfa",
+          "base_used": [
+            {
+              "name": "Thesis Corpus",
+              "baseId": "thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1"
+            }
+          ],
+          "system_prompt": "You are an expert academic researcher.",
+          "temperature": 0.5,
+          "max_length": 4096,
+          "top_P": 1,
+          "top_K": 10,
+          "score_threshold": 10
+        }
+      },
+      "position": {
+        "x": 3600,
+        "y": 300
+      }
+    },
+    {
+      "id": "n10_mer",
+      "type": "code",
+      "data": {
+        "name": "Merge",
+        "code": "# Code Node: Merge Sources (Layra Protocol)\ndef main(inputs):\n    import json\n    def get_val(key, default):\n        v = inputs.get(key, default)\n        if isinstance(v, str) and v != \"\":\n            try: return eval(v)\n            except: return v\n        return v\n\n    micro = get_val(\"micro_outline\", {})\n    found = get_val(\"found_sources\", {})\n    \n    sid = found.get(\"subsection_id\")\n    srcs = found.get(\"candidate_sources\", [])\n    \n    if sid:\n        for ch in micro.get(\"chapters\", []):\n            for sec in ch.get(\"sections\", []):\n                for sub in sec.get(\"subsections\", []):\n                    if sub.get(\"subsection_id\") == sid:\n                        sub[\"candidate_sources\"] = srcs\n                        break\n                        \n    print(\"####Global variable updated####\")\n    print(f\"micro_outline = {json.dumps(micro)}\")"
+      },
+      "position": {
+        "x": 3900,
+        "y": 300
+      }
+    },
+    {
+      "id": "n10_inc",
+      "type": "code",
+      "data": {
+        "name": "Inc Loop 3",
+        "code": "# Code Node: Inc Subsection (Layra Protocol)\ndef main(inputs):\n    from ast import literal_eval as parse_val\n    def get_val(key, default):\n        v = inputs.get(key, default)\n        if isinstance(v, str) and v != \"\":\n            try: return parse_val(v)\n            except: return v\n        return v\n\n    idx = get_val(\"subsection_idx\", 0)\n    print(\"####Global variable updated####\")\n    print(f\"subsection_idx = {idx + 1}\")"
+      },
+      "position": {
+        "x": 4200,
+        "y": 300
+      }
+    },
+    {
+      "id": "n10_exit",
+      "type": "code",
+      "data": {
+        "name": "Sources Done",
+        "code": "return {}"
+      },
+      "position": {
+        "x": 3300,
+        "y": 600
+      }
+    },
+    {
+      "id": "n11",
+      "type": "code",
+      "data": {
+        "name": "Coverage",
+        "code": "# Code Node: Coverage Scoring (Layra Protocol)\ndef main(inputs):\n    import json\n    def get_val(key, default):\n        v = inputs.get(key, default)\n        if isinstance(v, str) and v != \"\":\n            try: return eval(v)\n            except: return v\n        return v\n\n    micro = get_val(\"micro_outline\", {})\n    reqs = get_val(\"requirements\", {})\n    min_src = reqs.get(\"quality_gates\", {}).get(\"min_sources_per_subsection\", 3)\n    \n    gaps = []\n    for ch in micro.get(\"chapters\", []):\n        for sec in ch.get(\"sections\", []):\n            for sub in sec.get(\"subsections\", []):\n                if len(sub.get(\"candidate_sources\", [])) < min_src:\n                    gaps.append(sub.get(\"subsection_id\"))\n                    \n    coverage = {\"gaps\": gaps, \"total_gaps\": len(gaps)}\n    \n    print(\"####Global variable updated####\")\n    print(f\"coverage = {json.dumps(coverage)}\")\n    print(f\"gaps_found = {len(gaps) > 0}\")"
+      },
+      "position": {
+        "x": 3600,
+        "y": 0
+      }
+    },
+    {
+      "id": "n12_gate",
+      "type": "condition",
+      "data": {
+        "name": "Refine Gate",
+        "conditions": {
+          "0": "gaps_found == True",
+          "1": "gaps_found == False"
+        }
+      },
+      "position": {
+        "x": 3900,
+        "y": 0
+      }
+    },
+    {
+      "id": "n13_coh",
+      "type": "vlm",
+      "data": {
+        "name": "Coherence",
+        "isChatflowInput": false,
+        "useChatHistory": false,
+        "isChatflowOutput": false,
+        "chatflowOutputVariable": "patch_actions",
+        "mcpUse": {},
+        "vlmInput": "Analyze coherence for outline: {{micro_outline}}",
+        "prompt": "Tu es un relecteur de plan de thèse. Vérifie cohérence argumentative, progression logique, doublons. Renvoie UNIQUEMENT du JSON d’actions correctrices.\n\nINPUT VARIABLES:\nRequirements: {{requirements}}\nMacro: {{macro_outline}}\nMicro: {{micro_outline}}\nCoverage: {{coverage}}\n\nRenvoie:\n{\n issues:[{severity,type,location,description,recommended_fix}],\n patch_actions:[{action, target_id, details{...}}]\n}\n\nContraintes:\n- améliorer logique + couverture + actionnabilité\n- JSON strict",
+        "modelConfig": {
+          "model_id": "thesis_deepseek_chat",
+          "model_name": "deepseek-chat",
+          "model_url": "https://api.deepseek.com/v1",
+          "api_key": "sk-29537d2ba74445f0894e53e48ca1d9ef",
+          "base_used": [
+            {
+              "name": "Thesis Corpus",
+              "baseId": "thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1"
+            }
+          ],
+          "system_prompt": "You are an expert academic researcher.",
+          "temperature": 0.5,
+          "max_length": 4096,
+          "top_P": 1,
+          "top_K": 10,
+          "score_threshold": 10
+        }
+      },
+      "position": {
+        "x": 4200,
+        "y": 0
+      }
+    },
+    {
+      "id": "n14_pat",
+      "type": "code",
+      "data": {
+        "name": "Patch",
+        "code": "# Code Node: Apply Patch Actions\n# Inputs: micro_outline, patch_actions\n# Output: micro_outline\n\ndef main(inputs):\n    micro = inputs.get(\"micro_outline\", {})\n    actions = inputs.get(\"patch_actions\", {}).get(\"patch_actions\", [])\n    \n    if \"_patch_log\" not in micro:\n        micro[\"_patch_log\"] = []\n        \n    for action_item in actions:\n        action_type = action_item.get(\"action\")\n        target_id = action_item.get(\"target_id\")\n        details = action_item.get(\"details\", {})\n        \n        found = False\n        # Traversal to find target\n        for ch in micro.get(\"chapters\", []):\n            if ch.get(\"chapter_id\") == target_id:\n                found = True\n                if action_type == \"rename\":\n                    ch[\"title\"] = details.get(\"new_title\", ch[\"title\"])\n                elif action_type == \"remove\":\n                    micro[\"chapters\"].remove(ch)\n                    break # Stop iteration on list mod\n            \n            for sec in ch.get(\"sections\", []):\n                if sec.get(\"section_id\") == target_id:\n                    found = True\n                    if action_type == \"rename\":\n                        sec[\"title\"] = details.get(\"new_title\", sec[\"title\"])\n                    elif action_type == \"remove\":\n                        ch[\"sections\"].remove(sec)\n                        break\n                        \n                for sub in sec.get(\"subsections\", []):\n                    if sub.get(\"subsection_id\") == target_id:\n                        found = True\n                        if action_type == \"rename\":\n                            sub[\"title\"] = details.get(\"new_title\", sub[\"title\"])\n                        # Add source/query logic here\n                        \n        micro[\"_patch_log\"].append({\n            \"action\": action_type,\n            \"target\": target_id,\n            \"success\": found\n        })\n        \n    return {\"micro_outline\": micro}"
+      },
+      "position": {
+        "x": 4500,
+        "y": 0
+      }
+    },
+    {
+      "id": "n15_rev",
+      "type": "vlm",
+      "data": {
+        "name": "Human Review",
+        "isChatflowInput": true,
+        "useChatHistory": false,
+        "isChatflowOutput": true,
+        "chatflowOutputVariable": "user_changes",
+        "mcpUse": {},
+        "vlmInput": "",
+        "prompt": "Tu es un assistant de direction de thèse. Présente le plan et demande des modifications sous forme JSON.\n\nINPUT VARIABLES:\nPlan: {{micro_outline}}\nCoverage: {{coverage}}\n\nRenvoie des changements (basé sur l'input utilisateur):\n{changes:[{action,target_id,details{...}}], global_preferences:{tone,emphasis[],must_include_topics[],must_exclude_topics[]}}\n\nSi aucun changement: changes=[]",
+        "modelConfig": {
+          "model_id": "thesis_glm_flash",
+          "model_name": "glm-4.7-flash",
+          "model_url": "https://api.z.ai/api/paas/v4",
+          "api_key": "7c9a64caea6848d9b2a78cb452b8c564.eTEJlpK6BaCbFCfa",
+          "base_used": [
+            {
+              "name": "Thesis Corpus",
+              "baseId": "thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1"
+            }
+          ],
+          "system_prompt": "You are an expert academic researcher.",
+          "temperature": 0.5,
+          "max_length": 4096,
+          "top_P": 1,
+          "top_K": 10,
+          "score_threshold": 10
+        }
+      },
+      "position": {
+        "x": 4800,
+        "y": 0
+      }
+    },
+    {
+      "id": "n16_app",
+      "type": "code",
+      "data": {
+        "name": "Apply User",
+        "code": "# Code Node: Apply User Changes\n# Inputs: micro_outline, user_changes\n# Output: micro_outline\n\ndef main(inputs):\n    micro = inputs.get(\"micro_outline\", {})\n    changes = inputs.get(\"user_changes\", {}).get(\"changes\", [])\n    \n    if \"_user_log\" not in micro:\n        micro[\"_user_log\"] = []\n        \n    for item in changes:\n        # Same logic as patch, simplified for V2\n        micro[\"_user_log\"].append(item)\n        \n    return {\"micro_outline\": micro}"
+      },
+      "position": {
+        "x": 5100,
+        "y": 0
+      }
+    },
+    {
+      "id": "n17_exp",
+      "type": "code",
+      "data": {
+        "name": "Export",
+        "code": "# Code Node: Export TOC (Layra Protocol)\ndef main(inputs):\n    import json\n    def get_val(key, default):\n        v = inputs.get(key, default)\n        if isinstance(v, str) and v != \"\":\n            try: return eval(v)\n            except: return v\n        return v\n\n    micro = get_val(\"micro_outline\", {})\n    \n    md = \"# Thesis Blueprint\\n\\n\"\n    for ch in micro.get(\"chapters\", []):\n        md += f\"## {ch.get('title')}\\n\"\n        for sec in ch.get(\"sections\", []):\n            md += f\"### {sec.get('title')}\\n\"\n            for sub in sec.get(\"subsections\", []):\n                md += f\"#### {sub.get('title')}\\n- {sub.get('objective')}\\n\"\n                \n    exports = {\"toc_md\": md, \"blueprint_json\": json.dumps(micro)}\n    \n    print(\"####Global variable updated####\")\n    print(f\"exports = {json.dumps(exports)}\")"
+      },
+      "position": {
+        "x": 5400,
+        "y": 0
+      }
+    },
+    {
+      "id": "n18_end",
+      "type": "vlm",
+      "data": {
+        "name": "Display",
+        "isChatflowInput": false,
+        "useChatHistory": false,
+        "isChatflowOutput": true,
+        "chatflowOutputVariable": "",
+        "mcpUse": {},
+        "vlmInput": "Export summary",
+        "prompt": "Done.\n{{exports}}",
+        "modelConfig": {
+          "model_name": "glm-4.7-flash",
+          "system_prompt": "Done.\n{{exports}}",
+          "set_chatflow_ai_response": true,
+          "model_id": "thesis_glm_flash",
+          "model_url": "https://api.z.ai/api/paas/v4",
+          "api_key": "7c9a64caea6848d9b2a78cb452b8c564.eTEJlpK6BaCbFCfa"
+        }
+      },
+      "position": {
+        "x": 5700,
+        "y": 0
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "n0",
+      "target": "n1"
+    },
+    {
+      "source": "n1",
+      "target": "n2"
+    },
+    {
+      "source": "n2",
+      "target": "n3"
+    },
+    {
+      "source": "n3",
+      "target": "n4_init"
+    },
+    {
+      "source": "n4_init",
+      "target": "n4_loop"
+    },
+    {
+      "source": "n4_loop",
+      "sourceHandle": "loop_body",
+      "target": "n4_get"
+    },
+    {
+      "source": "n4_get",
+      "target": "n4_rag"
+    },
+    {
+      "source": "n4_rag",
+      "target": "n4_acc"
+    },
+    {
+      "source": "n4_acc",
+      "target": "n4_inc"
+    },
+    {
+      "source": "n4_inc",
+      "sourceHandle": "loop_next",
+      "target": "n4_loop"
+    },
+    {
+      "source": "n4_loop",
+      "target": "n5"
+    },
+    {
+      "source": "n5",
+      "target": "n6"
+    },
+    {
+      "source": "n6",
+      "target": "n7"
+    },
+    {
+      "source": "n7",
+      "target": "n8_loop"
+    },
+    {
+      "source": "n8_loop",
+      "sourceHandle": "loop_body",
+      "target": "n8_get"
+    },
+    {
+      "source": "n8_get",
+      "target": "n8_gen"
+    },
+    {
+      "source": "n8_gen",
+      "target": "n8_app"
+    },
+    {
+      "source": "n8_app",
+      "target": "n8_inc"
+    },
+    {
+      "source": "n8_inc",
+      "sourceHandle": "loop_next",
+      "target": "n8_loop"
+    },
+    {
+      "source": "n8_loop",
+      "target": "n9"
+    },
+    {
+      "source": "n9",
+      "target": "n10_loop"
+    },
+    {
+      "source": "n10_loop",
+      "sourceHandle": "loop_body",
+      "target": "n10_get"
+    },
+    {
+      "source": "n10_get",
+      "target": "n10_rag"
+    },
+    {
+      "source": "n10_rag",
+      "target": "n10_mer"
+    },
+    {
+      "source": "n10_mer",
+      "target": "n10_inc"
+    },
+    {
+      "source": "n10_inc",
+      "sourceHandle": "loop_next",
+      "target": "n10_loop"
+    },
+    {
+      "source": "n10_loop",
+      "target": "n11"
+    },
+    {
+      "source": "n11",
+      "target": "n12_gate"
+    },
+    {
+      "source": "n12_gate",
+      "sourceHandle": "condition-0",
+      "target": "n13_coh"
+    },
+    {
+      "source": "n12_gate",
+      "sourceHandle": "condition-1",
+      "target": "n13_coh"
+    },
+    {
+      "source": "n13_coh",
+      "target": "n14_pat"
+    },
+    {
+      "source": "n14_pat",
+      "target": "n15_rev"
+    },
+    {
+      "source": "n15_rev",
+      "target": "n16_app"
+    },
+    {
+      "source": "n16_app",
+      "target": "n17_exp"
+    },
+    {
+      "source": "n17_exp",
+      "target": "n18_end"
+    }
+  ],
+  "start_node": "n0",
+  "global_variables": {
+    "thesis_topic": "",
+    "thesis_language": "fr",
+    "thesis_degree": "PhD",
+    "thesis_format": "standard",
+    "discipline_hint": "Science",
+    "granularity_target": 3,
+    "target_length_pages": 250,
+    "citation_style": "APA",
+    "min_sources_per_subsection": 3,
+    "min_sources_per_chapter": 12,
+    "max_redundancy_ratio": 0.7,
+    "requirements": {},
+    "seed_axes_json": {},
+    "seed_axes": [],
+    "axes_count": 0,
+    "loop_idx": 0,
+    "chapter_idx": 0,
+    "subsection_idx": 0,
+    "chapters_list": [],
+    "chapters_count": 0,
+    "subsections_list": [],
+    "subsections_count": 0,
+    "kb_map": {},
+    "macro_outline": {},
+    "micro_outline": {},
+    "coverage": {},
+    "patch_actions": {},
+    "user_changes": {},
+    "exports": {},
+    "gaps_found": false
+  },
+  "created_at": "2026-01-24T17:11:32.006000",
+  "last_modify_at": "2026-01-24T17:11:32.006000"
+}
