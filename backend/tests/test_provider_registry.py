@@ -2,7 +2,49 @@
 Tests for ProviderRegistry - unified provider configuration with timeout support.
 """
 
+import importlib.util
+from pathlib import Path
 import pytest
+import sys
+from types import ModuleType
+from unittest.mock import AsyncMock, Mock, patch
+
+if "redis" not in sys.modules:
+    sys.modules.setdefault("redis", Mock())
+    sys.modules.setdefault("redis.asyncio", Mock())
+
+if "botocore" not in sys.modules:
+    mock_botocore_exceptions = Mock()
+    mock_botocore_exceptions.ClientError = Exception
+    sys.modules.setdefault("botocore", Mock())
+    sys.modules.setdefault("botocore.exceptions", mock_botocore_exceptions)
+    sys.modules.setdefault("aioboto3", Mock())
+
+if "fastapi" not in sys.modules:
+    fastapi_module = ModuleType("fastapi")
+
+    class DummyRouter:
+        def get(self, *args, **kwargs):
+            return lambda func: func
+
+        def post(self, *args, **kwargs):
+            return lambda func: func
+
+        def delete(self, *args, **kwargs):
+            return lambda func: func
+
+        def patch(self, *args, **kwargs):
+            return lambda func: func
+
+        def put(self, *args, **kwargs):
+            return lambda func: func
+
+    setattr(fastapi_module, "APIRouter", DummyRouter)
+    setattr(fastapi_module, "Depends", Mock())
+    setattr(fastapi_module, "HTTPException", Exception)
+    setattr(fastapi_module, "Query", lambda *args, **kwargs: None)
+    setattr(fastapi_module, "UploadFile", Mock())
+    sys.modules.setdefault("fastapi", fastapi_module)
 
 from app.rag.provider_registry import (
     ProviderRegistry,
@@ -144,3 +186,108 @@ class TestProviderConfigDataclass:
                 vision=False,
                 models=[],
             )
+
+
+class TestConfigEndpoints:
+    """Tests for config API endpoints."""
+
+    def _load_config_module(self) -> ModuleType:
+        module_name = "config_endpoint_test"
+        if module_name in sys.modules:
+            return sys.modules[module_name]
+
+        mock_repo_manager = Mock()
+        mock_repo_manager.RepositoryManager = Mock()
+        mock_repo_manager.get_repository_manager = Mock()
+        original_repo_manager = sys.modules.get(
+            "app.db.repositories.repository_manager"
+        )
+        sys.modules["app.db.repositories.repository_manager"] = mock_repo_manager
+
+        config_path = (
+            Path(__file__).resolve().parent.parent
+            / "app"
+            / "api"
+            / "endpoints"
+            / "config.py"
+        )
+        spec = importlib.util.spec_from_file_location(module_name, config_path)
+        if not spec or not spec.loader:
+            raise RuntimeError("Failed to load config endpoint module")
+        module = importlib.util.module_from_spec(spec)
+        sys.modules[module_name] = module
+        try:
+            spec.loader.exec_module(module)
+        finally:
+            if original_repo_manager is None:
+                sys.modules.pop("app.db.repositories.repository_manager", None)
+            else:
+                sys.modules["app.db.repositories.repository_manager"] = (
+                    original_repo_manager
+                )
+        return module
+
+    @pytest.mark.asyncio
+    async def test_available_models_cliproxyapi_dynamic(self, monkeypatch):
+        config_endpoint = self._load_config_module()
+
+        monkeypatch.setenv("CLIPROXYAPI_BASE_URL", "https://proxy.example.com/v1")
+        monkeypatch.setenv("CLIPROXYAPI_API_KEY", "test-cliproxy-key")
+
+        mock_response = Mock()
+        mock_response.raise_for_status = Mock()
+        mock_response.json = Mock(return_value={"data": [{"id": "gpt-4o"}]})
+
+        mock_client = AsyncMock()
+        mock_client.get = AsyncMock(return_value=mock_response)
+        mock_client.__aenter__.return_value = mock_client
+
+        with patch.object(
+            config_endpoint.httpx, "AsyncClient", return_value=mock_client
+        ):
+            payload = await config_endpoint.get_available_models()
+
+        providers = {item["provider_id"]: item for item in payload["providers"]}
+        cliproxyapi = providers["cliproxyapi"]
+        assert cliproxyapi["models"] == ["gpt-4o"]
+        assert cliproxyapi["is_configured"] is True
+        assert cliproxyapi["base_url"] == "https://proxy.example.com/v1"
+        assert cliproxyapi["cliproxy_reason"] == "ok"
+
+        # Verify Authorization header is included when CLIPROXYAPI_API_KEY is present
+        mock_client.get.assert_called_with(
+            "https://proxy.example.com/v1/models",
+            headers={"Authorization": "Bearer test-cliproxy-key"},
+        )
+
+    @pytest.mark.asyncio
+    async def test_resolve_provider_unknown(self):
+        config_endpoint = self._load_config_module()
+
+        payload = await config_endpoint.resolve_provider("unknown-model-xyz")
+        assert payload["provider_id"] is None
+        assert payload["reason"] == "unknown_model"
+
+    @pytest.mark.asyncio
+    async def test_resolve_provider_cliproxy_reports_no_models(self, monkeypatch):
+        config_endpoint = self._load_config_module()
+
+        monkeypatch.setenv("CLIPROXYAPI_BASE_URL", "https://proxy.example.com/v1")
+        monkeypatch.setenv("CLIPROXYAPI_API_KEY", "test-cliproxy-key")
+
+        mock_response = Mock()
+        mock_response.raise_for_status = Mock()
+        mock_response.json = Mock(return_value={"data": []})
+
+        mock_client = AsyncMock()
+        mock_client.get = AsyncMock(return_value=mock_response)
+        mock_client.__aenter__.return_value = mock_client
+
+        with patch.object(
+            config_endpoint.httpx, "AsyncClient", return_value=mock_client
+        ):
+            payload = await config_endpoint.resolve_provider("gpt-4o")
+
+        assert payload["provider_id"] == "cliproxyapi"
+        assert payload["reason"] == "cliproxy_no_models"
+        assert payload["cliproxy_reason"] == "cliproxyapi returned no models"

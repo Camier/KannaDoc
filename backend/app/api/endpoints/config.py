@@ -1,5 +1,9 @@
+import os
 import uuid
-from fastapi import APIRouter, Depends, HTTPException
+from typing import List, Tuple, cast
+
+import httpx
+from fastapi import APIRouter, Depends, HTTPException, Query  # type: ignore[reportMissingImports]
 from app.models.model_config import (
     ModelCreate,
     ModelUpdate,
@@ -12,8 +16,43 @@ from app.db.repositories.repository_manager import (
     get_repository_manager,
 )
 from app.rag.provider_client import ProviderClient
+from app.rag.provider_registry import ProviderRegistry
 
 router = APIRouter()
+
+
+async def _fetch_cliproxy_models(base_url: str) -> Tuple[List[str], str, bool]:
+    if not base_url:
+        return [], "CLIPROXYAPI_BASE_URL not set", False
+
+    api_key = os.getenv("CLIPROXYAPI_API_KEY", "")
+    headers = {}
+    if api_key:
+        headers["Authorization"] = f"Bearer {api_key}"
+
+    models_url = f"{base_url.rstrip('/')}/models"
+    try:
+        async with httpx.AsyncClient(timeout=2.0) as client:
+            response = await client.get(models_url, headers=headers)
+            response.raise_for_status()
+            payload = response.json()
+    except httpx.TimeoutException:
+        return [], "cliproxyapi models timeout", False
+    except httpx.HTTPError as exc:
+        return [], f"cliproxyapi models error: {exc.__class__.__name__}", False
+    except (ValueError, TypeError):
+        return [], "cliproxyapi models invalid response", False
+
+    data = payload.get("data", []) if isinstance(payload, dict) else []
+    models = [
+        cast(str, item["id"])
+        for item in data
+        if isinstance(item, dict) and isinstance(item.get("id"), str)
+    ]
+    if not models:
+        return [], "cliproxyapi returned no models", False
+
+    return models, "ok", True
 
 
 @router.get("/cliproxyapi-models")
@@ -21,6 +60,103 @@ async def get_cliproxyapi_models():
     """获取 CLIProxyAPI 默认模型列表 (Public)"""
     models = ProviderClient.get_cliproxyapi_models_with_defaults()
     return models
+
+
+@router.get("/available-models")
+async def get_available_models():
+    """Get provider-backed models with configuration hints."""
+    ProviderRegistry.load()
+    providers = []
+    for provider_id in ProviderRegistry.get_all_providers():
+        config = ProviderRegistry.get_provider_config(provider_id)
+        env_key_name = config.env_key
+        env_key_present = bool(os.getenv(env_key_name)) if env_key_name else False
+        base_url = (
+            os.getenv("CLIPROXYAPI_BASE_URL", "")
+            if provider_id == "cliproxyapi"
+            else config.base_url
+        )
+        models = list(config.models)
+        is_configured = env_key_present
+        model_url_hint = (
+            "leave empty; uses CLIPROXYAPI_BASE_URL"
+            if provider_id == "cliproxyapi"
+            else "leave empty; uses provider base_url"
+        )
+        cliproxy_reason = None
+
+        if provider_id == "cliproxyapi":
+            cliproxy_models, reason, ok = await _fetch_cliproxy_models(base_url)
+            cliproxy_reason = reason
+            if ok:
+                models = cliproxy_models
+            else:
+                models = []
+                is_configured = False
+
+        provider_data = {
+            "provider_id": provider_id,
+            "models": models,
+            "base_url": base_url,
+            "env_key": env_key_name,
+            "requires_env_key": bool(env_key_name),
+            "is_configured": is_configured,
+            "model_url_hint": model_url_hint,
+        }
+        if cliproxy_reason:
+            provider_data["cliproxy_reason"] = cliproxy_reason
+
+        providers.append(provider_data)
+
+    return {"providers": providers}
+
+
+@router.get("/resolve-provider")
+async def resolve_provider(model: str = Query(..., min_length=1)):
+    """Resolve provider details for a given model name."""
+    provider_id = ProviderClient.get_provider_for_model(model)
+    if not provider_id:
+        return {
+            "model": model,
+            "provider_id": None,
+            "base_url": "",
+            "env_key_name": None,
+            "is_env_key_present": False,
+            "reason": "unknown_model",
+        }
+
+    config = ProviderRegistry.get_provider_config(provider_id)
+    env_key_name = config.env_key
+    is_env_key_present = bool(os.getenv(env_key_name)) if env_key_name else False
+    base_url = (
+        os.getenv("CLIPROXYAPI_BASE_URL", "")
+        if provider_id == "cliproxyapi"
+        else config.base_url
+    )
+
+    cliproxy_reason = None
+
+    if not is_env_key_present:
+        reason = "missing_env_key"
+    elif provider_id == "cliproxyapi" and not base_url:
+        reason = "missing_base_url"
+    elif provider_id == "cliproxyapi":
+        _models, cliproxy_reason, ok = await _fetch_cliproxy_models(base_url)
+        reason = "ok" if ok else "cliproxy_no_models"
+    else:
+        reason = "ok"
+
+    payload = {
+        "model": model,
+        "provider_id": provider_id,
+        "base_url": base_url,
+        "env_key_name": env_key_name,
+        "is_env_key_present": is_env_key_present,
+        "reason": reason,
+    }
+    if cliproxy_reason:
+        payload["cliproxy_reason"] = cliproxy_reason
+    return payload
 
 
 @router.post("/", status_code=201)
