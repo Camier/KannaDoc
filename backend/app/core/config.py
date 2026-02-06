@@ -137,6 +137,16 @@ class Settings(BaseSettings):
         description="Hard cap for top_K to prevent runaway retrieval.",
     )
 
+    # score_threshold is applied as a min_score filter on retrieval candidates.
+    # In thesis RAG, we default to "no filter" because MaxSim/sparse scores are typically
+    # already bounded by top_K and diversification.
+    rag_default_score_threshold: float = Field(
+        default=0.0,
+        ge=-1e9,
+        le=1e9,
+        description="Default score_threshold when model_config sets -1 (sentinel).",
+    )
+
     # Diversification: ensure broad queries return multiple distinct documents.
     rag_diverse_file_limit: int = Field(
         default=20,

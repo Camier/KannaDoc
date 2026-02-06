@@ -88,20 +88,37 @@ class ChatService:
     @staticmethod
     def _normalize_top_k(top_k: int) -> int:
         """Normalize top_k parameter."""
+        top_k_cap = int(getattr(settings, "rag_top_k_cap", 120))
+
         if top_k == -1:
             # Thesis default: -1 means "use environment default", not "tiny recall".
-            return int(getattr(settings, "rag_default_top_k", 50))
+            normalized = int(getattr(settings, "rag_default_top_k", 50))
         elif top_k < 1:
-            return 1
-        elif top_k > int(getattr(settings, "rag_top_k_cap", 120)):
-            return int(getattr(settings, "rag_top_k_cap", 120))
-        return top_k
+            normalized = 1
+        elif top_k > top_k_cap:
+            normalized = top_k_cap
+        else:
+            normalized = top_k
+
+        # Thesis sparse/dual modes need enough breadth to diversify across files/pages.
+        retrieval_mode = getattr(settings, "rag_retrieval_mode", "dense")
+        if retrieval_mode == "dense" and getattr(settings, "rag_hybrid_enabled", False):
+            retrieval_mode = "hybrid"
+        if retrieval_mode in ["sparse_then_rerank", "dual_then_rerank"]:
+            min_k = int(getattr(settings, "rag_search_limit_min", 50))
+            if normalized < min_k:
+                normalized = min_k
+
+        if normalized > top_k_cap:
+            normalized = top_k_cap
+        return normalized
 
     @staticmethod
     def _normalize_score_threshold(score_threshold: float) -> float:
         """Normalize score_threshold parameter."""
         if score_threshold == -1:
-            return 10
+            # Thesis default: treat -1 as "no filter" (environment-tunable).
+            return float(getattr(settings, "rag_default_score_threshold", 0.0))
         elif score_threshold < 0:
             return 0
         elif score_threshold > 20:

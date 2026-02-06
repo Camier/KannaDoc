@@ -10,9 +10,8 @@ from app.db.repositories.repository_manager import (
     get_repository_manager,
 )
 from app.db.vector_db import vector_db_client
-from app.rag.get_embedding import get_embeddings_from_httpx
+from app.rag.get_embedding import get_embeddings_from_httpx, get_sparse_embeddings
 from app.core.embeddings import normalize_multivector, downsample_multivector
-from app.rag.hybrid_search import get_sparse_embeddings
 from app.core.config import settings
 from app.core.logging import logger
 from app.utils.ids import to_milvus_collection_name
@@ -116,12 +115,26 @@ async def search_preview(
         retrieval_mode = "hybrid"
 
     # Normalize top_k similarly to chat RAG to avoid confusing preview results.
-    top_k = int(request.top_k or 0)
-    if top_k < 1:
-        top_k = 1
+    # In thesis sparse/dual modes, enforce a minimum to avoid accidental "2 sources only" behavior.
+    top_k_input = int(request.top_k or 0)
     top_k_cap = int(getattr(settings, "rag_top_k_cap", 120))
-    if top_k > top_k_cap:
-        top_k = top_k_cap
+    if top_k_input == -1:
+        normalized_top_k = int(getattr(settings, "rag_default_top_k", 50))
+    elif top_k_input < 1:
+        normalized_top_k = 1
+    elif top_k_input > top_k_cap:
+        normalized_top_k = top_k_cap
+    else:
+        normalized_top_k = top_k_input
+
+    if retrieval_mode in ["sparse_then_rerank", "dual_then_rerank"]:
+        min_k = int(getattr(settings, "rag_search_limit_min", 50))
+        if normalized_top_k < min_k:
+            normalized_top_k = min_k
+
+    if normalized_top_k > top_k_cap:
+        normalized_top_k = top_k_cap
+    top_k = normalized_top_k
 
     try:
         # Ensure collection is loaded

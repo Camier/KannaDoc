@@ -13,8 +13,11 @@ class ModelConfigBase(BaseModel):
     temperature: float = 0.7
     max_length: int = 4096
     top_P: float = 0.9
-    top_K: int = 3
-    score_threshold: int = 10
+    # Thesis-friendly defaults: allow the runtime (settings) to decide sensible
+    # retrieval breadth, instead of accidentally capping recall to a tiny value.
+    top_K: int = -1
+    # -1 sentinel means "use environment default" (typically no filter for thesis).
+    score_threshold: int = -1
 
     @field_validator("model_name")
     @classmethod

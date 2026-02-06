@@ -93,23 +93,45 @@ def _normalize_top_p(top_p: float) -> float:
     return top_p
 
 
-def _normalize_top_k(top_k: int) -> int:
-    """Normalize top_k parameter."""
+def _normalize_top_k(
+    top_k: int,
+    *,
+    retrieval_mode: str = "dense",
+    rag_default_top_k: int = 50,
+    rag_top_k_cap: int = 120,
+    rag_search_limit_min: int = 50,
+    rag_hybrid_enabled: bool = False,
+) -> int:
+    """Normalize top_k parameter (mirrors ChatService behavior).
+
+    Note: In thesis sparse/dual modes, we enforce a minimum to avoid accidental
+    "2 sources only" behavior from legacy UI defaults.
+    """
     if top_k == -1:
-        # Thesis default (see settings.rag_default_top_k)
-        return 50
+        normalized = rag_default_top_k
     elif top_k < 1:
-        return 1
-    # Thesis cap (see settings.rag_top_k_cap)
-    elif top_k > 120:
-        return 120
-    return top_k
+        normalized = 1
+    elif top_k > rag_top_k_cap:
+        normalized = rag_top_k_cap
+    else:
+        normalized = top_k
+
+    if retrieval_mode == "dense" and rag_hybrid_enabled:
+        retrieval_mode = "hybrid"
+    if retrieval_mode in ["sparse_then_rerank", "dual_then_rerank"]:
+        if normalized < rag_search_limit_min:
+            normalized = rag_search_limit_min
+
+    if normalized > rag_top_k_cap:
+        normalized = rag_top_k_cap
+    return normalized
 
 
 def _normalize_score_threshold(score_threshold: float) -> float:
     """Normalize score_threshold parameter."""
     if score_threshold == -1:
-        return 10
+        # Thesis default: treat -1 as "no filter".
+        return 0
     elif score_threshold < 0:
         return 0
     elif score_threshold > 20:
@@ -308,6 +330,10 @@ class TestChatServiceNormalizers:
         assert _normalize_top_k(121) == 120
         assert _normalize_top_k(500) == 120
 
+    def test_normalize_top_k_minimum_for_dual_then_rerank(self):
+        """Verify sparse/dual modes enforce a minimum recall breadth."""
+        assert _normalize_top_k(2, retrieval_mode="dual_then_rerank") == 50
+
 
 class TestChatServiceProviderAwareReasoner:
     """Unit tests for provider-aware DeepSeek reasoner handling."""
@@ -356,9 +382,9 @@ class TestChatServiceProviderAwareReasoner:
         assert optional.get("max_completion_tokens") == 2048
 
     def test_normalize_score_threshold_sentinel_converts_to_default(self):
-        """Verify -1 sentinel value for score_threshold converts to default of 10."""
+        """Verify -1 sentinel value for score_threshold converts to default (no filter)."""
         result = _normalize_score_threshold(-1)
-        assert result == 10, "Sentinel -1 should convert to default 10"
+        assert result == 0, "Sentinel -1 should convert to default 0"
 
     def test_normalize_score_threshold_clamps_low(self):
         """Verify score_threshold below 0 (except -1) is clamped to 0."""
