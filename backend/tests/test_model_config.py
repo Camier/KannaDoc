@@ -70,8 +70,8 @@ def _normalize_temperature(temperature: float) -> float:
     """
     if temperature < 0 and not temperature == -1:
         return 0
-    elif temperature > 1:
-        return 1
+    elif temperature > 2:
+        return 2
     return temperature
 
 
@@ -96,11 +96,13 @@ def _normalize_top_p(top_p: float) -> float:
 def _normalize_top_k(top_k: int) -> int:
     """Normalize top_k parameter."""
     if top_k == -1:
-        return 3
+        # Thesis default (see settings.rag_default_top_k)
+        return 50
     elif top_k < 1:
         return 1
-    elif top_k > 30:
-        return 30
+    # Thesis cap (see settings.rag_top_k_cap)
+    elif top_k > 120:
+        return 120
     return top_k
 
 
@@ -252,15 +254,17 @@ class TestChatServiceNormalizers:
         assert _normalize_temperature(-2) == 0
 
     def test_normalize_temperature_clamps_high(self):
-        """Verify temperature above 1 is clamped to 1."""
-        assert _normalize_temperature(1.5) == 1
-        assert _normalize_temperature(2.0) == 1
+        """Verify temperature above 2 is clamped to 2 (sentinel -1 preserved)."""
+        assert _normalize_temperature(2.1) == 2
+        assert _normalize_temperature(10.0) == 2
 
     def test_normalize_temperature_valid_range(self):
         """Verify valid temperature values are preserved."""
         assert _normalize_temperature(0.5) == 0.5
         assert _normalize_temperature(0) == 0
         assert _normalize_temperature(1) == 1
+        assert _normalize_temperature(1.5) == 1.5
+        assert _normalize_temperature(2.0) == 2.0
 
     def test_normalize_max_length_sentinel_preserved(self):
         """Verify -1 sentinel value is preserved for max_length."""
@@ -290,9 +294,9 @@ class TestChatServiceNormalizers:
         assert _normalize_top_p(1.5) == 1
 
     def test_normalize_top_k_sentinel_converts_to_default(self):
-        """Verify -1 sentinel value for top_k converts to default of 3."""
+        """Verify -1 sentinel value for top_k converts to thesis default (50)."""
         result = _normalize_top_k(-1)
-        assert result == 3, "Sentinel -1 should convert to default 3"
+        assert result == 50, "Sentinel -1 should convert to thesis default 50"
 
     def test_normalize_top_k_clamps_low(self):
         """Verify top_k below 1 (except -1) is clamped to 1."""
@@ -300,8 +304,56 @@ class TestChatServiceNormalizers:
         assert _normalize_top_k(-2) == 1
 
     def test_normalize_top_k_clamps_high(self):
-        """Verify top_k above 30 is clamped to 30."""
-        assert _normalize_top_k(50) == 30
+        """Verify top_k above 120 is clamped to 120."""
+        assert _normalize_top_k(121) == 120
+        assert _normalize_top_k(500) == 120
+
+
+class TestChatServiceProviderAwareReasoner:
+    """Unit tests for provider-aware DeepSeek reasoner handling."""
+
+    def test_deepseek_reasoner_only_for_official_provider(self, clean_env):
+        from app.core.llm.chat_service import ChatService
+
+        assert (
+            ChatService._is_deepseek_reasoner_model("deepseek-reasoner", "deepseek")
+            is True
+        )
+        # Critical: deepseek-r1 served via ollama-cloud must NOT be treated as deepseek-reasoner.
+        assert (
+            ChatService._is_deepseek_reasoner_model("deepseek-r1", "ollama-cloud")
+            is False
+        )
+
+    def test_optional_args_for_ollama_deepseek_r1_keeps_standard_params(self, clean_env):
+        from app.core.llm.chat_service import ChatService
+
+        optional = ChatService._build_optional_openai_args(
+            model_name="deepseek-r1",
+            provider="ollama-cloud",
+            temperature=0.2,
+            max_length=2048,
+            top_p=0.9,
+        )
+        assert optional.get("temperature") == 0.2
+        assert optional.get("top_p") == 0.9
+        assert optional.get("max_tokens") == 2048
+        assert "max_completion_tokens" not in optional
+
+    def test_optional_args_for_deepseek_reasoner_uses_max_completion_tokens(self, clean_env):
+        from app.core.llm.chat_service import ChatService
+
+        optional = ChatService._build_optional_openai_args(
+            model_name="deepseek-reasoner",
+            provider="deepseek",
+            temperature=0.2,
+            max_length=2048,
+            top_p=0.9,
+        )
+        assert "temperature" not in optional
+        assert "top_p" not in optional
+        assert "max_tokens" not in optional
+        assert optional.get("max_completion_tokens") == 2048
 
     def test_normalize_score_threshold_sentinel_converts_to_default(self):
         """Verify -1 sentinel value for score_threshold converts to default of 10."""

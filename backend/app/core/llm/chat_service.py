@@ -62,8 +62,9 @@ class ChatService:
         """
         if temperature < 0 and not temperature == -1:
             return 0
-        elif temperature > 1:
-            return 1
+        # Pydantic validator allows up to 2.0; keep ChatService consistent.
+        elif temperature > 2:
+            return 2
         return temperature
 
     @staticmethod
@@ -106,6 +107,101 @@ class ChatService:
         elif score_threshold > 20:
             return 20
         return score_threshold
+
+    @staticmethod
+    def _is_system_model(model_config: Optional[Dict[str, Any]]) -> bool:
+        model_id = str((model_config or {}).get("model_id") or "")
+        return model_id.startswith("system_")
+
+    @staticmethod
+    def _tuned_generation_defaults(
+        provider: Optional[str],
+        model_name: str,
+    ) -> dict[str, Any]:
+        """Provider-aware defaults for "academic/RAG" chat generation.
+
+        These defaults are ONLY applied for system_* models (see below) when the stored
+        config uses the -1 sentinel (meaning "provider default").
+
+        Goals:
+        - Lower hallucination risk
+        - Stable, sober academic tone
+        - Avoid overspecifying params that some providers might not support
+        """
+        provider_l = (provider or "").strip().lower()
+        model_l = (model_name or "").strip().lower()
+
+        # Conservative defaults; callers decide which fields to apply.
+        # Note: we intentionally do NOT force top_p by default to reduce the chance of
+        # provider incompatibility. Temperature alone typically achieves the main goal.
+        defaults: dict[str, Any] = {
+            "temperature": 0.2,
+            "max_tokens": 4096,
+            "top_p": -1,
+        }
+
+        # Slight tweaks for smaller/faster models: cap output to reduce runaway.
+        if any(x in model_l for x in ["flash", "lite"]):
+            defaults["max_tokens"] = 3072
+
+        # DeepSeek reasoning models are handled separately (no temperature/top_p).
+        if provider_l == "deepseek" and ("reasoner" in model_l):
+            defaults["max_tokens"] = 4096
+
+        return defaults
+
+    @staticmethod
+    def _is_deepseek_reasoner_model(
+        model_name: str,
+        provider: Optional[str],
+    ) -> bool:
+        """DeepSeek reasoner detection must be provider-aware.
+
+        Example bug we avoid:
+        - model_name="deepseek-r1" served via provider="ollama-cloud" should NOT be treated
+          as the official DeepSeek reasoner API.
+        """
+        provider_l = (provider or "").strip().lower()
+        model_l = (model_name or "").strip().lower()
+        if provider_l != "deepseek":
+            return False
+        # Official DeepSeek API uses deepseek-reasoner. Keep matching strict.
+        return model_l == "deepseek-reasoner" or ("deepseek" in model_l and "reasoner" in model_l)
+
+    @staticmethod
+    def _build_optional_openai_args(
+        *,
+        model_name: str,
+        provider: Optional[str],
+        temperature: float,
+        max_length: int,
+        top_p: float,
+    ) -> dict[str, Any]:
+        """Translate normalized config -> OpenAI-compatible request kwargs."""
+        optional_args: dict[str, Any] = {}
+
+        is_deepseek_reasoner = ChatService._is_deepseek_reasoner_model(
+            model_name=model_name,
+            provider=provider,
+        )
+
+        if is_deepseek_reasoner:
+            # DeepSeek reasoning mode: remove unsupported parameters
+            logger.info(
+                f"DeepSeek reasoning model detected ({model_name}). "
+                f"Temperature and top_p are not supported in reasoning mode."
+            )
+            if max_length != -1:
+                optional_args["max_completion_tokens"] = max_length
+            return optional_args
+
+        if temperature != -1:
+            optional_args["temperature"] = temperature
+        if max_length != -1:
+            optional_args["max_tokens"] = max_length
+        if top_p != -1:
+            optional_args["top_p"] = top_p
+        return optional_args
 
     @staticmethod
     @llm_service_circuit
@@ -220,20 +316,36 @@ class ChatService:
         if len(system_prompt) > 1048576:
             system_prompt = system_prompt[0:1048576]
 
-        # Normalize and validate parameters
-        temperature = ChatService._normalize_temperature(
-            model_config.get("temperature", -1)
-            if not is_workflow
-            else model_config["temperature"]
-        )
-        max_length = ChatService._normalize_max_length(
-            model_config.get("max_length", -1)
-            if not is_workflow
-            else model_config["max_length"]
-        )
-        top_P = ChatService._normalize_top_p(
-            model_config.get("top_P", -1) if not is_workflow else model_config["top_P"]
-        )
+        # Normalize parameters (with thesis-specific tuned defaults for system_* models).
+        effective_provider = provider or ProviderClient.get_provider_for_model(model_name)
+        is_system_model = ChatService._is_system_model(model_config)
+
+        if is_workflow:
+            temp_raw = model_config["temperature"]
+            max_len_raw = model_config["max_length"]
+            top_p_raw = model_config["top_P"]
+        else:
+            temp_raw = model_config.get("temperature", -1)
+            max_len_raw = model_config.get("max_length", -1)
+            top_p_raw = model_config.get("top_P", -1)
+
+        if is_system_model:
+            tuned = ChatService._tuned_generation_defaults(
+                provider=effective_provider,
+                model_name=model_name,
+            )
+            if temp_raw == -1:
+                temp_raw = float(tuned.get("temperature", 0.2))
+            if max_len_raw == -1:
+                max_len_raw = int(tuned.get("max_tokens", 4096))
+            # Only apply top_p if we explicitly set it to a non-sentinel value.
+            tuned_top_p = tuned.get("top_p", -1)
+            if top_p_raw == -1 and isinstance(tuned_top_p, (int, float)) and tuned_top_p != -1:
+                top_p_raw = float(tuned_top_p)
+
+        temperature = ChatService._normalize_temperature(float(temp_raw))
+        max_length = ChatService._normalize_max_length(int(max_len_raw))
+        top_P = ChatService._normalize_top_p(float(top_p_raw))
         top_K = ChatService._normalize_top_k(
             model_config.get("top_K", -1) if not is_workflow else model_config["top_K"]
         )
@@ -671,31 +783,13 @@ class ChatService:
             return
 
         # Build API call parameters
-        optional_args = {}
-
-        # Provider-specific parameter handling
-        # DeepSeek reasoning models don't support temperature/top_p
-        is_deepseek_reasoner = "deepseek" in model_name.lower() and (
-            "reasoner" in model_name.lower() or "r1" in model_name.lower()
+        optional_args = ChatService._build_optional_openai_args(
+            model_name=model_name,
+            provider=effective_provider,
+            temperature=temperature,
+            max_length=max_length,
+            top_p=top_P,
         )
-
-        if is_deepseek_reasoner:
-            # DeepSeek reasoning mode: remove unsupported parameters
-            logger.info(
-                f"DeepSeek reasoning model detected ({model_name}). "
-                f"Temperature and top_p are not supported in reasoning mode."
-            )
-            # Use max_completion_tokens instead of max_tokens for reasoning models
-            if max_length != -1:
-                optional_args["max_completion_tokens"] = max_length
-        else:
-            # Standard parameters for non-reasoning models
-            if temperature != -1:
-                optional_args["temperature"] = temperature
-            if max_length != -1:
-                optional_args["max_tokens"] = max_length
-            if top_P != -1:
-                optional_args["top_p"] = top_P
 
         # Detect provider to handle auto-detection cases (where model_url is None)
         detected_provider = ProviderClient.get_provider_for_model(model_name)

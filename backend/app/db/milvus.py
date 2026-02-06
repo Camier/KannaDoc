@@ -212,6 +212,11 @@ class MilvusManager:
             index_name="image_id_index",
             index_type="INVERTED",
         )
+        index_params.add_index(
+            field_name="page_number",
+            index_name="page_number_index",
+            index_type="INVERTED",
+        )
 
         self.client.create_index(
             collection_name=collection_name, index_params=index_params, sync=True
