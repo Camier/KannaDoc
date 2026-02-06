@@ -214,7 +214,7 @@ const WorkflowOutputComponent: React.FC<WorkflowOutputProps> = ({
 
           try {
             const response = await fetch(
-              `${process.env.NEXT_PUBLIC_API_BASE_URL}/sse/task/${user.name}/${taskId}`
+              `${process.env.NEXT_PUBLIC_API_BASE_URL}/sse/task/${taskId}`
             );
 
             if (!response.ok) throw new Error("Request failed");
