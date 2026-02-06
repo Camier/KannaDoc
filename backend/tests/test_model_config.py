@@ -14,6 +14,7 @@ import pytest
 from unittest.mock import patch, AsyncMock, MagicMock, Mock
 import os
 import sys
+from typing import Any, cast, Dict, List
 
 
 # ==============================================================================
@@ -178,6 +179,17 @@ class TestProviderDetection:
             "Current behavior: CLIProxyAPI models match via generic loop even without BASE_URL"
         )
 
+    def test_gpt_oss_prefers_ollama_cloud_over_cliproxy(self, clean_env, monkeypatch):
+        """Verify gpt-oss legacy model routes to Ollama Cloud when key is set."""
+        from app.rag.provider_client import ProviderClient
+
+        monkeypatch.setenv("CLIPROXYAPI_BASE_URL", "https://proxy.example.com/v1")
+        monkeypatch.setenv("CLIPROXYAPI_API_KEY", "test-cliproxy-key-12345")
+        monkeypatch.setenv("OLLAMA_CLOUD_API_KEY", "test-ollama-key-12345")
+
+        result = ProviderClient.get_provider_for_model("gpt-oss-120b-medium")
+        assert result == "ollama-cloud"
+
     def test_ollama_cloud_detection(self, clean_env):
         """Verify ollama-cloud models are detected correctly."""
         from app.rag.provider_client import ProviderClient
@@ -205,6 +217,16 @@ class TestProviderDetection:
 
         result = ProviderClient.get_provider_for_model("DEEPSEEK-CHAT")
         assert result == "deepseek"
+
+
+class TestModelNameMapping:
+    """Tests for legacy model name mapping to API ids."""
+
+    def test_gpt_oss_model_name_mapping(self):
+        from app.rag.provider_client import resolve_api_model_name
+
+        assert resolve_api_model_name("gpt-oss-120b-medium") == "gpt-oss:120b"
+        assert resolve_api_model_name("gpt-oss:120b") == "gpt-oss:120b"
 
 
 # ==============================================================================
@@ -719,3 +741,66 @@ class TestExplicitProviderField:
             "glm-4.7-flash", explicit_provider=None
         )
         assert result == "zai"
+
+
+class TestModelConfigRepositorySanitization:
+    """Tests for system model sanitization in ModelConfigRepository."""
+
+    @pytest.mark.asyncio
+    async def test_system_model_sanitization(self, clean_env, monkeypatch):
+        """Verify system_* models are sanitized when retrieved from DB."""
+        from app.db.repositories.model_config import ModelConfigRepository
+
+        # Mock DB and dependencies
+        mock_db = MagicMock()
+        repo = ModelConfigRepository(mock_db)
+
+        test_username = "testuser"
+        test_system_model = {
+            "model_id": "system_deepseek-chat",
+            "model_name": "deepseek-chat",
+            "model_url": "http://cliproxyapi:8317/v1",
+            "api_key": "stale-key",
+            "provider": None,
+            "base_used": [],
+            "system_prompt": "",
+            "temperature": -1,
+            "max_length": -1,
+            "top_P": -1,
+            "top_K": -1,
+            "score_threshold": -1,
+        }
+
+        mock_user_config = {
+            "username": test_username,
+            "selected_model": "system_deepseek-chat",
+            "models": [test_system_model],
+        }
+
+        # Mock find_one to return our test config
+        mock_db.model_config.find_one = AsyncMock(return_value=mock_user_config)
+
+        # 1. Test get_all_models_config
+        monkeypatch.setenv("DEEPSEEK_API_KEY", "test-key")
+        result = cast(Dict[str, Any], await repo.get_all_models_config(test_username))
+
+        assert result["status"] == "success"
+        # Find the sanitized model in the list
+        models = cast(List[Dict[str, Any]], result["models"])
+        sanitized = next(m for m in models if m["model_id"] == "system_deepseek-chat")
+        assert sanitized["model_url"] == ""
+        assert sanitized["api_key"] is None
+        assert sanitized["provider"] == "deepseek"
+
+        # 2. Test get_selected_model_config
+        result_selected = cast(
+            Dict[str, Any], await repo.get_selected_model_config(test_username)
+        )
+        assert result_selected["status"] == "success"
+        sanitized_selected = cast(
+            Dict[str, Any], result_selected["select_model_config"]
+        )
+        assert sanitized_selected["model_id"] == "system_deepseek-chat"
+        assert sanitized_selected["model_url"] == ""
+        assert sanitized_selected["api_key"] is None
+        assert sanitized_selected["provider"] == "deepseek"

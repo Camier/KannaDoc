@@ -1,9 +1,81 @@
 import os
-from typing import Optional, Dict, Any, List
+import time
+from typing import Optional, Dict, Any, List, cast
+
+import httpx
 from app.core.logging import logger
 from pymongo.errors import DuplicateKeyError
 from .base import BaseRepository
 from app.db.cache import cache_service
+
+
+_CLIPROXY_MODELS_CACHE_TTL_S = 10.0
+_cliproxy_models_cache: List[str] = []
+_cliproxy_models_cache_reason: str = "not_checked"
+_cliproxy_models_cache_at: float = 0.0
+
+
+async def _fetch_cliproxyapi_live_models() -> tuple[List[str], str]:
+    """Fetch live model IDs from CLIProxyAPI (OpenAI-compatible /v1/models).
+
+    This is used to avoid advertising proxied models when CLIProxyAPI is not
+    actually configured (e.g. /v1/models returns empty).
+
+    Returns: (models, reason)
+    - models: list of model ids
+    - reason: short diagnostic string (non-sensitive)
+    """
+
+    global \
+        _cliproxy_models_cache, \
+        _cliproxy_models_cache_at, \
+        _cliproxy_models_cache_reason
+
+    now = time.time()
+    if now - _cliproxy_models_cache_at < _CLIPROXY_MODELS_CACHE_TTL_S:
+        return list(_cliproxy_models_cache), _cliproxy_models_cache_reason
+
+    base_url = os.getenv("CLIPROXYAPI_BASE_URL", "").rstrip("/")
+    if not base_url:
+        _cliproxy_models_cache = []
+        _cliproxy_models_cache_reason = "missing_base_url"
+        _cliproxy_models_cache_at = now
+        return [], _cliproxy_models_cache_reason
+
+    api_key = os.getenv("CLIPROXYAPI_API_KEY", "")
+    headers = {"User-Agent": "layra"}
+    if api_key:
+        headers["Authorization"] = f"Bearer {api_key}"
+
+    models_url = f"{base_url}/models"
+
+    try:
+        async with httpx.AsyncClient(timeout=2.0) as client:
+            resp = await client.get(models_url, headers=headers)
+            resp.raise_for_status()
+            payload = resp.json()
+    except httpx.TimeoutException:
+        models = []
+        reason = "timeout"
+    except httpx.HTTPError as exc:
+        models = []
+        reason = f"http_error:{exc.__class__.__name__}"
+    except (ValueError, TypeError):
+        models = []
+        reason = "invalid_response"
+    else:
+        data = payload.get("data", []) if isinstance(payload, dict) else []
+        models = [
+            str(item.get("id"))
+            for item in data
+            if isinstance(item, dict) and isinstance(item.get("id"), str)
+        ]
+        reason = "ok" if models else "empty"
+
+    _cliproxy_models_cache = list(models)
+    _cliproxy_models_cache_reason = reason
+    _cliproxy_models_cache_at = now
+    return list(models), reason
 
 
 class ModelConfigRepository(BaseRepository):
@@ -92,28 +164,45 @@ class ModelConfigRepository(BaseRepository):
         更新用户选定的模型 (selected_model 字段)
         同时验证目标 model_id 是否存在于该用户的 models 数组中
         """
-        # Check if it's a CLIProxyAPI system model (not stored in DB, but valid)
+        # System models can be selected without being stored in the models array.
         if model_id.startswith("system_"):
-            cliproxyapi_url = os.getenv("CLIPROXYAPI_BASE_URL")
-            if cliproxyapi_url:
-                model_name = model_id[7:]
-                from app.rag.provider_client import ProviderClient
+            model_name = model_id[7:]
+            from app.rag.provider_client import ProviderClient
 
-                cliproxyapi_models = ProviderClient.PROVIDERS.get(
-                    "cliproxyapi", {}
-                ).get("models", [])
-                if model_name in cliproxyapi_models:
-                    result = await self.db.model_config.update_one(
-                        {"username": username}, {"$set": {"selected_model": model_id}}
-                    )
-                    if result.matched_count == 0:
-                        return {"status": "error", "message": "User not found"}
-                    await cache_service.invalidate_model_config(username)
+            provider = ProviderClient.get_provider_for_model(model_name)
+            if not provider:
+                return {
+                    "status": "error",
+                    "message": f"Unknown model: {model_name}",
+                }
+
+            provider_config = ProviderClient.PROVIDERS.get(provider, {})
+            env_key = provider_config.get("env_key", "")
+            if env_key and not os.getenv(env_key):
+                return {
+                    "status": "error",
+                    "message": f"Provider not configured: missing {env_key}",
+                }
+
+            if provider == "cliproxyapi":
+                live_models, reason = await _fetch_cliproxyapi_live_models()
+                if model_name not in live_models:
                     return {
-                        "status": "success",
-                        "username": username,
-                        "selected_model": model_id,
+                        "status": "error",
+                        "message": f"CLIProxyAPI model not available ({reason})",
                     }
+
+            result = await self.db.model_config.update_one(
+                {"username": username}, {"$set": {"selected_model": model_id}}
+            )
+            if result.matched_count == 0:
+                return {"status": "error", "message": "User not found"}
+            await cache_service.invalidate_model_config(username)
+            return {
+                "status": "success",
+                "username": username,
+                "selected_model": model_id,
+            }
 
         # 验证 model_id 是否存在
         model_exists = await self.db.model_config.find_one(
@@ -370,45 +459,69 @@ class ModelConfigRepository(BaseRepository):
             logger.error(f"Upsert system model failed: {str(e)}")
             return {"status": "error", "message": str(e)}
 
+    def _sanitize_system_model(self, model: dict) -> dict:
+        """Sanitize system models coming from MongoDB to ensure they use environment-based routing."""
+        model_id = str(model.get("model_id", ""))
+        if not model_id.startswith("system_"):
+            return model
+
+        model_name = str(model.get("model_name", ""))
+        if not model_name and len(model_id) > 7:
+            model_name = model_id[7:]
+
+        from app.rag.provider_client import ProviderClient
+
+        # System models MUST use env keys and empty model_url for deterministic routing.
+        model["model_url"] = ""
+        model["api_key"] = None
+        model["provider"] = ProviderClient.get_provider_for_model(model_name)
+        return model
+
     async def get_selected_model_config(self, username: str):
         user_config = await self.db.model_config.find_one({"username": username})
         if not user_config:
             return {"status": "error", "message": "User not found"}
 
-        selected_id = user_config.get("selected_model")
+        selected_id = str(user_config.get("selected_model") or "")
         if not selected_id:
             return {"status": "error", "message": "No selected model"}
 
         for model in user_config.get("models", []):
             if model.get("model_id") == selected_id:
-                return {"status": "success", "select_model_config": model}
+                sanitized = self._sanitize_system_model(model)
+                return {"status": "success", "select_model_config": sanitized}
 
+        # System models (not necessarily persisted) can be synthesized.
         if selected_id.startswith("system_"):
-            cliproxyapi_url = os.getenv("CLIPROXYAPI_BASE_URL")
-            if cliproxyapi_url:
-                model_name = selected_id[7:]
-                from app.rag.provider_client import ProviderClient
+            model_name = selected_id[7:]
+            from app.rag.provider_client import ProviderClient
 
-                cliproxyapi_models = ProviderClient.PROVIDERS.get(
-                    "cliproxyapi", {}
-                ).get("models", [])
-                if model_name in cliproxyapi_models:
+            provider = ProviderClient.get_provider_for_model(model_name)
+            if provider == "cliproxyapi":
+                live_models, reason = await _fetch_cliproxyapi_live_models()
+                if model_name not in live_models:
                     return {
-                        "status": "success",
-                        "select_model_config": {
-                            "model_id": selected_id,
-                            "model_name": model_name,
-                            "model_url": cliproxyapi_url,
-                            "api_key": os.getenv("CLIPROXYAPI_API_KEY"),
-                            "base_used": [],
-                            "system_prompt": "",
-                            "temperature": -1,
-                            "max_length": -1,
-                            "top_P": -1,
-                            "top_K": -1,
-                            "score_threshold": -1,
-                        },
+                        "status": "error",
+                        "message": f"CLIProxyAPI model not available ({reason})",
                     }
+
+            return {
+                "status": "success",
+                "select_model_config": {
+                    "model_id": selected_id,
+                    "model_name": model_name,
+                    "model_url": "",
+                    "api_key": None,
+                    "base_used": [],
+                    "system_prompt": "",
+                    "temperature": -1,
+                    "max_length": -1,
+                    "top_P": -1,
+                    "top_K": -1,
+                    "score_threshold": -1,
+                    "provider": provider,
+                },
+            }
 
         return {"status": "error", "message": "Selected model not found"}
 
@@ -421,21 +534,42 @@ class ModelConfigRepository(BaseRepository):
         user_models = user_config.get("models", [])
         persisted_model_ids = {m.get("model_id") for m in user_models}
 
-        cliproxyapi_url = os.getenv("CLIPROXYAPI_BASE_URL")
-        if cliproxyapi_url:
+        # If CLIProxyAPI is configured but returns empty /models, hide any stale
+        # stored system_* proxy models to avoid presenting broken choices.
+        if os.getenv("CLIPROXYAPI_BASE_URL"):
             from app.rag.provider_client import ProviderClient
 
-            cliproxyapi_models = ProviderClient.PROVIDERS.get("cliproxyapi", {}).get(
-                "models", []
-            )
-            for model_name in cliproxyapi_models:
-                system_model_id = f"system_{model_name}"
-                if system_model_id not in persisted_model_ids:
-                    system_model = {
-                        "model_id": system_model_id,
-                        "model_name": model_name,
-                        "model_url": cliproxyapi_url,
-                        "api_key": os.getenv("CLIPROXYAPI_API_KEY"),
+            live_models, _reason = await _fetch_cliproxyapi_live_models()
+            live_set = set(live_models)
+
+            filtered: List[dict] = []
+            for m in user_models:
+                model_id = str(m.get("model_id", ""))
+                model_name = str(m.get("model_name", ""))
+                if model_id.startswith("system_"):
+                    provider = ProviderClient.get_provider_for_model(model_name)
+                    if provider == "cliproxyapi" and model_name not in live_set:
+                        continue
+                    m = self._sanitize_system_model(m)
+                filtered.append(m)
+            user_models = filtered
+            persisted_model_ids = {m.get("model_id") for m in user_models}
+        else:
+            # Even if CLIPROXYAPI_BASE_URL is not set, sanitize any existing system models
+            user_models = [self._sanitize_system_model(m) for m in user_models]
+            persisted_model_ids = {m.get("model_id") for m in user_models}
+
+        system_models: List[dict] = []
+
+        # Provider-backed system models (no keys sent to frontend; use env at runtime)
+        if os.getenv("DEEPSEEK_API_KEY"):
+            system_models.extend(
+                [
+                    {
+                        "model_id": "system_deepseek-chat",
+                        "model_name": "deepseek-chat",
+                        "model_url": "",
+                        "api_key": None,
                         "base_used": [],
                         "system_prompt": "",
                         "temperature": -1,
@@ -443,11 +577,124 @@ class ModelConfigRepository(BaseRepository):
                         "top_P": -1,
                         "top_K": -1,
                         "score_threshold": -1,
+                        "provider": "deepseek",
+                    },
+                    {
+                        "model_id": "system_deepseek-reasoner",
+                        "model_name": "deepseek-reasoner",
+                        "model_url": "",
+                        "api_key": None,
+                        "base_used": [],
+                        "system_prompt": "",
+                        "temperature": -1,
+                        "max_length": -1,
+                        "top_P": -1,
+                        "top_K": -1,
+                        "score_threshold": -1,
+                        "provider": "deepseek",
+                    },
+                ]
+            )
+
+        if os.getenv("ZAI_API_KEY"):
+            system_models.append(
+                {
+                    "model_id": "system_glm-4.7-flash",
+                    "model_name": "glm-4.7-flash",
+                    "model_url": "",
+                    "api_key": None,
+                    "base_used": [],
+                    "system_prompt": "",
+                    "temperature": -1,
+                    "max_length": -1,
+                    "top_P": -1,
+                    "top_K": -1,
+                    "score_threshold": -1,
+                    "provider": "zai",
+                }
+            )
+
+        if os.getenv("MINIMAX_API_KEY"):
+            system_models.append(
+                {
+                    "model_id": "system_MiniMax-M2.1",
+                    "model_name": "MiniMax-M2.1",
+                    "model_url": "",
+                    "api_key": None,
+                    "base_used": [],
+                    "system_prompt": "",
+                    "temperature": -1,
+                    "max_length": -1,
+                    "top_P": -1,
+                    "top_K": -1,
+                    "score_threshold": -1,
+                    "provider": "minimax",
+                }
+            )
+
+        # CLIProxyAPI models: only expose if proxy actually reports models.
+        if os.getenv("CLIPROXYAPI_BASE_URL"):
+            live_models, _reason = await _fetch_cliproxyapi_live_models()
+            for model_name in live_models:
+                system_models.append(
+                    {
+                        "model_id": f"system_{model_name}",
+                        "model_name": model_name,
+                        "model_url": "",
+                        "api_key": None,
+                        "base_used": [],
+                        "system_prompt": "",
+                        "temperature": -1,
+                        "max_length": -1,
+                        "top_P": -1,
+                        "top_K": -1,
+                        "score_threshold": -1,
+                        "provider": "cliproxyapi",
                     }
-                    user_models.append(system_model)
+                )
+
+        for sys_model in system_models:
+            if sys_model["model_id"] not in persisted_model_ids:
+                user_models.append(sys_model)
+
+        selected_model = str(user_config.get("selected_model") or "")
+        if selected_model:
+            known_ids = {m.get("model_id") for m in user_models}
+            if selected_model not in known_ids:
+                selected_model = ""
+
+        # Stabilize: if current selection is a cliproxyapi system model but proxy is empty,
+        # fall back to a deterministic provider-backed system model.
+        if selected_model.startswith("system_"):
+            selected_name = selected_model[7:]
+            from app.rag.provider_client import ProviderClient
+
+            provider = ProviderClient.get_provider_for_model(selected_name)
+            if provider == "cliproxyapi":
+                live_models, _reason = await _fetch_cliproxyapi_live_models()
+                if selected_name not in live_models:
+                    # Prefer DeepSeek, then Z.ai, then MiniMax.
+                    fallback = ""
+                    if os.getenv("DEEPSEEK_API_KEY"):
+                        fallback = "system_deepseek-chat"
+                    elif os.getenv("ZAI_API_KEY"):
+                        fallback = "system_glm-4.7-flash"
+                    elif os.getenv("MINIMAX_API_KEY"):
+                        fallback = "system_MiniMax-M2.1"
+                    if fallback:
+                        selected_model = fallback
+
+        if not selected_model and user_models:
+            selected_model = cast(str, user_models[0].get("model_id", ""))
+
+        if selected_model and selected_model != user_config.get("selected_model"):
+            await self.db.model_config.update_one(
+                {"username": username}, {"$set": {"selected_model": selected_model}}
+            )
+            await cache_service.invalidate_model_config(username)
 
         return {
             "status": "success",
             "models": user_models,
-            "selected_model": user_config.get("selected_model", ""),
+            "selected_model": selected_model,
         }
