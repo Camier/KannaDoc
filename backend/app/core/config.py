@@ -98,11 +98,6 @@ class Settings(BaseSettings):
         description="Comma-separated list of allowed CORS origins (e.g., 'http://localhost:3000,https://example.com'). Empty = allow all (development only)",
     )
 
-    # Neo4j Configuration (for future scaling - Knowledge Graph integration)
-    # Currently reserved for upcoming roadmap features.
-    # neo4j_uri: str = "bolt://localhost:7687"
-    # neo4j_user: str = "neo4j"
-    # neo4j_password: str = "password"
     unoserver_instances: int = 1
     unoserver_host: str = "unoserver"
     unoserver_base_port: int = 2003
@@ -136,12 +131,18 @@ class Settings(BaseSettings):
         default=50, ge=1, le=500, description="Default top_K when model_config sets -1."
     )
     rag_top_k_cap: int = Field(
-        default=120, ge=1, le=500, description="Hard cap for top_K to prevent runaway retrieval."
+        default=120,
+        ge=1,
+        le=500,
+        description="Hard cap for top_K to prevent runaway retrieval.",
     )
 
     # Diversification: ensure broad queries return multiple distinct documents.
     rag_diverse_file_limit: int = Field(
-        default=20, ge=1, le=200, description="Target number of distinct file_id in candidate set."
+        default=20,
+        ge=1,
+        le=200,
+        description="Target number of distinct file_id in candidate set.",
     )
     rag_diverse_pages_per_file_cap: int = Field(
         default=3,
@@ -152,7 +153,10 @@ class Settings(BaseSettings):
 
     # When Mongo metadata is missing, we fallback to local previews; keep this bounded for prompt size.
     rag_fallback_text_cap: int = Field(
-        default=20, ge=0, le=100, description="Max number of fallback page previews injected."
+        default=20,
+        ge=0,
+        le=100,
+        description="Max number of fallback page previews injected.",
     )
 
     # Hybrid Search Configuration

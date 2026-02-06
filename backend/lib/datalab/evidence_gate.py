@@ -1,6 +1,6 @@
 """Evidence gating for extraction schema fields.
 
-RULE: No field reaches Neo4j/Milvus without at least one resolved citation.
+RULE: No field reaches Milvus without at least one resolved citation.
 
 Validation:
 1. Field has *_citations array (non-empty)
