@@ -12,8 +12,10 @@ from app.db.repositories.repository_manager import (
 from app.db.vector_db import vector_db_client
 from app.rag.get_embedding import get_embeddings_from_httpx
 from app.core.embeddings import normalize_multivector, downsample_multivector
+from app.rag.hybrid_search import get_sparse_embeddings
 from app.core.config import settings
 from app.core.logging import logger
+from app.utils.ids import to_milvus_collection_name
 
 router = APIRouter()
 
@@ -24,6 +26,7 @@ class SearchPreviewRequest(BaseModel):
     query: str
     top_k: int = 10
     min_score: Optional[float] = None
+    retrieval_mode: Optional[str] = None
 
 
 class SearchPreviewResult(BaseModel):
@@ -104,7 +107,21 @@ async def search_preview(
         )
 
     # Search Milvus
-    collection_name = f"colqwen{kb_id.replace('-', '_')}"
+    collection_name = to_milvus_collection_name(kb_id)
+
+    # Determine retrieval mode (defaulting to runtime settings).
+    retrieval_mode = request.retrieval_mode or getattr(settings, "rag_retrieval_mode", "dense")
+    # Backward compatibility: older deployments only used rag_hybrid_enabled.
+    if retrieval_mode == "dense" and getattr(settings, "rag_hybrid_enabled", False):
+        retrieval_mode = "hybrid"
+
+    # Normalize top_k similarly to chat RAG to avoid confusing preview results.
+    top_k = int(request.top_k or 0)
+    if top_k < 1:
+        top_k = 1
+    top_k_cap = int(getattr(settings, "rag_top_k_cap", 120))
+    if top_k > top_k_cap:
+        top_k = top_k_cap
 
     try:
         # Ensure collection is loaded
@@ -116,9 +133,35 @@ async def search_preview(
 
         vector_db_client.load_collection(collection_name)
 
+        # Optionally compute sparse query for hybrid/sparse modes.
+        sparse_query = None
+        if retrieval_mode in ["hybrid", "sparse_then_rerank", "dual_then_rerank"]:
+            try:
+                sparse_result = await get_sparse_embeddings([request.query])
+                if sparse_result and len(sparse_result) > 0:
+                    sparse_query = sparse_result[0]
+            except Exception as e:
+                logger.warning(f"Sparse embedding failed, falling back to dense-only: {e}")
+
+        # Prepare search data based on retrieval mode.
+        if retrieval_mode in ["sparse_then_rerank", "dual_then_rerank"] and sparse_query:
+            search_data = {
+                "mode": retrieval_mode,
+                "dense_vecs": query_embeddings,
+                "sparse_query": sparse_query,
+            }
+        elif retrieval_mode == "hybrid" and sparse_query:
+            # Hybrid search expects dense+sparse vectors (length-matched).
+            search_data = {
+                "dense_vecs": query_embeddings,
+                "sparse_vecs": [sparse_query] * len(query_embeddings),
+            }
+        else:
+            search_data = query_embeddings
+
         # Perform search
         search_results = vector_db_client.search(
-            collection_name=collection_name, data=query_embeddings, topk=request.top_k
+            collection_name=collection_name, data=search_data, topk=top_k
         )
 
         if not search_results:

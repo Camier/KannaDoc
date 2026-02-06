@@ -15,6 +15,8 @@ from tenacity import (
 import numpy as np
 import concurrent.futures
 import threading
+import math
+from collections import defaultdict
 from app.core.config import settings
 
 
@@ -238,6 +240,19 @@ class MilvusManager:
         if not data:
             return []
 
+        # New retrieval modes (thesis): sparse recall on page-level sidecar + exact MaxSim rerank on patch vectors.
+        if isinstance(data, dict) and data.get("mode") in [
+            "sparse_then_rerank",
+            "dual_then_rerank",
+        ]:
+            return self._search_sparse_then_rerank(
+                patch_collection_name=collection_name,
+                dense_vecs=data.get("dense_vecs") or [],
+                sparse_query=data.get("sparse_query") or {},
+                topk=int(topk),
+                mode=str(data.get("mode")),
+            )
+
         dense_vecs = data
         sparse_vecs = []
         if isinstance(data, dict):
@@ -302,54 +317,276 @@ class MilvusManager:
                 search_params=search_params,
             )
 
-        # 1) Build approximate MaxSim scores to pick a bounded set of candidate pages.
-        # results is a list per query token vector.
-        approx_scores = {}
+        # 1) Build approximate MaxSim scores to pick a bounded set of candidate PAGES.
+        # We group by (file_id, page_number) because image_id is patch-level.
+        approx_scores: dict[tuple[str, int], float] = {}
         for token_hits in results or []:
-            best_per_image = {}
+            best_per_page: dict[tuple[str, int], float] = {}
             for hit in token_hits or []:
                 entity = hit.get("entity") or {}
-                img_id = entity.get("image_id")
-                if not img_id:
+                fid = entity.get("file_id")
+                pn = entity.get("page_number")
+                if fid is None or pn is None:
                     continue
-                # MilvusClient uses "distance" for similarity score (inner product here).
+                try:
+                    pn_i = int(pn)
+                except Exception:
+                    continue
+                page_key = (str(fid), pn_i)
                 dist = hit.get("distance", hit.get("score", 0.0))
-                prev = best_per_image.get(img_id)
+                prev = best_per_page.get(page_key)
                 if prev is None or dist > prev:
-                    best_per_image[img_id] = dist
+                    best_per_page[page_key] = float(dist)
 
-            for img_id, best in best_per_image.items():
-                approx_scores[img_id] = approx_scores.get(img_id, 0.0) + float(best)
+            for page_key, best in best_per_page.items():
+                approx_scores[page_key] = approx_scores.get(page_key, 0.0) + float(best)
 
         if not approx_scores:
             return []
 
         # 2) Keep only top-N candidate pages for exact reranking.
-        candidate_images_limit = min(
+        candidate_pages_limit = min(
             max(int(topk) * 20, settings.rag_search_limit_min),
             settings.rag_candidate_images_cap,
         )
-        candidate_image_ids = [
-            img_id
-            for img_id, _score in sorted(
+        candidate_pages = [
+            (fid, pn, score)
+            for (fid, pn), score in sorted(
                 approx_scores.items(), key=lambda kv: kv[1], reverse=True
-            )[:candidate_images_limit]
+            )[:candidate_pages_limit]
         ]
 
-        # 3) Fetch ALL vectors for candidate pages.
+        return self._exact_rerank_pages(
+            patch_collection_name=collection_name,
+            dense_vecs=dense_vecs,
+            candidate_pages=candidate_pages,
+            topk=int(topk),
+            diversify=True,
+        )
+
+    def _resolve_actual_collection_name(self, collection_name: str) -> str:
+        """Resolve Milvus alias -> underlying collection name (no-op if not an alias)."""
+        try:
+            desc = self.client.describe_collection(collection_name)
+            return desc.get("collection_name") or collection_name
+        except Exception:
+            return collection_name
+
+    def _pages_sparse_collection_name(self, patch_collection_name: str) -> str:
+        actual = self._resolve_actual_collection_name(patch_collection_name)
+        return f"{actual}{settings.rag_pages_sparse_suffix}"
+
+    def get_page_previews(
+        self, patch_collection_name: str, pairs: list[tuple[str, int]]
+    ) -> dict[tuple[str, int], str]:
+        """Fetch page-level text previews from the sparse sidecar collection.
+
+        Returns:
+            Dict mapping (file_id, page_number) -> text_preview
+        """
+        if not pairs:
+            return {}
+
+        pages_coll = self._pages_sparse_collection_name(patch_collection_name)
+        if not self.client.has_collection(pages_coll):
+            return {}
+
+        # Query by page_id because it is a single scalar key and has an inverted index.
+        page_ids = [f"{fid}::{int(pn)}" for fid, pn in pairs]
+        previews: dict[tuple[str, int], str] = {}
+
         def _chunks(seq, size):
             for i in range(0, len(seq), size):
                 yield seq[i : i + size]
 
-        page_size = 1024
-        all_rows = []
+        for chunk in _chunks(page_ids, 100):
+            escaped = [str(x).replace("'", "\\'") for x in chunk]
+            flt = "page_id in [" + ", ".join([f"'{x}'" for x in escaped]) + "]"
+            rows = self.client.query(
+                pages_coll,
+                filter=flt,
+                limit=len(chunk),
+                output_fields=["file_id", "page_number", "text_preview"],
+            )
+            for row in rows or []:
+                fid = row.get("file_id")
+                pn = row.get("page_number")
+                if fid is None or pn is None:
+                    continue
+                try:
+                    pn_i = int(pn)
+                except Exception:
+                    continue
+                previews[(str(fid), pn_i)] = str(row.get("text_preview") or "")
 
-        for chunk_ids in _chunks(candidate_image_ids, 50):
-            escaped = [str(x).replace("'", "\\'") for x in chunk_ids]
-            filter_expr = "image_id in [" + ", ".join([f"'{x}'" for x in escaped]) + "]"
+        return previews
+
+    def _sparse_recall_pages(
+        self, pages_sparse_collection: str, sparse_query: dict[int, float], limit: int
+    ) -> list[tuple[str, int, float]]:
+        """Sparse recall on page-level collection; returns [(file_id, page_number, score)]."""
+        if not sparse_query:
+            return []
+        if not self.client.has_collection(pages_sparse_collection):
+            return []
+
+        self.load_collection(pages_sparse_collection)
+        results = self._search_with_retry(
+            pages_sparse_collection,
+            data=[sparse_query],
+            anns_field="sparse_vector",
+            limit=int(limit),
+            output_fields=["file_id", "page_number", "page_id"],
+            search_params={"metric_type": "IP", "params": {"drop_ratio_search": 0.0}},
+        )
+        hits = (results or [[]])[0] if results else []
+        out: list[tuple[str, int, float]] = []
+        for hit in hits or []:
+            ent = hit.get("entity") or {}
+            fid = ent.get("file_id")
+            pn = ent.get("page_number")
+            if fid is None or pn is None:
+                continue
+            try:
+                pn_i = int(pn)
+            except Exception:
+                continue
+            score = float(hit.get("distance", hit.get("score", 0.0)) or 0.0)
+            out.append((str(fid), pn_i, score))
+        return out
+
+    def _dense_approx_recall_pages(
+        self, patch_collection_name: str, dense_vecs, limit: int
+    ) -> list[tuple[str, int, float]]:
+        """Dense recall on patch vectors; returns page-level approximate MaxSim scores."""
+        if not dense_vecs:
+            return []
+        self.load_collection(patch_collection_name)
+
+        ef_value = max(int(limit), settings.rag_ef_min)
+        search_params = {"metric_type": "IP", "params": {"ef": ef_value}}
+        results = self._search_with_retry(
+            patch_collection_name,
+            dense_vecs,
+            anns_field="vector",
+            limit=int(limit),
+            output_fields=["file_id", "page_number", "image_id"],
+            search_params=search_params,
+        )
+
+        approx_scores: dict[tuple[str, int], float] = {}
+        for token_hits in results or []:
+            best_per_page: dict[tuple[str, int], float] = {}
+            for hit in token_hits or []:
+                ent = hit.get("entity") or {}
+                fid = ent.get("file_id")
+                pn = ent.get("page_number")
+                if fid is None or pn is None:
+                    continue
+                try:
+                    pn_i = int(pn)
+                except Exception:
+                    continue
+                page_key = (str(fid), pn_i)
+                dist = float(hit.get("distance", hit.get("score", 0.0)) or 0.0)
+                prev = best_per_page.get(page_key)
+                if prev is None or dist > prev:
+                    best_per_page[page_key] = dist
+
+            for page_key, best in best_per_page.items():
+                approx_scores[page_key] = approx_scores.get(page_key, 0.0) + float(best)
+
+        out = [
+            (fid, pn, score)
+            for (fid, pn), score in sorted(
+                approx_scores.items(), key=lambda kv: kv[1], reverse=True
+            )
+        ]
+        return out
+
+    def _rrf_fuse(
+        self,
+        ranked_lists: list[list[tuple[str, int, float]]],
+        k: int,
+    ) -> dict[tuple[str, int], float]:
+        fused: dict[tuple[str, int], float] = defaultdict(float)
+        for lst in ranked_lists:
+            for rank, (fid, pn, _score) in enumerate(lst, start=1):
+                fused[(fid, pn)] += 1.0 / float(k + rank)
+        return dict(fused)
+
+    def _diversify_candidates(
+        self,
+        candidates: list[tuple[str, int, float]],
+        topk: int,
+    ) -> list[tuple[str, int, float]]:
+        """Diversify by file_id while still allowing enough pages to satisfy topk.
+
+        Strategy:
+        - pick top N files (N = rag_diverse_file_limit)
+        - for each selected file, keep up to P pages, where P ~= ceil(topk / N)
+        """
+        if not candidates:
+            return []
+
+        n_files = int(getattr(settings, "rag_diverse_file_limit", 20))
+        if n_files <= 0:
+            return candidates
+
+        per_file_cap = int(getattr(settings, "rag_diverse_pages_per_file_cap", 3))
+        per_file_pages = max(1, int(math.ceil(float(topk) / float(n_files))))
+        per_file_pages = min(per_file_cap, per_file_pages)
+
+        # Group pages by file_id, sorted by approx score
+        by_file: dict[str, list[tuple[str, int, float]]] = defaultdict(list)
+        for fid, pn, score in candidates:
+            by_file[str(fid)].append((str(fid), int(pn), float(score)))
+        for fid in list(by_file.keys()):
+            by_file[fid].sort(key=lambda x: x[2], reverse=True)
+
+        # Rank files by their best page score.
+        files_ranked = sorted(
+            [(fid, pages[0][2]) for fid, pages in by_file.items() if pages],
+            key=lambda x: x[1],
+            reverse=True,
+        )
+        selected_files = [fid for fid, _ in files_ranked[:n_files]]
+
+        diversified: list[tuple[str, int, float]] = []
+        for fid in selected_files:
+            diversified.extend(by_file[fid][:per_file_pages])
+
+        # Keep stable ordering by score.
+        diversified.sort(key=lambda x: x[2], reverse=True)
+        return diversified
+
+    def _exact_rerank_pages(
+        self,
+        patch_collection_name: str,
+        dense_vecs,
+        candidate_pages: list[tuple[str, int, float]],
+        topk: int,
+        diversify: bool,
+    ):
+        if not candidate_pages:
+            return []
+        if diversify:
+            candidate_pages = self._diversify_candidates(candidate_pages, topk=topk)
+
+        # Group requested pages by file_id to keep Milvus filter small and correct for (file_id,page_number) pairs.
+        pages_by_file: dict[str, set[int]] = defaultdict(set)
+        for fid, pn, _score in candidate_pages:
+            pages_by_file[str(fid)].add(int(pn))
+
+        page_size = 1024
+        all_rows: list[dict] = []
+        for fid, pns in pages_by_file.items():
+            escaped_fid = str(fid).replace("'", "\\'")
+            pn_list = ", ".join([str(int(pn)) for pn in sorted(pns)])
+            filter_expr = f"file_id == '{escaped_fid}' && page_number in [{pn_list}]"
 
             it = self.client.query_iterator(
-                collection_name=collection_name,
+                collection_name=patch_collection_name,
                 filter=filter_expr,
                 output_fields=["vector", "image_id", "page_number", "file_id"],
                 batch_size=page_size,
@@ -366,34 +603,39 @@ class MilvusManager:
         if not all_rows:
             return []
 
-        # 4) Group vectors by image_id.
-        docs_map = {}
+        # Group vectors by page.
+        docs_map: dict[tuple[str, int], dict] = {}
         for row in all_rows:
-            img_id = row.get("image_id")
-            if not img_id:
+            fid = row.get("file_id")
+            pn = row.get("page_number")
+            if fid is None or pn is None:
                 continue
-            entry = docs_map.get(img_id)
+            try:
+                pn_i = int(pn)
+            except Exception:
+                continue
+            page_key = (str(fid), pn_i)
+            entry = docs_map.get(page_key)
             if entry is None:
                 entry = {
                     "vectors": [],
                     "metadata": {
-                        "image_id": img_id,
-                        "file_id": row.get("file_id"),
-                        "page_number": row.get("page_number"),
+                        "file_id": str(fid),
+                        "page_number": pn_i,
+                        # Representative patch id (debug only); do NOT treat as page id.
+                        "image_id": row.get("image_id"),
                     },
                 }
-                docs_map[img_id] = entry
+                docs_map[page_key] = entry
             entry["vectors"].append(row["vector"])
 
         query_vecs = np.asarray(dense_vecs, dtype=np.float32)
 
-        # 5) Exact MaxSim reranking on candidates.
         scores = []
-        for img_id, doc_data in docs_map.items():
+        for _page_key, doc_data in docs_map.items():
             if not doc_data["vectors"]:
                 continue
             doc_vecs = np.asarray(doc_data["vectors"], dtype=np.float32)
-            # dot shape: (N_q, N_d)
             score = np.dot(query_vecs, doc_vecs.T).max(axis=1).sum()
             scores.append((float(score), doc_data["metadata"]))
 
@@ -401,12 +643,74 @@ class MilvusManager:
         return [
             {
                 "score": score,
-                "image_id": metadata["image_id"],
+                "image_id": metadata.get("image_id"),
                 "file_id": metadata["file_id"],
                 "page_number": metadata["page_number"],
             }
             for score, metadata in scores[: int(topk)]
         ]
+
+    def _search_sparse_then_rerank(
+        self,
+        patch_collection_name: str,
+        dense_vecs,
+        sparse_query: dict[int, float],
+        topk: int,
+        mode: str,
+    ):
+        """Dual-candidate mode: sparse recall -> exact MaxSim rerank (optionally fused with dense recall)."""
+        if not dense_vecs:
+            return []
+
+        pages_sparse_coll = self._pages_sparse_collection_name(patch_collection_name)
+
+        # Candidate generation limits: keep bounded (we'll diversify before exact rerank).
+        sparse_limit = min(
+            max(topk * 10, settings.rag_search_limit_min),
+            settings.rag_search_limit_cap,
+        )
+        dense_limit = min(
+            max(topk * 10, settings.rag_search_limit_min),
+            settings.rag_search_limit_cap,
+        )
+
+        sparse_ranked = self._sparse_recall_pages(
+            pages_sparse_collection=pages_sparse_coll,
+            sparse_query=sparse_query,
+            limit=sparse_limit,
+        )
+
+        if mode == "sparse_then_rerank" or not sparse_ranked:
+            candidates = sparse_ranked
+        else:
+            dense_ranked = self._dense_approx_recall_pages(
+                patch_collection_name=patch_collection_name,
+                dense_vecs=dense_vecs,
+                limit=dense_limit,
+            )
+
+            fused = self._rrf_fuse(
+                ranked_lists=[sparse_ranked, dense_ranked],
+                k=int(getattr(settings, "rag_hybrid_rrf_k", 60)),
+            )
+            # Convert fused map -> ranked list.
+            candidates = [
+                (fid, pn, score)
+                for (fid, pn), score in sorted(
+                    fused.items(), key=lambda kv: kv[1], reverse=True
+                )
+            ]
+
+        # Cap candidate pages before fetching patch vectors.
+        candidates = candidates[: int(getattr(settings, "rag_candidate_images_cap", 120))]
+
+        return self._exact_rerank_pages(
+            patch_collection_name=patch_collection_name,
+            dense_vecs=dense_vecs,
+            candidate_pages=candidates,
+            topk=topk,
+            diversify=True,
+        )
 
     def insert(self, data, collection_name):
         # Insert ColQwen embeddings and metadata for a document into the collection.

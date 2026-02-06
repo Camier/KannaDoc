@@ -117,6 +117,44 @@ class Settings(BaseSettings):
     rag_ef_min: int = 100
     rag_load_collection_once: bool = True
 
+    # Retrieval modes
+    # - dense: dense-only candidate generation + exact MaxSim rerank on patch vectors (ColPali-style)
+    # - hybrid: Milvus hybrid search (dense + sparse) on collections that have both fields
+    # - sparse_then_rerank: sparse page recall -> exact MaxSim rerank on patch vectors
+    # - dual_then_rerank: sparse page recall + dense patch recall -> fuse -> exact MaxSim rerank
+    rag_retrieval_mode: str = Field(
+        default="dense",
+        description="RAG retrieval mode: dense|hybrid|sparse_then_rerank|dual_then_rerank",
+    )
+    rag_pages_sparse_suffix: str = Field(
+        default="_pages_sparse",
+        description="Suffix for the page-level sparse collection derived from a patch collection name.",
+    )
+
+    # top_K defaults/caps are intentionally higher than the legacy UI defaults in thesis env.
+    rag_default_top_k: int = Field(
+        default=50, ge=1, le=500, description="Default top_K when model_config sets -1."
+    )
+    rag_top_k_cap: int = Field(
+        default=120, ge=1, le=500, description="Hard cap for top_K to prevent runaway retrieval."
+    )
+
+    # Diversification: ensure broad queries return multiple distinct documents.
+    rag_diverse_file_limit: int = Field(
+        default=20, ge=1, le=200, description="Target number of distinct file_id in candidate set."
+    )
+    rag_diverse_pages_per_file_cap: int = Field(
+        default=3,
+        ge=1,
+        le=10,
+        description="Max number of pages per file_id to keep when diversifying candidates.",
+    )
+
+    # When Mongo metadata is missing, we fallback to local previews; keep this bounded for prompt size.
+    rag_fallback_text_cap: int = Field(
+        default=20, ge=0, le=100, description="Max number of fallback page previews injected."
+    )
+
     # Hybrid Search Configuration
     rag_hybrid_enabled: bool = False
     rag_hybrid_ranker: str = (
@@ -190,6 +228,17 @@ def validate_settings() -> None:
 
         logger.info(
             f"Hybrid search: ranker={settings.rag_hybrid_ranker}, rrf_k={settings.rag_hybrid_rrf_k}"
+        )
+
+    if settings.rag_retrieval_mode not in [
+        "dense",
+        "hybrid",
+        "sparse_then_rerank",
+        "dual_then_rerank",
+    ]:
+        raise ValueError(
+            "rag_retrieval_mode must be one of: dense, hybrid, sparse_then_rerank, dual_then_rerank. "
+            f"Got: {settings.rag_retrieval_mode}"
         )
 
 

@@ -312,7 +312,9 @@ services:
       - MODEL_SERVER_URL=${MODEL_SERVER_URL:-http://model-server:8005}
       - DEBUG_MODE=${DEBUG_MODE}
       - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
-      - MILVUS_URI=http://milvus-standalone:19530
+      # Thesis deployment uses the host Milvus (holds the 3.56M patch vectors).
+      # Default keeps local/dev compose working when MILVUS_URI isn't provided.
+      - MILVUS_URI=${MILVUS_URI:-http://milvus-standalone:19530}
       - QDRANT_URL=http://qdrant:6333
       - VECTOR_DB=${VECTOR_DB:-milvus}
       - KAFKA_RETRY_BACKOFF_MS=${KAFKA_RETRY_BACKOFF_MS:-5000}
@@ -334,6 +336,14 @@ services:
       - RAG_SEARCH_LIMIT_MIN=${RAG_SEARCH_LIMIT_MIN:-50}
       - RAG_EF_MIN=${RAG_EF_MIN:-100}
       - RAG_LOAD_COLLECTION_ONCE=${RAG_LOAD_COLLECTION_ONCE:-true}
+      # Thesis retrieval mode (sparse recall -> ColPali rerank, optionally fused with dense recall)
+      - RAG_RETRIEVAL_MODE=${RAG_RETRIEVAL_MODE:-dense}
+      - RAG_PAGES_SPARSE_SUFFIX=${RAG_PAGES_SPARSE_SUFFIX:-_pages_sparse}
+      - RAG_DEFAULT_TOP_K=${RAG_DEFAULT_TOP_K:-50}
+      - RAG_TOP_K_CAP=${RAG_TOP_K_CAP:-120}
+      - RAG_DIVERSE_FILE_LIMIT=${RAG_DIVERSE_FILE_LIMIT:-20}
+      - RAG_DIVERSE_PAGES_PER_FILE_CAP=${RAG_DIVERSE_PAGES_PER_FILE_CAP:-3}
+      - RAG_FALLBACK_TEXT_CAP=${RAG_FALLBACK_TEXT_CAP:-20}
       # Hybrid Search Configuration
       - RAG_HYBRID_ENABLED=${RAG_HYBRID_ENABLED:-false}
       - RAG_HYBRID_RANKER=${RAG_HYBRID_RANKER:-rrf}
@@ -348,6 +358,7 @@ services:
       - MINIMAX_API_KEY=${MINIMAX_API_KEY}
       - COHERE_API_KEY=${COHERE_API_KEY}
       - OLLAMA_API_KEY=${OLLAMA_API_KEY}
+      - OLLAMA_CLOUD_API_KEY=${OLLAMA_CLOUD_API_KEY:-}
       - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
       - GEMINI_API_KEY=${GEMINI_API_KEY:-}
       - CLIPROXYAPI_BASE_URL=${CLIPROXYAPI_BASE_URL:-}

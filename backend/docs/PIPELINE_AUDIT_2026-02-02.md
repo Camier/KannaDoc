@@ -7,12 +7,12 @@ Counts below are a snapshot; see `AGENTS.md` for the canonical corpus size state
 
 | Asset | Count | Evidence |
 |-------|-------|----------|
-| **Source PDFs** | 129 | `ls /data/pdfs/*.pdf | wc -l` |
-| **Extraction folders** | 129 | `ls -d /data/extractions/*/` |
-| **normalized.json files** | 129 | `find ... -name "normalized.json"` |
-| **entities.json files** | 129 | `find ... -name "entities.json"` |
-| **Milvus vectors** | 3,561,575 | `colpali_kanna_128` collection |
-| **Unique files in Milvus** | 129 | Iterated all vectors |
+| **Source PDFs** | 129 | `ls /LAB/@thesis/layra/backend/data/pdfs/*.pdf | wc -l` |
+| **Extraction folders** | 129 | `ls -d /LAB/@thesis/layra/backend/data/extractions/*/ | wc -l` |
+| **normalized.json files** | 129 | `find /LAB/@thesis/layra/backend/data/extractions -name "normalized.json" | wc -l` |
+| **entities.json files** | 129 | `find /LAB/@thesis/layra/backend/data/extractions -name "entities.json" | wc -l` |
+| **Milvus patch vectors** | 3,561,575 | `default.colpali_kanna_128` collection |
+| **Milvus sparse pages** | 4,691 | `default.colpali_kanna_128_pages_sparse` collection |
 
 ## Link 1: PDF Source
 
@@ -28,8 +28,8 @@ Counts below are a snapshot; see `AGENTS.md` for the canonical corpus size state
 | Aspect | Evidence |
 |--------|----------|
 | **API Endpoint** | `https://www.datalab.to/api/v1/marker/` |
-| **Proof** | `raw/attempt1_check_url.txt` contains DataLab URLs |
-| **API Response** | `raw/result.json` (~1.6MB per doc) |
+| **Proof** | Each extraction folder includes `raw/attempt1_check_url.txt` (example: `layra/backend/data/extractions/.../raw/attempt1_check_url.txt`) |
+| **API Response** | Each extraction folder includes `raw/result.json` and `raw/attempt1_final_result.json` |
 | **Mode** | `accurate` with `json,html,markdown,chunks` output |
 | **Status** | HEALTHY — 129/129 processed |
 
@@ -62,13 +62,27 @@ Counts below are a snapshot; see `AGENTS.md` for the canonical corpus size state
 
 | Aspect | Evidence |
 |--------|----------|
-| **Connection** | `http://milvus-standalone:19530` |
-| **Container** | `layra-milvus-standalone` (healthy) |
-| **Visual RAG collection** | `colpali_kanna_128` (3,561,575 vectors) |
-| **Text collections** | `ethnopharmacology_v2` (566 vectors) |
+| **Connection** | `MILVUS_URI=http://host.docker.internal:19530` (from `layra/.env`) |
+| **Host service** | Milvus is running on the host (not the `milvus-standalone` container) |
+| **Database** | `default` (thesis corpus) and `misc` (non-thesis collections) |
+| **Patch (ColPali) collection** | `default.colpali_kanna_128` (3,561,575 vectors) |
+| **Page sparse sidecar** | `default.colpali_kanna_128_pages_sparse` (4,691 rows) |
 | **Vector dim** | 128 (ColQwen) |
 | **Unique files indexed** | 129 |
 | **Status** | HEALTHY |
+
+### Naming Drift Clarification (Important)
+
+- The backend often refers to the thesis KB as a `colqwen...` name (derived from the knowledge base id).
+- In this environment, that `colqwen...` is a **Milvus alias** that points to the underlying patch collection:
+  `colqwenthesis_fbd5d3a6_3911_4be0_a4b3_864ec91bc3c1` -> `colpali_kanna_128`.
+- The page-level sparse collection is derived from the **underlying** collection name using:
+  `RAG_PAGES_SPARSE_SUFFIX=_pages_sparse`.
+
+### Page Identity vs Patch Identity
+
+- `image_id` is **patch-level** (one row per patch vector); it is not a stable page identifier.
+- Page grouping must be done on `(file_id, page_number)` for correct reranking and diversification.
 
 ## Link 6: Neo4j Graph Storage
 
@@ -84,12 +98,14 @@ Counts below are a snapshot; see `AGENTS.md` for the canonical corpus size state
 
 | Aspect | Evidence |
 |--------|----------|
-| **Method** | MaxSim reranking on ColQwen vectors |
+| **Method** | MaxSim reranking on ColQwen patch vectors (ColPali-style) |
 | **Endpoint** | `POST /api/v1/kb/search` |
 | **Implementation** | `app/db/milvus.py:MilvusManager.search()` |
 | **Retry logic** | Tenacity (3 attempts, 2-30s backoff) |
-| **Hybrid search** | Available but disabled by default |
-| **Status** | CODE READY — Runtime depends on backend |
+| **Modes** | `dense` / `sparse_then_rerank` / `dual_then_rerank` |
+| **Sparse recall** | Uses the page-level collection `*_pages_sparse` then reranks on `colpali_kanna_128` |
+| **Diversification** | Candidates are diversified by `file_id` before exact rerank |
+| **Status** | ENABLED (thesis defaults) |
 
 ## Link 8: Evaluation System
 

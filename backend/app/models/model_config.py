@@ -93,9 +93,9 @@ class ModelConfigBase(BaseModel):
             return v
         if v < 1:
             return 1
-        # Align with ChatService normalizer: max 30
-        if v > 30:
-            return 30
+        # Align with ChatService normalizer: higher caps are required for thesis (diversification).
+        if v > 120:
+            return 120
         return v
 
     @field_validator("score_threshold")

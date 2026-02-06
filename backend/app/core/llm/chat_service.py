@@ -88,11 +88,12 @@ class ChatService:
     def _normalize_top_k(top_k: int) -> int:
         """Normalize top_k parameter."""
         if top_k == -1:
-            return 3
+            # Thesis default: -1 means "use environment default", not "tiny recall".
+            return int(getattr(settings, "rag_default_top_k", 50))
         elif top_k < 1:
             return 1
-        elif top_k > 30:
-            return 30
+        elif top_k > int(getattr(settings, "rag_top_k_cap", 120)):
+            return int(getattr(settings, "rag_top_k_cap", 120))
         return top_k
 
     @staticmethod
@@ -285,6 +286,8 @@ class ChatService:
         user_images = []
         nq_before = 0
         nq_after = 0
+        distinct_files = 0
+        distinct_pages = 0
 
         # Handle temp_db_id (standardized field name)
         temp_db_id = getattr(user_message_content, "temp_db_id", "") or getattr(
@@ -409,6 +412,16 @@ class ChatService:
                         result_score, min_score=score_threshold
                     )
                     cut_score = sorted_score[:top_K]
+                    distinct_files = len(
+                        {str(s.get("file_id")) for s in cut_score if s.get("file_id") is not None}
+                    )
+                    distinct_pages = len(
+                        {
+                            (str(s.get("file_id")), int(s.get("page_number")))
+                            for s in cut_score
+                            if s.get("file_id") is not None and s.get("page_number") is not None
+                        }
+                    )
 
                     # Batch fetch metadata (eliminates N+1 query pattern)
                     if cut_score:
@@ -458,7 +471,8 @@ class ChatService:
 
                         fallback_text_used = 0
                         fallback_text_cap = min(
-                            6, int(top_K) if top_K and top_K > 0 else 6
+                            int(getattr(settings, "rag_fallback_text_cap", 20)),
+                            int(top_K) if top_K and top_K > 0 else int(getattr(settings, "rag_fallback_text_cap", 20)),
                         )
 
                         for score, file_and_image_info in zip(cut_score, file_infos):
@@ -620,6 +634,11 @@ class ChatService:
                 f"nq_before={nq_before} "
                 f"nq_after={nq_after} "
                 f"hits={rag_hits} "
+                f"top_K={top_K} "
+                f"score_threshold={score_threshold} "
+                f"retrieval_mode={getattr(settings, 'rag_retrieval_mode', 'dense')} "
+                f"distinct_files={distinct_files} "
+                f"distinct_pages={distinct_pages} "
                 f"total_s={(time.perf_counter() - t0):.3f} "
                 f"mode={'workflow' if is_workflow else 'rag'}"
             )

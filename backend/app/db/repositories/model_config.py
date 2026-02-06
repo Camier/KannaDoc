@@ -632,9 +632,62 @@ class ModelConfigRepository(BaseRepository):
                 }
             )
 
-        # CLIProxyAPI models: only expose if proxy actually reports models.
+        # Ollama Cloud models (open-source LLMs)
+        if os.getenv("OLLAMA_CLOUD_API_KEY"):
+            ollama_models = [
+                "llama3.3",
+                "llama3.2",
+                "llama3.1",
+                "qwen2.5",
+                "qwen2.5-coder",
+                "qwq",
+                "mistral",
+                "mixtral",
+                "deepseek-r1",
+                "deepseek-v3",
+                "phi4",
+                "gemma2",
+                "codellama",
+                "llama3.2-vision",
+                "llava",
+            ]
+            for model_name in ollama_models:
+                system_models.append(
+                    {
+                        "model_id": f"system_{model_name}",
+                        "model_name": model_name,
+                        "model_url": "",
+                        "api_key": None,
+                        "base_used": [],
+                        "system_prompt": "",
+                        "temperature": -1,
+                        "max_length": -1,
+                        "top_P": -1,
+                        "top_K": -1,
+                        "score_threshold": -1,
+                        "provider": "ollama-cloud",
+                    }
+                )
+
+        # CLIProxyAPI models: try live fetch, fallback to static list.
         if os.getenv("CLIPROXYAPI_BASE_URL"):
             live_models, _reason = await _fetch_cliproxyapi_live_models()
+            if not live_models:
+                # Fallback: use static model list from providers.yaml
+                live_models = [
+                    # Claude (Anthropic via Antigravity)
+                    "claude-opus-4-5-thinking",
+                    "claude-sonnet-4-5-thinking",
+                    "claude-sonnet-4-5",
+                    "claude-sonnet-4-20250514",
+                    "claude-3.5-sonnet",
+                    # Gemini (Google via Antigravity)
+                    "gemini-2.5-pro",
+                    "gemini-2.5-flash",
+                    "gemini-2.5-flash-lite",
+                    "gemini-3-pro-preview",
+                    "gemini-3-flash",
+                ]
             for model_name in live_models:
                 system_models.append(
                     {

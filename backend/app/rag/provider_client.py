@@ -74,6 +74,29 @@ class ProviderClient:
             )
             return "ollama-cloud"
 
+        # Ollama Cloud open-source models
+        ollama_patterns = [
+            "llama",
+            "qwen",
+            "mistral",
+            "mixtral",
+            "phi4",
+            "gemma",
+            "codellama",
+        ]
+        if os.getenv("OLLAMA_CLOUD_API_KEY"):
+            if any(p in model_lower for p in ollama_patterns):
+                logger.debug(
+                    f"Provider detected: ollama-cloud for model '{model_name}'"
+                )
+                return "ollama-cloud"
+            # deepseek-r1/v3 on Ollama (not official DeepSeek API)
+            if model_lower in ["deepseek-r1", "deepseek-v3"]:
+                logger.debug(
+                    f"Provider detected: ollama-cloud for model '{model_name}'"
+                )
+                return "ollama-cloud"
+
         # Antigravity: Check FIRST when configured
         if os.getenv("CLIPROXYAPI_BASE_URL"):
             cliproxyapi_models = cls.PROVIDERS.get("cliproxyapi", {}).get("models", [])
