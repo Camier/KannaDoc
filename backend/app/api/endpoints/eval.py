@@ -173,6 +173,10 @@ async def create_evaluation_dataset(
             created_at=dataset.created_at.isoformat(),
         )
 
+    except HTTPException:
+        # Preserve explicit API errors (e.g., 400 for empty KB)
+        raise
+
     except ValueError as e:
         logger.warning(f"Dataset creation failed: {e}")
         raise HTTPException(status_code=400, detail=str(e))
