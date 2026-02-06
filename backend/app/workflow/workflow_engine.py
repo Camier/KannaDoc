@@ -72,7 +72,10 @@ class WorkflowEngine:
         self.user_message = user_message
         self.parent_id = parent_id
         self.temp_db_id = temp_db_id
-        self.chatflow_id = chatflow_id
+        # Use task_id as fallback for chatflow_id (required for VLM node UserMessage validation)
+        self.chatflow_id = (
+            chatflow_id if chatflow_id else (task_id or str(uuid.uuid4()))
+        )
         self.user_image_urls = []
         self.supply_info = ""  # mcp等工具调用产生的额外的llm输入信息
         self.docker_image_use = (

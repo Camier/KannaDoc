@@ -28,14 +28,14 @@
         "vlmInput": "Build requirements for topic: {{thesis_topic}}",
         "prompt": "Tu es un directeur de thèse et un architecte de manuscrits académiques. Ta mission : produire un cahier des charges opérationnel (JSON) pour construire un plan de thèse très détaillé. Tu ne dois PAS inventer de contraintes institutionnelles : si non fourni, utilise des hypothèses génériques et marque-les comme assumed. Tu dois renvoyer UNIQUEMENT du JSON valide.\n\nINPUT VARIABLES:\nSujet de thèse : {{thesis_topic}}\nDiplôme : {{thesis_degree}}\nFormat : {{thesis_format}}\nLangue : {{thesis_language}}\nDiscipline (indice) : {{discipline_hint}}\nNiveau de granularité attendu : niveau {{granularity_target}}\nLongueur cible : {{target_length_pages}} pages\nStyle de citation : {{citation_style}}\n\nProduis un JSON requirements contenant:\n- research_area\n- provisional_research_question\n- thesis_type (empirical/theoretical/mixed/review-based/unknown)\n- scope: in_scope[], out_of_scope[]\n- mandatory_components[]\n- structure_preferences{}\n- quality_gates{min_sources_per_subsection={{min_sources_per_subsection}}, min_sources_per_chapter={{min_sources_per_chapter}}, granularity_target={{granularity_target}}, evidence_policy:'no-claim-without-evidence'}\n- assumptions[]\n- risks[]\n- output_contract{}\n\nContraintes:\n- JSON strict, pas de texte autour\n- Toutes les clés doivent exister\n- Si incertain: 'unknown' + ajouter une assumption",
         "modelConfig": {
-          "model_id": "thesis_glm",
-          "model_name": "glm-4.7",
-          "model_url": "https://api.z.ai/api/paas/v4",
-          "api_key": "7c9a64caea6848d9b2a78cb452b8c564.eTEJlpK6BaCbFCfa",
+          "model_id": "thesis_deepseek_reasoner",
+          "model_name": "deepseek-reasoner",
+          "model_url": "https://api.deepseek.com/v1",
+          "api_key": "sk-29537d2ba74445f0894e53e48ca1d9ef",
           "base_used": [
             {
               "name": "Thesis Corpus",
-              "baseId": "thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1"
+              "baseId": "miko_e6643365-8b03_4bea-a69b_7a1df00ec653"
             }
           ],
           "system_prompt": "You are an expert academic researcher.",
@@ -64,14 +64,14 @@
         "vlmInput": "Generate seed axes for requirements: {{requirements}}",
         "prompt": "Tu es un analyste bibliographique. Tu dois proposer des axes (thèmes) et des requêtes de recherche pour cartographier une base de 129 PDF scientifiques. Tu renvoies UNIQUEMENT du JSON valide.\n\nINPUT VARIABLES:\nRequirements JSON: {{requirements}}\n\nGénère un JSON avec:\n- seed_axes: 10 à 20 axes {axis_id,label,description,synonyms[],signals_to_look_for[],suggested_queries[3..6]}\n- mapping_strategy{pass_1_goal, pass_2_goal, stop_condition}\n\nContraintes:\n- axes non redondants\n- requêtes variées (FR/EN si utile)\n- JSON strict",
         "modelConfig": {
-          "model_id": "thesis_glm",
-          "model_name": "glm-4.7",
-          "model_url": "https://api.z.ai/api/paas/v4",
-          "api_key": "7c9a64caea6848d9b2a78cb452b8c564.eTEJlpK6BaCbFCfa",
+          "model_id": "thesis_deepseek_reasoner",
+          "model_name": "deepseek-reasoner",
+          "model_url": "https://api.deepseek.com/v1",
+          "api_key": "sk-29537d2ba74445f0894e53e48ca1d9ef",
           "base_used": [
             {
               "name": "Thesis Corpus",
-              "baseId": "thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1"
+              "baseId": "miko_e6643365-8b03_4bea-a69b_7a1df00ec653"
             }
           ],
           "system_prompt": "You are an expert academic researcher.",
@@ -92,7 +92,7 @@
       "type": "code",
       "data": {
         "name": "Parse Seeds",
-        "code": "# Code Node: Parse Seed Axes (Layra Protocol)\ndef main(inputs):\n    import json\n    raw_data = inputs.get(\"seed_axes_json\", \"{}\")\n    \n    # Layra variables are usually string-wrapped python objects\n    if isinstance(raw_data, str):\n        try:\n            # Try to strip markdown and load\n            clean = raw_data\n            if \"```json\" in raw_data:\n                clean = raw_data.split(\"```json\")[1].split(\"```\")[0]\n            data = json.loads(clean)\n        except:\n            data = {}\n    else:\n        data = raw_data\n\n    axes = data.get(\"seed_axes\", [])\n    if not axes and \"axes\" in data:\n        axes = data[\"axes\"]\n        \n    print(\"####Global variable updated####\")\n    print(f\"seed_axes = {json.dumps(axes)}\")\n    print(f\"axes_count = {len(axes)}\")\n    print(f\"loop_idx = 0\")"
+        "code": "# Code Node: Parse Seed Axes (Layra Protocol)\\ndef main(inputs):\\n    import json\\n    import re\\n    raw_data = inputs.get(\\\"seed_axes_json\\\", \\\"{}\\\")\\n    \\n    def extract_json(text):\\n        \\\"\\\"\\\"Extract JSON from text with various fallbacks.\\\"\\\"\\\"\\n        if not isinstance(text, str):\\n            return text if isinstance(text, dict) else {}\\n        \\n        # Try 1: Direct parse\\n        try:\\n            parsed = json.loads(text.strip())\\n            if isinstance(parsed, dict):\\n                return parsed\\n        except:\\n            pass\\n        \\n        # Try 2: Markdown code block\\n        patterns = [\\n            r'```json\\\\s*([\\\\s\\\\S]*?)```',\\n            r'```\\\\s*([\\\\s\\\\S]*?)```',\\n            r'\\\\{[\\\\s\\\\S]*\\\"seed_axes\\\"[\\\\s\\\\S]*\\\\}'\\n        ]\\n        for pattern in patterns:\\n            match = re.search(pattern, text)\\n            if match:\\n                try:\\n                    candidate = match.group(1) if match.lastindex else match.group(0)\\n                    parsed = json.loads(candidate.strip())\\n                    if isinstance(parsed, dict):\\n                        return parsed\\n                except:\\n                    continue\\n        \\n        # Try 3: Find first { to last }\\n        start = text.find('{')\\n        end = text.rfind('}')\\n        if start != -1 and end > start:\\n            try:\\n                parsed = json.loads(text[start:end+1])\\n                if isinstance(parsed, dict):\\n                    return parsed\\n            except:\\n                pass\\n        \\n        return {}\\n    \\n    data = extract_json(raw_data)\\n    \\n    # Find axes in various possible keys\\n    axes = data.get(\\\"seed_axes\\\", [])\\n    if not axes:\\n        axes = data.get(\\\"axes\\\", [])\\n    if not axes and \\\"mapping_strategy\\\" in data:\\n        # If we have mapping_strategy but no axes, data structure might be nested\\n        for key, val in data.items():\\n            if isinstance(val, list) and len(val) > 0:\\n                axes = val\\n                break\\n        \\n    print(\\\"####Global variable updated####\\\")\\n    print(f\\\"seed_axes = {json.dumps(axes)}\\\")\\n    print(f\\\"axes_count = {len(axes)}\\\")\\n    print(f\\\"loop_idx = 0\\\")"
       },
       "position": {
         "x": 900,
@@ -149,14 +149,14 @@
         "vlmInput": "Extract from KB for axis: {{axis}}",
         "prompt": "Tu es un extracteur bibliographique. Tu dois utiliser UNIQUEMENT le contexte récupéré depuis la Knowledge Base. Tu renvoies UNIQUEMENT du JSON valide. Si l’information n’est pas dans le contexte : 'unknown'.\n\nINPUT VARIABLES:\nAxe: {{axis}}\n\nÀ partir du CONTEXTE KB fourni (RAG), renvoie:\n{\n  axis_id,\n  themes_found:[{name,rationale,signals[]}],\n  concepts_found:[{name,definition_hint,notes}],\n  methods_found:[{name,how_used,notes}],\n  datasets_found:[{name,what_it_is,notes}],\n  debates_found:[{topic,positions[],notes}],\n  candidate_sources:[{doc_ref,year,why_relevant,useful_for[],}]\n}\n\nContraintes:\n- si pas d’identifiant exact: doc_ref='unknown'\n- ne fabrique pas de références\n- JSON strict",
         "modelConfig": {
-          "model_id": "thesis_glm_flash",
+          "model_id": "thesis_glm_4.7_flash",
           "model_name": "glm-4.7-flash",
           "model_url": "https://api.z.ai/api/paas/v4",
           "api_key": "7c9a64caea6848d9b2a78cb452b8c564.eTEJlpK6BaCbFCfa",
           "base_used": [
             {
               "name": "Thesis Corpus",
-              "baseId": "thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1"
+              "baseId": "miko_e6643365-8b03_4bea-a69b_7a1df00ec653"
             }
           ],
           "system_prompt": "You are an expert academic researcher.",
@@ -221,14 +221,14 @@
         "vlmInput": "Generate macro outline for mapping: {{kb_map}}",
         "prompt": "Tu es un architecte de thèse. Tu produis un plan macro (chapitres) qui suit une logique argumentative. Tu renvoies UNIQUEMENT du JSON valide.\n\nINPUT VARIABLES:\nRequirements: {{requirements}}\nCartographie KB: {{kb_map}}\n\nGénère:\n{ chapters:[{chapter_id,title,role_in_argument,goal,expected_length_pages,key_questions[],inputs_needed[],expected_outputs[],depends_on[]}]}\n\nContraintes:\n- standard: inclure intro/related work/cadre/méthode/résultats/discussion/conclusion\n- manuscript: inclure intro générale + chapitres/manuscrits + conclusion générale\n- refléter kb_map (thèmes majeurs)\n- JSON strict",
         "modelConfig": {
-          "model_id": "thesis_glm",
-          "model_name": "glm-4.7",
-          "model_url": "https://api.z.ai/api/paas/v4",
-          "api_key": "7c9a64caea6848d9b2a78cb452b8c564.eTEJlpK6BaCbFCfa",
+          "model_id": "thesis_deepseek_reasoner",
+          "model_name": "deepseek-reasoner",
+          "model_url": "https://api.deepseek.com/v1",
+          "api_key": "sk-29537d2ba74445f0894e53e48ca1d9ef",
           "base_used": [
             {
               "name": "Thesis Corpus",
-              "baseId": "thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1"
+              "baseId": "miko_e6643365-8b03_4bea-a69b_7a1df00ec653"
             }
           ],
           "system_prompt": "You are an expert academic researcher.",
@@ -294,14 +294,14 @@
         "vlmInput": "Generate micro outline for chapter: {{current_chapter}}",
         "prompt": "Tu es un directeur de thèse. Tu dois détailler un chapitre en sections et sous-sections (niveau 3). Chaque sous-section doit avoir: objectif, sous-questions, preuves attendues, requêtes KB, critères de réussite. Tu renvoies UNIQUEMENT du JSON valide.\n\nINPUT VARIABLES:\nRequirements: {{requirements}}\nKB map: {{kb_map}}\nChapitre: {{chapter}}\n\nProduis:\n{\n  chapter_id,title,\n  sections:[\n    {section_id,title,objective,\n     subsections:[\n       {subsection_id,title,objective,key_terms[],questions[],expected_evidence_types[],kb_queries[],acceptance_criteria[],min_sources:{{min_sources_per_subsection}},candidate_sources:[]}\n     ]}\n  ]\n}\n\nContraintes:\n- granularité niveau {{granularity_target}} (pas niveau 4 sauf indispensable)\n- titres actionnables\n- JSON strict",
         "modelConfig": {
-          "model_id": "thesis_glm_flash",
+          "model_id": "thesis_glm_4.7_flash",
           "model_name": "glm-4.7-flash",
           "model_url": "https://api.z.ai/api/paas/v4",
           "api_key": "7c9a64caea6848d9b2a78cb452b8c564.eTEJlpK6BaCbFCfa",
           "base_used": [
             {
               "name": "Thesis Corpus",
-              "baseId": "thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1"
+              "baseId": "miko_e6643365-8b03_4bea-a69b_7a1df00ec653"
             }
           ],
           "system_prompt": "You are an expert academic researcher.",
@@ -391,14 +391,14 @@
         "vlmInput": "Retrieve sources for subsection: {{current_subsection}}",
         "prompt": "Tu es un assistant de recherche. Tu utilises UNIQUEMENT le contexte récupéré depuis la KB. Tu renvoies UNIQUEMENT du JSON valide.\n\nINPUT VARIABLES:\nSous-section: {{subsection}}\n\nUtilise kb_queries pour récupérer du contexte. À partir du CONTEXTE, renvoie:\n{ subsection_id, candidate_sources:[{doc_ref,year,why_relevant,best_for[],confidence:0.0}] }\n\nContraintes:\n- si aucune source claire: candidate_sources=[]\n- ne fabrique pas de références\n- JSON strict",
         "modelConfig": {
-          "model_id": "thesis_glm_flash",
+          "model_id": "thesis_glm_4.7_flash",
           "model_name": "glm-4.7-flash",
           "model_url": "https://api.z.ai/api/paas/v4",
           "api_key": "7c9a64caea6848d9b2a78cb452b8c564.eTEJlpK6BaCbFCfa",
           "base_used": [
             {
               "name": "Thesis Corpus",
-              "baseId": "thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1"
+              "baseId": "miko_e6643365-8b03_4bea-a69b_7a1df00ec653"
             }
           ],
           "system_prompt": "You are an expert academic researcher.",
@@ -497,7 +497,7 @@
           "base_used": [
             {
               "name": "Thesis Corpus",
-              "baseId": "thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1"
+              "baseId": "miko_e6643365-8b03_4bea-a69b_7a1df00ec653"
             }
           ],
           "system_prompt": "You are an expert academic researcher.",
@@ -538,14 +538,14 @@
         "vlmInput": "",
         "prompt": "Tu es un assistant de direction de thèse. Présente le plan et demande des modifications sous forme JSON.\n\nINPUT VARIABLES:\nPlan: {{micro_outline}}\nCoverage: {{coverage}}\n\nRenvoie des changements (basé sur l'input utilisateur):\n{changes:[{action,target_id,details{...}}], global_preferences:{tone,emphasis[],must_include_topics[],must_exclude_topics[]}}\n\nSi aucun changement: changes=[]",
         "modelConfig": {
-          "model_id": "thesis_glm_flash",
+          "model_id": "thesis_glm_4.7_flash",
           "model_name": "glm-4.7-flash",
           "model_url": "https://api.z.ai/api/paas/v4",
           "api_key": "7c9a64caea6848d9b2a78cb452b8c564.eTEJlpK6BaCbFCfa",
           "base_used": [
             {
               "name": "Thesis Corpus",
-              "baseId": "thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1"
+              "baseId": "miko_e6643365-8b03_4bea-a69b_7a1df00ec653"
             }
           ],
           "system_prompt": "You are an expert academic researcher.",
@@ -601,7 +601,7 @@
           "model_name": "glm-4.7-flash",
           "system_prompt": "Done.\n{{exports}}",
           "set_chatflow_ai_response": true,
-          "model_id": "thesis_glm_flash",
+          "model_id": "thesis_glm_4.7_flash",
           "model_url": "https://api.z.ai/api/paas/v4",
           "api_key": "7c9a64caea6848d9b2a78cb452b8c564.eTEJlpK6BaCbFCfa"
         }

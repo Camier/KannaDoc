@@ -155,6 +155,7 @@ class ProviderRegistry:
 
         Mirrors ProviderClient.get_provider_for_model() logic.
         """
+        cls.load()  # Ensure providers are loaded
         model_lower = model_name.lower()
 
         # 1. CLIProxyAPI precedence
