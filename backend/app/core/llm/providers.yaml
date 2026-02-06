@@ -70,16 +70,17 @@ providers:
       # Antigravity GPT
       - gpt-4o
       - gpt-4o-mini
-      - gpt-oss-120b-medium
 
   # Ollama Cloud API. Used for open-source models like Llama, Qwen, Mistral.
   # Matched via generic ordered matching loop.
   ollama-cloud:
-    base_url: "https://api.ollama.com/v1"
+    base_url: "https://ollama.com/v1"
     env_key: "OLLAMA_CLOUD_API_KEY"
     timeout: 120
     vision: true
     models:
+      - gpt-oss:120b
+      - gpt-oss:20b
       - llama3.3
       - llama3.2
       - llama3.1

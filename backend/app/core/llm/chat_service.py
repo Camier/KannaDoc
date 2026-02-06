@@ -18,6 +18,7 @@ import asyncio
 import json
 import time
 from typing import AsyncGenerator, Optional, Dict, Any, List, cast
+from urllib.parse import urlencode
 from openai import AsyncOpenAI  # type: ignore[import-not-found]
 
 from app.db.repositories.repository_manager import get_repository_manager
@@ -27,9 +28,14 @@ from app.db.vector_db import vector_db_client
 from app.rag.get_embedding import get_embeddings_from_httpx, get_sparse_embeddings
 from app.rag.utils import replace_image_content, sort_and_filter
 from app.rag.message import find_depth_parent_mesage
-from app.rag.provider_client import get_llm_client, ProviderClient
+from app.rag.provider_client import (
+    get_llm_client,
+    ProviderClient,
+    resolve_api_model_name,
+)
 from app.core.config import settings
 from app.core.embeddings import normalize_multivector, downsample_multivector
+from app.utils.ids import to_milvus_collection_name
 
 
 class ChatService:
@@ -207,6 +213,8 @@ class ChatService:
         if not model_name:
             raise ValueError("Invalid model config: missing model_name")
 
+        system_prompt = cast(str, system_prompt or "")
+
         # Truncate system prompt if too long
         if len(system_prompt) > 1048576:
             system_prompt = system_prompt[0:1048576]
@@ -310,29 +318,59 @@ class ChatService:
                     logger.warning(f"RAG retrieval skipped (embedding failed): {e}")
 
                 # Generate sparse embeddings for hybrid search
+                retrieval_mode = getattr(settings, "rag_retrieval_mode", "dense")
+                # Backward compatibility: older deployments only used rag_hybrid_enabled.
+                if retrieval_mode == "dense" and getattr(
+                    settings, "rag_hybrid_enabled", False
+                ):
+                    retrieval_mode = "hybrid"
+
                 sparse_vecs = []
-                if settings.rag_hybrid_enabled and query_vecs:
+                sparse_query = None
+                if query_vecs and retrieval_mode in [
+                    "hybrid",
+                    "sparse_then_rerank",
+                    "dual_then_rerank",
+                ]:
                     try:
                         sparse_result = await get_sparse_embeddings(
                             [user_message_content.user_message]
                         )
                         if sparse_result and len(sparse_result) > 0:
-                            # Replicate single sparse vector to match dense vector count
-                            sparse_vecs = [sparse_result[0]] * len(query_vecs)
+                            sparse_query = sparse_result[0]
+                            if retrieval_mode == "hybrid":
+                                # Hybrid search uses a per-token query list, so we replicate the single sparse vector.
+                                sparse_vecs = [sparse_query] * len(query_vecs)
                     except Exception as e:
                         logger.warning(
                             f"Sparse embedding failed, falling back to dense-only: {e}"
                         )
 
                 if query_vecs:
-                    # Prepare search data - use hybrid format if sparse vectors available
-                    search_data = (
-                        {"dense_vecs": query_vecs, "sparse_vecs": sparse_vecs}
-                        if sparse_vecs
-                        else query_vecs
-                    )
+                    # Prepare search data based on retrieval mode.
+                    # - dense: query_vecs only
+                    # - hybrid: dense_vecs + sparse_vecs (length-matched)
+                    # - sparse_then_rerank: sparse recall on page-level collection -> exact MaxSim rerank on patch collection
+                    # - dual_then_rerank: sparse page recall + dense patch recall -> fuse candidates -> exact MaxSim rerank
+                    if (
+                        retrieval_mode in ["sparse_then_rerank", "dual_then_rerank"]
+                        and sparse_query
+                    ):
+                        search_data = {
+                            "mode": retrieval_mode,
+                            "dense_vecs": query_vecs,
+                            "sparse_query": sparse_query,
+                        }
+                    elif sparse_vecs:
+                        search_data = {
+                            "dense_vecs": query_vecs,
+                            "sparse_vecs": sparse_vecs,
+                        }
+                    else:
+                        search_data = query_vecs
+
                     for base in bases:
-                        collection_name = f"colqwen{base['baseId'].replace('-', '_')}"
+                        collection_name = to_milvus_collection_name(base["baseId"])
                         try:
                             t_start = time.perf_counter()
                             if is_workflow:
@@ -375,6 +413,41 @@ class ChatService:
                     # Batch fetch metadata (eliminates N+1 query pattern)
                     if cut_score:
                         t_start = time.perf_counter()
+                        # In some deployments (notably thesis), Mongo may not contain file/image metadata yet.
+                        # We still want to leverage extracted text for RAG, so we prefetch page previews
+                        # from the page-level sparse collection (if present) for fallback context.
+                        previews_by_collection: dict[
+                            str, dict[tuple[str, int], str]
+                        ] = {}
+                        try:
+                            pairs_by_collection: dict[str, list[tuple[str, int]]] = {}
+                            seen: set[tuple[str, str, int]] = set()
+                            for s in cut_score:
+                                coll = s.get("collection_name") or ""
+                                fid = s.get("file_id")
+                                pn = s.get("page_number")
+                                if not coll or fid is None or pn is None:
+                                    continue
+                                try:
+                                    pn_i = int(pn)
+                                except Exception:
+                                    continue
+                                key = (coll, str(fid), pn_i)
+                                if key in seen:
+                                    continue
+                                seen.add(key)
+                                pairs_by_collection.setdefault(coll, []).append(
+                                    (str(fid), pn_i)
+                                )
+
+                            for coll, pairs in pairs_by_collection.items():
+                                previews_by_collection[coll] = (
+                                    vector_db_client.get_page_previews(coll, pairs)
+                                    or {}
+                                )
+                        except Exception:
+                            previews_by_collection = {}
+
                         file_image_pairs = [
                             (score["file_id"], score["image_id"]) for score in cut_score
                         ]
@@ -382,6 +455,11 @@ class ChatService:
                             file_image_pairs
                         )
                         t_meta_s += time.perf_counter() - t_start
+
+                        fallback_text_used = 0
+                        fallback_text_cap = min(
+                            6, int(top_K) if top_K and top_K > 0 else 6
+                        )
 
                         for score, file_and_image_info in zip(cut_score, file_infos):
                             if file_and_image_info.get("status") != "success":
@@ -392,7 +470,77 @@ class ChatService:
                                     f"image_id={score.get('image_id')} "
                                     f"page_number={score.get('page_number')}"
                                 )
+
+                                # Thesis fallback: use extracted page text (if available) and generate
+                                # browser-viewable reference URLs from local PDFs.
+                                if fallback_text_used < fallback_text_cap:
+                                    try:
+                                        coll = score.get("collection_name") or ""
+                                        fid = str(score.get("file_id") or "")
+                                        pn = int(score.get("page_number") or 0)
+                                        preview = (
+                                            previews_by_collection.get(coll, {}).get((fid, pn))
+                                            or ""
+                                        )
+                                        if preview:
+                                            filename = score.get("filename") or fid
+                                            # Use relative URLs so this works behind nginx reverse proxy
+                                            # regardless of SERVER_IP (local dev vs deployed domain).
+                                            api_base = settings.api_version_url
+                                            thesis_pdf_url = (
+                                                f"{api_base}/thesis/pdf?"
+                                                + urlencode({"file_id": fid})
+                                            )
+                                            thesis_image_url = (
+                                                f"{api_base}/thesis/page-image?"
+                                                + urlencode(
+                                                    {"file_id": fid, "page_number": pn, "dpi": 150}
+                                                )
+                                            )
+
+                                            # Provide structured citation metadata for the UI.
+                                            file_used.append(
+                                                {
+                                                    "score": score.get("score", 0.0),
+                                                    # No Mongo knowledge_db_id in this environment; keep stable ID.
+                                                    "knowledge_db_id": coll or "thesis",
+                                                    "file_name": filename,
+                                                    "file_id": fid,
+                                                    "page_number": pn,
+                                                    "image_id": score.get("image_id"),
+                                                    "text_preview": preview[:1200],
+                                                    "image_url": thesis_image_url,
+                                                    "file_url": thesis_pdf_url,
+                                                }
+                                            )
+
+                                            # Keep the injected text small to avoid blowing up prompt tokens.
+                                            injected = preview[:1200]
+                                            content.append(
+                                                {
+                                                    "type": "text",
+                                                    "text": (
+                                                        f"[RAG Source] {filename} (page {pn})\n"
+                                                        f"{injected}"
+                                                    ),
+                                                }
+                                            )
+                                            rag_hits += 1
+                                            fallback_text_used += 1
+                                    except Exception:
+                                        pass
                                 continue
+
+                            # Optional: attach extracted text preview (if available) even when Mongo matches.
+                            try:
+                                coll = score.get("collection_name") or ""
+                                fid = str(score.get("file_id") or "")
+                                pn = int(score.get("page_number") or 0)
+                                preview = (
+                                    previews_by_collection.get(coll, {}).get((fid, pn)) or ""
+                                )
+                            except Exception:
+                                preview = ""
 
                             file_used.append(
                                 {
@@ -401,6 +549,10 @@ class ChatService:
                                         "knowledge_db_id"
                                     ],
                                     "file_name": file_and_image_info["file_name"],
+                                    "file_id": score.get("file_id"),
+                                    "page_number": score.get("page_number"),
+                                    "image_id": score.get("image_id"),
+                                    "text_preview": preview[:1200] if preview else "",
                                     "image_url": file_and_image_info["image_minio_url"],
                                     "file_url": file_and_image_info["file_minio_url"],
                                 }
@@ -556,8 +708,8 @@ class ChatService:
         else:
             is_zai = detected_provider == "zai"
 
-        # Use model name as-is
-        api_model_name = model_name
+        # Map legacy/alias model name for provider API calls
+        api_model_name = resolve_api_model_name(model_name)
 
         logger.debug(
             f"is_zhipu={is_zhipu}, is_zai={is_zai}, api_model_name={api_model_name}"

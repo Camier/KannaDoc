@@ -29,6 +29,14 @@ def _load_providers_config() -> Dict[str, Any]:
         return yaml.safe_load(f)
 
 
+def resolve_api_model_name(model_name: str) -> str:
+    """Map legacy/alias model names to provider API model ids."""
+    model_lower = model_name.lower()
+    if model_lower == "gpt-oss-120b-medium":
+        return "gpt-oss:120b"
+    return model_name
+
+
 class ProviderClient:
     """Factory for creating provider-specific OpenAI-compatible clients"""
 
@@ -58,6 +66,13 @@ class ProviderClient:
             )
 
         model_lower = model_name.lower()
+
+        # Ollama Cloud override for gpt-oss models when key is present
+        if "gpt-oss" in model_lower and os.getenv("OLLAMA_CLOUD_API_KEY"):
+            logger.debug(
+                f"Provider detected: ollama-cloud for model '{model_name}' (OLLAMA_CLOUD_API_KEY set)"
+            )
+            return "ollama-cloud"
 
         # Antigravity: Check FIRST when configured
         if os.getenv("CLIPROXYAPI_BASE_URL"):
@@ -108,6 +123,8 @@ class ProviderClient:
             return "Set ZAI_API_KEY for GLM models"
         if "deepseek" in model_lower:
             return "Set DEEPSEEK_API_KEY for DeepSeek models"
+        if "gpt-oss" in model_lower:
+            return "Set OLLAMA_CLOUD_API_KEY for Ollama Cloud models"
         if any(x in model_lower for x in ["claude", "gpt", "gemini", "o1", "o3"]):
             return "Set CLIPROXYAPI_BASE_URL and CLIPROXYAPI_API_KEY for proxied models"
         if any(x in model_lower for x in ["llama", "qwen", "mistral"]):
