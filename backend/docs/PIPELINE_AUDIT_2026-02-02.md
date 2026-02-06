@@ -115,14 +115,17 @@ For existing collections, see `backend/scripts/milvus_ensure_scalar_indexes.py` 
 | **Implementation** | `app/db/milvus.py:MilvusManager.search()` |
 | **Retry logic** | Tenacity (3 attempts, 2-30s backoff) |
 | **Modes** | `dense` / `sparse_then_rerank` / `dual_then_rerank` |
+| **Mode toggle (default)** | `RAG_RETRIEVAL_MODE` (runtime env; thesis default: `dual_then_rerank`) |
 | **Sparse recall** | Uses the page-level collection `*_pages_sparse` then reranks on `colpali_kanna_128` |
+| **Sparse query** | Generated via `app/rag/get_embedding.py:get_sparse_embeddings()` (`POST {MODEL_SERVER_URL}/embed_sparse`; graceful fallback to dense-only on failure) |
 | **Diversification** | Candidates are diversified by `file_id` before exact rerank |
 | **Status** | ENABLED (thesis defaults) |
 
 ### Retrieval Defaults (Thesis)
 
-- `top_K`: If the runtime mode is `sparse_then_rerank` or `dual_then_rerank`, `top_K` is normalized with a minimum of `RAG_SEARCH_LIMIT_MIN` (default: 50) to prevent accidental “2 sources only” caps from legacy UI defaults.
+- `top_K`: If the runtime mode is `sparse_then_rerank` or `dual_then_rerank`, `top_K` is normalized with a minimum of `RAG_SEARCH_LIMIT_MIN` (default: 50) to prevent accidental “2 sources only” caps from legacy UI defaults. This applies to chat RAG and the `search-preview` debug endpoint.
 - `score_threshold`: `-1` is treated as “use environment default”; in thesis this defaults to `RAG_DEFAULT_SCORE_THRESHOLD=0.0` (no filtering). Set an explicit positive threshold only when you want to aggressively prune candidates.
+- `search-preview overrides`: `search-preview` accepts `retrieval_mode` (optional override) and `min_score` (explicit filter for preview only). In absence of `retrieval_mode`, it uses `RAG_RETRIEVAL_MODE`.
 
 ## Link 8: Evaluation System
 
