@@ -62,8 +62,9 @@ Counts below are a snapshot; see `AGENTS.md` for the canonical corpus size state
 
 | Aspect | Evidence |
 |--------|----------|
-| **Connection** | `MILVUS_URI=http://host.docker.internal:19530` (from `layra/.env`) |
-| **Host service** | Milvus is running on the host (not the `milvus-standalone` container) |
+| **Connection (thesis default)** | `MILVUS_URI=http://host.docker.internal:19530` (from `layra/.env`) |
+| **Host service** | Thesis uses a Milvus instance running on the host (not the `milvus-standalone` container) |
+| **Fallback (if MILVUS_URI unset)** | `MILVUS_URI=${MILVUS_URI:-http://milvus-standalone:19530}` (docker-compose default) |
 | **Database** | `default` (thesis corpus) and `misc` (non-thesis collections) |
 | **Patch (ColPali) collection** | `default.colpali_kanna_128` (3,561,575 vectors) |
 | **Page sparse sidecar** | `default.colpali_kanna_128_pages_sparse` (4,691 rows) |
@@ -81,8 +82,18 @@ Counts below are a snapshot; see `AGENTS.md` for the canonical corpus size state
 
 ### Page Identity vs Patch Identity
 
-- `image_id` is **patch-level** (one row per patch vector); it is not a stable page identifier.
-- Page grouping must be done on `(file_id, page_number)` for correct reranking and diversification.
+- `image_id` is **patch-level** (one row per patch vector in `default.colpali_kanna_128`); it is not a stable page identifier.
+- Page grouping MUST be done on `(file_id, page_number)` for correct page-level recall, reranking, and diversification.
+- `image_id` can be kept as a **debug-only** representative patch id (helpful for tracing) but should not be treated as a page id.
+
+### Scalar Indexes (Metadata)
+
+To keep filtering and page grouping fast without moving/copying any vectors, the patch collection should have scalar indexes:
+- `INVERTED` on `file_id`
+- `INVERTED` on `image_id`
+- `INVERTED` on `page_number`
+
+For existing collections, see `backend/scripts/milvus_ensure_scalar_indexes.py` (idempotent; no drops, no re-ingestion).
 
 ## Link 6: Neo4j Graph Storage
 
