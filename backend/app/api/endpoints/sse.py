@@ -15,11 +15,12 @@ from redis.asyncio import Redis, ResponseError
 
 from app.workflow.mcp_tools import mcp_call_tools
 from app.workflow.utils import find_outermost_braces, replace_template
+from app.core.config import settings
 
 router = APIRouter()
 
 # Hardcoded username for single-user mode
-USERNAME = "miko"
+USERNAME = settings.default_username
 
 
 # 创建新会话
@@ -76,6 +77,16 @@ async def get_task_progress(
     return EventSourceResponse(event_generator())
 
 
+# Frontend compatibility: it calls `/sse/task/{username}/{task_id}`.
+# Username is ignored in single-tenant mode; task_id is globally unique anyway.
+@router.get("/task/{username}/{task_id}")
+async def get_task_progress_with_user(
+    username: str,
+    task_id: str,
+):
+    return await get_task_progress(task_id)
+
+
 @router.get("/workflow/{task_id}")
 async def workflow_sse(
     task_id: str,
@@ -128,6 +139,11 @@ async def workflow_sse(
                     "create_time": parsed_msg.get("create_time"),
                 },
             }
+
+        return {
+            "event": "unknown",
+            "data": parsed_msg,
+        }
 
     async def event_stream():
         redis_conn: Redis = await redis.get_task_connection()

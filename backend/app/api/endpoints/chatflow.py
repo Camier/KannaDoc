@@ -1,12 +1,21 @@
 from typing import List
 from fastapi import APIRouter, Depends, HTTPException
-from app.models.chatflow import ChatflowCreate, ChatflowOutput, ChatflowRenameInput, ChatflowSummary
-from app.db.repositories.repository_manager import RepositoryManager, get_repository_manager
+from app.models.chatflow import (
+    ChatflowCreate,
+    ChatflowOutput,
+    ChatflowRenameInput,
+    ChatflowSummary,
+)
+from app.db.repositories.repository_manager import (
+    RepositoryManager,
+    get_repository_manager,
+)
+from app.core.config import settings
 
 router = APIRouter()
 
 # Hardcoded username for single-user mode
-USERNAME = "miko"
+USERNAME = settings.default_username
 
 
 # 创建新chatflow
@@ -51,7 +60,11 @@ async def get_chatflow(
     user_files = []
     for turn in chatflow["turns"]:
         # Use knowledge_base repository to get files
-        user_files.append(await repo_manager.knowledge_base.get_files_by_knowledge_base_id(turn["temp_db"]))
+        user_files.append(
+            await repo_manager.knowledge_base.get_files_by_knowledge_base_id(
+                turn["temp_db"]
+            )
+        )
 
     return {
         "chatflow_id": chatflow["chatflow_id"],

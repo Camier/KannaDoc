@@ -16,16 +16,21 @@ from app.schemas.chat_responses import (
     ConversationUploadResponse,
     StatusResponse,
 )
-from app.db.repositories.repository_manager import RepositoryManager, get_repository_manager
+from app.db.repositories.repository_manager import (
+    RepositoryManager,
+    get_repository_manager,
+)
 from app.rag.convert_file import save_file_to_minio
 from app.utils.kafka_producer import kafka_producer_manager
 from app.core.logging import logger
 from app.db.vector_db import vector_db_client
+from app.core.config import settings
+from app.utils.ids import to_milvus_collection_name
 
 router = APIRouter()
 
 # Hardcoded username for single-user mode
-USERNAME = "miko"
+USERNAME = settings.default_username
 
 
 # 创建新会话
@@ -57,7 +62,7 @@ async def re_name(
     if result["status"] == "failed":
         raise HTTPException(status_code=404, detail="Conversation not found")
     return ConversationRenameResponse(
-        status=result["status"], message=result.get("message")
+        status=result["status"], message=result.get("message") or ""
     )
 
 
@@ -72,7 +77,7 @@ async def select_bases(
     )
     if result["status"] == "failed":
         raise HTTPException(status_code=404, detail="Conversation not found")
-    return StatusResponse(status=result["status"], message=result.get("message"))
+    return StatusResponse(status=result["status"], message=result.get("message") or "")
 
 
 # 获取指定 conversation_id 的完整会话记录
@@ -86,7 +91,9 @@ async def get_conversation(
         raise HTTPException(status_code=404, detail="Conversation not found")
 
     # Fix N+1: Collect all unique temp_db IDs and fetch in single query
-    temp_db_ids = list({turn["temp_db"] for turn in conversation["turns"] if turn.get("temp_db")})
+    temp_db_ids = list(
+        {turn["temp_db"] for turn in conversation["turns"] if turn.get("temp_db")}
+    )
     kb_files_map = {}
 
     if temp_db_ids:
@@ -95,7 +102,7 @@ async def get_conversation(
         # but this query logic could be moved to KnowledgeBaseRepository
         cursor = repo_manager.db.knowledge_bases.find(
             {"knowledge_base_id": {"$in": temp_db_ids}},
-            {"knowledge_base_id": 1, "files": 1}
+            {"knowledge_base_id": 1, "files": 1},
         )
         knowledge_bases = await cursor.to_list(length=100)
 
@@ -108,7 +115,9 @@ async def get_conversation(
             ]
 
     # Use mapping to populate user_files in order
-    user_files = [kb_files_map.get(turn["temp_db"], []) for turn in conversation["turns"]]
+    user_files = [
+        kb_files_map.get(turn["temp_db"], []) for turn in conversation["turns"]
+    ]
 
     return {
         "conversation_id": conversation["conversation_id"],
@@ -190,9 +199,7 @@ async def delete_all_conversations_by_user(
 
 
 # 上传文件
-@router.post(
-    "/upload/{conversation_id}", response_model=ConversationUploadResponse
-)
+@router.post("/upload/{conversation_id}", response_model=ConversationUploadResponse)
 async def upload_multiple_files(
     files: List[UploadFile],
     conversation_id: str,
@@ -207,12 +214,9 @@ async def upload_multiple_files(
         knowledge_db_id,
         True,
     )
-    if not vector_db_client.check_collection(
-        "colqwen" + knowledge_db_id.replace("-", "_")
-    ):
-        vector_db_client.create_collection(
-            "colqwen" + knowledge_db_id.replace("-", "_")
-        )
+    collection_name = to_milvus_collection_name(knowledge_db_id)
+    if not vector_db_client.check_collection(collection_name):
+        vector_db_client.create_collection(collection_name)
     # 生成任务ID
     task_id = USERNAME + "_" + str(uuid.uuid4())
     total_files = len(files)
@@ -236,12 +240,19 @@ async def upload_multiple_files(
     upload_tasks = [save_file_to_minio(USERNAME, file) for file in files]
     upload_results = await asyncio.gather(*upload_tasks, return_exceptions=True)
 
-    for file, result in zip(files, upload_results):
-        if isinstance(result, Exception):
-            logger.error(f"Failed to upload {file.filename}: {result}")
-            raise result
+    for file, upload_result in zip(files, upload_results):
+        if isinstance(upload_result, BaseException):
+            logger.error(f"Failed to upload {file.filename}: {upload_result}")
+            raise upload_result
 
-        minio_filename, minio_url = result
+        if (
+            not isinstance(upload_result, tuple)
+            or len(upload_result) != 2
+            or not all(isinstance(x, str) for x in upload_result)
+        ):
+            raise RuntimeError(f"Unexpected MinIO upload result: {upload_result!r}")
+
+        minio_filename, minio_url = upload_result
 
         # 生成文件ID并保存元数据
         file_id = f"{USERNAME}_{uuid.uuid4()}"
@@ -273,7 +284,7 @@ async def upload_multiple_files(
             username=USERNAME,
             knowledge_db_id=knowledge_db_id,
             file_meta=meta,
-            priority=1,
+            priority="1",
         )
 
     return ConversationUploadResponse(
