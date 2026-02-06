@@ -8,6 +8,8 @@ from app.core.utils import (
     sanitize_path_component,
 )
 
+pytestmark = pytest.mark.unit
+
 
 def test_calculate_sha256_string():
     assert (

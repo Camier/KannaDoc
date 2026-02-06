@@ -10,7 +10,15 @@ import pytest
 import asyncio
 import time
 from unittest.mock import Mock, AsyncMock, MagicMock, patch
+
+pytest.importorskip("redis")
+pytest.importorskip("docker")
+pytest.importorskip("mcp")
+pytest.importorskip("circuitbreaker")
+
 from app.workflow.workflow_engine import WorkflowEngine
+
+pytestmark = pytest.mark.integration
 
 
 class TestConcurrencyPerformance:

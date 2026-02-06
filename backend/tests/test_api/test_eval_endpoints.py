@@ -2,7 +2,11 @@
 
 import pytest
 from unittest.mock import AsyncMock, MagicMock, patch
+
+pytest.importorskip("fastapi")
+
 from fastapi import HTTPException
+pytestmark = pytest.mark.integration
 
 
 class TestCreateDatasetEndpoint:

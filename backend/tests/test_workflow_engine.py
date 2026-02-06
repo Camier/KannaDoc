@@ -5,11 +5,20 @@ Tests workflow execution, loop nodes, condition nodes, VLM nodes, and state mana
 
 import pytest
 import json
-import app.workflow.workflow_engine as workflow_engine
 from types import SimpleNamespace
 from unittest.mock import Mock, AsyncMock, MagicMock, patch
+
+pytest.importorskip("redis")
+pytest.importorskip("docker")
+pytest.importorskip("mcp")
+pytest.importorskip("circuitbreaker")
+pytest.importorskip("openai")
+
+import app.workflow.workflow_engine as workflow_engine
 from app.workflow.workflow_engine import WorkflowEngine
 from app.workflow.graph import TreeNode, WorkflowGraph
+
+pytestmark = pytest.mark.integration
 
 
 class TestWorkflowEngine:

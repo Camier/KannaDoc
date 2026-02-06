@@ -1,4 +1,8 @@
+import pytest
+
 from app.utils.ids import to_milvus_collection_name
+
+pytestmark = pytest.mark.unit
 
 
 def test_to_milvus_collection_name_preserves_colpali_collection_names():
@@ -22,4 +26,3 @@ def test_to_milvus_collection_name_converts_kb_ids():
         to_milvus_collection_name("kb_550e8400-e29b-41d4-a716-446655440000")
         == "colqwenkb_550e8400_e29b_41d4_a716_446655440000"
     )
-

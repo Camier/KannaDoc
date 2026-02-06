@@ -9,6 +9,8 @@ from app.eval.metrics import (
     EvalResult,
 )
 
+pytestmark = pytest.mark.unit
+
 
 def test_mean_reciprocal_rank():
     assert mean_reciprocal_rank([1, 3, 5]) == pytest.approx(1.0)

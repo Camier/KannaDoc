@@ -1,7 +1,14 @@
 """Test for Fix #1: MinIO presigned URL endpoint"""
 import pytest
 from unittest.mock import AsyncMock, MagicMock, patch
+
+pytest.importorskip("aioboto3")
+pytest.importorskip("botocore")
+pytest.importorskip("fastapi")
+
 from app.db.miniodb import AsyncMinIOManager
+
+pytestmark = pytest.mark.integration
 
 
 @pytest.mark.asyncio

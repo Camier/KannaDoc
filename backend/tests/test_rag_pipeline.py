@@ -6,10 +6,17 @@ Tests end-to-end RAG functionality, embedding generation, vector search, and ret
 import pytest
 import json
 from unittest.mock import Mock, AsyncMock, MagicMock, patch
+
+pytest.importorskip("circuitbreaker")
+pytest.importorskip("openai")
+pytest.importorskip("pymilvus")
+
 from app.core.llm import ChatService
 from app.db.vector_db import VectorDBClientWrapper
 from app.db.mongo import MongoDB
 from app.models.shared import UserMessage
+
+pytestmark = pytest.mark.integration
 
 
 class TestEmbeddingGeneration:
