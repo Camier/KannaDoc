@@ -188,8 +188,10 @@ In this environment, the runtime applies conservative defaults ONLY for system m
 Important constraints that influenced the “do not overspecify” approach:
 - **OpenAI**: `temperature` range is `0..2`. Docs:
   https://platform.openai.com/docs/api-reference/chat/create
-- **Anthropic**: `temperature` range is `0..1`. Some models do not allow specifying both
-  `temperature` and `top_p`. Docs:
+- **Claude (Anthropic)**: `temperature` range is `0..1`. Some models do not allow specifying both
+  `temperature` and `top_p`. In this stack, Claude is typically reached via **Antigravity behind
+  CLIProxyAPI** (`provider=cliproxyapi`), so we apply this constraint based on `(provider, model_name)`,
+  not a dedicated `provider=anthropic`. Docs:
   https://docs.anthropic.com/en/api/messages
   https://docs.anthropic.com/en/release-notes/api#response-api-updates
 - **DeepSeek**: reasoning model `deepseek-reasoner` ignores/does not support `temperature` / `top_p`

@@ -221,6 +221,12 @@ class ChatService:
         """Translate normalized config -> OpenAI-compatible request kwargs."""
         optional_args: dict[str, Any] = {}
         provider_l = (provider or "").strip().lower()
+        model_l = (model_name or "").strip().lower()
+
+        # In this repo, Claude/Gemini models are typically accessed via "antigravity"
+        # behind the OpenAI-compatible CLIProxyAPI provider ("cliproxyapi").
+        # There is no standalone "anthropic" provider id.
+        is_claude_via_cliproxyapi = provider_l == "cliproxyapi" and "claude" in model_l
 
         is_deepseek_reasoner = ChatService._is_deepseek_reasoner_model(
             model_name=model_name,
@@ -241,7 +247,9 @@ class ChatService:
         # temperature range than the OpenAI API (0..2). We clamp only when provider is
         # explicit (or detected and trusted) to avoid breaking arbitrary proxies.
         if temperature != -1:
-            if provider_l in ("anthropic", "minimax", "zai", "zhipu", "zhipu-coding"):
+            if provider_l in ("minimax", "zai"):
+                temperature = max(0.0, min(float(temperature), 1.0))
+            if is_claude_via_cliproxyapi:
                 temperature = max(0.0, min(float(temperature), 1.0))
 
         if temperature != -1:
@@ -251,9 +259,10 @@ class ChatService:
         if top_p != -1:
             # Anthropic docs note that for some models you cannot specify both
             # temperature and top_p. Prefer temperature in that case.
-            if provider_l == "anthropic" and temperature != -1:
+            # In this stack, apply that rule to Claude models proxied via CLIProxyAPI.
+            if is_claude_via_cliproxyapi and temperature != -1:
                 logger.info(
-                    "Anthropic provider: dropping top_p because temperature is set (compat)."
+                    "Claude via CLIProxyAPI: dropping top_p because temperature is set (compat)."
                 )
             else:
                 optional_args["top_p"] = top_p

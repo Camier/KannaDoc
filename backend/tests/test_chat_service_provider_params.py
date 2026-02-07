@@ -2,8 +2,8 @@ import pytest
 
 
 @pytest.mark.unit
-def test_optional_args_anthropic_drops_top_p_when_temperature_set() -> None:
-    """Anthropic providers may reject specifying both temperature and top_p.
+def test_optional_args_claude_via_cliproxyapi_drops_top_p_when_temperature_set() -> None:
+    """Claude (Anthropic) models proxied via CLIProxyAPI may reject specifying both temperature and top_p.
 
     We prefer temperature for academic/RAG stability.
     """
@@ -12,7 +12,7 @@ def test_optional_args_anthropic_drops_top_p_when_temperature_set() -> None:
 
     args = ChatService._build_optional_openai_args(
         model_name="claude-3-5-sonnet",
-        provider="anthropic",
+        provider="cliproxyapi",
         temperature=0.2,
         max_length=2048,
         top_p=0.9,
@@ -24,12 +24,12 @@ def test_optional_args_anthropic_drops_top_p_when_temperature_set() -> None:
 
 
 @pytest.mark.unit
-def test_optional_args_anthropic_clamps_temperature_to_one() -> None:
+def test_optional_args_claude_via_cliproxyapi_clamps_temperature_to_one() -> None:
     from app.core.llm.chat_service import ChatService
 
     args = ChatService._build_optional_openai_args(
         model_name="claude-3-5-sonnet",
-        provider="anthropic",
+        provider="cliproxyapi",
         temperature=1.7,
         max_length=2048,
         top_p=-1,
@@ -106,4 +106,3 @@ def test_optional_args_deepseek_r1_via_ollama_cloud_is_not_treated_as_reasoner()
     assert args.get("temperature") == 0.2
     assert args.get("max_tokens") == 2048
     assert args.get("top_p") == 0.9
-
