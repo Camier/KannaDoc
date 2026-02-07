@@ -112,6 +112,7 @@ For existing collections, see `backend/scripts/milvus_ensure_scalar_indexes.py` 
 | **Method** | MaxSim reranking on ColQwen patch vectors (ColPali-style) |
 | **Endpoint (chat RAG)** | `POST /api/v1/sse/chat` |
 | **Endpoint (debug, no LLM)** | `POST /api/v1/kb/knowledge-base/{kb_id}/search-preview` |
+| **Preview assets (thesis-only)** | `GET /api/v1/thesis/page-image` and `GET /api/v1/thesis/pdf` (served from local `backend/data/pdfs/`) |
 | **Implementation** | `app/db/milvus.py:MilvusManager.search()` |
 | **Retry logic** | Tenacity (3 attempts, 2-30s backoff) |
 | **Modes** | `dense` / `hybrid` / `sparse_then_rerank` / `dual_then_rerank` |
@@ -120,6 +121,23 @@ For existing collections, see `backend/scripts/milvus_ensure_scalar_indexes.py` 
 | **Sparse query** | Generated via `app/rag/get_embedding.py:get_sparse_embeddings()` (`POST {MODEL_SERVER_URL}/embed_sparse`; graceful fallback to dense-only on failure) |
 | **Diversification** | Candidates are diversified by `file_id` before exact rerank (with backfill to reach `top_K` pages when possible) |
 | **Status** | ENABLED (thesis defaults) |
+
+### Debug Preview (search-preview) and “Missing Metadata” Behavior
+
+In the thesis environment, `search-preview` is used by the frontend knowledge base UI to debug retrieval. It returns per-result:
+- `file_id`, `page_number`, `image_id` (patch-level representative id, debug only)
+- `filename` and `minio_url` (historical field name; the UI renders it as an `<img src=...>`)
+
+Important operational detail:
+- Milvus `file_id` values for thesis are typically **human-readable PDF stems** (e.g. `"1998 - al. - Depression in Parkinsons disease an EEG frequency analysis study"`).
+- Mongo `knowledge_bases.files[*].file_id` values may not match those stems (e.g. `miko_<uuid>` style), and some deployments do not populate the `files` collection at all.
+
+To keep `search-preview` functional without re-ingestion or moving any vectors, the backend supports a thesis-only fallback:
+- If Mongo file/image metadata cannot be resolved, `search-preview` returns a preview image URL using:
+  `GET /api/v1/thesis/page-image?file_id=...&page_number=...&dpi=150`
+- This endpoint renders directly from the local PDFs in `backend/data/pdfs/` via `pdf2image`.
+- PDFs can also be fetched for debugging via:
+  `GET /api/v1/thesis/pdf?file_id=...`
 
 ### Retrieval Defaults (Thesis)
 
