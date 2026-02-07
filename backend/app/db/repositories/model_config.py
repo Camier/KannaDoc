@@ -492,17 +492,9 @@ class ModelConfigRepository(BaseRepository):
 
         return {"status": "error", "message": "Selected model not found"}
 
-    async def get_all_models_config(self, username: str):
-        # 直接返回 models 数组
-        await self._ensure_user_model_config(username)
-        user_config = await self.db.model_config.find_one({"username": username})
-        if not user_config:
-            # Should not happen after upsert, but keep a safe fallback.
-            user_config = {"username": username, "selected_model": "", "models": []}
-
-        user_models = user_config.get("models", [])
-        persisted_model_ids = {m.get("model_id") for m in user_models}
-
+    async def _prune_stale_system_models(
+        self, user_models: List[dict], persisted_model_ids: set
+    ) -> tuple[List[dict], set]:
         # If CLIProxyAPI is configured but returns empty /models, hide any stale
         # stored system_* proxy models to avoid presenting broken choices.
         if os.getenv("CLIPROXYAPI_BASE_URL"):
@@ -549,8 +541,14 @@ class ModelConfigRepository(BaseRepository):
                     logger.debug("Pruning stale system model: %s", mid)
                     continue
             pruned.append(m)
+
         user_models = pruned
         persisted_model_ids = {m.get("model_id") for m in user_models}
+
+        return user_models, persisted_model_ids
+
+    async def _synthesize_system_models(self, persisted_model_ids: set) -> List[dict]:
+        from app.rag.provider_registry import ProviderRegistry
 
         system_models: List[dict] = []
 
@@ -592,11 +590,11 @@ class ModelConfigRepository(BaseRepository):
                         "provider": provider_id,
                     }
                 )
+        return system_models
 
-        for sys_model in system_models:
-            if sys_model["model_id"] not in persisted_model_ids:
-                user_models.append(sys_model)
-
+    async def _resolve_selected_model(
+        self, user_models: List[dict], user_config: dict, username: str
+    ) -> str:
         selected_model = str(user_config.get("selected_model") or "")
         if selected_model:
             known_ids = {m.get("model_id") for m in user_models}
@@ -632,6 +630,32 @@ class ModelConfigRepository(BaseRepository):
                 {"username": username}, {"$set": {"selected_model": selected_model}}
             )
             await cache_service.invalidate_model_config(username)
+
+        return selected_model
+
+    async def get_all_models_config(self, username: str):
+        # 直接返回 models 数组
+        await self._ensure_user_model_config(username)
+        user_config = await self.db.model_config.find_one({"username": username})
+        if not user_config:
+            # Should not happen after upsert, but keep a safe fallback.
+            user_config = {"username": username, "selected_model": "", "models": []}
+
+        user_models = user_config.get("models", [])
+        persisted_model_ids = {m.get("model_id") for m in user_models}
+
+        user_models, persisted_model_ids = await self._prune_stale_system_models(
+            user_models, persisted_model_ids
+        )
+
+        new_system_models = await self._synthesize_system_models(persisted_model_ids)
+        for sys_model in new_system_models:
+            if sys_model["model_id"] not in persisted_model_ids:
+                user_models.append(sys_model)
+
+        selected_model = await self._resolve_selected_model(
+            user_models, user_config, username
+        )
 
         return {
             "status": "success",
