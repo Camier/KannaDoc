@@ -236,7 +236,7 @@ const AIChat: React.FC = () => {
                   },
                 },
 
-                ...file_used.map((file: FileUsed, index: number) => ({
+                ...(file_used ?? []).map((file: FileUsed, index: number) => ({
                   type: "baseFile",
                   content: `image_${index}`,
                   imageMinioUrl: file.image_url,
@@ -248,6 +248,7 @@ const AIChat: React.FC = () => {
                   fileId: file.file_id,
                   pageNumber: file.page_number,
                   textPreview: file.text_preview,
+                  isFirstReference: index === 0,
                   from: "ai",
                 })),
               ];

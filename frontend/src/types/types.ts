@@ -12,6 +12,14 @@ export interface Message {
   baseId?: string;
   score?: number;
   imageMinioUrl?: string;
+  // Marks the first baseFile reference for a given assistant message.
+  // The UI uses this to render a single "View references" toggle without relying on `content === "image_0"`.
+  isFirstReference?: boolean;
+
+  // Thesis-specific reference metadata (page-level grouping in backend; safe to be optional).
+  fileId?: string;
+  pageNumber?: number;
+  textPreview?: string;
   token_number?: {
     total_token: number;
     completion_tokens: number;
@@ -119,6 +127,9 @@ export interface FileUsed {
   image_url: string;
   file_url: string;
   score: number;
+  file_id?: string;
+  page_number?: number;
+  text_preview?: string;
 }
 
 // types.ts

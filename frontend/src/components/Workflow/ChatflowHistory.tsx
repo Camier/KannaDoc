@@ -130,7 +130,7 @@ const ChatflowHistoryComponent: React.FC<ChatflowHistoryProps> = ({
                   },
                 },
 
-                ...file_used.map((file: FileUsed, index: number) => ({
+                ...(file_used ?? []).map((file: FileUsed, index: number) => ({
                   type: "baseFile",
                   content: `image_${index}`,
                   imageMinioUrl: file.image_url,
@@ -139,6 +139,7 @@ const ChatflowHistoryComponent: React.FC<ChatflowHistoryProps> = ({
                   baseId: file.knowledge_db_id,
                   minioUrl: file.file_url,
                   score: file.score,
+                  isFirstReference: index === 0,
                   from: "ai",
                 })),
               ];

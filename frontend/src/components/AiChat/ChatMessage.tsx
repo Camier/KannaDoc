@@ -504,8 +504,10 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
           </div>
         )}
         {message.type === "baseFile" &&
-          message.content === "image_0" &&
-          message.messageId && (
+          message.messageId &&
+          (message.isFirstReference === true ||
+            (message.isFirstReference == null &&
+              message.content === "image_0")) && (
             <div
               className={`pl-2 flex gap-1 items-center text-sm text-indigo-500 hover:text-indigo-700 cursor-pointer ${
                 showRefFile.includes(message.messageId) ? "pb-2" : "pb-6"
