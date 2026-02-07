@@ -85,6 +85,7 @@ class MilvusManager:
             "failed": failed_collections,
         }
 
+    @vector_db_circuit
     def delete_files(self, collection_name: str, file_ids: list):
         if not file_ids:
             return {"deleted_count": 0}
@@ -821,6 +822,7 @@ class MilvusManager:
             diversify=True,
         )
 
+    @vector_db_circuit
     def insert(self, data, collection_name):
         # Insert ColQwen embeddings and metadata for a document into the collection.
         colqwen_vecs = [vec for vec in data["colqwen_vecs"]]

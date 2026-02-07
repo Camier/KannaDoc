@@ -10,6 +10,7 @@ class MongoDB:
         self.client = None
         self.db = None
 
+    @mongodb_circuit
     async def _create_indexes(self):
         """创建所有必要的索引（唯一索引+普通索引）"""
         try:
