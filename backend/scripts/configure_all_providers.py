@@ -5,6 +5,7 @@ Configure all available LLM providers for RAG chat.
 This script adds model configurations for users "miko" and "thesis"
 using all available providers with API keys.
 """
+
 import asyncio
 import sys
 import os
@@ -26,101 +27,96 @@ MODELS_TO_ADD = [
         "model_name": "gpt-4o",
         "model_url": "https://api.openai.com/v1",
         "provider": "openai",
-        "description": "OpenAI GPT-4o (Omni)"
+        "description": "OpenAI GPT-4o (Omni)",
     },
     {
         "model_name": "gpt-4o-mini",
         "model_url": "https://api.openai.com/v1",
         "provider": "openai",
-        "description": "OpenAI GPT-4o Mini (Fast)"
+        "description": "OpenAI GPT-4o Mini (Fast)",
     },
     {
         "model_name": "gpt-3.5-turbo",
         "model_url": "https://api.openai.com/v1",
         "provider": "openai",
-        "description": "OpenAI GPT-3.5 Turbo"
+        "description": "OpenAI GPT-3.5 Turbo",
     },
-
     # DeepSeek Models
     {
         "model_name": "deepseek-v3.2",
         "model_url": "https://api.deepseek.com/v1",
         "provider": "deepseek",
-        "description": "DeepSeek V3.2 (Latest)"
+        "description": "DeepSeek V3.2 (Latest)",
     },
     {
         "model_name": "deepseek-chat",
         "model_url": "https://api.deepseek.com/v1",
         "provider": "deepseek",
-        "description": "DeepSeek Chat"
+        "description": "DeepSeek Chat",
     },
     {
         "model_name": "deepseek-r1",
         "model_url": "https://api.deepseek.com/v1",
         "provider": "deepseek",
-        "description": "DeepSeek R1 (Reasoning)"
+        "description": "DeepSeek R1 (Reasoning)",
     },
-
     # Z.ai GLM Models
     {
         "model_name": "glm-4.7",
         "model_url": "",
         "provider": "zai",
-        "description": "Z.ai GLM-4.7"
+        "description": "Z.ai GLM-4.7",
     },
     {
-        "model_name": "glm-4-plus",
+        "model_name": "glm-4.7",
         "model_url": "",
         "provider": "zai",
-        "description": "Z.ai GLM-4 Plus"
+        "description": "Z.ai GLM-4.7 Flash",
     },
     {
-        "model_name": "glm-4-flash",
+        "model_name": "glm-4.5-air",
         "model_url": "",
         "provider": "zai",
-        "description": "Z.ai GLM-4 Flash (Fast)"
+        "description": "Z.ai GLM-4.5 Air (Lightweight)",
     },
-
     # Moonshot Models
     {
         "model_name": "kimi-k2-thinking",
         "model_url": "https://api.moonshot.cn/v1",
         "provider": "moonshot",
-        "description": "Moonshot Kimi K2 Thinking"
+        "description": "Moonshot Kimi K2 Thinking",
     },
     {
         "model_name": "moonshot-v1-128k",
         "model_url": "https://api.moonshot.cn/v1",
         "provider": "moonshot",
-        "description": "Moonshot V1 128K Context"
+        "description": "Moonshot V1 128K Context",
     },
-
     # MiniMax Models
     {
         "model_name": "abab6.5s-chat",
         "model_url": "https://api.minimax.chat/v1",
         "provider": "minimax",
-        "description": "MiniMax abab6.5s Chat"
+        "description": "MiniMax abab6.5s Chat",
     },
     {
         "model_name": "abab6.5g-chat",
         "model_url": "https://api.minimax.chat/v1",
         "provider": "minimax",
-        "description": "MiniMax abab6.5g Chat"
+        "description": "MiniMax abab6.5g Chat",
     },
-
     # Cohere Models
     {
         "model_name": "command-r-plus",
         "model_url": "https://api.cohere.ai/v1",
         "provider": "cohere",
-        "description": "Cohere Command R+"
+        "description": "Cohere Command R+",
     },
     {
         "model_name": "command-r",
         "model_url": "https://api.cohere.ai/v1",
         "provider": "cohere",
-        "description": "Cohere Command R"
+        "description": "Cohere Command R",
     },
 ]
 
@@ -132,7 +128,7 @@ DEFAULT_PARAMS = {
     "top_K": 3,
     "score_threshold": 10,
     "base_used": [],
-    "system_prompt": "You are a helpful AI assistant."
+    "system_prompt": "You are a helpful AI assistant.",
 }
 
 # API key environment variable mapping
@@ -153,26 +149,21 @@ async def configure_users():
     await mongodb.connect()
     db = mongodb.db
 
+    if db is None:
+        raise RuntimeError("MongoDB connection failed: mongodb.db is None")
+
     # Create repository
     repo = ModelConfigRepository(db)
 
     users = ["miko", "thesis"]
-    results = {
-        "users": {},
-        "total_added": 0,
-        "errors": []
-    }
+    results = {"users": {}, "total_added": 0, "errors": []}
 
     for username in users:
-        print(f"\n{'='*60}")
+        print(f"\n{'=' * 60}")
         print(f"Configuring models for user: {username}")
-        print(f"{'='*60}")
+        print(f"{'=' * 60}")
 
-        results["users"][username] = {
-            "added": [],
-            "skipped": [],
-            "errors": []
-        }
+        results["users"][username] = {"added": [], "skipped": [], "errors": []}
 
         # Check if user config exists
         existing = await db.model_config.find_one({"username": username})
@@ -189,6 +180,7 @@ async def configure_users():
                 continue
 
             import uuid
+
             model_id = f"{username}_{uuid.uuid4()}"
 
             result = await repo.create_model_config(
@@ -199,7 +191,7 @@ async def configure_users():
                 model_url=first_model["model_url"],
                 api_key=api_key,
                 provider=provider,
-                **DEFAULT_PARAMS
+                **DEFAULT_PARAMS,
             )
 
             if result["status"] == "success":
@@ -228,10 +220,9 @@ async def configure_users():
                 continue
 
             # Check if model already exists
-            existing_model = await db.model_config.find_one({
-                "username": username,
-                "models.model_name": model_name
-            })
+            existing_model = await db.model_config.find_one(
+                {"username": username, "models.model_name": model_name}
+            )
 
             if existing_model:
                 print(f"  Skipping {model_name} (already exists)")
@@ -246,7 +237,7 @@ async def configure_users():
                 model_url=model_url,
                 api_key=api_key,
                 provider=provider,
-                **DEFAULT_PARAMS
+                **DEFAULT_PARAMS,
             )
 
             if result["status"] == "success":
@@ -260,9 +251,9 @@ async def configure_users():
                 results["errors"].append(msg)
 
     # Print summary
-    print(f"\n{'='*60}")
+    print(f"\n{'=' * 60}")
     print("SUMMARY")
-    print(f"{'='*60}")
+    print(f"{'=' * 60}")
 
     for username in users:
         user_results = results["users"][username]
@@ -271,22 +262,22 @@ async def configure_users():
         print(f"  Skipped: {len(user_results['skipped'])} models")
         print(f"  Errors: {len(user_results['errors'])}")
 
-        if user_results['added']:
+        if user_results["added"]:
             print(f"  Added models:")
-            for m in user_results['added']:
+            for m in user_results["added"]:
                 print(f"    - {m}")
 
     print(f"\nTotal models added: {results['total_added']}")
 
-    if results['errors']:
+    if results["errors"]:
         print(f"\nErrors encountered: {len(results['errors'])}")
-        for err in results['errors'][:5]:  # Show first 5 errors
+        for err in results["errors"][:5]:  # Show first 5 errors
             print(f"  - {err}")
 
     # Verify final configuration
-    print(f"\n{'='*60}")
+    print(f"\n{'=' * 60}")
     print("VERIFICATION")
-    print(f"{'='*60}")
+    print(f"{'=' * 60}")
 
     for username in users:
         config = await repo.get_all_models_config(username)

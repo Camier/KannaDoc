@@ -122,7 +122,7 @@ async def _llm_call_with_circuit_breaker(...):
 - Reasoning models require more time for complex inference
 
 **Zhipu GLM Models:**
-- `glm-4.7`, `glm-4.7-flash` → 180s timeout
+- `glm-4.7`, `glm-4.7` → 180s timeout
 - Moderate timeout for Chinese language models
 
 **Default:**

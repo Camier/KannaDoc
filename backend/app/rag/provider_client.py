@@ -29,11 +29,16 @@ def _load_providers_config() -> Dict[str, Any]:
         return yaml.safe_load(f)
 
 
-def resolve_api_model_name(model_name: str) -> str:
+def resolve_api_model_name(model_name: str, provider: Optional[str] = None) -> str:
     """Map legacy/alias model names to provider API model ids."""
     model_lower = model_name.lower()
-    if model_lower == "gpt-oss-120b-medium":
+    provider_lower = (provider or "").strip().lower() or None
+
+    # Ollama Cloud uses colon-delimited ids (e.g. gpt-oss:120b), but other providers
+    # (notably CLIProxyAPI) may expose the hyphenated alias as-is.
+    if model_lower == "gpt-oss-120b-medium" and provider_lower == "ollama-cloud":
         return "gpt-oss:120b"
+
     return model_name
 
 
@@ -79,10 +84,13 @@ class ProviderClient:
             "llama",
             "qwen",
             "mistral",
-            "mixtral",
-            "phi4",
             "gemma",
-            "codellama",
+            "cogito",
+            "kimi",
+            "nemotron",
+            "devstral",
+            "ministral",
+            "rnj-",
         ]
         if os.getenv("OLLAMA_CLOUD_API_KEY"):
             if any(p in model_lower for p in ollama_patterns):
@@ -90,8 +98,8 @@ class ProviderClient:
                     f"Provider detected: ollama-cloud for model '{model_name}'"
                 )
                 return "ollama-cloud"
-            # deepseek-r1/v3 on Ollama (not official DeepSeek API)
-            if model_lower in ["deepseek-r1", "deepseek-v3"]:
+            # deepseek-v3.x on Ollama (not official DeepSeek API)
+            if model_lower.startswith("deepseek-v3"):
                 logger.debug(
                     f"Provider detected: ollama-cloud for model '{model_name}'"
                 )
@@ -116,6 +124,7 @@ class ProviderClient:
             if "gpt-oss" not in model_lower:
                 if (
                     model_lower.startswith("gpt-")
+                    or model_lower.startswith("codex-")
                     or model_lower.startswith("o1")
                     or model_lower.startswith("o3")
                     or "claude" in model_lower
@@ -147,7 +156,9 @@ class ProviderClient:
         # - abab6.5t-chat
         if os.getenv("MINIMAX_API_KEY"):
             if model_lower.startswith("abab") or "minimax" in model_lower:
-                logger.debug(f"Provider detected: minimax for model '{model_name}' (heuristic)")
+                logger.debug(
+                    f"Provider detected: minimax for model '{model_name}' (heuristic)"
+                )
                 return "minimax"
 
         # Generic provider matching
@@ -176,7 +187,9 @@ class ProviderClient:
             return "Set DEEPSEEK_API_KEY for DeepSeek models"
         if "gpt-oss" in model_lower:
             return "Set OLLAMA_CLOUD_API_KEY for Ollama Cloud models"
-        if any(x in model_lower for x in ["claude", "gpt", "gemini", "o1", "o3"]):
+        if any(
+            x in model_lower for x in ["claude", "gpt", "gemini", "o1", "o3", "codex"]
+        ):
             return "Set CLIPROXYAPI_BASE_URL and CLIPROXYAPI_API_KEY for proxied models"
         if any(x in model_lower for x in ["llama", "qwen", "mistral"]):
             return "Set OLLAMA_CLOUD_API_KEY for Ollama Cloud models"
@@ -312,7 +325,7 @@ def get_llm_client(
         # or with local deployment URL
         client = get_llm_client("llama3", base_url="http://127.0.0.1:11434/v1")
         # or with explicit provider
-        client = get_llm_client("glm-4.7-flash", provider="zai")
+        client = get_llm_client("glm-4.7", provider="zai")
     """
     return ProviderClient.create_client(
         model_name=model_name, api_key=api_key, base_url=base_url, provider=provider

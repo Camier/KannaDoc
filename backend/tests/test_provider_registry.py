@@ -98,9 +98,9 @@ class TestProviderRegistry:
     def test_get_timeout_for_model_glm(self):
         """Test timeout detection for GLM models."""
         # GLM models should get 180s timeout (zai)
-        assert ProviderRegistry.get_timeout_for_model("glm-4.7-flash") == 180
+        assert ProviderRegistry.get_timeout_for_model("glm-4.7") == 180
         assert ProviderRegistry.get_timeout_for_model("glm-4.6") == 180
-        assert ProviderRegistry.get_timeout_for_model("glm-4-plus") == 180
+        assert ProviderRegistry.get_timeout_for_model("glm-4.5-air") == 180
 
     def test_get_timeout_for_model_deepseek(self):
         """Test timeout detection for DeepSeek models."""
@@ -116,6 +116,7 @@ class TestProviderRegistry:
         """Test timeout detection for GPT models (cliproxyapi)."""
         assert ProviderRegistry.get_timeout_for_model("gpt-4o") == 120
         assert ProviderRegistry.get_timeout_for_model("gpt-4o-mini") == 120
+        assert ProviderRegistry.get_timeout_for_model("codex-5.3") == 120
 
     def test_get_timeout_for_model_unknown(self):
         """Test that unknown model raises ValueError."""
@@ -134,7 +135,8 @@ class TestProviderRegistry:
         # Vision models (from vision_patterns in providers.yaml)
         assert ProviderRegistry.is_vision_model("gpt-4o") is True
         assert ProviderRegistry.is_vision_model("claude-3.5-sonnet") is True
-        assert ProviderRegistry.is_vision_model("glm-4.5v") is True
+        assert ProviderRegistry.is_vision_model("claude-opus-4-6-thinking") is True
+        assert ProviderRegistry.is_vision_model("qwen3-vl:235b") is True
         assert ProviderRegistry.is_vision_model("gemini-2.5-pro") is True
         assert ProviderRegistry.is_vision_model("llama3.2-vision") is True
 
@@ -154,7 +156,7 @@ class TestConvenienceFunctions:
 
     def test_get_timeout_for_model(self):
         """Test get_timeout_for_model convenience function."""
-        assert get_timeout_for_model("glm-4.7-flash") == 180
+        assert get_timeout_for_model("glm-4.7") == 180
         assert get_timeout_for_model("deepseek-chat") == 180
         assert get_timeout_for_model("claude-opus-4-6-thinking") == 120
 

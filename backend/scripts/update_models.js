@@ -88,7 +88,7 @@ var newModels = [
     },
     {
         model_id: 'thesis_glm_4_7_flash_7_user',
-        model_name: 'glm-4.7-flash',
+        model_name: 'glm-4.7',
         model_url: null,
         api_key: null,
         base_used: [

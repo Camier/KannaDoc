@@ -2,7 +2,9 @@ import pytest
 
 
 @pytest.mark.unit
-def test_optional_args_claude_via_cliproxyapi_drops_top_p_when_temperature_set() -> None:
+def test_optional_args_claude_via_cliproxyapi_drops_top_p_when_temperature_set() -> (
+    None
+):
     """Claude (Anthropic) models proxied via CLIProxyAPI may reject specifying both temperature and top_p.
 
     We prefer temperature for academic/RAG stability.
@@ -115,7 +117,7 @@ def test_optional_args_zai_top_p_zero_is_bumped_to_min() -> None:
     from app.core.llm.chat_service import ChatService
 
     args = ChatService._build_optional_openai_args(
-        model_name="glm-4.5-flash",
+        model_name="glm-4.5-air",
         provider="zai",
         temperature=0.2,
         max_length=2048,
@@ -143,11 +145,13 @@ def test_optional_args_deepseek_reasoner_uses_max_tokens_only() -> None:
 
 
 @pytest.mark.unit
-def test_optional_args_deepseek_r1_via_ollama_cloud_is_not_treated_as_reasoner() -> None:
+def test_optional_args_deepseek_r1_via_ollama_cloud_is_not_treated_as_reasoner() -> (
+    None
+):
     from app.core.llm.chat_service import ChatService
 
     args = ChatService._build_optional_openai_args(
-        model_name="deepseek-r1",
+        model_name="deepseek-v3.2",
         provider="ollama-cloud",
         temperature=0.2,
         max_length=2048,

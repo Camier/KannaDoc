@@ -57,18 +57,23 @@ def load_constants_timeouts() -> dict:
     """Extract provider names from PROVIDER_TIMEOUTS.
 
     Returns dict mapping model/provider name to timeout value.
-    Special model names (deepseek-r1, deepseek-reasoner, glm) are mapped
+    Special model names (deepseek-v3.2, deepseek-reasoner, glm) are mapped
     to their actual providers for validation.
     """
-    constants_path = Path(__file__).parent.parent / "app" / "workflow" / "components" / "constants.py"
+    constants_path = (
+        Path(__file__).parent.parent
+        / "app"
+        / "workflow"
+        / "components"
+        / "constants.py"
+    )
     with open(constants_path) as f:
         content = f.read()
 
-    # Map special model names to actual providers
     model_to_provider = {
-        "deepseek-r1": "deepseek",
+        "deepseek-v3.2": "ollama-cloud",
         "deepseek-reasoner": "deepseek",
-        "glm": "zhipu",  # GLM family maps to zhipu/zai
+        "glm": "zai",
     }
 
     timeouts = {}
@@ -103,7 +108,9 @@ def validate():
     # Check .env.example
     env_providers = load_env_example()
     env_orphans = env_providers - yaml_providers
-    print(f"\n{'✓' if not env_orphans else '⚠️'} .env.example: {len(env_providers)} providers")
+    print(
+        f"\n{'✓' if not env_orphans else '⚠️'} .env.example: {len(env_providers)} providers"
+    )
     if env_orphans:
         print(f"  ❌ Orphan providers (not in providers.yaml):")
         for p in sorted(env_orphans):
@@ -114,7 +121,9 @@ def validate():
     # Check constants.py
     const_providers = load_constants_timeouts()
     const_orphans = const_providers - yaml_providers
-    print(f"\n{'✓' if not const_orphans else '⚠️'} constants.py PROVIDER_TIMEOUTS: {len(const_providers)} providers")
+    print(
+        f"\n{'✓' if not const_orphans else '⚠️'} constants.py PROVIDER_TIMEOUTS: {len(const_providers)} providers"
+    )
     if const_orphans:
         print(f"  ❌ Orphan providers (not in providers.yaml):")
         for p in sorted(const_orphans):

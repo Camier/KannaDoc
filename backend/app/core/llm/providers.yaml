@@ -38,110 +38,79 @@ providers:
     models:
       - glm-4.5
       - glm-4.5-air
-      - glm-4.5-flash
-      - glm-4.5v
       - glm-4.6
-      - glm-4.6-flash
-      - glm-4.6v
-      - glm-4.6v-flash
       - glm-4.7
-      - glm-4.7-flash
 
-  # Antigravity Proxy API (via Codex CLI). Handles Claude and Gemini models.
-  # NOTE: OpenAI models (gpt-4o) are NOT available through codex cli.
+  # Antigravity Proxy API (via Codex CLI).
+  # Proxies OpenAI-compatible /v1 endpoints (chat/completions/models) for a
+  # fixed allowlist. The live model list is returned by: GET /v1/models.
   cliproxyapi:
     base_url: ""  # Configured via CLIPROXYAPI_BASE_URL
     env_key: "CLIPROXYAPI_API_KEY"
     timeout: 120
     vision: true
     models:
-      # Claude (Anthropic via Antigravity)
-      # Keep aligned with what the Antigravity proxy exposes in this environment.
+      # Keep aligned with GET /v1/models from the proxy.
+      - claude-opus-4-5-thinking
       - claude-opus-4-6-thinking
-      - claude-sonnet-4-5-thinking
       - claude-sonnet-4-5
-      - claude-sonnet-4-20250514
-      - claude-3.5-sonnet
-      # Gemini (Google via Antigravity)
-      - gemini-2.5-pro
+      - claude-sonnet-4-5-thinking
+      - codex-5.3
       - gemini-2.5-flash
       - gemini-2.5-flash-lite
-      - gemini-3-pro-preview
       - gemini-3-flash
+      - gemini-3-pro-high
+      - gemini-3-pro-image
+      - gpt-oss-120b-medium
+      - tab_flash_lite_preview
 
   # Ollama Cloud API. Open-source models hosted on Ollama infrastructure.
+  # Synced from: GET https://ollama.com/v1/models (2026-02-07)
   ollama-cloud:
     base_url: "https://ollama.com/v1"
     env_key: "OLLAMA_CLOUD_API_KEY"
     timeout: 120
     vision: true
     models:
-      # GPT-OSS (Ollama's open-source GPT variants)
+      # GPT-OSS
       - gpt-oss:120b
       - gpt-oss:20b
-      # Llama family
-      - llama3.3
-      - llama3.3:70b
-      - llama3.2
-      - llama3.2:1b
-      - llama3.2:3b
-      - llama3.1
-      - llama3.1:8b
-      - llama3.1:70b
-      - llama3.1:405b
-      - llama3
-      - llama3:8b
-      - llama3:70b
       # Qwen family
-      - qwen2.5
-      - qwen2.5:0.5b
-      - qwen2.5:1.5b
-      - qwen2.5:3b
-      - qwen2.5:7b
-      - qwen2.5:14b
-      - qwen2.5:32b
-      - qwen2.5:72b
-      - qwen2.5-coder
-      - qwen2.5-coder:1.5b
-      - qwen2.5-coder:7b
-      - qwen2.5-coder:32b
-      - qwq
-      # Mistral family
-      - mistral
-      - mistral:7b
-      - mixtral
-      - mixtral:8x7b
-      - mixtral:8x22b
+      - qwen3-coder:480b
+      - qwen3-coder-next
+      - qwen3-next:80b
+      - qwen3-vl:235b
+      - qwen3-vl:235b-instruct
       # DeepSeek (Ollama-hosted, not official API)
-      - deepseek-r1
-      - deepseek-r1:1.5b
-      - deepseek-r1:7b
-      - deepseek-r1:8b
-      - deepseek-r1:14b
-      - deepseek-r1:32b
-      - deepseek-r1:70b
-      - deepseek-r1:671b
-      - deepseek-v3
-      # Other models
-      - phi4
-      - phi4:14b
-      - gemma2
-      - gemma2:2b
-      - gemma2:9b
-      - gemma2:27b
-      - codellama
-      - codellama:7b
-      - codellama:13b
-      - codellama:34b
-      - codellama:70b
-      # Vision models
-      - llama3.2-vision
-      - llama3.2-vision:11b
-      - llama3.2-vision:90b
-      - llava
-      - llava:7b
-      - llava:13b
-      - llava:34b
+      - deepseek-v3.2
+      - deepseek-v3.1:671b
+      # GLM (Ollama-hosted, not Z.ai API)
+      - glm-4.6
+      - glm-4.7
+      # Kimi
+      - kimi-k2:1t
+      - kimi-k2.5
+      - kimi-k2-thinking
+      # Gemini (Ollama-hosted)
+      - gemini-3-pro-preview
+      - gemini-3-flash-preview
+      # Gemma family
+      - gemma3:4b
+      - gemma3:12b
+      - gemma3:27b
+      # Mistral family
+      - mistral-large-3:675b
+      - ministral-3:3b
+      - ministral-3:8b
+      - ministral-3:14b
+      - devstral-2:123b
+       - devstral-small-2:24b
+       # Nvidia
+      - nemotron-3-nano:30b
+      # Cogito
+      - cogito-2.1:671b
+      # Other
+      - rnj-1:8b
 
   # MiniMax API. Used for MiniMax-M2.1 models.
   # Matched via generic ordered matching loop.
@@ -163,11 +132,11 @@ vision_patterns:
   - claude-3.5-sonnet
   - claude-4
   - claude-sonnet-4
+  - claude-opus-4
   - gemini-2.5-pro
   - gemini-3-pro
   - gemini-3-flash
-  - glm-4.5v
-  - glm-4.6v
   - glm-4v
+  - qwen3-vl
   - llama3.2-vision
   - llava

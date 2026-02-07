@@ -6,8 +6,8 @@ This script configures the latest DeepSeek and GLM model configurations
 for specified users in MongoDB.
 
 Models configured:
-- DeepSeek: deepseek-chat, deepseek-r1
-- GLM: glm-4.7, glm-4.7-flash
+- DeepSeek: deepseek-chat, deepseek-reasoner
+- GLM: glm-4.7, glm-4.7
 """
 
 import asyncio
@@ -53,12 +53,12 @@ MODELS = {
             "score_threshold": 0.7,
         },
     },
-    "deepseek-r1": {
-        "model_name": "deepseek-r1",
+    "deepseek-reasoner": {
+        "model_name": "deepseek-reasoner",
         "model_url": "",
         "api_key_env": "DEEPSEEK_API_KEY",
         "provider": "deepseek",
-        "description": "DeepSeek R1 (Reasoning Model)",
+        "description": "DeepSeek Reasoner (R1)",
         "default_params": {
             "temperature": 0.7,
             "max_length": 8192,
@@ -81,8 +81,8 @@ MODELS = {
             "score_threshold": 0.7,
         },
     },
-    "glm-4.7-flash": {
-        "model_name": "glm-4.7-flash",
+    "glm-4.7": {
+        "model_name": "glm-4.7",
         "model_url": "",
         "api_key_env": "ZAI_API_KEY",
         "provider": "zai",

@@ -173,14 +173,14 @@ class TestProviderDetection:
         """Verify GLM models use zai provider when ZAI_API_KEY is set."""
         from app.rag.provider_client import ProviderClient
 
-        result = ProviderClient.get_provider_for_model("glm-4.7-flash")
+        result = ProviderClient.get_provider_for_model("glm-4.7")
         assert result == "zai"
 
     def test_glm_detection_defaults_to_zai_without_keys(self, clean_env):
         """Verify GLM models default to zai when no API keys are set."""
         from app.rag.provider_client import ProviderClient
 
-        result = ProviderClient.get_provider_for_model("glm-4.7-flash")
+        result = ProviderClient.get_provider_for_model("glm-4.7")
         assert result == "zai", "GLM should default to zai without any API keys"
 
     def test_cliproxyapi_detection_with_base_url(self, cliproxyapi_env):
@@ -189,6 +189,28 @@ class TestProviderDetection:
 
         result = ProviderClient.get_provider_for_model("claude-sonnet-4-5")
         assert result == "cliproxyapi"
+
+    def test_coproxyapi_codex_detection_with_base_url(self, cliproxyapi_env):
+        """Verify codex-* models are routed via CLIProxyAPI heuristic."""
+        from app.rag.provider_client import ProviderClient
+
+        result = ProviderClient.get_provider_for_model("codex-5.3")
+        assert result == "cliproxyapi"
+
+    def test_cliproxyapi_live_model_detection(self, cliproxyapi_env):
+        """Verify recently observed live proxy models are detected."""
+        from app.rag.provider_client import ProviderClient
+
+        assert (
+            ProviderClient.get_provider_for_model("gemini-3-pro-high") == "cliproxyapi"
+        )
+        assert (
+            ProviderClient.get_provider_for_model("gemini-3-pro-image") == "cliproxyapi"
+        )
+        assert (
+            ProviderClient.get_provider_for_model("gpt-oss-120b-medium")
+            == "cliproxyapi"
+        )
 
     def test_cliproxyapi_fallback_matching_without_base_url(self, clean_env):
         """Document current behavior: CLIProxyAPI models still match via generic loop.
@@ -235,7 +257,7 @@ class TestProviderDetection:
         """Verify ollama-cloud models are detected correctly."""
         from app.rag.provider_client import ProviderClient
 
-        result = ProviderClient.get_provider_for_model("llama3.3")
+        result = ProviderClient.get_provider_for_model("qwen3-next:80b")
         assert result == "ollama-cloud"
 
     def test_minimax_detection(self, clean_env):
@@ -266,8 +288,19 @@ class TestModelNameMapping:
     def test_gpt_oss_model_name_mapping(self):
         from app.rag.provider_client import resolve_api_model_name
 
-        assert resolve_api_model_name("gpt-oss-120b-medium") == "gpt-oss:120b"
-        assert resolve_api_model_name("gpt-oss:120b") == "gpt-oss:120b"
+        assert (
+            resolve_api_model_name("gpt-oss-120b-medium", provider="ollama-cloud")
+            == "gpt-oss:120b"
+        )
+        assert (
+            resolve_api_model_name("gpt-oss:120b", provider="ollama-cloud")
+            == "gpt-oss:120b"
+        )
+        # CLIProxyAPI may expose the hyphenated alias; do not remap in that case.
+        assert (
+            resolve_api_model_name("gpt-oss-120b-medium", provider="cliproxyapi")
+            == "gpt-oss-120b-medium"
+        )
 
 
 # ==============================================================================
@@ -355,7 +388,9 @@ class TestChatServiceNormalizers:
 class TestChatServiceProviderAwareReasoner:
     """Unit tests for provider-aware DeepSeek reasoner handling."""
 
-    def test_resolve_effective_provider_skips_detection_for_custom_model_url(self, clean_env):
+    def test_resolve_effective_provider_skips_detection_for_custom_model_url(
+        self, clean_env
+    ):
         _require_chat_service_deps()
         from app.core.llm.chat_service import ChatService
 
@@ -387,18 +422,20 @@ class TestChatServiceProviderAwareReasoner:
             ChatService._is_deepseek_reasoner_model("deepseek-reasoner", "deepseek")
             is True
         )
-        # Critical: deepseek-r1 served via ollama-cloud must NOT be treated as deepseek-reasoner.
+        # Critical: deepseek-v3.2 served via ollama-cloud must NOT be treated as deepseek-reasoner.
         assert (
-            ChatService._is_deepseek_reasoner_model("deepseek-r1", "ollama-cloud")
+            ChatService._is_deepseek_reasoner_model("deepseek-v3.2", "ollama-cloud")
             is False
         )
 
-    def test_optional_args_for_ollama_deepseek_r1_keeps_standard_params(self, clean_env):
+    def test_optional_args_for_ollama_deepseek_r1_keeps_standard_params(
+        self, clean_env
+    ):
         _require_chat_service_deps()
         from app.core.llm.chat_service import ChatService
 
         optional = ChatService._build_optional_openai_args(
-            model_name="deepseek-r1",
+            model_name="deepseek-v3.2",
             provider="ollama-cloud",
             temperature=0.2,
             max_length=2048,
@@ -483,17 +520,15 @@ class TestModelConfigBaseValidation:
         """Verify valid model names are accepted."""
         from app.models.model_config import ModelConfigBase
 
-        config = ModelConfigBase(
-            model_name="glm-4.7-flash", api_key="valid-api-key-12345678"
-        )
-        assert config.model_name == "glm-4.7-flash"
+        config = ModelConfigBase(model_name="glm-4.7", api_key="valid-api-key-12345678")
+        assert config.model_name == "glm-4.7"
 
     def test_api_key_min_length(self, zai_env):
         """Verify api_key requires at least 10 characters."""
         from app.models.model_config import ModelConfigBase
 
         with pytest.raises(ValueError, match="at least 10 characters"):
-            ModelConfigBase(model_name="glm-4.7-flash", api_key="short")
+            ModelConfigBase(model_name="glm-4.7", api_key="short")
 
     def test_api_key_short_key_without_prefix_rejected(self, zai_env):
         """Verify short API keys without known prefix are rejected."""
@@ -501,7 +536,7 @@ class TestModelConfigBaseValidation:
 
         with pytest.raises(ValueError, match="too short"):
             ModelConfigBase(
-                model_name="glm-4.7-flash",
+                model_name="glm-4.7",
                 api_key="1234567890123",  # 13 chars but no sk-/hf_ prefix and no dot
             )
 
@@ -509,14 +544,14 @@ class TestModelConfigBaseValidation:
         """Verify API keys starting with sk- are accepted."""
         from app.models.model_config import ModelConfigBase
 
-        config = ModelConfigBase(model_name="glm-4.7-flash", api_key="sk-abcdefghij")
+        config = ModelConfigBase(model_name="glm-4.7", api_key="sk-abcdefghij")
         assert config.api_key == "sk-abcdefghij"
 
     def test_api_key_with_dot_accepted(self, zai_env):
         """Verify API keys containing a dot are accepted."""
         from app.models.model_config import ModelConfigBase
 
-        config = ModelConfigBase(model_name="glm-4.7-flash", api_key="jwt.token.here")
+        config = ModelConfigBase(model_name="glm-4.7", api_key="jwt.token.here")
         assert config.api_key == "jwt.token.here"
 
     def test_temperature_clamps_negative(self, zai_env):
@@ -524,7 +559,7 @@ class TestModelConfigBaseValidation:
         from app.models.model_config import ModelConfigBase
 
         config = ModelConfigBase(
-            model_name="glm-4.7-flash",
+            model_name="glm-4.7",
             api_key="valid-api-key-12345678901234567890",
             temperature=-0.5,
         )
@@ -535,7 +570,7 @@ class TestModelConfigBaseValidation:
         from app.models.model_config import ModelConfigBase
 
         config = ModelConfigBase(
-            model_name="glm-4.7-flash",
+            model_name="glm-4.7",
             api_key="valid-api-key-12345678901234567890",
             temperature=3.0,
         )
@@ -546,7 +581,7 @@ class TestModelConfigBaseValidation:
         from app.models.model_config import ModelConfigBase
 
         config = ModelConfigBase(
-            model_name="glm-4.7-flash",
+            model_name="glm-4.7",
             api_key="valid-api-key-12345678901234567890",
             max_length=100,
         )
@@ -557,7 +592,7 @@ class TestModelConfigBaseValidation:
         from app.models.model_config import ModelConfigBase
 
         config = ModelConfigBase(
-            model_name="glm-4.7-flash",
+            model_name="glm-4.7",
             api_key="valid-api-key-12345678901234567890",
             max_length=2000000,
         )
@@ -568,7 +603,7 @@ class TestModelConfigBaseValidation:
         from app.models.model_config import ModelConfigBase
 
         config = ModelConfigBase(
-            model_name="glm-4.7-flash",
+            model_name="glm-4.7",
             api_key="valid-api-key-12345678901234567890",
             top_P=-0.5,
         )
@@ -579,7 +614,7 @@ class TestModelConfigBaseValidation:
         from app.models.model_config import ModelConfigBase
 
         config = ModelConfigBase(
-            model_name="glm-4.7-flash",
+            model_name="glm-4.7",
             api_key="valid-api-key-12345678901234567890",
             top_P=1.5,
         )
@@ -590,7 +625,7 @@ class TestModelConfigBaseValidation:
         from app.models.model_config import ModelConfigBase
 
         config = ModelConfigBase(
-            model_name="glm-4.7-flash",
+            model_name="glm-4.7",
             api_key="valid-api-key-12345678901234567890",
             top_K=0,
         )
@@ -601,7 +636,7 @@ class TestModelConfigBaseValidation:
         from app.models.model_config import ModelConfigBase
 
         config = ModelConfigBase(
-            model_name="glm-4.7-flash",
+            model_name="glm-4.7",
             api_key="valid-api-key-12345678901234567890",
             top_K=1000,
         )
@@ -612,7 +647,7 @@ class TestModelConfigBaseValidation:
         from app.models.model_config import ModelConfigBase
 
         config = ModelConfigBase(
-            model_name="glm-4.7-flash",
+            model_name="glm-4.7",
             api_key="valid-api-key-12345678901234567890",
             score_threshold=-5,
         )
@@ -623,7 +658,7 @@ class TestModelConfigBaseValidation:
         from app.models.model_config import ModelConfigBase
 
         config = ModelConfigBase(
-            model_name="glm-4.7-flash",
+            model_name="glm-4.7",
             api_key="valid-api-key-12345678901234567890",
             score_threshold=150,
         )
@@ -753,7 +788,7 @@ class TestBoundaryValues:
 
         # Exact lower bound
         config_low = ModelConfigBase(
-            model_name="glm-4.7-flash",
+            model_name="glm-4.7",
             api_key="valid-api-key-12345678901234567890",
             temperature=0.0,
         )
@@ -761,7 +796,7 @@ class TestBoundaryValues:
 
         # Exact upper bound
         config_high = ModelConfigBase(
-            model_name="glm-4.7-flash",
+            model_name="glm-4.7",
             api_key="valid-api-key-12345678901234567890",
             temperature=2.0,
         )
@@ -832,7 +867,7 @@ class TestExplicitProviderField:
         from app.models.model_config import ModelConfigBase
 
         config = ModelConfigBase(
-            model_name="glm-4.7-flash",
+            model_name="glm-4.7",
             api_key="valid-api-key-12345678901234567890",
         )
         assert config.provider is None
@@ -841,7 +876,7 @@ class TestExplicitProviderField:
         from app.models.model_config import ModelConfigBase
 
         config = ModelConfigBase(
-            model_name="glm-4.7-flash",
+            model_name="glm-4.7",
             api_key="valid-api-key-12345678901234567890",
             provider="zai",
         )
@@ -853,7 +888,7 @@ class TestExplicitProviderField:
 
         with pytest.raises(ValueError, match="Unknown provider"):
             ModelConfigBase(
-                model_name="glm-4.7-flash",
+                model_name="glm-4.7",
                 api_key="valid-api-key-12345678901234567890",
                 provider="nonexistent-provider",
             )
@@ -862,7 +897,7 @@ class TestExplicitProviderField:
         from app.rag.provider_client import ProviderClient
 
         result = ProviderClient.get_provider_for_model(
-            "glm-4.7-flash", explicit_provider="zai"
+            "glm-4.7", explicit_provider="zai"
         )
         assert result == "zai"
 
@@ -870,7 +905,7 @@ class TestExplicitProviderField:
         from app.rag.provider_client import ProviderClient
 
         result = ProviderClient.get_provider_for_model(
-            "glm-4.7-flash", explicit_provider=None
+            "glm-4.7", explicit_provider=None
         )
         assert result == "zai"
 

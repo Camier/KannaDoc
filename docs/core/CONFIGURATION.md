@@ -468,7 +468,7 @@ explicitly in `.env` (empty is fine if unused), e.g. `OPENAI_API_KEY=`.
 | `DEFAULT_LLM_PROVIDER` | Must match model routing | `deepseek` |
 | `REASONING_LLM_MODEL` | Complex reasoning | `deepseek-reasoner` |
 | `CODING_LLM_MODEL` | Code generation | `glm-4.7` |
-| `ECONOMY_LLM_MODEL` | Cost-efficient tasks | `glm-4.7-flash` |
+| `ECONOMY_LLM_MODEL` | Cost-efficient tasks | `glm-4.7` |
 
 **Note**: Provider must match the model's routing. Check routing with:
 ```python

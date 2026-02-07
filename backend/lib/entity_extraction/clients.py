@@ -9,8 +9,8 @@ Usage:
     from lib.entity_extraction.clients import ZaiChatClient, DeepSeekChatClient
     from lib.entity_extraction import V31Extractor
 
-    client = ZaiChatClient(model="glm-4.7-flash")
-    extractor = V31Extractor(client=client, model="glm-4.7-flash")
+    client = ZaiChatClient(model="glm-4.7")
+    extractor = V31Extractor(client=client, model="glm-4.7")
     result = extractor.extract(doc_id="doc1", chunk_id="chunk1", text="...")
 
     # DeepSeek fallback when Z.ai is rate-limited
@@ -37,7 +37,7 @@ class ZaiChatClient:
     Supports structured JSON output via json_schema response format.
     """
 
-    model: str = "glm-4.7-flash"
+    model: str = "glm-4.7"
     base_url: str = "https://api.z.ai/api/paas/v4"
     api_key: Optional[str] = None
     timeout: float = 120.0
@@ -291,7 +291,7 @@ def get_chat_client(
         Configured chat client instance
     """
     if provider == "zai":
-        return ZaiChatClient(model=model or "glm-4.7-flash", **kwargs)
+        return ZaiChatClient(model=model or "glm-4.7", **kwargs)
     elif provider == "deepseek":
         return DeepSeekChatClient(model=model or "deepseek-chat", **kwargs)
     elif provider == "minimax":

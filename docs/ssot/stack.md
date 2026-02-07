@@ -1077,7 +1077,7 @@ Frontend (display execution progress)
 | OpenAI | https://api.openai.com/v1 | OPENAI_API_KEY | 120s | ✅ Required | gpt-4o, gpt-4o-mini |
 | DeepSeek | https://api.deepseek.com | DEEPSEEK_API_KEY | 180s | ✅ Required | deepseek-chat, deepseek-coder |
 | Moonshot (Kimi) | https://api.moonshot.cn/v1 | MOONSHOT_API_KEY | 120s | Optional | moonshot-v1-8k, kimi-k2-thinking |
-| Z.ai (GLM) | https://api.z.ai/api/paas/v4 | ZAI_API_KEY | 180s | Optional | glm-4.5, glm-4.6, glm-4.7, glm-4.7-flash |
+| Z.ai (GLM) | https://api.z.ai/api/paas/v4 | ZAI_API_KEY | 180s | Optional | glm-4.5, glm-4.6, glm-4.7, glm-4.7 |
 | MiniMax | https://api.minimax.chat/v1 | MINIMAX_API_KEY | 120s | Optional | abab5.5-chat |
 | Cohere | https://api.cohere.ai/v1 | COHERE_API_KEY | 120s | Optional | command-r |
 | Ollama | https://api.ollama.ai/v1 | OLLAMA_API_KEY | 120s | Optional | llama3, mistral |

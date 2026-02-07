@@ -9,12 +9,10 @@ The `configure_deepseek_glm.py` script properly configures DeepSeek and GLM mode
 **DeepSeek Models:**
 - `deepseek-chat` - Standard DeepSeek chat model
 - `deepseek-reasoner` - DeepSeek R1 reasoning model
-- `deepseek-v3.2` - Latest DeepSeek V3.2 model
 
 **GLM Models:**
 - `glm-4.7` - GLM-4.7 model (default)
-- `glm-4-plus` - Enhanced GLM-4 Plus model
-- `glm-4-flash` - Fast GLM-4 Flash model
+- `glm-4.7` - Fast GLM-4.7 Flash model
 
 ### Configuration Details
 
@@ -77,7 +75,7 @@ For each user (miko, thesis):
    - Sets correct provider-specific parameters
 
 3. **Sets default model:**
-   - Default: `glm-4.7` (selected_model)
+   - Default: `deepseek-chat` (selected_model)
 
 ## Verification
 
@@ -145,10 +143,8 @@ docker-compose ps
 |-------|----------|----------|
 | deepseek-chat | deepseek | https://api.deepseek.com/v1 |
 | deepseek-reasoner | deepseek | https://api.deepseek.com/v1 |
-| deepseek-v3.2 | deepseek | https://api.deepseek.com/v1 |
 | glm-4.7 | zai | https://api.z.ai/api/paas/v4 |
-| glm-4-plus | zai | https://api.z.ai/api/paas/v4 |
-| glm-4-flash | zai | https://api.z.ai/api/paas/v4 |
+| glm-4.7 | zai | https://api.z.ai/api/paas/v4 |
 
 ## Post-Configuration Testing
 

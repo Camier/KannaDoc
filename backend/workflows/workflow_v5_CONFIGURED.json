@@ -150,7 +150,7 @@
         "prompt": "Tu es un extracteur bibliographique. Tu dois utiliser UNIQUEMENT le contexte récupéré depuis la Knowledge Base. Tu renvoies UNIQUEMENT du JSON valide. Si l’information n’est pas dans le contexte : 'unknown'.\n\nINPUT VARIABLES:\nAxe: {{axis}}\n\nÀ partir du CONTEXTE KB fourni (RAG), renvoie:\n{\n  axis_id,\n  themes_found:[{name,rationale,signals[]}],\n  concepts_found:[{name,definition_hint,notes}],\n  methods_found:[{name,how_used,notes}],\n  datasets_found:[{name,what_it_is,notes}],\n  debates_found:[{topic,positions[],notes}],\n  candidate_sources:[{doc_ref,year,why_relevant,useful_for[],}]\n}\n\nContraintes:\n- si pas d’identifiant exact: doc_ref='unknown'\n- ne fabrique pas de références\n- JSON strict",
         "modelConfig": {
           "model_id": "thesis_glm_4.7_flash",
-          "model_name": "glm-4.7-flash",
+          "model_name": "glm-4.7",
           "model_url": "https://api.z.ai/api/paas/v4",
           "api_key": "7c9a64caea6848d9b2a78cb452b8c564.eTEJlpK6BaCbFCfa",
           "base_used": [
@@ -295,7 +295,7 @@
         "prompt": "Tu es un directeur de thèse. Tu dois détailler un chapitre en sections et sous-sections (niveau 3). Chaque sous-section doit avoir: objectif, sous-questions, preuves attendues, requêtes KB, critères de réussite. Tu renvoies UNIQUEMENT du JSON valide.\n\nINPUT VARIABLES:\nRequirements: {{requirements}}\nKB map: {{kb_map}}\nChapitre: {{chapter}}\n\nProduis:\n{\n  chapter_id,title,\n  sections:[\n    {section_id,title,objective,\n     subsections:[\n       {subsection_id,title,objective,key_terms[],questions[],expected_evidence_types[],kb_queries[],acceptance_criteria[],min_sources:{{min_sources_per_subsection}},candidate_sources:[]}\n     ]}\n  ]\n}\n\nContraintes:\n- granularité niveau {{granularity_target}} (pas niveau 4 sauf indispensable)\n- titres actionnables\n- JSON strict",
         "modelConfig": {
           "model_id": "thesis_glm_4.7_flash",
-          "model_name": "glm-4.7-flash",
+          "model_name": "glm-4.7",
           "model_url": "https://api.z.ai/api/paas/v4",
           "api_key": "7c9a64caea6848d9b2a78cb452b8c564.eTEJlpK6BaCbFCfa",
           "base_used": [
@@ -392,7 +392,7 @@
         "prompt": "Tu es un assistant de recherche. Tu utilises UNIQUEMENT le contexte récupéré depuis la KB. Tu renvoies UNIQUEMENT du JSON valide.\n\nINPUT VARIABLES:\nSous-section: {{subsection}}\n\nUtilise kb_queries pour récupérer du contexte. À partir du CONTEXTE, renvoie:\n{ subsection_id, candidate_sources:[{doc_ref,year,why_relevant,best_for[],confidence:0.0}] }\n\nContraintes:\n- si aucune source claire: candidate_sources=[]\n- ne fabrique pas de références\n- JSON strict",
         "modelConfig": {
           "model_id": "thesis_glm_4.7_flash",
-          "model_name": "glm-4.7-flash",
+          "model_name": "glm-4.7",
           "model_url": "https://api.z.ai/api/paas/v4",
           "api_key": "7c9a64caea6848d9b2a78cb452b8c564.eTEJlpK6BaCbFCfa",
           "base_used": [
@@ -539,7 +539,7 @@
         "prompt": "Tu es un assistant de direction de thèse. Présente le plan et demande des modifications sous forme JSON.\n\nINPUT VARIABLES:\nPlan: {{micro_outline}}\nCoverage: {{coverage}}\n\nRenvoie des changements (basé sur l'input utilisateur):\n{changes:[{action,target_id,details{...}}], global_preferences:{tone,emphasis[],must_include_topics[],must_exclude_topics[]}}\n\nSi aucun changement: changes=[]",
         "modelConfig": {
           "model_id": "thesis_glm_4.7_flash",
-          "model_name": "glm-4.7-flash",
+          "model_name": "glm-4.7",
           "model_url": "https://api.z.ai/api/paas/v4",
           "api_key": "7c9a64caea6848d9b2a78cb452b8c564.eTEJlpK6BaCbFCfa",
           "base_used": [
@@ -598,7 +598,7 @@
         "vlmInput": "Export summary",
         "prompt": "Done.\n{{exports}}",
         "modelConfig": {
-          "model_name": "glm-4.7-flash",
+          "model_name": "glm-4.7",
           "system_prompt": "Done.\n{{exports}}",
           "set_chatflow_ai_response": true,
           "model_id": "thesis_glm_4.7_flash",

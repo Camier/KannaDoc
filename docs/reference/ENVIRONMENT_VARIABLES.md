@@ -1562,7 +1562,7 @@ Layra supports multiple LLM providers. At least one provider API key is REQUIRED
 
 **Supported Models:**
 - `glm-4.7` - Coding optimized
-- `glm-4.7-flash` - Fast coding
+- `glm-4.7` - Fast coding
 - `glm-4.5-air` - Lightweight coding
 
 **Security Notes:**

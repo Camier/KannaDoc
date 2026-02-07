@@ -660,13 +660,13 @@ class ModelConfigRepository(BaseRepository):
 
         if os.getenv("ZAI_API_KEY"):
             zai_defaults = self._system_model_generation_defaults(
-                model_name="glm-4.7-flash",
+                model_name="glm-4.7",
                 provider="zai",
             )
             system_models.append(
                 {
-                    "model_id": "system_glm-4.7-flash",
-                    "model_name": "glm-4.7-flash",
+                    "model_id": "system_glm-4.7",
+                    "model_name": "glm-4.7",
                     "model_url": "",
                     "api_key": None,
                     "base_used": [],
@@ -705,21 +705,17 @@ class ModelConfigRepository(BaseRepository):
         # Ollama Cloud models (open-source LLMs)
         if os.getenv("OLLAMA_CLOUD_API_KEY"):
             ollama_models = [
-                "llama3.3",
-                "llama3.2",
-                "llama3.1",
-                "qwen2.5",
-                "qwen2.5-coder",
-                "qwq",
-                "mistral",
-                "mixtral",
-                "deepseek-r1",
-                "deepseek-v3",
-                "phi4",
-                "gemma2",
-                "codellama",
-                "llama3.2-vision",
-                "llava",
+                "qwen3-coder-next",
+                "qwen3-next:80b",
+                "deepseek-v3.2",
+                "deepseek-v3.1:671b",
+                "kimi-k2.5",
+                "kimi-k2-thinking",
+                "gemma3:27b",
+                "mistral-large-3:675b",
+                "cogito-2.1:671b",
+                "gpt-oss:120b",
+                "qwen3-vl:235b",
             ]
             for model_name in ollama_models:
                 ollama_defaults = self._system_model_generation_defaults(
@@ -810,7 +806,7 @@ class ModelConfigRepository(BaseRepository):
                     if os.getenv("DEEPSEEK_API_KEY"):
                         fallback = "system_deepseek-chat"
                     elif os.getenv("ZAI_API_KEY"):
-                        fallback = "system_glm-4.7-flash"
+                        fallback = "system_glm-4.7"
                     elif os.getenv("MINIMAX_API_KEY"):
                         fallback = "system_MiniMax-M2.1"
                     if fallback:

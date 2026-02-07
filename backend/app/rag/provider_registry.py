@@ -12,7 +12,7 @@ Usage:
     timeout = ProviderRegistry.get_timeout("deepseek")  # 180
 
     # Get timeout for a model (auto-detects provider)
-    timeout = ProviderRegistry.get_timeout_for_model("glm-4.7-flash")  # 180
+    timeout = ProviderRegistry.get_timeout_for_model("glm-4.7")  # 180
 
     # Get complete provider config
     config = ProviderRegistry.get_provider_config("zai")
@@ -137,7 +137,7 @@ class ProviderRegistry:
         3. Generic provider matching
 
         Args:
-            model_name: Model name (e.g., "glm-4.7-flash", "deepseek-chat")
+            model_name: Model name (e.g., "glm-4.7", "deepseek-chat")
 
         Returns:
             Timeout in seconds
@@ -165,6 +165,7 @@ class ProviderRegistry:
         if "gpt-oss" not in model_lower:
             if (
                 model_lower.startswith("gpt-")
+                or model_lower.startswith("codex-")
                 or model_lower.startswith("o1")
                 or model_lower.startswith("o3")
                 or "claude" in model_lower
