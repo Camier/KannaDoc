@@ -451,8 +451,14 @@ To add a new provider, edit `providers.yaml` and restart the backend.
 | `ANTHROPIC_API_KEY` | Anthropic | claude-3.5-sonnet, claude-4 |
 | `GEMINI_API_KEY` | Google | gemini-2.5-pro/flash |
 | `MOONSHOT_API_KEY` | Moonshot | kimi-k2, moonshot-v1 |
-| `OLLAMA_CLOUD_API_KEY` | Ollama Cloud | llama3, qwen2.5, etc. |
+| `OLLAMA_API_KEY` | Ollama | Local models / gateways (optional) |
 | `CLIPROXYAPI_API_KEY` | CLIProxyAPI | Proxy for Claude/Gemini/GPT |
+
+**Compose warnings about unset keys:** If `docker compose` prints warnings like
+`The "OPENAI_API_KEY" variable is not set. Defaulting to a blank string.`, it just means the
+variable is referenced in `docker-compose.yml` but not present in your shell / `.env`.
+This is only a problem if you selected that provider. To silence warnings, set the variable
+explicitly in `.env` (empty is fine if unused), e.g. `OPENAI_API_KEY=`.
 
 #### Model Role Configuration
 

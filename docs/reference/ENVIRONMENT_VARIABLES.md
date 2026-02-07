@@ -41,15 +41,21 @@ To get Layra running with minimal configuration, you MUST set these variables:
 SERVER_IP=http://localhost:8090
 SECRET_KEY=<generate-with-openssl-rand-hex-32>
 
-# Database connections
-DB_URL=mysql+asyncmy://layra:password@mysql:3306/layra_db
-REDIS_URL=redis:6379
-MONGODB_URL=mongodb://mongo:27017
-MILVUS_URI=http://milvus-standalone:19530
+  # Database connections
+  DB_URL=mysql+asyncmy://layra:password@mysql:3306/layra_db
+  REDIS_URL=redis:6379
+  MONGODB_URL=mongodb:27017
+  MILVUS_URI=http://milvus-standalone:19530
 
-# At least one LLM provider (see LLM Provider section)
-OPENAI_API_KEY=sk-your-openai-key-here
-```
+  # At least one LLM provider (see LLM Provider section)
+  # Examples (pick one provider you actually use):
+  # OPENAI_API_KEY=sk-your-openai-key-here
+  # DEEPSEEK_API_KEY=sk-your-deepseek-key-here
+  # ANTHROPIC_API_KEY=sk-ant-your-anthropic-key-here
+  # Or use an OpenAI-compatible proxy:
+  # CLIPROXYAPI_BASE_URL=http://cliproxyapi:8317/v1
+  # CLIPROXYAPI_API_KEY=your-proxy-key
+  ```
 
 **Generate SECRET_KEY:**
 ```bash
@@ -830,8 +836,17 @@ Milvus vector database uses its own internal MinIO instance for vector storage.
 **Required:** Yes
 **Example Values:**
 - Docker: `http://milvus-standalone:19530`
+- Host (debug tools): `http://localhost:19531` (published port from docker-compose)
 - External: `http://milvus.example.com:19530`
 - Cluster: `http://milvus-coordinator:19530`
+
+**Important Notes (Docker networking):**
+- Do **not** set `MILVUS_URI=http://127.0.0.1:19530` for the backend container.
+  Inside a container, `127.0.0.1` points to the container itself, not the Milvus service.
+- If you need to reach the docker Milvus from the host, use `http://localhost:19531`.
+
+**Migration Runbook:**
+- Host/systemd Milvus -> docker-compose Milvus: `docs/operations/MILVUS_HOST_TO_DOCKER_MIGRATION.md`
 
 **Purpose:**
 - Milvus vector database connection URI
