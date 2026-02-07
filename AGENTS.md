@@ -251,6 +251,7 @@ These artifacts are essential for maintaining the state of the knowledge base an
 | 2026-02-02 | Consolidated 129 PDFs and extractions into backend/data/ |
 | 2026-02-02 | Docker Compose best practices: pinned monitoring images, fixed healthchecks |
 | 2026-02-02 | Fixed Prometheus metrics_path, removed Qdrant target |
+| 2026-02-07 | Audit hardening: applied circuit breakers to DB calls, added Docker healthchecks, verified async I/O wrappers |
 | 2026-02-07 | Audit hardening: stack traces, dead code cleanup, Qdrant refs removed |
 | 2026-02-07 | Fixed KB upload pipeline (frontend path + Kafka trigger) |
 | 2026-02-07 | Wired eval dashboard to real backend API |
