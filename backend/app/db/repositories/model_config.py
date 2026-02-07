@@ -79,6 +79,29 @@ async def _fetch_cliproxyapi_live_models() -> tuple[List[str], str]:
 
 
 class ModelConfigRepository(BaseRepository):
+    async def _ensure_user_model_config(self, username: str) -> None:
+        """Ensure a model_config document exists for username.
+
+        This repo runs with auth bypassed (default username). In fresh deployments,
+        the config document may not exist yet; we auto-create it so provider-backed
+        system models can be listed and selected without manual bootstrap.
+        """
+
+        try:
+            await self.db.model_config.update_one(
+                {"username": username},
+                {
+                    "$setOnInsert": {
+                        "username": username,
+                        "selected_model": "",
+                        "models": [],
+                    }
+                },
+                upsert=True,
+            )
+        except Exception as exc:
+            logger.error("ensure model_config failed: %s", exc)
+
     @staticmethod
     def _system_model_generation_defaults(
         *,
@@ -115,7 +138,7 @@ class ModelConfigRepository(BaseRepository):
         model_id: str,
         model_name: str,
         model_url: str,
-        api_key: str,
+        api_key: Optional[str],
         base_used: list,
         system_prompt: str,
         temperature: float,
@@ -149,7 +172,7 @@ class ModelConfigRepository(BaseRepository):
         model_id: str,
         model_name: str,
         model_url: str,
-        api_key: str,
+        api_key: Optional[str],
         base_used: list,
         system_prompt: str,
         temperature: float,
@@ -195,6 +218,8 @@ class ModelConfigRepository(BaseRepository):
         更新用户选定的模型 (selected_model 字段)
         同时验证目标 model_id 是否存在于该用户的 models 数组中
         """
+        await self._ensure_user_model_config(username)
+
         # System models can be selected without being stored in the models array.
         if model_id.startswith("system_"):
             model_name = model_id[7:]
@@ -263,7 +288,7 @@ class ModelConfigRepository(BaseRepository):
         model_id: str,
         model_name: str,
         model_url: str,
-        api_key: str,
+        api_key: Optional[str],
         base_used: list,
         system_prompt: str,
         temperature: float,
@@ -273,10 +298,8 @@ class ModelConfigRepository(BaseRepository):
         score_threshold: int,
         provider: Optional[str] = None,
     ):
-        # 检查用户是否存在
-        user_exists = await self.db.model_config.find_one({"username": username})
-        if not user_exists:
-            return {"status": "error", "message": "User not found"}
+        # Ensure the user doc exists (fresh deployments may not have it yet)
+        await self._ensure_user_model_config(username)
 
         # 检查 model_id 是否重复
         model_exists = await self.db.model_config.find_one(
@@ -313,6 +336,7 @@ class ModelConfigRepository(BaseRepository):
             return {"status": "error", "message": "Failed to add model"}
 
     async def delete_model_config(self, username: str, model_id: str):
+        await self._ensure_user_model_config(username)
         # 删除操作
         result = await self.db.model_config.update_one(
             {"username": username}, {"$pull": {"models": {"model_id": model_id}}}
@@ -326,6 +350,10 @@ class ModelConfigRepository(BaseRepository):
         else:
             await cache_service.invalidate_model_config(username)
             return {"status": "success", "username": username, "model_id": model_id}
+
+    def _build_update_fields(self, **kwargs) -> dict:
+        """Build MongoDB update dict from non-None kwargs."""
+        return {f"models.$[elem].{k}": v for k, v in kwargs.items() if v is not None}
 
     async def update_model_config(
         self,
@@ -343,6 +371,8 @@ class ModelConfigRepository(BaseRepository):
         score_threshold: Optional[int] = None,
         provider: Optional[str] = None,
     ):
+        await self._ensure_user_model_config(username)
+
         # For system models, upsert into the models array
         if model_id.startswith("system_"):
             return await self._upsert_system_model_config(
@@ -362,29 +392,19 @@ class ModelConfigRepository(BaseRepository):
             )
 
         # 构建更新字段
-        update_fields = {}
-        if model_name is not None:
-            update_fields["models.$[elem].model_name"] = model_name
-        if model_url is not None:
-            update_fields["models.$[elem].model_url"] = model_url
-        if api_key is not None:
-            update_fields["models.$[elem].api_key"] = api_key
-        if base_used is not None:
-            update_fields["models.$[elem].base_used"] = base_used
-        if system_prompt is not None:
-            update_fields["models.$[elem].system_prompt"] = system_prompt
-        if temperature is not None:
-            update_fields["models.$[elem].temperature"] = temperature
-        if max_length is not None:
-            update_fields["models.$[elem].max_length"] = max_length
-        if top_P is not None:
-            update_fields["models.$[elem].top_P"] = top_P
-        if top_K is not None:
-            update_fields["models.$[elem].top_K"] = top_K
-        if score_threshold is not None:
-            update_fields["models.$[elem].score_threshold"] = score_threshold
-        if provider is not None:
-            update_fields["models.$[elem].provider"] = provider
+        update_fields = self._build_update_fields(
+            model_name=model_name,
+            model_url=model_url,
+            api_key=api_key,
+            base_used=base_used,
+            system_prompt=system_prompt,
+            temperature=temperature,
+            max_length=max_length,
+            top_P=top_P,
+            top_K=top_K,
+            score_threshold=score_threshold,
+            provider=provider,
+        )
 
         # 执行更新
         try:
@@ -427,29 +447,19 @@ class ModelConfigRepository(BaseRepository):
             )
 
             if model_exists:
-                update_fields = {}
-                if model_name is not None:
-                    update_fields["models.$[elem].model_name"] = model_name
-                if model_url is not None:
-                    update_fields["models.$[elem].model_url"] = model_url
-                if api_key is not None:
-                    update_fields["models.$[elem].api_key"] = api_key
-                if base_used is not None:
-                    update_fields["models.$[elem].base_used"] = base_used
-                if system_prompt is not None:
-                    update_fields["models.$[elem].system_prompt"] = system_prompt
-                if temperature is not None:
-                    update_fields["models.$[elem].temperature"] = temperature
-                if max_length is not None:
-                    update_fields["models.$[elem].max_length"] = max_length
-                if top_P is not None:
-                    update_fields["models.$[elem].top_P"] = top_P
-                if top_K is not None:
-                    update_fields["models.$[elem].top_K"] = top_K
-                if score_threshold is not None:
-                    update_fields["models.$[elem].score_threshold"] = score_threshold
-                if provider is not None:
-                    update_fields["models.$[elem].provider"] = provider
+                update_fields = self._build_update_fields(
+                    model_name=model_name,
+                    model_url=model_url,
+                    api_key=api_key,
+                    base_used=base_used,
+                    system_prompt=system_prompt,
+                    temperature=temperature,
+                    max_length=max_length,
+                    top_P=top_P,
+                    top_K=top_K,
+                    score_threshold=score_threshold,
+                    provider=provider,
+                )
 
                 if update_fields:
                     await self.db.model_config.update_one(
@@ -581,9 +591,11 @@ class ModelConfigRepository(BaseRepository):
 
     async def get_all_models_config(self, username: str):
         # 直接返回 models 数组
+        await self._ensure_user_model_config(username)
         user_config = await self.db.model_config.find_one({"username": username})
         if not user_config:
-            return {"status": "error", "message": "User not found"}
+            # Should not happen after upsert, but keep a safe fallback.
+            user_config = {"username": username, "selected_model": "", "models": []}
 
         user_models = user_config.get("models", [])
         persisted_model_ids = {m.get("model_id") for m in user_models}
@@ -613,114 +625,50 @@ class ModelConfigRepository(BaseRepository):
             user_models = [self._sanitize_system_model(m) for m in user_models]
             persisted_model_ids = {m.get("model_id") for m in user_models}
 
+        from app.rag.provider_registry import ProviderRegistry
+
+        ProviderRegistry.load()
+
+        # Stale system_* pruning — CLIProxyAPI is already pruned above via live fetch.
+        valid_system_ids: set[str] = set()
+        for pid in ProviderRegistry.get_all_providers():
+            if pid == "cliproxyapi":
+                continue
+            pcfg = ProviderRegistry.get_provider_config(pid)
+            for mn in pcfg.models:
+                valid_system_ids.add(f"system_{mn}")
+
+        pruned: List[dict] = []
+        for m in user_models:
+            mid = str(m.get("model_id", ""))
+            if mid.startswith("system_") and m.get("provider") != "cliproxyapi":
+                if mid not in valid_system_ids:
+                    logger.debug("Pruning stale system model: %s", mid)
+                    continue
+            pruned.append(m)
+        user_models = pruned
+        persisted_model_ids = {m.get("model_id") for m in user_models}
+
         system_models: List[dict] = []
 
-        # Provider-backed system models (no keys sent to frontend; use env at runtime)
-        if os.getenv("DEEPSEEK_API_KEY"):
-            deepseek_chat_defaults = self._system_model_generation_defaults(
-                model_name="deepseek-chat",
-                provider="deepseek",
-            )
-            deepseek_reasoner_defaults = self._system_model_generation_defaults(
-                model_name="deepseek-reasoner",
-                provider="deepseek",
-            )
-            system_models.extend(
-                [
-                    {
-                        "model_id": "system_deepseek-chat",
-                        "model_name": "deepseek-chat",
-                        "model_url": "",
-                        "api_key": None,
-                        "base_used": [],
-                        "system_prompt": "",
-                        "temperature": deepseek_chat_defaults["temperature"],
-                        "max_length": deepseek_chat_defaults["max_length"],
-                        "top_P": deepseek_chat_defaults["top_P"],
-                        "top_K": -1,
-                        "score_threshold": -1,
-                        "provider": "deepseek",
-                    },
-                    {
-                        "model_id": "system_deepseek-reasoner",
-                        "model_name": "deepseek-reasoner",
-                        "model_url": "",
-                        "api_key": None,
-                        "base_used": [],
-                        "system_prompt": "",
-                        "temperature": deepseek_reasoner_defaults["temperature"],
-                        "max_length": deepseek_reasoner_defaults["max_length"],
-                        "top_P": deepseek_reasoner_defaults["top_P"],
-                        "top_K": -1,
-                        "score_threshold": -1,
-                        "provider": "deepseek",
-                    },
-                ]
-            )
+        for provider_id in ProviderRegistry.get_all_providers():
+            config = ProviderRegistry.get_provider_config(provider_id)
 
-        if os.getenv("ZAI_API_KEY"):
-            zai_defaults = self._system_model_generation_defaults(
-                model_name="glm-4.7",
-                provider="zai",
-            )
-            system_models.append(
-                {
-                    "model_id": "system_glm-4.7",
-                    "model_name": "glm-4.7",
-                    "model_url": "",
-                    "api_key": None,
-                    "base_used": [],
-                    "system_prompt": "",
-                    "temperature": zai_defaults["temperature"],
-                    "max_length": zai_defaults["max_length"],
-                    "top_P": zai_defaults["top_P"],
-                    "top_K": -1,
-                    "score_threshold": -1,
-                    "provider": "zai",
-                }
-            )
+            if provider_id == "cliproxyapi":
+                if os.getenv("CLIPROXYAPI_BASE_URL"):
+                    live_models, _reason = await _fetch_cliproxyapi_live_models()
+                    model_list = live_models if live_models else list(config.models)
+                else:
+                    continue
+            else:
+                if not config.env_key or not os.getenv(config.env_key):
+                    continue
+                model_list = list(config.models)
 
-        if os.getenv("MINIMAX_API_KEY"):
-            minimax_defaults = self._system_model_generation_defaults(
-                model_name="MiniMax-M2.1",
-                provider="minimax",
-            )
-            system_models.append(
-                {
-                    "model_id": "system_MiniMax-M2.1",
-                    "model_name": "MiniMax-M2.1",
-                    "model_url": "",
-                    "api_key": None,
-                    "base_used": [],
-                    "system_prompt": "",
-                    "temperature": minimax_defaults["temperature"],
-                    "max_length": minimax_defaults["max_length"],
-                    "top_P": minimax_defaults["top_P"],
-                    "top_K": -1,
-                    "score_threshold": -1,
-                    "provider": "minimax",
-                }
-            )
-
-        # Ollama Cloud models (open-source LLMs)
-        if os.getenv("OLLAMA_CLOUD_API_KEY"):
-            ollama_models = [
-                "qwen3-coder-next",
-                "qwen3-next:80b",
-                "deepseek-v3.2",
-                "deepseek-v3.1:671b",
-                "kimi-k2.5",
-                "kimi-k2-thinking",
-                "gemma3:27b",
-                "mistral-large-3:675b",
-                "cogito-2.1:671b",
-                "gpt-oss:120b",
-                "qwen3-vl:235b",
-            ]
-            for model_name in ollama_models:
-                ollama_defaults = self._system_model_generation_defaults(
+            for model_name in model_list:
+                defaults = self._system_model_generation_defaults(
                     model_name=model_name,
-                    provider="ollama-cloud",
+                    provider=provider_id,
                 )
                 system_models.append(
                     {
@@ -730,54 +678,12 @@ class ModelConfigRepository(BaseRepository):
                         "api_key": None,
                         "base_used": [],
                         "system_prompt": "",
-                        "temperature": ollama_defaults["temperature"],
-                        "max_length": ollama_defaults["max_length"],
-                        "top_P": ollama_defaults["top_P"],
+                        "temperature": defaults["temperature"],
+                        "max_length": defaults["max_length"],
+                        "top_P": defaults["top_P"],
                         "top_K": -1,
                         "score_threshold": -1,
-                        "provider": "ollama-cloud",
-                    }
-                )
-
-        # CLIProxyAPI models: try live fetch, fallback to static list.
-        if os.getenv("CLIPROXYAPI_BASE_URL"):
-            live_models, _reason = await _fetch_cliproxyapi_live_models()
-            if not live_models:
-                # Fallback: use static model list from providers.yaml
-                live_models = [
-                    # Claude (Anthropic via Antigravity)
-                    # Keep aligned with what the Antigravity proxy exposes in this environment.
-                    "claude-opus-4-6-thinking",
-                    "claude-sonnet-4-5-thinking",
-                    "claude-sonnet-4-5",
-                    "claude-sonnet-4-20250514",
-                    "claude-3.5-sonnet",
-                    # Gemini (Google via Antigravity)
-                    "gemini-2.5-pro",
-                    "gemini-2.5-flash",
-                    "gemini-2.5-flash-lite",
-                    "gemini-3-pro-preview",
-                    "gemini-3-flash",
-                ]
-            for model_name in live_models:
-                proxy_defaults = self._system_model_generation_defaults(
-                    model_name=model_name,
-                    provider="cliproxyapi",
-                )
-                system_models.append(
-                    {
-                        "model_id": f"system_{model_name}",
-                        "model_name": model_name,
-                        "model_url": "",
-                        "api_key": None,
-                        "base_used": [],
-                        "system_prompt": "",
-                        "temperature": proxy_defaults["temperature"],
-                        "max_length": proxy_defaults["max_length"],
-                        "top_P": proxy_defaults["top_P"],
-                        "top_K": -1,
-                        "score_threshold": -1,
-                        "provider": "cliproxyapi",
+                        "provider": provider_id,
                     }
                 )
 
@@ -801,14 +707,14 @@ class ModelConfigRepository(BaseRepository):
             if provider == "cliproxyapi":
                 live_models, _reason = await _fetch_cliproxyapi_live_models()
                 if selected_name not in live_models:
-                    # Prefer DeepSeek, then Z.ai, then MiniMax.
                     fallback = ""
-                    if os.getenv("DEEPSEEK_API_KEY"):
-                        fallback = "system_deepseek-chat"
-                    elif os.getenv("ZAI_API_KEY"):
-                        fallback = "system_glm-4.7"
-                    elif os.getenv("MINIMAX_API_KEY"):
-                        fallback = "system_MiniMax-M2.1"
+                    for pid in ProviderRegistry.get_all_providers():
+                        if pid == "cliproxyapi":
+                            continue
+                        pcfg = ProviderRegistry.get_provider_config(pid)
+                        if pcfg.env_key and os.getenv(pcfg.env_key) and pcfg.models:
+                            fallback = f"system_{pcfg.models[0]}"
+                            break
                     if fallback:
                         selected_model = fallback
 
