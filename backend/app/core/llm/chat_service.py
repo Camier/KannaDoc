@@ -240,7 +240,8 @@ class ChatService:
                 f"Temperature and top_p are not supported in reasoning mode."
             )
             if max_length != -1:
-                optional_args["max_completion_tokens"] = max_length
+                # DeepSeek's OpenAI-compatible Chat Completions API uses max_tokens.
+                optional_args["max_tokens"] = max_length
             return optional_args
 
         # Provider-aware bounds: some OpenAI-compatible providers document a narrower

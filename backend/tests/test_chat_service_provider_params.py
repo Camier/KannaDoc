@@ -75,7 +75,7 @@ def test_optional_args_minimax_clamps_temperature_to_one_but_keeps_top_p() -> No
 
 
 @pytest.mark.unit
-def test_optional_args_deepseek_reasoner_uses_max_completion_tokens_only() -> None:
+def test_optional_args_deepseek_reasoner_uses_max_tokens_only() -> None:
     """DeepSeek reasoning models should not receive temperature/top_p."""
 
     from app.core.llm.chat_service import ChatService
@@ -88,7 +88,7 @@ def test_optional_args_deepseek_reasoner_uses_max_completion_tokens_only() -> No
         top_p=0.9,
     )
 
-    assert args == {"max_completion_tokens": 1234}
+    assert args == {"max_tokens": 1234}
 
 
 @pytest.mark.unit

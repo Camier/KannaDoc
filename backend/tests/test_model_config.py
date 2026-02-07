@@ -409,7 +409,7 @@ class TestChatServiceProviderAwareReasoner:
         assert optional.get("max_tokens") == 2048
         assert "max_completion_tokens" not in optional
 
-    def test_optional_args_for_deepseek_reasoner_uses_max_completion_tokens(self, clean_env):
+    def test_optional_args_for_deepseek_reasoner_uses_max_tokens(self, clean_env):
         _require_chat_service_deps()
         from app.core.llm.chat_service import ChatService
 
@@ -422,8 +422,8 @@ class TestChatServiceProviderAwareReasoner:
         )
         assert "temperature" not in optional
         assert "top_p" not in optional
-        assert "max_tokens" not in optional
-        assert optional.get("max_completion_tokens") == 2048
+        assert optional.get("max_tokens") == 2048
+        assert "max_completion_tokens" not in optional
 
     def test_normalize_score_threshold_sentinel_converts_to_default(self):
         """Verify -1 sentinel value for score_threshold converts to default (no filter)."""
