@@ -199,7 +199,8 @@ Important constraints that influenced the “do not overspecify” approach:
 - **OpenAI**: `temperature` range is `0..2`. Docs:
   https://platform.openai.com/docs/api-reference/chat/create
 - **Claude (Anthropic)**: `temperature` range is `0..1`. Some models do not allow specifying both
-  `temperature` and `top_p`. In this stack, Claude is typically reached via **Antigravity behind
+  `temperature` and `top_p` (and Anthropic generally recommends tuning only one of them at a time).
+  In this stack, Claude is typically reached via **Antigravity behind
   CLIProxyAPI** (`provider=cliproxyapi`), so we apply this constraint based on `(provider, model_name)`,
   not a dedicated `provider=anthropic`. Docs:
   https://docs.anthropic.com/en/api/messages
@@ -209,7 +210,7 @@ Important constraints that influenced the “do not overspecify” approach:
   https://api-docs.deepseek.com/
 - **MiniMax**: OpenAI-compatible parameters; `temperature` and `top_p` are documented as `0..1`.
   Docs:
-  https://www.minimaxi.com/document/omni
+  https://platform.minimax.io/docs/api-reference/text-generation/chat-completion-v2
 - **Gemini (Google)**: `generationConfig` exposes `temperature`, `topP`, `topK`, `maxOutputTokens`.
   Docs:
   https://ai.google.dev/gemini-api/docs/text-generation?lang=python
@@ -218,6 +219,7 @@ Important constraints that influenced the “do not overspecify” approach:
   https://docs.z.ai/api-reference/chat-completions
 - **Ollama OpenAI compatibility**: OpenAI-compatible surface; supported params are server-dependent.
   Docs:
+  https://docs.ollama.com/openai/
   https://ollama.com/blog/openai-compatibility
 
 Implementation detail: we clamp narrower provider ranges only when the provider is explicit/detected. If the
