@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
 """
+⚠️  LEGACY — This CLI harness has unfinished TODOs and is NOT the canonical
+evaluation path.  Use the fully-implemented API instead:
+
+    POST /api/v1/eval/run   — run an evaluation
+    GET  /api/v1/eval/runs/{id}  — retrieve metrics
+
+See backend/app/eval/ for the production implementation.
+
+---
+
 RAG Evaluation Harness - Minimal but Actionable
 
 Purpose: Validate retrieval quality for RAG systems.

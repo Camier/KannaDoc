@@ -23,6 +23,7 @@ This is a **private research fork** used for academic thesis work. It extends th
 - Vector DB stack (default): docker-compose Milvus (`milvus-standalone` + `milvus-etcd` + `milvus-minio`).
 - Backend health: `curl -sf http://localhost:8090/api/v1/health/ready | python3 -m json.tool`
 - Milvus host->docker migration runbook: `docs/operations/MILVUS_HOST_TO_DOCKER_MIGRATION.md`
+- **Kafka consumer must be running** for file uploads to be embedded into Milvus. If the consumer is down, uploads succeed (files saved to MinIO) but embedding silently never happens. Check: `docker compose ps kafka-consumer`.
 
 ## Repository Structure
 

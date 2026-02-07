@@ -191,8 +191,9 @@ All commands should be run from `backend/` directory with `PYTHONPATH=.`.
   PYTHONPATH=. python3 scripts/datalab/aggregate_corpus.py
   ```
 ### 6.3 Evaluation & Optimization
-- **rag_eval.py**: Runs the evaluation harness against the dev dataset.
+- **rag_eval.py**: ⚠️ **LEGACY** — CLI evaluation harness with unfinished TODOs. Use the API-based evaluation system (`/api/v1/eval/`) instead, which is fully implemented.
   ```bash
+  # Legacy CLI (not recommended):
   PYTHONPATH=. python3 scripts/datalab/rag_eval.py --top-k 5
   ```
 - **rag_optimize.py**: Tunes HNSW parameters (efConstruction, M).
@@ -219,8 +220,12 @@ All commands should be run from `backend/` directory with `PYTHONPATH=.`.
 | `RAG_HYBRID_DENSE_WEIGHT` | Weight for dense retrieval (if ranker=weighted) | `0.7` |
 | `RAG_HYBRID_SPARSE_WEIGHT` | Weight for sparse retrieval (if ranker=weighted) | `0.3` |
 
+### 7.2 Kafka Consumer Dependency
 
-## 8. DATA ARTIFACTS
+File uploads (both KB and chat temp uploads) trigger embedding tasks via Kafka. The Kafka consumer/worker must be running for files to be processed into Milvus vectors. If the consumer is down, uploads succeed (files are saved to MinIO) but embedding silently never happens.
+
+**Check consumer status**: `docker compose ps kafka-consumer` (or equivalent worker service).
+
 
 The `backend/data/` directory contains the core knowledge assets of the system.
 
@@ -253,6 +258,7 @@ These artifacts are essential for maintaining the state of the knowledge base an
 | 2026-02-07 | Removed deprecated scripts (configure_models.py, _archived/, neo4j_ingest.py) |
 | 2026-02-07 | Repo consolidation: deleted 11 one-off scripts from scripts/, cleaned .gitignore, removed stale neo4j refs |
 | 2026-02-07 | Functional audit: mapped 34 sub-features across 5 areas (28 complete, 1 partial, 1 broken, 4 stub/N/A) |
+| 2026-02-07 | Fixed F1 (temp KB cleanup endpoint), F2 (Kafka ops docs), F3 (rag_eval.py deprecation header) |
 
 ## 10. FUNCTIONAL AUDIT (Feb 2026)
 
@@ -273,7 +279,7 @@ Feature completeness snapshot from the functional audit.
 | KB attachment to conversation | ✅ | Synced before send via `updateChatModelConfig` |
 | File upload in chat (temp KB) | ✅ | MinIO + Kafka embedding task |
 | Conversation CRUD | ✅ | Create/list/rename/delete |
-| Temp KB cleanup | ❌ | Frontend calls `deleteTempKnowledgeBase` but backend endpoint missing |
+| Temp KB cleanup | ✅ | `DELETE /base/temp_knowledge_base/{username}` cleans MongoDB + Milvus |
 
 ### 10.3 Evaluation System
 | Sub-feature | Status | Notes |
