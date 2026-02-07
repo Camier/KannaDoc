@@ -18,6 +18,12 @@ This is a **private research fork** used for academic thesis work. It extends th
 
 **Consolidated overview:** `docs/IMPORTANT_REPO_OVERVIEW.md`
 
+## Operations Notes (Thesis Fork)
+
+- Vector DB stack (default): docker-compose Milvus (`milvus-standalone` + `milvus-etcd` + `milvus-minio`).
+- Backend health: `curl -sf http://localhost:8090/api/v1/health/ready | python3 -m json.tool`
+- Milvus host->docker migration runbook: `docs/operations/MILVUS_HOST_TO_DOCKER_MIGRATION.md`
+
 ## Repository Structure
 
 This repository consolidates:

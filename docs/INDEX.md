@@ -53,7 +53,7 @@ One-page cheat sheet for:
 
 ## 📍 Quick Navigation
 
-**Current KB State (miko):** See [RUNBOOK](operations/RUNBOOK.md#kb-state-miko) → "Etat reel".
+**Current KB State (thesis):** See [RUNBOOK](operations/RUNBOOK.md#kb-state-thesis) → "Etat reel".
 
 ### Getting Started
 | Document | Description |
@@ -65,7 +65,7 @@ One-page cheat sheet for:
 | [API](core/API.md) | REST API reference |
 | [DATABASE](core/DATABASE.md) | Database schemas (MongoDB, MySQL, Milvus, Redis) |
 | [EMBEDDINGS](core/EMBEDDINGS.md) | Embedding pipeline (ColQwen/Jina) |
-| [Vector DB Overview](core/vector_db/OVERVIEW.md) | Vector DB abstraction (Milvus/Qdrant) |
+| [Vector DB Overview](vector_db/OVERVIEW.md) | Vector DB abstraction (Milvus/Qdrant) |
 | [WORKFLOW ENGINE](core/WORKFLOW_ENGINE.md) | Workflow execution, fault tolerance, recovery |
 
 ### Architecture
@@ -79,6 +79,7 @@ One-page cheat sheet for:
 | Document | Description |
 |----------|-------------|
 | [RUNBOOK](operations/RUNBOOK.md) | Clean restart procedures |
+| [MILVUS_HOST_TO_DOCKER_MIGRATION](operations/MILVUS_HOST_TO_DOCKER_MIGRATION.md) | Milvus host->docker migration runbook |
 | [DEPLOYMENT_DIAGRAM](operations/DEPLOYMENT_DIAGRAM.md) | Minimal deployment topology (Mermaid) |
 | [CHANGE_LOG](operations/CHANGE_LOG.md) | Version history & changes |
 | [TROUBLESHOOTING](operations/TROUBLESHOOTING.md) | Troubleshooting guide & incident reports |
@@ -135,7 +136,7 @@ One-page cheat sheet for:
 2. [COLQWEN_SETUP](guides/COLQWEN_SETUP.md) - Model setup
 3. [GPU_OPTIMIZATION](guides/GPU_OPTIMIZATION.md) - Performance
 4. [MILVUS_OPTIMIZATION](guides/MILVUS_OPTIMIZATION.md) - Vector DB
-5. [Vector DB Overview](core/vector_db/OVERVIEW.md) - Multi-vector support
+5. [Vector DB Overview](vector_db/OVERVIEW.md) - Multi-vector support
 
 ### Troubleshooting Session
 1. [TROUBLESHOOTING](operations/TROUBLESHOOTING.md) - Recent status & fixes

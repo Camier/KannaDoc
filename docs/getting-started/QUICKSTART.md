@@ -22,7 +22,7 @@
 ┌─────────────────────────────────────────────────────────────┐
 │                    USER ACCESS LAYER                         │
 │  http://localhost:8090 (Layra)                              │
-│  http://localhost:7474 (Neo4j Browser)                      │
+│  Neo4j: disabled (not deployed)                             │
 ├─────────────────────────────────────────────────────────────┤
 │                    APPLICATION LAYER                         │
 │  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐         │
@@ -378,16 +378,14 @@ for col in collections:
 ```
 
 **Important Note about Milvus Access:**
-- Milvus port 19530 is **NOT exposed to host** for security reasons
-- Services access Milvus internally via `milvus-standalone:19530`
-- Diagnostic scripts like `check_milvus_schema.py` must run **inside containers** (script has been copied to `/app/`):
-  ```bash
-  docker exec layra-backend python3 /app/check_milvus_schema.py
-  ```
-  For quick verification:
-  ```bash
-  docker exec layra-backend python3 -c "from pymilvus import MilvusClient; client = MilvusClient('http://milvus-standalone:19530'); print('Collections:', client.list_collections())"
-  ```
+- Containers access Milvus internally via `http://milvus-standalone:19530`.
+- The host can access Milvus via `http://127.0.0.1:19531` (published from `docker-compose.yml` to avoid clashing with a host Milvus on `:19530`).
+- If you run diagnostics *inside* a container, do not use `http://127.0.0.1:19530` (it points to the container itself).
+
+For quick verification:
+```bash
+docker exec layra-backend python3 -c "from pymilvus import MilvusClient; client = MilvusClient('http://milvus-standalone:19530'); print('Collections:', client.list_collections())"
+```
 
 ### Verify Deployed Workflow
 
