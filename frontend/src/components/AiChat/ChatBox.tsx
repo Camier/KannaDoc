@@ -20,7 +20,7 @@ import {
   SupportFileFormat,
   SupportUploadFormat,
 } from "@/utils/file";
-import { uploadFiles } from "@/lib/api/chatApi";
+import { uploadFiles, updateChatModelConfig } from "@/lib/api/chatApi";
 import KnowledgeConfigModal from "./KnowledgeConfigModal";
 import useModelConfigStore from "@/stores/configStore";
 import useChatStore from "@/stores/chatStore";
@@ -366,6 +366,18 @@ const ChatBox: React.FC<ChatBoxProps> = ({
     if (user?.name) {
       try {
         setModelConfig(config);
+        // Keep conversation config in sync.
+        // The backend RAG uses the conversation's `chat_model_config` to decide which bases
+        // to retrieve from (and thus which `file_used` references the UI can render).
+        if (chatId) {
+          try {
+            await updateChatModelConfig(chatId, config);
+          } catch (error) {
+            // Non-fatal: the conversation may not exist yet (e.g. config saved before first message).
+            // Keep the user-level model config update path working.
+            logger.warn("Conversation config update failed (non-fatal):", error);
+          }
+        }
         await updateModelConfig(user.name, config);
         await selectModel(user.name, config.modelId);
       } catch (error) {
