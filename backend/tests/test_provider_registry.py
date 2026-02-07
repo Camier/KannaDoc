@@ -112,8 +112,9 @@ class TestProviderRegistry:
         assert ProviderRegistry.get_timeout_for_model("claude-opus-4-6-thinking") == 120
         assert ProviderRegistry.get_timeout_for_model("claude-sonnet-4-5") == 120
 
-    def test_get_timeout_for_model_gpt(self):
-        """Test timeout detection for GPT models (cliproxyapi)."""
+    def test_get_timeout_for_model_gpt(self, monkeypatch):
+        """Test timeout detection for GPT models (cliproxyapi, env-gated)."""
+        monkeypatch.setenv("CLIPROXYAPI_BASE_URL", "http://test")
         assert ProviderRegistry.get_timeout_for_model("gpt-4o") == 120
         assert ProviderRegistry.get_timeout_for_model("gpt-4o-mini") == 120
         assert ProviderRegistry.get_timeout_for_model("codex-5.3") == 120
