@@ -26,6 +26,7 @@ from app.rag.convert_file import (
 from app.utils.kafka_producer import kafka_producer_manager
 from app.core.logging import logger
 from app.db.miniodb import async_minio_manager
+from app.utils.ids import to_milvus_collection_name
 
 router = APIRouter()
 milvus_client = MilvusManager()
@@ -65,11 +66,12 @@ async def create_knowledge_base(
     knowledge_base: KnowledgeBaseCreate,
     repo_manager: RepositoryManager = Depends(get_repository_manager),
 ):
+    knowledge_base_id = f"{USERNAME}_{uuid.uuid4()}"
     result = await repo_manager.knowledge_base.create_knowledge_base(
         username=USERNAME,
         knowledge_base_name=knowledge_base.knowledge_base_name,
-        knowledge_base_id=knowledge_base.knowledge_base_id,
-        is_temp=knowledge_base.is_temp,
+        knowledge_base_id=knowledge_base_id,
+        is_delete=False,
     )
     return result
 
@@ -96,7 +98,66 @@ async def delete_knowledge_base(
     result = await repo_manager.knowledge_base.delete_knowledge_base(kb_id)
     if result["status"] == "failed":
         raise HTTPException(status_code=404, detail=result.get("message"))
+
+    # Drop associated Milvus collection
+    collection_name = to_milvus_collection_name(kb_id)
+    try:
+        milvus_client.delete_collection(collection_name)
+    except Exception as e:
+        logger.warning(f"Failed to drop Milvus collection {collection_name}: {e}")
+
     return result
+
+
+# 删除用户的所有临时知识库 (temp KBs created during chat file uploads)
+@router.delete("/temp_knowledge_base/{username}")
+async def delete_temp_knowledge_bases(
+    username: str,
+    repo_manager: RepositoryManager = Depends(get_repository_manager),
+):
+    """Delete all temporary knowledge bases for a user.
+
+    Temp KBs are created during chat file uploads with IDs starting with 'temp_'.
+    The frontend calls this on ChatBox/FlowEditor mount to clean up stale collections.
+    """
+    all_kbs = await repo_manager.knowledge_base.get_all_knowledge_bases_by_user(
+        username
+    )
+    temp_kbs = [
+        kb for kb in all_kbs if kb.get("knowledge_base_id", "").startswith("temp_")
+    ]
+
+    if not temp_kbs:
+        return {"status": "success", "deleted_count": 0}
+
+    deleted_count = 0
+    errors = []
+    for kb in temp_kbs:
+        kb_id = kb["knowledge_base_id"]
+        try:
+            result = await repo_manager.knowledge_base.delete_knowledge_base(kb_id)
+
+            collection_name = to_milvus_collection_name(kb_id)
+            try:
+                milvus_client.delete_collection(collection_name)
+            except Exception as e:
+                logger.warning(
+                    f"Failed to drop Milvus collection {collection_name}: {e}"
+                )
+
+            if result.get("status") != "failed":
+                deleted_count += 1
+            else:
+                errors.append({"kb_id": kb_id, "error": result.get("message")})
+        except Exception as e:
+            logger.error(f"Failed to delete temp KB {kb_id}: {e}")
+            errors.append({"kb_id": kb_id, "error": str(e)})
+
+    response = {"status": "success", "deleted_count": deleted_count}
+    if errors:
+        response["status"] = "partial_success"
+        response["errors"] = errors
+    return response
 
 
 # 批量删除知识库
