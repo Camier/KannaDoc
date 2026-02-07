@@ -28,9 +28,9 @@ from app.db.vector_db import vector_db_client
 from app.rag.get_embedding import get_embeddings_from_httpx, get_sparse_embeddings
 from app.rag.utils import replace_image_content, sort_and_filter
 from app.rag.message import find_depth_parent_mesage
-from app.rag.provider_client import (
+from app.rag.provider_registry import (
     get_llm_client,
-    ProviderClient,
+    ProviderRegistry,
     resolve_api_model_name,
 )
 from app.core.config import settings
@@ -144,7 +144,7 @@ class ChatService:
             return p
         if model_url and str(model_url).startswith("http"):
             return None
-        return ProviderClient.get_provider_for_model(model_name)
+        return ProviderRegistry.get_provider_for_model(model_name)
 
     @staticmethod
     def _tuned_generation_defaults(
@@ -939,12 +939,12 @@ class ChatService:
         )
 
         # Detect provider to handle auto-detection cases (where model_url is None)
-        detected_provider = ProviderClient.get_provider_for_model(model_name)
+        detected_provider = ProviderRegistry.get_provider_for_model(model_name)
         provider_for_stream = effective_provider or detected_provider
 
         # Fail fast if provider detection fails and no explicit URL provided
         if not detected_provider and not model_url:
-            supported = ProviderClient.get_all_providers()
+            supported = ProviderRegistry.get_all_providers()
             raise ValueError(
                 f"Cannot detect provider for model '{model_name}'. "
                 f"Either use a known model name or provide an explicit model_url. "

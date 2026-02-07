@@ -1,6 +1,6 @@
 # LLM Provider Configuration
 # 
-# DETECTION PRIORITY ORDER (as implemented in ProviderClient.get_provider_for_model):
+# DETECTION PRIORITY ORDER (as implemented in ProviderRegistry.get_provider_for_model):
 #
 # 1. CLIPROXYAPI PRECEDENCE:
 #    If CLIPROXYAPI_BASE_URL is set in the environment, the system first attempts to match 

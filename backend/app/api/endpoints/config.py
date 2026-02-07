@@ -14,7 +14,6 @@ from app.db.repositories.repository_manager import (
     RepositoryManager,
     get_repository_manager,
 )
-from app.rag.provider_client import ProviderClient
 from app.rag.provider_registry import ProviderRegistry
 
 router = APIRouter()
@@ -23,7 +22,7 @@ router = APIRouter()
 @router.get("/cliproxyapi-models")
 async def get_cliproxyapi_models():
     """获取 CLIProxyAPI 默认模型列表 (Public)"""
-    models = ProviderClient.get_cliproxyapi_models_with_defaults()
+    models = ProviderRegistry.get_cliproxyapi_models_with_defaults()
     return models
 
 
@@ -80,7 +79,7 @@ async def get_available_models():
 @router.get("/resolve-provider")
 async def resolve_provider(model: str = Query(..., min_length=1)):
     """Resolve provider details for a given model name."""
-    provider_id = ProviderClient.get_provider_for_model(model)
+    provider_id = ProviderRegistry.get_provider_for_model(model)
     if not provider_id:
         return {
             "model": model,

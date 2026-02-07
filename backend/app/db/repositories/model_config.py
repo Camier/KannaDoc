@@ -131,18 +131,17 @@ class ModelConfigRepository(BaseRepository):
         # System models can be selected without being stored in the models array.
         if model_id.startswith("system_"):
             model_name = model_id[7:]
-            from app.rag.provider_client import ProviderClient
             from app.rag.provider_registry import ProviderRegistry
 
-            provider = ProviderClient.get_provider_for_model(model_name)
+            provider = ProviderRegistry.get_provider_for_model(model_name)
             if not provider:
                 return {
                     "status": "error",
                     "message": f"Unknown model: {model_name}",
                 }
 
-            provider_config = ProviderClient.PROVIDERS.get(provider, {})
-            env_key = provider_config.get("env_key", "")
+            provider_config = ProviderRegistry.get_provider_config(provider)
+            env_key = provider_config.env_key
             if env_key and not os.getenv(env_key):
                 return {
                     "status": "error",
@@ -419,12 +418,12 @@ class ModelConfigRepository(BaseRepository):
         if not model_name and len(model_id) > 7:
             model_name = model_id[7:]
 
-        from app.rag.provider_client import ProviderClient
+        from app.rag.provider_registry import ProviderRegistry
 
         # System models MUST use env keys and empty model_url for deterministic routing.
         model["model_url"] = ""
         model["api_key"] = None
-        provider = ProviderClient.get_provider_for_model(model_name)
+        provider = ProviderRegistry.get_provider_for_model(model_name)
         model["provider"] = provider
 
         # Apply tuned defaults only when the value is the -1 sentinel.
@@ -458,10 +457,9 @@ class ModelConfigRepository(BaseRepository):
         # System models (not necessarily persisted) can be synthesized.
         if selected_id.startswith("system_"):
             model_name = selected_id[7:]
-            from app.rag.provider_client import ProviderClient
             from app.rag.provider_registry import ProviderRegistry
 
-            provider = ProviderClient.get_provider_for_model(model_name)
+            provider = ProviderRegistry.get_provider_for_model(model_name)
             if provider == "cliproxyapi":
                 live_models, reason = await ProviderRegistry.fetch_cliproxyapi_models()
                 if model_name not in live_models:
@@ -508,7 +506,6 @@ class ModelConfigRepository(BaseRepository):
         # If CLIProxyAPI is configured but returns empty /models, hide any stale
         # stored system_* proxy models to avoid presenting broken choices.
         if os.getenv("CLIPROXYAPI_BASE_URL"):
-            from app.rag.provider_client import ProviderClient
             from app.rag.provider_registry import ProviderRegistry
 
             live_models, _reason = await ProviderRegistry.fetch_cliproxyapi_models()
@@ -519,7 +516,7 @@ class ModelConfigRepository(BaseRepository):
                 model_id = str(m.get("model_id", ""))
                 model_name = str(m.get("model_name", ""))
                 if model_id.startswith("system_"):
-                    provider = ProviderClient.get_provider_for_model(model_name)
+                    provider = ProviderRegistry.get_provider_for_model(model_name)
                     if provider == "cliproxyapi" and model_name not in live_set:
                         continue
                     m = self._sanitize_system_model(m)
@@ -610,9 +607,9 @@ class ModelConfigRepository(BaseRepository):
         # fall back to a deterministic provider-backed system model.
         if selected_model.startswith("system_"):
             selected_name = selected_model[7:]
-            from app.rag.provider_client import ProviderClient
+            from app.rag.provider_registry import ProviderRegistry
 
-            provider = ProviderClient.get_provider_for_model(selected_name)
+            provider = ProviderRegistry.get_provider_for_model(selected_name)
             if provider == "cliproxyapi":
                 live_models, _reason = await ProviderRegistry.fetch_cliproxyapi_models()
                 if selected_name not in live_models:

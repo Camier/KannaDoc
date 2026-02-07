@@ -2,7 +2,7 @@ from typing import List, Optional
 
 from pydantic import BaseModel, field_validator, model_validator
 
-from app.rag.provider_client import ProviderClient
+from app.rag.provider_registry import ProviderRegistry
 
 
 class ModelConfigBase(BaseModel):
@@ -33,7 +33,7 @@ class ModelConfigBase(BaseModel):
     def validate_provider(cls, v: Optional[str]) -> Optional[str]:
         if v is None:
             return v
-        known_providers = ProviderClient.get_all_providers()
+        known_providers = ProviderRegistry.get_all_providers()
         if v not in known_providers:
             raise ValueError(
                 f"Unknown provider: {v}. Valid providers: {known_providers}"
@@ -52,7 +52,7 @@ class ModelConfigBase(BaseModel):
           ids are rejected because we cannot route them.
         """
         if self.provider is None:
-            detected = ProviderClient.get_provider_for_model(self.model_name)
+            detected = ProviderRegistry.get_provider_for_model(self.model_name)
             if not detected:
                 raise ValueError(
                     f"Unknown model: {self.model_name}. Cannot detect provider."
@@ -172,7 +172,7 @@ class ModelUpdate(BaseModel):
     def validate_provider(cls, v: Optional[str]) -> Optional[str]:
         if v is None:
             return v
-        known_providers = ProviderClient.get_all_providers()
+        known_providers = ProviderRegistry.get_all_providers()
         if v not in known_providers:
             raise ValueError(
                 f"Unknown provider: {v}. Valid providers: {known_providers}"
