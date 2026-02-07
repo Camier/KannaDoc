@@ -49,9 +49,14 @@ This guide explains the different Docker Compose configurations available for La
 **Environment Variables:**
 See `.env.example` for required configuration. Key variables:
 - `EMBEDDING_MODEL` - `colqwen2.5` (local GPU) or `jina_embeddings_v4` (cloud API)
-- `OPENAI_API_KEY` / `DEEPSEEK_API_KEY` - Required for LLM chat
+- LLM provider keys - At least one provider key is required for chat (e.g. `OPENAI_API_KEY`, `DEEPSEEK_API_KEY`, `ANTHROPIC_API_KEY`, etc.)
 - `MINIO_PUBLIC_URL` - Must be set to your server's public URL
 - `SINGLE_TENANT_MODE` - Set to `true` for shared data across users
+
+**Milvus networking note:**
+- Inside Docker, services reach Milvus via `http://milvus-standalone:19530`.
+- On the host, Milvus is published on `http://127.0.0.1:19531` (to avoid clashing with a host/systemd Milvus on `:19530`).
+- For the host->docker Milvus migration runbook, see `docs/operations/MILVUS_HOST_TO_DOCKER_MIGRATION.md`.
 
 ---
 
@@ -155,11 +160,11 @@ Docker Compose supports multiple compose files using the `-f` flag. Files are me
 | `SECRET_KEY` | Yes | (auto) | JWT signing key (min 32 characters) |
 | `OPENAI_API_KEY` | No* | (none) | OpenAI API key for chat LLM |
 | `DEEPSEEK_API_KEY` | No* | (none) | DeepSeek API key for chat LLM |
-| `ZHIPUAI_API_KEY` | No* | (none) | ZhipuAI API key for chat LLM |
+| `ZAI_API_KEY` | No* | (none) | Z.ai API key for GLM chat/extraction |
 | `EMBEDDING_MODEL` | No | `colqwen2.5` | Embedding model: `colqwen2.5` or `jina_embeddings_v4` |
 | `SINGLE_TENANT_MODE` | No | `false` | Share data across all users if `true` |
 
-*At least one LLM API key is required for chat functionality
+*At least one LLM API key (or an OpenAI-compatible proxy like CLIProxyAPI) is required for chat functionality.
 
 ## Common Workflows
 

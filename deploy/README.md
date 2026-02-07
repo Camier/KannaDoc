@@ -38,6 +38,10 @@ git rev-parse HEAD > /tmp/pre_migration_commit.txt
 ./deploy/scripts/monitor_migration.sh
 ```
 
+If your migration includes changing the Milvus topology (e.g., host/systemd Milvus -> docker-compose Milvus),
+use the dedicated runbook to preserve collection schema/index parameters and aliases:
+- `docs/operations/MILVUS_HOST_TO_DOCKER_MIGRATION.md`
+
 ### During Migration
 
 Monitor the output from `monitor_migration.sh`. Watch for:
