@@ -109,7 +109,7 @@ class TestProviderRegistry:
 
     def test_get_timeout_for_model_claude(self):
         """Test timeout detection for Claude models (cliproxyapi)."""
-        assert ProviderRegistry.get_timeout_for_model("claude-opus-4-5-thinking") == 120
+        assert ProviderRegistry.get_timeout_for_model("claude-opus-4-6-thinking") == 120
         assert ProviderRegistry.get_timeout_for_model("claude-sonnet-4-5") == 120
 
     def test_get_timeout_for_model_gpt(self):
@@ -156,7 +156,7 @@ class TestConvenienceFunctions:
         """Test get_timeout_for_model convenience function."""
         assert get_timeout_for_model("glm-4.7-flash") == 180
         assert get_timeout_for_model("deepseek-chat") == 180
-        assert get_timeout_for_model("claude-opus-4-5-thinking") == 120
+        assert get_timeout_for_model("claude-opus-4-6-thinking") == 120
 
 
 class TestProviderConfigDataclass:

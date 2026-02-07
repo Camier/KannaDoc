@@ -750,7 +750,8 @@ class ModelConfigRepository(BaseRepository):
                 # Fallback: use static model list from providers.yaml
                 live_models = [
                     # Claude (Anthropic via Antigravity)
-                    "claude-opus-4-5-thinking",
+                    # Keep aligned with what the Antigravity proxy exposes in this environment.
+                    "claude-opus-4-6-thinking",
                     "claude-sonnet-4-5-thinking",
                     "claude-sonnet-4-5",
                     "claude-sonnet-4-20250514",
