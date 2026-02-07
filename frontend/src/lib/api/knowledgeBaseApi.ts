@@ -76,7 +76,7 @@ export const uploadFiles = async (
     fileFormData.append("files", file); // 多个文件使用相同字段名
   });
 
-  return api.post("/base/upload/" + knowledgeBaseId, fileFormData, {
+  return api.post(`/base/knowledge_bases/${knowledgeBaseId}/files`, fileFormData, {
     onUploadProgress: (progressEvent: AxiosProgressEvent) => {
       if (progressEvent.lengthComputable && progressEvent.total) {
         const percent = Math.round(

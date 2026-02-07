@@ -1,4 +1,5 @@
 from typing import List
+import asyncio
 import uuid
 from datetime import datetime
 from fastapi import APIRouter, Depends, HTTPException, Query, UploadFile
@@ -34,9 +35,7 @@ USERNAME = settings.default_username
 
 
 # 查询所有知识库
-@router.get(
-    "/knowledge_bases", response_model=List[KnowledgeBaseSummary]
-)
+@router.get("/knowledge_bases", response_model=List[KnowledgeBaseSummary])
 async def get_knowledge_bases(
     repo_manager: RepositoryManager = Depends(get_repository_manager),
 ):
@@ -145,29 +144,74 @@ async def get_knowledge_base(
 @router.post("/knowledge_bases/{kb_id}/files")
 async def upload_file_to_kb(
     kb_id: str,
-    file: UploadFile,
+    files: List[UploadFile],
     repo_manager: RepositoryManager = Depends(get_repository_manager),
 ):
     knowledge_base = await repo_manager.knowledge_base.get_knowledge_base_by_id(kb_id)
     if not knowledge_base:
         raise HTTPException(status_code=404, detail="Knowledge base not found")
 
-    minio_filename, minio_url = await save_file_to_minio(USERNAME, file)
-
-    file_id = f"{USERNAME}_{uuid.uuid4()}"
-    file_data = {
-        "file_id": file_id,
-        "filename": file.filename,
-        "minio_filename": minio_filename,
-        "minio_url": minio_url,
-        "uploaded_at": datetime.now().isoformat(),
-    }
-
-    await repo_manager.knowledge_base.add_file_to_knowledge_base(
-        kb_id, file_data
+    task_id = USERNAME + "_" + str(uuid.uuid4())
+    total_files = len(files)
+    redis_connection = await redis.get_task_connection()
+    await redis_connection.hset(
+        f"task:{task_id}",
+        mapping={
+            "status": "processing",
+            "total": total_files,
+            "processed": 0,
+            "message": "Initializing file processing...",
+        },
     )
+    await redis_connection.expire(f"task:{task_id}", 3600)
 
-    return file_data
+    upload_tasks = [save_file_to_minio(USERNAME, file) for file in files]
+    upload_results = await asyncio.gather(*upload_tasks, return_exceptions=True)
+
+    file_meta_list = []
+    return_files = []
+
+    for file, upload_result in zip(files, upload_results):
+        if isinstance(upload_result, BaseException):
+            logger.error(f"Failed to upload {file.filename}: {upload_result}")
+            raise upload_result
+
+        minio_filename, minio_url = upload_result
+
+        file_id = f"{USERNAME}_{uuid.uuid4()}"
+        file_data = {
+            "file_id": file_id,
+            "filename": file.filename,
+            "minio_filename": minio_filename,
+            "minio_url": minio_url,
+            "uploaded_at": datetime.now().isoformat(),
+        }
+
+        await repo_manager.knowledge_base.add_file_to_knowledge_base(kb_id, file_data)
+
+        file_meta_list.append(
+            {
+                "file_id": file_id,
+                "minio_filename": minio_filename,
+                "original_filename": file.filename,
+                "minio_url": minio_url,
+            }
+        )
+        return_files.append(file_data)
+
+    for meta in file_meta_list:
+        logger.info(
+            f"send {task_id} to kafka, file name {meta['original_filename']}, knowledge id {kb_id}."
+        )
+        await kafka_producer_manager.send_embedding_task(
+            task_id=task_id,
+            username=USERNAME,
+            knowledge_db_id=kb_id,
+            file_meta=meta,
+            priority="1",
+        )
+
+    return {"task_id": task_id, "files": return_files}
 
 
 @router.get("/knowledge_bases/{kb_id}/files")
