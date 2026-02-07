@@ -5,6 +5,7 @@ Knowledge Base API endpoints for managing document collections.
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from typing import List, Optional
+from urllib.parse import urlencode
 from app.db.repositories.repository_manager import (
     RepositoryManager,
     get_repository_manager,
@@ -189,37 +190,58 @@ async def search_preview(
         logger.error(f"Milvus search failed: {e}")
         raise HTTPException(status_code=500, detail=f"Vector search failed: {str(e)}")
 
-    # Get file metadata for results
-    file_ids = list(set([r["file_id"] for r in search_results if "file_id" in r]))
-
-    # Fetch file details from MongoDB
-    files_map = {}
+    # Batch-fetch metadata for (file_id, image_id). This avoids N+1 and provides the
+    # image minio_url when available. In thesis deployments, Mongo "files" may be empty
+    # (or file_id may not match), so we also provide a safe fallback image URL.
+    file_infos: list[dict] = []
     try:
-        files = await repo_manager.file.get_files_by_ids(file_ids)
-        files_map = {f["file_id"]: f for f in files}
+        file_image_pairs = [
+            (r.get("file_id", ""), r.get("image_id", "")) for r in (search_results or [])
+        ]
+        file_infos = await repo_manager.file.get_files_and_images_batch(file_image_pairs)
     except Exception as e:
-        logger.warning(f"Failed to fetch file metadata: {e}")
-        # Continue with empty files_map - we'll return partial results
+        logger.warning(f"Failed to fetch file/image metadata in batch: {e}")
+        file_infos = [{"status": "failed"} for _ in (search_results or [])]
 
     # Format results
     formatted_results = []
-    for result in search_results:
-        file_id = result.get("file_id", "")
-        file_meta = files_map.get(file_id, {})
+    for result, file_info in zip(search_results, file_infos):
+        file_id = result.get("file_id", "") or ""
+        page_number = int(result.get("page_number", 0) or 0)
 
         # Apply score filter if specified
         score = result.get("score", 0.0)
         if request.min_score is not None and score < request.min_score:
             continue
 
+        filename = "Unknown"
+        image_url = ""
+        if isinstance(file_info, dict) and file_info.get("status") == "success":
+            filename = str(file_info.get("file_name") or file_id or "Unknown")
+            # For preview we want the page image.
+            image_url = str(file_info.get("image_minio_url") or "")
+        else:
+            # Thesis fallback: when Mongo metadata doesn't exist / doesn't match, we can still
+            # render a preview image from the locally served PDFs.
+            filename = str(file_id or "Unknown")
+            if str(kb_id).startswith("thesis_") and file_id and page_number:
+                api_base = settings.api_version_url
+                image_url = (
+                    f"{api_base}/thesis/page-image?"
+                    + urlencode(
+                        {"file_id": str(file_id), "page_number": page_number, "dpi": 150}
+                    )
+                )
+
         formatted_results.append(
             SearchPreviewResult(
                 image_id=result.get("image_id", ""),
                 file_id=file_id,
-                page_number=result.get("page_number", 0),
+                page_number=page_number,
                 score=score,
-                filename=file_meta.get("filename", "Unknown"),
-                minio_url=file_meta.get("minio_url", ""),
+                filename=filename,
+                # Historical field name. In preview UI this is rendered as an <img src>.
+                minio_url=image_url,
             )
         )
 
