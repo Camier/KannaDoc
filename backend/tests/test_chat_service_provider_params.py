@@ -92,6 +92,40 @@ def test_optional_args_minimax_temperature_zero_is_bumped_above_zero() -> None:
 
 
 @pytest.mark.unit
+def test_optional_args_minimax_top_p_zero_is_bumped_above_zero() -> None:
+    """MiniMax top_p may be documented as (0, 1]; avoid sending 0.0."""
+
+    from app.core.llm.chat_service import ChatService
+
+    args = ChatService._build_optional_openai_args(
+        model_name="abab6.5s-chat",
+        provider="minimax",
+        temperature=0.2,
+        max_length=2048,
+        top_p=0.0,
+    )
+
+    assert args.get("top_p", 0.0) > 0.0
+
+
+@pytest.mark.unit
+def test_optional_args_zai_top_p_zero_is_bumped_to_min() -> None:
+    """Z.ai documents top_p in [0.01, 1]; avoid sending 0.0."""
+
+    from app.core.llm.chat_service import ChatService
+
+    args = ChatService._build_optional_openai_args(
+        model_name="glm-4.5-flash",
+        provider="zai",
+        temperature=0.2,
+        max_length=2048,
+        top_p=0.0,
+    )
+
+    assert args.get("top_p", 0.0) >= 0.01
+
+
+@pytest.mark.unit
 def test_optional_args_deepseek_reasoner_uses_max_tokens_only() -> None:
     """DeepSeek reasoning models should not receive temperature/top_p."""
 

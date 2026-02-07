@@ -262,6 +262,16 @@ class ChatService:
         if max_length != -1:
             optional_args["max_tokens"] = max_length
         if top_p != -1:
+            # Provider-aware bounds: some OpenAI-compatible providers document a stricter
+            # lower bound than OpenAI's [0, 1]. We only clamp when provider is explicit
+            # (or detected and trusted) to avoid breaking arbitrary proxies.
+            if provider_l == "minimax":
+                # MiniMax docs often specify (0, 1]; avoid sending 0.0.
+                top_p = max(0.01, min(float(top_p), 1.0))
+            elif provider_l == "zai":
+                # Z.ai docs specify top_p in [0.01, 1].
+                top_p = max(0.01, min(float(top_p), 1.0))
+
             # Anthropic recommends adjusting *either* temperature or top_p (not both),
             # and some Claude variants may reject requests that specify both.
             # In this stack, we apply the conservative rule to Claude models proxied via CLIProxyAPI.
