@@ -79,6 +79,37 @@ async def _fetch_cliproxyapi_live_models() -> tuple[List[str], str]:
 
 
 class ModelConfigRepository(BaseRepository):
+    @staticmethod
+    def _system_model_generation_defaults(
+        *,
+        model_name: str,
+        provider: Optional[str],
+    ) -> dict[str, object]:
+        """Academic/RAG-friendly defaults for system_* models.
+
+        Rationale:
+        - system_* models are meant to be "safe defaults" for a deployment, not
+          an expert-tuned per-user config.
+        - Historically these were filled with -1 sentinels, which makes the UI
+          and behavior unpredictable across providers.
+        - We keep top_P as -1 (omit) by default to minimize provider incompat.
+
+        Note: DeepSeek reasoning models do not use temperature/top_p, so we keep
+        temperature as -1 for those and rely on max_length (token budget).
+        """
+
+        model_l = (model_name or "").strip().lower()
+        provider_l = (provider or "").strip().lower() or None
+
+        max_len = 4096
+        if any(x in model_l for x in ["flash", "lite"]):
+            max_len = 3072
+
+        if provider_l == "deepseek" and model_l == "deepseek-reasoner":
+            return {"temperature": -1.0, "max_length": max_len, "top_P": -1.0}
+
+        return {"temperature": 0.2, "max_length": max_len, "top_P": -1.0}
+
     def _build_model_dict(
         self,
         model_id: str,
@@ -474,7 +505,21 @@ class ModelConfigRepository(BaseRepository):
         # System models MUST use env keys and empty model_url for deterministic routing.
         model["model_url"] = ""
         model["api_key"] = None
-        model["provider"] = ProviderClient.get_provider_for_model(model_name)
+        provider = ProviderClient.get_provider_for_model(model_name)
+        model["provider"] = provider
+
+        # Apply tuned defaults only when the value is the -1 sentinel.
+        defaults = self._system_model_generation_defaults(
+            model_name=model_name,
+            provider=provider,
+        )
+        if model.get("temperature", -1) == -1:
+            model["temperature"] = defaults["temperature"]
+        if model.get("max_length", -1) == -1:
+            model["max_length"] = defaults["max_length"]
+        # Keep top_P omitted by default unless explicitly set.
+        if model.get("top_P", -1) == -1 and defaults.get("top_P", -1) != -1:
+            model["top_P"] = defaults["top_P"]
         return model
 
     async def get_selected_model_config(self, username: str):
@@ -514,9 +559,18 @@ class ModelConfigRepository(BaseRepository):
                     "api_key": None,
                     "base_used": [],
                     "system_prompt": "",
-                    "temperature": -1,
-                    "max_length": -1,
-                    "top_P": -1,
+                    "temperature": self._system_model_generation_defaults(
+                        model_name=model_name,
+                        provider=provider,
+                    )["temperature"],
+                    "max_length": self._system_model_generation_defaults(
+                        model_name=model_name,
+                        provider=provider,
+                    )["max_length"],
+                    "top_P": self._system_model_generation_defaults(
+                        model_name=model_name,
+                        provider=provider,
+                    )["top_P"],
                     "top_K": -1,
                     "score_threshold": -1,
                     "provider": provider,
@@ -563,6 +617,14 @@ class ModelConfigRepository(BaseRepository):
 
         # Provider-backed system models (no keys sent to frontend; use env at runtime)
         if os.getenv("DEEPSEEK_API_KEY"):
+            deepseek_chat_defaults = self._system_model_generation_defaults(
+                model_name="deepseek-chat",
+                provider="deepseek",
+            )
+            deepseek_reasoner_defaults = self._system_model_generation_defaults(
+                model_name="deepseek-reasoner",
+                provider="deepseek",
+            )
             system_models.extend(
                 [
                     {
@@ -572,9 +634,9 @@ class ModelConfigRepository(BaseRepository):
                         "api_key": None,
                         "base_used": [],
                         "system_prompt": "",
-                        "temperature": -1,
-                        "max_length": -1,
-                        "top_P": -1,
+                        "temperature": deepseek_chat_defaults["temperature"],
+                        "max_length": deepseek_chat_defaults["max_length"],
+                        "top_P": deepseek_chat_defaults["top_P"],
                         "top_K": -1,
                         "score_threshold": -1,
                         "provider": "deepseek",
@@ -586,9 +648,9 @@ class ModelConfigRepository(BaseRepository):
                         "api_key": None,
                         "base_used": [],
                         "system_prompt": "",
-                        "temperature": -1,
-                        "max_length": -1,
-                        "top_P": -1,
+                        "temperature": deepseek_reasoner_defaults["temperature"],
+                        "max_length": deepseek_reasoner_defaults["max_length"],
+                        "top_P": deepseek_reasoner_defaults["top_P"],
                         "top_K": -1,
                         "score_threshold": -1,
                         "provider": "deepseek",
@@ -597,6 +659,10 @@ class ModelConfigRepository(BaseRepository):
             )
 
         if os.getenv("ZAI_API_KEY"):
+            zai_defaults = self._system_model_generation_defaults(
+                model_name="glm-4.7-flash",
+                provider="zai",
+            )
             system_models.append(
                 {
                     "model_id": "system_glm-4.7-flash",
@@ -605,9 +671,9 @@ class ModelConfigRepository(BaseRepository):
                     "api_key": None,
                     "base_used": [],
                     "system_prompt": "",
-                    "temperature": -1,
-                    "max_length": -1,
-                    "top_P": -1,
+                    "temperature": zai_defaults["temperature"],
+                    "max_length": zai_defaults["max_length"],
+                    "top_P": zai_defaults["top_P"],
                     "top_K": -1,
                     "score_threshold": -1,
                     "provider": "zai",
@@ -615,6 +681,10 @@ class ModelConfigRepository(BaseRepository):
             )
 
         if os.getenv("MINIMAX_API_KEY"):
+            minimax_defaults = self._system_model_generation_defaults(
+                model_name="MiniMax-M2.1",
+                provider="minimax",
+            )
             system_models.append(
                 {
                     "model_id": "system_MiniMax-M2.1",
@@ -623,9 +693,9 @@ class ModelConfigRepository(BaseRepository):
                     "api_key": None,
                     "base_used": [],
                     "system_prompt": "",
-                    "temperature": -1,
-                    "max_length": -1,
-                    "top_P": -1,
+                    "temperature": minimax_defaults["temperature"],
+                    "max_length": minimax_defaults["max_length"],
+                    "top_P": minimax_defaults["top_P"],
                     "top_K": -1,
                     "score_threshold": -1,
                     "provider": "minimax",
@@ -652,6 +722,10 @@ class ModelConfigRepository(BaseRepository):
                 "llava",
             ]
             for model_name in ollama_models:
+                ollama_defaults = self._system_model_generation_defaults(
+                    model_name=model_name,
+                    provider="ollama-cloud",
+                )
                 system_models.append(
                     {
                         "model_id": f"system_{model_name}",
@@ -660,9 +734,9 @@ class ModelConfigRepository(BaseRepository):
                         "api_key": None,
                         "base_used": [],
                         "system_prompt": "",
-                        "temperature": -1,
-                        "max_length": -1,
-                        "top_P": -1,
+                        "temperature": ollama_defaults["temperature"],
+                        "max_length": ollama_defaults["max_length"],
+                        "top_P": ollama_defaults["top_P"],
                         "top_K": -1,
                         "score_threshold": -1,
                         "provider": "ollama-cloud",
@@ -689,6 +763,10 @@ class ModelConfigRepository(BaseRepository):
                     "gemini-3-flash",
                 ]
             for model_name in live_models:
+                proxy_defaults = self._system_model_generation_defaults(
+                    model_name=model_name,
+                    provider="cliproxyapi",
+                )
                 system_models.append(
                     {
                         "model_id": f"system_{model_name}",
@@ -697,9 +775,9 @@ class ModelConfigRepository(BaseRepository):
                         "api_key": None,
                         "base_used": [],
                         "system_prompt": "",
-                        "temperature": -1,
-                        "max_length": -1,
-                        "top_P": -1,
+                        "temperature": proxy_defaults["temperature"],
+                        "max_length": proxy_defaults["max_length"],
+                        "top_P": proxy_defaults["top_P"],
                         "top_K": -1,
                         "score_threshold": -1,
                         "provider": "cliproxyapi",

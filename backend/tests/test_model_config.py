@@ -898,6 +898,9 @@ class TestModelConfigRepositorySanitization:
         assert sanitized["model_url"] == ""
         assert sanitized["api_key"] is None
         assert sanitized["provider"] == "deepseek"
+        # System models should have academic/RAG-friendly explicit defaults (not all -1 sentinels).
+        assert sanitized["temperature"] == 0.2
+        assert sanitized["max_length"] == 4096
 
         # 2. Test get_selected_model_config
         result_selected = cast(
@@ -911,3 +914,5 @@ class TestModelConfigRepositorySanitization:
         assert sanitized_selected["model_url"] == ""
         assert sanitized_selected["api_key"] is None
         assert sanitized_selected["provider"] == "deepseek"
+        assert sanitized_selected["temperature"] == 0.2
+        assert sanitized_selected["max_length"] == 4096
