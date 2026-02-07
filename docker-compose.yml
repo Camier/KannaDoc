@@ -360,6 +360,7 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
+      start_period: 40s
 
   nginx:
     container_name: layra-nginx
@@ -376,10 +377,11 @@ services:
     networks:
       - layra-net
     healthcheck:
-      test: ["CMD", "wget", "-q", "--spider", "http://localhost:80"]
+      test: ["CMD", "curl", "-f", "http://localhost:80"]
       interval: 30s
       timeout: 10s
       retries: 3
+      start_period: 40s
 
   prometheus:
     image: prom/prometheus:v3.5.1
