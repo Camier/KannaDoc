@@ -524,6 +524,20 @@ class ChatService:
                 ):
                     retrieval_mode = "hybrid"
 
+                # Thesis safety: sparse/dual retrieval is page-level candidate generation feeding a
+                # MaxSim rerank step. Very small top_K values (e.g. legacy UI defaults of 2-5)
+                # lead to "2 sources only" behavior and break diversification/citations.
+                #
+                # Mirror the `search-preview` endpoint behavior by enforcing a minimum retrieval
+                # breadth in sparse/dual modes.
+                if retrieval_mode in ["sparse_then_rerank", "dual_then_rerank"]:
+                    min_k = int(getattr(settings, "rag_search_limit_min", 50))
+                    if top_K < min_k:
+                        top_K = min_k
+                    top_k_cap = int(getattr(settings, "rag_top_k_cap", 120))
+                    if top_K > top_k_cap:
+                        top_K = top_k_cap
+
                 sparse_vecs = []
                 sparse_query = None
                 if query_vecs and retrieval_mode in [
@@ -681,50 +695,51 @@ class ChatService:
                                     f"page_number={score.get('page_number')}"
                                 )
 
-                                # Thesis fallback: use extracted page text (if available) and generate
-                                # browser-viewable reference URLs from local PDFs.
-                                if fallback_text_used < fallback_text_cap:
-                                    try:
-                                        coll = score.get("collection_name") or ""
-                                        fid = str(score.get("file_id") or "")
-                                        pn = int(score.get("page_number") or 0)
+                                # Thesis fallback:
+                                # - Always emit `file_used` so the UI can render References.
+                                # - Optionally inject extracted text if we have it (bounded by cap).
+                                try:
+                                    coll = score.get("collection_name") or ""
+                                    fid = str(score.get("file_id") or "")
+                                    pn = int(score.get("page_number") or 0)
+                                    if fid and pn > 0:
                                         preview = (
                                             previews_by_collection.get(coll, {}).get((fid, pn))
                                             or ""
                                         )
-                                        if preview:
-                                            filename = score.get("filename") or fid
-                                            # Use relative URLs so this works behind nginx reverse proxy
-                                            # regardless of SERVER_IP (local dev vs deployed domain).
-                                            api_base = settings.api_version_url
-                                            thesis_pdf_url = (
-                                                f"{api_base}/thesis/pdf?"
-                                                + urlencode({"file_id": fid})
-                                            )
-                                            thesis_image_url = (
-                                                f"{api_base}/thesis/page-image?"
-                                                + urlencode(
-                                                    {"file_id": fid, "page_number": pn, "dpi": 150}
-                                                )
-                                            )
+                                        filename = score.get("filename") or fid
 
-                                            # Provide structured citation metadata for the UI.
-                                            file_used.append(
-                                                {
-                                                    "score": score.get("score", 0.0),
-                                                    # No Mongo knowledge_db_id in this environment; keep stable ID.
-                                                    "knowledge_db_id": coll or "thesis",
-                                                    "file_name": filename,
-                                                    "file_id": fid,
-                                                    "page_number": pn,
-                                                    "image_id": score.get("image_id"),
-                                                    "text_preview": preview[:1200],
-                                                    "image_url": thesis_image_url,
-                                                    "file_url": thesis_pdf_url,
-                                                }
+                                        # Use relative URLs so this works behind nginx reverse proxy
+                                        # regardless of SERVER_IP (local dev vs deployed domain).
+                                        api_base = settings.api_version_url
+                                        thesis_pdf_url = (
+                                            f"{api_base}/thesis/pdf?"
+                                            + urlencode({"file_id": fid})
+                                        )
+                                        thesis_image_url = (
+                                            f"{api_base}/thesis/page-image?"
+                                            + urlencode(
+                                                {"file_id": fid, "page_number": pn, "dpi": 150}
                                             )
+                                        )
 
-                                            # Keep the injected text small to avoid blowing up prompt tokens.
+                                        file_used.append(
+                                            {
+                                                "score": score.get("score", 0.0),
+                                                # No Mongo knowledge_db_id in this environment; keep stable ID.
+                                                "knowledge_db_id": coll or "thesis",
+                                                "file_name": filename,
+                                                "file_id": fid,
+                                                "page_number": pn,
+                                                "image_id": score.get("image_id"),
+                                                "text_preview": preview[:1200] if preview else "",
+                                                "image_url": thesis_image_url,
+                                                "file_url": thesis_pdf_url,
+                                            }
+                                        )
+                                        rag_hits += 1
+
+                                        if preview and fallback_text_used < fallback_text_cap:
                                             injected = preview[:1200]
                                             content.append(
                                                 {
@@ -735,10 +750,9 @@ class ChatService:
                                                     ),
                                                 }
                                             )
-                                            rag_hits += 1
                                             fallback_text_used += 1
-                                    except Exception:
-                                        pass
+                                except Exception:
+                                    pass
                                 continue
 
                             # Optional: attach extracted text preview (if available) even when Mongo matches.
