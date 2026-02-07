@@ -68,7 +68,6 @@ layra/
 │   │   └── datalab/            # Data orchestration scripts
 │   │       ├── extract_deepseek.py      # V3.1 extraction CLI (single + batch)
 │   │       ├── milvus_ingest.py         # Vector database ingestion
-│   │       ├── neo4j_ingest.py          # Graph ingestion (disabled)
 │   │       ├── aggregate_corpus.py      # Aggregating metadata
 │   │       ├── create_id_mapping.py     # doc_id ↔ file_id mapping
 │   │       ├── rag_eval.py              # CLI evaluation tool
@@ -76,8 +75,7 @@ layra/
 │   │       ├── verify_merge.py          # Data integrity checks
 │   │       ├── recover_extractions.py   # Recovery utilities
 │   │       ├── tidy_data.py             # Data cleanup scripts
-│   │       ├── consolidate_archive.py   # Archive consolidation
-│   │       └── _archived/               # Deprecated scripts
+│   │       └── consolidate_archive.py   # Archive consolidation
 │   │
 │   └── data/
 │       ├── pdfs/               # Source PDFs (dynamic)
@@ -192,7 +190,7 @@ All commands should be run from `backend/` directory with `PYTHONPATH=.`.
   ```bash
   PYTHONPATH=. python3 scripts/datalab/aggregate_corpus.py
   ```
-- **neo4j_ingest.py**: Graph ingestion logic. **Currently Disabled** as the graph store is not part of the active research stack.
+- **neo4j_ingest.py**: Graph ingestion logic. **Removed** — graph store not part of active research stack.
 
 ### 6.3 Evaluation & Optimization
 - **rag_eval.py**: Runs the evaluation harness against the dev dataset.
@@ -202,21 +200,13 @@ All commands should be run from `backend/` directory with `PYTHONPATH=.`.
 - **rag_optimize.py**: Tunes HNSW parameters (efConstruction, M).
 - **API Eval**: `curl -X POST http://localhost:8000/api/v1/eval/run -d '{"dataset_id": "eval-v1"}'`
 
-### 6.4 Utilities & Deprecated
-- **recover_extractions.py**: Recovery for failed Marker API extractions. It attempts to resume sessions or re-poll for results that didn't complete successfully.
-- **tidy_data.py**: Data cleanup scripts for removing temporary artifacts, normalizing directory structures, and ensuring consistent naming across the extractions.
-- **consolidate_archive.py**: Internal utility for merging the `datalab.archive` repository into the LAYRA codebase, preserving history and data artifacts.
-- **entity_extract.py**: (Deprecated) Original entity extraction logic used in early stages of the project. Replaced by `extract_deepseek.py`.
-- **entity_extract_gemini.py**: (Deprecated) Experimental script for testing entity extraction using Google's Gemini models.
-
 ## 7. INFRASTRUCTURE
 
 | Service | Purpose | Notes |
 |---------|---------|-------|
 | **GLM-4.x (Z.ai)** | Entity extraction | Primary LLM via Z.ai API (`https://api.z.ai/api/paas/v4`); API key: `ZAI_API_KEY` env var |
 | MiniMax (Fallback) | Entity extraction fallback | Fallback LLM; API key in `data/.minimax_api_key` |
-| **Milvus** | Vector store | HNSW index (M=48, efConstruction=1024) |
-| **Neo4j** | Knowledge graph | **DISABLED** in current research deployment |
+| **Milvus** | Vector store | HNSW index (M=48, efConstruction=1024); runs on HOST (port 19530) |
 | **FastAPI** | Backend API | REST endpoints at `/api/v1/` |
 
 **Configuration**: Managed via `.env` (EMBEDDING_MODEL, MILVUS_URI, HNSW parameters).
@@ -258,6 +248,11 @@ These artifacts are essential for maintaining the state of the knowledge base an
 | 2026-02-02 | Consolidated 129 PDFs and extractions into backend/data/ |
 | 2026-02-02 | Docker Compose best practices: pinned monitoring images, fixed healthchecks |
 | 2026-02-02 | Fixed Prometheus metrics_path, removed Qdrant target |
+| 2026-02-07 | Audit hardening: stack traces, dead code cleanup, Qdrant refs removed |
+| 2026-02-07 | Fixed KB upload pipeline (frontend path + Kafka trigger) |
+| 2026-02-07 | Wired eval dashboard to real backend API |
+| 2026-02-07 | Applied circuit breakers to DB calls, fixed async blocking I/O |
+| 2026-02-07 | Removed deprecated scripts (configure_models.py, _archived/, neo4j_ingest.py) |
 
 ## 10. CROSS-REFERENCES
 

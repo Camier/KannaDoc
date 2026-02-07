@@ -30,6 +30,12 @@ os.environ.setdefault("MINIO_SECRET_KEY", "test_secret_key")
 TEST_DATABASE_URL = "sqlite+aiosqlite:///:memory:"
 
 
+# Mock circuitbreaker package (in requirements.txt but not installed locally)
+_mock_circuitbreaker = MagicMock()
+_mock_circuitbreaker.circuit = lambda **kwargs: lambda fn: fn  # pass-through decorator
+_mock_circuitbreaker.CircuitBreakerError = type("CircuitBreakerError", (Exception,), {})
+sys.modules["circuitbreaker"] = _mock_circuitbreaker
+
 # Create mock modules to prevent actual imports
 sys.modules["app.utils.kafka_producer"] = Mock()
 sys.modules["app.utils.kafka_consumer"] = Mock()
