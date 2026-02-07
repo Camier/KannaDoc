@@ -166,6 +166,16 @@ This pipeline uses an **OpenAI-compatible** streaming chat call under the hood
 - Official OpenAI-compatible endpoints (MiniMax, Z.ai, some Gemini deployments)
 - Proxies/self-hosted (Ollama Cloud, CLIProxyAPI, LiteLLM, etc.)
 
+### Providers Expected In This Thesis Deployment
+
+For the thesis environment described in this audit, the “core” providers that are expected
+to be available and used are:
+- `cliproxyapi` (Antigravity via CLIProxyAPI for Claude/Gemini and other proxied OpenAI-compatible ids)
+- `ollama-cloud` (open-source model hosting, including `deepseek-r1` / `deepseek-v3` variants)
+- `deepseek` (official DeepSeek API for `deepseek-chat` / `deepseek-reasoner`)
+
+Other providers (`zai`, `minimax`) remain supported by the codebase and may be enabled depending on env keys.
+
 ### Why this matters for thesis RAG
 
 For RAG answers that must stay sober/academic with stable citations:
