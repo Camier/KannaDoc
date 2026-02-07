@@ -2,6 +2,7 @@
 Tests for ProviderRegistry - unified provider configuration with timeout support.
 """
 
+import asyncio
 import importlib.util
 from pathlib import Path
 import pytest
@@ -145,6 +146,47 @@ class TestProviderRegistry:
         assert ProviderRegistry.is_vision_model("deepseek-chat") is False
         assert ProviderRegistry.is_vision_model("MiniMax-M2.1") is False
 
+    def test_detect_provider_minimax(self, monkeypatch):
+        """Test MiniMax detection via heuristic when MINIMAX_API_KEY set."""
+        monkeypatch.setenv("MINIMAX_API_KEY", "test-minimax-key")
+        assert ProviderRegistry.get_provider_for_model("abab6.5s-chat") == "minimax"
+        assert ProviderRegistry.get_provider_for_model("MiniMax-M2.1") == "minimax"
+
+    def test_detect_provider_minimax_no_key(self, monkeypatch):
+        """Test MiniMax heuristic NOT triggered without MINIMAX_API_KEY."""
+        monkeypatch.delenv("MINIMAX_API_KEY", raising=False)
+        # Without key, abab model should NOT match minimax heuristic
+        result = ProviderRegistry.get_provider_for_model("abab6.5s-chat")
+        assert result != "minimax"
+
+    def test_detect_provider_ollama_cloud(self, monkeypatch):
+        """Test Ollama Cloud detection for open-source model patterns."""
+        monkeypatch.setenv("OLLAMA_CLOUD_API_KEY", "test-ollama-key")
+        monkeypatch.delenv("CLIPROXYAPI_BASE_URL", raising=False)
+        assert ProviderRegistry.get_provider_for_model("llama3:8b") == "ollama-cloud"
+        assert (
+            ProviderRegistry.get_provider_for_model("qwen3-next:80b") == "ollama-cloud"
+        )
+        assert ProviderRegistry.get_provider_for_model("mistral-7b") == "ollama-cloud"
+        assert ProviderRegistry.get_provider_for_model("gemma-2b") == "ollama-cloud"
+
+    def test_detect_provider_deepseek_v3(self, monkeypatch):
+        """Test deepseek-v3.x routes to ollama-cloud, NOT deepseek provider."""
+        monkeypatch.setenv("OLLAMA_CLOUD_API_KEY", "test-ollama-key")
+        monkeypatch.delenv("CLIPROXYAPI_BASE_URL", raising=False)
+        assert (
+            ProviderRegistry.get_provider_for_model("deepseek-v3.1") == "ollama-cloud"
+        )
+        assert ProviderRegistry.get_provider_for_model("deepseek-v3") == "ollama-cloud"
+
+    def test_detect_provider_unknown_returns_none(self, monkeypatch):
+        """Test that truly unknown models return None (not ValueError)."""
+        monkeypatch.delenv("MINIMAX_API_KEY", raising=False)
+        monkeypatch.delenv("OLLAMA_CLOUD_API_KEY", raising=False)
+        monkeypatch.delenv("CLIPROXYAPI_BASE_URL", raising=False)
+        result = ProviderRegistry.get_provider_for_model("unknown-model-xyz")
+        assert result is None
+
 
 class TestConvenienceFunctions:
     """Test convenience functions for backward compatibility."""
@@ -278,3 +320,93 @@ class TestConfigEndpoints:
         assert payload["provider_id"] == "cliproxyapi"
         assert payload["reason"] == "cliproxy_no_models"
         assert payload["cliproxy_reason"] == "empty"
+
+
+class TestClipProxyApiCache:
+    """Tests for CLIProxyAPI fetch_cliproxyapi_models TTL cache and locking."""
+
+    def setup_method(self):
+        ProviderRegistry.load()
+        ProviderRegistry._cliproxy_cache_at = 0.0
+        ProviderRegistry._cliproxy_lock = None
+        ProviderRegistry._cliproxy_cache = []
+        ProviderRegistry._cliproxy_cache_reason = "not_checked"
+
+    @pytest.mark.asyncio
+    async def test_cliproxyapi_cache_lock(self, monkeypatch):
+        monkeypatch.setenv("CLIPROXYAPI_BASE_URL", "https://proxy.example.com/v1")
+        monkeypatch.setenv("CLIPROXYAPI_API_KEY", "test-key")
+
+        mock_response = Mock()
+        mock_response.raise_for_status = Mock()
+        mock_response.json.return_value = {
+            "data": [{"id": "gpt-4o"}, {"id": "claude-sonnet-4-5"}]
+        }
+
+        mock_client = AsyncMock()
+        mock_client.get = AsyncMock(return_value=mock_response)
+        mock_client.__aenter__ = AsyncMock(return_value=mock_client)
+        mock_client.__aexit__ = AsyncMock(return_value=False)
+
+        with patch(
+            "app.rag.provider_registry.httpx.AsyncClient", return_value=mock_client
+        ):
+            results = await asyncio.gather(
+                *[ProviderRegistry.fetch_cliproxyapi_models() for _ in range(5)]
+            )
+
+        assert mock_client.get.call_count == 1
+        for models, reason in results:
+            assert models == ["gpt-4o", "claude-sonnet-4-5"]
+            assert reason == "ok"
+
+
+class TestGenerationDefaults:
+    """Tests for ProviderRegistry.get_generation_defaults."""
+
+    def setup_method(self):
+        ProviderRegistry.load()
+
+    def test_generation_defaults_standard(self):
+        defaults = ProviderRegistry.get_generation_defaults("deepseek", "deepseek-chat")
+        assert set(defaults.keys()) == {"temperature", "max_length", "top_P"}
+        assert defaults["temperature"] == 0.2
+        assert defaults["max_length"] == 4096
+        assert defaults["top_P"] == -1.0
+
+    def test_generation_defaults_reasoner(self):
+        defaults = ProviderRegistry.get_generation_defaults(
+            "deepseek", "deepseek-reasoner"
+        )
+        assert defaults["temperature"] == -1.0
+        assert defaults["top_P"] == -1.0
+        assert defaults["max_length"] == 4096
+
+    def test_generation_defaults_flash(self):
+        defaults = ProviderRegistry.get_generation_defaults("zai", "glm-4-flash")
+        assert defaults["max_length"] == 3072
+
+
+class TestBackwardCompatShim:
+    """Tests for ProviderClient backward-compatibility shim."""
+
+    def setup_method(self):
+        ProviderRegistry.load()
+
+    def test_backward_compat_provider_client_shim(self):
+        from app.rag.provider_client import ProviderClient
+
+        assert ProviderClient.get_provider_for_model("deepseek-chat") == "deepseek"
+
+    def test_backward_compat_get_all_providers(self):
+        from app.rag.provider_client import ProviderClient
+
+        assert (
+            ProviderClient.get_all_providers() == ProviderRegistry.get_all_providers()
+        )
+
+    def test_backward_compat_is_vision_model(self):
+        from app.rag.provider_client import ProviderClient
+
+        assert ProviderClient.is_vision_model("gpt-4o") is True
+        assert ProviderClient.is_vision_model("deepseek-chat") is False
