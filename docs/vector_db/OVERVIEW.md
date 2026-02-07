@@ -10,15 +10,20 @@
 
 ### Active Configuration
 - **Vector Database:** `Milvus` (`VECTOR_DB=milvus`)
-- **Embeddings:** 6,405,296 ColQwen embeddings accessible
-- **Collection:** `colqwenthesis_fbd5d3a6_3911_4be0_a4b3_864ec91bc3c1`
+- **Patch vectors:** 3,561,575 (dense, dim=128) in `colpali_kanna_128`
+- **Sparse pages:** 4,691 (page-level sidecar) in `colpali_kanna_128_pages_sparse`
+- **KB handle (alias):** `colqwenthesis_fbd5d3a6_3911_4be0_a4b3_864ec91bc3c1` -> `colpali_kanna_128`
 - **Wrapper:** `vector_db_client` routes to `MilvusManager`
 
+**Networking notes:**
+- Inside Docker: `MILVUS_URI=http://milvus-standalone:19530`
+- From host (debug): `http://127.0.0.1:19531`
+
 ### Qdrant Migration Status
-- **Code:** Migration complete (functional)
-- **Deployment:** Qdrant container running but unused
-- **Collections:** 0 (empty - no embeddings migrated yet)
-- **Backup:** Qdrant volume included in snapshots
+- **Code:** Supported (experimental)
+- **Deployment:** Not deployed by default (no `qdrant` service in `docker-compose.yml`)
+- **Collections:** N/A unless you deploy Qdrant and migrate/ingest embeddings
+- **Backup:** Only applies if you deploy Qdrant with a persistent volume
 
 ---
 
@@ -34,15 +39,15 @@ VECTOR_DB=qdrant    # Use Qdrant (empty, migration needed)
 ### Quick Switch Commands
 
 ```bash
-# Switch to Milvus (access existing 6.4M embeddings)
-cd /LAB/@thesis/layra
-echo "VECTOR_DB=milvus" >> .env
-docker-compose up -d backend --force-recreate
+# Switch to Milvus
+# Edit .env and set:
+#   VECTOR_DB=milvus
+./scripts/compose-clean up -d --force-recreate backend
 
-# Switch to Qdrant (fresh deployment, empty)
-cd /LAB/@thesis/layra
-echo "VECTOR_DB=qdrant" >> .env
-docker-compose up -d backend --force-recreate
+# Switch to Qdrant (fresh deployment, empty unless migrated)
+# Edit .env and set:
+#   VECTOR_DB=qdrant
+./scripts/compose-clean up -d --force-recreate backend
 ```
 
 ### Verification

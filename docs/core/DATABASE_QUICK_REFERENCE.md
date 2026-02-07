@@ -8,7 +8,7 @@
 mongodb://username:password@host:27017/layra
 
 # Database Name
-layra
+chat_mongodb
 
 # Collections
 - knowledge_bases
@@ -27,10 +27,16 @@ minPoolSize: 10
 ### Milvus
 ```python
 # Connection
-milvus://localhost:19530
+# From containers (default)
+http://milvus-standalone:19530
+
+# From host (debug tools)
+http://localhost:19531
 
 # Collection Pattern
-colqwen{knowledge_base_id}
+to_milvus_collection_name(knowledge_base_id)
+# Thesis deployments may use an alias like:
+#   colqwenthesis_<uuid> -> colpali_kanna_128
 
 # Vector Dimension
 128 (ColQwen embeddings)
@@ -69,10 +75,13 @@ pool_pre_ping: True
 ### MinIO
 ```python
 # Connection
-http://localhost:9000
+http://minio:9000
+
+# Host-published (default compose)
+http://localhost:9080
 
 # Bucket
-layra-bucket
+minio-file
 
 # Access
 Access Key: {MINIO_ACCESS_KEY}

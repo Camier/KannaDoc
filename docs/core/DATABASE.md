@@ -236,64 +236,53 @@ Processed images from PDFs/documents.
 ## Milvus Vector Database
 
 **Purpose**: Semantic search using ColBERT embeddings  
-**Connection**: `http://milvus:19530`  
+**Connection (docker)**: `http://milvus-standalone:19530`  
+**Connection (host debug)**: `http://localhost:19531` (published port from `docker-compose.yml`)  
 **Vector Dimension**: 128  
 
 ### Collection Schema
 
-Each knowledge base has a collection: `colqwen_temp_{knowledge_db_id}`
+Each knowledge base resolves to a Milvus collection name via `app.utils.ids.to_milvus_collection_name(knowledge_base_id)`.
+
+Thesis deployments may use a Milvus alias as the KB handle (for example,
+`colqwenthesis_<uuid>` -> `colpali_kanna_128`). The page-level sparse sidecar is derived from the
+underlying collection name by suffixing `_pages_sparse`.
 
 ```python
-fields = [
-    FieldSchema(
-        name="pk",
-        dtype=DataType.INT64,
-        is_primary=True,
-        auto_id=True
-    ),
-    FieldSchema(
-        name="vector",
-        dtype=DataType.FLOAT_VECTOR,
-        dim=128  # ColBERT embedding dimension
-    ),
-    FieldSchema(
-        name="image_id",
-        dtype=DataType.VARCHAR,
-        max_length=255
-    ),
-    FieldSchema(
-        name="page_number",
-        dtype=DataType.INT64
-    ),
-    FieldSchema(
-        name="file_id",
-        dtype=DataType.VARCHAR,
-        max_length=255
-    ),
-    FieldSchema(
-        name="chunk_index",
-        dtype=DataType.INT64
-    )
-]
+from pymilvus import DataType, MilvusClient
 
-# Index configuration
-index_params = {
-    "index_type": "HNSW",
-    "metric_type": "IP",  # Inner Product for ColBERT
-    "params": {
-        "M": 32,              # Max connections per node
-        "efConstruction": 500 # Search width during construction
-    }
-}
+client = MilvusClient(uri="http://milvus-standalone:19530")
+
+# Dense patch collection (ColQwen / ColPali-style)
+schema = client.create_schema(auto_id=True, enable_dynamic_field=True)
+schema.add_field(field_name="pk", datatype=DataType.INT64, is_primary=True)
+schema.add_field(field_name="vector", datatype=DataType.FLOAT_VECTOR, dim=128)
+schema.add_field(field_name="image_id", datatype=DataType.VARCHAR, max_length=65535)
+schema.add_field(field_name="page_number", datatype=DataType.INT64)
+schema.add_field(field_name="file_id", datatype=DataType.VARCHAR, max_length=65535)
+schema.add_field(field_name="filename", datatype=DataType.VARCHAR, max_length=65535)
+
+client.create_collection(collection_name="colpali_kanna_128", schema=schema, shards_num=1)
+
+# Index configuration (HNSW, Inner Product)
+index_params = client.prepare_index_params()
+index_params.add_index(
+    field_name="vector",
+    index_name="vector_index",
+    index_type="HNSW",
+    metric_type="IP",
+    params={"M": 32, "efConstruction": 500},
+)
+client.create_index(collection_name="colpali_kanna_128", index_params=index_params, sync=True)
 ```
 
-**Fields**:
+**Fields (dense patch collection)**:
 - `pk`: Auto-increment primary key
-- `vector`: ColBERT embedding (128 dims)
-- `image_id`: Reference to source image
-- `page_number`: Source page
-- `file_id`: Source file
-- `chunk_index`: Chunk sequence
+- `vector`: patch embedding (128 dims)
+- `image_id`: patch identifier (debug/tracing)
+- `page_number`: source page
+- `file_id`: source file
+- `filename`: human-readable file name
 
 **Index**: HNSW (Hierarchical Navigable Small World)
 - Metric: Inner Product (IP) for ColBERT
