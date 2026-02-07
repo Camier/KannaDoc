@@ -218,9 +218,18 @@ class TestProviderDetection:
         monkeypatch.setenv("CLIPROXYAPI_BASE_URL", "https://proxy.example.com/v1")
         monkeypatch.setenv("CLIPROXYAPI_API_KEY", "test-cliproxy-key-12345")
         monkeypatch.setenv("OLLAMA_CLOUD_API_KEY", "test-ollama-key-12345")
-
         result = ProviderClient.get_provider_for_model("gpt-oss-120b-medium")
         assert result == "ollama-cloud"
+
+    def test_minimax_abab_detection_requires_key(self, clean_env):
+        """MiniMax heuristic detection should be gated on MINIMAX_API_KEY presence."""
+        from app.rag.provider_client import ProviderClient
+
+        # clean_env ensures MINIMAX_API_KEY isn't present.
+        assert ProviderClient.get_provider_for_model("abab6.5s-chat") is None
+
+        with patch.dict(os.environ, {"MINIMAX_API_KEY": "test-minimax-key-12345"}):
+            assert ProviderClient.get_provider_for_model("abab6.5s-chat") == "minimax"
 
     def test_ollama_cloud_detection(self, clean_env):
         """Verify ollama-cloud models are detected correctly."""

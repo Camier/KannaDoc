@@ -138,6 +138,18 @@ class ProviderClient:
             )
             return "zai"
 
+        # MiniMax: support evolving model ids beyond the static providers.yaml list.
+        # Keep this gated on MINIMAX_API_KEY so we don't "detect" an unconfigured provider.
+        #
+        # Examples seen in the wild:
+        # - abab6.5s-chat
+        # - abab6.5g-chat
+        # - abab6.5t-chat
+        if os.getenv("MINIMAX_API_KEY"):
+            if model_lower.startswith("abab") or "minimax" in model_lower:
+                logger.debug(f"Provider detected: minimax for model '{model_name}' (heuristic)")
+                return "minimax"
+
         # Generic provider matching
         for provider, config in cls.PROVIDERS.items():
             for model_pattern in config["models"]:
@@ -168,7 +180,7 @@ class ProviderClient:
             return "Set CLIPROXYAPI_BASE_URL and CLIPROXYAPI_API_KEY for proxied models"
         if any(x in model_lower for x in ["llama", "qwen", "mistral"]):
             return "Set OLLAMA_CLOUD_API_KEY for Ollama Cloud models"
-        if "minimax" in model_lower:
+        if "minimax" in model_lower or model_lower.startswith("abab"):
             return "Set MINIMAX_API_KEY for MiniMax models"
 
         return f"Check providers.yaml for supported models. Available: {list(cls.PROVIDERS.keys())}"
