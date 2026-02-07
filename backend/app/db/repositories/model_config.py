@@ -560,6 +560,10 @@ class ModelConfigRepository(BaseRepository):
                         "message": f"CLIProxyAPI model not available ({reason})",
                     }
 
+            defaults = self._system_model_generation_defaults(
+                model_name=model_name,
+                provider=provider,
+            )
             return {
                 "status": "success",
                 "select_model_config": {
@@ -569,18 +573,9 @@ class ModelConfigRepository(BaseRepository):
                     "api_key": None,
                     "base_used": [],
                     "system_prompt": "",
-                    "temperature": self._system_model_generation_defaults(
-                        model_name=model_name,
-                        provider=provider,
-                    )["temperature"],
-                    "max_length": self._system_model_generation_defaults(
-                        model_name=model_name,
-                        provider=provider,
-                    )["max_length"],
-                    "top_P": self._system_model_generation_defaults(
-                        model_name=model_name,
-                        provider=provider,
-                    )["top_P"],
+                    "temperature": defaults["temperature"],
+                    "max_length": defaults["max_length"],
+                    "top_P": defaults["top_P"],
                     "top_K": -1,
                     "score_threshold": -1,
                     "provider": provider,
