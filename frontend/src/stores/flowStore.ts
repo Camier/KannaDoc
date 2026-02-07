@@ -533,9 +533,8 @@ export const useFlowStore = create<FlowState>((set, get) => ({
                           : {
                               baseUsed: [],
                               modelId: "",
-                              modelName: "qwen2.5-vl-32b-instruct",
-                              modelURL:
-                                "https://dashscope.aliyuncs.com/compatible-mode/v1",
+                              modelName: "qwen3-vl:235b",
+                              modelURL: "",
                               apiKey: process.env.NEXT_PUBLIC_DEFAULT_API_KEY || "",
                               systemPrompt: "You are a helpful assistant",
                               temperature: 0.1,

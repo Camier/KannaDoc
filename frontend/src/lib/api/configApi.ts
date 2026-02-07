@@ -56,13 +56,6 @@ export const selectModel = async (_username: string, modelId: string) => {
   });
 };
 
-export interface CliproxyapiModel {
-  name: string;
-  group: string;
-  base_url: string;
-  vision: boolean;
-}
-
 export interface AvailableModelsProvider {
   provider_id: string;
   models: string[];
@@ -81,14 +74,4 @@ export interface AvailableModelsResponse {
 export const getAvailableModels = async (): Promise<AvailableModelsResponse> => {
   const response = await api.get("/config/available-models");
   return response.data;
-};
-
-export const getCliproxyapiModels = async (): Promise<CliproxyapiModel[]> => {
-  try {
-    const response = await api.get("/config/cliproxyapi-models");
-    return response.data;
-  } catch (error) {
-    console.error("Failed to fetch cliproxyapi models:", error);
-    return [];
-  }
 };
