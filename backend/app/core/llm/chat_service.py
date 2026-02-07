@@ -560,8 +560,12 @@ class ChatService:
                     else:
                         search_data = query_vecs
 
+                    collection_name_to_base_id: dict[str, str] = {}
                     for base in bases:
                         collection_name = to_milvus_collection_name(base["baseId"])
+                        # Track mapping so fallback `file_used` can report the KB id, not the Milvus collection name.
+                        # This keeps the frontend "From:" label stable even when Mongo metadata is missing.
+                        collection_name_to_base_id[collection_name] = str(base.get("baseId") or collection_name)
                         try:
                             t_start = time.perf_counter()
                             if is_workflow:
@@ -700,8 +704,12 @@ class ChatService:
                                         file_used.append(
                                             {
                                                 "score": score.get("score", 0.0),
-                                                # No Mongo knowledge_db_id in this environment; keep stable ID.
-                                                "knowledge_db_id": coll or "thesis",
+                                                # No Mongo knowledge_db_id in this environment; use the KB id
+                                                # derived from the collection name (preferred), falling back
+                                                # to the collection name if we cannot map it.
+                                                "knowledge_db_id": collection_name_to_base_id.get(
+                                                    coll, coll or "thesis"
+                                                ),
                                                 "file_name": filename,
                                                 "file_id": fid,
                                                 "page_number": pn,
