@@ -248,7 +248,11 @@ class ChatService:
         # temperature range than the OpenAI API (0..2). We clamp only when provider is
         # explicit (or detected and trusted) to avoid breaking arbitrary proxies.
         if temperature != -1:
-            if provider_l in ("minimax", "zai"):
+            if provider_l == "minimax":
+                # MiniMax docs use a strict (0, 1] temperature range (0.0 may be rejected).
+                temperature = max(0.01, min(float(temperature), 1.0))
+            elif provider_l == "zai":
+                # Z.ai docs use [0, 1] for temperature.
                 temperature = max(0.0, min(float(temperature), 1.0))
             if is_claude_via_cliproxyapi:
                 temperature = max(0.0, min(float(temperature), 1.0))
