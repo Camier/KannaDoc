@@ -1,8 +1,7 @@
 import os
 import uuid
-from typing import List, Tuple, cast
+from typing import List
 
-import httpx
 from fastapi import APIRouter, Depends, HTTPException, Query  # type: ignore[reportMissingImports]
 from app.models.model_config import (
     ModelCreate,
@@ -19,40 +18,6 @@ from app.rag.provider_client import ProviderClient
 from app.rag.provider_registry import ProviderRegistry
 
 router = APIRouter()
-
-
-async def _fetch_cliproxy_models(base_url: str) -> Tuple[List[str], str, bool]:
-    if not base_url:
-        return [], "CLIPROXYAPI_BASE_URL not set", False
-
-    api_key = os.getenv("CLIPROXYAPI_API_KEY", "")
-    headers = {}
-    if api_key:
-        headers["Authorization"] = f"Bearer {api_key}"
-
-    models_url = f"{base_url.rstrip('/')}/models"
-    try:
-        async with httpx.AsyncClient(timeout=2.0) as client:
-            response = await client.get(models_url, headers=headers)
-            response.raise_for_status()
-            payload = response.json()
-    except httpx.TimeoutException:
-        return [], "cliproxyapi models timeout", False
-    except httpx.HTTPError as exc:
-        return [], f"cliproxyapi models error: {exc.__class__.__name__}", False
-    except (ValueError, TypeError):
-        return [], "cliproxyapi models invalid response", False
-
-    data = payload.get("data", []) if isinstance(payload, dict) else []
-    models = [
-        cast(str, item["id"])
-        for item in data
-        if isinstance(item, dict) and isinstance(item.get("id"), str)
-    ]
-    if not models:
-        return [], "cliproxyapi returned no models", False
-
-    return models, "ok", True
 
 
 @router.get("/cliproxyapi-models")
@@ -86,7 +51,8 @@ async def get_available_models():
         cliproxy_reason = None
 
         if provider_id == "cliproxyapi":
-            cliproxy_models, reason, ok = await _fetch_cliproxy_models(base_url)
+            cliproxy_models, reason = await ProviderRegistry.fetch_cliproxyapi_models()
+            ok = reason == "ok"
             cliproxy_reason = reason
             if ok:
                 models = cliproxy_models
@@ -141,8 +107,8 @@ async def resolve_provider(model: str = Query(..., min_length=1)):
     elif provider_id == "cliproxyapi" and not base_url:
         reason = "missing_base_url"
     elif provider_id == "cliproxyapi":
-        _models, cliproxy_reason, ok = await _fetch_cliproxy_models(base_url)
-        reason = "ok" if ok else "cliproxy_no_models"
+        _models, cliproxy_reason = await ProviderRegistry.fetch_cliproxyapi_models()
+        reason = "ok" if cliproxy_reason == "ok" else "cliproxy_no_models"
     else:
         reason = "ok"
 

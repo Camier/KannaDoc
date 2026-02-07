@@ -1,81 +1,10 @@
 import os
-import time
 from typing import Optional, Dict, Any, List, cast
 
-import httpx
 from app.core.logging import logger
 from pymongo.errors import DuplicateKeyError
 from .base import BaseRepository
 from app.db.cache import cache_service
-
-
-_CLIPROXY_MODELS_CACHE_TTL_S = 10.0
-_cliproxy_models_cache: List[str] = []
-_cliproxy_models_cache_reason: str = "not_checked"
-_cliproxy_models_cache_at: float = 0.0
-
-
-async def _fetch_cliproxyapi_live_models() -> tuple[List[str], str]:
-    """Fetch live model IDs from CLIProxyAPI (OpenAI-compatible /v1/models).
-
-    This is used to avoid advertising proxied models when CLIProxyAPI is not
-    actually configured (e.g. /v1/models returns empty).
-
-    Returns: (models, reason)
-    - models: list of model ids
-    - reason: short diagnostic string (non-sensitive)
-    """
-
-    global \
-        _cliproxy_models_cache, \
-        _cliproxy_models_cache_at, \
-        _cliproxy_models_cache_reason
-
-    now = time.time()
-    if now - _cliproxy_models_cache_at < _CLIPROXY_MODELS_CACHE_TTL_S:
-        return list(_cliproxy_models_cache), _cliproxy_models_cache_reason
-
-    base_url = os.getenv("CLIPROXYAPI_BASE_URL", "").rstrip("/")
-    if not base_url:
-        _cliproxy_models_cache = []
-        _cliproxy_models_cache_reason = "missing_base_url"
-        _cliproxy_models_cache_at = now
-        return [], _cliproxy_models_cache_reason
-
-    api_key = os.getenv("CLIPROXYAPI_API_KEY", "")
-    headers = {"User-Agent": "layra"}
-    if api_key:
-        headers["Authorization"] = f"Bearer {api_key}"
-
-    models_url = f"{base_url}/models"
-
-    try:
-        async with httpx.AsyncClient(timeout=2.0) as client:
-            resp = await client.get(models_url, headers=headers)
-            resp.raise_for_status()
-            payload = resp.json()
-    except httpx.TimeoutException:
-        models = []
-        reason = "timeout"
-    except httpx.HTTPError as exc:
-        models = []
-        reason = f"http_error:{exc.__class__.__name__}"
-    except (ValueError, TypeError):
-        models = []
-        reason = "invalid_response"
-    else:
-        data = payload.get("data", []) if isinstance(payload, dict) else []
-        models = [
-            str(item.get("id"))
-            for item in data
-            if isinstance(item, dict) and isinstance(item.get("id"), str)
-        ]
-        reason = "ok" if models else "empty"
-
-    _cliproxy_models_cache = list(models)
-    _cliproxy_models_cache_reason = reason
-    _cliproxy_models_cache_at = now
-    return list(models), reason
 
 
 class ModelConfigRepository(BaseRepository):
@@ -224,6 +153,7 @@ class ModelConfigRepository(BaseRepository):
         if model_id.startswith("system_"):
             model_name = model_id[7:]
             from app.rag.provider_client import ProviderClient
+            from app.rag.provider_registry import ProviderRegistry
 
             provider = ProviderClient.get_provider_for_model(model_name)
             if not provider:
@@ -241,7 +171,7 @@ class ModelConfigRepository(BaseRepository):
                 }
 
             if provider == "cliproxyapi":
-                live_models, reason = await _fetch_cliproxyapi_live_models()
+                live_models, reason = await ProviderRegistry.fetch_cliproxyapi_models()
                 if model_name not in live_models:
                     return {
                         "status": "error",
@@ -550,10 +480,11 @@ class ModelConfigRepository(BaseRepository):
         if selected_id.startswith("system_"):
             model_name = selected_id[7:]
             from app.rag.provider_client import ProviderClient
+            from app.rag.provider_registry import ProviderRegistry
 
             provider = ProviderClient.get_provider_for_model(model_name)
             if provider == "cliproxyapi":
-                live_models, reason = await _fetch_cliproxyapi_live_models()
+                live_models, reason = await ProviderRegistry.fetch_cliproxyapi_models()
                 if model_name not in live_models:
                     return {
                         "status": "error",
@@ -599,8 +530,9 @@ class ModelConfigRepository(BaseRepository):
         # stored system_* proxy models to avoid presenting broken choices.
         if os.getenv("CLIPROXYAPI_BASE_URL"):
             from app.rag.provider_client import ProviderClient
+            from app.rag.provider_registry import ProviderRegistry
 
-            live_models, _reason = await _fetch_cliproxyapi_live_models()
+            live_models, _reason = await ProviderRegistry.fetch_cliproxyapi_models()
             live_set = set(live_models)
 
             filtered: List[dict] = []
@@ -651,7 +583,10 @@ class ModelConfigRepository(BaseRepository):
 
             if provider_id == "cliproxyapi":
                 if os.getenv("CLIPROXYAPI_BASE_URL"):
-                    live_models, _reason = await _fetch_cliproxyapi_live_models()
+                    (
+                        live_models,
+                        _reason,
+                    ) = await ProviderRegistry.fetch_cliproxyapi_models()
                     model_list = live_models if live_models else list(config.models)
                 else:
                     continue
@@ -700,7 +635,7 @@ class ModelConfigRepository(BaseRepository):
 
             provider = ProviderClient.get_provider_for_model(selected_name)
             if provider == "cliproxyapi":
-                live_models, _reason = await _fetch_cliproxyapi_live_models()
+                live_models, _reason = await ProviderRegistry.fetch_cliproxyapi_models()
                 if selected_name not in live_models:
                     fallback = ""
                     for pid in ProviderRegistry.get_all_providers():

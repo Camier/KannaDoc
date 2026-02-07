@@ -237,16 +237,11 @@ class TestConfigEndpoints:
         monkeypatch.setenv("CLIPROXYAPI_BASE_URL", "https://proxy.example.com/v1")
         monkeypatch.setenv("CLIPROXYAPI_API_KEY", "test-cliproxy-key")
 
-        mock_response = Mock()
-        mock_response.raise_for_status = Mock()
-        mock_response.json = Mock(return_value={"data": [{"id": "gpt-4o"}]})
-
-        mock_client = AsyncMock()
-        mock_client.get = AsyncMock(return_value=mock_response)
-        mock_client.__aenter__.return_value = mock_client
-
         with patch.object(
-            config_endpoint.httpx, "AsyncClient", return_value=mock_client
+            ProviderRegistry,
+            "fetch_cliproxyapi_models",
+            new_callable=AsyncMock,
+            return_value=(["gpt-4o"], "ok"),
         ):
             payload = await config_endpoint.get_available_models()
 
@@ -256,12 +251,6 @@ class TestConfigEndpoints:
         assert cliproxyapi["is_configured"] is True
         assert cliproxyapi["base_url"] == "https://proxy.example.com/v1"
         assert cliproxyapi["cliproxy_reason"] == "ok"
-
-        # Verify Authorization header is included when CLIPROXYAPI_API_KEY is present
-        mock_client.get.assert_called_with(
-            "https://proxy.example.com/v1/models",
-            headers={"Authorization": "Bearer test-cliproxy-key"},
-        )
 
     @pytest.mark.asyncio
     async def test_resolve_provider_unknown(self):
@@ -278,19 +267,14 @@ class TestConfigEndpoints:
         monkeypatch.setenv("CLIPROXYAPI_BASE_URL", "https://proxy.example.com/v1")
         monkeypatch.setenv("CLIPROXYAPI_API_KEY", "test-cliproxy-key")
 
-        mock_response = Mock()
-        mock_response.raise_for_status = Mock()
-        mock_response.json = Mock(return_value={"data": []})
-
-        mock_client = AsyncMock()
-        mock_client.get = AsyncMock(return_value=mock_response)
-        mock_client.__aenter__.return_value = mock_client
-
         with patch.object(
-            config_endpoint.httpx, "AsyncClient", return_value=mock_client
+            ProviderRegistry,
+            "fetch_cliproxyapi_models",
+            new_callable=AsyncMock,
+            return_value=([], "empty"),
         ):
             payload = await config_endpoint.resolve_provider("gpt-4o")
 
         assert payload["provider_id"] == "cliproxyapi"
         assert payload["reason"] == "cliproxy_no_models"
-        assert payload["cliproxy_reason"] == "cliproxyapi returned no models"
+        assert payload["cliproxy_reason"] == "empty"

@@ -1,18 +1,12 @@
-"""
-Unified Provider Registry - Façade over providers.yaml
+"""Unified Provider Registry - Façade over providers.yaml."""
 
-Single source of truth for provider configuration, detection, timeout,
-and client creation. Consolidates logic from ProviderClient + constants.py.
-"""
-
-import os
+import asyncio, os, time
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, List, Optional, Any
 
-import yaml
+import httpx, yaml
 from openai import AsyncOpenAI
-
 from app.core.logging import logger
 
 
@@ -39,6 +33,9 @@ class ProviderRegistry:
     _config: Dict[str, Any] = {}
     _providers: Dict[str, ProviderConfig] = {}
     _default_timeout: int = 120
+    _cliproxy_lock: Optional["asyncio.Lock"] = None
+    _cliproxy_cache: List[str] = []
+    _cliproxy_cache_reason, _cliproxy_cache_at = "not_checked", 0.0
 
     @classmethod
     def load(cls) -> None:
@@ -324,23 +321,65 @@ class ProviderRegistry:
 
     @classmethod
     def get_cliproxyapi_models_with_defaults(cls) -> List[dict]:
-        """Get CLIProxyAPI models with group, base_url and vision defaults."""
         cls.load()
         config = cls._providers.get("cliproxyapi")
         models = config.models if config else []
         base_url = os.getenv("CLIPROXYAPI_BASE_URL", "")
+        return [
+            {
+                "name": m,
+                "group": "CLIProxyAPI",
+                "base_url": base_url,
+                "vision": cls.is_vision_model(m),
+            }
+            for m in models
+        ]
 
-        result = []
-        for model_name in models:
-            result.append(
-                {
-                    "name": model_name,
-                    "group": "CLIProxyAPI",
-                    "base_url": base_url,
-                    "vision": cls.is_vision_model(model_name),
-                }
+    @classmethod
+    async def fetch_cliproxyapi_models(cls) -> tuple[List[str], str]:
+        """Fetch live model IDs from CLIProxyAPI with TTL cache + async lock."""
+        if cls._cliproxy_lock is None:
+            cls._cliproxy_lock = asyncio.Lock()
+        async with cls._cliproxy_lock:
+            now = time.time()
+            if now - cls._cliproxy_cache_at < 10.0:
+                return list(cls._cliproxy_cache), cls._cliproxy_cache_reason
+            base_url = os.getenv("CLIPROXYAPI_BASE_URL", "").rstrip("/")
+            if not base_url:
+                (
+                    cls._cliproxy_cache,
+                    cls._cliproxy_cache_reason,
+                    cls._cliproxy_cache_at,
+                ) = [], "missing_base_url", now
+                return [], "missing_base_url"
+            headers: dict[str, str] = {"User-Agent": "layra"}
+            if api_key := os.getenv("CLIPROXYAPI_API_KEY", ""):
+                headers["Authorization"] = f"Bearer {api_key}"
+            try:
+                async with httpx.AsyncClient(timeout=2.0) as c:
+                    r = await c.get(f"{base_url}/models", headers=headers)
+                    r.raise_for_status()
+                    payload = r.json()
+            except httpx.TimeoutException:
+                models, reason = [], "timeout"
+            except httpx.HTTPError as exc:
+                models, reason = [], f"http_error:{exc.__class__.__name__}"
+            except (ValueError, TypeError):
+                models, reason = [], "invalid_response"
+            else:
+                data = payload.get("data", []) if isinstance(payload, dict) else []
+                models = [
+                    str(i.get("id"))
+                    for i in data
+                    if isinstance(i, dict) and isinstance(i.get("id"), str)
+                ]
+                reason = "ok" if models else "empty"
+            cls._cliproxy_cache, cls._cliproxy_cache_reason, cls._cliproxy_cache_at = (
+                list(models),
+                reason,
+                now,
             )
-        return result
+            return list(models), reason
 
     # ── Query Methods ───────────────────────────────────────────────────
 
@@ -369,12 +408,10 @@ class ProviderRegistry:
 
 
 def get_provider_timeout(provider_id: str) -> int:
-    """Get timeout for a provider (convenience function)."""
     return ProviderRegistry.get_timeout(provider_id)
 
 
 def get_timeout_for_model(model_name: str) -> int:
-    """Get timeout for a model (convenience function)."""
     return ProviderRegistry.get_timeout_for_model(model_name)
 
 
@@ -384,21 +421,18 @@ def get_llm_client(
     base_url: Optional[str] = None,
     provider: Optional[str] = None,
 ) -> AsyncOpenAI:
-    """Get an LLM client for the specified model (convenience function)."""
     return ProviderRegistry.get_llm_client(
         model_name=model_name, api_key=api_key, base_url=base_url, provider=provider
     )
 
 
 def resolve_api_model_name(model_name: str, provider: Optional[str] = None) -> str:
-    """Map legacy/alias model names to provider API model ids (convenience function)."""
     return ProviderRegistry.resolve_api_model_name(model_name, provider)
 
 
 def get_provider_for_model(
     model_name: str, explicit_provider: Optional[str] = None
 ) -> Optional[str]:
-    """Detect provider from model name (convenience function)."""
     return ProviderRegistry.get_provider_for_model(model_name, explicit_provider)
 
 
