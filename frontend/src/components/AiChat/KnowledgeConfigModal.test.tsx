@@ -49,8 +49,8 @@ vi.mock('@/stores/configStore', () => ({
   default: vi.fn(() => ({
     modelConfig: {
       modelId: '1',
-      modelName: 'GPT-4',
-      modelURL: 'https://api.openai.com/v1',
+      modelName: 'deepseek-chat',
+      modelURL: '',
       apiKey: 'sk-test',
       systemPrompt: 'You are a helpful assistant',
       temperature: 0.7,
@@ -103,8 +103,8 @@ describe('KnowledgeConfigModal Component', () => {
   const mockModelConfigs: ModelConfig[] = [
     {
       modelId: '1',
-      modelName: 'GPT-4',
-      modelURL: 'https://api.openai.com/v1',
+      modelName: 'deepseek-chat',
+      modelURL: '',
       apiKey: 'sk-test',
       systemPrompt: 'You are a helpful assistant',
       temperature: 0.7,
@@ -221,16 +221,16 @@ describe('KnowledgeConfigModal Component', () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByText('GPT-4')).toBeInTheDocument();
+      expect(screen.getByText('deepseek-chat')).toBeInTheDocument();
     });
 
-    const modelSelector = screen.getByText('GPT-4').closest('div');
+    const modelSelector = screen.getByText('deepseek-chat').closest('div');
     if (modelSelector) {
       fireEvent.click(modelSelector);
     }
 
     await waitFor(() => {
-      expect(screen.getByText('GPT-4')).toBeInTheDocument();
+      expect(screen.getByText('deepseek-chat')).toBeInTheDocument();
     });
   });
 
@@ -391,10 +391,10 @@ describe('KnowledgeConfigModal Component', () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByText('GPT-4')).toBeInTheDocument();
+      expect(screen.getByText('deepseek-chat')).toBeInTheDocument();
     });
 
-    const modelSelector = screen.getByText('GPT-4').closest('div');
+    const modelSelector = screen.getByText('deepseek-chat').closest('div');
     if (modelSelector) {
       fireEvent.click(modelSelector);
     }
