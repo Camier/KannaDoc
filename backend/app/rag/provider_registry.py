@@ -403,6 +403,25 @@ class ProviderRegistry:
         model_lower = model_name.lower()
         return any(pattern.lower() in model_lower for pattern in vision_patterns)
 
+    @classmethod
+    def get_generation_defaults(cls, provider: Optional[str], model_name: str) -> dict:
+        """Academic/RAG-friendly generation defaults for system models.
+
+        Returns dict with Repository-compatible keys:
+        ``temperature``, ``max_length``, ``top_P``.
+        """
+        model_l = (model_name or "").strip().lower()
+        provider_l = (provider or "").strip().lower() or None
+
+        max_len = 4096
+        if any(x in model_l for x in ["flash", "lite"]):
+            max_len = 3072
+
+        if provider_l == "deepseek" and model_l == "deepseek-reasoner":
+            return {"temperature": -1.0, "max_length": max_len, "top_P": -1.0}
+
+        return {"temperature": 0.2, "max_length": max_len, "top_P": -1.0}
+
 
 # ── Convenience Functions ───────────────────────────────────────────────
 

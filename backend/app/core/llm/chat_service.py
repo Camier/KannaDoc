@@ -151,6 +151,10 @@ class ChatService:
         provider: Optional[str],
         model_name: str,
     ) -> dict[str, Any]:
+        # TODO(rationalize): likely dead code — defaults now come from
+        # ProviderRegistry.get_generation_defaults() via Repository at
+        # insert time.  Kept as safety-net for legacy -1 sentinels still
+        # in MongoDB.  Remove once all stored configs are backfilled.
         """Provider-aware defaults for "academic/RAG" chat generation.
 
         These defaults are ONLY applied for system_* models (see below) when the stored

@@ -37,30 +37,9 @@ class ModelConfigRepository(BaseRepository):
         model_name: str,
         provider: Optional[str],
     ) -> dict[str, object]:
-        """Academic/RAG-friendly defaults for system_* models.
+        from app.rag.provider_registry import ProviderRegistry
 
-        Rationale:
-        - system_* models are meant to be "safe defaults" for a deployment, not
-          an expert-tuned per-user config.
-        - Historically these were filled with -1 sentinels, which makes the UI
-          and behavior unpredictable across providers.
-        - We keep top_P as -1 (omit) by default to minimize provider incompat.
-
-        Note: DeepSeek reasoning models do not use temperature/top_p, so we keep
-        temperature as -1 for those and rely on max_length (token budget).
-        """
-
-        model_l = (model_name or "").strip().lower()
-        provider_l = (provider or "").strip().lower() or None
-
-        max_len = 4096
-        if any(x in model_l for x in ["flash", "lite"]):
-            max_len = 3072
-
-        if provider_l == "deepseek" and model_l == "deepseek-reasoner":
-            return {"temperature": -1.0, "max_length": max_len, "top_P": -1.0}
-
-        return {"temperature": 0.2, "max_length": max_len, "top_P": -1.0}
+        return ProviderRegistry.get_generation_defaults(provider, model_name)
 
     def _build_model_dict(
         self,
