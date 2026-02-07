@@ -640,26 +640,9 @@ const ChatMessage: React.FC<ChatMessageProps> = ({
                   />
                 </svg>
                 <div className="text-sm font-medium">
-                  {(() => {
-                    const resolved_base_name = modelConfig?.baseUsed.find(
-                      (item) => item.baseId === message.baseId
-                    )?.name;
-                    if (resolved_base_name) {
-                      return resolved_base_name;
-                    }
-
-                    // If we couldn't resolve the KB name from the conversation config, do not
-                    // mislabel it as "User Upload". Show a short KB id for debugging instead.
-                    if (message.baseId) {
-                      const short_id =
-                        message.baseId.length > 12
-                          ? `${message.baseId.slice(0, 12)}...`
-                          : message.baseId;
-                      return `KB ${short_id}`;
-                    }
-
-                    return t("defaultBaseName");
-                  })()}
+                  {modelConfig?.baseUsed.find(
+                    (item) => item.baseId === message.baseId
+                  )?.name || t("defaultBaseName")}
                 </div>
               </div>
             </div>
