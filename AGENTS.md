@@ -190,8 +190,6 @@ All commands should be run from `backend/` directory with `PYTHONPATH=.`.
   ```bash
   PYTHONPATH=. python3 scripts/datalab/aggregate_corpus.py
   ```
-- **neo4j_ingest.py**: Graph ingestion logic. **Removed** — graph store not part of active research stack.
-
 ### 6.3 Evaluation & Optimization
 - **rag_eval.py**: Runs the evaluation harness against the dev dataset.
   ```bash
@@ -253,6 +251,7 @@ These artifacts are essential for maintaining the state of the knowledge base an
 | 2026-02-07 | Wired eval dashboard to real backend API |
 | 2026-02-07 | Applied circuit breakers to DB calls, fixed async blocking I/O |
 | 2026-02-07 | Removed deprecated scripts (configure_models.py, _archived/, neo4j_ingest.py) |
+| 2026-02-07 | Repo consolidation: deleted 11 one-off scripts from scripts/, cleaned .gitignore, removed stale neo4j refs |
 
 ## 10. CROSS-REFERENCES
 

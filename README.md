@@ -88,7 +88,6 @@ backend/
 │   └── datalab/            # Ingestion & extraction scripts
 │       ├── extract_deepseek.py
 │       ├── milvus_ingest.py
-│       ├── neo4j_ingest.py  # (Neo4j disabled in current deployment)
 │       └── ...
 │
 └── data/
