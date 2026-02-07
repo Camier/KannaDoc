@@ -158,6 +158,68 @@ To keep `search-preview` functional without re-ingestion or moving any vectors, 
 | **Thresholds** | `recall>=0.70`, `mrr>=0.65`, `p95<=2500ms` |
 | **Status** | CODE READY |
 
+## Link 9: Chat Generation Tuning (Provider-Aware Defaults)
+
+This pipeline uses an **OpenAI-compatible** streaming chat call under the hood
+(see `backend/app/core/llm/chat_service.py`). Provider backends can be:
+- OpenAI itself
+- Official OpenAI-compatible endpoints (MiniMax, Z.ai, some Gemini deployments)
+- Proxies/self-hosted (Ollama Cloud, CLIProxyAPI, LiteLLM, etc.)
+
+### Why this matters for thesis RAG
+
+For RAG answers that must stay sober/academic with stable citations:
+- We target **low creativity / low variance** defaults (`temperature ~0.1-0.3`).
+- We avoid overspecifying optional parameters that are not consistently supported across providers.
+- We want the RAG stage to remain debuggable even when the LLM provider is down/misconfigured.
+
+### “System models” tuned defaults
+
+System-provided models (`model_id` starting with `system_`) historically stored `temperature=-1`, `top_P=-1`,
+`max_length=-1` as “use provider defaults”. That often leads to unpredictable style.
+
+In this environment, the runtime applies conservative defaults ONLY for system models when a field is `-1`:
+- `temperature`: `0.2`
+- `max_tokens` (`max_length`): `4096` (lower for `flash`/`lite` style models)
+- `top_p`: omitted by default (`-1`) to minimize incompatibilities
+
+### Provider-specific parameter constraints (official docs)
+
+Important constraints that influenced the “do not overspecify” approach:
+- **OpenAI**: `temperature` range is `0..2`. Docs:
+  https://platform.openai.com/docs/api-reference/chat/create
+- **Anthropic**: `temperature` range is `0..1`. Some models do not allow specifying both
+  `temperature` and `top_p`. Docs:
+  https://docs.anthropic.com/en/api/messages
+  https://docs.anthropic.com/en/release-notes/api#response-api-updates
+- **DeepSeek**: reasoning model `deepseek-reasoner` ignores/does not support `temperature` / `top_p`
+  (use token limits instead). Docs:
+  https://api-docs.deepseek.com/
+- **MiniMax**: OpenAI-compatible parameters; `temperature` and `top_p` are documented as `0..1`.
+  Docs:
+  https://www.minimaxi.com/document/omni
+- **Gemini (Google)**: `generationConfig` exposes `temperature`, `topP`, `topK`, `maxOutputTokens`.
+  Docs:
+  https://ai.google.dev/gemini-api/docs/text-generation?lang=python
+- **Z.ai (GLM)**: OpenAI-compatible parameters; `temperature` and `top_p` are documented as `0..1`.
+  Docs:
+  https://docs.z.ai/api-reference/chat-completions
+- **Ollama OpenAI compatibility**: OpenAI-compatible surface; supported params are server-dependent.
+  Docs:
+  https://ollama.com/blog/openai-compatibility
+
+Implementation detail: we clamp narrower provider ranges only when the provider is explicit/detected. If the
+user provides an explicit `model_url` (proxy/self-hosted), we avoid provider-specific assumptions.
+
+### RAG debuggability: `file_used` emission ordering
+
+The `POST /api/v1/sse/chat` endpoint streams `file_used` early (before LLM client init and the first provider call).
+This ensures retrieval evidence is visible even if provider keys are missing or the provider is temporarily down.
+
+Evidence:
+- Unit test: `backend/tests/test_chat_service_file_used_early.py`
+- Smoke test script: `backend/scripts/smoke_test_thesis_rag.py`
+
 ## External Dependencies
 
 | Service | Purpose | Required |
