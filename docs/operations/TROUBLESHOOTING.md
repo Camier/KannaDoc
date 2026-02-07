@@ -29,7 +29,7 @@
 - User: `thesis`
 - Knowledge Base: "Thesis Corpus"
 - Documents: 129 files
-- Vectors: ~3.5 Million (768D, ColQwen 2.5)
+- Vectors: ~3.56 Million (128D patch vectors, ColQwen/ColPali-style)
 
 **Recent Fixes (2026-01-25):**
 - Fixed Nginx double-prefix routing (`404` → `200`)

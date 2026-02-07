@@ -62,15 +62,18 @@ Counts below are a snapshot; see `AGENTS.md` for the canonical corpus size state
 
 | Aspect | Evidence |
 |--------|----------|
-| **Connection (thesis default)** | `MILVUS_URI=http://host.docker.internal:19530` (from `layra/.env`) |
-| **Host service** | Thesis uses a Milvus instance running on the host (not the `milvus-standalone` container) |
-| **Fallback (if MILVUS_URI unset)** | `MILVUS_URI=${MILVUS_URI:-http://milvus-standalone:19530}` (docker-compose default) |
+| **Connection (current)** | `MILVUS_URI=http://milvus-standalone:19530` (from `layra/.env`) |
+| **Docker service** | Milvus runs in docker-compose as `milvus-standalone` + `milvus-etcd` + `milvus-minio` |
+| **Host port (debug)** | `http://127.0.0.1:19531` (published port to avoid clashing with a host Milvus on `:19530`) |
 | **Database** | `default` (thesis corpus) and `misc` (non-thesis collections) |
 | **Patch (ColPali) collection** | `default.colpali_kanna_128` (3,561,575 vectors) |
 | **Page sparse sidecar** | `default.colpali_kanna_128_pages_sparse` (4,691 rows) |
 | **Vector dim** | 128 (ColQwen) |
 | **Unique files indexed** | 129 |
 | **Status** | HEALTHY |
+
+**Update (2026-02-07):** The thesis Milvus collections were migrated from a host/systemd Milvus into the docker-compose Milvus stack.
+See `docs/operations/MILVUS_HOST_TO_DOCKER_MIGRATION.md` for the runbook and verification checklist.
 
 ### Naming Drift Clarification (Important)
 

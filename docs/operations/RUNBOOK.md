@@ -13,48 +13,39 @@ Utilise:
 ```
 
 Diagramme de déploiement (vue minimale): [DEPLOYMENT_DIAGRAM](DEPLOYMENT_DIAGRAM.md)
-Etat reel (KB miko): voir la section "Etat reel — Thesis Corpus (2026-01-29)" plus bas.
+Etat reel (thesis corpus): voir `backend/docs/PIPELINE_AUDIT_2026-02-02.md` + la section ci-dessous.
 
-<a id="kb-state-miko"></a>
-## Etat reel — Thesis Corpus (2026-01-30) ✅ CONSOLIDATED
+<a id="kb-state-thesis"></a>
+## Etat reel — Thesis Corpus (2026-02-07) ✅
 
 Ce qui est vrai **maintenant** (verifie sur la stack locale):
 
-- Corpus PDF: 129/129 fichiers dans `/app/literature/corpus`.
-- Embeddings: 129/129 JSON dans `/app/embeddings_output`.
-- Milvus:
-  - **Collection active (unique)** `colqwenmiko_e6643365_8b03_4bea_a69b_7a1df00ec653`
-    - `row_count`: **3,562,057** vectors
-    - `file_id` prefix: `miko_`
-    - Fields: `pk`, `vector`, `sparse_vector`, `image_id`, `page_number`, `file_id`
-    - Index: HNSW M=48, efConstruction=1024
-  - ~~Collection legacy `thesis_fbd5d3a6...`~~ **DELETED** (2026-01-30)
-- MongoDB `knowledge_bases`:
-  - `knowledge_base_id`: `miko_e6643365-8b03_4bea-a69b_7a1df00ec653` (129 fichiers, active)
-  - `knowledge_base_id`: `miko_0ecb4105-9d53-4214-9884-1a17b0743b47` (empty smoke test)
-  - ~~`thesis_fbd5d3a6...`~~ **DELETED** (was duplicate with schema drift)
-- MongoDB `files` (KB miko):
-  - 129 docs `miko_`
-  - images totales: **5,732**
-  - `minio_url` manquant: **0** (toutes presignees)
-  - `minio_filename` manquant: **0**
-- MinIO (bucket `minio-file`):
-  - objets totaux: **5,862** (129 PDFs + 5,733 images)
-  - images miko verifiees: **5,732/5,732** presentes
-  - ~~`thesis/` prefix~~ **DELETED** (129 duplicate PDFs removed)
-- Utilisateurs (MySQL): **existant** (au moins `miko`, `thesis`, + users de test).
-  UI login: `thesis` / `thesis123` (password reset 2026-01-30).
+- Corpus PDF: **129/129** dans `/LAB/@thesis/layra/backend/data/pdfs/`.
+- Extractions: **129/129** dans `/LAB/@thesis/layra/backend/data/extractions/`.
+- Milvus (docker-compose):
+  - Patch vectors: `colpali_kanna_128` (`row_count`: **3,561,575**, dim=128)
+    - Index: HNSW `metric=IP`, `M=32`, `efConstruction=500`
+  - Page sparse sidecar: `colpali_kanna_128_pages_sparse` (`row_count`: **4,691**)
+    - Index: `SPARSE_INVERTED_INDEX` `metric=IP`, `drop_ratio_build=0.2`
+  - Alias KB (utilise par le backend):
+    - `colqwenthesis_fbd5d3a6_3911_4be0_a4b3_864ec91bc3c1` -> `colpali_kanna_128`
+- MongoDB (`chat_mongodb`) `knowledge_bases`:
+  - `knowledge_base_id`: `thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1` (129 fichiers)
+  - Note: selon le mode, la collection Mongo `files` peut etre vide; la liste des fichiers peut etre
+    portee par le doc `knowledge_bases.files`.
+- Thesis preview assets:
+  - Les `search-preview` renvoient des URLs type `/api/v1/thesis/page-image` (servees depuis les PDFs locaux),
+    pas des presigned URLs MinIO.
 
 Qualite des donnees (important):
 
-- **Mismatch resolu**: 129/129 `file_id` du KB actif (`miko_...`) ont des embeddings dans Milvus.
-- **Vectors per image**: ~621 (ColQwen multi-vector embeddings).
-- Embeddings: dim mismatch **0**; NaN/Inf **sanitize 482** vecteurs (PDF `2025 - ed. - The Indigenous World.pdf`).
-- `files` `miko_`: images totales = **5,732**; `minio_url` manquant **0**.
-- MinIO: tous les `minio_filename` des images miko existent.
-- **Sparse vectors**: present in collection, ready for hybrid search.
+- Le backend derive le nom de la sidecar sparse a partir du **vrai** nom de la collection (alias resolu).
+- Page grouping doit etre fait sur `(file_id, page_number)` (pas `image_id`).
 
-### Consolidation effectuee (2026-01-30)
+### Historical snapshot (2026-01-30, miko)
+
+Cette section decrit un ancien etat "miko" et une consolidation effectuee en 2026-01.
+Elle est conservee a titre historique et peut etre stale par rapport au corpus thesis actuel.
 
 | Action | Details |
 |--------|---------|
@@ -81,13 +72,15 @@ python3 - <<'PY'
 import json, os
 from pymilvus import MilvusClient
 
-COLLECTION = "colqwenmiko_e6643365_8b03_4bea_a69b_7a1df00ec653"
+PATCH = "colpali_kanna_128"
+SPARSE = "colpali_kanna_128_pages_sparse"
+ALIAS = "colqwenthesis_fbd5d3a6_3911_4be0_a4b3_864ec91bc3c1"
 
 client = MilvusClient(uri="http://milvus-standalone:19530")
-stats = client.get_collection_stats(COLLECTION)
-print("collection:", COLLECTION)
-print("row_count:", stats["row_count"])
 print("collections:", client.list_collections())
+print("patch row_count:", client.get_collection_stats(PATCH)["row_count"])
+print("sparse row_count:", client.get_collection_stats(SPARSE)["row_count"])
+print("alias:", client.describe_alias(ALIAS))
 client.close()
 PY
 
@@ -106,16 +99,11 @@ print("knowledge_bases:")
 for kb in db.knowledge_bases.find({}, {"knowledge_base_id": 1, "username": 1, "is_delete": 1}):
     print(" -", kb.get("knowledge_base_id"), "is_delete:", kb.get("is_delete", False))
 
-kb_id = "miko_e6643365-8b03_4bea-a69b_7a1df00ec653"
-stats = {"files": 0, "images_total": 0, "missing_minio_url": 0}
-for doc in db.files.find({"knowledge_db_id": kb_id}, {"images": 1}):
-    stats["files"] += 1
-    for img in doc.get("images", []):
-        stats["images_total"] += 1
-        if not img.get("minio_url"):
-            stats["missing_minio_url"] += 1
-
-print("miko_stats:", stats)
+kb_id = "thesis_fbd5d3a6-3911-4be0-a4b3-864ec91bc3c1"
+kb = db.knowledge_bases.find_one({"knowledge_base_id": kb_id}, {"knowledge_base_name": 1, "files": 1, "is_delete": 1})
+print("kb:", {"id": kb_id, "name": (kb or {}).get("knowledge_base_name"), "is_delete": (kb or {}).get("is_delete")})
+print("kb.files len:", len(((kb or {}).get("files")) or []))
+print("files docs count:", db.files.count_documents({"knowledge_db_id": kb_id}))
 mc.close()
 PY
 ```
