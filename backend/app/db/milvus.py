@@ -19,6 +19,7 @@ import math
 from collections import defaultdict
 from app.core.config import settings
 from app.core.logging import logger
+from app.core.circuit_breaker import vector_db_circuit
 
 
 def get_ranker(settings):
@@ -224,6 +225,7 @@ class MilvusManager:
         )
         self.load_collection(collection_name)
 
+    @vector_db_circuit
     def search(self, collection_name, data, topk):
         """
         Perform multi-vector (MaxSim) search.
@@ -800,7 +802,9 @@ class MilvusManager:
                 )
 
         # Cap candidate pages before fetching patch vectors.
-        candidates = candidates[: int(getattr(settings, "rag_candidate_images_cap", 120))]
+        candidates = candidates[
+            : int(getattr(settings, "rag_candidate_images_cap", 120))
+        ]
         if getattr(settings, "rag_debug_retrieval", False):
             logger.info(
                 "RAG(thesis): capped_candidates=%d cap=%d distinct_files=%d",

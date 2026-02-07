@@ -2,6 +2,7 @@
 Circuit breaker pattern for external service calls.
 Prevents cascading failures when external services are unavailable.
 """
+
 import asyncio
 import logging
 from functools import wraps
@@ -29,19 +30,6 @@ class CircuitBreakerConfig:
     LLM_SERVICE = {
         "failure_threshold": 5,
         "recovery_timeout": 60,
-        "expected_exception": Exception,
-    }
-
-    # Provider-specific LLM configs with different timeouts
-    DEEPSEEK_REASONER = {
-        "failure_threshold": 3,  # More conservative for expensive reasoning models
-        "recovery_timeout": 300,  # 5 minutes for deepseek-r1
-        "expected_exception": Exception,
-    }
-
-    ZHIPU_LLM = {
-        "failure_threshold": 5,
-        "recovery_timeout": 180,  # 3 minutes for GLM models
         "expected_exception": Exception,
     }
 
@@ -132,6 +120,7 @@ def create_circuit_breaker(
 
 # Pre-configured circuit breakers for common services
 
+
 def embedding_service_circuit(func: Callable) -> Callable:
     """Circuit breaker for embedding service calls."""
     config = CircuitBreakerConfig.EMBEDDING_SERVICE
@@ -204,26 +193,3 @@ class CircuitBreakerManager:
 
 # Global circuit breaker manager instance
 circuit_breaker_manager = CircuitBreakerManager()
-
-
-# Provider-specific circuit breakers for LLM services
-def deepseek_reasoner_circuit(func: Callable) -> Callable:
-    """Circuit breaker for DeepSeek reasoning models with longer timeout."""
-    config = CircuitBreakerConfig.DEEPSEEK_REASONER
-    return create_circuit_breaker(
-        name="deepseek_reasoner",
-        failure_threshold=config["failure_threshold"],
-        recovery_timeout=config["recovery_timeout"],
-        expected_exception=config["expected_exception"],
-    )(func)
-
-
-def zhipu_llm_circuit(func: Callable) -> Callable:
-    """Circuit breaker for Zhipu GLM models with moderate timeout."""
-    config = CircuitBreakerConfig.ZHIPU_LLM
-    return create_circuit_breaker(
-        name="zhipu_llm",
-        failure_threshold=config["failure_threshold"],
-        recovery_timeout=config["recovery_timeout"],
-        expected_exception=config["expected_exception"],
-    )(func)

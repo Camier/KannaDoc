@@ -88,7 +88,12 @@ async def convert_file_to_images(
         logger.info(f"Processing image file directly: {file_extension}")
         try:
             images = []
-            with Image.open(io.BytesIO(file_content)) as img:
+
+            # Wrap blocking PIL Image.open in run_in_executor
+            def _process_image(content):
+                """Sync helper to process image file."""
+                img = Image.open(io.BytesIO(content))
+                processed_images = []
                 # 处理多帧图片（如GIF, TIFF, WEBP等）
                 if (
                     hasattr(img, "is_animated")
@@ -99,13 +104,18 @@ async def convert_file_to_images(
                         # 转换为RGB并调整大小
                         frame = frame.convert("RGB")
                         frame = resize_image_to_a4(frame)
-                        images.append(frame.copy())
+                        processed_images.append(frame.copy())
                 else:
                     # 单帧图片处理（包括动图的第一帧）
                     if img.mode in ("RGBA", "P", "LA", "CMYK"):
                         img = img.convert("RGB")
                     img = resize_image_to_a4(img)
-                    images.append(img.copy())
+                    processed_images.append(img.copy())
+                img.close()
+                return processed_images
+
+            loop = asyncio.get_running_loop()
+            images = await loop.run_in_executor(None, _process_image, file_content)
 
             logger.debug(f"Processed {len(images)} frames from image")
 

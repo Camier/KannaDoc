@@ -192,16 +192,24 @@ class CodeSandbox:
         assert self.workspace_dir is not None, "workspace_dir not set"
         script_path = os.path.join(self.workspace_dir, script_name)
 
-        with open(script_path, "w") as f:
-            if inputs:
-                for k, v in inputs.items():
-                    if isinstance(v, str):
-                        f.write(f"{k} = {v!r}\n")
-                    else:
-                        f.write(f"{k} = {v}\n")
-            f.write("inputs = locals().copy()\n")
-            f.write(code + "\n")
-            f.write("\nif 'main' in globals() and callable(main):\n    main(inputs)\n")
+        # Wrap blocking file write in run_in_executor
+        def _write_script():
+            """Sync helper to write script file."""
+            with open(script_path, "w") as f:
+                if inputs:
+                    for k, v in inputs.items():
+                        if isinstance(v, str):
+                            f.write(f"{k} = {v!r}\n")
+                        else:
+                            f.write(f"{k} = {v}\n")
+                f.write("inputs = locals().copy()\n")
+                f.write(code + "\n")
+                f.write(
+                    "\nif 'main' in globals() and callable(main):\n    main(inputs)\n"
+                )
+
+        loop = asyncio.get_running_loop()
+        await loop.run_in_executor(None, _write_script)
 
         workspace_dir = self.workspace_dir
         container_script_path = (

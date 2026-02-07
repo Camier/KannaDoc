@@ -1,7 +1,9 @@
 from motor.motor_asyncio import AsyncIOMotorClient
 from app.core.config import settings
 from app.core.logging import logger
+from app.core.circuit_breaker import mongodb_circuit
 import asyncio
+
 
 class MongoDB:
     def __init__(self):
@@ -77,8 +79,7 @@ class MongoDB:
                 name="username_workflow_id_unique",
             )
             await self.db.workflows.create_index(
-                [("username", 1), ("last_modify_at", -1)], 
-                name="user_workflows"
+                [("username", 1), ("last_modify_at", -1)], name="user_workflows"
             )
 
             # node索引
@@ -89,6 +90,7 @@ class MongoDB:
             logger.error(f"索引创建失败: {str(e)}")
             raise
 
+    @mongodb_circuit
     async def connect(self):
         self.client = AsyncIOMotorClient(
             f"mongodb://{settings.mongodb_root_username}:{settings.mongodb_root_password}@{settings.mongodb_url}",
@@ -103,7 +105,9 @@ class MongoDB:
         if self.client:
             self.client.close()
 
+
 mongodb = MongoDB()
+
 
 async def get_mongo():
     if mongodb.db is None:
