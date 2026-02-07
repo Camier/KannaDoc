@@ -5,7 +5,6 @@ Knowledge Base API endpoints for managing document collections.
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from typing import List, Optional
-from urllib.parse import urlencode
 from app.db.repositories.repository_manager import (
     RepositoryManager,
     get_repository_manager,
@@ -15,6 +14,8 @@ from app.rag.get_embedding import get_embeddings_from_httpx, get_sparse_embeddin
 from app.core.embeddings import normalize_multivector, downsample_multivector
 from app.core.config import settings
 from app.core.logging import logger
+from app.core.rag.retrieval_params import normalize_top_k as normalize_rag_top_k
+from app.utils.thesis_urls import build_thesis_page_image_url
 from app.utils.ids import to_milvus_collection_name
 
 router = APIRouter()
@@ -115,27 +116,14 @@ async def search_preview(
     if retrieval_mode == "dense" and getattr(settings, "rag_hybrid_enabled", False):
         retrieval_mode = "hybrid"
 
-    # Normalize top_k similarly to chat RAG to avoid confusing preview results.
-    # In thesis sparse/dual modes, enforce a minimum to avoid accidental "2 sources only" behavior.
-    top_k_input = int(request.top_k or 0)
-    top_k_cap = int(getattr(settings, "rag_top_k_cap", 120))
-    if top_k_input == -1:
-        normalized_top_k = int(getattr(settings, "rag_default_top_k", 50))
-    elif top_k_input < 1:
-        normalized_top_k = 1
-    elif top_k_input > top_k_cap:
-        normalized_top_k = top_k_cap
-    else:
-        normalized_top_k = top_k_input
-
-    if retrieval_mode in ["sparse_then_rerank", "dual_then_rerank"]:
-        min_k = int(getattr(settings, "rag_search_limit_min", 50))
-        if normalized_top_k < min_k:
-            normalized_top_k = min_k
-
-    if normalized_top_k > top_k_cap:
-        normalized_top_k = top_k_cap
-    top_k = normalized_top_k
+    # Normalize top_k consistently with ChatService to avoid drift.
+    top_k = normalize_rag_top_k(
+        int(request.top_k or 0),
+        retrieval_mode=retrieval_mode,
+        default_top_k=int(getattr(settings, "rag_default_top_k", 50)),
+        top_k_cap=int(getattr(settings, "rag_top_k_cap", 120)),
+        sparse_min_k=int(getattr(settings, "rag_search_limit_min", 50)),
+    )
 
     try:
         # Ensure collection is loaded
@@ -225,12 +213,11 @@ async def search_preview(
             # render a preview image from the locally served PDFs.
             filename = str(file_id or "Unknown")
             if str(kb_id).startswith("thesis_") and file_id and page_number:
-                api_base = settings.api_version_url
-                image_url = (
-                    f"{api_base}/thesis/page-image?"
-                    + urlencode(
-                        {"file_id": str(file_id), "page_number": page_number, "dpi": 150}
-                    )
+                image_url = build_thesis_page_image_url(
+                    settings.api_version_url,
+                    file_id=str(file_id),
+                    page_number=page_number,
+                    dpi=150,
                 )
 
         formatted_results.append(

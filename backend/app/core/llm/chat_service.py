@@ -18,12 +18,12 @@ import asyncio
 import json
 import time
 from typing import AsyncGenerator, Optional, Dict, Any, List, cast
-from urllib.parse import urlencode
 from openai import AsyncOpenAI  # type: ignore[import-not-found]
 
 from app.db.repositories.repository_manager import get_repository_manager
 from app.core.logging import logger
 from app.core.circuit_breaker import llm_service_circuit
+from app.core.rag.retrieval_params import normalize_top_k as normalize_rag_top_k
 from app.db.vector_db import vector_db_client
 from app.rag.get_embedding import get_embeddings_from_httpx, get_sparse_embeddings
 from app.rag.utils import replace_image_content, sort_and_filter
@@ -36,6 +36,7 @@ from app.rag.provider_client import (
 from app.core.config import settings
 from app.core.embeddings import normalize_multivector, downsample_multivector
 from app.utils.ids import to_milvus_collection_name
+from app.utils.thesis_urls import build_thesis_page_image_url, build_thesis_pdf_url
 
 
 class ChatService:
@@ -89,29 +90,20 @@ class ChatService:
     def _normalize_top_k(top_k: int) -> int:
         """Normalize top_k parameter."""
         top_k_cap = int(getattr(settings, "rag_top_k_cap", 120))
-
-        if top_k == -1:
-            # Thesis default: -1 means "use environment default", not "tiny recall".
-            normalized = int(getattr(settings, "rag_default_top_k", 50))
-        elif top_k < 1:
-            normalized = 1
-        elif top_k > top_k_cap:
-            normalized = top_k_cap
-        else:
-            normalized = top_k
+        default_top_k = int(getattr(settings, "rag_default_top_k", 50))
+        sparse_min_k = int(getattr(settings, "rag_search_limit_min", 50))
 
         # Thesis sparse/dual modes need enough breadth to diversify across files/pages.
         retrieval_mode = getattr(settings, "rag_retrieval_mode", "dense")
         if retrieval_mode == "dense" and getattr(settings, "rag_hybrid_enabled", False):
             retrieval_mode = "hybrid"
-        if retrieval_mode in ["sparse_then_rerank", "dual_then_rerank"]:
-            min_k = int(getattr(settings, "rag_search_limit_min", 50))
-            if normalized < min_k:
-                normalized = min_k
-
-        if normalized > top_k_cap:
-            normalized = top_k_cap
-        return normalized
+        return normalize_rag_top_k(
+            top_k,
+            retrieval_mode=retrieval_mode,
+            default_top_k=default_top_k,
+            top_k_cap=top_k_cap,
+            sparse_min_k=sparse_min_k,
+        )
 
     @staticmethod
     def _normalize_score_threshold(score_threshold: float) -> float:
@@ -524,20 +516,6 @@ class ChatService:
                 ):
                     retrieval_mode = "hybrid"
 
-                # Thesis safety: sparse/dual retrieval is page-level candidate generation feeding a
-                # MaxSim rerank step. Very small top_K values (e.g. legacy UI defaults of 2-5)
-                # lead to "2 sources only" behavior and break diversification/citations.
-                #
-                # Mirror the `search-preview` endpoint behavior by enforcing a minimum retrieval
-                # breadth in sparse/dual modes.
-                if retrieval_mode in ["sparse_then_rerank", "dual_then_rerank"]:
-                    min_k = int(getattr(settings, "rag_search_limit_min", 50))
-                    if top_K < min_k:
-                        top_K = min_k
-                    top_k_cap = int(getattr(settings, "rag_top_k_cap", 120))
-                    if top_K > top_k_cap:
-                        top_K = top_k_cap
-
                 sparse_vecs = []
                 sparse_query = None
                 if query_vecs and retrieval_mode in [
@@ -712,15 +690,11 @@ class ChatService:
                                         # Use relative URLs so this works behind nginx reverse proxy
                                         # regardless of SERVER_IP (local dev vs deployed domain).
                                         api_base = settings.api_version_url
-                                        thesis_pdf_url = (
-                                            f"{api_base}/thesis/pdf?"
-                                            + urlencode({"file_id": fid})
+                                        thesis_pdf_url = build_thesis_pdf_url(
+                                            api_base, file_id=fid
                                         )
-                                        thesis_image_url = (
-                                            f"{api_base}/thesis/page-image?"
-                                            + urlencode(
-                                                {"file_id": fid, "page_number": pn, "dpi": 150}
-                                            )
+                                        thesis_image_url = build_thesis_page_image_url(
+                                            api_base, file_id=fid, page_number=pn, dpi=150
                                         )
 
                                         file_used.append(
