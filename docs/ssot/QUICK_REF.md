@@ -60,6 +60,9 @@ curl http://localhost:8090/api/v1/health/check
 | **MinIO** | 9000 (internal) | Files |
 | **Milvus** | 19530 (internal) | Vectors |
 
+Host debug ports:
+- Milvus: `127.0.0.1:19531` -> `19530` (published from `docker-compose.yml`)
+
 **Total:** 18 services (base compose) + optional dev-only tools via `docker-compose.override.yml`
 
 ---

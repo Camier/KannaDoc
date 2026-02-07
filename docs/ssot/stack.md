@@ -425,6 +425,7 @@ curl http://localhost:9000/minio/health/live
 
 **Entrypoint:**
 - Docker: `milvusdb/milvus:v2.6.9` image, port 19530
+- Host (debug): `127.0.0.1:19531 -> 19530` (port publish from `docker-compose.yml`)
 - External: Zilliz Cloud (managed Milvus)
 
 **Dependencies:**

@@ -14,7 +14,7 @@ SERVICE               | PORTS/EXPOSE                    | HEALTHCHECK (if define
 nginx (proxy)         | http://localhost:8090            | /api/v1/health/check (via backend)                        | N/A                                           | /docs/ssot/stack.yaml
 backend (FastAPI)     | internal: 8000 -> nginx           | curl -f http://localhost:8000/api/v1/health/check          | DB_URL, REDIS_*, MONGODB_*, MINIO_*, KAFKA_*   | /backend/app/core/config.py
 frontend (Next.js)    | internal: 3000 -> nginx           | curl -f http://localhost:3000                              | NEXT_PUBLIC_API_BASE_URL                       | /.env.example
-milvus-standalone     | 19530                            | curl -f http://localhost:9091/healthz                      | MILVUS_URI, VECTOR_DB                          | /docker-compose.yml
+milvus-standalone     | internal:19530, host:127.0.0.1:19531 | curl -f http://localhost:9091/healthz                      | MILVUS_URI, VECTOR_DB                          | /docker-compose.yml
 milvus-etcd           | 2379                            | etcdctl endpoint health                                    | ETCD_*                                        | /docker-compose.yml
 milvus-minio          | 9000, 9001                      | curl -f http://localhost:9000/minio/health/live            | MILVUS_MINIO_*                                | /docker-compose.yml
 minio (assets)        | host 9080:9000, 9081:9001       | curl -f http://localhost:9000/minio/health/live            | MINIO_*                                       | /docker-compose.yml
@@ -150,7 +150,7 @@ nginx -> http://localhost:8090 (proxy)
 backend -> internal:8000 (health: /api/v1/health/check)
 frontend -> internal:3000
 
-milvus-standalone -> 19530 (health: http://localhost:9091/healthz)
+milvus-standalone -> internal:19530, host:127.0.0.1:19531 (health: http://localhost:9091/healthz)
 milvus-etcd -> 2379
 milvus-minio -> 9000/9001
 

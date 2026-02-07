@@ -408,7 +408,7 @@ services:
         - milvus-minio
     ports:
       internal: 19530
-      external: null  # Not exposed for security
+      external: 19531  # Published to 127.0.0.1 only (debug)
     persistence:
       volumes:
         - milvus_data:/var/lib/milvus
