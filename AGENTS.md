@@ -252,8 +252,77 @@ These artifacts are essential for maintaining the state of the knowledge base an
 | 2026-02-07 | Applied circuit breakers to DB calls, fixed async blocking I/O |
 | 2026-02-07 | Removed deprecated scripts (configure_models.py, _archived/, neo4j_ingest.py) |
 | 2026-02-07 | Repo consolidation: deleted 11 one-off scripts from scripts/, cleaned .gitignore, removed stale neo4j refs |
+| 2026-02-07 | Functional audit: mapped 34 sub-features across 5 areas (28 complete, 1 partial, 1 broken, 4 stub/N/A) |
 
-## 10. CROSS-REFERENCES
+## 10. FUNCTIONAL AUDIT (Feb 2026)
+
+Feature completeness snapshot from the functional audit.
+
+### 10.1 Status Legend
+- ✅ COMPLETE — End-to-end functional
+- ⚠️ PARTIAL — Works but has dependency gaps
+- ❌ BROKEN — Code exists but non-functional
+- 🚫 STUB — Placeholder, disabled, or absent
+
+### 10.2 AI Chat
+| Sub-feature | Status | Notes |
+|---|:---:|---|
+| Chat UI + SSE streaming | ✅ | Text, reasoning tokens, token usage |
+| RAG retrieval (Milvus) | ✅ | Dense/sparse search, `file_used` events |
+| Model selection + provider routing | ✅ | `providers.yaml` → `ProviderClient` → `AsyncOpenAI` |
+| KB attachment to conversation | ✅ | Synced before send via `updateChatModelConfig` |
+| File upload in chat (temp KB) | ✅ | MinIO + Kafka embedding task |
+| Conversation CRUD | ✅ | Create/list/rename/delete |
+| Temp KB cleanup | ❌ | Frontend calls `deleteTempKnowledgeBase` but backend endpoint missing |
+
+### 10.3 Evaluation System
+| Sub-feature | Status | Notes |
+|---|:---:|---|
+| Dashboard (frontend) | ✅ | Real API, `MetricCard` components |
+| API endpoints | ✅ | `/datasets`, `/run`, `/runs/{id}` |
+| Runner (Milvus + embeddings + p95) | ✅ | Fully implemented, real vector search |
+| Metrics (MRR, NDCG, P@K, R@K) | ✅ | Standard IR formulas |
+| Dev dataset | ✅ | 20 curated questions + ground truth |
+| LLM relevance labeler | ✅ | 0-3 scale, batch support |
+| Query generator | ✅ | LLM-based from doc titles |
+| CLI `rag_eval.py` | 🚫 | Legacy — has TODOs. **Use API instead.** |
+
+### 10.4 Knowledge Base Management
+| Sub-feature | Status | Notes |
+|---|:---:|---|
+| KB CRUD (UI + API) | ✅ | Create/list/rename/delete |
+| File upload + Kafka trigger | ✅ | Upload works, triggers ingestion task |
+| Search preview (debug) | ✅ | Dense/sparse/hybrid scores + page images |
+| PDF → Milvus pipeline | ⚠️ | Depends on Kafka consumer/worker running |
+
+### 10.5 Workflow Engine
+| Sub-feature | Status | Notes |
+|---|:---:|---|
+| Flow editor (drag-and-drop) | ✅ | Nodes, edges, DAGs |
+| Engine (loops, conditions, gates) | ✅ | 45K lines |
+| Code sandbox (Docker) | ✅ | Memory/CPU limits, pip support |
+| MCP tool integration | ✅ | External tool calls within workflows |
+| State persistence (Redis) | ✅ | Checkpoints for fault tolerance |
+| Workflow templates | 🚫 | No static templates; flows stored as JSON in MongoDB |
+
+### 10.6 Infrastructure
+| Sub-feature | Status | Notes |
+|---|:---:|---|
+| Health checks (liveness + readiness) | ✅ | Deep checks: MySQL, Mongo, Redis, Milvus, MinIO, Kafka |
+| Prometheus metrics | ✅ | `PrometheusMiddleware` on all HTTP |
+| Authentication | 🚫 | Bypassed — hardcoded `default_username` (thesis scope) |
+| Rate limiting | 🚫 | No middleware |
+
+### 10.7 Known Gaps
+| # | Gap | Impact | Priority |
+|---|---|---|---|
+| F1 | Temp KB cleanup endpoint missing | Milvus collections accumulate | High |
+| F2 | Kafka consumer required for file ingestion | Silent failure if worker down | Medium (ops) |
+| F3 | CLI `rag_eval.py` has stale TODOs | Misleading — API is canonical | Low |
+| F4 | Auth bypassed | Fine for thesis | Deferred |
+| F5 | No workflow templates | Users start from scratch | Deferred |
+
+## 11. CROSS-REFERENCES
 
 - `README.md`: General project overview and setup instructions.
 - `backend/lib/entity_extraction/AGENTS.md`: Technical details of the V2 extraction logic.
@@ -261,27 +330,27 @@ These artifacts are essential for maintaining the state of the knowledge base an
 - `backend/docs/PIPELINE_AUDIT_2026-02-02.md`: Audit of the current data state.
 - `/LAB/@thesis/datalab.archive/`: External backup of the original DataLab project.
 
-## 11. WORKFLOW ENGINE
+## 12. WORKFLOW ENGINE
 
 The system includes an autonomous workflow orchestration engine located in `backend/app/workflow/`. It enables complex multi-step reasoning and tool-augmented execution.
 
-### 11.1 Key Components
+### 12.1 Key Components
 - **WorkflowEngine**: Central orchestrator managing state, graph traversal, and execution flow.
 - **CodeSandbox**: Docker-based execution environment for safe Python code evaluation.
 - **Graph & TreeNode**: Recursive data structures for modeling complex workflow DAGs.
 - **WorkflowCheckpointManager**: Redis-backed state persistence for fault tolerance and recovery.
 - **MCP Tool Bridge**: Integration layer for Model Context Protocol (MCP) tool invocation.
 
-### 11.2 Capabilities
+### 12.2 Capabilities
 - **Stateful Execution**: Context sharing across nodes with loop and recursion limits.
 - **Sandboxed Execution**: Isolated environments for dynamically generated code.
 - **LLM Fault Tolerance**: Circuit breakers and exponential backoff for LLM provider calls.
 
-## 12. TEST SUITE
+## 13. TEST SUITE
 
 The repository maintains a comprehensive test suite using `pytest`. Tests are located in `backend/tests/` and cover unit, functional, and integration levels.
 
-### 12.1 Key Test Modules
+### 13.1 Key Test Modules
 - `test_rag_pipeline.py`: End-to-end RAG workflow verification including retrieval and generation.
 - `test_workflow_engine.py`: Tests for the autonomous workflow orchestration engine.
 - `test_eval_metrics.py`: Verification of IR metrics (MRR, NDCG, etc.) calculation logic.
@@ -290,7 +359,7 @@ The repository maintains a comprehensive test suite using `pytest`. Tests are lo
 - `test_repositories_crud.py`: CRUD operation tests for the database repository layer.
 - `test_performance.py`: Latency and throughput benchmarks for critical paths.
 
-### 12.2 Execution
+### 13.2 Execution
 All tests should be run from the `backend/` directory.
 
 ```bash
@@ -301,7 +370,7 @@ PYTHONPATH=. pytest tests/
 PYTHONPATH=. pytest tests/test_rag_pipeline.py
 ```
 
-### 12.3 Coverage Areas
+### 13.3 Coverage Areas
 - **RAG & Search**: Retrieval precision, HNSW parameter tuning, and hybrid ranking.
 - **Workflows**: Graph traversal integrity and sandbox isolation.
 - **Security**: Password migration, token validation, and API rate limiting.
