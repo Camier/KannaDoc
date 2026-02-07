@@ -1,6 +1,5 @@
 """
-Unified Vector Database Client Factory
-Supports switching between Milvus and Qdrant based on VECTOR_DB environment variable.
+Milvus-only vector database wrapper
 """
 
 from app.core.config import settings
@@ -19,7 +18,6 @@ class VectorDBClientWrapper:
         from app.db.milvus import milvus_client
 
         self.client = milvus_client
-        self._is_qdrant = False
 
     def check_collection(self, collection_name):
         return self.client.check_collection(collection_name)

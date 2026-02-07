@@ -243,7 +243,6 @@ services:
       - ALLOWED_ORIGINS=${ALLOWED_ORIGINS}
       # Default: use the host/system Milvus stack via host.docker.internal.
       - MILVUS_URI=${MILVUS_URI:-http://host.docker.internal:19530}
-      - QDRANT_URL=http://qdrant:6333
       - VECTOR_DB=${VECTOR_DB:-milvus}
       - KAFKA_RETRY_BACKOFF_MS=${KAFKA_RETRY_BACKOFF_MS:-5000}
       - KAFKA_SESSION_TIMEOUT_MS=${KAFKA_SESSION_TIMEOUT_MS:-30000}

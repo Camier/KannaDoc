@@ -199,7 +199,9 @@ class ChatService:
         if provider_l != "deepseek":
             return False
         # Official DeepSeek API uses deepseek-reasoner. Keep matching strict.
-        return model_l == "deepseek-reasoner" or ("deepseek" in model_l and "reasoner" in model_l)
+        return model_l == "deepseek-reasoner" or (
+            "deepseek" in model_l and "reasoner" in model_l
+        )
 
     @staticmethod
     def _build_optional_openai_args(
@@ -416,7 +418,11 @@ class ChatService:
                 max_len_raw = int(tuned.get("max_tokens", 4096))
             # Only apply top_p if we explicitly set it to a non-sentinel value.
             tuned_top_p = tuned.get("top_p", -1)
-            if top_p_raw == -1 and isinstance(tuned_top_p, (int, float)) and tuned_top_p != -1:
+            if (
+                top_p_raw == -1
+                and isinstance(tuned_top_p, (int, float))
+                and tuned_top_p != -1
+            ):
                 top_p_raw = float(tuned_top_p)
 
         temperature = ChatService._normalize_temperature(float(temp_raw))
@@ -565,7 +571,9 @@ class ChatService:
                         collection_name = to_milvus_collection_name(base["baseId"])
                         # Track mapping so fallback `file_used` can report the KB id, not the Milvus collection name.
                         # This keeps the frontend "From:" label stable even when Mongo metadata is missing.
-                        collection_name_to_base_id[collection_name] = str(base.get("baseId") or collection_name)
+                        collection_name_to_base_id[collection_name] = str(
+                            base.get("baseId") or collection_name
+                        )
                         try:
                             t_start = time.perf_counter()
                             if is_workflow:
@@ -605,13 +613,18 @@ class ChatService:
                     )
                     cut_score = sorted_score[:top_K]
                     distinct_files = len(
-                        {str(s.get("file_id")) for s in cut_score if s.get("file_id") is not None}
+                        {
+                            str(s.get("file_id"))
+                            for s in cut_score
+                            if s.get("file_id") is not None
+                        }
                     )
                     distinct_pages = len(
                         {
                             (str(s.get("file_id")), int(s.get("page_number")))
                             for s in cut_score
-                            if s.get("file_id") is not None and s.get("page_number") is not None
+                            if s.get("file_id") is not None
+                            and s.get("page_number") is not None
                         }
                     )
 
@@ -664,7 +677,9 @@ class ChatService:
                         fallback_text_used = 0
                         fallback_text_cap = min(
                             int(getattr(settings, "rag_fallback_text_cap", 20)),
-                            int(top_K) if top_K and top_K > 0 else int(getattr(settings, "rag_fallback_text_cap", 20)),
+                            int(top_K)
+                            if top_K and top_K > 0
+                            else int(getattr(settings, "rag_fallback_text_cap", 20)),
                         )
 
                         for score, file_and_image_info in zip(cut_score, file_infos):
@@ -686,7 +701,9 @@ class ChatService:
                                     pn = int(score.get("page_number") or 0)
                                     if fid and pn > 0:
                                         preview = (
-                                            previews_by_collection.get(coll, {}).get((fid, pn))
+                                            previews_by_collection.get(coll, {}).get(
+                                                (fid, pn)
+                                            )
                                             or ""
                                         )
                                         filename = score.get("filename") or fid
@@ -698,7 +715,10 @@ class ChatService:
                                             api_base, file_id=fid
                                         )
                                         thesis_image_url = build_thesis_page_image_url(
-                                            api_base, file_id=fid, page_number=pn, dpi=150
+                                            api_base,
+                                            file_id=fid,
+                                            page_number=pn,
+                                            dpi=150,
                                         )
 
                                         file_used.append(
@@ -714,14 +734,19 @@ class ChatService:
                                                 "file_id": fid,
                                                 "page_number": pn,
                                                 "image_id": score.get("image_id"),
-                                                "text_preview": preview[:1200] if preview else "",
+                                                "text_preview": preview[:1200]
+                                                if preview
+                                                else "",
                                                 "image_url": thesis_image_url,
                                                 "file_url": thesis_pdf_url,
                                             }
                                         )
                                         rag_hits += 1
 
-                                        if preview and fallback_text_used < fallback_text_cap:
+                                        if (
+                                            preview
+                                            and fallback_text_used < fallback_text_cap
+                                        ):
                                             injected = preview[:1200]
                                             content.append(
                                                 {
@@ -734,7 +759,10 @@ class ChatService:
                                             )
                                             fallback_text_used += 1
                                 except Exception:
-                                    pass
+                                    logger.debug(
+                                        "Non-critical fallback text extraction failed",
+                                        exc_info=True,
+                                    )
                                 continue
 
                             # Optional: attach extracted text preview (if available) even when Mongo matches.
@@ -743,7 +771,8 @@ class ChatService:
                                 fid = str(score.get("file_id") or "")
                                 pn = int(score.get("page_number") or 0)
                                 preview = (
-                                    previews_by_collection.get(coll, {}).get((fid, pn)) or ""
+                                    previews_by_collection.get(coll, {}).get((fid, pn))
+                                    or ""
                                 )
                             except Exception:
                                 preview = ""
