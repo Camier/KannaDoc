@@ -220,6 +220,7 @@ class ChatService:
     ) -> dict[str, Any]:
         """Translate normalized config -> OpenAI-compatible request kwargs."""
         optional_args: dict[str, Any] = {}
+        provider_l = (provider or "").strip().lower()
 
         is_deepseek_reasoner = ChatService._is_deepseek_reasoner_model(
             model_name=model_name,
@@ -236,12 +237,26 @@ class ChatService:
                 optional_args["max_completion_tokens"] = max_length
             return optional_args
 
+        # Provider-aware bounds: some OpenAI-compatible providers document a narrower
+        # temperature range than the OpenAI API (0..2). We clamp only when provider is
+        # explicit (or detected and trusted) to avoid breaking arbitrary proxies.
+        if temperature != -1:
+            if provider_l in ("anthropic", "minimax", "zai", "zhipu", "zhipu-coding"):
+                temperature = max(0.0, min(float(temperature), 1.0))
+
         if temperature != -1:
             optional_args["temperature"] = temperature
         if max_length != -1:
             optional_args["max_tokens"] = max_length
         if top_p != -1:
-            optional_args["top_p"] = top_p
+            # Anthropic docs note that for some models you cannot specify both
+            # temperature and top_p. Prefer temperature in that case.
+            if provider_l == "anthropic" and temperature != -1:
+                logger.info(
+                    "Anthropic provider: dropping top_p because temperature is set (compat)."
+                )
+            else:
+                optional_args["top_p"] = top_p
         return optional_args
 
     @staticmethod
@@ -800,6 +815,40 @@ class ChatService:
                 f"mode={'workflow' if is_workflow else 'rag'}"
             )
 
+        # Emit retrieval evidence early (before provider/client init).
+        #
+        # Rationale:
+        # - For RAG debugging, clients need `file_used` even when the LLM provider
+        #   is misconfigured or temporarily unavailable.
+        # - This makes the pipeline observable end-to-end without depending on the
+        #   LLM call succeeding.
+        file_used_payload = json.dumps(
+            {
+                "type": "file_used",
+                "data": file_used,
+                "message_id": message_id,
+                "model_name": model_name,
+            }
+        )
+
+        if is_workflow:
+            # Workflow mode: yield without SSE wrapper
+            yield f"{file_used_payload}"
+
+            # Also send user_images in workflow mode
+            user_images_payload = json.dumps(
+                {
+                    "type": "user_images",
+                    "data": user_images,
+                    "message_id": message_id,
+                    "model_name": model_name,
+                }
+            )
+            yield f"{user_images_payload}"
+        else:
+            # RAG mode: wrap in SSE format
+            yield f"data: {file_used_payload}\n\n"
+
         # Use provider client for direct API access (no LiteLLM proxy)
         # If model_url is provided (legacy), use it; otherwise auto-detect provider
         try:
@@ -902,34 +951,6 @@ class ChatService:
             else:
                 yield f"data: {payload}\n\n"
             return
-
-        # Send file_used payload
-        file_used_payload = json.dumps(
-            {
-                "type": "file_used",
-                "data": file_used,
-                "message_id": message_id,
-                "model_name": model_name,
-            }
-        )
-
-        if is_workflow:
-            # Workflow mode: yield without SSE wrapper
-            yield f"{file_used_payload}"
-
-            # Also send user_images in workflow mode
-            user_images_payload = json.dumps(
-                {
-                    "type": "user_images",
-                    "data": user_images,
-                    "message_id": message_id,
-                    "model_name": model_name,
-                }
-            )
-            yield f"{user_images_payload}"
-        else:
-            # RAG mode: wrap in SSE format
-            yield f"data: {file_used_payload}\n\n"
 
         # Process streaming response
         try:
