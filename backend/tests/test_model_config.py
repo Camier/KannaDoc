@@ -454,6 +454,22 @@ class TestModelConfigBaseValidation:
                 model_name="completely-unknown-model", api_key="valid-api-key-12345678"
             )
 
+    def test_model_name_unknown_allowed_with_explicit_provider(self, clean_env):
+        """If provider is explicit, allow unknown model ids (forward-compatible).
+
+        This matters for OpenAI-compatible providers where model ids may change faster
+        than our static providers.yaml list.
+        """
+        from app.models.model_config import ModelConfigBase
+
+        cfg = ModelConfigBase(
+            model_name="abab6.5s-chat",
+            provider="minimax",
+            api_key="sk-abcdefghij",
+        )
+        assert cfg.model_name == "abab6.5s-chat"
+        assert cfg.provider == "minimax"
+
     def test_model_name_valid_known_model(self, zai_env):
         """Verify valid model names are accepted."""
         from app.models.model_config import ModelConfigBase

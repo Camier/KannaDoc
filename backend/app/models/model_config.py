@@ -1,5 +1,7 @@
 from typing import List, Optional
-from pydantic import BaseModel, field_validator
+
+from pydantic import BaseModel, field_validator, model_validator
+
 from app.rag.provider_client import ProviderClient
 
 
@@ -24,9 +26,6 @@ class ModelConfigBase(BaseModel):
     def validate_model_name(cls, v: str) -> str:
         if not v or len(v.strip()) < 2:
             raise ValueError("model_name must be at least 2 characters")
-        provider = ProviderClient.get_provider_for_model(v)
-        if not provider:
-            raise ValueError(f"Unknown model: {v}. Cannot detect provider.")
         return v.strip()
 
     @field_validator("provider")
@@ -40,6 +39,25 @@ class ModelConfigBase(BaseModel):
                 f"Unknown provider: {v}. Valid providers: {known_providers}"
             )
         return v
+
+    @model_validator(mode="after")
+    def validate_or_infer_provider(self) -> "ModelConfigBase":
+        """Infer provider from model_name when not explicitly provided.
+
+        Rationale:
+        - If the user supplies an explicit provider (e.g. `minimax`), we should not
+          reject new/unknown model ids solely because they are not yet listed in
+          `providers.yaml`.
+        - If provider is omitted, keep the existing safety behavior: unknown model
+          ids are rejected because we cannot route them.
+        """
+        if self.provider is None:
+            detected = ProviderClient.get_provider_for_model(self.model_name)
+            if not detected:
+                raise ValueError(
+                    f"Unknown model: {self.model_name}. Cannot detect provider."
+                )
+        return self
 
     @field_validator("api_key")
     @classmethod

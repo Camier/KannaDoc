@@ -257,9 +257,9 @@ class ChatService:
         if max_length != -1:
             optional_args["max_tokens"] = max_length
         if top_p != -1:
-            # Anthropic docs note that for some models you cannot specify both
-            # temperature and top_p. Prefer temperature in that case.
-            # In this stack, apply that rule to Claude models proxied via CLIProxyAPI.
+            # Anthropic recommends adjusting *either* temperature or top_p (not both),
+            # and some Claude variants may reject requests that specify both.
+            # In this stack, we apply the conservative rule to Claude models proxied via CLIProxyAPI.
             if is_claude_via_cliproxyapi and temperature != -1:
                 logger.info(
                     "Claude via CLIProxyAPI: dropping top_p because temperature is set (compat)."
