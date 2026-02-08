@@ -28,11 +28,6 @@ from app.db.vector_db import vector_db_client
 from app.rag.get_embedding import get_embeddings_from_httpx, get_sparse_embeddings
 from app.rag.utils import replace_image_content, sort_and_filter
 from app.rag.message import find_depth_parent_mesage
-from app.rag.provider_registry import (
-    get_llm_client,
-    ProviderRegistry,
-    resolve_api_model_name,
-)
 from app.core.config import settings
 from app.core.embeddings import normalize_multivector, downsample_multivector
 from app.utils.ids import to_milvus_collection_name
@@ -50,7 +45,6 @@ class ChatService:
 
     @staticmethod
     def _validate_and_normalize_param(value: Any, param_name: str, validator) -> Any:
-        """Validate and normalize a parameter value."""
         return validator(value)
 
     @staticmethod
@@ -63,14 +57,12 @@ class ChatService:
         """
         if temperature < 0 and not temperature == -1:
             return 0
-        # Pydantic validator allows up to 2.0; keep ChatService consistent.
         elif temperature > 2:
             return 2
         return temperature
 
     @staticmethod
     def _normalize_max_length(max_length: int) -> int:
-        """Normalize max_length parameter."""
         if max_length < 1024 and not max_length == -1:
             return 1024
         elif max_length > 1048576:
@@ -79,7 +71,6 @@ class ChatService:
 
     @staticmethod
     def _normalize_top_p(top_p: float) -> float:
-        """Normalize top_p parameter."""
         if top_p < 0 and not top_p == -1:
             return 0
         elif top_p > 1:
@@ -88,12 +79,10 @@ class ChatService:
 
     @staticmethod
     def _normalize_top_k(top_k: int) -> int:
-        """Normalize top_k parameter."""
         top_k_cap = int(getattr(settings, "rag_top_k_cap", 120))
         default_top_k = int(getattr(settings, "rag_default_top_k", 50))
         sparse_min_k = int(getattr(settings, "rag_search_limit_min", 50))
 
-        # Thesis sparse/dual modes need enough breadth to diversify across files/pages.
         retrieval_mode = getattr(settings, "rag_retrieval_mode", "dense")
         if retrieval_mode == "dense" and getattr(settings, "rag_hybrid_enabled", False):
             retrieval_mode = "hybrid"
@@ -107,9 +96,7 @@ class ChatService:
 
     @staticmethod
     def _normalize_score_threshold(score_threshold: float) -> float:
-        """Normalize score_threshold parameter."""
         if score_threshold == -1:
-            # Thesis default: treat -1 as "no filter" (environment-tunable).
             return float(getattr(settings, "rag_default_score_threshold", 0.0))
         elif score_threshold < 0:
             return 0
@@ -118,172 +105,27 @@ class ChatService:
         return score_threshold
 
     @staticmethod
-    def _is_system_model(model_config: Optional[Dict[str, Any]]) -> bool:
-        model_id = str((model_config or {}).get("model_id") or "")
-        return model_id.startswith("system_")
-
-    @staticmethod
-    def _resolve_effective_provider(
-        *,
-        provider: Optional[str],
-        model_url: Optional[str],
-        model_name: str,
-    ) -> Optional[str]:
-        """Resolve the effective provider for provider-specific behavior.
-
-        Rationale:
-        - If the user provides an explicit provider, trust it.
-        - If the user provides an explicit OpenAI-compatible model_url, do NOT apply
-          provider-specific special-cases based on the model name alone. That avoids
-          breaking proxied/self-hosted endpoints (e.g., a proxy serving a model named
-          "deepseek-reasoner" but still supporting standard temperature/top_p).
-        - Otherwise, fall back to provider detection by model name.
-        """
-        p = (provider or "").strip().lower() or None
-        if p:
-            return p
-        if model_url and str(model_url).startswith("http"):
-            return None
-        return ProviderRegistry.get_provider_for_model(model_name)
-
-    @staticmethod
-    def _tuned_generation_defaults(
-        provider: Optional[str],
-        model_name: str,
-    ) -> dict[str, Any]:
-        # TODO(rationalize): likely dead code — defaults now come from
-        # ProviderRegistry.get_generation_defaults() via Repository at
-        # insert time.  Kept as safety-net for legacy -1 sentinels still
-        # in MongoDB.  Remove once all stored configs are backfilled.
-        """Provider-aware defaults for "academic/RAG" chat generation.
-
-        These defaults are ONLY applied for system_* models (see below) when the stored
-        config uses the -1 sentinel (meaning "provider default").
-
-        Goals:
-        - Lower hallucination risk
-        - Stable, sober academic tone
-        - Avoid overspecifying params that some providers might not support
-        """
-        provider_l = (provider or "").strip().lower()
-        model_l = (model_name or "").strip().lower()
-
-        # Conservative defaults; callers decide which fields to apply.
-        # Note: we intentionally do NOT force top_p by default to reduce the chance of
-        # provider incompatibility. Temperature alone typically achieves the main goal.
-        defaults: dict[str, Any] = {
-            "temperature": 0.2,
-            "max_tokens": 4096,
-            "top_p": -1,
-        }
-
-        # Slight tweaks for smaller/faster models: cap output to reduce runaway.
-        if any(x in model_l for x in ["flash", "lite"]):
-            defaults["max_tokens"] = 3072
-
-        # DeepSeek reasoning models are handled separately (no temperature/top_p).
-        if provider_l == "deepseek" and ("reasoner" in model_l):
-            defaults["max_tokens"] = 4096
-
-        return defaults
-
-    @staticmethod
-    def _is_deepseek_reasoner_model(
-        model_name: str,
-        provider: Optional[str],
-    ) -> bool:
-        """DeepSeek reasoner detection must be provider-aware.
-
-        Example bug we avoid:
-        - model_name="deepseek-r1" served via provider="ollama-cloud" should NOT be treated
-          as the official DeepSeek reasoner API.
-        """
-        provider_l = (provider or "").strip().lower()
-        model_l = (model_name or "").strip().lower()
-        if provider_l not in ("deepseek", "cliproxyapi"):
-            return False
-        return model_l == "deepseek-reasoner" or (
-            "deepseek" in model_l and "reasoner" in model_l
-        )
-
-    @staticmethod
     def _build_optional_openai_args(
         *,
         model_name: str,
-        provider: Optional[str],
         temperature: float,
         max_length: int,
         top_p: float,
     ) -> dict[str, Any]:
-        """Translate normalized config -> OpenAI-compatible request kwargs."""
         optional_args: dict[str, Any] = {}
-        provider_l = (provider or "").strip().lower()
-        model_l = (model_name or "").strip().lower()
-
-        # In this repo, Claude/Gemini models are typically accessed via "antigravity"
-        # behind the OpenAI-compatible CLIProxyAPI provider ("cliproxyapi").
-        # There is no standalone "anthropic" provider id.
-        is_claude_via_cliproxyapi = provider_l == "cliproxyapi" and "claude" in model_l
-
-        is_deepseek_reasoner = ChatService._is_deepseek_reasoner_model(
-            model_name=model_name,
-            provider=provider,
-        )
-
-        if is_deepseek_reasoner:
-            # DeepSeek reasoning mode: remove unsupported parameters
-            logger.info(
-                f"DeepSeek reasoning model detected ({model_name}). "
-                f"Temperature and top_p are not supported in reasoning mode."
-            )
-            if max_length != -1:
-                # DeepSeek's OpenAI-compatible Chat Completions API uses max_tokens.
-                optional_args["max_tokens"] = max_length
-            return optional_args
-
-        # Provider-aware bounds: some OpenAI-compatible providers document a narrower
-        # temperature range than the OpenAI API (0..2). We clamp only when provider is
-        # explicit (or detected and trusted) to avoid breaking arbitrary proxies.
-        if temperature != -1:
-            if provider_l == "minimax":
-                # MiniMax docs use a strict (0, 1] temperature range (0.0 may be rejected).
-                temperature = max(0.01, min(float(temperature), 1.0))
-            elif provider_l == "zai":
-                # Z.ai docs use [0, 1] for temperature.
-                temperature = max(0.0, min(float(temperature), 1.0))
-            if is_claude_via_cliproxyapi:
-                temperature = max(0.0, min(float(temperature), 1.0))
 
         if temperature != -1:
             optional_args["temperature"] = temperature
         if max_length != -1:
             optional_args["max_tokens"] = max_length
         if top_p != -1:
-            # Provider-aware bounds: some OpenAI-compatible providers document a stricter
-            # lower bound than OpenAI's [0, 1]. We only clamp when provider is explicit
-            # (or detected and trusted) to avoid breaking arbitrary proxies.
-            if provider_l == "minimax":
-                # MiniMax docs often specify (0, 1]; avoid sending 0.0.
-                top_p = max(0.01, min(float(top_p), 1.0))
-            elif provider_l == "zai":
-                # Z.ai docs specify top_p in [0.01, 1].
-                top_p = max(0.01, min(float(top_p), 1.0))
-
-            # Anthropic recommends adjusting *either* temperature or top_p (not both),
-            # and some Claude variants may reject requests that specify both.
-            # In this stack, we apply the conservative rule to Claude models proxied via CLIProxyAPI.
-            if is_claude_via_cliproxyapi and temperature != -1:
-                logger.info(
-                    "Claude via CLIProxyAPI: dropping top_p because temperature is set (compat)."
-                )
-            else:
-                optional_args["top_p"] = top_p
+            optional_args["top_p"] = top_p
         return optional_args
 
     @staticmethod
     @llm_service_circuit
     async def create_chat_stream(
-        user_message_content,  # Union[UserMessage from conversation or workflow]
+        user_message_content,
         model_config: Optional[Dict[str, Any]] = None,
         message_id: Optional[str] = None,
         system_prompt: Optional[str] = None,
@@ -314,7 +156,6 @@ class ChatService:
         """
         repo_manager = await get_repository_manager()
 
-        # Avoid mutable default argument pitfalls.
         user_image_urls = user_image_urls or []
         quote_variables = quote_variables or {}
 
@@ -325,7 +166,6 @@ class ChatService:
         t_minio_s = 0.0
         rag_hits = 0
 
-        # Stream/session state
         is_aborted = False
         had_error = False
         thinking_content = []
@@ -336,15 +176,12 @@ class ChatService:
         client = None
         file_used: list = []
 
-        # Determine mode and fetch config if needed
         if is_workflow:
-            # Workflow mode: model_config and system_prompt provided
             if not model_config:
                 raise ValueError("Workflow mode requires model_config parameter")
             if not message_id:
                 raise ValueError("Workflow mode requires message_id parameter")
 
-            # Validate required keys exist in workflow model_config
             required_keys = ["model_name", "model_url", "api_key", "base_used"]
             missing_keys = [k for k in required_keys if k not in model_config]
             if missing_keys:
@@ -355,14 +192,11 @@ class ChatService:
             model_name = model_config["model_name"]
             model_url = model_config["model_url"]
             api_key = model_config["api_key"]
-            provider = model_config.get("provider")
             base_used = model_config["base_used"]
 
-            # Use provided system_prompt or empty
             if system_prompt is None:
                 system_prompt = ""
         else:
-            # RAG mode: fetch config from database
             if not message_id:
                 raise ValueError("RAG mode requires message_id parameter")
 
@@ -380,7 +214,6 @@ class ChatService:
             model_name = model_config.get("model_name")
             model_url = model_config.get("model_url")
             api_key = model_config.get("api_key")
-            provider = model_config.get("provider")
             base_used = model_config.get("base_used") or []
             system_prompt = model_config.get("system_prompt") or ""
 
@@ -389,18 +222,10 @@ class ChatService:
 
         system_prompt = cast(str, system_prompt or "")
 
-        # Truncate system prompt if too long
         if len(system_prompt) > 1048576:
             system_prompt = system_prompt[0:1048576]
 
-        # Normalize parameters (with thesis-specific tuned defaults for system_* models).
-        effective_provider = ChatService._resolve_effective_provider(
-            provider=provider,
-            model_url=model_url,
-            model_name=model_name,
-        )
-        is_system_model = ChatService._is_system_model(model_config)
-
+        # Normalize parameters
         if is_workflow:
             temp_raw = model_config["temperature"]
             max_len_raw = model_config["max_length"]
@@ -409,24 +234,6 @@ class ChatService:
             temp_raw = model_config.get("temperature", -1)
             max_len_raw = model_config.get("max_length", -1)
             top_p_raw = model_config.get("top_P", -1)
-
-        if is_system_model:
-            tuned = ChatService._tuned_generation_defaults(
-                provider=effective_provider,
-                model_name=model_name,
-            )
-            if temp_raw == -1:
-                temp_raw = float(tuned.get("temperature", 0.2))
-            if max_len_raw == -1:
-                max_len_raw = int(tuned.get("max_tokens", 4096))
-            # Only apply top_p if we explicitly set it to a non-sentinel value.
-            tuned_top_p = tuned.get("top_p", -1)
-            if (
-                top_p_raw == -1
-                and isinstance(tuned_top_p, (int, float))
-                and tuned_top_p != -1
-            ):
-                top_p_raw = float(tuned_top_p)
 
         temperature = ChatService._normalize_temperature(float(temp_raw))
         max_length = ChatService._normalize_max_length(int(max_len_raw))
@@ -468,7 +275,6 @@ class ChatService:
             for i in range(len(history_messages), 0, -1):
                 messages.append(history_messages[i - 1])
         elif not is_workflow:
-            # RAG mode always fetches history
             history_messages = await find_depth_parent_mesage(
                 user_message_content.conversation_id,
                 user_message_content.parent_id,
@@ -486,7 +292,6 @@ class ChatService:
         distinct_files = 0
         distinct_pages = 0
 
-        # Handle temp_db_id (standardized field name)
         temp_db_id = getattr(user_message_content, "temp_db_id", "") or getattr(
             user_message_content, "temp_db", ""
         )
@@ -498,9 +303,7 @@ class ChatService:
         if bases:
             result_score = []
 
-            # Safeguard RAG block to ensure chat continues even if retrieval fails
             try:
-                # Retrieval is best-effort: if embedding/search fails, continue without RAG context
                 query_vecs = []
                 try:
                     t_start = time.perf_counter()
@@ -517,9 +320,7 @@ class ChatService:
                 except Exception as e:
                     logger.warning(f"RAG retrieval skipped (embedding failed): {e}")
 
-                # Generate sparse embeddings for hybrid search
                 retrieval_mode = getattr(settings, "rag_retrieval_mode", "dense")
-                # Backward compatibility: older deployments only used rag_hybrid_enabled.
                 if retrieval_mode == "dense" and getattr(
                     settings, "rag_hybrid_enabled", False
                 ):
@@ -539,7 +340,6 @@ class ChatService:
                         if sparse_result and len(sparse_result) > 0:
                             sparse_query = sparse_result[0]
                             if retrieval_mode == "hybrid":
-                                # Hybrid search uses a per-token query list, so we replicate the single sparse vector.
                                 sparse_vecs = [sparse_query] * len(query_vecs)
                     except Exception as e:
                         logger.warning(
@@ -547,11 +347,6 @@ class ChatService:
                         )
 
                 if query_vecs:
-                    # Prepare search data based on retrieval mode.
-                    # - dense: query_vecs only
-                    # - hybrid: dense_vecs + sparse_vecs (length-matched)
-                    # - sparse_then_rerank: sparse recall on page-level collection -> exact MaxSim rerank on patch collection
-                    # - dual_then_rerank: sparse page recall + dense patch recall -> fuse candidates -> exact MaxSim rerank
                     if (
                         retrieval_mode in ["sparse_then_rerank", "dual_then_rerank"]
                         and sparse_query
@@ -572,15 +367,12 @@ class ChatService:
                     collection_name_to_base_id: dict[str, str] = {}
                     for base in bases:
                         collection_name = to_milvus_collection_name(base["baseId"])
-                        # Track mapping so fallback `file_used` can report the KB id, not the Milvus collection name.
-                        # This keeps the frontend "From:" label stable even when Mongo metadata is missing.
                         collection_name_to_base_id[collection_name] = str(
                             base.get("baseId") or collection_name
                         )
                         try:
                             t_start = time.perf_counter()
                             if is_workflow:
-                                # Workflow mode: check collection first
                                 if vector_db_client.check_collection(collection_name):
                                     scores = vector_db_client.search(
                                         collection_name, data=search_data, topk=top_K
@@ -591,7 +383,6 @@ class ChatService:
                                         )
                                     result_score.extend(scores)
                             else:
-                                # RAG mode: direct search with exception handling
                                 scores = vector_db_client.search(
                                     collection_name, data=search_data, topk=top_K
                                 )
@@ -601,12 +392,10 @@ class ChatService:
                             t_search_s += time.perf_counter() - t_start
                         except Exception as e:
                             if is_workflow:
-                                # Workflow mode logs but doesn't add to results
                                 logger.debug(
                                     f"Collection {collection_name} check failed: {e}"
                                 )
                             else:
-                                # RAG mode logs and continues
                                 logger.debug(
                                     f"Collection {collection_name} not accessible or empty: {e}"
                                 )
@@ -631,12 +420,8 @@ class ChatService:
                         }
                     )
 
-                    # Batch fetch metadata (eliminates N+1 query pattern)
                     if cut_score:
                         t_start = time.perf_counter()
-                        # In some deployments (notably thesis), Mongo may not contain file/image metadata yet.
-                        # We still want to leverage extracted text for RAG, so we prefetch page previews
-                        # from the page-level sparse collection (if present) for fallback context.
                         previews_by_collection: dict[
                             str, dict[tuple[str, int], str]
                         ] = {}
@@ -695,9 +480,6 @@ class ChatService:
                                     f"page_number={score.get('page_number')}"
                                 )
 
-                                # Thesis fallback:
-                                # - Always emit `file_used` so the UI can render References.
-                                # - Optionally inject extracted text if we have it (bounded by cap).
                                 try:
                                     coll = score.get("collection_name") or ""
                                     fid = str(score.get("file_id") or "")
@@ -711,8 +493,6 @@ class ChatService:
                                         )
                                         filename = score.get("filename") or fid
 
-                                        # Use relative URLs so this works behind nginx reverse proxy
-                                        # regardless of SERVER_IP (local dev vs deployed domain).
                                         api_base = settings.api_version_url
                                         thesis_pdf_url = build_thesis_pdf_url(
                                             api_base, file_id=fid
@@ -727,9 +507,6 @@ class ChatService:
                                         file_used.append(
                                             {
                                                 "score": score.get("score", 0.0),
-                                                # No Mongo knowledge_db_id in this environment; use the KB id
-                                                # derived from the collection name (preferred), falling back
-                                                # to the collection name if we cannot map it.
                                                 "knowledge_db_id": collection_name_to_base_id.get(
                                                     coll, coll or "thesis"
                                                 ),
@@ -768,7 +545,6 @@ class ChatService:
                                     )
                                 continue
 
-                            # Optional: attach extracted text preview (if available) even when Mongo matches.
                             try:
                                 coll = score.get("collection_name") or ""
                                 fid = str(score.get("file_id") or "")
@@ -816,7 +592,6 @@ class ChatService:
                 logger.error(
                     f"Critical error in RAG retrieval block: {e}", exc_info=True
                 )
-                # Continue chat execution without RAG context instead of crashing
                 pass
 
         # Build user message content
@@ -829,7 +604,6 @@ class ChatService:
         messages.append(user_message)
 
         # DeepSeek Safety: Strip images if model is text-only.
-        # Also avoid expensive MinIO->base64 conversion when images will be removed anyway.
         if "deepseek" in model_name.lower():
             logger.info(
                 f"Model {model_name} detected as DeepSeek. Stripping image content for compatibility."
@@ -847,7 +621,6 @@ class ChatService:
             send_messages = await replace_image_content(messages)
             t_minio_s += time.perf_counter() - t_start
 
-        # One-line timing log for retrieval stages (best-effort).
         if bases:
             logger.info(
                 "RAG timings "
@@ -867,13 +640,7 @@ class ChatService:
                 f"mode={'workflow' if is_workflow else 'rag'}"
             )
 
-        # Emit retrieval evidence early (before provider/client init).
-        #
-        # Rationale:
-        # - For RAG debugging, clients need `file_used` even when the LLM provider
-        #   is misconfigured or temporarily unavailable.
-        # - This makes the pipeline observable end-to-end without depending on the
-        #   LLM call succeeding.
+        # Emit retrieval evidence early (before client init).
         file_used_payload = json.dumps(
             {
                 "type": "file_used",
@@ -884,10 +651,8 @@ class ChatService:
         )
 
         if is_workflow:
-            # Workflow mode: yield without SSE wrapper
             yield f"{file_used_payload}"
 
-            # Also send user_images in workflow mode
             user_images_payload = json.dumps(
                 {
                     "type": "user_images",
@@ -898,21 +663,18 @@ class ChatService:
             )
             yield f"{user_images_payload}"
         else:
-            # RAG mode: wrap in SSE format
             yield f"data: {file_used_payload}\n\n"
 
-        # Use provider client for direct API access (no LiteLLM proxy)
-        # If model_url is provided (legacy), use it; otherwise auto-detect provider
+        # Create OpenAI-compatible client — user must provide model_url
         try:
-            if model_url and model_url.startswith("http"):
-                # Legacy: explicit URL provided (could be LiteLLM or direct)
-                client = AsyncOpenAI(
-                    api_key=api_key,
-                    base_url=model_url,
+            if not model_url or not str(model_url).startswith("http"):
+                raise ValueError(
+                    f"model_url is required and must be a valid HTTP(S) URL. Got: {model_url!r}"
                 )
-            else:
-                # New: auto-detect provider from model name (or use explicit provider)
-                client = get_llm_client(model_name, api_key=api_key, provider=provider)
+            client = AsyncOpenAI(
+                api_key=api_key or "unused",
+                base_url=model_url,
+            )
         except Exception as e:
             logger.error(f"Error creating LLM client: {str(e)}")
             err_msg = f"""⚠️ **Configuration Error**:
@@ -928,65 +690,33 @@ class ChatService:
                 yield f"data: {payload}\n\n"
             return
 
-        # Build API call parameters
         optional_args = ChatService._build_optional_openai_args(
             model_name=model_name,
-            provider=effective_provider,
             temperature=temperature,
             max_length=max_length,
             top_p=top_P,
         )
 
-        # Detect provider to handle auto-detection cases (where model_url is None)
-        detected_provider = ProviderRegistry.get_provider_for_model(model_name)
-        provider_for_stream = effective_provider or detected_provider
-
-        # Fail fast if provider detection fails and no explicit URL provided
-        if not detected_provider and not model_url:
-            supported = ProviderRegistry.get_all_providers()
-            raise ValueError(
-                f"Cannot detect provider for model '{model_name}'. "
-                f"Either use a known model name or provide an explicit model_url. "
-                f"Supported providers: {supported}"
+        # Zhipu/Z.ai APIs don't support stream_options — detect from model_url
+        is_zhipu = False
+        if model_url:
+            url_lower = model_url.lower()
+            name_lower = model_name.lower()
+            is_zhipu = (
+                "zhipu" in url_lower
+                or "bigmodel" in url_lower
+                or "z.ai" in url_lower
+                or ("glm" in name_lower and "open.bigmodel" in url_lower)
             )
-
-        logger.debug(
-            f"model_name={model_name}, detected_provider={detected_provider}, model_url={model_url}"
-        )
-
-        # Zhipu API doesn't support stream_options parameter
-        if model_url:
-            is_zhipu = "glm" in model_name.lower() or "zhipu" in model_url.lower()
-        else:
-            # Strictly identify Zhipu/Z.ai providers to suppress stream_options
-            # Sending stream_options to Zhipu causes API errors/empty responses
-            is_zhipu = provider_for_stream in ("zhipu", "zhipu-coding", "zai")
-
-        # Z.ai accepts lowercase model names (glm-4.7)
-        if model_url:
-            is_zai = "z.ai" in model_url.lower()
-        else:
-            is_zai = provider_for_stream == "zai"
-
-        # Map legacy/alias model name for provider API calls
-        api_model_name = resolve_api_model_name(
-            model_name, provider=provider_for_stream
-        )
-
-        logger.debug(
-            f"is_zhipu={is_zhipu}, is_zai={is_zai}, api_model_name={api_model_name}"
-        )
 
         stream_kwargs: Dict[str, Any] = {"stream": True}
         if not is_zhipu:
             stream_kwargs["stream_options"] = {"include_usage": True}
 
-        logger.debug(f"stream_kwargs={stream_kwargs}")
-
         # Call API with streaming
         try:
             response = await client.chat.completions.create(
-                model=api_model_name,
+                model=model_name,
                 messages=cast(Any, send_messages),  # type: ignore[arg-type]
                 **stream_kwargs,
                 **optional_args,
@@ -1012,7 +742,6 @@ class ChatService:
                 if chunk.choices:
                     delta = chunk.choices[0].delta
 
-                    # Handle reasoning content (thinking)
                     if (
                         hasattr(delta, "reasoning_content")
                         and delta.reasoning_content is not None
@@ -1032,7 +761,6 @@ class ChatService:
                         else:
                             yield f"data: {payload}\n\n"
 
-                    # Handle regular content
                     content = delta.content if delta else None
                     if content:
                         if not full_response and thinking_content:
@@ -1047,7 +775,6 @@ class ChatService:
                         else:
                             yield f"data: {payload}\n\n"
                 else:
-                    # Handle token usage
                     if hasattr(chunk, "usage") and chunk.usage is not None:
                         total_token = chunk.usage.total_tokens
                         completion_tokens = chunk.usage.completion_tokens
@@ -1088,7 +815,6 @@ class ChatService:
  ```"""
             full_response.append(err_msg)
 
-            # Send error to frontend
             payload = json.dumps(
                 {"type": "text", "data": err_msg, "message_id": message_id}
             )
@@ -1109,7 +835,6 @@ class ChatService:
                         f"Failed to close OpenAI client cleanly: {close_error}"
                     )
 
-            # Handle empty response
             if not full_response:
                 had_error = True
                 full_response.append(
@@ -1119,9 +844,7 @@ class ChatService:
  ```"""
                 )
 
-            # Save to database based on mode
             if is_workflow and save_to_db:
-                # Workflow mode: optional saving with template replacement
                 from app.workflow.utils import replace_template
 
                 ai_response = "".join(full_response)
@@ -1129,7 +852,6 @@ class ChatService:
                     ai_response = replace_template(ai_response, quote_variables)
                 ai_message = {"role": "assistant", "content": ai_response}
 
-                # Use provided user_image_urls or fall back to retrieved images
                 if not user_image_urls:
                     user_image_urls = user_images
 
@@ -1152,7 +874,6 @@ class ChatService:
                     prompt_tokens=prompt_tokens,
                 )
             elif not is_workflow:
-                # RAG mode: always save
                 ai_message = {"role": "assistant", "content": "".join(full_response)}
                 try:
                     await repo_manager.conversation.add_turn(

@@ -143,11 +143,9 @@ Embedding calls:
   - local `model-server` via HTTP (`settings.model_server_url`, default `http://model-server:8005`)
   - or Jina API when `EMBEDDING_MODEL=jina_embeddings_v4` and `JINA_API_KEY` is set
 
-LLM provider selection:
-- `backend/app/rag/provider_client.py` + `backend/app/core/llm/providers.yaml`
-  - OpenAI-compatible clients (via `openai.AsyncOpenAI`) for multiple providers
-  - Special resolution for GLM models: ZAI takes precedence over Zhipu when both keys present
-  - CLIProxyAPI takes precedence when `CLIPROXYAPI_BASE_URL` is set
+LLM configuration:
+- Stored per-user in MongoDB (see `backend/app/db/repositories/model_config.py`).
+- The backend expects explicit `model_name`, `model_url`, and `api_key` (OpenAI-compatible base URL) (see `backend/app/core/llm/chat_service.py`).
 
 ### Workflow engine
 - `backend/app/workflow/` — workflow execution + sandbox + MCP tools integration

@@ -1,6 +1,10 @@
 # LAYRA Project - Complete Change Log
 
-**Last Updated:** 2026-02-05
+**Last Updated:** 2026-02-08
+
+NOTE: Sections referencing `ProviderRegistry` / `providers.yaml` describe historical work (2026-02-05).
+Those components were removed in the subsequent provider simplification (2026-02-08) in favor of direct per-user
+LLM configuration (`model_name`, `model_url`, `api_key`) stored in MongoDB.
 
 ---
 

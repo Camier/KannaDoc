@@ -81,6 +81,14 @@ async def get_task_progress(
 async def workflow_sse(
     task_id: str,
 ):
+    def _decode_redis_value(value):
+        if isinstance(value, bytes):
+            return value.decode("utf-8", errors="replace")
+        return value
+
+    def _decode_redis_dict(d: dict) -> dict:
+        return {_decode_redis_value(k): _decode_redis_value(v) for k, v in d.items()}
+
     def _parse_message(parsed_msg: dict) -> dict:
         if parsed_msg.get("type") == "node":
             return {
@@ -140,7 +148,8 @@ async def workflow_sse(
         event_stream_key = f"workflow:events:{task_id}"
         workflow_key = f"workflow:{task_id}"
         consumer_group = "workflow_group"
-        consumer_name = "sse_consumer"  # 可固定或动态生成（如客户端ID）
+        # Must be unique per connection; a constant consumer name causes clients to steal/ACK each other's messages.
+        consumer_name = f"sse_consumer:{uuid.uuid4().hex}"
 
         # 初始化 Consumer Group（仅需创建一次）
         try:
@@ -152,7 +161,7 @@ async def workflow_sse(
                 raise
 
         # 初始状态检查（避免处理已完成的流程）
-        workflow_status = await redis_conn.hget(workflow_key, "status")
+        workflow_status = _decode_redis_value(await redis_conn.hget(workflow_key, "status"))
         if workflow_status and workflow_status in (
             "completed",
             "failed",
@@ -160,8 +169,8 @@ async def workflow_sse(
             "canceled",
             "vlm_input",
         ):
-            workflow_result = await redis_conn.hget(workflow_key, "result")
-            workflow_error = await redis_conn.hget(workflow_key, "error")
+            workflow_result = _decode_redis_value(await redis_conn.hget(workflow_key, "result"))
+            workflow_error = _decode_redis_value(await redis_conn.hget(workflow_key, "error"))
             yield {
                 "data": json.dumps(
                     {
@@ -203,7 +212,7 @@ async def workflow_sse(
             for stream_name, stream_messages in messages:
                 for msg_id, msg_data in stream_messages:
                     # 解析消息内容
-                    parsed_msg = {k: v for k, v in msg_data.items()}
+                    parsed_msg = _decode_redis_dict(msg_data)
                     response_data = _parse_message(parsed_msg)
 
                     # 返回事件数据
@@ -214,9 +223,9 @@ async def workflow_sse(
                     await redis_conn.xack(event_stream_key, consumer_group, msg_id)
 
                     # 如果工作流终止，结束连接
-                    if response_data.get("event") == "workflow" and parsed_msg[
+                    if response_data.get("event") == "workflow" and parsed_msg.get(
                         "status"
-                    ] in ("completed", "failed", "pause", "canceled", "vlm_input"):
+                    ) in ("completed", "failed", "pause", "canceled", "vlm_input"):
                         return
 
     return EventSourceResponse(event_stream())

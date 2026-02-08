@@ -14,7 +14,220 @@ Academic research fork for thesis work on retrieval evaluation and visual RAG op
 
 This system is optimized for high-precision retrieval from academic PDFs, specifically focusing on ethnobotanical and pharmacological data. It consolidates the original LAYRA RAG framework with the DataLab extraction pipeline, providing a unified end-to-end research platform for "PDF-to-Knowledge" transformation. The architecture is designed to support academic research in the field of ethnopharmacology by providing a robust retrieval and evaluation harness for specialized document sets.
 
-## 2. DIRECTORY STRUCTURE
+## 2. DEVELOPMENT COMMANDS
+
+All backend commands run from `backend/` with `PYTHONPATH=.`. The root `Makefile` wraps common operations.
+
+### 2.1 Quick Reference
+
+| Task | Command |
+|------|---------|
+| **Start stack** | `make up` (standard) · `make up-gpu` (dev/GPU overrides) |
+| **Stop stack** | `make down` |
+| **Rebuild all images** | `make build` |
+| **Rebuild backend only** | `make build-backend` |
+| **Rebuild frontend only** | `make build-frontend` |
+| **Backend logs** | `make logs-backend` |
+| **Frontend logs** | `make logs-frontend` |
+| **Health check** | `make health` |
+| **Shell into backend** | `make ssh-backend` |
+
+### 2.2 Testing
+
+**Backend (pytest)**:
+```bash
+# All backend tests
+make test
+# Or directly:
+cd backend && PYTHONPATH=. pytest
+
+# Single test file
+PYTHONPATH=. pytest tests/test_eval_metrics.py
+
+# Single test by name
+PYTHONPATH=. pytest -k "test_mean_reciprocal_rank"
+
+# Single test by node ID
+PYTHONPATH=. pytest tests/test_eval_metrics.py::test_mean_reciprocal_rank
+
+# By marker
+PYTHONPATH=. pytest -m unit        # fast unit tests
+PYTHONPATH=. pytest -m integration # requires external services
+PYTHONPATH=. pytest -m slow        # long-running tests
+
+# With coverage (CI uses this)
+PYTHONPATH=. pytest --cov=app --cov-report=term-missing
+```
+
+**Frontend (vitest + playwright)**:
+```bash
+# All frontend tests
+make test-frontend
+# Or directly:
+cd frontend && npm run test:run
+
+# Watch mode
+cd frontend && npm run test
+
+# Single file
+cd frontend && npx vitest run tests/components/MyComponent.test.ts
+
+# By pattern
+cd frontend && npx vitest -t "component name"
+
+# E2E
+cd frontend && npx playwright test
+
+# Coverage
+cd frontend && npm run test:coverage
+```
+
+**Both**: `make test-all`
+
+**pytest.ini settings**: `asyncio_mode = auto`, default flags: `-q --tb=short`. Markers: `unit`, `integration`, `slow`.
+
+### 2.3 Linting & Type Checking
+
+```bash
+# Backend — Pyright (configured in pyrightconfig.json, Python 3.10)
+cd backend && pyright app/
+
+# Frontend — ESLint (extends next/core-web-vitals + next/typescript)
+cd frontend && npm run lint
+
+# Frontend — build check (catches TS errors)
+cd frontend && npm run build
+```
+
+### 2.4 CI Pipeline
+
+GitHub Actions (`.github/workflows/test.yml`) runs on push/PR to main:
+- **Backend job**: Python 3.10, `pip install -r requirements.txt`, `pytest --cov=app`
+- **Frontend job**: Node 20, `npm ci && npm run build`
+
+## 3. CODE STYLE GUIDELINES
+
+### 3.1 Python (Backend)
+
+**Imports** — Three groups separated by blank lines:
+```python
+# 1. Standard library
+import math
+from typing import List, Dict, Any, Optional
+from datetime import datetime
+
+# 2. Third-party
+from fastapi import APIRouter, HTTPException
+from pydantic import BaseModel, Field
+
+# 3. Local (absolute from project root)
+from app.core.logging import logger
+from app.db.mongo import get_mongo
+from app.eval.metrics import compute_all_metrics
+```
+Note: `typing` and `datetime` sometimes appear grouped with third-party in older files — prefer stdlib-first in new code.
+
+**Naming**:
+| Element | Convention | Example |
+|---------|-----------|---------|
+| Classes | `PascalCase` | `WorkflowEngine`, `EvalResult` |
+| Functions / variables | `snake_case` | `run_evaluation`, `query_count` |
+| Constants | `UPPER_SNAKE` | `MAX_CONTEXT_SIZE`, `_SAFE_SETTINGS_KEYS` |
+| Private / internal | `_` prefix | `_llm_call_with_retry` |
+| Files / modules | `snake_case` | `knowledge_base.py`, `query_generator.py` |
+
+**Type annotations** — Required on all function signatures:
+```python
+def precision_at_k(relevant_count: int, k: int) -> float: ...
+async def create_evaluation_dataset(request: CreateDatasetRequest) -> dict: ...
+```
+
+**Pydantic models** — Used for API request/response shapes. Use `Field(...)` with descriptions:
+```python
+class CreateDatasetRequest(BaseModel):
+    name: str = Field(..., description="Dataset name (must be unique per KB)")
+    query_count: int = Field(..., ge=1, le=500, description="Number of queries")
+```
+
+**Docstrings** — Google-style, used on modules and complex endpoints:
+```python
+"""Evaluation API endpoints for RAG retrieval quality assessment."""
+
+async def create_evaluation_dataset(request: CreateDatasetRequest):
+    """Create a new evaluation dataset from a knowledge base.
+    Args:
+        request: Dataset creation parameters
+    Returns:
+        Created dataset with metadata
+    Raises:
+        400: Invalid KB ID
+    """
+```
+
+**Error handling**:
+- API layer: raise `HTTPException` with appropriate status codes
+- Core logic: `ValueError` / `RuntimeError` for domain errors
+- External services: wrap with `try/except`, use circuit breakers and exponential backoff (see `tenacity`)
+- Never use empty `except:` or `except Exception: pass`
+
+**Logging** — Always use the centralized logger:
+```python
+from app.core.logging import logger
+logger.info("Processing started", extra={"doc_id": doc_id})
+```
+
+**Async** — FastAPI endpoints are `async def`. Use `asyncio`-compatible I/O. The codebase uses `motor` (async MongoDB), `asyncmy` (async MySQL), and async Redis. Avoid blocking calls in async contexts.
+
+**Testing patterns**:
+```python
+import pytest
+from app.eval.metrics import mean_reciprocal_rank
+
+pytestmark = pytest.mark.unit  # mark entire module
+
+def test_mean_reciprocal_rank():
+    assert mean_reciprocal_rank([1, 3, 5]) == pytest.approx(1.0)
+    assert mean_reciprocal_rank([]) == 0.0
+```
+
+### 3.2 TypeScript / React (Frontend)
+
+**Stack**: Next.js (App Router) + TypeScript + Tailwind CSS + Zustand + next-intl.
+
+**Components**: Functional components with explicit props interfaces:
+```tsx
+interface ChatBoxProps {
+  conversationId: string;
+  onSend: (message: string) => void;
+}
+export const ChatBox: React.FC<ChatBoxProps> = ({ conversationId, onSend }) => { ... };
+```
+
+**Naming**:
+| Element | Convention | Example |
+|---------|-----------|---------|
+| Components | `PascalCase` file + export | `ChatBox.tsx` |
+| Hooks | `camelCase` with `use` prefix | `useModelConfigStore` |
+| Utils / API files | `camelCase` | `chatApi.ts`, `file.ts` |
+
+**Styling**: Tailwind utilities with `clsx` + `tailwind-merge` for conditional classes.
+
+**State**: Zustand stores (one per feature domain): `useChatStore`, `useModelConfigStore`.
+
+**i18n**: `next-intl` with `useTranslations()` hook. All user-facing strings must be translated.
+
+**Linting**: ESLint extends `next/core-web-vitals` + `next/typescript`.
+
+### 3.3 General Rules
+
+- **No AI rules files**: No `.cursorrules`, `.cursor/rules/`, or `.github/copilot-instructions.md` exist. This `AGENTS.md` is the canonical source.
+- **No type suppression**: Never use `as any`, `@ts-ignore`, `# type: ignore` unless there is a documented reason.
+- **Python version**: 3.10 (pinned in CI and `pyrightconfig.json`).
+- **Node version**: 20 (pinned in CI).
+- **Formatting**: No auto-formatter enforced (no black/ruff format config). Follow existing indentation (4 spaces Python, 2 spaces TS).
+- **Section separators**: Use `# ====` comment blocks to separate logical sections within endpoint files.
+
+## 4. DIRECTORY STRUCTURE
 
 ```text
 layra/
@@ -91,7 +304,7 @@ layra/
 └── AGENTS.md                   # This file
 ```
 
-## 3. ENTITY EXTRACTION (V3.1)
+## 5. ENTITY EXTRACTION (V3.1)
 
 **Status**: V3.1 schema is active with 17 entity types and 16 relationships. Extraction uses DeepSeek or Z.ai GLM-4.7.
 
@@ -111,7 +324,7 @@ layra/
 **Detailed docs**: `backend/lib/entity_extraction/AGENTS.md`  
 **Audit report**: `backend/docs/PIPELINE_AUDIT_2026-02-02.md`
 
-## 4. DATALAB PIPELINE
+## 6. DATALAB PIPELINE
 
 The DataLab extraction pipeline has been consolidated into LAYRA to provide a unified data processing flow. It handles the transformation of raw PDFs into structured knowledge blocks using layout-aware parsing (via Marker API).
 
@@ -130,15 +343,15 @@ The DataLab extraction pipeline has been consolidated into LAYRA to provide a un
 
 The pipeline transforms raw PDFs into a structured representation that includes text blocks, visual assets (images/figures), and metadata, ready for both vector and graph ingestion.
 
-## 5. EVALUATION SYSTEM
+## 7. EVALUATION SYSTEM
 
 The evaluation system provides quantitative metrics for retrieval quality and system latency, integrated with monitoring tools.
 
-### 5.1 Dataset Management
+### 7.1 Dataset Management
 - **dataset_dev.jsonl**: Located in `backend/app/eval/config/`. Contains 20 curated questions with associated ground truth documents and expected answers.
 - **Dynamic Generation**: Synthetic queries can be generated using `query_generator.py` to augment the evaluation set using LLM-as-a-judge patterns.
 
-### 5.2 Metrics & Monitoring
+### 7.2 Metrics & Monitoring
 - **Recall@K**: Proportion of relevant documents found in top K results. It measures the system's ability to find all relevant documents.
 - **MRR (Mean Reciprocal Rank)**: Quality of the ranking for the first relevant result. A higher MRR indicates that relevant documents appear higher in the search results.
 - **nDCG (Normalized Discounted Cumulative Gain)**: Measures ranking quality by penalizing relevant results lower in the list, accounting for the position of all relevant documents.
@@ -146,7 +359,7 @@ The evaluation system provides quantitative metrics for retrieval quality and sy
 - **p95 Latency**: Latency (ms) that 95% of queries complete within. This is a critical performance metric for real-time applications.
 - **Monitoring**: Metrics are exported to Prometheus and visualized in Grafana "System Overview" dashboards, providing real-time visibility into system health and performance.
 
-### 5.3 Thresholds
+### 7.3 Thresholds
 Targets are defined in `backend/app/eval/config/thresholds.yaml` with stage-specific bars:
 
 | Metric | Development Target | Production Target |
@@ -156,11 +369,11 @@ Targets are defined in `backend/app/eval/config/thresholds.yaml` with stage-spec
 | p95 Latency | ≤ 5000ms | ≤ 2000ms |
 | Error Rate | ≤ 1% | ≤ 0.5% |
 
-## 6. CANONICAL COMMANDS
+## 8. CANONICAL COMMANDS
 
 All commands should be run from `backend/` directory with `PYTHONPATH=.`.
 
-### 6.1 Extraction & Migration
+### 8.1 Extraction & Migration
 - **extract_deepseek.py**: V3.1 entity extraction CLI pinned to DeepSeek for thesis reproducibility. Supports test strings and directory batch processing.
   ```bash
   # Test with a specific string
@@ -173,7 +386,7 @@ All commands should be run from `backend/` directory with `PYTHONPATH=.`.
   PYTHONPATH=. python3 scripts/datalab/extract_deepseek.py --concurrency 20
   ```
 
-### 6.2 Ingestion & Management
+### 8.2 Ingestion & Management
 - **milvus_ingest.py**: Ingests processed blocks and entities into Milvus. Handles collection creation and indexing.
   ```bash
   PYTHONPATH=. python3 scripts/datalab/milvus_ingest.py --input-dir data/extractions
@@ -190,7 +403,7 @@ All commands should be run from `backend/` directory with `PYTHONPATH=.`.
   ```bash
   PYTHONPATH=. python3 scripts/datalab/aggregate_corpus.py
   ```
-### 6.3 Evaluation & Optimization
+### 8.3 Evaluation & Optimization
 - **rag_eval.py**: ⚠️ **LEGACY** — CLI evaluation harness with unfinished TODOs. Use the API-based evaluation system (`/api/v1/eval/`) instead, which is fully implemented.
   ```bash
   # Legacy CLI (not recommended):
@@ -199,7 +412,7 @@ All commands should be run from `backend/` directory with `PYTHONPATH=.`.
 - **rag_optimize.py**: Tunes HNSW parameters (efConstruction, M).
 - **API Eval**: `curl -X POST http://localhost:8000/api/v1/eval/run -d '{"dataset_id": "eval-v1"}'`
 
-## 7. INFRASTRUCTURE
+## 9. INFRASTRUCTURE
 
 | Service | Purpose | Notes |
 |---------|---------|-------|
@@ -210,7 +423,7 @@ All commands should be run from `backend/` directory with `PYTHONPATH=.`.
 
 **Configuration**: Managed via `.env` (EMBEDDING_MODEL, MILVUS_URI, HNSW parameters).
 
-### 7.1 Hybrid Search Configuration
+### 9.1 Hybrid Search Configuration
 
 | Variable | Description | Default |
 |----------|-------------|---------|
@@ -220,7 +433,7 @@ All commands should be run from `backend/` directory with `PYTHONPATH=.`.
 | `RAG_HYBRID_DENSE_WEIGHT` | Weight for dense retrieval (if ranker=weighted) | `0.7` |
 | `RAG_HYBRID_SPARSE_WEIGHT` | Weight for sparse retrieval (if ranker=weighted) | `0.3` |
 
-### 7.2 Kafka Consumer Dependency
+### 9.2 Kafka Consumer Dependency
 
 File uploads (both KB and chat temp uploads) trigger embedding tasks via Kafka. The Kafka consumer/worker must be running for files to be processed into Milvus vectors. If the consumer is down, uploads succeed (files are saved to MinIO) but embedding silently never happens.
 
@@ -238,7 +451,7 @@ The `backend/data/` directory contains the core knowledge assets of the system.
 
 These artifacts are essential for maintaining the state of the knowledge base and ensuring reproducible evaluation results across different system configurations.
 
-## 9. HISTORY
+## 10. HISTORY
 
 | Date | Event |
 |------|-------|
@@ -260,29 +473,32 @@ These artifacts are essential for maintaining the state of the knowledge base an
 | 2026-02-07 | Repo consolidation: deleted 11 one-off scripts from scripts/, cleaned .gitignore, removed stale neo4j refs |
 | 2026-02-07 | Functional audit: mapped 34 sub-features across 5 areas (28 complete, 1 partial, 1 broken, 4 stub/N/A) |
 | 2026-02-07 | Fixed F1 (temp KB cleanup endpoint), F2 (Kafka ops docs), F3 (rag_eval.py deprecation header) |
+| 2026-02-08 | Provider simplification: removed ProviderRegistry, providers.yaml, system model synthesis, provider auto-detection (~2,700 LOC removed). LLM config now: user provides model_name + model_url + api_key directly. |
+| 2026-02-08 | Deep consolidation: removed 6 dead model configs, fixed i18n (NextIntlClientProvider messages prop + key mismatches), documented CLI vs UI workflows |
+| 2026-02-08 | Site live at https://sceletiumtortuosum.org via Cloudflare Tunnel + Caddy reverse proxy |
 
-## 10. FUNCTIONAL AUDIT (Feb 2026)
+## 11. FUNCTIONAL AUDIT (Feb 2026)
 
 Feature completeness snapshot from the functional audit.
 
-### 10.1 Status Legend
+### 11.1 Status Legend
 - ✅ COMPLETE — End-to-end functional
 - ⚠️ PARTIAL — Works but has dependency gaps
 - ❌ BROKEN — Code exists but non-functional
 - 🚫 STUB — Placeholder, disabled, or absent
 
-### 10.2 AI Chat
+### 11.2 AI Chat
 | Sub-feature | Status | Notes |
 |---|:---:|---|
 | Chat UI + SSE streaming | ✅ | Text, reasoning tokens, token usage |
 | RAG retrieval (Milvus) | ✅ | Dense/sparse search, `file_used` events |
-| Model selection + provider routing | ✅ | `providers.yaml` → `ProviderClient` → `AsyncOpenAI` |
+| Model selection | ✅ | User provides `model_name` + `model_url` + `api_key` → `AsyncOpenAI` |
 | KB attachment to conversation | ✅ | Synced before send via `updateChatModelConfig` |
 | File upload in chat (temp KB) | ✅ | MinIO + Kafka embedding task |
 | Conversation CRUD | ✅ | Create/list/rename/delete |
 | Temp KB cleanup | ✅ | `DELETE /base/temp_knowledge_base/{username}` cleans MongoDB + Milvus |
 
-### 10.3 Evaluation System
+### 11.3 Evaluation System
 | Sub-feature | Status | Notes |
 |---|:---:|---|
 | Dashboard (frontend) | ✅ | Real API, `MetricCard` components |
@@ -294,7 +510,7 @@ Feature completeness snapshot from the functional audit.
 | Query generator | ✅ | LLM-based from doc titles |
 | CLI `rag_eval.py` | 🚫 | Legacy — has TODOs. **Use API instead.** |
 
-### 10.4 Knowledge Base Management
+### 11.4 Knowledge Base Management
 | Sub-feature | Status | Notes |
 |---|:---:|---|
 | KB CRUD (UI + API) | ✅ | Create/list/rename/delete |
@@ -302,7 +518,7 @@ Feature completeness snapshot from the functional audit.
 | Search preview (debug) | ✅ | Dense/sparse/hybrid scores + page images |
 | PDF → Milvus pipeline | ⚠️ | Depends on Kafka consumer/worker running |
 
-### 10.5 Workflow Engine
+### 11.5 Workflow Engine
 | Sub-feature | Status | Notes |
 |---|:---:|---|
 | Flow editor (drag-and-drop) | ✅ | Nodes, edges, DAGs |
@@ -312,7 +528,7 @@ Feature completeness snapshot from the functional audit.
 | State persistence (Redis) | ✅ | Checkpoints for fault tolerance |
 | Workflow templates | 🚫 | No static templates; flows stored as JSON in MongoDB |
 
-### 10.6 Infrastructure
+### 11.6 Infrastructure
 | Sub-feature | Status | Notes |
 |---|:---:|---|
 | Health checks (liveness + readiness) | ✅ | Deep checks: MySQL, Mongo, Redis, Milvus, MinIO, Kafka |
@@ -320,7 +536,7 @@ Feature completeness snapshot from the functional audit.
 | Authentication | 🚫 | Bypassed — hardcoded `default_username` (thesis scope) |
 | Rate limiting | 🚫 | No middleware |
 
-### 10.7 Known Gaps
+### 11.7 Known Gaps
 | # | Gap | Impact | Priority |
 |---|---|---|---|
 | F1 | Temp KB cleanup endpoint missing | Milvus collections accumulate | High |
@@ -329,7 +545,7 @@ Feature completeness snapshot from the functional audit.
 | F4 | Auth bypassed | Fine for thesis | Deferred |
 | F5 | No workflow templates | Users start from scratch | Deferred |
 
-## 11. CROSS-REFERENCES
+## 12. CROSS-REFERENCES
 
 - `README.md`: General project overview and setup instructions.
 - `backend/lib/entity_extraction/AGENTS.md`: Technical details of the V2 extraction logic.
@@ -337,27 +553,38 @@ Feature completeness snapshot from the functional audit.
 - `backend/docs/PIPELINE_AUDIT_2026-02-02.md`: Audit of the current data state.
 - `/LAB/@thesis/datalab.archive/`: External backup of the original DataLab project.
 
-## 12. WORKFLOW ENGINE
+## 13. WORKFLOW ENGINE
 
 The system includes an autonomous workflow orchestration engine located in `backend/app/workflow/`. It enables complex multi-step reasoning and tool-augmented execution.
 
-### 12.1 Key Components
+**UI Workflows vs CLI Scripts**: The Layra UI workflow engine stores workflows in **MongoDB** (created via the drag-and-drop editor). The `backend/workflows/` directory contains **standalone CLI workflow scripts** — Python code nodes, prompts, and output files that use the Layra KB/RAG API but operate independently from the UI engine. These are research artifacts, not importable into the UI.
+
+| Directory | Purpose | Type |
+|-----------|---------|------|
+| `backend/workflows/thesis_plan_fr_interconnexions/` | Active CLI version | CLI script |
+| `backend/workflows/thesis_plan_fr_interconnexions_bak_*/` | Backup (read-only) | CLI script |
+| `backend/workflows/thesis_plan_fr_interconnexions_exp/` | Experimental | CLI script |
+| `backend/workflows/thesis_blueprint_minutieux/` | Reference (do not modify) | CLI script |
+| `backend/workflows/thesis_blueprint_v3/` | Archived | CLI script |
+| MongoDB: `miko_starter_workflow_v5` | "Thesis Blueprint (Minutieux V2.1 FULL)" | UI workflow |
+
+### 13.1 Key Components
 - **WorkflowEngine**: Central orchestrator managing state, graph traversal, and execution flow.
 - **CodeSandbox**: Docker-based execution environment for safe Python code evaluation.
 - **Graph & TreeNode**: Recursive data structures for modeling complex workflow DAGs.
 - **WorkflowCheckpointManager**: Redis-backed state persistence for fault tolerance and recovery.
 - **MCP Tool Bridge**: Integration layer for Model Context Protocol (MCP) tool invocation.
 
-### 12.2 Capabilities
+### 13.2 Capabilities
 - **Stateful Execution**: Context sharing across nodes with loop and recursion limits.
 - **Sandboxed Execution**: Isolated environments for dynamically generated code.
 - **LLM Fault Tolerance**: Circuit breakers and exponential backoff for LLM provider calls.
 
-## 13. TEST SUITE
+## 14. TEST SUITE
 
 The repository maintains a comprehensive test suite using `pytest`. Tests are located in `backend/tests/` and cover unit, functional, and integration levels.
 
-### 13.1 Key Test Modules
+### 14.1 Key Test Modules
 - `test_rag_pipeline.py`: End-to-end RAG workflow verification including retrieval and generation.
 - `test_workflow_engine.py`: Tests for the autonomous workflow orchestration engine.
 - `test_eval_metrics.py`: Verification of IR metrics (MRR, NDCG, etc.) calculation logic.
@@ -366,7 +593,7 @@ The repository maintains a comprehensive test suite using `pytest`. Tests are lo
 - `test_repositories_crud.py`: CRUD operation tests for the database repository layer.
 - `test_performance.py`: Latency and throughput benchmarks for critical paths.
 
-### 13.2 Execution
+### 14.2 Execution
 All tests should be run from the `backend/` directory.
 
 ```bash
@@ -377,7 +604,7 @@ PYTHONPATH=. pytest tests/
 PYTHONPATH=. pytest tests/test_rag_pipeline.py
 ```
 
-### 13.3 Coverage Areas
+### 14.3 Coverage Areas
 - **RAG & Search**: Retrieval precision, HNSW parameter tuning, and hybrid ranking.
 - **Workflows**: Graph traversal integrity and sandbox isolation.
 - **Security**: Password migration, token validation, and API rate limiting.

@@ -42,12 +42,6 @@ FRESH_MODELS = [
         "provider": "zai",
         "description": "Coding: Strong code generation",
     },
-    {
-        "model_name": "glm-4.7",
-        "model_url": None,
-        "provider": "zai",
-        "description": "Economy: Fast, cost-effective",
-    },
 ]
 
 

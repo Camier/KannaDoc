@@ -5,7 +5,7 @@ from datetime import datetime
 from fastapi import APIRouter, Depends, HTTPException, Query, UploadFile
 from fastapi.responses import RedirectResponse
 from app.db.redis import redis
-from app.db.milvus import MilvusManager
+from app.db.milvus import milvus_client
 from app.db.db_utils import format_page_response
 from app.models.conversation import GetUserFiles
 from app.models.knowledge_base import (
@@ -29,7 +29,6 @@ from app.db.miniodb import async_minio_manager
 from app.utils.ids import to_milvus_collection_name
 
 router = APIRouter()
-milvus_client = MilvusManager()
 
 # Use settings.default_username instead of hardcoded string
 USERNAME = settings.default_username

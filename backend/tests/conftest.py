@@ -48,6 +48,13 @@ sys.modules[
 sys.modules["app.utils.kafka_consumer"].kafka_consumer_manager.stop = AsyncMock()
 sys.modules["docker"] = Mock()  # Mock docker module
 
+# Mock MCP package (in requirements.txt but not installed locally)
+_mock_mcp = MagicMock()
+_mock_mcp.ClientSession = MagicMock()
+sys.modules["mcp"] = _mock_mcp
+sys.modules["mcp.client"] = MagicMock()
+sys.modules["mcp.client.sse"] = MagicMock()
+
 
 @pytest_asyncio.fixture(scope="function")
 async def engine():

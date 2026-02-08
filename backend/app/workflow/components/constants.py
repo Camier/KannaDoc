@@ -9,11 +9,6 @@ and its components, providing a single source of truth for configuration values.
 MAX_CONTEXT_SIZE = 1000  # Maximum entries per node
 MAX_CONTEXT_ENTRIES = 10000  # Total entries before cleanup
 
-# NOTE: PROVIDER_TIMEOUTS has been migrated to ProviderRegistry
-# See: backend/app/rag/provider_registry.py
-# Use: get_timeout_for_model(model_name) instead
-# This consolidates timeout configuration with providers.yaml (SSOT)
-
 # Loop iteration limits for safety
 LOOP_LIMITS = {
     "count": None,  # maxCount is set by user

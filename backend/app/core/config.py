@@ -2,6 +2,7 @@
 
 import importlib
 import logging
+from pathlib import Path
 
 _pydantic = importlib.import_module("pydantic")
 _pydantic_settings = importlib.import_module("pydantic_settings")
@@ -10,6 +11,31 @@ Field = _pydantic.Field
 BaseSettings = _pydantic_settings.BaseSettings
 
 logger = logging.getLogger(__name__)
+
+def _discover_env_file() -> str | None:
+    """Find a usable .env file path for local/dev runs.
+
+    This repo keeps `.env` at the repository root (sibling of `backend/`).
+    Some older scripts/configs assumed `backend/.env`; we support it as a fallback
+    to reduce friction while keeping the repo-root `.env` as the SSOT.
+    """
+
+    here = Path(__file__).resolve()
+
+    # backend/app/core/config.py -> parents[3] == repo root
+    repo_root_env = here.parents[3] / ".env"
+    if repo_root_env.exists():
+        return str(repo_root_env)
+
+    # Fallback: backend/.env (legacy)
+    backend_env = here.parents[2] / ".env"
+    if backend_env.exists():
+        return str(backend_env)
+
+    return None
+
+
+_DEFAULT_ENV_FILE = _discover_env_file()
 
 
 class Settings(BaseSettings):
@@ -186,7 +212,14 @@ class Settings(BaseSettings):
     rag_hybrid_dense_weight: float = 0.7  # Only used if ranker="weighted"
     rag_hybrid_sparse_weight: float = 0.3  # Only used if ranker="weighted"
 
-    model_config = {"extra": "ignore", "env_file": "../.env"}
+    model_config = {
+        "extra": "ignore",
+        **(
+            {"env_file": _DEFAULT_ENV_FILE, "env_file_encoding": "utf-8"}
+            if _DEFAULT_ENV_FILE
+            else {}
+        ),
+    }
 
 
 def validate_settings() -> None:

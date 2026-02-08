@@ -1,9 +1,10 @@
 import asyncio
-from typing import Optional, Dict, Any, List
+from typing import Optional, Dict, Any, List, TYPE_CHECKING
 from contextlib import AsyncExitStack
-from mcp import ClientSession
-from mcp.client.sse import sse_client
 from app.core.logging import logger
+
+if TYPE_CHECKING:
+    from mcp import ClientSession
 
 
 class MCPClient:
@@ -19,9 +20,12 @@ class MCPClient:
         self.headers = headers or {}
         self.timeout = timeout
         self.sse_read_timeout = sse_read_timeout
-        self.session: Optional[ClientSession] = None
+        self.session: Optional["ClientSession"] = None
 
     async def connect_to_sse_server(self) -> None:
+        from mcp import ClientSession
+        from mcp.client.sse import sse_client
+
         await self.cleanup()
 
         streams = await self.exit_stack.enter_async_context(

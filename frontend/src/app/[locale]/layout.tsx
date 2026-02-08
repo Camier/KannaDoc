@@ -1,4 +1,5 @@
 import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import type { Metadata } from "next";
@@ -27,10 +28,12 @@ export default async function LocaleLayout({
     notFound();
   }
 
+  const messages = await getMessages();
+
   return (
     <html lang={locale} className="dark">
       <body className={`${inter.variable} ${crimson.variable} ${jetbrains.variable} font-sans bg-slate-950 text-slate-200 antialiased`}>
-        <NextIntlClientProvider>
+        <NextIntlClientProvider messages={messages}>
           <div className="absolute w-full h-full top-0 left-0">{children}</div>
         </NextIntlClientProvider>
       </body>

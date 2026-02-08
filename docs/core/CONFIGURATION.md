@@ -431,50 +431,14 @@ RAG_HYBRID_SPARSE_WEIGHT=0.2
 
 ### LLM Configuration
 
-LLM provider definitions are stored in `backend/app/core/llm/providers.yaml`.
+LLM configuration is stored per user in MongoDB (see `backend/app/db/repositories/model_config.py`).
 
-#### Provider Configuration File
+The backend expects an OpenAI-compatible chat endpoint and explicit credentials:
+- `model_name`: label and `model` sent to the OpenAI-compatible API
+- `model_url`: base URL for the OpenAI-compatible server (e.g. `https://api.openai.com/v1`)
+- `api_key`: API key for that server
 
-The `providers.yaml` file contains:
-- **providers**: Dict of provider configurations (base_url, env_key, models, vision flag)
-- **vision_patterns**: List of model substrings that indicate vision capability
-
-To add a new provider, edit `providers.yaml` and restart the backend.
-
-#### API Keys
-
-| Variable | Provider | Models |
-|----------|----------|--------|
-| `DEEPSEEK_API_KEY` | DeepSeek | deepseek-chat, deepseek-r1, deepseek-reasoner |
-| `ZHIPUAI_API_KEY` | Zhipu + Z.ai | glm-4, glm-4.5/4.6/4.7 |
-| `OPENAI_API_KEY` | OpenAI | gpt-4o, o1 |
-| `ANTHROPIC_API_KEY` | Anthropic | claude-3.5-sonnet, claude-4 |
-| `GEMINI_API_KEY` | Google | gemini-2.5-pro/flash |
-| `MOONSHOT_API_KEY` | Moonshot | kimi-k2, moonshot-v1 |
-| `OLLAMA_API_KEY` | Ollama | Local models / gateways (optional) |
-| `CLIPROXYAPI_API_KEY` | CLIProxyAPI | Proxy for Claude/Gemini/GPT |
-
-**Compose warnings about unset keys:** If `docker compose` prints warnings like
-`The "OPENAI_API_KEY" variable is not set. Defaulting to a blank string.`, it just means the
-variable is referenced in `docker-compose.yml` but not present in your shell / `.env`.
-This is only a problem if you selected that provider. To silence warnings, set the variable
-explicitly in `.env` (empty is fine if unused), e.g. `OPENAI_API_KEY=`.
-
-#### Model Role Configuration
-
-| Variable | Purpose | Example |
-|----------|---------|---------|
-| `DEFAULT_LLM_MODEL` | Primary chat model | `deepseek-chat` |
-| `DEFAULT_LLM_PROVIDER` | Must match model routing | `deepseek` |
-| `REASONING_LLM_MODEL` | Complex reasoning | `deepseek-reasoner` |
-| `CODING_LLM_MODEL` | Code generation | `glm-4.7` |
-| `ECONOMY_LLM_MODEL` | Cost-efficient tasks | `glm-4.7` |
-
-**Note**: Provider must match the model's routing. Check routing with:
-```python
-from app.rag.provider_client import ProviderClient
-ProviderClient.get_provider_for_model("your-model-name")
-```
+There is no `providers.yaml` registry in this fork; the UI/API writes the model configuration directly.
 
 ---
 

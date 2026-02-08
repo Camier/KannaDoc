@@ -256,3 +256,19 @@ backend/sandbox_workspace/
 
 # Remote log (ad-hoc debug output)
 remote_log.txt
+
+# Repo hygiene / scan outputs (generated, do not commit)
+all_functions.txt
+all_modules.txt
+imported_modules.txt
+ANALYSE_*.md
+SYNTHESE_*.md
+README_SYNTHESE.md
+backend/docs/DEDUP_SCAN_*.json
+backend/docs/DEDUP_SCAN_*.md
+backend/workflows/thesis_plan_fr_interconnexions_bak_*/
+backend/workflows/thesis_plan_fr_interconnexions_exp_*/
+backend/workflows/thesis_plan_fr_interconnexions_exp/
+
+# Playwright screenshots (local verification artifacts)
+layra-*.png

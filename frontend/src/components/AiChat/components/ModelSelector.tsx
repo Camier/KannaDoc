@@ -93,7 +93,7 @@ export const ModelSelector: React.FC<ModelSelectorProps> = ({
                         clipRule="evenodd"
                       />
                     </svg>
-                  ) : !model.modelId.startsWith("system_") ? (
+                  ) : (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       viewBox="0 0 24 24"
@@ -110,7 +110,7 @@ export const ModelSelector: React.FC<ModelSelectorProps> = ({
                         clipRule="evenodd"
                       />
                     </svg>
-                  ) : null}
+                  )}
                 </div>
               </div>
             ))}

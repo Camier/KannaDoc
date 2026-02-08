@@ -29,7 +29,7 @@ Counts below are a snapshot; see `AGENTS.md` for the canonical corpus size state
 |--------|----------|
 | **API Endpoint** | `https://www.datalab.to/api/v1/marker/` |
 | **Proof** | Each extraction folder includes `raw/attempt1_check_url.txt` (example: `layra/backend/data/extractions/.../raw/attempt1_check_url.txt`) |
-| **API Response** | Each extraction folder includes `raw/result.json` and `raw/attempt1_final_result.json` |
+| **API Response** | Each extraction folder includes `raw/result.json` (canonical). `raw/attemptN_final_result.json` may exist for retries (N>1); `attempt1_final_result.json` can be a symlink for backward compatibility. |
 | **Mode** | `accurate` with `json,html,markdown,chunks` output |
 | **Status** | HEALTHY — 129/129 processed |
 
@@ -105,7 +105,7 @@ For existing collections, see `backend/scripts/milvus_ensure_scalar_indexes.py` 
 | **Config** | Commented out in `config.py` |
 | **Environment** | No entries in `.env` |
 | **Container** | Not deployed |
-| **Script** | `neo4j_ingest.py` exists but unused |
+| **Script** | No Neo4j ingest script in this repo fork; Neo4j is disabled for thesis scope |
 | **Status** | DISABLED |
 
 ## Link 7: Retrieval

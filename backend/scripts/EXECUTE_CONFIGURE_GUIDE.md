@@ -12,15 +12,18 @@ The `configure_deepseek_glm.py` script properly configures DeepSeek and GLM mode
 
 **GLM Models:**
 - `glm-4.7` - GLM-4.7 model (default)
-- `glm-4.7` - Fast GLM-4.7 Flash model
+- `glm-4.7` - Z.ai GLM-4.7 model
 
 ### Configuration Details
 
 Each model is configured with:
 - **Provider identifier** (deepseek/zai)
 - **API key** from environment variables
-- **Provider SSOT resolution** via `backend/app/core/llm/providers.yaml`
+- **Provider base URL** set directly in the script (no `providers.yaml` in this repo)
 - **Default parameters** (temperature, max_length, etc.)
+ 
+Runtime note: the backend chat runtime requires `model_url` to be a valid `http(s)://...` base URL.
+If `model_url` is empty or non-HTTP, `/api/v1/sse/chat` will return a configuration error before making any provider call.
 
 ## Prerequisites
 
@@ -144,7 +147,7 @@ docker-compose ps
 | deepseek-chat | deepseek | https://api.deepseek.com/v1 |
 | deepseek-reasoner | deepseek | https://api.deepseek.com/v1 |
 | glm-4.7 | zai | https://api.z.ai/api/paas/v4 |
-| glm-4.7 | zai | https://api.z.ai/api/paas/v4 |
+| gpt-* | openai | https://api.openai.com/v1 (if configured) |
 
 ## Post-Configuration Testing
 
@@ -183,7 +186,7 @@ curl -X POST http://localhost:8090/api/v1/chat/conversations \
 ## Notes
 
 - Script creates `model_id` as `{username}_{model_key}` format
-- Default model set to `glm-4.7` for all users
+- Default model set to `deepseek-chat` for all users (can be changed in MongoDB later)
 - Existing model configurations are updated, not replaced
 - Script logs all operations with timestamps
 - Requires `motor` and `python-dotenv` packages

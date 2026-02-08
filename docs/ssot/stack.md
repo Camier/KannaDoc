@@ -1,11 +1,11 @@
 # Stack SSOT - LAYRA Architecture
 
 > **Version:** 3.5.0
-> **Last Updated:** 2026-02-05
+> **Last Updated:** 2026-02-08
 > **Status:** ✅ Active
-> **Focus:** RAG Chat & Models Configuration + Provider Registry Consolidation
+> **Focus:** RAG Chat & Models Configuration (direct OpenAI-compatible endpoints)
 > **Changes:**
-> - **PROVIDER_TIMEOUTS Consolidation** (2026-02-05): Phase 1 - ProviderRegistry unified timeout configuration
+> - Provider registry removed; LLM config is user-supplied (`model_name`, `model_url`, `api_key`) stored in MongoDB
 > - **KB Consolidation Complete** (2026-01-30): Single active KB, legacy duplicates removed
 > - Added ZhipuAI Coding Plan provider (glm-4.5, glm-4.6, glm-4.7)
 > - Fixed MongoDB schema drift (model_config collection)
@@ -1066,39 +1066,14 @@ Frontend (display execution progress)
 
 ### LLM Providers
 
-**Integration:** Direct API calls via `backend/app/rag/provider_client.py`
+**Integration:** OpenAI-compatible client via `openai.AsyncOpenAI` in `backend/app/core/llm/chat_service.py`.
 
-**Configuration:**
-- **SSOT:** `backend/app/core/llm/providers.yaml` (provider definitions, timeouts, models)
-- **Registry:** `backend/app/rag/provider_registry.py` (unified timeout configuration)
+**Configuration:** Per-user model config stored in MongoDB (no provider registry file).
+- `model_name`: model string sent to the OpenAI-compatible API
+- `model_url`: base URL for the provider/server (typically ending in `/v1`)
+- `api_key`: API key for that server
 
-| Provider | Base URL | Env Key | Timeout | Status | Models |
-|----------|----------|---------|---------|--------|--------|
-| OpenAI | https://api.openai.com/v1 | OPENAI_API_KEY | 120s | ✅ Required | gpt-4o, gpt-4o-mini |
-| DeepSeek | https://api.deepseek.com | DEEPSEEK_API_KEY | 180s | ✅ Required | deepseek-chat, deepseek-coder |
-| Moonshot (Kimi) | https://api.moonshot.cn/v1 | MOONSHOT_API_KEY | 120s | Optional | moonshot-v1-8k, kimi-k2-thinking |
-| Z.ai (GLM) | https://api.z.ai/api/paas/v4 | ZAI_API_KEY | 180s | Optional | glm-4.5, glm-4.6, glm-4.7, glm-4.7 |
-| MiniMax | https://api.minimax.chat/v1 | MINIMAX_API_KEY | 120s | Optional | abab5.5-chat |
-| Cohere | https://api.cohere.ai/v1 | COHERE_API_KEY | 120s | Optional | command-r |
-| Ollama | https://api.ollama.ai/v1 | OLLAMA_API_KEY | 120s | Optional | llama3, mistral |
-| Anthropic | https://api.anthropic.com/v1 | ANTHROPIC_API_KEY | 120s | Optional | claude-3-opus |
-| Google Gemini | https://generativelanguage.googleapis.com/v1 | GEMINI_API_KEY | 120s | Optional | gemini-pro |
-
-**Provider Selection:** Automatic based on model name prefix
-- `gpt-*` → OpenAI
-- `deepseek-*` → DeepSeek
-- `kimi-*` or `moonshot-*` → Moonshot
-- `glm-*` → Z.ai (GLM)
-- `abab*` or `minimax-*` → MiniMax
-- `command*` or `cohere-*` → Cohere
-- `llama*`, `mistral*`, `mixtral*` → Ollama
-- `claude-*` → Anthropic
-- `gemini-*` → Google
-
-**Timeout Configuration:**
-- Default: 120s (configurable via `providers.yaml`)
-- DeepSeek/GLM variants: 180s (longer for reasoning models)
-- Implementation: `ProviderRegistry.get_timeout_for_model(model_name)`
+**Timeouts:** Configured via backend settings (defaults) and applied uniformly.
 
 ---
 

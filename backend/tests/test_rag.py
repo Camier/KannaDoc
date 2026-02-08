@@ -210,10 +210,14 @@ def main():
 
     import glob
     import os
+    from pathlib import Path
 
-    pdf_files = glob.glob("/LAB/@thesis/layra/data/pdfs/*.pdf")
+    # Avoid hardcoded machine-specific paths; canonical corpus location is
+    # layra/backend/data/pdfs (see AGENTS.md + thesis/debug endpoints).
+    backend_dir = Path(__file__).resolve().parents[1]
+    pdf_files = [str(p) for p in sorted((backend_dir / "data" / "pdfs").glob("*.pdf"))]
     if not pdf_files:
-        print("No PDF files found in data/pdfs.")
+        print("No PDF files found in backend/data/pdfs.")
         return
 
     file_to_upload = pdf_files[0]

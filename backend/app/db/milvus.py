@@ -871,4 +871,25 @@ class MilvusManager:
             return False
 
 
-milvus_client = MilvusManager()
+class _LazyMilvusManager:
+    """Lazy wrapper around MilvusManager to avoid connecting at import time.
+
+    Rationale:
+    - Many modules import `milvus_client` for type/attribute access but do not
+      actually need a live Milvus connection during import (notably unit tests).
+    - Creating MilvusClient eagerly causes import-time failures when Milvus is
+      not running, even if no code path uses it.
+    """
+
+    _inner: "MilvusManager | None" = None
+
+    def _get_inner(self) -> "MilvusManager":
+        if self._inner is None:
+            self._inner = MilvusManager()
+        return self._inner
+
+    def __getattr__(self, name: str):
+        return getattr(self._get_inner(), name)
+
+
+milvus_client = _LazyMilvusManager()

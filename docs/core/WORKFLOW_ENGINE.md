@@ -359,9 +359,7 @@ CHECKPOINT_CONFIG = {
     "max_checkpoints": 10,
 }
 
-# NOTE: PROVIDER_TIMEOUTS has been migrated to ProviderRegistry
-# See: backend/app/rag/provider_registry.py
-# Use: ProviderRegistry.get_timeout_for_model(model_name) instead
+# NOTE: LLM timeouts are configured via settings / per-user model config.
 ```
 
 ---

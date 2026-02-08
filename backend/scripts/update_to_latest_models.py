@@ -45,14 +45,8 @@ LATEST_MODELS = [
     {
         "model_name": "glm-4.7",
         "model_url": None,
-        "provider": "zhipu",
+        "provider": "zai",
         "description": "Coding: 358B params, 90.1% MMLU, beats GPT-OSS-20B (Jan 2026)",
-    },
-    {
-        "model_name": "glm-4.7",
-        "model_url": None,
-        "provider": "zhipu",
-        "description": "Economy: Speed-optimized MoE, 200K context (Jan 2026)",
     },
 ]
 

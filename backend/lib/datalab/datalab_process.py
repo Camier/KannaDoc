@@ -209,7 +209,15 @@ def process_document(
             raw_dir / f"attempt{attempt}_check_url.txt",
             submit.get("request_check_url", ""),
         )
-        write_json(raw_dir / f"attempt{attempt}_final_result.json", result)
+        # Avoid duplicating the canonical raw output.
+        #
+        # `app.lib.datalab.datalab_api` writes `raw/result.json`, which is the canonical
+        # filename used across the codebase. Historically this module also wrote
+        # `attempt1_final_result.json`, which was a 1:1 duplicate and a drift risk.
+        #
+        # We still keep attemptN_final_result.json for retry attempts (N>1) to aid debugging.
+        if attempt > 1:
+            write_json(raw_dir / f"attempt{attempt}_final_result.json", result)
         return submit, result
 
     try:

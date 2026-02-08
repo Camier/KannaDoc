@@ -279,9 +279,7 @@
     "importWorkflowAlert": "Importing the workflow will overwrite the current content. Do you want to continue?",
     "emptyNodeName": "Node name cannot be empty!",
     "spaceNodeName": "Spaces are not allowed in node names!",
-    "duplicateNodeName": "Node name already exists!",
-  "nodeExecutionSuccess": "Node execution success!"
-    }
+    "duplicateNodeName": "Node name already exists!"
   },
   "NodeTypeSelector": {
     "baseNodeSection": "Base Node",
@@ -309,15 +307,18 @@
   "WorkflowLeftSideBar": {
     "title": "Work-Flow List",
     "createNew": "Create New",
+    "addWorkflow": "New Workflow",
     "searchPlaceholder": "Search...",
     "noWorkflows": "No workflows found",
     "deleteConfirm": "Confirm deletion of workflow",
+    "confirmDelete": "Delete workflow \"{flowName}\"?",
     "rename": "Rename",
     "delete": "Delete"
   },
   "KnowledgeBaseLeftSideBar": {
     "title": "Knowledge Base List",
     "createNew": "Create New",
+    "addKnowledgeBase": "New Knowledge Base",
     "searchPlaceholder": "Search...",
     "noKnowledgeBases": "No knowledge bases found",
     "deleteConfirm": "Confirm deletion of knowledge base",

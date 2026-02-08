@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from contextlib import asynccontextmanager
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import api_router
+from app.api.router import api_router
 from app.core.config import settings, validate_settings
 from app.core.logging import logger
 from app.framework.app_framework import FastAPIFramework

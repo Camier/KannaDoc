@@ -46,7 +46,7 @@
 | `test_repositories/test_repository_factory.py` | `app/db/repositories/factory.py` | Unit | Repository instantiation |
 | `test_db/test_miniodb_presigned_url.py` | `app/db/minio.py` | Integration | File storage URLs |
 | `test_db/test_mysql_session_logging.py` | `app/db/mysql.py` | Integration | Session management |
-| `test_provider_registry.py` | `app/core/llm/providers.py` | Unit | LLM provider routing |
+| `test_model_config.py` | `app/db/repositories/model_config.py` | Unit | Direct model config (model_name/model_url/api_key) |
 | `test_core_utils.py` | `app/core/utils/` | Unit | Utility functions |
 | `test_workflow_engine.py` | `app/workflow/` | Integration | Autonomous workflows |
 | `conftest.py` | - | Fixtures | Shared test fixtures |
@@ -73,7 +73,7 @@
 ### Infrastructure (Supports RAG but not core retrieval)
 - `test_repositories_crud.py` - Database operations
 - `test_db/*` - Storage layer tests
-- `test_provider_registry.py` - LLM provider management
+- `test_model_config.py` - LLM model configuration
 - `test_workflow_engine.py` - Autonomous workflow execution
 
 ### Other (Not RAG-related)

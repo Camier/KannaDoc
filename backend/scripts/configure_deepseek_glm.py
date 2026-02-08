@@ -7,7 +7,7 @@ for specified users in MongoDB.
 
 Models configured:
 - DeepSeek: deepseek-chat, deepseek-reasoner
-- GLM: glm-4.7, glm-4.7
+- GLM: glm-4.7
 """
 
 import asyncio
@@ -19,7 +19,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from dotenv import load_dotenv
 
 # Load environment variables
-env_path = Path(__file__).parent.parent / ".env"
+env_path = Path(__file__).resolve().parents[2] / ".env"
 load_dotenv(env_path)
 
 # Database configuration
@@ -41,7 +41,7 @@ USERS = ["miko", "thesis"]
 MODELS = {
     "deepseek-chat": {
         "model_name": "deepseek-chat",
-        "model_url": "",
+        "model_url": "https://api.deepseek.com/v1",
         "api_key_env": "DEEPSEEK_API_KEY",
         "provider": "deepseek",
         "description": "DeepSeek Chat (Standard)",
@@ -55,7 +55,7 @@ MODELS = {
     },
     "deepseek-reasoner": {
         "model_name": "deepseek-reasoner",
-        "model_url": "",
+        "model_url": "https://api.deepseek.com/v1",
         "api_key_env": "DEEPSEEK_API_KEY",
         "provider": "deepseek",
         "description": "DeepSeek Reasoner (R1)",
@@ -69,27 +69,13 @@ MODELS = {
     },
     "glm-4.7": {
         "model_name": "glm-4.7",
-        "model_url": "",
+        "model_url": "https://api.z.ai/api/paas/v4",
         "api_key_env": "ZAI_API_KEY",
         "provider": "zai",
         "description": "Z.ai GLM-4.7",
         "default_params": {
             "temperature": 0.7,
             "max_length": 8192,
-            "top_P": 0.9,
-            "top_K": 50,
-            "score_threshold": 0.7,
-        },
-    },
-    "glm-4.7": {
-        "model_name": "glm-4.7",
-        "model_url": "",
-        "api_key_env": "ZAI_API_KEY",
-        "provider": "zai",
-        "description": "Z.ai GLM-4.7 Flash",
-        "default_params": {
-            "temperature": 0.7,
-            "max_length": 4096,
             "top_P": 0.9,
             "top_K": 50,
             "score_threshold": 0.7,

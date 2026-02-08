@@ -11,7 +11,7 @@ async def test_file_used_emitted_before_llm_client_init():
     This keeps the thesis RAG pipeline debuggable end-to-end without relying on
     provider availability/keys.
     """
-    from unittest.mock import AsyncMock, patch
+    from unittest.mock import AsyncMock, MagicMock, patch
 
     from app.core.llm.chat_service import ChatService
     from app.models.shared import UserMessage
@@ -29,7 +29,6 @@ async def test_file_used_emitted_before_llm_client_init():
         "model_url": "",
         "api_key": "fake_key_for_test_only",
         "base_used": [{"baseId": "thesis_dummy"}],
-        "provider": "deepseek",
         "system_prompt": "",
         "temperature": -1,
         "max_length": -1,
@@ -60,24 +59,29 @@ async def test_file_used_emitted_before_llm_client_init():
     def _fake_get_page_previews(collection_name, pairs):
         return {(fid, pn): f"preview {fid} {pn}" for fid, pn in pairs}
 
-    with patch(
-        "app.core.llm.chat_service.get_repository_manager",
-        new=_fake_get_repo_manager,
-    ), patch(
-        "app.core.llm.chat_service.get_embeddings_from_httpx",
-        new=AsyncMock(return_value=[[0.0] * 128]),
-    ), patch(
-        "app.core.llm.chat_service.get_sparse_embeddings",
-        new=AsyncMock(return_value=[{1: 1.0}]),
-    ), patch(
-        "app.core.llm.chat_service.vector_db_client.search",
-        new=_fake_search,
-    ), patch(
-        "app.core.llm.chat_service.vector_db_client.get_page_previews",
-        new=_fake_get_page_previews,
-    ), patch(
-        "app.core.llm.chat_service.get_llm_client",
-        side_effect=ValueError("provider init failed"),
+    # Build a mock that replaces the entire vector_db_client proxy object.
+    # Patching individual attributes on the proxy triggers __getattr__ → Milvus init.
+    mock_vdb = MagicMock()
+    mock_vdb.search = _fake_search
+    mock_vdb.get_page_previews = _fake_get_page_previews
+
+    with (
+        patch(
+            "app.core.llm.chat_service.get_repository_manager",
+            new=_fake_get_repo_manager,
+        ),
+        patch(
+            "app.core.llm.chat_service.get_embeddings_from_httpx",
+            new=AsyncMock(return_value=[[0.0] * 128]),
+        ),
+        patch(
+            "app.core.llm.chat_service.get_sparse_embeddings",
+            new=AsyncMock(return_value=[{1: 1.0}]),
+        ),
+        patch(
+            "app.core.llm.chat_service.vector_db_client",
+            new=mock_vdb,
+        ),
     ):
         gen = ChatService.create_chat_stream(
             user_msg,

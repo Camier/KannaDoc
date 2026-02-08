@@ -9,6 +9,14 @@ export default defineConfig({
     environment: 'happy-dom',
     globals: true,
     setupFiles: './src/test/setup.ts',
+    exclude: [
+      '**/node_modules/**',
+      '**/.next/**',
+      '**/dist/**',
+      '**/playwright-report/**',
+      '**/test-results/**',
+      'tests/e2e/**',
+    ],
   },
   resolve: {
     alias: {

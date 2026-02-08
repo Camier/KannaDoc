@@ -75,7 +75,7 @@ Notes:
 - `backend/app/main.py`
 
 **Router wiring**
-- `backend/app/api/__init__.py`
+- `backend/app/api/router.py`
 
 **Framework wrapper (app construction / wiring)**
 - `backend/app/framework/__init__.py`
@@ -93,7 +93,7 @@ Notes:
 **Core LLM service**
 - `backend/app/core/llm/__init__.py`
 - `backend/app/core/llm/chat_service.py`
-- `backend/app/core/llm/providers.yaml`
+- Model config is user-supplied (`model_name`, `model_url`, `api_key`) and stored in MongoDB (no `providers.yaml`).
 
 ---
 
@@ -191,9 +191,8 @@ All endpoint modules (FastAPI routers):
 - `backend/app/rag/utils.py` (image hydration via MinIO, helper functions)
 
 **LLM provider selection / clients**
-- `backend/app/rag/provider_client.py`
-- `backend/app/rag/provider_registry.py` (unified provider configuration with timeout support)
-- `backend/app/core/llm/providers.yaml` (configuration file; not Python)
+- Model configuration storage: `backend/app/db/repositories/model_config.py`
+- LLM client wiring: `backend/app/core/llm/chat_service.py`
 
 **Embeddings utilities (normalize/downsample multivectors)**
 - `backend/app/core/embeddings.py`

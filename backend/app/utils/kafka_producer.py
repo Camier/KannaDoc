@@ -1,4 +1,5 @@
 import json
+import asyncio
 from aiokafka import AIOKafkaProducer
 from aiokafka.errors import KafkaError
 from app.core.config import settings
@@ -12,15 +13,21 @@ KAFKA_PRIORITY_HEADER = "priority"
 class KafkaProducerManager:
     def __init__(self):
         self.producer = None
+        self._start_lock = asyncio.Lock()
 
     async def start(self):
-        if not self.producer:
-            self.producer = AIOKafkaProducer(bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS)
-            await self.producer.start()
+        async with self._start_lock:
+            if not self.producer:
+                self.producer = AIOKafkaProducer(
+                    bootstrap_servers=KAFKA_BOOTSTRAP_SERVERS,
+                    acks="all",
+                )
+                await self.producer.start()
 
     async def stop(self):
         if self.producer:
             await self.producer.stop()
+            self.producer = None
 
     # @retry(stop=stop_after_attempt(5), wait=wait_fixed(2))
     async def send_embedding_task(
@@ -41,16 +48,21 @@ class KafkaProducerManager:
 
         try:
             await self.start()
-            await self.producer.send(
+            if not self.producer:
+                raise RuntimeError("Kafka producer not initialized after start()")
+            await self.producer.send_and_wait(
                 KAFKA_TOPIC,
                 json.dumps(message).encode("utf-8"),
                 headers=[
                     (KAFKA_PRIORITY_HEADER, str(priority).encode("utf-8"))
                 ],  # 消息头包含优先级
             )
-            logger.info(f"Task {task_id} message sent to Kafka: {message} with priority: {priority}")
+            logger.info(
+                f"Task {task_id} message sent to Kafka: {message} with priority: {priority}"
+            )
         except KafkaError as e:
             logger.error(f"Error sending message to Kafka: {e}")
+            raise
 
 
     async def send_workflow_task(
@@ -74,11 +86,20 @@ class KafkaProducerManager:
             "username": username,
             "workflow_data": workflow_data
         }
-        
-        await self.producer.send(
-            KAFKA_TOPIC,
-            json.dumps(message).encode("utf-8"),
-            headers=[(KAFKA_PRIORITY_HEADER, priority.encode("utf-8"))]
-        )
+        try:
+            await self.start()
+            if not self.producer:
+                raise RuntimeError("Kafka producer not initialized after start()")
+            await self.producer.send_and_wait(
+                KAFKA_TOPIC,
+                json.dumps(message).encode("utf-8"),
+                headers=[(KAFKA_PRIORITY_HEADER, str(priority).encode("utf-8"))],
+            )
+            logger.info(
+                f"Workflow task {task_id} message sent to Kafka: type={workflow_type}, priority={priority}"
+            )
+        except KafkaError as e:
+            logger.error(f"Error sending workflow message to Kafka: {e}")
+            raise
 
 kafka_producer_manager = KafkaProducerManager()

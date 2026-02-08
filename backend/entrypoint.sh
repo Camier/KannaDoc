@@ -12,7 +12,7 @@ wait_for_db() {
         local retry_count=0
         
         echo "等待服务 $host:$port 启动..."
-        until (echo > /dev/tcp/$host/$port) >/dev/null 2>&1 || [ $retry_count -eq $max_retries ]; do
+        until (echo > /dev/tcp/"$host"/"$port") >/dev/null 2>&1 || [ $retry_count -eq $max_retries ]; do
             retry_count=$((retry_count+1))
             echo "尝试 $retry_count/$max_retries: 等待 $host:$port..."
             sleep $retry_interval
@@ -37,7 +37,7 @@ wait_for_db() {
     if [ "${VECTOR_DB:-milvus}" = "milvus" ]; then
         wait_for_service milvus-standalone 19530
     else
-        echo "跳过 Milvus 等待 (VECTOR_DB=${VECTOR_DB:-qdrant})"
+        echo "跳过 Milvus 等待 (VECTOR_DB=${VECTOR_DB:-milvus})"
     fi
 
     wait_for_service unoserver 2003
@@ -58,7 +58,21 @@ check_migration_needed() {
         cp env.py migrations
         return 0
     else
-        cp -r migrations_previous/ migrations/
+        # Restore the snapshot contents without nesting migrations_previous into migrations/.
+        #
+        # Historically this used `cp -r migrations_previous/ migrations/`, which creates:
+        # - migrations/migrations_previous/...
+        # and then later backup logic copies migrations/* back into migrations_previous/,
+        # causing an infinite-looking recursion:
+        # - migrations_previous/migrations_previous/migrations_previous/...
+        #
+        # This shows up as a repo hygiene/drift issue when host paths are mounted.
+        mkdir -p migrations
+        shopt -s dotglob nullglob
+        for item in migrations_previous/*; do
+            cp -r "$item" migrations/
+        done
+        shopt -u dotglob nullglob
     fi
     
     # 检查数据库是否已应用最新迁移
@@ -140,7 +154,18 @@ PY
             alembic upgrade head
         fi
         mkdir -p migrations_previous
-        cp -r migrations/* migrations_previous/
+        # Keep migrations_previous as a snapshot of migrations/ without ever copying a nested
+        # migrations_previous directory back into itself.
+        rm -rf migrations_previous/migrations_previous 2>/dev/null || true
+        shopt -s dotglob nullglob
+        for item in migrations/*; do
+            base="$(basename "$item")"
+            if [ "$base" = "migrations_previous" ]; then
+                continue
+            fi
+            cp -r "$item" migrations_previous/
+        done
+        shopt -u dotglob nullglob
     else
         echo "数据库已是最新，无需迁移"
     fi

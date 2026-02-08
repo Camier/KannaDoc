@@ -1,15 +1,12 @@
 from typing import List, Optional
 
-from pydantic import BaseModel, field_validator, model_validator
-
-from app.rag.provider_registry import ProviderRegistry
+from pydantic import BaseModel, field_validator
 
 
 class ModelConfigBase(BaseModel):
     model_name: str
     model_url: str = ""
     api_key: str
-    provider: Optional[str] = None
     base_used: List[dict] = []
     system_prompt: str = ""
     temperature: float = 0.7
@@ -27,37 +24,6 @@ class ModelConfigBase(BaseModel):
         if not v or len(v.strip()) < 2:
             raise ValueError("model_name must be at least 2 characters")
         return v.strip()
-
-    @field_validator("provider")
-    @classmethod
-    def validate_provider(cls, v: Optional[str]) -> Optional[str]:
-        if v is None:
-            return v
-        known_providers = ProviderRegistry.get_all_providers()
-        if v not in known_providers:
-            raise ValueError(
-                f"Unknown provider: {v}. Valid providers: {known_providers}"
-            )
-        return v
-
-    @model_validator(mode="after")
-    def validate_or_infer_provider(self) -> "ModelConfigBase":
-        """Infer provider from model_name when not explicitly provided.
-
-        Rationale:
-        - If the user supplies an explicit provider (e.g. `minimax`), we should not
-          reject new/unknown model ids solely because they are not yet listed in
-          `providers.yaml`.
-        - If provider is omitted, keep the existing safety behavior: unknown model
-          ids are rejected because we cannot route them.
-        """
-        if self.provider is None:
-            detected = ProviderRegistry.get_provider_for_model(self.model_name)
-            if not detected:
-                raise ValueError(
-                    f"Unknown model: {self.model_name}. Cannot detect provider."
-                )
-        return self
 
     @field_validator("api_key")
     @classmethod
@@ -140,7 +106,6 @@ class ModelUpdate(BaseModel):
     model_name: Optional[str] = None
     model_url: Optional[str] = None
     api_key: Optional[str] = None
-    provider: Optional[str] = None
     base_used: Optional[List[dict]] = None
     system_prompt: Optional[str] = None
     temperature: Optional[float] = None
@@ -166,18 +131,6 @@ class ModelUpdate(BaseModel):
         if len(v.strip()) < 10:
             raise ValueError("api_key must be at least 10 characters")
         return v.strip()
-
-    @field_validator("provider")
-    @classmethod
-    def validate_provider(cls, v: Optional[str]) -> Optional[str]:
-        if v is None:
-            return v
-        known_providers = ProviderRegistry.get_all_providers()
-        if v not in known_providers:
-            raise ValueError(
-                f"Unknown provider: {v}. Valid providers: {known_providers}"
-            )
-        return v
 
 
 class SelectedModelResponse(BaseModel):

@@ -38,7 +38,7 @@ Config sources (canonical):
 - /LAB/@thesis/layra/docker-compose.yml
 - /LAB/@thesis/layra/docker-compose.prod.yml
 - /LAB/@thesis/layra/docker-compose.override.yml
-- /LAB/@thesis/layra/backend/app/core/llm/providers.yaml
+- /LAB/@thesis/layra/backend/app/db/repositories/model_config.py (user-supplied LLM config stored in MongoDB)
 ```
 
 ---

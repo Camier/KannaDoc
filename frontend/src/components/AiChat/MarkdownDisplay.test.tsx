@@ -33,11 +33,16 @@ vi.mock('@/utils/file', () => ({
 }));
 
 // Mock navigator.clipboard
+// In happy-dom/jsdom the `clipboard` property can be a getter-only.
+// Define it explicitly to avoid "has only a getter" crashes during module evaluation.
 const mockClipboard = {
   writeText: vi.fn(() => Promise.resolve()),
 };
 
-Object.assign(navigator, { clipboard: mockClipboard });
+Object.defineProperty(navigator, "clipboard", {
+  value: mockClipboard,
+  writable: true,
+});
 
 describe('MarkdownDisplay Component', () => {
   const mockMessage: Message = {
