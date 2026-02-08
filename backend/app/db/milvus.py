@@ -226,6 +226,74 @@ class MilvusManager:
         )
         self.load_collection(collection_name)
 
+    def ensure_pages_sparse_collection(self, patch_collection_name: str) -> str:
+        """Ensure the page-level sparse sidecar collection exists.
+
+        Creates {patch_collection_name}_pages_sparse if it doesn't exist.
+        Returns the sidecar collection name.
+        """
+        sidecar_name = self._pages_sparse_collection_name(patch_collection_name)
+        if self.client.has_collection(sidecar_name):
+            return sidecar_name
+
+        schema = self.client.create_schema(auto_id=False, enable_dynamic_fields=False)
+        schema.add_field(
+            field_name="page_id",
+            datatype=DataType.VARCHAR,
+            max_length=512,
+            is_primary=True,
+        )
+        schema.add_field(
+            field_name="sparse_vector",
+            datatype=DataType.SPARSE_FLOAT_VECTOR,
+        )
+        schema.add_field(
+            field_name="file_id",
+            datatype=DataType.VARCHAR,
+            max_length=65535,
+        )
+        schema.add_field(
+            field_name="page_number",
+            datatype=DataType.INT64,
+        )
+        schema.add_field(
+            field_name="text_preview",
+            datatype=DataType.VARCHAR,
+            max_length=2000,
+        )
+
+        self.client.create_collection(collection_name=sidecar_name, schema=schema)
+
+        index_params = self.client.prepare_index_params()
+        index_params.add_index(
+            field_name="sparse_vector",
+            index_name="sparse_vector_index",
+            index_type="SPARSE_INVERTED_INDEX",
+            metric_type="IP",
+            params={"drop_ratio_build": 0.2},
+        )
+        index_params.add_index(
+            field_name="file_id",
+            index_name="file_id_index",
+            index_type="INVERTED",
+        )
+        index_params.add_index(
+            field_name="page_number",
+            index_name="page_number_index",
+            index_type="INVERTED",
+        )
+        index_params.add_index(
+            field_name="page_id",
+            index_name="page_id_index",
+            index_type="INVERTED",
+        )
+        self.client.create_index(
+            collection_name=sidecar_name, index_params=index_params, sync=True
+        )
+        self.load_collection(sidecar_name)
+        logger.info(f"Created pages_sparse sidecar collection: {sidecar_name}")
+        return sidecar_name
+
     @vector_db_circuit
     def search(self, collection_name, data, topk):
         """

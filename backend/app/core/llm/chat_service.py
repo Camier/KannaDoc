@@ -17,12 +17,12 @@ Common utilities are shared via app.core.embeddings (normalize_multivector).
 import asyncio
 import json
 import time
+from functools import partial
 from typing import AsyncGenerator, Optional, Dict, Any, List, cast
 from openai import AsyncOpenAI  # type: ignore[import-not-found]
 
 from app.db.repositories.repository_manager import get_repository_manager
 from app.core.logging import logger
-from app.core.circuit_breaker import llm_service_circuit
 from app.core.rag.retrieval_params import normalize_top_k as normalize_rag_top_k
 from app.db.vector_db import vector_db_client
 from app.rag.get_embedding import get_embeddings_from_httpx, get_sparse_embeddings
@@ -123,7 +123,6 @@ class ChatService:
         return optional_args
 
     @staticmethod
-    @llm_service_circuit
     async def create_chat_stream(
         user_message_content,
         model_config: Optional[Dict[str, Any]] = None,
@@ -364,6 +363,7 @@ class ChatService:
                     else:
                         search_data = query_vecs
 
+                    loop = asyncio.get_running_loop()
                     collection_name_to_base_id: dict[str, str] = {}
                     for base in bases:
                         collection_name = to_milvus_collection_name(base["baseId"])
@@ -373,9 +373,21 @@ class ChatService:
                         try:
                             t_start = time.perf_counter()
                             if is_workflow:
-                                if vector_db_client.check_collection(collection_name):
-                                    scores = vector_db_client.search(
-                                        collection_name, data=search_data, topk=top_K
+                                if await loop.run_in_executor(
+                                    None,
+                                    partial(
+                                        vector_db_client.check_collection,
+                                        collection_name,
+                                    ),
+                                ):
+                                    scores = await loop.run_in_executor(
+                                        None,
+                                        partial(
+                                            vector_db_client.search,
+                                            collection_name,
+                                            data=search_data,
+                                            topk=top_K,
+                                        ),
                                     )
                                     for score in scores:
                                         score.update(
@@ -383,8 +395,14 @@ class ChatService:
                                         )
                                     result_score.extend(scores)
                             else:
-                                scores = vector_db_client.search(
-                                    collection_name, data=search_data, topk=top_K
+                                scores = await loop.run_in_executor(
+                                    None,
+                                    partial(
+                                        vector_db_client.search,
+                                        collection_name,
+                                        data=search_data,
+                                        topk=top_K,
+                                    ),
                                 )
                                 for score in scores:
                                     score.update({"collection_name": collection_name})

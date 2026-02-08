@@ -9,6 +9,8 @@ from app.rag.convert_file import convert_file_to_images, save_image_to_minio
 from app.rag.get_embedding import get_embeddings_from_httpx
 from app.db.miniodb import async_minio_manager
 from app.core.logging import logger
+from app.core.config import settings
+from app.utils.ids import to_milvus_collection_name
 
 try:
     EMBED_BATCH_SIZE = int(os.environ.get("EMBED_BATCH_SIZE", "16"))
@@ -74,7 +76,7 @@ async def process_file(redis, task_id, username, knowledge_db_id, file_meta):
         image_ids = [f"{username}_{uuid.uuid4()}" for _ in range(len(images_buffer))]
 
         # 插入Milvus
-        collection_name = f"colqwen{knowledge_db_id.replace('-', '_')}"
+        collection_name = to_milvus_collection_name(knowledge_db_id)
 
         create_result = await repo_manager.file.create_files(
             file_id=file_meta["file_id"],
@@ -279,7 +281,7 @@ async def _fetch_sparse_embeddings(texts):
     try:
         async with httpx.AsyncClient() as client:
             response = await client.post(
-                "http://model-server:8005/embed_sparse",
+                f"{settings.model_server_url}/embed_sparse",
                 json={"texts": texts},
                 timeout=60.0,
             )
@@ -322,6 +324,29 @@ async def insert_to_milvus(
         sparse_page_vecs = [
             vec if isinstance(vec, dict) else {} for vec in sparse_page_vecs
         ]
+
+    try:
+        sidecar_name = vector_db_client.ensure_pages_sparse_collection(collection_name)
+        sidecar_rows = []
+        for i in range(len(embeddings)):
+            sparse_vec = sparse_page_vecs[i] if i < len(sparse_page_vecs) else {}
+            text_preview = ""
+            if isinstance(page_texts, list) and i < len(page_texts):
+                text_preview = (str(page_texts[i]) or "")[:1500]
+            sidecar_rows.append(
+                {
+                    "page_id": f"{file_id}::{page_offset + i}",
+                    "sparse_vector": sparse_vec if sparse_vec else {0: 0.0},
+                    "file_id": str(file_id),
+                    "page_number": page_offset + i,
+                    "text_preview": text_preview,
+                }
+            )
+        if sidecar_rows:
+            vector_db_client.client.upsert(sidecar_name, sidecar_rows)
+    except Exception as e:
+        logger.warning(f"Failed to populate pages_sparse sidecar: {e}")
+
     loop = asyncio.get_running_loop()
     await loop.run_in_executor(
         None,
@@ -332,9 +357,7 @@ async def insert_to_milvus(
                     "page_number": page_offset + i,
                     "image_id": image_ids[i],
                     "file_id": file_id,
-                    "sparse_vecs": [dict(sparse_page_vecs[i]) for _ in range(len(emb))]
-                    if emb
-                    else [],
+                    "sparse_vecs": [{} for _ in range(len(emb))] if emb else [],
                 },
                 collection_name,
             )

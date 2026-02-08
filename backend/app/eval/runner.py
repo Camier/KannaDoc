@@ -30,6 +30,8 @@ from app.eval.metrics import (
     compute_all_metrics,
 )
 from app.rag.get_embedding import get_embeddings_from_httpx
+from app.core.embeddings import normalize_multivector, downsample_multivector
+from app.core.config import settings
 from app.utils.timezone import beijing_time_now
 from app.utils.ids import to_milvus_collection_name
 
@@ -107,6 +109,11 @@ async def run_evaluation(
                 endpoint="embed_text",
             )
 
+            query_embeddings = normalize_multivector(query_embeddings)
+            query_embeddings = downsample_multivector(
+                query_embeddings, settings.rag_max_query_vecs
+            )
+
             if not query_embeddings or not query_embeddings[0]:
                 logger.warning(f"Empty embedding for query: '{query_text[:50]}...'")
                 queries_failed += 1
@@ -126,7 +133,7 @@ async def run_evaluation(
             search_func = partial(
                 vector_db_client.search,
                 collection_name,
-                data=query_embeddings[0],
+                data=query_embeddings,
                 topk=top_k,
             )
             search_results = await loop.run_in_executor(None, search_func)

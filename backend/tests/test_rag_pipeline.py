@@ -15,6 +15,7 @@ from app.core.llm import ChatService
 from app.db.vector_db import VectorDBClientWrapper
 from app.db.mongo import MongoDB
 from app.models.shared import UserMessage
+from app.utils.ids import to_milvus_collection_name
 
 pytestmark = pytest.mark.integration
 
@@ -234,7 +235,7 @@ class TestRAGPipeline:
             query_embedding = await mock_embed([query], endpoint="embed_text")
 
             # Search vectors
-            collection_name = f"colqwen{knowledge_base_id.replace('-', '_')}"
+            collection_name = to_milvus_collection_name(knowledge_base_id)
             search_results = mock_vector_db.search(
                 collection_name, query_embedding, topk=5
             )
