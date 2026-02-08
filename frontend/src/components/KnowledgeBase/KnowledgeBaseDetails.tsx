@@ -222,6 +222,8 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
               </div>
             </div>
 
+            </div>
+
             <div className="flex gap-4 text-sm text-gray-500 dark:text-gray-400">
               <span>
                 {t("fileNumber")}
@@ -306,7 +308,6 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
             />
           </div>
         </div>
-      </div>
       ) : (
         <div className="h-full flex items-center justify-center bg-white dark:bg-gray-900 rounded-3xl shadow-sm flex-col pb-6">
           <div className="flex items-center justify-center h-[10%] w-full">
