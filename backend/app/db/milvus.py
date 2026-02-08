@@ -16,6 +16,7 @@ import numpy as np
 import concurrent.futures
 import threading
 import math
+import time
 from collections import defaultdict
 from app.core.config import settings
 from app.core.logging import logger
@@ -295,7 +296,7 @@ class MilvusManager:
         return sidecar_name
 
     @vector_db_circuit
-    def search(self, collection_name, data, topk):
+    def search(self, collection_name, data, topk, return_timing: bool = False):
         """
         Perform multi-vector (MaxSim) search.
 
@@ -310,34 +311,45 @@ class MilvusManager:
         Returns:
             List of top-k search results with metadata
         """
+        empty_timing = {
+            "candidate_gen_ms": 0.0,
+            "vector_fetch_ms": 0.0,
+            "maxsim_rerank_ms": 0.0,
+            "total_search_ms": 0.0,
+        }
+
         # Load collection if not already loaded
         self.load_collection(collection_name)
 
         # Guard: empty queries can happen if embedding service fails or caller sends empty input.
         if not data:
-            return []
+            return ([], empty_timing) if return_timing else []
 
         # New retrieval modes (thesis): sparse recall on page-level sidecar + exact MaxSim rerank on patch vectors.
         if isinstance(data, dict) and data.get("mode") in [
             "sparse_then_rerank",
             "dual_then_rerank",
         ]:
-            return self._search_sparse_then_rerank(
+            results, timing = self._search_sparse_then_rerank(
                 patch_collection_name=collection_name,
                 dense_vecs=data.get("dense_vecs") or [],
                 sparse_query=data.get("sparse_query") or {},
                 topk=int(topk),
                 mode=str(data.get("mode")),
+                ef_override=data.get("ef"),
             )
+            return (results, timing) if return_timing else results
 
         dense_vecs = data
         sparse_vecs = []
+        ef_override = None
         if isinstance(data, dict):
             dense_vecs = data.get("dense_vecs") or data.get("data") or []
             sparse_vecs = data.get("sparse_vecs") or []
+            ef_override = data.get("ef")
 
         if not dense_vecs:
-            return []
+            return ([], empty_timing) if return_timing else []
 
         # Buffer for candidate generation (per query token vector).
         # Larger -> better recall, slower.
@@ -349,12 +361,19 @@ class MilvusManager:
         # Perform a vector search on the collection to find the top-k most similar documents.
         # HNSW constraint: ef must be >= limit (k), so set ef = max(search_limit, 100)
         ef_value = max(search_limit, settings.rag_ef_min)
+        if ef_override is not None:
+            try:
+                ef_value = max(int(ef_value), int(search_limit), int(ef_override))
+            except Exception:
+                pass
         search_params = {"metric_type": "IP", "params": {"ef": ef_value}}
         use_hybrid = (
             settings.rag_hybrid_enabled
             and _has_sparse_vectors(sparse_vecs)
             and len(sparse_vecs) == len(dense_vecs)
         )
+
+        t_candidate_start = time.perf_counter()
 
         if use_hybrid:
             dense_req = AnnSearchRequest(
@@ -419,7 +438,13 @@ class MilvusManager:
                 approx_scores[page_key] = approx_scores.get(page_key, 0.0) + float(best)
 
         if not approx_scores:
-            return []
+            candidate_gen_ms = (time.perf_counter() - t_candidate_start) * 1000.0
+            timing = {
+                **empty_timing,
+                "candidate_gen_ms": float(candidate_gen_ms),
+                "total_search_ms": float(candidate_gen_ms),
+            }
+            return ([], timing) if return_timing else []
 
         # 2) Keep only top-N candidate pages for exact reranking.
         candidate_pages_limit = min(
@@ -433,7 +458,8 @@ class MilvusManager:
             )[:candidate_pages_limit]
         ]
 
-        return self._exact_rerank_pages(
+        candidate_gen_ms = (time.perf_counter() - t_candidate_start) * 1000.0
+        results, rerank_timing = self._exact_rerank_pages(
             patch_collection_name=collection_name,
             dense_vecs=dense_vecs,
             candidate_pages=candidate_pages,
@@ -441,11 +467,27 @@ class MilvusManager:
             diversify=True,
         )
 
+        vector_fetch_ms = float(rerank_timing.get("vector_fetch_ms", 0.0))
+        maxsim_rerank_ms = float(rerank_timing.get("maxsim_rerank_ms", 0.0))
+        timing = {
+            "candidate_gen_ms": float(candidate_gen_ms),
+            "vector_fetch_ms": vector_fetch_ms,
+            "maxsim_rerank_ms": maxsim_rerank_ms,
+            "total_search_ms": float(
+                candidate_gen_ms + vector_fetch_ms + maxsim_rerank_ms
+            ),
+        }
+        return (results, timing) if return_timing else results
+
     def _resolve_actual_collection_name(self, collection_name: str) -> str:
         """Resolve Milvus alias -> underlying collection name (no-op if not an alias)."""
         try:
             desc = self.client.describe_collection(collection_name)
-            return desc.get("collection_name") or collection_name
+            if isinstance(desc, dict):
+                actual = desc.get("collection_name")
+                if actual:
+                    return str(actual)
+            return collection_name
         except Exception:
             return collection_name
 
@@ -533,7 +575,7 @@ class MilvusManager:
         return out
 
     def _dense_approx_recall_pages(
-        self, patch_collection_name: str, dense_vecs, limit: int
+        self, patch_collection_name: str, dense_vecs, limit: int, ef_override=None
     ) -> list[tuple[str, int, float]]:
         """Dense recall on patch vectors; returns page-level approximate MaxSim scores."""
         if not dense_vecs:
@@ -541,6 +583,11 @@ class MilvusManager:
         self.load_collection(patch_collection_name)
 
         ef_value = max(int(limit), settings.rag_ef_min)
+        if ef_override is not None:
+            try:
+                ef_value = max(int(ef_value), int(limit), int(ef_override))
+            except Exception:
+                pass
         search_params = {"metric_type": "IP", "params": {"ef": ef_value}}
         results = self._search_with_retry(
             patch_collection_name,
@@ -685,8 +732,9 @@ class MilvusManager:
         topk: int,
         diversify: bool,
     ):
+        empty_rerank_timing = {"vector_fetch_ms": 0.0, "maxsim_rerank_ms": 0.0}
         if not candidate_pages:
-            return []
+            return [], empty_rerank_timing
         if diversify:
             if getattr(settings, "rag_debug_retrieval", False):
                 logger.info(
@@ -712,6 +760,8 @@ class MilvusManager:
 
         page_size = 1024
         all_rows: list[dict] = []
+
+        t_fetch_start = time.perf_counter()
         for fid, pns in pages_by_file.items():
             escaped_fid = str(fid).replace("'", "\\'")
             pn_list = ", ".join([str(int(pn)) for pn in sorted(pns)])
@@ -732,8 +782,13 @@ class MilvusManager:
             finally:
                 it.close()
 
+        vector_fetch_ms = (time.perf_counter() - t_fetch_start) * 1000.0
+
         if not all_rows:
-            return []
+            return [], {
+                "vector_fetch_ms": float(vector_fetch_ms),
+                "maxsim_rerank_ms": 0.0,
+            }
 
         # Group vectors by page.
         docs_map: dict[tuple[str, int], dict] = {}
@@ -763,6 +818,7 @@ class MilvusManager:
 
         query_vecs = np.asarray(dense_vecs, dtype=np.float32)
 
+        t_rerank_start = time.perf_counter()
         scores = []
         for _page_key, doc_data in docs_map.items():
             if not doc_data["vectors"]:
@@ -772,7 +828,9 @@ class MilvusManager:
             scores.append((float(score), doc_data["metadata"]))
 
         scores.sort(key=lambda x: x[0], reverse=True)
-        return [
+        maxsim_rerank_ms = (time.perf_counter() - t_rerank_start) * 1000.0
+
+        results = [
             {
                 "score": score,
                 "image_id": metadata.get("image_id"),
@@ -782,6 +840,11 @@ class MilvusManager:
             for score, metadata in scores[: int(topk)]
         ]
 
+        return results, {
+            "vector_fetch_ms": float(vector_fetch_ms),
+            "maxsim_rerank_ms": float(maxsim_rerank_ms),
+        }
+
     def _search_sparse_then_rerank(
         self,
         patch_collection_name: str,
@@ -789,10 +852,19 @@ class MilvusManager:
         sparse_query: dict[int, float],
         topk: int,
         mode: str,
+        ef_override=None,
     ):
         """Dual-candidate mode: sparse recall -> exact MaxSim rerank (optionally fused with dense recall)."""
         if not dense_vecs:
-            return []
+            empty_timing = {
+                "candidate_gen_ms": 0.0,
+                "vector_fetch_ms": 0.0,
+                "maxsim_rerank_ms": 0.0,
+                "total_search_ms": 0.0,
+            }
+            return [], empty_timing
+
+        t_candidate_start = time.perf_counter()
 
         pages_sparse_coll = self._pages_sparse_collection_name(patch_collection_name)
 
@@ -830,6 +902,7 @@ class MilvusManager:
                 patch_collection_name=patch_collection_name,
                 dense_vecs=dense_vecs,
                 limit=dense_limit,
+                ef_override=ef_override,
             )
             if getattr(settings, "rag_debug_retrieval", False):
                 logger.info(
@@ -843,6 +916,7 @@ class MilvusManager:
                 patch_collection_name=patch_collection_name,
                 dense_vecs=dense_vecs,
                 limit=dense_limit,
+                ef_override=ef_override,
             )
             if getattr(settings, "rag_debug_retrieval", False):
                 logger.info(
@@ -882,13 +956,26 @@ class MilvusManager:
                 self._distinct_files(candidates),
             )
 
-        return self._exact_rerank_pages(
+        candidate_gen_ms = (time.perf_counter() - t_candidate_start) * 1000.0
+        results, rerank_timing = self._exact_rerank_pages(
             patch_collection_name=patch_collection_name,
             dense_vecs=dense_vecs,
             candidate_pages=candidates,
             topk=topk,
             diversify=True,
         )
+
+        vector_fetch_ms = float(rerank_timing.get("vector_fetch_ms", 0.0))
+        maxsim_rerank_ms = float(rerank_timing.get("maxsim_rerank_ms", 0.0))
+        timing = {
+            "candidate_gen_ms": float(candidate_gen_ms),
+            "vector_fetch_ms": vector_fetch_ms,
+            "maxsim_rerank_ms": maxsim_rerank_ms,
+            "total_search_ms": float(
+                candidate_gen_ms + vector_fetch_ms + maxsim_rerank_ms
+            ),
+        }
+        return results, timing
 
     @vector_db_circuit
     def insert(self, data, collection_name):

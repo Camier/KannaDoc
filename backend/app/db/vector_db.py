@@ -33,13 +33,18 @@ class VectorDBClientWrapper:
         # Milvus expects collection_name as second arg, data dict as first
         return self.client.insert(data, collection_name)
 
-    def search(self, collection_name, data, topk=10):
+    def search(self, collection_name, data, topk=10, return_timing: bool = False):
         """
         Search Milvus collection with multivector query.
         data shape: List[List[float]] (n_tokens, dim)
         """
         # Milvus expects multivector query (MaxSim)
-        return self.client.search(collection_name, data, topk)
+        return self.client.search(
+            collection_name,
+            data,
+            topk,
+            return_timing=return_timing,
+        )
 
     def delete_files(self, collection_name, file_ids):
         # Milvus delete by file IDs

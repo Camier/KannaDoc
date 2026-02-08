@@ -12,6 +12,7 @@ BaseSettings = _pydantic_settings.BaseSettings
 
 logger = logging.getLogger(__name__)
 
+
 def _discover_env_file() -> str | None:
     """Find a usable .env file path for local/dev runs.
 
@@ -124,6 +125,11 @@ class Settings(BaseSettings):
         description="Comma-separated list of allowed CORS origins (e.g., 'http://localhost:3000,https://example.com'). Empty = allow all (development only)",
     )
 
+    mcp_server_presets_json: str = Field(
+        default="",
+        description='Optional JSON for workflow MCP presets. Example: [{"name":"OpenCode","url":"http://host.docker.internal:8765/sse"}]',
+    )
+
     unoserver_instances: int = 1
     unoserver_host: str = "unoserver"
     unoserver_base_port: int = 2003
@@ -150,7 +156,7 @@ class Settings(BaseSettings):
     # - sparse_then_rerank: sparse page recall -> exact MaxSim rerank on patch vectors
     # - dual_then_rerank: sparse page recall + dense patch recall -> fuse -> exact MaxSim rerank
     rag_retrieval_mode: str = Field(
-        default="dense",
+        default="dual_then_rerank",
         description="RAG retrieval mode: dense|hybrid|sparse_then_rerank|dual_then_rerank",
     )
     rag_pages_sparse_suffix: str = Field(

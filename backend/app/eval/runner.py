@@ -14,6 +14,7 @@ import uuid
 import time
 import statistics
 import asyncio
+import math
 from functools import partial
 from typing import Dict, Any, List, Optional
 
@@ -29,7 +30,7 @@ from app.eval.metrics import (
     recall_at_k,
     compute_all_metrics,
 )
-from app.rag.get_embedding import get_embeddings_from_httpx
+from app.rag.get_embedding import get_embeddings_from_httpx, get_sparse_embeddings
 from app.core.embeddings import normalize_multivector, downsample_multivector
 from app.core.config import settings
 from app.utils.timezone import beijing_time_now
@@ -72,6 +73,30 @@ async def run_evaluation(
     top_k = config.get("top_k", 10)
     score_threshold = config.get("score_threshold", 10)
 
+    retrieval_mode = config.get("retrieval_mode", settings.rag_retrieval_mode)
+    max_query_vecs = config.get("rag_max_query_vecs", settings.rag_max_query_vecs)
+    ef_override = config.get("ef", None)
+
+    def _percentile(values: List[float], p: float) -> float:
+        if not values:
+            return 0.0
+        xs = sorted(float(x) for x in values)
+        if len(xs) == 1:
+            return float(xs[0])
+        k = (len(xs) - 1) * float(p)
+        f = int(math.floor(k))
+        c = int(math.ceil(k))
+        if f == c:
+            return float(xs[f])
+        return float(xs[f] + (xs[c] - xs[f]) * (k - f))
+
+    def _pstats(values: List[float]) -> Dict[str, float]:
+        return {
+            "p50": _percentile(values, 0.50),
+            "p95": _percentile(values, 0.95),
+            "p99": _percentile(values, 0.99),
+        }
+
     logger.info(f"Loading evaluation dataset: {dataset_id}")
     dataset = await get_dataset(dataset_id, db=db)
     if dataset is None:
@@ -92,6 +117,13 @@ async def run_evaluation(
     per_query_results: List[Dict[str, Any]] = []
     eval_results_for_aggregation: List[EvalResult] = []
     latencies: List[float] = []
+
+    embed_ms_values: List[float] = []
+    candidate_gen_ms_values: List[float] = []
+    vector_fetch_ms_values: List[float] = []
+    maxsim_rerank_ms_values: List[float] = []
+    total_search_ms_values: List[float] = []
+
     queries_processed = 0
     queries_failed = 0
 
@@ -104,14 +136,17 @@ async def run_evaluation(
                 f"Processing query {queries_processed + 1}/{len(dataset.queries)}: '{query_text[:50]}...'"
             )
 
+            t_embed_start = time.perf_counter()
             query_embeddings = await get_embeddings_from_httpx(
                 data=[query_text],
                 endpoint="embed_text",
             )
+            embed_ms = (time.perf_counter() - t_embed_start) * 1000.0
+            embed_ms_values.append(float(embed_ms))
 
             query_embeddings = normalize_multivector(query_embeddings)
             query_embeddings = downsample_multivector(
-                query_embeddings, settings.rag_max_query_vecs
+                query_embeddings, int(max_query_vecs)
             )
 
             if not query_embeddings or not query_embeddings[0]:
@@ -123,22 +158,84 @@ async def run_evaluation(
                         "status": "failed",
                         "error": "Empty embedding returned",
                         "retrieved_docs": [],
+                        "timing_ms": {
+                            "embed_ms": float(embed_ms),
+                            "candidate_gen_ms": 0.0,
+                            "vector_fetch_ms": 0.0,
+                            "maxsim_rerank_ms": 0.0,
+                            "total_search_ms": 0.0,
+                        },
                         "metrics": None,
                     }
                 )
                 continue
+
+            sparse_vecs: List[Dict[int, float]] = []
+            sparse_query: Optional[Dict[int, float]] = None
+            if query_embeddings and retrieval_mode in [
+                "hybrid",
+                "sparse_then_rerank",
+                "dual_then_rerank",
+            ]:
+                sparse_result = await get_sparse_embeddings([query_text])
+                if sparse_result and len(sparse_result) > 0:
+                    sparse_query = sparse_result[0]
+                    if retrieval_mode == "hybrid":
+                        sparse_vecs = [sparse_query] * len(query_embeddings)
+
+            # Build search_data following chat_service.py patterns.
+            if (
+                retrieval_mode in ["sparse_then_rerank", "dual_then_rerank"]
+                and sparse_query
+            ):
+                search_data: Any = {
+                    "mode": retrieval_mode,
+                    "dense_vecs": query_embeddings,
+                    "sparse_query": sparse_query,
+                    "ef": ef_override,
+                }
+            elif sparse_vecs:
+                search_data = {
+                    "dense_vecs": query_embeddings,
+                    "sparse_vecs": sparse_vecs,
+                    "ef": ef_override,
+                }
+            else:
+                # Dense-only fallback (also carries ef override via dict).
+                search_data = {"dense_vecs": query_embeddings, "ef": ef_override}
 
             start_time = time.perf_counter()
             loop = asyncio.get_running_loop()
             search_func = partial(
                 vector_db_client.search,
                 collection_name,
-                data=query_embeddings,
+                data=search_data,
                 topk=top_k,
+                return_timing=True,
             )
-            search_results = await loop.run_in_executor(None, search_func)
+            search_results, search_timing = await loop.run_in_executor(
+                None, search_func
+            )
             end_time = time.perf_counter()
-            latencies.append((end_time - start_time) * 1000)
+
+            # Prefer the internal timing's total_search_ms for stability across environments.
+            total_search_ms = float(
+                (search_timing or {}).get(
+                    "total_search_ms", (end_time - start_time) * 1000.0
+                )
+            )
+            latencies.append(total_search_ms)
+
+            candidate_gen_ms_values.append(
+                float((search_timing or {}).get("candidate_gen_ms", 0.0))
+            )
+            vector_fetch_ms_values.append(
+                float((search_timing or {}).get("vector_fetch_ms", 0.0))
+            )
+            maxsim_rerank_ms_values.append(
+                float((search_timing or {}).get("maxsim_rerank_ms", 0.0))
+            )
+            total_search_ms_values.append(total_search_ms)
 
             retrieved_docs = []
             for result in search_results:
@@ -162,6 +259,10 @@ async def run_evaluation(
                         "status": "success",
                         "retrieved_docs": retrieved_docs,
                         "ground_truth_count": 0,
+                        "timing_ms": {
+                            "embed_ms": float(embed_ms),
+                            **(search_timing or {}),
+                        },
                         "metrics": None,
                     }
                 )
@@ -212,6 +313,10 @@ async def run_evaluation(
                     "retrieved_docs": retrieved_docs,
                     "ground_truth_count": total_relevant,
                     "relevant_retrieved": relevant_count,
+                    "timing_ms": {
+                        "embed_ms": float(embed_ms),
+                        **(search_timing or {}),
+                    },
                     "metrics": {
                         "mrr": query_mrr,
                         "ndcg": query_ndcg,
@@ -252,6 +357,14 @@ async def run_evaluation(
         else (latencies[0] if latencies else 0.0)
     )
     aggregated_metrics["p95_latency_ms"] = p95_latency_ms
+
+    aggregated_metrics["timing_ms"] = {
+        "embed_ms": _pstats(embed_ms_values),
+        "candidate_gen_ms": _pstats(candidate_gen_ms_values),
+        "vector_fetch_ms": _pstats(vector_fetch_ms_values),
+        "maxsim_rerank_ms": _pstats(maxsim_rerank_ms_values),
+        "total_search_ms": _pstats(total_search_ms_values),
+    }
 
     if eval_results_for_aggregation:
         summary = compute_all_metrics(eval_results_for_aggregation, k=top_k)
