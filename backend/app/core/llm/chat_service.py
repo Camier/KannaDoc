@@ -200,9 +200,8 @@ class ChatService:
         """
         provider_l = (provider or "").strip().lower()
         model_l = (model_name or "").strip().lower()
-        if provider_l != "deepseek":
+        if provider_l not in ("deepseek", "cliproxyapi"):
             return False
-        # Official DeepSeek API uses deepseek-reasoner. Keep matching strict.
         return model_l == "deepseek-reasoner" or (
             "deepseek" in model_l and "reasoner" in model_l
         )
@@ -1019,7 +1018,7 @@ class ChatService:
                         and delta.reasoning_content is not None
                     ):
                         if not thinking_content:
-                            thinking_content.append("</think>")
+                            thinking_content.append("<think>")
                         payload = json.dumps(
                             {
                                 "type": "thinking",

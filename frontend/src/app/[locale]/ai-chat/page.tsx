@@ -401,7 +401,12 @@ const AIChat: React.FC = () => {
         const { done, value } = (await eventReader?.read()) || {};
         if (done) break;
 
-        const payload = JSON.parse(value.data);
+        let payload;
+        try {
+          payload = JSON.parse(value.data);
+        } catch {
+          continue;
+        }
 
         if (payload.type === "file_used") {
           file_used = payload.data; // 自动处理原始换行符

@@ -376,8 +376,6 @@ class ModelConfigRepository(BaseRepository):
                         array_filters=[{"elem.model_id": model_id}],
                     )
             else:
-                cliproxyapi_url = os.getenv("CLIPROXYAPI_BASE_URL", "")
-                cliproxyapi_key = os.getenv("CLIPROXYAPI_API_KEY", "")
                 actual_model_name = (
                     model_id[7:] if model_id.startswith("system_") else model_id
                 )
@@ -385,8 +383,8 @@ class ModelConfigRepository(BaseRepository):
                 new_model = self._build_model_dict(
                     model_id=model_id,
                     model_name=model_name if model_name else actual_model_name,
-                    model_url=model_url if model_url else cliproxyapi_url,
-                    api_key=api_key if api_key else cliproxyapi_key,
+                    model_url=model_url if model_url else "",
+                    api_key=api_key if api_key else None,
                     base_used=base_used if base_used is not None else [],
                     system_prompt=system_prompt if system_prompt is not None else "",
                     temperature=temperature if temperature is not None else -1,
@@ -493,61 +491,50 @@ class ModelConfigRepository(BaseRepository):
         return {"status": "error", "message": "Selected model not found"}
 
     async def _prune_stale_system_models(
-        self, user_models: List[dict], persisted_model_ids: set
+        self,
+        user_models: List[dict],
+        persisted_model_ids: set,
+        live_proxy_models: Optional[List[str]],
     ) -> tuple[List[dict], set]:
-        # If CLIProxyAPI is configured but returns empty /models, hide any stale
-        # stored system_* proxy models to avoid presenting broken choices.
-        if os.getenv("CLIPROXYAPI_BASE_URL"):
-            from app.rag.provider_registry import ProviderRegistry
+        """Remove system models that are no longer available from any provider.
 
-            live_models, _reason = await ProviderRegistry.fetch_cliproxyapi_models()
-            live_set = set(live_models)
-
-            filtered: List[dict] = []
-            for m in user_models:
-                model_id = str(m.get("model_id", ""))
-                model_name = str(m.get("model_name", ""))
-                if model_id.startswith("system_"):
-                    provider = ProviderRegistry.get_provider_for_model(model_name)
-                    if provider == "cliproxyapi" and model_name not in live_set:
-                        continue
-                    m = self._sanitize_system_model(m)
-                filtered.append(m)
-            user_models = filtered
-            persisted_model_ids = {m.get("model_id") for m in user_models}
-        else:
-            # Even if CLIPROXYAPI_BASE_URL is not set, sanitize any existing system models
-            user_models = [self._sanitize_system_model(m) for m in user_models]
-            persisted_model_ids = {m.get("model_id") for m in user_models}
-
+        Args:
+            live_proxy_models: Pre-fetched CLIProxyAPI model list (None if proxy not configured).
+        """
         from app.rag.provider_registry import ProviderRegistry
 
         ProviderRegistry.load()
+        live_set = set(live_proxy_models) if live_proxy_models is not None else set()
 
-        # Stale system_* pruning — CLIProxyAPI is already pruned above via live fetch.
         valid_system_ids: set[str] = set()
         for pid in ProviderRegistry.get_all_providers():
             if pid == "cliproxyapi":
+                for mn in live_set:
+                    valid_system_ids.add(f"system_{mn}")
                 continue
             pcfg = ProviderRegistry.get_provider_config(pid)
             for mn in pcfg.models:
                 valid_system_ids.add(f"system_{mn}")
 
-        pruned: List[dict] = []
+        filtered: List[dict] = []
         for m in user_models:
-            mid = str(m.get("model_id", ""))
-            if mid.startswith("system_") and m.get("provider") != "cliproxyapi":
-                if mid not in valid_system_ids:
-                    logger.debug("Pruning stale system model: %s", mid)
+            model_id = str(m.get("model_id", ""))
+            if model_id.startswith("system_"):
+                if model_id not in valid_system_ids:
+                    logger.debug("Pruning stale system model: %s", model_id)
                     continue
-            pruned.append(m)
+                m = self._sanitize_system_model(m)
+            filtered.append(m)
 
-        user_models = pruned
+        user_models = filtered
         persisted_model_ids = {m.get("model_id") for m in user_models}
-
         return user_models, persisted_model_ids
 
-    async def _synthesize_system_models(self, persisted_model_ids: set) -> List[dict]:
+    async def _synthesize_system_models(
+        self,
+        persisted_model_ids: set,
+        live_proxy_models: Optional[List[str]],
+    ) -> List[dict]:
         from app.rag.provider_registry import ProviderRegistry
 
         system_models: List[dict] = []
@@ -556,14 +543,9 @@ class ModelConfigRepository(BaseRepository):
             config = ProviderRegistry.get_provider_config(provider_id)
 
             if provider_id == "cliproxyapi":
-                if os.getenv("CLIPROXYAPI_BASE_URL"):
-                    (
-                        live_models,
-                        _reason,
-                    ) = await ProviderRegistry.fetch_cliproxyapi_models()
-                    model_list = live_models if live_models else list(config.models)
-                else:
+                if live_proxy_models is None:
                     continue
+                model_list = list(live_proxy_models)
             else:
                 if not config.env_key or not os.getenv(config.env_key):
                     continue
@@ -593,7 +575,11 @@ class ModelConfigRepository(BaseRepository):
         return system_models
 
     async def _resolve_selected_model(
-        self, user_models: List[dict], user_config: dict, username: str
+        self,
+        user_models: List[dict],
+        user_config: dict,
+        username: str,
+        live_proxy_models: Optional[List[str]],
     ) -> str:
         selected_model = str(user_config.get("selected_model") or "")
         if selected_model:
@@ -601,16 +587,16 @@ class ModelConfigRepository(BaseRepository):
             if selected_model not in known_ids:
                 selected_model = ""
 
-        # Stabilize: if current selection is a cliproxyapi system model but proxy is empty,
-        # fall back to a deterministic provider-backed system model.
         if selected_model.startswith("system_"):
             selected_name = selected_model[7:]
             from app.rag.provider_registry import ProviderRegistry
 
             provider = ProviderRegistry.get_provider_for_model(selected_name)
             if provider == "cliproxyapi":
-                live_models, _reason = await ProviderRegistry.fetch_cliproxyapi_models()
-                if selected_name not in live_models:
+                live_set = (
+                    set(live_proxy_models) if live_proxy_models is not None else set()
+                )
+                if selected_name not in live_set:
                     fallback = ""
                     for pid in ProviderRegistry.get_all_providers():
                         if pid == "cliproxyapi":
@@ -634,27 +620,36 @@ class ModelConfigRepository(BaseRepository):
         return selected_model
 
     async def get_all_models_config(self, username: str):
-        # 直接返回 models 数组
         await self._ensure_user_model_config(username)
         user_config = await self.db.model_config.find_one({"username": username})
         if not user_config:
-            # Should not happen after upsert, but keep a safe fallback.
             user_config = {"username": username, "selected_model": "", "models": []}
+
+        live_proxy_models: Optional[List[str]] = None
+        if os.getenv("CLIPROXYAPI_BASE_URL"):
+            from app.rag.provider_registry import ProviderRegistry
+
+            (
+                live_proxy_models,
+                _reason,
+            ) = await ProviderRegistry.fetch_cliproxyapi_models()
 
         user_models = user_config.get("models", [])
         persisted_model_ids = {m.get("model_id") for m in user_models}
 
         user_models, persisted_model_ids = await self._prune_stale_system_models(
-            user_models, persisted_model_ids
+            user_models, persisted_model_ids, live_proxy_models
         )
 
-        new_system_models = await self._synthesize_system_models(persisted_model_ids)
+        new_system_models = await self._synthesize_system_models(
+            persisted_model_ids, live_proxy_models
+        )
         for sys_model in new_system_models:
             if sys_model["model_id"] not in persisted_model_ids:
                 user_models.append(sys_model)
 
         selected_model = await self._resolve_selected_model(
-            user_models, user_config, username
+            user_models, user_config, username, live_proxy_models
         )
 
         return {
