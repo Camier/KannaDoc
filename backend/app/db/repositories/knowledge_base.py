@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Dict, Any, List, Optional
 from collections import defaultdict
 from app.core.logging import logger
@@ -78,7 +79,7 @@ class KnowledgeBaseRepository(BaseRepository):
         self, knowledge_base_id: str, include_deleted: bool = False
     ) -> Optional[Dict[str, Any]]:
         """Get a knowledge base by id."""
-        query = {"knowledge_base_id": knowledge_base_id}
+        query: Dict[str, Any] = {"knowledge_base_id": knowledge_base_id}
         if not include_deleted:
             query["is_delete"] = False
         return await self.db.knowledge_bases.find_one(query)
@@ -199,11 +200,30 @@ class KnowledgeBaseRepository(BaseRepository):
             return {"status": "failed", "message": "knowledge_base_not_found"}
         return {"status": "failed", "message": "file_already_exists"}
 
+    async def add_file_to_knowledge_base(
+        self, knowledge_base_id: str, file_data: Dict[str, Any]
+    ) -> Dict[str, Any]:
+        """Compatibility wrapper for endpoint code.
+
+        Some endpoints build a `file_data` dict and call this helper.
+        """
+
+        return await self.knowledge_base_add_file(
+            knowledge_base_id=knowledge_base_id,
+            file_id=str(file_data.get("file_id") or ""),
+            original_filename=str(file_data.get("filename") or ""),
+            minio_filename=str(file_data.get("minio_filename") or ""),
+            minio_url=str(file_data.get("minio_url") or ""),
+        )
+
     async def get_files_by_knowledge_base_id(
         self, knowledge_base_id: str
-    ) -> List[Dict[str, str]]:
-        """
-        通过知识库ID获取所有文件（仅返回url和filename）
+    ) -> List[Dict[str, Any]]:
+        """Get all files for a knowledge base.
+
+        Frontend expects a richer shape than just URL + filename (e.g. for delete and
+        on-demand download URL generation). We return a stable, backward-compatible
+        superset of fields.
         """
         try:
             # 查询未删除的知识库
@@ -217,10 +237,29 @@ class KnowledgeBaseRepository(BaseRepository):
             if not kb or "files" not in kb:
                 return []
 
-            return [
-                {"url": file.get("minio_url", ""), "filename": file.get("filename", "")}
-                for file in kb["files"]
-            ]
+            files: List[Dict[str, Any]] = []
+            for file in kb["files"]:
+                created_at = file.get("created_at") or file.get("uploaded_at")
+                if hasattr(created_at, "isoformat"):
+                    upload_time = created_at.isoformat()
+                else:
+                    upload_time = str(created_at or "")
+
+                files.append(
+                    {
+                        "file_id": str(
+                            file.get("file_id")
+                            or Path(str(file.get("filename") or "")).stem
+                        ),
+                        "filename": str(file.get("filename") or ""),
+                        "url": str(file.get("minio_url") or ""),
+                        "upload_time": upload_time,
+                        "kb_id": knowledge_base_id,
+                        "minio_filename": str(file.get("minio_filename") or ""),
+                    }
+                )
+
+            return files
 
         except Exception as e:
             logger.error(
@@ -231,7 +270,7 @@ class KnowledgeBaseRepository(BaseRepository):
     async def get_kb_files_with_pagination(
         self,
         knowledge_base_id: str,
-        keyword: str = None,
+        keyword: Optional[str] = None,
         skip: int = 0,
         limit: int = 10,
     ) -> Dict[str, Any]:
@@ -277,7 +316,11 @@ class KnowledgeBaseRepository(BaseRepository):
         return parse_aggregate_result(result)
 
     async def get_user_files_with_pagination(
-        self, username: str, keyword: str = None, skip: int = 0, limit: int = 10
+        self,
+        username: str,
+        keyword: Optional[str] = None,
+        skip: int = 0,
+        limit: int = 10,
     ) -> Dict[str, Any]:
         """
         获取用户所有文件（带分页和搜索）
@@ -402,6 +445,7 @@ class KnowledgeBaseRepository(BaseRepository):
             )
 
         # 执行批量更新
+        bulk_result = None
         if bulk_operations:
             try:
                 bulk_result = await self.db.knowledge_bases.bulk_write(bulk_operations)
@@ -445,7 +489,7 @@ class KnowledgeBaseRepository(BaseRepository):
                 "knowledge_updates": {
                     "attempted": len(grouped),
                     "modified_count": (
-                        bulk_result.modified_count if bulk_operations else 0
+                        bulk_result.modified_count if bulk_result else 0
                     ),
                 },
             },

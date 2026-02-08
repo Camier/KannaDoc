@@ -4,12 +4,12 @@ import uuid
 from datetime import datetime
 from fastapi import APIRouter, Depends, HTTPException, Query, UploadFile
 from fastapi.responses import RedirectResponse
+from pydantic import BaseModel, Field
 from app.db.redis import redis
 from app.db.milvus import milvus_client
 from app.db.db_utils import format_page_response
 from app.models.conversation import GetUserFiles
 from app.models.knowledge_base import (
-    BulkDeleteRequestItem,
     KnowledgeBaseCreate,
     KnowledgeBaseRenameInput,
     KnowledgeBaseSummary,
@@ -32,6 +32,15 @@ router = APIRouter()
 
 # Use settings.default_username instead of hardcoded string
 USERNAME = settings.default_username
+
+
+class FileDownloadRequest(BaseModel):
+    username: str = Field(..., description="Username (auth-free mode: default user)")
+    minio_filename: str = Field(..., description="MinIO object key for the file")
+
+
+class KnowledgeBaseBulkDeleteRequestItem(BaseModel):
+    knowledge_base_id: str = Field(..., description="Knowledge base id")
 
 
 # 查询所有知识库
@@ -162,7 +171,7 @@ async def delete_temp_knowledge_bases(
 # 批量删除知识库
 @router.post("/knowledge_bases/bulk-delete")
 async def bulk_delete_knowledge_bases(
-    items: List[BulkDeleteRequestItem],
+    items: List[KnowledgeBaseBulkDeleteRequestItem],
     repo_manager: RepositoryManager = Depends(get_repository_manager),
 ):
     results = []
@@ -247,7 +256,13 @@ async def upload_file_to_kb(
             "uploaded_at": datetime.now().isoformat(),
         }
 
-        await repo_manager.knowledge_base.add_file_to_knowledge_base(kb_id, file_data)
+        await repo_manager.knowledge_base.knowledge_base_add_file(
+            knowledge_base_id=kb_id,
+            file_id=file_id,
+            original_filename=str(file.filename or ""),
+            minio_filename=minio_filename,
+            minio_url=minio_url,
+        )
 
         file_meta_list.append(
             {
@@ -281,6 +296,32 @@ async def get_kb_files(
 ):
     files = await repo_manager.knowledge_base.get_files_by_knowledge_base_id(kb_id)
     return {"files": files}
+
+
+@router.post("/files/download")
+async def get_file_download_url(payload: FileDownloadRequest):
+    """Return a fresh presigned URL for a KB file.
+
+    Rationale: KB file list may contain missing/expired `minio_url` values (e.g. corpus
+    ingested via scripts). Frontend should call this endpoint using `minio_filename`.
+    """
+
+    minio_filename = payload.minio_filename.strip()
+    if not minio_filename:
+        raise HTTPException(status_code=400, detail="minio_filename is required")
+
+    # Best-effort validation (helps return a clear error instead of a dead link)
+    try:
+        exists = await async_minio_manager.validate_file_existence(minio_filename)
+    except Exception as e:
+        logger.warning(f"MinIO existence check failed for {minio_filename}: {e}")
+        exists = True
+
+    if not exists:
+        raise HTTPException(status_code=404, detail="file_not_found")
+
+    url = await async_minio_manager.create_presigned_url(minio_filename)
+    return {"url": url}
 
 
 @router.delete("/knowledge_bases/{kb_id}/files/{file_id}")

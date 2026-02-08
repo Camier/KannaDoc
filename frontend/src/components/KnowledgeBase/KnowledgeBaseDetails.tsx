@@ -1,5 +1,6 @@
 import {
   deleteFile,
+  generateDownloadUrl,
   getKBFiles,
 } from "@/lib/api/knowledgeBaseApi";
 import { logger } from "@/lib/logger";
@@ -101,7 +102,38 @@ const KnowledgeBaseDetails: React.FC<KnowledgeBaseDetailsProps> = ({
 
   const handleDownload = async (file: KnowledgeFile) => {
     try {
-      window.open(file.url, "_blank");
+      const kbId = file.kb_id || selectedBase || "";
+      const url = (file.url || "").trim();
+
+      // Thesis corpus: serve directly from backend/data/pdfs via stable endpoint.
+      if (kbId.startsWith("thesis_")) {
+        const thesisKey = (file.filename || file.file_id || "").trim();
+        if (thesisKey) {
+          const thesisUrl = `/api/v1/thesis/pdf?file_id=${encodeURIComponent(
+            thesisKey
+          )}`;
+          window.open(thesisUrl, "_blank");
+          return;
+        }
+      }
+
+      // Prefer generating a fresh presigned URL when possible.
+      if (file.minio_filename) {
+        const resp = await generateDownloadUrl(user.name, file.minio_filename);
+        const freshUrl = String(resp.data?.url || "").trim();
+        if (freshUrl) {
+          window.open(freshUrl, "_blank");
+          return;
+        }
+      }
+
+      // Last resort: open whatever URL we got.
+      if (url) {
+        window.open(url, "_blank");
+        return;
+      }
+
+      alert(t("downloadFailed"));
     } catch (error) {
       logger.error("Download failed:", error);
       alert(t("downloadFailed"));
