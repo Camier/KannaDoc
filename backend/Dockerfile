@@ -43,7 +43,7 @@ RUN find /app -type d -name __pycache__ -exec rm -rf {} + 2>/dev/null || true
 
 # Set entrypoint script
 COPY entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
+RUN chmod 755 /entrypoint.sh
 
 # Create sandbox shared directory
 RUN mkdir -p /app/sandbox_workspace && chmod 777 /app/sandbox_workspace
