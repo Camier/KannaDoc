@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Generate final variants exclusively through Floral Diagram Generator
+      - name: Generate hypanthium variants exclusively through Floral Diagram Generator
         shell: bash
         run: |
           set -euo pipefail
@@ -29,107 +29,51 @@ jobs:
           from urllib.parse import urlencode
 
           PAGE = "https://kvetnidiagram.8u.cz/index_en.php"
-
           common = {
               "aa": "submit form",
-              "napodobap": "1",
-              "napodobak": "2",
-              "napodobac": "3",
-              "barvakal": "zel",
-              "barvakor": "cer",
-              "barvanek": "zlz",
-              "barvaokv": "cer",
-              "barvatyc": "zlu",
-              "mezerykal": "1",
-              "mezerykor": "1",
-              "mezerykor2": "1",
-              "mezerylis": "1",
-              "mezeryokv": "1",
-              "vernacekal": "1",
-              "vernacekor": "1",
-              "vernacekor2": "1",
-              "vernaceokv": "1",
-              "nuhelnikokv": "",
-              "posunokv": "",
-              "nuhelnikkal": "5",
-              "posunkal": "0",
-              "nuhelnikkor": "",
-              "posunkor": "",
-              "nuhelniktyc": "20+20+15+15",
-              "posuntyc": "0,9,0,12",
-              "upravytyc": "1-40s",
-              "upravytycs": "",
+              "napodobap": "1", "napodobak": "2", "napodobac": "3",
+              "barvakal": "zel", "barvakor": "cer", "barvanek": "zlz", "barvaokv": "cer", "barvatyc": "zlu",
+              "mezerykal": "1", "mezerykor": "1", "mezerykor2": "1", "mezerylis": "1", "mezeryokv": "1",
+              "vernacekal": "1", "vernacekor": "1", "vernacekor2": "1", "vernaceokv": "1",
+              "nuhelnikokv": "", "posunokv": "",
+              "nuhelnikkal": "5", "posunkal": "0",
+              "nuhelnikkor": "", "posunkor": "",
+              "nuhelniktyc": "20+20+15+15", "posuntyc": "0,9,0,12", "upravytyc": "1-40s", "upravytycs": "",
               "nektaria": "5/0/100/8/18",
-              "hypanthium": "",
-              "styl": "1",
-              "osy": "5",
-              "posunosy": "0",
-              "nuhelnikpes": "5",
-              "posunpes": "0",
-              "srpes": "0",
-              "tvarpes": "2",
-              "plosrust": "1",
-              "pespoloha": "3",
-              "pesvaj": "5",
-              "tvarvaj": "0",
-              "tvarkal": "1",
-              "tvarkor": "1",
-              "tvarokv": "1",
-              "tvartyc": "1",
-              "priblizpro": "",
-              "vzorec": "",
+              "styl": "1", "osy": "5", "posunosy": "0",
+              "nuhelnikpes": "5", "posunpes": "0", "srpes": "0", "tvarpes": "2", "plosrust": "1", "pespoloha": "3",
+              "pesvaj": "5", "tvarvaj": "0",
+              "tvarkal": "1", "tvarkor": "1", "tvarokv": "1", "tvartyc": "1",
+              "priblizpro": "", "vzorec": "",
           }
-
           variants = {
-              "F1_fused_sepals": {"srkal": "1"},
-              "F2_free_sepals": {},
-              "F3_fused_sepals_hypanthium": {"srkal": "1", "hypanthium": "120/108/12"},
+              "F4_free_sepals_hypanthium_large": {"hypanthium": "120/108/12"},
+              "F5_free_sepals_hypanthium_small": {"hypanthium": "112/104/8"},
+              "F6_free_sepals_hypanthium_small_no_ovules": {"hypanthium": "112/104/8", "pesvaj": ""},
           }
 
           report = []
           for name, extra in variants.items():
-              params = dict(common)
-              params.update(extra)
+              params = dict(common); params.update(extra)
               url = PAGE + "?" + urlencode(params)
               page_path = Path("artifact") / f"{name}.html"
-              subprocess.run([
-                  "curl", "-4", "-sS", "-L", "--fail-with-body",
-                  "--connect-timeout", "20", "--max-time", "120",
-                  "-A", "Mozilla/5.0",
-                  "-o", str(page_path),
-                  url,
-              ], check=True)
-
+              subprocess.run(["curl", "-4", "-sS", "-L", "--fail-with-body", "--connect-timeout", "20", "--max-time", "120", "-A", "Mozilla/5.0", "-o", str(page_path), url], check=True)
               text = page_path.read_text(encoding="utf-8", errors="replace")
-              patterns = [
-                  r'(<svg\b[^>]*height="600"[^>]*width="600"[^>]*>.*?</svg>)',
-                  r'(<svg\b[^>]*width="600"[^>]*height="600"[^>]*>.*?</svg>)',
-              ]
-              matches = []
-              for pattern in patterns:
-                  matches.extend(re.findall(pattern, text, flags=re.I | re.S))
+              matches = re.findall(r'(<svg\b[^>]*height="600"[^>]*width="600"[^>]*>.*?</svg>)', text, flags=re.I | re.S)
+              matches += re.findall(r'(<svg\b[^>]*width="600"[^>]*height="600"[^>]*>.*?</svg>)', text, flags=re.I | re.S)
               matches = [m for m in matches if "floral diagram generated" in m]
-              if not matches:
-                  raise RuntimeError(f"No native floral SVG found for {name}")
+              if not matches: raise RuntimeError(f"No native floral SVG found for {name}")
               native_svg = html.unescape(max(matches, key=len))
               svg_path = Path("artifact") / f"{name}-site-native.svg"
               svg_path.write_text(native_svg, encoding="utf-8")
               (Path("artifact") / f"{name}-query-url.txt").write_text(url + "\n", encoding="utf-8")
-
-              visible_text = " ".join(re.findall(r"<text\b[^>]*>(.*?)</text>", native_svg, flags=re.I | re.S))
-              visible_text = re.sub(r"<[^>]+>", "", visible_text)
-              visible_text = html.unescape(re.sub(r"\s+", " ", visible_text)).strip()
-              report.append(
-                  f"{name}\n  query={url}\n  native_svg_bytes={svg_path.stat().st_size}\n"
-                  f"  visible_text={visible_text[:800]}\n"
-              )
-
-          Path("artifact/final-variant-report.txt").write_text("\n".join(report), encoding="utf-8")
+              report.append(f"{name}\n  query={url}\n  native_svg_bytes={svg_path.stat().st_size}\n")
+          Path("artifact/hypanthium-variant-report.txt").write_text("\n".join(report), encoding="utf-8")
           PY
 
-      - name: Upload final site-native variants
+      - name: Upload native hypanthium variants
         uses: actions/upload-artifact@v4
         with:
-          name: floral-generator-final-native-variants
+          name: floral-generator-hypanthium-variants
           path: artifact
           if-no-files-found: error
