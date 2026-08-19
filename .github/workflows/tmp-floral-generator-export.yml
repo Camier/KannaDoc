@@ -16,64 +16,63 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Fetch a native generated page and inspect export links
+      - name: Fetch generated page over IPv4 and inspect native export
         shell: bash
         run: |
-          set -euo pipefail
+          set +e
           mkdir -p artifact
+          URL='https://kvetnidiagram.8u.cz/index_en.php?aa=vyhodnotit+formul%C3%A1%C5%99&barvakal=zel&barvakor=cer&barvanek=zlz&barvaokv=cer&barvatyc=zlu&mezerykal=1&mezerykor=1&mezerykor2=1&mezerylis=1&mezeryokv=1&nektaria=5%2F0%2F100%2F15%2F20&nuhelnikkal=&nuhelnikkor=&nuhelnikokv=&nuhelnikpes=&nuhelniktyc=&osy=&pespoloha=1&pesvaj=&plosrust=1&posunkal=&posunkor=&posunokv=&posunosy=&posunpes=&posuntyc=&priblizpro=&srpes=0&styl=1&tvarkal=1&tvarkor=1&tvarokv=1&tvarpes=2&tvartyc=1&tvarvaj=0&upravytyc=&upravytycs=&vernacekal=1&vernacekor=1&vernacekor2=1&vernaceokv=1&vzorec='
+          {
+            echo '=== DNS ==='
+            getent ahosts kvetnidiagram.8u.cz || true
+            echo '=== CURL HTTPS IPv4 ==='
+            curl -4 -L --connect-timeout 20 --max-time 90 -A 'Mozilla/5.0' -D artifact/headers-https.txt -o artifact/page.html -w '\nstatus=%{http_code}\nremote_ip=%{remote_ip}\nurl_effective=%{url_effective}\n' "$URL"
+            echo "curl_https_exit=$?"
+            echo '=== CURL HTTP IPv4 ==='
+            curl -4 -L --connect-timeout 20 --max-time 90 -A 'Mozilla/5.0' -D artifact/headers-http.txt -o artifact/page-http.html -w '\nstatus=%{http_code}\nremote_ip=%{remote_ip}\nurl_effective=%{url_effective}\n' "${URL/https:\/\//http:\/\/}"
+            echo "curl_http_exit=$?"
+          } 2>&1 | tee artifact/network-report.txt
+
           python3 - <<'PY'
           import html
           import re
-          import urllib.request
           from pathlib import Path
+          from urllib.parse import urljoin
 
-          url = (
-              "https://kvetnidiagram.8u.cz/index_en.php?"
-              "aa=vyhodnotit+formul%C3%A1%C5%99&barvakal=zel&barvakor=cer&barvanek=zlz&"
-              "barvaokv=cer&barvatyc=zlu&mezerykal=1&mezerykor=1&mezerykor2=1&"
-              "mezerylis=1&mezeryokv=1&nektaria=5%2F0%2F100%2F15%2F20&"
-              "nuhelnikkal=&nuhelnikkor=&nuhelnikokv=&nuhelnikpes=&nuhelniktyc=&"
-              "osy=&pespoloha=1&pesvaj=&plosrust=1&posunkal=&posunkor=&posunokv=&"
-              "posunosy=&posunpes=&posuntyc=&priblizpro=&srpes=0&styl=1&tvarkal=1&"
-              "tvarkor=1&tvarokv=1&tvarpes=2&tvartyc=1&tvarvaj=0&upravytyc=&"
-              "upravytycs=&vernacekal=1&vernacekor=1&vernacekor2=1&vernaceokv=1&vzorec="
-          )
-          req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-          with urllib.request.urlopen(req, timeout=45) as response:
-              body = response.read()
-              status = response.status
-              final_url = response.geturl()
-              headers = dict(response.headers.items())
+          path = Path('artifact/page.html')
+          if not path.exists() or path.stat().st_size == 0:
+              path = Path('artifact/page-http.html')
+          if not path.exists() or path.stat().st_size == 0:
+              Path('artifact/parse-report.txt').write_text('No page content fetched.\n', encoding='utf-8')
+              raise SystemExit(0)
 
-          Path("artifact/page.html").write_bytes(body)
-          text = body.decode("utf-8", errors="replace")
-
+          text = path.read_text(encoding='utf-8', errors='replace')
           hrefs = re.findall(r'href=["\']([^"\']+)', text, flags=re.I)
           srcs = re.findall(r'src=["\']([^"\']+)', text, flags=re.I)
           forms = re.findall(r'<form\b[^>]*>', text, flags=re.I)
           inputs = re.findall(r'<input\b[^>]*>', text, flags=re.I)
           svgs = re.findall(r'<svg\b.*?</svg>', text, flags=re.I | re.S)
-
+          candidates = [u for u in hrefs + srcs if 'svg' in u.lower() or 'download' in u.lower() or 'stah' in u.lower()]
           report = [
-              f"status={status}",
-              f"final_url={final_url}",
-              f"content_length={len(body)}",
-              "headers=" + repr(headers),
-              "\nFORMS:\n" + "\n".join(forms),
-              "\nINPUTS:\n" + "\n".join(inputs),
-              "\nHREFS:\n" + "\n".join(hrefs),
-              "\nSRCS:\n" + "\n".join(srcs),
-              f"\nINLINE_SVG_COUNT={len(svgs)}",
+              f'page={path}',
+              f'content_length={len(text.encode("utf-8"))}',
+              '\nFORMS:\n' + '\n'.join(forms),
+              '\nINPUTS:\n' + '\n'.join(inputs),
+              '\nHREFS:\n' + '\n'.join(hrefs),
+              '\nSRCS:\n' + '\n'.join(srcs),
+              '\nCANDIDATES:\n' + '\n'.join(candidates),
+              f'\nINLINE_SVG_COUNT={len(svgs)}',
           ]
-          Path("artifact/report.txt").write_text("\n".join(report), encoding="utf-8")
+          Path('artifact/parse-report.txt').write_text('\n'.join(report), encoding='utf-8')
           if svgs:
-              Path("artifact/inline.svg").write_text(html.unescape(svgs[0]), encoding="utf-8")
-          print("\n".join(report[:4]))
+              Path('artifact/inline.svg').write_text(html.unescape(svgs[0]), encoding='utf-8')
           PY
+          exit 0
 
       - name: Upload inspection artifact
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: floral-generator-inspection
+          name: floral-generator-inspection-v2
           path: artifact
           if-no-files-found: error
