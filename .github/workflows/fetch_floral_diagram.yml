@@ -1,13 +1,11 @@
 name: Fetch native floral diagram
 
 on:
-  push:
-    paths:
-      - '.github/workflows/fetch_floral_diagram.yml'
+  pull_request:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 env:
   TARGET_URL: >-
@@ -17,8 +15,6 @@ jobs:
   fetch:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
       - name: Fetch generator output and native SVG
         shell: bash
         run: |
@@ -85,20 +81,6 @@ jobs:
               raise SystemExit('Native SVG not found in generator response or download links')
           print(f'Native SVG saved: {svg} ({svg.stat().st_size} bytes)')
           PY
-
-      - name: Publish temporary result in repository
-        shell: bash
-        run: |
-          mkdir -p tmp/floral-diagram
-          cp floral-generator-output/diagram-native.svg tmp/floral-diagram/diagram-native.svg
-          cp floral-generator-output/debug.json tmp/floral-diagram/debug.json
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add tmp/floral-diagram/diagram-native.svg tmp/floral-diagram/debug.json
-          if ! git diff --cached --quiet; then
-            git commit -m 'Add native floral diagram fetched from generator'
-            git push
-          fi
 
       - name: Upload native generator output
         uses: actions/upload-artifact@v4
