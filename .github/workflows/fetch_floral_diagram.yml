@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 env:
   TARGET_URL: >-
@@ -17,6 +17,8 @@ jobs:
   fetch:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+
       - name: Fetch generator output and native SVG
         shell: bash
         run: |
@@ -45,13 +47,11 @@ jobs:
               r.raise_for_status()
               text = r.text
               if label == 'target':
-                  # Prefer the actual inline SVG produced by the generator.
                   m = re.search(r'(<svg\b.*?</svg>)', text, flags=re.I | re.S)
                   if m:
                       (out / 'diagram-native.svg').write_text(m.group(1), encoding='utf-8')
                       debug['svg_source'] = 'inline'
                   else:
-                      # Otherwise follow links that look like the native SVG download.
                       hrefs = re.findall(r'href=["\']([^"\']+)["\']', text, flags=re.I)
                       debug['hrefs'] = hrefs
                       candidates = [h for h in hrefs if '.svg' in h.lower() or 'download' in h.lower()]
@@ -64,7 +64,6 @@ jobs:
                               debug['svg_status'] = sr.status_code
                               break
 
-          # Record form controls to validate the parameter names and selected values.
           target_html = (out / 'target.html').read_text(encoding='utf-8', errors='replace')
           inputs = []
           for tag in re.findall(r'<input\b[^>]*>', target_html, flags=re.I):
@@ -86,6 +85,20 @@ jobs:
               raise SystemExit('Native SVG not found in generator response or download links')
           print(f'Native SVG saved: {svg} ({svg.stat().st_size} bytes)')
           PY
+
+      - name: Publish temporary result in repository
+        shell: bash
+        run: |
+          mkdir -p tmp/floral-diagram
+          cp floral-generator-output/diagram-native.svg tmp/floral-diagram/diagram-native.svg
+          cp floral-generator-output/debug.json tmp/floral-diagram/debug.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tmp/floral-diagram/diagram-native.svg tmp/floral-diagram/debug.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Add native floral diagram fetched from generator'
+            git push
+          fi
 
       - name: Upload native generator output
         uses: actions/upload-artifact@v4
