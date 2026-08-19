@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Generate candidate diagrams exclusively through Floral Diagram Generator
+      - name: Generate final variants exclusively through Floral Diagram Generator
         shell: bash
         run: |
           set -euo pipefail
@@ -28,9 +28,7 @@ jobs:
           from pathlib import Path
           from urllib.parse import urlencode
 
-          BASE = "https://kvetnidiagram.8u.cz/"
-          PAGE = BASE + "index_en.php"
-          DOWNLOAD = BASE + "ulozit.php"
+          PAGE = "https://kvetnidiagram.8u.cz/index_en.php"
 
           common = {
               "aa": "submit form",
@@ -55,13 +53,15 @@ jobs:
               "posunokv": "",
               "nuhelnikkal": "5",
               "posunkal": "0",
-              "srkal": "1",
               "nuhelnikkor": "",
               "posunkor": "",
+              "nuhelniktyc": "20+20+15+15",
+              "posuntyc": "0,9,0,12",
+              "upravytyc": "1-40s",
+              "upravytycs": "",
               "nektaria": "5/0/100/8/18",
               "hypanthium": "",
               "styl": "1",
-              "vykreslit": "1",
               "osy": "5",
               "posunosy": "0",
               "nuhelnikpes": "5",
@@ -76,102 +76,60 @@ jobs:
               "tvarkor": "1",
               "tvarokv": "1",
               "tvartyc": "1",
-              "upravytycs": "",
               "priblizpro": "",
               "vzorec": "",
           }
 
-          candidates = {
-              "A_staminodes_s_fusion": {
-                  "nuhelniktyc": "20+20+15+15",
-                  "posuntyc": "0,9,0,12",
-                  "upravytyc": "1-40s",
-                  "addStFus": "1",
-                  "addStFusType": "3",
-              },
-              "B_staminodes_s_no_fusion": {
-                  "nuhelniktyc": "20+20+15+15",
-                  "posuntyc": "0,9,0,12",
-                  "upravytyc": "1-40s",
-              },
-              "C_staminodes_sb_fusion": {
-                  "nuhelniktyc": "20+20+15+15",
-                  "posuntyc": "0,9,0,12",
-                  "upravytyc": "1-40sb",
-                  "addStFus": "1",
-                  "addStFusType": "3",
-              },
-              "D_three_whorls_s_fusion": {
-                  "nuhelniktyc": "20+15+15",
-                  "posuntyc": "0,12,0",
-                  "upravytyc": "1-20s",
-                  "addStFus": "1",
-                  "addStFusType": "3",
-              },
-              "E_petaloid_corolla_plus_stamens": {
-                  "nuhelnikkor": "20+20",
-                  "posunkor": "0,9",
-                  "nuhelniktyc": "15+15",
-                  "posuntyc": "0,12",
-                  "addStFus": "1",
-                  "addStFusType": "3",
-              },
+          variants = {
+              "F1_fused_sepals": {"srkal": "1"},
+              "F2_free_sepals": {},
+              "F3_fused_sepals_hypanthium": {"srkal": "1", "hypanthium": "120/108/12"},
           }
 
           report = []
-          for name, extra in candidates.items():
+          for name, extra in variants.items():
               params = dict(common)
               params.update(extra)
               url = PAGE + "?" + urlencode(params)
-              html_path = Path("artifact") / f"{name}.html"
-              headers_path = Path("artifact") / f"{name}.headers.txt"
+              page_path = Path("artifact") / f"{name}.html"
               subprocess.run([
                   "curl", "-4", "-sS", "-L", "--fail-with-body",
                   "--connect-timeout", "20", "--max-time", "120",
                   "-A", "Mozilla/5.0",
-                  "-D", str(headers_path),
-                  "-o", str(html_path),
+                  "-o", str(page_path),
                   url,
               ], check=True)
 
-              text = html_path.read_text(encoding="utf-8", errors="replace")
-              matches = re.findall(r"<svg\b.*?</svg>", text, flags=re.I | re.S)
-              site_svgs = [m for m in matches if "floral diagram generated" in m]
-              if not site_svgs:
-                  site_svgs = [m for m in matches if 'height="600"' in m and 'width="600"' in m]
-              if not site_svgs:
-                  raise RuntimeError(f"No native floral SVG found for {name}; total SVGs={len(matches)}")
-              raw_svg = html.unescape(max(site_svgs, key=len))
-              raw_path = Path("artifact") / f"{name}-inline-site.svg"
-              raw_path.write_text(raw_svg, encoding="utf-8")
-
-              download_path = Path("artifact") / f"{name}-download-site.svg"
-              subprocess.run([
-                  "curl", "-4", "-sS", "-L", "--fail-with-body",
-                  "--connect-timeout", "20", "--max-time", "120",
-                  "-A", "Mozilla/5.0",
-                  "--data-urlencode", f"jsvalue@{raw_path}",
-                  "-o", str(download_path),
-                  DOWNLOAD,
-              ], check=True)
-
-              # Keep the exact query used for reproducibility.
+              text = page_path.read_text(encoding="utf-8", errors="replace")
+              patterns = [
+                  r'(<svg\b[^>]*height="600"[^>]*width="600"[^>]*>.*?</svg>)',
+                  r'(<svg\b[^>]*width="600"[^>]*height="600"[^>]*>.*?</svg>)',
+              ]
+              matches = []
+              for pattern in patterns:
+                  matches.extend(re.findall(pattern, text, flags=re.I | re.S))
+              matches = [m for m in matches if "floral diagram generated" in m]
+              if not matches:
+                  raise RuntimeError(f"No native floral SVG found for {name}")
+              native_svg = html.unescape(max(matches, key=len))
+              svg_path = Path("artifact") / f"{name}-site-native.svg"
+              svg_path.write_text(native_svg, encoding="utf-8")
               (Path("artifact") / f"{name}-query-url.txt").write_text(url + "\n", encoding="utf-8")
-              formula_text = " ".join(re.findall(r"<text\b[^>]*>(.*?)</text>", raw_svg, flags=re.I | re.S))
-              formula_text = re.sub(r"<[^>]+>", "", formula_text)
-              formula_text = html.unescape(re.sub(r"\s+", " ", formula_text)).strip()
+
+              visible_text = " ".join(re.findall(r"<text\b[^>]*>(.*?)</text>", native_svg, flags=re.I | re.S))
+              visible_text = re.sub(r"<[^>]+>", "", visible_text)
+              visible_text = html.unescape(re.sub(r"\s+", " ", visible_text)).strip()
               report.append(
-                  f"{name}\n  url={url}\n  html={html_path.stat().st_size}\n"
-                  f"  inline_svg={raw_path.stat().st_size}\n  downloaded_svg={download_path.stat().st_size}\n"
-                  f"  extracted_text={formula_text[:1000]}\n"
+                  f"{name}\n  query={url}\n  native_svg_bytes={svg_path.stat().st_size}\n"
+                  f"  visible_text={visible_text[:800]}\n"
               )
 
-          Path("artifact/candidate-report.txt").write_text("\n".join(report), encoding="utf-8")
+          Path("artifact/final-variant-report.txt").write_text("\n".join(report), encoding="utf-8")
           PY
 
-      - name: Upload native candidate exports
+      - name: Upload final site-native variants
         uses: actions/upload-artifact@v4
         with:
-          name: floral-generator-native-candidates
+          name: floral-generator-final-native-variants
           path: artifact
           if-no-files-found: error
