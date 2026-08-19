@@ -1,0 +1,56 @@
+name: Fetch Kebert floral-diagram thesis
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download and extract thesis
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p kebert-bp
+          python - <<'PY'
+          import requests
+          from pathlib import Path
+          urls = [
+              'https://dspace.cuni.cz/bitstream/handle/20.500.11956/66604/130149476.pdf?isAllowed=y&sequence=1',
+              'https://kvetnidiagram.8u.cz/bp.pdf',
+          ]
+          out = Path('kebert-bp/Kebert_2015_Kvetni_diagramy.pdf')
+          headers = {'User-Agent': 'Mozilla/5.0'}
+          last = None
+          for url in urls:
+              try:
+                  r = requests.get(url, headers=headers, timeout=180, allow_redirects=True)
+                  print(url, r.status_code, r.headers.get('content-type'), len(r.content), r.url)
+                  if r.ok and r.content.startswith(b'%PDF'):
+                      out.write_bytes(r.content)
+                      Path('kebert-bp/source-url.txt').write_text(url + '\n', encoding='utf-8')
+                      break
+              except Exception as exc:
+                  last = exc
+                  print('FAILED', url, repr(exc))
+          if not out.exists():
+              raise SystemExit(f'PDF download failed: {last!r}')
+          print(f'Saved {out} ({out.stat().st_size} bytes)')
+          PY
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils
+          pdfinfo kebert-bp/Kebert_2015_Kvetni_diagramy.pdf > kebert-bp/pdfinfo.txt
+          pdftotext -layout kebert-bp/Kebert_2015_Kvetni_diagramy.pdf kebert-bp/Kebert_2015_Kvetni_diagramy.txt
+          grep -n -i -E 'stamin|srůst|srost|tyčink|pestík|semeník|polospod|nektar|Ronse|De Craene|diagram|vzorec' kebert-bp/Kebert_2015_Kvetni_diagramy.txt > kebert-bp/relevant-lines.txt || true
+
+      - name: Upload thesis bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: kebert-bp
+          path: kebert-bp/
+          retention-days: 3
+          if-no-files-found: error
