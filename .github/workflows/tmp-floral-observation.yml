@@ -11,7 +11,7 @@ permissions:
 jobs:
   generate-site-native-variants:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     steps:
       - name: Generate refined diagrams exclusively through Floral Diagram Generator
         shell: bash
@@ -22,6 +22,7 @@ jobs:
           import html
           import re
           import subprocess
+          import time
           from pathlib import Path
           from urllib.parse import urlencode
 
@@ -97,35 +98,40 @@ jobs:
           }
 
           report = []
-          for name, extra in candidates.items():
+          successes = 0
+          for index, (name, extra) in enumerate(candidates.items(), start=1):
               params = dict(common)
               params.update(extra)
               url = PAGE + "?" + urlencode(params)
               html_path = Path("artifact") / f"{name}.html"
-              subprocess.run([
+              cmd = [
                   "curl", "-4", "-sS", "-L", "--fail-with-body",
-                  "--connect-timeout", "20", "--max-time", "120",
+                  "--retry", "6", "--retry-all-errors", "--retry-delay", "4",
+                  "--connect-timeout", "35", "--max-time", "240",
                   "-A", "Mozilla/5.0",
                   "-o", str(html_path),
                   url,
-              ], check=True)
+              ]
+              result = subprocess.run(cmd, text=True, capture_output=True)
+              if result.returncode != 0:
+                  report.append(f"{name}\n  ERROR curl={result.returncode}: {result.stderr.strip()}\n  query={url}\n")
+                  continue
 
               text = html_path.read_text(encoding="utf-8", errors="replace")
               left = text.find('<div id="vlevo">')
-              if left < 0:
-                  raise RuntimeError(f"No diagram container for {name}")
-              start = text.find("<svg", left)
-              end = text.find("</svg>", start)
-              if start < 0 or end < 0:
-                  raise RuntimeError(f"No native SVG for {name}")
+              start = text.find("<svg", left) if left >= 0 else -1
+              end = text.find("</svg>", start) if start >= 0 else -1
+              if left < 0 or start < 0 or end < 0:
+                  report.append(f"{name}\n  ERROR native SVG not found\n  query={url}\n")
+                  continue
               native_svg = html.unescape(text[start:end + len("</svg>")])
               if "floral diagram generated" not in native_svg:
-                  raise RuntimeError(f"Wrong SVG extracted for {name}")
+                  report.append(f"{name}\n  ERROR wrong SVG extracted\n  query={url}\n")
+                  continue
 
               svg_path = Path("artifact") / f"{name}-site-native.svg"
               svg_path.write_text(native_svg, encoding="utf-8")
               (Path("artifact") / f"{name}-query-url.txt").write_text(url + "\n", encoding="utf-8")
-
               formula_match = re.search(r'name="vzorec"[^>]*value="([^"]*)"', text)
               formula = html.unescape(formula_match.group(1)) if formula_match else ""
               report.append(
@@ -134,11 +140,16 @@ jobs:
                   f"  inferred_formula={formula}\n"
                   f"  query={url}\n"
               )
+              successes += 1
+              time.sleep(2)
 
           Path("artifact/refined-candidate-report.txt").write_text("\n".join(report), encoding="utf-8")
+          if successes == 0:
+              raise RuntimeError("No site-native candidate could be generated after retries")
           PY
 
       - name: Upload refined site-native exports
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: floral-observation-refined-site-native-candidates
