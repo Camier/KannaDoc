@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Generate candidate diagrams exclusively through Floral Diagram Generator
+      - name: Generate refined diagrams exclusively through Floral Diagram Generator
         shell: bash
         run: |
           set -euo pipefail
@@ -48,10 +48,12 @@ jobs:
               "posunokv": "0",
               "nuhelnikkal": "3",
               "posunkal": "30",
-              "nuhelnikkor": "20+20+20",
-              "posunkor": "0,9,0",
+              "tvarokv": "3",
+              "tvarkal": "1",
+              "tvarkor": "1",
               "nuhelniktyc": "18+18",
               "posuntyc": "0,10",
+              "tvartyc": "1",
               "nektaria": "5/0/100/8/18",
               "styl": "1",
               "osy": "5",
@@ -64,25 +66,35 @@ jobs:
               "pespoloha": "3",
               "pesvaj": "",
               "tvarvaj": "0",
-              "tvarkal": "1",
-              "tvartyc": "1",
               "upravytyc": "",
               "upravytycs": "",
               "priblizpro": "",
               "vzorec": "",
           }
 
-          candidates = {}
-          for shape in (1, 2, 3, 4, 6):
-              candidates[f"S{shape}_outer_sepal_shape"] = {
-                  "tvarokv": str(shape),
-                  "tvarkor": "1",
-              }
-          for shape in (1, 2, 3, 4, 6):
-              candidates[f"C{shape}_petaloid_shape"] = {
-                  "tvarokv": "4",
-                  "tvarkor": str(shape),
-              }
+          candidates = {
+              "F1_petaloids_24_24_24": {
+                  "nuhelnikkor": "24+24+24",
+                  "posunkor": "0,7.5,0",
+              },
+              "F2_petaloids_30_30_30": {
+                  "nuhelnikkor": "30+30+30",
+                  "posunkor": "0,6,0",
+              },
+              "F3_petaloids_24_24_18": {
+                  "nuhelnikkor": "24+24+18",
+                  "posunkor": "0,7.5,0",
+              },
+              "F4_petaloids_30_30_two_whorls": {
+                  "nuhelnikkor": "30+30",
+                  "posunkor": "0,6",
+              },
+              "F5_outer_sepals_shape2_petaloids_24": {
+                  "tvarokv": "2",
+                  "nuhelnikkor": "24+24+24",
+                  "posunkor": "0,7.5,0",
+              },
+          }
 
           report = []
           for name, extra in candidates.items():
@@ -123,12 +135,12 @@ jobs:
                   f"  query={url}\n"
               )
 
-          Path("artifact/candidate-report.txt").write_text("\n".join(report), encoding="utf-8")
+          Path("artifact/refined-candidate-report.txt").write_text("\n".join(report), encoding="utf-8")
           PY
 
-      - name: Upload site-native candidate exports
+      - name: Upload refined site-native exports
         uses: actions/upload-artifact@v4
         with:
-          name: floral-observation-site-native-candidates
+          name: floral-observation-refined-site-native-candidates
           path: artifact
           if-no-files-found: error
