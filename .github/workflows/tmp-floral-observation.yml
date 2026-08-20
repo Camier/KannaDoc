@@ -1,0 +1,134 @@
+name: temporary-floral-observation-variants
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  generate-site-native-variants:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Generate candidate diagrams exclusively through Floral Diagram Generator
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifact
+          python3 - <<'PY'
+          import html
+          import re
+          import subprocess
+          from pathlib import Path
+          from urllib.parse import urlencode
+
+          PAGE = "https://kvetnidiagram.8u.cz/index_en.php"
+
+          common = {
+              "aa": "submit form",
+              "napodobap": "2",
+              "napodobak": "2",
+              "napodobac": "3",
+              "barvakal": "zel",
+              "barvaokv": "cer",
+              "barvatyc": "zlu",
+              "mezerykal": "1",
+              "mezerykor": "1",
+              "mezerykor2": "1",
+              "mezerylis": "1",
+              "mezeryokv": "1",
+              "vernacekal": "1",
+              "vernacekor": "1",
+              "vernacekor2": "1",
+              "vernaceokv": "1",
+              "nuhelnikokv": "2",
+              "posunokv": "0",
+              "nuhelnikkal": "3",
+              "posunkal": "30",
+              "nuhelnikkor": "20+20+20",
+              "posunkor": "0,9,0",
+              "nuhelniktyc": "18+18",
+              "posuntyc": "0,10",
+              "nektaria": "5/0/100/8/18",
+              "styl": "1",
+              "osy": "5",
+              "posunosy": "0",
+              "nuhelnikpes": "5",
+              "posunpes": "0",
+              "srpes": "0",
+              "tvarpes": "2",
+              "plosrust": "1",
+              "pespoloha": "3",
+              "pesvaj": "",
+              "tvarvaj": "0",
+              "tvarkal": "1",
+              "tvartyc": "1",
+              "upravytyc": "",
+              "upravytycs": "",
+              "priblizpro": "",
+              "vzorec": "",
+          }
+
+          candidates = {}
+          for shape in (1, 2, 3, 4, 6):
+              candidates[f"S{shape}_outer_sepal_shape"] = {
+                  "tvarokv": str(shape),
+                  "tvarkor": "1",
+              }
+          for shape in (1, 2, 3, 4, 6):
+              candidates[f"C{shape}_petaloid_shape"] = {
+                  "tvarokv": "4",
+                  "tvarkor": str(shape),
+              }
+
+          report = []
+          for name, extra in candidates.items():
+              params = dict(common)
+              params.update(extra)
+              url = PAGE + "?" + urlencode(params)
+              html_path = Path("artifact") / f"{name}.html"
+              subprocess.run([
+                  "curl", "-4", "-sS", "-L", "--fail-with-body",
+                  "--connect-timeout", "20", "--max-time", "120",
+                  "-A", "Mozilla/5.0",
+                  "-o", str(html_path),
+                  url,
+              ], check=True)
+
+              text = html_path.read_text(encoding="utf-8", errors="replace")
+              left = text.find('<div id="vlevo">')
+              if left < 0:
+                  raise RuntimeError(f"No diagram container for {name}")
+              start = text.find("<svg", left)
+              end = text.find("</svg>", start)
+              if start < 0 or end < 0:
+                  raise RuntimeError(f"No native SVG for {name}")
+              native_svg = html.unescape(text[start:end + len("</svg>")])
+              if "floral diagram generated" not in native_svg:
+                  raise RuntimeError(f"Wrong SVG extracted for {name}")
+
+              svg_path = Path("artifact") / f"{name}-site-native.svg"
+              svg_path.write_text(native_svg, encoding="utf-8")
+              (Path("artifact") / f"{name}-query-url.txt").write_text(url + "\n", encoding="utf-8")
+
+              formula_match = re.search(r'name="vzorec"[^>]*value="([^"]*)"', text)
+              formula = html.unescape(formula_match.group(1)) if formula_match else ""
+              report.append(
+                  f"{name}\n"
+                  f"  native_svg_bytes={svg_path.stat().st_size}\n"
+                  f"  inferred_formula={formula}\n"
+                  f"  query={url}\n"
+              )
+
+          Path("artifact/candidate-report.txt").write_text("\n".join(report), encoding="utf-8")
+          PY
+
+      - name: Upload site-native candidate exports
+        uses: actions/upload-artifact@v4
+        with:
+          name: floral-observation-site-native-candidates
+          path: artifact
+          if-no-files-found: error
